@@ -21,8 +21,8 @@ pub struct Session {
     pub sidebar_width: f32,
     /// The panels one above the other.
     pub vertical: bool,
-    /// The terminal's height in pixels; 0 before it was dragged.
-    pub terminal_height: f32,
+    /// The terminal's share of the window's height; 0 before it was dragged.
+    pub terminal_share: f32,
     /// The main window's place and size; none before the first run.
     pub window: Option<WindowPlace>,
 }

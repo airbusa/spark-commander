@@ -522,7 +522,8 @@ struct Commander {
     terminals: Vec<terminal_pane::TerminalTab>,
     terminal_tab: usize,
     terminal_shown: bool,
-    terminal_height: f32,
+    /// Its share of the window's height, so it grows and shrinks with the window.
+    terminal_share: f32,
     /// How much it covers the desktop behind it (none: solid), and whether that is blurred.
     terminal_look: (Option<f32>, bool),
     /// Quick View's viewer has the keys: no panel shows a cursor.
@@ -683,9 +684,9 @@ impl Commander {
             terminal_tab: 0,
             terminal_shown: false,
             terminal_look,
-            terminal_height: match session.terminal_height {
-                0. => 260.,
-                height => height,
+            terminal_share: match session.terminal_share {
+                0. => 0.3,
+                share => share,
             },
         }
     }
@@ -1429,7 +1430,7 @@ impl Commander {
             sidebar: self.sidebar.tab,
             sidebar_width: self.sidebar.width,
             vertical: self.vertical,
-            terminal_height: self.terminal_height,
+            terminal_share: self.terminal_share,
             window: Some(window_place(self.bounds)),
         }
     }

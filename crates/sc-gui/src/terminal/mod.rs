@@ -285,6 +285,15 @@ impl TerminalView {
         cx.notify();
     }
 
+    fn scrolled_back(&self) -> bool {
+        self.term.lock().grid().display_offset() > 0
+    }
+
+    fn jump_to_bottom(&mut self, cx: &mut Context<Self>) {
+        self.term.lock().scroll_display(Scroll::Bottom);
+        cx.notify();
+    }
+
     fn mode(&self) -> TermMode {
         *self.term.lock().mode()
     }
@@ -326,6 +335,7 @@ impl TerminalView {
         let keystroke = &event.keystroke;
         let (key, held) = (keystroke.key.to_ascii_lowercase(), keystroke.modifiers);
         match key.as_str() {
+            "end" if held.control && !held.shift && !held.alt && self.scrolled_back() => self.jump_to_bottom(cx),
             "pageup" | "pagedown" if held.shift && !self.mode().contains(TermMode::ALT_SCREEN) => {
                 self.term.lock().scroll_display(if key == "pageup" { Scroll::PageUp } else { Scroll::PageDown });
                 cx.notify();
@@ -705,10 +715,32 @@ impl Render for TerminalView {
     fn render(&mut self, _: &mut Window, cx: &mut Context<Self>) -> impl IntoElement {
         let (view, focus) = (cx.entity(), self.focus.clone());
         let (painted, menu_view, menu_focus) = (view.clone(), view.downgrade(), focus.clone());
+        let theme = cx.theme();
+        // Scrolled back into the history: the way back to the newest lines.
+        let bottom = self.scrolled_back().then(|| {
+            let jump = div()
+                .id("jump-to-bottom")
+                .px_2()
+                .py_0p5()
+                .rounded(theme.radius)
+                .border_1()
+                .border_color(theme.border)
+                .bg(theme.popover)
+                .text_color(theme.popover_foreground)
+                .text_sm()
+                .cursor_pointer()
+                .child("Jump to bottom (Ctrl+End) ↓")
+                .on_mouse_down(MouseButton::Left, cx.listener(|this, _, _, cx| {
+                    cx.stop_propagation();
+                    this.jump_to_bottom(cx);
+                }));
+            div().absolute().bottom_2().left_0().right_0().flex().justify_center().child(jump)
+        });
         div()
             .id("terminal")
             .key_context("Terminal")
             .track_focus(&self.focus)
+            .relative()
             .size_full()
             .px_1()
             .cursor(CursorStyle::IBeam)
@@ -730,6 +762,7 @@ impl Render for TerminalView {
                 canvas(move |bounds, window, cx| prepaint(&view, bounds, window, cx), move |_, layout, window, cx| paint(layout, painted, &focus, window, cx))
                     .size_full(),
             )
+            .children(bottom)
             .context_menu(move |menu, _, cx| {
                 let selected = menu_view.read_with(cx, |this, _| this.term.lock().selection.as_ref().is_some_and(|selection| !selection.is_empty()));
                 menu.action_context(menu_focus.clone())

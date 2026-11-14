@@ -47,9 +47,9 @@ impl Commander {
     }
 
     /// Shown again at most half the window high; dragged, it may be higher.
-    fn show_terminal(&mut self, window: &Window) {
+    fn show_terminal(&mut self) {
         if !self.terminal_shown {
-            self.terminal_height = self.terminal_height.min((viewport_height(window) * 0.5).max(80.));
+            self.terminal_share = self.terminal_share.min(0.5);
         }
         self.terminal_shown = true;
     }
@@ -75,7 +75,7 @@ impl Commander {
                 self.focus_later(self.focus.clone(), window, cx);
             }
             Some(focus) => {
-                self.show_terminal(window);
+                self.show_terminal();
                 self.focus_later(focus, window, cx);
             }
             None => return self.new_terminal_tab(window, cx),
@@ -112,7 +112,7 @@ impl Commander {
                 self.focus_later(view.read(cx).focus.clone(), window, cx);
                 self.terminals.push(TerminalTab { view, dir, program, _ended: ended });
                 self.terminal_tab = self.terminals.len() - 1;
-                self.show_terminal(window);
+                self.show_terminal();
             }
             Err(err) => window.push_notification(Notification::error(format!("Could not start the shell: {err}")), cx),
         }
@@ -265,7 +265,8 @@ impl Commander {
     /// The terminal under the panels, its top edge dragged for its height;
     /// its height kept for when the window grows again.
     pub(crate) fn render_terminal(&self, window: &Window, cx: &mut Context<Self>) -> Option<impl IntoElement + use<>> {
-        let most = (viewport_height(window) - PANELS_LEFT).max(80.);
+        let viewport = viewport_height(window);
+        let most = (viewport - PANELS_LEFT).max(80.);
         let tab = self.terminal_tab().filter(|_| self.terminal_shown)?;
         let edge = div()
             .id("terminal-edge")
@@ -280,12 +281,13 @@ impl Commander {
         let pane = v_flex()
             .relative()
             .flex_none()
-            .h(px(self.terminal_height.clamp(80., most)))
+            .h(px((self.terminal_share * viewport).clamp(80., most)))
             .border_1()
             .border_color(cx.theme().border)
             .on_drag_move(cx.listener(|this, event: &DragMoveEvent<TerminalDrag>, window, cx| {
-                let most = viewport_height(window) - PANELS_LEFT;
-                this.terminal_height = f32::from(event.bounds.bottom() - event.event.position.y).clamp(80., most.max(80.));
+                let viewport = viewport_height(window);
+                let height = f32::from(event.bounds.bottom() - event.event.position.y).clamp(80., (viewport - PANELS_LEFT).max(80.));
+                this.terminal_share = height / viewport;
                 cx.notify();
             }))
             .on_action(cx.listener(|this, _: &terminal::NewTerminalTab, window, cx| this.new_terminal_tab(window, cx)))

@@ -4,7 +4,7 @@
 # (SIGN_IDENTITY, else ad hoc), and target/addons/addons.json, the release's
 # list with these in it (other platforms' entries kept). `--upload` puts them
 # on the GitHub release `addons`, which Settings > Add-ons reads. Windows: in
-# Git Bash; PLATFORM=windows-aarch64 for ARM64's.
+# Git Bash; PLATFORM=windows-aarch64 for ARM64's. ONLY=rclone makes that one alone.
 set -eu
 cd "$(dirname "$0")/.."
 [ -n "${PLATFORM:-}" ] || case "$(uname -s)-$(uname -m)" in
@@ -40,7 +40,7 @@ fi
 
 # The versions the build scripts pin.
 MPV=$(sed -n 's/.*mpv-\([0-9.]*\)\.tar\.gz.*/\1/p' vendor/mpv/build.sh | head -n 1)
-RCLONE=$(sed -n 's/^TAG=v//p' vendor/rclone/build.sh)
+RCLONE=$(sed -n 's/^TAG=v//p' vendor/rclone/build.sh)-$(sed -n 's/^OURS=//p' vendor/rclone/build.sh)
 CRAFT=$(grep -oE '(wordcraft|gridcraft|deckcraft):v[0-9.]+' vendor/craft/build.sh | sed 's/:v/ /; s/^w/W/; s/^g/G/; s/^d/D/; s/craft/Craft/' | paste -sd ',' - | sed 's/,/, /g')
 
 SIGN=${SIGN_IDENTITY:--}
@@ -49,6 +49,7 @@ MADE=""
 make() {
     id=$1 version=$2 dir=$3
     shift 3
+    [ -z "${ONLY:-}" ] || [ "$ONLY" = "$id" ] || return 0
     for file in "$@"; do
         [ -e "$dir/$file" ] || { echo "$id: $dir/$file is missing, skipped (build it first)" >&2; return 0; }
     done

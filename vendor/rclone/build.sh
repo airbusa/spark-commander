@@ -6,6 +6,8 @@
 set -eu
 cd "$(dirname "$0")"
 TAG=v1.75.2
+# Ours, raised when main.go changes: the add-on is <TAG>-<OURS>, so installed ones update.
+OURS=2
 COMMIT=be8d6044eacb843b74d335db0c5fbe09222031fe
 HERE=$(pwd)
 SRC=$HERE/.build/rclone

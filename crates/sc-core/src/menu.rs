@@ -145,6 +145,8 @@ pub enum Command {
     Edit,
     EditExternally,
     ToggleMark,
+    /// Total Commander's Space: the cursor stays; a folder gets its size.
+    MarkInPlace,
     OperationQueue,
     /// Gone with the Net menu; kept so old settings files load.
     ConnectToServer,
@@ -489,6 +491,7 @@ pub const OTHER: &[Item] = &[
     cmd("Path to the command line", PathToCommandLine),
     cmd("Name to the command line", NameToCommandLine),
     cmd("Path and name to the command line", PathAndNameToCommandLine),
+    cmd("Mark / Unmark in place, a folder measured", MarkInPlace),
     cmd("Open Workspace 1", Workspace1),
     cmd("Open Workspace 2", Workspace2),
     cmd("Open Workspace 3", Workspace3),

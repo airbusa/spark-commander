@@ -588,6 +588,7 @@ impl App {
         match command {
             Command::Quit => self.quit = true,
             Command::ToggleMark => self.panel_mut().toggle_mark(),
+            Command::MarkInPlace => self.panel_mut().mark_in_place(),
             Command::SelectAll => self.panel_mut().mark_all(true),
             Command::UnselectAll => self.panel_mut().mark_all(false),
             Command::InvertSelection => self.panel_mut().invert_marks(),

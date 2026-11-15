@@ -2424,6 +2424,7 @@ impl Render for Commander {
                     Command::Delete => this.confirm_delete(true, window, cx),
                     Command::DeletePermanently => this.confirm_delete(false, window, cx),
                     Command::ToggleMark => this.mark(Panel::toggle_mark, cx),
+                    Command::MarkInPlace => this.mark_in_place(cx),
                     Command::Copy => this.transfer(ops::Kind::Copy, window, cx),
                     Command::CopyToClipboard => this.copy_files(false, window, cx),
                     Command::CutToClipboard => this.copy_files(true, window, cx),

@@ -122,6 +122,26 @@ impl Commander {
             return window.push_notification(Notification::warning(text), cx);
         }
         let folders: Vec<OsString> = panel.entries().iter().filter(|e| e.is_dir && !e.is_parent()).map(|e| e.name.clone()).collect();
+        self.measure_folders(side, folders, cx);
+    }
+
+    /// Total Commander's Space: marked or unmarked, the cursor staying; a
+    /// folder's size then counted, as Alt+Shift+Enter counts each.
+    pub(crate) fn mark_in_place(&mut self, cx: &mut Context<Self>) {
+        let side = self.active;
+        let panel = self.panels[side].tabs.current_mut();
+        let folder = panel.current_entry().filter(|e| e.is_dir && !e.is_parent()).map(|e| e.name.clone());
+        panel.mark_in_place();
+        if let Some(name) = folder.filter(|_| !panel.in_archive()) {
+            self.measure_folders(side, vec![name], cx);
+        }
+        cx.notify();
+    }
+
+    /// `folders` of `side`'s folder measured one by one in the background,
+    /// each size shown once counted; going elsewhere stops it.
+    fn measure_folders(&mut self, side: usize, folders: Vec<OsString>, cx: &mut Context<Self>) {
+        let panel = self.panels[side].tabs.current();
         let (fs, folder) = (panel.fs(), panel.folder().to_owned());
         cx.spawn(async move |this, cx| {
             for name in folders {

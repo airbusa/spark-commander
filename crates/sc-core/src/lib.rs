@@ -883,13 +883,18 @@ impl Panel {
 
     /// Insert and Space: the entry at the cursor, then the next one.
     pub fn toggle_mark(&mut self) {
+        self.mark_in_place();
+        self.move_cursor(1);
+    }
+
+    /// Marks or unmarks the cursor's, staying there.
+    pub fn mark_in_place(&mut self) {
         if let Some(entry) = self.current_entry().filter(|e| !e.is_parent()) {
             let name = entry.name.clone();
             if !self.marked.remove(&name) {
                 self.marked.insert(name);
             }
         }
-        self.move_cursor(1);
     }
 
     /// All but `..`, or none.

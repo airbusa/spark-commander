@@ -2447,6 +2447,8 @@ impl Render for Commander {
                     Command::GoHome => this.go_home(window, cx),
                     Command::Bookmarks => this.show_bookmarks(window, cx),
                     Command::QuickOpen => this.quick_open(window, cx),
+                    Command::LeftDrives => this.show_drives(0, window, cx),
+                    Command::RightDrives => this.show_drives(1, window, cx),
                     Command::BookmarkFolder => this.bookmark_folder(window, cx),
                     Command::ManageBookmarks => this.manage_bookmarks(window, cx),
                     Command::NewWorkspace => this.new_workspace(window, cx),

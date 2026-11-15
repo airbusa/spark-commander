@@ -127,15 +127,45 @@ fn platform_volumes() -> Vec<Volume> {
 
 #[cfg(windows)]
 fn platform_volumes() -> Vec<Volume> {
-    // shortcut: drive letters only, no labels or kinds; a Windows API call when there is a Windows build.
-    let letters = ('C'..='Z').map(|letter| format!("{letter}:\\"));
-    let found = letters.filter(|root| Path::new(root).exists());
-    let volumes = found.map(|root| Volume {
-        name: root.trim_end_matches('\\').to_owned(),
-        kind: if root.starts_with('C') { VolumeKind::System } else { VolumeKind::Drive },
-        path: Some(root.into()),
-        udisks: None,
-        encrypted: None,
+    use windows::Win32::NetworkManagement::WNet::WNetGetConnectionW;
+    use windows::Win32::Storage::FileSystem::{GetDriveTypeW, GetLogicalDrives, GetVolumeInformationW};
+    use windows::core::{HSTRING, PWSTR};
+    const REMOVABLE: u32 = 2;
+    const FIXED: u32 = 3;
+    const REMOTE: u32 = 4;
+    const CDROM: u32 = 5;
+    let text = |buffer: &[u16]| String::from_utf16_lossy(&buffer[..buffer.iter().position(|&c| c == 0).unwrap_or(buffer.len())]);
+    let label = |root: &str| {
+        let mut name = [0u16; 261];
+        unsafe { GetVolumeInformationW(&HSTRING::from(root), Some(&mut name), None, None, None, None) }.ok()?;
+        Some(text(&name)).filter(|name| !name.is_empty())
+    };
+    // The share it stands for, as Explorer shows it: "vmshare (\\nas)"; asked of Windows, not of the server.
+    let share = |drive: &str| {
+        let (mut unc, mut length) = ([0u16; 1024], 1024u32);
+        let found = unsafe { WNetGetConnectionW(&HSTRING::from(drive), Some(PWSTR(unc.as_mut_ptr())), &mut length) };
+        let unc = (found.0 == 0).then(|| text(&unc))?;
+        Some(match unc.rsplit_once('\\') {
+            Some((server, share)) if !server.is_empty() => format!("{share} ({server})"),
+            _ => unc,
+        })
+    };
+    let system = std::env::var("SystemDrive").unwrap_or_else(|_| "C:".into()).to_uppercase();
+    let drives = unsafe { GetLogicalDrives() };
+    // From C: on: A: and B: are floppies, slow to ask.
+    let letters = (b'C'..=b'Z').filter(|letter| drives & (1 << (letter - b'A')) != 0);
+    let volumes = letters.filter_map(|letter| {
+        let (drive, root) = (format!("{}:", letter as char), format!("{}:\\", letter as char));
+        let (kind, named) = match unsafe { GetDriveTypeW(&HSTRING::from(&root)) } {
+            REMOTE => (VolumeKind::Network, share(&drive)),
+            REMOVABLE | CDROM => (VolumeKind::Removable, label(&root)),
+            FIXED if drive == system => (VolumeKind::System, label(&root)),
+            FIXED => (VolumeKind::Drive, label(&root)),
+            _ => return None,
+        };
+        // As Explorer names them: "Windows (C:)".
+        let name = named.map_or(drive.clone(), |named| format!("{named} ({drive})"));
+        Some(Volume { name, kind, path: Some(root.into()), udisks: None, encrypted: None })
     });
     volumes.collect()
 }

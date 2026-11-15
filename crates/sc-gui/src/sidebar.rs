@@ -11,7 +11,7 @@ use gpui_kit::component::button::{Button, ButtonVariants};
 use gpui_kit::component::menu::{ContextMenuExt, PopupMenu, PopupMenuItem};
 use gpui_kit::component::notification::Notification;
 use gpui_kit::component::scroll::Scrollbar;
-use gpui_kit::component::{ActiveTheme, Icon, IconName, Sizable, StyledExt, WindowExt, h_flex, v_flex};
+use gpui_kit::component::{ActiveTheme, Icon, IconName, Side, Sizable, StyledExt, WindowExt, h_flex, v_flex};
 use gpui_kit::prelude::FluentBuilder;
 use gpui_kit::*;
 use sc_core::connections::{self, Connection, Connections};
@@ -577,13 +577,7 @@ impl Commander {
     fn render_volume(&self, ix: usize, volume: &Volume, inside: Option<&Path>, cx: &mut Context<Self>) -> impl IntoElement + use<> {
         let theme = cx.theme();
         let selected = volume.path.is_some() && volume.path.as_deref() == inside;
-        let icon = match volume.kind {
-            VolumeKind::System | VolumeKind::Drive => Icon::new(IconName::HardDrive),
-            VolumeKind::Removable => Icon::new(Lucide::Usb),
-            VolumeKind::Cloud => Icon::new(Lucide::Cloud),
-            VolumeKind::Network => Icon::new(IconName::Network),
-            VolumeKind::Phone => Icon::new(Lucide::Smartphone),
-        };
+        let icon = volume_icon(volume.kind);
         let detail = match (&volume.path, &volume.udisks) {
             (Some(_), _) => "",
             (None, None) if volume.encrypted.is_some() => "locked",
@@ -1087,6 +1081,47 @@ impl Commander {
         self.show_panel_list(list, window, cx);
     }
 
+    /// Total Commander's Alt+F1 and Alt+F2: `side`'s drives in a list over it,
+    /// the one it is on checked, then the home folder; that panel takes the keys.
+    pub(crate) fn show_drives(&mut self, side: usize, window: &mut Window, cx: &mut Context<Self>) {
+        self.active = side;
+        let panel = self.panels[side].tabs.current();
+        let here = panel.remote().is_none().then(|| panel.folder().to_owned());
+        let paths = self.sidebar.volumes.iter().filter_map(|volume| volume.path.clone());
+        // The deepest it is under: /home before /.
+        let on = paths.filter(|path| here.as_ref().is_some_and(|here| here.starts_with(path))).max_by_key(|path| path.components().count());
+        let home = std::env::home_dir();
+        let drives: Vec<(Volume, String)> = self.sidebar.volumes.iter().map(|volume| {
+            let label = match &volume.path {
+                // Windows' names have the letter already.
+                Some(path) if !(cfg!(windows) && path.parent().is_none()) => format!("{}   {}", volume.name, tilde(path, home.as_deref())),
+                _ => volume.name.clone(),
+            };
+            (volume.clone(), label)
+        }).collect();
+        let commander = cx.entity().downgrade();
+        let list = PopupMenu::build(window, cx, move |mut menu, _, _| {
+            menu = menu.check_side(Side::Right);
+            for (volume, label) in &drives {
+                let (commander, opened) = (commander.clone(), volume.clone());
+                let current = volume.path.is_some() && volume.path == on;
+                let item = PopupMenuItem::new(label.clone()).icon(volume_icon(volume.kind)).checked(current).on_click(move |_, window, cx| {
+                    let _ = commander.update(cx, |this, cx| this.open_volume(opened.clone(), window, cx));
+                });
+                menu = menu.item(item);
+            }
+            if let Some(home) = home.clone() {
+                let commander = commander.clone();
+                let item = PopupMenuItem::new("Home   ~").icon(Icon::new(IconName::Folder)).on_click(move |_, window, cx| {
+                    let _ = commander.update(cx, |this, cx| this.open_folder(home.clone(), window, cx));
+                });
+                menu = menu.separator().item(item);
+            }
+            menu
+        });
+        self.show_panel_list(list, window, cx);
+    }
+
     /// On the Connections header: a new one.
     fn new_connection_button(&self, cx: &mut Context<Self>) -> Button {
         Button::new("server-new")
@@ -1261,5 +1296,15 @@ pub(crate) fn lost_device(err: &std::io::Error) -> bool {
     {
         let _ = err;
         false
+    }
+}
+
+fn volume_icon(kind: VolumeKind) -> Icon {
+    match kind {
+        VolumeKind::System | VolumeKind::Drive => Icon::new(IconName::HardDrive),
+        VolumeKind::Removable => Icon::new(Lucide::Usb),
+        VolumeKind::Cloud => Icon::new(Lucide::Cloud),
+        VolumeKind::Network => Icon::new(IconName::Network),
+        VolumeKind::Phone => Icon::new(Lucide::Smartphone),
     }
 }

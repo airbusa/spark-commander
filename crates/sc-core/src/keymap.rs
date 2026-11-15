@@ -73,6 +73,8 @@ const fn windows(key: &'static str) -> &'static str {
 
 const SPARK_COMMANDER: Table = &[
     (QuickOpen, "secondary-shift-p", ""),
+    (LeftDrives, windows("alt-f1"), ""),
+    (RightDrives, windows("alt-f2"), ""),
     (ManageWorkspaces, "alt-w", ""),
     (Workspace1, "ctrl-alt-1", ""),
     (Workspace2, "ctrl-alt-2", ""),
@@ -174,6 +176,8 @@ const SPARK_COMMANDER: Table = &[
 
 const TOTAL_COMMANDER: Table = &[
     (QuickOpen, "ctrl-shift-p", ""),
+    (LeftDrives, "alt-f1", ""),
+    (RightDrives, "alt-f2", ""),
     (ManageWorkspaces, "alt-w", ""),
     (Workspace1, "ctrl-alt-1", ""),
     (Workspace2, "ctrl-alt-2", ""),

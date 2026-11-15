@@ -73,6 +73,9 @@ pub enum Command {
     ManageTools,
     /// One box to find commands, bookmarks, drives, connections and tools in.
     QuickOpen,
+    /// Total Commander's Alt+F1 and Alt+F2: the drives in a list over that panel.
+    LeftDrives,
+    RightDrives,
     /// Ctrl+Alt+1 to 9: that workspace opened.
     Workspace1,
     Workspace2,
@@ -332,6 +335,8 @@ pub const MENUS: &[Menu] = &[
             cmd("Folder History...", FolderHistory),
             cmd("Home", GoHome),
             cmd("Root Folder", GoToRoot),
+            cmd("Drives (Left Panel)", LeftDrives),
+            cmd("Drives (Right Panel)", RightDrives),
             SEP,
             cmd("Bookmarks", Bookmarks),
             cmd("Bookmark This Folder", BookmarkFolder),

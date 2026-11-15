@@ -18,6 +18,11 @@ packaging/macos/bundle.sh x86_64
 | `Contents/MacOS/7zz` | `vendor/7zip` |
 | `Contents/Frameworks/libpdfium.dylib` | `vendor/pdfium` |
 | `Contents/Resources/SparkCommander.icns` | the app's icon, beside this file |
+
+`cargo run -p sc-gui` runs the app through `run.sh` (cargo's runner in
+`.cargo/config.toml`): from `target/<profile>/Spark Commander.app`, its
+executable a hard link to the one built, so the Dock names it "Spark
+Commander", not "sparkcommander".
 | `Contents/Resources/licenses` | the licenses of all of them |
 
 It needs macOS 13 or later (PDFium's).

@@ -1,3 +1,7 @@
 # Windows: the C runtime is linked into the .exe, which then runs without the Visual C++ Redistributable.
 [target.'cfg(all(windows, target_env = "msvc"))']
 rustflags = ["-C", "target-feature=+crt-static"]
+
+# macOS: `cargo run` starts the app from a bundle, which the Dock names "Spark Commander".
+[target.'cfg(target_os = "macos")']
+runner = "packaging/macos/run.sh"

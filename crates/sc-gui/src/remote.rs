@@ -36,25 +36,7 @@ impl Commander {
         if address.scheme.mounted() {
             return self.mount_url(side, address.url(), window, cx);
         }
-        let (prompts, mut asked) = channel::unbounded::<(Prompt, mpsc::Sender<Reply>)>();
-        // A password the user asked to keep, once it has logged in.
-        let keep: Keep = Arc::default();
-        let kept = keep.clone();
-        let ask: Ask = Arc::new(move |prompt| {
-            let (reply, answer) = mpsc::channel();
-            match prompts.unbounded_send((prompt, reply)) {
-                Ok(()) => answer.recv().unwrap_or(Reply::Cancel),
-                Err(_) => Reply::Cancel,
-            }
-        });
-        // The questions, for as long as the connection may ask.
-        cx.spawn_in(window, async move |_, cx| {
-            while let Some((prompt, reply)) = asked.next().await {
-                let keep = keep.clone();
-                let _ = cx.update(|window, cx| ask_user(prompt, reply, keep, window, cx));
-            }
-        })
-        .detach();
+        let (ask, kept) = self.dialog_ask(window, cx);
         let server = address.host.clone();
         let text = format!("Connecting to {server}...");
         let note = Notification::info(text).id1::<Connecting>(server.clone()).autohide(false);
@@ -93,6 +75,29 @@ impl Commander {
             });
         })
         .detach();
+    }
+
+    /// Questions from a thread, answered in dialogs, for as long as it may ask;
+    /// with a password the user asked to keep, once it has logged in.
+    pub(crate) fn dialog_ask(&self, window: &mut Window, cx: &mut Context<Self>) -> (Ask, Keep) {
+        let (prompts, mut asked) = channel::unbounded::<(Prompt, mpsc::Sender<Reply>)>();
+        let keep: Keep = Arc::default();
+        let kept = keep.clone();
+        let ask: Ask = Arc::new(move |prompt| {
+            let (reply, answer) = mpsc::channel();
+            match prompts.unbounded_send((prompt, reply)) {
+                Ok(()) => answer.recv().unwrap_or(Reply::Cancel),
+                Err(_) => Reply::Cancel,
+            }
+        });
+        cx.spawn_in(window, async move |_, cx| {
+            while let Some((prompt, reply)) = asked.next().await {
+                let keep = keep.clone();
+                let _ = cx.update(|window, cx| ask_user(prompt, reply, keep, window, cx));
+            }
+        })
+        .detach();
+        (ask, kept)
     }
 
     /// The desktop mounts `url` (kio-fuse, gvfs) in the background; `side`
@@ -326,7 +331,7 @@ impl Drop for Answer {
 }
 
 /// The keyring key and password to keep after a login.
-type Keep = Arc<Mutex<Option<(String, String)>>>;
+pub(crate) type Keep = Arc<Mutex<Option<(String, String)>>>;
 
 fn ask_user(
     prompt: Prompt,

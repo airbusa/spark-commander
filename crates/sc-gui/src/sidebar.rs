@@ -506,9 +506,14 @@ impl Commander {
         let name = volume.name.clone();
         let note = Notification::info(format!("Mounting {name}...")).id1::<Mounting>(name.clone()).autohide(false);
         window.push_notification(note, cx);
-        let mount = cx.background_executor().spawn(async move { devices::mount_volume(&volume).map(|path| (volume, path)) });
+        // A thread of its own: an encrypted one waits on its passphrase.
+        let (ask, _) = self.dialog_ask(window, cx);
+        let (done, mount) = futures::channel::oneshot::channel();
+        std::thread::spawn(move || {
+            let _ = done.send(devices::mount_volume(&volume, &ask).map(|path| (volume, path)));
+        });
         cx.spawn_in(window, async move |this, cx| {
-            let mounted = mount.await;
+            let mounted = mount.await.unwrap_or_else(|_| Err(std::io::Error::other("stopped")));
             let _ = this.update_in(cx, |this, window, cx| {
                 window.remove_notification1::<Mounting>(name.clone(), cx);
                 match mounted {
@@ -519,6 +524,7 @@ impl Commander {
                         }
                         this.open_folder(path, window, cx);
                     }
+                    Err(err) if err.kind() == std::io::ErrorKind::Interrupted => {}
                     Err(err) => window.push_notification(Notification::error(format!("{name}: {err}")).autohide(false), cx),
                 }
             });
@@ -546,6 +552,10 @@ impl Commander {
                 Ok(volume) => {
                     if let Some(listed) = this.sidebar.volumes.iter_mut().find(|listed| **listed == volume) {
                         listed.path = None;
+                        // Locked again: its file system is gone.
+                        if listed.encrypted.is_some() {
+                            listed.udisks = None;
+                        }
                     }
                     cx.notify();
                 }
@@ -565,7 +575,11 @@ impl Commander {
             VolumeKind::Network => Icon::new(IconName::Network),
             VolumeKind::Phone => Icon::new(Lucide::Smartphone),
         };
-        let detail = if volume.path.is_none() { "not mounted" } else { "" };
+        let detail = match (&volume.path, &volume.udisks) {
+            (Some(_), _) => "",
+            (None, None) if volume.encrypted.is_some() => "locked",
+            (None, _) => "not mounted",
+        };
         // A disk's size and free space, under its name; not a share's, which may hang.
         let disk = matches!(volume.kind, VolumeKind::System | VolumeKind::Drive | VolumeKind::Removable);
         let space = (volume.path.as_deref().filter(|_| disk))

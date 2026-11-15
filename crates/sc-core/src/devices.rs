@@ -6,6 +6,8 @@
 use std::io;
 use std::path::{Path, PathBuf};
 
+use crate::remote::Ask;
+
 #[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord)]
 pub enum VolumeKind {
     /// macOS's start-up disk, Windows's C:.
@@ -28,6 +30,8 @@ pub struct Volume {
     pub path: Option<PathBuf>,
     /// udisks2's object, which mounts and unmounts it.
     pub udisks: Option<String>,
+    /// Encrypted (LUKS): udisks2's object of the container, unlocked by a passphrase, locked once unmounted.
+    pub encrypted: Option<String>,
 }
 
 /// What is mounted or mountable, by kind, then by name.
@@ -39,18 +43,24 @@ pub fn volumes() -> Vec<Volume> {
     volumes
 }
 
-/// Mounts a volume udisks2 knows; where it went.
-pub fn mount_volume(volume: &Volume) -> io::Result<PathBuf> {
-    match (&volume.path, &volume.udisks) {
-        (Some(path), _) => Ok(path.clone()),
-        (None, Some(object)) => udisks::mount(object),
-        (None, None) => Err(io::Error::from(io::ErrorKind::Unsupported)),
+/// Mounts a volume udisks2 knows, an encrypted one unlocked first with the
+/// passphrase `ask` gets; where it went. Blocks on the user: a thread of its own.
+pub fn mount_volume(volume: &Volume, ask: &Ask) -> io::Result<PathBuf> {
+    match (&volume.path, &volume.udisks, &volume.encrypted) {
+        (Some(path), ..) => Ok(path.clone()),
+        (None, Some(object), _) => udisks::mount(object),
+        (None, None, Some(container)) => udisks::unlock(container, &volume.name, ask),
+        (None, None, None) => Err(io::Error::from(io::ErrorKind::Unsupported)),
     }
 }
 
+/// An encrypted one is locked again after, as Dolphin does, so the disk may go.
 pub fn unmount_volume(volume: &Volume) -> io::Result<()> {
     match &volume.udisks {
-        Some(object) => udisks::unmount(object),
+        Some(object) => {
+            udisks::unmount(object)?;
+            volume.encrypted.as_deref().map_or(Ok(()), udisks::lock)
+        }
         None => Err(io::Error::other("only the system can unmount this")),
     }
 }
@@ -109,6 +119,7 @@ fn platform_volumes() -> Vec<Volume> {
             kind: if system { VolumeKind::System } else { VolumeKind::Drive },
             path: Some(path),
             udisks: None,
+            encrypted: None,
         }
     });
     volumes.collect()
@@ -124,6 +135,7 @@ fn platform_volumes() -> Vec<Volume> {
         kind: if root.starts_with('C') { VolumeKind::System } else { VolumeKind::Drive },
         path: Some(root.into()),
         udisks: None,
+        encrypted: None,
     });
     volumes.collect()
 }
@@ -136,7 +148,7 @@ fn platform_volumes() -> Vec<Volume> {
 /// The cloud apps' folders in the home folder (OneDrive, Dropbox, Box, iCloud
 /// for Windows), and macOS's: iCloud Drive and File Provider's `CloudStorage`.
 fn cloud_folders(home: &Path) -> Vec<Volume> {
-    let cloud = |name: String, path: PathBuf| Volume { name, kind: VolumeKind::Cloud, path: Some(path), udisks: None };
+    let cloud = |name: String, path: PathBuf| Volume { name, kind: VolumeKind::Cloud, path: Some(path), udisks: None, encrypted: None };
     let in_home = std::fs::read_dir(home).into_iter().flatten().flatten().filter_map(|entry| {
         let name = entry.file_name().to_string_lossy().into_owned();
         let known = name.starts_with("OneDrive") || name.starts_with("Dropbox") || ["Box", "iCloudDrive"].contains(&name.as_str());
@@ -184,6 +196,7 @@ fn network_mounts(mounts: &str, runtime: Option<&Path>) -> Vec<Volume> {
             kind: if kind == "fuse.rclone" { VolumeKind::Cloud } else { VolumeKind::Network },
             path: Some(path),
             udisks: None,
+            encrypted: None,
         })
     });
     shares.collect()
@@ -241,6 +254,7 @@ fn gvfs_mounts(dir: &Path) -> Vec<Volume> {
             },
             path: Some(entry.path()),
             udisks: None,
+            encrypted: None,
         }
     });
     volumes.collect()
@@ -257,9 +271,13 @@ mod udisks {
     use zbus::zvariant::{OwnedObjectPath, OwnedValue, Value};
 
     use super::{Volume, VolumeKind};
+    use crate::remote::{Ask, Prompt, Reply};
 
     const SERVICE: &str = "org.freedesktop.UDisks2";
+    const BLOCK: &str = "org.freedesktop.UDisks2.Block";
     const FILESYSTEM: &str = "org.freedesktop.UDisks2.Filesystem";
+    const ENCRYPTED: &str = "org.freedesktop.UDisks2.Encrypted";
+    const LOOP: &str = "org.freedesktop.UDisks2.Loop";
     type Properties = HashMap<String, OwnedValue>;
 
     fn get<T: TryFrom<OwnedValue>>(properties: Option<&Properties>, name: &str) -> Option<T> {
@@ -277,22 +295,38 @@ mod udisks {
         let manager = "org.freedesktop.DBus.ObjectManager";
         let reply = bus.call_method(Some(SERVICE), "/org/freedesktop/UDisks2", Some(manager), "GetManagedObjects", &())?;
         let objects: HashMap<OwnedObjectPath, HashMap<String, Properties>> = reply.body().deserialize()?;
+        let set = |path: OwnedObjectPath| (path.as_str() != "/").then_some(path);
         let volumes = objects.iter().filter_map(|(object, interfaces)| {
-            let block = interfaces.get("org.freedesktop.UDisks2.Block");
-            let filesystem = interfaces.get(FILESYSTEM)?;
+            let block = interfaces.get(BLOCK);
             if get(block, "HintIgnore").unwrap_or(false) {
                 return None;
             }
-            let points: Vec<Vec<u8>> = get(Some(filesystem), "MountPoints").unwrap_or_default();
+            // Locked, the container stands for it; unlocked, the file system in it.
+            let locked = interfaces.get(ENCRYPTED).is_some_and(|encrypted| get::<OwnedObjectPath>(Some(encrypted), "CleartextDevice").and_then(set).is_none());
+            let filesystem = interfaces.get(FILESYSTEM);
+            if filesystem.is_none() && !locked {
+                return None;
+            }
+            let container = get::<OwnedObjectPath>(block, "CryptoBackingDevice").and_then(set);
+            let encrypted = match locked {
+                true => Some(object.to_string()),
+                false => container.as_ref().map(|container| container.to_string()),
+            };
+            let outer = container.as_ref().and_then(|container| objects.get(container)?.get(BLOCK));
+            let points: Vec<Vec<u8>> = get(filesystem, "MountPoints").unwrap_or_default();
             let points: Vec<PathBuf> = points
                 .into_iter()
                 .map(|point| PathBuf::from(String::from_utf8_lossy(point.strip_suffix(&[0]).unwrap_or(&point)).into_owned()))
                 .collect();
-            let drive = get::<OwnedObjectPath>(block, "Drive").filter(|drive| drive.as_str() != "/");
+            // An unlocked one's disk is its container's.
+            let drive = get::<OwnedObjectPath>(outer.or(block), "Drive").and_then(set);
             let drive = drive.and_then(|drive| objects.get(&drive)?.get("org.freedesktop.UDisks2.Drive"));
-            // A loop device's image, mounted elsewhere than the media folders, is the system's (snaps).
+            // A loop device's image is the system's (snaps), unless the user set it up (an ISO) or it is in the media folders.
             let in_media = points.iter().any(|point| point.starts_with("/media") || point.starts_with("/run/media"));
-            if drive.is_none() && !in_media {
+            let image = objects.get(container.as_ref().unwrap_or(object)).and_then(|interfaces| interfaces.get(LOOP));
+            // SAFETY: getuid cannot fail.
+            let own = get::<u32>(image, "SetupByUID") == Some(unsafe { libc::getuid() });
+            if drive.is_none() && !in_media && !own {
                 return None;
             }
             let bus_name: String = get(drive, "ConnectionBus").unwrap_or_default();
@@ -301,7 +335,9 @@ mod udisks {
                 || ["usb", "sdio", "ieee1394"].contains(&bus_name.as_str());
             let label = get::<String>(block, "HintName").filter(|name| !name.is_empty());
             let label = label.or_else(|| get::<String>(block, "IdLabel").filter(|name| !name.is_empty()));
+            let label = label.or_else(|| get::<String>(outer, "IdLabel").filter(|name| !name.is_empty()));
             let size = get::<u64>(block, "Size").unwrap_or(0);
+            let unnamed = if encrypted.is_some() { "encrypted volume" } else { "volume" };
             let path = main_point(&points, label.as_deref());
             let kind = match path.as_deref() {
                 Some(path) if path == Path::new("/") => VolumeKind::System,
@@ -310,10 +346,11 @@ mod udisks {
             };
             let system = points.iter().any(|point| system_place(point));
             Some(Volume {
-                name: label.unwrap_or_else(|| format!("{:.1} GB volume", size as f64 / 1e9)),
+                name: label.unwrap_or_else(|| format!("{:.1} GB {unnamed}", size as f64 / 1e9)),
                 kind,
                 path,
-                udisks: (!system).then(|| object.to_string()),
+                udisks: (!system && !locked).then(|| object.to_string()),
+                encrypted,
             })
         });
         Ok(volumes.collect())
@@ -327,19 +364,53 @@ mod udisks {
         root.or_else(|| points.iter().find(named)).or(points.first()).cloned()
     }
 
-    fn call<R: for<'d> serde::Deserialize<'d> + zbus::zvariant::Type>(object: &str, method: &str) -> io::Result<R> {
-        let bus = Connection::system().map_err(io::Error::other)?;
-        let options: HashMap<&str, Value> = HashMap::new();
-        let reply = bus.call_method(Some(SERVICE), object, Some(FILESYSTEM), method, &(options,));
-        reply.and_then(|reply| reply.body().deserialize()).map_err(io::Error::other)
+    fn call<R>(object: &str, interface: &str, method: &str, args: &(impl serde::Serialize + zbus::zvariant::DynamicType)) -> zbus::Result<R>
+    where
+        R: for<'d> serde::Deserialize<'d> + zbus::zvariant::Type,
+    {
+        let bus = Connection::system()?;
+        bus.call_method(Some(SERVICE), object, Some(interface), method, args)?.body().deserialize()
+    }
+
+    fn options() -> HashMap<&'static str, Value<'static>> {
+        HashMap::new()
     }
 
     pub fn mount(object: &str) -> io::Result<PathBuf> {
-        call::<String>(object, "Mount").map(PathBuf::from)
+        call::<String>(object, FILESYSTEM, "Mount", &(options(),)).map(PathBuf::from).map_err(io::Error::other)
     }
 
     pub fn unmount(object: &str) -> io::Result<()> {
-        call::<()>(object, "Unmount")
+        call::<()>(object, FILESYSTEM, "Unmount", &(options(),)).map_err(io::Error::other)
+    }
+
+    pub fn lock(container: &str) -> io::Result<()> {
+        call::<()>(container, ENCRYPTED, "Lock", &(options(),)).map_err(io::Error::other)
+    }
+
+    /// Asked for its passphrase, again while it is wrong; then the file system in it mounted.
+    pub fn unlock(container: &str, name: &str, ask: &Ask) -> io::Result<PathBuf> {
+        let mut wrong = "";
+        let cleartext = loop {
+            let text = format!("{wrong}The passphrase of {name}:");
+            let Reply::Secret(passphrase) = ask(Prompt::Secret { title: "Unlock".into(), text, keyring: None }) else {
+                return Err(io::Error::new(io::ErrorKind::Interrupted, "cancelled"));
+            };
+            match call::<OwnedObjectPath>(container, ENCRYPTED, "Unlock", &(passphrase, options())) {
+                Ok(cleartext) => break cleartext,
+                Err(zbus::Error::MethodError(_, Some(message), _)) if message.to_lowercase().contains("passphrase") => wrong = "Wrong passphrase. ",
+                Err(err) => return Err(io::Error::other(err)),
+            }
+        };
+        // The file system in it is found a moment after.
+        let mut tries = 0;
+        loop {
+            match mount(cleartext.as_str()) {
+                Err(_) if tries < 20 => tries += 1,
+                mounted => return mounted,
+            }
+            std::thread::sleep(std::time::Duration::from_millis(100));
+        }
     }
 }
 
@@ -353,6 +424,14 @@ mod udisks {
     }
 
     pub fn unmount(_: &str) -> io::Result<()> {
+        Err(io::Error::from(io::ErrorKind::Unsupported))
+    }
+
+    pub fn lock(_: &str) -> io::Result<()> {
+        Err(io::Error::from(io::ErrorKind::Unsupported))
+    }
+
+    pub fn unlock(_: &str, _: &str, _: &crate::remote::Ask) -> io::Result<PathBuf> {
         Err(io::Error::from(io::ErrorKind::Unsupported))
     }
 }
@@ -578,6 +657,39 @@ mod tests {
             println!("{volume:?}");
         }
     }
+    /// Unlocks the encrypted volume named PC_LUKS_TEST with PC_LUKS_SECRET, after a wrong
+    /// passphrase, writes in it, then unmounts and locks it; run by hand with `--ignored`.
+    #[cfg(target_os = "linux")]
+    #[test]
+    #[ignore]
+    fn unlocks_an_encrypted_volume() {
+        use crate::remote::{Prompt, Reply};
+        use std::sync::{Arc, Mutex};
+        let (Ok(name), Ok(secret)) = (std::env::var("PC_LUKS_TEST"), std::env::var("PC_LUKS_SECRET")) else {
+            return;
+        };
+        let locked = volumes().into_iter().find(|volume| volume.name == name).expect("listed");
+        assert!(locked.encrypted.is_some() && locked.path.is_none() && locked.udisks.is_none(), "{locked:?}");
+        // Unlocked, it has the name of the file system in it.
+        let find = || volumes().into_iter().find(|volume| volume.encrypted == locked.encrypted).expect("listed");
+        let asked = Arc::new(Mutex::new(Vec::new()));
+        let heard = asked.clone();
+        let ask: Ask = Arc::new(move |prompt| {
+            let Prompt::Secret { text, .. } = prompt else { return Reply::Cancel };
+            let mut heard = heard.lock().unwrap();
+            heard.push(text);
+            Reply::Secret(if heard.len() == 1 { "wrong".into() } else { secret.clone() })
+        });
+        let path = mount_volume(&locked, &ask).unwrap();
+        assert!(asked.lock().unwrap()[1].starts_with("Wrong passphrase."), "{asked:?}");
+        std::fs::write(path.join("written"), "in it").unwrap();
+        let unlocked = find();
+        assert_eq!(unlocked.path.as_deref(), Some(path.as_path()), "{unlocked:?}");
+        unmount_volume(&unlocked).unwrap();
+        let again = find();
+        assert!(again.udisks.is_none() && again.path.is_none(), "locked again: {again:?}");
+    }
+
     #[cfg(target_os = "linux")]
     #[test]
     fn a_volume_opens_its_main_mount() {

@@ -57,6 +57,7 @@ pub mod tags;
 pub mod text_edit;
 pub mod text_find;
 pub mod split;
+pub mod sync_dirs;
 pub mod theme;
 pub mod vfs;
 pub mod viewer;
@@ -1713,7 +1714,7 @@ pub fn load_selection(path: &Path) -> io::Result<Vec<OsString>> {
 }
 
 /// Unsorted, `..` first but in the root.
-fn read_dir(path: &Path) -> io::Result<Vec<Entry>> {
+pub(crate) fn read_dir(path: &Path) -> io::Result<Vec<Entry>> {
     let mut entries: Vec<Entry> = fs::read_dir(path)?
         // Skip unreadable entries, not the whole folder.
         .filter_map(Result::ok)

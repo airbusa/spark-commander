@@ -40,6 +40,7 @@ mod rename_dialog;
 mod search_window;
 mod settings_dialog;
 mod sidebar;
+mod sync_window;
 #[cfg(debug_assertions)]
 mod style_preview;
 mod terminal;
@@ -273,6 +274,7 @@ fn main() {
         .detach();
         viewer::bind_keys(cx);
         search_window::bind_keys(cx);
+        sync_window::bind_keys(cx);
         editor::bind_keys(cx);
         terminal::bind_keys(cx);
         addons::init(cx);
@@ -2341,6 +2343,7 @@ impl Render for Commander {
                     Command::CompareByContent => this.compare_files(window, cx),
                     Command::Search => this.find_files(false, window, cx),
                     Command::SearchInSeparateProcess => this.find_files(true, window, cx),
+                    Command::SynchronizeDirs => this.synchronize_dirs(window, cx),
                     Command::AssociateWith => this.associate_with(window, cx),
                     Command::InternalAssociations => this.internal_associations(window, cx),
                     Command::CombineFiles => this.combine_files(window, cx),

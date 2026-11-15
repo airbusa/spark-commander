@@ -366,9 +366,9 @@ struct Installed(Option<u64>);
 impl Global for Installed {}
 
 /// macOS: the active window's menus on the system's menu bar, between the
-/// application menu and Window. Each window calls this as it renders.
+/// application menu and Window, Help last. Each window calls this as it renders.
 #[cfg(target_os = "macos")]
-pub fn show(window: &Window, menus: Vec<Menu>, cx: &mut App) {
+pub fn show(window: &Window, mut menus: Vec<Menu>, cx: &mut App) {
     use std::hash::{DefaultHasher, Hash, Hasher};
     fn hash_items(items: &[MenuItem], state: &mut DefaultHasher) {
         for item in items {
@@ -418,7 +418,9 @@ pub fn show(window: &Window, menus: Vec<Menu>, cx: &mut App) {
         MenuItem::action("Minimize", MinimizeWindow),
         MenuItem::action("Zoom", ZoomWindow),
     ]);
-    cx.set_menus(std::iter::once(app).chain(menus).chain([windows]));
+    // Help stays last, as in Mac apps.
+    let help = menus.iter().position(|menu| menu.name == "Help").map(|ix| menus.remove(ix));
+    cx.set_menus(std::iter::once(app).chain(menus).chain([windows]).chain(help));
 }
 
 /// `checked` puts a check mark on a command; `closed` lists the recently closed tabs.

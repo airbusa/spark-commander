@@ -507,10 +507,18 @@ impl Commander {
         let note = Notification::info(format!("Mounting {name}...")).id1::<Mounting>(name.clone()).autohide(false);
         window.push_notification(note, cx);
         // A thread of its own: an encrypted one waits on its passphrase.
-        let (ask, _) = self.dialog_ask(window, cx);
+        let (ask, kept) = self.dialog_ask(window, cx);
         let (done, mount) = futures::channel::oneshot::channel();
         std::thread::spawn(move || {
-            let _ = done.send(devices::mount_volume(&volume, &ask).map(|path| (volume, path)));
+            let mounted = devices::mount_volume(&volume, &ask);
+            // The passphrase asked to be kept, once it opened it.
+            if mounted.is_ok()
+                && let Some((key, passphrase)) = kept.lock().unwrap().take()
+            {
+                // shortcut: a keyring that cannot keep it means asking again next time.
+                let _ = sc_core::secrets::remember(&key, &passphrase);
+            }
+            let _ = done.send(mounted.map(|path| (volume, path)));
         });
         cx.spawn_in(window, async move |this, cx| {
             let mounted = mount.await.unwrap_or_else(|_| Err(std::io::Error::other("stopped")));

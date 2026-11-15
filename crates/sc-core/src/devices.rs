@@ -388,13 +388,27 @@ mod udisks {
         call::<()>(container, ENCRYPTED, "Lock", &(options(),)).map_err(io::Error::other)
     }
 
-    /// Asked for its passphrase, again while it is wrong; then the file system in it mounted.
+    /// The keyring's key for a container's passphrase: its UUID, the same on any port.
+    fn keyring_key(container: &str) -> Option<String> {
+        let reply = Connection::system().ok()?.call_method(Some(SERVICE), container, Some("org.freedesktop.DBus.Properties"), "Get", &(BLOCK, "IdUUID")).ok()?;
+        let uuid: String = reply.body().deserialize::<OwnedValue>().ok()?.try_into().ok()?;
+        (!uuid.is_empty()).then(|| format!("luks://{uuid}"))
+    }
+
+    /// The keyring's passphrase, else asked for (and offered to be kept), again
+    /// while it is wrong; then the file system in it mounted.
     pub fn unlock(container: &str, name: &str, ask: &Ask) -> io::Result<PathBuf> {
+        let key = keyring_key(container);
+        let mut kept = key.as_deref().and_then(crate::secrets::password);
         let mut wrong = "";
         let cleartext = loop {
             let text = format!("{wrong}The passphrase of {name}:");
-            let Reply::Secret(passphrase) = ask(Prompt::Secret { title: "Unlock".into(), text, keyring: None }) else {
-                return Err(io::Error::new(io::ErrorKind::Interrupted, "cancelled"));
+            let passphrase = match kept.take() {
+                Some(passphrase) => passphrase,
+                None => match ask(Prompt::Secret { title: "Unlock".into(), text, keyring: key.clone() }) {
+                    Reply::Secret(passphrase) => passphrase,
+                    _ => return Err(io::Error::new(io::ErrorKind::Interrupted, "cancelled")),
+                },
             };
             match call::<OwnedObjectPath>(container, ENCRYPTED, "Unlock", &(passphrase, options())) {
                 Ok(cleartext) => break cleartext,

@@ -193,7 +193,7 @@ impl App {
             foreground: None,
             searches: None,
             saved: Vec::new(),
-            sync_browsing: false,
+            sync_browsing: session.sync_browsing,
             picker: None,
             done: mpsc::channel(),
             quit: false,
@@ -277,7 +277,7 @@ impl App {
         let open = self.open_tabs();
         let current = self.workspaces.current;
         self.workspaces.list[current].open = open.clone();
-        let session = Session { open, ..Session::default() };
+        let session = Session { open, sync_browsing: self.sync_browsing, ..Session::default() };
         if let Err(err) = session.save_to(session::TERMINAL).and_then(|()| self.workspaces.save_to(session::WORKSPACES_TERMINAL)) {
             eprintln!("Could not save the open tabs: {err}");
         }
@@ -942,6 +942,8 @@ mod tests {
         app.navigate(|panel| panel.go_to_folder(root.join("a/only")));
         assert_eq!(other(&app), root.join("b"));
         assert!(!app.sync_browsing, "off where the other panel cannot follow");
+        let saved = Session { sync_browsing: true, ..Session::default() };
+        assert!(App::new(Settings::default(), &saved, std::iter::empty()).sync_browsing, "on again after a restart");
         std::fs::remove_dir_all(&root).unwrap();
     }
 

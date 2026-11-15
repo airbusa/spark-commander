@@ -582,7 +582,8 @@ impl Commander {
         let sidebar = sidebar::Sidebar::new(session.sidebar, session.sidebar_width, settings.show_hidden, opacity, blur);
         let terminal_look = (sc_core::theme::backdrop_tint(settings.terminal_opacity.0), settings.terminal_blur.0);
         menus::set_last_filter(&settings.last_filter);
-        menus::set(settings.appearance, &|command| sidebar.shows(command), cx);
+        let synced = session.sync_browsing;
+        menus::set(settings.appearance, &|command| sidebar.shows(command) || (command == Command::SyncBrowsing && synced), cx);
         let appearance = cx.observe_window_appearance(window, |this, window, cx| {
             if this.settings.appearance == Appearance::System {
                 this.colors = appearance::apply(&palette(&this.settings, window), cx);
@@ -681,7 +682,7 @@ impl Commander {
             thumbnails: views::Thumbnails::default(),
             app_icons: app_icons::AppIcons::default(),
             vertical: session.vertical,
-            sync_browsing: false,
+            sync_browsing: session.sync_browsing,
             bounds: window.window_bounds(),
             parked: workspaces.list.iter().map(|_| None).collect(),
             workspaces,
@@ -1442,6 +1443,7 @@ impl Commander {
             sidebar_width: self.sidebar.width,
             vertical: self.vertical,
             terminal_share: self.terminal_share,
+            sync_browsing: self.sync_browsing,
             window: Some(window_place(self.bounds)),
         }
     }

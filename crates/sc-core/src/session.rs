@@ -25,6 +25,8 @@ pub struct Session {
     pub terminal_share: f32,
     /// The main window's place and size; none before the first run.
     pub window: Option<WindowPlace>,
+    /// Synchronized browsing was on.
+    pub sync_browsing: bool,
 }
 
 /// Where the main window was, in logical pixels; maximized, its size before.

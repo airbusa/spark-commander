@@ -1985,6 +1985,8 @@ impl Commander {
                     .on_action(cx.listener(|this, _: &CancelPathEdit, window, cx| {
                         this.cancel_path_edit(window, cx)
                     }))
+                    // The field passes its Enter on: the panel's would open what the cursor is on too.
+                    .on_action(|_: &gpui_kit::component::input::Enter, _, _| {})
                     // Not the panel's: a click in the field would focus the panel and end the edit.
                     .on_mouse_down(MouseButton::Left, |_, _, cx| cx.stop_propagation())
                     // Input::h sizes only multi-line boxes.

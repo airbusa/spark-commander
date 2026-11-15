@@ -221,6 +221,8 @@ impl Commander {
                     .ml(px(-4.))
                     .key_context("RenameInPlace")
                     .on_action(cx.listener(|this, _: &CancelRename, window, cx| this.finish_rename(false, window, cx)))
+                    // The field passes its Enter on: the panel's would open the file too.
+                    .on_action(|_: &gpui_kit::component::input::Enter, _, _| {})
                     // Not the row's: a click here neither moves the cursor nor ends the edit.
                     .on_mouse_down(MouseButton::Left, |_, _, cx| cx.stop_propagation())
                     .child(Input::new(&renaming.input).xsmall().text_sm()),

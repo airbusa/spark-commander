@@ -1082,7 +1082,8 @@ impl Commander {
     }
 
     /// Total Commander's Alt+F1 and Alt+F2: `side`'s drives in a list over it,
-    /// the one it is on checked, then the home folder; that panel takes the keys.
+    /// the one it is on checked; that panel takes the keys. This computer's
+    /// disks only: no cloud folder, share or phone.
     pub(crate) fn show_drives(&mut self, side: usize, window: &mut Window, cx: &mut Context<Self>) {
         self.active = side;
         let panel = self.panels[side].tabs.current();
@@ -1091,7 +1092,8 @@ impl Commander {
         // The deepest it is under: /home before /.
         let on = paths.filter(|path| here.as_ref().is_some_and(|here| here.starts_with(path))).max_by_key(|path| path.components().count());
         let home = std::env::home_dir();
-        let drives: Vec<(Volume, String)> = self.sidebar.volumes.iter().map(|volume| {
+        let local = self.sidebar.volumes.iter().filter(|volume| matches!(volume.kind, VolumeKind::System | VolumeKind::Drive | VolumeKind::Removable));
+        let drives: Vec<(Volume, String)> = local.map(|volume| {
             let label = match &volume.path {
                 // Windows' names have the letter already.
                 Some(path) if !(cfg!(windows) && path.parent().is_none()) => format!("{}   {}", volume.name, tilde(path, home.as_deref())),
@@ -1118,13 +1120,6 @@ impl Commander {
                     let _ = commander.update(cx, |this, cx| this.open_volume(opened.clone(), window, cx));
                 });
                 menu = menu.item(item);
-            }
-            if let Some(home) = home.clone() {
-                let commander = commander.clone();
-                let item = PopupMenuItem::new("Home   ~").icon(Icon::new(IconName::Folder)).on_click(move |_, window, cx| {
-                    let _ = commander.update(cx, |this, cx| this.open_folder(home.clone(), window, cx));
-                });
-                menu = menu.separator().item(item);
             }
             menu
         });

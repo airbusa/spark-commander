@@ -1031,6 +1031,22 @@ impl PopupMenu {
         }
     }
 
+    /// The highlighted item, as the arrow keys leave it.
+    pub fn highlighted(&self) -> Option<usize> {
+        self.selected_index
+    }
+
+    /// Highlights item `ix`, as the arrow keys do.
+    pub fn highlight(&mut self, ix: usize, cx: &mut Context<Self>) {
+        self.set_selected_index(ix, cx);
+    }
+
+    /// Chooses item `ix`, as Enter does.
+    pub fn pick(&mut self, ix: usize, window: &mut Window, cx: &mut Context<Self>) {
+        self.selected_index = Some(ix);
+        self.confirm(&Confirm { secondary: false }, window, cx);
+    }
+
     fn select_up(&mut self, _: &SelectUp, _: &mut Window, cx: &mut Context<Self>) {
         cx.stop_propagation();
         let ix = self.selected_index.unwrap_or(0);

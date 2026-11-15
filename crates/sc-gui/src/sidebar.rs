@@ -1099,6 +1099,15 @@ impl Commander {
             };
             (volume.clone(), label)
         }).collect();
+        // Windows' drive letter opens it; elsewhere the name's first letter highlights it.
+        let letters: Vec<(char, usize, bool)> = drives.iter().enumerate().filter_map(|(ix, (volume, _))| {
+            let root = volume.path.as_ref().filter(|path| cfg!(windows) && path.parent().is_none());
+            let letter = match root {
+                Some(path) => path.to_string_lossy().chars().next(),
+                None => volume.name.chars().find(|c| c.is_alphanumeric()),
+            }?;
+            Some((letter.to_ascii_lowercase(), ix, root.is_some()))
+        }).collect();
         let commander = cx.entity().downgrade();
         let list = PopupMenu::build(window, cx, move |mut menu, _, _| {
             menu = menu.check_side(Side::Right);
@@ -1120,6 +1129,7 @@ impl Commander {
             menu
         });
         self.show_panel_list(list, window, cx);
+        self.panel_letters = letters;
     }
 
     /// On the Connections header: a new one.

@@ -495,6 +495,9 @@ struct Commander {
     colors: PanelColors,
     /// Show list of all tabs: the side and its popup.
     panel_list: Option<(usize, Entity<PopupMenu>, Subscription)>,
+    /// Its items a letter reaches: the letter, the item, and whether typing it
+    /// opens it (Windows' drive letters, as Total Commander's) or highlights it.
+    panel_letters: Vec<(char, usize, bool)>,
     /// The command line's last lines, the latest first, and their list when shown.
     commands: Vec<String>,
     command_list: Option<(Entity<PopupMenu>, Subscription)>,
@@ -676,6 +679,7 @@ impl Commander {
             settings,
             colors,
             panel_list: None,
+            panel_letters: Vec::new(),
             commands: session.commands.clone(),
             command_list: None,
             path_edit: None,
@@ -1591,6 +1595,36 @@ impl Commander {
         self.show_panel_list(list, window, cx);
     }
 
+    /// A letter typed in a list over a panel: the next item of that letter
+    /// highlighted, round to the first; a Windows drive letter opens the drive.
+    fn panel_list_key(&mut self, event: &KeyDownEvent, window: &mut Window, cx: &mut Context<Self>) {
+        let keystroke = &event.keystroke;
+        let held = keystroke.modifiers;
+        if held.control || held.alt || held.platform || held.function {
+            return;
+        }
+        let mut chars = keystroke.key_char.as_deref().unwrap_or_default().chars();
+        let (Some(typed), None) = (chars.next(), chars.next()) else {
+            return;
+        };
+        let typed = typed.to_ascii_lowercase();
+        let found: Vec<(usize, bool)> = self.panel_letters.iter().filter(|(letter, ..)| *letter == typed).map(|&(_, ix, opens)| (ix, opens)).collect();
+        let Some((_, list, _)) = self.panel_list.as_ref().filter(|_| !found.is_empty()) else {
+            return;
+        };
+        cx.stop_propagation();
+        let after = list.read(cx).highlighted();
+        let (ix, opens) = found.iter().find(|(ix, _)| Some(*ix) > after).unwrap_or(&found[0]).to_owned();
+        // After this update: opening goes back to the Commander.
+        let list = list.clone();
+        window.defer(cx, move |window, cx| {
+            list.update(cx, |menu, cx| match opens {
+                true => menu.pick(ix, window, cx),
+                false => menu.highlight(ix, cx),
+            })
+        });
+    }
+
     /// A list over the active panel: its tabs, its history.
     pub(crate) fn show_panel_list(&mut self, list: Entity<PopupMenu>, window: &mut Window, cx: &mut Context<Self>) {
         let dismissed = cx.subscribe_in(&list, window, |this, _, _: &DismissEvent, window, cx| {
@@ -1600,6 +1634,7 @@ impl Commander {
         });
         list.read(cx).focus_handle(cx).focus(window, cx);
         self.panel_list = Some((self.active, list, dismissed));
+        self.panel_letters.clear();
         cx.notify();
     }
 
@@ -2043,14 +2078,16 @@ impl Commander {
             .on_drop(cx.listener(move |this, paths: &ExternalPaths, window, cx| {
                 this.drop_paths(paths, ix, None, window, cx)
             }))
+            .children(tab_bar)
+            // Under the tabs, as Total Commander's drive list: an overlay alone
+            // starts at the panel's top, so a box of no height holds its place.
             .when_some(panel_list, |el, (_, list, _)| {
-                el.child(deferred(
+                el.child(div().h_0().child(deferred(
                     anchored()
                         .snap_to_window_with_margin(px(8.))
-                        .child(div().occlude().child(list.clone())),
-                ))
+                        .child(div().occlude().on_key_down(cx.listener(Self::panel_list_key)).child(list.clone())),
+                )))
             })
-            .children(tab_bar)
             .child(match editing {
                 Some(input) => div()
                     .key_context("PathEdit")

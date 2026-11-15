@@ -266,7 +266,7 @@ mod udisks {
         T::try_from(properties?.get(name)?.try_clone().ok()?).ok()
     }
 
-    /// The system's own places hold its file systems: those are not listed.
+    /// The system's own places: what is mounted there is not unmounted from here.
     fn system_place(path: &Path) -> bool {
         let places = ["/boot", "/home", "/var", "/usr", "/opt", "/srv", "/swap", "/nix", "/gnu"];
         path == Path::new("/") || places.iter().any(|place| path.starts_with(place))
@@ -288,9 +288,6 @@ mod udisks {
                 .into_iter()
                 .map(|point| PathBuf::from(String::from_utf8_lossy(point.strip_suffix(&[0]).unwrap_or(&point)).into_owned()))
                 .collect();
-            if points.iter().any(|point| system_place(point)) {
-                return None;
-            }
             let drive = get::<OwnedObjectPath>(block, "Drive").filter(|drive| drive.as_str() != "/");
             let drive = drive.and_then(|drive| objects.get(&drive)?.get("org.freedesktop.UDisks2.Drive"));
             // A loop device's image, mounted elsewhere than the media folders, is the system's (snaps).
@@ -305,14 +302,29 @@ mod udisks {
             let label = get::<String>(block, "HintName").filter(|name| !name.is_empty());
             let label = label.or_else(|| get::<String>(block, "IdLabel").filter(|name| !name.is_empty()));
             let size = get::<u64>(block, "Size").unwrap_or(0);
+            let path = main_point(&points, label.as_deref());
+            let kind = match path.as_deref() {
+                Some(path) if path == Path::new("/") => VolumeKind::System,
+                _ if removable => VolumeKind::Removable,
+                _ => VolumeKind::Drive,
+            };
+            let system = points.iter().any(|point| system_place(point));
             Some(Volume {
                 name: label.unwrap_or_else(|| format!("{:.1} GB volume", size as f64 / 1e9)),
-                kind: if removable { VolumeKind::Removable } else { VolumeKind::Drive },
-                path: points.into_iter().next(),
-                udisks: Some(object.to_string()),
+                kind,
+                path,
+                udisks: (!system).then(|| object.to_string()),
             })
         });
         Ok(volumes.collect())
+    }
+
+    /// Of a file system's mounts (btrfs subvolumes): the system's root, else
+    /// the one named as the volume, else the first, as Dolphin opens.
+    pub(super) fn main_point(points: &[PathBuf], label: Option<&str>) -> Option<PathBuf> {
+        let named = |point: &&PathBuf| label.is_some_and(|label| point.file_name().is_some_and(|name| name.eq_ignore_ascii_case(label)));
+        let root = points.iter().find(|point| *point == Path::new("/"));
+        root.or_else(|| points.iter().find(named)).or(points.first()).cloned()
     }
 
     fn call<R: for<'d> serde::Deserialize<'d> + zbus::zvariant::Type>(object: &str, method: &str) -> io::Result<R> {
@@ -566,6 +578,16 @@ mod tests {
             println!("{volume:?}");
         }
     }
+    #[cfg(target_os = "linux")]
+    #[test]
+    fn a_volume_opens_its_main_mount() {
+        let points = |list: &[&str]| list.iter().map(std::path::PathBuf::from).collect::<Vec<_>>();
+        let main = |list: &[&str], label| super::udisks::main_point(&points(list), label).unwrap();
+        assert_eq!(main(&["/swap", "/var/lib/libvirt/qemu/save", "/var/lib/libvirt/vmfast"], Some("VMFast")), std::path::Path::new("/var/lib/libvirt/vmfast"));
+        assert_eq!(main(&["/mnt/btr_pool", "/home", "/"], Some("fedora")), std::path::Path::new("/"));
+        assert_eq!(main(&["/mnt/a", "/mnt/b"], None), std::path::Path::new("/mnt/a"));
+    }
+
     #[test]
     fn internal_storage_comes_first() {
         let folder = |path: &str| (std::path::PathBuf::from(path), String::new());

@@ -72,6 +72,16 @@ const fn windows(key: &'static str) -> &'static str {
 }
 
 const SPARK_COMMANDER: Table = &[
+    (ManageWorkspaces, "alt-w", ""),
+    (Workspace1, "ctrl-alt-1", ""),
+    (Workspace2, "ctrl-alt-2", ""),
+    (Workspace3, "ctrl-alt-3", ""),
+    (Workspace4, "ctrl-alt-4", ""),
+    (Workspace5, "ctrl-alt-5", ""),
+    (Workspace6, "ctrl-alt-6", ""),
+    (Workspace7, "ctrl-alt-7", ""),
+    (Workspace8, "ctrl-alt-8", ""),
+    (Workspace9, "ctrl-alt-9", ""),
     (Undo, "secondary-z", ""),
     (Redo, "secondary-shift-z", ""),
     (View, "f3", ""),
@@ -162,6 +172,16 @@ const SPARK_COMMANDER: Table = &[
 ];
 
 const TOTAL_COMMANDER: Table = &[
+    (ManageWorkspaces, "alt-w", ""),
+    (Workspace1, "ctrl-alt-1", ""),
+    (Workspace2, "ctrl-alt-2", ""),
+    (Workspace3, "ctrl-alt-3", ""),
+    (Workspace4, "ctrl-alt-4", ""),
+    (Workspace5, "ctrl-alt-5", ""),
+    (Workspace6, "ctrl-alt-6", ""),
+    (Workspace7, "ctrl-alt-7", ""),
+    (Workspace8, "ctrl-alt-8", ""),
+    (Workspace9, "ctrl-alt-9", ""),
     (Undo, "ctrl-z", ""),
     (Redo, "ctrl-shift-z", ""),
     (View, "f3", ""),
@@ -242,6 +262,16 @@ const TOTAL_COMMANDER: Table = &[
 /// Krusader's own defaults (its kractions, listpanelactions, viewactions
 /// and tabactions) and KDE's standard keys.
 const KRUSADER: Table = &[
+    (ManageWorkspaces, "alt-w", ""),
+    (Workspace1, "ctrl-alt-1", ""),
+    (Workspace2, "ctrl-alt-2", ""),
+    (Workspace3, "ctrl-alt-3", ""),
+    (Workspace4, "ctrl-alt-4", ""),
+    (Workspace5, "ctrl-alt-5", ""),
+    (Workspace6, "ctrl-alt-6", ""),
+    (Workspace7, "ctrl-alt-7", ""),
+    (Workspace8, "ctrl-alt-8", ""),
+    (Workspace9, "ctrl-alt-9", ""),
     (Undo, "ctrl-z", ""),
     (Redo, "ctrl-shift-z", ""),
     (View, "f3", ""),
@@ -303,6 +333,16 @@ const KRUSADER: Table = &[
 
 /// mc.default.keymap's file manager keys; `ctrl-x` starts its chords.
 const MIDNIGHT_COMMANDER: Table = &[
+    (ManageWorkspaces, "alt-w", ""),
+    (Workspace1, "ctrl-alt-1", ""),
+    (Workspace2, "ctrl-alt-2", ""),
+    (Workspace3, "ctrl-alt-3", ""),
+    (Workspace4, "ctrl-alt-4", ""),
+    (Workspace5, "ctrl-alt-5", ""),
+    (Workspace6, "ctrl-alt-6", ""),
+    (Workspace7, "ctrl-alt-7", ""),
+    (Workspace8, "ctrl-alt-8", ""),
+    (Workspace9, "ctrl-alt-9", ""),
     (View, "f3", ""),
     (Edit, "f4", ""),
     (Copy, "f5", ""),
@@ -332,6 +372,16 @@ const MIDNIGHT_COMMANDER: Table = &[
 
 /// ForkLift 4's menus and macOS's own keys.
 const FORKLIFT: Table = &[
+    (ManageWorkspaces, "alt-w", ""),
+    (Workspace1, "ctrl-alt-1", ""),
+    (Workspace2, "ctrl-alt-2", ""),
+    (Workspace3, "ctrl-alt-3", ""),
+    (Workspace4, "ctrl-alt-4", ""),
+    (Workspace5, "ctrl-alt-5", ""),
+    (Workspace6, "ctrl-alt-6", ""),
+    (Workspace7, "ctrl-alt-7", ""),
+    (Workspace8, "ctrl-alt-8", ""),
+    (Workspace9, "ctrl-alt-9", ""),
     (Undo, "secondary-z", ""),
     (Redo, "secondary-shift-z", ""),
     (View, "f3", "space"),

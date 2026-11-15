@@ -69,6 +69,16 @@ pub enum Command {
     DuplicateWorkspace,
     /// Workspaces to make, copy, rename and delete.
     ManageWorkspaces,
+    /// Ctrl+Alt+1 to 9: that workspace opened.
+    Workspace1,
+    Workspace2,
+    Workspace3,
+    Workspace4,
+    Workspace5,
+    Workspace6,
+    Workspace7,
+    Workspace8,
+    Workspace9,
     GoBack,
     GoForward,
     /// Alt+Down: the tab's last places, to pick one.
@@ -467,7 +477,24 @@ pub const OTHER: &[Item] = &[
     cmd("Path to the command line", PathToCommandLine),
     cmd("Name to the command line", NameToCommandLine),
     cmd("Path and name to the command line", PathAndNameToCommandLine),
+    cmd("Open Workspace 1", Workspace1),
+    cmd("Open Workspace 2", Workspace2),
+    cmd("Open Workspace 3", Workspace3),
+    cmd("Open Workspace 4", Workspace4),
+    cmd("Open Workspace 5", Workspace5),
+    cmd("Open Workspace 6", Workspace6),
+    cmd("Open Workspace 7", Workspace7),
+    cmd("Open Workspace 8", Workspace8),
+    cmd("Open Workspace 9", Workspace9),
 ];
+
+impl Command {
+    /// Workspace1 to 9: which workspace, from 0.
+    pub fn workspace(self) -> Option<usize> {
+        const ALL: [Command; 9] = [Workspace1, Workspace2, Workspace3, Workspace4, Workspace5, Workspace6, Workspace7, Workspace8, Workspace9];
+        ALL.iter().position(|command| *command == self)
+    }
+}
 
 /// Names for where the menu gives no context.
 const FULL_NAMES: &[(Command, &str)] = &[

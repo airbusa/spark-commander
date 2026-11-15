@@ -20,6 +20,7 @@ use sc_core::origin::{self, Upload};
 use sc_core::remote::{self, Address, Ask, Prompt, Reply};
 use sc_core::mounts::{self, Login};
 use sc_core::secrets;
+use sc_core::session::TabState;
 
 use crate::Commander;
 
@@ -98,6 +99,63 @@ impl Commander {
         })
         .detach();
         (ask, kept)
+    }
+
+    /// `side`'s saved server tabs, the home folder's for now, connected again in
+    /// the background, each back in its place unless it went elsewhere meanwhile.
+    /// shortcut: each tab connects (and may ask) on its own; share one connection per server if several tabs of one are common.
+    pub(crate) fn reconnect_tabs(&mut self, side: usize, tabs: Vec<(usize, TabState)>, window: &mut Window, cx: &mut Context<Self>) {
+        for (tab, state) in tabs {
+            let Some(address) = state.url.as_deref().and_then(Address::parse) else {
+                continue;
+            };
+            let Some(placeholder) = self.panels[side].tabs.panels().get(tab).cloned() else {
+                continue;
+            };
+            let (ask, kept) = self.dialog_ask(window, cx);
+            let (switches, server, home) = (self.switches, address.host.clone(), placeholder.location());
+            let note = Notification::info(format!("Connecting to {server}...")).id1::<Connecting>(server.clone()).autohide(false);
+            window.push_notification(note, cx);
+            let (done, connected) = oneshot::channel();
+            std::thread::spawn(move || {
+                let went = remote::connect(&address, ask).and_then(|(remote, start)| {
+                    let mut panel = placeholder;
+                    // Where it was, else where the server starts.
+                    if panel.go_remote(remote.clone(), state.path.clone()).is_err() {
+                        panel.go_remote(remote, start)?;
+                    }
+                    panel.apply(&state);
+                    Ok(panel)
+                });
+                if went.is_ok()
+                    && let Some((key, password)) = kept.lock().unwrap().take()
+                {
+                    let _ = secrets::remember(&key, &password);
+                }
+                let _ = done.send(went);
+            });
+            cx.spawn_in(window, async move |this, cx| {
+                let went = connected.await.unwrap_or_else(|_| Err(std::io::Error::other("stopped")));
+                let _ = this.update_in(cx, |this, window, cx| {
+                    window.remove_notification1::<Connecting>(server.clone(), cx);
+                    if this.switches != switches {
+                        return;
+                    }
+                    match went {
+                        Ok(panel) => {
+                            let tabs = &mut this.panels[side].tabs;
+                            if tabs.panels().get(tab).is_some_and(|now| now.location() == home) {
+                                tabs.put(tab, panel);
+                                cx.notify();
+                            }
+                        }
+                        Err(err) if err.kind() == std::io::ErrorKind::Interrupted => {}
+                        Err(err) => window.push_notification(Notification::error(format!("{server}: {err}")).autohide(false), cx),
+                    }
+                });
+            })
+            .detach();
+        }
     }
 
     /// The desktop mounts `url` (kio-fuse, gvfs) in the background; `side`

@@ -1,4 +1,4 @@
-//! Go > Workspaces: named sets of both panels' tabs and the terminal's. What
+//! Show > Workspaces: named sets of both panels' tabs and the terminal's. What
 //! changes goes into the open one; there is nothing to save. There is always one.
 
 use std::mem;
@@ -91,17 +91,22 @@ impl Commander {
         self.open_workspace(at, window, cx);
     }
 
-    /// Go > Workspaces > one: the open tabs and shells put aside as they are,
+    /// Show > Workspaces > one: the open tabs and shells put aside as they are,
     /// its own back as they were left, or as saved.
     pub(crate) fn open_workspace(&mut self, ix: usize, window: &mut Window, cx: &mut Context<Self>) {
         if ix >= self.workspaces.list.len() || self.workspaces.current == ix {
             return;
         }
         let fresh = self.parked[ix].is_none();
+        let mut servers = [Vec::new(), Vec::new()];
         let next = self.parked[ix].take().unwrap_or_else(|| {
             let saved = &self.workspaces.list[ix].open;
             Parked {
-                tabs: [0, 1].map(|side| restore_side(saved.sides.get(side), self.settings.filter())),
+                tabs: [0, 1].map(|side| {
+                    let (tabs, found) = restore_side(saved.sides.get(side), self.settings.filter());
+                    servers[side] = found;
+                    tabs
+                }),
                 active: saved.active,
                 terminals: Vec::new(),
                 terminal_tab: 0,
@@ -131,6 +136,9 @@ impl Commander {
             let saved = &self.workspaces.list[ix].open;
             let (terminals, tab, shown) = (saved.terminals.clone(), saved.terminal_tab, saved.terminal);
             self.open_terminals(&terminals, tab, shown, window, cx);
+            for (side, found) in servers.into_iter().enumerate() {
+                self.reconnect_tabs(side, found, window, cx);
+            }
         } else {
             // The left workspace's shell may have had the keys.
             cx.defer_in(window, |this, window, cx| window.focus(&this.focus, cx));
@@ -302,7 +310,7 @@ impl Render for WorkspacesDialog {
             .w_full()
             .gap_2()
             .text_sm()
-            .child(div().text_color(muted).child("Go > Workspaces opens one. What changes in the open one is kept in it."))
+            .child(div().text_color(muted).child("Show > Workspaces opens one. What changes in the open one is kept in it."))
             .child(list)
             .child(buttons)
     }

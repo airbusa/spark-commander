@@ -17,7 +17,7 @@ use std::time::{Duration, Instant};
 use sc_core::keymap;
 use sc_core::menu::Command;
 use sc_core::origin::{self, Upload};
-use sc_core::session::{self, Session};
+use sc_core::session::{self, OpenTabs, Session, Workspaces};
 use sc_core::settings::Settings;
 use sc_core::viewer::Searches;
 use sc_core::{Panel, Sort, SortKey, Tabs, archive, command, edit};
@@ -30,7 +30,7 @@ use ratatui::crossterm::execute;
 use ratatui::crossterm::terminal::{Clear, ClearType, SetTitle};
 use ratatui_image::picker::Picker;
 
-use crate::dialog::{Answer, Form};
+use crate::dialog::{Answer, Choice, Chooser, Form};
 use crate::input::Input;
 use crate::ui::Places;
 use crate::viewer::Viewer;
@@ -54,6 +54,12 @@ pub enum Purpose {
     Find,
     /// Select (true) or Unselect Group.
     Group(bool),
+    /// The name taken when none is typed.
+    NewWorkspace(String),
+    /// A copy of this one, and the name taken when none is typed.
+    DuplicateWorkspace(usize, String),
+    RenameWorkspace(usize),
+    DeleteWorkspace(usize),
 }
 
 /// Programs that take the terminal over until they end; the loop runs them.
@@ -73,6 +79,10 @@ pub struct App {
     pub places: Places,
     pub viewer: Option<Viewer>,
     pub form: Option<(Form, Purpose)>,
+    /// Alt+W's list of the workspaces.
+    pub chooser: Option<Chooser>,
+    /// Named sets of both sides' tabs, scmd's own; the open one is the tabs shown.
+    workspaces: Workspaces,
     /// Keys as the terminal names them; Cmd never reaches it, so `secondary` is Ctrl.
     bindings: HashMap<String, Command>,
     /// For double clicks: when, and on which side's row.
@@ -112,6 +122,10 @@ fn main() -> io::Result<()> {
         &session,
         std::env::args_os().skip(1).map(PathBuf::from),
     );
+    app.workspaces = Workspaces::load_from(session::WORKSPACES_TERMINAL).unwrap_or_else(|err| {
+        problems.push(format!("Could not read the workspaces: {err}"));
+        Workspaces::default()
+    });
     if !problems.is_empty() {
         app.say(problems.join("\n"), true);
     }
@@ -172,6 +186,8 @@ impl App {
             places: Places::default(),
             viewer: None,
             form: None,
+            chooser: None,
+            workspaces: Workspaces::default(),
             bindings,
             clicked: None,
             foreground: None,
@@ -248,16 +264,125 @@ impl App {
             .get_or_insert_with(|| Searches::load().unwrap_or_default())
     }
 
-    fn save_session(&self) {
-        let open = session::OpenTabs {
+    fn open_tabs(&self) -> OpenTabs {
+        OpenTabs {
             sides: self.sides.iter().map(|side| side.tabs.state()).collect(),
             active: self.active,
             ..Default::default()
-        };
+        }
+    }
+
+    /// The tabs, and the open workspace's with them.
+    fn save_session(&mut self) {
+        let open = self.open_tabs();
+        let current = self.workspaces.current;
+        self.workspaces.list[current].open = open.clone();
         let session = Session { open, ..Session::default() };
-        if let Err(err) = session.save_to(session::TERMINAL) {
+        if let Err(err) = session.save_to(session::TERMINAL).and_then(|()| self.workspaces.save_to(session::WORKSPACES_TERMINAL)) {
             eprintln!("Could not save the open tabs: {err}");
         }
+    }
+
+    /// Alt+W: the workspaces, the open one checked and chosen.
+    fn choose_workspace(&mut self) {
+        let items = self.workspaces.list.iter().map(|workspace| workspace.name.clone()).collect();
+        let current = self.workspaces.current;
+        let at = self.chooser.as_ref().map_or(current, |chooser| chooser.at);
+        self.chooser = Some(Chooser { title: "Workspaces".into(), items, at, checked: current });
+    }
+
+    fn chose(&mut self, choice: Choice) {
+        let name = |this: &Self, ix: usize| this.workspaces.list.get(ix).map(|workspace| workspace.name.clone()).unwrap_or_default();
+        let ask = |title: &str, value: &str, purpose| (Form::new(title).text("Name:", value, Vec::new()), purpose);
+        // The field cannot select a name to type over: empty, it takes the one its label gives.
+        let unnamed = |title: &str, name: String, purpose| (Form::new(title).text(&format!("Name (empty: {name}):"), "", Vec::new()), purpose);
+        match choice {
+            Choice::Open => {}
+            Choice::Cancel => self.chooser = None,
+            Choice::Pick(ix) => {
+                self.chooser = None;
+                self.open_workspace(ix);
+                self.save_session();
+            }
+            Choice::New => {
+                let free = (1..).map(|n| format!("Workspace {n}")).find(|name| self.workspaces.name_error(name, None).is_none()).unwrap_or_default();
+                self.form = Some(unnamed("New Workspace", free.clone(), Purpose::NewWorkspace(free)));
+            }
+            Choice::Duplicate(ix) => {
+                let free = self.workspaces.free_name(&format!("{} copy", name(self, ix)));
+                self.form = Some(unnamed("Duplicate Workspace", free.clone(), Purpose::DuplicateWorkspace(ix, free)));
+            }
+            Choice::Rename(ix) => self.form = Some(ask("Rename Workspace", &name(self, ix), Purpose::RenameWorkspace(ix))),
+            Choice::Delete(_) if self.workspaces.list.len() < 2 => self.say("The last workspace stays.", true),
+            Choice::Delete(ix) => {
+                let title = format!("Delete \"{}\"? Its tabs are forgotten.", name(self, ix));
+                self.form = Some((Form::new(title), Purpose::DeleteWorkspace(ix)));
+            }
+        }
+    }
+
+    fn workspace_answered(&mut self, purpose: Purpose, form: &Form) {
+        let given = match &purpose {
+            Purpose::NewWorkspace(name) | Purpose::DuplicateWorkspace(_, name) if form.value(0).trim().is_empty() => name.clone(),
+            _ => form.value(0).trim().to_owned(),
+        };
+        let typed = || given.clone();
+        let named = |this: &mut Self, ix: Option<usize>| match this.workspaces.name_error(&typed(), ix) {
+            Some(why) => {
+                this.say(why, true);
+                false
+            }
+            None => true,
+        };
+        match purpose {
+            Purpose::NewWorkspace(_) if named(self, None) => {
+                let at = self.workspaces.list.len();
+                self.workspaces.insert(at, &typed(), OpenTabs::default());
+                self.open_workspace(at);
+            }
+            Purpose::DuplicateWorkspace(ix, _) if named(self, None) => {
+                let open = match ix == self.workspaces.current {
+                    true => self.open_tabs(),
+                    false => self.workspaces.list[ix].open.clone(),
+                };
+                self.workspaces.insert(ix + 1, &typed(), open);
+                self.open_workspace(ix + 1);
+            }
+            Purpose::RenameWorkspace(ix) if named(self, Some(ix)) => self.workspaces.list[ix].name = typed(),
+            Purpose::DeleteWorkspace(ix) => {
+                if ix == self.workspaces.current {
+                    self.open_workspace(self.workspaces.neighbour(ix));
+                }
+                self.workspaces.remove(ix);
+            }
+            _ => {}
+        }
+        self.save_session();
+        if self.chooser.is_some() {
+            self.choose_workspace();
+        }
+    }
+
+    /// Workspace `ix`'s tabs shown, this one's kept in it; saved by the caller.
+    fn open_workspace(&mut self, ix: usize) {
+        if ix >= self.workspaces.list.len() || ix == self.workspaces.current {
+            return;
+        }
+        let current = self.workspaces.current;
+        self.workspaces.list[current].open = self.open_tabs();
+        self.workspaces.current = ix;
+        let open = self.workspaces.list[ix].open.clone();
+        let filter = self.settings.filter();
+        let home = std::env::home_dir().unwrap_or_else(|| "/".into());
+        let fallback = || Panel::new(&home, filter).or_else(|_| Panel::new("/", filter)).expect("list the home folder or /");
+        for (side, state) in self.sides.iter_mut().zip([open.sides.first(), open.sides.get(1)]) {
+            side.tabs = match state {
+                Some(state) => Tabs::restore(state, filter, fallback),
+                None => Tabs::new(fallback()),
+            };
+            side.top = 0;
+        }
+        self.active = open.active.min(1);
     }
 
     fn say(&mut self, text: impl Into<String>, error: bool) {
@@ -321,9 +446,16 @@ impl App {
                 match purpose {
                     Purpose::Find => self.find_answered(&form),
                     Purpose::Group(mark) => self.panel_mut().mark_group(form.value(0), mark),
+                    workspace => self.workspace_answered(workspace, &form),
                 }
+            } else if answer == Answer::Cancel && self.chooser.is_some() {
+                self.choose_workspace();
             }
             return;
+        }
+        if let Some(chooser) = self.chooser.as_mut() {
+            let choice = chooser.key(&key);
+            return self.chose(choice);
         }
         if self.viewer.is_some() {
             return self.viewer_key(key);
@@ -542,6 +674,13 @@ impl App {
             | Command::CutToClipboard
             | Command::PasteFromClipboard => self.not_yet("File operations"),
             Command::ConnectToServer | Command::Disconnect => self.not_yet("Servers"),
+            Command::ManageWorkspaces => self.choose_workspace(),
+            Command::NewWorkspace => self.chose(Choice::New),
+            Command::DuplicateWorkspace => self.chose(Choice::Duplicate(self.workspaces.current)),
+            command if command.workspace().is_some() => {
+                self.open_workspace(command.workspace().unwrap_or(0));
+                self.save_session();
+            }
             _ => self.not_yet("This command"),
         }
     }
@@ -709,6 +848,27 @@ mod tests {
     use super::*;
     use ratatui::Terminal;
     use ratatui::backend::TestBackend;
+
+    #[test]
+    fn workspaces_keep_their_tabs_and_the_list_shows_them() {
+        let root = std::env::temp_dir().join(format!("sc-tui-workspaces-{}", std::process::id()));
+        std::fs::create_dir_all(root.join("a")).unwrap();
+        std::fs::create_dir_all(root.join("b")).unwrap();
+        let folders = [root.join("a"), root.join("b")].into_iter();
+        let mut app = App::new(Settings::default(), &Session::default(), folders);
+        app.workspaces.insert(1, "Site", OpenTabs::default());
+        app.open_workspace(1);
+        assert_ne!(app.sides[0].tabs.current().folder(), root.join("a"), "a new one: home");
+        app.open_workspace(0);
+        assert_eq!(app.sides[0].tabs.current().folder(), root.join("a"), "its own tabs back");
+        assert_eq!(app.sides[1].tabs.current().folder(), root.join("b"));
+        app.choose_workspace();
+        let mut terminal = Terminal::new(TestBackend::new(100, 20)).unwrap();
+        terminal.draw(|frame| ui::draw(frame, &mut app)).unwrap();
+        let screen: String = terminal.backend().buffer().content().iter().map(|cell| cell.symbol()).collect();
+        assert!(screen.contains("1 ✓ Default") && screen.contains("2   Site"), "{screen}");
+        std::fs::remove_dir_all(&root).unwrap();
+    }
 
     #[test]
     fn draws_both_panels() {

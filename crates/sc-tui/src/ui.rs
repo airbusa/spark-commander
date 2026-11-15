@@ -50,6 +50,9 @@ pub fn draw(frame: &mut Frame, app: &mut App) {
         Some(viewer) => crate::viewer::draw(frame, viewer),
         None => draw_panels(frame, app),
     }
+    if let Some(chooser) = &app.chooser {
+        chooser.draw(frame);
+    }
     if let Some((form, _)) = &app.form {
         form.draw(frame);
     }

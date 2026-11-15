@@ -65,10 +65,11 @@ impl Form {
         self
     }
 
+    /// A line's text; none for a box or a question without fields.
     pub fn value(&self, ix: usize) -> &str {
-        match &self.fields[ix] {
-            Field::Text { input, .. } => input.text(),
-            Field::Check { .. } => "",
+        match self.fields.get(ix) {
+            Some(Field::Text { input, .. }) => input.text(),
+            _ => "",
         }
     }
 
@@ -79,6 +80,14 @@ impl Form {
     /// Tab and Shift+Tab go round the fields; Up and Down too, but in a
     /// line with history, which they bring back.
     pub fn key(&mut self, key: &KeyEvent) -> Answer {
+        // Only a question: Enter or Esc.
+        if self.fields.is_empty() {
+            return match key.code {
+                KeyCode::Esc => Answer::Cancel,
+                KeyCode::Enter => Answer::Ok,
+                _ => Answer::Open,
+            };
+        }
         let count = self.fields.len();
         let step = |focus: usize, by: usize| (focus + by) % count;
         match (&mut self.fields[self.focus], key.code) {
@@ -179,6 +188,75 @@ impl Form {
         if let Some(cursor) = cursor {
             frame.set_cursor_position(cursor);
         }
+    }
+}
+
+/// A list to pick from, its keys under it: scmd's workspaces.
+pub struct Chooser {
+    pub title: String,
+    pub items: Vec<String>,
+    pub at: usize,
+    /// The open one, checked.
+    pub checked: usize,
+}
+
+pub enum Choice {
+    Open,
+    Pick(usize),
+    New,
+    Duplicate(usize),
+    Rename(usize),
+    Delete(usize),
+    Cancel,
+}
+
+impl Chooser {
+    pub fn key(&mut self, key: &KeyEvent) -> Choice {
+        let last = self.items.len().saturating_sub(1);
+        match key.code {
+            KeyCode::Esc => Choice::Cancel,
+            KeyCode::Enter => Choice::Pick(self.at),
+            KeyCode::Char(digit @ '1'..='9') if (digit as usize - '1' as usize) <= last => Choice::Pick(digit as usize - '1' as usize),
+            KeyCode::Up => {
+                self.at = self.at.saturating_sub(1);
+                Choice::Open
+            }
+            KeyCode::Down => {
+                self.at = (self.at + 1).min(last);
+                Choice::Open
+            }
+            KeyCode::F(7) | KeyCode::Insert => Choice::New,
+            KeyCode::F(5) => Choice::Duplicate(self.at),
+            KeyCode::F(2) => Choice::Rename(self.at),
+            KeyCode::F(8) | KeyCode::Delete => Choice::Delete(self.at),
+            _ => Choice::Open,
+        }
+    }
+
+    pub fn draw(&self, frame: &mut Frame) {
+        let area = frame.area();
+        let keys = "Enter Open  F7 New  F5 Copy  F2 Rename  F8 Delete";
+        let width = (keys.width() as u16 + 4).min(area.width.saturating_sub(2)).max(20);
+        let height = (self.items.len() as u16 + 4).min(area.height);
+        let at = Rect::new(
+            area.x + area.width.saturating_sub(width) / 2,
+            area.y + area.height.saturating_sub(height) / 2,
+            width.min(area.width),
+            height,
+        );
+        frame.render_widget(Clear, at);
+        let block = Block::bordered().title(format!(" {} ", self.title)).style(DIALOG).padding(Padding::horizontal(1));
+        let inner = block.inner(at);
+        frame.render_widget(block, at);
+        let room = inner.width as usize;
+        let buf = frame.buffer_mut();
+        for (ix, item) in self.items.iter().enumerate().take(inner.height.saturating_sub(2) as usize) {
+            let mark = if ix == self.checked { "✓" } else { " " };
+            let number = if ix < 9 { format!("{}", ix + 1) } else { " ".into() };
+            let style = if ix == self.at { BAR } else { DIALOG };
+            buf.set_string(inner.x, inner.y + ix as u16, fit(&format!("{number} {mark} {item}"), room), style);
+        }
+        buf.set_string(inner.x, inner.bottom().saturating_sub(1), fit(keys, room), DIALOG);
     }
 }
 

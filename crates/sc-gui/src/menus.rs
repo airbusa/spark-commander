@@ -36,7 +36,7 @@ pub struct GoToHistory(pub usize);
 #[action(namespace = sc, no_json)]
 pub struct ReopenTab(pub usize);
 
-/// Go > Workspaces: one, by its place in the list.
+/// Show > Workspaces: one, by its place in the list.
 #[derive(Action, Clone, PartialEq)]
 #[action(namespace = sc, no_json)]
 pub struct OpenWorkspace(pub usize);
@@ -63,10 +63,16 @@ pub fn bind(keys: &KeySettings, before: Option<&KeySettings>, cx: &mut App) {
     // The terminal takes every other key, and keeps its own (Ctrl+Shift+T opens a tab there);
     // the terminal's key hides it there, the tab keys go round its tabs.
     let targets = |command: Command, key: &str| {
-        let mut targets: Vec<(&str, Box<dyn Action>)> = vec![(crate::CONTEXT, Box::new(Run(command)))];
+        // Workspace 1 to 9 open it wherever the keys are, their keys shown in Show > Workspaces.
+        let own: Box<dyn Action> = match command.workspace() {
+            Some(ix) => Box::new(OpenWorkspace(ix)),
+            None => Box::new(Run(command)),
+        };
+        let mut targets: Vec<(&str, Box<dyn Action>)> = vec![(crate::CONTEXT, own)];
         let terminal: Option<Box<dyn Action>> = match command {
             _ if crate::terminal::own_key(key) => None,
             Command::TerminalPanel => Some(Box::new(Run(command))),
+            _ if command.workspace().is_some() => command.workspace().map(|ix| Box::new(OpenWorkspace(ix)) as Box<dyn Action>),
             Command::NextTab => Some(Box::new(crate::terminal::NextTerminalTab)),
             Command::PreviousTab => Some(Box::new(crate::terminal::PreviousTerminalTab)),
             _ => None,
@@ -230,7 +236,7 @@ pub fn place_label(place: &str) -> String {
     format!("{name}   {path}")
 }
 
-/// Go > Workspaces' names, and which is open.
+/// Show > Workspaces' names, and which is open.
 static WORKSPACES: std::sync::Mutex<(Vec<String>, usize)> = std::sync::Mutex::new((Vec::new(), 0));
 
 /// Call `set` after.

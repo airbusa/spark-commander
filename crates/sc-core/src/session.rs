@@ -89,6 +89,8 @@ pub struct TerminalState {
 pub const WINDOW: &str = "session.json";
 pub const TERMINAL: &str = "session-terminal.json";
 pub const WORKSPACES: &str = "workspaces.json";
+/// scmd's own, as its tabs are.
+pub const WORKSPACES_TERMINAL: &str = "workspaces-terminal.json";
 
 impl Session {
     pub fn load() -> io::Result<Self> {
@@ -108,7 +110,7 @@ impl Session {
     }
 }
 
-/// Go > Workspaces: named sets of open tabs; changes go to the open one.
+/// Show > Workspaces: named sets of open tabs; changes go to the open one.
 /// There is always one.
 #[derive(Serialize, Deserialize)]
 #[serde(default)]
@@ -138,7 +140,11 @@ pub struct Workspace {
 
 impl Workspaces {
     pub fn load() -> io::Result<Self> {
-        let mut workspaces: Self = settings::read_json(WORKSPACES)?;
+        Self::load_from(WORKSPACES)
+    }
+
+    pub fn load_from(file: &str) -> io::Result<Self> {
+        let mut workspaces: Self = settings::read_json(file)?;
         if workspaces.list.is_empty() {
             workspaces = Self::default();
         }
@@ -153,7 +159,16 @@ impl Workspaces {
     }
 
     pub fn save(&self) -> io::Result<()> {
-        settings::write_json(WORKSPACES, self)
+        self.save_to(WORKSPACES)
+    }
+
+    pub fn save_to(&self, file: &str) -> io::Result<()> {
+        settings::write_json(file, self)
+    }
+
+    /// Where the next is when `ix` goes.
+    pub fn neighbour(&self, ix: usize) -> usize {
+        if ix + 1 < self.list.len() { ix + 1 } else { ix.saturating_sub(1) }
     }
 
     /// Why `name` cannot be workspace `ix`'s (none: a new one's).

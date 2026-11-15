@@ -487,14 +487,19 @@ impl Panel {
                 .find_map(|dir| Self::new(dir, filter).ok())
                 .ok_or(err)
         })?;
-        panel.locked = state.locked;
-        panel.name = state.name.clone();
-        panel.view = state.view;
-        panel.history = state.history.clone();
-        if state.sort != panel.sort {
-            panel.set_sort(state.sort);
-        }
+        panel.apply(state);
         Ok(panel)
+    }
+
+    /// A saved tab's own choices: locked, its name, view, sort and history.
+    pub fn apply(&mut self, state: &TabState) {
+        self.locked = state.locked;
+        self.name = state.name.clone();
+        self.view = state.view;
+        self.history = state.history.clone();
+        if state.sort != self.sort {
+            self.set_sort(state.sort);
+        }
     }
 
     pub fn state(&self) -> TabState {
@@ -1471,20 +1476,33 @@ impl Tabs {
     }
 
     /// Tabs that cannot be opened any more are left out; with none, `fallback`.
-    pub fn restore(state: &SideState, filter: Filter, fallback: impl FnOnce() -> Panel) -> Self {
-        let mut panels: Vec<Panel> = state
-            .tabs
-            .iter()
-            .filter_map(|tab| Panel::restore(tab, filter).ok())
-            .collect();
+    pub fn restore(state: &SideState, filter: Filter, fallback: impl Fn() -> Panel) -> Self {
+        Self::restore_servers(state, filter, fallback).0
+    }
+
+    /// As `restore`, but a server's tab is `fallback`'s for now, kept in its
+    /// place: those are given, by where they are, to connect again.
+    pub fn restore_servers(state: &SideState, filter: Filter, fallback: impl Fn() -> Panel) -> (Self, Vec<(usize, TabState)>) {
+        let (mut panels, mut servers) = (Vec::new(), Vec::new());
+        for tab in &state.tabs {
+            match Panel::restore(tab, filter) {
+                Ok(panel) => panels.push(panel),
+                Err(_) if tab.url.is_some() => {
+                    servers.push((panels.len(), tab.clone()));
+                    panels.push(fallback());
+                }
+                Err(_) => {}
+            }
+        }
         if panels.is_empty() {
             panels.push(fallback());
         }
-        Self {
+        let tabs = Self {
             active: state.active.min(panels.len() - 1),
             panels,
             closed: Vec::new(),
-        }
+        };
+        (tabs, servers)
     }
 
     pub fn state(&self) -> SideState {
@@ -1559,6 +1577,13 @@ impl Tabs {
 
     /// A move made on a copy of tab `ix` elsewhere, as for a server: the
     /// tab takes it, or a locked one gets a new tab beside it.
+    /// Tab `ix` becomes `panel`, as it is: a server's tab connected again.
+    pub fn put(&mut self, ix: usize, panel: Panel) {
+        if let Some(slot) = self.panels.get_mut(ix) {
+            *slot = panel;
+        }
+    }
+
     pub fn navigated(&mut self, ix: usize, mut moved: Panel) {
         let Some(panel) = self.panels.get(ix) else {
             return;

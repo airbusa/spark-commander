@@ -588,12 +588,13 @@ impl Commander {
                 this.colors = appearance::apply(&palette(&this.settings, window), cx);
             }
         });
-        let side = |ix: usize| Side {
-            tabs: restore_side(session.open.sides.get(ix), settings.filter()),
-            scroll: UniformListScrollHandle::new(),
-            brief: ScrollHandle::new(),
-            area: Rc::default(),
+        let mut servers = [Vec::new(), Vec::new()];
+        let mut side = |ix: usize| {
+            let (tabs, found) = restore_side(session.open.sides.get(ix), settings.filter());
+            servers[ix] = found;
+            Side { tabs, scroll: UniformListScrollHandle::new(), brief: ScrollHandle::new(), area: Rc::default() }
         };
+        let panels = [side(0), side(1)];
         // Closing the window drops this view before the app quits, so both save.
         let quit = cx.on_app_quit(|this, _| {
             this.save_session();
@@ -632,6 +633,9 @@ impl Commander {
         let (shown, terminals, terminal_tab) = (session.open.terminal, session.open.terminals.clone(), session.open.terminal_tab);
         cx.defer_in(window, move |this, window, cx| {
             this.set_backdrop(window, cx);
+            for (side, found) in servers.into_iter().enumerate() {
+                this.reconnect_tabs(side, found, window, cx);
+            }
             // Saved before its tabs were: a shell, the panels keeping the keys after the terminal takes them.
             if shown && terminals.is_empty() {
                 this.toggle_terminal(window, cx);
@@ -641,7 +645,7 @@ impl Commander {
             }
         });
         Self {
-            panels: [side(0), side(1)],
+            panels,
             active: session.open.active.min(1),
             // Name 0: it filled the panel once.
             columns: match session.columns[..] {
@@ -2669,14 +2673,16 @@ fn window_place(bounds: WindowBounds) -> WindowPlace {
 }
 
 /// A side's tabs as saved; without them, the home folder's (or /).
-fn restore_side(state: Option<&SideState>, filter: sc_core::Filter) -> Tabs {
+/// A side's saved tabs; a server's is the home folder's until it is connected
+/// again: those, by where they are.
+fn restore_side(state: Option<&SideState>, filter: sc_core::Filter) -> (Tabs, Vec<(usize, sc_core::session::TabState)>) {
     let fallback = || {
         let home = std::env::home_dir().unwrap_or_else(|| "/".into());
         Panel::new(&home, filter).or_else(|_| Panel::new("/", filter)).expect("list the home folder or /")
     };
     match state {
-        Some(state) => Tabs::restore(state, filter, fallback),
-        None => Tabs::new(fallback()),
+        Some(state) => Tabs::restore_servers(state, filter, fallback),
+        None => (Tabs::new(fallback()), Vec::new()),
     }
 }
 

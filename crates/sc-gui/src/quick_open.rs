@@ -1,12 +1,13 @@
 //! Quick Open: one box to find a bookmark, a recent folder, a drive, a
-//! connection, a workspace, a tool or any command in, and go there or run it.
+//! connection, a workspace, a tool or any command in, and go there or run it;
+//! or a path or a server's address typed, as in the path bar.
 
 use std::path::PathBuf;
 use std::rc::Rc;
 
 use gpui_kit::assets::IconName as Lucide;
 use gpui_kit::component::command::{Command as Palette, CommandGroup, CommandItem, CommandState};
-use gpui_kit::component::{Icon, WindowExt};
+use gpui_kit::component::{Icon, IndexPath, WindowExt};
 use gpui_kit::*;
 use sc_core::devices::Volume;
 use sc_core::menu::{self, Command};
@@ -21,6 +22,8 @@ enum Pick {
     Folder(PathBuf),
     Volume(Volume),
     Server(Address),
+    /// Typed: a path or an address, as the path bar takes it.
+    Location(String),
     /// Sent where the panels' keys go.
     Action(Box<dyn Action>),
 }
@@ -31,6 +34,7 @@ impl Clone for Pick {
             Pick::Folder(path) => Pick::Folder(path.clone()),
             Pick::Volume(volume) => Pick::Volume(volume.clone()),
             Pick::Server(address) => Pick::Server(address.clone()),
+            Pick::Location(typed) => Pick::Location(typed.clone()),
             Pick::Action(action) => Pick::Action(action.boxed_clone()),
         }
     }
@@ -43,6 +47,15 @@ struct QuickOpen {
     picks: Rc<Vec<Vec<Pick>>>,
     commander: WeakEntity<Commander>,
     focused: bool,
+    /// The query, when it reads as a path or an address: a row of its own.
+    typed: Option<String>,
+}
+
+/// `/…`, `~…`, `\\server`, `C:` or `scheme://…`.
+fn location(query: &str) -> Option<String> {
+    let query = query.trim();
+    let drive = cfg!(windows) && query.len() >= 2 && query.as_bytes()[1] == b':' && query.as_bytes()[0].is_ascii_alphabetic();
+    (query.starts_with(['/', '~', '\\']) || query.contains("://") || drive).then(|| query.to_owned())
 }
 
 impl Render for QuickOpen {
@@ -52,14 +65,27 @@ impl Render for QuickOpen {
             let state = self.state.clone();
             window.defer(cx, move |window, cx| state.update(cx, |state, cx| state.focus(window, cx)));
         }
-        let (picks, commander) = (self.picks.clone(), self.commander.clone());
+        // Read here, the palette having filtered with the row as it was: highlight it again.
+        let typed = location(&self.state.read(cx).query(cx));
+        if typed.is_some() && typed != self.typed {
+            let state = self.state.clone();
+            window.defer(cx, move |window, cx| state.update(cx, |state, cx| state.set_selected_index(Some(IndexPath::new(0)), window, cx)));
+        }
+        self.typed = typed;
+        let (picks, commander, typed) = (self.picks.clone(), self.commander.clone(), self.typed.clone());
         let panels = commander.upgrade().map(|commander| commander.read(cx).focus.clone());
         let palette = Palette::new(&self.state)
             .bordered(false)
             .max_h(px(440.))
-            .placeholder("A command, bookmark, folder, drive, connection, workspace or tool")
+            .placeholder("A command, bookmark, folder, path, server, drive, workspace or tool")
             .on_confirm(move |at, window, cx| {
-                let Some(pick) = picks.get(at.section).and_then(|rows| rows.get(at.row)).cloned() else {
+                // The typed row, when there is one, comes first.
+                let pick = match (&typed, at.section) {
+                    (Some(typed), 0) => Some(Pick::Location(typed.clone())),
+                    (Some(_), section) => picks.get(section - 1).and_then(|rows| rows.get(at.row)).cloned(),
+                    (None, section) => picks.get(section).and_then(|rows| rows.get(at.row)).cloned(),
+                };
+                let Some(pick) = pick else {
                     return;
                 };
                 window.close_dialog(cx);
@@ -69,7 +95,12 @@ impl Render for QuickOpen {
             Some(panels) => palette.action_context(panels),
             None => palette,
         };
-        self.groups.iter().cloned().fold(palette, Palette::group)
+        // Its label holds the query, so the palette's filter keeps it.
+        let go = self.typed.as_ref().map(|typed| {
+            let item = CommandItem::new().label(format!("Go to {typed}")).icon(Icon::new(Lucide::FolderOpen));
+            CommandGroup::new().label("Path").items([item])
+        });
+        go.into_iter().chain(self.groups.iter().cloned()).fold(palette, Palette::group)
     }
 }
 
@@ -146,7 +177,7 @@ impl Commander {
 
         let state = cx.new(|cx| CommandState::new(window, cx));
         let commander = cx.entity().downgrade();
-        let view = cx.new(|_| QuickOpen { state, groups, picks: Rc::new(picks), commander, focused: false });
+        let view = cx.new(|_| QuickOpen { state, groups, picks: Rc::new(picks), commander, focused: false, typed: None });
         window.open_dialog(cx, move |dialog, _, _| dialog.title("Quick Open").width(px(640.)).child(view.clone()));
     }
 
@@ -156,7 +187,21 @@ impl Commander {
             Pick::Folder(path) => self.open_folder(path, window, cx),
             Pick::Volume(volume) => self.open_volume(volume, window, cx),
             Pick::Server(address) => self.connect(self.active, address, window, cx),
+            Pick::Location(typed) => {
+                self.open_location(self.active, &typed, window, cx);
+            }
             Pick::Action(action) => window.dispatch_action(action, cx),
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn reads_paths_and_addresses_only() {
+        assert_eq!(super::location(" ~/Temp ").as_deref(), Some("~/Temp"));
+        assert_eq!(super::location("sftp://mediaserver").as_deref(), Some("sftp://mediaserver"));
+        assert_eq!(super::location("/etc").as_deref(), Some("/etc"));
+        assert_eq!(super::location("new folder"), None);
     }
 }

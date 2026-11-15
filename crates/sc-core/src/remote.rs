@@ -25,11 +25,42 @@ pub enum Scheme {
     Nfs,
     /// Amazon's object storage and those speaking it, through rclone (`cloud`).
     S3,
+    /// Backblaze's own, by key ID and application key, through rclone.
+    B2,
+    /// OpenStack Swift: Rackspace Cloud Files, by user and API key, through rclone.
+    Swift,
 }
 
 impl Scheme {
-    pub const ALL: [Scheme; 8] =
-        [Scheme::Sftp, Scheme::Ftp, Scheme::Ftps, Scheme::Smb, Scheme::Webdav, Scheme::Webdavs, Scheme::Nfs, Scheme::S3];
+    /// Ours, the desktop's, then online storage.
+    pub const ALL: [Scheme; 10] = [
+        Scheme::Sftp,
+        Scheme::Ftp,
+        Scheme::Ftps,
+        Scheme::Smb,
+        Scheme::Webdav,
+        Scheme::Webdavs,
+        Scheme::Nfs,
+        Scheme::S3,
+        Scheme::B2,
+        Scheme::Swift,
+    ];
+
+    /// As the Protocol list and the sidebar show it.
+    pub fn label(self) -> &'static str {
+        match self {
+            Scheme::Sftp => "SFTP",
+            Scheme::Ftp => "FTP",
+            Scheme::Ftps => "FTPS",
+            Scheme::Smb => "SMB",
+            Scheme::Webdav => "WebDAV",
+            Scheme::Webdavs => "WebDAVS",
+            Scheme::Nfs => "NFS",
+            Scheme::S3 => "S3",
+            Scheme::B2 => "Backblaze B2",
+            Scheme::Swift => "Rackspace Cloud Files",
+        }
+    }
 
     pub fn name(self) -> &'static str {
         match self {
@@ -41,6 +72,8 @@ impl Scheme {
             Scheme::Webdavs => "webdavs",
             Scheme::Nfs => "nfs",
             Scheme::S3 => "s3",
+            Scheme::B2 => "b2",
+            Scheme::Swift => "swift",
         }
     }
 
@@ -50,14 +83,16 @@ impl Scheme {
             Scheme::Ftp | Scheme::Ftps => 21,
             Scheme::Smb => 445,
             Scheme::Webdav => 80,
-            Scheme::Webdavs | Scheme::S3 => 443,
+            Scheme::Webdavs | Scheme::S3 | Scheme::B2 | Scheme::Swift => 443,
             Scheme::Nfs => 2049,
         }
     }
 
-    /// Not ours: the desktop mounts it as a folder.
+    /// Not ours: the system mounts it as a folder (KDE's or GNOME's on Linux).
+    /// WebDAV on Windows and macOS goes through rclone: theirs are slow and limited.
     pub fn mounted(self) -> bool {
-        matches!(self, Scheme::Smb | Scheme::Webdav | Scheme::Webdavs | Scheme::Nfs)
+        let desktop = cfg!(any(target_os = "linux", target_os = "freebsd"));
+        matches!(self, Scheme::Smb | Scheme::Nfs) || desktop && matches!(self, Scheme::Webdav | Scheme::Webdavs)
     }
 
     /// Whether it logs in with a user and password; NFS trusts the computer.
@@ -90,6 +125,8 @@ impl Address {
             "webdavs" | "davs" => Scheme::Webdavs,
             "nfs" => Scheme::Nfs,
             "s3" => Scheme::S3,
+            "b2" => Scheme::B2,
+            "swift" => Scheme::Swift,
             _ => return None,
         };
         let (authority, path) = match rest.find('/') {
@@ -191,14 +228,12 @@ pub fn connect(address: &Address, ask: Ask) -> io::Result<(Arc<dyn Remote>, Path
             let start = ftp.start(address);
             Ok((ftp, start))
         }
-        Scheme::S3 => {
+        // `mounts` takes SMB and NFS, and WebDAV on Linux; scmd gets WebDAV here.
+        Scheme::Smb | Scheme::Nfs => Err(io::Error::from(io::ErrorKind::Unsupported)),
+        Scheme::S3 | Scheme::B2 | Scheme::Swift | Scheme::Webdav | Scheme::Webdavs => {
             let store = crate::cloud::connect(address, &ask)?;
             let start = store.start(address);
             Ok((store, start))
-        }
-        // `mounts` takes these.
-        Scheme::Smb | Scheme::Webdav | Scheme::Webdavs | Scheme::Nfs => {
-            Err(io::Error::from(io::ErrorKind::Unsupported))
         }
     }
 }

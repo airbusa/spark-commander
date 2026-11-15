@@ -1126,7 +1126,7 @@ impl Commander {
                     .cursor_pointer()
                     .hover(|style| style.bg(theme.foreground.opacity(0.06)))
                     .child(Icon::new(chevron).xsmall().text_color(theme.muted_foreground))
-                    .child(div().flex_1().font_semibold().child(scheme.name().to_uppercase()))
+                    .child(div().flex_1().font_semibold().child(scheme.label().to_uppercase()))
                     .child(div().text_xs().text_color(theme.muted_foreground).child(servers.len().to_string()))
                     .on_click(cx.listener(move |this, _, _, cx| {
                         let closed = &mut this.sidebar.closed;

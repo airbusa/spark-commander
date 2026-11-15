@@ -15,18 +15,6 @@ use sc_core::connections::Connection;
 use sc_core::remote::{self, Scheme};
 use sc_core::secrets;
 
-/// Ours, the desktop's, then online storage, as the Protocol list shows them.
-const SCHEMES: [(Scheme, &str); 8] = [
-    (Scheme::Sftp, "SFTP"),
-    (Scheme::Ftp, "FTP"),
-    (Scheme::Ftps, "FTPS"),
-    (Scheme::Smb, "SMB"),
-    (Scheme::Webdav, "WebDAV"),
-    (Scheme::Webdavs, "WebDAVS"),
-    (Scheme::Nfs, "NFS"),
-    (Scheme::S3, "S3"),
-];
-
 type Protocols = SelectState<Vec<&'static str>>;
 
 type Saved = Rc<dyn Fn(Connection, &mut Window, &mut App)>;
@@ -64,15 +52,25 @@ pub(crate) fn open_edit(
             .masked(true)
             .placeholder("kept in the system keyring; empty keeps it")
     });
-    let at = SCHEMES.iter().position(|(scheme, _)| *scheme == connection.scheme);
-    let labels = SCHEMES.map(|(_, label)| label).to_vec();
+    let at = Scheme::ALL.iter().position(|scheme| *scheme == connection.scheme);
+    let labels = Scheme::ALL.map(Scheme::label).to_vec();
     let protocol = cx.new(|cx| SelectState::new(labels, at.map(IndexPath::new), window, cx));
     let view = cx.new(|cx| EditConnection {
         scheme: connection.scheme,
-        _picked: cx.subscribe(&protocol, |this: &mut EditConnection, _, event: &SelectEvent<Vec<&'static str>>, cx| {
+        _picked: cx.subscribe_in(&protocol, window, |this: &mut EditConnection, _, event: &SelectEvent<Vec<&'static str>>, window, cx| {
             let SelectEvent::Confirm(Some(label)) = event else { return };
-            if let Some((scheme, _)) = SCHEMES.iter().find(|(_, it)| it == label) {
-                this.scheme = *scheme;
+            if let Some(scheme) = Scheme::ALL.into_iter().find(|scheme| scheme.label() == *label) {
+                this.scheme = scheme;
+                // The service's own sign-in server, unless one is typed.
+                let server = match scheme {
+                    Scheme::B2 => "api.backblazeb2.com",
+                    Scheme::Swift => "auth.api.rackspacecloud.com",
+                    _ => "",
+                };
+                let host = &this.fields[1];
+                if !server.is_empty() && host.read(cx).value().trim().is_empty() {
+                    host.update(cx, |input, cx| input.set_value(server, window, cx));
+                }
                 cx.notify();
             }
         }),
@@ -154,6 +152,8 @@ impl Render for EditConnection {
     fn render(&mut self, _: &mut Window, cx: &mut Context<Self>) -> impl IntoElement {
         let (labels, secret) = match self.scheme {
             Scheme::S3 => (["Name", "Endpoint", "Port", "Access key", "Bucket/folder"], "Secret key"),
+            Scheme::B2 => (["Name", "Server", "Port", "Key ID", "Bucket/folder"], "Application key"),
+            Scheme::Swift => (["Name", "Server", "Port", "User", "Container/folder"], "API key"),
             _ => (["Name", "Server", "Port", "User", "Start folder"], "Password"),
         };
         let field = |label: &'static str, input: &Entity<InputState>| {

@@ -2,7 +2,9 @@
 //! Drive…), through the desktop's own bridge: KDE's kio-fuse on KDE, GNOME's
 //! gvfs elsewhere when it is there. Either mounts the address as a folder,
 //! which the panels browse as they do this computer's. Neither asks for a
-//! password on its own: the login is passed in.
+//! password on its own: the login is passed in. On Windows and macOS the
+//! system's own SMB and NFS clients do it (`system`).
+#![cfg_attr(any(windows, target_os = "macos"), allow(dead_code))]
 
 use std::io;
 use std::path::{Path, PathBuf};
@@ -29,7 +31,14 @@ pub struct Login {
 /// Mounts `url`, as `login` if given, else as a guest; the folder it is at.
 /// Blocks while the server answers: run it off the UI thread.
 pub fn mount(url: &str, login: Option<&Login>) -> io::Result<PathBuf> {
-    let url = url.trim();
+    #[cfg(not(any(windows, target_os = "macos")))]
+    return desktop(url.trim(), login);
+    #[cfg(any(windows, target_os = "macos"))]
+    return system::mount(url.trim(), login);
+}
+
+/// KDE's or GNOME's.
+fn desktop(url: &str, login: Option<&Login>) -> io::Result<PathBuf> {
     let mounts = std::fs::read_to_string("/proc/self/mounts").unwrap_or_default();
     let kde = std::env::var("XDG_CURRENT_DESKTOP").is_ok_and(|desktop| desktop.contains("KDE"));
     let gvfs = mounts.contains(" fuse.gvfsd-fuse ");
@@ -263,9 +272,156 @@ mod gvfs {
     }
 }
 
+/// `\\server\share\folder` for `smb://server/share/folder` (NFS's alike), and
+/// the share, `\\server\share`, which a login is for.
+#[cfg_attr(not(windows), allow(dead_code))]
+fn unc(url: &str) -> Option<(String, String)> {
+    let address = crate::remote::Address::parse(url)?;
+    let path = address.path.unwrap_or_default();
+    let parts: Vec<&str> = path.split('/').filter(|part| !part.is_empty()).collect();
+    let share = format!(r"\\{}\{}", address.host, parts.first()?);
+    Some((format!(r"\\{}\{}", address.host, parts.join(r"\")), share))
+}
+
+/// Windows' own clients: the address as a UNC path; a login given is
+/// Windows' for the share until the user logs off. NFS needs Windows' Client for NFS.
+#[cfg(windows)]
+mod system {
+    use std::io;
+    use std::path::PathBuf;
+
+    use windows::Win32::NetworkManagement::WNet::{CONNECT_TEMPORARY, NETRESOURCEW, RESOURCETYPE_DISK, WNetAddConnection2W};
+    use windows::core::{HSTRING, PWSTR};
+
+    use super::Login;
+
+    pub fn mount(url: &str, login: Option<&Login>) -> io::Result<PathBuf> {
+        let (path, share) = super::unc(url).ok_or_else(|| io::Error::other("the share is missing: smb://server/share"))?;
+        if let Some(login) = login {
+            let mut remote: Vec<u16> = share.encode_utf16().chain([0]).collect();
+            let resource = NETRESOURCEW { dwType: RESOURCETYPE_DISK, lpRemoteName: PWSTR(remote.as_mut_ptr()), ..Default::default() };
+            let (password, user) = (HSTRING::from(login.password.as_str()), HSTRING::from(login.user.as_str()));
+            let added = unsafe { WNetAddConnection2W(&resource, &password, &user, CONNECT_TEMPORARY) };
+            match added.0 {
+                0 => {}
+                1326 => return Err(io::Error::other("the user or password is wrong")),
+                1219 => return Err(io::Error::other("Windows is connected to this server as another user: log off, or use that user")),
+                code => return Err(io::Error::from_raw_os_error(code as i32)),
+            }
+        }
+        // Open to guests, or to the login Windows has for it: reading it tells.
+        let nfs = url.get(..6).is_some_and(|scheme| scheme.eq_ignore_ascii_case("nfs://"));
+        std::fs::read_dir(&path).map(|_| PathBuf::from(&path)).map_err(|err| match err.raw_os_error() {
+            Some(67) if nfs => io::Error::other("not found; NFS needs Windows' Client for NFS (Windows Features)"),
+            _ => err,
+        })
+    }
+}
+
+/// macOS's own, as Finder mounts: NetFS, under /Volumes, showing no dialog of its own.
+#[cfg(target_os = "macos")]
+mod system {
+    use std::ffi::{CStr, c_int};
+    use std::io;
+    use std::path::PathBuf;
+    use std::ptr::NonNull;
+
+    use objc2_core_foundation::{CFArray, CFBoolean, CFMutableDictionary, CFRetained, CFString, CFType, CFURL};
+
+    use super::Login;
+
+    #[link(name = "NetFS", kind = "framework")]
+    unsafe extern "C" {
+        fn NetFSMountURLSync(
+            url: &CFURL,
+            mountpath: Option<&CFURL>,
+            user: Option<&CFString>,
+            passwd: Option<&CFString>,
+            open_options: Option<&CFMutableDictionary>,
+            mount_options: Option<&CFMutableDictionary>,
+            mountpoints: *mut Option<NonNull<CFArray>>,
+        ) -> c_int;
+    }
+
+    /// Mounted already.
+    const EEXIST: c_int = 17;
+    /// The login was refused.
+    const EAUTH: c_int = 80;
+
+    pub fn mount(url: &str, login: Option<&Login>) -> io::Result<PathBuf> {
+        let address = crate::remote::Address::parse(url).ok_or_else(|| io::Error::other("not an address"))?;
+        let path = address.path.clone().unwrap_or_default();
+        let parts: Vec<&str> = path.split('/').filter(|part| !part.is_empty()).collect();
+        // SMB mounts the share, the rest is a folder in it; NFS the path as given.
+        let smb = address.scheme == crate::remote::Scheme::Smb;
+        let (mounted, rest) = match smb {
+            true => (&parts[..parts.len().min(1)], &parts[parts.len().min(1)..]),
+            false => (&parts[..], &parts[..0]),
+        };
+        if mounted.is_empty() {
+            return Err(io::Error::other("the share is missing: smb://server/share"));
+        }
+        let host = if address.host.contains(':') { format!("[{}]", address.host) } else { address.host.clone() };
+        let port = address.port.map(|port| format!(":{port}")).unwrap_or_default();
+        let target = format!("{}://{host}{port}/{}", address.scheme.name(), encode(&mounted.join("/")));
+        let url = CFURL::from_string(None, &CFString::from_str(&target), None).ok_or_else(|| io::Error::other("not an address"))?;
+        let options = CFMutableDictionary::<CFString, CFType>::empty();
+        options.set(&CFString::from_str("UIOption"), &CFString::from_str("NoUI"));
+        if login.is_none() {
+            options.set(&CFString::from_str("Guest"), CFBoolean::new(true));
+        }
+        let (user, password) = (login.map(|login| CFString::from_str(&login.user)), login.map(|login| CFString::from_str(&login.password)));
+        let mut points = None;
+        let code = unsafe { NetFSMountURLSync(&url, None, user.as_deref(), password.as_deref(), Some(options.as_ref()), None, &mut points) };
+        let points = points.map(|points| unsafe { CFRetained::<CFArray<CFString>>::from_raw(points.cast()) });
+        let at = match code {
+            0 => points.and_then(|points| points.get(0)).map(|point| PathBuf::from(point.to_string())),
+            EEXIST => mounted_at(&address.host, &mounted.join("/")),
+            EAUTH if login.is_some() => return Err(io::Error::other("the user or password is wrong")),
+            EAUTH => return Err(io::Error::other("it needs a user and password")),
+            code if code > 0 => return Err(io::Error::from_raw_os_error(code)),
+            code => return Err(io::Error::other(format!("macOS could not mount it (NetFS {code})"))),
+        };
+        let at = at.ok_or_else(|| io::Error::other("mounted, but not found among the mounted"))?;
+        Ok(rest.iter().fold(at, |at, part| at.join(part)))
+    }
+
+    /// Spaces and such escaped, as a URL's path has them.
+    fn encode(path: &str) -> String {
+        let keep = |byte: &u8| byte.is_ascii_alphanumeric() || b"-._~/".contains(byte);
+        path.bytes().map(|byte| if keep(&byte) { (byte as char).to_string() } else { format!("%{byte:02X}") }).collect()
+    }
+
+    /// Where `host`'s `share` (an NFS export: its path) is mounted already.
+    fn mounted_at(host: &str, share: &str) -> Option<PathBuf> {
+        let mut mounts: *mut libc::statfs = std::ptr::null_mut();
+        let count = unsafe { libc::getmntinfo(&mut mounts, libc::MNT_NOWAIT) };
+        if count <= 0 || mounts.is_null() {
+            return None;
+        }
+        let mounts = unsafe { std::slice::from_raw_parts(mounts, count as usize) };
+        let (host, share) = (host.to_lowercase(), share.trim_matches('/').to_lowercase());
+        mounts.iter().find_map(|mount| {
+            let text = |field: &[libc::c_char]| unsafe { CStr::from_ptr(field.as_ptr()) }.to_string_lossy().to_lowercase();
+            let from = text(&mount.f_mntfromname);
+            // smbfs: //user@host/share; nfs: host:/export.
+            let smb = from.trim_start_matches('/').rsplit('@').next() == Some(&format!("{host}/{share}"));
+            let nfs = from == format!("{host}:/{share}");
+            (smb || nfs).then(|| PathBuf::from(unsafe { CStr::from_ptr(mount.f_mntonname.as_ptr()) }.to_string_lossy().into_owned()))
+        })
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn makes_windows_share_paths() {
+        assert_eq!(unc("smb://me@nas/media/Films/2024").unwrap(), (r"\\nas\media\Films\2024".into(), r"\\nas\media".into()));
+        assert_eq!(unc("nfs://srv/export").unwrap().0, r"\\srv\export");
+        assert_eq!(unc("smb://nas"), None, "a share is needed");
+    }
 
     #[test]
     fn tells_addresses_from_paths() {

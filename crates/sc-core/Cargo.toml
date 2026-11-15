@@ -63,8 +63,10 @@ libc = "0.2"
 glow = "0.17"
 
 # The trash by the system's call, which says where it put each, for Undo; the trash crate builds it already.
+# NetFS mounts SMB and NFS shares, as Finder does, by CoreFoundation's types.
 [target.'cfg(target_os = "macos")'.dependencies]
 objc2-foundation = { version = "0.3", default-features = false, features = ["std", "NSError", "NSFileManager", "NSString", "NSURL"] }
+objc2-core-foundation = { version = "0.3", default-features = false, features = ["std", "CFArray", "CFBase", "CFDictionary", "CFNumber", "CFString", "CFURL"] }
 
 # The file manager's own properties dialog (FileManager1); the keyring builds it already.
 [target.'cfg(any(target_os = "linux", target_os = "freebsd"))'.dependencies]
@@ -75,4 +77,4 @@ wayland-protocols = { version = "0.32", features = ["client", "staging"] }
 
 # Explorer's context menu for files, as Total Commander shows it; GPUI builds it already.
 [target.'cfg(windows)'.dependencies]
-windows = { version = "0.62", features = ["Win32_Foundation", "Win32_Globalization", "Win32_Graphics_Gdi", "Win32_Graphics_OpenGL", "Win32_Storage_FileSystem", "Win32_System_Com", "Win32_System_LibraryLoader", "Win32_System_Registry", "Win32_System_Threading", "Win32_UI_Input_KeyboardAndMouse", "Win32_UI_Shell", "Win32_UI_Shell_Common", "Win32_UI_WindowsAndMessaging"] }
+windows = { version = "0.62", features = ["Win32_Foundation", "Win32_Globalization", "Win32_Graphics_Gdi", "Win32_Graphics_OpenGL", "Win32_NetworkManagement_WNet", "Win32_Storage_FileSystem", "Win32_System_Com", "Win32_System_LibraryLoader", "Win32_System_Registry", "Win32_System_Threading", "Win32_UI_Input_KeyboardAndMouse", "Win32_UI_Shell", "Win32_UI_Shell_Common", "Win32_UI_WindowsAndMessaging"] }

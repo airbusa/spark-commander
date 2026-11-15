@@ -1,54 +1,119 @@
 //! Online storage through rclone (vendor/rclone): each connection is `rclone
-//! serve sftp --stdio`, which our SFTP client speaks. S3 so far: Amazon's and
-//! the stores speaking it (Backblaze B2, Cloudflare R2, Wasabi, MinIO…).
+//! serve sftp --stdio`, which our SFTP client speaks. S3 (Amazon's and the
+//! stores speaking it: Cloudflare R2, Wasabi, MinIO…), Backblaze B2,
+//! Rackspace Cloud Files (Swift), and WebDAV where the system does not mount it.
 
-use std::io;
+use std::io::{self, Write};
 use std::net::IpAddr;
 use std::path::{Path, PathBuf};
-use std::process::Command;
+use std::process::{Command, Stdio};
 use std::sync::Arc;
 
-use crate::remote::{self, Address, Ask, Prompt, Reply};
+use crate::remote::{self, Address, Ask, Prompt, Reply, Scheme};
 use crate::sftp::Sftp;
 use crate::vfs::Fs;
 
 const TRIES: usize = 3;
 
-/// Connects to the store, asking for the secret key until the store takes it. Blocks.
+/// Connects, asking for the secret until the service takes it. Blocks.
 pub fn connect(address: &Address, ask: &Ask) -> io::Result<Arc<Sftp>> {
     let program = rclone()?;
-    let key = address.user.clone().unwrap_or_default();
+    let user = address.user.clone().unwrap_or_default();
+    let (backend, secret, wrong) = match address.scheme {
+        Scheme::B2 => (":b2:", "Application key", "Wrong application key. "),
+        Scheme::Swift => (":swift:", "API key", "Wrong API key. "),
+        Scheme::Webdav | Scheme::Webdavs => (":webdav:", "Password", "Wrong password. "),
+        _ => (":s3:", "Secret key", "Wrong key. "),
+    };
+    // WebDAV with no user: a guest, asked nothing.
+    let guest = backend == ":webdav:" && address.user.is_none();
     for attempt in 1..=TRIES {
-        let wrong = if attempt > 1 { "Wrong key. " } else { "" };
-        let prompt = Prompt::Secret {
-            title: "Secret key".into(),
-            text: format!("{wrong}Secret key of {key} at {}:", address.host),
-            keyring: Some(remote::keyring_key(address)),
-        };
-        let Reply::Secret(secret) = ask(prompt) else {
-            return Err(io::Error::new(io::ErrorKind::Interrupted, "cancelled"));
+        let given = match guest {
+            true => String::new(),
+            false => {
+                let wrong = if attempt > 1 { wrong } else { "" };
+                let prompt = Prompt::Secret {
+                    title: secret.into(),
+                    text: format!("{wrong}{secret} of {user} at {}:", address.host),
+                    keyring: Some(remote::keyring_key(address)),
+                };
+                let Reply::Secret(given) = ask(prompt) else {
+                    return Err(io::Error::new(io::ErrorKind::Interrupted, "cancelled"));
+                };
+                given
+            }
         };
         let mut command = rclone_command(&program);
-        command.args(["serve", "sftp", "--stdio", ":s3:"]);
+        // A short directory cache: a refresh shows what changed elsewhere.
+        command.args(["serve", "sftp", "--stdio", backend, "--dir-cache-time", "5s", "--poll-interval", "0"]);
         // Secrets go by the environment, which only the user's own programs can read.
-        command.envs(s3_options(address)).env("RCLONE_S3_ACCESS_KEY_ID", &key).env("RCLONE_S3_SECRET_ACCESS_KEY", secret);
+        command.envs(options(address, &user, given, &program)?);
         let server = Address { path: None, ..address.clone() };
-        let store = Sftp::over_pipe(server.url(), command)?;
-        // The store hears the key first when listed.
-        match store.list(&store.start(address)) {
-            Ok(_) => return Ok(store),
-            Err(err) if refused(&err) && attempt < TRIES => continue,
+        // Some say no to the key at the start, S3 once listed.
+        let store = Sftp::over_pipe(server.url(), command).and_then(|store| store.list(&store.start(address)).map(|_| store));
+        match store {
+            Ok(store) => return Ok(store),
+            Err(err) if refused(&err) && !guest && attempt < TRIES => continue,
             Err(err) => return Err(err),
         }
     }
     unreachable!("the last try returns")
 }
 
+/// The backend's settings, as rclone reads them from the environment.
+fn options(address: &Address, user: &str, secret: String, program: &Path) -> io::Result<Vec<(&'static str, String)>> {
+    let user = user.to_owned();
+    Ok(match address.scheme {
+        Scheme::B2 => vec![("RCLONE_B2_ACCOUNT", user), ("RCLONE_B2_KEY", secret)],
+        Scheme::Swift => vec![("RCLONE_SWIFT_USER", user), ("RCLONE_SWIFT_KEY", secret), ("RCLONE_SWIFT_AUTH", swift_auth(address))],
+        Scheme::Webdav | Scheme::Webdavs => {
+            let scheme = if address.scheme == Scheme::Webdavs { "https" } else { "http" };
+            let port = address.port.map(|port| format!(":{port}")).unwrap_or_default();
+            let mut options = vec![("RCLONE_WEBDAV_URL", format!("{scheme}://{}{port}", host(&address.host)))];
+            if !user.is_empty() {
+                options.push(("RCLONE_WEBDAV_USER", user));
+                options.push(("RCLONE_WEBDAV_PASS", obscure(program, &secret)?));
+            }
+            options
+        }
+        _ => {
+            let mut options: Vec<_> = s3_options(address).into();
+            options.push(("RCLONE_S3_ACCESS_KEY_ID", user));
+            options.push(("RCLONE_S3_SECRET_ACCESS_KEY", secret));
+            options
+        }
+    })
+}
+
+/// Rackspace's sign-in: its identity service is v2.0, the older auth.api… v1.0.
+fn swift_auth(address: &Address) -> String {
+    let version = if address.host.starts_with("identity.") { "v2.0" } else { "v1.0" };
+    let port = address.port.map(|port| format!(":{port}")).unwrap_or_default();
+    format!("https://{}{port}/{version}", host(&address.host))
+}
+
+/// An IPv6 address in brackets, as URLs have them.
+fn host(host: &str) -> String {
+    if host.contains(':') { format!("[{host}]") } else { host.to_owned() }
+}
+
+/// The password as rclone's WebDAV wants it, obscured; by its pipe, never on a command line.
+fn obscure(program: &Path, password: &str) -> io::Result<String> {
+    let mut obscure = rclone_command(program);
+    let mut child = obscure.args(["obscure", "-"]).stdin(Stdio::piped()).stdout(Stdio::piped()).stderr(Stdio::null()).spawn()?;
+    child.stdin.take().expect("piped").write_all(password.as_bytes())?;
+    let out = child.wait_with_output()?;
+    let obscured = String::from_utf8_lossy(&out.stdout).trim().to_owned();
+    match out.status.success() && !obscured.is_empty() {
+        true => Ok(obscured),
+        false => Err(io::Error::other("rclone could not take the password")),
+    }
+}
+
 /// rclone with no config file of the user's, asking nothing on its pipe.
 fn rclone_command(program: &Path) -> Command {
     let mut command = Command::new(program);
-    // A short directory cache: a refresh shows what changed elsewhere.
-    command.args(["--config", "", "--ask-password=false", "--dir-cache-time", "5s", "--poll-interval", "0"]);
+    command.args(["--config", "", "--ask-password=false"]);
     #[cfg(windows)]
     {
         use std::os::windows::process::CommandExt;
@@ -67,10 +132,10 @@ fn rclone() -> io::Result<PathBuf> {
     }
 }
 
-/// A wrong key or secret, as S3 says it.
+/// A wrong key, secret or password, as S3, B2, Swift and WebDAV say it.
 fn refused(err: &io::Error) -> bool {
-    let text = err.to_string();
-    ["InvalidAccessKeyId", "SignatureDoesNotMatch"].iter().any(|code| text.contains(code))
+    let text = err.to_string().to_lowercase();
+    ["invalidaccesskeyid", "signaturedoesnotmatch", "401 unauthorized", "authorization failed", "failed to authorize account"].iter().any(|code| text.contains(code))
 }
 
 /// The endpoint's store, region and URL, as rclone's S3 takes them.
@@ -96,7 +161,7 @@ fn s3_options(address: &Address) -> [(&'static str, String); 3] {
             IpAddr::V6(ip) => ip.is_loopback(),
         });
     let scheme = if local { "http" } else { "https" };
-    let server = if host.contains(':') { format!("[{host}]") } else { host.clone() };
+    let server = self::host(&host);
     let port = address.port.map(|port| format!(":{port}")).unwrap_or_default();
     [
         ("RCLONE_S3_PROVIDER", provider.to_owned()),
@@ -123,6 +188,29 @@ mod tests {
         assert_eq!(r2, ["Cloudflare", "auto", "https://abc.r2.cloudflarestorage.com"]);
         let minio = options("s3://AK@192.168.1.5:9000");
         assert_eq!(minio, ["Other", "us-east-1", "http://192.168.1.5:9000"]);
+    }
+
+    /// `rclone serve webdav --user tester --pass s3cret` on a folder with
+    /// `docs/`, as Windows and macOS reach WebDAV: PC_DAV_TEST=<its port>.
+    #[test]
+    #[ignore]
+    fn talks_webdav() {
+        let port = std::env::var("PC_DAV_TEST").unwrap();
+        let address = Address::parse(&format!("webdav://tester@127.0.0.1:{port}/docs")).unwrap();
+        let tries = Arc::new(std::sync::atomic::AtomicUsize::new(0));
+        let counted = tries.clone();
+        let ask: Ask = Arc::new(move |_| {
+            let first = counted.fetch_add(1, std::sync::atomic::Ordering::Relaxed) == 0;
+            Reply::Secret(if first { "wrong".into() } else { "s3cret".into() })
+        });
+        let dav = connect(&address, &ask).unwrap();
+        assert_eq!(tries.load(std::sync::atomic::Ordering::Relaxed), 2, "a wrong password is asked again");
+        let dir = dav.start(&address);
+        assert_eq!(dir, Path::new("/docs"));
+        dav.create(&dir.join("new.txt")).unwrap().write_all(b"dav").unwrap();
+        let names: Vec<String> = dav.entries(&dir).unwrap().iter().map(|entry| entry.display_name()).collect();
+        assert!(names.contains(&"new.txt".to_owned()), "{names:?}");
+        dav.remove(&dir.join("new.txt"), false).unwrap();
     }
 
     /// `rclone serve s3 --auth-key AKIATESTKEY0001,SECRETKEY0000000000001` as

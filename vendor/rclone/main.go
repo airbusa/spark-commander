@@ -2,6 +2,7 @@
 package main
 
 import (
+	_ "github.com/rclone/rclone/backend/b2"
 	_ "github.com/rclone/rclone/backend/box"
 	_ "github.com/rclone/rclone/backend/drive"
 	_ "github.com/rclone/rclone/backend/dropbox"
@@ -12,6 +13,8 @@ import (
 	_ "github.com/rclone/rclone/backend/pcloud"
 	_ "github.com/rclone/rclone/backend/protondrive"
 	_ "github.com/rclone/rclone/backend/s3"
+	_ "github.com/rclone/rclone/backend/swift"
+	_ "github.com/rclone/rclone/backend/webdav"
 	_ "github.com/rclone/rclone/backend/yandex"
 	"github.com/rclone/rclone/cmd"
 	_ "github.com/rclone/rclone/cmd/authorize"

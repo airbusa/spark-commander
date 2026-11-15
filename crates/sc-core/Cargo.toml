@@ -62,6 +62,10 @@ libc = "0.2"
 [target.'cfg(any(target_os = "linux", target_os = "macos", windows))'.dependencies]
 glow = "0.17"
 
+# The trash by the system's call, which says where it put each, for Undo; the trash crate builds it already.
+[target.'cfg(target_os = "macos")'.dependencies]
+objc2-foundation = { version = "0.3", default-features = false, features = ["std", "NSError", "NSFileManager", "NSString", "NSURL"] }
+
 # The file manager's own properties dialog (FileManager1); the keyring builds it already.
 [target.'cfg(any(target_os = "linux", target_os = "freebsd"))'.dependencies]
 zbus = "5"

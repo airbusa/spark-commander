@@ -76,6 +76,19 @@ pub fn copy_file(
     meta: &Meta,
     copied: &mut dyn FnMut(u64, bool) -> io::Result<()>,
 ) -> io::Result<()> {
+    copy_file_over(from, source, to, target, meta, &mut |old| to.remove(old, false), copied)
+}
+
+/// As `copy_file`; `over` takes away what is at `target`, once the copy is whole.
+pub fn copy_file_over(
+    from: &dyn Fs,
+    source: &Path,
+    to: &dyn Fs,
+    target: &Path,
+    meta: &Meta,
+    over: &mut dyn FnMut(&Path) -> io::Result<()>,
+    copied: &mut dyn FnMut(u64, bool) -> io::Result<()>,
+) -> io::Result<()> {
     let name = target.file_name().unwrap_or_default().to_string_lossy();
     let part = target.with_file_name(format!("{name}{PART}"));
     let mut write = || -> io::Result<()> {
@@ -100,7 +113,7 @@ pub fn copy_file(
         writer.flush()?;
         drop(writer);
         if to.metadata(target).is_ok() {
-            to.remove(target, false)?;
+            over(target)?;
         }
         to.rename(&part, target)?;
         let _ = to.set_meta(target, meta);

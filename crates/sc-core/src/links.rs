@@ -79,7 +79,7 @@ pub fn create(kind: Kind, items: &[(PathBuf, PathBuf)]) -> Result<(), (io::Error
     crate::activity::note(&title, &done);
     let rest = items[made.len()..].to_vec();
     if !made.is_empty() {
-        crate::undo::remember(title, crate::undo::Step::Copied { fs: std::sync::Arc::new(crate::vfs::Local), made });
+        crate::undo::remember(title, crate::undo::Step::Copied { fs: std::sync::Arc::new(crate::vfs::Local), made, replaced: Vec::new(), at: std::time::SystemTime::now() });
     }
     done.map_err(|err| (err, rest))
 }

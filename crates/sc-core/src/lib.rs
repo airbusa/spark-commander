@@ -1136,7 +1136,8 @@ impl Panel {
         activity::note(format!("Rename {} to \"{to}\"", from.display()), &renamed);
         renamed?;
         let title = format!("Rename \"{}\" to \"{to}\"", from.file_name().unwrap_or_default().to_string_lossy());
-        undo::remember(title, undo::Step::Moved { from: fs.clone(), to: fs.clone(), moves: vec![(from.clone(), target.clone())] });
+        let at = std::time::SystemTime::now();
+        undo::remember(title, undo::Step::Moved { from: fs.clone(), to: fs.clone(), moves: vec![(from.clone(), target.clone())], restore: Vec::new(), replaces: Vec::new(), at });
         let shown = Path::new(name).with_file_name(to).into_os_string();
         match &mut self.found {
             Some(found) => {
@@ -1176,7 +1177,7 @@ impl Panel {
                 // A server has no trash.
                 vfs::remove_all(&**remote, path)
             } else if to_trash {
-                trash::delete(path).map_err(io::Error::other)?;
+                undo::to_trash(path)?;
                 trashed.push(path.clone());
                 Ok(())
             } else if fs::symlink_metadata(path)?.is_dir() {
@@ -1198,7 +1199,7 @@ impl Panel {
                 [one] => format!("Move \"{}\" to the trash", one.file_name().unwrap_or_default().to_string_lossy()),
                 many => format!("Move {} items to the trash", many.len()),
             };
-            undo::remember(title, undo::Step::Trashed { paths: trashed, at });
+            undo::remember(title, undo::Step::Trashed { paths: trashed, at, displaced: Vec::new() });
         }
         let cursor = self.cursor;
         self.go_to(self.path.clone(), None)?;

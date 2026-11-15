@@ -392,6 +392,7 @@ impl Queue {
             };
             let (status, note) = match work {
                 Work::Copy(operation, remembered) => {
+                    let at = std::time::SystemTime::now();
                     let mut run = Run {
                         queue: &self,
                         id,
@@ -401,6 +402,8 @@ impl Queue {
                         progress: Progress::default(),
                         op: &operation,
                         done: Vec::new(),
+                        replaced: Vec::new(),
+                        inside_new: false,
                         elevate: false,
                         refused_now: false,
                         refused: Vec::new(),
@@ -413,9 +416,10 @@ impl Queue {
                     };
                     // What it did, also before a cancel, for Undo.
                     if remembered && !run.done.is_empty() {
+                        let (replaced, done) = (run.replaced, run.done);
                         let step = match operation.kind {
-                            Kind::Copy => crate::undo::Step::Copied { fs: operation.to.clone(), made: run.done.into_iter().map(|(_, made)| made).collect() },
-                            Kind::Move => crate::undo::Step::Moved { from: operation.from.clone(), to: operation.to.clone(), moves: run.done },
+                            Kind::Copy => crate::undo::Step::Copied { fs: operation.to.clone(), made: done.into_iter().map(|(_, made)| made).collect(), replaced, at },
+                            Kind::Move => crate::undo::Step::Moved { from: operation.from.clone(), to: operation.to.clone(), moves: done, restore: replaced, replaces: Vec::new(), at },
                         };
                         crate::undo::remember(operation.title(), step);
                     }
@@ -489,8 +493,13 @@ struct Run<'a> {
     overwrite: Overwrite,
     skip_errors: bool,
     progress: Progress,
-    /// The sources done, and where each went, where nothing was before.
+    /// The items done, and where each went: where nothing was, or over a
+    /// file now in the trash. In a folder that was there, each of its own.
     done: Vec<(PathBuf, PathBuf)>,
+    /// The files gone over, now in the trash.
+    replaced: Vec<PathBuf>,
+    /// In a folder this made: what is in it is not noted one by one.
+    inside_new: bool,
     /// "As administrator" was answered: what permission refuses is left for it.
     elevate: bool,
     /// The item at hand had something refused.
@@ -527,17 +536,12 @@ impl Run<'_> {
                 self.progress.files += files;
                 self.progress.bytes += bytes;
                 self.report();
+                self.done.push((source.clone(), target.clone()));
             } else {
                 self.item(source, &target)?;
             }
             if self.refused_now {
                 self.refused.push((source.clone(), target));
-                continue;
-            }
-            // Gone from there, where a move goes; there now.
-            let went = op.kind == Kind::Copy || op.from.metadata(source).is_err();
-            if new && went && op.to.metadata(&target).is_ok() {
-                self.done.push((source.clone(), target));
             }
         }
         // One password for all that was refused.
@@ -593,20 +597,27 @@ impl Run<'_> {
             self.report();
             return Ok(());
         };
+        let replaced = self.replaced.len();
+        let new = to.metadata(&target).is_err();
+        // Only its case differs, on macOS and Windows itself: not gone over.
+        let itself = self.op.same_fs()
+            && source.parent() == target.parent()
+            && source.file_name().zip(target.file_name()).is_some_and(|(a, b)| a.to_string_lossy().eq_ignore_ascii_case(&b.to_string_lossy()));
         // A rename replaces the target where the file system lets it.
-        let renamed =
-            self.op.kind == Kind::Move && self.op.same_fs() && from.rename(source, &target).is_ok();
+        let renamed = self.op.kind == Kind::Move
+            && self.op.same_fs()
+            && (new || itself || self.clear(&target).is_ok())
+            && from.rename(source, &target).is_ok();
         if renamed {
             self.progress.files += 1;
             self.progress.bytes += meta.size;
             self.report();
+            self.note(source, &target, new || self.replaced.len() > replaced);
             return Ok(());
         }
         let copied = match meta.is_link && self.op.same_fs() {
-            true => self.attempt(source, |_| {
-                if to.metadata(&target).is_ok() {
-                    to.remove(&target, false)?;
-                }
+            true => self.attempt(source, |run| {
+                run.clear(&target)?;
                 from.copy_link(source, &target)
             })?,
             false => self.attempt(source, |run| run.copy_file(source, &target, &meta))?,
@@ -618,11 +629,38 @@ impl Run<'_> {
             self.attempt(source, |_| from.remove(source, false))?;
         }
         self.report();
+        if copied.is_some() {
+            self.note(source, &target, new || self.replaced.len() > replaced);
+        }
         Ok(())
+    }
+
+    /// Notes `source` done for Undo, where Undo can take it back: `fresh`,
+    /// nothing was there or what was is in the trash; moved, gone from there.
+    fn note(&mut self, source: &Path, target: &Path, fresh: bool) {
+        let went = self.op.kind == Kind::Copy || self.op.from.metadata(source).is_err();
+        if fresh && went && !self.inside_new && self.op.to.metadata(target).is_ok() {
+            self.done.push((source.to_owned(), target.to_owned()));
+        }
+    }
+
+    /// Takes away what is at `target`: on this computer to the trash, where
+    /// it can (else for good), noted for Undo.
+    fn clear(&mut self, target: &Path) -> io::Result<()> {
+        let to = self.op.to.clone();
+        if to.metadata(target).is_err() {
+            return Ok(());
+        }
+        if to.id() == "local" && crate::undo::to_trash(target).is_ok() {
+            self.replaced.push(target.to_owned());
+            return Ok(());
+        }
+        to.remove(target, false)
     }
 
     fn folder(&mut self, source: &Path, target: &Path, meta: &Meta) -> Result<(), Cancelled> {
         let (from, to) = (self.op.from.clone(), self.op.to.clone());
+        let new = to.metadata(target).is_err();
         let made = self.attempt(target, |_| match to.metadata(target) {
             Ok(existing) if existing.is_dir => Ok(()),
             Ok(_) => Err(io::Error::other("a file of this name is in the way")),
@@ -634,13 +672,25 @@ impl Run<'_> {
         let names = self
             .attempt(source, |_| from.list(source))?
             .unwrap_or_default();
+        // In a new one, it stands for all in it; in one there already, each is noted.
+        let outer = self.inside_new;
+        self.inside_new = outer || new;
+        let mut items = Ok(());
         for name in names {
-            self.item(&source.join(&name), &target.join(&name))?;
+            items = self.item(&source.join(&name), &target.join(&name));
+            if items.is_err() {
+                break;
+            }
         }
+        self.inside_new = outer;
+        items?;
         let _ = to.set_meta(target, meta);
         if self.op.kind == Kind::Move {
             // Fails, and so stays, where something was skipped.
             let _ = from.remove(source, true);
+        }
+        if new {
+            self.note(source, target, true);
         }
         Ok(())
     }
@@ -704,7 +754,13 @@ impl Run<'_> {
     fn copy_file(&mut self, source: &Path, target: &Path, meta: &Meta) -> io::Result<()> {
         let (from, to) = (self.op.from.clone(), self.op.to.clone());
         let before = (self.progress.bytes, self.progress.resumed);
-        let written = vfs::copy_file(&*from, source, &*to, target, meta, &mut |bytes, resumed| {
+        // What it goes over goes once it is whole: on this computer to the trash, where it can.
+        let mut trashed = false;
+        let mut over = |old: &Path| {
+            trashed = to.id() == "local" && crate::undo::to_trash(old).is_ok();
+            if trashed { Ok(()) } else { to.remove(old, false) }
+        };
+        let written = vfs::copy_file_over(&*from, source, &*to, target, meta, &mut over, &mut |bytes, resumed| {
             if self.cancel.load(Ordering::Relaxed) {
                 return Err(io::ErrorKind::Interrupted.into());
             }
@@ -717,6 +773,8 @@ impl Run<'_> {
         });
         if written.is_err() {
             (self.progress.bytes, self.progress.resumed) = before;
+        } else if trashed {
+            self.replaced.push(target.to_owned());
         }
         written
     }

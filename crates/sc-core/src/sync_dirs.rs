@@ -345,7 +345,7 @@ fn copy_tree(root: &Root, source: &Path, to: &dyn Fs, target: &Path, report: &mu
 fn delete(root: &Root, rel: &Path) -> io::Result<()> {
     let path = root.dir.join(rel);
     match root.fs.id() == "local" {
-        true => trash::delete(&path).map_err(io::Error::other),
+        true => crate::undo::to_trash(&path),
         false => vfs::remove_all(&*root.fs, &path),
     }
 }

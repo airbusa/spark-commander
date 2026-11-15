@@ -1,23 +1,27 @@
 //! Commands > Undo (Ctrl+Z): the last copies, moves, renames and moves to the
 //! trash, undone newest first; Redo (Ctrl+Shift+Z) does the undone again. What
-//! overwrote or joined something there already is not kept: what was there is gone.
+//! a copy or move went over on this computer went to the trash, and comes back
+//! from there; on a server it is gone.
 
 use std::io;
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 use std::sync::{Arc, Mutex};
 use std::time::SystemTime;
 
-use crate::ops::{Kind, Operation, Overwrite, Queue, Target};
+use crate::ops::{Kind, Operation, Overwrite, Queue, Target, Task};
 use crate::vfs::{self, Fs};
 
 #[derive(Clone)]
 pub enum Step {
-    /// New copies: removed again, to the trash on this computer.
-    Copied { fs: Arc<dyn Fs>, made: Vec<PathBuf> },
-    /// Moved or renamed, `(was, now)`: back, from `to`'s file system to `from`'s.
-    Moved { from: Arc<dyn Fs>, to: Arc<dyn Fs>, moves: Vec<(PathBuf, PathBuf)> },
-    /// Moved to the trash at `at`: restored.
-    Trashed { paths: Vec<PathBuf>, at: SystemTime },
+    /// New copies: removed again, to the trash on this computer; what they
+    /// went over, `replaced`, back from the trash, where it went since `at`.
+    Copied { fs: Arc<dyn Fs>, made: Vec<PathBuf>, replaced: Vec<PathBuf>, at: SystemTime },
+    /// Moved or renamed, `(was, now)`: back, from `to`'s file system to
+    /// `from`'s; then `restore`, which they went over, back from the trash
+    /// (since `at`). `replaces`: what doing them again goes over.
+    Moved { from: Arc<dyn Fs>, to: Arc<dyn Fs>, moves: Vec<(PathBuf, PathBuf)>, restore: Vec<PathBuf>, replaces: Vec<PathBuf>, at: SystemTime },
+    /// Moved to the trash at `at`: restored, once `displaced`, in their place since, went to the trash.
+    Trashed { paths: Vec<PathBuf>, at: SystemTime, displaced: Vec<PathBuf> },
 }
 
 pub struct Undo {
@@ -43,6 +47,8 @@ fn keep(list: &Mutex<Vec<Undo>>, undo: Undo) {
 
 pub fn remember(title: String, step: Step) {
     keep(&DONE, Undo { title, step });
+    // Tests run side by side: one's copy would drop another's Redo.
+    #[cfg(not(test))]
     UNDONE.lock().unwrap().clear();
 }
 
@@ -58,17 +64,21 @@ pub fn take_undone() -> Option<Undo> {
 
 /// What undoes `step` in its turn; none for a server's copies, removed for good.
 fn reverse(step: &Step) -> Option<Step> {
+    let now = SystemTime::now();
     Some(match step {
         // Moved to the trash: back from it.
-        Step::Copied { fs, made } if fs.id() == "local" => Step::Trashed { paths: made.clone(), at: SystemTime::now() },
+        Step::Copied { fs, made, replaced, .. } if fs.id() == "local" => Step::Trashed { paths: made.clone(), at: now, displaced: replaced.clone() },
         Step::Copied { .. } => return None,
-        Step::Moved { from, to, moves } => Step::Moved {
+        Step::Moved { from, to, moves, restore, replaces, .. } => Step::Moved {
             from: to.clone(),
             to: from.clone(),
             moves: moves.iter().map(|(was, now)| (now.clone(), was.clone())).collect(),
+            restore: replaces.clone(),
+            replaces: restore.clone(),
+            at: now,
         },
         // Back from the trash: to it again.
-        Step::Trashed { paths, .. } => Step::Copied { fs: Arc::new(vfs::Local), made: paths.clone() },
+        Step::Trashed { paths, displaced, .. } => Step::Copied { fs: Arc::new(vfs::Local), made: paths.clone(), replaced: displaced.clone(), at: now },
     })
 }
 
@@ -80,16 +90,26 @@ pub fn run(undo: Undo, queue: &Queue, redo: bool) -> io::Result<()> {
     let reversed = reverse(&step);
     let title = format!("{}: {what}", if redo { "Redo" } else { "Undo" });
     let done = match step {
-        Step::Copied { fs, made } => {
-            let undone = made.iter().try_for_each(|path| match fs.id() == "local" {
-                true => trash::delete(path).map_err(io::Error::other),
-                false => vfs::remove_all(&*fs, path),
+        Step::Copied { fs, made, .. } if fs.id() != "local" => {
+            let undone = made.iter().try_for_each(|path| vfs::remove_all(&*fs, path));
+            crate::activity::note(title, &undone);
+            undone
+        }
+        // Found in the trash before the copies go there, as they have the same names.
+        Step::Copied { made, replaced, at, .. } => {
+            let undone = in_trash(&replaced, at).and_then(|back| {
+                made.iter().try_for_each(|path| to_trash(path))?;
+                put_back(back)
             });
             crate::activity::note(title, &undone);
             undone
         }
-        Step::Moved { from, to, moves } => {
+        Step::Moved { from, to, moves, restore, at, .. } => {
             for (was, now) in moves {
+                // A merged folder's, moved one by one, went with its last: made again.
+                if let Some(parent) = was.parent() {
+                    make_dirs(&*from, parent)?;
+                }
                 // The same name goes into its folder; a renamed one gets its name back.
                 let target = match (was.file_name() == now.file_name(), was.parent()) {
                     (true, Some(parent)) => Target::Into(parent.to_owned()),
@@ -98,11 +118,22 @@ pub fn run(undo: Undo, queue: &Queue, redo: bool) -> io::Result<()> {
                 let back = Operation { kind: Kind::Move, from: to.clone(), sources: vec![now], to: from.clone(), target, overwrite: Overwrite::Ask };
                 queue.push_reversal(back);
             }
+            // After the moves back, the queue doing one at a time.
+            if !restore.is_empty() {
+                let run = move |_: &mut crate::ops::Report| in_trash(&restore, at).and_then(put_back).map(|()| String::new());
+                queue.push_task(Task { title: format!("{title}: what it went over, back from the trash"), run: Box::new(run) });
+            }
             Ok(())
         }
         // The queue notes its moves back.
-        Step::Trashed { paths, at } => {
-            let undone = restore(&paths, at);
+        Step::Trashed { paths, at, displaced } => {
+            let undone = in_trash(&paths, at).and_then(|back| {
+                if back.is_empty() {
+                    return Err(io::Error::new(io::ErrorKind::NotFound, "they are no longer in the trash"));
+                }
+                displaced.iter().try_for_each(|path| to_trash(path))?;
+                put_back(back)
+            });
             crate::activity::note(title, &undone);
             undone
         }
@@ -115,24 +146,116 @@ pub fn run(undo: Undo, queue: &Queue, redo: bool) -> io::Result<()> {
     done
 }
 
-/// Each of `paths` back from the trash: the newest of its name, put there since `at`.
-#[cfg(any(windows, all(unix, not(target_os = "macos"))))]
-fn restore(paths: &[PathBuf], at: SystemTime) -> io::Result<()> {
+/// `dir`, with the folders above it, made where gone.
+fn make_dirs(fs: &dyn Fs, dir: &Path) -> io::Result<()> {
+    if dir.as_os_str().is_empty() || fs.metadata(dir).is_ok() {
+        return Ok(());
+    }
+    if let Some(parent) = dir.parent() {
+        make_dirs(fs, parent)?;
+    }
+    fs.mkdir(dir)
+}
+
+/// Moves `path` to this computer's trash, as F8 does. On macOS by the
+/// system's call, not Finder's, which says where it put it: Undo finds it by that.
+#[cfg(all(not(test), not(target_os = "macos")))]
+pub fn to_trash(path: &Path) -> io::Result<()> {
+    trash::delete(path).map_err(io::Error::other)
+}
+
+/// Where this app put things in the trash: `(was, there, when)`.
+#[cfg(any(test, target_os = "macos"))]
+static TRASHED: Mutex<Vec<(PathBuf, PathBuf, SystemTime)>> = Mutex::new(Vec::new());
+
+/// Tests' trash: a folder of their own, the user's left alone.
+#[cfg(test)]
+pub fn to_trash(path: &Path) -> io::Result<()> {
+    static NEXT: std::sync::atomic::AtomicUsize = std::sync::atomic::AtomicUsize::new(0);
+    let bin = std::env::temp_dir().join(format!("sc-test-trash-{}", std::process::id()));
+    std::fs::create_dir_all(&bin)?;
+    let there = bin.join(NEXT.fetch_add(1, std::sync::atomic::Ordering::Relaxed).to_string());
+    std::fs::rename(path, &there)?;
+    TRASHED.lock().unwrap().push((path.to_owned(), there, SystemTime::now()));
+    Ok(())
+}
+
+#[cfg(all(not(test), target_os = "macos"))]
+pub fn to_trash(path: &Path) -> io::Result<()> {
+    use objc2_foundation::{NSFileManager, NSString, NSURL};
+    let path = std::path::absolute(path)?;
+    let text = path.to_str().ok_or_else(|| io::Error::other("the name is not UTF-8"))?;
+    let url = NSURL::fileURLWithPath(&NSString::from_str(text));
+    let mut there = None;
+    NSFileManager::defaultManager()
+        .trashItemAtURL_resultingItemURL_error(&url, Some(&mut there))
+        .map_err(|err| io::Error::other(err.localizedDescription().to_string()))?;
+    if let Some(there) = there.and_then(|url| url.path()) {
+        TRASHED.lock().unwrap().push((path, PathBuf::from(there.to_string()), SystemTime::now()));
+    }
+    Ok(())
+}
+
+/// What `paths` became in the trash, put there since `at`: the newest of each; none of one no longer there.
+#[cfg(all(not(test), any(windows, all(unix, not(target_os = "macos")))))]
+fn in_trash(paths: &[PathBuf], at: SystemTime) -> io::Result<Vec<trash::TrashItem>> {
+    if paths.is_empty() {
+        return Ok(Vec::new());
+    }
     let since = at.duration_since(SystemTime::UNIX_EPOCH).map_or(0, |since| since.as_secs() as i64) - 2;
     let mut items: Vec<trash::TrashItem> = trash::os_limited::list().map_err(io::Error::other)?;
     items.retain(|item| item.time_deleted >= since && paths.contains(&item.original_path()));
     items.sort_by_key(|item| std::cmp::Reverse(item.time_deleted));
     let mut seen = std::collections::HashSet::new();
     items.retain(|item| seen.insert(item.original_path()));
-    if items.is_empty() {
-        return Err(io::Error::new(io::ErrorKind::NotFound, "they are no longer in the trash"));
-    }
-    trash::os_limited::restore_all(items).map_err(io::Error::other)
+    Ok(items)
 }
 
-#[cfg(not(any(windows, all(unix, not(target_os = "macos")))))]
-fn restore(_: &[PathBuf], _: SystemTime) -> io::Result<()> {
-    Err(io::Error::new(io::ErrorKind::Unsupported, "the trash here cannot be undone: Finder's Put Back can"))
+#[cfg(all(not(test), any(windows, all(unix, not(target_os = "macos")))))]
+fn put_back(items: Vec<trash::TrashItem>) -> io::Result<()> {
+    match items.is_empty() {
+        true => Ok(()),
+        false => trash::os_limited::restore_all(items).map_err(io::Error::other),
+    }
+}
+
+#[cfg(any(test, target_os = "macos"))]
+fn in_trash(paths: &[PathBuf], at: SystemTime) -> io::Result<Vec<(PathBuf, PathBuf)>> {
+    let since = at - std::time::Duration::from_secs(2);
+    let trashed = TRASHED.lock().unwrap();
+    let mut found: Vec<(PathBuf, PathBuf)> = Vec::new();
+    for (was, there, when) in trashed.iter().rev() {
+        if *when >= since && paths.contains(was) && there.exists() && !found.iter().any(|(seen, _)| seen == was) {
+            found.push((was.clone(), there.clone()));
+        }
+    }
+    Ok(found)
+}
+
+/// Each back where it was; one there since stays, and that one is not put back.
+#[cfg(any(test, target_os = "macos"))]
+fn put_back(items: Vec<(PathBuf, PathBuf)>) -> io::Result<()> {
+    for (was, there) in items {
+        if std::fs::symlink_metadata(&was).is_ok() {
+            return Err(io::Error::new(io::ErrorKind::AlreadyExists, format!("{}: something of this name is there now", was.display())));
+        }
+        if let Some(parent) = was.parent() {
+            std::fs::create_dir_all(parent)?;
+        }
+        std::fs::rename(&there, &was)?;
+        TRASHED.lock().unwrap().retain(|(_, kept, _)| *kept != there);
+    }
+    Ok(())
+}
+
+#[cfg(all(not(test), not(any(windows, unix))))]
+fn in_trash(_: &[PathBuf], _: SystemTime) -> io::Result<Vec<()>> {
+    Err(io::Error::new(io::ErrorKind::Unsupported, "the trash here cannot be undone"))
+}
+
+#[cfg(all(not(test), not(any(windows, unix))))]
+fn put_back(_: Vec<()>) -> io::Result<()> {
+    Ok(())
 }
 
 #[cfg(test)]
@@ -190,6 +313,63 @@ mod tests {
         finish(&queue);
         assert!(dir.join("c.txt").exists() && !dir.join("b.txt").exists(), "renamed again");
         assert!(taken(&renamed_title).is_some(), "to undo again");
+        std::fs::remove_dir_all(&dir).unwrap();
+    }
+
+    #[test]
+    fn takes_back_what_went_over_files() {
+        use std::fs::{create_dir_all, read_to_string, write};
+        let dir = std::env::temp_dir().join(format!("pc-undo-over-{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&dir);
+        let (src, dst) = (dir.join("src"), dir.join("dst"));
+        for folder in [src.join("sub"), dst.join("sub"), src.join("merged"), dst.join("merged")] {
+            create_dir_all(folder).unwrap();
+        }
+        for (path, text) in [("src/a.txt", "new a"), ("src/sub/b.txt", "new b"), ("src/sub/c.txt", "new c"), ("dst/a.txt", "old a"), ("dst/sub/b.txt", "old b"), ("dst/sub/keep.txt", "keep")] {
+            write(dir.join(path), text).unwrap();
+        }
+        let read = |path: &str| read_to_string(dir.join(path)).ok();
+        let queue = Queue::default();
+        let local = || -> Arc<dyn Fs> { Arc::new(Local) };
+        let copy = Operation { kind: Kind::Copy, from: local(), sources: vec![src.join("a.txt"), src.join("sub")], to: local(), target: Target::Into(dst.clone()), overwrite: Overwrite::All };
+        let title = copy.title();
+        queue.push(copy);
+        finish(&queue);
+        let new = |read: &dyn Fn(&str) -> Option<String>| {
+            assert_eq!(read("dst/a.txt").as_deref(), Some("new a"));
+            assert_eq!(read("dst/sub/b.txt").as_deref(), Some("new b"));
+            assert_eq!(read("dst/sub/c.txt").as_deref(), Some("new c"));
+        };
+        let old = |read: &dyn Fn(&str) -> Option<String>| {
+            assert_eq!(read("dst/a.txt").as_deref(), Some("old a"), "back from the trash");
+            assert_eq!(read("dst/sub/b.txt").as_deref(), Some("old b"), "in a merged folder too");
+            assert_eq!(read("dst/sub/c.txt"), None, "a new one in a merged folder goes");
+        };
+        new(&read);
+        run(taken(&title).expect("remembered"), &queue, false).unwrap();
+        old(&read);
+        run(taken_from(&UNDONE, &title).expect("undone"), &queue, true).unwrap();
+        new(&read);
+        run(taken(&title).expect("redone"), &queue, false).unwrap();
+        old(&read);
+        assert_eq!(read("dst/sub/keep.txt").as_deref(), Some("keep"), "what was there alone stays");
+
+        // A move over a file, and into a folder there already, which then goes from the source.
+        write(dir.join("src/merged/m.txt"), "moved").unwrap();
+        write(dir.join("dst/merged/m.txt"), "old m").unwrap();
+        write(dir.join("src/merged/n.txt"), "n").unwrap();
+        let moved = Operation { kind: Kind::Move, from: local(), sources: vec![src.join("merged")], to: local(), target: Target::Into(dst.clone()), overwrite: Overwrite::All };
+        let title = moved.title();
+        queue.push(moved);
+        finish(&queue);
+        assert!(!src.join("merged").exists());
+        assert_eq!(read("dst/merged/m.txt").as_deref(), Some("moved"));
+        run(taken(&title).expect("remembered"), &queue, false).unwrap();
+        finish(&queue);
+        assert_eq!(read("src/merged/m.txt").as_deref(), Some("moved"), "moved back");
+        assert_eq!(read("src/merged/n.txt").as_deref(), Some("n"));
+        assert_eq!(read("dst/merged/m.txt").as_deref(), Some("old m"), "then back from the trash");
+        assert_eq!(read("dst/merged/n.txt"), None);
         std::fs::remove_dir_all(&dir).unwrap();
     }
 }

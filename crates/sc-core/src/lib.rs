@@ -59,6 +59,7 @@ pub mod text_find;
 pub mod split;
 pub mod sync_dirs;
 pub mod theme;
+pub mod tools;
 pub mod vfs;
 pub mod viewer;
 

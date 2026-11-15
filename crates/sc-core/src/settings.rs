@@ -95,6 +95,8 @@ pub struct Settings {
     pub bookmarks: Vec<PathBuf>,
     /// Bookmarks' own names, where given; else their folder's.
     pub bookmark_names: std::collections::BTreeMap<PathBuf, String>,
+    /// The Tools menu's own command lines, in its order.
+    pub tools: Vec<crate::tools::Tool>,
     /// No dialog offers a missing add-on when its kind of file is opened.
     pub never_offer_addons: bool,
 }

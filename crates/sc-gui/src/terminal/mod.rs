@@ -203,6 +203,11 @@ impl TerminalView {
         self.input(text.as_bytes().to_vec());
     }
 
+    /// Something was written, as a shell's first prompt: lines sent before it are echoed twice.
+    pub fn started(&self) -> bool {
+        self.term.lock().grid().cursor.point != GridPoint::default()
+    }
+
     /// The shell waits at its prompt, nothing running in front of it; none
     /// where that cannot be told (Windows).
     pub fn idle(&self) -> Option<bool> {

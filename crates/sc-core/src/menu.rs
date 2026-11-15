@@ -69,6 +69,8 @@ pub enum Command {
     DuplicateWorkspace,
     /// Workspaces to make, copy, rename and delete.
     ManageWorkspaces,
+    /// The Tools menu's command lines to add, change, delete and give keys.
+    ManageTools,
     /// Ctrl+Alt+1 to 9: that workspace opened.
     Workspace1,
     Workspace2,
@@ -192,6 +194,8 @@ pub enum Item {
     ClosedTabs {
         label: &'static str,
     },
+    /// The user's tools, each run when clicked; a separator after them.
+    Tools,
     /// Back or Forward: runs `command` when clicked, its submenu lists the tab's places that way.
     History {
         label: &'static str,
@@ -428,6 +432,10 @@ pub const MENUS: &[Menu] = &[
         ],
     },
     Menu {
+        label: "Tools",
+        items: &[Item::Tools, cmd("Manage Tools...", ManageTools)],
+    },
+    Menu {
         label: "Configuration",
         items: &[
             cmd("Settings...", Settings),
@@ -523,6 +531,12 @@ const FULL_NAMES: &[(Command, &str)] = &[
     (GoHome, "Go Home"),
     (DuplicateTab, "New Tab (a copy of this one)"),
 ];
+
+/// A command's name, as the Shortcuts dialog lists it.
+pub fn name(command: Command) -> &'static str {
+    let all = groups().into_iter().flat_map(|(_, commands)| commands);
+    all.into_iter().find(|(_, listed)| *listed == command).map_or("", |(label, _)| label)
+}
 
 /// Every command once, under its menu's name, for the Shortcuts dialog.
 pub fn groups() -> Vec<(&'static str, Vec<(&'static str, Command)>)> {

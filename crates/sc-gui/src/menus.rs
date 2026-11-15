@@ -41,6 +41,11 @@ pub struct ReopenTab(pub usize);
 #[action(namespace = sc, no_json)]
 pub struct OpenWorkspace(pub usize);
 
+/// Tools: one of the user's, by its place in the list.
+#[derive(Action, Clone, PartialEq)]
+#[action(namespace = sc, no_json)]
+pub struct RunTool(pub usize);
+
 /// macOS greys out a menu item only when no one handles its action.
 #[derive(Action, Clone, PartialEq)]
 #[action(namespace = sc, no_json)]
@@ -236,6 +241,26 @@ pub fn place_label(place: &str) -> String {
     format!("{name}   {path}")
 }
 
+/// The Tools menu's names.
+static TOOLS: std::sync::Mutex<Vec<String>> = std::sync::Mutex::new(Vec::new());
+
+/// Call `set` after.
+pub fn set_tools(tools: &[sc_core::tools::Tool]) {
+    *TOOLS.lock().unwrap_or_else(|err| err.into_inner()) = tools.iter().map(|tool| tool.name.clone()).collect();
+}
+
+/// The tools' keys, `before`'s unbound first; bound after the commands', so they win.
+pub fn bind_tools(tools: &[sc_core::tools::Tool], before: &[sc_core::tools::Tool], cx: &mut App) {
+    let binding = |key: &str, action: Box<dyn Action>| {
+        let context = Some(Rc::new(KeyBindingContextPredicate::parse(crate::CONTEXT).unwrap()));
+        KeyBinding::load(key, action, context, false, None, &DummyKeyboardMapper).ok()
+    };
+    let unbind = before.iter().filter(|tool| !tool.key.is_empty());
+    cx.bind_keys(unbind.filter_map(|tool| binding(&tool.key, Box::new(Unbind(RunTool::name_for_type().into())))).collect::<Vec<_>>());
+    let keyed = tools.iter().enumerate().filter(|(_, tool)| !tool.key.is_empty());
+    cx.bind_keys(keyed.filter_map(|(ix, tool)| binding(&tool.key, Box::new(RunTool(ix)))).collect::<Vec<_>>());
+}
+
 /// Show > Workspaces' names, and which is open.
 static WORKSPACES: std::sync::Mutex<(Vec<String>, usize)> = std::sync::Mutex::new((Vec::new(), 0));
 
@@ -260,7 +285,7 @@ pub fn main_menus(chosen: Appearance, checked: &dyn Fn(Command) -> bool) -> Vec<
 }
 
 fn items(list: &[Item], chosen: Appearance, checked: &dyn Fn(Command) -> bool) -> Vec<MenuItem> {
-    let all = list.iter().filter_map(|entry| match *entry {
+    let one = |entry: &Item| match *entry {
         Item::Separator => Some(MenuItem::separator()),
         Item::Submenu { label, items: sub } => Some(MenuItem::submenu(
             Menu::new(label).items(items(sub, chosen, checked)),
@@ -310,6 +335,19 @@ fn items(list: &[Item], chosen: Appearance, checked: &dyn Fn(Command) -> bool) -
             let all = each.chain(items(rest, chosen, checked));
             Some(MenuItem::submenu(Menu::new(label).items(all)))
         }
+        Item::Tools => None,
+    };
+    let all = list.iter().flat_map(|entry| match entry {
+        Item::Tools => {
+            let names = TOOLS.lock().unwrap_or_else(|err| err.into_inner()).clone();
+            let tools = names.into_iter().enumerate().map(|(ix, name)| item(name.into(), false, Box::new(RunTool(ix)), false));
+            let mut tools: Vec<MenuItem> = tools.collect();
+            if !tools.is_empty() {
+                tools.push(MenuItem::separator());
+            }
+            tools
+        }
+        entry => one(entry).into_iter().collect(),
     });
     // What the application menu took may leave a separator last.
     let mut items: Vec<MenuItem> = all.collect();
@@ -462,7 +500,7 @@ pub fn context_menu(
                 })
             }
             // shortcut: no submenus or appearances in context menus yet; add them when one has them.
-            Item::Submenu { .. } | Item::Appearance { .. } | Item::Workspaces { .. } | Item::History { .. } => menu,
+            Item::Submenu { .. } | Item::Appearance { .. } | Item::Workspaces { .. } | Item::History { .. } | Item::Tools => menu,
         };
     }
     menu

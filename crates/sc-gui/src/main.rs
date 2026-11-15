@@ -41,6 +41,7 @@ mod search_window;
 mod settings_dialog;
 mod sidebar;
 mod sync_window;
+mod tools_dialog;
 #[cfg(debug_assertions)]
 mod style_preview;
 mod terminal;
@@ -79,7 +80,7 @@ use sc_core::{FileFilter, Panel, Sort, SortKey, Tabs, Typed, View, archive, edit
 
 use crate::appearance::PanelColors;
 use crate::drag_drop::{DragLabel, Dragged};
-use crate::menus::{GoToHistory, OpenWorkspace, ReopenTab, Run, SelectTab, SetAppearance};
+use crate::menus::{GoToHistory, OpenWorkspace, ReopenTab, Run, RunTool, SelectTab, SetAppearance};
 
 actions!(
     sc,
@@ -577,6 +578,8 @@ impl Commander {
         #[cfg(any(target_os = "linux", target_os = "freebsd"))]
         appearance::draw_toolkit_controls(window, cx);
         menus::bind(&settings.keys, None, cx);
+        menus::set_tools(&settings.tools);
+        menus::bind_tools(&settings.tools, &[], cx);
         let opacity = settings.sidebar_opacity.0;
         let blur = settings.sidebar_blur.0;
         let sidebar = sidebar::Sidebar::new(session.sidebar, session.sidebar_width, settings.show_hidden, opacity, blur);
@@ -716,6 +719,8 @@ impl Commander {
         }
         if settings.keys != self.settings.keys {
             menus::bind(&settings.keys, Some(&self.settings.keys), cx);
+            // The tools' keys come after again, so they keep winning.
+            menus::bind_tools(&settings.tools, &self.settings.tools, cx);
             self.menu_bar.update(cx, |bar, cx| bar.reload(cx));
         }
         if (&settings.date, settings.folders_like_files) != (&self.settings.date, self.settings.folders_like_files) {
@@ -1355,25 +1360,26 @@ impl Commander {
             }
         }
         if !line.trim().is_empty() {
-            let (sent, failed) = futures::channel::oneshot::channel();
-            match command::run(&line, &folder, move |why| drop(sent.send(why))) {
-                Ok(Outcome::ChangeDir(path)) => {
-                    self.navigate(move |panel| panel.go_to_folder(path), window, cx)
-                }
-                // Said when the shell gives up; nothing while it runs.
-                Ok(Outcome::Started) => cx
-                    .spawn_in(window, async move |_, cx| {
-                        if let Ok(why) = failed.await {
-                            let _ = cx.update(|window, cx| window.push_notification(Notification::error(why), cx));
-                        }
-                    })
-                    .detach(),
-                Err(err) => {
-                    window.push_notification(Notification::error(format!("{line}: {err}")), cx)
-                }
-            }
+            self.start_command(&line, &folder, window, cx);
         }
         self.focus_panels(window, cx);
+    }
+
+    /// `line` by the shell in `folder`, on its own; `cd` moves the panel.
+    pub(crate) fn start_command(&mut self, line: &str, folder: &Path, window: &mut Window, cx: &mut Context<Self>) {
+        let (sent, failed) = futures::channel::oneshot::channel();
+        match command::run(line, folder, move |why| drop(sent.send(why))) {
+            Ok(Outcome::ChangeDir(path)) => self.navigate(move |panel| panel.go_to_folder(path), window, cx),
+            // Said when the shell gives up; nothing while it runs.
+            Ok(Outcome::Started) => cx
+                .spawn_in(window, async move |_, cx| {
+                    if let Ok(why) = failed.await {
+                        let _ = cx.update(|window, cx| window.push_notification(Notification::error(why), cx));
+                    }
+                })
+                .detach(),
+            Err(err) => window.push_notification(Notification::error(format!("{line}: {err}")), cx),
+        }
     }
 
     fn focus_panels(&mut self, window: &mut Window, cx: &mut Context<Self>) {
@@ -2350,6 +2356,7 @@ impl Render for Commander {
                     Command::Search => this.find_files(false, window, cx),
                     Command::SearchInSeparateProcess => this.find_files(true, window, cx),
                     Command::SynchronizeDirs => this.synchronize_dirs(window, cx),
+                    Command::ManageTools => this.manage_tools(window, cx),
                     Command::AssociateWith => this.associate_with(window, cx),
                     Command::InternalAssociations => this.internal_associations(window, cx),
                     Command::CombineFiles => this.combine_files(window, cx),
@@ -2572,6 +2579,7 @@ impl Render for Commander {
             .on_action(cx.listener(|this, OpenWorkspace(ix): &OpenWorkspace, window, cx| {
                 this.open_workspace(*ix, window, cx)
             }))
+            .on_action(cx.listener(|this, RunTool(ix): &RunTool, window, cx| this.run_tool(*ix, window, cx)))
             .on_action(cx.listener(|this, GoToHistory(at): &GoToHistory, window, cx| {
                 let ix = this.active;
                 if let Some(place) = this.panels[ix].tabs.current_mut().history.jump(*at) {

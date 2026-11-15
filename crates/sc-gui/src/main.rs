@@ -1132,20 +1132,25 @@ impl Commander {
     }
 
     /// Every tab on `folder`, on both sides, reads it again.
-    /// Ctrl+Z: the newest copy, move, rename or move to the trash undone; a
-    /// move goes back through the queue, the rest in the background.
-    fn undo(&mut self, window: &mut Window, cx: &mut Context<Self>) {
-        let Some(undo) = sc_core::undo::take() else {
-            return window.push_notification(Notification::info("Nothing to undo."), cx);
+    /// Ctrl+Z: the newest copy, move, rename or move to the trash undone, or
+    /// with `redo` (Ctrl+Shift+Z) the newest undone done again; a move goes
+    /// through the queue, the rest in the background.
+    fn undo(&mut self, redo: bool, window: &mut Window, cx: &mut Context<Self>) {
+        let (taken, none, done, verb) = match redo {
+            false => (sc_core::undo::take(), "Nothing to undo.", "Undone", "undo"),
+            true => (sc_core::undo::take_undone(), "Nothing to redo.", "Redone", "redo"),
+        };
+        let Some(undo) = taken else {
+            return window.push_notification(Notification::info(none), cx);
         };
         let (title, queue) = (undo.title.clone(), self.transfers.queue.clone());
-        let undone = cx.background_executor().spawn(async move { sc_core::undo::run(undo, &queue) });
+        let undone = cx.background_executor().spawn(async move { sc_core::undo::run(undo, &queue, redo) });
         cx.spawn_in(window, async move |this, cx| {
             let undone = undone.await;
             let _ = this.update_in(cx, |this, window, cx| {
                 let note = match undone {
-                    Ok(()) => Notification::info(format!("Undone: {title}")),
-                    Err(err) => Notification::error(format!("Could not undo \"{title}\": {err}")),
+                    Ok(()) => Notification::info(format!("{done}: {title}")),
+                    Err(err) => Notification::error(format!("Could not {verb} \"{title}\": {err}")),
                 };
                 window.push_notification(note, cx);
                 for ix in 0..2 {
@@ -1477,17 +1482,7 @@ impl Commander {
     /// Alt+Down: the tab's last places, newest first, the one it is at checked.
     fn show_history(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let history = &self.panels[self.active].tabs.current().history;
-        // Its name first: long paths are cut off at the end, where they differ.
-        let home = std::env::home_dir().map(|home| home.display().to_string());
-        let shown = |place: &String| {
-            let name = Path::new(place).file_name().map_or_else(|| place.clone(), |name| name.to_string_lossy().into_owned());
-            let path = match home.as_deref().and_then(|home| place.strip_prefix(home)) {
-                Some(rest) => format!("~{rest}"),
-                None => place.clone(),
-            };
-            format!("{name}   {path}")
-        };
-        let places: Vec<(usize, String, bool)> = history.places.iter().enumerate().rev().map(|(ix, place)| (ix, shown(place), ix == history.at)).collect();
+        let places: Vec<(usize, String, bool)> = history.places.iter().enumerate().rev().map(|(ix, place)| (ix, menus::place_label(place), ix == history.at)).collect();
         if places.is_empty() {
             return window.push_notification(Notification::info("No folders in this tab's history yet."), cx);
         }
@@ -2255,6 +2250,10 @@ impl Commander {
 impl Render for Commander {
     fn render(&mut self, window: &mut Window, cx: &mut Context<Self>) -> impl IntoElement {
         self.sync_quick_view(window, cx);
+        // Go > Back and Forward list the active tab's places, wherever it went.
+        if menus::set_history(&self.panels[self.active].tabs.current().history) {
+            self.reload_menus(cx);
+        }
         #[cfg(target_os = "macos")]
         menus::show(window, menus::main_menus(self.settings.appearance, &|command| self.checked(command)), cx);
         self.quick_keys = self.quick_focused(window, cx);
@@ -2434,7 +2433,8 @@ impl Render for Commander {
                     }
                     Command::CustomFilter => this.custom_filter(window, cx),
                     Command::QuickFilter => this.quick_filter(cx),
-                    Command::Undo => this.undo(window, cx),
+                    Command::Undo => this.undo(false, window, cx),
+                    Command::Redo => this.undo(true, window, cx),
                     Command::ActivityLog => activity_dialog::open(window, cx),
                     // Walked in the background: a big tree takes a while.
                     Command::BranchView | Command::BranchViewSelected => {
@@ -2468,12 +2468,6 @@ impl Render for Commander {
             )
             .on_action(cx.listener(|this, SelectTab(tab): &SelectTab, _, cx| {
                 this.select_tab(this.active, *tab, cx)
-            }))
-            .on_action(cx.listener(|this, GoToHistory(at): &GoToHistory, window, cx| {
-                let ix = this.active;
-                if let Some(place) = this.panels[ix].tabs.current_mut().history.jump(*at) {
-                    this.open_location(ix, &place, window, cx);
-                }
             }))
             .on_action(cx.listener(|this, ReopenTab(ix): &ReopenTab, window, cx| {
                 this.reopen_tab(*ix, window, cx)
@@ -2566,6 +2560,12 @@ impl Render for Commander {
             // The menus' own choices, wherever the keys are: the terminal, the sidebar.
             .on_action(cx.listener(|this, OpenWorkspace(ix): &OpenWorkspace, window, cx| {
                 this.open_workspace(*ix, window, cx)
+            }))
+            .on_action(cx.listener(|this, GoToHistory(at): &GoToHistory, window, cx| {
+                let ix = this.active;
+                if let Some(place) = this.panels[ix].tabs.current_mut().history.jump(*at) {
+                    this.open_location(ix, &place, window, cx);
+                }
             }))
             .on_action(cx.listener(|this, SetAppearance(chosen): &SetAppearance, window, cx| {
                 this.set_appearance(*chosen, window, cx)

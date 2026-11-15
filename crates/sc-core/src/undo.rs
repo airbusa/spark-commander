@@ -1,6 +1,6 @@
-//! Files > Undo (Ctrl+Z): the last copies, moves, renames and moves to the
-//! trash, undone newest first. What overwrote or joined something there
-//! already is not kept: what was there is gone.
+//! Commands > Undo (Ctrl+Z): the last copies, moves, renames and moves to the
+//! trash, undone newest first; Redo (Ctrl+Shift+Z) does the undone again. What
+//! overwrote or joined something there already is not kept: what was there is gone.
 
 use std::io;
 use std::path::PathBuf;
@@ -10,6 +10,7 @@ use std::time::SystemTime;
 use crate::ops::{Kind, Operation, Overwrite, Queue, Target};
 use crate::vfs::{self, Fs};
 
+#[derive(Clone)]
 pub enum Step {
     /// New copies: removed again, to the trash on this computer.
     Copied { fs: Arc<dyn Fs>, made: Vec<PathBuf> },
@@ -29,13 +30,20 @@ pub struct Undo {
 const KEPT: usize = 20;
 
 static DONE: Mutex<Vec<Undo>> = Mutex::new(Vec::new());
+/// What was undone, newest last, for Redo; something new done drops it.
+static UNDONE: Mutex<Vec<Undo>> = Mutex::new(Vec::new());
+
+fn keep(list: &Mutex<Vec<Undo>>, undo: Undo) {
+    let mut list = list.lock().unwrap();
+    list.push(undo);
+    if list.len() > KEPT {
+        list.remove(0);
+    }
+}
 
 pub fn remember(title: String, step: Step) {
-    let mut done = DONE.lock().unwrap();
-    done.push(Undo { title, step });
-    if done.len() > KEPT {
-        done.remove(0);
-    }
+    keep(&DONE, Undo { title, step });
+    UNDONE.lock().unwrap().clear();
 }
 
 /// The newest, to undo now.
@@ -43,11 +51,35 @@ pub fn take() -> Option<Undo> {
     DONE.lock().unwrap().pop()
 }
 
-/// Undoes `undo`: moves go back through `queue`, as a copy goes, unrecorded;
-/// copies and the trash here, which blocks.
-pub fn run(undo: Undo, queue: &Queue) -> io::Result<()> {
-    let title = format!("Undo: {}", undo.title);
-    match undo.step {
+/// The newest undone, to do again now.
+pub fn take_undone() -> Option<Undo> {
+    UNDONE.lock().unwrap().pop()
+}
+
+/// What undoes `step` in its turn; none for a server's copies, removed for good.
+fn reverse(step: &Step) -> Option<Step> {
+    Some(match step {
+        // Moved to the trash: back from it.
+        Step::Copied { fs, made } if fs.id() == "local" => Step::Trashed { paths: made.clone(), at: SystemTime::now() },
+        Step::Copied { .. } => return None,
+        Step::Moved { from, to, moves } => Step::Moved {
+            from: to.clone(),
+            to: from.clone(),
+            moves: moves.iter().map(|(was, now)| (now.clone(), was.clone())).collect(),
+        },
+        // Back from the trash: to it again.
+        Step::Trashed { paths, .. } => Step::Copied { fs: Arc::new(vfs::Local), made: paths.clone() },
+    })
+}
+
+/// Undoes `undo`, or does again what was undone (`redo`): moves go through
+/// `queue`, as a copy goes, unrecorded; the trash here, which blocks. Its
+/// reverse is kept for the other, Redo or Undo.
+pub fn run(undo: Undo, queue: &Queue, redo: bool) -> io::Result<()> {
+    let Undo { title: what, step } = undo;
+    let reversed = reverse(&step);
+    let title = format!("{}: {what}", if redo { "Redo" } else { "Undo" });
+    let done = match step {
         Step::Copied { fs, made } => {
             let undone = made.iter().try_for_each(|path| match fs.id() == "local" {
                 true => trash::delete(path).map_err(io::Error::other),
@@ -74,7 +106,13 @@ pub fn run(undo: Undo, queue: &Queue) -> io::Result<()> {
             crate::activity::note(title, &undone);
             undone
         }
+    };
+    if done.is_ok()
+        && let Some(step) = reversed
+    {
+        keep(if redo { &DONE } else { &UNDONE }, Undo { title: what, step });
     }
+    done
 }
 
 /// Each of `paths` back from the trash: the newest of its name, put there since `at`.
@@ -105,9 +143,13 @@ mod tests {
 
     /// The undo list is the whole process's, other tests' too: this one's by its title.
     fn taken(title: &str) -> Option<Undo> {
-        let mut done = DONE.lock().unwrap();
-        let at = done.iter().position(|undo| undo.title == title)?;
-        Some(done.remove(at))
+        taken_from(&DONE, title)
+    }
+
+    fn taken_from(list: &Mutex<Vec<Undo>>, title: &str) -> Option<Undo> {
+        let mut list = list.lock().unwrap();
+        let at = list.iter().position(|undo| undo.title == title)?;
+        Some(list.remove(at))
     }
 
     fn finish(queue: &Queue) {
@@ -134,8 +176,8 @@ mod tests {
         let renamed_title = renamed.title();
         queue.push(renamed);
         finish(&queue);
-        for title in [title, renamed_title] {
-            run(taken(&title).expect("remembered"), &queue).unwrap();
+        for title in [title, renamed_title.clone()] {
+            run(taken(&title).expect("remembered"), &queue, false).unwrap();
         }
         finish(&queue);
         assert_eq!(std::fs::read_to_string(dir.join("a.txt")).unwrap(), "a", "back in its folder");
@@ -143,6 +185,11 @@ mod tests {
         assert!(!dir.join("into/a.txt").exists() && !dir.join("c.txt").exists());
         // The move back is not remembered in its turn.
         assert!(DONE.lock().unwrap().iter().all(|undo| !undo.title.contains(&*dir.to_string_lossy())));
+        // Redo renames it again, and Undo can undo that.
+        run(taken_from(&UNDONE, &renamed_title).expect("undone"), &queue, true).unwrap();
+        finish(&queue);
+        assert!(dir.join("c.txt").exists() && !dir.join("b.txt").exists(), "renamed again");
+        assert!(taken(&renamed_title).is_some(), "to undo again");
         std::fs::remove_dir_all(&dir).unwrap();
     }
 }

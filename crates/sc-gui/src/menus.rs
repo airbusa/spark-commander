@@ -205,6 +205,31 @@ pub fn last_filter() -> String {
     if masks.is_empty() { "*.*".to_owned() } else { masks }
 }
 
+/// Go > Back's and Forward's places: the active tab's history.
+static HISTORY: std::sync::Mutex<sc_core::History> = std::sync::Mutex::new(sc_core::History { places: Vec::new(), at: 0 });
+
+/// Whether it changed: then `set` again.
+pub fn set_history(history: &sc_core::History) -> bool {
+    let mut kept = HISTORY.lock().unwrap_or_else(|err| err.into_inner());
+    let changed = *kept != *history;
+    if changed {
+        *kept = history.clone();
+    }
+    changed
+}
+
+/// A history place as menus list it: its name first, as long paths are cut
+/// off at the end, where they differ; home as ~.
+pub fn place_label(place: &str) -> String {
+    let name = std::path::Path::new(place).file_name().map_or_else(|| place.to_owned(), |name| name.to_string_lossy().into_owned());
+    let home = std::env::home_dir().map(|home| home.display().to_string());
+    let path = match home.as_deref().and_then(|home| place.strip_prefix(home)) {
+        Some(rest) => format!("~{rest}"),
+        None => place.to_owned(),
+    };
+    format!("{name}   {path}")
+}
+
 /// Go > Workspaces' names, and which is open.
 static WORKSPACES: std::sync::Mutex<(Vec<String>, usize)> = std::sync::Mutex::new((Vec::new(), 0));
 
@@ -256,6 +281,22 @@ fn items(list: &[Item], chosen: Appearance, checked: &dyn Fn(Command) -> bool) -
             Some(MenuItem::submenu(Menu::new(label).items(each)))
         }
         Item::ClosedTabs { .. } => None,
+        // A submenu whose first item is its own name: GPUI Kit runs that when it is
+        // clicked (macOS shows it first in the submenu); the places that way after.
+        Item::History { label, command } => {
+            let own = item(label.into(), checked(command), Box::new(Run(command)), false);
+            let history = HISTORY.lock().unwrap_or_else(|err| err.into_inner()).clone();
+            let ways: Vec<usize> = match command {
+                Command::GoBack => (0..history.at.min(history.places.len())).rev().collect(),
+                _ => (history.at + 1..history.places.len()).collect(),
+            };
+            if ways.is_empty() {
+                return Some(own);
+            }
+            let places = ways.into_iter().map(|ix| item(place_label(&history.places[ix]).into(), false, Box::new(GoToHistory(ix)), false));
+            let all = [own, MenuItem::separator()].into_iter().chain(places);
+            Some(MenuItem::submenu(Menu::new(label).items(all)))
+        }
         Item::Workspaces { label, items: rest } => {
             let (names, current) = WORKSPACES.lock().unwrap_or_else(|err| err.into_inner()).clone();
             let each = names.into_iter().enumerate();
@@ -413,7 +454,7 @@ pub fn context_menu(
                 })
             }
             // shortcut: no submenus or appearances in context menus yet; add them when one has them.
-            Item::Submenu { .. } | Item::Appearance { .. } | Item::Workspaces { .. } => menu,
+            Item::Submenu { .. } | Item::Appearance { .. } | Item::Workspaces { .. } | Item::History { .. } => menu,
         };
     }
     menu

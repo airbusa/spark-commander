@@ -73,6 +73,7 @@ const fn windows(key: &'static str) -> &'static str {
 
 const SPARK_COMMANDER: Table = &[
     (Undo, "secondary-z", ""),
+    (Redo, "secondary-shift-z", ""),
     (View, "f3", ""),
     (Edit, "f4", ""),
     (Copy, "f5", ""),
@@ -162,6 +163,7 @@ const SPARK_COMMANDER: Table = &[
 
 const TOTAL_COMMANDER: Table = &[
     (Undo, "ctrl-z", ""),
+    (Redo, "ctrl-shift-z", ""),
     (View, "f3", ""),
     (Edit, "f4", ""),
     (Copy, "f5", ""),
@@ -241,6 +243,7 @@ const TOTAL_COMMANDER: Table = &[
 /// and tabactions) and KDE's standard keys.
 const KRUSADER: Table = &[
     (Undo, "ctrl-z", ""),
+    (Redo, "ctrl-shift-z", ""),
     (View, "f3", ""),
     (Edit, "f4", ""),
     (Copy, "f5", ""),
@@ -330,6 +333,7 @@ const MIDNIGHT_COMMANDER: Table = &[
 /// ForkLift 4's menus and macOS's own keys.
 const FORKLIFT: Table = &[
     (Undo, "secondary-z", ""),
+    (Redo, "secondary-shift-z", ""),
     (View, "f3", "space"),
     (Edit, "f4", ""),
     (Copy, "f5", ""),

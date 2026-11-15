@@ -1,8 +1,8 @@
 // Modified for Water Data Studio (Apache-2.0, section 4b): a long menu's
 // scrollbar shows while it scrolls. Changes are marked "WDS patch".
 // Modified for SparkCommander: menus take the window's height, scroll only
-// past it and show no scrollbar; `with_menu_items` is public. Changes are
-// marked "SparkCommander patch".
+// past it and show no scrollbar; `with_menu_items` is public; a submenu may
+// run an action of its own when clicked. Changes are marked "SparkCommander patch".
 
 use crate::ThemeStyled as _;
 use crate::actions::{Cancel, Confirm, SelectDown, SelectUp};
@@ -66,6 +66,8 @@ pub enum PopupMenuItem {
         label: SharedString,
         disabled: bool,
         menu: Entity<PopupMenu>,
+        /// SparkCommander patch: what a click on it runs, as Konsole's New Tab.
+        action: Option<Box<dyn Action>>,
     },
 }
 
@@ -110,6 +112,7 @@ impl PopupMenuItem {
             label: label.into(),
             disabled: false,
             menu,
+            action: None,
         }
     }
 
@@ -814,10 +817,24 @@ impl PopupMenu {
                 OwnedMenuItem::Separator => {
                     self = self.separator();
                 }
+                // SparkCommander patch: a submenu whose first item is its own name runs that
+                // when clicked, and lists the items after it (and a separator).
                 OwnedMenuItem::Submenu(submenu) => {
+                    let own = match submenu.items.first() {
+                        Some(OwnedMenuItem::Action { name, action, disabled: false, .. }) if *name == submenu.name => Some(action.boxed_clone()),
+                        _ => None,
+                    };
+                    let mut items = submenu.items.clone();
+                    if own.is_some() {
+                        let skip = if matches!(items.get(1), Some(OwnedMenuItem::Separator)) { 2 } else { 1 };
+                        items.drain(..skip);
+                    }
                     self = self.submenu(submenu.name, window, cx, move |menu, window, cx| {
-                        menu.with_menu_items(submenu.items.clone(), window, cx)
-                    })
+                        menu.with_menu_items(items.clone(), window, cx)
+                    });
+                    if let Some(PopupMenuItem::Submenu { action, .. }) = self.menu_items.last_mut() {
+                        *action = own;
+                    }
                 }
                 OwnedMenuItem::SystemMenu(_) => {}
             }
@@ -881,6 +898,14 @@ impl PopupMenu {
                         } else if let Some(action) = action.as_ref() {
                             self.dispatch_confirm_action(action, window, cx);
                         }
+                        self.dismiss(&Cancel, window, cx)
+                    }
+                    // SparkCommander patch: a submenu's own action.
+                    Some(PopupMenuItem::Submenu {
+                        action: Some(action),
+                        ..
+                    }) => {
+                        self.dispatch_confirm_action(action, window, cx);
                         self.dismiss(&Cancel, window, cx)
                     }
                     _ => {}
@@ -1455,9 +1480,16 @@ impl PopupMenu {
                 label,
                 menu,
                 disabled,
-            } => this
+                action,
+            } => {
+                let key = self.render_key_binding(action.as_ref().map(|action| action.boxed_clone()), window, cx);
+                this
                 .selected(selected)
                 .disabled(*disabled)
+                // SparkCommander patch: clicked, it runs its own action, its key shown.
+                .when(action.is_some() && !disabled, |this| {
+                    this.on_click(cx.listener(move |this, _, window, cx| this.on_click(ix, window, cx)))
+                })
                 .items_start()
                 .child(
                     h_flex()
@@ -1480,9 +1512,15 @@ impl PopupMenu {
                                 .justify_between()
                                 .child(label.clone())
                                 .child(
-                                    Icon::new(IconName::ChevronRight)
-                                        .xsmall()
-                                        .text_color(cx.theme().muted_foreground),
+                                    h_flex()
+                                        .gap_2()
+                                        .items_center()
+                                        .children(key)
+                                        .child(
+                                            Icon::new(IconName::ChevronRight)
+                                                .xsmall()
+                                                .text_color(cx.theme().muted_foreground),
+                                        ),
                                 ),
                         ),
                 )
@@ -1508,7 +1546,8 @@ impl PopupMenu {
                         )
                         .with_priority(self.priority + 1)
                     })
-                }),
+                })
+            }
         }
     }
 }

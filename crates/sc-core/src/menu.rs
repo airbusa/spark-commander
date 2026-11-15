@@ -7,6 +7,8 @@ pub enum Command {
     // Files
     /// The newest copy, move, rename or move to the trash undone (`undo`).
     Undo,
+    /// The newest undone one done again.
+    Redo,
     ChangeAttributes,
     Pack,
     UnpackSpecificFiles,
@@ -180,6 +182,11 @@ pub enum Item {
     ClosedTabs {
         label: &'static str,
     },
+    /// Back or Forward: runs `command` when clicked, its submenu lists the tab's places that way.
+    History {
+        label: &'static str,
+        command: Command,
+    },
     /// A submenu of the workspaces, to open one, then `items`.
     Workspaces {
         label: &'static str,
@@ -207,8 +214,6 @@ pub const MENUS: &[Menu] = &[
     Menu {
         label: "Files",
         items: &[
-            cmd("Undo", Undo),
-            SEP,
             cmd("View", View),
             cmd("Edit", Edit),
             cmd("Edit With External Editor", EditExternally),
@@ -304,8 +309,8 @@ pub const MENUS: &[Menu] = &[
     Menu {
         label: "Go",
         items: &[
-            cmd("Back", GoBack),
-            cmd("Forward", GoForward),
+            Item::History { label: "Back", command: GoBack },
+            Item::History { label: "Forward", command: GoForward },
             cmd("Folder History...", FolderHistory),
             cmd("Home", GoHome),
             cmd("Root Folder", GoToRoot),
@@ -322,6 +327,8 @@ pub const MENUS: &[Menu] = &[
             cmd("Search in Separate Window...", SearchInSeparateProcess),
             cmd("Synchronize Dirs...", SynchronizeDirs),
             SEP,
+            cmd("Undo", Undo),
+            cmd("Redo", Redo),
             cmd("Operation Queue...", OperationQueue),
             cmd("Activity Log...", ActivityLog),
             SEP,
@@ -495,7 +502,7 @@ pub fn groups() -> Vec<(&'static str, Vec<(&'static str, Command)>)> {
     fn walk(items: &[Item], seen: &mut Vec<Command>, out: &mut Vec<(&'static str, Command)>) {
         for item in items {
             match *item {
-                Item::Command { label, command } if !seen.contains(&command) => {
+                Item::Command { label, command } | Item::History { label, command } if !seen.contains(&command) => {
                     seen.push(command);
                     let full = FULL_NAMES.iter().find(|(c, _)| *c == command);
                     out.push((full.map_or(label.trim_end_matches("..."), |(_, name)| name), command));

@@ -1,7 +1,7 @@
 use std::rc::Rc;
 
 use gpui::{
-    AnyElement, App, DefiniteLength, Entity, IntoElement, RenderOnce, SharedString,
+    AnyElement, App, DefiniteLength, Entity, FocusHandle, IntoElement, RenderOnce, SharedString,
     StyleRefinement, Styled, Window, rems,
 };
 
@@ -23,6 +23,8 @@ pub(crate) struct CommandOptions {
     pub(crate) bordered: bool,
     pub(crate) header: Option<Rc<CommandSlot>>,
     pub(crate) footer: Option<Rc<CommandSlot>>,
+    /// SparkCommander patch: where the rows' keys are looked up.
+    pub(crate) action_context: Option<FocusHandle>,
 }
 
 impl Default for CommandOptions {
@@ -35,6 +37,7 @@ impl Default for CommandOptions {
             bordered: true,
             header: None,
             footer: None,
+            action_context: None,
         }
     }
 }
@@ -170,6 +173,13 @@ impl Command {
         F: Fn(&mut Window, &mut App) + 'static,
     {
         self.on_cancel = Some(Rc::new(callback));
+        self
+    }
+
+    /// SparkCommander patch: look the rows' keys up as if `handle` had the
+    /// focus, as [`crate::menu::PopupMenu::action_context`] does.
+    pub fn action_context(mut self, handle: FocusHandle) -> Self {
+        self.options.action_context = Some(handle);
         self
     }
 

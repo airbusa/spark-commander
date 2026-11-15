@@ -34,6 +34,7 @@ mod pack_dialog;
 mod panel_keys;
 mod pdf_view;
 mod properties_dialog;
+mod quick_open;
 mod quick_view;
 mod remote;
 mod rename_dialog;
@@ -62,7 +63,7 @@ use std::time::{Duration, Instant};
 
 use gpui_kit::component::button::{Button, ButtonVariant, ButtonVariants};
 use gpui_kit::component::input::{Input, InputEvent, InputState};
-use gpui_kit::component::menu::{AppMenuBar, ContextMenuExt, PopupMenu};
+use gpui_kit::component::menu::{AppMenuBar, ContextMenuExt, PopupMenu, PopupMenuItem};
 use gpui_kit::component::notification::Notification;
 use gpui_kit::component::scroll::Scrollbar;
 use gpui_kit::component::tab::{Tab, TabBar};
@@ -95,6 +96,7 @@ actions!(
         Open,
         Parent,
         FocusPanels,
+        CommandHistory,
         CancelPathEdit,
         CancelRename,
         Left,
@@ -105,7 +107,7 @@ actions!(
 include!(concat!(env!("OUT_DIR"), "/material_icons.rs"));
 
 // Lucide icons beyond GPUI Kit's own set.
-gpui_kit::assets::icon_assets!(ExtraIcons, [PanelsTopLeft, Type, CalendarClock, Languages, FilePen, Puzzle, Server, Smartphone, Tablet, Laptop, Monitor, Tv, Usb, Menu, Cloud, CaseSensitive, WholeWord, Regex, Replace, ReplaceAll, CaseUpper, SquareDashedText, X, Funnel, Link]);
+gpui_kit::assets::icon_assets!(ExtraIcons, [Bookmark, HardDrive, FolderClock, Wrench, SquareTerminal, Layers, PanelsTopLeft, Type, CalendarClock, Languages, FilePen, Puzzle, Server, Smartphone, Tablet, Laptop, Monitor, Tv, Usb, Menu, Cloud, CaseSensitive, WholeWord, Regex, Replace, ReplaceAll, CaseUpper, SquareDashedText, X, Funnel, Link]);
 
 /// GPUI Kit's icons, the file icons as `material/<name>.svg`, the player's as `media/`.
 struct AppAssets;
@@ -238,6 +240,9 @@ fn main() {
             KeyBinding::new("ctrl-pageup", Parent, keys),
             // Bound after the input's own keys, so it comes first.
             KeyBinding::new("escape", FocusPanels, Some("CommandLine > Input")),
+            // A drop-down's, as Total Commander's command line.
+            KeyBinding::new("alt-down", CommandHistory, Some("CommandLine > Input")),
+            KeyBinding::new("ctrl-down", CommandHistory, Some("CommandLine > Input")),
             KeyBinding::new("escape", CancelPathEdit, Some("PathEdit > Input")),
             KeyBinding::new("escape", CancelRename, Some("RenameInPlace > Input")),
         ]);
@@ -490,6 +495,9 @@ struct Commander {
     colors: PanelColors,
     /// Show list of all tabs: the side and its popup.
     panel_list: Option<(usize, Entity<PopupMenu>, Subscription)>,
+    /// The command line's last lines, the latest first, and their list when shown.
+    commands: Vec<String>,
+    command_list: Option<(Entity<PopupMenu>, Subscription)>,
     /// A side whose path is being typed.
     path_edit: Option<(usize, Entity<InputState>, Subscription)>,
     renaming: Option<panel_keys::Renaming>,
@@ -668,6 +676,8 @@ impl Commander {
             settings,
             colors,
             panel_list: None,
+            commands: session.commands.clone(),
+            command_list: None,
             path_edit: None,
             renaming: None,
             _appearance: appearance,
@@ -1322,6 +1332,11 @@ impl Commander {
 
     fn run_command(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let line = self.command.read(cx).value().to_string();
+        if !line.trim().is_empty() {
+            self.commands.retain(|kept| *kept != line);
+            self.commands.insert(0, line.clone());
+            self.commands.truncate(20);
+        }
         let target = line.trim().strip_prefix("cd ").unwrap_or(line.trim());
         if let Some(address) = Address::parse(target) {
             self.focus_panels(window, cx);
@@ -1388,13 +1403,46 @@ impl Commander {
         window.focus(&self.focus, cx);
     }
 
+    /// Total Commander's command line drop-down: the last lines, the latest
+    /// first; the one picked is put in the line, to run with Enter.
+    fn show_command_history(&mut self, window: &mut Window, cx: &mut Context<Self>) {
+        let (lines, input) = (self.commands.clone(), self.command.clone());
+        let list = PopupMenu::build(window, cx, move |mut menu, _, _| {
+            if lines.is_empty() {
+                return menu.label("No commands run yet");
+            }
+            for line in &lines {
+                let (input, line) = (input.clone(), line.clone());
+                menu = menu.item(PopupMenuItem::new(line.clone()).on_click(move |_, window, cx| {
+                    input.update(cx, |input, cx| input.set_value(line.clone(), window, cx));
+                }));
+            }
+            menu.min_w(px(240.)).max_w(px(900.))
+        });
+        let dismissed = cx.subscribe_in(&list, window, |this, _, _: &DismissEvent, window, cx| {
+            this.command_list = None;
+            this.command.update(cx, |input, cx| input.focus(window, cx));
+            cx.notify();
+        });
+        list.read(cx).focus_handle(cx).focus(window, cx);
+        self.command_list = Some((list, dismissed));
+        cx.notify();
+    }
+
     fn render_command_line(&self, cx: &mut Context<Self>) -> impl IntoElement {
         let location = self.panels[self.active].tabs.current().location();
+        let history = Button::new("command-history")
+            .ghost()
+            .xsmall()
+            .icon(IconName::ChevronDown)
+            .on_click(cx.listener(|this, _, window, cx| this.show_command_history(window, cx)));
+        let list = self.command_list.as_ref().map(|(list, _)| list.clone());
         h_flex()
             .key_context("CommandLine")
             .on_action(
                 cx.listener(|this, _: &FocusPanels, window, cx| this.focus_panels(window, cx)),
             )
+            .on_action(cx.listener(|this, _: &CommandHistory, window, cx| this.show_command_history(window, cx)))
             .px_1()
             .gap_1()
             .child(
@@ -1410,7 +1458,16 @@ impl Commander {
                 div()
                     .flex_1()
                     .min_w(px(160.))
-                    .child(Input::new(&self.command).small()),
+                    // Up from the line: the button bar is under it.
+                    .when_some(list, |el, list| {
+                        el.child(deferred(
+                            anchored()
+                                .anchor(Anchor::BottomLeft)
+                                .snap_to_window_with_margin(px(8.))
+                                .child(div().occlude().child(list)),
+                        ))
+                    })
+                    .child(Input::new(&self.command).small().suffix(history)),
             )
     }
 
@@ -1451,6 +1508,7 @@ impl Commander {
             terminal_share: self.terminal_share,
             sync_browsing: self.sync_browsing,
             window: Some(window_place(self.bounds)),
+            commands: self.commands.clone(),
         }
     }
 
@@ -1534,7 +1592,7 @@ impl Commander {
     }
 
     /// A list over the active panel: its tabs, its history.
-    fn show_panel_list(&mut self, list: Entity<PopupMenu>, window: &mut Window, cx: &mut Context<Self>) {
+    pub(crate) fn show_panel_list(&mut self, list: Entity<PopupMenu>, window: &mut Window, cx: &mut Context<Self>) {
         let dismissed = cx.subscribe_in(&list, window, |this, _, _: &DismissEvent, window, cx| {
             this.panel_list = None;
             window.focus(&this.focus, cx);
@@ -2387,6 +2445,7 @@ impl Render for Commander {
                     Command::GoForward => this.go_history(1, window, cx),
                     Command::GoHome => this.go_home(window, cx),
                     Command::Bookmarks => this.show_bookmarks(window, cx),
+                    Command::QuickOpen => this.quick_open(window, cx),
                     Command::BookmarkFolder => this.bookmark_folder(window, cx),
                     Command::ManageBookmarks => this.manage_bookmarks(window, cx),
                     Command::NewWorkspace => this.new_workspace(window, cx),

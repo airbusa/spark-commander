@@ -27,6 +27,8 @@ pub struct Session {
     pub window: Option<WindowPlace>,
     /// Synchronized browsing was on.
     pub sync_browsing: bool,
+    /// The command line's last lines, the latest first.
+    pub commands: Vec<String>,
 }
 
 /// Where the main window was, in logical pixels; maximized, its size before.

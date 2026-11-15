@@ -13,6 +13,8 @@ pub struct CommandItem {
     /// every item — and so the palette's item vector — kilobytes wide.
     pub(crate) icon: Option<Box<Icon>>,
     pub(crate) action: Option<Box<dyn Action>>,
+    /// SparkCommander patch: an Action whose key the row shows, not dispatched.
+    pub(crate) keys_of: Option<Box<dyn Action>>,
     pub(crate) checked: bool,
     disabled: bool,
     pub(crate) content: Option<Rc<CommandItemContent>>,
@@ -25,6 +27,7 @@ impl Clone for CommandItem {
             keywords: self.keywords.clone(),
             icon: self.icon.clone(),
             action: self.action.as_ref().map(|action| action.boxed_clone()),
+            keys_of: self.keys_of.as_ref().map(|action| action.boxed_clone()),
             checked: self.checked,
             disabled: self.disabled,
             content: self.content.clone(),
@@ -40,6 +43,7 @@ impl CommandItem {
             keywords: Vec::new(),
             icon: None,
             action: None,
+            keys_of: None,
             checked: false,
             disabled: false,
             content: None,
@@ -63,6 +67,13 @@ impl CommandItem {
     /// The Action's active keybinding is also shown by the default row.
     pub fn action(mut self, action: Box<dyn Action>) -> Self {
         self.action = Some(action);
+        self
+    }
+
+    /// SparkCommander patch: show `action`'s key without dispatching it; the
+    /// palette's `on_confirm` does what the item stands for.
+    pub fn keys_of(mut self, action: Box<dyn Action>) -> Self {
+        self.keys_of = Some(action);
         self
     }
 
@@ -151,6 +162,11 @@ impl CommandItem {
             && self.checked == other.checked
             && self.disabled == other.disabled
             && match (&self.action, &other.action) {
+                (Some(action), Some(other)) => action.partial_eq(other.as_ref()),
+                (None, None) => true,
+                _ => false,
+            }
+            && match (&self.keys_of, &other.keys_of) {
                 (Some(action), Some(other)) => action.partial_eq(other.as_ref()),
                 (None, None) => true,
                 _ => false,

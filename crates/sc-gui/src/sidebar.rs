@@ -8,7 +8,7 @@ use std::time::Duration;
 
 use gpui_kit::assets::IconName as Lucide;
 use gpui_kit::component::button::{Button, ButtonVariants};
-use gpui_kit::component::menu::{ContextMenuExt, PopupMenuItem};
+use gpui_kit::component::menu::{ContextMenuExt, PopupMenu, PopupMenuItem};
 use gpui_kit::component::notification::Notification;
 use gpui_kit::component::scroll::Scrollbar;
 use gpui_kit::component::{ActiveTheme, Icon, IconName, Sizable, StyledExt, WindowExt, h_flex, v_flex};
@@ -22,6 +22,7 @@ use sc_core::sidebar::{self, FolderTree, SidebarTab};
 use sc_core::{icons, theme};
 
 use crate::drag_drop::Dragged;
+use crate::menus::Run;
 use crate::{Commander, connections_dialog};
 
 pub(crate) const WIDTH: f32 = 260.;
@@ -52,13 +53,13 @@ pub(crate) struct Sidebar {
     tree_scroll: UniformListScrollHandle,
     /// The active panel's folder, where the tree last went.
     followed: Option<PathBuf>,
-    servers: Vec<Connection>,
-    hosts: Vec<String>,
+    pub(crate) servers: Vec<Connection>,
+    pub(crate) hosts: Vec<String>,
     closed: Vec<Scheme>,
     selected: Option<(Scheme, usize)>,
     /// KDE Connect's paired devices.
     devices: Vec<Device>,
-    volumes: Vec<Volume>,
+    pub(crate) volumes: Vec<Volume>,
     /// The folders of the devices mounted, by id.
     device_folders: HashMap<String, Vec<(PathBuf, String)>>,
     /// When each phone was last connected again, its files having stopped answering.
@@ -227,7 +228,7 @@ impl Commander {
     }
 
     /// The active panel shows `path`, leaving its server for it; an error names `path`.
-    fn open_folder(&mut self, path: PathBuf, window: &mut Window, cx: &mut Context<Self>) {
+    pub(crate) fn open_folder(&mut self, path: PathBuf, window: &mut Window, cx: &mut Context<Self>) {
         let side = &mut self.panels[self.active];
         let remote = side.tabs.current().remote().is_some();
         let before = side.tabs.current().spot();
@@ -499,7 +500,7 @@ impl Commander {
     }
 
     /// Shows the volume, mounting it first if it is not.
-    fn open_volume(&mut self, volume: Volume, window: &mut Window, cx: &mut Context<Self>) {
+    pub(crate) fn open_volume(&mut self, volume: Volume, window: &mut Window, cx: &mut Context<Self>) {
         if let Some(path) = volume.path.clone() {
             return self.open_folder(path, window, cx);
         }
@@ -1058,11 +1059,32 @@ impl Commander {
         cx.notify();
     }
 
-    /// Go > Bookmarks: the sidebar on Places.
+    /// Go > Bookmarks: Total Commander's Directory Hotlist over the active
+    /// panel, the sidebar's bookmarks listed; the folder shown is checked.
     pub(crate) fn show_bookmarks(&mut self, window: &mut Window, cx: &mut Context<Self>) {
-        if self.sidebar.tab != Some(SidebarTab::Places) {
-            self.toggle_sidebar(SidebarTab::Places, window, cx);
-        }
+        let panel = self.panels[self.active].tabs.current();
+        let here = panel.remote().is_none().then(|| panel.folder().to_owned());
+        let home = std::env::home_dir();
+        let bookmarks: Vec<(String, PathBuf)> = self.settings.bookmarks.iter().map(|path| {
+            (format!("{}   {}", self.settings.bookmark_name(path), tilde(path, home.as_deref())), path.clone())
+        }).collect();
+        let (focus, commander) = (self.focus.clone(), cx.entity().downgrade());
+        let list = PopupMenu::build(window, cx, move |mut menu, _, _| {
+            for (label, path) in &bookmarks {
+                let (commander, path) = (commander.clone(), path.clone());
+                let item = PopupMenuItem::new(label.clone()).checked(here.as_ref() == Some(&path)).on_click(move |_, window, cx| {
+                    let _ = commander.update(cx, |this, cx| this.open_folder(path.clone(), window, cx));
+                });
+                menu = menu.item(item);
+            }
+            if !bookmarks.is_empty() {
+                menu = menu.separator();
+            }
+            menu.menu("Add Current Folder", Box::new(Run(Command::BookmarkFolder)))
+                .menu("Manage Bookmarks...", Box::new(Run(Command::ManageBookmarks)))
+                .action_context(focus)
+        });
+        self.show_panel_list(list, window, cx);
     }
 
     /// On the Connections header: a new one.

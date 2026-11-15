@@ -796,8 +796,9 @@ impl CommandState {
             return None;
         }
 
-        let action = item.action.as_ref()?;
-        Kbd::binding_for_action_in(action.as_ref(), &self.focus_handle(cx), window)
+        let action = item.action.as_ref().or(item.keys_of.as_ref())?;
+        let focus = self.options.action_context.clone().unwrap_or_else(|| self.focus_handle(cx));
+        Kbd::binding_for_action_in(action.as_ref(), &focus, window)
             .or_else(|| Kbd::binding_for_action(action.as_ref(), None, window))
     }
 

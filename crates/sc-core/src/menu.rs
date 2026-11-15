@@ -56,7 +56,7 @@ pub enum Command {
     VolumeLabel,
     SystemInformation,
     SynchronizeDirs,
-    /// Places' bookmarks in the sidebar: Total Commander's Directory Hotlist.
+    /// Total Commander's Directory Hotlist: the bookmarks in a list over the panel.
     #[serde(alias = "DirectoryHotlist")]
     Bookmarks,
     /// The folder shown, into Bookmarks.
@@ -71,6 +71,8 @@ pub enum Command {
     ManageWorkspaces,
     /// The Tools menu's command lines to add, change, delete and give keys.
     ManageTools,
+    /// One box to find commands, bookmarks, drives, connections and tools in.
+    QuickOpen,
     /// Ctrl+Alt+1 to 9: that workspace opened.
     Workspace1,
     Workspace2,
@@ -332,6 +334,8 @@ pub const MENUS: &[Menu] = &[
             cmd("Bookmarks", Bookmarks),
             cmd("Bookmark This Folder", BookmarkFolder),
             cmd("Manage Bookmarks...", ManageBookmarks),
+            SEP,
+            cmd("Quick Open...", QuickOpen),
         ],
     },
     Menu {

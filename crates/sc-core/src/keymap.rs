@@ -72,6 +72,7 @@ const fn windows(key: &'static str) -> &'static str {
 }
 
 const SPARK_COMMANDER: Table = &[
+    (QuickOpen, "secondary-shift-p", ""),
     (ManageWorkspaces, "alt-w", ""),
     (Workspace1, "ctrl-alt-1", ""),
     (Workspace2, "ctrl-alt-2", ""),
@@ -172,6 +173,7 @@ const SPARK_COMMANDER: Table = &[
 ];
 
 const TOTAL_COMMANDER: Table = &[
+    (QuickOpen, "ctrl-shift-p", ""),
     (ManageWorkspaces, "alt-w", ""),
     (Workspace1, "ctrl-alt-1", ""),
     (Workspace2, "ctrl-alt-2", ""),
@@ -262,6 +264,7 @@ const TOTAL_COMMANDER: Table = &[
 /// Krusader's own defaults (its kractions, listpanelactions, viewactions
 /// and tabactions) and KDE's standard keys.
 const KRUSADER: Table = &[
+    (QuickOpen, "ctrl-shift-p", ""),
     (ManageWorkspaces, "alt-w", ""),
     (Workspace1, "ctrl-alt-1", ""),
     (Workspace2, "ctrl-alt-2", ""),
@@ -333,6 +336,7 @@ const KRUSADER: Table = &[
 
 /// mc.default.keymap's file manager keys; `ctrl-x` starts its chords.
 const MIDNIGHT_COMMANDER: Table = &[
+    (QuickOpen, "ctrl-shift-p", ""),
     (ManageWorkspaces, "alt-w", ""),
     (Workspace1, "ctrl-alt-1", ""),
     (Workspace2, "ctrl-alt-2", ""),
@@ -372,6 +376,7 @@ const MIDNIGHT_COMMANDER: Table = &[
 
 /// ForkLift 4's menus and macOS's own keys.
 const FORKLIFT: Table = &[
+    (QuickOpen, "secondary-shift-o", ""),
     (ManageWorkspaces, "alt-w", ""),
     (Workspace1, "ctrl-alt-1", ""),
     (Workspace2, "ctrl-alt-2", ""),

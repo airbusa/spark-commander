@@ -118,9 +118,12 @@ pub struct Workspaces {
     pub current: usize,
 }
 
+/// The first workspace's name.
+const DEFAULT: &str = "Default";
+
 impl Default for Workspaces {
     fn default() -> Self {
-        let first = Workspace { name: "Workspace 1".into(), open: OpenTabs::default() };
+        let first = Workspace { name: DEFAULT.into(), open: OpenTabs::default() };
         Self { list: vec![first], current: 0 }
     }
 }
@@ -138,6 +141,12 @@ impl Workspaces {
         let mut workspaces: Self = settings::read_json(WORKSPACES)?;
         if workspaces.list.is_empty() {
             workspaces = Self::default();
+        }
+        // The first one was "Workspace 1" before.
+        if workspaces.name_error(DEFAULT, None).is_none()
+            && let Some(first) = workspaces.list.iter_mut().find(|workspace| workspace.name == "Workspace 1")
+        {
+            first.name = DEFAULT.into();
         }
         workspaces.current = workspaces.current.min(workspaces.list.len() - 1);
         Ok(workspaces)
@@ -191,7 +200,7 @@ mod tests {
     #[test]
     fn there_is_always_a_workspace_and_names_are_once() {
         let mut workspaces = Workspaces::default();
-        assert_eq!((workspaces.list.len(), workspaces.current), (1, 0));
+        assert_eq!((workspaces.list.len(), workspaces.current, workspaces.list[0].name.as_str()), (1, 0, "Default"));
         assert!(!workspaces.remove(0));
         workspaces.insert(0, " Site ", OpenTabs::default());
         assert_eq!((workspaces.list[0].name.as_str(), workspaces.current), ("Site", 1));

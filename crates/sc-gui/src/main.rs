@@ -2491,14 +2491,11 @@ impl Render for Commander {
                     Command::SelectAll => this.mark(|panel| panel.mark_all(true), cx),
                     Command::UnselectAll => this.mark(|panel| panel.mark_all(false), cx),
                     Command::InvertSelection => this.mark(Panel::invert_marks, cx),
-                    Command::SortByName => this.set_sort(this.active, Sort::by(SortKey::Name), cx),
-                    Command::SortByExtension => {
-                        this.set_sort(this.active, Sort::by(SortKey::Extension), cx)
-                    }
-                    Command::SortByTime => {
-                        this.set_sort(this.active, Sort::by(SortKey::Modified), cx)
-                    }
-                    Command::SortBySize => this.set_sort(this.active, Sort::by(SortKey::Size), cx),
+                    // As the column headers: again on the sorted column turns it around.
+                    Command::SortByName => this.sort_by_column(this.active, SortKey::Name, cx),
+                    Command::SortByExtension => this.sort_by_column(this.active, SortKey::Extension, cx),
+                    Command::SortByTime => this.sort_by_column(this.active, SortKey::Modified, cx),
+                    Command::SortBySize => this.sort_by_column(this.active, SortKey::Size, cx),
                     Command::Unsorted => {
                         this.set_sort(this.active, Sort::by(SortKey::Unsorted), cx)
                     }

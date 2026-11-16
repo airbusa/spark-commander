@@ -312,6 +312,10 @@ pub struct Panel {
     locked: bool,
     /// The tab's own name.
     name: Option<String>,
+    /// Which tab it is, and how many moves were started in it: a move made
+    /// on a copy elsewhere lands only in its tab, and only as its newest.
+    tab: u64,
+    moves: u64,
     filter: Filter,
     file_filter: FileFilter,
     sort: Sort,
@@ -395,6 +399,8 @@ impl Panel {
             measured: HashMap::new(),
             locked: false,
             name: None,
+            tab: 0,
+            moves: 0,
             filter,
             file_filter: FileFilter::All,
             sort: Sort::default(),
@@ -1411,6 +1417,10 @@ impl Panel {
         copy
     }
 
+    pub fn mark(&self) -> TabMark {
+        TabMark(self.tab, self.moves)
+    }
+
     fn plain_copy(&self) -> Self {
         Self {
             locked: false,
@@ -1421,6 +1431,18 @@ impl Panel {
 }
 
 const CLOSED_TABS: usize = 10;
+
+/// Which tab a panel is, and its newest move: where a copy of it made for a
+/// move elsewhere goes back (`Tabs::place_of`).
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct TabMark(u64, u64);
+
+/// A tab's own number, never another's.
+fn new_tab(mut panel: Panel) -> Panel {
+    static TABS: std::sync::atomic::AtomicU64 = std::sync::atomic::AtomicU64::new(1);
+    panel.tab = TABS.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
+    panel
+}
 
 /// A side's folder tabs; there is always one.
 pub struct Tabs {
@@ -1433,7 +1455,7 @@ pub struct Tabs {
 impl Tabs {
     pub fn new(panel: Panel) -> Self {
         Self {
-            panels: vec![panel],
+            panels: vec![new_tab(panel)],
             active: 0,
             closed: Vec::new(),
         }
@@ -1463,7 +1485,7 @@ impl Tabs {
         }
         let tabs = Self {
             active: state.active.min(panels.len() - 1),
-            panels,
+            panels: panels.into_iter().map(new_tab).collect(),
             closed: Vec::new(),
         };
         (tabs, servers)
@@ -1503,7 +1525,7 @@ impl Tabs {
 
     /// A new last tab, which becomes current.
     pub fn add(&mut self, panel: Panel) {
-        self.panels.push(panel);
+        self.panels.push(new_tab(panel));
         self.active = self.panels.len() - 1;
     }
 
@@ -1521,6 +1543,8 @@ impl Tabs {
 
     /// Moves in the current tab; from a locked tab the move opens a new tab.
     pub fn navigate(&mut self, go: impl FnOnce(&mut Panel) -> io::Result<()>) -> io::Result<()> {
+        // A move elsewhere started before this one does not land after it.
+        self.current_mut().moves += 1;
         let before = self.current().place();
         if !self.current().locked {
             go(self.current_mut())?;
@@ -1542,16 +1566,31 @@ impl Tabs {
     /// A move made on a copy of tab `ix` elsewhere, as for a server: the
     /// tab takes it, or a locked one gets a new tab beside it.
     /// Tab `ix` becomes `panel`, as it is: a server's tab connected again.
-    pub fn put(&mut self, ix: usize, panel: Panel) {
+    pub fn put(&mut self, ix: usize, mut panel: Panel) {
         if let Some(slot) = self.panels.get_mut(ix) {
+            (panel.tab, panel.moves) = (slot.tab, slot.moves + 1);
             *slot = panel;
         }
+    }
+
+    /// The current tab, to move on a copy elsewhere (as for a server): its
+    /// move started, so that one started before it does not land.
+    pub fn start_move(&mut self) -> Panel {
+        self.current_mut().moves += 1;
+        self.current().clone()
+    }
+
+    /// Where a copy marked `mark` goes back: its tab, if still here and not
+    /// moved since the copy was made.
+    pub fn place_of(&self, mark: TabMark) -> Option<usize> {
+        self.panels.iter().position(|panel| panel.mark() == mark)
     }
 
     pub fn navigated(&mut self, ix: usize, mut moved: Panel) {
         let Some(panel) = self.panels.get(ix) else {
             return;
         };
+        (moved.tab, moved.moves) = (panel.tab, panel.moves + 1);
         // The tab's history goes on, also where the other panel's folder came.
         moved.history = panel.history.clone();
         let (before, after) = (panel.place(), moved.place());
@@ -1618,14 +1657,16 @@ impl Tabs {
 
     /// Tabs on a folder that a kept tab shows too; current and locked tabs stay.
     pub fn close_duplicates(&mut self) {
-        let mut shown: HashSet<PathBuf> = self
+        // One folder on one server, or here: /home there is not /home here.
+        let place = |panel: &Panel| (panel.remote.as_ref().map(|remote| remote.url()), panel.path());
+        let mut shown: HashSet<(Option<String>, PathBuf)> = self
             .panels
             .iter()
             .enumerate()
             .filter(|(ix, panel)| *ix == self.active || panel.locked)
-            .map(|(_, panel)| panel.path())
+            .map(|(_, panel)| place(panel))
             .collect();
-        self.close_where(|panel| !panel.locked && !shown.insert(panel.path()));
+        self.close_where(|panel| !panel.locked && !shown.insert(place(panel)));
     }
 
     /// In tab order; never the current tab.
@@ -2124,6 +2165,22 @@ mod tests {
         tabs.select(0);
         tabs.close_duplicates();
         assert_eq!(tabs.panels().len(), 2, "one of the two on the same folder");
+
+        // A move made elsewhere lands only in its own tab, and only as its newest.
+        tabs.select(1);
+        let older = tabs.start_move();
+        let newer = tabs.start_move();
+        assert_eq!(tabs.place_of(older.mark()), None, "a newer move was started");
+        assert_eq!(tabs.place_of(newer.mark()), Some(1));
+        tabs.navigated(1, newer.clone());
+        assert_eq!(tabs.place_of(newer.mark()), None, "it has landed");
+        tabs.duplicate();
+        tabs.select(1);
+        let pending = tabs.start_move();
+        tabs.close();
+        assert_eq!(tabs.place_of(pending.mark()), None, "its tab closed, the next not taken for it");
+        assert_eq!(tabs.panels().len(), 2);
+        tabs.select(0);
 
         tabs.rename(0, " Work ");
         assert_eq!(tabs.panels()[0].title(), "*Work");

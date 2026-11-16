@@ -113,7 +113,7 @@ impl Commander {
                 continue;
             };
             let (ask, kept) = self.dialog_ask(window, cx);
-            let (switches, server, home) = (self.switches, address.host.clone(), placeholder.location());
+            let (switches, server, mark) = (self.switches, address.host.clone(), placeholder.mark());
             let note = Notification::info(format!("Connecting to {server}...")).id1::<Connecting>(server.clone()).autohide(false);
             window.push_notification(note, cx);
             let (done, connected) = oneshot::channel();
@@ -143,8 +143,9 @@ impl Commander {
                     }
                     match went {
                         Ok(panel) => {
+                            // Unless it was closed or went elsewhere meanwhile.
                             let tabs = &mut this.panels[side].tabs;
-                            if tabs.panels().get(tab).is_some_and(|now| now.location() == home) {
+                            if let Some(tab) = tabs.place_of(mark) {
                                 tabs.put(tab, panel);
                                 cx.notify();
                             }

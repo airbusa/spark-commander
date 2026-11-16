@@ -1759,8 +1759,9 @@ impl Commander {
             self.panels[ix].scroll_to_cursor();
             return cx.notify();
         }
-        let (tab, switches) = (side.tabs.active(), self.switches);
-        let mut moved = side.tabs.current().clone();
+        let switches = self.switches;
+        let mut moved = side.tabs.start_move();
+        let mark = moved.mark();
         cx.spawn_in(window, async move |this, cx| {
             let went = cx
                 .background_executor()
@@ -1770,6 +1771,10 @@ impl Commander {
                 if this.switches != switches {
                     return;
                 }
+                // Its tab closed, or moved again since: the newer move stands.
+                let Some(tab) = this.panels[ix].tabs.place_of(mark) else {
+                    return;
+                };
                 match went {
                     Ok(moved) => {
                         this.panels[ix].tabs.navigated(tab, moved);

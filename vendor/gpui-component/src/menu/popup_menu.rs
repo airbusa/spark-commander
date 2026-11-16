@@ -2,7 +2,8 @@
 // scrollbar shows while it scrolls. Changes are marked "WDS patch".
 // Modified for SparkCommander: menus take the window's height, scroll only
 // past it and show no scrollbar; `with_menu_items` is public; a submenu may
-// run an action of its own when clicked. Changes are marked "SparkCommander patch".
+// run an action of its own when clicked; app menus' items take icons from a
+// `MenuIcons` global; icons are 16 px. Changes are marked "SparkCommander patch".
 
 use crate::ThemeStyled as _;
 use crate::actions::{Cancel, Confirm, SelectDown, SelectUp};
@@ -22,6 +23,11 @@ use gpui_base::TestSupportExt as _;
 use std::rc::Rc;
 
 const CONTEXT: &str = "PopupMenu";
+
+/// SparkCommander patch: the icon of an app menu's action, as the app chooses.
+pub struct MenuIcons(pub Rc<dyn Fn(&dyn Action) -> Option<Icon>>);
+
+impl gpui::Global for MenuIcons {}
 
 pub fn init(cx: &mut App) {
     cx.bind_keys([
@@ -807,12 +813,12 @@ impl PopupMenu {
                     disabled,
                     ..
                 } => {
-                    self = self.menu_with_check_and_disabled(
-                        name,
-                        checked,
-                        action.boxed_clone(),
-                        disabled,
-                    )
+                    // SparkCommander patch: an icon where the app gives one; a checked item shows its check.
+                    let icon = cx.try_global::<MenuIcons>().filter(|_| !checked).and_then(|icons| (icons.0)(action.as_ref()));
+                    self = match icon {
+                        Some(icon) => self.menu_with_icon_and_disabled(name, icon, action.boxed_clone(), disabled),
+                        None => self.menu_with_check_and_disabled(name, checked, action.boxed_clone(), disabled),
+                    }
                 }
                 OwnedMenuItem::Separator => {
                     self = self.separator();
@@ -1307,7 +1313,8 @@ impl PopupMenu {
             Icon::empty()
         };
 
-        Some(icon.xsmall())
+        // SparkCommander patch: 16 px and 8 px from the label, as Breeze's and Windows 11's menus.
+        Some(icon.size_4().mr_1())
     }
 
     #[inline]

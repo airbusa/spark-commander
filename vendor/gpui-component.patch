@@ -1,6 +1,6 @@
 diff -ruN a/src/button/button.rs b/src/button/button.rs
---- a/src/button/button.rs	2026-11-13 07:54:07.066628136 +0100
-+++ b/src/button/button.rs	2026-11-13 08:05:02.859497750 +0100
+--- a/src/button/button.rs	2026-11-16 23:00:43.267293497 +0100
++++ b/src/button/button.rs	2026-11-16 23:00:43.302290672 +0100
 @@ -159,6 +159,53 @@
  }
  
@@ -231,8 +231,8 @@ diff -ruN a/src/button/button.rs b/src/button/button.rs
              Self::Default | Self::Link | Self::Ghost | Self::Text => cx.theme().transparent.into(),
              Self::Primary => cx.theme().tokens.button_primary.background.opacity(0.15),
 diff -ruN a/src/checkbox.rs b/src/checkbox.rs
---- a/src/checkbox.rs	2026-11-13 07:54:07.067294202 +0100
-+++ b/src/checkbox.rs	2026-11-13 08:05:02.860556140 +0100
+--- a/src/checkbox.rs	2026-11-16 23:00:43.270537693 +0100
++++ b/src/checkbox.rs	2026-11-16 23:00:43.310147774 +0100
 @@ -197,16 +197,25 @@
          window,
          cx,
@@ -383,9 +383,121 @@ diff -ruN a/src/checkbox.rs b/src/checkbox.rs
              )
              .when(self.label.is_some() || !children.is_empty(), |this| {
                  this.child(
+diff -ruN a/src/command/command.rs b/src/command/command.rs
+--- a/src/command/command.rs	2026-11-16 23:00:43.271272660 +0100
++++ b/src/command/command.rs	2026-11-16 23:00:43.303099589 +0100
+@@ -1,7 +1,7 @@
+ use std::rc::Rc;
+ 
+ use gpui::{
+-    AnyElement, App, DefiniteLength, Entity, IntoElement, RenderOnce, SharedString,
++    AnyElement, App, DefiniteLength, Entity, FocusHandle, IntoElement, RenderOnce, SharedString,
+     StyleRefinement, Styled, Window, rems,
+ };
+ 
+@@ -23,6 +23,8 @@
+     pub(crate) bordered: bool,
+     pub(crate) header: Option<Rc<CommandSlot>>,
+     pub(crate) footer: Option<Rc<CommandSlot>>,
++    /// SparkCommander patch: where the rows' keys are looked up.
++    pub(crate) action_context: Option<FocusHandle>,
+ }
+ 
+ impl Default for CommandOptions {
+@@ -35,6 +37,7 @@
+             bordered: true,
+             header: None,
+             footer: None,
++            action_context: None,
+         }
+     }
+ }
+@@ -173,6 +176,13 @@
+         self
+     }
+ 
++    /// SparkCommander patch: look the rows' keys up as if `handle` had the
++    /// focus, as [`crate::menu::PopupMenu::action_context`] does.
++    pub fn action_context(mut self, handle: FocusHandle) -> Self {
++        self.options.action_context = Some(handle);
++        self
++    }
++
+     /// Set the placeholder of the search field.
+     pub fn placeholder(mut self, placeholder: impl Into<SharedString>) -> Self {
+         self.options.placeholder = Some(placeholder.into());
+diff -ruN a/src/command/item.rs b/src/command/item.rs
+--- a/src/command/item.rs	2026-11-16 23:00:43.271523647 +0100
++++ b/src/command/item.rs	2026-11-16 23:00:43.303126350 +0100
+@@ -13,6 +13,8 @@
+     /// every item — and so the palette's item vector — kilobytes wide.
+     pub(crate) icon: Option<Box<Icon>>,
+     pub(crate) action: Option<Box<dyn Action>>,
++    /// SparkCommander patch: an Action whose key the row shows, not dispatched.
++    pub(crate) keys_of: Option<Box<dyn Action>>,
+     pub(crate) checked: bool,
+     disabled: bool,
+     pub(crate) content: Option<Rc<CommandItemContent>>,
+@@ -25,6 +27,7 @@
+             keywords: self.keywords.clone(),
+             icon: self.icon.clone(),
+             action: self.action.as_ref().map(|action| action.boxed_clone()),
++            keys_of: self.keys_of.as_ref().map(|action| action.boxed_clone()),
+             checked: self.checked,
+             disabled: self.disabled,
+             content: self.content.clone(),
+@@ -40,6 +43,7 @@
+             keywords: Vec::new(),
+             icon: None,
+             action: None,
++            keys_of: None,
+             checked: false,
+             disabled: false,
+             content: None,
+@@ -66,6 +70,13 @@
+         self
+     }
+ 
++    /// SparkCommander patch: show `action`'s key without dispatching it; the
++    /// palette's `on_confirm` does what the item stands for.
++    pub fn keys_of(mut self, action: Box<dyn Action>) -> Self {
++        self.keys_of = Some(action);
++        self
++    }
++
+     /// Mark this item as the chosen one, drawing a check at the right end of
+     /// the row.
+     ///
+@@ -154,6 +165,11 @@
+                 (Some(action), Some(other)) => action.partial_eq(other.as_ref()),
+                 (None, None) => true,
+                 _ => false,
++            }
++            && match (&self.keys_of, &other.keys_of) {
++                (Some(action), Some(other)) => action.partial_eq(other.as_ref()),
++                (None, None) => true,
++                _ => false,
+             }
+     }
+ }
+diff -ruN a/src/command/state.rs b/src/command/state.rs
+--- a/src/command/state.rs	2026-11-16 23:00:43.271817776 +0100
++++ b/src/command/state.rs	2026-11-16 23:00:43.303192816 +0100
+@@ -796,8 +796,9 @@
+             return None;
+         }
+ 
+-        let action = item.action.as_ref()?;
+-        Kbd::binding_for_action_in(action.as_ref(), &self.focus_handle(cx), window)
++        let action = item.action.as_ref().or(item.keys_of.as_ref())?;
++        let focus = self.options.action_context.clone().unwrap_or_else(|| self.focus_handle(cx));
++        Kbd::binding_for_action_in(action.as_ref(), &focus, window)
+             .or_else(|| Kbd::binding_for_action(action.as_ref(), None, window))
+     }
+ 
 diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
---- a/src/dialog/dialog.rs	2026-11-13 07:54:07.068555088 +0100
-+++ b/src/dialog/dialog.rs	2026-11-13 08:05:02.854960823 +0100
+--- a/src/dialog/dialog.rs	2026-11-16 23:00:43.272512266 +0100
++++ b/src/dialog/dialog.rs	2026-11-16 23:00:43.303364893 +0100
 @@ -1,13 +1,20 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): a dialog moves by
 +// its title, can open centred over a part of the window, and fades in
@@ -520,7 +632,7 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
          let on_close = self.button_props.close_handler();
          let on_ok = self.button_props.ok_handler();
          let on_cancel = self.button_props.cancel_handler();
-@@ -632,6 +696,32 @@
+@@ -632,6 +696,35 @@
          let base_size = window.text_style().font_size;
          let rem_size = window.rem_size();
  
@@ -540,20 +652,23 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
 +        };
 +        let laid_out = moving.clone();
 +        let has_title = self.title.is_some();
++        let has_footer = self.footer.is_some();
 +        // SparkCommander patch: AppKit's window, see `MacControls`: 16 px corners,
 +        // a 32 px title bar of the dialog's colour, the close button on the left.
 +        let mac = cx
 +            .try_global::<crate::MacControls>()
 +            .copied()
 +            .filter(|_| !cx.has_global::<crate::NativeControls>());
-+        let band = px(if mac.is_some() { 32. } else { TITLE_BAND_HEIGHT });
++        // SparkCommander patch: WinUI's ContentDialog, see `NativeControls::command_bar`.
++        let command_bar = cx.try_global::<crate::NativeControls>().and_then(|native| native.command_bar);
++        let band = px(if mac.is_some() { 32. } else if command_bar.is_some() { 52. } else { TITLE_BAND_HEIGHT });
 +        let corner = mac.map_or(cx.theme().radius_lg, |_| px(16.));
 +        let active = window.is_window_active();
 +
          let mut paddings = Edges::all(px(16.));
          if let Some(pl) = self.style.padding.left {
              paddings.left = pl.to_pixels(base_size, rem_size);
-@@ -708,9 +798,12 @@
+@@ -708,9 +801,12 @@
                              })
                              .popup(
                                  gpui_base::Positioner::corner(
@@ -568,7 +683,7 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
                                  .margin(margin)
                                  .child(
                                      v_flex()
-@@ -719,18 +812,66 @@
+@@ -719,18 +815,68 @@
                                          .debug_selector(move || format!("dialog-{layer_ix}"))
                                          .bg(cx.theme().tokens.background)
                                          .border_1()
@@ -604,6 +719,7 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
 +                                                    .pr(paddings.right + px(28.))
 +                                                    .map(|this| match mac {
 +                                                        Some(_) => this.pl(px(36.)).pr(paddings.right),
++                                                        None if command_bar.is_some() => this.pt(px(8.)),
 +                                                        None => this.bg(theme.muted).border_b_1().border_color(theme.border),
 +                                                    })
 +                                                    .rounded_t(corner - px(1.))
@@ -614,6 +730,7 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
 +                                                            .when(mac.is_some(), |this| {
 +                                                                this.font_semibold().text_color(theme.muted_foreground)
 +                                                            })
++                                                            .when(command_bar.is_some(), |this| this.text_xl().font_semibold())
 +                                                            .flex_1()
 +                                                            .min_w_0()
 +                                                            .truncate()
@@ -637,7 +754,7 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
                                          .child(
                                              v_flex()
                                                  .flex_1()
-@@ -744,14 +885,6 @@
+@@ -744,14 +890,6 @@
                                                              .child(header),
                                                      )
                                                  })
@@ -652,9 +769,21 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
                                                  .when_some(self.content_builder, |this, builder| {
                                                      this.child(builder(
                                                          DialogContent::new()
-@@ -785,20 +918,27 @@
+@@ -781,24 +919,39 @@
+                                                 div()
+                                                     .pl(paddings.left)
+                                                     .pr(paddings.right)
++                                                    .when_some(command_bar, |this, fill| {
++                                                        this.py(paddings.bottom)
++                                                            .bg(fill)
++                                                            .border_t_1()
++                                                            .border_color(cx.theme().border)
++                                                            .rounded_b(corner - px(1.))
++                                                    })
+                                                     .child(footer),
                                              )
                                          })
++                                        .when(command_bar.is_some() && has_footer, |this| this.pb_0())
                                          .children(self.props.close_button.then(|| {
 -                                            let top = (paddings.top - px(10.)).max(px(8.));
 +                                            // WDS patch: in the middle of the title's band.
@@ -687,7 +816,7 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
                                          }))
                                          .map(|surface| {
                                              if animated {
-@@ -841,7 +981,8 @@
+@@ -841,7 +994,8 @@
                                          }),
                                  )
                                  .map(|positioner| {
@@ -697,7 +826,7 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
                                          positioner
                                              .with_animation(
                                                  "slide-down",
-@@ -876,6 +1017,38 @@
+@@ -876,6 +1030,38 @@
      }
  }
  
@@ -737,8 +866,8 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
  pub(crate) mod tests {
      use super::*;
 diff -ruN a/src/group_box.rs b/src/group_box.rs
---- a/src/group_box.rs	2026-11-13 07:54:07.068970785 +0100
-+++ b/src/group_box.rs	2026-11-13 08:05:02.849178885 +0100
+--- a/src/group_box.rs	2026-11-16 23:00:43.276693863 +0100
++++ b/src/group_box.rs	2026-11-16 23:00:43.310470257 +0100
 @@ -1,6 +1,6 @@
  use gpui::{
      AnyElement, App, Background, ElementId, InteractiveElement as _, IntoElement, ParentElement,
@@ -747,7 +876,7 @@ diff -ruN a/src/group_box.rs b/src/group_box.rs
  };
  use smallvec::SmallVec;
  
-@@ -140,8 +140,15 @@
+@@ -140,8 +140,18 @@
  
  impl RenderOnce for GroupBox {
      fn render(self, _: &mut Window, cx: &mut App) -> impl IntoElement {
@@ -757,13 +886,16 @@ diff -ruN a/src/group_box.rs b/src/group_box.rs
 +            .try_global::<crate::MacControls>()
 +            .copied()
 +            .filter(|_| !cx.has_global::<crate::NativeControls>());
++        // SparkCommander patch: Windows' card, see `NativeControls::card`.
++        let card = cx.try_global::<crate::NativeControls>().and_then(|native| native.card);
          let (bg, border, has_paddings): (Option<Background>, _, _) = match self.variant {
              GroupBoxVariant::Normal => (None, None, false),
 +            _ if mac.is_some() => (mac.map(|mac| mac.group.into()), None, true),
++            _ if card.is_some() => (card.map(|card| card.0.into()), card.map(|card| card.1), true),
              GroupBoxVariant::Fill => (Some(cx.theme().tokens.group_box.into()), None, true),
              GroupBoxVariant::Outline => (None, Some(cx.theme().border), true),
          };
-@@ -151,12 +158,14 @@
+@@ -151,12 +161,15 @@
              .w_full()
              .when(has_paddings, |this| this.gap_3())
              .when(!has_paddings, |this| this.gap_4())
@@ -775,20 +907,22 @@ diff -ruN a/src/group_box.rs b/src/group_box.rs
                          .text_color(cx.theme().muted_foreground)
                          .line_height(relative(1.25))
 +                        .when_some(mac, |this, mac| this.text_xs().text_color(mac.text).pl(px(10.)))
++                        .when(card.is_some(), |this| this.font_semibold().text_color(cx.theme().foreground))
                          .refine_style(&self.title_style)
                          .child(title),
                  )
-@@ -174,6 +183,7 @@
+@@ -174,6 +187,8 @@
                              .when(has_paddings, |this| this.p_4())
                              .gap_4()
                              .rounded(cx.theme().radius)
 +                            .when(mac.is_some(), |this| this.rounded(px(12.)))
++                            .when(card.is_some(), |this| this.rounded(px(8.)))
                              .refine_style(&self.content_style)
                              .children(self.children),
                      )
 diff -ruN a/src/highlighter/input_adapter.rs b/src/highlighter/input_adapter.rs
---- a/src/highlighter/input_adapter.rs	2026-11-13 07:54:07.069509980 +0100
-+++ b/src/highlighter/input_adapter.rs	2026-11-13 08:05:02.884431829 +0100
+--- a/src/highlighter/input_adapter.rs	2026-11-16 23:00:43.277129772 +0100
++++ b/src/highlighter/input_adapter.rs	2026-11-16 23:00:43.305488008 +0100
 @@ -1,3 +1,7 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): the highlighter
 +// factory is public, and a background parse leaves the fold candidates alone
@@ -824,8 +958,8 @@ diff -ruN a/src/highlighter/input_adapter.rs b/src/highlighter/input_adapter.rs
          });
          parse_task.borrow_mut().replace(task);
 diff -ruN a/src/highlighter/mod.rs b/src/highlighter/mod.rs
---- a/src/highlighter/mod.rs	2026-11-13 07:54:07.069869388 +0100
-+++ b/src/highlighter/mod.rs	2026-11-13 08:05:02.883752221 +0100
+--- a/src/highlighter/mod.rs	2026-11-16 23:00:43.278376832 +0100
++++ b/src/highlighter/mod.rs	2026-11-16 23:00:43.305569523 +0100
 @@ -1,3 +1,7 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): the editor's
 +// highlighter factory is public, so an app can wrap it. Changes are marked
@@ -850,8 +984,8 @@ diff -ruN a/src/highlighter/mod.rs b/src/highlighter/mod.rs
  }
  
 diff -ruN a/src/input/input.rs b/src/input/input.rs
---- a/src/input/input.rs	2026-11-13 07:54:07.071249686 +0100
-+++ b/src/input/input.rs	2026-11-13 08:05:02.823931772 +0100
+--- a/src/input/input.rs	2026-11-16 23:00:43.279961734 +0100
++++ b/src/input/input.rs	2026-11-16 23:00:43.306056539 +0100
 @@ -705,6 +705,10 @@
          };
  
@@ -914,8 +1048,8 @@ diff -ruN a/src/input/input.rs b/src/input/input.rs
              .items_center()
              .gap(gap_x)
 diff -ruN a/src/input/popovers/completion_menu.rs b/src/input/popovers/completion_menu.rs
---- a/src/input/popovers/completion_menu.rs	2026-11-13 07:54:07.071841421 +0100
-+++ b/src/input/popovers/completion_menu.rs	2026-11-13 08:05:02.822069486 +0100
+--- a/src/input/popovers/completion_menu.rs	2026-11-16 23:00:43.280957476 +0100
++++ b/src/input/popovers/completion_menu.rs	2026-11-16 23:00:43.305831762 +0100
 @@ -1,3 +1,7 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): the completion
 +// menu is as wide as the editor's configured width. Changes are marked
@@ -937,8 +1071,8 @@ diff -ruN a/src/input/popovers/completion_menu.rs b/src/input/popovers/completio
                      )
                      .when_some(selected_documentation, |this, documentation| {
 diff -ruN a/src/kbd.rs b/src/kbd.rs
---- a/src/kbd.rs	2026-11-13 07:54:07.072428906 +0100
-+++ b/src/kbd.rs	2026-11-13 08:05:02.811670582 +0100
+--- a/src/kbd.rs	2026-11-16 23:00:43.282185120 +0100
++++ b/src/kbd.rs	2026-11-16 23:00:43.310641252 +0100
 @@ -1,3 +1,8 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): a binding of
 +// several keystrokes shows them all. Changes are marked "WDS patch".
@@ -1034,8 +1168,8 @@ diff -ruN a/src/kbd.rs b/src/kbd.rs
      }
  }
 diff -ruN a/src/lib.rs b/src/lib.rs
---- a/src/lib.rs	2026-11-13 07:54:07.072890561 +0100
-+++ b/src/lib.rs	2026-11-13 08:05:02.829694085 +0100
+--- a/src/lib.rs	2026-11-16 23:00:43.282386763 +0100
++++ b/src/lib.rs	2026-11-16 23:00:43.310698902 +0100
 @@ -20,6 +20,15 @@
  mod touch_selection;
  mod virtual_list;
@@ -1062,8 +1196,8 @@ diff -ruN a/src/lib.rs b/src/lib.rs
  
  rust_i18n::i18n!("locales", fallback = "en");
 diff -ruN a/src/list/list.rs b/src/list/list.rs
---- a/src/list/list.rs	2026-11-13 07:54:07.073854537 +0100
-+++ b/src/list/list.rs	2026-11-13 08:05:02.869519080 +0100
+--- a/src/list/list.rs	2026-11-16 23:00:43.282993346 +0100
++++ b/src/list/list.rs	2026-11-16 23:00:43.306451840 +0100
 @@ -1,3 +1,6 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): a list can take
 +// a single click as selecting only. Changes are marked "WDS patch".
@@ -1116,7 +1250,7 @@ diff -ruN a/src/list/list.rs b/src/list/list.rs
                              secondary: e.modifiers().secondary(),
 diff -ruN a/src/mac.rs b/src/mac.rs
 --- a/src/mac.rs	1970-01-01 01:00:00.000000000 +0100
-+++ b/src/mac.rs	2026-11-13 08:05:02.857478301 +0100
++++ b/src/mac.rs	2026-11-16 23:00:43.310747825 +0100
 @@ -0,0 +1,43 @@
 +// SparkCommander patch: this file is new.
 +use gpui::{Global, Hsla};
@@ -1162,8 +1296,8 @@ diff -ruN a/src/mac.rs b/src/mac.rs
 +/// The check box's mark, bolder than GPUI Kit's, as AppKit's.
 +pub(crate) const CHECK_MARK: &[u8] = br#"<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"><path d="M2.4 6.4 4.9 8.9 9.7 3.2" fill="none" stroke="black" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>"#;
 diff -ruN a/src/menu/app_menu_bar.rs b/src/menu/app_menu_bar.rs
---- a/src/menu/app_menu_bar.rs	2026-11-13 07:54:07.074714599 +0100
-+++ b/src/menu/app_menu_bar.rs	2026-11-13 08:05:02.871619194 +0100
+--- a/src/menu/app_menu_bar.rs	2026-11-16 23:00:43.283477957 +0100
++++ b/src/menu/app_menu_bar.rs	2026-11-16 23:00:43.306697677 +0100
 @@ -1,7 +1,13 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): menu-bar menus may
 +// use the window's height. Changes are marked "WDS patch".
@@ -1321,8 +1455,8 @@ diff -ruN a/src/menu/app_menu_bar.rs b/src/menu/app_menu_bar.rs
                      .open(is_open)
                      .on_mouse_down(
 diff -ruN a/src/menu/context_menu.rs b/src/menu/context_menu.rs
---- a/src/menu/context_menu.rs	2026-11-12 22:39:55.000000000 +0100
-+++ b/src/menu/context_menu.rs	2026-11-13 08:05:02.870430932 +0100
+--- a/src/menu/context_menu.rs	2026-11-16 23:00:43.283814867 +0100
++++ b/src/menu/context_menu.rs	2026-11-16 23:00:43.306588049 +0100
 @@ -481,6 +481,14 @@
                  menu.set_previous_focus(previous_focus_handle, cx);
              });
@@ -1339,8 +1473,8 @@ diff -ruN a/src/menu/context_menu.rs b/src/menu/context_menu.rs
              // focused input highlighted. An explicit action target
              // takes precedence over where the press landed.
 diff -ruN a/src/menu/dropdown_menu.rs b/src/menu/dropdown_menu.rs
---- a/src/menu/dropdown_menu.rs	2026-11-12 22:39:55.000000000 +0100
-+++ b/src/menu/dropdown_menu.rs	2026-11-13 08:05:02.871118081 +0100
+--- a/src/menu/dropdown_menu.rs	2026-11-16 23:00:43.283989098 +0100
++++ b/src/menu/dropdown_menu.rs	2026-11-16 23:00:43.306642282 +0100
 @@ -1,9 +1,9 @@
 -use std::rc::Rc;
 +use std::{cell::Cell, rc::Rc};
@@ -1482,8 +1616,8 @@ diff -ruN a/src/menu/dropdown_menu.rs b/src/menu/dropdown_menu.rs
          frame.child.prepaint(window, cx);
      }
 diff -ruN a/src/menu/menu_item.rs b/src/menu/menu_item.rs
---- a/src/menu/menu_item.rs	2026-11-13 07:54:07.075152046 +0100
-+++ b/src/menu/menu_item.rs	2026-11-13 08:05:02.870784423 +0100
+--- a/src/menu/menu_item.rs	2026-11-16 23:00:43.284130517 +0100
++++ b/src/menu/menu_item.rs	2026-11-16 23:00:43.306669133 +0100
 @@ -102,6 +102,10 @@
              .px_2()
              .text_base()
@@ -1509,8 +1643,8 @@ diff -ruN a/src/menu/menu_item.rs b/src/menu/menu_item.rs
                  .when_some(self.on_click, |this, on_click| {
                      this.on_mouse_down(MouseButton::Left, move |_, _, cx| {
 diff -ruN a/src/menu/mod.rs b/src/menu/mod.rs
---- a/src/menu/mod.rs	2026-11-13 07:54:07.075485788 +0100
-+++ b/src/menu/mod.rs	2026-11-13 08:05:02.871331284 +0100
+--- a/src/menu/mod.rs	2026-11-16 23:00:43.284179350 +0100
++++ b/src/menu/mod.rs	2026-11-16 23:00:43.306725621 +0100
 @@ -1,3 +1,6 @@
 +// Modified for SparkCommander: exports MenuBuilder. Changes are marked
 +// "SparkCommander patch".
@@ -1518,7 +1652,7 @@ diff -ruN a/src/menu/mod.rs b/src/menu/mod.rs
  use gpui::App;
  
  mod app_menu_bar;
-@@ -6,7 +9,8 @@
+@@ -6,10 +9,11 @@
  mod menu_item;
  mod popup_menu;
  
@@ -1527,16 +1661,21 @@ diff -ruN a/src/menu/mod.rs b/src/menu/mod.rs
 +pub use app_menu_bar::{AppMenuBar, MenuBuilder};
  pub use context_menu::{ContextMenu, ContextMenuExt, ContextMenuState};
  pub use dropdown_menu::DropdownMenu;
- pub use popup_menu::{PopupMenu, PopupMenuItem};
+-pub use popup_menu::{PopupMenu, PopupMenuItem};
++pub use popup_menu::{MenuIcons, PopupMenu, PopupMenuItem};
+ 
+ pub(crate) fn init(cx: &mut App) {
+     app_menu_bar::init(cx);
 diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
---- a/src/menu/popup_menu.rs	2026-11-13 07:54:07.076794463 +0100
-+++ b/src/menu/popup_menu.rs	2026-11-13 08:05:02.871986560 +0100
-@@ -1,8 +1,13 @@
+--- a/src/menu/popup_menu.rs	2026-11-16 23:00:43.284387566 +0100
++++ b/src/menu/popup_menu.rs	2026-11-16 23:00:43.306762891 +0100
+@@ -1,8 +1,14 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): a long menu's
 +// scrollbar shows while it scrolls. Changes are marked "WDS patch".
 +// Modified for SparkCommander: menus take the window's height, scroll only
-+// past it and show no scrollbar; `with_menu_items` is public. Changes are
-+// marked "SparkCommander patch".
++// past it and show no scrollbar; `with_menu_items` is public; a submenu may
++// run an action of its own when clicked; app menus' items take icons from a
++// `MenuIcons` global; icons are 16 px. Changes are marked "SparkCommander patch".
 +
  use crate::ThemeStyled as _;
  use crate::actions::{Cancel, Confirm, SelectDown, SelectUp};
@@ -1546,7 +1685,36 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
  use crate::{ActiveTheme, ElementExt, Icon, IconName, Sizable as _, h_flex, v_flex};
  use crate::{Side, Size, kbd::Kbd};
  use gpui::{
-@@ -303,7 +308,6 @@
+@@ -18,6 +24,11 @@
+ 
+ const CONTEXT: &str = "PopupMenu";
+ 
++/// SparkCommander patch: the icon of an app menu's action, as the app chooses.
++pub struct MenuIcons(pub Rc<dyn Fn(&dyn Action) -> Option<Icon>>);
++
++impl gpui::Global for MenuIcons {}
++
+ pub fn init(cx: &mut App) {
+     cx.bind_keys([
+         KeyBinding::new("enter", Confirm { secondary: false }, Some(CONTEXT)),
+@@ -61,6 +72,8 @@
+         label: SharedString,
+         disabled: bool,
+         menu: Entity<PopupMenu>,
++        /// SparkCommander patch: what a click on it runs, as Konsole's New Tab.
++        action: Option<Box<dyn Action>>,
+     },
+ }
+ 
+@@ -105,6 +118,7 @@
+             label: label.into(),
+             disabled: false,
+             menu,
++            action: None,
+         }
+     }
+ 
+@@ -303,7 +317,6 @@
  
      /// The parent menu of this menu, if this is a submenu
      parent_menu: Option<WeakEntity<Self>>,
@@ -1554,7 +1722,7 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
      external_link_icon: bool,
      scroll_handle: ScrollHandle,
      // This will update on render
-@@ -345,7 +349,6 @@
+@@ -345,7 +358,6 @@
              max_height: None,
              check_side: Side::Left,
              bounds: Bounds::default(),
@@ -1562,7 +1730,7 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
              scroll_handle: ScrollHandle::default(),
              external_link_icon: true,
              size: Size::default(),
-@@ -445,9 +448,8 @@
+@@ -445,9 +457,8 @@
          self
      }
  
@@ -1574,7 +1742,7 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
          self
      }
  
-@@ -783,7 +785,8 @@
+@@ -783,7 +794,8 @@
          self
      }
  
@@ -1584,7 +1752,48 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
          mut self,
          items: impl IntoIterator<Item = I>,
          window: &mut Window,
-@@ -820,10 +823,6 @@
+@@ -801,29 +813,39 @@
+                     disabled,
+                     ..
+                 } => {
+-                    self = self.menu_with_check_and_disabled(
+-                        name,
+-                        checked,
+-                        action.boxed_clone(),
+-                        disabled,
+-                    )
++                    // SparkCommander patch: an icon where the app gives one; a checked item shows its check.
++                    let icon = cx.try_global::<MenuIcons>().filter(|_| !checked).and_then(|icons| (icons.0)(action.as_ref()));
++                    self = match icon {
++                        Some(icon) => self.menu_with_icon_and_disabled(name, icon, action.boxed_clone(), disabled),
++                        None => self.menu_with_check_and_disabled(name, checked, action.boxed_clone(), disabled),
++                    }
+                 }
+                 OwnedMenuItem::Separator => {
+                     self = self.separator();
+                 }
++                // SparkCommander patch: a submenu whose first item is its own name runs that
++                // when clicked, and lists the items after it (and a separator).
+                 OwnedMenuItem::Submenu(submenu) => {
++                    let own = match submenu.items.first() {
++                        Some(OwnedMenuItem::Action { name, action, disabled: false, .. }) if *name == submenu.name => Some(action.boxed_clone()),
++                        _ => None,
++                    };
++                    let mut items = submenu.items.clone();
++                    if own.is_some() {
++                        let skip = if matches!(items.get(1), Some(OwnedMenuItem::Separator)) { 2 } else { 1 };
++                        items.drain(..skip);
++                    }
+                     self = self.submenu(submenu.name, window, cx, move |menu, window, cx| {
+-                        menu.with_menu_items(submenu.items.clone(), window, cx)
+-                    })
++                        menu.with_menu_items(items.clone(), window, cx)
++                    });
++                    if let Some(PopupMenuItem::Submenu { action, .. }) = self.menu_items.last_mut() {
++                        *action = own;
++                    }
+                 }
+                 OwnedMenuItem::SystemMenu(_) => {}
              }
          }
  
@@ -1595,7 +1804,22 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
          self
      }
  
-@@ -904,6 +903,94 @@
+@@ -884,6 +906,14 @@
+                         }
+                         self.dismiss(&Cancel, window, cx)
+                     }
++                    // SparkCommander patch: a submenu's own action.
++                    Some(PopupMenuItem::Submenu {
++                        action: Some(action),
++                        ..
++                    }) => {
++                        self.dispatch_confirm_action(action, window, cx);
++                        self.dismiss(&Cancel, window, cx)
++                    }
+                     _ => {}
+                 }
+             }
+@@ -904,6 +934,94 @@
          window.dispatch_action(action.boxed_clone(), cx);
      }
  
@@ -1690,7 +1914,87 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
      fn resolved_action_context(&self, cx: &App) -> Option<FocusHandle> {
          self.action_context.clone().or_else(|| {
              let parent = self.parent_menu.as_ref()?.upgrade()?;
-@@ -1466,10 +1553,10 @@
+@@ -919,6 +1037,22 @@
+         }
+     }
+ 
++    /// The highlighted item, as the arrow keys leave it.
++    pub fn highlighted(&self) -> Option<usize> {
++        self.selected_index
++    }
++
++    /// Highlights item `ix`, as the arrow keys do.
++    pub fn highlight(&mut self, ix: usize, cx: &mut Context<Self>) {
++        self.set_selected_index(ix, cx);
++    }
++
++    /// Chooses item `ix`, as Enter does.
++    pub fn pick(&mut self, ix: usize, window: &mut Window, cx: &mut Context<Self>) {
++        self.selected_index = Some(ix);
++        self.confirm(&Confirm { secondary: false }, window, cx);
++    }
++
+     fn select_up(&mut self, _: &SelectUp, _: &mut Window, cx: &mut Context<Self>) {
+         cx.stop_propagation();
+         let ix = self.selected_index.unwrap_or(0);
+@@ -1179,7 +1313,8 @@
+             Icon::empty()
+         };
+ 
+-        Some(icon.xsmall())
++        // SparkCommander patch: 16 px and 8 px from the label, as Breeze's and Windows 11's menus.
++        Some(icon.size_4().mr_1())
+     }
+ 
+     #[inline]
+@@ -1368,9 +1503,16 @@
+                 label,
+                 menu,
+                 disabled,
+-            } => this
++                action,
++            } => {
++                let key = self.render_key_binding(action.as_ref().map(|action| action.boxed_clone()), window, cx);
++                this
+                 .selected(selected)
+                 .disabled(*disabled)
++                // SparkCommander patch: clicked, it runs its own action, its key shown.
++                .when(action.is_some() && !disabled, |this| {
++                    this.on_click(cx.listener(move |this, _, window, cx| this.on_click(ix, window, cx)))
++                })
+                 .items_start()
+                 .child(
+                     h_flex()
+@@ -1393,9 +1535,15 @@
+                                 .justify_between()
+                                 .child(label.clone())
+                                 .child(
+-                                    Icon::new(IconName::ChevronRight)
+-                                        .xsmall()
+-                                        .text_color(cx.theme().muted_foreground),
++                                    h_flex()
++                                        .gap_2()
++                                        .items_center()
++                                        .children(key)
++                                        .child(
++                                            Icon::new(IconName::ChevronRight)
++                                                .xsmall()
++                                                .text_color(cx.theme().muted_foreground),
++                                        ),
+                                 ),
+                         ),
+                 )
+@@ -1421,7 +1569,8 @@
+                         )
+                         .with_priority(self.priority + 1)
+                     })
+-                }),
++                })
++            }
+         }
+     }
+ }
+@@ -1466,10 +1615,10 @@
          let view = cx.entity().clone();
          let items_count = self.menu_items.len();
  
@@ -1705,7 +2009,7 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
  
          let has_left_icon = self
              .menu_items
-@@ -1508,11 +1595,9 @@
+@@ -1508,11 +1657,9 @@
                      .min_w(rems(8.))
                      .when_some(self.min_width, |this, min_width| this.min_w(min_width))
                      .max_w(max_width)
@@ -1720,7 +2024,7 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
                      .children(
                          self.menu_items
                              .iter()
-@@ -1523,9 +1608,6 @@
+@@ -1523,9 +1670,6 @@
                      )
                      .on_prepaint(move |bounds, _, cx| view.update(cx, |r, _| r.bounds = bounds)),
              )
@@ -1730,76 +2034,9 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
      }
  }
  
-diff -ruN a/src/native.rs b/src/native.rs
---- a/src/native.rs	1970-01-01 01:00:00.000000000 +0100
-+++ b/src/native.rs	2026-11-13 08:05:02.807233110 +0100
-@@ -0,0 +1,63 @@
-+// SparkCommander patch: this file is new.
-+use gpui::{Global, Hsla, Pixels};
-+
-+/// Controls drawn as the desktop's own style draws them (KDE's Breeze,
-+/// Windows 11's): its colours and the sizes that differ; without it, GPUI
-+/// Kit's own look.
-+#[derive(Clone, Copy, Debug)]
-+pub struct NativeControls {
-+    /// Check boxes and radio buttons, a check box's corners, their frame's
-+    /// width (GNOME's is 2 px), and a radio button's dot.
-+    pub check_size: Pixels,
-+    pub check_radius: Pixels,
-+    pub check_border: Pixels,
-+    pub radio_dot: Pixels,
-+    /// Unchecked, their frame and fill; checked; the mark or dot on them.
-+    pub check_frame: Hsla,
-+    pub check_fill: Hsla,
-+    pub checked_frame: Hsla,
-+    pub checked_fill: Hsla,
-+    pub mark: Hsla,
-+    /// Sliders' and progress bars' groove, and what fills it.
-+    pub groove: Hsla,
-+    pub fill: Hsla,
-+    /// A slider's groove; a progress bar's groove and fill.
-+    pub slider_groove: Pixels,
-+    pub progress: [Pixels; 2],
-+    /// A slider's 20 px handle, its middle, and the rim around the middle.
-+    pub handle: Hsla,
-+    pub handle_middle: Hsla,
-+    pub handle_rim: Pixels,
-+    /// Windows': the handle's frame.
-+    pub handle_frame: Option<Hsla>,
-+    /// Push buttons' fill and frame, normal, hovered and pressed; the default
-+    /// button's (a dialog's OK); their text.
-+    pub button: [(Hsla, Hsla); 3],
-+    pub default_button: [(Hsla, Hsla); 3],
-+    pub button_text: Hsla,
-+    pub default_button_text: Hsla,
-+    /// Windows': the bottom edge of a button's frame, of the default button's.
-+    pub button_edge: Option<[Hsla; 2]>,
-+    /// Breeze's document-mode tabs: the selected one, the others, the selected one's line.
-+    pub tabs: Option<[Hsla; 3]>,
-+    /// Windows': a text field's bottom line; focused, the checked fill.
-+    pub field_line: Option<Hsla>,
-+    /// Text fields' fill, where the style has its own.
-+    pub field_fill: Option<Hsla>,
-+    /// Combo boxes drawn as push buttons (Windows', GNOME's); buttons' labels
-+    /// and the check mark bold (GNOME's).
-+    pub combo_button: bool,
-+    pub bold: bool,
-+}
-+
-+impl NativeControls {
-+    /// The frame of check boxes and radio buttons, as GPUI's border widths go.
-+    pub(crate) fn check_frame_width<E: gpui::Styled>(&self, element: E) -> E {
-+        match self.check_border >= gpui::px(2.) {
-+            true => element.border_2(),
-+            false => element.border_1(),
-+        }
-+    }
-+}
-+
-+impl Global for NativeControls {}
 diff -ruN a/src/native_menu/macos.rs b/src/native_menu/macos.rs
---- a/src/native_menu/macos.rs	2026-11-12 22:39:55.000000000 +0100
-+++ b/src/native_menu/macos.rs	2026-11-13 08:05:02.814482677 +0100
+--- a/src/native_menu/macos.rs	2026-11-16 23:00:43.285028905 +0100
++++ b/src/native_menu/macos.rs	2026-11-16 23:00:43.306858603 +0100
 @@ -200,6 +200,238 @@
      NSImage::initWithData(NSImage::alloc(), &data)
  }
@@ -2040,8 +2277,8 @@ diff -ruN a/src/native_menu/macos.rs b/src/native_menu/macos.rs
  fn ns_view_ptr(window: &Window) -> Option<usize> {
      let handle = HasWindowHandle::window_handle(window).ok()?;
 diff -ruN a/src/native_menu/mod.rs b/src/native_menu/mod.rs
---- a/src/native_menu/mod.rs	2026-11-12 22:39:55.000000000 +0100
-+++ b/src/native_menu/mod.rs	2026-11-13 08:05:02.815234408 +0100
+--- a/src/native_menu/mod.rs	2026-11-16 23:00:43.285192345 +0100
++++ b/src/native_menu/mod.rs	2026-11-16 23:00:43.306887238 +0100
 @@ -38,6 +38,8 @@
  
  #[cfg(target_os = "macos")]
@@ -2051,9 +2288,80 @@ diff -ruN a/src/native_menu/mod.rs b/src/native_menu/mod.rs
  #[cfg(target_os = "windows")]
  mod windows;
  
+diff -ruN a/src/native.rs b/src/native.rs
+--- a/src/native.rs	1970-01-01 01:00:00.000000000 +0100
++++ b/src/native.rs	2026-11-16 23:00:43.310873333 +0100
+@@ -0,0 +1,67 @@
++// SparkCommander patch: this file is new.
++use gpui::{Global, Hsla, Pixels};
++
++/// Controls drawn as the desktop's own style draws them (KDE's Breeze,
++/// Windows 11's): its colours and the sizes that differ; without it, GPUI
++/// Kit's own look.
++#[derive(Clone, Copy, Debug)]
++pub struct NativeControls {
++    /// Check boxes and radio buttons, a check box's corners, their frame's
++    /// width (GNOME's is 2 px), and a radio button's dot.
++    pub check_size: Pixels,
++    pub check_radius: Pixels,
++    pub check_border: Pixels,
++    pub radio_dot: Pixels,
++    /// Unchecked, their frame and fill; checked; the mark or dot on them.
++    pub check_frame: Hsla,
++    pub check_fill: Hsla,
++    pub checked_frame: Hsla,
++    pub checked_fill: Hsla,
++    pub mark: Hsla,
++    /// Sliders' and progress bars' groove, and what fills it.
++    pub groove: Hsla,
++    pub fill: Hsla,
++    /// A slider's groove; a progress bar's groove and fill.
++    pub slider_groove: Pixels,
++    pub progress: [Pixels; 2],
++    /// A slider's 20 px handle, its middle, and the rim around the middle.
++    pub handle: Hsla,
++    pub handle_middle: Hsla,
++    pub handle_rim: Pixels,
++    /// Windows': the handle's frame.
++    pub handle_frame: Option<Hsla>,
++    /// Push buttons' fill and frame, normal, hovered and pressed; the default
++    /// button's (a dialog's OK); their text.
++    pub button: [(Hsla, Hsla); 3],
++    pub default_button: [(Hsla, Hsla); 3],
++    pub button_text: Hsla,
++    pub default_button_text: Hsla,
++    /// Windows': the bottom edge of a button's frame, of the default button's.
++    pub button_edge: Option<[Hsla; 2]>,
++    /// Breeze's document-mode tabs: the selected one, the others, the selected one's line.
++    pub tabs: Option<[Hsla; 3]>,
++    /// Windows': a text field's bottom line; focused, the checked fill.
++    pub field_line: Option<Hsla>,
++    /// Text fields' fill, where the style has its own.
++    pub field_fill: Option<Hsla>,
++    /// Combo boxes drawn as push buttons (Windows', GNOME's); buttons' labels
++    /// and the check mark bold (GNOME's).
++    pub combo_button: bool,
++    pub bold: bool,
++    /// Windows': a group box as a card, its fill and rim, its title bold.
++    pub card: Option<(Hsla, Hsla)>,
++    /// Windows': a dialog's buttons in a band of this fill, its title unbanded and large.
++    pub command_bar: Option<Hsla>,
++}
++
++impl NativeControls {
++    /// The frame of check boxes and radio buttons, as GPUI's border widths go.
++    pub(crate) fn check_frame_width<E: gpui::Styled>(&self, element: E) -> E {
++        match self.check_border >= gpui::px(2.) {
++            true => element.border_2(),
++            false => element.border_1(),
++        }
++    }
++}
++
++impl Global for NativeControls {}
 diff -ruN a/src/progress/progress.rs b/src/progress/progress.rs
---- a/src/progress/progress.rs	2026-11-13 07:54:07.077215744 +0100
-+++ b/src/progress/progress.rs	2026-11-13 08:05:02.816598457 +0100
+--- a/src/progress/progress.rs	2026-11-16 23:00:43.286394540 +0100
++++ b/src/progress/progress.rs	2026-11-16 23:00:43.307057111 +0100
 @@ -93,12 +93,18 @@
          let mut inner_style = StyleRefinement::default();
          inner_style.corner_radii = radius;
@@ -2105,8 +2413,8 @@ diff -ruN a/src/progress/progress.rs b/src/progress/progress.rs
                      .refine_style(&inner_style)
                      .map(|this| {
 diff -ruN a/src/radio.rs b/src/radio.rs
---- a/src/radio.rs	2026-11-13 07:54:07.078216677 +0100
-+++ b/src/radio.rs	2026-11-13 08:05:02.887031472 +0100
+--- a/src/radio.rs	2026-11-16 23:00:43.287029517 +0100
++++ b/src/radio.rs	2026-11-16 23:00:43.311033728 +0100
 @@ -8,7 +8,7 @@
  use gpui::{
      AnyElement, App, Axis, ElementId, InteractiveElement, IntoElement, ParentElement, RenderOnce,
@@ -2174,8 +2482,8 @@ diff -ruN a/src/radio.rs b/src/radio.rs
              .when(!self.children.is_empty() || self.label.is_some(), |this| {
                  this.child(
 diff -ruN a/src/root.rs b/src/root.rs
---- a/src/root.rs	2026-11-13 07:54:07.078881577 +0100
-+++ b/src/root.rs	2026-11-13 08:05:02.867462674 +0100
+--- a/src/root.rs	2026-11-16 23:00:43.287495102 +0100
++++ b/src/root.rs	2026-11-16 23:00:43.311116395 +0100
 @@ -1,3 +1,6 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): notifications paint
 +// above dialogs. Changes are marked "WDS patch".
@@ -2256,8 +2564,8 @@ diff -ruN a/src/root.rs b/src/root.rs
      }
  }
 diff -ruN a/src/select.rs b/src/select.rs
---- a/src/select.rs	2026-11-13 07:54:07.079948258 +0100
-+++ b/src/select.rs	2026-11-13 08:05:02.867818248 +0100
+--- a/src/select.rs	2026-11-16 23:00:43.288798018 +0100
++++ b/src/select.rs	2026-11-16 23:00:43.311187921 +0100
 @@ -393,6 +393,25 @@
      fn toggle_menu(&mut self, _: &ClickEvent, window: &mut Window, cx: &mut Context<Self>) {
          cx.stop_propagation();
@@ -2343,8 +2651,8 @@ diff -ruN a/src/select.rs b/src/select.rs
                                              .text_color(cx.theme().muted_foreground)
                                              .into_any_element(),
 diff -ruN a/src/slider.rs b/src/slider.rs
---- a/src/slider.rs	2026-11-13 07:54:07.080517786 +0100
-+++ b/src/slider.rs	2026-11-13 08:05:02.891627689 +0100
+--- a/src/slider.rs	2026-11-16 23:00:43.291352754 +0100
++++ b/src/slider.rs	2026-11-16 23:00:43.311378564 +0100
 @@ -5,10 +5,10 @@
  use gpui_base::{Slider as BaseSlider, SliderIndicator, SliderThumb, SliderTrack, spring};
  
@@ -2473,8 +2781,8 @@ diff -ruN a/src/slider.rs b/src/slider.rs
                              .child(
                                  div()
 diff -ruN a/src/styled.rs b/src/styled.rs
---- a/src/styled.rs	2026-11-13 07:54:07.081118229 +0100
-+++ b/src/styled.rs	2026-11-13 08:05:02.874092340 +0100
+--- a/src/styled.rs	2026-11-16 23:00:43.293533177 +0100
++++ b/src/styled.rs	2026-11-16 23:00:43.311451272 +0100
 @@ -25,6 +25,7 @@
  /// as part of one grounded surface rather than as an outline with a separate
  /// shadow below it. An opaque border cannot reproduce that — a border composites
@@ -2493,10 +2801,120 @@ diff -ruN a/src/styled.rs b/src/styled.rs
  }
  
  /// shadcn/ui's popup surface shadow — a hairline `ring` plus `shadow-md` — at
+diff -ruN a/src/tab/tab_bar.rs b/src/tab/tab_bar.rs
+--- a/src/tab/tab_bar.rs	2026-11-16 23:00:43.294158265 +0100
++++ b/src/tab/tab_bar.rs	2026-11-16 23:00:43.308569645 +0100
+@@ -1,3 +1,6 @@
++// Modified for Water Data Studio (Apache-2.0, section 4b): the segmented
++// indicator uses the active tab colour. Changes are marked "WDS patch".
++
+ use std::{cell::RefCell, rc::Rc};
+ 
+ use gpui::{
+@@ -257,7 +260,8 @@
+                     div()
+                         .w_full()
+                         .h(inner_height)
+-                        .bg(cx.theme().tokens.background)
++                        // WDS patch: the theme's active tab colour, not the background.
++                        .bg(cx.theme().tokens.tab_active)
+                         .rounded(inner_radius)
+                         .shadow(raised_shadow()),
+                 ),
+@@ -365,10 +369,40 @@
+             Size::Large => px(16.),
+             _ => px(12.),
+         };
++        // SparkCommander patch: AppKit's window tab bar, see `MacControls`: a
++        // rounded track holding tabs of equal width.
++        let mac = match self.variant {
++            TabVariant::Tab if !cx.has_global::<crate::NativeControls>() => {
++                cx.try_global::<crate::MacControls>().copied()
++            }
++            _ => None,
++        };
++        // And `Underline` tabs as a tab view's: a segmented control, the
++        // selected segment in the accent.
++        let mac_segments = match self.variant {
++            TabVariant::Underline if !cx.has_global::<crate::NativeControls>() => {
++                cx.try_global::<crate::MacControls>().copied()
++            }
++            _ => None,
++        };
+         let (bg, paddings, gap): (Background, _, _) = match self.variant {
++            TabVariant::Underline if mac_segments.is_some() => {
++                let fill = mac_segments.map_or(cx.theme().transparent, |mac| mac.button);
++                (fill.into(), Edges::all(px(0.)), px(0.))
++            }
++            TabVariant::Tab if mac.is_some() => {
++                let track = mac.map_or(cx.theme().transparent, |mac| mac.tab_track);
++                (track.into(), Edges::all(px(2.)), px(0.))
++            }
+             TabVariant::Tab => {
+                 let padding = Edges::all(px(0.));
+-                (cx.theme().tokens.tab_bar.into(), padding, px(0.))
++                // SparkCommander patch: WinUI's TabView, its strip darker than the selected tab.
++                let fluent = cx.try_global::<crate::NativeControls>().filter(|native| native.card.is_some());
++                let fill: Background = match fluent.and_then(|native| native.command_bar) {
++                    Some(fill) => fill.into(),
++                    None => cx.theme().tokens.tab_bar.into(),
++                };
++                (fill, padding, px(0.))
+             }
+             TabVariant::Outline => {
+                 let padding = Edges::all(px(0.));
+@@ -408,7 +442,7 @@
+         let has_indicator = matches!(
+             self.variant,
+             TabVariant::Segmented | TabVariant::Pill | TabVariant::Underline
+-        );
++        ) && mac_segments.is_none();
+         let num_tabs = self.children.len();
+ 
+         // Bounds tracking for tab indicator animation.
+@@ -450,7 +484,10 @@
+         reveal.advance(window, cx);
+ 
+         let padding_x = paddings.left;
+-        let indicator = self.render_indicator(&bounds_rc, window, cx);
++        let indicator = match mac_segments {
++            Some(_) => None,
++            None => self.render_indicator(&bounds_rc, window, cx),
++        };
+         let indicator_epoch = indicator.as_ref().map(|(_, epoch)| *epoch).unwrap_or(0);
+         let mut indicator_element = indicator.map(|(el, _)| el);
+         let indicator_ready = indicator_element.is_some();
+@@ -466,6 +503,7 @@
+         for (ix, child) in self.children.into_iter().enumerate() {
+             item_metas.push((child.label.clone(), child.icon.clone(), child.disabled));
+             let tab_bar_prefix = child.tab_bar_prefix.unwrap_or(true);
++            let child = if mac.is_some() { child.flex_1() } else { child };
+             let mut tab = child
+                 .ix(ix)
+                 .tab_bar_prefix(tab_bar_prefix)
+@@ -540,7 +578,8 @@
+             .bg(bg)
+             .text_color(cx.theme().tab_foreground)
+             .when(
+-                self.variant == TabVariant::Underline || self.variant == TabVariant::Tab,
++                (self.variant == TabVariant::Underline && mac_segments.is_none())
++                    || (self.variant == TabVariant::Tab && mac.is_none()),
+                 |this| {
+                     this.child(
+                         div()
+@@ -555,6 +594,8 @@
+                 },
+             )
+             .rounded(self.variant.tab_bar_radius(self.size, cx))
++            .when(mac.is_some(), |this| this.rounded(px(14.)).m(px(4.)))
++            .when(mac_segments.is_some(), |this| this.rounded(px(6.)))
+             .paddings(paddings)
+             .refine_style(&self.style)
+             .when_some(self.prefix, |this, prefix| this.child(prefix))
 diff -ruN a/src/tab/tab.rs b/src/tab/tab.rs
---- a/src/tab/tab.rs	2026-11-13 07:54:07.082176202 +0100
-+++ b/src/tab/tab.rs	2026-11-13 08:05:02.842526636 +0100
-@@ -634,6 +634,54 @@
+--- a/src/tab/tab.rs	2026-11-16 23:00:43.293941363 +0100
++++ b/src/tab/tab.rs	2026-11-16 23:00:43.308521344 +0100
+@@ -634,6 +634,72 @@
                  hover_style.borders.left = px(0.);
              }
          }
@@ -2548,15 +2966,34 @@ diff -ruN a/src/tab/tab.rs b/src/tab/tab.rs
 +            selected_style.borders = Edges::all(px(0.5));
 +            selected_style.border_color = mac.tab_rim;
 +        }
++        // SparkCommander patch: WinUI's TabView, see `NativeControls::card`: the
++        // selected tab a card in the content's colour, the others flat between dividers.
++        let fluent = match self.variant {
++            TabVariant::Tab if breeze.is_none() => native.and_then(|native| native.card),
++            _ => None,
++        };
++        if let Some((_, rim)) = fluent {
++            let transparent = cx.theme().transparent;
++            for style in [&mut normal_style, &mut hover_style, &mut disabled_style] {
++                style.bg = transparent.into();
++                style.borders = Edges::default();
++                style.border_color = transparent;
++            }
++            hover_style.bg = if cx.theme().mode.is_dark() { gpui::hsla(0., 0., 1., 0.06) } else { gpui::hsla(0., 0., 0., 0.04) }.into();
++            selected_style.bg = cx.theme().background.into();
++            selected_style.borders = Edges { top: px(1.), left: px(1.), right: px(1.), bottom: px(0.) };
++            selected_style.border_color = rim;
++        }
          let tab_style = if self.disabled {
              &disabled_style
          } else if self.selected {
-@@ -641,12 +689,22 @@
+@@ -641,12 +707,24 @@
          } else {
              &normal_style
          };
 -        let radius = self.variant.radius(self.size, cx);
 +        let radius = match (mac, mac_segment) {
++            _ if fluent.is_some() => px(0.),
 +            (Some(_), _) => px(12.),
 +            (None, Some(_)) => px(6.),
 +            (None, None) => self.variant.radius(self.size, cx),
@@ -2568,6 +3005,7 @@ diff -ruN a/src/tab/tab.rs b/src/tab/tab.rs
 -        let height = self.variant.height(self.size);
 +        // Breeze's: a 3 px line over 31 px.
 +        let height = match (breeze, mac) {
++            _ if fluent.is_some() => px(32.),
 +            (Some(_), _) => px(34.),
 +            (None, Some(_)) => px(24.),
 +            (None, None) if mac_segment.is_some() => px(24.),
@@ -2576,129 +3014,63 @@ diff -ruN a/src/tab/tab.rs b/src/tab/tab.rs
          let aria_label = self.a11y_label();
  
          let segmented_indicator_active =
-@@ -806,6 +864,7 @@
+@@ -806,6 +884,8 @@
                  _ => this.text_sm(),
              })
              .rounded(radius)
++            .when(fluent.is_some(), |this| this.rounded_t(px(8.)).when(self.selected, |this| this.font_semibold()))
 +            .when(mac_segment.is_some(), |this| this.px(px(11.)))
              .when(!self.selected && !self.disabled, |this| {
                  this.text_color(normal_style.fg)
                      .bg(normal_style.bg)
-@@ -861,6 +920,11 @@
+@@ -822,14 +902,18 @@
+                 if self.selected || self.disabled {
+                     return this;
+                 }
+-                this.text_color(hover_style.fg)
++                let this = this.text_color(hover_style.fg)
+                     .bg(hover_style.bg)
+                     .border_l(hover_style.borders.left)
+                     .border_r(hover_style.borders.right)
+                     .border_t(hover_style.borders.top)
+                     .border_b(hover_style.borders.bottom)
+                     .border_color(hover_style.border_color)
+-                    .rounded(radius)
++                    .rounded(radius);
++                match fluent {
++                    Some(_) => this.rounded_t(px(8.)),
++                    None => this,
++                }
+             })
+             .when(has_inline_inner_bg, |this| {
+                 this.child(
+@@ -861,6 +945,11 @@
                  )
              })
              .child(inner_element)
 +            // SparkCommander patch: the selected tab's accent line on top, as Breeze draws it.
-+            .when(self.selected && !self.disabled && self.variant == TabVariant::Tab && mac.is_none(), |this| {
++            .when(self.selected && !self.disabled && self.variant == TabVariant::Tab && mac.is_none() && fluent.is_none(), |this| {
 +                let (line, color) = breeze.map_or((px(2.), cx.theme().primary), |([_, _, line], _)| (px(3.), line));
 +                this.child(div().absolute().top_0().left_0().right_0().h(line).bg(color))
 +            })
              .when_some(self.suffix, |this, suffix| {
                  this.child(
                      div()
-diff -ruN a/src/tab/tab_bar.rs b/src/tab/tab_bar.rs
---- a/src/tab/tab_bar.rs	2026-11-13 07:54:07.083470128 +0100
-+++ b/src/tab/tab_bar.rs	2026-11-13 08:05:02.841981234 +0100
-@@ -1,3 +1,6 @@
-+// Modified for Water Data Studio (Apache-2.0, section 4b): the segmented
-+// indicator uses the active tab colour. Changes are marked "WDS patch".
-+
- use std::{cell::RefCell, rc::Rc};
- 
- use gpui::{
-@@ -257,7 +260,8 @@
-                     div()
-                         .w_full()
-                         .h(inner_height)
--                        .bg(cx.theme().tokens.background)
-+                        // WDS patch: the theme's active tab colour, not the background.
-+                        .bg(cx.theme().tokens.tab_active)
-                         .rounded(inner_radius)
-                         .shadow(raised_shadow()),
-                 ),
-@@ -365,7 +369,31 @@
-             Size::Large => px(16.),
-             _ => px(12.),
-         };
-+        // SparkCommander patch: AppKit's window tab bar, see `MacControls`: a
-+        // rounded track holding tabs of equal width.
-+        let mac = match self.variant {
-+            TabVariant::Tab if !cx.has_global::<crate::NativeControls>() => {
-+                cx.try_global::<crate::MacControls>().copied()
-+            }
-+            _ => None,
-+        };
-+        // And `Underline` tabs as a tab view's: a segmented control, the
-+        // selected segment in the accent.
-+        let mac_segments = match self.variant {
-+            TabVariant::Underline if !cx.has_global::<crate::NativeControls>() => {
-+                cx.try_global::<crate::MacControls>().copied()
-+            }
-+            _ => None,
-+        };
-         let (bg, paddings, gap): (Background, _, _) = match self.variant {
-+            TabVariant::Underline if mac_segments.is_some() => {
-+                let fill = mac_segments.map_or(cx.theme().transparent, |mac| mac.button);
-+                (fill.into(), Edges::all(px(0.)), px(0.))
-+            }
-+            TabVariant::Tab if mac.is_some() => {
-+                let track = mac.map_or(cx.theme().transparent, |mac| mac.tab_track);
-+                (track.into(), Edges::all(px(2.)), px(0.))
-+            }
-             TabVariant::Tab => {
-                 let padding = Edges::all(px(0.));
-                 (cx.theme().tokens.tab_bar.into(), padding, px(0.))
-@@ -408,7 +436,7 @@
-         let has_indicator = matches!(
-             self.variant,
-             TabVariant::Segmented | TabVariant::Pill | TabVariant::Underline
--        );
-+        ) && mac_segments.is_none();
-         let num_tabs = self.children.len();
- 
-         // Bounds tracking for tab indicator animation.
-@@ -450,7 +478,10 @@
-         reveal.advance(window, cx);
- 
-         let padding_x = paddings.left;
--        let indicator = self.render_indicator(&bounds_rc, window, cx);
-+        let indicator = match mac_segments {
-+            Some(_) => None,
-+            None => self.render_indicator(&bounds_rc, window, cx),
-+        };
-         let indicator_epoch = indicator.as_ref().map(|(_, epoch)| *epoch).unwrap_or(0);
-         let mut indicator_element = indicator.map(|(el, _)| el);
-         let indicator_ready = indicator_element.is_some();
-@@ -466,6 +497,7 @@
-         for (ix, child) in self.children.into_iter().enumerate() {
-             item_metas.push((child.label.clone(), child.icon.clone(), child.disabled));
-             let tab_bar_prefix = child.tab_bar_prefix.unwrap_or(true);
-+            let child = if mac.is_some() { child.flex_1() } else { child };
-             let mut tab = child
-                 .ix(ix)
-                 .tab_bar_prefix(tab_bar_prefix)
-@@ -540,7 +572,8 @@
-             .bg(bg)
-             .text_color(cx.theme().tab_foreground)
-             .when(
--                self.variant == TabVariant::Underline || self.variant == TabVariant::Tab,
-+                (self.variant == TabVariant::Underline && mac_segments.is_none())
-+                    || (self.variant == TabVariant::Tab && mac.is_none()),
-                 |this| {
-                     this.child(
-                         div()
-@@ -555,6 +588,8 @@
-                 },
-             )
-             .rounded(self.variant.tab_bar_radius(self.size, cx))
-+            .when(mac.is_some(), |this| this.rounded(px(14.)).m(px(4.)))
-+            .when(mac_segments.is_some(), |this| this.rounded(px(6.)))
-             .paddings(paddings)
-             .refine_style(&self.style)
-             .when_some(self.prefix, |this, prefix| this.child(prefix))
+@@ -868,6 +957,11 @@
+                         .child(suffix),
+                 )
+             })
++            // shortcut: the divider stays beside a selected tab on its right, where WinUI hides it.
++            .when_some(fluent.filter(|_| !self.selected), |this, (_, rim)| {
++                let divider = if cx.theme().mode.is_dark() { gpui::hsla(0., 0., 1., 0.08) } else { rim };
++                this.child(div().absolute().right_0().top(px(8.)).w(px(1.)).h(px(16.)).bg(divider))
++            })
+             .when_some(self.on_click.clone(), |this, on_click| {
+                 this.on_click(move |event, window, cx| on_click(event, window, cx))
+             })
 diff -ruN a/src/table/data_table.rs b/src/table/data_table.rs
---- a/src/table/data_table.rs	2026-11-13 07:54:07.083909450 +0100
-+++ b/src/table/data_table.rs	2026-11-13 08:05:02.865634928 +0100
+--- a/src/table/data_table.rs	2026-11-16 23:00:43.294481430 +0100
++++ b/src/table/data_table.rs	2026-11-16 23:00:43.308661219 +0100
 @@ -1,5 +1,10 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): optional lines
 +// between columns; shift and an arrow extends a range of cells; no focus
@@ -2793,8 +3165,8 @@ diff -ruN a/src/table/data_table.rs b/src/table/data_table.rs
      }
  }
 diff -ruN a/src/table/delegate.rs b/src/table/delegate.rs
---- a/src/table/delegate.rs	2026-11-13 07:54:07.084403021 +0100
-+++ b/src/table/delegate.rs	2026-11-13 08:05:02.864381377 +0100
+--- a/src/table/delegate.rs	2026-11-16 23:00:43.294624501 +0100
++++ b/src/table/delegate.rs	2026-11-16 23:00:43.308690796 +0100
 @@ -1,7 +1,10 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): a cell can have a
 +// context menu and a background of its own. Changes are marked "WDS patch".
@@ -2834,8 +3206,8 @@ diff -ruN a/src/table/delegate.rs b/src/table/delegate.rs
      fn render_td(
          &mut self,
 diff -ruN a/src/table/state.rs b/src/table/state.rs
---- a/src/table/state.rs	2026-11-13 07:54:07.086958748 +0100
-+++ b/src/table/state.rs	2026-11-13 08:05:02.865303645 +0100
+--- a/src/table/state.rs	2026-11-16 23:00:43.294953367 +0100
++++ b/src/table/state.rs	2026-11-16 23:00:43.308839709 +0100
 @@ -1,3 +1,11 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): in cell selection,
 +// the row header shows row numbers, and the selected cell's row number and
@@ -3367,8 +3739,8 @@ diff -ruN a/src/table/state.rs b/src/table/state.rs
                  }
              })
 diff -ruN a/src/title_bar.rs b/src/title_bar.rs
---- a/src/title_bar.rs	2026-11-13 07:54:07.087565691 +0100
-+++ b/src/title_bar.rs	2026-11-13 08:05:02.856610489 +0100
+--- a/src/title_bar.rs	2026-11-16 23:00:43.298841025 +0100
++++ b/src/title_bar.rs	2026-11-16 23:00:43.311538968 +0100
 @@ -1,3 +1,7 @@
 +// Modified for SparkCommander (Apache-2.0, section 4b): the window's buttons
 +// are those the desktop's layout names, and may be the icon theme's pictures
@@ -3499,7 +3871,7 @@ diff -ruN a/src/title_bar.rs b/src/title_bar.rs
              .id("window-controls")
 diff -ruN a/src/toolkit.rs b/src/toolkit.rs
 --- a/src/toolkit.rs	1970-01-01 01:00:00.000000000 +0100
-+++ b/src/toolkit.rs	2026-11-13 08:05:02.827405976 +0100
++++ b/src/toolkit.rs	2026-11-16 23:00:43.311601858 +0100
 @@ -0,0 +1,106 @@
 +// SparkCommander patch: this file is new.
 +use std::sync::Arc;
@@ -3608,8 +3980,8 @@ diff -ruN a/src/toolkit.rs b/src/toolkit.rs
 +    div().size_full().child(canvas.absolute().inset_0())
 +}
 diff -ruN a/src/tooltip.rs b/src/tooltip.rs
---- a/src/tooltip.rs	2026-11-12 22:39:55.000000000 +0100
-+++ b/src/tooltip.rs	2026-11-13 08:05:02.810993557 +0100
+--- a/src/tooltip.rs	2026-11-16 23:00:43.299117200 +0100
++++ b/src/tooltip.rs	2026-11-16 23:00:43.311627376 +0100
 @@ -124,6 +124,19 @@
                  .px_2()
                  .text_sm()
@@ -3631,8 +4003,8 @@ diff -ruN a/src/tooltip.rs b/src/tooltip.rs
                  .map(|this| {
                      this.child(div().map(|this| match self.content {
 diff -ruN a/src/tree.rs b/src/tree.rs
---- a/src/tree.rs	2026-11-13 07:54:07.087989722 +0100
-+++ b/src/tree.rs	2026-11-13 08:05:02.849721455 +0100
+--- a/src/tree.rs	2026-11-16 23:00:43.299716179 +0100
++++ b/src/tree.rs	2026-11-16 23:00:43.311651883 +0100
 @@ -1,3 +1,8 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): a context menu
 +// builder gets the menu's context, so it can add submenus; the row renderer
@@ -3707,8 +4079,8 @@ diff -ruN a/src/tree.rs b/src/tree.rs
                              .into_any_element()
                      })
 diff -ruN a/src/window_border.rs b/src/window_border.rs
---- a/src/window_border.rs	2026-11-13 07:54:07.088694746 +0100
-+++ b/src/window_border.rs	2026-11-13 08:05:02.891998805 +0100
+--- a/src/window_border.rs	2026-11-16 23:00:43.299908063 +0100
++++ b/src/window_border.rs	2026-11-16 23:00:43.311700896 +0100
 @@ -21,6 +21,24 @@
  /// corners, so keep the generic window wrapper square until rounded content masks exist.
  pub(crate) const BORDER_RADIUS: Pixels = px(0.0);
@@ -3773,8 +4145,8 @@ diff -ruN a/src/window_border.rs b/src/window_border.rs
                      .when(!tiling.top, |div| div.border_t(BORDER_SIZE))
                      .when(!tiling.bottom, |div| div.border_b(BORDER_SIZE))
 diff -ruN a/src/window_ext.rs b/src/window_ext.rs
---- a/src/window_ext.rs	2026-11-13 07:54:07.089192442 +0100
-+++ b/src/window_ext.rs	2026-11-13 08:05:02.892967614 +0100
+--- a/src/window_ext.rs	2026-11-16 23:00:43.300042809 +0100
++++ b/src/window_ext.rs	2026-11-16 23:00:43.311735252 +0100
 @@ -11,6 +11,10 @@
  
  /// Extension trait for [`Window`] to add dialog, sheet .. functionality.

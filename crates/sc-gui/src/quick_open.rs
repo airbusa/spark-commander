@@ -169,7 +169,10 @@ impl Commander {
         for (menu_name, commands) in menu::groups() {
             let listed = commands.iter().filter(|(_, command)| *command != Command::QuickOpen && command.workspace().is_none());
             let rows = listed.map(|(label, command)| {
-                let item = CommandItem::new().label(*label).keys_of(Box::new(Run(*command)));
+                let mut item = CommandItem::new().label(*label).keys_of(Box::new(Run(*command)));
+                if let Some(icon) = crate::menus::toolbar_icon(*command) {
+                    item = item.icon(Icon::new(icon));
+                }
                 (item, Pick::Action(Box::new(Run(*command))))
             });
             add(menu_name, rows.collect());

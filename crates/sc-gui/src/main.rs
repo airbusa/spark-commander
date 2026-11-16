@@ -36,7 +36,7 @@ use gpui_kit::component::menu::{AppMenuBar, ContextMenuExt, PopupMenu, PopupMenu
 use gpui_kit::component::notification::Notification;
 use gpui_kit::component::scroll::Scrollbar;
 use gpui_kit::component::tab::{Tab, TabBar};
-use gpui_kit::component::{ActiveTheme, Icon, IconName, Sizable, WindowExt, h_flex, v_flex};
+use gpui_kit::component::{ActiveTheme, Icon, IconName, Selectable, Sizable, WindowExt, h_flex, v_flex};
 use gpui_kit::prelude::FluentBuilder;
 use gpui_kit::*;
 use sc_core::command::{self, Outcome};
@@ -76,7 +76,7 @@ actions!(
 include!(concat!(env!("OUT_DIR"), "/material_icons.rs"));
 
 // Lucide icons beyond GPUI Kit's own set.
-gpui_kit::assets::icon_assets!(ExtraIcons, [Bookmark, HardDrive, FolderClock, Wrench, SquareTerminal, Layers, PanelsTopLeft, Type, CalendarClock, Languages, FilePen, Puzzle, Server, Smartphone, Tablet, Laptop, Monitor, Tv, Usb, Menu, Cloud, CaseSensitive, WholeWord, Regex, Replace, ReplaceAll, CaseUpper, SquareDashedText, X, Funnel, Link]);
+gpui_kit::assets::icon_assets!(ExtraIcons, [Bookmark, HardDrive, FolderClock, Wrench, SquareTerminal, Layers, PanelsTopLeft, Type, CalendarClock, Languages, FilePen, Puzzle, Server, Smartphone, Tablet, Laptop, Monitor, Tv, Usb, Menu, Cloud, CaseSensitive, WholeWord, Regex, Replace, ReplaceAll, CaseUpper, SquareDashedText, X, Funnel, Link, Pencil, FilePlus, FolderPlus, FolderInput, TextCursorInput, Trash, Diff, Package, PackageOpen, Split, Merge, Hash, ShieldCheck, LogOut, ListChecks, Scissors, ClipboardPaste, House, BookmarkPlus, Zap, FolderSync, GitCompareArrows, ListOrdered, ScrollText, ArrowLeftRight, Equal, Keyboard, Unplug, Rows2, Columns3, List, LayoutGrid, ListTree, Link2, FolderTree, PanelTop, KeyRound]);
 
 /// GPUI Kit's icons, the file icons as `material/<name>.svg`, the player's as `media/`.
 struct AppAssets;
@@ -1486,6 +1486,43 @@ impl Commander {
             }))
     }
 
+    /// The toolbar: icons, their names and keys as tooltips, a toggle pressed while on.
+    fn render_toolbar(&self, cx: &mut Context<Self>) -> Option<AnyElement> {
+        let shown = &self.settings.toolbar.0;
+        if shown.is_empty() {
+            return None;
+        }
+        let buttons = shown.iter().filter_map(|&command| {
+            let icon = menus::toolbar_icon(command)?;
+            let [key, _] = self.settings.keys.keys_of(command);
+            let name = sc_core::menu::name(command);
+            let tip = match key.is_empty() {
+                true => name.to_owned(),
+                false => format!("{name} ({})", dialogs::keys_dialog::shown(&key)),
+            };
+            let button = Button::new(("toolbar", command as usize)).ghost().icon(Icon::new(icon)).selected(self.checked(command)).tooltip(tip);
+            Some(button.on_click(cx.listener(move |this, _, window, cx| {
+                window.focus(&this.focus, cx);
+                window.dispatch_action(Box::new(Run(command)), cx);
+            })))
+        });
+        let commander = cx.entity().downgrade();
+        let customize = move |menu: PopupMenu, _: &mut Window, _: &mut Context<PopupMenu>| {
+            let commander = commander.clone();
+            let item = PopupMenuItem::new("Customize Toolbar…").when_some(menus::menu_icon(Command::Settings), |item, icon| item.icon(Icon::new(icon)));
+            menu.item(item.on_click(move |_, window, cx| {
+                let page = settings::PAGES.iter().position(|&page| page == "Toolbar").unwrap_or(0);
+                if let Some(this) = commander.upgrade() {
+                    let settings = this.read(cx).settings.clone();
+                    dialogs::settings_dialog::open(commander.clone(), settings, page, window, cx);
+                }
+            }))
+        };
+        // A press on it must not start moving the window from the title bar.
+        let bar = h_flex().id("toolbar").gap_0p5().px_1().py_0p5().on_mouse_down(MouseButton::Left, |_, _, cx| cx.stop_propagation());
+        Some(bar.children(buttons).context_menu(customize).into_any_element())
+    }
+
     fn session(&self) -> Session {
         Session {
             open: self.open_tabs(),
@@ -2646,19 +2683,24 @@ impl Render for Commander {
             );
         // macOS shows the menus on the system's menu bar.
         let menu_bar = !cfg!(target_os = "macos") && !self.menus_behind_button(window);
+        // In the title bar where there is one, as GNOME's apps; else under the menus.
+        let mut toolbar = self.render_toolbar(cx);
+        let header = self.render_header(&mut toolbar, window, cx);
         // The sidebar may let the desktop through: everything else paints its own background.
         v_flex()
             .size_full()
             .text_color(cx.theme().foreground)
             .text_sm()
-            .children(self.render_header(window, cx))
-            .when(menu_bar, |el| {
+            .children(header)
+            .when(menu_bar || toolbar.is_some(), |el| {
                 el.child(
-                    div()
+                    v_flex()
                         .bg(self.colors.bar)
                         .border_b_1()
                         .border_color(cx.theme().border)
-                        .child(self.menu_bar.clone()),
+                        // The menu bar fills what holds it.
+                        .when(menu_bar, |el| el.child(div().child(self.menu_bar.clone())))
+                        .children(toolbar),
                 )
             })
             // The menus' own choices, wherever the keys are: the terminal, the sidebar.

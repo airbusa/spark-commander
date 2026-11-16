@@ -266,6 +266,26 @@ fn real_family(family: String) -> String {
     matched.and_then(|out| String::from_utf8(out.stdout).ok()).filter(|f| !f.is_empty()).unwrap_or(family)
 }
 
+/// Whether menu items show icons: GNOME's apps' none, KDE's unless turned
+/// off (kdeglobals' ShowIconsInMenuItems), other desktops' and systems' do.
+pub fn menu_icons() -> bool {
+    if on_gnome() {
+        return false;
+    }
+    let globals = on_kde().then(|| dirs::config_dir().and_then(|dir| std::fs::read_to_string(dir.join("kdeglobals")).ok())).flatten();
+    !globals.is_some_and(|text| shows_no_menu_icons(&text))
+}
+
+fn shows_no_menu_icons(kdeglobals: &str) -> bool {
+    let mut section = "";
+    kdeglobals.lines().map(str::trim).any(|line| {
+        if let Some(name) = line.strip_prefix('[') {
+            section = name.trim_end_matches(']');
+        }
+        section == "KDE" && line.replace(' ', "") == "ShowIconsInMenuItems=false"
+    })
+}
+
 fn on_kde() -> bool {
     on_desktop("KDE")
 }
@@ -838,6 +858,13 @@ fn luminance(rgb: u32) -> f32 {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn reads_kdes_menu_icons() {
+        assert!(shows_no_menu_icons("[General]\nfont=x\n[KDE]\nShowIconsInMenuItems=false\n"));
+        assert!(!shows_no_menu_icons("[KDE]\nShowIconsInMenuItems=true\n"));
+        assert!(!shows_no_menu_icons("[Other]\nShowIconsInMenuItems=false\n"));
+    }
 
     #[test]
     fn windows_11_controls() {

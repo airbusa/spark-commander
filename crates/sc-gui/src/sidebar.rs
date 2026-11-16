@@ -22,7 +22,7 @@ use sc_core::sidebar::{self, FolderTree, SidebarTab};
 use sc_core::{icons, system::theme};
 
 use crate::panel::drag_drop::Dragged;
-use crate::menus::Run;
+use crate::menus::CommandEntry;
 use crate::{Commander, dialogs::connections_dialog};
 
 pub(crate) const WIDTH: f32 = 260.;
@@ -301,9 +301,9 @@ impl Commander {
         }
         let background = self.colors.window.opacity(self.sidebar.tint.unwrap_or(1.));
         let sections = [
-            (SidebarTab::Tree, "tree.svg", "Folders"),
-            (SidebarTab::Connections, "folder-server.svg", "Connections"),
-            (SidebarTab::Places, "folder-favicon.svg", "Places"),
+            (SidebarTab::Tree, Lucide::FolderTree, "Folders"),
+            (SidebarTab::Connections, Lucide::Server, "Connections"),
+            (SidebarTab::Places, Lucide::Bookmark, "Places"),
         ];
         let mut accordion = v_flex().h_full().flex_1().min_w_0();
         for (at, (which, icon, name)) in sections.into_iter().enumerate() {
@@ -324,7 +324,7 @@ impl Commander {
                 .cursor_pointer()
                 .when(at > 0, |el| el.border_t_1().border_color(theme.border))
                 .hover(|style| style.bg(theme.foreground.opacity(0.06)))
-                .child(img(format!("material/{icon}")).size(px(16.)).flex_none())
+                .child(Icon::new(icon).size_4().flex_none())
                 .child(div().flex_1().font_medium().child(name))
                 .children(button)
                 .child(Icon::new(chevron).xsmall().text_color(theme.muted_foreground))
@@ -1083,8 +1083,8 @@ impl Commander {
             if !bookmarks.is_empty() {
                 menu = menu.separator();
             }
-            menu.menu("Add Current Folder", Box::new(Run(Command::BookmarkFolder)))
-                .menu("Manage Bookmarks...", Box::new(Run(Command::ManageBookmarks)))
+            menu.command("Add Current Folder", Command::BookmarkFolder)
+                .command("Manage Bookmarks...", Command::ManageBookmarks)
                 .action_context(focus)
         });
         self.show_panel_list(list, window, cx);

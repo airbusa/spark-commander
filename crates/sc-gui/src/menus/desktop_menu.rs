@@ -13,7 +13,7 @@ use sc_core::system::desktop::{self, Action as DesktopAction, App};
 use sc_core::menu::Command;
 use sc_core::{archive, system::properties};
 
-use crate::menus::Run;
+use crate::menus::{CommandEntry, Run};
 use crate::{Commander, Open, dialogs::name_dialog};
 
 actions!(desktop_menu, [OtherApplication, NewFile, OpenTerminalHere, FolderProperties, ShowInFileManager, RenameFile]);
@@ -212,17 +212,17 @@ fn build(menu: PopupMenu, target: Target, window: &mut Window, cx: &mut Context<
         let mut menu = menu;
         if !in_archive {
             menu = menu.submenu("Create New", window, cx, move |menu, _, _| {
-                let menu = menu.menu("Folder…", Box::new(Run(Command::NewFolder))).menu("Empty File…", Box::new(NewFile)).separator();
+                let menu = menu.command("Folder…", Command::NewFolder).action_as("Empty File…", Command::NewTextFile, Box::new(NewFile)).separator();
                 templates.iter().fold(menu, |menu, template| {
                     let name = template.file_stem().unwrap_or_default().to_string_lossy().into_owned();
                     menu.menu(name, Box::new(NewFromTemplate(template.clone())))
                 })
             });
         }
-        menu = menu.menu("Paste", Box::new(Run(Command::PasteFromClipboard))).separator();
+        menu = menu.command("Paste", Command::PasteFromClipboard).separator();
         let mut actions = actions;
         if local {
-            menu = menu.menu("Open Terminal Here", Box::new(OpenTerminalHere));
+            menu = menu.action_as("Open Terminal Here", Command::OpenTerminal, Box::new(OpenTerminalHere));
             // Xfce's default actions have one too.
             actions.retain(|action| !action.name.eq_ignore_ascii_case("Open Terminal Here"));
         }
@@ -230,7 +230,7 @@ fn build(menu: PopupMenu, target: Target, window: &mut Window, cx: &mut Context<
             true => Box::new(FolderProperties),
             false => Box::new(Run(Command::Properties)),
         };
-        return with_actions(menu, actions, window, cx).separator().menu("Properties", properties);
+        return with_actions(menu, actions, window, cx).separator().action_as("Properties", Command::Properties, properties);
     }
     let mut menu = match &single {
         Some((name, _)) => {
@@ -257,23 +257,23 @@ fn build(menu: PopupMenu, target: Target, window: &mut Window, cx: &mut Context<
             }
         });
     }
-    menu = menu.separator().menu("View", Box::new(Run(Command::View))).menu("Edit", Box::new(Run(Command::Edit))).separator();
+    menu = menu.separator().command("View", Command::View).command("Edit", Command::Edit).separator();
     menu = with_actions(menu, actions, window, cx).separator();
-    menu = menu.menu("Cut", Box::new(Run(Command::CutToClipboard))).menu("Copy", Box::new(Run(Command::CopyToClipboard))).separator();
-    menu = menu.menu("Pack…", Box::new(Run(Command::Pack)));
+    menu = menu.command("Cut", Command::CutToClipboard).command("Copy", Command::CopyToClipboard).separator();
+    menu = menu.command("Pack…", Command::Pack);
     if archives {
-        menu = menu.menu("Unpack…", Box::new(Run(Command::UnpackSpecificFiles)));
+        menu = menu.command("Unpack…", Command::UnpackSpecificFiles);
     }
     menu = menu.separator();
     if single.is_some() && !in_archive {
-        menu = menu.menu("Rename…", Box::new(RenameFile));
+        menu = menu.action_as("Rename…", Command::RenameInPlace, Box::new(RenameFile));
     }
     let delete = if local { "Move to Trash" } else { "Delete" };
-    menu = menu.menu(delete, Box::new(Run(Command::Delete))).separator();
+    menu = menu.command(delete, Command::Delete).separator();
     if local {
         menu = menu.menu("Show in File Manager", Box::new(ShowInFileManager));
     }
-    menu.menu("Properties", Box::new(Run(Command::Properties)))
+    menu.command("Properties", Command::Properties)
 }
 
 /// The desktop's actions: the top-level ones here, the rest in Actions;

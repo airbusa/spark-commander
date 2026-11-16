@@ -26,9 +26,12 @@ impl Commander {
         self.settings.menu.button() && own_frame(window)
     }
 
-    /// The title bar, where the window draws its own frame.
-    pub(crate) fn render_header(&self, window: &Window, cx: &mut App) -> Option<AnyElement> {
-        let bar = title_bar("Spark Commander", window, cx)?;
+    /// The title bar, where the window draws its own frame; the toolbar taken
+    /// into it, on its left, as GNOME's apps have their buttons.
+    pub(crate) fn render_header(&self, toolbar: &mut Option<AnyElement>, window: &Window, cx: &mut App) -> Option<AnyElement> {
+        // The title kept clear of the toolbar's buttons (32 px and a gap each).
+        let buttons = px(self.settings.toolbar.0.len() as f32 * 34. + 16.);
+        let bar = title_bar_beside("Spark Commander", buttons.max(px(140.)), window, cx)?;
         let focus = self.focus.clone();
         let menu = Button::new("app-menu")
             .ghost()
@@ -48,7 +51,14 @@ impl Commander {
         let menu = div().on_mouse_down(MouseButton::Left, |_, _, cx| cx.stop_propagation()).child(menu);
         let bar = bar
             .on_close_window(|_, _, cx| cx.quit())
-            .child(h_flex().w_full().justify_end().pr_1().children(self.menus_behind_button(window).then_some(menu)));
+            .child(
+                h_flex()
+                    .w_full()
+                    .px_1()
+                    .children(toolbar.take())
+                    .child(div().flex_1())
+                    .children(self.menus_behind_button(window).then_some(menu)),
+            );
         Some(bar.into_any_element())
     }
 }
@@ -56,6 +66,11 @@ impl Commander {
 /// The title bar of a window that draws its own frame: any on GNOME on
 /// Wayland, which draws none, and the main one for its ☰ button.
 pub(crate) fn title_bar(title: impl Into<SharedString>, window: &Window, cx: &mut App) -> Option<TitleBar> {
+    title_bar_beside(title, px(140.), window, cx)
+}
+
+/// A title bar whose title keeps `side` clear on both sides, as GTK centres it.
+fn title_bar_beside(title: impl Into<SharedString>, side: Pixels, window: &Window, cx: &mut App) -> Option<TitleBar> {
     if !own_frame(window) {
         return None;
     }
@@ -67,8 +82,7 @@ pub(crate) fn title_bar(title: impl Into<SharedString>, window: &Window, cx: &mu
         cx.set_global(WindowButtonPictures(pictures));
     }
     let title = div().min_w_0().truncate().font_weight(FontWeight::BOLD).child(title.into());
-    // Kept clear of the buttons on both sides, as GTK centres it.
-    let title = div().absolute().inset_0().px(px(140.)).flex().items_center().justify_center().child(title);
+    let title = div().absolute().inset_0().px(side).flex().items_center().justify_center().child(title);
     let mut bar = TitleBar::new().child(title);
     // As tall as GTK's, its top corners the window's.
     if let Some(header) = sc_core::system::theme::header_bar() {

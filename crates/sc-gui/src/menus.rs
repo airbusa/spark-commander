@@ -6,9 +6,12 @@ pub mod file_menu;
 pub mod mark_menu;
 
 use gpui_kit::component::GlobalState;
-use gpui_kit::component::menu::PopupMenu;
+use gpui_kit::assets::IconName as Lucide;
+use gpui_kit::component::Icon;
+use gpui_kit::component::menu::{MenuIcons, PopupMenu};
 use std::collections::HashMap;
 use std::rc::Rc;
+use std::sync::OnceLock;
 
 use gpui_kit::{
     Action, AnyWindowHandle, App, Context, DummyKeyboardMapper, Global, KeyBinding,
@@ -52,6 +55,108 @@ pub struct OpenWorkspace(pub usize);
 #[derive(Action, Clone, PartialEq)]
 #[action(namespace = sc, no_json)]
 pub struct RunTool(pub usize);
+
+/// A command's icon in menus, on the toolbar and in Quick Open. Toggles have
+/// none: a menu shows their check.
+pub fn icon(command: Command) -> Option<Lucide> {
+    use Command::*;
+    Some(match command {
+        View => Lucide::Eye,
+        Edit => Lucide::Pencil,
+        NewTextFile => Lucide::FilePlus,
+        NewFolder => Lucide::FolderPlus,
+        Copy | CopyToClipboard => Lucide::Copy,
+        Move => Lucide::FolderInput,
+        RenameInPlace => Lucide::TextCursorInput,
+        CreateLink => Lucide::Link,
+        Delete => Lucide::Trash,
+        Properties => Lucide::Info,
+        CalculateOccupiedSpace => Lucide::ChartPie,
+        MultiRenameTool => Lucide::Replace,
+        CompareByContent => Lucide::Diff,
+        Pack => Lucide::Package,
+        UnpackSpecificFiles => Lucide::PackageOpen,
+        SplitFile => Lucide::Split,
+        CombineFiles => Lucide::Merge,
+        CreateChecksumFiles => Lucide::Hash,
+        VerifyChecksums => Lucide::ShieldCheck,
+        Quit => Lucide::LogOut,
+        SelectAll => Lucide::ListChecks,
+        CutToClipboard => Lucide::Scissors,
+        PasteFromClipboard => Lucide::ClipboardPaste,
+        GoBack => Lucide::ArrowLeft,
+        GoForward => Lucide::ArrowRight,
+        FolderHistory => Lucide::FolderClock,
+        GoHome => Lucide::House,
+        LeftDrives | RightDrives => Lucide::HardDrive,
+        Bookmarks => Lucide::Bookmark,
+        BookmarkFolder => Lucide::BookmarkPlus,
+        QuickOpen => Lucide::Zap,
+        Search => Lucide::Search,
+        SynchronizeDirs => Lucide::FolderSync,
+        CompareDirectories => Lucide::GitCompareArrows,
+        Undo => Lucide::Undo2,
+        Redo => Lucide::Redo2,
+        OperationQueue => Lucide::ListOrdered,
+        ActivityLog => Lucide::ScrollText,
+        OpenTerminal => Lucide::SquareTerminal,
+        SwapPanels => Lucide::ArrowLeftRight,
+        TargetEqualsSource => Lucide::Equal,
+        RereadSource => Lucide::RefreshCw,
+        DuplicateTab => Lucide::Plus,
+        CloseTab => Lucide::X,
+        ManageTools => Lucide::Wrench,
+        Settings => Lucide::Settings,
+        Shortcuts => Lucide::Keyboard,
+        Website => Lucide::Globe,
+        Disconnect => Lucide::Unplug,
+        _ => return None,
+    })
+}
+
+/// A command's icon on the toolbar: toggles too, shown pressed while on.
+pub fn toolbar_icon(command: Command) -> Option<Lucide> {
+    use Command::*;
+    icon(command).or_else(|| Some(match command {
+        HiddenFiles => Lucide::EyeOff,
+        ToggleSidebar => Lucide::PanelLeft,
+        QuickViewPanel => Lucide::PanelRight,
+        TerminalPanel => Lucide::PanelBottom,
+        VerticalArrangement => Lucide::Rows2,
+        Brief => Lucide::Columns3,
+        Full => Lucide::List,
+        ThumbnailView => Lucide::LayoutGrid,
+        BranchView => Lucide::ListTree,
+        SyncBrowsing => Lucide::Link2,
+        QuickFilter => Lucide::Funnel,
+        _ => return None,
+    }))
+}
+
+/// A command's icon in a menu, where the desktop's own apps show them.
+pub fn menu_icon(command: Command) -> Option<Lucide> {
+    static SHOWN: OnceLock<bool> = OnceLock::new();
+    SHOWN.get_or_init(sc_core::system::theme::menu_icons).then(|| icon(command)).flatten()
+}
+
+/// A popup's item running a command, with its icon.
+pub trait CommandEntry: Sized {
+    /// An item doing what `like` does, its own way, with that icon.
+    fn action_as(self, label: impl Into<SharedString>, like: Command, action: Box<dyn Action>) -> Self;
+
+    fn command(self, label: impl Into<SharedString>, command: Command) -> Self {
+        self.action_as(label, command, Box::new(Run(command)))
+    }
+}
+
+impl CommandEntry for PopupMenu {
+    fn action_as(self, label: impl Into<SharedString>, like: Command, action: Box<dyn Action>) -> Self {
+        match menu_icon(like) {
+            Some(icon) => self.menu_with_icon(label, icon, action),
+            None => self.menu(label, action),
+        }
+    }
+}
 
 /// macOS greys out a menu item only when no one handles its action.
 #[derive(Action, Clone, PartialEq)]
@@ -121,6 +226,8 @@ pub fn bind(keys: &KeySettings, before: Option<&KeySettings>, cx: &mut App) {
 }
 
 pub fn init(cx: &mut App) {
+    let icons = |action: &dyn Action| action.as_any().downcast_ref::<Run>().and_then(|Run(command)| menu_icon(*command)).map(Icon::new);
+    cx.set_global(MenuIcons(Rc::new(icons)));
     cx.on_action(|Run(command): &Run, cx| {
         if *command == Command::Quit {
             cx.quit()
@@ -485,9 +592,8 @@ pub fn context_menu(
 ) -> PopupMenu {
     for item in items {
         menu = match *item {
-            Item::Command { label, command, .. } => {
-                menu.menu_with_check(label, checked(command), Box::new(Run(command)))
-            }
+            Item::Command { label, command, .. } if !checked(command) => menu.command(label, command),
+            Item::Command { label, command, .. } => menu.menu_with_check(label, true, Box::new(Run(command))),
             Item::Separator => menu.separator(),
             Item::ClosedTabs { label } => {
                 let closed = closed.clone();

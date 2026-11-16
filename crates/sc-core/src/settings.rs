@@ -101,6 +101,18 @@ pub struct Settings {
     pub tools: Vec<crate::tools::Tool>,
     /// No dialog offers a missing add-on when its kind of file is opened.
     pub never_offer_addons: bool,
+    pub toolbar: Toolbar,
+}
+
+/// The toolbar's buttons in their order; none hides it.
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
+#[serde(transparent)]
+pub struct Toolbar(#[serde(deserialize_with = "crate::menu::known")] pub Vec<crate::menu::Command>);
+
+impl Default for Toolbar {
+    fn default() -> Self {
+        Toolbar(crate::menu::TOOLBAR.to_vec())
+    }
 }
 
 /// A font family and its size in points.
@@ -220,7 +232,7 @@ impl Default for ViewerSettings {
 }
 
 /// The settings dialog's pages.
-pub const PAGES: &[&str] = &["Layout", "Display", "Font", "Date", "Language", "Edit/View", "Terminal", "Passwords", "Add-ons"];
+pub const PAGES: &[&str] = &["Layout", "Toolbar", "Display", "Font", "Date", "Language", "Edit/View", "Terminal", "Passwords", "Add-ons"];
 
 /// A folder of this computer's own: not a server's, as kio-fuse, gvfs or
 /// Windows' `\\server\share` show them.

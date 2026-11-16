@@ -8,18 +8,21 @@ use gpui_kit::component::input::{Input, InputEvent, InputState};
 use gpui_kit::component::notification::Notification;
 use gpui_kit::component::radio::RadioGroup;
 use gpui_kit::component::slider::{Slider, SliderEvent, SliderState};
-use gpui_kit::component::{ActiveTheme, Disableable, MacControls, StyledExt, WindowExt, h_flex, v_flex};
+use gpui_kit::component::{ActiveTheme, Disableable, MacControls, Sizable, StyledExt, WindowExt, h_flex, v_flex};
 use gpui_kit::prelude::FluentBuilder;
 use gpui_kit::*;
 use sc_core::addons::{Addon, Builtin, Presence};
 use gpui_kit::component::select::{SearchableVec, Select, SelectEvent, SelectState};
 use gpui_kit::assets::IconName as Lucide;
 use gpui_kit::component::{Icon, IndexPath};
+use gpui_kit::component::menu::{DropdownMenu, PopupMenu, PopupMenuItem};
 use sc_core::dates::{self, Clock};
+use sc_core::menu::{self, Command};
 use sc_core::settings::{AddonUpdates, FontChoice, MenuStyle, PAGES, Settings, Blur, SidebarOpacity, TerminalOpacity, StartFont, StartMode};
 use sc_core::system::theme::Appearance;
 
 use crate::Commander;
+use crate::menus::toolbar_icon;
 
 const WIDTH: f32 = 720.;
 const BODY_HEIGHT: f32 = 550.;
@@ -45,8 +48,9 @@ fn fluent() -> bool {
 const SAMPLE: &str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz äöüéèêàñç 0123456789";
 const SIZES: [&str; 15] = ["7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "18", "20", "22", "24", "28"];
 /// Each page's icon in the rail, as `PAGES`.
-const ICONS: [Lucide; 9] = [
+const ICONS: [Lucide; 10] = [
     Lucide::PanelsTopLeft,
+    Lucide::PanelTop,
     Lucide::Eye,
     Lucide::Type,
     Lucide::CalendarClock,
@@ -208,6 +212,36 @@ pub fn open(
             .footer(buttons(&view, cx))
             .on_close(move |_, window, cx| closing.update(cx, |this, cx| this.untry(window, cx)))
     });
+}
+
+/// The commands a toolbar button can be, by menu, to put at `at` (none: added
+/// last); those on the toolbar already greyed.
+fn choices(dialog: WeakEntity<SettingsDialog>, shown: Vec<Command>, at: Option<usize>) -> impl Fn(PopupMenu, &mut Window, &mut Context<PopupMenu>) -> PopupMenu + 'static {
+    move |menu, window, cx| {
+        menu::groups().into_iter().fold(menu, |menu, (group, commands)| {
+            let commands: Vec<_> = commands.into_iter().filter_map(|(label, command)| Some((label, command, toolbar_icon(command)?))).collect();
+            if commands.is_empty() {
+                return menu;
+            }
+            let (dialog, shown) = (dialog.clone(), shown.clone());
+            menu.submenu(group, window, cx, move |menu, _, _| {
+                commands.iter().fold(menu, |menu, &(label, command, icon)| {
+                    let dialog = dialog.clone();
+                    let item = PopupMenuItem::new(label).icon(Icon::new(icon)).disabled(shown.contains(&command)).on_click(move |_, _, cx| {
+                        let _ = dialog.update(cx, |this, cx| {
+                            let bar = &mut this.draft.toolbar.0;
+                            match at {
+                                Some(at) => bar[at] = command,
+                                None => bar.push(command),
+                            }
+                            cx.notify();
+                        });
+                    });
+                    menu.item(item)
+                })
+            })
+        })
+    }
 }
 
 /// The desktop's UI font and size in points; GPUI Kit's where it names none.
@@ -771,6 +805,53 @@ impl SettingsDialog {
         )
     }
 
+    /// The toolbar's buttons in order: each replaced, moved or removed; more added.
+    fn render_toolbar(&self, cx: &mut Context<Self>) -> GroupBox {
+        let shown = self.draft.toolbar.0.clone();
+        let this = cx.weak_entity();
+        let small = |id: (&'static str, usize), icon: Lucide| Button::new(id).ghost().small().icon(Icon::new(icon));
+        let rows = shown.iter().enumerate().map(|(at, &command)| {
+            let replace = Button::new(("toolbar-replace", at)).ghost().small().label("Replace…").dropdown_menu(choices(this.clone(), shown.clone(), Some(at)));
+            let change = |change: fn(&mut Vec<Command>, usize)| {
+                let this = this.clone();
+                move |_: &ClickEvent, _: &mut Window, cx: &mut App| {
+                    let _ = this.update(cx, |this, cx| {
+                        change(&mut this.draft.toolbar.0, at);
+                        cx.notify();
+                    });
+                }
+            };
+            h_flex()
+                .gap_1()
+                .children(toolbar_icon(command).map(|icon| Icon::new(icon).size_4().mr_1()))
+                .child(div().flex_1().child(menu::name(command)))
+                .child(replace)
+                .child(small(("toolbar-up", at), Lucide::ChevronUp).tooltip("Move up").disabled(at == 0).on_click(change(|bar, at| bar.swap(at, at - 1))))
+                .child(small(("toolbar-down", at), Lucide::ChevronDown).tooltip("Move down").disabled(at + 1 == shown.len()).on_click(change(|bar, at| bar.swap(at, at + 1))))
+                .child(small(("toolbar-remove", at), Lucide::X).tooltip("Remove").on_click(change(|bar, at| {
+                    bar.remove(at);
+                })))
+        });
+        let rows: Vec<_> = rows.collect();
+        let buttons = h_flex()
+            .gap_2()
+            .child(Button::new("toolbar-add").outline().label("Add Button…").dropdown_menu(choices(this.clone(), shown.clone(), None)))
+            .child(Button::new("toolbar-default").outline().label("Restore Default").disabled(self.draft.toolbar == Default::default()).on_click(cx.listener(
+                |this, _, _, cx| {
+                    this.draft.toolbar = Default::default();
+                    cx.notify();
+                },
+            )));
+        let place = "Under the menu bar; in the title bar where the menus are behind the ☰ button, as GNOME's apps have them. With no buttons, none.";
+        GroupBox::new().outline().title("Toolbar buttons").child(
+            v_flex()
+                .gap_2()
+                .child(div().whitespace_normal().text_color(cx.theme().muted_foreground).child(place))
+                .children(rows)
+                .child(buttons),
+        )
+    }
+
     /// How many passwords are saved and whether a master password is set, at
     /// once; whether they are locked here, from the keyring, in the background.
     fn read_passwords(&mut self, cx: &mut Context<Self>) {
@@ -1068,6 +1149,7 @@ impl SettingsDialog {
                 groups.push(self.render_tabs(cx));
                 groups
             }
+            "Toolbar" => vec![self.render_toolbar(cx)],
             "Display" => self.render_files(cx),
             "Font" => vec![self.render_font(Which::Main, cx), self.render_font(Which::Fixed, cx)],
             "Date" => self.render_date(cx),

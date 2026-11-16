@@ -487,6 +487,19 @@ pub const BUTTON_BAR: &[Item] = &[
     cmd("Exit", Quit),
 ];
 
+/// The toolbar's buttons until the user changes them: what the function
+/// keys' bar leaves out and is used often.
+pub const TOOLBAR: &[Command] = &[GoBack, GoForward, RereadSource, Search, SynchronizeDirs, MultiRenameTool, Pack, OpenTerminal];
+
+/// A list of commands; the ones this version does not know left out.
+pub fn known<'de, D: serde::Deserializer<'de>>(list: D) -> Result<Vec<Command>, D::Error> {
+    let names = Vec::<String>::deserialize(list)?;
+    let known = names.iter().filter_map(|name| {
+        Command::deserialize(serde::de::value::StrDeserializer::<serde::de::value::Error>::new(name)).ok()
+    });
+    Ok(known.collect())
+}
+
 /// Commands on no menu or button.
 pub const OTHER: &[Item] = &[
     cmd("Disconnect from the server", Disconnect),
@@ -583,6 +596,14 @@ pub fn groups() -> Vec<(&'static str, Vec<(&'static str, Command)>)> {
 mod tests {
     use super::*;
     use crate::keymap::{KeySettings, Preset};
+
+    #[test]
+    fn unknown_commands_are_left_out() {
+        #[derive(Deserialize)]
+        struct Bar(#[serde(deserialize_with = "known")] Vec<Command>);
+        let bar: Bar = serde_json::from_str(r#"["Search", "Gone", "Pack"]"#).unwrap();
+        assert_eq!(bar.0, [Search, Pack]);
+    }
 
     #[test]
     fn every_command_with_keys_is_listed() {

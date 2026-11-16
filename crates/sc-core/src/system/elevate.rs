@@ -166,8 +166,25 @@ mod platform {
         lines.join(" && ")
     }
 
+    /// Every path `action` names.
+    fn paths(action: &Action) -> Vec<&std::path::Path> {
+        match action {
+            Action::Copy { items, .. } | Action::Link { items, .. } => items.iter().flat_map(|(a, b)| [a.as_path(), b.as_path()]).collect(),
+            Action::Delete(paths) => paths.iter().map(|path| path.as_path()).collect(),
+            Action::MakeFolder(path) => vec![path],
+            Action::Rename(from, to) | Action::Write { from, to } => vec![from, to],
+        }
+    }
+
     pub fn run(action: &Action) -> io::Result<()> {
-        let (verb, file, parameters) = (HSTRING::from("runas"), HSTRING::from("cmd.exe"), HSTRING::from(format!("/c {}", commands(action))));
+        // cmd reads %NAME% inside quotes too, and could make one path another.
+        // shortcut: such names are refused; a helper of ours taking the paths whole would do them.
+        if let Some(path) = paths(action).into_iter().find(|path| path.as_os_str().to_string_lossy().contains('%')) {
+            return Err(io::Error::new(io::ErrorKind::InvalidInput, format!("{}: a name with % cannot be handled as administrator; rename it first", path.display())));
+        }
+        // No AutoRun commands, no !NAME! read.
+        let command = format!("/D /V:OFF /c {}", commands(action));
+        let (verb, file, parameters) = (HSTRING::from("runas"), HSTRING::from("cmd.exe"), HSTRING::from(command));
         let mut info = SHELLEXECUTEINFOW {
             cbSize: std::mem::size_of::<SHELLEXECUTEINFOW>() as u32,
             fMask: SEE_MASK_NOCLOSEPROCESS | SEE_MASK_NOASYNC,

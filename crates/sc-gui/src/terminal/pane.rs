@@ -6,7 +6,7 @@ use std::path::{Path, PathBuf};
 use gpui_kit::component::button::{Button, ButtonVariants};
 use gpui_kit::component::notification::Notification;
 use gpui_kit::component::tab::{Tab, TabBar};
-use gpui_kit::component::{ActiveTheme, Sizable, WindowExt, v_flex};
+use gpui_kit::component::{ActiveTheme, IconName, Sizable, WindowExt, v_flex};
 use gpui_kit::*;
 use sc_core::menu::Command;
 use sc_core::session::TerminalState;
@@ -255,7 +255,7 @@ impl Commander {
             Tab::new().label(name).suffix(close)
         });
         let tabs: Vec<Tab> = tabs.collect();
-        let new = Button::new("terminal-new").ghost().xsmall().label("+").on_click(cx.listener(|this, _, window, cx| this.new_terminal_tab(window, cx)));
+        let new = Button::new("terminal-new").ghost().small().icon(IconName::Plus).on_click(cx.listener(|this, _, window, cx| this.new_terminal_tab(window, cx)));
         TabBar::new("terminal-tabs")
             .small()
             .selected_index(self.terminal_tab)

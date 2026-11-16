@@ -1856,7 +1856,7 @@ impl Commander {
                         .selected_index(side.tabs.active())
                         .children(tabs)
                         .suffix(
-                            Button::new(("tab-new", ix)).ghost().xsmall().label("+").tooltip("New Tab").on_click(cx.listener(move |this, _, window, cx| {
+                            Button::new(("tab-new", ix)).ghost().small().icon(IconName::Plus).tooltip("New Tab").on_click(cx.listener(move |this, _, window, cx| {
                                 this.active = ix;
                                 this.change_tabs(Tabs::duplicate, cx);
                                 window.focus(&this.focus, cx);

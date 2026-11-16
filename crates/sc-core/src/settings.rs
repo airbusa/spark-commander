@@ -76,6 +76,8 @@ pub struct Settings {
     pub sidebar_blur: Blur,
     pub terminal_opacity: TerminalOpacity,
     pub terminal_blur: Blur,
+    /// The program of the terminal's shell (one of `shells::others`); the default one when none.
+    pub terminal_shell: Option<String>,
     pub viewer: ViewerSettings,
     pub editor: EditorSettings,
     /// Files' own programs for Enter, F3 and F4.
@@ -218,7 +220,7 @@ impl Default for ViewerSettings {
 }
 
 /// The settings dialog's pages.
-pub const PAGES: &[&str] = &["Layout", "Display", "Font", "Date", "Language", "Edit/View", "Add-ons"];
+pub const PAGES: &[&str] = &["Layout", "Display", "Font", "Date", "Language", "Edit/View", "Terminal", "Add-ons"];
 
 /// A folder of this computer's own: not a server's, as kio-fuse, gvfs or
 /// Windows' `\\server\share` show them.

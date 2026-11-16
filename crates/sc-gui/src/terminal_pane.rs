@@ -102,7 +102,9 @@ impl Commander {
     /// A shell in `dir` (else home), or `program` there.
     fn open_terminal_tab(&mut self, dir: Option<PathBuf>, program: Option<(String, Vec<String>)>, window: &mut Window, cx: &mut Context<Self>) {
         let home = std::env::home_dir().unwrap_or_default();
-        match TerminalView::open(dir.as_deref().unwrap_or(&home), program.clone(), window, cx) {
+        // The chosen shell, not saved with the tab: one restored starts the one chosen then.
+        let start = program.clone().or_else(|| sc_core::shells::command(self.settings.terminal_shell.as_deref()));
+        match TerminalView::open(dir.as_deref().unwrap_or(&home), start, window, cx) {
             Ok(view) => {
                 let ended = cx.subscribe_in(&view, window, |this, view, _: &Exited, window, cx| {
                     if let Some(ix) = this.terminals.iter().position(|tab| &tab.view == view) {

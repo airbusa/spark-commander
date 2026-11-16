@@ -46,6 +46,7 @@ pub mod search;
 pub mod secrets;
 pub mod session;
 pub mod settings;
+pub mod shells;
 #[cfg(windows)]
 pub mod shell_icon;
 #[cfg(windows)]

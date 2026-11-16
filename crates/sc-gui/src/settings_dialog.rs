@@ -44,13 +44,14 @@ fn fluent() -> bool {
 const SAMPLE: &str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz äöüéèêàñç 0123456789";
 const SIZES: [&str; 15] = ["7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "18", "20", "22", "24", "28"];
 /// Each page's icon in the rail, as `PAGES`.
-const ICONS: [Lucide; 7] = [
+const ICONS: [Lucide; 8] = [
     Lucide::PanelsTopLeft,
     Lucide::Eye,
     Lucide::Type,
     Lucide::CalendarClock,
     Lucide::Languages,
     Lucide::FilePen,
+    Lucide::SquareTerminal,
     Lucide::Puzzle,
 ];
 
@@ -179,6 +180,7 @@ pub fn open(
             installed,
             opacity,
             terminal_opacity,
+            shells: sc_core::shells::others(),
             _opacity: trying,
             _addons: cx.observe(&crate::addons::entity(cx), |_, _, cx| cx.notify()),
             commander,
@@ -320,6 +322,8 @@ struct SettingsDialog {
     installed: HashSet<SharedString>,
     opacity: Entity<SliderState>,
     terminal_opacity: Entity<SliderState>,
+    /// The shells installed besides the default one.
+    shells: Vec<sc_core::shells::Shell>,
     _inputs: [Subscription; 5],
     _pickers: Vec<Subscription>,
     _measuring: Task<()>,
@@ -755,6 +759,29 @@ impl SettingsDialog {
         )
     }
 
+    /// The terminal's shell: the default one or another installed.
+    fn render_shell(&self, cx: &mut Context<Self>) -> GroupBox {
+        let default = format!("Default: {}", sc_core::shells::default_name());
+        let chosen = self.draft.terminal_shell.as_ref();
+        let at = chosen.map_or(Some(0), |chosen| self.shells.iter().position(|shell| &shell.program == chosen).map(|ix| ix + 1));
+        let programs: Vec<String> = self.shells.iter().map(|shell| shell.program.clone()).collect();
+        GroupBox::new().outline().title("Shell").child(
+            v_flex()
+                .gap_2()
+                .child(
+                    RadioGroup::vertical("terminal-shell")
+                        .child(default)
+                        .children(self.shells.iter().map(|shell| shell.name.clone()))
+                        .selected_index(at)
+                        .on_click(cx.listener(move |this, at: &usize, _, cx| {
+                            this.draft.terminal_shell = at.checked_sub(1).map(|ix| programs[ix].clone());
+                            cx.notify();
+                        })),
+                )
+                .child(div().text_color(cx.theme().muted_foreground).child("New terminal tabs start it.")),
+        )
+    }
+
     /// The sidebar's or the `terminal`'s opacity over the desktop, and its blur.
     fn render_backdrop(&self, terminal: bool, cx: &mut Context<Self>) -> GroupBox {
         let (title, slider, opacity, blur) = match terminal {
@@ -955,7 +982,6 @@ impl SettingsDialog {
                 // Where the desktop can show through it.
                 if sc_core::theme::see_through() {
                     groups.push(self.render_backdrop(false, cx));
-                    groups.push(self.render_backdrop(true, cx));
                 }
                 groups.push(self.render_tabs(cx));
                 groups
@@ -965,6 +991,13 @@ impl SettingsDialog {
             "Date" => self.render_date(cx),
             "Language" => vec![self.render_language()],
             "Edit/View" => vec![self.render_viewer(cx), self.render_editor(cx)],
+            "Terminal" => {
+                let mut groups = vec![self.render_shell(cx)];
+                if sc_core::theme::see_through() {
+                    groups.push(self.render_backdrop(true, cx));
+                }
+                groups
+            }
             "Add-ons" => self.render_addons(cx),
             _ => Vec::new(),
         };

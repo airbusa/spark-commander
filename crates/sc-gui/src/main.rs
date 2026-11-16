@@ -1146,7 +1146,8 @@ impl Commander {
             let undone = undone.await;
             let _ = this.update_in(cx, |this, window, cx| {
                 let note = match undone {
-                    Ok(()) => Notification::info(format!("{done}: {title}")),
+                    Ok(true) => Notification::info(format!("{done}: {title}")),
+                    Ok(false) => Notification::info(format!("In the queue to {verb}: {title}")),
                     Err(err) => Notification::error(format!("Could not {verb} \"{title}\": {err}")),
                 };
                 window.push_notification(note, cx);

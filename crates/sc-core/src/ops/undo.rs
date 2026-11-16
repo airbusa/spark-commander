@@ -83,11 +83,14 @@ fn reverse(step: &Step) -> Option<Step> {
 }
 
 /// Undoes `undo`, or does again what was undone (`redo`): moves go through
-/// `queue`, as a copy goes, unrecorded; the trash here, which blocks. Its
-/// reverse is kept for the other, Redo or Undo.
-pub fn run(undo: Undo, queue: &Queue, redo: bool) -> io::Result<()> {
+/// `queue`, as a copy goes, unrecorded (false: queued, not done yet); the
+/// trash here, which blocks. Its reverse is kept for the other, Redo or
+/// Undo; failed, it is kept to try again.
+pub fn run(undo: Undo, queue: &Queue, redo: bool) -> io::Result<bool> {
     let Undo { title: what, step } = undo;
     let reversed = reverse(&step);
+    let kept = (what.clone(), step.clone());
+    let queued = matches!(step, Step::Moved { .. });
     let title = format!("{}: {what}", if redo { "Redo" } else { "Undo" });
     let done = match step {
         Step::Copied { fs, made, .. } if fs.id() != "local" => {
@@ -105,7 +108,8 @@ pub fn run(undo: Undo, queue: &Queue, redo: bool) -> io::Result<()> {
             undone
         }
         Step::Moved { from, to, moves, restore, at, .. } => {
-            for (was, now) in moves {
+            // One no longer where it went (its move back skipped or cancelled) stays where it is.
+            for (was, now) in moves.into_iter().filter(|(_, now)| to.metadata(now).is_ok()) {
                 // A merged folder's, moved one by one, went with its last: made again.
                 if let Some(parent) = was.parent() {
                     make_dirs(&*from, parent)?;
@@ -138,12 +142,15 @@ pub fn run(undo: Undo, queue: &Queue, redo: bool) -> io::Result<()> {
             undone
         }
     };
-    if done.is_ok()
-        && let Some(step) = reversed
-    {
-        keep(if redo { &DONE } else { &UNDONE }, Undo { title: what, step });
+    match &done {
+        Ok(()) => {
+            if let Some(step) = reversed {
+                keep(if redo { &DONE } else { &UNDONE }, Undo { title: what, step });
+            }
+        }
+        Err(_) => keep(if redo { &UNDONE } else { &DONE }, Undo { title: kept.0, step: kept.1 }),
     }
-    done
+    done.map(|()| !queued)
 }
 
 /// `dir`, with the folders above it, made where gone.
@@ -196,21 +203,35 @@ pub fn to_trash(path: &Path) -> io::Result<()> {
     Ok(())
 }
 
-/// `path`, put in the trash since `at`, back where it was.
+/// `path`, just put in the trash since `at`, back where it was.
 pub fn take_back(path: &Path, at: SystemTime) -> io::Result<()> {
-    put_back(in_trash(&[path.to_owned()], at)?)
+    put_back(in_trash_newest(&[path.to_owned()], at, true)?)
 }
 
-/// What `paths` became in the trash, put there since `at`: the newest of each; none of one no longer there.
+/// What `paths` became in the trash, put there since `at`: the first of each
+/// since, as a later one of the same name was put there by something else.
+fn in_trash(paths: &[PathBuf], at: SystemTime) -> io::Result<Vec<TrashedItem>> {
+    in_trash_newest(paths, at, false)
+}
+
 #[cfg(all(not(test), any(windows, all(unix, not(target_os = "macos")))))]
-fn in_trash(paths: &[PathBuf], at: SystemTime) -> io::Result<Vec<trash::TrashItem>> {
+type TrashedItem = trash::TrashItem;
+#[cfg(any(test, target_os = "macos"))]
+type TrashedItem = (PathBuf, PathBuf);
+#[cfg(all(not(test), not(any(windows, unix))))]
+type TrashedItem = ();
+
+/// What `paths` became in the trash since `at`, the newest or the first of
+/// each; none of one no longer there.
+#[cfg(all(not(test), any(windows, all(unix, not(target_os = "macos")))))]
+fn in_trash_newest(paths: &[PathBuf], at: SystemTime, newest: bool) -> io::Result<Vec<trash::TrashItem>> {
     if paths.is_empty() {
         return Ok(Vec::new());
     }
     let since = at.duration_since(SystemTime::UNIX_EPOCH).map_or(0, |since| since.as_secs() as i64) - 2;
     let mut items: Vec<trash::TrashItem> = trash::os_limited::list().map_err(io::Error::other)?;
     items.retain(|item| item.time_deleted >= since && paths.contains(&item.original_path()));
-    items.sort_by_key(|item| std::cmp::Reverse(item.time_deleted));
+    items.sort_by_key(|item| if newest { -item.time_deleted } else { item.time_deleted });
     let mut seen = std::collections::HashSet::new();
     items.retain(|item| seen.insert(item.original_path()));
     Ok(items)
@@ -225,11 +246,15 @@ fn put_back(items: Vec<trash::TrashItem>) -> io::Result<()> {
 }
 
 #[cfg(any(test, target_os = "macos"))]
-fn in_trash(paths: &[PathBuf], at: SystemTime) -> io::Result<Vec<(PathBuf, PathBuf)>> {
+fn in_trash_newest(paths: &[PathBuf], at: SystemTime, newest: bool) -> io::Result<Vec<(PathBuf, PathBuf)>> {
     let since = at - std::time::Duration::from_secs(2);
     let trashed = TRASHED.lock().unwrap();
     let mut found: Vec<(PathBuf, PathBuf)> = Vec::new();
-    for (was, there, when) in trashed.iter().rev() {
+    let order: Box<dyn Iterator<Item = &(PathBuf, PathBuf, SystemTime)>> = match newest {
+        true => Box::new(trashed.iter().rev()),
+        false => Box::new(trashed.iter()),
+    };
+    for (was, there, when) in order {
         if *when >= since && paths.contains(was) && there.exists() && !found.iter().any(|(seen, _)| seen == was) {
             found.push((was.clone(), there.clone()));
         }
@@ -254,7 +279,7 @@ fn put_back(items: Vec<(PathBuf, PathBuf)>) -> io::Result<()> {
 }
 
 #[cfg(all(not(test), not(any(windows, unix))))]
-fn in_trash(_: &[PathBuf], _: SystemTime) -> io::Result<Vec<()>> {
+fn in_trash_newest(_: &[PathBuf], _: SystemTime, _: bool) -> io::Result<Vec<()>> {
     Err(io::Error::new(io::ErrorKind::Unsupported, "the trash here cannot be undone"))
 }
 
@@ -318,6 +343,22 @@ mod tests {
         finish(&queue);
         assert!(dir.join("c.txt").exists() && !dir.join("b.txt").exists(), "renamed again");
         assert!(taken(&renamed_title).is_some(), "to undo again");
+        std::fs::remove_dir_all(&dir).unwrap();
+    }
+
+    #[test]
+    fn takes_back_the_version_it_put_in_the_trash() {
+        let dir = std::env::temp_dir().join(format!("sc-undo-twice-{}", std::process::id()));
+        std::fs::create_dir_all(&dir).unwrap();
+        let file = dir.join("x.txt");
+        let at = SystemTime::now();
+        std::fs::write(&file, "first").unwrap();
+        to_trash(&file).unwrap();
+        // Later, another file of that name goes to the trash too.
+        std::fs::write(&file, "second").unwrap();
+        to_trash(&file).unwrap();
+        put_back(in_trash(std::slice::from_ref(&file), at).unwrap()).unwrap();
+        assert_eq!(std::fs::read_to_string(&file).unwrap(), "first");
         std::fs::remove_dir_all(&dir).unwrap();
     }
 

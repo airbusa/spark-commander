@@ -1441,7 +1441,15 @@ impl Commander {
                                 .child(div().occlude().child(list)),
                         ))
                     })
-                    .child(Input::new(&self.command).small().suffix(history)),
+                    // A plain 1 px frame, as Total Commander's.
+                    .child(
+                        Input::new(&self.command)
+                            .small()
+                            .bordered(false)
+                            .border_1()
+                            .border_color(self.colors.header_border)
+                            .suffix(history),
+                    ),
             )
     }
 
@@ -1454,11 +1462,9 @@ impl Commander {
             _ => None,
         });
         let divider = self.colors.header_border;
+        // The command line's colour, the path's beside it.
         h_flex()
             .items_center()
-            .bg(cx.theme().list_head)
-            .border_t_1()
-            .border_color(divider)
             .children(buttons.enumerate().flat_map(|(ix, (label, keys, command))| {
                 let key = dialogs::keys_dialog::shown(&keys);
                 // A rule between the buttons, as Total Commander's are apart.

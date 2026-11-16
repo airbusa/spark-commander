@@ -25,7 +25,7 @@ mod native;
 pub use native::NativeControls;
 // SparkCommander patch: see `ToolkitControls`.
 mod toolkit;
-pub use toolkit::{StateImages, ToolkitControls};
+pub use toolkit::{StateImages, ToolkitControls, state_layers};
 // SparkCommander patch: see `MacControls`.
 mod mac;
 pub use mac::MacControls;

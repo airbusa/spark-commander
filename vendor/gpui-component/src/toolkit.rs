@@ -18,6 +18,8 @@ pub struct ToolkitControls {
     /// Push buttons: their left end, a strip of the middle, the right end;
     /// plain, and the default button (a dialog's OK).
     pub button: [[StateImages; 3]; 2],
+    /// A tab's close button, where the toolkit draws one.
+    pub tab_close: Option<StateImages>,
 }
 
 /// A control's look when normal, hovered, pressed and disabled.
@@ -62,6 +64,33 @@ pub(crate) fn layers(
         .child(
             over(PRESSED)
                 .id("qt-pressed")
+                // A cursor gives it a hitbox, without which GPUI tracks no press.
+                .cursor_default()
+                .group_active(group, |style| style.opacity(1.)),
+        )
+}
+
+/// A drawn control of the app's own, its states as layers in `group`, one
+/// shown at a time: a state's drawing may let the one under it through
+/// (Breeze's tab close cuts its × out of the circle).
+pub fn state_layers(group: &'static str, images: StateImages, disabled: bool) -> Div {
+    let layer = |state: usize| picture(images.0[state].clone()).absolute().inset_0();
+    let base = div().absolute().inset_0();
+    if disabled {
+        return base.child(layer(DISABLED));
+    }
+    base.child(layer(NORMAL).group_hover(group, |style| style.opacity(0.)))
+        .child(
+            layer(HOVERED)
+                .id("drawn-hovered")
+                .opacity(0.)
+                .group_hover(group, |style| style.opacity(1.))
+                .group_active(group, |style| style.opacity(0.)),
+        )
+        .child(
+            layer(PRESSED)
+                .id("drawn-pressed")
+                .opacity(0.)
                 // A cursor gives it a hitbox, without which GPUI tracks no press.
                 .cursor_default()
                 .group_active(group, |style| style.opacity(1.)),

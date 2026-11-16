@@ -105,6 +105,20 @@ int main(int argc, char **argv) {
             put(name + ".right", image.copy(width - end, 0, end, height));
         }
     }
+    // A tab's close button, as QTabBar's: raised under the pointer, sunken pressed.
+    QSize close(style->pixelMetric(QStyle::PM_TabCloseIndicatorWidth), style->pixelMetric(QStyle::PM_TabCloseIndicatorHeight));
+    for (State state : {Normal, Hovered, Pressed, Disabled}) {
+        QStyleOption option;
+        set_state(option, state, palette);
+        option.state |= QStyle::State_AutoRaise;
+        if (state == Hovered) option.state |= QStyle::State_Raised;
+        if (state == Pressed) option.state |= QStyle::State_Sunken;
+        option.rect = QRect(QPoint(), close);
+        QImage image = drawn(close, [&](QPainter &painter) {
+            style->drawPrimitive(QStyle::PE_IndicatorTabClose, &option, &painter, nullptr);
+        });
+        put(QByteArray("tabclose.") + STATES[state], image);
+    }
     std::printf("end\n");
     return 0;
 }

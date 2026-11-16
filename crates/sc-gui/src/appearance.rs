@@ -346,5 +346,6 @@ fn toolkit_controls(images: &mut std::collections::HashMap<String, sc_core::syst
     };
     let button = [button("plain")?, button("default")?];
     let checkbox = [states("checkbox.off.{}")?, states("checkbox.on.{}")?];
-    Some(ToolkitControls { scale, checkbox, button })
+    let tab_close = states("tabclose.{}");
+    Some(ToolkitControls { scale, checkbox, button, tab_close })
 }

@@ -6,7 +6,7 @@ use std::path::{Path, PathBuf};
 use gpui_kit::component::button::{Button, ButtonVariants};
 use gpui_kit::component::notification::Notification;
 use gpui_kit::component::tab::{Tab, TabBar};
-use gpui_kit::component::{ActiveTheme, IconName, Sizable, WindowExt, v_flex};
+use gpui_kit::component::{ActiveTheme, IconName, Sizable, ToolkitControls, WindowExt, state_layers, v_flex};
 use gpui_kit::*;
 use sc_core::menu::Command;
 use sc_core::session::TerminalState;
@@ -36,6 +36,8 @@ pub(crate) struct TerminalDrag;
 
 /// The panels keep this much of the window, however high the terminal is dragged.
 const PANELS_LEFT: f32 = 300.;
+/// The group a tab's drawn close button follows the pointer by.
+const CLOSE: &str = "terminal-tab-close";
 
 fn viewport_height(window: &Window) -> f32 {
     f32::from(window.viewport_size().height)
@@ -247,11 +249,26 @@ impl Commander {
                 (None, Some(dir)) => dir.file_name().map_or_else(|| dir.display().to_string(), |name| name.to_string_lossy().into_owned()),
                 (None, None) => "ssh".to_owned(),
             };
-            let close = Button::new(("terminal-close", ix))
-                .ghost()
-                .xsmall()
-                .label("×")
-                .on_click(cx.listener(move |this, _, window, cx| this.confirm_close_terminal_tab(ix, window, cx)));
+            let clicked = cx.listener(move |this, _, window, cx| this.confirm_close_terminal_tab(ix, window, cx));
+            // The desktop style's own (Breeze's red circle under the pointer), else a ×.
+            let drawn = cx.try_global::<ToolkitControls>().and_then(|controls| {
+                let images = controls.tab_close.clone()?;
+                Some((controls.size(&images.0[0]), images))
+            });
+            let close = match drawn {
+                Some(((width, height), images)) => div()
+                    .id(("terminal-close", ix))
+                    .group(CLOSE)
+                    .relative()
+                    .flex_none()
+                    .w(width)
+                    .h(height)
+                    .mr_1p5()
+                    .child(state_layers(CLOSE, images, false))
+                    .on_click(clicked)
+                    .into_any_element(),
+                None => Button::new(("terminal-close", ix)).ghost().xsmall().label("×").on_click(clicked).into_any_element(),
+            };
             Tab::new().label(name).suffix(close)
         });
         let tabs: Vec<Tab> = tabs.collect();

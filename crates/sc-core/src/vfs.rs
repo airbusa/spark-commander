@@ -76,21 +76,20 @@ pub fn copy_file(
     meta: &Meta,
     copied: &mut dyn FnMut(u64, bool) -> io::Result<()>,
 ) -> io::Result<()> {
-    copy_file_over(from, source, to, target, meta, &mut |old| to.remove(old, false), copied)
+    copy_file_with(from, source, to, target, meta, &mut |part, target| replace(to, part, target), copied)
 }
 
-/// As `copy_file`; `over` takes away what is at `target`, once the copy is whole.
-pub fn copy_file_over(
+/// As `copy_file`; `place` puts the whole part in the target's place.
+pub fn copy_file_with(
     from: &dyn Fs,
     source: &Path,
     to: &dyn Fs,
     target: &Path,
     meta: &Meta,
-    over: &mut dyn FnMut(&Path) -> io::Result<()>,
+    place: &mut dyn FnMut(&Path, &Path) -> io::Result<()>,
     copied: &mut dyn FnMut(u64, bool) -> io::Result<()>,
 ) -> io::Result<()> {
-    let name = target.file_name().unwrap_or_default().to_string_lossy();
-    let part = target.with_file_name(format!("{name}{PART}"));
+    let part = part_of(from, source, meta, target);
     let mut write = || -> io::Result<()> {
         let (mut reader, mut writer) = match resumable(from, source, to, &part, meta) {
             Some((reader, writer, done)) => {
@@ -112,10 +111,7 @@ pub fn copy_file_over(
         }
         writer.flush()?;
         drop(writer);
-        if to.metadata(target).is_ok() {
-            over(target)?;
-        }
-        to.rename(&part, target)?;
+        place(&part, target)?;
         let _ = to.set_meta(target, meta);
         Ok(())
     };
@@ -124,6 +120,45 @@ pub fn copy_file_over(
         let _ = to.remove(&part, false);
     }
     written
+}
+
+/// Where a copy of `source` to `target` is written until whole: beside the
+/// target, named also by the source as `meta` has it, so that only a broken
+/// copy of this same file goes on from it.
+pub fn part_of(from: &dyn Fs, source: &Path, meta: &Meta, target: &Path) -> PathBuf {
+    let seconds = meta.modified.and_then(|time| time.duration_since(SystemTime::UNIX_EPOCH).ok()).map_or(0, |since| since.as_secs());
+    let id = from.id();
+    let identity = [id.as_bytes(), source.as_os_str().as_encoded_bytes(), &meta.size.to_le_bytes(), &seconds.to_le_bytes()];
+    // FNV-1a: the same name in every build, as a part must be found again.
+    let hash = identity.iter().flat_map(|bytes| bytes.iter()).fold(0xcbf2_9ce4_8422_2325_u64, |hash, byte| (hash ^ u64::from(*byte)).wrapping_mul(0x100_0000_01b3));
+    let mut name = target.file_name().unwrap_or_default().to_os_string();
+    name.push(format!(".{:08x}{PART}", hash as u32));
+    target.with_file_name(name)
+}
+
+/// Puts `part` in `target`'s place. What is there is moved aside meanwhile
+/// and comes back if `part` cannot take its place, so it is never lost.
+pub fn replace(fs: &dyn Fs, part: &Path, target: &Path) -> io::Result<()> {
+    match fs.metadata(target) {
+        Err(_) => return fs.rename(part, target),
+        Ok(meta) if meta.is_dir && !meta.is_link => return Err(io::Error::other("a folder of this name is in the way")),
+        Ok(_) => {}
+    }
+    let aside = (0..)
+        .map(|n| {
+            let mut name = target.file_name().unwrap_or_default().to_os_string();
+            name.push(format!(".sc-old{n}"));
+            target.with_file_name(name)
+        })
+        .find(|aside| fs.metadata(aside).is_err())
+        .expect("some number is free");
+    fs.rename(target, &aside)?;
+    if let Err(err) = fs.rename(part, target) {
+        let _ = fs.rename(&aside, target);
+        return Err(err);
+    }
+    let _ = fs.remove(&aside, false);
+    Ok(())
 }
 
 /// A broken copy's part to go on from: shorter than the source, written
@@ -311,7 +346,7 @@ pub(crate) fn resumes_both_ways(server: &dyn Fs, dir: &Path) {
     let meta = server.metadata(&up).unwrap();
     assert!(copy_file(server, &up, &Local, &down, &meta, &mut { broken }).is_err());
     // A server's reads come in smaller pieces than the buffer.
-    let part = fs::metadata(local.join(format!("down.bin{PART}"))).unwrap().len();
+    let part = fs::metadata(part_of(server, &up, &meta, &down)).unwrap().len();
     heard.clear();
     copy_file(server, &up, &Local, &down, &meta, &mut |bytes, _| Ok(heard.push(bytes))).unwrap();
     assert!(part > 0 && heard[0] == part, "the download went on from {part}: {heard:?}");
@@ -329,10 +364,10 @@ mod tests {
         let dir = std::env::temp_dir().join(format!("sc-resume-{}", std::process::id()));
         fs::create_dir_all(&dir).unwrap();
         let (source, target) = (dir.join("big.bin"), dir.join("copy.bin"));
-        let part = dir.join(format!("copy.bin{PART}"));
         let data: Vec<u8> = (0..3 * BUFFER + 123).map(|at| (at % 251) as u8).collect();
         fs::write(&source, &data).unwrap();
         let meta = Local.metadata(&source).unwrap();
+        let part = part_of(&Local, &source, &meta, &target);
         let fail = |kind: io::ErrorKind| move |_: u64, _: bool| -> io::Result<()> { Err(kind.into()) };
 
         // Broken after the first buffer: the part stays, and the next copy goes on from it.
@@ -352,16 +387,26 @@ mod tests {
 
         // The source changed since the part was written, though its end matches: from the beginning.
         assert!(copy_file(&Local, &source, &Local, &target, &meta, &mut fail(io::ErrorKind::ConnectionReset)).is_err());
+        fs::remove_file(&part).unwrap();
         let mut changed = data.clone();
         changed[0] = 255;
         fs::write(&source, &changed).unwrap();
         let later = SystemTime::now() + std::time::Duration::from_secs(5);
         File::options().write(true).open(&source).unwrap().set_modified(later).unwrap();
         let meta = Local.metadata(&source).unwrap();
+        let part = part_of(&Local, &source, &meta, &target);
+        fs::copy(dir.join("copy.bin"), &part).unwrap();
+        fs::OpenOptions::new().write(true).open(&part).unwrap().set_len(BUFFER as u64).unwrap();
         let mut heard = Vec::new();
         copy_file(&Local, &source, &Local, &target, &meta, &mut |_, resumed| Ok(heard.push(resumed))).unwrap();
         assert!(!heard[0]);
         assert_eq!(fs::read(&target).unwrap(), changed);
+
+        // A copy that cannot take the target's place leaves the target as it was.
+        fs::write(&target, "old").unwrap();
+        assert!(replace(&Local, &dir.join("gone.part"), &target).is_err());
+        assert_eq!(fs::read(&target).unwrap(), b"old");
+        assert_eq!(fs::read_dir(&dir).unwrap().count(), 2, "nothing set aside is left");
 
         // Cancelled: no part left.
         assert!(copy_file(&Local, &source, &Local, &target, &meta, &mut fail(io::ErrorKind::Interrupted)).is_err());

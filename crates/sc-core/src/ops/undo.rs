@@ -196,6 +196,11 @@ pub fn to_trash(path: &Path) -> io::Result<()> {
     Ok(())
 }
 
+/// `path`, put in the trash since `at`, back where it was.
+pub fn take_back(path: &Path, at: SystemTime) -> io::Result<()> {
+    put_back(in_trash(&[path.to_owned()], at)?)
+}
+
 /// What `paths` became in the trash, put there since `at`: the newest of each; none of one no longer there.
 #[cfg(all(not(test), any(windows, all(unix, not(target_os = "macos")))))]
 fn in_trash(paths: &[PathBuf], at: SystemTime) -> io::Result<Vec<trash::TrashItem>> {

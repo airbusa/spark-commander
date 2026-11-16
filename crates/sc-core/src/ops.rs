@@ -612,11 +612,20 @@ impl Run<'_> {
         let itself = self.op.same_fs()
             && source.parent() == target.parent()
             && source.file_name().zip(target.file_name()).is_some_and(|(a, b)| a.to_string_lossy().eq_ignore_ascii_case(&b.to_string_lossy()));
-        // A rename replaces the target where the file system lets it.
         let renamed = self.op.kind == Kind::Move
             && self.op.same_fs()
-            && (new || itself || self.clear(&target).is_ok())
-            && from.rename(source, &target).is_ok();
+            && match itself {
+                true => from.rename(source, &target).is_ok(),
+                false => match place(&*to, source, &target) {
+                    Ok(trashed) => {
+                        if trashed {
+                            self.replaced.push(target.clone());
+                        }
+                        true
+                    }
+                    Err(_) => false,
+                },
+            };
         if renamed {
             self.progress.files += 1;
             self.progress.bytes += meta.size;
@@ -763,13 +772,9 @@ impl Run<'_> {
     fn copy_file(&mut self, source: &Path, target: &Path, meta: &Meta) -> io::Result<()> {
         let (from, to) = (self.op.from.clone(), self.op.to.clone());
         let before = (self.progress.bytes, self.progress.resumed);
-        // What it goes over goes once it is whole: on this computer to the trash, where it can.
         let mut trashed = false;
-        let mut over = |old: &Path| {
-            trashed = to.id() == "local" && crate::ops::undo::to_trash(old).is_ok();
-            if trashed { Ok(()) } else { to.remove(old, false) }
-        };
-        let written = vfs::copy_file_over(&*from, source, &*to, target, meta, &mut over, &mut |bytes, resumed| {
+        let mut put = |part: &Path, target: &Path| place(&*to, part, target).map(|went| trashed = went);
+        let written = vfs::copy_file_with(&*from, source, &*to, target, meta, &mut put, &mut |bytes, resumed| {
             if self.cancel.load(Ordering::Relaxed) {
                 return Err(io::ErrorKind::Interrupted.into());
             }
@@ -848,6 +853,23 @@ fn name(path: &Path) -> String {
         .unwrap_or(path.as_os_str())
         .to_string_lossy()
         .into_owned()
+}
+
+/// Puts `from` in `target`'s place on `fs` by a rename. What is there goes:
+/// on this computer to the trash, where it can (true), and back from there
+/// if `from` cannot take its place; else as `vfs::replace` has it.
+fn place(fs: &dyn Fs, from: &Path, target: &Path) -> io::Result<bool> {
+    if fs.id() == "local" && fs.metadata(target).is_ok_and(|meta| !meta.is_dir || meta.is_link) {
+        let at = std::time::SystemTime::now();
+        if crate::ops::undo::to_trash(target).is_ok() {
+            if let Err(err) = fs.rename(from, target) {
+                let _ = crate::ops::undo::take_back(target, at);
+                return Err(err);
+            }
+            return Ok(true);
+        }
+    }
+    vfs::replace(fs, from, target).map(|()| false)
 }
 
 #[cfg(test)]

@@ -247,6 +247,7 @@ fn main() {
         editor::bind_keys(cx);
         terminal::bind_keys(cx);
         addons::init(cx);
+        dialogs::passwords_dialog::init(cx);
         register_xml();
         header::round_corners(cx);
         #[cfg(debug_assertions)]

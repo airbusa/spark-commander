@@ -301,7 +301,7 @@ impl Render for LoginDialog {
             .child(field("Password", &self.password))
             .child(
                 Checkbox::new("login-remember")
-                    .label("Remember it in the system keyring")
+                    .label("Remember it (Settings › Passwords)")
                     .checked(self.remember)
                     .on_click(cx.listener(|this, checked: &bool, _, cx| {
                         this.remember = *checked;
@@ -518,7 +518,7 @@ impl Render for SecretDialog {
             .when(self.keyring.is_some(), |el| {
                 el.child(
                     Checkbox::new("secret-remember")
-                        .label("Remember it in the system keyring")
+                        .label("Remember it (Settings › Passwords)")
                         .checked(self.remember)
                         .on_click(cx.listener(|this, checked: &bool, _, cx| {
                             this.remember = *checked;

@@ -10,6 +10,7 @@ pub mod find_dialog;
 pub mod keys_dialog;
 pub mod name_dialog;
 pub mod pack_dialog;
+pub mod passwords_dialog;
 pub mod properties_dialog;
 pub mod rename_dialog;
 pub mod settings_dialog;

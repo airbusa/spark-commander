@@ -50,7 +50,7 @@ pub(crate) fn open_edit(
     let password = cx.new(|cx| {
         InputState::new(window, cx)
             .masked(true)
-            .placeholder("kept in the system keyring; empty keeps it")
+            .placeholder("kept sealed in the settings folder; empty keeps it")
     });
     let at = Scheme::ALL.iter().position(|scheme| *scheme == connection.scheme);
     let labels = Scheme::ALL.map(Scheme::label).to_vec();

@@ -220,7 +220,7 @@ impl Default for ViewerSettings {
 }
 
 /// The settings dialog's pages.
-pub const PAGES: &[&str] = &["Layout", "Display", "Font", "Date", "Language", "Edit/View", "Terminal", "Add-ons"];
+pub const PAGES: &[&str] = &["Layout", "Display", "Font", "Date", "Language", "Edit/View", "Terminal", "Passwords", "Add-ons"];
 
 /// A folder of this computer's own: not a server's, as kio-fuse, gvfs or
 /// Windows' `\\server\share` show them.
@@ -321,7 +321,12 @@ pub(crate) fn write_json(file: &str, value: &impl Serialize) -> io::Result<()> {
     let save = SAVES.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
     let temp = dir.join(format!("{file}.{}-{save}.new", std::process::id()));
     let written = (|| {
-        let mut out = fs::File::create_new(&temp)?;
+        // Only the user's, as the saved passwords' file is too.
+        let mut options = fs::OpenOptions::new();
+        options.write(true).create_new(true);
+        #[cfg(unix)]
+        std::os::unix::fs::OpenOptionsExt::mode(&mut options, 0o600);
+        let mut out = options.open(&temp)?;
         io::Write::write_all(&mut out, serde_json::to_string_pretty(value)?.as_bytes())?;
         out.sync_all()?;
         fs::rename(&temp, dir.join(file))

@@ -5,6 +5,7 @@ use gpui_kit::component::button::{Button, ButtonVariants};
 use gpui_kit::component::checkbox::Checkbox;
 use gpui_kit::component::group_box::{GroupBox, GroupBoxVariants};
 use gpui_kit::component::input::{Input, InputEvent, InputState};
+use gpui_kit::component::notification::Notification;
 use gpui_kit::component::radio::RadioGroup;
 use gpui_kit::component::slider::{Slider, SliderEvent, SliderState};
 use gpui_kit::component::{ActiveTheme, Disableable, MacControls, StyledExt, WindowExt, h_flex, v_flex};
@@ -44,7 +45,7 @@ fn fluent() -> bool {
 const SAMPLE: &str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz äöüéèêàñç 0123456789";
 const SIZES: [&str; 15] = ["7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "18", "20", "22", "24", "28"];
 /// Each page's icon in the rail, as `PAGES`.
-const ICONS: [Lucide; 8] = [
+const ICONS: [Lucide; 9] = [
     Lucide::PanelsTopLeft,
     Lucide::Eye,
     Lucide::Type,
@@ -52,6 +53,7 @@ const ICONS: [Lucide; 8] = [
     Lucide::Languages,
     Lucide::FilePen,
     Lucide::SquareTerminal,
+    Lucide::KeyRound,
     Lucide::Puzzle,
 ];
 
@@ -181,6 +183,7 @@ pub fn open(
             opacity,
             terminal_opacity,
             shells: sc_core::system::shells::others(),
+            passwords: (0, false, false),
             _opacity: trying,
             _addons: cx.observe(&crate::addons::entity(cx), |_, _, cx| cx.notify()),
             commander,
@@ -191,6 +194,9 @@ pub fn open(
     });
     if PAGES[page] == "Add-ons" {
         crate::addons::shown(cx);
+    }
+    if PAGES[page] == "Passwords" {
+        view.update(cx, |this, cx| this.read_passwords(cx));
     }
     window.open_dialog(cx, move |dialog, _, cx| {
         let closing = view.clone();
@@ -324,6 +330,9 @@ struct SettingsDialog {
     terminal_opacity: Entity<SliderState>,
     /// The shells installed besides the default one.
     shells: Vec<sc_core::system::shells::Shell>,
+    /// The saved passwords: how many, a master password set, locked here;
+    /// read as the page is shown.
+    passwords: (usize, bool, bool),
     _inputs: [Subscription; 5],
     _pickers: Vec<Subscription>,
     _measuring: Task<()>,
@@ -424,6 +433,9 @@ impl SettingsDialog {
                         this.page = ix;
                         if label == "Add-ons" {
                             crate::addons::shown(cx);
+                        }
+                        if label == "Passwords" {
+                            this.read_passwords(cx);
                         }
                         cx.notify();
                     }))
@@ -759,6 +771,76 @@ impl SettingsDialog {
         )
     }
 
+    /// How many passwords are saved and whether a master password is set, at
+    /// once; whether they are locked here, from the keyring, in the background.
+    fn read_passwords(&mut self, cx: &mut Context<Self>) {
+        use sc_core::remote::secrets;
+        self.passwords = (secrets::saved(), secrets::has_master(), self.passwords.2);
+        cx.spawn(async move |this, cx| {
+            let locked = cx.background_spawn(async { secrets::locked() }).await;
+            let _ = this.update(cx, |this, cx| {
+                this.passwords.2 = locked;
+                cx.notify();
+            });
+        })
+        .detach();
+        cx.notify();
+    }
+
+    /// The saved passwords: where they are, and the master password that
+    /// takes them to another computer. Its buttons act at once, not by OK.
+    fn render_passwords(&self, cx: &mut Context<Self>) -> GroupBox {
+        use crate::dialogs::passwords_dialog::{Ask, ask};
+        let (saved, master, locked) = self.passwords;
+        let count = match saved {
+            1 => "1 password is saved".to_owned(),
+            n => format!("{n} passwords are saved"),
+        };
+        let place = format!("{count} (servers', shares', encrypted drives'), sealed in the settings folder; the key that opens them is in this computer's keyring.");
+        let state = match (master, locked) {
+            (_, true) => "They are locked on this computer: the master password opens them.",
+            (true, false) => "A master password is set: with the settings folder copied, they open on another computer once it is typed there.",
+            (false, false) => "No master password is set: with the settings folder copied, they do not open on another computer; they are typed again there.",
+        };
+        let this = cx.weak_entity();
+        let read_again = move |_: &mut Window, cx: &mut App| {
+            let _ = this.update(cx, |this, cx| this.read_passwords(cx));
+        };
+        let mut buttons = h_flex().gap_2();
+        if locked {
+            let done = read_again.clone();
+            buttons = buttons.child(Button::new("passwords-unlock").primary().label("Unlock…").on_click(move |_, window, cx| ask(Ask::Unlock, window, cx, done.clone())));
+        } else {
+            let done = read_again.clone();
+            let label = if master { "Change master password…" } else { "Set master password…" };
+            buttons = buttons.child(Button::new("passwords-master").outline().label(label).on_click(move |_, window, cx| ask(Ask::Set, window, cx, done.clone())));
+        }
+        if master && !locked {
+            buttons = buttons.child(Button::new("passwords-no-master").outline().label("Remove master password").on_click(move |_, window, cx| {
+                let done = read_again.clone();
+                let removed = cx.background_spawn(async { sc_core::remote::secrets::set_master(None) });
+                window
+                    .spawn(cx, async move |cx| {
+                        let removed = removed.await;
+                        let _ = cx.update(|window, cx| {
+                            if let Err(err) = removed {
+                                window.push_notification(Notification::error(format!("The master password was not removed: {err}")), cx);
+                            }
+                            done(window, cx);
+                        });
+                    })
+                    .detach();
+            }));
+        }
+        GroupBox::new().outline().title("Saved passwords").child(
+            v_flex()
+                .gap_3()
+                .child(div().whitespace_normal().child(place))
+                .child(div().whitespace_normal().text_color(cx.theme().muted_foreground).child(state))
+                .child(buttons),
+        )
+    }
+
     /// The terminal's shell: the default one or another installed.
     fn render_shell(&self, cx: &mut Context<Self>) -> GroupBox {
         let default = format!("Default: {}", sc_core::system::shells::default_name());
@@ -998,6 +1080,7 @@ impl SettingsDialog {
                 }
                 groups
             }
+            "Passwords" => vec![self.render_passwords(cx)],
             "Add-ons" => self.render_addons(cx),
             _ => Vec::new(),
         };

@@ -1426,6 +1426,9 @@ impl Commander {
                     .overflow_hidden()
                     .whitespace_nowrap()
                     .text_ellipsis_start()
+                    // The font's capitals sit low in its line: centred on the field.
+                    .relative()
+                    .top(px(-1.))
                     .child(format!("{location}>")),
             )
             .child(

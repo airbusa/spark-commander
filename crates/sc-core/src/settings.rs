@@ -101,6 +101,8 @@ pub struct Settings {
     pub tools: Vec<crate::tools::Tool>,
     /// No dialog offers a missing add-on when its kind of file is opened.
     pub never_offer_addons: bool,
+    /// Saved only when changed, so an unchanged one follows the default.
+    #[serde(skip_serializing_if = "Toolbar::is_default")]
     pub toolbar: Toolbar,
 }
 
@@ -112,6 +114,12 @@ pub struct Toolbar(#[serde(deserialize_with = "crate::menu::known")] pub Vec<cra
 impl Default for Toolbar {
     fn default() -> Self {
         Toolbar(crate::menu::TOOLBAR.to_vec())
+    }
+}
+
+impl Toolbar {
+    fn is_default(&self) -> bool {
+        self.0 == crate::menu::TOOLBAR
     }
 }
 
@@ -352,6 +360,19 @@ pub(crate) fn write_json(file: &str, value: &impl Serialize) -> io::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn toolbar_saved_only_when_changed() {
+        let mut settings = Settings::default();
+        assert!(!serde_json::to_string(&settings).unwrap().contains("toolbar"));
+        settings.toolbar.0.pop();
+        let saved = serde_json::to_string(&settings).unwrap();
+        let read: Settings = serde_json::from_str(&saved).unwrap();
+        assert_eq!(read.toolbar, settings.toolbar);
+        settings.toolbar.0.clear();
+        let read: Settings = serde_json::from_str(&serde_json::to_string(&settings).unwrap()).unwrap();
+        assert!(read.toolbar.0.is_empty(), "an emptied toolbar stays empty");
+    }
 
     #[test]
     fn sorts_bookmarks_and_takes_only_folders() {

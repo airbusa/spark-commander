@@ -30,13 +30,13 @@ use std::sync::Arc;
 use std::sync::atomic::{AtomicBool, Ordering};
 use std::time::{Duration, Instant};
 
-use gpui_kit::component::button::{Button, ButtonVariant, ButtonVariants};
+use gpui_kit::component::button::{Button, ButtonVariant, ButtonVariants, DropdownButton};
 use gpui_kit::component::input::{Input, InputEvent, InputState};
 use gpui_kit::component::menu::{AppMenuBar, ContextMenuExt, PopupMenu, PopupMenuItem};
 use gpui_kit::component::notification::Notification;
 use gpui_kit::component::scroll::Scrollbar;
 use gpui_kit::component::tab::{Tab, TabBar};
-use gpui_kit::component::{ActiveTheme, Icon, IconName, Selectable, Sizable, WindowExt, h_flex, v_flex};
+use gpui_kit::component::{ActiveTheme, Disableable, Icon, IconName, Selectable, Sizable, WindowExt, h_flex, v_flex};
 use gpui_kit::prelude::FluentBuilder;
 use gpui_kit::*;
 use sc_core::command::{self, Outcome};
@@ -76,7 +76,7 @@ actions!(
 include!(concat!(env!("OUT_DIR"), "/material_icons.rs"));
 
 // Lucide icons beyond GPUI Kit's own set.
-gpui_kit::assets::icon_assets!(ExtraIcons, [Bookmark, HardDrive, FolderClock, Wrench, SquareTerminal, Layers, PanelsTopLeft, Type, CalendarClock, Languages, FilePen, Puzzle, Server, Smartphone, Tablet, Laptop, Monitor, Tv, Usb, Menu, Cloud, CaseSensitive, WholeWord, Regex, Replace, ReplaceAll, CaseUpper, SquareDashedText, X, Funnel, Link, Pencil, FilePlus, FolderPlus, FolderInput, TextCursorInput, Trash, Diff, Package, PackageOpen, Split, Merge, Hash, ShieldCheck, LogOut, ListChecks, Scissors, ClipboardPaste, House, BookmarkPlus, Zap, FolderSync, GitCompareArrows, ListOrdered, ScrollText, ArrowLeftRight, Equal, Keyboard, Unplug, Rows2, Columns3, List, LayoutGrid, ListTree, Link2, FolderTree, PanelTop, KeyRound]);
+gpui_kit::assets::icon_assets!(ExtraIcons, [Bookmark, HardDrive, FolderClock, Wrench, SquareTerminal, Layers, PanelsTopLeft, Type, CalendarClock, Languages, FilePen, Puzzle, Server, Smartphone, Tablet, Laptop, Monitor, Tv, Usb, Menu, Cloud, CaseSensitive, WholeWord, Regex, Replace, ReplaceAll, CaseUpper, SquareDashedText, X, Funnel, Link, Pencil, FilePlus, FolderPlus, FolderInput, TextCursorInput, Trash, Diff, Package, PackageOpen, Split, Merge, Hash, ShieldCheck, LogOut, ListChecks, Scissors, ClipboardPaste, House, BookmarkPlus, Zap, FolderSync, GitCompareArrows, ListOrdered, ScrollText, ArrowLeftRight, Equal, Keyboard, Unplug, Rows2, Columns3, List, LayoutGrid, ListTree, Link2, FolderTree, PanelTop, KeyRound, Terminal]);
 
 /// GPUI Kit's icons, the file icons as `material/<name>.svg`, the player's as `media/`.
 struct AppAssets;
@@ -1501,10 +1501,23 @@ impl Commander {
                 false => format!("{name} ({})", dialogs::keys_dialog::shown(&key)),
             };
             let button = Button::new(("toolbar", command as usize)).ghost().icon(Icon::new(icon)).selected(self.checked(command)).tooltip(tip);
-            Some(button.on_click(cx.listener(move |this, _, window, cx| {
+            let button = button.on_click(cx.listener(move |this, _, window, cx| {
                 window.focus(&this.focus, cx);
                 window.dispatch_action(Box::new(Run(command)), cx);
-            })))
+            }));
+            if !matches!(command, Command::GoBack | Command::GoForward) {
+                return Some(button.into_any_element());
+            }
+            // Back and Forward go one place; their arrow lists the places that way, as Go's menu.
+            let ways = menus::history_ways(command);
+            let none = ways.is_empty();
+            let focus = self.focus.clone();
+            let places = move |menu: PopupMenu, _: &mut Window, _: &mut Context<PopupMenu>| {
+                let menu = menu.action_context(focus.clone());
+                ways.iter().fold(menu, |menu, (at, label)| menu.menu(label.clone(), Box::new(GoToHistory(*at))))
+            };
+            let split = DropdownButton::new(("toolbar-history", command as usize)).ghost().button(button).disabled(none);
+            Some(split.dropdown_menu_with_anchor(Anchor::TopLeft, places).into_any_element())
         });
         let commander = cx.entity().downgrade();
         let customize = move |menu: PopupMenu, _: &mut Window, _: &mut Context<PopupMenu>| {
@@ -2666,12 +2679,16 @@ impl Render for Commander {
         let panels = self.file_menu_actions(panels, cx);
         #[cfg(any(target_os = "linux", target_os = "freebsd"))]
         let panels = self.desktop_menu_actions(panels, cx);
+        // In the title bar where there is one, as GNOME's apps; else over the panels.
+        let mut toolbar = self.render_toolbar(cx);
+        let header = self.render_header(&mut toolbar, window, cx);
         // The terminal paints its own background, which the desktop may show through.
         let background = cx.theme().background;
         let main = v_flex()
             .flex_1()
             .min_w_0()
             .h_full()
+            .children(toolbar.map(|bar| div().bg(self.colors.bar).child(bar)))
             .child(v_flex().flex_1().min_h_0().bg(background).child(panels))
             .children(self.render_terminal(window, cx))
             .child(
@@ -2683,24 +2700,19 @@ impl Render for Commander {
             );
         // macOS shows the menus on the system's menu bar.
         let menu_bar = !cfg!(target_os = "macos") && !self.menus_behind_button(window);
-        // In the title bar where there is one, as GNOME's apps; else under the menus.
-        let mut toolbar = self.render_toolbar(cx);
-        let header = self.render_header(&mut toolbar, window, cx);
         // The sidebar may let the desktop through: everything else paints its own background.
         v_flex()
             .size_full()
             .text_color(cx.theme().foreground)
             .text_sm()
             .children(header)
-            .when(menu_bar || toolbar.is_some(), |el| {
+            .when(menu_bar, |el| {
                 el.child(
-                    v_flex()
+                    div()
                         .bg(self.colors.bar)
                         .border_b_1()
                         .border_color(cx.theme().border)
-                        // The menu bar fills what holds it.
-                        .when(menu_bar, |el| el.child(div().child(self.menu_bar.clone())))
-                        .children(toolbar),
+                        .child(self.menu_bar.clone()),
                 )
             })
             // The menus' own choices, wherever the keys are: the terminal, the sidebar.

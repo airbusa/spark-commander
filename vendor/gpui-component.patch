@@ -1,6 +1,6 @@
 diff -ruN a/src/button/button.rs b/src/button/button.rs
---- a/src/button/button.rs	2026-11-16 23:00:43.267293497 +0100
-+++ b/src/button/button.rs	2026-11-16 23:00:43.302290672 +0100
+--- a/src/button/button.rs	2026-11-16 23:13:47.997646893 +0100
++++ b/src/button/button.rs	2026-11-16 23:13:48.008984411 +0100
 @@ -159,6 +159,53 @@
  }
  
@@ -230,9 +230,28 @@ diff -ruN a/src/button/button.rs b/src/button/button.rs
          let bg = match self {
              Self::Default | Self::Link | Self::Ghost | Self::Text => cx.theme().transparent.into(),
              Self::Primary => cx.theme().tokens.button_primary.background.opacity(0.15),
+diff -ruN a/src/button/dropdown_button.rs b/src/button/dropdown_button.rs
+--- a/src/button/dropdown_button.rs	2026-11-16 23:13:47.997790656 +0100
++++ b/src/button/dropdown_button.rs	2026-11-16 23:13:48.009120339 +0100
+@@ -1,3 +1,6 @@
++// Modified for SparkCommander: a ghost split's caret half is 18 px wide.
++// Changes are marked "SparkCommander patch".
++
+ use gpui::Corners;
+ use gpui::{
+     Anchor, App, Context, Edges, ElementId, InteractiveElement as _, IntoElement, ParentElement,
+@@ -228,6 +231,8 @@
+                         .with_size(size)
+                         .with_variant(variant)
+                         .when(is_ghost, |this| this.hover_group(HALVES_GROUP))
++                        // SparkCommander patch: a ghost split's caret half narrow, as a toolbar's.
++                        .when(is_ghost, |this| this.w(gpui::px(18.)))
+                         .dropdown_menu_with_anchor(self.anchor, menu)
+                         .on_open_change(move |open, _, cx| {
+                             menu_open.update(cx, |state, cx| {
 diff -ruN a/src/checkbox.rs b/src/checkbox.rs
---- a/src/checkbox.rs	2026-11-16 23:00:43.270537693 +0100
-+++ b/src/checkbox.rs	2026-11-16 23:00:43.310147774 +0100
+--- a/src/checkbox.rs	2026-11-16 23:13:47.998461691 +0100
++++ b/src/checkbox.rs	2026-11-16 23:13:48.015914331 +0100
 @@ -197,16 +197,25 @@
          window,
          cx,
@@ -384,8 +403,8 @@ diff -ruN a/src/checkbox.rs b/src/checkbox.rs
              .when(self.label.is_some() || !children.is_empty(), |this| {
                  this.child(
 diff -ruN a/src/command/command.rs b/src/command/command.rs
---- a/src/command/command.rs	2026-11-16 23:00:43.271272660 +0100
-+++ b/src/command/command.rs	2026-11-16 23:00:43.303099589 +0100
+--- a/src/command/command.rs	2026-11-16 23:13:47.998662172 +0100
++++ b/src/command/command.rs	2026-11-16 23:13:48.009741229 +0100
 @@ -1,7 +1,7 @@
  use std::rc::Rc;
  
@@ -427,8 +446,8 @@ diff -ruN a/src/command/command.rs b/src/command/command.rs
      pub fn placeholder(mut self, placeholder: impl Into<SharedString>) -> Self {
          self.options.placeholder = Some(placeholder.into());
 diff -ruN a/src/command/item.rs b/src/command/item.rs
---- a/src/command/item.rs	2026-11-16 23:00:43.271523647 +0100
-+++ b/src/command/item.rs	2026-11-16 23:00:43.303126350 +0100
+--- a/src/command/item.rs	2026-11-16 23:13:47.998707569 +0100
++++ b/src/command/item.rs	2026-11-16 23:13:48.009767268 +0100
 @@ -13,6 +13,8 @@
      /// every item — and so the palette's item vector — kilobytes wide.
      pub(crate) icon: Option<Box<Icon>>,
@@ -481,8 +500,8 @@ diff -ruN a/src/command/item.rs b/src/command/item.rs
      }
  }
 diff -ruN a/src/command/state.rs b/src/command/state.rs
---- a/src/command/state.rs	2026-11-16 23:00:43.271817776 +0100
-+++ b/src/command/state.rs	2026-11-16 23:00:43.303192816 +0100
+--- a/src/command/state.rs	2026-11-16 23:13:47.998794724 +0100
++++ b/src/command/state.rs	2026-11-16 23:13:48.009822924 +0100
 @@ -796,8 +796,9 @@
              return None;
          }
@@ -496,8 +515,8 @@ diff -ruN a/src/command/state.rs b/src/command/state.rs
      }
  
 diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
---- a/src/dialog/dialog.rs	2026-11-16 23:00:43.272512266 +0100
-+++ b/src/dialog/dialog.rs	2026-11-16 23:00:43.303364893 +0100
+--- a/src/dialog/dialog.rs	2026-11-16 23:13:47.999027276 +0100
++++ b/src/dialog/dialog.rs	2026-11-16 23:13:48.009975374 +0100
 @@ -1,13 +1,20 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): a dialog moves by
 +// its title, can open centred over a part of the window, and fades in
@@ -866,8 +885,8 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
  pub(crate) mod tests {
      use super::*;
 diff -ruN a/src/group_box.rs b/src/group_box.rs
---- a/src/group_box.rs	2026-11-16 23:00:43.276693863 +0100
-+++ b/src/group_box.rs	2026-11-16 23:00:43.310470257 +0100
+--- a/src/group_box.rs	2026-11-16 23:13:48.000259478 +0100
++++ b/src/group_box.rs	2026-11-16 23:13:48.016221124 +0100
 @@ -1,6 +1,6 @@
  use gpui::{
      AnyElement, App, Background, ElementId, InteractiveElement as _, IntoElement, ParentElement,
@@ -921,8 +940,8 @@ diff -ruN a/src/group_box.rs b/src/group_box.rs
                              .children(self.children),
                      )
 diff -ruN a/src/highlighter/input_adapter.rs b/src/highlighter/input_adapter.rs
---- a/src/highlighter/input_adapter.rs	2026-11-16 23:00:43.277129772 +0100
-+++ b/src/highlighter/input_adapter.rs	2026-11-16 23:00:43.305488008 +0100
+--- a/src/highlighter/input_adapter.rs	2026-11-16 23:13:48.000405175 +0100
++++ b/src/highlighter/input_adapter.rs	2026-11-16 23:13:48.011611554 +0100
 @@ -1,3 +1,7 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): the highlighter
 +// factory is public, and a background parse leaves the fold candidates alone
@@ -958,8 +977,8 @@ diff -ruN a/src/highlighter/input_adapter.rs b/src/highlighter/input_adapter.rs
          });
          parse_task.borrow_mut().replace(task);
 diff -ruN a/src/highlighter/mod.rs b/src/highlighter/mod.rs
---- a/src/highlighter/mod.rs	2026-11-16 23:00:43.278376832 +0100
-+++ b/src/highlighter/mod.rs	2026-11-16 23:00:43.305569523 +0100
+--- a/src/highlighter/mod.rs	2026-11-16 23:13:48.001430364 +0100
++++ b/src/highlighter/mod.rs	2026-11-16 23:13:48.011688700 +0100
 @@ -1,3 +1,7 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): the editor's
 +// highlighter factory is public, so an app can wrap it. Changes are marked
@@ -984,8 +1003,8 @@ diff -ruN a/src/highlighter/mod.rs b/src/highlighter/mod.rs
  }
  
 diff -ruN a/src/input/input.rs b/src/input/input.rs
---- a/src/input/input.rs	2026-11-16 23:00:43.279961734 +0100
-+++ b/src/input/input.rs	2026-11-16 23:00:43.306056539 +0100
+--- a/src/input/input.rs	2026-11-16 23:13:48.001901749 +0100
++++ b/src/input/input.rs	2026-11-16 23:13:48.012218357 +0100
 @@ -705,6 +705,10 @@
          };
  
@@ -1048,8 +1067,8 @@ diff -ruN a/src/input/input.rs b/src/input/input.rs
              .items_center()
              .gap(gap_x)
 diff -ruN a/src/input/popovers/completion_menu.rs b/src/input/popovers/completion_menu.rs
---- a/src/input/popovers/completion_menu.rs	2026-11-16 23:00:43.280957476 +0100
-+++ b/src/input/popovers/completion_menu.rs	2026-11-16 23:00:43.305831762 +0100
+--- a/src/input/popovers/completion_menu.rs	2026-11-16 23:13:48.002172033 +0100
++++ b/src/input/popovers/completion_menu.rs	2026-11-16 23:13:48.011985023 +0100
 @@ -1,3 +1,7 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): the completion
 +// menu is as wide as the editor's configured width. Changes are marked
@@ -1071,8 +1090,8 @@ diff -ruN a/src/input/popovers/completion_menu.rs b/src/input/popovers/completio
                      )
                      .when_some(selected_documentation, |this, documentation| {
 diff -ruN a/src/kbd.rs b/src/kbd.rs
---- a/src/kbd.rs	2026-11-16 23:00:43.282185120 +0100
-+++ b/src/kbd.rs	2026-11-16 23:00:43.310641252 +0100
+--- a/src/kbd.rs	2026-11-16 23:13:48.002466172 +0100
++++ b/src/kbd.rs	2026-11-16 23:13:48.016368555 +0100
 @@ -1,3 +1,8 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): a binding of
 +// several keystrokes shows them all. Changes are marked "WDS patch".
@@ -1168,8 +1187,8 @@ diff -ruN a/src/kbd.rs b/src/kbd.rs
      }
  }
 diff -ruN a/src/lib.rs b/src/lib.rs
---- a/src/lib.rs	2026-11-16 23:00:43.282386763 +0100
-+++ b/src/lib.rs	2026-11-16 23:00:43.310698902 +0100
+--- a/src/lib.rs	2026-11-16 23:13:48.002520325 +0100
++++ b/src/lib.rs	2026-11-16 23:13:48.016420002 +0100
 @@ -20,6 +20,15 @@
  mod touch_selection;
  mod virtual_list;
@@ -1196,8 +1215,8 @@ diff -ruN a/src/lib.rs b/src/lib.rs
  
  rust_i18n::i18n!("locales", fallback = "en");
 diff -ruN a/src/list/list.rs b/src/list/list.rs
---- a/src/list/list.rs	2026-11-16 23:00:43.282993346 +0100
-+++ b/src/list/list.rs	2026-11-16 23:00:43.306451840 +0100
+--- a/src/list/list.rs	2026-11-16 23:13:48.002660572 +0100
++++ b/src/list/list.rs	2026-11-16 23:13:48.012608408 +0100
 @@ -1,3 +1,6 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): a list can take
 +// a single click as selecting only. Changes are marked "WDS patch".
@@ -1250,7 +1269,7 @@ diff -ruN a/src/list/list.rs b/src/list/list.rs
                              secondary: e.modifiers().secondary(),
 diff -ruN a/src/mac.rs b/src/mac.rs
 --- a/src/mac.rs	1970-01-01 01:00:00.000000000 +0100
-+++ b/src/mac.rs	2026-11-16 23:00:43.310747825 +0100
++++ b/src/mac.rs	2026-11-16 23:13:48.016465359 +0100
 @@ -0,0 +1,43 @@
 +// SparkCommander patch: this file is new.
 +use gpui::{Global, Hsla};
@@ -1296,8 +1315,8 @@ diff -ruN a/src/mac.rs b/src/mac.rs
 +/// The check box's mark, bolder than GPUI Kit's, as AppKit's.
 +pub(crate) const CHECK_MARK: &[u8] = br#"<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"><path d="M2.4 6.4 4.9 8.9 9.7 3.2" fill="none" stroke="black" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>"#;
 diff -ruN a/src/menu/app_menu_bar.rs b/src/menu/app_menu_bar.rs
---- a/src/menu/app_menu_bar.rs	2026-11-16 23:00:43.283477957 +0100
-+++ b/src/menu/app_menu_bar.rs	2026-11-16 23:00:43.306697677 +0100
+--- a/src/menu/app_menu_bar.rs	2026-11-16 23:13:48.002841455 +0100
++++ b/src/menu/app_menu_bar.rs	2026-11-16 23:13:48.012847523 +0100
 @@ -1,7 +1,13 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): menu-bar menus may
 +// use the window's height. Changes are marked "WDS patch".
@@ -1455,8 +1474,8 @@ diff -ruN a/src/menu/app_menu_bar.rs b/src/menu/app_menu_bar.rs
                      .open(is_open)
                      .on_mouse_down(
 diff -ruN a/src/menu/context_menu.rs b/src/menu/context_menu.rs
---- a/src/menu/context_menu.rs	2026-11-16 23:00:43.283814867 +0100
-+++ b/src/menu/context_menu.rs	2026-11-16 23:00:43.306588049 +0100
+--- a/src/menu/context_menu.rs	2026-11-16 23:13:48.002889967 +0100
++++ b/src/menu/context_menu.rs	2026-11-16 23:13:48.012733907 +0100
 @@ -481,6 +481,14 @@
                  menu.set_previous_focus(previous_focus_handle, cx);
              });
@@ -1473,8 +1492,8 @@ diff -ruN a/src/menu/context_menu.rs b/src/menu/context_menu.rs
              // focused input highlighted. An explicit action target
              // takes precedence over where the press landed.
 diff -ruN a/src/menu/dropdown_menu.rs b/src/menu/dropdown_menu.rs
---- a/src/menu/dropdown_menu.rs	2026-11-16 23:00:43.283989098 +0100
-+++ b/src/menu/dropdown_menu.rs	2026-11-16 23:00:43.306642282 +0100
+--- a/src/menu/dropdown_menu.rs	2026-11-16 23:13:48.002922579 +0100
++++ b/src/menu/dropdown_menu.rs	2026-11-16 23:13:48.012785795 +0100
 @@ -1,9 +1,9 @@
 -use std::rc::Rc;
 +use std::{cell::Cell, rc::Rc};
@@ -1616,8 +1635,8 @@ diff -ruN a/src/menu/dropdown_menu.rs b/src/menu/dropdown_menu.rs
          frame.child.prepaint(window, cx);
      }
 diff -ruN a/src/menu/menu_item.rs b/src/menu/menu_item.rs
---- a/src/menu/menu_item.rs	2026-11-16 23:00:43.284130517 +0100
-+++ b/src/menu/menu_item.rs	2026-11-16 23:00:43.306669133 +0100
+--- a/src/menu/menu_item.rs	2026-11-16 23:13:48.002949771 +0100
++++ b/src/menu/menu_item.rs	2026-11-16 23:13:48.012818678 +0100
 @@ -102,6 +102,10 @@
              .px_2()
              .text_base()
@@ -1643,8 +1662,8 @@ diff -ruN a/src/menu/menu_item.rs b/src/menu/menu_item.rs
                  .when_some(self.on_click, |this, on_click| {
                      this.on_mouse_down(MouseButton::Left, move |_, _, cx| {
 diff -ruN a/src/menu/mod.rs b/src/menu/mod.rs
---- a/src/menu/mod.rs	2026-11-16 23:00:43.284179350 +0100
-+++ b/src/menu/mod.rs	2026-11-16 23:00:43.306725621 +0100
+--- a/src/menu/mod.rs	2026-11-16 23:13:48.002975520 +0100
++++ b/src/menu/mod.rs	2026-11-16 23:13:48.012871368 +0100
 @@ -1,3 +1,6 @@
 +// Modified for SparkCommander: exports MenuBuilder. Changes are marked
 +// "SparkCommander patch".
@@ -1667,8 +1686,8 @@ diff -ruN a/src/menu/mod.rs b/src/menu/mod.rs
  pub(crate) fn init(cx: &mut App) {
      app_menu_bar::init(cx);
 diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
---- a/src/menu/popup_menu.rs	2026-11-16 23:00:43.284387566 +0100
-+++ b/src/menu/popup_menu.rs	2026-11-16 23:00:43.306762891 +0100
+--- a/src/menu/popup_menu.rs	2026-11-16 23:13:48.003015185 +0100
++++ b/src/menu/popup_menu.rs	2026-11-16 23:13:48.012916814 +0100
 @@ -1,8 +1,14 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): a long menu's
 +// scrollbar shows while it scrolls. Changes are marked "WDS patch".
@@ -2035,8 +2054,8 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
  }
  
 diff -ruN a/src/native_menu/macos.rs b/src/native_menu/macos.rs
---- a/src/native_menu/macos.rs	2026-11-16 23:00:43.285028905 +0100
-+++ b/src/native_menu/macos.rs	2026-11-16 23:00:43.306858603 +0100
+--- a/src/native_menu/macos.rs	2026-11-16 23:13:48.003169579 +0100
++++ b/src/native_menu/macos.rs	2026-11-16 23:13:48.012999071 +0100
 @@ -200,6 +200,238 @@
      NSImage::initWithData(NSImage::alloc(), &data)
  }
@@ -2277,8 +2296,8 @@ diff -ruN a/src/native_menu/macos.rs b/src/native_menu/macos.rs
  fn ns_view_ptr(window: &Window) -> Option<usize> {
      let handle = HasWindowHandle::window_handle(window).ok()?;
 diff -ruN a/src/native_menu/mod.rs b/src/native_menu/mod.rs
---- a/src/native_menu/mod.rs	2026-11-16 23:00:43.285192345 +0100
-+++ b/src/native_menu/mod.rs	2026-11-16 23:00:43.306887238 +0100
+--- a/src/native_menu/mod.rs	2026-11-16 23:13:48.003203754 +0100
++++ b/src/native_menu/mod.rs	2026-11-16 23:13:48.013027004 +0100
 @@ -38,6 +38,8 @@
  
  #[cfg(target_os = "macos")]
@@ -2290,7 +2309,7 @@ diff -ruN a/src/native_menu/mod.rs b/src/native_menu/mod.rs
  
 diff -ruN a/src/native.rs b/src/native.rs
 --- a/src/native.rs	1970-01-01 01:00:00.000000000 +0100
-+++ b/src/native.rs	2026-11-16 23:00:43.310873333 +0100
++++ b/src/native.rs	2026-11-16 23:13:48.016584265 +0100
 @@ -0,0 +1,67 @@
 +// SparkCommander patch: this file is new.
 +use gpui::{Global, Hsla, Pixels};
@@ -2360,8 +2379,8 @@ diff -ruN a/src/native.rs b/src/native.rs
 +
 +impl Global for NativeControls {}
 diff -ruN a/src/progress/progress.rs b/src/progress/progress.rs
---- a/src/progress/progress.rs	2026-11-16 23:00:43.286394540 +0100
-+++ b/src/progress/progress.rs	2026-11-16 23:00:43.307057111 +0100
+--- a/src/progress/progress.rs	2026-11-16 23:13:48.003544041 +0100
++++ b/src/progress/progress.rs	2026-11-16 23:13:48.013208980 +0100
 @@ -93,12 +93,18 @@
          let mut inner_style = StyleRefinement::default();
          inner_style.corner_radii = radius;
@@ -2413,8 +2432,8 @@ diff -ruN a/src/progress/progress.rs b/src/progress/progress.rs
                      .refine_style(&inner_style)
                      .map(|this| {
 diff -ruN a/src/radio.rs b/src/radio.rs
---- a/src/radio.rs	2026-11-16 23:00:43.287029517 +0100
-+++ b/src/radio.rs	2026-11-16 23:00:43.311033728 +0100
+--- a/src/radio.rs	2026-11-16 23:13:48.003763347 +0100
++++ b/src/radio.rs	2026-11-16 23:13:48.016736835 +0100
 @@ -8,7 +8,7 @@
  use gpui::{
      AnyElement, App, Axis, ElementId, InteractiveElement, IntoElement, ParentElement, RenderOnce,
@@ -2482,8 +2501,8 @@ diff -ruN a/src/radio.rs b/src/radio.rs
              .when(!self.children.is_empty() || self.label.is_some(), |this| {
                  this.child(
 diff -ruN a/src/root.rs b/src/root.rs
---- a/src/root.rs	2026-11-16 23:00:43.287495102 +0100
-+++ b/src/root.rs	2026-11-16 23:00:43.311116395 +0100
+--- a/src/root.rs	2026-11-16 23:13:48.003888946 +0100
++++ b/src/root.rs	2026-11-16 23:13:48.016815654 +0100
 @@ -1,3 +1,6 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): notifications paint
 +// above dialogs. Changes are marked "WDS patch".
@@ -2564,8 +2583,8 @@ diff -ruN a/src/root.rs b/src/root.rs
      }
  }
 diff -ruN a/src/select.rs b/src/select.rs
---- a/src/select.rs	2026-11-16 23:00:43.288798018 +0100
-+++ b/src/select.rs	2026-11-16 23:00:43.311187921 +0100
+--- a/src/select.rs	2026-11-16 23:13:48.004363428 +0100
++++ b/src/select.rs	2026-11-16 23:13:48.016881289 +0100
 @@ -393,6 +393,25 @@
      fn toggle_menu(&mut self, _: &ClickEvent, window: &mut Window, cx: &mut Context<Self>) {
          cx.stop_propagation();
@@ -2651,8 +2670,8 @@ diff -ruN a/src/select.rs b/src/select.rs
                                              .text_color(cx.theme().muted_foreground)
                                              .into_any_element(),
 diff -ruN a/src/slider.rs b/src/slider.rs
---- a/src/slider.rs	2026-11-16 23:00:43.291352754 +0100
-+++ b/src/slider.rs	2026-11-16 23:00:43.311378564 +0100
+--- a/src/slider.rs	2026-11-16 23:13:48.005095900 +0100
++++ b/src/slider.rs	2026-11-16 23:13:48.017046022 +0100
 @@ -5,10 +5,10 @@
  use gpui_base::{Slider as BaseSlider, SliderIndicator, SliderThumb, SliderTrack, spring};
  
@@ -2781,8 +2800,8 @@ diff -ruN a/src/slider.rs b/src/slider.rs
                              .child(
                                  div()
 diff -ruN a/src/styled.rs b/src/styled.rs
---- a/src/styled.rs	2026-11-16 23:00:43.293533177 +0100
-+++ b/src/styled.rs	2026-11-16 23:00:43.311451272 +0100
+--- a/src/styled.rs	2026-11-16 23:13:48.005644042 +0100
++++ b/src/styled.rs	2026-11-16 23:13:48.017116506 +0100
 @@ -25,6 +25,7 @@
  /// as part of one grounded surface rather than as an outline with a separate
  /// shadow below it. An opaque border cannot reproduce that — a border composites
@@ -2802,8 +2821,8 @@ diff -ruN a/src/styled.rs b/src/styled.rs
  
  /// shadcn/ui's popup surface shadow — a hairline `ring` plus `shadow-md` — at
 diff -ruN a/src/tab/tab_bar.rs b/src/tab/tab_bar.rs
---- a/src/tab/tab_bar.rs	2026-11-16 23:00:43.294158265 +0100
-+++ b/src/tab/tab_bar.rs	2026-11-16 23:00:43.308569645 +0100
+--- a/src/tab/tab_bar.rs	2026-11-16 23:13:48.005802102 +0100
++++ b/src/tab/tab_bar.rs	2026-11-16 23:13:48.014595745 +0100
 @@ -1,3 +1,6 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): the segmented
 +// indicator uses the active tab colour. Changes are marked "WDS patch".
@@ -2912,8 +2931,8 @@ diff -ruN a/src/tab/tab_bar.rs b/src/tab/tab_bar.rs
              .refine_style(&self.style)
              .when_some(self.prefix, |this, prefix| this.child(prefix))
 diff -ruN a/src/tab/tab.rs b/src/tab/tab.rs
---- a/src/tab/tab.rs	2026-11-16 23:00:43.293941363 +0100
-+++ b/src/tab/tab.rs	2026-11-16 23:00:43.308521344 +0100
+--- a/src/tab/tab.rs	2026-11-16 23:13:48.005755975 +0100
++++ b/src/tab/tab.rs	2026-11-16 23:13:48.014548686 +0100
 @@ -634,6 +634,72 @@
                  hover_style.borders.left = px(0.);
              }
@@ -3069,8 +3088,8 @@ diff -ruN a/src/tab/tab.rs b/src/tab/tab.rs
                  this.on_click(move |event, window, cx| on_click(event, window, cx))
              })
 diff -ruN a/src/table/data_table.rs b/src/table/data_table.rs
---- a/src/table/data_table.rs	2026-11-16 23:00:43.294481430 +0100
-+++ b/src/table/data_table.rs	2026-11-16 23:00:43.308661219 +0100
+--- a/src/table/data_table.rs	2026-11-16 23:13:48.005888947 +0100
++++ b/src/table/data_table.rs	2026-11-16 23:13:48.014672230 +0100
 @@ -1,5 +1,10 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): optional lines
 +// between columns; shift and an arrow extends a range of cells; no focus
@@ -3165,8 +3184,8 @@ diff -ruN a/src/table/data_table.rs b/src/table/data_table.rs
      }
  }
 diff -ruN a/src/table/delegate.rs b/src/table/delegate.rs
---- a/src/table/delegate.rs	2026-11-16 23:00:43.294624501 +0100
-+++ b/src/table/delegate.rs	2026-11-16 23:00:43.308690796 +0100
+--- a/src/table/delegate.rs	2026-11-16 23:13:48.005914125 +0100
++++ b/src/table/delegate.rs	2026-11-16 23:13:48.014694463 +0100
 @@ -1,7 +1,10 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): a cell can have a
 +// context menu and a background of its own. Changes are marked "WDS patch".
@@ -3206,8 +3225,8 @@ diff -ruN a/src/table/delegate.rs b/src/table/delegate.rs
      fn render_td(
          &mut self,
 diff -ruN a/src/table/state.rs b/src/table/state.rs
---- a/src/table/state.rs	2026-11-16 23:00:43.294953367 +0100
-+++ b/src/table/state.rs	2026-11-16 23:00:43.308839709 +0100
+--- a/src/table/state.rs	2026-11-16 23:13:48.006019215 +0100
++++ b/src/table/state.rs	2026-11-16 23:13:48.014794513 +0100
 @@ -1,3 +1,11 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): in cell selection,
 +// the row header shows row numbers, and the selected cell's row number and
@@ -3739,8 +3758,8 @@ diff -ruN a/src/table/state.rs b/src/table/state.rs
                  }
              })
 diff -ruN a/src/title_bar.rs b/src/title_bar.rs
---- a/src/title_bar.rs	2026-11-16 23:00:43.298841025 +0100
-+++ b/src/title_bar.rs	2026-11-16 23:00:43.311538968 +0100
+--- a/src/title_bar.rs	2026-11-16 23:13:48.006924185 +0100
++++ b/src/title_bar.rs	2026-11-16 23:13:48.017206347 +0100
 @@ -1,3 +1,7 @@
 +// Modified for SparkCommander (Apache-2.0, section 4b): the window's buttons
 +// are those the desktop's layout names, and may be the icon theme's pictures
@@ -3871,7 +3890,7 @@ diff -ruN a/src/title_bar.rs b/src/title_bar.rs
              .id("window-controls")
 diff -ruN a/src/toolkit.rs b/src/toolkit.rs
 --- a/src/toolkit.rs	1970-01-01 01:00:00.000000000 +0100
-+++ b/src/toolkit.rs	2026-11-16 23:00:43.311601858 +0100
++++ b/src/toolkit.rs	2026-11-16 23:13:48.017254749 +0100
 @@ -0,0 +1,106 @@
 +// SparkCommander patch: this file is new.
 +use std::sync::Arc;
@@ -3980,8 +3999,8 @@ diff -ruN a/src/toolkit.rs b/src/toolkit.rs
 +    div().size_full().child(canvas.absolute().inset_0())
 +}
 diff -ruN a/src/tooltip.rs b/src/tooltip.rs
---- a/src/tooltip.rs	2026-11-16 23:00:43.299117200 +0100
-+++ b/src/tooltip.rs	2026-11-16 23:00:43.311627376 +0100
+--- a/src/tooltip.rs	2026-11-16 23:13:48.006983828 +0100
++++ b/src/tooltip.rs	2026-11-16 23:13:48.017283233 +0100
 @@ -124,6 +124,19 @@
                  .px_2()
                  .text_sm()
@@ -4003,8 +4022,8 @@ diff -ruN a/src/tooltip.rs b/src/tooltip.rs
                  .map(|this| {
                      this.child(div().map(|this| match self.content {
 diff -ruN a/src/tree.rs b/src/tree.rs
---- a/src/tree.rs	2026-11-16 23:00:43.299716179 +0100
-+++ b/src/tree.rs	2026-11-16 23:00:43.311651883 +0100
+--- a/src/tree.rs	2026-11-16 23:13:48.007128123 +0100
++++ b/src/tree.rs	2026-11-16 23:13:48.017307820 +0100
 @@ -1,3 +1,8 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): a context menu
 +// builder gets the menu's context, so it can add submenus; the row renderer
@@ -4079,8 +4098,8 @@ diff -ruN a/src/tree.rs b/src/tree.rs
                              .into_any_element()
                      })
 diff -ruN a/src/window_border.rs b/src/window_border.rs
---- a/src/window_border.rs	2026-11-16 23:00:43.299908063 +0100
-+++ b/src/window_border.rs	2026-11-16 23:00:43.311700896 +0100
+--- a/src/window_border.rs	2026-11-16 23:13:48.007191042 +0100
++++ b/src/window_border.rs	2026-11-16 23:13:48.017355380 +0100
 @@ -21,6 +21,24 @@
  /// corners, so keep the generic window wrapper square until rounded content masks exist.
  pub(crate) const BORDER_RADIUS: Pixels = px(0.0);
@@ -4145,8 +4164,8 @@ diff -ruN a/src/window_border.rs b/src/window_border.rs
                      .when(!tiling.top, |div| div.border_t(BORDER_SIZE))
                      .when(!tiling.bottom, |div| div.border_b(BORDER_SIZE))
 diff -ruN a/src/window_ext.rs b/src/window_ext.rs
---- a/src/window_ext.rs	2026-11-16 23:00:43.300042809 +0100
-+++ b/src/window_ext.rs	2026-11-16 23:00:43.311735252 +0100
+--- a/src/window_ext.rs	2026-11-16 23:13:48.007219346 +0100
++++ b/src/window_ext.rs	2026-11-16 23:13:48.017382041 +0100
 @@ -11,6 +11,10 @@
  
  /// Extension trait for [`Window`] to add dialog, sheet .. functionality.

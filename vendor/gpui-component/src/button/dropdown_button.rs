@@ -1,3 +1,6 @@
+// Modified for SparkCommander: a ghost split's caret half is 18 px wide.
+// Changes are marked "SparkCommander patch".
+
 use gpui::Corners;
 use gpui::{
     Anchor, App, Context, Edges, ElementId, InteractiveElement as _, IntoElement, ParentElement,
@@ -228,6 +231,8 @@ impl RenderOnce for DropdownButton {
                         .with_size(size)
                         .with_variant(variant)
                         .when(is_ghost, |this| this.hover_group(HALVES_GROUP))
+                        // SparkCommander patch: a ghost split's caret half narrow, as a toolbar's.
+                        .when(is_ghost, |this| this.w(gpui::px(18.)))
                         .dropdown_menu_with_anchor(self.anchor, menu)
                         .on_open_change(move |open, _, cx| {
                             menu_open.update(cx, |state, cx| {

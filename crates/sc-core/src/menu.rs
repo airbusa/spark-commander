@@ -489,7 +489,7 @@ pub const BUTTON_BAR: &[Item] = &[
 
 /// The toolbar's buttons until the user changes them: what the function
 /// keys' bar leaves out and is used often.
-pub const TOOLBAR: &[Command] = &[GoBack, GoForward, RereadSource, Search, SynchronizeDirs, MultiRenameTool, Pack, OpenTerminal];
+pub const TOOLBAR: &[Command] = &[GoBack, GoForward, RereadSource, Search, SynchronizeDirs, MultiRenameTool, Pack, TerminalPanel];
 
 /// A list of commands; the ones this version does not know left out.
 pub fn known<'de, D: serde::Deserializer<'de>>(list: D) -> Result<Vec<Command>, D::Error> {

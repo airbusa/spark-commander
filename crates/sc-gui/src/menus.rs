@@ -99,7 +99,8 @@ pub fn icon(command: Command) -> Option<Lucide> {
         Redo => Lucide::Redo2,
         OperationQueue => Lucide::ListOrdered,
         ActivityLog => Lucide::ScrollText,
-        OpenTerminal => Lucide::SquareTerminal,
+        // The system's terminal; the built-in one, a panel, is the framed prompt.
+        OpenTerminal => Lucide::Terminal,
         SwapPanels => Lucide::ArrowLeftRight,
         TargetEqualsSource => Lucide::Equal,
         RereadSource => Lucide::RefreshCw,
@@ -121,7 +122,7 @@ pub fn toolbar_icon(command: Command) -> Option<Lucide> {
         HiddenFiles => Lucide::EyeOff,
         ToggleSidebar => Lucide::PanelLeft,
         QuickViewPanel => Lucide::PanelRight,
-        TerminalPanel => Lucide::PanelBottom,
+        TerminalPanel => Lucide::SquareTerminal,
         VerticalArrangement => Lucide::Rows2,
         Brief => Lucide::Columns3,
         Full => Lucide::List,
@@ -343,6 +344,17 @@ pub fn set_history(history: &sc_core::History) -> bool {
     changed
 }
 
+/// Back's or Forward's places, the nearest first: each one's place in the
+/// history, and its label.
+pub fn history_ways(command: Command) -> Vec<(usize, String)> {
+    let history = HISTORY.lock().unwrap_or_else(|err| err.into_inner());
+    let ways: Vec<usize> = match command {
+        Command::GoBack => (0..history.at.min(history.places.len())).rev().collect(),
+        _ => (history.at + 1..history.places.len()).collect(),
+    };
+    ways.into_iter().map(|ix| (ix, place_label(&history.places[ix]))).collect()
+}
+
 /// A history place as menus list it: its name first, as long paths are cut
 /// off at the end, where they differ; home as ~.
 pub fn place_label(place: &str) -> String {
@@ -430,15 +442,11 @@ fn items(list: &[Item], chosen: Appearance, checked: &dyn Fn(Command) -> bool) -
         // clicked (macOS shows it first in the submenu); the places that way after.
         Item::History { label, command } => {
             let own = item(label.into(), checked(command), Box::new(Run(command)), false);
-            let history = HISTORY.lock().unwrap_or_else(|err| err.into_inner()).clone();
-            let ways: Vec<usize> = match command {
-                Command::GoBack => (0..history.at.min(history.places.len())).rev().collect(),
-                _ => (history.at + 1..history.places.len()).collect(),
-            };
+            let ways = history_ways(command);
             if ways.is_empty() {
                 return Some(own);
             }
-            let places = ways.into_iter().map(|ix| item(place_label(&history.places[ix]).into(), false, Box::new(GoToHistory(ix)), false));
+            let places = ways.into_iter().map(|(ix, label)| item(label.into(), false, Box::new(GoToHistory(ix)), false));
             let all = [own, MenuItem::separator()].into_iter().chain(places);
             Some(MenuItem::submenu(Menu::new(label).items(all)))
         }

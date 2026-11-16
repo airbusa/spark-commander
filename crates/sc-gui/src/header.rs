@@ -9,6 +9,7 @@ use gpui_kit::component::{ActiveTheme, GlobalState, Icon, Sizable, TitleBar, Win
 use gpui_kit::*;
 
 use crate::Commander;
+use sc_core::menu::Command;
 
 impl Commander {
     /// Asks for our own title bar where the menus go behind the ☰ button.
@@ -29,8 +30,10 @@ impl Commander {
     /// The title bar, where the window draws its own frame; the toolbar taken
     /// into it, on its left, as GNOME's apps have their buttons.
     pub(crate) fn render_header(&self, toolbar: &mut Option<AnyElement>, window: &Window, cx: &mut App) -> Option<AnyElement> {
-        // The title kept clear of the toolbar's buttons (32 px and a gap each).
-        let buttons = px(self.settings.toolbar.0.len() as f32 * 34. + 16.);
+        // The title kept clear of the toolbar's buttons (32 px and a gap each, Back's and Forward's arrow 18).
+        let shown = &self.settings.toolbar.0;
+        let arrows = shown.iter().filter(|command| matches!(command, Command::GoBack | Command::GoForward)).count();
+        let buttons = px(shown.len() as f32 * 34. + arrows as f32 * 18. + 16.);
         let bar = title_bar_beside("Spark Commander", buttons.max(px(140.)), window, cx)?;
         let focus = self.focus.clone();
         let menu = Button::new("app-menu")

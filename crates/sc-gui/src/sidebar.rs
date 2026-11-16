@@ -302,7 +302,7 @@ impl Commander {
         let background = self.colors.window.opacity(self.sidebar.tint.unwrap_or(1.));
         let sections = [
             (SidebarTab::Tree, Lucide::FolderTree, "Folders"),
-            (SidebarTab::Connections, Lucide::Server, "Connections"),
+            (SidebarTab::Connections, Lucide::Network, "Connections"),
             (SidebarTab::Places, Lucide::Bookmark, "Places"),
         ];
         let mut accordion = v_flex().h_full().flex_1().min_w_0();

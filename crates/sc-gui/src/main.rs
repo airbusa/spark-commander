@@ -569,6 +569,7 @@ impl Commander {
         let appearance = cx.observe_window_appearance(window, |this, window, cx| {
             if this.settings.appearance == Appearance::System {
                 this.colors = appearance::apply(&palette(&this.settings, window), cx);
+                this.set_backdrop(window, cx);
             }
         });
         let mut servers = [Vec::new(), Vec::new()];
@@ -725,6 +726,7 @@ impl Commander {
         }
         if look {
             self.colors = appearance::apply(&palette(&self.settings, window), cx);
+            self.set_backdrop(window, cx);
             self.reload_menus(cx);
             cx.refresh_windows();
         }
@@ -743,6 +745,7 @@ impl Commander {
         self.settings.appearance = chosen;
         self.save_settings(window, cx);
         self.colors = appearance::apply(&palette(&self.settings, window), cx);
+        self.set_backdrop(window, cx);
         self.reload_menus(cx);
         cx.notify();
     }

@@ -209,6 +209,15 @@ impl Commander {
             true => WindowBackgroundAppearance::Blurred,
         });
         window.set_see_through(see_through, cx);
+        // The title bar as Windows draws it on an opaque window, as the menu bar under it;
+        // a see-through backdrop had turned it black.
+        #[cfg(windows)]
+        if let Ok(raw_window_handle::RawWindowHandle::Win32(handle)) =
+            raw_window_handle::HasWindowHandle::window_handle(window).map(|handle| handle.as_raw())
+        {
+            let rgb = if cx.theme().mode.is_dark() { 0x202020 } else { 0xffffff };
+            sc_core::system::theme::set_caption_color(handle.hwnd.get(), rgb);
+        }
     }
 
     /// The tree opens down to the active panel's folder, once that changed.

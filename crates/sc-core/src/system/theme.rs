@@ -959,3 +959,15 @@ mod tests {
         std::fs::remove_dir_all(root).unwrap();
     }
 }
+
+/// Windows 11: the title bar in this colour (0xRRGGBB), whatever the backdrop
+/// behind the window; a see-through one had turned it black.
+#[cfg(windows)]
+pub fn set_caption_color(hwnd: isize, rgb: u32) {
+    use windows::Win32::Foundation::{COLORREF, HWND};
+    use windows::Win32::Graphics::Dwm::{DWMWA_CAPTION_COLOR, DwmSetWindowAttribute};
+    // COLORREF is 0x00BBGGRR.
+    let color = COLORREF((rgb >> 16 & 0xff) | (rgb & 0xff00) | (rgb & 0xff) << 16);
+    let size = size_of::<COLORREF>() as u32;
+    let _ = unsafe { DwmSetWindowAttribute(HWND(hwnd as _), DWMWA_CAPTION_COLOR, (&raw const color).cast(), size) };
+}

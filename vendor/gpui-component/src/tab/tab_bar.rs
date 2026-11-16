@@ -396,7 +396,13 @@ impl RenderOnce for TabBar {
             }
             TabVariant::Tab => {
                 let padding = Edges::all(px(0.));
-                (cx.theme().tokens.tab_bar.into(), padding, px(0.))
+                // SparkCommander patch: WinUI's TabView, its strip darker than the selected tab.
+                let fluent = cx.try_global::<crate::NativeControls>().filter(|native| native.card.is_some());
+                let fill: Background = match fluent.and_then(|native| native.command_bar) {
+                    Some(fill) => fill.into(),
+                    None => cx.theme().tokens.tab_bar.into(),
+                };
+                (fill, padding, px(0.))
             }
             TabVariant::Outline => {
                 let padding = Edges::all(px(0.));

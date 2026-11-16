@@ -1,260 +1,165 @@
-//! Keys to the bytes a terminal sends: Zed's crates/terminal/src/mappings/keys.rs
-//! (GPL-3.0-or-later), taken from Alacritty's; on alacritty's modes here.
-
-use std::borrow::Cow;
+//! The bytes a key sends to the program in the terminal, as xterm's control
+//! sequences specify them (invisible-island.net/xterm/ctlseqs): PC-style
+//! function keys, the cursor keys' normal and application modes, control
+//! characters, and Alt as a leading ESC.
 
 use alacritty_terminal::term::TermMode;
 use gpui_kit::Keystroke;
 
-#[derive(Debug, PartialEq, Eq)]
-enum TerminalModifiers {
-    None,
-    Alt,
-    Ctrl,
-    Shift,
-    CtrlShift,
-    Other,
+/// How a key that has no character of its own is sent.
+enum Sequence {
+    /// The cursor keys, Home and End: `CSI x`, or `SS3 x` in application mode.
+    Cursor(u8),
+    /// F1 to F4: `SS3 x` alone, `CSI 1;m x` with modifiers.
+    Function(u8),
+    /// The editing keys and F5 on: `CSI n ~`.
+    Numbered(u8),
 }
 
-impl TerminalModifiers {
-    fn new(ks: &Keystroke) -> Self {
-        match (
-            ks.modifiers.alt,
-            ks.modifiers.control,
-            ks.modifiers.shift,
-            ks.modifiers.platform,
-        ) {
-            (false, false, false, false) => TerminalModifiers::None,
-            (true, false, false, false) => TerminalModifiers::Alt,
-            (false, true, false, false) => TerminalModifiers::Ctrl,
-            (false, false, true, false) => TerminalModifiers::Shift,
-            (false, true, true, false) => TerminalModifiers::CtrlShift,
-            _ => TerminalModifiers::Other,
+fn sequence(name: &str) -> Option<Sequence> {
+    use Sequence::*;
+    Some(match name {
+        "up" => Cursor(b'A'),
+        "down" => Cursor(b'B'),
+        "right" => Cursor(b'C'),
+        "left" => Cursor(b'D'),
+        "home" => Cursor(b'H'),
+        "end" => Cursor(b'F'),
+        "f1" => Function(b'P'),
+        "f2" => Function(b'Q'),
+        "f3" => Function(b'R'),
+        "f4" => Function(b'S'),
+        "insert" => Numbered(2),
+        "delete" => Numbered(3),
+        "pageup" => Numbered(5),
+        "pagedown" => Numbered(6),
+        _ => {
+            // F5 to F20, numbered with gaps where the VT220 had other keys.
+            const NUMBERS: [u8; 16] = [15, 17, 18, 19, 20, 21, 23, 24, 25, 26, 28, 29, 31, 32, 33, 34];
+            let n: usize = name.strip_prefix('f')?.parse().ok()?;
+            Numbered(*NUMBERS.get(n.checked_sub(5)?)?)
         }
-    }
-
-    fn any(&self) -> bool {
-        match &self {
-            TerminalModifiers::None => false,
-            TerminalModifiers::Alt => true,
-            TerminalModifiers::Ctrl => true,
-            TerminalModifiers::Shift => true,
-            TerminalModifiers::CtrlShift => true,
-            TerminalModifiers::Other => true,
-        }
-    }
+    })
 }
 
-pub(crate) fn to_esc_str(
-    keystroke: &Keystroke,
-    mode: TermMode,
-    option_as_meta: bool,
-) -> Option<Cow<'static, str>> {
-    let modifiers = TerminalModifiers::new(keystroke);
-
-    // Manual Bindings including modifiers
-    let manual_esc_str: Option<&'static str> = match (keystroke.key.as_ref(), &modifiers) {
-        //Basic special keys
-        ("tab", TerminalModifiers::None) => Some("\x09"),
-        ("escape", TerminalModifiers::None) => Some("\x1b"),
-        ("enter", TerminalModifiers::None) => Some("\x0d"),
-        ("enter", TerminalModifiers::Shift) => Some("\x0a"),
-        ("enter", TerminalModifiers::Alt) => Some("\x1b\x0d"),
-        ("backspace", TerminalModifiers::None) => Some("\x7f"),
-        //Interesting escape codes
-        ("tab", TerminalModifiers::Shift) => Some("\x1b[Z"),
-        ("backspace", TerminalModifiers::Ctrl) => Some("\x08"),
-        ("backspace", TerminalModifiers::Alt) => Some("\x1b\x7f"),
-        ("backspace", TerminalModifiers::Shift) => Some("\x7f"),
-        ("space", TerminalModifiers::Ctrl) => Some("\x00"),
-        ("home", TerminalModifiers::None) if mode.contains(TermMode::APP_CURSOR) => Some("\x1bOH"),
-        ("home", TerminalModifiers::None) if !mode.contains(TermMode::APP_CURSOR) => Some("\x1b[H"),
-        ("end", TerminalModifiers::None) if mode.contains(TermMode::APP_CURSOR) => Some("\x1bOF"),
-        ("end", TerminalModifiers::None) if !mode.contains(TermMode::APP_CURSOR) => Some("\x1b[F"),
-        ("up", TerminalModifiers::None) if mode.contains(TermMode::APP_CURSOR) => Some("\x1bOA"),
-        ("up", TerminalModifiers::None) if !mode.contains(TermMode::APP_CURSOR) => Some("\x1b[A"),
-        ("down", TerminalModifiers::None) if mode.contains(TermMode::APP_CURSOR) => Some("\x1bOB"),
-        ("down", TerminalModifiers::None) if !mode.contains(TermMode::APP_CURSOR) => Some("\x1b[B"),
-        ("right", TerminalModifiers::None) if mode.contains(TermMode::APP_CURSOR) => Some("\x1bOC"),
-        ("right", TerminalModifiers::None) if !mode.contains(TermMode::APP_CURSOR) => Some("\x1b[C"),
-        ("left", TerminalModifiers::None) if mode.contains(TermMode::APP_CURSOR) => Some("\x1bOD"),
-        ("left", TerminalModifiers::None) if !mode.contains(TermMode::APP_CURSOR) => Some("\x1b[D"),
-        ("back", TerminalModifiers::None) => Some("\x7f"),
-        ("insert", TerminalModifiers::None) => Some("\x1b[2~"),
-        ("delete", TerminalModifiers::None) => Some("\x1b[3~"),
-        ("pageup", TerminalModifiers::None) => Some("\x1b[5~"),
-        ("pagedown", TerminalModifiers::None) => Some("\x1b[6~"),
-        ("f1", TerminalModifiers::None) => Some("\x1bOP"),
-        ("f2", TerminalModifiers::None) => Some("\x1bOQ"),
-        ("f3", TerminalModifiers::None) => Some("\x1bOR"),
-        ("f4", TerminalModifiers::None) => Some("\x1bOS"),
-        ("f5", TerminalModifiers::None) => Some("\x1b[15~"),
-        ("f6", TerminalModifiers::None) => Some("\x1b[17~"),
-        ("f7", TerminalModifiers::None) => Some("\x1b[18~"),
-        ("f8", TerminalModifiers::None) => Some("\x1b[19~"),
-        ("f9", TerminalModifiers::None) => Some("\x1b[20~"),
-        ("f10", TerminalModifiers::None) => Some("\x1b[21~"),
-        ("f11", TerminalModifiers::None) => Some("\x1b[23~"),
-        ("f12", TerminalModifiers::None) => Some("\x1b[24~"),
-        ("f13", TerminalModifiers::None) => Some("\x1b[25~"),
-        ("f14", TerminalModifiers::None) => Some("\x1b[26~"),
-        ("f15", TerminalModifiers::None) => Some("\x1b[28~"),
-        ("f16", TerminalModifiers::None) => Some("\x1b[29~"),
-        ("f17", TerminalModifiers::None) => Some("\x1b[31~"),
-        ("f18", TerminalModifiers::None) => Some("\x1b[32~"),
-        ("f19", TerminalModifiers::None) => Some("\x1b[33~"),
-        ("f20", TerminalModifiers::None) => Some("\x1b[34~"),
-        // NumpadEnter, Action::Esc("\n".into());
-        //Mappings for caret notation keys
-        ("a", TerminalModifiers::Ctrl) => Some("\x01"), //1
-        ("A", TerminalModifiers::CtrlShift) => Some("\x01"), //1
-        ("b", TerminalModifiers::Ctrl) => Some("\x02"), //2
-        ("B", TerminalModifiers::CtrlShift) => Some("\x02"), //2
-        ("c", TerminalModifiers::Ctrl) => Some("\x03"), //3
-        ("C", TerminalModifiers::CtrlShift) => Some("\x03"), //3
-        ("d", TerminalModifiers::Ctrl) => Some("\x04"), //4
-        ("D", TerminalModifiers::CtrlShift) => Some("\x04"), //4
-        ("e", TerminalModifiers::Ctrl) => Some("\x05"), //5
-        ("E", TerminalModifiers::CtrlShift) => Some("\x05"), //5
-        ("f", TerminalModifiers::Ctrl) => Some("\x06"), //6
-        ("F", TerminalModifiers::CtrlShift) => Some("\x06"), //6
-        ("g", TerminalModifiers::Ctrl) => Some("\x07"), //7
-        ("G", TerminalModifiers::CtrlShift) => Some("\x07"), //7
-        ("h", TerminalModifiers::Ctrl) => Some("\x08"), //8
-        ("H", TerminalModifiers::CtrlShift) => Some("\x08"), //8
-        ("i", TerminalModifiers::Ctrl) => Some("\x09"), //9
-        ("I", TerminalModifiers::CtrlShift) => Some("\x09"), //9
-        ("j", TerminalModifiers::Ctrl) => Some("\x0a"), //10
-        ("J", TerminalModifiers::CtrlShift) => Some("\x0a"), //10
-        ("k", TerminalModifiers::Ctrl) => Some("\x0b"), //11
-        ("K", TerminalModifiers::CtrlShift) => Some("\x0b"), //11
-        ("l", TerminalModifiers::Ctrl) => Some("\x0c"), //12
-        ("L", TerminalModifiers::CtrlShift) => Some("\x0c"), //12
-        ("m", TerminalModifiers::Ctrl) => Some("\x0d"), //13
-        ("M", TerminalModifiers::CtrlShift) => Some("\x0d"), //13
-        ("n", TerminalModifiers::Ctrl) => Some("\x0e"), //14
-        ("N", TerminalModifiers::CtrlShift) => Some("\x0e"), //14
-        ("o", TerminalModifiers::Ctrl) => Some("\x0f"), //15
-        ("O", TerminalModifiers::CtrlShift) => Some("\x0f"), //15
-        ("p", TerminalModifiers::Ctrl) => Some("\x10"), //16
-        ("P", TerminalModifiers::CtrlShift) => Some("\x10"), //16
-        ("q", TerminalModifiers::Ctrl) => Some("\x11"), //17
-        ("Q", TerminalModifiers::CtrlShift) => Some("\x11"), //17
-        ("r", TerminalModifiers::Ctrl) => Some("\x12"), //18
-        ("R", TerminalModifiers::CtrlShift) => Some("\x12"), //18
-        ("s", TerminalModifiers::Ctrl) => Some("\x13"), //19
-        ("S", TerminalModifiers::CtrlShift) => Some("\x13"), //19
-        ("t", TerminalModifiers::Ctrl) => Some("\x14"), //20
-        ("T", TerminalModifiers::CtrlShift) => Some("\x14"), //20
-        ("u", TerminalModifiers::Ctrl) => Some("\x15"), //21
-        ("U", TerminalModifiers::CtrlShift) => Some("\x15"), //21
-        ("v", TerminalModifiers::Ctrl) => Some("\x16"), //22
-        ("V", TerminalModifiers::CtrlShift) => Some("\x16"), //22
-        ("w", TerminalModifiers::Ctrl) => Some("\x17"), //23
-        ("W", TerminalModifiers::CtrlShift) => Some("\x17"), //23
-        ("x", TerminalModifiers::Ctrl) => Some("\x18"), //24
-        ("X", TerminalModifiers::CtrlShift) => Some("\x18"), //24
-        ("y", TerminalModifiers::Ctrl) => Some("\x19"), //25
-        ("Y", TerminalModifiers::CtrlShift) => Some("\x19"), //25
-        ("z", TerminalModifiers::Ctrl) => Some("\x1a"), //26
-        ("Z", TerminalModifiers::CtrlShift) => Some("\x1a"), //26
-        ("@", TerminalModifiers::Ctrl) => Some("\x00"), //0
-        ("[", TerminalModifiers::Ctrl) => Some("\x1b"), //27
-        ("\\", TerminalModifiers::Ctrl) => Some("\x1c"), //28
-        ("]", TerminalModifiers::Ctrl) => Some("\x1d"), //29
-        ("^", TerminalModifiers::Ctrl) => Some("\x1e"), //30
-        ("_", TerminalModifiers::Ctrl) => Some("\x1f"), //31
-        ("?", TerminalModifiers::Ctrl) => Some("\x7f"), //127
+/// What `key` sends in `mode`; none for a key that types text (that comes
+/// through the input method) or that sends nothing.
+pub fn bytes(key: &Keystroke, mode: TermMode) -> Option<Vec<u8>> {
+    let held = key.modifiers;
+    // The system's own shortcuts (⌘, the Windows key) are no terminal input.
+    if held.platform {
+        return None;
+    }
+    let (shift, alt, ctrl) = (held.shift, held.alt, held.control);
+    let alone = !shift && !alt && !ctrl;
+    let fixed: Option<&[u8]> = match key.key.as_str() {
+        "enter" if alone => Some(b"\r"),
+        "enter" if shift && !alt && !ctrl => Some(b"\n"),
+        "enter" if alt && !shift && !ctrl => Some(b"\x1b\r"),
+        "tab" if alone => Some(b"\t"),
+        "tab" if shift && !alt && !ctrl => Some(b"\x1b[Z"),
+        "escape" if alone => Some(b"\x1b"),
+        "backspace" | "back" if !alt && !ctrl => Some(b"\x7f"),
+        "backspace" if ctrl && !alt && !shift => Some(b"\x08"),
+        "backspace" if alt && !ctrl && !shift => Some(b"\x1b\x7f"),
+        "space" if ctrl && !alt && !shift => Some(b"\0"),
+        "enter" | "tab" | "escape" | "backspace" | "back" | "space" => return None,
         _ => None,
     };
-    if let Some(esc_str) = manual_esc_str {
-        return Some(Cow::Borrowed(esc_str));
+    if let Some(fixed) = fixed {
+        return Some(fixed.to_vec());
     }
-
-    // Automated bindings applying modifiers
-    if modifiers.any() {
-        let modifier_code = modifier_code(keystroke);
-        let modified_esc_str = match keystroke.key.as_ref() {
-            "up" => Some(format!("\x1b[1;{}A", modifier_code)),
-            "down" => Some(format!("\x1b[1;{}B", modifier_code)),
-            "right" => Some(format!("\x1b[1;{}C", modifier_code)),
-            "left" => Some(format!("\x1b[1;{}D", modifier_code)),
-            "f1" => Some(format!("\x1b[1;{}P", modifier_code)),
-            "f2" => Some(format!("\x1b[1;{}Q", modifier_code)),
-            "f3" => Some(format!("\x1b[1;{}R", modifier_code)),
-            "f4" => Some(format!("\x1b[1;{}S", modifier_code)),
-            "f5" => Some(format!("\x1b[15;{}~", modifier_code)),
-            "f6" => Some(format!("\x1b[17;{}~", modifier_code)),
-            "f7" => Some(format!("\x1b[18;{}~", modifier_code)),
-            "f8" => Some(format!("\x1b[19;{}~", modifier_code)),
-            "f9" => Some(format!("\x1b[20;{}~", modifier_code)),
-            "f10" => Some(format!("\x1b[21;{}~", modifier_code)),
-            "f11" => Some(format!("\x1b[23;{}~", modifier_code)),
-            "f12" => Some(format!("\x1b[24;{}~", modifier_code)),
-            "f13" => Some(format!("\x1b[25;{}~", modifier_code)),
-            "f14" => Some(format!("\x1b[26;{}~", modifier_code)),
-            "f15" => Some(format!("\x1b[28;{}~", modifier_code)),
-            "f16" => Some(format!("\x1b[29;{}~", modifier_code)),
-            "f17" => Some(format!("\x1b[31;{}~", modifier_code)),
-            "f18" => Some(format!("\x1b[32;{}~", modifier_code)),
-            "f19" => Some(format!("\x1b[33;{}~", modifier_code)),
-            "f20" => Some(format!("\x1b[34;{}~", modifier_code)),
-            "insert" => Some(format!("\x1b[2;{}~", modifier_code)),
-            "pageup" => Some(format!("\x1b[5;{}~", modifier_code)),
-            "pagedown" => Some(format!("\x1b[6;{}~", modifier_code)),
-            "end" => Some(format!("\x1b[1;{}F", modifier_code)),
-            "home" => Some(format!("\x1b[1;{}H", modifier_code)),
-            _ => None,
+    if let Some(sequence) = sequence(&key.key) {
+        // xterm's modifier parameter: 1, plus 1 for Shift, 2 for Alt, 4 for Ctrl.
+        let modifier = 1 + shift as u8 + 2 * alt as u8 + 4 * ctrl as u8;
+        let application = mode.contains(TermMode::APP_CURSOR);
+        return Some(match (sequence, alone) {
+            (Sequence::Cursor(x), true) if application => vec![0x1b, b'O', x],
+            (Sequence::Cursor(x), true) => vec![0x1b, b'[', x],
+            (Sequence::Function(x), true) => vec![0x1b, b'O', x],
+            (Sequence::Cursor(x) | Sequence::Function(x), false) => format!("\x1b[1;{modifier}{}", x as char).into_bytes(),
+            (Sequence::Numbered(n), true) => format!("\x1b[{n}~").into_bytes(),
+            (Sequence::Numbered(n), false) => format!("\x1b[{n};{modifier}~").into_bytes(),
+        });
+    }
+    let mut chars = key.key.chars();
+    let (Some(c), None) = (chars.next(), chars.next()) else {
+        return None;
+    };
+    if !c.is_ascii() {
+        return None;
+    }
+    if ctrl && !alt {
+        return control(c).map(|byte| vec![byte]);
+    }
+    // Alt as Meta: ESC before the key. On macOS Option types characters instead.
+    if alt && !cfg!(target_os = "macos") {
+        let after = match (shift, ctrl) {
+            (true, _) => c.to_ascii_uppercase() as u8,
+            (false, true) if c.is_ascii_lowercase() => control(c)?,
+            (false, true) => return None,
+            (false, false) => c as u8,
         };
-        if let Some(esc_str) = modified_esc_str {
-            return Some(Cow::Owned(esc_str));
-        }
+        return Some(vec![0x1b, after]);
     }
-
-    // Handling alt keys. These work for single ASCII characters.
-    if (!cfg!(target_os = "macos") || option_as_meta)
-        && keystroke.modifiers.alt
-        && keystroke.key.is_ascii()
-        && keystroke.key.len() == 1
-    {
-        let key = keystroke.key.chars().next().unwrap();
-
-        if modifiers == TerminalModifiers::Alt {
-            return Some(Cow::Owned(format!("\x1b{key}")));
-        } else if keystroke.modifiers.shift {
-            return Some(Cow::Owned(format!("\x1b{}", key.to_ascii_uppercase())));
-        } else if keystroke.modifiers.control && key.is_ascii_lowercase() {
-            return Some(Cow::Owned(format!(
-                "\x1b{}",
-                (key as u8 - b'a' + 1) as char
-            )));
-        }
-    }
-
     None
 }
 
-///   Code     Modifiers
-/// ---------+---------------------------
-///    2     | Shift
-///    3     | Alt
-///    4     | Shift + Alt
-///    5     | Control
-///    6     | Shift + Control
-///    7     | Alt + Control
-///    8     | Shift + Alt + Control
-/// ---------+---------------------------
-/// from: https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h2-PC-Style-Function-Keys
-fn modifier_code(keystroke: &Keystroke) -> u32 {
-    let mut modifier_code = 0;
-    if keystroke.modifiers.shift {
-        modifier_code |= 1;
+/// The control character Ctrl makes of `c`: Ctrl+A is 1, Ctrl+[ is ESC,
+/// Ctrl+? is DEL; none for others.
+fn control(c: char) -> Option<u8> {
+    match c.to_ascii_uppercase() {
+        '?' => Some(0x7f),
+        c @ '@'..='_' => Some(c as u8 & 0x1f),
+        _ => None,
     }
-    if keystroke.modifiers.alt {
-        modifier_code |= 1 << 1;
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use gpui_kit::Modifiers;
+
+    fn sent(text: &str, mode: TermMode) -> Option<Vec<u8>> {
+        bytes(&Keystroke::parse(text).unwrap(), mode)
     }
-    if keystroke.modifiers.control {
-        modifier_code |= 1 << 2;
+
+    #[test]
+    fn sends_as_xterm() {
+        let normal = TermMode::NONE;
+        assert_eq!(sent("enter", normal).unwrap(), b"\r");
+        assert_eq!(sent("shift-enter", normal).unwrap(), b"\n");
+        assert_eq!(sent("alt-enter", normal).unwrap(), b"\x1b\r");
+        assert_eq!(sent("shift-tab", normal).unwrap(), b"\x1b[Z");
+        assert_eq!(sent("backspace", normal).unwrap(), b"\x7f");
+        assert_eq!(sent("ctrl-backspace", normal).unwrap(), b"\x08");
+        assert_eq!(sent("alt-backspace", normal).unwrap(), b"\x1b\x7f");
+        assert_eq!(sent("ctrl-space", normal).unwrap(), b"\0");
+        assert_eq!(sent("up", normal).unwrap(), b"\x1b[A");
+        assert_eq!(sent("up", TermMode::APP_CURSOR).unwrap(), b"\x1bOA");
+        assert_eq!(sent("end", TermMode::APP_CURSOR).unwrap(), b"\x1bOF");
+        assert_eq!(sent("ctrl-left", normal).unwrap(), b"\x1b[1;5D");
+        assert_eq!(sent("shift-alt-home", normal).unwrap(), b"\x1b[1;4H");
+        assert_eq!(sent("f1", normal).unwrap(), b"\x1bOP");
+        assert_eq!(sent("ctrl-f4", normal).unwrap(), b"\x1b[1;5S");
+        assert_eq!(sent("f5", normal).unwrap(), b"\x1b[15~");
+        assert_eq!(sent("f12", normal).unwrap(), b"\x1b[24~");
+        assert_eq!(sent("f20", normal).unwrap(), b"\x1b[34~");
+        assert_eq!(sent("shift-f10", normal).unwrap(), b"\x1b[21;2~");
+        assert_eq!(sent("pagedown", normal).unwrap(), b"\x1b[6~");
+        assert_eq!(sent("ctrl-delete", normal).unwrap(), b"\x1b[3;5~");
+        assert_eq!(sent("ctrl-a", normal).unwrap(), [1]);
+        assert_eq!(sent("ctrl-z", normal).unwrap(), [26]);
+        assert_eq!(sent("ctrl-[", normal).unwrap(), [0x1b]);
+        assert_eq!(sent("ctrl-?", normal).unwrap(), [0x7f]);
+        assert_eq!(sent("a", normal), None, "typed text comes as text");
+        assert_eq!(sent("f21", normal), None);
+        if !cfg!(target_os = "macos") {
+            assert_eq!(sent("alt-b", normal).unwrap(), b"\x1bb");
+            assert_eq!(sent("alt-shift-b", normal).unwrap(), b"\x1bB");
+            assert_eq!(sent("ctrl-alt-c", normal).unwrap(), [0x1b, 3]);
+        }
+        let platform = Keystroke { modifiers: Modifiers { platform: true, ..Modifiers::default() }, ..Keystroke::parse("up").unwrap() };
+        assert_eq!(bytes(&platform, normal), None);
     }
-    modifier_code + 1
 }

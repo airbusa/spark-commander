@@ -277,23 +277,18 @@ impl Commander {
     ) {
         let queue = self.transfers.queue.clone();
         let from = batch.from.clone();
-        // Moved out of an archive: once copied, what arrived goes from it, by 7-Zip.
+        // Moved out of an archive: what was moved goes from it, by 7-Zip, once the move is done.
         let leave = match (&batch.archived, kind) {
             (Some((panel, names)), Kind::Move) => panel.archive_place().ok().map(|(archive, dir)| {
-                let arrived: Vec<(PathBuf, PathBuf)> = names
-                    .iter()
-                    .map(|name| match &target {
-                        Target::Into(folder) => (dir.join(name), folder.join(name)),
-                        Target::As(path) => (dir.join(name), path.clone()),
-                    })
-                    .collect();
+                let inside: Vec<PathBuf> = names.iter().map(|name| dir.join(name)).collect();
                 let name = archive.file_name().unwrap_or_default().to_string_lossy().into_owned();
-                let (to, queue) = (to.clone(), queue.clone());
-                move || {
+                let queue = queue.clone();
+                move |taken: Vec<PathBuf>| {
                     queue.push_task(Job {
                         title: format!("Remove the moved from {name}"),
                         run: Box::new(move |_| {
-                            let gone: Vec<PathBuf> = arrived.into_iter().filter(|(_, at)| to.metadata(at).is_ok()).map(|(inside, _)| inside).collect();
+                            // Moved whole is gone from where it was taken out to; skipped, failed, cancelled or half-moved is still there.
+                            let gone: Vec<PathBuf> = inside.into_iter().zip(taken).filter(|(_, out)| std::fs::symlink_metadata(out).is_err()).map(|(inside, _)| inside).collect();
                             if !gone.is_empty() {
                                 sc_core::archive::delete(&archive, &gone)?;
                             }
@@ -304,17 +299,17 @@ impl Commander {
             }),
             _ => None,
         };
-        let push = move |sources| {
+        let push = move |sources: Vec<PathBuf>| {
             queue.push(Operation {
                 kind,
                 from,
-                sources,
+                sources: sources.clone(),
                 to,
                 target,
                 overwrite,
             });
             if let Some(leave) = leave {
-                leave();
+                leave(sources);
             }
         };
         match batch.archived {

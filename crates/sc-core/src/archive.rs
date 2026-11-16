@@ -363,10 +363,15 @@ pub(crate) fn list_watched(archive: &Path, watch: &Watch) -> io::Result<Vec<Item
     let (mut stdout, mut stderr) = (listing.stdout.take().expect("piped"), listing.stderr.take().expect("piped"));
     let (done, read) = mpsc::channel();
     std::thread::spawn(move || {
-        let (mut out, mut err) = (Vec::new(), Vec::new());
+        // Both at once: 7-Zip blocked on a full error pipe would never end its listing.
+        let errors = std::thread::spawn(move || {
+            let mut err = Vec::new();
+            let _ = stderr.read_to_end(&mut err);
+            err
+        });
+        let mut out = Vec::new();
         let _ = stdout.read_to_end(&mut out);
-        let _ = stderr.read_to_end(&mut err);
-        let _ = done.send((out, err));
+        let _ = done.send((out, errors.join().unwrap_or_default()));
     });
     let (stdout, stderr) = loop {
         match read.recv_timeout(Duration::from_millis(50)) {

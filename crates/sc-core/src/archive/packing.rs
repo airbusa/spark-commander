@@ -231,7 +231,8 @@ fn pack_one(
         .stdin(tarred)
         .stderr(Stdio::piped())
         .spawn()
-        .map_err(missing)?;
+        .map_err(|err| stop(&mut tar, missing(err)))?;
+        let errors = drain(&mut packing);
         let progress = tar.stderr.take().expect("piped");
         let watched = watch(
             &mut tar,
@@ -241,7 +242,11 @@ fn pack_one(
             base,
             size,
         );
-        let packed = finish(&mut packing);
+        // Cancelled: the packer must not finish what it was given so far.
+        if watched.is_err() {
+            let _ = packing.kill();
+        }
+        let packed = finish(&mut packing, errors);
         watched?;
         return packed;
     }
@@ -334,7 +339,8 @@ fn run_unpack(unpack: &Unpack, report: &mut Report) -> io::Result<String> {
                 .stdin(tarred)
                 .stderr(Stdio::piped())
                 .spawn()
-                .map_err(missing)?;
+                .map_err(|err| stop(&mut unpacking, missing(err)))?;
+            let errors = drain(&mut taking);
             let progress = unpacking.stderr.take().expect("piped");
             let watched = watch(
                 &mut unpacking,
@@ -344,7 +350,10 @@ fn run_unpack(unpack: &Unpack, report: &mut Report) -> io::Result<String> {
                 base,
                 size,
             );
-            let taken = finish(&mut taking);
+            if watched.is_err() {
+                let _ = taking.kill();
+            }
+            let taken = finish(&mut taking, errors);
             watched?;
             taken?;
         } else {
@@ -546,12 +555,28 @@ fn watch(
 }
 
 /// Waits for the second 7-Zip of a pipe.
-fn finish(child: &mut Child) -> io::Result<()> {
-    let mut stderr = Vec::new();
-    if let Some(mut errors) = child.stderr.take() {
-        let _ = errors.read_to_end(&mut stderr);
-    }
+/// `child`'s stderr read as it comes, so that it never blocks on it.
+fn drain(child: &mut Child) -> std::thread::JoinHandle<Vec<u8>> {
+    let errors = child.stderr.take();
+    std::thread::spawn(move || {
+        let mut all = Vec::new();
+        if let Some(mut errors) = errors {
+            let _ = errors.read_to_end(&mut all);
+        }
+        all
+    })
+}
+
+/// The first of a pipe ended, as the second could not start: `err`.
+fn stop(child: &mut Child, err: io::Error) -> io::Error {
+    let _ = child.kill();
+    let _ = child.wait();
+    err
+}
+
+fn finish(child: &mut Child, errors: std::thread::JoinHandle<Vec<u8>>) -> io::Result<()> {
     let status = child.wait()?;
+    let stderr = errors.join().unwrap_or_default();
     match status.success() {
         true => Ok(()),
         false => Err(io::Error::other(failure(status.code(), &stderr))),

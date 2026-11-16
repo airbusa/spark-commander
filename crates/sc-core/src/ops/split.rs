@@ -42,6 +42,10 @@ pub fn split(file: PathBuf, dir: PathBuf, size: u64) -> Task {
             let mut crc = crc32fast::Hasher::new();
             let mut buf = vec![0; (1 << 20).min(size as usize)];
             let mut written = Vec::new();
+            // Its name taken first, never over a CRC file already there.
+            let crc_file = dir.join(format!("{}.crc", stem(&name)));
+            let mut crc_out = File::create_new(&crc_file).map_err(|err| exists(&crc_file, err))?;
+            written.push(crc_file);
             let result = (|| {
                 for part in 1.. {
                     let path = dir.join(format!("{name}.{part:03}"));
@@ -70,13 +74,11 @@ pub fn split(file: PathBuf, dir: PathBuf, size: u64) -> Task {
                     }
                     report.progress.files += 1;
                 }
-                let crc_file = dir.join(format!("{}.crc", stem(&name)));
                 let text = format!(
                     "filename={name}\nsize={total}\ncrc32={:08X}\n",
                     crc.clone().finalize()
                 );
-                written.push(crc_file.clone());
-                std::fs::write(crc_file, text)
+                crc_out.write_all(text.as_bytes())
             })();
             if result.is_err() {
                 for path in written {
@@ -216,9 +218,11 @@ pub fn combine(parts: Parts, target: PathBuf) -> Task {
                     paths.len()
                 ));
             };
-            let (_, size, crc) = read_crc(crc_file)?;
+            let (_, size, crc) = read_crc(crc_file).map_err(|err| io::Error::new(err.kind(), format!("combined, but {} could not be read: {err}", crc_file.display())))?;
             let length = std::fs::metadata(&target)?.len();
             if size.is_some_and(|size| size != length) || crc.is_some_and(|crc| crc != found) {
+                // Known to be wrong: not left under the name asked for.
+                let _ = std::fs::remove_file(&target);
                 return Err(io::Error::other(format!(
                     "{} does not match {}: a part is missing or damaged",
                     target.display(),
@@ -292,6 +296,14 @@ mod tests {
         );
         assert_eq!(job.status, Status::Failed);
         assert!(job.note.unwrap().contains("missing or damaged"));
+        assert!(!root.join("c.bin").exists(), "a damaged whole is not left");
+        // A CRC file already there is not gone over, nor taken away.
+        std::fs::create_dir_all(root.join("again")).unwrap();
+        std::fs::write(root.join("again/a.crc"), "mine").unwrap();
+        let id = queue.push_task(split(root.join("a.bin"), root.join("again"), 1000));
+        assert!(wait(&queue, id).note.unwrap().contains("exists already"));
+        assert_eq!(std::fs::read_to_string(root.join("again/a.crc")).unwrap(), "mine");
+        assert!(!root.join("again/a.bin.001").exists());
         std::fs::remove_dir_all(&root).unwrap();
     }
 }

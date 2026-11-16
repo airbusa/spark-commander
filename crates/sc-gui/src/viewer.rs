@@ -85,6 +85,9 @@ actions!(
     ]
 );
 
+/// A picture file, and its size in pixels once read (none if it cannot be).
+type PictureSize = (PathBuf, Option<(u32, u32)>);
+
 /// Zoom's steps, as browsers have them.
 const ZOOMS: [f32; 17] = [0.25, 0.33, 0.5, 0.67, 0.75, 0.8, 0.9, 1., 1.1, 1.25, 1.5, 1.75, 2., 2.5, 3., 4., 5.];
 /// A touchpad's scrolling makes a zoom step every this much.
@@ -307,7 +310,7 @@ struct Viewer {
     /// The picture's view, measured; a zoomed picture pans in it.
     picture_area: Rc<Cell<Size<Pixels>>>,
     /// The shown picture's own size in pixels, read from its file once.
-    picture_size: RefCell<Option<(PathBuf, Option<(u32, u32)>)>>,
+    picture_size: RefCell<Option<PictureSize>>,
     picture_scroll: ScrollHandle,
     menu_bar: Entity<AppMenuBar>,
     /// Video or sound being played.
@@ -1087,8 +1090,10 @@ impl Viewer {
         }
     }
 
-    /// The picture's own size in pixels: a decoded one's, else its file header's.
-    fn natural_size(&self) -> Option<(f32, f32)> {
+    /// The picture's own size in pixels: a decoded one's, else its file
+    /// header's, read in the background (a network share can be slow); none
+    /// till then.
+    fn natural_size(&self, cx: &mut Context<Self>) -> Option<(f32, f32)> {
         let path = self.shown.path();
         if let Some((_, Ok(image))) = self.still.as_ref().filter(|(still, _)| still == path) {
             let size = image.size(0);
@@ -1096,16 +1101,30 @@ impl Viewer {
         }
         let mut known = self.picture_size.borrow_mut();
         if known.as_ref().is_none_or(|(seen, _)| seen != path) {
-            let read = image::ImageReader::open(path).ok().and_then(|reader| reader.with_guessed_format().ok()).and_then(|reader| reader.into_dimensions().ok());
-            *known = Some((path.to_owned(), read));
+            let path = path.to_owned();
+            *known = Some((path.clone(), None));
+            cx.spawn(async move |this, cx| {
+                let file = path.clone();
+                let header = |file: PathBuf| image::ImageReader::open(file).ok()?.with_guessed_format().ok()?.into_dimensions().ok();
+                let read = cx.background_executor().spawn(async move { header(file) }).await;
+                let _ = this.update(cx, |this, cx| {
+                    let mut known = this.picture_size.borrow_mut();
+                    // Another file since: not for it.
+                    if known.as_ref().is_some_and(|(seen, _)| *seen == path) {
+                        *known = Some((path, read));
+                        cx.notify();
+                    }
+                });
+            })
+            .detach();
         }
         known.as_ref().and_then(|(_, size)| *size).map(|(width, height)| (width as f32, height as f32))
     }
 
     /// How large the picture is shown against its own pixels: fitted to the
     /// window (only if larger, when so chosen), then zoomed.
-    fn picture_scale(&self) -> Option<f32> {
-        let (width, height) = self.natural_size().filter(|(width, height)| *width > 0. && *height > 0.)?;
+    fn picture_scale(&self, cx: &mut Context<Self>) -> Option<f32> {
+        let (width, height) = self.natural_size(cx).filter(|(width, height)| *width > 0. && *height > 0.)?;
         let area = self.picture_area.get();
         let fits = (f32::from(area.width) * self.zoom / width).min(f32::from(area.height) * self.zoom / height);
         Some(match (self.fit, self.only_larger) {
@@ -1119,7 +1138,7 @@ impl Viewer {
     /// it is shown against its own pixels, and goes back to fitting the window.
     fn render_zoom(&self, cx: &mut Context<Self>) -> impl IntoElement + use<> {
         let picture = self.shown.mode == Mode::Picture;
-        let (shown, back) = match picture.then(|| self.picture_scale()).flatten() {
+        let (shown, back) = match picture.then(|| self.picture_scale(cx)).flatten() {
             Some(scale) => (scale, "Back to fitting the window (Ctrl+0)"),
             None => (self.zoom, "Back to 100% (Ctrl+0)"),
         };

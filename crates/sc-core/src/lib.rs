@@ -1091,8 +1091,13 @@ impl Panel {
         let target = from.with_file_name(to);
         let fs = self.fs();
         let dir = from.parent().unwrap_or(&self.path);
-        let names = fs.list(dir)?;
-        if ops::rename::in_the_way(&*fs, dir, from.file_name().unwrap_or_default(), OsStr::new(to), &names) {
+        let old = from.file_name().unwrap_or_default();
+        // Read only for a change of case, as a server's folder can be long.
+        let names = match old.to_string_lossy().to_lowercase() == to.to_lowercase() {
+            true => fs.list(dir)?,
+            false => Vec::new(),
+        };
+        if ops::rename::in_the_way(&*fs, dir, old, OsStr::new(to), &names) {
             return Err(io::Error::new(io::ErrorKind::AlreadyExists, format!("{to} exists already")));
         }
         let renamed = fs.rename(&from, &target);

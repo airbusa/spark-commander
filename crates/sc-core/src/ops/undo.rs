@@ -93,15 +93,16 @@ pub fn run(undo: Undo, queue: &Queue, redo: bool) -> io::Result<bool> {
     let queued = matches!(step, Step::Moved { .. });
     let title = format!("{}: {what}", if redo { "Redo" } else { "Undo" });
     let done = match step {
+        // One gone already (a try before failed after it) is left out.
         Step::Copied { fs, made, .. } if fs.id() != "local" => {
-            let undone = made.iter().try_for_each(|path| vfs::remove_all(&*fs, path));
+            let undone = made.iter().filter(|path| fs.metadata(path).is_ok()).try_for_each(|path| vfs::remove_all(&*fs, path));
             crate::activity::note(title, &undone);
             undone
         }
         // Found in the trash before the copies go there, as they have the same names.
         Step::Copied { made, replaced, at, .. } => {
             let undone = in_trash(&replaced, at).and_then(|back| {
-                made.iter().try_for_each(|path| to_trash(path))?;
+                made.iter().filter(|path| std::fs::symlink_metadata(path).is_ok()).try_for_each(|path| to_trash(path))?;
                 put_back(back)
             });
             crate::activity::note(title, &undone);
@@ -343,6 +344,17 @@ mod tests {
         finish(&queue);
         assert!(dir.join("c.txt").exists() && !dir.join("b.txt").exists(), "renamed again");
         assert!(taken(&renamed_title).is_some(), "to undo again");
+        std::fs::remove_dir_all(&dir).unwrap();
+    }
+
+    #[test]
+    fn a_try_again_leaves_out_what_is_gone() {
+        let dir = std::env::temp_dir().join(format!("sc-undo-again-{}", std::process::id()));
+        std::fs::create_dir_all(&dir).unwrap();
+        std::fs::write(dir.join("b"), "b").unwrap();
+        let step = Step::Copied { fs: Arc::new(Local), made: vec![dir.join("a"), dir.join("b")], replaced: Vec::new(), at: SystemTime::now() };
+        assert!(run(Undo { title: "Copy".into(), step }, &Queue::default(), false).unwrap());
+        assert!(!dir.join("b").exists());
         std::fs::remove_dir_all(&dir).unwrap();
     }
 

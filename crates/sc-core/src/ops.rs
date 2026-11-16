@@ -593,12 +593,13 @@ impl Run<'_> {
         let Some(meta) = self.attempt(source, |_| from.metadata(source))? else {
             return Ok(());
         };
-        // On this computer through links too: a folder's alias is the folder.
-        let (real_source, real_target) = match to.id() == "local" {
-            true => (resolved(source), resolved(target)),
-            false => (source.to_owned(), target.to_owned()),
+        let folder = meta.is_dir && !meta.is_link;
+        let into_itself = match folder && to.id() == "local" {
+            // On this computer through links too: a folder's alias is the folder.
+            true => resolved(target).starts_with(resolved(source)),
+            false => target == source || folder && target.starts_with(source),
         };
-        if self.op.same_fs() && (real_target == real_source || meta.is_dir && !meta.is_link && real_target.starts_with(&real_source)) {
+        if self.op.same_fs() && into_itself {
             let into_itself =
                 |_: &mut Self| Err::<(), _>(io::Error::other("cannot be copied into itself"));
             return self.attempt(source, into_itself).map(drop);
@@ -619,8 +620,10 @@ impl Run<'_> {
         let itself = self.op.same_fs()
             && source.parent() == target.parent()
             && source.file_name().zip(target.file_name()).is_some_and(|(a, b)| a.to_string_lossy().eq_ignore_ascii_case(&b.to_string_lossy()));
+        // Across this computer's disks a rename cannot go: copied then, nothing put in the trash for it.
         let renamed = self.op.kind == Kind::Move
             && self.op.same_fs()
+            && (to.id() != "local" || one_disk(source, &target))
             && match itself {
                 true => from.rename(source, &target).is_ok(),
                 false => match place(&*to, source, &target) {
@@ -860,6 +863,23 @@ fn name(path: &Path) -> String {
         .unwrap_or(path.as_os_str())
         .to_string_lossy()
         .into_owned()
+}
+
+/// Whether a rename can take `source` to `target` on this computer: one
+/// disk, as far as the system tells; else true, the rename trying.
+fn one_disk(source: &Path, target: &Path) -> bool {
+    let dir = target.parent().unwrap_or(target);
+    #[cfg(unix)]
+    {
+        use std::os::unix::fs::MetadataExt;
+        if let (Ok(from), Ok(to)) = (std::fs::symlink_metadata(source), std::fs::metadata(dir)) {
+            return from.dev() == to.dev();
+        }
+    }
+    #[cfg(windows)]
+    return source.components().next() == dir.components().next();
+    #[allow(unreachable_code)]
+    true
 }
 
 /// `path` on this computer with the links above it resolved, as far as they

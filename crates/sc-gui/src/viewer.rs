@@ -306,6 +306,8 @@ struct Viewer {
     wheel: Pixels,
     /// The picture's view, measured; a zoomed picture pans in it.
     picture_area: Rc<Cell<Size<Pixels>>>,
+    /// The shown picture's own size in pixels, read from its file once.
+    picture_size: RefCell<Option<(PathBuf, Option<(u32, u32)>)>>,
     picture_scroll: ScrollHandle,
     menu_bar: Entity<AppMenuBar>,
     /// Video or sound being played.
@@ -598,6 +600,7 @@ impl Viewer {
             zoom: 1.,
             wheel: px(0.),
             picture_area: Rc::default(),
+            picture_size: RefCell::default(),
             picture_scroll: ScrollHandle::new(),
             menu_bar: menu_bar(cx.entity().downgrade(), cx),
             media: media_view(&shown, None, quick, cx),
@@ -1084,8 +1087,42 @@ impl Viewer {
         }
     }
 
-    /// − 100% +: the percentage goes back to 100%.
+    /// The picture's own size in pixels: a decoded one's, else its file header's.
+    fn natural_size(&self) -> Option<(f32, f32)> {
+        let path = self.shown.path();
+        if let Some((_, Ok(image))) = self.still.as_ref().filter(|(still, _)| still == path) {
+            let size = image.size(0);
+            return Some((size.width.0 as f32, size.height.0 as f32));
+        }
+        let mut known = self.picture_size.borrow_mut();
+        if known.as_ref().is_none_or(|(seen, _)| seen != path) {
+            let read = image::ImageReader::open(path).ok().and_then(|reader| reader.with_guessed_format().ok()).and_then(|reader| reader.into_dimensions().ok());
+            *known = Some((path.to_owned(), read));
+        }
+        known.as_ref().and_then(|(_, size)| *size).map(|(width, height)| (width as f32, height as f32))
+    }
+
+    /// How large the picture is shown against its own pixels: fitted to the
+    /// window (only if larger, when so chosen), then zoomed.
+    fn picture_scale(&self) -> Option<f32> {
+        let (width, height) = self.natural_size().filter(|(width, height)| *width > 0. && *height > 0.)?;
+        let area = self.picture_area.get();
+        let fits = (f32::from(area.width) * self.zoom / width).min(f32::from(area.height) * self.zoom / height);
+        Some(match (self.fit, self.only_larger) {
+            (false, _) => 1.,
+            (true, false) => fits,
+            (true, true) => fits.min(1.),
+        })
+    }
+
+    /// − 100% +: the percentage goes back to 100%; a picture's says how large
+    /// it is shown against its own pixels, and goes back to fitting the window.
     fn render_zoom(&self, cx: &mut Context<Self>) -> impl IntoElement + use<> {
+        let picture = self.shown.mode == Mode::Picture;
+        let (shown, back) = match picture.then(|| self.picture_scale()).flatten() {
+            Some(scale) => (scale, "Back to fitting the window (Ctrl+0)"),
+            None => (self.zoom, "Back to 100% (Ctrl+0)"),
+        };
         let (smallest, largest) = (ZOOMS[0], ZOOMS[ZOOMS.len() - 1]);
         let step = |id: &'static str, icon: IconName, tip: &'static str, steps: i32, at_end: bool| {
             Button::new(id)
@@ -1104,8 +1141,8 @@ impl Viewer {
                     .ghost()
                     .xsmall()
                     .min_w(px(44.))
-                    .label(format!("{:.0}%", self.zoom * 100.))
-                    .tooltip("Back to 100% (Ctrl+0)")
+                    .label(format!("{:.0}%", shown * 100.))
+                    .tooltip(back)
                     .on_click(cx.listener(|this, _, _, cx| this.zoom_by(0, cx))),
             )
             .child(step("zoom-in", IconName::Plus, "Zoom in (Ctrl++)", 1, self.zoom >= largest))

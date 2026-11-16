@@ -1415,8 +1415,12 @@ impl Commander {
                 cx.listener(|this, _: &FocusPanels, window, cx| this.focus_panels(window, cx)),
             )
             .on_action(cx.listener(|this, _: &CommandHistory, window, cx| this.show_command_history(window, cx)))
+            // A band of its own, apart from the terminal or panels above.
             .px_1()
+            .py_1()
             .gap_1()
+            .border_t_1()
+            .border_color(self.colors.header_border)
             .child(
                 div()
                     .max_w(relative(0.5))
@@ -1451,13 +1455,17 @@ impl Commander {
             }
             _ => None,
         });
+        let divider = self.colors.header_border;
         h_flex()
+            .items_center()
             .bg(cx.theme().list_head)
             .border_t_1()
-            .border_color(self.colors.header_border)
-            .children(buttons.map(|(label, keys, command)| {
+            .border_color(divider)
+            .children(buttons.enumerate().flat_map(|(ix, (label, keys, command))| {
                 let key = dialogs::keys_dialog::shown(&keys);
-                Button::new(label)
+                // A rule between the buttons, as Total Commander's are apart.
+                let rule = (ix > 0).then(|| div().flex_none().w_px().h(px(14.)).bg(divider).into_any_element());
+                let button = Button::new(label)
                     .ghost()
                     .small()
                     .flex_1()
@@ -1465,7 +1473,8 @@ impl Commander {
                     .on_click(cx.listener(move |this, _, window, cx| {
                         window.focus(&this.focus, cx);
                         window.dispatch_action(Box::new(Run(command)), cx);
-                    }))
+                    }));
+                rule.into_iter().chain([button.into_any_element()])
             }))
     }
 

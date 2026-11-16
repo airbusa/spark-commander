@@ -199,6 +199,9 @@ fn menu_bar(this: WeakEntity<TextEditor>, cx: &mut App) -> Entity<AppMenuBar> {
         let this = this.clone();
         let build: MenuBuilder = Rc::new(move |menu, _, cx| match this.upgrade() {
             Some(this) => {
+                // The selection stays shown while its menu is open, as under a desktop's menus.
+                let open = menu.focus_handle(cx);
+                this.read(cx).editor.clone().update(cx, |editor, cx| editor.set_selection_focus(Some(open), cx));
                 let this = this.read(cx);
                 let focus = this.editor.read(cx).focus_handle(cx);
                 this.menu(name, menu.action_context(focus), cx)

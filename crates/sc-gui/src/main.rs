@@ -239,13 +239,8 @@ fn main() {
                 cx.propagate();
             }
         });
-        // Files taken out of archives for the viewer.
+        // Files taken out of archives for the viewer; this run's go at quit, once the jobs stopped.
         std::thread::spawn(archive::remove_stale_scratch);
-        cx.on_app_quit(|_| {
-            archive::remove_scratch();
-            async {}
-        })
-        .detach();
         viewer::bind_keys(cx);
         search_window::bind_keys(cx);
         sync_window::bind_keys(cx);
@@ -583,6 +578,7 @@ impl Commander {
         let quit = cx.on_app_quit(|this, _| {
             this.save_session();
             this.transfers.queue.stop_all();
+            archive::remove_scratch();
             async {}
         });
         let this = cx.weak_entity();

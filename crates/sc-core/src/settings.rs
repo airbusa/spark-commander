@@ -316,9 +316,20 @@ pub(crate) fn read_json<T: Default + DeserializeOwned>(file: &str) -> io::Result
 pub(crate) fn write_json(file: &str, value: &impl Serialize) -> io::Result<()> {
     let dir = config_dir().ok_or_else(|| io::Error::other("no configuration folder"))?;
     fs::create_dir_all(&dir)?;
-    let temp = dir.join(format!("{file}.new"));
-    fs::write(&temp, serde_json::to_string_pretty(value)?)?;
-    fs::rename(temp, dir.join(file))
+    // Each save its own, beside another window's or app's; the last one in place wins.
+    static SAVES: std::sync::atomic::AtomicU64 = std::sync::atomic::AtomicU64::new(0);
+    let save = SAVES.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
+    let temp = dir.join(format!("{file}.{}-{save}.new", std::process::id()));
+    let written = (|| {
+        let mut out = fs::File::create_new(&temp)?;
+        io::Write::write_all(&mut out, serde_json::to_string_pretty(value)?.as_bytes())?;
+        out.sync_all()?;
+        fs::rename(&temp, dir.join(file))
+    })();
+    if written.is_err() {
+        let _ = fs::remove_file(&temp);
+    }
+    written
 }
 
 #[cfg(test)]

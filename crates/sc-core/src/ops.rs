@@ -350,14 +350,15 @@ impl Queue {
         });
     }
 
-    /// At quit: cancels every job, and waits a little for the running one
-    /// to remove its part file.
+    /// At quit: cancels every job, and waits a little for the running ones,
+    /// the queue's and those started at once, to remove their part files.
     pub fn stop_all(&self) {
         for job in self.jobs().iter().filter(|job| !job.status.finished()) {
             self.cancel(job.id);
         }
         let until = std::time::Instant::now() + std::time::Duration::from_secs(2);
-        while self.lock().working && std::time::Instant::now() < until {
+        let running = |queue: &Self| queue.lock().jobs.iter().any(|job| job.view.status == Status::Running);
+        while running(self) && std::time::Instant::now() < until {
             std::thread::sleep(std::time::Duration::from_millis(10));
         }
     }
@@ -455,8 +456,9 @@ impl Queue {
             progress: Progress::default(),
         };
         match (task.run)(&mut report) {
-            _ if report.cancelled() => (Status::Cancelled, None),
+            // Done before the cancel was heard: done.
             Ok(note) => (Status::Done, Some(note).filter(|note| !note.is_empty())),
+            Err(_) if report.cancelled() => (Status::Cancelled, None),
             Err(err) => (Status::Failed, Some(err.to_string())),
         }
     }

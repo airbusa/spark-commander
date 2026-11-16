@@ -591,7 +591,12 @@ impl Run<'_> {
         let Some(meta) = self.attempt(source, |_| from.metadata(source))? else {
             return Ok(());
         };
-        if self.op.same_fs() && (target == source || meta.is_dir && target.starts_with(source)) {
+        // On this computer through links too: a folder's alias is the folder.
+        let (real_source, real_target) = match to.id() == "local" {
+            true => (resolved(source), resolved(target)),
+            false => (source.to_owned(), target.to_owned()),
+        };
+        if self.op.same_fs() && (real_target == real_source || meta.is_dir && !meta.is_link && real_target.starts_with(&real_source)) {
             let into_itself =
                 |_: &mut Self| Err::<(), _>(io::Error::other("cannot be copied into itself"));
             return self.attempt(source, into_itself).map(drop);
@@ -855,6 +860,20 @@ fn name(path: &Path) -> String {
         .into_owned()
 }
 
+/// `path` on this computer with the links above it resolved, as far as they
+/// exist; its own name as it is, a link not followed.
+fn resolved(path: &Path) -> PathBuf {
+    let (Some(parent), Some(name)) = (path.parent(), path.file_name()) else {
+        return path.to_owned();
+    };
+    let parent = match std::fs::canonicalize(parent) {
+        Ok(real) => real,
+        Err(_) if parent.as_os_str().is_empty() => return path.to_owned(),
+        Err(_) => resolved(parent),
+    };
+    parent.join(name)
+}
+
 /// Puts `from` in `target`'s place on `fs` by a rename. What is there goes:
 /// on this computer to the trash, where it can (true), and back from there
 /// if `from` cannot take its place; else as `vfs::replace` has it.
@@ -1046,6 +1065,18 @@ mod tests {
         });
         assert_eq!(job.status, Status::Done);
         assert!(!dir.join("a/b/a").exists());
+        // Nor into itself by another way there, a link to it.
+        #[cfg(unix)]
+        {
+            std::os::unix::fs::symlink(dir.join("a"), dir.join("alias")).unwrap();
+            let op = operation(Kind::Copy, &[dir.join("a")], Target::Into(dir.join("alias/b")), Overwrite::Ask);
+            let job = run(op, |question| match question {
+                Question::Failed { error, .. } if error.contains("into itself") => Answer::Skip,
+                other => panic!("{other:?}"),
+            });
+            assert_eq!(job.status, Status::Done);
+            assert!(!dir.join("a/b/a").exists());
+        }
         fs::remove_dir_all(&dir).unwrap();
     }
 

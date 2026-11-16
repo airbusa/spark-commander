@@ -269,7 +269,14 @@ pub fn synchronize(left: Root, right: Root, items: Vec<Item>) -> Task {
                 report.check()?;
                 report.progress.current = item.path.clone();
                 report.show();
+                let fresh = match item.action {
+                    Action::ToRight | Action::ToLeft => unchanged(&left, item, &item.left) && unchanged(&right, item, &item.right),
+                    Action::DeleteLeft => unchanged(&left, item, &item.left),
+                    Action::DeleteRight => unchanged(&right, item, &item.right),
+                    Action::Nothing => true,
+                };
                 let done = match item.action {
+                    _ if !fresh => Err(io::Error::other("changed since the comparison; compare again")),
                     Action::ToRight => copy(&left, &right, &item.path, report),
                     Action::ToLeft => copy(&right, &left, &item.path, report),
                     Action::DeleteLeft => delete(&left, &item.path),
@@ -296,6 +303,21 @@ pub fn synchronize(left: Root, right: Root, items: Vec<Item>) -> Task {
     }
 }
 
+/// Whether `item` on `root` is still as compared (`side`): nothing there, or
+/// a folder or file of that time, and a file of that size; in whole seconds,
+/// as servers keep times. A link only still there.
+// shortcut: a folder's time tells only of changes right in it, not deeper; compare its tree if deletes must know.
+fn unchanged(root: &Root, item: &Item, side: &Option<Side>) -> bool {
+    let now = root.fs.metadata(&root.dir.join(&item.path)).ok();
+    let seconds = |time: Option<SystemTime>| time.and_then(|time| time.duration_since(SystemTime::UNIX_EPOCH).ok()).map(|since| since.as_secs());
+    match (side, now) {
+        (None, None) => true,
+        (Some(_), Some(now)) if now.is_link => true,
+        (Some(was), Some(now)) => was.is_dir == now.is_dir && seconds(was.modified) == seconds(now.modified) && (was.is_dir || was.size == now.size),
+        _ => false,
+    }
+}
+
 /// Where a side is, as the path bar says it.
 pub fn place(root: &Root) -> String {
     match &root.remote {
@@ -316,7 +338,8 @@ fn copy(from: &Root, to: &Root, rel: &Path, report: &mut Report) -> io::Result<(
 fn copy_tree(root: &Root, source: &Path, to: &dyn Fs, target: &Path, report: &mut Report) -> io::Result<()> {
     let from = &*root.fs;
     let meta = from.metadata(source)?;
-    if meta.is_link {
+    // A link as a link on its own file system; to another, what it leads to.
+    if meta.is_link && from.id() == to.id() {
         if to.metadata(target).is_ok() {
             vfs::remove_all(to, target)?;
         }
@@ -404,6 +427,17 @@ mod tests {
         assert_eq!(fs::read_to_string(b.join("sub/only-left.txt")).unwrap(), "l");
         assert_eq!(fs::read_to_string(a.join("only-right/x.txt")).unwrap(), "r");
         assert_eq!(fs::read_to_string(b.join("sized.txt")).unwrap(), "three", "left alone");
+        // Changed after the comparison: not gone over.
+        touch(&a.join("newer.txt"), "newest", 1);
+        let stale = compare(&left, &right, Options::default(), "", &stop, &mut |_| {}).unwrap();
+        touch(&b.join("newer.txt"), "edited meanwhile", 0);
+        queue.push_task(synchronize(left.clone(), right.clone(), stale));
+        while !queue.jobs().iter().all(|job| job.status.finished()) {
+            std::thread::sleep(Duration::from_millis(5));
+        }
+        assert_eq!(fs::read_to_string(b.join("newer.txt")).unwrap(), "edited meanwhile");
+        touch(&a.join("newer.txt"), "new", 10);
+        touch(&b.join("newer.txt"), "new", 10);
         let again = compare(&left, &right, Options::default(), "", &stop, &mut |_| {}).unwrap();
         assert!(again.iter().all(|item| item.action == Action::Nothing), "{again:?}");
         fs::remove_dir_all(&base).unwrap();

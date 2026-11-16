@@ -1353,7 +1353,7 @@ mod tests {
 
     #[test]
     fn reads_desktop_files_in_the_users_language() {
-        let dir = std::env::temp_dir().join(format!("pc-desktop-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("sc-desktop-{}", std::process::id()));
         fs::create_dir_all(&dir).unwrap();
         let file = dir.join("a.desktop");
         fs::write(&file, "[Desktop Entry]\nName=Edit\nName[xx]=Other\nExec=ed %f\n# c\n[Desktop Action x]\nName=X\n").unwrap();

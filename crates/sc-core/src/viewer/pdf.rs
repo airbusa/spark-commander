@@ -231,7 +231,7 @@ mod tests {
     #[test]
     fn renders_pages_and_reads_their_text() {
         assert!(available(), "run vendor/pdfium/fetch.sh or fetch.bat first");
-        let path = std::env::temp_dir().join(format!("pc-pdf-test-{}.pdf", std::process::id()));
+        let path = std::env::temp_dir().join(format!("sc-pdf-test-{}.pdf", std::process::id()));
         std::fs::write(&path, pdf("Hello PDF")).unwrap();
         assert_eq!(
             pages(&path).unwrap(),

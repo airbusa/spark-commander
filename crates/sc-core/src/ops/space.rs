@@ -58,7 +58,7 @@ mod tests {
 
     #[test]
     fn adds_up_folders() {
-        let root = std::env::temp_dir().join(format!("pc-space-{}", std::process::id()));
+        let root = std::env::temp_dir().join(format!("sc-space-{}", std::process::id()));
         std::fs::create_dir_all(root.join("a/b")).unwrap();
         std::fs::write(root.join("one"), [0; 10]).unwrap();
         std::fs::write(root.join("a/two"), [0; 20]).unwrap();

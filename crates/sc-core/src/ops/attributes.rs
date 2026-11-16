@@ -195,7 +195,7 @@ mod tests {
     #[test]
     fn changes_inside_folders() {
         use std::os::unix::fs::PermissionsExt;
-        let root = std::env::temp_dir().join(format!("pc-attributes-{}", std::process::id()));
+        let root = std::env::temp_dir().join(format!("sc-attributes-{}", std::process::id()));
         std::fs::create_dir_all(root.join("sub")).unwrap();
         std::fs::write(root.join("sub/a"), "a").unwrap();
         let time = parse_time("2020-01-02 03:04:05").unwrap();

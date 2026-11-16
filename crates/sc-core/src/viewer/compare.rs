@@ -419,7 +419,7 @@ mod tests {
 
     #[test]
     fn compares_bytes() {
-        let root = std::env::temp_dir().join(format!("pc-compare-{}", std::process::id()));
+        let root = std::env::temp_dir().join(format!("sc-compare-{}", std::process::id()));
         std::fs::create_dir_all(&root).unwrap();
         let mut a = vec![7u8; 40];
         a[1] = 0;

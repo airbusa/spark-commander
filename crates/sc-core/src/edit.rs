@@ -62,7 +62,7 @@ pub fn save_text(path: &Path, text: &str) -> io::Result<()> {
     };
     let permissions = fs::metadata(&target)?.permissions();
     let name = target.file_name().unwrap_or_default().to_string_lossy();
-    let temp = target.with_file_name(format!(".{name}.pc-save"));
+    let temp = target.with_file_name(format!(".{name}.sc-save"));
     let written = fs::write(&temp, text)
         .and_then(|()| fs::set_permissions(&temp, permissions))
         .and_then(|()| fs::rename(&temp, &target));
@@ -77,7 +77,7 @@ pub fn save_text(path: &Path, text: &str) -> io::Result<()> {
 pub fn stage_text(path: &Path, text: &str) -> io::Result<std::path::PathBuf> {
     use std::io::Write as _;
     let name = path.file_name().unwrap_or_default().to_string_lossy();
-    let staged = std::env::temp_dir().join(format!("pc-save-{}-{name}", std::process::id()));
+    let staged = std::env::temp_dir().join(format!("sc-save-{}-{name}", std::process::id()));
     let _ = fs::remove_file(&staged);
     let mut options = fs::OpenOptions::new();
     options.write(true).create_new(true);
@@ -213,7 +213,7 @@ mod tests {
 
     #[test]
     fn loads_and_saves_text() {
-        let dir = std::env::temp_dir().join(format!("pc-edit-test-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("sc-edit-test-{}", std::process::id()));
         fs::create_dir_all(&dir).unwrap();
         let file = dir.join("a.txt");
         fs::write(&file, "one\r\ntwo").unwrap();

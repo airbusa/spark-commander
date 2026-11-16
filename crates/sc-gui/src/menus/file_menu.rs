@@ -1137,7 +1137,7 @@ mod tests {
 
     #[test]
     fn tags_files() {
-        let file = std::env::temp_dir().join(format!("pc-tags-{}.txt", std::process::id()));
+        let file = std::env::temp_dir().join(format!("sc-tags-{}.txt", std::process::id()));
         std::fs::write(&file, "x").unwrap();
         let files = [file.clone()];
         change_tags(&files, &["Red".into(), "Work".into()], &[]).unwrap();

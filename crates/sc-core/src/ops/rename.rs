@@ -341,12 +341,12 @@ pub fn rename_all(
             for (ix, (old, _)) in pairs.iter().enumerate() {
                 steps.push((
                     old.clone(),
-                    format!(".pc-rename-{}-{ix}", std::process::id()),
+                    format!(".sc-rename-{}-{ix}", std::process::id()),
                 ));
             }
             for (ix, (_, new)) in pairs.iter().enumerate() {
                 steps.push((
-                    format!(".pc-rename-{}-{ix}", std::process::id()),
+                    format!(".sc-rename-{}-{ix}", std::process::id()),
                     new.clone(),
                 ));
             }
@@ -452,7 +452,7 @@ mod tests {
         assert_eq!(twice[0].as_deref(), Some("twice in the list"));
         assert_eq!(twice[2].as_deref(), Some("no name"));
 
-        let root = std::env::temp_dir().join(format!("pc-rename-{}", std::process::id()));
+        let root = std::env::temp_dir().join(format!("sc-rename-{}", std::process::id()));
         let _ = std::fs::remove_dir_all(&root);
         std::fs::create_dir_all(&root).unwrap();
         std::fs::write(root.join("a"), "A").unwrap();

@@ -76,7 +76,7 @@ mod tests {
 
     #[test]
     fn names_copies_as_finder() {
-        let dir = std::env::temp_dir().join(format!("pc-finder-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("sc-finder-{}", std::process::id()));
         std::fs::create_dir_all(dir.join("Folder.d")).unwrap();
         std::fs::create_dir_all(dir.join("Tool.app")).unwrap();
         std::fs::write(dir.join("notes.txt"), "x").unwrap();

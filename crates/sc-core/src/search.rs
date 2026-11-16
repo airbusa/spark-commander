@@ -919,7 +919,7 @@ mod tests {
     fn tree() -> PathBuf {
         static N: std::sync::atomic::AtomicUsize = std::sync::atomic::AtomicUsize::new(0);
         let n = N.fetch_add(1, Ordering::Relaxed);
-        let root = std::env::temp_dir().join(format!("pc-search-{}-{n}", std::process::id()));
+        let root = std::env::temp_dir().join(format!("sc-search-{}-{n}", std::process::id()));
         let _ = fs::remove_dir_all(&root);
         for (path, data) in [
             ("a.txt", "Hello World\n".as_bytes()),

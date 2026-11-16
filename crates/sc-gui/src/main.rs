@@ -185,7 +185,6 @@ struct ColumnDrag {
 struct SplitDrag;
 
 fn main() {
-    sc_core::settings::adopt_old_name();
     #[cfg(target_os = "macos")]
     name_the_app();
     let app = gpui_kit::application().with_assets(AppAssets);
@@ -256,7 +255,7 @@ fn main() {
         register_xml();
         header::round_corners(cx);
         #[cfg(debug_assertions)]
-        if std::env::var_os("PC_STYLE_PREVIEW").is_some() {
+        if std::env::var_os("SC_STYLE_PREVIEW").is_some() {
             return style_preview::open(cx);
         }
         let saved = Session::load().ok().and_then(|session| session.window).and_then(|place| placed(place, cx));
@@ -279,7 +278,7 @@ fn main() {
         .expect("open the main window");
         // Debug builds open Settings on a page by its name, for looking at it.
         #[cfg(debug_assertions)]
-        if let Some(page) = std::env::var("PC_SETTINGS_PAGE").ok().and_then(|name| settings::PAGES.iter().position(|&page| page == name)) {
+        if let Some(page) = std::env::var("SC_SETTINGS_PAGE").ok().and_then(|name| settings::PAGES.iter().position(|&page| page == name)) {
             cx.defer(move |cx| configure(Some(page), cx));
         }
     });

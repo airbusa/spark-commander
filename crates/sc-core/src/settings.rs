@@ -234,17 +234,6 @@ pub fn config_dir() -> Option<PathBuf> {
     Some(dirs::config_dir()?.join("sparkcommander"))
 }
 
-/// The folders of the app's old name (settings, add-ons, the activity log)
-/// become the new name's, once.
-pub fn adopt_old_name() {
-    for home in [dirs::config_dir(), dirs::data_local_dir()].into_iter().flatten() {
-        let (old, new) = (home.join("powercommander"), home.join("sparkcommander"));
-        if old.is_dir() && !new.exists() {
-            let _ = fs::rename(old, new);
-        }
-    }
-}
-
 impl Settings {
     pub fn filter(&self) -> Filter {
         Filter {
@@ -345,7 +334,7 @@ mod tests {
         let dir = std::env::temp_dir();
         assert!(bookmarkable(&dir));
         assert!(!bookmarkable(Path::new("relative")));
-        let file = dir.join(format!("pc-bookmark-{}", std::process::id()));
+        let file = dir.join(format!("sc-bookmark-{}", std::process::id()));
         fs::write(&file, "").unwrap();
         assert!(!bookmarkable(&file), "a file");
         fs::remove_file(&file).unwrap();

@@ -251,7 +251,7 @@ mod tests {
         assert_eq!(parse_size("1,5G"), Some(3 << 29));
         assert_eq!(parse_size("2500"), Some(2500));
         assert_eq!(parse_size("ten"), None);
-        let root = std::env::temp_dir().join(format!("pc-split-{}", std::process::id()));
+        let root = std::env::temp_dir().join(format!("sc-split-{}", std::process::id()));
         let _ = std::fs::remove_dir_all(&root);
         std::fs::create_dir_all(root.join("parts")).unwrap();
         let data: Vec<u8> = (0..2500u32).map(|n| (n * 7) as u8).collect();

@@ -13,7 +13,7 @@ use std::path::{Path, PathBuf};
 
 use serde::Deserialize;
 
-/// The list of add-ons; `PC_ADDONS_MANIFEST` names another (a URL or a file), for testing.
+/// The list of add-ons; `SC_ADDONS_MANIFEST` names another (a URL or a file), for testing.
 const MANIFEST: &str = "https://github.com/airbusa/spark-commander/releases/download/addons/addons.json";
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
@@ -238,7 +238,7 @@ impl Manifest {
 
 /// The list of add-ons. Blocks.
 pub fn fetch() -> io::Result<Manifest> {
-    let source = std::env::var("PC_ADDONS_MANIFEST").unwrap_or_else(|_| MANIFEST.to_owned());
+    let source = std::env::var("SC_ADDONS_MANIFEST").unwrap_or_else(|_| MANIFEST.to_owned());
     let mut text = String::new();
     open(&source)?.0.read_to_string(&mut text)?;
     serde_json::from_str(&text).map_err(|err| io::Error::other(format!("the list of add-ons: {err}")))
@@ -374,7 +374,7 @@ mod tests {
     #[cfg(unix)]
     #[test]
     fn installs_and_updates() {
-        let dir = std::env::temp_dir().join(format!("pc-addon-install-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("sc-addon-install-{}", std::process::id()));
         let files = dir.join("files");
         std::fs::create_dir_all(&files).unwrap();
         std::fs::write(files.join("rclone"), "#!/bin/sh\n").unwrap();
@@ -415,7 +415,7 @@ mod tests {
 
     #[test]
     fn checks_the_download() {
-        let dir = std::env::temp_dir().join(format!("pc-addon-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("sc-addon-{}", std::process::id()));
         std::fs::create_dir_all(&dir).unwrap();
         let source = dir.join("source.bin");
         std::fs::write(&source, b"add-on").unwrap();

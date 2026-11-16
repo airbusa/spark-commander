@@ -940,7 +940,7 @@ mod tests {
 
     #[test]
     fn finds_icons_in_inherited_themes() {
-        let root = std::env::temp_dir().join(format!("pc-icons-{}", std::process::id()));
+        let root = std::env::temp_dir().join(format!("sc-icons-{}", std::process::id()));
         let theme = |name: &str, index: &str| {
             std::fs::create_dir_all(root.join(name).join("actions/symbolic")).unwrap();
             std::fs::write(root.join(name).join("index.theme"), index).unwrap();

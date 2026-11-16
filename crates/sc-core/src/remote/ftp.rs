@@ -731,15 +731,15 @@ mod tests {
         );
     }
 
-    /// Needs a server: PC_FTP_TEST=ftp://user@host:port/dir (or ftps://)
-    /// with PC_FTP_SECRET its password, `hello.txt` saying "hello\n" in
+    /// Needs a server: SC_FTP_TEST=ftp://user@host:port/dir (or ftps://)
+    /// with SC_FTP_SECRET its password, `hello.txt` saying "hello\n" in
     /// `dir`, and a `dir` folder beside it.
     #[test]
     #[ignore]
     fn talks_to_a_server() {
         use crate::ops::{Kind, Operation, Overwrite, Queue, Status, Target};
         use crate::vfs::Local;
-        let url = std::env::var("PC_FTP_TEST").expect("PC_FTP_TEST");
+        let url = std::env::var("SC_FTP_TEST").expect("SC_FTP_TEST");
         let address = Address::parse(&url).unwrap();
         let asked = Arc::new(Mutex::new(Vec::new()));
         let heard = asked.clone();
@@ -748,7 +748,7 @@ mod tests {
             match prompt {
                 Prompt::UnknownHost { .. } => Reply::Trust { remember: true },
                 Prompt::Secret { .. } => {
-                    Reply::Secret(std::env::var("PC_FTP_SECRET").unwrap_or_default())
+                    Reply::Secret(std::env::var("SC_FTP_SECRET").unwrap_or_default())
                 }
             }
         });
@@ -775,7 +775,7 @@ mod tests {
             io::ErrorKind::NotFound
         );
 
-        let local = std::env::temp_dir().join(format!("pc-ftp-test-{}", std::process::id()));
+        let local = std::env::temp_dir().join(format!("sc-ftp-test-{}", std::process::id()));
         let _ = std::fs::remove_dir_all(&local);
         std::fs::create_dir_all(local.join("up/sub")).unwrap();
         std::fs::write(local.join("up/sub/big.bin"), vec![7u8; 3 << 20]).unwrap();

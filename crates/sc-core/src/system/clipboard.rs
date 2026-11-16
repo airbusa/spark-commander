@@ -73,7 +73,7 @@ mod tests {
 
     #[test]
     fn reads_files_from_text() {
-        let dir = std::env::temp_dir().join(format!("pc-clip-test-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("sc-clip-test-{}", std::process::id()));
         std::fs::create_dir_all(dir.join("a b")).unwrap();
         std::fs::write(dir.join("é.txt"), "x").unwrap();
         let (folder, file) = (dir.join("a b"), dir.join("é.txt"));

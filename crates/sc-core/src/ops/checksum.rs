@@ -295,7 +295,7 @@ mod tests {
 
     #[test]
     fn creates_and_verifies() {
-        let root = std::env::temp_dir().join(format!("pc-checksum-{}", std::process::id()));
+        let root = std::env::temp_dir().join(format!("sc-checksum-{}", std::process::id()));
         let _ = std::fs::remove_dir_all(&root);
         std::fs::create_dir_all(root.join("sub")).unwrap();
         std::fs::write(root.join("a.txt"), "abc").unwrap();

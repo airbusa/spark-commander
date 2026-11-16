@@ -148,7 +148,7 @@ mod tests {
 
     #[test]
     fn describes_files_and_links() {
-        let root = std::env::temp_dir().join(format!("pc-properties-{}", std::process::id()));
+        let root = std::env::temp_dir().join(format!("sc-properties-{}", std::process::id()));
         std::fs::create_dir_all(&root).unwrap();
         std::fs::write(root.join("a.txt"), "hello").unwrap();
         let file = of(&Local, true, &root.join("a.txt")).unwrap();

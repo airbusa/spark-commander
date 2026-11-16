@@ -12,15 +12,16 @@ use crate::menu::Command::{self, *};
 /// Whose keys to start from.
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Serialize, Deserialize)]
 pub enum Preset {
-    /// Total Commander's, where no system takes them; keys on every keyboard.
-    #[default]
-    #[serde(alias = "PowerCommander")]
-    SparkCommander,
     TotalCommander,
     Krusader,
     MidnightCommander,
     /// ForkLift 4's, for macOS.
     ForkLift,
+    /// Total Commander's, where no system takes them; keys on every keyboard.
+    /// Also a preset no longer known (serde wants it last), so settings with one still load.
+    #[default]
+    #[serde(other)]
+    SparkCommander,
 }
 
 impl Preset {
@@ -834,8 +835,8 @@ mod tests {
 
     #[test]
     fn reads_keys_of_gone_and_renamed_commands() {
-        // Saved under the app's old name.
-        let saved = r#"{"preset":"PowerCommander","changed":{"Comments":["ctrl-k",""],"Tree":["f9",""]}}"#;
+        // A preset gone since: the default.
+        let saved = r#"{"preset":"Gone","changed":{"Comments":["ctrl-k",""],"Tree":["f9",""]}}"#;
         let keys: KeySettings = serde_json::from_str(saved).unwrap();
         assert_eq!(keys.preset, Preset::SparkCommander);
         assert_eq!(keys.changed.keys().collect::<Vec<_>>(), [&SidebarTree]);

@@ -1960,7 +1960,7 @@ mod tests {
 
     #[test]
     fn drags_the_marked_or_the_one() {
-        let root = std::env::temp_dir().join(format!("pc-drag-test-{}", std::process::id()));
+        let root = std::env::temp_dir().join(format!("sc-drag-test-{}", std::process::id()));
         std::fs::create_dir_all(&root).unwrap();
         for name in ["a", "b", "c"] {
             std::fs::write(root.join(name), name).unwrap();
@@ -1990,7 +1990,7 @@ mod tests {
 
     #[test]
     fn marks_groups_and_compares_folders() {
-        let root = std::env::temp_dir().join(format!("pc-mark-{}", std::process::id()));
+        let root = std::env::temp_dir().join(format!("sc-mark-{}", std::process::id()));
         let _ = fs::remove_dir_all(&root);
         for side in ["l", "r"] {
             fs::create_dir_all(root.join(side).join("docs")).unwrap();
@@ -2079,11 +2079,11 @@ mod tests {
 
     #[test]
     fn locks_and_closes_tabs() {
-        let root = std::env::temp_dir().join(format!("pc-tabs-test-{}", std::process::id()));
+        let root = std::env::temp_dir().join(format!("sc-tabs-test-{}", std::process::id()));
         fs::create_dir_all(root.join("sub")).unwrap();
         let mut tabs = Tabs::new(Panel::new(&root, Filter::default()).unwrap());
         tabs.toggle_lock();
-        assert!(tabs.current().title().starts_with("*pc-tabs-test-"));
+        assert!(tabs.current().title().starts_with("*sc-tabs-test-"));
         tabs.current_mut().set_cursor(1);
         tabs.navigate(|panel| panel.open().map(drop)).unwrap();
         assert_eq!(
@@ -2123,7 +2123,7 @@ mod tests {
         assert_eq!(restored.panels()[0].title(), "*Work");
         assert_eq!(restored.panels()[1].path(), tabs.panels()[1].path());
         tabs.rename(0, "");
-        assert!(tabs.panels()[0].title().starts_with("*pc-tabs-test-"));
+        assert!(tabs.panels()[0].title().starts_with("*sc-tabs-test-"));
 
         fs::remove_dir_all(root.join("sub")).unwrap();
         let gone = Tabs::restore(&tabs.state(), Filter::default(), || unreachable!());
@@ -2134,7 +2134,7 @@ mod tests {
     #[test]
     #[cfg(not(windows))]
     fn hides_dot_files() {
-        let root = std::env::temp_dir().join(format!("pc-filter-test-{}", std::process::id()));
+        let root = std::env::temp_dir().join(format!("sc-filter-test-{}", std::process::id()));
         fs::create_dir_all(root.join(".hidden-dir")).unwrap();
         fs::write(root.join("shown"), "").unwrap();
         let mut tabs = Tabs::new(Panel::new(&root, Filter::default()).unwrap());
@@ -2156,7 +2156,7 @@ mod tests {
 
     #[test]
     fn sorts_creates_and_deletes() {
-        let root = std::env::temp_dir().join(format!("pc-files-test-{}", std::process::id()));
+        let root = std::env::temp_dir().join(format!("sc-files-test-{}", std::process::id()));
         fs::create_dir_all(root.join("z-dir")).unwrap();
         fs::write(root.join("b.txt"), "12345").unwrap();
         fs::write(root.join("a.rs"), "1").unwrap();
@@ -2195,7 +2195,7 @@ mod tests {
 
     #[test]
     fn marks_what_operations_work_on() {
-        let root = std::env::temp_dir().join(format!("pc-marks-test-{}", std::process::id()));
+        let root = std::env::temp_dir().join(format!("sc-marks-test-{}", std::process::id()));
         fs::create_dir_all(root.join("dir")).unwrap();
         fs::write(root.join("a.txt"), vec![0; 2048]).unwrap();
         fs::write(root.join("b.txt"), "b").unwrap();
@@ -2235,7 +2235,7 @@ mod tests {
     /// Ctrl+B: every file under the folder by its path from it; hidden ones as shown; again, the folder.
     #[test]
     fn shows_a_branch() {
-        let root = std::env::temp_dir().join(format!("pc-branch-test-{}", std::process::id()));
+        let root = std::env::temp_dir().join(format!("sc-branch-test-{}", std::process::id()));
         let _ = fs::remove_dir_all(&root);
         for file in ["a/b/c.txt", "a/d.txt", "e.txt", "f/g.txt", ".hid/h.txt"] {
             fs::create_dir_all(root.join(file).parent().unwrap()).unwrap();
@@ -2287,7 +2287,7 @@ mod tests {
         assert_eq!(history.places.len(), HISTORY);
         assert_eq!((history.places[0].as_str(), history.at), ("/20", HISTORY - 1));
 
-        let root = std::env::temp_dir().join(format!("pc-history-test-{}", std::process::id()));
+        let root = std::env::temp_dir().join(format!("sc-history-test-{}", std::process::id()));
         let _ = fs::remove_dir_all(&root);
         fs::create_dir_all(root.join("a/b")).unwrap();
         let mut tabs = Tabs::new(Panel::new(&root, Filter::default()).unwrap());
@@ -2307,7 +2307,7 @@ mod tests {
 
     #[test]
     fn filters_files_as_the_show_menu() {
-        let root = std::env::temp_dir().join(format!("pc-show-filter-test-{}", std::process::id()));
+        let root = std::env::temp_dir().join(format!("sc-show-filter-test-{}", std::process::id()));
         let _ = fs::remove_dir_all(&root);
         fs::create_dir_all(root.join("docs")).unwrap();
         for name in ["a.txt", "b.md", "c.txt.bak", "run.exe", "run.sh"] {
@@ -2341,7 +2341,7 @@ mod tests {
 
     #[test]
     fn finds_what_is_typed() {
-        let root = std::env::temp_dir().join(format!("pc-quick-test-{}", std::process::id()));
+        let root = std::env::temp_dir().join(format!("sc-quick-test-{}", std::process::id()));
         let _ = fs::remove_dir_all(&root);
         fs::create_dir_all(root.join("Bundles")).unwrap();
         for name in ["base.txt", "base.history", "Stored.md"] {
@@ -2413,7 +2413,7 @@ mod tests {
         assert_eq!(crate::archive::tests::attributes_of("RA"), "ra--");
         #[cfg(unix)]
         {
-            let root = std::env::temp_dir().join(format!("pc-attr-test-{}", std::process::id()));
+            let root = std::env::temp_dir().join(format!("sc-attr-test-{}", std::process::id()));
             fs::create_dir_all(&root).unwrap();
             let file = root.join("f");
             fs::write(&file, "").unwrap();

@@ -283,7 +283,7 @@ mod tests {
 
     #[test]
     fn moves_back_what_was_moved_and_renamed() {
-        let dir = std::env::temp_dir().join(format!("pc-undo-test-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("sc-undo-test-{}", std::process::id()));
         let _ = std::fs::remove_dir_all(&dir);
         std::fs::create_dir_all(dir.join("into")).unwrap();
         std::fs::write(dir.join("a.txt"), "a").unwrap();
@@ -319,7 +319,7 @@ mod tests {
     #[test]
     fn takes_back_what_went_over_files() {
         use std::fs::{create_dir_all, read_to_string, write};
-        let dir = std::env::temp_dir().join(format!("pc-undo-over-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("sc-undo-over-{}", std::process::id()));
         let _ = std::fs::remove_dir_all(&dir);
         let (src, dst) = (dir.join("src"), dir.join("dst"));
         for folder in [src.join("sub"), dst.join("sub"), src.join("merged"), dst.join("merged")] {

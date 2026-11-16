@@ -105,7 +105,6 @@ const DOUBLE_CLICK: Duration = Duration::from_millis(400);
 const TICK: Duration = Duration::from_millis(100);
 
 fn main() -> io::Result<()> {
-    sc_core::settings::adopt_old_name();
     let mut problems = Vec::new();
     let settings = Settings::load().unwrap_or_else(|err| {
         problems.push(format!("Could not read the settings: {err}"));

@@ -95,7 +95,7 @@ mod tests {
     /// A stand-in tool that copies its input, and fails on "bad".
     #[test]
     fn converts_once_and_caches() {
-        let dir = std::env::temp_dir().join(format!("pc-convert-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("sc-convert-{}", std::process::id()));
         std::fs::create_dir_all(&dir).unwrap();
         let tool = dir.join("fake-cli");
         std::fs::write(&tool, "#!/bin/sh\ncase \"$2\" in *bad*) echo broken >&2; exit 3;; esac\ncp \"$2\" \"$3\"\n").unwrap();

@@ -1,5 +1,5 @@
 //! A debug build's preview of the controls, laid out as KDE's Application
-//! Style page previews a style (`PC_STYLE_PREVIEW=1`): for matching the look
+//! Style page previews a style (`SC_STYLE_PREVIEW=1`): for matching the look
 //! of a desktop's style.
 
 use gpui_kit::component::button::{Button, ButtonVariants};

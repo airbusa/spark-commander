@@ -191,11 +191,11 @@ mod tests {
     }
 
     /// `rclone serve webdav --user tester --pass s3cret` on a folder with
-    /// `docs/`, as Windows and macOS reach WebDAV: PC_DAV_TEST=<its port>.
+    /// `docs/`, as Windows and macOS reach WebDAV: SC_DAV_TEST=<its port>.
     #[test]
     #[ignore]
     fn talks_webdav() {
-        let port = std::env::var("PC_DAV_TEST").unwrap();
+        let port = std::env::var("SC_DAV_TEST").unwrap();
         let address = Address::parse(&format!("webdav://tester@127.0.0.1:{port}/docs")).unwrap();
         let tries = Arc::new(std::sync::atomic::AtomicUsize::new(0));
         let counted = tries.clone();
@@ -214,11 +214,11 @@ mod tests {
     }
 
     /// `rclone serve s3 --auth-key AKIATESTKEY0001,SECRETKEY0000000000001` as
-    /// the store, with a folder `bucket`: PC_S3_TEST=<its port>.
+    /// the store, with a folder `bucket`: SC_S3_TEST=<its port>.
     #[test]
     #[ignore]
     fn talks_to_a_store() {
-        let port = std::env::var("PC_S3_TEST").unwrap();
+        let port = std::env::var("SC_S3_TEST").unwrap();
         let address = Address::parse(&format!("s3://AKIATESTKEY0001@127.0.0.1:{port}/bucket")).unwrap();
         let tries = Arc::new(std::sync::atomic::AtomicUsize::new(0));
         let counted = tries.clone();

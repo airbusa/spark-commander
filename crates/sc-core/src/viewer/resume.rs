@@ -126,7 +126,7 @@ mod tests {
 
     #[test]
     fn fingerprints_by_contents() {
-        let dir = std::env::temp_dir().join(format!("pc-resume-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("sc-resume-at-{}", std::process::id()));
         std::fs::create_dir_all(&dir).unwrap();
         let big: Vec<u8> = (0..300_000u32).map(|i| (i % 251) as u8).collect();
         std::fs::write(dir.join("a.mkv"), &big).unwrap();

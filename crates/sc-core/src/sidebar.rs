@@ -234,7 +234,7 @@ mod tests {
 
     #[test]
     fn reveals_reads_and_refreshes() {
-        let root = std::env::temp_dir().join(format!("pc-tree-{}", std::process::id()));
+        let root = std::env::temp_dir().join(format!("sc-tree-{}", std::process::id()));
         for dir in ["b/inner", "A", ".hidden", "c"] {
             std::fs::create_dir_all(root.join(dir)).unwrap();
         }

@@ -623,7 +623,7 @@ pub(crate) mod tests {
         if !executable().exists() {
             return eprintln!("no 7-Zip here: vendor/7zip/fetch.sh");
         }
-        let dir = std::env::temp_dir().join(format!("pc-archive-stop-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("sc-archive-stop-{}", std::process::id()));
         fs::create_dir_all(&dir).unwrap();
         let never = dir.join("never.tar.gz");
         assert!(Command::new("mkfifo").arg(&never).status().unwrap().success());
@@ -677,7 +677,7 @@ pub(crate) mod tests {
         if !executable().exists() {
             return eprintln!("no 7-Zip here: vendor/7zip/fetch.sh");
         }
-        let root = std::env::temp_dir().join(format!("pc-archive-edit-{}", std::process::id()));
+        let root = std::env::temp_dir().join(format!("sc-archive-edit-{}", std::process::id()));
         let _ = fs::remove_dir_all(&root);
         fs::create_dir_all(root.join("src/sub")).unwrap();
         fs::create_dir_all(root.join("newdir")).unwrap();
@@ -729,7 +729,7 @@ pub(crate) mod tests {
             executable().exists(),
             "run vendor/7zip/fetch.sh or fetch.bat first"
         );
-        let root = std::env::temp_dir().join(format!("pc-archive-test-{}", std::process::id()));
+        let root = std::env::temp_dir().join(format!("sc-archive-test-{}", std::process::id()));
         let _ = fs::remove_dir_all(&root);
         fs::create_dir_all(root.join("src/sub")).unwrap();
         fs::write(root.join("src/a.txt"), "a").unwrap();
@@ -826,7 +826,7 @@ pub(crate) mod tests {
 
     #[test]
     fn removes_what_ended_runs_left() {
-        let temp = std::env::temp_dir().join(format!("pc-stale-test-{}", std::process::id()));
+        let temp = std::env::temp_dir().join(format!("sc-stale-test-{}", std::process::id()));
         let _ = fs::remove_dir_all(&temp);
         let run = |name: &str| {
             let dir = temp.join(format!("{SCRATCH}{name}"));

@@ -627,7 +627,7 @@ mod tests {
 
     #[test]
     fn packs_tests_and_unpacks() {
-        let root = std::env::temp_dir().join(format!("pc-packing-{}", std::process::id()));
+        let root = std::env::temp_dir().join(format!("sc-packing-{}", std::process::id()));
         let _ = std::fs::remove_dir_all(&root);
         std::fs::create_dir_all(root.join("src/sub")).unwrap();
         std::fs::write(root.join("src/a.txt"), "alpha").unwrap();

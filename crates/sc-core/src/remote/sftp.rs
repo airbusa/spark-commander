@@ -646,14 +646,14 @@ impl Drop for SyncFile {
 mod tests {
     use super::*;
 
-    /// Needs PC_SFTP_TEST, and PC_SFTP_CUT: a command that ends the server's
+    /// Needs SC_SFTP_TEST, and SC_SFTP_CUT: a command that ends the server's
     /// side of the connection. The download broken so goes on from its part.
     #[test]
     #[ignore]
     fn goes_on_after_the_connection_is_lost() {
         use crate::vfs::{self, Local};
-        let address = Address::parse(&std::env::var("PC_SFTP_TEST").unwrap()).unwrap();
-        let cut = std::env::var("PC_SFTP_CUT").unwrap();
+        let address = Address::parse(&std::env::var("SC_SFTP_TEST").unwrap()).unwrap();
+        let cut = std::env::var("SC_SFTP_CUT").unwrap();
         let ask: Ask = Arc::new(|_| Reply::Cancel);
         let sftp = Sftp::connect(&address, ask).unwrap();
         let local = std::env::temp_dir().join(format!("sc-sftp-lost-{}", std::process::id()));
@@ -681,14 +681,14 @@ mod tests {
         std::fs::remove_dir_all(&local).unwrap();
     }
 
-    /// Needs a server: PC_SFTP_TEST=sftp://user@host:port/dir, with a key
+    /// Needs a server: SC_SFTP_TEST=sftp://user@host:port/dir, with a key
     /// it takes in $HOME/.ssh. The first run trusts the host key.
     #[test]
     #[ignore]
     fn talks_to_a_server() {
         use crate::ops::{Kind, Operation, Overwrite, Queue, Status, Target};
         use crate::vfs::Local;
-        let url = std::env::var("PC_SFTP_TEST").expect("PC_SFTP_TEST");
+        let url = std::env::var("SC_SFTP_TEST").expect("SC_SFTP_TEST");
         let address = Address::parse(&url).unwrap();
         let asked = Arc::new(Mutex::new(Vec::new()));
         let heard = asked.clone();
@@ -696,8 +696,8 @@ mod tests {
             heard.lock().unwrap().push(format!("{prompt:?}"));
             match prompt {
                 Prompt::UnknownHost { .. } => Reply::Trust { remember: true },
-                // PC_SFTP_SECRET answers a key's passphrase.
-                Prompt::Secret { .. } => match std::env::var("PC_SFTP_SECRET") {
+                // SC_SFTP_SECRET answers a key's passphrase.
+                Prompt::Secret { .. } => match std::env::var("SC_SFTP_SECRET") {
                     Ok(secret) => Reply::Secret(secret),
                     Err(_) => Reply::Cancel,
                 },
@@ -721,7 +721,7 @@ mod tests {
         assert_eq!(hello, "hello\n");
 
         // Through the queue: up, and down again.
-        let local = std::env::temp_dir().join(format!("pc-sftp-test-{}", std::process::id()));
+        let local = std::env::temp_dir().join(format!("sc-sftp-test-{}", std::process::id()));
         let _ = std::fs::remove_dir_all(&local);
         std::fs::create_dir_all(local.join("up/sub")).unwrap();
         std::fs::write(local.join("up/sub/big.bin"), vec![7u8; 3 << 20]).unwrap();

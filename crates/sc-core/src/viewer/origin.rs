@@ -153,7 +153,7 @@ mod tests {
 
     #[test]
     fn fetches_as_a_task_beside_the_queue() {
-        let dir = std::env::temp_dir().join(format!("pc-fetch-test-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("sc-fetch-test-{}", std::process::id()));
         std::fs::create_dir_all(&dir).unwrap();
         let file = dir.join("film.mkv");
         std::fs::write(&file, vec![7u8; 300_000]).unwrap();
@@ -194,7 +194,7 @@ mod tests {
 
     #[test]
     fn sends_back_only_changes() {
-        let dir = std::env::temp_dir().join(format!("pc-origin-test-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("sc-origin-test-{}", std::process::id()));
         std::fs::create_dir_all(&dir).unwrap();
         let file = dir.join("a.txt");
         std::fs::write(&file, "one").unwrap();

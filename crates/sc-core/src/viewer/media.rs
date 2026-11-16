@@ -1092,7 +1092,7 @@ mod tests {
         assert!(is_media(Path::new("song.flac")));
         assert!(!is_media(Path::new("notes.txt")));
         // .ts and .mts: TypeScript, unless their packets say video.
-        let dir = std::env::temp_dir().join(format!("pc-ts-test-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("sc-ts-test-{}", std::process::id()));
         std::fs::create_dir_all(&dir).unwrap();
         let file = |name: &str, bytes: &[u8]| {
             std::fs::write(dir.join(name), bytes).unwrap();

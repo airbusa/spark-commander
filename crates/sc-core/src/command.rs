@@ -113,7 +113,7 @@ mod tests {
     #[test]
     #[cfg(unix)]
     fn runs_in_the_shell() {
-        let dir = std::env::temp_dir().join(format!("pc-command-test-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("sc-command-test-{}", std::process::id()));
         std::fs::create_dir_all(&dir).unwrap();
         assert!(matches!(run("touch made", &dir, |_| {}).unwrap(), Outcome::Started));
         for _ in 0..50 {
@@ -125,11 +125,11 @@ mod tests {
         assert!(dir.join("made").exists(), "ran in the panel's folder");
         let (sent, failed) = std::sync::mpsc::channel();
         assert!(
-            matches!(run("cdrom-tool-pc-test", &dir, move |why| sent.send(why).unwrap()), Ok(Outcome::Started)),
+            matches!(run("cdrom-tool-sc-test", &dir, move |why| sent.send(why).unwrap()), Ok(Outcome::Started)),
             "not cd"
         );
         let why = failed.recv_timeout(std::time::Duration::from_secs(5));
-        assert_eq!(why.as_deref(), Ok("cdrom-tool-pc-test: command not found"));
+        assert_eq!(why.as_deref(), Ok("cdrom-tool-sc-test: command not found"));
         let (sent, failed) = std::sync::mpsc::channel();
         run("exit 3", &dir, move |why| sent.send(why).unwrap()).unwrap();
         assert!(failed.recv_timeout(std::time::Duration::from_secs(5)).is_err(), "a program's own failure is its own");

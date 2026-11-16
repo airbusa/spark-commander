@@ -167,7 +167,7 @@ mod tests {
 
     #[test]
     fn makes_links_and_stops_at_a_name_taken() {
-        let dir = std::env::temp_dir().join(format!("pc-links-test-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("sc-links-test-{}", std::process::id()));
         let _ = fs::remove_dir_all(&dir);
         fs::create_dir_all(dir.join("into")).unwrap();
         fs::write(dir.join("a.txt"), "a").unwrap();

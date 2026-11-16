@@ -1123,7 +1123,7 @@ mod tests {
 
     #[test]
     fn code_to_colour() {
-        let dir = std::env::temp_dir().join(format!("pc-syntax-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("sc-syntax-{}", std::process::id()));
         std::fs::create_dir_all(&dir).unwrap();
         let code = dir.join("a.rs");
         std::fs::write(&code, "fn main() {}\n").unwrap();
@@ -1151,7 +1151,7 @@ mod tests {
     }
 
     fn temp(name: &str, bytes: &[u8]) -> std::path::PathBuf {
-        let path = std::env::temp_dir().join(format!("pc-{name}-{}", std::process::id()));
+        let path = std::env::temp_dir().join(format!("sc-{name}-{}", std::process::id()));
         std::fs::write(&path, bytes).unwrap();
         path
     }

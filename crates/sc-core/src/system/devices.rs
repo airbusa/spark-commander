@@ -664,7 +664,7 @@ mod tests {
 
     #[test]
     fn names_gnome_mounts() {
-        let dir = std::env::temp_dir().join(format!("pc-gvfs-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("sc-gvfs-{}", std::process::id()));
         let mounts = ["smb-share:server=nas,share=media", "mtp:host=SAMSUNG_Galaxy_S23", "google-drive:host=gmail.com,user=me"];
         for name in mounts {
             std::fs::create_dir_all(dir.join(name)).unwrap();
@@ -679,7 +679,7 @@ mod tests {
 
     #[test]
     fn finds_cloud_folders() {
-        let home = std::env::temp_dir().join(format!("pc-cloud-{}", std::process::id()));
+        let home = std::env::temp_dir().join(format!("sc-cloud-{}", std::process::id()));
         let folders = ["OneDrive - Contoso", "Dropbox", "Boxes", "iCloudDrive", "Library/CloudStorage/GoogleDrive-me@gmail.com"];
         for folder in folders.iter().chain(&["Library/CloudStorage/Box-Box", "Library/Mobile Documents/com~apple~CloudDocs"]) {
             std::fs::create_dir_all(home.join(folder)).unwrap();
@@ -701,7 +701,7 @@ mod tests {
             println!("{volume:?}");
         }
     }
-    /// Unlocks the encrypted volume named PC_LUKS_TEST with PC_LUKS_SECRET, after a wrong
+    /// Unlocks the encrypted volume named SC_LUKS_TEST with SC_LUKS_SECRET, after a wrong
     /// passphrase, writes in it, then unmounts and locks it; run by hand with `--ignored`.
     #[cfg(target_os = "linux")]
     #[test]
@@ -709,7 +709,7 @@ mod tests {
     fn unlocks_an_encrypted_volume() {
         use crate::remote::{Prompt, Reply};
         use std::sync::{Arc, Mutex};
-        let (Ok(name), Ok(secret)) = (std::env::var("PC_LUKS_TEST"), std::env::var("PC_LUKS_SECRET")) else {
+        let (Ok(name), Ok(secret)) = (std::env::var("SC_LUKS_TEST"), std::env::var("SC_LUKS_SECRET")) else {
             return;
         };
         let locked = volumes().into_iter().find(|volume| volume.name == name).expect("listed");

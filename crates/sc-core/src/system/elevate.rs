@@ -212,7 +212,7 @@ mod tests {
 
     #[test]
     fn copies_moves_deletes_and_renames() {
-        let dir = std::env::temp_dir().join(format!("pc-elevate-test-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("sc-elevate-test-{}", std::process::id()));
         let _ = fs::remove_dir_all(&dir);
         fs::create_dir_all(dir.join("src/sub")).unwrap();
         fs::create_dir_all(dir.join("dst/folder")).unwrap();

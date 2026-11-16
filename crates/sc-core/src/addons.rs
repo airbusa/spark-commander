@@ -178,8 +178,18 @@ pub fn folder() -> Option<PathBuf> {
 
 /// An installed add-on's file, for `bundled::path`.
 pub(crate) fn file(dir: &str, name: &Path) -> Option<PathBuf> {
-    let path = folder()?.join(dir).join(name);
+    let root = folder()?;
+    recover(&root, dir);
+    let path = root.join(dir).join(name);
     path.exists().then_some(path)
+}
+
+/// An update cut off between its two renames left the old add-on aside: back in its place.
+fn recover(root: &Path, id: &str) {
+    let old = root.join(format!(".{id}.old"));
+    if !root.join(id).exists() && old.is_dir() {
+        let _ = std::fs::rename(old, root.join(id));
+    }
 }
 
 fn installed_version(addon: Addon) -> Option<String> {
@@ -267,8 +277,11 @@ pub fn install(addon: Addon, release: &Release, download: &Download, progress: &
 fn install_in(root: &Path, addon: Addon, release: &Release, download: &Download, progress: &dyn Fn(u64)) -> io::Result<()> {
     std::fs::create_dir_all(root)?;
     let id = addon.id();
-    let zip = root.join(format!(".{id}.zip"));
-    let fresh = root.join(format!(".{id}.new"));
+    recover(root, id);
+    // This attempt's own, beside another app's.
+    let attempt = std::process::id();
+    let zip = root.join(format!(".{id}.{attempt}.zip"));
+    let fresh = root.join(format!(".{id}.{attempt}.new"));
     let old = root.join(format!(".{id}.old"));
     let result = (|| {
         fetch_checked(download, &zip, progress)?;
@@ -286,7 +299,10 @@ fn install_in(root: &Path, addon: Addon, release: &Release, download: &Download,
         if target.exists() {
             std::fs::rename(&target, &old)?;
         }
-        std::fs::rename(&fresh, &target)?;
+        if let Err(err) = std::fs::rename(&fresh, &target) {
+            let _ = std::fs::rename(&old, &target);
+            return Err(err);
+        }
         let _ = std::fs::remove_dir_all(&old);
         Ok(())
     })();
@@ -399,6 +415,13 @@ mod tests {
         assert_eq!(std::fs::metadata(installed.join("rclone")).unwrap().permissions().mode() & 0o111, 0o111);
         let left: Vec<_> = std::fs::read_dir(&root).unwrap().map(|entry| entry.unwrap().file_name()).collect();
         assert_eq!(left, ["rclone"], "no download or old copy left");
+        // An update cut off between its renames: the old one comes back, and the next update keeps it till it is done.
+        std::fs::rename(&installed, root.join(".rclone.old")).unwrap();
+        recover(&root, "rclone");
+        assert_eq!(std::fs::read_to_string(installed.join("version.txt")).unwrap(), "1.1");
+        std::fs::rename(&installed, root.join(".rclone.old")).unwrap();
+        install_in(&root, Addon::Cloud, &release("1.2"), &download, &|_| {}).unwrap();
+        assert_eq!(std::fs::read_to_string(installed.join("version.txt")).unwrap(), "1.2");
         std::fs::remove_dir_all(&dir).unwrap();
     }
 

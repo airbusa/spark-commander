@@ -368,9 +368,12 @@ struct Candidate<'a> {
 }
 
 const CHUNK: u64 = 1 << 20;
-/// Kept from a chunk for the next, for a match across the two.
-// shortcut: a regular expression's match longer than this across chunks is missed; join chunks if one ever is.
+/// Lines kept from a chunk for the next, for a match across lines; a hex string's bytes.
+// shortcut: a match across more lines than fit in this is missed; join chunks if one ever is.
 const OVERLAP: usize = 64 << 10;
+/// A line longer than a chunk is read on to its end, up to this.
+// shortcut: a longer line is searched in pieces, its anchors at their edges; raise it if one matters.
+const LONGEST: usize = 16 << 20;
 
 impl<'a> Search<'a> {
     fn new(query: &Query, stop: &'a AtomicBool) -> Result<Self, String> {
@@ -699,7 +702,8 @@ impl TextSearch {
             false => regex::escape(&text.text),
         };
         let pattern = if text.whole_words { format!(r"\b(?:{pattern})\b") } else { pattern };
-        let pattern = if text.case_sensitive { pattern } else { format!("(?i){pattern}") };
+        // ^ and $ at each line's start and end, as grep has them.
+        let pattern = if text.case_sensitive { format!("(?m){pattern}") } else { format!("(?mi){pattern}") };
         let fail = |err: regex::Error| format!("The text's regular expression: {err}");
         let any = text.utf8 || text.utf16 || text.ansi;
         Ok(TextSearch {
@@ -724,37 +728,57 @@ impl TextSearch {
         has.is_ok_and(|has| has != self.not_containing)
     }
 
+    /// A chunk at a time, each searched up to its last line's end, so that
+    /// ^, $ and \b see the file's lines, not the chunk's edges; the rest goes
+    /// on with the next, after lines kept for a match across them.
     fn in_data(&self, path: &Path, stop: &AtomicBool) -> io::Result<bool> {
         let mut file = File::open(path)?;
-        let mut buffer = Vec::with_capacity(CHUNK as usize + OVERLAP);
+        let mut buffer = Vec::with_capacity(2 * CHUNK as usize + OVERLAP);
+        // UTF-16's byte order, as the file's start says.
+        let mut big_endian = None;
         loop {
-            let read = (&mut file).take(CHUNK).read_to_end(&mut buffer)?;
-            if self.in_bytes(&buffer) {
-                return Ok(true);
-            }
-            if (read as u64) < CHUNK || stop.load(Ordering::Relaxed) {
+            if stop.load(Ordering::Relaxed) {
                 return Ok(false);
             }
-            // Even, for UTF-16.
-            let keep = buffer.len().saturating_sub(OVERLAP) & !1;
+            let read = (&mut file).take(CHUNK).read_to_end(&mut buffer)?;
+            let big = *big_endian.get_or_insert_with(|| buffer.starts_with(&[0xfe, 0xff]));
+            let last = (read as u64) < CHUNK;
+            let even = |at: usize| if self.utf16 { (at + 1) & !1 } else { at }.min(buffer.len());
+            let lines = self.hex.is_none() && !last;
+            let cut = match memchr::memrchr(b'\n', &buffer) {
+                Some(at) if lines => even(at + 1),
+                None if lines && buffer.len() < LONGEST => continue,
+                _ => buffer.len(),
+            };
+            if self.in_bytes(&buffer[..cut], big) {
+                return Ok(true);
+            }
+            if last {
+                return Ok(false);
+            }
+            let back = cut.saturating_sub(OVERLAP.max(self.hex.as_ref().map_or(0, Vec::len)));
+            let keep = match memchr::memchr(b'\n', &buffer[back..cut]) {
+                Some(at) if lines => even(back + at + 1),
+                _ if cut < buffer.len() => cut,
+                _ => back & !1,
+            };
             buffer.drain(..keep);
         }
     }
 
-    fn in_bytes(&self, bytes: &[u8]) -> bool {
+    fn in_bytes(&self, bytes: &[u8], big_endian: bool) -> bool {
         if let Some(hex) = &self.hex {
             return memchr::memmem::find(bytes, hex).is_some();
         }
         let text = |decoded: &str| self.text.as_ref().is_some_and(|regex| regex.is_match(decoded));
         (self.utf8 && self.bytes.as_ref().is_some_and(|regex| regex.is_match(bytes)))
-            || (self.utf16 && text(&utf16(bytes)))
+            || (self.utf16 && text(&utf16(bytes, big_endian)))
             || self.ansi.is_some_and(|page| text(&codepage::decode(page, bytes)))
     }
 }
 
-/// Little-endian unless the byte order mark says big.
-fn utf16(bytes: &[u8]) -> String {
-    let encoding = match bytes.starts_with(&[0xfe, 0xff]) {
+fn utf16(bytes: &[u8], big_endian: bool) -> String {
+    let encoding = match big_endian {
         true => encoding_rs::UTF_16BE,
         false => encoding_rs::UTF_16LE,
     };
@@ -1003,6 +1027,17 @@ mod tests {
         assert_eq!(not, ["other/a.txt", "sub/c.txt", "wide.txt"]);
         assert_eq!(names(&query(text("Grüße"))), Vec::<String>::new());
         assert_eq!(names(&query(Text { utf16: true, utf8: false, ..text("grüße") })), ["wide.txt"]);
+        // Lines, not chunks: "end$" is a line's end, also where a chunk ends mid-line; big-endian text past the first chunk.
+        let mut long = "x".repeat(CHUNK as usize - 3) + "end and on\n";
+        fs::write(root.join("long.txt"), &long).unwrap();
+        assert_eq!(names(&query(Text { regex: true, ..text("end$") })), Vec::<String>::new());
+        long.push_str("the end\nmore\n");
+        fs::write(root.join("long.txt"), &long).unwrap();
+        assert_eq!(names(&query(Text { regex: true, ..text("end$") })), ["long.txt"]);
+        let wide: Vec<u8> = [0xfe, 0xff].into_iter().chain(("y".repeat(CHUNK as usize) + "far away").encode_utf16().flat_map(u16::to_be_bytes)).collect();
+        fs::write(root.join("long.txt"), wide).unwrap();
+        assert_eq!(names(&query(Text { utf16: true, utf8: false, ..text("far away") })), ["long.txt"]);
+        fs::remove_file(root.join("long.txt")).unwrap();
         let fails = |query: Query| run(&query, &places(&query.places), &AtomicBool::new(false), &mut |_| {}).is_err();
         assert!(fails(query(text(""))));
         assert!(fails(query(Text { hex: true, ..text("4g") })));

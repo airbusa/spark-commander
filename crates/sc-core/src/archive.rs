@@ -220,12 +220,41 @@ fn claim() -> io::Result<PathBuf> {
 fn claim_in(dir: PathBuf, held: &Mutex<Option<File>>) -> io::Result<PathBuf> {
     let mut held = held.lock().unwrap();
     if held.is_none() {
-        fs::create_dir_all(&dir)?;
+        make_private(&dir)?;
         let lock = File::create(dir.join(LOCK))?;
         lock.lock()?;
         *held = Some(lock);
     }
     Ok(dir)
+}
+
+/// `dir` made for this user alone: /tmp is everyone's, and another user
+/// could make the name first to read what is taken out of archives. One
+/// there already must be this user's own folder, not a link, shut to others.
+fn make_private(dir: &Path) -> io::Result<()> {
+    #[cfg(unix)]
+    {
+        use std::os::unix::fs::{DirBuilderExt, MetadataExt};
+        if let Some(parent) = dir.parent() {
+            fs::create_dir_all(parent)?;
+        }
+        match fs::DirBuilder::new().mode(0o700).create(dir) {
+            Err(err) if err.kind() == io::ErrorKind::AlreadyExists => {}
+            made => return made,
+        }
+        let meta = fs::symlink_metadata(dir)?;
+        #[cfg(any(target_os = "linux", target_os = "macos"))]
+        // SAFETY: getuid cannot fail.
+        let mine = meta.uid() == unsafe { libc::getuid() };
+        #[cfg(not(any(target_os = "linux", target_os = "macos")))]
+        let mine = true;
+        match meta.is_dir() && mine && meta.mode() & 0o077 == 0 {
+            true => Ok(()),
+            false => Err(io::Error::new(io::ErrorKind::PermissionDenied, format!("{} is not this user's own folder", dir.display()))),
+        }
+    }
+    #[cfg(not(unix))]
+    fs::create_dir_all(dir)
 }
 
 /// Removes `scratch()` and `tars()` as the app quits; Windows deletes no open file, so unlocked first.
@@ -827,6 +856,23 @@ pub(crate) mod tests {
         fs::remove_dir_all(&root).unwrap();
         remove_scratch();
         assert!(!scratch().exists());
+    }
+
+    #[cfg(unix)]
+    #[test]
+    fn keeps_its_scratch_to_this_user() {
+        use std::os::unix::fs::PermissionsExt;
+        let root = std::env::temp_dir().join(format!("sc-private-{}", std::process::id()));
+        let _ = fs::remove_dir_all(&root);
+        make_private(&root.join("mine")).unwrap();
+        assert_eq!(fs::metadata(root.join("mine")).unwrap().permissions().mode() & 0o777, 0o700);
+        make_private(&root.join("mine")).unwrap();
+        fs::create_dir(root.join("open")).unwrap();
+        fs::set_permissions(root.join("open"), fs::Permissions::from_mode(0o755)).unwrap();
+        assert!(make_private(&root.join("open")).is_err(), "readable by others");
+        std::os::unix::fs::symlink(root.join("mine"), root.join("link")).unwrap();
+        assert!(make_private(&root.join("link")).is_err(), "a link");
+        fs::remove_dir_all(&root).unwrap();
     }
 
     #[test]

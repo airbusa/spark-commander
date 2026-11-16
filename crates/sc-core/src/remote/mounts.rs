@@ -89,6 +89,8 @@ pub fn share_root(path: &Path) -> Option<PathBuf> {
 /// let it go; kio-fuse serves every share from one mount of its own and
 /// drops one nothing uses, so there is nothing to do.
 pub fn leave(root: &Path) -> io::Result<()> {
+    #[cfg(any(windows, target_os = "macos"))]
+    return system::leave(root);
     #[cfg(not(any(windows, target_os = "macos")))]
     {
         let gvfs = ROOTS.lock().unwrap().get_or_insert_with(read_roots).iter().any(|known| matches!(known, Root::Gvfs(gvfs) if root.starts_with(gvfs)));
@@ -96,13 +98,11 @@ pub fn leave(root: &Path) -> io::Result<()> {
             return Ok(());
         }
         let done = std::process::Command::new("gio").args(["mount", "-u"]).arg(root).output()?;
-        return match done.status.success() {
+        match done.status.success() {
             true => Ok(()),
             false => Err(io::Error::other(String::from_utf8_lossy(&done.stderr).trim().to_owned())),
-        };
+        }
     }
-    #[cfg(any(windows, target_os = "macos"))]
-    return system::leave(root);
 }
 
 fn find_roots(mounts: &str, runtime: Option<&Path>) -> Vec<Root> {

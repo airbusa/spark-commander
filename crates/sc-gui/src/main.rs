@@ -2123,8 +2123,8 @@ impl Commander {
                                 })),
                         )
                     })
-                    // A server's, or a phone's KDE Connect mounted.
-                    .when(panel.remote().is_some() || self.device_of(panel.folder()).is_some(), |el| {
+                    // A server's, a share mounted (SMB, WebDAV, NFS), or a phone's KDE Connect mounted.
+                    .when(panel.remote().is_some() || self.device_of(panel.folder()).is_some() || sc_core::remote::mounts::share_root(panel.folder()).is_some(), |el| {
                         el.child(
                             Button::new(("disconnect", ix))
                                 .ghost()

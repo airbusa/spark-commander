@@ -217,12 +217,14 @@ impl Commander {
     }
 
     /// Disconnect: the active panel goes home.
-    /// Leaves the server, or unmounts the phone, the active panel is on.
+    /// Leaves the server or share, or unmounts the phone, the active panel is on.
     pub(crate) fn disconnect(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let panel = self.panels[self.active].tabs.current();
         if panel.remote().is_none() {
             if let Some(device) = self.device_of(panel.folder()) {
                 self.unmount_device(&device, window, cx);
+            } else if let Some(root) = mounts::share_root(panel.folder()) {
+                self.leave_share(root, window, cx);
             }
             return;
         }
@@ -234,6 +236,29 @@ impl Commander {
             window,
             cx,
         );
+    }
+}
+
+impl Commander {
+    /// Panels in the share go home first, so nothing holds it; then it is let go.
+    fn leave_share(&mut self, root: PathBuf, window: &mut Window, cx: &mut Context<Self>) {
+        let home = std::env::home_dir().unwrap_or_else(|| PathBuf::from("/"));
+        for ix in 0..2 {
+            let panel = self.panels[ix].tabs.current();
+            if panel.remote().is_none() && panel.folder().starts_with(&root) {
+                let home = home.clone();
+                self.navigate_on(ix, false, move |panel| panel.go_to_folder(home), window, cx);
+            }
+        }
+        let shown = mounts::url_of(&root).unwrap_or_else(|| root.display().to_string());
+        let left = cx.background_executor().spawn(async move { mounts::leave(&root) });
+        cx.spawn_in(window, async move |_, cx| {
+            if let Err(err) = left.await {
+                let note = Notification::error(format!("{shown}: could not disconnect: {err}"));
+                let _ = cx.update(|window, cx| window.push_notification(note, cx));
+            }
+        })
+        .detach();
     }
 }
 

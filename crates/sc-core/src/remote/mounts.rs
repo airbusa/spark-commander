@@ -65,13 +65,44 @@ enum Root {
 /// The address a mounted folder came from, for the path bar; none for
 /// this computer's own folders.
 pub fn url_of(path: &Path) -> Option<String> {
-    let mut roots = ROOTS.lock().unwrap();
-    let roots = roots.get_or_insert_with(|| {
-        let mounts = std::fs::read_to_string("/proc/self/mounts").unwrap_or_default();
-        let runtime = std::env::var_os("XDG_RUNTIME_DIR").map(PathBuf::from);
-        find_roots(&mounts, runtime.as_deref())
-    });
-    roots.iter().find_map(|root| address_in(root, path))
+    ROOTS.lock().unwrap().get_or_insert_with(read_roots).iter().find_map(|root| address_in(root, path))
+}
+
+fn read_roots() -> Vec<Root> {
+    let mounts = std::fs::read_to_string("/proc/self/mounts").unwrap_or_default();
+    let runtime = std::env::var_os("XDG_RUNTIME_DIR").map(PathBuf::from);
+    find_roots(&mounts, runtime.as_deref())
+}
+
+/// The folder of the share `path` is in, as this app mounts shares:
+/// kio-fuse's or gvfs's on Linux, `\\server\share` on Windows, a NetFS
+/// mount under /Volumes on macOS; none for this computer's own folders.
+/// Asks no server, so it may run as the window draws.
+pub fn share_root(path: &Path) -> Option<PathBuf> {
+    #[cfg(not(any(windows, target_os = "macos")))]
+    return ROOTS.lock().unwrap().get_or_insert_with(read_roots).iter().find_map(|root| share_in(root, path));
+    #[cfg(any(windows, target_os = "macos"))]
+    return system::share_root(path);
+}
+
+/// Leaves the share at `root` (`share_root`'s): gvfs, Windows and macOS
+/// let it go; kio-fuse serves every share from one mount of its own and
+/// drops one nothing uses, so there is nothing to do.
+pub fn leave(root: &Path) -> io::Result<()> {
+    #[cfg(not(any(windows, target_os = "macos")))]
+    {
+        let gvfs = ROOTS.lock().unwrap().get_or_insert_with(read_roots).iter().any(|known| matches!(known, Root::Gvfs(gvfs) if root.starts_with(gvfs)));
+        if !gvfs {
+            return Ok(());
+        }
+        let done = std::process::Command::new("gio").args(["mount", "-u"]).arg(root).output()?;
+        return match done.status.success() {
+            true => Ok(()),
+            false => Err(io::Error::other(String::from_utf8_lossy(&done.stderr).trim().to_owned())),
+        };
+    }
+    #[cfg(any(windows, target_os = "macos"))]
+    return system::leave(root);
 }
 
 fn find_roots(mounts: &str, runtime: Option<&Path>) -> Vec<Root> {
@@ -82,6 +113,17 @@ fn find_roots(mounts: &str, runtime: Option<&Path>) -> Vec<Root> {
     });
     let gvfs = runtime.map(|runtime| Root::Gvfs(runtime.join("gvfs")));
     kio.chain(gvfs).collect()
+}
+
+/// kio-fuse's `<root>/<scheme>/<host>`, gvfs's `<root>/<share's name>`.
+fn share_in(root: &Root, path: &Path) -> Option<PathBuf> {
+    match root {
+        Root::KioFuse(root) => {
+            let mut parts = path.strip_prefix(root).ok()?.iter();
+            Some(root.join(parts.next()?).join(parts.next()?))
+        }
+        Root::Gvfs(root) => Some(root.join(path.strip_prefix(root).ok()?.iter().next()?)),
+    }
 }
 
 fn address_in(root: &Root, path: &Path) -> Option<String> {
@@ -290,10 +332,33 @@ mod system {
     use std::io;
     use std::path::PathBuf;
 
-    use windows::Win32::NetworkManagement::WNet::{CONNECT_TEMPORARY, NETRESOURCEW, RESOURCETYPE_DISK, WNetAddConnection2W};
+    use std::path::Path;
+
+    use windows::Win32::NetworkManagement::WNet::{CONNECT_TEMPORARY, NET_CONNECT_FLAGS, NETRESOURCEW, RESOURCETYPE_DISK, WNetAddConnection2W, WNetCancelConnection2W};
     use windows::core::{HSTRING, PWSTR};
 
     use super::Login;
+
+    /// `\\server\share` of a path in it.
+    pub fn share_root(path: &Path) -> Option<PathBuf> {
+        use std::path::{Component, Prefix};
+        let Some(Component::Prefix(prefix)) = path.components().next() else {
+            return None;
+        };
+        match prefix.kind() {
+            Prefix::UNC(server, share) | Prefix::VerbatimUNC(server, share) => Some(PathBuf::from(format!(r"\\{}\{}", server.display(), share.display()))),
+            _ => None,
+        }
+    }
+
+    /// The connection to the share, Windows' until logging off, ended; none there is fine.
+    pub fn leave(root: &Path) -> io::Result<()> {
+        const NOT_CONNECTED: u32 = 2250;
+        match unsafe { WNetCancelConnection2W(&HSTRING::from(root.as_os_str()), NET_CONNECT_FLAGS(0), false) }.0 {
+            0 | NOT_CONNECTED => Ok(()),
+            code => Err(io::Error::from_raw_os_error(code as i32)),
+        }
+    }
 
     pub fn mount(url: &str, login: Option<&Login>) -> io::Result<PathBuf> {
         let (path, share) = super::unc(url).ok_or_else(|| io::Error::other("the share is missing: smb://server/share"))?;
@@ -392,29 +457,62 @@ mod system {
         path.bytes().map(|byte| if keep(&byte) { (byte as char).to_string() } else { format!("%{byte:02X}") }).collect()
     }
 
-    /// Where `host`'s `share` (an NFS export: its path) is mounted already.
-    fn mounted_at(host: &str, share: &str) -> Option<PathBuf> {
+    /// The mounts the system has, without waiting for any server: what each
+    /// is of (lowercase), where it is, and its kind.
+    fn mounts() -> Vec<(String, PathBuf, String)> {
         let mut mounts: *mut libc::statfs = std::ptr::null_mut();
         let count = unsafe { libc::getmntinfo(&mut mounts, libc::MNT_NOWAIT) };
         if count <= 0 || mounts.is_null() {
-            return None;
+            return Vec::new();
         }
+        let text = |field: &[libc::c_char]| unsafe { CStr::from_ptr(field.as_ptr()) }.to_string_lossy().into_owned();
         let mounts = unsafe { std::slice::from_raw_parts(mounts, count as usize) };
+        mounts.iter().map(|mount| (text(&mount.f_mntfromname).to_lowercase(), PathBuf::from(text(&mount.f_mntonname)), text(&mount.f_fstypename))).collect()
+    }
+
+    /// Where `host`'s `share` (an NFS export: its path) is mounted already.
+    fn mounted_at(host: &str, share: &str) -> Option<PathBuf> {
         let (host, share) = (host.to_lowercase(), share.trim_matches('/').to_lowercase());
-        mounts.iter().find_map(|mount| {
-            let text = |field: &[libc::c_char]| unsafe { CStr::from_ptr(field.as_ptr()) }.to_string_lossy().to_lowercase();
-            let from = text(&mount.f_mntfromname);
+        mounts().into_iter().find_map(|(from, on, _)| {
             // smbfs: //user@host/share; nfs: host:/export.
             let smb = from.trim_start_matches('/').rsplit('@').next() == Some(&format!("{host}/{share}"));
             let nfs = from == format!("{host}:/{share}");
-            (smb || nfs).then(|| PathBuf::from(unsafe { CStr::from_ptr(mount.f_mntonname.as_ptr()) }.to_string_lossy().into_owned()))
+            (smb || nfs).then_some(on)
         })
+    }
+
+    /// The network share a path is in.
+    pub fn share_root(path: &std::path::Path) -> Option<PathBuf> {
+        const NETWORK: [&str; 4] = ["smbfs", "nfs", "webdav", "afpfs"];
+        let shares = mounts().into_iter().filter(|(_, on, kind)| NETWORK.contains(&kind.as_str()) && path.starts_with(on));
+        shares.map(|(_, on, _)| on).max_by_key(|on| on.as_os_str().len())
+    }
+
+    pub fn leave(root: &std::path::Path) -> io::Result<()> {
+        use std::os::unix::ffi::OsStrExt;
+        let root = std::ffi::CString::new(root.as_os_str().as_bytes())?;
+        match unsafe { libc::unmount(root.as_ptr(), 0) } {
+            0 => Ok(()),
+            _ => Err(io::Error::last_os_error()),
+        }
     }
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn finds_the_share_a_folder_is_in() {
+        let kio = Root::KioFuse("/run/user/1000/kio-fuse-ab12".into());
+        let share = |root: &Root, path: &str| share_in(root, Path::new(path));
+        assert_eq!(share(&kio, "/run/user/1000/kio-fuse-ab12/webdavs/me@dav.example/docs/a").unwrap(), Path::new("/run/user/1000/kio-fuse-ab12/webdavs/me@dav.example"));
+        assert_eq!(share(&kio, "/run/user/1000/kio-fuse-ab12/webdavs"), None, "no server yet");
+        assert_eq!(share(&kio, "/home/me"), None);
+        let gvfs = Root::Gvfs("/run/user/1000/gvfs".into());
+        let named = "/run/user/1000/gvfs/smb-share:server=nas,share=media";
+        assert_eq!(share(&gvfs, &format!("{named}/Films")).unwrap(), Path::new(named));
+    }
 
     #[test]
     fn makes_windows_share_paths() {

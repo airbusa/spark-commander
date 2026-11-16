@@ -1785,7 +1785,7 @@ pub fn online_only(meta: &fs::Metadata) -> bool {
 
 /// Hidden, system, and the Attr column's text.
 #[cfg(windows)]
-fn attributes(_: &OsStr, meta: Option<&fs::Metadata>) -> (bool, bool, String) {
+fn attributes(name: &OsStr, meta: Option<&fs::Metadata>) -> (bool, bool, String) {
     use std::os::windows::fs::MetadataExt;
     const READ_ONLY: u32 = 0x1;
     const HIDDEN: u32 = 0x2;
@@ -1800,7 +1800,8 @@ fn attributes(_: &OsStr, meta: Option<&fs::Metadata>) -> (bool, bool, String) {
         flag(SYSTEM, 's'),
     ];
     (
-        bits & HIDDEN != 0,
+        // Dot files too, hidden as Unix hides them (.git, .vscode).
+        bits & HIDDEN != 0 || dot_file(name),
         bits & SYSTEM != 0,
         text.iter().collect(),
     )
@@ -1840,7 +1841,7 @@ fn attributes(name: &OsStr, meta: Option<&fs::Metadata>) -> (bool, bool, String)
 }
 
 pub(crate) fn dot_file(name: &OsStr) -> bool {
-    cfg!(not(windows)) && name.as_encoded_bytes().first() == Some(&b'.')
+    name.as_encoded_bytes().first() == Some(&b'.')
 }
 
 fn by_name(a: &Entry, b: &Entry) -> Ordering {
@@ -2132,7 +2133,6 @@ mod tests {
     }
 
     #[test]
-    #[cfg(not(windows))]
     fn hides_dot_files() {
         let root = std::env::temp_dir().join(format!("sc-filter-test-{}", std::process::id()));
         fs::create_dir_all(root.join(".hidden-dir")).unwrap();

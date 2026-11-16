@@ -61,9 +61,12 @@ pub fn save_text(path: &Path, text: &str) -> io::Result<()> {
         found => found?,
     };
     let permissions = fs::metadata(&target)?.permissions();
-    let name = target.file_name().unwrap_or_default().to_string_lossy();
-    let temp = target.with_file_name(format!(".{name}.sc-save"));
-    let written = fs::write(&temp, text)
+    let temp = target.with_file_name(save_name(&target));
+    let written = fs::OpenOptions::new()
+        .write(true)
+        .create_new(true)
+        .open(&temp)
+        .and_then(|mut file| io::Write::write_all(&mut file, text.as_bytes()))
         .and_then(|()| fs::set_permissions(&temp, permissions))
         .and_then(|()| fs::rename(&temp, &target));
     if written.is_err() {
@@ -72,13 +75,21 @@ pub fn save_text(path: &Path, text: &str) -> io::Result<()> {
     written
 }
 
+/// A save's own temporary name, beside another editor's saving the same file.
+fn save_name(path: &Path) -> std::ffi::OsString {
+    static SAVES: std::sync::atomic::AtomicU64 = std::sync::atomic::AtomicU64::new(0);
+    let save = SAVES.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
+    let mut name = std::ffi::OsString::from(".");
+    name.push(path.file_name().unwrap_or_default());
+    name.push(format!(".{}-{save}.sc-save", std::process::id()));
+    name
+}
+
 /// `text` in a new file only the user may read, to be written into `path`
 /// as administrator (`elevate::Action::Write`).
 pub fn stage_text(path: &Path, text: &str) -> io::Result<std::path::PathBuf> {
     use std::io::Write as _;
-    let name = path.file_name().unwrap_or_default().to_string_lossy();
-    let staged = std::env::temp_dir().join(format!("sc-save-{}-{name}", std::process::id()));
-    let _ = fs::remove_file(&staged);
+    let staged = std::env::temp_dir().join(save_name(path));
     let mut options = fs::OpenOptions::new();
     options.write(true).create_new(true);
     #[cfg(unix)]

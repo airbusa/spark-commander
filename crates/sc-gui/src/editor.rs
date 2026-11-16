@@ -128,6 +128,12 @@ struct TextEditor {
     upload: Option<Upload>,
     editor: Entity<EditorState>,
     edited: bool,
+    /// Saved here, not yet on the server it came from.
+    unsent: bool,
+    /// Being sent to the server; true: saved again meanwhile, to send after.
+    sending: Option<bool>,
+    /// The window closes once the server has it.
+    close_after: bool,
     /// Not to edit as text: why, and the text shown on request.
     unfit: Option<(&'static str, String)>,
     /// Shown anyway: the first save asks, as it changes what is not text.
@@ -265,6 +271,9 @@ impl TextEditor {
             upload,
             editor,
             edited: false,
+            unsent: false,
+            sending: None,
+            close_after: false,
             unfit,
             forced: false,
             options,
@@ -409,23 +418,55 @@ impl TextEditor {
         }
     }
 
-    /// The file holds the text: a server's copy goes back up.
+    /// The file holds the text: a server's copy goes back up, and counts
+    /// as saved once it is there.
     fn saved(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         self.edited = false;
-        window.set_window_title(&title(&self.path, false));
-        if let Some(upload) = self.upload.clone() {
-            let local = self.path.clone();
-            cx.spawn_in(window, async move |_, cx| {
-                let sent = cx.background_executor().spawn(async move { upload(&local) });
-                let note = match sent.await {
-                    Ok(text) => Notification::success(text),
-                    Err(err) => Notification::error(format!("Could not save it back: {err}")).autohide(false),
-                };
-                let _ = cx.update(|window, cx| window.push_notification(note, cx));
-            })
-            .detach();
+        if self.upload.is_some() {
+            self.unsent = true;
+            self.send(window, cx);
         }
+        window.set_window_title(&title(&self.path, self.unsent));
         cx.notify();
+    }
+
+    /// The saved copy to the server, one sending at a time: saved again
+    /// meanwhile, it goes again after.
+    // shortcut: the server's file changed by someone else since it was opened goes unnoticed; compare its time first to catch that.
+    fn send(&mut self, window: &mut Window, cx: &mut Context<Self>) {
+        if let Some(again) = &mut self.sending {
+            *again = true;
+            return;
+        }
+        let Some(upload) = self.upload.clone() else {
+            return;
+        };
+        self.sending = Some(false);
+        let local = self.path.clone();
+        cx.spawn_in(window, async move |this, cx| {
+            let sent = cx.background_executor().spawn(async move { upload(&local) }).await;
+            let _ = this.update_in(cx, |this, window, cx| {
+                let again = this.sending.take() == Some(true);
+                match sent {
+                    Ok(_) if again => this.send(window, cx),
+                    Ok(text) => {
+                        this.unsent = false;
+                        window.set_window_title(&title(&this.path, this.edited));
+                        if this.close_after {
+                            return window.remove_window();
+                        }
+                        window.push_notification(Notification::success(text), cx);
+                    }
+                    Err(err) => {
+                        this.close_after = false;
+                        let text = format!("Could not save it back: {err}. Save tries again.");
+                        window.push_notification(Notification::error(text).autohide(false), cx);
+                    }
+                }
+                cx.notify();
+            });
+        })
+        .detach();
     }
 
     /// Saves to a new file, which the editor edits from then on.
@@ -525,22 +566,43 @@ impl TextEditor {
         });
     }
 
-    /// Unsaved changes ask first.
+    /// Unsaved changes ask first; one being sent to its server is waited for.
     fn may_close(&mut self, window: &mut Window, cx: &mut Context<Self>) -> bool {
-        if !self.edited {
+        if !self.edited && self.sending.is_some() {
+            self.close_after = true;
+            window.push_notification(Notification::info("It closes once the server has it."), cx);
+            return false;
+        }
+        if !self.edited && !self.unsent {
             return true;
         }
         let this = cx.weak_entity();
         let name = self.path.file_name().unwrap_or_default().to_string_lossy().into_owned();
+        let what = match self.edited {
+            true => format!("{name} has changes that are not saved."),
+            false => format!("{name} is not saved on its server: sending it failed."),
+        };
         window.open_dialog(cx, move |dialog, _, _| {
             let save = this.clone();
             let buttons = h_flex()
                 .gap_2()
                 .justify_end()
                 .child(Button::new("editor-save").primary().label("Save").on_click(move |_, window, cx| {
-                    let saved = save.update(cx, |this, cx| this.save(window, cx));
-                    if saved.unwrap_or(false) {
-                        window.remove_window();
+                    // A server's copy: closed once sent.
+                    let saved = save.update(cx, |this, cx| {
+                        let saved = match this.edited {
+                            true => this.save(window, cx),
+                            false => {
+                                this.send(window, cx);
+                                true
+                            }
+                        };
+                        this.close_after = saved && this.unsent;
+                        saved && !this.unsent
+                    });
+                    match saved {
+                        Ok(true) => window.remove_window(),
+                        _ => window.close_dialog(cx),
                     }
                 }))
                 .child(Button::new("editor-discard").outline().label("Don't save").on_click(|_, window, _| window.remove_window()))
@@ -548,7 +610,7 @@ impl TextEditor {
             dialog
                 .title("Save changes?")
                 .overlay_closable(false)
-                .child(format!("{name} has changes that are not saved."))
+                .child(what.clone())
                 .footer(buttons)
         });
         false
@@ -667,7 +729,7 @@ impl Render for TextEditor {
         }
         let this = cx.weak_entity();
         // Its close button asks about changes, as the desktop's would.
-        let header = crate::header::title_bar(title(&self.path, self.edited), window, cx).map(|bar| {
+        let header = crate::header::title_bar(title(&self.path, self.edited || self.unsent), window, cx).map(|bar| {
             bar.on_close_window(move |_, window, cx| {
                 if this.update(cx, |this, cx| this.may_close(window, cx)).unwrap_or(true) {
                     window.remove_window();
@@ -806,6 +868,8 @@ impl Render for TextEditor {
                     .text_color(theme.muted_foreground)
                     .child(div().flex_1().min_w_0().truncate().child(self.path.display().to_string()))
                     .when(self.edited, |el| el.child("Modified"))
+                    .when(!self.edited && self.sending.is_some(), |el| el.child("Saving to the server"))
+                    .when(!self.edited && self.unsent && self.sending.is_none(), |el| el.child("Not on the server"))
                     .when(self.unfit.is_none(), |el| el.children(status)),
             )
     }

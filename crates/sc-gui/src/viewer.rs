@@ -1,3 +1,8 @@
+pub mod compare_view;
+pub mod media_view;
+pub mod pdf_view;
+pub mod quick_view;
+
 use std::cell::{Cell, RefCell};
 use std::io;
 use std::path::{Path, PathBuf};
@@ -16,18 +21,18 @@ use gpui_kit::component::button::{Button, ButtonVariants};
 use gpui_kit::component::{ActiveTheme, Disableable, IconName, Sizable, WindowExt, h_flex, v_flex};
 use gpui_kit::prelude::FluentBuilder;
 use gpui_kit::*;
-use sc_core::{codepage, ebook, resume};
+use sc_core::{viewer::codepage, viewer::ebook, viewer::resume};
 use sc_core::settings::ViewerSettings;
 use sc_core::menu::Command;
 use sc_core::viewer::{
     COPY_LIMIT, Font, Layout, MARKDOWN_LIMIT, Mode, Query, Row, Searches, Shown, TextFile, search_url,
 };
 
-use crate::find_dialog;
+use crate::dialogs::find_dialog;
 use crate::menus::{Entries, Run};
-use crate::minimap::{self, Minimap};
-use crate::media_view::MediaView;
-use crate::pdf_view::PdfView;
+use crate::editor::minimap::{self, Minimap};
+use crate::viewer::media_view::MediaView;
+use crate::viewer::pdf_view::PdfView;
 
 actions!(
     viewer,
@@ -315,7 +320,7 @@ struct Viewer {
     book: Option<Result<SharedString, String>>,
     /// The book's text as its minimap shows it.
     book_map: Option<SharedString>,
-    /// The book's fingerprint, by which its place is kept (sc_core::resume).
+    /// The book's fingerprint, by which its place is kept (sc_core::viewer::resume).
     book_print: Option<String>,
     /// Where the book was left, until scrolled there once it is laid out.
     book_resume: Option<f64>,
@@ -1146,7 +1151,7 @@ impl Viewer {
             let file = path.clone();
             let converted = cx
                 .background_executor()
-                .spawn(async move { sc_core::convert::to_pdf(&converter, &file) })
+                .spawn(async move { sc_core::viewer::convert::to_pdf(&converter, &file) })
                 .await;
             let _ = this.update(cx, |this, cx| {
                 // Another file or mode since: not for it.
@@ -1169,7 +1174,7 @@ impl Viewer {
     /// The Image mode of a picture only libmpv reads: drawn once, at its own size.
     fn decode_still(&mut self, cx: &mut Context<Self>) {
         let path = self.shown.path().to_owned();
-        let wanted = self.shown.mode == Mode::Picture && sc_core::media::is_still(&path);
+        let wanted = self.shown.mode == Mode::Picture && sc_core::viewer::media::is_still(&path);
         if self.still.as_ref().is_some_and(|(shown, _)| *shown == path && wanted) {
             return;
         }
@@ -1179,7 +1184,7 @@ impl Viewer {
         self._still = wanted.then(|| {
             cx.spawn(async move |this, cx| {
                 let file = path.clone();
-                let drawn = cx.background_executor().spawn(async move { sc_core::media::still(&file, 16384) }).await;
+                let drawn = cx.background_executor().spawn(async move { sc_core::viewer::media::still(&file, 16384) }).await;
                 let image = drawn.and_then(|frame| {
                     let buffer = image::RgbaImage::from_raw(frame.width, frame.height, frame.bgra);
                     buffer.map(|buffer| Arc::new(RenderImage::new([image::Frame::new(buffer)]))).ok_or_else(|| "no picture".into())
@@ -1196,7 +1201,7 @@ impl Viewer {
     }
 
     /// The player, when video or sound is shown.
-    fn player(&self, cx: &App) -> Option<Rc<sc_core::media::Player>> {
+    fn player(&self, cx: &App) -> Option<Rc<sc_core::viewer::media::Player>> {
         self.media.as_ref().and_then(|media| media.read(cx).player())
     }
 
@@ -1651,7 +1656,7 @@ impl Viewer {
         };
         let zoomed = self.fit && self.zoom != 1.;
         let source = match &self.still {
-            _ if !sc_core::media::is_still(self.shown.path()) => ImageSource::from(self.shown.path().to_owned()),
+            _ if !sc_core::viewer::media::is_still(self.shown.path()) => ImageSource::from(self.shown.path().to_owned()),
             Some((path, Ok(image))) if path == self.shown.path() => ImageSource::Render(image.clone()),
             Some((path, Err(err))) if path == self.shown.path() => {
                 let text = format!("{err}. 1 shows the file as text.");
@@ -1689,7 +1694,7 @@ impl Viewer {
             .absolute()
             .inset_0()
             .p_2()
-            .child(crate::views::measure(self.picture_area.clone(), cx.entity_id()))
+            .child(crate::panel::views::measure(self.picture_area.clone(), cx.entity_id()))
             .child(picture)
             .when(zoomed, |el| el.child(div().absolute().inset_0().child(Scrollbar::new(&self.picture_scroll))))
             .into_any_element()

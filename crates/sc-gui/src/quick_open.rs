@@ -9,7 +9,7 @@ use gpui_kit::assets::IconName as Lucide;
 use gpui_kit::component::command::{Command as Palette, CommandGroup, CommandItem, CommandState};
 use gpui_kit::component::{Icon, IndexPath, WindowExt};
 use gpui_kit::*;
-use sc_core::devices::Volume;
+use sc_core::system::devices::Volume;
 use sc_core::menu::{self, Command};
 use sc_core::remote::Address;
 

@@ -1,5 +1,7 @@
 //! Archives through the bundled 7-Zip.
 
+pub mod packing;
+
 use std::collections::HashSet;
 use std::ffi::{OsStr, OsString};
 use std::fs::{self, File};
@@ -386,7 +388,7 @@ pub(crate) fn list_watched(archive: &Path, watch: &Watch) -> io::Result<Vec<Item
 
 /// Where a compressed tar's tar is unpacked this run: by its path, size and time.
 fn unpacked_tar(archive: &Path) -> Option<PathBuf> {
-    let key = crate::convert::key(archive).ok()?;
+    let key = crate::viewer::convert::key(archive).ok()?;
     is_compressed_tar(archive).then(|| tars().join(format!("{key}.tar")))
 }
 
@@ -411,7 +413,7 @@ fn unpack_tar(archive: &Path, watch: &Watch) -> io::Result<PathBuf> {
     let reading = std::thread::spawn(move || {
         let mut chunk = [0; 4096];
         while let Ok(read @ 1..) = progress.read(&mut chunk) {
-            if let Some(at) = crate::packing::last_percent(&chunk[..read]) {
+            if let Some(at) = crate::archive::packing::last_percent(&chunk[..read]) {
                 percent.store(at, Ordering::Relaxed);
             }
         }
@@ -474,7 +476,7 @@ pub(crate) fn seven_zip(args: &[&str], archive: Option<&Path>) -> Command {
 // Releases ship it; source builds use `vendor/7zip`.
 fn executable() -> PathBuf {
     let name = if cfg!(windows) { "7z.exe" } else { "7zz" };
-    crate::bundled::path("7zip", name)
+    crate::addons::bundled::path("7zip", name)
 }
 
 pub(crate) fn missing(err: io::Error) -> io::Error {

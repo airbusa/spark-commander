@@ -1,6 +1,13 @@
 //! Servers, whatever the protocol: addresses, what connecting asks, and the
 //! connection itself.
 
+pub mod cloud;
+pub mod connections;
+pub mod ftp;
+pub mod mounts;
+pub mod secrets;
+pub mod sftp;
+
 use std::collections::HashSet;
 use std::io;
 use std::path::PathBuf;
@@ -8,7 +15,6 @@ use std::sync::{Arc, Mutex};
 
 use serde::{Deserialize, Serialize};
 
-use crate::secrets;
 use crate::vfs::Remote;
 
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Serialize, Deserialize)]
@@ -193,7 +199,7 @@ pub type Ask = Arc<dyn Fn(Prompt) -> Reply + Send + Sync>;
 /// The key the keyring keeps the server's password under, as the login asks for it.
 pub fn keyring_key(address: &Address) -> String {
     match address.scheme {
-        Scheme::Sftp => crate::sftp::keyring_key(address),
+        Scheme::Sftp => crate::remote::sftp::keyring_key(address),
         scheme => {
             let user = address.user.as_deref().unwrap_or("anonymous");
             let port = address.port.unwrap_or(scheme.default_port());
@@ -219,19 +225,19 @@ pub fn connect(address: &Address, ask: Ask) -> io::Result<(Arc<dyn Remote>, Path
     });
     match address.scheme {
         Scheme::Sftp => {
-            let sftp = crate::sftp::Sftp::connect(address, ask)?;
+            let sftp = crate::remote::sftp::Sftp::connect(address, ask)?;
             let start = sftp.start(address);
             Ok((sftp, start))
         }
         Scheme::Ftp | Scheme::Ftps => {
-            let ftp = crate::ftp::Ftp::connect(address, ask)?;
+            let ftp = crate::remote::ftp::Ftp::connect(address, ask)?;
             let start = ftp.start(address);
             Ok((ftp, start))
         }
         // `mounts` takes SMB and NFS, and WebDAV on Linux; scmd gets WebDAV here.
         Scheme::Smb | Scheme::Nfs => Err(io::Error::from(io::ErrorKind::Unsupported)),
         Scheme::S3 | Scheme::B2 | Scheme::Swift | Scheme::Webdav | Scheme::Webdavs => {
-            let store = crate::cloud::connect(address, &ask)?;
+            let store = crate::remote::cloud::connect(address, &ask)?;
             let start = store.start(address);
             Ok((store, start))
         }

@@ -5,6 +5,8 @@
 //! `addons.json`; installed in the user's data folder, where `bundled::path`
 //! finds them.
 
+pub(crate) mod bundled;
+
 use std::collections::BTreeMap;
 use std::io::{self, Read, Write};
 use std::path::{Path, PathBuf};
@@ -87,7 +89,7 @@ impl Addon {
         if let Some(version) = installed_version(self) {
             return Presence::Ours(version);
         }
-        let builtin = crate::bundled::builtin(self.id(), self.files()[0]);
+        let builtin = crate::addons::bundled::builtin(self.id(), self.files()[0]);
         builtin.map_or(Presence::Missing, Presence::Elsewhere)
     }
 }
@@ -95,11 +97,11 @@ impl Addon {
 /// The missing add-on that would show this file: libmpv a video, sound, or
 /// HEIC or AVIF picture; the Craft tools an office document.
 pub fn wanted_for(path: &Path) -> Option<Addon> {
-    if crate::media::is_media(path) || crate::media::is_still(path) {
-        return (!crate::media::available()).then_some(Addon::Media);
+    if crate::viewer::media::is_media(path) || crate::viewer::media::is_still(path) {
+        return (!crate::viewer::media::available()).then_some(Addon::Media);
     }
-    let office = crate::convert::is_office(path) && crate::pdf::available();
-    (office && crate::convert::converter_for(path).is_none()).then_some(Addon::Office)
+    let office = crate::viewer::convert::is_office(path) && crate::viewer::pdf::available();
+    (office && crate::viewer::convert::converter_for(path).is_none()).then_some(Addon::Office)
 }
 
 /// What comes with the app, shown beside the add-ons: the same facts, no download.

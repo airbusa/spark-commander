@@ -1,3 +1,10 @@
+pub mod context_menu;
+#[cfg(any(target_os = "linux", target_os = "freebsd"))]
+pub mod desktop_menu;
+#[cfg(target_os = "macos")]
+pub mod file_menu;
+pub mod mark_menu;
+
 use gpui_kit::component::GlobalState;
 use gpui_kit::component::menu::PopupMenu;
 use std::collections::HashMap;
@@ -11,7 +18,7 @@ use gpui_kit::{
 use gpui_kit::{SystemMenuType, actions};
 use sc_core::keymap::KeySettings;
 use sc_core::menu::{Command, Item, MENUS};
-use sc_core::theme::Appearance;
+use sc_core::system::theme::Appearance;
 
 #[derive(Action, Clone, PartialEq)]
 #[action(namespace = sc, no_json)]
@@ -299,7 +306,7 @@ fn items(list: &[Item], chosen: Appearance, checked: &dyn Fn(Command) -> bool) -
             Some(item(label.into(), checked(command), Box::new(Run(command)), false))
         }
         // Xfce's, MATE's and Cinnamon's look is their theme's: no other to choose.
-        Item::Appearance { .. } if sc_core::theme::desktop_dark().is_some() => None,
+        Item::Appearance { .. } if sc_core::system::theme::desktop_dark().is_some() => None,
         Item::Appearance { label } => {
             let each = [
                 ("As the system", Appearance::System),

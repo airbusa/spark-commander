@@ -16,7 +16,7 @@ use regex::Regex;
 use regex::bytes::Regex as BytesRegex;
 use serde::{Deserialize, Serialize};
 
-use crate::{archive, associations, codepage, settings};
+use crate::{archive, associations, viewer::codepage, settings};
 
 /// What to look for; Load/Save keeps it.
 #[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]

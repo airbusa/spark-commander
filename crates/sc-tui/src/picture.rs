@@ -6,8 +6,8 @@ use std::sync::LazyLock;
 
 use image::imageops::FilterType;
 use image::{DynamicImage, ImageFormat, ImageReader, RgbaImage};
-use sc_core::convert::{self, Converter};
-use sc_core::pdf;
+use sc_core::viewer::convert::{self, Converter};
+use sc_core::viewer::pdf;
 use sc_core::viewer::Mode;
 use ratatui::Frame;
 use ratatui::layout::Rect;
@@ -127,10 +127,10 @@ struct Loaded {
 fn load(key: &Key) -> Result<Loaded, String> {
     let (width, height) = (key.room.0.max(1), key.room.1.max(1));
     let Some(page) = key.page else {
-        let image = match sc_core::media::is_still(&key.path) {
+        let image = match sc_core::viewer::media::is_still(&key.path) {
             // HEIC and AVIF by libmpv, in BGRA.
             true => {
-                let frame = sc_core::media::still(&key.path, 16384)?;
+                let frame = sc_core::viewer::media::still(&key.path, 16384)?;
                 let mut rgba = frame.bgra;
                 rgba.chunks_exact_mut(4).for_each(|pixel| pixel.swap(0, 2));
                 DynamicImage::ImageRgba8(RgbaImage::from_raw(frame.width, frame.height, rgba).ok_or("a broken picture")?)

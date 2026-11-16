@@ -2,54 +2,23 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 mod addons;
-mod app_icons;
 mod appearance;
-mod associations_dialog;
-mod attributes_dialog;
-mod bookmarks_dialog;
-mod compare_view;
-mod about;
-mod activity_dialog;
-mod connections_dialog;
-mod context_menu;
-#[cfg(any(target_os = "linux", target_os = "freebsd"))]
-mod desktop_menu;
-mod drag_drop;
+mod dialogs;
 mod editor;
-#[cfg(target_os = "macos")]
-mod file_menu;
 mod file_tools;
-mod find_bar;
-mod find_dialog;
 mod header;
-mod keys_dialog;
-mod mark_menu;
-mod media_view;
 mod menus;
-mod minimap;
-mod name_dialog;
-mod occupied;
-mod opening;
-mod pack_dialog;
-mod panel_keys;
-mod pdf_view;
-mod properties_dialog;
+mod panel;
 mod quick_open;
-mod quick_view;
 mod remote;
-mod rename_dialog;
 mod search_window;
-mod settings_dialog;
 mod sidebar;
 mod sync_window;
-mod tools_dialog;
 #[cfg(debug_assertions)]
 mod style_preview;
 mod terminal;
-mod terminal_pane;
 mod transfer;
 mod viewer;
-mod views;
 mod workspaces;
 
 use std::borrow::Cow;
@@ -76,11 +45,11 @@ use sc_core::remote::Address;
 use sc_core::session::{Session, SideState, WindowPlace, Workspaces};
 use sc_core::settings::{self, Settings};
 use sc_core::sidebar::SidebarTab;
-use sc_core::theme::{self, Appearance};
-use sc_core::{FileFilter, Panel, Sort, SortKey, Tabs, Typed, View, archive, edit, mounts, ops, origin};
+use sc_core::system::theme::{self, Appearance};
+use sc_core::{FileFilter, Panel, Sort, SortKey, Tabs, Typed, View, archive, edit, remote::mounts, ops, viewer::origin};
 
 use crate::appearance::PanelColors;
-use crate::drag_drop::{DragLabel, Dragged};
+use crate::panel::drag_drop::{DragLabel, Dragged};
 use crate::menus::{GoToHistory, OpenWorkspace, ReopenTab, Run, RunTool, SelectTab, SetAppearance};
 
 actions!(
@@ -115,7 +84,7 @@ struct AppAssets;
 impl AssetSource for AppAssets {
     fn load(&self, path: &str) -> Result<Option<Cow<'static, [u8]>>> {
         if let Some(name) = path.strip_prefix("media/") {
-            let found = media_view::ICONS.iter().find(|(icon, _)| *icon == name);
+            let found = viewer::media_view::ICONS.iter().find(|(icon, _)| *icon == name);
             return Ok(found.map(|(_, svg)| Cow::Borrowed(*svg)));
         }
         if let Some(bytes) = ExtraIcons.load(path)? {
@@ -141,13 +110,13 @@ const ROW: Pixels = px(22.);
 /// it was done; declined at the system's prompt, nothing is said.
 pub(crate) fn offer_admin_in(
     what: String,
-    action: sc_core::elevate::Action,
+    action: sc_core::system::elevate::Action,
     window: &mut Window,
     cx: &mut App,
     done: impl FnOnce(bool, &mut Window, &mut App) + 'static,
 ) {
     let gone = match action {
-        sc_core::elevate::Action::Delete(_) => " What is deleted so is gone for good.",
+        sc_core::system::elevate::Action::Delete(_) => " What is deleted so is gone for good.",
         _ => "",
     };
     let text = format!("{what}: permission denied. As administrator, the system asks for the password.{gone}");
@@ -163,7 +132,7 @@ pub(crate) fn offer_admin_in(
                 };
                 let what = what.clone();
                 let ran = cx.background_executor().spawn(async move {
-                    let ran = sc_core::elevate::run(&action);
+                    let ran = sc_core::system::elevate::run(&action);
                     sc_core::activity::note(format!("{what}, as administrator"), &ran);
                     ran
                 });
@@ -430,8 +399,8 @@ fn configure(page: Option<usize>, cx: &mut App) {
             return;
         };
         match page {
-            Some(page) => settings_dialog::open(commander, settings, page, window, cx),
-            None => keys_dialog::open(commander, settings.keys, window, cx),
+            Some(page) => dialogs::settings_dialog::open(commander, settings, page, window, cx),
+            None => dialogs::keys_dialog::open(commander, settings.keys, window, cx),
         }
     });
 }
@@ -503,7 +472,7 @@ struct Commander {
     command_list: Option<(Entity<PopupMenu>, Subscription)>,
     /// A side whose path is being typed.
     path_edit: Option<(usize, Entity<InputState>, Subscription)>,
-    renaming: Option<panel_keys::Renaming>,
+    renaming: Option<panel::panel_keys::Renaming>,
     _appearance: Subscription,
     command: Entity<InputState>,
     /// Widths of Name, Ext, Size, Date and Attr, both panels'.
@@ -516,11 +485,11 @@ struct Commander {
     /// Save Selection's names, for Restore Selection.
     saved_selection: Vec<std::ffi::OsString>,
     /// Ctrl+C's or Ctrl+X's files.
-    file_clip: Option<drag_drop::FileClip>,
+    file_clip: Option<panel::drag_drop::FileClip>,
     sidebar: sidebar::Sidebar,
-    quick: Option<quick_view::QuickView>,
-    thumbnails: views::Thumbnails,
-    app_icons: app_icons::AppIcons,
+    quick: Option<viewer::quick_view::QuickView>,
+    thumbnails: panel::views::Thumbnails,
+    app_icons: panel::app_icons::AppIcons,
     /// The panels one above the other.
     vertical: bool,
     /// Synchronized browsing: the other panel makes the active one's moves too.
@@ -533,7 +502,7 @@ struct Commander {
     /// Workspaces opened this run: a server's late answer for one left is dropped.
     switches: u64,
     /// The built-in terminal's shells and the one shown; shown or not, and its height.
-    terminals: Vec<terminal_pane::TerminalTab>,
+    terminals: Vec<terminal::pane::TerminalTab>,
     terminal_tab: usize,
     terminal_shown: bool,
     /// Its share of the window's height, so it grows and shrinks with the window.
@@ -594,7 +563,7 @@ impl Commander {
         let opacity = settings.sidebar_opacity.0;
         let blur = settings.sidebar_blur.0;
         let sidebar = sidebar::Sidebar::new(session.sidebar, session.sidebar_width, settings.show_hidden, opacity, blur);
-        let terminal_look = (sc_core::theme::backdrop_tint(settings.terminal_opacity.0), settings.terminal_blur.0);
+        let terminal_look = (sc_core::system::theme::backdrop_tint(settings.terminal_opacity.0), settings.terminal_blur.0);
         menus::set_last_filter(&settings.last_filter);
         let synced = session.sync_browsing;
         menus::set(settings.appearance, &|command| sidebar.shows(command) || (command == Command::SyncBrowsing && synced), cx);
@@ -696,8 +665,8 @@ impl Commander {
             quick_keys: false,
             window_active: true,
             menu_on_row: false,
-            thumbnails: views::Thumbnails::default(),
-            app_icons: app_icons::AppIcons::default(),
+            thumbnails: panel::views::Thumbnails::default(),
+            app_icons: panel::app_icons::AppIcons::default(),
             vertical: session.vertical,
             sync_browsing: session.sync_browsing,
             bounds: window.window_bounds(),
@@ -1029,7 +998,7 @@ impl Commander {
         let side = self.active;
         let commander = cx.entity().downgrade();
         let label = "New folder (directory):";
-        name_dialog::open(
+        dialogs::name_dialog::open(
             "New folder",
             label,
             String::new(),
@@ -1049,7 +1018,7 @@ impl Commander {
                     let folder = panel.folder().to_owned();
                     match panel.new_folder(&name) {
                         Err(err) if denied(&err) => {
-                            let action = sc_core::elevate::Action::MakeFolder(folder.join(name.trim()));
+                            let action = sc_core::system::elevate::Action::MakeFolder(folder.join(name.trim()));
                             this.offer_admin(format!("Making \"{}\"", name.trim()), action, window, cx);
                         }
                         Err(err) => window.push_notification(Notification::error(format!("Could not make the folder: {err}")), cx),
@@ -1135,7 +1104,7 @@ impl Commander {
             Err(err) if denied(&err) => {
                 let left: Vec<PathBuf> = paths.into_iter().filter(|path| path.symlink_metadata().is_ok()).collect();
                 let what = format!("Deleting {} item(s)", left.len());
-                self.offer_admin(what, sc_core::elevate::Action::Delete(left), window, cx);
+                self.offer_admin(what, sc_core::system::elevate::Action::Delete(left), window, cx);
             }
             Err(err) => window.push_notification(Notification::error(format!("Could not delete: {err}")), cx),
             Ok(()) => {}
@@ -1145,7 +1114,7 @@ impl Commander {
 
     /// Permission refused `what`: asked whether as administrator, the system
     /// asking for the password, in the background; then the panels read again.
-    pub(crate) fn offer_admin(&mut self, what: String, action: sc_core::elevate::Action, window: &mut Window, cx: &mut Context<Self>) {
+    pub(crate) fn offer_admin(&mut self, what: String, action: sc_core::system::elevate::Action, window: &mut Window, cx: &mut Context<Self>) {
         let commander = cx.entity().downgrade();
         offer_admin_in(what, action, window, cx, move |_, window, cx| {
             let _ = commander.update(cx, |this, cx| {
@@ -1163,14 +1132,14 @@ impl Commander {
     /// through the queue, the rest in the background.
     fn undo(&mut self, redo: bool, window: &mut Window, cx: &mut Context<Self>) {
         let (taken, none, done, verb) = match redo {
-            false => (sc_core::undo::take(), "Nothing to undo.", "Undone", "undo"),
-            true => (sc_core::undo::take_undone(), "Nothing to redo.", "Redone", "redo"),
+            false => (sc_core::ops::undo::take(), "Nothing to undo.", "Undone", "undo"),
+            true => (sc_core::ops::undo::take_undone(), "Nothing to redo.", "Redone", "redo"),
         };
         let Some(undo) = taken else {
             return window.push_notification(Notification::info(none), cx);
         };
         let (title, queue) = (undo.title.clone(), self.transfers.queue.clone());
-        let undone = cx.background_executor().spawn(async move { sc_core::undo::run(undo, &queue, redo) });
+        let undone = cx.background_executor().spawn(async move { sc_core::ops::undo::run(undo, &queue, redo) });
         cx.spawn_in(window, async move |this, cx| {
             let undone = undone.await;
             let _ = this.update_in(cx, |this, window, cx| {
@@ -1488,7 +1457,7 @@ impl Commander {
             .border_t_1()
             .border_color(self.colors.header_border)
             .children(buttons.map(|(label, keys, command)| {
-                let key = keys_dialog::shown(&keys);
+                let key = dialogs::keys_dialog::shown(&keys);
                 Button::new(label)
                     .ghost()
                     .small()
@@ -1520,7 +1489,7 @@ impl Commander {
         let (side, tab) = (self.active, self.panels[self.active].tabs.active());
         let name = self.panels[side].tabs.current().name();
         let commander = cx.entity().downgrade();
-        name_dialog::open(
+        dialogs::name_dialog::open(
             "Rename tab",
             "New name:",
             name,
@@ -1703,7 +1672,7 @@ impl Commander {
         cx.spawn_in(window, async move |_, cx| {
             cx.background_executor().timer(Duration::from_millis(400)).await;
             if !done.load(Ordering::Relaxed) {
-                let _ = cx.update(|window, cx| opening::show(name, watch, done, window, cx));
+                let _ = cx.update(|window, cx| panel::opening::show(name, watch, done, window, cx));
             }
         })
         .detach();
@@ -2038,7 +2007,7 @@ impl Commander {
                 .relative()
                 .flex_1()
                 .min_h_0()
-                .child(views::measure(side.area.clone(), cx.entity_id()))
+                .child(panel::views::measure(side.area.clone(), cx.entity_id()))
                 .child(rows)
                 .child(gutter().top_0().w(SCROLLBAR))
                 .when(wide, |el| el.child(gutter().left_0().h(SCROLLBAR)))
@@ -2525,7 +2494,7 @@ impl Render for Commander {
                     }
                     Command::Settings => {
                         let commander = cx.entity().downgrade();
-                        settings_dialog::open(commander, this.settings.clone(), 0, window, cx)
+                        dialogs::settings_dialog::open(commander, this.settings.clone(), 0, window, cx)
                     }
                     Command::RereadSource => this.reread_source(window, cx),
                     Command::SwapPanels => this.swap_panels(false, cx),
@@ -2552,7 +2521,7 @@ impl Render for Commander {
                     Command::QuickFilter => this.quick_filter(cx),
                     Command::Undo => this.undo(false, window, cx),
                     Command::Redo => this.undo(true, window, cx),
-                    Command::ActivityLog => activity_dialog::open(window, cx),
+                    Command::ActivityLog => dialogs::activity_dialog::open(window, cx),
                     // Walked in the background: a big tree takes a while.
                     Command::BranchView | Command::BranchViewSelected => {
                         let selected = *command == Command::BranchViewSelected;
@@ -2567,14 +2536,14 @@ impl Render for Commander {
                         this.apply_settings(settings, window, cx);
                         this.reload_menus(cx);
                     }
-                    Command::About => about::open(window, cx),
+                    Command::About => dialogs::about::open(window, cx),
                     Command::Website => cx.open_url(sc_core::about::WEBSITE),
                     Command::OnlySelectedFiles => {
                         this.show_files(sc_core::FileFilter::Selected(Default::default()), window, cx)
                     }
                     Command::Shortcuts => {
                         let commander = cx.entity().downgrade();
-                        keys_dialog::open(commander, this.settings.keys.clone(), window, cx)
+                        dialogs::keys_dialog::open(commander, this.settings.keys.clone(), window, cx)
                     }
                     other => {
                         if !this.mark_command(*other, window, cx) {
@@ -2836,7 +2805,7 @@ fn date_fits(cx: &App) -> Pixels {
 /// Finder's tag dots: overlapping, the first on the right, three at most.
 fn tag_dots(tags: &[u8], edge: Hsla) -> Div {
     h_flex().flex_none().children(tags.iter().take(3).rev().enumerate().filter_map(|(n, &colour)| {
-        let [r, g, b] = sc_core::tags::rgb(colour)?;
+        let [r, g, b] = sc_core::system::tags::rgb(colour)?;
         let dot = div().size(px(10.)).rounded_full().border_1().border_color(edge);
         Some(dot.bg(rgb(u32::from_be_bytes([0, r, g, b]))).when(n > 0, |dot| dot.ml(px(-4.))))
     }))

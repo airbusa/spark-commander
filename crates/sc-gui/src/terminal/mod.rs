@@ -3,6 +3,7 @@
 
 mod keys;
 mod mouse;
+pub mod pane;
 
 use std::borrow::Cow;
 use std::io;

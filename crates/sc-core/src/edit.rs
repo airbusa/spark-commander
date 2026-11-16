@@ -1,5 +1,8 @@
 //! Text files for the editor: binary or other text shown only on request, as editing could change them by accident.
 
+pub mod text_edit;
+pub mod text_find;
+
 use std::ffi::OsString;
 use std::fs;
 use std::io;

@@ -2,6 +2,9 @@
 //! View options kept in the settings, VS Code's line and case commands, and
 //! VS Code's Find and Replace (`find_bar`).
 
+pub mod find_bar;
+pub mod minimap;
+
 use std::io;
 use std::path::PathBuf;
 use std::rc::Rc;
@@ -15,14 +18,14 @@ use gpui_kit::component::{ActiveTheme, Icon, IconName, WindowExt, h_flex, v_flex
 use gpui_kit::prelude::FluentBuilder;
 use gpui_kit::*;
 
-use crate::find_bar::{FindBar, SelectAllMatches};
+use crate::editor::find_bar::{FindBar, SelectAllMatches};
 use crate::menus::Entries;
-use crate::minimap::{self, Minimap};
+use minimap::Minimap;
 use sc_core::edit;
 use sc_core::settings::EditorSettings;
-use sc_core::text_edit::{self, TextCase, TextEdit};
+use sc_core::edit::text_edit::{self, TextCase, TextEdit};
 
-pub use sc_core::origin::Upload;
+pub use sc_core::viewer::origin::Upload;
 
 actions!(
     editor,
@@ -91,7 +94,7 @@ pub fn bind_keys(cx: &mut App) {
         KeyBinding::new("secondary-shift-l", SelectAllMatches, keys),
         KeyBinding::new("alt-z", ToggleWrap, keys),
     ]);
-    crate::find_bar::bind_keys(cx);
+    crate::editor::find_bar::bind_keys(cx);
 }
 
 /// Refuses files over the settings' limit; ones editing could change by
@@ -379,7 +382,7 @@ impl TextEditor {
                 match edit::stage_text(&self.path, &text) {
                     Ok(staged) => {
                         let name = self.path.file_name().unwrap_or_default().to_string_lossy().into_owned();
-                        let action = sc_core::elevate::Action::Write { from: staged.clone(), to: self.path.clone() };
+                        let action = sc_core::system::elevate::Action::Write { from: staged.clone(), to: self.path.clone() };
                         let editor = cx.entity().downgrade();
                         crate::offer_admin_in(format!("Saving \"{name}\""), action, window, cx, move |done, window, cx| {
                             let _ = std::fs::remove_file(&staged);
@@ -587,7 +590,7 @@ impl TextEditor {
     fn go_to_line(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let line = self.editor.read(cx).cursor_position().line + 1;
         let editor = self.editor.clone();
-        crate::name_dialog::open("Go to Line", "Line, or line:column", line.to_string(), window, cx, move |typed, window, cx| {
+        crate::dialogs::name_dialog::open("Go to Line", "Line, or line:column", line.to_string(), window, cx, move |typed, window, cx| {
             let mut parts = typed.trim().splitn(2, ':').map(|part| part.trim().parse::<u32>().ok());
             let Some(Some(line)) = parts.next() else {
                 return;

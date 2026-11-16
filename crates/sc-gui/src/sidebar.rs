@@ -14,16 +14,16 @@ use gpui_kit::component::scroll::Scrollbar;
 use gpui_kit::component::{ActiveTheme, Icon, IconName, Side, Sizable, StyledExt, WindowExt, h_flex, v_flex};
 use gpui_kit::prelude::FluentBuilder;
 use gpui_kit::*;
-use sc_core::connections::{self, Connection, Connections};
-use sc_core::devices::{self, Device, Volume, VolumeKind};
+use sc_core::remote::connections::{self, Connection, Connections};
+use sc_core::system::devices::{self, Device, Volume, VolumeKind};
 use sc_core::menu::Command;
 use sc_core::remote::{Address, Scheme};
 use sc_core::sidebar::{self, FolderTree, SidebarTab};
-use sc_core::{icons, theme};
+use sc_core::{icons, system::theme};
 
-use crate::drag_drop::Dragged;
+use crate::panel::drag_drop::Dragged;
 use crate::menus::Run;
-use crate::{Commander, connections_dialog};
+use crate::{Commander, dialogs::connections_dialog};
 
 pub(crate) const WIDTH: f32 = 260.;
 /// How long it slides in or out, shown or hidden.
@@ -517,7 +517,7 @@ impl Commander {
                 && let Some((key, passphrase)) = kept.lock().unwrap().take()
             {
                 // shortcut: a keyring that cannot keep it means asking again next time.
-                let _ = sc_core::secrets::remember(&key, &passphrase);
+                let _ = sc_core::remote::secrets::remember(&key, &passphrase);
             }
             let _ = done.send(mounted.map(|path| (volume, path)));
         });
@@ -983,7 +983,7 @@ impl Commander {
         };
         let name = self.settings.bookmark_name(&path);
         let commander = cx.entity().downgrade();
-        crate::name_dialog::open("Rename bookmark", "Name (empty: the folder's):", name, window, cx, move |name, window, cx| {
+        crate::dialogs::name_dialog::open("Rename bookmark", "Name (empty: the folder's):", name, window, cx, move |name, window, cx| {
             let _ = commander.update(cx, |this, cx| {
                 match name.trim() {
                     "" => this.settings.bookmark_names.remove(&path),

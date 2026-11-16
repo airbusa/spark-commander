@@ -10,13 +10,13 @@ use gpui_kit::component::notification::Notification;
 use gpui_kit::component::radio::{Radio, RadioGroup};
 use gpui_kit::component::{Sizable, WindowExt, h_flex, v_flex};
 use gpui_kit::*;
-use sc_core::checksum::{self, Create, Method};
+use sc_core::ops::checksum::{self, Create, Method};
 use sc_core::ops::Queue;
-use sc_core::links::{self, Kind};
-use sc_core::{command, split};
+use sc_core::ops::links::{self, Kind};
+use sc_core::{command, ops::split};
 
 use crate::Commander;
-use crate::pack_dialog::{buttons, check, focus_all, open};
+use crate::dialogs::pack_dialog::{buttons, check, focus_all, open};
 
 /// Part sizes to pick from.
 const SIZES: [&str; 5] = ["10 MB", "100 MB", "700 MB", "1 GB", "4095 MB"];
@@ -158,7 +158,7 @@ impl Commander {
         let base = panel.folder().to_owned();
         let queue = self.transfers.queue.clone();
         let parts = std::cell::RefCell::new(Some(parts));
-        crate::name_dialog::open(
+        crate::dialogs::name_dialog::open(
             "Combine files",
             "Combine the parts into the file:",
             target.display().to_string(),
@@ -207,7 +207,7 @@ impl LinkDialog {
             };
             match made {
                 Err((err, rest)) if crate::denied(&err) && kind != Kind::Shortcut => {
-                    let action = sc_core::elevate::Action::Link { kind, items: rest };
+                    let action = sc_core::system::elevate::Action::Link { kind, items: rest };
                     this.offer_admin(format!("Making the {}", kind.label().to_lowercase()), action, window, cx);
                 }
                 Err((err, _)) => window.push_notification(Notification::error(format!("Could not make the link: {err}")), cx),

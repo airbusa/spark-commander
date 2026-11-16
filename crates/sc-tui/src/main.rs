@@ -16,7 +16,7 @@ use std::time::{Duration, Instant};
 
 use sc_core::keymap;
 use sc_core::menu::Command;
-use sc_core::origin::{self, Upload};
+use sc_core::viewer::origin::{self, Upload};
 use sc_core::session::{self, OpenTabs, Session, Workspaces};
 use sc_core::settings::Settings;
 use sc_core::viewer::Searches;

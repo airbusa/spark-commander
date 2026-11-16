@@ -3,63 +3,19 @@ pub mod activity;
 pub mod addons;
 pub mod archive;
 pub mod associations;
-pub mod attributes;
-mod bundled;
-pub mod checksum;
-pub mod clipboard;
-pub mod cloud;
-pub mod codepage;
 pub mod command;
-pub mod compare;
-pub mod connections;
-pub mod convert;
-#[cfg(any(target_os = "linux", target_os = "freebsd"))]
-pub mod desktop;
-pub mod devices;
-pub mod ebook;
 pub mod dates;
 pub mod edit;
-pub mod elevate;
-#[cfg(target_os = "macos")]
-pub mod finder;
-pub mod ftp;
-pub mod heif;
-pub mod html;
 pub mod icons;
 pub mod keymap;
-pub mod links;
-pub mod media;
 pub mod menu;
-pub mod mounts;
 pub mod ops;
-pub mod origin;
-pub mod packing;
-pub mod pdf;
-pub mod properties;
-#[cfg(any(target_os = "linux", target_os = "freebsd"))]
-pub mod toolkit_style;
-pub mod undo;
 pub mod remote;
-pub mod rename;
-pub mod resume;
 pub mod search;
-pub mod secrets;
 pub mod session;
 pub mod settings;
-pub mod shells;
-#[cfg(windows)]
-pub mod shell_icon;
-#[cfg(windows)]
-pub mod shell_menu;
 pub mod sidebar;
-pub mod sftp;
-pub mod space;
-pub mod tags;
-pub mod text_edit;
-pub mod text_find;
-pub mod split;
-pub mod sync_dirs;
-pub mod theme;
+pub mod system;
 pub mod tools;
 pub mod vfs;
 pub mod viewer;
@@ -529,7 +485,7 @@ impl Panel {
         let path = self.path();
         match &self.remote {
             Some(remote) => format!("{}{}", remote.url(), path.display()),
-            None => mounts::url_of(&path).unwrap_or_else(|| path.display().to_string()),
+            None => remote::mounts::url_of(&path).unwrap_or_else(|| path.display().to_string()),
         }
     }
 
@@ -791,21 +747,21 @@ impl Panel {
     }
 
     /// The file at the cursor, for viewers and editors.
-    pub fn origin(&self) -> Option<origin::Origin> {
+    pub fn origin(&self) -> Option<viewer::origin::Origin> {
         self.origin_of(self.current_entry()?)
     }
 
     /// An entry's file, as `origin` the cursor's.
-    pub fn origin_of(&self, entry: &Entry) -> Option<origin::Origin> {
+    pub fn origin_of(&self, entry: &Entry) -> Option<viewer::origin::Origin> {
         let entry = Some(entry).filter(|entry| !entry.is_dir)?;
         if self.archive.is_some() {
             let member = self.archive_member_of(entry)?;
-            return Some(origin::Origin::Archive(member, self.archive_origin()));
+            return Some(viewer::origin::Origin::Archive(member, self.archive_origin()));
         }
         let path = self.folder().join(&entry.name);
         Some(match self.remote {
-            Some(_) => origin::Origin::Server(self.fs(), path),
-            None => origin::Origin::Local(path),
+            Some(_) => viewer::origin::Origin::Server(self.fs(), path),
+            None => viewer::origin::Origin::Local(path),
         })
     }
 
@@ -1138,7 +1094,7 @@ impl Panel {
         renamed?;
         let title = format!("Rename \"{}\" to \"{to}\"", from.file_name().unwrap_or_default().to_string_lossy());
         let at = std::time::SystemTime::now();
-        undo::remember(title, undo::Step::Moved { from: fs.clone(), to: fs.clone(), moves: vec![(from.clone(), target.clone())], restore: Vec::new(), replaces: Vec::new(), at });
+        ops::undo::remember(title, ops::undo::Step::Moved { from: fs.clone(), to: fs.clone(), moves: vec![(from.clone(), target.clone())], restore: Vec::new(), replaces: Vec::new(), at });
         let shown = Path::new(name).with_file_name(to).into_os_string();
         match &mut self.found {
             Some(found) => {
@@ -1178,7 +1134,7 @@ impl Panel {
                 // A server has no trash.
                 vfs::remove_all(&**remote, path)
             } else if to_trash {
-                undo::to_trash(path)?;
+                ops::undo::to_trash(path)?;
                 trashed.push(path.clone());
                 Ok(())
             } else if fs::symlink_metadata(path)?.is_dir() {
@@ -1200,7 +1156,7 @@ impl Panel {
                 [one] => format!("Move \"{}\" to the trash", one.file_name().unwrap_or_default().to_string_lossy()),
                 many => format!("Move {} items to the trash", many.len()),
             };
-            undo::remember(title, undo::Step::Trashed { paths: trashed, at, displaced: Vec::new() });
+            ops::undo::remember(title, ops::undo::Step::Trashed { paths: trashed, at, displaced: Vec::new() });
         }
         let cursor = self.cursor;
         self.go_to(self.path.clone(), None)?;
@@ -1360,7 +1316,7 @@ impl Panel {
                 hidden,
                 system,
                 attributes,
-                tags: tags::colours(path),
+                tags: system::tags::colours(path),
                 online: online_only(&meta),
             });
         }
@@ -1757,7 +1713,7 @@ pub(crate) fn read_dir(path: &Path) -> io::Result<Vec<Entry>> {
             let name = item.file_name();
             let (hidden, system, attributes) = attributes(&name, meta.as_ref());
             Entry {
-                tags: tags::colours(&item.path()),
+                tags: system::tags::colours(&item.path()),
                 online: meta.as_ref().is_some_and(online_only),
                 name,
                 is_dir: meta.as_ref().is_some_and(fs::Metadata::is_dir),

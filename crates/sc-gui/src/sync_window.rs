@@ -14,7 +14,7 @@ use gpui_kit::component::notification::Notification;
 use gpui_kit::component::{ActiveTheme, Disableable, Sizable, WindowExt, h_flex, v_flex};
 use gpui_kit::prelude::FluentBuilder;
 use gpui_kit::*;
-use sc_core::sync_dirs::{self, Action, Item, Options, Root, State};
+use sc_core::ops::sync_dirs::{self, Action, Item, Options, Root, State};
 use sc_core::{grouped, human_size};
 
 use crate::Commander;

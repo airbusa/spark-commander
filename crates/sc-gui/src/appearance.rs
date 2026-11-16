@@ -11,7 +11,7 @@ use gpui_kit::component::{ActiveTheme, StateImages, ToolkitControls};
 use gpui_kit::{Global, RenderImage, Window};
 use gpui_kit::{App, Hsla, hsla, px, rgb};
 use sc_core::settings::FontChoice;
-use sc_core::theme::{ControlColors, ControlStyle, Palette};
+use sc_core::system::theme::{ControlColors, ControlStyle, Palette};
 
 /// The fixed-width font chosen in Settings > Font, for `apply`: the
 /// viewer's, the editor's and comparison's. The desktop's when none.
@@ -60,7 +60,7 @@ pub fn apply(palette: &Palette, cx: &mut App) -> PanelColors {
     let font = palette.font.clone().filter(|font| installed(font, cx));
     let fixed = match cx.try_global::<FixedFont>().and_then(|fixed| fixed.0.clone()) {
         Some(font) => Some((font.family, font.size)),
-        None => sc_core::theme::desktop_fixed_font(),
+        None => sc_core::system::theme::desktop_fixed_font(),
     };
     let fixed = fixed.filter(|(family, _)| installed(family, cx));
     KitTheme::update(cx, |kit| {
@@ -69,7 +69,7 @@ pub fn apply(palette: &Palette, cx: &mut App) -> PanelColors {
         }
         if let Some((family, points)) = fixed {
             kit.mono_font_family = family.into();
-            kit.mono_font_size = px(sc_core::theme::font_pixels(points));
+            kit.mono_font_size = px(sc_core::system::theme::font_pixels(points));
         }
         // The app writes in `text_sm`, 0.875 of the base: that is the desktop's size.
         if let Some(size) = palette.font_size {
@@ -106,7 +106,7 @@ pub fn apply(palette: &Palette, cx: &mut App) -> PanelColors {
         kit.tab_active_foreground = color(palette.text);
     });
     // The desktop style's controls (KDE's Breeze, Windows 11's), in its colours.
-    if let Some(style) = sc_core::theme::control_style() {
+    if let Some(style) = sc_core::system::theme::control_style() {
         cx.set_global(native_controls(style, &palette.controls(style), palette.dark));
         // Windows' and GNOME's corners, and their fields' frame, a button's
         // (GNOME's unframed: its fill).
@@ -249,9 +249,9 @@ pub fn mac_selection(dark: bool) -> Option<u32> {
 /// macOS: AppKit's own parts (menus, pop-ups, the window's buttons) in the
 /// app's light or dark when Settings fixes one, else the system's.
 #[cfg(target_os = "macos")]
-pub fn mac_force(choice: sc_core::theme::Appearance) {
+pub fn mac_force(choice: sc_core::system::theme::Appearance) {
     use objc2_app_kit::{NSAppearance, NSAppearanceNameAqua, NSAppearanceNameDarkAqua, NSApplication};
-    use sc_core::theme::Appearance;
+    use sc_core::system::theme::Appearance;
     let Some(mtm) = objc2::MainThreadMarker::new() else {
         return;
     };
@@ -293,11 +293,11 @@ struct ToolkitDrawn {
 impl Global for ToolkitDrawn {}
 
 /// The controls as the desktop's toolkit draws them (KDE's Qt style, the
-/// GTK 3 theme of Xfce, MATE and Cinnamon; `sc_core::toolkit_style`),
+/// GTK 3 theme of Xfce, MATE and Cinnamon; `sc_core::system::toolkit_style`),
 /// once drawn; until then, and without it, the app's own.
 #[cfg(any(target_os = "linux", target_os = "freebsd"))]
 pub fn draw_toolkit_controls(window: &Window, cx: &mut App) {
-    if sc_core::toolkit_style::helper().is_none() {
+    if sc_core::system::toolkit_style::helper().is_none() {
         return;
     }
     let scale = window.scale_factor();
@@ -305,7 +305,7 @@ pub fn draw_toolkit_controls(window: &Window, cx: &mut App) {
     let height = (f32::from(cx.theme().font_size) * 2.).round() as u32;
     let dark = cx.theme().mode.is_dark();
     cx.spawn(async move |cx| {
-        let drawn = cx.background_executor().spawn(async move { sc_core::toolkit_style::draw(scale, height) }).await;
+        let drawn = cx.background_executor().spawn(async move { sc_core::system::toolkit_style::draw(scale, height) }).await;
         let controls = match drawn {
             Ok(mut drawn) => toolkit_controls(&mut drawn.images, scale).map(|controls| (drawn.dark, controls)),
             Err(err) => {
@@ -328,7 +328,7 @@ pub fn draw_toolkit_controls(window: &Window, cx: &mut App) {
 }
 
 #[cfg(any(target_os = "linux", target_os = "freebsd"))]
-fn toolkit_controls(images: &mut std::collections::HashMap<String, sc_core::toolkit_style::Picture>, scale: f32) -> Option<ToolkitControls> {
+fn toolkit_controls(images: &mut std::collections::HashMap<String, sc_core::system::toolkit_style::Picture>, scale: f32) -> Option<ToolkitControls> {
     let mut states = |name: &str| -> Option<StateImages> {
         let [normal, hovered, pressed, disabled] = ["normal", "hovered", "pressed", "disabled"].map(|state| {
             let picture = images.remove(&name.replace("{}", state))?;

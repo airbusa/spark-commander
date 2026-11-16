@@ -176,7 +176,7 @@ pub fn offer(
                                 window.close_dialog(cx);
                                 let Some(settings) = yes.upgrade().map(|this| this.read(cx).settings.clone()) else { return };
                                 let page = sc_core::settings::PAGES.iter().position(|&page| page == "Add-ons").unwrap_or(0);
-                                crate::settings_dialog::open(yes.clone(), settings, page, window, cx);
+                                crate::dialogs::settings_dialog::open(yes.clone(), settings, page, window, cx);
                             }))
                             .child(Button::new("offer-no").outline().label("No").on_click(move |_, window, cx| {
                                 window.close_dialog(cx);

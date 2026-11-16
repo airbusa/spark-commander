@@ -61,7 +61,7 @@ pub(crate) fn title_bar(title: impl Into<SharedString>, window: &Window, cx: &mu
     }
     // The window buttons as GTK draws them, from the desktop's icon theme.
     if !cx.has_global::<WindowButtonPictures>()
-        && let Some(pictures) = sc_core::theme::window_buttons()
+        && let Some(pictures) = sc_core::system::theme::window_buttons()
     {
         let pictures = pictures.clone().map(|path| path.to_string_lossy().into_owned().into());
         cx.set_global(WindowButtonPictures(pictures));
@@ -71,7 +71,7 @@ pub(crate) fn title_bar(title: impl Into<SharedString>, window: &Window, cx: &mu
     let title = div().absolute().inset_0().px(px(140.)).flex().items_center().justify_center().child(title);
     let mut bar = TitleBar::new().child(title);
     // As tall as GTK's, its top corners the window's.
-    if let Some(header) = sc_core::theme::header_bar() {
+    if let Some(header) = sc_core::system::theme::header_bar() {
         let (top_left, top_right) = top_corners(window, cx);
         let color = header.color(cx.theme().mode.is_dark(), window.is_window_active());
         bar = bar.h(px(header.height)).rounded_tl(top_left).rounded_tr(top_right).bg(rgb(color));
@@ -81,7 +81,7 @@ pub(crate) fn title_bar(title: impl Into<SharedString>, window: &Window, cx: &mu
 
 /// The window's top corners as the GTK theme rounds them, before a window opens.
 pub(crate) fn round_corners(cx: &mut App) {
-    if let Some(header) = sc_core::theme::header_bar() {
+    if let Some(header) = sc_core::system::theme::header_bar() {
         cx.set_global(WindowCornerRadius(px(header.radius)));
     }
 }

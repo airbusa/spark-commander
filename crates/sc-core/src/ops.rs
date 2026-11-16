@@ -1,6 +1,15 @@
 //! Copy, move and other long work (packing, checksums), one at a time, from
 //! a queue that can be reordered and cancelled.
 
+pub mod attributes;
+pub mod checksum;
+pub mod links;
+pub mod rename;
+pub mod space;
+pub mod split;
+pub mod sync_dirs;
+pub mod undo;
+
 use std::io;
 use std::path::{MAIN_SEPARATOR, Path, PathBuf};
 use std::sync::atomic::{AtomicBool, Ordering};
@@ -418,10 +427,10 @@ impl Queue {
                     if remembered && !run.done.is_empty() {
                         let (replaced, done) = (run.replaced, run.done);
                         let step = match operation.kind {
-                            Kind::Copy => crate::undo::Step::Copied { fs: operation.to.clone(), made: done.into_iter().map(|(_, made)| made).collect(), replaced, at },
-                            Kind::Move => crate::undo::Step::Moved { from: operation.from.clone(), to: operation.to.clone(), moves: done, restore: replaced, replaces: Vec::new(), at },
+                            Kind::Copy => crate::ops::undo::Step::Copied { fs: operation.to.clone(), made: done.into_iter().map(|(_, made)| made).collect(), replaced, at },
+                            Kind::Move => crate::ops::undo::Step::Moved { from: operation.from.clone(), to: operation.to.clone(), moves: done, restore: replaced, replaces: Vec::new(), at },
                         };
-                        crate::undo::remember(operation.title(), step);
+                        crate::ops::undo::remember(operation.title(), step);
                     }
                     ran
                 }
@@ -548,8 +557,8 @@ impl Run<'_> {
         if !self.refused.is_empty() {
             self.progress.current = PathBuf::from("As administrator…");
             self.report();
-            let action = crate::elevate::Action::Copy { items: std::mem::take(&mut self.refused), remove: op.kind == Kind::Move };
-            if let Err(err) = crate::elevate::run(&action) {
+            let action = crate::system::elevate::Action::Copy { items: std::mem::take(&mut self.refused), remove: op.kind == Kind::Move };
+            if let Err(err) = crate::system::elevate::run(&action) {
                 self.elevated = Some(format!("As administrator: {err}"));
             }
         }
@@ -651,7 +660,7 @@ impl Run<'_> {
         if to.metadata(target).is_err() {
             return Ok(());
         }
-        if to.id() == "local" && crate::undo::to_trash(target).is_ok() {
+        if to.id() == "local" && crate::ops::undo::to_trash(target).is_ok() {
             self.replaced.push(target.to_owned());
             return Ok(());
         }
@@ -757,7 +766,7 @@ impl Run<'_> {
         // What it goes over goes once it is whole: on this computer to the trash, where it can.
         let mut trashed = false;
         let mut over = |old: &Path| {
-            trashed = to.id() == "local" && crate::undo::to_trash(old).is_ok();
+            trashed = to.id() == "local" && crate::ops::undo::to_trash(old).is_ok();
             if trashed { Ok(()) } else { to.remove(old, false) }
         };
         let written = vfs::copy_file_over(&*from, source, &*to, target, meta, &mut over, &mut |bytes, resumed| {

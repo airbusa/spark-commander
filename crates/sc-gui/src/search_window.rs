@@ -18,7 +18,7 @@ use gpui_kit::component::tab::{Tab, TabBar};
 use gpui_kit::component::{ActiveTheme, Disableable, IconName, MacControls, Sizable, WindowExt, h_flex, v_flex};
 use gpui_kit::prelude::FluentBuilder;
 use gpui_kit::*;
-use sc_core::origin::Origin;
+use sc_core::viewer::origin::Origin;
 use sc_core::search::{self, Age, Attribute, Duplicates, Event, Found, Query, Saved, SizeOp, Text, Unit};
 use sc_core::grouped;
 
@@ -696,7 +696,7 @@ impl FindFiles {
         depths.extend((1..=9).map(|n| (Some(n), format!("{n} level{}", if n == 1 { "" } else { "s" }))));
         let text_off = !self.find_text;
         let options = &self.text_options;
-        let ansi = sc_core::codepage::system().0;
+        let ansi = sc_core::viewer::codepage::system().0;
         v_flex()
             .gap_2()
             .child(

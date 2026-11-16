@@ -11,8 +11,8 @@ use gpui_kit::*;
 use sc_core::Tabs;
 use sc_core::session::OpenTabs;
 
-use crate::terminal_pane::TerminalTab;
-use crate::{Commander, menus, name_dialog, restore_side};
+use crate::terminal::pane::TerminalTab;
+use crate::{Commander, menus, dialogs::name_dialog, restore_side};
 
 /// A workspace left this run: its tabs as they were, its shells running on.
 pub(crate) struct Parked {

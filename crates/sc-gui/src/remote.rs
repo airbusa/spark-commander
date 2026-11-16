@@ -16,10 +16,10 @@ use gpui_kit::component::{ActiveTheme, WindowExt, h_flex, v_flex};
 use gpui_kit::prelude::FluentBuilder;
 use gpui_kit::*;
 use sc_core::edit;
-use sc_core::origin::{self, Upload};
+use sc_core::viewer::origin::{self, Upload};
 use sc_core::remote::{self, Address, Ask, Prompt, Reply};
-use sc_core::mounts::{self, Login};
-use sc_core::secrets;
+use sc_core::remote::mounts::{self, Login};
+use sc_core::remote::secrets;
 use sc_core::session::TabState;
 
 use crate::Commander;

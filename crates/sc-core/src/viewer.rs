@@ -1,5 +1,16 @@
 //! Files of any size as Lister shows them: rows indexed in the background, only the shown ones read.
 
+pub mod codepage;
+pub mod compare;
+pub mod convert;
+pub mod ebook;
+pub mod heif;
+pub mod html;
+pub mod media;
+pub mod origin;
+pub mod pdf;
+pub mod resume;
+
 use std::fmt::Write;
 use std::fs::File;
 use std::io::{self, Read, Seek, SeekFrom};
@@ -11,7 +22,7 @@ use std::sync::{Arc, Mutex};
 use serde::{Deserialize, Serialize};
 
 use crate::settings::{StartFont, StartMode, ViewerSettings};
-use crate::{codepage, html, settings};
+use crate::settings;
 
 /// Unwrapped lines are cut into rows of this many characters.
 pub const LONG_ROW: usize = 1024;
@@ -32,7 +43,7 @@ pub const SYNTAX_LIMIT: u64 = 4 << 20;
 /// UTF-8 (so its bytes are the highlighter's), up to `SYNTAX_LIMIT`, in a
 /// language the editor knows; its language and text.
 pub fn source(path: &Path, mode: Mode) -> Option<(&'static str, String)> {
-    let language = crate::text_edit::language_of(path);
+    let language = crate::edit::text_edit::language_of(path);
     let fits = std::fs::metadata(path).ok()?.len() <= SYNTAX_LIMIT;
     if !matches!(mode, Mode::Text | Mode::Utf8) || language == "text" || !fits {
         return None;
@@ -868,7 +879,7 @@ pub enum Mode {
     Markdown,
     /// Not Lister's: pages rendered by PDFium.
     Pdf,
-    /// Not Lister's: an EPUB's or FB2's text, rendered (crate::ebook).
+    /// Not Lister's: an EPUB's or FB2's text, rendered (crate::viewer::ebook).
     Book,
 }
 
@@ -898,7 +909,7 @@ pub struct Shown {
     /// Video or sound, and the front end plays it: Image/Multimedia plays it.
     pub media: bool,
     /// An office document shown as PDF, converted by this.
-    pub office: Option<crate::convert::Converter>,
+    pub office: Option<crate::viewer::convert::Converter>,
     /// Extensions of the pictures the viewer can show.
     pictures: &'static [&'static str],
     /// The viewer renders Markdown; else it is text.
@@ -952,21 +963,21 @@ impl Shown {
         let path = self.path();
         let extension = path.extension().map(|e| e.to_string_lossy().to_lowercase());
         let extension = extension.as_deref().unwrap_or_default();
-        let media = self.plays && crate::media::is_media(path) && crate::media::available();
+        let media = self.plays && crate::viewer::media::is_media(path) && crate::viewer::media::available();
         // HEIC and AVIF by libmpv too, as pictures.
-        let still = crate::media::is_still(path) && crate::media::available();
+        let still = crate::viewer::media::is_still(path) && crate::viewer::media::available();
         let picture = self.pictures.contains(&extension) || media || still;
         let html = matches!(extension, "htm" | "html" | "xhtml");
         let markdown = self.markdown
             && matches!(extension, "md" | "markdown")
             && std::fs::metadata(path)?.len() <= MARKDOWN_LIMIT;
-        let book = self.markdown && crate::ebook::is_book(path);
+        let book = self.markdown && crate::viewer::ebook::is_book(path);
         let detected = detect(path)?;
-        let office = match crate::pdf::available() {
-            true => crate::convert::converter_for(path),
+        let office = match crate::viewer::pdf::available() {
+            true => crate::viewer::convert::converter_for(path),
             false => None,
         };
-        self.pdf = extension == "pdf" && crate::pdf::available() || office.is_some();
+        self.pdf = extension == "pdf" && crate::viewer::pdf::available() || office.is_some();
         self.book = book;
         self.picture = picture;
         self.media = media;
@@ -1036,7 +1047,7 @@ impl Shown {
             Mode::Utf8 | Mode::Markdown => TextFile::open(path, lines, Decoding::Utf8)?,
             // A PDF's text is what its pages say, not its bytes.
             Mode::Text if self.pdf && self.office.is_none() => {
-                TextFile::text(crate::pdf::text(path)?, lines)
+                TextFile::text(crate::viewer::pdf::text(path)?, lines)
             }
             Mode::Text | Mode::Picture | Mode::Html | Mode::Pdf | Mode::Book => {
                 TextFile::open(path, lines, plain)?

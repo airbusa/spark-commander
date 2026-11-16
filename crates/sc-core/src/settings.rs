@@ -66,7 +66,7 @@ impl Default for AddonUpdates {
 #[derive(Clone, Default, PartialEq, Serialize, Deserialize)]
 #[serde(default)]
 pub struct Settings {
-    pub appearance: crate::theme::Appearance,
+    pub appearance: crate::system::theme::Appearance,
     pub menu: MenuStyle,
     /// Show the tab header also when there is only one tab.
     pub tab_header_always: TabHeaderAlways,
@@ -125,7 +125,7 @@ impl MenuStyle {
     /// Whether the menus go behind the ☰ button.
     pub fn button(self) -> bool {
         let linux = cfg!(any(target_os = "linux", target_os = "freebsd"));
-        linux && (self == MenuStyle::Button || self == MenuStyle::Automatic && crate::theme::on_gnome())
+        linux && (self == MenuStyle::Button || self == MenuStyle::Automatic && crate::system::theme::on_gnome())
     }
 }
 
@@ -227,7 +227,7 @@ pub const PAGES: &[&str] = &["Layout", "Display", "Font", "Date", "Language", "E
 pub fn bookmarkable(path: &Path) -> bool {
     use std::path::{Component, Prefix};
     let unc = matches!(path.components().next(), Some(Component::Prefix(p)) if matches!(p.kind(), Prefix::UNC(..) | Prefix::VerbatimUNC(..)));
-    path.is_absolute() && !unc && path.is_dir() && crate::mounts::url_of(path).is_none()
+    path.is_absolute() && !unc && path.is_dir() && crate::remote::mounts::url_of(path).is_none()
 }
 
 pub fn config_dir() -> Option<PathBuf> {

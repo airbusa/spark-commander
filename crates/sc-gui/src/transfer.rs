@@ -460,7 +460,8 @@ impl Commander {
                 .px_2()
                 .py_1()
                 .gap_3()
-                .border_t_1()
+                // Under the frame above, apart from the command line below.
+                .border_b_1()
                 .border_color(theme.border)
                 .text_sm()
                 .child(

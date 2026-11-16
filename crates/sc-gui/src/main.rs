@@ -1415,12 +1415,10 @@ impl Commander {
                 cx.listener(|this, _: &FocusPanels, window, cx| this.focus_panels(window, cx)),
             )
             .on_action(cx.listener(|this, _: &CommandHistory, window, cx| this.show_command_history(window, cx)))
-            // A band of its own, apart from the terminal or panels above.
+            // The panels' or terminal's frame above is its edge.
             .px_1()
             .py_1()
             .gap_1()
-            .border_t_1()
-            .border_color(self.colors.header_border)
             .child(
                 div()
                     .max_w(relative(0.5))

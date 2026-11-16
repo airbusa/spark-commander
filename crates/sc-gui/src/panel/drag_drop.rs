@@ -161,6 +161,11 @@ impl Commander {
             false => ClipboardItem::new_string(text.clone()),
         };
         cx.write_to_clipboard(item);
+        // GPUI writes no file list on Windows.
+        #[cfg(windows)]
+        if local && let Err(error) = sc_core::system::clipboard::add_files(&batch.sources, cut) {
+            eprintln!("file list to the clipboard: {error}");
+        }
         let count = batch.sources.len();
         self.file_clip = Some(FileClip { batch, cut, text });
         let done = match cut {

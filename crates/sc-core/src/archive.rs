@@ -608,8 +608,6 @@ fn parse_time(text: &str) -> Option<SystemTime> {
 pub(crate) mod tests {
     use super::*;
 
-    /// A listing waiting for its archive (a pipe nobody writes) stops when asked.
-    #[cfg(unix)]
     /// The run's folders (`scratch()`, `tars()`) are the whole test process's,
     /// and one test removes them: those using them take turns.
     pub(crate) fn shared() -> std::sync::MutexGuard<'static, ()> {
@@ -617,6 +615,8 @@ pub(crate) mod tests {
         TURNS.lock().unwrap_or_else(|poisoned| poisoned.into_inner())
     }
 
+    /// A listing waiting for its archive (a pipe nobody writes) stops when asked.
+    #[cfg(unix)]
     #[test]
     fn stops_a_listing() {
         let _alone = shared();

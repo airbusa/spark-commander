@@ -10,6 +10,65 @@ pub fn text_of(paths: &[PathBuf]) -> String {
     lines.join("\n")
 }
 
+/// Windows: the files added to what is on the clipboard as a file list, as
+/// Explorer puts it (CF_HDROP), copied or cut; other programs and remote
+/// desktops paste that.
+#[cfg(windows)]
+pub fn add_files(paths: &[PathBuf], cut: bool) -> windows::core::Result<()> {
+    use std::os::windows::ffi::OsStrExt;
+    use windows::Win32::Foundation::{GlobalFree, HANDLE, HGLOBAL};
+    use windows::Win32::System::DataExchange::{CloseClipboard, OpenClipboard, RegisterClipboardFormatW, SetClipboardData};
+    use windows::Win32::System::Memory::{GMEM_MOVEABLE, GlobalAlloc, GlobalLock, GlobalUnlock};
+    use windows::Win32::System::Ole::CF_HDROP;
+    use windows::Win32::UI::Shell::DROPFILES;
+
+    let mut list: Vec<u16> = Vec::new();
+    for path in paths {
+        list.extend(path.as_os_str().encode_wide());
+        list.push(0);
+    }
+    list.push(0);
+    let head = DROPFILES { pFiles: size_of::<DROPFILES>() as u32, fWide: true.into(), ..Default::default() };
+    // DROPEFFECT_MOVE or DROPEFFECT_COPY.
+    let effect: u32 = if cut { 2 } else { 1 };
+    unsafe fn global(bytes: &[&[u8]]) -> windows::core::Result<HGLOBAL> {
+        let size = bytes.iter().map(|part| part.len()).sum();
+        let global = unsafe { GlobalAlloc(GMEM_MOVEABLE, size)? };
+        let mut at = unsafe { GlobalLock(global) } as *mut u8;
+        for part in bytes {
+            unsafe {
+                std::ptr::copy_nonoverlapping(part.as_ptr(), at, part.len());
+                at = at.add(part.len());
+            }
+        }
+        let _ = unsafe { GlobalUnlock(global) };
+        Ok(global)
+    }
+    unsafe {
+        let head = std::slice::from_raw_parts((&head as *const DROPFILES).cast::<u8>(), size_of::<DROPFILES>());
+        let files = std::slice::from_raw_parts(list.as_ptr().cast::<u8>(), list.len() * 2);
+        let drop = global(&[head, files])?;
+        let effect = global(&[&effect.to_le_bytes()])?;
+        let effect_format = RegisterClipboardFormatW(windows::core::w!("Preferred DropEffect"));
+        if let Err(error) = OpenClipboard(None) {
+            let _ = (GlobalFree(Some(drop)), GlobalFree(Some(effect)));
+            return Err(error);
+        }
+        // Once set, the system owns the memory.
+        let mut result = Ok(());
+        for (format, data) in [(CF_HDROP.0 as u32, drop), (effect_format, effect)] {
+            if result.is_ok() {
+                result = SetClipboardData(format, Some(HANDLE(data.0))).map(|_| ());
+            }
+            if result.is_err() {
+                let _ = GlobalFree(Some(data));
+            }
+        }
+        let _ = CloseClipboard();
+        result
+    }
+}
+
 /// A path as a `file://` address, other bytes than letters, digits and
 /// `-._~/` written `%XX`.
 pub fn file_uri(path: &std::path::Path) -> String {
@@ -70,6 +129,29 @@ fn decode(text: &str) -> Option<OsString> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    #[cfg(windows)]
+    #[ignore = "replaces what is on the clipboard"]
+    fn puts_a_file_list() {
+        use windows::Win32::System::DataExchange::{CloseClipboard, GetClipboardData, OpenClipboard};
+        use windows::Win32::System::Ole::CF_HDROP;
+        use windows::Win32::UI::Shell::{DragQueryFileW, HDROP};
+        let paths = [std::env::temp_dir(), std::env::current_dir().unwrap()];
+        add_files(&paths, false).unwrap();
+        let mut read = Vec::new();
+        unsafe {
+            OpenClipboard(None).unwrap();
+            let drop = HDROP(GetClipboardData(CF_HDROP.0 as u32).unwrap().0);
+            for at in 0..DragQueryFileW(drop, u32::MAX, None) {
+                let mut name = vec![0u16; 1024];
+                let len = DragQueryFileW(drop, at, Some(&mut name)) as usize;
+                read.push(PathBuf::from(String::from_utf16_lossy(&name[..len])));
+            }
+            let _ = CloseClipboard();
+        }
+        assert_eq!(read, paths);
+    }
 
     #[test]
     fn reads_files_from_text() {

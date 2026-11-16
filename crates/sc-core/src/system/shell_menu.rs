@@ -9,7 +9,8 @@ use std::path::{Path, PathBuf};
 use std::sync::{Mutex, PoisonError, mpsc};
 
 use windows::Win32::Foundation::{E_INVALIDARG, HWND, LPARAM, LRESULT, POINT, WPARAM};
-use windows::Win32::System::Com::{CLSCTX_INPROC_SERVER, COINIT_APARTMENTTHREADED, CoCreateInstance, CoInitializeEx};
+use windows::Win32::System::Com::{CLSCTX_INPROC_SERVER, CoCreateInstance};
+use windows::Win32::System::Ole::OleInitialize;
 use windows::Win32::System::Threading::GetCurrentThreadId;
 use windows::Win32::System::LibraryLoader::{GetModuleHandleW, GetProcAddress, LOAD_LIBRARY_SEARCH_SYSTEM32, LoadLibraryExW};
 use windows::Win32::UI::Input::KeyboardAndMouse::{GetKeyState, VK_CONTROL, VK_SHIFT};
@@ -90,7 +91,8 @@ fn start() -> io::Result<(mpsc::Sender<Request>, u32)> {
     let (sender, requests) = mpsc::channel::<Request>();
     let (started, id) = mpsc::channel();
     std::thread::Builder::new().name("shell menu".into()).spawn(move || {
-        let com = unsafe { CoInitializeEx(None, COINIT_APARTMENTTHREADED) }.ok();
+        // OLE, not just COM: the menu's Copy and Cut put their files on the clipboard with it.
+        let com = unsafe { OleInitialize(None) };
         let mut message = MSG::default();
         // Makes the thread's message queue before anyone posts to it.
         let _ = unsafe { PeekMessageW(&mut message, None, 0, 0, PM_NOREMOVE) };

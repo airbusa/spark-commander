@@ -1084,9 +1084,9 @@ impl Panel {
         let from = self.path.join(name);
         let target = from.with_file_name(to);
         let fs = self.fs();
-        // Only its case changed, it is there already: on macOS and Windows, itself.
-        let itself = from.file_name().is_some_and(|old| old.to_string_lossy().eq_ignore_ascii_case(to));
-        if !itself && fs.metadata(&target).is_ok() {
+        let dir = from.parent().unwrap_or(&self.path);
+        let names = fs.list(dir)?;
+        if ops::rename::in_the_way(&*fs, dir, from.file_name().unwrap_or_default(), OsStr::new(to), &names) {
             return Err(io::Error::new(io::ErrorKind::AlreadyExists, format!("{to} exists already")));
         }
         let renamed = fs.rename(&from, &target);
@@ -1914,6 +1914,13 @@ mod tests {
         assert!(panel.rename_entry(OsStr::new("c.txt"), "..").is_err(), "not a name");
         panel.rename_entry(OsStr::new("c.txt"), "C.txt").unwrap();
         panel.rename_entry(OsStr::new("C.txt"), "c.txt").unwrap();
+        // A case-sensitive folder may have both names: the other is not gone over.
+        if cfg!(target_os = "linux") {
+            fs::write(root.join("C.txt"), "other").unwrap();
+            assert!(panel.rename_entry(OsStr::new("c.txt"), "C.txt").is_err(), "taken");
+            assert_eq!(fs::read_to_string(root.join("C.txt")).unwrap(), "other");
+            fs::remove_file(root.join("C.txt")).unwrap();
+        }
         panel.show_found(vec![root.join("c.txt"), root.join("sub/b.txt")]);
         panel.rename_entry(OsStr::new("sub/b.txt"), "d.txt").unwrap();
         assert!(root.join("sub/d.txt").is_file());

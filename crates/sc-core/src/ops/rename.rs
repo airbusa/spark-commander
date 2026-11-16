@@ -3,6 +3,7 @@
 //! replace, then upper or lower case; checked, done and undone as a batch.
 
 use std::collections::HashSet;
+use std::ffi::{OsStr, OsString};
 use std::io;
 use std::path::Path;
 use std::time::SystemTime;
@@ -322,9 +323,21 @@ pub fn problems(old: &[String], new: &[String], taken: &HashSet<String>) -> Vec<
         .collect()
 }
 
+/// Whether renaming `from` to `to` in `dir` would go over another entry:
+/// `to` is there, and is not `from` itself under a name differing in case
+/// only, as the folder's `names` show (a case-sensitive one lists both).
+pub fn in_the_way(fs: &dyn Fs, dir: &Path, from: &OsStr, to: &OsStr, names: &[OsString]) -> bool {
+    if fs.metadata(&dir.join(to)).is_err() {
+        return false;
+    }
+    let case_only = from.to_string_lossy().to_lowercase() == to.to_string_lossy().to_lowercase();
+    !case_only || names.iter().any(|name| name == to && name != from)
+}
+
 /// Renames `pairs` (old, new) in `folder`, by way of temporary names when
-/// one takes another's; gives back what it did, to undo it. Stops at the
-/// first error, having undone the half-done.
+/// one takes another's; gives back what it did, to undo it. Each new name is
+/// checked against the folder as it is then. Stops at the first error,
+/// having undone the half-done, or saying what could not be undone.
 pub fn rename_all(
     fs: &dyn Fs,
     folder: &Path,
@@ -333,32 +346,41 @@ pub fn rename_all(
     let pairs: Vec<&(String, String)> = pairs.iter().filter(|(old, new)| old != new).collect();
     let olds: HashSet<&String> = pairs.iter().map(|(old, _)| old).collect();
     let crossing = pairs.iter().any(|(_, new)| olds.contains(new));
+    let mut names = fs.list(folder)?;
     let mut done: Vec<(String, String)> = Vec::new();
     let mut steps: Vec<(String, String)> = Vec::new();
     match crossing {
         false => steps.extend(pairs.iter().map(|(old, new)| (old.clone(), new.clone()))),
         true => {
-            for (ix, (old, _)) in pairs.iter().enumerate() {
-                steps.push((
-                    old.clone(),
-                    format!(".sc-rename-{}-{ix}", std::process::id()),
-                ));
-            }
-            for (ix, (_, new)) in pairs.iter().enumerate() {
-                steps.push((
-                    format!(".sc-rename-{}-{ix}", std::process::id()),
-                    new.clone(),
-                ));
-            }
+            // Names no entry has, nor any new name.
+            let mut free = (0..).map(|n| format!(".sc-rename-{n}")).filter(|name| {
+                !names.iter().any(|taken| taken == name.as_str()) && !pairs.iter().any(|(_, new)| new == name)
+            });
+            let temporary: Vec<String> = pairs.iter().map(|_| free.next().expect("some number is free")).collect();
+            steps.extend(pairs.iter().zip(&temporary).map(|((old, _), temp)| (old.clone(), temp.clone())));
+            steps.extend(pairs.iter().zip(&temporary).map(|((_, new), temp)| (temp.clone(), new.clone())));
         }
     }
     for (from, to) in steps {
-        if let Err(err) = fs.rename(&folder.join(&from), &folder.join(&to)) {
-            for (from, to) in done.iter().rev() {
-                let _ = fs.rename(&folder.join(to), &folder.join(from));
-            }
-            return Err(io::Error::new(err.kind(), format!("{from}: {err}")));
+        let renamed = match in_the_way(fs, folder, from.as_ref(), to.as_ref(), &names) {
+            true => Err(io::Error::new(io::ErrorKind::AlreadyExists, format!("{to} exists already"))),
+            false => fs.rename(&folder.join(&from), &folder.join(&to)),
+        };
+        if let Err(err) = renamed {
+            let stuck: Vec<String> = done
+                .iter()
+                .rev()
+                .filter(|(from, to)| fs.rename(&folder.join(to), &folder.join(from)).is_err())
+                .map(|(from, to)| format!("{to} (was {from})"))
+                .collect();
+            let left = match stuck.is_empty() {
+                true => String::new(),
+                false => format!("; not renamed back: {}", stuck.join(", ")),
+            };
+            return Err(io::Error::new(err.kind(), format!("{from}: {err}{left}")));
         }
+        names.retain(|name| *name != *from);
+        names.push(to.clone().into());
         done.push((from, to));
     }
     Ok(pairs
@@ -467,6 +489,16 @@ mod tests {
             2,
             "no temporary names left"
         );
+        // A name taken since the preview, or by another case on a case-sensitive disk: nothing gone over.
+        std::fs::write(root.join("e"), "E").unwrap();
+        assert!(rename_all(&Local, &root, &[("a".into(), "e".into())]).is_err());
+        if cfg!(target_os = "linux") {
+            std::fs::write(root.join("B"), "other").unwrap();
+            assert!(rename_all(&Local, &root, &[("b".into(), "B".into())]).is_err());
+            assert_eq!(std::fs::read_to_string(root.join("B")).unwrap(), "other");
+        }
+        assert_eq!(std::fs::read_to_string(root.join("e")).unwrap(), "E");
+        assert_eq!(std::fs::read_to_string(root.join("a")).unwrap(), "A");
         std::fs::remove_dir_all(&root).unwrap();
     }
 

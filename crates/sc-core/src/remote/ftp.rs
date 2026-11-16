@@ -348,8 +348,13 @@ fn meta(listed: &Listed) -> Meta {
 }
 
 /// FTP paths are POSIX, whatever the local system's are.
+/// The server's path. Only Windows joins paths with \, else it is part of a name.
+// shortcut: on Windows a server's name with \ in it is taken for two; keep server paths apart from PathBuf to fix.
 fn text(path: &Path) -> String {
-    path.to_string_lossy().replace('\\', "/")
+    match cfg!(windows) {
+        true => path.to_string_lossy().replace('\\', "/"),
+        false => path.to_string_lossy().into_owned(),
+    }
 }
 
 fn join(dir: &str, name: &str) -> String {

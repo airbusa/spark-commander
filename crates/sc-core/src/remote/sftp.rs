@@ -451,8 +451,13 @@ fn sftp_error(err: russh_sftp::client::error::Error) -> io::Error {
 }
 
 /// SFTP paths are POSIX, whatever the local system's are.
+/// The server's path. Only Windows joins paths with \, else it is part of a name.
+// shortcut: on Windows a server's name with \ in it is taken for two; keep server paths apart from PathBuf to fix.
 fn text(path: &Path) -> String {
-    path.to_string_lossy().replace('\\', "/")
+    match cfg!(windows) {
+        true => path.to_string_lossy().replace('\\', "/"),
+        false => path.to_string_lossy().into_owned(),
+    }
 }
 
 fn time(seconds: Option<u32>) -> Option<SystemTime> {
@@ -621,13 +626,23 @@ impl Read for SyncFile {
 
 impl Write for SyncFile {
     fn write(&mut self, buffer: &[u8]) -> io::Result<usize> {
-        let file = self.0.as_mut().expect("open until dropped");
+        let file = self.0.as_mut().ok_or_else(|| io::Error::other("the file is closed"))?;
         RUNTIME.block_on(file.write(buffer))
     }
 
+    /// Ends the writing: the handle closed here, as a server may refuse what
+    /// was written only then (its disk full), and the copy must hear it.
     fn flush(&mut self) -> io::Result<()> {
-        let file = self.0.as_mut().expect("open until dropped");
-        RUNTIME.block_on(file.flush())
+        let Some(mut file) = self.0.take() else {
+            return Ok(());
+        };
+        let closed = RUNTIME.block_on(async {
+            file.flush().await?;
+            file.shutdown().await
+        });
+        let _runtime = RUNTIME.enter();
+        drop(file);
+        closed
     }
 }
 

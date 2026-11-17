@@ -2663,6 +2663,9 @@
   "panel.undo.rename": {
     "message": "Naam van “{name}” wijzigen in “{to}”"
   },
+  "passwords.about.first": {
+    "message": "Opgeslagen wachtwoorden worden versleuteld met een hoofdwachtwoord: kies er nu een. Deze computer onthoudt het, dus hier wordt er niet meer naar gevraagd; op een andere computer opent het ze zodra je het daar typt, nadat de instellingenmap is gekopieerd. Vergeet je het, dan raak je alleen de opgeslagen wachtwoorden kwijt."
+  },
   "passwords.about.set": {
     "message": "Met een hoofdwachtwoord gaan de opgeslagen wachtwoorden ook op een andere computer open zodra je het daar typt, nadat de instellingenmap is gekopieerd. Vergeet je het, dan raak je alleen die wachtwoorden kwijt: je typt ze opnieuw."
   },

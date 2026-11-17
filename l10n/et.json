@@ -2663,6 +2663,9 @@
   "panel.undo.rename": {
     "message": "Nimeta „{name}“ ümber nimeks „{to}“"
   },
+  "passwords.about.first": {
+    "message": "Salvestatud paroolid krüpteeritakse ülemparooliga: vali see nüüd. See arvuti jätab selle meelde, nii et siin seda enam ei küsita; teises arvutis avab see paroolid, kui seadete kaust on sinna kopeeritud ja ülemparool sisestatud. Kui see ununeb, lähevad kaotsi ainult salvestatud paroolid."
+  },
   "passwords.about.set": {
     "message": "Ülemparooliga avanevad salvestatud paroolid ka teises arvutis, kui seadete kaust sinna kopeerida ja ülemparool seal sisestada. Kui see ununeb, lähevad kaotsi ainult need paroolid: need tuleb uuesti sisestada."
   },

@@ -2663,6 +2663,9 @@
   "panel.undo.rename": {
     "message": "Omdøb »{name}« til »{to}«"
   },
+  "passwords.about.first": {
+    "message": "Gemte adgangskoder krypteres med en hovedadgangskode: vælg en nu. Denne computer husker den, så du bliver ikke spurgt igen her; på en anden computer åbner den dem, når indstillingsmappen er kopieret, og du indtaster den. Glemmer du den, mistes kun de gemte adgangskoder."
+  },
   "passwords.about.set": {
     "message": "Med en hovedadgangskode kan de gemte adgangskoder åbnes på en anden computer, når indstillingsmappen er kopieret, og den indtastes der. Glemmer du den, mistes kun de gemte adgangskoder: de skal så indtastes igen."
   },

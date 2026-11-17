@@ -140,16 +140,15 @@ impl EditConnection {
             folder: self.folder.clone(),
         };
         let password = self.password.read(cx).value().to_string();
-        if self.scheme.logs_in() && (!password.is_empty() || self.forget) {
-            let key = remote::keyring_key(&connection.address());
-            let forget = self.forget;
-            std::thread::spawn(move || match forget {
-                true => secrets::forget(&key),
-                false => secrets::remember(&key, &password),
-            });
-        }
+        let key = remote::keyring_key(&connection.address());
+        let (logs_in, forget) = (self.scheme.logs_in(), self.forget);
         (self.done)(connection, window, cx);
         window.close_dialog(cx);
+        match logs_in {
+            true if forget => drop(std::thread::spawn(move || secrets::forget(&key))),
+            true if !password.is_empty() => super::passwords_dialog::keep(key, password, window, cx),
+            _ => {}
+        }
     }
 }
 

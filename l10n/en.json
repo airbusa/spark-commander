@@ -3551,6 +3551,10 @@
     "description": "What Undo (Ctrl+Z) undoes, shown as \"Undone: …\": a rename. {name} is the old name, {to} the new one, e.g. \"a.txt\" and \"b.txt\".",
     "message": "Rename \"{name}\" to \"{to}\""
   },
+  "passwords.about.first": {
+    "message": "Saved passwords are encrypted with a master password: choose one now. This computer remembers it, so it is not asked again here; on another computer, with the settings folder copied, it opens them once typed. Forgotten, only the saved passwords are lost.",
+    "description": "The master password dialog, when the first password is about to be saved (none is set yet): why it is asked. Shown above the two password fields."
+  },
   "passwords.about.set": {
     "description": "Master Password dialog: the explanation at its top.",
     "message": "With a master password, the saved passwords open on another computer once it is typed there, the settings folder copied. Forgotten, only they are lost: they are typed again."

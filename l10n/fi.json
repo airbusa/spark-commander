@@ -2663,6 +2663,9 @@
   "panel.undo.rename": {
     "message": "Nimeä ”{name}” uudelleen nimeksi ”{to}”"
   },
+  "passwords.about.first": {
+    "message": "Tallennetut salasanat salataan pääsalasanalla: valitse se nyt. Tämä tietokone muistaa sen, joten sitä ei kysytä täällä uudelleen; toisella tietokoneella se avaa ne, kun asetuskansio on kopioitu sinne ja kirjoitat sen. Jos unohdat sen, menetät vain tallennetut salasanat."
+  },
   "passwords.about.set": {
     "message": "Pääsalasanan avulla tallennetut salasanat avautuvat toisella tietokoneella, kun asetuskansio on kopioitu sinne ja pääsalasana kirjoitetaan siellä. Jos unohdat sen, menetät vain tallennetut salasanat: ne kirjoitetaan uudelleen."
   },

@@ -2663,6 +2663,9 @@
   "panel.undo.rename": {
     "message": "Preimenuj „{name}“ v „{to}“"
   },
+  "passwords.about.first": {
+    "message": "Shranjena gesla so šifrirana z glavnim geslom: izberite ga zdaj. Ta računalnik si ga zapomni, zato vas tu ne bo več spraševal zanj; v drugem računalniku, kamor kopirate mapo z nastavitvami, jih odpre, ko ga vnesete. Če ga pozabite, izgubite le shranjena gesla."
+  },
   "passwords.about.set": {
     "message": "Z glavnim geslom se shranjena gesla odprejo v drugem računalniku, ko tja kopirate mapo z nastavitvami in tam vnesete glavno geslo. Če ga pozabite, izgubite le shranjena gesla: znova jih vnesete."
   },

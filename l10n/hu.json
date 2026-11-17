@@ -2663,6 +2663,9 @@
   "panel.undo.rename": {
     "message": "„{name}” átnevezése erre: „{to}”"
   },
+  "passwords.about.first": {
+    "message": "A mentett jelszavakat mesterjelszó titkosítja: válassz most egyet. Ez a gép megjegyzi, így itt többé nem kérdezi; egy másik gépen, a beállítások mappájának átmásolása után, beírva megnyitja őket. Ha elfelejted, csak a mentett jelszavak vesznek el."
+  },
   "passwords.about.set": {
     "message": "Mesterjelszóval a mentett jelszavak egy másik gépen is megnyithatók: másold át a beállítások mappáját, és írd be ott a mesterjelszót. Ha elfelejted, csak a mentett jelszavak vesznek el: azokat újra be kell írni."
   },

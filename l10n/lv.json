@@ -2663,6 +2663,9 @@
   "panel.undo.rename": {
     "message": "Pārdēvēt „{name}” par „{to}”"
   },
+  "passwords.about.first": {
+    "message": "Saglabātās paroles tiek šifrētas ar galveno paroli: izvēlieties to tagad. Šis dators to atceras, tāpēc šeit tā vairs netiks prasīta; citā datorā, kurā nokopēta iestatījumu mape, tās atveras, ievadot galveno paroli. Ja galvenā parole aizmirsta, tiek zaudētas tikai saglabātās paroles."
+  },
   "passwords.about.set": {
     "message": "Ar galveno paroli saglabātās paroles var atvērt arī citā datorā, kurā nokopēta iestatījumu mape, ievadot to tur. Ja galvenā parole aizmirsta, tiek zaudētas tikai saglabātās paroles: tās būs jāievada vēlreiz."
   },

@@ -19,6 +19,8 @@ pub enum Ask {
     Unlock,
     /// A new one, set or changed.
     Set,
+    /// One to set before the first password is saved.
+    First,
 }
 
 type Done = Rc<dyn Fn(&mut Window, &mut App)>;
@@ -46,16 +48,30 @@ fn offer_unlock(cx: &mut App) {
     crate::notify_main(note, cx);
 }
 
+/// Keeps `password` for `key`, in the background (the keyring may wait); the
+/// first one asks for a master password before, cancelled, nothing is kept.
+pub fn keep(key: String, password: String, window: &mut Window, cx: &mut App) {
+    let save = move |cx: &mut App| {
+        let (key, password) = (key.clone(), password.clone());
+        // shortcut: a keyring that cannot keep it means asking again next time.
+        cx.background_spawn(async move { secrets::remember(&key, &password) }).detach();
+    };
+    match secrets::has_master() {
+        true => save(cx),
+        false => ask(Ask::First, window, cx, move |_, cx| save(cx)),
+    }
+}
+
 /// Asks for the master password (a new one twice) and unlocks or sets it in
 /// the background; `done` hears once that has worked.
 pub fn ask(what: Ask, window: &mut Window, cx: &mut App, done: impl Fn(&mut Window, &mut App) + 'static) {
     let mut masked = |cx: &mut App| cx.new(|cx| InputState::new(window, cx).masked(true));
     let first = masked(cx);
-    let again = (what == Ask::Set).then(|| masked(cx));
+    let again = (what != Ask::Unlock).then(|| masked(cx));
     let view = cx.new(|_| MasterDialog { what, first: first.clone(), again, problem: None, working: false, done: Rc::new(done) });
     let title = match what {
         Ask::Unlock => t!("passwords.title.unlock"),
-        Ask::Set => t!("passwords.title.set"),
+        Ask::Set | Ask::First => t!("passwords.title.set"),
     };
     window.open_dialog(cx, move |dialog, _, _| {
         let ok = view.clone();
@@ -104,7 +120,7 @@ impl MasterDialog {
         let work = cx.background_spawn(async move {
             match what {
                 Ask::Unlock => secrets::unlock(&master),
-                Ask::Set => secrets::set_master(Some(&master)),
+                Ask::Set | Ask::First => secrets::set_master(Some(&master)),
             }
         });
         cx.spawn_in(window, async move |this, cx| {
@@ -116,7 +132,7 @@ impl MasterDialog {
                         window.close_dialog(cx);
                         let text = match this.what {
                             Ask::Unlock => t!("passwords.done.unlocked"),
-                            Ask::Set => t!("passwords.done.set"),
+                            Ask::Set | Ask::First => t!("passwords.done.set"),
                         };
                         window.remove_notification::<Locked>(cx);
                         window.push_notification(Notification::success(text), cx);
@@ -140,6 +156,7 @@ impl Render for MasterDialog {
         let about = match self.what {
             Ask::Unlock => t!("passwords.about.unlock"),
             Ask::Set => t!("passwords.about.set"),
+            Ask::First => t!("passwords.about.first"),
         };
         let field = |label: String, input: &Entity<InputState>| h_flex().gap_3().child(div().w(px(130.)).flex_none().child(label)).child(div().flex_1().child(Input::new(input)));
         let theme = cx.theme();

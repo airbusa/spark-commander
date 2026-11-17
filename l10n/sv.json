@@ -2663,6 +2663,9 @@
   "panel.undo.rename": {
     "message": "Byt namn på ”{name}” till ”{to}”"
   },
+  "passwords.about.first": {
+    "message": "Sparade lösenord krypteras med ett huvudlösenord: välj ett nu. Den här datorn minns det, så du tillfrågas inte igen här; på en annan dator öppnar det dem när du skriver in det, sedan inställningsmappen har kopierats. Glömmer du det förloras bara de sparade lösenorden."
+  },
   "passwords.about.set": {
     "message": "Med ett huvudlösenord kan de sparade lösenorden öppnas på en annan dator när det skrivs in där, sedan inställningsmappen har kopierats. Glömmer du det förloras bara de sparade lösenorden: de skrivs in igen."
   },

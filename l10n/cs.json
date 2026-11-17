@@ -2663,6 +2663,9 @@
   "panel.undo.rename": {
     "message": "Přejmenovat „{name}“ na „{to}“"
   },
+  "passwords.about.first": {
+    "message": "Uložená hesla se šifrují hlavním heslem: zvolte si ho teď. Tento počítač si ho pamatuje, takže se tu na něj znovu ptát nebude; na jiném počítači, kam zkopírujete složku nastavení, je otevře, jakmile ho zadáte. Když ho zapomenete, přijdete jen o uložená hesla."
+  },
   "passwords.about.set": {
     "message": "S hlavním heslem se uložená hesla otevřou i na jiném počítači, kam zkopírujete složku nastavení, jakmile ho tam zadáte. Když ho zapomenete, přijdete jen o uložená hesla: zadáte je znovu."
   },

@@ -2663,6 +2663,9 @@
   "panel.undo.rename": {
     "message": "Cambiar el nombre de «{name}» a «{to}»"
   },
+  "passwords.about.first": {
+    "message": "Las contraseñas guardadas se cifran con una contraseña maestra: elige una ahora. Este equipo la recuerda, así que aquí no se te volverá a pedir; en otro equipo, tras copiar la carpeta de configuración, las abre al escribirla allí. Si la olvidas, solo se pierden las contraseñas guardadas."
+  },
   "passwords.about.set": {
     "message": "Con una contraseña maestra, las contraseñas guardadas se abren en otro equipo al escribirla allí, tras copiar la carpeta de configuración. Si la olvidas, solo se pierden ellas: basta con volver a escribirlas."
   },

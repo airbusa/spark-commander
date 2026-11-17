@@ -2663,6 +2663,9 @@
   "panel.undo.rename": {
     "message": "“{name}” adını “{to}” olarak değiştir"
   },
+  "passwords.about.first": {
+    "message": "Kayıtlı parolalar bir ana parolayla şifrelenir: şimdi bir tane seçin. Bu bilgisayar onu hatırlar, bu yüzden burada yeniden sorulmaz; ayarlar klasörünün kopyalandığı başka bir bilgisayarda ise yazıldığında parolaları açar. Ana parola unutulursa yalnızca kayıtlı parolalar kaybolur."
+  },
   "passwords.about.set": {
     "message": "Ana parola belirlerseniz, ayarlar klasörü kopyalandığında kayıtlı parolalar başka bir bilgisayarda da ana parola yazılınca açılır. Ana parola unutulursa yalnızca kayıtlı parolalar kaybolur: bunlar yeniden yazılır."
   },

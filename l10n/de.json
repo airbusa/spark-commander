@@ -2663,6 +2663,9 @@
   "panel.undo.rename": {
     "message": "„{name}“ in „{to}“ umbenennen"
   },
+  "passwords.about.first": {
+    "message": "Gespeicherte Passwörter werden mit einem Master-Passwort verschlüsselt: Wähle jetzt eines. Dieser Computer merkt es sich, hier wirst du also nicht wieder gefragt; auf einem anderen Computer öffnet es sie, sobald du es dort eingibst, nachdem der Einstellungsordner kopiert wurde. Vergisst du es, gehen nur die gespeicherten Passwörter verloren."
+  },
   "passwords.about.set": {
     "message": "Mit einem Master-Passwort öffnen sich die gespeicherten Passwörter auch auf einem anderen Computer, sobald du es dort eingibst, nachdem der Einstellungsordner kopiert wurde. Vergisst du es, gehen nur die gespeicherten Passwörter verloren: Du gibst sie neu ein."
   },

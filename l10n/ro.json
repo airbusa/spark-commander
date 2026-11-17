@@ -2663,6 +2663,9 @@
   "panel.undo.rename": {
     "message": "Redenumire „{name}” în „{to}”"
   },
+  "passwords.about.first": {
+    "message": "Parolele salvate sunt criptate cu o parolă principală: alegeți una acum. Acest computer o reține, așa că aici nu vi se va mai cere; pe alt computer, cu folderul de setări copiat, le deschide după ce o tastați. Dacă o uitați, se pierd doar parolele salvate."
+  },
   "passwords.about.set": {
     "message": "Cu o parolă principală, parolele salvate se deschid pe alt computer după ce o tastați acolo, cu folderul de setări copiat. Dacă o uitați, se pierd doar parolele salvate: le tastați din nou."
   },

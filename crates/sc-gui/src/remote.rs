@@ -25,6 +25,7 @@ use sc_core::session::TabState;
 use sc_core::t;
 
 use crate::Commander;
+use crate::dialogs::passwords_dialog;
 
 impl Commander {
     /// `sftp://…`, `ftp://…`: connects in the background, then shows it on
@@ -48,20 +49,19 @@ impl Commander {
         let (done, connected) = oneshot::channel();
         std::thread::spawn(move || {
             let connected = remote::connect(&address, ask);
-            if connected.is_ok()
-                && let Some((key, password)) = kept.lock().unwrap().take()
-            {
-                // shortcut: a keyring that cannot keep it means asking again next time.
-                let _ = secrets::remember(&key, &password);
-            }
-            let _ = done.send(connected);
+            // The password asked to be kept, once it logged in.
+            let keep = kept.lock().unwrap().take().filter(|_| connected.is_ok());
+            let _ = done.send((connected, keep));
         });
         cx.spawn_in(window, async move |this, cx| {
-            let connected = connected
+            let (connected, keep) = connected
                 .await
-                .unwrap_or_else(|_| Err(std::io::Error::other("stopped")));
+                .unwrap_or_else(|_| (Err(std::io::Error::other("stopped")), None));
             let _ = this.update_in(cx, |this, window, cx| {
                 window.remove_notification1::<Connecting>(server.clone(), cx);
+                if let Some((key, password)) = keep {
+                    passwords_dialog::keep(key, password, window, cx);
+                }
                 match connected {
                     Ok((sftp, start)) => this.navigate_on(
                         side,
@@ -129,17 +129,16 @@ impl Commander {
                     panel.apply(&state);
                     Ok(panel)
                 });
-                if went.is_ok()
-                    && let Some((key, password)) = kept.lock().unwrap().take()
-                {
-                    let _ = secrets::remember(&key, &password);
-                }
-                let _ = done.send(went);
+                let keep = kept.lock().unwrap().take().filter(|_| went.is_ok());
+                let _ = done.send((went, keep));
             });
             cx.spawn_in(window, async move |this, cx| {
-                let went = connected.await.unwrap_or_else(|_| Err(std::io::Error::other("stopped")));
+                let (went, keep) = connected.await.unwrap_or_else(|_| (Err(std::io::Error::other("stopped")), None));
                 let _ = this.update_in(cx, |this, window, cx| {
                     window.remove_notification1::<Connecting>(server.clone(), cx);
+                    if let Some((key, password)) = keep {
+                        passwords_dialog::keep(key, password, window, cx);
+                    }
                     if this.switches != switches {
                         return;
                     }
@@ -182,18 +181,23 @@ impl Commander {
                 };
                 let login = login.or_else(|| kept(address.clone()?));
                 let mounted = mounts::mount(&url, login.as_ref());
-                if let (true, Ok(_), Some(mut address), Some(login)) = (remember, &mounted, address, &login) {
-                    address.user = Some(login.user.clone());
-                    // shortcut: a keyring that cannot keep it means asking again next time.
-                    let _ = secrets::remember(&remote::keyring_key(&address), &login.password);
-                }
-                mounted.map_err(|err| (err, login.map(|login| login.user)))
+                let keep = match (remember, &mounted, address, &login) {
+                    (true, Ok(_), Some(mut address), Some(login)) => {
+                        address.user = Some(login.user.clone());
+                        Some((remote::keyring_key(&address), login.password.clone()))
+                    }
+                    _ => None,
+                };
+                (mounted.map_err(|err| (err, login.map(|login| login.user))), keep)
             })
         };
         cx.spawn_in(window, async move |this, cx| {
-            let mounted = mounting.await;
+            let (mounted, keep) = mounting.await;
             let _ = this.update_in(cx, |this, window, cx| {
                 window.remove_notification1::<Connecting>(url.clone(), cx);
+                if let Some((key, password)) = keep {
+                    passwords_dialog::keep(key, password, window, cx);
+                }
                 match (mounted, address) {
                     (Ok(path), _) => {
                         let go = move |panel: &mut sc_core::Panel| match panel.remote() {

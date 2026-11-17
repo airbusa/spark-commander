@@ -2663,6 +2663,9 @@
   "panel.undo.rename": {
     "message": "Ganti nama “{name}” menjadi “{to}”"
   },
+  "passwords.about.first": {
+    "message": "Kata sandi yang disimpan dienkripsi dengan kata sandi utama: pilih satu sekarang. Komputer ini mengingatnya, jadi tidak akan ditanyakan lagi di sini; di komputer lain, setelah folder pengaturan disalin, kata sandi utama membukanya begitu diketik. Jika terlupa, hanya kata sandi yang disimpan yang hilang."
+  },
   "passwords.about.set": {
     "message": "Dengan kata sandi utama, kata sandi yang disimpan dapat dibuka di komputer lain setelah folder pengaturan disalin dan kata sandi utama diketik di sana. Jika terlupa, hanya kata sandi yang disimpan yang hilang: kata sandi itu cukup diketik lagi."
   },

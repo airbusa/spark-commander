@@ -2663,6 +2663,9 @@
   "panel.undo.rename": {
     "message": "Zmiana nazwy „{name}” na „{to}”"
   },
+  "passwords.about.first": {
+    "message": "Zapisane hasła są szyfrowane hasłem głównym: wybierz je teraz. Ten komputer je zapamięta, więc tutaj nie zapyta o nie ponownie; na innym komputerze, po skopiowaniu folderu ustawień, otworzy je po wpisaniu hasła głównego. Jeśli je zapomnisz, przepadną tylko zapisane hasła."
+  },
   "passwords.about.set": {
     "message": "Z hasłem głównym zapisane hasła otworzą się na innym komputerze po skopiowaniu folderu ustawień i wpisaniu tam hasła głównego. Jeśli je zapomnisz, przepadną tylko zapisane hasła: trzeba będzie wpisać je ponownie."
   },

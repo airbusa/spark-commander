@@ -2663,6 +2663,9 @@
   "panel.undo.rename": {
     "message": "Endre navn på «{name}» til «{to}»"
   },
+  "passwords.about.first": {
+    "message": "Lagrede passord krypteres med et hovedpassord: velg et nå. Denne datamaskinen husker det, så du blir ikke spurt igjen her; på en annen datamaskin åpner det dem når innstillingsmappen er kopiert og du skriver det inn. Glemmer du det, mister du bare de lagrede passordene."
+  },
   "passwords.about.set": {
     "message": "Med et hovedpassord kan de lagrede passordene åpnes på en annen datamaskin når innstillingsmappen er kopiert og hovedpassordet skrives inn der. Glemmer du det, mister du bare de lagrede passordene: de må skrives inn på nytt."
   },

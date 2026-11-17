@@ -2663,6 +2663,9 @@
   "panel.undo.rename": {
     "message": "Renomear “{name}” para “{to}”"
   },
+  "passwords.about.first": {
+    "message": "As senhas salvas são criptografadas com uma senha mestra: escolha uma agora. Este computador se lembra dela, então ela não será pedida de novo aqui; em outro computador, depois de copiar a pasta de configurações, ela as abre assim que for digitada. Se você esquecê-la, só as senhas salvas se perdem."
+  },
   "passwords.about.set": {
     "message": "Com uma senha mestra, as senhas salvas abrem em outro computador assim que ela é digitada lá, depois de copiar a pasta de configurações. Se você esquecê-la, só elas se perdem: basta digitá-las de novo."
   },

@@ -2663,6 +2663,9 @@
   "panel.undo.rename": {
     "message": "Canvia el nom de «{name}» a «{to}»"
   },
+  "passwords.about.first": {
+    "message": "Les contrasenyes desades es xifren amb una contrasenya mestra: tria-la ara. Aquest ordinador la recorda, així que aquí no te la tornarà a demanar; en un altre ordinador, un cop copiada la carpeta de configuració, les obre quan l’hi escrius. Si l’oblides, només es perden les contrasenyes desades."
+  },
   "passwords.about.set": {
     "message": "Amb una contrasenya mestra, les contrasenyes desades s’obren en un altre ordinador quan s’hi escriu, un cop copiada la carpeta de configuració. Si l’oblides, només es perden elles: les tornes a escriure."
   },

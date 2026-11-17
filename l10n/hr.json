@@ -2663,6 +2663,9 @@
   "panel.undo.rename": {
     "message": "Preimenuj „{name}“ u „{to}“"
   },
+  "passwords.about.first": {
+    "message": "Spremljene lozinke šifriraju se glavnom lozinkom: odaberite je sada. Ovo je računalo pamti, pa vas ovdje više neće pitati za nju; na drugom računalu, na koje ste kopirali mapu postavki, otvara ih čim je upišete. Ako je zaboravite, gube se samo spremljene lozinke."
+  },
   "passwords.about.set": {
     "message": "Uz glavnu lozinku spremljene se lozinke otvaraju i na drugom računalu, na koje ste kopirali mapu postavki, kad je ondje upišete. Ako je zaboravite, gube se samo spremljene lozinke: upisat ćete ih ponovno."
   },

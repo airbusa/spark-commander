@@ -2663,6 +2663,9 @@
   "panel.undo.rename": {
     "message": "Rinomina «{name}» in «{to}»"
   },
+  "passwords.about.first": {
+    "message": "Le password salvate sono cifrate con una password principale: scegline una ora. Questo computer la ricorda, quindi qui non ti verrà più chiesta; su un altro computer, dopo aver copiato la cartella delle impostazioni, le apre non appena la digiti. Se la dimentichi, si perdono solo le password salvate."
+  },
   "passwords.about.set": {
     "message": "Con una password principale, le password salvate si aprono su un altro computer digitandola lì, dopo aver copiato la cartella delle impostazioni. Se la dimentichi, si perdono solo quelle: basta digitarle di nuovo."
   },

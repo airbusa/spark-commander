@@ -653,18 +653,16 @@ impl Commander {
         std::thread::spawn(move || {
             let mounted = devices::mount_volume(&volume, &ask);
             // The passphrase asked to be kept, once it opened it.
-            if mounted.is_ok()
-                && let Some((key, passphrase)) = kept.lock().unwrap().take()
-            {
-                // shortcut: a keyring that cannot keep it means asking again next time.
-                let _ = sc_core::remote::secrets::remember(&key, &passphrase);
-            }
-            let _ = done.send(mounted.map(|path| (volume, path)));
+            let keep = kept.lock().unwrap().take().filter(|_| mounted.is_ok());
+            let _ = done.send((mounted.map(|path| (volume, path)), keep));
         });
         cx.spawn_in(window, async move |this, cx| {
-            let mounted = mount.await.unwrap_or_else(|_| Err(std::io::Error::other("stopped")));
+            let (mounted, keep) = mount.await.unwrap_or_else(|_| (Err(std::io::Error::other("stopped")), None));
             let _ = this.update_in(cx, |this, window, cx| {
                 window.remove_notification1::<Mounting>(name.clone(), cx);
+                if let Some((key, passphrase)) = keep {
+                    crate::dialogs::passwords_dialog::keep(key, passphrase, window, cx);
+                }
                 match mounted {
                     Ok((volume, path)) => {
                         let listed = this.sidebar.volumes.iter_mut().find(|listed| **listed == volume);

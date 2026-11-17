@@ -2663,6 +2663,9 @@
   "panel.undo.rename": {
     "message": "Pervardyti „{name}“ į „{to}“"
   },
+  "passwords.about.first": {
+    "message": "Įrašyti slaptažodžiai šifruojami pagrindiniu slaptažodžiu: pasirinkite jį dabar. Šis kompiuteris jį įsimena, todėl čia jo nebeklaus; kitame kompiuteryje, nukopijavus nustatymų aplanką, jį įvedus slaptažodžiai atsidaro. Jį pamiršus, prarandami tik įrašyti slaptažodžiai."
+  },
   "passwords.about.set": {
     "message": "Su pagrindiniu slaptažodžiu įrašyti slaptažodžiai atsidaro ir kitame kompiuteryje: nukopijuokite nustatymų aplanką ir įveskite jį ten. Jį pamiršus, prarandami tik įrašyti slaptažodžiai: juos tereikės įvesti iš naujo."
   },

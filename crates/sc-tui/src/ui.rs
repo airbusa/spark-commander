@@ -1,7 +1,8 @@
 //! Drawing, in Midnight Commander's colors: the terminal's own palette, so
 //! its theme decides the shades.
 
-use sc_core::menu::MENUS;
+use sc_core::menu::{MENUS, menu_label};
+use sc_core::t;
 use sc_core::{Entry, Panel, archive};
 use ratatui::Frame;
 use ratatui::buffer::Buffer;
@@ -29,9 +30,20 @@ pub const DIALOG: Style = Style::new().fg(Color::Black).bg(Color::Gray);
 const ERROR: Style = Style::new().fg(Color::White).bg(Color::Red);
 
 /// The panels' function keys; F1 and F2 have none yet.
-const KEYS: [&str; 10] = [
-    "", "", "View", "Edit", "Copy", "Move", "Mkdir", "Delete", "Menu", "Quit",
-];
+fn keys() -> [String; 10] {
+    [
+        String::new(),
+        String::new(),
+        t!("scmd.key_bar.view"),
+        t!("scmd.key_bar.edit"),
+        t!("scmd.key_bar.copy"),
+        t!("scmd.key_bar.move"),
+        t!("scmd.key_bar.mkdir"),
+        t!("scmd.key_bar.delete"),
+        t!("scmd.key_bar.menu"),
+        t!("scmd.key_bar.quit"),
+    ]
+}
 
 /// Where the last frame put what the mouse can hit.
 #[derive(Default)]
@@ -75,13 +87,13 @@ fn draw_panels(frame: &mut Frame, app: &mut App) {
     for (side, area) in halves.into_iter().enumerate() {
         app.places.rows[side] = panel(buf, area, app, side);
     }
-    key_bar(buf, keys, &KEYS);
+    key_bar(buf, keys, &self::keys());
     command_line(frame, command, app);
 }
 
 fn menu_bar(buf: &mut Buffer, area: Rect) {
     buf.set_style(area, BAR);
-    let labels: Vec<&str> = MENUS.iter().map(|menu| menu.label).collect();
+    let labels: Vec<String> = MENUS.iter().map(|menu| menu_label(menu.label)).collect();
     buf.set_stringn(
         area.x + 1,
         area.y,
@@ -229,9 +241,9 @@ impl Columns {
 
     fn header(&self, buf: &mut Buffer, x: u16, y: u16) {
         let titles = [
-            ("Name", self.name),
-            ("Size", self.size),
-            ("Modified", self.date),
+            (t!("scmd.column.name"), self.name),
+            (t!("scmd.column.size"), self.size),
+            (t!("scmd.column.modified"), self.date),
         ];
         let mut at = x;
         for (n, (title, width)) in titles.into_iter().enumerate() {
@@ -242,7 +254,9 @@ impl Columns {
                 buf.set_string(at, y, "│", PANEL);
                 at += 1;
             }
-            buf.set_string(at, y, format!("{title:^width$}"), HEADER);
+            // Centred by display width, cut when a translation is longer.
+            let centred = format!("{}{title}", " ".repeat(width.saturating_sub(title.width()) / 2));
+            buf.set_string(at, y, fit(&centred, width), HEADER);
             at += width as u16;
         }
     }
@@ -266,8 +280,8 @@ impl Columns {
         let mut at = x + self.name as u16;
         buf.set_string(at, y, "│", style);
         at += 1;
-        let size = format!("{:>width$}", size, width = self.size);
-        buf.set_string(at, y, size, style);
+        let size = format!("{}{size}", " ".repeat(self.size.saturating_sub(size.width())));
+        buf.set_string(at, y, fit(&size, self.size), style);
         if self.date > 0 {
             at += self.size as u16;
             buf.set_string(at, y, "│", style);
@@ -279,7 +293,7 @@ impl Columns {
 /// Digits grouped, or shorter units when they do not fit.
 fn size_text(panel: &Panel, entry: &Entry, width: usize) -> String {
     if entry.is_parent() {
-        return "UP--DIR".into();
+        return t!("scmd.column.up_dir");
     }
     let text = panel.size_text(entry);
     match text.width() <= width {
@@ -343,7 +357,7 @@ fn take_width(chars: impl Iterator<Item = char>, width: usize) -> String {
         .collect()
 }
 
-pub fn key_bar(buf: &mut Buffer, area: Rect, labels: &[&str; 10]) {
+pub fn key_bar(buf: &mut Buffer, area: Rect, labels: &[String; 10]) {
     let slot = area.width / 10;
     for (n, label) in labels.iter().enumerate() {
         let x = area.x + slot * n as u16;
@@ -401,13 +415,13 @@ fn dialog(frame: &mut Frame, text: &str, error: bool) {
     );
     let style = if error { ERROR } else { DIALOG };
     let title = if error {
-        " Error "
+        format!(" {} ", t!("scmd.message.error"))
     } else {
-        " Spark Commander "
+        " Spark Commander ".into()
     };
     frame.render_widget(Clear, at);
     let block = Block::bordered().title(title).style(style);
-    let body = Paragraph::new(format!("{text}\n\n[ OK ]"))
+    let body = Paragraph::new(format!("{text}\n\n[ {} ]", t!("scmd.message.ok")))
         .wrap(Wrap { trim: false })
         .centered()
         .block(block.padding(ratatui::widgets::Padding::horizontal(1)));

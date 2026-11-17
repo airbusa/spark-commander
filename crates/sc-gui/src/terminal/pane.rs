@@ -10,6 +10,7 @@ use gpui_kit::component::{ActiveTheme, IconName, Sizable, ToolkitControls, Windo
 use gpui_kit::*;
 use sc_core::menu::Command;
 use sc_core::session::TerminalState;
+use sc_core::t;
 
 use crate::Commander;
 use crate::menus::Run;
@@ -118,7 +119,7 @@ impl Commander {
                 self.terminal_tab = self.terminals.len() - 1;
                 self.show_terminal();
             }
-            Err(err) => window.push_notification(Notification::error(format!("Could not start the shell: {err}")), cx),
+            Err(err) => window.push_notification(Notification::error(t!("terminal.error.start_shell", err = err)), cx),
         }
         self.terminal_changed(window, cx);
     }
@@ -160,14 +161,15 @@ impl Commander {
         let Some(view) = self.terminals.get(ix).map(|tab| tab.view.clone()) else {
             return;
         };
-        let text = match view.read(cx).idle() {
-            Some(false) => "Close this terminal tab? The program running in it will be stopped.",
-            _ => "Close this terminal tab? Its shell will end.",
-        };
+        let text: SharedString = match view.read(cx).idle() {
+            Some(false) => t!("terminal.close.running"),
+            _ => t!("terminal.close.idle"),
+        }
+        .into();
         let commander = cx.entity().downgrade();
         window.open_alert_dialog(cx, move |alert, _, _| {
             let (commander, view) = (commander.clone(), view.clone());
-            alert.title("Close Tab").description(text).ok_text("Close").show_cancel(true).on_ok(move |_, window, cx| {
+            alert.title(t!("terminal.close.title")).description(text.clone()).ok_text(t!("terminal.close.ok")).show_cancel(true).on_ok(move |_, window, cx| {
                 // Closed at once: its delayed close would give the focus back to the closed shell.
                 window.close_dialog(cx);
                 // Found again: another tab may have closed meanwhile.
@@ -218,8 +220,7 @@ impl Commander {
     pub(crate) fn run_in_terminal(&mut self, line: &str, folder: &Path, window: &mut Window, cx: &mut Context<Self>) -> Option<bool> {
         let tab = self.terminals.get(self.terminal_tab).filter(|tab| self.terminal_shown && tab.dir.is_some())?;
         if tab.view.read(cx).idle() == Some(false) {
-            let text = "A program is running in the terminal: run the command once it ends.";
-            window.push_notification(Notification::warning(text), cx);
+            window.push_notification(Notification::warning(t!("terminal.busy")), cx);
             return Some(false);
         }
         let view = tab.view.clone();

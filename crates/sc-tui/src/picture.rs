@@ -8,6 +8,7 @@ use image::imageops::FilterType;
 use image::{DynamicImage, ImageFormat, ImageReader, RgbaImage};
 use sc_core::viewer::convert::{self, Converter};
 use sc_core::viewer::pdf;
+use sc_core::t;
 use sc_core::viewer::Mode;
 use ratatui::Frame;
 use ratatui::layout::Rect;
@@ -133,7 +134,7 @@ fn load(key: &Key) -> Result<Loaded, String> {
                 let frame = sc_core::viewer::media::still(&key.path, 16384)?;
                 let mut rgba = frame.bgra;
                 rgba.chunks_exact_mut(4).for_each(|pixel| pixel.swap(0, 2));
-                DynamicImage::ImageRgba8(RgbaImage::from_raw(frame.width, frame.height, rgba).ok_or("a broken picture")?)
+                DynamicImage::ImageRgba8(RgbaImage::from_raw(frame.width, frame.height, rgba).ok_or_else(|| t!("scmd.picture.broken"))?)
             }
             false => {
                 let reader = ImageReader::open(&key.path).and_then(|reader| reader.with_guessed_format());
@@ -159,11 +160,11 @@ fn load(key: &Key) -> Result<Loaded, String> {
         None => key.path.clone(),
     };
     let sizes = pdf::pages(&path).map_err(|err| err.to_string())?;
-    let size = sizes.get(page).ok_or("the PDF has no such page")?;
+    let size = sizes.get(page).ok_or_else(|| t!("scmd.picture.no_page"))?;
     let bitmap = pdf::render(&path, page, pdf::fit_width(*size, width, height))
         .map_err(|err| err.to_string())?;
     let (width, height) = (bitmap.width, bitmap.height);
-    let image = RgbaImage::from_raw(width, height, bitmap.into_rgba()).ok_or("a broken page")?;
+    let image = RgbaImage::from_raw(width, height, bitmap.into_rgba()).ok_or_else(|| t!("scmd.picture.broken_page"))?;
     Ok(Loaded {
         image: DynamicImage::ImageRgba8(image),
         about: String::new(),
@@ -243,7 +244,7 @@ pub fn draw(frame: &mut Frame, area: Rect, viewer: &mut Viewer) {
             return;
         }
         Some(Err(err)) => err.clone(),
-        None => "Loading…".into(),
+        None => t!("scmd.picture.loading"),
     };
     let text = Paragraph::new(note)
         .style(PANEL)

@@ -4,6 +4,7 @@ use ratatui::Frame;
 use ratatui::crossterm::event::{KeyCode, KeyEvent};
 use ratatui::layout::{Position, Rect};
 use ratatui::widgets::{Block, Clear, Padding};
+use sc_core::t;
 use unicode_width::UnicodeWidthStr;
 
 use crate::input::Input;
@@ -180,11 +181,11 @@ impl Form {
             }
             y += 1;
         }
-        let buttons = "Enter OK   Esc Cancel";
+        let buttons = t!("scmd.dialog.buttons");
         let x = inner.x + inner.width.saturating_sub(buttons.width() as u16) / 2;
         frame
             .buffer_mut()
-            .set_string(x, inner.bottom().saturating_sub(1), buttons, DIALOG);
+            .set_stringn(x, inner.bottom().saturating_sub(1), &buttons, room, DIALOG);
         if let Some(cursor) = cursor {
             frame.set_cursor_position(cursor);
         }
@@ -235,7 +236,7 @@ impl Chooser {
 
     pub fn draw(&self, frame: &mut Frame) {
         let area = frame.area();
-        let keys = "Enter Open  F7 New  F5 Copy  F2 Rename  F8 Delete";
+        let keys = t!("scmd.workspaces.keys");
         let width = (keys.width() as u16 + 4).min(area.width.saturating_sub(2)).max(20);
         let height = (self.items.len() as u16 + 4).min(area.height);
         let at = Rect::new(
@@ -256,7 +257,7 @@ impl Chooser {
             let style = if ix == self.at { BAR } else { DIALOG };
             buf.set_string(inner.x, inner.y + ix as u16, fit(&format!("{number} {mark} {item}"), room), style);
         }
-        buf.set_string(inner.x, inner.bottom().saturating_sub(1), fit(keys, room), DIALOG);
+        buf.set_string(inner.x, inner.bottom().saturating_sub(1), fit(&keys, room), DIALOG);
     }
 }
 

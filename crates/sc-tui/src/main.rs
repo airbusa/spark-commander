@@ -14,7 +14,7 @@ use std::path::{Path, PathBuf};
 use std::sync::mpsc;
 use std::time::{Duration, Instant};
 
-use sc_core::keymap;
+use sc_core::{keymap, t};
 use sc_core::menu::Command;
 use sc_core::viewer::origin::{self, Upload};
 use sc_core::session::{self, OpenTabs, Session, Workspaces};
@@ -107,12 +107,12 @@ const TICK: Duration = Duration::from_millis(100);
 fn main() -> io::Result<()> {
     let mut problems = Vec::new();
     let settings = Settings::load().unwrap_or_else(|err| {
-        problems.push(format!("Could not read the settings: {err}"));
+        problems.push(t!("scmd.error.read_settings", err = err));
         Settings::default()
     });
     settings.apply_globally();
     let session = Session::load_from(session::TERMINAL).unwrap_or_else(|err| {
-        problems.push(format!("Could not read the open tabs: {err}"));
+        problems.push(t!("scmd.error.read_tabs", err = err));
         Session::default()
     });
     std::thread::spawn(archive::remove_stale_scratch);
@@ -122,7 +122,7 @@ fn main() -> io::Result<()> {
         std::env::args_os().skip(1).map(PathBuf::from),
     );
     app.workspaces = Workspaces::load_from(session::WORKSPACES_TERMINAL).unwrap_or_else(|err| {
-        problems.push(format!("Could not read the workspaces: {err}"));
+        problems.push(t!("scmd.error.read_workspaces", err = err));
         Workspaces::default()
     });
     if !problems.is_empty() {
@@ -278,7 +278,7 @@ impl App {
         self.workspaces.list[current].open = open.clone();
         let session = Session { open, sync_browsing: self.sync_browsing, ..Session::default() };
         if let Err(err) = session.save_to(session::TERMINAL).and_then(|()| self.workspaces.save_to(session::WORKSPACES_TERMINAL)) {
-            eprintln!("Could not save the open tabs: {err}");
+            eprintln!("{}", t!("scmd.error.save_tabs", err = err));
         }
     }
 
@@ -287,14 +287,14 @@ impl App {
         let items = self.workspaces.list.iter().map(|workspace| workspace.name.clone()).collect();
         let current = self.workspaces.current;
         let at = self.chooser.as_ref().map_or(current, |chooser| chooser.at);
-        self.chooser = Some(Chooser { title: "Workspaces".into(), items, at, checked: current });
+        self.chooser = Some(Chooser { title: t!("scmd.workspaces.title"), items, at, checked: current });
     }
 
     fn chose(&mut self, choice: Choice) {
         let name = |this: &Self, ix: usize| this.workspaces.list.get(ix).map(|workspace| workspace.name.clone()).unwrap_or_default();
-        let ask = |title: &str, value: &str, purpose| (Form::new(title).text("Name:", value, Vec::new()), purpose);
+        let ask = |title: String, value: &str, purpose| (Form::new(title).text(&t!("scmd.workspace.name"), value, Vec::new()), purpose);
         // The field cannot select a name to type over: empty, it takes the one its label gives.
-        let unnamed = |title: &str, name: String, purpose| (Form::new(title).text(&format!("Name (empty: {name}):"), "", Vec::new()), purpose);
+        let unnamed = |title: String, name: String, purpose| (Form::new(title).text(&t!("scmd.workspace.name_or_default", name = name), "", Vec::new()), purpose);
         match choice {
             Choice::Open => {}
             Choice::Cancel => self.chooser = None,
@@ -304,17 +304,17 @@ impl App {
                 self.save_session();
             }
             Choice::New => {
-                let free = (1..).map(|n| format!("Workspace {n}")).find(|name| self.workspaces.name_error(name, None).is_none()).unwrap_or_default();
-                self.form = Some(unnamed("New Workspace", free.clone(), Purpose::NewWorkspace(free)));
+                let free = (1..).map(|n| t!("scmd.workspace.default_name", number = n)).find(|name| self.workspaces.name_error(name, None).is_none()).unwrap_or_default();
+                self.form = Some(unnamed(t!("scmd.workspace.new_title"), free.clone(), Purpose::NewWorkspace(free)));
             }
             Choice::Duplicate(ix) => {
-                let free = self.workspaces.free_name(&format!("{} copy", name(self, ix)));
-                self.form = Some(unnamed("Duplicate Workspace", free.clone(), Purpose::DuplicateWorkspace(ix, free)));
+                let free = self.workspaces.free_name(&t!("scmd.workspace.copy_name", name = name(self, ix)));
+                self.form = Some(unnamed(t!("scmd.workspace.duplicate_title"), free.clone(), Purpose::DuplicateWorkspace(ix, free)));
             }
-            Choice::Rename(ix) => self.form = Some(ask("Rename Workspace", &name(self, ix), Purpose::RenameWorkspace(ix))),
-            Choice::Delete(_) if self.workspaces.list.len() < 2 => self.say("The last workspace stays.", true),
+            Choice::Rename(ix) => self.form = Some(ask(t!("scmd.workspace.rename_title"), &name(self, ix), Purpose::RenameWorkspace(ix))),
+            Choice::Delete(_) if self.workspaces.list.len() < 2 => self.say(t!("scmd.workspace.last_stays"), true),
             Choice::Delete(ix) => {
-                let title = format!("Delete \"{}\"? Its tabs are forgotten.", name(self, ix));
+                let title = t!("scmd.workspace.delete_question", name = name(self, ix));
                 self.form = Some((Form::new(title), Purpose::DeleteWorkspace(ix)));
             }
         }
@@ -426,7 +426,7 @@ impl App {
             let other = &mut self.sides[1 - ix].tabs;
             if let Err(err) = other.navigate(|panel| panel.follow(&from, &to)) {
                 self.sync_browsing = false;
-                let text = format!("{err}. Synchronized browsing is off.");
+                let text = t!("scmd.sync_browsing.stopped", err = err);
                 self.say(text, true);
             }
         }
@@ -477,7 +477,7 @@ impl App {
             }
             KeyCode::Esc => return self.command.clear(),
             KeyCode::F(10) if plain => return self.quit = true,
-            KeyCode::F(9) if plain => return self.not_yet("The menus"),
+            KeyCode::F(9) if plain => return self.not_yet("menus"),
             // As in Midnight Commander, with nothing typed: groups and inverting.
             KeyCode::Char('+') if !typing && plain => return self.command(Command::SelectGroup),
             KeyCode::Char('-') if !typing && plain => return self.command(Command::UnselectGroup),
@@ -606,18 +606,18 @@ impl App {
             Command::RereadSource => self.navigate(Panel::reload),
             Command::SyncBrowsing => {
                 self.sync_browsing = !self.sync_browsing;
-                let on = if self.sync_browsing { "on" } else { "off" };
-                self.say(format!("Synchronized browsing is {on}."), false);
+                let text = if self.sync_browsing { t!("scmd.sync_browsing.on") } else { t!("scmd.sync_browsing.off") };
+                self.say(text, false);
             }
             Command::SelectGroup | Command::UnselectGroup => {
                 let mark = command == Command::SelectGroup;
                 let title = if mark {
-                    "Select group"
+                    t!("scmd.group.select_title")
                 } else {
-                    "Unselect group"
+                    t!("scmd.group.unselect_title")
                 };
                 let form =
-                    Form::new(title).text("Files (*.txt *.md; folders end in /):", "*", Vec::new());
+                    Form::new(title).text(&t!("scmd.group.files"), "*", Vec::new());
                 self.form = Some((form, Purpose::Group(mark)));
             }
             Command::SelectAllWithSameExtension => self.panel_mut().mark_same_extension(),
@@ -635,8 +635,8 @@ impl App {
                     .current_mut()
                     .compare_with(right.tabs.current_mut(), hide);
                 let text = match count {
-                    0 => "The folders have the same files.".to_string(),
-                    n => format!("{n} file(s) marked: newer than, or missing on, the other side."),
+                    0 => t!("scmd.compare.same"),
+                    n => t!("scmd.compare.marked", count = n),
                 };
                 self.say(text, false);
             }
@@ -672,8 +672,8 @@ impl App {
             | Command::DeletePermanently
             | Command::CopyToClipboard
             | Command::CutToClipboard
-            | Command::PasteFromClipboard => self.not_yet("File operations"),
-            Command::ConnectToServer | Command::Disconnect => self.not_yet("Servers"),
+            | Command::PasteFromClipboard => self.not_yet("file_operations"),
+            Command::ConnectToServer | Command::Disconnect => self.not_yet("servers"),
             Command::ManageWorkspaces => self.choose_workspace(),
             Command::NewWorkspace => self.chose(Choice::New),
             Command::DuplicateWorkspace => self.chose(Choice::Duplicate(self.workspaces.current)),
@@ -681,7 +681,7 @@ impl App {
                 self.open_workspace(command.workspace().unwrap_or(0));
                 self.save_session();
             }
-            _ => self.not_yet("This command"),
+            _ => self.not_yet("command"),
         }
     }
 
@@ -700,8 +700,9 @@ impl App {
     }
 
     // shortcut: the commands the terminal lacks say so; they come step by step.
+    /// `what`: menus, file_operations, servers or command.
     fn not_yet(&mut self, what: &str) {
-        self.say(format!("{what}: not in the terminal version yet."), false);
+        self.say(t!("scmd.not_yet", what = what), false);
     }
 
     /// `cd` moves the panel; anything else goes to the shell.
@@ -713,7 +714,7 @@ impl App {
             return self.navigate(move |panel| panel.go_to_folder(target));
         }
         if self.panel().remote().is_some() {
-            return self.say("Commands run on this computer, not on the server.", true);
+            return self.say(t!("scmd.command_line.not_on_server"), true);
         }
         self.foreground = Some(Foreground::Shell(line, folder));
     }
@@ -728,7 +729,7 @@ impl App {
                 if let Err(err) = ran {
                     println!("{err}");
                 }
-                print!("\nPress Enter to return to Spark Commander...");
+                print!("\n{}", t!("scmd.shell.press_enter"));
                 let _ = io::stdout().flush();
                 let _ = io::stdin().read_line(&mut String::new());
                 folder
@@ -756,7 +757,7 @@ impl App {
             let sent = origin::send_back(&file, before, &upload);
             Box::new(move |app: &mut App| match sent {
                 Some(Ok(text)) => app.say(text, false),
-                Some(Err(err)) => app.say(format!("Could not save it back: {err}"), true),
+                Some(Err(err)) => app.say(t!("scmd.error.save_back", err = err), true),
                 None => {}
             })
         });
@@ -778,7 +779,7 @@ impl App {
             return;
         }
         let name = origin.name();
-        self.say(format!("Copying {name}..."), false);
+        self.say(t!("scmd.copying", name = name), false);
         self.background(move || {
             let opened = origin
                 .view()
@@ -804,7 +805,7 @@ impl App {
             return;
         }
         let name = origin.name();
-        self.say(format!("Copying {name}..."), false);
+        self.say(t!("scmd.copying", name = name), false);
         self.background(move || {
             let prepared = origin.edit();
             Box::new(move |app: &mut App| {
@@ -835,7 +836,7 @@ impl App {
             });
             Box::new(move |app: &mut App| match edited {
                 Ok(Some(Ok(text))) => app.say(text, false),
-                Ok(Some(Err(err))) => app.say(format!("Could not save it back: {err}"), true),
+                Ok(Some(Err(err))) => app.say(t!("scmd.error.save_back", err = err), true),
                 Ok(None) => {}
                 Err(err) => app.say(format!("{name}: {err}"), true),
             })

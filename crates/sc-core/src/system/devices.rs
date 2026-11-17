@@ -61,7 +61,7 @@ pub fn unmount_volume(volume: &Volume) -> io::Result<()> {
             udisks::unmount(object)?;
             volume.encrypted.as_deref().map_or(Ok(()), udisks::lock)
         }
-        None => Err(io::Error::other("only the system can unmount this")),
+        None => Err(io::Error::other(crate::t!("devices.error.system_only"))),
     }
 }
 
@@ -271,7 +271,7 @@ fn gvfs_mounts(dir: &Path) -> Vec<Volume> {
                 (Some(user), Some(host)) => format!("{app} ({user}@{host})"),
                 _ => app.to_owned(),
             },
-            (None, Some(share), Some(server)) => format!("{share} on {server}"),
+            (None, Some(share), Some(server)) => crate::t!("devices.volume.share_on_server", share = share, server = server),
             (None, None, Some(server)) => server.replace('_', " "),
             _ => raw.clone(),
         };
@@ -367,7 +367,6 @@ mod udisks {
             let label = label.or_else(|| get::<String>(block, "IdLabel").filter(|name| !name.is_empty()));
             let label = label.or_else(|| get::<String>(outer, "IdLabel").filter(|name| !name.is_empty()));
             let size = get::<u64>(block, "Size").unwrap_or(0);
-            let unnamed = if encrypted.is_some() { "encrypted volume" } else { "volume" };
             let path = main_point(&points, label.as_deref());
             let kind = match path.as_deref() {
                 Some(path) if path == Path::new("/") => VolumeKind::System,
@@ -376,7 +375,13 @@ mod udisks {
             };
             let system = points.iter().any(|point| system_place(point));
             Some(Volume {
-                name: label.unwrap_or_else(|| format!("{:.1} GB {unnamed}", size as f64 / 1e9)),
+                name: label.unwrap_or_else(|| {
+                    let size = format!("{:.1}", size as f64 / 1e9);
+                    match encrypted.is_some() {
+                        true => crate::t!("devices.volume.unnamed_encrypted", size = size),
+                        false => crate::t!("devices.volume.unnamed", size = size),
+                    }
+                }),
                 kind,
                 path,
                 udisks: (!system && !locked).then(|| object.to_string()),
@@ -430,19 +435,22 @@ mod udisks {
     pub fn unlock(container: &str, name: &str, ask: &Ask) -> io::Result<PathBuf> {
         let key = keyring_key(container);
         let mut kept = key.as_deref().and_then(crate::remote::secrets::password);
-        let mut wrong = "";
+        let mut wrong = false;
         let cleartext = loop {
-            let text = format!("{wrong}The passphrase of {name}:");
+            let text = match wrong {
+                true => crate::t!("devices.unlock.ask_again", name = name),
+                false => crate::t!("devices.unlock.ask", name = name),
+            };
             let passphrase = match kept.take() {
                 Some(passphrase) => passphrase,
-                None => match ask(Prompt::Secret { title: "Unlock".into(), text, keyring: key.clone() }) {
+                None => match ask(Prompt::Secret { title: crate::t!("devices.unlock.title"), text, keyring: key.clone() }) {
                     Reply::Secret(passphrase) => passphrase,
-                    _ => return Err(io::Error::new(io::ErrorKind::Interrupted, "cancelled")),
+                    _ => return Err(io::Error::new(io::ErrorKind::Interrupted, crate::t!("remote.cancelled"))),
                 },
             };
             match call::<OwnedObjectPath>(container, ENCRYPTED, "Unlock", &(passphrase, options())) {
                 Ok(cleartext) => break cleartext,
-                Err(zbus::Error::MethodError(_, Some(message), _)) if message.to_lowercase().contains("passphrase") => wrong = "Wrong passphrase. ",
+                Err(zbus::Error::MethodError(_, Some(message), _)) if message.to_lowercase().contains("passphrase") => wrong = true,
                 Err(err) => return Err(io::Error::other(err)),
             }
         };
@@ -512,7 +520,7 @@ pub fn mount(id: &str) -> io::Result<Vec<(PathBuf, String)>> {
         }
     }
     match folders.is_empty() {
-        true => Err(io::Error::other("the device shares no folder")),
+        true => Err(io::Error::other(crate::t!("devices.error.no_folder"))),
         false => Ok(folders),
     }
 }
@@ -600,14 +608,14 @@ mod kde_connect {
     pub fn mount(id: &str) -> io::Result<Vec<(PathBuf, String)>> {
         let bus = Connection::session().map_err(io::Error::other)?;
         if !property(&bus, &format!("/modules/kdeconnect/devices/{id}"), "isReachable").unwrap_or(false) {
-            return Err(io::Error::new(io::ErrorKind::NotConnected, "not reachable: is KDE Connect open on it, on this network?"));
+            return Err(io::Error::new(io::ErrorKind::NotConnected, crate::t!("devices.error.unreachable")));
         }
         let path = format!("/modules/kdeconnect/devices/{id}/sftp");
         let sftp = "org.kde.kdeconnect.device.sftp";
         let mounted: bool = call(&bus, &path, sftp, "mountAndWait", &()).map_err(io::Error::other)?;
         if !mounted {
             let error: String = call(&bus, &path, sftp, "getMountError", &()).unwrap_or_default();
-            let error = if error.is_empty() { "could not mount the device".to_owned() } else { error };
+            let error = if error.is_empty() { crate::t!("devices.error.mount_failed") } else { error };
             return Err(io::Error::other(error));
         }
         let folders: HashMap<String, OwnedValue> = call(&bus, &path, sftp, "getDirectories", &()).map_err(io::Error::other)?;
@@ -673,7 +681,8 @@ mod tests {
         found.sort_by_key(|volume| volume.kind);
         let names: Vec<_> = found.iter().map(|volume| (volume.name.as_str(), volume.kind)).collect();
         let cloud = ("Google Drive (me@gmail.com)", VolumeKind::Cloud);
-        assert_eq!(names, [cloud, ("media on nas", VolumeKind::Network), ("SAMSUNG Galaxy S23", VolumeKind::Phone)]);
+        let share = crate::t!("devices.volume.share_on_server", share = "media", server = "nas");
+        assert_eq!(names, [cloud, (share.as_str(), VolumeKind::Network), ("SAMSUNG Galaxy S23", VolumeKind::Phone)]);
         std::fs::remove_dir_all(&dir).unwrap();
     }
 
@@ -725,7 +734,7 @@ mod tests {
             Reply::Secret(if heard.len() == 1 { "wrong".into() } else { secret.clone() })
         });
         let path = mount_volume(&locked, &ask).unwrap();
-        assert!(asked.lock().unwrap()[1].starts_with("Wrong passphrase."), "{asked:?}");
+        assert_eq!(asked.lock().unwrap()[1], crate::t!("devices.unlock.ask_again", name = name), "{asked:?}");
         std::fs::write(path.join("written"), "in it").unwrap();
         let unlocked = find();
         assert_eq!(unlocked.path.as_deref(), Some(path.as_path()), "{unlocked:?}");

@@ -122,21 +122,19 @@ impl Ftp {
         let mut stream = server.dial().map_err(failed)?;
         for attempt in 1.. {
             if !anonymous {
+                let (user, host) = (&server.user, &server.host);
                 let text = match attempt {
-                    1 => format!("Password for {}@{}:", server.user, server.host),
-                    _ => format!(
-                        "Wrong password. Password for {}@{}:",
-                        server.user, server.host
-                    ),
+                    1 => crate::t!("remote.ftp.password", user = user, host = host),
+                    _ => crate::t!("remote.ftp.password_again", user = user, host = host),
                 };
                 let prompt = Prompt::Secret {
-                    title: "Password".into(),
+                    title: crate::t!("remote.password.title"),
                     text,
                     keyring: Some(remote::keyring_key(address)),
                 };
                 server.password = match ask(prompt) {
                     Reply::Secret(password) => password,
-                    _ => return Err(io::Error::new(io::ErrorKind::Interrupted, "cancelled")),
+                    _ => return Err(io::Error::new(io::ErrorKind::Interrupted, crate::t!("remote.cancelled"))),
                 };
             }
             match stream.login(&server.user, &server.password) {
@@ -624,7 +622,7 @@ impl ServerCertVerifier for Trust {
     ) -> Result<ServerCertVerified, rustls::Error> {
         let fingerprint = fingerprint(certificate);
         let mut trusted = self.trusted.lock().unwrap();
-        let refused = || rustls::Error::General("the server's certificate is not trusted".into());
+        let refused = || rustls::Error::General(crate::t!("remote.ftps.not_trusted"));
         match trusted.as_ref() {
             Some(known) if *known == fingerprint => return Ok(ServerCertVerified::assertion()),
             // Asked once, while connecting; never about a second certificate.
@@ -638,11 +636,11 @@ impl ServerCertVerifier for Trust {
         }
         if let Some((line, _)) = recorded.first() {
             let file = known_file().unwrap_or_default();
-            return Err(rustls::Error::General(format!(
-                "The TLS certificate of {} has CHANGED since line {line} of {} recorded it. \
-                 Someone could be listening in; if the server has a new certificate, remove that line.",
-                self.server,
-                file.display()
+            return Err(rustls::Error::General(crate::t!(
+                "remote.ftps.changed",
+                server = self.server,
+                line = line,
+                file = file.display()
             )));
         }
         let Some(ask) = self.ask.lock().unwrap().clone() else {
@@ -650,7 +648,8 @@ impl ServerCertVerifier for Trust {
         };
         let prompt = Prompt::UnknownHost {
             host: self.server.clone(),
-            key_type: "TLS certificate".into(),
+            // The prompt's text names it: remote.unknown_host.text.
+            key_type: "TLS".into(),
             fingerprint: fingerprint.clone(),
         };
         match ask(prompt) {

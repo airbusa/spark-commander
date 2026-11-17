@@ -19,11 +19,11 @@ const TRIES: usize = 3;
 pub fn connect(address: &Address, ask: &Ask) -> io::Result<Arc<Sftp>> {
     let program = rclone()?;
     let user = address.user.clone().unwrap_or_default();
-    let (backend, secret, wrong) = match address.scheme {
-        Scheme::B2 => (":b2:", "Application key", "Wrong application key. "),
-        Scheme::Swift => (":swift:", "API key", "Wrong API key. "),
-        Scheme::Webdav | Scheme::Webdavs => (":webdav:", "Password", "Wrong password. "),
-        _ => (":s3:", "Secret key", "Wrong key. "),
+    let (backend, kind) = match address.scheme {
+        Scheme::B2 => (":b2:", "application_key"),
+        Scheme::Swift => (":swift:", "api_key"),
+        Scheme::Webdav | Scheme::Webdavs => (":webdav:", "password"),
+        _ => (":s3:", "secret_key"),
     };
     // WebDAV with no user: a guest, asked nothing.
     let guest = backend == ":webdav:" && address.user.is_none();
@@ -31,14 +31,17 @@ pub fn connect(address: &Address, ask: &Ask) -> io::Result<Arc<Sftp>> {
         let given = match guest {
             true => String::new(),
             false => {
-                let wrong = if attempt > 1 { wrong } else { "" };
+                let host = &address.host;
                 let prompt = Prompt::Secret {
-                    title: secret.into(),
-                    text: format!("{wrong}{secret} of {user} at {}:", address.host),
+                    title: crate::t!("remote.cloud.title", kind = kind),
+                    text: match attempt > 1 {
+                        true => crate::t!("remote.cloud.ask_again", kind = kind, user = user, host = host),
+                        false => crate::t!("remote.cloud.ask", kind = kind, user = user, host = host),
+                    },
                     keyring: Some(remote::keyring_key(address)),
                 };
                 let Reply::Secret(given) = ask(prompt) else {
-                    return Err(io::Error::new(io::ErrorKind::Interrupted, "cancelled"));
+                    return Err(io::Error::new(io::ErrorKind::Interrupted, crate::t!("remote.cancelled")));
                 };
                 given
             }
@@ -106,7 +109,7 @@ fn obscure(program: &Path, password: &str) -> io::Result<String> {
     let obscured = String::from_utf8_lossy(&out.stdout).trim().to_owned();
     match out.status.success() && !obscured.is_empty() {
         true => Ok(obscured),
-        false => Err(io::Error::other("rclone could not take the password")),
+        false => Err(io::Error::other(crate::t!("remote.cloud.obscure_failed"))),
     }
 }
 
@@ -128,7 +131,7 @@ fn rclone() -> io::Result<PathBuf> {
     let ours = crate::addons::bundled::path("rclone", if cfg!(windows) { "rclone.exe" } else { "rclone" });
     match ours.is_file() {
         true => Ok(ours),
-        false => Err(io::Error::new(io::ErrorKind::NotFound, "rclone is missing: Settings > Add-ons downloads it")),
+        false => Err(io::Error::new(io::ErrorKind::NotFound, crate::t!("remote.cloud.rclone_missing"))),
     }
 }
 

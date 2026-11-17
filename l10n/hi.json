@@ -1,0 +1,4823 @@
+{
+  "about.addons": {
+    "message": "ऐड-ऑन, जो आपके चुनने पर डाउनलोड होते हैं"
+  },
+  "about.libraries": {
+    "message": "इन पर आधारित"
+  },
+  "about.licence": {
+    "message": "लाइसेंस:"
+  },
+  "about.made_with": {
+    "message": "इन प्रोजेक्ट के काम से बना"
+  },
+  "about.part.alacritty_terminal": {
+    "message": "बिल्ट-इन टर्मिनल की स्क्रीन और शेल"
+  },
+  "about.part.encoding_rs": {
+    "message": "कोड पेज"
+  },
+  "about.part.gpui": {
+    "message": "विंडो, ड्रॉइंग और इनपुट (Zed का)"
+  },
+  "about.part.gpui_kit": {
+    "message": "कंट्रोल: सूचियां, मेन्यू, फ़ील्ड, एडिटर"
+  },
+  "about.part.html5ever": {
+    "message": "व्यूअर में HTML और ई-बुक"
+  },
+  "about.part.image": {
+    "message": "तस्वीरें"
+  },
+  "about.part.keyring": {
+    "message": "सिस्टम के कीरिंग में पासवर्ड"
+  },
+  "about.part.lucide": {
+    "message": "आइकन"
+  },
+  "about.part.material_icons": {
+    "message": "फ़ाइल और फ़ोल्डर आइकन"
+  },
+  "about.part.pdfium_render": {
+    "message": "Rust से PDFium"
+  },
+  "about.part.ratatui": {
+    "message": "scmd, टर्मिनल वर्शन"
+  },
+  "about.part.russh": {
+    "message": "SSH और SFTP"
+  },
+  "about.part.rustls": {
+    "message": "TLS"
+  },
+  "about.part.serde": {
+    "message": "सेटिंग फ़ाइलें"
+  },
+  "about.part.similar": {
+    "message": "सामग्री से तुलना करें"
+  },
+  "about.part.suppaftp": {
+    "message": "FTP और FTPS"
+  },
+  "about.part.tokio": {
+    "message": "बैकग्राउंड में नेटवर्क का काम"
+  },
+  "about.part.trash": {
+    "message": "ट्रैश"
+  },
+  "about.part.tree_sitter": {
+    "message": "व्यूअर और एडिटर में कोड के रंग"
+  },
+  "about.part.zbus": {
+    "message": "D-Bus: डेस्कटॉप, डिवाइस, KDE Connect"
+  },
+  "about.shipped": {
+    "message": "साथ में आता है"
+  },
+  "about.tagline": {
+    "message": "दो पैनल वाला फ़ाइल मैनेजर, फ़्री सॉफ़्टवेयर।"
+  },
+  "about.title": {
+    "message": "Spark Commander के बारे में"
+  },
+  "about.version": {
+    "message": "वर्शन {version}"
+  },
+  "activity.clear": {
+    "message": "साफ़ करें"
+  },
+  "activity.clear_failed": {
+    "message": "लॉग साफ़ नहीं हो सका: {err}"
+  },
+  "activity.empty": {
+    "message": "अभी तक कुछ नहीं किया गया।"
+  },
+  "activity.title": {
+    "message": "गतिविधि लॉग"
+  },
+  "addons.error.damaged": {
+    "message": "डाउनलोड खराब है: उसका चेकसम मेल नहीं खाता"
+  },
+  "addons.error.list": {
+    "message": "ऐड-ऑन की सूची: {err}"
+  },
+  "addons.error.missing_file": {
+    "message": "डाउनलोड में {file} नहीं है"
+  },
+  "addons.error.no_folder": {
+    "message": "कोई डेटा फ़ोल्डर नहीं"
+  },
+  "addons.error.unpacking": {
+    "message": "अनपैक करते समय: {err}"
+  },
+  "addons.installed": {
+    "message": "{addon} {version} इंस्टॉल हो गया है।"
+  },
+  "addons.megabytes": {
+    "message": "{size} MB"
+  },
+  "addons.offer.never": {
+    "message": "फिर कभी न दिखाएं"
+  },
+  "addons.offer.no": {
+    "message": "नहीं"
+  },
+  "addons.offer.text": {
+    "message": "{name} के लिए एक ऐड-ऑन चाहिए जो इंस्टॉल नहीं है: {addon}। इसे सेटिंग > ऐड-ऑन में डाउनलोड करें?"
+  },
+  "addons.offer.title": {
+    "message": "ऐड-ऑन"
+  },
+  "addons.offer.yes": {
+    "message": "हां"
+  },
+  "addons.purpose.cloud": {
+    "message": "ऑनलाइन स्टोरेज: S3, Google Drive, OneDrive, Dropbox और दूसरी सेवाएं।"
+  },
+  "addons.purpose.media": {
+    "message": "वीडियो और ऑडियो, और HEIC व AVIF फ़ोटो: व्यूअर और क्विक व्यू इन्हें दिखाते हैं।"
+  },
+  "addons.purpose.office": {
+    "message": "ऑफ़िस दस्तावेज़: व्यूअर Word, Excel और PowerPoint फ़ाइलों को PDF के रूप में दिखाता है।"
+  },
+  "addons.purpose.pdfium": {
+    "message": "PDF: व्यूअर PDF फ़ाइलें दिखाता है, और कन्वर्ट होने के बाद ऑफ़िस दस्तावेज़ भी।"
+  },
+  "addons.purpose.seven_zip": {
+    "message": "आर्काइव: 7z, zip, rar, tar और दूसरे फ़ॉर्मैट पैक और अनपैक करता है।"
+  },
+  "addons.update": {
+    "message": "अपडेट करें"
+  },
+  "addons.updates": {
+    "message": "ऐड-ऑन अपडेट: {names}"
+  },
+  "appearance.dark": {
+    "message": "डार्क"
+  },
+  "appearance.light": {
+    "message": "लाइट"
+  },
+  "appearance.system": {
+    "message": "सिस्टम जैसा"
+  },
+  "archive.cannot_read": {
+    "message": "{name}: पढ़ा नहीं जा सकता"
+  },
+  "archive.not_in_archive": {
+    "message": "{name} आर्काइव में नहीं है"
+  },
+  "archive.not_own_folder": {
+    "message": "{folder} इस यूज़र का अपना फ़ोल्डर नहीं है"
+  },
+  "archive.seven_zip_failed": {
+    "message": "7-Zip विफल रहा ({code})"
+  },
+  "archive.seven_zip_missing": {
+    "message": "7-Zip नहीं मिला: {path} (vendor/7zip/fetch.sh या fetch.bat चलाएं)"
+  },
+  "archive.temp_not_utf8": {
+    "message": "अस्थायी फ़ोल्डर का नाम UTF-8 में नहीं है"
+  },
+  "associations.add": {
+    "message": "जोड़ें..."
+  },
+  "associations.cancel": {
+    "message": "रद्द करें"
+  },
+  "associations.close": {
+    "message": "बंद करें"
+  },
+  "associations.column.edit": {
+    "message": "एडिट (F4)"
+  },
+  "associations.column.files": {
+    "message": "फ़ाइलें"
+  },
+  "associations.column.open": {
+    "message": "खोलें (Enter)"
+  },
+  "associations.column.view": {
+    "message": "देखें (F3)"
+  },
+  "associations.edit": {
+    "message": "बदलें..."
+  },
+  "associations.edit_dialog.title": {
+    "message": "संबद्ध करें"
+  },
+  "associations.empty": {
+    "message": "अभी कोई नहीं।"
+  },
+  "associations.field.edit": {
+    "message": "इससे एडिट करें (F4):"
+  },
+  "associations.field.files": {
+    "message": "फ़ाइलें (*.jpg *.png):"
+  },
+  "associations.field.open": {
+    "message": "इससे खोलें (Enter):"
+  },
+  "associations.field.view": {
+    "message": "इससे देखें (F3):"
+  },
+  "associations.intro": {
+    "message": "Enter, F3 और F4 किसी मास्क की फ़ाइलों के लिए ये प्रोग्राम चलाते हैं; खाली छोड़ने पर सामान्य प्रोग्राम चलता है। %1 फ़ाइल है।"
+  },
+  "associations.mask_needed": {
+    "message": "फ़ाइलों का मास्क ज़रूरी है: *.txt"
+  },
+  "associations.no_file": {
+    "message": "जिस प्रकार की फ़ाइल को संबद्ध करना है, उसकी किसी फ़ाइल पर कर्सर रखें।"
+  },
+  "associations.ok": {
+    "message": "ठीक है"
+  },
+  "associations.remove": {
+    "message": "हटाएं"
+  },
+  "associations.save_failed": {
+    "message": "सेटिंग सेव नहीं हो सकी: {err}"
+  },
+  "associations.title": {
+    "message": "आंतरिक संबद्धताएं"
+  },
+  "attributes.bad_time": {
+    "message": "“{text}” कोई तारीख और समय नहीं है: 2026-11-10 14:04:33"
+  },
+  "attributes.cancel": {
+    "message": "रद्द करें"
+  },
+  "attributes.change_time": {
+    "message": "तारीख/समय बदलें:"
+  },
+  "attributes.changed": {
+    "message": "{count, plural, one {# बदला गया} other {# बदले गए}}"
+  },
+  "attributes.changed_failed": {
+    "message": "{count, plural, one {# बदला गया} other {# बदले गए}}, {failed, plural, one {# विफल} other {# विफल}}"
+  },
+  "attributes.dialog_title_many": {
+    "message": "एट्रिब्यूट बदलें: {count, plural, one {# आइटम} other {# आइटम}}"
+  },
+  "attributes.dialog_title_one": {
+    "message": "एट्रिब्यूट बदलें: {name}"
+  },
+  "attributes.execute": {
+    "message": "चलाना"
+  },
+  "attributes.group": {
+    "message": "समूह"
+  },
+  "attributes.in_archive": {
+    "message": "आर्काइव के अंदर एट्रिब्यूट नहीं बदले जा सकते।"
+  },
+  "attributes.no_bits": {
+    "message": "यहां इन फ़ाइलों के अनुमति बिट नहीं हैं; सिर्फ़ तारीख बदली जा सकती है।"
+  },
+  "attributes.now": {
+    "message": "अभी"
+  },
+  "attributes.octal": {
+    "message": "ऑक्टल:"
+  },
+  "attributes.ok": {
+    "message": "ठीक है"
+  },
+  "attributes.others": {
+    "message": "अन्य"
+  },
+  "attributes.owner": {
+    "message": "मालिक"
+  },
+  "attributes.read": {
+    "message": "पढ़ना"
+  },
+  "attributes.recurse": {
+    "message": "फ़ोल्डरों के अंदर की हर चीज़ भी"
+  },
+  "attributes.title_many": {
+    "message": "{count, plural, one {# आइटम} other {# आइटम}} के एट्रिब्यूट बदलें"
+  },
+  "attributes.title_one": {
+    "message": "“{name}” के एट्रिब्यूट बदलें"
+  },
+  "attributes.write": {
+    "message": "लिखना"
+  },
+  "bookmarks.add_current": {
+    "message": "मौजूदा फ़ोल्डर जोड़ें"
+  },
+  "bookmarks.add_folders": {
+    "message": "फ़ोल्डर जोड़ें..."
+  },
+  "bookmarks.added": {
+    "message": "बुकमार्क किया गया: {name}"
+  },
+  "bookmarks.already": {
+    "message": "{name} पहले से बुकमार्क में है।"
+  },
+  "bookmarks.chooser.failed": {
+    "message": "फ़ोल्डर चुनने का डायलॉग नहीं दिखाया जा सका: {err}"
+  },
+  "bookmarks.chooser.prompt": {
+    "message": "बुकमार्क करें"
+  },
+  "bookmarks.close": {
+    "message": "बंद करें"
+  },
+  "bookmarks.copy_name": {
+    "message": "नाम कॉपी करें"
+  },
+  "bookmarks.copy_path": {
+    "message": "पाथ कॉपी करें"
+  },
+  "bookmarks.drop_here": {
+    "message": "फ़ोल्डर यहां छोड़ें।"
+  },
+  "bookmarks.empty": {
+    "message": "कोई बुकमार्क नहीं: फ़ोल्डर जोड़ें, या उन्हें यहां छोड़ें।"
+  },
+  "bookmarks.intro": {
+    "message": "इस कंप्यूटर के फ़ोल्डर, स्थान वाले क्रम में: किसी को खिसकाने के लिए उसे ड्रैग करें, या जोड़ने के लिए फ़ोल्डर यहां छोड़ें।"
+  },
+  "bookmarks.move_down": {
+    "message": "नीचे ले जाएं"
+  },
+  "bookmarks.move_up": {
+    "message": "ऊपर ले जाएं"
+  },
+  "bookmarks.only_local": {
+    "message": "सिर्फ़ इस कंप्यूटर के फ़ोल्डर बुकमार्क किए जा सकते हैं।"
+  },
+  "bookmarks.remove": {
+    "message": "हटाएं"
+  },
+  "bookmarks.remove_from": {
+    "message": "बुकमार्क से हटाएं"
+  },
+  "bookmarks.rename": {
+    "message": "नाम बदलें..."
+  },
+  "bookmarks.rename_label": {
+    "message": "नाम (खाली: फ़ोल्डर का नाम):"
+  },
+  "bookmarks.rename_title": {
+    "message": "बुकमार्क का नाम बदलें"
+  },
+  "bookmarks.sort": {
+    "message": "A–Z क्रम में लगाएं"
+  },
+  "bookmarks.title": {
+    "message": "बुकमार्क"
+  },
+  "button_bar.copy": {
+    "message": "कॉपी"
+  },
+  "button_bar.delete": {
+    "message": "डिलीट"
+  },
+  "button_bar.edit": {
+    "message": "एडिट"
+  },
+  "button_bar.move": {
+    "message": "मूव"
+  },
+  "button_bar.new_folder": {
+    "message": "नया फ़ोल्डर"
+  },
+  "button_bar.quit": {
+    "message": "बाहर निकलें"
+  },
+  "button_bar.view": {
+    "message": "देखें"
+  },
+  "checksum.create.title": {
+    "message": "{name} बनाएं"
+  },
+  "checksum.create.title_separate": {
+    "message": "{method} चेकसम फ़ाइलें बनाएं"
+  },
+  "checksum.dialog_title": {
+    "message": "चेकसम फ़ाइलें बनाएं"
+  },
+  "checksum.save_as": {
+    "message": "चेकसम फ़ाइल को इस रूप में सेव करें:"
+  },
+  "checksum.separate": {
+    "message": "इसके बजाय हर फ़ाइल के बगल में एक चेकसम फ़ाइल"
+  },
+  "checksum.verify.all_ok": {
+    "message": "{count, plural, one {# फ़ाइल ठीक है} other {सभी # फ़ाइलें ठीक हैं}}"
+  },
+  "checksum.verify.choose": {
+    "message": "चेकसम फ़ाइलें चुनें: .sfv, .md5, .sha1, .sha256 या .sha512।"
+  },
+  "checksum.verify.missing_file": {
+    "message": "गायब: {name}"
+  },
+  "checksum.verify.result": {
+    "message": "{ok, plural, one {# ठीक} other {# ठीक}}, {wrong, plural, one {# गलत} other {# गलत}}, {missing, plural, one {# गायब} other {# गायब}}"
+  },
+  "checksum.verify.title_many": {
+    "message": "{count, plural, one {# चेकसम फ़ाइल} other {# चेकसम फ़ाइलें}} जांचें"
+  },
+  "checksum.verify.title_one": {
+    "message": "{name} जांचें"
+  },
+  "checksum.verify.wrong_file": {
+    "message": "गलत: {name}"
+  },
+  "command.about": {
+    "message": "Spark Commander के बारे में"
+  },
+  "command.activity_log": {
+    "message": "गतिविधि लॉग..."
+  },
+  "command.all_files": {
+    "message": "सभी फ़ाइलें"
+  },
+  "command.all_folder_sizes": {
+    "message": "सभी फ़ोल्डरों का आकार गिनें"
+  },
+  "command.all_with_extension": {
+    "message": "*.*"
+  },
+  "command.associate_with": {
+    "message": "इससे संबद्ध करें..."
+  },
+  "command.bookmark_folder": {
+    "message": "इस फ़ोल्डर को बुकमार्क करें"
+  },
+  "command.bookmarks": {
+    "message": "बुकमार्क"
+  },
+  "command.branch_view": {
+    "message": "ब्रांच व्यू (सबफ़ोल्डर सहित)"
+  },
+  "command.branch_view_selected": {
+    "message": "चुने गए फ़ोल्डरों का ब्रांच व्यू"
+  },
+  "command.brief": {
+    "message": "संक्षिप्त"
+  },
+  "command.calculate_occupied_space": {
+    "message": "घेरी गई जगह गिनें..."
+  },
+  "command.change_attributes": {
+    "message": "एट्रिब्यूट बदलें..."
+  },
+  "command.close_all_tabs": {
+    "message": "सभी टैब बंद करें"
+  },
+  "command.close_duplicate_tabs": {
+    "message": "डुप्लिकेट टैब बंद करें"
+  },
+  "command.close_tab": {
+    "message": "टैब बंद करें"
+  },
+  "command.combine_files": {
+    "message": "फ़ाइलें मिलाएं..."
+  },
+  "command.compare_by_content": {
+    "message": "सामग्री से तुलना करें..."
+  },
+  "command.compare_directories": {
+    "message": "नई फ़ाइलें मार्क करें"
+  },
+  "command.copy": {
+    "message": "कॉपी करें..."
+  },
+  "command.copy_names_to_clipboard": {
+    "message": "चुने गए नाम क्लिपबोर्ड पर कॉपी करें"
+  },
+  "command.copy_names_with_path_to_clipboard": {
+    "message": "पाथ सहित नाम क्लिपबोर्ड पर कॉपी करें"
+  },
+  "command.copy_to_clipboard": {
+    "message": "फ़ाइलें कॉपी करें"
+  },
+  "command.copy_with_all_details": {
+    "message": "सभी विवरणों के साथ क्लिपबोर्ड पर कॉपी करें"
+  },
+  "command.copy_with_path_and_details": {
+    "message": "पाथ+विवरण के साथ क्लिपबोर्ड पर कॉपी करें"
+  },
+  "command.create_checksum_files": {
+    "message": "चेकसम फ़ाइलें बनाएं (CRC32, MD5, SHA1, SHA256, SHA512)..."
+  },
+  "command.create_link": {
+    "message": "लिंक बनाएं..."
+  },
+  "command.custom_filter": {
+    "message": "कस्टम..."
+  },
+  "command.cut_to_clipboard": {
+    "message": "फ़ाइलें कट करें"
+  },
+  "command.delete": {
+    "message": "डिलीट करें"
+  },
+  "command.delete_permanently": {
+    "message": "हमेशा के लिए डिलीट करें"
+  },
+  "command.disconnect": {
+    "message": "सर्वर से डिस्कनेक्ट करें"
+  },
+  "command.download_link": {
+    "message": "लिंक से डाउनलोड करें..."
+  },
+  "command.duplicate_tab": {
+    "message": "नया टैब"
+  },
+  "command.duplicate_workspace": {
+    "message": "वर्कस्पेस की कॉपी बनाएं..."
+  },
+  "command.edit": {
+    "message": "एडिट करें"
+  },
+  "command.edit_externally": {
+    "message": "बाहरी एडिटर में एडिट करें"
+  },
+  "command.folder_history": {
+    "message": "फ़ोल्डर इतिहास..."
+  },
+  "command.full": {
+    "message": "विस्तृत"
+  },
+  "command.go_back": {
+    "message": "पीछे"
+  },
+  "command.go_forward": {
+    "message": "आगे"
+  },
+  "command.go_home": {
+    "message": "होम"
+  },
+  "command.go_to_root": {
+    "message": "रूट फ़ोल्डर"
+  },
+  "command.hidden_files": {
+    "message": "छिपी फ़ाइलें"
+  },
+  "command.internal_associations": {
+    "message": "आंतरिक संबद्धताएं (सिर्फ़ Spark Commander)..."
+  },
+  "command.invert_selection": {
+    "message": "चयन उलटें"
+  },
+  "command.left_drives": {
+    "message": "ड्राइव (बायां पैनल)"
+  },
+  "command.list_tabs": {
+    "message": "टैब की सूची"
+  },
+  "command.load_selection_from_file": {
+    "message": "फ़ाइल से चयन लोड करें"
+  },
+  "command.manage_bookmarks": {
+    "message": "बुकमार्क प्रबंधित करें..."
+  },
+  "command.manage_tools": {
+    "message": "टूल प्रबंधित करें..."
+  },
+  "command.manage_workspaces": {
+    "message": "वर्कस्पेस प्रबंधित करें..."
+  },
+  "command.mark_in_place": {
+    "message": "कर्सर हिलाए बिना मार्क करें / मार्क हटाएं, फ़ोल्डर का आकार मापकर"
+  },
+  "command.mark_newer_hide_same": {
+    "message": "नई फ़ाइलें मार्क करें, एक जैसी फ़ाइलें छिपाएं"
+  },
+  "command.move": {
+    "message": "मूव करें..."
+  },
+  "command.multi_rename_tool": {
+    "message": "कई फ़ाइलों के नाम बदलें..."
+  },
+  "command.name_to_command_line": {
+    "message": "नाम कमांड लाइन पर"
+  },
+  "command.new_folder": {
+    "message": "नया फ़ोल्डर..."
+  },
+  "command.new_terminal": {
+    "message": "नया टर्मिनल टैब"
+  },
+  "command.new_text_file": {
+    "message": "नई फ़ाइल..."
+  },
+  "command.new_workspace": {
+    "message": "नया वर्कस्पेस..."
+  },
+  "command.next_tab": {
+    "message": "अगला टैब"
+  },
+  "command.only_selected_files": {
+    "message": "सिर्फ़ चुनी गई फ़ाइलें"
+  },
+  "command.open_in_left_panel": {
+    "message": "बाएं पैनल में दिखाएं"
+  },
+  "command.open_in_new_tab": {
+    "message": "फ़ोल्डर को नए टैब में खोलें"
+  },
+  "command.open_in_other_new_tab": {
+    "message": "फ़ोल्डर को दूसरे पैनल के नए टैब में खोलें"
+  },
+  "command.open_in_right_panel": {
+    "message": "दाएं पैनल में दिखाएं"
+  },
+  "command.open_terminal": {
+    "message": "यहां टर्मिनल खोलें"
+  },
+  "command.operation_queue": {
+    "message": "ऑपरेशन कतार..."
+  },
+  "command.pack": {
+    "message": "पैक करें..."
+  },
+  "command.paste_from_clipboard": {
+    "message": "फ़ाइलें पेस्ट करें"
+  },
+  "command.path_and_name_to_command_line": {
+    "message": "पाथ और नाम कमांड लाइन पर"
+  },
+  "command.path_to_command_line": {
+    "message": "पाथ कमांड लाइन पर"
+  },
+  "command.previous_tab": {
+    "message": "पिछला टैब"
+  },
+  "command.programs": {
+    "message": "प्रोग्राम"
+  },
+  "command.properties": {
+    "message": "प्रॉपर्टी..."
+  },
+  "command.quick_filter": {
+    "message": "क्विक फ़िल्टर"
+  },
+  "command.quick_open": {
+    "message": "क्विक ओपन..."
+  },
+  "command.quick_view_panel": {
+    "message": "क्विक व्यू पैनल"
+  },
+  "command.quit": {
+    "message": "बाहर निकलें"
+  },
+  "command.redo": {
+    "message": "फिर से करें"
+  },
+  "command.rename_in_place": {
+    "message": "नाम बदलें"
+  },
+  "command.reread_source": {
+    "message": "स्रोत फिर से पढ़ें"
+  },
+  "command.restore_selection": {
+    "message": "चयन वापस लाएं"
+  },
+  "command.reversed_order": {
+    "message": "उल्टा क्रम"
+  },
+  "command.right_drives": {
+    "message": "ड्राइव (दायां पैनल)"
+  },
+  "command.save_selection": {
+    "message": "चयन सेव करें"
+  },
+  "command.save_selection_to_file": {
+    "message": "चयन को फ़ाइल में सेव करें"
+  },
+  "command.search": {
+    "message": "खोजें..."
+  },
+  "command.search_in_separate_process": {
+    "message": "अलग विंडो में खोजें..."
+  },
+  "command.select_all": {
+    "message": "सभी चुनें"
+  },
+  "command.select_all_with_same_extension": {
+    "message": "एक ही एक्सटेंशन वाली सभी चुनें"
+  },
+  "command.select_group": {
+    "message": "समूह चुनें..."
+  },
+  "command.settings": {
+    "message": "सेटिंग..."
+  },
+  "command.shortcuts": {
+    "message": "शॉर्टकट..."
+  },
+  "command.sidebar_connections": {
+    "message": "कनेक्शन"
+  },
+  "command.sidebar_operations": {
+    "message": "ऑपरेशन"
+  },
+  "command.sidebar_places": {
+    "message": "स्थान"
+  },
+  "command.sidebar_tree": {
+    "message": "फ़ोल्डर"
+  },
+  "command.sort_by_extension": {
+    "message": "एक्सटेंशन"
+  },
+  "command.sort_by_name": {
+    "message": "नाम"
+  },
+  "command.sort_by_size": {
+    "message": "आकार"
+  },
+  "command.sort_by_time": {
+    "message": "समय"
+  },
+  "command.split_file": {
+    "message": "फ़ाइल विभाजित करें..."
+  },
+  "command.swap_panels": {
+    "message": "पैनलों की अदला-बदली करें"
+  },
+  "command.swap_panels_and_tabs": {
+    "message": "पैनलों की उनके टैब सहित अदला-बदली करें"
+  },
+  "command.sync_browsing": {
+    "message": "सिंक्रोनाइज़्ड ब्राउज़िंग"
+  },
+  "command.synchronize_dirs": {
+    "message": "फ़ोल्डर सिंक्रोनाइज़ करें..."
+  },
+  "command.target_equals_source": {
+    "message": "लक्ष्य = स्रोत"
+  },
+  "command.terminal_panel": {
+    "message": "टर्मिनल"
+  },
+  "command.test_archives": {
+    "message": "आर्काइव जांचें"
+  },
+  "command.thumbnail_view": {
+    "message": "थंबनेल व्यू"
+  },
+  "command.toggle_mark": {
+    "message": "मार्क करें / मार्क हटाएं"
+  },
+  "command.toggle_sidebar": {
+    "message": "साइडबार दिखाएं"
+  },
+  "command.undo": {
+    "message": "पूर्ववत करें"
+  },
+  "command.unpack_specific_files": {
+    "message": "चुनिंदा फ़ाइलें अनपैक करें..."
+  },
+  "command.unselect_all": {
+    "message": "सभी का चयन हटाएं"
+  },
+  "command.unselect_group": {
+    "message": "समूह का चयन हटाएं..."
+  },
+  "command.unsorted": {
+    "message": "बिना क्रम के"
+  },
+  "command.verify_checksums": {
+    "message": "चेकसम जांचें (चेकसम फ़ाइलों से)"
+  },
+  "command.vertical_arrangement": {
+    "message": "ऊपर-नीचे व्यवस्था"
+  },
+  "command.view": {
+    "message": "देखें"
+  },
+  "command.website": {
+    "message": "Spark Commander वेबसाइट"
+  },
+  "command.workspace1": {
+    "message": "वर्कस्पेस 1 खोलें"
+  },
+  "command.workspace2": {
+    "message": "वर्कस्पेस 2 खोलें"
+  },
+  "command.workspace3": {
+    "message": "वर्कस्पेस 3 खोलें"
+  },
+  "command.workspace4": {
+    "message": "वर्कस्पेस 4 खोलें"
+  },
+  "command.workspace5": {
+    "message": "वर्कस्पेस 5 खोलें"
+  },
+  "command.workspace6": {
+    "message": "वर्कस्पेस 6 खोलें"
+  },
+  "command.workspace7": {
+    "message": "वर्कस्पेस 7 खोलें"
+  },
+  "command.workspace8": {
+    "message": "वर्कस्पेस 8 खोलें"
+  },
+  "command.workspace9": {
+    "message": "वर्कस्पेस 9 खोलें"
+  },
+  "command_line.error.cannot_run": {
+    "message": "{program}: चलाया नहीं जा सकता"
+  },
+  "command_line.error.not_found": {
+    "message": "{program}: कमांड नहीं मिली"
+  },
+  "command_line.history.empty": {
+    "message": "अभी तक कोई कमांड नहीं चलाई गई"
+  },
+  "command_line.on_server": {
+    "message": "कमांड इस कंप्यूटर पर चलती हैं; पैनल किसी सर्वर पर है।"
+  },
+  "command_name.all_files": {
+    "message": "सभी फ़ाइलें दिखाएं"
+  },
+  "command_name.all_with_extension": {
+    "message": "*.* दिखाएं"
+  },
+  "command_name.brief": {
+    "message": "संक्षिप्त व्यू"
+  },
+  "command_name.compare_directories": {
+    "message": "फ़ोल्डरों की तुलना: नई फ़ाइलें मार्क करें"
+  },
+  "command_name.custom_filter": {
+    "message": "कस्टम फ़िल्टर"
+  },
+  "command_name.duplicate_tab": {
+    "message": "नया टैब (इसी की कॉपी)"
+  },
+  "command_name.full": {
+    "message": "विस्तृत व्यू"
+  },
+  "command_name.go_back": {
+    "message": "पीछे जाएं"
+  },
+  "command_name.go_forward": {
+    "message": "आगे जाएं"
+  },
+  "command_name.go_home": {
+    "message": "होम पर जाएं"
+  },
+  "command_name.hidden_files": {
+    "message": "छिपी फ़ाइलें दिखाएं"
+  },
+  "command_name.only_selected_files": {
+    "message": "सिर्फ़ चुनी गई फ़ाइलें दिखाएं"
+  },
+  "command_name.programs": {
+    "message": "प्रोग्राम दिखाएं"
+  },
+  "command_name.quick_filter": {
+    "message": "क्विक फ़िल्टर"
+  },
+  "command_name.rename_in_place": {
+    "message": "वहीं नाम बदलें"
+  },
+  "command_name.sidebar_connections": {
+    "message": "साइडबार: कनेक्शन"
+  },
+  "command_name.sidebar_operations": {
+    "message": "साइडबार: ऑपरेशन"
+  },
+  "command_name.sidebar_places": {
+    "message": "साइडबार: स्थान"
+  },
+  "command_name.sidebar_tree": {
+    "message": "साइडबार: फ़ोल्डर"
+  },
+  "command_name.sort_by_extension": {
+    "message": "एक्सटेंशन के क्रम में लगाएं"
+  },
+  "command_name.sort_by_name": {
+    "message": "नाम के क्रम में लगाएं"
+  },
+  "command_name.sort_by_size": {
+    "message": "आकार के क्रम में लगाएं"
+  },
+  "command_name.sort_by_time": {
+    "message": "समय के क्रम में लगाएं"
+  },
+  "command_name.toggle_sidebar": {
+    "message": "साइडबार: दिखाएं या छिपाएं"
+  },
+  "command_name.unsorted": {
+    "message": "बिना क्रम के दिखाएं"
+  },
+  "compare.browse.prompt": {
+    "message": "तुलना करें"
+  },
+  "compare.button.compare": {
+    "message": "तुलना करें"
+  },
+  "compare.button.next": {
+    "message": "अगला अंतर (N)"
+  },
+  "compare.button.previous": {
+    "message": "पिछला अंतर (P)"
+  },
+  "compare.need_two_files": {
+    "message": "हर पैनल में किसी फ़ाइल पर कर्सर रखें, या दो फ़ाइलें चुनें।"
+  },
+  "compare.option.binary": {
+    "message": "बाइनरी"
+  },
+  "compare.option.ignore_case": {
+    "message": "केस अनदेखा करें"
+  },
+  "compare.option.ignore_spaces": {
+    "message": "लगातार स्पेस अनदेखा करें"
+  },
+  "compare.option.only_differences": {
+    "message": "सिर्फ़ अंतर"
+  },
+  "compare.status.bytes_differ": {
+    "message": "{place}: {count, plural, one {{grouped} बाइट अलग है} other {{grouped} बाइट अलग हैं}}, पहला {first} पर; आकार {left} और {right}।"
+  },
+  "compare.status.comparing": {
+    "message": "तुलना हो रही है…"
+  },
+  "compare.status.difference_of": {
+    "message": "{count} में से अंतर {at}"
+  },
+  "compare.status.differences": {
+    "message": "{count, plural, one {# अंतर} other {# अंतर}}"
+  },
+  "compare.status.identical": {
+    "message": "{count, plural, one {फ़ाइलें एक जैसी हैं: {grouped} बाइट।} other {फ़ाइलें एक जैसी हैं: {grouped} बाइट।}}"
+  },
+  "compare.status.no_differences": {
+    "message": "कोई अंतर नहीं।"
+  },
+  "compare.window.title": {
+    "message": "तुलना: {left} — {right}"
+  },
+  "connections.connect": {
+    "message": "कनेक्ट करें"
+  },
+  "connections.copy_name": {
+    "message": "नाम कॉपी करें"
+  },
+  "connections.copy_path": {
+    "message": "पाथ कॉपी करें"
+  },
+  "connections.delete": {
+    "message": "डिलीट करें"
+  },
+  "connections.dialog.title": {
+    "message": "कनेक्शन"
+  },
+  "connections.disconnect": {
+    "message": "डिस्कनेक्ट करें"
+  },
+  "connections.duplicate": {
+    "message": "डुप्लिकेट करें"
+  },
+  "connections.duplicate_name": {
+    "message": "{name} (कॉपी)"
+  },
+  "connections.edit": {
+    "message": "एडिट करें..."
+  },
+  "connections.empty": {
+    "message": "अभी तक कोई कनेक्शन नहीं।"
+  },
+  "connections.error.no_server": {
+    "message": "सर्वर ज़रूरी है।"
+  },
+  "connections.error.port": {
+    "message": "यह पोर्ट नहीं है: {text}"
+  },
+  "connections.field.access_key": {
+    "message": "ऐक्सेस कुंजी"
+  },
+  "connections.field.api_key": {
+    "message": "API कुंजी"
+  },
+  "connections.field.application_key": {
+    "message": "ऐप्लिकेशन कुंजी"
+  },
+  "connections.field.bucket": {
+    "message": "बकेट/फ़ोल्डर"
+  },
+  "connections.field.container": {
+    "message": "कंटेनर/फ़ोल्डर"
+  },
+  "connections.field.endpoint": {
+    "message": "एंडपॉइंट"
+  },
+  "connections.field.key_id": {
+    "message": "कुंजी ID"
+  },
+  "connections.field.name": {
+    "message": "नाम"
+  },
+  "connections.field.password": {
+    "message": "पासवर्ड"
+  },
+  "connections.field.port": {
+    "message": "पोर्ट"
+  },
+  "connections.field.protocol": {
+    "message": "प्रोटोकॉल"
+  },
+  "connections.field.secret_key": {
+    "message": "सीक्रेट कुंजी"
+  },
+  "connections.field.server": {
+    "message": "सर्वर"
+  },
+  "connections.field.start_folder": {
+    "message": "शुरुआती फ़ोल्डर"
+  },
+  "connections.field.user": {
+    "message": "यूज़र"
+  },
+  "connections.folder.delete_confirm": {
+    "message": "{count, plural, one {फ़ोल्डर {name} और उसमें मौजूद कनेक्शन डिलीट करें?} other {फ़ोल्डर {name} और उसमें मौजूद # कनेक्शन डिलीट करें?}}"
+  },
+  "connections.folder.delete_title": {
+    "message": "फ़ोल्डर डिलीट करें"
+  },
+  "connections.folder.exists": {
+    "message": "{name} नाम का फ़ोल्डर पहले से है।"
+  },
+  "connections.folder.name": {
+    "message": "नाम:"
+  },
+  "connections.folder.new_title": {
+    "message": "नया फ़ोल्डर"
+  },
+  "connections.folder.rename": {
+    "message": "नाम बदलें..."
+  },
+  "connections.folder.rename_title": {
+    "message": "फ़ोल्डर का नाम बदलें"
+  },
+  "connections.forget_password": {
+    "message": "सेव किया गया पासवर्ड भूल जाएं"
+  },
+  "connections.move_down": {
+    "message": "नीचे ले जाएं"
+  },
+  "connections.move_to_folder": {
+    "message": "फ़ोल्डर में ले जाएं"
+  },
+  "connections.move_up": {
+    "message": "ऊपर ले जाएं"
+  },
+  "connections.new": {
+    "message": "नया कनेक्शन..."
+  },
+  "connections.new_folder": {
+    "message": "नया फ़ोल्डर..."
+  },
+  "connections.no_folder": {
+    "message": "कोई फ़ोल्डर नहीं"
+  },
+  "connections.open_in_terminal": {
+    "message": "टर्मिनल में खोलें"
+  },
+  "connections.placeholder.name": {
+    "message": "जैसा सूची में दिखे"
+  },
+  "connections.placeholder.password": {
+    "message": "सेटिंग फ़ोल्डर में एन्क्रिप्ट करके रखा जाता है; खाली छोड़ने पर वही रहता है"
+  },
+  "connections.placeholder.path": {
+    "message": "लॉगिन फ़ोल्डर"
+  },
+  "connections.placeholder.port": {
+    "message": "डिफ़ॉल्ट"
+  },
+  "connections.placeholder.server": {
+    "message": "सर्वर, या ~/.ssh/config का कोई होस्ट"
+  },
+  "connections.placeholder.user": {
+    "message": "जैसा ~/.ssh/config में है, या अनाम"
+  },
+  "connections.save_failed": {
+    "message": "कनेक्शन सेव नहीं हो सके: {err}"
+  },
+  "connections.ssh_config.read_only": {
+    "message": "सिर्फ़ पढ़ने के लिए: ये होस्ट ~/.ssh/config में ही एडिट किए जाते हैं"
+  },
+  "context_menu.action_failed": {
+    "message": "{name} विफल रहा: {err}"
+  },
+  "context_menu.actions": {
+    "message": "कार्रवाइयां"
+  },
+  "context_menu.copy": {
+    "message": "कॉपी करें"
+  },
+  "context_menu.create_new": {
+    "message": "नया बनाएं"
+  },
+  "context_menu.cut": {
+    "message": "कट करें"
+  },
+  "context_menu.delete": {
+    "message": "डिलीट करें"
+  },
+  "context_menu.edit": {
+    "message": "एडिट करें"
+  },
+  "context_menu.empty_file": {
+    "message": "खाली फ़ाइल…"
+  },
+  "context_menu.move_to_trash": {
+    "message": "ट्रैश में ले जाएं"
+  },
+  "context_menu.new_file_dialog.label": {
+    "message": "नई फ़ाइल का नाम:"
+  },
+  "context_menu.new_file_dialog.title": {
+    "message": "नई फ़ाइल"
+  },
+  "context_menu.new_file_failed": {
+    "message": "फ़ाइल नहीं बन सकी: {err}"
+  },
+  "context_menu.new_folder": {
+    "message": "फ़ोल्डर…"
+  },
+  "context_menu.open": {
+    "message": "खोलें"
+  },
+  "context_menu.open_failed": {
+    "message": "खोला नहीं जा सका: {err}"
+  },
+  "context_menu.open_terminal_here": {
+    "message": "यहां टर्मिनल खोलें"
+  },
+  "context_menu.open_with": {
+    "message": "इसके साथ खोलें"
+  },
+  "context_menu.other_application": {
+    "message": "दूसरा ऐप्लिकेशन…"
+  },
+  "context_menu.pack": {
+    "message": "पैक करें…"
+  },
+  "context_menu.pack_files": {
+    "message": "फ़ाइलें पैक करें"
+  },
+  "context_menu.paste": {
+    "message": "पेस्ट करें"
+  },
+  "context_menu.properties": {
+    "message": "प्रॉपर्टी"
+  },
+  "context_menu.properties_failed": {
+    "message": "प्रॉपर्टी: {err}"
+  },
+  "context_menu.rename": {
+    "message": "नाम बदलें…"
+  },
+  "context_menu.rename_dialog.label": {
+    "message": "नया नाम:"
+  },
+  "context_menu.rename_dialog.title": {
+    "message": "नाम बदलें"
+  },
+  "context_menu.rename_failed": {
+    "message": "नाम नहीं बदला जा सका: {err}"
+  },
+  "context_menu.shell_menu_failed": {
+    "message": "मेन्यू: {err}"
+  },
+  "context_menu.show_failed": {
+    "message": "दिखाया नहीं जा सका: {err}"
+  },
+  "context_menu.show_in_file_manager": {
+    "message": "फ़ाइल मैनेजर में दिखाएं"
+  },
+  "context_menu.terminal_failed": {
+    "message": "टर्मिनल नहीं खुल सका: {err}"
+  },
+  "context_menu.terminal_not_local": {
+    "message": "टर्मिनल सिर्फ़ इस कंप्यूटर के फ़ोल्डरों में खुलता है।"
+  },
+  "context_menu.unpack": {
+    "message": "अनपैक करें…"
+  },
+  "context_menu.view": {
+    "message": "देखें"
+  },
+  "desktop.no_app_chooser": {
+    "message": "डेस्कटॉप में ऐप चुनने का कोई डायलॉग नहीं है ({err})"
+  },
+  "desktop.no_terminal": {
+    "message": "कोई टर्मिनल नहीं मिला"
+  },
+  "desktop.nothing_to_run": {
+    "message": "{name}: चलाने के लिए कुछ नहीं"
+  },
+  "desktop.scripts": {
+    "message": "स्क्रिप्ट"
+  },
+  "devices.error.mount_failed": {
+    "message": "डिवाइस माउंट नहीं हो सका"
+  },
+  "devices.error.no_folder": {
+    "message": "डिवाइस कोई फ़ोल्डर शेयर नहीं करता"
+  },
+  "devices.error.system_only": {
+    "message": "इसे सिर्फ़ सिस्टम अनमाउंट कर सकता है"
+  },
+  "devices.error.unreachable": {
+    "message": "कनेक्ट नहीं हो पा रहा: क्या उस पर KDE Connect खुला है, और क्या वह इसी नेटवर्क पर है?"
+  },
+  "devices.unlock.ask": {
+    "message": "{name} का पासफ़्रेज़:"
+  },
+  "devices.unlock.ask_again": {
+    "message": "गलत पासफ़्रेज़। {name} का पासफ़्रेज़:"
+  },
+  "devices.unlock.title": {
+    "message": "अनलॉक करें"
+  },
+  "devices.volume.share_on_server": {
+    "message": "{server} पर {share}"
+  },
+  "devices.volume.unnamed": {
+    "message": "{size} GB वॉल्यूम"
+  },
+  "devices.volume.unnamed_encrypted": {
+    "message": "{size} GB एन्क्रिप्टेड वॉल्यूम"
+  },
+  "download.cancel": {
+    "message": "रद्द करें"
+  },
+  "download.dialog_title": {
+    "message": "लिंक से डाउनलोड करें"
+  },
+  "download.download": {
+    "message": "डाउनलोड करें"
+  },
+  "download.folder_link": {
+    "message": "लिंक किसी फ़ोल्डर का है"
+  },
+  "download.incomplete": {
+    "message": "सर्वर ने {size, plural, one {# बाइट} other {# बाइट}} में से {got} भेजे; फिर से डाउनलोड करने पर यह वहीं से जारी रहेगा"
+  },
+  "download.into": {
+    "message": "{folder} में"
+  },
+  "download.link": {
+    "message": "लिंक"
+  },
+  "download.link_placeholder": {
+    "message": "https://, http://, ftp:// या ftps://"
+  },
+  "download.local_only": {
+    "message": "डाउनलोड इस कंप्यूटर के फ़ोल्डरों में होते हैं: पहले पैनल में कोई फ़ोल्डर खोलें।"
+  },
+  "download.name_placeholder": {
+    "message": "जैसा सर्वर या लिंक इसे नाम दे"
+  },
+  "download.no_file": {
+    "message": "लिंक में कोई फ़ाइल नहीं है"
+  },
+  "download.not_a_link": {
+    "message": "डाउनलोड करने लायक लिंक नहीं"
+  },
+  "download.problem.bad_name": {
+    "message": "सिर्फ़ फ़ाइल का नाम लिखें, उसमें कोई फ़ोल्डर नहीं।"
+  },
+  "download.problem.empty": {
+    "message": "कोई लिंक पेस्ट या टाइप करें।"
+  },
+  "download.problem.exists": {
+    "message": "यहां पहले से {name} है: “बदलें” दबाने पर डाउनलोड उसके ऊपर लिखा जाएगा।"
+  },
+  "download.problem.not_link": {
+    "message": "डाउनलोड करने लायक लिंक नहीं: लिंक https://, http://, ftp:// या ftps:// से शुरू होता है।"
+  },
+  "download.replace": {
+    "message": "बदलें"
+  },
+  "download.save_as": {
+    "message": "इस नाम से सेव करें"
+  },
+  "download.saved_as": {
+    "message": "{name} के रूप में सेव किया गया"
+  },
+  "download.title": {
+    "message": "“{name}” डाउनलोड करें"
+  },
+  "download.title_link": {
+    "message": "{link} डाउनलोड करें"
+  },
+  "editor.close.after_send": {
+    "message": "सर्वर तक पहुंचते ही यह बंद हो जाएगा।"
+  },
+  "editor.close.discard": {
+    "message": "सेव न करें"
+  },
+  "editor.close.save": {
+    "message": "सेव करें"
+  },
+  "editor.close.title": {
+    "message": "बदलाव सेव करें?"
+  },
+  "editor.close.unsaved": {
+    "message": "{name} में ऐसे बदलाव हैं जो सेव नहीं हुए।"
+  },
+  "editor.close.unsent": {
+    "message": "{name} अपने सर्वर पर सेव नहीं है: उसे भेजना विफल रहा।"
+  },
+  "editor.dialog.cancel": {
+    "message": "रद्द करें"
+  },
+  "editor.edit.copy": {
+    "message": "कॉपी करें"
+  },
+  "editor.edit.cut": {
+    "message": "कट करें"
+  },
+  "editor.edit.find": {
+    "message": "खोजें..."
+  },
+  "editor.edit.find_next": {
+    "message": "अगला खोजें"
+  },
+  "editor.edit.find_previous": {
+    "message": "पिछला खोजें"
+  },
+  "editor.edit.go_to_line": {
+    "message": "पंक्ति पर जाएं..."
+  },
+  "editor.edit.paste": {
+    "message": "पेस्ट करें"
+  },
+  "editor.edit.redo": {
+    "message": "फिर से करें"
+  },
+  "editor.edit.replace": {
+    "message": "बदलें..."
+  },
+  "editor.edit.undo": {
+    "message": "पूर्ववत करें"
+  },
+  "editor.external.not_set": {
+    "message": "कोई बाहरी एडिटर सेट नहीं है (सेटिंग, एडिट/व्यू)"
+  },
+  "editor.file.close": {
+    "message": "बंद करें"
+  },
+  "editor.file.reload": {
+    "message": "फिर से लोड करें"
+  },
+  "editor.file.save": {
+    "message": "सेव करें"
+  },
+  "editor.file.save_as": {
+    "message": "इस रूप में सेव करें..."
+  },
+  "editor.find.close": {
+    "message": "बंद करें (Escape)"
+  },
+  "editor.find.count": {
+    "message": "{current} / {total}"
+  },
+  "editor.find.in_selection": {
+    "message": "चयन में खोजें (Alt+L)"
+  },
+  "editor.find.match_case": {
+    "message": "केस मिलाएं (Alt+C)"
+  },
+  "editor.find.next": {
+    "message": "अगला मिलान (Enter)"
+  },
+  "editor.find.no_results": {
+    "message": "कोई नतीजा नहीं"
+  },
+  "editor.find.placeholder": {
+    "message": "खोजें"
+  },
+  "editor.find.preserve_case": {
+    "message": "केस बनाए रखें (Alt+P)"
+  },
+  "editor.find.previous": {
+    "message": "पिछला मिलान (Shift+Enter)"
+  },
+  "editor.find.regex": {
+    "message": "रेगुलर एक्सप्रेशन इस्तेमाल करें (Alt+R)"
+  },
+  "editor.find.replace": {
+    "message": "बदलें (Ctrl+Shift+1)"
+  },
+  "editor.find.replace_all": {
+    "message": "सभी बदलें (Ctrl+Alt+Enter)"
+  },
+  "editor.find.replace_placeholder": {
+    "message": "इससे बदलें"
+  },
+  "editor.find.toggle_replace": {
+    "message": "बदलें दिखाएं/छिपाएं"
+  },
+  "editor.find.whole_word": {
+    "message": "पूरा शब्द मिलाएं (Alt+W)"
+  },
+  "editor.go_to_line.label": {
+    "message": "पंक्ति, या पंक्ति:कॉलम"
+  },
+  "editor.go_to_line.title": {
+    "message": "पंक्ति पर जाएं"
+  },
+  "editor.language.by_file_name": {
+    "message": "फ़ाइल के नाम से"
+  },
+  "editor.language.plain_text": {
+    "message": "सादा टेक्स्ट"
+  },
+  "editor.menu.edit": {
+    "message": "एडिट"
+  },
+  "editor.menu.file": {
+    "message": "फ़ाइल"
+  },
+  "editor.menu.language": {
+    "message": "भाषा"
+  },
+  "editor.menu.selection": {
+    "message": "चयन"
+  },
+  "editor.menu.view": {
+    "message": "व्यू"
+  },
+  "editor.open.too_large": {
+    "message": "बिल्ट-इन एडिटर की {limit_mb} MB सीमा से बड़ी है (सेटिंग, एडिट/व्यू); Ctrl+Shift+F4 इसे बाहरी एडिटर में एडिट करता है"
+  },
+  "editor.reload.button": {
+    "message": "फिर से लोड करें"
+  },
+  "editor.reload.failed": {
+    "message": "फिर से लोड नहीं हो सका: {err}"
+  },
+  "editor.reload.text": {
+    "message": "जो बदलाव सेव नहीं हुए, वे खो जाएंगे।"
+  },
+  "editor.reload.title": {
+    "message": "फ़ाइल फिर से लोड करें?"
+  },
+  "editor.reload.unfit": {
+    "message": "फिर से लोड नहीं किया गया: {why, select, binary {यह बाइनरी है} other {यह UTF-8 टेक्स्ट नहीं है}}।"
+  },
+  "editor.save.admin": {
+    "message": "“{name}” सेव करना"
+  },
+  "editor.save.failed": {
+    "message": "{path} सेव नहीं हो सका: {err}"
+  },
+  "editor.save_anyway.button": {
+    "message": "फिर भी सेव करें"
+  },
+  "editor.save_anyway.text": {
+    "message": "फ़ाइल टेक्स्ट नहीं थी: सेव करने पर यह वैसी ही लिखी जाएगी जैसी दिख रही है, इसलिए जो हिस्सा टेक्स्ट नहीं था, वह हमेशा के लिए बदल जाएगा।"
+  },
+  "editor.save_anyway.title": {
+    "message": "इसे टेक्स्ट के रूप में सेव करें?"
+  },
+  "editor.selection.add_cursor_above": {
+    "message": "ऊपर कर्सर जोड़ें"
+  },
+  "editor.selection.add_cursor_below": {
+    "message": "नीचे कर्सर जोड़ें"
+  },
+  "editor.selection.delete_lines": {
+    "message": "पंक्तियां डिलीट करें"
+  },
+  "editor.selection.duplicate_lines": {
+    "message": "पंक्तियां डुप्लिकेट करें"
+  },
+  "editor.selection.indent": {
+    "message": "इंडेंट बढ़ाएं"
+  },
+  "editor.selection.lowercase": {
+    "message": "छोटे अक्षर (abc)"
+  },
+  "editor.selection.move_lines_down": {
+    "message": "पंक्तियां नीचे ले जाएं"
+  },
+  "editor.selection.move_lines_up": {
+    "message": "पंक्तियां ऊपर ले जाएं"
+  },
+  "editor.selection.outdent": {
+    "message": "इंडेंट घटाएं"
+  },
+  "editor.selection.select_all": {
+    "message": "सभी चुनें"
+  },
+  "editor.selection.select_all_occurrences": {
+    "message": "सभी मिलान चुनें"
+  },
+  "editor.selection.sort_lines_ascending": {
+    "message": "पंक्तियां बढ़ते क्रम में लगाएं"
+  },
+  "editor.selection.sort_lines_descending": {
+    "message": "पंक्तियां घटते क्रम में लगाएं"
+  },
+  "editor.selection.title_case": {
+    "message": "हर शब्द बड़े अक्षर से (Abc)"
+  },
+  "editor.selection.toggle_line_comment": {
+    "message": "पंक्ति कमेंट चालू/बंद करें"
+  },
+  "editor.selection.trim_trailing_whitespace": {
+    "message": "पंक्ति के अंत की खाली जगह हटाएं"
+  },
+  "editor.selection.uppercase": {
+    "message": "बड़े अक्षर (ABC)"
+  },
+  "editor.send.failed": {
+    "message": "इसे वापस सर्वर पर सेव नहीं किया जा सका: {err}। सेव करने पर फिर से कोशिश होगी।"
+  },
+  "editor.status.modified": {
+    "message": "बदला गया"
+  },
+  "editor.status.position": {
+    "message": "पंक्ति {line}, कॉलम {column}"
+  },
+  "editor.status.position_selected": {
+    "message": "पंक्ति {line}, कॉलम {column} ({count, plural, one {# चुना गया} other {# चुने गए}})"
+  },
+  "editor.status.sending": {
+    "message": "सर्वर पर सेव हो रहा है"
+  },
+  "editor.status.spaces": {
+    "message": "स्पेस: {size}"
+  },
+  "editor.status.tab_size": {
+    "message": "टैब साइज़: {size}"
+  },
+  "editor.status.unsent": {
+    "message": "सर्वर पर नहीं"
+  },
+  "editor.terminal.not_found": {
+    "message": "कोई एडिटर नहीं मिला; $EDITOR सेट करें"
+  },
+  "editor.title": {
+    "message": "{path} — एडिटर"
+  },
+  "editor.unfit.open_anyway": {
+    "message": "फिर भी खोलें"
+  },
+  "editor.unfit.text": {
+    "message": "फ़ाइल एडिटर में नहीं दिखाई गई, क्योंकि {why, select, binary {यह बाइनरी है} other {यह UTF-8 टेक्स्ट नहीं है}}।"
+  },
+  "editor.view.folding": {
+    "message": "फ़ोल्डिंग"
+  },
+  "editor.view.indent_guides": {
+    "message": "इंडेंट गाइड"
+  },
+  "editor.view.indent_with_tabs": {
+    "message": "टैब से इंडेंट करें"
+  },
+  "editor.view.line_numbers": {
+    "message": "पंक्ति संख्याएं"
+  },
+  "editor.view.minimap": {
+    "message": "मिनीमैप"
+  },
+  "editor.view.tab_width": {
+    "message": "टैब चौड़ाई {width}"
+  },
+  "editor.view.unfold_all": {
+    "message": "सभी फ़ोल्ड खोलें"
+  },
+  "editor.view.whitespace": {
+    "message": "व्हाइटस्पेस"
+  },
+  "editor.view.word_wrap": {
+    "message": "वर्ड रैप"
+  },
+  "elevate.failed": {
+    "message": "एडमिनिस्ट्रेटर के रूप में भी यह विफल रहा ({code})"
+  },
+  "elevate.no_consent": {
+    "message": "एडमिनिस्ट्रेटर की सहमति नहीं दी गई"
+  },
+  "elevate.no_password": {
+    "message": "पासवर्ड नहीं दिया गया"
+  },
+  "elevate.not_authorised": {
+    "message": "अनुमति नहीं है"
+  },
+  "elevate.percent_name": {
+    "message": "{path}: % वाले नाम को एडमिनिस्ट्रेटर के रूप में संभाला नहीं जा सकता; पहले इसका नाम बदलें"
+  },
+  "elevate.pkexec_missing": {
+    "message": "pkexec (polkit) इंस्टॉल नहीं है"
+  },
+  "file_menu.change_tags_failed": {
+    "message": "टैग नहीं बदले जा सके: {err}"
+  },
+  "file_menu.compress": {
+    "message": "{count, plural, =1 {“{name}” को कंप्रेस करें…} one {# आइटम कंप्रेस करें…} other {# आइटम कंप्रेस करें…}}"
+  },
+  "file_menu.copy": {
+    "message": "{count, plural, =1 {“{name}” कॉपी करें} one {# आइटम कॉपी करें} other {# आइटम कॉपी करें}}"
+  },
+  "file_menu.copy_path": {
+    "message": "पाथ क्लिपबोर्ड पर कॉपी करें"
+  },
+  "file_menu.delete": {
+    "message": "डिलीट करें"
+  },
+  "file_menu.duplicate": {
+    "message": "डुप्लिकेट करें"
+  },
+  "file_menu.duplicate_failed": {
+    "message": "डुप्लिकेट नहीं हो सका: {err}"
+  },
+  "file_menu.edit_tags": {
+    "message": "टैग…"
+  },
+  "file_menu.get_info": {
+    "message": "जानकारी पाएं"
+  },
+  "file_menu.make_alias": {
+    "message": "उपनाम बनाएं"
+  },
+  "file_menu.make_alias_failed": {
+    "message": "उपनाम नहीं बन सका: {err}"
+  },
+  "file_menu.move_to_trash": {
+    "message": "ट्रैश में ले जाएं"
+  },
+  "file_menu.new_folder": {
+    "message": "नया फ़ोल्डर"
+  },
+  "file_menu.open": {
+    "message": "खोलें"
+  },
+  "file_menu.open_failed": {
+    "message": "खोला नहीं जा सका: {err}"
+  },
+  "file_menu.open_with": {
+    "message": "इसके साथ खोलें"
+  },
+  "file_menu.open_with_default": {
+    "message": "{app} (डिफ़ॉल्ट)"
+  },
+  "file_menu.paste": {
+    "message": "पेस्ट करें"
+  },
+  "file_menu.quick_look": {
+    "message": "{count, plural, =1 {“{name}” को Quick Look करें} one {# आइटम को Quick Look करें} other {# आइटम को Quick Look करें}}"
+  },
+  "file_menu.quick_look_failed": {
+    "message": "Quick Look: {err}"
+  },
+  "file_menu.rename": {
+    "message": "नाम बदलें…"
+  },
+  "file_menu.reveal_failed": {
+    "message": "Finder में नहीं दिखाया जा सका: {err}"
+  },
+  "file_menu.reveal_in_finder": {
+    "message": "Finder में दिखाएं"
+  },
+  "file_menu.show_package_contents": {
+    "message": "पैकेज की सामग्री दिखाएं"
+  },
+  "file_menu.tag_dot.add": {
+    "message": "टैग “{name}” जोड़ें"
+  },
+  "file_menu.tag_dot.remove": {
+    "message": "टैग “{name}” हटाएं"
+  },
+  "file_menu.tags_popover.show_all": {
+    "message": "सभी दिखाएं…"
+  },
+  "file_menu.tags_popover.title": {
+    "message": "{count, plural, =1 {“{name}” को टैग दें} one {# आइटम को टैग दें} other {# आइटम को टैग दें}}"
+  },
+  "find.backwards": {
+    "message": "पीछे की ओर खोजें"
+  },
+  "find.cancel": {
+    "message": "रद्द करें"
+  },
+  "find.case_sensitive": {
+    "message": "केस-संवेदी"
+  },
+  "find.hex": {
+    "message": "हेक्स स्ट्रिंग खोजें"
+  },
+  "find.ok": {
+    "message": "ठीक है"
+  },
+  "find.regex": {
+    "message": "RegEx"
+  },
+  "find.text.label": {
+    "message": "खोजने के लिए टेक्स्ट लिखें"
+  },
+  "find.title": {
+    "message": "खोजें"
+  },
+  "find.whole_words": {
+    "message": "सिर्फ़ पूरे शब्द"
+  },
+  "keys.apply": {
+    "message": "लागू करें"
+  },
+  "keys.cancel": {
+    "message": "रद्द करें"
+  },
+  "keys.clear.tooltip": {
+    "message": "कोई कुंजी नहीं"
+  },
+  "keys.column.alternate": {
+    "message": "वैकल्पिक"
+  },
+  "keys.column.command": {
+    "message": "कमांड"
+  },
+  "keys.column.shortcut": {
+    "message": "शॉर्टकट"
+  },
+  "keys.custom": {
+    "message": "कस्टम"
+  },
+  "keys.delete_set": {
+    "message": "डिलीट करें"
+  },
+  "keys.note.custom_replaced": {
+    "message": "आपकी अपनी कुंजियों की जगह {name} की कुंजियां आ गईं; “इस रूप में सेव करें” उन्हें रखता है।"
+  },
+  "keys.note.deleted": {
+    "message": "{name} डिलीट हो गया; “ठीक है” या “लागू करें” इसे पक्का करते हैं।"
+  },
+  "keys.note.moved": {
+    "message": "{key} अब {command} चलाती है, {other} नहीं।"
+  },
+  "keys.note.name_reserved": {
+    "message": "“{name}” एक प्रीसेट का नाम है; कोई दूसरा चुनें।"
+  },
+  "keys.note.press_new_key": {
+    "message": "नई कुंजी दबाएं; Esc दबाने पर यह पहले जैसी रहेगी।"
+  },
+  "keys.note.saved": {
+    "message": "{name} के रूप में सेव किया गया; “ठीक है” या “लागू करें” इसे बनाए रखते हैं।"
+  },
+  "keys.note.set": {
+    "message": "{key} अब {command} चलाती है।"
+  },
+  "keys.note.taken_by_system": {
+    "message": "{key} पहले से इस्तेमाल में है ({by}), इसलिए यह Spark Commander तक कभी नहीं पहुंचती।"
+  },
+  "keys.ok": {
+    "message": "ठीक है"
+  },
+  "keys.press_key": {
+    "message": "कुंजी दबाएं…"
+  },
+  "keys.reserved.application_launcher": {
+    "message": "{system}: ऐप्लिकेशन लॉन्चर"
+  },
+  "keys.reserved.close_window": {
+    "message": "{system}: विंडो बंद करना"
+  },
+  "keys.reserved.close_window_or_tab": {
+    "message": "{system}: विंडो या टैब बंद करना"
+  },
+  "keys.reserved.dock": {
+    "message": "{system}: डॉक"
+  },
+  "keys.reserved.floating_window": {
+    "message": "{system}: फ़्लोटिंग विंडो"
+  },
+  "keys.reserved.force_quit": {
+    "message": "{system}: बलपूर्वक बंद करना"
+  },
+  "keys.reserved.hide_program": {
+    "message": "{system}: प्रोग्राम छिपाना"
+  },
+  "keys.reserved.input_source": {
+    "message": "{system}: इनपुट स्रोत"
+  },
+  "keys.reserved.keyboard_access": {
+    "message": "{system}: कीबोर्ड ऐक्सेस"
+  },
+  "keys.reserved.keyboard_navigation": {
+    "message": "{system}: कीबोर्ड नेविगेशन"
+  },
+  "keys.reserved.krunner": {
+    "message": "{system}: KRunner"
+  },
+  "keys.reserved.lock_screen": {
+    "message": "{system}: स्क्रीन लॉक करना"
+  },
+  "keys.reserved.log_out": {
+    "message": "{system}: लॉग आउट करना"
+  },
+  "keys.reserved.maximize_window": {
+    "message": "{system}: विंडो मैक्सिमाइज़ करना"
+  },
+  "keys.reserved.menu_bar": {
+    "message": "{system}: मेन्यू बार"
+  },
+  "keys.reserved.minimize": {
+    "message": "{system}: मिनिमाइज़ करना"
+  },
+  "keys.reserved.mission_control": {
+    "message": "{system}: Mission Control"
+  },
+  "keys.reserved.move_window": {
+    "message": "{system}: विंडो खिसकाना"
+  },
+  "keys.reserved.next_window": {
+    "message": "{system}: अगली विंडो"
+  },
+  "keys.reserved.present_windows": {
+    "message": "{system}: विंडो प्रस्तुत करें"
+  },
+  "keys.reserved.present_windows_all": {
+    "message": "{system}: विंडो प्रस्तुत करें (सभी डेस्कटॉप)"
+  },
+  "keys.reserved.present_windows_class": {
+    "message": "{system}: विंडो प्रस्तुत करें (विंडो क्लास)"
+  },
+  "keys.reserved.program_windows": {
+    "message": "{system}: प्रोग्राम की विंडो"
+  },
+  "keys.reserved.quit": {
+    "message": "{system}: बंद करना"
+  },
+  "keys.reserved.resize_window": {
+    "message": "{system}: विंडो का आकार बदलना"
+  },
+  "keys.reserved.restore_window": {
+    "message": "{system}: विंडो पहले जैसी करना"
+  },
+  "keys.reserved.run_command": {
+    "message": "{system}: कमांड चलाना"
+  },
+  "keys.reserved.screenshot": {
+    "message": "{system}: स्क्रीनशॉट"
+  },
+  "keys.reserved.security_screen": {
+    "message": "{system}: सुरक्षा स्क्रीन"
+  },
+  "keys.reserved.show_desktop": {
+    "message": "{system}: डेस्कटॉप दिखाना"
+  },
+  "keys.reserved.space_left": {
+    "message": "{system}: बाईं ओर का स्पेस"
+  },
+  "keys.reserved.space_right": {
+    "message": "{system}: दाईं ओर का स्पेस"
+  },
+  "keys.reserved.spotlight": {
+    "message": "{system}: Spotlight"
+  },
+  "keys.reserved.start_menu": {
+    "message": "{system}: स्टार्ट मेन्यू"
+  },
+  "keys.reserved.status_menus": {
+    "message": "{system}: स्टेटस मेन्यू"
+  },
+  "keys.reserved.suspend_compositing": {
+    "message": "{system}: कंपोज़िटिंग रोकना"
+  },
+  "keys.reserved.switch_program_windows": {
+    "message": "{system}: प्रोग्राम की विंडो बदलना"
+  },
+  "keys.reserved.switch_programs": {
+    "message": "{system}: प्रोग्राम बदलना"
+  },
+  "keys.reserved.switch_system_controls": {
+    "message": "{system}: सिस्टम कंट्रोल बदलना"
+  },
+  "keys.reserved.switch_to_desktop": {
+    "message": "{system}: डेस्कटॉप {number} पर जाना"
+  },
+  "keys.reserved.switch_windows": {
+    "message": "{system}: विंडो बदलना"
+  },
+  "keys.reserved.system_monitor": {
+    "message": "{system}: सिस्टम मॉनिटर"
+  },
+  "keys.reserved.task_manager": {
+    "message": "{system}: कार्य प्रबंधक"
+  },
+  "keys.reserved.text_console": {
+    "message": "{system}: टेक्स्ट कंसोल पर जाना"
+  },
+  "keys.reserved.toolbar": {
+    "message": "{system}: टूलबार"
+  },
+  "keys.reserved.window_menu": {
+    "message": "{system}: विंडो मेन्यू"
+  },
+  "keys.reserved.workspace_down": {
+    "message": "{system}: नीचे का वर्कस्पेस"
+  },
+  "keys.reserved.workspace_left": {
+    "message": "{system}: बाईं ओर का वर्कस्पेस"
+  },
+  "keys.reserved.workspace_right": {
+    "message": "{system}: दाईं ओर का वर्कस्पेस"
+  },
+  "keys.reserved.workspace_up": {
+    "message": "{system}: ऊपर का वर्कस्पेस"
+  },
+  "keys.reset.tooltip": {
+    "message": "{preset} की कुंजियों पर वापस जाएं"
+  },
+  "keys.reset_all": {
+    "message": "सभी रीसेट करें"
+  },
+  "keys.save_as.button": {
+    "message": "इस रूप में सेव करें…"
+  },
+  "keys.save_as.default_name": {
+    "message": "मेरी कुंजियां"
+  },
+  "keys.save_as.label": {
+    "message": "नाम:"
+  },
+  "keys.save_as.title": {
+    "message": "शॉर्टकट सेव करें"
+  },
+  "keys.search.placeholder": {
+    "message": "कोई कमांड या कुंजी खोजें"
+  },
+  "keys.set_label": {
+    "message": "कुंजियां:"
+  },
+  "keys.taken_by.tooltip": {
+    "message": "इस्तेमाल में: {by}"
+  },
+  "keys.title": {
+    "message": "शॉर्टकट"
+  },
+  "main.admin.button": {
+    "message": "एडमिनिस्ट्रेटर के रूप में"
+  },
+  "main.admin.deleting": {
+    "message": "{count, plural, one {# आइटम} other {# आइटम}} डिलीट करना"
+  },
+  "main.admin.failed": {
+    "message": "एडमिनिस्ट्रेटर के रूप में: {err}"
+  },
+  "main.admin.making": {
+    "message": "“{name}” बनाना"
+  },
+  "main.admin.offer": {
+    "message": "{what}: अनुमति नहीं मिली। एडमिनिस्ट्रेटर के रूप में करने पर सिस्टम पासवर्ड पूछेगा।"
+  },
+  "main.admin.offer_delete": {
+    "message": "{what}: अनुमति नहीं मिली। एडमिनिस्ट्रेटर के रूप में करने पर सिस्टम पासवर्ड पूछेगा। इस तरह डिलीट की गई चीज़ें हमेशा के लिए चली जाती हैं।"
+  },
+  "main.admin.title": {
+    "message": "अनुमति नहीं मिली"
+  },
+  "main.delete.from_archive": {
+    "message": "{kind, select, folder {फ़ोल्डर “{name}” को {archive} से डिलीट करें? इसे पूर्ववत नहीं किया जा सकता।} file {फ़ाइल “{name}” को {archive} से डिलीट करें? इसे पूर्ववत नहीं किया जा सकता।} other {{count, plural, one {# आइटम} other {# आइटम}} {archive} से डिलीट करें? इसे पूर्ववत नहीं किया जा सकता।}}"
+  },
+  "main.delete.on_server": {
+    "message": "{kind, select, folder {{server} पर फ़ोल्डर “{name}” डिलीट करें? इसे पूर्ववत नहीं किया जा सकता।} file {{server} पर फ़ाइल “{name}” डिलीट करें? इसे पूर्ववत नहीं किया जा सकता।} other {{server} पर {count, plural, one {# आइटम} other {# आइटम}} डिलीट करें? इसे पूर्ववत नहीं किया जा सकता।}}"
+  },
+  "main.delete.permanently": {
+    "message": "{kind, select, folder {फ़ोल्डर “{name}” को हमेशा के लिए डिलीट करें? इसे पूर्ववत नहीं किया जा सकता।} file {फ़ाइल “{name}” को हमेशा के लिए डिलीट करें? इसे पूर्ववत नहीं किया जा सकता।} other {{count, plural, one {# आइटम} other {# आइटम}} हमेशा के लिए डिलीट करें? इसे पूर्ववत नहीं किया जा सकता।}}"
+  },
+  "main.delete.title": {
+    "message": "डिलीट करें"
+  },
+  "main.delete.title_permanently": {
+    "message": "हमेशा के लिए डिलीट करें"
+  },
+  "main.delete.to_trash": {
+    "message": "{kind, select, folder {फ़ोल्डर “{name}” को ट्रैश में ले जाएं?} file {फ़ाइल “{name}” को ट्रैश में ले जाएं?} other {{count, plural, one {# आइटम} other {# आइटम}} ट्रैश में ले जाएं?}}"
+  },
+  "main.download.edit": {
+    "message": "एडिट करने के लिए {file} डाउनलोड करें"
+  },
+  "main.download.view": {
+    "message": "देखने के लिए {file} डाउनलोड करें"
+  },
+  "main.error.make_folder": {
+    "message": "फ़ोल्डर नहीं बन सका: {err}"
+  },
+  "main.error.read_settings": {
+    "message": "सेटिंग पढ़ी नहीं जा सकी: {err}"
+  },
+  "main.error.read_tabs": {
+    "message": "खुले टैब पढ़े नहीं जा सके: {err}"
+  },
+  "main.error.read_workspaces": {
+    "message": "वर्कस्पेस पढ़े नहीं जा सके: {err}"
+  },
+  "main.error.save_settings": {
+    "message": "सेटिंग सेव नहीं हो सकी: {err}"
+  },
+  "main.folder_tree.home": {
+    "message": "होम"
+  },
+  "main.go.no_such_folder": {
+    "message": "{path}: इस कंप्यूटर पर ऐसा कोई फ़ोल्डर नहीं है"
+  },
+  "main.new_folder.label": {
+    "message": "नया फ़ोल्डर (डायरेक्टरी):"
+  },
+  "main.new_folder.title": {
+    "message": "नया फ़ोल्डर"
+  },
+  "main.sync_browsing.lost": {
+    "message": "{err}। सिंक्रोनाइज़्ड ब्राउज़िंग बंद है।"
+  },
+  "main.tool.needs_file": {
+    "message": "कर्सर किसी फ़ाइल पर नहीं है: %N, %O और %E को एक फ़ाइल चाहिए।"
+  },
+  "main.tool.needs_local_folder": {
+    "message": "दूसरा पैनल कोई सर्वर या आर्काइव दिखा रहा है: %T को इस कंप्यूटर का कोई फ़ोल्डर चाहिए।"
+  },
+  "main.undo.done": {
+    "message": "{way, select, redo {फिर से किया गया: {title}} other {पूर्ववत किया गया: {title}}}"
+  },
+  "main.undo.failed": {
+    "message": "{way, select, redo {“{title}” फिर से नहीं किया जा सका: {err}} other {“{title}” पूर्ववत नहीं किया जा सका: {err}}}"
+  },
+  "main.undo.nothing": {
+    "message": "{way, select, redo {फिर से करने के लिए कुछ नहीं।} other {पूर्ववत करने के लिए कुछ नहीं।}}"
+  },
+  "main.undo.queued": {
+    "message": "{way, select, redo {फिर से करने के लिए कतार में: {title}} other {पूर्ववत करने के लिए कतार में: {title}}}"
+  },
+  "mark.compare.marked": {
+    "message": "{count, plural, one {# फ़ाइल मार्क की गई: दूसरी ओर से नई है, या वहां मौजूद नहीं है।} other {# फ़ाइलें मार्क की गईं: दूसरी ओर से नई हैं, या वहां मौजूद नहीं हैं।}}"
+  },
+  "mark.compare.same": {
+    "message": "फ़ोल्डरों में एक जैसी फ़ाइलें हैं।"
+  },
+  "mark.load_selection.label": {
+    "message": "फ़ाइल में दिए गए नाम चुनें:"
+  },
+  "mark.load_selection.title": {
+    "message": "चयन लोड करें"
+  },
+  "mark.save_selection.label": {
+    "message": "चुने गए नाम इस फ़ाइल में सेव करें:"
+  },
+  "mark.save_selection.title": {
+    "message": "चयन सेव करें"
+  },
+  "mark.select_group.label": {
+    "message": "फ़ाइलें चुनें (*.txt *.md; फ़ोल्डर का मास्क / पर खत्म होता है):"
+  },
+  "mark.select_group.title": {
+    "message": "समूह चुनें"
+  },
+  "mark.selection_file.not_local": {
+    "message": "चयन फ़ाइलें इस कंप्यूटर पर, आर्काइव के बाहर रखी जाती हैं।"
+  },
+  "mark.unselect_group.label": {
+    "message": "इन फ़ाइलों का चयन हटाएं (*.txt *.md; फ़ोल्डर का मास्क / पर खत्म होता है):"
+  },
+  "mark.unselect_group.title": {
+    "message": "समूह का चयन हटाएं"
+  },
+  "media.cannot_play": {
+    "message": "इसे चलाया नहीं जा सकता: {err}"
+  },
+  "media.cannot_play_as_text": {
+    "message": "इसे चलाया नहीं जा सकता: {err}। 1 दबाने पर यह टेक्स्ट के रूप में दिखेगा।"
+  },
+  "media.continuing": {
+    "message": "{time} से जारी"
+  },
+  "media.error.missing": {
+    "message": "libmpv नहीं मिला: सेटिंग > ऐड-ऑन इसे डाउनलोड करता है (सोर्स बिल्ड: vendor/mpv/{script})"
+  },
+  "media.error.not_started": {
+    "message": "libmpv शुरू नहीं हो सका"
+  },
+  "media.error.too_long": {
+    "message": "{path}: mpv ने बहुत ज़्यादा समय लिया"
+  },
+  "media.error.unsupported_system": {
+    "message": "वीडियो अभी सिर्फ़ Linux, macOS और Windows पर चलता है"
+  },
+  "menu.archive": {
+    "message": "आर्काइव"
+  },
+  "menu.associations": {
+    "message": "संबद्धताएं"
+  },
+  "menu.button_bar": {
+    "message": "बटन बार"
+  },
+  "menu.checksums": {
+    "message": "चेकसम"
+  },
+  "menu.commands": {
+    "message": "कमांड"
+  },
+  "menu.compare_directories": {
+    "message": "फ़ोल्डरों की तुलना"
+  },
+  "menu.configuration": {
+    "message": "कॉन्फ़िगरेशन"
+  },
+  "menu.copy_names": {
+    "message": "नाम कॉपी करें"
+  },
+  "menu.files": {
+    "message": "फ़ाइलें"
+  },
+  "menu.filter": {
+    "message": "फ़िल्टर"
+  },
+  "menu.go": {
+    "message": "जाएं"
+  },
+  "menu.help": {
+    "message": "सहायता"
+  },
+  "menu.mark": {
+    "message": "मार्क"
+  },
+  "menu.other": {
+    "message": "अन्य"
+  },
+  "menu.recently_closed_tabs": {
+    "message": "हाल में बंद किए गए टैब"
+  },
+  "menu.selection": {
+    "message": "चयन"
+  },
+  "menu.show": {
+    "message": "दिखाएं"
+  },
+  "menu.sidebar": {
+    "message": "साइडबार"
+  },
+  "menu.sort": {
+    "message": "क्रम"
+  },
+  "menu.split_and_combine": {
+    "message": "विभाजित करें और मिलाएं"
+  },
+  "menu.tabs": {
+    "message": "टैब"
+  },
+  "menu.tools": {
+    "message": "टूल"
+  },
+  "menu.workspaces": {
+    "message": "वर्कस्पेस"
+  },
+  "menus.hide_app": {
+    "message": "Spark Commander छिपाएं"
+  },
+  "menus.hide_others": {
+    "message": "अन्य को छिपाएं"
+  },
+  "menus.minimize": {
+    "message": "मिनिमाइज़ करें"
+  },
+  "menus.quit_app": {
+    "message": "Spark Commander बंद करें"
+  },
+  "menus.services": {
+    "message": "सेवाएं"
+  },
+  "menus.show_all": {
+    "message": "सभी दिखाएं"
+  },
+  "menus.zoom": {
+    "message": "ज़ूम करें"
+  },
+  "name_dialog.cancel": {
+    "message": "रद्द करें"
+  },
+  "name_dialog.ok": {
+    "message": "ठीक है"
+  },
+  "operations.clear": {
+    "message": "पूरे हुए हटाएं"
+  },
+  "operations.duration.seconds": {
+    "message": "{seconds} सेकंड"
+  },
+  "operations.empty": {
+    "message": "कोई ऑपरेशन नहीं।"
+  },
+  "operations.job.answer": {
+    "message": "आपके जवाब का इंतज़ार"
+  },
+  "operations.job.bytes": {
+    "message": "{total} में से {done}"
+  },
+  "operations.job.cancel_tooltip": {
+    "message": "रद्द करें"
+  },
+  "operations.job.cancelled": {
+    "message": "रद्द किया गया"
+  },
+  "operations.job.counting": {
+    "message": "गिनती: {count, plural, one {# फ़ाइल} other {# फ़ाइलें}}"
+  },
+  "operations.job.done": {
+    "message": "हो गया"
+  },
+  "operations.job.done_skipped": {
+    "message": "हो गया, {count, plural, one {# छोड़ी गई} other {# छोड़ी गईं}}"
+  },
+  "operations.job.failed": {
+    "message": "विफल"
+  },
+  "operations.job.files": {
+    "message": "{files} / {count, plural, one {# फ़ाइल} other {# फ़ाइलें}}"
+  },
+  "operations.job.left": {
+    "message": "{time} बाकी"
+  },
+  "operations.job.running": {
+    "message": "चल रहा है"
+  },
+  "operations.job.waiting": {
+    "message": "इंतज़ार में"
+  },
+  "operations.menu.cancel": {
+    "message": "रद्द करें"
+  },
+  "operations.menu.clear": {
+    "message": "पूरे हुए हटाएं"
+  },
+  "operations.menu.move_down": {
+    "message": "नीचे ले जाएं"
+  },
+  "operations.menu.move_up": {
+    "message": "ऊपर ले जाएं"
+  },
+  "operations.settings_tooltip": {
+    "message": "ऑपरेशन कतार की सेटिंग"
+  },
+  "operations.summary.failed": {
+    "message": "{count, plural, one {# विफल} other {# विफल}}"
+  },
+  "operations.summary.running": {
+    "message": "{count, plural, one {# चल रहा} other {# चल रहे}}"
+  },
+  "operations.summary.waiting": {
+    "message": "{count, plural, one {# इंतज़ार में} other {# इंतज़ार में}}"
+  },
+  "ops.as_administrator.failed": {
+    "message": "एडमिनिस्ट्रेटर के रूप में: {err}"
+  },
+  "ops.as_administrator.progress": {
+    "message": "एडमिनिस्ट्रेटर के रूप में…"
+  },
+  "ops.delete.title_many": {
+    "message": "{folder} में {count, plural, one {# आइटम} other {# आइटम}} डिलीट करें"
+  },
+  "ops.delete.title_one": {
+    "message": "“{name}” डिलीट करें"
+  },
+  "ops.delete.trash_title_many": {
+    "message": "{folder} में {count, plural, one {# आइटम} other {# आइटम}} ट्रैश में ले जाएं"
+  },
+  "ops.delete.trash_title_one": {
+    "message": "“{name}” को ट्रैश में ले जाएं"
+  },
+  "ops.error.file_in_the_way": {
+    "message": "इस नाम की एक फ़ाइल पहले से वहां है"
+  },
+  "ops.error.into_itself": {
+    "message": "इसे इसके अपने अंदर कॉपी नहीं किया जा सकता"
+  },
+  "ops.exists_already": {
+    "message": "{name} पहले से मौजूद है"
+  },
+  "ops.link.dialog_title": {
+    "message": "लिंक बनाएं"
+  },
+  "ops.link.failed": {
+    "message": "लिंक नहीं बन सका: {err}"
+  },
+  "ops.link.kind.hard": {
+    "message": "हार्ड लिंक"
+  },
+  "ops.link.kind.junction": {
+    "message": "जंक्शन"
+  },
+  "ops.link.kind.shortcut": {
+    "message": "शॉर्टकट (.lnk)"
+  },
+  "ops.link.kind.symbolic": {
+    "message": "सिम्बॉलिक लिंक"
+  },
+  "ops.link.label_many": {
+    "message": "{count, plural, one {# आइटम} other {# आइटम}} के लिंक, इस फ़ोल्डर में:"
+  },
+  "ops.link.label_one": {
+    "message": "“{name}” का लिंक, इस रूप में:"
+  },
+  "ops.link.making": {
+    "message": "{kind, select, symbolic {सिम्बॉलिक लिंक} hard {हार्ड लिंक} junction {जंक्शन} other {शॉर्टकट (.lnk)}} बनाना"
+  },
+  "ops.link.needs_admin": {
+    "message": "सिम्बॉलिक लिंक के लिए एडमिनिस्ट्रेटर या डेवलपर मोड चाहिए"
+  },
+  "ops.link.thread_failed": {
+    "message": "शॉर्टकट का थ्रेड विफल रहा"
+  },
+  "ops.link.title_many": {
+    "message": "{folder} में {count, plural, one {# आइटम} other {# आइटम}} के {kind, select, symbolic {सिम्बॉलिक लिंक} hard {हार्ड लिंक} junction {जंक्शन} other {शॉर्टकट (.lnk)}}"
+  },
+  "ops.link.title_one": {
+    "message": "{folder} में “{name}” का {kind, select, symbolic {सिम्बॉलिक लिंक} hard {हार्ड लिंक} junction {जंक्शन} other {शॉर्टकट (.lnk)}}"
+  },
+  "ops.link.windows_only": {
+    "message": "जंक्शन और शॉर्टकट सिर्फ़ Windows में होते हैं"
+  },
+  "ops.redo.title": {
+    "message": "फिर से करें: {what}"
+  },
+  "ops.title.many": {
+    "message": "{count, plural, one {# आइटम} other {# आइटम}} को {target} में {kind, select, copy {कॉपी करें} other {मूव करें}}"
+  },
+  "ops.title.one": {
+    "message": "“{name}” को {target} में {kind, select, copy {कॉपी करें} other {मूव करें}}"
+  },
+  "ops.undo.not_a_server": {
+    "message": "{url}: सर्वर का पता नहीं है"
+  },
+  "ops.undo.not_in_trash": {
+    "message": "वे अब ट्रैश में नहीं हैं"
+  },
+  "ops.undo.restore_title": {
+    "message": "{title}: जिन पर ऊपर से लिखा गया था, वे ट्रैश से वापस"
+  },
+  "ops.undo.title": {
+    "message": "पूर्ववत करें: {what}"
+  },
+  "pack.cancel": {
+    "message": "रद्द करें"
+  },
+  "pack.compression": {
+    "message": "कंप्रेशन:"
+  },
+  "pack.dialog_title": {
+    "message": "फ़ाइलें पैक करें"
+  },
+  "pack.encrypt": {
+    "message": "पासवर्ड से एन्क्रिप्ट करें"
+  },
+  "pack.format": {
+    "message": "फ़ॉर्मैट:"
+  },
+  "pack.label": {
+    "message": "{count, plural, one {# आइटम} other {# आइटम}} को इस आर्काइव में पैक करें:"
+  },
+  "pack.level.fastest": {
+    "message": "सबसे तेज़"
+  },
+  "pack.level.maximum": {
+    "message": "अधिकतम"
+  },
+  "pack.level.normal": {
+    "message": "सामान्य"
+  },
+  "pack.level.store": {
+    "message": "बिना कंप्रेशन"
+  },
+  "pack.level.ultra": {
+    "message": "अल्ट्रा"
+  },
+  "pack.local_only": {
+    "message": "{what, select, packing {पैक करना} unpacking {अनपैक करना} testing {जांचना} creating_checksums {चेकसम बनाना} making_links {लिंक बनाना} verifying_checksums {चेकसम जांचना} splitting {विभाजित करना} combining {मिलाना} other {यह}} सिर्फ़ इस कंप्यूटर की फ़ाइलों पर, आर्काइव के बाहर काम करता है।"
+  },
+  "pack.move_files": {
+    "message": "आर्काइव में ले जाएं (पैक की गई फ़ाइलें डिलीट करें)"
+  },
+  "pack.needs_password": {
+    "message": "इसके लिए पासवर्ड चाहिए"
+  },
+  "pack.ok": {
+    "message": "ठीक है"
+  },
+  "pack.password_missing": {
+    "message": "पासवर्ड टाइप करें, या “पासवर्ड से एन्क्रिप्ट करें” बंद रखें।"
+  },
+  "pack.separate": {
+    "message": "हर चुनी गई फ़ाइल या फ़ोल्डर के लिए एक आर्काइव"
+  },
+  "pack.split": {
+    "message": "इतने आकार के वॉल्यूम में बांटें"
+  },
+  "pack.split_unit": {
+    "message": "MB"
+  },
+  "pack.test.broken": {
+    "message": "{broken, plural, one {{count} में से # खराब} other {{count} में से # खराब}}"
+  },
+  "pack.test.choose": {
+    "message": "जांचने के लिए आर्काइव चुनें।"
+  },
+  "pack.test.ok": {
+    "message": "{count, plural, one {# आर्काइव ठीक है} other {# आर्काइव ठीक हैं}}"
+  },
+  "pack.test.title_many": {
+    "message": "{count, plural, one {# आर्काइव} other {# आर्काइव}} जांचें"
+  },
+  "pack.test.title_one": {
+    "message": "“{name}” जांचें"
+  },
+  "pack.title.many": {
+    "message": "{count, plural, one {# आइटम} other {# आइटम}} को {archive} में पैक करें"
+  },
+  "pack.title.many_separate": {
+    "message": "{count, plural, one {# आइटम} other {# आइटम}} को अलग-अलग {format} आर्काइव में पैक करें"
+  },
+  "pack.title.one": {
+    "message": "“{name}” को {archive} में पैक करें"
+  },
+  "pack.title.one_separate": {
+    "message": "“{name}” को अलग-अलग {format} आर्काइव में पैक करें"
+  },
+  "pack.unpack.choose": {
+    "message": "अनपैक करने के लिए आर्काइव चुनें।"
+  },
+  "pack.unpack.dialog_title": {
+    "message": "फ़ाइलें अनपैक करें"
+  },
+  "pack.unpack.label": {
+    "message": "{count, plural, one {# आर्काइव} other {# आर्काइव}} को यहां अनपैक करें:"
+  },
+  "pack.unpack.mask": {
+    "message": "सिर्फ़ ये फ़ाइलें:"
+  },
+  "pack.unpack.overwrite": {
+    "message": "मौजूदा फ़ाइलों पर ओवरराइट करें (वरना वे रखी जाती हैं)"
+  },
+  "pack.unpack.password": {
+    "message": "पासवर्ड:"
+  },
+  "pack.unpack.separate": {
+    "message": "हर आर्काइव को उसके नाम वाले फ़ोल्डर में"
+  },
+  "pack.unpack.title_many": {
+    "message": "{count, plural, one {# आर्काइव} other {# आर्काइव}} को {target} में अनपैक करें"
+  },
+  "pack.unpack.title_one": {
+    "message": "“{name}” को {target} में अनपैक करें"
+  },
+  "pack.unpack.with_paths": {
+    "message": "आर्काइव में रखे फ़ोल्डर बनाए रखें"
+  },
+  "pack.volume_invalid": {
+    "message": "वॉल्यूम का आकार MB में एक संख्या होनी चाहिए।"
+  },
+  "pack.wrong_password": {
+    "message": "गलत पासवर्ड"
+  },
+  "panel.admin.renaming": {
+    "message": "नाम बदलकर “{name}” करना"
+  },
+  "panel.clipboard.copied": {
+    "message": "{count, plural, one {# आइटम कॉपी किया गया} other {# आइटम कॉपी किए गए}}: Ctrl+V उन्हें पेस्ट करता है।"
+  },
+  "panel.clipboard.cut": {
+    "message": "{count, plural, one {# आइटम कट किया गया} other {# आइटम कट किए गए}}: Ctrl+V उन्हें पेस्ट करता है।"
+  },
+  "panel.clipboard.no_cut_in_archive": {
+    "message": "आर्काइव से फ़ाइलें कट नहीं की जा सकतीं; Ctrl+C उन्हें कॉपी करता है।"
+  },
+  "panel.clipboard.no_files": {
+    "message": "क्लिपबोर्ड में कोई फ़ाइल नहीं है।"
+  },
+  "panel.clipboard.no_paste_in_archive": {
+    "message": "आर्काइव में फ़ाइलें अभी पेस्ट नहीं की जा सकतीं।"
+  },
+  "panel.clipboard.same_folder": {
+    "message": "वे पहले से इस फ़ोल्डर में हैं: Ctrl+V किसी दूसरे फ़ोल्डर में पेस्ट करता है।"
+  },
+  "panel.column.attr": {
+    "message": "एट्रि."
+  },
+  "panel.column.date": {
+    "message": "तारीख"
+  },
+  "panel.column.ext": {
+    "message": "एक्स."
+  },
+  "panel.column.name": {
+    "message": "नाम"
+  },
+  "panel.column.size": {
+    "message": "आकार"
+  },
+  "panel.disconnect": {
+    "message": "डिस्कनेक्ट करें"
+  },
+  "panel.drag.items": {
+    "message": "{count, plural, one {# आइटम} other {# आइटम}}"
+  },
+  "panel.error.archive_not_updatable": {
+    "message": "{name}: 7-Zip सिर्फ़ 7z, zip और tar आर्काइव में सीधे बदलाव करता है, इसमें नहीं"
+  },
+  "panel.error.archive_on_server": {
+    "message": "{name}: सर्वर पर रखे आर्काइव अभी बदले नहीं जा सकते"
+  },
+  "panel.error.branch_view_local": {
+    "message": "ब्रांच व्यू इस कंप्यूटर के फ़ोल्डर दिखाता है"
+  },
+  "panel.error.exists": {
+    "message": "{name} पहले से मौजूद है"
+  },
+  "panel.error.folder_in_the_way": {
+    "message": "इस नाम का एक फ़ोल्डर पहले से वहां है"
+  },
+  "panel.error.inside_archive": {
+    "message": "आर्काइव के अंदर अभी नहीं"
+  },
+  "panel.error.make_file": {
+    "message": "फ़ाइल नहीं बन सकी: {err}"
+  },
+  "panel.error.no_name": {
+    "message": "कोई नाम नहीं दिया गया"
+  },
+  "panel.error.not_a_name": {
+    "message": "{name}: यह नाम नहीं है"
+  },
+  "panel.error.other_drive": {
+    "message": "दूसरा पैनल किसी दूसरी ड्राइव पर चला गया"
+  },
+  "panel.error.rename": {
+    "message": "नाम नहीं बदला जा सका: {err}"
+  },
+  "panel.filter.custom.label": {
+    "message": "फ़ाइल प्रकार, जैसे *.txt *.md (| के बाद, जिन्हें छोड़ना है):"
+  },
+  "panel.filter.custom.title": {
+    "message": "फ़ाइलें दिखाएं"
+  },
+  "panel.filter.programs": {
+    "message": "प्रोग्राम"
+  },
+  "panel.filter.selected_files": {
+    "message": "चुनी गई फ़ाइलें"
+  },
+  "panel.found.branch_view": {
+    "message": "ब्रांच व्यू:"
+  },
+  "panel.found.search_results": {
+    "message": "खोज के नतीजे:"
+  },
+  "panel.new_text_file.label": {
+    "message": "फ़ाइल का नाम, एडिटर में खुलेगी:"
+  },
+  "panel.new_text_file.title": {
+    "message": "नई टेक्स्ट फ़ाइल"
+  },
+  "panel.opening.cancel": {
+    "message": "रद्द करें"
+  },
+  "panel.opening.reading": {
+    "message": "पढ़ा जा रहा है…"
+  },
+  "panel.opening.title": {
+    "message": "आर्काइव खुल रहा है"
+  },
+  "panel.quick_filter.hint": {
+    "message": "जो मेल नहीं खाता, उसे छिपाता है; Escape सब दिखाता है"
+  },
+  "panel.quick_filter.label": {
+    "message": "फ़िल्टर:"
+  },
+  "panel.quick_search.label": {
+    "message": "खोजें:"
+  },
+  "panel.size.app": {
+    "message": "<APP>"
+  },
+  "panel.size.b": {
+    "message": "{size} B"
+  },
+  "panel.size.dir": {
+    "message": "<DIR>"
+  },
+  "panel.size.gb": {
+    "message": "{size} GB"
+  },
+  "panel.size.kb": {
+    "message": "{size} KB"
+  },
+  "panel.size.mb": {
+    "message": "{size} MB"
+  },
+  "panel.size.tb": {
+    "message": "{size} TB"
+  },
+  "panel.space.bytes": {
+    "message": "{count, plural, one {{size} बाइट ({human})} other {{size} बाइट ({human})}}"
+  },
+  "panel.space.close": {
+    "message": "बंद करें"
+  },
+  "panel.space.counting": {
+    "message": "गिनती हो रही है…"
+  },
+  "panel.space.done": {
+    "message": "हो गया।"
+  },
+  "panel.space.files": {
+    "message": "फ़ाइलें:"
+  },
+  "panel.space.folders": {
+    "message": "फ़ोल्डर:"
+  },
+  "panel.space.in_archive": {
+    "message": "आर्काइव के अंदर “आकार” कॉलम में आकार पहले से हैं।"
+  },
+  "panel.space.title": {
+    "message": "घेरी गई जगह गिनें"
+  },
+  "panel.space.total": {
+    "message": "कुल आकार:"
+  },
+  "panel.space.unreadable": {
+    "message": "{count, plural, one {# आइटम पढ़ा नहीं जा सका।} other {# आइटम पढ़े नहीं जा सके।}}"
+  },
+  "panel.status": {
+    "message": "{marked_size} k / {size} k: {marked_files} / {files, plural, one {# फ़ाइल} other {# फ़ाइलें}}, {marked_folders} / {folders, plural, one {# फ़ोल्डर} other {# फ़ोल्डर}}"
+  },
+  "panel.sync_browsing.stop": {
+    "message": "सिंक्रोनाइज़्ड ब्राउज़िंग (रोकने के लिए क्लिक करें)"
+  },
+  "panel.undo.rename": {
+    "message": "“{name}” का नाम बदलकर “{to}” करें"
+  },
+  "passwords.about.set": {
+    "message": "मास्टर पासवर्ड होने पर, सेटिंग फ़ोल्डर कॉपी करके दूसरे कंप्यूटर पर यह पासवर्ड टाइप करते ही सेव किए गए पासवर्ड वहां भी खुल जाते हैं। इसे भूल जाने पर सिर्फ़ वे पासवर्ड खोते हैं: उन्हें फिर से टाइप करना होगा।"
+  },
+  "passwords.about.unlock": {
+    "message": "सेटिंग किसी दूसरे कंप्यूटर से आई हैं, या यह कंप्यूटर कोई कीरिंग नहीं रखता: मास्टर पासवर्ड यहां सेव किए गए पासवर्ड खोलता है।"
+  },
+  "passwords.cancel": {
+    "message": "रद्द करें"
+  },
+  "passwords.done.set": {
+    "message": "मास्टर पासवर्ड सेट हो गया है।"
+  },
+  "passwords.done.unlocked": {
+    "message": "सेव किए गए पासवर्ड खुल गए हैं।"
+  },
+  "passwords.error.locked": {
+    "message": "सेव किए गए पासवर्ड लॉक हैं: उन्हें मास्टर पासवर्ड से अनलॉक करें (कॉन्फ़िगरेशन › सेटिंग › पासवर्ड)"
+  },
+  "passwords.error.no_master": {
+    "message": "कोई मास्टर पासवर्ड सेट नहीं है"
+  },
+  "passwords.error.no_random": {
+    "message": "कोई रैंडम संख्या नहीं मिली"
+  },
+  "passwords.error.not_opened": {
+    "message": "{what} का पासवर्ड खोला नहीं जा सकता"
+  },
+  "passwords.error.not_sealed": {
+    "message": "पासवर्ड एन्क्रिप्ट नहीं हो सका"
+  },
+  "passwords.error.salt_damaged": {
+    "message": "मास्टर पासवर्ड का सॉल्ट खराब है"
+  },
+  "passwords.error.wrong": {
+    "message": "मास्टर पासवर्ड गलत है"
+  },
+  "passwords.field.again": {
+    "message": "दोबारा"
+  },
+  "passwords.field.master": {
+    "message": "मास्टर पासवर्ड"
+  },
+  "passwords.locked_note": {
+    "message": "इस कंप्यूटर पर सेव किए गए पासवर्ड लॉक हैं: मास्टर पासवर्ड उन्हें खोलता है।"
+  },
+  "passwords.ok": {
+    "message": "ठीक है"
+  },
+  "passwords.problem.differ": {
+    "message": "दोनों एक जैसे नहीं हैं।"
+  },
+  "passwords.problem.empty": {
+    "message": "मास्टर पासवर्ड टाइप करें।"
+  },
+  "passwords.title.set": {
+    "message": "मास्टर पासवर्ड"
+  },
+  "passwords.title.unlock": {
+    "message": "सेव किए गए पासवर्ड अनलॉक करें"
+  },
+  "passwords.unlock_button": {
+    "message": "अनलॉक करें…"
+  },
+  "passwords.working": {
+    "message": "काम हो रहा है…"
+  },
+  "properties.accessed": {
+    "message": "ऐक्सेस किया गया:"
+  },
+  "properties.change_attributes": {
+    "message": "एट्रिब्यूट बदलें..."
+  },
+  "properties.close": {
+    "message": "बंद करें"
+  },
+  "properties.contents": {
+    "message": "{file_count, plural, one {{files} फ़ाइल} other {{files} फ़ाइलें}}, {folder_count, plural, one {{folders} फ़ोल्डर} other {{folders} फ़ोल्डर}}, {count, plural, one {{bytes} बाइट} other {{bytes} बाइट}} ({size})"
+  },
+  "properties.contents_counting": {
+    "message": "{file_count, plural, one {{files} फ़ाइल} other {{files} फ़ाइलें}}, {folder_count, plural, one {{folders} फ़ोल्डर} other {{folders} फ़ोल्डर}}, {count, plural, one {{bytes} बाइट} other {{bytes} बाइट}} ({size}) (गिनती जारी है…)"
+  },
+  "properties.contents_label": {
+    "message": "सामग्री:"
+  },
+  "properties.created": {
+    "message": "बनाया गया:"
+  },
+  "properties.dialog_title": {
+    "message": "प्रॉपर्टी"
+  },
+  "properties.in_archive": {
+    "message": "आर्काइव की सूची में वह सब दिखता है जो उसे अपनी फ़ाइलों के बारे में पता है।"
+  },
+  "properties.kind.file": {
+    "message": "फ़ाइल"
+  },
+  "properties.kind.folder": {
+    "message": "फ़ोल्डर"
+  },
+  "properties.kind.link": {
+    "message": "लिंक"
+  },
+  "properties.kind.link_to": {
+    "message": "{target} का लिंक"
+  },
+  "properties.location": {
+    "message": "स्थान:"
+  },
+  "properties.modified": {
+    "message": "बदला गया:"
+  },
+  "properties.name": {
+    "message": "नाम:"
+  },
+  "properties.no_system_dialog": {
+    "message": "यहां अभी सिस्टम का कोई प्रॉपर्टी डायलॉग नहीं है"
+  },
+  "properties.owner": {
+    "message": "मालिक / समूह:"
+  },
+  "properties.permissions": {
+    "message": "अनुमतियां:"
+  },
+  "properties.size": {
+    "message": "{count, plural, one {{bytes} बाइट ({size})} other {{bytes} बाइट ({size})}}"
+  },
+  "properties.size_label": {
+    "message": "आकार:"
+  },
+  "properties.type": {
+    "message": "प्रकार:"
+  },
+  "quick_open.go_to": {
+    "message": "{path} पर जाएं"
+  },
+  "quick_open.group.bookmarks": {
+    "message": "बुकमार्क"
+  },
+  "quick_open.group.connections": {
+    "message": "कनेक्शन"
+  },
+  "quick_open.group.drives": {
+    "message": "ड्राइव"
+  },
+  "quick_open.group.path": {
+    "message": "पाथ"
+  },
+  "quick_open.group.recent_folders": {
+    "message": "हाल के फ़ोल्डर"
+  },
+  "quick_open.group.tools": {
+    "message": "टूल"
+  },
+  "quick_open.group.workspaces": {
+    "message": "वर्कस्पेस"
+  },
+  "quick_open.placeholder": {
+    "message": "कमांड, बुकमार्क, फ़ोल्डर, पाथ, सर्वर, ड्राइव, वर्कस्पेस या टूल"
+  },
+  "quick_open.title": {
+    "message": "क्विक ओपन"
+  },
+  "quick_view.counting": {
+    "message": "गिनती हो रही है…"
+  },
+  "quick_view.downloading": {
+    "message": "डाउनलोड हो रहा है…"
+  },
+  "quick_view.empty": {
+    "message": "क्विक व्यू वह दिखाता है जिस पर दूसरे पैनल का कर्सर है।"
+  },
+  "quick_view.extracting": {
+    "message": "आर्काइव से निकाला जा रहा है…"
+  },
+  "quick_view.files_only": {
+    "message": "सर्वर पर और आर्काइव के अंदर क्विक व्यू सिर्फ़ फ़ाइलें दिखाता है।"
+  },
+  "quick_view.space.title": {
+    "message": "कुल घेरी गई जगह:"
+  },
+  "quick_view.space.totals": {
+    "message": "{files, plural, one {{files_grouped} फ़ाइल} other {{files_grouped} फ़ाइलें}}, {folders, plural, one {{folders_grouped} फ़ोल्डर} other {{folders_grouped} फ़ोल्डर}} में {bytes, plural, one {{bytes_grouped} बाइट} other {{bytes_grouped} बाइट}}"
+  },
+  "quick_view.space.unreadable": {
+    "message": "{count} पढ़े नहीं जा सके।"
+  },
+  "quick_view.too_large.download": {
+    "message": "{size} यहां डाउनलोड करने के लिए बहुत बड़ा है: F3 इसे दिखाता है।"
+  },
+  "quick_view.too_large.extract": {
+    "message": "{size} यहां आर्काइव से निकालने के लिए बहुत बड़ा है: F3 इसे दिखाता है।"
+  },
+  "remote.cancelled": {
+    "message": "रद्द किया गया"
+  },
+  "remote.cloud.ask": {
+    "message": "{kind, select, application_key {{host} पर {user} की ऐप्लिकेशन कुंजी:} api_key {{host} पर {user} की API कुंजी:} password {{host} पर {user} का पासवर्ड:} other {{host} पर {user} की सीक्रेट कुंजी:}}"
+  },
+  "remote.cloud.ask_again": {
+    "message": "{kind, select, application_key {गलत ऐप्लिकेशन कुंजी। {host} पर {user} की ऐप्लिकेशन कुंजी:} api_key {गलत API कुंजी। {host} पर {user} की API कुंजी:} password {गलत पासवर्ड। {host} पर {user} का पासवर्ड:} other {गलत कुंजी। {host} पर {user} की सीक्रेट कुंजी:}}"
+  },
+  "remote.cloud.obscure_failed": {
+    "message": "rclone पासवर्ड नहीं ले सका"
+  },
+  "remote.cloud.rclone_missing": {
+    "message": "rclone नहीं मिला: सेटिंग > ऐड-ऑन इसे डाउनलोड करता है"
+  },
+  "remote.cloud.title": {
+    "message": "{kind, select, application_key {ऐप्लिकेशन कुंजी} api_key {API कुंजी} password {पासवर्ड} other {सीक्रेट कुंजी}}"
+  },
+  "remote.connecting": {
+    "message": "{server} से कनेक्ट हो रहा है..."
+  },
+  "remote.dialog.cancel": {
+    "message": "रद्द करें"
+  },
+  "remote.dialog.ok": {
+    "message": "ठीक है"
+  },
+  "remote.disconnect_failed": {
+    "message": "{share}: डिस्कनेक्ट नहीं हो सका: {err}"
+  },
+  "remote.ftp.password": {
+    "message": "{user}@{host} का पासवर्ड:"
+  },
+  "remote.ftp.password_again": {
+    "message": "गलत पासवर्ड। {user}@{host} का पासवर्ड:"
+  },
+  "remote.ftps.changed": {
+    "message": "{server} का TLS सर्टिफ़िकेट, {file} की पंक्ति {line} में दर्ज होने के बाद से, बदल गया है! हो सकता है कोई बीच में सुन रहा हो; अगर सर्वर का सर्टिफ़िकेट नया है, तो वह पंक्ति हटा दें।"
+  },
+  "remote.ftps.not_trusted": {
+    "message": "सर्वर के सर्टिफ़िकेट पर भरोसा नहीं किया गया"
+  },
+  "remote.login.password": {
+    "message": "पासवर्ड"
+  },
+  "remote.login.title": {
+    "message": "लॉग इन करें"
+  },
+  "remote.login.user": {
+    "message": "यूज़र"
+  },
+  "remote.mount.login_wrong": {
+    "message": "यूज़र या पासवर्ड गलत है"
+  },
+  "remote.mount.macos_failed": {
+    "message": "macOS इसे माउंट नहीं कर सका (NetFS {code})"
+  },
+  "remote.mount.needs_desktop": {
+    "message": "इसके लिए KDE का kio-fuse या GNOME का gvfs चाहिए"
+  },
+  "remote.mount.needs_login": {
+    "message": "इसके लिए यूज़र और पासवर्ड चाहिए"
+  },
+  "remote.mount.no_fuse": {
+    "message": "माउंट हो गया, पर इसके लिए कोई फ़ोल्डर नहीं है: gvfs-fuse नहीं मिला"
+  },
+  "remote.mount.no_nfs_client": {
+    "message": "नहीं मिला; NFS के लिए Windows का “NFS के लिए क्लाइंट” चाहिए (Windows सुविधाएं)"
+  },
+  "remote.mount.no_share": {
+    "message": "शेयर नहीं दिया गया: smb://server/share"
+  },
+  "remote.mount.not_address": {
+    "message": "यह पता नहीं है"
+  },
+  "remote.mount.not_found": {
+    "message": "माउंट हो गया, पर माउंट की गई चीज़ों में नहीं मिला"
+  },
+  "remote.mount.other_user": {
+    "message": "Windows इस सर्वर से किसी दूसरे यूज़र के रूप में कनेक्ट है: लॉग ऑफ़ करें, या वही यूज़र इस्तेमाल करें"
+  },
+  "remote.password.title": {
+    "message": "पासवर्ड"
+  },
+  "remote.remember_password": {
+    "message": "इसे याद रखें (सेटिंग › पासवर्ड)"
+  },
+  "remote.save_back_failed": {
+    "message": "इसे वापस सेव नहीं किया जा सका: {err}"
+  },
+  "remote.sftp.host_certificate": {
+    "message": "सर्वर एक होस्ट सर्टिफ़िकेट दिखाता है; ये अभी समर्थित नहीं हैं।"
+  },
+  "remote.sftp.key_changed": {
+    "message": "{server} की होस्ट कुंजी, {file} की पंक्ति {line} में दर्ज होने के बाद से, बदल गई है! हो सकता है कोई बीच में सुन रहा हो; अगर सर्वर नए सिरे से सेट किया गया है, तो वह पंक्ति हटा दें।"
+  },
+  "remote.sftp.key_not_trusted": {
+    "message": "{server} की होस्ट कुंजी पर भरोसा नहीं किया गया।"
+  },
+  "remote.sftp.keys_refused": {
+    "message": "{user}@{host}: सर्वर ने कुंजियां अस्वीकार कर दीं और वह पासवर्ड नहीं लेता"
+  },
+  "remote.sftp.login_refused": {
+    "message": "{user}@{host}: लॉगिन अस्वीकार किया गया"
+  },
+  "remote.sftp.passphrase": {
+    "message": "{file} का पासफ़्रेज़"
+  },
+  "remote.sftp.passphrase_title": {
+    "message": "कुंजी का पासफ़्रेज़"
+  },
+  "remote.sftp.password": {
+    "message": "{user}@{host} का पासवर्ड"
+  },
+  "remote.unknown_host.once": {
+    "message": "एक बार कनेक्ट करें"
+  },
+  "remote.unknown_host.remember": {
+    "message": "कनेक्ट करें और याद रखें"
+  },
+  "remote.unknown_host.text": {
+    "message": "{key_type, select, TLS {सर्वर {host} अभी अनजान है। इसके TLS सर्टिफ़िकेट का फ़िंगरप्रिंट यह है:} other {सर्वर {host} अभी अनजान है। इसकी {key_type} कुंजी का फ़िंगरप्रिंट यह है:}}\n\n{fingerprint}\n\nसिर्फ़ तभी कनेक्ट करें जब यह वही सर्वर हो जिससे आप कनेक्ट करना चाहते हैं; इसका एडमिनिस्ट्रेटर फ़िंगरप्रिंट की पुष्टि कर सकता है।"
+  },
+  "remote.unknown_host.title": {
+    "message": "अनजान सर्वर"
+  },
+  "rename.case": {
+    "message": "केस:"
+  },
+  "rename.case.first": {
+    "message": "पहला अक्षर बड़ा"
+  },
+  "rename.case.lower": {
+    "message": "छोटे अक्षर"
+  },
+  "rename.case.unchanged": {
+    "message": "बिना बदलाव"
+  },
+  "rename.case.upper": {
+    "message": "बड़े अक्षर"
+  },
+  "rename.case.words": {
+    "message": "हर शब्द बड़ा"
+  },
+  "rename.close": {
+    "message": "बंद करें"
+  },
+  "rename.counter_start": {
+    "message": "काउंटर की शुरुआत"
+  },
+  "rename.dialog_title": {
+    "message": "कई फ़ाइलों के नाम बदलें"
+  },
+  "rename.digits": {
+    "message": "अंक"
+  },
+  "rename.extension": {
+    "message": "एक्सटेंशन"
+  },
+  "rename.field.counter": {
+    "message": "[C] काउंटर"
+  },
+  "rename.field.date": {
+    "message": "[Y][M][D] तारीख"
+  },
+  "rename.field.extension": {
+    "message": "[E] एक्स."
+  },
+  "rename.field.folder": {
+    "message": "[P] फ़ोल्डर"
+  },
+  "rename.field.name": {
+    "message": "[N] नाम"
+  },
+  "rename.field.range": {
+    "message": "[N1-3] रेंज"
+  },
+  "rename.field.time": {
+    "message": "[h][m][s] समय"
+  },
+  "rename.first_only": {
+    "message": "सिर्फ़ पहला"
+  },
+  "rename.in_archive": {
+    "message": "आर्काइव के अंदर की फ़ाइलों के नाम अभी नहीं बदले जा सकते।"
+  },
+  "rename.mask": {
+    "message": "नाम मास्क: फ़ाइल का नाम"
+  },
+  "rename.match_case": {
+    "message": "केस मिलाएं"
+  },
+  "rename.new_name": {
+    "message": "नया नाम"
+  },
+  "rename.not_renamed_back": {
+    "message": "{from}: {err}; इनके नाम वापस नहीं बदले जा सके: {names}"
+  },
+  "rename.not_utf8": {
+    "message": "जो नाम UTF-8 में नहीं हैं, वे छोड़ दिए गए हैं।"
+  },
+  "rename.old_name": {
+    "message": "पुराना नाम"
+  },
+  "rename.problem.bad_character": {
+    "message": "ऐसा अक्षर जो नामों में नहीं हो सकता"
+  },
+  "rename.problem.exists": {
+    "message": "पहले से मौजूद"
+  },
+  "rename.problem.no_name": {
+    "message": "कोई नाम नहीं"
+  },
+  "rename.problem.twice": {
+    "message": "सूची में दो बार"
+  },
+  "rename.regex": {
+    "message": "रेगुलर एक्सप्रेशन"
+  },
+  "rename.regex_error": {
+    "message": "रेगुलर एक्सप्रेशन: {err}"
+  },
+  "rename.replace": {
+    "message": "इससे बदलें"
+  },
+  "rename.search": {
+    "message": "खोजें"
+  },
+  "rename.start": {
+    "message": "शुरू करें!"
+  },
+  "rename.status.failed": {
+    "message": "किसी का नाम नहीं बदला गया: {err}"
+  },
+  "rename.status.ready": {
+    "message": "“शुरू करें!” इनके नाम बदलेगा।"
+  },
+  "rename.status.renamed": {
+    "message": "{count, plural, one {# का नाम बदला गया।} other {# के नाम बदले गए।}}"
+  },
+  "rename.status.took_back": {
+    "message": "{count, plural, one {# का नाम वापस किया गया।} other {# के नाम वापस किए गए।}}"
+  },
+  "rename.step": {
+    "message": "स्टेप"
+  },
+  "rename.undo": {
+    "message": "पूर्ववत करें"
+  },
+  "rename.was": {
+    "message": "{to} (पहले {from})"
+  },
+  "rename.with_extension": {
+    "message": "एक्सटेंशन सहित"
+  },
+  "scmd.column.modified": {
+    "message": "बदला गया"
+  },
+  "scmd.column.name": {
+    "message": "नाम"
+  },
+  "scmd.column.size": {
+    "message": "आकार"
+  },
+  "scmd.column.up_dir": {
+    "message": "--ऊपर--"
+  },
+  "scmd.command_line.not_on_server": {
+    "message": "कमांड इस कंप्यूटर पर चलती हैं, सर्वर पर नहीं।"
+  },
+  "scmd.compare.marked": {
+    "message": "{count, plural, one {# फ़ाइल मार्क की गई: दूसरी ओर से नई है, या वहां मौजूद नहीं है।} other {# फ़ाइलें मार्क की गईं: दूसरी ओर से नई हैं, या वहां मौजूद नहीं हैं।}}"
+  },
+  "scmd.compare.same": {
+    "message": "फ़ोल्डरों में एक जैसी फ़ाइलें हैं।"
+  },
+  "scmd.copying": {
+    "message": "{name} कॉपी हो रहा है..."
+  },
+  "scmd.dialog.buttons": {
+    "message": "Enter ठीक है   Esc रद्द करें"
+  },
+  "scmd.error.read_settings": {
+    "message": "सेटिंग पढ़ी नहीं जा सकी: {err}"
+  },
+  "scmd.error.read_tabs": {
+    "message": "खुले टैब पढ़े नहीं जा सके: {err}"
+  },
+  "scmd.error.read_workspaces": {
+    "message": "वर्कस्पेस पढ़े नहीं जा सके: {err}"
+  },
+  "scmd.error.save_back": {
+    "message": "इसे वापस सेव नहीं किया जा सका: {err}"
+  },
+  "scmd.error.save_searches": {
+    "message": "खोज इतिहास सेव नहीं हो सका: {err}"
+  },
+  "scmd.error.save_tabs": {
+    "message": "खुले टैब सेव नहीं हो सके: {err}"
+  },
+  "scmd.find.backwards": {
+    "message": "पीछे की ओर"
+  },
+  "scmd.find.case_sensitive": {
+    "message": "केस-संवेदी"
+  },
+  "scmd.find.hex": {
+    "message": "हेक्स (77 6F 72 64)"
+  },
+  "scmd.find.not_found": {
+    "message": "नहीं मिला: {text}"
+  },
+  "scmd.find.regex": {
+    "message": "रेगुलर एक्सप्रेशन"
+  },
+  "scmd.find.search_for": {
+    "message": "खोजें:"
+  },
+  "scmd.find.title": {
+    "message": "खोजें"
+  },
+  "scmd.find.whole_words": {
+    "message": "सिर्फ़ पूरे शब्द"
+  },
+  "scmd.group.files": {
+    "message": "फ़ाइलें (*.txt *.md; फ़ोल्डर / पर खत्म होते हैं):"
+  },
+  "scmd.group.select_title": {
+    "message": "समूह चुनें"
+  },
+  "scmd.group.unselect_title": {
+    "message": "समूह का चयन हटाएं"
+  },
+  "scmd.key_bar.copy": {
+    "message": "कॉपी"
+  },
+  "scmd.key_bar.delete": {
+    "message": "डिलीट"
+  },
+  "scmd.key_bar.edit": {
+    "message": "एडिट"
+  },
+  "scmd.key_bar.menu": {
+    "message": "मेन्यू"
+  },
+  "scmd.key_bar.mkdir": {
+    "message": "फ़ोल्डर"
+  },
+  "scmd.key_bar.move": {
+    "message": "मूव"
+  },
+  "scmd.key_bar.quit": {
+    "message": "बंद"
+  },
+  "scmd.key_bar.view": {
+    "message": "देखें"
+  },
+  "scmd.message.error": {
+    "message": "त्रुटि"
+  },
+  "scmd.message.ok": {
+    "message": "ठीक है"
+  },
+  "scmd.not_yet": {
+    "message": "{what, select, menus {मेन्यू: टर्मिनल वर्शन में अभी नहीं।} file_operations {फ़ाइल ऑपरेशन: टर्मिनल वर्शन में अभी नहीं।} servers {सर्वर: टर्मिनल वर्शन में अभी नहीं।} other {यह कमांड: टर्मिनल वर्शन में अभी नहीं।}}"
+  },
+  "scmd.picture.broken": {
+    "message": "खराब तस्वीर"
+  },
+  "scmd.picture.broken_page": {
+    "message": "खराब पेज"
+  },
+  "scmd.picture.loading": {
+    "message": "लोड हो रहा है…"
+  },
+  "scmd.picture.no_page": {
+    "message": "PDF में ऐसा कोई पेज नहीं है"
+  },
+  "scmd.shell.press_enter": {
+    "message": "Spark Commander पर लौटने के लिए Enter दबाएं..."
+  },
+  "scmd.sync_browsing.off": {
+    "message": "सिंक्रोनाइज़्ड ब्राउज़िंग बंद है।"
+  },
+  "scmd.sync_browsing.on": {
+    "message": "सिंक्रोनाइज़्ड ब्राउज़िंग चालू है।"
+  },
+  "scmd.sync_browsing.stopped": {
+    "message": "{err}। सिंक्रोनाइज़्ड ब्राउज़िंग बंद है।"
+  },
+  "scmd.viewer.column": {
+    "message": "कॉलम {column}"
+  },
+  "scmd.viewer.finding": {
+    "message": "खोज जारी…"
+  },
+  "scmd.viewer.key_bar.next": {
+    "message": "अगला"
+  },
+  "scmd.viewer.key_bar.quit": {
+    "message": "बंद"
+  },
+  "scmd.viewer.key_bar.reload": {
+    "message": "रीलोड"
+  },
+  "scmd.viewer.key_bar.search": {
+    "message": "खोजें"
+  },
+  "scmd.viewer.page": {
+    "message": "पेज {page}/{pages}"
+  },
+  "scmd.viewer.reading": {
+    "message": "पढ़ा जा रहा {percent}%"
+  },
+  "scmd.viewer.wrap": {
+    "message": "रैप"
+  },
+  "scmd.workspace.copy_name": {
+    "message": "{name} कॉपी"
+  },
+  "scmd.workspace.default_name": {
+    "message": "वर्कस्पेस {number}"
+  },
+  "scmd.workspace.delete_question": {
+    "message": "“{name}” डिलीट करें? इसके टैब भुला दिए जाएंगे।"
+  },
+  "scmd.workspace.duplicate_title": {
+    "message": "वर्कस्पेस डुप्लिकेट करें"
+  },
+  "scmd.workspace.last_stays": {
+    "message": "आखिरी वर्कस्पेस बना रहता है।"
+  },
+  "scmd.workspace.name": {
+    "message": "नाम:"
+  },
+  "scmd.workspace.name_or_default": {
+    "message": "नाम (खाली: {name}):"
+  },
+  "scmd.workspace.new_title": {
+    "message": "नया वर्कस्पेस"
+  },
+  "scmd.workspace.rename_title": {
+    "message": "वर्कस्पेस का नाम बदलें"
+  },
+  "scmd.workspaces.keys": {
+    "message": "Enter खोलें  F7 नया  F5 कॉपी  F2 नाम  F8 डिलीट"
+  },
+  "scmd.workspaces.title": {
+    "message": "वर्कस्पेस"
+  },
+  "search.age.days": {
+    "message": "दिन"
+  },
+  "search.age.hours": {
+    "message": "घंटे"
+  },
+  "search.age.minutes": {
+    "message": "मिनट"
+  },
+  "search.age.months": {
+    "message": "महीने"
+  },
+  "search.age.weeks": {
+    "message": "हफ़्ते"
+  },
+  "search.age.years": {
+    "message": "साल"
+  },
+  "search.archives": {
+    "message": "आर्काइव में खोजें"
+  },
+  "search.attribute.directory": {
+    "message": "डायरेक्टरी"
+  },
+  "search.attribute.either": {
+    "message": "कोई फ़र्क नहीं"
+  },
+  "search.attribute.executable": {
+    "message": "चलाने योग्य"
+  },
+  "search.attribute.hidden": {
+    "message": "छिपी"
+  },
+  "search.attribute.link": {
+    "message": "सिम्बॉलिक लिंक"
+  },
+  "search.attribute.must": {
+    "message": "होना चाहिए"
+  },
+  "search.attribute.must_not": {
+    "message": "नहीं होना चाहिए"
+  },
+  "search.attribute.read_only": {
+    "message": "सिर्फ़ पढ़ने के लिए"
+  },
+  "search.attributes.label": {
+    "message": "एट्रिब्यूट:"
+  },
+  "search.between.and": {
+    "message": "और"
+  },
+  "search.between.label": {
+    "message": "इनके बीच की तारीख:"
+  },
+  "search.close": {
+    "message": "बंद करें"
+  },
+  "search.depth.all": {
+    "message": "सभी (असीमित गहराई)"
+  },
+  "search.depth.current": {
+    "message": "सिर्फ़ मौजूदा फ़ोल्डर"
+  },
+  "search.depth.label": {
+    "message": "सबफ़ोल्डर में खोजें:"
+  },
+  "search.depth.levels": {
+    "message": "{count, plural, one {# स्तर} other {# स्तर}}"
+  },
+  "search.drives": {
+    "message": "ड्राइव"
+  },
+  "search.duplicates.content": {
+    "message": "एक जैसी सामग्री"
+  },
+  "search.duplicates.label": {
+    "message": "डुप्लिकेट फ़ाइलें खोजें:"
+  },
+  "search.duplicates.name": {
+    "message": "एक जैसा नाम"
+  },
+  "search.duplicates.size": {
+    "message": "एक जैसा आकार"
+  },
+  "search.edit": {
+    "message": "F4 एडिट"
+  },
+  "search.error.between_days": {
+    "message": "“इनके बीच की तारीख” के लिए दोनों दिन चाहिए"
+  },
+  "search.error.date": {
+    "message": "{text} कोई तारीख नहीं है, जैसे 2026-11-12"
+  },
+  "search.error.hex": {
+    "message": "{text} कोई हेक्स स्ट्रिंग नहीं है, जैसे 48 65 6c"
+  },
+  "search.error.keep": {
+    "message": "खोज याद नहीं रखी जा सकी: {err}"
+  },
+  "search.error.local_time": {
+    "message": "{text} स्थानीय समय में मौजूद नहीं है"
+  },
+  "search.error.names_regex": {
+    "message": "नाम का रेगुलर एक्सप्रेशन: {err}"
+  },
+  "search.error.newer_number": {
+    "message": "“इससे पुरानी नहीं” के लिए संख्या चाहिए, {text} नहीं"
+  },
+  "search.error.no_place": {
+    "message": "“इसमें खोजें” में कोई फ़ोल्डर नहीं दिया गया"
+  },
+  "search.error.no_text": {
+    "message": "“टेक्स्ट खोजें” में कोई टेक्स्ट नहीं दिया गया"
+  },
+  "search.error.older_number": {
+    "message": "“इससे पुरानी” के लिए संख्या चाहिए, {text} नहीं"
+  },
+  "search.error.save": {
+    "message": "खोजें सेव नहीं हो सकीं: {err}"
+  },
+  "search.error.size_number": {
+    "message": "“फ़ाइल का आकार” के लिए संख्या चाहिए, {text} नहीं"
+  },
+  "search.error.text_regex": {
+    "message": "टेक्स्ट का रेगुलर एक्सप्रेशन: {err}"
+  },
+  "search.feed": {
+    "message": "पैनल में भेजें"
+  },
+  "search.go_to_file": {
+    "message": "फ़ाइल पर जाएं"
+  },
+  "search.in_found": {
+    "message": "F2 मिली फ़ाइलों में खोजें"
+  },
+  "search.locate": {
+    "message": "locate इंडेक्स से"
+  },
+  "search.names.label": {
+    "message": "खोजें:"
+  },
+  "search.names.placeholder": {
+    "message": "*.txt *.md | backup*  (खाली: सभी)"
+  },
+  "search.new": {
+    "message": "नई खोज"
+  },
+  "search.newer.label": {
+    "message": "इससे पुरानी नहीं:"
+  },
+  "search.older.label": {
+    "message": "इससे पुरानी:"
+  },
+  "search.only_selected": {
+    "message": "सिर्फ़ चुनी गई फ़ाइलों/फ़ोल्डरों में खोजें"
+  },
+  "search.only_selected_count": {
+    "message": "{count, plural, one {सिर्फ़ # चुने गए आइटम में खोजें} other {सिर्फ़ # चुने गए आइटम में खोजें}}"
+  },
+  "search.page.advanced": {
+    "message": "उन्नत"
+  },
+  "search.page.general": {
+    "message": "सामान्य"
+  },
+  "search.page.load_save": {
+    "message": "लोड/सेव"
+  },
+  "search.places.browse_prompt": {
+    "message": "इसमें खोजें"
+  },
+  "search.places.label": {
+    "message": "इसमें खोजें:"
+  },
+  "search.places.placeholder": {
+    "message": "फ़ोल्डर, बीच में ;"
+  },
+  "search.regex": {
+    "message": "RegEx"
+  },
+  "search.results.label": {
+    "message": "खोज के नतीजे:"
+  },
+  "search.saved.delete": {
+    "message": "डिलीट करें"
+  },
+  "search.saved.label": {
+    "message": "पिछली खोजें:"
+  },
+  "search.saved.load": {
+    "message": "लोड करें"
+  },
+  "search.saved.name_first": {
+    "message": "पहले खोज को नाम दें।"
+  },
+  "search.saved.name_placeholder": {
+    "message": "खोज का नाम"
+  },
+  "search.saved.save": {
+    "message": "सेव करें"
+  },
+  "search.size.label": {
+    "message": "फ़ाइल का आकार:"
+  },
+  "search.start": {
+    "message": "खोज शुरू करें"
+  },
+  "search.status.found": {
+    "message": "{files, plural, one {# फ़ाइल} other {# फ़ाइलें}} और {dirs, plural, one {# फ़ोल्डर} other {# फ़ोल्डर}} मिले"
+  },
+  "search.status.searching": {
+    "message": "खोज हो रही है…"
+  },
+  "search.status.searching_in": {
+    "message": "खोज जारी: {folder}"
+  },
+  "search.status.stopped": {
+    "message": "रोका गया: {counts}"
+  },
+  "search.stop": {
+    "message": "रोकें"
+  },
+  "search.text.ansi": {
+    "message": "ANSI (कोड पेज {page})"
+  },
+  "search.text.case_sensitive": {
+    "message": "केस-संवेदी"
+  },
+  "search.text.hex": {
+    "message": "हेक्स"
+  },
+  "search.text.label": {
+    "message": "टेक्स्ट खोजें:"
+  },
+  "search.text.not_containing": {
+    "message": "ऐसी फ़ाइलें खोजें जिनमें यह टेक्स्ट नहीं है"
+  },
+  "search.text.office": {
+    "message": "ऑफ़िस फ़ाइलें (docx, xlsx, pptx, odt…)"
+  },
+  "search.text.placeholder": {
+    "message": "खोजने के लिए टेक्स्ट"
+  },
+  "search.text.whole_words": {
+    "message": "सिर्फ़ पूरे शब्द"
+  },
+  "search.title": {
+    "message": "फ़ाइलें खोजें"
+  },
+  "search.unit.bytes": {
+    "message": "बाइट"
+  },
+  "search.view": {
+    "message": "F3 देखें"
+  },
+  "settings.addons.builtin_version": {
+    "message": "{version}, Spark Commander के साथ आता है"
+  },
+  "settings.addons.check_daily": {
+    "message": "शुरू होने पर और रोज़ ऐड-ऑन अपडेट खोजें, और उन्हें पेश करें"
+  },
+  "settings.addons.check_failed": {
+    "message": "अपडेट नहीं खोजे जा सके: {err}"
+  },
+  "settings.addons.check_now": {
+    "message": "अभी खोजें"
+  },
+  "settings.addons.checking": {
+    "message": "अपडेट खोजे जा रहे हैं..."
+  },
+  "settings.addons.download": {
+    "message": "डाउनलोड करें"
+  },
+  "settings.addons.downloading": {
+    "message": "डाउनलोड हो रहा है: {size} में से {done}"
+  },
+  "settings.addons.file": {
+    "message": "फ़ाइल"
+  },
+  "settings.addons.installed.builtin": {
+    "message": "Spark Commander के साथ आता है"
+  },
+  "settings.addons.installed.label": {
+    "message": "इंस्टॉल"
+  },
+  "settings.addons.installed.none": {
+    "message": "कोई नहीं"
+  },
+  "settings.addons.intro": {
+    "message": "Spark Commander अपने कुछ कामों के लिए दूसरे प्रोजेक्ट के इन प्रोग्राम का इस्तेमाल करता है। ऐड-ऑन इससे अलग, आपके चुनने पर डाउनलोड होते हैं; 7-Zip और PDFium इसके साथ आते हैं।"
+  },
+  "settings.addons.never_offer": {
+    "message": "किसी फ़ाइल को ऐड-ऑन चाहिए हो, तब भी कभी ऐड-ऑन पेश न करें"
+  },
+  "settings.addons.offers": {
+    "message": "पेशकश और अपडेट"
+  },
+  "settings.addons.online.label": {
+    "message": "ऑनलाइन"
+  },
+  "settings.addons.online.looking": {
+    "message": "खोजा जा रहा है..."
+  },
+  "settings.addons.online.none": {
+    "message": "इस सिस्टम के लिए कोई नहीं"
+  },
+  "settings.addons.online.not_yet": {
+    "message": "अभी नहीं खोजा गया"
+  },
+  "settings.addons.online.unknown": {
+    "message": "अज्ञात"
+  },
+  "settings.addons.remove": {
+    "message": "हटाएं"
+  },
+  "settings.addons.up_to_date": {
+    "message": "ऐड-ऑन की सूची अप-टू-डेट है।"
+  },
+  "settings.addons.version": {
+    "message": "वर्शन"
+  },
+  "settings.addons.website": {
+    "message": "वेबसाइट"
+  },
+  "settings.appearance.title": {
+    "message": "दिखावट"
+  },
+  "settings.apply": {
+    "message": "लागू करें"
+  },
+  "settings.backdrop.blur": {
+    "message": "पीछे के डेस्कटॉप को धुंधला करें"
+  },
+  "settings.backdrop.clear": {
+    "message": "0%, सिर्फ़ डेस्कटॉप"
+  },
+  "settings.backdrop.cover": {
+    "message": "यह पीछे के डेस्कटॉप को कितना ढके:"
+  },
+  "settings.backdrop.opacity": {
+    "message": "{opacity}%"
+  },
+  "settings.backdrop.sidebar": {
+    "message": "साइडबार"
+  },
+  "settings.backdrop.solid": {
+    "message": "100%, पूरी तरह ठोस"
+  },
+  "settings.backdrop.terminal": {
+    "message": "टर्मिनल"
+  },
+  "settings.cancel": {
+    "message": "रद्द करें"
+  },
+  "settings.date.as_system": {
+    "message": "सिस्टम जैसा: {date}"
+  },
+  "settings.date.custom": {
+    "message": "कस्टम:"
+  },
+  "settings.date.pattern_help": {
+    "message": "yyyy साल, MM महीना (MMM उसका नाम), dd दिन (ddd हफ़्ते का दिन)"
+  },
+  "settings.date.shown_as": {
+    "message": "ऐसे दिखेगा"
+  },
+  "settings.date.shown_as_note": {
+    "message": "फ़ाइल सूचियों में; डायलॉग सेकंड भी जोड़ते हैं"
+  },
+  "settings.date.title": {
+    "message": "तारीख"
+  },
+  "settings.editor.browse": {
+    "message": "ब्राउज़ करें..."
+  },
+  "settings.editor.choose": {
+    "message": "चुनें"
+  },
+  "settings.editor.external": {
+    "message": "बाहरी एडिटर (Ctrl+Shift+F4):"
+  },
+  "settings.editor.external_help": {
+    "message": "%1 फ़ाइल है, वरना फ़ाइल आखिर में जुड़ती है; जैसे code --wait %1"
+  },
+  "settings.editor.limit": {
+    "message": "बिल्ट-इन एडिटर (F4) इतने आकार तक की फ़ाइलें खोलता है"
+  },
+  "settings.editor.limit_unit": {
+    "message": "MB"
+  },
+  "settings.editor.title": {
+    "message": "F4 के लिए एडिटर"
+  },
+  "settings.error.no_folder": {
+    "message": "कोई कॉन्फ़िगरेशन फ़ोल्डर नहीं"
+  },
+  "settings.files_shown.hidden": {
+    "message": "छिपी फ़ाइलें"
+  },
+  "settings.files_shown.system": {
+    "message": "सिस्टम फ़ाइलें"
+  },
+  "settings.files_shown.title": {
+    "message": "दिखाई जाने वाली फ़ाइलें"
+  },
+  "settings.font.as_system": {
+    "message": "सिस्टम जैसा"
+  },
+  "settings.font.chosen": {
+    "message": "चुना गया; सिस्टम का फ़ॉन्ट {family}, {size} है"
+  },
+  "settings.font.fixed": {
+    "message": "व्यूअर"
+  },
+  "settings.font.fixed_note": {
+    "message": "सिर्फ़ फ़िक्स्ड-विड्थ फ़ॉन्ट; एडिटर और फ़ाइल तुलना के लिए भी।"
+  },
+  "settings.font.main": {
+    "message": "मुख्य विंडो का फ़ॉन्ट"
+  },
+  "settings.font.system": {
+    "message": "सिस्टम का फ़ॉन्ट"
+  },
+  "settings.language.system": {
+    "message": "सिस्टम की भाषा"
+  },
+  "settings.language.system_named": {
+    "message": "सिस्टम की भाषा: {language}"
+  },
+  "settings.language.title": {
+    "message": "भाषा"
+  },
+  "settings.menus.automatic": {
+    "message": "अपने-आप: GNOME पर ☰ बटन, बाकी जगह मेन्यू बार"
+  },
+  "settings.menus.bar": {
+    "message": "मेन्यू बार"
+  },
+  "settings.menus.button": {
+    "message": "टाइटल बार में ☰ बटन"
+  },
+  "settings.menus.title": {
+    "message": "मेन्यू"
+  },
+  "settings.ok": {
+    "message": "ठीक है"
+  },
+  "settings.page.addons": {
+    "message": "ऐड-ऑन"
+  },
+  "settings.page.date": {
+    "message": "तारीख"
+  },
+  "settings.page.display": {
+    "message": "डिस्प्ले"
+  },
+  "settings.page.edit_view": {
+    "message": "एडिट/व्यू"
+  },
+  "settings.page.font": {
+    "message": "फ़ॉन्ट"
+  },
+  "settings.page.language": {
+    "message": "भाषा"
+  },
+  "settings.page.layout": {
+    "message": "लेआउट"
+  },
+  "settings.page.operations": {
+    "message": "ऑपरेशन"
+  },
+  "settings.page.passwords": {
+    "message": "पासवर्ड"
+  },
+  "settings.page.terminal": {
+    "message": "टर्मिनल"
+  },
+  "settings.page.toolbar": {
+    "message": "टूलबार"
+  },
+  "settings.passwords.change_master": {
+    "message": "मास्टर पासवर्ड बदलें…"
+  },
+  "settings.passwords.locked": {
+    "message": "वे इस कंप्यूटर पर लॉक हैं: मास्टर पासवर्ड उन्हें खोलता है।"
+  },
+  "settings.passwords.master_set": {
+    "message": "मास्टर पासवर्ड सेट है: सेटिंग फ़ोल्डर कॉपी करने पर, दूसरे कंप्यूटर पर यह पासवर्ड टाइप करते ही वे वहां खुल जाते हैं।"
+  },
+  "settings.passwords.no_master": {
+    "message": "कोई मास्टर पासवर्ड सेट नहीं है: सेटिंग फ़ोल्डर कॉपी करने पर वे दूसरे कंप्यूटर पर नहीं खुलते; उन्हें वहां फिर से टाइप करना होता है।"
+  },
+  "settings.passwords.not_removed": {
+    "message": "मास्टर पासवर्ड हटाया नहीं गया: {err}"
+  },
+  "settings.passwords.remove_master": {
+    "message": "मास्टर पासवर्ड हटाएं"
+  },
+  "settings.passwords.saved": {
+    "message": "{count, plural, one {# पासवर्ड सेव है} other {# पासवर्ड सेव हैं}} (सर्वर, शेयर और एन्क्रिप्टेड ड्राइव के), सेटिंग फ़ोल्डर में एन्क्रिप्ट करके; उन्हें खोलने वाली कुंजी इस कंप्यूटर के कीरिंग में है।"
+  },
+  "settings.passwords.set_master": {
+    "message": "मास्टर पासवर्ड सेट करें…"
+  },
+  "settings.passwords.title": {
+    "message": "सेव किए गए पासवर्ड"
+  },
+  "settings.passwords.unlock": {
+    "message": "अनलॉक करें…"
+  },
+  "settings.queue.clear_after": {
+    "message": "पूरे हुए ऑपरेशन इतने समय बाद हटाएं"
+  },
+  "settings.queue.clear_after_help": {
+    "message": "0: पूरा होते ही। विफल और रद्द किए गए ऑपरेशन हटाए जाने तक बने रहते हैं।"
+  },
+  "settings.queue.clear_after_unit": {
+    "message": "मिनट"
+  },
+  "settings.queue.download_limit": {
+    "message": "डाउनलोड स्पीड की सीमा"
+  },
+  "settings.queue.download_limit_help": {
+    "message": "लिंक से डाउनलोड, और FTP व SFTP सर्वर से कॉपी; चल रहे ऑपरेशन भी। 0: कोई सीमा नहीं।"
+  },
+  "settings.queue.download_limit_unit": {
+    "message": "KB/s"
+  },
+  "settings.queue.title": {
+    "message": "ऑपरेशन कतार"
+  },
+  "settings.shell.default": {
+    "message": "डिफ़ॉल्ट: {shell}"
+  },
+  "settings.shell.note": {
+    "message": "नए टर्मिनल टैब इसे शुरू करते हैं।"
+  },
+  "settings.shell.title": {
+    "message": "शेल"
+  },
+  "settings.sort_folders.by_name": {
+    "message": "हमेशा नाम से"
+  },
+  "settings.sort_folders.like_files": {
+    "message": "फ़ाइलों की तरह (समय से भी)"
+  },
+  "settings.sort_folders.title": {
+    "message": "फ़ोल्डरों का क्रम"
+  },
+  "settings.tabs.header_always": {
+    "message": "सिर्फ़ एक टैब होने पर भी टैब हेडर दिखाएं"
+  },
+  "settings.tabs.title": {
+    "message": "फ़ोल्डर टैब"
+  },
+  "settings.time.as_system": {
+    "message": "सिस्टम जैसा"
+  },
+  "settings.time.h12": {
+    "message": "12 घंटे (2:05 PM)"
+  },
+  "settings.time.h24": {
+    "message": "24 घंटे (14:05)"
+  },
+  "settings.time.title": {
+    "message": "समय"
+  },
+  "settings.title": {
+    "message": "सेटिंग"
+  },
+  "settings.toolbar.add": {
+    "message": "बटन जोड़ें…"
+  },
+  "settings.toolbar.move_down": {
+    "message": "नीचे ले जाएं"
+  },
+  "settings.toolbar.move_up": {
+    "message": "ऊपर ले जाएं"
+  },
+  "settings.toolbar.place": {
+    "message": "मेन्यू बार के नीचे; जहां मेन्यू ☰ बटन के पीछे होते हैं, वहां टाइटल बार में, जैसे GNOME के ऐप्स में। कोई बटन न हो, तो टूलबार भी नहीं।"
+  },
+  "settings.toolbar.remove": {
+    "message": "हटाएं"
+  },
+  "settings.toolbar.replace": {
+    "message": "बदलें…"
+  },
+  "settings.toolbar.restore_default": {
+    "message": "डिफ़ॉल्ट वापस लाएं"
+  },
+  "settings.toolbar.title": {
+    "message": "टूलबार बटन"
+  },
+  "settings.viewer.font.ansi": {
+    "message": "ANSI (Windows)"
+  },
+  "settings.viewer.font.ascii": {
+    "message": "ASCII (DOS)"
+  },
+  "settings.viewer.font.auto": {
+    "message": "अपने-आप पहचानें"
+  },
+  "settings.viewer.font.label": {
+    "message": "शुरुआत में फ़ॉन्ट:"
+  },
+  "settings.viewer.font.variable": {
+    "message": "बदलती चौड़ाई"
+  },
+  "settings.viewer.minimap": {
+    "message": "मिनीमैप"
+  },
+  "settings.viewer.show": {
+    "message": "दिखाएं:"
+  },
+  "settings.viewer.start.auto": {
+    "message": "अपने-आप पहचानें"
+  },
+  "settings.viewer.start.binary": {
+    "message": "बाइनरी"
+  },
+  "settings.viewer.start.hex": {
+    "message": "हेक्स"
+  },
+  "settings.viewer.start.label": {
+    "message": "शुरुआत में डिस्प्ले:"
+  },
+  "settings.viewer.start.text": {
+    "message": "टेक्स्ट"
+  },
+  "settings.viewer.title": {
+    "message": "F3 के लिए व्यूअर"
+  },
+  "settings.viewer.width.binary": {
+    "message": "बाइनरी"
+  },
+  "settings.viewer.width.label": {
+    "message": "डिस्प्ले की चौड़ाई (अक्षर):"
+  },
+  "settings.viewer.width.text": {
+    "message": "टेक्स्ट"
+  },
+  "settings.viewer.wrap": {
+    "message": "टेक्स्ट रैप करें"
+  },
+  "shells.command_prompt": {
+    "message": "कमांड प्रॉम्प्ट"
+  },
+  "sidebar.device.no_files": {
+    "message": "कोई फ़ाइल शेयर नहीं करता"
+  },
+  "sidebar.device.not_answering": {
+    "message": "{name} जवाब नहीं दे रहा: इसे अनलॉक करें और उस पर KDE Connect खोलें, फिर फ़ोल्डर फिर से पढ़ें (F2)।"
+  },
+  "sidebar.device.not_answering_error": {
+    "message": "{name} जवाब नहीं दे रहा ({err}): इसे अनलॉक करें और उस पर KDE Connect खोलें।"
+  },
+  "sidebar.device.not_connected": {
+    "message": "कनेक्ट नहीं"
+  },
+  "sidebar.device.opening": {
+    "message": "{name} खुल रहा है..."
+  },
+  "sidebar.device.reconnecting": {
+    "message": "{name} जवाब नहीं दे रहा: फिर से कनेक्ट हो रहा है..."
+  },
+  "sidebar.device.unmount_failed": {
+    "message": "{name}: अनमाउंट नहीं हो सका: {err}"
+  },
+  "sidebar.group.bookmarks": {
+    "message": "बुकमार्क"
+  },
+  "sidebar.group.cloud": {
+    "message": "क्लाउड"
+  },
+  "sidebar.group.devices": {
+    "message": "डिवाइस"
+  },
+  "sidebar.group.drives": {
+    "message": "ड्राइव"
+  },
+  "sidebar.group.network": {
+    "message": "नेटवर्क"
+  },
+  "sidebar.section.connections": {
+    "message": "कनेक्शन"
+  },
+  "sidebar.section.folders": {
+    "message": "फ़ोल्डर"
+  },
+  "sidebar.section.operations": {
+    "message": "ऑपरेशन"
+  },
+  "sidebar.section.places": {
+    "message": "स्थान"
+  },
+  "sidebar.volume.locked": {
+    "message": "लॉक है"
+  },
+  "sidebar.volume.mounting": {
+    "message": "{name} माउंट हो रहा है..."
+  },
+  "sidebar.volume.not_mounted": {
+    "message": "माउंट नहीं"
+  },
+  "sidebar.volume.open": {
+    "message": "खोलें"
+  },
+  "sidebar.volume.space": {
+    "message": "{total} में से {free} खाली"
+  },
+  "sidebar.volume.unmount": {
+    "message": "अनमाउंट करें"
+  },
+  "sidebar.volume.unmount_failed": {
+    "message": "अनमाउंट नहीं हो सका: {err}"
+  },
+  "split.bad_size": {
+    "message": "“{size}” कोई आकार नहीं है: 100 MB, 1.5 GB, 650m"
+  },
+  "split.choose": {
+    "message": "जिस फ़ाइल को विभाजित करना है, उस पर कर्सर रखें।"
+  },
+  "split.combine.choose": {
+    "message": "किसी हिस्से (name.001) या उसकी .crc फ़ाइल पर कर्सर रखें।"
+  },
+  "split.combine.dialog_title": {
+    "message": "फ़ाइलें मिलाएं"
+  },
+  "split.combine.label": {
+    "message": "हिस्सों को इस फ़ाइल में मिलाएं:"
+  },
+  "split.combine.title": {
+    "message": "“{name}” मिलाएं"
+  },
+  "split.combined_no_crc": {
+    "message": "{count, plural, one {# हिस्सा मिलाया गया, जांचने के लिए कोई CRC फ़ाइल नहीं} other {# हिस्से मिलाए गए, जांचने के लिए कोई CRC फ़ाइल नहीं}}"
+  },
+  "split.crc_mismatch": {
+    "message": "{target} {file} से मेल नहीं खाती: कोई हिस्सा गायब या खराब है"
+  },
+  "split.crc_names_no_file": {
+    "message": "CRC फ़ाइल में किसी फ़ाइल का नाम नहीं है"
+  },
+  "split.crc_unreadable": {
+    "message": "मिला दिया गया, पर {file} पढ़ी नहीं जा सकी: {err}"
+  },
+  "split.dialog_title": {
+    "message": "फ़ाइल विभाजित करें"
+  },
+  "split.label": {
+    "message": "“{name}” को हिस्सों में बांटकर इस फ़ोल्डर में रखें:"
+  },
+  "split.part_missing": {
+    "message": "{path} नहीं मिला"
+  },
+  "split.part_size": {
+    "message": "हिस्से का आकार:"
+  },
+  "split.title": {
+    "message": "“{name}” विभाजित करें"
+  },
+  "sync.close": {
+    "message": "बंद करें"
+  },
+  "sync.column.date": {
+    "message": "तारीख"
+  },
+  "sync.column.name": {
+    "message": "नाम"
+  },
+  "sync.column.size": {
+    "message": "आकार"
+  },
+  "sync.compare": {
+    "message": "तुलना करें"
+  },
+  "sync.confirm.copy_left": {
+    "message": "{count} बाईं ओर कॉपी करें ({size})"
+  },
+  "sync.confirm.copy_right": {
+    "message": "{count} दाईं ओर कॉपी करें ({size})"
+  },
+  "sync.confirm.delete_left": {
+    "message": "बाईं ओर {count} डिलीट करें"
+  },
+  "sync.confirm.delete_right": {
+    "message": "दाईं ओर {count} डिलीट करें"
+  },
+  "sync.confirm.ok": {
+    "message": "सिंक्रोनाइज़ करें"
+  },
+  "sync.confirm.text": {
+    "message": "{actions}। कॉपी की गई फ़ाइलें वहां मौजूद फ़ाइलों की जगह लेंगी।{trash, select, yes { इस कंप्यूटर पर डिलीट की गई फ़ाइलें ट्रैश में जाएंगी।} other {}}"
+  },
+  "sync.confirm.title": {
+    "message": "सिंक्रोनाइज़ करें"
+  },
+  "sync.error.changed": {
+    "message": "तुलना के बाद बदल गया; फिर से तुलना करें"
+  },
+  "sync.error.compare": {
+    "message": "तुलना नहीं हो सकी: {err}"
+  },
+  "sync.error.no_folders": {
+    "message": "फ़ोल्डर सिंक्रोनाइज़ करना दो फ़ोल्डरों की तुलना करता है: किसी भी पैनल में आर्काइव या खोज के नतीजे नहीं होने चाहिए।"
+  },
+  "sync.left": {
+    "message": "बायां"
+  },
+  "sync.mask.label": {
+    "message": "फ़ाइलें:"
+  },
+  "sync.option.asymmetric": {
+    "message": "असममित (दायां, बाएं की कॉपी बन जाता है)"
+  },
+  "sync.option.by_content": {
+    "message": "सामग्री से"
+  },
+  "sync.option.ignore_date": {
+    "message": "तारीख अनदेखा करें"
+  },
+  "sync.option.subfolders": {
+    "message": "सबफ़ोल्डर"
+  },
+  "sync.result.done": {
+    "message": "{count, plural, one {# सिंक्रोनाइज़ हुआ} other {# सिंक्रोनाइज़ हुए}}"
+  },
+  "sync.result.failed": {
+    "message": "{count, plural, one {# सिंक्रोनाइज़ नहीं हुआ} other {# सिंक्रोनाइज़ नहीं हुए}}; {first}"
+  },
+  "sync.right": {
+    "message": "दायां"
+  },
+  "sync.show.equal": {
+    "message": "= एक जैसे"
+  },
+  "sync.show.label": {
+    "message": "दिखाएं:"
+  },
+  "sync.show.other": {
+    "message": "≠ छोड़े गए"
+  },
+  "sync.show.to_left": {
+    "message": "← बाईं ओर"
+  },
+  "sync.show.to_right": {
+    "message": "→ दाईं ओर"
+  },
+  "sync.status.both_empty": {
+    "message": "दोनों खाली हैं।"
+  },
+  "sync.status.comparing": {
+    "message": "{folder} की तुलना हो रही है"
+  },
+  "sync.status.counts": {
+    "message": "{right} दाईं ओर कॉपी, {left} बाईं ओर कॉपी, {delete} डिलीट, {equal} एक जैसे, {alone} छोड़े गए"
+  },
+  "sync.status.stopped": {
+    "message": "रोका गया।"
+  },
+  "sync.stop": {
+    "message": "रोकें"
+  },
+  "sync.synchronize": {
+    "message": "सिंक्रोनाइज़ करें..."
+  },
+  "sync.task.title": {
+    "message": "{left} और {right} सिंक्रोनाइज़ करें"
+  },
+  "sync.title": {
+    "message": "फ़ोल्डर सिंक्रोनाइज़ करें"
+  },
+  "tab_menu.close_all_tabs": {
+    "message": "सभी टैब बंद करें"
+  },
+  "tab_menu.close_duplicate_tabs": {
+    "message": "डुप्लिकेट टैब बंद करें"
+  },
+  "tab_menu.close_tab": {
+    "message": "यह टैब बंद करें"
+  },
+  "tab_menu.copy_tab_to_other_panel": {
+    "message": "टैब को दूसरे पैनल में कॉपी करें"
+  },
+  "tab_menu.duplicate_tab": {
+    "message": "इस टैब को डुप्लिकेट करें"
+  },
+  "tab_menu.list_tabs": {
+    "message": "सभी टैब की सूची दिखाएं"
+  },
+  "tab_menu.lock_tab": {
+    "message": "इस टैब को लॉक करें"
+  },
+  "tab_menu.none": {
+    "message": "(कोई नहीं)"
+  },
+  "tab_menu.rename_tab": {
+    "message": "टैब का नाम बदलें..."
+  },
+  "tabs.error.reopen": {
+    "message": "टैब फिर से नहीं खुल सका: {err}"
+  },
+  "tabs.history.empty": {
+    "message": "इस टैब के इतिहास में अभी कोई फ़ोल्डर नहीं है।"
+  },
+  "tabs.new": {
+    "message": "नया टैब"
+  },
+  "tabs.rename.label": {
+    "message": "नया नाम:"
+  },
+  "tabs.rename.title": {
+    "message": "टैब का नाम बदलें"
+  },
+  "tabs.search_results": {
+    "message": "खोज के नतीजे"
+  },
+  "terminal.busy": {
+    "message": "टर्मिनल में एक प्रोग्राम चल रहा है: उसके खत्म होने के बाद कमांड चलाएं।"
+  },
+  "terminal.close.idle": {
+    "message": "यह टर्मिनल टैब बंद करें? इसका शेल बंद हो जाएगा।"
+  },
+  "terminal.close.ok": {
+    "message": "बंद करें"
+  },
+  "terminal.close.running": {
+    "message": "यह टर्मिनल टैब बंद करें? इसमें चल रहा प्रोग्राम रोक दिया जाएगा।"
+  },
+  "terminal.close.title": {
+    "message": "टैब बंद करें"
+  },
+  "terminal.error.start_shell": {
+    "message": "शेल शुरू नहीं हो सका: {err}"
+  },
+  "terminal.jump_to_bottom": {
+    "message": "नीचे जाएं (Ctrl+End) ↓"
+  },
+  "terminal.menu.copy": {
+    "message": "कॉपी करें"
+  },
+  "terminal.menu.paste": {
+    "message": "पेस्ट करें"
+  },
+  "toolbar.customize": {
+    "message": "टूलबार कस्टमाइज़ करें…"
+  },
+  "tools.clear_key": {
+    "message": "साफ़ करें"
+  },
+  "tools.close": {
+    "message": "बंद करें"
+  },
+  "tools.delete": {
+    "message": "डिलीट करें"
+  },
+  "tools.empty": {
+    "message": "अभी कोई टूल नहीं: “नया...” एक टूल जोड़ता है।"
+  },
+  "tools.field.command": {
+    "message": "कमांड"
+  },
+  "tools.field.key": {
+    "message": "कुंजी"
+  },
+  "tools.field.name": {
+    "message": "नाम"
+  },
+  "tools.intro": {
+    "message": "आपकी अपनी कमांड लाइनें, टूल मेन्यू में: वहां किसी पर क्लिक करें, या उसकी कुंजी दबाएं।"
+  },
+  "tools.key.none": {
+    "message": "कोई नहीं"
+  },
+  "tools.key.waiting": {
+    "message": "कुंजी दबाएं... (Esc: कोई नहीं)"
+  },
+  "tools.move_down": {
+    "message": "नीचे ले जाएं"
+  },
+  "tools.move_up": {
+    "message": "ऊपर ले जाएं"
+  },
+  "tools.name.placeholder": {
+    "message": "दूसरी ओर की फ़ाइल से तुलना करें"
+  },
+  "tools.new": {
+    "message": "नया..."
+  },
+  "tools.new_name": {
+    "message": "टूल {number}"
+  },
+  "tools.no_command": {
+    "message": "{tool} में अभी कोई कमांड नहीं है: टूल > टूल प्रबंधित करें।"
+  },
+  "tools.not_local": {
+    "message": "टूल इस कंप्यूटर पर चलते हैं: पैनल कोई सर्वर या आर्काइव दिखा रहा है।"
+  },
+  "tools.note.key_of_command": {
+    "message": "{key} {command} की भी कुंजी है: टूल इसे ले लेता है।"
+  },
+  "tools.note.key_of_other_tool": {
+    "message": "{key} {tool} की भी कुंजी है: सूची में नीचे वाला इसे ले लेता है।"
+  },
+  "tools.placeholders": {
+    "message": "%P इस पैनल का फ़ोल्डर, %T दूसरे पैनल का (दोनों सेपरेटर पर खत्म होते हैं, इसलिए \"%P%N\" एक पाथ है), %N कर्सर के नीचे की फ़ाइल, %O उसका नाम बिना एक्सटेंशन, %E एक्सटेंशन, %S चुनी गई फ़ाइलें (वरना कर्सर वाली), हर एक कोट में; %% एक %। बाकी के चारों ओर कोट लगाएं: \"%P%N\"।"
+  },
+  "tools.run_in_terminal": {
+    "message": "टर्मिनल में चलाएं, ताकि दिखे कि यह क्या प्रिंट करता है"
+  },
+  "tools.set_key": {
+    "message": "कुंजी सेट करें..."
+  },
+  "tools.title": {
+    "message": "टूल"
+  },
+  "transfer.answer.cancel": {
+    "message": "रद्द करें"
+  },
+  "transfer.answer.elevate": {
+    "message": "एडमिनिस्ट्रेटर के रूप में"
+  },
+  "transfer.answer.overwrite": {
+    "message": "ओवरराइट करें"
+  },
+  "transfer.answer.overwrite_all": {
+    "message": "सभी ओवरराइट करें"
+  },
+  "transfer.answer.rename": {
+    "message": "नाम बदलें"
+  },
+  "transfer.answer.retry": {
+    "message": "फिर से कोशिश करें"
+  },
+  "transfer.answer.skip": {
+    "message": "छोड़ें"
+  },
+  "transfer.answer.skip_all": {
+    "message": "सभी छोड़ें"
+  },
+  "transfer.archive.local_only": {
+    "message": "सिर्फ़ इस कंप्यूटर की फ़ाइलें आर्काइव में जा सकती हैं: पहले उन्हें यहां कॉपी करें।"
+  },
+  "transfer.cancel": {
+    "message": "रद्द करें"
+  },
+  "transfer.error.elevate_hint": {
+    "message": "एडमिनिस्ट्रेटर के रूप में: बाकी काम पूरा होने के बाद यह और बाकी अस्वीकार की गई चीज़ें, सिर्फ़ एक बार पासवर्ड पूछकर।"
+  },
+  "transfer.error.title": {
+    "message": "त्रुटि"
+  },
+  "transfer.exists.describe": {
+    "message": "{count, plural, one {{size} बाइट, {time}} other {{size} बाइट, {time}}}"
+  },
+  "transfer.exists.text": {
+    "message": "वहां पहले से: {existing}\nनई फ़ाइल: {new}"
+  },
+  "transfer.exists.title": {
+    "message": "फ़ाइल पहले से मौजूद है"
+  },
+  "transfer.extract_failed": {
+    "message": "उन्हें बाहर नहीं निकाला जा सका: {err}"
+  },
+  "transfer.into_archive.question_many": {
+    "message": "{count, plural, one {# आइटम} other {# आइटम}} को {into} में {kind, select, copy {कॉपी करें} other {मूव करें}}? वहां इन्हीं नामों वाली चीज़ें बदल दी जाएंगी।"
+  },
+  "transfer.into_archive.question_one": {
+    "message": "“{name}” को {into} में {kind, select, copy {कॉपी करें} other {मूव करें}}? वहां इसी नाम वाली चीज़ बदल दी जाएगी।"
+  },
+  "transfer.into_archive.title_many": {
+    "message": "{count, plural, one {# आइटम} other {# आइटम}} को {archive} में {kind, select, copy {कॉपी करें} other {मूव करें}}"
+  },
+  "transfer.into_archive.title_one": {
+    "message": "“{name}” को {archive} में {kind, select, copy {कॉपी करें} other {मूव करें}}"
+  },
+  "transfer.label.many": {
+    "message": "{count, plural, one {# आइटम} other {# आइटम}} यहां {kind, select, copy {कॉपी करें} other {मूव करें}}:"
+  },
+  "transfer.label.many_server": {
+    "message": "{count, plural, one {# आइटम} other {# आइटम}} {server} पर {kind, select, copy {कॉपी करें} other {मूव करें}}:"
+  },
+  "transfer.label.one": {
+    "message": "“{name}” यहां {kind, select, copy {कॉपी करें} other {मूव करें}}:"
+  },
+  "transfer.label.one_server": {
+    "message": "“{name}” {server} पर {kind, select, copy {कॉपी करें} other {मूव करें}}:"
+  },
+  "transfer.ok": {
+    "message": "ठीक है"
+  },
+  "transfer.overwrite.all": {
+    "message": "सभी ओवरराइट करें"
+  },
+  "transfer.overwrite.ask": {
+    "message": "पूछें"
+  },
+  "transfer.overwrite.label": {
+    "message": "जहां लक्ष्य में इसी नाम की फ़ाइल हो:"
+  },
+  "transfer.overwrite.older": {
+    "message": "पुरानी को ओवरराइट करें"
+  },
+  "transfer.overwrite.rename": {
+    "message": "कॉपी का नाम बदलें"
+  },
+  "transfer.overwrite.skip": {
+    "message": "सभी छोड़ें"
+  },
+  "transfer.remove_moved": {
+    "message": "मूव की गई चीज़ें {name} से हटाएं"
+  },
+  "transfer.speed": {
+    "message": "{size}/s"
+  },
+  "transfer.strip.counting": {
+    "message": "गिनती: {count, plural, one {# फ़ाइल} other {# फ़ाइलें}}"
+  },
+  "transfer.strip.progress": {
+    "message": "{files} / {count, plural, one {# फ़ाइल} other {# फ़ाइलें}}, {percent}%"
+  },
+  "transfer.strip.queue": {
+    "message": "कतार..."
+  },
+  "transfer.strip.queue_waiting": {
+    "message": "कतार ({count, plural, one {# इंतज़ार में} other {# इंतज़ार में}})..."
+  },
+  "transfer.title.copy": {
+    "message": "कॉपी करें"
+  },
+  "transfer.title.move": {
+    "message": "मूव करें"
+  },
+  "viewer.as_text_hint": {
+    "message": "{err}। 1 दबाने पर फ़ाइल टेक्स्ट के रूप में दिखेगी।"
+  },
+  "viewer.book.cannot_read": {
+    "message": "यह किताब पढ़ी नहीं जा सकती: {err}। 1 दबाने पर फ़ाइल टेक्स्ट के रूप में दिखेगी।"
+  },
+  "viewer.book.continuing": {
+    "message": "{percent} से जारी"
+  },
+  "viewer.book.error.compression": {
+    "message": "ऐसे तरीके से कंप्रेस है जो अभी पढ़ा नहीं जाता ({compression})"
+  },
+  "viewer.book.error.damaged": {
+    "message": "खराब किताब"
+  },
+  "viewer.book.error.damaged_zip": {
+    "message": "खराब zip"
+  },
+  "viewer.book.error.drm": {
+    "message": "DRM से सुरक्षित: इसे सिर्फ़ Kindle पढ़ सकता है"
+  },
+  "viewer.book.error.huffman": {
+    "message": "Amazon की अपनी किताबों की तरह कंप्रेस (HUFF/CDIC), जो अभी पढ़ा नहीं जाता"
+  },
+  "viewer.book.error.missing_part": {
+    "message": "{name} किताब में नहीं है"
+  },
+  "viewer.book.error.no_package": {
+    "message": "किताब में कोई पैकेज फ़ाइल नहीं है"
+  },
+  "viewer.book.error.no_text": {
+    "message": "किताब में कोई टेक्स्ट नहीं है"
+  },
+  "viewer.book.error.not_zip": {
+    "message": "zip नहीं है: खराब या DRM से सुरक्षित किताब?"
+  },
+  "viewer.book.error.zip_method": {
+    "message": "{name}: ऐसे zip कंप्रेशन में है जो यहां पढ़ा नहीं जा सकता ({method})"
+  },
+  "viewer.cannot_show": {
+    "message": "दिखाया नहीं जा सकता: {err}"
+  },
+  "viewer.convert.failed": {
+    "message": "{tool} इसे कन्वर्ट नहीं कर सका ({status})"
+  },
+  "viewer.converting": {
+    "message": "{tool} से कन्वर्ट हो रहा है…"
+  },
+  "viewer.copy.too_large": {
+    "message": "{megabytes} MB से बड़े चयन कॉपी नहीं किए जाते।"
+  },
+  "viewer.encoding.cp1250": {
+    "message": "पूर्वी यूरोप (1250)"
+  },
+  "viewer.encoding.cp1251": {
+    "message": "सिरिलिक Windows (1251)"
+  },
+  "viewer.encoding.cp1252": {
+    "message": "पश्चिमी Latin1 (1252)"
+  },
+  "viewer.encoding.cp1253": {
+    "message": "ग्रीक (1253)"
+  },
+  "viewer.encoding.cp1254": {
+    "message": "तुर्की (1254)"
+  },
+  "viewer.encoding.cp1255": {
+    "message": "हिब्रू (1255)"
+  },
+  "viewer.encoding.cp1256": {
+    "message": "अरबी (1256)"
+  },
+  "viewer.encoding.cp1257": {
+    "message": "बाल्टिक (1257)"
+  },
+  "viewer.encoding.cp1258": {
+    "message": "वियतनामी (1258)"
+  },
+  "viewer.encoding.cp20866": {
+    "message": "सिरिलिक KOI8-R (20866)"
+  },
+  "viewer.encoding.cp437": {
+    "message": "DOS-USA (437)"
+  },
+  "viewer.encoding.cp850": {
+    "message": "DOS-LATIN1 (850)"
+  },
+  "viewer.encoding.cp852": {
+    "message": "DOS मध्य यूरोप (852)"
+  },
+  "viewer.encoding.cp866": {
+    "message": "DOS सिरिलिक (866)"
+  },
+  "viewer.encoding.cp874": {
+    "message": "थाई (874)"
+  },
+  "viewer.encoding.cp932": {
+    "message": "जापानी (932)"
+  },
+  "viewer.encoding.cp936": {
+    "message": "चीनी मुख्य भूमि (936)"
+  },
+  "viewer.encoding.cp949": {
+    "message": "कोरियाई (949)"
+  },
+  "viewer.encoding.cp950": {
+    "message": "चीनी ताइवान (950)"
+  },
+  "viewer.find.not_found": {
+    "message": "नहीं मिला: {text}"
+  },
+  "viewer.find.not_hex": {
+    "message": "हेक्स स्ट्रिंग नहीं है: {text}"
+  },
+  "viewer.find.nothing": {
+    "message": "खोजने के लिए कुछ नहीं।"
+  },
+  "viewer.find.save_failed": {
+    "message": "खोजें सेव नहीं हो सकीं: {err}"
+  },
+  "viewer.loading": {
+    "message": "लोड हो रहा है…"
+  },
+  "viewer.markdown.too_large": {
+    "message": "{megabytes} MB से बड़ी: 1 दबाने पर यह टेक्स्ट के रूप में दिखेगी।"
+  },
+  "viewer.menu.binary": {
+    "message": "बाइनरी (तय पंक्ति लंबाई)"
+  },
+  "viewer.menu.book": {
+    "message": "किताब (EPUB, FB2)"
+  },
+  "viewer.menu.close": {
+    "message": "बंद करें"
+  },
+  "viewer.menu.configure": {
+    "message": "कॉन्फ़िगर करें..."
+  },
+  "viewer.menu.copy_hex": {
+    "message": "हेक्स अक्षरों के रूप में कॉपी करें"
+  },
+  "viewer.menu.copy_text": {
+    "message": "टेक्स्ट के रूप में कॉपी करें"
+  },
+  "viewer.menu.edit": {
+    "message": "एडिट"
+  },
+  "viewer.menu.encoding": {
+    "message": "एन्कोडिंग"
+  },
+  "viewer.menu.file": {
+    "message": "फ़ाइल"
+  },
+  "viewer.menu.find": {
+    "message": "खोजें..."
+  },
+  "viewer.menu.find_next": {
+    "message": "अगला खोजें"
+  },
+  "viewer.menu.fit_image": {
+    "message": "इमेज को विंडो में फ़िट करें"
+  },
+  "viewer.menu.font_ansi": {
+    "message": "ANSI (Windows कैरेक्टर सेट)"
+  },
+  "viewer.menu.font_ascii": {
+    "message": "ASCII (DOS कैरेक्टर सेट)"
+  },
+  "viewer.menu.font_page": {
+    "message": "फ़ॉन्ट के अनुसार"
+  },
+  "viewer.menu.font_variable": {
+    "message": "बदलती अक्षर चौड़ाई"
+  },
+  "viewer.menu.hex": {
+    "message": "हेक्स"
+  },
+  "viewer.menu.html": {
+    "message": "HTML टेक्स्ट (टैग हटाकर)"
+  },
+  "viewer.menu.minimap": {
+    "message": "मिनीमैप"
+  },
+  "viewer.menu.next_file": {
+    "message": "अगली फ़ाइल"
+  },
+  "viewer.menu.only_larger": {
+    "message": "सिर्फ़ बड़ी इमेज फ़िट करें"
+  },
+  "viewer.menu.open": {
+    "message": "खोलें..."
+  },
+  "viewer.menu.options": {
+    "message": "विकल्प"
+  },
+  "viewer.menu.picture": {
+    "message": "इमेज/मल्टीमीडिया"
+  },
+  "viewer.menu.previous_file": {
+    "message": "पिछली फ़ाइल"
+  },
+  "viewer.menu.reload": {
+    "message": "फिर से लोड करें"
+  },
+  "viewer.menu.save_as": {
+    "message": "इस रूप में सेव करें..."
+  },
+  "viewer.menu.search_google": {
+    "message": "चुने गए टेक्स्ट को Google पर खोजें"
+  },
+  "viewer.menu.select_all": {
+    "message": "सभी चुनें"
+  },
+  "viewer.menu.syntax_colors": {
+    "message": "सिंटैक्स रंग"
+  },
+  "viewer.menu.text_only": {
+    "message": "सिर्फ़ टेक्स्ट"
+  },
+  "viewer.menu.unicode": {
+    "message": "Unicode (UTF-16)"
+  },
+  "viewer.menu.wrap": {
+    "message": "टेक्स्ट रैप करें ({columns, plural, one {# कॉलम} other {# कॉलम}})"
+  },
+  "viewer.mode.binary": {
+    "message": "बाइनरी · {page}"
+  },
+  "viewer.mode.book": {
+    "message": "किताब"
+  },
+  "viewer.mode.hex": {
+    "message": "हेक्स · {page}"
+  },
+  "viewer.mode.html": {
+    "message": "HTML टेक्स्ट"
+  },
+  "viewer.mode.image": {
+    "message": "इमेज"
+  },
+  "viewer.mode.multimedia": {
+    "message": "मल्टीमीडिया"
+  },
+  "viewer.mode.pdf_by": {
+    "message": "{tool} द्वारा PDF"
+  },
+  "viewer.mode.text": {
+    "message": "टेक्स्ट · {page}"
+  },
+  "viewer.origin.not_editable": {
+    "message": "सिर्फ़ 7z, zip, jar और tar आर्काइव की फ़ाइलें एडिट की जा सकती हैं"
+  },
+  "viewer.origin.updated": {
+    "message": "{archive} अपडेट किया गया"
+  },
+  "viewer.origin.updated_on": {
+    "message": "{server} पर {archive} अपडेट किया गया"
+  },
+  "viewer.origin.uploaded": {
+    "message": "{path} अपलोड किया गया"
+  },
+  "viewer.pdf.cannot_show": {
+    "message": "यह PDF दिखाई नहीं जा सकती: {err}"
+  },
+  "viewer.pdf.loading": {
+    "message": "लोड हो रहा है..."
+  },
+  "viewer.pdf.page": {
+    "message": "पेज {page} / {pages}"
+  },
+  "viewer.picture.cannot_show": {
+    "message": "यह तस्वीर दिखाई नहीं जा सकती; 1 दबाने पर यह टेक्स्ट के रूप में दिखेगी।"
+  },
+  "viewer.save_as.failed": {
+    "message": "{path} सेव नहीं हो सका: {err}"
+  },
+  "viewer.status.rows": {
+    "message": "{count, plural, one {{grouped} में से {first}–{last} पंक्ति} other {{grouped} में से {first}–{last} पंक्तियां}}"
+  },
+  "viewer.status.rows_so_far": {
+    "message": "{count, plural, one {अब तक {grouped} पंक्ति, {percent} पढ़ा गया} other {अब तक {grouped} पंक्तियां, {percent} पढ़ा गया}}"
+  },
+  "viewer.status.searching": {
+    "message": "खोज हो रही है…"
+  },
+  "viewer.status.size": {
+    "message": "{count, plural, one {{grouped} बाइट} other {{grouped} बाइट}}"
+  },
+  "viewer.window.title": {
+    "message": "{path} — व्यूअर"
+  },
+  "viewer.zoom.fit": {
+    "message": "विंडो में फ़िट पर वापस (Ctrl+0)"
+  },
+  "viewer.zoom.in": {
+    "message": "ज़ूम इन (Ctrl++)"
+  },
+  "viewer.zoom.out": {
+    "message": "ज़ूम आउट (Ctrl+-)"
+  },
+  "viewer.zoom.reset": {
+    "message": "100% पर वापस (Ctrl+0)"
+  },
+  "workspaces.button.close": {
+    "message": "बंद करें"
+  },
+  "workspaces.button.delete": {
+    "message": "डिलीट करें..."
+  },
+  "workspaces.button.duplicate": {
+    "message": "डुप्लिकेट करें..."
+  },
+  "workspaces.button.new": {
+    "message": "नया..."
+  },
+  "workspaces.button.rename": {
+    "message": "नाम बदलें..."
+  },
+  "workspaces.delete.button": {
+    "message": "डिलीट करें"
+  },
+  "workspaces.delete.closed": {
+    "message": "वर्कस्पेस “{name}” डिलीट करें? इसके टैब भुला दिए जाएंगे।"
+  },
+  "workspaces.delete.closed_shells": {
+    "message": "वर्कस्पेस “{name}” डिलीट करें? इसके टैब भुला दिए जाएंगे, और इसके टर्मिनल टैब के शेल बंद हो जाएंगे।"
+  },
+  "workspaces.delete.open": {
+    "message": "वर्कस्पेस “{name}” डिलीट करें? इसके टैब बंद हो जाएंगे; इसकी जगह “{other}” खुलेगा।"
+  },
+  "workspaces.delete.open_shells": {
+    "message": "वर्कस्पेस “{name}” डिलीट करें? इसके टैब बंद हो जाएंगे, और इसके टर्मिनल टैब के शेल बंद हो जाएंगे; इसकी जगह “{other}” खुलेगा।"
+  },
+  "workspaces.delete.title": {
+    "message": "वर्कस्पेस डिलीट करें"
+  },
+  "workspaces.duplicate.name": {
+    "message": "{name} कॉपी"
+  },
+  "workspaces.duplicate.title": {
+    "message": "वर्कस्पेस डुप्लिकेट करें"
+  },
+  "workspaces.error.name_taken": {
+    "message": "किसी दूसरे वर्कस्पेस का यही नाम है।"
+  },
+  "workspaces.error.no_name": {
+    "message": "वर्कस्पेस का नाम होना चाहिए।"
+  },
+  "workspaces.error.save": {
+    "message": "वर्कस्पेस सेव नहीं हो सके: {err}"
+  },
+  "workspaces.hint": {
+    "message": "दिखाएं > वर्कस्पेस किसी वर्कस्पेस को खोलता है। खुले वर्कस्पेस में जो बदलता है, वह उसी में रखा जाता है।"
+  },
+  "workspaces.name.label": {
+    "message": "नाम:"
+  },
+  "workspaces.new.name": {
+    "message": "वर्कस्पेस {number}"
+  },
+  "workspaces.new.title": {
+    "message": "नया वर्कस्पेस"
+  },
+  "workspaces.open": {
+    "message": "खुला है"
+  },
+  "workspaces.rename.title": {
+    "message": "वर्कस्पेस का नाम बदलें"
+  },
+  "workspaces.summary.panels": {
+    "message": "बायां {left, plural, one {# टैब} other {# टैब}}, दायां {right, plural, one {# टैब} other {# टैब}}"
+  },
+  "workspaces.summary.terminal": {
+    "message": "बायां {left, plural, one {# टैब} other {# टैब}}, दायां {right, plural, one {# टैब} other {# टैब}}, टर्मिनल {terminal, plural, one {# टैब} other {# टैब}}"
+  },
+  "workspaces.summary.terminal_hidden": {
+    "message": "बायां {left, plural, one {# टैब} other {# टैब}}, दायां {right, plural, one {# टैब} other {# टैब}}, टर्मिनल {terminal, plural, one {# टैब} other {# टैब}} (छिपा)"
+  },
+  "workspaces.title": {
+    "message": "वर्कस्पेस"
+  }
+}

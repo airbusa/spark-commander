@@ -1,0 +1,4823 @@
+{
+  "about.addons": {
+    "message": "Добавки, изтегляни по ваш избор"
+  },
+  "about.libraries": {
+    "message": "Изградено върху"
+  },
+  "about.licence": {
+    "message": "Лиценз:"
+  },
+  "about.made_with": {
+    "message": "Създадено с труда на тези проекти"
+  },
+  "about.part.alacritty_terminal": {
+    "message": "Екранът и обвивката на вградения терминал"
+  },
+  "about.part.encoding_rs": {
+    "message": "Кодови таблици"
+  },
+  "about.part.gpui": {
+    "message": "Прозорецът, изобразяването и въвеждането (от Zed)"
+  },
+  "about.part.gpui_kit": {
+    "message": "Контроли: списъци, менюта, полета, редакторът"
+  },
+  "about.part.html5ever": {
+    "message": "HTML и електронни книги във визуализатора"
+  },
+  "about.part.image": {
+    "message": "Изображения"
+  },
+  "about.part.keyring": {
+    "message": "Пароли в системния ключодържател"
+  },
+  "about.part.lucide": {
+    "message": "Икони"
+  },
+  "about.part.material_icons": {
+    "message": "Икони на файлове и папки"
+  },
+  "about.part.pdfium_render": {
+    "message": "PDFium от Rust"
+  },
+  "about.part.ratatui": {
+    "message": "scmd, версията за терминал"
+  },
+  "about.part.russh": {
+    "message": "SSH и SFTP"
+  },
+  "about.part.rustls": {
+    "message": "TLS"
+  },
+  "about.part.serde": {
+    "message": "Файлове с настройки"
+  },
+  "about.part.similar": {
+    "message": "Сравняване по съдържание"
+  },
+  "about.part.suppaftp": {
+    "message": "FTP и FTPS"
+  },
+  "about.part.tokio": {
+    "message": "Мрежова работа във фонов режим"
+  },
+  "about.part.trash": {
+    "message": "Кошчето"
+  },
+  "about.part.tree_sitter": {
+    "message": "Оцветяване на кода във визуализатора и редактора"
+  },
+  "about.part.zbus": {
+    "message": "D-Bus: работният плот, устройствата, KDE Connect"
+  },
+  "about.shipped": {
+    "message": "Включено в приложението"
+  },
+  "about.tagline": {
+    "message": "Двупанелен файлов мениджър, свободен софтуер."
+  },
+  "about.title": {
+    "message": "За Spark Commander"
+  },
+  "about.version": {
+    "message": "Версия {version}"
+  },
+  "activity.clear": {
+    "message": "Изчистване"
+  },
+  "activity.clear_failed": {
+    "message": "Дневникът не можа да се изчисти: {err}"
+  },
+  "activity.empty": {
+    "message": "Все още няма извършени действия."
+  },
+  "activity.title": {
+    "message": "Дневник на действията"
+  },
+  "addons.error.damaged": {
+    "message": "изтегленият файл е повреден: контролната му сума е различна"
+  },
+  "addons.error.list": {
+    "message": "списъкът с добавки: {err}"
+  },
+  "addons.error.missing_file": {
+    "message": "в изтегления файл липсва {file}"
+  },
+  "addons.error.no_folder": {
+    "message": "няма папка за данни"
+  },
+  "addons.error.unpacking": {
+    "message": "разархивиране: {err}"
+  },
+  "addons.installed": {
+    "message": "Инсталирано: {addon} {version}."
+  },
+  "addons.megabytes": {
+    "message": "{size} MB"
+  },
+  "addons.offer.never": {
+    "message": "Да не се показва повече"
+  },
+  "addons.offer.no": {
+    "message": "Не"
+  },
+  "addons.offer.text": {
+    "message": "{name} изисква добавка, която не е инсталирана: {addon}. Да се изтегли ли от Настройки > Добавки?"
+  },
+  "addons.offer.title": {
+    "message": "Добавка"
+  },
+  "addons.offer.yes": {
+    "message": "Да"
+  },
+  "addons.purpose.cloud": {
+    "message": "Онлайн хранилища: S3, Google Drive, OneDrive, Dropbox и други услуги."
+  },
+  "addons.purpose.media": {
+    "message": "Видео и звук, както и снимки HEIC и AVIF: показват се във визуализатора и в бързия преглед."
+  },
+  "addons.purpose.office": {
+    "message": "Офис документи: визуализаторът показва файлове на Word, Excel и PowerPoint като PDF."
+  },
+  "addons.purpose.pdfium": {
+    "message": "PDF: визуализаторът показва PDF файлове, а след преобразуване – и офис документи."
+  },
+  "addons.purpose.seven_zip": {
+    "message": "Архиви: архивира и разархивира 7z, zip, rar, tar и други."
+  },
+  "addons.update": {
+    "message": "Обновяване"
+  },
+  "addons.updates": {
+    "message": "Обновления на добавки: {names}"
+  },
+  "appearance.dark": {
+    "message": "Тъмен"
+  },
+  "appearance.light": {
+    "message": "Светъл"
+  },
+  "appearance.system": {
+    "message": "Като системата"
+  },
+  "archive.cannot_read": {
+    "message": "{name}: не може да се прочете"
+  },
+  "archive.not_in_archive": {
+    "message": "{name} не е в архива"
+  },
+  "archive.not_own_folder": {
+    "message": "{folder} не е собствена папка на този потребител"
+  },
+  "archive.seven_zip_failed": {
+    "message": "7-Zip не успя ({code})"
+  },
+  "archive.seven_zip_missing": {
+    "message": "7-Zip липсва: {path} (изпълнете vendor/7zip/fetch.sh или fetch.bat)"
+  },
+  "archive.temp_not_utf8": {
+    "message": "името на временната папка не е в UTF-8"
+  },
+  "associations.add": {
+    "message": "Добавяне..."
+  },
+  "associations.cancel": {
+    "message": "Отказ"
+  },
+  "associations.close": {
+    "message": "Затваряне"
+  },
+  "associations.column.edit": {
+    "message": "Редактиране (F4)"
+  },
+  "associations.column.files": {
+    "message": "Файлове"
+  },
+  "associations.column.open": {
+    "message": "Отваряне (Enter)"
+  },
+  "associations.column.view": {
+    "message": "Преглед (F3)"
+  },
+  "associations.edit": {
+    "message": "Промяна..."
+  },
+  "associations.edit_dialog.title": {
+    "message": "Асоцииране"
+  },
+  "associations.empty": {
+    "message": "Все още няма."
+  },
+  "associations.field.edit": {
+    "message": "Редактиране с (F4):"
+  },
+  "associations.field.files": {
+    "message": "Файлове (*.jpg *.png):"
+  },
+  "associations.field.open": {
+    "message": "Отваряне с (Enter):"
+  },
+  "associations.field.view": {
+    "message": "Преглед с (F3):"
+  },
+  "associations.intro": {
+    "message": "Enter, F3 и F4 стартират тези програми за файловете по дадена маска; празно поле запазва обичайното. %1 е файлът."
+  },
+  "associations.mask_needed": {
+    "message": "Нужна е маска за файловете: *.txt"
+  },
+  "associations.no_file": {
+    "message": "Поставете курсора върху файл от типа, който искате да асоциирате."
+  },
+  "associations.ok": {
+    "message": "OK"
+  },
+  "associations.remove": {
+    "message": "Премахване"
+  },
+  "associations.save_failed": {
+    "message": "Настройките не можаха да се запазят: {err}"
+  },
+  "associations.title": {
+    "message": "Вътрешни асоциации"
+  },
+  "attributes.bad_time": {
+    "message": "„{text}“ не е дата и час: 2026-11-10 14:04:33"
+  },
+  "attributes.cancel": {
+    "message": "Отказ"
+  },
+  "attributes.change_time": {
+    "message": "Промяна на дата/час:"
+  },
+  "attributes.changed": {
+    "message": "{count, plural, one {# променен} other {# променени}}"
+  },
+  "attributes.changed_failed": {
+    "message": "{count, plural, one {# променен} other {# променени}}, {failed, plural, one {# неуспешен} other {# неуспешни}}"
+  },
+  "attributes.dialog_title_many": {
+    "message": "Промяна на атрибути: {count, plural, one {# елемент} other {# елемента}}"
+  },
+  "attributes.dialog_title_one": {
+    "message": "Промяна на атрибути: {name}"
+  },
+  "attributes.execute": {
+    "message": "Изпълнение"
+  },
+  "attributes.group": {
+    "message": "Група"
+  },
+  "attributes.in_archive": {
+    "message": "Атрибутите в архиви не могат да се променят."
+  },
+  "attributes.no_bits": {
+    "message": "Тези файлове нямат битове за права тук; може да се промени само датата."
+  },
+  "attributes.now": {
+    "message": "Сега"
+  },
+  "attributes.octal": {
+    "message": "Осмично:"
+  },
+  "attributes.ok": {
+    "message": "OK"
+  },
+  "attributes.others": {
+    "message": "Други"
+  },
+  "attributes.owner": {
+    "message": "Собственик"
+  },
+  "attributes.read": {
+    "message": "Четене"
+  },
+  "attributes.recurse": {
+    "message": "Също и всичко в папките"
+  },
+  "attributes.title_many": {
+    "message": "Промяна на атрибутите на {count, plural, one {# елемент} other {# елемента}}"
+  },
+  "attributes.title_one": {
+    "message": "Промяна на атрибутите на „{name}“"
+  },
+  "attributes.write": {
+    "message": "Запис"
+  },
+  "bookmarks.add_current": {
+    "message": "Добавяне на текущата папка"
+  },
+  "bookmarks.add_folders": {
+    "message": "Добавяне на папки..."
+  },
+  "bookmarks.added": {
+    "message": "Добавено в отметките: {name}"
+  },
+  "bookmarks.already": {
+    "message": "{name} вече е в отметките."
+  },
+  "bookmarks.chooser.failed": {
+    "message": "Диалогът за избор на папка не можа да се покаже: {err}"
+  },
+  "bookmarks.chooser.prompt": {
+    "message": "Добавяне"
+  },
+  "bookmarks.close": {
+    "message": "Затваряне"
+  },
+  "bookmarks.copy_name": {
+    "message": "Копиране на името"
+  },
+  "bookmarks.copy_path": {
+    "message": "Копиране на пътя"
+  },
+  "bookmarks.drop_here": {
+    "message": "Пуснете папки тук."
+  },
+  "bookmarks.empty": {
+    "message": "Няма отметки: добавете папки или ги пуснете тук."
+  },
+  "bookmarks.intro": {
+    "message": "Папките на този компютър, в реда от „Места“: плъзнете папка, за да я преместите, или пуснете папки тук, за да ги добавите."
+  },
+  "bookmarks.move_down": {
+    "message": "Преместване надолу"
+  },
+  "bookmarks.move_up": {
+    "message": "Преместване нагоре"
+  },
+  "bookmarks.only_local": {
+    "message": "В отметките могат да се добавят само папки на този компютър."
+  },
+  "bookmarks.remove": {
+    "message": "Премахване"
+  },
+  "bookmarks.remove_from": {
+    "message": "Премахване от отметките"
+  },
+  "bookmarks.rename": {
+    "message": "Преименуване..."
+  },
+  "bookmarks.rename_label": {
+    "message": "Име (празно: това на папката):"
+  },
+  "bookmarks.rename_title": {
+    "message": "Преименуване на отметка"
+  },
+  "bookmarks.sort": {
+    "message": "Сортиране А–Я"
+  },
+  "bookmarks.title": {
+    "message": "Отметки"
+  },
+  "button_bar.copy": {
+    "message": "Копиране"
+  },
+  "button_bar.delete": {
+    "message": "Изтриване"
+  },
+  "button_bar.edit": {
+    "message": "Редакция"
+  },
+  "button_bar.move": {
+    "message": "Преместване"
+  },
+  "button_bar.new_folder": {
+    "message": "Нова папка"
+  },
+  "button_bar.quit": {
+    "message": "Изход"
+  },
+  "button_bar.view": {
+    "message": "Преглед"
+  },
+  "checksum.create.title": {
+    "message": "Създаване на {name}"
+  },
+  "checksum.create.title_separate": {
+    "message": "Създаване на файлове с контролни суми {method}"
+  },
+  "checksum.dialog_title": {
+    "message": "Създаване на файлове с контролни суми"
+  },
+  "checksum.save_as": {
+    "message": "Запазване на файла с контролни суми като:"
+  },
+  "checksum.separate": {
+    "message": "Вместо това отделен файл с контролна сума до всеки файл"
+  },
+  "checksum.verify.all_ok": {
+    "message": "{count, plural, one {# файл: OK} other {всички # файла: OK}}"
+  },
+  "checksum.verify.choose": {
+    "message": "Изберете файлове с контролни суми: .sfv, .md5, .sha1, .sha256 или .sha512."
+  },
+  "checksum.verify.missing_file": {
+    "message": "липсва: {name}"
+  },
+  "checksum.verify.result": {
+    "message": "{ok, plural, one {# OK} other {# OK}}, {wrong, plural, one {# грешен} other {# грешни}}, {missing, plural, one {# липсващ} other {# липсващи}}"
+  },
+  "checksum.verify.title_many": {
+    "message": "Проверка на {count, plural, one {# файл с контролни суми} other {# файла с контролни суми}}"
+  },
+  "checksum.verify.title_one": {
+    "message": "Проверка на {name}"
+  },
+  "checksum.verify.wrong_file": {
+    "message": "грешен: {name}"
+  },
+  "command.about": {
+    "message": "За Spark Commander"
+  },
+  "command.activity_log": {
+    "message": "Дневник на действията..."
+  },
+  "command.all_files": {
+    "message": "Всички файлове"
+  },
+  "command.all_folder_sizes": {
+    "message": "Изчисляване на размера на всички папки"
+  },
+  "command.all_with_extension": {
+    "message": "*.*"
+  },
+  "command.associate_with": {
+    "message": "Асоцииране с..."
+  },
+  "command.bookmark_folder": {
+    "message": "Добавяне на тази папка в отметките"
+  },
+  "command.bookmarks": {
+    "message": "Отметки"
+  },
+  "command.branch_view": {
+    "message": "Изглед на клона (с подпапки)"
+  },
+  "command.branch_view_selected": {
+    "message": "Изглед на клона на избраните папки"
+  },
+  "command.brief": {
+    "message": "Кратък"
+  },
+  "command.calculate_occupied_space": {
+    "message": "Изчисляване на заетото място..."
+  },
+  "command.change_attributes": {
+    "message": "Промяна на атрибути..."
+  },
+  "command.close_all_tabs": {
+    "message": "Затваряне на всички раздели"
+  },
+  "command.close_duplicate_tabs": {
+    "message": "Затваряне на дублираните раздели"
+  },
+  "command.close_tab": {
+    "message": "Затваряне на раздела"
+  },
+  "command.combine_files": {
+    "message": "Обединяване на файлове..."
+  },
+  "command.compare_by_content": {
+    "message": "Сравняване по съдържание..."
+  },
+  "command.compare_directories": {
+    "message": "Маркиране на по-новите"
+  },
+  "command.copy": {
+    "message": "Копиране..."
+  },
+  "command.copy_names_to_clipboard": {
+    "message": "Копиране на избраните имена в клипборда"
+  },
+  "command.copy_names_with_path_to_clipboard": {
+    "message": "Копиране на имената с пътя в клипборда"
+  },
+  "command.copy_to_clipboard": {
+    "message": "Копиране на файловете"
+  },
+  "command.copy_with_all_details": {
+    "message": "Копиране в клипборда с всички подробности"
+  },
+  "command.copy_with_path_and_details": {
+    "message": "Копиране в клипборда с път+подробности"
+  },
+  "command.create_checksum_files": {
+    "message": "Създаване на файл(ове) с контролни суми (CRC32, MD5, SHA1, SHA256, SHA512)..."
+  },
+  "command.create_link": {
+    "message": "Създаване на връзка..."
+  },
+  "command.custom_filter": {
+    "message": "Персонализиран..."
+  },
+  "command.cut_to_clipboard": {
+    "message": "Изрязване на файловете"
+  },
+  "command.delete": {
+    "message": "Изтриване"
+  },
+  "command.delete_permanently": {
+    "message": "Окончателно изтриване"
+  },
+  "command.disconnect": {
+    "message": "Прекъсване на връзката със сървъра"
+  },
+  "command.download_link": {
+    "message": "Изтегляне от уеб адрес..."
+  },
+  "command.duplicate_tab": {
+    "message": "Нов раздел"
+  },
+  "command.duplicate_workspace": {
+    "message": "Дублиране на работното пространство..."
+  },
+  "command.edit": {
+    "message": "Редактиране"
+  },
+  "command.edit_externally": {
+    "message": "Редактиране с външен редактор"
+  },
+  "command.folder_history": {
+    "message": "История на папките..."
+  },
+  "command.full": {
+    "message": "Подробен"
+  },
+  "command.go_back": {
+    "message": "Назад"
+  },
+  "command.go_forward": {
+    "message": "Напред"
+  },
+  "command.go_home": {
+    "message": "Домашна папка"
+  },
+  "command.go_to_root": {
+    "message": "Коренова папка"
+  },
+  "command.hidden_files": {
+    "message": "Скрити файлове"
+  },
+  "command.internal_associations": {
+    "message": "Вътрешни асоциации (само за Spark Commander)..."
+  },
+  "command.invert_selection": {
+    "message": "Обръщане на избора"
+  },
+  "command.left_drives": {
+    "message": "Дискове (ляв панел)"
+  },
+  "command.list_tabs": {
+    "message": "Списък с раздели"
+  },
+  "command.load_selection_from_file": {
+    "message": "Зареждане на избора от файл"
+  },
+  "command.manage_bookmarks": {
+    "message": "Управление на отметките..."
+  },
+  "command.manage_tools": {
+    "message": "Управление на инструментите..."
+  },
+  "command.manage_workspaces": {
+    "message": "Управление на работните пространства..."
+  },
+  "command.mark_in_place": {
+    "message": "Маркиране / размаркиране на място, с измерване на папката"
+  },
+  "command.mark_newer_hide_same": {
+    "message": "Маркиране на по-новите, скриване на еднаквите"
+  },
+  "command.move": {
+    "message": "Преместване..."
+  },
+  "command.multi_rename_tool": {
+    "message": "Групово преименуване..."
+  },
+  "command.name_to_command_line": {
+    "message": "Името към командния ред"
+  },
+  "command.new_folder": {
+    "message": "Нова папка..."
+  },
+  "command.new_terminal": {
+    "message": "Нов раздел с терминал"
+  },
+  "command.new_text_file": {
+    "message": "Нов файл..."
+  },
+  "command.new_workspace": {
+    "message": "Ново работно пространство..."
+  },
+  "command.next_tab": {
+    "message": "Следващ раздел"
+  },
+  "command.only_selected_files": {
+    "message": "Само избраните файлове"
+  },
+  "command.open_in_left_panel": {
+    "message": "Показване в левия панел"
+  },
+  "command.open_in_new_tab": {
+    "message": "Отваряне на папката в нов раздел"
+  },
+  "command.open_in_other_new_tab": {
+    "message": "Отваряне на папката в нов раздел на другия панел"
+  },
+  "command.open_in_right_panel": {
+    "message": "Показване в десния панел"
+  },
+  "command.open_terminal": {
+    "message": "Отваряне на терминал тук"
+  },
+  "command.operation_queue": {
+    "message": "Опашка с операции..."
+  },
+  "command.pack": {
+    "message": "Архивиране..."
+  },
+  "command.paste_from_clipboard": {
+    "message": "Поставяне на файловете"
+  },
+  "command.path_and_name_to_command_line": {
+    "message": "Пътят и името към командния ред"
+  },
+  "command.path_to_command_line": {
+    "message": "Пътят към командния ред"
+  },
+  "command.previous_tab": {
+    "message": "Предишен раздел"
+  },
+  "command.programs": {
+    "message": "Програми"
+  },
+  "command.properties": {
+    "message": "Свойства..."
+  },
+  "command.quick_filter": {
+    "message": "Бърз филтър"
+  },
+  "command.quick_open": {
+    "message": "Бързо отваряне..."
+  },
+  "command.quick_view_panel": {
+    "message": "Панел за бърз преглед"
+  },
+  "command.quit": {
+    "message": "Изход"
+  },
+  "command.redo": {
+    "message": "Повторение"
+  },
+  "command.rename_in_place": {
+    "message": "Преименуване"
+  },
+  "command.reread_source": {
+    "message": "Опресняване на източника"
+  },
+  "command.restore_selection": {
+    "message": "Възстановяване на избора"
+  },
+  "command.reversed_order": {
+    "message": "Обратен ред"
+  },
+  "command.right_drives": {
+    "message": "Дискове (десен панел)"
+  },
+  "command.save_selection": {
+    "message": "Запазване на избора"
+  },
+  "command.save_selection_to_file": {
+    "message": "Запазване на избора във файл"
+  },
+  "command.search": {
+    "message": "Търсене..."
+  },
+  "command.search_in_separate_process": {
+    "message": "Търсене в отделен прозорец..."
+  },
+  "command.select_all": {
+    "message": "Избиране на всички"
+  },
+  "command.select_all_with_same_extension": {
+    "message": "Избиране на всички със същото разширение"
+  },
+  "command.select_group": {
+    "message": "Избиране на група..."
+  },
+  "command.settings": {
+    "message": "Настройки..."
+  },
+  "command.shortcuts": {
+    "message": "Клавишни комбинации..."
+  },
+  "command.sidebar_connections": {
+    "message": "Връзки"
+  },
+  "command.sidebar_operations": {
+    "message": "Операции"
+  },
+  "command.sidebar_places": {
+    "message": "Места"
+  },
+  "command.sidebar_tree": {
+    "message": "Папки"
+  },
+  "command.sort_by_extension": {
+    "message": "Разширение"
+  },
+  "command.sort_by_name": {
+    "message": "Име"
+  },
+  "command.sort_by_size": {
+    "message": "Размер"
+  },
+  "command.sort_by_time": {
+    "message": "Време"
+  },
+  "command.split_file": {
+    "message": "Разделяне на файл..."
+  },
+  "command.swap_panels": {
+    "message": "Размяна на панелите"
+  },
+  "command.swap_panels_and_tabs": {
+    "message": "Размяна на панелите заедно с разделите им"
+  },
+  "command.sync_browsing": {
+    "message": "Синхронизирано разглеждане"
+  },
+  "command.synchronize_dirs": {
+    "message": "Синхронизиране на папки..."
+  },
+  "command.target_equals_source": {
+    "message": "Цел = източник"
+  },
+  "command.terminal_panel": {
+    "message": "Терминал"
+  },
+  "command.test_archives": {
+    "message": "Проверка на архив(и)"
+  },
+  "command.thumbnail_view": {
+    "message": "Изглед с миниатюри"
+  },
+  "command.toggle_mark": {
+    "message": "Маркиране / размаркиране"
+  },
+  "command.toggle_sidebar": {
+    "message": "Показване на страничната лента"
+  },
+  "command.undo": {
+    "message": "Отмяна"
+  },
+  "command.unpack_specific_files": {
+    "message": "Разархивиране на определени файлове..."
+  },
+  "command.unselect_all": {
+    "message": "Премахване на целия избор"
+  },
+  "command.unselect_group": {
+    "message": "Премахване на избора на група..."
+  },
+  "command.unsorted": {
+    "message": "Без сортиране"
+  },
+  "command.verify_checksums": {
+    "message": "Проверка на контролни суми (от файлове с контролни суми)"
+  },
+  "command.vertical_arrangement": {
+    "message": "Вертикално подреждане"
+  },
+  "command.view": {
+    "message": "Преглед"
+  },
+  "command.website": {
+    "message": "Уебсайт на Spark Commander"
+  },
+  "command.workspace1": {
+    "message": "Отваряне на работно пространство 1"
+  },
+  "command.workspace2": {
+    "message": "Отваряне на работно пространство 2"
+  },
+  "command.workspace3": {
+    "message": "Отваряне на работно пространство 3"
+  },
+  "command.workspace4": {
+    "message": "Отваряне на работно пространство 4"
+  },
+  "command.workspace5": {
+    "message": "Отваряне на работно пространство 5"
+  },
+  "command.workspace6": {
+    "message": "Отваряне на работно пространство 6"
+  },
+  "command.workspace7": {
+    "message": "Отваряне на работно пространство 7"
+  },
+  "command.workspace8": {
+    "message": "Отваряне на работно пространство 8"
+  },
+  "command.workspace9": {
+    "message": "Отваряне на работно пространство 9"
+  },
+  "command_line.error.cannot_run": {
+    "message": "{program}: не може да се изпълни"
+  },
+  "command_line.error.not_found": {
+    "message": "{program}: командата не е намерена"
+  },
+  "command_line.history.empty": {
+    "message": "Все още няма изпълнени команди"
+  },
+  "command_line.on_server": {
+    "message": "Командите се изпълняват на този компютър, а панелът е на сървър."
+  },
+  "command_name.all_files": {
+    "message": "Показване на всички файлове"
+  },
+  "command_name.all_with_extension": {
+    "message": "Показване на *.*"
+  },
+  "command_name.brief": {
+    "message": "Кратък изглед"
+  },
+  "command_name.compare_directories": {
+    "message": "Сравняване на папки: маркиране на по-новите"
+  },
+  "command_name.custom_filter": {
+    "message": "Персонализиран филтър"
+  },
+  "command_name.duplicate_tab": {
+    "message": "Нов раздел (копие на текущия)"
+  },
+  "command_name.full": {
+    "message": "Подробен изглед"
+  },
+  "command_name.go_back": {
+    "message": "Назад"
+  },
+  "command_name.go_forward": {
+    "message": "Напред"
+  },
+  "command_name.go_home": {
+    "message": "Към домашната папка"
+  },
+  "command_name.hidden_files": {
+    "message": "Показване на скритите файлове"
+  },
+  "command_name.only_selected_files": {
+    "message": "Показване само на избраните файлове"
+  },
+  "command_name.programs": {
+    "message": "Показване на програмите"
+  },
+  "command_name.quick_filter": {
+    "message": "Бърз филтър"
+  },
+  "command_name.rename_in_place": {
+    "message": "Преименуване на място"
+  },
+  "command_name.sidebar_connections": {
+    "message": "Странична лента: Връзки"
+  },
+  "command_name.sidebar_operations": {
+    "message": "Странична лента: Операции"
+  },
+  "command_name.sidebar_places": {
+    "message": "Странична лента: Места"
+  },
+  "command_name.sidebar_tree": {
+    "message": "Странична лента: Папки"
+  },
+  "command_name.sort_by_extension": {
+    "message": "Сортиране по разширение"
+  },
+  "command_name.sort_by_name": {
+    "message": "Сортиране по име"
+  },
+  "command_name.sort_by_size": {
+    "message": "Сортиране по размер"
+  },
+  "command_name.sort_by_time": {
+    "message": "Сортиране по време"
+  },
+  "command_name.toggle_sidebar": {
+    "message": "Странична лента: показване или скриване"
+  },
+  "command_name.unsorted": {
+    "message": "Без сортиране"
+  },
+  "compare.browse.prompt": {
+    "message": "Сравняване"
+  },
+  "compare.button.compare": {
+    "message": "Сравняване"
+  },
+  "compare.button.next": {
+    "message": "Следваща разлика (N)"
+  },
+  "compare.button.previous": {
+    "message": "Предишна разлика (P)"
+  },
+  "compare.need_two_files": {
+    "message": "Поставете курсора върху файл във всеки панел или маркирайте два файла."
+  },
+  "compare.option.binary": {
+    "message": "Двоично"
+  },
+  "compare.option.ignore_case": {
+    "message": "Без значение на регистъра"
+  },
+  "compare.option.ignore_spaces": {
+    "message": "Пренебрегване на повторените интервали"
+  },
+  "compare.option.only_differences": {
+    "message": "Само разликите"
+  },
+  "compare.status.bytes_differ": {
+    "message": "{place}: {count, plural, one {различава се {grouped} байт} other {различават се {grouped} байта}}, първият при {first}; размери {left} и {right}."
+  },
+  "compare.status.comparing": {
+    "message": "Сравняване…"
+  },
+  "compare.status.difference_of": {
+    "message": "Разлика {at} от {count}"
+  },
+  "compare.status.differences": {
+    "message": "{count, plural, one {# разлика} other {# разлики}}"
+  },
+  "compare.status.identical": {
+    "message": "{count, plural, one {Файловете са еднакви: {grouped} байт.} other {Файловете са еднакви: {grouped} байта.}}"
+  },
+  "compare.status.no_differences": {
+    "message": "Няма разлики."
+  },
+  "compare.window.title": {
+    "message": "Сравняване: {left} — {right}"
+  },
+  "connections.connect": {
+    "message": "Свързване"
+  },
+  "connections.copy_name": {
+    "message": "Копиране на името"
+  },
+  "connections.copy_path": {
+    "message": "Копиране на пътя"
+  },
+  "connections.delete": {
+    "message": "Изтриване"
+  },
+  "connections.dialog.title": {
+    "message": "Връзка"
+  },
+  "connections.disconnect": {
+    "message": "Прекъсване на връзката"
+  },
+  "connections.duplicate": {
+    "message": "Дублиране"
+  },
+  "connections.duplicate_name": {
+    "message": "{name} (копие)"
+  },
+  "connections.edit": {
+    "message": "Редактиране..."
+  },
+  "connections.empty": {
+    "message": "Все още няма връзки."
+  },
+  "connections.error.no_server": {
+    "message": "Нужен е сървър."
+  },
+  "connections.error.port": {
+    "message": "Не е порт: {text}"
+  },
+  "connections.field.access_key": {
+    "message": "Ключ за достъп"
+  },
+  "connections.field.api_key": {
+    "message": "API ключ"
+  },
+  "connections.field.application_key": {
+    "message": "Ключ на приложение"
+  },
+  "connections.field.bucket": {
+    "message": "Кофа/папка"
+  },
+  "connections.field.container": {
+    "message": "Контейнер/папка"
+  },
+  "connections.field.endpoint": {
+    "message": "Крайна точка"
+  },
+  "connections.field.key_id": {
+    "message": "ID на ключа"
+  },
+  "connections.field.name": {
+    "message": "Име"
+  },
+  "connections.field.password": {
+    "message": "Парола"
+  },
+  "connections.field.port": {
+    "message": "Порт"
+  },
+  "connections.field.protocol": {
+    "message": "Протокол"
+  },
+  "connections.field.secret_key": {
+    "message": "Таен ключ"
+  },
+  "connections.field.server": {
+    "message": "Сървър"
+  },
+  "connections.field.start_folder": {
+    "message": "Начална папка"
+  },
+  "connections.field.user": {
+    "message": "Потребител"
+  },
+  "connections.folder.delete_confirm": {
+    "message": "{count, plural, one {Да се изтрие ли папката {name} и връзката в нея?} other {Да се изтрие ли папката {name} и # връзки в нея?}}"
+  },
+  "connections.folder.delete_title": {
+    "message": "Изтриване на папка"
+  },
+  "connections.folder.exists": {
+    "message": "Вече има папка с име {name}."
+  },
+  "connections.folder.name": {
+    "message": "Име:"
+  },
+  "connections.folder.new_title": {
+    "message": "Нова папка"
+  },
+  "connections.folder.rename": {
+    "message": "Преименуване..."
+  },
+  "connections.folder.rename_title": {
+    "message": "Преименуване на папка"
+  },
+  "connections.forget_password": {
+    "message": "Забравяне на запазената парола"
+  },
+  "connections.move_down": {
+    "message": "Преместване надолу"
+  },
+  "connections.move_to_folder": {
+    "message": "Преместване в папка"
+  },
+  "connections.move_up": {
+    "message": "Преместване нагоре"
+  },
+  "connections.new": {
+    "message": "Нова връзка..."
+  },
+  "connections.new_folder": {
+    "message": "Нова папка..."
+  },
+  "connections.no_folder": {
+    "message": "Без папка"
+  },
+  "connections.open_in_terminal": {
+    "message": "Отваряне в терминал"
+  },
+  "connections.placeholder.name": {
+    "message": "както се показва в списъка"
+  },
+  "connections.placeholder.password": {
+    "message": "пази се шифрована в папката с настройки; празно я запазва"
+  },
+  "connections.placeholder.path": {
+    "message": "папката при влизане"
+  },
+  "connections.placeholder.port": {
+    "message": "по подразбиране"
+  },
+  "connections.placeholder.server": {
+    "message": "сървър или хост от ~/.ssh/config"
+  },
+  "connections.placeholder.user": {
+    "message": "според ~/.ssh/config или анонимен"
+  },
+  "connections.save_failed": {
+    "message": "Връзките не можаха да се запазят: {err}"
+  },
+  "connections.ssh_config.read_only": {
+    "message": "Само за четене: тези хостове се редактират в самия ~/.ssh/config"
+  },
+  "context_menu.action_failed": {
+    "message": "{name} не успя: {err}"
+  },
+  "context_menu.actions": {
+    "message": "Действия"
+  },
+  "context_menu.copy": {
+    "message": "Копиране"
+  },
+  "context_menu.create_new": {
+    "message": "Създаване на нов"
+  },
+  "context_menu.cut": {
+    "message": "Изрязване"
+  },
+  "context_menu.delete": {
+    "message": "Изтриване"
+  },
+  "context_menu.edit": {
+    "message": "Редактиране"
+  },
+  "context_menu.empty_file": {
+    "message": "Празен файл…"
+  },
+  "context_menu.move_to_trash": {
+    "message": "Преместване в кошчето"
+  },
+  "context_menu.new_file_dialog.label": {
+    "message": "Име на новия файл:"
+  },
+  "context_menu.new_file_dialog.title": {
+    "message": "Нов файл"
+  },
+  "context_menu.new_file_failed": {
+    "message": "Файлът не можа да се създаде: {err}"
+  },
+  "context_menu.new_folder": {
+    "message": "Папка…"
+  },
+  "context_menu.open": {
+    "message": "Отваряне"
+  },
+  "context_menu.open_failed": {
+    "message": "Не можа да се отвори: {err}"
+  },
+  "context_menu.open_terminal_here": {
+    "message": "Отваряне на терминал тук"
+  },
+  "context_menu.open_with": {
+    "message": "Отваряне с"
+  },
+  "context_menu.other_application": {
+    "message": "Друго приложение…"
+  },
+  "context_menu.pack": {
+    "message": "Архивиране…"
+  },
+  "context_menu.pack_files": {
+    "message": "Архивиране на файловете"
+  },
+  "context_menu.paste": {
+    "message": "Поставяне"
+  },
+  "context_menu.properties": {
+    "message": "Свойства"
+  },
+  "context_menu.properties_failed": {
+    "message": "Свойства: {err}"
+  },
+  "context_menu.rename": {
+    "message": "Преименуване…"
+  },
+  "context_menu.rename_dialog.label": {
+    "message": "Ново име:"
+  },
+  "context_menu.rename_dialog.title": {
+    "message": "Преименуване"
+  },
+  "context_menu.rename_failed": {
+    "message": "Не можа да се преименува: {err}"
+  },
+  "context_menu.shell_menu_failed": {
+    "message": "Менюто: {err}"
+  },
+  "context_menu.show_failed": {
+    "message": "Не можа да се покаже: {err}"
+  },
+  "context_menu.show_in_file_manager": {
+    "message": "Показване във файловия мениджър"
+  },
+  "context_menu.terminal_failed": {
+    "message": "Не можа да се отвори терминал: {err}"
+  },
+  "context_menu.terminal_not_local": {
+    "message": "Терминал се отваря само в папки на този компютър."
+  },
+  "context_menu.unpack": {
+    "message": "Разархивиране…"
+  },
+  "context_menu.view": {
+    "message": "Преглед"
+  },
+  "desktop.no_app_chooser": {
+    "message": "работният плот няма диалог за избор на приложение ({err})"
+  },
+  "desktop.no_terminal": {
+    "message": "не е намерен терминал"
+  },
+  "desktop.nothing_to_run": {
+    "message": "{name}: няма какво да се изпълни"
+  },
+  "desktop.scripts": {
+    "message": "Скриптове"
+  },
+  "devices.error.mount_failed": {
+    "message": "устройството не можа да се монтира"
+  },
+  "devices.error.no_folder": {
+    "message": "устройството не споделя папка"
+  },
+  "devices.error.system_only": {
+    "message": "само системата може да демонтира това"
+  },
+  "devices.error.unreachable": {
+    "message": "недостъпно: отворен ли е KDE Connect на него, в тази мрежа?"
+  },
+  "devices.unlock.ask": {
+    "message": "Паролата на {name}:"
+  },
+  "devices.unlock.ask_again": {
+    "message": "Грешна парола. Паролата на {name}:"
+  },
+  "devices.unlock.title": {
+    "message": "Отключване"
+  },
+  "devices.volume.share_on_server": {
+    "message": "{share} на {server}"
+  },
+  "devices.volume.unnamed": {
+    "message": "Том {size} GB"
+  },
+  "devices.volume.unnamed_encrypted": {
+    "message": "Шифрован том {size} GB"
+  },
+  "download.cancel": {
+    "message": "Отказ"
+  },
+  "download.dialog_title": {
+    "message": "Изтегляне от уеб адрес"
+  },
+  "download.download": {
+    "message": "Изтегляне"
+  },
+  "download.folder_link": {
+    "message": "адресът е на папка"
+  },
+  "download.incomplete": {
+    "message": "сървърът изпрати {got} от {size, plural, one {# байт} other {# байта}}; при повторно изтегляне продължава оттам"
+  },
+  "download.into": {
+    "message": "В {folder}"
+  },
+  "download.link": {
+    "message": "Адрес"
+  },
+  "download.link_placeholder": {
+    "message": "https://, http://, ftp:// или ftps://"
+  },
+  "download.local_only": {
+    "message": "Изтеглянията отиват в папки на този компютър: първо отворете такава в панела."
+  },
+  "download.name_placeholder": {
+    "message": "както го наименува сървърът или адресът"
+  },
+  "download.no_file": {
+    "message": "адресът не сочи файл"
+  },
+  "download.not_a_link": {
+    "message": "не е адрес за изтегляне"
+  },
+  "download.problem.bad_name": {
+    "message": "Име на файл, без папка в него."
+  },
+  "download.problem.empty": {
+    "message": "Поставете или въведете адрес."
+  },
+  "download.problem.exists": {
+    "message": "Тук вече има {name}: „Замяна“ изтегля върху него."
+  },
+  "download.problem.not_link": {
+    "message": "Не е адрес за изтегляне: трябва да започва с https://, http://, ftp:// или ftps://."
+  },
+  "download.replace": {
+    "message": "Замяна"
+  },
+  "download.save_as": {
+    "message": "Запазване като"
+  },
+  "download.saved_as": {
+    "message": "запазено като {name}"
+  },
+  "download.title": {
+    "message": "Изтегляне на „{name}“"
+  },
+  "download.title_link": {
+    "message": "Изтегляне на {link}"
+  },
+  "editor.close.after_send": {
+    "message": "Ще се затвори, щом сървърът го получи."
+  },
+  "editor.close.discard": {
+    "message": "Без запазване"
+  },
+  "editor.close.save": {
+    "message": "Запазване"
+  },
+  "editor.close.title": {
+    "message": "Да се запазят ли промените?"
+  },
+  "editor.close.unsaved": {
+    "message": "{name} има незапазени промени."
+  },
+  "editor.close.unsent": {
+    "message": "{name} не е запазен на сървъра си: изпращането не успя."
+  },
+  "editor.dialog.cancel": {
+    "message": "Отказ"
+  },
+  "editor.edit.copy": {
+    "message": "Копиране"
+  },
+  "editor.edit.cut": {
+    "message": "Изрязване"
+  },
+  "editor.edit.find": {
+    "message": "Търсене..."
+  },
+  "editor.edit.find_next": {
+    "message": "Търсене напред"
+  },
+  "editor.edit.find_previous": {
+    "message": "Търсене назад"
+  },
+  "editor.edit.go_to_line": {
+    "message": "Към ред..."
+  },
+  "editor.edit.paste": {
+    "message": "Поставяне"
+  },
+  "editor.edit.redo": {
+    "message": "Повторение"
+  },
+  "editor.edit.replace": {
+    "message": "Замяна..."
+  },
+  "editor.edit.undo": {
+    "message": "Отмяна"
+  },
+  "editor.external.not_set": {
+    "message": "не е зададен външен редактор (Настройки, Редактиране/Преглед)"
+  },
+  "editor.file.close": {
+    "message": "Затваряне"
+  },
+  "editor.file.reload": {
+    "message": "Презареждане"
+  },
+  "editor.file.save": {
+    "message": "Запазване"
+  },
+  "editor.file.save_as": {
+    "message": "Запазване като..."
+  },
+  "editor.find.close": {
+    "message": "Затваряне (Escape)"
+  },
+  "editor.find.count": {
+    "message": "{current} от {total}"
+  },
+  "editor.find.in_selection": {
+    "message": "Търсене в избраното (Alt+L)"
+  },
+  "editor.find.match_case": {
+    "message": "Съвпадение на регистъра (Alt+C)"
+  },
+  "editor.find.next": {
+    "message": "Следващо съвпадение (Enter)"
+  },
+  "editor.find.no_results": {
+    "message": "Няма резултати"
+  },
+  "editor.find.placeholder": {
+    "message": "Търсене"
+  },
+  "editor.find.preserve_case": {
+    "message": "Запазване на регистъра (Alt+P)"
+  },
+  "editor.find.previous": {
+    "message": "Предишно съвпадение (Shift+Enter)"
+  },
+  "editor.find.regex": {
+    "message": "Регулярен израз (Alt+R)"
+  },
+  "editor.find.replace": {
+    "message": "Замяна (Ctrl+Shift+1)"
+  },
+  "editor.find.replace_all": {
+    "message": "Замяна на всички (Ctrl+Alt+Enter)"
+  },
+  "editor.find.replace_placeholder": {
+    "message": "Замяна"
+  },
+  "editor.find.toggle_replace": {
+    "message": "Показване/скриване на замяната"
+  },
+  "editor.find.whole_word": {
+    "message": "Само цели думи (Alt+W)"
+  },
+  "editor.go_to_line.label": {
+    "message": "Ред или ред:колона"
+  },
+  "editor.go_to_line.title": {
+    "message": "Към ред"
+  },
+  "editor.language.by_file_name": {
+    "message": "По името на файла"
+  },
+  "editor.language.plain_text": {
+    "message": "Обикновен текст"
+  },
+  "editor.menu.edit": {
+    "message": "Редактиране"
+  },
+  "editor.menu.file": {
+    "message": "Файл"
+  },
+  "editor.menu.language": {
+    "message": "Език"
+  },
+  "editor.menu.selection": {
+    "message": "Избор"
+  },
+  "editor.menu.view": {
+    "message": "Изглед"
+  },
+  "editor.open.too_large": {
+    "message": "надвишава {limit_mb} MB на вградения редактор (Настройки, Редактиране/Преглед); Ctrl+Shift+F4 го редактира във външния"
+  },
+  "editor.reload.button": {
+    "message": "Презареждане"
+  },
+  "editor.reload.failed": {
+    "message": "Не можа да се презареди: {err}"
+  },
+  "editor.reload.text": {
+    "message": "Незапазените промени ще бъдат загубени."
+  },
+  "editor.reload.title": {
+    "message": "Да се презареди ли файлът?"
+  },
+  "editor.reload.unfit": {
+    "message": "Не е презареден: {why, select, binary {файлът е двоичен} other {не е текст в UTF-8}}."
+  },
+  "editor.save.admin": {
+    "message": "Запазване на „{name}“"
+  },
+  "editor.save.failed": {
+    "message": "{path} не можа да се запази: {err}"
+  },
+  "editor.save_anyway.button": {
+    "message": "Запазване въпреки това"
+  },
+  "editor.save_anyway.text": {
+    "message": "Файлът не беше текст: запазването го записва така, както е показан, и всичко, което не е било текст, се променя завинаги."
+  },
+  "editor.save_anyway.title": {
+    "message": "Да се запази ли като текст?"
+  },
+  "editor.selection.add_cursor_above": {
+    "message": "Курсор на реда отгоре"
+  },
+  "editor.selection.add_cursor_below": {
+    "message": "Курсор на реда отдолу"
+  },
+  "editor.selection.delete_lines": {
+    "message": "Изтриване на редовете"
+  },
+  "editor.selection.duplicate_lines": {
+    "message": "Дублиране на редовете"
+  },
+  "editor.selection.indent": {
+    "message": "Увеличаване на отстъпа"
+  },
+  "editor.selection.lowercase": {
+    "message": "малки букви"
+  },
+  "editor.selection.move_lines_down": {
+    "message": "Редовете надолу"
+  },
+  "editor.selection.move_lines_up": {
+    "message": "Редовете нагоре"
+  },
+  "editor.selection.outdent": {
+    "message": "Намаляване на отстъпа"
+  },
+  "editor.selection.select_all": {
+    "message": "Избиране на всичко"
+  },
+  "editor.selection.select_all_occurrences": {
+    "message": "Избиране на всички срещания"
+  },
+  "editor.selection.sort_lines_ascending": {
+    "message": "Сортиране на редовете А–Я"
+  },
+  "editor.selection.sort_lines_descending": {
+    "message": "Сортиране на редовете Я–А"
+  },
+  "editor.selection.title_case": {
+    "message": "Всяка Дума С Главна"
+  },
+  "editor.selection.toggle_line_comment": {
+    "message": "Коментар на редовете вкл./изкл."
+  },
+  "editor.selection.trim_trailing_whitespace": {
+    "message": "Премахване на крайните интервали"
+  },
+  "editor.selection.uppercase": {
+    "message": "ГЛАВНИ БУКВИ"
+  },
+  "editor.send.failed": {
+    "message": "Не можа да се запази обратно: {err}. „Запазване“ ще опита отново."
+  },
+  "editor.status.modified": {
+    "message": "Променен"
+  },
+  "editor.status.position": {
+    "message": "Ред {line}, кол. {column}"
+  },
+  "editor.status.position_selected": {
+    "message": "Ред {line}, кол. {column} ({count, plural, one {# избран} other {# избрани}})"
+  },
+  "editor.status.sending": {
+    "message": "Запазване на сървъра"
+  },
+  "editor.status.spaces": {
+    "message": "Интервали: {size}"
+  },
+  "editor.status.tab_size": {
+    "message": "Табулация: {size}"
+  },
+  "editor.status.unsent": {
+    "message": "Не е на сървъра"
+  },
+  "editor.terminal.not_found": {
+    "message": "не е намерен редактор; задайте $EDITOR"
+  },
+  "editor.title": {
+    "message": "{path} — Редактор"
+  },
+  "editor.unfit.open_anyway": {
+    "message": "Отваряне въпреки това"
+  },
+  "editor.unfit.text": {
+    "message": "Файлът не се показва в редактора, защото {why, select, binary {е двоичен} other {не е текст в UTF-8}}."
+  },
+  "editor.view.folding": {
+    "message": "Сгъване"
+  },
+  "editor.view.indent_guides": {
+    "message": "Водачи на отстъпа"
+  },
+  "editor.view.indent_with_tabs": {
+    "message": "Отстъп с табулации"
+  },
+  "editor.view.line_numbers": {
+    "message": "Номера на редовете"
+  },
+  "editor.view.minimap": {
+    "message": "Мини карта"
+  },
+  "editor.view.tab_width": {
+    "message": "Ширина на табулацията {width}"
+  },
+  "editor.view.unfold_all": {
+    "message": "Разгъване на всичко"
+  },
+  "editor.view.whitespace": {
+    "message": "Празни знаци"
+  },
+  "editor.view.word_wrap": {
+    "message": "Пренасяне на думите"
+  },
+  "elevate.failed": {
+    "message": "и като администратор не успя ({code})"
+  },
+  "elevate.no_consent": {
+    "message": "съгласието на администратора не бе дадено"
+  },
+  "elevate.no_password": {
+    "message": "паролата не бе въведена"
+  },
+  "elevate.not_authorised": {
+    "message": "няма разрешение"
+  },
+  "elevate.percent_name": {
+    "message": "{path}: име със % не може да се обработи като администратор; първо го преименувайте"
+  },
+  "elevate.pkexec_missing": {
+    "message": "pkexec (polkit) не е инсталиран"
+  },
+  "file_menu.change_tags_failed": {
+    "message": "Етикетите не можаха да се променят: {err}"
+  },
+  "file_menu.compress": {
+    "message": "{count, plural, =1 {Компресиране на „{name}“…} one {Компресиране на # елемент…} other {Компресиране на # елемента…}}"
+  },
+  "file_menu.copy": {
+    "message": "{count, plural, =1 {Копиране на „{name}“} one {Копиране на # елемент} other {Копиране на # елемента}}"
+  },
+  "file_menu.copy_path": {
+    "message": "Копиране на пътя в клипборда"
+  },
+  "file_menu.delete": {
+    "message": "Изтриване"
+  },
+  "file_menu.duplicate": {
+    "message": "Дублиране"
+  },
+  "file_menu.duplicate_failed": {
+    "message": "Не можа да се дублира: {err}"
+  },
+  "file_menu.edit_tags": {
+    "message": "Етикети…"
+  },
+  "file_menu.get_info": {
+    "message": "Информация"
+  },
+  "file_menu.make_alias": {
+    "message": "Създаване на псевдоним"
+  },
+  "file_menu.make_alias_failed": {
+    "message": "Псевдонимът не можа да се създаде: {err}"
+  },
+  "file_menu.move_to_trash": {
+    "message": "Преместване в кошчето"
+  },
+  "file_menu.new_folder": {
+    "message": "Нова папка"
+  },
+  "file_menu.open": {
+    "message": "Отваряне"
+  },
+  "file_menu.open_failed": {
+    "message": "Не можа да се отвори: {err}"
+  },
+  "file_menu.open_with": {
+    "message": "Отваряне с"
+  },
+  "file_menu.open_with_default": {
+    "message": "{app} (по подразбиране)"
+  },
+  "file_menu.paste": {
+    "message": "Поставяне"
+  },
+  "file_menu.quick_look": {
+    "message": "{count, plural, =1 {Quick Look на „{name}“} one {Quick Look на # елемент} other {Quick Look на # елемента}}"
+  },
+  "file_menu.quick_look_failed": {
+    "message": "Quick Look: {err}"
+  },
+  "file_menu.rename": {
+    "message": "Преименуване…"
+  },
+  "file_menu.reveal_failed": {
+    "message": "Не можа да се покаже във Finder: {err}"
+  },
+  "file_menu.reveal_in_finder": {
+    "message": "Показване във Finder"
+  },
+  "file_menu.show_package_contents": {
+    "message": "Показване на съдържанието на пакета"
+  },
+  "file_menu.tag_dot.add": {
+    "message": "Добавяне на етикет „{name}“"
+  },
+  "file_menu.tag_dot.remove": {
+    "message": "Премахване на етикет „{name}“"
+  },
+  "file_menu.tags_popover.show_all": {
+    "message": "Показване на всички…"
+  },
+  "file_menu.tags_popover.title": {
+    "message": "{count, plural, =1 {Етикети за „{name}“} one {Етикети за # елемент} other {Етикети за # елемента}}"
+  },
+  "find.backwards": {
+    "message": "Търсене назад"
+  },
+  "find.cancel": {
+    "message": "Отказ"
+  },
+  "find.case_sensitive": {
+    "message": "Съобразяване с регистъра"
+  },
+  "find.hex": {
+    "message": "Търсене на шестнадесетичен низ"
+  },
+  "find.ok": {
+    "message": "OK"
+  },
+  "find.regex": {
+    "message": "RegEx"
+  },
+  "find.text.label": {
+    "message": "Въведете текст за търсене"
+  },
+  "find.title": {
+    "message": "Търсене"
+  },
+  "find.whole_words": {
+    "message": "Само цели думи"
+  },
+  "keys.apply": {
+    "message": "Прилагане"
+  },
+  "keys.cancel": {
+    "message": "Отказ"
+  },
+  "keys.clear.tooltip": {
+    "message": "Без клавиш"
+  },
+  "keys.column.alternate": {
+    "message": "Алтернативна"
+  },
+  "keys.column.command": {
+    "message": "Команда"
+  },
+  "keys.column.shortcut": {
+    "message": "Комбинация"
+  },
+  "keys.custom": {
+    "message": "Персонализирани"
+  },
+  "keys.delete_set": {
+    "message": "Изтриване"
+  },
+  "keys.note.custom_replaced": {
+    "message": "Вашите собствени клавиши бяха заменени с тези на {name}; „Запазване като“ ги запазва."
+  },
+  "keys.note.deleted": {
+    "message": "Наборът {name} е изтрит; OK или „Прилагане“ потвърждава това."
+  },
+  "keys.note.moved": {
+    "message": "{key} сега е {command}, вече не е {other}."
+  },
+  "keys.note.name_reserved": {
+    "message": "„{name}“ е име на готов набор; изберете друго."
+  },
+  "keys.note.press_new_key": {
+    "message": "Натиснете новия клавиш; Esc го оставя какъвто е бил."
+  },
+  "keys.note.saved": {
+    "message": "Запазено като {name}; OK или „Прилагане“ го запазва."
+  },
+  "keys.note.set": {
+    "message": "{key} сега е {command}."
+  },
+  "keys.note.taken_by_system": {
+    "message": "{key} е зает от {by}, затова никога не достига до Spark Commander."
+  },
+  "keys.ok": {
+    "message": "OK"
+  },
+  "keys.press_key": {
+    "message": "Натиснете клавиш…"
+  },
+  "keys.reserved.application_launcher": {
+    "message": "{system}: стартерът на приложения"
+  },
+  "keys.reserved.close_window": {
+    "message": "{system}: затваряне на прозореца"
+  },
+  "keys.reserved.close_window_or_tab": {
+    "message": "{system}: затваряне на прозореца или раздела"
+  },
+  "keys.reserved.dock": {
+    "message": "{system}: Dock"
+  },
+  "keys.reserved.floating_window": {
+    "message": "{system}: плаващият прозорец"
+  },
+  "keys.reserved.force_quit": {
+    "message": "{system}: принудително излизане"
+  },
+  "keys.reserved.hide_program": {
+    "message": "{system}: скриване на програмата"
+  },
+  "keys.reserved.input_source": {
+    "message": "{system}: източникът на въвеждане"
+  },
+  "keys.reserved.keyboard_access": {
+    "message": "{system}: достъп с клавиатурата"
+  },
+  "keys.reserved.keyboard_navigation": {
+    "message": "{system}: навигация с клавиатурата"
+  },
+  "keys.reserved.krunner": {
+    "message": "{system}: KRunner"
+  },
+  "keys.reserved.lock_screen": {
+    "message": "{system}: заключване на екрана"
+  },
+  "keys.reserved.log_out": {
+    "message": "{system}: излизане от системата"
+  },
+  "keys.reserved.maximize_window": {
+    "message": "{system}: максимизиране на прозореца"
+  },
+  "keys.reserved.menu_bar": {
+    "message": "{system}: лентата с менюта"
+  },
+  "keys.reserved.minimize": {
+    "message": "{system}: минимизиране"
+  },
+  "keys.reserved.mission_control": {
+    "message": "{system}: Mission Control"
+  },
+  "keys.reserved.move_window": {
+    "message": "{system}: преместване на прозореца"
+  },
+  "keys.reserved.next_window": {
+    "message": "{system}: следващият прозорец"
+  },
+  "keys.reserved.present_windows": {
+    "message": "{system}: Представяне на прозорците"
+  },
+  "keys.reserved.present_windows_all": {
+    "message": "{system}: Представяне на прозорците (всички работни плотове)"
+  },
+  "keys.reserved.present_windows_class": {
+    "message": "{system}: Представяне на прозорците (клас на прозореца)"
+  },
+  "keys.reserved.program_windows": {
+    "message": "{system}: прозорците на програмата"
+  },
+  "keys.reserved.quit": {
+    "message": "{system}: изход"
+  },
+  "keys.reserved.resize_window": {
+    "message": "{system}: преоразмеряване на прозореца"
+  },
+  "keys.reserved.restore_window": {
+    "message": "{system}: възстановяване на прозореца"
+  },
+  "keys.reserved.run_command": {
+    "message": "{system}: изпълнение на команда"
+  },
+  "keys.reserved.screenshot": {
+    "message": "{system}: снимка на екрана"
+  },
+  "keys.reserved.security_screen": {
+    "message": "{system}: екранът за защита"
+  },
+  "keys.reserved.show_desktop": {
+    "message": "{system}: показване на работния плот"
+  },
+  "keys.reserved.space_left": {
+    "message": "{system}: пространството вляво"
+  },
+  "keys.reserved.space_right": {
+    "message": "{system}: пространството вдясно"
+  },
+  "keys.reserved.spotlight": {
+    "message": "{system}: Spotlight"
+  },
+  "keys.reserved.start_menu": {
+    "message": "{system}: менюто „Старт“"
+  },
+  "keys.reserved.status_menus": {
+    "message": "{system}: менютата за състояние"
+  },
+  "keys.reserved.suspend_compositing": {
+    "message": "{system}: временно спиране на композирането"
+  },
+  "keys.reserved.switch_program_windows": {
+    "message": "{system}: превключване между прозорците на програмата"
+  },
+  "keys.reserved.switch_programs": {
+    "message": "{system}: превключване между програмите"
+  },
+  "keys.reserved.switch_system_controls": {
+    "message": "{system}: превключване на системните контроли"
+  },
+  "keys.reserved.switch_to_desktop": {
+    "message": "{system}: превключване към работен плот {number}"
+  },
+  "keys.reserved.switch_windows": {
+    "message": "{system}: превключване между прозорците"
+  },
+  "keys.reserved.system_monitor": {
+    "message": "{system}: Системен монитор"
+  },
+  "keys.reserved.task_manager": {
+    "message": "{system}: Диспечер на задачите"
+  },
+  "keys.reserved.text_console": {
+    "message": "{system}: превключване към текстова конзола"
+  },
+  "keys.reserved.toolbar": {
+    "message": "{system}: лентата с инструменти"
+  },
+  "keys.reserved.window_menu": {
+    "message": "{system}: менюто на прозореца"
+  },
+  "keys.reserved.workspace_down": {
+    "message": "{system}: работното пространство отдолу"
+  },
+  "keys.reserved.workspace_left": {
+    "message": "{system}: работното пространство вляво"
+  },
+  "keys.reserved.workspace_right": {
+    "message": "{system}: работното пространство вдясно"
+  },
+  "keys.reserved.workspace_up": {
+    "message": "{system}: работното пространство отгоре"
+  },
+  "keys.reset.tooltip": {
+    "message": "Обратно към клавишите на {preset}"
+  },
+  "keys.reset_all": {
+    "message": "Нулиране на всички"
+  },
+  "keys.save_as.button": {
+    "message": "Запазване като…"
+  },
+  "keys.save_as.default_name": {
+    "message": "Моите клавиши"
+  },
+  "keys.save_as.label": {
+    "message": "Име:"
+  },
+  "keys.save_as.title": {
+    "message": "Запазване на клавишите"
+  },
+  "keys.search.placeholder": {
+    "message": "Търсене на команда или клавиш"
+  },
+  "keys.set_label": {
+    "message": "Клавиши:"
+  },
+  "keys.taken_by.tooltip": {
+    "message": "Зает от {by}"
+  },
+  "keys.title": {
+    "message": "Клавишни комбинации"
+  },
+  "main.admin.button": {
+    "message": "Като администратор"
+  },
+  "main.admin.deleting": {
+    "message": "Изтриване на {count, plural, one {# елемент} other {# елемента}}"
+  },
+  "main.admin.failed": {
+    "message": "Като администратор: {err}"
+  },
+  "main.admin.making": {
+    "message": "Създаване на „{name}“"
+  },
+  "main.admin.offer": {
+    "message": "{what}: отказан достъп. Като администратор системата ще поиска паролата."
+  },
+  "main.admin.offer_delete": {
+    "message": "{what}: отказан достъп. Като администратор системата ще поиска паролата. Изтритото по този начин изчезва завинаги."
+  },
+  "main.admin.title": {
+    "message": "Отказан достъп"
+  },
+  "main.delete.from_archive": {
+    "message": "{kind, select, folder {Да се изтрие ли папката „{name}“ от {archive}? Това не може да се отмени.} file {Да се изтрие ли файлът „{name}“ от {archive}? Това не може да се отмени.} other {{count, plural, one {Да се изтрие ли # елемент от {archive}?} other {Да се изтрият ли # елемента от {archive}?}} Това не може да се отмени.}}"
+  },
+  "main.delete.on_server": {
+    "message": "{kind, select, folder {Да се изтрие ли папката „{name}“ на {server}? Това не може да се отмени.} file {Да се изтрие ли файлът „{name}“ на {server}? Това не може да се отмени.} other {{count, plural, one {Да се изтрие ли # елемент на {server}?} other {Да се изтрият ли # елемента на {server}?}} Това не може да се отмени.}}"
+  },
+  "main.delete.permanently": {
+    "message": "{kind, select, folder {Да се изтрие ли окончателно папката „{name}“? Това не може да се отмени.} file {Да се изтрие ли окончателно файлът „{name}“? Това не може да се отмени.} other {{count, plural, one {Да се изтрие ли окончателно # елемент?} other {Да се изтрият ли окончателно # елемента?}} Това не може да се отмени.}}"
+  },
+  "main.delete.title": {
+    "message": "Изтриване"
+  },
+  "main.delete.title_permanently": {
+    "message": "Окончателно изтриване"
+  },
+  "main.delete.to_trash": {
+    "message": "{kind, select, folder {Да се премести ли папката „{name}“ в кошчето?} file {Да се премести ли файлът „{name}“ в кошчето?} other {{count, plural, one {Да се премести ли # елемент в кошчето?} other {Да се преместят ли # елемента в кошчето?}}}}"
+  },
+  "main.download.edit": {
+    "message": "Изтегляне на {file} за редактиране"
+  },
+  "main.download.view": {
+    "message": "Изтегляне на {file} за преглед"
+  },
+  "main.error.make_folder": {
+    "message": "Папката не можа да се създаде: {err}"
+  },
+  "main.error.read_settings": {
+    "message": "Настройките не можаха да се прочетат: {err}"
+  },
+  "main.error.read_tabs": {
+    "message": "Отворените раздели не можаха да се прочетат: {err}"
+  },
+  "main.error.read_workspaces": {
+    "message": "Работните пространства не можаха да се прочетат: {err}"
+  },
+  "main.error.save_settings": {
+    "message": "Настройките не можаха да се запазят: {err}"
+  },
+  "main.folder_tree.home": {
+    "message": "Домашна папка"
+  },
+  "main.go.no_such_folder": {
+    "message": "{path}: няма такава папка на този компютър"
+  },
+  "main.new_folder.label": {
+    "message": "Нова папка (директория):"
+  },
+  "main.new_folder.title": {
+    "message": "Нова папка"
+  },
+  "main.sync_browsing.lost": {
+    "message": "{err}. Синхронизираното разглеждане е изключено."
+  },
+  "main.tool.needs_file": {
+    "message": "Курсорът не е върху файл: %N, %O и %E изискват такъв."
+  },
+  "main.tool.needs_local_folder": {
+    "message": "Другият панел показва сървър или архив: %T изисква папка на този компютър."
+  },
+  "main.undo.done": {
+    "message": "{way, select, redo {Повторено: {title}} other {Отменено: {title}}}"
+  },
+  "main.undo.failed": {
+    "message": "{way, select, redo {„{title}“ не можа да се повтори: {err}} other {„{title}“ не можа да се отмени: {err}}}"
+  },
+  "main.undo.nothing": {
+    "message": "{way, select, redo {Няма нищо за повторение.} other {Няма нищо за отмяна.}}"
+  },
+  "main.undo.queued": {
+    "message": "{way, select, redo {В опашката за повторение: {title}} other {В опашката за отмяна: {title}}}"
+  },
+  "mark.compare.marked": {
+    "message": "{count, plural, one {# файл е маркиран: по-нов или липсващ от другата страна.} other {# файла са маркирани: по-нови или липсващи от другата страна.}}"
+  },
+  "mark.compare.same": {
+    "message": "Папките съдържат еднакви файлове."
+  },
+  "mark.load_selection.label": {
+    "message": "Избиране на имената, изброени във файла:"
+  },
+  "mark.load_selection.title": {
+    "message": "Зареждане на избора"
+  },
+  "mark.save_selection.label": {
+    "message": "Запазване на избраните имена във файла:"
+  },
+  "mark.save_selection.title": {
+    "message": "Запазване на избора"
+  },
+  "mark.select_group.label": {
+    "message": "Избиране на файловете (*.txt *.md; маската за папка завършва с /):"
+  },
+  "mark.select_group.title": {
+    "message": "Избиране на група"
+  },
+  "mark.selection_file.not_local": {
+    "message": "Файловете с избор се пазят на този компютър, извън архиви."
+  },
+  "mark.unselect_group.label": {
+    "message": "Премахване на избора от файловете (*.txt *.md; маската за папка завършва с /):"
+  },
+  "mark.unselect_group.title": {
+    "message": "Премахване на избора на група"
+  },
+  "media.cannot_play": {
+    "message": "Това не може да се възпроизведе: {err}"
+  },
+  "media.cannot_play_as_text": {
+    "message": "Това не може да се възпроизведе: {err}. 1 го показва като текст."
+  },
+  "media.continuing": {
+    "message": "Продължава от {time}"
+  },
+  "media.error.missing": {
+    "message": "libmpv липсва: Настройки > Добавки го изтегля (при компилиране от изходен код: vendor/mpv/{script})"
+  },
+  "media.error.not_started": {
+    "message": "libmpv не можа да стартира"
+  },
+  "media.error.too_long": {
+    "message": "{path}: mpv отне твърде дълго"
+  },
+  "media.error.unsupported_system": {
+    "message": "засега видео се възпроизвежда само на Linux, macOS и Windows"
+  },
+  "menu.archive": {
+    "message": "Архив"
+  },
+  "menu.associations": {
+    "message": "Асоциации"
+  },
+  "menu.button_bar": {
+    "message": "Лента с бутони"
+  },
+  "menu.checksums": {
+    "message": "Контролни суми"
+  },
+  "menu.commands": {
+    "message": "Команди"
+  },
+  "menu.compare_directories": {
+    "message": "Сравняване на папки"
+  },
+  "menu.configuration": {
+    "message": "Конфигурация"
+  },
+  "menu.copy_names": {
+    "message": "Копиране на имена"
+  },
+  "menu.files": {
+    "message": "Файлове"
+  },
+  "menu.filter": {
+    "message": "Филтър"
+  },
+  "menu.go": {
+    "message": "Навигация"
+  },
+  "menu.help": {
+    "message": "Помощ"
+  },
+  "menu.mark": {
+    "message": "Маркиране"
+  },
+  "menu.other": {
+    "message": "Други"
+  },
+  "menu.recently_closed_tabs": {
+    "message": "Наскоро затворени раздели"
+  },
+  "menu.selection": {
+    "message": "Избор"
+  },
+  "menu.show": {
+    "message": "Изглед"
+  },
+  "menu.sidebar": {
+    "message": "Странична лента"
+  },
+  "menu.sort": {
+    "message": "Сортиране"
+  },
+  "menu.split_and_combine": {
+    "message": "Разделяне и обединяване"
+  },
+  "menu.tabs": {
+    "message": "Раздели"
+  },
+  "menu.tools": {
+    "message": "Инструменти"
+  },
+  "menu.workspaces": {
+    "message": "Работни пространства"
+  },
+  "menus.hide_app": {
+    "message": "Скриване на Spark Commander"
+  },
+  "menus.hide_others": {
+    "message": "Скриване на другите"
+  },
+  "menus.minimize": {
+    "message": "Минимизиране"
+  },
+  "menus.quit_app": {
+    "message": "Изход от Spark Commander"
+  },
+  "menus.services": {
+    "message": "Услуги"
+  },
+  "menus.show_all": {
+    "message": "Показване на всички"
+  },
+  "menus.zoom": {
+    "message": "Мащабиране"
+  },
+  "name_dialog.cancel": {
+    "message": "Отказ"
+  },
+  "name_dialog.ok": {
+    "message": "OK"
+  },
+  "operations.clear": {
+    "message": "Изчистване на завършените"
+  },
+  "operations.duration.seconds": {
+    "message": "{seconds} с"
+  },
+  "operations.empty": {
+    "message": "Няма операции."
+  },
+  "operations.job.answer": {
+    "message": "Чака вашия отговор"
+  },
+  "operations.job.bytes": {
+    "message": "{done} от {total}"
+  },
+  "operations.job.cancel_tooltip": {
+    "message": "Отказ"
+  },
+  "operations.job.cancelled": {
+    "message": "Отменено"
+  },
+  "operations.job.counting": {
+    "message": "Преброяване: {count, plural, one {# файл} other {# файла}}"
+  },
+  "operations.job.done": {
+    "message": "Готово"
+  },
+  "operations.job.done_skipped": {
+    "message": "Готово, {count, plural, one {# пропуснат} other {# пропуснати}}"
+  },
+  "operations.job.failed": {
+    "message": "Неуспешно"
+  },
+  "operations.job.files": {
+    "message": "{files} / {count, plural, one {# файл} other {# файла}}"
+  },
+  "operations.job.left": {
+    "message": "Остават {time}"
+  },
+  "operations.job.running": {
+    "message": "Изпълнява се"
+  },
+  "operations.job.waiting": {
+    "message": "Изчаква"
+  },
+  "operations.menu.cancel": {
+    "message": "Отказ"
+  },
+  "operations.menu.clear": {
+    "message": "Изчистване на завършените"
+  },
+  "operations.menu.move_down": {
+    "message": "Преместване надолу"
+  },
+  "operations.menu.move_up": {
+    "message": "Преместване нагоре"
+  },
+  "operations.settings_tooltip": {
+    "message": "Настройки на опашката с операции"
+  },
+  "operations.summary.failed": {
+    "message": "{count, plural, one {# неуспешна} other {# неуспешни}}"
+  },
+  "operations.summary.running": {
+    "message": "{count, plural, one {# се изпълнява} other {# се изпълняват}}"
+  },
+  "operations.summary.waiting": {
+    "message": "{count, plural, one {# изчаква} other {# изчакват}}"
+  },
+  "ops.as_administrator.failed": {
+    "message": "Като администратор: {err}"
+  },
+  "ops.as_administrator.progress": {
+    "message": "Като администратор…"
+  },
+  "ops.delete.title_many": {
+    "message": "Изтриване на {count, plural, one {# елемент} other {# елемента}} в {folder}"
+  },
+  "ops.delete.title_one": {
+    "message": "Изтриване на „{name}“"
+  },
+  "ops.delete.trash_title_many": {
+    "message": "Преместване на {count, plural, one {# елемент} other {# елемента}} от {folder} в кошчето"
+  },
+  "ops.delete.trash_title_one": {
+    "message": "Преместване на „{name}“ в кошчето"
+  },
+  "ops.error.file_in_the_way": {
+    "message": "пречи файл със същото име"
+  },
+  "ops.error.into_itself": {
+    "message": "не може да се копира в самата себе си"
+  },
+  "ops.exists_already": {
+    "message": "{name} вече съществува"
+  },
+  "ops.link.dialog_title": {
+    "message": "Създаване на връзка"
+  },
+  "ops.link.failed": {
+    "message": "Връзката не можа да се създаде: {err}"
+  },
+  "ops.link.kind.hard": {
+    "message": "Твърда връзка"
+  },
+  "ops.link.kind.junction": {
+    "message": "Точка на свързване"
+  },
+  "ops.link.kind.shortcut": {
+    "message": "Пряк път (.lnk)"
+  },
+  "ops.link.kind.symbolic": {
+    "message": "Символна връзка"
+  },
+  "ops.link.label_many": {
+    "message": "Връзки към {count, plural, one {# елемент} other {# елемента}}, в папката:"
+  },
+  "ops.link.label_one": {
+    "message": "Връзка към „{name}“ като:"
+  },
+  "ops.link.making": {
+    "message": "Създаване на {kind, select, symbolic {символната връзка} hard {твърдата връзка} junction {точката на свързване} other {прекия път (.lnk)}}"
+  },
+  "ops.link.needs_admin": {
+    "message": "символните връзки изискват администратор или режим за разработчици"
+  },
+  "ops.link.thread_failed": {
+    "message": "нишката за прекия път се провали"
+  },
+  "ops.link.title_many": {
+    "message": "{kind, select, symbolic {Символни връзки} hard {Твърди връзки} junction {Точки на свързване} other {Преки пътища (.lnk)}} към {count, plural, one {# елемент} other {# елемента}} в {folder}"
+  },
+  "ops.link.title_one": {
+    "message": "{kind, select, symbolic {Символна връзка} hard {Твърда връзка} junction {Точка на свързване} other {Пряк път (.lnk)}} към „{name}“ в {folder}"
+  },
+  "ops.link.windows_only": {
+    "message": "точките на свързване и преките пътища са само за Windows"
+  },
+  "ops.redo.title": {
+    "message": "Повторение: {what}"
+  },
+  "ops.title.many": {
+    "message": "{kind, select, copy {Копиране} other {Преместване}} на {count, plural, one {# елемент} other {# елемента}} в {target}"
+  },
+  "ops.title.one": {
+    "message": "{kind, select, copy {Копиране} other {Преместване}} на „{name}“ в {target}"
+  },
+  "ops.undo.not_a_server": {
+    "message": "{url}: не е адрес на сървър"
+  },
+  "ops.undo.not_in_trash": {
+    "message": "те вече не са в кошчето"
+  },
+  "ops.undo.restore_title": {
+    "message": "{title}: замененото, обратно от кошчето"
+  },
+  "ops.undo.title": {
+    "message": "Отмяна: {what}"
+  },
+  "pack.cancel": {
+    "message": "Отказ"
+  },
+  "pack.compression": {
+    "message": "Компресия:"
+  },
+  "pack.dialog_title": {
+    "message": "Архивиране на файлове"
+  },
+  "pack.encrypt": {
+    "message": "Шифроване с паролата"
+  },
+  "pack.format": {
+    "message": "Формат:"
+  },
+  "pack.label": {
+    "message": "Архивиране на {count, plural, one {# елемент} other {# елемента}} в архива:"
+  },
+  "pack.level.fastest": {
+    "message": "Най-бърза"
+  },
+  "pack.level.maximum": {
+    "message": "Максимална"
+  },
+  "pack.level.normal": {
+    "message": "Нормална"
+  },
+  "pack.level.store": {
+    "message": "Без компресия"
+  },
+  "pack.level.ultra": {
+    "message": "Ултра"
+  },
+  "pack.local_only": {
+    "message": "{what, select, packing {Архивирането} unpacking {Разархивирането} testing {Проверката} creating_checksums {Създаването на контролни суми} making_links {Създаването на връзки} verifying_checksums {Проверката на контролни суми} splitting {Разделянето} combining {Обединяването} other {Това}} работи с файлове на този компютър, извън архиви."
+  },
+  "pack.move_files": {
+    "message": "Преместване в архива (изтриване на архивираните файлове)"
+  },
+  "pack.needs_password": {
+    "message": "изисква парола"
+  },
+  "pack.ok": {
+    "message": "OK"
+  },
+  "pack.password_missing": {
+    "message": "Въведете паролата или изключете шифроването."
+  },
+  "pack.separate": {
+    "message": "Отделен архив за всеки избран файл или папка"
+  },
+  "pack.split": {
+    "message": "Разделяне на томове по"
+  },
+  "pack.split_unit": {
+    "message": "MB"
+  },
+  "pack.test.broken": {
+    "message": "{broken, plural, one {# от {count} е повреден} other {# от {count} са повредени}}"
+  },
+  "pack.test.choose": {
+    "message": "Изберете архивите за проверка."
+  },
+  "pack.test.ok": {
+    "message": "{count, plural, one {# архив: OK} other {# архива: OK}}"
+  },
+  "pack.test.title_many": {
+    "message": "Проверка на {count, plural, one {# архив} other {# архива}}"
+  },
+  "pack.test.title_one": {
+    "message": "Проверка на „{name}“"
+  },
+  "pack.title.many": {
+    "message": "Архивиране на {count, plural, one {# елемент} other {# елемента}} в {archive}"
+  },
+  "pack.title.many_separate": {
+    "message": "Архивиране на {count, plural, one {# елемент} other {# елемента}} в отделни архиви {format}"
+  },
+  "pack.title.one": {
+    "message": "Архивиране на „{name}“ в {archive}"
+  },
+  "pack.title.one_separate": {
+    "message": "Архивиране на „{name}“ в отделни архиви {format}"
+  },
+  "pack.unpack.choose": {
+    "message": "Изберете архивите за разархивиране."
+  },
+  "pack.unpack.dialog_title": {
+    "message": "Разархивиране на файлове"
+  },
+  "pack.unpack.label": {
+    "message": "Разархивиране на {count, plural, one {# архив} other {# архива}} в:"
+  },
+  "pack.unpack.mask": {
+    "message": "Само файловете:"
+  },
+  "pack.unpack.overwrite": {
+    "message": "Презаписване на съществуващите файлове (иначе се запазват)"
+  },
+  "pack.unpack.password": {
+    "message": "Парола:"
+  },
+  "pack.unpack.separate": {
+    "message": "Всеки архив в папка с неговото име"
+  },
+  "pack.unpack.title_many": {
+    "message": "Разархивиране на {count, plural, one {# архив} other {# архива}} в {target}"
+  },
+  "pack.unpack.title_one": {
+    "message": "Разархивиране на „{name}“ в {target}"
+  },
+  "pack.unpack.with_paths": {
+    "message": "Запазване на папките, съхранени в архива"
+  },
+  "pack.volume_invalid": {
+    "message": "Размерът на тома е число в MB."
+  },
+  "pack.wrong_password": {
+    "message": "грешна парола"
+  },
+  "panel.admin.renaming": {
+    "message": "Преименуване на „{name}“"
+  },
+  "panel.clipboard.copied": {
+    "message": "{count, plural, one {Копиран е # елемент} other {Копирани са # елемента}}: Ctrl+V ги поставя."
+  },
+  "panel.clipboard.cut": {
+    "message": "{count, plural, one {Изрязан е # елемент} other {Изрязани са # елемента}}: Ctrl+V ги поставя."
+  },
+  "panel.clipboard.no_cut_in_archive": {
+    "message": "Файловете не могат да се изрязват от архиви; Ctrl+C ги копира."
+  },
+  "panel.clipboard.no_files": {
+    "message": "В клипборда няма файлове."
+  },
+  "panel.clipboard.no_paste_in_archive": {
+    "message": "Все още не може да се поставят файлове в архиви."
+  },
+  "panel.clipboard.same_folder": {
+    "message": "Те вече са в тази папка: Ctrl+V ги поставя в друга."
+  },
+  "panel.column.attr": {
+    "message": "Атр"
+  },
+  "panel.column.date": {
+    "message": "Дата"
+  },
+  "panel.column.ext": {
+    "message": "Разш"
+  },
+  "panel.column.name": {
+    "message": "Име"
+  },
+  "panel.column.size": {
+    "message": "Размер"
+  },
+  "panel.disconnect": {
+    "message": "Прекъсване на връзката"
+  },
+  "panel.drag.items": {
+    "message": "{count, plural, one {# елемент} other {# елемента}}"
+  },
+  "panel.error.archive_not_updatable": {
+    "message": "{name}: 7-Zip променя на място архиви 7z, zip и tar, но не и този"
+  },
+  "panel.error.archive_on_server": {
+    "message": "{name}: архивите на сървъри все още не могат да се променят"
+  },
+  "panel.error.branch_view_local": {
+    "message": "„Изглед на клона“ показва папки на този компютър"
+  },
+  "panel.error.exists": {
+    "message": "{name} вече съществува"
+  },
+  "panel.error.folder_in_the_way": {
+    "message": "пречи папка със същото име"
+  },
+  "panel.error.inside_archive": {
+    "message": "все още не и в архиви"
+  },
+  "panel.error.make_file": {
+    "message": "Файлът не можа да се създаде: {err}"
+  },
+  "panel.error.no_name": {
+    "message": "не е зададено име"
+  },
+  "panel.error.not_a_name": {
+    "message": "{name}: не е име"
+  },
+  "panel.error.other_drive": {
+    "message": "другият панел премина на друг диск"
+  },
+  "panel.error.rename": {
+    "message": "Не можа да се преименува: {err}"
+  },
+  "panel.filter.custom.label": {
+    "message": "Типове файлове, напр. *.txt *.md (след | – изключените):"
+  },
+  "panel.filter.custom.title": {
+    "message": "Показване на файлове"
+  },
+  "panel.filter.programs": {
+    "message": "програми"
+  },
+  "panel.filter.selected_files": {
+    "message": "избрани файлове"
+  },
+  "panel.found.branch_view": {
+    "message": "Изглед на клона:"
+  },
+  "panel.found.search_results": {
+    "message": "Резултати от търсенето:"
+  },
+  "panel.new_text_file.label": {
+    "message": "Име на файла, отваря се в редактора:"
+  },
+  "panel.new_text_file.title": {
+    "message": "Нов текстов файл"
+  },
+  "panel.opening.cancel": {
+    "message": "Отказ"
+  },
+  "panel.opening.reading": {
+    "message": "Четене…"
+  },
+  "panel.opening.title": {
+    "message": "Отваряне на архив"
+  },
+  "panel.quick_filter.hint": {
+    "message": "скрива несъвпадащите; Escape показва всички"
+  },
+  "panel.quick_filter.label": {
+    "message": "Филтър:"
+  },
+  "panel.quick_search.label": {
+    "message": "Търсене:"
+  },
+  "panel.size.app": {
+    "message": "<APP>"
+  },
+  "panel.size.b": {
+    "message": "{size} B"
+  },
+  "panel.size.dir": {
+    "message": "<DIR>"
+  },
+  "panel.size.gb": {
+    "message": "{size} GB"
+  },
+  "panel.size.kb": {
+    "message": "{size} KB"
+  },
+  "panel.size.mb": {
+    "message": "{size} MB"
+  },
+  "panel.size.tb": {
+    "message": "{size} TB"
+  },
+  "panel.space.bytes": {
+    "message": "{count, plural, one {{size} байт ({human})} other {{size} байта ({human})}}"
+  },
+  "panel.space.close": {
+    "message": "Затваряне"
+  },
+  "panel.space.counting": {
+    "message": "Преброяване…"
+  },
+  "panel.space.done": {
+    "message": "Готово."
+  },
+  "panel.space.files": {
+    "message": "Файлове:"
+  },
+  "panel.space.folders": {
+    "message": "Папки:"
+  },
+  "panel.space.in_archive": {
+    "message": "В архивите колоната „Размер“ вече показва размерите."
+  },
+  "panel.space.title": {
+    "message": "Изчисляване на заетото място"
+  },
+  "panel.space.total": {
+    "message": "Общ размер:"
+  },
+  "panel.space.unreadable": {
+    "message": "{count, plural, one {# елемент не можа да се прочете.} other {# елемента не можаха да се прочетат.}}"
+  },
+  "panel.status": {
+    "message": "{marked_size} k / {size} k в {marked_files} / {files, plural, one {# файл} other {# файла}}, {marked_folders} / {folders, plural, one {# папка} other {# папки}}"
+  },
+  "panel.sync_browsing.stop": {
+    "message": "Синхронизирано разглеждане (щракнете, за да спрете)"
+  },
+  "panel.undo.rename": {
+    "message": "Преименуване на „{name}“ на „{to}“"
+  },
+  "passwords.about.set": {
+    "message": "С главна парола запазените пароли се отварят на друг компютър, след като я въведете там и копирате папката с настройки. Ако я забравите, губят се само те: въвеждат се отново."
+  },
+  "passwords.about.unlock": {
+    "message": "Настройките са дошли от друг компютър или този няма ключодържател: главната парола отваря запазените пароли тук."
+  },
+  "passwords.cancel": {
+    "message": "Отказ"
+  },
+  "passwords.done.set": {
+    "message": "Главната парола е зададена."
+  },
+  "passwords.done.unlocked": {
+    "message": "Запазените пароли са отключени."
+  },
+  "passwords.error.locked": {
+    "message": "запазените пароли са заключени: отключете ги с главната парола (Конфигурация › Настройки › Пароли)"
+  },
+  "passwords.error.no_master": {
+    "message": "не е зададена главна парола"
+  },
+  "passwords.error.no_random": {
+    "message": "няма случайни числа"
+  },
+  "passwords.error.not_opened": {
+    "message": "паролата за {what} не може да се отвори"
+  },
+  "passwords.error.not_sealed": {
+    "message": "паролата не можа да се шифрова"
+  },
+  "passwords.error.salt_damaged": {
+    "message": "солта на главната парола е повредена"
+  },
+  "passwords.error.wrong": {
+    "message": "главната парола е грешна"
+  },
+  "passwords.field.again": {
+    "message": "Повторно"
+  },
+  "passwords.field.master": {
+    "message": "Главна парола"
+  },
+  "passwords.locked_note": {
+    "message": "Запазените пароли са заключени на този компютър: главната парола ги отключва."
+  },
+  "passwords.ok": {
+    "message": "OK"
+  },
+  "passwords.problem.differ": {
+    "message": "Двете не съвпадат."
+  },
+  "passwords.problem.empty": {
+    "message": "Въведете главната парола."
+  },
+  "passwords.title.set": {
+    "message": "Главна парола"
+  },
+  "passwords.title.unlock": {
+    "message": "Отключване на запазените пароли"
+  },
+  "passwords.unlock_button": {
+    "message": "Отключване…"
+  },
+  "passwords.working": {
+    "message": "Обработка…"
+  },
+  "properties.accessed": {
+    "message": "Достъп:"
+  },
+  "properties.change_attributes": {
+    "message": "Промяна на атрибути..."
+  },
+  "properties.close": {
+    "message": "Затваряне"
+  },
+  "properties.contents": {
+    "message": "{file_count, plural, one {{files} файл} other {{files} файла}}, {folder_count, plural, one {{folders} папка} other {{folders} папки}}, {count, plural, one {{bytes} байт} other {{bytes} байта}} ({size})"
+  },
+  "properties.contents_counting": {
+    "message": "{file_count, plural, one {{files} файл} other {{files} файла}}, {folder_count, plural, one {{folders} папка} other {{folders} папки}}, {count, plural, one {{bytes} байт} other {{bytes} байта}} ({size}) (преброяване…)"
+  },
+  "properties.contents_label": {
+    "message": "Съдържание:"
+  },
+  "properties.created": {
+    "message": "Създаден:"
+  },
+  "properties.dialog_title": {
+    "message": "Свойства"
+  },
+  "properties.in_archive": {
+    "message": "Списъкът на архива показва всичко, което той знае за файловете си."
+  },
+  "properties.kind.file": {
+    "message": "Файл"
+  },
+  "properties.kind.folder": {
+    "message": "Папка"
+  },
+  "properties.kind.link": {
+    "message": "Връзка"
+  },
+  "properties.kind.link_to": {
+    "message": "Връзка към {target}"
+  },
+  "properties.location": {
+    "message": "Местоположение:"
+  },
+  "properties.modified": {
+    "message": "Променен:"
+  },
+  "properties.name": {
+    "message": "Име:"
+  },
+  "properties.no_system_dialog": {
+    "message": "тук все още няма системен диалог за свойства"
+  },
+  "properties.owner": {
+    "message": "Собственик / група:"
+  },
+  "properties.permissions": {
+    "message": "Права:"
+  },
+  "properties.size": {
+    "message": "{count, plural, one {{bytes} байт ({size})} other {{bytes} байта ({size})}}"
+  },
+  "properties.size_label": {
+    "message": "Размер:"
+  },
+  "properties.type": {
+    "message": "Тип:"
+  },
+  "quick_open.go_to": {
+    "message": "Към {path}"
+  },
+  "quick_open.group.bookmarks": {
+    "message": "Отметки"
+  },
+  "quick_open.group.connections": {
+    "message": "Връзки"
+  },
+  "quick_open.group.drives": {
+    "message": "Дискове"
+  },
+  "quick_open.group.path": {
+    "message": "Път"
+  },
+  "quick_open.group.recent_folders": {
+    "message": "Последни папки"
+  },
+  "quick_open.group.tools": {
+    "message": "Инструменти"
+  },
+  "quick_open.group.workspaces": {
+    "message": "Работни пространства"
+  },
+  "quick_open.placeholder": {
+    "message": "Команда, отметка, папка, път, сървър, диск, работно пространство или инструмент"
+  },
+  "quick_open.title": {
+    "message": "Бързо отваряне"
+  },
+  "quick_view.counting": {
+    "message": "Преброяване…"
+  },
+  "quick_view.downloading": {
+    "message": "Изтегляне…"
+  },
+  "quick_view.empty": {
+    "message": "Бързият преглед показва това, върху което е курсорът на другия панел."
+  },
+  "quick_view.extracting": {
+    "message": "Извличане от архива…"
+  },
+  "quick_view.files_only": {
+    "message": "На сървъри и в архиви бързият преглед показва само файлове."
+  },
+  "quick_view.space.title": {
+    "message": "Общо заето място:"
+  },
+  "quick_view.space.totals": {
+    "message": "{bytes, plural, one {{bytes_grouped} байт} other {{bytes_grouped} байта}} в {files, plural, one {{files_grouped} файл} other {{files_grouped} файла}}, {folders, plural, one {{folders_grouped} папка} other {{folders_grouped} папки}}"
+  },
+  "quick_view.space.unreadable": {
+    "message": "Не можаха да се прочетат: {count}."
+  },
+  "quick_view.too_large.download": {
+    "message": "{size} е твърде голям, за да се изтегли тук: F3 го показва."
+  },
+  "quick_view.too_large.extract": {
+    "message": "{size} е твърде голям, за да се извлече от архива тук: F3 го показва."
+  },
+  "remote.cancelled": {
+    "message": "отказано"
+  },
+  "remote.cloud.ask": {
+    "message": "{kind, select, application_key {Ключ на приложението на {user} в {host}:} api_key {API ключ на {user} в {host}:} password {Парола на {user} в {host}:} other {Таен ключ на {user} в {host}:}}"
+  },
+  "remote.cloud.ask_again": {
+    "message": "{kind, select, application_key {Грешен ключ на приложението. Ключ на приложението на {user} в {host}:} api_key {Грешен API ключ. API ключ на {user} в {host}:} password {Грешна парола. Парола на {user} в {host}:} other {Грешен ключ. Таен ключ на {user} в {host}:}}"
+  },
+  "remote.cloud.obscure_failed": {
+    "message": "rclone не можа да приеме паролата"
+  },
+  "remote.cloud.rclone_missing": {
+    "message": "rclone липсва: Настройки > Добавки го изтегля"
+  },
+  "remote.cloud.title": {
+    "message": "{kind, select, application_key {Ключ на приложението} api_key {API ключ} password {Парола} other {Таен ключ}}"
+  },
+  "remote.connecting": {
+    "message": "Свързване с {server}..."
+  },
+  "remote.dialog.cancel": {
+    "message": "Отказ"
+  },
+  "remote.dialog.ok": {
+    "message": "OK"
+  },
+  "remote.disconnect_failed": {
+    "message": "{share}: връзката не можа да се прекъсне: {err}"
+  },
+  "remote.ftp.password": {
+    "message": "Парола за {user}@{host}:"
+  },
+  "remote.ftp.password_again": {
+    "message": "Грешна парола. Парола за {user}@{host}:"
+  },
+  "remote.ftps.changed": {
+    "message": "TLS сертификатът на {server} се е ПРОМЕНИЛ, откакто ред {line} на {file} го е записал. Някой може да подслушва; ако сървърът има нов сертификат, премахнете този ред."
+  },
+  "remote.ftps.not_trusted": {
+    "message": "сертификатът на сървъра не е доверен"
+  },
+  "remote.login.password": {
+    "message": "Парола"
+  },
+  "remote.login.title": {
+    "message": "Вход"
+  },
+  "remote.login.user": {
+    "message": "Потребител"
+  },
+  "remote.mount.login_wrong": {
+    "message": "потребителят или паролата са грешни"
+  },
+  "remote.mount.macos_failed": {
+    "message": "macOS не можа да го монтира (NetFS {code})"
+  },
+  "remote.mount.needs_desktop": {
+    "message": "изисква kio-fuse на KDE или gvfs на GNOME"
+  },
+  "remote.mount.needs_login": {
+    "message": "изисква потребител и парола"
+  },
+  "remote.mount.no_fuse": {
+    "message": "монтирано е, но няма папка за него: gvfs-fuse липсва"
+  },
+  "remote.mount.no_nfs_client": {
+    "message": "не е намерено; NFS изисква „Клиент за NFS“ на Windows („Функции на Windows“)"
+  },
+  "remote.mount.no_share": {
+    "message": "липсва споделеният ресурс: smb://сървър/ресурс"
+  },
+  "remote.mount.not_address": {
+    "message": "не е адрес"
+  },
+  "remote.mount.not_found": {
+    "message": "монтирано е, но не е намерено сред монтираните"
+  },
+  "remote.mount.other_user": {
+    "message": "Windows е свързан с този сървър като друг потребител: излезте от системата или използвайте този потребител"
+  },
+  "remote.password.title": {
+    "message": "Парола"
+  },
+  "remote.remember_password": {
+    "message": "Запомняне (Настройки › Пароли)"
+  },
+  "remote.save_back_failed": {
+    "message": "Не можа да се запази обратно: {err}"
+  },
+  "remote.sftp.host_certificate": {
+    "message": "Сървърът показва сертификат на хост; такива все още не се поддържат."
+  },
+  "remote.sftp.key_changed": {
+    "message": "Ключът на хоста {server} се е ПРОМЕНИЛ, откакто ред {line} на {file} го е записал. Някой може да подслушва; ако сървърът е инсталиран наново, премахнете този ред."
+  },
+  "remote.sftp.key_not_trusted": {
+    "message": "Ключът на хоста {server} не беше приет за доверен."
+  },
+  "remote.sftp.keys_refused": {
+    "message": "{user}@{host}: сървърът отхвърли ключовете и не приема парола"
+  },
+  "remote.sftp.login_refused": {
+    "message": "{user}@{host}: входът е отказан"
+  },
+  "remote.sftp.passphrase": {
+    "message": "Парола за {file}"
+  },
+  "remote.sftp.passphrase_title": {
+    "message": "Парола на ключа"
+  },
+  "remote.sftp.password": {
+    "message": "Парола за {user}@{host}"
+  },
+  "remote.unknown_host.once": {
+    "message": "Свързване веднъж"
+  },
+  "remote.unknown_host.remember": {
+    "message": "Свързване и запомняне"
+  },
+  "remote.unknown_host.text": {
+    "message": "{key_type, select, TLS {Сървърът {host} все още не е познат. Отпечатъкът на неговия TLS сертификат е} other {Сървърът {host} все още не е познат. Неговият отпечатък {key_type} е}}\n\n{fingerprint}\n\nСвържете се само ако това е сървърът, който имате предвид; администраторът му може да потвърди отпечатъка."
+  },
+  "remote.unknown_host.title": {
+    "message": "Непознат сървър"
+  },
+  "rename.case": {
+    "message": "Регистър:"
+  },
+  "rename.case.first": {
+    "message": "Първа буква"
+  },
+  "rename.case.lower": {
+    "message": "малки букви"
+  },
+  "rename.case.unchanged": {
+    "message": "Без промяна"
+  },
+  "rename.case.upper": {
+    "message": "ГЛАВНИ БУКВИ"
+  },
+  "rename.case.words": {
+    "message": "Всяка Дума"
+  },
+  "rename.close": {
+    "message": "Затваряне"
+  },
+  "rename.counter_start": {
+    "message": "Начало на брояча"
+  },
+  "rename.dialog_title": {
+    "message": "Групово преименуване"
+  },
+  "rename.digits": {
+    "message": "Цифри"
+  },
+  "rename.extension": {
+    "message": "Разширение"
+  },
+  "rename.field.counter": {
+    "message": "[C] Брояч"
+  },
+  "rename.field.date": {
+    "message": "[Y][M][D] Дата"
+  },
+  "rename.field.extension": {
+    "message": "[E] Разш."
+  },
+  "rename.field.folder": {
+    "message": "[P] Папка"
+  },
+  "rename.field.name": {
+    "message": "[N] Име"
+  },
+  "rename.field.range": {
+    "message": "[N1-3] Диапазон"
+  },
+  "rename.field.time": {
+    "message": "[h][m][s] Час"
+  },
+  "rename.first_only": {
+    "message": "Само първото"
+  },
+  "rename.in_archive": {
+    "message": "Файловете в архиви все още не могат да се преименуват."
+  },
+  "rename.mask": {
+    "message": "Маска за преименуване: име на файл"
+  },
+  "rename.match_case": {
+    "message": "Съобразяване с регистъра"
+  },
+  "rename.new_name": {
+    "message": "Ново име"
+  },
+  "rename.not_renamed_back": {
+    "message": "{from}: {err}; не са върнати старите имена на: {names}"
+  },
+  "rename.not_utf8": {
+    "message": "Имената, които не са в UTF-8, се пропускат."
+  },
+  "rename.old_name": {
+    "message": "Старо име"
+  },
+  "rename.problem.bad_character": {
+    "message": "непозволен знак в името"
+  },
+  "rename.problem.exists": {
+    "message": "вече съществува"
+  },
+  "rename.problem.no_name": {
+    "message": "няма име"
+  },
+  "rename.problem.twice": {
+    "message": "два пъти в списъка"
+  },
+  "rename.regex": {
+    "message": "Регулярен израз"
+  },
+  "rename.regex_error": {
+    "message": "Регулярният израз: {err}"
+  },
+  "rename.replace": {
+    "message": "Замяна с"
+  },
+  "rename.search": {
+    "message": "Търсене на"
+  },
+  "rename.start": {
+    "message": "Старт!"
+  },
+  "rename.status.failed": {
+    "message": "Нищо не е преименувано: {err}"
+  },
+  "rename.status.ready": {
+    "message": "„Старт!“ ги преименува."
+  },
+  "rename.status.renamed": {
+    "message": "{count, plural, one {Преименуван е #.} other {Преименувани са #.}}"
+  },
+  "rename.status.took_back": {
+    "message": "{count, plural, one {Върнато е старото име на #.} other {Върнати са старите имена на #.}}"
+  },
+  "rename.step": {
+    "message": "Стъпка"
+  },
+  "rename.undo": {
+    "message": "Отмяна"
+  },
+  "rename.was": {
+    "message": "{to} (беше {from})"
+  },
+  "rename.with_extension": {
+    "message": "С разширението"
+  },
+  "scmd.column.modified": {
+    "message": "Променен"
+  },
+  "scmd.column.name": {
+    "message": "Име"
+  },
+  "scmd.column.size": {
+    "message": "Размер"
+  },
+  "scmd.column.up_dir": {
+    "message": "НАГОРЕ"
+  },
+  "scmd.command_line.not_on_server": {
+    "message": "Командите се изпълняват на този компютър, не на сървъра."
+  },
+  "scmd.compare.marked": {
+    "message": "{count, plural, one {# файл е маркиран: по-нов или липсващ от другата страна.} other {# файла са маркирани: по-нови или липсващи от другата страна.}}"
+  },
+  "scmd.compare.same": {
+    "message": "Папките съдържат еднакви файлове."
+  },
+  "scmd.copying": {
+    "message": "Копиране на {name}..."
+  },
+  "scmd.dialog.buttons": {
+    "message": "Enter OK   Esc Отказ"
+  },
+  "scmd.error.read_settings": {
+    "message": "Настройките не можаха да се прочетат: {err}"
+  },
+  "scmd.error.read_tabs": {
+    "message": "Отворените раздели не можаха да се прочетат: {err}"
+  },
+  "scmd.error.read_workspaces": {
+    "message": "Работните пространства не можаха да се прочетат: {err}"
+  },
+  "scmd.error.save_back": {
+    "message": "Не можа да се запази обратно: {err}"
+  },
+  "scmd.error.save_searches": {
+    "message": "Търсенията не можаха да се запазят: {err}"
+  },
+  "scmd.error.save_tabs": {
+    "message": "Отворените раздели не можаха да се запазят: {err}"
+  },
+  "scmd.find.backwards": {
+    "message": "Назад"
+  },
+  "scmd.find.case_sensitive": {
+    "message": "Съобразяване с регистъра"
+  },
+  "scmd.find.hex": {
+    "message": "Шестнадесетично (77 6F 72 64)"
+  },
+  "scmd.find.not_found": {
+    "message": "Не е намерено: {text}"
+  },
+  "scmd.find.regex": {
+    "message": "Регулярен израз"
+  },
+  "scmd.find.search_for": {
+    "message": "Търсене на:"
+  },
+  "scmd.find.title": {
+    "message": "Търсене"
+  },
+  "scmd.find.whole_words": {
+    "message": "Само цели думи"
+  },
+  "scmd.group.files": {
+    "message": "Файлове (*.txt *.md; папките завършват с /):"
+  },
+  "scmd.group.select_title": {
+    "message": "Избиране на група"
+  },
+  "scmd.group.unselect_title": {
+    "message": "Премахване на избора на група"
+  },
+  "scmd.key_bar.copy": {
+    "message": "Копир."
+  },
+  "scmd.key_bar.delete": {
+    "message": "Изтр."
+  },
+  "scmd.key_bar.edit": {
+    "message": "Редак."
+  },
+  "scmd.key_bar.menu": {
+    "message": "Меню"
+  },
+  "scmd.key_bar.mkdir": {
+    "message": "НПапка"
+  },
+  "scmd.key_bar.move": {
+    "message": "Прем."
+  },
+  "scmd.key_bar.quit": {
+    "message": "Изход"
+  },
+  "scmd.key_bar.view": {
+    "message": "Прегл."
+  },
+  "scmd.message.error": {
+    "message": "Грешка"
+  },
+  "scmd.message.ok": {
+    "message": "OK"
+  },
+  "scmd.not_yet": {
+    "message": "{what, select, menus {Менютата: все още ги няма в терминалната версия.} file_operations {Файловите операции: все още ги няма в терминалната версия.} servers {Сървърите: все още ги няма в терминалната версия.} other {Тази команда: все още я няма в терминалната версия.}}"
+  },
+  "scmd.picture.broken": {
+    "message": "повредено изображение"
+  },
+  "scmd.picture.broken_page": {
+    "message": "повредена страница"
+  },
+  "scmd.picture.loading": {
+    "message": "Зареждане…"
+  },
+  "scmd.picture.no_page": {
+    "message": "PDF файлът няма такава страница"
+  },
+  "scmd.shell.press_enter": {
+    "message": "Натиснете Enter, за да се върнете в Spark Commander..."
+  },
+  "scmd.sync_browsing.off": {
+    "message": "Синхронизираното разглеждане е изключено."
+  },
+  "scmd.sync_browsing.on": {
+    "message": "Синхронизираното разглеждане е включено."
+  },
+  "scmd.sync_browsing.stopped": {
+    "message": "{err}. Синхронизираното разглеждане е изключено."
+  },
+  "scmd.viewer.column": {
+    "message": "Кол. {column}"
+  },
+  "scmd.viewer.finding": {
+    "message": "търсене…"
+  },
+  "scmd.viewer.key_bar.next": {
+    "message": "Следв."
+  },
+  "scmd.viewer.key_bar.quit": {
+    "message": "Изход"
+  },
+  "scmd.viewer.key_bar.reload": {
+    "message": "Презар"
+  },
+  "scmd.viewer.key_bar.search": {
+    "message": "Търси"
+  },
+  "scmd.viewer.page": {
+    "message": "стр. {page} от {pages}"
+  },
+  "scmd.viewer.reading": {
+    "message": "четене {percent}%"
+  },
+  "scmd.viewer.wrap": {
+    "message": "Пренос"
+  },
+  "scmd.workspace.copy_name": {
+    "message": "{name} копие"
+  },
+  "scmd.workspace.default_name": {
+    "message": "Работно пространство {number}"
+  },
+  "scmd.workspace.delete_question": {
+    "message": "Да се изтрие ли „{name}“? Разделите му ще бъдат забравени."
+  },
+  "scmd.workspace.duplicate_title": {
+    "message": "Дублиране на работно пространство"
+  },
+  "scmd.workspace.last_stays": {
+    "message": "Последното работно пространство остава."
+  },
+  "scmd.workspace.name": {
+    "message": "Име:"
+  },
+  "scmd.workspace.name_or_default": {
+    "message": "Име (празно: {name}):"
+  },
+  "scmd.workspace.new_title": {
+    "message": "Ново работно пространство"
+  },
+  "scmd.workspace.rename_title": {
+    "message": "Преименуване на работно пространство"
+  },
+  "scmd.workspaces.keys": {
+    "message": "Enter Отваряне  F7 Ново  F5 Копие  F2 Преименуване  F8 Изтриване"
+  },
+  "scmd.workspaces.title": {
+    "message": "Работни пространства"
+  },
+  "search.age.days": {
+    "message": "дни"
+  },
+  "search.age.hours": {
+    "message": "часове"
+  },
+  "search.age.minutes": {
+    "message": "минути"
+  },
+  "search.age.months": {
+    "message": "месеци"
+  },
+  "search.age.weeks": {
+    "message": "седмици"
+  },
+  "search.age.years": {
+    "message": "години"
+  },
+  "search.archives": {
+    "message": "Търсене в архиви"
+  },
+  "search.attribute.directory": {
+    "message": "Папка"
+  },
+  "search.attribute.either": {
+    "message": "Без значение"
+  },
+  "search.attribute.executable": {
+    "message": "Изпълним"
+  },
+  "search.attribute.hidden": {
+    "message": "Скрит"
+  },
+  "search.attribute.link": {
+    "message": "Символна връзка"
+  },
+  "search.attribute.must": {
+    "message": "Задължително"
+  },
+  "search.attribute.must_not": {
+    "message": "Задължително не"
+  },
+  "search.attribute.read_only": {
+    "message": "Само за четене"
+  },
+  "search.attributes.label": {
+    "message": "Атрибути:"
+  },
+  "search.between.and": {
+    "message": "и"
+  },
+  "search.between.label": {
+    "message": "Дата между:"
+  },
+  "search.close": {
+    "message": "Затваряне"
+  },
+  "search.depth.all": {
+    "message": "всички (неограничена дълбочина)"
+  },
+  "search.depth.current": {
+    "message": "само текущата папка"
+  },
+  "search.depth.label": {
+    "message": "Търсене в подпапки:"
+  },
+  "search.depth.levels": {
+    "message": "{count, plural, one {# ниво} other {# нива}}"
+  },
+  "search.drives": {
+    "message": "Дискове"
+  },
+  "search.duplicates.content": {
+    "message": "еднакво съдържание"
+  },
+  "search.duplicates.label": {
+    "message": "Търсене на дублирани файлове:"
+  },
+  "search.duplicates.name": {
+    "message": "еднакво име"
+  },
+  "search.duplicates.size": {
+    "message": "еднакъв размер"
+  },
+  "search.edit": {
+    "message": "F4 Редакция"
+  },
+  "search.error.between_days": {
+    "message": "„Дата между“ изисква и двете дати"
+  },
+  "search.error.date": {
+    "message": "{text} не е дата като 2026-11-12"
+  },
+  "search.error.hex": {
+    "message": "{text} не е шестнадесетичен низ като 48 65 6c"
+  },
+  "search.error.keep": {
+    "message": "Търсенето не можа да се запази: {err}"
+  },
+  "search.error.local_time": {
+    "message": "{text} не е валиден местен час"
+  },
+  "search.error.names_regex": {
+    "message": "Регулярният израз на името: {err}"
+  },
+  "search.error.newer_number": {
+    "message": "„Не по-стари от“ изисква число, не {text}"
+  },
+  "search.error.no_place": {
+    "message": "„Търсене в“ не съдържа папка"
+  },
+  "search.error.no_text": {
+    "message": "Не е зададен текст за търсене"
+  },
+  "search.error.older_number": {
+    "message": "„По-стари от“ изисква число, не {text}"
+  },
+  "search.error.save": {
+    "message": "Търсенията не можаха да се запазят: {err}"
+  },
+  "search.error.size_number": {
+    "message": "„Размер на файла“ изисква число, не {text}"
+  },
+  "search.error.text_regex": {
+    "message": "Регулярният израз на текста: {err}"
+  },
+  "search.feed": {
+    "message": "Към панела"
+  },
+  "search.go_to_file": {
+    "message": "Към файла"
+  },
+  "search.in_found": {
+    "message": "F2 Търсене в намерените файлове"
+  },
+  "search.locate": {
+    "message": "От индекса на locate"
+  },
+  "search.names.label": {
+    "message": "Търсене на:"
+  },
+  "search.names.placeholder": {
+    "message": "*.txt *.md | backup*  (празно: всички)"
+  },
+  "search.new": {
+    "message": "Ново търсене"
+  },
+  "search.newer.label": {
+    "message": "Не по-стари от:"
+  },
+  "search.older.label": {
+    "message": "По-стари от:"
+  },
+  "search.only_selected": {
+    "message": "Търсене само в избраните файлове/папки"
+  },
+  "search.only_selected_count": {
+    "message": "{count, plural, one {Търсене само в # избран} other {Търсене само в # избрани}}"
+  },
+  "search.page.advanced": {
+    "message": "Разширени"
+  },
+  "search.page.general": {
+    "message": "Общи"
+  },
+  "search.page.load_save": {
+    "message": "Зареждане/запазване"
+  },
+  "search.places.browse_prompt": {
+    "message": "Търсене в"
+  },
+  "search.places.label": {
+    "message": "Търсене в:"
+  },
+  "search.places.placeholder": {
+    "message": "Папки, разделени с ;"
+  },
+  "search.regex": {
+    "message": "RegEx"
+  },
+  "search.results.label": {
+    "message": "Резултати от търсенето:"
+  },
+  "search.saved.delete": {
+    "message": "Изтриване"
+  },
+  "search.saved.label": {
+    "message": "Предишни търсения:"
+  },
+  "search.saved.load": {
+    "message": "Зареждане"
+  },
+  "search.saved.name_first": {
+    "message": "Първо наименувайте търсенето."
+  },
+  "search.saved.name_placeholder": {
+    "message": "Име на търсенето"
+  },
+  "search.saved.save": {
+    "message": "Запазване"
+  },
+  "search.size.label": {
+    "message": "Размер на файла:"
+  },
+  "search.start": {
+    "message": "Търсене"
+  },
+  "search.status.found": {
+    "message": "Намерени: {files, plural, one {# файл} other {# файла}} и {dirs, plural, one {# папка} other {# папки}}"
+  },
+  "search.status.searching": {
+    "message": "Търсене…"
+  },
+  "search.status.searching_in": {
+    "message": "Търсене: {folder}"
+  },
+  "search.status.stopped": {
+    "message": "Спряно: {counts}"
+  },
+  "search.stop": {
+    "message": "Спиране"
+  },
+  "search.text.ansi": {
+    "message": "ANSI (кодова таблица {page})"
+  },
+  "search.text.case_sensitive": {
+    "message": "Съобразяване с регистъра"
+  },
+  "search.text.hex": {
+    "message": "Hex"
+  },
+  "search.text.label": {
+    "message": "Текст:"
+  },
+  "search.text.not_containing": {
+    "message": "Файлове, които НЕ съдържат текста"
+  },
+  "search.text.office": {
+    "message": "Офис файлове (docx, xlsx, pptx, odt…)"
+  },
+  "search.text.placeholder": {
+    "message": "Текст за търсене"
+  },
+  "search.text.whole_words": {
+    "message": "Само цели думи"
+  },
+  "search.title": {
+    "message": "Търсене на файлове"
+  },
+  "search.unit.bytes": {
+    "message": "байта"
+  },
+  "search.view": {
+    "message": "F3 Преглед"
+  },
+  "settings.addons.builtin_version": {
+    "message": "{version}, включено в Spark Commander"
+  },
+  "settings.addons.check_daily": {
+    "message": "Проверка за обновления на добавките при стартиране и ежедневно, с предложение за инсталиране"
+  },
+  "settings.addons.check_failed": {
+    "message": "Обновленията не можаха да се проверят: {err}"
+  },
+  "settings.addons.check_now": {
+    "message": "Проверка сега"
+  },
+  "settings.addons.checking": {
+    "message": "Проверка за обновления..."
+  },
+  "settings.addons.download": {
+    "message": "Изтегляне"
+  },
+  "settings.addons.downloading": {
+    "message": "Изтегляне: {done} от {size}"
+  },
+  "settings.addons.file": {
+    "message": "Файл"
+  },
+  "settings.addons.installed.builtin": {
+    "message": "включено в Spark Commander"
+  },
+  "settings.addons.installed.label": {
+    "message": "Инсталирано"
+  },
+  "settings.addons.installed.none": {
+    "message": "няма"
+  },
+  "settings.addons.intro": {
+    "message": "Spark Commander използва тези програми от други проекти за част от работата си. Добавките се изтеглят отделно, когато решите; 7-Zip и PDFium са включени в него."
+  },
+  "settings.addons.never_offer": {
+    "message": "Никога да не се предлагат добавки, когато файл има нужда от такава"
+  },
+  "settings.addons.offers": {
+    "message": "Предложения и обновления"
+  },
+  "settings.addons.online.label": {
+    "message": "Онлайн"
+  },
+  "settings.addons.online.looking": {
+    "message": "проверка..."
+  },
+  "settings.addons.online.none": {
+    "message": "няма за тази система"
+  },
+  "settings.addons.online.not_yet": {
+    "message": "все още не е проверено"
+  },
+  "settings.addons.online.unknown": {
+    "message": "неизвестно"
+  },
+  "settings.addons.remove": {
+    "message": "Премахване"
+  },
+  "settings.addons.up_to_date": {
+    "message": "Списъкът с добавки е актуален."
+  },
+  "settings.addons.version": {
+    "message": "Версия"
+  },
+  "settings.addons.website": {
+    "message": "Уебсайт"
+  },
+  "settings.appearance.title": {
+    "message": "Облик"
+  },
+  "settings.apply": {
+    "message": "Прилагане"
+  },
+  "settings.backdrop.blur": {
+    "message": "Размазване на работния плот отзад"
+  },
+  "settings.backdrop.clear": {
+    "message": "0%, само работният плот"
+  },
+  "settings.backdrop.cover": {
+    "message": "Колко покрива работния плот отзад:"
+  },
+  "settings.backdrop.opacity": {
+    "message": "{opacity}%"
+  },
+  "settings.backdrop.sidebar": {
+    "message": "Странична лента"
+  },
+  "settings.backdrop.solid": {
+    "message": "100%, плътно"
+  },
+  "settings.backdrop.terminal": {
+    "message": "Терминал"
+  },
+  "settings.cancel": {
+    "message": "Отказ"
+  },
+  "settings.date.as_system": {
+    "message": "Като системата: {date}"
+  },
+  "settings.date.custom": {
+    "message": "Персонализиран:"
+  },
+  "settings.date.pattern_help": {
+    "message": "yyyy година, MM месец (MMM името му), dd ден (ddd денят от седмицата)"
+  },
+  "settings.date.shown_as": {
+    "message": "Показва се като"
+  },
+  "settings.date.shown_as_note": {
+    "message": "в списъците с файлове; диалозите добавят и секундите"
+  },
+  "settings.date.title": {
+    "message": "Дата"
+  },
+  "settings.editor.browse": {
+    "message": "Избор..."
+  },
+  "settings.editor.choose": {
+    "message": "Избиране"
+  },
+  "settings.editor.external": {
+    "message": "Външен редактор (Ctrl+Shift+F4):"
+  },
+  "settings.editor.external_help": {
+    "message": "%1 е файлът, иначе той се добавя накрая; напр. code --wait %1"
+  },
+  "settings.editor.limit": {
+    "message": "Вграденият редактор (F4) отваря файлове до"
+  },
+  "settings.editor.limit_unit": {
+    "message": "MB"
+  },
+  "settings.editor.title": {
+    "message": "Редактор за F4"
+  },
+  "settings.error.no_folder": {
+    "message": "няма папка за конфигурация"
+  },
+  "settings.files_shown.hidden": {
+    "message": "Скрити файлове"
+  },
+  "settings.files_shown.system": {
+    "message": "Системни файлове"
+  },
+  "settings.files_shown.title": {
+    "message": "Показвани файлове"
+  },
+  "settings.font.as_system": {
+    "message": "Като системата"
+  },
+  "settings.font.chosen": {
+    "message": "Избран; системният е {family}, {size}"
+  },
+  "settings.font.fixed": {
+    "message": "Визуализатор"
+  },
+  "settings.font.fixed_note": {
+    "message": "Само шрифтове с фиксирана ширина; използва се и от редактора и от сравняването на файлове."
+  },
+  "settings.font.main": {
+    "message": "Шрифт на главния прозорец"
+  },
+  "settings.font.system": {
+    "message": "Системният шрифт"
+  },
+  "settings.language.system": {
+    "message": "Език на системата"
+  },
+  "settings.language.system_named": {
+    "message": "Език на системата: {language}"
+  },
+  "settings.language.title": {
+    "message": "Език"
+  },
+  "settings.menus.automatic": {
+    "message": "Автоматично: бутон ☰ в GNOME, лента с менюта другаде"
+  },
+  "settings.menus.bar": {
+    "message": "Лента с менюта"
+  },
+  "settings.menus.button": {
+    "message": "Бутон ☰ в заглавната лента"
+  },
+  "settings.menus.title": {
+    "message": "Менюта"
+  },
+  "settings.ok": {
+    "message": "OK"
+  },
+  "settings.page.addons": {
+    "message": "Добавки"
+  },
+  "settings.page.date": {
+    "message": "Дата"
+  },
+  "settings.page.display": {
+    "message": "Показване"
+  },
+  "settings.page.edit_view": {
+    "message": "Редактиране/Преглед"
+  },
+  "settings.page.font": {
+    "message": "Шрифт"
+  },
+  "settings.page.language": {
+    "message": "Език"
+  },
+  "settings.page.layout": {
+    "message": "Оформление"
+  },
+  "settings.page.operations": {
+    "message": "Операции"
+  },
+  "settings.page.passwords": {
+    "message": "Пароли"
+  },
+  "settings.page.terminal": {
+    "message": "Терминал"
+  },
+  "settings.page.toolbar": {
+    "message": "Лента с инструменти"
+  },
+  "settings.passwords.change_master": {
+    "message": "Промяна на главната парола…"
+  },
+  "settings.passwords.locked": {
+    "message": "Те са заключени на този компютър: главната парола ги отключва."
+  },
+  "settings.passwords.master_set": {
+    "message": "Зададена е главна парола: при копиране на папката с настройки те се отварят на друг компютър, след като я въведете там."
+  },
+  "settings.passwords.no_master": {
+    "message": "Не е зададена главна парола: при копиране на папката с настройки те не се отварят на друг компютър; там се въвеждат отново."
+  },
+  "settings.passwords.not_removed": {
+    "message": "Главната парола не беше премахната: {err}"
+  },
+  "settings.passwords.remove_master": {
+    "message": "Премахване на главната парола"
+  },
+  "settings.passwords.saved": {
+    "message": "{count, plural, one {# парола е запазена} other {# пароли са запазени}} (на сървъри, споделени ресурси, шифровани дискове), шифровани в папката с настройки; ключът, който ги отваря, е в ключодържателя на този компютър."
+  },
+  "settings.passwords.set_master": {
+    "message": "Задаване на главна парола…"
+  },
+  "settings.passwords.title": {
+    "message": "Запазени пароли"
+  },
+  "settings.passwords.unlock": {
+    "message": "Отключване…"
+  },
+  "settings.queue.clear_after": {
+    "message": "Изчистване на завършените операции след"
+  },
+  "settings.queue.clear_after_help": {
+    "message": "0: веднага щом завършат. Неуспешните и отменените остават, докато не бъдат изчистени."
+  },
+  "settings.queue.clear_after_unit": {
+    "message": "минути"
+  },
+  "settings.queue.download_limit": {
+    "message": "Ограничение на скоростта на изтегляне"
+  },
+  "settings.queue.download_limit_help": {
+    "message": "„Изтегляне от уеб адрес“ и копирането от FTP и SFTP сървъри, включително текущите. 0: без ограничение."
+  },
+  "settings.queue.download_limit_unit": {
+    "message": "KB/s"
+  },
+  "settings.queue.title": {
+    "message": "Опашка с операции"
+  },
+  "settings.shell.default": {
+    "message": "По подразбиране: {shell}"
+  },
+  "settings.shell.note": {
+    "message": "Новите раздели с терминал я стартират."
+  },
+  "settings.shell.title": {
+    "message": "Обвивка"
+  },
+  "settings.sort_folders.by_name": {
+    "message": "Винаги по име"
+  },
+  "settings.sort_folders.like_files": {
+    "message": "Като файловете (също по време)"
+  },
+  "settings.sort_folders.title": {
+    "message": "Сортиране на папките"
+  },
+  "settings.tabs.header_always": {
+    "message": "Показване на лентата с раздели и когато има само един раздел"
+  },
+  "settings.tabs.title": {
+    "message": "Раздели с папки"
+  },
+  "settings.time.as_system": {
+    "message": "Като системата"
+  },
+  "settings.time.h12": {
+    "message": "12-часов (2:05 PM)"
+  },
+  "settings.time.h24": {
+    "message": "24-часов (14:05)"
+  },
+  "settings.time.title": {
+    "message": "Час"
+  },
+  "settings.title": {
+    "message": "Настройки"
+  },
+  "settings.toolbar.add": {
+    "message": "Добавяне на бутон…"
+  },
+  "settings.toolbar.move_down": {
+    "message": "Преместване надолу"
+  },
+  "settings.toolbar.move_up": {
+    "message": "Преместване нагоре"
+  },
+  "settings.toolbar.place": {
+    "message": "Под лентата с менюта; в заглавната лента, когато менютата са зад бутона ☰, както при приложенията на GNOME. Без бутони лентата не се показва."
+  },
+  "settings.toolbar.remove": {
+    "message": "Премахване"
+  },
+  "settings.toolbar.replace": {
+    "message": "Замяна…"
+  },
+  "settings.toolbar.restore_default": {
+    "message": "Възстановяване по подразбиране"
+  },
+  "settings.toolbar.title": {
+    "message": "Бутони на лентата с инструменти"
+  },
+  "settings.viewer.font.ansi": {
+    "message": "ANSI (Windows)"
+  },
+  "settings.viewer.font.ascii": {
+    "message": "ASCII (DOS)"
+  },
+  "settings.viewer.font.auto": {
+    "message": "Автоматично"
+  },
+  "settings.viewer.font.label": {
+    "message": "Шрифт при стартиране:"
+  },
+  "settings.viewer.font.variable": {
+    "message": "Променлива ширина"
+  },
+  "settings.viewer.minimap": {
+    "message": "Мини карта"
+  },
+  "settings.viewer.show": {
+    "message": "Показване:"
+  },
+  "settings.viewer.start.auto": {
+    "message": "Автоматично"
+  },
+  "settings.viewer.start.binary": {
+    "message": "Двоично"
+  },
+  "settings.viewer.start.hex": {
+    "message": "Hex"
+  },
+  "settings.viewer.start.label": {
+    "message": "Изглед при стартиране:"
+  },
+  "settings.viewer.start.text": {
+    "message": "Текст"
+  },
+  "settings.viewer.title": {
+    "message": "Визуализатор за F3"
+  },
+  "settings.viewer.width.binary": {
+    "message": "Двоично"
+  },
+  "settings.viewer.width.label": {
+    "message": "Ширина на изгледа (знаци):"
+  },
+  "settings.viewer.width.text": {
+    "message": "Текст"
+  },
+  "settings.viewer.wrap": {
+    "message": "Пренасяне на текста"
+  },
+  "shells.command_prompt": {
+    "message": "Команден ред"
+  },
+  "sidebar.device.no_files": {
+    "message": "не споделя файлове"
+  },
+  "sidebar.device.not_answering": {
+    "message": "{name} не отговаря: отключете го и отворете KDE Connect на него, след това прочетете папката отново (F2)."
+  },
+  "sidebar.device.not_answering_error": {
+    "message": "{name} не отговаря ({err}): отключете го и отворете KDE Connect на него."
+  },
+  "sidebar.device.not_connected": {
+    "message": "не е свързан"
+  },
+  "sidebar.device.opening": {
+    "message": "Отваряне на {name}..."
+  },
+  "sidebar.device.reconnecting": {
+    "message": "{name} не отговаря: повторно свързване..."
+  },
+  "sidebar.device.unmount_failed": {
+    "message": "{name}: не можа да се демонтира: {err}"
+  },
+  "sidebar.group.bookmarks": {
+    "message": "Отметки"
+  },
+  "sidebar.group.cloud": {
+    "message": "Облак"
+  },
+  "sidebar.group.devices": {
+    "message": "Устройства"
+  },
+  "sidebar.group.drives": {
+    "message": "Дискове"
+  },
+  "sidebar.group.network": {
+    "message": "Мрежа"
+  },
+  "sidebar.section.connections": {
+    "message": "Връзки"
+  },
+  "sidebar.section.folders": {
+    "message": "Папки"
+  },
+  "sidebar.section.operations": {
+    "message": "Операции"
+  },
+  "sidebar.section.places": {
+    "message": "Места"
+  },
+  "sidebar.volume.locked": {
+    "message": "заключен"
+  },
+  "sidebar.volume.mounting": {
+    "message": "Монтиране на {name}..."
+  },
+  "sidebar.volume.not_mounted": {
+    "message": "не е монтиран"
+  },
+  "sidebar.volume.open": {
+    "message": "Отваряне"
+  },
+  "sidebar.volume.space": {
+    "message": "{free} свободни от {total}"
+  },
+  "sidebar.volume.unmount": {
+    "message": "Демонтиране"
+  },
+  "sidebar.volume.unmount_failed": {
+    "message": "Не можа да се демонтира: {err}"
+  },
+  "split.bad_size": {
+    "message": "„{size}“ не е размер: 100 MB, 1.5 GB, 650m"
+  },
+  "split.choose": {
+    "message": "Поставете курсора върху файла за разделяне."
+  },
+  "split.combine.choose": {
+    "message": "Поставете курсора върху част (name.001) или върху нейния .crc файл."
+  },
+  "split.combine.dialog_title": {
+    "message": "Обединяване на файлове"
+  },
+  "split.combine.label": {
+    "message": "Обединяване на частите във файла:"
+  },
+  "split.combine.title": {
+    "message": "Обединяване на „{name}“"
+  },
+  "split.combined_no_crc": {
+    "message": "{count, plural, one {# част е обединена, няма CRC файл за проверка} other {# части са обединени, няма CRC файл за проверка}}"
+  },
+  "split.crc_mismatch": {
+    "message": "{target} не съвпада с {file}: някоя част липсва или е повредена"
+  },
+  "split.crc_names_no_file": {
+    "message": "CRC файлът не посочва файл"
+  },
+  "split.crc_unreadable": {
+    "message": "обединено, но {file} не можа да се прочете: {err}"
+  },
+  "split.dialog_title": {
+    "message": "Разделяне на файл"
+  },
+  "split.label": {
+    "message": "Разделяне на „{name}“ на части в папката:"
+  },
+  "split.part_missing": {
+    "message": "{path} липсва"
+  },
+  "split.part_size": {
+    "message": "Размер на частта:"
+  },
+  "split.title": {
+    "message": "Разделяне на „{name}“"
+  },
+  "sync.close": {
+    "message": "Затваряне"
+  },
+  "sync.column.date": {
+    "message": "Дата"
+  },
+  "sync.column.name": {
+    "message": "Име"
+  },
+  "sync.column.size": {
+    "message": "Размер"
+  },
+  "sync.compare": {
+    "message": "Сравняване"
+  },
+  "sync.confirm.copy_left": {
+    "message": "Копиране на {count} наляво ({size})"
+  },
+  "sync.confirm.copy_right": {
+    "message": "Копиране на {count} надясно ({size})"
+  },
+  "sync.confirm.delete_left": {
+    "message": "Изтриване на {count} отляво"
+  },
+  "sync.confirm.delete_right": {
+    "message": "Изтриване на {count} отдясно"
+  },
+  "sync.confirm.ok": {
+    "message": "Синхронизиране"
+  },
+  "sync.confirm.text": {
+    "message": "{actions}. Копираните файлове заменят наличните там.{trash, select, yes { Изтритите на този компютър отиват в кошчето.} other {}}"
+  },
+  "sync.confirm.title": {
+    "message": "Синхронизиране"
+  },
+  "sync.error.changed": {
+    "message": "променено след сравнението; сравнете отново"
+  },
+  "sync.error.compare": {
+    "message": "Не можа да се сравни: {err}"
+  },
+  "sync.error.no_folders": {
+    "message": "„Синхронизиране на папки“ сравнява две папки: никой от панелите не бива да показва архив или резултати от търсене."
+  },
+  "sync.left": {
+    "message": "Ляво"
+  },
+  "sync.mask.label": {
+    "message": "Файлове:"
+  },
+  "sync.option.asymmetric": {
+    "message": "Асиметрично (дясното става копие на лявото)"
+  },
+  "sync.option.by_content": {
+    "message": "По съдържание"
+  },
+  "sync.option.ignore_date": {
+    "message": "Без датата"
+  },
+  "sync.option.subfolders": {
+    "message": "Подпапки"
+  },
+  "sync.result.done": {
+    "message": "{count, plural, one {# синхронизиран} other {# синхронизирани}}"
+  },
+  "sync.result.failed": {
+    "message": "{count, plural, one {# несинхронизиран} other {# несинхронизирани}}; {first}"
+  },
+  "sync.right": {
+    "message": "Дясно"
+  },
+  "sync.show.equal": {
+    "message": "= еднакви"
+  },
+  "sync.show.label": {
+    "message": "Показване:"
+  },
+  "sync.show.other": {
+    "message": "≠ без действие"
+  },
+  "sync.show.to_left": {
+    "message": "← наляво"
+  },
+  "sync.show.to_right": {
+    "message": "→ надясно"
+  },
+  "sync.status.both_empty": {
+    "message": "И двете са празни."
+  },
+  "sync.status.comparing": {
+    "message": "Сравняване на {folder}"
+  },
+  "sync.status.counts": {
+    "message": "{right} за копиране надясно, {left} за копиране наляво, {delete} за изтриване, {equal} еднакви, {alone} без действие"
+  },
+  "sync.status.stopped": {
+    "message": "Спряно."
+  },
+  "sync.stop": {
+    "message": "Спиране"
+  },
+  "sync.synchronize": {
+    "message": "Синхронизиране..."
+  },
+  "sync.task.title": {
+    "message": "Синхронизиране на {left} и {right}"
+  },
+  "sync.title": {
+    "message": "Синхронизиране на папки"
+  },
+  "tab_menu.close_all_tabs": {
+    "message": "Затваряне на всички раздели"
+  },
+  "tab_menu.close_duplicate_tabs": {
+    "message": "Затваряне на дублираните раздели"
+  },
+  "tab_menu.close_tab": {
+    "message": "Затваряне на този раздел"
+  },
+  "tab_menu.copy_tab_to_other_panel": {
+    "message": "Копиране на раздела в другия панел"
+  },
+  "tab_menu.duplicate_tab": {
+    "message": "Дублиране на този раздел"
+  },
+  "tab_menu.list_tabs": {
+    "message": "Показване на списък с всички раздели"
+  },
+  "tab_menu.lock_tab": {
+    "message": "Заключване на този раздел"
+  },
+  "tab_menu.none": {
+    "message": "(няма)"
+  },
+  "tab_menu.rename_tab": {
+    "message": "Преименуване на раздела..."
+  },
+  "tabs.error.reopen": {
+    "message": "Разделът не можа да се отвори отново: {err}"
+  },
+  "tabs.history.empty": {
+    "message": "В историята на този раздел все още няма папки."
+  },
+  "tabs.new": {
+    "message": "Нов раздел"
+  },
+  "tabs.rename.label": {
+    "message": "Ново име:"
+  },
+  "tabs.rename.title": {
+    "message": "Преименуване на раздел"
+  },
+  "tabs.search_results": {
+    "message": "Резултати от търсене"
+  },
+  "terminal.busy": {
+    "message": "В терминала работи програма: изпълнете командата, след като тя приключи."
+  },
+  "terminal.close.idle": {
+    "message": "Да се затвори ли този раздел с терминал? Обвивката му ще бъде прекратена."
+  },
+  "terminal.close.ok": {
+    "message": "Затваряне"
+  },
+  "terminal.close.running": {
+    "message": "Да се затвори ли този раздел с терминал? Програмата, която работи в него, ще бъде спряна."
+  },
+  "terminal.close.title": {
+    "message": "Затваряне на раздел"
+  },
+  "terminal.error.start_shell": {
+    "message": "Обвивката не можа да се стартира: {err}"
+  },
+  "terminal.jump_to_bottom": {
+    "message": "Към края (Ctrl+End) ↓"
+  },
+  "terminal.menu.copy": {
+    "message": "Копиране"
+  },
+  "terminal.menu.paste": {
+    "message": "Поставяне"
+  },
+  "toolbar.customize": {
+    "message": "Персонализиране на лентата с инструменти…"
+  },
+  "tools.clear_key": {
+    "message": "Изчистване"
+  },
+  "tools.close": {
+    "message": "Затваряне"
+  },
+  "tools.delete": {
+    "message": "Изтриване"
+  },
+  "tools.empty": {
+    "message": "Все още няма инструменти: „Нов...“ добавя такъв."
+  },
+  "tools.field.command": {
+    "message": "Команда"
+  },
+  "tools.field.key": {
+    "message": "Клавиш"
+  },
+  "tools.field.name": {
+    "message": "Име"
+  },
+  "tools.intro": {
+    "message": "Вашите собствени командни редове в менюто „Инструменти“: щракнете върху някой там или натиснете неговия клавиш."
+  },
+  "tools.key.none": {
+    "message": "Няма"
+  },
+  "tools.key.waiting": {
+    "message": "Натиснете клавиша... (Esc: без)"
+  },
+  "tools.move_down": {
+    "message": "Преместване надолу"
+  },
+  "tools.move_up": {
+    "message": "Преместване нагоре"
+  },
+  "tools.name.placeholder": {
+    "message": "Сравняване с другата страна"
+  },
+  "tools.new": {
+    "message": "Нов..."
+  },
+  "tools.new_name": {
+    "message": "Инструмент {number}"
+  },
+  "tools.no_command": {
+    "message": "{tool} все още няма команда: Инструменти > Управление на инструментите."
+  },
+  "tools.not_local": {
+    "message": "Инструментите се изпълняват на този компютър: панелът показва сървър или архив."
+  },
+  "tools.note.key_of_command": {
+    "message": "{key} е също {command}: инструментът го поема."
+  },
+  "tools.note.key_of_other_tool": {
+    "message": "{key} е и на {tool}: поема го по-долният в списъка."
+  },
+  "tools.placeholders": {
+    "message": "%P папката на този панел, %T тази на другия (и двете завършват с разделител, така че \"%P%N\" е път), %N файлът под курсора, %O името му без разширението, %E разширението, %S избраните файлове (иначе този под курсора), всеки в кавички; %% е знакът %. Сложете кавички около останалото: \"%P%N\"."
+  },
+  "tools.run_in_terminal": {
+    "message": "Изпълнение в терминала, за да се вижда какво извежда"
+  },
+  "tools.set_key": {
+    "message": "Задаване на клавиш..."
+  },
+  "tools.title": {
+    "message": "Инструменти"
+  },
+  "transfer.answer.cancel": {
+    "message": "Отказ"
+  },
+  "transfer.answer.elevate": {
+    "message": "Като администратор"
+  },
+  "transfer.answer.overwrite": {
+    "message": "Презаписване"
+  },
+  "transfer.answer.overwrite_all": {
+    "message": "Презаписване на всички"
+  },
+  "transfer.answer.rename": {
+    "message": "Преименуване"
+  },
+  "transfer.answer.retry": {
+    "message": "Нов опит"
+  },
+  "transfer.answer.skip": {
+    "message": "Пропускане"
+  },
+  "transfer.answer.skip_all": {
+    "message": "Пропускане на всички"
+  },
+  "transfer.archive.local_only": {
+    "message": "В архив могат да влизат само файлове от този компютър: първо ги копирайте тук."
+  },
+  "transfer.cancel": {
+    "message": "Отказ"
+  },
+  "transfer.error.elevate_hint": {
+    "message": "Като администратор: това и всичко друго отказано, след като останалото приключи, с еднократно питане за паролата."
+  },
+  "transfer.error.title": {
+    "message": "Грешка"
+  },
+  "transfer.exists.describe": {
+    "message": "{count, plural, one {{size} байт, {time}} other {{size} байта, {time}}}"
+  },
+  "transfer.exists.text": {
+    "message": "Наличен: {existing}\nНов: {new}"
+  },
+  "transfer.exists.title": {
+    "message": "Файлът съществува"
+  },
+  "transfer.extract_failed": {
+    "message": "Не можаха да се извлекат: {err}"
+  },
+  "transfer.into_archive.question_many": {
+    "message": "{kind, select, copy {{count, plural, one {Да се копира ли # елемент} other {Да се копират ли # елемента}}} other {{count, plural, one {Да се премести ли # елемент} other {Да се преместят ли # елемента}}}} в {into}? Каквото има там със същите имена, ще бъде заменено."
+  },
+  "transfer.into_archive.question_one": {
+    "message": "{kind, select, copy {Да се копира ли} other {Да се премести ли}} „{name}“ в {into}? Каквото има там със същото име, ще бъде заменено."
+  },
+  "transfer.into_archive.title_many": {
+    "message": "{kind, select, copy {Копиране} other {Преместване}} на {count, plural, one {# елемент} other {# елемента}} в {archive}"
+  },
+  "transfer.into_archive.title_one": {
+    "message": "{kind, select, copy {Копиране} other {Преместване}} на „{name}“ в {archive}"
+  },
+  "transfer.label.many": {
+    "message": "{kind, select, copy {Копиране} other {Преместване}} на {count, plural, one {# елемент} other {# елемента}} в:"
+  },
+  "transfer.label.many_server": {
+    "message": "{kind, select, copy {Копиране} other {Преместване}} на {count, plural, one {# елемент} other {# елемента}} в {server}:"
+  },
+  "transfer.label.one": {
+    "message": "{kind, select, copy {Копиране} other {Преместване}} на „{name}“ в:"
+  },
+  "transfer.label.one_server": {
+    "message": "{kind, select, copy {Копиране} other {Преместване}} на „{name}“ в {server}:"
+  },
+  "transfer.ok": {
+    "message": "OK"
+  },
+  "transfer.overwrite.all": {
+    "message": "Презаписване на всички"
+  },
+  "transfer.overwrite.ask": {
+    "message": "Питане"
+  },
+  "transfer.overwrite.label": {
+    "message": "Когато в целта има файл със същото име:"
+  },
+  "transfer.overwrite.older": {
+    "message": "Презаписване на по-старите"
+  },
+  "transfer.overwrite.rename": {
+    "message": "Преименуване на копията"
+  },
+  "transfer.overwrite.skip": {
+    "message": "Пропускане на всички"
+  },
+  "transfer.remove_moved": {
+    "message": "Премахване на преместените от {name}"
+  },
+  "transfer.speed": {
+    "message": "{size}/s"
+  },
+  "transfer.strip.counting": {
+    "message": "преброяване: {count, plural, one {# файл} other {# файла}}"
+  },
+  "transfer.strip.progress": {
+    "message": "{files} / {count, plural, one {# файл} other {# файла}}, {percent}%"
+  },
+  "transfer.strip.queue": {
+    "message": "Опашка..."
+  },
+  "transfer.strip.queue_waiting": {
+    "message": "Опашка ({count, plural, one {# изчаква} other {# изчакват}})..."
+  },
+  "transfer.title.copy": {
+    "message": "Копиране"
+  },
+  "transfer.title.move": {
+    "message": "Преместване"
+  },
+  "viewer.as_text_hint": {
+    "message": "{err}. 1 показва файла като текст."
+  },
+  "viewer.book.cannot_read": {
+    "message": "Тази книга не може да се прочете: {err}. 1 показва файла като текст."
+  },
+  "viewer.book.continuing": {
+    "message": "Продължава от {percent}"
+  },
+  "viewer.book.error.compression": {
+    "message": "компресирана по начин, който все още не се чете ({compression})"
+  },
+  "viewer.book.error.damaged": {
+    "message": "повредена книга"
+  },
+  "viewer.book.error.damaged_zip": {
+    "message": "повреден zip"
+  },
+  "viewer.book.error.drm": {
+    "message": "защитена с DRM: само Kindle може да я прочете"
+  },
+  "viewer.book.error.huffman": {
+    "message": "компресирана като собствените книги на Amazon (HUFF/CDIC), което все още не се чете"
+  },
+  "viewer.book.error.missing_part": {
+    "message": "{name} не е в книгата"
+  },
+  "viewer.book.error.no_package": {
+    "message": "в книгата няма файл на пакета"
+  },
+  "viewer.book.error.no_text": {
+    "message": "книгата няма текст"
+  },
+  "viewer.book.error.not_zip": {
+    "message": "не е zip: повредена или защитена с DRM книга?"
+  },
+  "viewer.book.error.zip_method": {
+    "message": "{name}: компресиран с метод на zip, който не се чете тук ({method})"
+  },
+  "viewer.cannot_show": {
+    "message": "Не може да се покаже: {err}"
+  },
+  "viewer.convert.failed": {
+    "message": "{tool} не можа да го преобразува ({status})"
+  },
+  "viewer.converting": {
+    "message": "Преобразуване с {tool}…"
+  },
+  "viewer.copy.too_large": {
+    "message": "Избор над {megabytes} MB не се копира."
+  },
+  "viewer.encoding.cp1250": {
+    "message": "Източна Европа (1250)"
+  },
+  "viewer.encoding.cp1251": {
+    "message": "Кирилица Windows (1251)"
+  },
+  "viewer.encoding.cp1252": {
+    "message": "Западна Latin1 (1252)"
+  },
+  "viewer.encoding.cp1253": {
+    "message": "Гръцки (1253)"
+  },
+  "viewer.encoding.cp1254": {
+    "message": "Турски (1254)"
+  },
+  "viewer.encoding.cp1255": {
+    "message": "Иврит (1255)"
+  },
+  "viewer.encoding.cp1256": {
+    "message": "Арабски (1256)"
+  },
+  "viewer.encoding.cp1257": {
+    "message": "Балтийски (1257)"
+  },
+  "viewer.encoding.cp1258": {
+    "message": "Виетнамски (1258)"
+  },
+  "viewer.encoding.cp20866": {
+    "message": "Кирилица KOI8-R (20866)"
+  },
+  "viewer.encoding.cp437": {
+    "message": "DOS-USA (437)"
+  },
+  "viewer.encoding.cp850": {
+    "message": "DOS-LATIN1 (850)"
+  },
+  "viewer.encoding.cp852": {
+    "message": "DOS Централна Европа (852)"
+  },
+  "viewer.encoding.cp866": {
+    "message": "DOS кирилица (866)"
+  },
+  "viewer.encoding.cp874": {
+    "message": "Тайландски (874)"
+  },
+  "viewer.encoding.cp932": {
+    "message": "Японски (932)"
+  },
+  "viewer.encoding.cp936": {
+    "message": "Китайски, континентален (936)"
+  },
+  "viewer.encoding.cp949": {
+    "message": "Корейски (949)"
+  },
+  "viewer.encoding.cp950": {
+    "message": "Китайски, Тайван (950)"
+  },
+  "viewer.find.not_found": {
+    "message": "Не е намерено: {text}"
+  },
+  "viewer.find.not_hex": {
+    "message": "Не е шестнадесетичен низ: {text}"
+  },
+  "viewer.find.nothing": {
+    "message": "Няма какво да се търси."
+  },
+  "viewer.find.save_failed": {
+    "message": "Търсенията не можаха да се запазят: {err}"
+  },
+  "viewer.loading": {
+    "message": "Зареждане…"
+  },
+  "viewer.markdown.too_large": {
+    "message": "Над {megabytes} MB: 1 го показва като текст."
+  },
+  "viewer.menu.binary": {
+    "message": "Двоичен (фиксирана дължина на реда)"
+  },
+  "viewer.menu.book": {
+    "message": "Книга (EPUB, FB2)"
+  },
+  "viewer.menu.close": {
+    "message": "Затваряне"
+  },
+  "viewer.menu.configure": {
+    "message": "Конфигуриране..."
+  },
+  "viewer.menu.copy_hex": {
+    "message": "Копиране като шестнадесетични знаци"
+  },
+  "viewer.menu.copy_text": {
+    "message": "Копиране като текст"
+  },
+  "viewer.menu.edit": {
+    "message": "Редактиране"
+  },
+  "viewer.menu.encoding": {
+    "message": "Кодиране"
+  },
+  "viewer.menu.file": {
+    "message": "Файл"
+  },
+  "viewer.menu.find": {
+    "message": "Търсене..."
+  },
+  "viewer.menu.find_next": {
+    "message": "Търсене напред"
+  },
+  "viewer.menu.fit_image": {
+    "message": "Побиране на изображението в прозореца"
+  },
+  "viewer.menu.font_ansi": {
+    "message": "ANSI (знаци на Windows)"
+  },
+  "viewer.menu.font_ascii": {
+    "message": "ASCII (знаци на DOS)"
+  },
+  "viewer.menu.font_page": {
+    "message": "Според шрифта"
+  },
+  "viewer.menu.font_variable": {
+    "message": "Променлива ширина на знаците"
+  },
+  "viewer.menu.hex": {
+    "message": "Hex"
+  },
+  "viewer.menu.html": {
+    "message": "HTML текст (без тагове)"
+  },
+  "viewer.menu.minimap": {
+    "message": "Мини карта"
+  },
+  "viewer.menu.next_file": {
+    "message": "Следващ файл"
+  },
+  "viewer.menu.only_larger": {
+    "message": "Побиране само на по-големите изображения"
+  },
+  "viewer.menu.open": {
+    "message": "Отваряне..."
+  },
+  "viewer.menu.options": {
+    "message": "Опции"
+  },
+  "viewer.menu.picture": {
+    "message": "Изображение/мултимедия"
+  },
+  "viewer.menu.previous_file": {
+    "message": "Предишен файл"
+  },
+  "viewer.menu.reload": {
+    "message": "Презареждане"
+  },
+  "viewer.menu.save_as": {
+    "message": "Запазване като..."
+  },
+  "viewer.menu.search_google": {
+    "message": "Търсене на избрания текст в Google"
+  },
+  "viewer.menu.select_all": {
+    "message": "Избиране на всичко"
+  },
+  "viewer.menu.syntax_colors": {
+    "message": "Оцветяване на синтаксиса"
+  },
+  "viewer.menu.text_only": {
+    "message": "Само текст"
+  },
+  "viewer.menu.unicode": {
+    "message": "Unicode (UTF-16)"
+  },
+  "viewer.menu.wrap": {
+    "message": "Пренасяне на текста ({columns, plural, one {# колона} other {# колони}})"
+  },
+  "viewer.mode.binary": {
+    "message": "Двоичен · {page}"
+  },
+  "viewer.mode.book": {
+    "message": "Книга"
+  },
+  "viewer.mode.hex": {
+    "message": "Hex · {page}"
+  },
+  "viewer.mode.html": {
+    "message": "HTML текст"
+  },
+  "viewer.mode.image": {
+    "message": "Изображение"
+  },
+  "viewer.mode.multimedia": {
+    "message": "Мултимедия"
+  },
+  "viewer.mode.pdf_by": {
+    "message": "PDF чрез {tool}"
+  },
+  "viewer.mode.text": {
+    "message": "Текст · {page}"
+  },
+  "viewer.origin.not_editable": {
+    "message": "могат да се редактират само файлове в архиви 7z, zip, jar и tar"
+  },
+  "viewer.origin.updated": {
+    "message": "Обновен: {archive}"
+  },
+  "viewer.origin.updated_on": {
+    "message": "Обновен: {archive} на {server}"
+  },
+  "viewer.origin.uploaded": {
+    "message": "Качен: {path}"
+  },
+  "viewer.pdf.cannot_show": {
+    "message": "Този PDF не може да се покаже: {err}"
+  },
+  "viewer.pdf.loading": {
+    "message": "Зареждане..."
+  },
+  "viewer.pdf.page": {
+    "message": "Страница {page} / {pages}"
+  },
+  "viewer.picture.cannot_show": {
+    "message": "Това изображение не може да се покаже; 1 го показва като текст."
+  },
+  "viewer.save_as.failed": {
+    "message": "{path} не можа да се запази: {err}"
+  },
+  "viewer.status.rows": {
+    "message": "{count, plural, one {{first}–{last} от {grouped} ред} other {{first}–{last} от {grouped} реда}}"
+  },
+  "viewer.status.rows_so_far": {
+    "message": "{count, plural, one {{grouped} ред досега, прочетени {percent}} other {{grouped} реда досега, прочетени {percent}}}"
+  },
+  "viewer.status.searching": {
+    "message": "Търсене…"
+  },
+  "viewer.status.size": {
+    "message": "{count, plural, one {{grouped} байт} other {{grouped} байта}}"
+  },
+  "viewer.window.title": {
+    "message": "{path} — Визуализатор"
+  },
+  "viewer.zoom.fit": {
+    "message": "Обратно към побиране в прозореца (Ctrl+0)"
+  },
+  "viewer.zoom.in": {
+    "message": "Увеличаване (Ctrl++)"
+  },
+  "viewer.zoom.out": {
+    "message": "Намаляване (Ctrl+-)"
+  },
+  "viewer.zoom.reset": {
+    "message": "Обратно към 100% (Ctrl+0)"
+  },
+  "workspaces.button.close": {
+    "message": "Затваряне"
+  },
+  "workspaces.button.delete": {
+    "message": "Изтриване..."
+  },
+  "workspaces.button.duplicate": {
+    "message": "Дублиране..."
+  },
+  "workspaces.button.new": {
+    "message": "Ново..."
+  },
+  "workspaces.button.rename": {
+    "message": "Преименуване..."
+  },
+  "workspaces.delete.button": {
+    "message": "Изтриване"
+  },
+  "workspaces.delete.closed": {
+    "message": "Да се изтрие ли работното пространство „{name}“? Разделите му ще бъдат забравени."
+  },
+  "workspaces.delete.closed_shells": {
+    "message": "Да се изтрие ли работното пространство „{name}“? Разделите му ще бъдат забравени, а обвивките в разделите му с терминал ще бъдат прекратени."
+  },
+  "workspaces.delete.open": {
+    "message": "Да се изтрие ли работното пространство „{name}“? Разделите му ще се затворят; вместо него ще се отвори „{other}“."
+  },
+  "workspaces.delete.open_shells": {
+    "message": "Да се изтрие ли работното пространство „{name}“? Разделите му ще се затворят, а обвивките в разделите му с терминал ще бъдат прекратени; вместо него ще се отвори „{other}“."
+  },
+  "workspaces.delete.title": {
+    "message": "Изтриване на работно пространство"
+  },
+  "workspaces.duplicate.name": {
+    "message": "{name} копие"
+  },
+  "workspaces.duplicate.title": {
+    "message": "Дублиране на работно пространство"
+  },
+  "workspaces.error.name_taken": {
+    "message": "Друго работно пространство вече има това име."
+  },
+  "workspaces.error.no_name": {
+    "message": "Работното пространство трябва да има име."
+  },
+  "workspaces.error.save": {
+    "message": "Работните пространства не можаха да се запазят: {err}"
+  },
+  "workspaces.hint": {
+    "message": "Изглед > Работни пространства отваря някое. Промените в отвореното се пазят в него."
+  },
+  "workspaces.name.label": {
+    "message": "Име:"
+  },
+  "workspaces.new.name": {
+    "message": "Работно пространство {number}"
+  },
+  "workspaces.new.title": {
+    "message": "Ново работно пространство"
+  },
+  "workspaces.open": {
+    "message": "отворено"
+  },
+  "workspaces.rename.title": {
+    "message": "Преименуване на работно пространство"
+  },
+  "workspaces.summary.panels": {
+    "message": "Ляв: {left, plural, one {# раздел} other {# раздела}}, десен: {right, plural, one {# раздел} other {# раздела}}"
+  },
+  "workspaces.summary.terminal": {
+    "message": "Ляв: {left, plural, one {# раздел} other {# раздела}}, десен: {right, plural, one {# раздел} other {# раздела}}, терминал: {terminal, plural, one {# раздел} other {# раздела}}"
+  },
+  "workspaces.summary.terminal_hidden": {
+    "message": "Ляв: {left, plural, one {# раздел} other {# раздела}}, десен: {right, plural, one {# раздел} other {# раздела}}, терминал: {terminal, plural, one {# раздел} other {# раздела}} (скрит)"
+  },
+  "workspaces.title": {
+    "message": "Работни пространства"
+  }
+}

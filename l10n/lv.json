@@ -1,0 +1,4823 @@
+{
+  "about.addons": {
+    "message": "Papildinājumi, ko lejupielādē pēc jūsu izvēles"
+  },
+  "about.libraries": {
+    "message": "Pamatā izmantots"
+  },
+  "about.licence": {
+    "message": "Licence:"
+  },
+  "about.made_with": {
+    "message": "Izveidots, izmantojot šo projektu darbu"
+  },
+  "about.part.alacritty_terminal": {
+    "message": "Iebūvētā termināļa ekrāns un čaula"
+  },
+  "about.part.encoding_rs": {
+    "message": "Kodu lapas"
+  },
+  "about.part.gpui": {
+    "message": "Logs, zīmēšana un ievade (no Zed)"
+  },
+  "about.part.gpui_kit": {
+    "message": "Vadīklas: saraksti, izvēlnes, lauki, redaktors"
+  },
+  "about.part.html5ever": {
+    "message": "HTML un e-grāmatas skatītājā"
+  },
+  "about.part.image": {
+    "message": "Attēli"
+  },
+  "about.part.keyring": {
+    "message": "Paroles sistēmas atslēgu glabātuvē"
+  },
+  "about.part.lucide": {
+    "message": "Ikonas"
+  },
+  "about.part.material_icons": {
+    "message": "Failu un mapju ikonas"
+  },
+  "about.part.pdfium_render": {
+    "message": "PDFium no Rust"
+  },
+  "about.part.ratatui": {
+    "message": "scmd, termināļa versija"
+  },
+  "about.part.russh": {
+    "message": "SSH un SFTP"
+  },
+  "about.part.rustls": {
+    "message": "TLS"
+  },
+  "about.part.serde": {
+    "message": "Iestatījumu faili"
+  },
+  "about.part.similar": {
+    "message": "Salīdzināt pēc satura"
+  },
+  "about.part.suppaftp": {
+    "message": "FTP un FTPS"
+  },
+  "about.part.tokio": {
+    "message": "Tīkla darbības fonā"
+  },
+  "about.part.trash": {
+    "message": "Atkritne"
+  },
+  "about.part.tree_sitter": {
+    "message": "Koda krāsas skatītājā un redaktorā"
+  },
+  "about.part.zbus": {
+    "message": "D-Bus: darbvirsma, ierīces, KDE Connect"
+  },
+  "about.shipped": {
+    "message": "Iekļauts komplektā"
+  },
+  "about.tagline": {
+    "message": "Divu paneļu failu pārvaldnieks, brīvā programmatūra."
+  },
+  "about.title": {
+    "message": "Par Spark Commander"
+  },
+  "about.version": {
+    "message": "Versija {version}"
+  },
+  "activity.clear": {
+    "message": "Notīrīt"
+  },
+  "activity.clear_failed": {
+    "message": "Neizdevās notīrīt žurnālu: {err}"
+  },
+  "activity.empty": {
+    "message": "Vēl nekas nav paveikts."
+  },
+  "activity.title": {
+    "message": "Darbību žurnāls"
+  },
+  "addons.error.damaged": {
+    "message": "lejupielāde ir bojāta: tās kontrolsumma nesakrīt"
+  },
+  "addons.error.list": {
+    "message": "papildinājumu saraksts: {err}"
+  },
+  "addons.error.missing_file": {
+    "message": "lejupielādē nav faila {file}"
+  },
+  "addons.error.no_folder": {
+    "message": "nav datu mapes"
+  },
+  "addons.error.unpacking": {
+    "message": "izpakošana: {err}"
+  },
+  "addons.installed": {
+    "message": "Papildinājums {addon} {version} ir instalēts."
+  },
+  "addons.megabytes": {
+    "message": "{size} MB"
+  },
+  "addons.offer.never": {
+    "message": "Vairs nerādīt"
+  },
+  "addons.offer.no": {
+    "message": "Nē"
+  },
+  "addons.offer.text": {
+    "message": "Failam {name} nepieciešams papildinājums, kas nav instalēts: {addon}. Vai lejupielādēt to sadaļā Iestatījumi > Papildinājumi?"
+  },
+  "addons.offer.title": {
+    "message": "Papildinājums"
+  },
+  "addons.offer.yes": {
+    "message": "Jā"
+  },
+  "addons.purpose.cloud": {
+    "message": "Tiešsaistes krātuve: S3, Google Drive, OneDrive, Dropbox un citi pakalpojumi."
+  },
+  "addons.purpose.media": {
+    "message": "Video un skaņa, kā arī HEIC un AVIF fotoattēli: tos rāda skatītājs un Ātrais skats."
+  },
+  "addons.purpose.office": {
+    "message": "Biroja dokumenti: skatītājs rāda Word, Excel un PowerPoint failus kā PDF."
+  },
+  "addons.purpose.pdfium": {
+    "message": "PDF: skatītājs rāda PDF failus, kā arī biroja dokumentus pēc to pārveidošanas."
+  },
+  "addons.purpose.seven_zip": {
+    "message": "Arhīvi: iepako un izpako 7z, zip, rar, tar un citus formātus."
+  },
+  "addons.update": {
+    "message": "Atjaunināt"
+  },
+  "addons.updates": {
+    "message": "Papildinājumu atjauninājumi: {names}"
+  },
+  "appearance.dark": {
+    "message": "Tumšs"
+  },
+  "appearance.light": {
+    "message": "Gaišs"
+  },
+  "appearance.system": {
+    "message": "Kā sistēmā"
+  },
+  "archive.cannot_read": {
+    "message": "{name}: nevar nolasīt"
+  },
+  "archive.not_in_archive": {
+    "message": "{name} nav arhīvā"
+  },
+  "archive.not_own_folder": {
+    "message": "{folder} nav šī lietotāja mape"
+  },
+  "archive.seven_zip_failed": {
+    "message": "7-Zip kļūda ({code})"
+  },
+  "archive.seven_zip_missing": {
+    "message": "Trūkst 7-Zip: {path} (palaidiet vendor/7zip/fetch.sh vai fetch.bat)"
+  },
+  "archive.temp_not_utf8": {
+    "message": "pagaidu mapes nosaukums nav UTF-8"
+  },
+  "associations.add": {
+    "message": "Pievienot..."
+  },
+  "associations.cancel": {
+    "message": "Atcelt"
+  },
+  "associations.close": {
+    "message": "Aizvērt"
+  },
+  "associations.column.edit": {
+    "message": "Rediģēt (F4)"
+  },
+  "associations.column.files": {
+    "message": "Faili"
+  },
+  "associations.column.open": {
+    "message": "Atvērt (Enter)"
+  },
+  "associations.column.view": {
+    "message": "Skatīt (F3)"
+  },
+  "associations.edit": {
+    "message": "Rediģēt..."
+  },
+  "associations.edit_dialog.title": {
+    "message": "Sasaistīt"
+  },
+  "associations.empty": {
+    "message": "Vēl nav."
+  },
+  "associations.field.edit": {
+    "message": "Rediģēt ar (F4):"
+  },
+  "associations.field.files": {
+    "message": "Faili (*.jpg *.png):"
+  },
+  "associations.field.open": {
+    "message": "Atvērt ar (Enter):"
+  },
+  "associations.field.view": {
+    "message": "Skatīt ar (F3):"
+  },
+  "associations.intro": {
+    "message": "Enter, F3 un F4 palaiž šīs programmas maskai atbilstošajiem failiem; tukšs lauks saglabā parasto darbību. %1 ir fails."
+  },
+  "associations.mask_needed": {
+    "message": "Nepieciešama failu maska: *.txt"
+  },
+  "associations.no_file": {
+    "message": "Novietojiet kursoru uz tā tipa faila, kuru vēlaties sasaistīt."
+  },
+  "associations.ok": {
+    "message": "Labi"
+  },
+  "associations.remove": {
+    "message": "Noņemt"
+  },
+  "associations.save_failed": {
+    "message": "Neizdevās saglabāt iestatījumus: {err}"
+  },
+  "associations.title": {
+    "message": "Iekšējās sasaistes"
+  },
+  "attributes.bad_time": {
+    "message": "„{text}” nav datums un laiks: 2026-11-10 14:04:33"
+  },
+  "attributes.cancel": {
+    "message": "Atcelt"
+  },
+  "attributes.change_time": {
+    "message": "Mainīt datumu/laiku:"
+  },
+  "attributes.changed": {
+    "message": "{count, plural, zero {Mainīti: #} one {Mainīts: #} other {Mainīti: #}}"
+  },
+  "attributes.changed_failed": {
+    "message": "{count, plural, zero {Mainīti: #} one {Mainīts: #} other {Mainīti: #}}, {failed, plural, zero {neizdevās: #} one {neizdevās: #} other {neizdevās: #}}"
+  },
+  "attributes.dialog_title_many": {
+    "message": "Mainīt atribūtus: {count, plural, zero {# vienumu} one {# vienums} other {# vienumi}}"
+  },
+  "attributes.dialog_title_one": {
+    "message": "Mainīt atribūtus: {name}"
+  },
+  "attributes.execute": {
+    "message": "Izpildīt"
+  },
+  "attributes.group": {
+    "message": "Grupa"
+  },
+  "attributes.in_archive": {
+    "message": "Arhīvos atribūtus nevar mainīt."
+  },
+  "attributes.no_bits": {
+    "message": "Šiem failiem šeit nav atļauju bitu; var mainīt tikai datumu."
+  },
+  "attributes.now": {
+    "message": "Tagad"
+  },
+  "attributes.octal": {
+    "message": "Oktāli:"
+  },
+  "attributes.ok": {
+    "message": "Labi"
+  },
+  "attributes.others": {
+    "message": "Citi"
+  },
+  "attributes.owner": {
+    "message": "Īpašnieks"
+  },
+  "attributes.read": {
+    "message": "Lasīt"
+  },
+  "attributes.recurse": {
+    "message": "Arī visam mapju saturam"
+  },
+  "attributes.title_many": {
+    "message": "Mainīt atribūtus: {count, plural, zero {# vienumu} one {# vienums} other {# vienumi}}"
+  },
+  "attributes.title_one": {
+    "message": "Mainīt atribūtus: „{name}”"
+  },
+  "attributes.write": {
+    "message": "Rakstīt"
+  },
+  "bookmarks.add_current": {
+    "message": "Pievienot pašreizējo mapi"
+  },
+  "bookmarks.add_folders": {
+    "message": "Pievienot mapes..."
+  },
+  "bookmarks.added": {
+    "message": "Pievienots grāmatzīmēm: {name}"
+  },
+  "bookmarks.already": {
+    "message": "{name} jau ir grāmatzīmēs."
+  },
+  "bookmarks.chooser.failed": {
+    "message": "Neizdevās atvērt mapes izvēles logu: {err}"
+  },
+  "bookmarks.chooser.prompt": {
+    "message": "Pievienot"
+  },
+  "bookmarks.close": {
+    "message": "Aizvērt"
+  },
+  "bookmarks.copy_name": {
+    "message": "Kopēt nosaukumu"
+  },
+  "bookmarks.copy_path": {
+    "message": "Kopēt ceļu"
+  },
+  "bookmarks.drop_here": {
+    "message": "Nometiet mapes šeit."
+  },
+  "bookmarks.empty": {
+    "message": "Nav grāmatzīmju: pievienojiet mapes vai nometiet tās šeit."
+  },
+  "bookmarks.intro": {
+    "message": "Šī datora mapes sadaļas Vietas secībā: velciet mapi, lai to pārvietotu, vai nometiet mapes šeit, lai tās pievienotu."
+  },
+  "bookmarks.move_down": {
+    "message": "Pārvietot uz leju"
+  },
+  "bookmarks.move_up": {
+    "message": "Pārvietot uz augšu"
+  },
+  "bookmarks.only_local": {
+    "message": "Grāmatzīmēm var pievienot tikai šī datora mapes."
+  },
+  "bookmarks.remove": {
+    "message": "Noņemt"
+  },
+  "bookmarks.remove_from": {
+    "message": "Noņemt no grāmatzīmēm"
+  },
+  "bookmarks.rename": {
+    "message": "Pārdēvēt..."
+  },
+  "bookmarks.rename_label": {
+    "message": "Nosaukums (tukšs: mapes nosaukums):"
+  },
+  "bookmarks.rename_title": {
+    "message": "Pārdēvēt grāmatzīmi"
+  },
+  "bookmarks.sort": {
+    "message": "Kārtot A–Z"
+  },
+  "bookmarks.title": {
+    "message": "Grāmatzīmes"
+  },
+  "button_bar.copy": {
+    "message": "Kopēt"
+  },
+  "button_bar.delete": {
+    "message": "Dzēst"
+  },
+  "button_bar.edit": {
+    "message": "Rediģēt"
+  },
+  "button_bar.move": {
+    "message": "Pārvietot"
+  },
+  "button_bar.new_folder": {
+    "message": "Jauna mape"
+  },
+  "button_bar.quit": {
+    "message": "Iziet"
+  },
+  "button_bar.view": {
+    "message": "Skatīt"
+  },
+  "checksum.create.title": {
+    "message": "Izveidot {name}"
+  },
+  "checksum.create.title_separate": {
+    "message": "Izveidot {method} kontrolsummu failus"
+  },
+  "checksum.dialog_title": {
+    "message": "Izveidot kontrolsummu failus"
+  },
+  "checksum.save_as": {
+    "message": "Saglabāt kontrolsummu failu kā:"
+  },
+  "checksum.separate": {
+    "message": "Tā vietā kontrolsummu failu blakus katram failam"
+  },
+  "checksum.verify.all_ok": {
+    "message": "{count, plural, zero {visi # faili ir kārtībā} one {# fails ir kārtībā} other {visi # faili ir kārtībā}}"
+  },
+  "checksum.verify.choose": {
+    "message": "Izvēlieties kontrolsummu failus: .sfv, .md5, .sha1, .sha256 vai .sha512."
+  },
+  "checksum.verify.missing_file": {
+    "message": "trūkst: {name}"
+  },
+  "checksum.verify.result": {
+    "message": "{ok, plural, zero {kārtībā: #} one {kārtībā: #} other {kārtībā: #}}, {wrong, plural, zero {nepareizi: #} one {nepareizi: #} other {nepareizi: #}}, {missing, plural, zero {trūkst: #} one {trūkst: #} other {trūkst: #}}"
+  },
+  "checksum.verify.title_many": {
+    "message": "Pārbaudīt {count, plural, zero {# kontrolsummu failu} one {# kontrolsummu failu} other {# kontrolsummu failus}}"
+  },
+  "checksum.verify.title_one": {
+    "message": "Pārbaudīt {name}"
+  },
+  "checksum.verify.wrong_file": {
+    "message": "nepareizs: {name}"
+  },
+  "command.about": {
+    "message": "Par Spark Commander"
+  },
+  "command.activity_log": {
+    "message": "Darbību žurnāls..."
+  },
+  "command.all_files": {
+    "message": "Visi faili"
+  },
+  "command.all_folder_sizes": {
+    "message": "Aprēķināt visu mapju lielumu"
+  },
+  "command.all_with_extension": {
+    "message": "*.*"
+  },
+  "command.associate_with": {
+    "message": "Sasaistīt ar..."
+  },
+  "command.bookmark_folder": {
+    "message": "Pievienot šo mapi grāmatzīmēm"
+  },
+  "command.bookmarks": {
+    "message": "Grāmatzīmes"
+  },
+  "command.branch_view": {
+    "message": "Zaru skats (ar apakšmapēm)"
+  },
+  "command.branch_view_selected": {
+    "message": "Atlasīto mapju zaru skats"
+  },
+  "command.brief": {
+    "message": "Īss"
+  },
+  "command.calculate_occupied_space": {
+    "message": "Aprēķināt aizņemto vietu..."
+  },
+  "command.change_attributes": {
+    "message": "Mainīt atribūtus..."
+  },
+  "command.close_all_tabs": {
+    "message": "Aizvērt visas cilnes"
+  },
+  "command.close_duplicate_tabs": {
+    "message": "Aizvērt cilņu dublikātus"
+  },
+  "command.close_tab": {
+    "message": "Aizvērt cilni"
+  },
+  "command.combine_files": {
+    "message": "Apvienot failus..."
+  },
+  "command.compare_by_content": {
+    "message": "Salīdzināt pēc satura..."
+  },
+  "command.compare_directories": {
+    "message": "Iezīmēt jaunākos"
+  },
+  "command.copy": {
+    "message": "Kopēt..."
+  },
+  "command.copy_names_to_clipboard": {
+    "message": "Kopēt atlasītos nosaukumus starpliktuvē"
+  },
+  "command.copy_names_with_path_to_clipboard": {
+    "message": "Kopēt nosaukumus ar ceļu starpliktuvē"
+  },
+  "command.copy_to_clipboard": {
+    "message": "Kopēt failus"
+  },
+  "command.copy_with_all_details": {
+    "message": "Kopēt starpliktuvē ar visu informāciju"
+  },
+  "command.copy_with_path_and_details": {
+    "message": "Kopēt starpliktuvē ar ceļu un informāciju"
+  },
+  "command.create_checksum_files": {
+    "message": "Izveidot kontrolsummu failu(s) (CRC32, MD5, SHA1, SHA256, SHA512)..."
+  },
+  "command.create_link": {
+    "message": "Izveidot saiti..."
+  },
+  "command.custom_filter": {
+    "message": "Pielāgots..."
+  },
+  "command.cut_to_clipboard": {
+    "message": "Izgriezt failus"
+  },
+  "command.delete": {
+    "message": "Dzēst"
+  },
+  "command.delete_permanently": {
+    "message": "Dzēst neatgriezeniski"
+  },
+  "command.disconnect": {
+    "message": "Atvienoties no servera"
+  },
+  "command.download_link": {
+    "message": "Lejupielādēt no saites..."
+  },
+  "command.duplicate_tab": {
+    "message": "Jauna cilne"
+  },
+  "command.duplicate_workspace": {
+    "message": "Dublēt darbvietu..."
+  },
+  "command.edit": {
+    "message": "Rediģēt"
+  },
+  "command.edit_externally": {
+    "message": "Rediģēt ar ārējo redaktoru"
+  },
+  "command.folder_history": {
+    "message": "Mapju vēsture..."
+  },
+  "command.full": {
+    "message": "Pilns"
+  },
+  "command.go_back": {
+    "message": "Atpakaļ"
+  },
+  "command.go_forward": {
+    "message": "Uz priekšu"
+  },
+  "command.go_home": {
+    "message": "Mājas mape"
+  },
+  "command.go_to_root": {
+    "message": "Saknes mape"
+  },
+  "command.hidden_files": {
+    "message": "Slēptie faili"
+  },
+  "command.internal_associations": {
+    "message": "Iekšējās sasaistes (tikai Spark Commander)..."
+  },
+  "command.invert_selection": {
+    "message": "Invertēt atlasi"
+  },
+  "command.left_drives": {
+    "message": "Diski (kreisais panelis)"
+  },
+  "command.list_tabs": {
+    "message": "Ciļņu saraksts"
+  },
+  "command.load_selection_from_file": {
+    "message": "Ielādēt atlasi no faila"
+  },
+  "command.manage_bookmarks": {
+    "message": "Pārvaldīt grāmatzīmes..."
+  },
+  "command.manage_tools": {
+    "message": "Pārvaldīt rīkus..."
+  },
+  "command.manage_workspaces": {
+    "message": "Pārvaldīt darbvietas..."
+  },
+  "command.mark_in_place": {
+    "message": "Iezīmēt / noņemt iezīmi uz vietas, aprēķinot mapes lielumu"
+  },
+  "command.mark_newer_hide_same": {
+    "message": "Iezīmēt jaunākos, paslēpt vienādos failus"
+  },
+  "command.move": {
+    "message": "Pārvietot..."
+  },
+  "command.multi_rename_tool": {
+    "message": "Vairāku failu pārdēvēšanas rīks..."
+  },
+  "command.name_to_command_line": {
+    "message": "Nosaukumu uz komandrindu"
+  },
+  "command.new_folder": {
+    "message": "Jauna mape..."
+  },
+  "command.new_terminal": {
+    "message": "Jauna termināļa cilne"
+  },
+  "command.new_text_file": {
+    "message": "Jauns fails..."
+  },
+  "command.new_workspace": {
+    "message": "Jauna darbvieta..."
+  },
+  "command.next_tab": {
+    "message": "Nākamā cilne"
+  },
+  "command.only_selected_files": {
+    "message": "Tikai atlasītie faili"
+  },
+  "command.open_in_left_panel": {
+    "message": "Rādīt kreisajā panelī"
+  },
+  "command.open_in_new_tab": {
+    "message": "Atvērt mapi jaunā cilnē"
+  },
+  "command.open_in_other_new_tab": {
+    "message": "Atvērt mapi jaunā otra paneļa cilnē"
+  },
+  "command.open_in_right_panel": {
+    "message": "Rādīt labajā panelī"
+  },
+  "command.open_terminal": {
+    "message": "Atvērt termināli šeit"
+  },
+  "command.operation_queue": {
+    "message": "Darbību rinda..."
+  },
+  "command.pack": {
+    "message": "Iepakot..."
+  },
+  "command.paste_from_clipboard": {
+    "message": "Ielīmēt failus"
+  },
+  "command.path_and_name_to_command_line": {
+    "message": "Ceļu un nosaukumu uz komandrindu"
+  },
+  "command.path_to_command_line": {
+    "message": "Ceļu uz komandrindu"
+  },
+  "command.previous_tab": {
+    "message": "Iepriekšējā cilne"
+  },
+  "command.programs": {
+    "message": "Programmas"
+  },
+  "command.properties": {
+    "message": "Rekvizīti..."
+  },
+  "command.quick_filter": {
+    "message": "Ātrais filtrs"
+  },
+  "command.quick_open": {
+    "message": "Ātrā atvēršana..."
+  },
+  "command.quick_view_panel": {
+    "message": "Ātrā skata panelis"
+  },
+  "command.quit": {
+    "message": "Iziet"
+  },
+  "command.redo": {
+    "message": "Atkārtot"
+  },
+  "command.rename_in_place": {
+    "message": "Pārdēvēt"
+  },
+  "command.reread_source": {
+    "message": "Atkārtoti nolasīt avotu"
+  },
+  "command.restore_selection": {
+    "message": "Atjaunot atlasi"
+  },
+  "command.reversed_order": {
+    "message": "Apgriezta secība"
+  },
+  "command.right_drives": {
+    "message": "Diski (labais panelis)"
+  },
+  "command.save_selection": {
+    "message": "Saglabāt atlasi"
+  },
+  "command.save_selection_to_file": {
+    "message": "Saglabāt atlasi failā"
+  },
+  "command.search": {
+    "message": "Meklēt..."
+  },
+  "command.search_in_separate_process": {
+    "message": "Meklēt atsevišķā logā..."
+  },
+  "command.select_all": {
+    "message": "Atlasīt visu"
+  },
+  "command.select_all_with_same_extension": {
+    "message": "Atlasīt visus ar tādu pašu paplašinājumu"
+  },
+  "command.select_group": {
+    "message": "Atlasīt grupu..."
+  },
+  "command.settings": {
+    "message": "Iestatījumi..."
+  },
+  "command.shortcuts": {
+    "message": "Īsinājumtaustiņi..."
+  },
+  "command.sidebar_connections": {
+    "message": "Savienojumi"
+  },
+  "command.sidebar_operations": {
+    "message": "Darbības"
+  },
+  "command.sidebar_places": {
+    "message": "Vietas"
+  },
+  "command.sidebar_tree": {
+    "message": "Mapes"
+  },
+  "command.sort_by_extension": {
+    "message": "Paplašinājums"
+  },
+  "command.sort_by_name": {
+    "message": "Nosaukums"
+  },
+  "command.sort_by_size": {
+    "message": "Lielums"
+  },
+  "command.sort_by_time": {
+    "message": "Laiks"
+  },
+  "command.split_file": {
+    "message": "Sadalīt failu..."
+  },
+  "command.swap_panels": {
+    "message": "Samainīt paneļus"
+  },
+  "command.swap_panels_and_tabs": {
+    "message": "Samainīt paneļus kopā ar cilnēm"
+  },
+  "command.sync_browsing": {
+    "message": "Sinhronizēta pārlūkošana"
+  },
+  "command.synchronize_dirs": {
+    "message": "Sinhronizēt mapes..."
+  },
+  "command.target_equals_source": {
+    "message": "Mērķis = avots"
+  },
+  "command.terminal_panel": {
+    "message": "Terminālis"
+  },
+  "command.test_archives": {
+    "message": "Pārbaudīt arhīvu(s)"
+  },
+  "command.thumbnail_view": {
+    "message": "Sīktēlu skats"
+  },
+  "command.toggle_mark": {
+    "message": "Iezīmēt / noņemt iezīmi"
+  },
+  "command.toggle_sidebar": {
+    "message": "Rādīt sānjoslu"
+  },
+  "command.undo": {
+    "message": "Atsaukt"
+  },
+  "command.unpack_specific_files": {
+    "message": "Izpakot noteiktus failus..."
+  },
+  "command.unselect_all": {
+    "message": "Noņemt atlasi visiem"
+  },
+  "command.unselect_group": {
+    "message": "Noņemt atlasi grupai..."
+  },
+  "command.unsorted": {
+    "message": "Nekārtots"
+  },
+  "command.verify_checksums": {
+    "message": "Pārbaudīt kontrolsummas (no kontrolsummu failiem)"
+  },
+  "command.vertical_arrangement": {
+    "message": "Vertikāls izkārtojums"
+  },
+  "command.view": {
+    "message": "Skatīt"
+  },
+  "command.website": {
+    "message": "Spark Commander tīmekļa vietne"
+  },
+  "command.workspace1": {
+    "message": "Atvērt 1. darbvietu"
+  },
+  "command.workspace2": {
+    "message": "Atvērt 2. darbvietu"
+  },
+  "command.workspace3": {
+    "message": "Atvērt 3. darbvietu"
+  },
+  "command.workspace4": {
+    "message": "Atvērt 4. darbvietu"
+  },
+  "command.workspace5": {
+    "message": "Atvērt 5. darbvietu"
+  },
+  "command.workspace6": {
+    "message": "Atvērt 6. darbvietu"
+  },
+  "command.workspace7": {
+    "message": "Atvērt 7. darbvietu"
+  },
+  "command.workspace8": {
+    "message": "Atvērt 8. darbvietu"
+  },
+  "command.workspace9": {
+    "message": "Atvērt 9. darbvietu"
+  },
+  "command_line.error.cannot_run": {
+    "message": "{program}: nevar palaist"
+  },
+  "command_line.error.not_found": {
+    "message": "{program}: komanda nav atrasta"
+  },
+  "command_line.history.empty": {
+    "message": "Vēl nav palaista neviena komanda"
+  },
+  "command_line.on_server": {
+    "message": "Komandas darbojas šajā datorā, bet panelis rāda serveri."
+  },
+  "command_name.all_files": {
+    "message": "Rādīt visus failus"
+  },
+  "command_name.all_with_extension": {
+    "message": "Rādīt *.*"
+  },
+  "command_name.brief": {
+    "message": "Īsais skats"
+  },
+  "command_name.compare_directories": {
+    "message": "Salīdzināt mapes: iezīmēt jaunākos"
+  },
+  "command_name.custom_filter": {
+    "message": "Pielāgots filtrs"
+  },
+  "command_name.duplicate_tab": {
+    "message": "Jauna cilne (šīs cilnes kopija)"
+  },
+  "command_name.full": {
+    "message": "Pilnais skats"
+  },
+  "command_name.go_back": {
+    "message": "Doties atpakaļ"
+  },
+  "command_name.go_forward": {
+    "message": "Doties uz priekšu"
+  },
+  "command_name.go_home": {
+    "message": "Doties uz mājas mapi"
+  },
+  "command_name.hidden_files": {
+    "message": "Rādīt slēptos failus"
+  },
+  "command_name.only_selected_files": {
+    "message": "Rādīt tikai atlasītos failus"
+  },
+  "command_name.programs": {
+    "message": "Rādīt programmas"
+  },
+  "command_name.quick_filter": {
+    "message": "Ātrais filtrs"
+  },
+  "command_name.rename_in_place": {
+    "message": "Pārdēvēt uz vietas"
+  },
+  "command_name.sidebar_connections": {
+    "message": "Sānjosla: savienojumi"
+  },
+  "command_name.sidebar_operations": {
+    "message": "Sānjosla: darbības"
+  },
+  "command_name.sidebar_places": {
+    "message": "Sānjosla: vietas"
+  },
+  "command_name.sidebar_tree": {
+    "message": "Sānjosla: mapes"
+  },
+  "command_name.sort_by_extension": {
+    "message": "Kārtot pēc paplašinājuma"
+  },
+  "command_name.sort_by_name": {
+    "message": "Kārtot pēc nosaukuma"
+  },
+  "command_name.sort_by_size": {
+    "message": "Kārtot pēc lieluma"
+  },
+  "command_name.sort_by_time": {
+    "message": "Kārtot pēc laika"
+  },
+  "command_name.toggle_sidebar": {
+    "message": "Sānjosla: rādīt vai paslēpt"
+  },
+  "command_name.unsorted": {
+    "message": "Nekārtot"
+  },
+  "compare.browse.prompt": {
+    "message": "Salīdzināt"
+  },
+  "compare.button.compare": {
+    "message": "Salīdzināt"
+  },
+  "compare.button.next": {
+    "message": "Nākamā atšķirība (N)"
+  },
+  "compare.button.previous": {
+    "message": "Iepriekšējā atšķirība (P)"
+  },
+  "compare.need_two_files": {
+    "message": "Novietojiet kursoru uz faila katrā panelī vai iezīmējiet divus failus."
+  },
+  "compare.option.binary": {
+    "message": "Binārs"
+  },
+  "compare.option.ignore_case": {
+    "message": "Ignorēt reģistru"
+  },
+  "compare.option.ignore_spaces": {
+    "message": "Ignorēt atkārtotas atstarpes"
+  },
+  "compare.option.only_differences": {
+    "message": "Tikai atšķirības"
+  },
+  "compare.status.bytes_differ": {
+    "message": "{place}: {count, plural, zero {atšķiras {grouped} baitu} one {atšķiras {grouped} baits} other {atšķiras {grouped} baiti}}, pirmais nobīdē {first}; lielumi {left} un {right}."
+  },
+  "compare.status.comparing": {
+    "message": "Notiek salīdzināšana…"
+  },
+  "compare.status.difference_of": {
+    "message": "Atšķirība {at} no {count}"
+  },
+  "compare.status.differences": {
+    "message": "{count, plural, zero {# atšķirību} one {# atšķirība} other {# atšķirības}}"
+  },
+  "compare.status.identical": {
+    "message": "{count, plural, zero {Faili ir identiski: {grouped} baitu.} one {Faili ir identiski: {grouped} baits.} other {Faili ir identiski: {grouped} baiti.}}"
+  },
+  "compare.status.no_differences": {
+    "message": "Nav atšķirību."
+  },
+  "compare.window.title": {
+    "message": "Salīdzināt: {left} — {right}"
+  },
+  "connections.connect": {
+    "message": "Savienoties"
+  },
+  "connections.copy_name": {
+    "message": "Kopēt nosaukumu"
+  },
+  "connections.copy_path": {
+    "message": "Kopēt ceļu"
+  },
+  "connections.delete": {
+    "message": "Dzēst"
+  },
+  "connections.dialog.title": {
+    "message": "Savienojums"
+  },
+  "connections.disconnect": {
+    "message": "Atvienoties"
+  },
+  "connections.duplicate": {
+    "message": "Dublēt"
+  },
+  "connections.duplicate_name": {
+    "message": "{name} (kopija)"
+  },
+  "connections.edit": {
+    "message": "Rediģēt..."
+  },
+  "connections.empty": {
+    "message": "Vēl nav savienojumu."
+  },
+  "connections.error.no_server": {
+    "message": "Nepieciešams serveris."
+  },
+  "connections.error.port": {
+    "message": "Nederīgs ports: {text}"
+  },
+  "connections.field.access_key": {
+    "message": "Piekļuves atslēga"
+  },
+  "connections.field.api_key": {
+    "message": "API atslēga"
+  },
+  "connections.field.application_key": {
+    "message": "Lietotnes atslēga"
+  },
+  "connections.field.bucket": {
+    "message": "Spainis/mape"
+  },
+  "connections.field.container": {
+    "message": "Konteiners/mape"
+  },
+  "connections.field.endpoint": {
+    "message": "Galapunkts"
+  },
+  "connections.field.key_id": {
+    "message": "Atslēgas ID"
+  },
+  "connections.field.name": {
+    "message": "Nosaukums"
+  },
+  "connections.field.password": {
+    "message": "Parole"
+  },
+  "connections.field.port": {
+    "message": "Ports"
+  },
+  "connections.field.protocol": {
+    "message": "Protokols"
+  },
+  "connections.field.secret_key": {
+    "message": "Slepenā atslēga"
+  },
+  "connections.field.server": {
+    "message": "Serveris"
+  },
+  "connections.field.start_folder": {
+    "message": "Sākuma mape"
+  },
+  "connections.field.user": {
+    "message": "Lietotājs"
+  },
+  "connections.folder.delete_confirm": {
+    "message": "{count, plural, zero {Vai dzēst mapi {name} un tajā esošos # savienojumus?} one {Vai dzēst mapi {name} un tajā esošo # savienojumu?} other {Vai dzēst mapi {name} un tajā esošos # savienojumus?}}"
+  },
+  "connections.folder.delete_title": {
+    "message": "Dzēst mapi"
+  },
+  "connections.folder.exists": {
+    "message": "Mape ar nosaukumu {name} jau pastāv."
+  },
+  "connections.folder.name": {
+    "message": "Nosaukums:"
+  },
+  "connections.folder.new_title": {
+    "message": "Jauna mape"
+  },
+  "connections.folder.rename": {
+    "message": "Pārdēvēt..."
+  },
+  "connections.folder.rename_title": {
+    "message": "Pārdēvēt mapi"
+  },
+  "connections.forget_password": {
+    "message": "Aizmirst saglabāto paroli"
+  },
+  "connections.move_down": {
+    "message": "Pārvietot uz leju"
+  },
+  "connections.move_to_folder": {
+    "message": "Pārvietot uz mapi"
+  },
+  "connections.move_up": {
+    "message": "Pārvietot uz augšu"
+  },
+  "connections.new": {
+    "message": "Jauns savienojums..."
+  },
+  "connections.new_folder": {
+    "message": "Jauna mape..."
+  },
+  "connections.no_folder": {
+    "message": "Bez mapes"
+  },
+  "connections.open_in_terminal": {
+    "message": "Atvērt terminālī"
+  },
+  "connections.placeholder.name": {
+    "message": "kā redzams sarakstā"
+  },
+  "connections.placeholder.password": {
+    "message": "glabājas šifrēta iestatījumu mapē; tukšs saglabā esošo"
+  },
+  "connections.placeholder.path": {
+    "message": "pieteikšanās mape"
+  },
+  "connections.placeholder.port": {
+    "message": "noklusējuma"
+  },
+  "connections.placeholder.server": {
+    "message": "serveris vai resursdators no ~/.ssh/config"
+  },
+  "connections.placeholder.user": {
+    "message": "kā norādīts ~/.ssh/config, vai anonīmi"
+  },
+  "connections.save_failed": {
+    "message": "Neizdevās saglabāt savienojumus: {err}"
+  },
+  "connections.ssh_config.read_only": {
+    "message": "Tikai lasāms: šos resursdatorus rediģē pašā ~/.ssh/config"
+  },
+  "context_menu.action_failed": {
+    "message": "Darbība „{name}” neizdevās: {err}"
+  },
+  "context_menu.actions": {
+    "message": "Darbības"
+  },
+  "context_menu.copy": {
+    "message": "Kopēt"
+  },
+  "context_menu.create_new": {
+    "message": "Izveidot jaunu"
+  },
+  "context_menu.cut": {
+    "message": "Izgriezt"
+  },
+  "context_menu.delete": {
+    "message": "Dzēst"
+  },
+  "context_menu.edit": {
+    "message": "Rediģēt"
+  },
+  "context_menu.empty_file": {
+    "message": "Tukšs fails…"
+  },
+  "context_menu.move_to_trash": {
+    "message": "Pārvietot uz atkritni"
+  },
+  "context_menu.new_file_dialog.label": {
+    "message": "Jaunā faila nosaukums:"
+  },
+  "context_menu.new_file_dialog.title": {
+    "message": "Jauns fails"
+  },
+  "context_menu.new_file_failed": {
+    "message": "Neizdevās izveidot failu: {err}"
+  },
+  "context_menu.new_folder": {
+    "message": "Mape…"
+  },
+  "context_menu.open": {
+    "message": "Atvērt"
+  },
+  "context_menu.open_failed": {
+    "message": "Neizdevās atvērt: {err}"
+  },
+  "context_menu.open_terminal_here": {
+    "message": "Atvērt termināli šeit"
+  },
+  "context_menu.open_with": {
+    "message": "Atvērt ar"
+  },
+  "context_menu.other_application": {
+    "message": "Cita lietotne…"
+  },
+  "context_menu.pack": {
+    "message": "Iepakot…"
+  },
+  "context_menu.pack_files": {
+    "message": "Iepakot failus"
+  },
+  "context_menu.paste": {
+    "message": "Ielīmēt"
+  },
+  "context_menu.properties": {
+    "message": "Rekvizīti"
+  },
+  "context_menu.properties_failed": {
+    "message": "Rekvizīti: {err}"
+  },
+  "context_menu.rename": {
+    "message": "Pārdēvēt…"
+  },
+  "context_menu.rename_dialog.label": {
+    "message": "Jaunais nosaukums:"
+  },
+  "context_menu.rename_dialog.title": {
+    "message": "Pārdēvēt"
+  },
+  "context_menu.rename_failed": {
+    "message": "Neizdevās pārdēvēt: {err}"
+  },
+  "context_menu.shell_menu_failed": {
+    "message": "Izvēlne: {err}"
+  },
+  "context_menu.show_failed": {
+    "message": "Neizdevās parādīt: {err}"
+  },
+  "context_menu.show_in_file_manager": {
+    "message": "Rādīt failu pārvaldniekā"
+  },
+  "context_menu.terminal_failed": {
+    "message": "Neizdevās atvērt termināli: {err}"
+  },
+  "context_menu.terminal_not_local": {
+    "message": "Termināli var atvērt tikai šī datora mapēs."
+  },
+  "context_menu.unpack": {
+    "message": "Izpakot…"
+  },
+  "context_menu.view": {
+    "message": "Skatīt"
+  },
+  "desktop.no_app_chooser": {
+    "message": "darbvirsmai nav lietotņu izvēles loga ({err})"
+  },
+  "desktop.no_terminal": {
+    "message": "netika atrasts neviens terminālis"
+  },
+  "desktop.nothing_to_run": {
+    "message": "{name}: nav ko palaist"
+  },
+  "desktop.scripts": {
+    "message": "Skripti"
+  },
+  "devices.error.mount_failed": {
+    "message": "neizdevās piemontēt ierīci"
+  },
+  "devices.error.no_folder": {
+    "message": "ierīce nekopīgo nevienu mapi"
+  },
+  "devices.error.system_only": {
+    "message": "to var atmontēt tikai sistēma"
+  },
+  "devices.error.unreachable": {
+    "message": "nav sasniedzama: vai tajā ir atvērts KDE Connect un tā ir šajā tīklā?"
+  },
+  "devices.unlock.ask": {
+    "message": "Paroles frāze diskam {name}:"
+  },
+  "devices.unlock.ask_again": {
+    "message": "Nepareiza paroles frāze. Paroles frāze diskam {name}:"
+  },
+  "devices.unlock.title": {
+    "message": "Atbloķēt"
+  },
+  "devices.volume.share_on_server": {
+    "message": "{share} serverī {server}"
+  },
+  "devices.volume.unnamed": {
+    "message": "{size} GB sējums"
+  },
+  "devices.volume.unnamed_encrypted": {
+    "message": "{size} GB šifrēts sējums"
+  },
+  "download.cancel": {
+    "message": "Atcelt"
+  },
+  "download.dialog_title": {
+    "message": "Lejupielādēt no saites"
+  },
+  "download.download": {
+    "message": "Lejupielādēt"
+  },
+  "download.folder_link": {
+    "message": "saite ved uz mapi"
+  },
+  "download.incomplete": {
+    "message": "serveris nosūtīja {got} no {size, plural, zero {# baitiem} one {# baita} other {# baitiem}}; lejupielādējot atkārtoti, tā turpināsies no šīs vietas"
+  },
+  "download.into": {
+    "message": "Uz mapi {folder}"
+  },
+  "download.link": {
+    "message": "Saite"
+  },
+  "download.link_placeholder": {
+    "message": "https://, http://, ftp:// vai ftps://"
+  },
+  "download.local_only": {
+    "message": "Lejupielādes tiek saglabātas šī datora mapēs: vispirms atveriet kādu no tām panelī."
+  },
+  "download.name_placeholder": {
+    "message": "kā to nosauc serveris vai saite"
+  },
+  "download.no_file": {
+    "message": "saitē nav norādīts fails"
+  },
+  "download.not_a_link": {
+    "message": "nav lejupielādējama saite"
+  },
+  "download.problem.bad_name": {
+    "message": "Tikai faila nosaukums, bez mapes."
+  },
+  "download.problem.empty": {
+    "message": "Ielīmējiet vai ierakstiet saiti."
+  },
+  "download.problem.exists": {
+    "message": "Šeit jau ir {name}: „Aizstāt” lejupielādēs pāri tam."
+  },
+  "download.problem.not_link": {
+    "message": "Nav lejupielādējama saite: tai jāsākas ar https://, http://, ftp:// vai ftps://."
+  },
+  "download.replace": {
+    "message": "Aizstāt"
+  },
+  "download.save_as": {
+    "message": "Saglabāt kā"
+  },
+  "download.saved_as": {
+    "message": "saglabāts kā {name}"
+  },
+  "download.title": {
+    "message": "Lejupielādēt „{name}”"
+  },
+  "download.title_link": {
+    "message": "Lejupielādēt {link}"
+  },
+  "editor.close.after_send": {
+    "message": "Redaktors aizvērsies, kad serveris būs saņēmis failu."
+  },
+  "editor.close.discard": {
+    "message": "Nesaglabāt"
+  },
+  "editor.close.save": {
+    "message": "Saglabāt"
+  },
+  "editor.close.title": {
+    "message": "Vai saglabāt izmaiņas?"
+  },
+  "editor.close.unsaved": {
+    "message": "Failā {name} ir nesaglabātas izmaiņas."
+  },
+  "editor.close.unsent": {
+    "message": "Fails {name} nav saglabāts serverī: to neizdevās nosūtīt."
+  },
+  "editor.dialog.cancel": {
+    "message": "Atcelt"
+  },
+  "editor.edit.copy": {
+    "message": "Kopēt"
+  },
+  "editor.edit.cut": {
+    "message": "Izgriezt"
+  },
+  "editor.edit.find": {
+    "message": "Atrast..."
+  },
+  "editor.edit.find_next": {
+    "message": "Atrast nākamo"
+  },
+  "editor.edit.find_previous": {
+    "message": "Atrast iepriekšējo"
+  },
+  "editor.edit.go_to_line": {
+    "message": "Pāriet uz rindiņu..."
+  },
+  "editor.edit.paste": {
+    "message": "Ielīmēt"
+  },
+  "editor.edit.redo": {
+    "message": "Atkārtot"
+  },
+  "editor.edit.replace": {
+    "message": "Aizstāt..."
+  },
+  "editor.edit.undo": {
+    "message": "Atsaukt"
+  },
+  "editor.external.not_set": {
+    "message": "nav iestatīts ārējais redaktors (Iestatījumi, Rediģēšana/skatīšana)"
+  },
+  "editor.file.close": {
+    "message": "Aizvērt"
+  },
+  "editor.file.reload": {
+    "message": "Pārlādēt"
+  },
+  "editor.file.save": {
+    "message": "Saglabāt"
+  },
+  "editor.file.save_as": {
+    "message": "Saglabāt kā..."
+  },
+  "editor.find.close": {
+    "message": "Aizvērt (Escape)"
+  },
+  "editor.find.count": {
+    "message": "{current} no {total}"
+  },
+  "editor.find.in_selection": {
+    "message": "Meklēt atlasē (Alt+L)"
+  },
+  "editor.find.match_case": {
+    "message": "Ievērot reģistru (Alt+C)"
+  },
+  "editor.find.next": {
+    "message": "Nākamā atbilstība (Enter)"
+  },
+  "editor.find.no_results": {
+    "message": "Nav rezultātu"
+  },
+  "editor.find.placeholder": {
+    "message": "Atrast"
+  },
+  "editor.find.preserve_case": {
+    "message": "Saglabāt reģistru (Alt+P)"
+  },
+  "editor.find.previous": {
+    "message": "Iepriekšējā atbilstība (Shift+Enter)"
+  },
+  "editor.find.regex": {
+    "message": "Lietot regulāro izteiksmi (Alt+R)"
+  },
+  "editor.find.replace": {
+    "message": "Aizstāt (Ctrl+Shift+1)"
+  },
+  "editor.find.replace_all": {
+    "message": "Aizstāt visu (Ctrl+Alt+Enter)"
+  },
+  "editor.find.replace_placeholder": {
+    "message": "Aizstāt"
+  },
+  "editor.find.toggle_replace": {
+    "message": "Rādīt vai slēpt aizstāšanu"
+  },
+  "editor.find.whole_word": {
+    "message": "Tikai veseli vārdi (Alt+W)"
+  },
+  "editor.go_to_line.label": {
+    "message": "Rindiņa vai rindiņa:kolonna"
+  },
+  "editor.go_to_line.title": {
+    "message": "Pāriet uz rindiņu"
+  },
+  "editor.language.by_file_name": {
+    "message": "Pēc faila nosaukuma"
+  },
+  "editor.language.plain_text": {
+    "message": "Vienkāršs teksts"
+  },
+  "editor.menu.edit": {
+    "message": "Rediģēt"
+  },
+  "editor.menu.file": {
+    "message": "Fails"
+  },
+  "editor.menu.language": {
+    "message": "Valoda"
+  },
+  "editor.menu.selection": {
+    "message": "Atlase"
+  },
+  "editor.menu.view": {
+    "message": "Skats"
+  },
+  "editor.open.too_large": {
+    "message": "pārsniedz iebūvētā redaktora {limit_mb} MB (Iestatījumi, Rediģēšana/skatīšana); ar Ctrl+Shift+F4 to var rediģēt ārējā redaktorā"
+  },
+  "editor.reload.button": {
+    "message": "Pārlādēt"
+  },
+  "editor.reload.failed": {
+    "message": "Neizdevās pārlādēt: {err}"
+  },
+  "editor.reload.text": {
+    "message": "Nesaglabātās izmaiņas tiks zaudētas."
+  },
+  "editor.reload.title": {
+    "message": "Vai pārlādēt failu?"
+  },
+  "editor.reload.unfit": {
+    "message": "Nav pārlādēts: {why, select, binary {tas ir binārs} other {tas nav UTF-8 teksts}}."
+  },
+  "editor.save.admin": {
+    "message": "„{name}” saglabāšana"
+  },
+  "editor.save.failed": {
+    "message": "Neizdevās saglabāt {path}: {err}"
+  },
+  "editor.save_anyway.button": {
+    "message": "Saglabāt tik un tā"
+  },
+  "editor.save_anyway.text": {
+    "message": "Fails nebija teksts: saglabājot tas tiks ierakstīts tā, kā parādīts, tāpēc viss, kas nebija teksts, mainīsies neatgriezeniski."
+  },
+  "editor.save_anyway.title": {
+    "message": "Vai saglabāt kā tekstu?"
+  },
+  "editor.selection.add_cursor_above": {
+    "message": "Pievienot kursoru augšā"
+  },
+  "editor.selection.add_cursor_below": {
+    "message": "Pievienot kursoru apakšā"
+  },
+  "editor.selection.delete_lines": {
+    "message": "Dzēst rindiņas"
+  },
+  "editor.selection.duplicate_lines": {
+    "message": "Dublēt rindiņas"
+  },
+  "editor.selection.indent": {
+    "message": "Palielināt atkāpi"
+  },
+  "editor.selection.lowercase": {
+    "message": "mazie burti"
+  },
+  "editor.selection.move_lines_down": {
+    "message": "Pārvietot rindiņas uz leju"
+  },
+  "editor.selection.move_lines_up": {
+    "message": "Pārvietot rindiņas uz augšu"
+  },
+  "editor.selection.outdent": {
+    "message": "Samazināt atkāpi"
+  },
+  "editor.selection.select_all": {
+    "message": "Atlasīt visu"
+  },
+  "editor.selection.select_all_occurrences": {
+    "message": "Atlasīt visus gadījumus"
+  },
+  "editor.selection.sort_lines_ascending": {
+    "message": "Kārtot rindiņas augošā secībā"
+  },
+  "editor.selection.sort_lines_descending": {
+    "message": "Kārtot rindiņas dilstošā secībā"
+  },
+  "editor.selection.title_case": {
+    "message": "Lielie Sākumburti"
+  },
+  "editor.selection.toggle_line_comment": {
+    "message": "Pārslēgt rindiņas komentāru"
+  },
+  "editor.selection.trim_trailing_whitespace": {
+    "message": "Noņemt atstarpes rindiņu beigās"
+  },
+  "editor.selection.uppercase": {
+    "message": "LIELIE BURTI"
+  },
+  "editor.send.failed": {
+    "message": "Neizdevās saglabāt atpakaļ serverī: {err}. Saglabājot tiks mēģināts vēlreiz."
+  },
+  "editor.status.modified": {
+    "message": "Mainīts"
+  },
+  "editor.status.position": {
+    "message": "Rind. {line}, kol. {column}"
+  },
+  "editor.status.position_selected": {
+    "message": "Rind. {line}, kol. {column} ({count, plural, zero {atlasītas #} one {atlasīta #} other {atlasītas #}})"
+  },
+  "editor.status.sending": {
+    "message": "Saglabā serverī"
+  },
+  "editor.status.spaces": {
+    "message": "Atstarpes: {size}"
+  },
+  "editor.status.tab_size": {
+    "message": "Tabulācija: {size}"
+  },
+  "editor.status.unsent": {
+    "message": "Nav serverī"
+  },
+  "editor.terminal.not_found": {
+    "message": "nav atrasts neviens redaktors; iestatiet $EDITOR"
+  },
+  "editor.title": {
+    "message": "{path} — Redaktors"
+  },
+  "editor.unfit.open_anyway": {
+    "message": "Atvērt tik un tā"
+  },
+  "editor.unfit.text": {
+    "message": "Fails netiek rādīts redaktorā, jo {why, select, binary {tas ir binārs} other {tas nav UTF-8 teksts}}."
+  },
+  "editor.view.folding": {
+    "message": "Sakļaušana"
+  },
+  "editor.view.indent_guides": {
+    "message": "Atkāpju palīglīnijas"
+  },
+  "editor.view.indent_with_tabs": {
+    "message": "Atkāpes ar tabulācijas zīmēm"
+  },
+  "editor.view.line_numbers": {
+    "message": "Rindiņu numuri"
+  },
+  "editor.view.minimap": {
+    "message": "Minikarte"
+  },
+  "editor.view.tab_width": {
+    "message": "Tabulācijas platums {width}"
+  },
+  "editor.view.unfold_all": {
+    "message": "Izvērst visu"
+  },
+  "editor.view.whitespace": {
+    "message": "Tukšumzīmes"
+  },
+  "editor.view.word_wrap": {
+    "message": "Vārdu aplaušana"
+  },
+  "elevate.failed": {
+    "message": "arī kā administratoram neizdevās ({code})"
+  },
+  "elevate.no_consent": {
+    "message": "administratora piekrišana netika sniegta"
+  },
+  "elevate.no_password": {
+    "message": "parole netika ievadīta"
+  },
+  "elevate.not_authorised": {
+    "message": "nav atļauts"
+  },
+  "elevate.percent_name": {
+    "message": "{path}: nosaukumu ar % nevar apstrādāt kā administrators; vispirms to pārdēvējiet"
+  },
+  "elevate.pkexec_missing": {
+    "message": "pkexec (polkit) nav instalēts"
+  },
+  "file_menu.change_tags_failed": {
+    "message": "Neizdevās mainīt tagus: {err}"
+  },
+  "file_menu.compress": {
+    "message": "{count, plural, =1 {Saspiest „{name}”…} zero {Saspiest # vienumu…} one {Saspiest # vienumu…} other {Saspiest # vienumus…}}"
+  },
+  "file_menu.copy": {
+    "message": "{count, plural, =1 {Kopēt „{name}”} zero {Kopēt # vienumu} one {Kopēt # vienumu} other {Kopēt # vienumus}}"
+  },
+  "file_menu.copy_path": {
+    "message": "Kopēt ceļu starpliktuvē"
+  },
+  "file_menu.delete": {
+    "message": "Dzēst"
+  },
+  "file_menu.duplicate": {
+    "message": "Dublēt"
+  },
+  "file_menu.duplicate_failed": {
+    "message": "Neizdevās dublēt: {err}"
+  },
+  "file_menu.edit_tags": {
+    "message": "Tagi…"
+  },
+  "file_menu.get_info": {
+    "message": "Iegūt informāciju"
+  },
+  "file_menu.make_alias": {
+    "message": "Izveidot aizstājvārdu"
+  },
+  "file_menu.make_alias_failed": {
+    "message": "Neizdevās izveidot aizstājvārdu: {err}"
+  },
+  "file_menu.move_to_trash": {
+    "message": "Pārvietot uz atkritni"
+  },
+  "file_menu.new_folder": {
+    "message": "Jauna mape"
+  },
+  "file_menu.open": {
+    "message": "Atvērt"
+  },
+  "file_menu.open_failed": {
+    "message": "Neizdevās atvērt: {err}"
+  },
+  "file_menu.open_with": {
+    "message": "Atvērt ar"
+  },
+  "file_menu.open_with_default": {
+    "message": "{app} (noklusējums)"
+  },
+  "file_menu.paste": {
+    "message": "Ielīmēt"
+  },
+  "file_menu.quick_look": {
+    "message": "{count, plural, =1 {Quick Look „{name}”} zero {Quick Look: # vienumu} one {Quick Look: # vienums} other {Quick Look: # vienumi}}"
+  },
+  "file_menu.quick_look_failed": {
+    "message": "Quick Look: {err}"
+  },
+  "file_menu.rename": {
+    "message": "Pārdēvēt…"
+  },
+  "file_menu.reveal_failed": {
+    "message": "Neizdevās parādīt programmā Finder: {err}"
+  },
+  "file_menu.reveal_in_finder": {
+    "message": "Rādīt programmā Finder"
+  },
+  "file_menu.show_package_contents": {
+    "message": "Rādīt pakotnes saturu"
+  },
+  "file_menu.tag_dot.add": {
+    "message": "Pievienot tagu „{name}”"
+  },
+  "file_menu.tag_dot.remove": {
+    "message": "Noņemt tagu „{name}”"
+  },
+  "file_menu.tags_popover.show_all": {
+    "message": "Rādīt visus…"
+  },
+  "file_menu.tags_popover.title": {
+    "message": "{count, plural, =1 {Piešķirt tagus „{name}”} zero {Piešķirt tagus # vienumiem} one {Piešķirt tagus # vienumam} other {Piešķirt tagus # vienumiem}}"
+  },
+  "find.backwards": {
+    "message": "Meklēt atpakaļ"
+  },
+  "find.cancel": {
+    "message": "Atcelt"
+  },
+  "find.case_sensitive": {
+    "message": "Reģistrjutīgs"
+  },
+  "find.hex": {
+    "message": "Meklēt heksadecimālu virkni"
+  },
+  "find.ok": {
+    "message": "Labi"
+  },
+  "find.regex": {
+    "message": "RegEx"
+  },
+  "find.text.label": {
+    "message": "Ievadiet meklējamo tekstu"
+  },
+  "find.title": {
+    "message": "Atrast"
+  },
+  "find.whole_words": {
+    "message": "Tikai veseli vārdi"
+  },
+  "keys.apply": {
+    "message": "Lietot"
+  },
+  "keys.cancel": {
+    "message": "Atcelt"
+  },
+  "keys.clear.tooltip": {
+    "message": "Bez taustiņa"
+  },
+  "keys.column.alternate": {
+    "message": "Alternatīvais"
+  },
+  "keys.column.command": {
+    "message": "Komanda"
+  },
+  "keys.column.shortcut": {
+    "message": "Īsinājumtaustiņš"
+  },
+  "keys.custom": {
+    "message": "Pielāgots"
+  },
+  "keys.delete_set": {
+    "message": "Dzēst"
+  },
+  "keys.note.custom_replaced": {
+    "message": "Jūsu pašu taustiņus aizstāja {name} taustiņi; ar „Saglabāt kā…” tos var saglabāt."
+  },
+  "keys.note.deleted": {
+    "message": "{name} ir izdzēsts; „Labi” vai „Lietot” to apstiprina."
+  },
+  "keys.note.moved": {
+    "message": "{key} tagad izpilda „{command}”, vairs ne „{other}”."
+  },
+  "keys.note.name_reserved": {
+    "message": "„{name}” ir priekšiestatījuma nosaukums; izvēlieties citu."
+  },
+  "keys.note.press_new_key": {
+    "message": "Nospiediet jauno taustiņu; Esc atstāj to nemainītu."
+  },
+  "keys.note.saved": {
+    "message": "Saglabāts kā {name}; „Labi” vai „Lietot” to paturēs."
+  },
+  "keys.note.set": {
+    "message": "{key} tagad izpilda „{command}”."
+  },
+  "keys.note.taken_by_system": {
+    "message": "{key} ir aizņemts ({by}), tāpēc Spark Commander to nekad nesaņem."
+  },
+  "keys.ok": {
+    "message": "Labi"
+  },
+  "keys.press_key": {
+    "message": "Nospiediet taustiņu…"
+  },
+  "keys.reserved.application_launcher": {
+    "message": "{system}: lietotņu palaidējs"
+  },
+  "keys.reserved.close_window": {
+    "message": "{system}: aizvērt logu"
+  },
+  "keys.reserved.close_window_or_tab": {
+    "message": "{system}: aizvērt logu vai cilni"
+  },
+  "keys.reserved.dock": {
+    "message": "{system}: Dock"
+  },
+  "keys.reserved.floating_window": {
+    "message": "{system}: peldošais logs"
+  },
+  "keys.reserved.force_quit": {
+    "message": "{system}: piespiedu iziešana"
+  },
+  "keys.reserved.hide_program": {
+    "message": "{system}: paslēpt programmu"
+  },
+  "keys.reserved.input_source": {
+    "message": "{system}: ievades avots"
+  },
+  "keys.reserved.keyboard_access": {
+    "message": "{system}: tastatūras piekļuve"
+  },
+  "keys.reserved.keyboard_navigation": {
+    "message": "{system}: tastatūras navigācija"
+  },
+  "keys.reserved.krunner": {
+    "message": "{system}: KRunner"
+  },
+  "keys.reserved.lock_screen": {
+    "message": "{system}: bloķēt ekrānu"
+  },
+  "keys.reserved.log_out": {
+    "message": "{system}: izrakstīties"
+  },
+  "keys.reserved.maximize_window": {
+    "message": "{system}: maksimizēt logu"
+  },
+  "keys.reserved.menu_bar": {
+    "message": "{system}: izvēļņu josla"
+  },
+  "keys.reserved.minimize": {
+    "message": "{system}: minimizēt"
+  },
+  "keys.reserved.mission_control": {
+    "message": "{system}: Mission Control"
+  },
+  "keys.reserved.move_window": {
+    "message": "{system}: pārvietot logu"
+  },
+  "keys.reserved.next_window": {
+    "message": "{system}: nākamais logs"
+  },
+  "keys.reserved.present_windows": {
+    "message": "{system}: Logu pārskats"
+  },
+  "keys.reserved.present_windows_all": {
+    "message": "{system}: Logu pārskats (visas darbvirsmas)"
+  },
+  "keys.reserved.present_windows_class": {
+    "message": "{system}: Logu pārskats (loga klase)"
+  },
+  "keys.reserved.program_windows": {
+    "message": "{system}: programmas logi"
+  },
+  "keys.reserved.quit": {
+    "message": "{system}: iziet"
+  },
+  "keys.reserved.resize_window": {
+    "message": "{system}: mainīt loga izmēru"
+  },
+  "keys.reserved.restore_window": {
+    "message": "{system}: atjaunot logu"
+  },
+  "keys.reserved.run_command": {
+    "message": "{system}: palaist komandu"
+  },
+  "keys.reserved.screenshot": {
+    "message": "{system}: ekrānuzņēmums"
+  },
+  "keys.reserved.security_screen": {
+    "message": "{system}: drošības ekrāns"
+  },
+  "keys.reserved.show_desktop": {
+    "message": "{system}: rādīt darbvirsmu"
+  },
+  "keys.reserved.space_left": {
+    "message": "{system}: telpa pa kreisi"
+  },
+  "keys.reserved.space_right": {
+    "message": "{system}: telpa pa labi"
+  },
+  "keys.reserved.spotlight": {
+    "message": "{system}: Spotlight"
+  },
+  "keys.reserved.start_menu": {
+    "message": "{system}: izvēlne Sākt"
+  },
+  "keys.reserved.status_menus": {
+    "message": "{system}: statusa izvēlnes"
+  },
+  "keys.reserved.suspend_compositing": {
+    "message": "{system}: apturēt kompozitēšanu"
+  },
+  "keys.reserved.switch_program_windows": {
+    "message": "{system}: pārslēgt programmas logus"
+  },
+  "keys.reserved.switch_programs": {
+    "message": "{system}: pārslēgt programmas"
+  },
+  "keys.reserved.switch_system_controls": {
+    "message": "{system}: pārslēgt sistēmas vadīklas"
+  },
+  "keys.reserved.switch_to_desktop": {
+    "message": "{system}: pārslēgties uz {number}. darbvirsmu"
+  },
+  "keys.reserved.switch_windows": {
+    "message": "{system}: pārslēgt logus"
+  },
+  "keys.reserved.system_monitor": {
+    "message": "{system}: Sistēmas pārraugs"
+  },
+  "keys.reserved.task_manager": {
+    "message": "{system}: Uzdevumu pārvaldnieks"
+  },
+  "keys.reserved.text_console": {
+    "message": "{system}: pārslēgties uz teksta konsoli"
+  },
+  "keys.reserved.toolbar": {
+    "message": "{system}: rīkjosla"
+  },
+  "keys.reserved.window_menu": {
+    "message": "{system}: loga izvēlne"
+  },
+  "keys.reserved.workspace_down": {
+    "message": "{system}: darbvieta zemāk"
+  },
+  "keys.reserved.workspace_left": {
+    "message": "{system}: darbvieta pa kreisi"
+  },
+  "keys.reserved.workspace_right": {
+    "message": "{system}: darbvieta pa labi"
+  },
+  "keys.reserved.workspace_up": {
+    "message": "{system}: darbvieta augstāk"
+  },
+  "keys.reset.tooltip": {
+    "message": "Atpakaļ uz {preset} taustiņiem"
+  },
+  "keys.reset_all": {
+    "message": "Atiestatīt visu"
+  },
+  "keys.save_as.button": {
+    "message": "Saglabāt kā…"
+  },
+  "keys.save_as.default_name": {
+    "message": "Mani taustiņi"
+  },
+  "keys.save_as.label": {
+    "message": "Nosaukums:"
+  },
+  "keys.save_as.title": {
+    "message": "Saglabāt īsinājumtaustiņus"
+  },
+  "keys.search.placeholder": {
+    "message": "Meklēt komandu vai taustiņu"
+  },
+  "keys.set_label": {
+    "message": "Taustiņi:"
+  },
+  "keys.taken_by.tooltip": {
+    "message": "Aizņemts: {by}"
+  },
+  "keys.title": {
+    "message": "Īsinājumtaustiņi"
+  },
+  "main.admin.button": {
+    "message": "Kā administrators"
+  },
+  "main.admin.deleting": {
+    "message": "{count, plural, zero {# vienumu dzēšana} one {# vienuma dzēšana} other {# vienumu dzēšana}}"
+  },
+  "main.admin.failed": {
+    "message": "Kā administratoram: {err}"
+  },
+  "main.admin.making": {
+    "message": "„{name}” izveide"
+  },
+  "main.admin.offer": {
+    "message": "{what}: atļauja liegta. Ja to darīsiet kā administrators, sistēma prasīs paroli."
+  },
+  "main.admin.offer_delete": {
+    "message": "{what}: atļauja liegta. Ja to darīsiet kā administrators, sistēma prasīs paroli. Šādi izdzēstais tiks zaudēts neatgriezeniski."
+  },
+  "main.admin.title": {
+    "message": "Atļauja liegta"
+  },
+  "main.delete.from_archive": {
+    "message": "{kind, select, folder {Vai dzēst mapi „{name}” no arhīva {archive}? To nevar atsaukt.} file {Vai dzēst failu „{name}” no arhīva {archive}? To nevar atsaukt.} other {Vai dzēst {count, plural, zero {# vienumu} one {# vienumu} other {# vienumus}} no arhīva {archive}? To nevar atsaukt.}}"
+  },
+  "main.delete.on_server": {
+    "message": "{kind, select, folder {Vai dzēst mapi „{name}” serverī {server}? To nevar atsaukt.} file {Vai dzēst failu „{name}” serverī {server}? To nevar atsaukt.} other {Vai dzēst {count, plural, zero {# vienumu} one {# vienumu} other {# vienumus}} serverī {server}? To nevar atsaukt.}}"
+  },
+  "main.delete.permanently": {
+    "message": "{kind, select, folder {Vai neatgriezeniski dzēst mapi „{name}”? To nevar atsaukt.} file {Vai neatgriezeniski dzēst failu „{name}”? To nevar atsaukt.} other {Vai neatgriezeniski dzēst {count, plural, zero {# vienumu} one {# vienumu} other {# vienumus}}? To nevar atsaukt.}}"
+  },
+  "main.delete.title": {
+    "message": "Dzēst"
+  },
+  "main.delete.title_permanently": {
+    "message": "Dzēst neatgriezeniski"
+  },
+  "main.delete.to_trash": {
+    "message": "{kind, select, folder {Vai pārvietot mapi „{name}” uz atkritni?} file {Vai pārvietot failu „{name}” uz atkritni?} other {Vai pārvietot {count, plural, zero {# vienumu} one {# vienumu} other {# vienumus}} uz atkritni?}}"
+  },
+  "main.download.edit": {
+    "message": "Lejupielādēt {file} rediģēšanai"
+  },
+  "main.download.view": {
+    "message": "Lejupielādēt {file} skatīšanai"
+  },
+  "main.error.make_folder": {
+    "message": "Neizdevās izveidot mapi: {err}"
+  },
+  "main.error.read_settings": {
+    "message": "Neizdevās nolasīt iestatījumus: {err}"
+  },
+  "main.error.read_tabs": {
+    "message": "Neizdevās nolasīt atvērtās cilnes: {err}"
+  },
+  "main.error.read_workspaces": {
+    "message": "Neizdevās nolasīt darbvietas: {err}"
+  },
+  "main.error.save_settings": {
+    "message": "Neizdevās saglabāt iestatījumus: {err}"
+  },
+  "main.folder_tree.home": {
+    "message": "Mājas mape"
+  },
+  "main.go.no_such_folder": {
+    "message": "{path}: šajā datorā nav šādas mapes"
+  },
+  "main.new_folder.label": {
+    "message": "Jauna mape (direktorijs):"
+  },
+  "main.new_folder.title": {
+    "message": "Jauna mape"
+  },
+  "main.sync_browsing.lost": {
+    "message": "{err}. Sinhronizētā pārlūkošana ir izslēgta."
+  },
+  "main.tool.needs_file": {
+    "message": "Kursors nav uz faila, bet %N, %O un %E tas ir nepieciešams."
+  },
+  "main.tool.needs_local_folder": {
+    "message": "Otrs panelis rāda serveri vai arhīvu, bet %T nepieciešama mape šajā datorā."
+  },
+  "main.undo.done": {
+    "message": "{way, select, redo {Atkārtots: {title}} other {Atsaukts: {title}}}"
+  },
+  "main.undo.failed": {
+    "message": "{way, select, redo {Neizdevās atkārtot „{title}”: {err}} other {Neizdevās atsaukt „{title}”: {err}}}"
+  },
+  "main.undo.nothing": {
+    "message": "{way, select, redo {Nav ko atkārtot.} other {Nav ko atsaukt.}}"
+  },
+  "main.undo.queued": {
+    "message": "{way, select, redo {Rindā atkārtošanai: {title}} other {Rindā atsaukšanai: {title}}}"
+  },
+  "mark.compare.marked": {
+    "message": "{count, plural, zero {Iezīmēti # faili, kas ir jaunāki vai kuru nav otrā pusē.} one {Iezīmēts # fails, kas ir jaunāks vai kura nav otrā pusē.} other {Iezīmēti # faili, kas ir jaunāki vai kuru nav otrā pusē.}}"
+  },
+  "mark.compare.same": {
+    "message": "Mapēs ir vienādi faili."
+  },
+  "mark.load_selection.label": {
+    "message": "Atlasīt failā uzskaitītos nosaukumus:"
+  },
+  "mark.load_selection.title": {
+    "message": "Ielādēt atlasi"
+  },
+  "mark.save_selection.label": {
+    "message": "Saglabāt atlasītos nosaukumus failā:"
+  },
+  "mark.save_selection.title": {
+    "message": "Saglabāt atlasi"
+  },
+  "mark.select_group.label": {
+    "message": "Atlasīt failus (*.txt *.md; mapes maska beidzas ar /):"
+  },
+  "mark.select_group.title": {
+    "message": "Atlasīt grupu"
+  },
+  "mark.selection_file.not_local": {
+    "message": "Atlases faili tiek glabāti šajā datorā, ārpus arhīviem."
+  },
+  "mark.unselect_group.label": {
+    "message": "Noņemt atlasi failiem (*.txt *.md; mapes maska beidzas ar /):"
+  },
+  "mark.unselect_group.title": {
+    "message": "Noņemt atlasi grupai"
+  },
+  "media.cannot_play": {
+    "message": "Šo nevar atskaņot: {err}"
+  },
+  "media.cannot_play_as_text": {
+    "message": "Šo nevar atskaņot: {err}. Taustiņš 1 to parāda kā tekstu."
+  },
+  "media.continuing": {
+    "message": "Turpina no {time}"
+  },
+  "media.error.missing": {
+    "message": "Trūkst libmpv: to var lejupielādēt sadaļā Iestatījumi > Papildinājumi (būvējot no pirmkoda: vendor/mpv/{script})"
+  },
+  "media.error.not_started": {
+    "message": "libmpv neizdevās palaist"
+  },
+  "media.error.too_long": {
+    "message": "{path}: mpv strādāja pārāk ilgi"
+  },
+  "media.error.unsupported_system": {
+    "message": "video pagaidām tiek atskaņots tikai Linux, macOS un Windows sistēmās"
+  },
+  "menu.archive": {
+    "message": "Arhīvs"
+  },
+  "menu.associations": {
+    "message": "Sasaistes"
+  },
+  "menu.button_bar": {
+    "message": "Pogu josla"
+  },
+  "menu.checksums": {
+    "message": "Kontrolsummas"
+  },
+  "menu.commands": {
+    "message": "Komandas"
+  },
+  "menu.compare_directories": {
+    "message": "Salīdzināt mapes"
+  },
+  "menu.configuration": {
+    "message": "Konfigurācija"
+  },
+  "menu.copy_names": {
+    "message": "Kopēt nosaukumus"
+  },
+  "menu.files": {
+    "message": "Faili"
+  },
+  "menu.filter": {
+    "message": "Filtrs"
+  },
+  "menu.go": {
+    "message": "Pāriet"
+  },
+  "menu.help": {
+    "message": "Palīdzība"
+  },
+  "menu.mark": {
+    "message": "Iezīmēt"
+  },
+  "menu.other": {
+    "message": "Citas"
+  },
+  "menu.recently_closed_tabs": {
+    "message": "Nesen aizvērtās cilnes"
+  },
+  "menu.selection": {
+    "message": "Atlase"
+  },
+  "menu.show": {
+    "message": "Rādīt"
+  },
+  "menu.sidebar": {
+    "message": "Sānjosla"
+  },
+  "menu.sort": {
+    "message": "Kārtot"
+  },
+  "menu.split_and_combine": {
+    "message": "Sadalīt un apvienot"
+  },
+  "menu.tabs": {
+    "message": "Cilnes"
+  },
+  "menu.tools": {
+    "message": "Rīki"
+  },
+  "menu.workspaces": {
+    "message": "Darbvietas"
+  },
+  "menus.hide_app": {
+    "message": "Paslēpt Spark Commander"
+  },
+  "menus.hide_others": {
+    "message": "Paslēpt citus"
+  },
+  "menus.minimize": {
+    "message": "Minimizēt"
+  },
+  "menus.quit_app": {
+    "message": "Iziet no Spark Commander"
+  },
+  "menus.services": {
+    "message": "Pakalpojumi"
+  },
+  "menus.show_all": {
+    "message": "Rādīt visu"
+  },
+  "menus.zoom": {
+    "message": "Tālummaiņa"
+  },
+  "name_dialog.cancel": {
+    "message": "Atcelt"
+  },
+  "name_dialog.ok": {
+    "message": "Labi"
+  },
+  "operations.clear": {
+    "message": "Notīrīt pabeigtās"
+  },
+  "operations.duration.seconds": {
+    "message": "{seconds} s"
+  },
+  "operations.empty": {
+    "message": "Nav darbību."
+  },
+  "operations.job.answer": {
+    "message": "Gaida jūsu atbildi"
+  },
+  "operations.job.bytes": {
+    "message": "{done} no {total}"
+  },
+  "operations.job.cancel_tooltip": {
+    "message": "Atcelt"
+  },
+  "operations.job.cancelled": {
+    "message": "Atcelts"
+  },
+  "operations.job.counting": {
+    "message": "Skaitīšana: {count, plural, zero {# failu} one {# fails} other {# faili}}"
+  },
+  "operations.job.done": {
+    "message": "Pabeigts"
+  },
+  "operations.job.done_skipped": {
+    "message": "Pabeigts, {count, plural, zero {izlaisti: #} one {izlaists: #} other {izlaisti: #}}"
+  },
+  "operations.job.failed": {
+    "message": "Neizdevās"
+  },
+  "operations.job.files": {
+    "message": "{files} / {count, plural, zero {# failu} one {# fails} other {# faili}}"
+  },
+  "operations.job.left": {
+    "message": "Atlicis {time}"
+  },
+  "operations.job.running": {
+    "message": "Darbojas"
+  },
+  "operations.job.waiting": {
+    "message": "Gaida"
+  },
+  "operations.menu.cancel": {
+    "message": "Atcelt"
+  },
+  "operations.menu.clear": {
+    "message": "Notīrīt pabeigtās"
+  },
+  "operations.menu.move_down": {
+    "message": "Pārvietot uz leju"
+  },
+  "operations.menu.move_up": {
+    "message": "Pārvietot uz augšu"
+  },
+  "operations.settings_tooltip": {
+    "message": "Darbību rindas iestatījumi"
+  },
+  "operations.summary.failed": {
+    "message": "{count, plural, zero {# neizdevās} one {# neizdevās} other {# neizdevās}}"
+  },
+  "operations.summary.running": {
+    "message": "{count, plural, zero {# darbojas} one {# darbojas} other {# darbojas}}"
+  },
+  "operations.summary.waiting": {
+    "message": "{count, plural, zero {# gaida} one {# gaida} other {# gaida}}"
+  },
+  "ops.as_administrator.failed": {
+    "message": "Kā administratoram: {err}"
+  },
+  "ops.as_administrator.progress": {
+    "message": "Kā administrators…"
+  },
+  "ops.delete.title_many": {
+    "message": "Dzēst {count, plural, zero {# vienumu} one {# vienumu} other {# vienumus}} mapē {folder}"
+  },
+  "ops.delete.title_one": {
+    "message": "Dzēst „{name}”"
+  },
+  "ops.delete.trash_title_many": {
+    "message": "Pārvietot {count, plural, zero {# vienumu} one {# vienumu} other {# vienumus}} no mapes {folder} uz atkritni"
+  },
+  "ops.delete.trash_title_one": {
+    "message": "Pārvietot „{name}” uz atkritni"
+  },
+  "ops.error.file_in_the_way": {
+    "message": "traucē fails ar tādu pašu nosaukumu"
+  },
+  "ops.error.into_itself": {
+    "message": "nevar kopēt pašā sevī"
+  },
+  "ops.exists_already": {
+    "message": "{name} jau pastāv"
+  },
+  "ops.link.dialog_title": {
+    "message": "Izveidot saiti"
+  },
+  "ops.link.failed": {
+    "message": "Neizdevās izveidot saiti: {err}"
+  },
+  "ops.link.kind.hard": {
+    "message": "Cietā saite"
+  },
+  "ops.link.kind.junction": {
+    "message": "Savienojuma punkts"
+  },
+  "ops.link.kind.shortcut": {
+    "message": "Īsceļš (.lnk)"
+  },
+  "ops.link.kind.symbolic": {
+    "message": "Simboliskā saite"
+  },
+  "ops.link.label_many": {
+    "message": "Saites uz {count, plural, zero {# vienumiem} one {# vienumu} other {# vienumiem}} mapē:"
+  },
+  "ops.link.label_one": {
+    "message": "Saite uz „{name}” kā:"
+  },
+  "ops.link.making": {
+    "message": "{kind, select, symbolic {Simboliskās saites} hard {Cietās saites} junction {Savienojuma punkta} other {Īsceļa (.lnk)}} izveide"
+  },
+  "ops.link.needs_admin": {
+    "message": "simboliskajām saitēm nepieciešams administrators vai izstrādātāja režīms"
+  },
+  "ops.link.thread_failed": {
+    "message": "īsceļa pavediens neizdevās"
+  },
+  "ops.link.title_many": {
+    "message": "{kind, select, symbolic {Simboliskās saites} hard {Cietās saites} junction {Savienojuma punkti} other {Īsceļi (.lnk)}} uz {count, plural, zero {# vienumiem} one {# vienumu} other {# vienumiem}} mapē {folder}"
+  },
+  "ops.link.title_one": {
+    "message": "{kind, select, symbolic {Simboliskā saite} hard {Cietā saite} junction {Savienojuma punkts} other {Īsceļš (.lnk)}} uz „{name}” mapē {folder}"
+  },
+  "ops.link.windows_only": {
+    "message": "savienojuma punkti un īsceļi ir tikai sistēmā Windows"
+  },
+  "ops.redo.title": {
+    "message": "Atkārtot: {what}"
+  },
+  "ops.title.many": {
+    "message": "{kind, select, copy {Kopēt} other {Pārvietot}} {count, plural, zero {# vienumu} one {# vienumu} other {# vienumus}} uz {target}"
+  },
+  "ops.title.one": {
+    "message": "{kind, select, copy {Kopēt} other {Pārvietot}} „{name}” uz {target}"
+  },
+  "ops.undo.not_a_server": {
+    "message": "{url}: nav servera adrese"
+  },
+  "ops.undo.not_in_trash": {
+    "message": "to vairs nav atkritnē"
+  },
+  "ops.undo.restore_title": {
+    "message": "{title}: aizstātā atjaunošana no atkritnes"
+  },
+  "ops.undo.title": {
+    "message": "Atsaukt: {what}"
+  },
+  "pack.cancel": {
+    "message": "Atcelt"
+  },
+  "pack.compression": {
+    "message": "Saspiešana:"
+  },
+  "pack.dialog_title": {
+    "message": "Iepakot failus"
+  },
+  "pack.encrypt": {
+    "message": "Šifrēt ar paroli"
+  },
+  "pack.format": {
+    "message": "Formāts:"
+  },
+  "pack.label": {
+    "message": "Iepakot {count, plural, zero {# vienumu(s)} one {# vienumu(s)} other {# vienumu(s)}} arhīvā:"
+  },
+  "pack.level.fastest": {
+    "message": "Ātrākā"
+  },
+  "pack.level.maximum": {
+    "message": "Maksimālā"
+  },
+  "pack.level.normal": {
+    "message": "Normālā"
+  },
+  "pack.level.store": {
+    "message": "Bez saspiešanas"
+  },
+  "pack.level.ultra": {
+    "message": "Ultra"
+  },
+  "pack.local_only": {
+    "message": "{what, select, packing {Iepakošana} unpacking {Izpakošana} testing {Pārbaude} creating_checksums {Kontrolsummu izveide} making_links {Saišu izveide} verifying_checksums {Kontrolsummu pārbaude} splitting {Sadalīšana} combining {Apvienošana} other {Šī darbība}} darbojas ar šī datora failiem ārpus arhīviem."
+  },
+  "pack.move_files": {
+    "message": "Pārvietot uz arhīvu (dzēst iepakotos failus)"
+  },
+  "pack.needs_password": {
+    "message": "nepieciešama parole"
+  },
+  "pack.ok": {
+    "message": "Labi"
+  },
+  "pack.password_missing": {
+    "message": "Ievadiet paroli vai izslēdziet šifrēšanu."
+  },
+  "pack.separate": {
+    "message": "Atsevišķs arhīvs katram atlasītajam failam vai mapei"
+  },
+  "pack.split": {
+    "message": "Sadalīt sējumos pa"
+  },
+  "pack.split_unit": {
+    "message": "MB"
+  },
+  "pack.test.broken": {
+    "message": "{broken, plural, zero {# no {count} bojāti} one {# no {count} bojāts} other {# no {count} bojāti}}"
+  },
+  "pack.test.choose": {
+    "message": "Izvēlieties pārbaudāmos arhīvus."
+  },
+  "pack.test.ok": {
+    "message": "{count, plural, zero {# arhīvu kārtībā} one {# arhīvs kārtībā} other {# arhīvi kārtībā}}"
+  },
+  "pack.test.title_many": {
+    "message": "Pārbaudīt {count, plural, zero {# arhīvu} one {# arhīvu} other {# arhīvus}}"
+  },
+  "pack.test.title_one": {
+    "message": "Pārbaudīt „{name}”"
+  },
+  "pack.title.many": {
+    "message": "Iepakot {count, plural, zero {# vienumu} one {# vienumu} other {# vienumus}} arhīvā {archive}"
+  },
+  "pack.title.many_separate": {
+    "message": "Iepakot {count, plural, zero {# vienumu} one {# vienumu} other {# vienumus}} atsevišķos {format} arhīvos"
+  },
+  "pack.title.one": {
+    "message": "Iepakot „{name}” arhīvā {archive}"
+  },
+  "pack.title.one_separate": {
+    "message": "Iepakot „{name}” atsevišķos {format} arhīvos"
+  },
+  "pack.unpack.choose": {
+    "message": "Izvēlieties izpakojamos arhīvus."
+  },
+  "pack.unpack.dialog_title": {
+    "message": "Izpakot failus"
+  },
+  "pack.unpack.label": {
+    "message": "Izpakot {count, plural, zero {# arhīvu(s)} one {# arhīvu(s)} other {# arhīvu(s)}} mapē:"
+  },
+  "pack.unpack.mask": {
+    "message": "Tikai faili:"
+  },
+  "pack.unpack.overwrite": {
+    "message": "Pārrakstīt esošos failus (citādi tie tiek saglabāti)"
+  },
+  "pack.unpack.password": {
+    "message": "Parole:"
+  },
+  "pack.unpack.separate": {
+    "message": "Katru arhīvu mapē ar tā nosaukumu"
+  },
+  "pack.unpack.title_many": {
+    "message": "Izpakot {count, plural, zero {# arhīvu} one {# arhīvu} other {# arhīvus}} mapē {target}"
+  },
+  "pack.unpack.title_one": {
+    "message": "Izpakot „{name}” mapē {target}"
+  },
+  "pack.unpack.with_paths": {
+    "message": "Saglabāt arhīvā glabātās mapes"
+  },
+  "pack.volume_invalid": {
+    "message": "Sējuma lielumam jābūt skaitlim (MB)."
+  },
+  "pack.wrong_password": {
+    "message": "nepareiza parole"
+  },
+  "panel.admin.renaming": {
+    "message": "Pārdēvēšana par „{name}”"
+  },
+  "panel.clipboard.copied": {
+    "message": "{count, plural, zero {Nokopēti # vienumi} one {Nokopēts # vienums} other {Nokopēti # vienumi}}: Ctrl+V tos ielīmēs."
+  },
+  "panel.clipboard.cut": {
+    "message": "{count, plural, zero {Izgriezti # vienumi} one {Izgriezts # vienums} other {Izgriezti # vienumi}}: Ctrl+V tos ielīmēs."
+  },
+  "panel.clipboard.no_cut_in_archive": {
+    "message": "Failus nevar izgriezt no arhīviem; Ctrl+C tos nokopē."
+  },
+  "panel.clipboard.no_files": {
+    "message": "Starpliktuvē nav failu."
+  },
+  "panel.clipboard.no_paste_in_archive": {
+    "message": "Failus arhīvos pagaidām nevar ielīmēt."
+  },
+  "panel.clipboard.same_folder": {
+    "message": "Tie jau ir šajā mapē: ar Ctrl+V tos var ielīmēt citā mapē."
+  },
+  "panel.column.attr": {
+    "message": "Atrib."
+  },
+  "panel.column.date": {
+    "message": "Datums"
+  },
+  "panel.column.ext": {
+    "message": "Papl."
+  },
+  "panel.column.name": {
+    "message": "Nosaukums"
+  },
+  "panel.column.size": {
+    "message": "Lielums"
+  },
+  "panel.disconnect": {
+    "message": "Atvienoties"
+  },
+  "panel.drag.items": {
+    "message": "{count, plural, zero {# vienumu} one {# vienums} other {# vienumi}}"
+  },
+  "panel.error.archive_not_updatable": {
+    "message": "{name}: 7-Zip uz vietas maina tikai 7z, zip un tar arhīvus, ne šo"
+  },
+  "panel.error.archive_on_server": {
+    "message": "{name}: arhīvus serveros pagaidām nevar mainīt"
+  },
+  "panel.error.branch_view_local": {
+    "message": "Zaru skats rāda tikai šī datora mapes"
+  },
+  "panel.error.exists": {
+    "message": "{name} jau pastāv"
+  },
+  "panel.error.folder_in_the_way": {
+    "message": "traucē mape ar tādu pašu nosaukumu"
+  },
+  "panel.error.inside_archive": {
+    "message": "arhīvos pagaidām nav iespējams"
+  },
+  "panel.error.make_file": {
+    "message": "Neizdevās izveidot failu: {err}"
+  },
+  "panel.error.no_name": {
+    "message": "nav norādīts nosaukums"
+  },
+  "panel.error.not_a_name": {
+    "message": "{name}: nederīgs nosaukums"
+  },
+  "panel.error.other_drive": {
+    "message": "otrs panelis pārgāja uz citu disku"
+  },
+  "panel.error.rename": {
+    "message": "Neizdevās pārdēvēt: {err}"
+  },
+  "panel.filter.custom.label": {
+    "message": "Failu tipi, piem., *.txt *.md (pēc | – izslēdzamie):"
+  },
+  "panel.filter.custom.title": {
+    "message": "Rādīt failus"
+  },
+  "panel.filter.programs": {
+    "message": "programmas"
+  },
+  "panel.filter.selected_files": {
+    "message": "atlasītie faili"
+  },
+  "panel.found.branch_view": {
+    "message": "Zaru skats:"
+  },
+  "panel.found.search_results": {
+    "message": "Meklēšanas rezultāti:"
+  },
+  "panel.new_text_file.label": {
+    "message": "Faila nosaukums (tiks atvērts redaktorā):"
+  },
+  "panel.new_text_file.title": {
+    "message": "Jauns teksta fails"
+  },
+  "panel.opening.cancel": {
+    "message": "Atcelt"
+  },
+  "panel.opening.reading": {
+    "message": "Nolasa…"
+  },
+  "panel.opening.title": {
+    "message": "Arhīva atvēršana"
+  },
+  "panel.quick_filter.hint": {
+    "message": "paslēpj neatbilstošos; Escape rāda visus"
+  },
+  "panel.quick_filter.label": {
+    "message": "Filtrs:"
+  },
+  "panel.quick_search.label": {
+    "message": "Meklēt:"
+  },
+  "panel.size.app": {
+    "message": "<APP>"
+  },
+  "panel.size.b": {
+    "message": "{size} B"
+  },
+  "panel.size.dir": {
+    "message": "<DIR>"
+  },
+  "panel.size.gb": {
+    "message": "{size} GB"
+  },
+  "panel.size.kb": {
+    "message": "{size} KB"
+  },
+  "panel.size.mb": {
+    "message": "{size} MB"
+  },
+  "panel.size.tb": {
+    "message": "{size} TB"
+  },
+  "panel.space.bytes": {
+    "message": "{count, plural, zero {{size} baitu ({human})} one {{size} baits ({human})} other {{size} baiti ({human})}}"
+  },
+  "panel.space.close": {
+    "message": "Aizvērt"
+  },
+  "panel.space.counting": {
+    "message": "Skaita…"
+  },
+  "panel.space.done": {
+    "message": "Gatavs."
+  },
+  "panel.space.files": {
+    "message": "Faili:"
+  },
+  "panel.space.folders": {
+    "message": "Mapes:"
+  },
+  "panel.space.in_archive": {
+    "message": "Arhīvos kolonnā Lielums izmēri jau ir redzami."
+  },
+  "panel.space.title": {
+    "message": "Aprēķināt aizņemto vietu"
+  },
+  "panel.space.total": {
+    "message": "Kopējais lielums:"
+  },
+  "panel.space.unreadable": {
+    "message": "{count, plural, zero {# vienumus nevarēja nolasīt.} one {# vienumu nevarēja nolasīt.} other {# vienumus nevarēja nolasīt.}}"
+  },
+  "panel.status": {
+    "message": "{marked_size} k / {size} k: {marked_files} / {files, plural, zero {# failu} one {# fails} other {# faili}}, {marked_folders} / {folders, plural, zero {# mapju} one {# mape} other {# mapes}}"
+  },
+  "panel.sync_browsing.stop": {
+    "message": "Sinhronizēta pārlūkošana (noklikšķiniet, lai apturētu)"
+  },
+  "panel.undo.rename": {
+    "message": "Pārdēvēt „{name}” par „{to}”"
+  },
+  "passwords.about.set": {
+    "message": "Ar galveno paroli saglabātās paroles var atvērt arī citā datorā, kurā nokopēta iestatījumu mape, ievadot to tur. Ja galvenā parole aizmirsta, tiek zaudētas tikai saglabātās paroles: tās būs jāievada vēlreiz."
+  },
+  "passwords.about.unlock": {
+    "message": "Iestatījumi ir no cita datora, vai arī šajā datorā nav atslēgu glabātuves: galvenā parole šeit atver saglabātās paroles."
+  },
+  "passwords.cancel": {
+    "message": "Atcelt"
+  },
+  "passwords.done.set": {
+    "message": "Galvenā parole ir iestatīta."
+  },
+  "passwords.done.unlocked": {
+    "message": "Saglabātās paroles ir atbloķētas."
+  },
+  "passwords.error.locked": {
+    "message": "saglabātās paroles ir bloķētas: atbloķējiet tās ar galveno paroli (Konfigurācija › Iestatījumi › Paroles)"
+  },
+  "passwords.error.no_master": {
+    "message": "galvenā parole nav iestatīta"
+  },
+  "passwords.error.no_random": {
+    "message": "nav nejaušu skaitļu"
+  },
+  "passwords.error.not_opened": {
+    "message": "paroli serverim {what} nevar atvērt"
+  },
+  "passwords.error.not_sealed": {
+    "message": "paroli neizdevās šifrēt"
+  },
+  "passwords.error.salt_damaged": {
+    "message": "galvenās paroles sāls ir bojāts"
+  },
+  "passwords.error.wrong": {
+    "message": "galvenā parole ir nepareiza"
+  },
+  "passwords.field.again": {
+    "message": "Vēlreiz"
+  },
+  "passwords.field.master": {
+    "message": "Galvenā parole"
+  },
+  "passwords.locked_note": {
+    "message": "Saglabātās paroles šajā datorā ir bloķētas: tās atver galvenā parole."
+  },
+  "passwords.ok": {
+    "message": "Labi"
+  },
+  "passwords.problem.differ": {
+    "message": "Abas paroles nesakrīt."
+  },
+  "passwords.problem.empty": {
+    "message": "Ievadiet galveno paroli."
+  },
+  "passwords.title.set": {
+    "message": "Galvenā parole"
+  },
+  "passwords.title.unlock": {
+    "message": "Atbloķēt saglabātās paroles"
+  },
+  "passwords.unlock_button": {
+    "message": "Atbloķēt…"
+  },
+  "passwords.working": {
+    "message": "Apstrādā…"
+  },
+  "properties.accessed": {
+    "message": "Piekļūts:"
+  },
+  "properties.change_attributes": {
+    "message": "Mainīt atribūtus..."
+  },
+  "properties.close": {
+    "message": "Aizvērt"
+  },
+  "properties.contents": {
+    "message": "{file_count, plural, zero {{files} failu} one {{files} fails} other {{files} faili}}, {folder_count, plural, zero {{folders} mapju} one {{folders} mape} other {{folders} mapes}}, {count, plural, zero {{bytes} baitu} one {{bytes} baits} other {{bytes} baiti}} ({size})"
+  },
+  "properties.contents_counting": {
+    "message": "{file_count, plural, zero {{files} failu} one {{files} fails} other {{files} faili}}, {folder_count, plural, zero {{folders} mapju} one {{folders} mape} other {{folders} mapes}}, {count, plural, zero {{bytes} baitu} one {{bytes} baits} other {{bytes} baiti}} ({size}) (skaita…)"
+  },
+  "properties.contents_label": {
+    "message": "Saturs:"
+  },
+  "properties.created": {
+    "message": "Izveidots:"
+  },
+  "properties.dialog_title": {
+    "message": "Rekvizīti"
+  },
+  "properties.in_archive": {
+    "message": "Arhīva sarakstā redzams viss, kas zināms par tā failiem."
+  },
+  "properties.kind.file": {
+    "message": "Fails"
+  },
+  "properties.kind.folder": {
+    "message": "Mape"
+  },
+  "properties.kind.link": {
+    "message": "Saite"
+  },
+  "properties.kind.link_to": {
+    "message": "Saite uz {target}"
+  },
+  "properties.location": {
+    "message": "Atrašanās vieta:"
+  },
+  "properties.modified": {
+    "message": "Modificēts:"
+  },
+  "properties.name": {
+    "message": "Nosaukums:"
+  },
+  "properties.no_system_dialog": {
+    "message": "šeit pagaidām nav sistēmas rekvizītu dialoga"
+  },
+  "properties.owner": {
+    "message": "Īpašnieks / grupa:"
+  },
+  "properties.permissions": {
+    "message": "Atļaujas:"
+  },
+  "properties.size": {
+    "message": "{count, plural, zero {{bytes} baitu ({size})} one {{bytes} baits ({size})} other {{bytes} baiti ({size})}}"
+  },
+  "properties.size_label": {
+    "message": "Lielums:"
+  },
+  "properties.type": {
+    "message": "Tips:"
+  },
+  "quick_open.go_to": {
+    "message": "Pāriet uz {path}"
+  },
+  "quick_open.group.bookmarks": {
+    "message": "Grāmatzīmes"
+  },
+  "quick_open.group.connections": {
+    "message": "Savienojumi"
+  },
+  "quick_open.group.drives": {
+    "message": "Diski"
+  },
+  "quick_open.group.path": {
+    "message": "Ceļš"
+  },
+  "quick_open.group.recent_folders": {
+    "message": "Nesenās mapes"
+  },
+  "quick_open.group.tools": {
+    "message": "Rīki"
+  },
+  "quick_open.group.workspaces": {
+    "message": "Darbvietas"
+  },
+  "quick_open.placeholder": {
+    "message": "Komanda, grāmatzīme, mape, ceļš, serveris, disks, darbvieta vai rīks"
+  },
+  "quick_open.title": {
+    "message": "Ātrā atvēršana"
+  },
+  "quick_view.counting": {
+    "message": "Skaita…"
+  },
+  "quick_view.downloading": {
+    "message": "Lejupielādē…"
+  },
+  "quick_view.empty": {
+    "message": "Ātrais skats rāda to, uz kā atrodas otra paneļa kursors."
+  },
+  "quick_view.extracting": {
+    "message": "Izņem no arhīva…"
+  },
+  "quick_view.files_only": {
+    "message": "Serveros un arhīvos Ātrais skats rāda tikai failus."
+  },
+  "quick_view.space.title": {
+    "message": "Kopā aizņemtā vieta:"
+  },
+  "quick_view.space.totals": {
+    "message": "{bytes, plural, zero {{bytes_grouped} baitu} one {{bytes_grouped} baits} other {{bytes_grouped} baiti}} {files, plural, zero {{files_grouped} failos} one {{files_grouped} failā} other {{files_grouped} failos}}, {folders, plural, zero {{folders_grouped} mapēs} one {{folders_grouped} mapē} other {{folders_grouped} mapēs}}"
+  },
+  "quick_view.space.unreadable": {
+    "message": "Nevarēja nolasīt: {count}."
+  },
+  "quick_view.too_large.download": {
+    "message": "Fails ({size}) ir pārāk liels, lai to šeit lejupielādētu: apskatiet to ar F3."
+  },
+  "quick_view.too_large.extract": {
+    "message": "Fails ({size}) ir pārāk liels, lai to šeit izņemtu no arhīva: apskatiet to ar F3."
+  },
+  "remote.cancelled": {
+    "message": "atcelts"
+  },
+  "remote.cloud.ask": {
+    "message": "{kind, select, application_key {Lietotnes atslēga lietotājam {user} serverī {host}:} api_key {API atslēga lietotājam {user} serverī {host}:} password {Parole lietotājam {user} serverī {host}:} other {Slepenā atslēga lietotājam {user} serverī {host}:}}"
+  },
+  "remote.cloud.ask_again": {
+    "message": "{kind, select, application_key {Nepareiza lietotnes atslēga. Lietotnes atslēga lietotājam {user} serverī {host}:} api_key {Nepareiza API atslēga. API atslēga lietotājam {user} serverī {host}:} password {Nepareiza parole. Parole lietotājam {user} serverī {host}:} other {Nepareiza atslēga. Slepenā atslēga lietotājam {user} serverī {host}:}}"
+  },
+  "remote.cloud.obscure_failed": {
+    "message": "rclone nevarēja pieņemt paroli"
+  },
+  "remote.cloud.rclone_missing": {
+    "message": "Trūkst rclone: to var lejupielādēt sadaļā Iestatījumi > Papildinājumi"
+  },
+  "remote.cloud.title": {
+    "message": "{kind, select, application_key {Lietotnes atslēga} api_key {API atslēga} password {Parole} other {Slepenā atslēga}}"
+  },
+  "remote.connecting": {
+    "message": "Notiek savienošana ar {server}..."
+  },
+  "remote.dialog.cancel": {
+    "message": "Atcelt"
+  },
+  "remote.dialog.ok": {
+    "message": "Labi"
+  },
+  "remote.disconnect_failed": {
+    "message": "{share}: neizdevās atvienoties: {err}"
+  },
+  "remote.ftp.password": {
+    "message": "Parole lietotājam {user}@{host}:"
+  },
+  "remote.ftp.password_again": {
+    "message": "Nepareiza parole. Parole lietotājam {user}@{host}:"
+  },
+  "remote.ftps.changed": {
+    "message": "Servera {server} TLS sertifikāts ir MAINĪJIES, kopš tas tika ierakstīts faila {file} {line}. rindiņā. Kāds varētu noklausīties; ja serverim ir jauns sertifikāts, izdzēsiet šo rindiņu."
+  },
+  "remote.ftps.not_trusted": {
+    "message": "servera sertifikāts nav uzticams"
+  },
+  "remote.login.password": {
+    "message": "Parole"
+  },
+  "remote.login.title": {
+    "message": "Pieteikties"
+  },
+  "remote.login.user": {
+    "message": "Lietotājs"
+  },
+  "remote.mount.login_wrong": {
+    "message": "nepareizs lietotājs vai parole"
+  },
+  "remote.mount.macos_failed": {
+    "message": "macOS to nevarēja piemontēt (NetFS {code})"
+  },
+  "remote.mount.needs_desktop": {
+    "message": "nepieciešams KDE kio-fuse vai GNOME gvfs"
+  },
+  "remote.mount.needs_login": {
+    "message": "nepieciešams lietotājs un parole"
+  },
+  "remote.mount.no_fuse": {
+    "message": "piemontēts, bet tam nav mapes: trūkst gvfs-fuse"
+  },
+  "remote.mount.no_nfs_client": {
+    "message": "nav atrasts; NFS nepieciešams Windows komponents „NFS klients” (Windows līdzekļi)"
+  },
+  "remote.mount.no_share": {
+    "message": "trūkst koplietojuma: smb://serveris/koplietojums"
+  },
+  "remote.mount.not_address": {
+    "message": "nav adrese"
+  },
+  "remote.mount.not_found": {
+    "message": "piemontēts, bet nav atrasts starp piemontētajiem"
+  },
+  "remote.mount.other_user": {
+    "message": "Windows jau ir savienots ar šo serveri kā cits lietotājs: izrakstieties vai izmantojiet šo lietotāju"
+  },
+  "remote.password.title": {
+    "message": "Parole"
+  },
+  "remote.remember_password": {
+    "message": "Atcerēties (Iestatījumi › Paroles)"
+  },
+  "remote.save_back_failed": {
+    "message": "Neizdevās saglabāt atpakaļ: {err}"
+  },
+  "remote.sftp.host_certificate": {
+    "message": "Serveris uzrāda resursdatora sertifikātu; tie pagaidām netiek atbalstīti."
+  },
+  "remote.sftp.key_changed": {
+    "message": "Servera {server} resursdatora atslēga ir MAINĪJUSIES, kopš tā tika ierakstīta faila {file} {line}. rindiņā. Kāds varētu noklausīties; ja serveris ir iestatīts no jauna, izdzēsiet šo rindiņu."
+  },
+  "remote.sftp.key_not_trusted": {
+    "message": "Servera {server} resursdatora atslēga netika atzīta par uzticamu."
+  },
+  "remote.sftp.keys_refused": {
+    "message": "{user}@{host}: serveris noraidīja atslēgas un nepieņem paroli"
+  },
+  "remote.sftp.login_refused": {
+    "message": "{user}@{host}: pieteikšanās noraidīta"
+  },
+  "remote.sftp.passphrase": {
+    "message": "Paroles frāze failam {file}"
+  },
+  "remote.sftp.passphrase_title": {
+    "message": "Atslēgas paroles frāze"
+  },
+  "remote.sftp.password": {
+    "message": "Parole lietotājam {user}@{host}"
+  },
+  "remote.unknown_host.once": {
+    "message": "Savienoties vienreiz"
+  },
+  "remote.unknown_host.remember": {
+    "message": "Savienoties un atcerēties"
+  },
+  "remote.unknown_host.text": {
+    "message": "{key_type, select, TLS {Serveris {host} vēl nav zināms. Tā TLS sertifikāta pirkstu nospiedums ir} other {Serveris {host} vēl nav zināms. Tā {key_type} pirkstu nospiedums ir}}\n\n{fingerprint}\n\nSavienojieties tikai tad, ja tas ir paredzētais serveris; tā administrators var apstiprināt pirkstu nospiedumu."
+  },
+  "remote.unknown_host.title": {
+    "message": "Nezināms serveris"
+  },
+  "rename.case": {
+    "message": "Reģistrs:"
+  },
+  "rename.case.first": {
+    "message": "Pirmais burts"
+  },
+  "rename.case.lower": {
+    "message": "mazie burti"
+  },
+  "rename.case.unchanged": {
+    "message": "Nemainīts"
+  },
+  "rename.case.upper": {
+    "message": "LIELIE BURTI"
+  },
+  "rename.case.words": {
+    "message": "Katrs Vārds"
+  },
+  "rename.close": {
+    "message": "Aizvērt"
+  },
+  "rename.counter_start": {
+    "message": "Skaitītāja sākums"
+  },
+  "rename.dialog_title": {
+    "message": "Vairāku failu pārdēvēšanas rīks"
+  },
+  "rename.digits": {
+    "message": "Cipari"
+  },
+  "rename.extension": {
+    "message": "Paplašinājums"
+  },
+  "rename.field.counter": {
+    "message": "[C] Skaitītājs"
+  },
+  "rename.field.date": {
+    "message": "[Y][M][D] Datums"
+  },
+  "rename.field.extension": {
+    "message": "[E] Papl."
+  },
+  "rename.field.folder": {
+    "message": "[P] Mape"
+  },
+  "rename.field.name": {
+    "message": "[N] Nosaukums"
+  },
+  "rename.field.range": {
+    "message": "[N1-3] Diapazons"
+  },
+  "rename.field.time": {
+    "message": "[h][m][s] Laiks"
+  },
+  "rename.first_only": {
+    "message": "Tikai pirmo"
+  },
+  "rename.in_archive": {
+    "message": "Failus arhīvos pagaidām nevar pārdēvēt."
+  },
+  "rename.mask": {
+    "message": "Pārdēvēšanas maska: faila nosaukums"
+  },
+  "rename.match_case": {
+    "message": "Ievērot reģistru"
+  },
+  "rename.new_name": {
+    "message": "Jaunais nosaukums"
+  },
+  "rename.not_renamed_back": {
+    "message": "{from}: {err}; nav pārdēvēti atpakaļ: {names}"
+  },
+  "rename.not_utf8": {
+    "message": "Nosaukumi, kas nav UTF-8, tiek izlaisti."
+  },
+  "rename.old_name": {
+    "message": "Vecais nosaukums"
+  },
+  "rename.problem.bad_character": {
+    "message": "neatļauta rakstzīme"
+  },
+  "rename.problem.exists": {
+    "message": "jau pastāv"
+  },
+  "rename.problem.no_name": {
+    "message": "nav nosaukuma"
+  },
+  "rename.problem.twice": {
+    "message": "sarakstā divreiz"
+  },
+  "rename.regex": {
+    "message": "Regulārā izteiksme"
+  },
+  "rename.regex_error": {
+    "message": "Regulārā izteiksme: {err}"
+  },
+  "rename.replace": {
+    "message": "Aizstāt ar"
+  },
+  "rename.search": {
+    "message": "Meklēt"
+  },
+  "rename.start": {
+    "message": "Sākt!"
+  },
+  "rename.status.failed": {
+    "message": "Nekas nav pārdēvēts: {err}"
+  },
+  "rename.status.ready": {
+    "message": "„Sākt!” tos pārdēvēs."
+  },
+  "rename.status.renamed": {
+    "message": "{count, plural, zero {Pārdēvēti: #.} one {Pārdēvēts: #.} other {Pārdēvēti: #.}}"
+  },
+  "rename.status.took_back": {
+    "message": "{count, plural, zero {Atjaunoti: #.} one {Atjaunots: #.} other {Atjaunoti: #.}}"
+  },
+  "rename.step": {
+    "message": "Solis"
+  },
+  "rename.undo": {
+    "message": "Atsaukt"
+  },
+  "rename.was": {
+    "message": "{to} (bija {from})"
+  },
+  "rename.with_extension": {
+    "message": "Ar paplašinājumu"
+  },
+  "scmd.column.modified": {
+    "message": "Mainīts"
+  },
+  "scmd.column.name": {
+    "message": "Nosaukums"
+  },
+  "scmd.column.size": {
+    "message": "Lielums"
+  },
+  "scmd.column.up_dir": {
+    "message": "AUGŠUP"
+  },
+  "scmd.command_line.not_on_server": {
+    "message": "Komandas darbojas šajā datorā, nevis serverī."
+  },
+  "scmd.compare.marked": {
+    "message": "{count, plural, zero {Iezīmēti # faili, kas ir jaunāki vai kuru nav otrā pusē.} one {Iezīmēts # fails, kas ir jaunāks vai kura nav otrā pusē.} other {Iezīmēti # faili, kas ir jaunāki vai kuru nav otrā pusē.}}"
+  },
+  "scmd.compare.same": {
+    "message": "Mapēs ir vienādi faili."
+  },
+  "scmd.copying": {
+    "message": "Kopē {name}..."
+  },
+  "scmd.dialog.buttons": {
+    "message": "Enter Labi   Esc Atcelt"
+  },
+  "scmd.error.read_settings": {
+    "message": "Neizdevās nolasīt iestatījumus: {err}"
+  },
+  "scmd.error.read_tabs": {
+    "message": "Neizdevās nolasīt atvērtās cilnes: {err}"
+  },
+  "scmd.error.read_workspaces": {
+    "message": "Neizdevās nolasīt darbvietas: {err}"
+  },
+  "scmd.error.save_back": {
+    "message": "Neizdevās saglabāt atpakaļ: {err}"
+  },
+  "scmd.error.save_searches": {
+    "message": "Neizdevās saglabāt meklējumus: {err}"
+  },
+  "scmd.error.save_tabs": {
+    "message": "Neizdevās saglabāt atvērtās cilnes: {err}"
+  },
+  "scmd.find.backwards": {
+    "message": "Atpakaļ"
+  },
+  "scmd.find.case_sensitive": {
+    "message": "Reģistrjutīgs"
+  },
+  "scmd.find.hex": {
+    "message": "Hex (77 6F 72 64)"
+  },
+  "scmd.find.not_found": {
+    "message": "Nav atrasts: {text}"
+  },
+  "scmd.find.regex": {
+    "message": "Regulārā izteiksme"
+  },
+  "scmd.find.search_for": {
+    "message": "Meklēt:"
+  },
+  "scmd.find.title": {
+    "message": "Atrast"
+  },
+  "scmd.find.whole_words": {
+    "message": "Tikai veseli vārdi"
+  },
+  "scmd.group.files": {
+    "message": "Faili (*.txt *.md; mapes beidzas ar /):"
+  },
+  "scmd.group.select_title": {
+    "message": "Atlasīt grupu"
+  },
+  "scmd.group.unselect_title": {
+    "message": "Noņemt atlasi grupai"
+  },
+  "scmd.key_bar.copy": {
+    "message": "Kopēt"
+  },
+  "scmd.key_bar.delete": {
+    "message": "Dzēst"
+  },
+  "scmd.key_bar.edit": {
+    "message": "Labot"
+  },
+  "scmd.key_bar.menu": {
+    "message": "Izvēl."
+  },
+  "scmd.key_bar.mkdir": {
+    "message": "J.mape"
+  },
+  "scmd.key_bar.move": {
+    "message": "Pārv."
+  },
+  "scmd.key_bar.quit": {
+    "message": "Iziet"
+  },
+  "scmd.key_bar.view": {
+    "message": "Skatīt"
+  },
+  "scmd.message.error": {
+    "message": "Kļūda"
+  },
+  "scmd.message.ok": {
+    "message": "Labi"
+  },
+  "scmd.not_yet": {
+    "message": "{what, select, menus {Izvēlnes: termināļa versijā vēl nav pieejamas.} file_operations {Failu darbības: termināļa versijā vēl nav pieejamas.} servers {Serveri: termināļa versijā vēl nav pieejami.} other {Šī komanda: termināļa versijā vēl nav pieejama.}}"
+  },
+  "scmd.picture.broken": {
+    "message": "bojāts attēls"
+  },
+  "scmd.picture.broken_page": {
+    "message": "bojāta lapa"
+  },
+  "scmd.picture.loading": {
+    "message": "Ielādē…"
+  },
+  "scmd.picture.no_page": {
+    "message": "PDF failā nav šādas lapas"
+  },
+  "scmd.shell.press_enter": {
+    "message": "Nospiediet Enter, lai atgrieztos Spark Commander..."
+  },
+  "scmd.sync_browsing.off": {
+    "message": "Sinhronizētā pārlūkošana ir izslēgta."
+  },
+  "scmd.sync_browsing.on": {
+    "message": "Sinhronizētā pārlūkošana ir ieslēgta."
+  },
+  "scmd.sync_browsing.stopped": {
+    "message": "{err}. Sinhronizētā pārlūkošana ir izslēgta."
+  },
+  "scmd.viewer.column": {
+    "message": "Kol. {column}"
+  },
+  "scmd.viewer.finding": {
+    "message": "meklē…"
+  },
+  "scmd.viewer.key_bar.next": {
+    "message": "Nākam."
+  },
+  "scmd.viewer.key_bar.quit": {
+    "message": "Iziet"
+  },
+  "scmd.viewer.key_bar.reload": {
+    "message": "Pārlād"
+  },
+  "scmd.viewer.key_bar.search": {
+    "message": "Meklēt"
+  },
+  "scmd.viewer.page": {
+    "message": "lapa {page} no {pages}"
+  },
+  "scmd.viewer.reading": {
+    "message": "nolasa {percent}%"
+  },
+  "scmd.viewer.wrap": {
+    "message": "Aplaušana"
+  },
+  "scmd.workspace.copy_name": {
+    "message": "{name} kopija"
+  },
+  "scmd.workspace.default_name": {
+    "message": "Darbvieta {number}"
+  },
+  "scmd.workspace.delete_question": {
+    "message": "Vai dzēst „{name}”? Tās cilnes tiks aizmirstas."
+  },
+  "scmd.workspace.duplicate_title": {
+    "message": "Dublēt darbvietu"
+  },
+  "scmd.workspace.last_stays": {
+    "message": "Pēdējā darbvieta paliek."
+  },
+  "scmd.workspace.name": {
+    "message": "Nosaukums:"
+  },
+  "scmd.workspace.name_or_default": {
+    "message": "Nosaukums (tukšs: {name}):"
+  },
+  "scmd.workspace.new_title": {
+    "message": "Jauna darbvieta"
+  },
+  "scmd.workspace.rename_title": {
+    "message": "Pārdēvēt darbvietu"
+  },
+  "scmd.workspaces.keys": {
+    "message": "Enter Atvērt  F7 Jauna  F5 Kopēt  F2 Pārdēvēt  F8 Dzēst"
+  },
+  "scmd.workspaces.title": {
+    "message": "Darbvietas"
+  },
+  "search.age.days": {
+    "message": "diena(s)"
+  },
+  "search.age.hours": {
+    "message": "stunda(s)"
+  },
+  "search.age.minutes": {
+    "message": "minūte(s)"
+  },
+  "search.age.months": {
+    "message": "mēnesis(-ši)"
+  },
+  "search.age.weeks": {
+    "message": "nedēļa(s)"
+  },
+  "search.age.years": {
+    "message": "gads(-i)"
+  },
+  "search.archives": {
+    "message": "Meklēt arhīvos"
+  },
+  "search.attribute.directory": {
+    "message": "Mape"
+  },
+  "search.attribute.either": {
+    "message": "Nav svarīgi"
+  },
+  "search.attribute.executable": {
+    "message": "Izpildāms"
+  },
+  "search.attribute.hidden": {
+    "message": "Slēpts"
+  },
+  "search.attribute.link": {
+    "message": "Simboliskā saite"
+  },
+  "search.attribute.must": {
+    "message": "Jābūt"
+  },
+  "search.attribute.must_not": {
+    "message": "Nedrīkst būt"
+  },
+  "search.attribute.read_only": {
+    "message": "Tikai lasāms"
+  },
+  "search.attributes.label": {
+    "message": "Atribūti:"
+  },
+  "search.between.and": {
+    "message": "un"
+  },
+  "search.between.label": {
+    "message": "Datums starp:"
+  },
+  "search.close": {
+    "message": "Aizvērt"
+  },
+  "search.depth.all": {
+    "message": "visos (neierobežots dziļums)"
+  },
+  "search.depth.current": {
+    "message": "tikai pašreizējā mapē"
+  },
+  "search.depth.label": {
+    "message": "Meklēt apakšmapēs:"
+  },
+  "search.depth.levels": {
+    "message": "{count, plural, zero {# līmeņu} one {# līmenis} other {# līmeņi}}"
+  },
+  "search.drives": {
+    "message": "Diski"
+  },
+  "search.duplicates.content": {
+    "message": "vienāds saturs"
+  },
+  "search.duplicates.label": {
+    "message": "Atrast failu dublikātus:"
+  },
+  "search.duplicates.name": {
+    "message": "vienāds nosaukums"
+  },
+  "search.duplicates.size": {
+    "message": "vienāds lielums"
+  },
+  "search.edit": {
+    "message": "F4 Rediģēt"
+  },
+  "search.error.between_days": {
+    "message": "Laukam „Datums starp” nepieciešami abi datumi"
+  },
+  "search.error.date": {
+    "message": "{text} nav datums, piemēram, 2026-11-12"
+  },
+  "search.error.hex": {
+    "message": "{text} nav heksadecimāla virkne, piemēram, 48 65 6c"
+  },
+  "search.error.keep": {
+    "message": "Neizdevās saglabāt meklēšanu: {err}"
+  },
+  "search.error.local_time": {
+    "message": "{text} nav derīgs vietējais laiks"
+  },
+  "search.error.names_regex": {
+    "message": "Nosaukuma regulārā izteiksme: {err}"
+  },
+  "search.error.newer_number": {
+    "message": "Laukam „Ne vecāki par” nepieciešams skaitlis, nevis {text}"
+  },
+  "search.error.no_place": {
+    "message": "Laukā „Kur meklēt” nav norādīta neviena mape"
+  },
+  "search.error.no_text": {
+    "message": "Laukā „Atrast tekstu” nav norādīts teksts"
+  },
+  "search.error.older_number": {
+    "message": "Laukam „Vecāki par” nepieciešams skaitlis, nevis {text}"
+  },
+  "search.error.save": {
+    "message": "Neizdevās saglabāt meklējumus: {err}"
+  },
+  "search.error.size_number": {
+    "message": "Laukam „Faila lielums” nepieciešams skaitlis, nevis {text}"
+  },
+  "search.error.text_regex": {
+    "message": "Teksta regulārā izteiksme: {err}"
+  },
+  "search.feed": {
+    "message": "Rādīt panelī"
+  },
+  "search.go_to_file": {
+    "message": "Pāriet uz failu"
+  },
+  "search.in_found": {
+    "message": "F2 Meklēt atrastajos failos"
+  },
+  "search.locate": {
+    "message": "No locate indeksa"
+  },
+  "search.names.label": {
+    "message": "Meklēt:"
+  },
+  "search.names.placeholder": {
+    "message": "*.txt *.md | backup*  (tukšs: visi)"
+  },
+  "search.new": {
+    "message": "Jauna meklēšana"
+  },
+  "search.newer.label": {
+    "message": "Ne vecāki par:"
+  },
+  "search.older.label": {
+    "message": "Vecāki par:"
+  },
+  "search.only_selected": {
+    "message": "Meklēt tikai atlasītajos failos/mapēs"
+  },
+  "search.only_selected_count": {
+    "message": "{count, plural, zero {Meklēt tikai # atlasītajos} one {Meklēt tikai # atlasītajā} other {Meklēt tikai # atlasītajos}}"
+  },
+  "search.page.advanced": {
+    "message": "Papildu"
+  },
+  "search.page.general": {
+    "message": "Vispārīgi"
+  },
+  "search.page.load_save": {
+    "message": "Ielādēt/saglabāt"
+  },
+  "search.places.browse_prompt": {
+    "message": "Kur meklēt"
+  },
+  "search.places.label": {
+    "message": "Kur meklēt:"
+  },
+  "search.places.placeholder": {
+    "message": "Mapes, atdalītas ar ;"
+  },
+  "search.regex": {
+    "message": "RegEx"
+  },
+  "search.results.label": {
+    "message": "Meklēšanas rezultāti:"
+  },
+  "search.saved.delete": {
+    "message": "Dzēst"
+  },
+  "search.saved.label": {
+    "message": "Iepriekšējie meklējumi:"
+  },
+  "search.saved.load": {
+    "message": "Ielādēt"
+  },
+  "search.saved.name_first": {
+    "message": "Vispirms nosauciet meklēšanu."
+  },
+  "search.saved.name_placeholder": {
+    "message": "Meklēšanas nosaukums"
+  },
+  "search.saved.save": {
+    "message": "Saglabāt"
+  },
+  "search.size.label": {
+    "message": "Faila lielums:"
+  },
+  "search.start": {
+    "message": "Sākt meklēšanu"
+  },
+  "search.status.found": {
+    "message": "Atrasti {files, plural, zero {# failu} one {# fails} other {# faili}} un {dirs, plural, zero {# mapju} one {# mape} other {# mapes}}"
+  },
+  "search.status.searching": {
+    "message": "Meklē…"
+  },
+  "search.status.searching_in": {
+    "message": "Meklē: {folder}"
+  },
+  "search.status.stopped": {
+    "message": "Apturēts: {counts}"
+  },
+  "search.stop": {
+    "message": "Apturēt"
+  },
+  "search.text.ansi": {
+    "message": "ANSI (kodu lapa {page})"
+  },
+  "search.text.case_sensitive": {
+    "message": "Reģistrjutīgs"
+  },
+  "search.text.hex": {
+    "message": "Hex"
+  },
+  "search.text.label": {
+    "message": "Atrast tekstu:"
+  },
+  "search.text.not_containing": {
+    "message": "Atrast failus, kas NESATUR tekstu"
+  },
+  "search.text.office": {
+    "message": "Biroja faili (docx, xlsx, pptx, odt…)"
+  },
+  "search.text.placeholder": {
+    "message": "Meklējamais teksts"
+  },
+  "search.text.whole_words": {
+    "message": "Tikai veseli vārdi"
+  },
+  "search.title": {
+    "message": "Meklēt failus"
+  },
+  "search.unit.bytes": {
+    "message": "baiti"
+  },
+  "search.view": {
+    "message": "F3 Skatīt"
+  },
+  "settings.addons.builtin_version": {
+    "message": "{version}, iekļauts Spark Commander"
+  },
+  "settings.addons.check_daily": {
+    "message": "Meklēt papildinājumu atjauninājumus palaišanas brīdī un katru dienu un piedāvāt tos"
+  },
+  "settings.addons.check_failed": {
+    "message": "Neizdevās meklēt atjauninājumus: {err}"
+  },
+  "settings.addons.check_now": {
+    "message": "Meklēt tagad"
+  },
+  "settings.addons.checking": {
+    "message": "Meklē atjauninājumus..."
+  },
+  "settings.addons.download": {
+    "message": "Lejupielādēt"
+  },
+  "settings.addons.downloading": {
+    "message": "Lejupielādē: {done} no {size}"
+  },
+  "settings.addons.file": {
+    "message": "Fails"
+  },
+  "settings.addons.installed.builtin": {
+    "message": "iekļauts Spark Commander"
+  },
+  "settings.addons.installed.label": {
+    "message": "Instalēts"
+  },
+  "settings.addons.installed.none": {
+    "message": "nav"
+  },
+  "settings.addons.intro": {
+    "message": "Spark Commander dažām darbībām izmanto šīs citu projektu programmas. Papildinājumi tiek lejupielādēti atsevišķi, pēc jūsu izvēles; 7-Zip un PDFium ir iekļauti komplektā."
+  },
+  "settings.addons.never_offer": {
+    "message": "Nekad nepiedāvāt papildinājumus, kad tie nepieciešami failam"
+  },
+  "settings.addons.offers": {
+    "message": "Piedāvājumi un atjauninājumi"
+  },
+  "settings.addons.online.label": {
+    "message": "Tiešsaistē"
+  },
+  "settings.addons.online.looking": {
+    "message": "meklē..."
+  },
+  "settings.addons.online.none": {
+    "message": "šai sistēmai nav"
+  },
+  "settings.addons.online.not_yet": {
+    "message": "vēl nav pārbaudīts"
+  },
+  "settings.addons.online.unknown": {
+    "message": "nezināms"
+  },
+  "settings.addons.remove": {
+    "message": "Noņemt"
+  },
+  "settings.addons.up_to_date": {
+    "message": "Papildinājumu saraksts ir aktuāls."
+  },
+  "settings.addons.version": {
+    "message": "Versija"
+  },
+  "settings.addons.website": {
+    "message": "Tīmekļa vietne"
+  },
+  "settings.appearance.title": {
+    "message": "Izskats"
+  },
+  "settings.apply": {
+    "message": "Lietot"
+  },
+  "settings.backdrop.blur": {
+    "message": "Aizmiglot aiz tā esošo darbvirsmu"
+  },
+  "settings.backdrop.clear": {
+    "message": "0%, tikai darbvirsma"
+  },
+  "settings.backdrop.cover": {
+    "message": "Cik lielā mērā tas aizsedz aiz tā esošo darbvirsmu:"
+  },
+  "settings.backdrop.opacity": {
+    "message": "{opacity}%"
+  },
+  "settings.backdrop.sidebar": {
+    "message": "Sānjosla"
+  },
+  "settings.backdrop.solid": {
+    "message": "100%, necaurspīdīgs"
+  },
+  "settings.backdrop.terminal": {
+    "message": "Terminālis"
+  },
+  "settings.cancel": {
+    "message": "Atcelt"
+  },
+  "settings.date.as_system": {
+    "message": "Kā sistēmā: {date}"
+  },
+  "settings.date.custom": {
+    "message": "Pielāgots:"
+  },
+  "settings.date.pattern_help": {
+    "message": "yyyy gads, MM mēnesis (MMM tā nosaukums), dd diena (ddd nedēļas diena)"
+  },
+  "settings.date.shown_as": {
+    "message": "Attēlojums"
+  },
+  "settings.date.shown_as_note": {
+    "message": "failu sarakstos; dialogos tiek pievienotas sekundes"
+  },
+  "settings.date.title": {
+    "message": "Datums"
+  },
+  "settings.editor.browse": {
+    "message": "Pārlūkot..."
+  },
+  "settings.editor.choose": {
+    "message": "Izvēlēties"
+  },
+  "settings.editor.external": {
+    "message": "Ārējais redaktors (Ctrl+Shift+F4):"
+  },
+  "settings.editor.external_help": {
+    "message": "%1 ir fails, citādi tas tiek pievienots beigās; piem., code --wait %1"
+  },
+  "settings.editor.limit": {
+    "message": "Iebūvētais redaktors (F4) atver failus līdz"
+  },
+  "settings.editor.limit_unit": {
+    "message": "MB"
+  },
+  "settings.editor.title": {
+    "message": "Redaktors taustiņam F4"
+  },
+  "settings.error.no_folder": {
+    "message": "nav konfigurācijas mapes"
+  },
+  "settings.files_shown.hidden": {
+    "message": "Slēptie faili"
+  },
+  "settings.files_shown.system": {
+    "message": "Sistēmas faili"
+  },
+  "settings.files_shown.title": {
+    "message": "Rādītie faili"
+  },
+  "settings.font.as_system": {
+    "message": "Kā sistēmā"
+  },
+  "settings.font.chosen": {
+    "message": "Izvēlēts; sistēmas fonts ir {family}, {size}"
+  },
+  "settings.font.fixed": {
+    "message": "Skatītājs"
+  },
+  "settings.font.fixed_note": {
+    "message": "Tikai fiksēta platuma fonti; arī redaktoram un failu salīdzināšanai."
+  },
+  "settings.font.main": {
+    "message": "Galvenā loga fonts"
+  },
+  "settings.font.system": {
+    "message": "Sistēmas fonts"
+  },
+  "settings.language.system": {
+    "message": "Sistēmas valoda"
+  },
+  "settings.language.system_named": {
+    "message": "Sistēmas valoda: {language}"
+  },
+  "settings.language.title": {
+    "message": "Valoda"
+  },
+  "settings.menus.automatic": {
+    "message": "Automātiski: ☰ poga GNOME vidē, izvēļņu josla citur"
+  },
+  "settings.menus.bar": {
+    "message": "Izvēļņu josla"
+  },
+  "settings.menus.button": {
+    "message": "☰ poga virsrakstjoslā"
+  },
+  "settings.menus.title": {
+    "message": "Izvēlnes"
+  },
+  "settings.ok": {
+    "message": "Labi"
+  },
+  "settings.page.addons": {
+    "message": "Papildinājumi"
+  },
+  "settings.page.date": {
+    "message": "Datums"
+  },
+  "settings.page.display": {
+    "message": "Attēlojums"
+  },
+  "settings.page.edit_view": {
+    "message": "Rediģēšana/skatīšana"
+  },
+  "settings.page.font": {
+    "message": "Fonts"
+  },
+  "settings.page.language": {
+    "message": "Valoda"
+  },
+  "settings.page.layout": {
+    "message": "Izkārtojums"
+  },
+  "settings.page.operations": {
+    "message": "Darbības"
+  },
+  "settings.page.passwords": {
+    "message": "Paroles"
+  },
+  "settings.page.terminal": {
+    "message": "Terminālis"
+  },
+  "settings.page.toolbar": {
+    "message": "Rīkjosla"
+  },
+  "settings.passwords.change_master": {
+    "message": "Mainīt galveno paroli…"
+  },
+  "settings.passwords.locked": {
+    "message": "Šajā datorā tās ir bloķētas: tās atver galvenā parole."
+  },
+  "settings.passwords.master_set": {
+    "message": "Galvenā parole ir iestatīta: nokopējot iestatījumu mapi, tās var atvērt citā datorā, tur ievadot galveno paroli."
+  },
+  "settings.passwords.no_master": {
+    "message": "Galvenā parole nav iestatīta: nokopējot iestatījumu mapi, citā datorā tās netiks atvērtas; tur tās būs jāievada vēlreiz."
+  },
+  "settings.passwords.not_removed": {
+    "message": "Galvenā parole netika noņemta: {err}"
+  },
+  "settings.passwords.remove_master": {
+    "message": "Noņemt galveno paroli"
+  },
+  "settings.passwords.saved": {
+    "message": "{count, plural, zero {Saglabātas # paroles} one {Saglabāta # parole} other {Saglabātas # paroles}} (serveru, koplietojumu, šifrētu disku), šifrētas iestatījumu mapē; atslēga, kas tās atver, glabājas šī datora atslēgu glabātuvē."
+  },
+  "settings.passwords.set_master": {
+    "message": "Iestatīt galveno paroli…"
+  },
+  "settings.passwords.title": {
+    "message": "Saglabātās paroles"
+  },
+  "settings.passwords.unlock": {
+    "message": "Atbloķēt…"
+  },
+  "settings.queue.clear_after": {
+    "message": "Notīrīt pabeigtās darbības pēc"
+  },
+  "settings.queue.clear_after_help": {
+    "message": "0: tiklīdz tās beidzas. Neizdevušās un atceltās paliek, līdz tās notīra."
+  },
+  "settings.queue.clear_after_unit": {
+    "message": "minūtēm"
+  },
+  "settings.queue.download_limit": {
+    "message": "Lejupielādes ātruma ierobežojums"
+  },
+  "settings.queue.download_limit_help": {
+    "message": "„Lejupielādēt no saites” un kopēšana no FTP un SFTP serveriem, arī jau notiekošā. 0: bez ierobežojuma."
+  },
+  "settings.queue.download_limit_unit": {
+    "message": "KB/s"
+  },
+  "settings.queue.title": {
+    "message": "Darbību rinda"
+  },
+  "settings.shell.default": {
+    "message": "Noklusējums: {shell}"
+  },
+  "settings.shell.note": {
+    "message": "Jaunās termināļa cilnes palaiž to."
+  },
+  "settings.shell.title": {
+    "message": "Čaula"
+  },
+  "settings.sort_folders.by_name": {
+    "message": "Vienmēr pēc nosaukuma"
+  },
+  "settings.sort_folders.like_files": {
+    "message": "Tāpat kā failus (arī pēc laika)"
+  },
+  "settings.sort_folders.title": {
+    "message": "Mapju kārtošana"
+  },
+  "settings.tabs.header_always": {
+    "message": "Rādīt ciļņu joslu arī tad, ja ir tikai viena cilne"
+  },
+  "settings.tabs.title": {
+    "message": "Mapju cilnes"
+  },
+  "settings.time.as_system": {
+    "message": "Kā sistēmā"
+  },
+  "settings.time.h12": {
+    "message": "12 stundas (2:05 PM)"
+  },
+  "settings.time.h24": {
+    "message": "24 stundas (14:05)"
+  },
+  "settings.time.title": {
+    "message": "Laiks"
+  },
+  "settings.title": {
+    "message": "Iestatījumi"
+  },
+  "settings.toolbar.add": {
+    "message": "Pievienot pogu…"
+  },
+  "settings.toolbar.move_down": {
+    "message": "Pārvietot uz leju"
+  },
+  "settings.toolbar.move_up": {
+    "message": "Pārvietot uz augšu"
+  },
+  "settings.toolbar.place": {
+    "message": "Zem izvēļņu joslas; virsrakstjoslā, ja izvēlnes ir aiz ☰ pogas, kā GNOME lietotnēs. Ja nav pogu, rīkjoslas nav."
+  },
+  "settings.toolbar.remove": {
+    "message": "Noņemt"
+  },
+  "settings.toolbar.replace": {
+    "message": "Aizstāt…"
+  },
+  "settings.toolbar.restore_default": {
+    "message": "Atjaunot noklusējumu"
+  },
+  "settings.toolbar.title": {
+    "message": "Rīkjoslas pogas"
+  },
+  "settings.viewer.font.ansi": {
+    "message": "ANSI (Windows)"
+  },
+  "settings.viewer.font.ascii": {
+    "message": "ASCII (DOS)"
+  },
+  "settings.viewer.font.auto": {
+    "message": "Noteikt automātiski"
+  },
+  "settings.viewer.font.label": {
+    "message": "Fonts palaišanas brīdī:"
+  },
+  "settings.viewer.font.variable": {
+    "message": "Mainīgs platums"
+  },
+  "settings.viewer.minimap": {
+    "message": "Minikarte"
+  },
+  "settings.viewer.show": {
+    "message": "Rādīt:"
+  },
+  "settings.viewer.start.auto": {
+    "message": "Noteikt automātiski"
+  },
+  "settings.viewer.start.binary": {
+    "message": "Binārs"
+  },
+  "settings.viewer.start.hex": {
+    "message": "Hex"
+  },
+  "settings.viewer.start.label": {
+    "message": "Attēlojums palaišanas brīdī:"
+  },
+  "settings.viewer.start.text": {
+    "message": "Teksts"
+  },
+  "settings.viewer.title": {
+    "message": "Skatītājs taustiņam F3"
+  },
+  "settings.viewer.width.binary": {
+    "message": "Binārs"
+  },
+  "settings.viewer.width.label": {
+    "message": "Attēlojuma platums (rakstzīmes):"
+  },
+  "settings.viewer.width.text": {
+    "message": "Teksts"
+  },
+  "settings.viewer.wrap": {
+    "message": "Aplauzt tekstu"
+  },
+  "shells.command_prompt": {
+    "message": "Komandu uzvedne"
+  },
+  "sidebar.device.no_files": {
+    "message": "nekopīgo failus"
+  },
+  "sidebar.device.not_answering": {
+    "message": "{name} neatbild: atbloķējiet to un atveriet tajā KDE Connect, pēc tam atkārtoti nolasiet mapi (F2)."
+  },
+  "sidebar.device.not_answering_error": {
+    "message": "{name} neatbild ({err}): atbloķējiet to un atveriet tajā KDE Connect."
+  },
+  "sidebar.device.not_connected": {
+    "message": "nav savienots"
+  },
+  "sidebar.device.opening": {
+    "message": "Atver {name}..."
+  },
+  "sidebar.device.reconnecting": {
+    "message": "{name} neatbild: savienojas vēlreiz..."
+  },
+  "sidebar.device.unmount_failed": {
+    "message": "{name}: neizdevās atmontēt: {err}"
+  },
+  "sidebar.group.bookmarks": {
+    "message": "Grāmatzīmes"
+  },
+  "sidebar.group.cloud": {
+    "message": "Mākonis"
+  },
+  "sidebar.group.devices": {
+    "message": "Ierīces"
+  },
+  "sidebar.group.drives": {
+    "message": "Diski"
+  },
+  "sidebar.group.network": {
+    "message": "Tīkls"
+  },
+  "sidebar.section.connections": {
+    "message": "Savienojumi"
+  },
+  "sidebar.section.folders": {
+    "message": "Mapes"
+  },
+  "sidebar.section.operations": {
+    "message": "Darbības"
+  },
+  "sidebar.section.places": {
+    "message": "Vietas"
+  },
+  "sidebar.volume.locked": {
+    "message": "bloķēts"
+  },
+  "sidebar.volume.mounting": {
+    "message": "Montē {name}..."
+  },
+  "sidebar.volume.not_mounted": {
+    "message": "nav piemontēts"
+  },
+  "sidebar.volume.open": {
+    "message": "Atvērt"
+  },
+  "sidebar.volume.space": {
+    "message": "{free} brīvi no {total}"
+  },
+  "sidebar.volume.unmount": {
+    "message": "Atmontēt"
+  },
+  "sidebar.volume.unmount_failed": {
+    "message": "Neizdevās atmontēt: {err}"
+  },
+  "split.bad_size": {
+    "message": "„{size}” nav lielums: 100 MB, 1.5 GB, 650m"
+  },
+  "split.choose": {
+    "message": "Novietojiet kursoru uz sadalāmā faila."
+  },
+  "split.combine.choose": {
+    "message": "Novietojiet kursoru uz daļas (name.001) vai uz tās .crc faila."
+  },
+  "split.combine.dialog_title": {
+    "message": "Apvienot failus"
+  },
+  "split.combine.label": {
+    "message": "Apvienot daļas failā:"
+  },
+  "split.combine.title": {
+    "message": "Apvienot „{name}”"
+  },
+  "split.combined_no_crc": {
+    "message": "{count, plural, zero {Apvienotas # daļas, nav CRC faila pārbaudei} one {Apvienota # daļa, nav CRC faila pārbaudei} other {Apvienotas # daļas, nav CRC faila pārbaudei}}"
+  },
+  "split.crc_mismatch": {
+    "message": "{target} neatbilst failam {file}: kāda daļa trūkst vai ir bojāta"
+  },
+  "split.crc_names_no_file": {
+    "message": "CRC failā nav norādīts fails"
+  },
+  "split.crc_unreadable": {
+    "message": "apvienots, bet {file} nevarēja nolasīt: {err}"
+  },
+  "split.dialog_title": {
+    "message": "Sadalīt failu"
+  },
+  "split.label": {
+    "message": "Sadalīt „{name}” daļās mapē:"
+  },
+  "split.part_missing": {
+    "message": "{path} trūkst"
+  },
+  "split.part_size": {
+    "message": "Daļas lielums:"
+  },
+  "split.title": {
+    "message": "Sadalīt „{name}”"
+  },
+  "sync.close": {
+    "message": "Aizvērt"
+  },
+  "sync.column.date": {
+    "message": "Datums"
+  },
+  "sync.column.name": {
+    "message": "Nosaukums"
+  },
+  "sync.column.size": {
+    "message": "Lielums"
+  },
+  "sync.compare": {
+    "message": "Salīdzināt"
+  },
+  "sync.confirm.copy_left": {
+    "message": "Kopēt {count} pa kreisi ({size})"
+  },
+  "sync.confirm.copy_right": {
+    "message": "Kopēt {count} pa labi ({size})"
+  },
+  "sync.confirm.delete_left": {
+    "message": "Dzēst {count} kreisajā pusē"
+  },
+  "sync.confirm.delete_right": {
+    "message": "Dzēst {count} labajā pusē"
+  },
+  "sync.confirm.ok": {
+    "message": "Sinhronizēt"
+  },
+  "sync.confirm.text": {
+    "message": "{actions}. Kopētie faili aizstās tur esošos.{trash, select, yes { Šajā datorā dzēstie tiks pārvietoti uz atkritni.} other {}}"
+  },
+  "sync.confirm.title": {
+    "message": "Sinhronizēt"
+  },
+  "sync.error.changed": {
+    "message": "mainīts kopš salīdzināšanas; salīdziniet vēlreiz"
+  },
+  "sync.error.compare": {
+    "message": "Neizdevās salīdzināt: {err}"
+  },
+  "sync.error.no_folders": {
+    "message": "Mapju sinhronizēšana salīdzina divas mapes: neviens panelis nedrīkst rādīt arhīvu vai meklēšanas rezultātus."
+  },
+  "sync.left": {
+    "message": "Kreisā"
+  },
+  "sync.mask.label": {
+    "message": "Faili:"
+  },
+  "sync.option.asymmetric": {
+    "message": "Asimetriski (labā kļūst par kreisās kopiju)"
+  },
+  "sync.option.by_content": {
+    "message": "Pēc satura"
+  },
+  "sync.option.ignore_date": {
+    "message": "Ignorēt datumu"
+  },
+  "sync.option.subfolders": {
+    "message": "Apakšmapes"
+  },
+  "sync.result.done": {
+    "message": "{count, plural, zero {Sinhronizēti: #} one {Sinhronizēts: #} other {Sinhronizēti: #}}"
+  },
+  "sync.result.failed": {
+    "message": "{count, plural, zero {Nav sinhronizēti: #} one {Nav sinhronizēts: #} other {Nav sinhronizēti: #}}; {first}"
+  },
+  "sync.right": {
+    "message": "Labā"
+  },
+  "sync.show.equal": {
+    "message": "= vienādi"
+  },
+  "sync.show.label": {
+    "message": "Rādīt:"
+  },
+  "sync.show.other": {
+    "message": "≠ neskarti"
+  },
+  "sync.show.to_left": {
+    "message": "← pa kreisi"
+  },
+  "sync.show.to_right": {
+    "message": "→ pa labi"
+  },
+  "sync.status.both_empty": {
+    "message": "Abas ir tukšas."
+  },
+  "sync.status.comparing": {
+    "message": "Salīdzina {folder}"
+  },
+  "sync.status.counts": {
+    "message": "Kopēt pa labi: {right}, kopēt pa kreisi: {left}, dzēst: {delete}, vienādi: {equal}, neskarti: {alone}"
+  },
+  "sync.status.stopped": {
+    "message": "Apturēts."
+  },
+  "sync.stop": {
+    "message": "Apturēt"
+  },
+  "sync.synchronize": {
+    "message": "Sinhronizēt..."
+  },
+  "sync.task.title": {
+    "message": "Sinhronizēt {left} un {right}"
+  },
+  "sync.title": {
+    "message": "Sinhronizēt mapes"
+  },
+  "tab_menu.close_all_tabs": {
+    "message": "Aizvērt visas cilnes"
+  },
+  "tab_menu.close_duplicate_tabs": {
+    "message": "Aizvērt cilņu dublikātus"
+  },
+  "tab_menu.close_tab": {
+    "message": "Aizvērt šo cilni"
+  },
+  "tab_menu.copy_tab_to_other_panel": {
+    "message": "Kopēt cilni uz otru paneli"
+  },
+  "tab_menu.duplicate_tab": {
+    "message": "Dublēt šo cilni"
+  },
+  "tab_menu.list_tabs": {
+    "message": "Rādīt visu ciļņu sarakstu"
+  },
+  "tab_menu.lock_tab": {
+    "message": "Bloķēt šo cilni"
+  },
+  "tab_menu.none": {
+    "message": "(nav)"
+  },
+  "tab_menu.rename_tab": {
+    "message": "Pārdēvēt cilni..."
+  },
+  "tabs.error.reopen": {
+    "message": "Neizdevās atkārtoti atvērt cilni: {err}"
+  },
+  "tabs.history.empty": {
+    "message": "Šīs cilnes vēsturē vēl nav mapju."
+  },
+  "tabs.new": {
+    "message": "Jauna cilne"
+  },
+  "tabs.rename.label": {
+    "message": "Jaunais nosaukums:"
+  },
+  "tabs.rename.title": {
+    "message": "Pārdēvēt cilni"
+  },
+  "tabs.search_results": {
+    "message": "Meklēšanas rezultāti"
+  },
+  "terminal.busy": {
+    "message": "Terminālī darbojas programma: palaidiet komandu, kad tā beigsies."
+  },
+  "terminal.close.idle": {
+    "message": "Vai aizvērt šo termināļa cilni? Tās čaula tiks pārtraukta."
+  },
+  "terminal.close.ok": {
+    "message": "Aizvērt"
+  },
+  "terminal.close.running": {
+    "message": "Vai aizvērt šo termināļa cilni? Tajā strādājošā programma tiks apturēta."
+  },
+  "terminal.close.title": {
+    "message": "Aizvērt cilni"
+  },
+  "terminal.error.start_shell": {
+    "message": "Neizdevās palaist čaulu: {err}"
+  },
+  "terminal.jump_to_bottom": {
+    "message": "Uz beigām (Ctrl+End) ↓"
+  },
+  "terminal.menu.copy": {
+    "message": "Kopēt"
+  },
+  "terminal.menu.paste": {
+    "message": "Ielīmēt"
+  },
+  "toolbar.customize": {
+    "message": "Pielāgot rīkjoslu…"
+  },
+  "tools.clear_key": {
+    "message": "Notīrīt"
+  },
+  "tools.close": {
+    "message": "Aizvērt"
+  },
+  "tools.delete": {
+    "message": "Dzēst"
+  },
+  "tools.empty": {
+    "message": "Vēl nav rīku: „Jauns...” pievieno rīku."
+  },
+  "tools.field.command": {
+    "message": "Komanda"
+  },
+  "tools.field.key": {
+    "message": "Taustiņš"
+  },
+  "tools.field.name": {
+    "message": "Nosaukums"
+  },
+  "tools.intro": {
+    "message": "Jūsu pašu komandrindas izvēlnē Rīki: noklikšķiniet uz kādas tur vai nospiediet tās taustiņu."
+  },
+  "tools.key.none": {
+    "message": "Nav"
+  },
+  "tools.key.waiting": {
+    "message": "Nospiediet taustiņu... (Esc: nav)"
+  },
+  "tools.move_down": {
+    "message": "Pārvietot uz leju"
+  },
+  "tools.move_up": {
+    "message": "Pārvietot uz augšu"
+  },
+  "tools.name.placeholder": {
+    "message": "Salīdzināt ar otru pusi"
+  },
+  "tools.new": {
+    "message": "Jauns..."
+  },
+  "tools.new_name": {
+    "message": "Rīks {number}"
+  },
+  "tools.no_command": {
+    "message": "Rīkam {tool} vēl nav komandas: Rīki > Pārvaldīt rīkus."
+  },
+  "tools.not_local": {
+    "message": "Rīki darbojas šajā datorā, bet panelis rāda serveri vai arhīvu."
+  },
+  "tools.note.key_of_command": {
+    "message": "{key} ir arī komandai „{command}”: to pārņem rīks."
+  },
+  "tools.note.key_of_other_tool": {
+    "message": "{key} ir arī rīkam {tool}: to pārņem tas, kas sarakstā ir zemāk."
+  },
+  "tools.placeholders": {
+    "message": "%P – šī paneļa mape, %T – otra paneļa mape (abas beidzas ar atdalītāju, tāpēc \"%P%N\" ir ceļš), %N – fails zem kursora, %O – tā nosaukums bez paplašinājuma, %E – paplašinājums, %S – atlasītie faili (citādi fails zem kursora), katrs pēdiņās; %% – zīme %. Pārējo ielieciet pēdiņās: \"%P%N\"."
+  },
+  "tools.run_in_terminal": {
+    "message": "Palaist terminālī, lai redzētu izvadi"
+  },
+  "tools.set_key": {
+    "message": "Iestatīt taustiņu..."
+  },
+  "tools.title": {
+    "message": "Rīki"
+  },
+  "transfer.answer.cancel": {
+    "message": "Atcelt"
+  },
+  "transfer.answer.elevate": {
+    "message": "Kā administrators"
+  },
+  "transfer.answer.overwrite": {
+    "message": "Pārrakstīt"
+  },
+  "transfer.answer.overwrite_all": {
+    "message": "Pārrakstīt visus"
+  },
+  "transfer.answer.rename": {
+    "message": "Pārdēvēt"
+  },
+  "transfer.answer.retry": {
+    "message": "Mēģināt vēlreiz"
+  },
+  "transfer.answer.skip": {
+    "message": "Izlaist"
+  },
+  "transfer.answer.skip_all": {
+    "message": "Izlaist visus"
+  },
+  "transfer.archive.local_only": {
+    "message": "Arhīvā var ievietot tikai šī datora failus: vispirms nokopējiet tos šeit."
+  },
+  "transfer.cancel": {
+    "message": "Atcelt"
+  },
+  "transfer.error.elevate_hint": {
+    "message": "Kā administrators: šo un visu pārējo, kas tiks atteikts, kad viss cits būs paveikts, vienreiz prasot paroli."
+  },
+  "transfer.error.title": {
+    "message": "Kļūda"
+  },
+  "transfer.exists.describe": {
+    "message": "{count, plural, zero {{size} baitu, {time}} one {{size} baits, {time}} other {{size} baiti, {time}}}"
+  },
+  "transfer.exists.text": {
+    "message": "Jau esošais: {existing}\nJaunais: {new}"
+  },
+  "transfer.exists.title": {
+    "message": "Fails jau pastāv"
+  },
+  "transfer.extract_failed": {
+    "message": "Neizdevās tos izņemt: {err}"
+  },
+  "transfer.into_archive.question_many": {
+    "message": "{kind, select, copy {Vai kopēt} other {Vai pārvietot}} {count, plural, zero {# vienumu} one {# vienumu} other {# vienumus}} uz {into}? Tur esošie vienumi ar tādiem pašiem nosaukumiem tiks aizstāti."
+  },
+  "transfer.into_archive.question_one": {
+    "message": "{kind, select, copy {Vai kopēt} other {Vai pārvietot}} „{name}” uz {into}? Tur esošais vienums ar tādu pašu nosaukumu tiks aizstāts."
+  },
+  "transfer.into_archive.title_many": {
+    "message": "{kind, select, copy {Kopēt} other {Pārvietot}} {count, plural, zero {# vienumu} one {# vienumu} other {# vienumus}} arhīvā {archive}"
+  },
+  "transfer.into_archive.title_one": {
+    "message": "{kind, select, copy {Kopēt} other {Pārvietot}} „{name}” arhīvā {archive}"
+  },
+  "transfer.label.many": {
+    "message": "{kind, select, copy {Kopēt} other {Pārvietot}} {count, plural, zero {# vienumu} one {# vienumu} other {# vienumus}} uz:"
+  },
+  "transfer.label.many_server": {
+    "message": "{kind, select, copy {Kopēt} other {Pārvietot}} {count, plural, zero {# vienumu} one {# vienumu} other {# vienumus}} uz {server}:"
+  },
+  "transfer.label.one": {
+    "message": "{kind, select, copy {Kopēt} other {Pārvietot}} „{name}” uz:"
+  },
+  "transfer.label.one_server": {
+    "message": "{kind, select, copy {Kopēt} other {Pārvietot}} „{name}” uz {server}:"
+  },
+  "transfer.ok": {
+    "message": "Labi"
+  },
+  "transfer.overwrite.all": {
+    "message": "Pārrakstīt visus"
+  },
+  "transfer.overwrite.ask": {
+    "message": "Jautāt"
+  },
+  "transfer.overwrite.label": {
+    "message": "Ja mērķī ir fails ar tādu pašu nosaukumu:"
+  },
+  "transfer.overwrite.older": {
+    "message": "Pārrakstīt vecākos"
+  },
+  "transfer.overwrite.rename": {
+    "message": "Pārdēvēt kopijas"
+  },
+  "transfer.overwrite.skip": {
+    "message": "Izlaist visus"
+  },
+  "transfer.remove_moved": {
+    "message": "Noņemt pārvietotos no {name}"
+  },
+  "transfer.speed": {
+    "message": "{size}/s"
+  },
+  "transfer.strip.counting": {
+    "message": "skaita: {count, plural, zero {# failu} one {# fails} other {# faili}}"
+  },
+  "transfer.strip.progress": {
+    "message": "{files} / {count, plural, zero {# failu} one {# fails} other {# faili}}, {percent}%"
+  },
+  "transfer.strip.queue": {
+    "message": "Rinda..."
+  },
+  "transfer.strip.queue_waiting": {
+    "message": "Rinda ({count, plural, zero {# gaida} one {# gaida} other {# gaida}})..."
+  },
+  "transfer.title.copy": {
+    "message": "Kopēt"
+  },
+  "transfer.title.move": {
+    "message": "Pārvietot"
+  },
+  "viewer.as_text_hint": {
+    "message": "{err}. Taustiņš 1 parāda failu kā tekstu."
+  },
+  "viewer.book.cannot_read": {
+    "message": "Šo grāmatu nevar nolasīt: {err}. Taustiņš 1 parāda failu kā tekstu."
+  },
+  "viewer.book.continuing": {
+    "message": "Turpina no {percent}"
+  },
+  "viewer.book.error.compression": {
+    "message": "saspiesta vēl neatbalstītā veidā ({compression})"
+  },
+  "viewer.book.error.damaged": {
+    "message": "bojāta grāmata"
+  },
+  "viewer.book.error.damaged_zip": {
+    "message": "bojāts zip"
+  },
+  "viewer.book.error.drm": {
+    "message": "aizsargāta ar DRM: to var lasīt tikai Kindle"
+  },
+  "viewer.book.error.huffman": {
+    "message": "saspiesta tāpat kā Amazon grāmatas (HUFF/CDIC), kas vēl netiek atbalstīts"
+  },
+  "viewer.book.error.missing_part": {
+    "message": "grāmatā nav {name}"
+  },
+  "viewer.book.error.no_package": {
+    "message": "grāmatā nav pakotnes faila"
+  },
+  "viewer.book.error.no_text": {
+    "message": "grāmatā nav teksta"
+  },
+  "viewer.book.error.not_zip": {
+    "message": "nav zip: bojāta vai ar DRM aizsargāta grāmata?"
+  },
+  "viewer.book.error.zip_method": {
+    "message": "{name}: saspiests veidā, ko šeit nevar nolasīt ({method})"
+  },
+  "viewer.cannot_show": {
+    "message": "Nevar parādīt: {err}"
+  },
+  "viewer.convert.failed": {
+    "message": "{tool} nevarēja to pārveidot ({status})"
+  },
+  "viewer.converting": {
+    "message": "Pārveido ar {tool}…"
+  },
+  "viewer.copy.too_large": {
+    "message": "Atlases, kas lielākas par {megabytes} MB, netiek kopētas."
+  },
+  "viewer.encoding.cp1250": {
+    "message": "Austrumeiropas (1250)"
+  },
+  "viewer.encoding.cp1251": {
+    "message": "Kirilica Windows (1251)"
+  },
+  "viewer.encoding.cp1252": {
+    "message": "Rietumu Latin1 (1252)"
+  },
+  "viewer.encoding.cp1253": {
+    "message": "Grieķu (1253)"
+  },
+  "viewer.encoding.cp1254": {
+    "message": "Turku (1254)"
+  },
+  "viewer.encoding.cp1255": {
+    "message": "Ivrits (1255)"
+  },
+  "viewer.encoding.cp1256": {
+    "message": "Arābu (1256)"
+  },
+  "viewer.encoding.cp1257": {
+    "message": "Baltijas (1257)"
+  },
+  "viewer.encoding.cp1258": {
+    "message": "Vjetnamiešu (1258)"
+  },
+  "viewer.encoding.cp20866": {
+    "message": "Kirilica KOI8-R (20866)"
+  },
+  "viewer.encoding.cp437": {
+    "message": "DOS-USA (437)"
+  },
+  "viewer.encoding.cp850": {
+    "message": "DOS-LATIN1 (850)"
+  },
+  "viewer.encoding.cp852": {
+    "message": "DOS Centrāleiropas (852)"
+  },
+  "viewer.encoding.cp866": {
+    "message": "DOS kirilica (866)"
+  },
+  "viewer.encoding.cp874": {
+    "message": "Taju (874)"
+  },
+  "viewer.encoding.cp932": {
+    "message": "Japāņu (932)"
+  },
+  "viewer.encoding.cp936": {
+    "message": "Ķīniešu, kontinentālā (936)"
+  },
+  "viewer.encoding.cp949": {
+    "message": "Korejiešu (949)"
+  },
+  "viewer.encoding.cp950": {
+    "message": "Ķīniešu, Taivāna (950)"
+  },
+  "viewer.find.not_found": {
+    "message": "Nav atrasts: {text}"
+  },
+  "viewer.find.not_hex": {
+    "message": "Nav heksadecimāla virkne: {text}"
+  },
+  "viewer.find.nothing": {
+    "message": "Nav ko meklēt."
+  },
+  "viewer.find.save_failed": {
+    "message": "Neizdevās saglabāt meklējumus: {err}"
+  },
+  "viewer.loading": {
+    "message": "Ielādē…"
+  },
+  "viewer.markdown.too_large": {
+    "message": "Pārsniedz {megabytes} MB: taustiņš 1 to parāda kā tekstu."
+  },
+  "viewer.menu.binary": {
+    "message": "Binārs (fiksēts rindiņas garums)"
+  },
+  "viewer.menu.book": {
+    "message": "Grāmata (EPUB, FB2)"
+  },
+  "viewer.menu.close": {
+    "message": "Aizvērt"
+  },
+  "viewer.menu.configure": {
+    "message": "Konfigurēt..."
+  },
+  "viewer.menu.copy_hex": {
+    "message": "Kopēt kā heksadecimālas rakstzīmes"
+  },
+  "viewer.menu.copy_text": {
+    "message": "Kopēt kā tekstu"
+  },
+  "viewer.menu.edit": {
+    "message": "Rediģēt"
+  },
+  "viewer.menu.encoding": {
+    "message": "Kodējums"
+  },
+  "viewer.menu.file": {
+    "message": "Fails"
+  },
+  "viewer.menu.find": {
+    "message": "Atrast..."
+  },
+  "viewer.menu.find_next": {
+    "message": "Atrast nākamo"
+  },
+  "viewer.menu.fit_image": {
+    "message": "Ietilpināt attēlu logā"
+  },
+  "viewer.menu.font_ansi": {
+    "message": "ANSI (Windows rakstzīmju kopa)"
+  },
+  "viewer.menu.font_ascii": {
+    "message": "ASCII (DOS rakstzīmju kopa)"
+  },
+  "viewer.menu.font_page": {
+    "message": "Atbilstoši fontam"
+  },
+  "viewer.menu.font_variable": {
+    "message": "Mainīgs rakstzīmju platums"
+  },
+  "viewer.menu.hex": {
+    "message": "Hex"
+  },
+  "viewer.menu.html": {
+    "message": "HTML teksts (bez tagiem)"
+  },
+  "viewer.menu.minimap": {
+    "message": "Minikarte"
+  },
+  "viewer.menu.next_file": {
+    "message": "Nākamais fails"
+  },
+  "viewer.menu.only_larger": {
+    "message": "Ietilpināt tikai lielākus attēlus"
+  },
+  "viewer.menu.open": {
+    "message": "Atvērt..."
+  },
+  "viewer.menu.options": {
+    "message": "Opcijas"
+  },
+  "viewer.menu.picture": {
+    "message": "Attēls/multivide"
+  },
+  "viewer.menu.previous_file": {
+    "message": "Iepriekšējais fails"
+  },
+  "viewer.menu.reload": {
+    "message": "Pārlādēt"
+  },
+  "viewer.menu.save_as": {
+    "message": "Saglabāt kā..."
+  },
+  "viewer.menu.search_google": {
+    "message": "Meklēt atlasīto tekstu ar Google"
+  },
+  "viewer.menu.select_all": {
+    "message": "Atlasīt visu"
+  },
+  "viewer.menu.syntax_colors": {
+    "message": "Sintakses krāsas"
+  },
+  "viewer.menu.text_only": {
+    "message": "Tikai teksts"
+  },
+  "viewer.menu.unicode": {
+    "message": "Unicode (UTF-16)"
+  },
+  "viewer.menu.wrap": {
+    "message": "Aplauzt tekstu ({columns, plural, zero {# kolonnu} one {# kolonna} other {# kolonnas}})"
+  },
+  "viewer.mode.binary": {
+    "message": "Binārs · {page}"
+  },
+  "viewer.mode.book": {
+    "message": "Grāmata"
+  },
+  "viewer.mode.hex": {
+    "message": "Hex · {page}"
+  },
+  "viewer.mode.html": {
+    "message": "HTML teksts"
+  },
+  "viewer.mode.image": {
+    "message": "Attēls"
+  },
+  "viewer.mode.multimedia": {
+    "message": "Multivide"
+  },
+  "viewer.mode.pdf_by": {
+    "message": "PDF, izmantojot {tool}"
+  },
+  "viewer.mode.text": {
+    "message": "Teksts · {page}"
+  },
+  "viewer.origin.not_editable": {
+    "message": "rediģēt var tikai failus 7z, zip, jar un tar arhīvos"
+  },
+  "viewer.origin.updated": {
+    "message": "Atjaunināts {archive}"
+  },
+  "viewer.origin.updated_on": {
+    "message": "Atjaunināts {archive} serverī {server}"
+  },
+  "viewer.origin.uploaded": {
+    "message": "Augšupielādēts {path}"
+  },
+  "viewer.pdf.cannot_show": {
+    "message": "Šo PDF nevar parādīt: {err}"
+  },
+  "viewer.pdf.loading": {
+    "message": "Ielādē..."
+  },
+  "viewer.pdf.page": {
+    "message": "Lapa {page} / {pages}"
+  },
+  "viewer.picture.cannot_show": {
+    "message": "Šo attēlu nevar parādīt; taustiņš 1 to parāda kā tekstu."
+  },
+  "viewer.save_as.failed": {
+    "message": "Neizdevās saglabāt {path}: {err}"
+  },
+  "viewer.status.rows": {
+    "message": "{count, plural, zero {{first}–{last} no {grouped} rindiņām} one {{first}–{last} no {grouped} rindiņas} other {{first}–{last} no {grouped} rindiņām}}"
+  },
+  "viewer.status.rows_so_far": {
+    "message": "{count, plural, zero {līdz šim {grouped} rindiņu, nolasīti {percent}} one {līdz šim {grouped} rindiņa, nolasīti {percent}} other {līdz šim {grouped} rindiņas, nolasīti {percent}}}"
+  },
+  "viewer.status.searching": {
+    "message": "Meklē…"
+  },
+  "viewer.status.size": {
+    "message": "{count, plural, zero {{grouped} baitu} one {{grouped} baits} other {{grouped} baiti}}"
+  },
+  "viewer.window.title": {
+    "message": "{path} — Skatītājs"
+  },
+  "viewer.zoom.fit": {
+    "message": "Atpakaļ uz ietilpināšanu logā (Ctrl+0)"
+  },
+  "viewer.zoom.in": {
+    "message": "Tuvināt (Ctrl++)"
+  },
+  "viewer.zoom.out": {
+    "message": "Tālināt (Ctrl+-)"
+  },
+  "viewer.zoom.reset": {
+    "message": "Atpakaļ uz 100% (Ctrl+0)"
+  },
+  "workspaces.button.close": {
+    "message": "Aizvērt"
+  },
+  "workspaces.button.delete": {
+    "message": "Dzēst..."
+  },
+  "workspaces.button.duplicate": {
+    "message": "Dublēt..."
+  },
+  "workspaces.button.new": {
+    "message": "Jauna..."
+  },
+  "workspaces.button.rename": {
+    "message": "Pārdēvēt..."
+  },
+  "workspaces.delete.button": {
+    "message": "Dzēst"
+  },
+  "workspaces.delete.closed": {
+    "message": "Vai dzēst darbvietu „{name}”? Tās cilnes tiks aizmirstas."
+  },
+  "workspaces.delete.closed_shells": {
+    "message": "Vai dzēst darbvietu „{name}”? Tās cilnes tiks aizmirstas, un čaulas tās termināļa cilnēs tiks pārtrauktas."
+  },
+  "workspaces.delete.open": {
+    "message": "Vai dzēst darbvietu „{name}”? Tās cilnes tiks aizvērtas; tās vietā tiks atvērta „{other}”."
+  },
+  "workspaces.delete.open_shells": {
+    "message": "Vai dzēst darbvietu „{name}”? Tās cilnes tiks aizvērtas, un čaulas tās termināļa cilnēs tiks pārtrauktas; tās vietā tiks atvērta „{other}”."
+  },
+  "workspaces.delete.title": {
+    "message": "Dzēst darbvietu"
+  },
+  "workspaces.duplicate.name": {
+    "message": "{name} kopija"
+  },
+  "workspaces.duplicate.title": {
+    "message": "Dublēt darbvietu"
+  },
+  "workspaces.error.name_taken": {
+    "message": "Šāds nosaukums jau ir citai darbvietai."
+  },
+  "workspaces.error.no_name": {
+    "message": "Darbvietai nepieciešams nosaukums."
+  },
+  "workspaces.error.save": {
+    "message": "Neizdevās saglabāt darbvietas: {err}"
+  },
+  "workspaces.hint": {
+    "message": "Rādīt > Darbvietas atver kādu no tām. Izmaiņas atvērtajā darbvietā tiek saglabātas tajā."
+  },
+  "workspaces.name.label": {
+    "message": "Nosaukums:"
+  },
+  "workspaces.new.name": {
+    "message": "Darbvieta {number}"
+  },
+  "workspaces.new.title": {
+    "message": "Jauna darbvieta"
+  },
+  "workspaces.open": {
+    "message": "atvērta"
+  },
+  "workspaces.rename.title": {
+    "message": "Pārdēvēt darbvietu"
+  },
+  "workspaces.summary.panels": {
+    "message": "Kreisajā {left, plural, zero {# cilņu} one {# cilne} other {# cilnes}}, labajā {right, plural, zero {# cilņu} one {# cilne} other {# cilnes}}"
+  },
+  "workspaces.summary.terminal": {
+    "message": "Kreisajā {left, plural, zero {# cilņu} one {# cilne} other {# cilnes}}, labajā {right, plural, zero {# cilņu} one {# cilne} other {# cilnes}}, terminālī {terminal, plural, zero {# cilņu} one {# cilne} other {# cilnes}}"
+  },
+  "workspaces.summary.terminal_hidden": {
+    "message": "Kreisajā {left, plural, zero {# cilņu} one {# cilne} other {# cilnes}}, labajā {right, plural, zero {# cilņu} one {# cilne} other {# cilnes}}, terminālī {terminal, plural, zero {# cilņu} one {# cilne} other {# cilnes}} (paslēpts)"
+  },
+  "workspaces.title": {
+    "message": "Darbvietas"
+  }
+}

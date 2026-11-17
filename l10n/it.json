@@ -1,0 +1,4823 @@
+{
+  "about.addons": {
+    "message": "Componenti aggiuntivi, scaricati su richiesta"
+  },
+  "about.libraries": {
+    "message": "Basato su"
+  },
+  "about.licence": {
+    "message": "Licenza:"
+  },
+  "about.made_with": {
+    "message": "Realizzato con il lavoro di questi progetti"
+  },
+  "about.part.alacritty_terminal": {
+    "message": "Schermo e shell del terminale integrato"
+  },
+  "about.part.encoding_rs": {
+    "message": "Codifiche dei caratteri"
+  },
+  "about.part.gpui": {
+    "message": "La finestra, la grafica e l’input (di Zed)"
+  },
+  "about.part.gpui_kit": {
+    "message": "Controlli: elenchi, menu, campi, l’editor"
+  },
+  "about.part.html5ever": {
+    "message": "HTML ed e-book nel visualizzatore"
+  },
+  "about.part.image": {
+    "message": "Immagini"
+  },
+  "about.part.keyring": {
+    "message": "Password nel portachiavi del sistema"
+  },
+  "about.part.lucide": {
+    "message": "Icone"
+  },
+  "about.part.material_icons": {
+    "message": "Icone di file e cartelle"
+  },
+  "about.part.pdfium_render": {
+    "message": "PDFium da Rust"
+  },
+  "about.part.ratatui": {
+    "message": "scmd, la versione per terminale"
+  },
+  "about.part.russh": {
+    "message": "SSH e SFTP"
+  },
+  "about.part.rustls": {
+    "message": "TLS"
+  },
+  "about.part.serde": {
+    "message": "File delle impostazioni"
+  },
+  "about.part.similar": {
+    "message": "Confronta per contenuto"
+  },
+  "about.part.suppaftp": {
+    "message": "FTP e FTPS"
+  },
+  "about.part.tokio": {
+    "message": "Attività di rete in background"
+  },
+  "about.part.trash": {
+    "message": "Il cestino"
+  },
+  "about.part.tree_sitter": {
+    "message": "I colori del codice nel visualizzatore e nell’editor"
+  },
+  "about.part.zbus": {
+    "message": "D-Bus: il desktop, i dispositivi, KDE Connect"
+  },
+  "about.shipped": {
+    "message": "Incluso con l’app"
+  },
+  "about.tagline": {
+    "message": "Un gestore di file a due pannelli, software libero."
+  },
+  "about.title": {
+    "message": "Informazioni su Spark Commander"
+  },
+  "about.version": {
+    "message": "Versione {version}"
+  },
+  "activity.clear": {
+    "message": "Svuota"
+  },
+  "activity.clear_failed": {
+    "message": "Impossibile svuotare il registro: {err}"
+  },
+  "activity.empty": {
+    "message": "Nessuna operazione finora."
+  },
+  "activity.title": {
+    "message": "Registro attività"
+  },
+  "addons.error.damaged": {
+    "message": "il download è danneggiato: il checksum non corrisponde"
+  },
+  "addons.error.list": {
+    "message": "l’elenco dei componenti aggiuntivi: {err}"
+  },
+  "addons.error.missing_file": {
+    "message": "il download non contiene {file}"
+  },
+  "addons.error.no_folder": {
+    "message": "nessuna cartella dati"
+  },
+  "addons.error.unpacking": {
+    "message": "estrazione: {err}"
+  },
+  "addons.installed": {
+    "message": "{addon} {version} è installato."
+  },
+  "addons.megabytes": {
+    "message": "{size} MB"
+  },
+  "addons.offer.never": {
+    "message": "Non mostrare più"
+  },
+  "addons.offer.no": {
+    "message": "No"
+  },
+  "addons.offer.text": {
+    "message": "{name} richiede un componente aggiuntivo non installato: {addon}. Vuoi scaricarlo in Impostazioni > Componenti aggiuntivi?"
+  },
+  "addons.offer.title": {
+    "message": "Componente aggiuntivo"
+  },
+  "addons.offer.yes": {
+    "message": "Sì"
+  },
+  "addons.purpose.cloud": {
+    "message": "Archiviazione online: S3, Google Drive, OneDrive, Dropbox e altri servizi."
+  },
+  "addons.purpose.media": {
+    "message": "Video e audio, e foto HEIC e AVIF: li mostrano il visualizzatore e la Vista rapida."
+  },
+  "addons.purpose.office": {
+    "message": "Documenti Office: il visualizzatore mostra i file Word, Excel e PowerPoint come PDF."
+  },
+  "addons.purpose.pdfium": {
+    "message": "PDF: il visualizzatore mostra i file PDF e, una volta convertiti, i documenti Office."
+  },
+  "addons.purpose.seven_zip": {
+    "message": "Archivi: comprime ed estrae 7z, zip, rar, tar e altri."
+  },
+  "addons.update": {
+    "message": "Aggiorna"
+  },
+  "addons.updates": {
+    "message": "Aggiornamenti dei componenti aggiuntivi: {names}"
+  },
+  "appearance.dark": {
+    "message": "Scuro"
+  },
+  "appearance.light": {
+    "message": "Chiaro"
+  },
+  "appearance.system": {
+    "message": "Come il sistema"
+  },
+  "archive.cannot_read": {
+    "message": "{name}: impossibile leggerlo"
+  },
+  "archive.not_in_archive": {
+    "message": "{name} non è nell’archivio"
+  },
+  "archive.not_own_folder": {
+    "message": "{folder} non è una cartella propria di questo utente"
+  },
+  "archive.seven_zip_failed": {
+    "message": "7-Zip non è riuscito ({code})"
+  },
+  "archive.seven_zip_missing": {
+    "message": "7-Zip non trovato: {path} (esegui vendor/7zip/fetch.sh o fetch.bat)"
+  },
+  "archive.temp_not_utf8": {
+    "message": "il nome della cartella temporanea non è in UTF-8"
+  },
+  "associations.add": {
+    "message": "Aggiungi..."
+  },
+  "associations.cancel": {
+    "message": "Annulla"
+  },
+  "associations.close": {
+    "message": "Chiudi"
+  },
+  "associations.column.edit": {
+    "message": "Modifica (F4)"
+  },
+  "associations.column.files": {
+    "message": "File"
+  },
+  "associations.column.open": {
+    "message": "Apri (Enter)"
+  },
+  "associations.column.view": {
+    "message": "Visualizza (F3)"
+  },
+  "associations.edit": {
+    "message": "Modifica..."
+  },
+  "associations.edit_dialog.title": {
+    "message": "Associa"
+  },
+  "associations.empty": {
+    "message": "Ancora nessuna."
+  },
+  "associations.field.edit": {
+    "message": "Modifica con (F4):"
+  },
+  "associations.field.files": {
+    "message": "File (*.jpg *.png):"
+  },
+  "associations.field.open": {
+    "message": "Apri con (Enter):"
+  },
+  "associations.field.view": {
+    "message": "Visualizza con (F3):"
+  },
+  "associations.intro": {
+    "message": "Enter, F3 e F4 eseguono questi programmi per i file di una maschera; se vuoto resta il predefinito. %1 è il file."
+  },
+  "associations.mask_needed": {
+    "message": "Serve la maschera dei file: *.txt"
+  },
+  "associations.no_file": {
+    "message": "Posiziona il cursore su un file del tipo da associare."
+  },
+  "associations.ok": {
+    "message": "OK"
+  },
+  "associations.remove": {
+    "message": "Rimuovi"
+  },
+  "associations.save_failed": {
+    "message": "Impossibile salvare le impostazioni: {err}"
+  },
+  "associations.title": {
+    "message": "Associazioni interne"
+  },
+  "attributes.bad_time": {
+    "message": "«{text}» non è una data e ora valida: 2026-11-10 14:04:33"
+  },
+  "attributes.cancel": {
+    "message": "Annulla"
+  },
+  "attributes.change_time": {
+    "message": "Cambia data/ora:"
+  },
+  "attributes.changed": {
+    "message": "{count, plural, one {# modificato} other {# modificati}}"
+  },
+  "attributes.changed_failed": {
+    "message": "{count, plural, one {# modificato} other {# modificati}}, {failed, plural, one {# non riuscito} other {# non riusciti}}"
+  },
+  "attributes.dialog_title_many": {
+    "message": "Cambia attributi: {count, plural, one {# elemento} other {# elementi}}"
+  },
+  "attributes.dialog_title_one": {
+    "message": "Cambia attributi: {name}"
+  },
+  "attributes.execute": {
+    "message": "Esecuzione"
+  },
+  "attributes.group": {
+    "message": "Gruppo"
+  },
+  "attributes.in_archive": {
+    "message": "Non è possibile cambiare gli attributi all’interno degli archivi."
+  },
+  "attributes.no_bits": {
+    "message": "Qui questi file non hanno bit di permesso; si può cambiare solo la data."
+  },
+  "attributes.now": {
+    "message": "Adesso"
+  },
+  "attributes.octal": {
+    "message": "Ottale:"
+  },
+  "attributes.ok": {
+    "message": "OK"
+  },
+  "attributes.others": {
+    "message": "Altri"
+  },
+  "attributes.owner": {
+    "message": "Proprietario"
+  },
+  "attributes.read": {
+    "message": "Lettura"
+  },
+  "attributes.recurse": {
+    "message": "Anche tutto il contenuto delle cartelle"
+  },
+  "attributes.title_many": {
+    "message": "Cambia attributi di {count, plural, one {# elemento} other {# elementi}}"
+  },
+  "attributes.title_one": {
+    "message": "Cambia attributi di «{name}»"
+  },
+  "attributes.write": {
+    "message": "Scrittura"
+  },
+  "bookmarks.add_current": {
+    "message": "Aggiungi cartella corrente"
+  },
+  "bookmarks.add_folders": {
+    "message": "Aggiungi cartelle..."
+  },
+  "bookmarks.added": {
+    "message": "Aggiunto ai segnalibri: {name}"
+  },
+  "bookmarks.already": {
+    "message": "{name} è già nei Segnalibri."
+  },
+  "bookmarks.chooser.failed": {
+    "message": "Impossibile aprire il selettore di cartelle: {err}"
+  },
+  "bookmarks.chooser.prompt": {
+    "message": "Aggiungi"
+  },
+  "bookmarks.close": {
+    "message": "Chiudi"
+  },
+  "bookmarks.copy_name": {
+    "message": "Copia nome"
+  },
+  "bookmarks.copy_path": {
+    "message": "Copia percorso"
+  },
+  "bookmarks.drop_here": {
+    "message": "Rilascia qui le cartelle."
+  },
+  "bookmarks.empty": {
+    "message": "Nessun segnalibro: aggiungi cartelle o rilasciale qui."
+  },
+  "bookmarks.intro": {
+    "message": "Le cartelle di questo computer, nell’ordine di Risorse: trascinane una per spostarla, o rilascia qui delle cartelle per aggiungerle."
+  },
+  "bookmarks.move_down": {
+    "message": "Sposta giù"
+  },
+  "bookmarks.move_up": {
+    "message": "Sposta su"
+  },
+  "bookmarks.only_local": {
+    "message": "Solo le cartelle di questo computer possono essere aggiunte ai segnalibri."
+  },
+  "bookmarks.remove": {
+    "message": "Rimuovi"
+  },
+  "bookmarks.remove_from": {
+    "message": "Rimuovi dai segnalibri"
+  },
+  "bookmarks.rename": {
+    "message": "Rinomina..."
+  },
+  "bookmarks.rename_label": {
+    "message": "Nome (vuoto: quello della cartella):"
+  },
+  "bookmarks.rename_title": {
+    "message": "Rinomina segnalibro"
+  },
+  "bookmarks.sort": {
+    "message": "Ordina A–Z"
+  },
+  "bookmarks.title": {
+    "message": "Segnalibri"
+  },
+  "button_bar.copy": {
+    "message": "Copia"
+  },
+  "button_bar.delete": {
+    "message": "Elimina"
+  },
+  "button_bar.edit": {
+    "message": "Modifica"
+  },
+  "button_bar.move": {
+    "message": "Sposta"
+  },
+  "button_bar.new_folder": {
+    "message": "Nuova cartella"
+  },
+  "button_bar.quit": {
+    "message": "Esci"
+  },
+  "button_bar.view": {
+    "message": "Visualizza"
+  },
+  "checksum.create.title": {
+    "message": "Crea {name}"
+  },
+  "checksum.create.title_separate": {
+    "message": "Crea file checksum {method}"
+  },
+  "checksum.dialog_title": {
+    "message": "Crea file checksum"
+  },
+  "checksum.save_as": {
+    "message": "Salva il file checksum come:"
+  },
+  "checksum.separate": {
+    "message": "Invece un file checksum accanto a ogni file"
+  },
+  "checksum.verify.all_ok": {
+    "message": "{count, plural, one {# file OK} other {tutti i # file OK}}"
+  },
+  "checksum.verify.choose": {
+    "message": "Scegli i file checksum: .sfv, .md5, .sha1, .sha256 o .sha512."
+  },
+  "checksum.verify.missing_file": {
+    "message": "mancante: {name}"
+  },
+  "checksum.verify.result": {
+    "message": "{ok, plural, one {# OK} other {# OK}}, {wrong, plural, one {# errato} other {# errati}}, {missing, plural, one {# mancante} other {# mancanti}}"
+  },
+  "checksum.verify.title_many": {
+    "message": "Verifica {count, plural, one {# file checksum} other {# file checksum}}"
+  },
+  "checksum.verify.title_one": {
+    "message": "Verifica {name}"
+  },
+  "checksum.verify.wrong_file": {
+    "message": "errato: {name}"
+  },
+  "command.about": {
+    "message": "Informazioni su Spark Commander"
+  },
+  "command.activity_log": {
+    "message": "Registro attività..."
+  },
+  "command.all_files": {
+    "message": "Tutti i file"
+  },
+  "command.all_folder_sizes": {
+    "message": "Calcola dimensioni di tutte le cartelle"
+  },
+  "command.all_with_extension": {
+    "message": "*.*"
+  },
+  "command.associate_with": {
+    "message": "Associa a..."
+  },
+  "command.bookmark_folder": {
+    "message": "Aggiungi cartella ai segnalibri"
+  },
+  "command.bookmarks": {
+    "message": "Segnalibri"
+  },
+  "command.branch_view": {
+    "message": "Vista ramo (con sottocartelle)"
+  },
+  "command.branch_view_selected": {
+    "message": "Vista ramo delle cartelle selezionate"
+  },
+  "command.brief": {
+    "message": "Breve"
+  },
+  "command.calculate_occupied_space": {
+    "message": "Calcola spazio occupato..."
+  },
+  "command.change_attributes": {
+    "message": "Cambia attributi..."
+  },
+  "command.close_all_tabs": {
+    "message": "Chiudi tutte le schede"
+  },
+  "command.close_duplicate_tabs": {
+    "message": "Chiudi schede duplicate"
+  },
+  "command.close_tab": {
+    "message": "Chiudi scheda"
+  },
+  "command.combine_files": {
+    "message": "Unisci file..."
+  },
+  "command.compare_by_content": {
+    "message": "Confronta per contenuto..."
+  },
+  "command.compare_directories": {
+    "message": "Seleziona i più recenti"
+  },
+  "command.copy": {
+    "message": "Copia..."
+  },
+  "command.copy_names_to_clipboard": {
+    "message": "Copia nomi selezionati negli appunti"
+  },
+  "command.copy_names_with_path_to_clipboard": {
+    "message": "Copia nomi con percorso negli appunti"
+  },
+  "command.copy_to_clipboard": {
+    "message": "Copia file"
+  },
+  "command.copy_with_all_details": {
+    "message": "Copia negli appunti con tutti i dettagli"
+  },
+  "command.copy_with_path_and_details": {
+    "message": "Copia negli appunti con percorso+dettagli"
+  },
+  "command.create_checksum_files": {
+    "message": "Crea file checksum (CRC32, MD5, SHA1, SHA256, SHA512)..."
+  },
+  "command.create_link": {
+    "message": "Crea collegamento..."
+  },
+  "command.custom_filter": {
+    "message": "Personalizzato..."
+  },
+  "command.cut_to_clipboard": {
+    "message": "Taglia file"
+  },
+  "command.delete": {
+    "message": "Elimina"
+  },
+  "command.delete_permanently": {
+    "message": "Elimina definitivamente"
+  },
+  "command.disconnect": {
+    "message": "Disconnetti dal server"
+  },
+  "command.download_link": {
+    "message": "Scarica da link..."
+  },
+  "command.duplicate_tab": {
+    "message": "Nuova scheda"
+  },
+  "command.duplicate_workspace": {
+    "message": "Duplica area di lavoro..."
+  },
+  "command.edit": {
+    "message": "Modifica"
+  },
+  "command.edit_externally": {
+    "message": "Modifica con editor esterno"
+  },
+  "command.folder_history": {
+    "message": "Cronologia cartelle..."
+  },
+  "command.full": {
+    "message": "Completa"
+  },
+  "command.go_back": {
+    "message": "Indietro"
+  },
+  "command.go_forward": {
+    "message": "Avanti"
+  },
+  "command.go_home": {
+    "message": "Cartella Home"
+  },
+  "command.go_to_root": {
+    "message": "Cartella radice"
+  },
+  "command.hidden_files": {
+    "message": "File nascosti"
+  },
+  "command.internal_associations": {
+    "message": "Associazioni interne (solo Spark Commander)..."
+  },
+  "command.invert_selection": {
+    "message": "Inverti selezione"
+  },
+  "command.left_drives": {
+    "message": "Unità (pannello sinistro)"
+  },
+  "command.list_tabs": {
+    "message": "Elenco schede"
+  },
+  "command.load_selection_from_file": {
+    "message": "Carica selezione da file"
+  },
+  "command.manage_bookmarks": {
+    "message": "Gestisci segnalibri..."
+  },
+  "command.manage_tools": {
+    "message": "Gestisci strumenti..."
+  },
+  "command.manage_workspaces": {
+    "message": "Gestisci aree di lavoro..."
+  },
+  "command.mark_in_place": {
+    "message": "Seleziona/Deseleziona sul posto, misurando la cartella"
+  },
+  "command.mark_newer_hide_same": {
+    "message": "Seleziona i più recenti, nascondi i file uguali"
+  },
+  "command.move": {
+    "message": "Sposta..."
+  },
+  "command.multi_rename_tool": {
+    "message": "Rinomina multipla..."
+  },
+  "command.name_to_command_line": {
+    "message": "Nome nella riga di comando"
+  },
+  "command.new_folder": {
+    "message": "Nuova cartella..."
+  },
+  "command.new_terminal": {
+    "message": "Nuova scheda terminale"
+  },
+  "command.new_text_file": {
+    "message": "Nuovo file..."
+  },
+  "command.new_workspace": {
+    "message": "Nuova area di lavoro..."
+  },
+  "command.next_tab": {
+    "message": "Scheda successiva"
+  },
+  "command.only_selected_files": {
+    "message": "Solo file selezionati"
+  },
+  "command.open_in_left_panel": {
+    "message": "Mostra nel pannello sinistro"
+  },
+  "command.open_in_new_tab": {
+    "message": "Apri cartella in nuova scheda"
+  },
+  "command.open_in_other_new_tab": {
+    "message": "Apri la cartella in una nuova scheda dell’altro pannello"
+  },
+  "command.open_in_right_panel": {
+    "message": "Mostra nel pannello destro"
+  },
+  "command.open_terminal": {
+    "message": "Apri terminale qui"
+  },
+  "command.operation_queue": {
+    "message": "Coda operazioni..."
+  },
+  "command.pack": {
+    "message": "Comprimi..."
+  },
+  "command.paste_from_clipboard": {
+    "message": "Incolla file"
+  },
+  "command.path_and_name_to_command_line": {
+    "message": "Percorso e nome nella riga di comando"
+  },
+  "command.path_to_command_line": {
+    "message": "Percorso nella riga di comando"
+  },
+  "command.previous_tab": {
+    "message": "Scheda precedente"
+  },
+  "command.programs": {
+    "message": "Programmi"
+  },
+  "command.properties": {
+    "message": "Proprietà..."
+  },
+  "command.quick_filter": {
+    "message": "Filtro rapido"
+  },
+  "command.quick_open": {
+    "message": "Apertura rapida..."
+  },
+  "command.quick_view_panel": {
+    "message": "Pannello Vista rapida"
+  },
+  "command.quit": {
+    "message": "Esci"
+  },
+  "command.redo": {
+    "message": "Ripeti"
+  },
+  "command.rename_in_place": {
+    "message": "Rinomina"
+  },
+  "command.reread_source": {
+    "message": "Rileggi origine"
+  },
+  "command.restore_selection": {
+    "message": "Ripristina selezione"
+  },
+  "command.reversed_order": {
+    "message": "Ordine inverso"
+  },
+  "command.right_drives": {
+    "message": "Unità (pannello destro)"
+  },
+  "command.save_selection": {
+    "message": "Salva selezione"
+  },
+  "command.save_selection_to_file": {
+    "message": "Salva selezione su file"
+  },
+  "command.search": {
+    "message": "Cerca..."
+  },
+  "command.search_in_separate_process": {
+    "message": "Cerca in una finestra separata..."
+  },
+  "command.select_all": {
+    "message": "Seleziona tutto"
+  },
+  "command.select_all_with_same_extension": {
+    "message": "Seleziona tutto con la stessa estensione"
+  },
+  "command.select_group": {
+    "message": "Seleziona gruppo..."
+  },
+  "command.settings": {
+    "message": "Impostazioni..."
+  },
+  "command.shortcuts": {
+    "message": "Scorciatoie..."
+  },
+  "command.sidebar_connections": {
+    "message": "Connessioni"
+  },
+  "command.sidebar_operations": {
+    "message": "Operazioni"
+  },
+  "command.sidebar_places": {
+    "message": "Risorse"
+  },
+  "command.sidebar_tree": {
+    "message": "Cartelle"
+  },
+  "command.sort_by_extension": {
+    "message": "Estensione"
+  },
+  "command.sort_by_name": {
+    "message": "Nome"
+  },
+  "command.sort_by_size": {
+    "message": "Dimensione"
+  },
+  "command.sort_by_time": {
+    "message": "Data"
+  },
+  "command.split_file": {
+    "message": "Dividi file..."
+  },
+  "command.swap_panels": {
+    "message": "Scambia pannelli"
+  },
+  "command.swap_panels_and_tabs": {
+    "message": "Scambia pannelli con le loro schede"
+  },
+  "command.sync_browsing": {
+    "message": "Navigazione sincronizzata"
+  },
+  "command.synchronize_dirs": {
+    "message": "Sincronizza cartelle..."
+  },
+  "command.target_equals_source": {
+    "message": "Destinazione = Origine"
+  },
+  "command.terminal_panel": {
+    "message": "Terminale"
+  },
+  "command.test_archives": {
+    "message": "Verifica archivi"
+  },
+  "command.thumbnail_view": {
+    "message": "Vista miniature"
+  },
+  "command.toggle_mark": {
+    "message": "Seleziona/Deseleziona"
+  },
+  "command.toggle_sidebar": {
+    "message": "Mostra barra laterale"
+  },
+  "command.undo": {
+    "message": "Annulla"
+  },
+  "command.unpack_specific_files": {
+    "message": "Estrai file specifici..."
+  },
+  "command.unselect_all": {
+    "message": "Deseleziona tutto"
+  },
+  "command.unselect_group": {
+    "message": "Deseleziona gruppo..."
+  },
+  "command.unsorted": {
+    "message": "Non ordinato"
+  },
+  "command.verify_checksums": {
+    "message": "Verifica checksum (dai file checksum)"
+  },
+  "command.vertical_arrangement": {
+    "message": "Disposizione verticale"
+  },
+  "command.view": {
+    "message": "Visualizza"
+  },
+  "command.website": {
+    "message": "Sito web di Spark Commander"
+  },
+  "command.workspace1": {
+    "message": "Apri area di lavoro 1"
+  },
+  "command.workspace2": {
+    "message": "Apri area di lavoro 2"
+  },
+  "command.workspace3": {
+    "message": "Apri area di lavoro 3"
+  },
+  "command.workspace4": {
+    "message": "Apri area di lavoro 4"
+  },
+  "command.workspace5": {
+    "message": "Apri area di lavoro 5"
+  },
+  "command.workspace6": {
+    "message": "Apri area di lavoro 6"
+  },
+  "command.workspace7": {
+    "message": "Apri area di lavoro 7"
+  },
+  "command.workspace8": {
+    "message": "Apri area di lavoro 8"
+  },
+  "command.workspace9": {
+    "message": "Apri area di lavoro 9"
+  },
+  "command_line.error.cannot_run": {
+    "message": "{program}: impossibile eseguirlo"
+  },
+  "command_line.error.not_found": {
+    "message": "{program}: comando non trovato"
+  },
+  "command_line.history.empty": {
+    "message": "Nessun comando eseguito finora"
+  },
+  "command_line.on_server": {
+    "message": "I comandi vengono eseguiti su questo computer; il pannello è su un server."
+  },
+  "command_name.all_files": {
+    "message": "Mostra tutti i file"
+  },
+  "command_name.all_with_extension": {
+    "message": "Mostra *.*"
+  },
+  "command_name.brief": {
+    "message": "Vista breve"
+  },
+  "command_name.compare_directories": {
+    "message": "Confronta cartelle: seleziona i più recenti"
+  },
+  "command_name.custom_filter": {
+    "message": "Filtro personalizzato"
+  },
+  "command_name.duplicate_tab": {
+    "message": "Nuova scheda (copia di questa)"
+  },
+  "command_name.full": {
+    "message": "Vista completa"
+  },
+  "command_name.go_back": {
+    "message": "Vai indietro"
+  },
+  "command_name.go_forward": {
+    "message": "Vai avanti"
+  },
+  "command_name.go_home": {
+    "message": "Vai alla cartella Home"
+  },
+  "command_name.hidden_files": {
+    "message": "Mostra file nascosti"
+  },
+  "command_name.only_selected_files": {
+    "message": "Mostra solo file selezionati"
+  },
+  "command_name.programs": {
+    "message": "Mostra programmi"
+  },
+  "command_name.quick_filter": {
+    "message": "Filtro rapido"
+  },
+  "command_name.rename_in_place": {
+    "message": "Rinomina sul posto"
+  },
+  "command_name.sidebar_connections": {
+    "message": "Barra laterale: Connessioni"
+  },
+  "command_name.sidebar_operations": {
+    "message": "Barra laterale: Operazioni"
+  },
+  "command_name.sidebar_places": {
+    "message": "Barra laterale: Risorse"
+  },
+  "command_name.sidebar_tree": {
+    "message": "Barra laterale: Cartelle"
+  },
+  "command_name.sort_by_extension": {
+    "message": "Ordina per estensione"
+  },
+  "command_name.sort_by_name": {
+    "message": "Ordina per nome"
+  },
+  "command_name.sort_by_size": {
+    "message": "Ordina per dimensione"
+  },
+  "command_name.sort_by_time": {
+    "message": "Ordina per data"
+  },
+  "command_name.toggle_sidebar": {
+    "message": "Barra laterale: mostra o nascondi"
+  },
+  "command_name.unsorted": {
+    "message": "Non ordinare"
+  },
+  "compare.browse.prompt": {
+    "message": "Confronta"
+  },
+  "compare.button.compare": {
+    "message": "Confronta"
+  },
+  "compare.button.next": {
+    "message": "Differenza successiva (N)"
+  },
+  "compare.button.previous": {
+    "message": "Differenza precedente (P)"
+  },
+  "compare.need_two_files": {
+    "message": "Posiziona il cursore su un file in ogni pannello, o seleziona due file."
+  },
+  "compare.option.binary": {
+    "message": "Binario"
+  },
+  "compare.option.ignore_case": {
+    "message": "Ignora maiuscole/minuscole"
+  },
+  "compare.option.ignore_spaces": {
+    "message": "Ignora spazi ripetuti"
+  },
+  "compare.option.only_differences": {
+    "message": "Solo differenze"
+  },
+  "compare.status.bytes_differ": {
+    "message": "{place}: {count, plural, one {{grouped} byte differisce} other {{grouped} byte differiscono}}, il primo a {first}; dimensioni {left} e {right}."
+  },
+  "compare.status.comparing": {
+    "message": "Confronto in corso…"
+  },
+  "compare.status.difference_of": {
+    "message": "Differenza {at} di {count}"
+  },
+  "compare.status.differences": {
+    "message": "{count, plural, one {# differenza} other {# differenze}}"
+  },
+  "compare.status.identical": {
+    "message": "{count, plural, one {I file sono identici: {grouped} byte.} other {I file sono identici: {grouped} byte.}}"
+  },
+  "compare.status.no_differences": {
+    "message": "Nessuna differenza."
+  },
+  "compare.window.title": {
+    "message": "Confronto: {left} — {right}"
+  },
+  "connections.connect": {
+    "message": "Connetti"
+  },
+  "connections.copy_name": {
+    "message": "Copia nome"
+  },
+  "connections.copy_path": {
+    "message": "Copia percorso"
+  },
+  "connections.delete": {
+    "message": "Elimina"
+  },
+  "connections.dialog.title": {
+    "message": "Connessione"
+  },
+  "connections.disconnect": {
+    "message": "Disconnetti"
+  },
+  "connections.duplicate": {
+    "message": "Duplica"
+  },
+  "connections.duplicate_name": {
+    "message": "{name} (copia)"
+  },
+  "connections.edit": {
+    "message": "Modifica..."
+  },
+  "connections.empty": {
+    "message": "Ancora nessuna connessione."
+  },
+  "connections.error.no_server": {
+    "message": "Serve un server."
+  },
+  "connections.error.port": {
+    "message": "Non è una porta: {text}"
+  },
+  "connections.field.access_key": {
+    "message": "Chiave di accesso"
+  },
+  "connections.field.api_key": {
+    "message": "Chiave API"
+  },
+  "connections.field.application_key": {
+    "message": "Chiave applicazione"
+  },
+  "connections.field.bucket": {
+    "message": "Bucket/cartella"
+  },
+  "connections.field.container": {
+    "message": "Contenitore/cartella"
+  },
+  "connections.field.endpoint": {
+    "message": "Endpoint"
+  },
+  "connections.field.key_id": {
+    "message": "ID chiave"
+  },
+  "connections.field.name": {
+    "message": "Nome"
+  },
+  "connections.field.password": {
+    "message": "Password"
+  },
+  "connections.field.port": {
+    "message": "Porta"
+  },
+  "connections.field.protocol": {
+    "message": "Protocollo"
+  },
+  "connections.field.secret_key": {
+    "message": "Chiave segreta"
+  },
+  "connections.field.server": {
+    "message": "Server"
+  },
+  "connections.field.start_folder": {
+    "message": "Cartella iniziale"
+  },
+  "connections.field.user": {
+    "message": "Utente"
+  },
+  "connections.folder.delete_confirm": {
+    "message": "{count, plural, one {Eliminare la cartella {name} e la connessione che contiene?} other {Eliminare la cartella {name} e le # connessioni che contiene?}}"
+  },
+  "connections.folder.delete_title": {
+    "message": "Elimina cartella"
+  },
+  "connections.folder.exists": {
+    "message": "Esiste già una cartella di nome {name}."
+  },
+  "connections.folder.name": {
+    "message": "Nome:"
+  },
+  "connections.folder.new_title": {
+    "message": "Nuova cartella"
+  },
+  "connections.folder.rename": {
+    "message": "Rinomina..."
+  },
+  "connections.folder.rename_title": {
+    "message": "Rinomina cartella"
+  },
+  "connections.forget_password": {
+    "message": "Dimentica la password salvata"
+  },
+  "connections.move_down": {
+    "message": "Sposta giù"
+  },
+  "connections.move_to_folder": {
+    "message": "Sposta in una cartella"
+  },
+  "connections.move_up": {
+    "message": "Sposta su"
+  },
+  "connections.new": {
+    "message": "Nuova connessione..."
+  },
+  "connections.new_folder": {
+    "message": "Nuova cartella..."
+  },
+  "connections.no_folder": {
+    "message": "Nessuna cartella"
+  },
+  "connections.open_in_terminal": {
+    "message": "Apri nel terminale"
+  },
+  "connections.placeholder.name": {
+    "message": "come appare nell’elenco"
+  },
+  "connections.placeholder.password": {
+    "message": "conservata cifrata nella cartella delle impostazioni; se vuoto resta quella salvata"
+  },
+  "connections.placeholder.path": {
+    "message": "la cartella di accesso"
+  },
+  "connections.placeholder.port": {
+    "message": "predefinita"
+  },
+  "connections.placeholder.server": {
+    "message": "server, o un host di ~/.ssh/config"
+  },
+  "connections.placeholder.user": {
+    "message": "come indicato in ~/.ssh/config, o anonimo"
+  },
+  "connections.save_failed": {
+    "message": "Impossibile salvare le connessioni: {err}"
+  },
+  "connections.ssh_config.read_only": {
+    "message": "Sola lettura: questi host si modificano direttamente in ~/.ssh/config"
+  },
+  "context_menu.action_failed": {
+    "message": "{name} non riuscito: {err}"
+  },
+  "context_menu.actions": {
+    "message": "Azioni"
+  },
+  "context_menu.copy": {
+    "message": "Copia"
+  },
+  "context_menu.create_new": {
+    "message": "Crea nuovo"
+  },
+  "context_menu.cut": {
+    "message": "Taglia"
+  },
+  "context_menu.delete": {
+    "message": "Elimina"
+  },
+  "context_menu.edit": {
+    "message": "Modifica"
+  },
+  "context_menu.empty_file": {
+    "message": "File vuoto…"
+  },
+  "context_menu.move_to_trash": {
+    "message": "Sposta nel cestino"
+  },
+  "context_menu.new_file_dialog.label": {
+    "message": "Nome del nuovo file:"
+  },
+  "context_menu.new_file_dialog.title": {
+    "message": "Nuovo file"
+  },
+  "context_menu.new_file_failed": {
+    "message": "Impossibile creare il file: {err}"
+  },
+  "context_menu.new_folder": {
+    "message": "Cartella…"
+  },
+  "context_menu.open": {
+    "message": "Apri"
+  },
+  "context_menu.open_failed": {
+    "message": "Impossibile aprire: {err}"
+  },
+  "context_menu.open_terminal_here": {
+    "message": "Apri terminale qui"
+  },
+  "context_menu.open_with": {
+    "message": "Apri con"
+  },
+  "context_menu.other_application": {
+    "message": "Altra applicazione…"
+  },
+  "context_menu.pack": {
+    "message": "Comprimi…"
+  },
+  "context_menu.pack_files": {
+    "message": "Comprimi file"
+  },
+  "context_menu.paste": {
+    "message": "Incolla"
+  },
+  "context_menu.properties": {
+    "message": "Proprietà"
+  },
+  "context_menu.properties_failed": {
+    "message": "Proprietà: {err}"
+  },
+  "context_menu.rename": {
+    "message": "Rinomina…"
+  },
+  "context_menu.rename_dialog.label": {
+    "message": "Nuovo nome:"
+  },
+  "context_menu.rename_dialog.title": {
+    "message": "Rinomina"
+  },
+  "context_menu.rename_failed": {
+    "message": "Impossibile rinominare: {err}"
+  },
+  "context_menu.shell_menu_failed": {
+    "message": "Il menu: {err}"
+  },
+  "context_menu.show_failed": {
+    "message": "Impossibile mostrarlo: {err}"
+  },
+  "context_menu.show_in_file_manager": {
+    "message": "Mostra nel gestore di file"
+  },
+  "context_menu.terminal_failed": {
+    "message": "Impossibile aprire un terminale: {err}"
+  },
+  "context_menu.terminal_not_local": {
+    "message": "Un terminale si apre solo nelle cartelle di questo computer."
+  },
+  "context_menu.unpack": {
+    "message": "Estrai…"
+  },
+  "context_menu.view": {
+    "message": "Visualizza"
+  },
+  "desktop.no_app_chooser": {
+    "message": "il desktop non ha un selettore di applicazioni ({err})"
+  },
+  "desktop.no_terminal": {
+    "message": "nessun terminale trovato"
+  },
+  "desktop.nothing_to_run": {
+    "message": "{name}: niente da eseguire"
+  },
+  "desktop.scripts": {
+    "message": "Script"
+  },
+  "devices.error.mount_failed": {
+    "message": "impossibile montare il dispositivo"
+  },
+  "devices.error.no_folder": {
+    "message": "il dispositivo non condivide alcuna cartella"
+  },
+  "devices.error.system_only": {
+    "message": "solo il sistema può smontarlo"
+  },
+  "devices.error.unreachable": {
+    "message": "non raggiungibile: KDE Connect è aperto sul dispositivo, in questa rete?"
+  },
+  "devices.unlock.ask": {
+    "message": "La passphrase di {name}:"
+  },
+  "devices.unlock.ask_again": {
+    "message": "Passphrase errata. La passphrase di {name}:"
+  },
+  "devices.unlock.title": {
+    "message": "Sblocca"
+  },
+  "devices.volume.share_on_server": {
+    "message": "{share} su {server}"
+  },
+  "devices.volume.unnamed": {
+    "message": "Volume da {size} GB"
+  },
+  "devices.volume.unnamed_encrypted": {
+    "message": "Volume cifrato da {size} GB"
+  },
+  "download.cancel": {
+    "message": "Annulla"
+  },
+  "download.dialog_title": {
+    "message": "Scarica da link"
+  },
+  "download.download": {
+    "message": "Scarica"
+  },
+  "download.folder_link": {
+    "message": "il link punta a una cartella"
+  },
+  "download.incomplete": {
+    "message": "il server ha inviato {got} di {size, plural, one {# byte} other {# byte}}; scaricandolo di nuovo, riprende da lì"
+  },
+  "download.into": {
+    "message": "In {folder}"
+  },
+  "download.link": {
+    "message": "Link"
+  },
+  "download.link_placeholder": {
+    "message": "https://, http://, ftp:// o ftps://"
+  },
+  "download.local_only": {
+    "message": "I download vanno nelle cartelle di questo computer: aprine prima una nel pannello."
+  },
+  "download.name_placeholder": {
+    "message": "come lo chiama il server o il link"
+  },
+  "download.no_file": {
+    "message": "il link non indica alcun file"
+  },
+  "download.not_a_link": {
+    "message": "non è un link da scaricare"
+  },
+  "download.problem.bad_name": {
+    "message": "Il nome di un file, senza cartelle."
+  },
+  "download.problem.empty": {
+    "message": "Incolla o digita un link."
+  },
+  "download.problem.exists": {
+    "message": "Qui esiste già {name}: Sostituisci lo sovrascrive."
+  },
+  "download.problem.not_link": {
+    "message": "Non è un link da scaricare: deve iniziare con https://, http://, ftp:// o ftps://."
+  },
+  "download.replace": {
+    "message": "Sostituisci"
+  },
+  "download.save_as": {
+    "message": "Salva come"
+  },
+  "download.saved_as": {
+    "message": "salvato come {name}"
+  },
+  "download.title": {
+    "message": "Scarica «{name}»"
+  },
+  "download.title_link": {
+    "message": "Scarica {link}"
+  },
+  "editor.close.after_send": {
+    "message": "Si chiude quando il server lo ha ricevuto."
+  },
+  "editor.close.discard": {
+    "message": "Non salvare"
+  },
+  "editor.close.save": {
+    "message": "Salva"
+  },
+  "editor.close.title": {
+    "message": "Salvare le modifiche?"
+  },
+  "editor.close.unsaved": {
+    "message": "{name} contiene modifiche non salvate."
+  },
+  "editor.close.unsent": {
+    "message": "{name} non è salvato sul suo server: l’invio non è riuscito."
+  },
+  "editor.dialog.cancel": {
+    "message": "Annulla"
+  },
+  "editor.edit.copy": {
+    "message": "Copia"
+  },
+  "editor.edit.cut": {
+    "message": "Taglia"
+  },
+  "editor.edit.find": {
+    "message": "Trova..."
+  },
+  "editor.edit.find_next": {
+    "message": "Trova successivo"
+  },
+  "editor.edit.find_previous": {
+    "message": "Trova precedente"
+  },
+  "editor.edit.go_to_line": {
+    "message": "Vai alla riga..."
+  },
+  "editor.edit.paste": {
+    "message": "Incolla"
+  },
+  "editor.edit.redo": {
+    "message": "Ripeti"
+  },
+  "editor.edit.replace": {
+    "message": "Sostituisci..."
+  },
+  "editor.edit.undo": {
+    "message": "Annulla"
+  },
+  "editor.external.not_set": {
+    "message": "nessun editor esterno impostato (Impostazioni, Modifica/Visualizza)"
+  },
+  "editor.file.close": {
+    "message": "Chiudi"
+  },
+  "editor.file.reload": {
+    "message": "Ricarica"
+  },
+  "editor.file.save": {
+    "message": "Salva"
+  },
+  "editor.file.save_as": {
+    "message": "Salva come..."
+  },
+  "editor.find.close": {
+    "message": "Chiudi (Escape)"
+  },
+  "editor.find.count": {
+    "message": "{current} di {total}"
+  },
+  "editor.find.in_selection": {
+    "message": "Trova nella selezione (Alt+L)"
+  },
+  "editor.find.match_case": {
+    "message": "Maiuscole/minuscole (Alt+C)"
+  },
+  "editor.find.next": {
+    "message": "Corrispondenza successiva (Enter)"
+  },
+  "editor.find.no_results": {
+    "message": "Nessun risultato"
+  },
+  "editor.find.placeholder": {
+    "message": "Trova"
+  },
+  "editor.find.preserve_case": {
+    "message": "Mantieni maiuscole/minuscole (Alt+P)"
+  },
+  "editor.find.previous": {
+    "message": "Corrispondenza precedente (Shift+Enter)"
+  },
+  "editor.find.regex": {
+    "message": "Usa espressione regolare (Alt+R)"
+  },
+  "editor.find.replace": {
+    "message": "Sostituisci (Ctrl+Shift+1)"
+  },
+  "editor.find.replace_all": {
+    "message": "Sostituisci tutto (Ctrl+Alt+Enter)"
+  },
+  "editor.find.replace_placeholder": {
+    "message": "Sostituisci"
+  },
+  "editor.find.toggle_replace": {
+    "message": "Mostra/nascondi sostituzione"
+  },
+  "editor.find.whole_word": {
+    "message": "Parola intera (Alt+W)"
+  },
+  "editor.go_to_line.label": {
+    "message": "Riga, o riga:colonna"
+  },
+  "editor.go_to_line.title": {
+    "message": "Vai alla riga"
+  },
+  "editor.language.by_file_name": {
+    "message": "Dal nome del file"
+  },
+  "editor.language.plain_text": {
+    "message": "Testo semplice"
+  },
+  "editor.menu.edit": {
+    "message": "Modifica"
+  },
+  "editor.menu.file": {
+    "message": "File"
+  },
+  "editor.menu.language": {
+    "message": "Linguaggio"
+  },
+  "editor.menu.selection": {
+    "message": "Selezione"
+  },
+  "editor.menu.view": {
+    "message": "Visualizza"
+  },
+  "editor.open.too_large": {
+    "message": "supera i {limit_mb} MB dell’editor integrato (Impostazioni, Modifica/Visualizza); Ctrl+Shift+F4 lo modifica in quello esterno"
+  },
+  "editor.reload.button": {
+    "message": "Ricarica"
+  },
+  "editor.reload.failed": {
+    "message": "Impossibile ricaricarlo: {err}"
+  },
+  "editor.reload.text": {
+    "message": "Le modifiche non salvate andranno perse."
+  },
+  "editor.reload.title": {
+    "message": "Ricaricare il file?"
+  },
+  "editor.reload.unfit": {
+    "message": "Non ricaricato: {why, select, binary {è binario} other {non è testo UTF-8}}."
+  },
+  "editor.save.admin": {
+    "message": "Salvataggio di «{name}»"
+  },
+  "editor.save.failed": {
+    "message": "Impossibile salvare {path}: {err}"
+  },
+  "editor.save_anyway.button": {
+    "message": "Salva comunque"
+  },
+  "editor.save_anyway.text": {
+    "message": "Il file non era testo: salvandolo viene scritto come mostrato, quindi ciò che non era testo cambia per sempre."
+  },
+  "editor.save_anyway.title": {
+    "message": "Salvarlo come testo?"
+  },
+  "editor.selection.add_cursor_above": {
+    "message": "Aggiungi cursore sopra"
+  },
+  "editor.selection.add_cursor_below": {
+    "message": "Aggiungi cursore sotto"
+  },
+  "editor.selection.delete_lines": {
+    "message": "Elimina righe"
+  },
+  "editor.selection.duplicate_lines": {
+    "message": "Duplica righe"
+  },
+  "editor.selection.indent": {
+    "message": "Aumenta rientro"
+  },
+  "editor.selection.lowercase": {
+    "message": "minuscolo"
+  },
+  "editor.selection.move_lines_down": {
+    "message": "Sposta righe in basso"
+  },
+  "editor.selection.move_lines_up": {
+    "message": "Sposta righe in alto"
+  },
+  "editor.selection.outdent": {
+    "message": "Riduci rientro"
+  },
+  "editor.selection.select_all": {
+    "message": "Seleziona tutto"
+  },
+  "editor.selection.select_all_occurrences": {
+    "message": "Seleziona tutte le occorrenze"
+  },
+  "editor.selection.sort_lines_ascending": {
+    "message": "Ordina righe (crescente)"
+  },
+  "editor.selection.sort_lines_descending": {
+    "message": "Ordina righe (decrescente)"
+  },
+  "editor.selection.title_case": {
+    "message": "Iniziali Maiuscole"
+  },
+  "editor.selection.toggle_line_comment": {
+    "message": "Commenta/decommenta righe"
+  },
+  "editor.selection.trim_trailing_whitespace": {
+    "message": "Rimuovi spazi finali"
+  },
+  "editor.selection.uppercase": {
+    "message": "MAIUSCOLO"
+  },
+  "editor.send.failed": {
+    "message": "Impossibile rimandarlo al server: {err}. Salva per riprovare."
+  },
+  "editor.status.modified": {
+    "message": "Modificato"
+  },
+  "editor.status.position": {
+    "message": "Riga {line}, Col {column}"
+  },
+  "editor.status.position_selected": {
+    "message": "Riga {line}, Col {column} ({count, plural, one {# selezionato} other {# selezionati}})"
+  },
+  "editor.status.sending": {
+    "message": "Salvataggio sul server"
+  },
+  "editor.status.spaces": {
+    "message": "Spazi: {size}"
+  },
+  "editor.status.tab_size": {
+    "message": "Dimensione tab: {size}"
+  },
+  "editor.status.unsent": {
+    "message": "Non sul server"
+  },
+  "editor.terminal.not_found": {
+    "message": "nessun editor trovato; imposta $EDITOR"
+  },
+  "editor.title": {
+    "message": "{path} — Editor"
+  },
+  "editor.unfit.open_anyway": {
+    "message": "Apri comunque"
+  },
+  "editor.unfit.text": {
+    "message": "Il file non è mostrato nell’editor perché {why, select, binary {è binario} other {non è testo UTF-8}}."
+  },
+  "editor.view.folding": {
+    "message": "Riduzione codice"
+  },
+  "editor.view.indent_guides": {
+    "message": "Guide di rientro"
+  },
+  "editor.view.indent_with_tabs": {
+    "message": "Rientra con tabulazioni"
+  },
+  "editor.view.line_numbers": {
+    "message": "Numeri di riga"
+  },
+  "editor.view.minimap": {
+    "message": "Minimappa"
+  },
+  "editor.view.tab_width": {
+    "message": "Larghezza tab {width}"
+  },
+  "editor.view.unfold_all": {
+    "message": "Espandi tutto"
+  },
+  "editor.view.whitespace": {
+    "message": "Spazi bianchi"
+  },
+  "editor.view.word_wrap": {
+    "message": "A capo automatico"
+  },
+  "elevate.failed": {
+    "message": "anche come amministratore non è riuscito ({code})"
+  },
+  "elevate.no_consent": {
+    "message": "il consenso dell’amministratore non è stato dato"
+  },
+  "elevate.no_password": {
+    "message": "la password non è stata inserita"
+  },
+  "elevate.not_authorised": {
+    "message": "non autorizzato"
+  },
+  "elevate.percent_name": {
+    "message": "{path}: un nome con % non può essere gestito come amministratore; rinominalo prima"
+  },
+  "elevate.pkexec_missing": {
+    "message": "pkexec (polkit) non è installato"
+  },
+  "file_menu.change_tags_failed": {
+    "message": "Impossibile modificare i tag: {err}"
+  },
+  "file_menu.compress": {
+    "message": "{count, plural, =1 {Comprimi “{name}”…} one {Comprimi # elemento…} other {Comprimi # elementi…}}"
+  },
+  "file_menu.copy": {
+    "message": "{count, plural, =1 {Copia “{name}”} one {Copia # elemento} other {Copia # elementi}}"
+  },
+  "file_menu.copy_path": {
+    "message": "Copia percorso negli appunti"
+  },
+  "file_menu.delete": {
+    "message": "Elimina"
+  },
+  "file_menu.duplicate": {
+    "message": "Duplica"
+  },
+  "file_menu.duplicate_failed": {
+    "message": "Impossibile duplicare: {err}"
+  },
+  "file_menu.edit_tags": {
+    "message": "Tag…"
+  },
+  "file_menu.get_info": {
+    "message": "Ottieni informazioni"
+  },
+  "file_menu.make_alias": {
+    "message": "Crea alias"
+  },
+  "file_menu.make_alias_failed": {
+    "message": "Impossibile creare l’alias: {err}"
+  },
+  "file_menu.move_to_trash": {
+    "message": "Sposta nel Cestino"
+  },
+  "file_menu.new_folder": {
+    "message": "Nuova cartella"
+  },
+  "file_menu.open": {
+    "message": "Apri"
+  },
+  "file_menu.open_failed": {
+    "message": "Impossibile aprire: {err}"
+  },
+  "file_menu.open_with": {
+    "message": "Apri con"
+  },
+  "file_menu.open_with_default": {
+    "message": "{app} (predefinita)"
+  },
+  "file_menu.paste": {
+    "message": "Incolla"
+  },
+  "file_menu.quick_look": {
+    "message": "{count, plural, =1 {Quick Look di “{name}”} one {Quick Look di # elemento} other {Quick Look di # elementi}}"
+  },
+  "file_menu.quick_look_failed": {
+    "message": "Quick Look: {err}"
+  },
+  "file_menu.rename": {
+    "message": "Rinomina…"
+  },
+  "file_menu.reveal_failed": {
+    "message": "Impossibile mostrarlo nel Finder: {err}"
+  },
+  "file_menu.reveal_in_finder": {
+    "message": "Mostra nel Finder"
+  },
+  "file_menu.show_package_contents": {
+    "message": "Mostra contenuto pacchetto"
+  },
+  "file_menu.tag_dot.add": {
+    "message": "Aggiungi tag “{name}”"
+  },
+  "file_menu.tag_dot.remove": {
+    "message": "Rimuovi tag “{name}”"
+  },
+  "file_menu.tags_popover.show_all": {
+    "message": "Mostra tutti…"
+  },
+  "file_menu.tags_popover.title": {
+    "message": "{count, plural, =1 {Assegna tag a “{name}”} one {Assegna tag a # elemento} other {Assegna tag a # elementi}}"
+  },
+  "find.backwards": {
+    "message": "Cerca all’indietro"
+  },
+  "find.cancel": {
+    "message": "Annulla"
+  },
+  "find.case_sensitive": {
+    "message": "Maiuscole/minuscole"
+  },
+  "find.hex": {
+    "message": "Cerca stringa esadecimale"
+  },
+  "find.ok": {
+    "message": "OK"
+  },
+  "find.regex": {
+    "message": "RegEx"
+  },
+  "find.text.label": {
+    "message": "Testo da cercare"
+  },
+  "find.title": {
+    "message": "Trova"
+  },
+  "find.whole_words": {
+    "message": "Solo parole intere"
+  },
+  "keys.apply": {
+    "message": "Applica"
+  },
+  "keys.cancel": {
+    "message": "Annulla"
+  },
+  "keys.clear.tooltip": {
+    "message": "Nessun tasto"
+  },
+  "keys.column.alternate": {
+    "message": "Alternativa"
+  },
+  "keys.column.command": {
+    "message": "Comando"
+  },
+  "keys.column.shortcut": {
+    "message": "Scorciatoia"
+  },
+  "keys.custom": {
+    "message": "Personalizzato"
+  },
+  "keys.delete_set": {
+    "message": "Elimina"
+  },
+  "keys.note.custom_replaced": {
+    "message": "I tuoi tasti hanno lasciato il posto a quelli di {name}; Salva come li conserva."
+  },
+  "keys.note.deleted": {
+    "message": "{name} è eliminato; OK o Applica lo rende effettivo."
+  },
+  "keys.note.moved": {
+    "message": "{key} ora è {command}, non più {other}."
+  },
+  "keys.note.name_reserved": {
+    "message": "«{name}» è il nome di uno schema predefinito; scegline un altro."
+  },
+  "keys.note.press_new_key": {
+    "message": "Premi il nuovo tasto; Esc lo lascia com’era."
+  },
+  "keys.note.saved": {
+    "message": "Salvato come {name}; OK o Applica lo conserva."
+  },
+  "keys.note.set": {
+    "message": "{key} ora è {command}."
+  },
+  "keys.note.taken_by_system": {
+    "message": "{key} è occupato da {by}, quindi non arriva mai a Spark Commander."
+  },
+  "keys.ok": {
+    "message": "OK"
+  },
+  "keys.press_key": {
+    "message": "Premi un tasto…"
+  },
+  "keys.reserved.application_launcher": {
+    "message": "{system}: l’avviatore di applicazioni"
+  },
+  "keys.reserved.close_window": {
+    "message": "{system}: chiudi la finestra"
+  },
+  "keys.reserved.close_window_or_tab": {
+    "message": "{system}: chiudi la finestra o la scheda"
+  },
+  "keys.reserved.dock": {
+    "message": "{system}: il Dock"
+  },
+  "keys.reserved.floating_window": {
+    "message": "{system}: la finestra mobile"
+  },
+  "keys.reserved.force_quit": {
+    "message": "{system}: uscita forzata"
+  },
+  "keys.reserved.hide_program": {
+    "message": "{system}: nascondi il programma"
+  },
+  "keys.reserved.input_source": {
+    "message": "{system}: la sorgente di input"
+  },
+  "keys.reserved.keyboard_access": {
+    "message": "{system}: accesso da tastiera"
+  },
+  "keys.reserved.keyboard_navigation": {
+    "message": "{system}: navigazione da tastiera"
+  },
+  "keys.reserved.krunner": {
+    "message": "{system}: KRunner"
+  },
+  "keys.reserved.lock_screen": {
+    "message": "{system}: blocca lo schermo"
+  },
+  "keys.reserved.log_out": {
+    "message": "{system}: termina la sessione"
+  },
+  "keys.reserved.maximize_window": {
+    "message": "{system}: massimizza la finestra"
+  },
+  "keys.reserved.menu_bar": {
+    "message": "{system}: la barra dei menu"
+  },
+  "keys.reserved.minimize": {
+    "message": "{system}: riduci a icona"
+  },
+  "keys.reserved.mission_control": {
+    "message": "{system}: Mission Control"
+  },
+  "keys.reserved.move_window": {
+    "message": "{system}: sposta la finestra"
+  },
+  "keys.reserved.next_window": {
+    "message": "{system}: la finestra successiva"
+  },
+  "keys.reserved.present_windows": {
+    "message": "{system}: Presenta finestre"
+  },
+  "keys.reserved.present_windows_all": {
+    "message": "{system}: Presenta finestre (tutti i desktop)"
+  },
+  "keys.reserved.present_windows_class": {
+    "message": "{system}: Presenta finestre (classe di finestre)"
+  },
+  "keys.reserved.program_windows": {
+    "message": "{system}: le finestre del programma"
+  },
+  "keys.reserved.quit": {
+    "message": "{system}: esci"
+  },
+  "keys.reserved.resize_window": {
+    "message": "{system}: ridimensiona la finestra"
+  },
+  "keys.reserved.restore_window": {
+    "message": "{system}: ripristina la finestra"
+  },
+  "keys.reserved.run_command": {
+    "message": "{system}: esegui un comando"
+  },
+  "keys.reserved.screenshot": {
+    "message": "{system}: schermata"
+  },
+  "keys.reserved.security_screen": {
+    "message": "{system}: la schermata di sicurezza"
+  },
+  "keys.reserved.show_desktop": {
+    "message": "{system}: mostra il desktop"
+  },
+  "keys.reserved.space_left": {
+    "message": "{system}: lo spazio a sinistra"
+  },
+  "keys.reserved.space_right": {
+    "message": "{system}: lo spazio a destra"
+  },
+  "keys.reserved.spotlight": {
+    "message": "{system}: Spotlight"
+  },
+  "keys.reserved.start_menu": {
+    "message": "{system}: il menu Start"
+  },
+  "keys.reserved.status_menus": {
+    "message": "{system}: i menu di stato"
+  },
+  "keys.reserved.suspend_compositing": {
+    "message": "{system}: sospendi la composizione"
+  },
+  "keys.reserved.switch_program_windows": {
+    "message": "{system}: passa tra le finestre del programma"
+  },
+  "keys.reserved.switch_programs": {
+    "message": "{system}: passa tra i programmi"
+  },
+  "keys.reserved.switch_system_controls": {
+    "message": "{system}: passa ai controlli di sistema"
+  },
+  "keys.reserved.switch_to_desktop": {
+    "message": "{system}: passa al desktop {number}"
+  },
+  "keys.reserved.switch_windows": {
+    "message": "{system}: passa tra le finestre"
+  },
+  "keys.reserved.system_monitor": {
+    "message": "{system}: Monitor di sistema"
+  },
+  "keys.reserved.task_manager": {
+    "message": "{system}: Gestione attività"
+  },
+  "keys.reserved.text_console": {
+    "message": "{system}: passa a una console di testo"
+  },
+  "keys.reserved.toolbar": {
+    "message": "{system}: la barra degli strumenti"
+  },
+  "keys.reserved.window_menu": {
+    "message": "{system}: il menu della finestra"
+  },
+  "keys.reserved.workspace_down": {
+    "message": "{system}: lo spazio di lavoro sotto"
+  },
+  "keys.reserved.workspace_left": {
+    "message": "{system}: lo spazio di lavoro a sinistra"
+  },
+  "keys.reserved.workspace_right": {
+    "message": "{system}: lo spazio di lavoro a destra"
+  },
+  "keys.reserved.workspace_up": {
+    "message": "{system}: lo spazio di lavoro sopra"
+  },
+  "keys.reset.tooltip": {
+    "message": "Torna ai tasti di {preset}"
+  },
+  "keys.reset_all": {
+    "message": "Ripristina tutto"
+  },
+  "keys.save_as.button": {
+    "message": "Salva come…"
+  },
+  "keys.save_as.default_name": {
+    "message": "I miei tasti"
+  },
+  "keys.save_as.label": {
+    "message": "Nome:"
+  },
+  "keys.save_as.title": {
+    "message": "Salva scorciatoie"
+  },
+  "keys.search.placeholder": {
+    "message": "Cerca un comando o un tasto"
+  },
+  "keys.set_label": {
+    "message": "Tasti:"
+  },
+  "keys.taken_by.tooltip": {
+    "message": "Occupato da {by}"
+  },
+  "keys.title": {
+    "message": "Scorciatoie"
+  },
+  "main.admin.button": {
+    "message": "Come amministratore"
+  },
+  "main.admin.deleting": {
+    "message": "Eliminazione di {count, plural, one {# elemento} other {# elementi}}"
+  },
+  "main.admin.failed": {
+    "message": "Come amministratore: {err}"
+  },
+  "main.admin.making": {
+    "message": "Creazione di «{name}»"
+  },
+  "main.admin.offer": {
+    "message": "{what}: permesso negato. Come amministratore, il sistema chiede la password."
+  },
+  "main.admin.offer_delete": {
+    "message": "{what}: permesso negato. Come amministratore, il sistema chiede la password. Ciò che viene eliminato così è perso per sempre."
+  },
+  "main.admin.title": {
+    "message": "Permesso negato"
+  },
+  "main.delete.from_archive": {
+    "message": "{kind, select, folder {Eliminare la cartella «{name}» da {archive}? L’operazione non può essere annullata.} file {Eliminare il file «{name}» da {archive}? L’operazione non può essere annullata.} other {Eliminare {count, plural, one {# elemento} other {# elementi}} da {archive}? L’operazione non può essere annullata.}}"
+  },
+  "main.delete.on_server": {
+    "message": "{kind, select, folder {Eliminare la cartella «{name}» su {server}? L’operazione non può essere annullata.} file {Eliminare il file «{name}» su {server}? L’operazione non può essere annullata.} other {Eliminare {count, plural, one {# elemento} other {# elementi}} su {server}? L’operazione non può essere annullata.}}"
+  },
+  "main.delete.permanently": {
+    "message": "{kind, select, folder {Eliminare definitivamente la cartella «{name}»? L’operazione non può essere annullata.} file {Eliminare definitivamente il file «{name}»? L’operazione non può essere annullata.} other {Eliminare definitivamente {count, plural, one {# elemento} other {# elementi}}? L’operazione non può essere annullata.}}"
+  },
+  "main.delete.title": {
+    "message": "Elimina"
+  },
+  "main.delete.title_permanently": {
+    "message": "Elimina definitivamente"
+  },
+  "main.delete.to_trash": {
+    "message": "{kind, select, folder {Spostare la cartella «{name}» nel cestino?} file {Spostare il file «{name}» nel cestino?} other {Spostare {count, plural, one {# elemento} other {# elementi}} nel cestino?}}"
+  },
+  "main.download.edit": {
+    "message": "Scarica {file} per modificarlo"
+  },
+  "main.download.view": {
+    "message": "Scarica {file} per visualizzarlo"
+  },
+  "main.error.make_folder": {
+    "message": "Impossibile creare la cartella: {err}"
+  },
+  "main.error.read_settings": {
+    "message": "Impossibile leggere le impostazioni: {err}"
+  },
+  "main.error.read_tabs": {
+    "message": "Impossibile leggere le schede aperte: {err}"
+  },
+  "main.error.read_workspaces": {
+    "message": "Impossibile leggere le aree di lavoro: {err}"
+  },
+  "main.error.save_settings": {
+    "message": "Impossibile salvare le impostazioni: {err}"
+  },
+  "main.folder_tree.home": {
+    "message": "Home"
+  },
+  "main.go.no_such_folder": {
+    "message": "{path}: cartella inesistente su questo computer"
+  },
+  "main.new_folder.label": {
+    "message": "Nuova cartella (directory):"
+  },
+  "main.new_folder.title": {
+    "message": "Nuova cartella"
+  },
+  "main.sync_browsing.lost": {
+    "message": "{err}. La navigazione sincronizzata è disattivata."
+  },
+  "main.tool.needs_file": {
+    "message": "Il cursore non è su un file: %N, %O e %E ne richiedono uno."
+  },
+  "main.tool.needs_local_folder": {
+    "message": "L’altro pannello mostra un server o un archivio: %T richiede una cartella su questo computer."
+  },
+  "main.undo.done": {
+    "message": "{way, select, redo {Ripetuto: {title}} other {Annullato: {title}}}"
+  },
+  "main.undo.failed": {
+    "message": "{way, select, redo {Impossibile ripetere «{title}»: {err}} other {Impossibile annullare «{title}»: {err}}}"
+  },
+  "main.undo.nothing": {
+    "message": "{way, select, redo {Niente da ripetere.} other {Niente da annullare.}}"
+  },
+  "main.undo.queued": {
+    "message": "{way, select, redo {In coda per essere ripetuto: {title}} other {In coda per essere annullato: {title}}}"
+  },
+  "mark.compare.marked": {
+    "message": "{count, plural, one {# file selezionato: più recente, o mancante, dall’altro lato.} other {# file selezionati: più recenti, o mancanti, dall’altro lato.}}"
+  },
+  "mark.compare.same": {
+    "message": "Le cartelle contengono gli stessi file."
+  },
+  "mark.load_selection.label": {
+    "message": "Seleziona i nomi elencati nel file:"
+  },
+  "mark.load_selection.title": {
+    "message": "Carica selezione"
+  },
+  "mark.save_selection.label": {
+    "message": "Salva i nomi selezionati nel file:"
+  },
+  "mark.save_selection.title": {
+    "message": "Salva selezione"
+  },
+  "mark.select_group.label": {
+    "message": "Seleziona i file (*.txt *.md; una maschera di cartella termina con /):"
+  },
+  "mark.select_group.title": {
+    "message": "Seleziona gruppo"
+  },
+  "mark.selection_file.not_local": {
+    "message": "I file di selezione si conservano su questo computer, fuori dagli archivi."
+  },
+  "mark.unselect_group.label": {
+    "message": "Deseleziona i file (*.txt *.md; una maschera di cartella termina con /):"
+  },
+  "mark.unselect_group.title": {
+    "message": "Deseleziona gruppo"
+  },
+  "media.cannot_play": {
+    "message": "Impossibile riprodurlo: {err}"
+  },
+  "media.cannot_play_as_text": {
+    "message": "Impossibile riprodurlo: {err}. 1 lo mostra come testo."
+  },
+  "media.continuing": {
+    "message": "Riprende da {time}"
+  },
+  "media.error.missing": {
+    "message": "libmpv non trovato: lo scarica Impostazioni > Componenti aggiuntivi (compilazione dai sorgenti: vendor/mpv/{script})"
+  },
+  "media.error.not_started": {
+    "message": "libmpv non è riuscito ad avviarsi"
+  },
+  "media.error.too_long": {
+    "message": "{path}: mpv ha impiegato troppo tempo"
+  },
+  "media.error.unsupported_system": {
+    "message": "per ora i video si riproducono solo su Linux, macOS e Windows"
+  },
+  "menu.archive": {
+    "message": "Archivio"
+  },
+  "menu.associations": {
+    "message": "Associazioni"
+  },
+  "menu.button_bar": {
+    "message": "Barra dei pulsanti"
+  },
+  "menu.checksums": {
+    "message": "Checksum"
+  },
+  "menu.commands": {
+    "message": "Comandi"
+  },
+  "menu.compare_directories": {
+    "message": "Confronta cartelle"
+  },
+  "menu.configuration": {
+    "message": "Configurazione"
+  },
+  "menu.copy_names": {
+    "message": "Copia nomi"
+  },
+  "menu.files": {
+    "message": "File"
+  },
+  "menu.filter": {
+    "message": "Filtro"
+  },
+  "menu.go": {
+    "message": "Vai"
+  },
+  "menu.help": {
+    "message": "Aiuto"
+  },
+  "menu.mark": {
+    "message": "Seleziona"
+  },
+  "menu.other": {
+    "message": "Altro"
+  },
+  "menu.recently_closed_tabs": {
+    "message": "Schede chiuse di recente"
+  },
+  "menu.selection": {
+    "message": "Selezione"
+  },
+  "menu.show": {
+    "message": "Mostra"
+  },
+  "menu.sidebar": {
+    "message": "Barra laterale"
+  },
+  "menu.sort": {
+    "message": "Ordina"
+  },
+  "menu.split_and_combine": {
+    "message": "Dividi e unisci"
+  },
+  "menu.tabs": {
+    "message": "Schede"
+  },
+  "menu.tools": {
+    "message": "Strumenti"
+  },
+  "menu.workspaces": {
+    "message": "Aree di lavoro"
+  },
+  "menus.hide_app": {
+    "message": "Nascondi Spark Commander"
+  },
+  "menus.hide_others": {
+    "message": "Nascondi altre"
+  },
+  "menus.minimize": {
+    "message": "Contrai"
+  },
+  "menus.quit_app": {
+    "message": "Esci da Spark Commander"
+  },
+  "menus.services": {
+    "message": "Servizi"
+  },
+  "menus.show_all": {
+    "message": "Mostra tutte"
+  },
+  "menus.zoom": {
+    "message": "Ridimensiona"
+  },
+  "name_dialog.cancel": {
+    "message": "Annulla"
+  },
+  "name_dialog.ok": {
+    "message": "OK"
+  },
+  "operations.clear": {
+    "message": "Rimuovi completate"
+  },
+  "operations.duration.seconds": {
+    "message": "{seconds} s"
+  },
+  "operations.empty": {
+    "message": "Nessuna operazione."
+  },
+  "operations.job.answer": {
+    "message": "In attesa della tua risposta"
+  },
+  "operations.job.bytes": {
+    "message": "{done} di {total}"
+  },
+  "operations.job.cancel_tooltip": {
+    "message": "Annulla"
+  },
+  "operations.job.cancelled": {
+    "message": "Annullata"
+  },
+  "operations.job.counting": {
+    "message": "Conteggio: {count, plural, one {# file} other {# file}}"
+  },
+  "operations.job.done": {
+    "message": "Completata"
+  },
+  "operations.job.done_skipped": {
+    "message": "Completata, {count, plural, one {# saltato} other {# saltati}}"
+  },
+  "operations.job.failed": {
+    "message": "Non riuscita"
+  },
+  "operations.job.files": {
+    "message": "{files} / {count, plural, one {# file} other {# file}}"
+  },
+  "operations.job.left": {
+    "message": "{time} rimanenti"
+  },
+  "operations.job.running": {
+    "message": "In corso"
+  },
+  "operations.job.waiting": {
+    "message": "In attesa"
+  },
+  "operations.menu.cancel": {
+    "message": "Annulla"
+  },
+  "operations.menu.clear": {
+    "message": "Rimuovi completate"
+  },
+  "operations.menu.move_down": {
+    "message": "Sposta giù"
+  },
+  "operations.menu.move_up": {
+    "message": "Sposta su"
+  },
+  "operations.settings_tooltip": {
+    "message": "Impostazioni della coda operazioni"
+  },
+  "operations.summary.failed": {
+    "message": "{count, plural, one {# non riuscita} other {# non riuscite}}"
+  },
+  "operations.summary.running": {
+    "message": "{count, plural, one {# in corso} other {# in corso}}"
+  },
+  "operations.summary.waiting": {
+    "message": "{count, plural, one {# in attesa} other {# in attesa}}"
+  },
+  "ops.as_administrator.failed": {
+    "message": "Come amministratore: {err}"
+  },
+  "ops.as_administrator.progress": {
+    "message": "Come amministratore…"
+  },
+  "ops.delete.title_many": {
+    "message": "Elimina {count, plural, one {# elemento} other {# elementi}} in {folder}"
+  },
+  "ops.delete.title_one": {
+    "message": "Elimina «{name}»"
+  },
+  "ops.delete.trash_title_many": {
+    "message": "Sposta {count, plural, one {# elemento} other {# elementi}} di {folder} nel cestino"
+  },
+  "ops.delete.trash_title_one": {
+    "message": "Sposta «{name}» nel cestino"
+  },
+  "ops.error.file_in_the_way": {
+    "message": "esiste già un file con questo nome"
+  },
+  "ops.error.into_itself": {
+    "message": "impossibile copiarla dentro se stessa"
+  },
+  "ops.exists_already": {
+    "message": "{name} esiste già"
+  },
+  "ops.link.dialog_title": {
+    "message": "Crea collegamento"
+  },
+  "ops.link.failed": {
+    "message": "Impossibile creare il collegamento: {err}"
+  },
+  "ops.link.kind.hard": {
+    "message": "Collegamento fisico"
+  },
+  "ops.link.kind.junction": {
+    "message": "Giunzione"
+  },
+  "ops.link.kind.shortcut": {
+    "message": "Collegamento (.lnk)"
+  },
+  "ops.link.kind.symbolic": {
+    "message": "Collegamento simbolico"
+  },
+  "ops.link.label_many": {
+    "message": "Collegamenti a {count, plural, one {# elemento} other {# elementi}}, nella cartella:"
+  },
+  "ops.link.label_one": {
+    "message": "Collegamento a «{name}» come:"
+  },
+  "ops.link.making": {
+    "message": "Creazione {kind, select, symbolic {del collegamento simbolico} hard {del collegamento fisico} junction {della giunzione} other {del collegamento (.lnk)}}"
+  },
+  "ops.link.needs_admin": {
+    "message": "i collegamenti simbolici richiedono un amministratore o la Modalità sviluppatore"
+  },
+  "ops.link.thread_failed": {
+    "message": "il thread del collegamento non è riuscito"
+  },
+  "ops.link.title_many": {
+    "message": "{kind, select, symbolic {Collegamenti simbolici} hard {Collegamenti fisici} junction {Giunzioni} other {Collegamenti (.lnk)}} a {count, plural, one {# elemento} other {# elementi}} in {folder}"
+  },
+  "ops.link.title_one": {
+    "message": "{kind, select, symbolic {Collegamento simbolico} hard {Collegamento fisico} junction {Giunzione} other {Collegamento (.lnk)}} a «{name}» in {folder}"
+  },
+  "ops.link.windows_only": {
+    "message": "giunzioni e collegamenti .lnk esistono solo su Windows"
+  },
+  "ops.redo.title": {
+    "message": "Ripeti: {what}"
+  },
+  "ops.title.many": {
+    "message": "{kind, select, copy {Copia} other {Sposta}} {count, plural, one {# elemento} other {# elementi}} in {target}"
+  },
+  "ops.title.one": {
+    "message": "{kind, select, copy {Copia} other {Sposta}} «{name}» in {target}"
+  },
+  "ops.undo.not_a_server": {
+    "message": "{url}: non è l’indirizzo di un server"
+  },
+  "ops.undo.not_in_trash": {
+    "message": "non sono più nel cestino"
+  },
+  "ops.undo.restore_title": {
+    "message": "{title}: ciò che aveva sovrascritto, ripristinato dal cestino"
+  },
+  "ops.undo.title": {
+    "message": "Annulla: {what}"
+  },
+  "pack.cancel": {
+    "message": "Annulla"
+  },
+  "pack.compression": {
+    "message": "Compressione:"
+  },
+  "pack.dialog_title": {
+    "message": "Comprimi file"
+  },
+  "pack.encrypt": {
+    "message": "Cifra con la password"
+  },
+  "pack.format": {
+    "message": "Formato:"
+  },
+  "pack.label": {
+    "message": "Comprimi {count, plural, one {# elemento} other {# elementi}} nell’archivio:"
+  },
+  "pack.level.fastest": {
+    "message": "Più veloce"
+  },
+  "pack.level.maximum": {
+    "message": "Massima"
+  },
+  "pack.level.normal": {
+    "message": "Normale"
+  },
+  "pack.level.store": {
+    "message": "Nessuna"
+  },
+  "pack.level.ultra": {
+    "message": "Ultra"
+  },
+  "pack.local_only": {
+    "message": "{what, select, packing {La compressione} unpacking {L’estrazione} testing {La verifica} creating_checksums {La creazione dei checksum} making_links {La creazione dei collegamenti} verifying_checksums {La verifica dei checksum} splitting {La divisione} combining {L’unione} other {Questo strumento}} funziona sui file di questo computer, fuori dagli archivi."
+  },
+  "pack.move_files": {
+    "message": "Sposta nell’archivio (elimina i file compressi)"
+  },
+  "pack.needs_password": {
+    "message": "serve una password"
+  },
+  "pack.ok": {
+    "message": "OK"
+  },
+  "pack.password_missing": {
+    "message": "Digita la password, o lascia disattivato Cifra con la password."
+  },
+  "pack.separate": {
+    "message": "Un archivio per ogni file o cartella selezionati"
+  },
+  "pack.split": {
+    "message": "Dividi in volumi da"
+  },
+  "pack.split_unit": {
+    "message": "MB"
+  },
+  "pack.test.broken": {
+    "message": "{broken, plural, one {# di {count} danneggiato} other {# di {count} danneggiati}}"
+  },
+  "pack.test.choose": {
+    "message": "Scegli gli archivi da verificare."
+  },
+  "pack.test.ok": {
+    "message": "{count, plural, one {# archivio OK} other {# archivi OK}}"
+  },
+  "pack.test.title_many": {
+    "message": "Verifica {count, plural, one {# archivio} other {# archivi}}"
+  },
+  "pack.test.title_one": {
+    "message": "Verifica «{name}»"
+  },
+  "pack.title.many": {
+    "message": "Comprimi {count, plural, one {# elemento} other {# elementi}} in {archive}"
+  },
+  "pack.title.many_separate": {
+    "message": "Comprimi {count, plural, one {# elemento} other {# elementi}} in archivi {format} separati"
+  },
+  "pack.title.one": {
+    "message": "Comprimi «{name}» in {archive}"
+  },
+  "pack.title.one_separate": {
+    "message": "Comprimi «{name}» in archivi {format} separati"
+  },
+  "pack.unpack.choose": {
+    "message": "Scegli gli archivi da estrarre."
+  },
+  "pack.unpack.dialog_title": {
+    "message": "Estrai file"
+  },
+  "pack.unpack.label": {
+    "message": "Estrai {count, plural, one {# archivio} other {# archivi}} in:"
+  },
+  "pack.unpack.mask": {
+    "message": "Solo i file:"
+  },
+  "pack.unpack.overwrite": {
+    "message": "Sovrascrivi i file esistenti (altrimenti vengono mantenuti)"
+  },
+  "pack.unpack.password": {
+    "message": "Password:"
+  },
+  "pack.unpack.separate": {
+    "message": "Ogni archivio in una cartella con il suo nome"
+  },
+  "pack.unpack.title_many": {
+    "message": "Estrai {count, plural, one {# archivio} other {# archivi}} in {target}"
+  },
+  "pack.unpack.title_one": {
+    "message": "Estrai «{name}» in {target}"
+  },
+  "pack.unpack.with_paths": {
+    "message": "Mantieni le cartelle salvate nell’archivio"
+  },
+  "pack.volume_invalid": {
+    "message": "La dimensione del volume è un numero di MB."
+  },
+  "pack.wrong_password": {
+    "message": "password errata"
+  },
+  "panel.admin.renaming": {
+    "message": "Ridenominazione in «{name}»"
+  },
+  "panel.clipboard.copied": {
+    "message": "{count, plural, one {# elemento copiato: Ctrl+V lo incolla.} other {# elementi copiati: Ctrl+V li incolla.}}"
+  },
+  "panel.clipboard.cut": {
+    "message": "{count, plural, one {# elemento tagliato: Ctrl+V lo incolla.} other {# elementi tagliati: Ctrl+V li incolla.}}"
+  },
+  "panel.clipboard.no_cut_in_archive": {
+    "message": "Non si possono tagliare file dagli archivi; Ctrl+C li copia."
+  },
+  "panel.clipboard.no_files": {
+    "message": "Gli appunti non contengono file."
+  },
+  "panel.clipboard.no_paste_in_archive": {
+    "message": "Non è ancora possibile incollare file negli archivi."
+  },
+  "panel.clipboard.same_folder": {
+    "message": "Sono già in questa cartella: Ctrl+V li incolla in un’altra."
+  },
+  "panel.column.attr": {
+    "message": "Attr"
+  },
+  "panel.column.date": {
+    "message": "Data"
+  },
+  "panel.column.ext": {
+    "message": "Est"
+  },
+  "panel.column.name": {
+    "message": "Nome"
+  },
+  "panel.column.size": {
+    "message": "Dimensione"
+  },
+  "panel.disconnect": {
+    "message": "Disconnetti"
+  },
+  "panel.drag.items": {
+    "message": "{count, plural, one {# elemento} other {# elementi}}"
+  },
+  "panel.error.archive_not_updatable": {
+    "message": "{name}: 7-Zip modifica direttamente gli archivi 7z, zip e tar, non questo"
+  },
+  "panel.error.archive_on_server": {
+    "message": "{name}: gli archivi sui server non si possono ancora modificare"
+  },
+  "panel.error.branch_view_local": {
+    "message": "La Vista ramo elenca le cartelle di questo computer"
+  },
+  "panel.error.exists": {
+    "message": "{name} esiste già"
+  },
+  "panel.error.folder_in_the_way": {
+    "message": "c’è già una cartella con questo nome"
+  },
+  "panel.error.inside_archive": {
+    "message": "non ancora all’interno degli archivi"
+  },
+  "panel.error.make_file": {
+    "message": "Impossibile creare il file: {err}"
+  },
+  "panel.error.no_name": {
+    "message": "nessun nome indicato"
+  },
+  "panel.error.not_a_name": {
+    "message": "{name}: non è un nome valido"
+  },
+  "panel.error.other_drive": {
+    "message": "l’altro pannello è passato a un’altra unità"
+  },
+  "panel.error.rename": {
+    "message": "Impossibile rinominare: {err}"
+  },
+  "panel.filter.custom.label": {
+    "message": "Tipi di file, es. *.txt *.md (dopo |, quelli esclusi):"
+  },
+  "panel.filter.custom.title": {
+    "message": "Mostra file"
+  },
+  "panel.filter.programs": {
+    "message": "programmi"
+  },
+  "panel.filter.selected_files": {
+    "message": "file selezionati"
+  },
+  "panel.found.branch_view": {
+    "message": "Vista ramo:"
+  },
+  "panel.found.search_results": {
+    "message": "Risultati della ricerca:"
+  },
+  "panel.new_text_file.label": {
+    "message": "Nome del file, aperto nell’editor:"
+  },
+  "panel.new_text_file.title": {
+    "message": "Nuovo file di testo"
+  },
+  "panel.opening.cancel": {
+    "message": "Annulla"
+  },
+  "panel.opening.reading": {
+    "message": "Lettura…"
+  },
+  "panel.opening.title": {
+    "message": "Apertura archivio"
+  },
+  "panel.quick_filter.hint": {
+    "message": "nasconde ciò che non corrisponde; Escape mostra tutto"
+  },
+  "panel.quick_filter.label": {
+    "message": "Filtro:"
+  },
+  "panel.quick_search.label": {
+    "message": "Cerca:"
+  },
+  "panel.size.app": {
+    "message": "<APP>"
+  },
+  "panel.size.b": {
+    "message": "{size} B"
+  },
+  "panel.size.dir": {
+    "message": "<DIR>"
+  },
+  "panel.size.gb": {
+    "message": "{size} GB"
+  },
+  "panel.size.kb": {
+    "message": "{size} KB"
+  },
+  "panel.size.mb": {
+    "message": "{size} MB"
+  },
+  "panel.size.tb": {
+    "message": "{size} TB"
+  },
+  "panel.space.bytes": {
+    "message": "{count, plural, one {{size} byte ({human})} other {{size} byte ({human})}}"
+  },
+  "panel.space.close": {
+    "message": "Chiudi"
+  },
+  "panel.space.counting": {
+    "message": "Conteggio…"
+  },
+  "panel.space.done": {
+    "message": "Fatto."
+  },
+  "panel.space.files": {
+    "message": "File:"
+  },
+  "panel.space.folders": {
+    "message": "Cartelle:"
+  },
+  "panel.space.in_archive": {
+    "message": "All’interno degli archivi la colonna Dimensione mostra già le dimensioni."
+  },
+  "panel.space.title": {
+    "message": "Calcola spazio occupato"
+  },
+  "panel.space.total": {
+    "message": "Dimensione totale:"
+  },
+  "panel.space.unreadable": {
+    "message": "{count, plural, one {Impossibile leggere # elemento.} other {Impossibile leggere # elementi.}}"
+  },
+  "panel.status": {
+    "message": "{marked_size} k / {size} k in {marked_files} / {files, plural, one {# file} other {# file}}, {marked_folders} / {folders, plural, one {# cartella} other {# cartelle}}"
+  },
+  "panel.sync_browsing.stop": {
+    "message": "Navigazione sincronizzata (clic per interrompere)"
+  },
+  "panel.undo.rename": {
+    "message": "Rinomina «{name}» in «{to}»"
+  },
+  "passwords.about.set": {
+    "message": "Con una password principale, le password salvate si aprono su un altro computer digitandola lì, dopo aver copiato la cartella delle impostazioni. Se la dimentichi, si perdono solo quelle: basta digitarle di nuovo."
+  },
+  "passwords.about.unlock": {
+    "message": "Le impostazioni vengono da un altro computer, o questo non ha un portachiavi: la password principale apre qui le password salvate."
+  },
+  "passwords.cancel": {
+    "message": "Annulla"
+  },
+  "passwords.done.set": {
+    "message": "La password principale è impostata."
+  },
+  "passwords.done.unlocked": {
+    "message": "Le password salvate sono aperte."
+  },
+  "passwords.error.locked": {
+    "message": "le password salvate sono bloccate: sbloccale con la password principale (Configurazione › Impostazioni › Password)"
+  },
+  "passwords.error.no_master": {
+    "message": "nessuna password principale impostata"
+  },
+  "passwords.error.no_random": {
+    "message": "nessun numero casuale disponibile"
+  },
+  "passwords.error.not_opened": {
+    "message": "impossibile aprire la password per {what}"
+  },
+  "passwords.error.not_sealed": {
+    "message": "impossibile cifrare la password"
+  },
+  "passwords.error.salt_damaged": {
+    "message": "il salt della password principale è danneggiato"
+  },
+  "passwords.error.wrong": {
+    "message": "la password principale è errata"
+  },
+  "passwords.field.again": {
+    "message": "Ripeti"
+  },
+  "passwords.field.master": {
+    "message": "Password principale"
+  },
+  "passwords.locked_note": {
+    "message": "Le password salvate sono bloccate su questo computer: la password principale le apre."
+  },
+  "passwords.ok": {
+    "message": "OK"
+  },
+  "passwords.problem.differ": {
+    "message": "Le due password non coincidono."
+  },
+  "passwords.problem.empty": {
+    "message": "Digita la password principale."
+  },
+  "passwords.title.set": {
+    "message": "Password principale"
+  },
+  "passwords.title.unlock": {
+    "message": "Sblocca password salvate"
+  },
+  "passwords.unlock_button": {
+    "message": "Sblocca…"
+  },
+  "passwords.working": {
+    "message": "In corso…"
+  },
+  "properties.accessed": {
+    "message": "Ultimo accesso:"
+  },
+  "properties.change_attributes": {
+    "message": "Cambia attributi..."
+  },
+  "properties.close": {
+    "message": "Chiudi"
+  },
+  "properties.contents": {
+    "message": "{file_count, plural, one {{files} file} other {{files} file}}, {folder_count, plural, one {{folders} cartella} other {{folders} cartelle}}, {count, plural, one {{bytes} byte} other {{bytes} byte}} ({size})"
+  },
+  "properties.contents_counting": {
+    "message": "{file_count, plural, one {{files} file} other {{files} file}}, {folder_count, plural, one {{folders} cartella} other {{folders} cartelle}}, {count, plural, one {{bytes} byte} other {{bytes} byte}} ({size}) (conteggio…)"
+  },
+  "properties.contents_label": {
+    "message": "Contenuto:"
+  },
+  "properties.created": {
+    "message": "Creato:"
+  },
+  "properties.dialog_title": {
+    "message": "Proprietà"
+  },
+  "properties.in_archive": {
+    "message": "L’elenco dell’archivio mostra ciò che sa dei suoi file."
+  },
+  "properties.kind.file": {
+    "message": "File"
+  },
+  "properties.kind.folder": {
+    "message": "Cartella"
+  },
+  "properties.kind.link": {
+    "message": "Collegamento"
+  },
+  "properties.kind.link_to": {
+    "message": "Collegamento a {target}"
+  },
+  "properties.location": {
+    "message": "Percorso:"
+  },
+  "properties.modified": {
+    "message": "Modificato:"
+  },
+  "properties.name": {
+    "message": "Nome:"
+  },
+  "properties.no_system_dialog": {
+    "message": "qui non c’è ancora una finestra di proprietà del sistema"
+  },
+  "properties.owner": {
+    "message": "Proprietario / gruppo:"
+  },
+  "properties.permissions": {
+    "message": "Permessi:"
+  },
+  "properties.size": {
+    "message": "{count, plural, one {{bytes} byte ({size})} other {{bytes} byte ({size})}}"
+  },
+  "properties.size_label": {
+    "message": "Dimensione:"
+  },
+  "properties.type": {
+    "message": "Tipo:"
+  },
+  "quick_open.go_to": {
+    "message": "Vai a {path}"
+  },
+  "quick_open.group.bookmarks": {
+    "message": "Segnalibri"
+  },
+  "quick_open.group.connections": {
+    "message": "Connessioni"
+  },
+  "quick_open.group.drives": {
+    "message": "Unità"
+  },
+  "quick_open.group.path": {
+    "message": "Percorso"
+  },
+  "quick_open.group.recent_folders": {
+    "message": "Cartelle recenti"
+  },
+  "quick_open.group.tools": {
+    "message": "Strumenti"
+  },
+  "quick_open.group.workspaces": {
+    "message": "Aree di lavoro"
+  },
+  "quick_open.placeholder": {
+    "message": "Un comando, segnalibro, cartella, percorso, server, unità, area di lavoro o strumento"
+  },
+  "quick_open.title": {
+    "message": "Apertura rapida"
+  },
+  "quick_view.counting": {
+    "message": "Conteggio…"
+  },
+  "quick_view.downloading": {
+    "message": "Download in corso…"
+  },
+  "quick_view.empty": {
+    "message": "La Vista rapida mostra l’elemento sotto il cursore dell’altro pannello."
+  },
+  "quick_view.extracting": {
+    "message": "Estrazione dall’archivio…"
+  },
+  "quick_view.files_only": {
+    "message": "Sui server e negli archivi, la Vista rapida mostra solo i file."
+  },
+  "quick_view.space.title": {
+    "message": "Spazio totale occupato:"
+  },
+  "quick_view.space.totals": {
+    "message": "{bytes, plural, one {{bytes_grouped} byte} other {{bytes_grouped} byte}} in {files, plural, one {{files_grouped} file} other {{files_grouped} file}}, {folders, plural, one {{folders_grouped} cartella} other {{folders_grouped} cartelle}}"
+  },
+  "quick_view.space.unreadable": {
+    "message": "Non leggibili: {count}."
+  },
+  "quick_view.too_large.download": {
+    "message": "{size} è troppo grande per scaricarlo qui: F3 lo visualizza."
+  },
+  "quick_view.too_large.extract": {
+    "message": "{size} è troppo grande per estrarlo qui dall’archivio: F3 lo visualizza."
+  },
+  "remote.cancelled": {
+    "message": "annullato"
+  },
+  "remote.cloud.ask": {
+    "message": "{kind, select, application_key {Chiave applicazione di {user} su {host}:} api_key {Chiave API di {user} su {host}:} password {Password di {user} su {host}:} other {Chiave segreta di {user} su {host}:}}"
+  },
+  "remote.cloud.ask_again": {
+    "message": "{kind, select, application_key {Chiave applicazione errata. Chiave applicazione di {user} su {host}:} api_key {Chiave API errata. Chiave API di {user} su {host}:} password {Password errata. Password di {user} su {host}:} other {Chiave errata. Chiave segreta di {user} su {host}:}}"
+  },
+  "remote.cloud.obscure_failed": {
+    "message": "rclone non è riuscito ad accettare la password"
+  },
+  "remote.cloud.rclone_missing": {
+    "message": "rclone non trovato: lo scarica Impostazioni > Componenti aggiuntivi"
+  },
+  "remote.cloud.title": {
+    "message": "{kind, select, application_key {Chiave applicazione} api_key {Chiave API} password {Password} other {Chiave segreta}}"
+  },
+  "remote.connecting": {
+    "message": "Connessione a {server}..."
+  },
+  "remote.dialog.cancel": {
+    "message": "Annulla"
+  },
+  "remote.dialog.ok": {
+    "message": "OK"
+  },
+  "remote.disconnect_failed": {
+    "message": "{share}: impossibile disconnettere: {err}"
+  },
+  "remote.ftp.password": {
+    "message": "Password per {user}@{host}:"
+  },
+  "remote.ftp.password_again": {
+    "message": "Password errata. Password per {user}@{host}:"
+  },
+  "remote.ftps.changed": {
+    "message": "Il certificato TLS di {server} è CAMBIATO da quando la riga {line} di {file} lo ha registrato. Qualcuno potrebbe essere in ascolto; se il server ha un nuovo certificato, rimuovi quella riga."
+  },
+  "remote.ftps.not_trusted": {
+    "message": "il certificato del server non è attendibile"
+  },
+  "remote.login.password": {
+    "message": "Password"
+  },
+  "remote.login.title": {
+    "message": "Accedi"
+  },
+  "remote.login.user": {
+    "message": "Utente"
+  },
+  "remote.mount.login_wrong": {
+    "message": "utente o password errati"
+  },
+  "remote.mount.macos_failed": {
+    "message": "macOS non è riuscito a montarlo (NetFS {code})"
+  },
+  "remote.mount.needs_desktop": {
+    "message": "richiede kio-fuse di KDE o gvfs di GNOME"
+  },
+  "remote.mount.needs_login": {
+    "message": "richiede utente e password"
+  },
+  "remote.mount.no_fuse": {
+    "message": "montato, ma senza una cartella: manca gvfs-fuse"
+  },
+  "remote.mount.no_nfs_client": {
+    "message": "non trovato; NFS richiede il Client per NFS di Windows (Funzionalità di Windows)"
+  },
+  "remote.mount.no_share": {
+    "message": "manca la condivisione: smb://server/condivisione"
+  },
+  "remote.mount.not_address": {
+    "message": "non è un indirizzo"
+  },
+  "remote.mount.not_found": {
+    "message": "montato, ma non trovato tra i volumi montati"
+  },
+  "remote.mount.other_user": {
+    "message": "Windows è connesso a questo server come un altro utente: disconnettiti o usa quell’utente"
+  },
+  "remote.password.title": {
+    "message": "Password"
+  },
+  "remote.remember_password": {
+    "message": "Ricordala (Impostazioni › Password)"
+  },
+  "remote.save_back_failed": {
+    "message": "Impossibile salvarlo di nuovo sul server: {err}"
+  },
+  "remote.sftp.host_certificate": {
+    "message": "Il server presenta un certificato host; non è ancora supportato."
+  },
+  "remote.sftp.key_changed": {
+    "message": "La chiave host di {server} è CAMBIATA da quando la riga {line} di {file} l’ha registrata. Qualcuno potrebbe essere in ascolto; se il server è stato reinstallato, rimuovi quella riga."
+  },
+  "remote.sftp.key_not_trusted": {
+    "message": "La chiave host di {server} non è stata accettata."
+  },
+  "remote.sftp.keys_refused": {
+    "message": "{user}@{host}: il server ha rifiutato le chiavi e non accetta password"
+  },
+  "remote.sftp.login_refused": {
+    "message": "{user}@{host}: accesso rifiutato"
+  },
+  "remote.sftp.passphrase": {
+    "message": "Passphrase per {file}"
+  },
+  "remote.sftp.passphrase_title": {
+    "message": "Passphrase della chiave"
+  },
+  "remote.sftp.password": {
+    "message": "Password per {user}@{host}"
+  },
+  "remote.unknown_host.once": {
+    "message": "Connetti una volta"
+  },
+  "remote.unknown_host.remember": {
+    "message": "Connetti e ricorda"
+  },
+  "remote.unknown_host.text": {
+    "message": "{key_type, select, TLS {Il server {host} non è ancora conosciuto. L’impronta del suo certificato TLS è} other {Il server {host} non è ancora conosciuto. L’impronta della sua chiave {key_type} è}}\n\n{fingerprint}\n\nConnettiti solo se è il server che intendi; il suo amministratore può confermare l’impronta."
+  },
+  "remote.unknown_host.title": {
+    "message": "Server sconosciuto"
+  },
+  "rename.case": {
+    "message": "Maiuscole:"
+  },
+  "rename.case.first": {
+    "message": "Prima lettera"
+  },
+  "rename.case.lower": {
+    "message": "minuscolo"
+  },
+  "rename.case.unchanged": {
+    "message": "Invariato"
+  },
+  "rename.case.upper": {
+    "message": "MAIUSCOLO"
+  },
+  "rename.case.words": {
+    "message": "Ogni Parola"
+  },
+  "rename.close": {
+    "message": "Chiudi"
+  },
+  "rename.counter_start": {
+    "message": "Inizio contatore"
+  },
+  "rename.dialog_title": {
+    "message": "Rinomina multipla"
+  },
+  "rename.digits": {
+    "message": "Cifre"
+  },
+  "rename.extension": {
+    "message": "Estensione"
+  },
+  "rename.field.counter": {
+    "message": "[C] Contatore"
+  },
+  "rename.field.date": {
+    "message": "[Y][M][D] Data"
+  },
+  "rename.field.extension": {
+    "message": "[E] Est."
+  },
+  "rename.field.folder": {
+    "message": "[P] Cartella"
+  },
+  "rename.field.name": {
+    "message": "[N] Nome"
+  },
+  "rename.field.range": {
+    "message": "[N1-3] Intervallo"
+  },
+  "rename.field.time": {
+    "message": "[h][m][s] Ora"
+  },
+  "rename.first_only": {
+    "message": "Solo la prima"
+  },
+  "rename.in_archive": {
+    "message": "I file negli archivi non si possono ancora rinominare."
+  },
+  "rename.mask": {
+    "message": "Maschera: nome file"
+  },
+  "rename.match_case": {
+    "message": "Maiuscole/minuscole"
+  },
+  "rename.new_name": {
+    "message": "Nuovo nome"
+  },
+  "rename.not_renamed_back": {
+    "message": "{from}: {err}; non ripristinati: {names}"
+  },
+  "rename.not_utf8": {
+    "message": "I nomi non UTF-8 vengono esclusi."
+  },
+  "rename.old_name": {
+    "message": "Vecchio nome"
+  },
+  "rename.problem.bad_character": {
+    "message": "carattere non ammesso"
+  },
+  "rename.problem.exists": {
+    "message": "esiste già"
+  },
+  "rename.problem.no_name": {
+    "message": "nessun nome"
+  },
+  "rename.problem.twice": {
+    "message": "due volte nell’elenco"
+  },
+  "rename.regex": {
+    "message": "Espressione regolare"
+  },
+  "rename.regex_error": {
+    "message": "L’espressione regolare: {err}"
+  },
+  "rename.replace": {
+    "message": "Sostituisci con"
+  },
+  "rename.search": {
+    "message": "Cerca"
+  },
+  "rename.start": {
+    "message": "Avvia!"
+  },
+  "rename.status.failed": {
+    "message": "Nessun file rinominato: {err}"
+  },
+  "rename.status.ready": {
+    "message": "Avvia li rinomina."
+  },
+  "rename.status.renamed": {
+    "message": "{count, plural, one {# rinominato.} other {# rinominati.}}"
+  },
+  "rename.status.took_back": {
+    "message": "{count, plural, one {# ripristinato.} other {# ripristinati.}}"
+  },
+  "rename.step": {
+    "message": "Passo"
+  },
+  "rename.undo": {
+    "message": "Annulla"
+  },
+  "rename.was": {
+    "message": "{to} (era {from})"
+  },
+  "rename.with_extension": {
+    "message": "Con estensione"
+  },
+  "scmd.column.modified": {
+    "message": "Modificato"
+  },
+  "scmd.column.name": {
+    "message": "Nome"
+  },
+  "scmd.column.size": {
+    "message": "Dimensione"
+  },
+  "scmd.column.up_dir": {
+    "message": "SU--DIR"
+  },
+  "scmd.command_line.not_on_server": {
+    "message": "I comandi vengono eseguiti su questo computer, non sul server."
+  },
+  "scmd.compare.marked": {
+    "message": "{count, plural, one {# file selezionato: più recente, o mancante, dall’altro lato.} other {# file selezionati: più recenti, o mancanti, dall’altro lato.}}"
+  },
+  "scmd.compare.same": {
+    "message": "Le cartelle contengono gli stessi file."
+  },
+  "scmd.copying": {
+    "message": "Copia di {name}..."
+  },
+  "scmd.dialog.buttons": {
+    "message": "Enter OK   Esc Annulla"
+  },
+  "scmd.error.read_settings": {
+    "message": "Impossibile leggere le impostazioni: {err}"
+  },
+  "scmd.error.read_tabs": {
+    "message": "Impossibile leggere le schede aperte: {err}"
+  },
+  "scmd.error.read_workspaces": {
+    "message": "Impossibile leggere le aree di lavoro: {err}"
+  },
+  "scmd.error.save_back": {
+    "message": "Impossibile salvarlo di nuovo: {err}"
+  },
+  "scmd.error.save_searches": {
+    "message": "Impossibile salvare le ricerche: {err}"
+  },
+  "scmd.error.save_tabs": {
+    "message": "Impossibile salvare le schede aperte: {err}"
+  },
+  "scmd.find.backwards": {
+    "message": "All’indietro"
+  },
+  "scmd.find.case_sensitive": {
+    "message": "Maiuscole/minuscole"
+  },
+  "scmd.find.hex": {
+    "message": "Esadecimale (77 6F 72 64)"
+  },
+  "scmd.find.not_found": {
+    "message": "Non trovato: {text}"
+  },
+  "scmd.find.regex": {
+    "message": "Espressione regolare"
+  },
+  "scmd.find.search_for": {
+    "message": "Cerca:"
+  },
+  "scmd.find.title": {
+    "message": "Trova"
+  },
+  "scmd.find.whole_words": {
+    "message": "Solo parole intere"
+  },
+  "scmd.group.files": {
+    "message": "File (*.txt *.md; le cartelle finiscono con /):"
+  },
+  "scmd.group.select_title": {
+    "message": "Seleziona gruppo"
+  },
+  "scmd.group.unselect_title": {
+    "message": "Deseleziona gruppo"
+  },
+  "scmd.key_bar.copy": {
+    "message": "Copia"
+  },
+  "scmd.key_bar.delete": {
+    "message": "Elimina"
+  },
+  "scmd.key_bar.edit": {
+    "message": "Modif"
+  },
+  "scmd.key_bar.menu": {
+    "message": "Menu"
+  },
+  "scmd.key_bar.mkdir": {
+    "message": "CreaDir"
+  },
+  "scmd.key_bar.move": {
+    "message": "Sposta"
+  },
+  "scmd.key_bar.quit": {
+    "message": "Esci"
+  },
+  "scmd.key_bar.view": {
+    "message": "Vista"
+  },
+  "scmd.message.error": {
+    "message": "Errore"
+  },
+  "scmd.message.ok": {
+    "message": "OK"
+  },
+  "scmd.not_yet": {
+    "message": "{what, select, menus {I menu: non ancora nella versione per terminale.} file_operations {Operazioni sui file: non ancora nella versione per terminale.} servers {Server: non ancora nella versione per terminale.} other {Questo comando: non ancora nella versione per terminale.}}"
+  },
+  "scmd.picture.broken": {
+    "message": "un’immagine danneggiata"
+  },
+  "scmd.picture.broken_page": {
+    "message": "una pagina danneggiata"
+  },
+  "scmd.picture.loading": {
+    "message": "Caricamento…"
+  },
+  "scmd.picture.no_page": {
+    "message": "il PDF non ha questa pagina"
+  },
+  "scmd.shell.press_enter": {
+    "message": "Premi Enter per tornare a Spark Commander..."
+  },
+  "scmd.sync_browsing.off": {
+    "message": "La navigazione sincronizzata è disattivata."
+  },
+  "scmd.sync_browsing.on": {
+    "message": "La navigazione sincronizzata è attivata."
+  },
+  "scmd.sync_browsing.stopped": {
+    "message": "{err}. La navigazione sincronizzata è disattivata."
+  },
+  "scmd.viewer.column": {
+    "message": "Col {column}"
+  },
+  "scmd.viewer.finding": {
+    "message": "ricerca…"
+  },
+  "scmd.viewer.key_bar.next": {
+    "message": "Succ."
+  },
+  "scmd.viewer.key_bar.quit": {
+    "message": "Esci"
+  },
+  "scmd.viewer.key_bar.reload": {
+    "message": "Ricar."
+  },
+  "scmd.viewer.key_bar.search": {
+    "message": "Cerca"
+  },
+  "scmd.viewer.page": {
+    "message": "pagina {page} di {pages}"
+  },
+  "scmd.viewer.reading": {
+    "message": "lettura {percent}%"
+  },
+  "scmd.viewer.wrap": {
+    "message": "A capo"
+  },
+  "scmd.workspace.copy_name": {
+    "message": "{name} copia"
+  },
+  "scmd.workspace.default_name": {
+    "message": "Area di lavoro {number}"
+  },
+  "scmd.workspace.delete_question": {
+    "message": "Eliminare «{name}»? Le sue schede verranno dimenticate."
+  },
+  "scmd.workspace.duplicate_title": {
+    "message": "Duplica area di lavoro"
+  },
+  "scmd.workspace.last_stays": {
+    "message": "L’ultima area di lavoro resta."
+  },
+  "scmd.workspace.name": {
+    "message": "Nome:"
+  },
+  "scmd.workspace.name_or_default": {
+    "message": "Nome (vuoto: {name}):"
+  },
+  "scmd.workspace.new_title": {
+    "message": "Nuova area di lavoro"
+  },
+  "scmd.workspace.rename_title": {
+    "message": "Rinomina area di lavoro"
+  },
+  "scmd.workspaces.keys": {
+    "message": "Enter Apri  F7 Nuova  F5 Copia  F2 Rinomina  F8 Elimina"
+  },
+  "scmd.workspaces.title": {
+    "message": "Aree di lavoro"
+  },
+  "search.age.days": {
+    "message": "giorni"
+  },
+  "search.age.hours": {
+    "message": "ore"
+  },
+  "search.age.minutes": {
+    "message": "minuti"
+  },
+  "search.age.months": {
+    "message": "mesi"
+  },
+  "search.age.weeks": {
+    "message": "settimane"
+  },
+  "search.age.years": {
+    "message": "anni"
+  },
+  "search.archives": {
+    "message": "Cerca negli archivi"
+  },
+  "search.attribute.directory": {
+    "message": "Cartella"
+  },
+  "search.attribute.either": {
+    "message": "Indifferente"
+  },
+  "search.attribute.executable": {
+    "message": "Eseguibile"
+  },
+  "search.attribute.hidden": {
+    "message": "Nascosto"
+  },
+  "search.attribute.link": {
+    "message": "Collegamento simbolico"
+  },
+  "search.attribute.must": {
+    "message": "Deve essere"
+  },
+  "search.attribute.must_not": {
+    "message": "Non deve essere"
+  },
+  "search.attribute.read_only": {
+    "message": "Sola lettura"
+  },
+  "search.attributes.label": {
+    "message": "Attributi:"
+  },
+  "search.between.and": {
+    "message": "e"
+  },
+  "search.between.label": {
+    "message": "Data tra:"
+  },
+  "search.close": {
+    "message": "Chiudi"
+  },
+  "search.depth.all": {
+    "message": "tutte (profondità illimitata)"
+  },
+  "search.depth.current": {
+    "message": "solo la cartella corrente"
+  },
+  "search.depth.label": {
+    "message": "Cerca nelle sottocartelle:"
+  },
+  "search.depth.levels": {
+    "message": "{count, plural, one {# livello} other {# livelli}}"
+  },
+  "search.drives": {
+    "message": "Unità"
+  },
+  "search.duplicates.content": {
+    "message": "stesso contenuto"
+  },
+  "search.duplicates.label": {
+    "message": "Trova file duplicati:"
+  },
+  "search.duplicates.name": {
+    "message": "stesso nome"
+  },
+  "search.duplicates.size": {
+    "message": "stessa dimensione"
+  },
+  "search.edit": {
+    "message": "F4 Modifica"
+  },
+  "search.error.between_days": {
+    "message": "Data tra richiede entrambi i giorni"
+  },
+  "search.error.date": {
+    "message": "{text} non è una data come 2026-11-12"
+  },
+  "search.error.hex": {
+    "message": "{text} non è una stringa esadecimale come 48 65 6c"
+  },
+  "search.error.keep": {
+    "message": "Impossibile conservare la ricerca: {err}"
+  },
+  "search.error.local_time": {
+    "message": "{text} non è un’ora locale valida"
+  },
+  "search.error.names_regex": {
+    "message": "L’espressione regolare del nome: {err}"
+  },
+  "search.error.newer_number": {
+    "message": "Non più vecchi di richiede un numero, non {text}"
+  },
+  "search.error.no_place": {
+    "message": "Cerca in non indica alcuna cartella"
+  },
+  "search.error.no_text": {
+    "message": "Trova testo non indica alcun testo"
+  },
+  "search.error.older_number": {
+    "message": "Più vecchi di richiede un numero, non {text}"
+  },
+  "search.error.save": {
+    "message": "Impossibile salvare le ricerche: {err}"
+  },
+  "search.error.size_number": {
+    "message": "Dimensione file richiede un numero, non {text}"
+  },
+  "search.error.text_regex": {
+    "message": "L’espressione regolare del testo: {err}"
+  },
+  "search.feed": {
+    "message": "Mostra nel pannello"
+  },
+  "search.go_to_file": {
+    "message": "Vai al file"
+  },
+  "search.in_found": {
+    "message": "F2 Cerca nei file trovati"
+  },
+  "search.locate": {
+    "message": "Dall’indice di locate"
+  },
+  "search.names.label": {
+    "message": "Cerca:"
+  },
+  "search.names.placeholder": {
+    "message": "*.txt *.md | backup*  (vuoto: tutti)"
+  },
+  "search.new": {
+    "message": "Nuova ricerca"
+  },
+  "search.newer.label": {
+    "message": "Non più vecchi di:"
+  },
+  "search.older.label": {
+    "message": "Più vecchi di:"
+  },
+  "search.only_selected": {
+    "message": "Cerca solo in file/cartelle selezionati"
+  },
+  "search.only_selected_count": {
+    "message": "{count, plural, one {Cerca solo in # elemento selezionato} other {Cerca solo nei # elementi selezionati}}"
+  },
+  "search.page.advanced": {
+    "message": "Avanzate"
+  },
+  "search.page.general": {
+    "message": "Generale"
+  },
+  "search.page.load_save": {
+    "message": "Carica/Salva"
+  },
+  "search.places.browse_prompt": {
+    "message": "Cerca in"
+  },
+  "search.places.label": {
+    "message": "Cerca in:"
+  },
+  "search.places.placeholder": {
+    "message": "Cartelle, separate da ;"
+  },
+  "search.regex": {
+    "message": "RegEx"
+  },
+  "search.results.label": {
+    "message": "Risultati della ricerca:"
+  },
+  "search.saved.delete": {
+    "message": "Elimina"
+  },
+  "search.saved.label": {
+    "message": "Ricerche precedenti:"
+  },
+  "search.saved.load": {
+    "message": "Carica"
+  },
+  "search.saved.name_first": {
+    "message": "Prima dai un nome alla ricerca."
+  },
+  "search.saved.name_placeholder": {
+    "message": "Nome della ricerca"
+  },
+  "search.saved.save": {
+    "message": "Salva"
+  },
+  "search.size.label": {
+    "message": "Dimensione file:"
+  },
+  "search.start": {
+    "message": "Avvia ricerca"
+  },
+  "search.status.found": {
+    "message": "{files, plural, one {# file} other {# file}} e {dirs, plural, one {# cartella} other {# cartelle}} trovati"
+  },
+  "search.status.searching": {
+    "message": "Ricerca…"
+  },
+  "search.status.searching_in": {
+    "message": "Ricerca in: {folder}"
+  },
+  "search.status.stopped": {
+    "message": "Interrotta: {counts}"
+  },
+  "search.stop": {
+    "message": "Interrompi"
+  },
+  "search.text.ansi": {
+    "message": "ANSI (tabella codici {page})"
+  },
+  "search.text.case_sensitive": {
+    "message": "Maiuscole/minuscole"
+  },
+  "search.text.hex": {
+    "message": "Hex"
+  },
+  "search.text.label": {
+    "message": "Trova testo:"
+  },
+  "search.text.not_containing": {
+    "message": "Trova file che NON contengono il testo"
+  },
+  "search.text.office": {
+    "message": "File Office (docx, xlsx, pptx, odt…)"
+  },
+  "search.text.placeholder": {
+    "message": "Testo da trovare"
+  },
+  "search.text.whole_words": {
+    "message": "Solo parole intere"
+  },
+  "search.title": {
+    "message": "Cerca file"
+  },
+  "search.unit.bytes": {
+    "message": "byte"
+  },
+  "search.view": {
+    "message": "F3 Visualizza"
+  },
+  "settings.addons.builtin_version": {
+    "message": "{version}, incluso con Spark Commander"
+  },
+  "settings.addons.check_daily": {
+    "message": "Cerca aggiornamenti dei componenti aggiuntivi all’avvio e ogni giorno, e proponili"
+  },
+  "settings.addons.check_failed": {
+    "message": "Impossibile cercare aggiornamenti: {err}"
+  },
+  "settings.addons.check_now": {
+    "message": "Cerca ora"
+  },
+  "settings.addons.checking": {
+    "message": "Ricerca di aggiornamenti..."
+  },
+  "settings.addons.download": {
+    "message": "Scarica"
+  },
+  "settings.addons.downloading": {
+    "message": "Download: {done} di {size}"
+  },
+  "settings.addons.file": {
+    "message": "File"
+  },
+  "settings.addons.installed.builtin": {
+    "message": "incluso con Spark Commander"
+  },
+  "settings.addons.installed.label": {
+    "message": "Installato"
+  },
+  "settings.addons.installed.none": {
+    "message": "nessuno"
+  },
+  "settings.addons.intro": {
+    "message": "Spark Commander usa questi programmi di altri progetti per alcune delle sue funzioni. I componenti aggiuntivi si scaricano a parte, quando vuoi; 7-Zip e PDFium sono inclusi."
+  },
+  "settings.addons.never_offer": {
+    "message": "Non proporre mai componenti aggiuntivi quando un file ne richiede uno"
+  },
+  "settings.addons.offers": {
+    "message": "Proposte e aggiornamenti"
+  },
+  "settings.addons.online.label": {
+    "message": "Online"
+  },
+  "settings.addons.online.looking": {
+    "message": "ricerca..."
+  },
+  "settings.addons.online.none": {
+    "message": "nessuno per questo sistema"
+  },
+  "settings.addons.online.not_yet": {
+    "message": "non ancora cercato"
+  },
+  "settings.addons.online.unknown": {
+    "message": "sconosciuto"
+  },
+  "settings.addons.remove": {
+    "message": "Rimuovi"
+  },
+  "settings.addons.up_to_date": {
+    "message": "L’elenco dei componenti aggiuntivi è aggiornato."
+  },
+  "settings.addons.version": {
+    "message": "Versione"
+  },
+  "settings.addons.website": {
+    "message": "Sito web"
+  },
+  "settings.appearance.title": {
+    "message": "Aspetto"
+  },
+  "settings.apply": {
+    "message": "Applica"
+  },
+  "settings.backdrop.blur": {
+    "message": "Sfoca il desktop dietro"
+  },
+  "settings.backdrop.clear": {
+    "message": "0%, solo il desktop"
+  },
+  "settings.backdrop.cover": {
+    "message": "Quanto copre il desktop dietro:"
+  },
+  "settings.backdrop.opacity": {
+    "message": "{opacity}%"
+  },
+  "settings.backdrop.sidebar": {
+    "message": "Barra laterale"
+  },
+  "settings.backdrop.solid": {
+    "message": "100%, opaco"
+  },
+  "settings.backdrop.terminal": {
+    "message": "Terminale"
+  },
+  "settings.cancel": {
+    "message": "Annulla"
+  },
+  "settings.date.as_system": {
+    "message": "Come il sistema: {date}"
+  },
+  "settings.date.custom": {
+    "message": "Personalizzato:"
+  },
+  "settings.date.pattern_help": {
+    "message": "yyyy anno, MM mese (MMM il nome), dd giorno (ddd il giorno della settimana)"
+  },
+  "settings.date.shown_as": {
+    "message": "Visualizzazione"
+  },
+  "settings.date.shown_as_note": {
+    "message": "negli elenchi dei file; le finestre di dialogo aggiungono i secondi"
+  },
+  "settings.date.title": {
+    "message": "Data"
+  },
+  "settings.editor.browse": {
+    "message": "Sfoglia..."
+  },
+  "settings.editor.choose": {
+    "message": "Scegli"
+  },
+  "settings.editor.external": {
+    "message": "Editor esterno (Ctrl+Shift+F4):"
+  },
+  "settings.editor.external_help": {
+    "message": "%1 è il file, altrimenti va in fondo; es. code --wait %1"
+  },
+  "settings.editor.limit": {
+    "message": "L’editor integrato (F4) apre file fino a"
+  },
+  "settings.editor.limit_unit": {
+    "message": "MB"
+  },
+  "settings.editor.title": {
+    "message": "Editor per F4"
+  },
+  "settings.error.no_folder": {
+    "message": "nessuna cartella di configurazione"
+  },
+  "settings.files_shown.hidden": {
+    "message": "File nascosti"
+  },
+  "settings.files_shown.system": {
+    "message": "File di sistema"
+  },
+  "settings.files_shown.title": {
+    "message": "File mostrati"
+  },
+  "settings.font.as_system": {
+    "message": "Come il sistema"
+  },
+  "settings.font.chosen": {
+    "message": "Scelto; quello del sistema è {family}, {size}"
+  },
+  "settings.font.fixed": {
+    "message": "Visualizzatore"
+  },
+  "settings.font.fixed_note": {
+    "message": "Solo caratteri a larghezza fissa; anche per l’editor e il confronto dei file."
+  },
+  "settings.font.main": {
+    "message": "Carattere della finestra principale"
+  },
+  "settings.font.system": {
+    "message": "Il carattere del sistema"
+  },
+  "settings.language.system": {
+    "message": "Lingua del sistema"
+  },
+  "settings.language.system_named": {
+    "message": "Lingua del sistema: {language}"
+  },
+  "settings.language.title": {
+    "message": "Lingua"
+  },
+  "settings.menus.automatic": {
+    "message": "Automatico: un pulsante ☰ su GNOME, una barra dei menu altrove"
+  },
+  "settings.menus.bar": {
+    "message": "Barra dei menu"
+  },
+  "settings.menus.button": {
+    "message": "Pulsante ☰ nella barra del titolo"
+  },
+  "settings.menus.title": {
+    "message": "Menu"
+  },
+  "settings.ok": {
+    "message": "OK"
+  },
+  "settings.page.addons": {
+    "message": "Componenti aggiuntivi"
+  },
+  "settings.page.date": {
+    "message": "Data"
+  },
+  "settings.page.display": {
+    "message": "Visualizzazione"
+  },
+  "settings.page.edit_view": {
+    "message": "Modifica/Visualizza"
+  },
+  "settings.page.font": {
+    "message": "Carattere"
+  },
+  "settings.page.language": {
+    "message": "Lingua"
+  },
+  "settings.page.layout": {
+    "message": "Disposizione"
+  },
+  "settings.page.operations": {
+    "message": "Operazioni"
+  },
+  "settings.page.passwords": {
+    "message": "Password"
+  },
+  "settings.page.terminal": {
+    "message": "Terminale"
+  },
+  "settings.page.toolbar": {
+    "message": "Barra degli strumenti"
+  },
+  "settings.passwords.change_master": {
+    "message": "Cambia password principale…"
+  },
+  "settings.passwords.locked": {
+    "message": "Sono bloccate su questo computer: la password principale le apre."
+  },
+  "settings.passwords.master_set": {
+    "message": "È impostata una password principale: copiando la cartella delle impostazioni, si aprono su un altro computer digitandola lì."
+  },
+  "settings.passwords.no_master": {
+    "message": "Nessuna password principale impostata: copiando la cartella delle impostazioni, non si aprono su un altro computer; lì vanno digitate di nuovo."
+  },
+  "settings.passwords.not_removed": {
+    "message": "La password principale non è stata rimossa: {err}"
+  },
+  "settings.passwords.remove_master": {
+    "message": "Rimuovi password principale"
+  },
+  "settings.passwords.saved": {
+    "message": "{count, plural, one {# password salvata (di server, condivisioni, unità cifrate), conservata cifrata nella cartella delle impostazioni; la chiave che la apre è nel portachiavi di questo computer.} other {# password salvate (di server, condivisioni, unità cifrate), conservate cifrate nella cartella delle impostazioni; la chiave che le apre è nel portachiavi di questo computer.}}"
+  },
+  "settings.passwords.set_master": {
+    "message": "Imposta password principale…"
+  },
+  "settings.passwords.title": {
+    "message": "Password salvate"
+  },
+  "settings.passwords.unlock": {
+    "message": "Sblocca…"
+  },
+  "settings.queue.clear_after": {
+    "message": "Rimuovi le operazioni completate dopo"
+  },
+  "settings.queue.clear_after_help": {
+    "message": "0: appena terminano. Quelle non riuscite o annullate restano finché non vengono rimosse."
+  },
+  "settings.queue.clear_after_unit": {
+    "message": "minuti"
+  },
+  "settings.queue.download_limit": {
+    "message": "Limite velocità di download"
+  },
+  "settings.queue.download_limit_help": {
+    "message": "Scarica da link e copie da server FTP e SFTP; anche quelle in corso. 0: nessun limite."
+  },
+  "settings.queue.download_limit_unit": {
+    "message": "KB/s"
+  },
+  "settings.queue.title": {
+    "message": "Coda operazioni"
+  },
+  "settings.shell.default": {
+    "message": "Predefinita: {shell}"
+  },
+  "settings.shell.note": {
+    "message": "Le nuove schede terminale la avviano."
+  },
+  "settings.shell.title": {
+    "message": "Shell"
+  },
+  "settings.sort_folders.by_name": {
+    "message": "Sempre per nome"
+  },
+  "settings.sort_folders.like_files": {
+    "message": "Come i file (anche per data)"
+  },
+  "settings.sort_folders.title": {
+    "message": "Ordinamento cartelle"
+  },
+  "settings.tabs.header_always": {
+    "message": "Mostra l’intestazione delle schede anche con una sola scheda"
+  },
+  "settings.tabs.title": {
+    "message": "Schede delle cartelle"
+  },
+  "settings.time.as_system": {
+    "message": "Come il sistema"
+  },
+  "settings.time.h12": {
+    "message": "12 ore (2:05 PM)"
+  },
+  "settings.time.h24": {
+    "message": "24 ore (14:05)"
+  },
+  "settings.time.title": {
+    "message": "Ora"
+  },
+  "settings.title": {
+    "message": "Impostazioni"
+  },
+  "settings.toolbar.add": {
+    "message": "Aggiungi pulsante…"
+  },
+  "settings.toolbar.move_down": {
+    "message": "Sposta giù"
+  },
+  "settings.toolbar.move_up": {
+    "message": "Sposta su"
+  },
+  "settings.toolbar.place": {
+    "message": "Sotto la barra dei menu; nella barra del titolo quando i menu sono dietro il pulsante ☰, come nelle app di GNOME. Senza pulsanti, nessuna barra."
+  },
+  "settings.toolbar.remove": {
+    "message": "Rimuovi"
+  },
+  "settings.toolbar.replace": {
+    "message": "Sostituisci…"
+  },
+  "settings.toolbar.restore_default": {
+    "message": "Ripristina predefiniti"
+  },
+  "settings.toolbar.title": {
+    "message": "Pulsanti della barra degli strumenti"
+  },
+  "settings.viewer.font.ansi": {
+    "message": "ANSI (Windows)"
+  },
+  "settings.viewer.font.ascii": {
+    "message": "ASCII (DOS)"
+  },
+  "settings.viewer.font.auto": {
+    "message": "Rilevamento automatico"
+  },
+  "settings.viewer.font.label": {
+    "message": "Carattere all’avvio:"
+  },
+  "settings.viewer.font.variable": {
+    "message": "Larghezza variabile"
+  },
+  "settings.viewer.minimap": {
+    "message": "Minimappa"
+  },
+  "settings.viewer.show": {
+    "message": "Mostra:"
+  },
+  "settings.viewer.start.auto": {
+    "message": "Rilevamento automatico"
+  },
+  "settings.viewer.start.binary": {
+    "message": "Binario"
+  },
+  "settings.viewer.start.hex": {
+    "message": "Esadecimale"
+  },
+  "settings.viewer.start.label": {
+    "message": "Visualizzazione all’avvio:"
+  },
+  "settings.viewer.start.text": {
+    "message": "Testo"
+  },
+  "settings.viewer.title": {
+    "message": "Visualizzatore per F3"
+  },
+  "settings.viewer.width.binary": {
+    "message": "Binario"
+  },
+  "settings.viewer.width.label": {
+    "message": "Larghezza di visualizzazione (caratteri):"
+  },
+  "settings.viewer.width.text": {
+    "message": "Testo"
+  },
+  "settings.viewer.wrap": {
+    "message": "A capo automatico"
+  },
+  "shells.command_prompt": {
+    "message": "Prompt dei comandi"
+  },
+  "sidebar.device.no_files": {
+    "message": "non condivide file"
+  },
+  "sidebar.device.not_answering": {
+    "message": "{name} non risponde: sbloccalo e apri KDE Connect sul dispositivo, poi rileggi la cartella (F2)."
+  },
+  "sidebar.device.not_answering_error": {
+    "message": "{name} non risponde ({err}): sbloccalo e apri KDE Connect sul dispositivo."
+  },
+  "sidebar.device.not_connected": {
+    "message": "non connesso"
+  },
+  "sidebar.device.opening": {
+    "message": "Apertura di {name}..."
+  },
+  "sidebar.device.reconnecting": {
+    "message": "{name} non risponde: nuova connessione..."
+  },
+  "sidebar.device.unmount_failed": {
+    "message": "{name}: impossibile smontare: {err}"
+  },
+  "sidebar.group.bookmarks": {
+    "message": "Segnalibri"
+  },
+  "sidebar.group.cloud": {
+    "message": "Cloud"
+  },
+  "sidebar.group.devices": {
+    "message": "Dispositivi"
+  },
+  "sidebar.group.drives": {
+    "message": "Unità"
+  },
+  "sidebar.group.network": {
+    "message": "Rete"
+  },
+  "sidebar.section.connections": {
+    "message": "Connessioni"
+  },
+  "sidebar.section.folders": {
+    "message": "Cartelle"
+  },
+  "sidebar.section.operations": {
+    "message": "Operazioni"
+  },
+  "sidebar.section.places": {
+    "message": "Risorse"
+  },
+  "sidebar.volume.locked": {
+    "message": "bloccato"
+  },
+  "sidebar.volume.mounting": {
+    "message": "Montaggio di {name}..."
+  },
+  "sidebar.volume.not_mounted": {
+    "message": "non montato"
+  },
+  "sidebar.volume.open": {
+    "message": "Apri"
+  },
+  "sidebar.volume.space": {
+    "message": "{free} liberi su {total}"
+  },
+  "sidebar.volume.unmount": {
+    "message": "Smonta"
+  },
+  "sidebar.volume.unmount_failed": {
+    "message": "Impossibile smontare: {err}"
+  },
+  "split.bad_size": {
+    "message": "«{size}» non è una dimensione: 100 MB, 1.5 GB, 650m"
+  },
+  "split.choose": {
+    "message": "Posiziona il cursore sul file da dividere."
+  },
+  "split.combine.choose": {
+    "message": "Posiziona il cursore su una parte (nome.001) o sul suo file .crc."
+  },
+  "split.combine.dialog_title": {
+    "message": "Unisci file"
+  },
+  "split.combine.label": {
+    "message": "Unisci le parti nel file:"
+  },
+  "split.combine.title": {
+    "message": "Unisci «{name}»"
+  },
+  "split.combined_no_crc": {
+    "message": "{count, plural, one {# parte unita, nessun file CRC per la verifica} other {# parti unite, nessun file CRC per la verifica}}"
+  },
+  "split.crc_mismatch": {
+    "message": "{target} non corrisponde a {file}: una parte manca o è danneggiata"
+  },
+  "split.crc_names_no_file": {
+    "message": "il file CRC non indica alcun file"
+  },
+  "split.crc_unreadable": {
+    "message": "unito, ma impossibile leggere {file}: {err}"
+  },
+  "split.dialog_title": {
+    "message": "Dividi file"
+  },
+  "split.label": {
+    "message": "Dividi «{name}» in parti nella cartella:"
+  },
+  "split.part_missing": {
+    "message": "{path} non trovato"
+  },
+  "split.part_size": {
+    "message": "Dimensione parte:"
+  },
+  "split.title": {
+    "message": "Dividi «{name}»"
+  },
+  "sync.close": {
+    "message": "Chiudi"
+  },
+  "sync.column.date": {
+    "message": "Data"
+  },
+  "sync.column.name": {
+    "message": "Nome"
+  },
+  "sync.column.size": {
+    "message": "Dimensione"
+  },
+  "sync.compare": {
+    "message": "Confronta"
+  },
+  "sync.confirm.copy_left": {
+    "message": "Copia {count} a sinistra ({size})"
+  },
+  "sync.confirm.copy_right": {
+    "message": "Copia {count} a destra ({size})"
+  },
+  "sync.confirm.delete_left": {
+    "message": "Elimina {count} a sinistra"
+  },
+  "sync.confirm.delete_right": {
+    "message": "Elimina {count} a destra"
+  },
+  "sync.confirm.ok": {
+    "message": "Sincronizza"
+  },
+  "sync.confirm.text": {
+    "message": "{actions}. I file copiati sostituiscono quelli presenti.{trash, select, yes { Quelli eliminati su questo computer vanno nel cestino.} other {}}"
+  },
+  "sync.confirm.title": {
+    "message": "Sincronizza"
+  },
+  "sync.error.changed": {
+    "message": "modificato dopo il confronto; confronta di nuovo"
+  },
+  "sync.error.compare": {
+    "message": "Impossibile confrontare: {err}"
+  },
+  "sync.error.no_folders": {
+    "message": "Sincronizza cartelle confronta due cartelle: nessun pannello può mostrare un archivio o risultati di ricerca."
+  },
+  "sync.left": {
+    "message": "Sinistra"
+  },
+  "sync.mask.label": {
+    "message": "File:"
+  },
+  "sync.option.asymmetric": {
+    "message": "Asimmetrica (la destra diventa una copia della sinistra)"
+  },
+  "sync.option.by_content": {
+    "message": "Per contenuto"
+  },
+  "sync.option.ignore_date": {
+    "message": "Ignora data"
+  },
+  "sync.option.subfolders": {
+    "message": "Sottocartelle"
+  },
+  "sync.result.done": {
+    "message": "{count, plural, one {# sincronizzato} other {# sincronizzati}}"
+  },
+  "sync.result.failed": {
+    "message": "{count, plural, one {# non sincronizzato} other {# non sincronizzati}}; {first}"
+  },
+  "sync.right": {
+    "message": "Destra"
+  },
+  "sync.show.equal": {
+    "message": "= uguali"
+  },
+  "sync.show.label": {
+    "message": "Mostra:"
+  },
+  "sync.show.other": {
+    "message": "≠ lasciati così"
+  },
+  "sync.show.to_left": {
+    "message": "← a sinistra"
+  },
+  "sync.show.to_right": {
+    "message": "→ a destra"
+  },
+  "sync.status.both_empty": {
+    "message": "Sono entrambe vuote."
+  },
+  "sync.status.comparing": {
+    "message": "Confronto di {folder}"
+  },
+  "sync.status.counts": {
+    "message": "{right} da copiare a destra, {left} da copiare a sinistra, {delete} da eliminare, {equal} uguali, {alone} lasciati così"
+  },
+  "sync.status.stopped": {
+    "message": "Interrotto."
+  },
+  "sync.stop": {
+    "message": "Interrompi"
+  },
+  "sync.synchronize": {
+    "message": "Sincronizza..."
+  },
+  "sync.task.title": {
+    "message": "Sincronizza {left} e {right}"
+  },
+  "sync.title": {
+    "message": "Sincronizza cartelle"
+  },
+  "tab_menu.close_all_tabs": {
+    "message": "Chiudi tutte le schede"
+  },
+  "tab_menu.close_duplicate_tabs": {
+    "message": "Chiudi schede duplicate"
+  },
+  "tab_menu.close_tab": {
+    "message": "Chiudi questa scheda"
+  },
+  "tab_menu.copy_tab_to_other_panel": {
+    "message": "Copia scheda nell’altro pannello"
+  },
+  "tab_menu.duplicate_tab": {
+    "message": "Duplica questa scheda"
+  },
+  "tab_menu.list_tabs": {
+    "message": "Mostra elenco di tutte le schede"
+  },
+  "tab_menu.lock_tab": {
+    "message": "Blocca questa scheda"
+  },
+  "tab_menu.none": {
+    "message": "(nessuna)"
+  },
+  "tab_menu.rename_tab": {
+    "message": "Rinomina scheda..."
+  },
+  "tabs.error.reopen": {
+    "message": "Impossibile riaprire la scheda: {err}"
+  },
+  "tabs.history.empty": {
+    "message": "Ancora nessuna cartella nella cronologia di questa scheda."
+  },
+  "tabs.new": {
+    "message": "Nuova scheda"
+  },
+  "tabs.rename.label": {
+    "message": "Nuovo nome:"
+  },
+  "tabs.rename.title": {
+    "message": "Rinomina scheda"
+  },
+  "tabs.search_results": {
+    "message": "Risultati della ricerca"
+  },
+  "terminal.busy": {
+    "message": "Un programma è in esecuzione nel terminale: esegui il comando quando termina."
+  },
+  "terminal.close.idle": {
+    "message": "Chiudere questa scheda terminale? La sua shell verrà terminata."
+  },
+  "terminal.close.ok": {
+    "message": "Chiudi"
+  },
+  "terminal.close.running": {
+    "message": "Chiudere questa scheda terminale? Il programma in esecuzione verrà interrotto."
+  },
+  "terminal.close.title": {
+    "message": "Chiudi scheda"
+  },
+  "terminal.error.start_shell": {
+    "message": "Impossibile avviare la shell: {err}"
+  },
+  "terminal.jump_to_bottom": {
+    "message": "Vai in fondo (Ctrl+End) ↓"
+  },
+  "terminal.menu.copy": {
+    "message": "Copia"
+  },
+  "terminal.menu.paste": {
+    "message": "Incolla"
+  },
+  "toolbar.customize": {
+    "message": "Personalizza barra degli strumenti…"
+  },
+  "tools.clear_key": {
+    "message": "Cancella"
+  },
+  "tools.close": {
+    "message": "Chiudi"
+  },
+  "tools.delete": {
+    "message": "Elimina"
+  },
+  "tools.empty": {
+    "message": "Ancora nessuno strumento: Nuovo... ne aggiunge uno."
+  },
+  "tools.field.command": {
+    "message": "Comando"
+  },
+  "tools.field.key": {
+    "message": "Tasto"
+  },
+  "tools.field.name": {
+    "message": "Nome"
+  },
+  "tools.intro": {
+    "message": "Le tue righe di comando, nel menu Strumenti: fai clic su una lì, o premi il suo tasto."
+  },
+  "tools.key.none": {
+    "message": "Nessuno"
+  },
+  "tools.key.waiting": {
+    "message": "Premi il tasto... (Esc: nessuno)"
+  },
+  "tools.move_down": {
+    "message": "Sposta giù"
+  },
+  "tools.move_up": {
+    "message": "Sposta su"
+  },
+  "tools.name.placeholder": {
+    "message": "Confronta con l’altro lato"
+  },
+  "tools.new": {
+    "message": "Nuovo..."
+  },
+  "tools.new_name": {
+    "message": "Strumento {number}"
+  },
+  "tools.no_command": {
+    "message": "{tool} non ha ancora un comando: Strumenti > Gestisci strumenti."
+  },
+  "tools.not_local": {
+    "message": "Gli strumenti vengono eseguiti su questo computer: il pannello mostra un server o un archivio."
+  },
+  "tools.note.key_of_command": {
+    "message": "{key} è anche {command}: lo prende lo strumento."
+  },
+  "tools.note.key_of_other_tool": {
+    "message": "{key} è anche di {tool}: lo prende quello più in basso nell’elenco."
+  },
+  "tools.placeholders": {
+    "message": "%P la cartella di questo pannello, %T quella dell’altro (entrambe terminano con un separatore, quindi \"%P%N\" è un percorso), %N il file sotto il cursore, %O il suo nome senza estensione, %E l’estensione, %S i file selezionati (altrimenti quello sotto il cursore), ognuno tra virgolette; %% un %. Metti le virgolette attorno al resto: \"%P%N\"."
+  },
+  "tools.run_in_terminal": {
+    "message": "Esegui nel terminale, per vedere cosa stampa"
+  },
+  "tools.set_key": {
+    "message": "Imposta tasto..."
+  },
+  "tools.title": {
+    "message": "Strumenti"
+  },
+  "transfer.answer.cancel": {
+    "message": "Annulla"
+  },
+  "transfer.answer.elevate": {
+    "message": "Come amministratore"
+  },
+  "transfer.answer.overwrite": {
+    "message": "Sovrascrivi"
+  },
+  "transfer.answer.overwrite_all": {
+    "message": "Sovrascrivi tutti"
+  },
+  "transfer.answer.rename": {
+    "message": "Rinomina"
+  },
+  "transfer.answer.retry": {
+    "message": "Riprova"
+  },
+  "transfer.answer.skip": {
+    "message": "Salta"
+  },
+  "transfer.answer.skip_all": {
+    "message": "Salta tutti"
+  },
+  "transfer.archive.local_only": {
+    "message": "Solo i file di questo computer vanno in un archivio: copiali prima qui."
+  },
+  "transfer.cancel": {
+    "message": "Annulla"
+  },
+  "transfer.error.elevate_hint": {
+    "message": "Come amministratore: questo e quanto altro viene rifiutato, una volta finito il resto, chiedendo la password una sola volta."
+  },
+  "transfer.error.title": {
+    "message": "Errore"
+  },
+  "transfer.exists.describe": {
+    "message": "{count, plural, one {{size} byte, {time}} other {{size} byte, {time}}}"
+  },
+  "transfer.exists.text": {
+    "message": "Già presente: {existing}\nIl nuovo: {new}"
+  },
+  "transfer.exists.title": {
+    "message": "Il file esiste"
+  },
+  "transfer.extract_failed": {
+    "message": "Impossibile estrarli: {err}"
+  },
+  "transfer.into_archive.question_many": {
+    "message": "{kind, select, copy {Copiare} other {Spostare}} {count, plural, one {# elemento} other {# elementi}} in {into}? Ciò che lì ha gli stessi nomi viene sostituito."
+  },
+  "transfer.into_archive.question_one": {
+    "message": "{kind, select, copy {Copiare} other {Spostare}} «{name}» in {into}? Ciò che lì ha lo stesso nome viene sostituito."
+  },
+  "transfer.into_archive.title_many": {
+    "message": "{kind, select, copy {Copia} other {Sposta}} {count, plural, one {# elemento} other {# elementi}} in {archive}"
+  },
+  "transfer.into_archive.title_one": {
+    "message": "{kind, select, copy {Copia} other {Sposta}} «{name}» in {archive}"
+  },
+  "transfer.label.many": {
+    "message": "{kind, select, copy {Copia} other {Sposta}} {count, plural, one {# elemento} other {# elementi}} in:"
+  },
+  "transfer.label.many_server": {
+    "message": "{kind, select, copy {Copia} other {Sposta}} {count, plural, one {# elemento} other {# elementi}} in {server}:"
+  },
+  "transfer.label.one": {
+    "message": "{kind, select, copy {Copia} other {Sposta}} «{name}» in:"
+  },
+  "transfer.label.one_server": {
+    "message": "{kind, select, copy {Copia} other {Sposta}} «{name}» in {server}:"
+  },
+  "transfer.ok": {
+    "message": "OK"
+  },
+  "transfer.overwrite.all": {
+    "message": "Sovrascrivi tutti"
+  },
+  "transfer.overwrite.ask": {
+    "message": "Chiedi"
+  },
+  "transfer.overwrite.label": {
+    "message": "Se la destinazione ha un file con lo stesso nome:"
+  },
+  "transfer.overwrite.older": {
+    "message": "Sovrascrivi i più vecchi"
+  },
+  "transfer.overwrite.rename": {
+    "message": "Rinomina le copie"
+  },
+  "transfer.overwrite.skip": {
+    "message": "Salta tutti"
+  },
+  "transfer.remove_moved": {
+    "message": "Rimuovi gli elementi spostati da {name}"
+  },
+  "transfer.speed": {
+    "message": "{size}/s"
+  },
+  "transfer.strip.counting": {
+    "message": "conteggio: {count, plural, one {# file} other {# file}}"
+  },
+  "transfer.strip.progress": {
+    "message": "{files} / {count, plural, one {# file} other {# file}}, {percent}%"
+  },
+  "transfer.strip.queue": {
+    "message": "Coda..."
+  },
+  "transfer.strip.queue_waiting": {
+    "message": "Coda ({count, plural, one {# in attesa} other {# in attesa}})..."
+  },
+  "transfer.title.copy": {
+    "message": "Copia"
+  },
+  "transfer.title.move": {
+    "message": "Sposta"
+  },
+  "viewer.as_text_hint": {
+    "message": "{err}. 1 mostra il file come testo."
+  },
+  "viewer.book.cannot_read": {
+    "message": "Impossibile leggere questo libro: {err}. 1 mostra il file come testo."
+  },
+  "viewer.book.continuing": {
+    "message": "Riprende da {percent}"
+  },
+  "viewer.book.error.compression": {
+    "message": "compresso in un formato non ancora supportato ({compression})"
+  },
+  "viewer.book.error.damaged": {
+    "message": "un libro danneggiato"
+  },
+  "viewer.book.error.damaged_zip": {
+    "message": "uno zip danneggiato"
+  },
+  "viewer.book.error.drm": {
+    "message": "protetto da DRM: solo Kindle può leggerlo"
+  },
+  "viewer.book.error.huffman": {
+    "message": "compresso come i libri di Amazon (HUFF/CDIC), formato non ancora supportato"
+  },
+  "viewer.book.error.missing_part": {
+    "message": "{name} non è nel libro"
+  },
+  "viewer.book.error.no_package": {
+    "message": "nessun file package nel libro"
+  },
+  "viewer.book.error.no_text": {
+    "message": "il libro non contiene testo"
+  },
+  "viewer.book.error.not_zip": {
+    "message": "non è uno zip: un libro danneggiato o protetto da DRM?"
+  },
+  "viewer.book.error.zip_method": {
+    "message": "{name}: compresso con un metodo zip non supportato qui ({method})"
+  },
+  "viewer.cannot_show": {
+    "message": "Impossibile mostrarlo: {err}"
+  },
+  "viewer.convert.failed": {
+    "message": "{tool} non è riuscito a convertirlo ({status})"
+  },
+  "viewer.converting": {
+    "message": "Conversione con {tool}…"
+  },
+  "viewer.copy.too_large": {
+    "message": "Le selezioni oltre {megabytes} MB non vengono copiate."
+  },
+  "viewer.encoding.cp1250": {
+    "message": "Europa orientale (1250)"
+  },
+  "viewer.encoding.cp1251": {
+    "message": "Cirillico Windows (1251)"
+  },
+  "viewer.encoding.cp1252": {
+    "message": "Europa occidentale Latin1 (1252)"
+  },
+  "viewer.encoding.cp1253": {
+    "message": "Greco (1253)"
+  },
+  "viewer.encoding.cp1254": {
+    "message": "Turco (1254)"
+  },
+  "viewer.encoding.cp1255": {
+    "message": "Ebraico (1255)"
+  },
+  "viewer.encoding.cp1256": {
+    "message": "Arabo (1256)"
+  },
+  "viewer.encoding.cp1257": {
+    "message": "Baltico (1257)"
+  },
+  "viewer.encoding.cp1258": {
+    "message": "Vietnamita (1258)"
+  },
+  "viewer.encoding.cp20866": {
+    "message": "Cirillico KOI8-R (20866)"
+  },
+  "viewer.encoding.cp437": {
+    "message": "DOS-USA (437)"
+  },
+  "viewer.encoding.cp850": {
+    "message": "DOS-LATIN1 (850)"
+  },
+  "viewer.encoding.cp852": {
+    "message": "DOS Europa centrale (852)"
+  },
+  "viewer.encoding.cp866": {
+    "message": "DOS Cirillico (866)"
+  },
+  "viewer.encoding.cp874": {
+    "message": "Thailandese (874)"
+  },
+  "viewer.encoding.cp932": {
+    "message": "Giapponese (932)"
+  },
+  "viewer.encoding.cp936": {
+    "message": "Cinese continentale (936)"
+  },
+  "viewer.encoding.cp949": {
+    "message": "Coreano (949)"
+  },
+  "viewer.encoding.cp950": {
+    "message": "Cinese Taiwan (950)"
+  },
+  "viewer.find.not_found": {
+    "message": "Non trovato: {text}"
+  },
+  "viewer.find.not_hex": {
+    "message": "Non è una stringa esadecimale: {text}"
+  },
+  "viewer.find.nothing": {
+    "message": "Niente da cercare."
+  },
+  "viewer.find.save_failed": {
+    "message": "Impossibile salvare le ricerche: {err}"
+  },
+  "viewer.loading": {
+    "message": "Caricamento…"
+  },
+  "viewer.markdown.too_large": {
+    "message": "Oltre {megabytes} MB: 1 lo mostra come testo."
+  },
+  "viewer.menu.binary": {
+    "message": "Binario (lunghezza riga fissa)"
+  },
+  "viewer.menu.book": {
+    "message": "Libro (EPUB, FB2)"
+  },
+  "viewer.menu.close": {
+    "message": "Chiudi"
+  },
+  "viewer.menu.configure": {
+    "message": "Configura..."
+  },
+  "viewer.menu.copy_hex": {
+    "message": "Copia come caratteri esadecimali"
+  },
+  "viewer.menu.copy_text": {
+    "message": "Copia come testo"
+  },
+  "viewer.menu.edit": {
+    "message": "Modifica"
+  },
+  "viewer.menu.encoding": {
+    "message": "Codifica"
+  },
+  "viewer.menu.file": {
+    "message": "File"
+  },
+  "viewer.menu.find": {
+    "message": "Trova..."
+  },
+  "viewer.menu.find_next": {
+    "message": "Trova successivo"
+  },
+  "viewer.menu.fit_image": {
+    "message": "Adatta immagine alla finestra"
+  },
+  "viewer.menu.font_ansi": {
+    "message": "ANSI (set di caratteri Windows)"
+  },
+  "viewer.menu.font_ascii": {
+    "message": "ASCII (set di caratteri DOS)"
+  },
+  "viewer.menu.font_page": {
+    "message": "Come impostato dal carattere"
+  },
+  "viewer.menu.font_variable": {
+    "message": "Larghezza caratteri variabile"
+  },
+  "viewer.menu.hex": {
+    "message": "Esadecimale"
+  },
+  "viewer.menu.html": {
+    "message": "Testo HTML (senza tag)"
+  },
+  "viewer.menu.minimap": {
+    "message": "Minimappa"
+  },
+  "viewer.menu.next_file": {
+    "message": "File successivo"
+  },
+  "viewer.menu.only_larger": {
+    "message": "Adatta solo immagini più grandi"
+  },
+  "viewer.menu.open": {
+    "message": "Apri..."
+  },
+  "viewer.menu.options": {
+    "message": "Opzioni"
+  },
+  "viewer.menu.picture": {
+    "message": "Immagine/Multimedia"
+  },
+  "viewer.menu.previous_file": {
+    "message": "File precedente"
+  },
+  "viewer.menu.reload": {
+    "message": "Ricarica"
+  },
+  "viewer.menu.save_as": {
+    "message": "Salva come..."
+  },
+  "viewer.menu.search_google": {
+    "message": "Cerca il testo selezionato con Google"
+  },
+  "viewer.menu.select_all": {
+    "message": "Seleziona tutto"
+  },
+  "viewer.menu.syntax_colors": {
+    "message": "Colori della sintassi"
+  },
+  "viewer.menu.text_only": {
+    "message": "Solo testo"
+  },
+  "viewer.menu.unicode": {
+    "message": "Unicode (UTF-16)"
+  },
+  "viewer.menu.wrap": {
+    "message": "A capo automatico ({columns, plural, one {# colonna} other {# colonne}})"
+  },
+  "viewer.mode.binary": {
+    "message": "Binario · {page}"
+  },
+  "viewer.mode.book": {
+    "message": "Libro"
+  },
+  "viewer.mode.hex": {
+    "message": "Hex · {page}"
+  },
+  "viewer.mode.html": {
+    "message": "Testo HTML"
+  },
+  "viewer.mode.image": {
+    "message": "Immagine"
+  },
+  "viewer.mode.multimedia": {
+    "message": "Multimedia"
+  },
+  "viewer.mode.pdf_by": {
+    "message": "PDF da {tool}"
+  },
+  "viewer.mode.text": {
+    "message": "Testo · {page}"
+  },
+  "viewer.origin.not_editable": {
+    "message": "si possono modificare solo i file negli archivi 7z, zip, jar e tar"
+  },
+  "viewer.origin.updated": {
+    "message": "{archive} aggiornato"
+  },
+  "viewer.origin.updated_on": {
+    "message": "{archive} aggiornato su {server}"
+  },
+  "viewer.origin.uploaded": {
+    "message": "{path} caricato"
+  },
+  "viewer.pdf.cannot_show": {
+    "message": "Impossibile mostrare questo PDF: {err}"
+  },
+  "viewer.pdf.loading": {
+    "message": "Caricamento..."
+  },
+  "viewer.pdf.page": {
+    "message": "Pagina {page} / {pages}"
+  },
+  "viewer.picture.cannot_show": {
+    "message": "Impossibile mostrare questa immagine; 1 la mostra come testo."
+  },
+  "viewer.save_as.failed": {
+    "message": "Impossibile salvare {path}: {err}"
+  },
+  "viewer.status.rows": {
+    "message": "{count, plural, one {{first}–{last} di {grouped} riga} other {{first}–{last} di {grouped} righe}}"
+  },
+  "viewer.status.rows_so_far": {
+    "message": "{count, plural, one {{grouped} riga finora, {percent} letto} other {{grouped} righe finora, {percent} letto}}"
+  },
+  "viewer.status.searching": {
+    "message": "Ricerca…"
+  },
+  "viewer.status.size": {
+    "message": "{count, plural, one {{grouped} byte} other {{grouped} byte}}"
+  },
+  "viewer.window.title": {
+    "message": "{path} — Visualizzatore"
+  },
+  "viewer.zoom.fit": {
+    "message": "Torna ad adattare alla finestra (Ctrl+0)"
+  },
+  "viewer.zoom.in": {
+    "message": "Ingrandisci (Ctrl++)"
+  },
+  "viewer.zoom.out": {
+    "message": "Riduci (Ctrl+-)"
+  },
+  "viewer.zoom.reset": {
+    "message": "Torna al 100% (Ctrl+0)"
+  },
+  "workspaces.button.close": {
+    "message": "Chiudi"
+  },
+  "workspaces.button.delete": {
+    "message": "Elimina..."
+  },
+  "workspaces.button.duplicate": {
+    "message": "Duplica..."
+  },
+  "workspaces.button.new": {
+    "message": "Nuova..."
+  },
+  "workspaces.button.rename": {
+    "message": "Rinomina..."
+  },
+  "workspaces.delete.button": {
+    "message": "Elimina"
+  },
+  "workspaces.delete.closed": {
+    "message": "Eliminare l’area di lavoro «{name}»? Le sue schede verranno dimenticate."
+  },
+  "workspaces.delete.closed_shells": {
+    "message": "Eliminare l’area di lavoro «{name}»? Le sue schede verranno dimenticate e le shell nelle sue schede terminale verranno terminate."
+  },
+  "workspaces.delete.open": {
+    "message": "Eliminare l’area di lavoro «{name}»? Le sue schede verranno chiuse; al suo posto si apre «{other}»."
+  },
+  "workspaces.delete.open_shells": {
+    "message": "Eliminare l’area di lavoro «{name}»? Le sue schede verranno chiuse e le shell nelle sue schede terminale verranno terminate; al suo posto si apre «{other}»."
+  },
+  "workspaces.delete.title": {
+    "message": "Elimina area di lavoro"
+  },
+  "workspaces.duplicate.name": {
+    "message": "{name} copia"
+  },
+  "workspaces.duplicate.title": {
+    "message": "Duplica area di lavoro"
+  },
+  "workspaces.error.name_taken": {
+    "message": "Un’altra area di lavoro ha già questo nome."
+  },
+  "workspaces.error.no_name": {
+    "message": "Un’area di lavoro deve avere un nome."
+  },
+  "workspaces.error.save": {
+    "message": "Impossibile salvare le aree di lavoro: {err}"
+  },
+  "workspaces.hint": {
+    "message": "Mostra > Aree di lavoro ne apre una. Le modifiche a quella aperta vengono conservate in essa."
+  },
+  "workspaces.name.label": {
+    "message": "Nome:"
+  },
+  "workspaces.new.name": {
+    "message": "Area di lavoro {number}"
+  },
+  "workspaces.new.title": {
+    "message": "Nuova area di lavoro"
+  },
+  "workspaces.open": {
+    "message": "aperta"
+  },
+  "workspaces.rename.title": {
+    "message": "Rinomina area di lavoro"
+  },
+  "workspaces.summary.panels": {
+    "message": "Sinistra {left, plural, one {# scheda} other {# schede}}, destra {right, plural, one {# scheda} other {# schede}}"
+  },
+  "workspaces.summary.terminal": {
+    "message": "Sinistra {left, plural, one {# scheda} other {# schede}}, destra {right, plural, one {# scheda} other {# schede}}, terminale {terminal, plural, one {# scheda} other {# schede}}"
+  },
+  "workspaces.summary.terminal_hidden": {
+    "message": "Sinistra {left, plural, one {# scheda} other {# schede}}, destra {right, plural, one {# scheda} other {# schede}}, terminale {terminal, plural, one {# scheda} other {# schede}} (nascosto)"
+  },
+  "workspaces.title": {
+    "message": "Aree di lavoro"
+  }
+}

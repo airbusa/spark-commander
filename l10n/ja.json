@@ -1,0 +1,4823 @@
+{
+  "about.addons": {
+    "message": "必要なときにダウンロードするアドオン"
+  },
+  "about.libraries": {
+    "message": "使用しているライブラリ"
+  },
+  "about.licence": {
+    "message": "ライセンス："
+  },
+  "about.made_with": {
+    "message": "以下のプロジェクトの成果を利用しています"
+  },
+  "about.part.alacritty_terminal": {
+    "message": "内蔵ターミナルの画面とシェル"
+  },
+  "about.part.encoding_rs": {
+    "message": "コードページ"
+  },
+  "about.part.gpui": {
+    "message": "ウィンドウ、描画、入力（Zed 由来）"
+  },
+  "about.part.gpui_kit": {
+    "message": "コントロール：リスト、メニュー、入力欄、エディター"
+  },
+  "about.part.html5ever": {
+    "message": "ビューアーでの HTML と電子書籍"
+  },
+  "about.part.image": {
+    "message": "画像"
+  },
+  "about.part.keyring": {
+    "message": "システムのキーリングに保存するパスワード"
+  },
+  "about.part.lucide": {
+    "message": "アイコン"
+  },
+  "about.part.material_icons": {
+    "message": "ファイルとフォルダーのアイコン"
+  },
+  "about.part.pdfium_render": {
+    "message": "Rust から PDFium を利用"
+  },
+  "about.part.ratatui": {
+    "message": "scmd（ターミナル版）"
+  },
+  "about.part.russh": {
+    "message": "SSH と SFTP"
+  },
+  "about.part.rustls": {
+    "message": "TLS"
+  },
+  "about.part.serde": {
+    "message": "設定ファイル"
+  },
+  "about.part.similar": {
+    "message": "内容で比較"
+  },
+  "about.part.suppaftp": {
+    "message": "FTP と FTPS"
+  },
+  "about.part.tokio": {
+    "message": "バックグラウンドでのネットワーク処理"
+  },
+  "about.part.trash": {
+    "message": "ごみ箱"
+  },
+  "about.part.tree_sitter": {
+    "message": "ビューアーとエディターでのコードの色分け"
+  },
+  "about.part.zbus": {
+    "message": "D-Bus：デスクトップ、デバイス、KDE Connect"
+  },
+  "about.shipped": {
+    "message": "同梱されているもの"
+  },
+  "about.tagline": {
+    "message": "2 画面ファイルマネージャー。フリーソフトウェアです。"
+  },
+  "about.title": {
+    "message": "Spark Commander について"
+  },
+  "about.version": {
+    "message": "バージョン {version}"
+  },
+  "activity.clear": {
+    "message": "消去"
+  },
+  "activity.clear_failed": {
+    "message": "ログを消去できませんでした：{err}"
+  },
+  "activity.empty": {
+    "message": "まだ何も実行していません。"
+  },
+  "activity.title": {
+    "message": "アクティビティログ"
+  },
+  "addons.error.damaged": {
+    "message": "ダウンロードが破損しています（チェックサムが一致しません）"
+  },
+  "addons.error.list": {
+    "message": "アドオンの一覧：{err}"
+  },
+  "addons.error.missing_file": {
+    "message": "ダウンロードに {file} が含まれていません"
+  },
+  "addons.error.no_folder": {
+    "message": "データフォルダーがありません"
+  },
+  "addons.error.unpacking": {
+    "message": "展開エラー：{err}"
+  },
+  "addons.installed": {
+    "message": "{addon} {version} をインストールしました。"
+  },
+  "addons.megabytes": {
+    "message": "{size} MB"
+  },
+  "addons.offer.never": {
+    "message": "今後表示しない"
+  },
+  "addons.offer.no": {
+    "message": "いいえ"
+  },
+  "addons.offer.text": {
+    "message": "{name} には、インストールされていないアドオン {addon} が必要です。「設定 > アドオン」でダウンロードしますか？"
+  },
+  "addons.offer.title": {
+    "message": "アドオン"
+  },
+  "addons.offer.yes": {
+    "message": "はい"
+  },
+  "addons.purpose.cloud": {
+    "message": "オンラインストレージ：S3、Google Drive、OneDrive、Dropbox などのサービス。"
+  },
+  "addons.purpose.media": {
+    "message": "動画と音声、HEIC と AVIF の写真：ビューアーとクイックビューで表示します。"
+  },
+  "addons.purpose.office": {
+    "message": "Office 文書：Word、Excel、PowerPoint のファイルを PDF としてビューアーで表示します。"
+  },
+  "addons.purpose.pdfium": {
+    "message": "PDF：PDF ファイルと、変換後の Office 文書をビューアーで表示します。"
+  },
+  "addons.purpose.seven_zip": {
+    "message": "アーカイブ：7z、zip、rar、tar などを圧縮・展開します。"
+  },
+  "addons.update": {
+    "message": "更新"
+  },
+  "addons.updates": {
+    "message": "アドオンの更新：{names}"
+  },
+  "appearance.dark": {
+    "message": "ダーク"
+  },
+  "appearance.light": {
+    "message": "ライト"
+  },
+  "appearance.system": {
+    "message": "システムに合わせる"
+  },
+  "archive.cannot_read": {
+    "message": "{name}：読み取れません"
+  },
+  "archive.not_in_archive": {
+    "message": "{name} はアーカイブ内にありません"
+  },
+  "archive.not_own_folder": {
+    "message": "{folder} はこのユーザー専用のフォルダーではありません"
+  },
+  "archive.seven_zip_failed": {
+    "message": "7-Zip が失敗しました（{code}）"
+  },
+  "archive.seven_zip_missing": {
+    "message": "7-Zip が見つかりません：{path}（vendor/7zip/fetch.sh または fetch.bat を実行してください）"
+  },
+  "archive.temp_not_utf8": {
+    "message": "一時フォルダーの名前が UTF-8 ではありません"
+  },
+  "associations.add": {
+    "message": "追加..."
+  },
+  "associations.cancel": {
+    "message": "キャンセル"
+  },
+  "associations.close": {
+    "message": "閉じる"
+  },
+  "associations.column.edit": {
+    "message": "編集 (F4)"
+  },
+  "associations.column.files": {
+    "message": "ファイル"
+  },
+  "associations.column.open": {
+    "message": "開く (Enter)"
+  },
+  "associations.column.view": {
+    "message": "表示 (F3)"
+  },
+  "associations.edit": {
+    "message": "編集..."
+  },
+  "associations.edit_dialog.title": {
+    "message": "関連付け"
+  },
+  "associations.empty": {
+    "message": "まだありません。"
+  },
+  "associations.field.edit": {
+    "message": "編集 (F4)："
+  },
+  "associations.field.files": {
+    "message": "ファイル (*.jpg *.png)："
+  },
+  "associations.field.open": {
+    "message": "開く (Enter)："
+  },
+  "associations.field.view": {
+    "message": "表示 (F3)："
+  },
+  "associations.intro": {
+    "message": "マスクに一致するファイルに対して、Enter、F3、F4 でこれらのプログラムを実行します。空欄なら通常どおりです。%1 はファイルを表します。"
+  },
+  "associations.mask_needed": {
+    "message": "ファイルのマスクが必要です：*.txt"
+  },
+  "associations.no_file": {
+    "message": "関連付ける種類のファイルにカーソルを置いてください。"
+  },
+  "associations.ok": {
+    "message": "OK"
+  },
+  "associations.remove": {
+    "message": "削除"
+  },
+  "associations.save_failed": {
+    "message": "設定を保存できませんでした：{err}"
+  },
+  "associations.title": {
+    "message": "内部関連付け"
+  },
+  "attributes.bad_time": {
+    "message": "「{text}」は日時として認識できません。例：2026-11-10 14:04:33"
+  },
+  "attributes.cancel": {
+    "message": "キャンセル"
+  },
+  "attributes.change_time": {
+    "message": "日時を変更："
+  },
+  "attributes.changed": {
+    "message": "{count, plural, other {# 件を変更しました}}"
+  },
+  "attributes.changed_failed": {
+    "message": "{count, plural, other {# 件を変更}}、{failed, plural, other {# 件が失敗}}"
+  },
+  "attributes.dialog_title_many": {
+    "message": "属性の変更：{count, plural, other {# 個の項目}}"
+  },
+  "attributes.dialog_title_one": {
+    "message": "属性の変更：{name}"
+  },
+  "attributes.execute": {
+    "message": "実行"
+  },
+  "attributes.group": {
+    "message": "グループ"
+  },
+  "attributes.in_archive": {
+    "message": "アーカイブ内の属性は変更できません。"
+  },
+  "attributes.no_bits": {
+    "message": "これらのファイルにはアクセス許可ビットがありません。変更できるのは日時だけです。"
+  },
+  "attributes.now": {
+    "message": "現在"
+  },
+  "attributes.octal": {
+    "message": "8 進数："
+  },
+  "attributes.ok": {
+    "message": "OK"
+  },
+  "attributes.others": {
+    "message": "その他"
+  },
+  "attributes.owner": {
+    "message": "所有者"
+  },
+  "attributes.read": {
+    "message": "読み取り"
+  },
+  "attributes.recurse": {
+    "message": "フォルダー内のすべての項目にも適用"
+  },
+  "attributes.title_many": {
+    "message": "{count, plural, other {# 個の項目}}の属性を変更"
+  },
+  "attributes.title_one": {
+    "message": "「{name}」の属性を変更"
+  },
+  "attributes.write": {
+    "message": "書き込み"
+  },
+  "bookmarks.add_current": {
+    "message": "現在のフォルダーを追加"
+  },
+  "bookmarks.add_folders": {
+    "message": "フォルダーを追加..."
+  },
+  "bookmarks.added": {
+    "message": "ブックマークに追加しました：{name}"
+  },
+  "bookmarks.already": {
+    "message": "{name} はすでにブックマークにあります。"
+  },
+  "bookmarks.chooser.failed": {
+    "message": "フォルダーの選択ダイアログを表示できませんでした：{err}"
+  },
+  "bookmarks.chooser.prompt": {
+    "message": "ブックマークに追加"
+  },
+  "bookmarks.close": {
+    "message": "閉じる"
+  },
+  "bookmarks.copy_name": {
+    "message": "名前をコピー"
+  },
+  "bookmarks.copy_path": {
+    "message": "パスをコピー"
+  },
+  "bookmarks.drop_here": {
+    "message": "ここにフォルダーをドロップしてください。"
+  },
+  "bookmarks.empty": {
+    "message": "ブックマークはありません。フォルダーを追加するか、ここにドロップしてください。"
+  },
+  "bookmarks.intro": {
+    "message": "このコンピューターのフォルダーを「場所」と同じ順に表示します。ドラッグで並べ替え、フォルダーをここにドロップすると追加できます。"
+  },
+  "bookmarks.move_down": {
+    "message": "下へ移動"
+  },
+  "bookmarks.move_up": {
+    "message": "上へ移動"
+  },
+  "bookmarks.only_local": {
+    "message": "ブックマークできるのは、このコンピューターのフォルダーだけです。"
+  },
+  "bookmarks.remove": {
+    "message": "削除"
+  },
+  "bookmarks.remove_from": {
+    "message": "ブックマークから削除"
+  },
+  "bookmarks.rename": {
+    "message": "名前の変更..."
+  },
+  "bookmarks.rename_label": {
+    "message": "名前（空欄ならフォルダー名）："
+  },
+  "bookmarks.rename_title": {
+    "message": "ブックマークの名前の変更"
+  },
+  "bookmarks.sort": {
+    "message": "名前順に並べ替え"
+  },
+  "bookmarks.title": {
+    "message": "ブックマーク"
+  },
+  "button_bar.copy": {
+    "message": "コピー"
+  },
+  "button_bar.delete": {
+    "message": "削除"
+  },
+  "button_bar.edit": {
+    "message": "編集"
+  },
+  "button_bar.move": {
+    "message": "移動"
+  },
+  "button_bar.new_folder": {
+    "message": "新規フォルダー"
+  },
+  "button_bar.quit": {
+    "message": "終了"
+  },
+  "button_bar.view": {
+    "message": "表示"
+  },
+  "checksum.create.title": {
+    "message": "{name} を作成"
+  },
+  "checksum.create.title_separate": {
+    "message": "{method} のチェックサムファイルを作成"
+  },
+  "checksum.dialog_title": {
+    "message": "チェックサムファイルの作成"
+  },
+  "checksum.save_as": {
+    "message": "チェックサムファイルの保存先："
+  },
+  "checksum.separate": {
+    "message": "代わりにファイルごとにチェックサムファイルを作成"
+  },
+  "checksum.verify.all_ok": {
+    "message": "{count, plural, other {# 個のファイルすべて OK}}"
+  },
+  "checksum.verify.choose": {
+    "message": "チェックサムファイル（.sfv、.md5、.sha1、.sha256、.sha512）を選択してください。"
+  },
+  "checksum.verify.missing_file": {
+    "message": "見つかりません：{name}"
+  },
+  "checksum.verify.result": {
+    "message": "{ok, plural, other {OK # 件}}、{wrong, plural, other {不一致 # 件}}、{missing, plural, other {見つからない # 件}}"
+  },
+  "checksum.verify.title_many": {
+    "message": "{count, plural, other {# 個のチェックサムファイル}}を検証"
+  },
+  "checksum.verify.title_one": {
+    "message": "{name} を検証"
+  },
+  "checksum.verify.wrong_file": {
+    "message": "不一致：{name}"
+  },
+  "command.about": {
+    "message": "Spark Commander について"
+  },
+  "command.activity_log": {
+    "message": "アクティビティログ..."
+  },
+  "command.all_files": {
+    "message": "すべてのファイル"
+  },
+  "command.all_folder_sizes": {
+    "message": "すべてのフォルダーのサイズを計算"
+  },
+  "command.all_with_extension": {
+    "message": "*.*"
+  },
+  "command.associate_with": {
+    "message": "プログラムの関連付け..."
+  },
+  "command.bookmark_folder": {
+    "message": "このフォルダーをブックマーク"
+  },
+  "command.bookmarks": {
+    "message": "ブックマーク"
+  },
+  "command.branch_view": {
+    "message": "ブランチ表示（サブフォルダーを含む）"
+  },
+  "command.branch_view_selected": {
+    "message": "選択したフォルダーのブランチ表示"
+  },
+  "command.brief": {
+    "message": "簡易表示"
+  },
+  "command.calculate_occupied_space": {
+    "message": "使用領域の計算..."
+  },
+  "command.change_attributes": {
+    "message": "属性の変更..."
+  },
+  "command.close_all_tabs": {
+    "message": "すべてのタブを閉じる"
+  },
+  "command.close_duplicate_tabs": {
+    "message": "重複したタブを閉じる"
+  },
+  "command.close_tab": {
+    "message": "タブを閉じる"
+  },
+  "command.combine_files": {
+    "message": "ファイルの結合..."
+  },
+  "command.compare_by_content": {
+    "message": "内容で比較..."
+  },
+  "command.compare_directories": {
+    "message": "新しいファイルを選択"
+  },
+  "command.copy": {
+    "message": "コピー..."
+  },
+  "command.copy_names_to_clipboard": {
+    "message": "選択した名前をクリップボードにコピー"
+  },
+  "command.copy_names_with_path_to_clipboard": {
+    "message": "パス付きの名前をクリップボードにコピー"
+  },
+  "command.copy_to_clipboard": {
+    "message": "ファイルをコピー"
+  },
+  "command.copy_with_all_details": {
+    "message": "すべての詳細付きでクリップボードにコピー"
+  },
+  "command.copy_with_path_and_details": {
+    "message": "パスと詳細付きでクリップボードにコピー"
+  },
+  "command.create_checksum_files": {
+    "message": "チェックサムファイルの作成 (CRC32、MD5、SHA1、SHA256、SHA512)..."
+  },
+  "command.create_link": {
+    "message": "リンクの作成..."
+  },
+  "command.custom_filter": {
+    "message": "カスタム..."
+  },
+  "command.cut_to_clipboard": {
+    "message": "ファイルを切り取り"
+  },
+  "command.delete": {
+    "message": "削除"
+  },
+  "command.delete_permanently": {
+    "message": "完全に削除"
+  },
+  "command.disconnect": {
+    "message": "サーバーから切断"
+  },
+  "command.download_link": {
+    "message": "リンクからダウンロード..."
+  },
+  "command.duplicate_tab": {
+    "message": "新しいタブ"
+  },
+  "command.duplicate_workspace": {
+    "message": "ワークスペースの複製..."
+  },
+  "command.edit": {
+    "message": "編集"
+  },
+  "command.edit_externally": {
+    "message": "外部エディターで編集"
+  },
+  "command.folder_history": {
+    "message": "フォルダーの履歴..."
+  },
+  "command.full": {
+    "message": "詳細表示"
+  },
+  "command.go_back": {
+    "message": "戻る"
+  },
+  "command.go_forward": {
+    "message": "進む"
+  },
+  "command.go_home": {
+    "message": "ホーム"
+  },
+  "command.go_to_root": {
+    "message": "ルートフォルダー"
+  },
+  "command.hidden_files": {
+    "message": "隠しファイル"
+  },
+  "command.internal_associations": {
+    "message": "内部関連付け（Spark Commander のみ）..."
+  },
+  "command.invert_selection": {
+    "message": "選択の切り替え"
+  },
+  "command.left_drives": {
+    "message": "ドライブ（左パネル）"
+  },
+  "command.list_tabs": {
+    "message": "タブの一覧"
+  },
+  "command.load_selection_from_file": {
+    "message": "ファイルから選択を読み込む"
+  },
+  "command.manage_bookmarks": {
+    "message": "ブックマークの管理..."
+  },
+  "command.manage_tools": {
+    "message": "ツールの管理..."
+  },
+  "command.manage_workspaces": {
+    "message": "ワークスペースの管理..."
+  },
+  "command.mark_in_place": {
+    "message": "その場で選択/選択解除（フォルダーはサイズを計算）"
+  },
+  "command.mark_newer_hide_same": {
+    "message": "新しいファイルを選択し、同じファイルを非表示"
+  },
+  "command.move": {
+    "message": "移動..."
+  },
+  "command.multi_rename_tool": {
+    "message": "一括名前変更ツール..."
+  },
+  "command.name_to_command_line": {
+    "message": "名前をコマンドラインへ"
+  },
+  "command.new_folder": {
+    "message": "新しいフォルダー..."
+  },
+  "command.new_terminal": {
+    "message": "新しいターミナルタブ"
+  },
+  "command.new_text_file": {
+    "message": "新しいファイル..."
+  },
+  "command.new_workspace": {
+    "message": "新しいワークスペース..."
+  },
+  "command.next_tab": {
+    "message": "次のタブ"
+  },
+  "command.only_selected_files": {
+    "message": "選択したファイルのみ"
+  },
+  "command.open_in_left_panel": {
+    "message": "左パネルに表示"
+  },
+  "command.open_in_new_tab": {
+    "message": "新しいタブでフォルダーを開く"
+  },
+  "command.open_in_other_new_tab": {
+    "message": "反対側のパネルの新しいタブでフォルダーを開く"
+  },
+  "command.open_in_right_panel": {
+    "message": "右パネルに表示"
+  },
+  "command.open_terminal": {
+    "message": "ここでターミナルを開く"
+  },
+  "command.operation_queue": {
+    "message": "操作キュー..."
+  },
+  "command.pack": {
+    "message": "圧縮..."
+  },
+  "command.paste_from_clipboard": {
+    "message": "ファイルを貼り付け"
+  },
+  "command.path_and_name_to_command_line": {
+    "message": "パスと名前をコマンドラインへ"
+  },
+  "command.path_to_command_line": {
+    "message": "パスをコマンドラインへ"
+  },
+  "command.previous_tab": {
+    "message": "前のタブ"
+  },
+  "command.programs": {
+    "message": "プログラム"
+  },
+  "command.properties": {
+    "message": "プロパティ..."
+  },
+  "command.quick_filter": {
+    "message": "クイックフィルター"
+  },
+  "command.quick_open": {
+    "message": "クイックオープン..."
+  },
+  "command.quick_view_panel": {
+    "message": "クイックビューパネル"
+  },
+  "command.quit": {
+    "message": "終了"
+  },
+  "command.redo": {
+    "message": "やり直し"
+  },
+  "command.rename_in_place": {
+    "message": "名前の変更"
+  },
+  "command.reread_source": {
+    "message": "最新の情報に更新"
+  },
+  "command.restore_selection": {
+    "message": "選択を復元"
+  },
+  "command.reversed_order": {
+    "message": "逆順"
+  },
+  "command.right_drives": {
+    "message": "ドライブ（右パネル）"
+  },
+  "command.save_selection": {
+    "message": "選択を保存"
+  },
+  "command.save_selection_to_file": {
+    "message": "選択をファイルに保存"
+  },
+  "command.search": {
+    "message": "検索..."
+  },
+  "command.search_in_separate_process": {
+    "message": "別ウィンドウで検索..."
+  },
+  "command.select_all": {
+    "message": "すべて選択"
+  },
+  "command.select_all_with_same_extension": {
+    "message": "同じ拡張子のファイルをすべて選択"
+  },
+  "command.select_group": {
+    "message": "グループを選択..."
+  },
+  "command.settings": {
+    "message": "設定..."
+  },
+  "command.shortcuts": {
+    "message": "ショートカット..."
+  },
+  "command.sidebar_connections": {
+    "message": "接続"
+  },
+  "command.sidebar_operations": {
+    "message": "操作"
+  },
+  "command.sidebar_places": {
+    "message": "場所"
+  },
+  "command.sidebar_tree": {
+    "message": "フォルダー"
+  },
+  "command.sort_by_extension": {
+    "message": "拡張子"
+  },
+  "command.sort_by_name": {
+    "message": "名前"
+  },
+  "command.sort_by_size": {
+    "message": "サイズ"
+  },
+  "command.sort_by_time": {
+    "message": "日時"
+  },
+  "command.split_file": {
+    "message": "ファイルの分割..."
+  },
+  "command.swap_panels": {
+    "message": "パネルの入れ替え"
+  },
+  "command.swap_panels_and_tabs": {
+    "message": "タブごとパネルを入れ替え"
+  },
+  "command.sync_browsing": {
+    "message": "同期ブラウズ"
+  },
+  "command.synchronize_dirs": {
+    "message": "フォルダーの同期..."
+  },
+  "command.target_equals_source": {
+    "message": "ターゲット = ソース"
+  },
+  "command.terminal_panel": {
+    "message": "ターミナル"
+  },
+  "command.test_archives": {
+    "message": "アーカイブのテスト"
+  },
+  "command.thumbnail_view": {
+    "message": "サムネイル表示"
+  },
+  "command.toggle_mark": {
+    "message": "選択/選択解除"
+  },
+  "command.toggle_sidebar": {
+    "message": "サイドバーを表示"
+  },
+  "command.undo": {
+    "message": "元に戻す"
+  },
+  "command.unpack_specific_files": {
+    "message": "指定したファイルを展開..."
+  },
+  "command.unselect_all": {
+    "message": "すべて選択解除"
+  },
+  "command.unselect_group": {
+    "message": "グループの選択解除..."
+  },
+  "command.unsorted": {
+    "message": "並べ替えなし"
+  },
+  "command.verify_checksums": {
+    "message": "チェックサムの検証（チェックサムファイルから）"
+  },
+  "command.vertical_arrangement": {
+    "message": "上下に並べる"
+  },
+  "command.view": {
+    "message": "表示"
+  },
+  "command.website": {
+    "message": "Spark Commander のウェブサイト"
+  },
+  "command.workspace1": {
+    "message": "ワークスペース 1 を開く"
+  },
+  "command.workspace2": {
+    "message": "ワークスペース 2 を開く"
+  },
+  "command.workspace3": {
+    "message": "ワークスペース 3 を開く"
+  },
+  "command.workspace4": {
+    "message": "ワークスペース 4 を開く"
+  },
+  "command.workspace5": {
+    "message": "ワークスペース 5 を開く"
+  },
+  "command.workspace6": {
+    "message": "ワークスペース 6 を開く"
+  },
+  "command.workspace7": {
+    "message": "ワークスペース 7 を開く"
+  },
+  "command.workspace8": {
+    "message": "ワークスペース 8 を開く"
+  },
+  "command.workspace9": {
+    "message": "ワークスペース 9 を開く"
+  },
+  "command_line.error.cannot_run": {
+    "message": "{program}：実行できません"
+  },
+  "command_line.error.not_found": {
+    "message": "{program}：コマンドが見つかりません"
+  },
+  "command_line.history.empty": {
+    "message": "まだコマンドを実行していません"
+  },
+  "command_line.on_server": {
+    "message": "コマンドはこのコンピューターで実行されますが、パネルはサーバーを表示しています。"
+  },
+  "command_name.all_files": {
+    "message": "すべてのファイルを表示"
+  },
+  "command_name.all_with_extension": {
+    "message": "*.* を表示"
+  },
+  "command_name.brief": {
+    "message": "簡易表示"
+  },
+  "command_name.compare_directories": {
+    "message": "フォルダーの比較：新しいファイルを選択"
+  },
+  "command_name.custom_filter": {
+    "message": "カスタムフィルター"
+  },
+  "command_name.duplicate_tab": {
+    "message": "新しいタブ（このタブの複製）"
+  },
+  "command_name.full": {
+    "message": "詳細表示"
+  },
+  "command_name.go_back": {
+    "message": "戻る"
+  },
+  "command_name.go_forward": {
+    "message": "進む"
+  },
+  "command_name.go_home": {
+    "message": "ホームへ移動"
+  },
+  "command_name.hidden_files": {
+    "message": "隠しファイルを表示"
+  },
+  "command_name.only_selected_files": {
+    "message": "選択したファイルのみ表示"
+  },
+  "command_name.programs": {
+    "message": "プログラムを表示"
+  },
+  "command_name.quick_filter": {
+    "message": "クイックフィルター"
+  },
+  "command_name.rename_in_place": {
+    "message": "その場で名前を変更"
+  },
+  "command_name.sidebar_connections": {
+    "message": "サイドバー：接続"
+  },
+  "command_name.sidebar_operations": {
+    "message": "サイドバー：操作"
+  },
+  "command_name.sidebar_places": {
+    "message": "サイドバー：場所"
+  },
+  "command_name.sidebar_tree": {
+    "message": "サイドバー：フォルダー"
+  },
+  "command_name.sort_by_extension": {
+    "message": "拡張子で並べ替え"
+  },
+  "command_name.sort_by_name": {
+    "message": "名前で並べ替え"
+  },
+  "command_name.sort_by_size": {
+    "message": "サイズで並べ替え"
+  },
+  "command_name.sort_by_time": {
+    "message": "日時で並べ替え"
+  },
+  "command_name.toggle_sidebar": {
+    "message": "サイドバーの表示/非表示"
+  },
+  "command_name.unsorted": {
+    "message": "並べ替えなし"
+  },
+  "compare.browse.prompt": {
+    "message": "比較"
+  },
+  "compare.button.compare": {
+    "message": "比較"
+  },
+  "compare.button.next": {
+    "message": "次の相違点 (N)"
+  },
+  "compare.button.previous": {
+    "message": "前の相違点 (P)"
+  },
+  "compare.need_two_files": {
+    "message": "それぞれのパネルでファイルにカーソルを置くか、2 つのファイルを選択してください。"
+  },
+  "compare.option.binary": {
+    "message": "バイナリ"
+  },
+  "compare.option.ignore_case": {
+    "message": "大文字と小文字を区別しない"
+  },
+  "compare.option.ignore_spaces": {
+    "message": "連続する空白を無視"
+  },
+  "compare.option.only_differences": {
+    "message": "相違点のみ"
+  },
+  "compare.status.bytes_differ": {
+    "message": "{place}：{count, plural, other {{grouped} バイトが異なります}}。最初の相違は {first}、サイズは {left} と {right} です。"
+  },
+  "compare.status.comparing": {
+    "message": "比較しています…"
+  },
+  "compare.status.difference_of": {
+    "message": "相違点 {at}/{count}"
+  },
+  "compare.status.differences": {
+    "message": "{count, plural, other {# 個の相違点}}"
+  },
+  "compare.status.identical": {
+    "message": "{count, plural, other {ファイルは同一です：{grouped} バイト。}}"
+  },
+  "compare.status.no_differences": {
+    "message": "相違点はありません。"
+  },
+  "compare.window.title": {
+    "message": "比較：{left} — {right}"
+  },
+  "connections.connect": {
+    "message": "接続"
+  },
+  "connections.copy_name": {
+    "message": "名前をコピー"
+  },
+  "connections.copy_path": {
+    "message": "パスをコピー"
+  },
+  "connections.delete": {
+    "message": "削除"
+  },
+  "connections.dialog.title": {
+    "message": "接続"
+  },
+  "connections.disconnect": {
+    "message": "切断"
+  },
+  "connections.duplicate": {
+    "message": "複製"
+  },
+  "connections.duplicate_name": {
+    "message": "{name}（コピー）"
+  },
+  "connections.edit": {
+    "message": "編集..."
+  },
+  "connections.empty": {
+    "message": "接続はまだありません。"
+  },
+  "connections.error.no_server": {
+    "message": "サーバーを入力してください。"
+  },
+  "connections.error.port": {
+    "message": "ポート番号ではありません：{text}"
+  },
+  "connections.field.access_key": {
+    "message": "アクセスキー"
+  },
+  "connections.field.api_key": {
+    "message": "API キー"
+  },
+  "connections.field.application_key": {
+    "message": "アプリケーションキー"
+  },
+  "connections.field.bucket": {
+    "message": "バケット/フォルダー"
+  },
+  "connections.field.container": {
+    "message": "コンテナー/フォルダー"
+  },
+  "connections.field.endpoint": {
+    "message": "エンドポイント"
+  },
+  "connections.field.key_id": {
+    "message": "キー ID"
+  },
+  "connections.field.name": {
+    "message": "名前"
+  },
+  "connections.field.password": {
+    "message": "パスワード"
+  },
+  "connections.field.port": {
+    "message": "ポート"
+  },
+  "connections.field.protocol": {
+    "message": "プロトコル"
+  },
+  "connections.field.secret_key": {
+    "message": "シークレットキー"
+  },
+  "connections.field.server": {
+    "message": "サーバー"
+  },
+  "connections.field.start_folder": {
+    "message": "開始フォルダー"
+  },
+  "connections.field.user": {
+    "message": "ユーザー"
+  },
+  "connections.folder.delete_confirm": {
+    "message": "{count, plural, other {フォルダー「{name}」と、その中の # 個の接続を削除しますか？}}"
+  },
+  "connections.folder.delete_title": {
+    "message": "フォルダーの削除"
+  },
+  "connections.folder.exists": {
+    "message": "「{name}」という名前のフォルダーはすでにあります。"
+  },
+  "connections.folder.name": {
+    "message": "名前："
+  },
+  "connections.folder.new_title": {
+    "message": "新しいフォルダー"
+  },
+  "connections.folder.rename": {
+    "message": "名前の変更..."
+  },
+  "connections.folder.rename_title": {
+    "message": "フォルダー名の変更"
+  },
+  "connections.forget_password": {
+    "message": "保存したパスワードを削除"
+  },
+  "connections.move_down": {
+    "message": "下へ移動"
+  },
+  "connections.move_to_folder": {
+    "message": "フォルダーへ移動"
+  },
+  "connections.move_up": {
+    "message": "上へ移動"
+  },
+  "connections.new": {
+    "message": "新しい接続..."
+  },
+  "connections.new_folder": {
+    "message": "新しいフォルダー..."
+  },
+  "connections.no_folder": {
+    "message": "フォルダーなし"
+  },
+  "connections.open_in_terminal": {
+    "message": "ターミナルで開く"
+  },
+  "connections.placeholder.name": {
+    "message": "一覧に表示される名前"
+  },
+  "connections.placeholder.password": {
+    "message": "設定フォルダーに暗号化して保存。空欄なら現在のものを維持"
+  },
+  "connections.placeholder.path": {
+    "message": "ログイン時のフォルダー"
+  },
+  "connections.placeholder.port": {
+    "message": "デフォルト"
+  },
+  "connections.placeholder.server": {
+    "message": "サーバー、または ~/.ssh/config のホスト"
+  },
+  "connections.placeholder.user": {
+    "message": "~/.ssh/config の設定、または匿名"
+  },
+  "connections.save_failed": {
+    "message": "接続を保存できませんでした：{err}"
+  },
+  "connections.ssh_config.read_only": {
+    "message": "読み取り専用：これらのホストは ~/.ssh/config で直接編集します"
+  },
+  "context_menu.action_failed": {
+    "message": "{name} に失敗しました：{err}"
+  },
+  "context_menu.actions": {
+    "message": "アクション"
+  },
+  "context_menu.copy": {
+    "message": "コピー"
+  },
+  "context_menu.create_new": {
+    "message": "新規作成"
+  },
+  "context_menu.cut": {
+    "message": "切り取り"
+  },
+  "context_menu.delete": {
+    "message": "削除"
+  },
+  "context_menu.edit": {
+    "message": "編集"
+  },
+  "context_menu.empty_file": {
+    "message": "空のファイル…"
+  },
+  "context_menu.move_to_trash": {
+    "message": "ごみ箱に移動"
+  },
+  "context_menu.new_file_dialog.label": {
+    "message": "新しいファイル名："
+  },
+  "context_menu.new_file_dialog.title": {
+    "message": "新しいファイル"
+  },
+  "context_menu.new_file_failed": {
+    "message": "ファイルを作成できませんでした：{err}"
+  },
+  "context_menu.new_folder": {
+    "message": "フォルダー…"
+  },
+  "context_menu.open": {
+    "message": "開く"
+  },
+  "context_menu.open_failed": {
+    "message": "開けませんでした：{err}"
+  },
+  "context_menu.open_terminal_here": {
+    "message": "ここでターミナルを開く"
+  },
+  "context_menu.open_with": {
+    "message": "プログラムから開く"
+  },
+  "context_menu.other_application": {
+    "message": "別のアプリケーション…"
+  },
+  "context_menu.pack": {
+    "message": "圧縮…"
+  },
+  "context_menu.pack_files": {
+    "message": "ファイルを圧縮"
+  },
+  "context_menu.paste": {
+    "message": "貼り付け"
+  },
+  "context_menu.properties": {
+    "message": "プロパティ"
+  },
+  "context_menu.properties_failed": {
+    "message": "プロパティ：{err}"
+  },
+  "context_menu.rename": {
+    "message": "名前の変更…"
+  },
+  "context_menu.rename_dialog.label": {
+    "message": "新しい名前："
+  },
+  "context_menu.rename_dialog.title": {
+    "message": "名前の変更"
+  },
+  "context_menu.rename_failed": {
+    "message": "名前を変更できませんでした：{err}"
+  },
+  "context_menu.shell_menu_failed": {
+    "message": "メニュー：{err}"
+  },
+  "context_menu.show_failed": {
+    "message": "表示できませんでした：{err}"
+  },
+  "context_menu.show_in_file_manager": {
+    "message": "ファイルマネージャーで表示"
+  },
+  "context_menu.terminal_failed": {
+    "message": "ターミナルを開けませんでした：{err}"
+  },
+  "context_menu.terminal_not_local": {
+    "message": "ターミナルを開けるのは、このコンピューターのフォルダーだけです。"
+  },
+  "context_menu.unpack": {
+    "message": "展開…"
+  },
+  "context_menu.view": {
+    "message": "表示"
+  },
+  "desktop.no_app_chooser": {
+    "message": "デスクトップにアプリケーションの選択機能がありません（{err}）"
+  },
+  "desktop.no_terminal": {
+    "message": "ターミナルが見つかりません"
+  },
+  "desktop.nothing_to_run": {
+    "message": "{name}：実行する内容がありません"
+  },
+  "desktop.scripts": {
+    "message": "スクリプト"
+  },
+  "devices.error.mount_failed": {
+    "message": "デバイスをマウントできませんでした"
+  },
+  "devices.error.no_folder": {
+    "message": "デバイスが共有しているフォルダーはありません"
+  },
+  "devices.error.system_only": {
+    "message": "システムだけがマウント解除できます"
+  },
+  "devices.error.unreachable": {
+    "message": "接続できません：デバイスでこのネットワーク上の KDE Connect が開いていますか？"
+  },
+  "devices.unlock.ask": {
+    "message": "{name} のパスフレーズ："
+  },
+  "devices.unlock.ask_again": {
+    "message": "パスフレーズが違います。{name} のパスフレーズ："
+  },
+  "devices.unlock.title": {
+    "message": "ロック解除"
+  },
+  "devices.volume.share_on_server": {
+    "message": "{server} の {share}"
+  },
+  "devices.volume.unnamed": {
+    "message": "{size} GB ボリューム"
+  },
+  "devices.volume.unnamed_encrypted": {
+    "message": "{size} GB 暗号化ボリューム"
+  },
+  "download.cancel": {
+    "message": "キャンセル"
+  },
+  "download.dialog_title": {
+    "message": "リンクからダウンロード"
+  },
+  "download.download": {
+    "message": "ダウンロード"
+  },
+  "download.folder_link": {
+    "message": "リンク先がフォルダーです"
+  },
+  "download.incomplete": {
+    "message": "サーバーから届いたのは {size, plural, other {# バイト}}中 {got} バイトです。もう一度ダウンロードすると続きから再開します"
+  },
+  "download.into": {
+    "message": "保存先：{folder}"
+  },
+  "download.link": {
+    "message": "リンク"
+  },
+  "download.link_placeholder": {
+    "message": "https://、http://、ftp://、ftps://"
+  },
+  "download.local_only": {
+    "message": "ダウンロード先はこのコンピューターのフォルダーです。先にパネルでフォルダーを開いてください。"
+  },
+  "download.name_placeholder": {
+    "message": "サーバーまたはリンクが示す名前"
+  },
+  "download.no_file": {
+    "message": "リンクにファイル名がありません"
+  },
+  "download.not_a_link": {
+    "message": "ダウンロードできるリンクではありません"
+  },
+  "download.problem.bad_name": {
+    "message": "フォルダーを含まないファイル名を入力してください。"
+  },
+  "download.problem.empty": {
+    "message": "リンクを貼り付けるか入力してください。"
+  },
+  "download.problem.exists": {
+    "message": "ここにはすでに {name} があります。「置き換え」で上書きしてダウンロードします。"
+  },
+  "download.problem.not_link": {
+    "message": "ダウンロードできるリンクではありません。https://、http://、ftp://、ftps:// で始まるリンクを入力してください。"
+  },
+  "download.replace": {
+    "message": "置き換え"
+  },
+  "download.save_as": {
+    "message": "ファイル名"
+  },
+  "download.saved_as": {
+    "message": "{name} として保存しました"
+  },
+  "download.title": {
+    "message": "「{name}」をダウンロード"
+  },
+  "download.title_link": {
+    "message": "{link} をダウンロード"
+  },
+  "editor.close.after_send": {
+    "message": "サーバーへの送信が終わると閉じます。"
+  },
+  "editor.close.discard": {
+    "message": "保存しない"
+  },
+  "editor.close.save": {
+    "message": "保存"
+  },
+  "editor.close.title": {
+    "message": "変更を保存しますか？"
+  },
+  "editor.close.unsaved": {
+    "message": "{name} には保存されていない変更があります。"
+  },
+  "editor.close.unsent": {
+    "message": "{name} はサーバーに保存されていません。送信に失敗しました。"
+  },
+  "editor.dialog.cancel": {
+    "message": "キャンセル"
+  },
+  "editor.edit.copy": {
+    "message": "コピー"
+  },
+  "editor.edit.cut": {
+    "message": "切り取り"
+  },
+  "editor.edit.find": {
+    "message": "検索..."
+  },
+  "editor.edit.find_next": {
+    "message": "次を検索"
+  },
+  "editor.edit.find_previous": {
+    "message": "前を検索"
+  },
+  "editor.edit.go_to_line": {
+    "message": "行へ移動..."
+  },
+  "editor.edit.paste": {
+    "message": "貼り付け"
+  },
+  "editor.edit.redo": {
+    "message": "やり直し"
+  },
+  "editor.edit.replace": {
+    "message": "置換..."
+  },
+  "editor.edit.undo": {
+    "message": "元に戻す"
+  },
+  "editor.external.not_set": {
+    "message": "外部エディターが設定されていません（「設定」の「編集/表示」）"
+  },
+  "editor.file.close": {
+    "message": "閉じる"
+  },
+  "editor.file.reload": {
+    "message": "再読み込み"
+  },
+  "editor.file.save": {
+    "message": "保存"
+  },
+  "editor.file.save_as": {
+    "message": "名前を付けて保存..."
+  },
+  "editor.find.close": {
+    "message": "閉じる (Escape)"
+  },
+  "editor.find.count": {
+    "message": "{current}/{total}"
+  },
+  "editor.find.in_selection": {
+    "message": "選択範囲を検索 (Alt+L)"
+  },
+  "editor.find.match_case": {
+    "message": "大文字と小文字を区別する (Alt+C)"
+  },
+  "editor.find.next": {
+    "message": "次の一致項目 (Enter)"
+  },
+  "editor.find.no_results": {
+    "message": "結果なし"
+  },
+  "editor.find.placeholder": {
+    "message": "検索"
+  },
+  "editor.find.preserve_case": {
+    "message": "大文字と小文字を保持する (Alt+P)"
+  },
+  "editor.find.previous": {
+    "message": "前の一致項目 (Shift+Enter)"
+  },
+  "editor.find.regex": {
+    "message": "正規表現を使用する (Alt+R)"
+  },
+  "editor.find.replace": {
+    "message": "置換 (Ctrl+Shift+1)"
+  },
+  "editor.find.replace_all": {
+    "message": "すべて置換 (Ctrl+Alt+Enter)"
+  },
+  "editor.find.replace_placeholder": {
+    "message": "置換"
+  },
+  "editor.find.toggle_replace": {
+    "message": "置換の切り替え"
+  },
+  "editor.find.whole_word": {
+    "message": "単語単位で検索する (Alt+W)"
+  },
+  "editor.go_to_line.label": {
+    "message": "行、または 行:列"
+  },
+  "editor.go_to_line.title": {
+    "message": "行へ移動"
+  },
+  "editor.language.by_file_name": {
+    "message": "ファイル名から判定"
+  },
+  "editor.language.plain_text": {
+    "message": "プレーンテキスト"
+  },
+  "editor.menu.edit": {
+    "message": "編集"
+  },
+  "editor.menu.file": {
+    "message": "ファイル"
+  },
+  "editor.menu.language": {
+    "message": "言語"
+  },
+  "editor.menu.selection": {
+    "message": "選択"
+  },
+  "editor.menu.view": {
+    "message": "表示"
+  },
+  "editor.open.too_large": {
+    "message": "内蔵エディターの上限 {limit_mb} MB を超えています（「設定」の「編集/表示」）。Ctrl+Shift+F4 で外部エディターで編集できます"
+  },
+  "editor.reload.button": {
+    "message": "再読み込み"
+  },
+  "editor.reload.failed": {
+    "message": "再読み込みできませんでした：{err}"
+  },
+  "editor.reload.text": {
+    "message": "保存されていない変更は失われます。"
+  },
+  "editor.reload.title": {
+    "message": "ファイルを再読み込みしますか？"
+  },
+  "editor.reload.unfit": {
+    "message": "再読み込みしませんでした：{why, select, binary {バイナリファイルです} other {UTF-8 テキストではありません}}。"
+  },
+  "editor.save.admin": {
+    "message": "「{name}」の保存"
+  },
+  "editor.save.failed": {
+    "message": "{path} を保存できませんでした：{err}"
+  },
+  "editor.save_anyway.button": {
+    "message": "保存する"
+  },
+  "editor.save_anyway.text": {
+    "message": "このファイルはテキストではありませんでした。保存すると表示どおりに書き込まれるため、テキスト以外の部分は元に戻せなくなります。"
+  },
+  "editor.save_anyway.title": {
+    "message": "テキストとして保存しますか？"
+  },
+  "editor.selection.add_cursor_above": {
+    "message": "上にカーソルを追加"
+  },
+  "editor.selection.add_cursor_below": {
+    "message": "下にカーソルを追加"
+  },
+  "editor.selection.delete_lines": {
+    "message": "行の削除"
+  },
+  "editor.selection.duplicate_lines": {
+    "message": "行の複製"
+  },
+  "editor.selection.indent": {
+    "message": "インデント"
+  },
+  "editor.selection.lowercase": {
+    "message": "小文字に変換"
+  },
+  "editor.selection.move_lines_down": {
+    "message": "行を下へ移動"
+  },
+  "editor.selection.move_lines_up": {
+    "message": "行を上へ移動"
+  },
+  "editor.selection.outdent": {
+    "message": "インデント解除"
+  },
+  "editor.selection.select_all": {
+    "message": "すべて選択"
+  },
+  "editor.selection.select_all_occurrences": {
+    "message": "すべての出現箇所を選択"
+  },
+  "editor.selection.sort_lines_ascending": {
+    "message": "行を昇順に並べ替え"
+  },
+  "editor.selection.sort_lines_descending": {
+    "message": "行を降順に並べ替え"
+  },
+  "editor.selection.title_case": {
+    "message": "Title Case に変換"
+  },
+  "editor.selection.toggle_line_comment": {
+    "message": "行コメントの切り替え"
+  },
+  "editor.selection.trim_trailing_whitespace": {
+    "message": "末尾の空白を削除"
+  },
+  "editor.selection.uppercase": {
+    "message": "大文字に変換"
+  },
+  "editor.send.failed": {
+    "message": "サーバーに保存し直せませんでした：{err}。もう一度保存すると再試行します。"
+  },
+  "editor.status.modified": {
+    "message": "変更あり"
+  },
+  "editor.status.position": {
+    "message": "行 {line}、列 {column}"
+  },
+  "editor.status.position_selected": {
+    "message": "行 {line}、列 {column}（{count, plural, other {# 文字選択}}）"
+  },
+  "editor.status.sending": {
+    "message": "サーバーに保存中"
+  },
+  "editor.status.spaces": {
+    "message": "スペース：{size}"
+  },
+  "editor.status.tab_size": {
+    "message": "タブのサイズ：{size}"
+  },
+  "editor.status.unsent": {
+    "message": "サーバー未保存"
+  },
+  "editor.terminal.not_found": {
+    "message": "エディターが見つかりません。$EDITOR を設定してください"
+  },
+  "editor.title": {
+    "message": "{path} — エディター"
+  },
+  "editor.unfit.open_anyway": {
+    "message": "それでも開く"
+  },
+  "editor.unfit.text": {
+    "message": "{why, select, binary {バイナリファイルである} other {UTF-8 テキストではない}}ため、このファイルはエディターに表示されません。"
+  },
+  "editor.view.folding": {
+    "message": "折りたたみ"
+  },
+  "editor.view.indent_guides": {
+    "message": "インデントガイド"
+  },
+  "editor.view.indent_with_tabs": {
+    "message": "タブでインデント"
+  },
+  "editor.view.line_numbers": {
+    "message": "行番号"
+  },
+  "editor.view.minimap": {
+    "message": "ミニマップ"
+  },
+  "editor.view.tab_width": {
+    "message": "タブ幅 {width}"
+  },
+  "editor.view.unfold_all": {
+    "message": "すべて展開"
+  },
+  "editor.view.whitespace": {
+    "message": "空白文字"
+  },
+  "editor.view.word_wrap": {
+    "message": "折り返し"
+  },
+  "elevate.failed": {
+    "message": "管理者として実行しても失敗しました（{code}）"
+  },
+  "elevate.no_consent": {
+    "message": "管理者の同意が得られませんでした"
+  },
+  "elevate.no_password": {
+    "message": "パスワードが入力されませんでした"
+  },
+  "elevate.not_authorised": {
+    "message": "権限がありません"
+  },
+  "elevate.percent_name": {
+    "message": "{path}：% を含む名前は管理者として処理できません。先に名前を変更してください"
+  },
+  "elevate.pkexec_missing": {
+    "message": "pkexec (polkit) がインストールされていません"
+  },
+  "file_menu.change_tags_failed": {
+    "message": "タグを変更できませんでした：{err}"
+  },
+  "file_menu.compress": {
+    "message": "{count, plural, =1 {「{name}」を圧縮…} other {# 項目を圧縮…}}"
+  },
+  "file_menu.copy": {
+    "message": "{count, plural, =1 {「{name}」をコピー} other {# 項目をコピー}}"
+  },
+  "file_menu.copy_path": {
+    "message": "パス名をコピー"
+  },
+  "file_menu.delete": {
+    "message": "削除"
+  },
+  "file_menu.duplicate": {
+    "message": "複製"
+  },
+  "file_menu.duplicate_failed": {
+    "message": "複製できませんでした：{err}"
+  },
+  "file_menu.edit_tags": {
+    "message": "タグ…"
+  },
+  "file_menu.get_info": {
+    "message": "情報を見る"
+  },
+  "file_menu.make_alias": {
+    "message": "エイリアスを作成"
+  },
+  "file_menu.make_alias_failed": {
+    "message": "エイリアスを作成できませんでした：{err}"
+  },
+  "file_menu.move_to_trash": {
+    "message": "ごみ箱に入れる"
+  },
+  "file_menu.new_folder": {
+    "message": "新規フォルダー"
+  },
+  "file_menu.open": {
+    "message": "開く"
+  },
+  "file_menu.open_failed": {
+    "message": "開けませんでした：{err}"
+  },
+  "file_menu.open_with": {
+    "message": "このアプリケーションで開く"
+  },
+  "file_menu.open_with_default": {
+    "message": "{app}（デフォルト）"
+  },
+  "file_menu.paste": {
+    "message": "ペースト"
+  },
+  "file_menu.quick_look": {
+    "message": "{count, plural, =1 {「{name}」をクイックルック} other {# 項目をクイックルック}}"
+  },
+  "file_menu.quick_look_failed": {
+    "message": "クイックルック：{err}"
+  },
+  "file_menu.rename": {
+    "message": "名前を変更…"
+  },
+  "file_menu.reveal_failed": {
+    "message": "Finder で表示できませんでした：{err}"
+  },
+  "file_menu.reveal_in_finder": {
+    "message": "Finder に表示"
+  },
+  "file_menu.show_package_contents": {
+    "message": "パッケージの内容を表示"
+  },
+  "file_menu.tag_dot.add": {
+    "message": "タグ「{name}」を追加"
+  },
+  "file_menu.tag_dot.remove": {
+    "message": "タグ「{name}」を削除"
+  },
+  "file_menu.tags_popover.show_all": {
+    "message": "すべてを表示…"
+  },
+  "file_menu.tags_popover.title": {
+    "message": "{count, plural, =1 {「{name}」にタグを割り当て} other {# 項目にタグを割り当て}}"
+  },
+  "find.backwards": {
+    "message": "後方へ検索"
+  },
+  "find.cancel": {
+    "message": "キャンセル"
+  },
+  "find.case_sensitive": {
+    "message": "大文字と小文字を区別"
+  },
+  "find.hex": {
+    "message": "16 進数の文字列を検索"
+  },
+  "find.ok": {
+    "message": "OK"
+  },
+  "find.regex": {
+    "message": "正規表現"
+  },
+  "find.text.label": {
+    "message": "検索する文字列"
+  },
+  "find.title": {
+    "message": "検索"
+  },
+  "find.whole_words": {
+    "message": "単語単位で検索"
+  },
+  "keys.apply": {
+    "message": "適用"
+  },
+  "keys.cancel": {
+    "message": "キャンセル"
+  },
+  "keys.clear.tooltip": {
+    "message": "キーなし"
+  },
+  "keys.column.alternate": {
+    "message": "代替キー"
+  },
+  "keys.column.command": {
+    "message": "コマンド"
+  },
+  "keys.column.shortcut": {
+    "message": "ショートカット"
+  },
+  "keys.custom": {
+    "message": "カスタム"
+  },
+  "keys.delete_set": {
+    "message": "削除"
+  },
+  "keys.note.custom_replaced": {
+    "message": "独自のキー設定は {name} のキーに置き換えられました。「名前を付けて保存」で残せます。"
+  },
+  "keys.note.deleted": {
+    "message": "{name} を削除します。「OK」または「適用」で確定します。"
+  },
+  "keys.note.moved": {
+    "message": "{key} は {other} ではなく {command} に割り当てられました。"
+  },
+  "keys.note.name_reserved": {
+    "message": "「{name}」はプリセットの名前です。別の名前を選んでください。"
+  },
+  "keys.note.press_new_key": {
+    "message": "新しいキーを押してください。Esc で元のままにします。"
+  },
+  "keys.note.saved": {
+    "message": "{name} として保存しました。「OK」または「適用」で確定します。"
+  },
+  "keys.note.set": {
+    "message": "{key} は {command} に割り当てられました。"
+  },
+  "keys.note.taken_by_system": {
+    "message": "{key} は {by} に使われているため、Spark Commander には届きません。"
+  },
+  "keys.ok": {
+    "message": "OK"
+  },
+  "keys.press_key": {
+    "message": "キーを押してください…"
+  },
+  "keys.reserved.application_launcher": {
+    "message": "{system}：アプリケーションランチャー"
+  },
+  "keys.reserved.close_window": {
+    "message": "{system}：ウィンドウを閉じる"
+  },
+  "keys.reserved.close_window_or_tab": {
+    "message": "{system}：ウィンドウまたはタブを閉じる"
+  },
+  "keys.reserved.dock": {
+    "message": "{system}：Dock"
+  },
+  "keys.reserved.floating_window": {
+    "message": "{system}：フローティングウィンドウ"
+  },
+  "keys.reserved.force_quit": {
+    "message": "{system}：強制終了"
+  },
+  "keys.reserved.hide_program": {
+    "message": "{system}：プログラムを隠す"
+  },
+  "keys.reserved.input_source": {
+    "message": "{system}：入力ソース"
+  },
+  "keys.reserved.keyboard_access": {
+    "message": "{system}：キーボードアクセス"
+  },
+  "keys.reserved.keyboard_navigation": {
+    "message": "{system}：キーボードナビゲーション"
+  },
+  "keys.reserved.krunner": {
+    "message": "{system}：KRunner"
+  },
+  "keys.reserved.lock_screen": {
+    "message": "{system}：画面のロック"
+  },
+  "keys.reserved.log_out": {
+    "message": "{system}：ログアウト"
+  },
+  "keys.reserved.maximize_window": {
+    "message": "{system}：ウィンドウを最大化"
+  },
+  "keys.reserved.menu_bar": {
+    "message": "{system}：メニューバー"
+  },
+  "keys.reserved.minimize": {
+    "message": "{system}：最小化"
+  },
+  "keys.reserved.mission_control": {
+    "message": "{system}：Mission Control"
+  },
+  "keys.reserved.move_window": {
+    "message": "{system}：ウィンドウを移動"
+  },
+  "keys.reserved.next_window": {
+    "message": "{system}：次のウィンドウ"
+  },
+  "keys.reserved.present_windows": {
+    "message": "{system}：ウィンドウの一覧表示"
+  },
+  "keys.reserved.present_windows_all": {
+    "message": "{system}：ウィンドウの一覧表示（すべてのデスクトップ）"
+  },
+  "keys.reserved.present_windows_class": {
+    "message": "{system}：ウィンドウの一覧表示（ウィンドウクラス）"
+  },
+  "keys.reserved.program_windows": {
+    "message": "{system}：プログラムのウィンドウ"
+  },
+  "keys.reserved.quit": {
+    "message": "{system}：終了"
+  },
+  "keys.reserved.resize_window": {
+    "message": "{system}：ウィンドウのサイズ変更"
+  },
+  "keys.reserved.restore_window": {
+    "message": "{system}：ウィンドウを元のサイズに戻す"
+  },
+  "keys.reserved.run_command": {
+    "message": "{system}：コマンドを実行"
+  },
+  "keys.reserved.screenshot": {
+    "message": "{system}：スクリーンショット"
+  },
+  "keys.reserved.security_screen": {
+    "message": "{system}：セキュリティ画面"
+  },
+  "keys.reserved.show_desktop": {
+    "message": "{system}：デスクトップを表示"
+  },
+  "keys.reserved.space_left": {
+    "message": "{system}：左の操作スペース"
+  },
+  "keys.reserved.space_right": {
+    "message": "{system}：右の操作スペース"
+  },
+  "keys.reserved.spotlight": {
+    "message": "{system}：Spotlight"
+  },
+  "keys.reserved.start_menu": {
+    "message": "{system}：スタートメニュー"
+  },
+  "keys.reserved.status_menus": {
+    "message": "{system}：ステータスメニュー"
+  },
+  "keys.reserved.suspend_compositing": {
+    "message": "{system}：コンポジットを一時停止"
+  },
+  "keys.reserved.switch_program_windows": {
+    "message": "{system}：プログラムのウィンドウを切り替え"
+  },
+  "keys.reserved.switch_programs": {
+    "message": "{system}：プログラムを切り替え"
+  },
+  "keys.reserved.switch_system_controls": {
+    "message": "{system}：システムコントロールを切り替え"
+  },
+  "keys.reserved.switch_to_desktop": {
+    "message": "{system}：デスクトップ {number} に切り替え"
+  },
+  "keys.reserved.switch_windows": {
+    "message": "{system}：ウィンドウを切り替え"
+  },
+  "keys.reserved.system_monitor": {
+    "message": "{system}：システムモニター"
+  },
+  "keys.reserved.task_manager": {
+    "message": "{system}：タスクマネージャー"
+  },
+  "keys.reserved.text_console": {
+    "message": "{system}：テキストコンソールに切り替え"
+  },
+  "keys.reserved.toolbar": {
+    "message": "{system}：ツールバー"
+  },
+  "keys.reserved.window_menu": {
+    "message": "{system}：ウィンドウメニュー"
+  },
+  "keys.reserved.workspace_down": {
+    "message": "{system}：下のワークスペース"
+  },
+  "keys.reserved.workspace_left": {
+    "message": "{system}：左のワークスペース"
+  },
+  "keys.reserved.workspace_right": {
+    "message": "{system}：右のワークスペース"
+  },
+  "keys.reserved.workspace_up": {
+    "message": "{system}：上のワークスペース"
+  },
+  "keys.reset.tooltip": {
+    "message": "{preset} のキーに戻す"
+  },
+  "keys.reset_all": {
+    "message": "すべてリセット"
+  },
+  "keys.save_as.button": {
+    "message": "名前を付けて保存…"
+  },
+  "keys.save_as.default_name": {
+    "message": "マイキー設定"
+  },
+  "keys.save_as.label": {
+    "message": "名前："
+  },
+  "keys.save_as.title": {
+    "message": "ショートカットの保存"
+  },
+  "keys.search.placeholder": {
+    "message": "コマンドまたはキーを検索"
+  },
+  "keys.set_label": {
+    "message": "キー設定："
+  },
+  "keys.taken_by.tooltip": {
+    "message": "{by} が使用中"
+  },
+  "keys.title": {
+    "message": "ショートカット"
+  },
+  "main.admin.button": {
+    "message": "管理者として実行"
+  },
+  "main.admin.deleting": {
+    "message": "{count, plural, other {# 個の項目}}の削除"
+  },
+  "main.admin.failed": {
+    "message": "管理者として実行できませんでした：{err}"
+  },
+  "main.admin.making": {
+    "message": "「{name}」の作成"
+  },
+  "main.admin.offer": {
+    "message": "{what}：アクセスが拒否されました。管理者として実行すると、システムがパスワードを求めます。"
+  },
+  "main.admin.offer_delete": {
+    "message": "{what}：アクセスが拒否されました。管理者として実行すると、システムがパスワードを求めます。この方法で削除したものは元に戻せません。"
+  },
+  "main.admin.title": {
+    "message": "アクセス拒否"
+  },
+  "main.delete.from_archive": {
+    "message": "{kind, select, folder {フォルダー「{name}」を {archive} から削除しますか？この操作は元に戻せません。} file {ファイル「{name}」を {archive} から削除しますか？この操作は元に戻せません。} other {{count, plural, other {# 個の項目}}を {archive} から削除しますか？この操作は元に戻せません。}}"
+  },
+  "main.delete.on_server": {
+    "message": "{kind, select, folder {{server} 上のフォルダー「{name}」を削除しますか？この操作は元に戻せません。} file {{server} 上のファイル「{name}」を削除しますか？この操作は元に戻せません。} other {{server} 上の {count, plural, other {# 個の項目}}を削除しますか？この操作は元に戻せません。}}"
+  },
+  "main.delete.permanently": {
+    "message": "{kind, select, folder {フォルダー「{name}」を完全に削除しますか？この操作は元に戻せません。} file {ファイル「{name}」を完全に削除しますか？この操作は元に戻せません。} other {{count, plural, other {# 個の項目}}を完全に削除しますか？この操作は元に戻せません。}}"
+  },
+  "main.delete.title": {
+    "message": "削除"
+  },
+  "main.delete.title_permanently": {
+    "message": "完全に削除"
+  },
+  "main.delete.to_trash": {
+    "message": "{kind, select, folder {フォルダー「{name}」をごみ箱に移動しますか？} file {ファイル「{name}」をごみ箱に移動しますか？} other {{count, plural, other {# 個の項目}}をごみ箱に移動しますか？}}"
+  },
+  "main.download.edit": {
+    "message": "編集のため {file} をダウンロード"
+  },
+  "main.download.view": {
+    "message": "表示のため {file} をダウンロード"
+  },
+  "main.error.make_folder": {
+    "message": "フォルダーを作成できませんでした：{err}"
+  },
+  "main.error.read_settings": {
+    "message": "設定を読み込めませんでした：{err}"
+  },
+  "main.error.read_tabs": {
+    "message": "開いていたタブを読み込めませんでした：{err}"
+  },
+  "main.error.read_workspaces": {
+    "message": "ワークスペースを読み込めませんでした：{err}"
+  },
+  "main.error.save_settings": {
+    "message": "設定を保存できませんでした：{err}"
+  },
+  "main.folder_tree.home": {
+    "message": "ホーム"
+  },
+  "main.go.no_such_folder": {
+    "message": "{path}：このコンピューターにそのフォルダーはありません"
+  },
+  "main.new_folder.label": {
+    "message": "新しいフォルダー（ディレクトリ）："
+  },
+  "main.new_folder.title": {
+    "message": "新しいフォルダー"
+  },
+  "main.sync_browsing.lost": {
+    "message": "{err}。同期ブラウズをオフにしました。"
+  },
+  "main.tool.needs_file": {
+    "message": "カーソルがファイル上にありません。%N、%O、%E にはファイルが必要です。"
+  },
+  "main.tool.needs_local_folder": {
+    "message": "反対側のパネルはサーバーかアーカイブを表示しています。%T にはこのコンピューターのフォルダーが必要です。"
+  },
+  "main.undo.done": {
+    "message": "{way, select, redo {やり直しました：{title}} other {元に戻しました：{title}}}"
+  },
+  "main.undo.failed": {
+    "message": "{way, select, redo {「{title}」をやり直せませんでした：{err}} other {「{title}」を元に戻せませんでした：{err}}}"
+  },
+  "main.undo.nothing": {
+    "message": "{way, select, redo {やり直す操作はありません。} other {元に戻す操作はありません。}}"
+  },
+  "main.undo.queued": {
+    "message": "{way, select, redo {やり直しをキューに追加しました：{title}} other {元に戻す操作をキューに追加しました：{title}}}"
+  },
+  "mark.compare.marked": {
+    "message": "{count, plural, other {# 個のファイルを選択しました：反対側より新しいか、反対側にないファイルです。}}"
+  },
+  "mark.compare.same": {
+    "message": "両方のフォルダーのファイルは同じです。"
+  },
+  "mark.load_selection.label": {
+    "message": "ファイルに記載された名前を選択："
+  },
+  "mark.load_selection.title": {
+    "message": "選択の読み込み"
+  },
+  "mark.save_selection.label": {
+    "message": "選択した名前をファイルに保存："
+  },
+  "mark.save_selection.title": {
+    "message": "選択の保存"
+  },
+  "mark.select_group.label": {
+    "message": "選択するファイル（*.txt *.md、フォルダーのマスクは / で終わる）："
+  },
+  "mark.select_group.title": {
+    "message": "グループの選択"
+  },
+  "mark.selection_file.not_local": {
+    "message": "選択ファイルは、このコンピューター上のアーカイブ外に保存します。"
+  },
+  "mark.unselect_group.label": {
+    "message": "選択を解除するファイル（*.txt *.md、フォルダーのマスクは / で終わる）："
+  },
+  "mark.unselect_group.title": {
+    "message": "グループの選択解除"
+  },
+  "media.cannot_play": {
+    "message": "再生できません：{err}"
+  },
+  "media.cannot_play_as_text": {
+    "message": "再生できません：{err}。1 キーでテキストとして表示します。"
+  },
+  "media.continuing": {
+    "message": "{time} から再開"
+  },
+  "media.error.missing": {
+    "message": "libmpv がありません：「設定 > アドオン」でダウンロードできます（ソースからビルドする場合：vendor/mpv/{script}）"
+  },
+  "media.error.not_started": {
+    "message": "libmpv を起動できませんでした"
+  },
+  "media.error.too_long": {
+    "message": "{path}：mpv の処理に時間がかかりすぎました"
+  },
+  "media.error.unsupported_system": {
+    "message": "動画は現在 Linux、macOS、Windows でのみ再生できます"
+  },
+  "menu.archive": {
+    "message": "アーカイブ"
+  },
+  "menu.associations": {
+    "message": "関連付け"
+  },
+  "menu.button_bar": {
+    "message": "ボタンバー"
+  },
+  "menu.checksums": {
+    "message": "チェックサム"
+  },
+  "menu.commands": {
+    "message": "コマンド"
+  },
+  "menu.compare_directories": {
+    "message": "フォルダーの比較"
+  },
+  "menu.configuration": {
+    "message": "構成"
+  },
+  "menu.copy_names": {
+    "message": "名前のコピー"
+  },
+  "menu.files": {
+    "message": "ファイル"
+  },
+  "menu.filter": {
+    "message": "フィルター"
+  },
+  "menu.go": {
+    "message": "移動"
+  },
+  "menu.help": {
+    "message": "ヘルプ"
+  },
+  "menu.mark": {
+    "message": "選択"
+  },
+  "menu.other": {
+    "message": "その他"
+  },
+  "menu.recently_closed_tabs": {
+    "message": "最近閉じたタブ"
+  },
+  "menu.selection": {
+    "message": "選択内容"
+  },
+  "menu.show": {
+    "message": "表示"
+  },
+  "menu.sidebar": {
+    "message": "サイドバー"
+  },
+  "menu.sort": {
+    "message": "並べ替え"
+  },
+  "menu.split_and_combine": {
+    "message": "分割と結合"
+  },
+  "menu.tabs": {
+    "message": "タブ"
+  },
+  "menu.tools": {
+    "message": "ツール"
+  },
+  "menu.workspaces": {
+    "message": "ワークスペース"
+  },
+  "menus.hide_app": {
+    "message": "Spark Commander を非表示"
+  },
+  "menus.hide_others": {
+    "message": "ほかを非表示"
+  },
+  "menus.minimize": {
+    "message": "しまう"
+  },
+  "menus.quit_app": {
+    "message": "Spark Commander を終了"
+  },
+  "menus.services": {
+    "message": "サービス"
+  },
+  "menus.show_all": {
+    "message": "すべてを表示"
+  },
+  "menus.zoom": {
+    "message": "拡大/縮小"
+  },
+  "name_dialog.cancel": {
+    "message": "キャンセル"
+  },
+  "name_dialog.ok": {
+    "message": "OK"
+  },
+  "operations.clear": {
+    "message": "完了分を消去"
+  },
+  "operations.duration.seconds": {
+    "message": "{seconds} 秒"
+  },
+  "operations.empty": {
+    "message": "操作はありません。"
+  },
+  "operations.job.answer": {
+    "message": "応答待ち"
+  },
+  "operations.job.bytes": {
+    "message": "{done}/{total}"
+  },
+  "operations.job.cancel_tooltip": {
+    "message": "キャンセル"
+  },
+  "operations.job.cancelled": {
+    "message": "キャンセル済み"
+  },
+  "operations.job.counting": {
+    "message": "集計中：{count, plural, other {# 個のファイル}}"
+  },
+  "operations.job.done": {
+    "message": "完了"
+  },
+  "operations.job.done_skipped": {
+    "message": "完了、{count, plural, other {# 件スキップ}}"
+  },
+  "operations.job.failed": {
+    "message": "失敗"
+  },
+  "operations.job.files": {
+    "message": "{files}/{count, plural, other {# 個のファイル}}"
+  },
+  "operations.job.left": {
+    "message": "残り {time}"
+  },
+  "operations.job.running": {
+    "message": "実行中"
+  },
+  "operations.job.waiting": {
+    "message": "待機中"
+  },
+  "operations.menu.cancel": {
+    "message": "キャンセル"
+  },
+  "operations.menu.clear": {
+    "message": "完了分を消去"
+  },
+  "operations.menu.move_down": {
+    "message": "下へ移動"
+  },
+  "operations.menu.move_up": {
+    "message": "上へ移動"
+  },
+  "operations.settings_tooltip": {
+    "message": "操作キューの設定"
+  },
+  "operations.summary.failed": {
+    "message": "{count, plural, other {# 件失敗}}"
+  },
+  "operations.summary.running": {
+    "message": "{count, plural, other {# 件実行中}}"
+  },
+  "operations.summary.waiting": {
+    "message": "{count, plural, other {# 件待機中}}"
+  },
+  "ops.as_administrator.failed": {
+    "message": "管理者として実行できませんでした：{err}"
+  },
+  "ops.as_administrator.progress": {
+    "message": "管理者として実行中…"
+  },
+  "ops.delete.title_many": {
+    "message": "{folder} の {count, plural, other {# 個の項目}}を削除"
+  },
+  "ops.delete.title_one": {
+    "message": "「{name}」を削除"
+  },
+  "ops.delete.trash_title_many": {
+    "message": "{folder} の {count, plural, other {# 個の項目}}をごみ箱に移動"
+  },
+  "ops.delete.trash_title_one": {
+    "message": "「{name}」をごみ箱に移動"
+  },
+  "ops.error.file_in_the_way": {
+    "message": "同じ名前のファイルがあります"
+  },
+  "ops.error.into_itself": {
+    "message": "それ自体の中にはコピーできません"
+  },
+  "ops.exists_already": {
+    "message": "{name} はすでに存在します"
+  },
+  "ops.link.dialog_title": {
+    "message": "リンクの作成"
+  },
+  "ops.link.failed": {
+    "message": "リンクを作成できませんでした：{err}"
+  },
+  "ops.link.kind.hard": {
+    "message": "ハードリンク"
+  },
+  "ops.link.kind.junction": {
+    "message": "ジャンクション"
+  },
+  "ops.link.kind.shortcut": {
+    "message": "ショートカット (.lnk)"
+  },
+  "ops.link.kind.symbolic": {
+    "message": "シンボリックリンク"
+  },
+  "ops.link.label_many": {
+    "message": "{count, plural, other {# 個の項目}}へのリンクの作成先フォルダー："
+  },
+  "ops.link.label_one": {
+    "message": "「{name}」へのリンクの作成先："
+  },
+  "ops.link.making": {
+    "message": "{kind, select, symbolic {シンボリックリンク} hard {ハードリンク} junction {ジャンクション} other {ショートカット (.lnk)}}の作成"
+  },
+  "ops.link.needs_admin": {
+    "message": "シンボリックリンクの作成には管理者権限か開発者モードが必要です"
+  },
+  "ops.link.thread_failed": {
+    "message": "ショートカットのスレッドが失敗しました"
+  },
+  "ops.link.title_many": {
+    "message": "{folder} に {count, plural, other {# 個の項目}}への{kind, select, symbolic {シンボリックリンク} hard {ハードリンク} junction {ジャンクション} other {ショートカット (.lnk)}}を作成"
+  },
+  "ops.link.title_one": {
+    "message": "{folder} に「{name}」への{kind, select, symbolic {シンボリックリンク} hard {ハードリンク} junction {ジャンクション} other {ショートカット (.lnk)}}を作成"
+  },
+  "ops.link.windows_only": {
+    "message": "ジャンクションとショートカットは Windows 専用です"
+  },
+  "ops.redo.title": {
+    "message": "やり直し：{what}"
+  },
+  "ops.title.many": {
+    "message": "{count, plural, other {# 個の項目}}を {target} に{kind, select, copy {コピー} other {移動}}"
+  },
+  "ops.title.one": {
+    "message": "「{name}」を {target} に{kind, select, copy {コピー} other {移動}}"
+  },
+  "ops.undo.not_a_server": {
+    "message": "{url}：サーバーのアドレスではありません"
+  },
+  "ops.undo.not_in_trash": {
+    "message": "ファイルはもうごみ箱にありません"
+  },
+  "ops.undo.restore_title": {
+    "message": "{title}：上書きされたファイルをごみ箱から復元"
+  },
+  "ops.undo.title": {
+    "message": "元に戻す：{what}"
+  },
+  "pack.cancel": {
+    "message": "キャンセル"
+  },
+  "pack.compression": {
+    "message": "圧縮レベル："
+  },
+  "pack.dialog_title": {
+    "message": "ファイルの圧縮"
+  },
+  "pack.encrypt": {
+    "message": "パスワードで暗号化"
+  },
+  "pack.format": {
+    "message": "形式："
+  },
+  "pack.label": {
+    "message": "{count, plural, other {# 個の項目}}をアーカイブに圧縮："
+  },
+  "pack.level.fastest": {
+    "message": "最速"
+  },
+  "pack.level.maximum": {
+    "message": "最大"
+  },
+  "pack.level.normal": {
+    "message": "標準"
+  },
+  "pack.level.store": {
+    "message": "無圧縮"
+  },
+  "pack.level.ultra": {
+    "message": "超圧縮"
+  },
+  "pack.local_only": {
+    "message": "{what, select, packing {圧縮} unpacking {展開} testing {テスト} creating_checksums {チェックサムの作成} making_links {リンクの作成} verifying_checksums {チェックサムの検証} splitting {分割} combining {結合} other {この機能}}は、このコンピューター上のアーカイブ外のファイルでのみ使えます。"
+  },
+  "pack.move_files": {
+    "message": "アーカイブへ移動（圧縮したファイルを削除）"
+  },
+  "pack.needs_password": {
+    "message": "パスワードが必要です"
+  },
+  "pack.ok": {
+    "message": "OK"
+  },
+  "pack.password_missing": {
+    "message": "パスワードを入力するか、暗号化をオフにしてください。"
+  },
+  "pack.separate": {
+    "message": "選択したファイルやフォルダーごとに別のアーカイブを作成"
+  },
+  "pack.split": {
+    "message": "次のサイズで分割："
+  },
+  "pack.split_unit": {
+    "message": "MB"
+  },
+  "pack.test.broken": {
+    "message": "{broken, plural, other {{count} 個中 # 個が破損}}"
+  },
+  "pack.test.choose": {
+    "message": "テストするアーカイブを選択してください。"
+  },
+  "pack.test.ok": {
+    "message": "{count, plural, other {# 個のアーカイブは正常です}}"
+  },
+  "pack.test.title_many": {
+    "message": "{count, plural, other {# 個のアーカイブ}}をテスト"
+  },
+  "pack.test.title_one": {
+    "message": "「{name}」をテスト"
+  },
+  "pack.title.many": {
+    "message": "{count, plural, other {# 個の項目}}を {archive} に圧縮"
+  },
+  "pack.title.many_separate": {
+    "message": "{count, plural, other {# 個の項目}}を個別の {format} アーカイブに圧縮"
+  },
+  "pack.title.one": {
+    "message": "「{name}」を {archive} に圧縮"
+  },
+  "pack.title.one_separate": {
+    "message": "「{name}」を個別の {format} アーカイブに圧縮"
+  },
+  "pack.unpack.choose": {
+    "message": "展開するアーカイブを選択してください。"
+  },
+  "pack.unpack.dialog_title": {
+    "message": "ファイルの展開"
+  },
+  "pack.unpack.label": {
+    "message": "{count, plural, other {# 個のアーカイブ}}の展開先："
+  },
+  "pack.unpack.mask": {
+    "message": "対象ファイル："
+  },
+  "pack.unpack.overwrite": {
+    "message": "既存のファイルを上書き（オフなら残す）"
+  },
+  "pack.unpack.password": {
+    "message": "パスワード："
+  },
+  "pack.unpack.separate": {
+    "message": "アーカイブごとに同名のフォルダーへ展開"
+  },
+  "pack.unpack.title_many": {
+    "message": "{count, plural, other {# 個のアーカイブ}}を {target} に展開"
+  },
+  "pack.unpack.title_one": {
+    "message": "「{name}」を {target} に展開"
+  },
+  "pack.unpack.with_paths": {
+    "message": "アーカイブ内のフォルダー構成を保持"
+  },
+  "pack.volume_invalid": {
+    "message": "分割サイズは MB 単位の数値で入力してください。"
+  },
+  "pack.wrong_password": {
+    "message": "パスワードが違います"
+  },
+  "panel.admin.renaming": {
+    "message": "「{name}」への名前の変更"
+  },
+  "panel.clipboard.copied": {
+    "message": "{count, plural, other {# 個の項目をコピーしました}}。Ctrl+V で貼り付けます。"
+  },
+  "panel.clipboard.cut": {
+    "message": "{count, plural, other {# 個の項目を切り取りました}}。Ctrl+V で貼り付けます。"
+  },
+  "panel.clipboard.no_cut_in_archive": {
+    "message": "アーカイブからファイルを切り取ることはできません。Ctrl+C でコピーできます。"
+  },
+  "panel.clipboard.no_files": {
+    "message": "クリップボードにファイルがありません。"
+  },
+  "panel.clipboard.no_paste_in_archive": {
+    "message": "アーカイブへのファイルの貼り付けにはまだ対応していません。"
+  },
+  "panel.clipboard.same_folder": {
+    "message": "すでにこのフォルダーにあります。Ctrl+V で別のフォルダーに貼り付けてください。"
+  },
+  "panel.column.attr": {
+    "message": "属性"
+  },
+  "panel.column.date": {
+    "message": "日時"
+  },
+  "panel.column.ext": {
+    "message": "拡張子"
+  },
+  "panel.column.name": {
+    "message": "名前"
+  },
+  "panel.column.size": {
+    "message": "サイズ"
+  },
+  "panel.disconnect": {
+    "message": "切断"
+  },
+  "panel.drag.items": {
+    "message": "{count, plural, other {# 個の項目}}"
+  },
+  "panel.error.archive_not_updatable": {
+    "message": "{name}：7-Zip がその場で変更できるのは 7z、zip、tar アーカイブだけです"
+  },
+  "panel.error.archive_on_server": {
+    "message": "{name}：サーバー上のアーカイブはまだ変更できません"
+  },
+  "panel.error.branch_view_local": {
+    "message": "ブランチ表示は、このコンピューターのフォルダーでのみ使えます"
+  },
+  "panel.error.exists": {
+    "message": "{name} はすでに存在します"
+  },
+  "panel.error.folder_in_the_way": {
+    "message": "同じ名前のフォルダーがあります"
+  },
+  "panel.error.inside_archive": {
+    "message": "アーカイブ内ではまだできません"
+  },
+  "panel.error.make_file": {
+    "message": "ファイルを作成できませんでした：{err}"
+  },
+  "panel.error.no_name": {
+    "message": "名前が入力されていません"
+  },
+  "panel.error.not_a_name": {
+    "message": "{name}：名前として使えません"
+  },
+  "panel.error.other_drive": {
+    "message": "反対側のパネルが別のドライブに移動しました"
+  },
+  "panel.error.rename": {
+    "message": "名前を変更できませんでした：{err}"
+  },
+  "panel.filter.custom.label": {
+    "message": "ファイルの種類（例：*.txt *.md、| の後は除外）："
+  },
+  "panel.filter.custom.title": {
+    "message": "ファイルの表示"
+  },
+  "panel.filter.programs": {
+    "message": "プログラム"
+  },
+  "panel.filter.selected_files": {
+    "message": "選択したファイル"
+  },
+  "panel.found.branch_view": {
+    "message": "ブランチ表示："
+  },
+  "panel.found.search_results": {
+    "message": "検索結果："
+  },
+  "panel.new_text_file.label": {
+    "message": "ファイル名（エディターで開きます）："
+  },
+  "panel.new_text_file.title": {
+    "message": "新しいテキストファイル"
+  },
+  "panel.opening.cancel": {
+    "message": "キャンセル"
+  },
+  "panel.opening.reading": {
+    "message": "読み込み中…"
+  },
+  "panel.opening.title": {
+    "message": "アーカイブを開いています"
+  },
+  "panel.quick_filter.hint": {
+    "message": "一致しない項目を非表示。Escape ですべて表示"
+  },
+  "panel.quick_filter.label": {
+    "message": "フィルター："
+  },
+  "panel.quick_search.label": {
+    "message": "検索："
+  },
+  "panel.size.app": {
+    "message": "<APP>"
+  },
+  "panel.size.b": {
+    "message": "{size} B"
+  },
+  "panel.size.dir": {
+    "message": "<DIR>"
+  },
+  "panel.size.gb": {
+    "message": "{size} GB"
+  },
+  "panel.size.kb": {
+    "message": "{size} KB"
+  },
+  "panel.size.mb": {
+    "message": "{size} MB"
+  },
+  "panel.size.tb": {
+    "message": "{size} TB"
+  },
+  "panel.space.bytes": {
+    "message": "{count, plural, other {{size} バイト（{human}）}}"
+  },
+  "panel.space.close": {
+    "message": "閉じる"
+  },
+  "panel.space.counting": {
+    "message": "集計中…"
+  },
+  "panel.space.done": {
+    "message": "完了。"
+  },
+  "panel.space.files": {
+    "message": "ファイル："
+  },
+  "panel.space.folders": {
+    "message": "フォルダー："
+  },
+  "panel.space.in_archive": {
+    "message": "アーカイブ内では、「サイズ」列にすでにサイズが表示されています。"
+  },
+  "panel.space.title": {
+    "message": "使用領域の計算"
+  },
+  "panel.space.total": {
+    "message": "合計サイズ："
+  },
+  "panel.space.unreadable": {
+    "message": "{count, plural, other {# 個の項目を読み取れませんでした。}}"
+  },
+  "panel.status": {
+    "message": "{marked_size} k / {size} k、{marked_files} / {files, plural, other {# ファイル}}、{marked_folders} / {folders, plural, other {# フォルダー}}"
+  },
+  "panel.sync_browsing.stop": {
+    "message": "同期ブラウズ（クリックで停止）"
+  },
+  "panel.undo.rename": {
+    "message": "「{name}」を「{to}」に名前変更"
+  },
+  "passwords.about.set": {
+    "message": "マスターパスワードを設定すると、設定フォルダーをコピーした別のコンピューターでも、そこでマスターパスワードを入力すれば保存したパスワードを開けます。忘れても失われるのは保存したパスワードだけで、入力し直せば済みます。"
+  },
+  "passwords.about.unlock": {
+    "message": "設定が別のコンピューターから移されたか、このコンピューターにキーリングがありません。マスターパスワードを入力すると、ここで保存したパスワードを開けます。"
+  },
+  "passwords.cancel": {
+    "message": "キャンセル"
+  },
+  "passwords.done.set": {
+    "message": "マスターパスワードを設定しました。"
+  },
+  "passwords.done.unlocked": {
+    "message": "保存したパスワードを開きました。"
+  },
+  "passwords.error.locked": {
+    "message": "保存したパスワードはロックされています。マスターパスワードでロックを解除してください（構成 › 設定 › パスワード）"
+  },
+  "passwords.error.no_master": {
+    "message": "マスターパスワードが設定されていません"
+  },
+  "passwords.error.no_random": {
+    "message": "乱数を取得できません"
+  },
+  "passwords.error.not_opened": {
+    "message": "{what} のパスワードを開けません"
+  },
+  "passwords.error.not_sealed": {
+    "message": "パスワードを暗号化できませんでした"
+  },
+  "passwords.error.salt_damaged": {
+    "message": "マスターパスワードのソルトが破損しています"
+  },
+  "passwords.error.wrong": {
+    "message": "マスターパスワードが違います"
+  },
+  "passwords.field.again": {
+    "message": "確認"
+  },
+  "passwords.field.master": {
+    "message": "マスターパスワード"
+  },
+  "passwords.locked_note": {
+    "message": "このコンピューターでは保存したパスワードがロックされています。マスターパスワードで開けます。"
+  },
+  "passwords.ok": {
+    "message": "OK"
+  },
+  "passwords.problem.differ": {
+    "message": "2 つのパスワードが一致しません。"
+  },
+  "passwords.problem.empty": {
+    "message": "マスターパスワードを入力してください。"
+  },
+  "passwords.title.set": {
+    "message": "マスターパスワード"
+  },
+  "passwords.title.unlock": {
+    "message": "保存したパスワードのロック解除"
+  },
+  "passwords.unlock_button": {
+    "message": "ロック解除…"
+  },
+  "passwords.working": {
+    "message": "処理中…"
+  },
+  "properties.accessed": {
+    "message": "アクセス日時："
+  },
+  "properties.change_attributes": {
+    "message": "属性の変更..."
+  },
+  "properties.close": {
+    "message": "閉じる"
+  },
+  "properties.contents": {
+    "message": "{file_count, plural, other {{files} 個のファイル}}、{folder_count, plural, other {{folders} 個のフォルダー}}、{count, plural, other {{bytes} バイト}}（{size}）"
+  },
+  "properties.contents_counting": {
+    "message": "{file_count, plural, other {{files} 個のファイル}}、{folder_count, plural, other {{folders} 個のフォルダー}}、{count, plural, other {{bytes} バイト}}（{size}）（集計中…）"
+  },
+  "properties.contents_label": {
+    "message": "内容："
+  },
+  "properties.created": {
+    "message": "作成日時："
+  },
+  "properties.dialog_title": {
+    "message": "プロパティ"
+  },
+  "properties.in_archive": {
+    "message": "アーカイブの一覧に、ファイルについて分かる情報がすべて表示されています。"
+  },
+  "properties.kind.file": {
+    "message": "ファイル"
+  },
+  "properties.kind.folder": {
+    "message": "フォルダー"
+  },
+  "properties.kind.link": {
+    "message": "リンク"
+  },
+  "properties.kind.link_to": {
+    "message": "{target} へのリンク"
+  },
+  "properties.location": {
+    "message": "場所："
+  },
+  "properties.modified": {
+    "message": "更新日時："
+  },
+  "properties.name": {
+    "message": "名前："
+  },
+  "properties.no_system_dialog": {
+    "message": "このシステムにはまだプロパティダイアログがありません"
+  },
+  "properties.owner": {
+    "message": "所有者/グループ："
+  },
+  "properties.permissions": {
+    "message": "アクセス許可："
+  },
+  "properties.size": {
+    "message": "{count, plural, other {{bytes} バイト（{size}）}}"
+  },
+  "properties.size_label": {
+    "message": "サイズ："
+  },
+  "properties.type": {
+    "message": "種類："
+  },
+  "quick_open.go_to": {
+    "message": "{path} へ移動"
+  },
+  "quick_open.group.bookmarks": {
+    "message": "ブックマーク"
+  },
+  "quick_open.group.connections": {
+    "message": "接続"
+  },
+  "quick_open.group.drives": {
+    "message": "ドライブ"
+  },
+  "quick_open.group.path": {
+    "message": "パス"
+  },
+  "quick_open.group.recent_folders": {
+    "message": "最近使ったフォルダー"
+  },
+  "quick_open.group.tools": {
+    "message": "ツール"
+  },
+  "quick_open.group.workspaces": {
+    "message": "ワークスペース"
+  },
+  "quick_open.placeholder": {
+    "message": "コマンド、ブックマーク、フォルダー、パス、サーバー、ドライブ、ワークスペース、ツール"
+  },
+  "quick_open.title": {
+    "message": "クイックオープン"
+  },
+  "quick_view.counting": {
+    "message": "集計中…"
+  },
+  "quick_view.downloading": {
+    "message": "ダウンロード中…"
+  },
+  "quick_view.empty": {
+    "message": "クイックビューには、反対側のパネルでカーソルがある項目が表示されます。"
+  },
+  "quick_view.extracting": {
+    "message": "アーカイブから取り出しています…"
+  },
+  "quick_view.files_only": {
+    "message": "サーバー上やアーカイブ内では、クイックビューに表示できるのはファイルだけです。"
+  },
+  "quick_view.space.title": {
+    "message": "使用領域の合計："
+  },
+  "quick_view.space.totals": {
+    "message": "{bytes, plural, other {{bytes_grouped} バイト}}（{files, plural, other {{files_grouped} 個のファイル}}、{folders, plural, other {{folders_grouped} 個のフォルダー}}）"
+  },
+  "quick_view.space.unreadable": {
+    "message": "{count} 個の項目を読み取れませんでした。"
+  },
+  "quick_view.too_large.download": {
+    "message": "{size} はここでダウンロードするには大きすぎます。F3 で表示できます。"
+  },
+  "quick_view.too_large.extract": {
+    "message": "{size} はここでアーカイブから取り出すには大きすぎます。F3 で表示できます。"
+  },
+  "remote.cancelled": {
+    "message": "キャンセルされました"
+  },
+  "remote.cloud.ask": {
+    "message": "{kind, select, application_key {{host} の {user} のアプリケーションキー：} api_key {{host} の {user} の API キー：} password {{host} の {user} のパスワード：} other {{host} の {user} のシークレットキー：}}"
+  },
+  "remote.cloud.ask_again": {
+    "message": "{kind, select, application_key {アプリケーションキーが違います。{host} の {user} のアプリケーションキー：} api_key {API キーが違います。{host} の {user} の API キー：} password {パスワードが違います。{host} の {user} のパスワード：} other {キーが違います。{host} の {user} のシークレットキー：}}"
+  },
+  "remote.cloud.obscure_failed": {
+    "message": "rclone がパスワードを処理できませんでした"
+  },
+  "remote.cloud.rclone_missing": {
+    "message": "rclone がありません：「設定 > アドオン」でダウンロードできます"
+  },
+  "remote.cloud.title": {
+    "message": "{kind, select, application_key {アプリケーションキー} api_key {API キー} password {パスワード} other {シークレットキー}}"
+  },
+  "remote.connecting": {
+    "message": "{server} に接続しています..."
+  },
+  "remote.dialog.cancel": {
+    "message": "キャンセル"
+  },
+  "remote.dialog.ok": {
+    "message": "OK"
+  },
+  "remote.disconnect_failed": {
+    "message": "{share}：切断できませんでした：{err}"
+  },
+  "remote.ftp.password": {
+    "message": "{user}@{host} のパスワード："
+  },
+  "remote.ftp.password_again": {
+    "message": "パスワードが違います。{user}@{host} のパスワード："
+  },
+  "remote.ftps.changed": {
+    "message": "警告：{server} の TLS 証明書が、{file} の {line} 行目に記録されたものから変更されています。通信が傍受されている可能性があります。サーバーの証明書が新しくなった場合は、その行を削除してください。"
+  },
+  "remote.ftps.not_trusted": {
+    "message": "サーバーの証明書が信頼されていません"
+  },
+  "remote.login.password": {
+    "message": "パスワード"
+  },
+  "remote.login.title": {
+    "message": "ログイン"
+  },
+  "remote.login.user": {
+    "message": "ユーザー"
+  },
+  "remote.mount.login_wrong": {
+    "message": "ユーザー名またはパスワードが違います"
+  },
+  "remote.mount.macos_failed": {
+    "message": "macOS でマウントできませんでした（NetFS {code}）"
+  },
+  "remote.mount.needs_desktop": {
+    "message": "KDE の kio-fuse または GNOME の gvfs が必要です"
+  },
+  "remote.mount.needs_login": {
+    "message": "ユーザー名とパスワードが必要です"
+  },
+  "remote.mount.no_fuse": {
+    "message": "マウントしましたが、対応するフォルダーがありません：gvfs-fuse がありません"
+  },
+  "remote.mount.no_nfs_client": {
+    "message": "見つかりません。NFS には Windows の「NFS 用クライアント」（「Windows の機能」）が必要です"
+  },
+  "remote.mount.no_share": {
+    "message": "共有名がありません：smb://server/share"
+  },
+  "remote.mount.not_address": {
+    "message": "アドレスではありません"
+  },
+  "remote.mount.not_found": {
+    "message": "マウントしましたが、マウント済みの一覧に見つかりません"
+  },
+  "remote.mount.other_user": {
+    "message": "Windows はこのサーバーに別のユーザーとして接続しています。サインアウトするか、そのユーザーを使ってください"
+  },
+  "remote.password.title": {
+    "message": "パスワード"
+  },
+  "remote.remember_password": {
+    "message": "パスワードを保存（設定 › パスワード）"
+  },
+  "remote.save_back_failed": {
+    "message": "サーバーに保存し直せませんでした：{err}"
+  },
+  "remote.sftp.host_certificate": {
+    "message": "サーバーがホスト証明書を提示しました。ホスト証明書にはまだ対応していません。"
+  },
+  "remote.sftp.key_changed": {
+    "message": "警告：{server} のホストキーが、{file} の {line} 行目に記録されたものから変更されています。通信が傍受されている可能性があります。サーバーを設定し直した場合は、その行を削除してください。"
+  },
+  "remote.sftp.key_not_trusted": {
+    "message": "{server} のホストキーは信頼されませんでした。"
+  },
+  "remote.sftp.keys_refused": {
+    "message": "{user}@{host}：サーバーがキーを拒否し、パスワードも受け付けません"
+  },
+  "remote.sftp.login_refused": {
+    "message": "{user}@{host}：ログインが拒否されました"
+  },
+  "remote.sftp.passphrase": {
+    "message": "{file} のパスフレーズ"
+  },
+  "remote.sftp.passphrase_title": {
+    "message": "キーのパスフレーズ"
+  },
+  "remote.sftp.password": {
+    "message": "{user}@{host} のパスワード"
+  },
+  "remote.unknown_host.once": {
+    "message": "今回のみ接続"
+  },
+  "remote.unknown_host.remember": {
+    "message": "接続して記憶"
+  },
+  "remote.unknown_host.text": {
+    "message": "{key_type, select, TLS {サーバー {host} はまだ認識されていません。TLS 証明書のフィンガープリントは次のとおりです：} other {サーバー {host} はまだ認識されていません。{key_type} のフィンガープリントは次のとおりです：}}\n\n{fingerprint}\n\n目的のサーバーであることが確かな場合にのみ接続してください。フィンガープリントはサーバーの管理者に確認できます。"
+  },
+  "remote.unknown_host.title": {
+    "message": "不明なサーバー"
+  },
+  "rename.case": {
+    "message": "大文字/小文字："
+  },
+  "rename.case.first": {
+    "message": "先頭のみ大文字"
+  },
+  "rename.case.lower": {
+    "message": "すべて小文字"
+  },
+  "rename.case.unchanged": {
+    "message": "変更しない"
+  },
+  "rename.case.upper": {
+    "message": "すべて大文字"
+  },
+  "rename.case.words": {
+    "message": "単語の先頭を大文字"
+  },
+  "rename.close": {
+    "message": "閉じる"
+  },
+  "rename.counter_start": {
+    "message": "開始番号"
+  },
+  "rename.dialog_title": {
+    "message": "一括名前変更ツール"
+  },
+  "rename.digits": {
+    "message": "桁数"
+  },
+  "rename.extension": {
+    "message": "拡張子"
+  },
+  "rename.field.counter": {
+    "message": "[C] カウンター"
+  },
+  "rename.field.date": {
+    "message": "[Y][M][D] 日付"
+  },
+  "rename.field.extension": {
+    "message": "[E] 拡張子"
+  },
+  "rename.field.folder": {
+    "message": "[P] フォルダー"
+  },
+  "rename.field.name": {
+    "message": "[N] 名前"
+  },
+  "rename.field.range": {
+    "message": "[N1-3] 範囲"
+  },
+  "rename.field.time": {
+    "message": "[h][m][s] 時刻"
+  },
+  "rename.first_only": {
+    "message": "最初のみ"
+  },
+  "rename.in_archive": {
+    "message": "アーカイブ内のファイルの名前はまだ変更できません。"
+  },
+  "rename.mask": {
+    "message": "名前のマスク：ファイル名"
+  },
+  "rename.match_case": {
+    "message": "大文字と小文字を区別"
+  },
+  "rename.new_name": {
+    "message": "新しい名前"
+  },
+  "rename.not_renamed_back": {
+    "message": "{from}：{err}。元の名前に戻せなかったファイル：{names}"
+  },
+  "rename.not_utf8": {
+    "message": "UTF-8 ではない名前は除外されます。"
+  },
+  "rename.old_name": {
+    "message": "元の名前"
+  },
+  "rename.problem.bad_character": {
+    "message": "使用できない文字"
+  },
+  "rename.problem.exists": {
+    "message": "すでに存在"
+  },
+  "rename.problem.no_name": {
+    "message": "名前なし"
+  },
+  "rename.problem.twice": {
+    "message": "リスト内で重複"
+  },
+  "rename.regex": {
+    "message": "正規表現"
+  },
+  "rename.regex_error": {
+    "message": "正規表現：{err}"
+  },
+  "rename.replace": {
+    "message": "置換後の文字列"
+  },
+  "rename.search": {
+    "message": "検索する文字列"
+  },
+  "rename.start": {
+    "message": "開始！"
+  },
+  "rename.status.failed": {
+    "message": "名前は変更されませんでした：{err}"
+  },
+  "rename.status.ready": {
+    "message": "「開始！」で名前を変更します。"
+  },
+  "rename.status.renamed": {
+    "message": "{count, plural, other {# 個の名前を変更しました。}}"
+  },
+  "rename.status.took_back": {
+    "message": "{count, plural, other {# 個の名前を元に戻しました。}}"
+  },
+  "rename.step": {
+    "message": "増分"
+  },
+  "rename.undo": {
+    "message": "元に戻す"
+  },
+  "rename.was": {
+    "message": "{to}（元は {from}）"
+  },
+  "rename.with_extension": {
+    "message": "拡張子も含める"
+  },
+  "scmd.column.modified": {
+    "message": "更新日時"
+  },
+  "scmd.column.name": {
+    "message": "名前"
+  },
+  "scmd.column.size": {
+    "message": "サイズ"
+  },
+  "scmd.column.up_dir": {
+    "message": "UP--DIR"
+  },
+  "scmd.command_line.not_on_server": {
+    "message": "コマンドはサーバーではなく、このコンピューターで実行されます。"
+  },
+  "scmd.compare.marked": {
+    "message": "{count, plural, other {# 個のファイルを選択しました：反対側より新しいか、反対側にないファイルです。}}"
+  },
+  "scmd.compare.same": {
+    "message": "両方のフォルダーのファイルは同じです。"
+  },
+  "scmd.copying": {
+    "message": "{name} をコピーしています..."
+  },
+  "scmd.dialog.buttons": {
+    "message": "Enter OK   Esc キャンセル"
+  },
+  "scmd.error.read_settings": {
+    "message": "設定を読み込めませんでした：{err}"
+  },
+  "scmd.error.read_tabs": {
+    "message": "開いていたタブを読み込めませんでした：{err}"
+  },
+  "scmd.error.read_workspaces": {
+    "message": "ワークスペースを読み込めませんでした：{err}"
+  },
+  "scmd.error.save_back": {
+    "message": "保存し直せませんでした：{err}"
+  },
+  "scmd.error.save_searches": {
+    "message": "検索履歴を保存できませんでした：{err}"
+  },
+  "scmd.error.save_tabs": {
+    "message": "開いているタブを保存できませんでした：{err}"
+  },
+  "scmd.find.backwards": {
+    "message": "後方へ検索"
+  },
+  "scmd.find.case_sensitive": {
+    "message": "大文字と小文字を区別"
+  },
+  "scmd.find.hex": {
+    "message": "16 進数 (77 6F 72 64)"
+  },
+  "scmd.find.not_found": {
+    "message": "見つかりません：{text}"
+  },
+  "scmd.find.regex": {
+    "message": "正規表現"
+  },
+  "scmd.find.search_for": {
+    "message": "検索する文字列："
+  },
+  "scmd.find.title": {
+    "message": "検索"
+  },
+  "scmd.find.whole_words": {
+    "message": "単語単位で検索"
+  },
+  "scmd.group.files": {
+    "message": "ファイル（*.txt *.md、フォルダーは / で終わる）："
+  },
+  "scmd.group.select_title": {
+    "message": "グループの選択"
+  },
+  "scmd.group.unselect_title": {
+    "message": "グループの選択解除"
+  },
+  "scmd.key_bar.copy": {
+    "message": "コピー"
+  },
+  "scmd.key_bar.delete": {
+    "message": "削除"
+  },
+  "scmd.key_bar.edit": {
+    "message": "編集"
+  },
+  "scmd.key_bar.menu": {
+    "message": "メニュー"
+  },
+  "scmd.key_bar.mkdir": {
+    "message": "新規"
+  },
+  "scmd.key_bar.move": {
+    "message": "移動"
+  },
+  "scmd.key_bar.quit": {
+    "message": "終了"
+  },
+  "scmd.key_bar.view": {
+    "message": "表示"
+  },
+  "scmd.message.error": {
+    "message": "エラー"
+  },
+  "scmd.message.ok": {
+    "message": "OK"
+  },
+  "scmd.not_yet": {
+    "message": "{what, select, menus {メニューはターミナル版ではまだ使えません。} file_operations {ファイル操作はターミナル版ではまだ使えません。} servers {サーバーはターミナル版ではまだ使えません。} other {このコマンドはターミナル版ではまだ使えません。}}"
+  },
+  "scmd.picture.broken": {
+    "message": "壊れた画像"
+  },
+  "scmd.picture.broken_page": {
+    "message": "壊れたページ"
+  },
+  "scmd.picture.loading": {
+    "message": "読み込み中…"
+  },
+  "scmd.picture.no_page": {
+    "message": "PDF にそのページはありません"
+  },
+  "scmd.shell.press_enter": {
+    "message": "Enter キーを押すと Spark Commander に戻ります..."
+  },
+  "scmd.sync_browsing.off": {
+    "message": "同期ブラウズをオフにしました。"
+  },
+  "scmd.sync_browsing.on": {
+    "message": "同期ブラウズをオンにしました。"
+  },
+  "scmd.sync_browsing.stopped": {
+    "message": "{err}。同期ブラウズをオフにしました。"
+  },
+  "scmd.viewer.column": {
+    "message": "列 {column}"
+  },
+  "scmd.viewer.finding": {
+    "message": "検索中…"
+  },
+  "scmd.viewer.key_bar.next": {
+    "message": "次へ"
+  },
+  "scmd.viewer.key_bar.quit": {
+    "message": "終了"
+  },
+  "scmd.viewer.key_bar.reload": {
+    "message": "再読込"
+  },
+  "scmd.viewer.key_bar.search": {
+    "message": "検索"
+  },
+  "scmd.viewer.page": {
+    "message": "{page}/{pages} ページ"
+  },
+  "scmd.viewer.reading": {
+    "message": "読み込み中 {percent}%"
+  },
+  "scmd.viewer.wrap": {
+    "message": "折り返し"
+  },
+  "scmd.workspace.copy_name": {
+    "message": "{name} のコピー"
+  },
+  "scmd.workspace.default_name": {
+    "message": "ワークスペース {number}"
+  },
+  "scmd.workspace.delete_question": {
+    "message": "「{name}」を削除しますか？そのタブの情報は失われます。"
+  },
+  "scmd.workspace.duplicate_title": {
+    "message": "ワークスペースの複製"
+  },
+  "scmd.workspace.last_stays": {
+    "message": "最後のワークスペースは削除できません。"
+  },
+  "scmd.workspace.name": {
+    "message": "名前："
+  },
+  "scmd.workspace.name_or_default": {
+    "message": "名前（空欄なら {name}）："
+  },
+  "scmd.workspace.new_title": {
+    "message": "新しいワークスペース"
+  },
+  "scmd.workspace.rename_title": {
+    "message": "ワークスペース名の変更"
+  },
+  "scmd.workspaces.keys": {
+    "message": "Enter 開く  F7 新規  F5 コピー  F2 名前変更  F8 削除"
+  },
+  "scmd.workspaces.title": {
+    "message": "ワークスペース"
+  },
+  "search.age.days": {
+    "message": "日"
+  },
+  "search.age.hours": {
+    "message": "時間"
+  },
+  "search.age.minutes": {
+    "message": "分"
+  },
+  "search.age.months": {
+    "message": "か月"
+  },
+  "search.age.weeks": {
+    "message": "週間"
+  },
+  "search.age.years": {
+    "message": "年"
+  },
+  "search.archives": {
+    "message": "アーカイブ内も検索"
+  },
+  "search.attribute.directory": {
+    "message": "フォルダー"
+  },
+  "search.attribute.either": {
+    "message": "どちらでもよい"
+  },
+  "search.attribute.executable": {
+    "message": "実行可能"
+  },
+  "search.attribute.hidden": {
+    "message": "隠し"
+  },
+  "search.attribute.link": {
+    "message": "シンボリックリンク"
+  },
+  "search.attribute.must": {
+    "message": "この属性を持つ"
+  },
+  "search.attribute.must_not": {
+    "message": "この属性を持たない"
+  },
+  "search.attribute.read_only": {
+    "message": "読み取り専用"
+  },
+  "search.attributes.label": {
+    "message": "属性："
+  },
+  "search.between.and": {
+    "message": "～"
+  },
+  "search.between.label": {
+    "message": "日付の範囲："
+  },
+  "search.close": {
+    "message": "閉じる"
+  },
+  "search.depth.all": {
+    "message": "すべて（階層無制限）"
+  },
+  "search.depth.current": {
+    "message": "現在のフォルダーのみ"
+  },
+  "search.depth.label": {
+    "message": "サブフォルダーの検索："
+  },
+  "search.depth.levels": {
+    "message": "{count, plural, other {# 階層}}"
+  },
+  "search.drives": {
+    "message": "ドライブ"
+  },
+  "search.duplicates.content": {
+    "message": "同じ内容"
+  },
+  "search.duplicates.label": {
+    "message": "重複ファイルを検索："
+  },
+  "search.duplicates.name": {
+    "message": "同じ名前"
+  },
+  "search.duplicates.size": {
+    "message": "同じサイズ"
+  },
+  "search.edit": {
+    "message": "F4 編集"
+  },
+  "search.error.between_days": {
+    "message": "「日付の範囲」には両方の日付が必要です"
+  },
+  "search.error.date": {
+    "message": "{text} は 2026-11-12 のような日付ではありません"
+  },
+  "search.error.hex": {
+    "message": "{text} は 48 65 6c のような 16 進数の文字列ではありません"
+  },
+  "search.error.keep": {
+    "message": "検索履歴を保存できませんでした：{err}"
+  },
+  "search.error.local_time": {
+    "message": "{text} はローカル時刻に存在しません"
+  },
+  "search.error.names_regex": {
+    "message": "名前の正規表現：{err}"
+  },
+  "search.error.newer_number": {
+    "message": "「次の期間内」には数値を入力してください（{text} は無効です）"
+  },
+  "search.error.no_place": {
+    "message": "「検索場所」にフォルダーが指定されていません"
+  },
+  "search.error.no_text": {
+    "message": "「テキスト」に検索する文字列が入力されていません"
+  },
+  "search.error.older_number": {
+    "message": "「次の期間より前」には数値を入力してください（{text} は無効です）"
+  },
+  "search.error.save": {
+    "message": "検索条件を保存できませんでした：{err}"
+  },
+  "search.error.size_number": {
+    "message": "「ファイルサイズ」には数値を入力してください（{text} は無効です）"
+  },
+  "search.error.text_regex": {
+    "message": "テキストの正規表現：{err}"
+  },
+  "search.feed": {
+    "message": "パネルに出力"
+  },
+  "search.go_to_file": {
+    "message": "ファイルへ移動"
+  },
+  "search.in_found": {
+    "message": "F2 検索結果の中を検索"
+  },
+  "search.locate": {
+    "message": "locate のインデックスから検索"
+  },
+  "search.names.label": {
+    "message": "ファイル名："
+  },
+  "search.names.placeholder": {
+    "message": "*.txt *.md | backup*  （空欄ですべて）"
+  },
+  "search.new": {
+    "message": "新規検索"
+  },
+  "search.newer.label": {
+    "message": "次の期間内："
+  },
+  "search.older.label": {
+    "message": "次の期間より前："
+  },
+  "search.only_selected": {
+    "message": "選択したファイル/フォルダーのみ検索"
+  },
+  "search.only_selected_count": {
+    "message": "{count, plural, other {選択した # 個の項目のみ検索}}"
+  },
+  "search.page.advanced": {
+    "message": "詳細"
+  },
+  "search.page.general": {
+    "message": "全般"
+  },
+  "search.page.load_save": {
+    "message": "読み込み/保存"
+  },
+  "search.places.browse_prompt": {
+    "message": "検索場所"
+  },
+  "search.places.label": {
+    "message": "検索場所："
+  },
+  "search.places.placeholder": {
+    "message": "フォルダー（; で区切る）"
+  },
+  "search.regex": {
+    "message": "正規表現"
+  },
+  "search.results.label": {
+    "message": "検索結果："
+  },
+  "search.saved.delete": {
+    "message": "削除"
+  },
+  "search.saved.label": {
+    "message": "以前の検索："
+  },
+  "search.saved.load": {
+    "message": "読み込み"
+  },
+  "search.saved.name_first": {
+    "message": "先に検索の名前を入力してください。"
+  },
+  "search.saved.name_placeholder": {
+    "message": "検索の名前"
+  },
+  "search.saved.save": {
+    "message": "保存"
+  },
+  "search.size.label": {
+    "message": "ファイルサイズ："
+  },
+  "search.start": {
+    "message": "検索開始"
+  },
+  "search.status.found": {
+    "message": "{files, plural, other {# 個のファイル}}と{dirs, plural, other {# 個のフォルダー}}が見つかりました"
+  },
+  "search.status.searching": {
+    "message": "検索しています…"
+  },
+  "search.status.searching_in": {
+    "message": "検索中：{folder}"
+  },
+  "search.status.stopped": {
+    "message": "停止しました：{counts}"
+  },
+  "search.stop": {
+    "message": "停止"
+  },
+  "search.text.ansi": {
+    "message": "ANSI（コードページ {page}）"
+  },
+  "search.text.case_sensitive": {
+    "message": "大文字と小文字を区別"
+  },
+  "search.text.hex": {
+    "message": "16 進数"
+  },
+  "search.text.label": {
+    "message": "テキスト："
+  },
+  "search.text.not_containing": {
+    "message": "テキストを「含まない」ファイルを検索"
+  },
+  "search.text.office": {
+    "message": "Office ファイル（docx、xlsx、pptx、odt…）"
+  },
+  "search.text.placeholder": {
+    "message": "検索するテキスト"
+  },
+  "search.text.whole_words": {
+    "message": "単語単位で検索"
+  },
+  "search.title": {
+    "message": "ファイルの検索"
+  },
+  "search.unit.bytes": {
+    "message": "バイト"
+  },
+  "search.view": {
+    "message": "F3 表示"
+  },
+  "settings.addons.builtin_version": {
+    "message": "{version}（Spark Commander に同梱）"
+  },
+  "settings.addons.check_daily": {
+    "message": "起動時と毎日アドオンの更新を確認し、案内する"
+  },
+  "settings.addons.check_failed": {
+    "message": "更新を確認できませんでした：{err}"
+  },
+  "settings.addons.check_now": {
+    "message": "今すぐ確認"
+  },
+  "settings.addons.checking": {
+    "message": "更新を確認しています..."
+  },
+  "settings.addons.download": {
+    "message": "ダウンロード"
+  },
+  "settings.addons.downloading": {
+    "message": "ダウンロード中：{done}/{size}"
+  },
+  "settings.addons.file": {
+    "message": "ファイル"
+  },
+  "settings.addons.installed.builtin": {
+    "message": "Spark Commander に同梱"
+  },
+  "settings.addons.installed.label": {
+    "message": "インストール済み"
+  },
+  "settings.addons.installed.none": {
+    "message": "なし"
+  },
+  "settings.addons.intro": {
+    "message": "Spark Commander は、一部の機能にほかのプロジェクトのプログラムを使用しています。アドオンは必要に応じて本体とは別にダウンロードします。7-Zip と PDFium は同梱されています。"
+  },
+  "settings.addons.never_offer": {
+    "message": "ファイルにアドオンが必要なときも案内しない"
+  },
+  "settings.addons.offers": {
+    "message": "案内と更新"
+  },
+  "settings.addons.online.label": {
+    "message": "オンライン"
+  },
+  "settings.addons.online.looking": {
+    "message": "確認中..."
+  },
+  "settings.addons.online.none": {
+    "message": "このシステム用はありません"
+  },
+  "settings.addons.online.not_yet": {
+    "message": "未確認"
+  },
+  "settings.addons.online.unknown": {
+    "message": "不明"
+  },
+  "settings.addons.remove": {
+    "message": "削除"
+  },
+  "settings.addons.up_to_date": {
+    "message": "アドオンの一覧は最新です。"
+  },
+  "settings.addons.version": {
+    "message": "バージョン"
+  },
+  "settings.addons.website": {
+    "message": "ウェブサイト"
+  },
+  "settings.appearance.title": {
+    "message": "外観"
+  },
+  "settings.apply": {
+    "message": "適用"
+  },
+  "settings.backdrop.blur": {
+    "message": "背後のデスクトップをぼかす"
+  },
+  "settings.backdrop.clear": {
+    "message": "0%（デスクトップのみ）"
+  },
+  "settings.backdrop.cover": {
+    "message": "背後のデスクトップを覆う度合い："
+  },
+  "settings.backdrop.opacity": {
+    "message": "{opacity}%"
+  },
+  "settings.backdrop.sidebar": {
+    "message": "サイドバー"
+  },
+  "settings.backdrop.solid": {
+    "message": "100%（不透明）"
+  },
+  "settings.backdrop.terminal": {
+    "message": "ターミナル"
+  },
+  "settings.cancel": {
+    "message": "キャンセル"
+  },
+  "settings.date.as_system": {
+    "message": "システムに合わせる：{date}"
+  },
+  "settings.date.custom": {
+    "message": "カスタム："
+  },
+  "settings.date.pattern_help": {
+    "message": "yyyy 年、MM 月（MMM は月名）、dd 日（ddd は曜日）"
+  },
+  "settings.date.shown_as": {
+    "message": "表示例"
+  },
+  "settings.date.shown_as_note": {
+    "message": "ファイル一覧での表示。ダイアログでは秒も表示されます"
+  },
+  "settings.date.title": {
+    "message": "日付"
+  },
+  "settings.editor.browse": {
+    "message": "参照..."
+  },
+  "settings.editor.choose": {
+    "message": "選択"
+  },
+  "settings.editor.external": {
+    "message": "外部エディター (Ctrl+Shift+F4)："
+  },
+  "settings.editor.external_help": {
+    "message": "%1 はファイルを表します（ない場合はファイルを末尾に追加）。例：code --wait %1"
+  },
+  "settings.editor.limit": {
+    "message": "内蔵エディター (F4) で開くファイルの上限"
+  },
+  "settings.editor.limit_unit": {
+    "message": "MB"
+  },
+  "settings.editor.title": {
+    "message": "F4 のエディター"
+  },
+  "settings.error.no_folder": {
+    "message": "設定フォルダーがありません"
+  },
+  "settings.files_shown.hidden": {
+    "message": "隠しファイル"
+  },
+  "settings.files_shown.system": {
+    "message": "システムファイル"
+  },
+  "settings.files_shown.title": {
+    "message": "表示するファイル"
+  },
+  "settings.font.as_system": {
+    "message": "システムに合わせる"
+  },
+  "settings.font.chosen": {
+    "message": "個別に選択（システムのフォント：{family}、{size}）"
+  },
+  "settings.font.fixed": {
+    "message": "ビューアー"
+  },
+  "settings.font.fixed_note": {
+    "message": "等幅フォントのみ。エディターとファイル比較にも使われます。"
+  },
+  "settings.font.main": {
+    "message": "メインウィンドウのフォント"
+  },
+  "settings.font.system": {
+    "message": "システムのフォント"
+  },
+  "settings.language.system": {
+    "message": "システムの言語"
+  },
+  "settings.language.system_named": {
+    "message": "システムの言語：{language}"
+  },
+  "settings.language.title": {
+    "message": "言語"
+  },
+  "settings.menus.automatic": {
+    "message": "自動：GNOME では ☰ ボタン、それ以外ではメニューバー"
+  },
+  "settings.menus.bar": {
+    "message": "メニューバー"
+  },
+  "settings.menus.button": {
+    "message": "タイトルバーの ☰ ボタン"
+  },
+  "settings.menus.title": {
+    "message": "メニュー"
+  },
+  "settings.ok": {
+    "message": "OK"
+  },
+  "settings.page.addons": {
+    "message": "アドオン"
+  },
+  "settings.page.date": {
+    "message": "日付"
+  },
+  "settings.page.display": {
+    "message": "表示"
+  },
+  "settings.page.edit_view": {
+    "message": "編集/表示"
+  },
+  "settings.page.font": {
+    "message": "フォント"
+  },
+  "settings.page.language": {
+    "message": "言語"
+  },
+  "settings.page.layout": {
+    "message": "レイアウト"
+  },
+  "settings.page.operations": {
+    "message": "操作"
+  },
+  "settings.page.passwords": {
+    "message": "パスワード"
+  },
+  "settings.page.terminal": {
+    "message": "ターミナル"
+  },
+  "settings.page.toolbar": {
+    "message": "ツールバー"
+  },
+  "settings.passwords.change_master": {
+    "message": "マスターパスワードの変更…"
+  },
+  "settings.passwords.locked": {
+    "message": "このコンピューターではロックされています。マスターパスワードで開けます。"
+  },
+  "settings.passwords.master_set": {
+    "message": "マスターパスワードが設定されています。設定フォルダーをコピーすれば、別のコンピューターでもマスターパスワードを入力して開けます。"
+  },
+  "settings.passwords.no_master": {
+    "message": "マスターパスワードは設定されていません。設定フォルダーをコピーしても別のコンピューターでは開けないため、そこで入力し直すことになります。"
+  },
+  "settings.passwords.not_removed": {
+    "message": "マスターパスワードを削除できませんでした：{err}"
+  },
+  "settings.passwords.remove_master": {
+    "message": "マスターパスワードを削除"
+  },
+  "settings.passwords.saved": {
+    "message": "{count, plural, other {# 件のパスワード}}（サーバー、共有、暗号化ドライブ）が設定フォルダーに暗号化して保存されています。それを開くキーは、このコンピューターのキーリングにあります。"
+  },
+  "settings.passwords.set_master": {
+    "message": "マスターパスワードの設定…"
+  },
+  "settings.passwords.title": {
+    "message": "保存したパスワード"
+  },
+  "settings.passwords.unlock": {
+    "message": "ロック解除…"
+  },
+  "settings.queue.clear_after": {
+    "message": "完了した操作を消去するまでの時間"
+  },
+  "settings.queue.clear_after_help": {
+    "message": "0：完了と同時に消去します。失敗またはキャンセルされた操作は、消去するまで残ります。"
+  },
+  "settings.queue.clear_after_unit": {
+    "message": "分"
+  },
+  "settings.queue.download_limit": {
+    "message": "ダウンロード速度の上限"
+  },
+  "settings.queue.download_limit_help": {
+    "message": "「リンクからダウンロード」と、FTP/SFTP サーバーからのコピーに適用されます（実行中のものも含む）。0：無制限。"
+  },
+  "settings.queue.download_limit_unit": {
+    "message": "KB/s"
+  },
+  "settings.queue.title": {
+    "message": "操作キュー"
+  },
+  "settings.shell.default": {
+    "message": "デフォルト：{shell}"
+  },
+  "settings.shell.note": {
+    "message": "新しいターミナルタブで起動します。"
+  },
+  "settings.shell.title": {
+    "message": "シェル"
+  },
+  "settings.sort_folders.by_name": {
+    "message": "常に名前順"
+  },
+  "settings.sort_folders.like_files": {
+    "message": "ファイルと同じ（日時順も）"
+  },
+  "settings.sort_folders.title": {
+    "message": "フォルダーの並べ替え"
+  },
+  "settings.tabs.header_always": {
+    "message": "タブが 1 つだけでもタブバーを表示"
+  },
+  "settings.tabs.title": {
+    "message": "フォルダータブ"
+  },
+  "settings.time.as_system": {
+    "message": "システムに合わせる"
+  },
+  "settings.time.h12": {
+    "message": "12 時間制 (2:05 PM)"
+  },
+  "settings.time.h24": {
+    "message": "24 時間制 (14:05)"
+  },
+  "settings.time.title": {
+    "message": "時刻"
+  },
+  "settings.title": {
+    "message": "設定"
+  },
+  "settings.toolbar.add": {
+    "message": "ボタンを追加…"
+  },
+  "settings.toolbar.move_down": {
+    "message": "下へ移動"
+  },
+  "settings.toolbar.move_up": {
+    "message": "上へ移動"
+  },
+  "settings.toolbar.place": {
+    "message": "メニューバーの下に表示されます。GNOME のアプリのようにメニューが ☰ ボタンにまとめられている場合は、タイトルバーに表示されます。ボタンがない場合は表示されません。"
+  },
+  "settings.toolbar.remove": {
+    "message": "削除"
+  },
+  "settings.toolbar.replace": {
+    "message": "置き換え…"
+  },
+  "settings.toolbar.restore_default": {
+    "message": "初期状態に戻す"
+  },
+  "settings.toolbar.title": {
+    "message": "ツールバーのボタン"
+  },
+  "settings.viewer.font.ansi": {
+    "message": "ANSI (Windows)"
+  },
+  "settings.viewer.font.ascii": {
+    "message": "ASCII (DOS)"
+  },
+  "settings.viewer.font.auto": {
+    "message": "自動検出"
+  },
+  "settings.viewer.font.label": {
+    "message": "起動時のフォント："
+  },
+  "settings.viewer.font.variable": {
+    "message": "可変幅"
+  },
+  "settings.viewer.minimap": {
+    "message": "ミニマップ"
+  },
+  "settings.viewer.show": {
+    "message": "表示："
+  },
+  "settings.viewer.start.auto": {
+    "message": "自動検出"
+  },
+  "settings.viewer.start.binary": {
+    "message": "バイナリ"
+  },
+  "settings.viewer.start.hex": {
+    "message": "16 進数"
+  },
+  "settings.viewer.start.label": {
+    "message": "起動時の表示："
+  },
+  "settings.viewer.start.text": {
+    "message": "テキスト"
+  },
+  "settings.viewer.title": {
+    "message": "F3 のビューアー"
+  },
+  "settings.viewer.width.binary": {
+    "message": "バイナリ"
+  },
+  "settings.viewer.width.label": {
+    "message": "表示幅（文字数）："
+  },
+  "settings.viewer.width.text": {
+    "message": "テキスト"
+  },
+  "settings.viewer.wrap": {
+    "message": "テキストを折り返す"
+  },
+  "shells.command_prompt": {
+    "message": "コマンド プロンプト"
+  },
+  "sidebar.device.no_files": {
+    "message": "ファイル共有なし"
+  },
+  "sidebar.device.not_answering": {
+    "message": "{name} が応答しません。ロックを解除して KDE Connect を開き、フォルダーを再読み込みしてください (F2)。"
+  },
+  "sidebar.device.not_answering_error": {
+    "message": "{name} が応答しません（{err}）。ロックを解除して KDE Connect を開いてください。"
+  },
+  "sidebar.device.not_connected": {
+    "message": "未接続"
+  },
+  "sidebar.device.opening": {
+    "message": "{name} を開いています..."
+  },
+  "sidebar.device.reconnecting": {
+    "message": "{name} が応答しません。再接続しています..."
+  },
+  "sidebar.device.unmount_failed": {
+    "message": "{name}：マウント解除できませんでした：{err}"
+  },
+  "sidebar.group.bookmarks": {
+    "message": "ブックマーク"
+  },
+  "sidebar.group.cloud": {
+    "message": "クラウド"
+  },
+  "sidebar.group.devices": {
+    "message": "デバイス"
+  },
+  "sidebar.group.drives": {
+    "message": "ドライブ"
+  },
+  "sidebar.group.network": {
+    "message": "ネットワーク"
+  },
+  "sidebar.section.connections": {
+    "message": "接続"
+  },
+  "sidebar.section.folders": {
+    "message": "フォルダー"
+  },
+  "sidebar.section.operations": {
+    "message": "操作"
+  },
+  "sidebar.section.places": {
+    "message": "場所"
+  },
+  "sidebar.volume.locked": {
+    "message": "ロック中"
+  },
+  "sidebar.volume.mounting": {
+    "message": "{name} をマウントしています..."
+  },
+  "sidebar.volume.not_mounted": {
+    "message": "未マウント"
+  },
+  "sidebar.volume.open": {
+    "message": "開く"
+  },
+  "sidebar.volume.space": {
+    "message": "空き {free}/{total}"
+  },
+  "sidebar.volume.unmount": {
+    "message": "マウント解除"
+  },
+  "sidebar.volume.unmount_failed": {
+    "message": "マウント解除できませんでした：{err}"
+  },
+  "split.bad_size": {
+    "message": "「{size}」はサイズとして認識できません。例：100 MB, 1.5 GB, 650m"
+  },
+  "split.choose": {
+    "message": "分割するファイルにカーソルを置いてください。"
+  },
+  "split.combine.choose": {
+    "message": "分割ファイル（name.001）またはその .crc ファイルにカーソルを置いてください。"
+  },
+  "split.combine.dialog_title": {
+    "message": "ファイルの結合"
+  },
+  "split.combine.label": {
+    "message": "分割ファイルを次のファイルに結合："
+  },
+  "split.combine.title": {
+    "message": "「{name}」を結合"
+  },
+  "split.combined_no_crc": {
+    "message": "{count, plural, other {# 個の分割ファイルを結合しました（確認用の CRC ファイルはありません）}}"
+  },
+  "split.crc_mismatch": {
+    "message": "{target} が {file} と一致しません。分割ファイルが欠けているか破損しています"
+  },
+  "split.crc_names_no_file": {
+    "message": "CRC ファイルにファイル名が記載されていません"
+  },
+  "split.crc_unreadable": {
+    "message": "結合しましたが、{file} を読み込めませんでした：{err}"
+  },
+  "split.dialog_title": {
+    "message": "ファイルの分割"
+  },
+  "split.label": {
+    "message": "「{name}」を分割して保存するフォルダー："
+  },
+  "split.part_missing": {
+    "message": "{path} がありません"
+  },
+  "split.part_size": {
+    "message": "分割サイズ："
+  },
+  "split.title": {
+    "message": "「{name}」を分割"
+  },
+  "sync.close": {
+    "message": "閉じる"
+  },
+  "sync.column.date": {
+    "message": "日時"
+  },
+  "sync.column.name": {
+    "message": "名前"
+  },
+  "sync.column.size": {
+    "message": "サイズ"
+  },
+  "sync.compare": {
+    "message": "比較"
+  },
+  "sync.confirm.copy_left": {
+    "message": "{count} 個を左へコピー（{size}）"
+  },
+  "sync.confirm.copy_right": {
+    "message": "{count} 個を右へコピー（{size}）"
+  },
+  "sync.confirm.delete_left": {
+    "message": "左の {count} 個を削除"
+  },
+  "sync.confirm.delete_right": {
+    "message": "右の {count} 個を削除"
+  },
+  "sync.confirm.ok": {
+    "message": "同期"
+  },
+  "sync.confirm.text": {
+    "message": "{actions}。コピーしたファイルは既存のファイルを置き換えます。{trash, select, yes {このコンピューター上で削除したファイルはごみ箱に移動します。} other {}}"
+  },
+  "sync.confirm.title": {
+    "message": "同期"
+  },
+  "sync.error.changed": {
+    "message": "比較後に変更されました。もう一度比較してください"
+  },
+  "sync.error.compare": {
+    "message": "比較できませんでした：{err}"
+  },
+  "sync.error.no_folders": {
+    "message": "「フォルダーの同期」は 2 つのフォルダーを比較します。どちらのパネルにもアーカイブや検索結果を表示しないでください。"
+  },
+  "sync.left": {
+    "message": "左"
+  },
+  "sync.mask.label": {
+    "message": "ファイル："
+  },
+  "sync.option.asymmetric": {
+    "message": "非対称（右を左のコピーにする）"
+  },
+  "sync.option.by_content": {
+    "message": "内容で比較"
+  },
+  "sync.option.ignore_date": {
+    "message": "日時を無視"
+  },
+  "sync.option.subfolders": {
+    "message": "サブフォルダー"
+  },
+  "sync.result.done": {
+    "message": "{count, plural, other {# 個を同期しました}}"
+  },
+  "sync.result.failed": {
+    "message": "{count, plural, other {# 個を同期できませんでした}}。{first}"
+  },
+  "sync.right": {
+    "message": "右"
+  },
+  "sync.show.equal": {
+    "message": "= 同一"
+  },
+  "sync.show.label": {
+    "message": "表示："
+  },
+  "sync.show.other": {
+    "message": "≠ そのまま"
+  },
+  "sync.show.to_left": {
+    "message": "← 左へ"
+  },
+  "sync.show.to_right": {
+    "message": "→ 右へ"
+  },
+  "sync.status.both_empty": {
+    "message": "どちらも空です。"
+  },
+  "sync.status.comparing": {
+    "message": "比較中：{folder}"
+  },
+  "sync.status.counts": {
+    "message": "右へコピー {right}、左へコピー {left}、削除 {delete}、同一 {equal}、そのまま {alone}"
+  },
+  "sync.status.stopped": {
+    "message": "停止しました。"
+  },
+  "sync.stop": {
+    "message": "停止"
+  },
+  "sync.synchronize": {
+    "message": "同期..."
+  },
+  "sync.task.title": {
+    "message": "{left} と {right} を同期"
+  },
+  "sync.title": {
+    "message": "フォルダーの同期"
+  },
+  "tab_menu.close_all_tabs": {
+    "message": "すべてのタブを閉じる"
+  },
+  "tab_menu.close_duplicate_tabs": {
+    "message": "重複したタブを閉じる"
+  },
+  "tab_menu.close_tab": {
+    "message": "このタブを閉じる"
+  },
+  "tab_menu.copy_tab_to_other_panel": {
+    "message": "タブを反対側のパネルにコピー"
+  },
+  "tab_menu.duplicate_tab": {
+    "message": "このタブを複製"
+  },
+  "tab_menu.list_tabs": {
+    "message": "すべてのタブの一覧を表示"
+  },
+  "tab_menu.lock_tab": {
+    "message": "このタブをロック"
+  },
+  "tab_menu.none": {
+    "message": "（なし）"
+  },
+  "tab_menu.rename_tab": {
+    "message": "タブ名の変更..."
+  },
+  "tabs.error.reopen": {
+    "message": "タブを開き直せませんでした：{err}"
+  },
+  "tabs.history.empty": {
+    "message": "このタブの履歴にはまだフォルダーがありません。"
+  },
+  "tabs.new": {
+    "message": "新しいタブ"
+  },
+  "tabs.rename.label": {
+    "message": "新しい名前："
+  },
+  "tabs.rename.title": {
+    "message": "タブ名の変更"
+  },
+  "tabs.search_results": {
+    "message": "検索結果"
+  },
+  "terminal.busy": {
+    "message": "ターミナルでプログラムが実行中です。終了してからコマンドを実行してください。"
+  },
+  "terminal.close.idle": {
+    "message": "このターミナルタブを閉じますか？シェルは終了します。"
+  },
+  "terminal.close.ok": {
+    "message": "閉じる"
+  },
+  "terminal.close.running": {
+    "message": "このターミナルタブを閉じますか？実行中のプログラムは停止されます。"
+  },
+  "terminal.close.title": {
+    "message": "タブを閉じる"
+  },
+  "terminal.error.start_shell": {
+    "message": "シェルを起動できませんでした：{err}"
+  },
+  "terminal.jump_to_bottom": {
+    "message": "最下部へ移動 (Ctrl+End) ↓"
+  },
+  "terminal.menu.copy": {
+    "message": "コピー"
+  },
+  "terminal.menu.paste": {
+    "message": "貼り付け"
+  },
+  "toolbar.customize": {
+    "message": "ツールバーのカスタマイズ…"
+  },
+  "tools.clear_key": {
+    "message": "クリア"
+  },
+  "tools.close": {
+    "message": "閉じる"
+  },
+  "tools.delete": {
+    "message": "削除"
+  },
+  "tools.empty": {
+    "message": "ツールはまだありません。「新規...」で追加できます。"
+  },
+  "tools.field.command": {
+    "message": "コマンド"
+  },
+  "tools.field.key": {
+    "message": "キー"
+  },
+  "tools.field.name": {
+    "message": "名前"
+  },
+  "tools.intro": {
+    "message": "独自のコマンドラインを「ツール」メニューに追加します。メニューでクリックするか、割り当てたキーを押して実行します。"
+  },
+  "tools.key.none": {
+    "message": "なし"
+  },
+  "tools.key.waiting": {
+    "message": "キーを押してください...（Esc：なし）"
+  },
+  "tools.move_down": {
+    "message": "下へ移動"
+  },
+  "tools.move_up": {
+    "message": "上へ移動"
+  },
+  "tools.name.placeholder": {
+    "message": "反対側と比較"
+  },
+  "tools.new": {
+    "message": "新規..."
+  },
+  "tools.new_name": {
+    "message": "ツール {number}"
+  },
+  "tools.no_command": {
+    "message": "{tool} にはまだコマンドがありません：「ツール > ツールの管理」で設定してください。"
+  },
+  "tools.not_local": {
+    "message": "ツールはこのコンピューターで実行されますが、パネルはサーバーかアーカイブを表示しています。"
+  },
+  "tools.note.key_of_command": {
+    "message": "{key} は {command} にも割り当てられています。ツールが優先されます。"
+  },
+  "tools.note.key_of_other_tool": {
+    "message": "{key} は {tool} にも割り当てられています。リストで下にあるツールが優先されます。"
+  },
+  "tools.placeholders": {
+    "message": "%P このパネルのフォルダー、%T 反対側のパネルのフォルダー（どちらも区切り文字で終わるため、\"%P%N\" がパスになります）、%N カーソル位置のファイル、%O その拡張子を除いた名前、%E 拡張子、%S 選択したファイル（なければカーソル位置のファイル）。これらはそれぞれ引用符で囲まれます。%% は % そのものです。それ以外は引用符で囲んでください：\"%P%N\"。"
+  },
+  "tools.run_in_terminal": {
+    "message": "ターミナルで実行して出力を表示"
+  },
+  "tools.set_key": {
+    "message": "キーの設定..."
+  },
+  "tools.title": {
+    "message": "ツール"
+  },
+  "transfer.answer.cancel": {
+    "message": "キャンセル"
+  },
+  "transfer.answer.elevate": {
+    "message": "管理者として実行"
+  },
+  "transfer.answer.overwrite": {
+    "message": "上書き"
+  },
+  "transfer.answer.overwrite_all": {
+    "message": "すべて上書き"
+  },
+  "transfer.answer.rename": {
+    "message": "名前を変更"
+  },
+  "transfer.answer.retry": {
+    "message": "再試行"
+  },
+  "transfer.answer.skip": {
+    "message": "スキップ"
+  },
+  "transfer.answer.skip_all": {
+    "message": "すべてスキップ"
+  },
+  "transfer.archive.local_only": {
+    "message": "アーカイブに入れられるのは、このコンピューターのファイルだけです。先にここへコピーしてください。"
+  },
+  "transfer.cancel": {
+    "message": "キャンセル"
+  },
+  "transfer.error.elevate_hint": {
+    "message": "管理者として実行：このファイルと、ほかに拒否されたものを、残りの処理が終わった後にまとめて実行します。パスワードの入力は 1 回だけです。"
+  },
+  "transfer.error.title": {
+    "message": "エラー"
+  },
+  "transfer.exists.describe": {
+    "message": "{count, plural, other {{size} バイト、{time}}}"
+  },
+  "transfer.exists.text": {
+    "message": "既存のファイル：{existing}\n新しいファイル：{new}"
+  },
+  "transfer.exists.title": {
+    "message": "ファイルが存在します"
+  },
+  "transfer.extract_failed": {
+    "message": "アーカイブから取り出せませんでした：{err}"
+  },
+  "transfer.into_archive.question_many": {
+    "message": "{count, plural, other {# 個の項目}}を {into} に{kind, select, copy {コピー} other {移動}}しますか？同じ名前のものは置き換えられます。"
+  },
+  "transfer.into_archive.question_one": {
+    "message": "「{name}」を {into} に{kind, select, copy {コピー} other {移動}}しますか？同じ名前のものは置き換えられます。"
+  },
+  "transfer.into_archive.title_many": {
+    "message": "{count, plural, other {# 個の項目}}を {archive} に{kind, select, copy {コピー} other {移動}}"
+  },
+  "transfer.into_archive.title_one": {
+    "message": "「{name}」を {archive} に{kind, select, copy {コピー} other {移動}}"
+  },
+  "transfer.label.many": {
+    "message": "{count, plural, other {# 個の項目}}の{kind, select, copy {コピー} other {移動}}先："
+  },
+  "transfer.label.many_server": {
+    "message": "{count, plural, other {# 個の項目}}の {server} 上の{kind, select, copy {コピー} other {移動}}先："
+  },
+  "transfer.label.one": {
+    "message": "「{name}」の{kind, select, copy {コピー} other {移動}}先："
+  },
+  "transfer.label.one_server": {
+    "message": "「{name}」の {server} 上の{kind, select, copy {コピー} other {移動}}先："
+  },
+  "transfer.ok": {
+    "message": "OK"
+  },
+  "transfer.overwrite.all": {
+    "message": "すべて上書き"
+  },
+  "transfer.overwrite.ask": {
+    "message": "確認する"
+  },
+  "transfer.overwrite.label": {
+    "message": "転送先に同じ名前のファイルがある場合："
+  },
+  "transfer.overwrite.older": {
+    "message": "古いものだけ上書き"
+  },
+  "transfer.overwrite.rename": {
+    "message": "コピーの名前を変更"
+  },
+  "transfer.overwrite.skip": {
+    "message": "すべてスキップ"
+  },
+  "transfer.remove_moved": {
+    "message": "移動したファイルを {name} から削除"
+  },
+  "transfer.speed": {
+    "message": "{size}/s"
+  },
+  "transfer.strip.counting": {
+    "message": "集計中：{count, plural, other {# 個のファイル}}"
+  },
+  "transfer.strip.progress": {
+    "message": "{files}/{count, plural, other {# 個のファイル}}、{percent}%"
+  },
+  "transfer.strip.queue": {
+    "message": "キュー..."
+  },
+  "transfer.strip.queue_waiting": {
+    "message": "キュー（{count, plural, other {# 件待機中}}）..."
+  },
+  "transfer.title.copy": {
+    "message": "コピー"
+  },
+  "transfer.title.move": {
+    "message": "移動"
+  },
+  "viewer.as_text_hint": {
+    "message": "{err}。1 キーでファイルをテキストとして表示します。"
+  },
+  "viewer.book.cannot_read": {
+    "message": "この書籍は読み込めません：{err}。1 キーでファイルをテキストとして表示します。"
+  },
+  "viewer.book.continuing": {
+    "message": "{percent} から再開"
+  },
+  "viewer.book.error.compression": {
+    "message": "まだ対応していない圧縮形式です（{compression}）"
+  },
+  "viewer.book.error.damaged": {
+    "message": "書籍が破損しています"
+  },
+  "viewer.book.error.damaged_zip": {
+    "message": "zip が破損しています"
+  },
+  "viewer.book.error.drm": {
+    "message": "DRM で保護されています。Kindle でのみ読めます"
+  },
+  "viewer.book.error.huffman": {
+    "message": "Amazon 独自の書籍形式 (HUFF/CDIC) で圧縮されており、まだ対応していません"
+  },
+  "viewer.book.error.missing_part": {
+    "message": "{name} が書籍内にありません"
+  },
+  "viewer.book.error.no_package": {
+    "message": "書籍にパッケージファイルがありません"
+  },
+  "viewer.book.error.no_text": {
+    "message": "書籍にテキストがありません"
+  },
+  "viewer.book.error.not_zip": {
+    "message": "zip ではありません。書籍が破損しているか、DRM で保護されていませんか？"
+  },
+  "viewer.book.error.zip_method": {
+    "message": "{name}：ここでは読み込めない zip 圧縮方式です（{method}）"
+  },
+  "viewer.cannot_show": {
+    "message": "表示できません：{err}"
+  },
+  "viewer.convert.failed": {
+    "message": "{tool} で変換できませんでした（{status}）"
+  },
+  "viewer.converting": {
+    "message": "{tool} で変換しています…"
+  },
+  "viewer.copy.too_large": {
+    "message": "{megabytes} MB を超える選択範囲はコピーされません。"
+  },
+  "viewer.encoding.cp1250": {
+    "message": "東ヨーロッパ (1250)"
+  },
+  "viewer.encoding.cp1251": {
+    "message": "キリル文字 Windows (1251)"
+  },
+  "viewer.encoding.cp1252": {
+    "message": "西ヨーロッパ Latin1 (1252)"
+  },
+  "viewer.encoding.cp1253": {
+    "message": "ギリシャ語 (1253)"
+  },
+  "viewer.encoding.cp1254": {
+    "message": "トルコ語 (1254)"
+  },
+  "viewer.encoding.cp1255": {
+    "message": "ヘブライ語 (1255)"
+  },
+  "viewer.encoding.cp1256": {
+    "message": "アラビア語 (1256)"
+  },
+  "viewer.encoding.cp1257": {
+    "message": "バルト語 (1257)"
+  },
+  "viewer.encoding.cp1258": {
+    "message": "ベトナム語 (1258)"
+  },
+  "viewer.encoding.cp20866": {
+    "message": "キリル文字 KOI8-R (20866)"
+  },
+  "viewer.encoding.cp437": {
+    "message": "DOS-USA (437)"
+  },
+  "viewer.encoding.cp850": {
+    "message": "DOS-LATIN1 (850)"
+  },
+  "viewer.encoding.cp852": {
+    "message": "DOS 中央ヨーロッパ (852)"
+  },
+  "viewer.encoding.cp866": {
+    "message": "DOS キリル文字 (866)"
+  },
+  "viewer.encoding.cp874": {
+    "message": "タイ語 (874)"
+  },
+  "viewer.encoding.cp932": {
+    "message": "日本語 (932)"
+  },
+  "viewer.encoding.cp936": {
+    "message": "中国語 簡体字 (936)"
+  },
+  "viewer.encoding.cp949": {
+    "message": "韓国語 (949)"
+  },
+  "viewer.encoding.cp950": {
+    "message": "中国語 繁体字 (950)"
+  },
+  "viewer.find.not_found": {
+    "message": "見つかりません：{text}"
+  },
+  "viewer.find.not_hex": {
+    "message": "16 進数の文字列ではありません：{text}"
+  },
+  "viewer.find.nothing": {
+    "message": "検索する文字列がありません。"
+  },
+  "viewer.find.save_failed": {
+    "message": "検索履歴を保存できませんでした：{err}"
+  },
+  "viewer.loading": {
+    "message": "読み込み中…"
+  },
+  "viewer.markdown.too_large": {
+    "message": "{megabytes} MB を超えています。1 キーでテキストとして表示します。"
+  },
+  "viewer.menu.binary": {
+    "message": "バイナリ（固定行長）"
+  },
+  "viewer.menu.book": {
+    "message": "書籍 (EPUB、FB2)"
+  },
+  "viewer.menu.close": {
+    "message": "閉じる"
+  },
+  "viewer.menu.configure": {
+    "message": "設定..."
+  },
+  "viewer.menu.copy_hex": {
+    "message": "16 進数としてコピー"
+  },
+  "viewer.menu.copy_text": {
+    "message": "テキストとしてコピー"
+  },
+  "viewer.menu.edit": {
+    "message": "編集"
+  },
+  "viewer.menu.encoding": {
+    "message": "エンコード"
+  },
+  "viewer.menu.file": {
+    "message": "ファイル"
+  },
+  "viewer.menu.find": {
+    "message": "検索..."
+  },
+  "viewer.menu.find_next": {
+    "message": "次を検索"
+  },
+  "viewer.menu.fit_image": {
+    "message": "画像をウィンドウに合わせる"
+  },
+  "viewer.menu.font_ansi": {
+    "message": "ANSI (Windows 文字セット)"
+  },
+  "viewer.menu.font_ascii": {
+    "message": "ASCII (DOS 文字セット)"
+  },
+  "viewer.menu.font_page": {
+    "message": "フォントの設定に従う"
+  },
+  "viewer.menu.font_variable": {
+    "message": "可変幅フォント"
+  },
+  "viewer.menu.hex": {
+    "message": "16 進数"
+  },
+  "viewer.menu.html": {
+    "message": "HTML テキスト（タグを除去）"
+  },
+  "viewer.menu.minimap": {
+    "message": "ミニマップ"
+  },
+  "viewer.menu.next_file": {
+    "message": "次のファイル"
+  },
+  "viewer.menu.only_larger": {
+    "message": "大きい画像のみウィンドウに合わせる"
+  },
+  "viewer.menu.open": {
+    "message": "開く..."
+  },
+  "viewer.menu.options": {
+    "message": "オプション"
+  },
+  "viewer.menu.picture": {
+    "message": "画像/マルチメディア"
+  },
+  "viewer.menu.previous_file": {
+    "message": "前のファイル"
+  },
+  "viewer.menu.reload": {
+    "message": "再読み込み"
+  },
+  "viewer.menu.save_as": {
+    "message": "名前を付けて保存..."
+  },
+  "viewer.menu.search_google": {
+    "message": "選択したテキストを Google で検索"
+  },
+  "viewer.menu.select_all": {
+    "message": "すべて選択"
+  },
+  "viewer.menu.syntax_colors": {
+    "message": "構文の色分け"
+  },
+  "viewer.menu.text_only": {
+    "message": "テキストのみ"
+  },
+  "viewer.menu.unicode": {
+    "message": "Unicode (UTF-16)"
+  },
+  "viewer.menu.wrap": {
+    "message": "テキストを折り返す（{columns, plural, other {# 桁}}）"
+  },
+  "viewer.mode.binary": {
+    "message": "バイナリ · {page}"
+  },
+  "viewer.mode.book": {
+    "message": "書籍"
+  },
+  "viewer.mode.hex": {
+    "message": "16 進数 · {page}"
+  },
+  "viewer.mode.html": {
+    "message": "HTML テキスト"
+  },
+  "viewer.mode.image": {
+    "message": "画像"
+  },
+  "viewer.mode.multimedia": {
+    "message": "マルチメディア"
+  },
+  "viewer.mode.pdf_by": {
+    "message": "PDF（{tool} で変換）"
+  },
+  "viewer.mode.text": {
+    "message": "テキスト · {page}"
+  },
+  "viewer.origin.not_editable": {
+    "message": "編集できるのは 7z、zip、jar、tar アーカイブ内のファイルだけです"
+  },
+  "viewer.origin.updated": {
+    "message": "{archive} を更新しました"
+  },
+  "viewer.origin.updated_on": {
+    "message": "{server} 上の {archive} を更新しました"
+  },
+  "viewer.origin.uploaded": {
+    "message": "{path} をアップロードしました"
+  },
+  "viewer.pdf.cannot_show": {
+    "message": "この PDF は表示できません：{err}"
+  },
+  "viewer.pdf.loading": {
+    "message": "読み込み中..."
+  },
+  "viewer.pdf.page": {
+    "message": "{page} / {pages} ページ"
+  },
+  "viewer.picture.cannot_show": {
+    "message": "この画像は表示できません。1 キーでテキストとして表示します。"
+  },
+  "viewer.save_as.failed": {
+    "message": "{path} を保存できませんでした：{err}"
+  },
+  "viewer.status.rows": {
+    "message": "{count, plural, other {{first}–{last} 行 / 全 {grouped} 行}}"
+  },
+  "viewer.status.rows_so_far": {
+    "message": "{count, plural, other {これまでに {grouped} 行、{percent} 読み込み済み}}"
+  },
+  "viewer.status.searching": {
+    "message": "検索しています…"
+  },
+  "viewer.status.size": {
+    "message": "{count, plural, other {{grouped} バイト}}"
+  },
+  "viewer.window.title": {
+    "message": "{path} — ビューアー"
+  },
+  "viewer.zoom.fit": {
+    "message": "ウィンドウに合わせる (Ctrl+0)"
+  },
+  "viewer.zoom.in": {
+    "message": "拡大 (Ctrl++)"
+  },
+  "viewer.zoom.out": {
+    "message": "縮小 (Ctrl+-)"
+  },
+  "viewer.zoom.reset": {
+    "message": "100% に戻す (Ctrl+0)"
+  },
+  "workspaces.button.close": {
+    "message": "閉じる"
+  },
+  "workspaces.button.delete": {
+    "message": "削除..."
+  },
+  "workspaces.button.duplicate": {
+    "message": "複製..."
+  },
+  "workspaces.button.new": {
+    "message": "新規..."
+  },
+  "workspaces.button.rename": {
+    "message": "名前の変更..."
+  },
+  "workspaces.delete.button": {
+    "message": "削除"
+  },
+  "workspaces.delete.closed": {
+    "message": "ワークスペース「{name}」を削除しますか？そのタブの情報は失われます。"
+  },
+  "workspaces.delete.closed_shells": {
+    "message": "ワークスペース「{name}」を削除しますか？そのタブの情報は失われ、ターミナルタブのシェルは終了します。"
+  },
+  "workspaces.delete.open": {
+    "message": "ワークスペース「{name}」を削除しますか？そのタブは閉じられ、代わりに「{other}」が開きます。"
+  },
+  "workspaces.delete.open_shells": {
+    "message": "ワークスペース「{name}」を削除しますか？そのタブは閉じられ、ターミナルタブのシェルは終了します。代わりに「{other}」が開きます。"
+  },
+  "workspaces.delete.title": {
+    "message": "ワークスペースの削除"
+  },
+  "workspaces.duplicate.name": {
+    "message": "{name} のコピー"
+  },
+  "workspaces.duplicate.title": {
+    "message": "ワークスペースの複製"
+  },
+  "workspaces.error.name_taken": {
+    "message": "この名前は別のワークスペースで使われています。"
+  },
+  "workspaces.error.no_name": {
+    "message": "ワークスペースには名前が必要です。"
+  },
+  "workspaces.error.save": {
+    "message": "ワークスペースを保存できませんでした：{err}"
+  },
+  "workspaces.hint": {
+    "message": "「表示 > ワークスペース」で開きます。開いているワークスペースでの変更は、そのワークスペースに保存されます。"
+  },
+  "workspaces.name.label": {
+    "message": "名前："
+  },
+  "workspaces.new.name": {
+    "message": "ワークスペース {number}"
+  },
+  "workspaces.new.title": {
+    "message": "新しいワークスペース"
+  },
+  "workspaces.open": {
+    "message": "使用中"
+  },
+  "workspaces.rename.title": {
+    "message": "ワークスペース名の変更"
+  },
+  "workspaces.summary.panels": {
+    "message": "左 {left, plural, other {# タブ}}、右 {right, plural, other {# タブ}}"
+  },
+  "workspaces.summary.terminal": {
+    "message": "左 {left, plural, other {# タブ}}、右 {right, plural, other {# タブ}}、ターミナル {terminal, plural, other {# タブ}}"
+  },
+  "workspaces.summary.terminal_hidden": {
+    "message": "左 {left, plural, other {# タブ}}、右 {right, plural, other {# タブ}}、ターミナル {terminal, plural, other {# タブ}}（非表示）"
+  },
+  "workspaces.title": {
+    "message": "ワークスペース"
+  }
+}

@@ -463,7 +463,8 @@ impl SettingsDialog {
         let (pill, rail) = (theme.primary, theme.muted);
         v_flex()
             .id("settings-rail")
-            .w(px(172.))
+            // As wide as its longest page name: some languages' are long.
+            .min_w(px(172.))
             .flex_none()
             .h_full()
             .gap(px(2.))

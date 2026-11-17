@@ -1,0 +1,4823 @@
+{
+  "about.addons": {
+    "message": "Bővítmények, igény szerint letöltve"
+  },
+  "about.libraries": {
+    "message": "Erre épül"
+  },
+  "about.licence": {
+    "message": "Licenc:"
+  },
+  "about.made_with": {
+    "message": "Ezeknek a projekteknek a munkájával készült"
+  },
+  "about.part.alacritty_terminal": {
+    "message": "A beépített terminál képernyője és parancsértelmezője"
+  },
+  "about.part.encoding_rs": {
+    "message": "Kódlapok"
+  },
+  "about.part.gpui": {
+    "message": "Ablak, rajzolás és bevitel (a Zed szerkesztőből)"
+  },
+  "about.part.gpui_kit": {
+    "message": "Vezérlők: listák, menük, mezők, a szerkesztő"
+  },
+  "about.part.html5ever": {
+    "message": "HTML és e-könyvek a megjelenítőben"
+  },
+  "about.part.image": {
+    "message": "Képek"
+  },
+  "about.part.keyring": {
+    "message": "Jelszavak a rendszer kulcstartójában"
+  },
+  "about.part.lucide": {
+    "message": "Ikonok"
+  },
+  "about.part.material_icons": {
+    "message": "Fájl- és mappaikonok"
+  },
+  "about.part.pdfium_render": {
+    "message": "A PDFium elérése Rustból"
+  },
+  "about.part.ratatui": {
+    "message": "scmd, a terminálos változat"
+  },
+  "about.part.russh": {
+    "message": "SSH és SFTP"
+  },
+  "about.part.rustls": {
+    "message": "TLS"
+  },
+  "about.part.serde": {
+    "message": "Beállításfájlok"
+  },
+  "about.part.similar": {
+    "message": "Tartalom összehasonlítása"
+  },
+  "about.part.suppaftp": {
+    "message": "FTP és FTPS"
+  },
+  "about.part.tokio": {
+    "message": "Hálózati munka a háttérben"
+  },
+  "about.part.trash": {
+    "message": "A Kuka"
+  },
+  "about.part.tree_sitter": {
+    "message": "Kódszínezés a megjelenítőben és a szerkesztőben"
+  },
+  "about.part.zbus": {
+    "message": "D-Bus: az asztali környezet, az eszközök, a KDE Connect"
+  },
+  "about.shipped": {
+    "message": "Mellékelt összetevők"
+  },
+  "about.tagline": {
+    "message": "Kétpaneles fájlkezelő, szabad szoftver."
+  },
+  "about.title": {
+    "message": "A Spark Commander névjegye"
+  },
+  "about.version": {
+    "message": "Verzió: {version}"
+  },
+  "activity.clear": {
+    "message": "Ürítés"
+  },
+  "activity.clear_failed": {
+    "message": "Nem sikerült üríteni a naplót: {err}"
+  },
+  "activity.empty": {
+    "message": "Még nem történt semmi."
+  },
+  "activity.title": {
+    "message": "Tevékenységnapló"
+  },
+  "addons.error.damaged": {
+    "message": "a letöltés sérült: eltér az ellenőrzőösszege"
+  },
+  "addons.error.list": {
+    "message": "a bővítmények listája: {err}"
+  },
+  "addons.error.missing_file": {
+    "message": "a letöltésből hiányzik: {file}"
+  },
+  "addons.error.no_folder": {
+    "message": "nincs adatmappa"
+  },
+  "addons.error.unpacking": {
+    "message": "kicsomagolás: {err}"
+  },
+  "addons.installed": {
+    "message": "{addon} {version} telepítve."
+  },
+  "addons.megabytes": {
+    "message": "{size} MB"
+  },
+  "addons.offer.never": {
+    "message": "Ne jelenjen meg többé"
+  },
+  "addons.offer.no": {
+    "message": "Nem"
+  },
+  "addons.offer.text": {
+    "message": "A fájl ({name}) megnyitásához egy bővítmény kell, amely nincs telepítve: {addon}. Letöltöd a Beállítások > Bővítmények oldalon?"
+  },
+  "addons.offer.title": {
+    "message": "Bővítmény"
+  },
+  "addons.offer.yes": {
+    "message": "Igen"
+  },
+  "addons.purpose.cloud": {
+    "message": "Online tárhelyek: S3, Google Drive, OneDrive, Dropbox és más szolgáltatások."
+  },
+  "addons.purpose.media": {
+    "message": "Videó és hang, valamint HEIC és AVIF fényképek: a megjelenítő és a Gyorsnézet is megjeleníti őket."
+  },
+  "addons.purpose.office": {
+    "message": "Office-dokumentumok: a megjelenítő PDF-ként mutatja a Word-, Excel- és PowerPoint-fájlokat."
+  },
+  "addons.purpose.pdfium": {
+    "message": "PDF: a megjelenítő megmutatja a PDF-fájlokat, és az átalakítás után az Office-dokumentumokat is."
+  },
+  "addons.purpose.seven_zip": {
+    "message": "Archívumok: 7z, zip, rar, tar és más formátumok csomagolása és kicsomagolása."
+  },
+  "addons.update": {
+    "message": "Frissítés"
+  },
+  "addons.updates": {
+    "message": "Bővítményfrissítések: {names}"
+  },
+  "appearance.dark": {
+    "message": "Sötét"
+  },
+  "appearance.light": {
+    "message": "Világos"
+  },
+  "appearance.system": {
+    "message": "A rendszer szerint"
+  },
+  "archive.cannot_read": {
+    "message": "{name}: nem olvasható"
+  },
+  "archive.not_in_archive": {
+    "message": "Nincs az archívumban: {name}"
+  },
+  "archive.not_own_folder": {
+    "message": "Nem a jelenlegi felhasználó saját mappája: {folder}"
+  },
+  "archive.seven_zip_failed": {
+    "message": "A 7-Zip futása sikertelen ({code})"
+  },
+  "archive.seven_zip_missing": {
+    "message": "A 7-Zip hiányzik: {path} (futtasd a vendor/7zip/fetch.sh vagy a fetch.bat szkriptet)"
+  },
+  "archive.temp_not_utf8": {
+    "message": "az ideiglenes mappa neve nem UTF-8"
+  },
+  "associations.add": {
+    "message": "Hozzáadás..."
+  },
+  "associations.cancel": {
+    "message": "Mégse"
+  },
+  "associations.close": {
+    "message": "Bezárás"
+  },
+  "associations.column.edit": {
+    "message": "Szerkesztés (F4)"
+  },
+  "associations.column.files": {
+    "message": "Fájlok"
+  },
+  "associations.column.open": {
+    "message": "Megnyitás (Enter)"
+  },
+  "associations.column.view": {
+    "message": "Megtekintés (F3)"
+  },
+  "associations.edit": {
+    "message": "Szerkesztés..."
+  },
+  "associations.edit_dialog.title": {
+    "message": "Társítás"
+  },
+  "associations.empty": {
+    "message": "Még nincs egy sem."
+  },
+  "associations.field.edit": {
+    "message": "Szerkesztés (F4):"
+  },
+  "associations.field.files": {
+    "message": "Fájlok (*.jpg *.png):"
+  },
+  "associations.field.open": {
+    "message": "Megnyitás (Enter):"
+  },
+  "associations.field.view": {
+    "message": "Megtekintés (F3):"
+  },
+  "associations.intro": {
+    "message": "Az Enter, az F3 és az F4 ezeket a programokat futtatja a maszknak megfelelő fájlokra; üresen a szokásos marad. A %1 a fájlt jelöli."
+  },
+  "associations.mask_needed": {
+    "message": "Meg kell adni a fájlok maszkját: *.txt"
+  },
+  "associations.no_file": {
+    "message": "Vidd a kurzort egy olyan típusú fájlra, amelyet társítani szeretnél."
+  },
+  "associations.ok": {
+    "message": "OK"
+  },
+  "associations.remove": {
+    "message": "Eltávolítás"
+  },
+  "associations.save_failed": {
+    "message": "Nem sikerült menteni a beállításokat: {err}"
+  },
+  "associations.title": {
+    "message": "Belső társítások"
+  },
+  "attributes.bad_time": {
+    "message": "„{text}” nem érvényes dátum és idő. Példa: 2026-11-10 14:04:33"
+  },
+  "attributes.cancel": {
+    "message": "Mégse"
+  },
+  "attributes.change_time": {
+    "message": "Dátum/idő módosítása:"
+  },
+  "attributes.changed": {
+    "message": "{count, plural, one {# módosítva} other {# módosítva}}"
+  },
+  "attributes.changed_failed": {
+    "message": "{count, plural, one {# módosítva} other {# módosítva}}, {failed, plural, one {# sikertelen} other {# sikertelen}}"
+  },
+  "attributes.dialog_title_many": {
+    "message": "Attribútumok módosítása: {count, plural, one {# elem} other {# elem}}"
+  },
+  "attributes.dialog_title_one": {
+    "message": "Attribútumok módosítása: {name}"
+  },
+  "attributes.execute": {
+    "message": "Futtatás"
+  },
+  "attributes.group": {
+    "message": "Csoport"
+  },
+  "attributes.in_archive": {
+    "message": "Archívumon belül nem módosíthatók az attribútumok."
+  },
+  "attributes.no_bits": {
+    "message": "Ezeknek a fájloknak itt nincsenek jogosultságbitjeik; csak a dátum módosítható."
+  },
+  "attributes.now": {
+    "message": "Most"
+  },
+  "attributes.octal": {
+    "message": "Oktális:"
+  },
+  "attributes.ok": {
+    "message": "OK"
+  },
+  "attributes.others": {
+    "message": "Mások"
+  },
+  "attributes.owner": {
+    "message": "Tulajdonos"
+  },
+  "attributes.read": {
+    "message": "Olvasás"
+  },
+  "attributes.recurse": {
+    "message": "A mappák teljes tartalmára is"
+  },
+  "attributes.title_many": {
+    "message": "{count, plural, one {# elem} other {# elem}} attribútumainak módosítása"
+  },
+  "attributes.title_one": {
+    "message": "„{name}” attribútumainak módosítása"
+  },
+  "attributes.write": {
+    "message": "Írás"
+  },
+  "bookmarks.add_current": {
+    "message": "Jelenlegi mappa hozzáadása"
+  },
+  "bookmarks.add_folders": {
+    "message": "Mappák hozzáadása..."
+  },
+  "bookmarks.added": {
+    "message": "Könyvjelző hozzáadva: {name}"
+  },
+  "bookmarks.already": {
+    "message": "Már a Könyvjelzők között van: {name}"
+  },
+  "bookmarks.chooser.failed": {
+    "message": "Nem sikerült megnyitni a mappaválasztót: {err}"
+  },
+  "bookmarks.chooser.prompt": {
+    "message": "Hozzáadás"
+  },
+  "bookmarks.close": {
+    "message": "Bezárás"
+  },
+  "bookmarks.copy_name": {
+    "message": "Név másolása"
+  },
+  "bookmarks.copy_path": {
+    "message": "Elérési út másolása"
+  },
+  "bookmarks.drop_here": {
+    "message": "Húzz ide mappákat."
+  },
+  "bookmarks.empty": {
+    "message": "Nincsenek könyvjelzők: adj hozzá mappákat, vagy húzd ide őket."
+  },
+  "bookmarks.intro": {
+    "message": "Ennek a gépnek a mappái, a Helyek sorrendjében: húzással átrendezheted őket, vagy ide húzott mappákkal újakat adhatsz hozzá."
+  },
+  "bookmarks.move_down": {
+    "message": "Mozgatás lefelé"
+  },
+  "bookmarks.move_up": {
+    "message": "Mozgatás felfelé"
+  },
+  "bookmarks.only_local": {
+    "message": "Csak ennek a gépnek a mappái vehetők fel könyvjelzőként."
+  },
+  "bookmarks.remove": {
+    "message": "Eltávolítás"
+  },
+  "bookmarks.remove_from": {
+    "message": "Eltávolítás a Könyvjelzők közül"
+  },
+  "bookmarks.rename": {
+    "message": "Átnevezés..."
+  },
+  "bookmarks.rename_label": {
+    "message": "Név (üresen: a mappa neve):"
+  },
+  "bookmarks.rename_title": {
+    "message": "Könyvjelző átnevezése"
+  },
+  "bookmarks.sort": {
+    "message": "Rendezés A–Z"
+  },
+  "bookmarks.title": {
+    "message": "Könyvjelzők"
+  },
+  "button_bar.copy": {
+    "message": "Másolás"
+  },
+  "button_bar.delete": {
+    "message": "Törlés"
+  },
+  "button_bar.edit": {
+    "message": "Szerkesztés"
+  },
+  "button_bar.move": {
+    "message": "Áthelyezés"
+  },
+  "button_bar.new_folder": {
+    "message": "Új mappa"
+  },
+  "button_bar.quit": {
+    "message": "Kilépés"
+  },
+  "button_bar.view": {
+    "message": "Megtekintés"
+  },
+  "checksum.create.title": {
+    "message": "{name} létrehozása"
+  },
+  "checksum.create.title_separate": {
+    "message": "Ellenőrzőösszeg-fájlok létrehozása ({method})"
+  },
+  "checksum.dialog_title": {
+    "message": "Ellenőrzőösszeg-fájlok létrehozása"
+  },
+  "checksum.save_as": {
+    "message": "Az ellenőrzőösszeg-fájl mentése ide:"
+  },
+  "checksum.separate": {
+    "message": "Inkább minden fájl mellé külön ellenőrzőösszeg-fájl"
+  },
+  "checksum.verify.all_ok": {
+    "message": "{count, plural, one {rendben: # fájl} other {mind rendben: # fájl}}"
+  },
+  "checksum.verify.choose": {
+    "message": "Válassz ellenőrzőösszeg-fájlokat: .sfv, .md5, .sha1, .sha256 vagy .sha512."
+  },
+  "checksum.verify.missing_file": {
+    "message": "hiányzik: {name}"
+  },
+  "checksum.verify.result": {
+    "message": "{ok, plural, one {# rendben} other {# rendben}}, {wrong, plural, one {# hibás} other {# hibás}}, {missing, plural, one {# hiányzik} other {# hiányzik}}"
+  },
+  "checksum.verify.title_many": {
+    "message": "{count, plural, one {# ellenőrzőösszeg-fájl} other {# ellenőrzőösszeg-fájl}} ellenőrzése"
+  },
+  "checksum.verify.title_one": {
+    "message": "{name} ellenőrzése"
+  },
+  "checksum.verify.wrong_file": {
+    "message": "hibás: {name}"
+  },
+  "command.about": {
+    "message": "A Spark Commander névjegye"
+  },
+  "command.activity_log": {
+    "message": "Tevékenységnapló..."
+  },
+  "command.all_files": {
+    "message": "Minden fájl"
+  },
+  "command.all_folder_sizes": {
+    "message": "Minden mappa méretének kiszámítása"
+  },
+  "command.all_with_extension": {
+    "message": "*.*"
+  },
+  "command.associate_with": {
+    "message": "Társítás..."
+  },
+  "command.bookmark_folder": {
+    "message": "Mappa felvétele a könyvjelzők közé"
+  },
+  "command.bookmarks": {
+    "message": "Könyvjelzők"
+  },
+  "command.branch_view": {
+    "message": "Ágnézet (almappákkal)"
+  },
+  "command.branch_view_selected": {
+    "message": "A kijelölt mappák ágnézete"
+  },
+  "command.brief": {
+    "message": "Rövid"
+  },
+  "command.calculate_occupied_space": {
+    "message": "Foglalt hely kiszámítása..."
+  },
+  "command.change_attributes": {
+    "message": "Attribútumok módosítása..."
+  },
+  "command.close_all_tabs": {
+    "message": "Összes lap bezárása"
+  },
+  "command.close_duplicate_tabs": {
+    "message": "Ismétlődő lapok bezárása"
+  },
+  "command.close_tab": {
+    "message": "Lap bezárása"
+  },
+  "command.combine_files": {
+    "message": "Fájlok összefűzése..."
+  },
+  "command.compare_by_content": {
+    "message": "Tartalom összehasonlítása..."
+  },
+  "command.compare_directories": {
+    "message": "Újabbak kijelölése"
+  },
+  "command.copy": {
+    "message": "Másolás..."
+  },
+  "command.copy_names_to_clipboard": {
+    "message": "Kijelölt nevek másolása a vágólapra"
+  },
+  "command.copy_names_with_path_to_clipboard": {
+    "message": "Nevek másolása a vágólapra elérési úttal"
+  },
+  "command.copy_to_clipboard": {
+    "message": "Fájlok másolása"
+  },
+  "command.copy_with_all_details": {
+    "message": "Másolás a vágólapra minden adattal"
+  },
+  "command.copy_with_path_and_details": {
+    "message": "Másolás a vágólapra elérési úttal és adatokkal"
+  },
+  "command.create_checksum_files": {
+    "message": "Ellenőrzőösszeg-fájl(ok) létrehozása (CRC32, MD5, SHA1, SHA256, SHA512)..."
+  },
+  "command.create_link": {
+    "message": "Hivatkozás létrehozása..."
+  },
+  "command.custom_filter": {
+    "message": "Egyéni..."
+  },
+  "command.cut_to_clipboard": {
+    "message": "Fájlok kivágása"
+  },
+  "command.delete": {
+    "message": "Törlés"
+  },
+  "command.delete_permanently": {
+    "message": "Végleges törlés"
+  },
+  "command.disconnect": {
+    "message": "Kapcsolat bontása a kiszolgálóval"
+  },
+  "command.download_link": {
+    "message": "Letöltés webcímről..."
+  },
+  "command.duplicate_tab": {
+    "message": "Új lap"
+  },
+  "command.duplicate_workspace": {
+    "message": "Munkaterület duplikálása..."
+  },
+  "command.edit": {
+    "message": "Szerkesztés"
+  },
+  "command.edit_externally": {
+    "message": "Szerkesztés külső szerkesztővel"
+  },
+  "command.folder_history": {
+    "message": "Mappaelőzmények..."
+  },
+  "command.full": {
+    "message": "Részletes"
+  },
+  "command.go_back": {
+    "message": "Vissza"
+  },
+  "command.go_forward": {
+    "message": "Előre"
+  },
+  "command.go_home": {
+    "message": "Saját mappa"
+  },
+  "command.go_to_root": {
+    "message": "Gyökérmappa"
+  },
+  "command.hidden_files": {
+    "message": "Rejtett fájlok"
+  },
+  "command.internal_associations": {
+    "message": "Belső társítások (csak a Spark Commanderben)..."
+  },
+  "command.invert_selection": {
+    "message": "Kijelölés megfordítása"
+  },
+  "command.left_drives": {
+    "message": "Meghajtók (bal panel)"
+  },
+  "command.list_tabs": {
+    "message": "Lapok listája"
+  },
+  "command.load_selection_from_file": {
+    "message": "Kijelölés betöltése fájlból"
+  },
+  "command.manage_bookmarks": {
+    "message": "Könyvjelzők kezelése..."
+  },
+  "command.manage_tools": {
+    "message": "Eszközök kezelése..."
+  },
+  "command.manage_workspaces": {
+    "message": "Munkaterületek kezelése..."
+  },
+  "command.mark_in_place": {
+    "message": "Kijelölés be/ki a helyén, a mappa méretének kiszámításával"
+  },
+  "command.mark_newer_hide_same": {
+    "message": "Újabbak kijelölése, azonos fájlok elrejtése"
+  },
+  "command.move": {
+    "message": "Áthelyezés..."
+  },
+  "command.multi_rename_tool": {
+    "message": "Csoportos átnevezés..."
+  },
+  "command.name_to_command_line": {
+    "message": "Név a parancssorba"
+  },
+  "command.new_folder": {
+    "message": "Új mappa..."
+  },
+  "command.new_terminal": {
+    "message": "Új terminállap"
+  },
+  "command.new_text_file": {
+    "message": "Új fájl..."
+  },
+  "command.new_workspace": {
+    "message": "Új munkaterület..."
+  },
+  "command.next_tab": {
+    "message": "Következő lap"
+  },
+  "command.only_selected_files": {
+    "message": "Csak a kijelölt fájlok"
+  },
+  "command.open_in_left_panel": {
+    "message": "Megjelenítés a bal panelen"
+  },
+  "command.open_in_new_tab": {
+    "message": "Mappa megnyitása új lapon"
+  },
+  "command.open_in_other_new_tab": {
+    "message": "A mappa megnyitása a másik panel új lapján"
+  },
+  "command.open_in_right_panel": {
+    "message": "Megjelenítés a jobb panelen"
+  },
+  "command.open_terminal": {
+    "message": "Terminál megnyitása itt"
+  },
+  "command.operation_queue": {
+    "message": "Műveleti sor..."
+  },
+  "command.pack": {
+    "message": "Csomagolás..."
+  },
+  "command.paste_from_clipboard": {
+    "message": "Fájlok beillesztése"
+  },
+  "command.path_and_name_to_command_line": {
+    "message": "Elérési út és név a parancssorba"
+  },
+  "command.path_to_command_line": {
+    "message": "Elérési út a parancssorba"
+  },
+  "command.previous_tab": {
+    "message": "Előző lap"
+  },
+  "command.programs": {
+    "message": "Programok"
+  },
+  "command.properties": {
+    "message": "Tulajdonságok..."
+  },
+  "command.quick_filter": {
+    "message": "Gyorsszűrő"
+  },
+  "command.quick_open": {
+    "message": "Gyors megnyitás..."
+  },
+  "command.quick_view_panel": {
+    "message": "Gyorsnézet panel"
+  },
+  "command.quit": {
+    "message": "Kilépés"
+  },
+  "command.redo": {
+    "message": "Mégis"
+  },
+  "command.rename_in_place": {
+    "message": "Átnevezés"
+  },
+  "command.reread_source": {
+    "message": "Forrás újraolvasása"
+  },
+  "command.restore_selection": {
+    "message": "Kijelölés visszaállítása"
+  },
+  "command.reversed_order": {
+    "message": "Fordított sorrend"
+  },
+  "command.right_drives": {
+    "message": "Meghajtók (jobb panel)"
+  },
+  "command.save_selection": {
+    "message": "Kijelölés mentése"
+  },
+  "command.save_selection_to_file": {
+    "message": "Kijelölés mentése fájlba"
+  },
+  "command.search": {
+    "message": "Keresés..."
+  },
+  "command.search_in_separate_process": {
+    "message": "Keresés külön ablakban..."
+  },
+  "command.select_all": {
+    "message": "Összes kijelölése"
+  },
+  "command.select_all_with_same_extension": {
+    "message": "Azonos kiterjesztésűek kijelölése"
+  },
+  "command.select_group": {
+    "message": "Csoport kijelölése..."
+  },
+  "command.settings": {
+    "message": "Beállítások..."
+  },
+  "command.shortcuts": {
+    "message": "Billentyűparancsok..."
+  },
+  "command.sidebar_connections": {
+    "message": "Kapcsolatok"
+  },
+  "command.sidebar_operations": {
+    "message": "Műveletek"
+  },
+  "command.sidebar_places": {
+    "message": "Helyek"
+  },
+  "command.sidebar_tree": {
+    "message": "Mappák"
+  },
+  "command.sort_by_extension": {
+    "message": "Kiterjesztés"
+  },
+  "command.sort_by_name": {
+    "message": "Név"
+  },
+  "command.sort_by_size": {
+    "message": "Méret"
+  },
+  "command.sort_by_time": {
+    "message": "Idő"
+  },
+  "command.split_file": {
+    "message": "Fájl darabolása..."
+  },
+  "command.swap_panels": {
+    "message": "Panelek cseréje"
+  },
+  "command.swap_panels_and_tabs": {
+    "message": "Panelek cseréje a lapjaikkal együtt"
+  },
+  "command.sync_browsing": {
+    "message": "Szinkronizált böngészés"
+  },
+  "command.synchronize_dirs": {
+    "message": "Mappák szinkronizálása..."
+  },
+  "command.target_equals_source": {
+    "message": "Cél = Forrás"
+  },
+  "command.terminal_panel": {
+    "message": "Terminál"
+  },
+  "command.test_archives": {
+    "message": "Archívum(ok) tesztelése"
+  },
+  "command.thumbnail_view": {
+    "message": "Miniatűrnézet"
+  },
+  "command.toggle_mark": {
+    "message": "Kijelölés be/ki"
+  },
+  "command.toggle_sidebar": {
+    "message": "Oldalsáv megjelenítése"
+  },
+  "command.undo": {
+    "message": "Visszavonás"
+  },
+  "command.unpack_specific_files": {
+    "message": "Fájlok kicsomagolása..."
+  },
+  "command.unselect_all": {
+    "message": "Kijelölés megszüntetése"
+  },
+  "command.unselect_group": {
+    "message": "Csoport kijelölésének megszüntetése..."
+  },
+  "command.unsorted": {
+    "message": "Rendezetlen"
+  },
+  "command.verify_checksums": {
+    "message": "Ellenőrzőösszegek ellenőrzése (ellenőrzőösszeg-fájlok alapján)"
+  },
+  "command.vertical_arrangement": {
+    "message": "Függőleges elrendezés"
+  },
+  "command.view": {
+    "message": "Megtekintés"
+  },
+  "command.website": {
+    "message": "A Spark Commander webhelye"
+  },
+  "command.workspace1": {
+    "message": "1. munkaterület megnyitása"
+  },
+  "command.workspace2": {
+    "message": "2. munkaterület megnyitása"
+  },
+  "command.workspace3": {
+    "message": "3. munkaterület megnyitása"
+  },
+  "command.workspace4": {
+    "message": "4. munkaterület megnyitása"
+  },
+  "command.workspace5": {
+    "message": "5. munkaterület megnyitása"
+  },
+  "command.workspace6": {
+    "message": "6. munkaterület megnyitása"
+  },
+  "command.workspace7": {
+    "message": "7. munkaterület megnyitása"
+  },
+  "command.workspace8": {
+    "message": "8. munkaterület megnyitása"
+  },
+  "command.workspace9": {
+    "message": "9. munkaterület megnyitása"
+  },
+  "command_line.error.cannot_run": {
+    "message": "{program}: nem futtatható"
+  },
+  "command_line.error.not_found": {
+    "message": "{program}: a parancs nem található"
+  },
+  "command_line.history.empty": {
+    "message": "Még nem futtattál parancsot"
+  },
+  "command_line.on_server": {
+    "message": "A parancsok ezen a gépen futnak, a panel viszont egy kiszolgálót mutat."
+  },
+  "command_name.all_files": {
+    "message": "Minden fájl megjelenítése"
+  },
+  "command_name.all_with_extension": {
+    "message": "*.* megjelenítése"
+  },
+  "command_name.brief": {
+    "message": "Rövid nézet"
+  },
+  "command_name.compare_directories": {
+    "message": "Mappák összehasonlítása: újabbak kijelölése"
+  },
+  "command_name.custom_filter": {
+    "message": "Egyéni szűrő"
+  },
+  "command_name.duplicate_tab": {
+    "message": "Új lap (ennek a másolata)"
+  },
+  "command_name.full": {
+    "message": "Részletes nézet"
+  },
+  "command_name.go_back": {
+    "message": "Visszalépés"
+  },
+  "command_name.go_forward": {
+    "message": "Előrelépés"
+  },
+  "command_name.go_home": {
+    "message": "Ugrás a saját mappába"
+  },
+  "command_name.hidden_files": {
+    "message": "Rejtett fájlok megjelenítése"
+  },
+  "command_name.only_selected_files": {
+    "message": "Csak a kijelölt fájlok megjelenítése"
+  },
+  "command_name.programs": {
+    "message": "Programok megjelenítése"
+  },
+  "command_name.quick_filter": {
+    "message": "Gyorsszűrő"
+  },
+  "command_name.rename_in_place": {
+    "message": "Átnevezés helyben"
+  },
+  "command_name.sidebar_connections": {
+    "message": "Oldalsáv: Kapcsolatok"
+  },
+  "command_name.sidebar_operations": {
+    "message": "Oldalsáv: Műveletek"
+  },
+  "command_name.sidebar_places": {
+    "message": "Oldalsáv: Helyek"
+  },
+  "command_name.sidebar_tree": {
+    "message": "Oldalsáv: Mappák"
+  },
+  "command_name.sort_by_extension": {
+    "message": "Rendezés kiterjesztés szerint"
+  },
+  "command_name.sort_by_name": {
+    "message": "Rendezés név szerint"
+  },
+  "command_name.sort_by_size": {
+    "message": "Rendezés méret szerint"
+  },
+  "command_name.sort_by_time": {
+    "message": "Rendezés idő szerint"
+  },
+  "command_name.toggle_sidebar": {
+    "message": "Oldalsáv megjelenítése vagy elrejtése"
+  },
+  "command_name.unsorted": {
+    "message": "Rendezés nélkül"
+  },
+  "compare.browse.prompt": {
+    "message": "Összehasonlítás"
+  },
+  "compare.button.compare": {
+    "message": "Összehasonlítás"
+  },
+  "compare.button.next": {
+    "message": "Következő eltérés (N)"
+  },
+  "compare.button.previous": {
+    "message": "Előző eltérés (P)"
+  },
+  "compare.need_two_files": {
+    "message": "Vidd a kurzort mindkét panelen egy-egy fájlra, vagy jelölj ki két fájlt."
+  },
+  "compare.option.binary": {
+    "message": "Bináris"
+  },
+  "compare.option.ignore_case": {
+    "message": "Kis- és nagybetűk figyelmen kívül hagyása"
+  },
+  "compare.option.ignore_spaces": {
+    "message": "Ismétlődő szóközök figyelmen kívül hagyása"
+  },
+  "compare.option.only_differences": {
+    "message": "Csak az eltérések"
+  },
+  "compare.status.bytes_differ": {
+    "message": "{place}: {count, plural, one {{grouped} bájt eltér} other {{grouped} bájt eltér}}, az első helye: {first}; méretek: {left} és {right}."
+  },
+  "compare.status.comparing": {
+    "message": "Összehasonlítás…"
+  },
+  "compare.status.difference_of": {
+    "message": "{at}. eltérés ({count} közül)"
+  },
+  "compare.status.differences": {
+    "message": "{count, plural, one {# eltérés} other {# eltérés}}"
+  },
+  "compare.status.identical": {
+    "message": "{count, plural, one {A fájlok azonosak: {grouped} bájt.} other {A fájlok azonosak: {grouped} bájt.}}"
+  },
+  "compare.status.no_differences": {
+    "message": "Nincs eltérés."
+  },
+  "compare.window.title": {
+    "message": "Összehasonlítás: {left} — {right}"
+  },
+  "connections.connect": {
+    "message": "Csatlakozás"
+  },
+  "connections.copy_name": {
+    "message": "Név másolása"
+  },
+  "connections.copy_path": {
+    "message": "Elérési út másolása"
+  },
+  "connections.delete": {
+    "message": "Törlés"
+  },
+  "connections.dialog.title": {
+    "message": "Kapcsolat"
+  },
+  "connections.disconnect": {
+    "message": "Kapcsolat bontása"
+  },
+  "connections.duplicate": {
+    "message": "Duplikálás"
+  },
+  "connections.duplicate_name": {
+    "message": "{name} (másolat)"
+  },
+  "connections.edit": {
+    "message": "Szerkesztés..."
+  },
+  "connections.empty": {
+    "message": "Még nincsenek kapcsolatok."
+  },
+  "connections.error.no_server": {
+    "message": "Meg kell adni a kiszolgálót."
+  },
+  "connections.error.port": {
+    "message": "Nem portszám: {text}"
+  },
+  "connections.field.access_key": {
+    "message": "Hozzáférési kulcs"
+  },
+  "connections.field.api_key": {
+    "message": "API-kulcs"
+  },
+  "connections.field.application_key": {
+    "message": "Alkalmazáskulcs"
+  },
+  "connections.field.bucket": {
+    "message": "Tároló/mappa"
+  },
+  "connections.field.container": {
+    "message": "Konténer/mappa"
+  },
+  "connections.field.endpoint": {
+    "message": "Végpont"
+  },
+  "connections.field.key_id": {
+    "message": "Kulcsazonosító"
+  },
+  "connections.field.name": {
+    "message": "Név"
+  },
+  "connections.field.password": {
+    "message": "Jelszó"
+  },
+  "connections.field.port": {
+    "message": "Port"
+  },
+  "connections.field.protocol": {
+    "message": "Protokoll"
+  },
+  "connections.field.secret_key": {
+    "message": "Titkos kulcs"
+  },
+  "connections.field.server": {
+    "message": "Kiszolgáló"
+  },
+  "connections.field.start_folder": {
+    "message": "Kezdőmappa"
+  },
+  "connections.field.user": {
+    "message": "Felhasználó"
+  },
+  "connections.folder.delete_confirm": {
+    "message": "{count, plural, one {Törlöd a mappát ({name}) a benne lévő kapcsolattal együtt?} other {Törlöd a mappát ({name}) a benne lévő # kapcsolattal együtt?}}"
+  },
+  "connections.folder.delete_title": {
+    "message": "Mappa törlése"
+  },
+  "connections.folder.exists": {
+    "message": "Már van ilyen nevű mappa: {name}"
+  },
+  "connections.folder.name": {
+    "message": "Név:"
+  },
+  "connections.folder.new_title": {
+    "message": "Új mappa"
+  },
+  "connections.folder.rename": {
+    "message": "Átnevezés..."
+  },
+  "connections.folder.rename_title": {
+    "message": "Mappa átnevezése"
+  },
+  "connections.forget_password": {
+    "message": "A mentett jelszó elfelejtése"
+  },
+  "connections.move_down": {
+    "message": "Mozgatás lefelé"
+  },
+  "connections.move_to_folder": {
+    "message": "Áthelyezés mappába"
+  },
+  "connections.move_up": {
+    "message": "Mozgatás felfelé"
+  },
+  "connections.new": {
+    "message": "Új kapcsolat..."
+  },
+  "connections.new_folder": {
+    "message": "Új mappa..."
+  },
+  "connections.no_folder": {
+    "message": "Mappán kívül"
+  },
+  "connections.open_in_terminal": {
+    "message": "Megnyitás terminálban"
+  },
+  "connections.placeholder.name": {
+    "message": "ahogy a listában megjelenik"
+  },
+  "connections.placeholder.password": {
+    "message": "titkosítva a beállítások mappájában; üresen a mentett marad"
+  },
+  "connections.placeholder.path": {
+    "message": "a bejelentkezési mappa"
+  },
+  "connections.placeholder.port": {
+    "message": "alapértelmezett"
+  },
+  "connections.placeholder.server": {
+    "message": "kiszolgáló, vagy egy gép a ~/.ssh/config fájlból"
+  },
+  "connections.placeholder.user": {
+    "message": "a ~/.ssh/config szerint, vagy névtelen"
+  },
+  "connections.save_failed": {
+    "message": "Nem sikerült menteni a kapcsolatokat: {err}"
+  },
+  "connections.ssh_config.read_only": {
+    "message": "Csak olvasható: ezeket a gépeket magában a ~/.ssh/config fájlban lehet szerkeszteni"
+  },
+  "context_menu.action_failed": {
+    "message": "{name} – sikertelen: {err}"
+  },
+  "context_menu.actions": {
+    "message": "Műveletek"
+  },
+  "context_menu.copy": {
+    "message": "Másolás"
+  },
+  "context_menu.create_new": {
+    "message": "Új létrehozása"
+  },
+  "context_menu.cut": {
+    "message": "Kivágás"
+  },
+  "context_menu.delete": {
+    "message": "Törlés"
+  },
+  "context_menu.edit": {
+    "message": "Szerkesztés"
+  },
+  "context_menu.empty_file": {
+    "message": "Üres fájl…"
+  },
+  "context_menu.move_to_trash": {
+    "message": "Áthelyezés a Kukába"
+  },
+  "context_menu.new_file_dialog.label": {
+    "message": "Új fájl neve:"
+  },
+  "context_menu.new_file_dialog.title": {
+    "message": "Új fájl"
+  },
+  "context_menu.new_file_failed": {
+    "message": "Nem sikerült létrehozni a fájlt: {err}"
+  },
+  "context_menu.new_folder": {
+    "message": "Mappa…"
+  },
+  "context_menu.open": {
+    "message": "Megnyitás"
+  },
+  "context_menu.open_failed": {
+    "message": "Nem sikerült megnyitni: {err}"
+  },
+  "context_menu.open_terminal_here": {
+    "message": "Terminál megnyitása itt"
+  },
+  "context_menu.open_with": {
+    "message": "Megnyitás ezzel"
+  },
+  "context_menu.other_application": {
+    "message": "Más alkalmazás…"
+  },
+  "context_menu.pack": {
+    "message": "Csomagolás…"
+  },
+  "context_menu.pack_files": {
+    "message": "Fájlok csomagolása"
+  },
+  "context_menu.paste": {
+    "message": "Beillesztés"
+  },
+  "context_menu.properties": {
+    "message": "Tulajdonságok"
+  },
+  "context_menu.properties_failed": {
+    "message": "Tulajdonságok: {err}"
+  },
+  "context_menu.rename": {
+    "message": "Átnevezés…"
+  },
+  "context_menu.rename_dialog.label": {
+    "message": "Új név:"
+  },
+  "context_menu.rename_dialog.title": {
+    "message": "Átnevezés"
+  },
+  "context_menu.rename_failed": {
+    "message": "Nem sikerült átnevezni: {err}"
+  },
+  "context_menu.shell_menu_failed": {
+    "message": "A menü: {err}"
+  },
+  "context_menu.show_failed": {
+    "message": "Nem sikerült megjeleníteni: {err}"
+  },
+  "context_menu.show_in_file_manager": {
+    "message": "Megjelenítés a fájlkezelőben"
+  },
+  "context_menu.terminal_failed": {
+    "message": "Nem sikerült megnyitni a terminált: {err}"
+  },
+  "context_menu.terminal_not_local": {
+    "message": "Terminál csak ennek a gépnek a mappáiban nyitható meg."
+  },
+  "context_menu.unpack": {
+    "message": "Kicsomagolás…"
+  },
+  "context_menu.view": {
+    "message": "Megtekintés"
+  },
+  "desktop.no_app_chooser": {
+    "message": "az asztali környezetben nincs alkalmazásválasztó ({err})"
+  },
+  "desktop.no_terminal": {
+    "message": "nem található terminál"
+  },
+  "desktop.nothing_to_run": {
+    "message": "{name}: nincs mit futtatni"
+  },
+  "desktop.scripts": {
+    "message": "Parancsfájlok"
+  },
+  "devices.error.mount_failed": {
+    "message": "nem sikerült csatolni az eszközt"
+  },
+  "devices.error.no_folder": {
+    "message": "az eszköz nem oszt meg mappát"
+  },
+  "devices.error.system_only": {
+    "message": "ezt csak a rendszer választhatja le"
+  },
+  "devices.error.unreachable": {
+    "message": "nem érhető el: fut rajta a KDE Connect, és ezen a hálózaton van?"
+  },
+  "devices.unlock.ask": {
+    "message": "{name} jelmondata:"
+  },
+  "devices.unlock.ask_again": {
+    "message": "Hibás jelmondat. {name} jelmondata:"
+  },
+  "devices.unlock.title": {
+    "message": "Feloldás"
+  },
+  "devices.volume.share_on_server": {
+    "message": "{share} ({server})"
+  },
+  "devices.volume.unnamed": {
+    "message": "{size} GB-os kötet"
+  },
+  "devices.volume.unnamed_encrypted": {
+    "message": "{size} GB-os titkosított kötet"
+  },
+  "download.cancel": {
+    "message": "Mégse"
+  },
+  "download.dialog_title": {
+    "message": "Letöltés webcímről"
+  },
+  "download.download": {
+    "message": "Letöltés"
+  },
+  "download.folder_link": {
+    "message": "a webcím egy mappára mutat"
+  },
+  "download.incomplete": {
+    "message": "a kiszolgáló {size, plural, one {# bájtból} other {# bájtból}} csak {got} bájtot küldött; ha újra letöltöd, onnan folytatja"
+  },
+  "download.into": {
+    "message": "Ide: {folder}"
+  },
+  "download.link": {
+    "message": "Webcím"
+  },
+  "download.link_placeholder": {
+    "message": "https://, http://, ftp:// vagy ftps://"
+  },
+  "download.local_only": {
+    "message": "Letölteni csak ennek a gépnek a mappáiba lehet: előbb nyiss meg egyet a panelen."
+  },
+  "download.name_placeholder": {
+    "message": "ahogy a kiszolgáló vagy a webcím nevezi"
+  },
+  "download.no_file": {
+    "message": "a webcím nem nevez meg fájlt"
+  },
+  "download.not_a_link": {
+    "message": "nem letölthető webcím"
+  },
+  "download.problem.bad_name": {
+    "message": "Csak fájlnév, mappa nélkül."
+  },
+  "download.problem.empty": {
+    "message": "Illessz be vagy írj be egy webcímet."
+  },
+  "download.problem.exists": {
+    "message": "Már van itt ilyen nevű fájl: {name}. A Csere gomb felülírja."
+  },
+  "download.problem.not_link": {
+    "message": "Nem letölthető webcím: https://, http://, ftp:// vagy ftps:// előtaggal kell kezdődnie."
+  },
+  "download.replace": {
+    "message": "Csere"
+  },
+  "download.save_as": {
+    "message": "Mentés másként"
+  },
+  "download.saved_as": {
+    "message": "mentve ezen a néven: {name}"
+  },
+  "download.title": {
+    "message": "„{name}” letöltése"
+  },
+  "download.title_link": {
+    "message": "{link} letöltése"
+  },
+  "editor.close.after_send": {
+    "message": "Bezáródik, amint a fájl megérkezik a kiszolgálóra."
+  },
+  "editor.close.discard": {
+    "message": "Ne mentsd"
+  },
+  "editor.close.save": {
+    "message": "Mentés"
+  },
+  "editor.close.title": {
+    "message": "Mented a módosításokat?"
+  },
+  "editor.close.unsaved": {
+    "message": "{name}: a módosítások nincsenek mentve."
+  },
+  "editor.close.unsent": {
+    "message": "{name}: nincs mentve a kiszolgálón, mert nem sikerült elküldeni."
+  },
+  "editor.dialog.cancel": {
+    "message": "Mégse"
+  },
+  "editor.edit.copy": {
+    "message": "Másolás"
+  },
+  "editor.edit.cut": {
+    "message": "Kivágás"
+  },
+  "editor.edit.find": {
+    "message": "Keresés..."
+  },
+  "editor.edit.find_next": {
+    "message": "Következő találat"
+  },
+  "editor.edit.find_previous": {
+    "message": "Előző találat"
+  },
+  "editor.edit.go_to_line": {
+    "message": "Ugrás sorra..."
+  },
+  "editor.edit.paste": {
+    "message": "Beillesztés"
+  },
+  "editor.edit.redo": {
+    "message": "Mégis"
+  },
+  "editor.edit.replace": {
+    "message": "Csere..."
+  },
+  "editor.edit.undo": {
+    "message": "Visszavonás"
+  },
+  "editor.external.not_set": {
+    "message": "nincs beállítva külső szerkesztő (Beállítások, Szerkesztés/Megtekintés)"
+  },
+  "editor.file.close": {
+    "message": "Bezárás"
+  },
+  "editor.file.reload": {
+    "message": "Újratöltés"
+  },
+  "editor.file.save": {
+    "message": "Mentés"
+  },
+  "editor.file.save_as": {
+    "message": "Mentés másként..."
+  },
+  "editor.find.close": {
+    "message": "Bezárás (Escape)"
+  },
+  "editor.find.count": {
+    "message": "{current}/{total}"
+  },
+  "editor.find.in_selection": {
+    "message": "Keresés a kijelölésben (Alt+L)"
+  },
+  "editor.find.match_case": {
+    "message": "Kis- és nagybetűk megkülönböztetése (Alt+C)"
+  },
+  "editor.find.next": {
+    "message": "Következő találat (Enter)"
+  },
+  "editor.find.no_results": {
+    "message": "Nincs találat"
+  },
+  "editor.find.placeholder": {
+    "message": "Keresés"
+  },
+  "editor.find.preserve_case": {
+    "message": "Kis- és nagybetűk megőrzése (Alt+P)"
+  },
+  "editor.find.previous": {
+    "message": "Előző találat (Shift+Enter)"
+  },
+  "editor.find.regex": {
+    "message": "Reguláris kifejezés (Alt+R)"
+  },
+  "editor.find.replace": {
+    "message": "Csere (Ctrl+Shift+1)"
+  },
+  "editor.find.replace_all": {
+    "message": "Összes cseréje (Ctrl+Alt+Enter)"
+  },
+  "editor.find.replace_placeholder": {
+    "message": "Csere"
+  },
+  "editor.find.toggle_replace": {
+    "message": "Csere be/ki"
+  },
+  "editor.find.whole_word": {
+    "message": "Csak teljes szavak (Alt+W)"
+  },
+  "editor.go_to_line.label": {
+    "message": "Sor, vagy sor:oszlop"
+  },
+  "editor.go_to_line.title": {
+    "message": "Ugrás sorra"
+  },
+  "editor.language.by_file_name": {
+    "message": "A fájlnév alapján"
+  },
+  "editor.language.plain_text": {
+    "message": "Egyszerű szöveg"
+  },
+  "editor.menu.edit": {
+    "message": "Szerkesztés"
+  },
+  "editor.menu.file": {
+    "message": "Fájl"
+  },
+  "editor.menu.language": {
+    "message": "Nyelv"
+  },
+  "editor.menu.selection": {
+    "message": "Kijelölés"
+  },
+  "editor.menu.view": {
+    "message": "Nézet"
+  },
+  "editor.open.too_large": {
+    "message": "nagyobb a beépített szerkesztő {limit_mb} MB-os korlátjánál (Beállítások, Szerkesztés/Megtekintés); a Ctrl+Shift+F4 a külső szerkesztőben nyitja meg"
+  },
+  "editor.reload.button": {
+    "message": "Újratöltés"
+  },
+  "editor.reload.failed": {
+    "message": "Nem sikerült újratölteni: {err}"
+  },
+  "editor.reload.text": {
+    "message": "A nem mentett módosítások elvesznek."
+  },
+  "editor.reload.title": {
+    "message": "Újratöltöd a fájlt?"
+  },
+  "editor.reload.unfit": {
+    "message": "Nincs újratöltve: {why, select, binary {a fájl bináris} other {a fájl nem UTF-8 szöveg}}."
+  },
+  "editor.save.admin": {
+    "message": "„{name}” mentése"
+  },
+  "editor.save.failed": {
+    "message": "Nem sikerült menteni ({path}): {err}"
+  },
+  "editor.save_anyway.button": {
+    "message": "Mentés mégis"
+  },
+  "editor.save_anyway.text": {
+    "message": "A fájl nem szöveg volt: a mentés úgy írja ki, ahogy látod, így ami nem szöveg volt, véglegesen megváltozik."
+  },
+  "editor.save_anyway.title": {
+    "message": "Mented szövegként?"
+  },
+  "editor.selection.add_cursor_above": {
+    "message": "Kurzor hozzáadása felülre"
+  },
+  "editor.selection.add_cursor_below": {
+    "message": "Kurzor hozzáadása alulra"
+  },
+  "editor.selection.delete_lines": {
+    "message": "Sorok törlése"
+  },
+  "editor.selection.duplicate_lines": {
+    "message": "Sorok duplikálása"
+  },
+  "editor.selection.indent": {
+    "message": "Behúzás"
+  },
+  "editor.selection.lowercase": {
+    "message": "kisbetűs"
+  },
+  "editor.selection.move_lines_down": {
+    "message": "Sorok mozgatása lefelé"
+  },
+  "editor.selection.move_lines_up": {
+    "message": "Sorok mozgatása felfelé"
+  },
+  "editor.selection.outdent": {
+    "message": "Behúzás csökkentése"
+  },
+  "editor.selection.select_all": {
+    "message": "Összes kijelölése"
+  },
+  "editor.selection.select_all_occurrences": {
+    "message": "Összes előfordulás kijelölése"
+  },
+  "editor.selection.sort_lines_ascending": {
+    "message": "Sorok rendezése növekvő sorrendbe"
+  },
+  "editor.selection.sort_lines_descending": {
+    "message": "Sorok rendezése csökkenő sorrendbe"
+  },
+  "editor.selection.title_case": {
+    "message": "Szókezdő Nagybetűk"
+  },
+  "editor.selection.toggle_line_comment": {
+    "message": "Sor megjegyzésbe tétele be/ki"
+  },
+  "editor.selection.trim_trailing_whitespace": {
+    "message": "Sorvégi szóközök eltávolítása"
+  },
+  "editor.selection.uppercase": {
+    "message": "NAGYBETŰS"
+  },
+  "editor.send.failed": {
+    "message": "Nem sikerült visszaküldeni: {err}. Mentéskor újra megpróbálja."
+  },
+  "editor.status.modified": {
+    "message": "Módosítva"
+  },
+  "editor.status.position": {
+    "message": "{line}. sor, {column}. oszlop"
+  },
+  "editor.status.position_selected": {
+    "message": "{line}. sor, {column}. oszlop ({count, plural, one {# kijelölve} other {# kijelölve}})"
+  },
+  "editor.status.sending": {
+    "message": "Mentés a kiszolgálóra"
+  },
+  "editor.status.spaces": {
+    "message": "Szóközök: {size}"
+  },
+  "editor.status.tab_size": {
+    "message": "Tabméret: {size}"
+  },
+  "editor.status.unsent": {
+    "message": "Nincs a kiszolgálón"
+  },
+  "editor.terminal.not_found": {
+    "message": "nem található szerkesztő; állítsd be az $EDITOR változót"
+  },
+  "editor.title": {
+    "message": "{path} — Szerkesztő"
+  },
+  "editor.unfit.open_anyway": {
+    "message": "Megnyitás mégis"
+  },
+  "editor.unfit.text": {
+    "message": "A fájl nem jelenik meg a szerkesztőben, mert {why, select, binary {bináris} other {nem UTF-8 szöveg}}."
+  },
+  "editor.view.folding": {
+    "message": "Összecsukás"
+  },
+  "editor.view.indent_guides": {
+    "message": "Behúzásvezetők"
+  },
+  "editor.view.indent_with_tabs": {
+    "message": "Behúzás tabulátorral"
+  },
+  "editor.view.line_numbers": {
+    "message": "Sorszámok"
+  },
+  "editor.view.minimap": {
+    "message": "Minitérkép"
+  },
+  "editor.view.tab_width": {
+    "message": "Tabszélesség: {width}"
+  },
+  "editor.view.unfold_all": {
+    "message": "Összes kibontása"
+  },
+  "editor.view.whitespace": {
+    "message": "Térközök"
+  },
+  "editor.view.word_wrap": {
+    "message": "Sortörés"
+  },
+  "elevate.failed": {
+    "message": "rendszergazdaként is sikertelen ({code})"
+  },
+  "elevate.no_consent": {
+    "message": "a rendszergazda nem adta meg a jóváhagyást"
+  },
+  "elevate.no_password": {
+    "message": "nem adtad meg a jelszót"
+  },
+  "elevate.not_authorised": {
+    "message": "nincs jogosultság"
+  },
+  "elevate.percent_name": {
+    "message": "{path}: %-jelet tartalmazó név rendszergazdaként nem kezelhető; előbb nevezd át"
+  },
+  "elevate.pkexec_missing": {
+    "message": "a pkexec (polkit) nincs telepítve"
+  },
+  "file_menu.change_tags_failed": {
+    "message": "Nem sikerült módosítani a címkéket: {err}"
+  },
+  "file_menu.compress": {
+    "message": "{count, plural, =1 {„{name}” tömörítése…} one {# elem tömörítése…} other {# elem tömörítése…}}"
+  },
+  "file_menu.copy": {
+    "message": "{count, plural, =1 {„{name}” másolása} one {# elem másolása} other {# elem másolása}}"
+  },
+  "file_menu.copy_path": {
+    "message": "Elérési út másolása a vágólapra"
+  },
+  "file_menu.delete": {
+    "message": "Törlés"
+  },
+  "file_menu.duplicate": {
+    "message": "Duplikálás"
+  },
+  "file_menu.duplicate_failed": {
+    "message": "Nem sikerült duplikálni: {err}"
+  },
+  "file_menu.edit_tags": {
+    "message": "Címkék…"
+  },
+  "file_menu.get_info": {
+    "message": "Információk"
+  },
+  "file_menu.make_alias": {
+    "message": "Álnév létrehozása"
+  },
+  "file_menu.make_alias_failed": {
+    "message": "Nem sikerült létrehozni az álnevet: {err}"
+  },
+  "file_menu.move_to_trash": {
+    "message": "Áthelyezés a Kukába"
+  },
+  "file_menu.new_folder": {
+    "message": "Új mappa"
+  },
+  "file_menu.open": {
+    "message": "Megnyitás"
+  },
+  "file_menu.open_failed": {
+    "message": "Nem sikerült megnyitni: {err}"
+  },
+  "file_menu.open_with": {
+    "message": "Megnyitás ezzel"
+  },
+  "file_menu.open_with_default": {
+    "message": "{app} (alapértelmezett)"
+  },
+  "file_menu.paste": {
+    "message": "Beillesztés"
+  },
+  "file_menu.quick_look": {
+    "message": "{count, plural, =1 {Quick Look: „{name}”} one {Quick Look: # elem} other {Quick Look: # elem}}"
+  },
+  "file_menu.quick_look_failed": {
+    "message": "Quick Look: {err}"
+  },
+  "file_menu.rename": {
+    "message": "Átnevezés…"
+  },
+  "file_menu.reveal_failed": {
+    "message": "Nem sikerült megjeleníteni a Finderben: {err}"
+  },
+  "file_menu.reveal_in_finder": {
+    "message": "Megjelenítés a Finderben"
+  },
+  "file_menu.show_package_contents": {
+    "message": "Csomag tartalmának megjelenítése"
+  },
+  "file_menu.tag_dot.add": {
+    "message": "„{name}” címke hozzáadása"
+  },
+  "file_menu.tag_dot.remove": {
+    "message": "„{name}” címke eltávolítása"
+  },
+  "file_menu.tags_popover.show_all": {
+    "message": "Összes megjelenítése…"
+  },
+  "file_menu.tags_popover.title": {
+    "message": "{count, plural, =1 {Címkék hozzárendelése: „{name}”} one {Címkék hozzárendelése: # elem} other {Címkék hozzárendelése: # elem}}"
+  },
+  "find.backwards": {
+    "message": "Keresés visszafelé"
+  },
+  "find.cancel": {
+    "message": "Mégse"
+  },
+  "find.case_sensitive": {
+    "message": "Kis- és nagybetűk megkülönböztetése"
+  },
+  "find.hex": {
+    "message": "Hexadecimális karakterlánc keresése"
+  },
+  "find.ok": {
+    "message": "OK"
+  },
+  "find.regex": {
+    "message": "RegEx"
+  },
+  "find.text.label": {
+    "message": "Keresendő szöveg"
+  },
+  "find.title": {
+    "message": "Keresés"
+  },
+  "find.whole_words": {
+    "message": "Csak teljes szavak"
+  },
+  "keys.apply": {
+    "message": "Alkalmaz"
+  },
+  "keys.cancel": {
+    "message": "Mégse"
+  },
+  "keys.clear.tooltip": {
+    "message": "Nincs billentyű"
+  },
+  "keys.column.alternate": {
+    "message": "Másodlagos"
+  },
+  "keys.column.command": {
+    "message": "Parancs"
+  },
+  "keys.column.shortcut": {
+    "message": "Billentyűparancs"
+  },
+  "keys.custom": {
+    "message": "Egyéni"
+  },
+  "keys.delete_set": {
+    "message": "Törlés"
+  },
+  "keys.note.custom_replaced": {
+    "message": "A saját billentyűid helyére ezek kerültek: {name}. A Mentés másként gombbal megőrizheted őket."
+  },
+  "keys.note.deleted": {
+    "message": "Törölve: {name}. Az OK vagy az Alkalmaz gomb véglegesíti."
+  },
+  "keys.note.moved": {
+    "message": "{key} mostantól: {command}, már nem: {other}."
+  },
+  "keys.note.name_reserved": {
+    "message": "„{name}” egy előbeállítás neve; válassz másikat."
+  },
+  "keys.note.press_new_key": {
+    "message": "Nyomd le az új billentyűt; az Esc változatlanul hagyja."
+  },
+  "keys.note.saved": {
+    "message": "Mentve ezen a néven: {name}. Az OK vagy az Alkalmaz gomb megőrzi."
+  },
+  "keys.note.set": {
+    "message": "{key} mostantól: {command}."
+  },
+  "keys.note.taken_by_system": {
+    "message": "{key} foglalt ({by}), így sosem jut el a Spark Commanderhez."
+  },
+  "keys.ok": {
+    "message": "OK"
+  },
+  "keys.press_key": {
+    "message": "Nyomj le egyet…"
+  },
+  "keys.reserved.application_launcher": {
+    "message": "{system}: alkalmazásindító"
+  },
+  "keys.reserved.close_window": {
+    "message": "{system}: ablak bezárása"
+  },
+  "keys.reserved.close_window_or_tab": {
+    "message": "{system}: ablak vagy lap bezárása"
+  },
+  "keys.reserved.dock": {
+    "message": "{system}: a Dock"
+  },
+  "keys.reserved.floating_window": {
+    "message": "{system}: a lebegő ablak"
+  },
+  "keys.reserved.force_quit": {
+    "message": "{system}: kilépés kényszerítése"
+  },
+  "keys.reserved.hide_program": {
+    "message": "{system}: a program elrejtése"
+  },
+  "keys.reserved.input_source": {
+    "message": "{system}: beviteli forrás"
+  },
+  "keys.reserved.keyboard_access": {
+    "message": "{system}: billentyűzetes hozzáférés"
+  },
+  "keys.reserved.keyboard_navigation": {
+    "message": "{system}: billentyűzetes navigáció"
+  },
+  "keys.reserved.krunner": {
+    "message": "{system}: KRunner"
+  },
+  "keys.reserved.lock_screen": {
+    "message": "{system}: képernyő zárolása"
+  },
+  "keys.reserved.log_out": {
+    "message": "{system}: kijelentkezés"
+  },
+  "keys.reserved.maximize_window": {
+    "message": "{system}: ablak teljes méretre állítása"
+  },
+  "keys.reserved.menu_bar": {
+    "message": "{system}: a menüsor"
+  },
+  "keys.reserved.minimize": {
+    "message": "{system}: kis méret"
+  },
+  "keys.reserved.mission_control": {
+    "message": "{system}: Mission Control"
+  },
+  "keys.reserved.move_window": {
+    "message": "{system}: ablak mozgatása"
+  },
+  "keys.reserved.next_window": {
+    "message": "{system}: a következő ablak"
+  },
+  "keys.reserved.present_windows": {
+    "message": "{system}: Ablakok bemutatása"
+  },
+  "keys.reserved.present_windows_all": {
+    "message": "{system}: Ablakok bemutatása (minden asztal)"
+  },
+  "keys.reserved.present_windows_class": {
+    "message": "{system}: Ablakok bemutatása (ablakosztály)"
+  },
+  "keys.reserved.program_windows": {
+    "message": "{system}: a program ablakai"
+  },
+  "keys.reserved.quit": {
+    "message": "{system}: kilépés"
+  },
+  "keys.reserved.resize_window": {
+    "message": "{system}: ablak átméretezése"
+  },
+  "keys.reserved.restore_window": {
+    "message": "{system}: ablak visszaállítása"
+  },
+  "keys.reserved.run_command": {
+    "message": "{system}: parancs futtatása"
+  },
+  "keys.reserved.screenshot": {
+    "message": "{system}: képernyőkép"
+  },
+  "keys.reserved.security_screen": {
+    "message": "{system}: a biztonsági képernyő"
+  },
+  "keys.reserved.show_desktop": {
+    "message": "{system}: az asztal megjelenítése"
+  },
+  "keys.reserved.space_left": {
+    "message": "{system}: a bal oldali tér"
+  },
+  "keys.reserved.space_right": {
+    "message": "{system}: a jobb oldali tér"
+  },
+  "keys.reserved.spotlight": {
+    "message": "{system}: Spotlight"
+  },
+  "keys.reserved.start_menu": {
+    "message": "{system}: a Start menü"
+  },
+  "keys.reserved.status_menus": {
+    "message": "{system}: az állapotmenük"
+  },
+  "keys.reserved.suspend_compositing": {
+    "message": "{system}: kompozitálás felfüggesztése"
+  },
+  "keys.reserved.switch_program_windows": {
+    "message": "{system}: váltás a program ablakai között"
+  },
+  "keys.reserved.switch_programs": {
+    "message": "{system}: váltás a programok között"
+  },
+  "keys.reserved.switch_system_controls": {
+    "message": "{system}: váltás a rendszervezérlők között"
+  },
+  "keys.reserved.switch_to_desktop": {
+    "message": "{system}: {number}. asztalra váltás"
+  },
+  "keys.reserved.switch_windows": {
+    "message": "{system}: váltás az ablakok között"
+  },
+  "keys.reserved.system_monitor": {
+    "message": "{system}: Rendszerfigyelő"
+  },
+  "keys.reserved.task_manager": {
+    "message": "{system}: Feladatkezelő"
+  },
+  "keys.reserved.text_console": {
+    "message": "{system}: váltás szöveges konzolra"
+  },
+  "keys.reserved.toolbar": {
+    "message": "{system}: az eszköztár"
+  },
+  "keys.reserved.window_menu": {
+    "message": "{system}: az ablakmenü"
+  },
+  "keys.reserved.workspace_down": {
+    "message": "{system}: az alsó munkaterület"
+  },
+  "keys.reserved.workspace_left": {
+    "message": "{system}: a bal oldali munkaterület"
+  },
+  "keys.reserved.workspace_right": {
+    "message": "{system}: a jobb oldali munkaterület"
+  },
+  "keys.reserved.workspace_up": {
+    "message": "{system}: a felső munkaterület"
+  },
+  "keys.reset.tooltip": {
+    "message": "Vissza az előbeállításhoz: {preset}"
+  },
+  "keys.reset_all": {
+    "message": "Összes visszaállítása"
+  },
+  "keys.save_as.button": {
+    "message": "Mentés másként…"
+  },
+  "keys.save_as.default_name": {
+    "message": "Saját billentyűk"
+  },
+  "keys.save_as.label": {
+    "message": "Név:"
+  },
+  "keys.save_as.title": {
+    "message": "Billentyűparancsok mentése"
+  },
+  "keys.search.placeholder": {
+    "message": "Parancs vagy billentyű keresése"
+  },
+  "keys.set_label": {
+    "message": "Billentyűk:"
+  },
+  "keys.taken_by.tooltip": {
+    "message": "Foglalja: {by}"
+  },
+  "keys.title": {
+    "message": "Billentyűparancsok"
+  },
+  "main.admin.button": {
+    "message": "Rendszergazdaként"
+  },
+  "main.admin.deleting": {
+    "message": "{count, plural, one {# elem törlése} other {# elem törlése}}"
+  },
+  "main.admin.failed": {
+    "message": "Rendszergazdaként: {err}"
+  },
+  "main.admin.making": {
+    "message": "„{name}” létrehozása"
+  },
+  "main.admin.offer": {
+    "message": "{what}: hozzáférés megtagadva. Rendszergazdaként a rendszer bekéri a jelszót."
+  },
+  "main.admin.offer_delete": {
+    "message": "{what}: hozzáférés megtagadva. Rendszergazdaként a rendszer bekéri a jelszót. Az így törölt elemek véglegesen elvesznek."
+  },
+  "main.admin.title": {
+    "message": "Hozzáférés megtagadva"
+  },
+  "main.delete.from_archive": {
+    "message": "{kind, select, folder {Törlöd az archívumból ({archive}) ezt a mappát: „{name}”? Ez nem vonható vissza.} file {Törlöd az archívumból ({archive}) ezt a fájlt: „{name}”? Ez nem vonható vissza.} other {Törlöd a kijelölt {count, plural, one {# elemet} other {# elemet}} az archívumból ({archive})? Ez nem vonható vissza.}}"
+  },
+  "main.delete.on_server": {
+    "message": "{kind, select, folder {Törlöd a kiszolgálón ({server}) ezt a mappát: „{name}”? Ez nem vonható vissza.} file {Törlöd a kiszolgálón ({server}) ezt a fájlt: „{name}”? Ez nem vonható vissza.} other {Törlöd a kijelölt {count, plural, one {# elemet} other {# elemet}} a kiszolgálón ({server})? Ez nem vonható vissza.}}"
+  },
+  "main.delete.permanently": {
+    "message": "{kind, select, folder {Véglegesen törlöd ezt a mappát: „{name}”? Ez nem vonható vissza.} file {Véglegesen törlöd ezt a fájlt: „{name}”? Ez nem vonható vissza.} other {Véglegesen törlöd a kijelölt {count, plural, one {# elemet} other {# elemet}}? Ez nem vonható vissza.}}"
+  },
+  "main.delete.title": {
+    "message": "Törlés"
+  },
+  "main.delete.title_permanently": {
+    "message": "Végleges törlés"
+  },
+  "main.delete.to_trash": {
+    "message": "{kind, select, folder {Áthelyezed a Kukába ezt a mappát: „{name}”?} file {Áthelyezed a Kukába ezt a fájlt: „{name}”?} other {Áthelyezed a Kukába a kijelölt {count, plural, one {# elemet} other {# elemet}}?}}"
+  },
+  "main.download.edit": {
+    "message": "{file} letöltése szerkesztéshez"
+  },
+  "main.download.view": {
+    "message": "{file} letöltése megtekintéshez"
+  },
+  "main.error.make_folder": {
+    "message": "Nem sikerült létrehozni a mappát: {err}"
+  },
+  "main.error.read_settings": {
+    "message": "Nem sikerült beolvasni a beállításokat: {err}"
+  },
+  "main.error.read_tabs": {
+    "message": "Nem sikerült beolvasni a megnyitott lapokat: {err}"
+  },
+  "main.error.read_workspaces": {
+    "message": "Nem sikerült beolvasni a munkaterületeket: {err}"
+  },
+  "main.error.save_settings": {
+    "message": "Nem sikerült menteni a beállításokat: {err}"
+  },
+  "main.folder_tree.home": {
+    "message": "Saját mappa"
+  },
+  "main.go.no_such_folder": {
+    "message": "{path}: nincs ilyen mappa ezen a gépen"
+  },
+  "main.new_folder.label": {
+    "message": "Új mappa (könyvtár):"
+  },
+  "main.new_folder.title": {
+    "message": "Új mappa"
+  },
+  "main.sync_browsing.lost": {
+    "message": "{err}. A szinkronizált böngészés kikapcsolva."
+  },
+  "main.tool.needs_file": {
+    "message": "A kurzor nem fájlon áll: %N, %O és %E csak fájllal működik."
+  },
+  "main.tool.needs_local_folder": {
+    "message": "A másik panel kiszolgálót vagy archívumot mutat: %T csak ennek a gépnek egy mappájával működik."
+  },
+  "main.undo.done": {
+    "message": "{way, select, redo {Újra végrehajtva: {title}} other {Visszavonva: {title}}}"
+  },
+  "main.undo.failed": {
+    "message": "{way, select, redo {Nem sikerült újra végrehajtani („{title}”): {err}} other {Nem sikerült visszavonni („{title}”): {err}}}"
+  },
+  "main.undo.nothing": {
+    "message": "{way, select, redo {Nincs mit újra végrehajtani.} other {Nincs mit visszavonni.}}"
+  },
+  "main.undo.queued": {
+    "message": "{way, select, redo {Újra végrehajtásra vár a sorban: {title}} other {Visszavonásra vár a sorban: {title}}}"
+  },
+  "mark.compare.marked": {
+    "message": "{count, plural, one {# fájl kijelölve: újabb, mint a másik oldalon, vagy ott hiányzik.} other {# fájl kijelölve: újabbak, mint a másik oldalon, vagy ott hiányoznak.}}"
+  },
+  "mark.compare.same": {
+    "message": "A mappákban ugyanazok a fájlok vannak."
+  },
+  "mark.load_selection.label": {
+    "message": "A fájlban felsorolt nevek kijelölése:"
+  },
+  "mark.load_selection.title": {
+    "message": "Kijelölés betöltése"
+  },
+  "mark.save_selection.label": {
+    "message": "A kijelölt nevek mentése ebbe a fájlba:"
+  },
+  "mark.save_selection.title": {
+    "message": "Kijelölés mentése"
+  },
+  "mark.select_group.label": {
+    "message": "Fájlok kijelölése (*.txt *.md; a mappamaszk végén / áll):"
+  },
+  "mark.select_group.title": {
+    "message": "Csoport kijelölése"
+  },
+  "mark.selection_file.not_local": {
+    "message": "A kijelölésfájlok csak ezen a gépen, archívumon kívül tárolhatók."
+  },
+  "mark.unselect_group.label": {
+    "message": "Fájlok kijelölésének megszüntetése (*.txt *.md; a mappamaszk végén / áll):"
+  },
+  "mark.unselect_group.title": {
+    "message": "Csoport kijelölésének megszüntetése"
+  },
+  "media.cannot_play": {
+    "message": "Nem játszható le: {err}"
+  },
+  "media.cannot_play_as_text": {
+    "message": "Nem játszható le: {err}. Az 1-es billentyű szövegként mutatja."
+  },
+  "media.continuing": {
+    "message": "Folytatás innen: {time}"
+  },
+  "media.error.missing": {
+    "message": "A libmpv hiányzik: a Beállítások > Bővítmények oldalon letölthető (forrásból fordítva: vendor/mpv/{script})"
+  },
+  "media.error.not_started": {
+    "message": "A libmpv nem tudott elindulni"
+  },
+  "media.error.too_long": {
+    "message": "{path}: az mpv túl sokáig dolgozott"
+  },
+  "media.error.unsupported_system": {
+    "message": "videót egyelőre csak Linuxon, macOS-en és Windowson lehet lejátszani"
+  },
+  "menu.archive": {
+    "message": "Archívum"
+  },
+  "menu.associations": {
+    "message": "Társítások"
+  },
+  "menu.button_bar": {
+    "message": "Gombsor"
+  },
+  "menu.checksums": {
+    "message": "Ellenőrzőösszegek"
+  },
+  "menu.commands": {
+    "message": "Parancsok"
+  },
+  "menu.compare_directories": {
+    "message": "Mappák összehasonlítása"
+  },
+  "menu.configuration": {
+    "message": "Konfiguráció"
+  },
+  "menu.copy_names": {
+    "message": "Nevek másolása"
+  },
+  "menu.files": {
+    "message": "Fájlok"
+  },
+  "menu.filter": {
+    "message": "Szűrő"
+  },
+  "menu.go": {
+    "message": "Ugrás"
+  },
+  "menu.help": {
+    "message": "Súgó"
+  },
+  "menu.mark": {
+    "message": "Kijelölés"
+  },
+  "menu.other": {
+    "message": "Egyéb"
+  },
+  "menu.recently_closed_tabs": {
+    "message": "Nemrég bezárt lapok"
+  },
+  "menu.selection": {
+    "message": "Mentett kijelölés"
+  },
+  "menu.show": {
+    "message": "Nézet"
+  },
+  "menu.sidebar": {
+    "message": "Oldalsáv"
+  },
+  "menu.sort": {
+    "message": "Rendezés"
+  },
+  "menu.split_and_combine": {
+    "message": "Darabolás és összefűzés"
+  },
+  "menu.tabs": {
+    "message": "Lapok"
+  },
+  "menu.tools": {
+    "message": "Eszközök"
+  },
+  "menu.workspaces": {
+    "message": "Munkaterületek"
+  },
+  "menus.hide_app": {
+    "message": "Spark Commander elrejtése"
+  },
+  "menus.hide_others": {
+    "message": "Egyebek elrejtése"
+  },
+  "menus.minimize": {
+    "message": "Kis méret"
+  },
+  "menus.quit_app": {
+    "message": "Kilépés a Spark Commanderből"
+  },
+  "menus.services": {
+    "message": "Szolgáltatások"
+  },
+  "menus.show_all": {
+    "message": "Az összes megjelenítése"
+  },
+  "menus.zoom": {
+    "message": "Nagyítás"
+  },
+  "name_dialog.cancel": {
+    "message": "Mégse"
+  },
+  "name_dialog.ok": {
+    "message": "OK"
+  },
+  "operations.clear": {
+    "message": "Befejezettek törlése"
+  },
+  "operations.duration.seconds": {
+    "message": "{seconds} mp"
+  },
+  "operations.empty": {
+    "message": "Nincsenek műveletek."
+  },
+  "operations.job.answer": {
+    "message": "Válaszodra vár"
+  },
+  "operations.job.bytes": {
+    "message": "{done} / {total}"
+  },
+  "operations.job.cancel_tooltip": {
+    "message": "Megszakítás"
+  },
+  "operations.job.cancelled": {
+    "message": "Megszakítva"
+  },
+  "operations.job.counting": {
+    "message": "Számolás: {count, plural, one {# fájl} other {# fájl}}"
+  },
+  "operations.job.done": {
+    "message": "Kész"
+  },
+  "operations.job.done_skipped": {
+    "message": "Kész, {count, plural, one {# kihagyva} other {# kihagyva}}"
+  },
+  "operations.job.failed": {
+    "message": "Sikertelen"
+  },
+  "operations.job.files": {
+    "message": "{files} / {count, plural, one {# fájl} other {# fájl}}"
+  },
+  "operations.job.left": {
+    "message": "még {time}"
+  },
+  "operations.job.running": {
+    "message": "Fut"
+  },
+  "operations.job.waiting": {
+    "message": "Várakozik"
+  },
+  "operations.menu.cancel": {
+    "message": "Megszakítás"
+  },
+  "operations.menu.clear": {
+    "message": "Befejezettek törlése"
+  },
+  "operations.menu.move_down": {
+    "message": "Mozgatás lefelé"
+  },
+  "operations.menu.move_up": {
+    "message": "Mozgatás felfelé"
+  },
+  "operations.settings_tooltip": {
+    "message": "A műveleti sor beállításai"
+  },
+  "operations.summary.failed": {
+    "message": "{count, plural, one {# sikertelen} other {# sikertelen}}"
+  },
+  "operations.summary.running": {
+    "message": "{count, plural, one {# fut} other {# fut}}"
+  },
+  "operations.summary.waiting": {
+    "message": "{count, plural, one {# várakozik} other {# várakozik}}"
+  },
+  "ops.as_administrator.failed": {
+    "message": "Rendszergazdaként: {err}"
+  },
+  "ops.as_administrator.progress": {
+    "message": "Rendszergazdaként…"
+  },
+  "ops.delete.title_many": {
+    "message": "{count, plural, one {# elem} other {# elem}} törlése itt: {folder}"
+  },
+  "ops.delete.title_one": {
+    "message": "„{name}” törlése"
+  },
+  "ops.delete.trash_title_many": {
+    "message": "{count, plural, one {# elem} other {# elem}} áthelyezése a Kukába innen: {folder}"
+  },
+  "ops.delete.trash_title_one": {
+    "message": "„{name}” áthelyezése a Kukába"
+  },
+  "ops.error.file_in_the_way": {
+    "message": "egy ilyen nevű fájl útban van"
+  },
+  "ops.error.into_itself": {
+    "message": "nem másolható önmagába"
+  },
+  "ops.exists_already": {
+    "message": "Már létezik: {name}"
+  },
+  "ops.link.dialog_title": {
+    "message": "Hivatkozás létrehozása"
+  },
+  "ops.link.failed": {
+    "message": "Nem sikerült létrehozni a hivatkozást: {err}"
+  },
+  "ops.link.kind.hard": {
+    "message": "Kemény hivatkozás"
+  },
+  "ops.link.kind.junction": {
+    "message": "Csatlakozási pont"
+  },
+  "ops.link.kind.shortcut": {
+    "message": "Parancsikon (.lnk)"
+  },
+  "ops.link.kind.symbolic": {
+    "message": "Szimbolikus hivatkozás"
+  },
+  "ops.link.label_many": {
+    "message": "Hivatkozások a kijelölt {count, plural, one {# elemre} other {# elemre}}, ebben a mappában:"
+  },
+  "ops.link.label_one": {
+    "message": "Hivatkozás erre: „{name}”, ezen a néven:"
+  },
+  "ops.link.making": {
+    "message": "{kind, select, symbolic {A szimbolikus hivatkozás} hard {A kemény hivatkozás} junction {A csatlakozási pont} other {A parancsikon (.lnk)}} létrehozása"
+  },
+  "ops.link.needs_admin": {
+    "message": "a szimbolikus hivatkozásokhoz rendszergazda vagy Fejlesztői mód kell"
+  },
+  "ops.link.thread_failed": {
+    "message": "a parancsikont létrehozó szál hibát jelzett"
+  },
+  "ops.link.title_many": {
+    "message": "{kind, select, symbolic {Szimbolikus hivatkozások} hard {Kemény hivatkozások} junction {Csatlakozási pontok} other {Parancsikonok (.lnk)}} {count, plural, one {# elemre} other {# elemre}} itt: {folder}"
+  },
+  "ops.link.title_one": {
+    "message": "{kind, select, symbolic {Szimbolikus hivatkozás} hard {Kemény hivatkozás} junction {Csatlakozási pont} other {Parancsikon (.lnk)}} erre: „{name}”, itt: {folder}"
+  },
+  "ops.link.windows_only": {
+    "message": "csatlakozási pontok és parancsikonok csak Windowson vannak"
+  },
+  "ops.redo.title": {
+    "message": "Újra végrehajtás: {what}"
+  },
+  "ops.title.many": {
+    "message": "{count, plural, one {# elem} other {# elem}} {kind, select, copy {másolása} other {áthelyezése}} ide: {target}"
+  },
+  "ops.title.one": {
+    "message": "„{name}” {kind, select, copy {másolása} other {áthelyezése}} ide: {target}"
+  },
+  "ops.undo.not_a_server": {
+    "message": "{url}: nem kiszolgálócím"
+  },
+  "ops.undo.not_in_trash": {
+    "message": "már nincsenek a Kukában"
+  },
+  "ops.undo.restore_title": {
+    "message": "{title}: a felülírt fájlok visszahozása a Kukából"
+  },
+  "ops.undo.title": {
+    "message": "Visszavonás: {what}"
+  },
+  "pack.cancel": {
+    "message": "Mégse"
+  },
+  "pack.compression": {
+    "message": "Tömörítés:"
+  },
+  "pack.dialog_title": {
+    "message": "Fájlok csomagolása"
+  },
+  "pack.encrypt": {
+    "message": "Titkosítás jelszóval"
+  },
+  "pack.format": {
+    "message": "Formátum:"
+  },
+  "pack.label": {
+    "message": "{count, plural, one {# elem} other {# elem}} csomagolása ebbe az archívumba:"
+  },
+  "pack.level.fastest": {
+    "message": "Leggyorsabb"
+  },
+  "pack.level.maximum": {
+    "message": "Maximális"
+  },
+  "pack.level.normal": {
+    "message": "Normál"
+  },
+  "pack.level.store": {
+    "message": "Tárolás"
+  },
+  "pack.level.ultra": {
+    "message": "Ultra"
+  },
+  "pack.local_only": {
+    "message": "{what, select, packing {A csomagolás} unpacking {A kicsomagolás} testing {A tesztelés} creating_checksums {Az ellenőrzőösszegek létrehozása} making_links {A hivatkozások létrehozása} verifying_checksums {Az ellenőrzőösszegek ellenőrzése} splitting {A darabolás} combining {Az összefűzés} other {Ez}} csak ennek a gépnek a fájljaival működik, archívumon kívül."
+  },
+  "pack.move_files": {
+    "message": "Áthelyezés az archívumba (a becsomagolt fájlok törlése)"
+  },
+  "pack.needs_password": {
+    "message": "jelszó szükséges"
+  },
+  "pack.ok": {
+    "message": "OK"
+  },
+  "pack.password_missing": {
+    "message": "Írd be a jelszót, vagy kapcsold ki a titkosítást."
+  },
+  "pack.separate": {
+    "message": "Külön archívum minden kijelölt fájlhoz vagy mappához"
+  },
+  "pack.split": {
+    "message": "Felosztás ekkora kötetekre:"
+  },
+  "pack.split_unit": {
+    "message": "MB"
+  },
+  "pack.test.broken": {
+    "message": "{broken, plural, one {# sérült ({count} közül)} other {# sérült ({count} közül)}}"
+  },
+  "pack.test.choose": {
+    "message": "Válaszd ki a tesztelendő archívumokat."
+  },
+  "pack.test.ok": {
+    "message": "{count, plural, one {# archívum rendben} other {# archívum rendben}}"
+  },
+  "pack.test.title_many": {
+    "message": "{count, plural, one {# archívum} other {# archívum}} tesztelése"
+  },
+  "pack.test.title_one": {
+    "message": "„{name}” tesztelése"
+  },
+  "pack.title.many": {
+    "message": "{count, plural, one {# elem} other {# elem}} csomagolása ide: {archive}"
+  },
+  "pack.title.many_separate": {
+    "message": "{count, plural, one {# elem} other {# elem}} csomagolása külön {format}-archívumokba"
+  },
+  "pack.title.one": {
+    "message": "„{name}” csomagolása ide: {archive}"
+  },
+  "pack.title.one_separate": {
+    "message": "„{name}” csomagolása külön {format}-archívumokba"
+  },
+  "pack.unpack.choose": {
+    "message": "Válaszd ki a kicsomagolandó archívumokat."
+  },
+  "pack.unpack.dialog_title": {
+    "message": "Fájlok kicsomagolása"
+  },
+  "pack.unpack.label": {
+    "message": "{count, plural, one {# archívum} other {# archívum}} kicsomagolása ide:"
+  },
+  "pack.unpack.mask": {
+    "message": "Csak ezek a fájlok:"
+  },
+  "pack.unpack.overwrite": {
+    "message": "Meglévő fájlok felülírása (különben megmaradnak)"
+  },
+  "pack.unpack.password": {
+    "message": "Jelszó:"
+  },
+  "pack.unpack.separate": {
+    "message": "Minden archívum a saját nevű mappájába"
+  },
+  "pack.unpack.title_many": {
+    "message": "{count, plural, one {# archívum} other {# archívum}} kicsomagolása ide: {target}"
+  },
+  "pack.unpack.title_one": {
+    "message": "„{name}” kicsomagolása ide: {target}"
+  },
+  "pack.unpack.with_paths": {
+    "message": "Az archívumban tárolt mappák megtartása"
+  },
+  "pack.volume_invalid": {
+    "message": "A kötetméret egy szám, megabájtban (MB)."
+  },
+  "pack.wrong_password": {
+    "message": "hibás jelszó"
+  },
+  "panel.admin.renaming": {
+    "message": "Átnevezés erre: „{name}”"
+  },
+  "panel.clipboard.copied": {
+    "message": "{count, plural, one {# elem másolva} other {# elem másolva}}: a Ctrl+V beilleszti."
+  },
+  "panel.clipboard.cut": {
+    "message": "{count, plural, one {# elem kivágva} other {# elem kivágva}}: a Ctrl+V beilleszti."
+  },
+  "panel.clipboard.no_cut_in_archive": {
+    "message": "Archívumból nem lehet fájlokat kivágni; a Ctrl+C másolja őket."
+  },
+  "panel.clipboard.no_files": {
+    "message": "A vágólapon nincsenek fájlok."
+  },
+  "panel.clipboard.no_paste_in_archive": {
+    "message": "Archívumba egyelőre nem lehet fájlokat beilleszteni."
+  },
+  "panel.clipboard.same_folder": {
+    "message": "Már ebben a mappában vannak: a Ctrl+V egy másik mappába illeszti be őket."
+  },
+  "panel.column.attr": {
+    "message": "Attr"
+  },
+  "panel.column.date": {
+    "message": "Dátum"
+  },
+  "panel.column.ext": {
+    "message": "Kit."
+  },
+  "panel.column.name": {
+    "message": "Név"
+  },
+  "panel.column.size": {
+    "message": "Méret"
+  },
+  "panel.disconnect": {
+    "message": "Kapcsolat bontása"
+  },
+  "panel.drag.items": {
+    "message": "{count, plural, one {# elem} other {# elem}}"
+  },
+  "panel.error.archive_not_updatable": {
+    "message": "{name}: a 7-Zip csak a 7z, zip és tar archívumokat tudja helyben módosítani, ezt nem"
+  },
+  "panel.error.archive_on_server": {
+    "message": "{name}: kiszolgálón lévő archívum egyelőre nem módosítható"
+  },
+  "panel.error.branch_view_local": {
+    "message": "Az Ágnézet csak ennek a gépnek a mappáit listázza"
+  },
+  "panel.error.exists": {
+    "message": "Már létezik: {name}"
+  },
+  "panel.error.folder_in_the_way": {
+    "message": "egy ilyen nevű mappa útban van"
+  },
+  "panel.error.inside_archive": {
+    "message": "archívumon belül egyelőre nem lehetséges"
+  },
+  "panel.error.make_file": {
+    "message": "Nem sikerült létrehozni a fájlt: {err}"
+  },
+  "panel.error.no_name": {
+    "message": "nincs megadva név"
+  },
+  "panel.error.not_a_name": {
+    "message": "{name}: nem érvényes név"
+  },
+  "panel.error.other_drive": {
+    "message": "a másik panel másik meghajtóra váltott"
+  },
+  "panel.error.rename": {
+    "message": "Nem sikerült átnevezni: {err}"
+  },
+  "panel.filter.custom.label": {
+    "message": "Fájltípusok, pl. *.txt *.md (a | után a kihagyottak):"
+  },
+  "panel.filter.custom.title": {
+    "message": "Fájlok megjelenítése"
+  },
+  "panel.filter.programs": {
+    "message": "programok"
+  },
+  "panel.filter.selected_files": {
+    "message": "kijelölt fájlok"
+  },
+  "panel.found.branch_view": {
+    "message": "Ágnézet:"
+  },
+  "panel.found.search_results": {
+    "message": "Keresési eredmények:"
+  },
+  "panel.new_text_file.label": {
+    "message": "Fájlnév (a szerkesztőben nyílik meg):"
+  },
+  "panel.new_text_file.title": {
+    "message": "Új szövegfájl"
+  },
+  "panel.opening.cancel": {
+    "message": "Mégse"
+  },
+  "panel.opening.reading": {
+    "message": "Olvasás…"
+  },
+  "panel.opening.title": {
+    "message": "Archívum megnyitása"
+  },
+  "panel.quick_filter.hint": {
+    "message": "elrejti, ami nem illeszkedik; az Escape mindent mutat"
+  },
+  "panel.quick_filter.label": {
+    "message": "Szűrő:"
+  },
+  "panel.quick_search.label": {
+    "message": "Keresés:"
+  },
+  "panel.size.app": {
+    "message": "<APP>"
+  },
+  "panel.size.b": {
+    "message": "{size} B"
+  },
+  "panel.size.dir": {
+    "message": "<DIR>"
+  },
+  "panel.size.gb": {
+    "message": "{size} GB"
+  },
+  "panel.size.kb": {
+    "message": "{size} KB"
+  },
+  "panel.size.mb": {
+    "message": "{size} MB"
+  },
+  "panel.size.tb": {
+    "message": "{size} TB"
+  },
+  "panel.space.bytes": {
+    "message": "{count, plural, one {{size} bájt ({human})} other {{size} bájt ({human})}}"
+  },
+  "panel.space.close": {
+    "message": "Bezárás"
+  },
+  "panel.space.counting": {
+    "message": "Számolás…"
+  },
+  "panel.space.done": {
+    "message": "Kész."
+  },
+  "panel.space.files": {
+    "message": "Fájlok:"
+  },
+  "panel.space.folders": {
+    "message": "Mappák:"
+  },
+  "panel.space.in_archive": {
+    "message": "Archívumon belül a Méret oszlop már mutatja a méreteket."
+  },
+  "panel.space.title": {
+    "message": "Foglalt hely kiszámítása"
+  },
+  "panel.space.total": {
+    "message": "Teljes méret:"
+  },
+  "panel.space.unreadable": {
+    "message": "{count, plural, one {# elem nem olvasható.} other {# elem nem olvasható.}}"
+  },
+  "panel.status": {
+    "message": "{marked_size} k / {size} k, {marked_files} / {files, plural, one {# fájl} other {# fájl}}, {marked_folders} / {folders, plural, one {# mappa} other {# mappa}}"
+  },
+  "panel.sync_browsing.stop": {
+    "message": "Szinkronizált böngészés (kattints a leállításhoz)"
+  },
+  "panel.undo.rename": {
+    "message": "„{name}” átnevezése erre: „{to}”"
+  },
+  "passwords.about.set": {
+    "message": "Mesterjelszóval a mentett jelszavak egy másik gépen is megnyithatók: másold át a beállítások mappáját, és írd be ott a mesterjelszót. Ha elfelejted, csak a mentett jelszavak vesznek el: azokat újra be kell írni."
+  },
+  "passwords.about.unlock": {
+    "message": "A beállítások egy másik gépről származnak, vagy ezen a gépen nincs kulcstartó: a mesterjelszóval itt is megnyithatók a mentett jelszavak."
+  },
+  "passwords.cancel": {
+    "message": "Mégse"
+  },
+  "passwords.done.set": {
+    "message": "A mesterjelszó beállítva."
+  },
+  "passwords.done.unlocked": {
+    "message": "A mentett jelszavak feloldva."
+  },
+  "passwords.error.locked": {
+    "message": "a mentett jelszavak zárolva vannak: oldd fel őket a mesterjelszóval (Konfiguráció › Beállítások › Jelszavak)"
+  },
+  "passwords.error.no_master": {
+    "message": "nincs beállítva mesterjelszó"
+  },
+  "passwords.error.no_random": {
+    "message": "nincsenek véletlenszámok"
+  },
+  "passwords.error.not_opened": {
+    "message": "a jelszó nem nyitható meg ehhez: {what}"
+  },
+  "passwords.error.not_sealed": {
+    "message": "a jelszót nem sikerült titkosítani"
+  },
+  "passwords.error.salt_damaged": {
+    "message": "a mesterjelszó sója sérült"
+  },
+  "passwords.error.wrong": {
+    "message": "a mesterjelszó hibás"
+  },
+  "passwords.field.again": {
+    "message": "Még egyszer"
+  },
+  "passwords.field.master": {
+    "message": "Mesterjelszó"
+  },
+  "passwords.locked_note": {
+    "message": "A mentett jelszavak zárolva vannak ezen a gépen: a mesterjelszóval feloldhatók."
+  },
+  "passwords.ok": {
+    "message": "OK"
+  },
+  "passwords.problem.differ": {
+    "message": "A két jelszó nem egyezik."
+  },
+  "passwords.problem.empty": {
+    "message": "Írd be a mesterjelszót."
+  },
+  "passwords.title.set": {
+    "message": "Mesterjelszó"
+  },
+  "passwords.title.unlock": {
+    "message": "Mentett jelszavak feloldása"
+  },
+  "passwords.unlock_button": {
+    "message": "Feloldás…"
+  },
+  "passwords.working": {
+    "message": "Folyamatban…"
+  },
+  "properties.accessed": {
+    "message": "Hozzáférés:"
+  },
+  "properties.change_attributes": {
+    "message": "Attribútumok módosítása..."
+  },
+  "properties.close": {
+    "message": "Bezárás"
+  },
+  "properties.contents": {
+    "message": "{file_count, plural, one {{files} fájl} other {{files} fájl}}, {folder_count, plural, one {{folders} mappa} other {{folders} mappa}}, {count, plural, one {{bytes} bájt} other {{bytes} bájt}} ({size})"
+  },
+  "properties.contents_counting": {
+    "message": "{file_count, plural, one {{files} fájl} other {{files} fájl}}, {folder_count, plural, one {{folders} mappa} other {{folders} mappa}}, {count, plural, one {{bytes} bájt} other {{bytes} bájt}} ({size}) (számolás…)"
+  },
+  "properties.contents_label": {
+    "message": "Tartalom:"
+  },
+  "properties.created": {
+    "message": "Létrehozva:"
+  },
+  "properties.dialog_title": {
+    "message": "Tulajdonságok"
+  },
+  "properties.in_archive": {
+    "message": "Az archívum listája mutatja mindazt, amit a fájljairól tud."
+  },
+  "properties.kind.file": {
+    "message": "Fájl"
+  },
+  "properties.kind.folder": {
+    "message": "Mappa"
+  },
+  "properties.kind.link": {
+    "message": "Hivatkozás"
+  },
+  "properties.kind.link_to": {
+    "message": "Hivatkozás ide: {target}"
+  },
+  "properties.location": {
+    "message": "Hely:"
+  },
+  "properties.modified": {
+    "message": "Módosítva:"
+  },
+  "properties.name": {
+    "message": "Név:"
+  },
+  "properties.no_system_dialog": {
+    "message": "a rendszernek itt még nincs saját Tulajdonságok ablaka"
+  },
+  "properties.owner": {
+    "message": "Tulajdonos / csoport:"
+  },
+  "properties.permissions": {
+    "message": "Jogosultságok:"
+  },
+  "properties.size": {
+    "message": "{count, plural, one {{bytes} bájt ({size})} other {{bytes} bájt ({size})}}"
+  },
+  "properties.size_label": {
+    "message": "Méret:"
+  },
+  "properties.type": {
+    "message": "Típus:"
+  },
+  "quick_open.go_to": {
+    "message": "Ugrás ide: {path}"
+  },
+  "quick_open.group.bookmarks": {
+    "message": "Könyvjelzők"
+  },
+  "quick_open.group.connections": {
+    "message": "Kapcsolatok"
+  },
+  "quick_open.group.drives": {
+    "message": "Meghajtók"
+  },
+  "quick_open.group.path": {
+    "message": "Elérési út"
+  },
+  "quick_open.group.recent_folders": {
+    "message": "Legutóbbi mappák"
+  },
+  "quick_open.group.tools": {
+    "message": "Eszközök"
+  },
+  "quick_open.group.workspaces": {
+    "message": "Munkaterületek"
+  },
+  "quick_open.placeholder": {
+    "message": "Parancs, könyvjelző, mappa, elérési út, kiszolgáló, meghajtó, munkaterület vagy eszköz"
+  },
+  "quick_open.title": {
+    "message": "Gyors megnyitás"
+  },
+  "quick_view.counting": {
+    "message": "Számolás…"
+  },
+  "quick_view.downloading": {
+    "message": "Letöltés…"
+  },
+  "quick_view.empty": {
+    "message": "A Gyorsnézet azt mutatja, amin a másik panel kurzora áll."
+  },
+  "quick_view.extracting": {
+    "message": "Kibontás az archívumból…"
+  },
+  "quick_view.files_only": {
+    "message": "Kiszolgálón és archívumon belül a Gyorsnézet csak fájlokat mutat."
+  },
+  "quick_view.space.title": {
+    "message": "Összes foglalt hely:"
+  },
+  "quick_view.space.totals": {
+    "message": "{bytes, plural, one {{bytes_grouped} bájt} other {{bytes_grouped} bájt}} {files, plural, one {{files_grouped} fájlban} other {{files_grouped} fájlban}}, {folders, plural, one {{folders_grouped} mappában} other {{folders_grouped} mappában}}"
+  },
+  "quick_view.space.unreadable": {
+    "message": "{count} elem nem olvasható."
+  },
+  "quick_view.too_large.download": {
+    "message": "A fájl túl nagy ({size}) ahhoz, hogy itt letöltődjön: az F3 megnyitja."
+  },
+  "quick_view.too_large.extract": {
+    "message": "A fájl túl nagy ({size}) ahhoz, hogy itt kibontódjon az archívumból: az F3 megnyitja."
+  },
+  "remote.cancelled": {
+    "message": "megszakítva"
+  },
+  "remote.cloud.ask": {
+    "message": "{kind, select, application_key {{user} alkalmazáskulcsa ({host}):} api_key {{user} API-kulcsa ({host}):} password {{user} jelszava ({host}):} other {{user} titkos kulcsa ({host}):}}"
+  },
+  "remote.cloud.ask_again": {
+    "message": "{kind, select, application_key {Hibás alkalmazáskulcs. {user} alkalmazáskulcsa ({host}):} api_key {Hibás API-kulcs. {user} API-kulcsa ({host}):} password {Hibás jelszó. {user} jelszava ({host}):} other {Hibás kulcs. {user} titkos kulcsa ({host}):}}"
+  },
+  "remote.cloud.obscure_failed": {
+    "message": "az rclone nem tudta átvenni a jelszót"
+  },
+  "remote.cloud.rclone_missing": {
+    "message": "Az rclone hiányzik: a Beállítások > Bővítmények oldalon letölthető"
+  },
+  "remote.cloud.title": {
+    "message": "{kind, select, application_key {Alkalmazáskulcs} api_key {API-kulcs} password {Jelszó} other {Titkos kulcs}}"
+  },
+  "remote.connecting": {
+    "message": "Csatlakozás ehhez: {server}..."
+  },
+  "remote.dialog.cancel": {
+    "message": "Mégse"
+  },
+  "remote.dialog.ok": {
+    "message": "OK"
+  },
+  "remote.disconnect_failed": {
+    "message": "{share}: nem sikerült bontani a kapcsolatot: {err}"
+  },
+  "remote.ftp.password": {
+    "message": "{user}@{host} jelszava:"
+  },
+  "remote.ftp.password_again": {
+    "message": "Hibás jelszó. {user}@{host} jelszava:"
+  },
+  "remote.ftps.changed": {
+    "message": "{server} TLS-tanúsítványa MEGVÁLTOZOTT ahhoz képest, amit ez a fájl rögzít: {file}, {line}. sor. Valaki lehallgathatja a forgalmat; ha a kiszolgálónak új tanúsítványa van, töröld azt a sort."
+  },
+  "remote.ftps.not_trusted": {
+    "message": "a kiszolgáló tanúsítványa nem megbízható"
+  },
+  "remote.login.password": {
+    "message": "Jelszó"
+  },
+  "remote.login.title": {
+    "message": "Bejelentkezés"
+  },
+  "remote.login.user": {
+    "message": "Felhasználó"
+  },
+  "remote.mount.login_wrong": {
+    "message": "hibás felhasználónév vagy jelszó"
+  },
+  "remote.mount.macos_failed": {
+    "message": "a macOS nem tudta csatolni (NetFS {code})"
+  },
+  "remote.mount.needs_desktop": {
+    "message": "kio-fuse (KDE) vagy gvfs (GNOME) szükséges"
+  },
+  "remote.mount.needs_login": {
+    "message": "felhasználónév és jelszó szükséges"
+  },
+  "remote.mount.no_fuse": {
+    "message": "csatolva, de nincs hozzá mappa: a gvfs-fuse hiányzik"
+  },
+  "remote.mount.no_nfs_client": {
+    "message": "nem található; az NFS-hez a Windows „NFS-ügyfél” összetevője kell (Windows-szolgáltatások)"
+  },
+  "remote.mount.no_share": {
+    "message": "hiányzik a megosztás: smb://kiszolgáló/megosztás"
+  },
+  "remote.mount.not_address": {
+    "message": "érvénytelen cím"
+  },
+  "remote.mount.not_found": {
+    "message": "csatolva, de nem található a csatoltak között"
+  },
+  "remote.mount.other_user": {
+    "message": "a Windows már másik felhasználóként csatlakozik ehhez a kiszolgálóhoz: jelentkezz ki, vagy használd azt a felhasználót"
+  },
+  "remote.password.title": {
+    "message": "Jelszó"
+  },
+  "remote.remember_password": {
+    "message": "Jelszó megjegyzése (Beállítások › Jelszavak)"
+  },
+  "remote.save_back_failed": {
+    "message": "Nem sikerült visszamenteni: {err}"
+  },
+  "remote.sftp.host_certificate": {
+    "message": "A kiszolgáló gazdagép-tanúsítvánnyal azonosítja magát; ez egyelőre nem támogatott."
+  },
+  "remote.sftp.key_changed": {
+    "message": "{server} gazdagépkulcsa MEGVÁLTOZOTT ahhoz képest, amit ez a fájl rögzít: {file}, {line}. sor. Valaki lehallgathatja a forgalmat; ha a kiszolgálót újratelepítették, töröld azt a sort."
+  },
+  "remote.sftp.key_not_trusted": {
+    "message": "Nem fogadtad el {server} gazdagépkulcsát."
+  },
+  "remote.sftp.keys_refused": {
+    "message": "{user}@{host}: a kiszolgáló elutasította a kulcsokat, jelszót pedig nem fogad el"
+  },
+  "remote.sftp.login_refused": {
+    "message": "{user}@{host}: a bejelentkezés elutasítva"
+  },
+  "remote.sftp.passphrase": {
+    "message": "A kulcsfájl jelmondata: {file}"
+  },
+  "remote.sftp.passphrase_title": {
+    "message": "Kulcs jelmondata"
+  },
+  "remote.sftp.password": {
+    "message": "{user}@{host} jelszava"
+  },
+  "remote.unknown_host.once": {
+    "message": "Csatlakozás egyszer"
+  },
+  "remote.unknown_host.remember": {
+    "message": "Csatlakozás és megjegyzés"
+  },
+  "remote.unknown_host.text": {
+    "message": "{key_type, select, TLS {A kiszolgáló ({host}) még ismeretlen. TLS-tanúsítványának ujjlenyomata:} other {A kiszolgáló ({host}) még ismeretlen. Az ujjlenyomata ({key_type}):}}\n\n{fingerprint}\n\nCsak akkor csatlakozz, ha ez az a kiszolgáló, amelyre gondolsz; a rendszergazdája megerősítheti az ujjlenyomatot."
+  },
+  "remote.unknown_host.title": {
+    "message": "Ismeretlen kiszolgáló"
+  },
+  "rename.case": {
+    "message": "Kis-/nagybetű:"
+  },
+  "rename.case.first": {
+    "message": "Első betű nagy"
+  },
+  "rename.case.lower": {
+    "message": "kisbetűs"
+  },
+  "rename.case.unchanged": {
+    "message": "Változatlan"
+  },
+  "rename.case.upper": {
+    "message": "NAGYBETŰS"
+  },
+  "rename.case.words": {
+    "message": "Szókezdő Nagybetű"
+  },
+  "rename.close": {
+    "message": "Bezárás"
+  },
+  "rename.counter_start": {
+    "message": "Számláló kezdete"
+  },
+  "rename.dialog_title": {
+    "message": "Csoportos átnevezés"
+  },
+  "rename.digits": {
+    "message": "Számjegyek"
+  },
+  "rename.extension": {
+    "message": "Kiterjesztés"
+  },
+  "rename.field.counter": {
+    "message": "[C] Számláló"
+  },
+  "rename.field.date": {
+    "message": "[Y][M][D] Dátum"
+  },
+  "rename.field.extension": {
+    "message": "[E] Kit."
+  },
+  "rename.field.folder": {
+    "message": "[P] Mappa"
+  },
+  "rename.field.name": {
+    "message": "[N] Név"
+  },
+  "rename.field.range": {
+    "message": "[N1-3] Tartomány"
+  },
+  "rename.field.time": {
+    "message": "[h][m][s] Idő"
+  },
+  "rename.first_only": {
+    "message": "Csak az első"
+  },
+  "rename.in_archive": {
+    "message": "Archívumon belüli fájlok egyelőre nem nevezhetők át."
+  },
+  "rename.mask": {
+    "message": "Átnevezési maszk: fájlnév"
+  },
+  "rename.match_case": {
+    "message": "Kis-/nagybetű számít"
+  },
+  "rename.new_name": {
+    "message": "Új név"
+  },
+  "rename.not_renamed_back": {
+    "message": "{from}: {err}; nem kapták vissza a nevüket: {names}"
+  },
+  "rename.not_utf8": {
+    "message": "A nem UTF-8 kódolású nevek kimaradnak."
+  },
+  "rename.old_name": {
+    "message": "Régi név"
+  },
+  "rename.problem.bad_character": {
+    "message": "fájlnévben nem használható karakter"
+  },
+  "rename.problem.exists": {
+    "message": "már létezik"
+  },
+  "rename.problem.no_name": {
+    "message": "nincs név"
+  },
+  "rename.problem.twice": {
+    "message": "kétszer szerepel a listában"
+  },
+  "rename.regex": {
+    "message": "Reguláris kifejezés"
+  },
+  "rename.regex_error": {
+    "message": "A reguláris kifejezés: {err}"
+  },
+  "rename.replace": {
+    "message": "Csere erre"
+  },
+  "rename.search": {
+    "message": "Keresett szöveg"
+  },
+  "rename.start": {
+    "message": "Indítás!"
+  },
+  "rename.status.failed": {
+    "message": "Semmi sem lett átnevezve: {err}"
+  },
+  "rename.status.ready": {
+    "message": "Az Indítás gomb átnevezi őket."
+  },
+  "rename.status.renamed": {
+    "message": "{count, plural, one {# átnevezve.} other {# átnevezve.}}"
+  },
+  "rename.status.took_back": {
+    "message": "{count, plural, one {# visszaállítva.} other {# visszaállítva.}}"
+  },
+  "rename.step": {
+    "message": "Lépésköz"
+  },
+  "rename.undo": {
+    "message": "Visszavonás"
+  },
+  "rename.was": {
+    "message": "{to} (korábban: {from})"
+  },
+  "rename.with_extension": {
+    "message": "Kiterjesztéssel"
+  },
+  "scmd.column.modified": {
+    "message": "Módosítva"
+  },
+  "scmd.column.name": {
+    "message": "Név"
+  },
+  "scmd.column.size": {
+    "message": "Méret"
+  },
+  "scmd.column.up_dir": {
+    "message": "FEL--KVT"
+  },
+  "scmd.command_line.not_on_server": {
+    "message": "A parancsok ezen a gépen futnak, nem a kiszolgálón."
+  },
+  "scmd.compare.marked": {
+    "message": "{count, plural, one {# fájl kijelölve: újabb, mint a másik oldalon, vagy ott hiányzik.} other {# fájl kijelölve: újabbak, mint a másik oldalon, vagy ott hiányoznak.}}"
+  },
+  "scmd.compare.same": {
+    "message": "A mappákban ugyanazok a fájlok vannak."
+  },
+  "scmd.copying": {
+    "message": "{name} másolása..."
+  },
+  "scmd.dialog.buttons": {
+    "message": "Enter OK   Esc Mégse"
+  },
+  "scmd.error.read_settings": {
+    "message": "Nem sikerült beolvasni a beállításokat: {err}"
+  },
+  "scmd.error.read_tabs": {
+    "message": "Nem sikerült beolvasni a megnyitott lapokat: {err}"
+  },
+  "scmd.error.read_workspaces": {
+    "message": "Nem sikerült beolvasni a munkaterületeket: {err}"
+  },
+  "scmd.error.save_back": {
+    "message": "Nem sikerült visszamenteni: {err}"
+  },
+  "scmd.error.save_searches": {
+    "message": "Nem sikerült menteni a kereséseket: {err}"
+  },
+  "scmd.error.save_tabs": {
+    "message": "Nem sikerült menteni a megnyitott lapokat: {err}"
+  },
+  "scmd.find.backwards": {
+    "message": "Visszafelé"
+  },
+  "scmd.find.case_sensitive": {
+    "message": "Kis- és nagybetűk megkülönböztetése"
+  },
+  "scmd.find.hex": {
+    "message": "Hexa (77 6F 72 64)"
+  },
+  "scmd.find.not_found": {
+    "message": "Nem található: {text}"
+  },
+  "scmd.find.regex": {
+    "message": "Reguláris kifejezés"
+  },
+  "scmd.find.search_for": {
+    "message": "Keresett szöveg:"
+  },
+  "scmd.find.title": {
+    "message": "Keresés"
+  },
+  "scmd.find.whole_words": {
+    "message": "Csak teljes szavak"
+  },
+  "scmd.group.files": {
+    "message": "Fájlok (*.txt *.md; a mappák végén /):"
+  },
+  "scmd.group.select_title": {
+    "message": "Csoport kijelölése"
+  },
+  "scmd.group.unselect_title": {
+    "message": "Csoport kijelölésének megszüntetése"
+  },
+  "scmd.key_bar.copy": {
+    "message": "Másol"
+  },
+  "scmd.key_bar.delete": {
+    "message": "Töröl"
+  },
+  "scmd.key_bar.edit": {
+    "message": "Szerk"
+  },
+  "scmd.key_bar.menu": {
+    "message": "Menü"
+  },
+  "scmd.key_bar.mkdir": {
+    "message": "ÚjMap"
+  },
+  "scmd.key_bar.move": {
+    "message": "Mozgat"
+  },
+  "scmd.key_bar.quit": {
+    "message": "Kilép"
+  },
+  "scmd.key_bar.view": {
+    "message": "Nézet"
+  },
+  "scmd.message.error": {
+    "message": "Hiba"
+  },
+  "scmd.message.ok": {
+    "message": "OK"
+  },
+  "scmd.not_yet": {
+    "message": "{what, select, menus {A menük a terminálos változatban még nem érhetők el.} file_operations {A fájlműveletek a terminálos változatban még nem érhetők el.} servers {A kiszolgálók a terminálos változatban még nem érhetők el.} other {Ez a parancs a terminálos változatban még nem érhető el.}}"
+  },
+  "scmd.picture.broken": {
+    "message": "sérült kép"
+  },
+  "scmd.picture.broken_page": {
+    "message": "sérült oldal"
+  },
+  "scmd.picture.loading": {
+    "message": "Betöltés…"
+  },
+  "scmd.picture.no_page": {
+    "message": "a PDF-ben nincs ilyen oldal"
+  },
+  "scmd.shell.press_enter": {
+    "message": "Nyomd meg az Entert a Spark Commanderhez való visszatéréshez..."
+  },
+  "scmd.sync_browsing.off": {
+    "message": "A szinkronizált böngészés kikapcsolva."
+  },
+  "scmd.sync_browsing.on": {
+    "message": "A szinkronizált böngészés bekapcsolva."
+  },
+  "scmd.sync_browsing.stopped": {
+    "message": "{err}. A szinkronizált böngészés kikapcsolva."
+  },
+  "scmd.viewer.column": {
+    "message": "{column}. oszlop"
+  },
+  "scmd.viewer.finding": {
+    "message": "keresés…"
+  },
+  "scmd.viewer.key_bar.next": {
+    "message": "Követ"
+  },
+  "scmd.viewer.key_bar.quit": {
+    "message": "Kilép"
+  },
+  "scmd.viewer.key_bar.reload": {
+    "message": "Újra"
+  },
+  "scmd.viewer.key_bar.search": {
+    "message": "Keres"
+  },
+  "scmd.viewer.page": {
+    "message": "{page}/{pages}. oldal"
+  },
+  "scmd.viewer.reading": {
+    "message": "olvasás: {percent}%"
+  },
+  "scmd.viewer.wrap": {
+    "message": "Tördelés"
+  },
+  "scmd.workspace.copy_name": {
+    "message": "{name} másolata"
+  },
+  "scmd.workspace.default_name": {
+    "message": "{number}. munkaterület"
+  },
+  "scmd.workspace.delete_question": {
+    "message": "Törlöd a munkaterületet („{name}”)? A lapjai elvesznek."
+  },
+  "scmd.workspace.duplicate_title": {
+    "message": "Munkaterület duplikálása"
+  },
+  "scmd.workspace.last_stays": {
+    "message": "Az utolsó munkaterület nem törölhető."
+  },
+  "scmd.workspace.name": {
+    "message": "Név:"
+  },
+  "scmd.workspace.name_or_default": {
+    "message": "Név (üresen: {name}):"
+  },
+  "scmd.workspace.new_title": {
+    "message": "Új munkaterület"
+  },
+  "scmd.workspace.rename_title": {
+    "message": "Munkaterület átnevezése"
+  },
+  "scmd.workspaces.keys": {
+    "message": "Enter Megnyitás  F7 Új  F5 Másolás  F2 Átnevezés  F8 Törlés"
+  },
+  "scmd.workspaces.title": {
+    "message": "Munkaterületek"
+  },
+  "search.age.days": {
+    "message": "nap"
+  },
+  "search.age.hours": {
+    "message": "óra"
+  },
+  "search.age.minutes": {
+    "message": "perc"
+  },
+  "search.age.months": {
+    "message": "hónap"
+  },
+  "search.age.weeks": {
+    "message": "hét"
+  },
+  "search.age.years": {
+    "message": "év"
+  },
+  "search.archives": {
+    "message": "Keresés archívumokban"
+  },
+  "search.attribute.directory": {
+    "message": "Mappa"
+  },
+  "search.attribute.either": {
+    "message": "Mindegy"
+  },
+  "search.attribute.executable": {
+    "message": "Futtatható"
+  },
+  "search.attribute.hidden": {
+    "message": "Rejtett"
+  },
+  "search.attribute.link": {
+    "message": "Szimbolikus hivatkozás"
+  },
+  "search.attribute.must": {
+    "message": "Legyen ilyen"
+  },
+  "search.attribute.must_not": {
+    "message": "Ne legyen ilyen"
+  },
+  "search.attribute.read_only": {
+    "message": "Csak olvasható"
+  },
+  "search.attributes.label": {
+    "message": "Attribútumok:"
+  },
+  "search.between.and": {
+    "message": "eddig:"
+  },
+  "search.between.label": {
+    "message": "Dátum ettől:"
+  },
+  "search.close": {
+    "message": "Bezárás"
+  },
+  "search.depth.all": {
+    "message": "mind (korlátlan mélység)"
+  },
+  "search.depth.current": {
+    "message": "csak az aktuális mappa"
+  },
+  "search.depth.label": {
+    "message": "Keresés almappákban:"
+  },
+  "search.depth.levels": {
+    "message": "{count, plural, one {# szint} other {# szint}}"
+  },
+  "search.drives": {
+    "message": "Meghajtók"
+  },
+  "search.duplicates.content": {
+    "message": "azonos tartalom"
+  },
+  "search.duplicates.label": {
+    "message": "Ismétlődő fájlok keresése:"
+  },
+  "search.duplicates.name": {
+    "message": "azonos név"
+  },
+  "search.duplicates.size": {
+    "message": "azonos méret"
+  },
+  "search.edit": {
+    "message": "F4 Szerkesztés"
+  },
+  "search.error.between_days": {
+    "message": "A dátumtartományhoz mindkét nap megadása szükséges"
+  },
+  "search.error.date": {
+    "message": "„{text}” nem dátum (példa: 2026-11-12)"
+  },
+  "search.error.hex": {
+    "message": "„{text}” nem hexadecimális karakterlánc (példa: 48 65 6c)"
+  },
+  "search.error.keep": {
+    "message": "Nem sikerült megőrizni a keresést: {err}"
+  },
+  "search.error.local_time": {
+    "message": "„{text}” nem létező helyi idő"
+  },
+  "search.error.names_regex": {
+    "message": "A név reguláris kifejezése: {err}"
+  },
+  "search.error.newer_number": {
+    "message": "A „Nem régebbi, mint” mezőbe számot kell írni, nem ezt: {text}"
+  },
+  "search.error.no_place": {
+    "message": "A „Keresés itt” mezőben nincs megadva mappa"
+  },
+  "search.error.no_text": {
+    "message": "Nincs megadva a keresendő szöveg"
+  },
+  "search.error.older_number": {
+    "message": "A „Régebbi, mint” mezőbe számot kell írni, nem ezt: {text}"
+  },
+  "search.error.save": {
+    "message": "Nem sikerült menteni a kereséseket: {err}"
+  },
+  "search.error.size_number": {
+    "message": "A „Fájlméret” mezőbe számot kell írni, nem ezt: {text}"
+  },
+  "search.error.text_regex": {
+    "message": "A szöveg reguláris kifejezése: {err}"
+  },
+  "search.feed": {
+    "message": "Lista a panelre"
+  },
+  "search.go_to_file": {
+    "message": "Ugrás a fájlhoz"
+  },
+  "search.in_found": {
+    "message": "F2 Keresés a találatokban"
+  },
+  "search.locate": {
+    "message": "A locate indexéből"
+  },
+  "search.names.label": {
+    "message": "Fájlnév:"
+  },
+  "search.names.placeholder": {
+    "message": "*.txt *.md | backup*  (üres: mind)"
+  },
+  "search.new": {
+    "message": "Új keresés"
+  },
+  "search.newer.label": {
+    "message": "Nem régebbi, mint:"
+  },
+  "search.older.label": {
+    "message": "Régebbi, mint:"
+  },
+  "search.only_selected": {
+    "message": "Keresés csak a kijelölt fájlokban/mappákban"
+  },
+  "search.only_selected_count": {
+    "message": "{count, plural, one {Keresés csak a kijelölt # elemben} other {Keresés csak a kijelölt # elemben}}"
+  },
+  "search.page.advanced": {
+    "message": "Speciális"
+  },
+  "search.page.general": {
+    "message": "Általános"
+  },
+  "search.page.load_save": {
+    "message": "Betöltés/mentés"
+  },
+  "search.places.browse_prompt": {
+    "message": "Keresés itt"
+  },
+  "search.places.label": {
+    "message": "Keresés itt:"
+  },
+  "search.places.placeholder": {
+    "message": "Mappák, köztük ;"
+  },
+  "search.regex": {
+    "message": "RegEx"
+  },
+  "search.results.label": {
+    "message": "Keresési eredmények:"
+  },
+  "search.saved.delete": {
+    "message": "Törlés"
+  },
+  "search.saved.label": {
+    "message": "Korábbi keresések:"
+  },
+  "search.saved.load": {
+    "message": "Betöltés"
+  },
+  "search.saved.name_first": {
+    "message": "Előbb nevezd el a keresést."
+  },
+  "search.saved.name_placeholder": {
+    "message": "A keresés neve"
+  },
+  "search.saved.save": {
+    "message": "Mentés"
+  },
+  "search.size.label": {
+    "message": "Fájlméret:"
+  },
+  "search.start": {
+    "message": "Keresés indítása"
+  },
+  "search.status.found": {
+    "message": "{files, plural, one {# fájl} other {# fájl}} és {dirs, plural, one {# mappa} other {# mappa}} található"
+  },
+  "search.status.searching": {
+    "message": "Keresés…"
+  },
+  "search.status.searching_in": {
+    "message": "Keresés: {folder}"
+  },
+  "search.status.stopped": {
+    "message": "Leállítva: {counts}"
+  },
+  "search.stop": {
+    "message": "Leállítás"
+  },
+  "search.text.ansi": {
+    "message": "ANSI (kódlap: {page})"
+  },
+  "search.text.case_sensitive": {
+    "message": "Kis- és nagybetűk megkülönböztetése"
+  },
+  "search.text.hex": {
+    "message": "Hexa"
+  },
+  "search.text.label": {
+    "message": "Szöveg:"
+  },
+  "search.text.not_containing": {
+    "message": "A szöveget NEM tartalmazó fájlok keresése"
+  },
+  "search.text.office": {
+    "message": "Office-fájlok (docx, xlsx, pptx, odt…)"
+  },
+  "search.text.placeholder": {
+    "message": "Keresendő szöveg"
+  },
+  "search.text.whole_words": {
+    "message": "Csak teljes szavak"
+  },
+  "search.title": {
+    "message": "Fájlok keresése"
+  },
+  "search.unit.bytes": {
+    "message": "bájt"
+  },
+  "search.view": {
+    "message": "F3 Megtekintés"
+  },
+  "settings.addons.builtin_version": {
+    "message": "{version}, a Spark Commander része"
+  },
+  "settings.addons.check_daily": {
+    "message": "Bővítményfrissítések keresése induláskor és naponta, és felajánlásuk"
+  },
+  "settings.addons.check_failed": {
+    "message": "Nem sikerült frissítéseket keresni: {err}"
+  },
+  "settings.addons.check_now": {
+    "message": "Keresés most"
+  },
+  "settings.addons.checking": {
+    "message": "Frissítések keresése..."
+  },
+  "settings.addons.download": {
+    "message": "Letöltés"
+  },
+  "settings.addons.downloading": {
+    "message": "Letöltés: {done} / {size}"
+  },
+  "settings.addons.file": {
+    "message": "Fájl"
+  },
+  "settings.addons.installed.builtin": {
+    "message": "a Spark Commander része"
+  },
+  "settings.addons.installed.label": {
+    "message": "Telepítve"
+  },
+  "settings.addons.installed.none": {
+    "message": "nincs"
+  },
+  "settings.addons.intro": {
+    "message": "A Spark Commander más projektek alábbi programjait használja egyes feladataihoz. A bővítményeket külön, igény szerint töltheted le; a 7-Zip és a PDFium a program része."
+  },
+  "settings.addons.never_offer": {
+    "message": "Soha ne ajánljon fel bővítményt, ha egy fájlhoz kellene"
+  },
+  "settings.addons.offers": {
+    "message": "Ajánlatok és frissítések"
+  },
+  "settings.addons.online.label": {
+    "message": "Online"
+  },
+  "settings.addons.online.looking": {
+    "message": "keresés..."
+  },
+  "settings.addons.online.none": {
+    "message": "ehhez a rendszerhez nincs"
+  },
+  "settings.addons.online.not_yet": {
+    "message": "még nincs lekérdezve"
+  },
+  "settings.addons.online.unknown": {
+    "message": "ismeretlen"
+  },
+  "settings.addons.remove": {
+    "message": "Eltávolítás"
+  },
+  "settings.addons.up_to_date": {
+    "message": "A bővítmények listája naprakész."
+  },
+  "settings.addons.version": {
+    "message": "Verzió"
+  },
+  "settings.addons.website": {
+    "message": "Webhely"
+  },
+  "settings.appearance.title": {
+    "message": "Megjelenés"
+  },
+  "settings.apply": {
+    "message": "Alkalmaz"
+  },
+  "settings.backdrop.blur": {
+    "message": "A mögötte lévő asztal elmosása"
+  },
+  "settings.backdrop.clear": {
+    "message": "0%, csak az asztal"
+  },
+  "settings.backdrop.cover": {
+    "message": "Mennyire takarja a mögötte lévő asztalt:"
+  },
+  "settings.backdrop.opacity": {
+    "message": "{opacity}%"
+  },
+  "settings.backdrop.sidebar": {
+    "message": "Oldalsáv"
+  },
+  "settings.backdrop.solid": {
+    "message": "100%, átlátszatlan"
+  },
+  "settings.backdrop.terminal": {
+    "message": "Terminál"
+  },
+  "settings.cancel": {
+    "message": "Mégse"
+  },
+  "settings.date.as_system": {
+    "message": "A rendszer szerint: {date}"
+  },
+  "settings.date.custom": {
+    "message": "Egyéni:"
+  },
+  "settings.date.pattern_help": {
+    "message": "yyyy év, MM hónap (MMM a neve), dd nap (ddd a hét napja)"
+  },
+  "settings.date.shown_as": {
+    "message": "Megjelenítés"
+  },
+  "settings.date.shown_as_note": {
+    "message": "a fájllistákban; a párbeszédablakok a másodperceket is mutatják"
+  },
+  "settings.date.title": {
+    "message": "Dátum"
+  },
+  "settings.editor.browse": {
+    "message": "Tallózás..."
+  },
+  "settings.editor.choose": {
+    "message": "Kiválasztás"
+  },
+  "settings.editor.external": {
+    "message": "Külső szerkesztő (Ctrl+Shift+F4):"
+  },
+  "settings.editor.external_help": {
+    "message": "%1 a fájl, ennek hiányában a fájl a végére kerül; pl. code --wait %1"
+  },
+  "settings.editor.limit": {
+    "message": "A beépített szerkesztő (F4) fájlméret-korlátja:"
+  },
+  "settings.editor.limit_unit": {
+    "message": "MB"
+  },
+  "settings.editor.title": {
+    "message": "Szerkesztő (F4)"
+  },
+  "settings.error.no_folder": {
+    "message": "nincs konfigurációs mappa"
+  },
+  "settings.files_shown.hidden": {
+    "message": "Rejtett fájlok"
+  },
+  "settings.files_shown.system": {
+    "message": "Rendszerfájlok"
+  },
+  "settings.files_shown.title": {
+    "message": "Megjelenített fájlok"
+  },
+  "settings.font.as_system": {
+    "message": "A rendszer szerint"
+  },
+  "settings.font.chosen": {
+    "message": "Egyéni; a rendszeré: {family}, {size}"
+  },
+  "settings.font.fixed": {
+    "message": "Megjelenítő"
+  },
+  "settings.font.fixed_note": {
+    "message": "Csak rögzített szélességű betűtípusok; ezt használja a szerkesztő és a fájl-összehasonlítás is."
+  },
+  "settings.font.main": {
+    "message": "A főablak betűtípusa"
+  },
+  "settings.font.system": {
+    "message": "A rendszer betűtípusa"
+  },
+  "settings.language.system": {
+    "message": "A rendszer nyelve"
+  },
+  "settings.language.system_named": {
+    "message": "A rendszer nyelve: {language}"
+  },
+  "settings.language.title": {
+    "message": "Nyelv"
+  },
+  "settings.menus.automatic": {
+    "message": "Automatikus: ☰ gomb GNOME alatt, máshol menüsor"
+  },
+  "settings.menus.bar": {
+    "message": "Menüsor"
+  },
+  "settings.menus.button": {
+    "message": "☰ gomb a címsorban"
+  },
+  "settings.menus.title": {
+    "message": "Menük"
+  },
+  "settings.ok": {
+    "message": "OK"
+  },
+  "settings.page.addons": {
+    "message": "Bővítmények"
+  },
+  "settings.page.date": {
+    "message": "Dátum"
+  },
+  "settings.page.display": {
+    "message": "Megjelenítés"
+  },
+  "settings.page.edit_view": {
+    "message": "Szerkesztés/Megtekintés"
+  },
+  "settings.page.font": {
+    "message": "Betűtípus"
+  },
+  "settings.page.language": {
+    "message": "Nyelv"
+  },
+  "settings.page.layout": {
+    "message": "Elrendezés"
+  },
+  "settings.page.operations": {
+    "message": "Műveletek"
+  },
+  "settings.page.passwords": {
+    "message": "Jelszavak"
+  },
+  "settings.page.terminal": {
+    "message": "Terminál"
+  },
+  "settings.page.toolbar": {
+    "message": "Eszköztár"
+  },
+  "settings.passwords.change_master": {
+    "message": "Mesterjelszó módosítása…"
+  },
+  "settings.passwords.locked": {
+    "message": "Ezen a gépen zárolva vannak: a mesterjelszóval feloldhatók."
+  },
+  "settings.passwords.master_set": {
+    "message": "Mesterjelszó beállítva: a beállítások mappáját átmásolva egy másik gépen is megnyithatók, ha ott beírod a mesterjelszót."
+  },
+  "settings.passwords.no_master": {
+    "message": "Nincs mesterjelszó: a beállítások mappáját átmásolva egy másik gépen nem nyithatók meg; ott újra be kell írni őket."
+  },
+  "settings.passwords.not_removed": {
+    "message": "Nem sikerült eltávolítani a mesterjelszót: {err}"
+  },
+  "settings.passwords.remove_master": {
+    "message": "Mesterjelszó eltávolítása"
+  },
+  "settings.passwords.saved": {
+    "message": "{count, plural, one {# mentett jelszó} other {# mentett jelszó}} (kiszolgálókhoz, megosztásokhoz, titkosított meghajtókhoz), titkosítva a beállítások mappájában; a feloldásukhoz szükséges kulcs ennek a gépnek a kulcstartójában van."
+  },
+  "settings.passwords.set_master": {
+    "message": "Mesterjelszó beállítása…"
+  },
+  "settings.passwords.title": {
+    "message": "Mentett jelszavak"
+  },
+  "settings.passwords.unlock": {
+    "message": "Feloldás…"
+  },
+  "settings.queue.clear_after": {
+    "message": "Befejezett műveletek törlése ennyi idő után:"
+  },
+  "settings.queue.clear_after_help": {
+    "message": "0: azonnal, amint befejeződnek. A sikertelenek és a megszakítottak a törlésükig megmaradnak."
+  },
+  "settings.queue.clear_after_unit": {
+    "message": "perc"
+  },
+  "settings.queue.download_limit": {
+    "message": "Letöltési sebességkorlát:"
+  },
+  "settings.queue.download_limit_help": {
+    "message": "A Letöltés webcímről parancsra, valamint az FTP- és SFTP-kiszolgálókról való másolásra vonatkozik, a már futókra is. 0: nincs korlát."
+  },
+  "settings.queue.download_limit_unit": {
+    "message": "KB/s"
+  },
+  "settings.queue.title": {
+    "message": "Műveleti sor"
+  },
+  "settings.shell.default": {
+    "message": "Alapértelmezett: {shell}"
+  },
+  "settings.shell.note": {
+    "message": "Az új terminállapok ezt indítják."
+  },
+  "settings.shell.title": {
+    "message": "Parancsértelmező"
+  },
+  "settings.sort_folders.by_name": {
+    "message": "Mindig név szerint"
+  },
+  "settings.sort_folders.like_files": {
+    "message": "A fájlokhoz hasonlóan (idő szerint is)"
+  },
+  "settings.sort_folders.title": {
+    "message": "Mappák rendezése"
+  },
+  "settings.tabs.header_always": {
+    "message": "A lapsáv akkor is látszik, ha csak egy lap van"
+  },
+  "settings.tabs.title": {
+    "message": "Mappalapok"
+  },
+  "settings.time.as_system": {
+    "message": "A rendszer szerint"
+  },
+  "settings.time.h12": {
+    "message": "12 órás (2:05 PM)"
+  },
+  "settings.time.h24": {
+    "message": "24 órás (14:05)"
+  },
+  "settings.time.title": {
+    "message": "Idő"
+  },
+  "settings.title": {
+    "message": "Beállítások"
+  },
+  "settings.toolbar.add": {
+    "message": "Gomb hozzáadása…"
+  },
+  "settings.toolbar.move_down": {
+    "message": "Mozgatás lefelé"
+  },
+  "settings.toolbar.move_up": {
+    "message": "Mozgatás felfelé"
+  },
+  "settings.toolbar.place": {
+    "message": "A menüsor alatt; a címsorban, ha a menük a ☰ gomb mögött vannak, ahogy a GNOME alkalmazásaiban. Gombok nélkül nincs eszköztár."
+  },
+  "settings.toolbar.remove": {
+    "message": "Eltávolítás"
+  },
+  "settings.toolbar.replace": {
+    "message": "Csere…"
+  },
+  "settings.toolbar.restore_default": {
+    "message": "Alapértelmezés visszaállítása"
+  },
+  "settings.toolbar.title": {
+    "message": "Az eszköztár gombjai"
+  },
+  "settings.viewer.font.ansi": {
+    "message": "ANSI (Windows)"
+  },
+  "settings.viewer.font.ascii": {
+    "message": "ASCII (DOS)"
+  },
+  "settings.viewer.font.auto": {
+    "message": "Automatikus felismerés"
+  },
+  "settings.viewer.font.label": {
+    "message": "Betűkészlet induláskor:"
+  },
+  "settings.viewer.font.variable": {
+    "message": "Változó szélességű"
+  },
+  "settings.viewer.minimap": {
+    "message": "Minitérkép"
+  },
+  "settings.viewer.show": {
+    "message": "Megjelenítés:"
+  },
+  "settings.viewer.start.auto": {
+    "message": "Automatikus felismerés"
+  },
+  "settings.viewer.start.binary": {
+    "message": "Bináris"
+  },
+  "settings.viewer.start.hex": {
+    "message": "Hexa"
+  },
+  "settings.viewer.start.label": {
+    "message": "Megjelenítés induláskor:"
+  },
+  "settings.viewer.start.text": {
+    "message": "Szöveg"
+  },
+  "settings.viewer.title": {
+    "message": "Megjelenítő (F3)"
+  },
+  "settings.viewer.width.binary": {
+    "message": "Bináris"
+  },
+  "settings.viewer.width.label": {
+    "message": "Megjelenítési szélesség (karakter):"
+  },
+  "settings.viewer.width.text": {
+    "message": "Szöveg"
+  },
+  "settings.viewer.wrap": {
+    "message": "Szöveg tördelése"
+  },
+  "shells.command_prompt": {
+    "message": "Parancssor"
+  },
+  "sidebar.device.no_files": {
+    "message": "nem oszt meg fájlokat"
+  },
+  "sidebar.device.not_answering": {
+    "message": "{name} nem válaszol: oldd fel, nyisd meg rajta a KDE Connectet, majd olvasd be újra a mappát (F2)."
+  },
+  "sidebar.device.not_answering_error": {
+    "message": "{name} nem válaszol ({err}): oldd fel, és nyisd meg rajta a KDE Connectet."
+  },
+  "sidebar.device.not_connected": {
+    "message": "nincs csatlakoztatva"
+  },
+  "sidebar.device.opening": {
+    "message": "{name} megnyitása..."
+  },
+  "sidebar.device.reconnecting": {
+    "message": "{name} nem válaszol: újracsatlakozás..."
+  },
+  "sidebar.device.unmount_failed": {
+    "message": "{name}: nem sikerült leválasztani: {err}"
+  },
+  "sidebar.group.bookmarks": {
+    "message": "Könyvjelzők"
+  },
+  "sidebar.group.cloud": {
+    "message": "Felhő"
+  },
+  "sidebar.group.devices": {
+    "message": "Eszközök"
+  },
+  "sidebar.group.drives": {
+    "message": "Meghajtók"
+  },
+  "sidebar.group.network": {
+    "message": "Hálózat"
+  },
+  "sidebar.section.connections": {
+    "message": "Kapcsolatok"
+  },
+  "sidebar.section.folders": {
+    "message": "Mappák"
+  },
+  "sidebar.section.operations": {
+    "message": "Műveletek"
+  },
+  "sidebar.section.places": {
+    "message": "Helyek"
+  },
+  "sidebar.volume.locked": {
+    "message": "zárolva"
+  },
+  "sidebar.volume.mounting": {
+    "message": "{name} csatolása..."
+  },
+  "sidebar.volume.not_mounted": {
+    "message": "nincs csatolva"
+  },
+  "sidebar.volume.open": {
+    "message": "Megnyitás"
+  },
+  "sidebar.volume.space": {
+    "message": "{free} szabad / {total}"
+  },
+  "sidebar.volume.unmount": {
+    "message": "Leválasztás"
+  },
+  "sidebar.volume.unmount_failed": {
+    "message": "Nem sikerült leválasztani: {err}"
+  },
+  "split.bad_size": {
+    "message": "„{size}” nem érvényes méret. Példák: 100 MB, 1.5 GB, 650m"
+  },
+  "split.choose": {
+    "message": "Vidd a kurzort a darabolandó fájlra."
+  },
+  "split.combine.choose": {
+    "message": "Vidd a kurzort egy darabra (név.001) vagy a hozzá tartozó .crc fájlra."
+  },
+  "split.combine.dialog_title": {
+    "message": "Fájlok összefűzése"
+  },
+  "split.combine.label": {
+    "message": "A darabok összefűzése ebbe a fájlba:"
+  },
+  "split.combine.title": {
+    "message": "„{name}” összefűzése"
+  },
+  "split.combined_no_crc": {
+    "message": "{count, plural, one {# darab összefűzve, nincs ellenőrizhető CRC-fájl} other {# darab összefűzve, nincs ellenőrizhető CRC-fájl}}"
+  },
+  "split.crc_mismatch": {
+    "message": "{target} nem egyezik a CRC-fájllal ({file}): egy darab hiányzik vagy sérült"
+  },
+  "split.crc_names_no_file": {
+    "message": "a CRC-fájl nem nevez meg fájlt"
+  },
+  "split.crc_unreadable": {
+    "message": "összefűzve, de a CRC-fájl ({file}) nem olvasható: {err}"
+  },
+  "split.dialog_title": {
+    "message": "Fájl darabolása"
+  },
+  "split.label": {
+    "message": "„{name}” darabolása ebbe a mappába:"
+  },
+  "split.part_missing": {
+    "message": "Hiányzik: {path}"
+  },
+  "split.part_size": {
+    "message": "Darabméret:"
+  },
+  "split.title": {
+    "message": "„{name}” darabolása"
+  },
+  "sync.close": {
+    "message": "Bezárás"
+  },
+  "sync.column.date": {
+    "message": "Dátum"
+  },
+  "sync.column.name": {
+    "message": "Név"
+  },
+  "sync.column.size": {
+    "message": "Méret"
+  },
+  "sync.compare": {
+    "message": "Összehasonlítás"
+  },
+  "sync.confirm.copy_left": {
+    "message": "{count} másolása balra ({size})"
+  },
+  "sync.confirm.copy_right": {
+    "message": "{count} másolása jobbra ({size})"
+  },
+  "sync.confirm.delete_left": {
+    "message": "{count} törlése a bal oldalon"
+  },
+  "sync.confirm.delete_right": {
+    "message": "{count} törlése a jobb oldalon"
+  },
+  "sync.confirm.ok": {
+    "message": "Szinkronizálás"
+  },
+  "sync.confirm.text": {
+    "message": "{actions}. A másolt fájlok felülírják az ott lévőket.{trash, select, yes { Az ezen a gépen törölt fájlok a Kukába kerülnek.} other {}}"
+  },
+  "sync.confirm.title": {
+    "message": "Szinkronizálás"
+  },
+  "sync.error.changed": {
+    "message": "az összehasonlítás óta megváltozott; hasonlítsd össze újra"
+  },
+  "sync.error.compare": {
+    "message": "Nem sikerült összehasonlítani: {err}"
+  },
+  "sync.error.no_folders": {
+    "message": "A Mappák szinkronizálása két mappát hasonlít össze: egyik panel sem mutathat archívumot vagy keresési eredményeket."
+  },
+  "sync.left": {
+    "message": "Bal"
+  },
+  "sync.mask.label": {
+    "message": "Fájlok:"
+  },
+  "sync.option.asymmetric": {
+    "message": "Aszimmetrikus (a jobb oldal a bal másolata lesz)"
+  },
+  "sync.option.by_content": {
+    "message": "Tartalom szerint"
+  },
+  "sync.option.ignore_date": {
+    "message": "Dátum figyelmen kívül"
+  },
+  "sync.option.subfolders": {
+    "message": "Almappák"
+  },
+  "sync.result.done": {
+    "message": "{count, plural, one {# szinkronizálva} other {# szinkronizálva}}"
+  },
+  "sync.result.failed": {
+    "message": "{count, plural, one {# nincs szinkronizálva} other {# nincs szinkronizálva}}; {first}"
+  },
+  "sync.right": {
+    "message": "Jobb"
+  },
+  "sync.show.equal": {
+    "message": "= azonos"
+  },
+  "sync.show.label": {
+    "message": "Megjelenítés:"
+  },
+  "sync.show.other": {
+    "message": "≠ érintetlen"
+  },
+  "sync.show.to_left": {
+    "message": "← balra"
+  },
+  "sync.show.to_right": {
+    "message": "→ jobbra"
+  },
+  "sync.status.both_empty": {
+    "message": "Mindkettő üres."
+  },
+  "sync.status.comparing": {
+    "message": "Összehasonlítás: {folder}"
+  },
+  "sync.status.counts": {
+    "message": "{right} másolandó jobbra, {left} másolandó balra, {delete} törlendő, {equal} azonos, {alone} érintetlen"
+  },
+  "sync.status.stopped": {
+    "message": "Leállítva."
+  },
+  "sync.stop": {
+    "message": "Leállítás"
+  },
+  "sync.synchronize": {
+    "message": "Szinkronizálás..."
+  },
+  "sync.task.title": {
+    "message": "{left} és {right} szinkronizálása"
+  },
+  "sync.title": {
+    "message": "Mappák szinkronizálása"
+  },
+  "tab_menu.close_all_tabs": {
+    "message": "Összes lap bezárása"
+  },
+  "tab_menu.close_duplicate_tabs": {
+    "message": "Ismétlődő lapok bezárása"
+  },
+  "tab_menu.close_tab": {
+    "message": "Lap bezárása"
+  },
+  "tab_menu.copy_tab_to_other_panel": {
+    "message": "Lap másolása a másik panelre"
+  },
+  "tab_menu.duplicate_tab": {
+    "message": "Lap duplikálása"
+  },
+  "tab_menu.list_tabs": {
+    "message": "Összes lap listája"
+  },
+  "tab_menu.lock_tab": {
+    "message": "Lap zárolása"
+  },
+  "tab_menu.none": {
+    "message": "(nincs)"
+  },
+  "tab_menu.rename_tab": {
+    "message": "Lap átnevezése..."
+  },
+  "tabs.error.reopen": {
+    "message": "Nem sikerült újra megnyitni a lapot: {err}"
+  },
+  "tabs.history.empty": {
+    "message": "Ennek a lapnak még nincsenek mappaelőzményei."
+  },
+  "tabs.new": {
+    "message": "Új lap"
+  },
+  "tabs.rename.label": {
+    "message": "Új név:"
+  },
+  "tabs.rename.title": {
+    "message": "Lap átnevezése"
+  },
+  "tabs.search_results": {
+    "message": "Keresési eredmények"
+  },
+  "terminal.busy": {
+    "message": "Egy program fut a terminálban: a parancsot akkor futtasd, ha befejeződött."
+  },
+  "terminal.close.idle": {
+    "message": "Bezárod ezt a terminállapot? A parancsértelmezője leáll."
+  },
+  "terminal.close.ok": {
+    "message": "Bezárás"
+  },
+  "terminal.close.running": {
+    "message": "Bezárod ezt a terminállapot? A benne futó program leáll."
+  },
+  "terminal.close.title": {
+    "message": "Lap bezárása"
+  },
+  "terminal.error.start_shell": {
+    "message": "Nem sikerült elindítani a parancsértelmezőt: {err}"
+  },
+  "terminal.jump_to_bottom": {
+    "message": "Ugrás az aljára (Ctrl+End) ↓"
+  },
+  "terminal.menu.copy": {
+    "message": "Másolás"
+  },
+  "terminal.menu.paste": {
+    "message": "Beillesztés"
+  },
+  "toolbar.customize": {
+    "message": "Eszköztár testreszabása…"
+  },
+  "tools.clear_key": {
+    "message": "Törlés"
+  },
+  "tools.close": {
+    "message": "Bezárás"
+  },
+  "tools.delete": {
+    "message": "Törlés"
+  },
+  "tools.empty": {
+    "message": "Még nincsenek eszközök: az Új... gombbal adhatsz hozzá egyet."
+  },
+  "tools.field.command": {
+    "message": "Parancs"
+  },
+  "tools.field.key": {
+    "message": "Billentyű"
+  },
+  "tools.field.name": {
+    "message": "Név"
+  },
+  "tools.intro": {
+    "message": "Saját parancssoraid az Eszközök menüben: kattints rájuk ott, vagy nyomd meg a billentyűjüket."
+  },
+  "tools.key.none": {
+    "message": "Nincs"
+  },
+  "tools.key.waiting": {
+    "message": "Nyomd le a billentyűt... (Esc: nincs)"
+  },
+  "tools.move_down": {
+    "message": "Mozgatás lefelé"
+  },
+  "tools.move_up": {
+    "message": "Mozgatás felfelé"
+  },
+  "tools.name.placeholder": {
+    "message": "Összehasonlítás a másik oldallal"
+  },
+  "tools.new": {
+    "message": "Új..."
+  },
+  "tools.new_name": {
+    "message": "{number}. eszköz"
+  },
+  "tools.no_command": {
+    "message": "{tool}: még nincs megadva parancs (Eszközök > Eszközök kezelése)."
+  },
+  "tools.not_local": {
+    "message": "Az eszközök ezen a gépen futnak: a panel kiszolgálót vagy archívumot mutat."
+  },
+  "tools.note.key_of_command": {
+    "message": "{key} ehhez a parancshoz is tartozik: {command}; az eszköz veszi át."
+  },
+  "tools.note.key_of_other_tool": {
+    "message": "{key} ehhez az eszközhöz is tartozik: {tool}; a listában lejjebb lévő kapja meg."
+  },
+  "tools.placeholders": {
+    "message": "%P ennek a panelnek a mappája, %T a másik panelé (mindkettő elválasztójellel végződik, így a \"%P%N\" egy elérési út), %N a kurzor alatti fájl, %O a neve kiterjesztés nélkül, %E a kiterjesztés, %S a kijelölt fájlok (ezek hiányában a kurzor alatti), mindegyik idézőjelek között; %% egy %. A többit tedd idézőjelek közé: \"%P%N\"."
+  },
+  "tools.run_in_terminal": {
+    "message": "Futtatás a terminálban, hogy lásd a kimenetét"
+  },
+  "tools.set_key": {
+    "message": "Billentyű beállítása..."
+  },
+  "tools.title": {
+    "message": "Eszközök"
+  },
+  "transfer.answer.cancel": {
+    "message": "Mégse"
+  },
+  "transfer.answer.elevate": {
+    "message": "Rendszergazdaként"
+  },
+  "transfer.answer.overwrite": {
+    "message": "Felülírás"
+  },
+  "transfer.answer.overwrite_all": {
+    "message": "Összes felülírása"
+  },
+  "transfer.answer.rename": {
+    "message": "Átnevezés"
+  },
+  "transfer.answer.retry": {
+    "message": "Újra"
+  },
+  "transfer.answer.skip": {
+    "message": "Kihagyás"
+  },
+  "transfer.answer.skip_all": {
+    "message": "Összes kihagyása"
+  },
+  "transfer.archive.local_only": {
+    "message": "Archívumba csak ennek a gépnek a fájljai kerülhetnek: előbb másold ide őket."
+  },
+  "transfer.cancel": {
+    "message": "Mégse"
+  },
+  "transfer.error.elevate_hint": {
+    "message": "Rendszergazdaként: ezt és minden más elutasított elemet a többi befejezése után, egyetlen jelszókéréssel."
+  },
+  "transfer.error.title": {
+    "message": "Hiba"
+  },
+  "transfer.exists.describe": {
+    "message": "{count, plural, one {{size} bájt, {time}} other {{size} bájt, {time}}}"
+  },
+  "transfer.exists.text": {
+    "message": "Meglévő: {existing}\nÚj: {new}"
+  },
+  "transfer.exists.title": {
+    "message": "A fájl már létezik"
+  },
+  "transfer.extract_failed": {
+    "message": "Nem sikerült kibontani őket: {err}"
+  },
+  "transfer.into_archive.question_many": {
+    "message": "{count, plural, one {# elem} other {# elem}} {kind, select, copy {másolása} other {áthelyezése}} ide: {into}? Az ott lévő azonos nevű elemek lecserélődnek."
+  },
+  "transfer.into_archive.question_one": {
+    "message": "„{name}” {kind, select, copy {másolása} other {áthelyezése}} ide: {into}? Az ott lévő azonos nevű elemek lecserélődnek."
+  },
+  "transfer.into_archive.title_many": {
+    "message": "{count, plural, one {# elem} other {# elem}} {kind, select, copy {másolása} other {áthelyezése}} ide: {archive}"
+  },
+  "transfer.into_archive.title_one": {
+    "message": "„{name}” {kind, select, copy {másolása} other {áthelyezése}} ide: {archive}"
+  },
+  "transfer.label.many": {
+    "message": "{count, plural, one {# elem} other {# elem}} {kind, select, copy {másolása} other {áthelyezése}} ide:"
+  },
+  "transfer.label.many_server": {
+    "message": "{count, plural, one {# elem} other {# elem}} {kind, select, copy {másolása} other {áthelyezése}} ide ({server}):"
+  },
+  "transfer.label.one": {
+    "message": "„{name}” {kind, select, copy {másolása} other {áthelyezése}} ide:"
+  },
+  "transfer.label.one_server": {
+    "message": "„{name}” {kind, select, copy {másolása} other {áthelyezése}} ide ({server}):"
+  },
+  "transfer.ok": {
+    "message": "OK"
+  },
+  "transfer.overwrite.all": {
+    "message": "Összes felülírása"
+  },
+  "transfer.overwrite.ask": {
+    "message": "Kérdezzen"
+  },
+  "transfer.overwrite.label": {
+    "message": "Ha a célhelyen már van azonos nevű fájl:"
+  },
+  "transfer.overwrite.older": {
+    "message": "Régebbiek felülírása"
+  },
+  "transfer.overwrite.rename": {
+    "message": "Másolatok átnevezése"
+  },
+  "transfer.overwrite.skip": {
+    "message": "Összes kihagyása"
+  },
+  "transfer.remove_moved": {
+    "message": "Az áthelyezettek eltávolítása innen: {name}"
+  },
+  "transfer.speed": {
+    "message": "{size}/s"
+  },
+  "transfer.strip.counting": {
+    "message": "számolás: {count, plural, one {# fájl} other {# fájl}}"
+  },
+  "transfer.strip.progress": {
+    "message": "{files} / {count, plural, one {# fájl} other {# fájl}}, {percent}%"
+  },
+  "transfer.strip.queue": {
+    "message": "Sor..."
+  },
+  "transfer.strip.queue_waiting": {
+    "message": "Sor ({count, plural, one {# várakozik} other {# várakozik}})..."
+  },
+  "transfer.title.copy": {
+    "message": "Másolás"
+  },
+  "transfer.title.move": {
+    "message": "Áthelyezés"
+  },
+  "viewer.as_text_hint": {
+    "message": "{err}. Az 1-es billentyű szövegként mutatja a fájlt."
+  },
+  "viewer.book.cannot_read": {
+    "message": "Ez a könyv nem olvasható: {err}. Az 1-es billentyű szövegként mutatja a fájlt."
+  },
+  "viewer.book.continuing": {
+    "message": "Folytatás innen: {percent}"
+  },
+  "viewer.book.error.compression": {
+    "message": "még nem támogatott tömörítéssel készült ({compression})"
+  },
+  "viewer.book.error.damaged": {
+    "message": "sérült könyv"
+  },
+  "viewer.book.error.damaged_zip": {
+    "message": "sérült zip"
+  },
+  "viewer.book.error.drm": {
+    "message": "DRM-védett: csak a Kindle tudja olvasni"
+  },
+  "viewer.book.error.huffman": {
+    "message": "az Amazon saját könyveinek tömörítésével készült (HUFF/CDIC), ami még nem támogatott"
+  },
+  "viewer.book.error.missing_part": {
+    "message": "nincs a könyvben: {name}"
+  },
+  "viewer.book.error.no_package": {
+    "message": "nincs csomagfájl a könyvben"
+  },
+  "viewer.book.error.no_text": {
+    "message": "a könyvben nincs szöveg"
+  },
+  "viewer.book.error.not_zip": {
+    "message": "nem zip: sérült vagy DRM-védett könyv?"
+  },
+  "viewer.book.error.zip_method": {
+    "message": "{name}: itt nem olvasható zip-tömörítés ({method})"
+  },
+  "viewer.cannot_show": {
+    "message": "Nem jeleníthető meg: {err}"
+  },
+  "viewer.convert.failed": {
+    "message": "{tool}: az átalakítás nem sikerült ({status})"
+  },
+  "viewer.converting": {
+    "message": "Átalakítás ezzel: {tool}…"
+  },
+  "viewer.copy.too_large": {
+    "message": "{megabytes} MB-nál nagyobb kijelölés nem másolható."
+  },
+  "viewer.encoding.cp1250": {
+    "message": "Közép-európai (1250)"
+  },
+  "viewer.encoding.cp1251": {
+    "message": "Cirill Windows (1251)"
+  },
+  "viewer.encoding.cp1252": {
+    "message": "Nyugati Latin1 (1252)"
+  },
+  "viewer.encoding.cp1253": {
+    "message": "Görög (1253)"
+  },
+  "viewer.encoding.cp1254": {
+    "message": "Török (1254)"
+  },
+  "viewer.encoding.cp1255": {
+    "message": "Héber (1255)"
+  },
+  "viewer.encoding.cp1256": {
+    "message": "Arab (1256)"
+  },
+  "viewer.encoding.cp1257": {
+    "message": "Balti (1257)"
+  },
+  "viewer.encoding.cp1258": {
+    "message": "Vietnami (1258)"
+  },
+  "viewer.encoding.cp20866": {
+    "message": "Cirill KOI8-R (20866)"
+  },
+  "viewer.encoding.cp437": {
+    "message": "DOS-USA (437)"
+  },
+  "viewer.encoding.cp850": {
+    "message": "DOS-LATIN1 (850)"
+  },
+  "viewer.encoding.cp852": {
+    "message": "DOS közép-európai (852)"
+  },
+  "viewer.encoding.cp866": {
+    "message": "DOS cirill (866)"
+  },
+  "viewer.encoding.cp874": {
+    "message": "Thai (874)"
+  },
+  "viewer.encoding.cp932": {
+    "message": "Japán (932)"
+  },
+  "viewer.encoding.cp936": {
+    "message": "Kínai, szárazföldi (936)"
+  },
+  "viewer.encoding.cp949": {
+    "message": "Koreai (949)"
+  },
+  "viewer.encoding.cp950": {
+    "message": "Kínai, tajvani (950)"
+  },
+  "viewer.find.not_found": {
+    "message": "Nem található: {text}"
+  },
+  "viewer.find.not_hex": {
+    "message": "Nem hexadecimális karakterlánc: {text}"
+  },
+  "viewer.find.nothing": {
+    "message": "Nincs mit keresni."
+  },
+  "viewer.find.save_failed": {
+    "message": "Nem sikerült menteni a kereséseket: {err}"
+  },
+  "viewer.loading": {
+    "message": "Betöltés…"
+  },
+  "viewer.markdown.too_large": {
+    "message": "Nagyobb, mint {megabytes} MB: az 1-es billentyű szövegként mutatja."
+  },
+  "viewer.menu.binary": {
+    "message": "Bináris (rögzített sorhossz)"
+  },
+  "viewer.menu.book": {
+    "message": "Könyv (EPUB, FB2)"
+  },
+  "viewer.menu.close": {
+    "message": "Bezárás"
+  },
+  "viewer.menu.configure": {
+    "message": "Beállítások..."
+  },
+  "viewer.menu.copy_hex": {
+    "message": "Másolás hexa karakterekként"
+  },
+  "viewer.menu.copy_text": {
+    "message": "Másolás szövegként"
+  },
+  "viewer.menu.edit": {
+    "message": "Szerkesztés"
+  },
+  "viewer.menu.encoding": {
+    "message": "Kódolás"
+  },
+  "viewer.menu.file": {
+    "message": "Fájl"
+  },
+  "viewer.menu.find": {
+    "message": "Keresés..."
+  },
+  "viewer.menu.find_next": {
+    "message": "Következő találat"
+  },
+  "viewer.menu.fit_image": {
+    "message": "Kép igazítása az ablakhoz"
+  },
+  "viewer.menu.font_ansi": {
+    "message": "ANSI (Windows-karakterkészlet)"
+  },
+  "viewer.menu.font_ascii": {
+    "message": "ASCII (DOS-karakterkészlet)"
+  },
+  "viewer.menu.font_page": {
+    "message": "A betűtípus szerint"
+  },
+  "viewer.menu.font_variable": {
+    "message": "Változó karakterszélesség"
+  },
+  "viewer.menu.hex": {
+    "message": "Hexa"
+  },
+  "viewer.menu.html": {
+    "message": "HTML-szöveg (címkék nélkül)"
+  },
+  "viewer.menu.minimap": {
+    "message": "Minitérkép"
+  },
+  "viewer.menu.next_file": {
+    "message": "Következő fájl"
+  },
+  "viewer.menu.only_larger": {
+    "message": "Csak a nagyobb képek igazítása"
+  },
+  "viewer.menu.open": {
+    "message": "Megnyitás..."
+  },
+  "viewer.menu.options": {
+    "message": "Opciók"
+  },
+  "viewer.menu.picture": {
+    "message": "Kép/multimédia"
+  },
+  "viewer.menu.previous_file": {
+    "message": "Előző fájl"
+  },
+  "viewer.menu.reload": {
+    "message": "Újratöltés"
+  },
+  "viewer.menu.save_as": {
+    "message": "Mentés másként..."
+  },
+  "viewer.menu.search_google": {
+    "message": "Kijelölt szöveg keresése a Google-ön"
+  },
+  "viewer.menu.select_all": {
+    "message": "Összes kijelölése"
+  },
+  "viewer.menu.syntax_colors": {
+    "message": "Szintaxisszínezés"
+  },
+  "viewer.menu.text_only": {
+    "message": "Csak szöveg"
+  },
+  "viewer.menu.unicode": {
+    "message": "Unicode (UTF-16)"
+  },
+  "viewer.menu.wrap": {
+    "message": "Sortörés ({columns, plural, one {# oszlop} other {# oszlop}})"
+  },
+  "viewer.mode.binary": {
+    "message": "Bináris · {page}"
+  },
+  "viewer.mode.book": {
+    "message": "Könyv"
+  },
+  "viewer.mode.hex": {
+    "message": "Hexa · {page}"
+  },
+  "viewer.mode.html": {
+    "message": "HTML-szöveg"
+  },
+  "viewer.mode.image": {
+    "message": "Kép"
+  },
+  "viewer.mode.multimedia": {
+    "message": "Multimédia"
+  },
+  "viewer.mode.pdf_by": {
+    "message": "PDF ({tool})"
+  },
+  "viewer.mode.text": {
+    "message": "Szöveg · {page}"
+  },
+  "viewer.origin.not_editable": {
+    "message": "csak 7z, zip, jar és tar archívumokban lévő fájlok szerkeszthetők"
+  },
+  "viewer.origin.updated": {
+    "message": "Frissítve: {archive}"
+  },
+  "viewer.origin.updated_on": {
+    "message": "Frissítve: {archive} ({server})"
+  },
+  "viewer.origin.uploaded": {
+    "message": "Feltöltve: {path}"
+  },
+  "viewer.pdf.cannot_show": {
+    "message": "Ez a PDF nem jeleníthető meg: {err}"
+  },
+  "viewer.pdf.loading": {
+    "message": "Betöltés..."
+  },
+  "viewer.pdf.page": {
+    "message": "Oldal: {page} / {pages}"
+  },
+  "viewer.picture.cannot_show": {
+    "message": "Ez a kép nem jeleníthető meg; az 1-es billentyű szövegként mutatja."
+  },
+  "viewer.save_as.failed": {
+    "message": "Nem sikerült menteni ({path}): {err}"
+  },
+  "viewer.status.rows": {
+    "message": "{count, plural, one {{first}–{last}. sor / {grouped}} other {{first}–{last}. sor / {grouped}}}"
+  },
+  "viewer.status.rows_so_far": {
+    "message": "{count, plural, one {eddig {grouped} sor, {percent} beolvasva} other {eddig {grouped} sor, {percent} beolvasva}}"
+  },
+  "viewer.status.searching": {
+    "message": "Keresés…"
+  },
+  "viewer.status.size": {
+    "message": "{count, plural, one {{grouped} bájt} other {{grouped} bájt}}"
+  },
+  "viewer.window.title": {
+    "message": "{path} — Megjelenítő"
+  },
+  "viewer.zoom.fit": {
+    "message": "Vissza az ablakhoz igazításra (Ctrl+0)"
+  },
+  "viewer.zoom.in": {
+    "message": "Nagyítás (Ctrl++)"
+  },
+  "viewer.zoom.out": {
+    "message": "Kicsinyítés (Ctrl+-)"
+  },
+  "viewer.zoom.reset": {
+    "message": "Vissza 100%-ra (Ctrl+0)"
+  },
+  "workspaces.button.close": {
+    "message": "Bezárás"
+  },
+  "workspaces.button.delete": {
+    "message": "Törlés..."
+  },
+  "workspaces.button.duplicate": {
+    "message": "Duplikálás..."
+  },
+  "workspaces.button.new": {
+    "message": "Új..."
+  },
+  "workspaces.button.rename": {
+    "message": "Átnevezés..."
+  },
+  "workspaces.delete.button": {
+    "message": "Törlés"
+  },
+  "workspaces.delete.closed": {
+    "message": "Törlöd a munkaterületet („{name}”)? A lapjai elvesznek."
+  },
+  "workspaces.delete.closed_shells": {
+    "message": "Törlöd a munkaterületet („{name}”)? A lapjai elvesznek, és a terminállapjain futó parancsértelmezők leállnak."
+  },
+  "workspaces.delete.open": {
+    "message": "Törlöd a munkaterületet („{name}”)? A lapjai bezáródnak, és helyette ez nyílik meg: „{other}”."
+  },
+  "workspaces.delete.open_shells": {
+    "message": "Törlöd a munkaterületet („{name}”)? A lapjai bezáródnak, a terminállapjain futó parancsértelmezők leállnak, és helyette ez nyílik meg: „{other}”."
+  },
+  "workspaces.delete.title": {
+    "message": "Munkaterület törlése"
+  },
+  "workspaces.duplicate.name": {
+    "message": "{name} másolata"
+  },
+  "workspaces.duplicate.title": {
+    "message": "Munkaterület duplikálása"
+  },
+  "workspaces.error.name_taken": {
+    "message": "Már van ilyen nevű munkaterület."
+  },
+  "workspaces.error.no_name": {
+    "message": "A munkaterületnek nevet kell adni."
+  },
+  "workspaces.error.save": {
+    "message": "Nem sikerült menteni a munkaterületeket: {err}"
+  },
+  "workspaces.hint": {
+    "message": "A Nézet > Munkaterületek menüben nyithatsz meg egyet. A megnyitott munkaterület változásai benne maradnak."
+  },
+  "workspaces.name.label": {
+    "message": "Név:"
+  },
+  "workspaces.new.name": {
+    "message": "{number}. munkaterület"
+  },
+  "workspaces.new.title": {
+    "message": "Új munkaterület"
+  },
+  "workspaces.open": {
+    "message": "megnyitva"
+  },
+  "workspaces.rename.title": {
+    "message": "Munkaterület átnevezése"
+  },
+  "workspaces.summary.panels": {
+    "message": "Bal: {left, plural, one {# lap} other {# lap}}, jobb: {right, plural, one {# lap} other {# lap}}"
+  },
+  "workspaces.summary.terminal": {
+    "message": "Bal: {left, plural, one {# lap} other {# lap}}, jobb: {right, plural, one {# lap} other {# lap}}, terminál: {terminal, plural, one {# lap} other {# lap}}"
+  },
+  "workspaces.summary.terminal_hidden": {
+    "message": "Bal: {left, plural, one {# lap} other {# lap}}, jobb: {right, plural, one {# lap} other {# lap}}, terminál: {terminal, plural, one {# lap} other {# lap}} (rejtett)"
+  },
+  "workspaces.title": {
+    "message": "Munkaterületek"
+  }
+}

@@ -1,0 +1,4823 @@
+{
+  "about.addons": {
+    "message": "Pengaya, diunduh saat Anda memilihnya"
+  },
+  "about.libraries": {
+    "message": "Dibangun dengan"
+  },
+  "about.licence": {
+    "message": "Lisensi:"
+  },
+  "about.made_with": {
+    "message": "Dibuat dengan karya proyek-proyek berikut"
+  },
+  "about.part.alacritty_terminal": {
+    "message": "Layar dan shell terminal bawaan"
+  },
+  "about.part.encoding_rs": {
+    "message": "Halaman kode"
+  },
+  "about.part.gpui": {
+    "message": "Jendela, penggambaran, dan input (milik Zed)"
+  },
+  "about.part.gpui_kit": {
+    "message": "Kontrol: daftar, menu, kolom isian, editor"
+  },
+  "about.part.html5ever": {
+    "message": "HTML dan e-book di penampil"
+  },
+  "about.part.image": {
+    "message": "Gambar"
+  },
+  "about.part.keyring": {
+    "message": "Kata sandi di keyring sistem"
+  },
+  "about.part.lucide": {
+    "message": "Ikon"
+  },
+  "about.part.material_icons": {
+    "message": "Ikon berkas dan folder"
+  },
+  "about.part.pdfium_render": {
+    "message": "PDFium dari Rust"
+  },
+  "about.part.ratatui": {
+    "message": "scmd, versi terminal"
+  },
+  "about.part.russh": {
+    "message": "SSH dan SFTP"
+  },
+  "about.part.rustls": {
+    "message": "TLS"
+  },
+  "about.part.serde": {
+    "message": "Berkas pengaturan"
+  },
+  "about.part.similar": {
+    "message": "Bandingkan berdasarkan isi"
+  },
+  "about.part.suppaftp": {
+    "message": "FTP dan FTPS"
+  },
+  "about.part.tokio": {
+    "message": "Pekerjaan jaringan di latar belakang"
+  },
+  "about.part.trash": {
+    "message": "Tong Sampah"
+  },
+  "about.part.tree_sitter": {
+    "message": "Warna kode di penampil dan editor"
+  },
+  "about.part.zbus": {
+    "message": "D-Bus: desktop, perangkat, KDE Connect"
+  },
+  "about.shipped": {
+    "message": "Disertakan"
+  },
+  "about.tagline": {
+    "message": "Pengelola berkas panel ganda, perangkat lunak bebas."
+  },
+  "about.title": {
+    "message": "Tentang Spark Commander"
+  },
+  "about.version": {
+    "message": "Versi {version}"
+  },
+  "activity.clear": {
+    "message": "Bersihkan"
+  },
+  "activity.clear_failed": {
+    "message": "Tidak dapat membersihkan log: {err}"
+  },
+  "activity.empty": {
+    "message": "Belum ada yang dilakukan."
+  },
+  "activity.title": {
+    "message": "Log aktivitas"
+  },
+  "addons.error.damaged": {
+    "message": "unduhan rusak: checksum-nya berbeda"
+  },
+  "addons.error.list": {
+    "message": "daftar pengaya: {err}"
+  },
+  "addons.error.missing_file": {
+    "message": "unduhan tidak berisi {file}"
+  },
+  "addons.error.no_folder": {
+    "message": "tidak ada folder data"
+  },
+  "addons.error.unpacking": {
+    "message": "ekstraksi: {err}"
+  },
+  "addons.installed": {
+    "message": "{addon} {version} telah terinstal."
+  },
+  "addons.megabytes": {
+    "message": "{size} MB"
+  },
+  "addons.offer.never": {
+    "message": "Jangan tampilkan lagi"
+  },
+  "addons.offer.no": {
+    "message": "Tidak"
+  },
+  "addons.offer.text": {
+    "message": "{name} memerlukan pengaya yang belum terinstal: {addon}. Unduh di Pengaturan > Pengaya?"
+  },
+  "addons.offer.title": {
+    "message": "Pengaya"
+  },
+  "addons.offer.yes": {
+    "message": "Ya"
+  },
+  "addons.purpose.cloud": {
+    "message": "Penyimpanan daring: S3, Google Drive, OneDrive, Dropbox, dan layanan lainnya."
+  },
+  "addons.purpose.media": {
+    "message": "Video dan suara, serta foto HEIC dan AVIF: penampil dan Tampilan Cepat menampilkannya."
+  },
+  "addons.purpose.office": {
+    "message": "Dokumen Office: penampil menampilkan berkas Word, Excel, dan PowerPoint sebagai PDF."
+  },
+  "addons.purpose.pdfium": {
+    "message": "PDF: penampil menampilkan berkas PDF, juga dokumen Office setelah dikonversi."
+  },
+  "addons.purpose.seven_zip": {
+    "message": "Arsip: mengemas dan mengekstrak 7z, zip, rar, tar, dan lainnya."
+  },
+  "addons.update": {
+    "message": "Perbarui"
+  },
+  "addons.updates": {
+    "message": "Pembaruan pengaya: {names}"
+  },
+  "appearance.dark": {
+    "message": "Gelap"
+  },
+  "appearance.light": {
+    "message": "Terang"
+  },
+  "appearance.system": {
+    "message": "Ikuti sistem"
+  },
+  "archive.cannot_read": {
+    "message": "{name}: tidak dapat dibaca"
+  },
+  "archive.not_in_archive": {
+    "message": "{name} tidak ada di dalam arsip"
+  },
+  "archive.not_own_folder": {
+    "message": "{folder} bukan folder milik pengguna ini"
+  },
+  "archive.seven_zip_failed": {
+    "message": "7-Zip gagal ({code})"
+  },
+  "archive.seven_zip_missing": {
+    "message": "7-Zip tidak ditemukan: {path} (jalankan vendor/7zip/fetch.sh atau fetch.bat)"
+  },
+  "archive.temp_not_utf8": {
+    "message": "nama folder sementara bukan UTF-8"
+  },
+  "associations.add": {
+    "message": "Tambah..."
+  },
+  "associations.cancel": {
+    "message": "Batal"
+  },
+  "associations.close": {
+    "message": "Tutup"
+  },
+  "associations.column.edit": {
+    "message": "Edit (F4)"
+  },
+  "associations.column.files": {
+    "message": "Berkas"
+  },
+  "associations.column.open": {
+    "message": "Buka (Enter)"
+  },
+  "associations.column.view": {
+    "message": "Lihat (F3)"
+  },
+  "associations.edit": {
+    "message": "Edit..."
+  },
+  "associations.edit_dialog.title": {
+    "message": "Asosiasikan"
+  },
+  "associations.empty": {
+    "message": "Belum ada."
+  },
+  "associations.field.edit": {
+    "message": "Edit dengan (F4):"
+  },
+  "associations.field.files": {
+    "message": "Berkas (*.jpg *.png):"
+  },
+  "associations.field.open": {
+    "message": "Buka dengan (Enter):"
+  },
+  "associations.field.view": {
+    "message": "Lihat dengan (F3):"
+  },
+  "associations.intro": {
+    "message": "Enter, F3, dan F4 menjalankan program ini untuk berkas yang cocok dengan pola; kosong berarti seperti biasa. %1 adalah berkasnya."
+  },
+  "associations.mask_needed": {
+    "message": "Pola berkas diperlukan: *.txt"
+  },
+  "associations.no_file": {
+    "message": "Letakkan kursor pada berkas dengan jenis yang ingin diasosiasikan."
+  },
+  "associations.ok": {
+    "message": "OK"
+  },
+  "associations.remove": {
+    "message": "Hapus"
+  },
+  "associations.save_failed": {
+    "message": "Tidak dapat menyimpan pengaturan: {err}"
+  },
+  "associations.title": {
+    "message": "Asosiasi internal"
+  },
+  "attributes.bad_time": {
+    "message": "“{text}” bukan tanggal dan waktu: 2026-11-10 14:04:33"
+  },
+  "attributes.cancel": {
+    "message": "Batal"
+  },
+  "attributes.change_time": {
+    "message": "Ubah tanggal/waktu:"
+  },
+  "attributes.changed": {
+    "message": "{count, plural, other {# diubah}}"
+  },
+  "attributes.changed_failed": {
+    "message": "{count, plural, other {# diubah}}, {failed, plural, other {# gagal}}"
+  },
+  "attributes.dialog_title_many": {
+    "message": "Ubah atribut: {count, plural, other {# item}}"
+  },
+  "attributes.dialog_title_one": {
+    "message": "Ubah atribut: {name}"
+  },
+  "attributes.execute": {
+    "message": "Eksekusi"
+  },
+  "attributes.group": {
+    "message": "Grup"
+  },
+  "attributes.in_archive": {
+    "message": "Atribut di dalam arsip tidak dapat diubah."
+  },
+  "attributes.no_bits": {
+    "message": "Berkas ini tidak memiliki bit izin di sini; hanya tanggalnya yang dapat diubah."
+  },
+  "attributes.now": {
+    "message": "Sekarang"
+  },
+  "attributes.octal": {
+    "message": "Oktal:"
+  },
+  "attributes.ok": {
+    "message": "OK"
+  },
+  "attributes.others": {
+    "message": "Lainnya"
+  },
+  "attributes.owner": {
+    "message": "Pemilik"
+  },
+  "attributes.read": {
+    "message": "Baca"
+  },
+  "attributes.recurse": {
+    "message": "Juga semua isi di dalam folder"
+  },
+  "attributes.title_many": {
+    "message": "Ubah atribut {count, plural, other {# item}}"
+  },
+  "attributes.title_one": {
+    "message": "Ubah atribut “{name}”"
+  },
+  "attributes.write": {
+    "message": "Tulis"
+  },
+  "bookmarks.add_current": {
+    "message": "Tambahkan folder saat ini"
+  },
+  "bookmarks.add_folders": {
+    "message": "Tambahkan folder..."
+  },
+  "bookmarks.added": {
+    "message": "Dimarkahi: {name}"
+  },
+  "bookmarks.already": {
+    "message": "{name} sudah ada di Markah."
+  },
+  "bookmarks.chooser.failed": {
+    "message": "Tidak dapat menampilkan pemilih folder: {err}"
+  },
+  "bookmarks.chooser.prompt": {
+    "message": "Markahi"
+  },
+  "bookmarks.close": {
+    "message": "Tutup"
+  },
+  "bookmarks.copy_name": {
+    "message": "Salin nama"
+  },
+  "bookmarks.copy_path": {
+    "message": "Salin jalur"
+  },
+  "bookmarks.drop_here": {
+    "message": "Letakkan folder di sini."
+  },
+  "bookmarks.empty": {
+    "message": "Tidak ada markah: tambahkan folder, atau letakkan di sini."
+  },
+  "bookmarks.intro": {
+    "message": "Folder komputer ini, sesuai urutan di Tempat: seret untuk memindahkannya, atau letakkan folder di sini untuk menambahkannya."
+  },
+  "bookmarks.move_down": {
+    "message": "Pindah ke bawah"
+  },
+  "bookmarks.move_up": {
+    "message": "Pindah ke atas"
+  },
+  "bookmarks.only_local": {
+    "message": "Hanya folder komputer ini yang dapat dimarkahi."
+  },
+  "bookmarks.remove": {
+    "message": "Hapus"
+  },
+  "bookmarks.remove_from": {
+    "message": "Hapus dari Markah"
+  },
+  "bookmarks.rename": {
+    "message": "Ganti nama..."
+  },
+  "bookmarks.rename_label": {
+    "message": "Nama (kosong: nama folder):"
+  },
+  "bookmarks.rename_title": {
+    "message": "Ganti nama markah"
+  },
+  "bookmarks.sort": {
+    "message": "Urutkan A–Z"
+  },
+  "bookmarks.title": {
+    "message": "Markah"
+  },
+  "button_bar.copy": {
+    "message": "Salin"
+  },
+  "button_bar.delete": {
+    "message": "Hapus"
+  },
+  "button_bar.edit": {
+    "message": "Edit"
+  },
+  "button_bar.move": {
+    "message": "Pindah"
+  },
+  "button_bar.new_folder": {
+    "message": "Folder baru"
+  },
+  "button_bar.quit": {
+    "message": "Keluar"
+  },
+  "button_bar.view": {
+    "message": "Lihat"
+  },
+  "checksum.create.title": {
+    "message": "Buat {name}"
+  },
+  "checksum.create.title_separate": {
+    "message": "Buat berkas checksum {method}"
+  },
+  "checksum.dialog_title": {
+    "message": "Buat berkas checksum"
+  },
+  "checksum.save_as": {
+    "message": "Simpan berkas checksum sebagai:"
+  },
+  "checksum.separate": {
+    "message": "Sebagai gantinya, satu berkas checksum di samping setiap berkas"
+  },
+  "checksum.verify.all_ok": {
+    "message": "{count, plural, other {semua # berkas OK}}"
+  },
+  "checksum.verify.choose": {
+    "message": "Pilih berkas checksum: .sfv, .md5, .sha1, .sha256, atau .sha512."
+  },
+  "checksum.verify.missing_file": {
+    "message": "tidak ada: {name}"
+  },
+  "checksum.verify.result": {
+    "message": "{ok, plural, other {# OK}}, {wrong, plural, other {# salah}}, {missing, plural, other {# tidak ada}}"
+  },
+  "checksum.verify.title_many": {
+    "message": "Verifikasi {count, plural, other {# berkas checksum}}"
+  },
+  "checksum.verify.title_one": {
+    "message": "Verifikasi {name}"
+  },
+  "checksum.verify.wrong_file": {
+    "message": "salah: {name}"
+  },
+  "command.about": {
+    "message": "Tentang Spark Commander"
+  },
+  "command.activity_log": {
+    "message": "Log aktivitas..."
+  },
+  "command.all_files": {
+    "message": "Semua berkas"
+  },
+  "command.all_folder_sizes": {
+    "message": "Hitung ukuran semua folder"
+  },
+  "command.all_with_extension": {
+    "message": "*.*"
+  },
+  "command.associate_with": {
+    "message": "Asosiasikan dengan..."
+  },
+  "command.bookmark_folder": {
+    "message": "Markahi folder ini"
+  },
+  "command.bookmarks": {
+    "message": "Markah"
+  },
+  "command.branch_view": {
+    "message": "Tampilan cabang (dengan subfolder)"
+  },
+  "command.branch_view_selected": {
+    "message": "Tampilan cabang folder terpilih"
+  },
+  "command.brief": {
+    "message": "Ringkas"
+  },
+  "command.calculate_occupied_space": {
+    "message": "Hitung ruang terpakai..."
+  },
+  "command.change_attributes": {
+    "message": "Ubah atribut..."
+  },
+  "command.close_all_tabs": {
+    "message": "Tutup semua tab"
+  },
+  "command.close_duplicate_tabs": {
+    "message": "Tutup tab duplikat"
+  },
+  "command.close_tab": {
+    "message": "Tutup tab"
+  },
+  "command.combine_files": {
+    "message": "Gabungkan berkas..."
+  },
+  "command.compare_by_content": {
+    "message": "Bandingkan berdasarkan isi..."
+  },
+  "command.compare_directories": {
+    "message": "Tandai yang lebih baru"
+  },
+  "command.copy": {
+    "message": "Salin..."
+  },
+  "command.copy_names_to_clipboard": {
+    "message": "Salin nama terpilih ke papan klip"
+  },
+  "command.copy_names_with_path_to_clipboard": {
+    "message": "Salin nama beserta jalur ke papan klip"
+  },
+  "command.copy_to_clipboard": {
+    "message": "Salin berkas"
+  },
+  "command.copy_with_all_details": {
+    "message": "Salin ke papan klip dengan semua detail"
+  },
+  "command.copy_with_path_and_details": {
+    "message": "Salin ke papan klip dengan jalur+detail"
+  },
+  "command.create_checksum_files": {
+    "message": "Buat berkas checksum (CRC32, MD5, SHA1, SHA256, SHA512)..."
+  },
+  "command.create_link": {
+    "message": "Buat tautan..."
+  },
+  "command.custom_filter": {
+    "message": "Kustom..."
+  },
+  "command.cut_to_clipboard": {
+    "message": "Potong berkas"
+  },
+  "command.delete": {
+    "message": "Hapus"
+  },
+  "command.delete_permanently": {
+    "message": "Hapus permanen"
+  },
+  "command.disconnect": {
+    "message": "Putuskan sambungan dari server"
+  },
+  "command.download_link": {
+    "message": "Unduh dari tautan..."
+  },
+  "command.duplicate_tab": {
+    "message": "Tab baru"
+  },
+  "command.duplicate_workspace": {
+    "message": "Duplikat ruang kerja..."
+  },
+  "command.edit": {
+    "message": "Edit"
+  },
+  "command.edit_externally": {
+    "message": "Edit dengan editor eksternal"
+  },
+  "command.folder_history": {
+    "message": "Riwayat folder..."
+  },
+  "command.full": {
+    "message": "Lengkap"
+  },
+  "command.go_back": {
+    "message": "Kembali"
+  },
+  "command.go_forward": {
+    "message": "Maju"
+  },
+  "command.go_home": {
+    "message": "Folder rumah"
+  },
+  "command.go_to_root": {
+    "message": "Folder akar"
+  },
+  "command.hidden_files": {
+    "message": "Berkas tersembunyi"
+  },
+  "command.internal_associations": {
+    "message": "Asosiasi internal (hanya Spark Commander)..."
+  },
+  "command.invert_selection": {
+    "message": "Balikkan pilihan"
+  },
+  "command.left_drives": {
+    "message": "Drive (panel kiri)"
+  },
+  "command.list_tabs": {
+    "message": "Daftar tab"
+  },
+  "command.load_selection_from_file": {
+    "message": "Muat pilihan dari berkas"
+  },
+  "command.manage_bookmarks": {
+    "message": "Kelola markah..."
+  },
+  "command.manage_tools": {
+    "message": "Kelola alat..."
+  },
+  "command.manage_workspaces": {
+    "message": "Kelola ruang kerja..."
+  },
+  "command.mark_in_place": {
+    "message": "Tandai / batal tandai di tempat, folder diukur"
+  },
+  "command.mark_newer_hide_same": {
+    "message": "Tandai yang lebih baru, sembunyikan berkas yang sama"
+  },
+  "command.move": {
+    "message": "Pindahkan..."
+  },
+  "command.multi_rename_tool": {
+    "message": "Alat ganti nama massal..."
+  },
+  "command.name_to_command_line": {
+    "message": "Nama ke baris perintah"
+  },
+  "command.new_folder": {
+    "message": "Folder baru..."
+  },
+  "command.new_terminal": {
+    "message": "Tab terminal baru"
+  },
+  "command.new_text_file": {
+    "message": "Berkas baru..."
+  },
+  "command.new_workspace": {
+    "message": "Ruang kerja baru..."
+  },
+  "command.next_tab": {
+    "message": "Tab berikutnya"
+  },
+  "command.only_selected_files": {
+    "message": "Hanya berkas terpilih"
+  },
+  "command.open_in_left_panel": {
+    "message": "Tampilkan di panel kiri"
+  },
+  "command.open_in_new_tab": {
+    "message": "Buka folder di tab baru"
+  },
+  "command.open_in_other_new_tab": {
+    "message": "Buka folder di tab baru pada panel lainnya"
+  },
+  "command.open_in_right_panel": {
+    "message": "Tampilkan di panel kanan"
+  },
+  "command.open_terminal": {
+    "message": "Buka terminal di sini"
+  },
+  "command.operation_queue": {
+    "message": "Antrean operasi..."
+  },
+  "command.pack": {
+    "message": "Kemas..."
+  },
+  "command.paste_from_clipboard": {
+    "message": "Tempel berkas"
+  },
+  "command.path_and_name_to_command_line": {
+    "message": "Jalur dan nama ke baris perintah"
+  },
+  "command.path_to_command_line": {
+    "message": "Jalur ke baris perintah"
+  },
+  "command.previous_tab": {
+    "message": "Tab sebelumnya"
+  },
+  "command.programs": {
+    "message": "Program"
+  },
+  "command.properties": {
+    "message": "Properti..."
+  },
+  "command.quick_filter": {
+    "message": "Filter cepat"
+  },
+  "command.quick_open": {
+    "message": "Buka cepat..."
+  },
+  "command.quick_view_panel": {
+    "message": "Panel Tampilan Cepat"
+  },
+  "command.quit": {
+    "message": "Keluar"
+  },
+  "command.redo": {
+    "message": "Ulangi"
+  },
+  "command.rename_in_place": {
+    "message": "Ganti nama"
+  },
+  "command.reread_source": {
+    "message": "Baca ulang sumber"
+  },
+  "command.restore_selection": {
+    "message": "Pulihkan pilihan"
+  },
+  "command.reversed_order": {
+    "message": "Urutan terbalik"
+  },
+  "command.right_drives": {
+    "message": "Drive (panel kanan)"
+  },
+  "command.save_selection": {
+    "message": "Simpan pilihan"
+  },
+  "command.save_selection_to_file": {
+    "message": "Simpan pilihan ke berkas"
+  },
+  "command.search": {
+    "message": "Cari..."
+  },
+  "command.search_in_separate_process": {
+    "message": "Cari di jendela terpisah..."
+  },
+  "command.select_all": {
+    "message": "Pilih semua"
+  },
+  "command.select_all_with_same_extension": {
+    "message": "Pilih semua dengan ekstensi yang sama"
+  },
+  "command.select_group": {
+    "message": "Pilih grup..."
+  },
+  "command.settings": {
+    "message": "Pengaturan..."
+  },
+  "command.shortcuts": {
+    "message": "Pintasan..."
+  },
+  "command.sidebar_connections": {
+    "message": "Koneksi"
+  },
+  "command.sidebar_operations": {
+    "message": "Operasi"
+  },
+  "command.sidebar_places": {
+    "message": "Tempat"
+  },
+  "command.sidebar_tree": {
+    "message": "Folder"
+  },
+  "command.sort_by_extension": {
+    "message": "Ekstensi"
+  },
+  "command.sort_by_name": {
+    "message": "Nama"
+  },
+  "command.sort_by_size": {
+    "message": "Ukuran"
+  },
+  "command.sort_by_time": {
+    "message": "Waktu"
+  },
+  "command.split_file": {
+    "message": "Pisahkan berkas..."
+  },
+  "command.swap_panels": {
+    "message": "Tukar panel"
+  },
+  "command.swap_panels_and_tabs": {
+    "message": "Tukar panel beserta tabnya"
+  },
+  "command.sync_browsing": {
+    "message": "Penelusuran tersinkron"
+  },
+  "command.synchronize_dirs": {
+    "message": "Sinkronkan folder..."
+  },
+  "command.target_equals_source": {
+    "message": "Target = Sumber"
+  },
+  "command.terminal_panel": {
+    "message": "Terminal"
+  },
+  "command.test_archives": {
+    "message": "Uji arsip"
+  },
+  "command.thumbnail_view": {
+    "message": "Tampilan miniatur"
+  },
+  "command.toggle_mark": {
+    "message": "Tandai / batal tandai"
+  },
+  "command.toggle_sidebar": {
+    "message": "Tampilkan bilah sisi"
+  },
+  "command.undo": {
+    "message": "Urungkan"
+  },
+  "command.unpack_specific_files": {
+    "message": "Ekstrak berkas tertentu..."
+  },
+  "command.unselect_all": {
+    "message": "Batalkan semua pilihan"
+  },
+  "command.unselect_group": {
+    "message": "Batalkan pilihan grup..."
+  },
+  "command.unsorted": {
+    "message": "Tidak diurutkan"
+  },
+  "command.verify_checksums": {
+    "message": "Verifikasi checksum (dari berkas checksum)"
+  },
+  "command.vertical_arrangement": {
+    "message": "Susunan vertikal"
+  },
+  "command.view": {
+    "message": "Lihat"
+  },
+  "command.website": {
+    "message": "Situs web Spark Commander"
+  },
+  "command.workspace1": {
+    "message": "Buka ruang kerja 1"
+  },
+  "command.workspace2": {
+    "message": "Buka ruang kerja 2"
+  },
+  "command.workspace3": {
+    "message": "Buka ruang kerja 3"
+  },
+  "command.workspace4": {
+    "message": "Buka ruang kerja 4"
+  },
+  "command.workspace5": {
+    "message": "Buka ruang kerja 5"
+  },
+  "command.workspace6": {
+    "message": "Buka ruang kerja 6"
+  },
+  "command.workspace7": {
+    "message": "Buka ruang kerja 7"
+  },
+  "command.workspace8": {
+    "message": "Buka ruang kerja 8"
+  },
+  "command.workspace9": {
+    "message": "Buka ruang kerja 9"
+  },
+  "command_line.error.cannot_run": {
+    "message": "{program}: tidak dapat dijalankan"
+  },
+  "command_line.error.not_found": {
+    "message": "{program}: perintah tidak ditemukan"
+  },
+  "command_line.history.empty": {
+    "message": "Belum ada perintah yang dijalankan"
+  },
+  "command_line.on_server": {
+    "message": "Perintah berjalan di komputer ini; panel sedang menampilkan server."
+  },
+  "command_name.all_files": {
+    "message": "Tampilkan semua berkas"
+  },
+  "command_name.all_with_extension": {
+    "message": "Tampilkan *.*"
+  },
+  "command_name.brief": {
+    "message": "Tampilan ringkas"
+  },
+  "command_name.compare_directories": {
+    "message": "Bandingkan folder: tandai yang lebih baru"
+  },
+  "command_name.custom_filter": {
+    "message": "Filter kustom"
+  },
+  "command_name.duplicate_tab": {
+    "message": "Tab baru (salinan tab ini)"
+  },
+  "command_name.full": {
+    "message": "Tampilan lengkap"
+  },
+  "command_name.go_back": {
+    "message": "Kembali"
+  },
+  "command_name.go_forward": {
+    "message": "Maju"
+  },
+  "command_name.go_home": {
+    "message": "Ke folder rumah"
+  },
+  "command_name.hidden_files": {
+    "message": "Tampilkan berkas tersembunyi"
+  },
+  "command_name.only_selected_files": {
+    "message": "Tampilkan hanya berkas terpilih"
+  },
+  "command_name.programs": {
+    "message": "Tampilkan program"
+  },
+  "command_name.quick_filter": {
+    "message": "Filter cepat"
+  },
+  "command_name.rename_in_place": {
+    "message": "Ganti nama di tempat"
+  },
+  "command_name.sidebar_connections": {
+    "message": "Bilah sisi: Koneksi"
+  },
+  "command_name.sidebar_operations": {
+    "message": "Bilah sisi: Operasi"
+  },
+  "command_name.sidebar_places": {
+    "message": "Bilah sisi: Tempat"
+  },
+  "command_name.sidebar_tree": {
+    "message": "Bilah sisi: Folder"
+  },
+  "command_name.sort_by_extension": {
+    "message": "Urutkan berdasarkan ekstensi"
+  },
+  "command_name.sort_by_name": {
+    "message": "Urutkan berdasarkan nama"
+  },
+  "command_name.sort_by_size": {
+    "message": "Urutkan berdasarkan ukuran"
+  },
+  "command_name.sort_by_time": {
+    "message": "Urutkan berdasarkan waktu"
+  },
+  "command_name.toggle_sidebar": {
+    "message": "Bilah sisi: tampilkan atau sembunyikan"
+  },
+  "command_name.unsorted": {
+    "message": "Tanpa pengurutan"
+  },
+  "compare.browse.prompt": {
+    "message": "Bandingkan"
+  },
+  "compare.button.compare": {
+    "message": "Bandingkan"
+  },
+  "compare.button.next": {
+    "message": "Perbedaan berikutnya (N)"
+  },
+  "compare.button.previous": {
+    "message": "Perbedaan sebelumnya (P)"
+  },
+  "compare.need_two_files": {
+    "message": "Letakkan kursor pada berkas di setiap panel, atau tandai dua berkas."
+  },
+  "compare.option.binary": {
+    "message": "Biner"
+  },
+  "compare.option.ignore_case": {
+    "message": "Abaikan huruf besar/kecil"
+  },
+  "compare.option.ignore_spaces": {
+    "message": "Abaikan spasi berulang"
+  },
+  "compare.option.only_differences": {
+    "message": "Hanya perbedaan"
+  },
+  "compare.status.bytes_differ": {
+    "message": "{place}: {count, plural, other {{grouped} byte berbeda}}, yang pertama di {first}; ukuran {left} dan {right}."
+  },
+  "compare.status.comparing": {
+    "message": "Membandingkan…"
+  },
+  "compare.status.difference_of": {
+    "message": "Perbedaan {at} dari {count}"
+  },
+  "compare.status.differences": {
+    "message": "{count, plural, other {# perbedaan}}"
+  },
+  "compare.status.identical": {
+    "message": "{count, plural, other {Berkas identik: {grouped} byte.}}"
+  },
+  "compare.status.no_differences": {
+    "message": "Tidak ada perbedaan."
+  },
+  "compare.window.title": {
+    "message": "Bandingkan: {left} — {right}"
+  },
+  "connections.connect": {
+    "message": "Hubungkan"
+  },
+  "connections.copy_name": {
+    "message": "Salin nama"
+  },
+  "connections.copy_path": {
+    "message": "Salin jalur"
+  },
+  "connections.delete": {
+    "message": "Hapus"
+  },
+  "connections.dialog.title": {
+    "message": "Koneksi"
+  },
+  "connections.disconnect": {
+    "message": "Putuskan"
+  },
+  "connections.duplicate": {
+    "message": "Duplikat"
+  },
+  "connections.duplicate_name": {
+    "message": "{name} (salinan)"
+  },
+  "connections.edit": {
+    "message": "Edit..."
+  },
+  "connections.empty": {
+    "message": "Belum ada koneksi."
+  },
+  "connections.error.no_server": {
+    "message": "Server diperlukan."
+  },
+  "connections.error.port": {
+    "message": "Bukan port: {text}"
+  },
+  "connections.field.access_key": {
+    "message": "Kunci akses"
+  },
+  "connections.field.api_key": {
+    "message": "Kunci API"
+  },
+  "connections.field.application_key": {
+    "message": "Kunci aplikasi"
+  },
+  "connections.field.bucket": {
+    "message": "Bucket/folder"
+  },
+  "connections.field.container": {
+    "message": "Kontainer/folder"
+  },
+  "connections.field.endpoint": {
+    "message": "Endpoint"
+  },
+  "connections.field.key_id": {
+    "message": "ID kunci"
+  },
+  "connections.field.name": {
+    "message": "Nama"
+  },
+  "connections.field.password": {
+    "message": "Kata sandi"
+  },
+  "connections.field.port": {
+    "message": "Port"
+  },
+  "connections.field.protocol": {
+    "message": "Protokol"
+  },
+  "connections.field.secret_key": {
+    "message": "Kunci rahasia"
+  },
+  "connections.field.server": {
+    "message": "Server"
+  },
+  "connections.field.start_folder": {
+    "message": "Folder awal"
+  },
+  "connections.field.user": {
+    "message": "Pengguna"
+  },
+  "connections.folder.delete_confirm": {
+    "message": "{count, plural, other {Hapus folder {name} beserta # koneksi di dalamnya?}}"
+  },
+  "connections.folder.delete_title": {
+    "message": "Hapus folder"
+  },
+  "connections.folder.exists": {
+    "message": "Sudah ada folder bernama {name}."
+  },
+  "connections.folder.name": {
+    "message": "Nama:"
+  },
+  "connections.folder.new_title": {
+    "message": "Folder baru"
+  },
+  "connections.folder.rename": {
+    "message": "Ganti nama..."
+  },
+  "connections.folder.rename_title": {
+    "message": "Ganti nama folder"
+  },
+  "connections.forget_password": {
+    "message": "Lupakan kata sandi yang disimpan"
+  },
+  "connections.move_down": {
+    "message": "Pindah ke bawah"
+  },
+  "connections.move_to_folder": {
+    "message": "Pindahkan ke folder"
+  },
+  "connections.move_up": {
+    "message": "Pindah ke atas"
+  },
+  "connections.new": {
+    "message": "Koneksi baru..."
+  },
+  "connections.new_folder": {
+    "message": "Folder baru..."
+  },
+  "connections.no_folder": {
+    "message": "Tanpa folder"
+  },
+  "connections.open_in_terminal": {
+    "message": "Buka di terminal"
+  },
+  "connections.placeholder.name": {
+    "message": "seperti yang ditampilkan di daftar"
+  },
+  "connections.placeholder.password": {
+    "message": "disimpan terenkripsi di folder pengaturan; kosong mempertahankannya"
+  },
+  "connections.placeholder.path": {
+    "message": "folder login"
+  },
+  "connections.placeholder.port": {
+    "message": "bawaan"
+  },
+  "connections.placeholder.server": {
+    "message": "server, atau host dari ~/.ssh/config"
+  },
+  "connections.placeholder.user": {
+    "message": "sesuai ~/.ssh/config, atau anonim"
+  },
+  "connections.save_failed": {
+    "message": "Tidak dapat menyimpan koneksi: {err}"
+  },
+  "connections.ssh_config.read_only": {
+    "message": "Hanya baca: host ini diedit langsung di ~/.ssh/config"
+  },
+  "context_menu.action_failed": {
+    "message": "{name} gagal: {err}"
+  },
+  "context_menu.actions": {
+    "message": "Aksi"
+  },
+  "context_menu.copy": {
+    "message": "Salin"
+  },
+  "context_menu.create_new": {
+    "message": "Buat baru"
+  },
+  "context_menu.cut": {
+    "message": "Potong"
+  },
+  "context_menu.delete": {
+    "message": "Hapus"
+  },
+  "context_menu.edit": {
+    "message": "Edit"
+  },
+  "context_menu.empty_file": {
+    "message": "Berkas kosong…"
+  },
+  "context_menu.move_to_trash": {
+    "message": "Pindahkan ke Tong Sampah"
+  },
+  "context_menu.new_file_dialog.label": {
+    "message": "Nama berkas baru:"
+  },
+  "context_menu.new_file_dialog.title": {
+    "message": "Berkas baru"
+  },
+  "context_menu.new_file_failed": {
+    "message": "Tidak dapat membuat berkas: {err}"
+  },
+  "context_menu.new_folder": {
+    "message": "Folder…"
+  },
+  "context_menu.open": {
+    "message": "Buka"
+  },
+  "context_menu.open_failed": {
+    "message": "Tidak dapat membuka: {err}"
+  },
+  "context_menu.open_terminal_here": {
+    "message": "Buka terminal di sini"
+  },
+  "context_menu.open_with": {
+    "message": "Buka dengan"
+  },
+  "context_menu.other_application": {
+    "message": "Aplikasi lain…"
+  },
+  "context_menu.pack": {
+    "message": "Kemas…"
+  },
+  "context_menu.pack_files": {
+    "message": "Kemas berkas"
+  },
+  "context_menu.paste": {
+    "message": "Tempel"
+  },
+  "context_menu.properties": {
+    "message": "Properti"
+  },
+  "context_menu.properties_failed": {
+    "message": "Properti: {err}"
+  },
+  "context_menu.rename": {
+    "message": "Ganti nama…"
+  },
+  "context_menu.rename_dialog.label": {
+    "message": "Nama baru:"
+  },
+  "context_menu.rename_dialog.title": {
+    "message": "Ganti nama"
+  },
+  "context_menu.rename_failed": {
+    "message": "Tidak dapat mengganti nama: {err}"
+  },
+  "context_menu.shell_menu_failed": {
+    "message": "Menu: {err}"
+  },
+  "context_menu.show_failed": {
+    "message": "Tidak dapat menampilkannya: {err}"
+  },
+  "context_menu.show_in_file_manager": {
+    "message": "Tampilkan di pengelola berkas"
+  },
+  "context_menu.terminal_failed": {
+    "message": "Tidak dapat membuka terminal: {err}"
+  },
+  "context_menu.terminal_not_local": {
+    "message": "Terminal hanya dapat dibuka di folder komputer ini."
+  },
+  "context_menu.unpack": {
+    "message": "Ekstrak…"
+  },
+  "context_menu.view": {
+    "message": "Lihat"
+  },
+  "desktop.no_app_chooser": {
+    "message": "desktop tidak memiliki pemilih aplikasi ({err})"
+  },
+  "desktop.no_terminal": {
+    "message": "terminal tidak ditemukan"
+  },
+  "desktop.nothing_to_run": {
+    "message": "{name}: tidak ada yang dijalankan"
+  },
+  "desktop.scripts": {
+    "message": "Skrip"
+  },
+  "devices.error.mount_failed": {
+    "message": "tidak dapat mengaitkan perangkat"
+  },
+  "devices.error.no_folder": {
+    "message": "perangkat tidak membagikan folder apa pun"
+  },
+  "devices.error.system_only": {
+    "message": "hanya sistem yang dapat melepas kaitan ini"
+  },
+  "devices.error.unreachable": {
+    "message": "tidak dapat dijangkau: apakah KDE Connect terbuka di perangkat itu, di jaringan ini?"
+  },
+  "devices.unlock.ask": {
+    "message": "Frasa sandi {name}:"
+  },
+  "devices.unlock.ask_again": {
+    "message": "Frasa sandi salah. Frasa sandi {name}:"
+  },
+  "devices.unlock.title": {
+    "message": "Buka kunci"
+  },
+  "devices.volume.share_on_server": {
+    "message": "{share} di {server}"
+  },
+  "devices.volume.unnamed": {
+    "message": "Volume {size} GB"
+  },
+  "devices.volume.unnamed_encrypted": {
+    "message": "Volume terenkripsi {size} GB"
+  },
+  "download.cancel": {
+    "message": "Batal"
+  },
+  "download.dialog_title": {
+    "message": "Unduh dari tautan"
+  },
+  "download.download": {
+    "message": "Unduh"
+  },
+  "download.folder_link": {
+    "message": "tautan tersebut menunjuk ke folder"
+  },
+  "download.incomplete": {
+    "message": "server mengirim {got} dari {size, plural, other {# byte}}; jika diunduh lagi, unduhan berlanjut dari situ"
+  },
+  "download.into": {
+    "message": "Ke {folder}"
+  },
+  "download.link": {
+    "message": "Tautan"
+  },
+  "download.link_placeholder": {
+    "message": "https://, http://, ftp://, atau ftps://"
+  },
+  "download.local_only": {
+    "message": "Unduhan disimpan di folder komputer ini: buka salah satunya di panel terlebih dahulu."
+  },
+  "download.name_placeholder": {
+    "message": "sesuai nama dari server atau tautan"
+  },
+  "download.no_file": {
+    "message": "tautan tidak menyebut berkas apa pun"
+  },
+  "download.not_a_link": {
+    "message": "bukan tautan yang dapat diunduh"
+  },
+  "download.problem.bad_name": {
+    "message": "Nama berkas saja, tanpa folder di dalamnya."
+  },
+  "download.problem.empty": {
+    "message": "Tempel atau ketik tautan."
+  },
+  "download.problem.exists": {
+    "message": "Sudah ada {name} di sini: Ganti akan mengunduh dan menimpanya."
+  },
+  "download.problem.not_link": {
+    "message": "Bukan tautan yang dapat diunduh: tautan diawali https://, http://, ftp://, atau ftps://."
+  },
+  "download.replace": {
+    "message": "Ganti"
+  },
+  "download.save_as": {
+    "message": "Simpan sebagai"
+  },
+  "download.saved_as": {
+    "message": "disimpan sebagai {name}"
+  },
+  "download.title": {
+    "message": "Unduh “{name}”"
+  },
+  "download.title_link": {
+    "message": "Unduh {link}"
+  },
+  "editor.close.after_send": {
+    "message": "Editor ditutup setelah server menerimanya."
+  },
+  "editor.close.discard": {
+    "message": "Jangan simpan"
+  },
+  "editor.close.save": {
+    "message": "Simpan"
+  },
+  "editor.close.title": {
+    "message": "Simpan perubahan?"
+  },
+  "editor.close.unsaved": {
+    "message": "{name} memiliki perubahan yang belum disimpan."
+  },
+  "editor.close.unsent": {
+    "message": "{name} belum tersimpan di servernya: pengirimannya gagal."
+  },
+  "editor.dialog.cancel": {
+    "message": "Batal"
+  },
+  "editor.edit.copy": {
+    "message": "Salin"
+  },
+  "editor.edit.cut": {
+    "message": "Potong"
+  },
+  "editor.edit.find": {
+    "message": "Cari..."
+  },
+  "editor.edit.find_next": {
+    "message": "Cari berikutnya"
+  },
+  "editor.edit.find_previous": {
+    "message": "Cari sebelumnya"
+  },
+  "editor.edit.go_to_line": {
+    "message": "Ke baris..."
+  },
+  "editor.edit.paste": {
+    "message": "Tempel"
+  },
+  "editor.edit.redo": {
+    "message": "Ulangi"
+  },
+  "editor.edit.replace": {
+    "message": "Ganti..."
+  },
+  "editor.edit.undo": {
+    "message": "Urungkan"
+  },
+  "editor.external.not_set": {
+    "message": "editor eksternal belum diatur (Pengaturan, Edit/Lihat)"
+  },
+  "editor.file.close": {
+    "message": "Tutup"
+  },
+  "editor.file.reload": {
+    "message": "Muat ulang"
+  },
+  "editor.file.save": {
+    "message": "Simpan"
+  },
+  "editor.file.save_as": {
+    "message": "Simpan sebagai..."
+  },
+  "editor.find.close": {
+    "message": "Tutup (Escape)"
+  },
+  "editor.find.count": {
+    "message": "{current} dari {total}"
+  },
+  "editor.find.in_selection": {
+    "message": "Cari dalam pilihan (Alt+L)"
+  },
+  "editor.find.match_case": {
+    "message": "Cocokkan huruf besar/kecil (Alt+C)"
+  },
+  "editor.find.next": {
+    "message": "Hasil berikutnya (Enter)"
+  },
+  "editor.find.no_results": {
+    "message": "Tidak ada hasil"
+  },
+  "editor.find.placeholder": {
+    "message": "Cari"
+  },
+  "editor.find.preserve_case": {
+    "message": "Pertahankan huruf besar/kecil (Alt+P)"
+  },
+  "editor.find.previous": {
+    "message": "Hasil sebelumnya (Shift+Enter)"
+  },
+  "editor.find.regex": {
+    "message": "Gunakan ekspresi reguler (Alt+R)"
+  },
+  "editor.find.replace": {
+    "message": "Ganti (Ctrl+Shift+1)"
+  },
+  "editor.find.replace_all": {
+    "message": "Ganti semua (Ctrl+Alt+Enter)"
+  },
+  "editor.find.replace_placeholder": {
+    "message": "Ganti"
+  },
+  "editor.find.toggle_replace": {
+    "message": "Tampilkan/sembunyikan Ganti"
+  },
+  "editor.find.whole_word": {
+    "message": "Cocokkan seluruh kata (Alt+W)"
+  },
+  "editor.go_to_line.label": {
+    "message": "Baris, atau baris:kolom"
+  },
+  "editor.go_to_line.title": {
+    "message": "Ke baris"
+  },
+  "editor.language.by_file_name": {
+    "message": "Berdasarkan nama berkas"
+  },
+  "editor.language.plain_text": {
+    "message": "Teks biasa"
+  },
+  "editor.menu.edit": {
+    "message": "Edit"
+  },
+  "editor.menu.file": {
+    "message": "Berkas"
+  },
+  "editor.menu.language": {
+    "message": "Bahasa"
+  },
+  "editor.menu.selection": {
+    "message": "Pilihan"
+  },
+  "editor.menu.view": {
+    "message": "Tampilan"
+  },
+  "editor.open.too_large": {
+    "message": "melebihi batas {limit_mb} MB editor bawaan (Pengaturan, Edit/Lihat); Ctrl+Shift+F4 mengeditnya di editor eksternal"
+  },
+  "editor.reload.button": {
+    "message": "Muat ulang"
+  },
+  "editor.reload.failed": {
+    "message": "Tidak dapat memuat ulang: {err}"
+  },
+  "editor.reload.text": {
+    "message": "Perubahan yang belum disimpan akan hilang."
+  },
+  "editor.reload.title": {
+    "message": "Muat ulang berkas?"
+  },
+  "editor.reload.unfit": {
+    "message": "Tidak dimuat ulang: {why, select, binary {berkas ini biner} other {berkas ini bukan teks UTF-8}}."
+  },
+  "editor.save.admin": {
+    "message": "Menyimpan “{name}”"
+  },
+  "editor.save.failed": {
+    "message": "Tidak dapat menyimpan {path}: {err}"
+  },
+  "editor.save_anyway.button": {
+    "message": "Tetap simpan"
+  },
+  "editor.save_anyway.text": {
+    "message": "Berkas ini bukan teks: menyimpan akan menulisnya seperti yang ditampilkan, sehingga bagian yang bukan teks berubah untuk selamanya."
+  },
+  "editor.save_anyway.title": {
+    "message": "Simpan sebagai teks?"
+  },
+  "editor.selection.add_cursor_above": {
+    "message": "Tambah kursor di atas"
+  },
+  "editor.selection.add_cursor_below": {
+    "message": "Tambah kursor di bawah"
+  },
+  "editor.selection.delete_lines": {
+    "message": "Hapus baris"
+  },
+  "editor.selection.duplicate_lines": {
+    "message": "Duplikat baris"
+  },
+  "editor.selection.indent": {
+    "message": "Indentasi"
+  },
+  "editor.selection.lowercase": {
+    "message": "huruf kecil"
+  },
+  "editor.selection.move_lines_down": {
+    "message": "Pindahkan baris ke bawah"
+  },
+  "editor.selection.move_lines_up": {
+    "message": "Pindahkan baris ke atas"
+  },
+  "editor.selection.outdent": {
+    "message": "Kurangi indentasi"
+  },
+  "editor.selection.select_all": {
+    "message": "Pilih semua"
+  },
+  "editor.selection.select_all_occurrences": {
+    "message": "Pilih semua kemunculan"
+  },
+  "editor.selection.sort_lines_ascending": {
+    "message": "Urutkan baris naik"
+  },
+  "editor.selection.sort_lines_descending": {
+    "message": "Urutkan baris turun"
+  },
+  "editor.selection.title_case": {
+    "message": "Kapital Tiap Kata"
+  },
+  "editor.selection.toggle_line_comment": {
+    "message": "Alihkan komentar baris"
+  },
+  "editor.selection.trim_trailing_whitespace": {
+    "message": "Pangkas spasi di akhir baris"
+  },
+  "editor.selection.uppercase": {
+    "message": "HURUF BESAR"
+  },
+  "editor.send.failed": {
+    "message": "Tidak dapat mengirimnya kembali: {err}. Simpan akan mencoba lagi."
+  },
+  "editor.status.modified": {
+    "message": "Diubah"
+  },
+  "editor.status.position": {
+    "message": "Brs {line}, Kol {column}"
+  },
+  "editor.status.position_selected": {
+    "message": "Brs {line}, Kol {column} ({count, plural, other {# terpilih}})"
+  },
+  "editor.status.sending": {
+    "message": "Menyimpan ke server"
+  },
+  "editor.status.spaces": {
+    "message": "Spasi: {size}"
+  },
+  "editor.status.tab_size": {
+    "message": "Ukuran tab: {size}"
+  },
+  "editor.status.unsent": {
+    "message": "Tidak ada di server"
+  },
+  "editor.terminal.not_found": {
+    "message": "editor tidak ditemukan; atur $EDITOR"
+  },
+  "editor.title": {
+    "message": "{path} — Editor"
+  },
+  "editor.unfit.open_anyway": {
+    "message": "Tetap buka"
+  },
+  "editor.unfit.text": {
+    "message": "Berkas tidak ditampilkan di editor karena {why, select, binary {berkas ini biner} other {berkas ini bukan teks UTF-8}}."
+  },
+  "editor.view.folding": {
+    "message": "Pelipatan"
+  },
+  "editor.view.indent_guides": {
+    "message": "Panduan indentasi"
+  },
+  "editor.view.indent_with_tabs": {
+    "message": "Indentasi dengan tab"
+  },
+  "editor.view.line_numbers": {
+    "message": "Nomor baris"
+  },
+  "editor.view.minimap": {
+    "message": "Minimap"
+  },
+  "editor.view.tab_width": {
+    "message": "Lebar tab {width}"
+  },
+  "editor.view.unfold_all": {
+    "message": "Buka semua lipatan"
+  },
+  "editor.view.whitespace": {
+    "message": "Spasi putih"
+  },
+  "editor.view.word_wrap": {
+    "message": "Bungkus kata"
+  },
+  "elevate.failed": {
+    "message": "sebagai administrator pun gagal ({code})"
+  },
+  "elevate.no_consent": {
+    "message": "persetujuan administrator tidak diberikan"
+  },
+  "elevate.no_password": {
+    "message": "kata sandi tidak diberikan"
+  },
+  "elevate.not_authorised": {
+    "message": "tidak diizinkan"
+  },
+  "elevate.percent_name": {
+    "message": "{path}: nama dengan % tidak dapat ditangani sebagai administrator; ganti namanya terlebih dahulu"
+  },
+  "elevate.pkexec_missing": {
+    "message": "pkexec (polkit) tidak terinstal"
+  },
+  "file_menu.change_tags_failed": {
+    "message": "Tidak dapat mengubah tag: {err}"
+  },
+  "file_menu.compress": {
+    "message": "{count, plural, =1 {Kompres “{name}”…} other {Kompres # Item…}}"
+  },
+  "file_menu.copy": {
+    "message": "{count, plural, =1 {Salin “{name}”} other {Salin # Item}}"
+  },
+  "file_menu.copy_path": {
+    "message": "Salin Jalur ke Papan Klip"
+  },
+  "file_menu.delete": {
+    "message": "Hapus"
+  },
+  "file_menu.duplicate": {
+    "message": "Duplikatkan"
+  },
+  "file_menu.duplicate_failed": {
+    "message": "Tidak dapat menduplikatkan: {err}"
+  },
+  "file_menu.edit_tags": {
+    "message": "Tag…"
+  },
+  "file_menu.get_info": {
+    "message": "Dapatkan Info"
+  },
+  "file_menu.make_alias": {
+    "message": "Buat Alias"
+  },
+  "file_menu.make_alias_failed": {
+    "message": "Tidak dapat membuat alias: {err}"
+  },
+  "file_menu.move_to_trash": {
+    "message": "Pindahkan ke Tong Sampah"
+  },
+  "file_menu.new_folder": {
+    "message": "Folder Baru"
+  },
+  "file_menu.open": {
+    "message": "Buka"
+  },
+  "file_menu.open_failed": {
+    "message": "Tidak dapat membuka: {err}"
+  },
+  "file_menu.open_with": {
+    "message": "Buka dengan"
+  },
+  "file_menu.open_with_default": {
+    "message": "{app} (bawaan)"
+  },
+  "file_menu.paste": {
+    "message": "Tempel"
+  },
+  "file_menu.quick_look": {
+    "message": "{count, plural, =1 {Lihat Cepat “{name}”} other {Lihat Cepat # Item}}"
+  },
+  "file_menu.quick_look_failed": {
+    "message": "Lihat Cepat: {err}"
+  },
+  "file_menu.rename": {
+    "message": "Ganti Nama…"
+  },
+  "file_menu.reveal_failed": {
+    "message": "Tidak dapat menampilkannya di Finder: {err}"
+  },
+  "file_menu.reveal_in_finder": {
+    "message": "Tampilkan di Finder"
+  },
+  "file_menu.show_package_contents": {
+    "message": "Tampilkan Isi Paket"
+  },
+  "file_menu.tag_dot.add": {
+    "message": "Tambahkan tag “{name}”"
+  },
+  "file_menu.tag_dot.remove": {
+    "message": "Hapus tag “{name}”"
+  },
+  "file_menu.tags_popover.show_all": {
+    "message": "Tampilkan Semua…"
+  },
+  "file_menu.tags_popover.title": {
+    "message": "{count, plural, =1 {Tetapkan tag ke “{name}”} other {Tetapkan tag ke # Item}}"
+  },
+  "find.backwards": {
+    "message": "Cari mundur"
+  },
+  "find.cancel": {
+    "message": "Batal"
+  },
+  "find.case_sensitive": {
+    "message": "Peka huruf besar/kecil"
+  },
+  "find.hex": {
+    "message": "Cari string heksa"
+  },
+  "find.ok": {
+    "message": "OK"
+  },
+  "find.regex": {
+    "message": "RegEx"
+  },
+  "find.text.label": {
+    "message": "Masukkan teks yang dicari"
+  },
+  "find.title": {
+    "message": "Cari"
+  },
+  "find.whole_words": {
+    "message": "Hanya seluruh kata"
+  },
+  "keys.apply": {
+    "message": "Terapkan"
+  },
+  "keys.cancel": {
+    "message": "Batal"
+  },
+  "keys.clear.tooltip": {
+    "message": "Tanpa tombol"
+  },
+  "keys.column.alternate": {
+    "message": "Alternatif"
+  },
+  "keys.column.command": {
+    "message": "Perintah"
+  },
+  "keys.column.shortcut": {
+    "message": "Pintasan"
+  },
+  "keys.custom": {
+    "message": "Kustom"
+  },
+  "keys.delete_set": {
+    "message": "Hapus"
+  },
+  "keys.note.custom_replaced": {
+    "message": "Tombol buatan Anda diganti dengan tombol {name}; Simpan sebagai mempertahankannya."
+  },
+  "keys.note.deleted": {
+    "message": "{name} dihapus; OK atau Terapkan akan memberlakukannya."
+  },
+  "keys.note.moved": {
+    "message": "{key} sekarang untuk {command}, tidak lagi untuk {other}."
+  },
+  "keys.note.name_reserved": {
+    "message": "“{name}” adalah nama preset; pilih nama lain."
+  },
+  "keys.note.press_new_key": {
+    "message": "Tekan tombol baru; Esc membiarkannya seperti semula."
+  },
+  "keys.note.saved": {
+    "message": "Disimpan sebagai {name}; OK atau Terapkan akan mempertahankannya."
+  },
+  "keys.note.set": {
+    "message": "{key} sekarang untuk {command}."
+  },
+  "keys.note.taken_by_system": {
+    "message": "{key} dipakai oleh {by}, sehingga tidak pernah sampai ke Spark Commander."
+  },
+  "keys.ok": {
+    "message": "OK"
+  },
+  "keys.press_key": {
+    "message": "Tekan tombol…"
+  },
+  "keys.reserved.application_launcher": {
+    "message": "{system}: peluncur aplikasi"
+  },
+  "keys.reserved.close_window": {
+    "message": "{system}: tutup jendela"
+  },
+  "keys.reserved.close_window_or_tab": {
+    "message": "{system}: tutup jendela atau tab"
+  },
+  "keys.reserved.dock": {
+    "message": "{system}: Dock"
+  },
+  "keys.reserved.floating_window": {
+    "message": "{system}: jendela mengambang"
+  },
+  "keys.reserved.force_quit": {
+    "message": "{system}: paksa keluar"
+  },
+  "keys.reserved.hide_program": {
+    "message": "{system}: sembunyikan program"
+  },
+  "keys.reserved.input_source": {
+    "message": "{system}: sumber input"
+  },
+  "keys.reserved.keyboard_access": {
+    "message": "{system}: akses keyboard"
+  },
+  "keys.reserved.keyboard_navigation": {
+    "message": "{system}: navigasi keyboard"
+  },
+  "keys.reserved.krunner": {
+    "message": "{system}: KRunner"
+  },
+  "keys.reserved.lock_screen": {
+    "message": "{system}: kunci layar"
+  },
+  "keys.reserved.log_out": {
+    "message": "{system}: log keluar"
+  },
+  "keys.reserved.maximize_window": {
+    "message": "{system}: maksimalkan jendela"
+  },
+  "keys.reserved.menu_bar": {
+    "message": "{system}: bar menu"
+  },
+  "keys.reserved.minimize": {
+    "message": "{system}: minimalkan"
+  },
+  "keys.reserved.mission_control": {
+    "message": "{system}: Mission Control"
+  },
+  "keys.reserved.move_window": {
+    "message": "{system}: pindahkan jendela"
+  },
+  "keys.reserved.next_window": {
+    "message": "{system}: jendela berikutnya"
+  },
+  "keys.reserved.present_windows": {
+    "message": "{system}: Tampilkan Jendela"
+  },
+  "keys.reserved.present_windows_all": {
+    "message": "{system}: Tampilkan Jendela (semua desktop)"
+  },
+  "keys.reserved.present_windows_class": {
+    "message": "{system}: Tampilkan Jendela (kelas jendela)"
+  },
+  "keys.reserved.program_windows": {
+    "message": "{system}: jendela program"
+  },
+  "keys.reserved.quit": {
+    "message": "{system}: keluar"
+  },
+  "keys.reserved.resize_window": {
+    "message": "{system}: ubah ukuran jendela"
+  },
+  "keys.reserved.restore_window": {
+    "message": "{system}: pulihkan jendela"
+  },
+  "keys.reserved.run_command": {
+    "message": "{system}: jalankan perintah"
+  },
+  "keys.reserved.screenshot": {
+    "message": "{system}: tangkapan layar"
+  },
+  "keys.reserved.security_screen": {
+    "message": "{system}: layar keamanan"
+  },
+  "keys.reserved.show_desktop": {
+    "message": "{system}: tampilkan desktop"
+  },
+  "keys.reserved.space_left": {
+    "message": "{system}: Space sebelah kiri"
+  },
+  "keys.reserved.space_right": {
+    "message": "{system}: Space sebelah kanan"
+  },
+  "keys.reserved.spotlight": {
+    "message": "{system}: Spotlight"
+  },
+  "keys.reserved.start_menu": {
+    "message": "{system}: menu Mulai"
+  },
+  "keys.reserved.status_menus": {
+    "message": "{system}: menu status"
+  },
+  "keys.reserved.suspend_compositing": {
+    "message": "{system}: tangguhkan pengompositan"
+  },
+  "keys.reserved.switch_program_windows": {
+    "message": "{system}: beralih antarjendela program"
+  },
+  "keys.reserved.switch_programs": {
+    "message": "{system}: beralih program"
+  },
+  "keys.reserved.switch_system_controls": {
+    "message": "{system}: beralih kontrol sistem"
+  },
+  "keys.reserved.switch_to_desktop": {
+    "message": "{system}: beralih ke desktop {number}"
+  },
+  "keys.reserved.switch_windows": {
+    "message": "{system}: beralih jendela"
+  },
+  "keys.reserved.system_monitor": {
+    "message": "{system}: Pemantau Sistem"
+  },
+  "keys.reserved.task_manager": {
+    "message": "{system}: Pengelola Tugas"
+  },
+  "keys.reserved.text_console": {
+    "message": "{system}: beralih ke konsol teks"
+  },
+  "keys.reserved.toolbar": {
+    "message": "{system}: bilah alat"
+  },
+  "keys.reserved.window_menu": {
+    "message": "{system}: menu jendela"
+  },
+  "keys.reserved.workspace_down": {
+    "message": "{system}: ruang kerja di bawah"
+  },
+  "keys.reserved.workspace_left": {
+    "message": "{system}: ruang kerja di kiri"
+  },
+  "keys.reserved.workspace_right": {
+    "message": "{system}: ruang kerja di kanan"
+  },
+  "keys.reserved.workspace_up": {
+    "message": "{system}: ruang kerja di atas"
+  },
+  "keys.reset.tooltip": {
+    "message": "Kembali ke tombol {preset}"
+  },
+  "keys.reset_all": {
+    "message": "Atur ulang semua"
+  },
+  "keys.save_as.button": {
+    "message": "Simpan sebagai…"
+  },
+  "keys.save_as.default_name": {
+    "message": "Tombol saya"
+  },
+  "keys.save_as.label": {
+    "message": "Nama:"
+  },
+  "keys.save_as.title": {
+    "message": "Simpan pintasan"
+  },
+  "keys.search.placeholder": {
+    "message": "Cari perintah atau tombol"
+  },
+  "keys.set_label": {
+    "message": "Tombol:"
+  },
+  "keys.taken_by.tooltip": {
+    "message": "Dipakai oleh {by}"
+  },
+  "keys.title": {
+    "message": "Pintasan"
+  },
+  "main.admin.button": {
+    "message": "Sebagai administrator"
+  },
+  "main.admin.deleting": {
+    "message": "Menghapus {count, plural, other {# item}}"
+  },
+  "main.admin.failed": {
+    "message": "Sebagai administrator: {err}"
+  },
+  "main.admin.making": {
+    "message": "Membuat “{name}”"
+  },
+  "main.admin.offer": {
+    "message": "{what}: izin ditolak. Sebagai administrator, sistem akan meminta kata sandi."
+  },
+  "main.admin.offer_delete": {
+    "message": "{what}: izin ditolak. Sebagai administrator, sistem akan meminta kata sandi. Yang dihapus dengan cara ini hilang untuk selamanya."
+  },
+  "main.admin.title": {
+    "message": "Izin ditolak"
+  },
+  "main.delete.from_archive": {
+    "message": "{kind, select, folder {Hapus folder “{name}” dari {archive}? Tindakan ini tidak dapat dibatalkan.} file {Hapus berkas “{name}” dari {archive}? Tindakan ini tidak dapat dibatalkan.} other {Hapus {count, plural, other {# item}} dari {archive}? Tindakan ini tidak dapat dibatalkan.}}"
+  },
+  "main.delete.on_server": {
+    "message": "{kind, select, folder {Hapus folder “{name}” di {server}? Tindakan ini tidak dapat dibatalkan.} file {Hapus berkas “{name}” di {server}? Tindakan ini tidak dapat dibatalkan.} other {Hapus {count, plural, other {# item}} di {server}? Tindakan ini tidak dapat dibatalkan.}}"
+  },
+  "main.delete.permanently": {
+    "message": "{kind, select, folder {Hapus folder “{name}” secara permanen? Tindakan ini tidak dapat dibatalkan.} file {Hapus berkas “{name}” secara permanen? Tindakan ini tidak dapat dibatalkan.} other {Hapus {count, plural, other {# item}} secara permanen? Tindakan ini tidak dapat dibatalkan.}}"
+  },
+  "main.delete.title": {
+    "message": "Hapus"
+  },
+  "main.delete.title_permanently": {
+    "message": "Hapus permanen"
+  },
+  "main.delete.to_trash": {
+    "message": "{kind, select, folder {Pindahkan folder “{name}” ke Tong Sampah?} file {Pindahkan berkas “{name}” ke Tong Sampah?} other {Pindahkan {count, plural, other {# item}} ke Tong Sampah?}}"
+  },
+  "main.download.edit": {
+    "message": "Unduh {file} untuk diedit"
+  },
+  "main.download.view": {
+    "message": "Unduh {file} untuk dilihat"
+  },
+  "main.error.make_folder": {
+    "message": "Tidak dapat membuat folder: {err}"
+  },
+  "main.error.read_settings": {
+    "message": "Tidak dapat membaca pengaturan: {err}"
+  },
+  "main.error.read_tabs": {
+    "message": "Tidak dapat membaca tab yang terbuka: {err}"
+  },
+  "main.error.read_workspaces": {
+    "message": "Tidak dapat membaca ruang kerja: {err}"
+  },
+  "main.error.save_settings": {
+    "message": "Tidak dapat menyimpan pengaturan: {err}"
+  },
+  "main.folder_tree.home": {
+    "message": "Rumah"
+  },
+  "main.go.no_such_folder": {
+    "message": "{path}: folder ini tidak ada di komputer ini"
+  },
+  "main.new_folder.label": {
+    "message": "Folder baru (direktori):"
+  },
+  "main.new_folder.title": {
+    "message": "Folder baru"
+  },
+  "main.sync_browsing.lost": {
+    "message": "{err}. Penelusuran tersinkron dinonaktifkan."
+  },
+  "main.tool.needs_file": {
+    "message": "Kursor tidak berada pada berkas: %N, %O, dan %E memerlukannya."
+  },
+  "main.tool.needs_local_folder": {
+    "message": "Panel lainnya menampilkan server atau arsip: %T memerlukan folder di komputer ini."
+  },
+  "main.undo.done": {
+    "message": "{way, select, redo {Diulangi: {title}} other {Diurungkan: {title}}}"
+  },
+  "main.undo.failed": {
+    "message": "{way, select, redo {Tidak dapat mengulangi “{title}”: {err}} other {Tidak dapat mengurungkan “{title}”: {err}}}"
+  },
+  "main.undo.nothing": {
+    "message": "{way, select, redo {Tidak ada yang dapat diulangi.} other {Tidak ada yang dapat diurungkan.}}"
+  },
+  "main.undo.queued": {
+    "message": "{way, select, redo {Dalam antrean untuk diulangi: {title}} other {Dalam antrean untuk diurungkan: {title}}}"
+  },
+  "mark.compare.marked": {
+    "message": "{count, plural, other {# berkas ditandai: lebih baru daripada, atau tidak ada di, sisi lainnya.}}"
+  },
+  "mark.compare.same": {
+    "message": "Kedua folder berisi berkas yang sama."
+  },
+  "mark.load_selection.label": {
+    "message": "Pilih nama yang tercantum dalam berkas:"
+  },
+  "mark.load_selection.title": {
+    "message": "Muat pilihan"
+  },
+  "mark.save_selection.label": {
+    "message": "Simpan nama terpilih ke berkas:"
+  },
+  "mark.save_selection.title": {
+    "message": "Simpan pilihan"
+  },
+  "mark.select_group.label": {
+    "message": "Pilih berkas (*.txt *.md; pola folder diakhiri /):"
+  },
+  "mark.select_group.title": {
+    "message": "Pilih grup"
+  },
+  "mark.selection_file.not_local": {
+    "message": "Berkas pilihan disimpan di komputer ini, di luar arsip."
+  },
+  "mark.unselect_group.label": {
+    "message": "Batalkan pilihan berkas (*.txt *.md; pola folder diakhiri /):"
+  },
+  "mark.unselect_group.title": {
+    "message": "Batalkan pilihan grup"
+  },
+  "media.cannot_play": {
+    "message": "Tidak dapat diputar: {err}"
+  },
+  "media.cannot_play_as_text": {
+    "message": "Tidak dapat diputar: {err}. 1 menampilkannya sebagai teks."
+  },
+  "media.continuing": {
+    "message": "Melanjutkan dari {time}"
+  },
+  "media.error.missing": {
+    "message": "libmpv tidak ada: Pengaturan > Pengaya mengunduhnya (build dari sumber: vendor/mpv/{script})"
+  },
+  "media.error.not_started": {
+    "message": "libmpv tidak dapat dimulai"
+  },
+  "media.error.too_long": {
+    "message": "{path}: mpv terlalu lama"
+  },
+  "media.error.unsupported_system": {
+    "message": "untuk saat ini video hanya dapat diputar di Linux, macOS, dan Windows"
+  },
+  "menu.archive": {
+    "message": "Arsip"
+  },
+  "menu.associations": {
+    "message": "Asosiasi"
+  },
+  "menu.button_bar": {
+    "message": "Bilah tombol"
+  },
+  "menu.checksums": {
+    "message": "Checksum"
+  },
+  "menu.commands": {
+    "message": "Perintah"
+  },
+  "menu.compare_directories": {
+    "message": "Bandingkan folder"
+  },
+  "menu.configuration": {
+    "message": "Konfigurasi"
+  },
+  "menu.copy_names": {
+    "message": "Salin nama"
+  },
+  "menu.files": {
+    "message": "Berkas"
+  },
+  "menu.filter": {
+    "message": "Filter"
+  },
+  "menu.go": {
+    "message": "Pergi"
+  },
+  "menu.help": {
+    "message": "Bantuan"
+  },
+  "menu.mark": {
+    "message": "Tandai"
+  },
+  "menu.other": {
+    "message": "Lainnya"
+  },
+  "menu.recently_closed_tabs": {
+    "message": "Tab yang baru ditutup"
+  },
+  "menu.selection": {
+    "message": "Pilihan"
+  },
+  "menu.show": {
+    "message": "Tampilan"
+  },
+  "menu.sidebar": {
+    "message": "Bilah sisi"
+  },
+  "menu.sort": {
+    "message": "Urutkan"
+  },
+  "menu.split_and_combine": {
+    "message": "Pisahkan dan gabungkan"
+  },
+  "menu.tabs": {
+    "message": "Tab"
+  },
+  "menu.tools": {
+    "message": "Alat"
+  },
+  "menu.workspaces": {
+    "message": "Ruang kerja"
+  },
+  "menus.hide_app": {
+    "message": "Sembunyikan Spark Commander"
+  },
+  "menus.hide_others": {
+    "message": "Sembunyikan Lainnya"
+  },
+  "menus.minimize": {
+    "message": "Minimalkan"
+  },
+  "menus.quit_app": {
+    "message": "Keluar dari Spark Commander"
+  },
+  "menus.services": {
+    "message": "Layanan"
+  },
+  "menus.show_all": {
+    "message": "Tampilkan Semua"
+  },
+  "menus.zoom": {
+    "message": "Zoom"
+  },
+  "name_dialog.cancel": {
+    "message": "Batal"
+  },
+  "name_dialog.ok": {
+    "message": "OK"
+  },
+  "operations.clear": {
+    "message": "Bersihkan yang selesai"
+  },
+  "operations.duration.seconds": {
+    "message": "{seconds} dtk"
+  },
+  "operations.empty": {
+    "message": "Tidak ada operasi."
+  },
+  "operations.job.answer": {
+    "message": "Menunggu jawaban Anda"
+  },
+  "operations.job.bytes": {
+    "message": "{done} dari {total}"
+  },
+  "operations.job.cancel_tooltip": {
+    "message": "Batal"
+  },
+  "operations.job.cancelled": {
+    "message": "Dibatalkan"
+  },
+  "operations.job.counting": {
+    "message": "Menghitung: {count, plural, other {# berkas}}"
+  },
+  "operations.job.done": {
+    "message": "Selesai"
+  },
+  "operations.job.done_skipped": {
+    "message": "Selesai, {count, plural, other {# dilewati}}"
+  },
+  "operations.job.failed": {
+    "message": "Gagal"
+  },
+  "operations.job.files": {
+    "message": "{files} / {count, plural, other {# berkas}}"
+  },
+  "operations.job.left": {
+    "message": "{time} lagi"
+  },
+  "operations.job.running": {
+    "message": "Berjalan"
+  },
+  "operations.job.waiting": {
+    "message": "Menunggu"
+  },
+  "operations.menu.cancel": {
+    "message": "Batal"
+  },
+  "operations.menu.clear": {
+    "message": "Bersihkan yang selesai"
+  },
+  "operations.menu.move_down": {
+    "message": "Pindah ke bawah"
+  },
+  "operations.menu.move_up": {
+    "message": "Pindah ke atas"
+  },
+  "operations.settings_tooltip": {
+    "message": "Pengaturan antrean operasi"
+  },
+  "operations.summary.failed": {
+    "message": "{count, plural, other {# gagal}}"
+  },
+  "operations.summary.running": {
+    "message": "{count, plural, other {# berjalan}}"
+  },
+  "operations.summary.waiting": {
+    "message": "{count, plural, other {# menunggu}}"
+  },
+  "ops.as_administrator.failed": {
+    "message": "Sebagai administrator: {err}"
+  },
+  "ops.as_administrator.progress": {
+    "message": "Sebagai administrator…"
+  },
+  "ops.delete.title_many": {
+    "message": "Hapus {count, plural, other {# item}} di {folder}"
+  },
+  "ops.delete.title_one": {
+    "message": "Hapus “{name}”"
+  },
+  "ops.delete.trash_title_many": {
+    "message": "Pindahkan {count, plural, other {# item}} di {folder} ke Tong Sampah"
+  },
+  "ops.delete.trash_title_one": {
+    "message": "Pindahkan “{name}” ke Tong Sampah"
+  },
+  "ops.error.file_in_the_way": {
+    "message": "ada berkas dengan nama ini yang menghalangi"
+  },
+  "ops.error.into_itself": {
+    "message": "tidak dapat disalin ke dalam dirinya sendiri"
+  },
+  "ops.exists_already": {
+    "message": "{name} sudah ada"
+  },
+  "ops.link.dialog_title": {
+    "message": "Buat tautan"
+  },
+  "ops.link.failed": {
+    "message": "Tidak dapat membuat tautan: {err}"
+  },
+  "ops.link.kind.hard": {
+    "message": "Tautan keras"
+  },
+  "ops.link.kind.junction": {
+    "message": "Junction"
+  },
+  "ops.link.kind.shortcut": {
+    "message": "Pintasan (.lnk)"
+  },
+  "ops.link.kind.symbolic": {
+    "message": "Tautan simbolik"
+  },
+  "ops.link.label_many": {
+    "message": "Tautan ke {count, plural, other {# item}}, di folder:"
+  },
+  "ops.link.label_one": {
+    "message": "Tautan ke “{name}” sebagai:"
+  },
+  "ops.link.making": {
+    "message": "Membuat {kind, select, symbolic {tautan simbolik} hard {tautan keras} junction {junction} other {pintasan (.lnk)}}"
+  },
+  "ops.link.needs_admin": {
+    "message": "tautan simbolik memerlukan administrator, atau Mode Pengembang"
+  },
+  "ops.link.thread_failed": {
+    "message": "thread pintasan gagal"
+  },
+  "ops.link.title_many": {
+    "message": "{kind, select, symbolic {Tautan simbolik} hard {Tautan keras} junction {Junction} other {Pintasan (.lnk)}} ke {count, plural, other {# item}} di {folder}"
+  },
+  "ops.link.title_one": {
+    "message": "{kind, select, symbolic {Tautan simbolik} hard {Tautan keras} junction {Junction} other {Pintasan (.lnk)}} ke “{name}” di {folder}"
+  },
+  "ops.link.windows_only": {
+    "message": "junction dan pintasan hanya ada di Windows"
+  },
+  "ops.redo.title": {
+    "message": "Ulangi: {what}"
+  },
+  "ops.title.many": {
+    "message": "{kind, select, copy {Salin} other {Pindahkan}} {count, plural, other {# item}} ke {target}"
+  },
+  "ops.title.one": {
+    "message": "{kind, select, copy {Salin} other {Pindahkan}} “{name}” ke {target}"
+  },
+  "ops.undo.not_a_server": {
+    "message": "{url}: bukan alamat server"
+  },
+  "ops.undo.not_in_trash": {
+    "message": "berkas tersebut sudah tidak ada di Tong Sampah"
+  },
+  "ops.undo.restore_title": {
+    "message": "{title}: berkas yang ditimpanya, dipulihkan dari Tong Sampah"
+  },
+  "ops.undo.title": {
+    "message": "Urungkan: {what}"
+  },
+  "pack.cancel": {
+    "message": "Batal"
+  },
+  "pack.compression": {
+    "message": "Kompresi:"
+  },
+  "pack.dialog_title": {
+    "message": "Kemas berkas"
+  },
+  "pack.encrypt": {
+    "message": "Enkripsi dengan kata sandi"
+  },
+  "pack.format": {
+    "message": "Format:"
+  },
+  "pack.label": {
+    "message": "Kemas {count, plural, other {# item}} ke dalam arsip:"
+  },
+  "pack.level.fastest": {
+    "message": "Tercepat"
+  },
+  "pack.level.maximum": {
+    "message": "Maksimum"
+  },
+  "pack.level.normal": {
+    "message": "Normal"
+  },
+  "pack.level.store": {
+    "message": "Tanpa kompresi"
+  },
+  "pack.level.ultra": {
+    "message": "Ultra"
+  },
+  "pack.local_only": {
+    "message": "{what, select, packing {Pengemasan} unpacking {Ekstraksi} testing {Pengujian} creating_checksums {Pembuatan checksum} making_links {Pembuatan tautan} verifying_checksums {Verifikasi checksum} splitting {Pemisahan} combining {Penggabungan} other {Fitur ini}} hanya berfungsi pada berkas di komputer ini, di luar arsip."
+  },
+  "pack.move_files": {
+    "message": "Pindahkan ke arsip (hapus berkas yang dikemas)"
+  },
+  "pack.needs_password": {
+    "message": "arsip memerlukan kata sandi"
+  },
+  "pack.ok": {
+    "message": "OK"
+  },
+  "pack.password_missing": {
+    "message": "Ketik kata sandi, atau biarkan Enkripsi nonaktif."
+  },
+  "pack.separate": {
+    "message": "Satu arsip untuk setiap berkas atau folder terpilih"
+  },
+  "pack.split": {
+    "message": "Pisahkan menjadi volume berukuran"
+  },
+  "pack.split_unit": {
+    "message": "MB"
+  },
+  "pack.test.broken": {
+    "message": "{broken, plural, other {# dari {count} rusak}}"
+  },
+  "pack.test.choose": {
+    "message": "Pilih arsip yang akan diuji."
+  },
+  "pack.test.ok": {
+    "message": "{count, plural, other {# arsip OK}}"
+  },
+  "pack.test.title_many": {
+    "message": "Uji {count, plural, other {# arsip}}"
+  },
+  "pack.test.title_one": {
+    "message": "Uji “{name}”"
+  },
+  "pack.title.many": {
+    "message": "Kemas {count, plural, other {# item}} ke {archive}"
+  },
+  "pack.title.many_separate": {
+    "message": "Kemas {count, plural, other {# item}} ke arsip {format} terpisah"
+  },
+  "pack.title.one": {
+    "message": "Kemas “{name}” ke {archive}"
+  },
+  "pack.title.one_separate": {
+    "message": "Kemas “{name}” ke arsip {format} terpisah"
+  },
+  "pack.unpack.choose": {
+    "message": "Pilih arsip yang akan diekstrak."
+  },
+  "pack.unpack.dialog_title": {
+    "message": "Ekstrak berkas"
+  },
+  "pack.unpack.label": {
+    "message": "Ekstrak {count, plural, other {# arsip}} ke:"
+  },
+  "pack.unpack.mask": {
+    "message": "Hanya berkas:"
+  },
+  "pack.unpack.overwrite": {
+    "message": "Timpa berkas yang sudah ada (jika tidak, berkas tersebut dipertahankan)"
+  },
+  "pack.unpack.password": {
+    "message": "Kata sandi:"
+  },
+  "pack.unpack.separate": {
+    "message": "Setiap arsip ke folder bernama sama"
+  },
+  "pack.unpack.title_many": {
+    "message": "Ekstrak {count, plural, other {# arsip}} ke {target}"
+  },
+  "pack.unpack.title_one": {
+    "message": "Ekstrak “{name}” ke {target}"
+  },
+  "pack.unpack.with_paths": {
+    "message": "Pertahankan folder yang tersimpan dalam arsip"
+  },
+  "pack.volume_invalid": {
+    "message": "Ukuran volume harus berupa angka dalam MB."
+  },
+  "pack.wrong_password": {
+    "message": "kata sandi salah"
+  },
+  "panel.admin.renaming": {
+    "message": "Mengganti nama menjadi “{name}”"
+  },
+  "panel.clipboard.copied": {
+    "message": "{count, plural, other {# item disalin}}: Ctrl+V menempelkannya."
+  },
+  "panel.clipboard.cut": {
+    "message": "{count, plural, other {# item dipotong}}: Ctrl+V menempelkannya."
+  },
+  "panel.clipboard.no_cut_in_archive": {
+    "message": "Berkas tidak dapat dipotong dari arsip; Ctrl+C menyalinnya."
+  },
+  "panel.clipboard.no_files": {
+    "message": "Papan klip tidak berisi berkas."
+  },
+  "panel.clipboard.no_paste_in_archive": {
+    "message": "Berkas belum dapat ditempel ke dalam arsip."
+  },
+  "panel.clipboard.same_folder": {
+    "message": "Berkas sudah ada di folder ini: Ctrl+V menempelkannya ke folder lain."
+  },
+  "panel.column.attr": {
+    "message": "Atr"
+  },
+  "panel.column.date": {
+    "message": "Tanggal"
+  },
+  "panel.column.ext": {
+    "message": "Eks"
+  },
+  "panel.column.name": {
+    "message": "Nama"
+  },
+  "panel.column.size": {
+    "message": "Ukuran"
+  },
+  "panel.disconnect": {
+    "message": "Putuskan"
+  },
+  "panel.drag.items": {
+    "message": "{count, plural, other {# item}}"
+  },
+  "panel.error.archive_not_updatable": {
+    "message": "{name}: 7-Zip dapat mengubah arsip 7z, zip, dan tar secara langsung, tetapi tidak arsip ini"
+  },
+  "panel.error.archive_on_server": {
+    "message": "{name}: arsip di server belum dapat diubah"
+  },
+  "panel.error.branch_view_local": {
+    "message": "Tampilan cabang hanya mencantumkan folder komputer ini"
+  },
+  "panel.error.exists": {
+    "message": "{name} sudah ada"
+  },
+  "panel.error.folder_in_the_way": {
+    "message": "ada folder dengan nama ini yang menghalangi"
+  },
+  "panel.error.inside_archive": {
+    "message": "belum dapat dilakukan di dalam arsip"
+  },
+  "panel.error.make_file": {
+    "message": "Tidak dapat membuat berkas: {err}"
+  },
+  "panel.error.no_name": {
+    "message": "nama tidak diberikan"
+  },
+  "panel.error.not_a_name": {
+    "message": "{name}: bukan nama yang valid"
+  },
+  "panel.error.other_drive": {
+    "message": "panel lainnya pindah ke drive lain"
+  },
+  "panel.error.rename": {
+    "message": "Tidak dapat mengganti nama: {err}"
+  },
+  "panel.filter.custom.label": {
+    "message": "Jenis berkas, mis. *.txt *.md (setelah |, yang dikecualikan):"
+  },
+  "panel.filter.custom.title": {
+    "message": "Tampilkan berkas"
+  },
+  "panel.filter.programs": {
+    "message": "program"
+  },
+  "panel.filter.selected_files": {
+    "message": "berkas terpilih"
+  },
+  "panel.found.branch_view": {
+    "message": "Tampilan cabang:"
+  },
+  "panel.found.search_results": {
+    "message": "Hasil pencarian:"
+  },
+  "panel.new_text_file.label": {
+    "message": "Nama berkas, dibuka di editor:"
+  },
+  "panel.new_text_file.title": {
+    "message": "Berkas teks baru"
+  },
+  "panel.opening.cancel": {
+    "message": "Batal"
+  },
+  "panel.opening.reading": {
+    "message": "Membaca…"
+  },
+  "panel.opening.title": {
+    "message": "Membuka arsip"
+  },
+  "panel.quick_filter.hint": {
+    "message": "menyembunyikan yang tidak cocok; Escape menampilkan semua"
+  },
+  "panel.quick_filter.label": {
+    "message": "Filter:"
+  },
+  "panel.quick_search.label": {
+    "message": "Cari:"
+  },
+  "panel.size.app": {
+    "message": "<APP>"
+  },
+  "panel.size.b": {
+    "message": "{size} B"
+  },
+  "panel.size.dir": {
+    "message": "<DIR>"
+  },
+  "panel.size.gb": {
+    "message": "{size} GB"
+  },
+  "panel.size.kb": {
+    "message": "{size} KB"
+  },
+  "panel.size.mb": {
+    "message": "{size} MB"
+  },
+  "panel.size.tb": {
+    "message": "{size} TB"
+  },
+  "panel.space.bytes": {
+    "message": "{count, plural, other {{size} byte ({human})}}"
+  },
+  "panel.space.close": {
+    "message": "Tutup"
+  },
+  "panel.space.counting": {
+    "message": "Menghitung…"
+  },
+  "panel.space.done": {
+    "message": "Selesai."
+  },
+  "panel.space.files": {
+    "message": "Berkas:"
+  },
+  "panel.space.folders": {
+    "message": "Folder:"
+  },
+  "panel.space.in_archive": {
+    "message": "Di dalam arsip, kolom Ukuran sudah menampilkan ukurannya."
+  },
+  "panel.space.title": {
+    "message": "Hitung ruang terpakai"
+  },
+  "panel.space.total": {
+    "message": "Ukuran total:"
+  },
+  "panel.space.unreadable": {
+    "message": "{count, plural, other {# item tidak dapat dibaca.}}"
+  },
+  "panel.status": {
+    "message": "{marked_size} k / {size} k dalam {marked_files} / {files, plural, other {# berkas}}, {marked_folders} / {folders, plural, other {# folder}}"
+  },
+  "panel.sync_browsing.stop": {
+    "message": "Penelusuran tersinkron (klik untuk menghentikan)"
+  },
+  "panel.undo.rename": {
+    "message": "Ganti nama “{name}” menjadi “{to}”"
+  },
+  "passwords.about.set": {
+    "message": "Dengan kata sandi utama, kata sandi yang disimpan dapat dibuka di komputer lain setelah folder pengaturan disalin dan kata sandi utama diketik di sana. Jika terlupa, hanya kata sandi yang disimpan yang hilang: kata sandi itu cukup diketik lagi."
+  },
+  "passwords.about.unlock": {
+    "message": "Pengaturan berasal dari komputer lain, atau komputer ini tidak memiliki keyring: kata sandi utama membuka kata sandi yang disimpan di sini."
+  },
+  "passwords.cancel": {
+    "message": "Batal"
+  },
+  "passwords.done.set": {
+    "message": "Kata sandi utama telah diatur."
+  },
+  "passwords.done.unlocked": {
+    "message": "Kata sandi yang disimpan telah dibuka."
+  },
+  "passwords.error.locked": {
+    "message": "kata sandi yang disimpan terkunci: buka dengan kata sandi utama (Konfigurasi › Pengaturan › Kata sandi)"
+  },
+  "passwords.error.no_master": {
+    "message": "kata sandi utama belum diatur"
+  },
+  "passwords.error.no_random": {
+    "message": "tidak ada angka acak"
+  },
+  "passwords.error.not_opened": {
+    "message": "kata sandi untuk {what} tidak dapat dibuka"
+  },
+  "passwords.error.not_sealed": {
+    "message": "kata sandi tidak dapat dienkripsi"
+  },
+  "passwords.error.salt_damaged": {
+    "message": "salt kata sandi utama rusak"
+  },
+  "passwords.error.wrong": {
+    "message": "kata sandi utama salah"
+  },
+  "passwords.field.again": {
+    "message": "Ulangi"
+  },
+  "passwords.field.master": {
+    "message": "Kata sandi utama"
+  },
+  "passwords.locked_note": {
+    "message": "Kata sandi yang disimpan terkunci di komputer ini: kata sandi utama membukanya."
+  },
+  "passwords.ok": {
+    "message": "OK"
+  },
+  "passwords.problem.differ": {
+    "message": "Keduanya tidak sama."
+  },
+  "passwords.problem.empty": {
+    "message": "Ketik kata sandi utama."
+  },
+  "passwords.title.set": {
+    "message": "Kata sandi utama"
+  },
+  "passwords.title.unlock": {
+    "message": "Buka kunci kata sandi yang disimpan"
+  },
+  "passwords.unlock_button": {
+    "message": "Buka kunci…"
+  },
+  "passwords.working": {
+    "message": "Memproses…"
+  },
+  "properties.accessed": {
+    "message": "Diakses:"
+  },
+  "properties.change_attributes": {
+    "message": "Ubah atribut..."
+  },
+  "properties.close": {
+    "message": "Tutup"
+  },
+  "properties.contents": {
+    "message": "{file_count, plural, other {{files} berkas}}, {folder_count, plural, other {{folders} folder}}, {count, plural, other {{bytes} byte}} ({size})"
+  },
+  "properties.contents_counting": {
+    "message": "{file_count, plural, other {{files} berkas}}, {folder_count, plural, other {{folders} folder}}, {count, plural, other {{bytes} byte}} ({size}) (menghitung…)"
+  },
+  "properties.contents_label": {
+    "message": "Isi:"
+  },
+  "properties.created": {
+    "message": "Dibuat:"
+  },
+  "properties.dialog_title": {
+    "message": "Properti"
+  },
+  "properties.in_archive": {
+    "message": "Daftar arsip menampilkan semua yang diketahuinya tentang berkas-berkasnya."
+  },
+  "properties.kind.file": {
+    "message": "Berkas"
+  },
+  "properties.kind.folder": {
+    "message": "Folder"
+  },
+  "properties.kind.link": {
+    "message": "Tautan"
+  },
+  "properties.kind.link_to": {
+    "message": "Tautan ke {target}"
+  },
+  "properties.location": {
+    "message": "Lokasi:"
+  },
+  "properties.modified": {
+    "message": "Diubah:"
+  },
+  "properties.name": {
+    "message": "Nama:"
+  },
+  "properties.no_system_dialog": {
+    "message": "belum ada dialog properti sistem di sini"
+  },
+  "properties.owner": {
+    "message": "Pemilik / grup:"
+  },
+  "properties.permissions": {
+    "message": "Izin:"
+  },
+  "properties.size": {
+    "message": "{count, plural, other {{bytes} byte ({size})}}"
+  },
+  "properties.size_label": {
+    "message": "Ukuran:"
+  },
+  "properties.type": {
+    "message": "Jenis:"
+  },
+  "quick_open.go_to": {
+    "message": "Pergi ke {path}"
+  },
+  "quick_open.group.bookmarks": {
+    "message": "Markah"
+  },
+  "quick_open.group.connections": {
+    "message": "Koneksi"
+  },
+  "quick_open.group.drives": {
+    "message": "Drive"
+  },
+  "quick_open.group.path": {
+    "message": "Jalur"
+  },
+  "quick_open.group.recent_folders": {
+    "message": "Folder terbaru"
+  },
+  "quick_open.group.tools": {
+    "message": "Alat"
+  },
+  "quick_open.group.workspaces": {
+    "message": "Ruang kerja"
+  },
+  "quick_open.placeholder": {
+    "message": "Perintah, markah, folder, jalur, server, drive, ruang kerja, atau alat"
+  },
+  "quick_open.title": {
+    "message": "Buka cepat"
+  },
+  "quick_view.counting": {
+    "message": "Menghitung…"
+  },
+  "quick_view.downloading": {
+    "message": "Mengunduh…"
+  },
+  "quick_view.empty": {
+    "message": "Tampilan Cepat menampilkan apa yang ditunjuk kursor panel lainnya."
+  },
+  "quick_view.extracting": {
+    "message": "Mengeluarkannya dari arsip…"
+  },
+  "quick_view.files_only": {
+    "message": "Di server dan di dalam arsip, Tampilan Cepat hanya menampilkan berkas."
+  },
+  "quick_view.space.title": {
+    "message": "Total ruang terpakai:"
+  },
+  "quick_view.space.totals": {
+    "message": "{bytes, plural, other {{bytes_grouped} byte}} dalam {files, plural, other {{files_grouped} berkas}}, {folders, plural, other {{folders_grouped} folder}}"
+  },
+  "quick_view.space.unreadable": {
+    "message": "{count} tidak dapat dibaca."
+  },
+  "quick_view.too_large.download": {
+    "message": "{size} terlalu besar untuk diunduh di sini: F3 menampilkannya."
+  },
+  "quick_view.too_large.extract": {
+    "message": "{size} terlalu besar untuk dikeluarkan dari arsip di sini: F3 menampilkannya."
+  },
+  "remote.cancelled": {
+    "message": "dibatalkan"
+  },
+  "remote.cloud.ask": {
+    "message": "{kind, select, application_key {Kunci aplikasi {user} di {host}:} api_key {Kunci API {user} di {host}:} password {Kata sandi {user} di {host}:} other {Kunci rahasia {user} di {host}:}}"
+  },
+  "remote.cloud.ask_again": {
+    "message": "{kind, select, application_key {Kunci aplikasi salah. Kunci aplikasi {user} di {host}:} api_key {Kunci API salah. Kunci API {user} di {host}:} password {Kata sandi salah. Kata sandi {user} di {host}:} other {Kunci salah. Kunci rahasia {user} di {host}:}}"
+  },
+  "remote.cloud.obscure_failed": {
+    "message": "rclone tidak dapat menerima kata sandi"
+  },
+  "remote.cloud.rclone_missing": {
+    "message": "rclone tidak ada: Pengaturan > Pengaya mengunduhnya"
+  },
+  "remote.cloud.title": {
+    "message": "{kind, select, application_key {Kunci aplikasi} api_key {Kunci API} password {Kata sandi} other {Kunci rahasia}}"
+  },
+  "remote.connecting": {
+    "message": "Menghubungkan ke {server}..."
+  },
+  "remote.dialog.cancel": {
+    "message": "Batal"
+  },
+  "remote.dialog.ok": {
+    "message": "OK"
+  },
+  "remote.disconnect_failed": {
+    "message": "{share}: tidak dapat memutuskan sambungan: {err}"
+  },
+  "remote.ftp.password": {
+    "message": "Kata sandi untuk {user}@{host}:"
+  },
+  "remote.ftp.password_again": {
+    "message": "Kata sandi salah. Kata sandi untuk {user}@{host}:"
+  },
+  "remote.ftps.changed": {
+    "message": "Sertifikat TLS {server} telah BERUBAH sejak dicatat di baris {line} pada {file}. Mungkin ada yang menyadap; jika server memiliki sertifikat baru, hapus baris tersebut."
+  },
+  "remote.ftps.not_trusted": {
+    "message": "sertifikat server tidak dipercaya"
+  },
+  "remote.login.password": {
+    "message": "Kata sandi"
+  },
+  "remote.login.title": {
+    "message": "Masuk"
+  },
+  "remote.login.user": {
+    "message": "Pengguna"
+  },
+  "remote.mount.login_wrong": {
+    "message": "pengguna atau kata sandi salah"
+  },
+  "remote.mount.macos_failed": {
+    "message": "macOS tidak dapat mengaitkannya (NetFS {code})"
+  },
+  "remote.mount.needs_desktop": {
+    "message": "memerlukan kio-fuse dari KDE atau gvfs dari GNOME"
+  },
+  "remote.mount.needs_login": {
+    "message": "memerlukan pengguna dan kata sandi"
+  },
+  "remote.mount.no_fuse": {
+    "message": "terkait, tetapi tidak ada folder untuknya: gvfs-fuse tidak ada"
+  },
+  "remote.mount.no_nfs_client": {
+    "message": "tidak ditemukan; NFS memerlukan Klien untuk NFS dari Windows (Fitur Windows)"
+  },
+  "remote.mount.no_share": {
+    "message": "folder bersama tidak disebutkan: smb://server/share"
+  },
+  "remote.mount.not_address": {
+    "message": "bukan alamat"
+  },
+  "remote.mount.not_found": {
+    "message": "terkait, tetapi tidak ditemukan di antara yang terkait"
+  },
+  "remote.mount.other_user": {
+    "message": "Windows terhubung ke server ini sebagai pengguna lain: keluar dari akun, atau gunakan pengguna tersebut"
+  },
+  "remote.password.title": {
+    "message": "Kata sandi"
+  },
+  "remote.remember_password": {
+    "message": "Ingat (Pengaturan › Kata sandi)"
+  },
+  "remote.save_back_failed": {
+    "message": "Tidak dapat menyimpannya kembali: {err}"
+  },
+  "remote.sftp.host_certificate": {
+    "message": "Server menunjukkan sertifikat host; sertifikat seperti ini belum didukung."
+  },
+  "remote.sftp.key_changed": {
+    "message": "Kunci host {server} telah BERUBAH sejak dicatat di baris {line} pada {file}. Mungkin ada yang menyadap; jika server dipasang ulang, hapus baris tersebut."
+  },
+  "remote.sftp.key_not_trusted": {
+    "message": "Kunci host {server} tidak dipercaya."
+  },
+  "remote.sftp.keys_refused": {
+    "message": "{user}@{host}: server menolak kunci dan tidak menerima kata sandi"
+  },
+  "remote.sftp.login_refused": {
+    "message": "{user}@{host}: login ditolak"
+  },
+  "remote.sftp.passphrase": {
+    "message": "Frasa sandi untuk {file}"
+  },
+  "remote.sftp.passphrase_title": {
+    "message": "Frasa sandi kunci"
+  },
+  "remote.sftp.password": {
+    "message": "Kata sandi untuk {user}@{host}"
+  },
+  "remote.unknown_host.once": {
+    "message": "Hubungkan sekali"
+  },
+  "remote.unknown_host.remember": {
+    "message": "Hubungkan dan ingat"
+  },
+  "remote.unknown_host.text": {
+    "message": "{key_type, select, TLS {Server {host} belum dikenal. Sidik jari sertifikat TLS-nya adalah} other {Server {host} belum dikenal. Sidik jari {key_type}-nya adalah}}\n\n{fingerprint}\n\nHubungkan hanya jika ini memang server yang Anda maksud; administratornya dapat mengonfirmasi sidik jari tersebut."
+  },
+  "remote.unknown_host.title": {
+    "message": "Server tidak dikenal"
+  },
+  "rename.case": {
+    "message": "Huruf:"
+  },
+  "rename.case.first": {
+    "message": "Huruf pertama"
+  },
+  "rename.case.lower": {
+    "message": "huruf kecil"
+  },
+  "rename.case.unchanged": {
+    "message": "Tidak diubah"
+  },
+  "rename.case.upper": {
+    "message": "HURUF BESAR"
+  },
+  "rename.case.words": {
+    "message": "Setiap Kata"
+  },
+  "rename.close": {
+    "message": "Tutup"
+  },
+  "rename.counter_start": {
+    "message": "Awal penghitung"
+  },
+  "rename.dialog_title": {
+    "message": "Alat ganti nama massal"
+  },
+  "rename.digits": {
+    "message": "Digit"
+  },
+  "rename.extension": {
+    "message": "Ekstensi"
+  },
+  "rename.field.counter": {
+    "message": "[C] Penghitung"
+  },
+  "rename.field.date": {
+    "message": "[Y][M][D] Tanggal"
+  },
+  "rename.field.extension": {
+    "message": "[E] Eks."
+  },
+  "rename.field.folder": {
+    "message": "[P] Folder"
+  },
+  "rename.field.name": {
+    "message": "[N] Nama"
+  },
+  "rename.field.range": {
+    "message": "[N1-3] Rentang"
+  },
+  "rename.field.time": {
+    "message": "[h][m][s] Waktu"
+  },
+  "rename.first_only": {
+    "message": "Hanya yang pertama"
+  },
+  "rename.in_archive": {
+    "message": "Berkas di dalam arsip belum dapat diganti namanya."
+  },
+  "rename.mask": {
+    "message": "Pola ganti nama: nama berkas"
+  },
+  "rename.match_case": {
+    "message": "Cocokkan huruf besar/kecil"
+  },
+  "rename.new_name": {
+    "message": "Nama baru"
+  },
+  "rename.not_renamed_back": {
+    "message": "{from}: {err}; tidak dikembalikan namanya: {names}"
+  },
+  "rename.not_utf8": {
+    "message": "Nama yang bukan UTF-8 dilewati."
+  },
+  "rename.old_name": {
+    "message": "Nama lama"
+  },
+  "rename.problem.bad_character": {
+    "message": "karakter yang tidak boleh ada dalam nama"
+  },
+  "rename.problem.exists": {
+    "message": "sudah ada"
+  },
+  "rename.problem.no_name": {
+    "message": "tanpa nama"
+  },
+  "rename.problem.twice": {
+    "message": "dua kali dalam daftar"
+  },
+  "rename.regex": {
+    "message": "Ekspresi reguler"
+  },
+  "rename.regex_error": {
+    "message": "Ekspresi reguler: {err}"
+  },
+  "rename.replace": {
+    "message": "Ganti dengan"
+  },
+  "rename.search": {
+    "message": "Cari"
+  },
+  "rename.start": {
+    "message": "Mulai!"
+  },
+  "rename.status.failed": {
+    "message": "Tidak ada yang diganti namanya: {err}"
+  },
+  "rename.status.ready": {
+    "message": "Mulai akan mengganti namanya."
+  },
+  "rename.status.renamed": {
+    "message": "{count, plural, other {# diganti namanya.}}"
+  },
+  "rename.status.took_back": {
+    "message": "{count, plural, other {# dikembalikan.}}"
+  },
+  "rename.step": {
+    "message": "Langkah"
+  },
+  "rename.undo": {
+    "message": "Urungkan"
+  },
+  "rename.was": {
+    "message": "{to} (sebelumnya {from})"
+  },
+  "rename.with_extension": {
+    "message": "Dengan ekstensi"
+  },
+  "scmd.column.modified": {
+    "message": "Diubah"
+  },
+  "scmd.column.name": {
+    "message": "Nama"
+  },
+  "scmd.column.size": {
+    "message": "Ukuran"
+  },
+  "scmd.column.up_dir": {
+    "message": "NAIK--DIR"
+  },
+  "scmd.command_line.not_on_server": {
+    "message": "Perintah berjalan di komputer ini, bukan di server."
+  },
+  "scmd.compare.marked": {
+    "message": "{count, plural, other {# berkas ditandai: lebih baru daripada, atau tidak ada di, sisi lainnya.}}"
+  },
+  "scmd.compare.same": {
+    "message": "Kedua folder berisi berkas yang sama."
+  },
+  "scmd.copying": {
+    "message": "Menyalin {name}..."
+  },
+  "scmd.dialog.buttons": {
+    "message": "Enter OK   Esc Batal"
+  },
+  "scmd.error.read_settings": {
+    "message": "Tidak dapat membaca pengaturan: {err}"
+  },
+  "scmd.error.read_tabs": {
+    "message": "Tidak dapat membaca tab yang terbuka: {err}"
+  },
+  "scmd.error.read_workspaces": {
+    "message": "Tidak dapat membaca ruang kerja: {err}"
+  },
+  "scmd.error.save_back": {
+    "message": "Tidak dapat menyimpannya kembali: {err}"
+  },
+  "scmd.error.save_searches": {
+    "message": "Tidak dapat menyimpan pencarian: {err}"
+  },
+  "scmd.error.save_tabs": {
+    "message": "Tidak dapat menyimpan tab yang terbuka: {err}"
+  },
+  "scmd.find.backwards": {
+    "message": "Mundur"
+  },
+  "scmd.find.case_sensitive": {
+    "message": "Peka huruf besar/kecil"
+  },
+  "scmd.find.hex": {
+    "message": "Heksa (77 6F 72 64)"
+  },
+  "scmd.find.not_found": {
+    "message": "Tidak ditemukan: {text}"
+  },
+  "scmd.find.regex": {
+    "message": "Ekspresi reguler"
+  },
+  "scmd.find.search_for": {
+    "message": "Cari:"
+  },
+  "scmd.find.title": {
+    "message": "Cari"
+  },
+  "scmd.find.whole_words": {
+    "message": "Hanya seluruh kata"
+  },
+  "scmd.group.files": {
+    "message": "Berkas (*.txt *.md; folder diakhiri /):"
+  },
+  "scmd.group.select_title": {
+    "message": "Pilih grup"
+  },
+  "scmd.group.unselect_title": {
+    "message": "Batalkan pilihan grup"
+  },
+  "scmd.key_bar.copy": {
+    "message": "Salin"
+  },
+  "scmd.key_bar.delete": {
+    "message": "Hapus"
+  },
+  "scmd.key_bar.edit": {
+    "message": "Edit"
+  },
+  "scmd.key_bar.menu": {
+    "message": "Menu"
+  },
+  "scmd.key_bar.mkdir": {
+    "message": "Folder"
+  },
+  "scmd.key_bar.move": {
+    "message": "Pindah"
+  },
+  "scmd.key_bar.quit": {
+    "message": "Keluar"
+  },
+  "scmd.key_bar.view": {
+    "message": "Lihat"
+  },
+  "scmd.message.error": {
+    "message": "Kesalahan"
+  },
+  "scmd.message.ok": {
+    "message": "OK"
+  },
+  "scmd.not_yet": {
+    "message": "{what, select, menus {Menu: belum ada di versi terminal.} file_operations {Operasi berkas: belum ada di versi terminal.} servers {Server: belum ada di versi terminal.} other {Perintah ini: belum ada di versi terminal.}}"
+  },
+  "scmd.picture.broken": {
+    "message": "gambar rusak"
+  },
+  "scmd.picture.broken_page": {
+    "message": "halaman rusak"
+  },
+  "scmd.picture.loading": {
+    "message": "Memuat…"
+  },
+  "scmd.picture.no_page": {
+    "message": "PDF tidak memiliki halaman tersebut"
+  },
+  "scmd.shell.press_enter": {
+    "message": "Tekan Enter untuk kembali ke Spark Commander..."
+  },
+  "scmd.sync_browsing.off": {
+    "message": "Penelusuran tersinkron nonaktif."
+  },
+  "scmd.sync_browsing.on": {
+    "message": "Penelusuran tersinkron aktif."
+  },
+  "scmd.sync_browsing.stopped": {
+    "message": "{err}. Penelusuran tersinkron dinonaktifkan."
+  },
+  "scmd.viewer.column": {
+    "message": "Kol {column}"
+  },
+  "scmd.viewer.finding": {
+    "message": "mencari…"
+  },
+  "scmd.viewer.key_bar.next": {
+    "message": "Lanjut"
+  },
+  "scmd.viewer.key_bar.quit": {
+    "message": "Keluar"
+  },
+  "scmd.viewer.key_bar.reload": {
+    "message": "Muat"
+  },
+  "scmd.viewer.key_bar.search": {
+    "message": "Cari"
+  },
+  "scmd.viewer.page": {
+    "message": "hlm {page} dari {pages}"
+  },
+  "scmd.viewer.reading": {
+    "message": "membaca {percent}%"
+  },
+  "scmd.viewer.wrap": {
+    "message": "Bungkus"
+  },
+  "scmd.workspace.copy_name": {
+    "message": "Salinan {name}"
+  },
+  "scmd.workspace.default_name": {
+    "message": "Ruang kerja {number}"
+  },
+  "scmd.workspace.delete_question": {
+    "message": "Hapus “{name}”? Tab-tabnya akan dilupakan."
+  },
+  "scmd.workspace.duplicate_title": {
+    "message": "Duplikat ruang kerja"
+  },
+  "scmd.workspace.last_stays": {
+    "message": "Ruang kerja terakhir tidak dapat dihapus."
+  },
+  "scmd.workspace.name": {
+    "message": "Nama:"
+  },
+  "scmd.workspace.name_or_default": {
+    "message": "Nama (kosong: {name}):"
+  },
+  "scmd.workspace.new_title": {
+    "message": "Ruang kerja baru"
+  },
+  "scmd.workspace.rename_title": {
+    "message": "Ganti nama ruang kerja"
+  },
+  "scmd.workspaces.keys": {
+    "message": "Enter Buka  F7 Baru  F5 Salin  F2 Ganti nama  F8 Hapus"
+  },
+  "scmd.workspaces.title": {
+    "message": "Ruang kerja"
+  },
+  "search.age.days": {
+    "message": "hari"
+  },
+  "search.age.hours": {
+    "message": "jam"
+  },
+  "search.age.minutes": {
+    "message": "menit"
+  },
+  "search.age.months": {
+    "message": "bulan"
+  },
+  "search.age.weeks": {
+    "message": "minggu"
+  },
+  "search.age.years": {
+    "message": "tahun"
+  },
+  "search.archives": {
+    "message": "Cari di dalam arsip"
+  },
+  "search.attribute.directory": {
+    "message": "Folder"
+  },
+  "search.attribute.either": {
+    "message": "Bebas"
+  },
+  "search.attribute.executable": {
+    "message": "Dapat dieksekusi"
+  },
+  "search.attribute.hidden": {
+    "message": "Tersembunyi"
+  },
+  "search.attribute.link": {
+    "message": "Tautan simbolik"
+  },
+  "search.attribute.must": {
+    "message": "Harus"
+  },
+  "search.attribute.must_not": {
+    "message": "Tidak boleh"
+  },
+  "search.attribute.read_only": {
+    "message": "Hanya baca"
+  },
+  "search.attributes.label": {
+    "message": "Atribut:"
+  },
+  "search.between.and": {
+    "message": "dan"
+  },
+  "search.between.label": {
+    "message": "Tanggal antara:"
+  },
+  "search.close": {
+    "message": "Tutup"
+  },
+  "search.depth.all": {
+    "message": "semua (kedalaman tak terbatas)"
+  },
+  "search.depth.current": {
+    "message": "hanya folder saat ini"
+  },
+  "search.depth.label": {
+    "message": "Cari di subfolder:"
+  },
+  "search.depth.levels": {
+    "message": "{count, plural, other {# tingkat}}"
+  },
+  "search.drives": {
+    "message": "Drive"
+  },
+  "search.duplicates.content": {
+    "message": "isi sama"
+  },
+  "search.duplicates.label": {
+    "message": "Cari berkas duplikat:"
+  },
+  "search.duplicates.name": {
+    "message": "nama sama"
+  },
+  "search.duplicates.size": {
+    "message": "ukuran sama"
+  },
+  "search.edit": {
+    "message": "F4 Edit"
+  },
+  "search.error.between_days": {
+    "message": "Tanggal antara memerlukan kedua tanggal"
+  },
+  "search.error.date": {
+    "message": "{text} bukan tanggal seperti 2026-11-12"
+  },
+  "search.error.hex": {
+    "message": "{text} bukan string heksa seperti 48 65 6c"
+  },
+  "search.error.keep": {
+    "message": "Tidak dapat menyimpan pencarian: {err}"
+  },
+  "search.error.local_time": {
+    "message": "{text} bukan waktu lokal yang valid"
+  },
+  "search.error.names_regex": {
+    "message": "Ekspresi reguler nama: {err}"
+  },
+  "search.error.newer_number": {
+    "message": "Tidak lebih lama dari memerlukan angka, bukan {text}"
+  },
+  "search.error.no_place": {
+    "message": "Cari di tidak berisi folder"
+  },
+  "search.error.no_text": {
+    "message": "Cari teks tidak berisi teks"
+  },
+  "search.error.older_number": {
+    "message": "Lebih lama dari memerlukan angka, bukan {text}"
+  },
+  "search.error.save": {
+    "message": "Tidak dapat menyimpan pencarian: {err}"
+  },
+  "search.error.size_number": {
+    "message": "Ukuran berkas memerlukan angka, bukan {text}"
+  },
+  "search.error.text_regex": {
+    "message": "Ekspresi reguler teks: {err}"
+  },
+  "search.feed": {
+    "message": "Tampilkan di panel"
+  },
+  "search.go_to_file": {
+    "message": "Ke berkas"
+  },
+  "search.in_found": {
+    "message": "F2 Cari di berkas yang ditemukan"
+  },
+  "search.locate": {
+    "message": "Dari indeks locate"
+  },
+  "search.names.label": {
+    "message": "Cari:"
+  },
+  "search.names.placeholder": {
+    "message": "*.txt *.md | backup*  (kosong: semua)"
+  },
+  "search.new": {
+    "message": "Pencarian baru"
+  },
+  "search.newer.label": {
+    "message": "Tidak lebih lama dari:"
+  },
+  "search.older.label": {
+    "message": "Lebih lama dari:"
+  },
+  "search.only_selected": {
+    "message": "Hanya cari di berkas/folder terpilih"
+  },
+  "search.only_selected_count": {
+    "message": "{count, plural, other {Hanya cari di # item terpilih}}"
+  },
+  "search.page.advanced": {
+    "message": "Lanjutan"
+  },
+  "search.page.general": {
+    "message": "Umum"
+  },
+  "search.page.load_save": {
+    "message": "Muat/Simpan"
+  },
+  "search.places.browse_prompt": {
+    "message": "Cari di"
+  },
+  "search.places.label": {
+    "message": "Cari di:"
+  },
+  "search.places.placeholder": {
+    "message": "Folder, dipisahkan ;"
+  },
+  "search.regex": {
+    "message": "RegEx"
+  },
+  "search.results.label": {
+    "message": "Hasil pencarian:"
+  },
+  "search.saved.delete": {
+    "message": "Hapus"
+  },
+  "search.saved.label": {
+    "message": "Pencarian sebelumnya:"
+  },
+  "search.saved.load": {
+    "message": "Muat"
+  },
+  "search.saved.name_first": {
+    "message": "Beri nama pencarian terlebih dahulu."
+  },
+  "search.saved.name_placeholder": {
+    "message": "Nama pencarian"
+  },
+  "search.saved.save": {
+    "message": "Simpan"
+  },
+  "search.size.label": {
+    "message": "Ukuran berkas:"
+  },
+  "search.start": {
+    "message": "Mulai cari"
+  },
+  "search.status.found": {
+    "message": "{files, plural, other {# berkas}} dan {dirs, plural, other {# folder}} ditemukan"
+  },
+  "search.status.searching": {
+    "message": "Mencari…"
+  },
+  "search.status.searching_in": {
+    "message": "Mencari: {folder}"
+  },
+  "search.status.stopped": {
+    "message": "Dihentikan: {counts}"
+  },
+  "search.stop": {
+    "message": "Hentikan"
+  },
+  "search.text.ansi": {
+    "message": "ANSI (halaman kode {page})"
+  },
+  "search.text.case_sensitive": {
+    "message": "Peka huruf besar/kecil"
+  },
+  "search.text.hex": {
+    "message": "Heksa"
+  },
+  "search.text.label": {
+    "message": "Cari teks:"
+  },
+  "search.text.not_containing": {
+    "message": "Cari berkas yang TIDAK berisi teks tersebut"
+  },
+  "search.text.office": {
+    "message": "Berkas Office (docx, xlsx, pptx, odt…)"
+  },
+  "search.text.placeholder": {
+    "message": "Teks yang dicari"
+  },
+  "search.text.whole_words": {
+    "message": "Hanya seluruh kata"
+  },
+  "search.title": {
+    "message": "Cari berkas"
+  },
+  "search.unit.bytes": {
+    "message": "byte"
+  },
+  "search.view": {
+    "message": "F3 Lihat"
+  },
+  "settings.addons.builtin_version": {
+    "message": "{version}, disertakan dengan Spark Commander"
+  },
+  "settings.addons.check_daily": {
+    "message": "Cari pembaruan pengaya saat mulai dan setiap hari, lalu tawarkan"
+  },
+  "settings.addons.check_failed": {
+    "message": "Tidak dapat mencari pembaruan: {err}"
+  },
+  "settings.addons.check_now": {
+    "message": "Cari sekarang"
+  },
+  "settings.addons.checking": {
+    "message": "Mencari pembaruan..."
+  },
+  "settings.addons.download": {
+    "message": "Unduh"
+  },
+  "settings.addons.downloading": {
+    "message": "Mengunduh: {done} dari {size}"
+  },
+  "settings.addons.file": {
+    "message": "Berkas"
+  },
+  "settings.addons.installed.builtin": {
+    "message": "disertakan dengan Spark Commander"
+  },
+  "settings.addons.installed.label": {
+    "message": "Terinstal"
+  },
+  "settings.addons.installed.none": {
+    "message": "tidak ada"
+  },
+  "settings.addons.intro": {
+    "message": "Spark Commander menggunakan program dari proyek lain ini untuk sebagian fungsinya. Pengaya diunduh terpisah, saat Anda memilihnya; 7-Zip dan PDFium sudah disertakan."
+  },
+  "settings.addons.never_offer": {
+    "message": "Jangan pernah tawarkan pengaya saat berkas memerlukannya"
+  },
+  "settings.addons.offers": {
+    "message": "Tawaran dan pembaruan"
+  },
+  "settings.addons.online.label": {
+    "message": "Daring"
+  },
+  "settings.addons.online.looking": {
+    "message": "mencari..."
+  },
+  "settings.addons.online.none": {
+    "message": "tidak ada untuk sistem ini"
+  },
+  "settings.addons.online.not_yet": {
+    "message": "belum dicari"
+  },
+  "settings.addons.online.unknown": {
+    "message": "tidak diketahui"
+  },
+  "settings.addons.remove": {
+    "message": "Hapus"
+  },
+  "settings.addons.up_to_date": {
+    "message": "Daftar pengaya sudah mutakhir."
+  },
+  "settings.addons.version": {
+    "message": "Versi"
+  },
+  "settings.addons.website": {
+    "message": "Situs web"
+  },
+  "settings.appearance.title": {
+    "message": "Penampilan"
+  },
+  "settings.apply": {
+    "message": "Terapkan"
+  },
+  "settings.backdrop.blur": {
+    "message": "Buramkan desktop di belakangnya"
+  },
+  "settings.backdrop.clear": {
+    "message": "0%, hanya desktop"
+  },
+  "settings.backdrop.cover": {
+    "message": "Seberapa banyak menutupi desktop di belakangnya:"
+  },
+  "settings.backdrop.opacity": {
+    "message": "{opacity}%"
+  },
+  "settings.backdrop.sidebar": {
+    "message": "Bilah sisi"
+  },
+  "settings.backdrop.solid": {
+    "message": "100%, padat"
+  },
+  "settings.backdrop.terminal": {
+    "message": "Terminal"
+  },
+  "settings.cancel": {
+    "message": "Batal"
+  },
+  "settings.date.as_system": {
+    "message": "Ikuti sistem: {date}"
+  },
+  "settings.date.custom": {
+    "message": "Kustom:"
+  },
+  "settings.date.pattern_help": {
+    "message": "yyyy tahun, MM bulan (MMM namanya), dd hari (ddd nama hari)"
+  },
+  "settings.date.shown_as": {
+    "message": "Ditampilkan sebagai"
+  },
+  "settings.date.shown_as_note": {
+    "message": "di daftar berkas; dialog menambahkan detik"
+  },
+  "settings.date.title": {
+    "message": "Tanggal"
+  },
+  "settings.editor.browse": {
+    "message": "Telusuri..."
+  },
+  "settings.editor.choose": {
+    "message": "Pilih"
+  },
+  "settings.editor.external": {
+    "message": "Editor eksternal (Ctrl+Shift+F4):"
+  },
+  "settings.editor.external_help": {
+    "message": "%1 adalah berkasnya, jika tidak ada berkas diletakkan terakhir; mis. code --wait %1"
+  },
+  "settings.editor.limit": {
+    "message": "Editor bawaan (F4) membuka berkas hingga"
+  },
+  "settings.editor.limit_unit": {
+    "message": "MB"
+  },
+  "settings.editor.title": {
+    "message": "Editor untuk F4"
+  },
+  "settings.error.no_folder": {
+    "message": "tidak ada folder konfigurasi"
+  },
+  "settings.files_shown.hidden": {
+    "message": "Berkas tersembunyi"
+  },
+  "settings.files_shown.system": {
+    "message": "Berkas sistem"
+  },
+  "settings.files_shown.title": {
+    "message": "Berkas yang ditampilkan"
+  },
+  "settings.font.as_system": {
+    "message": "Ikuti sistem"
+  },
+  "settings.font.chosen": {
+    "message": "Dipilih; fon sistem adalah {family}, {size}"
+  },
+  "settings.font.fixed": {
+    "message": "Penampil"
+  },
+  "settings.font.fixed_note": {
+    "message": "Hanya fon lebar tetap; juga untuk editor dan perbandingan berkas."
+  },
+  "settings.font.main": {
+    "message": "Fon jendela utama"
+  },
+  "settings.font.system": {
+    "message": "Fon sistem"
+  },
+  "settings.language.system": {
+    "message": "Bahasa sistem"
+  },
+  "settings.language.system_named": {
+    "message": "Bahasa sistem: {language}"
+  },
+  "settings.language.title": {
+    "message": "Bahasa"
+  },
+  "settings.menus.automatic": {
+    "message": "Otomatis: tombol ☰ di GNOME, bilah menu di tempat lain"
+  },
+  "settings.menus.bar": {
+    "message": "Bilah menu"
+  },
+  "settings.menus.button": {
+    "message": "Tombol ☰ di bilah judul"
+  },
+  "settings.menus.title": {
+    "message": "Menu"
+  },
+  "settings.ok": {
+    "message": "OK"
+  },
+  "settings.page.addons": {
+    "message": "Pengaya"
+  },
+  "settings.page.date": {
+    "message": "Tanggal"
+  },
+  "settings.page.display": {
+    "message": "Tampilan"
+  },
+  "settings.page.edit_view": {
+    "message": "Edit/Lihat"
+  },
+  "settings.page.font": {
+    "message": "Fon"
+  },
+  "settings.page.language": {
+    "message": "Bahasa"
+  },
+  "settings.page.layout": {
+    "message": "Tata letak"
+  },
+  "settings.page.operations": {
+    "message": "Operasi"
+  },
+  "settings.page.passwords": {
+    "message": "Kata sandi"
+  },
+  "settings.page.terminal": {
+    "message": "Terminal"
+  },
+  "settings.page.toolbar": {
+    "message": "Bilah alat"
+  },
+  "settings.passwords.change_master": {
+    "message": "Ubah kata sandi utama…"
+  },
+  "settings.passwords.locked": {
+    "message": "Kata sandi tersebut terkunci di komputer ini: kata sandi utama membukanya."
+  },
+  "settings.passwords.master_set": {
+    "message": "Kata sandi utama telah diatur: dengan folder pengaturan disalin, kata sandi tersebut dapat dibuka di komputer lain setelah kata sandi utama diketik di sana."
+  },
+  "settings.passwords.no_master": {
+    "message": "Kata sandi utama belum diatur: dengan folder pengaturan disalin, kata sandi tersebut tidak dapat dibuka di komputer lain; kata sandi harus diketik lagi di sana."
+  },
+  "settings.passwords.not_removed": {
+    "message": "Kata sandi utama tidak dihapus: {err}"
+  },
+  "settings.passwords.remove_master": {
+    "message": "Hapus kata sandi utama"
+  },
+  "settings.passwords.saved": {
+    "message": "{count, plural, other {# kata sandi disimpan}} (server, folder bersama, drive terenkripsi), terenkripsi di folder pengaturan; kunci yang membukanya ada di keyring komputer ini."
+  },
+  "settings.passwords.set_master": {
+    "message": "Atur kata sandi utama…"
+  },
+  "settings.passwords.title": {
+    "message": "Kata sandi yang disimpan"
+  },
+  "settings.passwords.unlock": {
+    "message": "Buka kunci…"
+  },
+  "settings.queue.clear_after": {
+    "message": "Bersihkan operasi selesai setelah"
+  },
+  "settings.queue.clear_after_help": {
+    "message": "0: segera setelah selesai. Yang gagal dan dibatalkan tetap ada sampai dibersihkan."
+  },
+  "settings.queue.clear_after_unit": {
+    "message": "menit"
+  },
+  "settings.queue.download_limit": {
+    "message": "Batas kecepatan unduh"
+  },
+  "settings.queue.download_limit_help": {
+    "message": "Unduh dari tautan, dan salinan dari server FTP dan SFTP; juga yang sedang berjalan. 0: tanpa batas."
+  },
+  "settings.queue.download_limit_unit": {
+    "message": "KB/s"
+  },
+  "settings.queue.title": {
+    "message": "Antrean operasi"
+  },
+  "settings.shell.default": {
+    "message": "Bawaan: {shell}"
+  },
+  "settings.shell.note": {
+    "message": "Tab terminal baru menjalankannya."
+  },
+  "settings.shell.title": {
+    "message": "Shell"
+  },
+  "settings.sort_folders.by_name": {
+    "message": "Selalu berdasarkan nama"
+  },
+  "settings.sort_folders.like_files": {
+    "message": "Seperti berkas (juga berdasarkan waktu)"
+  },
+  "settings.sort_folders.title": {
+    "message": "Pengurutan folder"
+  },
+  "settings.tabs.header_always": {
+    "message": "Tampilkan kepala tab juga saat hanya ada satu tab"
+  },
+  "settings.tabs.title": {
+    "message": "Tab folder"
+  },
+  "settings.time.as_system": {
+    "message": "Ikuti sistem"
+  },
+  "settings.time.h12": {
+    "message": "12 jam (2:05 PM)"
+  },
+  "settings.time.h24": {
+    "message": "24 jam (14:05)"
+  },
+  "settings.time.title": {
+    "message": "Waktu"
+  },
+  "settings.title": {
+    "message": "Pengaturan"
+  },
+  "settings.toolbar.add": {
+    "message": "Tambah tombol…"
+  },
+  "settings.toolbar.move_down": {
+    "message": "Pindah ke bawah"
+  },
+  "settings.toolbar.move_up": {
+    "message": "Pindah ke atas"
+  },
+  "settings.toolbar.place": {
+    "message": "Di bawah bilah menu; di bilah judul jika menu berada di balik tombol ☰, seperti aplikasi GNOME. Tanpa tombol, bilah alat tidak ditampilkan."
+  },
+  "settings.toolbar.remove": {
+    "message": "Hapus"
+  },
+  "settings.toolbar.replace": {
+    "message": "Ganti…"
+  },
+  "settings.toolbar.restore_default": {
+    "message": "Pulihkan bawaan"
+  },
+  "settings.toolbar.title": {
+    "message": "Tombol bilah alat"
+  },
+  "settings.viewer.font.ansi": {
+    "message": "ANSI (Windows)"
+  },
+  "settings.viewer.font.ascii": {
+    "message": "ASCII (DOS)"
+  },
+  "settings.viewer.font.auto": {
+    "message": "Deteksi otomatis"
+  },
+  "settings.viewer.font.label": {
+    "message": "Fon saat mulai:"
+  },
+  "settings.viewer.font.variable": {
+    "message": "Lebar variabel"
+  },
+  "settings.viewer.minimap": {
+    "message": "Minimap"
+  },
+  "settings.viewer.show": {
+    "message": "Tampilkan:"
+  },
+  "settings.viewer.start.auto": {
+    "message": "Deteksi otomatis"
+  },
+  "settings.viewer.start.binary": {
+    "message": "Biner"
+  },
+  "settings.viewer.start.hex": {
+    "message": "Heksa"
+  },
+  "settings.viewer.start.label": {
+    "message": "Tampilan saat mulai:"
+  },
+  "settings.viewer.start.text": {
+    "message": "Teks"
+  },
+  "settings.viewer.title": {
+    "message": "Penampil untuk F3"
+  },
+  "settings.viewer.width.binary": {
+    "message": "Biner"
+  },
+  "settings.viewer.width.label": {
+    "message": "Lebar tampilan (karakter):"
+  },
+  "settings.viewer.width.text": {
+    "message": "Teks"
+  },
+  "settings.viewer.wrap": {
+    "message": "Bungkus teks"
+  },
+  "shells.command_prompt": {
+    "message": "Prompt Perintah"
+  },
+  "sidebar.device.no_files": {
+    "message": "tidak membagikan berkas"
+  },
+  "sidebar.device.not_answering": {
+    "message": "{name} tidak merespons: buka kuncinya dan buka KDE Connect di perangkat itu, lalu baca ulang folder (F2)."
+  },
+  "sidebar.device.not_answering_error": {
+    "message": "{name} tidak merespons ({err}): buka kuncinya dan buka KDE Connect di perangkat itu."
+  },
+  "sidebar.device.not_connected": {
+    "message": "tidak terhubung"
+  },
+  "sidebar.device.opening": {
+    "message": "Membuka {name}..."
+  },
+  "sidebar.device.reconnecting": {
+    "message": "{name} tidak merespons: menghubungkan lagi..."
+  },
+  "sidebar.device.unmount_failed": {
+    "message": "{name}: tidak dapat melepas kait: {err}"
+  },
+  "sidebar.group.bookmarks": {
+    "message": "Markah"
+  },
+  "sidebar.group.cloud": {
+    "message": "Cloud"
+  },
+  "sidebar.group.devices": {
+    "message": "Perangkat"
+  },
+  "sidebar.group.drives": {
+    "message": "Drive"
+  },
+  "sidebar.group.network": {
+    "message": "Jaringan"
+  },
+  "sidebar.section.connections": {
+    "message": "Koneksi"
+  },
+  "sidebar.section.folders": {
+    "message": "Folder"
+  },
+  "sidebar.section.operations": {
+    "message": "Operasi"
+  },
+  "sidebar.section.places": {
+    "message": "Tempat"
+  },
+  "sidebar.volume.locked": {
+    "message": "terkunci"
+  },
+  "sidebar.volume.mounting": {
+    "message": "Mengaitkan {name}..."
+  },
+  "sidebar.volume.not_mounted": {
+    "message": "tidak terkait"
+  },
+  "sidebar.volume.open": {
+    "message": "Buka"
+  },
+  "sidebar.volume.space": {
+    "message": "{free} bebas dari {total}"
+  },
+  "sidebar.volume.unmount": {
+    "message": "Lepas kait"
+  },
+  "sidebar.volume.unmount_failed": {
+    "message": "Tidak dapat melepas kait: {err}"
+  },
+  "split.bad_size": {
+    "message": "“{size}” bukan ukuran: 100 MB, 1.5 GB, 650m"
+  },
+  "split.choose": {
+    "message": "Letakkan kursor pada berkas yang akan dipisahkan."
+  },
+  "split.combine.choose": {
+    "message": "Letakkan kursor pada salah satu bagian (name.001) atau pada berkas .crc-nya."
+  },
+  "split.combine.dialog_title": {
+    "message": "Gabungkan berkas"
+  },
+  "split.combine.label": {
+    "message": "Gabungkan bagian-bagian menjadi berkas:"
+  },
+  "split.combine.title": {
+    "message": "Gabungkan “{name}”"
+  },
+  "split.combined_no_crc": {
+    "message": "{count, plural, other {# bagian digabungkan, tidak ada berkas CRC untuk pemeriksaan}}"
+  },
+  "split.crc_mismatch": {
+    "message": "{target} tidak cocok dengan {file}: ada bagian yang hilang atau rusak"
+  },
+  "split.crc_names_no_file": {
+    "message": "berkas CRC tidak menyebutkan berkas apa pun"
+  },
+  "split.crc_unreadable": {
+    "message": "digabungkan, tetapi {file} tidak dapat dibaca: {err}"
+  },
+  "split.dialog_title": {
+    "message": "Pisahkan berkas"
+  },
+  "split.label": {
+    "message": "Pisahkan “{name}” menjadi beberapa bagian di folder:"
+  },
+  "split.part_missing": {
+    "message": "{path} tidak ada"
+  },
+  "split.part_size": {
+    "message": "Ukuran bagian:"
+  },
+  "split.title": {
+    "message": "Pisahkan “{name}”"
+  },
+  "sync.close": {
+    "message": "Tutup"
+  },
+  "sync.column.date": {
+    "message": "Tanggal"
+  },
+  "sync.column.name": {
+    "message": "Nama"
+  },
+  "sync.column.size": {
+    "message": "Ukuran"
+  },
+  "sync.compare": {
+    "message": "Bandingkan"
+  },
+  "sync.confirm.copy_left": {
+    "message": "Salin {count} ke kiri ({size})"
+  },
+  "sync.confirm.copy_right": {
+    "message": "Salin {count} ke kanan ({size})"
+  },
+  "sync.confirm.delete_left": {
+    "message": "Hapus {count} di kiri"
+  },
+  "sync.confirm.delete_right": {
+    "message": "Hapus {count} di kanan"
+  },
+  "sync.confirm.ok": {
+    "message": "Sinkronkan"
+  },
+  "sync.confirm.text": {
+    "message": "{actions}. Berkas yang disalin menggantikan berkas yang ada di sana.{trash, select, yes { Yang dihapus di komputer ini dipindahkan ke Tong Sampah.} other {}}"
+  },
+  "sync.confirm.title": {
+    "message": "Sinkronkan"
+  },
+  "sync.error.changed": {
+    "message": "berubah sejak dibandingkan; bandingkan lagi"
+  },
+  "sync.error.compare": {
+    "message": "Tidak dapat membandingkan: {err}"
+  },
+  "sync.error.no_folders": {
+    "message": "Sinkronkan folder membandingkan dua folder: tidak ada panel yang boleh menampilkan arsip atau hasil pencarian."
+  },
+  "sync.left": {
+    "message": "Kiri"
+  },
+  "sync.mask.label": {
+    "message": "Berkas:"
+  },
+  "sync.option.asymmetric": {
+    "message": "Asimetris (kanan menjadi salinan kiri)"
+  },
+  "sync.option.by_content": {
+    "message": "Berdasarkan isi"
+  },
+  "sync.option.ignore_date": {
+    "message": "Abaikan tanggal"
+  },
+  "sync.option.subfolders": {
+    "message": "Subfolder"
+  },
+  "sync.result.done": {
+    "message": "{count, plural, other {# disinkronkan}}"
+  },
+  "sync.result.failed": {
+    "message": "{count, plural, other {# tidak disinkronkan}}; {first}"
+  },
+  "sync.right": {
+    "message": "Kanan"
+  },
+  "sync.show.equal": {
+    "message": "= sama"
+  },
+  "sync.show.label": {
+    "message": "Tampilkan:"
+  },
+  "sync.show.other": {
+    "message": "≠ dibiarkan"
+  },
+  "sync.show.to_left": {
+    "message": "← ke kiri"
+  },
+  "sync.show.to_right": {
+    "message": "→ ke kanan"
+  },
+  "sync.status.both_empty": {
+    "message": "Keduanya kosong."
+  },
+  "sync.status.comparing": {
+    "message": "Membandingkan {folder}"
+  },
+  "sync.status.counts": {
+    "message": "{right} disalin ke kanan, {left} disalin ke kiri, {delete} dihapus, {equal} sama, {alone} dibiarkan"
+  },
+  "sync.status.stopped": {
+    "message": "Dihentikan."
+  },
+  "sync.stop": {
+    "message": "Hentikan"
+  },
+  "sync.synchronize": {
+    "message": "Sinkronkan..."
+  },
+  "sync.task.title": {
+    "message": "Sinkronkan {left} dan {right}"
+  },
+  "sync.title": {
+    "message": "Sinkronkan folder"
+  },
+  "tab_menu.close_all_tabs": {
+    "message": "Tutup semua tab"
+  },
+  "tab_menu.close_duplicate_tabs": {
+    "message": "Tutup tab duplikat"
+  },
+  "tab_menu.close_tab": {
+    "message": "Tutup tab ini"
+  },
+  "tab_menu.copy_tab_to_other_panel": {
+    "message": "Salin tab ke panel lainnya"
+  },
+  "tab_menu.duplicate_tab": {
+    "message": "Duplikat tab ini"
+  },
+  "tab_menu.list_tabs": {
+    "message": "Tampilkan daftar semua tab"
+  },
+  "tab_menu.lock_tab": {
+    "message": "Kunci tab ini"
+  },
+  "tab_menu.none": {
+    "message": "(tidak ada)"
+  },
+  "tab_menu.rename_tab": {
+    "message": "Ganti nama tab..."
+  },
+  "tabs.error.reopen": {
+    "message": "Tidak dapat membuka kembali tab: {err}"
+  },
+  "tabs.history.empty": {
+    "message": "Belum ada folder dalam riwayat tab ini."
+  },
+  "tabs.new": {
+    "message": "Tab baru"
+  },
+  "tabs.rename.label": {
+    "message": "Nama baru:"
+  },
+  "tabs.rename.title": {
+    "message": "Ganti nama tab"
+  },
+  "tabs.search_results": {
+    "message": "Hasil pencarian"
+  },
+  "terminal.busy": {
+    "message": "Ada program yang berjalan di terminal: jalankan perintah setelah program itu selesai."
+  },
+  "terminal.close.idle": {
+    "message": "Tutup tab terminal ini? Shell-nya akan berakhir."
+  },
+  "terminal.close.ok": {
+    "message": "Tutup"
+  },
+  "terminal.close.running": {
+    "message": "Tutup tab terminal ini? Program yang berjalan di dalamnya akan dihentikan."
+  },
+  "terminal.close.title": {
+    "message": "Tutup tab"
+  },
+  "terminal.error.start_shell": {
+    "message": "Tidak dapat memulai shell: {err}"
+  },
+  "terminal.jump_to_bottom": {
+    "message": "Ke bawah (Ctrl+End) ↓"
+  },
+  "terminal.menu.copy": {
+    "message": "Salin"
+  },
+  "terminal.menu.paste": {
+    "message": "Tempel"
+  },
+  "toolbar.customize": {
+    "message": "Sesuaikan bilah alat…"
+  },
+  "tools.clear_key": {
+    "message": "Hapus"
+  },
+  "tools.close": {
+    "message": "Tutup"
+  },
+  "tools.delete": {
+    "message": "Hapus"
+  },
+  "tools.empty": {
+    "message": "Belum ada alat: Baru... menambahkannya."
+  },
+  "tools.field.command": {
+    "message": "Perintah"
+  },
+  "tools.field.key": {
+    "message": "Tombol"
+  },
+  "tools.field.name": {
+    "message": "Nama"
+  },
+  "tools.intro": {
+    "message": "Baris perintah Anda sendiri, di menu Alat: klik salah satunya di sana, atau tekan tombolnya."
+  },
+  "tools.key.none": {
+    "message": "Tidak ada"
+  },
+  "tools.key.waiting": {
+    "message": "Tekan tombol... (Esc: tidak ada)"
+  },
+  "tools.move_down": {
+    "message": "Pindah ke bawah"
+  },
+  "tools.move_up": {
+    "message": "Pindah ke atas"
+  },
+  "tools.name.placeholder": {
+    "message": "Bandingkan dengan sisi lainnya"
+  },
+  "tools.new": {
+    "message": "Baru..."
+  },
+  "tools.new_name": {
+    "message": "Alat {number}"
+  },
+  "tools.no_command": {
+    "message": "{tool} belum memiliki perintah: Alat > Kelola alat."
+  },
+  "tools.not_local": {
+    "message": "Alat berjalan di komputer ini: panel sedang menampilkan server atau arsip."
+  },
+  "tools.note.key_of_command": {
+    "message": "{key} juga untuk {command}: alat ini yang memakainya."
+  },
+  "tools.note.key_of_other_tool": {
+    "message": "{key} juga milik {tool}: yang lebih bawah di daftar yang memakainya."
+  },
+  "tools.placeholders": {
+    "message": "%P folder panel ini, %T folder panel lainnya (keduanya diakhiri pemisah, jadi “%P%N” adalah jalur), %N berkas di bawah kursor, %O namanya tanpa ekstensi, %E ekstensinya, %S berkas terpilih (jika tidak, berkas di kursor), masing-masing dalam tanda kutip; %% sebuah %. Beri tanda kutip pada sisanya: \"%P%N\"."
+  },
+  "tools.run_in_terminal": {
+    "message": "Jalankan di terminal, untuk melihat keluarannya"
+  },
+  "tools.set_key": {
+    "message": "Atur tombol..."
+  },
+  "tools.title": {
+    "message": "Alat"
+  },
+  "transfer.answer.cancel": {
+    "message": "Batal"
+  },
+  "transfer.answer.elevate": {
+    "message": "Sebagai administrator"
+  },
+  "transfer.answer.overwrite": {
+    "message": "Timpa"
+  },
+  "transfer.answer.overwrite_all": {
+    "message": "Timpa semua"
+  },
+  "transfer.answer.rename": {
+    "message": "Ganti nama"
+  },
+  "transfer.answer.retry": {
+    "message": "Coba lagi"
+  },
+  "transfer.answer.skip": {
+    "message": "Lewati"
+  },
+  "transfer.answer.skip_all": {
+    "message": "Lewati semua"
+  },
+  "transfer.archive.local_only": {
+    "message": "Hanya berkas komputer ini yang dapat dimasukkan ke arsip: salin berkas ke sini terlebih dahulu."
+  },
+  "transfer.cancel": {
+    "message": "Batal"
+  },
+  "transfer.error.elevate_hint": {
+    "message": "Sebagai administrator: berkas ini dan yang lain yang ditolak, setelah sisanya selesai, dengan meminta kata sandi sekali saja."
+  },
+  "transfer.error.title": {
+    "message": "Kesalahan"
+  },
+  "transfer.exists.describe": {
+    "message": "{count, plural, other {{size} byte, {time}}}"
+  },
+  "transfer.exists.text": {
+    "message": "Yang sudah ada: {existing}\nYang baru: {new}"
+  },
+  "transfer.exists.title": {
+    "message": "Berkas sudah ada"
+  },
+  "transfer.extract_failed": {
+    "message": "Tidak dapat mengeluarkannya: {err}"
+  },
+  "transfer.into_archive.question_many": {
+    "message": "{kind, select, copy {Salin} other {Pindahkan}} {count, plural, other {# item}} ke {into}? Yang bernama sama di sana akan diganti."
+  },
+  "transfer.into_archive.question_one": {
+    "message": "{kind, select, copy {Salin} other {Pindahkan}} “{name}” ke {into}? Yang bernama sama di sana akan diganti."
+  },
+  "transfer.into_archive.title_many": {
+    "message": "{kind, select, copy {Salin} other {Pindahkan}} {count, plural, other {# item}} ke {archive}"
+  },
+  "transfer.into_archive.title_one": {
+    "message": "{kind, select, copy {Salin} other {Pindahkan}} “{name}” ke {archive}"
+  },
+  "transfer.label.many": {
+    "message": "{kind, select, copy {Salin} other {Pindahkan}} {count, plural, other {# item}} ke:"
+  },
+  "transfer.label.many_server": {
+    "message": "{kind, select, copy {Salin} other {Pindahkan}} {count, plural, other {# item}} ke {server}:"
+  },
+  "transfer.label.one": {
+    "message": "{kind, select, copy {Salin} other {Pindahkan}} “{name}” ke:"
+  },
+  "transfer.label.one_server": {
+    "message": "{kind, select, copy {Salin} other {Pindahkan}} “{name}” ke {server}:"
+  },
+  "transfer.ok": {
+    "message": "OK"
+  },
+  "transfer.overwrite.all": {
+    "message": "Timpa semua"
+  },
+  "transfer.overwrite.ask": {
+    "message": "Tanya"
+  },
+  "transfer.overwrite.label": {
+    "message": "Jika di target ada berkas dengan nama yang sama:"
+  },
+  "transfer.overwrite.older": {
+    "message": "Timpa yang lebih lama"
+  },
+  "transfer.overwrite.rename": {
+    "message": "Ganti nama salinan"
+  },
+  "transfer.overwrite.skip": {
+    "message": "Lewati semua"
+  },
+  "transfer.remove_moved": {
+    "message": "Hapus yang dipindahkan dari {name}"
+  },
+  "transfer.speed": {
+    "message": "{size}/s"
+  },
+  "transfer.strip.counting": {
+    "message": "menghitung: {count, plural, other {# berkas}}"
+  },
+  "transfer.strip.progress": {
+    "message": "{files} / {count, plural, other {# berkas}}, {percent}%"
+  },
+  "transfer.strip.queue": {
+    "message": "Antrean..."
+  },
+  "transfer.strip.queue_waiting": {
+    "message": "Antrean ({count, plural, other {# menunggu}})..."
+  },
+  "transfer.title.copy": {
+    "message": "Salin"
+  },
+  "transfer.title.move": {
+    "message": "Pindahkan"
+  },
+  "viewer.as_text_hint": {
+    "message": "{err}. 1 menampilkan berkas sebagai teks."
+  },
+  "viewer.book.cannot_read": {
+    "message": "Buku ini tidak dapat dibaca: {err}. 1 menampilkan berkas sebagai teks."
+  },
+  "viewer.book.continuing": {
+    "message": "Melanjutkan dari {percent}"
+  },
+  "viewer.book.error.compression": {
+    "message": "dikompresi dengan cara yang belum dapat dibaca ({compression})"
+  },
+  "viewer.book.error.damaged": {
+    "message": "buku rusak"
+  },
+  "viewer.book.error.damaged_zip": {
+    "message": "zip rusak"
+  },
+  "viewer.book.error.drm": {
+    "message": "dilindungi DRM: hanya Kindle yang dapat membacanya"
+  },
+  "viewer.book.error.huffman": {
+    "message": "dikompresi seperti buku milik Amazon sendiri (HUFF/CDIC), yang belum dapat dibaca"
+  },
+  "viewer.book.error.missing_part": {
+    "message": "{name} tidak ada di dalam buku"
+  },
+  "viewer.book.error.no_package": {
+    "message": "tidak ada berkas paket di dalam buku"
+  },
+  "viewer.book.error.no_text": {
+    "message": "buku ini tidak berisi teks"
+  },
+  "viewer.book.error.not_zip": {
+    "message": "bukan zip: buku rusak atau dilindungi DRM?"
+  },
+  "viewer.book.error.zip_method": {
+    "message": "{name}: dikompresi dengan cara zip yang tidak dapat dibaca di sini ({method})"
+  },
+  "viewer.cannot_show": {
+    "message": "Tidak dapat menampilkannya: {err}"
+  },
+  "viewer.convert.failed": {
+    "message": "{tool} tidak dapat mengonversinya ({status})"
+  },
+  "viewer.converting": {
+    "message": "Mengonversi dengan {tool}…"
+  },
+  "viewer.copy.too_large": {
+    "message": "Pilihan lebih dari {megabytes} MB tidak disalin."
+  },
+  "viewer.encoding.cp1250": {
+    "message": "Eropa Timur (1250)"
+  },
+  "viewer.encoding.cp1251": {
+    "message": "Sirilik Windows (1251)"
+  },
+  "viewer.encoding.cp1252": {
+    "message": "Latin1 Barat (1252)"
+  },
+  "viewer.encoding.cp1253": {
+    "message": "Yunani (1253)"
+  },
+  "viewer.encoding.cp1254": {
+    "message": "Turki (1254)"
+  },
+  "viewer.encoding.cp1255": {
+    "message": "Ibrani (1255)"
+  },
+  "viewer.encoding.cp1256": {
+    "message": "Arab (1256)"
+  },
+  "viewer.encoding.cp1257": {
+    "message": "Baltik (1257)"
+  },
+  "viewer.encoding.cp1258": {
+    "message": "Vietnam (1258)"
+  },
+  "viewer.encoding.cp20866": {
+    "message": "Sirilik KOI8-R (20866)"
+  },
+  "viewer.encoding.cp437": {
+    "message": "DOS-USA (437)"
+  },
+  "viewer.encoding.cp850": {
+    "message": "DOS-LATIN1 (850)"
+  },
+  "viewer.encoding.cp852": {
+    "message": "DOS Eropa Tengah (852)"
+  },
+  "viewer.encoding.cp866": {
+    "message": "DOS Sirilik (866)"
+  },
+  "viewer.encoding.cp874": {
+    "message": "Thai (874)"
+  },
+  "viewer.encoding.cp932": {
+    "message": "Jepang (932)"
+  },
+  "viewer.encoding.cp936": {
+    "message": "Tionghoa Daratan (936)"
+  },
+  "viewer.encoding.cp949": {
+    "message": "Korea (949)"
+  },
+  "viewer.encoding.cp950": {
+    "message": "Tionghoa Taiwan (950)"
+  },
+  "viewer.find.not_found": {
+    "message": "Tidak ditemukan: {text}"
+  },
+  "viewer.find.not_hex": {
+    "message": "Bukan string heksa: {text}"
+  },
+  "viewer.find.nothing": {
+    "message": "Tidak ada yang dicari."
+  },
+  "viewer.find.save_failed": {
+    "message": "Tidak dapat menyimpan pencarian: {err}"
+  },
+  "viewer.loading": {
+    "message": "Memuat…"
+  },
+  "viewer.markdown.too_large": {
+    "message": "Lebih dari {megabytes} MB: 1 menampilkannya sebagai teks."
+  },
+  "viewer.menu.binary": {
+    "message": "Biner (panjang baris tetap)"
+  },
+  "viewer.menu.book": {
+    "message": "Buku (EPUB, FB2)"
+  },
+  "viewer.menu.close": {
+    "message": "Tutup"
+  },
+  "viewer.menu.configure": {
+    "message": "Konfigurasi..."
+  },
+  "viewer.menu.copy_hex": {
+    "message": "Salin sebagai karakter heksa"
+  },
+  "viewer.menu.copy_text": {
+    "message": "Salin sebagai teks"
+  },
+  "viewer.menu.edit": {
+    "message": "Edit"
+  },
+  "viewer.menu.encoding": {
+    "message": "Pengodean"
+  },
+  "viewer.menu.file": {
+    "message": "Berkas"
+  },
+  "viewer.menu.find": {
+    "message": "Cari..."
+  },
+  "viewer.menu.find_next": {
+    "message": "Cari berikutnya"
+  },
+  "viewer.menu.fit_image": {
+    "message": "Sesuaikan gambar dengan jendela"
+  },
+  "viewer.menu.font_ansi": {
+    "message": "ANSI (set karakter Windows)"
+  },
+  "viewer.menu.font_ascii": {
+    "message": "ASCII (set karakter DOS)"
+  },
+  "viewer.menu.font_page": {
+    "message": "Sesuai pengaturan fon"
+  },
+  "viewer.menu.font_variable": {
+    "message": "Lebar karakter variabel"
+  },
+  "viewer.menu.hex": {
+    "message": "Heksa"
+  },
+  "viewer.menu.html": {
+    "message": "Teks HTML (tanpa tag)"
+  },
+  "viewer.menu.minimap": {
+    "message": "Minimap"
+  },
+  "viewer.menu.next_file": {
+    "message": "Berkas berikutnya"
+  },
+  "viewer.menu.only_larger": {
+    "message": "Sesuaikan hanya gambar yang lebih besar"
+  },
+  "viewer.menu.open": {
+    "message": "Buka..."
+  },
+  "viewer.menu.options": {
+    "message": "Opsi"
+  },
+  "viewer.menu.picture": {
+    "message": "Gambar/Multimedia"
+  },
+  "viewer.menu.previous_file": {
+    "message": "Berkas sebelumnya"
+  },
+  "viewer.menu.reload": {
+    "message": "Muat ulang"
+  },
+  "viewer.menu.save_as": {
+    "message": "Simpan sebagai..."
+  },
+  "viewer.menu.search_google": {
+    "message": "Cari teks terpilih dengan Google"
+  },
+  "viewer.menu.select_all": {
+    "message": "Pilih semua"
+  },
+  "viewer.menu.syntax_colors": {
+    "message": "Warna sintaksis"
+  },
+  "viewer.menu.text_only": {
+    "message": "Hanya teks"
+  },
+  "viewer.menu.unicode": {
+    "message": "Unicode (UTF-16)"
+  },
+  "viewer.menu.wrap": {
+    "message": "Bungkus teks ({columns, plural, other {# kolom}})"
+  },
+  "viewer.mode.binary": {
+    "message": "Biner · {page}"
+  },
+  "viewer.mode.book": {
+    "message": "Buku"
+  },
+  "viewer.mode.hex": {
+    "message": "Heksa · {page}"
+  },
+  "viewer.mode.html": {
+    "message": "Teks HTML"
+  },
+  "viewer.mode.image": {
+    "message": "Gambar"
+  },
+  "viewer.mode.multimedia": {
+    "message": "Multimedia"
+  },
+  "viewer.mode.pdf_by": {
+    "message": "PDF oleh {tool}"
+  },
+  "viewer.mode.text": {
+    "message": "Teks · {page}"
+  },
+  "viewer.origin.not_editable": {
+    "message": "hanya berkas di dalam arsip 7z, zip, jar, dan tar yang dapat diedit"
+  },
+  "viewer.origin.updated": {
+    "message": "{archive} diperbarui"
+  },
+  "viewer.origin.updated_on": {
+    "message": "{archive} di {server} diperbarui"
+  },
+  "viewer.origin.uploaded": {
+    "message": "{path} diunggah"
+  },
+  "viewer.pdf.cannot_show": {
+    "message": "PDF ini tidak dapat ditampilkan: {err}"
+  },
+  "viewer.pdf.loading": {
+    "message": "Memuat..."
+  },
+  "viewer.pdf.page": {
+    "message": "Halaman {page} / {pages}"
+  },
+  "viewer.picture.cannot_show": {
+    "message": "Gambar ini tidak dapat ditampilkan; 1 menampilkannya sebagai teks."
+  },
+  "viewer.save_as.failed": {
+    "message": "Tidak dapat menyimpan {path}: {err}"
+  },
+  "viewer.status.rows": {
+    "message": "{count, plural, other {{first}–{last} dari {grouped} baris}}"
+  },
+  "viewer.status.rows_so_far": {
+    "message": "{count, plural, other {{grouped} baris sejauh ini, {percent} dibaca}}"
+  },
+  "viewer.status.searching": {
+    "message": "Mencari…"
+  },
+  "viewer.status.size": {
+    "message": "{count, plural, other {{grouped} byte}}"
+  },
+  "viewer.window.title": {
+    "message": "{path} — Penampil"
+  },
+  "viewer.zoom.fit": {
+    "message": "Kembali menyesuaikan jendela (Ctrl+0)"
+  },
+  "viewer.zoom.in": {
+    "message": "Perbesar (Ctrl++)"
+  },
+  "viewer.zoom.out": {
+    "message": "Perkecil (Ctrl+-)"
+  },
+  "viewer.zoom.reset": {
+    "message": "Kembali ke 100% (Ctrl+0)"
+  },
+  "workspaces.button.close": {
+    "message": "Tutup"
+  },
+  "workspaces.button.delete": {
+    "message": "Hapus..."
+  },
+  "workspaces.button.duplicate": {
+    "message": "Duplikat..."
+  },
+  "workspaces.button.new": {
+    "message": "Baru..."
+  },
+  "workspaces.button.rename": {
+    "message": "Ganti nama..."
+  },
+  "workspaces.delete.button": {
+    "message": "Hapus"
+  },
+  "workspaces.delete.closed": {
+    "message": "Hapus ruang kerja “{name}”? Tab-tabnya akan dilupakan."
+  },
+  "workspaces.delete.closed_shells": {
+    "message": "Hapus ruang kerja “{name}”? Tab-tabnya akan dilupakan, dan shell di tab terminalnya akan berakhir."
+  },
+  "workspaces.delete.open": {
+    "message": "Hapus ruang kerja “{name}”? Tab-tabnya akan ditutup; “{other}” dibuka sebagai gantinya."
+  },
+  "workspaces.delete.open_shells": {
+    "message": "Hapus ruang kerja “{name}”? Tab-tabnya akan ditutup, dan shell di tab terminalnya akan berakhir; “{other}” dibuka sebagai gantinya."
+  },
+  "workspaces.delete.title": {
+    "message": "Hapus ruang kerja"
+  },
+  "workspaces.duplicate.name": {
+    "message": "Salinan {name}"
+  },
+  "workspaces.duplicate.title": {
+    "message": "Duplikat ruang kerja"
+  },
+  "workspaces.error.name_taken": {
+    "message": "Ruang kerja lain sudah memakai nama ini."
+  },
+  "workspaces.error.no_name": {
+    "message": "Ruang kerja harus memiliki nama."
+  },
+  "workspaces.error.save": {
+    "message": "Tidak dapat menyimpan ruang kerja: {err}"
+  },
+  "workspaces.hint": {
+    "message": "Tampilan > Ruang kerja membuka salah satunya. Perubahan pada ruang kerja yang terbuka disimpan di dalamnya."
+  },
+  "workspaces.name.label": {
+    "message": "Nama:"
+  },
+  "workspaces.new.name": {
+    "message": "Ruang kerja {number}"
+  },
+  "workspaces.new.title": {
+    "message": "Ruang kerja baru"
+  },
+  "workspaces.open": {
+    "message": "terbuka"
+  },
+  "workspaces.rename.title": {
+    "message": "Ganti nama ruang kerja"
+  },
+  "workspaces.summary.panels": {
+    "message": "Kiri {left, plural, other {# tab}}, kanan {right, plural, other {# tab}}"
+  },
+  "workspaces.summary.terminal": {
+    "message": "Kiri {left, plural, other {# tab}}, kanan {right, plural, other {# tab}}, terminal {terminal, plural, other {# tab}}"
+  },
+  "workspaces.summary.terminal_hidden": {
+    "message": "Kiri {left, plural, other {# tab}}, kanan {right, plural, other {# tab}}, terminal {terminal, plural, other {# tab}} (tersembunyi)"
+  },
+  "workspaces.title": {
+    "message": "Ruang kerja"
+  }
+}

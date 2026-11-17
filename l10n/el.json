@@ -1,0 +1,4823 @@
+{
+  "about.addons": {
+    "message": "Πρόσθετα, με λήψη όταν το επιλέξετε"
+  },
+  "about.libraries": {
+    "message": "Βασίζεται σε"
+  },
+  "about.licence": {
+    "message": "Άδεια:"
+  },
+  "about.made_with": {
+    "message": "Δημιουργήθηκε με τη δουλειά αυτών των έργων"
+  },
+  "about.part.alacritty_terminal": {
+    "message": "Η οθόνη και το κέλυφος του ενσωματωμένου τερματικού"
+  },
+  "about.part.encoding_rs": {
+    "message": "Κωδικοσελίδες"
+  },
+  "about.part.gpui": {
+    "message": "Το παράθυρο, η σχεδίαση και η είσοδος (του Zed)"
+  },
+  "about.part.gpui_kit": {
+    "message": "Στοιχεία ελέγχου: λίστες, μενού, πεδία, ο επεξεργαστής"
+  },
+  "about.part.html5ever": {
+    "message": "HTML και ηλεκτρονικά βιβλία στο πρόγραμμα προβολής"
+  },
+  "about.part.image": {
+    "message": "Εικόνες"
+  },
+  "about.part.keyring": {
+    "message": "Κωδικοί πρόσβασης στην κλειδοθήκη του συστήματος"
+  },
+  "about.part.lucide": {
+    "message": "Εικονίδια"
+  },
+  "about.part.material_icons": {
+    "message": "Εικονίδια αρχείων και φακέλων"
+  },
+  "about.part.pdfium_render": {
+    "message": "PDFium από τη Rust"
+  },
+  "about.part.ratatui": {
+    "message": "scmd, η έκδοση για τερματικό"
+  },
+  "about.part.russh": {
+    "message": "SSH και SFTP"
+  },
+  "about.part.rustls": {
+    "message": "TLS"
+  },
+  "about.part.serde": {
+    "message": "Αρχεία ρυθμίσεων"
+  },
+  "about.part.similar": {
+    "message": "Σύγκριση περιεχομένου"
+  },
+  "about.part.suppaftp": {
+    "message": "FTP και FTPS"
+  },
+  "about.part.tokio": {
+    "message": "Εργασίες δικτύου στο παρασκήνιο"
+  },
+  "about.part.trash": {
+    "message": "Ο κάδος απορριμμάτων"
+  },
+  "about.part.tree_sitter": {
+    "message": "Χρωματισμός κώδικα στο πρόγραμμα προβολής και στον επεξεργαστή"
+  },
+  "about.part.zbus": {
+    "message": "D-Bus: η επιφάνεια εργασίας, οι συσκευές, το KDE Connect"
+  },
+  "about.shipped": {
+    "message": "Περιλαμβάνονται"
+  },
+  "about.tagline": {
+    "message": "Διαχειριστής αρχείων δύο πάνελ, ελεύθερο λογισμικό."
+  },
+  "about.title": {
+    "message": "Πληροφορίες για το Spark Commander"
+  },
+  "about.version": {
+    "message": "Έκδοση {version}"
+  },
+  "activity.clear": {
+    "message": "Εκκαθάριση"
+  },
+  "activity.clear_failed": {
+    "message": "Δεν ήταν δυνατή η εκκαθάριση του ημερολογίου: {err}"
+  },
+  "activity.empty": {
+    "message": "Δεν έχει γίνει τίποτα ακόμα."
+  },
+  "activity.title": {
+    "message": "Ημερολόγιο δραστηριότητας"
+  },
+  "addons.error.damaged": {
+    "message": "η λήψη είναι κατεστραμμένη: το άθροισμα ελέγχου διαφέρει"
+  },
+  "addons.error.list": {
+    "message": "η λίστα πρόσθετων: {err}"
+  },
+  "addons.error.missing_file": {
+    "message": "η λήψη δεν περιέχει το {file}"
+  },
+  "addons.error.no_folder": {
+    "message": "δεν υπάρχει φάκελος δεδομένων"
+  },
+  "addons.error.unpacking": {
+    "message": "αποσυμπίεση: {err}"
+  },
+  "addons.installed": {
+    "message": "Το {addon} {version} εγκαταστάθηκε."
+  },
+  "addons.megabytes": {
+    "message": "{size} MB"
+  },
+  "addons.offer.never": {
+    "message": "Να μην εμφανιστεί ξανά"
+  },
+  "addons.offer.no": {
+    "message": "Όχι"
+  },
+  "addons.offer.text": {
+    "message": "Το {name} χρειάζεται ένα πρόσθετο που δεν είναι εγκατεστημένο: {addon}. Να γίνει λήψη του στις Ρυθμίσεις > Πρόσθετα;"
+  },
+  "addons.offer.title": {
+    "message": "Πρόσθετο"
+  },
+  "addons.offer.yes": {
+    "message": "Ναι"
+  },
+  "addons.purpose.cloud": {
+    "message": "Διαδικτυακός αποθηκευτικός χώρος: S3, Google Drive, OneDrive, Dropbox και άλλες υπηρεσίες."
+  },
+  "addons.purpose.media": {
+    "message": "Βίντεο και ήχος, καθώς και φωτογραφίες HEIC και AVIF: τα εμφανίζουν το πρόγραμμα προβολής και η Γρήγορη προβολή."
+  },
+  "addons.purpose.office": {
+    "message": "Έγγραφα γραφείου: το πρόγραμμα προβολής εμφανίζει αρχεία Word, Excel και PowerPoint ως PDF."
+  },
+  "addons.purpose.pdfium": {
+    "message": "PDF: το πρόγραμμα προβολής εμφανίζει αρχεία PDF, καθώς και έγγραφα γραφείου μετά τη μετατροπή τους."
+  },
+  "addons.purpose.seven_zip": {
+    "message": "Αρχειοθήκες: συμπίεση και αποσυμπίεση 7z, zip, rar, tar και άλλων."
+  },
+  "addons.update": {
+    "message": "Ενημέρωση"
+  },
+  "addons.updates": {
+    "message": "Ενημερώσεις πρόσθετων: {names}"
+  },
+  "appearance.dark": {
+    "message": "Σκούρο"
+  },
+  "appearance.light": {
+    "message": "Ανοιχτό"
+  },
+  "appearance.system": {
+    "message": "Όπως το σύστημα"
+  },
+  "archive.cannot_read": {
+    "message": "{name}: δεν είναι δυνατή η ανάγνωση"
+  },
+  "archive.not_in_archive": {
+    "message": "Το {name} δεν υπάρχει στην αρχειοθήκη"
+  },
+  "archive.not_own_folder": {
+    "message": "Ο φάκελος {folder} δεν είναι προσωπικός φάκελος αυτού του χρήστη"
+  },
+  "archive.seven_zip_failed": {
+    "message": "Το 7-Zip απέτυχε ({code})"
+  },
+  "archive.seven_zip_missing": {
+    "message": "Το 7-Zip λείπει: {path} (εκτελέστε το vendor/7zip/fetch.sh ή το fetch.bat)"
+  },
+  "archive.temp_not_utf8": {
+    "message": "το όνομα του προσωρινού φακέλου δεν είναι UTF-8"
+  },
+  "associations.add": {
+    "message": "Προσθήκη..."
+  },
+  "associations.cancel": {
+    "message": "Ακύρωση"
+  },
+  "associations.close": {
+    "message": "Κλείσιμο"
+  },
+  "associations.column.edit": {
+    "message": "Επεξεργασία (F4)"
+  },
+  "associations.column.files": {
+    "message": "Αρχεία"
+  },
+  "associations.column.open": {
+    "message": "Άνοιγμα (Enter)"
+  },
+  "associations.column.view": {
+    "message": "Προβολή (F3)"
+  },
+  "associations.edit": {
+    "message": "Αλλαγή..."
+  },
+  "associations.edit_dialog.title": {
+    "message": "Συσχέτιση"
+  },
+  "associations.empty": {
+    "message": "Καμία ακόμα."
+  },
+  "associations.field.edit": {
+    "message": "Επεξεργασία με (F4):"
+  },
+  "associations.field.files": {
+    "message": "Αρχεία (*.jpg *.png):"
+  },
+  "associations.field.open": {
+    "message": "Άνοιγμα με (Enter):"
+  },
+  "associations.field.view": {
+    "message": "Προβολή με (F3):"
+  },
+  "associations.intro": {
+    "message": "Τα Enter, F3 και F4 εκτελούν αυτά τα προγράμματα για τα αρχεία μιας μάσκας· ένα κενό πεδίο κρατά τη συνήθη συμπεριφορά. Το %1 είναι το αρχείο."
+  },
+  "associations.mask_needed": {
+    "message": "Απαιτείται η μάσκα των αρχείων: *.txt"
+  },
+  "associations.no_file": {
+    "message": "Τοποθετήστε τον δρομέα σε ένα αρχείο του τύπου που θέλετε να συσχετίσετε."
+  },
+  "associations.ok": {
+    "message": "OK"
+  },
+  "associations.remove": {
+    "message": "Αφαίρεση"
+  },
+  "associations.save_failed": {
+    "message": "Δεν ήταν δυνατή η αποθήκευση των ρυθμίσεων: {err}"
+  },
+  "associations.title": {
+    "message": "Εσωτερικές συσχετίσεις"
+  },
+  "attributes.bad_time": {
+    "message": "Το «{text}» δεν είναι ημερομηνία και ώρα: 2026-11-10 14:04:33"
+  },
+  "attributes.cancel": {
+    "message": "Ακύρωση"
+  },
+  "attributes.change_time": {
+    "message": "Αλλαγή ημερομηνίας/ώρας:"
+  },
+  "attributes.changed": {
+    "message": "{count, plural, one {# άλλαξε} other {# άλλαξαν}}"
+  },
+  "attributes.changed_failed": {
+    "message": "{count, plural, one {# άλλαξε} other {# άλλαξαν}}, {failed, plural, one {# απέτυχε} other {# απέτυχαν}}"
+  },
+  "attributes.dialog_title_many": {
+    "message": "Αλλαγή χαρακτηριστικών: {count, plural, one {# στοιχείο} other {# στοιχεία}}"
+  },
+  "attributes.dialog_title_one": {
+    "message": "Αλλαγή χαρακτηριστικών: {name}"
+  },
+  "attributes.execute": {
+    "message": "Εκτέλεση"
+  },
+  "attributes.group": {
+    "message": "Ομάδα"
+  },
+  "attributes.in_archive": {
+    "message": "Δεν είναι δυνατή η αλλαγή χαρακτηριστικών μέσα σε αρχειοθήκες."
+  },
+  "attributes.no_bits": {
+    "message": "Αυτά τα αρχεία δεν έχουν εδώ δικαιώματα πρόσβασης· μπορεί να αλλάξει μόνο η ημερομηνία."
+  },
+  "attributes.now": {
+    "message": "Τώρα"
+  },
+  "attributes.octal": {
+    "message": "Οκταδικό:"
+  },
+  "attributes.ok": {
+    "message": "OK"
+  },
+  "attributes.others": {
+    "message": "Άλλοι"
+  },
+  "attributes.owner": {
+    "message": "Κάτοχος"
+  },
+  "attributes.read": {
+    "message": "Ανάγνωση"
+  },
+  "attributes.recurse": {
+    "message": "Και όλο το περιεχόμενο των φακέλων"
+  },
+  "attributes.title_many": {
+    "message": "Αλλαγή χαρακτηριστικών {count, plural, one {# στοιχείου} other {# στοιχείων}}"
+  },
+  "attributes.title_one": {
+    "message": "Αλλαγή χαρακτηριστικών του «{name}»"
+  },
+  "attributes.write": {
+    "message": "Εγγραφή"
+  },
+  "bookmarks.add_current": {
+    "message": "Προσθήκη τρέχοντος φακέλου"
+  },
+  "bookmarks.add_folders": {
+    "message": "Προσθήκη φακέλων..."
+  },
+  "bookmarks.added": {
+    "message": "Προστέθηκε στους σελιδοδείκτες: {name}"
+  },
+  "bookmarks.already": {
+    "message": "Ο φάκελος «{name}» υπάρχει ήδη στους σελιδοδείκτες."
+  },
+  "bookmarks.chooser.failed": {
+    "message": "Δεν ήταν δυνατή η εμφάνιση του επιλογέα φακέλων: {err}"
+  },
+  "bookmarks.chooser.prompt": {
+    "message": "Προσθήκη"
+  },
+  "bookmarks.close": {
+    "message": "Κλείσιμο"
+  },
+  "bookmarks.copy_name": {
+    "message": "Αντιγραφή ονόματος"
+  },
+  "bookmarks.copy_path": {
+    "message": "Αντιγραφή διαδρομής"
+  },
+  "bookmarks.drop_here": {
+    "message": "Αφήστε φακέλους εδώ."
+  },
+  "bookmarks.empty": {
+    "message": "Δεν υπάρχουν σελιδοδείκτες: προσθέστε φακέλους ή αφήστε τους εδώ."
+  },
+  "bookmarks.intro": {
+    "message": "Φάκελοι αυτού του υπολογιστή, με τη σειρά των Τοποθεσιών: σύρετε έναν για να τον μετακινήσετε ή αφήστε φακέλους εδώ για να τους προσθέσετε."
+  },
+  "bookmarks.move_down": {
+    "message": "Μετακίνηση κάτω"
+  },
+  "bookmarks.move_up": {
+    "message": "Μετακίνηση πάνω"
+  },
+  "bookmarks.only_local": {
+    "message": "Μόνο φάκελοι αυτού του υπολογιστή μπορούν να προστεθούν στους σελιδοδείκτες."
+  },
+  "bookmarks.remove": {
+    "message": "Αφαίρεση"
+  },
+  "bookmarks.remove_from": {
+    "message": "Αφαίρεση από τους σελιδοδείκτες"
+  },
+  "bookmarks.rename": {
+    "message": "Μετονομασία..."
+  },
+  "bookmarks.rename_label": {
+    "message": "Όνομα (κενό: του φακέλου):"
+  },
+  "bookmarks.rename_title": {
+    "message": "Μετονομασία σελιδοδείκτη"
+  },
+  "bookmarks.sort": {
+    "message": "Ταξινόμηση Α–Ω"
+  },
+  "bookmarks.title": {
+    "message": "Σελιδοδείκτες"
+  },
+  "button_bar.copy": {
+    "message": "Αντιγραφή"
+  },
+  "button_bar.delete": {
+    "message": "Διαγραφή"
+  },
+  "button_bar.edit": {
+    "message": "Επεξεργασία"
+  },
+  "button_bar.move": {
+    "message": "Μετακίνηση"
+  },
+  "button_bar.new_folder": {
+    "message": "Νέος φάκελος"
+  },
+  "button_bar.quit": {
+    "message": "Έξοδος"
+  },
+  "button_bar.view": {
+    "message": "Προβολή"
+  },
+  "checksum.create.title": {
+    "message": "Δημιουργία του {name}"
+  },
+  "checksum.create.title_separate": {
+    "message": "Δημιουργία αρχείων αθροίσματος ελέγχου {method}"
+  },
+  "checksum.dialog_title": {
+    "message": "Δημιουργία αρχείων αθροίσματος ελέγχου"
+  },
+  "checksum.save_as": {
+    "message": "Αποθήκευση του αρχείου αθροίσματος ελέγχου ως:"
+  },
+  "checksum.separate": {
+    "message": "Ξεχωριστό αρχείο αθροίσματος ελέγχου δίπλα σε κάθε αρχείο"
+  },
+  "checksum.verify.all_ok": {
+    "message": "{count, plural, one {# αρχείο OK} other {και τα # αρχεία OK}}"
+  },
+  "checksum.verify.choose": {
+    "message": "Επιλέξτε αρχεία αθροίσματος ελέγχου: .sfv, .md5, .sha1, .sha256 ή .sha512."
+  },
+  "checksum.verify.missing_file": {
+    "message": "λείπει: {name}"
+  },
+  "checksum.verify.result": {
+    "message": "{ok, plural, one {# OK} other {# OK}}, {wrong, plural, one {# λάθος} other {# λάθος}}, {missing, plural, one {# λείπει} other {# λείπουν}}"
+  },
+  "checksum.verify.title_many": {
+    "message": "Επαλήθευση {count, plural, one {# αρχείου αθροίσματος ελέγχου} other {# αρχείων αθροίσματος ελέγχου}}"
+  },
+  "checksum.verify.title_one": {
+    "message": "Επαλήθευση του {name}"
+  },
+  "checksum.verify.wrong_file": {
+    "message": "λάθος: {name}"
+  },
+  "command.about": {
+    "message": "Πληροφορίες για το Spark Commander"
+  },
+  "command.activity_log": {
+    "message": "Ημερολόγιο δραστηριότητας..."
+  },
+  "command.all_files": {
+    "message": "Όλα τα αρχεία"
+  },
+  "command.all_folder_sizes": {
+    "message": "Υπολογισμός μεγέθους όλων των φακέλων"
+  },
+  "command.all_with_extension": {
+    "message": "*.*"
+  },
+  "command.associate_with": {
+    "message": "Συσχέτιση με..."
+  },
+  "command.bookmark_folder": {
+    "message": "Προσθήκη φακέλου στους σελιδοδείκτες"
+  },
+  "command.bookmarks": {
+    "message": "Σελιδοδείκτες"
+  },
+  "command.branch_view": {
+    "message": "Προβολή κλάδου (με υποφακέλους)"
+  },
+  "command.branch_view_selected": {
+    "message": "Προβολή κλάδου των επιλεγμένων φακέλων"
+  },
+  "command.brief": {
+    "message": "Σύντομη"
+  },
+  "command.calculate_occupied_space": {
+    "message": "Υπολογισμός κατειλημμένου χώρου..."
+  },
+  "command.change_attributes": {
+    "message": "Αλλαγή χαρακτηριστικών..."
+  },
+  "command.close_all_tabs": {
+    "message": "Κλείσιμο όλων των καρτελών"
+  },
+  "command.close_duplicate_tabs": {
+    "message": "Κλείσιμο διπλότυπων καρτελών"
+  },
+  "command.close_tab": {
+    "message": "Κλείσιμο καρτέλας"
+  },
+  "command.combine_files": {
+    "message": "Συνένωση αρχείων..."
+  },
+  "command.compare_by_content": {
+    "message": "Σύγκριση περιεχομένου..."
+  },
+  "command.compare_directories": {
+    "message": "Επιλογή νεότερων"
+  },
+  "command.copy": {
+    "message": "Αντιγραφή..."
+  },
+  "command.copy_names_to_clipboard": {
+    "message": "Αντιγραφή επιλεγμένων ονομάτων στο πρόχειρο"
+  },
+  "command.copy_names_with_path_to_clipboard": {
+    "message": "Αντιγραφή ονομάτων με διαδρομή στο πρόχειρο"
+  },
+  "command.copy_to_clipboard": {
+    "message": "Αντιγραφή αρχείων"
+  },
+  "command.copy_with_all_details": {
+    "message": "Αντιγραφή στο πρόχειρο με όλες τις λεπτομέρειες"
+  },
+  "command.copy_with_path_and_details": {
+    "message": "Αντιγραφή στο πρόχειρο με διαδρομή+λεπτομέρειες"
+  },
+  "command.create_checksum_files": {
+    "message": "Δημιουργία αρχείων αθροίσματος ελέγχου (CRC32, MD5, SHA1, SHA256, SHA512)..."
+  },
+  "command.create_link": {
+    "message": "Δημιουργία συνδέσμου..."
+  },
+  "command.custom_filter": {
+    "message": "Προσαρμοσμένο..."
+  },
+  "command.cut_to_clipboard": {
+    "message": "Αποκοπή αρχείων"
+  },
+  "command.delete": {
+    "message": "Διαγραφή"
+  },
+  "command.delete_permanently": {
+    "message": "Οριστική διαγραφή"
+  },
+  "command.disconnect": {
+    "message": "Αποσύνδεση από τον διακομιστή"
+  },
+  "command.download_link": {
+    "message": "Λήψη από σύνδεσμο..."
+  },
+  "command.duplicate_tab": {
+    "message": "Νέα καρτέλα"
+  },
+  "command.duplicate_workspace": {
+    "message": "Αντίγραφο χώρου εργασίας..."
+  },
+  "command.edit": {
+    "message": "Επεξεργασία"
+  },
+  "command.edit_externally": {
+    "message": "Επεξεργασία με εξωτερικό πρόγραμμα"
+  },
+  "command.folder_history": {
+    "message": "Ιστορικό φακέλων..."
+  },
+  "command.full": {
+    "message": "Πλήρης"
+  },
+  "command.go_back": {
+    "message": "Πίσω"
+  },
+  "command.go_forward": {
+    "message": "Εμπρός"
+  },
+  "command.go_home": {
+    "message": "Αρχικός φάκελος"
+  },
+  "command.go_to_root": {
+    "message": "Ριζικός φάκελος"
+  },
+  "command.hidden_files": {
+    "message": "Κρυφά αρχεία"
+  },
+  "command.internal_associations": {
+    "message": "Εσωτερικές συσχετίσεις (μόνο για το Spark Commander)..."
+  },
+  "command.invert_selection": {
+    "message": "Αντιστροφή επιλογής"
+  },
+  "command.left_drives": {
+    "message": "Μονάδες δίσκου (αριστερό πάνελ)"
+  },
+  "command.list_tabs": {
+    "message": "Λίστα καρτελών"
+  },
+  "command.load_selection_from_file": {
+    "message": "Φόρτωση επιλογής από αρχείο"
+  },
+  "command.manage_bookmarks": {
+    "message": "Διαχείριση σελιδοδεικτών..."
+  },
+  "command.manage_tools": {
+    "message": "Διαχείριση εργαλείων..."
+  },
+  "command.manage_workspaces": {
+    "message": "Διαχείριση χώρων εργασίας..."
+  },
+  "command.mark_in_place": {
+    "message": "Επιλογή / αποεπιλογή επί τόπου, με μέτρηση φακέλου"
+  },
+  "command.mark_newer_hide_same": {
+    "message": "Επιλογή νεότερων, απόκρυψη ίδιων αρχείων"
+  },
+  "command.move": {
+    "message": "Μετακίνηση..."
+  },
+  "command.multi_rename_tool": {
+    "message": "Εργαλείο μαζικής μετονομασίας..."
+  },
+  "command.name_to_command_line": {
+    "message": "Όνομα στη γραμμή εντολών"
+  },
+  "command.new_folder": {
+    "message": "Νέος φάκελος..."
+  },
+  "command.new_terminal": {
+    "message": "Νέα καρτέλα τερματικού"
+  },
+  "command.new_text_file": {
+    "message": "Νέο αρχείο..."
+  },
+  "command.new_workspace": {
+    "message": "Νέος χώρος εργασίας..."
+  },
+  "command.next_tab": {
+    "message": "Επόμενη καρτέλα"
+  },
+  "command.only_selected_files": {
+    "message": "Μόνο τα επιλεγμένα αρχεία"
+  },
+  "command.open_in_left_panel": {
+    "message": "Εμφάνιση στο αριστερό πάνελ"
+  },
+  "command.open_in_new_tab": {
+    "message": "Άνοιγμα φακέλου σε νέα καρτέλα"
+  },
+  "command.open_in_other_new_tab": {
+    "message": "Άνοιγμα του φακέλου σε νέα καρτέλα του άλλου πάνελ"
+  },
+  "command.open_in_right_panel": {
+    "message": "Εμφάνιση στο δεξί πάνελ"
+  },
+  "command.open_terminal": {
+    "message": "Άνοιγμα τερματικού εδώ"
+  },
+  "command.operation_queue": {
+    "message": "Ουρά λειτουργιών..."
+  },
+  "command.pack": {
+    "message": "Συμπίεση..."
+  },
+  "command.paste_from_clipboard": {
+    "message": "Επικόλληση αρχείων"
+  },
+  "command.path_and_name_to_command_line": {
+    "message": "Διαδρομή και όνομα στη γραμμή εντολών"
+  },
+  "command.path_to_command_line": {
+    "message": "Διαδρομή στη γραμμή εντολών"
+  },
+  "command.previous_tab": {
+    "message": "Προηγούμενη καρτέλα"
+  },
+  "command.programs": {
+    "message": "Προγράμματα"
+  },
+  "command.properties": {
+    "message": "Ιδιότητες..."
+  },
+  "command.quick_filter": {
+    "message": "Γρήγορο φίλτρο"
+  },
+  "command.quick_open": {
+    "message": "Γρήγορο άνοιγμα..."
+  },
+  "command.quick_view_panel": {
+    "message": "Πάνελ γρήγορης προβολής"
+  },
+  "command.quit": {
+    "message": "Έξοδος"
+  },
+  "command.redo": {
+    "message": "Ακύρωση αναίρεσης"
+  },
+  "command.rename_in_place": {
+    "message": "Μετονομασία"
+  },
+  "command.reread_source": {
+    "message": "Ανανέωση πηγής"
+  },
+  "command.restore_selection": {
+    "message": "Επαναφορά επιλογής"
+  },
+  "command.reversed_order": {
+    "message": "Αντίστροφη σειρά"
+  },
+  "command.right_drives": {
+    "message": "Μονάδες δίσκου (δεξί πάνελ)"
+  },
+  "command.save_selection": {
+    "message": "Αποθήκευση επιλογής"
+  },
+  "command.save_selection_to_file": {
+    "message": "Αποθήκευση επιλογής σε αρχείο"
+  },
+  "command.search": {
+    "message": "Αναζήτηση..."
+  },
+  "command.search_in_separate_process": {
+    "message": "Αναζήτηση σε ξεχωριστό παράθυρο..."
+  },
+  "command.select_all": {
+    "message": "Επιλογή όλων"
+  },
+  "command.select_all_with_same_extension": {
+    "message": "Επιλογή όλων με την ίδια επέκταση"
+  },
+  "command.select_group": {
+    "message": "Επιλογή ομάδας..."
+  },
+  "command.settings": {
+    "message": "Ρυθμίσεις..."
+  },
+  "command.shortcuts": {
+    "message": "Συντομεύσεις..."
+  },
+  "command.sidebar_connections": {
+    "message": "Συνδέσεις"
+  },
+  "command.sidebar_operations": {
+    "message": "Λειτουργίες"
+  },
+  "command.sidebar_places": {
+    "message": "Τοποθεσίες"
+  },
+  "command.sidebar_tree": {
+    "message": "Φάκελοι"
+  },
+  "command.sort_by_extension": {
+    "message": "Επέκταση"
+  },
+  "command.sort_by_name": {
+    "message": "Όνομα"
+  },
+  "command.sort_by_size": {
+    "message": "Μέγεθος"
+  },
+  "command.sort_by_time": {
+    "message": "Ημερομηνία"
+  },
+  "command.split_file": {
+    "message": "Διαίρεση αρχείου..."
+  },
+  "command.swap_panels": {
+    "message": "Εναλλαγή πάνελ"
+  },
+  "command.swap_panels_and_tabs": {
+    "message": "Εναλλαγή πάνελ μαζί με τις καρτέλες τους"
+  },
+  "command.sync_browsing": {
+    "message": "Συγχρονισμένη περιήγηση"
+  },
+  "command.synchronize_dirs": {
+    "message": "Συγχρονισμός φακέλων..."
+  },
+  "command.target_equals_source": {
+    "message": "Προορισμός = Πηγή"
+  },
+  "command.terminal_panel": {
+    "message": "Τερματικό"
+  },
+  "command.test_archives": {
+    "message": "Έλεγχος αρχειοθηκών"
+  },
+  "command.thumbnail_view": {
+    "message": "Προβολή μικρογραφιών"
+  },
+  "command.toggle_mark": {
+    "message": "Επιλογή / αποεπιλογή"
+  },
+  "command.toggle_sidebar": {
+    "message": "Εμφάνιση πλευρικής στήλης"
+  },
+  "command.undo": {
+    "message": "Αναίρεση"
+  },
+  "command.unpack_specific_files": {
+    "message": "Αποσυμπίεση συγκεκριμένων αρχείων..."
+  },
+  "command.unselect_all": {
+    "message": "Αποεπιλογή όλων"
+  },
+  "command.unselect_group": {
+    "message": "Αποεπιλογή ομάδας..."
+  },
+  "command.unsorted": {
+    "message": "Χωρίς ταξινόμηση"
+  },
+  "command.verify_checksums": {
+    "message": "Επαλήθευση αθροισμάτων ελέγχου (από αρχεία αθροίσματος ελέγχου)"
+  },
+  "command.vertical_arrangement": {
+    "message": "Κατακόρυφη διάταξη"
+  },
+  "command.view": {
+    "message": "Προβολή"
+  },
+  "command.website": {
+    "message": "Ιστότοπος του Spark Commander"
+  },
+  "command.workspace1": {
+    "message": "Άνοιγμα χώρου εργασίας 1"
+  },
+  "command.workspace2": {
+    "message": "Άνοιγμα χώρου εργασίας 2"
+  },
+  "command.workspace3": {
+    "message": "Άνοιγμα χώρου εργασίας 3"
+  },
+  "command.workspace4": {
+    "message": "Άνοιγμα χώρου εργασίας 4"
+  },
+  "command.workspace5": {
+    "message": "Άνοιγμα χώρου εργασίας 5"
+  },
+  "command.workspace6": {
+    "message": "Άνοιγμα χώρου εργασίας 6"
+  },
+  "command.workspace7": {
+    "message": "Άνοιγμα χώρου εργασίας 7"
+  },
+  "command.workspace8": {
+    "message": "Άνοιγμα χώρου εργασίας 8"
+  },
+  "command.workspace9": {
+    "message": "Άνοιγμα χώρου εργασίας 9"
+  },
+  "command_line.error.cannot_run": {
+    "message": "{program}: δεν είναι δυνατή η εκτέλεση"
+  },
+  "command_line.error.not_found": {
+    "message": "{program}: η εντολή δεν βρέθηκε"
+  },
+  "command_line.history.empty": {
+    "message": "Δεν έχουν εκτελεστεί εντολές ακόμα"
+  },
+  "command_line.on_server": {
+    "message": "Οι εντολές εκτελούνται σε αυτόν τον υπολογιστή· το πάνελ δείχνει διακομιστή."
+  },
+  "command_name.all_files": {
+    "message": "Εμφάνιση όλων των αρχείων"
+  },
+  "command_name.all_with_extension": {
+    "message": "Εμφάνιση *.*"
+  },
+  "command_name.brief": {
+    "message": "Σύντομη προβολή"
+  },
+  "command_name.compare_directories": {
+    "message": "Σύγκριση φακέλων: Επιλογή νεότερων"
+  },
+  "command_name.custom_filter": {
+    "message": "Προσαρμοσμένο φίλτρο"
+  },
+  "command_name.duplicate_tab": {
+    "message": "Νέα καρτέλα (αντίγραφο της τρέχουσας)"
+  },
+  "command_name.full": {
+    "message": "Πλήρης προβολή"
+  },
+  "command_name.go_back": {
+    "message": "Μετάβαση πίσω"
+  },
+  "command_name.go_forward": {
+    "message": "Μετάβαση εμπρός"
+  },
+  "command_name.go_home": {
+    "message": "Μετάβαση στον αρχικό φάκελο"
+  },
+  "command_name.hidden_files": {
+    "message": "Εμφάνιση κρυφών αρχείων"
+  },
+  "command_name.only_selected_files": {
+    "message": "Εμφάνιση μόνο των επιλεγμένων αρχείων"
+  },
+  "command_name.programs": {
+    "message": "Εμφάνιση προγραμμάτων"
+  },
+  "command_name.quick_filter": {
+    "message": "Γρήγορο φίλτρο"
+  },
+  "command_name.rename_in_place": {
+    "message": "Μετονομασία επί τόπου"
+  },
+  "command_name.sidebar_connections": {
+    "message": "Πλευρική στήλη: Συνδέσεις"
+  },
+  "command_name.sidebar_operations": {
+    "message": "Πλευρική στήλη: Λειτουργίες"
+  },
+  "command_name.sidebar_places": {
+    "message": "Πλευρική στήλη: Τοποθεσίες"
+  },
+  "command_name.sidebar_tree": {
+    "message": "Πλευρική στήλη: Φάκελοι"
+  },
+  "command_name.sort_by_extension": {
+    "message": "Ταξινόμηση κατά επέκταση"
+  },
+  "command_name.sort_by_name": {
+    "message": "Ταξινόμηση κατά όνομα"
+  },
+  "command_name.sort_by_size": {
+    "message": "Ταξινόμηση κατά μέγεθος"
+  },
+  "command_name.sort_by_time": {
+    "message": "Ταξινόμηση κατά ημερομηνία"
+  },
+  "command_name.toggle_sidebar": {
+    "message": "Πλευρική στήλη: εμφάνιση ή απόκρυψη"
+  },
+  "command_name.unsorted": {
+    "message": "Χωρίς ταξινόμηση"
+  },
+  "compare.browse.prompt": {
+    "message": "Σύγκριση"
+  },
+  "compare.button.compare": {
+    "message": "Σύγκριση"
+  },
+  "compare.button.next": {
+    "message": "Επόμενη διαφορά (N)"
+  },
+  "compare.button.previous": {
+    "message": "Προηγούμενη διαφορά (P)"
+  },
+  "compare.need_two_files": {
+    "message": "Τοποθετήστε τον δρομέα σε ένα αρχείο σε κάθε πάνελ ή επιλέξτε δύο αρχεία."
+  },
+  "compare.option.binary": {
+    "message": "Δυαδική"
+  },
+  "compare.option.ignore_case": {
+    "message": "Αγνόηση πεζών-κεφαλαίων"
+  },
+  "compare.option.ignore_spaces": {
+    "message": "Αγνόηση επαναλαμβανόμενων κενών"
+  },
+  "compare.option.only_differences": {
+    "message": "Μόνο οι διαφορές"
+  },
+  "compare.status.bytes_differ": {
+    "message": "{place}: {count, plural, one {διαφέρει {grouped} byte} other {διαφέρουν {grouped} byte}}, το πρώτο στη θέση {first}· μεγέθη {left} και {right}."
+  },
+  "compare.status.comparing": {
+    "message": "Σύγκριση…"
+  },
+  "compare.status.difference_of": {
+    "message": "Διαφορά {at} από {count}"
+  },
+  "compare.status.differences": {
+    "message": "{count, plural, one {# διαφορά} other {# διαφορές}}"
+  },
+  "compare.status.identical": {
+    "message": "{count, plural, one {Τα αρχεία είναι πανομοιότυπα: {grouped} byte.} other {Τα αρχεία είναι πανομοιότυπα: {grouped} byte.}}"
+  },
+  "compare.status.no_differences": {
+    "message": "Δεν υπάρχουν διαφορές."
+  },
+  "compare.window.title": {
+    "message": "Σύγκριση: {left} — {right}"
+  },
+  "connections.connect": {
+    "message": "Σύνδεση"
+  },
+  "connections.copy_name": {
+    "message": "Αντιγραφή ονόματος"
+  },
+  "connections.copy_path": {
+    "message": "Αντιγραφή διαδρομής"
+  },
+  "connections.delete": {
+    "message": "Διαγραφή"
+  },
+  "connections.dialog.title": {
+    "message": "Σύνδεση"
+  },
+  "connections.disconnect": {
+    "message": "Αποσύνδεση"
+  },
+  "connections.duplicate": {
+    "message": "Δημιουργία αντιγράφου"
+  },
+  "connections.duplicate_name": {
+    "message": "{name} (αντίγραφο)"
+  },
+  "connections.edit": {
+    "message": "Επεξεργασία..."
+  },
+  "connections.empty": {
+    "message": "Δεν υπάρχουν συνδέσεις ακόμα."
+  },
+  "connections.error.no_server": {
+    "message": "Απαιτείται διακομιστής."
+  },
+  "connections.error.port": {
+    "message": "Μη έγκυρη θύρα: {text}"
+  },
+  "connections.field.access_key": {
+    "message": "Κλειδί πρόσβασης"
+  },
+  "connections.field.api_key": {
+    "message": "Κλειδί API"
+  },
+  "connections.field.application_key": {
+    "message": "Κλειδί εφαρμογής"
+  },
+  "connections.field.bucket": {
+    "message": "Bucket/φάκελος"
+  },
+  "connections.field.container": {
+    "message": "Container/φάκελος"
+  },
+  "connections.field.endpoint": {
+    "message": "Τελικό σημείο"
+  },
+  "connections.field.key_id": {
+    "message": "ID κλειδιού"
+  },
+  "connections.field.name": {
+    "message": "Όνομα"
+  },
+  "connections.field.password": {
+    "message": "Κωδικός"
+  },
+  "connections.field.port": {
+    "message": "Θύρα"
+  },
+  "connections.field.protocol": {
+    "message": "Πρωτόκολλο"
+  },
+  "connections.field.secret_key": {
+    "message": "Μυστικό κλειδί"
+  },
+  "connections.field.server": {
+    "message": "Διακομιστής"
+  },
+  "connections.field.start_folder": {
+    "message": "Αρχικός φάκελος"
+  },
+  "connections.field.user": {
+    "message": "Χρήστης"
+  },
+  "connections.folder.delete_confirm": {
+    "message": "{count, plural, one {Διαγραφή του φακέλου {name} και της σύνδεσης που περιέχει;} other {Διαγραφή του φακέλου {name} και των # συνδέσεων που περιέχει;}}"
+  },
+  "connections.folder.delete_title": {
+    "message": "Διαγραφή φακέλου"
+  },
+  "connections.folder.exists": {
+    "message": "Υπάρχει ήδη φάκελος με το όνομα {name}."
+  },
+  "connections.folder.name": {
+    "message": "Όνομα:"
+  },
+  "connections.folder.new_title": {
+    "message": "Νέος φάκελος"
+  },
+  "connections.folder.rename": {
+    "message": "Μετονομασία..."
+  },
+  "connections.folder.rename_title": {
+    "message": "Μετονομασία φακέλου"
+  },
+  "connections.forget_password": {
+    "message": "Διαγραφή του αποθηκευμένου κωδικού"
+  },
+  "connections.move_down": {
+    "message": "Μετακίνηση κάτω"
+  },
+  "connections.move_to_folder": {
+    "message": "Μετακίνηση σε φάκελο"
+  },
+  "connections.move_up": {
+    "message": "Μετακίνηση πάνω"
+  },
+  "connections.new": {
+    "message": "Νέα σύνδεση..."
+  },
+  "connections.new_folder": {
+    "message": "Νέος φάκελος..."
+  },
+  "connections.no_folder": {
+    "message": "Χωρίς φάκελο"
+  },
+  "connections.open_in_terminal": {
+    "message": "Άνοιγμα στο τερματικό"
+  },
+  "connections.placeholder.name": {
+    "message": "όπως εμφανίζεται στη λίστα"
+  },
+  "connections.placeholder.password": {
+    "message": "φυλάσσεται κρυπτογραφημένος στον φάκελο ρυθμίσεων· αν μείνει κενό, διατηρείται"
+  },
+  "connections.placeholder.path": {
+    "message": "ο φάκελος σύνδεσης"
+  },
+  "connections.placeholder.port": {
+    "message": "προεπιλογή"
+  },
+  "connections.placeholder.server": {
+    "message": "διακομιστής ή host του ~/.ssh/config"
+  },
+  "connections.placeholder.user": {
+    "message": "όπως ορίζει το ~/.ssh/config ή ανώνυμος"
+  },
+  "connections.save_failed": {
+    "message": "Δεν ήταν δυνατή η αποθήκευση των συνδέσεων: {err}"
+  },
+  "connections.ssh_config.read_only": {
+    "message": "Μόνο για ανάγνωση: αυτοί οι host επεξεργάζονται στο ίδιο το ~/.ssh/config"
+  },
+  "context_menu.action_failed": {
+    "message": "Η ενέργεια «{name}» απέτυχε: {err}"
+  },
+  "context_menu.actions": {
+    "message": "Ενέργειες"
+  },
+  "context_menu.copy": {
+    "message": "Αντιγραφή"
+  },
+  "context_menu.create_new": {
+    "message": "Δημιουργία νέου"
+  },
+  "context_menu.cut": {
+    "message": "Αποκοπή"
+  },
+  "context_menu.delete": {
+    "message": "Διαγραφή"
+  },
+  "context_menu.edit": {
+    "message": "Επεξεργασία"
+  },
+  "context_menu.empty_file": {
+    "message": "Κενό αρχείο…"
+  },
+  "context_menu.move_to_trash": {
+    "message": "Μετακίνηση στον κάδο απορριμμάτων"
+  },
+  "context_menu.new_file_dialog.label": {
+    "message": "Όνομα νέου αρχείου:"
+  },
+  "context_menu.new_file_dialog.title": {
+    "message": "Νέο αρχείο"
+  },
+  "context_menu.new_file_failed": {
+    "message": "Δεν ήταν δυνατή η δημιουργία του αρχείου: {err}"
+  },
+  "context_menu.new_folder": {
+    "message": "Φάκελος…"
+  },
+  "context_menu.open": {
+    "message": "Άνοιγμα"
+  },
+  "context_menu.open_failed": {
+    "message": "Δεν ήταν δυνατό το άνοιγμα: {err}"
+  },
+  "context_menu.open_terminal_here": {
+    "message": "Άνοιγμα τερματικού εδώ"
+  },
+  "context_menu.open_with": {
+    "message": "Άνοιγμα με"
+  },
+  "context_menu.other_application": {
+    "message": "Άλλη εφαρμογή…"
+  },
+  "context_menu.pack": {
+    "message": "Συμπίεση…"
+  },
+  "context_menu.pack_files": {
+    "message": "Συμπίεση αρχείων"
+  },
+  "context_menu.paste": {
+    "message": "Επικόλληση"
+  },
+  "context_menu.properties": {
+    "message": "Ιδιότητες"
+  },
+  "context_menu.properties_failed": {
+    "message": "Ιδιότητες: {err}"
+  },
+  "context_menu.rename": {
+    "message": "Μετονομασία…"
+  },
+  "context_menu.rename_dialog.label": {
+    "message": "Νέο όνομα:"
+  },
+  "context_menu.rename_dialog.title": {
+    "message": "Μετονομασία"
+  },
+  "context_menu.rename_failed": {
+    "message": "Δεν ήταν δυνατή η μετονομασία: {err}"
+  },
+  "context_menu.shell_menu_failed": {
+    "message": "Το μενού: {err}"
+  },
+  "context_menu.show_failed": {
+    "message": "Δεν ήταν δυνατή η εμφάνιση: {err}"
+  },
+  "context_menu.show_in_file_manager": {
+    "message": "Εμφάνιση στη διαχείριση αρχείων"
+  },
+  "context_menu.terminal_failed": {
+    "message": "Δεν ήταν δυνατό το άνοιγμα τερματικού: {err}"
+  },
+  "context_menu.terminal_not_local": {
+    "message": "Το τερματικό ανοίγει μόνο σε φακέλους αυτού του υπολογιστή."
+  },
+  "context_menu.unpack": {
+    "message": "Αποσυμπίεση…"
+  },
+  "context_menu.view": {
+    "message": "Προβολή"
+  },
+  "desktop.no_app_chooser": {
+    "message": "η επιφάνεια εργασίας δεν διαθέτει επιλογέα εφαρμογών ({err})"
+  },
+  "desktop.no_terminal": {
+    "message": "δεν βρέθηκε τερματικό"
+  },
+  "desktop.nothing_to_run": {
+    "message": "{name}: δεν υπάρχει τίποτα για εκτέλεση"
+  },
+  "desktop.scripts": {
+    "message": "Δέσμες ενεργειών"
+  },
+  "devices.error.mount_failed": {
+    "message": "δεν ήταν δυνατή η προσάρτηση της συσκευής"
+  },
+  "devices.error.no_folder": {
+    "message": "η συσκευή δεν κοινοποιεί κανέναν φάκελο"
+  },
+  "devices.error.system_only": {
+    "message": "μόνο το σύστημα μπορεί να το αποπροσαρτήσει"
+  },
+  "devices.error.unreachable": {
+    "message": "μη προσβάσιμη: είναι ανοιχτό το KDE Connect σε αυτήν, σε αυτό το δίκτυο;"
+  },
+  "devices.unlock.ask": {
+    "message": "Η φράση πρόσβασης του {name}:"
+  },
+  "devices.unlock.ask_again": {
+    "message": "Λάθος φράση πρόσβασης. Η φράση πρόσβασης του {name}:"
+  },
+  "devices.unlock.title": {
+    "message": "Ξεκλείδωμα"
+  },
+  "devices.volume.share_on_server": {
+    "message": "{share} στο {server}"
+  },
+  "devices.volume.unnamed": {
+    "message": "Τόμος {size} GB"
+  },
+  "devices.volume.unnamed_encrypted": {
+    "message": "Κρυπτογραφημένος τόμος {size} GB"
+  },
+  "download.cancel": {
+    "message": "Ακύρωση"
+  },
+  "download.dialog_title": {
+    "message": "Λήψη από σύνδεσμο"
+  },
+  "download.download": {
+    "message": "Λήψη"
+  },
+  "download.folder_link": {
+    "message": "ο σύνδεσμος οδηγεί σε φάκελο"
+  },
+  "download.incomplete": {
+    "message": "ο διακομιστής έστειλε {got} από {size, plural, one {# byte} other {# byte}}· αν γίνει ξανά λήψη, συνεχίζει από εκεί"
+  },
+  "download.into": {
+    "message": "Στον φάκελο {folder}"
+  },
+  "download.link": {
+    "message": "Σύνδεσμος"
+  },
+  "download.link_placeholder": {
+    "message": "https://, http://, ftp:// ή ftps://"
+  },
+  "download.local_only": {
+    "message": "Οι λήψεις αποθηκεύονται σε φακέλους αυτού του υπολογιστή: ανοίξτε πρώτα έναν στο πάνελ."
+  },
+  "download.name_placeholder": {
+    "message": "όπως το ονομάζει ο διακομιστής ή ο σύνδεσμος"
+  },
+  "download.no_file": {
+    "message": "ο σύνδεσμος δεν οδηγεί σε αρχείο"
+  },
+  "download.not_a_link": {
+    "message": "δεν είναι σύνδεσμος λήψης"
+  },
+  "download.problem.bad_name": {
+    "message": "Ένα όνομα αρχείου, χωρίς φάκελο."
+  },
+  "download.problem.empty": {
+    "message": "Επικολλήστε ή πληκτρολογήστε έναν σύνδεσμο."
+  },
+  "download.problem.exists": {
+    "message": "Υπάρχει ήδη το {name} εδώ: η Αντικατάσταση το αντικαθιστά με τη λήψη."
+  },
+  "download.problem.not_link": {
+    "message": "Δεν είναι σύνδεσμος λήψης: πρέπει να ξεκινά με https://, http://, ftp:// ή ftps://."
+  },
+  "download.replace": {
+    "message": "Αντικατάσταση"
+  },
+  "download.save_as": {
+    "message": "Αποθήκευση ως"
+  },
+  "download.saved_as": {
+    "message": "αποθηκεύτηκε ως {name}"
+  },
+  "download.title": {
+    "message": "Λήψη του «{name}»"
+  },
+  "download.title_link": {
+    "message": "Λήψη {link}"
+  },
+  "editor.close.after_send": {
+    "message": "Θα κλείσει μόλις το λάβει ο διακομιστής."
+  },
+  "editor.close.discard": {
+    "message": "Χωρίς αποθήκευση"
+  },
+  "editor.close.save": {
+    "message": "Αποθήκευση"
+  },
+  "editor.close.title": {
+    "message": "Αποθήκευση αλλαγών;"
+  },
+  "editor.close.unsaved": {
+    "message": "Το {name} έχει αλλαγές που δεν έχουν αποθηκευτεί."
+  },
+  "editor.close.unsent": {
+    "message": "Το {name} δεν έχει αποθηκευτεί στον διακομιστή του: η αποστολή απέτυχε."
+  },
+  "editor.dialog.cancel": {
+    "message": "Ακύρωση"
+  },
+  "editor.edit.copy": {
+    "message": "Αντιγραφή"
+  },
+  "editor.edit.cut": {
+    "message": "Αποκοπή"
+  },
+  "editor.edit.find": {
+    "message": "Εύρεση..."
+  },
+  "editor.edit.find_next": {
+    "message": "Εύρεση επόμενου"
+  },
+  "editor.edit.find_previous": {
+    "message": "Εύρεση προηγούμενου"
+  },
+  "editor.edit.go_to_line": {
+    "message": "Μετάβαση σε γραμμή..."
+  },
+  "editor.edit.paste": {
+    "message": "Επικόλληση"
+  },
+  "editor.edit.redo": {
+    "message": "Ακύρωση αναίρεσης"
+  },
+  "editor.edit.replace": {
+    "message": "Αντικατάσταση..."
+  },
+  "editor.edit.undo": {
+    "message": "Αναίρεση"
+  },
+  "editor.external.not_set": {
+    "message": "δεν έχει οριστεί εξωτερικό πρόγραμμα επεξεργασίας (Ρυθμίσεις, Επεξεργασία/Προβολή)"
+  },
+  "editor.file.close": {
+    "message": "Κλείσιμο"
+  },
+  "editor.file.reload": {
+    "message": "Επαναφόρτωση"
+  },
+  "editor.file.save": {
+    "message": "Αποθήκευση"
+  },
+  "editor.file.save_as": {
+    "message": "Αποθήκευση ως..."
+  },
+  "editor.find.close": {
+    "message": "Κλείσιμο (Escape)"
+  },
+  "editor.find.count": {
+    "message": "{current} από {total}"
+  },
+  "editor.find.in_selection": {
+    "message": "Εύρεση στην επιλογή (Alt+L)"
+  },
+  "editor.find.match_case": {
+    "message": "Διάκριση πεζών-κεφαλαίων (Alt+C)"
+  },
+  "editor.find.next": {
+    "message": "Επόμενο αποτέλεσμα (Enter)"
+  },
+  "editor.find.no_results": {
+    "message": "Κανένα αποτέλεσμα"
+  },
+  "editor.find.placeholder": {
+    "message": "Εύρεση"
+  },
+  "editor.find.preserve_case": {
+    "message": "Διατήρηση πεζών-κεφαλαίων (Alt+P)"
+  },
+  "editor.find.previous": {
+    "message": "Προηγούμενο αποτέλεσμα (Shift+Enter)"
+  },
+  "editor.find.regex": {
+    "message": "Χρήση κανονικής έκφρασης (Alt+R)"
+  },
+  "editor.find.replace": {
+    "message": "Αντικατάσταση (Ctrl+Shift+1)"
+  },
+  "editor.find.replace_all": {
+    "message": "Αντικατάσταση όλων (Ctrl+Alt+Enter)"
+  },
+  "editor.find.replace_placeholder": {
+    "message": "Αντικατάσταση"
+  },
+  "editor.find.toggle_replace": {
+    "message": "Εναλλαγή αντικατάστασης"
+  },
+  "editor.find.whole_word": {
+    "message": "Ολόκληρη λέξη (Alt+W)"
+  },
+  "editor.go_to_line.label": {
+    "message": "Γραμμή ή γραμμή:στήλη"
+  },
+  "editor.go_to_line.title": {
+    "message": "Μετάβαση σε γραμμή"
+  },
+  "editor.language.by_file_name": {
+    "message": "Από το όνομα του αρχείου"
+  },
+  "editor.language.plain_text": {
+    "message": "Απλό κείμενο"
+  },
+  "editor.menu.edit": {
+    "message": "Επεξεργασία"
+  },
+  "editor.menu.file": {
+    "message": "Αρχείο"
+  },
+  "editor.menu.language": {
+    "message": "Γλώσσα"
+  },
+  "editor.menu.selection": {
+    "message": "Επιλογή"
+  },
+  "editor.menu.view": {
+    "message": "Προβολή"
+  },
+  "editor.open.too_large": {
+    "message": "υπερβαίνει τα {limit_mb} MB του ενσωματωμένου προγράμματος επεξεργασίας (Ρυθμίσεις, Επεξεργασία/Προβολή)· το Ctrl+Shift+F4 το ανοίγει στο εξωτερικό"
+  },
+  "editor.reload.button": {
+    "message": "Επαναφόρτωση"
+  },
+  "editor.reload.failed": {
+    "message": "Δεν ήταν δυνατή η επαναφόρτωση: {err}"
+  },
+  "editor.reload.text": {
+    "message": "Οι αλλαγές που δεν έχουν αποθηκευτεί θα χαθούν."
+  },
+  "editor.reload.title": {
+    "message": "Επαναφόρτωση του αρχείου;"
+  },
+  "editor.reload.unfit": {
+    "message": "Δεν έγινε επαναφόρτωση: {why, select, binary {είναι δυαδικό} other {δεν είναι κείμενο UTF-8}}."
+  },
+  "editor.save.admin": {
+    "message": "Αποθήκευση του «{name}»"
+  },
+  "editor.save.failed": {
+    "message": "Δεν ήταν δυνατή η αποθήκευση του {path}: {err}"
+  },
+  "editor.save_anyway.button": {
+    "message": "Αποθήκευση παρ’ όλα αυτά"
+  },
+  "editor.save_anyway.text": {
+    "message": "Το αρχείο δεν ήταν κείμενο: η αποθήκευση το γράφει όπως εμφανίζεται, οπότε ό,τι δεν ήταν κείμενο αλλάζει οριστικά."
+  },
+  "editor.save_anyway.title": {
+    "message": "Αποθήκευση ως κείμενο;"
+  },
+  "editor.selection.add_cursor_above": {
+    "message": "Προσθήκη δρομέα επάνω"
+  },
+  "editor.selection.add_cursor_below": {
+    "message": "Προσθήκη δρομέα κάτω"
+  },
+  "editor.selection.delete_lines": {
+    "message": "Διαγραφή γραμμών"
+  },
+  "editor.selection.duplicate_lines": {
+    "message": "Διπλασιασμός γραμμών"
+  },
+  "editor.selection.indent": {
+    "message": "Αύξηση εσοχής"
+  },
+  "editor.selection.lowercase": {
+    "message": "πεζά"
+  },
+  "editor.selection.move_lines_down": {
+    "message": "Μετακίνηση γραμμών κάτω"
+  },
+  "editor.selection.move_lines_up": {
+    "message": "Μετακίνηση γραμμών πάνω"
+  },
+  "editor.selection.outdent": {
+    "message": "Μείωση εσοχής"
+  },
+  "editor.selection.select_all": {
+    "message": "Επιλογή όλων"
+  },
+  "editor.selection.select_all_occurrences": {
+    "message": "Επιλογή όλων των εμφανίσεων"
+  },
+  "editor.selection.sort_lines_ascending": {
+    "message": "Αύξουσα ταξινόμηση γραμμών"
+  },
+  "editor.selection.sort_lines_descending": {
+    "message": "Φθίνουσα ταξινόμηση γραμμών"
+  },
+  "editor.selection.title_case": {
+    "message": "Κεφαλαία Αρχικά"
+  },
+  "editor.selection.toggle_line_comment": {
+    "message": "Εναλλαγή σχολίου γραμμής"
+  },
+  "editor.selection.trim_trailing_whitespace": {
+    "message": "Αφαίρεση κενών στο τέλος"
+  },
+  "editor.selection.uppercase": {
+    "message": "ΚΕΦΑΛΑΙΑ"
+  },
+  "editor.send.failed": {
+    "message": "Δεν ήταν δυνατή η αποστολή του πίσω: {err}. Η Αποθήκευση θα προσπαθήσει ξανά."
+  },
+  "editor.status.modified": {
+    "message": "Τροποποιημένο"
+  },
+  "editor.status.position": {
+    "message": "Γρ. {line}, Στ. {column}"
+  },
+  "editor.status.position_selected": {
+    "message": "Γρ. {line}, Στ. {column} ({count, plural, one {# επιλεγμένος} other {# επιλεγμένοι}})"
+  },
+  "editor.status.sending": {
+    "message": "Αποθήκευση στον διακομιστή"
+  },
+  "editor.status.spaces": {
+    "message": "Κενά: {size}"
+  },
+  "editor.status.tab_size": {
+    "message": "Μέγεθος tab: {size}"
+  },
+  "editor.status.unsent": {
+    "message": "Όχι στον διακομιστή"
+  },
+  "editor.terminal.not_found": {
+    "message": "δεν βρέθηκε πρόγραμμα επεξεργασίας· ορίστε το $EDITOR"
+  },
+  "editor.title": {
+    "message": "{path} — Επεξεργαστής"
+  },
+  "editor.unfit.open_anyway": {
+    "message": "Άνοιγμα παρ’ όλα αυτά"
+  },
+  "editor.unfit.text": {
+    "message": "Το αρχείο δεν εμφανίζεται στον επεξεργαστή επειδή {why, select, binary {είναι δυαδικό} other {δεν είναι κείμενο UTF-8}}."
+  },
+  "editor.view.folding": {
+    "message": "Δίπλωση κώδικα"
+  },
+  "editor.view.indent_guides": {
+    "message": "Οδηγοί εσοχής"
+  },
+  "editor.view.indent_with_tabs": {
+    "message": "Εσοχή με tab"
+  },
+  "editor.view.line_numbers": {
+    "message": "Αριθμοί γραμμών"
+  },
+  "editor.view.minimap": {
+    "message": "Μικροχάρτης"
+  },
+  "editor.view.tab_width": {
+    "message": "Πλάτος tab {width}"
+  },
+  "editor.view.unfold_all": {
+    "message": "Ξεδίπλωμα όλων"
+  },
+  "editor.view.whitespace": {
+    "message": "Κενοί χαρακτήρες"
+  },
+  "editor.view.word_wrap": {
+    "message": "Αναδίπλωση λέξεων"
+  },
+  "elevate.failed": {
+    "message": "απέτυχε και ως διαχειριστής ({code})"
+  },
+  "elevate.no_consent": {
+    "message": "δεν δόθηκε η συγκατάθεση του διαχειριστή"
+  },
+  "elevate.no_password": {
+    "message": "δεν δόθηκε ο κωδικός πρόσβασης"
+  },
+  "elevate.not_authorised": {
+    "message": "δεν επιτρέπεται"
+  },
+  "elevate.percent_name": {
+    "message": "{path}: όνομα με % δεν υποστηρίζεται ως διαχειριστής· μετονομάστε το πρώτα"
+  },
+  "elevate.pkexec_missing": {
+    "message": "το pkexec (polkit) δεν είναι εγκατεστημένο"
+  },
+  "file_menu.change_tags_failed": {
+    "message": "Δεν ήταν δυνατή η αλλαγή των ετικετών: {err}"
+  },
+  "file_menu.compress": {
+    "message": "{count, plural, =1 {Συμπίεση «{name}»…} one {Συμπίεση # στοιχείου…} other {Συμπίεση # στοιχείων…}}"
+  },
+  "file_menu.copy": {
+    "message": "{count, plural, =1 {Αντιγραφή «{name}»} one {Αντιγραφή # στοιχείου} other {Αντιγραφή # στοιχείων}}"
+  },
+  "file_menu.copy_path": {
+    "message": "Αντιγραφή διαδρομής στο πρόχειρο"
+  },
+  "file_menu.delete": {
+    "message": "Διαγραφή"
+  },
+  "file_menu.duplicate": {
+    "message": "Δημιουργία διπλοτύπου"
+  },
+  "file_menu.duplicate_failed": {
+    "message": "Δεν ήταν δυνατή η δημιουργία διπλοτύπου: {err}"
+  },
+  "file_menu.edit_tags": {
+    "message": "Ετικέτες…"
+  },
+  "file_menu.get_info": {
+    "message": "Λήψη πληροφοριών"
+  },
+  "file_menu.make_alias": {
+    "message": "Δημιουργία ψευδωνύμου"
+  },
+  "file_menu.make_alias_failed": {
+    "message": "Δεν ήταν δυνατή η δημιουργία του ψευδωνύμου: {err}"
+  },
+  "file_menu.move_to_trash": {
+    "message": "Μεταφορά στον Κάδο"
+  },
+  "file_menu.new_folder": {
+    "message": "Νέος φάκελος"
+  },
+  "file_menu.open": {
+    "message": "Άνοιγμα"
+  },
+  "file_menu.open_failed": {
+    "message": "Δεν ήταν δυνατό το άνοιγμα: {err}"
+  },
+  "file_menu.open_with": {
+    "message": "Άνοιγμα με"
+  },
+  "file_menu.open_with_default": {
+    "message": "{app} (προεπιλογή)"
+  },
+  "file_menu.paste": {
+    "message": "Επικόλληση"
+  },
+  "file_menu.quick_look": {
+    "message": "{count, plural, =1 {Γρήγορη ματιά «{name}»} one {Γρήγορη ματιά # στοιχείου} other {Γρήγορη ματιά # στοιχείων}}"
+  },
+  "file_menu.quick_look_failed": {
+    "message": "Γρήγορη ματιά: {err}"
+  },
+  "file_menu.rename": {
+    "message": "Μετονομασία…"
+  },
+  "file_menu.reveal_failed": {
+    "message": "Δεν ήταν δυνατή η εμφάνιση στο Finder: {err}"
+  },
+  "file_menu.reveal_in_finder": {
+    "message": "Εμφάνιση στο Finder"
+  },
+  "file_menu.show_package_contents": {
+    "message": "Εμφάνιση περιεχομένων πακέτου"
+  },
+  "file_menu.tag_dot.add": {
+    "message": "Προσθήκη ετικέτας «{name}»"
+  },
+  "file_menu.tag_dot.remove": {
+    "message": "Αφαίρεση ετικέτας «{name}»"
+  },
+  "file_menu.tags_popover.show_all": {
+    "message": "Εμφάνιση όλων…"
+  },
+  "file_menu.tags_popover.title": {
+    "message": "{count, plural, =1 {Ετικέτες για «{name}»} one {Ετικέτες για # στοιχείο} other {Ετικέτες για # στοιχεία}}"
+  },
+  "find.backwards": {
+    "message": "Αναζήτηση προς τα πίσω"
+  },
+  "find.cancel": {
+    "message": "Ακύρωση"
+  },
+  "find.case_sensitive": {
+    "message": "Διάκριση πεζών-κεφαλαίων"
+  },
+  "find.hex": {
+    "message": "Αναζήτηση δεκαεξαδικής συμβολοσειράς"
+  },
+  "find.ok": {
+    "message": "OK"
+  },
+  "find.regex": {
+    "message": "RegEx"
+  },
+  "find.text.label": {
+    "message": "Εισαγάγετε κείμενο αναζήτησης"
+  },
+  "find.title": {
+    "message": "Εύρεση"
+  },
+  "find.whole_words": {
+    "message": "Μόνο ολόκληρες λέξεις"
+  },
+  "keys.apply": {
+    "message": "Εφαρμογή"
+  },
+  "keys.cancel": {
+    "message": "Ακύρωση"
+  },
+  "keys.clear.tooltip": {
+    "message": "Χωρίς πλήκτρο"
+  },
+  "keys.column.alternate": {
+    "message": "Εναλλακτικό"
+  },
+  "keys.column.command": {
+    "message": "Εντολή"
+  },
+  "keys.column.shortcut": {
+    "message": "Συντόμευση"
+  },
+  "keys.custom": {
+    "message": "Προσαρμοσμένο"
+  },
+  "keys.delete_set": {
+    "message": "Διαγραφή"
+  },
+  "keys.note.custom_replaced": {
+    "message": "Τα δικά σας πλήκτρα αντικαταστάθηκαν από αυτά του {name}· η «Αποθήκευση ως» τα διατηρεί."
+  },
+  "keys.note.deleted": {
+    "message": "Το {name} διαγράφεται· το OK ή η Εφαρμογή το οριστικοποιεί."
+  },
+  "keys.note.moved": {
+    "message": "Το {key} είναι τώρα «{command}», όχι πια «{other}»."
+  },
+  "keys.note.name_reserved": {
+    "message": "Το «{name}» είναι όνομα προκαθορισμένου συνόλου· επιλέξτε άλλο."
+  },
+  "keys.note.press_new_key": {
+    "message": "Πατήστε το νέο πλήκτρο· το Esc το αφήνει όπως ήταν."
+  },
+  "keys.note.saved": {
+    "message": "Αποθηκεύτηκε ως {name}· το OK ή η Εφαρμογή το διατηρεί."
+  },
+  "keys.note.set": {
+    "message": "Το {key} είναι τώρα «{command}»."
+  },
+  "keys.note.taken_by_system": {
+    "message": "Το {key} το χρησιμοποιεί το {by}, οπότε δεν φτάνει ποτέ στο Spark Commander."
+  },
+  "keys.ok": {
+    "message": "OK"
+  },
+  "keys.press_key": {
+    "message": "Πατήστε πλήκτρο…"
+  },
+  "keys.reserved.application_launcher": {
+    "message": "{system}: εκκινητής εφαρμογών"
+  },
+  "keys.reserved.close_window": {
+    "message": "{system}: κλείσιμο του παραθύρου"
+  },
+  "keys.reserved.close_window_or_tab": {
+    "message": "{system}: κλείσιμο του παραθύρου ή της καρτέλας"
+  },
+  "keys.reserved.dock": {
+    "message": "{system}: το Dock"
+  },
+  "keys.reserved.floating_window": {
+    "message": "{system}: το αιωρούμενο παράθυρο"
+  },
+  "keys.reserved.force_quit": {
+    "message": "{system}: αναγκαστικός τερματισμός"
+  },
+  "keys.reserved.hide_program": {
+    "message": "{system}: απόκρυψη του προγράμματος"
+  },
+  "keys.reserved.input_source": {
+    "message": "{system}: η πηγή εισόδου"
+  },
+  "keys.reserved.keyboard_access": {
+    "message": "{system}: πρόσβαση με πληκτρολόγιο"
+  },
+  "keys.reserved.keyboard_navigation": {
+    "message": "{system}: πλοήγηση με πληκτρολόγιο"
+  },
+  "keys.reserved.krunner": {
+    "message": "{system}: KRunner"
+  },
+  "keys.reserved.lock_screen": {
+    "message": "{system}: κλείδωμα της οθόνης"
+  },
+  "keys.reserved.log_out": {
+    "message": "{system}: αποσύνδεση"
+  },
+  "keys.reserved.maximize_window": {
+    "message": "{system}: μεγιστοποίηση του παραθύρου"
+  },
+  "keys.reserved.menu_bar": {
+    "message": "{system}: η γραμμή μενού"
+  },
+  "keys.reserved.minimize": {
+    "message": "{system}: ελαχιστοποίηση"
+  },
+  "keys.reserved.mission_control": {
+    "message": "{system}: Mission Control"
+  },
+  "keys.reserved.move_window": {
+    "message": "{system}: μετακίνηση του παραθύρου"
+  },
+  "keys.reserved.next_window": {
+    "message": "{system}: το επόμενο παράθυρο"
+  },
+  "keys.reserved.present_windows": {
+    "message": "{system}: Παρουσίαση παραθύρων"
+  },
+  "keys.reserved.present_windows_all": {
+    "message": "{system}: Παρουσίαση παραθύρων (όλες οι επιφάνειες εργασίας)"
+  },
+  "keys.reserved.present_windows_class": {
+    "message": "{system}: Παρουσίαση παραθύρων (κλάση παραθύρου)"
+  },
+  "keys.reserved.program_windows": {
+    "message": "{system}: τα παράθυρα του προγράμματος"
+  },
+  "keys.reserved.quit": {
+    "message": "{system}: τερματισμός"
+  },
+  "keys.reserved.resize_window": {
+    "message": "{system}: αλλαγή μεγέθους του παραθύρου"
+  },
+  "keys.reserved.restore_window": {
+    "message": "{system}: επαναφορά του παραθύρου"
+  },
+  "keys.reserved.run_command": {
+    "message": "{system}: εκτέλεση εντολής"
+  },
+  "keys.reserved.screenshot": {
+    "message": "{system}: στιγμιότυπο οθόνης"
+  },
+  "keys.reserved.security_screen": {
+    "message": "{system}: η οθόνη ασφαλείας"
+  },
+  "keys.reserved.show_desktop": {
+    "message": "{system}: εμφάνιση της επιφάνειας εργασίας"
+  },
+  "keys.reserved.space_left": {
+    "message": "{system}: ο χώρος στα αριστερά"
+  },
+  "keys.reserved.space_right": {
+    "message": "{system}: ο χώρος στα δεξιά"
+  },
+  "keys.reserved.spotlight": {
+    "message": "{system}: Spotlight"
+  },
+  "keys.reserved.start_menu": {
+    "message": "{system}: το μενού Έναρξη"
+  },
+  "keys.reserved.status_menus": {
+    "message": "{system}: τα μενού κατάστασης"
+  },
+  "keys.reserved.suspend_compositing": {
+    "message": "{system}: αναστολή σύνθεσης"
+  },
+  "keys.reserved.switch_program_windows": {
+    "message": "{system}: εναλλαγή παραθύρων του προγράμματος"
+  },
+  "keys.reserved.switch_programs": {
+    "message": "{system}: εναλλαγή προγραμμάτων"
+  },
+  "keys.reserved.switch_system_controls": {
+    "message": "{system}: εναλλαγή στοιχείων ελέγχου συστήματος"
+  },
+  "keys.reserved.switch_to_desktop": {
+    "message": "{system}: μετάβαση στην επιφάνεια εργασίας {number}"
+  },
+  "keys.reserved.switch_windows": {
+    "message": "{system}: εναλλαγή παραθύρων"
+  },
+  "keys.reserved.system_monitor": {
+    "message": "{system}: Παρακολούθηση συστήματος"
+  },
+  "keys.reserved.task_manager": {
+    "message": "{system}: Διαχείριση εργασιών"
+  },
+  "keys.reserved.text_console": {
+    "message": "{system}: μετάβαση σε κονσόλα κειμένου"
+  },
+  "keys.reserved.toolbar": {
+    "message": "{system}: η γραμμή εργαλείων"
+  },
+  "keys.reserved.window_menu": {
+    "message": "{system}: το μενού του παραθύρου"
+  },
+  "keys.reserved.workspace_down": {
+    "message": "{system}: ο χώρος εργασίας από κάτω"
+  },
+  "keys.reserved.workspace_left": {
+    "message": "{system}: ο χώρος εργασίας στα αριστερά"
+  },
+  "keys.reserved.workspace_right": {
+    "message": "{system}: ο χώρος εργασίας στα δεξιά"
+  },
+  "keys.reserved.workspace_up": {
+    "message": "{system}: ο χώρος εργασίας από πάνω"
+  },
+  "keys.reset.tooltip": {
+    "message": "Επιστροφή στα πλήκτρα του {preset}"
+  },
+  "keys.reset_all": {
+    "message": "Επαναφορά όλων"
+  },
+  "keys.save_as.button": {
+    "message": "Αποθήκευση ως…"
+  },
+  "keys.save_as.default_name": {
+    "message": "Τα πλήκτρα μου"
+  },
+  "keys.save_as.label": {
+    "message": "Όνομα:"
+  },
+  "keys.save_as.title": {
+    "message": "Αποθήκευση συντομεύσεων"
+  },
+  "keys.search.placeholder": {
+    "message": "Αναζήτηση εντολής ή πλήκτρου"
+  },
+  "keys.set_label": {
+    "message": "Πλήκτρα:"
+  },
+  "keys.taken_by.tooltip": {
+    "message": "Χρησιμοποιείται από: {by}"
+  },
+  "keys.title": {
+    "message": "Συντομεύσεις"
+  },
+  "main.admin.button": {
+    "message": "Ως διαχειριστής"
+  },
+  "main.admin.deleting": {
+    "message": "Διαγραφή {count, plural, one {# στοιχείου} other {# στοιχείων}}"
+  },
+  "main.admin.failed": {
+    "message": "Ως διαχειριστής: {err}"
+  },
+  "main.admin.making": {
+    "message": "Δημιουργία του «{name}»"
+  },
+  "main.admin.offer": {
+    "message": "{what}: δεν επιτρέπεται η πρόσβαση. Για ενέργεια ως διαχειριστής, το σύστημα θα ζητήσει τον κωδικό πρόσβασης."
+  },
+  "main.admin.offer_delete": {
+    "message": "{what}: δεν επιτρέπεται η πρόσβαση. Για ενέργεια ως διαχειριστής, το σύστημα θα ζητήσει τον κωδικό πρόσβασης. Ό,τι διαγραφεί έτσι χάνεται οριστικά."
+  },
+  "main.admin.title": {
+    "message": "Δεν επιτρέπεται η πρόσβαση"
+  },
+  "main.delete.from_archive": {
+    "message": "{kind, select, folder {Διαγραφή του φακέλου «{name}» από το {archive}; Η ενέργεια δεν μπορεί να αναιρεθεί.} file {Διαγραφή του αρχείου «{name}» από το {archive}; Η ενέργεια δεν μπορεί να αναιρεθεί.} other {Διαγραφή {count, plural, one {# στοιχείου} other {# στοιχείων}} από το {archive}; Η ενέργεια δεν μπορεί να αναιρεθεί.}}"
+  },
+  "main.delete.on_server": {
+    "message": "{kind, select, folder {Διαγραφή του φακέλου «{name}» στο {server}; Η ενέργεια δεν μπορεί να αναιρεθεί.} file {Διαγραφή του αρχείου «{name}» στο {server}; Η ενέργεια δεν μπορεί να αναιρεθεί.} other {Διαγραφή {count, plural, one {# στοιχείου} other {# στοιχείων}} στο {server}; Η ενέργεια δεν μπορεί να αναιρεθεί.}}"
+  },
+  "main.delete.permanently": {
+    "message": "{kind, select, folder {Οριστική διαγραφή του φακέλου «{name}»; Η ενέργεια δεν μπορεί να αναιρεθεί.} file {Οριστική διαγραφή του αρχείου «{name}»; Η ενέργεια δεν μπορεί να αναιρεθεί.} other {Οριστική διαγραφή {count, plural, one {# στοιχείου} other {# στοιχείων}}; Η ενέργεια δεν μπορεί να αναιρεθεί.}}"
+  },
+  "main.delete.title": {
+    "message": "Διαγραφή"
+  },
+  "main.delete.title_permanently": {
+    "message": "Οριστική διαγραφή"
+  },
+  "main.delete.to_trash": {
+    "message": "{kind, select, folder {Μετακίνηση του φακέλου «{name}» στον κάδο απορριμμάτων;} file {Μετακίνηση του αρχείου «{name}» στον κάδο απορριμμάτων;} other {Μετακίνηση {count, plural, one {# στοιχείου} other {# στοιχείων}} στον κάδο απορριμμάτων;}}"
+  },
+  "main.download.edit": {
+    "message": "Λήψη του {file} για επεξεργασία"
+  },
+  "main.download.view": {
+    "message": "Λήψη του {file} για προβολή"
+  },
+  "main.error.make_folder": {
+    "message": "Δεν ήταν δυνατή η δημιουργία του φακέλου: {err}"
+  },
+  "main.error.read_settings": {
+    "message": "Δεν ήταν δυνατή η ανάγνωση των ρυθμίσεων: {err}"
+  },
+  "main.error.read_tabs": {
+    "message": "Δεν ήταν δυνατή η ανάγνωση των ανοιχτών καρτελών: {err}"
+  },
+  "main.error.read_workspaces": {
+    "message": "Δεν ήταν δυνατή η ανάγνωση των χώρων εργασίας: {err}"
+  },
+  "main.error.save_settings": {
+    "message": "Δεν ήταν δυνατή η αποθήκευση των ρυθμίσεων: {err}"
+  },
+  "main.folder_tree.home": {
+    "message": "Αρχικός φάκελος"
+  },
+  "main.go.no_such_folder": {
+    "message": "{path}: δεν υπάρχει τέτοιος φάκελος σε αυτόν τον υπολογιστή"
+  },
+  "main.new_folder.label": {
+    "message": "Νέος φάκελος (κατάλογος):"
+  },
+  "main.new_folder.title": {
+    "message": "Νέος φάκελος"
+  },
+  "main.sync_browsing.lost": {
+    "message": "{err}. Η συγχρονισμένη περιήγηση απενεργοποιήθηκε."
+  },
+  "main.tool.needs_file": {
+    "message": "Ο δρομέας δεν βρίσκεται σε αρχείο: τα %N, %O και %E χρειάζονται ένα."
+  },
+  "main.tool.needs_local_folder": {
+    "message": "Το άλλο πάνελ δείχνει διακομιστή ή αρχειοθήκη: το %T χρειάζεται φάκελο σε αυτόν τον υπολογιστή."
+  },
+  "main.undo.done": {
+    "message": "{way, select, redo {Επαναλήφθηκε: {title}} other {Αναιρέθηκε: {title}}}"
+  },
+  "main.undo.failed": {
+    "message": "{way, select, redo {Δεν ήταν δυνατή η ακύρωση αναίρεσης του «{title}»: {err}} other {Δεν ήταν δυνατή η αναίρεση του «{title}»: {err}}}"
+  },
+  "main.undo.nothing": {
+    "message": "{way, select, redo {Δεν υπάρχει τίποτα για ακύρωση αναίρεσης.} other {Δεν υπάρχει τίποτα για αναίρεση.}}"
+  },
+  "main.undo.queued": {
+    "message": "{way, select, redo {Στην ουρά για ακύρωση αναίρεσης: {title}} other {Στην ουρά για αναίρεση: {title}}}"
+  },
+  "mark.compare.marked": {
+    "message": "{count, plural, one {Επιλέχθηκε # αρχείο: νεότερο από την άλλη πλευρά ή ανύπαρκτο εκεί.} other {Επιλέχθηκαν # αρχεία: νεότερα από την άλλη πλευρά ή ανύπαρκτα εκεί.}}"
+  },
+  "mark.compare.same": {
+    "message": "Οι φάκελοι έχουν τα ίδια αρχεία."
+  },
+  "mark.load_selection.label": {
+    "message": "Επιλογή των ονομάτων που περιέχει το αρχείο:"
+  },
+  "mark.load_selection.title": {
+    "message": "Φόρτωση επιλογής"
+  },
+  "mark.save_selection.label": {
+    "message": "Αποθήκευση των επιλεγμένων ονομάτων στο αρχείο:"
+  },
+  "mark.save_selection.title": {
+    "message": "Αποθήκευση επιλογής"
+  },
+  "mark.select_group.label": {
+    "message": "Επιλογή αρχείων (*.txt *.md· μάσκα φακέλου τελειώνει σε /):"
+  },
+  "mark.select_group.title": {
+    "message": "Επιλογή ομάδας"
+  },
+  "mark.selection_file.not_local": {
+    "message": "Τα αρχεία επιλογής φυλάσσονται σε αυτόν τον υπολογιστή, εκτός αρχειοθηκών."
+  },
+  "mark.unselect_group.label": {
+    "message": "Αποεπιλογή αρχείων (*.txt *.md· μάσκα φακέλου τελειώνει σε /):"
+  },
+  "mark.unselect_group.title": {
+    "message": "Αποεπιλογή ομάδας"
+  },
+  "media.cannot_play": {
+    "message": "Δεν είναι δυνατή η αναπαραγωγή: {err}"
+  },
+  "media.cannot_play_as_text": {
+    "message": "Δεν είναι δυνατή η αναπαραγωγή: {err}. Το 1 το εμφανίζει ως κείμενο."
+  },
+  "media.continuing": {
+    "message": "Συνέχεια από {time}"
+  },
+  "media.error.missing": {
+    "message": "Το libmpv λείπει: η λήψη του γίνεται από Ρυθμίσεις > Πρόσθετα (για μεταγλώττιση από πηγαίο κώδικα: vendor/mpv/{script})"
+  },
+  "media.error.not_started": {
+    "message": "δεν ήταν δυνατή η εκκίνηση του libmpv"
+  },
+  "media.error.too_long": {
+    "message": "{path}: το mpv άργησε πολύ"
+  },
+  "media.error.unsupported_system": {
+    "message": "η αναπαραγωγή βίντεο γίνεται προς το παρόν μόνο σε Linux, macOS και Windows"
+  },
+  "menu.archive": {
+    "message": "Αρχειοθήκη"
+  },
+  "menu.associations": {
+    "message": "Συσχετίσεις"
+  },
+  "menu.button_bar": {
+    "message": "Γραμμή κουμπιών"
+  },
+  "menu.checksums": {
+    "message": "Αθροίσματα ελέγχου"
+  },
+  "menu.commands": {
+    "message": "Εντολές"
+  },
+  "menu.compare_directories": {
+    "message": "Σύγκριση φακέλων"
+  },
+  "menu.configuration": {
+    "message": "Διαμόρφωση"
+  },
+  "menu.copy_names": {
+    "message": "Αντιγραφή ονομάτων"
+  },
+  "menu.files": {
+    "message": "Αρχεία"
+  },
+  "menu.filter": {
+    "message": "Φίλτρο"
+  },
+  "menu.go": {
+    "message": "Μετάβαση"
+  },
+  "menu.help": {
+    "message": "Βοήθεια"
+  },
+  "menu.mark": {
+    "message": "Επιλογή"
+  },
+  "menu.other": {
+    "message": "Άλλα"
+  },
+  "menu.recently_closed_tabs": {
+    "message": "Πρόσφατα κλεισμένες καρτέλες"
+  },
+  "menu.selection": {
+    "message": "Επιλογή"
+  },
+  "menu.show": {
+    "message": "Εμφάνιση"
+  },
+  "menu.sidebar": {
+    "message": "Πλευρική στήλη"
+  },
+  "menu.sort": {
+    "message": "Ταξινόμηση"
+  },
+  "menu.split_and_combine": {
+    "message": "Διαίρεση και συνένωση"
+  },
+  "menu.tabs": {
+    "message": "Καρτέλες"
+  },
+  "menu.tools": {
+    "message": "Εργαλεία"
+  },
+  "menu.workspaces": {
+    "message": "Χώροι εργασίας"
+  },
+  "menus.hide_app": {
+    "message": "Απόκρυψη Spark Commander"
+  },
+  "menus.hide_others": {
+    "message": "Απόκρυψη άλλων"
+  },
+  "menus.minimize": {
+    "message": "Ελαχιστοποίηση"
+  },
+  "menus.quit_app": {
+    "message": "Τερματισμός Spark Commander"
+  },
+  "menus.services": {
+    "message": "Υπηρεσίες"
+  },
+  "menus.show_all": {
+    "message": "Εμφάνιση όλων"
+  },
+  "menus.zoom": {
+    "message": "Ζουμ"
+  },
+  "name_dialog.cancel": {
+    "message": "Ακύρωση"
+  },
+  "name_dialog.ok": {
+    "message": "OK"
+  },
+  "operations.clear": {
+    "message": "Εκκαθάριση ολοκληρωμένων"
+  },
+  "operations.duration.seconds": {
+    "message": "{seconds} δ"
+  },
+  "operations.empty": {
+    "message": "Δεν υπάρχουν λειτουργίες."
+  },
+  "operations.job.answer": {
+    "message": "Αναμονή για την απάντησή σας"
+  },
+  "operations.job.bytes": {
+    "message": "{done} από {total}"
+  },
+  "operations.job.cancel_tooltip": {
+    "message": "Ακύρωση"
+  },
+  "operations.job.cancelled": {
+    "message": "Ακυρώθηκε"
+  },
+  "operations.job.counting": {
+    "message": "Καταμέτρηση: {count, plural, one {# αρχείο} other {# αρχεία}}"
+  },
+  "operations.job.done": {
+    "message": "Ολοκληρώθηκε"
+  },
+  "operations.job.done_skipped": {
+    "message": "Ολοκληρώθηκε, {count, plural, one {# παραλείφθηκε} other {# παραλείφθηκαν}}"
+  },
+  "operations.job.failed": {
+    "message": "Απέτυχε"
+  },
+  "operations.job.files": {
+    "message": "{files} / {count, plural, one {# αρχείο} other {# αρχεία}}"
+  },
+  "operations.job.left": {
+    "message": "Απομένουν {time}"
+  },
+  "operations.job.running": {
+    "message": "Εκτελείται"
+  },
+  "operations.job.waiting": {
+    "message": "Σε αναμονή"
+  },
+  "operations.menu.cancel": {
+    "message": "Ακύρωση"
+  },
+  "operations.menu.clear": {
+    "message": "Εκκαθάριση ολοκληρωμένων"
+  },
+  "operations.menu.move_down": {
+    "message": "Μετακίνηση κάτω"
+  },
+  "operations.menu.move_up": {
+    "message": "Μετακίνηση πάνω"
+  },
+  "operations.settings_tooltip": {
+    "message": "Ρυθμίσεις ουράς λειτουργιών"
+  },
+  "operations.summary.failed": {
+    "message": "{count, plural, one {# απέτυχε} other {# απέτυχαν}}"
+  },
+  "operations.summary.running": {
+    "message": "{count, plural, one {# εκτελείται} other {# εκτελούνται}}"
+  },
+  "operations.summary.waiting": {
+    "message": "{count, plural, one {# σε αναμονή} other {# σε αναμονή}}"
+  },
+  "ops.as_administrator.failed": {
+    "message": "Ως διαχειριστής: {err}"
+  },
+  "ops.as_administrator.progress": {
+    "message": "Ως διαχειριστής…"
+  },
+  "ops.delete.title_many": {
+    "message": "Διαγραφή {count, plural, one {# στοιχείου} other {# στοιχείων}} στο {folder}"
+  },
+  "ops.delete.title_one": {
+    "message": "Διαγραφή του «{name}»"
+  },
+  "ops.delete.trash_title_many": {
+    "message": "Μετακίνηση {count, plural, one {# στοιχείου} other {# στοιχείων}} από το {folder} στον κάδο απορριμμάτων"
+  },
+  "ops.delete.trash_title_one": {
+    "message": "Μετακίνηση του «{name}» στον κάδο απορριμμάτων"
+  },
+  "ops.error.file_in_the_way": {
+    "message": "υπάρχει ήδη αρχείο με αυτό το όνομα"
+  },
+  "ops.error.into_itself": {
+    "message": "δεν μπορεί να αντιγραφεί μέσα στον εαυτό του"
+  },
+  "ops.exists_already": {
+    "message": "Το {name} υπάρχει ήδη"
+  },
+  "ops.link.dialog_title": {
+    "message": "Δημιουργία συνδέσμου"
+  },
+  "ops.link.failed": {
+    "message": "Δεν ήταν δυνατή η δημιουργία του συνδέσμου: {err}"
+  },
+  "ops.link.kind.hard": {
+    "message": "Σκληρός σύνδεσμος"
+  },
+  "ops.link.kind.junction": {
+    "message": "Σημείο σύνδεσης"
+  },
+  "ops.link.kind.shortcut": {
+    "message": "Συντόμευση (.lnk)"
+  },
+  "ops.link.kind.symbolic": {
+    "message": "Συμβολικός σύνδεσμος"
+  },
+  "ops.link.label_many": {
+    "message": "Σύνδεσμοι προς {count, plural, one {το # στοιχείο} other {τα # στοιχεία}}, στον φάκελο:"
+  },
+  "ops.link.label_one": {
+    "message": "Σύνδεσμος προς «{name}» ως:"
+  },
+  "ops.link.making": {
+    "message": "Δημιουργία {kind, select, symbolic {του συμβολικού συνδέσμου} hard {του σκληρού συνδέσμου} junction {του σημείου σύνδεσης} other {της συντόμευσης (.lnk)}}"
+  },
+  "ops.link.needs_admin": {
+    "message": "οι συμβολικοί σύνδεσμοι απαιτούν διαχειριστή ή τη Λειτουργία προγραμματιστή"
+  },
+  "ops.link.thread_failed": {
+    "message": "το νήμα της συντόμευσης απέτυχε"
+  },
+  "ops.link.title_many": {
+    "message": "{kind, select, symbolic {Συμβολικοί σύνδεσμοι} hard {Σκληροί σύνδεσμοι} junction {Σημεία σύνδεσης} other {Συντομεύσεις (.lnk)}} προς {count, plural, one {# στοιχείο} other {# στοιχεία}} στο {folder}"
+  },
+  "ops.link.title_one": {
+    "message": "{kind, select, symbolic {Συμβολικός σύνδεσμος} hard {Σκληρός σύνδεσμος} junction {Σημείο σύνδεσης} other {Συντόμευση (.lnk)}} προς «{name}» στο {folder}"
+  },
+  "ops.link.windows_only": {
+    "message": "τα σημεία σύνδεσης και οι συντομεύσεις υπάρχουν μόνο στα Windows"
+  },
+  "ops.redo.title": {
+    "message": "Ακύρωση αναίρεσης: {what}"
+  },
+  "ops.title.many": {
+    "message": "{kind, select, copy {Αντιγραφή} other {Μετακίνηση}} {count, plural, one {# στοιχείου} other {# στοιχείων}} στο {target}"
+  },
+  "ops.title.one": {
+    "message": "{kind, select, copy {Αντιγραφή} other {Μετακίνηση}} του «{name}» στο {target}"
+  },
+  "ops.undo.not_a_server": {
+    "message": "{url}: δεν είναι διεύθυνση διακομιστή"
+  },
+  "ops.undo.not_in_trash": {
+    "message": "δεν βρίσκονται πια στον κάδο απορριμμάτων"
+  },
+  "ops.undo.restore_title": {
+    "message": "{title}: επαναφορά από τον κάδο απορριμμάτων όσων αντικαταστάθηκαν"
+  },
+  "ops.undo.title": {
+    "message": "Αναίρεση: {what}"
+  },
+  "pack.cancel": {
+    "message": "Ακύρωση"
+  },
+  "pack.compression": {
+    "message": "Συμπίεση:"
+  },
+  "pack.dialog_title": {
+    "message": "Συμπίεση αρχείων"
+  },
+  "pack.encrypt": {
+    "message": "Κρυπτογράφηση με τον κωδικό"
+  },
+  "pack.format": {
+    "message": "Μορφή:"
+  },
+  "pack.label": {
+    "message": "Συμπίεση {count, plural, one {# στοιχείου} other {# στοιχείων}} στην αρχειοθήκη:"
+  },
+  "pack.level.fastest": {
+    "message": "Ταχύτατη"
+  },
+  "pack.level.maximum": {
+    "message": "Μέγιστη"
+  },
+  "pack.level.normal": {
+    "message": "Κανονική"
+  },
+  "pack.level.store": {
+    "message": "Αποθήκευση"
+  },
+  "pack.level.ultra": {
+    "message": "Υπέρτατη"
+  },
+  "pack.local_only": {
+    "message": "{what, select, packing {Η συμπίεση} unpacking {Η αποσυμπίεση} testing {Ο έλεγχος} creating_checksums {Η δημιουργία αθροισμάτων ελέγχου} making_links {Η δημιουργία συνδέσμων} verifying_checksums {Η επαλήθευση αθροισμάτων ελέγχου} splitting {Η διαίρεση} combining {Η συνένωση} other {Αυτό}} λειτουργεί με αρχεία αυτού του υπολογιστή, εκτός αρχειοθηκών."
+  },
+  "pack.move_files": {
+    "message": "Μετακίνηση στην αρχειοθήκη (διαγραφή των συμπιεσμένων αρχείων)"
+  },
+  "pack.needs_password": {
+    "message": "απαιτείται κωδικός πρόσβασης"
+  },
+  "pack.ok": {
+    "message": "OK"
+  },
+  "pack.password_missing": {
+    "message": "Πληκτρολογήστε τον κωδικό ή αφήστε την κρυπτογράφηση απενεργοποιημένη."
+  },
+  "pack.separate": {
+    "message": "Ξεχωριστή αρχειοθήκη για κάθε επιλεγμένο αρχείο ή φάκελο"
+  },
+  "pack.split": {
+    "message": "Διαίρεση σε τόμους των"
+  },
+  "pack.split_unit": {
+    "message": "MB"
+  },
+  "pack.test.broken": {
+    "message": "{broken, plural, one {# από {count} κατεστραμμένη} other {# από {count} κατεστραμμένες}}"
+  },
+  "pack.test.choose": {
+    "message": "Επιλέξτε τις αρχειοθήκες για έλεγχο."
+  },
+  "pack.test.ok": {
+    "message": "{count, plural, one {# αρχειοθήκη OK} other {# αρχειοθήκες OK}}"
+  },
+  "pack.test.title_many": {
+    "message": "Έλεγχος {count, plural, one {# αρχειοθήκης} other {# αρχειοθηκών}}"
+  },
+  "pack.test.title_one": {
+    "message": "Έλεγχος του «{name}»"
+  },
+  "pack.title.many": {
+    "message": "Συμπίεση {count, plural, one {# στοιχείου} other {# στοιχείων}} στο {archive}"
+  },
+  "pack.title.many_separate": {
+    "message": "Συμπίεση {count, plural, one {# στοιχείου} other {# στοιχείων}} σε ξεχωριστές αρχειοθήκες {format}"
+  },
+  "pack.title.one": {
+    "message": "Συμπίεση του «{name}» στο {archive}"
+  },
+  "pack.title.one_separate": {
+    "message": "Συμπίεση του «{name}» σε ξεχωριστές αρχειοθήκες {format}"
+  },
+  "pack.unpack.choose": {
+    "message": "Επιλέξτε τις αρχειοθήκες για αποσυμπίεση."
+  },
+  "pack.unpack.dialog_title": {
+    "message": "Αποσυμπίεση αρχείων"
+  },
+  "pack.unpack.label": {
+    "message": "Αποσυμπίεση {count, plural, one {# αρχειοθήκης} other {# αρχειοθηκών}} στο:"
+  },
+  "pack.unpack.mask": {
+    "message": "Μόνο τα αρχεία:"
+  },
+  "pack.unpack.overwrite": {
+    "message": "Αντικατάσταση υπαρχόντων αρχείων (αλλιώς διατηρούνται)"
+  },
+  "pack.unpack.password": {
+    "message": "Κωδικός:"
+  },
+  "pack.unpack.separate": {
+    "message": "Κάθε αρχειοθήκη σε φάκελο με το όνομά της"
+  },
+  "pack.unpack.title_many": {
+    "message": "Αποσυμπίεση {count, plural, one {# αρχειοθήκης} other {# αρχειοθηκών}} στο {target}"
+  },
+  "pack.unpack.title_one": {
+    "message": "Αποσυμπίεση του «{name}» στο {target}"
+  },
+  "pack.unpack.with_paths": {
+    "message": "Διατήρηση των φακέλων της αρχειοθήκης"
+  },
+  "pack.volume_invalid": {
+    "message": "Το μέγεθος τόμου είναι αριθμός MB."
+  },
+  "pack.wrong_password": {
+    "message": "λάθος κωδικός πρόσβασης"
+  },
+  "panel.admin.renaming": {
+    "message": "Μετονομασία σε «{name}»"
+  },
+  "panel.clipboard.copied": {
+    "message": "{count, plural, one {Αντιγράφηκε # στοιχείο} other {Αντιγράφηκαν # στοιχεία}}: το Ctrl+V τα επικολλά."
+  },
+  "panel.clipboard.cut": {
+    "message": "{count, plural, one {Αποκόπηκε # στοιχείο} other {Αποκόπηκαν # στοιχεία}}: το Ctrl+V τα επικολλά."
+  },
+  "panel.clipboard.no_cut_in_archive": {
+    "message": "Δεν είναι δυνατή η αποκοπή αρχείων από αρχειοθήκες· το Ctrl+C τα αντιγράφει."
+  },
+  "panel.clipboard.no_files": {
+    "message": "Το πρόχειρο δεν περιέχει αρχεία."
+  },
+  "panel.clipboard.no_paste_in_archive": {
+    "message": "Δεν είναι ακόμα δυνατή η επικόλληση αρχείων σε αρχειοθήκες."
+  },
+  "panel.clipboard.same_folder": {
+    "message": "Βρίσκονται ήδη σε αυτόν τον φάκελο: το Ctrl+V τα επικολλά σε άλλον."
+  },
+  "panel.column.attr": {
+    "message": "Χαρ."
+  },
+  "panel.column.date": {
+    "message": "Ημερομηνία"
+  },
+  "panel.column.ext": {
+    "message": "Επέκ."
+  },
+  "panel.column.name": {
+    "message": "Όνομα"
+  },
+  "panel.column.size": {
+    "message": "Μέγεθος"
+  },
+  "panel.disconnect": {
+    "message": "Αποσύνδεση"
+  },
+  "panel.drag.items": {
+    "message": "{count, plural, one {# στοιχείο} other {# στοιχεία}}"
+  },
+  "panel.error.archive_not_updatable": {
+    "message": "{name}: το 7-Zip τροποποιεί επί τόπου αρχειοθήκες 7z, zip και tar, όχι αυτήν"
+  },
+  "panel.error.archive_on_server": {
+    "message": "{name}: οι αρχειοθήκες σε διακομιστές δεν μπορούν ακόμα να τροποποιηθούν"
+  },
+  "panel.error.branch_view_local": {
+    "message": "Η Προβολή κλάδου εμφανίζει φακέλους αυτού του υπολογιστή"
+  },
+  "panel.error.exists": {
+    "message": "Το {name} υπάρχει ήδη"
+  },
+  "panel.error.folder_in_the_way": {
+    "message": "υπάρχει ήδη φάκελος με αυτό το όνομα"
+  },
+  "panel.error.inside_archive": {
+    "message": "όχι ακόμα μέσα σε αρχειοθήκες"
+  },
+  "panel.error.make_file": {
+    "message": "Δεν ήταν δυνατή η δημιουργία του αρχείου: {err}"
+  },
+  "panel.error.no_name": {
+    "message": "δεν δόθηκε όνομα"
+  },
+  "panel.error.not_a_name": {
+    "message": "{name}: μη έγκυρο όνομα"
+  },
+  "panel.error.other_drive": {
+    "message": "το άλλο πάνελ μετέβη σε άλλη μονάδα δίσκου"
+  },
+  "panel.error.rename": {
+    "message": "Δεν ήταν δυνατή η μετονομασία: {err}"
+  },
+  "panel.filter.custom.label": {
+    "message": "Τύποι αρχείων, π.χ. *.txt *.md (μετά το |, όσοι εξαιρούνται):"
+  },
+  "panel.filter.custom.title": {
+    "message": "Εμφάνιση αρχείων"
+  },
+  "panel.filter.programs": {
+    "message": "προγράμματα"
+  },
+  "panel.filter.selected_files": {
+    "message": "επιλεγμένα αρχεία"
+  },
+  "panel.found.branch_view": {
+    "message": "Προβολή κλάδου:"
+  },
+  "panel.found.search_results": {
+    "message": "Αποτελέσματα αναζήτησης:"
+  },
+  "panel.new_text_file.label": {
+    "message": "Όνομα αρχείου, θα ανοίξει στον επεξεργαστή:"
+  },
+  "panel.new_text_file.title": {
+    "message": "Νέο αρχείο κειμένου"
+  },
+  "panel.opening.cancel": {
+    "message": "Ακύρωση"
+  },
+  "panel.opening.reading": {
+    "message": "Ανάγνωση…"
+  },
+  "panel.opening.title": {
+    "message": "Άνοιγμα αρχειοθήκης"
+  },
+  "panel.quick_filter.hint": {
+    "message": "κρύβει ό,τι δεν ταιριάζει· το Escape εμφανίζει όλα"
+  },
+  "panel.quick_filter.label": {
+    "message": "Φίλτρο:"
+  },
+  "panel.quick_search.label": {
+    "message": "Αναζήτηση:"
+  },
+  "panel.size.app": {
+    "message": "<APP>"
+  },
+  "panel.size.b": {
+    "message": "{size} B"
+  },
+  "panel.size.dir": {
+    "message": "<DIR>"
+  },
+  "panel.size.gb": {
+    "message": "{size} GB"
+  },
+  "panel.size.kb": {
+    "message": "{size} KB"
+  },
+  "panel.size.mb": {
+    "message": "{size} MB"
+  },
+  "panel.size.tb": {
+    "message": "{size} TB"
+  },
+  "panel.space.bytes": {
+    "message": "{count, plural, one {{size} byte ({human})} other {{size} byte ({human})}}"
+  },
+  "panel.space.close": {
+    "message": "Κλείσιμο"
+  },
+  "panel.space.counting": {
+    "message": "Καταμέτρηση…"
+  },
+  "panel.space.done": {
+    "message": "Ολοκληρώθηκε."
+  },
+  "panel.space.files": {
+    "message": "Αρχεία:"
+  },
+  "panel.space.folders": {
+    "message": "Φάκελοι:"
+  },
+  "panel.space.in_archive": {
+    "message": "Μέσα σε αρχειοθήκες, η στήλη Μέγεθος δείχνει ήδη τα μεγέθη."
+  },
+  "panel.space.title": {
+    "message": "Υπολογισμός κατειλημμένου χώρου"
+  },
+  "panel.space.total": {
+    "message": "Συνολικό μέγεθος:"
+  },
+  "panel.space.unreadable": {
+    "message": "{count, plural, one {Δεν ήταν δυνατή η ανάγνωση # στοιχείου.} other {Δεν ήταν δυνατή η ανάγνωση # στοιχείων.}}"
+  },
+  "panel.status": {
+    "message": "{marked_size} k / {size} k σε {marked_files} / {files, plural, one {# αρχείο} other {# αρχεία}}, {marked_folders} / {folders, plural, one {# φάκελο} other {# φακέλους}}"
+  },
+  "panel.sync_browsing.stop": {
+    "message": "Συγχρονισμένη περιήγηση (κάντε κλικ για διακοπή)"
+  },
+  "panel.undo.rename": {
+    "message": "Μετονομασία του «{name}» σε «{to}»"
+  },
+  "passwords.about.set": {
+    "message": "Με έναν κύριο κωδικό πρόσβασης, οι αποθηκευμένοι κωδικοί ανοίγουν σε άλλον υπολογιστή μόλις τον πληκτρολογήσετε εκεί, αφού αντιγράψετε τον φάκελο ρυθμίσεων. Αν τον ξεχάσετε, χάνονται μόνο αυτοί: θα τους πληκτρολογήσετε ξανά."
+  },
+  "passwords.about.unlock": {
+    "message": "Οι ρυθμίσεις προέρχονται από άλλον υπολογιστή ή αυτός δεν διαθέτει κλειδοθήκη: ο κύριος κωδικός πρόσβασης ανοίγει εδώ τους αποθηκευμένους κωδικούς."
+  },
+  "passwords.cancel": {
+    "message": "Ακύρωση"
+  },
+  "passwords.done.set": {
+    "message": "Ο κύριος κωδικός πρόσβασης ορίστηκε."
+  },
+  "passwords.done.unlocked": {
+    "message": "Οι αποθηκευμένοι κωδικοί πρόσβασης ξεκλειδώθηκαν."
+  },
+  "passwords.error.locked": {
+    "message": "οι αποθηκευμένοι κωδικοί πρόσβασης είναι κλειδωμένοι: ξεκλειδώστε τους με τον κύριο κωδικό (Διαμόρφωση › Ρυθμίσεις › Κωδικοί πρόσβασης)"
+  },
+  "passwords.error.no_master": {
+    "message": "δεν έχει οριστεί κύριος κωδικός πρόσβασης"
+  },
+  "passwords.error.no_random": {
+    "message": "δεν υπάρχουν τυχαίοι αριθμοί"
+  },
+  "passwords.error.not_opened": {
+    "message": "δεν είναι δυνατό το άνοιγμα του κωδικού για {what}"
+  },
+  "passwords.error.not_sealed": {
+    "message": "δεν ήταν δυνατή η κρυπτογράφηση του κωδικού"
+  },
+  "passwords.error.salt_damaged": {
+    "message": "το salt του κύριου κωδικού πρόσβασης είναι κατεστραμμένο"
+  },
+  "passwords.error.wrong": {
+    "message": "ο κύριος κωδικός πρόσβασης είναι λάθος"
+  },
+  "passwords.field.again": {
+    "message": "Ξανά"
+  },
+  "passwords.field.master": {
+    "message": "Κύριος κωδικός"
+  },
+  "passwords.locked_note": {
+    "message": "Οι αποθηκευμένοι κωδικοί πρόσβασης είναι κλειδωμένοι σε αυτόν τον υπολογιστή: ο κύριος κωδικός τους ξεκλειδώνει."
+  },
+  "passwords.ok": {
+    "message": "OK"
+  },
+  "passwords.problem.differ": {
+    "message": "Οι δύο κωδικοί δεν ταιριάζουν."
+  },
+  "passwords.problem.empty": {
+    "message": "Πληκτρολογήστε τον κύριο κωδικό πρόσβασης."
+  },
+  "passwords.title.set": {
+    "message": "Κύριος κωδικός πρόσβασης"
+  },
+  "passwords.title.unlock": {
+    "message": "Ξεκλείδωμα αποθηκευμένων κωδικών"
+  },
+  "passwords.unlock_button": {
+    "message": "Ξεκλείδωμα…"
+  },
+  "passwords.working": {
+    "message": "Επεξεργασία…"
+  },
+  "properties.accessed": {
+    "message": "Πρόσβαση:"
+  },
+  "properties.change_attributes": {
+    "message": "Αλλαγή χαρακτηριστικών..."
+  },
+  "properties.close": {
+    "message": "Κλείσιμο"
+  },
+  "properties.contents": {
+    "message": "{file_count, plural, one {{files} αρχείο} other {{files} αρχεία}}, {folder_count, plural, one {{folders} φάκελος} other {{folders} φάκελοι}}, {count, plural, one {{bytes} byte} other {{bytes} byte}} ({size})"
+  },
+  "properties.contents_counting": {
+    "message": "{file_count, plural, one {{files} αρχείο} other {{files} αρχεία}}, {folder_count, plural, one {{folders} φάκελος} other {{folders} φάκελοι}}, {count, plural, one {{bytes} byte} other {{bytes} byte}} ({size}) (καταμέτρηση…)"
+  },
+  "properties.contents_label": {
+    "message": "Περιεχόμενα:"
+  },
+  "properties.created": {
+    "message": "Δημιουργία:"
+  },
+  "properties.dialog_title": {
+    "message": "Ιδιότητες"
+  },
+  "properties.in_archive": {
+    "message": "Η λίστα της αρχειοθήκης δείχνει ό,τι γνωρίζει για τα αρχεία της."
+  },
+  "properties.kind.file": {
+    "message": "Αρχείο"
+  },
+  "properties.kind.folder": {
+    "message": "Φάκελος"
+  },
+  "properties.kind.link": {
+    "message": "Σύνδεσμος"
+  },
+  "properties.kind.link_to": {
+    "message": "Σύνδεσμος προς {target}"
+  },
+  "properties.location": {
+    "message": "Θέση:"
+  },
+  "properties.modified": {
+    "message": "Τροποποίηση:"
+  },
+  "properties.name": {
+    "message": "Όνομα:"
+  },
+  "properties.no_system_dialog": {
+    "message": "δεν υπάρχει ακόμα παράθυρο ιδιοτήτων του συστήματος εδώ"
+  },
+  "properties.owner": {
+    "message": "Κάτοχος / ομάδα:"
+  },
+  "properties.permissions": {
+    "message": "Δικαιώματα:"
+  },
+  "properties.size": {
+    "message": "{count, plural, one {{bytes} byte ({size})} other {{bytes} byte ({size})}}"
+  },
+  "properties.size_label": {
+    "message": "Μέγεθος:"
+  },
+  "properties.type": {
+    "message": "Τύπος:"
+  },
+  "quick_open.go_to": {
+    "message": "Μετάβαση σε {path}"
+  },
+  "quick_open.group.bookmarks": {
+    "message": "Σελιδοδείκτες"
+  },
+  "quick_open.group.connections": {
+    "message": "Συνδέσεις"
+  },
+  "quick_open.group.drives": {
+    "message": "Μονάδες δίσκου"
+  },
+  "quick_open.group.path": {
+    "message": "Διαδρομή"
+  },
+  "quick_open.group.recent_folders": {
+    "message": "Πρόσφατοι φάκελοι"
+  },
+  "quick_open.group.tools": {
+    "message": "Εργαλεία"
+  },
+  "quick_open.group.workspaces": {
+    "message": "Χώροι εργασίας"
+  },
+  "quick_open.placeholder": {
+    "message": "Εντολή, σελιδοδείκτης, φάκελος, διαδρομή, διακομιστής, μονάδα δίσκου, χώρος εργασίας ή εργαλείο"
+  },
+  "quick_open.title": {
+    "message": "Γρήγορο άνοιγμα"
+  },
+  "quick_view.counting": {
+    "message": "Καταμέτρηση…"
+  },
+  "quick_view.downloading": {
+    "message": "Λήψη…"
+  },
+  "quick_view.empty": {
+    "message": "Η Γρήγορη προβολή δείχνει το στοιχείο όπου βρίσκεται ο δρομέας του άλλου πάνελ."
+  },
+  "quick_view.extracting": {
+    "message": "Εξαγωγή από την αρχειοθήκη…"
+  },
+  "quick_view.files_only": {
+    "message": "Σε διακομιστές και μέσα σε αρχειοθήκες, η Γρήγορη προβολή δείχνει μόνο αρχεία."
+  },
+  "quick_view.space.title": {
+    "message": "Συνολικός κατειλημμένος χώρος:"
+  },
+  "quick_view.space.totals": {
+    "message": "{bytes, plural, one {{bytes_grouped} byte} other {{bytes_grouped} byte}} σε {files, plural, one {{files_grouped} αρχείο} other {{files_grouped} αρχεία}}, {folders, plural, one {{folders_grouped} φάκελο} other {{folders_grouped} φακέλους}}"
+  },
+  "quick_view.space.unreadable": {
+    "message": "Δεν ήταν δυνατή η ανάγνωση: {count}."
+  },
+  "quick_view.too_large.download": {
+    "message": "Το {size} είναι πολύ μεγάλο για λήψη εδώ: το F3 το εμφανίζει."
+  },
+  "quick_view.too_large.extract": {
+    "message": "Το {size} είναι πολύ μεγάλο για εξαγωγή από την αρχειοθήκη εδώ: το F3 το εμφανίζει."
+  },
+  "remote.cancelled": {
+    "message": "ακυρώθηκε"
+  },
+  "remote.cloud.ask": {
+    "message": "{kind, select, application_key {Κλειδί εφαρμογής του {user} στο {host}:} api_key {Κλειδί API του {user} στο {host}:} password {Κωδικός πρόσβασης του {user} στο {host}:} other {Μυστικό κλειδί του {user} στο {host}:}}"
+  },
+  "remote.cloud.ask_again": {
+    "message": "{kind, select, application_key {Λάθος κλειδί εφαρμογής. Κλειδί εφαρμογής του {user} στο {host}:} api_key {Λάθος κλειδί API. Κλειδί API του {user} στο {host}:} password {Λάθος κωδικός πρόσβασης. Κωδικός πρόσβασης του {user} στο {host}:} other {Λάθος κλειδί. Μυστικό κλειδί του {user} στο {host}:}}"
+  },
+  "remote.cloud.obscure_failed": {
+    "message": "το rclone δεν μπόρεσε να δεχτεί τον κωδικό πρόσβασης"
+  },
+  "remote.cloud.rclone_missing": {
+    "message": "Το rclone λείπει: η λήψη του γίνεται από Ρυθμίσεις > Πρόσθετα"
+  },
+  "remote.cloud.title": {
+    "message": "{kind, select, application_key {Κλειδί εφαρμογής} api_key {Κλειδί API} password {Κωδικός πρόσβασης} other {Μυστικό κλειδί}}"
+  },
+  "remote.connecting": {
+    "message": "Σύνδεση με {server}..."
+  },
+  "remote.dialog.cancel": {
+    "message": "Ακύρωση"
+  },
+  "remote.dialog.ok": {
+    "message": "OK"
+  },
+  "remote.disconnect_failed": {
+    "message": "{share}: δεν ήταν δυνατή η αποσύνδεση: {err}"
+  },
+  "remote.ftp.password": {
+    "message": "Κωδικός πρόσβασης για {user}@{host}:"
+  },
+  "remote.ftp.password_again": {
+    "message": "Λάθος κωδικός πρόσβασης. Κωδικός πρόσβασης για {user}@{host}:"
+  },
+  "remote.ftps.changed": {
+    "message": "Το πιστοποιητικό TLS του {server} έχει ΑΛΛΑΞΕΙ από τότε που καταγράφηκε στη γραμμή {line} του {file}. Κάποιος μπορεί να παρακολουθεί· αν ο διακομιστής έχει νέο πιστοποιητικό, αφαιρέστε αυτήν τη γραμμή."
+  },
+  "remote.ftps.not_trusted": {
+    "message": "το πιστοποιητικό του διακομιστή δεν είναι αξιόπιστο"
+  },
+  "remote.login.password": {
+    "message": "Κωδικός"
+  },
+  "remote.login.title": {
+    "message": "Σύνδεση"
+  },
+  "remote.login.user": {
+    "message": "Χρήστης"
+  },
+  "remote.mount.login_wrong": {
+    "message": "ο χρήστης ή ο κωδικός πρόσβασης είναι λάθος"
+  },
+  "remote.mount.macos_failed": {
+    "message": "το macOS δεν μπόρεσε να το προσαρτήσει (NetFS {code})"
+  },
+  "remote.mount.needs_desktop": {
+    "message": "απαιτεί το kio-fuse του KDE ή το gvfs του GNOME"
+  },
+  "remote.mount.needs_login": {
+    "message": "απαιτεί χρήστη και κωδικό πρόσβασης"
+  },
+  "remote.mount.no_fuse": {
+    "message": "προσαρτήθηκε, αλλά δεν υπάρχει φάκελος γι’ αυτό: λείπει το gvfs-fuse"
+  },
+  "remote.mount.no_nfs_client": {
+    "message": "δεν βρέθηκε· το NFS χρειάζεται το «Πρόγραμμα-πελάτης για NFS» των Windows (Δυνατότητες των Windows)"
+  },
+  "remote.mount.no_share": {
+    "message": "λείπει ο κοινόχρηστος φάκελος: smb://server/share"
+  },
+  "remote.mount.not_address": {
+    "message": "δεν είναι διεύθυνση"
+  },
+  "remote.mount.not_found": {
+    "message": "προσαρτήθηκε, αλλά δεν βρέθηκε ανάμεσα στα προσαρτημένα"
+  },
+  "remote.mount.other_user": {
+    "message": "τα Windows είναι συνδεδεμένα σε αυτόν τον διακομιστή ως άλλος χρήστης: αποσυνδεθείτε ή χρησιμοποιήστε εκείνον τον χρήστη"
+  },
+  "remote.password.title": {
+    "message": "Κωδικός πρόσβασης"
+  },
+  "remote.remember_password": {
+    "message": "Απομνημόνευση (Ρυθμίσεις › Κωδικοί πρόσβασης)"
+  },
+  "remote.save_back_failed": {
+    "message": "Δεν ήταν δυνατή η αποστολή του πίσω: {err}"
+  },
+  "remote.sftp.host_certificate": {
+    "message": "Ο διακομιστής παρουσιάζει πιστοποιητικό host· αυτά δεν υποστηρίζονται ακόμα."
+  },
+  "remote.sftp.key_changed": {
+    "message": "Το κλειδί host του {server} έχει ΑΛΛΑΞΕΙ από τότε που καταγράφηκε στη γραμμή {line} του {file}. Κάποιος μπορεί να παρακολουθεί· αν ο διακομιστής εγκαταστάθηκε από την αρχή, αφαιρέστε αυτήν τη γραμμή."
+  },
+  "remote.sftp.key_not_trusted": {
+    "message": "Το κλειδί host του {server} δεν έγινε αποδεκτό ως αξιόπιστο."
+  },
+  "remote.sftp.keys_refused": {
+    "message": "{user}@{host}: ο διακομιστής απέρριψε τα κλειδιά και δεν δέχεται κωδικό πρόσβασης"
+  },
+  "remote.sftp.login_refused": {
+    "message": "{user}@{host}: η σύνδεση απορρίφθηκε"
+  },
+  "remote.sftp.passphrase": {
+    "message": "Φράση πρόσβασης για το {file}"
+  },
+  "remote.sftp.passphrase_title": {
+    "message": "Φράση πρόσβασης κλειδιού"
+  },
+  "remote.sftp.password": {
+    "message": "Κωδικός πρόσβασης για {user}@{host}"
+  },
+  "remote.unknown_host.once": {
+    "message": "Σύνδεση μία φορά"
+  },
+  "remote.unknown_host.remember": {
+    "message": "Σύνδεση και απομνημόνευση"
+  },
+  "remote.unknown_host.text": {
+    "message": "{key_type, select, TLS {Ο διακομιστής {host} δεν είναι ακόμα γνωστός. Το αποτύπωμα του πιστοποιητικού TLS του είναι} other {Ο διακομιστής {host} δεν είναι ακόμα γνωστός. Το αποτύπωμα {key_type} του είναι}}\n\n{fingerprint}\n\nΣυνδεθείτε μόνο αν αυτός είναι ο διακομιστής που εννοείτε· ο διαχειριστής του μπορεί να επιβεβαιώσει το αποτύπωμα."
+  },
+  "remote.unknown_host.title": {
+    "message": "Άγνωστος διακομιστής"
+  },
+  "rename.case": {
+    "message": "Πεζά/κεφαλαία:"
+  },
+  "rename.case.first": {
+    "message": "Πρώτο γράμμα"
+  },
+  "rename.case.lower": {
+    "message": "πεζά"
+  },
+  "rename.case.unchanged": {
+    "message": "Χωρίς αλλαγή"
+  },
+  "rename.case.upper": {
+    "message": "ΚΕΦΑΛΑΙΑ"
+  },
+  "rename.case.words": {
+    "message": "Κάθε Λέξη"
+  },
+  "rename.close": {
+    "message": "Κλείσιμο"
+  },
+  "rename.counter_start": {
+    "message": "Έναρξη μετρητή"
+  },
+  "rename.dialog_title": {
+    "message": "Εργαλείο μαζικής μετονομασίας"
+  },
+  "rename.digits": {
+    "message": "Ψηφία"
+  },
+  "rename.extension": {
+    "message": "Επέκταση"
+  },
+  "rename.field.counter": {
+    "message": "[C] Μετρητής"
+  },
+  "rename.field.date": {
+    "message": "[Y][M][D] Ημερ."
+  },
+  "rename.field.extension": {
+    "message": "[E] Επέκ."
+  },
+  "rename.field.folder": {
+    "message": "[P] Φάκελος"
+  },
+  "rename.field.name": {
+    "message": "[N] Όνομα"
+  },
+  "rename.field.range": {
+    "message": "[N1-3] Εύρος"
+  },
+  "rename.field.time": {
+    "message": "[h][m][s] Ώρα"
+  },
+  "rename.first_only": {
+    "message": "Μόνο το πρώτο"
+  },
+  "rename.in_archive": {
+    "message": "Τα αρχεία μέσα σε αρχειοθήκες δεν μπορούν ακόμα να μετονομαστούν."
+  },
+  "rename.mask": {
+    "message": "Μάσκα μετονομασίας: όνομα αρχείου"
+  },
+  "rename.match_case": {
+    "message": "Διάκριση πεζών-κεφαλαίων"
+  },
+  "rename.new_name": {
+    "message": "Νέο όνομα"
+  },
+  "rename.not_renamed_back": {
+    "message": "{from}: {err}· δεν επανήλθαν τα ονόματα: {names}"
+  },
+  "rename.not_utf8": {
+    "message": "Τα ονόματα που δεν είναι UTF-8 παραλείπονται."
+  },
+  "rename.old_name": {
+    "message": "Παλιό όνομα"
+  },
+  "rename.problem.bad_character": {
+    "message": "μη επιτρεπτός χαρακτήρας"
+  },
+  "rename.problem.exists": {
+    "message": "υπάρχει ήδη"
+  },
+  "rename.problem.no_name": {
+    "message": "χωρίς όνομα"
+  },
+  "rename.problem.twice": {
+    "message": "δύο φορές στη λίστα"
+  },
+  "rename.regex": {
+    "message": "Κανονική έκφραση"
+  },
+  "rename.regex_error": {
+    "message": "Η κανονική έκφραση: {err}"
+  },
+  "rename.replace": {
+    "message": "Αντικατάσταση με"
+  },
+  "rename.search": {
+    "message": "Αναζήτηση για"
+  },
+  "rename.start": {
+    "message": "Έναρξη!"
+  },
+  "rename.status.failed": {
+    "message": "Δεν μετονομάστηκε τίποτα: {err}"
+  },
+  "rename.status.ready": {
+    "message": "Η Έναρξη τα μετονομάζει."
+  },
+  "rename.status.renamed": {
+    "message": "{count, plural, one {Μετονομάστηκε #.} other {Μετονομάστηκαν #.}}"
+  },
+  "rename.status.took_back": {
+    "message": "{count, plural, one {Επαναφέρθηκε #.} other {Επαναφέρθηκαν #.}}"
+  },
+  "rename.step": {
+    "message": "Βήμα"
+  },
+  "rename.undo": {
+    "message": "Αναίρεση"
+  },
+  "rename.was": {
+    "message": "{to} (ήταν {from})"
+  },
+  "rename.with_extension": {
+    "message": "Με την επέκταση"
+  },
+  "scmd.column.modified": {
+    "message": "Τροποποίηση"
+  },
+  "scmd.column.name": {
+    "message": "Όνομα"
+  },
+  "scmd.column.size": {
+    "message": "Μέγεθος"
+  },
+  "scmd.column.up_dir": {
+    "message": "ΓΟΝΙΚΟΣ"
+  },
+  "scmd.command_line.not_on_server": {
+    "message": "Οι εντολές εκτελούνται σε αυτόν τον υπολογιστή, όχι στον διακομιστή."
+  },
+  "scmd.compare.marked": {
+    "message": "{count, plural, one {Επιλέχθηκε # αρχείο: νεότερο από την άλλη πλευρά ή ανύπαρκτο εκεί.} other {Επιλέχθηκαν # αρχεία: νεότερα από την άλλη πλευρά ή ανύπαρκτα εκεί.}}"
+  },
+  "scmd.compare.same": {
+    "message": "Οι φάκελοι έχουν τα ίδια αρχεία."
+  },
+  "scmd.copying": {
+    "message": "Αντιγραφή του {name}..."
+  },
+  "scmd.dialog.buttons": {
+    "message": "Enter OK   Esc Ακύρωση"
+  },
+  "scmd.error.read_settings": {
+    "message": "Δεν ήταν δυνατή η ανάγνωση των ρυθμίσεων: {err}"
+  },
+  "scmd.error.read_tabs": {
+    "message": "Δεν ήταν δυνατή η ανάγνωση των ανοιχτών καρτελών: {err}"
+  },
+  "scmd.error.read_workspaces": {
+    "message": "Δεν ήταν δυνατή η ανάγνωση των χώρων εργασίας: {err}"
+  },
+  "scmd.error.save_back": {
+    "message": "Δεν ήταν δυνατή η αποστολή του πίσω: {err}"
+  },
+  "scmd.error.save_searches": {
+    "message": "Δεν ήταν δυνατή η αποθήκευση των αναζητήσεων: {err}"
+  },
+  "scmd.error.save_tabs": {
+    "message": "Δεν ήταν δυνατή η αποθήκευση των ανοιχτών καρτελών: {err}"
+  },
+  "scmd.find.backwards": {
+    "message": "Προς τα πίσω"
+  },
+  "scmd.find.case_sensitive": {
+    "message": "Διάκριση πεζών-κεφαλαίων"
+  },
+  "scmd.find.hex": {
+    "message": "Δεκαεξαδικό (77 6F 72 64)"
+  },
+  "scmd.find.not_found": {
+    "message": "Δεν βρέθηκε: {text}"
+  },
+  "scmd.find.regex": {
+    "message": "Κανονική έκφραση"
+  },
+  "scmd.find.search_for": {
+    "message": "Αναζήτηση για:"
+  },
+  "scmd.find.title": {
+    "message": "Εύρεση"
+  },
+  "scmd.find.whole_words": {
+    "message": "Μόνο ολόκληρες λέξεις"
+  },
+  "scmd.group.files": {
+    "message": "Αρχεία (*.txt *.md· οι φάκελοι τελειώνουν σε /):"
+  },
+  "scmd.group.select_title": {
+    "message": "Επιλογή ομάδας"
+  },
+  "scmd.group.unselect_title": {
+    "message": "Αποεπιλογή ομάδας"
+  },
+  "scmd.key_bar.copy": {
+    "message": "Αντιγρ"
+  },
+  "scmd.key_bar.delete": {
+    "message": "Διαγρ"
+  },
+  "scmd.key_bar.edit": {
+    "message": "Επεξ"
+  },
+  "scmd.key_bar.menu": {
+    "message": "Μενού"
+  },
+  "scmd.key_bar.mkdir": {
+    "message": "ΝέοςΦ"
+  },
+  "scmd.key_bar.move": {
+    "message": "Μετακ"
+  },
+  "scmd.key_bar.quit": {
+    "message": "Έξοδος"
+  },
+  "scmd.key_bar.view": {
+    "message": "Προβ"
+  },
+  "scmd.message.error": {
+    "message": "Σφάλμα"
+  },
+  "scmd.message.ok": {
+    "message": "OK"
+  },
+  "scmd.not_yet": {
+    "message": "{what, select, menus {Τα μενού: δεν υπάρχουν ακόμα στην έκδοση τερματικού.} file_operations {Λειτουργίες αρχείων: δεν υπάρχουν ακόμα στην έκδοση τερματικού.} servers {Διακομιστές: δεν υποστηρίζονται ακόμα στην έκδοση τερματικού.} other {Αυτή η εντολή: δεν υπάρχει ακόμα στην έκδοση τερματικού.}}"
+  },
+  "scmd.picture.broken": {
+    "message": "κατεστραμμένη εικόνα"
+  },
+  "scmd.picture.broken_page": {
+    "message": "κατεστραμμένη σελίδα"
+  },
+  "scmd.picture.loading": {
+    "message": "Φόρτωση…"
+  },
+  "scmd.picture.no_page": {
+    "message": "το PDF δεν έχει τέτοια σελίδα"
+  },
+  "scmd.shell.press_enter": {
+    "message": "Πατήστε Enter για επιστροφή στο Spark Commander..."
+  },
+  "scmd.sync_browsing.off": {
+    "message": "Η συγχρονισμένη περιήγηση απενεργοποιήθηκε."
+  },
+  "scmd.sync_browsing.on": {
+    "message": "Η συγχρονισμένη περιήγηση ενεργοποιήθηκε."
+  },
+  "scmd.sync_browsing.stopped": {
+    "message": "{err}. Η συγχρονισμένη περιήγηση απενεργοποιήθηκε."
+  },
+  "scmd.viewer.column": {
+    "message": "Στ. {column}"
+  },
+  "scmd.viewer.finding": {
+    "message": "εύρεση…"
+  },
+  "scmd.viewer.key_bar.next": {
+    "message": "Επόμ"
+  },
+  "scmd.viewer.key_bar.quit": {
+    "message": "Έξοδος"
+  },
+  "scmd.viewer.key_bar.reload": {
+    "message": "Ανανέ"
+  },
+  "scmd.viewer.key_bar.search": {
+    "message": "Εύρεση"
+  },
+  "scmd.viewer.page": {
+    "message": "σελίδα {page} από {pages}"
+  },
+  "scmd.viewer.reading": {
+    "message": "ανάγνωση {percent}%"
+  },
+  "scmd.viewer.wrap": {
+    "message": "Αναδίπλωση"
+  },
+  "scmd.workspace.copy_name": {
+    "message": "{name} αντίγραφο"
+  },
+  "scmd.workspace.default_name": {
+    "message": "Χώρος εργασίας {number}"
+  },
+  "scmd.workspace.delete_question": {
+    "message": "Διαγραφή του «{name}»; Οι καρτέλες του θα χαθούν."
+  },
+  "scmd.workspace.duplicate_title": {
+    "message": "Αντίγραφο χώρου εργασίας"
+  },
+  "scmd.workspace.last_stays": {
+    "message": "Ο τελευταίος χώρος εργασίας παραμένει."
+  },
+  "scmd.workspace.name": {
+    "message": "Όνομα:"
+  },
+  "scmd.workspace.name_or_default": {
+    "message": "Όνομα (κενό: {name}):"
+  },
+  "scmd.workspace.new_title": {
+    "message": "Νέος χώρος εργασίας"
+  },
+  "scmd.workspace.rename_title": {
+    "message": "Μετονομασία χώρου εργασίας"
+  },
+  "scmd.workspaces.keys": {
+    "message": "Enter Άνοιγμα  F7 Νέος  F5 Αντιγραφή  F2 Μετονομασία  F8 Διαγραφή"
+  },
+  "scmd.workspaces.title": {
+    "message": "Χώροι εργασίας"
+  },
+  "search.age.days": {
+    "message": "ημέρες"
+  },
+  "search.age.hours": {
+    "message": "ώρες"
+  },
+  "search.age.minutes": {
+    "message": "λεπτά"
+  },
+  "search.age.months": {
+    "message": "μήνες"
+  },
+  "search.age.weeks": {
+    "message": "εβδομάδες"
+  },
+  "search.age.years": {
+    "message": "έτη"
+  },
+  "search.archives": {
+    "message": "Αναζήτηση σε αρχειοθήκες"
+  },
+  "search.attribute.directory": {
+    "message": "Φάκελος"
+  },
+  "search.attribute.either": {
+    "message": "Αδιάφορο"
+  },
+  "search.attribute.executable": {
+    "message": "Εκτελέσιμο"
+  },
+  "search.attribute.hidden": {
+    "message": "Κρυφό"
+  },
+  "search.attribute.link": {
+    "message": "Συμβολικός σύνδεσμος"
+  },
+  "search.attribute.must": {
+    "message": "Πρέπει να είναι"
+  },
+  "search.attribute.must_not": {
+    "message": "Δεν πρέπει να είναι"
+  },
+  "search.attribute.read_only": {
+    "message": "Μόνο ανάγνωση"
+  },
+  "search.attributes.label": {
+    "message": "Χαρακτηριστικά:"
+  },
+  "search.between.and": {
+    "message": "και"
+  },
+  "search.between.label": {
+    "message": "Ημερομηνία μεταξύ:"
+  },
+  "search.close": {
+    "message": "Κλείσιμο"
+  },
+  "search.depth.all": {
+    "message": "όλα (απεριόριστο βάθος)"
+  },
+  "search.depth.current": {
+    "message": "μόνο ο τρέχων φάκελος"
+  },
+  "search.depth.label": {
+    "message": "Αναζήτηση σε υποφακέλους:"
+  },
+  "search.depth.levels": {
+    "message": "{count, plural, one {# επίπεδο} other {# επίπεδα}}"
+  },
+  "search.drives": {
+    "message": "Μονάδες δίσκου"
+  },
+  "search.duplicates.content": {
+    "message": "ίδιο περιεχόμενο"
+  },
+  "search.duplicates.label": {
+    "message": "Εύρεση διπλότυπων αρχείων:"
+  },
+  "search.duplicates.name": {
+    "message": "ίδιο όνομα"
+  },
+  "search.duplicates.size": {
+    "message": "ίδιο μέγεθος"
+  },
+  "search.edit": {
+    "message": "F4 Επεξεργασία"
+  },
+  "search.error.between_days": {
+    "message": "Η «Ημερομηνία μεταξύ» χρειάζεται και τις δύο ημέρες"
+  },
+  "search.error.date": {
+    "message": "Το {text} δεν είναι ημερομηνία όπως 2026-11-12"
+  },
+  "search.error.hex": {
+    "message": "Το {text} δεν είναι δεκαεξαδική συμβολοσειρά όπως 48 65 6c"
+  },
+  "search.error.keep": {
+    "message": "Δεν ήταν δυνατή η διατήρηση της αναζήτησης: {err}"
+  },
+  "search.error.local_time": {
+    "message": "Το {text} δεν είναι έγκυρη τοπική ώρα"
+  },
+  "search.error.names_regex": {
+    "message": "Η κανονική έκφραση του ονόματος: {err}"
+  },
+  "search.error.newer_number": {
+    "message": "Το «Όχι παλαιότερα από» χρειάζεται αριθμό, όχι {text}"
+  },
+  "search.error.no_place": {
+    "message": "Το «Αναζήτηση σε» δεν περιέχει φάκελο"
+  },
+  "search.error.no_text": {
+    "message": "Το «Εύρεση κειμένου» δεν περιέχει κείμενο"
+  },
+  "search.error.older_number": {
+    "message": "Το «Παλαιότερα από» χρειάζεται αριθμό, όχι {text}"
+  },
+  "search.error.save": {
+    "message": "Δεν ήταν δυνατή η αποθήκευση των αναζητήσεων: {err}"
+  },
+  "search.error.size_number": {
+    "message": "Το «Μέγεθος αρχείου» χρειάζεται αριθμό, όχι {text}"
+  },
+  "search.error.text_regex": {
+    "message": "Η κανονική έκφραση του κειμένου: {err}"
+  },
+  "search.feed": {
+    "message": "Στο πάνελ"
+  },
+  "search.go_to_file": {
+    "message": "Μετάβαση στο αρχείο"
+  },
+  "search.in_found": {
+    "message": "F2 Αναζήτηση στα αρχεία που βρέθηκαν"
+  },
+  "search.locate": {
+    "message": "Από το ευρετήριο του locate"
+  },
+  "search.names.label": {
+    "message": "Αναζήτηση:"
+  },
+  "search.names.placeholder": {
+    "message": "*.txt *.md | backup*  (κενό: όλα)"
+  },
+  "search.new": {
+    "message": "Νέα αναζήτηση"
+  },
+  "search.newer.label": {
+    "message": "Όχι παλαιότερα από:"
+  },
+  "search.older.label": {
+    "message": "Παλαιότερα από:"
+  },
+  "search.only_selected": {
+    "message": "Αναζήτηση μόνο στα επιλεγμένα αρχεία/φακέλους"
+  },
+  "search.only_selected_count": {
+    "message": "{count, plural, one {Αναζήτηση μόνο στο # επιλεγμένο} other {Αναζήτηση μόνο στα # επιλεγμένα}}"
+  },
+  "search.page.advanced": {
+    "message": "Για προχωρημένους"
+  },
+  "search.page.general": {
+    "message": "Γενικά"
+  },
+  "search.page.load_save": {
+    "message": "Φόρτωση/Αποθήκευση"
+  },
+  "search.places.browse_prompt": {
+    "message": "Αναζήτηση σε"
+  },
+  "search.places.label": {
+    "message": "Αναζήτηση σε:"
+  },
+  "search.places.placeholder": {
+    "message": "Φάκελοι, με ; ανάμεσα"
+  },
+  "search.regex": {
+    "message": "RegEx"
+  },
+  "search.results.label": {
+    "message": "Αποτελέσματα αναζήτησης:"
+  },
+  "search.saved.delete": {
+    "message": "Διαγραφή"
+  },
+  "search.saved.label": {
+    "message": "Προηγούμενες αναζητήσεις:"
+  },
+  "search.saved.load": {
+    "message": "Φόρτωση"
+  },
+  "search.saved.name_first": {
+    "message": "Δώστε πρώτα όνομα στην αναζήτηση."
+  },
+  "search.saved.name_placeholder": {
+    "message": "Όνομα της αναζήτησης"
+  },
+  "search.saved.save": {
+    "message": "Αποθήκευση"
+  },
+  "search.size.label": {
+    "message": "Μέγεθος αρχείου:"
+  },
+  "search.start": {
+    "message": "Έναρξη αναζήτησης"
+  },
+  "search.status.found": {
+    "message": "Βρέθηκαν {files, plural, one {# αρχείο} other {# αρχεία}} και {dirs, plural, one {# φάκελος} other {# φάκελοι}}"
+  },
+  "search.status.searching": {
+    "message": "Αναζήτηση…"
+  },
+  "search.status.searching_in": {
+    "message": "Αναζήτηση: {folder}"
+  },
+  "search.status.stopped": {
+    "message": "Διακόπηκε: {counts}"
+  },
+  "search.stop": {
+    "message": "Διακοπή"
+  },
+  "search.text.ansi": {
+    "message": "ANSI (κωδικοσελίδα {page})"
+  },
+  "search.text.case_sensitive": {
+    "message": "Διάκριση πεζών-κεφαλαίων"
+  },
+  "search.text.hex": {
+    "message": "Δεκαεξαδικό"
+  },
+  "search.text.label": {
+    "message": "Εύρεση κειμένου:"
+  },
+  "search.text.not_containing": {
+    "message": "Εύρεση αρχείων που ΔΕΝ περιέχουν το κείμενο"
+  },
+  "search.text.office": {
+    "message": "Αρχεία Office (docx, xlsx, pptx, odt…)"
+  },
+  "search.text.placeholder": {
+    "message": "Κείμενο προς εύρεση"
+  },
+  "search.text.whole_words": {
+    "message": "Μόνο ολόκληρες λέξεις"
+  },
+  "search.title": {
+    "message": "Εύρεση αρχείων"
+  },
+  "search.unit.bytes": {
+    "message": "byte"
+  },
+  "search.view": {
+    "message": "F3 Προβολή"
+  },
+  "settings.addons.builtin_version": {
+    "message": "{version}, περιλαμβάνεται στο Spark Commander"
+  },
+  "settings.addons.check_daily": {
+    "message": "Έλεγχος για ενημερώσεις πρόσθετων κατά την εκκίνηση και καθημερινά, με πρόταση εγκατάστασης"
+  },
+  "settings.addons.check_failed": {
+    "message": "Δεν ήταν δυνατός ο έλεγχος για ενημερώσεις: {err}"
+  },
+  "settings.addons.check_now": {
+    "message": "Έλεγχος τώρα"
+  },
+  "settings.addons.checking": {
+    "message": "Έλεγχος για ενημερώσεις..."
+  },
+  "settings.addons.download": {
+    "message": "Λήψη"
+  },
+  "settings.addons.downloading": {
+    "message": "Λήψη: {done} από {size}"
+  },
+  "settings.addons.file": {
+    "message": "Αρχείο"
+  },
+  "settings.addons.installed.builtin": {
+    "message": "περιλαμβάνεται στο Spark Commander"
+  },
+  "settings.addons.installed.label": {
+    "message": "Εγκατεστημένο"
+  },
+  "settings.addons.installed.none": {
+    "message": "κανένα"
+  },
+  "settings.addons.intro": {
+    "message": "Το Spark Commander χρησιμοποιεί αυτά τα προγράμματα άλλων έργων για ορισμένες λειτουργίες του. Τα πρόσθετα λαμβάνονται ξεχωριστά, όταν το επιλέξετε· τα 7-Zip και PDFium περιλαμβάνονται."
+  },
+  "settings.addons.never_offer": {
+    "message": "Να μην προτείνονται ποτέ πρόσθετα όταν ένα αρχείο χρειάζεται κάποιο"
+  },
+  "settings.addons.offers": {
+    "message": "Προτάσεις και ενημερώσεις"
+  },
+  "settings.addons.online.label": {
+    "message": "Διαθέσιμο"
+  },
+  "settings.addons.online.looking": {
+    "message": "αναζήτηση..."
+  },
+  "settings.addons.online.none": {
+    "message": "κανένα για αυτό το σύστημα"
+  },
+  "settings.addons.online.not_yet": {
+    "message": "δεν έχει ελεγχθεί ακόμα"
+  },
+  "settings.addons.online.unknown": {
+    "message": "άγνωστο"
+  },
+  "settings.addons.remove": {
+    "message": "Αφαίρεση"
+  },
+  "settings.addons.up_to_date": {
+    "message": "Η λίστα πρόσθετων είναι ενημερωμένη."
+  },
+  "settings.addons.version": {
+    "message": "Έκδοση"
+  },
+  "settings.addons.website": {
+    "message": "Ιστότοπος"
+  },
+  "settings.appearance.title": {
+    "message": "Θέμα"
+  },
+  "settings.apply": {
+    "message": "Εφαρμογή"
+  },
+  "settings.backdrop.blur": {
+    "message": "Θόλωση της επιφάνειας εργασίας από πίσω"
+  },
+  "settings.backdrop.clear": {
+    "message": "0%, μόνο η επιφάνεια εργασίας"
+  },
+  "settings.backdrop.cover": {
+    "message": "Πόσο καλύπτει την επιφάνεια εργασίας από πίσω:"
+  },
+  "settings.backdrop.opacity": {
+    "message": "{opacity}%"
+  },
+  "settings.backdrop.sidebar": {
+    "message": "Πλευρική στήλη"
+  },
+  "settings.backdrop.solid": {
+    "message": "100%, αδιαφανές"
+  },
+  "settings.backdrop.terminal": {
+    "message": "Τερματικό"
+  },
+  "settings.cancel": {
+    "message": "Ακύρωση"
+  },
+  "settings.date.as_system": {
+    "message": "Όπως το σύστημα: {date}"
+  },
+  "settings.date.custom": {
+    "message": "Προσαρμογή:"
+  },
+  "settings.date.pattern_help": {
+    "message": "yyyy έτος, MM μήνας (MMM το όνομά του), dd ημέρα (ddd η ημέρα της εβδομάδας)"
+  },
+  "settings.date.shown_as": {
+    "message": "Εμφάνιση ως"
+  },
+  "settings.date.shown_as_note": {
+    "message": "στις λίστες αρχείων· τα παράθυρα διαλόγου προσθέτουν τα δευτερόλεπτα"
+  },
+  "settings.date.title": {
+    "message": "Ημερομηνία"
+  },
+  "settings.editor.browse": {
+    "message": "Αναζήτηση..."
+  },
+  "settings.editor.choose": {
+    "message": "Επιλογή"
+  },
+  "settings.editor.external": {
+    "message": "Εξωτερικό πρόγραμμα επεξεργασίας (Ctrl+Shift+F4):"
+  },
+  "settings.editor.external_help": {
+    "message": "Το %1 είναι το αρχείο, αλλιώς μπαίνει στο τέλος· π.χ. code --wait %1"
+  },
+  "settings.editor.limit": {
+    "message": "Ο ενσωματωμένος επεξεργαστής (F4) ανοίγει αρχεία έως"
+  },
+  "settings.editor.limit_unit": {
+    "message": "MB"
+  },
+  "settings.editor.title": {
+    "message": "Επεξεργαστής για το F4"
+  },
+  "settings.error.no_folder": {
+    "message": "δεν υπάρχει φάκελος ρυθμίσεων"
+  },
+  "settings.files_shown.hidden": {
+    "message": "Κρυφά αρχεία"
+  },
+  "settings.files_shown.system": {
+    "message": "Αρχεία συστήματος"
+  },
+  "settings.files_shown.title": {
+    "message": "Εμφανιζόμενα αρχεία"
+  },
+  "settings.font.as_system": {
+    "message": "Όπως το σύστημα"
+  },
+  "settings.font.chosen": {
+    "message": "Επιλεγμένη· του συστήματος είναι {family}, {size}"
+  },
+  "settings.font.fixed": {
+    "message": "Πρόγραμμα προβολής"
+  },
+  "settings.font.fixed_note": {
+    "message": "Μόνο γραμματοσειρές σταθερού πλάτους· ισχύει και για τον επεξεργαστή και τη σύγκριση αρχείων."
+  },
+  "settings.font.main": {
+    "message": "Γραμματοσειρά κύριου παραθύρου"
+  },
+  "settings.font.system": {
+    "message": "Η γραμματοσειρά του συστήματος"
+  },
+  "settings.language.system": {
+    "message": "Γλώσσα συστήματος"
+  },
+  "settings.language.system_named": {
+    "message": "Γλώσσα συστήματος: {language}"
+  },
+  "settings.language.title": {
+    "message": "Γλώσσα"
+  },
+  "settings.menus.automatic": {
+    "message": "Αυτόματα: κουμπί ☰ στο GNOME, γραμμή μενού αλλού"
+  },
+  "settings.menus.bar": {
+    "message": "Γραμμή μενού"
+  },
+  "settings.menus.button": {
+    "message": "Κουμπί ☰ στη γραμμή τίτλου"
+  },
+  "settings.menus.title": {
+    "message": "Μενού"
+  },
+  "settings.ok": {
+    "message": "OK"
+  },
+  "settings.page.addons": {
+    "message": "Πρόσθετα"
+  },
+  "settings.page.date": {
+    "message": "Ημερομηνία"
+  },
+  "settings.page.display": {
+    "message": "Εμφάνιση"
+  },
+  "settings.page.edit_view": {
+    "message": "Επεξεργασία/Προβολή"
+  },
+  "settings.page.font": {
+    "message": "Γραμματοσειρά"
+  },
+  "settings.page.language": {
+    "message": "Γλώσσα"
+  },
+  "settings.page.layout": {
+    "message": "Διάταξη"
+  },
+  "settings.page.operations": {
+    "message": "Λειτουργίες"
+  },
+  "settings.page.passwords": {
+    "message": "Κωδικοί πρόσβασης"
+  },
+  "settings.page.terminal": {
+    "message": "Τερματικό"
+  },
+  "settings.page.toolbar": {
+    "message": "Γραμμή εργαλείων"
+  },
+  "settings.passwords.change_master": {
+    "message": "Αλλαγή κύριου κωδικού πρόσβασης…"
+  },
+  "settings.passwords.locked": {
+    "message": "Είναι κλειδωμένοι σε αυτόν τον υπολογιστή: ο κύριος κωδικός πρόσβασης τους ξεκλειδώνει."
+  },
+  "settings.passwords.master_set": {
+    "message": "Έχει οριστεί κύριος κωδικός πρόσβασης: αν αντιγράψετε τον φάκελο ρυθμίσεων, ανοίγουν σε άλλον υπολογιστή μόλις τον πληκτρολογήσετε εκεί."
+  },
+  "settings.passwords.no_master": {
+    "message": "Δεν έχει οριστεί κύριος κωδικός πρόσβασης: αν αντιγράψετε τον φάκελο ρυθμίσεων, δεν ανοίγουν σε άλλον υπολογιστή· θα πρέπει να τους πληκτρολογήσετε ξανά εκεί."
+  },
+  "settings.passwords.not_removed": {
+    "message": "Ο κύριος κωδικός πρόσβασης δεν αφαιρέθηκε: {err}"
+  },
+  "settings.passwords.remove_master": {
+    "message": "Αφαίρεση κύριου κωδικού πρόσβασης"
+  },
+  "settings.passwords.saved": {
+    "message": "{count, plural, one {Είναι αποθηκευμένος # κωδικός πρόσβασης} other {Είναι αποθηκευμένοι # κωδικοί πρόσβασης}} (διακομιστών, κοινόχρηστων φακέλων, κρυπτογραφημένων μονάδων), σε κρυπτογραφημένη μορφή στον φάκελο ρυθμίσεων· το κλειδί για το άνοιγμά τους βρίσκεται στην κλειδοθήκη αυτού του υπολογιστή."
+  },
+  "settings.passwords.set_master": {
+    "message": "Ορισμός κύριου κωδικού πρόσβασης…"
+  },
+  "settings.passwords.title": {
+    "message": "Αποθηκευμένοι κωδικοί πρόσβασης"
+  },
+  "settings.passwords.unlock": {
+    "message": "Ξεκλείδωμα…"
+  },
+  "settings.queue.clear_after": {
+    "message": "Εκκαθάριση ολοκληρωμένων λειτουργιών μετά από"
+  },
+  "settings.queue.clear_after_help": {
+    "message": "0: μόλις ολοκληρωθούν. Όσες απέτυχαν ή ακυρώθηκαν παραμένουν μέχρι να εκκαθαριστούν."
+  },
+  "settings.queue.clear_after_unit": {
+    "message": "λεπτά"
+  },
+  "settings.queue.download_limit": {
+    "message": "Όριο ταχύτητας λήψης"
+  },
+  "settings.queue.download_limit_help": {
+    "message": "Λήψη από σύνδεσμο και αντιγραφές από διακομιστές FTP και SFTP· και όσες εκτελούνται ήδη. 0: χωρίς όριο."
+  },
+  "settings.queue.download_limit_unit": {
+    "message": "KB/s"
+  },
+  "settings.queue.title": {
+    "message": "Ουρά λειτουργιών"
+  },
+  "settings.shell.default": {
+    "message": "Προεπιλογή: {shell}"
+  },
+  "settings.shell.note": {
+    "message": "Το ξεκινούν οι νέες καρτέλες τερματικού."
+  },
+  "settings.shell.title": {
+    "message": "Κέλυφος"
+  },
+  "settings.sort_folders.by_name": {
+    "message": "Πάντα κατά όνομα"
+  },
+  "settings.sort_folders.like_files": {
+    "message": "Όπως τα αρχεία (και κατά ημερομηνία)"
+  },
+  "settings.sort_folders.title": {
+    "message": "Ταξινόμηση φακέλων"
+  },
+  "settings.tabs.header_always": {
+    "message": "Εμφάνιση της γραμμής καρτελών ακόμα και με μία μόνο καρτέλα"
+  },
+  "settings.tabs.title": {
+    "message": "Καρτέλες φακέλων"
+  },
+  "settings.time.as_system": {
+    "message": "Όπως το σύστημα"
+  },
+  "settings.time.h12": {
+    "message": "12ωρη (2:05 μ.μ.)"
+  },
+  "settings.time.h24": {
+    "message": "24ωρη (14:05)"
+  },
+  "settings.time.title": {
+    "message": "Ώρα"
+  },
+  "settings.title": {
+    "message": "Ρυθμίσεις"
+  },
+  "settings.toolbar.add": {
+    "message": "Προσθήκη κουμπιού…"
+  },
+  "settings.toolbar.move_down": {
+    "message": "Μετακίνηση κάτω"
+  },
+  "settings.toolbar.move_up": {
+    "message": "Μετακίνηση πάνω"
+  },
+  "settings.toolbar.place": {
+    "message": "Κάτω από τη γραμμή μενού· στη γραμμή τίτλου όταν τα μενού βρίσκονται πίσω από το κουμπί ☰, όπως στις εφαρμογές του GNOME. Χωρίς κουμπιά, δεν εμφανίζεται."
+  },
+  "settings.toolbar.remove": {
+    "message": "Αφαίρεση"
+  },
+  "settings.toolbar.replace": {
+    "message": "Αντικατάσταση…"
+  },
+  "settings.toolbar.restore_default": {
+    "message": "Επαναφορά προεπιλογών"
+  },
+  "settings.toolbar.title": {
+    "message": "Κουμπιά γραμμής εργαλείων"
+  },
+  "settings.viewer.font.ansi": {
+    "message": "ANSI (Windows)"
+  },
+  "settings.viewer.font.ascii": {
+    "message": "ASCII (DOS)"
+  },
+  "settings.viewer.font.auto": {
+    "message": "Αυτόματη ανίχνευση"
+  },
+  "settings.viewer.font.label": {
+    "message": "Γραμματοσειρά κατά την εκκίνηση:"
+  },
+  "settings.viewer.font.variable": {
+    "message": "Μεταβλητό πλάτος"
+  },
+  "settings.viewer.minimap": {
+    "message": "Μικροχάρτης"
+  },
+  "settings.viewer.show": {
+    "message": "Εμφάνιση:"
+  },
+  "settings.viewer.start.auto": {
+    "message": "Αυτόματη ανίχνευση"
+  },
+  "settings.viewer.start.binary": {
+    "message": "Δυαδική"
+  },
+  "settings.viewer.start.hex": {
+    "message": "Δεκαεξαδική"
+  },
+  "settings.viewer.start.label": {
+    "message": "Εμφάνιση κατά την εκκίνηση:"
+  },
+  "settings.viewer.start.text": {
+    "message": "Κείμενο"
+  },
+  "settings.viewer.title": {
+    "message": "Πρόγραμμα προβολής για το F3"
+  },
+  "settings.viewer.width.binary": {
+    "message": "Δυαδική"
+  },
+  "settings.viewer.width.label": {
+    "message": "Πλάτος εμφάνισης (χαρακτήρες):"
+  },
+  "settings.viewer.width.text": {
+    "message": "Κείμενο"
+  },
+  "settings.viewer.wrap": {
+    "message": "Αναδίπλωση κειμένου"
+  },
+  "shells.command_prompt": {
+    "message": "Γραμμή εντολών"
+  },
+  "sidebar.device.no_files": {
+    "message": "δεν κοινοποιεί αρχεία"
+  },
+  "sidebar.device.not_answering": {
+    "message": "Η συσκευή {name} δεν αποκρίνεται: ξεκλειδώστε την και ανοίξτε το KDE Connect σε αυτήν, έπειτα διαβάστε ξανά τον φάκελο (F2)."
+  },
+  "sidebar.device.not_answering_error": {
+    "message": "Η συσκευή {name} δεν αποκρίνεται ({err}): ξεκλειδώστε την και ανοίξτε το KDE Connect σε αυτήν."
+  },
+  "sidebar.device.not_connected": {
+    "message": "μη συνδεδεμένη"
+  },
+  "sidebar.device.opening": {
+    "message": "Άνοιγμα της συσκευής {name}..."
+  },
+  "sidebar.device.reconnecting": {
+    "message": "Η συσκευή {name} δεν αποκρίνεται: επανασύνδεση..."
+  },
+  "sidebar.device.unmount_failed": {
+    "message": "{name}: δεν ήταν δυνατή η αποπροσάρτηση: {err}"
+  },
+  "sidebar.group.bookmarks": {
+    "message": "Σελιδοδείκτες"
+  },
+  "sidebar.group.cloud": {
+    "message": "Cloud"
+  },
+  "sidebar.group.devices": {
+    "message": "Συσκευές"
+  },
+  "sidebar.group.drives": {
+    "message": "Μονάδες δίσκου"
+  },
+  "sidebar.group.network": {
+    "message": "Δίκτυο"
+  },
+  "sidebar.section.connections": {
+    "message": "Συνδέσεις"
+  },
+  "sidebar.section.folders": {
+    "message": "Φάκελοι"
+  },
+  "sidebar.section.operations": {
+    "message": "Λειτουργίες"
+  },
+  "sidebar.section.places": {
+    "message": "Τοποθεσίες"
+  },
+  "sidebar.volume.locked": {
+    "message": "κλειδωμένος"
+  },
+  "sidebar.volume.mounting": {
+    "message": "Προσάρτηση του {name}..."
+  },
+  "sidebar.volume.not_mounted": {
+    "message": "μη προσαρτημένος"
+  },
+  "sidebar.volume.open": {
+    "message": "Άνοιγμα"
+  },
+  "sidebar.volume.space": {
+    "message": "{free} ελεύθερα από {total}"
+  },
+  "sidebar.volume.unmount": {
+    "message": "Αποπροσάρτηση"
+  },
+  "sidebar.volume.unmount_failed": {
+    "message": "Δεν ήταν δυνατή η αποπροσάρτηση: {err}"
+  },
+  "split.bad_size": {
+    "message": "Το «{size}» δεν είναι μέγεθος: 100 MB, 1.5 GB, 650m"
+  },
+  "split.choose": {
+    "message": "Τοποθετήστε τον δρομέα στο αρχείο που θέλετε να διαιρέσετε."
+  },
+  "split.combine.choose": {
+    "message": "Τοποθετήστε τον δρομέα σε ένα τμήμα (name.001) ή στο αρχείο .crc του."
+  },
+  "split.combine.dialog_title": {
+    "message": "Συνένωση αρχείων"
+  },
+  "split.combine.label": {
+    "message": "Συνένωση των τμημάτων στο αρχείο:"
+  },
+  "split.combine.title": {
+    "message": "Συνένωση του «{name}»"
+  },
+  "split.combined_no_crc": {
+    "message": "{count, plural, one {Συνενώθηκε # τμήμα, χωρίς αρχείο CRC για έλεγχο} other {Συνενώθηκαν # τμήματα, χωρίς αρχείο CRC για έλεγχο}}"
+  },
+  "split.crc_mismatch": {
+    "message": "Το {target} δεν αντιστοιχεί στο {file}: ένα τμήμα λείπει ή είναι κατεστραμμένο"
+  },
+  "split.crc_names_no_file": {
+    "message": "το αρχείο CRC δεν αναφέρει κανένα αρχείο"
+  },
+  "split.crc_unreadable": {
+    "message": "συνενώθηκαν, αλλά δεν ήταν δυνατή η ανάγνωση του {file}: {err}"
+  },
+  "split.dialog_title": {
+    "message": "Διαίρεση αρχείου"
+  },
+  "split.label": {
+    "message": "Διαίρεση του «{name}» σε τμήματα στον φάκελο:"
+  },
+  "split.part_missing": {
+    "message": "Το {path} λείπει"
+  },
+  "split.part_size": {
+    "message": "Μέγεθος τμήματος:"
+  },
+  "split.title": {
+    "message": "Διαίρεση του «{name}»"
+  },
+  "sync.close": {
+    "message": "Κλείσιμο"
+  },
+  "sync.column.date": {
+    "message": "Ημερομηνία"
+  },
+  "sync.column.name": {
+    "message": "Όνομα"
+  },
+  "sync.column.size": {
+    "message": "Μέγεθος"
+  },
+  "sync.compare": {
+    "message": "Σύγκριση"
+  },
+  "sync.confirm.copy_left": {
+    "message": "Αντιγραφή {count} προς τα αριστερά ({size})"
+  },
+  "sync.confirm.copy_right": {
+    "message": "Αντιγραφή {count} προς τα δεξιά ({size})"
+  },
+  "sync.confirm.delete_left": {
+    "message": "Διαγραφή {count} στα αριστερά"
+  },
+  "sync.confirm.delete_right": {
+    "message": "Διαγραφή {count} στα δεξιά"
+  },
+  "sync.confirm.ok": {
+    "message": "Συγχρονισμός"
+  },
+  "sync.confirm.text": {
+    "message": "{actions}. Τα αρχεία που αντιγράφονται αντικαθιστούν όσα υπάρχουν εκεί.{trash, select, yes { Όσα διαγράφονται σε αυτόν τον υπολογιστή μεταφέρονται στον κάδο απορριμμάτων.} other {}}"
+  },
+  "sync.confirm.title": {
+    "message": "Συγχρονισμός"
+  },
+  "sync.error.changed": {
+    "message": "άλλαξε μετά τη σύγκριση· κάντε ξανά σύγκριση"
+  },
+  "sync.error.compare": {
+    "message": "Δεν ήταν δυνατή η σύγκριση: {err}"
+  },
+  "sync.error.no_folders": {
+    "message": "Ο Συγχρονισμός φακέλων συγκρίνει δύο φακέλους: κανένα πάνελ δεν πρέπει να δείχνει αρχειοθήκη ή αποτελέσματα αναζήτησης."
+  },
+  "sync.left": {
+    "message": "Αριστ."
+  },
+  "sync.mask.label": {
+    "message": "Αρχεία:"
+  },
+  "sync.option.asymmetric": {
+    "message": "Ασύμμετρος (ο δεξιός γίνεται αντίγραφο του αριστερού)"
+  },
+  "sync.option.by_content": {
+    "message": "Κατά περιεχόμενο"
+  },
+  "sync.option.ignore_date": {
+    "message": "Αγνόηση ημερομηνίας"
+  },
+  "sync.option.subfolders": {
+    "message": "Υποφάκελοι"
+  },
+  "sync.result.done": {
+    "message": "{count, plural, one {# συγχρονίστηκε} other {# συγχρονίστηκαν}}"
+  },
+  "sync.result.failed": {
+    "message": "{count, plural, one {# δεν συγχρονίστηκε} other {# δεν συγχρονίστηκαν}}· {first}"
+  },
+  "sync.right": {
+    "message": "Δεξιά"
+  },
+  "sync.show.equal": {
+    "message": "= ίδια"
+  },
+  "sync.show.label": {
+    "message": "Εμφάνιση:"
+  },
+  "sync.show.other": {
+    "message": "≠ χωρίς ενέργεια"
+  },
+  "sync.show.to_left": {
+    "message": "← προς τα αριστερά"
+  },
+  "sync.show.to_right": {
+    "message": "→ προς τα δεξιά"
+  },
+  "sync.status.both_empty": {
+    "message": "Και οι δύο είναι κενοί."
+  },
+  "sync.status.comparing": {
+    "message": "Σύγκριση {folder}"
+  },
+  "sync.status.counts": {
+    "message": "{right} για αντιγραφή δεξιά, {left} για αντιγραφή αριστερά, {delete} για διαγραφή, {equal} ίδια, {alone} χωρίς ενέργεια"
+  },
+  "sync.status.stopped": {
+    "message": "Διακόπηκε."
+  },
+  "sync.stop": {
+    "message": "Διακοπή"
+  },
+  "sync.synchronize": {
+    "message": "Συγχρονισμός..."
+  },
+  "sync.task.title": {
+    "message": "Συγχρονισμός {left} και {right}"
+  },
+  "sync.title": {
+    "message": "Συγχρονισμός φακέλων"
+  },
+  "tab_menu.close_all_tabs": {
+    "message": "Κλείσιμο όλων των καρτελών"
+  },
+  "tab_menu.close_duplicate_tabs": {
+    "message": "Κλείσιμο διπλότυπων καρτελών"
+  },
+  "tab_menu.close_tab": {
+    "message": "Κλείσιμο αυτής της καρτέλας"
+  },
+  "tab_menu.copy_tab_to_other_panel": {
+    "message": "Αντιγραφή καρτέλας στο άλλο πάνελ"
+  },
+  "tab_menu.duplicate_tab": {
+    "message": "Δημιουργία αντιγράφου αυτής της καρτέλας"
+  },
+  "tab_menu.list_tabs": {
+    "message": "Εμφάνιση λίστας όλων των καρτελών"
+  },
+  "tab_menu.lock_tab": {
+    "message": "Κλείδωμα αυτής της καρτέλας"
+  },
+  "tab_menu.none": {
+    "message": "(καμία)"
+  },
+  "tab_menu.rename_tab": {
+    "message": "Μετονομασία καρτέλας..."
+  },
+  "tabs.error.reopen": {
+    "message": "Δεν ήταν δυνατό το εκ νέου άνοιγμα της καρτέλας: {err}"
+  },
+  "tabs.history.empty": {
+    "message": "Δεν υπάρχουν ακόμα φάκελοι στο ιστορικό αυτής της καρτέλας."
+  },
+  "tabs.new": {
+    "message": "Νέα καρτέλα"
+  },
+  "tabs.rename.label": {
+    "message": "Νέο όνομα:"
+  },
+  "tabs.rename.title": {
+    "message": "Μετονομασία καρτέλας"
+  },
+  "tabs.search_results": {
+    "message": "Αποτελέσματα αναζήτησης"
+  },
+  "terminal.busy": {
+    "message": "Ένα πρόγραμμα εκτελείται στο τερματικό: εκτελέστε την εντολή όταν τελειώσει."
+  },
+  "terminal.close.idle": {
+    "message": "Κλείσιμο αυτής της καρτέλας τερματικού; Το κέλυφός της θα τερματιστεί."
+  },
+  "terminal.close.ok": {
+    "message": "Κλείσιμο"
+  },
+  "terminal.close.running": {
+    "message": "Κλείσιμο αυτής της καρτέλας τερματικού; Το πρόγραμμα που εκτελείται σε αυτήν θα διακοπεί."
+  },
+  "terminal.close.title": {
+    "message": "Κλείσιμο καρτέλας"
+  },
+  "terminal.error.start_shell": {
+    "message": "Δεν ήταν δυνατή η εκκίνηση του κελύφους: {err}"
+  },
+  "terminal.jump_to_bottom": {
+    "message": "Μετάβαση στο τέλος (Ctrl+End) ↓"
+  },
+  "terminal.menu.copy": {
+    "message": "Αντιγραφή"
+  },
+  "terminal.menu.paste": {
+    "message": "Επικόλληση"
+  },
+  "toolbar.customize": {
+    "message": "Προσαρμογή γραμμής εργαλείων…"
+  },
+  "tools.clear_key": {
+    "message": "Εκκαθάριση"
+  },
+  "tools.close": {
+    "message": "Κλείσιμο"
+  },
+  "tools.delete": {
+    "message": "Διαγραφή"
+  },
+  "tools.empty": {
+    "message": "Δεν υπάρχουν εργαλεία ακόμα: το «Νέο...» προσθέτει ένα."
+  },
+  "tools.field.command": {
+    "message": "Εντολή"
+  },
+  "tools.field.key": {
+    "message": "Πλήκτρο"
+  },
+  "tools.field.name": {
+    "message": "Όνομα"
+  },
+  "tools.intro": {
+    "message": "Οι δικές σας γραμμές εντολών, στο μενού Εργαλεία: κάντε κλικ σε μία εκεί ή πατήστε το πλήκτρο της."
+  },
+  "tools.key.none": {
+    "message": "Κανένα"
+  },
+  "tools.key.waiting": {
+    "message": "Πατήστε το πλήκτρο... (Esc: κανένα)"
+  },
+  "tools.move_down": {
+    "message": "Μετακίνηση κάτω"
+  },
+  "tools.move_up": {
+    "message": "Μετακίνηση πάνω"
+  },
+  "tools.name.placeholder": {
+    "message": "Σύγκριση με την άλλη πλευρά"
+  },
+  "tools.new": {
+    "message": "Νέο..."
+  },
+  "tools.new_name": {
+    "message": "Εργαλείο {number}"
+  },
+  "tools.no_command": {
+    "message": "Το {tool} δεν έχει ακόμα εντολή: Εργαλεία > Διαχείριση εργαλείων."
+  },
+  "tools.not_local": {
+    "message": "Τα εργαλεία εκτελούνται σε αυτόν τον υπολογιστή: το πάνελ δείχνει διακομιστή ή αρχειοθήκη."
+  },
+  "tools.note.key_of_command": {
+    "message": "Το {key} ανήκει και στην εντολή «{command}»: το παίρνει το εργαλείο."
+  },
+  "tools.note.key_of_other_tool": {
+    "message": "Το {key} ανήκει και στο {tool}: το παίρνει όποιο είναι χαμηλότερα στη λίστα."
+  },
+  "tools.placeholders": {
+    "message": "%P ο φάκελος αυτού του πάνελ, %T του άλλου πάνελ (και τα δύο τελειώνουν σε διαχωριστικό, οπότε το \"%P%N\" είναι διαδρομή), %N το αρχείο κάτω από τον δρομέα, %O το όνομά του χωρίς την επέκταση, %E η επέκταση, %S τα επιλεγμένα αρχεία (αλλιώς αυτό του δρομέα), το καθένα σε εισαγωγικά· %% ένα %. Βάλτε τα υπόλοιπα σε εισαγωγικά: \"%P%N\"."
+  },
+  "tools.run_in_terminal": {
+    "message": "Εκτέλεση στο τερματικό, για να φαίνεται η έξοδός του"
+  },
+  "tools.set_key": {
+    "message": "Ορισμός πλήκτρου..."
+  },
+  "tools.title": {
+    "message": "Εργαλεία"
+  },
+  "transfer.answer.cancel": {
+    "message": "Ακύρωση"
+  },
+  "transfer.answer.elevate": {
+    "message": "Ως διαχειριστής"
+  },
+  "transfer.answer.overwrite": {
+    "message": "Αντικατάσταση"
+  },
+  "transfer.answer.overwrite_all": {
+    "message": "Αντικατάσταση όλων"
+  },
+  "transfer.answer.rename": {
+    "message": "Μετονομασία"
+  },
+  "transfer.answer.retry": {
+    "message": "Επανάληψη"
+  },
+  "transfer.answer.skip": {
+    "message": "Παράλειψη"
+  },
+  "transfer.answer.skip_all": {
+    "message": "Παράλειψη όλων"
+  },
+  "transfer.archive.local_only": {
+    "message": "Μόνο αρχεία αυτού του υπολογιστή μπαίνουν σε αρχειοθήκη: αντιγράψτε τα πρώτα εδώ."
+  },
+  "transfer.cancel": {
+    "message": "Ακύρωση"
+  },
+  "transfer.error.elevate_hint": {
+    "message": "Ως διαχειριστής: αυτό και ό,τι άλλο απορριφθεί, μόλις ολοκληρωθούν τα υπόλοιπα, με μία μόνο ερώτηση για τον κωδικό πρόσβασης."
+  },
+  "transfer.error.title": {
+    "message": "Σφάλμα"
+  },
+  "transfer.exists.describe": {
+    "message": "{count, plural, one {{size} byte, {time}} other {{size} byte, {time}}}"
+  },
+  "transfer.exists.text": {
+    "message": "Υπάρχει ήδη: {existing}\nΤο νέο: {new}"
+  },
+  "transfer.exists.title": {
+    "message": "Το αρχείο υπάρχει"
+  },
+  "transfer.extract_failed": {
+    "message": "Δεν ήταν δυνατή η εξαγωγή τους: {err}"
+  },
+  "transfer.into_archive.question_many": {
+    "message": "{kind, select, copy {Αντιγραφή} other {Μετακίνηση}} {count, plural, one {# στοιχείου} other {# στοιχείων}} στο {into}; Ό,τι έχει τα ίδια ονόματα εκεί θα αντικατασταθεί."
+  },
+  "transfer.into_archive.question_one": {
+    "message": "{kind, select, copy {Αντιγραφή} other {Μετακίνηση}} του «{name}» στο {into}; Ό,τι έχει το ίδιο όνομα εκεί θα αντικατασταθεί."
+  },
+  "transfer.into_archive.title_many": {
+    "message": "{kind, select, copy {Αντιγραφή} other {Μετακίνηση}} {count, plural, one {# στοιχείου} other {# στοιχείων}} στο {archive}"
+  },
+  "transfer.into_archive.title_one": {
+    "message": "{kind, select, copy {Αντιγραφή} other {Μετακίνηση}} του «{name}» στο {archive}"
+  },
+  "transfer.label.many": {
+    "message": "{kind, select, copy {Αντιγραφή} other {Μετακίνηση}} {count, plural, one {# στοιχείου} other {# στοιχείων}} στο:"
+  },
+  "transfer.label.many_server": {
+    "message": "{kind, select, copy {Αντιγραφή} other {Μετακίνηση}} {count, plural, one {# στοιχείου} other {# στοιχείων}} στο {server}:"
+  },
+  "transfer.label.one": {
+    "message": "{kind, select, copy {Αντιγραφή} other {Μετακίνηση}} του «{name}» στο:"
+  },
+  "transfer.label.one_server": {
+    "message": "{kind, select, copy {Αντιγραφή} other {Μετακίνηση}} του «{name}» στο {server}:"
+  },
+  "transfer.ok": {
+    "message": "OK"
+  },
+  "transfer.overwrite.all": {
+    "message": "Αντικατάσταση όλων"
+  },
+  "transfer.overwrite.ask": {
+    "message": "Ερώτηση"
+  },
+  "transfer.overwrite.label": {
+    "message": "Όταν ο προορισμός έχει αρχείο με το ίδιο όνομα:"
+  },
+  "transfer.overwrite.older": {
+    "message": "Αντικατάσταση παλαιότερων"
+  },
+  "transfer.overwrite.rename": {
+    "message": "Μετονομασία αντιγράφων"
+  },
+  "transfer.overwrite.skip": {
+    "message": "Παράλειψη όλων"
+  },
+  "transfer.remove_moved": {
+    "message": "Αφαίρεση των μετακινημένων από το {name}"
+  },
+  "transfer.speed": {
+    "message": "{size}/s"
+  },
+  "transfer.strip.counting": {
+    "message": "καταμέτρηση: {count, plural, one {# αρχείο} other {# αρχεία}}"
+  },
+  "transfer.strip.progress": {
+    "message": "{files} / {count, plural, one {# αρχείο} other {# αρχεία}}, {percent}%"
+  },
+  "transfer.strip.queue": {
+    "message": "Ουρά..."
+  },
+  "transfer.strip.queue_waiting": {
+    "message": "Ουρά ({count, plural, one {# σε αναμονή} other {# σε αναμονή}})..."
+  },
+  "transfer.title.copy": {
+    "message": "Αντιγραφή"
+  },
+  "transfer.title.move": {
+    "message": "Μετακίνηση"
+  },
+  "viewer.as_text_hint": {
+    "message": "{err}. Το 1 εμφανίζει το αρχείο ως κείμενο."
+  },
+  "viewer.book.cannot_read": {
+    "message": "Δεν είναι δυνατή η ανάγνωση αυτού του βιβλίου: {err}. Το 1 εμφανίζει το αρχείο ως κείμενο."
+  },
+  "viewer.book.continuing": {
+    "message": "Συνέχεια από το {percent}"
+  },
+  "viewer.book.error.compression": {
+    "message": "συμπίεση που δεν υποστηρίζεται ακόμα ({compression})"
+  },
+  "viewer.book.error.damaged": {
+    "message": "κατεστραμμένο βιβλίο"
+  },
+  "viewer.book.error.damaged_zip": {
+    "message": "κατεστραμμένο zip"
+  },
+  "viewer.book.error.drm": {
+    "message": "προστατεύεται με DRM: μόνο το Kindle μπορεί να το διαβάσει"
+  },
+  "viewer.book.error.huffman": {
+    "message": "συμπιεσμένο όπως τα βιβλία της Amazon (HUFF/CDIC), που δεν υποστηρίζεται ακόμα"
+  },
+  "viewer.book.error.missing_part": {
+    "message": "το {name} δεν υπάρχει στο βιβλίο"
+  },
+  "viewer.book.error.no_package": {
+    "message": "δεν υπάρχει αρχείο πακέτου στο βιβλίο"
+  },
+  "viewer.book.error.no_text": {
+    "message": "το βιβλίο δεν έχει κείμενο"
+  },
+  "viewer.book.error.not_zip": {
+    "message": "δεν είναι zip: κατεστραμμένο βιβλίο ή βιβλίο με DRM;"
+  },
+  "viewer.book.error.zip_method": {
+    "message": "{name}: συμπίεση zip που δεν υποστηρίζεται εδώ ({method})"
+  },
+  "viewer.cannot_show": {
+    "message": "Δεν είναι δυνατή η εμφάνιση: {err}"
+  },
+  "viewer.convert.failed": {
+    "message": "Το {tool} δεν μπόρεσε να το μετατρέψει ({status})"
+  },
+  "viewer.converting": {
+    "message": "Μετατροπή με {tool}…"
+  },
+  "viewer.copy.too_large": {
+    "message": "Οι επιλογές άνω των {megabytes} MB δεν αντιγράφονται."
+  },
+  "viewer.encoding.cp1250": {
+    "message": "Ανατολική Ευρώπη (1250)"
+  },
+  "viewer.encoding.cp1251": {
+    "message": "Κυριλλικά Windows (1251)"
+  },
+  "viewer.encoding.cp1252": {
+    "message": "Δυτικά Latin1 (1252)"
+  },
+  "viewer.encoding.cp1253": {
+    "message": "Ελληνικά (1253)"
+  },
+  "viewer.encoding.cp1254": {
+    "message": "Τουρκικά (1254)"
+  },
+  "viewer.encoding.cp1255": {
+    "message": "Εβραϊκά (1255)"
+  },
+  "viewer.encoding.cp1256": {
+    "message": "Αραβικά (1256)"
+  },
+  "viewer.encoding.cp1257": {
+    "message": "Βαλτικά (1257)"
+  },
+  "viewer.encoding.cp1258": {
+    "message": "Βιετναμικά (1258)"
+  },
+  "viewer.encoding.cp20866": {
+    "message": "Κυριλλικά KOI8-R (20866)"
+  },
+  "viewer.encoding.cp437": {
+    "message": "DOS-ΗΠΑ (437)"
+  },
+  "viewer.encoding.cp850": {
+    "message": "DOS-LATIN1 (850)"
+  },
+  "viewer.encoding.cp852": {
+    "message": "DOS Κεντρική Ευρώπη (852)"
+  },
+  "viewer.encoding.cp866": {
+    "message": "DOS Κυριλλικά (866)"
+  },
+  "viewer.encoding.cp874": {
+    "message": "Ταϊλανδικά (874)"
+  },
+  "viewer.encoding.cp932": {
+    "message": "Ιαπωνικά (932)"
+  },
+  "viewer.encoding.cp936": {
+    "message": "Κινεζικά ηπειρωτικής Κίνας (936)"
+  },
+  "viewer.encoding.cp949": {
+    "message": "Κορεατικά (949)"
+  },
+  "viewer.encoding.cp950": {
+    "message": "Κινεζικά Ταϊβάν (950)"
+  },
+  "viewer.find.not_found": {
+    "message": "Δεν βρέθηκε: {text}"
+  },
+  "viewer.find.not_hex": {
+    "message": "Μη έγκυρη δεκαεξαδική συμβολοσειρά: {text}"
+  },
+  "viewer.find.nothing": {
+    "message": "Δεν υπάρχει τίποτα για εύρεση."
+  },
+  "viewer.find.save_failed": {
+    "message": "Δεν ήταν δυνατή η αποθήκευση των αναζητήσεων: {err}"
+  },
+  "viewer.loading": {
+    "message": "Φόρτωση…"
+  },
+  "viewer.markdown.too_large": {
+    "message": "Άνω των {megabytes} MB: το 1 το εμφανίζει ως κείμενο."
+  },
+  "viewer.menu.binary": {
+    "message": "Δυαδικό (σταθερό μήκος γραμμής)"
+  },
+  "viewer.menu.book": {
+    "message": "Βιβλίο (EPUB, FB2)"
+  },
+  "viewer.menu.close": {
+    "message": "Κλείσιμο"
+  },
+  "viewer.menu.configure": {
+    "message": "Διαμόρφωση..."
+  },
+  "viewer.menu.copy_hex": {
+    "message": "Αντιγραφή ως δεκαεξαδικοί χαρακτήρες"
+  },
+  "viewer.menu.copy_text": {
+    "message": "Αντιγραφή ως κείμενο"
+  },
+  "viewer.menu.edit": {
+    "message": "Επεξεργασία"
+  },
+  "viewer.menu.encoding": {
+    "message": "Κωδικοποίηση"
+  },
+  "viewer.menu.file": {
+    "message": "Αρχείο"
+  },
+  "viewer.menu.find": {
+    "message": "Εύρεση..."
+  },
+  "viewer.menu.find_next": {
+    "message": "Εύρεση επόμενου"
+  },
+  "viewer.menu.fit_image": {
+    "message": "Προσαρμογή εικόνας στο παράθυρο"
+  },
+  "viewer.menu.font_ansi": {
+    "message": "ANSI (σύνολο χαρακτήρων Windows)"
+  },
+  "viewer.menu.font_ascii": {
+    "message": "ASCII (σύνολο χαρακτήρων DOS)"
+  },
+  "viewer.menu.font_page": {
+    "message": "Όπως ορίζει η γραμματοσειρά"
+  },
+  "viewer.menu.font_variable": {
+    "message": "Μεταβλητό πλάτος χαρακτήρων"
+  },
+  "viewer.menu.hex": {
+    "message": "Δεκαεξαδικό"
+  },
+  "viewer.menu.html": {
+    "message": "Κείμενο HTML (χωρίς ετικέτες)"
+  },
+  "viewer.menu.minimap": {
+    "message": "Μικροχάρτης"
+  },
+  "viewer.menu.next_file": {
+    "message": "Επόμενο αρχείο"
+  },
+  "viewer.menu.only_larger": {
+    "message": "Προσαρμογή μόνο μεγαλύτερων εικόνων"
+  },
+  "viewer.menu.open": {
+    "message": "Άνοιγμα..."
+  },
+  "viewer.menu.options": {
+    "message": "Επιλογές"
+  },
+  "viewer.menu.picture": {
+    "message": "Εικόνα/Πολυμέσα"
+  },
+  "viewer.menu.previous_file": {
+    "message": "Προηγούμενο αρχείο"
+  },
+  "viewer.menu.reload": {
+    "message": "Επαναφόρτωση"
+  },
+  "viewer.menu.save_as": {
+    "message": "Αποθήκευση ως..."
+  },
+  "viewer.menu.search_google": {
+    "message": "Αναζήτηση του επιλεγμένου κειμένου στο Google"
+  },
+  "viewer.menu.select_all": {
+    "message": "Επιλογή όλων"
+  },
+  "viewer.menu.syntax_colors": {
+    "message": "Χρωματισμός σύνταξης"
+  },
+  "viewer.menu.text_only": {
+    "message": "Μόνο κείμενο"
+  },
+  "viewer.menu.unicode": {
+    "message": "Unicode (UTF-16)"
+  },
+  "viewer.menu.wrap": {
+    "message": "Αναδίπλωση κειμένου ({columns, plural, one {# στήλη} other {# στήλες}})"
+  },
+  "viewer.mode.binary": {
+    "message": "Δυαδικό · {page}"
+  },
+  "viewer.mode.book": {
+    "message": "Βιβλίο"
+  },
+  "viewer.mode.hex": {
+    "message": "Δεκαεξαδικό · {page}"
+  },
+  "viewer.mode.html": {
+    "message": "Κείμενο HTML"
+  },
+  "viewer.mode.image": {
+    "message": "Εικόνα"
+  },
+  "viewer.mode.multimedia": {
+    "message": "Πολυμέσα"
+  },
+  "viewer.mode.pdf_by": {
+    "message": "PDF από {tool}"
+  },
+  "viewer.mode.text": {
+    "message": "Κείμενο · {page}"
+  },
+  "viewer.origin.not_editable": {
+    "message": "μόνο αρχεία σε αρχειοθήκες 7z, zip, jar και tar μπορούν να επεξεργαστούν"
+  },
+  "viewer.origin.updated": {
+    "message": "Ενημερώθηκε το {archive}"
+  },
+  "viewer.origin.updated_on": {
+    "message": "Ενημερώθηκε το {archive} στο {server}"
+  },
+  "viewer.origin.uploaded": {
+    "message": "Αποστάλθηκε το {path}"
+  },
+  "viewer.pdf.cannot_show": {
+    "message": "Δεν είναι δυνατή η εμφάνιση αυτού του PDF: {err}"
+  },
+  "viewer.pdf.loading": {
+    "message": "Φόρτωση..."
+  },
+  "viewer.pdf.page": {
+    "message": "Σελίδα {page} / {pages}"
+  },
+  "viewer.picture.cannot_show": {
+    "message": "Δεν είναι δυνατή η εμφάνιση αυτής της εικόνας· το 1 την εμφανίζει ως κείμενο."
+  },
+  "viewer.save_as.failed": {
+    "message": "Δεν ήταν δυνατή η αποθήκευση του {path}: {err}"
+  },
+  "viewer.status.rows": {
+    "message": "{count, plural, one {{first}–{last} από {grouped} γραμμή} other {{first}–{last} από {grouped} γραμμές}}"
+  },
+  "viewer.status.rows_so_far": {
+    "message": "{count, plural, one {{grouped} γραμμή μέχρι στιγμής, ανάγνωση {percent}} other {{grouped} γραμμές μέχρι στιγμής, ανάγνωση {percent}}}"
+  },
+  "viewer.status.searching": {
+    "message": "Αναζήτηση…"
+  },
+  "viewer.status.size": {
+    "message": "{count, plural, one {{grouped} byte} other {{grouped} byte}}"
+  },
+  "viewer.window.title": {
+    "message": "{path} — Πρόγραμμα προβολής"
+  },
+  "viewer.zoom.fit": {
+    "message": "Επιστροφή σε προσαρμογή στο παράθυρο (Ctrl+0)"
+  },
+  "viewer.zoom.in": {
+    "message": "Μεγέθυνση (Ctrl++)"
+  },
+  "viewer.zoom.out": {
+    "message": "Σμίκρυνση (Ctrl+-)"
+  },
+  "viewer.zoom.reset": {
+    "message": "Επιστροφή στο 100% (Ctrl+0)"
+  },
+  "workspaces.button.close": {
+    "message": "Κλείσιμο"
+  },
+  "workspaces.button.delete": {
+    "message": "Διαγραφή..."
+  },
+  "workspaces.button.duplicate": {
+    "message": "Αντίγραφο..."
+  },
+  "workspaces.button.new": {
+    "message": "Νέος..."
+  },
+  "workspaces.button.rename": {
+    "message": "Μετονομασία..."
+  },
+  "workspaces.delete.button": {
+    "message": "Διαγραφή"
+  },
+  "workspaces.delete.closed": {
+    "message": "Διαγραφή του χώρου εργασίας «{name}»; Οι καρτέλες του θα χαθούν."
+  },
+  "workspaces.delete.closed_shells": {
+    "message": "Διαγραφή του χώρου εργασίας «{name}»; Οι καρτέλες του θα χαθούν και τα κελύφη στις καρτέλες τερματικού του θα τερματιστούν."
+  },
+  "workspaces.delete.open": {
+    "message": "Διαγραφή του χώρου εργασίας «{name}»; Οι καρτέλες του θα κλείσουν· στη θέση του θα ανοίξει ο «{other}»."
+  },
+  "workspaces.delete.open_shells": {
+    "message": "Διαγραφή του χώρου εργασίας «{name}»; Οι καρτέλες του θα κλείσουν και τα κελύφη στις καρτέλες τερματικού του θα τερματιστούν· στη θέση του θα ανοίξει ο «{other}»."
+  },
+  "workspaces.delete.title": {
+    "message": "Διαγραφή χώρου εργασίας"
+  },
+  "workspaces.duplicate.name": {
+    "message": "{name} αντίγραφο"
+  },
+  "workspaces.duplicate.title": {
+    "message": "Αντίγραφο χώρου εργασίας"
+  },
+  "workspaces.error.name_taken": {
+    "message": "Αυτό το όνομα το έχει ήδη άλλος χώρος εργασίας."
+  },
+  "workspaces.error.no_name": {
+    "message": "Ο χώρος εργασίας χρειάζεται όνομα."
+  },
+  "workspaces.error.save": {
+    "message": "Δεν ήταν δυνατή η αποθήκευση των χώρων εργασίας: {err}"
+  },
+  "workspaces.hint": {
+    "message": "Το Εμφάνιση > Χώροι εργασίας ανοίγει έναν. Ό,τι αλλάζει στον ανοιχτό διατηρείται σε αυτόν."
+  },
+  "workspaces.name.label": {
+    "message": "Όνομα:"
+  },
+  "workspaces.new.name": {
+    "message": "Χώρος εργασίας {number}"
+  },
+  "workspaces.new.title": {
+    "message": "Νέος χώρος εργασίας"
+  },
+  "workspaces.open": {
+    "message": "ανοιχτός"
+  },
+  "workspaces.rename.title": {
+    "message": "Μετονομασία χώρου εργασίας"
+  },
+  "workspaces.summary.panels": {
+    "message": "Αριστερά {left, plural, one {# καρτέλα} other {# καρτέλες}}, δεξιά {right, plural, one {# καρτέλα} other {# καρτέλες}}"
+  },
+  "workspaces.summary.terminal": {
+    "message": "Αριστερά {left, plural, one {# καρτέλα} other {# καρτέλες}}, δεξιά {right, plural, one {# καρτέλα} other {# καρτέλες}}, τερματικό {terminal, plural, one {# καρτέλα} other {# καρτέλες}}"
+  },
+  "workspaces.summary.terminal_hidden": {
+    "message": "Αριστερά {left, plural, one {# καρτέλα} other {# καρτέλες}}, δεξιά {right, plural, one {# καρτέλα} other {# καρτέλες}}, τερματικό {terminal, plural, one {# καρτέλα} other {# καρτέλες}} (κρυφό)"
+  },
+  "workspaces.title": {
+    "message": "Χώροι εργασίας"
+  }
+}

@@ -1,0 +1,4823 @@
+{
+  "about.addons": {
+    "message": "Complements, que es baixen quan tu vols"
+  },
+  "about.libraries": {
+    "message": "Construït amb"
+  },
+  "about.licence": {
+    "message": "Llicència:"
+  },
+  "about.made_with": {
+    "message": "Fet amb el treball d’aquests projectes"
+  },
+  "about.part.alacritty_terminal": {
+    "message": "La pantalla i l’intèrpret d’ordres del terminal integrat"
+  },
+  "about.part.encoding_rs": {
+    "message": "Pàgines de codis"
+  },
+  "about.part.gpui": {
+    "message": "La finestra, el dibuix i l’entrada (de Zed)"
+  },
+  "about.part.gpui_kit": {
+    "message": "Controls: llistes, menús, camps, l’editor"
+  },
+  "about.part.html5ever": {
+    "message": "HTML i llibres electrònics al visualitzador"
+  },
+  "about.part.image": {
+    "message": "Imatges"
+  },
+  "about.part.keyring": {
+    "message": "Contrasenyes a l’anell de claus del sistema"
+  },
+  "about.part.lucide": {
+    "message": "Icones"
+  },
+  "about.part.material_icons": {
+    "message": "Icones de fitxers i carpetes"
+  },
+  "about.part.pdfium_render": {
+    "message": "PDFium des de Rust"
+  },
+  "about.part.ratatui": {
+    "message": "scmd, la versió per a terminal"
+  },
+  "about.part.russh": {
+    "message": "SSH i SFTP"
+  },
+  "about.part.rustls": {
+    "message": "TLS"
+  },
+  "about.part.serde": {
+    "message": "Fitxers de configuració"
+  },
+  "about.part.similar": {
+    "message": "Compara per contingut"
+  },
+  "about.part.suppaftp": {
+    "message": "FTP i FTPS"
+  },
+  "about.part.tokio": {
+    "message": "Treball de xarxa en segon pla"
+  },
+  "about.part.trash": {
+    "message": "La paperera"
+  },
+  "about.part.tree_sitter": {
+    "message": "Els colors del codi al visualitzador i a l’editor"
+  },
+  "about.part.zbus": {
+    "message": "D-Bus: l’escriptori, els dispositius, KDE Connect"
+  },
+  "about.shipped": {
+    "message": "S’inclou amb l’aplicació"
+  },
+  "about.tagline": {
+    "message": "Un gestor de fitxers de dos plafons, programari lliure."
+  },
+  "about.title": {
+    "message": "Quant a Spark Commander"
+  },
+  "about.version": {
+    "message": "Versió {version}"
+  },
+  "activity.clear": {
+    "message": "Buida"
+  },
+  "activity.clear_failed": {
+    "message": "No s’ha pogut buidar el registre: {err}"
+  },
+  "activity.empty": {
+    "message": "Encara no s’ha fet res."
+  },
+  "activity.title": {
+    "message": "Registre d’activitat"
+  },
+  "addons.error.damaged": {
+    "message": "la baixada està malmesa: la suma de verificació no coincideix"
+  },
+  "addons.error.list": {
+    "message": "la llista de complements: {err}"
+  },
+  "addons.error.missing_file": {
+    "message": "a la baixada no hi ha {file}"
+  },
+  "addons.error.no_folder": {
+    "message": "no hi ha cap carpeta de dades"
+  },
+  "addons.error.unpacking": {
+    "message": "en desempaquetar: {err}"
+  },
+  "addons.installed": {
+    "message": "S’ha instal·lat {addon} {version}."
+  },
+  "addons.megabytes": {
+    "message": "{size} MB"
+  },
+  "addons.offer.never": {
+    "message": "No ho tornis a mostrar"
+  },
+  "addons.offer.no": {
+    "message": "No"
+  },
+  "addons.offer.text": {
+    "message": "{name} necessita un complement que no està instal·lat: {addon}. Vols baixar-lo a Configuració > Complements?"
+  },
+  "addons.offer.title": {
+    "message": "Complement"
+  },
+  "addons.offer.yes": {
+    "message": "Sí"
+  },
+  "addons.purpose.cloud": {
+    "message": "Emmagatzematge en línia: S3, Google Drive, OneDrive, Dropbox i altres serveis."
+  },
+  "addons.purpose.media": {
+    "message": "Vídeo i so, i fotos HEIC i AVIF: els mostren el visualitzador i la Visualització ràpida."
+  },
+  "addons.purpose.office": {
+    "message": "Documents d’ofimàtica: el visualitzador mostra els fitxers de Word, Excel i PowerPoint com a PDF."
+  },
+  "addons.purpose.pdfium": {
+    "message": "PDF: el visualitzador mostra els fitxers PDF, i també els documents d’ofimàtica un cop convertits."
+  },
+  "addons.purpose.seven_zip": {
+    "message": "Arxius: empaqueta i desempaqueta 7z, zip, rar, tar i altres."
+  },
+  "addons.update": {
+    "message": "Actualitza"
+  },
+  "addons.updates": {
+    "message": "Actualitzacions de complements: {names}"
+  },
+  "appearance.dark": {
+    "message": "Fosc"
+  },
+  "appearance.light": {
+    "message": "Clar"
+  },
+  "appearance.system": {
+    "message": "Com el sistema"
+  },
+  "archive.cannot_read": {
+    "message": "{name}: no es pot llegir"
+  },
+  "archive.not_in_archive": {
+    "message": "{name} no és a l’arxiu"
+  },
+  "archive.not_own_folder": {
+    "message": "{folder} no és una carpeta pròpia d’aquest usuari"
+  },
+  "archive.seven_zip_failed": {
+    "message": "7-Zip ha fallat ({code})"
+  },
+  "archive.seven_zip_missing": {
+    "message": "Falta 7-Zip: {path} (executa vendor/7zip/fetch.sh o fetch.bat)"
+  },
+  "archive.temp_not_utf8": {
+    "message": "el nom de la carpeta temporal no és UTF-8"
+  },
+  "associations.add": {
+    "message": "Afegeix..."
+  },
+  "associations.cancel": {
+    "message": "Cancel·la"
+  },
+  "associations.close": {
+    "message": "Tanca"
+  },
+  "associations.column.edit": {
+    "message": "Edita (F4)"
+  },
+  "associations.column.files": {
+    "message": "Fitxers"
+  },
+  "associations.column.open": {
+    "message": "Obre (Enter)"
+  },
+  "associations.column.view": {
+    "message": "Visualitza (F3)"
+  },
+  "associations.edit": {
+    "message": "Edita..."
+  },
+  "associations.edit_dialog.title": {
+    "message": "Associa"
+  },
+  "associations.empty": {
+    "message": "Encara no n’hi ha cap."
+  },
+  "associations.field.edit": {
+    "message": "Edita amb (F4):"
+  },
+  "associations.field.files": {
+    "message": "Fitxers (*.jpg *.png):"
+  },
+  "associations.field.open": {
+    "message": "Obre amb (Enter):"
+  },
+  "associations.field.view": {
+    "message": "Visualitza amb (F3):"
+  },
+  "associations.intro": {
+    "message": "Enter, F3 i F4 executen aquests programes per als fitxers d’una màscara; si és buit, es fa el que és habitual. %1 és el fitxer."
+  },
+  "associations.mask_needed": {
+    "message": "Cal la màscara dels fitxers: *.txt"
+  },
+  "associations.no_file": {
+    "message": "Posa el cursor en un fitxer del tipus que vols associar."
+  },
+  "associations.ok": {
+    "message": "D’acord"
+  },
+  "associations.remove": {
+    "message": "Elimina"
+  },
+  "associations.save_failed": {
+    "message": "No s’ha pogut desar la configuració: {err}"
+  },
+  "associations.title": {
+    "message": "Associacions internes"
+  },
+  "attributes.bad_time": {
+    "message": "«{text}» no és una data i hora: 2026-11-10 14:04:33"
+  },
+  "attributes.cancel": {
+    "message": "Cancel·la"
+  },
+  "attributes.change_time": {
+    "message": "Canvia la data i hora:"
+  },
+  "attributes.changed": {
+    "message": "{count, plural, one {# canviat} other {# canviats}}"
+  },
+  "attributes.changed_failed": {
+    "message": "{count, plural, one {# canviat} other {# canviats}}, {failed, plural, one {# ha fallat} other {# han fallat}}"
+  },
+  "attributes.dialog_title_many": {
+    "message": "Canvia els atributs: {count, plural, one {# element} other {# elements}}"
+  },
+  "attributes.dialog_title_one": {
+    "message": "Canvia els atributs: {name}"
+  },
+  "attributes.execute": {
+    "message": "Execució"
+  },
+  "attributes.group": {
+    "message": "Grup"
+  },
+  "attributes.in_archive": {
+    "message": "Els atributs de dins dels arxius no es poden canviar."
+  },
+  "attributes.no_bits": {
+    "message": "Aquí aquests fitxers no tenen bits de permisos; només es pot canviar la data."
+  },
+  "attributes.now": {
+    "message": "Ara"
+  },
+  "attributes.octal": {
+    "message": "Octal:"
+  },
+  "attributes.ok": {
+    "message": "D’acord"
+  },
+  "attributes.others": {
+    "message": "Altres"
+  },
+  "attributes.owner": {
+    "message": "Propietari"
+  },
+  "attributes.read": {
+    "message": "Lectura"
+  },
+  "attributes.recurse": {
+    "message": "També tot el que hi ha dins de les carpetes"
+  },
+  "attributes.title_many": {
+    "message": "Canvia els atributs de {count, plural, one {# element} other {# elements}}"
+  },
+  "attributes.title_one": {
+    "message": "Canvia els atributs de «{name}»"
+  },
+  "attributes.write": {
+    "message": "Escriptura"
+  },
+  "bookmarks.add_current": {
+    "message": "Afegeix la carpeta actual"
+  },
+  "bookmarks.add_folders": {
+    "message": "Afegeix carpetes..."
+  },
+  "bookmarks.added": {
+    "message": "S’ha afegit a les adreces d’interès: {name}"
+  },
+  "bookmarks.already": {
+    "message": "{name} ja és a les adreces d’interès."
+  },
+  "bookmarks.chooser.failed": {
+    "message": "No s’ha pogut mostrar el selector de carpetes: {err}"
+  },
+  "bookmarks.chooser.prompt": {
+    "message": "Afegeix"
+  },
+  "bookmarks.close": {
+    "message": "Tanca"
+  },
+  "bookmarks.copy_name": {
+    "message": "Copia el nom"
+  },
+  "bookmarks.copy_path": {
+    "message": "Copia el camí"
+  },
+  "bookmarks.drop_here": {
+    "message": "Deixa anar carpetes aquí."
+  },
+  "bookmarks.empty": {
+    "message": "No hi ha adreces d’interès: afegeix carpetes o deixa-les anar aquí."
+  },
+  "bookmarks.intro": {
+    "message": "Carpetes d’aquest ordinador, en l’ordre de Llocs: arrossega’n una per moure-la, o deixa anar carpetes aquí per afegir-les."
+  },
+  "bookmarks.move_down": {
+    "message": "Mou avall"
+  },
+  "bookmarks.move_up": {
+    "message": "Mou amunt"
+  },
+  "bookmarks.only_local": {
+    "message": "Només es poden afegir a les adreces d’interès les carpetes d’aquest ordinador."
+  },
+  "bookmarks.remove": {
+    "message": "Elimina"
+  },
+  "bookmarks.remove_from": {
+    "message": "Elimina de les adreces d’interès"
+  },
+  "bookmarks.rename": {
+    "message": "Canvia el nom..."
+  },
+  "bookmarks.rename_label": {
+    "message": "Nom (buit: el de la carpeta):"
+  },
+  "bookmarks.rename_title": {
+    "message": "Canvia el nom de l’adreça d’interès"
+  },
+  "bookmarks.sort": {
+    "message": "Ordena A–Z"
+  },
+  "bookmarks.title": {
+    "message": "Adreces d’interès"
+  },
+  "button_bar.copy": {
+    "message": "Copia"
+  },
+  "button_bar.delete": {
+    "message": "Suprimeix"
+  },
+  "button_bar.edit": {
+    "message": "Edita"
+  },
+  "button_bar.move": {
+    "message": "Mou"
+  },
+  "button_bar.new_folder": {
+    "message": "Carpeta nova"
+  },
+  "button_bar.quit": {
+    "message": "Surt"
+  },
+  "button_bar.view": {
+    "message": "Visualitza"
+  },
+  "checksum.create.title": {
+    "message": "Crea {name}"
+  },
+  "checksum.create.title_separate": {
+    "message": "Crea fitxers de suma de verificació {method}"
+  },
+  "checksum.dialog_title": {
+    "message": "Crea fitxers de suma de verificació"
+  },
+  "checksum.save_as": {
+    "message": "Desa el fitxer de suma de verificació com a:"
+  },
+  "checksum.separate": {
+    "message": "En lloc d’això, un fitxer de suma de verificació al costat de cada fitxer"
+  },
+  "checksum.verify.all_ok": {
+    "message": "{count, plural, one {# fitxer correcte} other {tots els # fitxers són correctes}}"
+  },
+  "checksum.verify.choose": {
+    "message": "Tria fitxers de suma de verificació: .sfv, .md5, .sha1, .sha256 o .sha512."
+  },
+  "checksum.verify.missing_file": {
+    "message": "falta: {name}"
+  },
+  "checksum.verify.result": {
+    "message": "{ok, plural, one {# correcte} other {# correctes}}, {wrong, plural, one {# incorrecte} other {# incorrectes}}, {missing, plural, one {# que falta} other {# que falten}}"
+  },
+  "checksum.verify.title_many": {
+    "message": "Comprova {count, plural, one {# fitxer de suma de verificació} other {# fitxers de suma de verificació}}"
+  },
+  "checksum.verify.title_one": {
+    "message": "Comprova {name}"
+  },
+  "checksum.verify.wrong_file": {
+    "message": "incorrecte: {name}"
+  },
+  "command.about": {
+    "message": "Quant a Spark Commander"
+  },
+  "command.activity_log": {
+    "message": "Registre d’activitat..."
+  },
+  "command.all_files": {
+    "message": "Tots els fitxers"
+  },
+  "command.all_folder_sizes": {
+    "message": "Calcula la mida de totes les carpetes"
+  },
+  "command.all_with_extension": {
+    "message": "*.*"
+  },
+  "command.associate_with": {
+    "message": "Associa amb..."
+  },
+  "command.bookmark_folder": {
+    "message": "Afegeix aquesta carpeta a les adreces d’interès"
+  },
+  "command.bookmarks": {
+    "message": "Adreces d’interès"
+  },
+  "command.branch_view": {
+    "message": "Vista de branca (amb subcarpetes)"
+  },
+  "command.branch_view_selected": {
+    "message": "Vista de branca de les carpetes seleccionades"
+  },
+  "command.brief": {
+    "message": "Breu"
+  },
+  "command.calculate_occupied_space": {
+    "message": "Calcula l’espai ocupat..."
+  },
+  "command.change_attributes": {
+    "message": "Canvia els atributs..."
+  },
+  "command.close_all_tabs": {
+    "message": "Tanca totes les pestanyes"
+  },
+  "command.close_duplicate_tabs": {
+    "message": "Tanca les pestanyes duplicades"
+  },
+  "command.close_tab": {
+    "message": "Tanca la pestanya"
+  },
+  "command.combine_files": {
+    "message": "Combina fitxers..."
+  },
+  "command.compare_by_content": {
+    "message": "Compara per contingut..."
+  },
+  "command.compare_directories": {
+    "message": "Marca els més nous"
+  },
+  "command.copy": {
+    "message": "Copia..."
+  },
+  "command.copy_names_to_clipboard": {
+    "message": "Copia els noms seleccionats al porta-retalls"
+  },
+  "command.copy_names_with_path_to_clipboard": {
+    "message": "Copia els noms amb el camí al porta-retalls"
+  },
+  "command.copy_to_clipboard": {
+    "message": "Copia els fitxers"
+  },
+  "command.copy_with_all_details": {
+    "message": "Copia al porta-retalls amb tots els detalls"
+  },
+  "command.copy_with_path_and_details": {
+    "message": "Copia al porta-retalls amb camí i detalls"
+  },
+  "command.create_checksum_files": {
+    "message": "Crea fitxers de suma de verificació (CRC32, MD5, SHA1, SHA256, SHA512)..."
+  },
+  "command.create_link": {
+    "message": "Crea un enllaç..."
+  },
+  "command.custom_filter": {
+    "message": "Personalitzat..."
+  },
+  "command.cut_to_clipboard": {
+    "message": "Retalla els fitxers"
+  },
+  "command.delete": {
+    "message": "Suprimeix"
+  },
+  "command.delete_permanently": {
+    "message": "Suprimeix permanentment"
+  },
+  "command.disconnect": {
+    "message": "Desconnecta del servidor"
+  },
+  "command.download_link": {
+    "message": "Baixa des d’un enllaç..."
+  },
+  "command.duplicate_tab": {
+    "message": "Pestanya nova"
+  },
+  "command.duplicate_workspace": {
+    "message": "Duplica l’espai de treball..."
+  },
+  "command.edit": {
+    "message": "Edita"
+  },
+  "command.edit_externally": {
+    "message": "Edita amb un editor extern"
+  },
+  "command.folder_history": {
+    "message": "Historial de carpetes..."
+  },
+  "command.full": {
+    "message": "Completa"
+  },
+  "command.go_back": {
+    "message": "Enrere"
+  },
+  "command.go_forward": {
+    "message": "Endavant"
+  },
+  "command.go_home": {
+    "message": "Carpeta personal"
+  },
+  "command.go_to_root": {
+    "message": "Carpeta arrel"
+  },
+  "command.hidden_files": {
+    "message": "Fitxers ocults"
+  },
+  "command.internal_associations": {
+    "message": "Associacions internes (només Spark Commander)..."
+  },
+  "command.invert_selection": {
+    "message": "Inverteix la selecció"
+  },
+  "command.left_drives": {
+    "message": "Unitats (plafó esquerre)"
+  },
+  "command.list_tabs": {
+    "message": "Llista de pestanyes"
+  },
+  "command.load_selection_from_file": {
+    "message": "Carrega la selecció d’un fitxer"
+  },
+  "command.manage_bookmarks": {
+    "message": "Gestiona les adreces d’interès..."
+  },
+  "command.manage_tools": {
+    "message": "Gestiona les eines..."
+  },
+  "command.manage_workspaces": {
+    "message": "Gestiona els espais de treball..."
+  },
+  "command.mark_in_place": {
+    "message": "Marca / desmarca sense moure el cursor, i mesura la carpeta"
+  },
+  "command.mark_newer_hide_same": {
+    "message": "Marca els més nous, amaga els fitxers iguals"
+  },
+  "command.move": {
+    "message": "Mou..."
+  },
+  "command.multi_rename_tool": {
+    "message": "Eina de canvi de nom múltiple..."
+  },
+  "command.name_to_command_line": {
+    "message": "Nom a la línia d’ordres"
+  },
+  "command.new_folder": {
+    "message": "Carpeta nova..."
+  },
+  "command.new_terminal": {
+    "message": "Pestanya de terminal nova"
+  },
+  "command.new_text_file": {
+    "message": "Fitxer nou..."
+  },
+  "command.new_workspace": {
+    "message": "Espai de treball nou..."
+  },
+  "command.next_tab": {
+    "message": "Pestanya següent"
+  },
+  "command.only_selected_files": {
+    "message": "Només els fitxers seleccionats"
+  },
+  "command.open_in_left_panel": {
+    "message": "Mostra al plafó esquerre"
+  },
+  "command.open_in_new_tab": {
+    "message": "Obre la carpeta en una pestanya nova"
+  },
+  "command.open_in_other_new_tab": {
+    "message": "Obre la carpeta en una pestanya nova de l’altre plafó"
+  },
+  "command.open_in_right_panel": {
+    "message": "Mostra al plafó dret"
+  },
+  "command.open_terminal": {
+    "message": "Obre un terminal aquí"
+  },
+  "command.operation_queue": {
+    "message": "Cua d’operacions..."
+  },
+  "command.pack": {
+    "message": "Empaqueta..."
+  },
+  "command.paste_from_clipboard": {
+    "message": "Enganxa els fitxers"
+  },
+  "command.path_and_name_to_command_line": {
+    "message": "Camí i nom a la línia d’ordres"
+  },
+  "command.path_to_command_line": {
+    "message": "Camí a la línia d’ordres"
+  },
+  "command.previous_tab": {
+    "message": "Pestanya anterior"
+  },
+  "command.programs": {
+    "message": "Programes"
+  },
+  "command.properties": {
+    "message": "Propietats..."
+  },
+  "command.quick_filter": {
+    "message": "Filtre ràpid"
+  },
+  "command.quick_open": {
+    "message": "Obertura ràpida..."
+  },
+  "command.quick_view_panel": {
+    "message": "Plafó de visualització ràpida"
+  },
+  "command.quit": {
+    "message": "Surt"
+  },
+  "command.redo": {
+    "message": "Refés"
+  },
+  "command.rename_in_place": {
+    "message": "Canvia el nom"
+  },
+  "command.reread_source": {
+    "message": "Torna a llegir l’origen"
+  },
+  "command.restore_selection": {
+    "message": "Restaura la selecció"
+  },
+  "command.reversed_order": {
+    "message": "Ordre invers"
+  },
+  "command.right_drives": {
+    "message": "Unitats (plafó dret)"
+  },
+  "command.save_selection": {
+    "message": "Desa la selecció"
+  },
+  "command.save_selection_to_file": {
+    "message": "Desa la selecció en un fitxer"
+  },
+  "command.search": {
+    "message": "Cerca..."
+  },
+  "command.search_in_separate_process": {
+    "message": "Cerca en una finestra a part..."
+  },
+  "command.select_all": {
+    "message": "Selecciona-ho tot"
+  },
+  "command.select_all_with_same_extension": {
+    "message": "Selecciona tots els de la mateixa extensió"
+  },
+  "command.select_group": {
+    "message": "Selecciona un grup..."
+  },
+  "command.settings": {
+    "message": "Configuració..."
+  },
+  "command.shortcuts": {
+    "message": "Dreceres de teclat..."
+  },
+  "command.sidebar_connections": {
+    "message": "Connexions"
+  },
+  "command.sidebar_operations": {
+    "message": "Operacions"
+  },
+  "command.sidebar_places": {
+    "message": "Llocs"
+  },
+  "command.sidebar_tree": {
+    "message": "Carpetes"
+  },
+  "command.sort_by_extension": {
+    "message": "Extensió"
+  },
+  "command.sort_by_name": {
+    "message": "Nom"
+  },
+  "command.sort_by_size": {
+    "message": "Mida"
+  },
+  "command.sort_by_time": {
+    "message": "Data"
+  },
+  "command.split_file": {
+    "message": "Divideix el fitxer..."
+  },
+  "command.swap_panels": {
+    "message": "Intercanvia els plafons"
+  },
+  "command.swap_panels_and_tabs": {
+    "message": "Intercanvia els plafons amb les seves pestanyes"
+  },
+  "command.sync_browsing": {
+    "message": "Navegació sincronitzada"
+  },
+  "command.synchronize_dirs": {
+    "message": "Sincronitza directoris..."
+  },
+  "command.target_equals_source": {
+    "message": "Destinació = origen"
+  },
+  "command.terminal_panel": {
+    "message": "Terminal"
+  },
+  "command.test_archives": {
+    "message": "Prova els arxius"
+  },
+  "command.thumbnail_view": {
+    "message": "Vista de miniatures"
+  },
+  "command.toggle_mark": {
+    "message": "Marca / desmarca"
+  },
+  "command.toggle_sidebar": {
+    "message": "Mostra la barra lateral"
+  },
+  "command.undo": {
+    "message": "Desfés"
+  },
+  "command.unpack_specific_files": {
+    "message": "Desempaqueta fitxers concrets..."
+  },
+  "command.unselect_all": {
+    "message": "Desselecciona-ho tot"
+  },
+  "command.unselect_group": {
+    "message": "Desselecciona un grup..."
+  },
+  "command.unsorted": {
+    "message": "Sense ordenar"
+  },
+  "command.verify_checksums": {
+    "message": "Comprova les sumes de verificació (dels fitxers de suma)"
+  },
+  "command.vertical_arrangement": {
+    "message": "Disposició vertical"
+  },
+  "command.view": {
+    "message": "Visualitza"
+  },
+  "command.website": {
+    "message": "Lloc web de Spark Commander"
+  },
+  "command.workspace1": {
+    "message": "Obre l’espai de treball 1"
+  },
+  "command.workspace2": {
+    "message": "Obre l’espai de treball 2"
+  },
+  "command.workspace3": {
+    "message": "Obre l’espai de treball 3"
+  },
+  "command.workspace4": {
+    "message": "Obre l’espai de treball 4"
+  },
+  "command.workspace5": {
+    "message": "Obre l’espai de treball 5"
+  },
+  "command.workspace6": {
+    "message": "Obre l’espai de treball 6"
+  },
+  "command.workspace7": {
+    "message": "Obre l’espai de treball 7"
+  },
+  "command.workspace8": {
+    "message": "Obre l’espai de treball 8"
+  },
+  "command.workspace9": {
+    "message": "Obre l’espai de treball 9"
+  },
+  "command_line.error.cannot_run": {
+    "message": "{program}: no es pot executar"
+  },
+  "command_line.error.not_found": {
+    "message": "{program}: no s’ha trobat l’ordre"
+  },
+  "command_line.history.empty": {
+    "message": "Encara no s’ha executat cap ordre"
+  },
+  "command_line.on_server": {
+    "message": "Les ordres s’executen en aquest ordinador; el plafó és en un servidor."
+  },
+  "command_name.all_files": {
+    "message": "Mostra tots els fitxers"
+  },
+  "command_name.all_with_extension": {
+    "message": "Mostra *.*"
+  },
+  "command_name.brief": {
+    "message": "Vista breu"
+  },
+  "command_name.compare_directories": {
+    "message": "Compara directoris: marca els més nous"
+  },
+  "command_name.custom_filter": {
+    "message": "Filtre personalitzat"
+  },
+  "command_name.duplicate_tab": {
+    "message": "Pestanya nova (una còpia d’aquesta)"
+  },
+  "command_name.full": {
+    "message": "Vista completa"
+  },
+  "command_name.go_back": {
+    "message": "Vés enrere"
+  },
+  "command_name.go_forward": {
+    "message": "Vés endavant"
+  },
+  "command_name.go_home": {
+    "message": "Vés a la carpeta personal"
+  },
+  "command_name.hidden_files": {
+    "message": "Mostra els fitxers ocults"
+  },
+  "command_name.only_selected_files": {
+    "message": "Mostra només els fitxers seleccionats"
+  },
+  "command_name.programs": {
+    "message": "Mostra els programes"
+  },
+  "command_name.quick_filter": {
+    "message": "Filtre ràpid"
+  },
+  "command_name.rename_in_place": {
+    "message": "Canvia el nom a la llista"
+  },
+  "command_name.sidebar_connections": {
+    "message": "Barra lateral: Connexions"
+  },
+  "command_name.sidebar_operations": {
+    "message": "Barra lateral: Operacions"
+  },
+  "command_name.sidebar_places": {
+    "message": "Barra lateral: Llocs"
+  },
+  "command_name.sidebar_tree": {
+    "message": "Barra lateral: Carpetes"
+  },
+  "command_name.sort_by_extension": {
+    "message": "Ordena per extensió"
+  },
+  "command_name.sort_by_name": {
+    "message": "Ordena per nom"
+  },
+  "command_name.sort_by_size": {
+    "message": "Ordena per mida"
+  },
+  "command_name.sort_by_time": {
+    "message": "Ordena per data"
+  },
+  "command_name.toggle_sidebar": {
+    "message": "Barra lateral: mostra o amaga"
+  },
+  "command_name.unsorted": {
+    "message": "Sense ordenar"
+  },
+  "compare.browse.prompt": {
+    "message": "Compara"
+  },
+  "compare.button.compare": {
+    "message": "Compara"
+  },
+  "compare.button.next": {
+    "message": "Diferència següent (N)"
+  },
+  "compare.button.previous": {
+    "message": "Diferència anterior (P)"
+  },
+  "compare.need_two_files": {
+    "message": "Posa el cursor en un fitxer de cada plafó, o marca dos fitxers."
+  },
+  "compare.option.binary": {
+    "message": "Binari"
+  },
+  "compare.option.ignore_case": {
+    "message": "Ignora majúscules i minúscules"
+  },
+  "compare.option.ignore_spaces": {
+    "message": "Ignora els espais repetits"
+  },
+  "compare.option.only_differences": {
+    "message": "Només les diferències"
+  },
+  "compare.status.bytes_differ": {
+    "message": "{place}: {count, plural, one {difereix {grouped} byte} other {difereixen {grouped} bytes}}, el primer a {first}; mides {left} i {right}."
+  },
+  "compare.status.comparing": {
+    "message": "S’està comparant…"
+  },
+  "compare.status.difference_of": {
+    "message": "Diferència {at} de {count}"
+  },
+  "compare.status.differences": {
+    "message": "{count, plural, one {# diferència} other {# diferències}}"
+  },
+  "compare.status.identical": {
+    "message": "{count, plural, one {Els fitxers són idèntics: {grouped} byte.} other {Els fitxers són idèntics: {grouped} bytes.}}"
+  },
+  "compare.status.no_differences": {
+    "message": "No hi ha diferències."
+  },
+  "compare.window.title": {
+    "message": "Compara: {left} — {right}"
+  },
+  "connections.connect": {
+    "message": "Connecta"
+  },
+  "connections.copy_name": {
+    "message": "Copia el nom"
+  },
+  "connections.copy_path": {
+    "message": "Copia el camí"
+  },
+  "connections.delete": {
+    "message": "Suprimeix"
+  },
+  "connections.dialog.title": {
+    "message": "Connexió"
+  },
+  "connections.disconnect": {
+    "message": "Desconnecta"
+  },
+  "connections.duplicate": {
+    "message": "Duplica"
+  },
+  "connections.duplicate_name": {
+    "message": "{name} (còpia)"
+  },
+  "connections.edit": {
+    "message": "Edita..."
+  },
+  "connections.empty": {
+    "message": "Encara no hi ha connexions."
+  },
+  "connections.error.no_server": {
+    "message": "Cal un servidor."
+  },
+  "connections.error.port": {
+    "message": "No és un port: {text}"
+  },
+  "connections.field.access_key": {
+    "message": "Clau d’accés"
+  },
+  "connections.field.api_key": {
+    "message": "Clau d’API"
+  },
+  "connections.field.application_key": {
+    "message": "Clau d’aplicació"
+  },
+  "connections.field.bucket": {
+    "message": "Cubell/carpeta"
+  },
+  "connections.field.container": {
+    "message": "Contenidor/carpeta"
+  },
+  "connections.field.endpoint": {
+    "message": "Punt final"
+  },
+  "connections.field.key_id": {
+    "message": "ID de clau"
+  },
+  "connections.field.name": {
+    "message": "Nom"
+  },
+  "connections.field.password": {
+    "message": "Contrasenya"
+  },
+  "connections.field.port": {
+    "message": "Port"
+  },
+  "connections.field.protocol": {
+    "message": "Protocol"
+  },
+  "connections.field.secret_key": {
+    "message": "Clau secreta"
+  },
+  "connections.field.server": {
+    "message": "Servidor"
+  },
+  "connections.field.start_folder": {
+    "message": "Carpeta inicial"
+  },
+  "connections.field.user": {
+    "message": "Usuari"
+  },
+  "connections.folder.delete_confirm": {
+    "message": "{count, plural, one {Vols suprimir la carpeta {name} i la connexió que conté?} other {Vols suprimir la carpeta {name} i les # connexions que conté?}}"
+  },
+  "connections.folder.delete_title": {
+    "message": "Suprimeix la carpeta"
+  },
+  "connections.folder.exists": {
+    "message": "Ja hi ha una carpeta anomenada {name}."
+  },
+  "connections.folder.name": {
+    "message": "Nom:"
+  },
+  "connections.folder.new_title": {
+    "message": "Carpeta nova"
+  },
+  "connections.folder.rename": {
+    "message": "Canvia el nom..."
+  },
+  "connections.folder.rename_title": {
+    "message": "Canvia el nom de la carpeta"
+  },
+  "connections.forget_password": {
+    "message": "Oblida la contrasenya desada"
+  },
+  "connections.move_down": {
+    "message": "Mou avall"
+  },
+  "connections.move_to_folder": {
+    "message": "Mou a una carpeta"
+  },
+  "connections.move_up": {
+    "message": "Mou amunt"
+  },
+  "connections.new": {
+    "message": "Connexió nova..."
+  },
+  "connections.new_folder": {
+    "message": "Carpeta nova..."
+  },
+  "connections.no_folder": {
+    "message": "Sense carpeta"
+  },
+  "connections.open_in_terminal": {
+    "message": "Obre al terminal"
+  },
+  "connections.placeholder.name": {
+    "message": "com la mostra la llista"
+  },
+  "connections.placeholder.password": {
+    "message": "es desa xifrada a la carpeta de configuració; si és buit, es conserva"
+  },
+  "connections.placeholder.path": {
+    "message": "la carpeta d’inici de sessió"
+  },
+  "connections.placeholder.port": {
+    "message": "predeterminat"
+  },
+  "connections.placeholder.server": {
+    "message": "servidor, o un amfitrió de ~/.ssh/config"
+  },
+  "connections.placeholder.user": {
+    "message": "el que digui ~/.ssh/config, o anònim"
+  },
+  "connections.save_failed": {
+    "message": "No s’han pogut desar les connexions: {err}"
+  },
+  "connections.ssh_config.read_only": {
+    "message": "Només lectura: aquests amfitrions s’editen al mateix ~/.ssh/config"
+  },
+  "context_menu.action_failed": {
+    "message": "{name} ha fallat: {err}"
+  },
+  "context_menu.actions": {
+    "message": "Accions"
+  },
+  "context_menu.copy": {
+    "message": "Copia"
+  },
+  "context_menu.create_new": {
+    "message": "Crea’n un de nou"
+  },
+  "context_menu.cut": {
+    "message": "Retalla"
+  },
+  "context_menu.delete": {
+    "message": "Suprimeix"
+  },
+  "context_menu.edit": {
+    "message": "Edita"
+  },
+  "context_menu.empty_file": {
+    "message": "Fitxer buit…"
+  },
+  "context_menu.move_to_trash": {
+    "message": "Mou a la paperera"
+  },
+  "context_menu.new_file_dialog.label": {
+    "message": "Nom del fitxer nou:"
+  },
+  "context_menu.new_file_dialog.title": {
+    "message": "Fitxer nou"
+  },
+  "context_menu.new_file_failed": {
+    "message": "No s’ha pogut crear el fitxer: {err}"
+  },
+  "context_menu.new_folder": {
+    "message": "Carpeta…"
+  },
+  "context_menu.open": {
+    "message": "Obre"
+  },
+  "context_menu.open_failed": {
+    "message": "No s’ha pogut obrir: {err}"
+  },
+  "context_menu.open_terminal_here": {
+    "message": "Obre un terminal aquí"
+  },
+  "context_menu.open_with": {
+    "message": "Obre amb"
+  },
+  "context_menu.other_application": {
+    "message": "Una altra aplicació…"
+  },
+  "context_menu.pack": {
+    "message": "Empaqueta…"
+  },
+  "context_menu.pack_files": {
+    "message": "Empaqueta els fitxers"
+  },
+  "context_menu.paste": {
+    "message": "Enganxa"
+  },
+  "context_menu.properties": {
+    "message": "Propietats"
+  },
+  "context_menu.properties_failed": {
+    "message": "Propietats: {err}"
+  },
+  "context_menu.rename": {
+    "message": "Canvia el nom…"
+  },
+  "context_menu.rename_dialog.label": {
+    "message": "Nom nou:"
+  },
+  "context_menu.rename_dialog.title": {
+    "message": "Canvia el nom"
+  },
+  "context_menu.rename_failed": {
+    "message": "No s’ha pogut canviar el nom: {err}"
+  },
+  "context_menu.shell_menu_failed": {
+    "message": "El menú: {err}"
+  },
+  "context_menu.show_failed": {
+    "message": "No s’ha pogut mostrar: {err}"
+  },
+  "context_menu.show_in_file_manager": {
+    "message": "Mostra al gestor de fitxers"
+  },
+  "context_menu.terminal_failed": {
+    "message": "No s’ha pogut obrir un terminal: {err}"
+  },
+  "context_menu.terminal_not_local": {
+    "message": "Només es pot obrir un terminal a les carpetes d’aquest ordinador."
+  },
+  "context_menu.unpack": {
+    "message": "Desempaqueta…"
+  },
+  "context_menu.view": {
+    "message": "Visualitza"
+  },
+  "desktop.no_app_chooser": {
+    "message": "l’escriptori no té selector d’aplicacions ({err})"
+  },
+  "desktop.no_terminal": {
+    "message": "no s’ha trobat cap terminal"
+  },
+  "desktop.nothing_to_run": {
+    "message": "{name}: no hi ha res a executar"
+  },
+  "desktop.scripts": {
+    "message": "Scripts"
+  },
+  "devices.error.mount_failed": {
+    "message": "no s’ha pogut muntar el dispositiu"
+  },
+  "devices.error.no_folder": {
+    "message": "el dispositiu no comparteix cap carpeta"
+  },
+  "devices.error.system_only": {
+    "message": "només el sistema ho pot desmuntar"
+  },
+  "devices.error.unreachable": {
+    "message": "no és accessible: té KDE Connect obert, en aquesta xarxa?"
+  },
+  "devices.unlock.ask": {
+    "message": "La frase de pas de {name}:"
+  },
+  "devices.unlock.ask_again": {
+    "message": "La frase de pas és incorrecta. La frase de pas de {name}:"
+  },
+  "devices.unlock.title": {
+    "message": "Desbloqueja"
+  },
+  "devices.volume.share_on_server": {
+    "message": "{share} a {server}"
+  },
+  "devices.volume.unnamed": {
+    "message": "Volum de {size} GB"
+  },
+  "devices.volume.unnamed_encrypted": {
+    "message": "Volum xifrat de {size} GB"
+  },
+  "download.cancel": {
+    "message": "Cancel·la"
+  },
+  "download.dialog_title": {
+    "message": "Baixa des d’un enllaç"
+  },
+  "download.download": {
+    "message": "Baixa"
+  },
+  "download.folder_link": {
+    "message": "l’enllaç és d’una carpeta"
+  },
+  "download.incomplete": {
+    "message": "el servidor ha enviat {got} de {size, plural, one {# byte} other {# bytes}}; si es torna a baixar, continua des d’aquí"
+  },
+  "download.into": {
+    "message": "A {folder}"
+  },
+  "download.link": {
+    "message": "Enllaç"
+  },
+  "download.link_placeholder": {
+    "message": "https://, http://, ftp:// o ftps://"
+  },
+  "download.local_only": {
+    "message": "Les baixades van a les carpetes d’aquest ordinador: primer obre’n una al plafó."
+  },
+  "download.name_placeholder": {
+    "message": "el que doni el servidor o l’enllaç"
+  },
+  "download.no_file": {
+    "message": "l’enllaç no indica cap fitxer"
+  },
+  "download.not_a_link": {
+    "message": "no és un enllaç per baixar"
+  },
+  "download.problem.bad_name": {
+    "message": "El nom d’un fitxer, sense cap carpeta."
+  },
+  "download.problem.empty": {
+    "message": "Enganxa o escriu un enllaç."
+  },
+  "download.problem.exists": {
+    "message": "Aquí ja hi ha un fitxer {name}: amb Substitueix, es baixa a sobre seu."
+  },
+  "download.problem.not_link": {
+    "message": "No és un enllaç per baixar: ha de començar amb https://, http://, ftp:// o ftps://."
+  },
+  "download.replace": {
+    "message": "Substitueix"
+  },
+  "download.save_as": {
+    "message": "Desa com a"
+  },
+  "download.saved_as": {
+    "message": "desat com a {name}"
+  },
+  "download.title": {
+    "message": "Baixa «{name}»"
+  },
+  "download.title_link": {
+    "message": "Baixa {link}"
+  },
+  "editor.close.after_send": {
+    "message": "Es tancarà quan el servidor el tingui."
+  },
+  "editor.close.discard": {
+    "message": "No desis"
+  },
+  "editor.close.save": {
+    "message": "Desa"
+  },
+  "editor.close.title": {
+    "message": "Vols desar els canvis?"
+  },
+  "editor.close.unsaved": {
+    "message": "{name} té canvis que no s’han desat."
+  },
+  "editor.close.unsent": {
+    "message": "{name} no està desat al seu servidor: no s’ha pogut enviar."
+  },
+  "editor.dialog.cancel": {
+    "message": "Cancel·la"
+  },
+  "editor.edit.copy": {
+    "message": "Copia"
+  },
+  "editor.edit.cut": {
+    "message": "Retalla"
+  },
+  "editor.edit.find": {
+    "message": "Cerca..."
+  },
+  "editor.edit.find_next": {
+    "message": "Cerca el següent"
+  },
+  "editor.edit.find_previous": {
+    "message": "Cerca l’anterior"
+  },
+  "editor.edit.go_to_line": {
+    "message": "Vés a la línia..."
+  },
+  "editor.edit.paste": {
+    "message": "Enganxa"
+  },
+  "editor.edit.redo": {
+    "message": "Refés"
+  },
+  "editor.edit.replace": {
+    "message": "Substitueix..."
+  },
+  "editor.edit.undo": {
+    "message": "Desfés"
+  },
+  "editor.external.not_set": {
+    "message": "no hi ha cap editor extern definit (Configuració, Edició/Visualització)"
+  },
+  "editor.file.close": {
+    "message": "Tanca"
+  },
+  "editor.file.reload": {
+    "message": "Torna a carregar"
+  },
+  "editor.file.save": {
+    "message": "Desa"
+  },
+  "editor.file.save_as": {
+    "message": "Desa com a..."
+  },
+  "editor.find.close": {
+    "message": "Tanca (Escape)"
+  },
+  "editor.find.count": {
+    "message": "{current} de {total}"
+  },
+  "editor.find.in_selection": {
+    "message": "Cerca a la selecció (Alt+L)"
+  },
+  "editor.find.match_case": {
+    "message": "Distingeix majúscules i minúscules (Alt+C)"
+  },
+  "editor.find.next": {
+    "message": "Coincidència següent (Enter)"
+  },
+  "editor.find.no_results": {
+    "message": "Cap resultat"
+  },
+  "editor.find.placeholder": {
+    "message": "Cerca"
+  },
+  "editor.find.preserve_case": {
+    "message": "Conserva majúscules i minúscules (Alt+P)"
+  },
+  "editor.find.previous": {
+    "message": "Coincidència anterior (Shift+Enter)"
+  },
+  "editor.find.regex": {
+    "message": "Usa una expressió regular (Alt+R)"
+  },
+  "editor.find.replace": {
+    "message": "Substitueix (Ctrl+Shift+1)"
+  },
+  "editor.find.replace_all": {
+    "message": "Substitueix-ho tot (Ctrl+Alt+Enter)"
+  },
+  "editor.find.replace_placeholder": {
+    "message": "Substitueix"
+  },
+  "editor.find.toggle_replace": {
+    "message": "Mostra o amaga Substitueix"
+  },
+  "editor.find.whole_word": {
+    "message": "Només paraules senceres (Alt+W)"
+  },
+  "editor.go_to_line.label": {
+    "message": "Línia, o línia:columna"
+  },
+  "editor.go_to_line.title": {
+    "message": "Vés a la línia"
+  },
+  "editor.language.by_file_name": {
+    "message": "Pel nom del fitxer"
+  },
+  "editor.language.plain_text": {
+    "message": "Text pla"
+  },
+  "editor.menu.edit": {
+    "message": "Edita"
+  },
+  "editor.menu.file": {
+    "message": "Fitxer"
+  },
+  "editor.menu.language": {
+    "message": "Llenguatge"
+  },
+  "editor.menu.selection": {
+    "message": "Selecció"
+  },
+  "editor.menu.view": {
+    "message": "Visualitza"
+  },
+  "editor.open.too_large": {
+    "message": "supera els {limit_mb} MB de l’editor integrat (Configuració, Edició/Visualització); amb Ctrl+Shift+F4 l’edites amb l’extern"
+  },
+  "editor.reload.button": {
+    "message": "Torna a carregar"
+  },
+  "editor.reload.failed": {
+    "message": "No s’ha pogut tornar a carregar: {err}"
+  },
+  "editor.reload.text": {
+    "message": "Es perdran els canvis que no s’han desat."
+  },
+  "editor.reload.title": {
+    "message": "Vols tornar a carregar el fitxer?"
+  },
+  "editor.reload.unfit": {
+    "message": "No s’ha tornat a carregar: {why, select, binary {és binari} other {no és text UTF-8}}."
+  },
+  "editor.save.admin": {
+    "message": "En desar «{name}»"
+  },
+  "editor.save.failed": {
+    "message": "No s’ha pogut desar {path}: {err}"
+  },
+  "editor.save_anyway.button": {
+    "message": "Desa igualment"
+  },
+  "editor.save_anyway.text": {
+    "message": "El fitxer no era text: en desar-lo s’escriu tal com es mostra, i tot el que no era text canvia per sempre."
+  },
+  "editor.save_anyway.title": {
+    "message": "Vols desar-lo com a text?"
+  },
+  "editor.selection.add_cursor_above": {
+    "message": "Afegeix un cursor a sobre"
+  },
+  "editor.selection.add_cursor_below": {
+    "message": "Afegeix un cursor a sota"
+  },
+  "editor.selection.delete_lines": {
+    "message": "Suprimeix les línies"
+  },
+  "editor.selection.duplicate_lines": {
+    "message": "Duplica les línies"
+  },
+  "editor.selection.indent": {
+    "message": "Augmenta el sagnat"
+  },
+  "editor.selection.lowercase": {
+    "message": "minúscules"
+  },
+  "editor.selection.move_lines_down": {
+    "message": "Mou les línies avall"
+  },
+  "editor.selection.move_lines_up": {
+    "message": "Mou les línies amunt"
+  },
+  "editor.selection.outdent": {
+    "message": "Redueix el sagnat"
+  },
+  "editor.selection.select_all": {
+    "message": "Selecciona-ho tot"
+  },
+  "editor.selection.select_all_occurrences": {
+    "message": "Selecciona totes les aparicions"
+  },
+  "editor.selection.sort_lines_ascending": {
+    "message": "Ordena les línies en ordre ascendent"
+  },
+  "editor.selection.sort_lines_descending": {
+    "message": "Ordena les línies en ordre descendent"
+  },
+  "editor.selection.title_case": {
+    "message": "Majúscula Inicial"
+  },
+  "editor.selection.toggle_line_comment": {
+    "message": "Comenta o descomenta les línies"
+  },
+  "editor.selection.trim_trailing_whitespace": {
+    "message": "Retalla els espais finals"
+  },
+  "editor.selection.uppercase": {
+    "message": "MAJÚSCULES"
+  },
+  "editor.send.failed": {
+    "message": "No s’ha pogut tornar a desar al servidor: {err}. Desa-ho per tornar-ho a provar."
+  },
+  "editor.status.modified": {
+    "message": "Modificat"
+  },
+  "editor.status.position": {
+    "message": "Lín. {line}, col. {column}"
+  },
+  "editor.status.position_selected": {
+    "message": "Lín. {line}, col. {column} ({count, plural, one {# seleccionat} other {# seleccionats}})"
+  },
+  "editor.status.sending": {
+    "message": "S’està desant al servidor"
+  },
+  "editor.status.spaces": {
+    "message": "Espais: {size}"
+  },
+  "editor.status.tab_size": {
+    "message": "Mida de la tabulació: {size}"
+  },
+  "editor.status.unsent": {
+    "message": "No és al servidor"
+  },
+  "editor.terminal.not_found": {
+    "message": "no s’ha trobat cap editor; defineix $EDITOR"
+  },
+  "editor.title": {
+    "message": "{path} — Editor"
+  },
+  "editor.unfit.open_anyway": {
+    "message": "Obre igualment"
+  },
+  "editor.unfit.text": {
+    "message": "El fitxer no es mostra a l’editor perquè {why, select, binary {és binari} other {no és text UTF-8}}."
+  },
+  "editor.view.folding": {
+    "message": "Plegament"
+  },
+  "editor.view.indent_guides": {
+    "message": "Guies de sagnat"
+  },
+  "editor.view.indent_with_tabs": {
+    "message": "Sagna amb tabulacions"
+  },
+  "editor.view.line_numbers": {
+    "message": "Números de línia"
+  },
+  "editor.view.minimap": {
+    "message": "Minimapa"
+  },
+  "editor.view.tab_width": {
+    "message": "Amplada de tabulació {width}"
+  },
+  "editor.view.unfold_all": {
+    "message": "Desplega-ho tot"
+  },
+  "editor.view.whitespace": {
+    "message": "Espais en blanc"
+  },
+  "editor.view.word_wrap": {
+    "message": "Ajust de línia"
+  },
+  "elevate.failed": {
+    "message": "com a administrador també ha fallat ({code})"
+  },
+  "elevate.no_consent": {
+    "message": "no s’ha donat el consentiment de l’administrador"
+  },
+  "elevate.no_password": {
+    "message": "no s’ha donat la contrasenya"
+  },
+  "elevate.not_authorised": {
+    "message": "no autoritzat"
+  },
+  "elevate.percent_name": {
+    "message": "{path}: un nom amb % no es pot gestionar com a administrador; primer canvia-li el nom"
+  },
+  "elevate.pkexec_missing": {
+    "message": "pkexec (polkit) no està instal·lat"
+  },
+  "file_menu.change_tags_failed": {
+    "message": "No s’han pogut canviar les etiquetes: {err}"
+  },
+  "file_menu.compress": {
+    "message": "{count, plural, =1 {Comprimeix «{name}»…} one {Comprimeix # ítem…} other {Comprimeix # ítems…}}"
+  },
+  "file_menu.copy": {
+    "message": "{count, plural, =1 {Copia «{name}»} one {Copia # ítem} other {Copia # ítems}}"
+  },
+  "file_menu.copy_path": {
+    "message": "Copia el camí al porta-retalls"
+  },
+  "file_menu.delete": {
+    "message": "Suprimeix"
+  },
+  "file_menu.duplicate": {
+    "message": "Duplica"
+  },
+  "file_menu.duplicate_failed": {
+    "message": "No s’ha pogut duplicar: {err}"
+  },
+  "file_menu.edit_tags": {
+    "message": "Etiquetes…"
+  },
+  "file_menu.get_info": {
+    "message": "Obtén informació"
+  },
+  "file_menu.make_alias": {
+    "message": "Crea un àlies"
+  },
+  "file_menu.make_alias_failed": {
+    "message": "No s’ha pogut crear l’àlies: {err}"
+  },
+  "file_menu.move_to_trash": {
+    "message": "Mou a la paperera"
+  },
+  "file_menu.new_folder": {
+    "message": "Carpeta nova"
+  },
+  "file_menu.open": {
+    "message": "Obre"
+  },
+  "file_menu.open_failed": {
+    "message": "No s’ha pogut obrir: {err}"
+  },
+  "file_menu.open_with": {
+    "message": "Obre amb"
+  },
+  "file_menu.open_with_default": {
+    "message": "{app} (per defecte)"
+  },
+  "file_menu.paste": {
+    "message": "Enganxa"
+  },
+  "file_menu.quick_look": {
+    "message": "{count, plural, =1 {Quick Look de «{name}»} one {Quick Look de # ítem} other {Quick Look de # ítems}}"
+  },
+  "file_menu.quick_look_failed": {
+    "message": "Quick Look: {err}"
+  },
+  "file_menu.rename": {
+    "message": "Canvia el nom…"
+  },
+  "file_menu.reveal_failed": {
+    "message": "No s’ha pogut mostrar al Finder: {err}"
+  },
+  "file_menu.reveal_in_finder": {
+    "message": "Mostra al Finder"
+  },
+  "file_menu.show_package_contents": {
+    "message": "Mostra el contingut del paquet"
+  },
+  "file_menu.tag_dot.add": {
+    "message": "Afegeix l’etiqueta «{name}»"
+  },
+  "file_menu.tag_dot.remove": {
+    "message": "Elimina l’etiqueta «{name}»"
+  },
+  "file_menu.tags_popover.show_all": {
+    "message": "Mostra-les totes…"
+  },
+  "file_menu.tags_popover.title": {
+    "message": "{count, plural, =1 {Assigna etiquetes a «{name}»} one {Assigna etiquetes a # ítem} other {Assigna etiquetes a # ítems}}"
+  },
+  "find.backwards": {
+    "message": "Cerca enrere"
+  },
+  "find.cancel": {
+    "message": "Cancel·la"
+  },
+  "find.case_sensitive": {
+    "message": "Distingeix majúscules i minúscules"
+  },
+  "find.hex": {
+    "message": "Cerca una cadena hexadecimal"
+  },
+  "find.ok": {
+    "message": "D’acord"
+  },
+  "find.regex": {
+    "message": "RegEx"
+  },
+  "find.text.label": {
+    "message": "Introdueix el text que vols cercar"
+  },
+  "find.title": {
+    "message": "Cerca"
+  },
+  "find.whole_words": {
+    "message": "Només paraules senceres"
+  },
+  "keys.apply": {
+    "message": "Aplica"
+  },
+  "keys.cancel": {
+    "message": "Cancel·la"
+  },
+  "keys.clear.tooltip": {
+    "message": "Cap tecla"
+  },
+  "keys.column.alternate": {
+    "message": "Alternativa"
+  },
+  "keys.column.command": {
+    "message": "Ordre"
+  },
+  "keys.column.shortcut": {
+    "message": "Drecera"
+  },
+  "keys.custom": {
+    "message": "Personalitzat"
+  },
+  "keys.delete_set": {
+    "message": "Suprimeix"
+  },
+  "keys.note.custom_replaced": {
+    "message": "Les teves tecles han cedit el lloc a les de {name}; Desa com a les conserva."
+  },
+  "keys.note.deleted": {
+    "message": "{name} s’ha suprimit; D’acord o Aplica ho fan efectiu."
+  },
+  "keys.note.moved": {
+    "message": "{key} ara és {command}, ja no {other}."
+  },
+  "keys.note.name_reserved": {
+    "message": "«{name}» és el nom d’un conjunt predefinit; tria’n un altre."
+  },
+  "keys.note.press_new_key": {
+    "message": "Prem la tecla nova; Esc la deixa com era."
+  },
+  "keys.note.saved": {
+    "message": "S’ha desat com a {name}; D’acord o Aplica el conserven."
+  },
+  "keys.note.set": {
+    "message": "{key} ara és {command}."
+  },
+  "keys.note.taken_by_system": {
+    "message": "{key} l’ocupa {by}, així que no arriba mai a Spark Commander."
+  },
+  "keys.ok": {
+    "message": "D’acord"
+  },
+  "keys.press_key": {
+    "message": "Prem una tecla…"
+  },
+  "keys.reserved.application_launcher": {
+    "message": "{system}: el llançador d’aplicacions"
+  },
+  "keys.reserved.close_window": {
+    "message": "{system}: tanca la finestra"
+  },
+  "keys.reserved.close_window_or_tab": {
+    "message": "{system}: tanca la finestra o la pestanya"
+  },
+  "keys.reserved.dock": {
+    "message": "{system}: el Dock"
+  },
+  "keys.reserved.floating_window": {
+    "message": "{system}: la finestra flotant"
+  },
+  "keys.reserved.force_quit": {
+    "message": "{system}: força la sortida"
+  },
+  "keys.reserved.hide_program": {
+    "message": "{system}: amaga el programa"
+  },
+  "keys.reserved.input_source": {
+    "message": "{system}: la font d’entrada"
+  },
+  "keys.reserved.keyboard_access": {
+    "message": "{system}: accés amb el teclat"
+  },
+  "keys.reserved.keyboard_navigation": {
+    "message": "{system}: navegació amb el teclat"
+  },
+  "keys.reserved.krunner": {
+    "message": "{system}: KRunner"
+  },
+  "keys.reserved.lock_screen": {
+    "message": "{system}: bloqueja la pantalla"
+  },
+  "keys.reserved.log_out": {
+    "message": "{system}: tanca la sessió"
+  },
+  "keys.reserved.maximize_window": {
+    "message": "{system}: maximitza la finestra"
+  },
+  "keys.reserved.menu_bar": {
+    "message": "{system}: la barra de menús"
+  },
+  "keys.reserved.minimize": {
+    "message": "{system}: minimitza"
+  },
+  "keys.reserved.mission_control": {
+    "message": "{system}: Mission Control"
+  },
+  "keys.reserved.move_window": {
+    "message": "{system}: mou la finestra"
+  },
+  "keys.reserved.next_window": {
+    "message": "{system}: la finestra següent"
+  },
+  "keys.reserved.present_windows": {
+    "message": "{system}: Presenta les finestres"
+  },
+  "keys.reserved.present_windows_all": {
+    "message": "{system}: Presenta les finestres (tots els escriptoris)"
+  },
+  "keys.reserved.present_windows_class": {
+    "message": "{system}: Presenta les finestres (classe de finestra)"
+  },
+  "keys.reserved.program_windows": {
+    "message": "{system}: les finestres del programa"
+  },
+  "keys.reserved.quit": {
+    "message": "{system}: surt"
+  },
+  "keys.reserved.resize_window": {
+    "message": "{system}: redimensiona la finestra"
+  },
+  "keys.reserved.restore_window": {
+    "message": "{system}: restaura la finestra"
+  },
+  "keys.reserved.run_command": {
+    "message": "{system}: executa una ordre"
+  },
+  "keys.reserved.screenshot": {
+    "message": "{system}: captura de pantalla"
+  },
+  "keys.reserved.security_screen": {
+    "message": "{system}: la pantalla de seguretat"
+  },
+  "keys.reserved.show_desktop": {
+    "message": "{system}: mostra l’escriptori"
+  },
+  "keys.reserved.space_left": {
+    "message": "{system}: l’espai de l’esquerra"
+  },
+  "keys.reserved.space_right": {
+    "message": "{system}: l’espai de la dreta"
+  },
+  "keys.reserved.spotlight": {
+    "message": "{system}: Spotlight"
+  },
+  "keys.reserved.start_menu": {
+    "message": "{system}: el menú Inici"
+  },
+  "keys.reserved.status_menus": {
+    "message": "{system}: els menús d’estat"
+  },
+  "keys.reserved.suspend_compositing": {
+    "message": "{system}: suspèn la composició"
+  },
+  "keys.reserved.switch_program_windows": {
+    "message": "{system}: canvia entre les finestres del programa"
+  },
+  "keys.reserved.switch_programs": {
+    "message": "{system}: canvia de programa"
+  },
+  "keys.reserved.switch_system_controls": {
+    "message": "{system}: canvia entre els controls del sistema"
+  },
+  "keys.reserved.switch_to_desktop": {
+    "message": "{system}: canvia a l’escriptori {number}"
+  },
+  "keys.reserved.switch_windows": {
+    "message": "{system}: canvia de finestra"
+  },
+  "keys.reserved.system_monitor": {
+    "message": "{system}: Monitor del sistema"
+  },
+  "keys.reserved.task_manager": {
+    "message": "{system}: Administrador de tasques"
+  },
+  "keys.reserved.text_console": {
+    "message": "{system}: canvia a una consola de text"
+  },
+  "keys.reserved.toolbar": {
+    "message": "{system}: la barra d’eines"
+  },
+  "keys.reserved.window_menu": {
+    "message": "{system}: el menú de la finestra"
+  },
+  "keys.reserved.workspace_down": {
+    "message": "{system}: l’espai de treball de sota"
+  },
+  "keys.reserved.workspace_left": {
+    "message": "{system}: l’espai de treball de l’esquerra"
+  },
+  "keys.reserved.workspace_right": {
+    "message": "{system}: l’espai de treball de la dreta"
+  },
+  "keys.reserved.workspace_up": {
+    "message": "{system}: l’espai de treball de sobre"
+  },
+  "keys.reset.tooltip": {
+    "message": "Torna a les tecles de {preset}"
+  },
+  "keys.reset_all": {
+    "message": "Restableix-ho tot"
+  },
+  "keys.save_as.button": {
+    "message": "Desa com a…"
+  },
+  "keys.save_as.default_name": {
+    "message": "Les meves tecles"
+  },
+  "keys.save_as.label": {
+    "message": "Nom:"
+  },
+  "keys.save_as.title": {
+    "message": "Desa les dreceres"
+  },
+  "keys.search.placeholder": {
+    "message": "Cerca una ordre o una tecla"
+  },
+  "keys.set_label": {
+    "message": "Tecles:"
+  },
+  "keys.taken_by.tooltip": {
+    "message": "Ocupada per {by}"
+  },
+  "keys.title": {
+    "message": "Dreceres de teclat"
+  },
+  "main.admin.button": {
+    "message": "Com a administrador"
+  },
+  "main.admin.deleting": {
+    "message": "En suprimir {count, plural, one {# element} other {# elements}}"
+  },
+  "main.admin.failed": {
+    "message": "Com a administrador: {err}"
+  },
+  "main.admin.making": {
+    "message": "En crear «{name}»"
+  },
+  "main.admin.offer": {
+    "message": "{what}: permís denegat. Com a administrador, el sistema et demana la contrasenya."
+  },
+  "main.admin.offer_delete": {
+    "message": "{what}: permís denegat. Com a administrador, el sistema et demana la contrasenya. El que se suprimeix així es perd per sempre."
+  },
+  "main.admin.title": {
+    "message": "Permís denegat"
+  },
+  "main.delete.from_archive": {
+    "message": "{kind, select, folder {Vols suprimir la carpeta «{name}» de {archive}? No es pot desfer.} file {Vols suprimir el fitxer «{name}» de {archive}? No es pot desfer.} other {Vols suprimir {count, plural, one {# element} other {# elements}} de {archive}? No es pot desfer.}}"
+  },
+  "main.delete.on_server": {
+    "message": "{kind, select, folder {Vols suprimir la carpeta «{name}» a {server}? No es pot desfer.} file {Vols suprimir el fitxer «{name}» a {server}? No es pot desfer.} other {Vols suprimir {count, plural, one {# element} other {# elements}} a {server}? No es pot desfer.}}"
+  },
+  "main.delete.permanently": {
+    "message": "{kind, select, folder {Vols suprimir permanentment la carpeta «{name}»? No es pot desfer.} file {Vols suprimir permanentment el fitxer «{name}»? No es pot desfer.} other {Vols suprimir permanentment {count, plural, one {# element} other {# elements}}? No es pot desfer.}}"
+  },
+  "main.delete.title": {
+    "message": "Suprimeix"
+  },
+  "main.delete.title_permanently": {
+    "message": "Suprimeix permanentment"
+  },
+  "main.delete.to_trash": {
+    "message": "{kind, select, folder {Vols moure la carpeta «{name}» a la paperera?} file {Vols moure el fitxer «{name}» a la paperera?} other {Vols moure {count, plural, one {# element} other {# elements}} a la paperera?}}"
+  },
+  "main.download.edit": {
+    "message": "Baixa {file} per editar-lo"
+  },
+  "main.download.view": {
+    "message": "Baixa {file} per visualitzar-lo"
+  },
+  "main.error.make_folder": {
+    "message": "No s’ha pogut crear la carpeta: {err}"
+  },
+  "main.error.read_settings": {
+    "message": "No s’ha pogut llegir la configuració: {err}"
+  },
+  "main.error.read_tabs": {
+    "message": "No s’han pogut llegir les pestanyes obertes: {err}"
+  },
+  "main.error.read_workspaces": {
+    "message": "No s’han pogut llegir els espais de treball: {err}"
+  },
+  "main.error.save_settings": {
+    "message": "No s’ha pogut desar la configuració: {err}"
+  },
+  "main.folder_tree.home": {
+    "message": "Personal"
+  },
+  "main.go.no_such_folder": {
+    "message": "{path}: aquesta carpeta no existeix en aquest ordinador"
+  },
+  "main.new_folder.label": {
+    "message": "Carpeta nova (directori):"
+  },
+  "main.new_folder.title": {
+    "message": "Carpeta nova"
+  },
+  "main.sync_browsing.lost": {
+    "message": "{err}. La navegació sincronitzada s’ha desactivat."
+  },
+  "main.tool.needs_file": {
+    "message": "El cursor no és en cap fitxer: %N, %O i %E en necessiten un."
+  },
+  "main.tool.needs_local_folder": {
+    "message": "L’altre plafó mostra un servidor o un arxiu: %T necessita una carpeta d’aquest ordinador."
+  },
+  "main.undo.done": {
+    "message": "{way, select, redo {Refet: {title}} other {Desfet: {title}}}"
+  },
+  "main.undo.failed": {
+    "message": "{way, select, redo {No s’ha pogut refer «{title}»: {err}} other {No s’ha pogut desfer «{title}»: {err}}}"
+  },
+  "main.undo.nothing": {
+    "message": "{way, select, redo {No hi ha res per refer.} other {No hi ha res per desfer.}}"
+  },
+  "main.undo.queued": {
+    "message": "{way, select, redo {A la cua per refer: {title}} other {A la cua per desfer: {title}}}"
+  },
+  "mark.compare.marked": {
+    "message": "{count, plural, one {S’ha marcat # fitxer: més nou que el de l’altre costat, o que no hi és.} other {S’han marcat # fitxers: més nous que els de l’altre costat, o que no hi són.}}"
+  },
+  "mark.compare.same": {
+    "message": "Les carpetes tenen els mateixos fitxers."
+  },
+  "mark.load_selection.label": {
+    "message": "Selecciona els noms que figuren al fitxer:"
+  },
+  "mark.load_selection.title": {
+    "message": "Carrega la selecció"
+  },
+  "mark.save_selection.label": {
+    "message": "Desa els noms seleccionats al fitxer:"
+  },
+  "mark.save_selection.title": {
+    "message": "Desa la selecció"
+  },
+  "mark.select_group.label": {
+    "message": "Selecciona els fitxers (*.txt *.md; una màscara de carpeta acaba en /):"
+  },
+  "mark.select_group.title": {
+    "message": "Selecciona un grup"
+  },
+  "mark.selection_file.not_local": {
+    "message": "Els fitxers de selecció es desen en aquest ordinador, fora dels arxius."
+  },
+  "mark.unselect_group.label": {
+    "message": "Desselecciona els fitxers (*.txt *.md; una màscara de carpeta acaba en /):"
+  },
+  "mark.unselect_group.title": {
+    "message": "Desselecciona un grup"
+  },
+  "media.cannot_play": {
+    "message": "No es pot reproduir: {err}"
+  },
+  "media.cannot_play_as_text": {
+    "message": "No es pot reproduir: {err}. Amb 1 es mostra com a text."
+  },
+  "media.continuing": {
+    "message": "Continua a {time}"
+  },
+  "media.error.missing": {
+    "message": "Falta libmpv: es baixa a Configuració > Complements (per a una compilació des del codi font: vendor/mpv/{script})"
+  },
+  "media.error.not_started": {
+    "message": "libmpv no s’ha pogut iniciar"
+  },
+  "media.error.too_long": {
+    "message": "{path}: mpv ha trigat massa"
+  },
+  "media.error.unsupported_system": {
+    "message": "de moment, el vídeo només es reprodueix a Linux, macOS i Windows"
+  },
+  "menu.archive": {
+    "message": "Arxiu"
+  },
+  "menu.associations": {
+    "message": "Associacions"
+  },
+  "menu.button_bar": {
+    "message": "Barra de botons"
+  },
+  "menu.checksums": {
+    "message": "Sumes de verificació"
+  },
+  "menu.commands": {
+    "message": "Ordres"
+  },
+  "menu.compare_directories": {
+    "message": "Compara directoris"
+  },
+  "menu.configuration": {
+    "message": "Arranjament"
+  },
+  "menu.copy_names": {
+    "message": "Copia els noms"
+  },
+  "menu.files": {
+    "message": "Fitxers"
+  },
+  "menu.filter": {
+    "message": "Filtre"
+  },
+  "menu.go": {
+    "message": "Vés"
+  },
+  "menu.help": {
+    "message": "Ajuda"
+  },
+  "menu.mark": {
+    "message": "Marca"
+  },
+  "menu.other": {
+    "message": "Altres"
+  },
+  "menu.recently_closed_tabs": {
+    "message": "Pestanyes tancades recentment"
+  },
+  "menu.selection": {
+    "message": "Selecció"
+  },
+  "menu.show": {
+    "message": "Mostra"
+  },
+  "menu.sidebar": {
+    "message": "Barra lateral"
+  },
+  "menu.sort": {
+    "message": "Ordena"
+  },
+  "menu.split_and_combine": {
+    "message": "Divideix i combina"
+  },
+  "menu.tabs": {
+    "message": "Pestanyes"
+  },
+  "menu.tools": {
+    "message": "Eines"
+  },
+  "menu.workspaces": {
+    "message": "Espais de treball"
+  },
+  "menus.hide_app": {
+    "message": "Amaga Spark Commander"
+  },
+  "menus.hide_others": {
+    "message": "Amaga els altres"
+  },
+  "menus.minimize": {
+    "message": "Minimitza"
+  },
+  "menus.quit_app": {
+    "message": "Surt de Spark Commander"
+  },
+  "menus.services": {
+    "message": "Serveis"
+  },
+  "menus.show_all": {
+    "message": "Mostra-ho tot"
+  },
+  "menus.zoom": {
+    "message": "Zoom"
+  },
+  "name_dialog.cancel": {
+    "message": "Cancel·la"
+  },
+  "name_dialog.ok": {
+    "message": "D’acord"
+  },
+  "operations.clear": {
+    "message": "Neteja les acabades"
+  },
+  "operations.duration.seconds": {
+    "message": "{seconds} s"
+  },
+  "operations.empty": {
+    "message": "No hi ha operacions."
+  },
+  "operations.job.answer": {
+    "message": "S’espera la teva resposta"
+  },
+  "operations.job.bytes": {
+    "message": "{done} de {total}"
+  },
+  "operations.job.cancel_tooltip": {
+    "message": "Cancel·la"
+  },
+  "operations.job.cancelled": {
+    "message": "Cancel·lada"
+  },
+  "operations.job.counting": {
+    "message": "Comptant: {count, plural, one {# fitxer} other {# fitxers}}"
+  },
+  "operations.job.done": {
+    "message": "Feta"
+  },
+  "operations.job.done_skipped": {
+    "message": "Feta, {count, plural, one {# omès} other {# omesos}}"
+  },
+  "operations.job.failed": {
+    "message": "Ha fallat"
+  },
+  "operations.job.files": {
+    "message": "{files} / {count, plural, one {# fitxer} other {# fitxers}}"
+  },
+  "operations.job.left": {
+    "message": "Falten {time}"
+  },
+  "operations.job.running": {
+    "message": "En curs"
+  },
+  "operations.job.waiting": {
+    "message": "En espera"
+  },
+  "operations.menu.cancel": {
+    "message": "Cancel·la"
+  },
+  "operations.menu.clear": {
+    "message": "Neteja les acabades"
+  },
+  "operations.menu.move_down": {
+    "message": "Mou avall"
+  },
+  "operations.menu.move_up": {
+    "message": "Mou amunt"
+  },
+  "operations.settings_tooltip": {
+    "message": "Configuració de la cua d’operacions"
+  },
+  "operations.summary.failed": {
+    "message": "{count, plural, one {# fallada} other {# fallades}}"
+  },
+  "operations.summary.running": {
+    "message": "{count, plural, one {# en curs} other {# en curs}}"
+  },
+  "operations.summary.waiting": {
+    "message": "{count, plural, one {# en espera} other {# en espera}}"
+  },
+  "ops.as_administrator.failed": {
+    "message": "Com a administrador: {err}"
+  },
+  "ops.as_administrator.progress": {
+    "message": "Com a administrador…"
+  },
+  "ops.delete.title_many": {
+    "message": "Suprimeix {count, plural, one {# element} other {# elements}} a {folder}"
+  },
+  "ops.delete.title_one": {
+    "message": "Suprimeix «{name}»"
+  },
+  "ops.delete.trash_title_many": {
+    "message": "Mou {count, plural, one {# element} other {# elements}} de {folder} a la paperera"
+  },
+  "ops.delete.trash_title_one": {
+    "message": "Mou «{name}» a la paperera"
+  },
+  "ops.error.file_in_the_way": {
+    "message": "hi ha un fitxer amb aquest nom que ho impedeix"
+  },
+  "ops.error.into_itself": {
+    "message": "no es pot copiar dins de si mateix"
+  },
+  "ops.exists_already": {
+    "message": "{name} ja existeix"
+  },
+  "ops.link.dialog_title": {
+    "message": "Crea un enllaç"
+  },
+  "ops.link.failed": {
+    "message": "No s’ha pogut crear l’enllaç: {err}"
+  },
+  "ops.link.kind.hard": {
+    "message": "Enllaç dur"
+  },
+  "ops.link.kind.junction": {
+    "message": "Unió"
+  },
+  "ops.link.kind.shortcut": {
+    "message": "Drecera (.lnk)"
+  },
+  "ops.link.kind.symbolic": {
+    "message": "Enllaç simbòlic"
+  },
+  "ops.link.label_many": {
+    "message": "Enllaços {count, plural, one {a # element} other {als # elements}}, a la carpeta:"
+  },
+  "ops.link.label_one": {
+    "message": "Enllaç a «{name}» com a:"
+  },
+  "ops.link.making": {
+    "message": "En crear {kind, select, symbolic {l’enllaç simbòlic} hard {l’enllaç dur} junction {la unió} other {la drecera (.lnk)}}"
+  },
+  "ops.link.needs_admin": {
+    "message": "els enllaços simbòlics necessiten un administrador o el Mode de desenvolupador"
+  },
+  "ops.link.thread_failed": {
+    "message": "el fil de la drecera ha fallat"
+  },
+  "ops.link.title_many": {
+    "message": "{kind, select, symbolic {Enllaços simbòlics} hard {Enllaços durs} junction {Unions} other {Dreceres (.lnk)}} a {count, plural, one {# element} other {# elements}} a {folder}"
+  },
+  "ops.link.title_one": {
+    "message": "{kind, select, symbolic {Enllaç simbòlic} hard {Enllaç dur} junction {Unió} other {Drecera (.lnk)}} a «{name}» a {folder}"
+  },
+  "ops.link.windows_only": {
+    "message": "les unions i les dreceres són de Windows"
+  },
+  "ops.redo.title": {
+    "message": "Refés: {what}"
+  },
+  "ops.title.many": {
+    "message": "{kind, select, copy {Copia} other {Mou}} {count, plural, one {# element} other {# elements}} a {target}"
+  },
+  "ops.title.one": {
+    "message": "{kind, select, copy {Copia} other {Mou}} «{name}» a {target}"
+  },
+  "ops.undo.not_a_server": {
+    "message": "{url}: no és l’adreça d’un servidor"
+  },
+  "ops.undo.not_in_trash": {
+    "message": "ja no són a la paperera"
+  },
+  "ops.undo.restore_title": {
+    "message": "{title}: el que s’havia substituït torna de la paperera"
+  },
+  "ops.undo.title": {
+    "message": "Desfés: {what}"
+  },
+  "pack.cancel": {
+    "message": "Cancel·la"
+  },
+  "pack.compression": {
+    "message": "Compressió:"
+  },
+  "pack.dialog_title": {
+    "message": "Empaqueta fitxers"
+  },
+  "pack.encrypt": {
+    "message": "Xifra amb la contrasenya"
+  },
+  "pack.format": {
+    "message": "Format:"
+  },
+  "pack.label": {
+    "message": "Empaqueta {count, plural, one {# element} other {# elements}} a l’arxiu:"
+  },
+  "pack.level.fastest": {
+    "message": "La més ràpida"
+  },
+  "pack.level.maximum": {
+    "message": "Màxima"
+  },
+  "pack.level.normal": {
+    "message": "Normal"
+  },
+  "pack.level.store": {
+    "message": "Sense compressió"
+  },
+  "pack.level.ultra": {
+    "message": "Ultra"
+  },
+  "pack.local_only": {
+    "message": "{what, select, packing {L’empaquetament} unpacking {El desempaquetament} testing {La prova} creating_checksums {La creació de sumes de verificació} making_links {La creació d’enllaços} verifying_checksums {La comprovació de sumes de verificació} splitting {La divisió} combining {La combinació} other {Això}} funciona amb els fitxers d’aquest ordinador, fora dels arxius."
+  },
+  "pack.move_files": {
+    "message": "Mou a l’arxiu (suprimeix els fitxers empaquetats)"
+  },
+  "pack.needs_password": {
+    "message": "necessita una contrasenya"
+  },
+  "pack.ok": {
+    "message": "D’acord"
+  },
+  "pack.password_missing": {
+    "message": "Escriu la contrasenya, o desactiva Xifra."
+  },
+  "pack.separate": {
+    "message": "Un arxiu per a cada fitxer o carpeta seleccionat"
+  },
+  "pack.split": {
+    "message": "Divideix en volums de"
+  },
+  "pack.split_unit": {
+    "message": "MB"
+  },
+  "pack.test.broken": {
+    "message": "{broken, plural, one {# de {count} malmès} other {# de {count} malmesos}}"
+  },
+  "pack.test.choose": {
+    "message": "Tria els arxius que vols provar."
+  },
+  "pack.test.ok": {
+    "message": "{count, plural, one {# arxiu correcte} other {# arxius correctes}}"
+  },
+  "pack.test.title_many": {
+    "message": "Prova {count, plural, one {# arxiu} other {# arxius}}"
+  },
+  "pack.test.title_one": {
+    "message": "Prova «{name}»"
+  },
+  "pack.title.many": {
+    "message": "Empaqueta {count, plural, one {# element} other {# elements}} a {archive}"
+  },
+  "pack.title.many_separate": {
+    "message": "Empaqueta {count, plural, one {# element} other {# elements}} en arxius {format} separats"
+  },
+  "pack.title.one": {
+    "message": "Empaqueta «{name}» a {archive}"
+  },
+  "pack.title.one_separate": {
+    "message": "Empaqueta «{name}» en arxius {format} separats"
+  },
+  "pack.unpack.choose": {
+    "message": "Tria els arxius que vols desempaquetar."
+  },
+  "pack.unpack.dialog_title": {
+    "message": "Desempaqueta fitxers"
+  },
+  "pack.unpack.label": {
+    "message": "Desempaqueta {count, plural, one {# arxiu} other {# arxius}} a:"
+  },
+  "pack.unpack.mask": {
+    "message": "Només els fitxers:"
+  },
+  "pack.unpack.overwrite": {
+    "message": "Sobreescriu els fitxers existents (si no, es conserven)"
+  },
+  "pack.unpack.password": {
+    "message": "Contrasenya:"
+  },
+  "pack.unpack.separate": {
+    "message": "Cada arxiu en una carpeta amb el seu nom"
+  },
+  "pack.unpack.title_many": {
+    "message": "Desempaqueta {count, plural, one {# arxiu} other {# arxius}} a {target}"
+  },
+  "pack.unpack.title_one": {
+    "message": "Desempaqueta «{name}» a {target}"
+  },
+  "pack.unpack.with_paths": {
+    "message": "Conserva les carpetes desades a l’arxiu"
+  },
+  "pack.volume_invalid": {
+    "message": "La mida del volum és un nombre de MB."
+  },
+  "pack.wrong_password": {
+    "message": "contrasenya incorrecta"
+  },
+  "panel.admin.renaming": {
+    "message": "En canviar el nom a «{name}»"
+  },
+  "panel.clipboard.copied": {
+    "message": "{count, plural, one {S’ha copiat # element} other {S’han copiat # elements}}: Ctrl+V els enganxa."
+  },
+  "panel.clipboard.cut": {
+    "message": "{count, plural, one {S’ha retallat # element} other {S’han retallat # elements}}: Ctrl+V els enganxa."
+  },
+  "panel.clipboard.no_cut_in_archive": {
+    "message": "No es poden retallar fitxers de dins d’un arxiu; Ctrl+C els copia."
+  },
+  "panel.clipboard.no_files": {
+    "message": "Al porta-retalls no hi ha cap fitxer."
+  },
+  "panel.clipboard.no_paste_in_archive": {
+    "message": "Encara no es poden enganxar fitxers dins dels arxius."
+  },
+  "panel.clipboard.same_folder": {
+    "message": "Ja són en aquesta carpeta: Ctrl+V els enganxa en una altra."
+  },
+  "panel.column.attr": {
+    "message": "Atr."
+  },
+  "panel.column.date": {
+    "message": "Data"
+  },
+  "panel.column.ext": {
+    "message": "Ext."
+  },
+  "panel.column.name": {
+    "message": "Nom"
+  },
+  "panel.column.size": {
+    "message": "Mida"
+  },
+  "panel.disconnect": {
+    "message": "Desconnecta"
+  },
+  "panel.drag.items": {
+    "message": "{count, plural, one {# element} other {# elements}}"
+  },
+  "panel.error.archive_not_updatable": {
+    "message": "{name}: 7-Zip modifica directament els arxius 7z, zip i tar, però no aquest"
+  },
+  "panel.error.archive_on_server": {
+    "message": "{name}: encara no es poden modificar els arxius dels servidors"
+  },
+  "panel.error.branch_view_local": {
+    "message": "La vista de branca llista les carpetes d’aquest ordinador"
+  },
+  "panel.error.exists": {
+    "message": "{name} ja existeix"
+  },
+  "panel.error.folder_in_the_way": {
+    "message": "hi ha una carpeta amb aquest nom que ho impedeix"
+  },
+  "panel.error.inside_archive": {
+    "message": "encara no dins dels arxius"
+  },
+  "panel.error.make_file": {
+    "message": "No s’ha pogut crear el fitxer: {err}"
+  },
+  "panel.error.no_name": {
+    "message": "no s’ha indicat cap nom"
+  },
+  "panel.error.not_a_name": {
+    "message": "{name}: no és un nom"
+  },
+  "panel.error.other_drive": {
+    "message": "l’altre plafó ha anat a una altra unitat"
+  },
+  "panel.error.rename": {
+    "message": "No s’ha pogut canviar el nom: {err}"
+  },
+  "panel.filter.custom.label": {
+    "message": "Tipus de fitxer, p. ex. *.txt *.md (després de |, els exclosos):"
+  },
+  "panel.filter.custom.title": {
+    "message": "Mostra fitxers"
+  },
+  "panel.filter.programs": {
+    "message": "programes"
+  },
+  "panel.filter.selected_files": {
+    "message": "fitxers seleccionats"
+  },
+  "panel.found.branch_view": {
+    "message": "Vista de branca:"
+  },
+  "panel.found.search_results": {
+    "message": "Resultats de la cerca:"
+  },
+  "panel.new_text_file.label": {
+    "message": "Nom del fitxer, que s’obrirà a l’editor:"
+  },
+  "panel.new_text_file.title": {
+    "message": "Fitxer de text nou"
+  },
+  "panel.opening.cancel": {
+    "message": "Cancel·la"
+  },
+  "panel.opening.reading": {
+    "message": "S’està llegint…"
+  },
+  "panel.opening.title": {
+    "message": "S’està obrint l’arxiu"
+  },
+  "panel.quick_filter.hint": {
+    "message": "amaga el que no coincideix; Escape ho mostra tot"
+  },
+  "panel.quick_filter.label": {
+    "message": "Filtre:"
+  },
+  "panel.quick_search.label": {
+    "message": "Cerca:"
+  },
+  "panel.size.app": {
+    "message": "<APP>"
+  },
+  "panel.size.b": {
+    "message": "{size} B"
+  },
+  "panel.size.dir": {
+    "message": "<DIR>"
+  },
+  "panel.size.gb": {
+    "message": "{size} GB"
+  },
+  "panel.size.kb": {
+    "message": "{size} KB"
+  },
+  "panel.size.mb": {
+    "message": "{size} MB"
+  },
+  "panel.size.tb": {
+    "message": "{size} TB"
+  },
+  "panel.space.bytes": {
+    "message": "{count, plural, one {{size} byte ({human})} other {{size} bytes ({human})}}"
+  },
+  "panel.space.close": {
+    "message": "Tanca"
+  },
+  "panel.space.counting": {
+    "message": "S’està comptant…"
+  },
+  "panel.space.done": {
+    "message": "Fet."
+  },
+  "panel.space.files": {
+    "message": "Fitxers:"
+  },
+  "panel.space.folders": {
+    "message": "Carpetes:"
+  },
+  "panel.space.in_archive": {
+    "message": "Dins dels arxius, la columna Mida ja mostra les mides."
+  },
+  "panel.space.title": {
+    "message": "Calcula l’espai ocupat"
+  },
+  "panel.space.total": {
+    "message": "Mida total:"
+  },
+  "panel.space.unreadable": {
+    "message": "{count, plural, one {No s’ha pogut llegir # element.} other {No s’han pogut llegir # elements.}}"
+  },
+  "panel.status": {
+    "message": "{marked_size} k / {size} k en {marked_files} / {files, plural, one {# fitxer} other {# fitxers}}, {marked_folders} / {folders, plural, one {# dir.} other {# dir.}}"
+  },
+  "panel.sync_browsing.stop": {
+    "message": "Navegació sincronitzada (fes clic per aturar-la)"
+  },
+  "panel.undo.rename": {
+    "message": "Canvia el nom de «{name}» a «{to}»"
+  },
+  "passwords.about.set": {
+    "message": "Amb una contrasenya mestra, les contrasenyes desades s’obren en un altre ordinador quan s’hi escriu, un cop copiada la carpeta de configuració. Si l’oblides, només es perden elles: les tornes a escriure."
+  },
+  "passwords.about.unlock": {
+    "message": "La configuració prové d’un altre ordinador, o aquest no té anell de claus: la contrasenya mestra obre aquí les contrasenyes desades."
+  },
+  "passwords.cancel": {
+    "message": "Cancel·la"
+  },
+  "passwords.done.set": {
+    "message": "S’ha definit la contrasenya mestra."
+  },
+  "passwords.done.unlocked": {
+    "message": "Les contrasenyes desades estan obertes."
+  },
+  "passwords.error.locked": {
+    "message": "les contrasenyes desades estan bloquejades: desbloqueja-les amb la contrasenya mestra (Arranjament › Configuració › Contrasenyes)"
+  },
+  "passwords.error.no_master": {
+    "message": "no s’ha definit cap contrasenya mestra"
+  },
+  "passwords.error.no_random": {
+    "message": "no hi ha nombres aleatoris"
+  },
+  "passwords.error.not_opened": {
+    "message": "no es pot obrir la contrasenya de {what}"
+  },
+  "passwords.error.not_sealed": {
+    "message": "no s’ha pogut xifrar la contrasenya"
+  },
+  "passwords.error.salt_damaged": {
+    "message": "la sal de la contrasenya mestra està malmesa"
+  },
+  "passwords.error.wrong": {
+    "message": "la contrasenya mestra és incorrecta"
+  },
+  "passwords.field.again": {
+    "message": "Repeteix-la"
+  },
+  "passwords.field.master": {
+    "message": "Contrasenya mestra"
+  },
+  "passwords.locked_note": {
+    "message": "Les contrasenyes desades estan bloquejades en aquest ordinador: la contrasenya mestra les obre."
+  },
+  "passwords.ok": {
+    "message": "D’acord"
+  },
+  "passwords.problem.differ": {
+    "message": "Les dues no coincideixen."
+  },
+  "passwords.problem.empty": {
+    "message": "Escriu la contrasenya mestra."
+  },
+  "passwords.title.set": {
+    "message": "Contrasenya mestra"
+  },
+  "passwords.title.unlock": {
+    "message": "Desbloqueja les contrasenyes desades"
+  },
+  "passwords.unlock_button": {
+    "message": "Desbloqueja…"
+  },
+  "passwords.working": {
+    "message": "Un moment…"
+  },
+  "properties.accessed": {
+    "message": "Darrer accés:"
+  },
+  "properties.change_attributes": {
+    "message": "Canvia els atributs..."
+  },
+  "properties.close": {
+    "message": "Tanca"
+  },
+  "properties.contents": {
+    "message": "{file_count, plural, one {{files} fitxer} other {{files} fitxers}}, {folder_count, plural, one {{folders} carpeta} other {{folders} carpetes}}, {count, plural, one {{bytes} byte} other {{bytes} bytes}} ({size})"
+  },
+  "properties.contents_counting": {
+    "message": "{file_count, plural, one {{files} fitxer} other {{files} fitxers}}, {folder_count, plural, one {{folders} carpeta} other {{folders} carpetes}}, {count, plural, one {{bytes} byte} other {{bytes} bytes}} ({size}) (s’està comptant…)"
+  },
+  "properties.contents_label": {
+    "message": "Contingut:"
+  },
+  "properties.created": {
+    "message": "Creat:"
+  },
+  "properties.dialog_title": {
+    "message": "Propietats"
+  },
+  "properties.in_archive": {
+    "message": "El llistat de l’arxiu mostra el que sap dels seus fitxers."
+  },
+  "properties.kind.file": {
+    "message": "Fitxer"
+  },
+  "properties.kind.folder": {
+    "message": "Carpeta"
+  },
+  "properties.kind.link": {
+    "message": "Enllaç"
+  },
+  "properties.kind.link_to": {
+    "message": "Enllaç a {target}"
+  },
+  "properties.location": {
+    "message": "Ubicació:"
+  },
+  "properties.modified": {
+    "message": "Modificat:"
+  },
+  "properties.name": {
+    "message": "Nom:"
+  },
+  "properties.no_system_dialog": {
+    "message": "aquí encara no hi ha diàleg de propietats del sistema"
+  },
+  "properties.owner": {
+    "message": "Propietari / grup:"
+  },
+  "properties.permissions": {
+    "message": "Permisos:"
+  },
+  "properties.size": {
+    "message": "{count, plural, one {{bytes} byte ({size})} other {{bytes} bytes ({size})}}"
+  },
+  "properties.size_label": {
+    "message": "Mida:"
+  },
+  "properties.type": {
+    "message": "Tipus:"
+  },
+  "quick_open.go_to": {
+    "message": "Vés a {path}"
+  },
+  "quick_open.group.bookmarks": {
+    "message": "Adreces d’interès"
+  },
+  "quick_open.group.connections": {
+    "message": "Connexions"
+  },
+  "quick_open.group.drives": {
+    "message": "Unitats"
+  },
+  "quick_open.group.path": {
+    "message": "Camí"
+  },
+  "quick_open.group.recent_folders": {
+    "message": "Carpetes recents"
+  },
+  "quick_open.group.tools": {
+    "message": "Eines"
+  },
+  "quick_open.group.workspaces": {
+    "message": "Espais de treball"
+  },
+  "quick_open.placeholder": {
+    "message": "Una ordre, adreça d’interès, carpeta, camí, servidor, unitat, espai de treball o eina"
+  },
+  "quick_open.title": {
+    "message": "Obertura ràpida"
+  },
+  "quick_view.counting": {
+    "message": "S’està comptant…"
+  },
+  "quick_view.downloading": {
+    "message": "S’està baixant…"
+  },
+  "quick_view.empty": {
+    "message": "La Visualització ràpida mostra allò on és el cursor de l’altre plafó."
+  },
+  "quick_view.extracting": {
+    "message": "S’està extraient de l’arxiu…"
+  },
+  "quick_view.files_only": {
+    "message": "Als servidors i dins dels arxius, la Visualització ràpida mostra fitxers."
+  },
+  "quick_view.space.title": {
+    "message": "Espai total ocupat:"
+  },
+  "quick_view.space.totals": {
+    "message": "{bytes, plural, one {{bytes_grouped} byte} other {{bytes_grouped} bytes}} en {files, plural, one {{files_grouped} fitxer} other {{files_grouped} fitxers}}, {folders, plural, one {{folders_grouped} carpeta} other {{folders_grouped} carpetes}}"
+  },
+  "quick_view.space.unreadable": {
+    "message": "No s’han pogut llegir: {count}."
+  },
+  "quick_view.too_large.download": {
+    "message": "{size} és massa gran per baixar-lo aquí: F3 el visualitza."
+  },
+  "quick_view.too_large.extract": {
+    "message": "{size} és massa gran per extreure’l de l’arxiu aquí: F3 el visualitza."
+  },
+  "remote.cancelled": {
+    "message": "cancel·lat"
+  },
+  "remote.cloud.ask": {
+    "message": "{kind, select, application_key {Clau d’aplicació de {user} a {host}:} api_key {Clau d’API de {user} a {host}:} password {Contrasenya de {user} a {host}:} other {Clau secreta de {user} a {host}:}}"
+  },
+  "remote.cloud.ask_again": {
+    "message": "{kind, select, application_key {La clau d’aplicació és incorrecta. Clau d’aplicació de {user} a {host}:} api_key {La clau d’API és incorrecta. Clau d’API de {user} a {host}:} password {La contrasenya és incorrecta. Contrasenya de {user} a {host}:} other {La clau és incorrecta. Clau secreta de {user} a {host}:}}"
+  },
+  "remote.cloud.obscure_failed": {
+    "message": "rclone no ha pogut acceptar la contrasenya"
+  },
+  "remote.cloud.rclone_missing": {
+    "message": "falta rclone: es baixa a Configuració > Complements"
+  },
+  "remote.cloud.title": {
+    "message": "{kind, select, application_key {Clau d’aplicació} api_key {Clau d’API} password {Contrasenya} other {Clau secreta}}"
+  },
+  "remote.connecting": {
+    "message": "S’està connectant a {server}..."
+  },
+  "remote.dialog.cancel": {
+    "message": "Cancel·la"
+  },
+  "remote.dialog.ok": {
+    "message": "D’acord"
+  },
+  "remote.disconnect_failed": {
+    "message": "{share}: no s’ha pogut desconnectar: {err}"
+  },
+  "remote.ftp.password": {
+    "message": "Contrasenya de {user}@{host}:"
+  },
+  "remote.ftp.password_again": {
+    "message": "La contrasenya és incorrecta. Contrasenya de {user}@{host}:"
+  },
+  "remote.ftps.changed": {
+    "message": "El certificat TLS de {server} HA CANVIAT des que la línia {line} de {file} el va registrar. Algú podria estar escoltant; si el servidor té un certificat nou, elimina aquesta línia."
+  },
+  "remote.ftps.not_trusted": {
+    "message": "el certificat del servidor no és de confiança"
+  },
+  "remote.login.password": {
+    "message": "Contrasenya"
+  },
+  "remote.login.title": {
+    "message": "Inicia la sessió"
+  },
+  "remote.login.user": {
+    "message": "Usuari"
+  },
+  "remote.mount.login_wrong": {
+    "message": "l’usuari o la contrasenya són incorrectes"
+  },
+  "remote.mount.macos_failed": {
+    "message": "macOS no l’ha pogut muntar (NetFS {code})"
+  },
+  "remote.mount.needs_desktop": {
+    "message": "necessita el kio-fuse de KDE o el gvfs de GNOME"
+  },
+  "remote.mount.needs_login": {
+    "message": "necessita un usuari i una contrasenya"
+  },
+  "remote.mount.no_fuse": {
+    "message": "s’ha muntat, però no hi ha cap carpeta per a ell: falta gvfs-fuse"
+  },
+  "remote.mount.no_nfs_client": {
+    "message": "no s’ha trobat; NFS necessita el Client per a NFS del Windows (Característiques del Windows)"
+  },
+  "remote.mount.no_share": {
+    "message": "falta el recurs compartit: smb://servidor/recurs"
+  },
+  "remote.mount.not_address": {
+    "message": "no és una adreça"
+  },
+  "remote.mount.not_found": {
+    "message": "s’ha muntat, però no es troba entre els muntatges"
+  },
+  "remote.mount.other_user": {
+    "message": "Windows ja està connectat a aquest servidor amb un altre usuari: tanca la sessió o fes servir aquell usuari"
+  },
+  "remote.password.title": {
+    "message": "Contrasenya"
+  },
+  "remote.remember_password": {
+    "message": "Recorda-la (Configuració › Contrasenyes)"
+  },
+  "remote.save_back_failed": {
+    "message": "No s’ha pogut tornar a desar: {err}"
+  },
+  "remote.sftp.host_certificate": {
+    "message": "El servidor mostra un certificat d’amfitrió; encara no s’admeten."
+  },
+  "remote.sftp.key_changed": {
+    "message": "La clau d’amfitrió de {server} HA CANVIAT des que la línia {line} de {file} la va registrar. Algú podria estar escoltant; si el servidor s’ha tornat a configurar, elimina aquesta línia."
+  },
+  "remote.sftp.key_not_trusted": {
+    "message": "No s’ha confiat en la clau d’amfitrió de {server}."
+  },
+  "remote.sftp.keys_refused": {
+    "message": "{user}@{host}: el servidor ha rebutjat les claus i no accepta contrasenya"
+  },
+  "remote.sftp.login_refused": {
+    "message": "{user}@{host}: s’ha rebutjat l’inici de sessió"
+  },
+  "remote.sftp.passphrase": {
+    "message": "Frase de pas de {file}"
+  },
+  "remote.sftp.passphrase_title": {
+    "message": "Frase de pas de la clau"
+  },
+  "remote.sftp.password": {
+    "message": "Contrasenya de {user}@{host}"
+  },
+  "remote.unknown_host.once": {
+    "message": "Connecta una vegada"
+  },
+  "remote.unknown_host.remember": {
+    "message": "Connecta i recorda"
+  },
+  "remote.unknown_host.text": {
+    "message": "El servidor {host} encara no és conegut. La seva empremta {key_type} és\n\n{fingerprint}\n\nConnecta’t només si és el servidor que vols; el seu administrador pot confirmar l’empremta."
+  },
+  "remote.unknown_host.title": {
+    "message": "Servidor desconegut"
+  },
+  "rename.case": {
+    "message": "Majúscules:"
+  },
+  "rename.case.first": {
+    "message": "Primera lletra"
+  },
+  "rename.case.lower": {
+    "message": "minúscules"
+  },
+  "rename.case.unchanged": {
+    "message": "Sense canvis"
+  },
+  "rename.case.upper": {
+    "message": "MAJÚSCULES"
+  },
+  "rename.case.words": {
+    "message": "Cada Paraula"
+  },
+  "rename.close": {
+    "message": "Tanca"
+  },
+  "rename.counter_start": {
+    "message": "Inici del comptador"
+  },
+  "rename.dialog_title": {
+    "message": "Eina de canvi de nom múltiple"
+  },
+  "rename.digits": {
+    "message": "Xifres"
+  },
+  "rename.extension": {
+    "message": "Extensió"
+  },
+  "rename.field.counter": {
+    "message": "[C] Comptador"
+  },
+  "rename.field.date": {
+    "message": "[Y][M][D] Data"
+  },
+  "rename.field.extension": {
+    "message": "[E] Ext."
+  },
+  "rename.field.folder": {
+    "message": "[P] Carpeta"
+  },
+  "rename.field.name": {
+    "message": "[N] Nom"
+  },
+  "rename.field.range": {
+    "message": "[N1-3] Interval"
+  },
+  "rename.field.time": {
+    "message": "[h][m][s] Hora"
+  },
+  "rename.first_only": {
+    "message": "Només el primer"
+  },
+  "rename.in_archive": {
+    "message": "Encara no es pot canviar el nom dels fitxers de dins dels arxius."
+  },
+  "rename.mask": {
+    "message": "Màscara de nom: nom del fitxer"
+  },
+  "rename.match_case": {
+    "message": "Distingeix majúscules"
+  },
+  "rename.new_name": {
+    "message": "Nom nou"
+  },
+  "rename.not_renamed_back": {
+    "message": "{from}: {err}; no s’ha restaurat el nom de: {names}"
+  },
+  "rename.not_utf8": {
+    "message": "Els noms que no són UTF-8 queden fora."
+  },
+  "rename.old_name": {
+    "message": "Nom antic"
+  },
+  "rename.problem.bad_character": {
+    "message": "un caràcter que els noms no poden tenir"
+  },
+  "rename.problem.exists": {
+    "message": "ja existeix"
+  },
+  "rename.problem.no_name": {
+    "message": "sense nom"
+  },
+  "rename.problem.twice": {
+    "message": "dues vegades a la llista"
+  },
+  "rename.regex": {
+    "message": "Expressió regular"
+  },
+  "rename.regex_error": {
+    "message": "L’expressió regular: {err}"
+  },
+  "rename.replace": {
+    "message": "Substitueix per"
+  },
+  "rename.search": {
+    "message": "Cerca"
+  },
+  "rename.start": {
+    "message": "Comença!"
+  },
+  "rename.status.failed": {
+    "message": "No s’ha canviat cap nom: {err}"
+  },
+  "rename.status.ready": {
+    "message": "Amb Comença! se’ls canvia el nom."
+  },
+  "rename.status.renamed": {
+    "message": "{count, plural, one {S’ha canviat # nom.} other {S’han canviat # noms.}}"
+  },
+  "rename.status.took_back": {
+    "message": "{count, plural, one {S’ha restaurat # nom.} other {S’han restaurat # noms.}}"
+  },
+  "rename.step": {
+    "message": "Increment"
+  },
+  "rename.undo": {
+    "message": "Desfés"
+  },
+  "rename.was": {
+    "message": "{to} (abans {from})"
+  },
+  "rename.with_extension": {
+    "message": "Amb l’extensió"
+  },
+  "scmd.column.modified": {
+    "message": "Modificat"
+  },
+  "scmd.column.name": {
+    "message": "Nom"
+  },
+  "scmd.column.size": {
+    "message": "Mida"
+  },
+  "scmd.column.up_dir": {
+    "message": "AMUNT"
+  },
+  "scmd.command_line.not_on_server": {
+    "message": "Les ordres s’executen en aquest ordinador, no al servidor."
+  },
+  "scmd.compare.marked": {
+    "message": "{count, plural, one {S’ha marcat # fitxer: més nou que el de l’altre costat, o que no hi és.} other {S’han marcat # fitxers: més nous que els de l’altre costat, o que no hi són.}}"
+  },
+  "scmd.compare.same": {
+    "message": "Les carpetes tenen els mateixos fitxers."
+  },
+  "scmd.copying": {
+    "message": "S’està copiant {name}..."
+  },
+  "scmd.dialog.buttons": {
+    "message": "Enter D’acord   Esc Cancel·la"
+  },
+  "scmd.error.read_settings": {
+    "message": "No s’ha pogut llegir la configuració: {err}"
+  },
+  "scmd.error.read_tabs": {
+    "message": "No s’han pogut llegir les pestanyes obertes: {err}"
+  },
+  "scmd.error.read_workspaces": {
+    "message": "No s’han pogut llegir els espais de treball: {err}"
+  },
+  "scmd.error.save_back": {
+    "message": "No s’ha pogut tornar a desar: {err}"
+  },
+  "scmd.error.save_searches": {
+    "message": "No s’han pogut desar les cerques: {err}"
+  },
+  "scmd.error.save_tabs": {
+    "message": "No s’han pogut desar les pestanyes obertes: {err}"
+  },
+  "scmd.find.backwards": {
+    "message": "Enrere"
+  },
+  "scmd.find.case_sensitive": {
+    "message": "Distingeix majúscules i minúscules"
+  },
+  "scmd.find.hex": {
+    "message": "Hexadecimal (77 6F 72 64)"
+  },
+  "scmd.find.not_found": {
+    "message": "No s’ha trobat: {text}"
+  },
+  "scmd.find.regex": {
+    "message": "Expressió regular"
+  },
+  "scmd.find.search_for": {
+    "message": "Cerca:"
+  },
+  "scmd.find.title": {
+    "message": "Cerca"
+  },
+  "scmd.find.whole_words": {
+    "message": "Només paraules senceres"
+  },
+  "scmd.group.files": {
+    "message": "Fitxers (*.txt *.md; les carpetes acaben en /):"
+  },
+  "scmd.group.select_title": {
+    "message": "Selecciona un grup"
+  },
+  "scmd.group.unselect_title": {
+    "message": "Desselecciona un grup"
+  },
+  "scmd.key_bar.copy": {
+    "message": "Copia"
+  },
+  "scmd.key_bar.delete": {
+    "message": "Suprim"
+  },
+  "scmd.key_bar.edit": {
+    "message": "Edita"
+  },
+  "scmd.key_bar.menu": {
+    "message": "Menú"
+  },
+  "scmd.key_bar.mkdir": {
+    "message": "NovDir"
+  },
+  "scmd.key_bar.move": {
+    "message": "Mou"
+  },
+  "scmd.key_bar.quit": {
+    "message": "Surt"
+  },
+  "scmd.key_bar.view": {
+    "message": "Veure"
+  },
+  "scmd.message.error": {
+    "message": "Error"
+  },
+  "scmd.message.ok": {
+    "message": "D’acord"
+  },
+  "scmd.not_yet": {
+    "message": "{what, select, menus {Els menús: encara no són a la versió de terminal.} file_operations {Les operacions amb fitxers: encara no són a la versió de terminal.} servers {Els servidors: encara no són a la versió de terminal.} other {Aquesta ordre: encara no és a la versió de terminal.}}"
+  },
+  "scmd.picture.broken": {
+    "message": "una imatge malmesa"
+  },
+  "scmd.picture.broken_page": {
+    "message": "una pàgina malmesa"
+  },
+  "scmd.picture.loading": {
+    "message": "S’està carregant…"
+  },
+  "scmd.picture.no_page": {
+    "message": "el PDF no té aquesta pàgina"
+  },
+  "scmd.shell.press_enter": {
+    "message": "Prem Enter per tornar a Spark Commander..."
+  },
+  "scmd.sync_browsing.off": {
+    "message": "La navegació sincronitzada està desactivada."
+  },
+  "scmd.sync_browsing.on": {
+    "message": "La navegació sincronitzada està activada."
+  },
+  "scmd.sync_browsing.stopped": {
+    "message": "{err}. La navegació sincronitzada s’ha desactivat."
+  },
+  "scmd.viewer.column": {
+    "message": "Col. {column}"
+  },
+  "scmd.viewer.finding": {
+    "message": "cercant…"
+  },
+  "scmd.viewer.key_bar.next": {
+    "message": "Seg."
+  },
+  "scmd.viewer.key_bar.quit": {
+    "message": "Surt"
+  },
+  "scmd.viewer.key_bar.reload": {
+    "message": "Recarr"
+  },
+  "scmd.viewer.key_bar.search": {
+    "message": "Cerca"
+  },
+  "scmd.viewer.page": {
+    "message": "pàgina {page} de {pages}"
+  },
+  "scmd.viewer.reading": {
+    "message": "llegint {percent}%"
+  },
+  "scmd.viewer.wrap": {
+    "message": "Ajust"
+  },
+  "scmd.workspace.copy_name": {
+    "message": "{name} còpia"
+  },
+  "scmd.workspace.default_name": {
+    "message": "Espai de treball {number}"
+  },
+  "scmd.workspace.delete_question": {
+    "message": "Vols suprimir «{name}»? Les seves pestanyes s’oblidaran."
+  },
+  "scmd.workspace.duplicate_title": {
+    "message": "Duplica l’espai de treball"
+  },
+  "scmd.workspace.last_stays": {
+    "message": "L’últim espai de treball no es pot suprimir."
+  },
+  "scmd.workspace.name": {
+    "message": "Nom:"
+  },
+  "scmd.workspace.name_or_default": {
+    "message": "Nom (buit: {name}):"
+  },
+  "scmd.workspace.new_title": {
+    "message": "Espai de treball nou"
+  },
+  "scmd.workspace.rename_title": {
+    "message": "Canvia el nom de l’espai de treball"
+  },
+  "scmd.workspaces.keys": {
+    "message": "Enter Obre  F7 Nou  F5 Copia  F2 Canvia nom  F8 Suprimeix"
+  },
+  "scmd.workspaces.title": {
+    "message": "Espais de treball"
+  },
+  "search.age.days": {
+    "message": "dies"
+  },
+  "search.age.hours": {
+    "message": "hores"
+  },
+  "search.age.minutes": {
+    "message": "minuts"
+  },
+  "search.age.months": {
+    "message": "mesos"
+  },
+  "search.age.weeks": {
+    "message": "setmanes"
+  },
+  "search.age.years": {
+    "message": "anys"
+  },
+  "search.archives": {
+    "message": "Cerca dins dels arxius"
+  },
+  "search.attribute.directory": {
+    "message": "Directori"
+  },
+  "search.attribute.either": {
+    "message": "Tant se val"
+  },
+  "search.attribute.executable": {
+    "message": "Executable"
+  },
+  "search.attribute.hidden": {
+    "message": "Ocult"
+  },
+  "search.attribute.link": {
+    "message": "Enllaç simbòlic"
+  },
+  "search.attribute.must": {
+    "message": "Ha de ser-ho"
+  },
+  "search.attribute.must_not": {
+    "message": "No ho ha de ser"
+  },
+  "search.attribute.read_only": {
+    "message": "Només lectura"
+  },
+  "search.attributes.label": {
+    "message": "Atributs:"
+  },
+  "search.between.and": {
+    "message": "i"
+  },
+  "search.between.label": {
+    "message": "Data entre:"
+  },
+  "search.close": {
+    "message": "Tanca"
+  },
+  "search.depth.all": {
+    "message": "tots (profunditat il·limitada)"
+  },
+  "search.depth.current": {
+    "message": "només el directori actual"
+  },
+  "search.depth.label": {
+    "message": "Cerca als subdirectoris:"
+  },
+  "search.depth.levels": {
+    "message": "{count, plural, one {# nivell} other {# nivells}}"
+  },
+  "search.drives": {
+    "message": "Unitats"
+  },
+  "search.duplicates.content": {
+    "message": "mateix contingut"
+  },
+  "search.duplicates.label": {
+    "message": "Cerca fitxers duplicats:"
+  },
+  "search.duplicates.name": {
+    "message": "mateix nom"
+  },
+  "search.duplicates.size": {
+    "message": "mateixa mida"
+  },
+  "search.edit": {
+    "message": "F4 Edita"
+  },
+  "search.error.between_days": {
+    "message": "«Data entre» necessita els dos dies"
+  },
+  "search.error.date": {
+    "message": "{text} no és una data com ara 2026-11-12"
+  },
+  "search.error.hex": {
+    "message": "{text} no és una cadena hexadecimal com ara 48 65 6c"
+  },
+  "search.error.keep": {
+    "message": "No s’ha pogut conservar la cerca: {err}"
+  },
+  "search.error.local_time": {
+    "message": "{text} no és una hora local"
+  },
+  "search.error.names_regex": {
+    "message": "L’expressió regular del nom: {err}"
+  },
+  "search.error.newer_number": {
+    "message": "«No més antic de» necessita un nombre, no {text}"
+  },
+  "search.error.no_place": {
+    "message": "«Cerca a» no indica cap carpeta"
+  },
+  "search.error.no_text": {
+    "message": "«Cerca el text» no indica cap text"
+  },
+  "search.error.older_number": {
+    "message": "«Més antic de» necessita un nombre, no {text}"
+  },
+  "search.error.save": {
+    "message": "No s’han pogut desar les cerques: {err}"
+  },
+  "search.error.size_number": {
+    "message": "«Mida del fitxer» necessita un nombre, no {text}"
+  },
+  "search.error.text_regex": {
+    "message": "L’expressió regular del text: {err}"
+  },
+  "search.feed": {
+    "message": "Passa al plafó"
+  },
+  "search.go_to_file": {
+    "message": "Vés al fitxer"
+  },
+  "search.in_found": {
+    "message": "F2 Cerca als fitxers trobats"
+  },
+  "search.locate": {
+    "message": "De l’índex de locate"
+  },
+  "search.names.label": {
+    "message": "Cerca:"
+  },
+  "search.names.placeholder": {
+    "message": "*.txt *.md | backup*  (buit: tots)"
+  },
+  "search.new": {
+    "message": "Cerca nova"
+  },
+  "search.newer.label": {
+    "message": "No més antic de:"
+  },
+  "search.older.label": {
+    "message": "Més antic de:"
+  },
+  "search.only_selected": {
+    "message": "Cerca només als fitxers/carpetes seleccionats"
+  },
+  "search.only_selected_count": {
+    "message": "{count, plural, one {Cerca només a l’element seleccionat} other {Cerca només als # seleccionats}}"
+  },
+  "search.page.advanced": {
+    "message": "Avançat"
+  },
+  "search.page.general": {
+    "message": "General"
+  },
+  "search.page.load_save": {
+    "message": "Carrega/Desa"
+  },
+  "search.places.browse_prompt": {
+    "message": "Cerca a"
+  },
+  "search.places.label": {
+    "message": "Cerca a:"
+  },
+  "search.places.placeholder": {
+    "message": "Carpetes, separades per ;"
+  },
+  "search.regex": {
+    "message": "RegEx"
+  },
+  "search.results.label": {
+    "message": "Resultats de la cerca:"
+  },
+  "search.saved.delete": {
+    "message": "Suprimeix"
+  },
+  "search.saved.label": {
+    "message": "Cerques anteriors:"
+  },
+  "search.saved.load": {
+    "message": "Carrega"
+  },
+  "search.saved.name_first": {
+    "message": "Primer posa un nom a la cerca."
+  },
+  "search.saved.name_placeholder": {
+    "message": "Nom de la cerca"
+  },
+  "search.saved.save": {
+    "message": "Desa"
+  },
+  "search.size.label": {
+    "message": "Mida del fitxer:"
+  },
+  "search.start": {
+    "message": "Comença la cerca"
+  },
+  "search.status.found": {
+    "message": "S’han trobat {files, plural, one {# fitxer} other {# fitxers}} i {dirs, plural, one {# directori} other {# directoris}}"
+  },
+  "search.status.searching": {
+    "message": "S’està cercant…"
+  },
+  "search.status.searching_in": {
+    "message": "S’està cercant: {folder}"
+  },
+  "search.status.stopped": {
+    "message": "S’ha aturat: {counts}"
+  },
+  "search.stop": {
+    "message": "Atura"
+  },
+  "search.text.ansi": {
+    "message": "ANSI (pàgina de codis {page})"
+  },
+  "search.text.case_sensitive": {
+    "message": "Distingeix majúscules i minúscules"
+  },
+  "search.text.hex": {
+    "message": "Hex"
+  },
+  "search.text.label": {
+    "message": "Cerca el text:"
+  },
+  "search.text.not_containing": {
+    "message": "Cerca fitxers que NO continguin el text"
+  },
+  "search.text.office": {
+    "message": "Fitxers d’ofimàtica (docx, xlsx, pptx, odt…)"
+  },
+  "search.text.placeholder": {
+    "message": "Text que vols cercar"
+  },
+  "search.text.whole_words": {
+    "message": "Només paraules senceres"
+  },
+  "search.title": {
+    "message": "Cerca fitxers"
+  },
+  "search.unit.bytes": {
+    "message": "bytes"
+  },
+  "search.view": {
+    "message": "F3 Visualitza"
+  },
+  "settings.addons.builtin_version": {
+    "message": "{version}, inclòs amb Spark Commander"
+  },
+  "settings.addons.check_daily": {
+    "message": "Cerca actualitzacions dels complements en iniciar i cada dia, i ofereix-les"
+  },
+  "settings.addons.check_failed": {
+    "message": "No s’han pogut cercar actualitzacions: {err}"
+  },
+  "settings.addons.check_now": {
+    "message": "Cerca ara"
+  },
+  "settings.addons.checking": {
+    "message": "S’estan cercant actualitzacions..."
+  },
+  "settings.addons.download": {
+    "message": "Baixa"
+  },
+  "settings.addons.downloading": {
+    "message": "S’està baixant: {done} de {size}"
+  },
+  "settings.addons.file": {
+    "message": "Fitxer"
+  },
+  "settings.addons.installed.builtin": {
+    "message": "inclòs amb Spark Commander"
+  },
+  "settings.addons.installed.label": {
+    "message": "Instal·lat"
+  },
+  "settings.addons.installed.none": {
+    "message": "cap"
+  },
+  "settings.addons.intro": {
+    "message": "Spark Commander fa servir aquests programes d’altres projectes per a part del que fa. Els complements es baixen a banda, quan tu vols; 7-Zip i PDFium s’hi inclouen."
+  },
+  "settings.addons.never_offer": {
+    "message": "No ofereixis mai complements quan un fitxer en necessiti un"
+  },
+  "settings.addons.offers": {
+    "message": "Ofertes i actualitzacions"
+  },
+  "settings.addons.online.label": {
+    "message": "En línia"
+  },
+  "settings.addons.online.looking": {
+    "message": "cercant..."
+  },
+  "settings.addons.online.none": {
+    "message": "cap per a aquest sistema"
+  },
+  "settings.addons.online.not_yet": {
+    "message": "encara no s’ha consultat"
+  },
+  "settings.addons.online.unknown": {
+    "message": "desconegut"
+  },
+  "settings.addons.remove": {
+    "message": "Elimina"
+  },
+  "settings.addons.up_to_date": {
+    "message": "La llista de complements està actualitzada."
+  },
+  "settings.addons.version": {
+    "message": "Versió"
+  },
+  "settings.addons.website": {
+    "message": "Lloc web"
+  },
+  "settings.appearance.title": {
+    "message": "Aparença"
+  },
+  "settings.apply": {
+    "message": "Aplica"
+  },
+  "settings.backdrop.blur": {
+    "message": "Difumina l’escriptori del darrere"
+  },
+  "settings.backdrop.clear": {
+    "message": "0%, només l’escriptori"
+  },
+  "settings.backdrop.cover": {
+    "message": "Quant tapa l’escriptori del darrere:"
+  },
+  "settings.backdrop.opacity": {
+    "message": "{opacity}%"
+  },
+  "settings.backdrop.sidebar": {
+    "message": "Barra lateral"
+  },
+  "settings.backdrop.solid": {
+    "message": "100%, opac"
+  },
+  "settings.backdrop.terminal": {
+    "message": "Terminal"
+  },
+  "settings.cancel": {
+    "message": "Cancel·la"
+  },
+  "settings.date.as_system": {
+    "message": "Com el sistema: {date}"
+  },
+  "settings.date.custom": {
+    "message": "Personalitzat:"
+  },
+  "settings.date.pattern_help": {
+    "message": "yyyy any, MM mes (MMM el nom), dd dia (ddd el dia de la setmana)"
+  },
+  "settings.date.shown_as": {
+    "message": "Es mostra així"
+  },
+  "settings.date.shown_as_note": {
+    "message": "a les llistes de fitxers; els diàlegs hi afegeixen els segons"
+  },
+  "settings.date.title": {
+    "message": "Data"
+  },
+  "settings.editor.browse": {
+    "message": "Navega..."
+  },
+  "settings.editor.choose": {
+    "message": "Tria"
+  },
+  "settings.editor.external": {
+    "message": "Editor extern (Ctrl+Shift+F4):"
+  },
+  "settings.editor.external_help": {
+    "message": "%1 és el fitxer; si no hi és, va al final; p. ex. code --wait %1"
+  },
+  "settings.editor.limit": {
+    "message": "L’editor integrat (F4) obre fitxers de fins a"
+  },
+  "settings.editor.limit_unit": {
+    "message": "MB"
+  },
+  "settings.editor.title": {
+    "message": "Editor per a F4"
+  },
+  "settings.error.no_folder": {
+    "message": "no hi ha carpeta de configuració"
+  },
+  "settings.files_shown.hidden": {
+    "message": "Fitxers ocults"
+  },
+  "settings.files_shown.system": {
+    "message": "Fitxers del sistema"
+  },
+  "settings.files_shown.title": {
+    "message": "Fitxers que es mostren"
+  },
+  "settings.font.as_system": {
+    "message": "Com el sistema"
+  },
+  "settings.font.chosen": {
+    "message": "Triada; la del sistema és {family}, {size}"
+  },
+  "settings.font.fixed": {
+    "message": "Visualitzador"
+  },
+  "settings.font.fixed_note": {
+    "message": "Només lletres d’amplada fixa; també per a l’editor i la comparació de fitxers."
+  },
+  "settings.font.main": {
+    "message": "Lletra de la finestra principal"
+  },
+  "settings.font.system": {
+    "message": "La lletra del sistema"
+  },
+  "settings.language.system": {
+    "message": "Idioma del sistema"
+  },
+  "settings.language.system_named": {
+    "message": "Idioma del sistema: {language}"
+  },
+  "settings.language.title": {
+    "message": "Idioma"
+  },
+  "settings.menus.automatic": {
+    "message": "Automàtic: un botó ☰ a GNOME, una barra de menús a la resta"
+  },
+  "settings.menus.bar": {
+    "message": "Barra de menús"
+  },
+  "settings.menus.button": {
+    "message": "Botó ☰ a la barra de títol"
+  },
+  "settings.menus.title": {
+    "message": "Menús"
+  },
+  "settings.ok": {
+    "message": "D’acord"
+  },
+  "settings.page.addons": {
+    "message": "Complements"
+  },
+  "settings.page.date": {
+    "message": "Data"
+  },
+  "settings.page.display": {
+    "message": "Visualització"
+  },
+  "settings.page.edit_view": {
+    "message": "Edició/Visualització"
+  },
+  "settings.page.font": {
+    "message": "Lletra"
+  },
+  "settings.page.language": {
+    "message": "Idioma"
+  },
+  "settings.page.layout": {
+    "message": "Disposició"
+  },
+  "settings.page.operations": {
+    "message": "Operacions"
+  },
+  "settings.page.passwords": {
+    "message": "Contrasenyes"
+  },
+  "settings.page.terminal": {
+    "message": "Terminal"
+  },
+  "settings.page.toolbar": {
+    "message": "Barra d’eines"
+  },
+  "settings.passwords.change_master": {
+    "message": "Canvia la contrasenya mestra…"
+  },
+  "settings.passwords.locked": {
+    "message": "Estan bloquejades en aquest ordinador: la contrasenya mestra les obre."
+  },
+  "settings.passwords.master_set": {
+    "message": "Hi ha una contrasenya mestra: si copies la carpeta de configuració, s’obren en un altre ordinador quan s’hi escriu."
+  },
+  "settings.passwords.no_master": {
+    "message": "No hi ha cap contrasenya mestra: si copies la carpeta de configuració, no s’obren en un altre ordinador; s’hi han de tornar a escriure."
+  },
+  "settings.passwords.not_removed": {
+    "message": "No s’ha eliminat la contrasenya mestra: {err}"
+  },
+  "settings.passwords.remove_master": {
+    "message": "Elimina la contrasenya mestra"
+  },
+  "settings.passwords.saved": {
+    "message": "{count, plural, one {Hi ha # contrasenya desada} other {Hi ha # contrasenyes desades}} (de servidors, recursos compartits i unitats xifrades), xifrades a la carpeta de configuració; la clau que les obre és a l’anell de claus d’aquest ordinador."
+  },
+  "settings.passwords.set_master": {
+    "message": "Defineix una contrasenya mestra…"
+  },
+  "settings.passwords.title": {
+    "message": "Contrasenyes desades"
+  },
+  "settings.passwords.unlock": {
+    "message": "Desbloqueja…"
+  },
+  "settings.queue.clear_after": {
+    "message": "Neteja les operacions acabades al cap de"
+  },
+  "settings.queue.clear_after_help": {
+    "message": "0: tan bon punt acaben. Les fallades i les cancel·lades es queden fins que les neteges."
+  },
+  "settings.queue.clear_after_unit": {
+    "message": "minuts"
+  },
+  "settings.queue.download_limit": {
+    "message": "Límit de velocitat de baixada"
+  },
+  "settings.queue.download_limit_help": {
+    "message": "Baixa des d’un enllaç i les còpies des de servidors FTP i SFTP; també les que estan en curs. 0: sense límit."
+  },
+  "settings.queue.download_limit_unit": {
+    "message": "KB/s"
+  },
+  "settings.queue.title": {
+    "message": "Cua d’operacions"
+  },
+  "settings.shell.default": {
+    "message": "Predeterminat: {shell}"
+  },
+  "settings.shell.note": {
+    "message": "L’inicien les pestanyes de terminal noves."
+  },
+  "settings.shell.title": {
+    "message": "Intèrpret d’ordres"
+  },
+  "settings.sort_folders.by_name": {
+    "message": "Sempre per nom"
+  },
+  "settings.sort_folders.like_files": {
+    "message": "Com els fitxers (també per data)"
+  },
+  "settings.sort_folders.title": {
+    "message": "Ordenació de les carpetes"
+  },
+  "settings.tabs.header_always": {
+    "message": "Mostra la capçalera de pestanyes encara que només n’hi hagi una"
+  },
+  "settings.tabs.title": {
+    "message": "Pestanyes de carpetes"
+  },
+  "settings.time.as_system": {
+    "message": "Com el sistema"
+  },
+  "settings.time.h12": {
+    "message": "12 hores (2:05 PM)"
+  },
+  "settings.time.h24": {
+    "message": "24 hores (14:05)"
+  },
+  "settings.time.title": {
+    "message": "Hora"
+  },
+  "settings.title": {
+    "message": "Configuració"
+  },
+  "settings.toolbar.add": {
+    "message": "Afegeix un botó…"
+  },
+  "settings.toolbar.move_down": {
+    "message": "Mou avall"
+  },
+  "settings.toolbar.move_up": {
+    "message": "Mou amunt"
+  },
+  "settings.toolbar.place": {
+    "message": "Sota la barra de menús; a la barra de títol quan els menús són darrere del botó ☰, com a les aplicacions de GNOME. Sense botons, no n’hi ha."
+  },
+  "settings.toolbar.remove": {
+    "message": "Elimina"
+  },
+  "settings.toolbar.replace": {
+    "message": "Substitueix…"
+  },
+  "settings.toolbar.restore_default": {
+    "message": "Restaura els predeterminats"
+  },
+  "settings.toolbar.title": {
+    "message": "Botons de la barra d’eines"
+  },
+  "settings.viewer.font.ansi": {
+    "message": "ANSI (Windows)"
+  },
+  "settings.viewer.font.ascii": {
+    "message": "ASCII (DOS)"
+  },
+  "settings.viewer.font.auto": {
+    "message": "Detecció automàtica"
+  },
+  "settings.viewer.font.label": {
+    "message": "Lletra en iniciar:"
+  },
+  "settings.viewer.font.variable": {
+    "message": "Amplada variable"
+  },
+  "settings.viewer.minimap": {
+    "message": "Minimapa"
+  },
+  "settings.viewer.show": {
+    "message": "Mostra:"
+  },
+  "settings.viewer.start.auto": {
+    "message": "Detecció automàtica"
+  },
+  "settings.viewer.start.binary": {
+    "message": "Binari"
+  },
+  "settings.viewer.start.hex": {
+    "message": "Hex"
+  },
+  "settings.viewer.start.label": {
+    "message": "Visualització en iniciar:"
+  },
+  "settings.viewer.start.text": {
+    "message": "Text"
+  },
+  "settings.viewer.title": {
+    "message": "Visualitzador per a F3"
+  },
+  "settings.viewer.width.binary": {
+    "message": "Binari"
+  },
+  "settings.viewer.width.label": {
+    "message": "Amplada de visualització (caràcters):"
+  },
+  "settings.viewer.width.text": {
+    "message": "Text"
+  },
+  "settings.viewer.wrap": {
+    "message": "Ajusta el text"
+  },
+  "shells.command_prompt": {
+    "message": "Indicador d’ordres"
+  },
+  "sidebar.device.no_files": {
+    "message": "no comparteix fitxers"
+  },
+  "sidebar.device.not_answering": {
+    "message": "{name} no respon: desbloqueja’l i obre-hi KDE Connect, i després torna a llegir la carpeta (F2)."
+  },
+  "sidebar.device.not_answering_error": {
+    "message": "{name} no respon ({err}): desbloqueja’l i obre-hi KDE Connect."
+  },
+  "sidebar.device.not_connected": {
+    "message": "no connectat"
+  },
+  "sidebar.device.opening": {
+    "message": "S’està obrint {name}..."
+  },
+  "sidebar.device.reconnecting": {
+    "message": "{name} no respon: s’està tornant a connectar..."
+  },
+  "sidebar.device.unmount_failed": {
+    "message": "{name}: no s’ha pogut desmuntar: {err}"
+  },
+  "sidebar.group.bookmarks": {
+    "message": "Adreces d’interès"
+  },
+  "sidebar.group.cloud": {
+    "message": "Núvol"
+  },
+  "sidebar.group.devices": {
+    "message": "Dispositius"
+  },
+  "sidebar.group.drives": {
+    "message": "Unitats"
+  },
+  "sidebar.group.network": {
+    "message": "Xarxa"
+  },
+  "sidebar.section.connections": {
+    "message": "Connexions"
+  },
+  "sidebar.section.folders": {
+    "message": "Carpetes"
+  },
+  "sidebar.section.operations": {
+    "message": "Operacions"
+  },
+  "sidebar.section.places": {
+    "message": "Llocs"
+  },
+  "sidebar.volume.locked": {
+    "message": "bloquejat"
+  },
+  "sidebar.volume.mounting": {
+    "message": "S’està muntant {name}..."
+  },
+  "sidebar.volume.not_mounted": {
+    "message": "no muntat"
+  },
+  "sidebar.volume.open": {
+    "message": "Obre"
+  },
+  "sidebar.volume.space": {
+    "message": "{free} lliures de {total}"
+  },
+  "sidebar.volume.unmount": {
+    "message": "Desmunta"
+  },
+  "sidebar.volume.unmount_failed": {
+    "message": "No s’ha pogut desmuntar: {err}"
+  },
+  "split.bad_size": {
+    "message": "«{size}» no és una mida: 100 MB, 1.5 GB, 650m"
+  },
+  "split.choose": {
+    "message": "Posa el cursor sobre el fitxer que vols dividir."
+  },
+  "split.combine.choose": {
+    "message": "Posa el cursor sobre una part (nom.001) o sobre el seu fitxer .crc."
+  },
+  "split.combine.dialog_title": {
+    "message": "Combina fitxers"
+  },
+  "split.combine.label": {
+    "message": "Combina les parts al fitxer:"
+  },
+  "split.combine.title": {
+    "message": "Combina «{name}»"
+  },
+  "split.combined_no_crc": {
+    "message": "{count, plural, one {# part combinada, sense fitxer CRC per comprovar-la} other {# parts combinades, sense fitxer CRC per comprovar-les}}"
+  },
+  "split.crc_mismatch": {
+    "message": "{target} no coincideix amb {file}: falta una part o està malmesa"
+  },
+  "split.crc_names_no_file": {
+    "message": "el fitxer CRC no indica cap fitxer"
+  },
+  "split.crc_unreadable": {
+    "message": "s’ha combinat, però no s’ha pogut llegir {file}: {err}"
+  },
+  "split.dialog_title": {
+    "message": "Divideix el fitxer"
+  },
+  "split.label": {
+    "message": "Divideix «{name}» en parts a la carpeta:"
+  },
+  "split.part_missing": {
+    "message": "falta {path}"
+  },
+  "split.part_size": {
+    "message": "Mida de la part:"
+  },
+  "split.title": {
+    "message": "Divideix «{name}»"
+  },
+  "sync.close": {
+    "message": "Tanca"
+  },
+  "sync.column.date": {
+    "message": "Data"
+  },
+  "sync.column.name": {
+    "message": "Nom"
+  },
+  "sync.column.size": {
+    "message": "Mida"
+  },
+  "sync.compare": {
+    "message": "Compara"
+  },
+  "sync.confirm.copy_left": {
+    "message": "Copia {count} a l’esquerra ({size})"
+  },
+  "sync.confirm.copy_right": {
+    "message": "Copia {count} a la dreta ({size})"
+  },
+  "sync.confirm.delete_left": {
+    "message": "Suprimeix {count} a l’esquerra"
+  },
+  "sync.confirm.delete_right": {
+    "message": "Suprimeix {count} a la dreta"
+  },
+  "sync.confirm.ok": {
+    "message": "Sincronitza"
+  },
+  "sync.confirm.text": {
+    "message": "{actions}. Els fitxers copiats substitueixen els que hi ha.{trash, select, yes { Els que se suprimeixen d’aquest ordinador van a la paperera.} other {}}"
+  },
+  "sync.confirm.title": {
+    "message": "Sincronitza"
+  },
+  "sync.error.changed": {
+    "message": "ha canviat des de la comparació; torna a comparar"
+  },
+  "sync.error.compare": {
+    "message": "No s’ha pogut comparar: {err}"
+  },
+  "sync.error.no_folders": {
+    "message": "Sincronitza directoris compara dues carpetes: cap plafó pot mostrar un arxiu ni resultats de cerca."
+  },
+  "sync.left": {
+    "message": "Esq."
+  },
+  "sync.mask.label": {
+    "message": "Fitxers:"
+  },
+  "sync.option.asymmetric": {
+    "message": "Asimètric (la dreta esdevé una còpia de l’esquerra)"
+  },
+  "sync.option.by_content": {
+    "message": "Per contingut"
+  },
+  "sync.option.ignore_date": {
+    "message": "Ignora la data"
+  },
+  "sync.option.subfolders": {
+    "message": "Subcarpetes"
+  },
+  "sync.result.done": {
+    "message": "{count, plural, one {# sincronitzat} other {# sincronitzats}}"
+  },
+  "sync.result.failed": {
+    "message": "{count, plural, one {# no sincronitzat} other {# no sincronitzats}}; {first}"
+  },
+  "sync.right": {
+    "message": "Dreta"
+  },
+  "sync.show.equal": {
+    "message": "= iguals"
+  },
+  "sync.show.label": {
+    "message": "Mostra:"
+  },
+  "sync.show.other": {
+    "message": "≠ sense tocar"
+  },
+  "sync.show.to_left": {
+    "message": "← a l’esquerra"
+  },
+  "sync.show.to_right": {
+    "message": "→ a la dreta"
+  },
+  "sync.status.both_empty": {
+    "message": "Totes dues són buides."
+  },
+  "sync.status.comparing": {
+    "message": "S’està comparant {folder}"
+  },
+  "sync.status.counts": {
+    "message": "{right} per copiar a la dreta, {left} per copiar a l’esquerra, {delete} per suprimir, {equal} iguals, {alone} sense tocar"
+  },
+  "sync.status.stopped": {
+    "message": "S’ha aturat."
+  },
+  "sync.stop": {
+    "message": "Atura"
+  },
+  "sync.synchronize": {
+    "message": "Sincronitza..."
+  },
+  "sync.task.title": {
+    "message": "Sincronitza {left} i {right}"
+  },
+  "sync.title": {
+    "message": "Sincronitza directoris"
+  },
+  "tab_menu.close_all_tabs": {
+    "message": "Tanca totes les pestanyes"
+  },
+  "tab_menu.close_duplicate_tabs": {
+    "message": "Tanca les pestanyes duplicades"
+  },
+  "tab_menu.close_tab": {
+    "message": "Tanca aquesta pestanya"
+  },
+  "tab_menu.copy_tab_to_other_panel": {
+    "message": "Copia la pestanya a l’altre plafó"
+  },
+  "tab_menu.duplicate_tab": {
+    "message": "Duplica aquesta pestanya"
+  },
+  "tab_menu.list_tabs": {
+    "message": "Mostra la llista de totes les pestanyes"
+  },
+  "tab_menu.lock_tab": {
+    "message": "Bloqueja aquesta pestanya"
+  },
+  "tab_menu.none": {
+    "message": "(cap)"
+  },
+  "tab_menu.rename_tab": {
+    "message": "Canvia el nom de la pestanya..."
+  },
+  "tabs.error.reopen": {
+    "message": "No s’ha pogut tornar a obrir la pestanya: {err}"
+  },
+  "tabs.history.empty": {
+    "message": "Encara no hi ha carpetes a l’historial d’aquesta pestanya."
+  },
+  "tabs.new": {
+    "message": "Pestanya nova"
+  },
+  "tabs.rename.label": {
+    "message": "Nom nou:"
+  },
+  "tabs.rename.title": {
+    "message": "Canvia el nom de la pestanya"
+  },
+  "tabs.search_results": {
+    "message": "Resultats de la cerca"
+  },
+  "terminal.busy": {
+    "message": "Hi ha un programa en execució al terminal: executa l’ordre quan acabi."
+  },
+  "terminal.close.idle": {
+    "message": "Vols tancar aquesta pestanya de terminal? El seu intèrpret d’ordres acabarà."
+  },
+  "terminal.close.ok": {
+    "message": "Tanca"
+  },
+  "terminal.close.running": {
+    "message": "Vols tancar aquesta pestanya de terminal? S’aturarà el programa que s’hi executa."
+  },
+  "terminal.close.title": {
+    "message": "Tanca la pestanya"
+  },
+  "terminal.error.start_shell": {
+    "message": "No s’ha pogut iniciar l’intèrpret d’ordres: {err}"
+  },
+  "terminal.jump_to_bottom": {
+    "message": "Vés al final (Ctrl+End) ↓"
+  },
+  "terminal.menu.copy": {
+    "message": "Copia"
+  },
+  "terminal.menu.paste": {
+    "message": "Enganxa"
+  },
+  "toolbar.customize": {
+    "message": "Personalitza la barra d’eines…"
+  },
+  "tools.clear_key": {
+    "message": "Treu"
+  },
+  "tools.close": {
+    "message": "Tanca"
+  },
+  "tools.delete": {
+    "message": "Suprimeix"
+  },
+  "tools.empty": {
+    "message": "Encara no hi ha eines: Nova... n’afegeix una."
+  },
+  "tools.field.command": {
+    "message": "Ordre"
+  },
+  "tools.field.key": {
+    "message": "Tecla"
+  },
+  "tools.field.name": {
+    "message": "Nom"
+  },
+  "tools.intro": {
+    "message": "Les teves pròpies línies d’ordres, al menú Eines: fes-hi clic o prem-ne la tecla."
+  },
+  "tools.key.none": {
+    "message": "Cap"
+  },
+  "tools.key.waiting": {
+    "message": "Prem la tecla... (Esc: cap)"
+  },
+  "tools.move_down": {
+    "message": "Mou avall"
+  },
+  "tools.move_up": {
+    "message": "Mou amunt"
+  },
+  "tools.name.placeholder": {
+    "message": "Compara amb l’altre costat"
+  },
+  "tools.new": {
+    "message": "Nova..."
+  },
+  "tools.new_name": {
+    "message": "Eina {number}"
+  },
+  "tools.no_command": {
+    "message": "{tool} encara no té cap ordre: Eines > Gestiona les eines."
+  },
+  "tools.not_local": {
+    "message": "Les eines s’executen en aquest ordinador: el plafó mostra un servidor o un arxiu."
+  },
+  "tools.note.key_of_command": {
+    "message": "{key} també és {command}: se la queda l’eina."
+  },
+  "tools.note.key_of_other_tool": {
+    "message": "{key} també és de {tool}: se la queda la que és més avall a la llista."
+  },
+  "tools.placeholders": {
+    "message": "%P la carpeta d’aquest plafó, %T la de l’altre (totes dues acaben en un separador, així que \"%P%N\" és un camí), %N el fitxer sota el cursor, %O el seu nom sense l’extensió, %E l’extensió, %S els fitxers seleccionats (si no, el del cursor), cadascun entre cometes; %% un %. Posa cometes a la resta: \"%P%N\"."
+  },
+  "tools.run_in_terminal": {
+    "message": "Executa al terminal, per veure el que mostra"
+  },
+  "tools.set_key": {
+    "message": "Defineix la tecla..."
+  },
+  "tools.title": {
+    "message": "Eines"
+  },
+  "transfer.answer.cancel": {
+    "message": "Cancel·la"
+  },
+  "transfer.answer.elevate": {
+    "message": "Com a administrador"
+  },
+  "transfer.answer.overwrite": {
+    "message": "Sobreescriu"
+  },
+  "transfer.answer.overwrite_all": {
+    "message": "Sobreescriu-ho tot"
+  },
+  "transfer.answer.rename": {
+    "message": "Canvia el nom"
+  },
+  "transfer.answer.retry": {
+    "message": "Torna-ho a provar"
+  },
+  "transfer.answer.skip": {
+    "message": "Omet"
+  },
+  "transfer.answer.skip_all": {
+    "message": "Omet-ho tot"
+  },
+  "transfer.archive.local_only": {
+    "message": "Només els fitxers d’aquest ordinador poden anar a un arxiu: primer copia’ls aquí."
+  },
+  "transfer.cancel": {
+    "message": "Cancel·la"
+  },
+  "transfer.error.elevate_hint": {
+    "message": "Com a administrador: aquest i tot el que es denegui, quan s’hagi fet la resta, demanant la contrasenya un sol cop."
+  },
+  "transfer.error.title": {
+    "message": "Error"
+  },
+  "transfer.exists.describe": {
+    "message": "{count, plural, one {{size} byte, {time}} other {{size} bytes, {time}}}"
+  },
+  "transfer.exists.text": {
+    "message": "El que hi ha: {existing}\nEl nou: {new}"
+  },
+  "transfer.exists.title": {
+    "message": "El fitxer ja existeix"
+  },
+  "transfer.extract_failed": {
+    "message": "No s’han pogut extreure: {err}"
+  },
+  "transfer.into_archive.question_many": {
+    "message": "Vols {kind, select, copy {copiar} other {moure}} {count, plural, one {# element} other {# elements}} a {into}? Se substituirà el que tingui el mateix nom."
+  },
+  "transfer.into_archive.question_one": {
+    "message": "Vols {kind, select, copy {copiar} other {moure}} «{name}» a {into}? Se substituirà el que tingui el mateix nom."
+  },
+  "transfer.into_archive.title_many": {
+    "message": "{kind, select, copy {Copia} other {Mou}} {count, plural, one {# element} other {# elements}} a {archive}"
+  },
+  "transfer.into_archive.title_one": {
+    "message": "{kind, select, copy {Copia} other {Mou}} «{name}» a {archive}"
+  },
+  "transfer.label.many": {
+    "message": "{kind, select, copy {Copia} other {Mou}} {count, plural, one {# element} other {# elements}} a:"
+  },
+  "transfer.label.many_server": {
+    "message": "{kind, select, copy {Copia} other {Mou}} {count, plural, one {# element} other {# elements}} a {server}:"
+  },
+  "transfer.label.one": {
+    "message": "{kind, select, copy {Copia} other {Mou}} «{name}» a:"
+  },
+  "transfer.label.one_server": {
+    "message": "{kind, select, copy {Copia} other {Mou}} «{name}» a {server}:"
+  },
+  "transfer.ok": {
+    "message": "D’acord"
+  },
+  "transfer.overwrite.all": {
+    "message": "Sobreescriu-ho tot"
+  },
+  "transfer.overwrite.ask": {
+    "message": "Pregunta"
+  },
+  "transfer.overwrite.label": {
+    "message": "Quan a la destinació hi ha un fitxer amb el mateix nom:"
+  },
+  "transfer.overwrite.older": {
+    "message": "Sobreescriu els més antics"
+  },
+  "transfer.overwrite.rename": {
+    "message": "Canvia el nom de les còpies"
+  },
+  "transfer.overwrite.skip": {
+    "message": "Omet-ho tot"
+  },
+  "transfer.remove_moved": {
+    "message": "Elimina els moguts de {name}"
+  },
+  "transfer.speed": {
+    "message": "{size}/s"
+  },
+  "transfer.strip.counting": {
+    "message": "comptant: {count, plural, one {# fitxer} other {# fitxers}}"
+  },
+  "transfer.strip.progress": {
+    "message": "{files} / {count, plural, one {# fitxer} other {# fitxers}}, {percent}%"
+  },
+  "transfer.strip.queue": {
+    "message": "Cua..."
+  },
+  "transfer.strip.queue_waiting": {
+    "message": "Cua ({count, plural, one {# en espera} other {# en espera}})..."
+  },
+  "transfer.title.copy": {
+    "message": "Copia"
+  },
+  "transfer.title.move": {
+    "message": "Mou"
+  },
+  "viewer.as_text_hint": {
+    "message": "{err}. Amb 1 es mostra el fitxer com a text."
+  },
+  "viewer.book.cannot_read": {
+    "message": "Aquest llibre no es pot llegir: {err}. Amb 1 es mostra el fitxer com a text."
+  },
+  "viewer.book.continuing": {
+    "message": "Continua al {percent}"
+  },
+  "viewer.book.error.compression": {
+    "message": "comprimit d’una manera que encara no es llegeix ({compression})"
+  },
+  "viewer.book.error.damaged": {
+    "message": "un llibre malmès"
+  },
+  "viewer.book.error.damaged_zip": {
+    "message": "un zip malmès"
+  },
+  "viewer.book.error.drm": {
+    "message": "protegit amb DRM: només el pot llegir Kindle"
+  },
+  "viewer.book.error.huffman": {
+    "message": "comprimit com els llibres propis d’Amazon (HUFF/CDIC), que encara no es llegeix"
+  },
+  "viewer.book.error.missing_part": {
+    "message": "{name} no és al llibre"
+  },
+  "viewer.book.error.no_package": {
+    "message": "el llibre no té fitxer de paquet"
+  },
+  "viewer.book.error.no_text": {
+    "message": "el llibre no té text"
+  },
+  "viewer.book.error.not_zip": {
+    "message": "no és un zip: un llibre malmès o protegit amb DRM?"
+  },
+  "viewer.book.error.zip_method": {
+    "message": "{name}: comprimit d’una manera que aquí no es pot llegir ({method})"
+  },
+  "viewer.cannot_show": {
+    "message": "No es pot mostrar: {err}"
+  },
+  "viewer.convert.failed": {
+    "message": "{tool} no l’ha pogut convertir ({status})"
+  },
+  "viewer.converting": {
+    "message": "S’està convertint amb {tool}…"
+  },
+  "viewer.copy.too_large": {
+    "message": "Les seleccions de més de {megabytes} MB no es copien."
+  },
+  "viewer.encoding.cp1250": {
+    "message": "Europa oriental (1250)"
+  },
+  "viewer.encoding.cp1251": {
+    "message": "Ciríl·lic Windows (1251)"
+  },
+  "viewer.encoding.cp1252": {
+    "message": "Llatí occidental 1 (1252)"
+  },
+  "viewer.encoding.cp1253": {
+    "message": "Grec (1253)"
+  },
+  "viewer.encoding.cp1254": {
+    "message": "Turc (1254)"
+  },
+  "viewer.encoding.cp1255": {
+    "message": "Hebreu (1255)"
+  },
+  "viewer.encoding.cp1256": {
+    "message": "Àrab (1256)"
+  },
+  "viewer.encoding.cp1257": {
+    "message": "Bàltic (1257)"
+  },
+  "viewer.encoding.cp1258": {
+    "message": "Vietnamita (1258)"
+  },
+  "viewer.encoding.cp20866": {
+    "message": "Ciríl·lic KOI8-R (20866)"
+  },
+  "viewer.encoding.cp437": {
+    "message": "DOS-EUA (437)"
+  },
+  "viewer.encoding.cp850": {
+    "message": "DOS-LATIN1 (850)"
+  },
+  "viewer.encoding.cp852": {
+    "message": "DOS Europa central (852)"
+  },
+  "viewer.encoding.cp866": {
+    "message": "DOS ciríl·lic (866)"
+  },
+  "viewer.encoding.cp874": {
+    "message": "Tai (874)"
+  },
+  "viewer.encoding.cp932": {
+    "message": "Japonès (932)"
+  },
+  "viewer.encoding.cp936": {
+    "message": "Xinès continental (936)"
+  },
+  "viewer.encoding.cp949": {
+    "message": "Coreà (949)"
+  },
+  "viewer.encoding.cp950": {
+    "message": "Xinès de Taiwan (950)"
+  },
+  "viewer.find.not_found": {
+    "message": "No s’ha trobat: {text}"
+  },
+  "viewer.find.not_hex": {
+    "message": "No és una cadena hexadecimal: {text}"
+  },
+  "viewer.find.nothing": {
+    "message": "No hi ha res per cercar."
+  },
+  "viewer.find.save_failed": {
+    "message": "No s’han pogut desar les cerques: {err}"
+  },
+  "viewer.loading": {
+    "message": "S’està carregant…"
+  },
+  "viewer.markdown.too_large": {
+    "message": "Més de {megabytes} MB: amb 1 es mostra com a text."
+  },
+  "viewer.menu.binary": {
+    "message": "Binari (longitud de línia fixa)"
+  },
+  "viewer.menu.book": {
+    "message": "Llibre (EPUB, FB2)"
+  },
+  "viewer.menu.close": {
+    "message": "Tanca"
+  },
+  "viewer.menu.configure": {
+    "message": "Configura..."
+  },
+  "viewer.menu.copy_hex": {
+    "message": "Copia com a caràcters hexadecimals"
+  },
+  "viewer.menu.copy_text": {
+    "message": "Copia com a text"
+  },
+  "viewer.menu.edit": {
+    "message": "Edita"
+  },
+  "viewer.menu.encoding": {
+    "message": "Codificació"
+  },
+  "viewer.menu.file": {
+    "message": "Fitxer"
+  },
+  "viewer.menu.find": {
+    "message": "Cerca..."
+  },
+  "viewer.menu.find_next": {
+    "message": "Cerca el següent"
+  },
+  "viewer.menu.fit_image": {
+    "message": "Ajusta la imatge a la finestra"
+  },
+  "viewer.menu.font_ansi": {
+    "message": "ANSI (joc de caràcters de Windows)"
+  },
+  "viewer.menu.font_ascii": {
+    "message": "ASCII (joc de caràcters de DOS)"
+  },
+  "viewer.menu.font_page": {
+    "message": "Segons la lletra"
+  },
+  "viewer.menu.font_variable": {
+    "message": "Amplada de caràcter variable"
+  },
+  "viewer.menu.hex": {
+    "message": "Hex"
+  },
+  "viewer.menu.html": {
+    "message": "Text HTML (sense etiquetes)"
+  },
+  "viewer.menu.minimap": {
+    "message": "Minimapa"
+  },
+  "viewer.menu.next_file": {
+    "message": "Fitxer següent"
+  },
+  "viewer.menu.only_larger": {
+    "message": "Ajusta només les imatges grans"
+  },
+  "viewer.menu.open": {
+    "message": "Obre..."
+  },
+  "viewer.menu.options": {
+    "message": "Opcions"
+  },
+  "viewer.menu.picture": {
+    "message": "Imatge/multimèdia"
+  },
+  "viewer.menu.previous_file": {
+    "message": "Fitxer anterior"
+  },
+  "viewer.menu.reload": {
+    "message": "Torna a carregar"
+  },
+  "viewer.menu.save_as": {
+    "message": "Desa com a..."
+  },
+  "viewer.menu.search_google": {
+    "message": "Cerca el text seleccionat amb Google"
+  },
+  "viewer.menu.select_all": {
+    "message": "Selecciona-ho tot"
+  },
+  "viewer.menu.syntax_colors": {
+    "message": "Colors de sintaxi"
+  },
+  "viewer.menu.text_only": {
+    "message": "Només text"
+  },
+  "viewer.menu.unicode": {
+    "message": "Unicode (UTF-16)"
+  },
+  "viewer.menu.wrap": {
+    "message": "Ajusta el text ({columns, plural, one {# columna} other {# columnes}})"
+  },
+  "viewer.mode.binary": {
+    "message": "Binari · {page}"
+  },
+  "viewer.mode.book": {
+    "message": "Llibre"
+  },
+  "viewer.mode.hex": {
+    "message": "Hex · {page}"
+  },
+  "viewer.mode.html": {
+    "message": "Text HTML"
+  },
+  "viewer.mode.image": {
+    "message": "Imatge"
+  },
+  "viewer.mode.multimedia": {
+    "message": "Multimèdia"
+  },
+  "viewer.mode.pdf_by": {
+    "message": "PDF de {tool}"
+  },
+  "viewer.mode.text": {
+    "message": "Text · {page}"
+  },
+  "viewer.origin.not_editable": {
+    "message": "només es poden editar els fitxers dels arxius 7z, zip, jar i tar"
+  },
+  "viewer.origin.updated": {
+    "message": "S’ha actualitzat {archive}"
+  },
+  "viewer.origin.updated_on": {
+    "message": "S’ha actualitzat {archive} a {server}"
+  },
+  "viewer.origin.uploaded": {
+    "message": "S’ha pujat {path}"
+  },
+  "viewer.pdf.cannot_show": {
+    "message": "Aquest PDF no es pot mostrar: {err}"
+  },
+  "viewer.pdf.loading": {
+    "message": "S’està carregant..."
+  },
+  "viewer.pdf.page": {
+    "message": "Pàgina {page} / {pages}"
+  },
+  "viewer.picture.cannot_show": {
+    "message": "Aquesta imatge no es pot mostrar; amb 1 es mostra com a text."
+  },
+  "viewer.save_as.failed": {
+    "message": "No s’ha pogut desar {path}: {err}"
+  },
+  "viewer.status.rows": {
+    "message": "{count, plural, one {{first}–{last} de {grouped} línia} other {{first}–{last} de {grouped} línies}}"
+  },
+  "viewer.status.rows_so_far": {
+    "message": "{count, plural, one {{grouped} línia fins ara, {percent} llegit} other {{grouped} línies fins ara, {percent} llegit}}"
+  },
+  "viewer.status.searching": {
+    "message": "S’està cercant…"
+  },
+  "viewer.status.size": {
+    "message": "{count, plural, one {{grouped} byte} other {{grouped} bytes}}"
+  },
+  "viewer.window.title": {
+    "message": "{path} — Visualitzador"
+  },
+  "viewer.zoom.fit": {
+    "message": "Torna a ajustar a la finestra (Ctrl+0)"
+  },
+  "viewer.zoom.in": {
+    "message": "Amplia (Ctrl++)"
+  },
+  "viewer.zoom.out": {
+    "message": "Redueix (Ctrl+-)"
+  },
+  "viewer.zoom.reset": {
+    "message": "Torna al 100% (Ctrl+0)"
+  },
+  "workspaces.button.close": {
+    "message": "Tanca"
+  },
+  "workspaces.button.delete": {
+    "message": "Suprimeix..."
+  },
+  "workspaces.button.duplicate": {
+    "message": "Duplica..."
+  },
+  "workspaces.button.new": {
+    "message": "Nou..."
+  },
+  "workspaces.button.rename": {
+    "message": "Canvia el nom..."
+  },
+  "workspaces.delete.button": {
+    "message": "Suprimeix"
+  },
+  "workspaces.delete.closed": {
+    "message": "Vols suprimir l’espai de treball «{name}»? Les seves pestanyes s’oblidaran."
+  },
+  "workspaces.delete.closed_shells": {
+    "message": "Vols suprimir l’espai de treball «{name}»? Les seves pestanyes s’oblidaran i els intèrprets d’ordres de les seves pestanyes de terminal acabaran."
+  },
+  "workspaces.delete.open": {
+    "message": "Vols suprimir l’espai de treball «{name}»? Les seves pestanyes es tancaran i s’obrirà «{other}»."
+  },
+  "workspaces.delete.open_shells": {
+    "message": "Vols suprimir l’espai de treball «{name}»? Les seves pestanyes es tancaran i els intèrprets d’ordres de les seves pestanyes de terminal acabaran; s’obrirà «{other}»."
+  },
+  "workspaces.delete.title": {
+    "message": "Suprimeix l’espai de treball"
+  },
+  "workspaces.duplicate.name": {
+    "message": "{name} còpia"
+  },
+  "workspaces.duplicate.title": {
+    "message": "Duplica l’espai de treball"
+  },
+  "workspaces.error.name_taken": {
+    "message": "Un altre espai de treball ja té aquest nom."
+  },
+  "workspaces.error.no_name": {
+    "message": "Un espai de treball necessita un nom."
+  },
+  "workspaces.error.save": {
+    "message": "No s’han pogut desar els espais de treball: {err}"
+  },
+  "workspaces.hint": {
+    "message": "Mostra > Espais de treball n’obre un. El que canvia a l’obert s’hi conserva."
+  },
+  "workspaces.name.label": {
+    "message": "Nom:"
+  },
+  "workspaces.new.name": {
+    "message": "Espai de treball {number}"
+  },
+  "workspaces.new.title": {
+    "message": "Espai de treball nou"
+  },
+  "workspaces.open": {
+    "message": "obert"
+  },
+  "workspaces.rename.title": {
+    "message": "Canvia el nom de l’espai de treball"
+  },
+  "workspaces.summary.panels": {
+    "message": "Esquerra {left, plural, one {# pestanya} other {# pestanyes}}, dreta {right, plural, one {# pestanya} other {# pestanyes}}"
+  },
+  "workspaces.summary.terminal": {
+    "message": "Esquerra {left, plural, one {# pestanya} other {# pestanyes}}, dreta {right, plural, one {# pestanya} other {# pestanyes}}, terminal {terminal, plural, one {# pestanya} other {# pestanyes}}"
+  },
+  "workspaces.summary.terminal_hidden": {
+    "message": "Esquerra {left, plural, one {# pestanya} other {# pestanyes}}, dreta {right, plural, one {# pestanya} other {# pestanyes}}, terminal {terminal, plural, one {# pestanya} other {# pestanyes}} (amagat)"
+  },
+  "workspaces.title": {
+    "message": "Espais de treball"
+  }
+}

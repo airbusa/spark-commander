@@ -1,0 +1,4823 @@
+{
+  "about.addons": {
+    "message": "Priedai, atsiunčiami jums pasirinkus"
+  },
+  "about.libraries": {
+    "message": "Sukurta naudojant"
+  },
+  "about.licence": {
+    "message": "Licencija:"
+  },
+  "about.made_with": {
+    "message": "Sukurta pasitelkus šių projektų darbą"
+  },
+  "about.part.alacritty_terminal": {
+    "message": "Integruoto terminalo ekranas ir apvalkalas"
+  },
+  "about.part.encoding_rs": {
+    "message": "Kodų lentelės"
+  },
+  "about.part.gpui": {
+    "message": "Langas, piešimas ir įvestis (iš Zed)"
+  },
+  "about.part.gpui_kit": {
+    "message": "Valdikliai: sąrašai, meniu, laukai, redaktorius"
+  },
+  "about.part.html5ever": {
+    "message": "HTML ir el. knygos žiūryklėje"
+  },
+  "about.part.image": {
+    "message": "Paveikslėliai"
+  },
+  "about.part.keyring": {
+    "message": "Slaptažodžiai sistemos raktinėje"
+  },
+  "about.part.lucide": {
+    "message": "Piktogramos"
+  },
+  "about.part.material_icons": {
+    "message": "Failų ir aplankų piktogramos"
+  },
+  "about.part.pdfium_render": {
+    "message": "PDFium iš Rust"
+  },
+  "about.part.ratatui": {
+    "message": "scmd – terminalo versija"
+  },
+  "about.part.russh": {
+    "message": "SSH ir SFTP"
+  },
+  "about.part.rustls": {
+    "message": "TLS"
+  },
+  "about.part.serde": {
+    "message": "Nustatymų failai"
+  },
+  "about.part.similar": {
+    "message": "Lyginti pagal turinį"
+  },
+  "about.part.suppaftp": {
+    "message": "FTP ir FTPS"
+  },
+  "about.part.tokio": {
+    "message": "Tinklo darbai fone"
+  },
+  "about.part.trash": {
+    "message": "Šiukšlinė"
+  },
+  "about.part.tree_sitter": {
+    "message": "Kodo spalvos žiūryklėje ir redaktoriuje"
+  },
+  "about.part.zbus": {
+    "message": "D-Bus: darbalaukis, įrenginiai, KDE Connect"
+  },
+  "about.shipped": {
+    "message": "Pateikiama kartu"
+  },
+  "about.tagline": {
+    "message": "Dviejų skydelių failų tvarkyklė, laisvoji programinė įranga."
+  },
+  "about.title": {
+    "message": "Apie Spark Commander"
+  },
+  "about.version": {
+    "message": "Versija {version}"
+  },
+  "activity.clear": {
+    "message": "Išvalyti"
+  },
+  "activity.clear_failed": {
+    "message": "Nepavyko išvalyti žurnalo: {err}"
+  },
+  "activity.empty": {
+    "message": "Kol kas nieko neatlikta."
+  },
+  "activity.title": {
+    "message": "Veiksmų žurnalas"
+  },
+  "addons.error.damaged": {
+    "message": "atsisiųstas failas sugadintas: nesutampa jo kontrolinė suma"
+  },
+  "addons.error.list": {
+    "message": "priedų sąrašas: {err}"
+  },
+  "addons.error.missing_file": {
+    "message": "atsisiųstame faile nėra {file}"
+  },
+  "addons.error.no_folder": {
+    "message": "nėra duomenų aplanko"
+  },
+  "addons.error.unpacking": {
+    "message": "išpakavimas: {err}"
+  },
+  "addons.installed": {
+    "message": "{addon} {version} įdiegtas."
+  },
+  "addons.megabytes": {
+    "message": "{size} MB"
+  },
+  "addons.offer.never": {
+    "message": "Daugiau nerodyti"
+  },
+  "addons.offer.no": {
+    "message": "Ne"
+  },
+  "addons.offer.text": {
+    "message": "Norint atidaryti {name}, reikia neįdiegto priedo: {addon}. Atsisiųsti jį skiltyje Nustatymai > Priedai?"
+  },
+  "addons.offer.title": {
+    "message": "Priedas"
+  },
+  "addons.offer.yes": {
+    "message": "Taip"
+  },
+  "addons.purpose.cloud": {
+    "message": "Internetinės saugyklos: S3, Google Drive, OneDrive, Dropbox ir kitos paslaugos."
+  },
+  "addons.purpose.media": {
+    "message": "Vaizdo įrašai ir garsas, taip pat HEIC ir AVIF nuotraukos: juos rodo žiūryklė ir greitoji peržiūra."
+  },
+  "addons.purpose.office": {
+    "message": "Biuro dokumentai: žiūryklė rodo Word, Excel ir PowerPoint failus kaip PDF."
+  },
+  "addons.purpose.pdfium": {
+    "message": "PDF: žiūryklė rodo PDF failus, o konvertuotus – ir biuro dokumentus."
+  },
+  "addons.purpose.seven_zip": {
+    "message": "Archyvai: supakuoja ir išpakuoja 7z, zip, rar, tar ir kitus."
+  },
+  "addons.update": {
+    "message": "Atnaujinti"
+  },
+  "addons.updates": {
+    "message": "Priedų naujiniai: {names}"
+  },
+  "appearance.dark": {
+    "message": "Tamsi"
+  },
+  "appearance.light": {
+    "message": "Šviesi"
+  },
+  "appearance.system": {
+    "message": "Kaip sistemoje"
+  },
+  "archive.cannot_read": {
+    "message": "{name}: nepavyksta nuskaityti"
+  },
+  "archive.not_in_archive": {
+    "message": "{name} nėra archyve"
+  },
+  "archive.not_own_folder": {
+    "message": "{folder} nėra šio naudotojo aplankas"
+  },
+  "archive.seven_zip_failed": {
+    "message": "7-Zip klaida ({code})"
+  },
+  "archive.seven_zip_missing": {
+    "message": "Nėra 7-Zip: {path} (paleiskite vendor/7zip/fetch.sh arba fetch.bat)"
+  },
+  "archive.temp_not_utf8": {
+    "message": "laikinojo aplanko pavadinimas nėra UTF-8"
+  },
+  "associations.add": {
+    "message": "Pridėti..."
+  },
+  "associations.cancel": {
+    "message": "Atšaukti"
+  },
+  "associations.close": {
+    "message": "Uždaryti"
+  },
+  "associations.column.edit": {
+    "message": "Redaguoti (F4)"
+  },
+  "associations.column.files": {
+    "message": "Failai"
+  },
+  "associations.column.open": {
+    "message": "Atidaryti (Enter)"
+  },
+  "associations.column.view": {
+    "message": "Peržiūrėti (F3)"
+  },
+  "associations.edit": {
+    "message": "Keisti..."
+  },
+  "associations.edit_dialog.title": {
+    "message": "Susieti"
+  },
+  "associations.empty": {
+    "message": "Kol kas nėra."
+  },
+  "associations.field.edit": {
+    "message": "Redaguoti su (F4):"
+  },
+  "associations.field.files": {
+    "message": "Failai (*.jpg *.png):"
+  },
+  "associations.field.open": {
+    "message": "Atidaryti su (Enter):"
+  },
+  "associations.field.view": {
+    "message": "Peržiūrėti su (F3):"
+  },
+  "associations.intro": {
+    "message": "Enter, F3 ir F4 paleidžia šias programas kaukę atitinkantiems failams; palikus tuščią, veikia įprastai. %1 – failas."
+  },
+  "associations.mask_needed": {
+    "message": "Reikia failų kaukės: *.txt"
+  },
+  "associations.no_file": {
+    "message": "Užveskite žymeklį ant failo, kurio tipą norite susieti."
+  },
+  "associations.ok": {
+    "message": "Gerai"
+  },
+  "associations.remove": {
+    "message": "Šalinti"
+  },
+  "associations.save_failed": {
+    "message": "Nepavyko įrašyti nustatymų: {err}"
+  },
+  "associations.title": {
+    "message": "Vidiniai susiejimai"
+  },
+  "attributes.bad_time": {
+    "message": "„{text}“ nėra data ir laikas: 2026-11-10 14:04:33"
+  },
+  "attributes.cancel": {
+    "message": "Atšaukti"
+  },
+  "attributes.change_time": {
+    "message": "Keisti datą ir laiką:"
+  },
+  "attributes.changed": {
+    "message": "{count, plural, one {Pakeista: #} few {Pakeista: #} other {Pakeista: #}}"
+  },
+  "attributes.changed_failed": {
+    "message": "{count, plural, one {Pakeista: #} few {Pakeista: #} other {Pakeista: #}}, {failed, plural, one {nepavyko: #} few {nepavyko: #} other {nepavyko: #}}"
+  },
+  "attributes.dialog_title_many": {
+    "message": "Keisti atributus: {count, plural, one {# elementas} few {# elementai} other {# elementų}}"
+  },
+  "attributes.dialog_title_one": {
+    "message": "Keisti atributus: {name}"
+  },
+  "attributes.execute": {
+    "message": "Vykdyti"
+  },
+  "attributes.group": {
+    "message": "Grupė"
+  },
+  "attributes.in_archive": {
+    "message": "Archyvuose atributų keisti negalima."
+  },
+  "attributes.no_bits": {
+    "message": "Šie failai čia neturi leidimų bitų; galima keisti tik datą."
+  },
+  "attributes.now": {
+    "message": "Dabar"
+  },
+  "attributes.octal": {
+    "message": "Aštuntainis:"
+  },
+  "attributes.ok": {
+    "message": "Gerai"
+  },
+  "attributes.others": {
+    "message": "Kiti"
+  },
+  "attributes.owner": {
+    "message": "Savininkas"
+  },
+  "attributes.read": {
+    "message": "Skaityti"
+  },
+  "attributes.recurse": {
+    "message": "Taip pat viskam aplankų viduje"
+  },
+  "attributes.title_many": {
+    "message": "Atributų keitimas: {count, plural, one {# elementas} few {# elementai} other {# elementų}}"
+  },
+  "attributes.title_one": {
+    "message": "Atributų keitimas: „{name}“"
+  },
+  "attributes.write": {
+    "message": "Rašyti"
+  },
+  "bookmarks.add_current": {
+    "message": "Pridėti dabartinį aplanką"
+  },
+  "bookmarks.add_folders": {
+    "message": "Pridėti aplankų..."
+  },
+  "bookmarks.added": {
+    "message": "Įtraukta į žymeles: {name}"
+  },
+  "bookmarks.already": {
+    "message": "{name} jau yra žymelėse."
+  },
+  "bookmarks.chooser.failed": {
+    "message": "Nepavyko parodyti aplanko parinkiklio: {err}"
+  },
+  "bookmarks.chooser.prompt": {
+    "message": "Įtraukti"
+  },
+  "bookmarks.close": {
+    "message": "Uždaryti"
+  },
+  "bookmarks.copy_name": {
+    "message": "Kopijuoti pavadinimą"
+  },
+  "bookmarks.copy_path": {
+    "message": "Kopijuoti kelią"
+  },
+  "bookmarks.drop_here": {
+    "message": "Numeskite aplankus čia."
+  },
+  "bookmarks.empty": {
+    "message": "Žymelių nėra: pridėkite aplankų arba numeskite juos čia."
+  },
+  "bookmarks.intro": {
+    "message": "Šio kompiuterio aplankai ta pačia tvarka kaip skiltyje Vietos: vilkite aplanką, kad jį perkeltumėte, arba numeskite aplankus čia, kad juos pridėtumėte."
+  },
+  "bookmarks.move_down": {
+    "message": "Perkelti žemyn"
+  },
+  "bookmarks.move_up": {
+    "message": "Perkelti aukštyn"
+  },
+  "bookmarks.only_local": {
+    "message": "Į žymeles galima įtraukti tik šio kompiuterio aplankus."
+  },
+  "bookmarks.remove": {
+    "message": "Šalinti"
+  },
+  "bookmarks.remove_from": {
+    "message": "Šalinti iš žymelių"
+  },
+  "bookmarks.rename": {
+    "message": "Pervardyti..."
+  },
+  "bookmarks.rename_label": {
+    "message": "Pavadinimas (tuščias – aplanko):"
+  },
+  "bookmarks.rename_title": {
+    "message": "Pervardyti žymelę"
+  },
+  "bookmarks.sort": {
+    "message": "Rūšiuoti A–Ž"
+  },
+  "bookmarks.title": {
+    "message": "Žymelės"
+  },
+  "button_bar.copy": {
+    "message": "Kopijuoti"
+  },
+  "button_bar.delete": {
+    "message": "Ištrinti"
+  },
+  "button_bar.edit": {
+    "message": "Redaguoti"
+  },
+  "button_bar.move": {
+    "message": "Perkelti"
+  },
+  "button_bar.new_folder": {
+    "message": "Naujas aplankas"
+  },
+  "button_bar.quit": {
+    "message": "Išeiti"
+  },
+  "button_bar.view": {
+    "message": "Peržiūrėti"
+  },
+  "checksum.create.title": {
+    "message": "Kurti {name}"
+  },
+  "checksum.create.title_separate": {
+    "message": "Kurti {method} kontrolinių sumų failus"
+  },
+  "checksum.dialog_title": {
+    "message": "Kurti kontrolinių sumų failus"
+  },
+  "checksum.save_as": {
+    "message": "Įrašyti kontrolinių sumų failą kaip:"
+  },
+  "checksum.separate": {
+    "message": "Vietoj to – atskiras kontrolinių sumų failas šalia kiekvieno failo"
+  },
+  "checksum.verify.all_ok": {
+    "message": "{count, plural, one {Visi failai tvarkingi: #} few {Visi failai tvarkingi: #} other {Visi failai tvarkingi: #}}"
+  },
+  "checksum.verify.choose": {
+    "message": "Pasirinkite kontrolinių sumų failus: .sfv, .md5, .sha1, .sha256 arba .sha512."
+  },
+  "checksum.verify.missing_file": {
+    "message": "nėra: {name}"
+  },
+  "checksum.verify.result": {
+    "message": "{ok, plural, one {Tvarkingų: #} few {Tvarkingų: #} other {Tvarkingų: #}}, {wrong, plural, one {neatitinka: #} few {neatitinka: #} other {neatitinka: #}}, {missing, plural, one {trūksta: #} few {trūksta: #} other {trūksta: #}}"
+  },
+  "checksum.verify.title_many": {
+    "message": "Tikrinti {count, plural, one {# kontrolinių sumų failą} few {# kontrolinių sumų failus} other {# kontrolinių sumų failų}}"
+  },
+  "checksum.verify.title_one": {
+    "message": "Tikrinti {name}"
+  },
+  "checksum.verify.wrong_file": {
+    "message": "neatitinka: {name}"
+  },
+  "command.about": {
+    "message": "Apie Spark Commander"
+  },
+  "command.activity_log": {
+    "message": "Veiksmų žurnalas..."
+  },
+  "command.all_files": {
+    "message": "Visi failai"
+  },
+  "command.all_folder_sizes": {
+    "message": "Skaičiuoti visų aplankų dydžius"
+  },
+  "command.all_with_extension": {
+    "message": "*.*"
+  },
+  "command.associate_with": {
+    "message": "Susieti su..."
+  },
+  "command.bookmark_folder": {
+    "message": "Įtraukti šį aplanką į žymeles"
+  },
+  "command.bookmarks": {
+    "message": "Žymelės"
+  },
+  "command.branch_view": {
+    "message": "Šakos rodinys (su poaplankiais)"
+  },
+  "command.branch_view_selected": {
+    "message": "Pažymėtų aplankų šakos rodinys"
+  },
+  "command.brief": {
+    "message": "Trumpas"
+  },
+  "command.calculate_occupied_space": {
+    "message": "Skaičiuoti užimamą vietą..."
+  },
+  "command.change_attributes": {
+    "message": "Keisti atributus..."
+  },
+  "command.close_all_tabs": {
+    "message": "Uždaryti visas korteles"
+  },
+  "command.close_duplicate_tabs": {
+    "message": "Uždaryti pasikartojančias korteles"
+  },
+  "command.close_tab": {
+    "message": "Uždaryti kortelę"
+  },
+  "command.combine_files": {
+    "message": "Sujungti failus..."
+  },
+  "command.compare_by_content": {
+    "message": "Lyginti pagal turinį..."
+  },
+  "command.compare_directories": {
+    "message": "Pažymėti naujesnius"
+  },
+  "command.copy": {
+    "message": "Kopijuoti..."
+  },
+  "command.copy_names_to_clipboard": {
+    "message": "Kopijuoti pažymėtų pavadinimus į iškarpinę"
+  },
+  "command.copy_names_with_path_to_clipboard": {
+    "message": "Kopijuoti pavadinimus su keliu į iškarpinę"
+  },
+  "command.copy_to_clipboard": {
+    "message": "Kopijuoti failus"
+  },
+  "command.copy_with_all_details": {
+    "message": "Kopijuoti į iškarpinę su visa informacija"
+  },
+  "command.copy_with_path_and_details": {
+    "message": "Kopijuoti į iškarpinę su keliu ir informacija"
+  },
+  "command.create_checksum_files": {
+    "message": "Kurti kontrolinių sumų failą (-us) (CRC32, MD5, SHA1, SHA256, SHA512)..."
+  },
+  "command.create_link": {
+    "message": "Kurti nuorodą..."
+  },
+  "command.custom_filter": {
+    "message": "Pasirinktinis..."
+  },
+  "command.cut_to_clipboard": {
+    "message": "Iškirpti failus"
+  },
+  "command.delete": {
+    "message": "Ištrinti"
+  },
+  "command.delete_permanently": {
+    "message": "Ištrinti negrįžtamai"
+  },
+  "command.disconnect": {
+    "message": "Atsijungti nuo serverio"
+  },
+  "command.download_link": {
+    "message": "Atsisiųsti iš nuorodos..."
+  },
+  "command.duplicate_tab": {
+    "message": "Nauja kortelė"
+  },
+  "command.duplicate_workspace": {
+    "message": "Dubliuoti darbo sritį..."
+  },
+  "command.edit": {
+    "message": "Redaguoti"
+  },
+  "command.edit_externally": {
+    "message": "Redaguoti išoriniu redaktoriumi"
+  },
+  "command.folder_history": {
+    "message": "Aplankų istorija..."
+  },
+  "command.full": {
+    "message": "Išsamus"
+  },
+  "command.go_back": {
+    "message": "Atgal"
+  },
+  "command.go_forward": {
+    "message": "Pirmyn"
+  },
+  "command.go_home": {
+    "message": "Namų aplankas"
+  },
+  "command.go_to_root": {
+    "message": "Šakninis aplankas"
+  },
+  "command.hidden_files": {
+    "message": "Paslėpti failai"
+  },
+  "command.internal_associations": {
+    "message": "Vidiniai susiejimai (tik Spark Commander)..."
+  },
+  "command.invert_selection": {
+    "message": "Apversti žymėjimą"
+  },
+  "command.left_drives": {
+    "message": "Diskai (kairysis skydelis)"
+  },
+  "command.list_tabs": {
+    "message": "Kortelių sąrašas"
+  },
+  "command.load_selection_from_file": {
+    "message": "Įkelti žymėjimą iš failo"
+  },
+  "command.manage_bookmarks": {
+    "message": "Tvarkyti žymeles..."
+  },
+  "command.manage_tools": {
+    "message": "Tvarkyti įrankius..."
+  },
+  "command.manage_workspaces": {
+    "message": "Tvarkyti darbo sritis..."
+  },
+  "command.mark_in_place": {
+    "message": "Pažymėti / atžymėti vietoje, išmatavus aplanką"
+  },
+  "command.mark_newer_hide_same": {
+    "message": "Pažymėti naujesnius, slėpti vienodus failus"
+  },
+  "command.move": {
+    "message": "Perkelti..."
+  },
+  "command.multi_rename_tool": {
+    "message": "Grupinio pervardijimo įrankis..."
+  },
+  "command.name_to_command_line": {
+    "message": "Pavadinimą į komandų eilutę"
+  },
+  "command.new_folder": {
+    "message": "Naujas aplankas..."
+  },
+  "command.new_terminal": {
+    "message": "Nauja terminalo kortelė"
+  },
+  "command.new_text_file": {
+    "message": "Naujas failas..."
+  },
+  "command.new_workspace": {
+    "message": "Nauja darbo sritis..."
+  },
+  "command.next_tab": {
+    "message": "Kita kortelė"
+  },
+  "command.only_selected_files": {
+    "message": "Tik pažymėti failai"
+  },
+  "command.open_in_left_panel": {
+    "message": "Rodyti kairiajame skydelyje"
+  },
+  "command.open_in_new_tab": {
+    "message": "Atidaryti aplanką naujoje kortelėje"
+  },
+  "command.open_in_other_new_tab": {
+    "message": "Atidaryti aplanką naujoje kito skydelio kortelėje"
+  },
+  "command.open_in_right_panel": {
+    "message": "Rodyti dešiniajame skydelyje"
+  },
+  "command.open_terminal": {
+    "message": "Atidaryti terminalą čia"
+  },
+  "command.operation_queue": {
+    "message": "Operacijų eilė..."
+  },
+  "command.pack": {
+    "message": "Supakuoti..."
+  },
+  "command.paste_from_clipboard": {
+    "message": "Įklijuoti failus"
+  },
+  "command.path_and_name_to_command_line": {
+    "message": "Kelią ir pavadinimą į komandų eilutę"
+  },
+  "command.path_to_command_line": {
+    "message": "Kelią į komandų eilutę"
+  },
+  "command.previous_tab": {
+    "message": "Ankstesnė kortelė"
+  },
+  "command.programs": {
+    "message": "Programos"
+  },
+  "command.properties": {
+    "message": "Savybės..."
+  },
+  "command.quick_filter": {
+    "message": "Greitasis filtras"
+  },
+  "command.quick_open": {
+    "message": "Greitasis atidarymas..."
+  },
+  "command.quick_view_panel": {
+    "message": "Greitosios peržiūros skydelis"
+  },
+  "command.quit": {
+    "message": "Išeiti"
+  },
+  "command.redo": {
+    "message": "Perdaryti"
+  },
+  "command.rename_in_place": {
+    "message": "Pervardyti"
+  },
+  "command.reread_source": {
+    "message": "Iš naujo nuskaityti šaltinį"
+  },
+  "command.restore_selection": {
+    "message": "Atkurti žymėjimą"
+  },
+  "command.reversed_order": {
+    "message": "Atvirkštine tvarka"
+  },
+  "command.right_drives": {
+    "message": "Diskai (dešinysis skydelis)"
+  },
+  "command.save_selection": {
+    "message": "Įsiminti žymėjimą"
+  },
+  "command.save_selection_to_file": {
+    "message": "Įrašyti žymėjimą į failą"
+  },
+  "command.search": {
+    "message": "Ieškoti..."
+  },
+  "command.search_in_separate_process": {
+    "message": "Ieškoti atskirame lange..."
+  },
+  "command.select_all": {
+    "message": "Pažymėti viską"
+  },
+  "command.select_all_with_same_extension": {
+    "message": "Pažymėti visus su tuo pačiu plėtiniu"
+  },
+  "command.select_group": {
+    "message": "Pažymėti grupę..."
+  },
+  "command.settings": {
+    "message": "Nustatymai..."
+  },
+  "command.shortcuts": {
+    "message": "Spartieji klavišai..."
+  },
+  "command.sidebar_connections": {
+    "message": "Ryšiai"
+  },
+  "command.sidebar_operations": {
+    "message": "Operacijos"
+  },
+  "command.sidebar_places": {
+    "message": "Vietos"
+  },
+  "command.sidebar_tree": {
+    "message": "Aplankai"
+  },
+  "command.sort_by_extension": {
+    "message": "Plėtinys"
+  },
+  "command.sort_by_name": {
+    "message": "Pavadinimas"
+  },
+  "command.sort_by_size": {
+    "message": "Dydis"
+  },
+  "command.sort_by_time": {
+    "message": "Laikas"
+  },
+  "command.split_file": {
+    "message": "Skaidyti failą..."
+  },
+  "command.swap_panels": {
+    "message": "Sukeisti skydelius"
+  },
+  "command.swap_panels_and_tabs": {
+    "message": "Sukeisti skydelius su jų kortelėmis"
+  },
+  "command.sync_browsing": {
+    "message": "Sinchroninis naršymas"
+  },
+  "command.synchronize_dirs": {
+    "message": "Sinchronizuoti aplankus..."
+  },
+  "command.target_equals_source": {
+    "message": "Paskirtis = šaltinis"
+  },
+  "command.terminal_panel": {
+    "message": "Terminalas"
+  },
+  "command.test_archives": {
+    "message": "Tikrinti archyvą (-us)"
+  },
+  "command.thumbnail_view": {
+    "message": "Miniatiūrų rodinys"
+  },
+  "command.toggle_mark": {
+    "message": "Pažymėti / atžymėti"
+  },
+  "command.toggle_sidebar": {
+    "message": "Rodyti šoninę juostą"
+  },
+  "command.undo": {
+    "message": "Anuliuoti"
+  },
+  "command.unpack_specific_files": {
+    "message": "Išpakuoti pasirinktus failus..."
+  },
+  "command.unselect_all": {
+    "message": "Atžymėti viską"
+  },
+  "command.unselect_group": {
+    "message": "Atžymėti grupę..."
+  },
+  "command.unsorted": {
+    "message": "Nerūšiuota"
+  },
+  "command.verify_checksums": {
+    "message": "Tikrinti kontrolines sumas (iš kontrolinių sumų failų)"
+  },
+  "command.vertical_arrangement": {
+    "message": "Vertikalus išdėstymas"
+  },
+  "command.view": {
+    "message": "Peržiūrėti"
+  },
+  "command.website": {
+    "message": "Spark Commander svetainė"
+  },
+  "command.workspace1": {
+    "message": "Atidaryti 1 darbo sritį"
+  },
+  "command.workspace2": {
+    "message": "Atidaryti 2 darbo sritį"
+  },
+  "command.workspace3": {
+    "message": "Atidaryti 3 darbo sritį"
+  },
+  "command.workspace4": {
+    "message": "Atidaryti 4 darbo sritį"
+  },
+  "command.workspace5": {
+    "message": "Atidaryti 5 darbo sritį"
+  },
+  "command.workspace6": {
+    "message": "Atidaryti 6 darbo sritį"
+  },
+  "command.workspace7": {
+    "message": "Atidaryti 7 darbo sritį"
+  },
+  "command.workspace8": {
+    "message": "Atidaryti 8 darbo sritį"
+  },
+  "command.workspace9": {
+    "message": "Atidaryti 9 darbo sritį"
+  },
+  "command_line.error.cannot_run": {
+    "message": "{program}: negalima paleisti"
+  },
+  "command_line.error.not_found": {
+    "message": "{program}: komanda nerasta"
+  },
+  "command_line.history.empty": {
+    "message": "Dar nepaleista jokių komandų"
+  },
+  "command_line.on_server": {
+    "message": "Komandos vykdomos šiame kompiuteryje, o skydelis rodo serverį."
+  },
+  "command_name.all_files": {
+    "message": "Rodyti visus failus"
+  },
+  "command_name.all_with_extension": {
+    "message": "Rodyti *.*"
+  },
+  "command_name.brief": {
+    "message": "Trumpas rodinys"
+  },
+  "command_name.compare_directories": {
+    "message": "Lyginti aplankus: pažymėti naujesnius"
+  },
+  "command_name.custom_filter": {
+    "message": "Pasirinktinis filtras"
+  },
+  "command_name.duplicate_tab": {
+    "message": "Nauja kortelė (šios kopija)"
+  },
+  "command_name.full": {
+    "message": "Išsamus rodinys"
+  },
+  "command_name.go_back": {
+    "message": "Grįžti atgal"
+  },
+  "command_name.go_forward": {
+    "message": "Eiti pirmyn"
+  },
+  "command_name.go_home": {
+    "message": "Eiti į namų aplanką"
+  },
+  "command_name.hidden_files": {
+    "message": "Rodyti paslėptus failus"
+  },
+  "command_name.only_selected_files": {
+    "message": "Rodyti tik pažymėtus failus"
+  },
+  "command_name.programs": {
+    "message": "Rodyti programas"
+  },
+  "command_name.quick_filter": {
+    "message": "Greitasis filtras"
+  },
+  "command_name.rename_in_place": {
+    "message": "Pervardyti vietoje"
+  },
+  "command_name.sidebar_connections": {
+    "message": "Šoninė juosta: ryšiai"
+  },
+  "command_name.sidebar_operations": {
+    "message": "Šoninė juosta: operacijos"
+  },
+  "command_name.sidebar_places": {
+    "message": "Šoninė juosta: vietos"
+  },
+  "command_name.sidebar_tree": {
+    "message": "Šoninė juosta: aplankai"
+  },
+  "command_name.sort_by_extension": {
+    "message": "Rūšiuoti pagal plėtinį"
+  },
+  "command_name.sort_by_name": {
+    "message": "Rūšiuoti pagal pavadinimą"
+  },
+  "command_name.sort_by_size": {
+    "message": "Rūšiuoti pagal dydį"
+  },
+  "command_name.sort_by_time": {
+    "message": "Rūšiuoti pagal laiką"
+  },
+  "command_name.toggle_sidebar": {
+    "message": "Šoninė juosta: rodyti arba slėpti"
+  },
+  "command_name.unsorted": {
+    "message": "Nerūšiuoti"
+  },
+  "compare.browse.prompt": {
+    "message": "Lyginti"
+  },
+  "compare.button.compare": {
+    "message": "Lyginti"
+  },
+  "compare.button.next": {
+    "message": "Kitas skirtumas (N)"
+  },
+  "compare.button.previous": {
+    "message": "Ankstesnis skirtumas (P)"
+  },
+  "compare.need_two_files": {
+    "message": "Užveskite žymeklį ant failo kiekviename skydelyje arba pažymėkite du failus."
+  },
+  "compare.option.binary": {
+    "message": "Dvejetainis"
+  },
+  "compare.option.ignore_case": {
+    "message": "Nepaisyti raidžių dydžio"
+  },
+  "compare.option.ignore_spaces": {
+    "message": "Nepaisyti pasikartojančių tarpų"
+  },
+  "compare.option.only_differences": {
+    "message": "Tik skirtumai"
+  },
+  "compare.status.bytes_differ": {
+    "message": "{place}: {count, plural, one {skiriasi {grouped} baitas} few {skiriasi {grouped} baitai} other {skiriasi {grouped} baitų}}, pirmasis ties {first}; dydžiai {left} ir {right}."
+  },
+  "compare.status.comparing": {
+    "message": "Lyginama…"
+  },
+  "compare.status.difference_of": {
+    "message": "Skirtumas {at} iš {count}"
+  },
+  "compare.status.differences": {
+    "message": "{count, plural, one {# skirtumas} few {# skirtumai} other {# skirtumų}}"
+  },
+  "compare.status.identical": {
+    "message": "{count, plural, one {Failai identiški: {grouped} baitas.} few {Failai identiški: {grouped} baitai.} other {Failai identiški: {grouped} baitų.}}"
+  },
+  "compare.status.no_differences": {
+    "message": "Skirtumų nėra."
+  },
+  "compare.window.title": {
+    "message": "Lyginimas: {left} — {right}"
+  },
+  "connections.connect": {
+    "message": "Prisijungti"
+  },
+  "connections.copy_name": {
+    "message": "Kopijuoti pavadinimą"
+  },
+  "connections.copy_path": {
+    "message": "Kopijuoti kelią"
+  },
+  "connections.delete": {
+    "message": "Ištrinti"
+  },
+  "connections.dialog.title": {
+    "message": "Ryšys"
+  },
+  "connections.disconnect": {
+    "message": "Atsijungti"
+  },
+  "connections.duplicate": {
+    "message": "Dubliuoti"
+  },
+  "connections.duplicate_name": {
+    "message": "{name} (kopija)"
+  },
+  "connections.edit": {
+    "message": "Keisti..."
+  },
+  "connections.empty": {
+    "message": "Ryšių dar nėra."
+  },
+  "connections.error.no_server": {
+    "message": "Reikia nurodyti serverį."
+  },
+  "connections.error.port": {
+    "message": "Netinkamas prievadas: {text}"
+  },
+  "connections.field.access_key": {
+    "message": "Prieigos raktas"
+  },
+  "connections.field.api_key": {
+    "message": "API raktas"
+  },
+  "connections.field.application_key": {
+    "message": "Programos raktas"
+  },
+  "connections.field.bucket": {
+    "message": "Kibiras/aplankas"
+  },
+  "connections.field.container": {
+    "message": "Konteineris/aplankas"
+  },
+  "connections.field.endpoint": {
+    "message": "Galinis taškas"
+  },
+  "connections.field.key_id": {
+    "message": "Rakto ID"
+  },
+  "connections.field.name": {
+    "message": "Pavadinimas"
+  },
+  "connections.field.password": {
+    "message": "Slaptažodis"
+  },
+  "connections.field.port": {
+    "message": "Prievadas"
+  },
+  "connections.field.protocol": {
+    "message": "Protokolas"
+  },
+  "connections.field.secret_key": {
+    "message": "Slaptasis raktas"
+  },
+  "connections.field.server": {
+    "message": "Serveris"
+  },
+  "connections.field.start_folder": {
+    "message": "Pradinis aplankas"
+  },
+  "connections.field.user": {
+    "message": "Naudotojas"
+  },
+  "connections.folder.delete_confirm": {
+    "message": "{count, plural, =1 {Ištrinti aplanką „{name}“ ir jame esantį ryšį?} one {Ištrinti aplanką „{name}“ ir jame esantį # ryšį?} few {Ištrinti aplanką „{name}“ ir jame esančius # ryšius?} other {Ištrinti aplanką „{name}“ ir # jame esančių ryšių?}}"
+  },
+  "connections.folder.delete_title": {
+    "message": "Ištrinti aplanką"
+  },
+  "connections.folder.exists": {
+    "message": "Aplankas „{name}“ jau yra."
+  },
+  "connections.folder.name": {
+    "message": "Pavadinimas:"
+  },
+  "connections.folder.new_title": {
+    "message": "Naujas aplankas"
+  },
+  "connections.folder.rename": {
+    "message": "Pervardyti..."
+  },
+  "connections.folder.rename_title": {
+    "message": "Pervardyti aplanką"
+  },
+  "connections.forget_password": {
+    "message": "Pamiršti įsimintą slaptažodį"
+  },
+  "connections.move_down": {
+    "message": "Perkelti žemyn"
+  },
+  "connections.move_to_folder": {
+    "message": "Perkelti į aplanką"
+  },
+  "connections.move_up": {
+    "message": "Perkelti aukštyn"
+  },
+  "connections.new": {
+    "message": "Naujas ryšys..."
+  },
+  "connections.new_folder": {
+    "message": "Naujas aplankas..."
+  },
+  "connections.no_folder": {
+    "message": "Be aplanko"
+  },
+  "connections.open_in_terminal": {
+    "message": "Atidaryti terminale"
+  },
+  "connections.placeholder.name": {
+    "message": "kaip rodoma sąraše"
+  },
+  "connections.placeholder.password": {
+    "message": "laikomas užšifruotas nustatymų aplanke; palikus tuščią, lieka esamas"
+  },
+  "connections.placeholder.path": {
+    "message": "prisijungimo aplankas"
+  },
+  "connections.placeholder.port": {
+    "message": "numatytasis"
+  },
+  "connections.placeholder.server": {
+    "message": "serveris arba mazgas iš ~/.ssh/config"
+  },
+  "connections.placeholder.user": {
+    "message": "kaip nurodyta ~/.ssh/config, arba anoniminis"
+  },
+  "connections.save_failed": {
+    "message": "Nepavyko įrašyti ryšių: {err}"
+  },
+  "connections.ssh_config.read_only": {
+    "message": "Tik skaityti: šie mazgai redaguojami pačiame ~/.ssh/config"
+  },
+  "context_menu.action_failed": {
+    "message": "Nepavyko „{name}“: {err}"
+  },
+  "context_menu.actions": {
+    "message": "Veiksmai"
+  },
+  "context_menu.copy": {
+    "message": "Kopijuoti"
+  },
+  "context_menu.create_new": {
+    "message": "Sukurti naują"
+  },
+  "context_menu.cut": {
+    "message": "Iškirpti"
+  },
+  "context_menu.delete": {
+    "message": "Ištrinti"
+  },
+  "context_menu.edit": {
+    "message": "Redaguoti"
+  },
+  "context_menu.empty_file": {
+    "message": "Tuščias failas…"
+  },
+  "context_menu.move_to_trash": {
+    "message": "Perkelti į šiukšlinę"
+  },
+  "context_menu.new_file_dialog.label": {
+    "message": "Naujo failo pavadinimas:"
+  },
+  "context_menu.new_file_dialog.title": {
+    "message": "Naujas failas"
+  },
+  "context_menu.new_file_failed": {
+    "message": "Nepavyko sukurti failo: {err}"
+  },
+  "context_menu.new_folder": {
+    "message": "Aplankas…"
+  },
+  "context_menu.open": {
+    "message": "Atidaryti"
+  },
+  "context_menu.open_failed": {
+    "message": "Nepavyko atidaryti: {err}"
+  },
+  "context_menu.open_terminal_here": {
+    "message": "Atidaryti terminalą čia"
+  },
+  "context_menu.open_with": {
+    "message": "Atidaryti su"
+  },
+  "context_menu.other_application": {
+    "message": "Kita programa…"
+  },
+  "context_menu.pack": {
+    "message": "Supakuoti…"
+  },
+  "context_menu.pack_files": {
+    "message": "Supakuoti failus"
+  },
+  "context_menu.paste": {
+    "message": "Įklijuoti"
+  },
+  "context_menu.properties": {
+    "message": "Savybės"
+  },
+  "context_menu.properties_failed": {
+    "message": "Savybės: {err}"
+  },
+  "context_menu.rename": {
+    "message": "Pervardyti…"
+  },
+  "context_menu.rename_dialog.label": {
+    "message": "Naujas pavadinimas:"
+  },
+  "context_menu.rename_dialog.title": {
+    "message": "Pervardyti"
+  },
+  "context_menu.rename_failed": {
+    "message": "Nepavyko pervardyti: {err}"
+  },
+  "context_menu.shell_menu_failed": {
+    "message": "Meniu: {err}"
+  },
+  "context_menu.show_failed": {
+    "message": "Nepavyko parodyti: {err}"
+  },
+  "context_menu.show_in_file_manager": {
+    "message": "Rodyti failų tvarkyklėje"
+  },
+  "context_menu.terminal_failed": {
+    "message": "Nepavyko atidaryti terminalo: {err}"
+  },
+  "context_menu.terminal_not_local": {
+    "message": "Terminalas atidaromas tik šio kompiuterio aplankuose."
+  },
+  "context_menu.unpack": {
+    "message": "Išpakuoti…"
+  },
+  "context_menu.view": {
+    "message": "Peržiūrėti"
+  },
+  "desktop.no_app_chooser": {
+    "message": "darbalaukis neturi programos parinkiklio ({err})"
+  },
+  "desktop.no_terminal": {
+    "message": "terminalas nerastas"
+  },
+  "desktop.nothing_to_run": {
+    "message": "{name}: nėra ką paleisti"
+  },
+  "desktop.scripts": {
+    "message": "Scenarijai"
+  },
+  "devices.error.mount_failed": {
+    "message": "nepavyko prijungti įrenginio"
+  },
+  "devices.error.no_folder": {
+    "message": "įrenginys nebendrina jokio aplanko"
+  },
+  "devices.error.system_only": {
+    "message": "tai atjungti gali tik sistema"
+  },
+  "devices.error.unreachable": {
+    "message": "nepasiekiamas: ar jame atidaryta KDE Connect ir ar jis tame pačiame tinkle?"
+  },
+  "devices.unlock.ask": {
+    "message": "Disko „{name}“ slaptafrazė:"
+  },
+  "devices.unlock.ask_again": {
+    "message": "Neteisinga slaptafrazė. Disko „{name}“ slaptafrazė:"
+  },
+  "devices.unlock.title": {
+    "message": "Atrakinti"
+  },
+  "devices.volume.share_on_server": {
+    "message": "{share} serveryje {server}"
+  },
+  "devices.volume.unnamed": {
+    "message": "{size} GB tomas"
+  },
+  "devices.volume.unnamed_encrypted": {
+    "message": "{size} GB šifruotas tomas"
+  },
+  "download.cancel": {
+    "message": "Atšaukti"
+  },
+  "download.dialog_title": {
+    "message": "Atsisiųsti iš nuorodos"
+  },
+  "download.download": {
+    "message": "Atsisiųsti"
+  },
+  "download.folder_link": {
+    "message": "nuoroda veda į aplanką"
+  },
+  "download.incomplete": {
+    "message": "serveris atsiuntė {got} iš {size, plural, one {# baito} few {# baitų} other {# baitų}}; atsisiunčiant dar kartą, bus tęsiama nuo ten"
+  },
+  "download.into": {
+    "message": "Į {folder}"
+  },
+  "download.link": {
+    "message": "Nuoroda"
+  },
+  "download.link_placeholder": {
+    "message": "https://, http://, ftp:// arba ftps://"
+  },
+  "download.local_only": {
+    "message": "Atsisiunčiama į šio kompiuterio aplankus: pirmiausia atidarykite tokį aplanką skydelyje."
+  },
+  "download.name_placeholder": {
+    "message": "kaip pavadina serveris arba nuoroda"
+  },
+  "download.no_file": {
+    "message": "nuorodoje nenurodytas failas"
+  },
+  "download.not_a_link": {
+    "message": "tai ne atsisiuntimo nuoroda"
+  },
+  "download.problem.bad_name": {
+    "message": "Tik failo pavadinimas, be aplanko."
+  },
+  "download.problem.empty": {
+    "message": "Įklijuokite arba įveskite nuorodą."
+  },
+  "download.problem.exists": {
+    "message": "Čia jau yra {name}: „Pakeisti“ atsisiųs ant jo."
+  },
+  "download.problem.not_link": {
+    "message": "Tai ne atsisiuntimo nuoroda: ji turi prasidėti https://, http://, ftp:// arba ftps://."
+  },
+  "download.replace": {
+    "message": "Pakeisti"
+  },
+  "download.save_as": {
+    "message": "Įrašyti kaip"
+  },
+  "download.saved_as": {
+    "message": "įrašyta kaip {name}"
+  },
+  "download.title": {
+    "message": "Atsisiųsti „{name}“"
+  },
+  "download.title_link": {
+    "message": "Atsisiųsti {link}"
+  },
+  "editor.close.after_send": {
+    "message": "Langas užsidarys, kai failas pasieks serverį."
+  },
+  "editor.close.discard": {
+    "message": "Neįrašyti"
+  },
+  "editor.close.save": {
+    "message": "Įrašyti"
+  },
+  "editor.close.title": {
+    "message": "Įrašyti pakeitimus?"
+  },
+  "editor.close.unsaved": {
+    "message": "Faile {name} yra neįrašytų pakeitimų."
+  },
+  "editor.close.unsent": {
+    "message": "{name} neįrašytas serveryje: nepavyko jo išsiųsti."
+  },
+  "editor.dialog.cancel": {
+    "message": "Atšaukti"
+  },
+  "editor.edit.copy": {
+    "message": "Kopijuoti"
+  },
+  "editor.edit.cut": {
+    "message": "Iškirpti"
+  },
+  "editor.edit.find": {
+    "message": "Ieškoti..."
+  },
+  "editor.edit.find_next": {
+    "message": "Ieškoti kito"
+  },
+  "editor.edit.find_previous": {
+    "message": "Ieškoti ankstesnio"
+  },
+  "editor.edit.go_to_line": {
+    "message": "Eiti į eilutę..."
+  },
+  "editor.edit.paste": {
+    "message": "Įklijuoti"
+  },
+  "editor.edit.redo": {
+    "message": "Perdaryti"
+  },
+  "editor.edit.replace": {
+    "message": "Pakeisti..."
+  },
+  "editor.edit.undo": {
+    "message": "Anuliuoti"
+  },
+  "editor.external.not_set": {
+    "message": "nenustatytas išorinis redaktorius (Nustatymai, Redagavimas/peržiūra)"
+  },
+  "editor.file.close": {
+    "message": "Uždaryti"
+  },
+  "editor.file.reload": {
+    "message": "Įkelti iš naujo"
+  },
+  "editor.file.save": {
+    "message": "Įrašyti"
+  },
+  "editor.file.save_as": {
+    "message": "Įrašyti kaip..."
+  },
+  "editor.find.close": {
+    "message": "Uždaryti (Escape)"
+  },
+  "editor.find.count": {
+    "message": "{current} iš {total}"
+  },
+  "editor.find.in_selection": {
+    "message": "Ieškoti pažymėtame tekste (Alt+L)"
+  },
+  "editor.find.match_case": {
+    "message": "Skirti raidžių dydį (Alt+C)"
+  },
+  "editor.find.next": {
+    "message": "Kitas atitikmuo (Enter)"
+  },
+  "editor.find.no_results": {
+    "message": "Nerasta"
+  },
+  "editor.find.placeholder": {
+    "message": "Ieškoti"
+  },
+  "editor.find.preserve_case": {
+    "message": "Išlaikyti raidžių dydį (Alt+P)"
+  },
+  "editor.find.previous": {
+    "message": "Ankstesnis atitikmuo (Shift+Enter)"
+  },
+  "editor.find.regex": {
+    "message": "Naudoti reguliariąją išraišką (Alt+R)"
+  },
+  "editor.find.replace": {
+    "message": "Pakeisti (Ctrl+Shift+1)"
+  },
+  "editor.find.replace_all": {
+    "message": "Pakeisti visus (Ctrl+Alt+Enter)"
+  },
+  "editor.find.replace_placeholder": {
+    "message": "Pakeisti"
+  },
+  "editor.find.toggle_replace": {
+    "message": "Rodyti / slėpti keitimą"
+  },
+  "editor.find.whole_word": {
+    "message": "Tik ištisi žodžiai (Alt+W)"
+  },
+  "editor.go_to_line.label": {
+    "message": "Eilutė arba eilutė:stulpelis"
+  },
+  "editor.go_to_line.title": {
+    "message": "Eiti į eilutę"
+  },
+  "editor.language.by_file_name": {
+    "message": "Pagal failo pavadinimą"
+  },
+  "editor.language.plain_text": {
+    "message": "Paprastas tekstas"
+  },
+  "editor.menu.edit": {
+    "message": "Taisa"
+  },
+  "editor.menu.file": {
+    "message": "Failas"
+  },
+  "editor.menu.language": {
+    "message": "Kalba"
+  },
+  "editor.menu.selection": {
+    "message": "Žymėjimas"
+  },
+  "editor.menu.view": {
+    "message": "Rodinys"
+  },
+  "editor.open.too_large": {
+    "message": "viršija integruoto redaktoriaus {limit_mb} MB ribą (Nustatymai, Redagavimas/peržiūra); Ctrl+Shift+F4 jį redaguoja išoriniame"
+  },
+  "editor.reload.button": {
+    "message": "Įkelti iš naujo"
+  },
+  "editor.reload.failed": {
+    "message": "Nepavyko įkelti iš naujo: {err}"
+  },
+  "editor.reload.text": {
+    "message": "Neįrašyti pakeitimai bus prarasti."
+  },
+  "editor.reload.title": {
+    "message": "Įkelti failą iš naujo?"
+  },
+  "editor.reload.unfit": {
+    "message": "Neįkelta iš naujo: {why, select, binary {failas dvejetainis} other {tai nėra UTF-8 tekstas}}."
+  },
+  "editor.save.admin": {
+    "message": "Įrašant „{name}“"
+  },
+  "editor.save.failed": {
+    "message": "Nepavyko įrašyti {path}: {err}"
+  },
+  "editor.save_anyway.button": {
+    "message": "Vis tiek įrašyti"
+  },
+  "editor.save_anyway.text": {
+    "message": "Failas nebuvo tekstinis: jis bus įrašytas taip, kaip rodomas, todėl visa, kas nebuvo tekstas, pasikeis negrįžtamai."
+  },
+  "editor.save_anyway.title": {
+    "message": "Įrašyti kaip tekstą?"
+  },
+  "editor.selection.add_cursor_above": {
+    "message": "Pridėti žymeklį aukščiau"
+  },
+  "editor.selection.add_cursor_below": {
+    "message": "Pridėti žymeklį žemiau"
+  },
+  "editor.selection.delete_lines": {
+    "message": "Ištrinti eilutes"
+  },
+  "editor.selection.duplicate_lines": {
+    "message": "Dubliuoti eilutes"
+  },
+  "editor.selection.indent": {
+    "message": "Didinti įtrauką"
+  },
+  "editor.selection.lowercase": {
+    "message": "mažosios raidės"
+  },
+  "editor.selection.move_lines_down": {
+    "message": "Perkelti eilutes žemyn"
+  },
+  "editor.selection.move_lines_up": {
+    "message": "Perkelti eilutes aukštyn"
+  },
+  "editor.selection.outdent": {
+    "message": "Mažinti įtrauką"
+  },
+  "editor.selection.select_all": {
+    "message": "Pažymėti viską"
+  },
+  "editor.selection.select_all_occurrences": {
+    "message": "Pažymėti visus atvejus"
+  },
+  "editor.selection.sort_lines_ascending": {
+    "message": "Rūšiuoti eilutes didėjančiai"
+  },
+  "editor.selection.sort_lines_descending": {
+    "message": "Rūšiuoti eilutes mažėjančiai"
+  },
+  "editor.selection.title_case": {
+    "message": "Kiekvienas Žodis Didžiąja"
+  },
+  "editor.selection.toggle_line_comment": {
+    "message": "Perjungti eilutės komentarą"
+  },
+  "editor.selection.trim_trailing_whitespace": {
+    "message": "Pašalinti tarpus eilučių gale"
+  },
+  "editor.selection.uppercase": {
+    "message": "DIDŽIOSIOS RAIDĖS"
+  },
+  "editor.send.failed": {
+    "message": "Nepavyko įrašyti atgal: {err}. Įrašant bus bandoma dar kartą."
+  },
+  "editor.status.modified": {
+    "message": "Pakeista"
+  },
+  "editor.status.position": {
+    "message": "Eil. {line}, stulp. {column}"
+  },
+  "editor.status.position_selected": {
+    "message": "Eil. {line}, stulp. {column} ({count, plural, one {pažymėta: #} few {pažymėta: #} other {pažymėta: #}})"
+  },
+  "editor.status.sending": {
+    "message": "Įrašoma į serverį"
+  },
+  "editor.status.spaces": {
+    "message": "Tarpai: {size}"
+  },
+  "editor.status.tab_size": {
+    "message": "Tabuliacijos dydis: {size}"
+  },
+  "editor.status.unsent": {
+    "message": "Ne serveryje"
+  },
+  "editor.terminal.not_found": {
+    "message": "nerastas redaktorius; nustatykite $EDITOR"
+  },
+  "editor.title": {
+    "message": "{path} — redaktorius"
+  },
+  "editor.unfit.open_anyway": {
+    "message": "Vis tiek atidaryti"
+  },
+  "editor.unfit.text": {
+    "message": "Failas redaktoriuje nerodomas, nes {why, select, binary {jis dvejetainis} other {tai nėra UTF-8 tekstas}}."
+  },
+  "editor.view.folding": {
+    "message": "Blokų suskleidimas"
+  },
+  "editor.view.indent_guides": {
+    "message": "Įtraukų linijos"
+  },
+  "editor.view.indent_with_tabs": {
+    "message": "Įtraukti tabuliacijomis"
+  },
+  "editor.view.line_numbers": {
+    "message": "Eilučių numeriai"
+  },
+  "editor.view.minimap": {
+    "message": "Mini žemėlapis"
+  },
+  "editor.view.tab_width": {
+    "message": "Tabuliacijos plotis {width}"
+  },
+  "editor.view.unfold_all": {
+    "message": "Išskleisti viską"
+  },
+  "editor.view.whitespace": {
+    "message": "Tarpo simboliai"
+  },
+  "editor.view.word_wrap": {
+    "message": "Laužyti eilutes"
+  },
+  "elevate.failed": {
+    "message": "nepavyko ir administratoriaus teisėmis ({code})"
+  },
+  "elevate.no_consent": {
+    "message": "administratorius nedavė sutikimo"
+  },
+  "elevate.no_password": {
+    "message": "slaptažodis nepateiktas"
+  },
+  "elevate.not_authorised": {
+    "message": "neleidžiama"
+  },
+  "elevate.percent_name": {
+    "message": "{path}: pavadinimo su % negalima apdoroti administratoriaus teisėmis; pirmiausia jį pervardykite"
+  },
+  "elevate.pkexec_missing": {
+    "message": "neįdiegta pkexec (polkit)"
+  },
+  "file_menu.change_tags_failed": {
+    "message": "Nepavyko pakeisti žymų: {err}"
+  },
+  "file_menu.compress": {
+    "message": "{count, plural, =1 {Suspausti „{name}“…} one {Suspausti # elementą…} few {Suspausti # elementus…} other {Suspausti # elementų…}}"
+  },
+  "file_menu.copy": {
+    "message": "{count, plural, =1 {Kopijuoti „{name}“} one {Kopijuoti # elementą} few {Kopijuoti # elementus} other {Kopijuoti # elementų}}"
+  },
+  "file_menu.copy_path": {
+    "message": "Kopijuoti kelią į iškarpinę"
+  },
+  "file_menu.delete": {
+    "message": "Ištrinti"
+  },
+  "file_menu.duplicate": {
+    "message": "Dubliuoti"
+  },
+  "file_menu.duplicate_failed": {
+    "message": "Nepavyko dubliuoti: {err}"
+  },
+  "file_menu.edit_tags": {
+    "message": "Žymos…"
+  },
+  "file_menu.get_info": {
+    "message": "Informacija"
+  },
+  "file_menu.make_alias": {
+    "message": "Sukurti pseudonimą"
+  },
+  "file_menu.make_alias_failed": {
+    "message": "Nepavyko sukurti pseudonimo: {err}"
+  },
+  "file_menu.move_to_trash": {
+    "message": "Perkelti į šiukšlinę"
+  },
+  "file_menu.new_folder": {
+    "message": "Naujas aplankas"
+  },
+  "file_menu.open": {
+    "message": "Atidaryti"
+  },
+  "file_menu.open_failed": {
+    "message": "Nepavyko atidaryti: {err}"
+  },
+  "file_menu.open_with": {
+    "message": "Atidaryti su"
+  },
+  "file_menu.open_with_default": {
+    "message": "{app} (numatytoji)"
+  },
+  "file_menu.paste": {
+    "message": "Įklijuoti"
+  },
+  "file_menu.quick_look": {
+    "message": "{count, plural, =1 {Quick Look: „{name}“} one {Quick Look: # elementas} few {Quick Look: # elementai} other {Quick Look: # elementų}}"
+  },
+  "file_menu.quick_look_failed": {
+    "message": "Quick Look: {err}"
+  },
+  "file_menu.rename": {
+    "message": "Pervardyti…"
+  },
+  "file_menu.reveal_failed": {
+    "message": "Nepavyko parodyti Finder lange: {err}"
+  },
+  "file_menu.reveal_in_finder": {
+    "message": "Rodyti Finder lange"
+  },
+  "file_menu.show_package_contents": {
+    "message": "Rodyti paketo turinį"
+  },
+  "file_menu.tag_dot.add": {
+    "message": "Pridėti žymą „{name}“"
+  },
+  "file_menu.tag_dot.remove": {
+    "message": "Pašalinti žymą „{name}“"
+  },
+  "file_menu.tags_popover.show_all": {
+    "message": "Rodyti visas…"
+  },
+  "file_menu.tags_popover.title": {
+    "message": "{count, plural, =1 {Priskirti žymas: „{name}“} one {Priskirti žymas # elementui} few {Priskirti žymas # elementams} other {Priskirti žymas # elementų}}"
+  },
+  "find.backwards": {
+    "message": "Ieškoti atgal"
+  },
+  "find.cancel": {
+    "message": "Atšaukti"
+  },
+  "find.case_sensitive": {
+    "message": "Skirti raidžių dydį"
+  },
+  "find.hex": {
+    "message": "Ieškoti šešioliktainės eilutės"
+  },
+  "find.ok": {
+    "message": "Gerai"
+  },
+  "find.regex": {
+    "message": "RegEx"
+  },
+  "find.text.label": {
+    "message": "Įveskite ieškomą tekstą"
+  },
+  "find.title": {
+    "message": "Ieškoti"
+  },
+  "find.whole_words": {
+    "message": "Tik ištisi žodžiai"
+  },
+  "keys.apply": {
+    "message": "Taikyti"
+  },
+  "keys.cancel": {
+    "message": "Atšaukti"
+  },
+  "keys.clear.tooltip": {
+    "message": "Be klavišo"
+  },
+  "keys.column.alternate": {
+    "message": "Alternatyvus"
+  },
+  "keys.column.command": {
+    "message": "Komanda"
+  },
+  "keys.column.shortcut": {
+    "message": "Spartusis klavišas"
+  },
+  "keys.custom": {
+    "message": "Pasirinktiniai"
+  },
+  "keys.delete_set": {
+    "message": "Ištrinti"
+  },
+  "keys.note.custom_replaced": {
+    "message": "Jūsų klavišus pakeitė {name} klavišai; „Įrašyti kaip“ juos išsaugo."
+  },
+  "keys.note.deleted": {
+    "message": "{name} ištrintas; „Gerai“ arba „Taikyti“ tai patvirtina."
+  },
+  "keys.note.moved": {
+    "message": "{key} dabar – {command}, nebe {other}."
+  },
+  "keys.note.name_reserved": {
+    "message": "„{name}“ – iš anksto nustatyto rinkinio pavadinimas; pasirinkite kitą."
+  },
+  "keys.note.press_new_key": {
+    "message": "Paspauskite naują klavišą; Esc palieka, kaip buvo."
+  },
+  "keys.note.saved": {
+    "message": "Įrašyta kaip {name}; „Gerai“ arba „Taikyti“ tai išsaugo."
+  },
+  "keys.note.set": {
+    "message": "{key} dabar – {command}."
+  },
+  "keys.note.taken_by_system": {
+    "message": "{key} užimtas ({by}), todėl jis niekada nepasiekia Spark Commander."
+  },
+  "keys.ok": {
+    "message": "Gerai"
+  },
+  "keys.press_key": {
+    "message": "Paspauskite klavišą…"
+  },
+  "keys.reserved.application_launcher": {
+    "message": "{system}: programų paleidiklis"
+  },
+  "keys.reserved.close_window": {
+    "message": "{system}: uždaryti langą"
+  },
+  "keys.reserved.close_window_or_tab": {
+    "message": "{system}: uždaryti langą arba kortelę"
+  },
+  "keys.reserved.dock": {
+    "message": "{system}: Dock"
+  },
+  "keys.reserved.floating_window": {
+    "message": "{system}: plaukiojantis langas"
+  },
+  "keys.reserved.force_quit": {
+    "message": "{system}: priverstinai išeiti"
+  },
+  "keys.reserved.hide_program": {
+    "message": "{system}: slėpti programą"
+  },
+  "keys.reserved.input_source": {
+    "message": "{system}: įvesties šaltinis"
+  },
+  "keys.reserved.keyboard_access": {
+    "message": "{system}: prieiga klaviatūra"
+  },
+  "keys.reserved.keyboard_navigation": {
+    "message": "{system}: naršymas klaviatūra"
+  },
+  "keys.reserved.krunner": {
+    "message": "{system}: KRunner"
+  },
+  "keys.reserved.lock_screen": {
+    "message": "{system}: užrakinti ekraną"
+  },
+  "keys.reserved.log_out": {
+    "message": "{system}: atsijungti"
+  },
+  "keys.reserved.maximize_window": {
+    "message": "{system}: išdidinti langą"
+  },
+  "keys.reserved.menu_bar": {
+    "message": "{system}: meniu juosta"
+  },
+  "keys.reserved.minimize": {
+    "message": "{system}: suskleisti"
+  },
+  "keys.reserved.mission_control": {
+    "message": "{system}: Mission Control"
+  },
+  "keys.reserved.move_window": {
+    "message": "{system}: perkelti langą"
+  },
+  "keys.reserved.next_window": {
+    "message": "{system}: kitas langas"
+  },
+  "keys.reserved.present_windows": {
+    "message": "{system}: rodyti langus"
+  },
+  "keys.reserved.present_windows_all": {
+    "message": "{system}: rodyti langus (visi darbalaukiai)"
+  },
+  "keys.reserved.present_windows_class": {
+    "message": "{system}: rodyti langus (lango klasė)"
+  },
+  "keys.reserved.program_windows": {
+    "message": "{system}: programos langai"
+  },
+  "keys.reserved.quit": {
+    "message": "{system}: išeiti"
+  },
+  "keys.reserved.resize_window": {
+    "message": "{system}: keisti lango dydį"
+  },
+  "keys.reserved.restore_window": {
+    "message": "{system}: atkurti langą"
+  },
+  "keys.reserved.run_command": {
+    "message": "{system}: vykdyti komandą"
+  },
+  "keys.reserved.screenshot": {
+    "message": "{system}: ekrano nuotrauka"
+  },
+  "keys.reserved.security_screen": {
+    "message": "{system}: saugos ekranas"
+  },
+  "keys.reserved.show_desktop": {
+    "message": "{system}: rodyti darbalaukį"
+  },
+  "keys.reserved.space_left": {
+    "message": "{system}: erdvė kairėje"
+  },
+  "keys.reserved.space_right": {
+    "message": "{system}: erdvė dešinėje"
+  },
+  "keys.reserved.spotlight": {
+    "message": "{system}: Spotlight"
+  },
+  "keys.reserved.start_menu": {
+    "message": "{system}: meniu Pradžia"
+  },
+  "keys.reserved.status_menus": {
+    "message": "{system}: būsenos meniu"
+  },
+  "keys.reserved.suspend_compositing": {
+    "message": "{system}: sustabdyti komponavimą"
+  },
+  "keys.reserved.switch_program_windows": {
+    "message": "{system}: perjungti programos langus"
+  },
+  "keys.reserved.switch_programs": {
+    "message": "{system}: perjungti programas"
+  },
+  "keys.reserved.switch_system_controls": {
+    "message": "{system}: perjungti sistemos valdiklius"
+  },
+  "keys.reserved.switch_to_desktop": {
+    "message": "{system}: pereiti į {number} darbalaukį"
+  },
+  "keys.reserved.switch_windows": {
+    "message": "{system}: perjungti langus"
+  },
+  "keys.reserved.system_monitor": {
+    "message": "{system}: Sistemos stebyklė"
+  },
+  "keys.reserved.task_manager": {
+    "message": "{system}: Užduočių tvarkytuvė"
+  },
+  "keys.reserved.text_console": {
+    "message": "{system}: pereiti į tekstinę konsolę"
+  },
+  "keys.reserved.toolbar": {
+    "message": "{system}: įrankių juosta"
+  },
+  "keys.reserved.window_menu": {
+    "message": "{system}: lango meniu"
+  },
+  "keys.reserved.workspace_down": {
+    "message": "{system}: darbo sritis žemiau"
+  },
+  "keys.reserved.workspace_left": {
+    "message": "{system}: darbo sritis kairėje"
+  },
+  "keys.reserved.workspace_right": {
+    "message": "{system}: darbo sritis dešinėje"
+  },
+  "keys.reserved.workspace_up": {
+    "message": "{system}: darbo sritis aukščiau"
+  },
+  "keys.reset.tooltip": {
+    "message": "Grąžinti {preset} klavišus"
+  },
+  "keys.reset_all": {
+    "message": "Atkurti viską"
+  },
+  "keys.save_as.button": {
+    "message": "Įrašyti kaip…"
+  },
+  "keys.save_as.default_name": {
+    "message": "Mano klavišai"
+  },
+  "keys.save_as.label": {
+    "message": "Pavadinimas:"
+  },
+  "keys.save_as.title": {
+    "message": "Įrašyti sparčiuosius klavišus"
+  },
+  "keys.search.placeholder": {
+    "message": "Ieškoti komandos arba klavišo"
+  },
+  "keys.set_label": {
+    "message": "Klavišai:"
+  },
+  "keys.taken_by.tooltip": {
+    "message": "Užimta: {by}"
+  },
+  "keys.title": {
+    "message": "Spartieji klavišai"
+  },
+  "main.admin.button": {
+    "message": "Administratoriaus teisėmis"
+  },
+  "main.admin.deleting": {
+    "message": "Trinant {count, plural, one {# elementą} few {# elementus} other {# elementų}}"
+  },
+  "main.admin.failed": {
+    "message": "Administratoriaus teisėmis: {err}"
+  },
+  "main.admin.making": {
+    "message": "Kuriant „{name}“"
+  },
+  "main.admin.offer": {
+    "message": "{what}: leidimas atmestas. Administratoriaus teisėmis sistema paprašys slaptažodžio."
+  },
+  "main.admin.offer_delete": {
+    "message": "{what}: leidimas atmestas. Administratoriaus teisėmis sistema paprašys slaptažodžio. Tai, kas taip ištrinama, dingsta negrįžtamai."
+  },
+  "main.admin.title": {
+    "message": "Leidimas atmestas"
+  },
+  "main.delete.from_archive": {
+    "message": "{kind, select, folder {Ištrinti aplanką „{name}“ iš archyvo {archive}? Šio veiksmo anuliuoti negalima.} file {Ištrinti failą „{name}“ iš archyvo {archive}? Šio veiksmo anuliuoti negalima.} other {Ištrinti {count, plural, one {# elementą} few {# elementus} other {# elementų}} iš archyvo {archive}? Šio veiksmo anuliuoti negalima.}}"
+  },
+  "main.delete.on_server": {
+    "message": "{kind, select, folder {Ištrinti aplanką „{name}“ serveryje {server}? Šio veiksmo anuliuoti negalima.} file {Ištrinti failą „{name}“ serveryje {server}? Šio veiksmo anuliuoti negalima.} other {Ištrinti {count, plural, one {# elementą} few {# elementus} other {# elementų}} serveryje {server}? Šio veiksmo anuliuoti negalima.}}"
+  },
+  "main.delete.permanently": {
+    "message": "{kind, select, folder {Ištrinti aplanką „{name}“ negrįžtamai? Šio veiksmo anuliuoti negalima.} file {Ištrinti failą „{name}“ negrįžtamai? Šio veiksmo anuliuoti negalima.} other {Ištrinti {count, plural, one {# elementą} few {# elementus} other {# elementų}} negrįžtamai? Šio veiksmo anuliuoti negalima.}}"
+  },
+  "main.delete.title": {
+    "message": "Ištrinti"
+  },
+  "main.delete.title_permanently": {
+    "message": "Ištrinti negrįžtamai"
+  },
+  "main.delete.to_trash": {
+    "message": "{kind, select, folder {Perkelti aplanką „{name}“ į šiukšlinę?} file {Perkelti failą „{name}“ į šiukšlinę?} other {Perkelti {count, plural, one {# elementą} few {# elementus} other {# elementų}} į šiukšlinę?}}"
+  },
+  "main.download.edit": {
+    "message": "Atsisiųsti {file} redaguoti"
+  },
+  "main.download.view": {
+    "message": "Atsisiųsti {file} peržiūrėti"
+  },
+  "main.error.make_folder": {
+    "message": "Nepavyko sukurti aplanko: {err}"
+  },
+  "main.error.read_settings": {
+    "message": "Nepavyko nuskaityti nustatymų: {err}"
+  },
+  "main.error.read_tabs": {
+    "message": "Nepavyko nuskaityti atvertų kortelių: {err}"
+  },
+  "main.error.read_workspaces": {
+    "message": "Nepavyko nuskaityti darbo sričių: {err}"
+  },
+  "main.error.save_settings": {
+    "message": "Nepavyko įrašyti nustatymų: {err}"
+  },
+  "main.folder_tree.home": {
+    "message": "Namai"
+  },
+  "main.go.no_such_folder": {
+    "message": "{path}: tokio aplanko šiame kompiuteryje nėra"
+  },
+  "main.new_folder.label": {
+    "message": "Naujas aplankas (katalogas):"
+  },
+  "main.new_folder.title": {
+    "message": "Naujas aplankas"
+  },
+  "main.sync_browsing.lost": {
+    "message": "{err}. Sinchroninis naršymas išjungtas."
+  },
+  "main.tool.needs_file": {
+    "message": "Žymeklis nėra ant failo, o %N, %O ir %E jo reikia."
+  },
+  "main.tool.needs_local_folder": {
+    "message": "Kitas skydelis rodo serverį arba archyvą, o %T reikia šio kompiuterio aplanko."
+  },
+  "main.undo.done": {
+    "message": "{way, select, redo {Perdaryta: {title}} other {Anuliuota: {title}}}"
+  },
+  "main.undo.failed": {
+    "message": "{way, select, redo {Nepavyko perdaryti „{title}“: {err}} other {Nepavyko anuliuoti „{title}“: {err}}}"
+  },
+  "main.undo.nothing": {
+    "message": "{way, select, redo {Nėra ką perdaryti.} other {Nėra ką anuliuoti.}}"
+  },
+  "main.undo.queued": {
+    "message": "{way, select, redo {Eilėje laukia perdarymas: {title}} other {Eilėje laukia anuliavimas: {title}}}"
+  },
+  "mark.compare.marked": {
+    "message": "{count, plural, one {Pažymėtas # failas: naujesnis arba nesantis kitoje pusėje.} few {Pažymėti # failai: naujesni arba nesantys kitoje pusėje.} other {Pažymėta # failų: naujesni arba nesantys kitoje pusėje.}}"
+  },
+  "mark.compare.same": {
+    "message": "Aplankuose yra tie patys failai."
+  },
+  "mark.load_selection.label": {
+    "message": "Pažymėti faile išvardytus pavadinimus:"
+  },
+  "mark.load_selection.title": {
+    "message": "Įkelti žymėjimą"
+  },
+  "mark.save_selection.label": {
+    "message": "Įrašyti pažymėtus pavadinimus į failą:"
+  },
+  "mark.save_selection.title": {
+    "message": "Įrašyti žymėjimą"
+  },
+  "mark.select_group.label": {
+    "message": "Pažymėti failus (*.txt *.md; aplanko kaukė baigiasi /):"
+  },
+  "mark.select_group.title": {
+    "message": "Pažymėti grupę"
+  },
+  "mark.selection_file.not_local": {
+    "message": "Žymėjimo failai laikomi šiame kompiuteryje, ne archyvuose."
+  },
+  "mark.unselect_group.label": {
+    "message": "Atžymėti failus (*.txt *.md; aplanko kaukė baigiasi /):"
+  },
+  "mark.unselect_group.title": {
+    "message": "Atžymėti grupę"
+  },
+  "media.cannot_play": {
+    "message": "Negalima paleisti: {err}"
+  },
+  "media.cannot_play_as_text": {
+    "message": "Negalima paleisti: {err}. Klavišas 1 parodo kaip tekstą."
+  },
+  "media.continuing": {
+    "message": "Tęsiama nuo {time}"
+  },
+  "media.error.missing": {
+    "message": "Nėra libmpv: jį atsisiunčia Nustatymai > Priedai (kompiliuojant iš šaltinio: vendor/mpv/{script})"
+  },
+  "media.error.not_started": {
+    "message": "nepavyko paleisti libmpv"
+  },
+  "media.error.too_long": {
+    "message": "{path}: mpv užtruko per ilgai"
+  },
+  "media.error.unsupported_system": {
+    "message": "vaizdo įrašai kol kas leidžiami tik Linux, macOS ir Windows sistemose"
+  },
+  "menu.archive": {
+    "message": "Archyvas"
+  },
+  "menu.associations": {
+    "message": "Susiejimai"
+  },
+  "menu.button_bar": {
+    "message": "Mygtukų juosta"
+  },
+  "menu.checksums": {
+    "message": "Kontrolinės sumos"
+  },
+  "menu.commands": {
+    "message": "Komandos"
+  },
+  "menu.compare_directories": {
+    "message": "Lyginti aplankus"
+  },
+  "menu.configuration": {
+    "message": "Konfigūracija"
+  },
+  "menu.copy_names": {
+    "message": "Kopijuoti pavadinimus"
+  },
+  "menu.files": {
+    "message": "Failai"
+  },
+  "menu.filter": {
+    "message": "Filtras"
+  },
+  "menu.go": {
+    "message": "Eiti"
+  },
+  "menu.help": {
+    "message": "Žinynas"
+  },
+  "menu.mark": {
+    "message": "Žymėti"
+  },
+  "menu.other": {
+    "message": "Kita"
+  },
+  "menu.recently_closed_tabs": {
+    "message": "Neseniai uždarytos kortelės"
+  },
+  "menu.selection": {
+    "message": "Žymėjimas"
+  },
+  "menu.show": {
+    "message": "Rodyti"
+  },
+  "menu.sidebar": {
+    "message": "Šoninė juosta"
+  },
+  "menu.sort": {
+    "message": "Rūšiuoti"
+  },
+  "menu.split_and_combine": {
+    "message": "Skaidyti ir sujungti"
+  },
+  "menu.tabs": {
+    "message": "Kortelės"
+  },
+  "menu.tools": {
+    "message": "Įrankiai"
+  },
+  "menu.workspaces": {
+    "message": "Darbo sritys"
+  },
+  "menus.hide_app": {
+    "message": "Slėpti Spark Commander"
+  },
+  "menus.hide_others": {
+    "message": "Slėpti kitas"
+  },
+  "menus.minimize": {
+    "message": "Suskleisti"
+  },
+  "menus.quit_app": {
+    "message": "Išeiti iš Spark Commander"
+  },
+  "menus.services": {
+    "message": "Paslaugos"
+  },
+  "menus.show_all": {
+    "message": "Rodyti visas"
+  },
+  "menus.zoom": {
+    "message": "Išdidinti"
+  },
+  "name_dialog.cancel": {
+    "message": "Atšaukti"
+  },
+  "name_dialog.ok": {
+    "message": "Gerai"
+  },
+  "operations.clear": {
+    "message": "Išvalyti baigtas"
+  },
+  "operations.duration.seconds": {
+    "message": "{seconds} s"
+  },
+  "operations.empty": {
+    "message": "Operacijų nėra."
+  },
+  "operations.job.answer": {
+    "message": "Laukiama jūsų atsakymo"
+  },
+  "operations.job.bytes": {
+    "message": "{done} iš {total}"
+  },
+  "operations.job.cancel_tooltip": {
+    "message": "Atšaukti"
+  },
+  "operations.job.cancelled": {
+    "message": "Atšaukta"
+  },
+  "operations.job.counting": {
+    "message": "Skaičiuojama: {count, plural, one {# failas} few {# failai} other {# failų}}"
+  },
+  "operations.job.done": {
+    "message": "Atlikta"
+  },
+  "operations.job.done_skipped": {
+    "message": "Atlikta, {count, plural, one {praleista: #} few {praleista: #} other {praleista: #}}"
+  },
+  "operations.job.failed": {
+    "message": "Nepavyko"
+  },
+  "operations.job.files": {
+    "message": "{files} / {count, plural, one {# failas} few {# failai} other {# failų}}"
+  },
+  "operations.job.left": {
+    "message": "Liko {time}"
+  },
+  "operations.job.running": {
+    "message": "Vykdoma"
+  },
+  "operations.job.waiting": {
+    "message": "Laukiama"
+  },
+  "operations.menu.cancel": {
+    "message": "Atšaukti"
+  },
+  "operations.menu.clear": {
+    "message": "Išvalyti baigtas"
+  },
+  "operations.menu.move_down": {
+    "message": "Perkelti žemyn"
+  },
+  "operations.menu.move_up": {
+    "message": "Perkelti aukštyn"
+  },
+  "operations.settings_tooltip": {
+    "message": "Operacijų eilės nustatymai"
+  },
+  "operations.summary.failed": {
+    "message": "{count, plural, one {# nepavyko} few {# nepavyko} other {# nepavyko}}"
+  },
+  "operations.summary.running": {
+    "message": "{count, plural, one {# vykdoma} few {# vykdomos} other {# vykdoma}}"
+  },
+  "operations.summary.waiting": {
+    "message": "{count, plural, one {# laukia} few {# laukia} other {# laukia}}"
+  },
+  "ops.as_administrator.failed": {
+    "message": "Administratoriaus teisėmis: {err}"
+  },
+  "ops.as_administrator.progress": {
+    "message": "Administratoriaus teisėmis…"
+  },
+  "ops.delete.title_many": {
+    "message": "Ištrinti {count, plural, one {# elementą} few {# elementus} other {# elementų}} aplanke {folder}"
+  },
+  "ops.delete.title_one": {
+    "message": "Ištrinti „{name}“"
+  },
+  "ops.delete.trash_title_many": {
+    "message": "Perkelti {count, plural, one {# elementą} few {# elementus} other {# elementų}} iš {folder} į šiukšlinę"
+  },
+  "ops.delete.trash_title_one": {
+    "message": "Perkelti „{name}“ į šiukšlinę"
+  },
+  "ops.error.file_in_the_way": {
+    "message": "trukdo tokio paties pavadinimo failas"
+  },
+  "ops.error.into_itself": {
+    "message": "negalima kopijuoti į save patį"
+  },
+  "ops.exists_already": {
+    "message": "{name} jau yra"
+  },
+  "ops.link.dialog_title": {
+    "message": "Kurti nuorodą"
+  },
+  "ops.link.failed": {
+    "message": "Nepavyko sukurti nuorodos: {err}"
+  },
+  "ops.link.kind.hard": {
+    "message": "Kietoji nuoroda"
+  },
+  "ops.link.kind.junction": {
+    "message": "Jungtis"
+  },
+  "ops.link.kind.shortcut": {
+    "message": "Nuoroda (.lnk)"
+  },
+  "ops.link.kind.symbolic": {
+    "message": "Simbolinė nuoroda"
+  },
+  "ops.link.label_many": {
+    "message": "Nuorodos į {count, plural, one {# elementą} few {# elementus} other {# elementų}}, aplanke:"
+  },
+  "ops.link.label_one": {
+    "message": "Nuoroda į „{name}“ kaip:"
+  },
+  "ops.link.making": {
+    "message": "Kuriant {kind, select, symbolic {simbolinę nuorodą} hard {kietąją nuorodą} junction {jungtį} other {nuorodą (.lnk)}}"
+  },
+  "ops.link.needs_admin": {
+    "message": "simbolinėms nuorodoms reikia administratoriaus teisių arba kūrėjo režimo"
+  },
+  "ops.link.thread_failed": {
+    "message": "nepavyko nuorodos kūrimo gija"
+  },
+  "ops.link.title_many": {
+    "message": "{kind, select, symbolic {Simbolinės nuorodos} hard {Kietosios nuorodos} junction {Jungtys} other {Nuorodos (.lnk)}} į {count, plural, one {# elementą} few {# elementus} other {# elementų}} aplanke {folder}"
+  },
+  "ops.link.title_one": {
+    "message": "{kind, select, symbolic {Simbolinė nuoroda} hard {Kietoji nuoroda} junction {Jungtis} other {Nuoroda (.lnk)}} į „{name}“ aplanke {folder}"
+  },
+  "ops.link.windows_only": {
+    "message": "jungtys ir .lnk nuorodos yra tik Windows sistemoje"
+  },
+  "ops.redo.title": {
+    "message": "Perdaryti: {what}"
+  },
+  "ops.title.many": {
+    "message": "{kind, select, copy {Kopijuoti} other {Perkelti}} {count, plural, one {# elementą} few {# elementus} other {# elementų}} į {target}"
+  },
+  "ops.title.one": {
+    "message": "{kind, select, copy {Kopijuoti} other {Perkelti}} „{name}“ į {target}"
+  },
+  "ops.undo.not_a_server": {
+    "message": "{url}: tai ne serverio adresas"
+  },
+  "ops.undo.not_in_trash": {
+    "message": "jų nebėra šiukšlinėje"
+  },
+  "ops.undo.restore_title": {
+    "message": "{title}: tai, ką perrašė, grąžinama iš šiukšlinės"
+  },
+  "ops.undo.title": {
+    "message": "Anuliuoti: {what}"
+  },
+  "pack.cancel": {
+    "message": "Atšaukti"
+  },
+  "pack.compression": {
+    "message": "Glaudinimas:"
+  },
+  "pack.dialog_title": {
+    "message": "Supakuoti failus"
+  },
+  "pack.encrypt": {
+    "message": "Šifruoti slaptažodžiu"
+  },
+  "pack.format": {
+    "message": "Formatas:"
+  },
+  "pack.label": {
+    "message": "Supakuoti {count, plural, one {# elementą} few {# elementus} other {# elementų}} į archyvą:"
+  },
+  "pack.level.fastest": {
+    "message": "Greičiausias"
+  },
+  "pack.level.maximum": {
+    "message": "Maksimalus"
+  },
+  "pack.level.normal": {
+    "message": "Normalus"
+  },
+  "pack.level.store": {
+    "message": "Be glaudinimo"
+  },
+  "pack.level.ultra": {
+    "message": "Ultra"
+  },
+  "pack.local_only": {
+    "message": "{what, select, packing {Pakavimas} unpacking {Išpakavimas} testing {Tikrinimas} creating_checksums {Kontrolinių sumų kūrimas} making_links {Nuorodų kūrimas} verifying_checksums {Kontrolinių sumų tikrinimas} splitting {Skaidymas} combining {Sujungimas} other {Tai}} veikia su šio kompiuterio failais, ne archyvuose."
+  },
+  "pack.move_files": {
+    "message": "Perkelti į archyvą (ištrinti supakuotus failus)"
+  },
+  "pack.needs_password": {
+    "message": "reikia slaptažodžio"
+  },
+  "pack.ok": {
+    "message": "Gerai"
+  },
+  "pack.password_missing": {
+    "message": "Įveskite slaptažodį arba nežymėkite „Šifruoti slaptažodžiu“."
+  },
+  "pack.separate": {
+    "message": "Atskiras archyvas kiekvienam pažymėtam failui ar aplankui"
+  },
+  "pack.split": {
+    "message": "Skaidyti į tomus po"
+  },
+  "pack.split_unit": {
+    "message": "MB"
+  },
+  "pack.test.broken": {
+    "message": "{broken, plural, one {Sugadintas # iš {count}} few {Sugadinti # iš {count}} other {Sugadinta # iš {count}}}"
+  },
+  "pack.test.choose": {
+    "message": "Pasirinkite tikrinamus archyvus."
+  },
+  "pack.test.ok": {
+    "message": "{count, plural, one {Tvarkingi archyvai: #} few {Tvarkingi archyvai: #} other {Tvarkingi archyvai: #}}"
+  },
+  "pack.test.title_many": {
+    "message": "Tikrinti {count, plural, one {# archyvą} few {# archyvus} other {# archyvų}}"
+  },
+  "pack.test.title_one": {
+    "message": "Tikrinti „{name}“"
+  },
+  "pack.title.many": {
+    "message": "Supakuoti {count, plural, one {# elementą} few {# elementus} other {# elementų}} į {archive}"
+  },
+  "pack.title.many_separate": {
+    "message": "Supakuoti {count, plural, one {# elementą} few {# elementus} other {# elementų}} į atskirus {format} archyvus"
+  },
+  "pack.title.one": {
+    "message": "Supakuoti „{name}“ į {archive}"
+  },
+  "pack.title.one_separate": {
+    "message": "Supakuoti „{name}“ į atskirus {format} archyvus"
+  },
+  "pack.unpack.choose": {
+    "message": "Pasirinkite išpakuojamus archyvus."
+  },
+  "pack.unpack.dialog_title": {
+    "message": "Išpakuoti failus"
+  },
+  "pack.unpack.label": {
+    "message": "Išpakuoti {count, plural, one {# archyvą} few {# archyvus} other {# archyvų}} į:"
+  },
+  "pack.unpack.mask": {
+    "message": "Tik failus:"
+  },
+  "pack.unpack.overwrite": {
+    "message": "Perrašyti esamus failus (kitaip jie paliekami)"
+  },
+  "pack.unpack.password": {
+    "message": "Slaptažodis:"
+  },
+  "pack.unpack.separate": {
+    "message": "Kiekvieną archyvą į jo pavadinimo aplanką"
+  },
+  "pack.unpack.title_many": {
+    "message": "Išpakuoti {count, plural, one {# archyvą} few {# archyvus} other {# archyvų}} į {target}"
+  },
+  "pack.unpack.title_one": {
+    "message": "Išpakuoti „{name}“ į {target}"
+  },
+  "pack.unpack.with_paths": {
+    "message": "Išlaikyti archyve saugomus aplankus"
+  },
+  "pack.volume_invalid": {
+    "message": "Tomo dydis turi būti skaičius MB."
+  },
+  "pack.wrong_password": {
+    "message": "neteisingas slaptažodis"
+  },
+  "panel.admin.renaming": {
+    "message": "Pervardijant į „{name}“"
+  },
+  "panel.clipboard.copied": {
+    "message": "{count, plural, one {Nukopijuotas # elementas: Ctrl+V jį įklijuos.} few {Nukopijuoti # elementai: Ctrl+V juos įklijuos.} other {Nukopijuota # elementų: Ctrl+V juos įklijuos.}}"
+  },
+  "panel.clipboard.cut": {
+    "message": "{count, plural, one {Iškirptas # elementas: Ctrl+V jį įklijuos.} few {Iškirpti # elementai: Ctrl+V juos įklijuos.} other {Iškirpta # elementų: Ctrl+V juos įklijuos.}}"
+  },
+  "panel.clipboard.no_cut_in_archive": {
+    "message": "Failų negalima iškirpti iš archyvų; Ctrl+C juos nukopijuoja."
+  },
+  "panel.clipboard.no_files": {
+    "message": "Iškarpinėje nėra failų."
+  },
+  "panel.clipboard.no_paste_in_archive": {
+    "message": "Failų į archyvus kol kas įklijuoti negalima."
+  },
+  "panel.clipboard.same_folder": {
+    "message": "Jie jau yra šiame aplanke: Ctrl+V įklijuoja į kitą aplanką."
+  },
+  "panel.column.attr": {
+    "message": "Atr."
+  },
+  "panel.column.date": {
+    "message": "Data"
+  },
+  "panel.column.ext": {
+    "message": "Plėt."
+  },
+  "panel.column.name": {
+    "message": "Pavadinimas"
+  },
+  "panel.column.size": {
+    "message": "Dydis"
+  },
+  "panel.disconnect": {
+    "message": "Atsijungti"
+  },
+  "panel.drag.items": {
+    "message": "{count, plural, one {# elementas} few {# elementai} other {# elementų}}"
+  },
+  "panel.error.archive_not_updatable": {
+    "message": "{name}: 7-Zip vietoje keičia 7z, zip ir tar archyvus, bet ne šį"
+  },
+  "panel.error.archive_on_server": {
+    "message": "{name}: serveriuose esančių archyvų kol kas keisti negalima"
+  },
+  "panel.error.branch_view_local": {
+    "message": "Šakos rodinys rodo tik šio kompiuterio aplankus"
+  },
+  "panel.error.exists": {
+    "message": "{name} jau yra"
+  },
+  "panel.error.folder_in_the_way": {
+    "message": "trukdo tokio paties pavadinimo aplankas"
+  },
+  "panel.error.inside_archive": {
+    "message": "archyvuose kol kas negalima"
+  },
+  "panel.error.make_file": {
+    "message": "Nepavyko sukurti failo: {err}"
+  },
+  "panel.error.no_name": {
+    "message": "nenurodytas pavadinimas"
+  },
+  "panel.error.not_a_name": {
+    "message": "{name}: netinkamas pavadinimas"
+  },
+  "panel.error.other_drive": {
+    "message": "kitas skydelis perėjo į kitą diską"
+  },
+  "panel.error.rename": {
+    "message": "Nepavyko pervardyti: {err}"
+  },
+  "panel.filter.custom.label": {
+    "message": "Failų tipai, pvz., *.txt *.md (po | – nerodomi):"
+  },
+  "panel.filter.custom.title": {
+    "message": "Rodyti failus"
+  },
+  "panel.filter.programs": {
+    "message": "programos"
+  },
+  "panel.filter.selected_files": {
+    "message": "pažymėti failai"
+  },
+  "panel.found.branch_view": {
+    "message": "Šakos rodinys:"
+  },
+  "panel.found.search_results": {
+    "message": "Paieškos rezultatai:"
+  },
+  "panel.new_text_file.label": {
+    "message": "Failo pavadinimas (atsidarys redaktoriuje):"
+  },
+  "panel.new_text_file.title": {
+    "message": "Naujas tekstinis failas"
+  },
+  "panel.opening.cancel": {
+    "message": "Atšaukti"
+  },
+  "panel.opening.reading": {
+    "message": "Skaitoma…"
+  },
+  "panel.opening.title": {
+    "message": "Atidaromas archyvas"
+  },
+  "panel.quick_filter.hint": {
+    "message": "slepia tai, kas neatitinka; Escape rodo viską"
+  },
+  "panel.quick_filter.label": {
+    "message": "Filtras:"
+  },
+  "panel.quick_search.label": {
+    "message": "Ieškoti:"
+  },
+  "panel.size.app": {
+    "message": "<PROG>"
+  },
+  "panel.size.b": {
+    "message": "{size} B"
+  },
+  "panel.size.dir": {
+    "message": "<APL>"
+  },
+  "panel.size.gb": {
+    "message": "{size} GB"
+  },
+  "panel.size.kb": {
+    "message": "{size} KB"
+  },
+  "panel.size.mb": {
+    "message": "{size} MB"
+  },
+  "panel.size.tb": {
+    "message": "{size} TB"
+  },
+  "panel.space.bytes": {
+    "message": "{count, plural, one {{size} baitas ({human})} few {{size} baitai ({human})} other {{size} baitų ({human})}}"
+  },
+  "panel.space.close": {
+    "message": "Uždaryti"
+  },
+  "panel.space.counting": {
+    "message": "Skaičiuojama…"
+  },
+  "panel.space.done": {
+    "message": "Baigta."
+  },
+  "panel.space.files": {
+    "message": "Failai:"
+  },
+  "panel.space.folders": {
+    "message": "Aplankai:"
+  },
+  "panel.space.in_archive": {
+    "message": "Archyvuose stulpelyje Dydis dydžiai jau rodomi."
+  },
+  "panel.space.title": {
+    "message": "Skaičiuoti užimamą vietą"
+  },
+  "panel.space.total": {
+    "message": "Bendras dydis:"
+  },
+  "panel.space.unreadable": {
+    "message": "{count, plural, one {Nepavyko nuskaityti # elemento.} few {Nepavyko nuskaityti # elementų.} other {Nepavyko nuskaityti # elementų.}}"
+  },
+  "panel.status": {
+    "message": "{marked_size} k / {size} k: {marked_files} / {files, plural, one {# failas} few {# failai} other {# failų}}, {marked_folders} / {folders, plural, one {# aplankas} few {# aplankai} other {# aplankų}}"
+  },
+  "panel.sync_browsing.stop": {
+    "message": "Sinchroninis naršymas (spustelėkite, kad sustabdytumėte)"
+  },
+  "panel.undo.rename": {
+    "message": "Pervardyti „{name}“ į „{to}“"
+  },
+  "passwords.about.set": {
+    "message": "Su pagrindiniu slaptažodžiu įrašyti slaptažodžiai atsidaro ir kitame kompiuteryje: nukopijuokite nustatymų aplanką ir įveskite jį ten. Jį pamiršus, prarandami tik įrašyti slaptažodžiai: juos tereikės įvesti iš naujo."
+  },
+  "passwords.about.unlock": {
+    "message": "Nustatymai perkelti iš kito kompiuterio arba šiame kompiuteryje nėra raktinės: pagrindinis slaptažodis čia atrakina įrašytus slaptažodžius."
+  },
+  "passwords.cancel": {
+    "message": "Atšaukti"
+  },
+  "passwords.done.set": {
+    "message": "Pagrindinis slaptažodis nustatytas."
+  },
+  "passwords.done.unlocked": {
+    "message": "Įrašyti slaptažodžiai atrakinti."
+  },
+  "passwords.error.locked": {
+    "message": "įrašyti slaptažodžiai užrakinti: atrakinkite juos pagrindiniu slaptažodžiu (Konfigūracija › Nustatymai › Slaptažodžiai)"
+  },
+  "passwords.error.no_master": {
+    "message": "pagrindinis slaptažodis nenustatytas"
+  },
+  "passwords.error.no_random": {
+    "message": "nėra atsitiktinių skaičių"
+  },
+  "passwords.error.not_opened": {
+    "message": "nepavyksta atrakinti {what} slaptažodžio"
+  },
+  "passwords.error.not_sealed": {
+    "message": "nepavyko užšifruoti slaptažodžio"
+  },
+  "passwords.error.salt_damaged": {
+    "message": "pagrindinio slaptažodžio druska sugadinta"
+  },
+  "passwords.error.wrong": {
+    "message": "neteisingas pagrindinis slaptažodis"
+  },
+  "passwords.field.again": {
+    "message": "Pakartokite"
+  },
+  "passwords.field.master": {
+    "message": "Pagrindinis slaptažodis"
+  },
+  "passwords.locked_note": {
+    "message": "Įrašyti slaptažodžiai šiame kompiuteryje užrakinti: juos atrakina pagrindinis slaptažodis."
+  },
+  "passwords.ok": {
+    "message": "Gerai"
+  },
+  "passwords.problem.differ": {
+    "message": "Slaptažodžiai nesutampa."
+  },
+  "passwords.problem.empty": {
+    "message": "Įveskite pagrindinį slaptažodį."
+  },
+  "passwords.title.set": {
+    "message": "Pagrindinis slaptažodis"
+  },
+  "passwords.title.unlock": {
+    "message": "Atrakinti įrašytus slaptažodžius"
+  },
+  "passwords.unlock_button": {
+    "message": "Atrakinti…"
+  },
+  "passwords.working": {
+    "message": "Vykdoma…"
+  },
+  "properties.accessed": {
+    "message": "Paskutinė prieiga:"
+  },
+  "properties.change_attributes": {
+    "message": "Keisti atributus..."
+  },
+  "properties.close": {
+    "message": "Uždaryti"
+  },
+  "properties.contents": {
+    "message": "{file_count, plural, one {{files} failas} few {{files} failai} other {{files} failų}}, {folder_count, plural, one {{folders} aplankas} few {{folders} aplankai} other {{folders} aplankų}}, {count, plural, one {{bytes} baitas} few {{bytes} baitai} other {{bytes} baitų}} ({size})"
+  },
+  "properties.contents_counting": {
+    "message": "{file_count, plural, one {{files} failas} few {{files} failai} other {{files} failų}}, {folder_count, plural, one {{folders} aplankas} few {{folders} aplankai} other {{folders} aplankų}}, {count, plural, one {{bytes} baitas} few {{bytes} baitai} other {{bytes} baitų}} ({size}) (skaičiuojama…)"
+  },
+  "properties.contents_label": {
+    "message": "Turinys:"
+  },
+  "properties.created": {
+    "message": "Sukurtas:"
+  },
+  "properties.dialog_title": {
+    "message": "Savybės"
+  },
+  "properties.in_archive": {
+    "message": "Archyvo sąraše rodoma viskas, kas žinoma apie jo failus."
+  },
+  "properties.kind.file": {
+    "message": "Failas"
+  },
+  "properties.kind.folder": {
+    "message": "Aplankas"
+  },
+  "properties.kind.link": {
+    "message": "Nuoroda"
+  },
+  "properties.kind.link_to": {
+    "message": "Nuoroda į {target}"
+  },
+  "properties.location": {
+    "message": "Vieta:"
+  },
+  "properties.modified": {
+    "message": "Pakeistas:"
+  },
+  "properties.name": {
+    "message": "Pavadinimas:"
+  },
+  "properties.no_system_dialog": {
+    "message": "čia kol kas nėra sistemos savybių dialogo"
+  },
+  "properties.owner": {
+    "message": "Savininkas / grupė:"
+  },
+  "properties.permissions": {
+    "message": "Leidimai:"
+  },
+  "properties.size": {
+    "message": "{count, plural, one {{bytes} baitas ({size})} few {{bytes} baitai ({size})} other {{bytes} baitų ({size})}}"
+  },
+  "properties.size_label": {
+    "message": "Dydis:"
+  },
+  "properties.type": {
+    "message": "Tipas:"
+  },
+  "quick_open.go_to": {
+    "message": "Eiti į {path}"
+  },
+  "quick_open.group.bookmarks": {
+    "message": "Žymelės"
+  },
+  "quick_open.group.connections": {
+    "message": "Ryšiai"
+  },
+  "quick_open.group.drives": {
+    "message": "Diskai"
+  },
+  "quick_open.group.path": {
+    "message": "Kelias"
+  },
+  "quick_open.group.recent_folders": {
+    "message": "Paskutiniai aplankai"
+  },
+  "quick_open.group.tools": {
+    "message": "Įrankiai"
+  },
+  "quick_open.group.workspaces": {
+    "message": "Darbo sritys"
+  },
+  "quick_open.placeholder": {
+    "message": "Komanda, žymelė, aplankas, kelias, serveris, diskas, darbo sritis ar įrankis"
+  },
+  "quick_open.title": {
+    "message": "Greitasis atidarymas"
+  },
+  "quick_view.counting": {
+    "message": "Skaičiuojama…"
+  },
+  "quick_view.downloading": {
+    "message": "Atsisiunčiama…"
+  },
+  "quick_view.empty": {
+    "message": "Greitoji peržiūra rodo tai, ant ko yra kito skydelio žymeklis."
+  },
+  "quick_view.extracting": {
+    "message": "Išimama iš archyvo…"
+  },
+  "quick_view.files_only": {
+    "message": "Serveriuose ir archyvuose greitoji peržiūra rodo tik failus."
+  },
+  "quick_view.space.title": {
+    "message": "Iš viso užimta vietos:"
+  },
+  "quick_view.space.totals": {
+    "message": "{bytes, plural, one {{bytes_grouped} baitas} few {{bytes_grouped} baitai} other {{bytes_grouped} baitų}} – {files, plural, one {{files_grouped} failas} few {{files_grouped} failai} other {{files_grouped} failų}}, {folders, plural, one {{folders_grouped} aplankas} few {{folders_grouped} aplankai} other {{folders_grouped} aplankų}}"
+  },
+  "quick_view.space.unreadable": {
+    "message": "Nepavyko nuskaityti: {count}."
+  },
+  "quick_view.too_large.download": {
+    "message": "{size} – per daug, kad būtų atsisiųsta čia: F3 parodys failą."
+  },
+  "quick_view.too_large.extract": {
+    "message": "{size} – per daug, kad būtų išimta iš archyvo čia: F3 parodys failą."
+  },
+  "remote.cancelled": {
+    "message": "atšaukta"
+  },
+  "remote.cloud.ask": {
+    "message": "{kind, select, application_key {Programos raktas, skirtas {user} serveryje {host}:} api_key {API raktas, skirtas {user} serveryje {host}:} password {Slaptažodis, skirtas {user} serveryje {host}:} other {Slaptasis raktas, skirtas {user} serveryje {host}:}}"
+  },
+  "remote.cloud.ask_again": {
+    "message": "{kind, select, application_key {Neteisingas programos raktas. Programos raktas, skirtas {user} serveryje {host}:} api_key {Neteisingas API raktas. API raktas, skirtas {user} serveryje {host}:} password {Neteisingas slaptažodis. Slaptažodis, skirtas {user} serveryje {host}:} other {Neteisingas raktas. Slaptasis raktas, skirtas {user} serveryje {host}:}}"
+  },
+  "remote.cloud.obscure_failed": {
+    "message": "rclone nepavyko priimti slaptažodžio"
+  },
+  "remote.cloud.rclone_missing": {
+    "message": "nėra rclone: jį atsisiunčia Nustatymai > Priedai"
+  },
+  "remote.cloud.title": {
+    "message": "{kind, select, application_key {Programos raktas} api_key {API raktas} password {Slaptažodis} other {Slaptasis raktas}}"
+  },
+  "remote.connecting": {
+    "message": "Jungiamasi prie {server}..."
+  },
+  "remote.dialog.cancel": {
+    "message": "Atšaukti"
+  },
+  "remote.dialog.ok": {
+    "message": "Gerai"
+  },
+  "remote.disconnect_failed": {
+    "message": "{share}: nepavyko atsijungti: {err}"
+  },
+  "remote.ftp.password": {
+    "message": "{user}@{host} slaptažodis:"
+  },
+  "remote.ftp.password_again": {
+    "message": "Neteisingas slaptažodis. {user}@{host} slaptažodis:"
+  },
+  "remote.ftps.changed": {
+    "message": "Serverio {server} TLS sertifikatas PASIKEITĖ nuo tada, kai buvo įrašytas faile {file}, {line} eilutėje. Kažkas gali klausytis; jei serveris turi naują sertifikatą, pašalinkite tą eilutę."
+  },
+  "remote.ftps.not_trusted": {
+    "message": "serverio sertifikatu nepasitikima"
+  },
+  "remote.login.password": {
+    "message": "Slaptažodis"
+  },
+  "remote.login.title": {
+    "message": "Prisijungti"
+  },
+  "remote.login.user": {
+    "message": "Naudotojas"
+  },
+  "remote.mount.login_wrong": {
+    "message": "neteisingas naudotojas arba slaptažodis"
+  },
+  "remote.mount.macos_failed": {
+    "message": "macOS nepavyko jo prijungti (NetFS {code})"
+  },
+  "remote.mount.needs_desktop": {
+    "message": "reikia KDE kio-fuse arba GNOME gvfs"
+  },
+  "remote.mount.needs_login": {
+    "message": "reikia naudotojo ir slaptažodžio"
+  },
+  "remote.mount.no_fuse": {
+    "message": "prijungta, bet jam nėra aplanko: trūksta gvfs-fuse"
+  },
+  "remote.mount.no_nfs_client": {
+    "message": "nerasta; NFS reikia Windows komponento „NFS klientas“ (Windows funkcijos)"
+  },
+  "remote.mount.no_share": {
+    "message": "nenurodytas bendrinamas išteklius: smb://server/share"
+  },
+  "remote.mount.not_address": {
+    "message": "tai ne adresas"
+  },
+  "remote.mount.not_found": {
+    "message": "prijungta, bet nerasta tarp prijungtų"
+  },
+  "remote.mount.other_user": {
+    "message": "Windows jau prisijungusi prie šio serverio kitu naudotoju: atsijunkite arba naudokite tą naudotoją"
+  },
+  "remote.password.title": {
+    "message": "Slaptažodis"
+  },
+  "remote.remember_password": {
+    "message": "Įsiminti (Nustatymai › Slaptažodžiai)"
+  },
+  "remote.save_back_failed": {
+    "message": "Nepavyko įrašyti atgal: {err}"
+  },
+  "remote.sftp.host_certificate": {
+    "message": "Serveris pateikia mazgo sertifikatą; jie kol kas nepalaikomi."
+  },
+  "remote.sftp.key_changed": {
+    "message": "Serverio {server} mazgo raktas PASIKEITĖ nuo tada, kai buvo įrašytas faile {file}, {line} eilutėje. Kažkas gali klausytis; jei serveris buvo įdiegtas iš naujo, pašalinkite tą eilutę."
+  },
+  "remote.sftp.key_not_trusted": {
+    "message": "Serverio {server} mazgo raktu nepasitikėta."
+  },
+  "remote.sftp.keys_refused": {
+    "message": "{user}@{host}: serveris atmetė raktus ir nepriima slaptažodžio"
+  },
+  "remote.sftp.login_refused": {
+    "message": "{user}@{host}: prisijungimas atmestas"
+  },
+  "remote.sftp.passphrase": {
+    "message": "Rakto {file} slaptafrazė"
+  },
+  "remote.sftp.passphrase_title": {
+    "message": "Rakto slaptafrazė"
+  },
+  "remote.sftp.password": {
+    "message": "{user}@{host} slaptažodis"
+  },
+  "remote.unknown_host.once": {
+    "message": "Prisijungti vieną kartą"
+  },
+  "remote.unknown_host.remember": {
+    "message": "Prisijungti ir įsiminti"
+  },
+  "remote.unknown_host.text": {
+    "message": "Serveris {host} dar nežinomas. Jo {key_type} kontrolinis kodas:\n\n{fingerprint}\n\nJunkitės tik tada, jei tai tas serveris, kurio norite; kontrolinį kodą gali patvirtinti jo administratorius."
+  },
+  "remote.unknown_host.title": {
+    "message": "Nežinomas serveris"
+  },
+  "rename.case": {
+    "message": "Raidės:"
+  },
+  "rename.case.first": {
+    "message": "Pirmoji raidė"
+  },
+  "rename.case.lower": {
+    "message": "mažosios"
+  },
+  "rename.case.unchanged": {
+    "message": "Nekeisti"
+  },
+  "rename.case.upper": {
+    "message": "DIDŽIOSIOS"
+  },
+  "rename.case.words": {
+    "message": "Kiekvienas Žodis"
+  },
+  "rename.close": {
+    "message": "Uždaryti"
+  },
+  "rename.counter_start": {
+    "message": "Skaitiklio pradžia"
+  },
+  "rename.dialog_title": {
+    "message": "Grupinio pervardijimo įrankis"
+  },
+  "rename.digits": {
+    "message": "Skaitmenys"
+  },
+  "rename.extension": {
+    "message": "Plėtinys"
+  },
+  "rename.field.counter": {
+    "message": "[C] Skaitiklis"
+  },
+  "rename.field.date": {
+    "message": "[Y][M][D] Data"
+  },
+  "rename.field.extension": {
+    "message": "[E] Plėt."
+  },
+  "rename.field.folder": {
+    "message": "[P] Aplankas"
+  },
+  "rename.field.name": {
+    "message": "[N] Pavadinimas"
+  },
+  "rename.field.range": {
+    "message": "[N1-3] Intervalas"
+  },
+  "rename.field.time": {
+    "message": "[h][m][s] Laikas"
+  },
+  "rename.first_only": {
+    "message": "Tik pirmą"
+  },
+  "rename.in_archive": {
+    "message": "Failų archyvuose kol kas pervardyti negalima."
+  },
+  "rename.mask": {
+    "message": "Pervardijimo kaukė: failo pavadinimas"
+  },
+  "rename.match_case": {
+    "message": "Skirti raidžių dydį"
+  },
+  "rename.new_name": {
+    "message": "Naujas pavadinimas"
+  },
+  "rename.not_renamed_back": {
+    "message": "{from}: {err}; nepervardyta atgal: {names}"
+  },
+  "rename.not_utf8": {
+    "message": "Pavadinimai, kurie nėra UTF-8, praleidžiami."
+  },
+  "rename.old_name": {
+    "message": "Senas pavadinimas"
+  },
+  "rename.problem.bad_character": {
+    "message": "neleistinas simbolis"
+  },
+  "rename.problem.exists": {
+    "message": "jau yra"
+  },
+  "rename.problem.no_name": {
+    "message": "nėra pavadinimo"
+  },
+  "rename.problem.twice": {
+    "message": "du kartus sąraše"
+  },
+  "rename.regex": {
+    "message": "Reguliarioji išraiška"
+  },
+  "rename.regex_error": {
+    "message": "Reguliarioji išraiška: {err}"
+  },
+  "rename.replace": {
+    "message": "Pakeisti į"
+  },
+  "rename.search": {
+    "message": "Ieškoti"
+  },
+  "rename.start": {
+    "message": "Pradėti!"
+  },
+  "rename.status.failed": {
+    "message": "Niekas nepervardyta: {err}"
+  },
+  "rename.status.ready": {
+    "message": "„Pradėti!“ juos pervardys."
+  },
+  "rename.status.renamed": {
+    "message": "{count, plural, one {Pervardyta: #.} few {Pervardyta: #.} other {Pervardyta: #.}}"
+  },
+  "rename.status.took_back": {
+    "message": "{count, plural, one {Grąžinta: #.} few {Grąžinta: #.} other {Grąžinta: #.}}"
+  },
+  "rename.step": {
+    "message": "Žingsnis"
+  },
+  "rename.undo": {
+    "message": "Anuliuoti"
+  },
+  "rename.was": {
+    "message": "{to} (buvo {from})"
+  },
+  "rename.with_extension": {
+    "message": "Su plėtiniu"
+  },
+  "scmd.column.modified": {
+    "message": "Pakeista"
+  },
+  "scmd.column.name": {
+    "message": "Pavadinimas"
+  },
+  "scmd.column.size": {
+    "message": "Dydis"
+  },
+  "scmd.column.up_dir": {
+    "message": "AUKŠTYN"
+  },
+  "scmd.command_line.not_on_server": {
+    "message": "Komandos vykdomos šiame kompiuteryje, ne serveryje."
+  },
+  "scmd.compare.marked": {
+    "message": "{count, plural, one {Pažymėtas # failas: naujesnis arba nesantis kitoje pusėje.} few {Pažymėti # failai: naujesni arba nesantys kitoje pusėje.} other {Pažymėta # failų: naujesni arba nesantys kitoje pusėje.}}"
+  },
+  "scmd.compare.same": {
+    "message": "Aplankuose yra tie patys failai."
+  },
+  "scmd.copying": {
+    "message": "Kopijuojama {name}..."
+  },
+  "scmd.dialog.buttons": {
+    "message": "Enter Gerai   Esc Atšaukti"
+  },
+  "scmd.error.read_settings": {
+    "message": "Nepavyko nuskaityti nustatymų: {err}"
+  },
+  "scmd.error.read_tabs": {
+    "message": "Nepavyko nuskaityti atvertų kortelių: {err}"
+  },
+  "scmd.error.read_workspaces": {
+    "message": "Nepavyko nuskaityti darbo sričių: {err}"
+  },
+  "scmd.error.save_back": {
+    "message": "Nepavyko įrašyti atgal: {err}"
+  },
+  "scmd.error.save_searches": {
+    "message": "Nepavyko įrašyti paieškų: {err}"
+  },
+  "scmd.error.save_tabs": {
+    "message": "Nepavyko įrašyti atvertų kortelių: {err}"
+  },
+  "scmd.find.backwards": {
+    "message": "Atgal"
+  },
+  "scmd.find.case_sensitive": {
+    "message": "Skirti raidžių dydį"
+  },
+  "scmd.find.hex": {
+    "message": "Šešioliktainis (77 6F 72 64)"
+  },
+  "scmd.find.not_found": {
+    "message": "Nerasta: {text}"
+  },
+  "scmd.find.regex": {
+    "message": "Reguliarioji išraiška"
+  },
+  "scmd.find.search_for": {
+    "message": "Ieškoti:"
+  },
+  "scmd.find.title": {
+    "message": "Ieškoti"
+  },
+  "scmd.find.whole_words": {
+    "message": "Tik ištisi žodžiai"
+  },
+  "scmd.group.files": {
+    "message": "Failai (*.txt *.md; aplankai baigiasi /):"
+  },
+  "scmd.group.select_title": {
+    "message": "Pažymėti grupę"
+  },
+  "scmd.group.unselect_title": {
+    "message": "Atžymėti grupę"
+  },
+  "scmd.key_bar.copy": {
+    "message": "Kopij."
+  },
+  "scmd.key_bar.delete": {
+    "message": "Trinti"
+  },
+  "scmd.key_bar.edit": {
+    "message": "Redag."
+  },
+  "scmd.key_bar.menu": {
+    "message": "Meniu"
+  },
+  "scmd.key_bar.mkdir": {
+    "message": "N.apl."
+  },
+  "scmd.key_bar.move": {
+    "message": "Perkel"
+  },
+  "scmd.key_bar.quit": {
+    "message": "Išeiti"
+  },
+  "scmd.key_bar.view": {
+    "message": "Rodyti"
+  },
+  "scmd.message.error": {
+    "message": "Klaida"
+  },
+  "scmd.message.ok": {
+    "message": "Gerai"
+  },
+  "scmd.not_yet": {
+    "message": "{what, select, menus {Meniu: terminalo versijoje kol kas nėra.} file_operations {Failų operacijos: terminalo versijoje kol kas nėra.} servers {Serveriai: terminalo versijoje kol kas nėra.} other {Ši komanda: terminalo versijoje kol kas nėra.}}"
+  },
+  "scmd.picture.broken": {
+    "message": "sugadintas paveikslėlis"
+  },
+  "scmd.picture.broken_page": {
+    "message": "sugadintas puslapis"
+  },
+  "scmd.picture.loading": {
+    "message": "Įkeliama…"
+  },
+  "scmd.picture.no_page": {
+    "message": "PDF neturi tokio puslapio"
+  },
+  "scmd.shell.press_enter": {
+    "message": "Paspauskite Enter, kad grįžtumėte į Spark Commander..."
+  },
+  "scmd.sync_browsing.off": {
+    "message": "Sinchroninis naršymas išjungtas."
+  },
+  "scmd.sync_browsing.on": {
+    "message": "Sinchroninis naršymas įjungtas."
+  },
+  "scmd.sync_browsing.stopped": {
+    "message": "{err}. Sinchroninis naršymas išjungtas."
+  },
+  "scmd.viewer.column": {
+    "message": "Stulp. {column}"
+  },
+  "scmd.viewer.finding": {
+    "message": "ieškoma…"
+  },
+  "scmd.viewer.key_bar.next": {
+    "message": "Kitas"
+  },
+  "scmd.viewer.key_bar.quit": {
+    "message": "Išeiti"
+  },
+  "scmd.viewer.key_bar.reload": {
+    "message": "Atnauj"
+  },
+  "scmd.viewer.key_bar.search": {
+    "message": "Rasti"
+  },
+  "scmd.viewer.page": {
+    "message": "{page} psl. iš {pages}"
+  },
+  "scmd.viewer.reading": {
+    "message": "skaitoma {percent} %"
+  },
+  "scmd.viewer.wrap": {
+    "message": "Laužyti"
+  },
+  "scmd.workspace.copy_name": {
+    "message": "{name} kopija"
+  },
+  "scmd.workspace.default_name": {
+    "message": "Darbo sritis {number}"
+  },
+  "scmd.workspace.delete_question": {
+    "message": "Ištrinti „{name}“? Jos kortelės bus pamirštos."
+  },
+  "scmd.workspace.duplicate_title": {
+    "message": "Dubliuoti darbo sritį"
+  },
+  "scmd.workspace.last_stays": {
+    "message": "Paskutinė darbo sritis lieka."
+  },
+  "scmd.workspace.name": {
+    "message": "Pavadinimas:"
+  },
+  "scmd.workspace.name_or_default": {
+    "message": "Pavadinimas (tuščias: {name}):"
+  },
+  "scmd.workspace.new_title": {
+    "message": "Nauja darbo sritis"
+  },
+  "scmd.workspace.rename_title": {
+    "message": "Pervardyti darbo sritį"
+  },
+  "scmd.workspaces.keys": {
+    "message": "Enter Atidaryti  F7 Nauja  F5 Kopija  F2 Pervardyti  F8 Ištrinti"
+  },
+  "scmd.workspaces.title": {
+    "message": "Darbo sritys"
+  },
+  "search.age.days": {
+    "message": "d."
+  },
+  "search.age.hours": {
+    "message": "val."
+  },
+  "search.age.minutes": {
+    "message": "min."
+  },
+  "search.age.months": {
+    "message": "mėn."
+  },
+  "search.age.weeks": {
+    "message": "sav."
+  },
+  "search.age.years": {
+    "message": "m."
+  },
+  "search.archives": {
+    "message": "Ieškoti archyvuose"
+  },
+  "search.attribute.directory": {
+    "message": "Aplankas"
+  },
+  "search.attribute.either": {
+    "message": "Nesvarbu"
+  },
+  "search.attribute.executable": {
+    "message": "Vykdomasis"
+  },
+  "search.attribute.hidden": {
+    "message": "Paslėptas"
+  },
+  "search.attribute.link": {
+    "message": "Simbolinė nuoroda"
+  },
+  "search.attribute.must": {
+    "message": "Privalo būti"
+  },
+  "search.attribute.must_not": {
+    "message": "Negali būti"
+  },
+  "search.attribute.read_only": {
+    "message": "Tik skaityti"
+  },
+  "search.attributes.label": {
+    "message": "Atributai:"
+  },
+  "search.between.and": {
+    "message": "ir"
+  },
+  "search.between.label": {
+    "message": "Data tarp:"
+  },
+  "search.close": {
+    "message": "Uždaryti"
+  },
+  "search.depth.all": {
+    "message": "visi (neribotas gylis)"
+  },
+  "search.depth.current": {
+    "message": "tik dabartinis aplankas"
+  },
+  "search.depth.label": {
+    "message": "Ieškoti poaplankiuose:"
+  },
+  "search.depth.levels": {
+    "message": "{count, plural, one {# lygis} few {# lygiai} other {# lygių}}"
+  },
+  "search.drives": {
+    "message": "Diskai"
+  },
+  "search.duplicates.content": {
+    "message": "toks pat turinys"
+  },
+  "search.duplicates.label": {
+    "message": "Ieškoti pasikartojančių failų:"
+  },
+  "search.duplicates.name": {
+    "message": "toks pat pavadinimas"
+  },
+  "search.duplicates.size": {
+    "message": "toks pat dydis"
+  },
+  "search.edit": {
+    "message": "F4 Redaguoti"
+  },
+  "search.error.between_days": {
+    "message": "„Data tarp“: reikia abiejų dienų"
+  },
+  "search.error.date": {
+    "message": "{text} nėra data, pvz., 2026-11-12"
+  },
+  "search.error.hex": {
+    "message": "{text} nėra šešioliktainė eilutė, pvz., 48 65 6c"
+  },
+  "search.error.keep": {
+    "message": "Nepavyko įsiminti paieškos: {err}"
+  },
+  "search.error.local_time": {
+    "message": "{text} nėra vietinis laikas"
+  },
+  "search.error.names_regex": {
+    "message": "Pavadinimo reguliarioji išraiška: {err}"
+  },
+  "search.error.newer_number": {
+    "message": "„Ne senesni nei“: reikia skaičiaus, o ne {text}"
+  },
+  "search.error.no_place": {
+    "message": "Lauke „Kur ieškoti“ nenurodytas aplankas"
+  },
+  "search.error.no_text": {
+    "message": "Lauke „Rasti tekstą“ nėra teksto"
+  },
+  "search.error.older_number": {
+    "message": "„Senesni nei“: reikia skaičiaus, o ne {text}"
+  },
+  "search.error.save": {
+    "message": "Nepavyko įrašyti paieškų: {err}"
+  },
+  "search.error.size_number": {
+    "message": "„Failo dydis“: reikia skaičiaus, o ne {text}"
+  },
+  "search.error.text_regex": {
+    "message": "Teksto reguliarioji išraiška: {err}"
+  },
+  "search.feed": {
+    "message": "Perkelti į skydelį"
+  },
+  "search.go_to_file": {
+    "message": "Eiti į failą"
+  },
+  "search.in_found": {
+    "message": "F2 Ieškoti rastuose failuose"
+  },
+  "search.locate": {
+    "message": "Iš locate indekso"
+  },
+  "search.names.label": {
+    "message": "Ieškoti:"
+  },
+  "search.names.placeholder": {
+    "message": "*.txt *.md | backup*  (tuščias: visi)"
+  },
+  "search.new": {
+    "message": "Nauja paieška"
+  },
+  "search.newer.label": {
+    "message": "Ne senesni nei:"
+  },
+  "search.older.label": {
+    "message": "Senesni nei:"
+  },
+  "search.only_selected": {
+    "message": "Ieškoti tik pažymėtuose failuose / aplankuose"
+  },
+  "search.only_selected_count": {
+    "message": "{count, plural, one {Ieškoti tik pažymėtuose (#)} few {Ieškoti tik pažymėtuose (#)} other {Ieškoti tik pažymėtuose (#)}}"
+  },
+  "search.page.advanced": {
+    "message": "Išplėstinė"
+  },
+  "search.page.general": {
+    "message": "Bendra"
+  },
+  "search.page.load_save": {
+    "message": "Įkelti/įrašyti"
+  },
+  "search.places.browse_prompt": {
+    "message": "Kur ieškoti"
+  },
+  "search.places.label": {
+    "message": "Kur ieškoti:"
+  },
+  "search.places.placeholder": {
+    "message": "Aplankai, atskirti ;"
+  },
+  "search.regex": {
+    "message": "RegEx"
+  },
+  "search.results.label": {
+    "message": "Paieškos rezultatai:"
+  },
+  "search.saved.delete": {
+    "message": "Ištrinti"
+  },
+  "search.saved.label": {
+    "message": "Ankstesnės paieškos:"
+  },
+  "search.saved.load": {
+    "message": "Įkelti"
+  },
+  "search.saved.name_first": {
+    "message": "Pirmiausia pavadinkite paiešką."
+  },
+  "search.saved.name_placeholder": {
+    "message": "Paieškos pavadinimas"
+  },
+  "search.saved.save": {
+    "message": "Įrašyti"
+  },
+  "search.size.label": {
+    "message": "Failo dydis:"
+  },
+  "search.start": {
+    "message": "Ieškoti"
+  },
+  "search.status.found": {
+    "message": "Rasta: {files, plural, one {# failas} few {# failai} other {# failų}} ir {dirs, plural, one {# aplankas} few {# aplankai} other {# aplankų}}"
+  },
+  "search.status.searching": {
+    "message": "Ieškoma…"
+  },
+  "search.status.searching_in": {
+    "message": "Ieškoma: {folder}"
+  },
+  "search.status.stopped": {
+    "message": "Sustabdyta: {counts}"
+  },
+  "search.stop": {
+    "message": "Stabdyti"
+  },
+  "search.text.ansi": {
+    "message": "ANSI (kodų lentelė {page})"
+  },
+  "search.text.case_sensitive": {
+    "message": "Skirti raidžių dydį"
+  },
+  "search.text.hex": {
+    "message": "Hex"
+  },
+  "search.text.label": {
+    "message": "Rasti tekstą:"
+  },
+  "search.text.not_containing": {
+    "message": "Rasti failus, kuriuose NĖRA šio teksto"
+  },
+  "search.text.office": {
+    "message": "Biuro failai (docx, xlsx, pptx, odt…)"
+  },
+  "search.text.placeholder": {
+    "message": "Ieškomas tekstas"
+  },
+  "search.text.whole_words": {
+    "message": "Tik ištisi žodžiai"
+  },
+  "search.title": {
+    "message": "Ieškoti failų"
+  },
+  "search.unit.bytes": {
+    "message": "baitai"
+  },
+  "search.view": {
+    "message": "F3 Peržiūrėti"
+  },
+  "settings.addons.builtin_version": {
+    "message": "{version}, pateikiama su Spark Commander"
+  },
+  "settings.addons.check_daily": {
+    "message": "Ieškoti priedų naujinių paleidžiant ir kasdien bei juos pasiūlyti"
+  },
+  "settings.addons.check_failed": {
+    "message": "Nepavyko patikrinti naujinių: {err}"
+  },
+  "settings.addons.check_now": {
+    "message": "Tikrinti dabar"
+  },
+  "settings.addons.checking": {
+    "message": "Ieškoma naujinių..."
+  },
+  "settings.addons.download": {
+    "message": "Atsisiųsti"
+  },
+  "settings.addons.downloading": {
+    "message": "Atsisiunčiama: {done} iš {size}"
+  },
+  "settings.addons.file": {
+    "message": "Failas"
+  },
+  "settings.addons.installed.builtin": {
+    "message": "pateikiama su Spark Commander"
+  },
+  "settings.addons.installed.label": {
+    "message": "Įdiegta"
+  },
+  "settings.addons.installed.none": {
+    "message": "nėra"
+  },
+  "settings.addons.intro": {
+    "message": "Kai kuriems darbams Spark Commander naudoja šias kitų projektų programas. Priedai atsisiunčiami atskirai, jums pasirinkus; 7-Zip ir PDFium pateikiami kartu."
+  },
+  "settings.addons.never_offer": {
+    "message": "Niekada nesiūlyti priedų, kai jų reikia failui"
+  },
+  "settings.addons.offers": {
+    "message": "Pasiūlymai ir naujiniai"
+  },
+  "settings.addons.online.label": {
+    "message": "Internete"
+  },
+  "settings.addons.online.looking": {
+    "message": "ieškoma..."
+  },
+  "settings.addons.online.none": {
+    "message": "šiai sistemai nėra"
+  },
+  "settings.addons.online.not_yet": {
+    "message": "dar netikrinta"
+  },
+  "settings.addons.online.unknown": {
+    "message": "nežinoma"
+  },
+  "settings.addons.remove": {
+    "message": "Šalinti"
+  },
+  "settings.addons.up_to_date": {
+    "message": "Priedų sąrašas naujausias."
+  },
+  "settings.addons.version": {
+    "message": "Versija"
+  },
+  "settings.addons.website": {
+    "message": "Svetainė"
+  },
+  "settings.appearance.title": {
+    "message": "Išvaizda"
+  },
+  "settings.apply": {
+    "message": "Taikyti"
+  },
+  "settings.backdrop.blur": {
+    "message": "Sulieti fone esantį darbalaukį"
+  },
+  "settings.backdrop.clear": {
+    "message": "0 %, tik darbalaukis"
+  },
+  "settings.backdrop.cover": {
+    "message": "Kiek uždengiamas fone esantis darbalaukis:"
+  },
+  "settings.backdrop.opacity": {
+    "message": "{opacity} %"
+  },
+  "settings.backdrop.sidebar": {
+    "message": "Šoninė juosta"
+  },
+  "settings.backdrop.solid": {
+    "message": "100 %, nepermatoma"
+  },
+  "settings.backdrop.terminal": {
+    "message": "Terminalas"
+  },
+  "settings.cancel": {
+    "message": "Atšaukti"
+  },
+  "settings.date.as_system": {
+    "message": "Kaip sistemoje: {date}"
+  },
+  "settings.date.custom": {
+    "message": "Pasirinktinis:"
+  },
+  "settings.date.pattern_help": {
+    "message": "yyyy metai, MM mėnuo (MMM jo pavadinimas), dd diena (ddd savaitės diena)"
+  },
+  "settings.date.shown_as": {
+    "message": "Rodoma kaip"
+  },
+  "settings.date.shown_as_note": {
+    "message": "failų sąrašuose; dialoguose pridedamos sekundės"
+  },
+  "settings.date.title": {
+    "message": "Data"
+  },
+  "settings.editor.browse": {
+    "message": "Naršyti..."
+  },
+  "settings.editor.choose": {
+    "message": "Pasirinkti"
+  },
+  "settings.editor.external": {
+    "message": "Išorinis redaktorius (Ctrl+Shift+F4):"
+  },
+  "settings.editor.external_help": {
+    "message": "%1 – failas, kitaip jis pridedamas gale; pvz., code --wait %1"
+  },
+  "settings.editor.limit": {
+    "message": "Integruotas redaktorius (F4) atidaro failus iki"
+  },
+  "settings.editor.limit_unit": {
+    "message": "MB"
+  },
+  "settings.editor.title": {
+    "message": "F4 redaktorius"
+  },
+  "settings.error.no_folder": {
+    "message": "nėra konfigūracijos aplanko"
+  },
+  "settings.files_shown.hidden": {
+    "message": "Paslėpti failai"
+  },
+  "settings.files_shown.system": {
+    "message": "Sisteminiai failai"
+  },
+  "settings.files_shown.title": {
+    "message": "Rodomi failai"
+  },
+  "settings.font.as_system": {
+    "message": "Kaip sistemoje"
+  },
+  "settings.font.chosen": {
+    "message": "Pasirinktas; sistemos šriftas – {family}, {size}"
+  },
+  "settings.font.fixed": {
+    "message": "Žiūryklė"
+  },
+  "settings.font.fixed_note": {
+    "message": "Tik fiksuoto pločio šriftai; taip pat naudojamas redaktoriuje ir lyginant failus."
+  },
+  "settings.font.main": {
+    "message": "Pagrindinio lango šriftas"
+  },
+  "settings.font.system": {
+    "message": "Sistemos šriftas"
+  },
+  "settings.language.system": {
+    "message": "Sistemos kalba"
+  },
+  "settings.language.system_named": {
+    "message": "Sistemos kalba: {language}"
+  },
+  "settings.language.title": {
+    "message": "Kalba"
+  },
+  "settings.menus.automatic": {
+    "message": "Automatiškai: ☰ mygtukas GNOME aplinkoje, kitur meniu juosta"
+  },
+  "settings.menus.bar": {
+    "message": "Meniu juosta"
+  },
+  "settings.menus.button": {
+    "message": "☰ mygtukas antraštės juostoje"
+  },
+  "settings.menus.title": {
+    "message": "Meniu"
+  },
+  "settings.ok": {
+    "message": "Gerai"
+  },
+  "settings.page.addons": {
+    "message": "Priedai"
+  },
+  "settings.page.date": {
+    "message": "Data"
+  },
+  "settings.page.display": {
+    "message": "Rodymas"
+  },
+  "settings.page.edit_view": {
+    "message": "Redagavimas/peržiūra"
+  },
+  "settings.page.font": {
+    "message": "Šriftas"
+  },
+  "settings.page.language": {
+    "message": "Kalba"
+  },
+  "settings.page.layout": {
+    "message": "Išdėstymas"
+  },
+  "settings.page.operations": {
+    "message": "Operacijos"
+  },
+  "settings.page.passwords": {
+    "message": "Slaptažodžiai"
+  },
+  "settings.page.terminal": {
+    "message": "Terminalas"
+  },
+  "settings.page.toolbar": {
+    "message": "Įrankių juosta"
+  },
+  "settings.passwords.change_master": {
+    "message": "Keisti pagrindinį slaptažodį…"
+  },
+  "settings.passwords.locked": {
+    "message": "Šiame kompiuteryje jie užrakinti: juos atrakina pagrindinis slaptažodis."
+  },
+  "settings.passwords.master_set": {
+    "message": "Pagrindinis slaptažodis nustatytas: nukopijavus nustatymų aplanką, kitame kompiuteryje jie atsidaro, kai ten įvedamas šis slaptažodis."
+  },
+  "settings.passwords.no_master": {
+    "message": "Pagrindinis slaptažodis nenustatytas: nukopijavus nustatymų aplanką, kitame kompiuteryje jie neatsidarys; ten juos reikės įvesti iš naujo."
+  },
+  "settings.passwords.not_removed": {
+    "message": "Pagrindinis slaptažodis nepašalintas: {err}"
+  },
+  "settings.passwords.remove_master": {
+    "message": "Pašalinti pagrindinį slaptažodį"
+  },
+  "settings.passwords.saved": {
+    "message": "{count, plural, one {Įrašytas # slaptažodis} few {Įrašyti # slaptažodžiai} other {Įrašyta # slaptažodžių}} (serverių, bendrinamų išteklių, šifruotų diskų), užšifruoti nustatymų aplanke; juos atrakinantis raktas yra šio kompiuterio raktinėje."
+  },
+  "settings.passwords.set_master": {
+    "message": "Nustatyti pagrindinį slaptažodį…"
+  },
+  "settings.passwords.title": {
+    "message": "Įrašyti slaptažodžiai"
+  },
+  "settings.passwords.unlock": {
+    "message": "Atrakinti…"
+  },
+  "settings.queue.clear_after": {
+    "message": "Išvalyti atliktas operacijas po"
+  },
+  "settings.queue.clear_after_help": {
+    "message": "0: iškart, kai baigiamos. Nepavykusios ir atšauktos lieka, kol jas išvalysite."
+  },
+  "settings.queue.clear_after_unit": {
+    "message": "min."
+  },
+  "settings.queue.download_limit": {
+    "message": "Atsisiuntimo greičio riba"
+  },
+  "settings.queue.download_limit_help": {
+    "message": "Atsisiųsti iš nuorodos ir kopijavimas iš FTP bei SFTP serverių, taip pat jau vykdomi. 0: be ribos."
+  },
+  "settings.queue.download_limit_unit": {
+    "message": "KB/s"
+  },
+  "settings.queue.title": {
+    "message": "Operacijų eilė"
+  },
+  "settings.shell.default": {
+    "message": "Numatytasis: {shell}"
+  },
+  "settings.shell.note": {
+    "message": "Jį paleidžia naujos terminalo kortelės."
+  },
+  "settings.shell.title": {
+    "message": "Apvalkalas"
+  },
+  "settings.sort_folders.by_name": {
+    "message": "Visada pagal pavadinimą"
+  },
+  "settings.sort_folders.like_files": {
+    "message": "Kaip failus (taip pat pagal laiką)"
+  },
+  "settings.sort_folders.title": {
+    "message": "Aplankų rūšiavimas"
+  },
+  "settings.tabs.header_always": {
+    "message": "Rodyti kortelių juostą net tada, kai yra tik viena kortelė"
+  },
+  "settings.tabs.title": {
+    "message": "Aplankų kortelės"
+  },
+  "settings.time.as_system": {
+    "message": "Kaip sistemoje"
+  },
+  "settings.time.h12": {
+    "message": "12 valandų (2:05 PM)"
+  },
+  "settings.time.h24": {
+    "message": "24 valandos (14:05)"
+  },
+  "settings.time.title": {
+    "message": "Laikas"
+  },
+  "settings.title": {
+    "message": "Nustatymai"
+  },
+  "settings.toolbar.add": {
+    "message": "Pridėti mygtuką…"
+  },
+  "settings.toolbar.move_down": {
+    "message": "Perkelti žemyn"
+  },
+  "settings.toolbar.move_up": {
+    "message": "Perkelti aukštyn"
+  },
+  "settings.toolbar.place": {
+    "message": "Po meniu juosta; antraštės juostoje, kai meniu paslėpti po ☰ mygtuku, kaip GNOME programose. Jei mygtukų nėra, juosta nerodoma."
+  },
+  "settings.toolbar.remove": {
+    "message": "Šalinti"
+  },
+  "settings.toolbar.replace": {
+    "message": "Pakeisti…"
+  },
+  "settings.toolbar.restore_default": {
+    "message": "Atkurti numatytuosius"
+  },
+  "settings.toolbar.title": {
+    "message": "Įrankių juostos mygtukai"
+  },
+  "settings.viewer.font.ansi": {
+    "message": "ANSI (Windows)"
+  },
+  "settings.viewer.font.ascii": {
+    "message": "ASCII (DOS)"
+  },
+  "settings.viewer.font.auto": {
+    "message": "Automatiškai"
+  },
+  "settings.viewer.font.label": {
+    "message": "Šriftas paleidžiant:"
+  },
+  "settings.viewer.font.variable": {
+    "message": "Kintamo pločio"
+  },
+  "settings.viewer.minimap": {
+    "message": "Mini žemėlapis"
+  },
+  "settings.viewer.show": {
+    "message": "Rodyti:"
+  },
+  "settings.viewer.start.auto": {
+    "message": "Automatiškai"
+  },
+  "settings.viewer.start.binary": {
+    "message": "Dvejetainis"
+  },
+  "settings.viewer.start.hex": {
+    "message": "Šešioliktainis"
+  },
+  "settings.viewer.start.label": {
+    "message": "Rodymas paleidžiant:"
+  },
+  "settings.viewer.start.text": {
+    "message": "Tekstas"
+  },
+  "settings.viewer.title": {
+    "message": "F3 žiūryklė"
+  },
+  "settings.viewer.width.binary": {
+    "message": "Dvejetainis"
+  },
+  "settings.viewer.width.label": {
+    "message": "Rodymo plotis (simboliais):"
+  },
+  "settings.viewer.width.text": {
+    "message": "Tekstas"
+  },
+  "settings.viewer.wrap": {
+    "message": "Laužyti tekstą"
+  },
+  "shells.command_prompt": {
+    "message": "Komandų eilutė"
+  },
+  "sidebar.device.no_files": {
+    "message": "nebendrina failų"
+  },
+  "sidebar.device.not_answering": {
+    "message": "{name} neatsako: atrakinkite jį ir atidarykite jame KDE Connect, tada iš naujo nuskaitykite aplanką (F2)."
+  },
+  "sidebar.device.not_answering_error": {
+    "message": "{name} neatsako ({err}): atrakinkite jį ir atidarykite jame KDE Connect."
+  },
+  "sidebar.device.not_connected": {
+    "message": "neprijungtas"
+  },
+  "sidebar.device.opening": {
+    "message": "Atidaromas {name}..."
+  },
+  "sidebar.device.reconnecting": {
+    "message": "{name} neatsako: jungiamasi iš naujo..."
+  },
+  "sidebar.device.unmount_failed": {
+    "message": "{name}: nepavyko atjungti: {err}"
+  },
+  "sidebar.group.bookmarks": {
+    "message": "Žymelės"
+  },
+  "sidebar.group.cloud": {
+    "message": "Debesis"
+  },
+  "sidebar.group.devices": {
+    "message": "Įrenginiai"
+  },
+  "sidebar.group.drives": {
+    "message": "Diskai"
+  },
+  "sidebar.group.network": {
+    "message": "Tinklas"
+  },
+  "sidebar.section.connections": {
+    "message": "Ryšiai"
+  },
+  "sidebar.section.folders": {
+    "message": "Aplankai"
+  },
+  "sidebar.section.operations": {
+    "message": "Operacijos"
+  },
+  "sidebar.section.places": {
+    "message": "Vietos"
+  },
+  "sidebar.volume.locked": {
+    "message": "užrakintas"
+  },
+  "sidebar.volume.mounting": {
+    "message": "Prijungiamas {name}..."
+  },
+  "sidebar.volume.not_mounted": {
+    "message": "neprijungtas"
+  },
+  "sidebar.volume.open": {
+    "message": "Atidaryti"
+  },
+  "sidebar.volume.space": {
+    "message": "laisva {free} iš {total}"
+  },
+  "sidebar.volume.unmount": {
+    "message": "Atjungti"
+  },
+  "sidebar.volume.unmount_failed": {
+    "message": "Nepavyko atjungti: {err}"
+  },
+  "split.bad_size": {
+    "message": "„{size}“ nėra dydis: 100 MB, 1.5 GB, 650m"
+  },
+  "split.choose": {
+    "message": "Užveskite žymeklį ant skaidomo failo."
+  },
+  "split.combine.choose": {
+    "message": "Užveskite žymeklį ant dalies (name.001) arba jos .crc failo."
+  },
+  "split.combine.dialog_title": {
+    "message": "Sujungti failus"
+  },
+  "split.combine.label": {
+    "message": "Sujungti dalis į failą:"
+  },
+  "split.combine.title": {
+    "message": "Sujungti „{name}“"
+  },
+  "split.combined_no_crc": {
+    "message": "{count, plural, one {Sujungta # dalis, nėra CRC failo patikrai} few {Sujungtos # dalys, nėra CRC failo patikrai} other {Sujungta # dalių, nėra CRC failo patikrai}}"
+  },
+  "split.crc_mismatch": {
+    "message": "{target} neatitinka {file}: trūksta dalies arba ji sugadinta"
+  },
+  "split.crc_names_no_file": {
+    "message": "CRC faile nenurodytas failas"
+  },
+  "split.crc_unreadable": {
+    "message": "sujungta, bet nepavyko nuskaityti {file}: {err}"
+  },
+  "split.dialog_title": {
+    "message": "Skaidyti failą"
+  },
+  "split.label": {
+    "message": "Skaidyti „{name}“ į dalis aplanke:"
+  },
+  "split.part_missing": {
+    "message": "trūksta {path}"
+  },
+  "split.part_size": {
+    "message": "Dalies dydis:"
+  },
+  "split.title": {
+    "message": "Skaidyti „{name}“"
+  },
+  "sync.close": {
+    "message": "Uždaryti"
+  },
+  "sync.column.date": {
+    "message": "Data"
+  },
+  "sync.column.name": {
+    "message": "Pavadinimas"
+  },
+  "sync.column.size": {
+    "message": "Dydis"
+  },
+  "sync.compare": {
+    "message": "Lyginti"
+  },
+  "sync.confirm.copy_left": {
+    "message": "Kopijuoti {count} į kairę ({size})"
+  },
+  "sync.confirm.copy_right": {
+    "message": "Kopijuoti {count} į dešinę ({size})"
+  },
+  "sync.confirm.delete_left": {
+    "message": "Ištrinti {count} kairėje"
+  },
+  "sync.confirm.delete_right": {
+    "message": "Ištrinti {count} dešinėje"
+  },
+  "sync.confirm.ok": {
+    "message": "Sinchronizuoti"
+  },
+  "sync.confirm.text": {
+    "message": "{actions}. Nukopijuoti failai pakeis ten esančius.{trash, select, yes { Šiame kompiuteryje ištrinti failai bus perkelti į šiukšlinę.} other {}}"
+  },
+  "sync.confirm.title": {
+    "message": "Sinchronizuoti"
+  },
+  "sync.error.changed": {
+    "message": "pasikeitė po palyginimo; palyginkite dar kartą"
+  },
+  "sync.error.compare": {
+    "message": "Nepavyko palyginti: {err}"
+  },
+  "sync.error.no_folders": {
+    "message": "Sinchronizuojami du aplankai: nė viename skydelyje neturi būti rodomas archyvas ar paieškos rezultatai."
+  },
+  "sync.left": {
+    "message": "Kairė"
+  },
+  "sync.mask.label": {
+    "message": "Failai:"
+  },
+  "sync.option.asymmetric": {
+    "message": "Asimetriškai (dešinė tampa kairės kopija)"
+  },
+  "sync.option.by_content": {
+    "message": "Pagal turinį"
+  },
+  "sync.option.ignore_date": {
+    "message": "Nepaisyti datos"
+  },
+  "sync.option.subfolders": {
+    "message": "Poaplankiai"
+  },
+  "sync.result.done": {
+    "message": "{count, plural, one {Sinchronizuota: #} few {Sinchronizuota: #} other {Sinchronizuota: #}}"
+  },
+  "sync.result.failed": {
+    "message": "{count, plural, one {Nesinchronizuota: #} few {Nesinchronizuota: #} other {Nesinchronizuota: #}}; {first}"
+  },
+  "sync.right": {
+    "message": "Dešinė"
+  },
+  "sync.show.equal": {
+    "message": "= vienodi"
+  },
+  "sync.show.label": {
+    "message": "Rodyti:"
+  },
+  "sync.show.other": {
+    "message": "≠ paliekami"
+  },
+  "sync.show.to_left": {
+    "message": "← į kairę"
+  },
+  "sync.show.to_right": {
+    "message": "→ į dešinę"
+  },
+  "sync.status.both_empty": {
+    "message": "Abu tušti."
+  },
+  "sync.status.comparing": {
+    "message": "Lyginama: {folder}"
+  },
+  "sync.status.counts": {
+    "message": "Kopijuoti į dešinę: {right}, į kairę: {left}, ištrinti: {delete}, vienodi: {equal}, paliekami: {alone}"
+  },
+  "sync.status.stopped": {
+    "message": "Sustabdyta."
+  },
+  "sync.stop": {
+    "message": "Stabdyti"
+  },
+  "sync.synchronize": {
+    "message": "Sinchronizuoti..."
+  },
+  "sync.task.title": {
+    "message": "Sinchronizuoti {left} ir {right}"
+  },
+  "sync.title": {
+    "message": "Sinchronizuoti aplankus"
+  },
+  "tab_menu.close_all_tabs": {
+    "message": "Uždaryti visas korteles"
+  },
+  "tab_menu.close_duplicate_tabs": {
+    "message": "Uždaryti pasikartojančias korteles"
+  },
+  "tab_menu.close_tab": {
+    "message": "Uždaryti šią kortelę"
+  },
+  "tab_menu.copy_tab_to_other_panel": {
+    "message": "Kopijuoti kortelę į kitą skydelį"
+  },
+  "tab_menu.duplicate_tab": {
+    "message": "Dubliuoti šią kortelę"
+  },
+  "tab_menu.list_tabs": {
+    "message": "Rodyti visų kortelių sąrašą"
+  },
+  "tab_menu.lock_tab": {
+    "message": "Užrakinti šią kortelę"
+  },
+  "tab_menu.none": {
+    "message": "(nėra)"
+  },
+  "tab_menu.rename_tab": {
+    "message": "Pervardyti kortelę..."
+  },
+  "tabs.error.reopen": {
+    "message": "Nepavyko iš naujo atidaryti kortelės: {err}"
+  },
+  "tabs.history.empty": {
+    "message": "Šios kortelės istorijoje dar nėra aplankų."
+  },
+  "tabs.new": {
+    "message": "Nauja kortelė"
+  },
+  "tabs.rename.label": {
+    "message": "Naujas pavadinimas:"
+  },
+  "tabs.rename.title": {
+    "message": "Pervardyti kortelę"
+  },
+  "tabs.search_results": {
+    "message": "Paieškos rezultatai"
+  },
+  "terminal.busy": {
+    "message": "Terminale vykdoma programa: paleiskite komandą, kai ji baigsis."
+  },
+  "terminal.close.idle": {
+    "message": "Uždaryti šią terminalo kortelę? Jos apvalkalas bus užbaigtas."
+  },
+  "terminal.close.ok": {
+    "message": "Uždaryti"
+  },
+  "terminal.close.running": {
+    "message": "Uždaryti šią terminalo kortelę? Joje veikianti programa bus sustabdyta."
+  },
+  "terminal.close.title": {
+    "message": "Uždaryti kortelę"
+  },
+  "terminal.error.start_shell": {
+    "message": "Nepavyko paleisti apvalkalo: {err}"
+  },
+  "terminal.jump_to_bottom": {
+    "message": "Į apačią (Ctrl+End) ↓"
+  },
+  "terminal.menu.copy": {
+    "message": "Kopijuoti"
+  },
+  "terminal.menu.paste": {
+    "message": "Įklijuoti"
+  },
+  "toolbar.customize": {
+    "message": "Tinkinti įrankių juostą…"
+  },
+  "tools.clear_key": {
+    "message": "Išvalyti"
+  },
+  "tools.close": {
+    "message": "Uždaryti"
+  },
+  "tools.delete": {
+    "message": "Ištrinti"
+  },
+  "tools.empty": {
+    "message": "Įrankių dar nėra: „Naujas...“ prideda įrankį."
+  },
+  "tools.field.command": {
+    "message": "Komanda"
+  },
+  "tools.field.key": {
+    "message": "Klavišas"
+  },
+  "tools.field.name": {
+    "message": "Pavadinimas"
+  },
+  "tools.intro": {
+    "message": "Jūsų komandų eilutės meniu Įrankiai: spustelėkite vieną ten arba paspauskite jos klavišą."
+  },
+  "tools.key.none": {
+    "message": "Nėra"
+  },
+  "tools.key.waiting": {
+    "message": "Paspauskite klavišą... (Esc: nėra)"
+  },
+  "tools.move_down": {
+    "message": "Perkelti žemyn"
+  },
+  "tools.move_up": {
+    "message": "Perkelti aukštyn"
+  },
+  "tools.name.placeholder": {
+    "message": "Lyginti su kita puse"
+  },
+  "tools.new": {
+    "message": "Naujas..."
+  },
+  "tools.new_name": {
+    "message": "Įrankis {number}"
+  },
+  "tools.no_command": {
+    "message": "{tool} dar neturi komandos: Įrankiai > Tvarkyti įrankius."
+  },
+  "tools.not_local": {
+    "message": "Įrankiai vykdomi šiame kompiuteryje, o skydelis rodo serverį arba archyvą."
+  },
+  "tools.note.key_of_command": {
+    "message": "{key} taip pat yra {command}: jį perima įrankis."
+  },
+  "tools.note.key_of_other_tool": {
+    "message": "{key} priklauso ir {tool}: jį perima žemiau sąraše esantis."
+  },
+  "tools.placeholders": {
+    "message": "%P – šio skydelio aplankas, %T – kito skydelio (abu baigiasi skirtuku, todėl \"%P%N\" yra kelias), %N – failas po žymekliu, %O – jo pavadinimas be plėtinio, %E – plėtinys, %S – pažymėti failai (kitaip – esantis po žymekliu), kiekvienas kabutėse; %% – %. Likusius dėkite į kabutes: \"%P%N\"."
+  },
+  "tools.run_in_terminal": {
+    "message": "Vykdyti terminale, kad matytumėte, ką išveda"
+  },
+  "tools.set_key": {
+    "message": "Nustatyti klavišą..."
+  },
+  "tools.title": {
+    "message": "Įrankiai"
+  },
+  "transfer.answer.cancel": {
+    "message": "Atšaukti"
+  },
+  "transfer.answer.elevate": {
+    "message": "Administratoriaus teisėmis"
+  },
+  "transfer.answer.overwrite": {
+    "message": "Perrašyti"
+  },
+  "transfer.answer.overwrite_all": {
+    "message": "Perrašyti visus"
+  },
+  "transfer.answer.rename": {
+    "message": "Pervardyti"
+  },
+  "transfer.answer.retry": {
+    "message": "Bandyti dar kartą"
+  },
+  "transfer.answer.skip": {
+    "message": "Praleisti"
+  },
+  "transfer.answer.skip_all": {
+    "message": "Praleisti visus"
+  },
+  "transfer.archive.local_only": {
+    "message": "Į archyvą galima dėti tik šio kompiuterio failus: pirmiausia nukopijuokite juos čia."
+  },
+  "transfer.cancel": {
+    "message": "Atšaukti"
+  },
+  "transfer.error.elevate_hint": {
+    "message": "Administratoriaus teisėmis: šis ir kiti atmesti veiksmai bus atlikti, kai baigsis visa kita, slaptažodžio paprašant tik kartą."
+  },
+  "transfer.error.title": {
+    "message": "Klaida"
+  },
+  "transfer.exists.describe": {
+    "message": "{count, plural, one {{size} baitas, {time}} few {{size} baitai, {time}} other {{size} baitų, {time}}}"
+  },
+  "transfer.exists.text": {
+    "message": "Jau esantis: {existing}\nNaujas: {new}"
+  },
+  "transfer.exists.title": {
+    "message": "Failas jau yra"
+  },
+  "transfer.extract_failed": {
+    "message": "Nepavyko jų išimti: {err}"
+  },
+  "transfer.into_archive.question_many": {
+    "message": "{kind, select, copy {Kopijuoti} other {Perkelti}} {count, plural, one {# elementą} few {# elementus} other {# elementų}} į {into}? Ten esantys tokių pačių pavadinimų elementai bus pakeisti."
+  },
+  "transfer.into_archive.question_one": {
+    "message": "{kind, select, copy {Kopijuoti} other {Perkelti}} „{name}“ į {into}? Ten esantis tokio paties pavadinimo elementas bus pakeistas."
+  },
+  "transfer.into_archive.title_many": {
+    "message": "{kind, select, copy {Kopijuoti} other {Perkelti}} {count, plural, one {# elementą} few {# elementus} other {# elementų}} į {archive}"
+  },
+  "transfer.into_archive.title_one": {
+    "message": "{kind, select, copy {Kopijuoti} other {Perkelti}} „{name}“ į {archive}"
+  },
+  "transfer.label.many": {
+    "message": "{kind, select, copy {Kopijuoti} other {Perkelti}} {count, plural, one {# elementą} few {# elementus} other {# elementų}} į:"
+  },
+  "transfer.label.many_server": {
+    "message": "{kind, select, copy {Kopijuoti} other {Perkelti}} {count, plural, one {# elementą} few {# elementus} other {# elementų}} į {server}:"
+  },
+  "transfer.label.one": {
+    "message": "{kind, select, copy {Kopijuoti} other {Perkelti}} „{name}“ į:"
+  },
+  "transfer.label.one_server": {
+    "message": "{kind, select, copy {Kopijuoti} other {Perkelti}} „{name}“ į {server}:"
+  },
+  "transfer.ok": {
+    "message": "Gerai"
+  },
+  "transfer.overwrite.all": {
+    "message": "Perrašyti visus"
+  },
+  "transfer.overwrite.ask": {
+    "message": "Klausti"
+  },
+  "transfer.overwrite.label": {
+    "message": "Kai paskirties vietoje yra tokio paties pavadinimo failas:"
+  },
+  "transfer.overwrite.older": {
+    "message": "Perrašyti senesnius"
+  },
+  "transfer.overwrite.rename": {
+    "message": "Pervardyti kopijas"
+  },
+  "transfer.overwrite.skip": {
+    "message": "Praleisti visus"
+  },
+  "transfer.remove_moved": {
+    "message": "Pašalinti perkeltus iš {name}"
+  },
+  "transfer.speed": {
+    "message": "{size}/s"
+  },
+  "transfer.strip.counting": {
+    "message": "skaičiuojama: {count, plural, one {# failas} few {# failai} other {# failų}}"
+  },
+  "transfer.strip.progress": {
+    "message": "{files} / {count, plural, one {# failas} few {# failai} other {# failų}}, {percent} %"
+  },
+  "transfer.strip.queue": {
+    "message": "Eilė..."
+  },
+  "transfer.strip.queue_waiting": {
+    "message": "Eilė ({count, plural, one {# laukia} few {# laukia} other {# laukia}})..."
+  },
+  "transfer.title.copy": {
+    "message": "Kopijuoti"
+  },
+  "transfer.title.move": {
+    "message": "Perkelti"
+  },
+  "viewer.as_text_hint": {
+    "message": "{err}. 1 parodo failą kaip tekstą."
+  },
+  "viewer.book.cannot_read": {
+    "message": "Šios knygos negalima perskaityti: {err}. 1 parodo failą kaip tekstą."
+  },
+  "viewer.book.continuing": {
+    "message": "Tęsiama nuo {percent}"
+  },
+  "viewer.book.error.compression": {
+    "message": "suglaudinta dar neskaitomu būdu ({compression})"
+  },
+  "viewer.book.error.damaged": {
+    "message": "sugadinta knyga"
+  },
+  "viewer.book.error.damaged_zip": {
+    "message": "sugadintas zip"
+  },
+  "viewer.book.error.drm": {
+    "message": "apsaugota DRM: ją gali skaityti tik Kindle"
+  },
+  "viewer.book.error.huffman": {
+    "message": "suglaudinta kaip Amazon knygos (HUFF/CDIC), o tokių dar neskaitome"
+  },
+  "viewer.book.error.missing_part": {
+    "message": "knygoje nėra {name}"
+  },
+  "viewer.book.error.no_package": {
+    "message": "knygoje nėra paketo failo"
+  },
+  "viewer.book.error.no_text": {
+    "message": "knygoje nėra teksto"
+  },
+  "viewer.book.error.not_zip": {
+    "message": "ne zip: sugadinta ar DRM apsaugota knyga?"
+  },
+  "viewer.book.error.zip_method": {
+    "message": "{name}: suglaudinta zip būdu, kurio čia negalima perskaityti ({method})"
+  },
+  "viewer.cannot_show": {
+    "message": "Negalima parodyti: {err}"
+  },
+  "viewer.convert.failed": {
+    "message": "{tool} nepavyko konvertuoti ({status})"
+  },
+  "viewer.converting": {
+    "message": "Konvertuojama su {tool}…"
+  },
+  "viewer.copy.too_large": {
+    "message": "Didesni nei {megabytes} MB žymėjimai nekopijuojami."
+  },
+  "viewer.encoding.cp1250": {
+    "message": "Rytų Europa (1250)"
+  },
+  "viewer.encoding.cp1251": {
+    "message": "Windows kirilica (1251)"
+  },
+  "viewer.encoding.cp1252": {
+    "message": "Vakarų Latin1 (1252)"
+  },
+  "viewer.encoding.cp1253": {
+    "message": "Graikų (1253)"
+  },
+  "viewer.encoding.cp1254": {
+    "message": "Turkų (1254)"
+  },
+  "viewer.encoding.cp1255": {
+    "message": "Hebrajų (1255)"
+  },
+  "viewer.encoding.cp1256": {
+    "message": "Arabų (1256)"
+  },
+  "viewer.encoding.cp1257": {
+    "message": "Baltų (1257)"
+  },
+  "viewer.encoding.cp1258": {
+    "message": "Vietnamiečių (1258)"
+  },
+  "viewer.encoding.cp20866": {
+    "message": "Kirilica KOI8-R (20866)"
+  },
+  "viewer.encoding.cp437": {
+    "message": "DOS-JAV (437)"
+  },
+  "viewer.encoding.cp850": {
+    "message": "DOS-LATIN1 (850)"
+  },
+  "viewer.encoding.cp852": {
+    "message": "DOS Vidurio Europa (852)"
+  },
+  "viewer.encoding.cp866": {
+    "message": "DOS kirilica (866)"
+  },
+  "viewer.encoding.cp874": {
+    "message": "Tajų (874)"
+  },
+  "viewer.encoding.cp932": {
+    "message": "Japonų (932)"
+  },
+  "viewer.encoding.cp936": {
+    "message": "Kinų, žemyninė Kinija (936)"
+  },
+  "viewer.encoding.cp949": {
+    "message": "Korėjiečių (949)"
+  },
+  "viewer.encoding.cp950": {
+    "message": "Kinų, Taivanas (950)"
+  },
+  "viewer.find.not_found": {
+    "message": "Nerasta: {text}"
+  },
+  "viewer.find.not_hex": {
+    "message": "Ne šešioliktainė eilutė: {text}"
+  },
+  "viewer.find.nothing": {
+    "message": "Nėra ko ieškoti."
+  },
+  "viewer.find.save_failed": {
+    "message": "Nepavyko įrašyti paieškų: {err}"
+  },
+  "viewer.loading": {
+    "message": "Įkeliama…"
+  },
+  "viewer.markdown.too_large": {
+    "message": "Daugiau nei {megabytes} MB: 1 parodo kaip tekstą."
+  },
+  "viewer.menu.binary": {
+    "message": "Dvejetainis (fiksuotas eilutės ilgis)"
+  },
+  "viewer.menu.book": {
+    "message": "Knyga (EPUB, FB2)"
+  },
+  "viewer.menu.close": {
+    "message": "Uždaryti"
+  },
+  "viewer.menu.configure": {
+    "message": "Konfigūruoti..."
+  },
+  "viewer.menu.copy_hex": {
+    "message": "Kopijuoti kaip šešioliktainius simbolius"
+  },
+  "viewer.menu.copy_text": {
+    "message": "Kopijuoti kaip tekstą"
+  },
+  "viewer.menu.edit": {
+    "message": "Taisa"
+  },
+  "viewer.menu.encoding": {
+    "message": "Koduotė"
+  },
+  "viewer.menu.file": {
+    "message": "Failas"
+  },
+  "viewer.menu.find": {
+    "message": "Ieškoti..."
+  },
+  "viewer.menu.find_next": {
+    "message": "Ieškoti kito"
+  },
+  "viewer.menu.fit_image": {
+    "message": "Talpinti paveikslėlį lange"
+  },
+  "viewer.menu.font_ansi": {
+    "message": "ANSI (Windows simbolių rinkinys)"
+  },
+  "viewer.menu.font_ascii": {
+    "message": "ASCII (DOS simbolių rinkinys)"
+  },
+  "viewer.menu.font_page": {
+    "message": "Kaip nustatyta šriftui"
+  },
+  "viewer.menu.font_variable": {
+    "message": "Kintamo pločio simboliai"
+  },
+  "viewer.menu.hex": {
+    "message": "Šešioliktainis"
+  },
+  "viewer.menu.html": {
+    "message": "HTML tekstas (be žymų)"
+  },
+  "viewer.menu.minimap": {
+    "message": "Mini žemėlapis"
+  },
+  "viewer.menu.next_file": {
+    "message": "Kitas failas"
+  },
+  "viewer.menu.only_larger": {
+    "message": "Talpinti tik didesnius paveikslėlius"
+  },
+  "viewer.menu.open": {
+    "message": "Atidaryti..."
+  },
+  "viewer.menu.options": {
+    "message": "Parinktys"
+  },
+  "viewer.menu.picture": {
+    "message": "Vaizdas/daugialypė terpė"
+  },
+  "viewer.menu.previous_file": {
+    "message": "Ankstesnis failas"
+  },
+  "viewer.menu.reload": {
+    "message": "Įkelti iš naujo"
+  },
+  "viewer.menu.save_as": {
+    "message": "Įrašyti kaip..."
+  },
+  "viewer.menu.search_google": {
+    "message": "Ieškoti pažymėto teksto per Google"
+  },
+  "viewer.menu.select_all": {
+    "message": "Pažymėti viską"
+  },
+  "viewer.menu.syntax_colors": {
+    "message": "Sintaksės spalvos"
+  },
+  "viewer.menu.text_only": {
+    "message": "Tik tekstas"
+  },
+  "viewer.menu.unicode": {
+    "message": "Unicode (UTF-16)"
+  },
+  "viewer.menu.wrap": {
+    "message": "Laužyti tekstą ({columns, plural, one {# stulpelis} few {# stulpeliai} other {# stulpelių}})"
+  },
+  "viewer.mode.binary": {
+    "message": "Dvejetainis · {page}"
+  },
+  "viewer.mode.book": {
+    "message": "Knyga"
+  },
+  "viewer.mode.hex": {
+    "message": "Hex · {page}"
+  },
+  "viewer.mode.html": {
+    "message": "HTML tekstas"
+  },
+  "viewer.mode.image": {
+    "message": "Paveikslėlis"
+  },
+  "viewer.mode.multimedia": {
+    "message": "Daugialypė terpė"
+  },
+  "viewer.mode.pdf_by": {
+    "message": "PDF iš {tool}"
+  },
+  "viewer.mode.text": {
+    "message": "Tekstas · {page}"
+  },
+  "viewer.origin.not_editable": {
+    "message": "redaguoti galima tik failus, esančius 7z, zip, jar ir tar archyvuose"
+  },
+  "viewer.origin.updated": {
+    "message": "Atnaujinta: {archive}"
+  },
+  "viewer.origin.updated_on": {
+    "message": "Atnaujinta: {archive} serveryje {server}"
+  },
+  "viewer.origin.uploaded": {
+    "message": "Įkelta: {path}"
+  },
+  "viewer.pdf.cannot_show": {
+    "message": "Šio PDF negalima parodyti: {err}"
+  },
+  "viewer.pdf.loading": {
+    "message": "Įkeliama..."
+  },
+  "viewer.pdf.page": {
+    "message": "Psl. {page} / {pages}"
+  },
+  "viewer.picture.cannot_show": {
+    "message": "Šio paveikslėlio negalima parodyti; 1 parodo jį kaip tekstą."
+  },
+  "viewer.save_as.failed": {
+    "message": "Nepavyko įrašyti {path}: {err}"
+  },
+  "viewer.status.rows": {
+    "message": "{count, plural, one {{first}–{last} iš {grouped} eilutės} few {{first}–{last} iš {grouped} eilučių} other {{first}–{last} iš {grouped} eilučių}}"
+  },
+  "viewer.status.rows_so_far": {
+    "message": "{count, plural, one {Kol kas {grouped} eilutė, perskaityta {percent}} few {Kol kas {grouped} eilutės, perskaityta {percent}} other {Kol kas {grouped} eilučių, perskaityta {percent}}}"
+  },
+  "viewer.status.searching": {
+    "message": "Ieškoma…"
+  },
+  "viewer.status.size": {
+    "message": "{count, plural, one {{grouped} baitas} few {{grouped} baitai} other {{grouped} baitų}}"
+  },
+  "viewer.window.title": {
+    "message": "{path} — žiūryklė"
+  },
+  "viewer.zoom.fit": {
+    "message": "Vėl talpinti lange (Ctrl+0)"
+  },
+  "viewer.zoom.in": {
+    "message": "Didinti (Ctrl++)"
+  },
+  "viewer.zoom.out": {
+    "message": "Mažinti (Ctrl+-)"
+  },
+  "viewer.zoom.reset": {
+    "message": "Atgal į 100 % (Ctrl+0)"
+  },
+  "workspaces.button.close": {
+    "message": "Uždaryti"
+  },
+  "workspaces.button.delete": {
+    "message": "Ištrinti..."
+  },
+  "workspaces.button.duplicate": {
+    "message": "Dubliuoti..."
+  },
+  "workspaces.button.new": {
+    "message": "Nauja..."
+  },
+  "workspaces.button.rename": {
+    "message": "Pervardyti..."
+  },
+  "workspaces.delete.button": {
+    "message": "Ištrinti"
+  },
+  "workspaces.delete.closed": {
+    "message": "Ištrinti darbo sritį „{name}“? Jos kortelės bus pamirštos."
+  },
+  "workspaces.delete.closed_shells": {
+    "message": "Ištrinti darbo sritį „{name}“? Jos kortelės bus pamirštos, o jos terminalo kortelių apvalkalai – užbaigti."
+  },
+  "workspaces.delete.open": {
+    "message": "Ištrinti darbo sritį „{name}“? Jos kortelės užsidarys; vietoj jos atsidarys „{other}“."
+  },
+  "workspaces.delete.open_shells": {
+    "message": "Ištrinti darbo sritį „{name}“? Jos kortelės užsidarys, o terminalo kortelių apvalkalai bus užbaigti; vietoj jos atsidarys „{other}“."
+  },
+  "workspaces.delete.title": {
+    "message": "Ištrinti darbo sritį"
+  },
+  "workspaces.duplicate.name": {
+    "message": "{name} kopija"
+  },
+  "workspaces.duplicate.title": {
+    "message": "Dubliuoti darbo sritį"
+  },
+  "workspaces.error.name_taken": {
+    "message": "Kita darbo sritis jau turi šį pavadinimą."
+  },
+  "workspaces.error.no_name": {
+    "message": "Darbo sričiai reikia pavadinimo."
+  },
+  "workspaces.error.save": {
+    "message": "Nepavyko įrašyti darbo sričių: {err}"
+  },
+  "workspaces.hint": {
+    "message": "Rodyti > Darbo sritys atidaro vieną iš jų. Atidarytoje darbo srityje atlikti pakeitimai joje ir išlieka."
+  },
+  "workspaces.name.label": {
+    "message": "Pavadinimas:"
+  },
+  "workspaces.new.name": {
+    "message": "Darbo sritis {number}"
+  },
+  "workspaces.new.title": {
+    "message": "Nauja darbo sritis"
+  },
+  "workspaces.open": {
+    "message": "atidaryta"
+  },
+  "workspaces.rename.title": {
+    "message": "Pervardyti darbo sritį"
+  },
+  "workspaces.summary.panels": {
+    "message": "Kairėje {left, plural, one {# kortelė} few {# kortelės} other {# kortelių}}, dešinėje {right, plural, one {# kortelė} few {# kortelės} other {# kortelių}}"
+  },
+  "workspaces.summary.terminal": {
+    "message": "Kairėje {left, plural, one {# kortelė} few {# kortelės} other {# kortelių}}, dešinėje {right, plural, one {# kortelė} few {# kortelės} other {# kortelių}}, terminale {terminal, plural, one {# kortelė} few {# kortelės} other {# kortelių}}"
+  },
+  "workspaces.summary.terminal_hidden": {
+    "message": "Kairėje {left, plural, one {# kortelė} few {# kortelės} other {# kortelių}}, dešinėje {right, plural, one {# kortelė} few {# kortelės} other {# kortelių}}, terminale {terminal, plural, one {# kortelė} few {# kortelės} other {# kortelių}} (paslėptas)"
+  },
+  "workspaces.title": {
+    "message": "Darbo sritys"
+  }
+}

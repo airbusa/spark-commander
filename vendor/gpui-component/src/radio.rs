@@ -282,8 +282,10 @@ impl RenderOnce for Radio {
             )
             .when(!self.children.is_empty() || self.label.is_some(), |this| {
                 this.child(
+                    // SparkCommander patch: the room beside the circle, so a long label wraps inside the row.
                     v_flex()
-                        .w_full()
+                        .flex_1()
+                        .min_w_0()
                         .line_height(relative(1.25))
                         .gap_1()
                         .when_some(self.label, |this, label| {

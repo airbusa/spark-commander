@@ -1,0 +1,4823 @@
+{
+  "about.addons": {
+    "message": "Lisäosat, jotka ladataan pyynnöstäsi"
+  },
+  "about.libraries": {
+    "message": "Perustana"
+  },
+  "about.licence": {
+    "message": "Lisenssi:"
+  },
+  "about.made_with": {
+    "message": "Tehty näiden projektien työn avulla"
+  },
+  "about.part.alacritty_terminal": {
+    "message": "Sisäänrakennetun päätteen näyttö ja komentotulkki"
+  },
+  "about.part.encoding_rs": {
+    "message": "Koodisivut"
+  },
+  "about.part.gpui": {
+    "message": "Ikkuna, piirto ja syöte (Zedin)"
+  },
+  "about.part.gpui_kit": {
+    "message": "Säätimet: luettelot, valikot, kentät, editori"
+  },
+  "about.part.html5ever": {
+    "message": "HTML ja e-kirjat katselimessa"
+  },
+  "about.part.image": {
+    "message": "Kuvat"
+  },
+  "about.part.keyring": {
+    "message": "Salasanat järjestelmän avainnipussa"
+  },
+  "about.part.lucide": {
+    "message": "Kuvakkeet"
+  },
+  "about.part.material_icons": {
+    "message": "Tiedostojen ja kansioiden kuvakkeet"
+  },
+  "about.part.pdfium_render": {
+    "message": "PDFium Rust-koodista"
+  },
+  "about.part.ratatui": {
+    "message": "scmd, pääteversio"
+  },
+  "about.part.russh": {
+    "message": "SSH ja SFTP"
+  },
+  "about.part.rustls": {
+    "message": "TLS"
+  },
+  "about.part.serde": {
+    "message": "Asetustiedostot"
+  },
+  "about.part.similar": {
+    "message": "Vertaa sisällön mukaan"
+  },
+  "about.part.suppaftp": {
+    "message": "FTP ja FTPS"
+  },
+  "about.part.tokio": {
+    "message": "Verkkotoiminnot taustalla"
+  },
+  "about.part.trash": {
+    "message": "Roskakori"
+  },
+  "about.part.tree_sitter": {
+    "message": "Koodin värikorostus katselimessa ja editorissa"
+  },
+  "about.part.zbus": {
+    "message": "D-Bus: työpöytä, laitteet, KDE Connect"
+  },
+  "about.shipped": {
+    "message": "Mukana tulevat"
+  },
+  "about.tagline": {
+    "message": "Kaksipaneelinen tiedostonhallinta, vapaa ohjelmisto."
+  },
+  "about.title": {
+    "message": "Tietoja Spark Commanderista"
+  },
+  "about.version": {
+    "message": "Versio {version}"
+  },
+  "activity.clear": {
+    "message": "Tyhjennä"
+  },
+  "activity.clear_failed": {
+    "message": "Lokia ei voitu tyhjentää: {err}"
+  },
+  "activity.empty": {
+    "message": "Mitään ei ole vielä tehty."
+  },
+  "activity.title": {
+    "message": "Tapahtumaloki"
+  },
+  "addons.error.damaged": {
+    "message": "lataus on vioittunut: sen tarkistussumma ei täsmää"
+  },
+  "addons.error.list": {
+    "message": "lisäosien luettelo: {err}"
+  },
+  "addons.error.missing_file": {
+    "message": "latauksesta puuttuu {file}"
+  },
+  "addons.error.no_folder": {
+    "message": "ei datakansiota"
+  },
+  "addons.error.unpacking": {
+    "message": "purku: {err}"
+  },
+  "addons.installed": {
+    "message": "{addon} {version} on asennettu."
+  },
+  "addons.megabytes": {
+    "message": "{size} Mt"
+  },
+  "addons.offer.never": {
+    "message": "Älä näytä enää"
+  },
+  "addons.offer.no": {
+    "message": "Ei"
+  },
+  "addons.offer.text": {
+    "message": "{name} tarvitsee lisäosan, jota ei ole asennettu: {addon}. Ladataanko se kohdassa Asetukset > Lisäosat?"
+  },
+  "addons.offer.title": {
+    "message": "Lisäosa"
+  },
+  "addons.offer.yes": {
+    "message": "Kyllä"
+  },
+  "addons.purpose.cloud": {
+    "message": "Verkkotallennus: S3, Google Drive, OneDrive, Dropbox ja muut palvelut."
+  },
+  "addons.purpose.media": {
+    "message": "Video ja ääni sekä HEIC- ja AVIF-kuvat: katselin ja pikanäkymä näyttävät ne."
+  },
+  "addons.purpose.office": {
+    "message": "Office-asiakirjat: katselin näyttää Word-, Excel- ja PowerPoint-tiedostot PDF-muodossa."
+  },
+  "addons.purpose.pdfium": {
+    "message": "PDF: katselin näyttää PDF-tiedostot sekä Office-asiakirjat muunnettuina."
+  },
+  "addons.purpose.seven_zip": {
+    "message": "Arkistot: pakkaa ja purkaa 7z-, zip-, rar- ja tar-arkistoja ym."
+  },
+  "addons.update": {
+    "message": "Päivitä"
+  },
+  "addons.updates": {
+    "message": "Lisäosien päivitykset: {names}"
+  },
+  "appearance.dark": {
+    "message": "Tumma"
+  },
+  "appearance.light": {
+    "message": "Vaalea"
+  },
+  "appearance.system": {
+    "message": "Järjestelmän mukaan"
+  },
+  "archive.cannot_read": {
+    "message": "{name}: ei voi lukea"
+  },
+  "archive.not_in_archive": {
+    "message": "{name} ei ole arkistossa"
+  },
+  "archive.not_own_folder": {
+    "message": "{folder} ei ole tämän käyttäjän oma kansio"
+  },
+  "archive.seven_zip_failed": {
+    "message": "7-Zip epäonnistui ({code})"
+  },
+  "archive.seven_zip_missing": {
+    "message": "7-Zip puuttuu: {path} (suorita vendor/7zip/fetch.sh tai fetch.bat)"
+  },
+  "archive.temp_not_utf8": {
+    "message": "väliaikaiskansion nimi ei ole UTF-8-muotoinen"
+  },
+  "associations.add": {
+    "message": "Lisää..."
+  },
+  "associations.cancel": {
+    "message": "Peruuta"
+  },
+  "associations.close": {
+    "message": "Sulje"
+  },
+  "associations.column.edit": {
+    "message": "Muokkaa (F4)"
+  },
+  "associations.column.files": {
+    "message": "Tiedostot"
+  },
+  "associations.column.open": {
+    "message": "Avaa (Enter)"
+  },
+  "associations.column.view": {
+    "message": "Katsele (F3)"
+  },
+  "associations.edit": {
+    "message": "Muokkaa..."
+  },
+  "associations.edit_dialog.title": {
+    "message": "Kytke"
+  },
+  "associations.empty": {
+    "message": "Ei vielä yhtään."
+  },
+  "associations.field.edit": {
+    "message": "Muokkaa (F4):"
+  },
+  "associations.field.files": {
+    "message": "Tiedostot (*.jpg *.png):"
+  },
+  "associations.field.open": {
+    "message": "Avaa (Enter):"
+  },
+  "associations.field.view": {
+    "message": "Katsele (F3):"
+  },
+  "associations.intro": {
+    "message": "Enter, F3 ja F4 käynnistävät nämä ohjelmat maskia vastaaville tiedostoille; tyhjä kenttä säilyttää tavallisen. %1 on tiedosto."
+  },
+  "associations.mask_needed": {
+    "message": "Tiedostomaski tarvitaan: *.txt"
+  },
+  "associations.no_file": {
+    "message": "Siirrä kohdistin kytkettävän tyypin tiedostoon."
+  },
+  "associations.ok": {
+    "message": "OK"
+  },
+  "associations.remove": {
+    "message": "Poista"
+  },
+  "associations.save_failed": {
+    "message": "Asetuksia ei voitu tallentaa: {err}"
+  },
+  "associations.title": {
+    "message": "Sisäiset kytkennät"
+  },
+  "attributes.bad_time": {
+    "message": "”{text}” ei ole päivämäärä ja aika: 2026-11-10 14:04:33"
+  },
+  "attributes.cancel": {
+    "message": "Peruuta"
+  },
+  "attributes.change_time": {
+    "message": "Muuta pvm/aika:"
+  },
+  "attributes.changed": {
+    "message": "{count, plural, one {# muutettu} other {# muutettu}}"
+  },
+  "attributes.changed_failed": {
+    "message": "{count, plural, one {# muutettu} other {# muutettu}}, {failed, plural, one {# epäonnistui} other {# epäonnistui}}"
+  },
+  "attributes.dialog_title_many": {
+    "message": "Muuta määritteitä: {count, plural, one {# kohde} other {# kohdetta}}"
+  },
+  "attributes.dialog_title_one": {
+    "message": "Muuta määritteitä: {name}"
+  },
+  "attributes.execute": {
+    "message": "Suoritus"
+  },
+  "attributes.group": {
+    "message": "Ryhmä"
+  },
+  "attributes.in_archive": {
+    "message": "Arkistojen sisällä olevien kohteiden määritteitä ei voi muuttaa."
+  },
+  "attributes.no_bits": {
+    "message": "Näillä tiedostoilla ei ole täällä käyttöoikeusbittejä; vain päivämäärää voi muuttaa."
+  },
+  "attributes.now": {
+    "message": "Nyt"
+  },
+  "attributes.octal": {
+    "message": "Oktaali:"
+  },
+  "attributes.ok": {
+    "message": "OK"
+  },
+  "attributes.others": {
+    "message": "Muut"
+  },
+  "attributes.owner": {
+    "message": "Omistaja"
+  },
+  "attributes.read": {
+    "message": "Luku"
+  },
+  "attributes.recurse": {
+    "message": "Myös kaikki kansioiden sisältö"
+  },
+  "attributes.title_many": {
+    "message": "Muuta {count, plural, one {# kohteen} other {# kohteen}} määritteitä"
+  },
+  "attributes.title_one": {
+    "message": "Muuta kohteen ”{name}” määritteitä"
+  },
+  "attributes.write": {
+    "message": "Kirjoitus"
+  },
+  "bookmarks.add_current": {
+    "message": "Lisää nykyinen kansio"
+  },
+  "bookmarks.add_folders": {
+    "message": "Lisää kansioita..."
+  },
+  "bookmarks.added": {
+    "message": "Lisätty kirjanmerkkeihin: {name}"
+  },
+  "bookmarks.already": {
+    "message": "{name} on jo kirjanmerkeissä."
+  },
+  "bookmarks.chooser.failed": {
+    "message": "Kansionvalitsinta ei voitu näyttää: {err}"
+  },
+  "bookmarks.chooser.prompt": {
+    "message": "Lisää"
+  },
+  "bookmarks.close": {
+    "message": "Sulje"
+  },
+  "bookmarks.copy_name": {
+    "message": "Kopioi nimi"
+  },
+  "bookmarks.copy_path": {
+    "message": "Kopioi polku"
+  },
+  "bookmarks.drop_here": {
+    "message": "Pudota kansioita tähän."
+  },
+  "bookmarks.empty": {
+    "message": "Ei kirjanmerkkejä: lisää kansioita tai pudota niitä tähän."
+  },
+  "bookmarks.intro": {
+    "message": "Tämän tietokoneen kansiot Sijainnit-osion järjestyksessä: siirrä kansiota vetämällä tai lisää kansioita pudottamalla ne tähän."
+  },
+  "bookmarks.move_down": {
+    "message": "Siirrä alas"
+  },
+  "bookmarks.move_up": {
+    "message": "Siirrä ylös"
+  },
+  "bookmarks.only_local": {
+    "message": "Vain tämän tietokoneen kansioita voi lisätä kirjanmerkkeihin."
+  },
+  "bookmarks.remove": {
+    "message": "Poista"
+  },
+  "bookmarks.remove_from": {
+    "message": "Poista kirjanmerkeistä"
+  },
+  "bookmarks.rename": {
+    "message": "Nimeä uudelleen..."
+  },
+  "bookmarks.rename_label": {
+    "message": "Nimi (tyhjä: kansion oma):"
+  },
+  "bookmarks.rename_title": {
+    "message": "Nimeä kirjanmerkki uudelleen"
+  },
+  "bookmarks.sort": {
+    "message": "Lajittele A–Ö"
+  },
+  "bookmarks.title": {
+    "message": "Kirjanmerkit"
+  },
+  "button_bar.copy": {
+    "message": "Kopioi"
+  },
+  "button_bar.delete": {
+    "message": "Poista"
+  },
+  "button_bar.edit": {
+    "message": "Muokkaa"
+  },
+  "button_bar.move": {
+    "message": "Siirrä"
+  },
+  "button_bar.new_folder": {
+    "message": "Uusi kansio"
+  },
+  "button_bar.quit": {
+    "message": "Lopeta"
+  },
+  "button_bar.view": {
+    "message": "Katsele"
+  },
+  "checksum.create.title": {
+    "message": "Luo {name}"
+  },
+  "checksum.create.title_separate": {
+    "message": "Luo {method}-tarkistussummatiedostot"
+  },
+  "checksum.dialog_title": {
+    "message": "Luo tarkistussummatiedostot"
+  },
+  "checksum.save_as": {
+    "message": "Tallenna tarkistussummatiedosto nimellä:"
+  },
+  "checksum.separate": {
+    "message": "Erillinen tarkistussummatiedosto kunkin tiedoston viereen"
+  },
+  "checksum.verify.all_ok": {
+    "message": "{count, plural, one {# tiedosto OK} other {kaikki # tiedostoa OK}}"
+  },
+  "checksum.verify.choose": {
+    "message": "Valitse tarkistussummatiedostot: .sfv, .md5, .sha1, .sha256 tai .sha512."
+  },
+  "checksum.verify.missing_file": {
+    "message": "puuttuu: {name}"
+  },
+  "checksum.verify.result": {
+    "message": "{ok, plural, one {# OK} other {# OK}}, {wrong, plural, one {# väärin} other {# väärin}}, {missing, plural, one {# puuttuu} other {# puuttuu}}"
+  },
+  "checksum.verify.title_many": {
+    "message": "Tarkista {count, plural, one {# tarkistussummatiedosto} other {# tarkistussummatiedostoa}}"
+  },
+  "checksum.verify.title_one": {
+    "message": "Tarkista {name}"
+  },
+  "checksum.verify.wrong_file": {
+    "message": "väärin: {name}"
+  },
+  "command.about": {
+    "message": "Tietoja Spark Commanderista"
+  },
+  "command.activity_log": {
+    "message": "Tapahtumaloki..."
+  },
+  "command.all_files": {
+    "message": "Kaikki tiedostot"
+  },
+  "command.all_folder_sizes": {
+    "message": "Laske kaikkien kansioiden koot"
+  },
+  "command.all_with_extension": {
+    "message": "*.*"
+  },
+  "command.associate_with": {
+    "message": "Kytke ohjelmaan..."
+  },
+  "command.bookmark_folder": {
+    "message": "Lisää kansio kirjanmerkkeihin"
+  },
+  "command.bookmarks": {
+    "message": "Kirjanmerkit"
+  },
+  "command.branch_view": {
+    "message": "Haaranäkymä (alikansioineen)"
+  },
+  "command.branch_view_selected": {
+    "message": "Valittujen kansioiden haaranäkymä"
+  },
+  "command.brief": {
+    "message": "Lyhyt"
+  },
+  "command.calculate_occupied_space": {
+    "message": "Laske käytetty tila..."
+  },
+  "command.change_attributes": {
+    "message": "Muuta määritteitä..."
+  },
+  "command.close_all_tabs": {
+    "message": "Sulje kaikki välilehdet"
+  },
+  "command.close_duplicate_tabs": {
+    "message": "Sulje samanlaiset välilehdet"
+  },
+  "command.close_tab": {
+    "message": "Sulje välilehti"
+  },
+  "command.combine_files": {
+    "message": "Yhdistä tiedostot..."
+  },
+  "command.compare_by_content": {
+    "message": "Vertaa sisällön mukaan..."
+  },
+  "command.compare_directories": {
+    "message": "Merkitse uudemmat"
+  },
+  "command.copy": {
+    "message": "Kopioi..."
+  },
+  "command.copy_names_to_clipboard": {
+    "message": "Kopioi valitut nimet leikepöydälle"
+  },
+  "command.copy_names_with_path_to_clipboard": {
+    "message": "Kopioi nimet polkuineen leikepöydälle"
+  },
+  "command.copy_to_clipboard": {
+    "message": "Kopioi tiedostot"
+  },
+  "command.copy_with_all_details": {
+    "message": "Kopioi leikepöydälle kaikkine tietoineen"
+  },
+  "command.copy_with_path_and_details": {
+    "message": "Kopioi leikepöydälle polkuineen ja tietoineen"
+  },
+  "command.create_checksum_files": {
+    "message": "Luo tarkistussummatiedosto(t) (CRC32, MD5, SHA1, SHA256, SHA512)..."
+  },
+  "command.create_link": {
+    "message": "Luo linkki..."
+  },
+  "command.custom_filter": {
+    "message": "Mukautettu..."
+  },
+  "command.cut_to_clipboard": {
+    "message": "Leikkaa tiedostot"
+  },
+  "command.delete": {
+    "message": "Poista"
+  },
+  "command.delete_permanently": {
+    "message": "Poista pysyvästi"
+  },
+  "command.disconnect": {
+    "message": "Katkaise yhteys palvelimeen"
+  },
+  "command.download_link": {
+    "message": "Lataa linkistä..."
+  },
+  "command.duplicate_tab": {
+    "message": "Uusi välilehti"
+  },
+  "command.duplicate_workspace": {
+    "message": "Monista työtila..."
+  },
+  "command.edit": {
+    "message": "Muokkaa"
+  },
+  "command.edit_externally": {
+    "message": "Muokkaa ulkoisella editorilla"
+  },
+  "command.folder_history": {
+    "message": "Kansiohistoria..."
+  },
+  "command.full": {
+    "message": "Täydellinen"
+  },
+  "command.go_back": {
+    "message": "Takaisin"
+  },
+  "command.go_forward": {
+    "message": "Eteenpäin"
+  },
+  "command.go_home": {
+    "message": "Kotikansio"
+  },
+  "command.go_to_root": {
+    "message": "Juurikansio"
+  },
+  "command.hidden_files": {
+    "message": "Piilotetut tiedostot"
+  },
+  "command.internal_associations": {
+    "message": "Sisäiset kytkennät (vain Spark Commander)..."
+  },
+  "command.invert_selection": {
+    "message": "Käännä valinta"
+  },
+  "command.left_drives": {
+    "message": "Asemat (vasen paneeli)"
+  },
+  "command.list_tabs": {
+    "message": "Välilehtiluettelo"
+  },
+  "command.load_selection_from_file": {
+    "message": "Lataa valinta tiedostosta"
+  },
+  "command.manage_bookmarks": {
+    "message": "Hallitse kirjanmerkkejä..."
+  },
+  "command.manage_tools": {
+    "message": "Hallitse työkaluja..."
+  },
+  "command.manage_workspaces": {
+    "message": "Hallitse työtiloja..."
+  },
+  "command.mark_in_place": {
+    "message": "Merkitse / poista merkintä paikallaan, kansion koko laskien"
+  },
+  "command.mark_newer_hide_same": {
+    "message": "Merkitse uudemmat, piilota samat tiedostot"
+  },
+  "command.move": {
+    "message": "Siirrä..."
+  },
+  "command.multi_rename_tool": {
+    "message": "Joukkonimeäminen..."
+  },
+  "command.name_to_command_line": {
+    "message": "Nimi komentoriville"
+  },
+  "command.new_folder": {
+    "message": "Uusi kansio..."
+  },
+  "command.new_terminal": {
+    "message": "Uusi päätevälilehti"
+  },
+  "command.new_text_file": {
+    "message": "Uusi tiedosto..."
+  },
+  "command.new_workspace": {
+    "message": "Uusi työtila..."
+  },
+  "command.next_tab": {
+    "message": "Seuraava välilehti"
+  },
+  "command.only_selected_files": {
+    "message": "Vain valitut tiedostot"
+  },
+  "command.open_in_left_panel": {
+    "message": "Näytä vasemmassa paneelissa"
+  },
+  "command.open_in_new_tab": {
+    "message": "Avaa kansio uudessa välilehdessä"
+  },
+  "command.open_in_other_new_tab": {
+    "message": "Avaa kansio toisen paneelin uudessa välilehdessä"
+  },
+  "command.open_in_right_panel": {
+    "message": "Näytä oikeassa paneelissa"
+  },
+  "command.open_terminal": {
+    "message": "Avaa pääte tähän"
+  },
+  "command.operation_queue": {
+    "message": "Tehtäväjono..."
+  },
+  "command.pack": {
+    "message": "Pakkaa..."
+  },
+  "command.paste_from_clipboard": {
+    "message": "Liitä tiedostot"
+  },
+  "command.path_and_name_to_command_line": {
+    "message": "Polku ja nimi komentoriville"
+  },
+  "command.path_to_command_line": {
+    "message": "Polku komentoriville"
+  },
+  "command.previous_tab": {
+    "message": "Edellinen välilehti"
+  },
+  "command.programs": {
+    "message": "Ohjelmat"
+  },
+  "command.properties": {
+    "message": "Ominaisuudet..."
+  },
+  "command.quick_filter": {
+    "message": "Pikasuodatin"
+  },
+  "command.quick_open": {
+    "message": "Pika-avaus..."
+  },
+  "command.quick_view_panel": {
+    "message": "Pikanäkymäpaneeli"
+  },
+  "command.quit": {
+    "message": "Lopeta"
+  },
+  "command.redo": {
+    "message": "Tee uudelleen"
+  },
+  "command.rename_in_place": {
+    "message": "Nimeä uudelleen"
+  },
+  "command.reread_source": {
+    "message": "Lue lähde uudelleen"
+  },
+  "command.restore_selection": {
+    "message": "Palauta valinta"
+  },
+  "command.reversed_order": {
+    "message": "Käänteinen järjestys"
+  },
+  "command.right_drives": {
+    "message": "Asemat (oikea paneeli)"
+  },
+  "command.save_selection": {
+    "message": "Tallenna valinta"
+  },
+  "command.save_selection_to_file": {
+    "message": "Tallenna valinta tiedostoon"
+  },
+  "command.search": {
+    "message": "Etsi..."
+  },
+  "command.search_in_separate_process": {
+    "message": "Etsi erillisessä ikkunassa..."
+  },
+  "command.select_all": {
+    "message": "Valitse kaikki"
+  },
+  "command.select_all_with_same_extension": {
+    "message": "Valitse kaikki samalla tiedostopäätteellä"
+  },
+  "command.select_group": {
+    "message": "Valitse ryhmä..."
+  },
+  "command.settings": {
+    "message": "Asetukset..."
+  },
+  "command.shortcuts": {
+    "message": "Pikanäppäimet..."
+  },
+  "command.sidebar_connections": {
+    "message": "Yhteydet"
+  },
+  "command.sidebar_operations": {
+    "message": "Tehtävät"
+  },
+  "command.sidebar_places": {
+    "message": "Sijainnit"
+  },
+  "command.sidebar_tree": {
+    "message": "Kansiot"
+  },
+  "command.sort_by_extension": {
+    "message": "Tiedostopääte"
+  },
+  "command.sort_by_name": {
+    "message": "Nimi"
+  },
+  "command.sort_by_size": {
+    "message": "Koko"
+  },
+  "command.sort_by_time": {
+    "message": "Aika"
+  },
+  "command.split_file": {
+    "message": "Jaa tiedosto..."
+  },
+  "command.swap_panels": {
+    "message": "Vaihda paneelit"
+  },
+  "command.swap_panels_and_tabs": {
+    "message": "Vaihda paneelit välilehtineen"
+  },
+  "command.sync_browsing": {
+    "message": "Synkronoitu selaus"
+  },
+  "command.synchronize_dirs": {
+    "message": "Synkronoi kansiot..."
+  },
+  "command.target_equals_source": {
+    "message": "Kohde = lähde"
+  },
+  "command.terminal_panel": {
+    "message": "Pääte"
+  },
+  "command.test_archives": {
+    "message": "Testaa arkisto(t)"
+  },
+  "command.thumbnail_view": {
+    "message": "Pikkukuvanäkymä"
+  },
+  "command.toggle_mark": {
+    "message": "Merkitse / poista merkintä"
+  },
+  "command.toggle_sidebar": {
+    "message": "Näytä sivupaneeli"
+  },
+  "command.undo": {
+    "message": "Kumoa"
+  },
+  "command.unpack_specific_files": {
+    "message": "Pura valitut tiedostot..."
+  },
+  "command.unselect_all": {
+    "message": "Poista kaikki valinnat"
+  },
+  "command.unselect_group": {
+    "message": "Poista ryhmän valinta..."
+  },
+  "command.unsorted": {
+    "message": "Lajittelematon"
+  },
+  "command.verify_checksums": {
+    "message": "Tarkista tarkistussummat (tarkistussummatiedostoista)"
+  },
+  "command.vertical_arrangement": {
+    "message": "Pystysuuntainen asettelu"
+  },
+  "command.view": {
+    "message": "Katsele"
+  },
+  "command.website": {
+    "message": "Spark Commanderin verkkosivusto"
+  },
+  "command.workspace1": {
+    "message": "Avaa työtila 1"
+  },
+  "command.workspace2": {
+    "message": "Avaa työtila 2"
+  },
+  "command.workspace3": {
+    "message": "Avaa työtila 3"
+  },
+  "command.workspace4": {
+    "message": "Avaa työtila 4"
+  },
+  "command.workspace5": {
+    "message": "Avaa työtila 5"
+  },
+  "command.workspace6": {
+    "message": "Avaa työtila 6"
+  },
+  "command.workspace7": {
+    "message": "Avaa työtila 7"
+  },
+  "command.workspace8": {
+    "message": "Avaa työtila 8"
+  },
+  "command.workspace9": {
+    "message": "Avaa työtila 9"
+  },
+  "command_line.error.cannot_run": {
+    "message": "{program}: ei voi suorittaa"
+  },
+  "command_line.error.not_found": {
+    "message": "{program}: komentoa ei löytynyt"
+  },
+  "command_line.history.empty": {
+    "message": "Komentoja ei ole vielä suoritettu"
+  },
+  "command_line.on_server": {
+    "message": "Komennot suoritetaan tällä tietokoneella; paneeli näyttää palvelinta."
+  },
+  "command_name.all_files": {
+    "message": "Näytä kaikki tiedostot"
+  },
+  "command_name.all_with_extension": {
+    "message": "Näytä *.*"
+  },
+  "command_name.brief": {
+    "message": "Lyhyt näkymä"
+  },
+  "command_name.compare_directories": {
+    "message": "Vertaa kansioita: merkitse uudemmat"
+  },
+  "command_name.custom_filter": {
+    "message": "Mukautettu suodatin"
+  },
+  "command_name.duplicate_tab": {
+    "message": "Uusi välilehti (tämän kopio)"
+  },
+  "command_name.full": {
+    "message": "Täydellinen näkymä"
+  },
+  "command_name.go_back": {
+    "message": "Siirry takaisin"
+  },
+  "command_name.go_forward": {
+    "message": "Siirry eteenpäin"
+  },
+  "command_name.go_home": {
+    "message": "Siirry kotikansioon"
+  },
+  "command_name.hidden_files": {
+    "message": "Näytä piilotetut tiedostot"
+  },
+  "command_name.only_selected_files": {
+    "message": "Näytä vain valitut tiedostot"
+  },
+  "command_name.programs": {
+    "message": "Näytä ohjelmat"
+  },
+  "command_name.quick_filter": {
+    "message": "Pikasuodatin"
+  },
+  "command_name.rename_in_place": {
+    "message": "Nimeä uudelleen paikallaan"
+  },
+  "command_name.sidebar_connections": {
+    "message": "Sivupaneeli: Yhteydet"
+  },
+  "command_name.sidebar_operations": {
+    "message": "Sivupaneeli: Tehtävät"
+  },
+  "command_name.sidebar_places": {
+    "message": "Sivupaneeli: Sijainnit"
+  },
+  "command_name.sidebar_tree": {
+    "message": "Sivupaneeli: Kansiot"
+  },
+  "command_name.sort_by_extension": {
+    "message": "Lajittele tiedostopäätteen mukaan"
+  },
+  "command_name.sort_by_name": {
+    "message": "Lajittele nimen mukaan"
+  },
+  "command_name.sort_by_size": {
+    "message": "Lajittele koon mukaan"
+  },
+  "command_name.sort_by_time": {
+    "message": "Lajittele ajan mukaan"
+  },
+  "command_name.toggle_sidebar": {
+    "message": "Sivupaneeli: näytä tai piilota"
+  },
+  "command_name.unsorted": {
+    "message": "Ei lajittelua"
+  },
+  "compare.browse.prompt": {
+    "message": "Vertaa"
+  },
+  "compare.button.compare": {
+    "message": "Vertaa"
+  },
+  "compare.button.next": {
+    "message": "Seuraava ero (N)"
+  },
+  "compare.button.previous": {
+    "message": "Edellinen ero (P)"
+  },
+  "compare.need_two_files": {
+    "message": "Siirrä kohdistin tiedostoon kummassakin paneelissa tai merkitse kaksi tiedostoa."
+  },
+  "compare.option.binary": {
+    "message": "Binäärinen"
+  },
+  "compare.option.ignore_case": {
+    "message": "Ohita kirjainkoko"
+  },
+  "compare.option.ignore_spaces": {
+    "message": "Ohita toistuvat välilyönnit"
+  },
+  "compare.option.only_differences": {
+    "message": "Vain erot"
+  },
+  "compare.status.bytes_differ": {
+    "message": "{place}: {count, plural, one {{grouped} tavu eroaa} other {{grouped} tavua eroaa}}, ensimmäinen kohdassa {first}; koot {left} ja {right}."
+  },
+  "compare.status.comparing": {
+    "message": "Verrataan…"
+  },
+  "compare.status.difference_of": {
+    "message": "Ero {at}/{count}"
+  },
+  "compare.status.differences": {
+    "message": "{count, plural, one {# ero} other {# eroa}}"
+  },
+  "compare.status.identical": {
+    "message": "{count, plural, one {Tiedostot ovat samat: {grouped} tavu.} other {Tiedostot ovat samat: {grouped} tavua.}}"
+  },
+  "compare.status.no_differences": {
+    "message": "Ei eroja."
+  },
+  "compare.window.title": {
+    "message": "Vertaa: {left} — {right}"
+  },
+  "connections.connect": {
+    "message": "Yhdistä"
+  },
+  "connections.copy_name": {
+    "message": "Kopioi nimi"
+  },
+  "connections.copy_path": {
+    "message": "Kopioi polku"
+  },
+  "connections.delete": {
+    "message": "Poista"
+  },
+  "connections.dialog.title": {
+    "message": "Yhteys"
+  },
+  "connections.disconnect": {
+    "message": "Katkaise yhteys"
+  },
+  "connections.duplicate": {
+    "message": "Monista"
+  },
+  "connections.duplicate_name": {
+    "message": "{name} (kopio)"
+  },
+  "connections.edit": {
+    "message": "Muokkaa..."
+  },
+  "connections.empty": {
+    "message": "Ei vielä yhteyksiä."
+  },
+  "connections.error.no_server": {
+    "message": "Palvelin tarvitaan."
+  },
+  "connections.error.port": {
+    "message": "Ei porttinumero: {text}"
+  },
+  "connections.field.access_key": {
+    "message": "Käyttöavain"
+  },
+  "connections.field.api_key": {
+    "message": "API-avain"
+  },
+  "connections.field.application_key": {
+    "message": "Sovellusavain"
+  },
+  "connections.field.bucket": {
+    "message": "Säilö/kansio"
+  },
+  "connections.field.container": {
+    "message": "Säiliö/kansio"
+  },
+  "connections.field.endpoint": {
+    "message": "Päätepiste"
+  },
+  "connections.field.key_id": {
+    "message": "Avaimen tunnus"
+  },
+  "connections.field.name": {
+    "message": "Nimi"
+  },
+  "connections.field.password": {
+    "message": "Salasana"
+  },
+  "connections.field.port": {
+    "message": "Portti"
+  },
+  "connections.field.protocol": {
+    "message": "Protokolla"
+  },
+  "connections.field.secret_key": {
+    "message": "Salainen avain"
+  },
+  "connections.field.server": {
+    "message": "Palvelin"
+  },
+  "connections.field.start_folder": {
+    "message": "Aloituskansio"
+  },
+  "connections.field.user": {
+    "message": "Käyttäjä"
+  },
+  "connections.folder.delete_confirm": {
+    "message": "{count, plural, one {Poistetaanko kansio {name} ja sen sisältämä yhteys?} other {Poistetaanko kansio {name} ja sen sisältämät # yhteyttä?}}"
+  },
+  "connections.folder.delete_title": {
+    "message": "Poista kansio"
+  },
+  "connections.folder.exists": {
+    "message": "Kansio nimeltä {name} on jo olemassa."
+  },
+  "connections.folder.name": {
+    "message": "Nimi:"
+  },
+  "connections.folder.new_title": {
+    "message": "Uusi kansio"
+  },
+  "connections.folder.rename": {
+    "message": "Nimeä uudelleen..."
+  },
+  "connections.folder.rename_title": {
+    "message": "Nimeä kansio uudelleen"
+  },
+  "connections.forget_password": {
+    "message": "Unohda tallennettu salasana"
+  },
+  "connections.move_down": {
+    "message": "Siirrä alas"
+  },
+  "connections.move_to_folder": {
+    "message": "Siirrä kansioon"
+  },
+  "connections.move_up": {
+    "message": "Siirrä ylös"
+  },
+  "connections.new": {
+    "message": "Uusi yhteys..."
+  },
+  "connections.new_folder": {
+    "message": "Uusi kansio..."
+  },
+  "connections.no_folder": {
+    "message": "Ei kansiota"
+  },
+  "connections.open_in_terminal": {
+    "message": "Avaa päätteessä"
+  },
+  "connections.placeholder.name": {
+    "message": "kuten luettelo sen näyttää"
+  },
+  "connections.placeholder.password": {
+    "message": "säilytetään salattuna asetuskansiossa; tyhjä säilyttää nykyisen"
+  },
+  "connections.placeholder.path": {
+    "message": "kirjautumiskansio"
+  },
+  "connections.placeholder.port": {
+    "message": "oletus"
+  },
+  "connections.placeholder.server": {
+    "message": "palvelin tai ~/.ssh/config-tiedoston isäntä"
+  },
+  "connections.placeholder.user": {
+    "message": "kuten ~/.ssh/config määrää, tai anonyymi"
+  },
+  "connections.save_failed": {
+    "message": "Yhteyksiä ei voitu tallentaa: {err}"
+  },
+  "connections.ssh_config.read_only": {
+    "message": "Vain luku: näitä isäntiä muokataan itse ~/.ssh/config-tiedostossa"
+  },
+  "context_menu.action_failed": {
+    "message": "{name} epäonnistui: {err}"
+  },
+  "context_menu.actions": {
+    "message": "Toiminnot"
+  },
+  "context_menu.copy": {
+    "message": "Kopioi"
+  },
+  "context_menu.create_new": {
+    "message": "Luo uusi"
+  },
+  "context_menu.cut": {
+    "message": "Leikkaa"
+  },
+  "context_menu.delete": {
+    "message": "Poista"
+  },
+  "context_menu.edit": {
+    "message": "Muokkaa"
+  },
+  "context_menu.empty_file": {
+    "message": "Tyhjä tiedosto…"
+  },
+  "context_menu.move_to_trash": {
+    "message": "Siirrä roskakoriin"
+  },
+  "context_menu.new_file_dialog.label": {
+    "message": "Uuden tiedoston nimi:"
+  },
+  "context_menu.new_file_dialog.title": {
+    "message": "Uusi tiedosto"
+  },
+  "context_menu.new_file_failed": {
+    "message": "Tiedostoa ei voitu luoda: {err}"
+  },
+  "context_menu.new_folder": {
+    "message": "Kansio…"
+  },
+  "context_menu.open": {
+    "message": "Avaa"
+  },
+  "context_menu.open_failed": {
+    "message": "Ei voitu avata: {err}"
+  },
+  "context_menu.open_terminal_here": {
+    "message": "Avaa pääte tähän"
+  },
+  "context_menu.open_with": {
+    "message": "Avaa ohjelmalla"
+  },
+  "context_menu.other_application": {
+    "message": "Muu sovellus…"
+  },
+  "context_menu.pack": {
+    "message": "Pakkaa…"
+  },
+  "context_menu.pack_files": {
+    "message": "Pakkaa tiedostot"
+  },
+  "context_menu.paste": {
+    "message": "Liitä"
+  },
+  "context_menu.properties": {
+    "message": "Ominaisuudet"
+  },
+  "context_menu.properties_failed": {
+    "message": "Ominaisuudet: {err}"
+  },
+  "context_menu.rename": {
+    "message": "Nimeä uudelleen…"
+  },
+  "context_menu.rename_dialog.label": {
+    "message": "Uusi nimi:"
+  },
+  "context_menu.rename_dialog.title": {
+    "message": "Nimeä uudelleen"
+  },
+  "context_menu.rename_failed": {
+    "message": "Ei voitu nimetä uudelleen: {err}"
+  },
+  "context_menu.shell_menu_failed": {
+    "message": "Valikko: {err}"
+  },
+  "context_menu.show_failed": {
+    "message": "Ei voitu näyttää: {err}"
+  },
+  "context_menu.show_in_file_manager": {
+    "message": "Näytä tiedostonhallinnassa"
+  },
+  "context_menu.terminal_failed": {
+    "message": "Päätettä ei voitu avata: {err}"
+  },
+  "context_menu.terminal_not_local": {
+    "message": "Pääte avautuu vain tämän tietokoneen kansioihin."
+  },
+  "context_menu.unpack": {
+    "message": "Pura…"
+  },
+  "context_menu.view": {
+    "message": "Katsele"
+  },
+  "desktop.no_app_chooser": {
+    "message": "työpöydällä ei ole sovellusvalitsinta ({err})"
+  },
+  "desktop.no_terminal": {
+    "message": "päätettä ei löytynyt"
+  },
+  "desktop.nothing_to_run": {
+    "message": "{name}: ei mitään suoritettavaa"
+  },
+  "desktop.scripts": {
+    "message": "Komentosarjat"
+  },
+  "devices.error.mount_failed": {
+    "message": "laitetta ei voitu liittää"
+  },
+  "devices.error.no_folder": {
+    "message": "laite ei jaa yhtään kansiota"
+  },
+  "devices.error.system_only": {
+    "message": "vain järjestelmä voi irrottaa tämän"
+  },
+  "devices.error.unreachable": {
+    "message": "ei tavoitettavissa: onko KDE Connect auki laitteessa tässä verkossa?"
+  },
+  "devices.unlock.ask": {
+    "message": "Anna kohteen {name} tunnuslause:"
+  },
+  "devices.unlock.ask_again": {
+    "message": "Väärä tunnuslause. Anna kohteen {name} tunnuslause:"
+  },
+  "devices.unlock.title": {
+    "message": "Avaa lukitus"
+  },
+  "devices.volume.share_on_server": {
+    "message": "{share} palvelimella {server}"
+  },
+  "devices.volume.unnamed": {
+    "message": "{size} Gt:n taltio"
+  },
+  "devices.volume.unnamed_encrypted": {
+    "message": "{size} Gt:n salattu taltio"
+  },
+  "download.cancel": {
+    "message": "Peruuta"
+  },
+  "download.dialog_title": {
+    "message": "Lataa linkistä"
+  },
+  "download.download": {
+    "message": "Lataa"
+  },
+  "download.folder_link": {
+    "message": "linkki osoittaa kansioon"
+  },
+  "download.incomplete": {
+    "message": "palvelin lähetti vain {got}/{size, plural, one {# tavu} other {# tavua}}; uudelleen ladattaessa lataus jatkuu siitä"
+  },
+  "download.into": {
+    "message": "Kansioon {folder}"
+  },
+  "download.link": {
+    "message": "Linkki"
+  },
+  "download.link_placeholder": {
+    "message": "https://, http://, ftp:// tai ftps://"
+  },
+  "download.local_only": {
+    "message": "Lataukset tallennetaan tämän tietokoneen kansioihin: avaa ensin sellainen paneeliin."
+  },
+  "download.name_placeholder": {
+    "message": "palvelimen tai linkin antama nimi"
+  },
+  "download.no_file": {
+    "message": "linkki ei osoita tiedostoon"
+  },
+  "download.not_a_link": {
+    "message": "ei ladattava linkki"
+  },
+  "download.problem.bad_name": {
+    "message": "Pelkkä tiedostonimi, ilman kansiota."
+  },
+  "download.problem.empty": {
+    "message": "Liitä tai kirjoita linkki."
+  },
+  "download.problem.exists": {
+    "message": "Täällä on jo {name}: Korvaa lataa sen päälle."
+  },
+  "download.problem.not_link": {
+    "message": "Ei ladattava linkki: sen pitää alkaa https://, http://, ftp:// tai ftps://."
+  },
+  "download.replace": {
+    "message": "Korvaa"
+  },
+  "download.save_as": {
+    "message": "Tallenna nimellä"
+  },
+  "download.saved_as": {
+    "message": "tallennettu nimellä {name}"
+  },
+  "download.title": {
+    "message": "Lataa ”{name}”"
+  },
+  "download.title_link": {
+    "message": "Lataa {link}"
+  },
+  "editor.close.after_send": {
+    "message": "Se sulkeutuu, kun palvelin on vastaanottanut tiedoston."
+  },
+  "editor.close.discard": {
+    "message": "Älä tallenna"
+  },
+  "editor.close.save": {
+    "message": "Tallenna"
+  },
+  "editor.close.title": {
+    "message": "Tallennetaanko muutokset?"
+  },
+  "editor.close.unsaved": {
+    "message": "Tiedostossa {name} on tallentamattomia muutoksia."
+  },
+  "editor.close.unsent": {
+    "message": "Tiedostoa {name} ei ole tallennettu palvelimelleen: lähetys epäonnistui."
+  },
+  "editor.dialog.cancel": {
+    "message": "Peruuta"
+  },
+  "editor.edit.copy": {
+    "message": "Kopioi"
+  },
+  "editor.edit.cut": {
+    "message": "Leikkaa"
+  },
+  "editor.edit.find": {
+    "message": "Etsi..."
+  },
+  "editor.edit.find_next": {
+    "message": "Etsi seuraava"
+  },
+  "editor.edit.find_previous": {
+    "message": "Etsi edellinen"
+  },
+  "editor.edit.go_to_line": {
+    "message": "Siirry riville..."
+  },
+  "editor.edit.paste": {
+    "message": "Liitä"
+  },
+  "editor.edit.redo": {
+    "message": "Tee uudelleen"
+  },
+  "editor.edit.replace": {
+    "message": "Korvaa..."
+  },
+  "editor.edit.undo": {
+    "message": "Kumoa"
+  },
+  "editor.external.not_set": {
+    "message": "ulkoista editoria ei ole asetettu (Asetukset, Muokkaus/katselu)"
+  },
+  "editor.file.close": {
+    "message": "Sulje"
+  },
+  "editor.file.reload": {
+    "message": "Lataa uudelleen"
+  },
+  "editor.file.save": {
+    "message": "Tallenna"
+  },
+  "editor.file.save_as": {
+    "message": "Tallenna nimellä..."
+  },
+  "editor.find.close": {
+    "message": "Sulje (Escape)"
+  },
+  "editor.find.count": {
+    "message": "{current}/{total}"
+  },
+  "editor.find.in_selection": {
+    "message": "Etsi valinnasta (Alt+L)"
+  },
+  "editor.find.match_case": {
+    "message": "Sama kirjainkoko (Alt+C)"
+  },
+  "editor.find.next": {
+    "message": "Seuraava osuma (Enter)"
+  },
+  "editor.find.no_results": {
+    "message": "Ei tuloksia"
+  },
+  "editor.find.placeholder": {
+    "message": "Etsi"
+  },
+  "editor.find.preserve_case": {
+    "message": "Säilytä kirjainkoko (Alt+P)"
+  },
+  "editor.find.previous": {
+    "message": "Edellinen osuma (Shift+Enter)"
+  },
+  "editor.find.regex": {
+    "message": "Käytä säännöllistä lauseketta (Alt+R)"
+  },
+  "editor.find.replace": {
+    "message": "Korvaa (Ctrl+Shift+1)"
+  },
+  "editor.find.replace_all": {
+    "message": "Korvaa kaikki (Ctrl+Alt+Enter)"
+  },
+  "editor.find.replace_placeholder": {
+    "message": "Korvaa"
+  },
+  "editor.find.toggle_replace": {
+    "message": "Näytä tai piilota korvaus"
+  },
+  "editor.find.whole_word": {
+    "message": "Vain kokonaiset sanat (Alt+W)"
+  },
+  "editor.go_to_line.label": {
+    "message": "Rivi tai rivi:sarake"
+  },
+  "editor.go_to_line.title": {
+    "message": "Siirry riville"
+  },
+  "editor.language.by_file_name": {
+    "message": "Tiedostonimen mukaan"
+  },
+  "editor.language.plain_text": {
+    "message": "Pelkkä teksti"
+  },
+  "editor.menu.edit": {
+    "message": "Muokkaa"
+  },
+  "editor.menu.file": {
+    "message": "Tiedosto"
+  },
+  "editor.menu.language": {
+    "message": "Kieli"
+  },
+  "editor.menu.selection": {
+    "message": "Valinta"
+  },
+  "editor.menu.view": {
+    "message": "Näytä"
+  },
+  "editor.open.too_large": {
+    "message": "ylittää sisäisen editorin {limit_mb} Mt:n rajan (Asetukset, Muokkaus/katselu); Ctrl+Shift+F4 muokkaa sitä ulkoisella editorilla"
+  },
+  "editor.reload.button": {
+    "message": "Lataa uudelleen"
+  },
+  "editor.reload.failed": {
+    "message": "Uudelleenlataus epäonnistui: {err}"
+  },
+  "editor.reload.text": {
+    "message": "Tallentamattomat muutokset menetetään."
+  },
+  "editor.reload.title": {
+    "message": "Ladataanko tiedosto uudelleen?"
+  },
+  "editor.reload.unfit": {
+    "message": "Ei ladattu uudelleen: {why, select, binary {se on binääritiedosto} other {se ei ole UTF-8-tekstiä}}."
+  },
+  "editor.save.admin": {
+    "message": "Tiedoston ”{name}” tallennus"
+  },
+  "editor.save.failed": {
+    "message": "Tiedostoa {path} ei voitu tallentaa: {err}"
+  },
+  "editor.save_anyway.button": {
+    "message": "Tallenna silti"
+  },
+  "editor.save_anyway.text": {
+    "message": "Tiedosto ei ollut tekstiä: tallennus kirjoittaa sen sellaisena kuin se näkyy, joten kaikki, mikä ei ollut tekstiä, muuttuu pysyvästi."
+  },
+  "editor.save_anyway.title": {
+    "message": "Tallennetaanko tekstinä?"
+  },
+  "editor.selection.add_cursor_above": {
+    "message": "Lisää kohdistin yläpuolelle"
+  },
+  "editor.selection.add_cursor_below": {
+    "message": "Lisää kohdistin alapuolelle"
+  },
+  "editor.selection.delete_lines": {
+    "message": "Poista rivit"
+  },
+  "editor.selection.duplicate_lines": {
+    "message": "Monista rivit"
+  },
+  "editor.selection.indent": {
+    "message": "Sisennä"
+  },
+  "editor.selection.lowercase": {
+    "message": "pienet kirjaimet"
+  },
+  "editor.selection.move_lines_down": {
+    "message": "Siirrä rivejä alas"
+  },
+  "editor.selection.move_lines_up": {
+    "message": "Siirrä rivejä ylös"
+  },
+  "editor.selection.outdent": {
+    "message": "Vähennä sisennystä"
+  },
+  "editor.selection.select_all": {
+    "message": "Valitse kaikki"
+  },
+  "editor.selection.select_all_occurrences": {
+    "message": "Valitse kaikki esiintymät"
+  },
+  "editor.selection.sort_lines_ascending": {
+    "message": "Lajittele rivit nousevasti"
+  },
+  "editor.selection.sort_lines_descending": {
+    "message": "Lajittele rivit laskevasti"
+  },
+  "editor.selection.title_case": {
+    "message": "Isot Alkukirjaimet"
+  },
+  "editor.selection.toggle_line_comment": {
+    "message": "Rivikommentti päälle/pois"
+  },
+  "editor.selection.trim_trailing_whitespace": {
+    "message": "Poista rivien lopun tyhjät merkit"
+  },
+  "editor.selection.uppercase": {
+    "message": "ISOT KIRJAIMET"
+  },
+  "editor.send.failed": {
+    "message": "Tallennus palvelimelle epäonnistui: {err}. Tallenna yrittää uudelleen."
+  },
+  "editor.status.modified": {
+    "message": "Muokattu"
+  },
+  "editor.status.position": {
+    "message": "Rivi {line}, sar. {column}"
+  },
+  "editor.status.position_selected": {
+    "message": "Rivi {line}, sar. {column} ({count, plural, one {# valittu} other {# valittu}})"
+  },
+  "editor.status.sending": {
+    "message": "Tallennetaan palvelimelle"
+  },
+  "editor.status.spaces": {
+    "message": "Välilyönnit: {size}"
+  },
+  "editor.status.tab_size": {
+    "message": "Sarkaimen koko: {size}"
+  },
+  "editor.status.unsent": {
+    "message": "Ei palvelimella"
+  },
+  "editor.terminal.not_found": {
+    "message": "editoria ei löytynyt; aseta $EDITOR"
+  },
+  "editor.title": {
+    "message": "{path} — Editori"
+  },
+  "editor.unfit.open_anyway": {
+    "message": "Avaa silti"
+  },
+  "editor.unfit.text": {
+    "message": "Tiedostoa ei näytetä editorissa, koska {why, select, binary {se on binääritiedosto} other {se ei ole UTF-8-tekstiä}}."
+  },
+  "editor.view.folding": {
+    "message": "Laskostus"
+  },
+  "editor.view.indent_guides": {
+    "message": "Sisennysviivat"
+  },
+  "editor.view.indent_with_tabs": {
+    "message": "Sisennä sarkaimin"
+  },
+  "editor.view.line_numbers": {
+    "message": "Rivinumerot"
+  },
+  "editor.view.minimap": {
+    "message": "Pienoiskartta"
+  },
+  "editor.view.tab_width": {
+    "message": "Sarkaimen leveys {width}"
+  },
+  "editor.view.unfold_all": {
+    "message": "Avaa kaikki laskokset"
+  },
+  "editor.view.whitespace": {
+    "message": "Tyhjät merkit"
+  },
+  "editor.view.word_wrap": {
+    "message": "Rivitys"
+  },
+  "elevate.failed": {
+    "message": "järjestelmänvalvojana se epäonnistui myös ({code})"
+  },
+  "elevate.no_consent": {
+    "message": "järjestelmänvalvojan hyväksyntää ei annettu"
+  },
+  "elevate.no_password": {
+    "message": "salasanaa ei annettu"
+  },
+  "elevate.not_authorised": {
+    "message": "ei valtuutusta"
+  },
+  "elevate.percent_name": {
+    "message": "{path}: %-merkin sisältävää nimeä ei voi käsitellä järjestelmänvalvojana; nimeä se ensin uudelleen"
+  },
+  "elevate.pkexec_missing": {
+    "message": "pkexec (polkit) ei ole asennettuna"
+  },
+  "file_menu.change_tags_failed": {
+    "message": "Tunnisteita ei voitu muuttaa: {err}"
+  },
+  "file_menu.compress": {
+    "message": "{count, plural, =1 {Pakkaa ”{name}”…} one {Pakkaa # kohde…} other {Pakkaa # kohdetta…}}"
+  },
+  "file_menu.copy": {
+    "message": "{count, plural, =1 {Kopioi ”{name}”} one {Kopioi # kohde} other {Kopioi # kohdetta}}"
+  },
+  "file_menu.copy_path": {
+    "message": "Kopioi polku leikepöydälle"
+  },
+  "file_menu.delete": {
+    "message": "Poista"
+  },
+  "file_menu.duplicate": {
+    "message": "Monista"
+  },
+  "file_menu.duplicate_failed": {
+    "message": "Ei voitu monistaa: {err}"
+  },
+  "file_menu.edit_tags": {
+    "message": "Tunnisteet…"
+  },
+  "file_menu.get_info": {
+    "message": "Näytä tiedot"
+  },
+  "file_menu.make_alias": {
+    "message": "Tee alias"
+  },
+  "file_menu.make_alias_failed": {
+    "message": "Aliasta ei voitu tehdä: {err}"
+  },
+  "file_menu.move_to_trash": {
+    "message": "Siirrä roskakoriin"
+  },
+  "file_menu.new_folder": {
+    "message": "Uusi kansio"
+  },
+  "file_menu.open": {
+    "message": "Avaa"
+  },
+  "file_menu.open_failed": {
+    "message": "Ei voitu avata: {err}"
+  },
+  "file_menu.open_with": {
+    "message": "Avaa sovelluksella"
+  },
+  "file_menu.open_with_default": {
+    "message": "{app} (oletus)"
+  },
+  "file_menu.paste": {
+    "message": "Sijoita"
+  },
+  "file_menu.quick_look": {
+    "message": "{count, plural, =1 {Pikakatsele ”{name}”} one {Pikakatsele # kohde} other {Pikakatsele # kohdetta}}"
+  },
+  "file_menu.quick_look_failed": {
+    "message": "Pikakatselu: {err}"
+  },
+  "file_menu.rename": {
+    "message": "Nimeä uudelleen…"
+  },
+  "file_menu.reveal_failed": {
+    "message": "Ei voitu näyttää Finderissa: {err}"
+  },
+  "file_menu.reveal_in_finder": {
+    "message": "Näytä Finderissa"
+  },
+  "file_menu.show_package_contents": {
+    "message": "Näytä paketin sisältö"
+  },
+  "file_menu.tag_dot.add": {
+    "message": "Lisää tunniste ”{name}”"
+  },
+  "file_menu.tag_dot.remove": {
+    "message": "Poista tunniste ”{name}”"
+  },
+  "file_menu.tags_popover.show_all": {
+    "message": "Näytä kaikki…"
+  },
+  "file_menu.tags_popover.title": {
+    "message": "{count, plural, =1 {Tunnisteet: ”{name}”} one {Tunnisteet: # kohde} other {Tunnisteet: # kohdetta}}"
+  },
+  "find.backwards": {
+    "message": "Etsi taaksepäin"
+  },
+  "find.cancel": {
+    "message": "Peruuta"
+  },
+  "find.case_sensitive": {
+    "message": "Sama kirjainkoko"
+  },
+  "find.hex": {
+    "message": "Etsi heksamerkkijonoa"
+  },
+  "find.ok": {
+    "message": "OK"
+  },
+  "find.regex": {
+    "message": "RegEx"
+  },
+  "find.text.label": {
+    "message": "Kirjoita etsittävä teksti"
+  },
+  "find.title": {
+    "message": "Etsi"
+  },
+  "find.whole_words": {
+    "message": "Vain kokonaiset sanat"
+  },
+  "keys.apply": {
+    "message": "Käytä"
+  },
+  "keys.cancel": {
+    "message": "Peruuta"
+  },
+  "keys.clear.tooltip": {
+    "message": "Ei näppäintä"
+  },
+  "keys.column.alternate": {
+    "message": "Vaihtoehto"
+  },
+  "keys.column.command": {
+    "message": "Komento"
+  },
+  "keys.column.shortcut": {
+    "message": "Pikanäppäin"
+  },
+  "keys.custom": {
+    "message": "Mukautettu"
+  },
+  "keys.delete_set": {
+    "message": "Poista"
+  },
+  "keys.note.custom_replaced": {
+    "message": "Omat näppäimesi korvautuivat sarjan {name} näppäimillä; Tallenna nimellä säilyttää ne."
+  },
+  "keys.note.deleted": {
+    "message": "{name} on poistettu; OK tai Käytä vahvistaa poiston."
+  },
+  "keys.note.moved": {
+    "message": "{key} on nyt {command}, ei enää {other}."
+  },
+  "keys.note.name_reserved": {
+    "message": "”{name}” on valmiin sarjan nimi; valitse toinen."
+  },
+  "keys.note.press_new_key": {
+    "message": "Paina uutta näppäintä; Esc jättää sen ennalleen."
+  },
+  "keys.note.saved": {
+    "message": "Tallennettu nimellä {name}; OK tai Käytä ottaa sen käyttöön."
+  },
+  "keys.note.set": {
+    "message": "{key} on nyt {command}."
+  },
+  "keys.note.taken_by_system": {
+    "message": "{key} on varattu ({by}), joten se ei koskaan päädy Spark Commanderille."
+  },
+  "keys.ok": {
+    "message": "OK"
+  },
+  "keys.press_key": {
+    "message": "Paina näppäintä…"
+  },
+  "keys.reserved.application_launcher": {
+    "message": "{system}: sovelluskäynnistin"
+  },
+  "keys.reserved.close_window": {
+    "message": "{system}: sulje ikkuna"
+  },
+  "keys.reserved.close_window_or_tab": {
+    "message": "{system}: sulje ikkuna tai välilehti"
+  },
+  "keys.reserved.dock": {
+    "message": "{system}: Dock"
+  },
+  "keys.reserved.floating_window": {
+    "message": "{system}: kelluva ikkuna"
+  },
+  "keys.reserved.force_quit": {
+    "message": "{system}: pakota lopettamaan"
+  },
+  "keys.reserved.hide_program": {
+    "message": "{system}: kätke ohjelma"
+  },
+  "keys.reserved.input_source": {
+    "message": "{system}: syöttölähde"
+  },
+  "keys.reserved.keyboard_access": {
+    "message": "{system}: näppäimistön käyttö"
+  },
+  "keys.reserved.keyboard_navigation": {
+    "message": "{system}: näppäimistönavigointi"
+  },
+  "keys.reserved.krunner": {
+    "message": "{system}: KRunner"
+  },
+  "keys.reserved.lock_screen": {
+    "message": "{system}: lukitse näyttö"
+  },
+  "keys.reserved.log_out": {
+    "message": "{system}: kirjaudu ulos"
+  },
+  "keys.reserved.maximize_window": {
+    "message": "{system}: suurenna ikkuna"
+  },
+  "keys.reserved.menu_bar": {
+    "message": "{system}: valikkorivi"
+  },
+  "keys.reserved.minimize": {
+    "message": "{system}: pienennä"
+  },
+  "keys.reserved.mission_control": {
+    "message": "{system}: Mission Control"
+  },
+  "keys.reserved.move_window": {
+    "message": "{system}: siirrä ikkunaa"
+  },
+  "keys.reserved.next_window": {
+    "message": "{system}: seuraava ikkuna"
+  },
+  "keys.reserved.present_windows": {
+    "message": "{system}: Esitä ikkunat"
+  },
+  "keys.reserved.present_windows_all": {
+    "message": "{system}: Esitä ikkunat (kaikki työpöydät)"
+  },
+  "keys.reserved.present_windows_class": {
+    "message": "{system}: Esitä ikkunat (ikkunaluokka)"
+  },
+  "keys.reserved.program_windows": {
+    "message": "{system}: ohjelman ikkunat"
+  },
+  "keys.reserved.quit": {
+    "message": "{system}: lopeta"
+  },
+  "keys.reserved.resize_window": {
+    "message": "{system}: muuta ikkunan kokoa"
+  },
+  "keys.reserved.restore_window": {
+    "message": "{system}: palauta ikkuna"
+  },
+  "keys.reserved.run_command": {
+    "message": "{system}: suorita komento"
+  },
+  "keys.reserved.screenshot": {
+    "message": "{system}: kuvakaappaus"
+  },
+  "keys.reserved.security_screen": {
+    "message": "{system}: suojausnäyttö"
+  },
+  "keys.reserved.show_desktop": {
+    "message": "{system}: näytä työpöytä"
+  },
+  "keys.reserved.space_left": {
+    "message": "{system}: vasemmanpuoleinen työtila"
+  },
+  "keys.reserved.space_right": {
+    "message": "{system}: oikeanpuoleinen työtila"
+  },
+  "keys.reserved.spotlight": {
+    "message": "{system}: Spotlight"
+  },
+  "keys.reserved.start_menu": {
+    "message": "{system}: Käynnistä-valikko"
+  },
+  "keys.reserved.status_menus": {
+    "message": "{system}: tilavalikot"
+  },
+  "keys.reserved.suspend_compositing": {
+    "message": "{system}: keskeytä koostaminen"
+  },
+  "keys.reserved.switch_program_windows": {
+    "message": "{system}: vaihda ohjelman ikkunoiden välillä"
+  },
+  "keys.reserved.switch_programs": {
+    "message": "{system}: vaihda ohjelmien välillä"
+  },
+  "keys.reserved.switch_system_controls": {
+    "message": "{system}: siirry järjestelmän säätimiin"
+  },
+  "keys.reserved.switch_to_desktop": {
+    "message": "{system}: vaihda työpöytään {number}"
+  },
+  "keys.reserved.switch_windows": {
+    "message": "{system}: vaihda ikkunoiden välillä"
+  },
+  "keys.reserved.system_monitor": {
+    "message": "{system}: Järjestelmävalvonta"
+  },
+  "keys.reserved.task_manager": {
+    "message": "{system}: Tehtävienhallinta"
+  },
+  "keys.reserved.text_console": {
+    "message": "{system}: vaihda tekstikonsoliin"
+  },
+  "keys.reserved.toolbar": {
+    "message": "{system}: työkalurivi"
+  },
+  "keys.reserved.window_menu": {
+    "message": "{system}: ikkunavalikko"
+  },
+  "keys.reserved.workspace_down": {
+    "message": "{system}: alempi työtila"
+  },
+  "keys.reserved.workspace_left": {
+    "message": "{system}: vasemmanpuoleinen työtila"
+  },
+  "keys.reserved.workspace_right": {
+    "message": "{system}: oikeanpuoleinen työtila"
+  },
+  "keys.reserved.workspace_up": {
+    "message": "{system}: ylempi työtila"
+  },
+  "keys.reset.tooltip": {
+    "message": "Takaisin sarjan {preset} näppäimiin"
+  },
+  "keys.reset_all": {
+    "message": "Palauta kaikki"
+  },
+  "keys.save_as.button": {
+    "message": "Tallenna nimellä…"
+  },
+  "keys.save_as.default_name": {
+    "message": "Omat näppäimet"
+  },
+  "keys.save_as.label": {
+    "message": "Nimi:"
+  },
+  "keys.save_as.title": {
+    "message": "Tallenna pikanäppäimet"
+  },
+  "keys.search.placeholder": {
+    "message": "Etsi komentoa tai näppäintä"
+  },
+  "keys.set_label": {
+    "message": "Näppäimet:"
+  },
+  "keys.taken_by.tooltip": {
+    "message": "Varattu: {by}"
+  },
+  "keys.title": {
+    "message": "Pikanäppäimet"
+  },
+  "main.admin.button": {
+    "message": "Järjestelmänvalvojana"
+  },
+  "main.admin.deleting": {
+    "message": "{count, plural, one {# kohteen poisto} other {# kohteen poisto}}"
+  },
+  "main.admin.failed": {
+    "message": "Järjestelmänvalvojana: {err}"
+  },
+  "main.admin.making": {
+    "message": "Kansion ”{name}” luonti"
+  },
+  "main.admin.offer": {
+    "message": "{what}: lupa evätty. Järjestelmänvalvojana tehtäessä järjestelmä kysyy salasanaa."
+  },
+  "main.admin.offer_delete": {
+    "message": "{what}: lupa evätty. Järjestelmänvalvojana tehtäessä järjestelmä kysyy salasanaa. Näin poistettu katoaa pysyvästi."
+  },
+  "main.admin.title": {
+    "message": "Lupa evätty"
+  },
+  "main.delete.from_archive": {
+    "message": "{kind, select, folder {Poistetaanko kansio ”{name}” arkistosta {archive}? Tätä ei voi kumota.} file {Poistetaanko tiedosto ”{name}” arkistosta {archive}? Tätä ei voi kumota.} other {Poistetaanko {count, plural, one {# kohde} other {# kohdetta}} arkistosta {archive}? Tätä ei voi kumota.}}"
+  },
+  "main.delete.on_server": {
+    "message": "{kind, select, folder {Poistetaanko kansio ”{name}” palvelimelta {server}? Tätä ei voi kumota.} file {Poistetaanko tiedosto ”{name}” palvelimelta {server}? Tätä ei voi kumota.} other {Poistetaanko {count, plural, one {# kohde} other {# kohdetta}} palvelimelta {server}? Tätä ei voi kumota.}}"
+  },
+  "main.delete.permanently": {
+    "message": "{kind, select, folder {Poistetaanko kansio ”{name}” pysyvästi? Tätä ei voi kumota.} file {Poistetaanko tiedosto ”{name}” pysyvästi? Tätä ei voi kumota.} other {Poistetaanko {count, plural, one {# kohde} other {# kohdetta}} pysyvästi? Tätä ei voi kumota.}}"
+  },
+  "main.delete.title": {
+    "message": "Poista"
+  },
+  "main.delete.title_permanently": {
+    "message": "Poista pysyvästi"
+  },
+  "main.delete.to_trash": {
+    "message": "{kind, select, folder {Siirretäänkö kansio ”{name}” roskakoriin?} file {Siirretäänkö tiedosto ”{name}” roskakoriin?} other {Siirretäänkö {count, plural, one {# kohde} other {# kohdetta}} roskakoriin?}}"
+  },
+  "main.download.edit": {
+    "message": "Lataa {file} muokattavaksi"
+  },
+  "main.download.view": {
+    "message": "Lataa {file} katseltavaksi"
+  },
+  "main.error.make_folder": {
+    "message": "Kansiota ei voitu luoda: {err}"
+  },
+  "main.error.read_settings": {
+    "message": "Asetuksia ei voitu lukea: {err}"
+  },
+  "main.error.read_tabs": {
+    "message": "Avoimia välilehtiä ei voitu lukea: {err}"
+  },
+  "main.error.read_workspaces": {
+    "message": "Työtiloja ei voitu lukea: {err}"
+  },
+  "main.error.save_settings": {
+    "message": "Asetuksia ei voitu tallentaa: {err}"
+  },
+  "main.folder_tree.home": {
+    "message": "Koti"
+  },
+  "main.go.no_such_folder": {
+    "message": "{path}: kansiota ei ole tällä tietokoneella"
+  },
+  "main.new_folder.label": {
+    "message": "Uusi kansio (hakemisto):"
+  },
+  "main.new_folder.title": {
+    "message": "Uusi kansio"
+  },
+  "main.sync_browsing.lost": {
+    "message": "{err}. Synkronoitu selaus on pois päältä."
+  },
+  "main.tool.needs_file": {
+    "message": "Kohdistin ei ole tiedoston kohdalla: %N, %O ja %E tarvitsevat tiedoston."
+  },
+  "main.tool.needs_local_folder": {
+    "message": "Toinen paneeli näyttää palvelinta tai arkistoa: %T tarvitsee kansion tältä tietokoneelta."
+  },
+  "main.undo.done": {
+    "message": "{way, select, redo {Tehty uudelleen: {title}} other {Kumottu: {title}}}"
+  },
+  "main.undo.failed": {
+    "message": "{way, select, redo {Toimintoa ”{title}” ei voitu tehdä uudelleen: {err}} other {Toimintoa ”{title}” ei voitu kumota: {err}}}"
+  },
+  "main.undo.nothing": {
+    "message": "{way, select, redo {Ei mitään tehtävää uudelleen.} other {Ei mitään kumottavaa.}}"
+  },
+  "main.undo.queued": {
+    "message": "{way, select, redo {Jonossa uudelleen tehtäväksi: {title}} other {Jonossa kumottavaksi: {title}}}"
+  },
+  "mark.compare.marked": {
+    "message": "{count, plural, one {# tiedosto merkitty: uudempi kuin toisella puolella tai puuttuu sieltä.} other {# tiedostoa merkitty: uudempia kuin toisella puolella tai puuttuvat sieltä.}}"
+  },
+  "mark.compare.same": {
+    "message": "Kansioissa on samat tiedostot."
+  },
+  "mark.load_selection.label": {
+    "message": "Valitse tiedostossa luetellut nimet:"
+  },
+  "mark.load_selection.title": {
+    "message": "Lataa valinta"
+  },
+  "mark.save_selection.label": {
+    "message": "Tallenna valitut nimet tiedostoon:"
+  },
+  "mark.save_selection.title": {
+    "message": "Tallenna valinta"
+  },
+  "mark.select_group.label": {
+    "message": "Valitse tiedostot (*.txt *.md; kansiomaski päättyy /-merkkiin):"
+  },
+  "mark.select_group.title": {
+    "message": "Valitse ryhmä"
+  },
+  "mark.selection_file.not_local": {
+    "message": "Valintatiedostot säilytetään tällä tietokoneella, arkistojen ulkopuolella."
+  },
+  "mark.unselect_group.label": {
+    "message": "Poista tiedostojen valinta (*.txt *.md; kansiomaski päättyy /-merkkiin):"
+  },
+  "mark.unselect_group.title": {
+    "message": "Poista ryhmän valinta"
+  },
+  "media.cannot_play": {
+    "message": "Tätä ei voi toistaa: {err}"
+  },
+  "media.cannot_play_as_text": {
+    "message": "Tätä ei voi toistaa: {err}. 1 näyttää sen tekstinä."
+  },
+  "media.continuing": {
+    "message": "Jatketaan kohdasta {time}"
+  },
+  "media.error.missing": {
+    "message": "libmpv puuttuu: Asetukset > Lisäosat lataa sen (lähdekoodista käännetyssä: vendor/mpv/{script})"
+  },
+  "media.error.not_started": {
+    "message": "libmpv ei käynnistynyt"
+  },
+  "media.error.too_long": {
+    "message": "{path}: mpv:ltä kesti liian kauan"
+  },
+  "media.error.unsupported_system": {
+    "message": "videota voi toistaa toistaiseksi vain Linuxissa, macOS:ssä ja Windowsissa"
+  },
+  "menu.archive": {
+    "message": "Arkisto"
+  },
+  "menu.associations": {
+    "message": "Kytkennät"
+  },
+  "menu.button_bar": {
+    "message": "Painikerivi"
+  },
+  "menu.checksums": {
+    "message": "Tarkistussummat"
+  },
+  "menu.commands": {
+    "message": "Komennot"
+  },
+  "menu.compare_directories": {
+    "message": "Vertaa kansioita"
+  },
+  "menu.configuration": {
+    "message": "Määritykset"
+  },
+  "menu.copy_names": {
+    "message": "Kopioi nimet"
+  },
+  "menu.files": {
+    "message": "Tiedostot"
+  },
+  "menu.filter": {
+    "message": "Suodatin"
+  },
+  "menu.go": {
+    "message": "Siirry"
+  },
+  "menu.help": {
+    "message": "Ohje"
+  },
+  "menu.mark": {
+    "message": "Merkitse"
+  },
+  "menu.other": {
+    "message": "Muut"
+  },
+  "menu.recently_closed_tabs": {
+    "message": "Äskettäin suljetut välilehdet"
+  },
+  "menu.selection": {
+    "message": "Valinta"
+  },
+  "menu.show": {
+    "message": "Näytä"
+  },
+  "menu.sidebar": {
+    "message": "Sivupaneeli"
+  },
+  "menu.sort": {
+    "message": "Lajittelu"
+  },
+  "menu.split_and_combine": {
+    "message": "Jaa ja yhdistä"
+  },
+  "menu.tabs": {
+    "message": "Välilehdet"
+  },
+  "menu.tools": {
+    "message": "Työkalut"
+  },
+  "menu.workspaces": {
+    "message": "Työtilat"
+  },
+  "menus.hide_app": {
+    "message": "Kätke Spark Commander"
+  },
+  "menus.hide_others": {
+    "message": "Kätke muut"
+  },
+  "menus.minimize": {
+    "message": "Pienennä"
+  },
+  "menus.quit_app": {
+    "message": "Lopeta Spark Commander"
+  },
+  "menus.services": {
+    "message": "Palvelut"
+  },
+  "menus.show_all": {
+    "message": "Näytä kaikki"
+  },
+  "menus.zoom": {
+    "message": "Zoomaa"
+  },
+  "name_dialog.cancel": {
+    "message": "Peruuta"
+  },
+  "name_dialog.ok": {
+    "message": "OK"
+  },
+  "operations.clear": {
+    "message": "Tyhjennä valmiit"
+  },
+  "operations.duration.seconds": {
+    "message": "{seconds} s"
+  },
+  "operations.empty": {
+    "message": "Ei tehtäviä."
+  },
+  "operations.job.answer": {
+    "message": "Odottaa vastaustasi"
+  },
+  "operations.job.bytes": {
+    "message": "{done}/{total}"
+  },
+  "operations.job.cancel_tooltip": {
+    "message": "Peruuta"
+  },
+  "operations.job.cancelled": {
+    "message": "Peruttu"
+  },
+  "operations.job.counting": {
+    "message": "Lasketaan: {count, plural, one {# tiedosto} other {# tiedostoa}}"
+  },
+  "operations.job.done": {
+    "message": "Valmis"
+  },
+  "operations.job.done_skipped": {
+    "message": "Valmis, {count, plural, one {# ohitettu} other {# ohitettu}}"
+  },
+  "operations.job.failed": {
+    "message": "Epäonnistui"
+  },
+  "operations.job.files": {
+    "message": "{files}/{count, plural, one {# tiedosto} other {# tiedostoa}}"
+  },
+  "operations.job.left": {
+    "message": "{time} jäljellä"
+  },
+  "operations.job.running": {
+    "message": "Käynnissä"
+  },
+  "operations.job.waiting": {
+    "message": "Odottaa"
+  },
+  "operations.menu.cancel": {
+    "message": "Peruuta"
+  },
+  "operations.menu.clear": {
+    "message": "Tyhjennä valmiit"
+  },
+  "operations.menu.move_down": {
+    "message": "Siirrä alas"
+  },
+  "operations.menu.move_up": {
+    "message": "Siirrä ylös"
+  },
+  "operations.settings_tooltip": {
+    "message": "Tehtäväjonon asetukset"
+  },
+  "operations.summary.failed": {
+    "message": "{count, plural, one {# epäonnistui} other {# epäonnistui}}"
+  },
+  "operations.summary.running": {
+    "message": "{count, plural, one {# käynnissä} other {# käynnissä}}"
+  },
+  "operations.summary.waiting": {
+    "message": "{count, plural, one {# odottaa} other {# odottaa}}"
+  },
+  "ops.as_administrator.failed": {
+    "message": "Järjestelmänvalvojana: {err}"
+  },
+  "ops.as_administrator.progress": {
+    "message": "Järjestelmänvalvojana…"
+  },
+  "ops.delete.title_many": {
+    "message": "Poista {count, plural, one {# kohde} other {# kohdetta}} kansiosta {folder}"
+  },
+  "ops.delete.title_one": {
+    "message": "Poista ”{name}”"
+  },
+  "ops.delete.trash_title_many": {
+    "message": "Siirrä {count, plural, one {# kohde} other {# kohdetta}} kansiosta {folder} roskakoriin"
+  },
+  "ops.delete.trash_title_one": {
+    "message": "Siirrä ”{name}” roskakoriin"
+  },
+  "ops.error.file_in_the_way": {
+    "message": "samanniminen tiedosto on tiellä"
+  },
+  "ops.error.into_itself": {
+    "message": "ei voi kopioida itseensä"
+  },
+  "ops.exists_already": {
+    "message": "{name} on jo olemassa"
+  },
+  "ops.link.dialog_title": {
+    "message": "Luo linkki"
+  },
+  "ops.link.failed": {
+    "message": "Linkkiä ei voitu luoda: {err}"
+  },
+  "ops.link.kind.hard": {
+    "message": "Kova linkki"
+  },
+  "ops.link.kind.junction": {
+    "message": "Liitoskohta"
+  },
+  "ops.link.kind.shortcut": {
+    "message": "Pikakuvake (.lnk)"
+  },
+  "ops.link.kind.symbolic": {
+    "message": "Symbolinen linkki"
+  },
+  "ops.link.label_many": {
+    "message": "Linkit {count, plural, one {# kohteeseen} other {# kohteeseen}} kansioon:"
+  },
+  "ops.link.label_one": {
+    "message": "Linkki kohteeseen ”{name}” nimellä:"
+  },
+  "ops.link.making": {
+    "message": "{kind, select, symbolic {Symbolisen linkin} hard {Kovan linkin} junction {Liitoskohdan} other {Pikakuvakkeen (.lnk)}} luonti"
+  },
+  "ops.link.needs_admin": {
+    "message": "symboliset linkit vaativat järjestelmänvalvojan oikeudet tai kehittäjätilan"
+  },
+  "ops.link.thread_failed": {
+    "message": "pikakuvakkeen säie epäonnistui"
+  },
+  "ops.link.title_many": {
+    "message": "{kind, select, symbolic {Symboliset linkit} hard {Kovat linkit} junction {Liitoskohdat} other {Pikakuvakkeet (.lnk)}} {count, plural, one {# kohteeseen} other {# kohteeseen}} kansiossa {folder}"
+  },
+  "ops.link.title_one": {
+    "message": "{kind, select, symbolic {Symbolinen linkki} hard {Kova linkki} junction {Liitoskohta} other {Pikakuvake (.lnk)}} kohteeseen ”{name}” kansiossa {folder}"
+  },
+  "ops.link.windows_only": {
+    "message": "liitoskohdat ja pikakuvakkeet ovat vain Windowsissa"
+  },
+  "ops.redo.title": {
+    "message": "Tee uudelleen: {what}"
+  },
+  "ops.title.many": {
+    "message": "{kind, select, copy {Kopioi} other {Siirrä}} {count, plural, one {# kohde} other {# kohdetta}} kansioon {target}"
+  },
+  "ops.title.one": {
+    "message": "{kind, select, copy {Kopioi} other {Siirrä}} ”{name}” kohteeseen {target}"
+  },
+  "ops.undo.not_a_server": {
+    "message": "{url}: ei palvelimen osoite"
+  },
+  "ops.undo.not_in_trash": {
+    "message": "ne eivät ole enää roskakorissa"
+  },
+  "ops.undo.restore_title": {
+    "message": "{title}: korvatut tiedostot takaisin roskakorista"
+  },
+  "ops.undo.title": {
+    "message": "Kumoa: {what}"
+  },
+  "pack.cancel": {
+    "message": "Peruuta"
+  },
+  "pack.compression": {
+    "message": "Pakkaus:"
+  },
+  "pack.dialog_title": {
+    "message": "Pakkaa tiedostot"
+  },
+  "pack.encrypt": {
+    "message": "Salaa salasanalla"
+  },
+  "pack.format": {
+    "message": "Muoto:"
+  },
+  "pack.label": {
+    "message": "Pakkaa {count, plural, one {# kohde} other {# kohdetta}} arkistoon:"
+  },
+  "pack.level.fastest": {
+    "message": "Nopein"
+  },
+  "pack.level.maximum": {
+    "message": "Maksimi"
+  },
+  "pack.level.normal": {
+    "message": "Normaali"
+  },
+  "pack.level.store": {
+    "message": "Ei pakkausta"
+  },
+  "pack.level.ultra": {
+    "message": "Ultra"
+  },
+  "pack.local_only": {
+    "message": "{what, select, packing {Pakkaaminen} unpacking {Purkaminen} testing {Testaaminen} creating_checksums {Tarkistussummien luonti} making_links {Linkkien luonti} verifying_checksums {Tarkistussummien tarkistus} splitting {Jakaminen} combining {Yhdistäminen} other {Tämä}} toimii vain tämän tietokoneen tiedostoille, arkistojen ulkopuolella."
+  },
+  "pack.move_files": {
+    "message": "Siirrä arkistoon (poista pakatut tiedostot)"
+  },
+  "pack.needs_password": {
+    "message": "se vaatii salasanan"
+  },
+  "pack.ok": {
+    "message": "OK"
+  },
+  "pack.password_missing": {
+    "message": "Kirjoita salasana tai poista valinta Salaa salasanalla."
+  },
+  "pack.separate": {
+    "message": "Oma arkisto kullekin valitulle tiedostolle tai kansiolle"
+  },
+  "pack.split": {
+    "message": "Jaa osiin, joiden koko on"
+  },
+  "pack.split_unit": {
+    "message": "Mt"
+  },
+  "pack.test.broken": {
+    "message": "{broken, plural, one {# / {count} rikki} other {# / {count} rikki}}"
+  },
+  "pack.test.choose": {
+    "message": "Valitse testattavat arkistot."
+  },
+  "pack.test.ok": {
+    "message": "{count, plural, one {# arkisto OK} other {# arkistoa OK}}"
+  },
+  "pack.test.title_many": {
+    "message": "Testaa {count, plural, one {# arkisto} other {# arkistoa}}"
+  },
+  "pack.test.title_one": {
+    "message": "Testaa ”{name}”"
+  },
+  "pack.title.many": {
+    "message": "Pakkaa {count, plural, one {# kohde} other {# kohdetta}} arkistoon {archive}"
+  },
+  "pack.title.many_separate": {
+    "message": "Pakkaa {count, plural, one {# kohde} other {# kohdetta}} erillisiin {format}-arkistoihin"
+  },
+  "pack.title.one": {
+    "message": "Pakkaa ”{name}” arkistoon {archive}"
+  },
+  "pack.title.one_separate": {
+    "message": "Pakkaa ”{name}” erillisiin {format}-arkistoihin"
+  },
+  "pack.unpack.choose": {
+    "message": "Valitse purettavat arkistot."
+  },
+  "pack.unpack.dialog_title": {
+    "message": "Pura tiedostot"
+  },
+  "pack.unpack.label": {
+    "message": "Pura {count, plural, one {# arkisto} other {# arkistoa}} kansioon:"
+  },
+  "pack.unpack.mask": {
+    "message": "Vain tiedostot:"
+  },
+  "pack.unpack.overwrite": {
+    "message": "Korvaa olemassa olevat tiedostot (muuten ne säilytetään)"
+  },
+  "pack.unpack.password": {
+    "message": "Salasana:"
+  },
+  "pack.unpack.separate": {
+    "message": "Kukin arkisto omannimiseensä kansioon"
+  },
+  "pack.unpack.title_many": {
+    "message": "Pura {count, plural, one {# arkisto} other {# arkistoa}} kansioon {target}"
+  },
+  "pack.unpack.title_one": {
+    "message": "Pura ”{name}” kansioon {target}"
+  },
+  "pack.unpack.with_paths": {
+    "message": "Säilytä arkistoon tallennetut kansiot"
+  },
+  "pack.volume_invalid": {
+    "message": "Osan koko annetaan lukuna megatavuina."
+  },
+  "pack.wrong_password": {
+    "message": "väärä salasana"
+  },
+  "panel.admin.renaming": {
+    "message": "Uudelleennimeäminen nimeksi ”{name}”"
+  },
+  "panel.clipboard.copied": {
+    "message": "{count, plural, one {# kohde kopioitu} other {# kohdetta kopioitu}}: Ctrl+V liittää ne."
+  },
+  "panel.clipboard.cut": {
+    "message": "{count, plural, one {# kohde leikattu} other {# kohdetta leikattu}}: Ctrl+V liittää ne."
+  },
+  "panel.clipboard.no_cut_in_archive": {
+    "message": "Tiedostoja ei voi leikata arkistoista; Ctrl+C kopioi ne."
+  },
+  "panel.clipboard.no_files": {
+    "message": "Leikepöydällä ei ole tiedostoja."
+  },
+  "panel.clipboard.no_paste_in_archive": {
+    "message": "Tiedostoja ei voi vielä liittää arkistoihin."
+  },
+  "panel.clipboard.same_folder": {
+    "message": "Ne ovat jo tässä kansiossa: Ctrl+V liittää toiseen kansioon."
+  },
+  "panel.column.attr": {
+    "message": "Määr."
+  },
+  "panel.column.date": {
+    "message": "Päiväys"
+  },
+  "panel.column.ext": {
+    "message": "Pääte"
+  },
+  "panel.column.name": {
+    "message": "Nimi"
+  },
+  "panel.column.size": {
+    "message": "Koko"
+  },
+  "panel.disconnect": {
+    "message": "Katkaise yhteys"
+  },
+  "panel.drag.items": {
+    "message": "{count, plural, one {# kohde} other {# kohdetta}}"
+  },
+  "panel.error.archive_not_updatable": {
+    "message": "{name}: 7-Zip muuttaa paikallaan vain 7z-, zip- ja tar-arkistoja, ei tätä"
+  },
+  "panel.error.archive_on_server": {
+    "message": "{name}: palvelimilla olevia arkistoja ei voi vielä muuttaa"
+  },
+  "panel.error.branch_view_local": {
+    "message": "Haaranäkymä luettelee vain tämän tietokoneen kansioita"
+  },
+  "panel.error.exists": {
+    "message": "{name} on jo olemassa"
+  },
+  "panel.error.folder_in_the_way": {
+    "message": "samanniminen kansio on tiellä"
+  },
+  "panel.error.inside_archive": {
+    "message": "ei vielä arkistojen sisällä"
+  },
+  "panel.error.make_file": {
+    "message": "Tiedostoa ei voitu luoda: {err}"
+  },
+  "panel.error.no_name": {
+    "message": "nimeä ei annettu"
+  },
+  "panel.error.not_a_name": {
+    "message": "{name}: ei kelvollinen nimi"
+  },
+  "panel.error.other_drive": {
+    "message": "toinen paneeli siirtyi toiseen asemaan"
+  },
+  "panel.error.rename": {
+    "message": "Ei voitu nimetä uudelleen: {err}"
+  },
+  "panel.filter.custom.label": {
+    "message": "Tiedostotyypit, esim. *.txt *.md (|-merkin jälkeen pois jätettävät):"
+  },
+  "panel.filter.custom.title": {
+    "message": "Näytä tiedostot"
+  },
+  "panel.filter.programs": {
+    "message": "ohjelmat"
+  },
+  "panel.filter.selected_files": {
+    "message": "valitut tiedostot"
+  },
+  "panel.found.branch_view": {
+    "message": "Haaranäkymä:"
+  },
+  "panel.found.search_results": {
+    "message": "Hakutulokset:"
+  },
+  "panel.new_text_file.label": {
+    "message": "Tiedostonimi, avataan editoriin:"
+  },
+  "panel.new_text_file.title": {
+    "message": "Uusi tekstitiedosto"
+  },
+  "panel.opening.cancel": {
+    "message": "Peruuta"
+  },
+  "panel.opening.reading": {
+    "message": "Luetaan…"
+  },
+  "panel.opening.title": {
+    "message": "Avataan arkistoa"
+  },
+  "panel.quick_filter.hint": {
+    "message": "piilottaa muut kuin vastaavat; Escape näyttää kaikki"
+  },
+  "panel.quick_filter.label": {
+    "message": "Suodatin:"
+  },
+  "panel.quick_search.label": {
+    "message": "Haku:"
+  },
+  "panel.size.app": {
+    "message": "<APP>"
+  },
+  "panel.size.b": {
+    "message": "{size} t"
+  },
+  "panel.size.dir": {
+    "message": "<DIR>"
+  },
+  "panel.size.gb": {
+    "message": "{size} Gt"
+  },
+  "panel.size.kb": {
+    "message": "{size} kt"
+  },
+  "panel.size.mb": {
+    "message": "{size} Mt"
+  },
+  "panel.size.tb": {
+    "message": "{size} Tt"
+  },
+  "panel.space.bytes": {
+    "message": "{count, plural, one {{size} tavu ({human})} other {{size} tavua ({human})}}"
+  },
+  "panel.space.close": {
+    "message": "Sulje"
+  },
+  "panel.space.counting": {
+    "message": "Lasketaan…"
+  },
+  "panel.space.done": {
+    "message": "Valmis."
+  },
+  "panel.space.files": {
+    "message": "Tiedostot:"
+  },
+  "panel.space.folders": {
+    "message": "Kansiot:"
+  },
+  "panel.space.in_archive": {
+    "message": "Arkistojen sisällä Koko-sarakkeessa ovat jo koot."
+  },
+  "panel.space.title": {
+    "message": "Laske käytetty tila"
+  },
+  "panel.space.total": {
+    "message": "Koko yhteensä:"
+  },
+  "panel.space.unreadable": {
+    "message": "{count, plural, one {# kohdetta ei voitu lukea.} other {# kohdetta ei voitu lukea.}}"
+  },
+  "panel.status": {
+    "message": "{marked_size} k / {size} k, {marked_files} / {files, plural, one {# tiedosto} other {# tiedostoa}}, {marked_folders} / {folders, plural, one {# kansio} other {# kansiota}}"
+  },
+  "panel.sync_browsing.stop": {
+    "message": "Synkronoitu selaus (lopeta napsauttamalla)"
+  },
+  "panel.undo.rename": {
+    "message": "Nimeä ”{name}” uudelleen nimeksi ”{to}”"
+  },
+  "passwords.about.set": {
+    "message": "Pääsalasanan avulla tallennetut salasanat avautuvat toisella tietokoneella, kun asetuskansio on kopioitu sinne ja pääsalasana kirjoitetaan siellä. Jos unohdat sen, menetät vain tallennetut salasanat: ne kirjoitetaan uudelleen."
+  },
+  "passwords.about.unlock": {
+    "message": "Asetukset tulivat toiselta tietokoneelta, tai tällä tietokoneella ei ole avainnippua: pääsalasana avaa tallennetut salasanat täällä."
+  },
+  "passwords.cancel": {
+    "message": "Peruuta"
+  },
+  "passwords.done.set": {
+    "message": "Pääsalasana on asetettu."
+  },
+  "passwords.done.unlocked": {
+    "message": "Tallennetut salasanat ovat auki."
+  },
+  "passwords.error.locked": {
+    "message": "tallennetut salasanat ovat lukittuina: avaa ne pääsalasanalla (Määritykset › Asetukset › Salasanat)"
+  },
+  "passwords.error.no_master": {
+    "message": "pääsalasanaa ei ole asetettu"
+  },
+  "passwords.error.no_random": {
+    "message": "ei satunnaislukuja"
+  },
+  "passwords.error.not_opened": {
+    "message": "kohteen {what} salasanaa ei voi avata"
+  },
+  "passwords.error.not_sealed": {
+    "message": "salasanaa ei voitu salata"
+  },
+  "passwords.error.salt_damaged": {
+    "message": "pääsalasanan suola on vioittunut"
+  },
+  "passwords.error.wrong": {
+    "message": "pääsalasana on väärä"
+  },
+  "passwords.field.again": {
+    "message": "Uudelleen"
+  },
+  "passwords.field.master": {
+    "message": "Pääsalasana"
+  },
+  "passwords.locked_note": {
+    "message": "Tallennetut salasanat ovat lukittuina tällä tietokoneella: pääsalasana avaa ne."
+  },
+  "passwords.ok": {
+    "message": "OK"
+  },
+  "passwords.problem.differ": {
+    "message": "Salasanat eivät täsmää."
+  },
+  "passwords.problem.empty": {
+    "message": "Kirjoita pääsalasana."
+  },
+  "passwords.title.set": {
+    "message": "Pääsalasana"
+  },
+  "passwords.title.unlock": {
+    "message": "Avaa tallennetut salasanat"
+  },
+  "passwords.unlock_button": {
+    "message": "Avaa…"
+  },
+  "passwords.working": {
+    "message": "Käsitellään…"
+  },
+  "properties.accessed": {
+    "message": "Käytetty:"
+  },
+  "properties.change_attributes": {
+    "message": "Muuta määritteitä..."
+  },
+  "properties.close": {
+    "message": "Sulje"
+  },
+  "properties.contents": {
+    "message": "{file_count, plural, one {{files} tiedosto} other {{files} tiedostoa}}, {folder_count, plural, one {{folders} kansio} other {{folders} kansiota}}, {count, plural, one {{bytes} tavu} other {{bytes} tavua}} ({size})"
+  },
+  "properties.contents_counting": {
+    "message": "{file_count, plural, one {{files} tiedosto} other {{files} tiedostoa}}, {folder_count, plural, one {{folders} kansio} other {{folders} kansiota}}, {count, plural, one {{bytes} tavu} other {{bytes} tavua}} ({size}) (lasketaan…)"
+  },
+  "properties.contents_label": {
+    "message": "Sisältö:"
+  },
+  "properties.created": {
+    "message": "Luotu:"
+  },
+  "properties.dialog_title": {
+    "message": "Ominaisuudet"
+  },
+  "properties.in_archive": {
+    "message": "Arkiston luettelo näyttää kaiken, mitä se tietää tiedostoistaan."
+  },
+  "properties.kind.file": {
+    "message": "Tiedosto"
+  },
+  "properties.kind.folder": {
+    "message": "Kansio"
+  },
+  "properties.kind.link": {
+    "message": "Linkki"
+  },
+  "properties.kind.link_to": {
+    "message": "Linkki kohteeseen {target}"
+  },
+  "properties.location": {
+    "message": "Sijainti:"
+  },
+  "properties.modified": {
+    "message": "Muokattu:"
+  },
+  "properties.name": {
+    "message": "Nimi:"
+  },
+  "properties.no_system_dialog": {
+    "message": "täällä ei vielä ole järjestelmän omaa ominaisuusikkunaa"
+  },
+  "properties.owner": {
+    "message": "Omistaja / ryhmä:"
+  },
+  "properties.permissions": {
+    "message": "Käyttöoikeudet:"
+  },
+  "properties.size": {
+    "message": "{count, plural, one {{bytes} tavu ({size})} other {{bytes} tavua ({size})}}"
+  },
+  "properties.size_label": {
+    "message": "Koko:"
+  },
+  "properties.type": {
+    "message": "Tyyppi:"
+  },
+  "quick_open.go_to": {
+    "message": "Siirry: {path}"
+  },
+  "quick_open.group.bookmarks": {
+    "message": "Kirjanmerkit"
+  },
+  "quick_open.group.connections": {
+    "message": "Yhteydet"
+  },
+  "quick_open.group.drives": {
+    "message": "Asemat"
+  },
+  "quick_open.group.path": {
+    "message": "Polku"
+  },
+  "quick_open.group.recent_folders": {
+    "message": "Viimeisimmät kansiot"
+  },
+  "quick_open.group.tools": {
+    "message": "Työkalut"
+  },
+  "quick_open.group.workspaces": {
+    "message": "Työtilat"
+  },
+  "quick_open.placeholder": {
+    "message": "Komento, kirjanmerkki, kansio, polku, palvelin, asema, työtila tai työkalu"
+  },
+  "quick_open.title": {
+    "message": "Pika-avaus"
+  },
+  "quick_view.counting": {
+    "message": "Lasketaan…"
+  },
+  "quick_view.downloading": {
+    "message": "Ladataan…"
+  },
+  "quick_view.empty": {
+    "message": "Pikanäkymä näyttää sen, minkä kohdalla toisen paneelin kohdistin on."
+  },
+  "quick_view.extracting": {
+    "message": "Puretaan arkistosta…"
+  },
+  "quick_view.files_only": {
+    "message": "Palvelimilla ja arkistojen sisällä pikanäkymä näyttää vain tiedostot."
+  },
+  "quick_view.space.title": {
+    "message": "Käytetty tila yhteensä:"
+  },
+  "quick_view.space.totals": {
+    "message": "{bytes, plural, one {{bytes_grouped} tavu} other {{bytes_grouped} tavua}}: {files, plural, one {{files_grouped} tiedosto} other {{files_grouped} tiedostoa}}, {folders, plural, one {{folders_grouped} kansio} other {{folders_grouped} kansiota}}"
+  },
+  "quick_view.space.unreadable": {
+    "message": "Ei voitu lukea: {count}."
+  },
+  "quick_view.too_large.download": {
+    "message": "{size} on liian suuri ladattavaksi tänne: F3 näyttää sen."
+  },
+  "quick_view.too_large.extract": {
+    "message": "{size} on liian suuri purettavaksi arkistosta tänne: F3 näyttää sen."
+  },
+  "remote.cancelled": {
+    "message": "peruttu"
+  },
+  "remote.cloud.ask": {
+    "message": "{kind, select, application_key {Käyttäjän {user} sovellusavain palvelimella {host}:} api_key {Käyttäjän {user} API-avain palvelimella {host}:} password {Käyttäjän {user} salasana palvelimella {host}:} other {Käyttäjän {user} salainen avain palvelimella {host}:}}"
+  },
+  "remote.cloud.ask_again": {
+    "message": "{kind, select, application_key {Väärä sovellusavain. Käyttäjän {user} sovellusavain palvelimella {host}:} api_key {Väärä API-avain. Käyttäjän {user} API-avain palvelimella {host}:} password {Väärä salasana. Käyttäjän {user} salasana palvelimella {host}:} other {Väärä avain. Käyttäjän {user} salainen avain palvelimella {host}:}}"
+  },
+  "remote.cloud.obscure_failed": {
+    "message": "rclone ei voinut käsitellä salasanaa"
+  },
+  "remote.cloud.rclone_missing": {
+    "message": "rclone puuttuu: Asetukset > Lisäosat lataa sen"
+  },
+  "remote.cloud.title": {
+    "message": "{kind, select, application_key {Sovellusavain} api_key {API-avain} password {Salasana} other {Salainen avain}}"
+  },
+  "remote.connecting": {
+    "message": "Yhdistetään kohteeseen {server}..."
+  },
+  "remote.dialog.cancel": {
+    "message": "Peruuta"
+  },
+  "remote.dialog.ok": {
+    "message": "OK"
+  },
+  "remote.disconnect_failed": {
+    "message": "{share}: yhteyttä ei voitu katkaista: {err}"
+  },
+  "remote.ftp.password": {
+    "message": "Salasana tunnukselle {user}@{host}:"
+  },
+  "remote.ftp.password_again": {
+    "message": "Väärä salasana. Salasana tunnukselle {user}@{host}:"
+  },
+  "remote.ftps.changed": {
+    "message": "Palvelimen {server} TLS-varmenne on MUUTTUNUT sen jälkeen, kun se tallennettiin tiedoston {file} riville {line}. Joku voi salakuunnella; jos palvelimella on uusi varmenne, poista tuo rivi."
+  },
+  "remote.ftps.not_trusted": {
+    "message": "palvelimen varmenteeseen ei luoteta"
+  },
+  "remote.login.password": {
+    "message": "Salasana"
+  },
+  "remote.login.title": {
+    "message": "Kirjaudu"
+  },
+  "remote.login.user": {
+    "message": "Käyttäjä"
+  },
+  "remote.mount.login_wrong": {
+    "message": "käyttäjä tai salasana on väärä"
+  },
+  "remote.mount.macos_failed": {
+    "message": "macOS ei voinut liittää sitä (NetFS {code})"
+  },
+  "remote.mount.needs_desktop": {
+    "message": "vaatii KDE:n kio-fusen tai GNOMEn gvfs:n"
+  },
+  "remote.mount.needs_login": {
+    "message": "se vaatii käyttäjän ja salasanan"
+  },
+  "remote.mount.no_fuse": {
+    "message": "liitetty, mutta sille ei ole kansiota: gvfs-fuse puuttuu"
+  },
+  "remote.mount.no_nfs_client": {
+    "message": "ei löytynyt; NFS vaatii Windowsin NFS-asiakasohjelman (Windowsin ominaisuudet)"
+  },
+  "remote.mount.no_share": {
+    "message": "jakokansio puuttuu: smb://palvelin/jako"
+  },
+  "remote.mount.not_address": {
+    "message": "ei osoite"
+  },
+  "remote.mount.not_found": {
+    "message": "liitetty, mutta ei löydy liitettyjen joukosta"
+  },
+  "remote.mount.other_user": {
+    "message": "Windows on yhteydessä tähän palvelimeen toisena käyttäjänä: kirjaudu ulos tai käytä sitä käyttäjää"
+  },
+  "remote.password.title": {
+    "message": "Salasana"
+  },
+  "remote.remember_password": {
+    "message": "Muista salasana (Asetukset › Salasanat)"
+  },
+  "remote.save_back_failed": {
+    "message": "Tallennus takaisin epäonnistui: {err}"
+  },
+  "remote.sftp.host_certificate": {
+    "message": "Palvelin esittää isäntävarmenteen; niitä ei vielä tueta."
+  },
+  "remote.sftp.key_changed": {
+    "message": "Palvelimen {server} isäntäavain on MUUTTUNUT sen jälkeen, kun se tallennettiin tiedoston {file} riville {line}. Joku voi salakuunnella; jos palvelin on asennettu uudelleen, poista tuo rivi."
+  },
+  "remote.sftp.key_not_trusted": {
+    "message": "Palvelimen {server} isäntäavaimeen ei luotettu."
+  },
+  "remote.sftp.keys_refused": {
+    "message": "{user}@{host}: palvelin hylkäsi avaimet eikä hyväksy salasanaa"
+  },
+  "remote.sftp.login_refused": {
+    "message": "{user}@{host}: kirjautuminen hylättiin"
+  },
+  "remote.sftp.passphrase": {
+    "message": "Tiedoston {file} tunnuslause"
+  },
+  "remote.sftp.passphrase_title": {
+    "message": "Avaimen tunnuslause"
+  },
+  "remote.sftp.password": {
+    "message": "Salasana tunnukselle {user}@{host}"
+  },
+  "remote.unknown_host.once": {
+    "message": "Yhdistä kerran"
+  },
+  "remote.unknown_host.remember": {
+    "message": "Yhdistä ja muista"
+  },
+  "remote.unknown_host.text": {
+    "message": "{key_type, select, TLS {Palvelin {host} on vielä tuntematon. Sen TLS-varmenteen sormenjälki on} other {Palvelin {host} on vielä tuntematon. Sen {key_type}-sormenjälki on}}\n\n{fingerprint}\n\nYhdistä vain, jos tämä on tarkoittamasi palvelin; sen ylläpitäjä voi vahvistaa sormenjäljen."
+  },
+  "remote.unknown_host.title": {
+    "message": "Tuntematon palvelin"
+  },
+  "rename.case": {
+    "message": "Kirjainkoko:"
+  },
+  "rename.case.first": {
+    "message": "Ensimmäinen kirjain"
+  },
+  "rename.case.lower": {
+    "message": "pienet kirjaimet"
+  },
+  "rename.case.unchanged": {
+    "message": "Ennallaan"
+  },
+  "rename.case.upper": {
+    "message": "ISOT KIRJAIMET"
+  },
+  "rename.case.words": {
+    "message": "Jokainen Sana"
+  },
+  "rename.close": {
+    "message": "Sulje"
+  },
+  "rename.counter_start": {
+    "message": "Laskurin alku"
+  },
+  "rename.dialog_title": {
+    "message": "Joukkonimeäminen"
+  },
+  "rename.digits": {
+    "message": "Numeroita"
+  },
+  "rename.extension": {
+    "message": "Tiedostopääte"
+  },
+  "rename.field.counter": {
+    "message": "[C] Laskuri"
+  },
+  "rename.field.date": {
+    "message": "[Y][M][D] Päiväys"
+  },
+  "rename.field.extension": {
+    "message": "[E] Pääte"
+  },
+  "rename.field.folder": {
+    "message": "[P] Kansio"
+  },
+  "rename.field.name": {
+    "message": "[N] Nimi"
+  },
+  "rename.field.range": {
+    "message": "[N1-3] Väli"
+  },
+  "rename.field.time": {
+    "message": "[h][m][s] Aika"
+  },
+  "rename.first_only": {
+    "message": "Vain ensimmäinen"
+  },
+  "rename.in_archive": {
+    "message": "Arkistojen sisällä olevia tiedostoja ei voi vielä nimetä uudelleen."
+  },
+  "rename.mask": {
+    "message": "Nimeämismaski: tiedostonimi"
+  },
+  "rename.match_case": {
+    "message": "Sama kirjainkoko"
+  },
+  "rename.new_name": {
+    "message": "Uusi nimi"
+  },
+  "rename.not_renamed_back": {
+    "message": "{from}: {err}; ei palautettu: {names}"
+  },
+  "rename.not_utf8": {
+    "message": "Nimet, jotka eivät ole UTF-8-muotoisia, jätetään pois."
+  },
+  "rename.old_name": {
+    "message": "Vanha nimi"
+  },
+  "rename.problem.bad_character": {
+    "message": "merkki, jota nimissä ei voi olla"
+  },
+  "rename.problem.exists": {
+    "message": "on jo olemassa"
+  },
+  "rename.problem.no_name": {
+    "message": "ei nimeä"
+  },
+  "rename.problem.twice": {
+    "message": "kahdesti luettelossa"
+  },
+  "rename.regex": {
+    "message": "Säännöllinen lauseke"
+  },
+  "rename.regex_error": {
+    "message": "Säännöllinen lauseke: {err}"
+  },
+  "rename.replace": {
+    "message": "Korvaa tällä"
+  },
+  "rename.search": {
+    "message": "Etsi"
+  },
+  "rename.start": {
+    "message": "Aloita!"
+  },
+  "rename.status.failed": {
+    "message": "Mitään ei nimetty uudelleen: {err}"
+  },
+  "rename.status.ready": {
+    "message": "Aloita nimeää ne uudelleen."
+  },
+  "rename.status.renamed": {
+    "message": "{count, plural, one {Nimetty uudelleen: #.} other {Nimetty uudelleen: #.}}"
+  },
+  "rename.status.took_back": {
+    "message": "{count, plural, one {Palautettu: #.} other {Palautettu: #.}}"
+  },
+  "rename.step": {
+    "message": "Askel"
+  },
+  "rename.undo": {
+    "message": "Kumoa"
+  },
+  "rename.was": {
+    "message": "{to} (oli {from})"
+  },
+  "rename.with_extension": {
+    "message": "Myös pääte"
+  },
+  "scmd.column.modified": {
+    "message": "Muokattu"
+  },
+  "scmd.column.name": {
+    "message": "Nimi"
+  },
+  "scmd.column.size": {
+    "message": "Koko"
+  },
+  "scmd.column.up_dir": {
+    "message": "YLÄKANSIO"
+  },
+  "scmd.command_line.not_on_server": {
+    "message": "Komennot suoritetaan tällä tietokoneella, ei palvelimella."
+  },
+  "scmd.compare.marked": {
+    "message": "{count, plural, one {# tiedosto merkitty: uudempi kuin toisella puolella tai puuttuu sieltä.} other {# tiedostoa merkitty: uudempia kuin toisella puolella tai puuttuvat sieltä.}}"
+  },
+  "scmd.compare.same": {
+    "message": "Kansioissa on samat tiedostot."
+  },
+  "scmd.copying": {
+    "message": "Kopioidaan {name}..."
+  },
+  "scmd.dialog.buttons": {
+    "message": "Enter OK   Esc Peruuta"
+  },
+  "scmd.error.read_settings": {
+    "message": "Asetuksia ei voitu lukea: {err}"
+  },
+  "scmd.error.read_tabs": {
+    "message": "Avoimia välilehtiä ei voitu lukea: {err}"
+  },
+  "scmd.error.read_workspaces": {
+    "message": "Työtiloja ei voitu lukea: {err}"
+  },
+  "scmd.error.save_back": {
+    "message": "Tallennus takaisin epäonnistui: {err}"
+  },
+  "scmd.error.save_searches": {
+    "message": "Hakuja ei voitu tallentaa: {err}"
+  },
+  "scmd.error.save_tabs": {
+    "message": "Avoimia välilehtiä ei voitu tallentaa: {err}"
+  },
+  "scmd.find.backwards": {
+    "message": "Taaksepäin"
+  },
+  "scmd.find.case_sensitive": {
+    "message": "Sama kirjainkoko"
+  },
+  "scmd.find.hex": {
+    "message": "Heksa (77 6F 72 64)"
+  },
+  "scmd.find.not_found": {
+    "message": "Ei löytynyt: {text}"
+  },
+  "scmd.find.regex": {
+    "message": "Säännöllinen lauseke"
+  },
+  "scmd.find.search_for": {
+    "message": "Etsi:"
+  },
+  "scmd.find.title": {
+    "message": "Etsi"
+  },
+  "scmd.find.whole_words": {
+    "message": "Vain kokonaiset sanat"
+  },
+  "scmd.group.files": {
+    "message": "Tiedostot (*.txt *.md; kansiot päättyvät /-merkkiin):"
+  },
+  "scmd.group.select_title": {
+    "message": "Valitse ryhmä"
+  },
+  "scmd.group.unselect_title": {
+    "message": "Poista ryhmän valinta"
+  },
+  "scmd.key_bar.copy": {
+    "message": "Kopioi"
+  },
+  "scmd.key_bar.delete": {
+    "message": "Poista"
+  },
+  "scmd.key_bar.edit": {
+    "message": "Muokk."
+  },
+  "scmd.key_bar.menu": {
+    "message": "Valik."
+  },
+  "scmd.key_bar.mkdir": {
+    "message": "Kansio"
+  },
+  "scmd.key_bar.move": {
+    "message": "Siirrä"
+  },
+  "scmd.key_bar.quit": {
+    "message": "Lopeta"
+  },
+  "scmd.key_bar.view": {
+    "message": "Näytä"
+  },
+  "scmd.message.error": {
+    "message": "Virhe"
+  },
+  "scmd.message.ok": {
+    "message": "OK"
+  },
+  "scmd.not_yet": {
+    "message": "{what, select, menus {Valikot: eivät vielä ole pääteversiossa.} file_operations {Tiedostotoiminnot: eivät vielä ole pääteversiossa.} servers {Palvelimet: eivät vielä ole pääteversiossa.} other {Tämä komento: ei vielä ole pääteversiossa.}}"
+  },
+  "scmd.picture.broken": {
+    "message": "rikkinäinen kuva"
+  },
+  "scmd.picture.broken_page": {
+    "message": "rikkinäinen sivu"
+  },
+  "scmd.picture.loading": {
+    "message": "Ladataan…"
+  },
+  "scmd.picture.no_page": {
+    "message": "PDF-tiedostossa ei ole tällaista sivua"
+  },
+  "scmd.shell.press_enter": {
+    "message": "Palaa Spark Commanderiin painamalla Enter..."
+  },
+  "scmd.sync_browsing.off": {
+    "message": "Synkronoitu selaus on pois päältä."
+  },
+  "scmd.sync_browsing.on": {
+    "message": "Synkronoitu selaus on päällä."
+  },
+  "scmd.sync_browsing.stopped": {
+    "message": "{err}. Synkronoitu selaus on pois päältä."
+  },
+  "scmd.viewer.column": {
+    "message": "Sar. {column}"
+  },
+  "scmd.viewer.finding": {
+    "message": "etsitään…"
+  },
+  "scmd.viewer.key_bar.next": {
+    "message": "Seur."
+  },
+  "scmd.viewer.key_bar.quit": {
+    "message": "Lopeta"
+  },
+  "scmd.viewer.key_bar.reload": {
+    "message": "Lataa"
+  },
+  "scmd.viewer.key_bar.search": {
+    "message": "Etsi"
+  },
+  "scmd.viewer.page": {
+    "message": "sivu {page}/{pages}"
+  },
+  "scmd.viewer.reading": {
+    "message": "luetaan {percent} %"
+  },
+  "scmd.viewer.wrap": {
+    "message": "Rivitys"
+  },
+  "scmd.workspace.copy_name": {
+    "message": "{name} (kopio)"
+  },
+  "scmd.workspace.default_name": {
+    "message": "Työtila {number}"
+  },
+  "scmd.workspace.delete_question": {
+    "message": "Poistetaanko ”{name}”? Sen välilehdet unohdetaan."
+  },
+  "scmd.workspace.duplicate_title": {
+    "message": "Monista työtila"
+  },
+  "scmd.workspace.last_stays": {
+    "message": "Viimeinen työtila säilyy."
+  },
+  "scmd.workspace.name": {
+    "message": "Nimi:"
+  },
+  "scmd.workspace.name_or_default": {
+    "message": "Nimi (tyhjä: {name}):"
+  },
+  "scmd.workspace.new_title": {
+    "message": "Uusi työtila"
+  },
+  "scmd.workspace.rename_title": {
+    "message": "Nimeä työtila uudelleen"
+  },
+  "scmd.workspaces.keys": {
+    "message": "Enter Avaa  F7 Uusi  F5 Kopioi  F2 Nimeä  F8 Poista"
+  },
+  "scmd.workspaces.title": {
+    "message": "Työtilat"
+  },
+  "search.age.days": {
+    "message": "päivää"
+  },
+  "search.age.hours": {
+    "message": "tuntia"
+  },
+  "search.age.minutes": {
+    "message": "minuuttia"
+  },
+  "search.age.months": {
+    "message": "kuukautta"
+  },
+  "search.age.weeks": {
+    "message": "viikkoa"
+  },
+  "search.age.years": {
+    "message": "vuotta"
+  },
+  "search.archives": {
+    "message": "Etsi arkistoista"
+  },
+  "search.attribute.directory": {
+    "message": "Kansio"
+  },
+  "search.attribute.either": {
+    "message": "Kumpi tahansa"
+  },
+  "search.attribute.executable": {
+    "message": "Suoritettava"
+  },
+  "search.attribute.hidden": {
+    "message": "Piilotettu"
+  },
+  "search.attribute.link": {
+    "message": "Symbolinen linkki"
+  },
+  "search.attribute.must": {
+    "message": "Oltava"
+  },
+  "search.attribute.must_not": {
+    "message": "Ei saa olla"
+  },
+  "search.attribute.read_only": {
+    "message": "Vain luku"
+  },
+  "search.attributes.label": {
+    "message": "Määritteet:"
+  },
+  "search.between.and": {
+    "message": "ja"
+  },
+  "search.between.label": {
+    "message": "Päiväys välillä:"
+  },
+  "search.close": {
+    "message": "Sulje"
+  },
+  "search.depth.all": {
+    "message": "kaikki (rajoittamaton syvyys)"
+  },
+  "search.depth.current": {
+    "message": "vain nykyinen kansio"
+  },
+  "search.depth.label": {
+    "message": "Etsi alikansioista:"
+  },
+  "search.depth.levels": {
+    "message": "{count, plural, one {# taso} other {# tasoa}}"
+  },
+  "search.drives": {
+    "message": "Asemat"
+  },
+  "search.duplicates.content": {
+    "message": "sama sisältö"
+  },
+  "search.duplicates.label": {
+    "message": "Etsi kaksoiskappaleet:"
+  },
+  "search.duplicates.name": {
+    "message": "sama nimi"
+  },
+  "search.duplicates.size": {
+    "message": "sama koko"
+  },
+  "search.edit": {
+    "message": "F4 Muokkaa"
+  },
+  "search.error.between_days": {
+    "message": "”Päiväys välillä” vaatii molemmat päivät"
+  },
+  "search.error.date": {
+    "message": "{text} ei ole päivämäärä, kuten 2026-11-12"
+  },
+  "search.error.hex": {
+    "message": "{text} ei ole heksamerkkijono, kuten 48 65 6c"
+  },
+  "search.error.keep": {
+    "message": "Hakua ei voitu säilyttää: {err}"
+  },
+  "search.error.local_time": {
+    "message": "{text} ei ole paikallista aikaa"
+  },
+  "search.error.names_regex": {
+    "message": "Nimen säännöllinen lauseke: {err}"
+  },
+  "search.error.newer_number": {
+    "message": "”Ei vanhempi kuin” vaatii luvun, ei {text}"
+  },
+  "search.error.no_place": {
+    "message": "Anna kansio Sijainti-kenttään"
+  },
+  "search.error.no_text": {
+    "message": "Etsittävää tekstiä ei annettu"
+  },
+  "search.error.older_number": {
+    "message": "”Vanhempi kuin” vaatii luvun, ei {text}"
+  },
+  "search.error.save": {
+    "message": "Hakuja ei voitu tallentaa: {err}"
+  },
+  "search.error.size_number": {
+    "message": "”Tiedoston koko” vaatii luvun, ei {text}"
+  },
+  "search.error.text_regex": {
+    "message": "Tekstin säännöllinen lauseke: {err}"
+  },
+  "search.feed": {
+    "message": "Syötä luetteloon"
+  },
+  "search.go_to_file": {
+    "message": "Siirry tiedostoon"
+  },
+  "search.in_found": {
+    "message": "F2 Etsi löydetyistä tiedostoista"
+  },
+  "search.locate": {
+    "message": "locate-indeksistä"
+  },
+  "search.names.label": {
+    "message": "Etsi:"
+  },
+  "search.names.placeholder": {
+    "message": "*.txt *.md | backup*  (tyhjä: kaikki)"
+  },
+  "search.new": {
+    "message": "Uusi haku"
+  },
+  "search.newer.label": {
+    "message": "Ei vanhempi kuin:"
+  },
+  "search.older.label": {
+    "message": "Vanhempi kuin:"
+  },
+  "search.only_selected": {
+    "message": "Etsi vain valituista tiedostoista/kansioista"
+  },
+  "search.only_selected_count": {
+    "message": "{count, plural, one {Etsi vain # valitusta} other {Etsi vain # valitusta}}"
+  },
+  "search.page.advanced": {
+    "message": "Lisäasetukset"
+  },
+  "search.page.general": {
+    "message": "Yleiset"
+  },
+  "search.page.load_save": {
+    "message": "Lataa/tallenna"
+  },
+  "search.places.browse_prompt": {
+    "message": "Etsi kohteesta"
+  },
+  "search.places.label": {
+    "message": "Sijainti:"
+  },
+  "search.places.placeholder": {
+    "message": "Kansiot, ; niiden välissä"
+  },
+  "search.regex": {
+    "message": "RegEx"
+  },
+  "search.results.label": {
+    "message": "Hakutulokset:"
+  },
+  "search.saved.delete": {
+    "message": "Poista"
+  },
+  "search.saved.label": {
+    "message": "Aiemmat haut:"
+  },
+  "search.saved.load": {
+    "message": "Lataa"
+  },
+  "search.saved.name_first": {
+    "message": "Nimeä haku ensin."
+  },
+  "search.saved.name_placeholder": {
+    "message": "Haun nimi"
+  },
+  "search.saved.save": {
+    "message": "Tallenna"
+  },
+  "search.size.label": {
+    "message": "Tiedoston koko:"
+  },
+  "search.start": {
+    "message": "Aloita haku"
+  },
+  "search.status.found": {
+    "message": "Löytyi {files, plural, one {# tiedosto} other {# tiedostoa}} ja {dirs, plural, one {# kansio} other {# kansiota}}"
+  },
+  "search.status.searching": {
+    "message": "Etsitään…"
+  },
+  "search.status.searching_in": {
+    "message": "Etsitään: {folder}"
+  },
+  "search.status.stopped": {
+    "message": "Pysäytetty: {counts}"
+  },
+  "search.stop": {
+    "message": "Pysäytä"
+  },
+  "search.text.ansi": {
+    "message": "ANSI (koodisivu {page})"
+  },
+  "search.text.case_sensitive": {
+    "message": "Sama kirjainkoko"
+  },
+  "search.text.hex": {
+    "message": "Heksa"
+  },
+  "search.text.label": {
+    "message": "Teksti:"
+  },
+  "search.text.not_containing": {
+    "message": "Etsi tiedostot, jotka EIVÄT sisällä tekstiä"
+  },
+  "search.text.office": {
+    "message": "Office-tiedostot (docx, xlsx, pptx, odt…)"
+  },
+  "search.text.placeholder": {
+    "message": "Etsittävä teksti"
+  },
+  "search.text.whole_words": {
+    "message": "Vain kokonaiset sanat"
+  },
+  "search.title": {
+    "message": "Etsi tiedostoja"
+  },
+  "search.unit.bytes": {
+    "message": "tavua"
+  },
+  "search.view": {
+    "message": "F3 Katsele"
+  },
+  "settings.addons.builtin_version": {
+    "message": "{version}, tulee Spark Commanderin mukana"
+  },
+  "settings.addons.check_daily": {
+    "message": "Etsi lisäosien päivityksiä käynnistettäessä ja päivittäin, ja tarjoa niitä"
+  },
+  "settings.addons.check_failed": {
+    "message": "Päivityksiä ei voitu etsiä: {err}"
+  },
+  "settings.addons.check_now": {
+    "message": "Etsi nyt"
+  },
+  "settings.addons.checking": {
+    "message": "Etsitään päivityksiä..."
+  },
+  "settings.addons.download": {
+    "message": "Lataa"
+  },
+  "settings.addons.downloading": {
+    "message": "Ladataan: {done}/{size}"
+  },
+  "settings.addons.file": {
+    "message": "Tiedosto"
+  },
+  "settings.addons.installed.builtin": {
+    "message": "tulee Spark Commanderin mukana"
+  },
+  "settings.addons.installed.label": {
+    "message": "Asennettu"
+  },
+  "settings.addons.installed.none": {
+    "message": "ei mitään"
+  },
+  "settings.addons.intro": {
+    "message": "Spark Commander käyttää osaan toiminnoistaan näitä muiden projektien ohjelmia. Lisäosat ladataan erikseen, kun niin valitset; 7-Zip ja PDFium tulevat sen mukana."
+  },
+  "settings.addons.never_offer": {
+    "message": "Älä koskaan tarjoa lisäosia, kun tiedosto tarvitsee sellaisen"
+  },
+  "settings.addons.offers": {
+    "message": "Tarjoukset ja päivitykset"
+  },
+  "settings.addons.online.label": {
+    "message": "Verkossa"
+  },
+  "settings.addons.online.looking": {
+    "message": "etsitään..."
+  },
+  "settings.addons.online.none": {
+    "message": "ei tälle järjestelmälle"
+  },
+  "settings.addons.online.not_yet": {
+    "message": "ei vielä haettu"
+  },
+  "settings.addons.online.unknown": {
+    "message": "tuntematon"
+  },
+  "settings.addons.remove": {
+    "message": "Poista"
+  },
+  "settings.addons.up_to_date": {
+    "message": "Lisäosien luettelo on ajan tasalla."
+  },
+  "settings.addons.version": {
+    "message": "Versio"
+  },
+  "settings.addons.website": {
+    "message": "Verkkosivusto"
+  },
+  "settings.appearance.title": {
+    "message": "Ulkoasu"
+  },
+  "settings.apply": {
+    "message": "Käytä"
+  },
+  "settings.backdrop.blur": {
+    "message": "Sumenna taustalla oleva työpöytä"
+  },
+  "settings.backdrop.clear": {
+    "message": "0 %, vain työpöytä"
+  },
+  "settings.backdrop.cover": {
+    "message": "Kuinka paljon se peittää taustalla olevaa työpöytää:"
+  },
+  "settings.backdrop.opacity": {
+    "message": "{opacity} %"
+  },
+  "settings.backdrop.sidebar": {
+    "message": "Sivupaneeli"
+  },
+  "settings.backdrop.solid": {
+    "message": "100 %, peittävä"
+  },
+  "settings.backdrop.terminal": {
+    "message": "Pääte"
+  },
+  "settings.cancel": {
+    "message": "Peruuta"
+  },
+  "settings.date.as_system": {
+    "message": "Järjestelmän mukaan: {date}"
+  },
+  "settings.date.custom": {
+    "message": "Mukautettu:"
+  },
+  "settings.date.pattern_help": {
+    "message": "yyyy vuosi, MM kuukausi (MMM sen nimi), dd päivä (ddd viikonpäivä)"
+  },
+  "settings.date.shown_as": {
+    "message": "Näkyy muodossa"
+  },
+  "settings.date.shown_as_note": {
+    "message": "tiedostoluetteloissa; ikkunoissa näkyvät myös sekunnit"
+  },
+  "settings.date.title": {
+    "message": "Päiväys"
+  },
+  "settings.editor.browse": {
+    "message": "Selaa..."
+  },
+  "settings.editor.choose": {
+    "message": "Valitse"
+  },
+  "settings.editor.external": {
+    "message": "Ulkoinen editori (Ctrl+Shift+F4):"
+  },
+  "settings.editor.external_help": {
+    "message": "%1 on tiedosto, muuten se tulee viimeiseksi; esim. code --wait %1"
+  },
+  "settings.editor.limit": {
+    "message": "Sisäinen editori (F4) avaa tiedostot, joiden koko on enintään"
+  },
+  "settings.editor.limit_unit": {
+    "message": "Mt"
+  },
+  "settings.editor.title": {
+    "message": "F4:n editori"
+  },
+  "settings.error.no_folder": {
+    "message": "ei asetuskansiota"
+  },
+  "settings.files_shown.hidden": {
+    "message": "Piilotetut tiedostot"
+  },
+  "settings.files_shown.system": {
+    "message": "Järjestelmätiedostot"
+  },
+  "settings.files_shown.title": {
+    "message": "Näytettävät tiedostot"
+  },
+  "settings.font.as_system": {
+    "message": "Järjestelmän mukaan"
+  },
+  "settings.font.chosen": {
+    "message": "Valittu; järjestelmän fontti on {family}, {size}"
+  },
+  "settings.font.fixed": {
+    "message": "Katselin"
+  },
+  "settings.font.fixed_note": {
+    "message": "Vain tasalevyiset fontit; koskee myös editoria ja tiedostojen vertailua."
+  },
+  "settings.font.main": {
+    "message": "Pääikkunan fontti"
+  },
+  "settings.font.system": {
+    "message": "Järjestelmän fontti"
+  },
+  "settings.language.system": {
+    "message": "Järjestelmän kieli"
+  },
+  "settings.language.system_named": {
+    "message": "Järjestelmän kieli: {language}"
+  },
+  "settings.language.title": {
+    "message": "Kieli"
+  },
+  "settings.menus.automatic": {
+    "message": "Automaattinen: ☰-painike GNOMEssa, muualla valikkorivi"
+  },
+  "settings.menus.bar": {
+    "message": "Valikkorivi"
+  },
+  "settings.menus.button": {
+    "message": "☰-painike otsikkopalkissa"
+  },
+  "settings.menus.title": {
+    "message": "Valikot"
+  },
+  "settings.ok": {
+    "message": "OK"
+  },
+  "settings.page.addons": {
+    "message": "Lisäosat"
+  },
+  "settings.page.date": {
+    "message": "Päiväys"
+  },
+  "settings.page.display": {
+    "message": "Näyttö"
+  },
+  "settings.page.edit_view": {
+    "message": "Muokkaus/katselu"
+  },
+  "settings.page.font": {
+    "message": "Fontti"
+  },
+  "settings.page.language": {
+    "message": "Kieli"
+  },
+  "settings.page.layout": {
+    "message": "Asettelu"
+  },
+  "settings.page.operations": {
+    "message": "Tehtävät"
+  },
+  "settings.page.passwords": {
+    "message": "Salasanat"
+  },
+  "settings.page.terminal": {
+    "message": "Pääte"
+  },
+  "settings.page.toolbar": {
+    "message": "Työkalurivi"
+  },
+  "settings.passwords.change_master": {
+    "message": "Vaihda pääsalasana…"
+  },
+  "settings.passwords.locked": {
+    "message": "Ne ovat lukittuina tällä tietokoneella: pääsalasana avaa ne."
+  },
+  "settings.passwords.master_set": {
+    "message": "Pääsalasana on asetettu: kun asetuskansio kopioidaan toiselle tietokoneelle, salasanat avautuvat siellä pääsalasanan kirjoittamalla."
+  },
+  "settings.passwords.no_master": {
+    "message": "Pääsalasanaa ei ole asetettu: kun asetuskansio kopioidaan toiselle tietokoneelle, salasanat eivät avaudu siellä, vaan ne kirjoitetaan uudelleen."
+  },
+  "settings.passwords.not_removed": {
+    "message": "Pääsalasanaa ei poistettu: {err}"
+  },
+  "settings.passwords.remove_master": {
+    "message": "Poista pääsalasana"
+  },
+  "settings.passwords.saved": {
+    "message": "{count, plural, one {# salasana on tallennettu} other {# salasanaa on tallennettu}} (palvelinten, jakojen, salattujen asemien) salattuna asetuskansioon; avain, joka avaa ne, on tämän tietokoneen avainnipussa."
+  },
+  "settings.passwords.set_master": {
+    "message": "Aseta pääsalasana…"
+  },
+  "settings.passwords.title": {
+    "message": "Tallennetut salasanat"
+  },
+  "settings.passwords.unlock": {
+    "message": "Avaa…"
+  },
+  "settings.queue.clear_after": {
+    "message": "Tyhjennä valmiit tehtävät, kun on kulunut"
+  },
+  "settings.queue.clear_after_help": {
+    "message": "0: heti kun ne valmistuvat. Epäonnistuneet ja perutut säilyvät, kunnes ne tyhjennetään."
+  },
+  "settings.queue.clear_after_unit": {
+    "message": "minuuttia"
+  },
+  "settings.queue.download_limit": {
+    "message": "Latausnopeuden raja"
+  },
+  "settings.queue.download_limit_help": {
+    "message": "Lataa linkistä sekä kopiot FTP- ja SFTP-palvelimilta; myös käynnissä olevat. 0: ei rajaa."
+  },
+  "settings.queue.download_limit_unit": {
+    "message": "kt/s"
+  },
+  "settings.queue.title": {
+    "message": "Tehtäväjono"
+  },
+  "settings.shell.default": {
+    "message": "Oletus: {shell}"
+  },
+  "settings.shell.note": {
+    "message": "Uudet päätevälilehdet käynnistävät sen."
+  },
+  "settings.shell.title": {
+    "message": "Komentotulkki"
+  },
+  "settings.sort_folders.by_name": {
+    "message": "Aina nimen mukaan"
+  },
+  "settings.sort_folders.like_files": {
+    "message": "Kuten tiedostot (myös ajan mukaan)"
+  },
+  "settings.sort_folders.title": {
+    "message": "Kansioiden lajittelu"
+  },
+  "settings.tabs.header_always": {
+    "message": "Näytä välilehtirivi myös, kun välilehtiä on vain yksi"
+  },
+  "settings.tabs.title": {
+    "message": "Kansiovälilehdet"
+  },
+  "settings.time.as_system": {
+    "message": "Järjestelmän mukaan"
+  },
+  "settings.time.h12": {
+    "message": "12 tuntia (2:05 PM)"
+  },
+  "settings.time.h24": {
+    "message": "24 tuntia (14:05)"
+  },
+  "settings.time.title": {
+    "message": "Aika"
+  },
+  "settings.title": {
+    "message": "Asetukset"
+  },
+  "settings.toolbar.add": {
+    "message": "Lisää painike…"
+  },
+  "settings.toolbar.move_down": {
+    "message": "Siirrä alas"
+  },
+  "settings.toolbar.move_up": {
+    "message": "Siirrä ylös"
+  },
+  "settings.toolbar.place": {
+    "message": "Valikkorivin alla; otsikkopalkissa, kun valikot ovat ☰-painikkeen takana kuten GNOMEn sovelluksissa. Ilman painikkeita työkaluriviä ei näytetä."
+  },
+  "settings.toolbar.remove": {
+    "message": "Poista"
+  },
+  "settings.toolbar.replace": {
+    "message": "Korvaa…"
+  },
+  "settings.toolbar.restore_default": {
+    "message": "Palauta oletus"
+  },
+  "settings.toolbar.title": {
+    "message": "Työkalurivin painikkeet"
+  },
+  "settings.viewer.font.ansi": {
+    "message": "ANSI (Windows)"
+  },
+  "settings.viewer.font.ascii": {
+    "message": "ASCII (DOS)"
+  },
+  "settings.viewer.font.auto": {
+    "message": "Tunnista automaattisesti"
+  },
+  "settings.viewer.font.label": {
+    "message": "Fontti käynnistettäessä:"
+  },
+  "settings.viewer.font.variable": {
+    "message": "Vaihteleva leveys"
+  },
+  "settings.viewer.minimap": {
+    "message": "Pienoiskartta"
+  },
+  "settings.viewer.show": {
+    "message": "Näytä:"
+  },
+  "settings.viewer.start.auto": {
+    "message": "Tunnista automaattisesti"
+  },
+  "settings.viewer.start.binary": {
+    "message": "Binääri"
+  },
+  "settings.viewer.start.hex": {
+    "message": "Heksa"
+  },
+  "settings.viewer.start.label": {
+    "message": "Näyttötapa käynnistettäessä:"
+  },
+  "settings.viewer.start.text": {
+    "message": "Teksti"
+  },
+  "settings.viewer.title": {
+    "message": "F3:n katselin"
+  },
+  "settings.viewer.width.binary": {
+    "message": "Binääri"
+  },
+  "settings.viewer.width.label": {
+    "message": "Näytön leveys (merkkiä):"
+  },
+  "settings.viewer.width.text": {
+    "message": "Teksti"
+  },
+  "settings.viewer.wrap": {
+    "message": "Rivitä teksti"
+  },
+  "shells.command_prompt": {
+    "message": "Komentokehote"
+  },
+  "sidebar.device.no_files": {
+    "message": "ei jaa tiedostoja"
+  },
+  "sidebar.device.not_answering": {
+    "message": "{name} ei vastaa: avaa sen lukitus ja käynnistä siinä KDE Connect, ja lue sitten kansio uudelleen (F2)."
+  },
+  "sidebar.device.not_answering_error": {
+    "message": "{name} ei vastaa ({err}): avaa sen lukitus ja käynnistä siinä KDE Connect."
+  },
+  "sidebar.device.not_connected": {
+    "message": "ei yhdistetty"
+  },
+  "sidebar.device.opening": {
+    "message": "Avataan {name}..."
+  },
+  "sidebar.device.reconnecting": {
+    "message": "{name} ei vastaa: yhdistetään uudelleen..."
+  },
+  "sidebar.device.unmount_failed": {
+    "message": "{name}: ei voitu irrottaa: {err}"
+  },
+  "sidebar.group.bookmarks": {
+    "message": "Kirjanmerkit"
+  },
+  "sidebar.group.cloud": {
+    "message": "Pilvi"
+  },
+  "sidebar.group.devices": {
+    "message": "Laitteet"
+  },
+  "sidebar.group.drives": {
+    "message": "Asemat"
+  },
+  "sidebar.group.network": {
+    "message": "Verkko"
+  },
+  "sidebar.section.connections": {
+    "message": "Yhteydet"
+  },
+  "sidebar.section.folders": {
+    "message": "Kansiot"
+  },
+  "sidebar.section.operations": {
+    "message": "Tehtävät"
+  },
+  "sidebar.section.places": {
+    "message": "Sijainnit"
+  },
+  "sidebar.volume.locked": {
+    "message": "lukittu"
+  },
+  "sidebar.volume.mounting": {
+    "message": "Liitetään {name}..."
+  },
+  "sidebar.volume.not_mounted": {
+    "message": "ei liitetty"
+  },
+  "sidebar.volume.open": {
+    "message": "Avaa"
+  },
+  "sidebar.volume.space": {
+    "message": "{free} vapaana / {total}"
+  },
+  "sidebar.volume.unmount": {
+    "message": "Irrota"
+  },
+  "sidebar.volume.unmount_failed": {
+    "message": "Ei voitu irrottaa: {err}"
+  },
+  "split.bad_size": {
+    "message": "”{size}” ei ole koko: 100 MB, 1.5 GB, 650m"
+  },
+  "split.choose": {
+    "message": "Siirrä kohdistin jaettavaan tiedostoon."
+  },
+  "split.combine.choose": {
+    "message": "Siirrä kohdistin osaan (nimi.001) tai sen .crc-tiedostoon."
+  },
+  "split.combine.dialog_title": {
+    "message": "Yhdistä tiedostot"
+  },
+  "split.combine.label": {
+    "message": "Yhdistä osat tiedostoksi:"
+  },
+  "split.combine.title": {
+    "message": "Yhdistä ”{name}”"
+  },
+  "split.combined_no_crc": {
+    "message": "{count, plural, one {# osa yhdistetty, ei CRC-tiedostoa tarkistukseen} other {# osaa yhdistetty, ei CRC-tiedostoa tarkistukseen}}"
+  },
+  "split.crc_mismatch": {
+    "message": "{target} ei vastaa tiedostoa {file}: osa puuttuu tai on vioittunut"
+  },
+  "split.crc_names_no_file": {
+    "message": "CRC-tiedosto ei nimeä mitään tiedostoa"
+  },
+  "split.crc_unreadable": {
+    "message": "yhdistetty, mutta tiedostoa {file} ei voitu lukea: {err}"
+  },
+  "split.dialog_title": {
+    "message": "Jaa tiedosto"
+  },
+  "split.label": {
+    "message": "Jaa ”{name}” osiin kansioon:"
+  },
+  "split.part_missing": {
+    "message": "{path} puuttuu"
+  },
+  "split.part_size": {
+    "message": "Osan koko:"
+  },
+  "split.title": {
+    "message": "Jaa ”{name}”"
+  },
+  "sync.close": {
+    "message": "Sulje"
+  },
+  "sync.column.date": {
+    "message": "Päiväys"
+  },
+  "sync.column.name": {
+    "message": "Nimi"
+  },
+  "sync.column.size": {
+    "message": "Koko"
+  },
+  "sync.compare": {
+    "message": "Vertaa"
+  },
+  "sync.confirm.copy_left": {
+    "message": "Kopioi {count} vasemmalle ({size})"
+  },
+  "sync.confirm.copy_right": {
+    "message": "Kopioi {count} oikealle ({size})"
+  },
+  "sync.confirm.delete_left": {
+    "message": "Poista {count} vasemmalta"
+  },
+  "sync.confirm.delete_right": {
+    "message": "Poista {count} oikealta"
+  },
+  "sync.confirm.ok": {
+    "message": "Synkronoi"
+  },
+  "sync.confirm.text": {
+    "message": "{actions}. Kopioidut tiedostot korvaavat siellä olevat.{trash, select, yes { Tämän tietokoneen poistetut tiedostot siirtyvät roskakoriin.} other {}}"
+  },
+  "sync.confirm.title": {
+    "message": "Synkronoi"
+  },
+  "sync.error.changed": {
+    "message": "muuttunut vertailun jälkeen; vertaa uudelleen"
+  },
+  "sync.error.compare": {
+    "message": "Vertailu epäonnistui: {err}"
+  },
+  "sync.error.no_folders": {
+    "message": "Synkronoi kansiot vertaa kahta kansiota: kumpikaan paneeli ei saa näyttää arkistoa tai hakutuloksia."
+  },
+  "sync.left": {
+    "message": "Vasen"
+  },
+  "sync.mask.label": {
+    "message": "Tiedostot:"
+  },
+  "sync.option.asymmetric": {
+    "message": "Epäsymmetrinen (oikeasta tulee vasemman kopio)"
+  },
+  "sync.option.by_content": {
+    "message": "Sisällön mukaan"
+  },
+  "sync.option.ignore_date": {
+    "message": "Ohita päiväys"
+  },
+  "sync.option.subfolders": {
+    "message": "Alikansiot"
+  },
+  "sync.result.done": {
+    "message": "{count, plural, one {# synkronoitu} other {# synkronoitu}}"
+  },
+  "sync.result.failed": {
+    "message": "{count, plural, one {# synkronoimatta} other {# synkronoimatta}}; {first}"
+  },
+  "sync.right": {
+    "message": "Oikea"
+  },
+  "sync.show.equal": {
+    "message": "= samat"
+  },
+  "sync.show.label": {
+    "message": "Näytä:"
+  },
+  "sync.show.other": {
+    "message": "≠ ennallaan"
+  },
+  "sync.show.to_left": {
+    "message": "← vasemmalle"
+  },
+  "sync.show.to_right": {
+    "message": "→ oikealle"
+  },
+  "sync.status.both_empty": {
+    "message": "Molemmat ovat tyhjiä."
+  },
+  "sync.status.comparing": {
+    "message": "Verrataan: {folder}"
+  },
+  "sync.status.counts": {
+    "message": "{right} kopioitavaa oikealle, {left} kopioitavaa vasemmalle, {delete} poistettavaa, {equal} samaa, {alone} ennallaan"
+  },
+  "sync.status.stopped": {
+    "message": "Pysäytetty."
+  },
+  "sync.stop": {
+    "message": "Pysäytä"
+  },
+  "sync.synchronize": {
+    "message": "Synkronoi..."
+  },
+  "sync.task.title": {
+    "message": "Synkronoi {left} ja {right}"
+  },
+  "sync.title": {
+    "message": "Synkronoi kansiot"
+  },
+  "tab_menu.close_all_tabs": {
+    "message": "Sulje kaikki välilehdet"
+  },
+  "tab_menu.close_duplicate_tabs": {
+    "message": "Sulje samanlaiset välilehdet"
+  },
+  "tab_menu.close_tab": {
+    "message": "Sulje tämä välilehti"
+  },
+  "tab_menu.copy_tab_to_other_panel": {
+    "message": "Kopioi välilehti toiseen paneeliin"
+  },
+  "tab_menu.duplicate_tab": {
+    "message": "Monista tämä välilehti"
+  },
+  "tab_menu.list_tabs": {
+    "message": "Näytä kaikkien välilehtien luettelo"
+  },
+  "tab_menu.lock_tab": {
+    "message": "Lukitse tämä välilehti"
+  },
+  "tab_menu.none": {
+    "message": "(ei mitään)"
+  },
+  "tab_menu.rename_tab": {
+    "message": "Nimeä välilehti uudelleen..."
+  },
+  "tabs.error.reopen": {
+    "message": "Välilehteä ei voitu avata uudelleen: {err}"
+  },
+  "tabs.history.empty": {
+    "message": "Tämän välilehden historiassa ei ole vielä kansioita."
+  },
+  "tabs.new": {
+    "message": "Uusi välilehti"
+  },
+  "tabs.rename.label": {
+    "message": "Uusi nimi:"
+  },
+  "tabs.rename.title": {
+    "message": "Nimeä välilehti uudelleen"
+  },
+  "tabs.search_results": {
+    "message": "Hakutulokset"
+  },
+  "terminal.busy": {
+    "message": "Päätteessä on käynnissä ohjelma: suorita komento, kun se päättyy."
+  },
+  "terminal.close.idle": {
+    "message": "Suljetaanko tämä päätevälilehti? Sen komentotulkki päättyy."
+  },
+  "terminal.close.ok": {
+    "message": "Sulje"
+  },
+  "terminal.close.running": {
+    "message": "Suljetaanko tämä päätevälilehti? Siinä käynnissä oleva ohjelma pysäytetään."
+  },
+  "terminal.close.title": {
+    "message": "Sulje välilehti"
+  },
+  "terminal.error.start_shell": {
+    "message": "Komentotulkkia ei voitu käynnistää: {err}"
+  },
+  "terminal.jump_to_bottom": {
+    "message": "Siirry loppuun (Ctrl+End) ↓"
+  },
+  "terminal.menu.copy": {
+    "message": "Kopioi"
+  },
+  "terminal.menu.paste": {
+    "message": "Liitä"
+  },
+  "toolbar.customize": {
+    "message": "Mukauta työkaluriviä…"
+  },
+  "tools.clear_key": {
+    "message": "Tyhjennä"
+  },
+  "tools.close": {
+    "message": "Sulje"
+  },
+  "tools.delete": {
+    "message": "Poista"
+  },
+  "tools.empty": {
+    "message": "Ei vielä työkaluja: Uusi... lisää työkalun."
+  },
+  "tools.field.command": {
+    "message": "Komento"
+  },
+  "tools.field.key": {
+    "message": "Näppäin"
+  },
+  "tools.field.name": {
+    "message": "Nimi"
+  },
+  "tools.intro": {
+    "message": "Omat komentorivisi Työkalut-valikossa: napsauta komentoa siellä tai paina sen näppäintä."
+  },
+  "tools.key.none": {
+    "message": "Ei mitään"
+  },
+  "tools.key.waiting": {
+    "message": "Paina näppäintä... (Esc: ei mitään)"
+  },
+  "tools.move_down": {
+    "message": "Siirrä alas"
+  },
+  "tools.move_up": {
+    "message": "Siirrä ylös"
+  },
+  "tools.name.placeholder": {
+    "message": "Vertaa toiseen puoleen"
+  },
+  "tools.new": {
+    "message": "Uusi..."
+  },
+  "tools.new_name": {
+    "message": "Työkalu {number}"
+  },
+  "tools.no_command": {
+    "message": "Työkalulla {tool} ei ole vielä komentoa: Työkalut > Hallitse työkaluja."
+  },
+  "tools.not_local": {
+    "message": "Työkalut suoritetaan tällä tietokoneella: paneeli näyttää palvelinta tai arkistoa."
+  },
+  "tools.note.key_of_command": {
+    "message": "{key} on myös {command}: työkalu ottaa sen käyttöönsä."
+  },
+  "tools.note.key_of_other_tool": {
+    "message": "{key} on myös työkalun {tool}: luettelossa alempana oleva saa sen."
+  },
+  "tools.placeholders": {
+    "message": "%P tämän paneelin kansio, %T toisen paneelin kansio (molemmat päättyvät erottimeen, joten \"%P%N\" on polku), %N kohdistimen kohdalla oleva tiedosto, %O sen nimi ilman päätettä, %E pääte, %S valitut tiedostot (muuten kohdistimen kohdalla oleva), kukin lainausmerkeissä; %% on %. Laita lainausmerkit muun ympärille: \"%P%N\"."
+  },
+  "tools.run_in_terminal": {
+    "message": "Suorita päätteessä, jotta näet tulosteen"
+  },
+  "tools.set_key": {
+    "message": "Aseta näppäin..."
+  },
+  "tools.title": {
+    "message": "Työkalut"
+  },
+  "transfer.answer.cancel": {
+    "message": "Peruuta"
+  },
+  "transfer.answer.elevate": {
+    "message": "Järjestelmänvalvojana"
+  },
+  "transfer.answer.overwrite": {
+    "message": "Korvaa"
+  },
+  "transfer.answer.overwrite_all": {
+    "message": "Korvaa kaikki"
+  },
+  "transfer.answer.rename": {
+    "message": "Nimeä uudelleen"
+  },
+  "transfer.answer.retry": {
+    "message": "Yritä uudelleen"
+  },
+  "transfer.answer.skip": {
+    "message": "Ohita"
+  },
+  "transfer.answer.skip_all": {
+    "message": "Ohita kaikki"
+  },
+  "transfer.archive.local_only": {
+    "message": "Arkistoon voi viedä vain tämän tietokoneen tiedostoja: kopioi ne ensin tänne."
+  },
+  "transfer.cancel": {
+    "message": "Peruuta"
+  },
+  "transfer.error.elevate_hint": {
+    "message": "Järjestelmänvalvojana: tämä ja muut evätyt tehdään, kun loput on valmiina; salasana kysytään kerran."
+  },
+  "transfer.error.title": {
+    "message": "Virhe"
+  },
+  "transfer.exists.describe": {
+    "message": "{count, plural, one {{size} tavu, {time}} other {{size} tavua, {time}}}"
+  },
+  "transfer.exists.text": {
+    "message": "Jo kohteessa: {existing}\nUusi: {new}"
+  },
+  "transfer.exists.title": {
+    "message": "Tiedosto on jo olemassa"
+  },
+  "transfer.extract_failed": {
+    "message": "Niitä ei voitu purkaa: {err}"
+  },
+  "transfer.into_archive.question_many": {
+    "message": "{kind, select, copy {Kopioidaanko} other {Siirretäänkö}} {count, plural, one {# kohde} other {# kohdetta}} kohteeseen {into}? Siellä olevat samannimiset korvataan."
+  },
+  "transfer.into_archive.question_one": {
+    "message": "{kind, select, copy {Kopioidaanko} other {Siirretäänkö}} ”{name}” kohteeseen {into}? Siellä olevat samannimiset korvataan."
+  },
+  "transfer.into_archive.title_many": {
+    "message": "{kind, select, copy {Kopioi} other {Siirrä}} {count, plural, one {# kohde} other {# kohdetta}} arkistoon {archive}"
+  },
+  "transfer.into_archive.title_one": {
+    "message": "{kind, select, copy {Kopioi} other {Siirrä}} ”{name}” arkistoon {archive}"
+  },
+  "transfer.label.many": {
+    "message": "{kind, select, copy {Kopioi} other {Siirrä}} {count, plural, one {# kohde} other {# kohdetta}} kohteeseen:"
+  },
+  "transfer.label.many_server": {
+    "message": "{kind, select, copy {Kopioi} other {Siirrä}} {count, plural, one {# kohde} other {# kohdetta}} palvelimelle {server}:"
+  },
+  "transfer.label.one": {
+    "message": "{kind, select, copy {Kopioi} other {Siirrä}} ”{name}” kohteeseen:"
+  },
+  "transfer.label.one_server": {
+    "message": "{kind, select, copy {Kopioi} other {Siirrä}} ”{name}” palvelimelle {server}:"
+  },
+  "transfer.ok": {
+    "message": "OK"
+  },
+  "transfer.overwrite.all": {
+    "message": "Korvaa kaikki"
+  },
+  "transfer.overwrite.ask": {
+    "message": "Kysy"
+  },
+  "transfer.overwrite.label": {
+    "message": "Kun kohteessa on samanniminen tiedosto:"
+  },
+  "transfer.overwrite.older": {
+    "message": "Korvaa vanhemmat"
+  },
+  "transfer.overwrite.rename": {
+    "message": "Nimeä kopiot uudelleen"
+  },
+  "transfer.overwrite.skip": {
+    "message": "Ohita kaikki"
+  },
+  "transfer.remove_moved": {
+    "message": "Poista siirretyt arkistosta {name}"
+  },
+  "transfer.speed": {
+    "message": "{size}/s"
+  },
+  "transfer.strip.counting": {
+    "message": "lasketaan: {count, plural, one {# tiedosto} other {# tiedostoa}}"
+  },
+  "transfer.strip.progress": {
+    "message": "{files}/{count, plural, one {# tiedosto} other {# tiedostoa}}, {percent} %"
+  },
+  "transfer.strip.queue": {
+    "message": "Jono..."
+  },
+  "transfer.strip.queue_waiting": {
+    "message": "Jono ({count, plural, one {# odottaa} other {# odottaa}})..."
+  },
+  "transfer.title.copy": {
+    "message": "Kopioi"
+  },
+  "transfer.title.move": {
+    "message": "Siirrä"
+  },
+  "viewer.as_text_hint": {
+    "message": "{err}. 1 näyttää tiedoston tekstinä."
+  },
+  "viewer.book.cannot_read": {
+    "message": "Tätä kirjaa ei voi lukea: {err}. 1 näyttää tiedoston tekstinä."
+  },
+  "viewer.book.continuing": {
+    "message": "Jatketaan kohdasta {percent}"
+  },
+  "viewer.book.error.compression": {
+    "message": "pakattu tavalla, jota ei vielä osata lukea ({compression})"
+  },
+  "viewer.book.error.damaged": {
+    "message": "vioittunut kirja"
+  },
+  "viewer.book.error.damaged_zip": {
+    "message": "vioittunut zip"
+  },
+  "viewer.book.error.drm": {
+    "message": "DRM-suojattu: vain Kindle voi lukea sen"
+  },
+  "viewer.book.error.huffman": {
+    "message": "pakattu kuten Amazonin omat kirjat (HUFF/CDIC), mitä ei vielä osata lukea"
+  },
+  "viewer.book.error.missing_part": {
+    "message": "{name} ei ole kirjassa"
+  },
+  "viewer.book.error.no_package": {
+    "message": "kirjassa ei ole pakettitiedostoa"
+  },
+  "viewer.book.error.no_text": {
+    "message": "kirjassa ei ole tekstiä"
+  },
+  "viewer.book.error.not_zip": {
+    "message": "ei zip: vioittunut tai DRM-suojattu kirja?"
+  },
+  "viewer.book.error.zip_method": {
+    "message": "{name}: pakattu tavalla, jota zip-lukija ei täällä osaa ({method})"
+  },
+  "viewer.cannot_show": {
+    "message": "Ei voi näyttää: {err}"
+  },
+  "viewer.convert.failed": {
+    "message": "{tool} ei voinut muuntaa sitä ({status})"
+  },
+  "viewer.converting": {
+    "message": "Muunnetaan työkalulla {tool}…"
+  },
+  "viewer.copy.too_large": {
+    "message": "Yli {megabytes} Mt:n valintoja ei kopioida."
+  },
+  "viewer.encoding.cp1250": {
+    "message": "Itä-Eurooppa (1250)"
+  },
+  "viewer.encoding.cp1251": {
+    "message": "Kyrillinen Windows (1251)"
+  },
+  "viewer.encoding.cp1252": {
+    "message": "Länsi-Latin1 (1252)"
+  },
+  "viewer.encoding.cp1253": {
+    "message": "Kreikka (1253)"
+  },
+  "viewer.encoding.cp1254": {
+    "message": "Turkki (1254)"
+  },
+  "viewer.encoding.cp1255": {
+    "message": "Heprea (1255)"
+  },
+  "viewer.encoding.cp1256": {
+    "message": "Arabia (1256)"
+  },
+  "viewer.encoding.cp1257": {
+    "message": "Baltia (1257)"
+  },
+  "viewer.encoding.cp1258": {
+    "message": "Vietnam (1258)"
+  },
+  "viewer.encoding.cp20866": {
+    "message": "Kyrillinen KOI8-R (20866)"
+  },
+  "viewer.encoding.cp437": {
+    "message": "DOS-USA (437)"
+  },
+  "viewer.encoding.cp850": {
+    "message": "DOS-LATIN1 (850)"
+  },
+  "viewer.encoding.cp852": {
+    "message": "DOS Keski-Eurooppa (852)"
+  },
+  "viewer.encoding.cp866": {
+    "message": "DOS kyrillinen (866)"
+  },
+  "viewer.encoding.cp874": {
+    "message": "Thai (874)"
+  },
+  "viewer.encoding.cp932": {
+    "message": "Japani (932)"
+  },
+  "viewer.encoding.cp936": {
+    "message": "Kiina, Manner-Kiina (936)"
+  },
+  "viewer.encoding.cp949": {
+    "message": "Korea (949)"
+  },
+  "viewer.encoding.cp950": {
+    "message": "Kiina, Taiwan (950)"
+  },
+  "viewer.find.not_found": {
+    "message": "Ei löytynyt: {text}"
+  },
+  "viewer.find.not_hex": {
+    "message": "Ei heksamerkkijono: {text}"
+  },
+  "viewer.find.nothing": {
+    "message": "Ei mitään etsittävää."
+  },
+  "viewer.find.save_failed": {
+    "message": "Hakuja ei voitu tallentaa: {err}"
+  },
+  "viewer.loading": {
+    "message": "Ladataan…"
+  },
+  "viewer.markdown.too_large": {
+    "message": "Yli {megabytes} Mt: 1 näyttää sen tekstinä."
+  },
+  "viewer.menu.binary": {
+    "message": "Binääri (kiinteä rivinpituus)"
+  },
+  "viewer.menu.book": {
+    "message": "Kirja (EPUB, FB2)"
+  },
+  "viewer.menu.close": {
+    "message": "Sulje"
+  },
+  "viewer.menu.configure": {
+    "message": "Määritä..."
+  },
+  "viewer.menu.copy_hex": {
+    "message": "Kopioi heksamerkkeinä"
+  },
+  "viewer.menu.copy_text": {
+    "message": "Kopioi tekstinä"
+  },
+  "viewer.menu.edit": {
+    "message": "Muokkaa"
+  },
+  "viewer.menu.encoding": {
+    "message": "Merkistö"
+  },
+  "viewer.menu.file": {
+    "message": "Tiedosto"
+  },
+  "viewer.menu.find": {
+    "message": "Etsi..."
+  },
+  "viewer.menu.find_next": {
+    "message": "Etsi seuraava"
+  },
+  "viewer.menu.fit_image": {
+    "message": "Sovita kuva ikkunaan"
+  },
+  "viewer.menu.font_ansi": {
+    "message": "ANSI (Windows-merkistö)"
+  },
+  "viewer.menu.font_ascii": {
+    "message": "ASCII (DOS-merkistö)"
+  },
+  "viewer.menu.font_page": {
+    "message": "Fontin mukaan"
+  },
+  "viewer.menu.font_variable": {
+    "message": "Vaihteleva merkkileveys"
+  },
+  "viewer.menu.hex": {
+    "message": "Heksa"
+  },
+  "viewer.menu.html": {
+    "message": "HTML-teksti (poista tagit)"
+  },
+  "viewer.menu.minimap": {
+    "message": "Pienoiskartta"
+  },
+  "viewer.menu.next_file": {
+    "message": "Seuraava tiedosto"
+  },
+  "viewer.menu.only_larger": {
+    "message": "Sovita vain suuremmat kuvat"
+  },
+  "viewer.menu.open": {
+    "message": "Avaa..."
+  },
+  "viewer.menu.options": {
+    "message": "Valinnat"
+  },
+  "viewer.menu.picture": {
+    "message": "Kuva/multimedia"
+  },
+  "viewer.menu.previous_file": {
+    "message": "Edellinen tiedosto"
+  },
+  "viewer.menu.reload": {
+    "message": "Lataa uudelleen"
+  },
+  "viewer.menu.save_as": {
+    "message": "Tallenna nimellä..."
+  },
+  "viewer.menu.search_google": {
+    "message": "Hae valittua tekstiä Googlella"
+  },
+  "viewer.menu.select_all": {
+    "message": "Valitse kaikki"
+  },
+  "viewer.menu.syntax_colors": {
+    "message": "Syntaksivärit"
+  },
+  "viewer.menu.text_only": {
+    "message": "Vain teksti"
+  },
+  "viewer.menu.unicode": {
+    "message": "Unicode (UTF-16)"
+  },
+  "viewer.menu.wrap": {
+    "message": "Rivitä teksti ({columns, plural, one {# sarake} other {# saraketta}})"
+  },
+  "viewer.mode.binary": {
+    "message": "Binääri · {page}"
+  },
+  "viewer.mode.book": {
+    "message": "Kirja"
+  },
+  "viewer.mode.hex": {
+    "message": "Heksa · {page}"
+  },
+  "viewer.mode.html": {
+    "message": "HTML-teksti"
+  },
+  "viewer.mode.image": {
+    "message": "Kuva"
+  },
+  "viewer.mode.multimedia": {
+    "message": "Multimedia"
+  },
+  "viewer.mode.pdf_by": {
+    "message": "PDF ({tool})"
+  },
+  "viewer.mode.text": {
+    "message": "Teksti · {page}"
+  },
+  "viewer.origin.not_editable": {
+    "message": "vain 7z-, zip-, jar- ja tar-arkistoissa olevia tiedostoja voi muokata"
+  },
+  "viewer.origin.updated": {
+    "message": "Päivitetty {archive}"
+  },
+  "viewer.origin.updated_on": {
+    "message": "Päivitetty {archive} palvelimella {server}"
+  },
+  "viewer.origin.uploaded": {
+    "message": "Lähetetty {path}"
+  },
+  "viewer.pdf.cannot_show": {
+    "message": "Tätä PDF-tiedostoa ei voi näyttää: {err}"
+  },
+  "viewer.pdf.loading": {
+    "message": "Ladataan..."
+  },
+  "viewer.pdf.page": {
+    "message": "Sivu {page}/{pages}"
+  },
+  "viewer.picture.cannot_show": {
+    "message": "Tätä kuvaa ei voi näyttää; 1 näyttää sen tekstinä."
+  },
+  "viewer.save_as.failed": {
+    "message": "Tiedostoa {path} ei voitu tallentaa: {err}"
+  },
+  "viewer.status.rows": {
+    "message": "{count, plural, one {{first}–{last} / {grouped} rivi} other {{first}–{last} / {grouped} riviä}}"
+  },
+  "viewer.status.rows_so_far": {
+    "message": "{count, plural, one {{grouped} rivi tähän mennessä, {percent} luettu} other {{grouped} riviä tähän mennessä, {percent} luettu}}"
+  },
+  "viewer.status.searching": {
+    "message": "Etsitään…"
+  },
+  "viewer.status.size": {
+    "message": "{count, plural, one {{grouped} tavu} other {{grouped} tavua}}"
+  },
+  "viewer.window.title": {
+    "message": "{path} — Katselin"
+  },
+  "viewer.zoom.fit": {
+    "message": "Takaisin ikkunan kokoon (Ctrl+0)"
+  },
+  "viewer.zoom.in": {
+    "message": "Lähennä (Ctrl++)"
+  },
+  "viewer.zoom.out": {
+    "message": "Loitonna (Ctrl+-)"
+  },
+  "viewer.zoom.reset": {
+    "message": "Takaisin 100 %:iin (Ctrl+0)"
+  },
+  "workspaces.button.close": {
+    "message": "Sulje"
+  },
+  "workspaces.button.delete": {
+    "message": "Poista..."
+  },
+  "workspaces.button.duplicate": {
+    "message": "Monista..."
+  },
+  "workspaces.button.new": {
+    "message": "Uusi..."
+  },
+  "workspaces.button.rename": {
+    "message": "Nimeä uudelleen..."
+  },
+  "workspaces.delete.button": {
+    "message": "Poista"
+  },
+  "workspaces.delete.closed": {
+    "message": "Poistetaanko työtila ”{name}”? Sen välilehdet unohdetaan."
+  },
+  "workspaces.delete.closed_shells": {
+    "message": "Poistetaanko työtila ”{name}”? Sen välilehdet unohdetaan, ja sen päätevälilehtien komentotulkit päättyvät."
+  },
+  "workspaces.delete.open": {
+    "message": "Poistetaanko työtila ”{name}”? Sen välilehdet suljetaan; tilalle avataan ”{other}”."
+  },
+  "workspaces.delete.open_shells": {
+    "message": "Poistetaanko työtila ”{name}”? Sen välilehdet suljetaan ja sen päätevälilehtien komentotulkit päättyvät; tilalle avataan ”{other}”."
+  },
+  "workspaces.delete.title": {
+    "message": "Poista työtila"
+  },
+  "workspaces.duplicate.name": {
+    "message": "{name} (kopio)"
+  },
+  "workspaces.duplicate.title": {
+    "message": "Monista työtila"
+  },
+  "workspaces.error.name_taken": {
+    "message": "Toisella työtilalla on jo tämä nimi."
+  },
+  "workspaces.error.no_name": {
+    "message": "Työtila tarvitsee nimen."
+  },
+  "workspaces.error.save": {
+    "message": "Työtiloja ei voitu tallentaa: {err}"
+  },
+  "workspaces.hint": {
+    "message": "Näytä > Työtilat avaa työtilan. Avoimeen työtilaan tehdyt muutokset säilyvät siinä."
+  },
+  "workspaces.name.label": {
+    "message": "Nimi:"
+  },
+  "workspaces.new.name": {
+    "message": "Työtila {number}"
+  },
+  "workspaces.new.title": {
+    "message": "Uusi työtila"
+  },
+  "workspaces.open": {
+    "message": "avoinna"
+  },
+  "workspaces.rename.title": {
+    "message": "Nimeä työtila uudelleen"
+  },
+  "workspaces.summary.panels": {
+    "message": "Vasen {left, plural, one {# välilehti} other {# välilehteä}}, oikea {right, plural, one {# välilehti} other {# välilehteä}}"
+  },
+  "workspaces.summary.terminal": {
+    "message": "Vasen {left, plural, one {# välilehti} other {# välilehteä}}, oikea {right, plural, one {# välilehti} other {# välilehteä}}, pääte {terminal, plural, one {# välilehti} other {# välilehteä}}"
+  },
+  "workspaces.summary.terminal_hidden": {
+    "message": "Vasen {left, plural, one {# välilehti} other {# välilehteä}}, oikea {right, plural, one {# välilehti} other {# välilehteä}}, pääte {terminal, plural, one {# välilehti} other {# välilehteä}} (piilotettu)"
+  },
+  "workspaces.title": {
+    "message": "Työtilat"
+  }
+}

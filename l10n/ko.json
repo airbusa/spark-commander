@@ -1,0 +1,4823 @@
+{
+  "about.addons": {
+    "message": "추가 기능(원할 때 다운로드)"
+  },
+  "about.libraries": {
+    "message": "기반 라이브러리"
+  },
+  "about.licence": {
+    "message": "라이선스:"
+  },
+  "about.made_with": {
+    "message": "다음 프로젝트의 성과로 만들어졌습니다"
+  },
+  "about.part.alacritty_terminal": {
+    "message": "내장 터미널의 화면과 셸"
+  },
+  "about.part.encoding_rs": {
+    "message": "코드 페이지"
+  },
+  "about.part.gpui": {
+    "message": "창, 그리기 및 입력(Zed 제작)"
+  },
+  "about.part.gpui_kit": {
+    "message": "컨트롤: 목록, 메뉴, 입력란, 편집기"
+  },
+  "about.part.html5ever": {
+    "message": "뷰어의 HTML 및 전자책"
+  },
+  "about.part.image": {
+    "message": "이미지"
+  },
+  "about.part.keyring": {
+    "message": "시스템 키링에 저장된 암호"
+  },
+  "about.part.lucide": {
+    "message": "아이콘"
+  },
+  "about.part.material_icons": {
+    "message": "파일 및 폴더 아이콘"
+  },
+  "about.part.pdfium_render": {
+    "message": "Rust에서 PDFium 사용"
+  },
+  "about.part.ratatui": {
+    "message": "scmd(터미널 버전)"
+  },
+  "about.part.russh": {
+    "message": "SSH 및 SFTP"
+  },
+  "about.part.rustls": {
+    "message": "TLS"
+  },
+  "about.part.serde": {
+    "message": "설정 파일"
+  },
+  "about.part.similar": {
+    "message": "내용 비교"
+  },
+  "about.part.suppaftp": {
+    "message": "FTP 및 FTPS"
+  },
+  "about.part.tokio": {
+    "message": "백그라운드 네트워크 작업"
+  },
+  "about.part.trash": {
+    "message": "휴지통"
+  },
+  "about.part.tree_sitter": {
+    "message": "뷰어 및 편집기의 구문 강조"
+  },
+  "about.part.zbus": {
+    "message": "D-Bus: 데스크톱, 장치, KDE Connect"
+  },
+  "about.shipped": {
+    "message": "함께 제공되는 항목"
+  },
+  "about.tagline": {
+    "message": "자유 소프트웨어 듀얼 패널 파일 관리자입니다."
+  },
+  "about.title": {
+    "message": "Spark Commander 정보"
+  },
+  "about.version": {
+    "message": "버전 {version}"
+  },
+  "activity.clear": {
+    "message": "지우기"
+  },
+  "activity.clear_failed": {
+    "message": "기록을 지우지 못했습니다: {err}"
+  },
+  "activity.empty": {
+    "message": "아직 수행한 작업이 없습니다."
+  },
+  "activity.title": {
+    "message": "활동 기록"
+  },
+  "addons.error.damaged": {
+    "message": "다운로드한 파일이 손상됨: 체크섬이 다름"
+  },
+  "addons.error.list": {
+    "message": "추가 기능 목록: {err}"
+  },
+  "addons.error.missing_file": {
+    "message": "다운로드한 파일에 {file}이(가) 없음"
+  },
+  "addons.error.no_folder": {
+    "message": "데이터 폴더 없음"
+  },
+  "addons.error.unpacking": {
+    "message": "압축 풀기: {err}"
+  },
+  "addons.installed": {
+    "message": "{addon} {version}이(가) 설치되었습니다."
+  },
+  "addons.megabytes": {
+    "message": "{size}MB"
+  },
+  "addons.offer.never": {
+    "message": "다시 표시 안 함"
+  },
+  "addons.offer.no": {
+    "message": "아니요"
+  },
+  "addons.offer.text": {
+    "message": "{name}을(를) 열려면 설치되지 않은 추가 기능이 필요합니다: {addon}. 설정 > 추가 기능에서 다운로드하시겠습니까?"
+  },
+  "addons.offer.title": {
+    "message": "추가 기능"
+  },
+  "addons.offer.yes": {
+    "message": "예"
+  },
+  "addons.purpose.cloud": {
+    "message": "온라인 저장소: S3, Google Drive, OneDrive, Dropbox 및 기타 서비스."
+  },
+  "addons.purpose.media": {
+    "message": "동영상, 소리, HEIC 및 AVIF 사진: 뷰어와 빠른 보기에서 표시합니다."
+  },
+  "addons.purpose.office": {
+    "message": "Office 문서: 뷰어에서 Word, Excel, PowerPoint 파일을 PDF로 표시합니다."
+  },
+  "addons.purpose.pdfium": {
+    "message": "PDF: 뷰어에서 PDF 파일과 변환된 Office 문서를 표시합니다."
+  },
+  "addons.purpose.seven_zip": {
+    "message": "압축 파일: 7z, zip, rar, tar 등을 압축하고 풉니다."
+  },
+  "addons.update": {
+    "message": "업데이트"
+  },
+  "addons.updates": {
+    "message": "추가 기능 업데이트: {names}"
+  },
+  "appearance.dark": {
+    "message": "어둡게"
+  },
+  "appearance.light": {
+    "message": "밝게"
+  },
+  "appearance.system": {
+    "message": "시스템 설정 따르기"
+  },
+  "archive.cannot_read": {
+    "message": "{name}: 읽을 수 없습니다"
+  },
+  "archive.not_in_archive": {
+    "message": "{name}이(가) 압축 파일에 없습니다"
+  },
+  "archive.not_own_folder": {
+    "message": "{folder}은(는) 이 사용자의 폴더가 아닙니다"
+  },
+  "archive.seven_zip_failed": {
+    "message": "7-Zip 실패({code})"
+  },
+  "archive.seven_zip_missing": {
+    "message": "7-Zip이 없습니다: {path} (vendor/7zip/fetch.sh 또는 fetch.bat를 실행하세요)"
+  },
+  "archive.temp_not_utf8": {
+    "message": "임시 폴더 이름이 UTF-8이 아닙니다"
+  },
+  "associations.add": {
+    "message": "추가..."
+  },
+  "associations.cancel": {
+    "message": "취소"
+  },
+  "associations.close": {
+    "message": "닫기"
+  },
+  "associations.column.edit": {
+    "message": "편집(F4)"
+  },
+  "associations.column.files": {
+    "message": "파일"
+  },
+  "associations.column.open": {
+    "message": "열기(Enter)"
+  },
+  "associations.column.view": {
+    "message": "보기(F3)"
+  },
+  "associations.edit": {
+    "message": "편집..."
+  },
+  "associations.edit_dialog.title": {
+    "message": "연결 프로그램 지정"
+  },
+  "associations.empty": {
+    "message": "아직 없습니다."
+  },
+  "associations.field.edit": {
+    "message": "편집(F4):"
+  },
+  "associations.field.files": {
+    "message": "파일(*.jpg *.png):"
+  },
+  "associations.field.open": {
+    "message": "열기(Enter):"
+  },
+  "associations.field.view": {
+    "message": "보기(F3):"
+  },
+  "associations.intro": {
+    "message": "마스크에 맞는 파일에 Enter, F3, F4를 누르면 이 프로그램이 실행됩니다. 비워 두면 기본 동작을 사용합니다. %1은 파일입니다."
+  },
+  "associations.mask_needed": {
+    "message": "파일 마스크가 필요합니다: *.txt"
+  },
+  "associations.no_file": {
+    "message": "연결할 형식의 파일에 커서를 놓으세요."
+  },
+  "associations.ok": {
+    "message": "확인"
+  },
+  "associations.remove": {
+    "message": "제거"
+  },
+  "associations.save_failed": {
+    "message": "설정을 저장하지 못했습니다: {err}"
+  },
+  "associations.title": {
+    "message": "내부 파일 연결"
+  },
+  "attributes.bad_time": {
+    "message": "‘{text}’은(는) 올바른 날짜와 시간이 아닙니다: 2026-11-10 14:04:33"
+  },
+  "attributes.cancel": {
+    "message": "취소"
+  },
+  "attributes.change_time": {
+    "message": "날짜/시간 변경:"
+  },
+  "attributes.changed": {
+    "message": "{count, plural, other {#개 변경됨}}"
+  },
+  "attributes.changed_failed": {
+    "message": "{count, plural, other {#개 변경됨}}, {failed, plural, other {#개 실패}}"
+  },
+  "attributes.dialog_title_many": {
+    "message": "특성 변경: {count, plural, other {항목 #개}}"
+  },
+  "attributes.dialog_title_one": {
+    "message": "특성 변경: {name}"
+  },
+  "attributes.execute": {
+    "message": "실행"
+  },
+  "attributes.group": {
+    "message": "그룹"
+  },
+  "attributes.in_archive": {
+    "message": "압축 파일 안에 있는 항목의 특성은 변경할 수 없습니다."
+  },
+  "attributes.no_bits": {
+    "message": "이 파일에는 권한 비트가 없으므로 날짜만 변경할 수 있습니다."
+  },
+  "attributes.now": {
+    "message": "지금"
+  },
+  "attributes.octal": {
+    "message": "8진수:"
+  },
+  "attributes.ok": {
+    "message": "확인"
+  },
+  "attributes.others": {
+    "message": "기타"
+  },
+  "attributes.owner": {
+    "message": "소유자"
+  },
+  "attributes.read": {
+    "message": "읽기"
+  },
+  "attributes.recurse": {
+    "message": "폴더 안의 모든 항목에도 적용"
+  },
+  "attributes.title_many": {
+    "message": "{count, plural, other {항목 #개}}의 특성 변경"
+  },
+  "attributes.title_one": {
+    "message": "‘{name}’의 특성 변경"
+  },
+  "attributes.write": {
+    "message": "쓰기"
+  },
+  "bookmarks.add_current": {
+    "message": "현재 폴더 추가"
+  },
+  "bookmarks.add_folders": {
+    "message": "폴더 추가..."
+  },
+  "bookmarks.added": {
+    "message": "책갈피에 추가됨: {name}"
+  },
+  "bookmarks.already": {
+    "message": "{name}은(는) 이미 책갈피에 있습니다."
+  },
+  "bookmarks.chooser.failed": {
+    "message": "폴더 선택 창을 표시하지 못했습니다: {err}"
+  },
+  "bookmarks.chooser.prompt": {
+    "message": "책갈피 추가"
+  },
+  "bookmarks.close": {
+    "message": "닫기"
+  },
+  "bookmarks.copy_name": {
+    "message": "이름 복사"
+  },
+  "bookmarks.copy_path": {
+    "message": "경로 복사"
+  },
+  "bookmarks.drop_here": {
+    "message": "여기에 폴더를 끌어다 놓으세요."
+  },
+  "bookmarks.empty": {
+    "message": "책갈피가 없습니다. 폴더를 추가하거나 여기에 끌어다 놓으세요."
+  },
+  "bookmarks.intro": {
+    "message": "이 컴퓨터의 폴더가 ‘위치’에 표시되는 순서입니다. 끌어서 순서를 바꾸거나 폴더를 여기에 놓아 추가하세요."
+  },
+  "bookmarks.move_down": {
+    "message": "아래로 이동"
+  },
+  "bookmarks.move_up": {
+    "message": "위로 이동"
+  },
+  "bookmarks.only_local": {
+    "message": "이 컴퓨터의 폴더만 책갈피에 추가할 수 있습니다."
+  },
+  "bookmarks.remove": {
+    "message": "제거"
+  },
+  "bookmarks.remove_from": {
+    "message": "책갈피에서 제거"
+  },
+  "bookmarks.rename": {
+    "message": "이름 변경..."
+  },
+  "bookmarks.rename_label": {
+    "message": "이름(비우면 폴더 이름):"
+  },
+  "bookmarks.rename_title": {
+    "message": "책갈피 이름 변경"
+  },
+  "bookmarks.sort": {
+    "message": "이름순 정렬"
+  },
+  "bookmarks.title": {
+    "message": "책갈피"
+  },
+  "button_bar.copy": {
+    "message": "복사"
+  },
+  "button_bar.delete": {
+    "message": "삭제"
+  },
+  "button_bar.edit": {
+    "message": "편집"
+  },
+  "button_bar.move": {
+    "message": "이동"
+  },
+  "button_bar.new_folder": {
+    "message": "새 폴더"
+  },
+  "button_bar.quit": {
+    "message": "끝내기"
+  },
+  "button_bar.view": {
+    "message": "보기"
+  },
+  "checksum.create.title": {
+    "message": "{name} 만들기"
+  },
+  "checksum.create.title_separate": {
+    "message": "{method} 체크섬 파일 만들기"
+  },
+  "checksum.dialog_title": {
+    "message": "체크섬 파일 만들기"
+  },
+  "checksum.save_as": {
+    "message": "체크섬 파일 저장 경로:"
+  },
+  "checksum.separate": {
+    "message": "대신 각 파일 옆에 체크섬 파일 만들기"
+  },
+  "checksum.verify.all_ok": {
+    "message": "{count, plural, other {파일 #개 모두 정상}}"
+  },
+  "checksum.verify.choose": {
+    "message": "체크섬 파일을 선택하세요: .sfv, .md5, .sha1, .sha256 또는 .sha512."
+  },
+  "checksum.verify.missing_file": {
+    "message": "없음: {name}"
+  },
+  "checksum.verify.result": {
+    "message": "{ok, plural, other {#개 정상}}, {wrong, plural, other {#개 불일치}}, {missing, plural, other {#개 없음}}"
+  },
+  "checksum.verify.title_many": {
+    "message": "{count, plural, other {체크섬 파일 #개}} 검증"
+  },
+  "checksum.verify.title_one": {
+    "message": "{name} 검증"
+  },
+  "checksum.verify.wrong_file": {
+    "message": "불일치: {name}"
+  },
+  "command.about": {
+    "message": "Spark Commander 정보"
+  },
+  "command.activity_log": {
+    "message": "활동 기록..."
+  },
+  "command.all_files": {
+    "message": "모든 파일"
+  },
+  "command.all_folder_sizes": {
+    "message": "모든 폴더 크기 계산"
+  },
+  "command.all_with_extension": {
+    "message": "*.*"
+  },
+  "command.associate_with": {
+    "message": "연결 프로그램 지정..."
+  },
+  "command.bookmark_folder": {
+    "message": "이 폴더를 책갈피에 추가"
+  },
+  "command.bookmarks": {
+    "message": "책갈피"
+  },
+  "command.branch_view": {
+    "message": "분기 보기(하위 폴더 포함)"
+  },
+  "command.branch_view_selected": {
+    "message": "선택한 폴더의 분기 보기"
+  },
+  "command.brief": {
+    "message": "간단히"
+  },
+  "command.calculate_occupied_space": {
+    "message": "사용 공간 계산..."
+  },
+  "command.change_attributes": {
+    "message": "특성 변경..."
+  },
+  "command.close_all_tabs": {
+    "message": "모든 탭 닫기"
+  },
+  "command.close_duplicate_tabs": {
+    "message": "중복 탭 닫기"
+  },
+  "command.close_tab": {
+    "message": "탭 닫기"
+  },
+  "command.combine_files": {
+    "message": "파일 결합..."
+  },
+  "command.compare_by_content": {
+    "message": "내용 비교..."
+  },
+  "command.compare_directories": {
+    "message": "더 새로운 파일 선택"
+  },
+  "command.copy": {
+    "message": "복사..."
+  },
+  "command.copy_names_to_clipboard": {
+    "message": "선택한 이름을 클립보드로 복사"
+  },
+  "command.copy_names_with_path_to_clipboard": {
+    "message": "경로 포함 이름을 클립보드로 복사"
+  },
+  "command.copy_to_clipboard": {
+    "message": "파일 복사"
+  },
+  "command.copy_with_all_details": {
+    "message": "모든 세부 정보와 함께 클립보드로 복사"
+  },
+  "command.copy_with_path_and_details": {
+    "message": "경로+세부 정보와 함께 클립보드로 복사"
+  },
+  "command.create_checksum_files": {
+    "message": "체크섬 파일 만들기(CRC32, MD5, SHA1, SHA256, SHA512)..."
+  },
+  "command.create_link": {
+    "message": "링크 만들기..."
+  },
+  "command.custom_filter": {
+    "message": "사용자 지정..."
+  },
+  "command.cut_to_clipboard": {
+    "message": "파일 잘라내기"
+  },
+  "command.delete": {
+    "message": "삭제"
+  },
+  "command.delete_permanently": {
+    "message": "영구 삭제"
+  },
+  "command.disconnect": {
+    "message": "서버 연결 끊기"
+  },
+  "command.download_link": {
+    "message": "링크에서 다운로드..."
+  },
+  "command.duplicate_tab": {
+    "message": "새 탭"
+  },
+  "command.duplicate_workspace": {
+    "message": "작업 공간 복제..."
+  },
+  "command.edit": {
+    "message": "편집"
+  },
+  "command.edit_externally": {
+    "message": "외부 편집기로 편집"
+  },
+  "command.folder_history": {
+    "message": "폴더 기록..."
+  },
+  "command.full": {
+    "message": "자세히"
+  },
+  "command.go_back": {
+    "message": "뒤로"
+  },
+  "command.go_forward": {
+    "message": "앞으로"
+  },
+  "command.go_home": {
+    "message": "홈"
+  },
+  "command.go_to_root": {
+    "message": "루트 폴더"
+  },
+  "command.hidden_files": {
+    "message": "숨김 파일"
+  },
+  "command.internal_associations": {
+    "message": "내부 파일 연결(Spark Commander 전용)..."
+  },
+  "command.invert_selection": {
+    "message": "선택 반전"
+  },
+  "command.left_drives": {
+    "message": "드라이브(왼쪽 패널)"
+  },
+  "command.list_tabs": {
+    "message": "탭 목록"
+  },
+  "command.load_selection_from_file": {
+    "message": "파일에서 선택 불러오기"
+  },
+  "command.manage_bookmarks": {
+    "message": "책갈피 관리..."
+  },
+  "command.manage_tools": {
+    "message": "도구 관리..."
+  },
+  "command.manage_workspaces": {
+    "message": "작업 공간 관리..."
+  },
+  "command.mark_in_place": {
+    "message": "제자리에서 선택/선택 해제(폴더 크기 계산)"
+  },
+  "command.mark_newer_hide_same": {
+    "message": "더 새로운 파일 선택, 같은 파일 숨기기"
+  },
+  "command.move": {
+    "message": "이동..."
+  },
+  "command.multi_rename_tool": {
+    "message": "일괄 이름 변경 도구..."
+  },
+  "command.name_to_command_line": {
+    "message": "이름을 명령줄로"
+  },
+  "command.new_folder": {
+    "message": "새 폴더..."
+  },
+  "command.new_terminal": {
+    "message": "새 터미널 탭"
+  },
+  "command.new_text_file": {
+    "message": "새 파일..."
+  },
+  "command.new_workspace": {
+    "message": "새 작업 공간..."
+  },
+  "command.next_tab": {
+    "message": "다음 탭"
+  },
+  "command.only_selected_files": {
+    "message": "선택한 파일만"
+  },
+  "command.open_in_left_panel": {
+    "message": "왼쪽 패널에 표시"
+  },
+  "command.open_in_new_tab": {
+    "message": "새 탭에서 폴더 열기"
+  },
+  "command.open_in_other_new_tab": {
+    "message": "반대쪽 패널의 새 탭에서 폴더 열기"
+  },
+  "command.open_in_right_panel": {
+    "message": "오른쪽 패널에 표시"
+  },
+  "command.open_terminal": {
+    "message": "여기서 터미널 열기"
+  },
+  "command.operation_queue": {
+    "message": "작업 대기열..."
+  },
+  "command.pack": {
+    "message": "압축..."
+  },
+  "command.paste_from_clipboard": {
+    "message": "파일 붙여넣기"
+  },
+  "command.path_and_name_to_command_line": {
+    "message": "경로와 이름을 명령줄로"
+  },
+  "command.path_to_command_line": {
+    "message": "경로를 명령줄로"
+  },
+  "command.previous_tab": {
+    "message": "이전 탭"
+  },
+  "command.programs": {
+    "message": "프로그램"
+  },
+  "command.properties": {
+    "message": "속성..."
+  },
+  "command.quick_filter": {
+    "message": "빠른 필터"
+  },
+  "command.quick_open": {
+    "message": "빠른 열기..."
+  },
+  "command.quick_view_panel": {
+    "message": "빠른 보기 패널"
+  },
+  "command.quit": {
+    "message": "종료"
+  },
+  "command.redo": {
+    "message": "다시 실행"
+  },
+  "command.rename_in_place": {
+    "message": "이름 변경"
+  },
+  "command.reread_source": {
+    "message": "새로 고침"
+  },
+  "command.restore_selection": {
+    "message": "선택 복원"
+  },
+  "command.reversed_order": {
+    "message": "역순"
+  },
+  "command.right_drives": {
+    "message": "드라이브(오른쪽 패널)"
+  },
+  "command.save_selection": {
+    "message": "선택 저장"
+  },
+  "command.save_selection_to_file": {
+    "message": "선택을 파일로 저장"
+  },
+  "command.search": {
+    "message": "검색..."
+  },
+  "command.search_in_separate_process": {
+    "message": "별도 창에서 검색..."
+  },
+  "command.select_all": {
+    "message": "모두 선택"
+  },
+  "command.select_all_with_same_extension": {
+    "message": "같은 확장자 모두 선택"
+  },
+  "command.select_group": {
+    "message": "그룹 선택..."
+  },
+  "command.settings": {
+    "message": "설정..."
+  },
+  "command.shortcuts": {
+    "message": "단축키..."
+  },
+  "command.sidebar_connections": {
+    "message": "연결"
+  },
+  "command.sidebar_operations": {
+    "message": "작업"
+  },
+  "command.sidebar_places": {
+    "message": "위치"
+  },
+  "command.sidebar_tree": {
+    "message": "폴더"
+  },
+  "command.sort_by_extension": {
+    "message": "확장자"
+  },
+  "command.sort_by_name": {
+    "message": "이름"
+  },
+  "command.sort_by_size": {
+    "message": "크기"
+  },
+  "command.sort_by_time": {
+    "message": "시간"
+  },
+  "command.split_file": {
+    "message": "파일 분할..."
+  },
+  "command.swap_panels": {
+    "message": "패널 바꾸기"
+  },
+  "command.swap_panels_and_tabs": {
+    "message": "탭과 함께 패널 바꾸기"
+  },
+  "command.sync_browsing": {
+    "message": "동기화 탐색"
+  },
+  "command.synchronize_dirs": {
+    "message": "폴더 동기화..."
+  },
+  "command.target_equals_source": {
+    "message": "대상 = 원본"
+  },
+  "command.terminal_panel": {
+    "message": "터미널"
+  },
+  "command.test_archives": {
+    "message": "압축 파일 테스트"
+  },
+  "command.thumbnail_view": {
+    "message": "썸네일 보기"
+  },
+  "command.toggle_mark": {
+    "message": "선택/선택 해제"
+  },
+  "command.toggle_sidebar": {
+    "message": "사이드바 표시"
+  },
+  "command.undo": {
+    "message": "실행 취소"
+  },
+  "command.unpack_specific_files": {
+    "message": "특정 파일 압축 풀기..."
+  },
+  "command.unselect_all": {
+    "message": "모두 선택 해제"
+  },
+  "command.unselect_group": {
+    "message": "그룹 선택 해제..."
+  },
+  "command.unsorted": {
+    "message": "정렬 안 함"
+  },
+  "command.verify_checksums": {
+    "message": "체크섬 검증(체크섬 파일 기준)"
+  },
+  "command.vertical_arrangement": {
+    "message": "세로 배치"
+  },
+  "command.view": {
+    "message": "보기"
+  },
+  "command.website": {
+    "message": "Spark Commander 웹사이트"
+  },
+  "command.workspace1": {
+    "message": "작업 공간 1 열기"
+  },
+  "command.workspace2": {
+    "message": "작업 공간 2 열기"
+  },
+  "command.workspace3": {
+    "message": "작업 공간 3 열기"
+  },
+  "command.workspace4": {
+    "message": "작업 공간 4 열기"
+  },
+  "command.workspace5": {
+    "message": "작업 공간 5 열기"
+  },
+  "command.workspace6": {
+    "message": "작업 공간 6 열기"
+  },
+  "command.workspace7": {
+    "message": "작업 공간 7 열기"
+  },
+  "command.workspace8": {
+    "message": "작업 공간 8 열기"
+  },
+  "command.workspace9": {
+    "message": "작업 공간 9 열기"
+  },
+  "command_line.error.cannot_run": {
+    "message": "{program}: 실행할 수 없습니다"
+  },
+  "command_line.error.not_found": {
+    "message": "{program}: 명령을 찾을 수 없습니다"
+  },
+  "command_line.history.empty": {
+    "message": "아직 실행한 명령이 없습니다"
+  },
+  "command_line.on_server": {
+    "message": "명령은 이 컴퓨터에서 실행되는데, 패널에 서버가 표시되어 있습니다."
+  },
+  "command_name.all_files": {
+    "message": "모든 파일 표시"
+  },
+  "command_name.all_with_extension": {
+    "message": "*.* 표시"
+  },
+  "command_name.brief": {
+    "message": "간단히 보기"
+  },
+  "command_name.compare_directories": {
+    "message": "폴더 비교: 더 새로운 파일 선택"
+  },
+  "command_name.custom_filter": {
+    "message": "사용자 지정 필터"
+  },
+  "command_name.duplicate_tab": {
+    "message": "새 탭(현재 탭 복제)"
+  },
+  "command_name.full": {
+    "message": "자세히 보기"
+  },
+  "command_name.go_back": {
+    "message": "뒤로 이동"
+  },
+  "command_name.go_forward": {
+    "message": "앞으로 이동"
+  },
+  "command_name.go_home": {
+    "message": "홈으로 이동"
+  },
+  "command_name.hidden_files": {
+    "message": "숨김 파일 표시"
+  },
+  "command_name.only_selected_files": {
+    "message": "선택한 파일만 표시"
+  },
+  "command_name.programs": {
+    "message": "프로그램 표시"
+  },
+  "command_name.quick_filter": {
+    "message": "빠른 필터"
+  },
+  "command_name.rename_in_place": {
+    "message": "제자리에서 이름 변경"
+  },
+  "command_name.sidebar_connections": {
+    "message": "사이드바: 연결"
+  },
+  "command_name.sidebar_operations": {
+    "message": "사이드바: 작업"
+  },
+  "command_name.sidebar_places": {
+    "message": "사이드바: 위치"
+  },
+  "command_name.sidebar_tree": {
+    "message": "사이드바: 폴더"
+  },
+  "command_name.sort_by_extension": {
+    "message": "확장자순 정렬"
+  },
+  "command_name.sort_by_name": {
+    "message": "이름순 정렬"
+  },
+  "command_name.sort_by_size": {
+    "message": "크기순 정렬"
+  },
+  "command_name.sort_by_time": {
+    "message": "시간순 정렬"
+  },
+  "command_name.toggle_sidebar": {
+    "message": "사이드바: 표시/숨기기"
+  },
+  "command_name.unsorted": {
+    "message": "정렬 안 함"
+  },
+  "compare.browse.prompt": {
+    "message": "비교"
+  },
+  "compare.button.compare": {
+    "message": "비교"
+  },
+  "compare.button.next": {
+    "message": "다음 차이(N)"
+  },
+  "compare.button.previous": {
+    "message": "이전 차이(P)"
+  },
+  "compare.need_two_files": {
+    "message": "양쪽 패널에서 각각 파일에 커서를 놓거나, 파일 두 개를 선택하세요."
+  },
+  "compare.option.binary": {
+    "message": "바이너리"
+  },
+  "compare.option.ignore_case": {
+    "message": "대소문자 무시"
+  },
+  "compare.option.ignore_spaces": {
+    "message": "연속 공백 무시"
+  },
+  "compare.option.only_differences": {
+    "message": "차이점만"
+  },
+  "compare.status.bytes_differ": {
+    "message": "{place}: {count, plural, other {{grouped}바이트 다름}}, 첫 위치 {first}, 크기 {left} / {right}."
+  },
+  "compare.status.comparing": {
+    "message": "비교 중…"
+  },
+  "compare.status.difference_of": {
+    "message": "차이 {at}/{count}"
+  },
+  "compare.status.differences": {
+    "message": "{count, plural, other {차이 #개}}"
+  },
+  "compare.status.identical": {
+    "message": "{count, plural, other {파일이 동일합니다: {grouped}바이트.}}"
+  },
+  "compare.status.no_differences": {
+    "message": "차이가 없습니다."
+  },
+  "compare.window.title": {
+    "message": "비교: {left} — {right}"
+  },
+  "connections.connect": {
+    "message": "연결"
+  },
+  "connections.copy_name": {
+    "message": "이름 복사"
+  },
+  "connections.copy_path": {
+    "message": "경로 복사"
+  },
+  "connections.delete": {
+    "message": "삭제"
+  },
+  "connections.dialog.title": {
+    "message": "연결"
+  },
+  "connections.disconnect": {
+    "message": "연결 끊기"
+  },
+  "connections.duplicate": {
+    "message": "복제"
+  },
+  "connections.duplicate_name": {
+    "message": "{name} (사본)"
+  },
+  "connections.edit": {
+    "message": "편집..."
+  },
+  "connections.empty": {
+    "message": "아직 연결이 없습니다."
+  },
+  "connections.error.no_server": {
+    "message": "서버를 입력해야 합니다."
+  },
+  "connections.error.port": {
+    "message": "올바른 포트가 아닙니다: {text}"
+  },
+  "connections.field.access_key": {
+    "message": "액세스 키"
+  },
+  "connections.field.api_key": {
+    "message": "API 키"
+  },
+  "connections.field.application_key": {
+    "message": "애플리케이션 키"
+  },
+  "connections.field.bucket": {
+    "message": "버킷/폴더"
+  },
+  "connections.field.container": {
+    "message": "컨테이너/폴더"
+  },
+  "connections.field.endpoint": {
+    "message": "엔드포인트"
+  },
+  "connections.field.key_id": {
+    "message": "키 ID"
+  },
+  "connections.field.name": {
+    "message": "이름"
+  },
+  "connections.field.password": {
+    "message": "암호"
+  },
+  "connections.field.port": {
+    "message": "포트"
+  },
+  "connections.field.protocol": {
+    "message": "프로토콜"
+  },
+  "connections.field.secret_key": {
+    "message": "비밀 키"
+  },
+  "connections.field.server": {
+    "message": "서버"
+  },
+  "connections.field.start_folder": {
+    "message": "시작 폴더"
+  },
+  "connections.field.user": {
+    "message": "사용자"
+  },
+  "connections.folder.delete_confirm": {
+    "message": "{count, plural, other {{name} 폴더와 그 안의 연결 #개를 삭제하시겠습니까?}}"
+  },
+  "connections.folder.delete_title": {
+    "message": "폴더 삭제"
+  },
+  "connections.folder.exists": {
+    "message": "이름이 {name}인 폴더가 이미 있습니다."
+  },
+  "connections.folder.name": {
+    "message": "이름:"
+  },
+  "connections.folder.new_title": {
+    "message": "새 폴더"
+  },
+  "connections.folder.rename": {
+    "message": "이름 변경..."
+  },
+  "connections.folder.rename_title": {
+    "message": "폴더 이름 변경"
+  },
+  "connections.forget_password": {
+    "message": "저장된 암호 삭제"
+  },
+  "connections.move_down": {
+    "message": "아래로 이동"
+  },
+  "connections.move_to_folder": {
+    "message": "폴더로 이동"
+  },
+  "connections.move_up": {
+    "message": "위로 이동"
+  },
+  "connections.new": {
+    "message": "새 연결..."
+  },
+  "connections.new_folder": {
+    "message": "새 폴더..."
+  },
+  "connections.no_folder": {
+    "message": "폴더 없음"
+  },
+  "connections.open_in_terminal": {
+    "message": "터미널에서 열기"
+  },
+  "connections.placeholder.name": {
+    "message": "목록에 표시되는 이름"
+  },
+  "connections.placeholder.password": {
+    "message": "설정 폴더에 암호화되어 저장됨, 비워 두면 유지"
+  },
+  "connections.placeholder.path": {
+    "message": "로그인 폴더"
+  },
+  "connections.placeholder.port": {
+    "message": "기본값"
+  },
+  "connections.placeholder.server": {
+    "message": "서버 또는 ~/.ssh/config의 호스트"
+  },
+  "connections.placeholder.user": {
+    "message": "~/.ssh/config 설정 또는 익명"
+  },
+  "connections.save_failed": {
+    "message": "연결을 저장하지 못했습니다: {err}"
+  },
+  "connections.ssh_config.read_only": {
+    "message": "읽기 전용: 이 호스트는 ~/.ssh/config에서 직접 편집합니다"
+  },
+  "context_menu.action_failed": {
+    "message": "{name} 실패: {err}"
+  },
+  "context_menu.actions": {
+    "message": "동작"
+  },
+  "context_menu.copy": {
+    "message": "복사"
+  },
+  "context_menu.create_new": {
+    "message": "새로 만들기"
+  },
+  "context_menu.cut": {
+    "message": "잘라내기"
+  },
+  "context_menu.delete": {
+    "message": "삭제"
+  },
+  "context_menu.edit": {
+    "message": "편집"
+  },
+  "context_menu.empty_file": {
+    "message": "빈 파일…"
+  },
+  "context_menu.move_to_trash": {
+    "message": "휴지통으로 이동"
+  },
+  "context_menu.new_file_dialog.label": {
+    "message": "새 파일 이름:"
+  },
+  "context_menu.new_file_dialog.title": {
+    "message": "새 파일"
+  },
+  "context_menu.new_file_failed": {
+    "message": "파일을 만들지 못했습니다: {err}"
+  },
+  "context_menu.new_folder": {
+    "message": "폴더…"
+  },
+  "context_menu.open": {
+    "message": "열기"
+  },
+  "context_menu.open_failed": {
+    "message": "열지 못했습니다: {err}"
+  },
+  "context_menu.open_terminal_here": {
+    "message": "여기서 터미널 열기"
+  },
+  "context_menu.open_with": {
+    "message": "연결 프로그램"
+  },
+  "context_menu.other_application": {
+    "message": "다른 프로그램…"
+  },
+  "context_menu.pack": {
+    "message": "압축…"
+  },
+  "context_menu.pack_files": {
+    "message": "파일 압축"
+  },
+  "context_menu.paste": {
+    "message": "붙여넣기"
+  },
+  "context_menu.properties": {
+    "message": "속성"
+  },
+  "context_menu.properties_failed": {
+    "message": "속성: {err}"
+  },
+  "context_menu.rename": {
+    "message": "이름 변경…"
+  },
+  "context_menu.rename_dialog.label": {
+    "message": "새 이름:"
+  },
+  "context_menu.rename_dialog.title": {
+    "message": "이름 변경"
+  },
+  "context_menu.rename_failed": {
+    "message": "이름을 변경하지 못했습니다: {err}"
+  },
+  "context_menu.shell_menu_failed": {
+    "message": "메뉴: {err}"
+  },
+  "context_menu.show_failed": {
+    "message": "표시하지 못했습니다: {err}"
+  },
+  "context_menu.show_in_file_manager": {
+    "message": "파일 관리자에서 표시"
+  },
+  "context_menu.terminal_failed": {
+    "message": "터미널을 열지 못했습니다: {err}"
+  },
+  "context_menu.terminal_not_local": {
+    "message": "터미널은 이 컴퓨터의 폴더에서만 열 수 있습니다."
+  },
+  "context_menu.unpack": {
+    "message": "압축 풀기…"
+  },
+  "context_menu.view": {
+    "message": "보기"
+  },
+  "desktop.no_app_chooser": {
+    "message": "데스크톱에 프로그램 선택 창이 없음({err})"
+  },
+  "desktop.no_terminal": {
+    "message": "터미널을 찾을 수 없음"
+  },
+  "desktop.nothing_to_run": {
+    "message": "{name}: 실행할 명령 없음"
+  },
+  "desktop.scripts": {
+    "message": "스크립트"
+  },
+  "devices.error.mount_failed": {
+    "message": "장치를 마운트할 수 없음"
+  },
+  "devices.error.no_folder": {
+    "message": "장치에서 공유하는 폴더가 없음"
+  },
+  "devices.error.system_only": {
+    "message": "시스템만 마운트 해제할 수 있음"
+  },
+  "devices.error.unreachable": {
+    "message": "연결할 수 없음: 같은 네트워크에서 장치의 KDE Connect가 열려 있습니까?"
+  },
+  "devices.unlock.ask": {
+    "message": "{name}의 암호 문구:"
+  },
+  "devices.unlock.ask_again": {
+    "message": "암호 문구가 틀렸습니다. {name}의 암호 문구:"
+  },
+  "devices.unlock.title": {
+    "message": "잠금 해제"
+  },
+  "devices.volume.share_on_server": {
+    "message": "{server}의 {share}"
+  },
+  "devices.volume.unnamed": {
+    "message": "{size}GB 볼륨"
+  },
+  "devices.volume.unnamed_encrypted": {
+    "message": "{size}GB 암호화된 볼륨"
+  },
+  "download.cancel": {
+    "message": "취소"
+  },
+  "download.dialog_title": {
+    "message": "링크에서 다운로드"
+  },
+  "download.download": {
+    "message": "다운로드"
+  },
+  "download.folder_link": {
+    "message": "링크가 폴더를 가리킴"
+  },
+  "download.incomplete": {
+    "message": "서버가 {size, plural, other {#바이트}} 중 {got}바이트만 보냄. 다시 다운로드하면 이어서 받습니다"
+  },
+  "download.into": {
+    "message": "저장 위치: {folder}"
+  },
+  "download.link": {
+    "message": "링크"
+  },
+  "download.link_placeholder": {
+    "message": "https://, http://, ftp:// 또는 ftps://"
+  },
+  "download.local_only": {
+    "message": "다운로드한 파일은 이 컴퓨터의 폴더에 저장됩니다. 먼저 패널에서 폴더를 여세요."
+  },
+  "download.name_placeholder": {
+    "message": "서버나 링크에서 지정한 이름"
+  },
+  "download.no_file": {
+    "message": "링크에 파일 이름이 없음"
+  },
+  "download.not_a_link": {
+    "message": "다운로드할 수 있는 링크가 아님"
+  },
+  "download.problem.bad_name": {
+    "message": "폴더 없이 파일 이름만 입력하세요."
+  },
+  "download.problem.empty": {
+    "message": "링크를 붙여넣거나 입력하세요."
+  },
+  "download.problem.exists": {
+    "message": "여기에 {name}이(가) 이미 있습니다. ‘덮어쓰기’를 누르면 그 위에 다운로드합니다."
+  },
+  "download.problem.not_link": {
+    "message": "다운로드할 수 있는 링크가 아닙니다. https://, http://, ftp:// 또는 ftps://로 시작해야 합니다."
+  },
+  "download.replace": {
+    "message": "덮어쓰기"
+  },
+  "download.save_as": {
+    "message": "저장할 이름"
+  },
+  "download.saved_as": {
+    "message": "{name}(으)로 저장됨"
+  },
+  "download.title": {
+    "message": "‘{name}’ 다운로드"
+  },
+  "download.title_link": {
+    "message": "{link} 다운로드"
+  },
+  "editor.close.after_send": {
+    "message": "서버에 전송되면 닫힙니다."
+  },
+  "editor.close.discard": {
+    "message": "저장 안 함"
+  },
+  "editor.close.save": {
+    "message": "저장"
+  },
+  "editor.close.title": {
+    "message": "변경 내용을 저장하시겠습니까?"
+  },
+  "editor.close.unsaved": {
+    "message": "{name}에 저장하지 않은 변경 내용이 있습니다."
+  },
+  "editor.close.unsent": {
+    "message": "{name}이(가) 서버에 저장되지 않았습니다: 전송에 실패했습니다."
+  },
+  "editor.dialog.cancel": {
+    "message": "취소"
+  },
+  "editor.edit.copy": {
+    "message": "복사"
+  },
+  "editor.edit.cut": {
+    "message": "잘라내기"
+  },
+  "editor.edit.find": {
+    "message": "찾기..."
+  },
+  "editor.edit.find_next": {
+    "message": "다음 찾기"
+  },
+  "editor.edit.find_previous": {
+    "message": "이전 찾기"
+  },
+  "editor.edit.go_to_line": {
+    "message": "줄로 이동..."
+  },
+  "editor.edit.paste": {
+    "message": "붙여넣기"
+  },
+  "editor.edit.redo": {
+    "message": "다시 실행"
+  },
+  "editor.edit.replace": {
+    "message": "바꾸기..."
+  },
+  "editor.edit.undo": {
+    "message": "실행 취소"
+  },
+  "editor.external.not_set": {
+    "message": "외부 편집기가 설정되지 않음(설정, 편집/보기)"
+  },
+  "editor.file.close": {
+    "message": "닫기"
+  },
+  "editor.file.reload": {
+    "message": "다시 불러오기"
+  },
+  "editor.file.save": {
+    "message": "저장"
+  },
+  "editor.file.save_as": {
+    "message": "다른 이름으로 저장..."
+  },
+  "editor.find.close": {
+    "message": "닫기(Escape)"
+  },
+  "editor.find.count": {
+    "message": "{current}/{total}"
+  },
+  "editor.find.in_selection": {
+    "message": "선택 영역에서 찾기(Alt+L)"
+  },
+  "editor.find.match_case": {
+    "message": "대/소문자 구분(Alt+C)"
+  },
+  "editor.find.next": {
+    "message": "다음 일치 항목(Enter)"
+  },
+  "editor.find.no_results": {
+    "message": "결과 없음"
+  },
+  "editor.find.placeholder": {
+    "message": "찾기"
+  },
+  "editor.find.preserve_case": {
+    "message": "대/소문자 유지(Alt+P)"
+  },
+  "editor.find.previous": {
+    "message": "이전 일치 항목(Shift+Enter)"
+  },
+  "editor.find.regex": {
+    "message": "정규식 사용(Alt+R)"
+  },
+  "editor.find.replace": {
+    "message": "바꾸기(Ctrl+Shift+1)"
+  },
+  "editor.find.replace_all": {
+    "message": "모두 바꾸기(Ctrl+Alt+Enter)"
+  },
+  "editor.find.replace_placeholder": {
+    "message": "바꾸기"
+  },
+  "editor.find.toggle_replace": {
+    "message": "바꾸기 표시/숨기기"
+  },
+  "editor.find.whole_word": {
+    "message": "단어 단위로(Alt+W)"
+  },
+  "editor.go_to_line.label": {
+    "message": "줄 또는 줄:열"
+  },
+  "editor.go_to_line.title": {
+    "message": "줄로 이동"
+  },
+  "editor.language.by_file_name": {
+    "message": "파일 이름 기준"
+  },
+  "editor.language.plain_text": {
+    "message": "일반 텍스트"
+  },
+  "editor.menu.edit": {
+    "message": "편집"
+  },
+  "editor.menu.file": {
+    "message": "파일"
+  },
+  "editor.menu.language": {
+    "message": "언어"
+  },
+  "editor.menu.selection": {
+    "message": "선택"
+  },
+  "editor.menu.view": {
+    "message": "보기"
+  },
+  "editor.open.too_large": {
+    "message": "내장 편집기 한도 {limit_mb}MB 초과(설정, 편집/보기). Ctrl+Shift+F4로 외부 편집기에서 편집하세요"
+  },
+  "editor.reload.button": {
+    "message": "다시 불러오기"
+  },
+  "editor.reload.failed": {
+    "message": "다시 불러오지 못했습니다: {err}"
+  },
+  "editor.reload.text": {
+    "message": "저장하지 않은 변경 내용은 사라집니다."
+  },
+  "editor.reload.title": {
+    "message": "파일을 다시 불러오시겠습니까?"
+  },
+  "editor.reload.unfit": {
+    "message": "다시 불러오지 않음: {why, select, binary {바이너리 파일입니다} other {UTF-8 텍스트가 아닙니다}}."
+  },
+  "editor.save.admin": {
+    "message": "‘{name}’ 저장"
+  },
+  "editor.save.failed": {
+    "message": "{path}을(를) 저장하지 못했습니다: {err}"
+  },
+  "editor.save_anyway.button": {
+    "message": "그래도 저장"
+  },
+  "editor.save_anyway.text": {
+    "message": "텍스트가 아닌 파일입니다. 저장하면 표시된 그대로 기록되므로 텍스트가 아니었던 부분은 영구히 바뀝니다."
+  },
+  "editor.save_anyway.title": {
+    "message": "텍스트로 저장하시겠습니까?"
+  },
+  "editor.selection.add_cursor_above": {
+    "message": "위에 커서 추가"
+  },
+  "editor.selection.add_cursor_below": {
+    "message": "아래에 커서 추가"
+  },
+  "editor.selection.delete_lines": {
+    "message": "줄 삭제"
+  },
+  "editor.selection.duplicate_lines": {
+    "message": "줄 복제"
+  },
+  "editor.selection.indent": {
+    "message": "들여쓰기"
+  },
+  "editor.selection.lowercase": {
+    "message": "소문자로 변환"
+  },
+  "editor.selection.move_lines_down": {
+    "message": "줄을 아래로 이동"
+  },
+  "editor.selection.move_lines_up": {
+    "message": "줄을 위로 이동"
+  },
+  "editor.selection.outdent": {
+    "message": "내어쓰기"
+  },
+  "editor.selection.select_all": {
+    "message": "모두 선택"
+  },
+  "editor.selection.select_all_occurrences": {
+    "message": "일치 항목 모두 선택"
+  },
+  "editor.selection.sort_lines_ascending": {
+    "message": "줄 오름차순 정렬"
+  },
+  "editor.selection.sort_lines_descending": {
+    "message": "줄 내림차순 정렬"
+  },
+  "editor.selection.title_case": {
+    "message": "단어 첫 글자를 대문자로"
+  },
+  "editor.selection.toggle_line_comment": {
+    "message": "줄 주석 설정/해제"
+  },
+  "editor.selection.trim_trailing_whitespace": {
+    "message": "줄 끝 공백 제거"
+  },
+  "editor.selection.uppercase": {
+    "message": "대문자로 변환"
+  },
+  "editor.send.failed": {
+    "message": "서버에 다시 저장하지 못했습니다: {err}. 저장하면 다시 시도합니다."
+  },
+  "editor.status.modified": {
+    "message": "수정됨"
+  },
+  "editor.status.position": {
+    "message": "줄 {line}, 열 {column}"
+  },
+  "editor.status.position_selected": {
+    "message": "줄 {line}, 열 {column}({count, plural, other {#자 선택됨}})"
+  },
+  "editor.status.sending": {
+    "message": "서버에 저장 중"
+  },
+  "editor.status.spaces": {
+    "message": "공백: {size}"
+  },
+  "editor.status.tab_size": {
+    "message": "탭 크기: {size}"
+  },
+  "editor.status.unsent": {
+    "message": "서버에 없음"
+  },
+  "editor.terminal.not_found": {
+    "message": "편집기를 찾을 수 없음. $EDITOR를 설정하세요"
+  },
+  "editor.title": {
+    "message": "{path} — 편집기"
+  },
+  "editor.unfit.open_anyway": {
+    "message": "그래도 열기"
+  },
+  "editor.unfit.text": {
+    "message": "{why, select, binary {바이너리 파일이므로} other {UTF-8 텍스트가 아니므로}} 편집기에 표시하지 않습니다."
+  },
+  "editor.view.folding": {
+    "message": "코드 접기"
+  },
+  "editor.view.indent_guides": {
+    "message": "들여쓰기 안내선"
+  },
+  "editor.view.indent_with_tabs": {
+    "message": "탭으로 들여쓰기"
+  },
+  "editor.view.line_numbers": {
+    "message": "줄 번호"
+  },
+  "editor.view.minimap": {
+    "message": "미니맵"
+  },
+  "editor.view.tab_width": {
+    "message": "탭 너비 {width}"
+  },
+  "editor.view.unfold_all": {
+    "message": "모두 펼치기"
+  },
+  "editor.view.whitespace": {
+    "message": "공백 문자 표시"
+  },
+  "editor.view.word_wrap": {
+    "message": "자동 줄 바꿈"
+  },
+  "elevate.failed": {
+    "message": "관리자 권한으로도 실패했습니다({code})"
+  },
+  "elevate.no_consent": {
+    "message": "관리자 승인을 받지 못했습니다"
+  },
+  "elevate.no_password": {
+    "message": "암호를 입력하지 않았습니다"
+  },
+  "elevate.not_authorised": {
+    "message": "권한이 없습니다"
+  },
+  "elevate.percent_name": {
+    "message": "{path}: %가 들어간 이름은 관리자 권한으로 처리할 수 없습니다. 먼저 이름을 변경하세요"
+  },
+  "elevate.pkexec_missing": {
+    "message": "pkexec(polkit)가 설치되어 있지 않습니다"
+  },
+  "file_menu.change_tags_failed": {
+    "message": "태그를 변경하지 못했습니다: {err}"
+  },
+  "file_menu.compress": {
+    "message": "{count, plural, =1 {“{name}” 압축…} other {항목 #개 압축…}}"
+  },
+  "file_menu.copy": {
+    "message": "{count, plural, =1 {“{name}” 복사} other {항목 #개 복사}}"
+  },
+  "file_menu.copy_path": {
+    "message": "경로를 클립보드로 복사"
+  },
+  "file_menu.delete": {
+    "message": "삭제"
+  },
+  "file_menu.duplicate": {
+    "message": "복제"
+  },
+  "file_menu.duplicate_failed": {
+    "message": "복제하지 못했습니다: {err}"
+  },
+  "file_menu.edit_tags": {
+    "message": "태그…"
+  },
+  "file_menu.get_info": {
+    "message": "정보 가져오기"
+  },
+  "file_menu.make_alias": {
+    "message": "가상본 만들기"
+  },
+  "file_menu.make_alias_failed": {
+    "message": "가상본을 만들지 못했습니다: {err}"
+  },
+  "file_menu.move_to_trash": {
+    "message": "휴지통으로 이동"
+  },
+  "file_menu.new_folder": {
+    "message": "새로운 폴더"
+  },
+  "file_menu.open": {
+    "message": "열기"
+  },
+  "file_menu.open_failed": {
+    "message": "열지 못했습니다: {err}"
+  },
+  "file_menu.open_with": {
+    "message": "다음으로 열기"
+  },
+  "file_menu.open_with_default": {
+    "message": "{app}(기본값)"
+  },
+  "file_menu.paste": {
+    "message": "붙여넣기"
+  },
+  "file_menu.quick_look": {
+    "message": "{count, plural, =1 {“{name}” 훑어보기} other {항목 #개 훑어보기}}"
+  },
+  "file_menu.quick_look_failed": {
+    "message": "훑어보기: {err}"
+  },
+  "file_menu.rename": {
+    "message": "이름 변경…"
+  },
+  "file_menu.reveal_failed": {
+    "message": "Finder에서 보지 못했습니다: {err}"
+  },
+  "file_menu.reveal_in_finder": {
+    "message": "Finder에서 보기"
+  },
+  "file_menu.show_package_contents": {
+    "message": "패키지 내용 보기"
+  },
+  "file_menu.tag_dot.add": {
+    "message": "“{name}” 태그 추가"
+  },
+  "file_menu.tag_dot.remove": {
+    "message": "“{name}” 태그 제거"
+  },
+  "file_menu.tags_popover.show_all": {
+    "message": "모두 보기…"
+  },
+  "file_menu.tags_popover.title": {
+    "message": "{count, plural, =1 {“{name}”에 태그 지정} other {항목 #개에 태그 지정}}"
+  },
+  "find.backwards": {
+    "message": "역방향 검색"
+  },
+  "find.cancel": {
+    "message": "취소"
+  },
+  "find.case_sensitive": {
+    "message": "대/소문자 구분"
+  },
+  "find.hex": {
+    "message": "16진수 문자열 검색"
+  },
+  "find.ok": {
+    "message": "확인"
+  },
+  "find.regex": {
+    "message": "정규식"
+  },
+  "find.text.label": {
+    "message": "검색할 텍스트 입력"
+  },
+  "find.title": {
+    "message": "찾기"
+  },
+  "find.whole_words": {
+    "message": "전체 단어만"
+  },
+  "keys.apply": {
+    "message": "적용"
+  },
+  "keys.cancel": {
+    "message": "취소"
+  },
+  "keys.clear.tooltip": {
+    "message": "키 없음"
+  },
+  "keys.column.alternate": {
+    "message": "보조 키"
+  },
+  "keys.column.command": {
+    "message": "명령"
+  },
+  "keys.column.shortcut": {
+    "message": "단축키"
+  },
+  "keys.custom": {
+    "message": "사용자 지정"
+  },
+  "keys.delete_set": {
+    "message": "삭제"
+  },
+  "keys.note.custom_replaced": {
+    "message": "직접 지정한 키가 {name} 키로 대체되었습니다. ‘다른 이름으로 저장’으로 보관할 수 있습니다."
+  },
+  "keys.note.deleted": {
+    "message": "{name}이(가) 삭제됩니다. ‘확인’ 또는 ‘적용’을 누르면 반영됩니다."
+  },
+  "keys.note.moved": {
+    "message": "{key} 키가 이제 {command}에 지정되었습니다({other}에서 해제됨)."
+  },
+  "keys.note.name_reserved": {
+    "message": "‘{name}’은(는) 사전 설정의 이름입니다. 다른 이름을 입력하세요."
+  },
+  "keys.note.press_new_key": {
+    "message": "새 키를 누르세요. Esc를 누르면 그대로 유지됩니다."
+  },
+  "keys.note.saved": {
+    "message": "{name}(으)로 저장했습니다. ‘확인’ 또는 ‘적용’을 누르면 유지됩니다."
+  },
+  "keys.note.set": {
+    "message": "{key} 키가 이제 {command}에 지정되었습니다."
+  },
+  "keys.note.taken_by_system": {
+    "message": "{key} 키는 시스템이 사용하므로({by}) Spark Commander에 전달되지 않습니다."
+  },
+  "keys.ok": {
+    "message": "확인"
+  },
+  "keys.press_key": {
+    "message": "키를 누르세요…"
+  },
+  "keys.reserved.application_launcher": {
+    "message": "{system}: 프로그램 실행기"
+  },
+  "keys.reserved.close_window": {
+    "message": "{system}: 창 닫기"
+  },
+  "keys.reserved.close_window_or_tab": {
+    "message": "{system}: 창 또는 탭 닫기"
+  },
+  "keys.reserved.dock": {
+    "message": "{system}: Dock"
+  },
+  "keys.reserved.floating_window": {
+    "message": "{system}: 플로팅 윈도우"
+  },
+  "keys.reserved.force_quit": {
+    "message": "{system}: 강제 종료"
+  },
+  "keys.reserved.hide_program": {
+    "message": "{system}: 프로그램 가리기"
+  },
+  "keys.reserved.input_source": {
+    "message": "{system}: 입력 소스"
+  },
+  "keys.reserved.keyboard_access": {
+    "message": "{system}: 키보드 접근"
+  },
+  "keys.reserved.keyboard_navigation": {
+    "message": "{system}: 키보드 탐색"
+  },
+  "keys.reserved.krunner": {
+    "message": "{system}: KRunner"
+  },
+  "keys.reserved.lock_screen": {
+    "message": "{system}: 화면 잠금"
+  },
+  "keys.reserved.log_out": {
+    "message": "{system}: 로그아웃"
+  },
+  "keys.reserved.maximize_window": {
+    "message": "{system}: 창 최대화"
+  },
+  "keys.reserved.menu_bar": {
+    "message": "{system}: 메뉴 막대"
+  },
+  "keys.reserved.minimize": {
+    "message": "{system}: 최소화"
+  },
+  "keys.reserved.mission_control": {
+    "message": "{system}: Mission Control"
+  },
+  "keys.reserved.move_window": {
+    "message": "{system}: 창 이동"
+  },
+  "keys.reserved.next_window": {
+    "message": "{system}: 다음 창"
+  },
+  "keys.reserved.present_windows": {
+    "message": "{system}: 창 나열"
+  },
+  "keys.reserved.present_windows_all": {
+    "message": "{system}: 창 나열(모든 데스크톱)"
+  },
+  "keys.reserved.present_windows_class": {
+    "message": "{system}: 창 나열(창 클래스)"
+  },
+  "keys.reserved.program_windows": {
+    "message": "{system}: 프로그램 윈도우"
+  },
+  "keys.reserved.quit": {
+    "message": "{system}: 종료"
+  },
+  "keys.reserved.resize_window": {
+    "message": "{system}: 창 크기 조정"
+  },
+  "keys.reserved.restore_window": {
+    "message": "{system}: 창 복원"
+  },
+  "keys.reserved.run_command": {
+    "message": "{system}: 명령 실행"
+  },
+  "keys.reserved.screenshot": {
+    "message": "{system}: 스크린샷"
+  },
+  "keys.reserved.security_screen": {
+    "message": "{system}: 보안 화면"
+  },
+  "keys.reserved.show_desktop": {
+    "message": "{system}: 바탕 화면 보기"
+  },
+  "keys.reserved.space_left": {
+    "message": "{system}: 왼쪽 스페이스"
+  },
+  "keys.reserved.space_right": {
+    "message": "{system}: 오른쪽 스페이스"
+  },
+  "keys.reserved.spotlight": {
+    "message": "{system}: Spotlight"
+  },
+  "keys.reserved.start_menu": {
+    "message": "{system}: 시작 메뉴"
+  },
+  "keys.reserved.status_menus": {
+    "message": "{system}: 상태 메뉴"
+  },
+  "keys.reserved.suspend_compositing": {
+    "message": "{system}: 컴포지팅 일시 중지"
+  },
+  "keys.reserved.switch_program_windows": {
+    "message": "{system}: 프로그램 창 전환"
+  },
+  "keys.reserved.switch_programs": {
+    "message": "{system}: 프로그램 전환"
+  },
+  "keys.reserved.switch_system_controls": {
+    "message": "{system}: 시스템 컨트롤 전환"
+  },
+  "keys.reserved.switch_to_desktop": {
+    "message": "{system}: 데스크톱 {number}(으)로 전환"
+  },
+  "keys.reserved.switch_windows": {
+    "message": "{system}: 창 전환"
+  },
+  "keys.reserved.system_monitor": {
+    "message": "{system}: 시스템 모니터"
+  },
+  "keys.reserved.task_manager": {
+    "message": "{system}: 작업 관리자"
+  },
+  "keys.reserved.text_console": {
+    "message": "{system}: 텍스트 콘솔로 전환"
+  },
+  "keys.reserved.toolbar": {
+    "message": "{system}: 도구 막대"
+  },
+  "keys.reserved.window_menu": {
+    "message": "{system}: 창 메뉴"
+  },
+  "keys.reserved.workspace_down": {
+    "message": "{system}: 아래쪽 작업 공간"
+  },
+  "keys.reserved.workspace_left": {
+    "message": "{system}: 왼쪽 작업 공간"
+  },
+  "keys.reserved.workspace_right": {
+    "message": "{system}: 오른쪽 작업 공간"
+  },
+  "keys.reserved.workspace_up": {
+    "message": "{system}: 위쪽 작업 공간"
+  },
+  "keys.reset.tooltip": {
+    "message": "{preset} 키로 되돌리기"
+  },
+  "keys.reset_all": {
+    "message": "모두 초기화"
+  },
+  "keys.save_as.button": {
+    "message": "다른 이름으로 저장…"
+  },
+  "keys.save_as.default_name": {
+    "message": "내 단축키"
+  },
+  "keys.save_as.label": {
+    "message": "이름:"
+  },
+  "keys.save_as.title": {
+    "message": "단축키 저장"
+  },
+  "keys.search.placeholder": {
+    "message": "명령 또는 키 검색"
+  },
+  "keys.set_label": {
+    "message": "단축키:"
+  },
+  "keys.taken_by.tooltip": {
+    "message": "시스템이 사용 중: {by}"
+  },
+  "keys.title": {
+    "message": "단축키"
+  },
+  "main.admin.button": {
+    "message": "관리자 권한으로"
+  },
+  "main.admin.deleting": {
+    "message": "{count, plural, other {항목 #개}} 삭제"
+  },
+  "main.admin.failed": {
+    "message": "관리자 권한으로: {err}"
+  },
+  "main.admin.making": {
+    "message": "‘{name}’ 만들기"
+  },
+  "main.admin.offer": {
+    "message": "{what}: 권한이 거부되었습니다. 관리자 권한으로 실행하면 시스템에서 암호를 묻습니다."
+  },
+  "main.admin.offer_delete": {
+    "message": "{what}: 권한이 거부되었습니다. 관리자 권한으로 실행하면 시스템에서 암호를 묻습니다. 이렇게 삭제한 항목은 영구히 사라집니다."
+  },
+  "main.admin.title": {
+    "message": "권한 거부됨"
+  },
+  "main.delete.from_archive": {
+    "message": "{kind, select, folder {{archive}에서 ‘{name}’ 폴더를 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.} file {{archive}에서 ‘{name}’ 파일을 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.} other {{archive}에서 {count, plural, other {항목 #개}}를 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.}}"
+  },
+  "main.delete.on_server": {
+    "message": "{kind, select, folder {{server}에서 ‘{name}’ 폴더를 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.} file {{server}에서 ‘{name}’ 파일을 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.} other {{server}에서 {count, plural, other {항목 #개}}를 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.}}"
+  },
+  "main.delete.permanently": {
+    "message": "{kind, select, folder {‘{name}’ 폴더를 영구 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.} file {‘{name}’ 파일을 영구 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.} other {{count, plural, other {항목 #개}}를 영구 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.}}"
+  },
+  "main.delete.title": {
+    "message": "삭제"
+  },
+  "main.delete.title_permanently": {
+    "message": "영구 삭제"
+  },
+  "main.delete.to_trash": {
+    "message": "{kind, select, folder {‘{name}’ 폴더를 휴지통으로 이동하시겠습니까?} file {‘{name}’ 파일을 휴지통으로 이동하시겠습니까?} other {{count, plural, other {항목 #개}}를 휴지통으로 이동하시겠습니까?}}"
+  },
+  "main.download.edit": {
+    "message": "{file} 다운로드(편집용)"
+  },
+  "main.download.view": {
+    "message": "{file} 다운로드(보기용)"
+  },
+  "main.error.make_folder": {
+    "message": "폴더를 만들지 못했습니다: {err}"
+  },
+  "main.error.read_settings": {
+    "message": "설정을 읽지 못했습니다: {err}"
+  },
+  "main.error.read_tabs": {
+    "message": "열려 있던 탭을 읽지 못했습니다: {err}"
+  },
+  "main.error.read_workspaces": {
+    "message": "작업 공간을 읽지 못했습니다: {err}"
+  },
+  "main.error.save_settings": {
+    "message": "설정을 저장하지 못했습니다: {err}"
+  },
+  "main.folder_tree.home": {
+    "message": "홈"
+  },
+  "main.go.no_such_folder": {
+    "message": "{path}: 이 컴퓨터에 해당 폴더가 없습니다"
+  },
+  "main.new_folder.label": {
+    "message": "새 폴더(디렉터리):"
+  },
+  "main.new_folder.title": {
+    "message": "새 폴더"
+  },
+  "main.sync_browsing.lost": {
+    "message": "{err}. 동기화 탐색이 꺼졌습니다."
+  },
+  "main.tool.needs_file": {
+    "message": "커서가 파일 위에 있지 않습니다: %N, %O, %E에는 파일이 필요합니다."
+  },
+  "main.tool.needs_local_folder": {
+    "message": "반대쪽 패널에 서버나 압축 파일이 표시되어 있습니다: %T에는 이 컴퓨터의 폴더가 필요합니다."
+  },
+  "main.undo.done": {
+    "message": "{way, select, redo {다시 실행함: {title}} other {실행 취소함: {title}}}"
+  },
+  "main.undo.failed": {
+    "message": "{way, select, redo {‘{title}’을(를) 다시 실행하지 못했습니다: {err}} other {‘{title}’을(를) 실행 취소하지 못했습니다: {err}}}"
+  },
+  "main.undo.nothing": {
+    "message": "{way, select, redo {다시 실행할 작업이 없습니다.} other {실행 취소할 작업이 없습니다.}}"
+  },
+  "main.undo.queued": {
+    "message": "{way, select, redo {다시 실행 대기 중: {title}} other {실행 취소 대기 중: {title}}}"
+  },
+  "mark.compare.marked": {
+    "message": "{count, plural, other {파일 #개 선택됨: 반대쪽보다 새롭거나 반대쪽에 없는 파일입니다.}}"
+  },
+  "mark.compare.same": {
+    "message": "두 폴더의 파일이 같습니다."
+  },
+  "mark.load_selection.label": {
+    "message": "파일에 나열된 이름 선택:"
+  },
+  "mark.load_selection.title": {
+    "message": "선택 불러오기"
+  },
+  "mark.save_selection.label": {
+    "message": "선택한 이름을 저장할 파일:"
+  },
+  "mark.save_selection.title": {
+    "message": "선택 저장"
+  },
+  "mark.select_group.label": {
+    "message": "선택할 파일(*.txt *.md, 폴더 마스크는 /로 끝남):"
+  },
+  "mark.select_group.title": {
+    "message": "그룹 선택"
+  },
+  "mark.selection_file.not_local": {
+    "message": "선택 파일은 압축 파일 밖, 이 컴퓨터에 저장됩니다."
+  },
+  "mark.unselect_group.label": {
+    "message": "선택 해제할 파일(*.txt *.md, 폴더 마스크는 /로 끝남):"
+  },
+  "mark.unselect_group.title": {
+    "message": "그룹 선택 해제"
+  },
+  "media.cannot_play": {
+    "message": "재생할 수 없습니다: {err}"
+  },
+  "media.cannot_play_as_text": {
+    "message": "재생할 수 없습니다: {err}. 1을 누르면 텍스트로 표시합니다."
+  },
+  "media.continuing": {
+    "message": "{time}부터 이어서 재생"
+  },
+  "media.error.missing": {
+    "message": "libmpv가 없습니다: 설정 > 추가 기능에서 다운로드하세요(소스 빌드: vendor/mpv/{script})"
+  },
+  "media.error.not_started": {
+    "message": "libmpv를 시작할 수 없습니다"
+  },
+  "media.error.too_long": {
+    "message": "{path}: mpv가 너무 오래 걸렸습니다"
+  },
+  "media.error.unsupported_system": {
+    "message": "동영상은 아직 Linux, macOS, Windows에서만 재생됩니다"
+  },
+  "menu.archive": {
+    "message": "압축 파일"
+  },
+  "menu.associations": {
+    "message": "파일 연결"
+  },
+  "menu.button_bar": {
+    "message": "버튼 바"
+  },
+  "menu.checksums": {
+    "message": "체크섬"
+  },
+  "menu.commands": {
+    "message": "명령"
+  },
+  "menu.compare_directories": {
+    "message": "폴더 비교"
+  },
+  "menu.configuration": {
+    "message": "구성"
+  },
+  "menu.copy_names": {
+    "message": "이름 복사"
+  },
+  "menu.files": {
+    "message": "파일"
+  },
+  "menu.filter": {
+    "message": "필터"
+  },
+  "menu.go": {
+    "message": "이동"
+  },
+  "menu.help": {
+    "message": "도움말"
+  },
+  "menu.mark": {
+    "message": "선택"
+  },
+  "menu.other": {
+    "message": "기타"
+  },
+  "menu.recently_closed_tabs": {
+    "message": "최근에 닫은 탭"
+  },
+  "menu.selection": {
+    "message": "선택 항목"
+  },
+  "menu.show": {
+    "message": "표시"
+  },
+  "menu.sidebar": {
+    "message": "사이드바"
+  },
+  "menu.sort": {
+    "message": "정렬"
+  },
+  "menu.split_and_combine": {
+    "message": "분할 및 결합"
+  },
+  "menu.tabs": {
+    "message": "탭"
+  },
+  "menu.tools": {
+    "message": "도구"
+  },
+  "menu.workspaces": {
+    "message": "작업 공간"
+  },
+  "menus.hide_app": {
+    "message": "Spark Commander 가리기"
+  },
+  "menus.hide_others": {
+    "message": "기타 가리기"
+  },
+  "menus.minimize": {
+    "message": "최소화"
+  },
+  "menus.quit_app": {
+    "message": "Spark Commander 종료"
+  },
+  "menus.services": {
+    "message": "서비스"
+  },
+  "menus.show_all": {
+    "message": "모두 보기"
+  },
+  "menus.zoom": {
+    "message": "확대/축소"
+  },
+  "name_dialog.cancel": {
+    "message": "취소"
+  },
+  "name_dialog.ok": {
+    "message": "확인"
+  },
+  "operations.clear": {
+    "message": "완료 항목 지우기"
+  },
+  "operations.duration.seconds": {
+    "message": "{seconds}초"
+  },
+  "operations.empty": {
+    "message": "작업이 없습니다."
+  },
+  "operations.job.answer": {
+    "message": "응답 대기 중"
+  },
+  "operations.job.bytes": {
+    "message": "{done}/{total}"
+  },
+  "operations.job.cancel_tooltip": {
+    "message": "취소"
+  },
+  "operations.job.cancelled": {
+    "message": "취소됨"
+  },
+  "operations.job.counting": {
+    "message": "계산 중: {count, plural, other {파일 #개}}"
+  },
+  "operations.job.done": {
+    "message": "완료"
+  },
+  "operations.job.done_skipped": {
+    "message": "완료, {count, plural, other {#개 건너뜀}}"
+  },
+  "operations.job.failed": {
+    "message": "실패"
+  },
+  "operations.job.files": {
+    "message": "파일 {files}/{count, plural, other {#개}}"
+  },
+  "operations.job.left": {
+    "message": "{time} 남음"
+  },
+  "operations.job.running": {
+    "message": "실행 중"
+  },
+  "operations.job.waiting": {
+    "message": "대기 중"
+  },
+  "operations.menu.cancel": {
+    "message": "취소"
+  },
+  "operations.menu.clear": {
+    "message": "완료 항목 지우기"
+  },
+  "operations.menu.move_down": {
+    "message": "아래로 이동"
+  },
+  "operations.menu.move_up": {
+    "message": "위로 이동"
+  },
+  "operations.settings_tooltip": {
+    "message": "작업 대기열 설정"
+  },
+  "operations.summary.failed": {
+    "message": "{count, plural, other {#개 실패}}"
+  },
+  "operations.summary.running": {
+    "message": "{count, plural, other {#개 실행 중}}"
+  },
+  "operations.summary.waiting": {
+    "message": "{count, plural, other {#개 대기 중}}"
+  },
+  "ops.as_administrator.failed": {
+    "message": "관리자 권한으로: {err}"
+  },
+  "ops.as_administrator.progress": {
+    "message": "관리자 권한으로…"
+  },
+  "ops.delete.title_many": {
+    "message": "{folder}의 {count, plural, other {항목 #개}} 삭제"
+  },
+  "ops.delete.title_one": {
+    "message": "‘{name}’ 삭제"
+  },
+  "ops.delete.trash_title_many": {
+    "message": "{folder}의 {count, plural, other {항목 #개}}를 휴지통으로 이동"
+  },
+  "ops.delete.trash_title_one": {
+    "message": "‘{name}’을(를) 휴지통으로 이동"
+  },
+  "ops.error.file_in_the_way": {
+    "message": "같은 이름의 파일이 있음"
+  },
+  "ops.error.into_itself": {
+    "message": "자기 자신 안으로 복사할 수 없음"
+  },
+  "ops.exists_already": {
+    "message": "{name}이(가) 이미 있습니다"
+  },
+  "ops.link.dialog_title": {
+    "message": "링크 만들기"
+  },
+  "ops.link.failed": {
+    "message": "링크를 만들지 못했습니다: {err}"
+  },
+  "ops.link.kind.hard": {
+    "message": "하드 링크"
+  },
+  "ops.link.kind.junction": {
+    "message": "정션"
+  },
+  "ops.link.kind.shortcut": {
+    "message": "바로 가기(.lnk)"
+  },
+  "ops.link.kind.symbolic": {
+    "message": "심볼릭 링크"
+  },
+  "ops.link.label_many": {
+    "message": "{count, plural, other {항목 #개}}에 대한 링크를 만들 폴더:"
+  },
+  "ops.link.label_one": {
+    "message": "‘{name}’에 대한 링크 경로:"
+  },
+  "ops.link.making": {
+    "message": "{kind, select, symbolic {심볼릭 링크} hard {하드 링크} junction {정션} other {바로 가기(.lnk)}} 만들기"
+  },
+  "ops.link.needs_admin": {
+    "message": "심볼릭 링크를 만들려면 관리자 권한이나 개발자 모드가 필요함"
+  },
+  "ops.link.thread_failed": {
+    "message": "바로 가기를 만드는 스레드가 실패함"
+  },
+  "ops.link.title_many": {
+    "message": "{folder}에 만든 {count, plural, other {항목 #개}}에 대한 {kind, select, symbolic {심볼릭 링크} hard {하드 링크} junction {정션} other {바로 가기(.lnk)}}"
+  },
+  "ops.link.title_one": {
+    "message": "{folder}에 만든 ‘{name}’에 대한 {kind, select, symbolic {심볼릭 링크} hard {하드 링크} junction {정션} other {바로 가기(.lnk)}}"
+  },
+  "ops.link.windows_only": {
+    "message": "정션과 바로 가기는 Windows 전용임"
+  },
+  "ops.redo.title": {
+    "message": "다시 실행: {what}"
+  },
+  "ops.title.many": {
+    "message": "{count, plural, other {항목 #개}}를 {target}(으)로 {kind, select, copy {복사} other {이동}}"
+  },
+  "ops.title.one": {
+    "message": "‘{name}’을(를) {target}(으)로 {kind, select, copy {복사} other {이동}}"
+  },
+  "ops.undo.not_a_server": {
+    "message": "{url}: 서버 주소가 아님"
+  },
+  "ops.undo.not_in_trash": {
+    "message": "더 이상 휴지통에 없음"
+  },
+  "ops.undo.restore_title": {
+    "message": "{title}: 덮어쓴 항목을 휴지통에서 복원"
+  },
+  "ops.undo.title": {
+    "message": "실행 취소: {what}"
+  },
+  "pack.cancel": {
+    "message": "취소"
+  },
+  "pack.compression": {
+    "message": "압축 수준:"
+  },
+  "pack.dialog_title": {
+    "message": "파일 압축"
+  },
+  "pack.encrypt": {
+    "message": "암호로 암호화"
+  },
+  "pack.format": {
+    "message": "형식:"
+  },
+  "pack.label": {
+    "message": "{count, plural, other {항목 #개}}를 다음 압축 파일로 압축:"
+  },
+  "pack.level.fastest": {
+    "message": "가장 빠름"
+  },
+  "pack.level.maximum": {
+    "message": "최대"
+  },
+  "pack.level.normal": {
+    "message": "보통"
+  },
+  "pack.level.store": {
+    "message": "저장"
+  },
+  "pack.level.ultra": {
+    "message": "최고"
+  },
+  "pack.local_only": {
+    "message": "{what, select, packing {압축은} unpacking {압축 풀기는} testing {테스트는} creating_checksums {체크섬 만들기는} making_links {링크 만들기는} verifying_checksums {체크섬 검증은} splitting {분할은} combining {결합은} other {이 기능은}} 압축 파일 밖에 있는 이 컴퓨터의 파일에서만 작동합니다."
+  },
+  "pack.move_files": {
+    "message": "압축 파일로 이동(압축한 파일 삭제)"
+  },
+  "pack.needs_password": {
+    "message": "암호가 필요함"
+  },
+  "pack.ok": {
+    "message": "확인"
+  },
+  "pack.password_missing": {
+    "message": "암호를 입력하거나 ‘암호로 암호화’를 끄세요."
+  },
+  "pack.separate": {
+    "message": "선택한 파일 또는 폴더마다 압축 파일 만들기"
+  },
+  "pack.split": {
+    "message": "볼륨 분할 크기"
+  },
+  "pack.split_unit": {
+    "message": "MB"
+  },
+  "pack.test.broken": {
+    "message": "{broken, plural, other {{count}개 중 #개 손상됨}}"
+  },
+  "pack.test.choose": {
+    "message": "테스트할 압축 파일을 선택하세요."
+  },
+  "pack.test.ok": {
+    "message": "{count, plural, other {압축 파일 #개 정상}}"
+  },
+  "pack.test.title_many": {
+    "message": "{count, plural, other {압축 파일 #개}} 테스트"
+  },
+  "pack.test.title_one": {
+    "message": "‘{name}’ 테스트"
+  },
+  "pack.title.many": {
+    "message": "{count, plural, other {항목 #개}}를 {archive}(으)로 압축"
+  },
+  "pack.title.many_separate": {
+    "message": "{count, plural, other {항목 #개}}를 각각 {format} 압축 파일로 압축"
+  },
+  "pack.title.one": {
+    "message": "‘{name}’을(를) {archive}(으)로 압축"
+  },
+  "pack.title.one_separate": {
+    "message": "‘{name}’을(를) 개별 {format} 압축 파일로 압축"
+  },
+  "pack.unpack.choose": {
+    "message": "압축을 풀 압축 파일을 선택하세요."
+  },
+  "pack.unpack.dialog_title": {
+    "message": "압축 풀기"
+  },
+  "pack.unpack.label": {
+    "message": "{count, plural, other {압축 파일 #개}}의 압축을 풀 위치:"
+  },
+  "pack.unpack.mask": {
+    "message": "다음 파일만:"
+  },
+  "pack.unpack.overwrite": {
+    "message": "기존 파일 덮어쓰기(끄면 기존 파일 유지)"
+  },
+  "pack.unpack.password": {
+    "message": "암호:"
+  },
+  "pack.unpack.separate": {
+    "message": "압축 파일마다 같은 이름의 폴더에 풀기"
+  },
+  "pack.unpack.title_many": {
+    "message": "{count, plural, other {압축 파일 #개}}를 {target}에 압축 풀기"
+  },
+  "pack.unpack.title_one": {
+    "message": "‘{name}’을(를) {target}에 압축 풀기"
+  },
+  "pack.unpack.with_paths": {
+    "message": "압축 파일에 저장된 폴더 구조 유지"
+  },
+  "pack.volume_invalid": {
+    "message": "볼륨 크기는 MB 단위의 숫자여야 합니다."
+  },
+  "pack.wrong_password": {
+    "message": "암호가 틀림"
+  },
+  "panel.admin.renaming": {
+    "message": "‘{name}’(으)로 이름 변경"
+  },
+  "panel.clipboard.copied": {
+    "message": "{count, plural, other {항목 #개 복사됨}}: Ctrl+V로 붙여넣을 수 있습니다."
+  },
+  "panel.clipboard.cut": {
+    "message": "{count, plural, other {항목 #개 잘라냄}}: Ctrl+V로 붙여넣을 수 있습니다."
+  },
+  "panel.clipboard.no_cut_in_archive": {
+    "message": "압축 파일에서는 파일을 잘라낼 수 없습니다. Ctrl+C로 복사하세요."
+  },
+  "panel.clipboard.no_files": {
+    "message": "클립보드에 파일이 없습니다."
+  },
+  "panel.clipboard.no_paste_in_archive": {
+    "message": "아직 압축 파일에는 파일을 붙여넣을 수 없습니다."
+  },
+  "panel.clipboard.same_folder": {
+    "message": "이미 이 폴더에 있습니다. 다른 폴더에서 Ctrl+V로 붙여넣으세요."
+  },
+  "panel.column.attr": {
+    "message": "특성"
+  },
+  "panel.column.date": {
+    "message": "날짜"
+  },
+  "panel.column.ext": {
+    "message": "확장자"
+  },
+  "panel.column.name": {
+    "message": "이름"
+  },
+  "panel.column.size": {
+    "message": "크기"
+  },
+  "panel.disconnect": {
+    "message": "연결 끊기"
+  },
+  "panel.drag.items": {
+    "message": "{count, plural, other {항목 #개}}"
+  },
+  "panel.error.archive_not_updatable": {
+    "message": "{name}: 7-Zip은 7z, zip, tar 압축 파일만 직접 변경할 수 있습니다"
+  },
+  "panel.error.archive_on_server": {
+    "message": "{name}: 서버에 있는 압축 파일은 아직 변경할 수 없습니다"
+  },
+  "panel.error.branch_view_local": {
+    "message": "분기 보기는 이 컴퓨터의 폴더에서만 사용할 수 있습니다"
+  },
+  "panel.error.exists": {
+    "message": "{name}이(가) 이미 있습니다"
+  },
+  "panel.error.folder_in_the_way": {
+    "message": "같은 이름의 폴더가 있음"
+  },
+  "panel.error.inside_archive": {
+    "message": "아직 압축 파일 안에서는 할 수 없음"
+  },
+  "panel.error.make_file": {
+    "message": "파일을 만들지 못했습니다: {err}"
+  },
+  "panel.error.no_name": {
+    "message": "이름을 입력하지 않음"
+  },
+  "panel.error.not_a_name": {
+    "message": "{name}: 올바른 이름이 아님"
+  },
+  "panel.error.other_drive": {
+    "message": "반대쪽 패널이 다른 드라이브로 이동함"
+  },
+  "panel.error.rename": {
+    "message": "이름을 변경하지 못했습니다: {err}"
+  },
+  "panel.filter.custom.label": {
+    "message": "파일 형식(예: *.txt *.md, | 뒤는 제외할 형식):"
+  },
+  "panel.filter.custom.title": {
+    "message": "파일 표시"
+  },
+  "panel.filter.programs": {
+    "message": "프로그램"
+  },
+  "panel.filter.selected_files": {
+    "message": "선택한 파일"
+  },
+  "panel.found.branch_view": {
+    "message": "분기 보기:"
+  },
+  "panel.found.search_results": {
+    "message": "검색 결과:"
+  },
+  "panel.new_text_file.label": {
+    "message": "파일 이름(편집기에서 열림):"
+  },
+  "panel.new_text_file.title": {
+    "message": "새 텍스트 파일"
+  },
+  "panel.opening.cancel": {
+    "message": "취소"
+  },
+  "panel.opening.reading": {
+    "message": "읽는 중…"
+  },
+  "panel.opening.title": {
+    "message": "압축 파일 여는 중"
+  },
+  "panel.quick_filter.hint": {
+    "message": "일치하지 않는 항목 숨기기, Escape를 누르면 모두 표시"
+  },
+  "panel.quick_filter.label": {
+    "message": "필터:"
+  },
+  "panel.quick_search.label": {
+    "message": "검색:"
+  },
+  "panel.size.app": {
+    "message": "<APP>"
+  },
+  "panel.size.b": {
+    "message": "{size}B"
+  },
+  "panel.size.dir": {
+    "message": "<DIR>"
+  },
+  "panel.size.gb": {
+    "message": "{size}GB"
+  },
+  "panel.size.kb": {
+    "message": "{size}KB"
+  },
+  "panel.size.mb": {
+    "message": "{size}MB"
+  },
+  "panel.size.tb": {
+    "message": "{size}TB"
+  },
+  "panel.space.bytes": {
+    "message": "{count, plural, other {{size}바이트({human})}}"
+  },
+  "panel.space.close": {
+    "message": "닫기"
+  },
+  "panel.space.counting": {
+    "message": "계산 중…"
+  },
+  "panel.space.done": {
+    "message": "완료."
+  },
+  "panel.space.files": {
+    "message": "파일:"
+  },
+  "panel.space.folders": {
+    "message": "폴더:"
+  },
+  "panel.space.in_archive": {
+    "message": "압축 파일 안에서는 ‘크기’ 열에 이미 크기가 표시됩니다."
+  },
+  "panel.space.title": {
+    "message": "사용 공간 계산"
+  },
+  "panel.space.total": {
+    "message": "전체 크기:"
+  },
+  "panel.space.unreadable": {
+    "message": "{count, plural, other {항목 #개를 읽을 수 없습니다.}}"
+  },
+  "panel.status": {
+    "message": "{marked_size}k / {size}k, 파일 {marked_files} / {files, plural, other {#개}}, 폴더 {marked_folders} / {folders, plural, other {#개}}"
+  },
+  "panel.sync_browsing.stop": {
+    "message": "동기화 탐색(클릭하면 중지)"
+  },
+  "panel.undo.rename": {
+    "message": "‘{name}’을(를) ‘{to}’(으)로 이름 변경"
+  },
+  "passwords.about.set": {
+    "message": "마스터 암호를 설정하면 설정 폴더를 다른 컴퓨터로 복사한 뒤 그곳에서 마스터 암호를 입력해 저장된 암호를 열 수 있습니다. 마스터 암호를 잊어버리면 저장된 암호만 사라지므로 다시 입력하면 됩니다."
+  },
+  "passwords.about.unlock": {
+    "message": "설정을 다른 컴퓨터에서 가져왔거나 이 컴퓨터에 키링이 없습니다. 마스터 암호를 입력하면 여기서 저장된 암호를 열 수 있습니다."
+  },
+  "passwords.cancel": {
+    "message": "취소"
+  },
+  "passwords.done.set": {
+    "message": "마스터 암호가 설정되었습니다."
+  },
+  "passwords.done.unlocked": {
+    "message": "저장된 암호의 잠금이 해제되었습니다."
+  },
+  "passwords.error.locked": {
+    "message": "저장된 암호가 잠겨 있음: 마스터 암호로 잠금을 해제하세요(구성 › 설정 › 암호)"
+  },
+  "passwords.error.no_master": {
+    "message": "마스터 암호가 설정되지 않음"
+  },
+  "passwords.error.no_random": {
+    "message": "난수를 얻을 수 없음"
+  },
+  "passwords.error.not_opened": {
+    "message": "{what}의 암호를 열 수 없음"
+  },
+  "passwords.error.not_sealed": {
+    "message": "암호를 암호화할 수 없음"
+  },
+  "passwords.error.salt_damaged": {
+    "message": "마스터 암호의 솔트가 손상됨"
+  },
+  "passwords.error.wrong": {
+    "message": "마스터 암호가 틀림"
+  },
+  "passwords.field.again": {
+    "message": "다시 입력"
+  },
+  "passwords.field.master": {
+    "message": "마스터 암호"
+  },
+  "passwords.locked_note": {
+    "message": "이 컴퓨터에서는 저장된 암호가 잠겨 있습니다. 마스터 암호로 열 수 있습니다."
+  },
+  "passwords.ok": {
+    "message": "확인"
+  },
+  "passwords.problem.differ": {
+    "message": "두 암호가 일치하지 않습니다."
+  },
+  "passwords.problem.empty": {
+    "message": "마스터 암호를 입력하세요."
+  },
+  "passwords.title.set": {
+    "message": "마스터 암호"
+  },
+  "passwords.title.unlock": {
+    "message": "저장된 암호 잠금 해제"
+  },
+  "passwords.unlock_button": {
+    "message": "잠금 해제…"
+  },
+  "passwords.working": {
+    "message": "처리 중…"
+  },
+  "properties.accessed": {
+    "message": "액세스한 날짜:"
+  },
+  "properties.change_attributes": {
+    "message": "특성 변경..."
+  },
+  "properties.close": {
+    "message": "닫기"
+  },
+  "properties.contents": {
+    "message": "{file_count, plural, other {파일 {files}개}}, {folder_count, plural, other {폴더 {folders}개}}, {count, plural, other {{bytes}바이트}} ({size})"
+  },
+  "properties.contents_counting": {
+    "message": "{file_count, plural, other {파일 {files}개}}, {folder_count, plural, other {폴더 {folders}개}}, {count, plural, other {{bytes}바이트}} ({size}) (계산 중…)"
+  },
+  "properties.contents_label": {
+    "message": "내용:"
+  },
+  "properties.created": {
+    "message": "만든 날짜:"
+  },
+  "properties.dialog_title": {
+    "message": "속성"
+  },
+  "properties.in_archive": {
+    "message": "압축 파일 목록에 파일에 대해 알려진 정보가 모두 표시됩니다."
+  },
+  "properties.kind.file": {
+    "message": "파일"
+  },
+  "properties.kind.folder": {
+    "message": "폴더"
+  },
+  "properties.kind.link": {
+    "message": "링크"
+  },
+  "properties.kind.link_to": {
+    "message": "{target}에 대한 링크"
+  },
+  "properties.location": {
+    "message": "위치:"
+  },
+  "properties.modified": {
+    "message": "수정한 날짜:"
+  },
+  "properties.name": {
+    "message": "이름:"
+  },
+  "properties.no_system_dialog": {
+    "message": "아직 이 시스템에는 속성 대화 상자가 없음"
+  },
+  "properties.owner": {
+    "message": "소유자/그룹:"
+  },
+  "properties.permissions": {
+    "message": "권한:"
+  },
+  "properties.size": {
+    "message": "{count, plural, other {{bytes}바이트({size})}}"
+  },
+  "properties.size_label": {
+    "message": "크기:"
+  },
+  "properties.type": {
+    "message": "종류:"
+  },
+  "quick_open.go_to": {
+    "message": "{path}(으)로 이동"
+  },
+  "quick_open.group.bookmarks": {
+    "message": "책갈피"
+  },
+  "quick_open.group.connections": {
+    "message": "연결"
+  },
+  "quick_open.group.drives": {
+    "message": "드라이브"
+  },
+  "quick_open.group.path": {
+    "message": "경로"
+  },
+  "quick_open.group.recent_folders": {
+    "message": "최근 폴더"
+  },
+  "quick_open.group.tools": {
+    "message": "도구"
+  },
+  "quick_open.group.workspaces": {
+    "message": "작업 공간"
+  },
+  "quick_open.placeholder": {
+    "message": "명령, 책갈피, 폴더, 경로, 서버, 드라이브, 작업 공간 또는 도구"
+  },
+  "quick_open.title": {
+    "message": "빠른 열기"
+  },
+  "quick_view.counting": {
+    "message": "계산 중…"
+  },
+  "quick_view.downloading": {
+    "message": "다운로드 중…"
+  },
+  "quick_view.empty": {
+    "message": "빠른 보기는 반대쪽 패널에서 커서가 놓인 항목을 표시합니다."
+  },
+  "quick_view.extracting": {
+    "message": "압축 파일에서 꺼내는 중…"
+  },
+  "quick_view.files_only": {
+    "message": "서버와 압축 파일 안에서는 빠른 보기에 파일만 표시됩니다."
+  },
+  "quick_view.space.title": {
+    "message": "사용 중인 전체 공간:"
+  },
+  "quick_view.space.totals": {
+    "message": "{files, plural, other {파일 {files_grouped}개}}, {folders, plural, other {폴더 {folders_grouped}개}}에 {bytes, plural, other {{bytes_grouped}바이트}}"
+  },
+  "quick_view.space.unreadable": {
+    "message": "{count}개를 읽을 수 없습니다."
+  },
+  "quick_view.too_large.download": {
+    "message": "파일이 너무 큽니다({size}). 여기서는 다운로드하지 않으니 F3으로 보세요."
+  },
+  "quick_view.too_large.extract": {
+    "message": "파일이 너무 큽니다({size}). 여기서는 압축 파일에서 꺼내지 않으니 F3으로 보세요."
+  },
+  "remote.cancelled": {
+    "message": "취소됨"
+  },
+  "remote.cloud.ask": {
+    "message": "{kind, select, application_key {{host}의 {user} 애플리케이션 키:} api_key {{host}의 {user} API 키:} password {{host}의 {user} 암호:} other {{host}의 {user} 비밀 키:}}"
+  },
+  "remote.cloud.ask_again": {
+    "message": "{kind, select, application_key {애플리케이션 키가 틀렸습니다. {host}의 {user} 애플리케이션 키:} api_key {API 키가 틀렸습니다. {host}의 {user} API 키:} password {암호가 틀렸습니다. {host}의 {user} 암호:} other {키가 틀렸습니다. {host}의 {user} 비밀 키:}}"
+  },
+  "remote.cloud.obscure_failed": {
+    "message": "rclone이 암호를 처리하지 못했습니다"
+  },
+  "remote.cloud.rclone_missing": {
+    "message": "rclone이 없습니다: 설정 > 추가 기능에서 다운로드하세요"
+  },
+  "remote.cloud.title": {
+    "message": "{kind, select, application_key {애플리케이션 키} api_key {API 키} password {암호} other {비밀 키}}"
+  },
+  "remote.connecting": {
+    "message": "{server}에 연결 중..."
+  },
+  "remote.dialog.cancel": {
+    "message": "취소"
+  },
+  "remote.dialog.ok": {
+    "message": "확인"
+  },
+  "remote.disconnect_failed": {
+    "message": "{share}: 연결을 끊지 못했습니다: {err}"
+  },
+  "remote.ftp.password": {
+    "message": "{user}@{host}의 암호:"
+  },
+  "remote.ftp.password_again": {
+    "message": "암호가 틀렸습니다. {user}@{host}의 암호:"
+  },
+  "remote.ftps.changed": {
+    "message": "{server}의 TLS 인증서가 {file}의 {line}번째 줄에 기록된 것과 다릅니다! 누군가 통신을 엿듣고 있을 수 있습니다. 서버의 인증서가 새로 바뀐 것이라면 해당 줄을 삭제하세요."
+  },
+  "remote.ftps.not_trusted": {
+    "message": "서버의 인증서를 신뢰할 수 없음"
+  },
+  "remote.login.password": {
+    "message": "암호"
+  },
+  "remote.login.title": {
+    "message": "로그인"
+  },
+  "remote.login.user": {
+    "message": "사용자"
+  },
+  "remote.mount.login_wrong": {
+    "message": "사용자 또는 암호가 틀림"
+  },
+  "remote.mount.macos_failed": {
+    "message": "macOS에서 마운트하지 못함(NetFS {code})"
+  },
+  "remote.mount.needs_desktop": {
+    "message": "KDE의 kio-fuse 또는 GNOME의 gvfs가 필요함"
+  },
+  "remote.mount.needs_login": {
+    "message": "사용자와 암호가 필요함"
+  },
+  "remote.mount.no_fuse": {
+    "message": "마운트되었지만 해당 폴더가 없음: gvfs-fuse가 없음"
+  },
+  "remote.mount.no_nfs_client": {
+    "message": "찾을 수 없음. NFS를 사용하려면 Windows의 NFS용 클라이언트가 필요함(Windows 기능)"
+  },
+  "remote.mount.no_share": {
+    "message": "공유 이름이 없음: smb://server/share"
+  },
+  "remote.mount.not_address": {
+    "message": "주소가 아님"
+  },
+  "remote.mount.not_found": {
+    "message": "마운트되었지만 마운트된 항목에서 찾을 수 없음"
+  },
+  "remote.mount.other_user": {
+    "message": "Windows가 다른 사용자로 이 서버에 연결되어 있음: 로그오프하거나 해당 사용자를 사용하세요"
+  },
+  "remote.password.title": {
+    "message": "암호"
+  },
+  "remote.remember_password": {
+    "message": "암호 기억(설정 › 암호)"
+  },
+  "remote.save_back_failed": {
+    "message": "서버에 다시 저장하지 못했습니다: {err}"
+  },
+  "remote.sftp.host_certificate": {
+    "message": "서버가 호스트 인증서를 제시했습니다. 호스트 인증서는 아직 지원하지 않습니다."
+  },
+  "remote.sftp.key_changed": {
+    "message": "{server}의 호스트 키가 {file}의 {line}번째 줄에 기록된 것과 다릅니다! 누군가 통신을 엿듣고 있을 수 있습니다. 서버를 새로 설치한 것이라면 해당 줄을 삭제하세요."
+  },
+  "remote.sftp.key_not_trusted": {
+    "message": "{server}의 호스트 키를 신뢰하지 않았습니다."
+  },
+  "remote.sftp.keys_refused": {
+    "message": "{user}@{host}: 서버가 키를 거부했으며 암호 로그인을 허용하지 않습니다"
+  },
+  "remote.sftp.login_refused": {
+    "message": "{user}@{host}: 로그인이 거부되었습니다"
+  },
+  "remote.sftp.passphrase": {
+    "message": "{file}의 암호 문구"
+  },
+  "remote.sftp.passphrase_title": {
+    "message": "키 암호 문구"
+  },
+  "remote.sftp.password": {
+    "message": "{user}@{host}의 암호"
+  },
+  "remote.unknown_host.once": {
+    "message": "이번만 연결"
+  },
+  "remote.unknown_host.remember": {
+    "message": "연결하고 기억"
+  },
+  "remote.unknown_host.text": {
+    "message": "알 수 없는 서버입니다: {host}. {key_type} 지문:\n\n{fingerprint}\n\n의도한 서버가 맞는 경우에만 연결하세요. 지문은 서버 관리자에게 확인할 수 있습니다."
+  },
+  "remote.unknown_host.title": {
+    "message": "알 수 없는 서버"
+  },
+  "rename.case": {
+    "message": "대소문자:"
+  },
+  "rename.case.first": {
+    "message": "첫 글자만 대문자"
+  },
+  "rename.case.lower": {
+    "message": "소문자"
+  },
+  "rename.case.unchanged": {
+    "message": "변경 안 함"
+  },
+  "rename.case.upper": {
+    "message": "대문자"
+  },
+  "rename.case.words": {
+    "message": "단어마다 대문자"
+  },
+  "rename.close": {
+    "message": "닫기"
+  },
+  "rename.counter_start": {
+    "message": "카운터 시작"
+  },
+  "rename.dialog_title": {
+    "message": "일괄 이름 변경 도구"
+  },
+  "rename.digits": {
+    "message": "자릿수"
+  },
+  "rename.extension": {
+    "message": "확장자"
+  },
+  "rename.field.counter": {
+    "message": "[C] 카운터"
+  },
+  "rename.field.date": {
+    "message": "[Y][M][D] 날짜"
+  },
+  "rename.field.extension": {
+    "message": "[E] 확장자"
+  },
+  "rename.field.folder": {
+    "message": "[P] 폴더"
+  },
+  "rename.field.name": {
+    "message": "[N] 이름"
+  },
+  "rename.field.range": {
+    "message": "[N1-3] 범위"
+  },
+  "rename.field.time": {
+    "message": "[h][m][s] 시간"
+  },
+  "rename.first_only": {
+    "message": "첫 항목만"
+  },
+  "rename.in_archive": {
+    "message": "압축 파일 안의 파일은 아직 이름을 변경할 수 없습니다."
+  },
+  "rename.mask": {
+    "message": "이름 변경 마스크: 파일 이름"
+  },
+  "rename.match_case": {
+    "message": "대/소문자 구분"
+  },
+  "rename.new_name": {
+    "message": "새 이름"
+  },
+  "rename.not_renamed_back": {
+    "message": "{from}: {err}. 원래 이름으로 되돌리지 못함: {names}"
+  },
+  "rename.not_utf8": {
+    "message": "UTF-8이 아닌 이름은 제외됩니다."
+  },
+  "rename.old_name": {
+    "message": "이전 이름"
+  },
+  "rename.problem.bad_character": {
+    "message": "사용할 수 없는 문자"
+  },
+  "rename.problem.exists": {
+    "message": "이미 있음"
+  },
+  "rename.problem.no_name": {
+    "message": "이름 없음"
+  },
+  "rename.problem.twice": {
+    "message": "목록에 중복"
+  },
+  "rename.regex": {
+    "message": "정규식"
+  },
+  "rename.regex_error": {
+    "message": "정규식: {err}"
+  },
+  "rename.replace": {
+    "message": "바꿀 내용"
+  },
+  "rename.search": {
+    "message": "찾을 내용"
+  },
+  "rename.start": {
+    "message": "시작!"
+  },
+  "rename.status.failed": {
+    "message": "이름이 변경되지 않음: {err}"
+  },
+  "rename.status.ready": {
+    "message": "‘시작!’을 누르면 이름이 변경됩니다."
+  },
+  "rename.status.renamed": {
+    "message": "{count, plural, other {#개 이름 변경됨.}}"
+  },
+  "rename.status.took_back": {
+    "message": "{count, plural, other {#개 되돌림.}}"
+  },
+  "rename.step": {
+    "message": "증가값"
+  },
+  "rename.undo": {
+    "message": "실행 취소"
+  },
+  "rename.was": {
+    "message": "{to}(이전: {from})"
+  },
+  "rename.with_extension": {
+    "message": "확장자 포함"
+  },
+  "scmd.column.modified": {
+    "message": "수정 날짜"
+  },
+  "scmd.column.name": {
+    "message": "이름"
+  },
+  "scmd.column.size": {
+    "message": "크기"
+  },
+  "scmd.column.up_dir": {
+    "message": "상위 폴더"
+  },
+  "scmd.command_line.not_on_server": {
+    "message": "명령은 서버가 아니라 이 컴퓨터에서 실행됩니다."
+  },
+  "scmd.compare.marked": {
+    "message": "{count, plural, other {파일 #개 선택됨: 반대쪽보다 새롭거나 반대쪽에 없는 파일입니다.}}"
+  },
+  "scmd.compare.same": {
+    "message": "두 폴더의 파일이 같습니다."
+  },
+  "scmd.copying": {
+    "message": "{name} 복사 중..."
+  },
+  "scmd.dialog.buttons": {
+    "message": "Enter 확인   Esc 취소"
+  },
+  "scmd.error.read_settings": {
+    "message": "설정을 읽지 못했습니다: {err}"
+  },
+  "scmd.error.read_tabs": {
+    "message": "열려 있던 탭을 읽지 못했습니다: {err}"
+  },
+  "scmd.error.read_workspaces": {
+    "message": "작업 공간을 읽지 못했습니다: {err}"
+  },
+  "scmd.error.save_back": {
+    "message": "다시 저장하지 못했습니다: {err}"
+  },
+  "scmd.error.save_searches": {
+    "message": "검색 기록을 저장하지 못했습니다: {err}"
+  },
+  "scmd.error.save_tabs": {
+    "message": "열린 탭을 저장하지 못했습니다: {err}"
+  },
+  "scmd.find.backwards": {
+    "message": "역방향"
+  },
+  "scmd.find.case_sensitive": {
+    "message": "대/소문자 구분"
+  },
+  "scmd.find.hex": {
+    "message": "16진수(77 6F 72 64)"
+  },
+  "scmd.find.not_found": {
+    "message": "찾을 수 없음: {text}"
+  },
+  "scmd.find.regex": {
+    "message": "정규식"
+  },
+  "scmd.find.search_for": {
+    "message": "찾을 내용:"
+  },
+  "scmd.find.title": {
+    "message": "찾기"
+  },
+  "scmd.find.whole_words": {
+    "message": "전체 단어만"
+  },
+  "scmd.group.files": {
+    "message": "파일(*.txt *.md, 폴더는 /로 끝남):"
+  },
+  "scmd.group.select_title": {
+    "message": "그룹 선택"
+  },
+  "scmd.group.unselect_title": {
+    "message": "그룹 선택 해제"
+  },
+  "scmd.key_bar.copy": {
+    "message": "복사"
+  },
+  "scmd.key_bar.delete": {
+    "message": "삭제"
+  },
+  "scmd.key_bar.edit": {
+    "message": "편집"
+  },
+  "scmd.key_bar.menu": {
+    "message": "메뉴"
+  },
+  "scmd.key_bar.mkdir": {
+    "message": "새폴더"
+  },
+  "scmd.key_bar.move": {
+    "message": "이동"
+  },
+  "scmd.key_bar.quit": {
+    "message": "종료"
+  },
+  "scmd.key_bar.view": {
+    "message": "보기"
+  },
+  "scmd.message.error": {
+    "message": "오류"
+  },
+  "scmd.message.ok": {
+    "message": "확인"
+  },
+  "scmd.not_yet": {
+    "message": "{what, select, menus {메뉴: 터미널 버전에서는 아직 지원하지 않습니다.} file_operations {파일 작업: 터미널 버전에서는 아직 지원하지 않습니다.} servers {서버: 터미널 버전에서는 아직 지원하지 않습니다.} other {이 명령: 터미널 버전에서는 아직 지원하지 않습니다.}}"
+  },
+  "scmd.picture.broken": {
+    "message": "손상된 이미지"
+  },
+  "scmd.picture.broken_page": {
+    "message": "손상된 페이지"
+  },
+  "scmd.picture.loading": {
+    "message": "불러오는 중…"
+  },
+  "scmd.picture.no_page": {
+    "message": "PDF에 해당 페이지가 없음"
+  },
+  "scmd.shell.press_enter": {
+    "message": "Enter를 누르면 Spark Commander로 돌아갑니다..."
+  },
+  "scmd.sync_browsing.off": {
+    "message": "동기화 탐색이 꺼졌습니다."
+  },
+  "scmd.sync_browsing.on": {
+    "message": "동기화 탐색이 켜졌습니다."
+  },
+  "scmd.sync_browsing.stopped": {
+    "message": "{err}. 동기화 탐색이 꺼졌습니다."
+  },
+  "scmd.viewer.column": {
+    "message": "열 {column}"
+  },
+  "scmd.viewer.finding": {
+    "message": "찾는 중…"
+  },
+  "scmd.viewer.key_bar.next": {
+    "message": "다음"
+  },
+  "scmd.viewer.key_bar.quit": {
+    "message": "종료"
+  },
+  "scmd.viewer.key_bar.reload": {
+    "message": "갱신"
+  },
+  "scmd.viewer.key_bar.search": {
+    "message": "찾기"
+  },
+  "scmd.viewer.page": {
+    "message": "{page}/{pages}쪽"
+  },
+  "scmd.viewer.reading": {
+    "message": "읽는 중 {percent}%"
+  },
+  "scmd.viewer.wrap": {
+    "message": "줄 바꿈"
+  },
+  "scmd.workspace.copy_name": {
+    "message": "{name} 사본"
+  },
+  "scmd.workspace.default_name": {
+    "message": "작업 공간 {number}"
+  },
+  "scmd.workspace.delete_question": {
+    "message": "‘{name}’을(를) 삭제하시겠습니까? 탭 구성은 사라집니다."
+  },
+  "scmd.workspace.duplicate_title": {
+    "message": "작업 공간 복제"
+  },
+  "scmd.workspace.last_stays": {
+    "message": "마지막 작업 공간은 삭제할 수 없습니다."
+  },
+  "scmd.workspace.name": {
+    "message": "이름:"
+  },
+  "scmd.workspace.name_or_default": {
+    "message": "이름(비우면 {name}):"
+  },
+  "scmd.workspace.new_title": {
+    "message": "새 작업 공간"
+  },
+  "scmd.workspace.rename_title": {
+    "message": "작업 공간 이름 변경"
+  },
+  "scmd.workspaces.keys": {
+    "message": "Enter 열기  F7 새로 만들기  F5 복사  F2 이름 변경  F8 삭제"
+  },
+  "scmd.workspaces.title": {
+    "message": "작업 공간"
+  },
+  "search.age.days": {
+    "message": "일"
+  },
+  "search.age.hours": {
+    "message": "시간"
+  },
+  "search.age.minutes": {
+    "message": "분"
+  },
+  "search.age.months": {
+    "message": "개월"
+  },
+  "search.age.weeks": {
+    "message": "주"
+  },
+  "search.age.years": {
+    "message": "년"
+  },
+  "search.archives": {
+    "message": "압축 파일 안도 검색"
+  },
+  "search.attribute.directory": {
+    "message": "폴더"
+  },
+  "search.attribute.either": {
+    "message": "상관없음"
+  },
+  "search.attribute.executable": {
+    "message": "실행 파일"
+  },
+  "search.attribute.hidden": {
+    "message": "숨김"
+  },
+  "search.attribute.link": {
+    "message": "심볼릭 링크"
+  },
+  "search.attribute.must": {
+    "message": "해당해야 함"
+  },
+  "search.attribute.must_not": {
+    "message": "해당하지 않아야 함"
+  },
+  "search.attribute.read_only": {
+    "message": "읽기 전용"
+  },
+  "search.attributes.label": {
+    "message": "특성:"
+  },
+  "search.between.and": {
+    "message": "~"
+  },
+  "search.between.label": {
+    "message": "날짜 범위:"
+  },
+  "search.close": {
+    "message": "닫기"
+  },
+  "search.depth.all": {
+    "message": "모두(깊이 제한 없음)"
+  },
+  "search.depth.current": {
+    "message": "현재 폴더만"
+  },
+  "search.depth.label": {
+    "message": "하위 폴더 검색:"
+  },
+  "search.depth.levels": {
+    "message": "{count, plural, other {#단계}}"
+  },
+  "search.drives": {
+    "message": "드라이브"
+  },
+  "search.duplicates.content": {
+    "message": "같은 내용"
+  },
+  "search.duplicates.label": {
+    "message": "중복 파일 찾기:"
+  },
+  "search.duplicates.name": {
+    "message": "같은 이름"
+  },
+  "search.duplicates.size": {
+    "message": "같은 크기"
+  },
+  "search.edit": {
+    "message": "F4 편집"
+  },
+  "search.error.between_days": {
+    "message": "날짜 범위에는 두 날짜가 모두 필요합니다"
+  },
+  "search.error.date": {
+    "message": "{text}: 2026-11-12 형식의 날짜가 아닙니다"
+  },
+  "search.error.hex": {
+    "message": "{text}: 48 65 6c 형식의 16진수 문자열이 아닙니다"
+  },
+  "search.error.keep": {
+    "message": "검색 기록을 저장하지 못했습니다: {err}"
+  },
+  "search.error.local_time": {
+    "message": "{text}: 현지 시간대에 없는 시각입니다"
+  },
+  "search.error.names_regex": {
+    "message": "이름의 정규식: {err}"
+  },
+  "search.error.newer_number": {
+    "message": "‘이 기간 이내’에는 숫자를 입력해야 합니다: {text}"
+  },
+  "search.error.no_place": {
+    "message": "‘검색 위치’에 폴더가 없습니다"
+  },
+  "search.error.no_text": {
+    "message": "‘텍스트 찾기’에 텍스트가 없습니다"
+  },
+  "search.error.older_number": {
+    "message": "‘이 기간보다 오래됨’에는 숫자를 입력해야 합니다: {text}"
+  },
+  "search.error.save": {
+    "message": "검색을 저장하지 못했습니다: {err}"
+  },
+  "search.error.size_number": {
+    "message": "‘파일 크기’에는 숫자를 입력해야 합니다: {text}"
+  },
+  "search.error.text_regex": {
+    "message": "텍스트의 정규식: {err}"
+  },
+  "search.feed": {
+    "message": "패널로 보내기"
+  },
+  "search.go_to_file": {
+    "message": "파일로 이동"
+  },
+  "search.in_found": {
+    "message": "F2 찾은 파일에서 검색"
+  },
+  "search.locate": {
+    "message": "locate 색인 사용"
+  },
+  "search.names.label": {
+    "message": "찾을 이름:"
+  },
+  "search.names.placeholder": {
+    "message": "*.txt *.md | backup*  (비우면 모두)"
+  },
+  "search.new": {
+    "message": "새 검색"
+  },
+  "search.newer.label": {
+    "message": "이 기간 이내:"
+  },
+  "search.older.label": {
+    "message": "이 기간보다 오래됨:"
+  },
+  "search.only_selected": {
+    "message": "선택한 파일/폴더에서만 검색"
+  },
+  "search.only_selected_count": {
+    "message": "{count, plural, other {선택한 #개에서만 검색}}"
+  },
+  "search.page.advanced": {
+    "message": "고급"
+  },
+  "search.page.general": {
+    "message": "일반"
+  },
+  "search.page.load_save": {
+    "message": "불러오기/저장"
+  },
+  "search.places.browse_prompt": {
+    "message": "검색 위치"
+  },
+  "search.places.label": {
+    "message": "검색 위치:"
+  },
+  "search.places.placeholder": {
+    "message": "폴더, ;로 구분"
+  },
+  "search.regex": {
+    "message": "정규식"
+  },
+  "search.results.label": {
+    "message": "검색 결과:"
+  },
+  "search.saved.delete": {
+    "message": "삭제"
+  },
+  "search.saved.label": {
+    "message": "이전 검색:"
+  },
+  "search.saved.load": {
+    "message": "불러오기"
+  },
+  "search.saved.name_first": {
+    "message": "먼저 검색 이름을 입력하세요."
+  },
+  "search.saved.name_placeholder": {
+    "message": "검색 이름"
+  },
+  "search.saved.save": {
+    "message": "저장"
+  },
+  "search.size.label": {
+    "message": "파일 크기:"
+  },
+  "search.start": {
+    "message": "검색 시작"
+  },
+  "search.status.found": {
+    "message": "{files, plural, other {파일 #개}}, {dirs, plural, other {폴더 #개}} 찾음"
+  },
+  "search.status.searching": {
+    "message": "검색 중…"
+  },
+  "search.status.searching_in": {
+    "message": "검색 중: {folder}"
+  },
+  "search.status.stopped": {
+    "message": "중지됨: {counts}"
+  },
+  "search.stop": {
+    "message": "중지"
+  },
+  "search.text.ansi": {
+    "message": "ANSI(코드 페이지 {page})"
+  },
+  "search.text.case_sensitive": {
+    "message": "대/소문자 구분"
+  },
+  "search.text.hex": {
+    "message": "16진수"
+  },
+  "search.text.label": {
+    "message": "텍스트 찾기:"
+  },
+  "search.text.not_containing": {
+    "message": "텍스트가 포함되지 ‘않은’ 파일 찾기"
+  },
+  "search.text.office": {
+    "message": "Office 파일(docx, xlsx, pptx, odt…)"
+  },
+  "search.text.placeholder": {
+    "message": "찾을 텍스트"
+  },
+  "search.text.whole_words": {
+    "message": "전체 단어만"
+  },
+  "search.title": {
+    "message": "파일 찾기"
+  },
+  "search.unit.bytes": {
+    "message": "바이트"
+  },
+  "search.view": {
+    "message": "F3 보기"
+  },
+  "settings.addons.builtin_version": {
+    "message": "{version}, Spark Commander에 포함됨"
+  },
+  "settings.addons.check_daily": {
+    "message": "시작할 때와 매일 추가 기능 업데이트를 확인하고 알리기"
+  },
+  "settings.addons.check_failed": {
+    "message": "업데이트를 확인하지 못했습니다: {err}"
+  },
+  "settings.addons.check_now": {
+    "message": "지금 확인"
+  },
+  "settings.addons.checking": {
+    "message": "업데이트 확인 중..."
+  },
+  "settings.addons.download": {
+    "message": "다운로드"
+  },
+  "settings.addons.downloading": {
+    "message": "다운로드 중: {done}/{size}"
+  },
+  "settings.addons.file": {
+    "message": "파일"
+  },
+  "settings.addons.installed.builtin": {
+    "message": "Spark Commander에 포함됨"
+  },
+  "settings.addons.installed.label": {
+    "message": "설치됨"
+  },
+  "settings.addons.installed.none": {
+    "message": "없음"
+  },
+  "settings.addons.intro": {
+    "message": "Spark Commander는 일부 기능에 다른 프로젝트의 프로그램을 사용합니다. 추가 기능은 원할 때 따로 다운로드하며, 7-Zip과 PDFium은 함께 제공됩니다."
+  },
+  "settings.addons.never_offer": {
+    "message": "파일에 추가 기능이 필요해도 제안하지 않기"
+  },
+  "settings.addons.offers": {
+    "message": "제안 및 업데이트"
+  },
+  "settings.addons.online.label": {
+    "message": "온라인"
+  },
+  "settings.addons.online.looking": {
+    "message": "확인 중..."
+  },
+  "settings.addons.online.none": {
+    "message": "이 시스템용 없음"
+  },
+  "settings.addons.online.not_yet": {
+    "message": "아직 확인 안 함"
+  },
+  "settings.addons.online.unknown": {
+    "message": "알 수 없음"
+  },
+  "settings.addons.remove": {
+    "message": "제거"
+  },
+  "settings.addons.up_to_date": {
+    "message": "추가 기능 목록이 최신 상태입니다."
+  },
+  "settings.addons.version": {
+    "message": "버전"
+  },
+  "settings.addons.website": {
+    "message": "웹사이트"
+  },
+  "settings.appearance.title": {
+    "message": "모양"
+  },
+  "settings.apply": {
+    "message": "적용"
+  },
+  "settings.backdrop.blur": {
+    "message": "뒤의 데스크톱 흐리게 하기"
+  },
+  "settings.backdrop.clear": {
+    "message": "0%, 데스크톱만 보임"
+  },
+  "settings.backdrop.cover": {
+    "message": "뒤의 데스크톱을 가리는 정도:"
+  },
+  "settings.backdrop.opacity": {
+    "message": "{opacity}%"
+  },
+  "settings.backdrop.sidebar": {
+    "message": "사이드바"
+  },
+  "settings.backdrop.solid": {
+    "message": "100%, 불투명"
+  },
+  "settings.backdrop.terminal": {
+    "message": "터미널"
+  },
+  "settings.cancel": {
+    "message": "취소"
+  },
+  "settings.date.as_system": {
+    "message": "시스템 설정: {date}"
+  },
+  "settings.date.custom": {
+    "message": "사용자 지정:"
+  },
+  "settings.date.pattern_help": {
+    "message": "yyyy 연도, MM 월(MMM 월 이름), dd 일(ddd 요일)"
+  },
+  "settings.date.shown_as": {
+    "message": "표시 형식"
+  },
+  "settings.date.shown_as_note": {
+    "message": "파일 목록 기준, 대화 상자에는 초가 추가됨"
+  },
+  "settings.date.title": {
+    "message": "날짜"
+  },
+  "settings.editor.browse": {
+    "message": "찾아보기..."
+  },
+  "settings.editor.choose": {
+    "message": "선택"
+  },
+  "settings.editor.external": {
+    "message": "외부 편집기(Ctrl+Shift+F4):"
+  },
+  "settings.editor.external_help": {
+    "message": "%1은 파일이며, 없으면 맨 뒤에 붙습니다. 예: code --wait %1"
+  },
+  "settings.editor.limit": {
+    "message": "내장 편집기(F4)로 열 최대 파일 크기:"
+  },
+  "settings.editor.limit_unit": {
+    "message": "MB"
+  },
+  "settings.editor.title": {
+    "message": "F4 편집기"
+  },
+  "settings.error.no_folder": {
+    "message": "구성 폴더 없음"
+  },
+  "settings.files_shown.hidden": {
+    "message": "숨김 파일"
+  },
+  "settings.files_shown.system": {
+    "message": "시스템 파일"
+  },
+  "settings.files_shown.title": {
+    "message": "표시할 파일"
+  },
+  "settings.font.as_system": {
+    "message": "시스템 설정"
+  },
+  "settings.font.chosen": {
+    "message": "직접 선택함. 시스템 글꼴: {family}, {size}"
+  },
+  "settings.font.fixed": {
+    "message": "뷰어"
+  },
+  "settings.font.fixed_note": {
+    "message": "고정폭 글꼴만 사용할 수 있으며, 편집기와 파일 비교에도 사용됩니다."
+  },
+  "settings.font.main": {
+    "message": "기본 창 글꼴"
+  },
+  "settings.font.system": {
+    "message": "시스템 글꼴"
+  },
+  "settings.language.system": {
+    "message": "시스템 언어"
+  },
+  "settings.language.system_named": {
+    "message": "시스템 언어: {language}"
+  },
+  "settings.language.title": {
+    "message": "언어"
+  },
+  "settings.menus.automatic": {
+    "message": "자동: GNOME에서는 ☰ 버튼, 그 외에는 메뉴 막대"
+  },
+  "settings.menus.bar": {
+    "message": "메뉴 막대"
+  },
+  "settings.menus.button": {
+    "message": "제목 표시줄의 ☰ 버튼"
+  },
+  "settings.menus.title": {
+    "message": "메뉴"
+  },
+  "settings.ok": {
+    "message": "확인"
+  },
+  "settings.page.addons": {
+    "message": "추가 기능"
+  },
+  "settings.page.date": {
+    "message": "날짜"
+  },
+  "settings.page.display": {
+    "message": "표시"
+  },
+  "settings.page.edit_view": {
+    "message": "편집/보기"
+  },
+  "settings.page.font": {
+    "message": "글꼴"
+  },
+  "settings.page.language": {
+    "message": "언어"
+  },
+  "settings.page.layout": {
+    "message": "레이아웃"
+  },
+  "settings.page.operations": {
+    "message": "작업"
+  },
+  "settings.page.passwords": {
+    "message": "암호"
+  },
+  "settings.page.terminal": {
+    "message": "터미널"
+  },
+  "settings.page.toolbar": {
+    "message": "도구 모음"
+  },
+  "settings.passwords.change_master": {
+    "message": "마스터 암호 변경…"
+  },
+  "settings.passwords.locked": {
+    "message": "이 컴퓨터에서는 잠겨 있습니다. 마스터 암호로 열 수 있습니다."
+  },
+  "settings.passwords.master_set": {
+    "message": "마스터 암호가 설정되어 있습니다. 설정 폴더를 복사하면 다른 컴퓨터에서도 마스터 암호를 입력해 열 수 있습니다."
+  },
+  "settings.passwords.no_master": {
+    "message": "마스터 암호가 설정되어 있지 않습니다. 설정 폴더를 복사해도 다른 컴퓨터에서는 열 수 없으므로 그곳에서 다시 입력해야 합니다."
+  },
+  "settings.passwords.not_removed": {
+    "message": "마스터 암호를 제거하지 못했습니다: {err}"
+  },
+  "settings.passwords.remove_master": {
+    "message": "마스터 암호 제거"
+  },
+  "settings.passwords.saved": {
+    "message": "{count, plural, other {암호 #개가 저장되어 있습니다}}(서버, 공유, 암호화된 드라이브). 설정 폴더에 암호화되어 있으며, 이를 여는 키는 이 컴퓨터의 키링에 있습니다."
+  },
+  "settings.passwords.set_master": {
+    "message": "마스터 암호 설정…"
+  },
+  "settings.passwords.title": {
+    "message": "저장된 암호"
+  },
+  "settings.passwords.unlock": {
+    "message": "잠금 해제…"
+  },
+  "settings.queue.clear_after": {
+    "message": "완료된 작업 자동 지우기:"
+  },
+  "settings.queue.clear_after_help": {
+    "message": "0: 끝나는 즉시 지웁니다. 실패하거나 취소된 작업은 직접 지울 때까지 남습니다."
+  },
+  "settings.queue.clear_after_unit": {
+    "message": "분 후"
+  },
+  "settings.queue.download_limit": {
+    "message": "다운로드 속도 제한"
+  },
+  "settings.queue.download_limit_help": {
+    "message": "링크에서 다운로드, FTP 및 SFTP 서버에서 복사에 적용되며 실행 중인 작업에도 적용됩니다. 0: 제한 없음."
+  },
+  "settings.queue.download_limit_unit": {
+    "message": "KB/s"
+  },
+  "settings.queue.title": {
+    "message": "작업 대기열"
+  },
+  "settings.shell.default": {
+    "message": "기본값: {shell}"
+  },
+  "settings.shell.note": {
+    "message": "새 터미널 탭에서 실행됩니다."
+  },
+  "settings.shell.title": {
+    "message": "셸"
+  },
+  "settings.sort_folders.by_name": {
+    "message": "항상 이름순"
+  },
+  "settings.sort_folders.like_files": {
+    "message": "파일과 같게(시간순 포함)"
+  },
+  "settings.sort_folders.title": {
+    "message": "폴더 정렬"
+  },
+  "settings.tabs.header_always": {
+    "message": "탭이 하나뿐일 때도 탭 머리글 표시"
+  },
+  "settings.tabs.title": {
+    "message": "폴더 탭"
+  },
+  "settings.time.as_system": {
+    "message": "시스템 설정"
+  },
+  "settings.time.h12": {
+    "message": "12시간(오후 2:05)"
+  },
+  "settings.time.h24": {
+    "message": "24시간(14:05)"
+  },
+  "settings.time.title": {
+    "message": "시간"
+  },
+  "settings.title": {
+    "message": "설정"
+  },
+  "settings.toolbar.add": {
+    "message": "버튼 추가…"
+  },
+  "settings.toolbar.move_down": {
+    "message": "아래로 이동"
+  },
+  "settings.toolbar.move_up": {
+    "message": "위로 이동"
+  },
+  "settings.toolbar.place": {
+    "message": "메뉴 막대 아래에 표시됩니다. GNOME 앱처럼 메뉴가 ☰ 버튼 안에 있으면 제목 표시줄에 표시됩니다. 버튼이 없으면 표시되지 않습니다."
+  },
+  "settings.toolbar.remove": {
+    "message": "제거"
+  },
+  "settings.toolbar.replace": {
+    "message": "바꾸기…"
+  },
+  "settings.toolbar.restore_default": {
+    "message": "기본값 복원"
+  },
+  "settings.toolbar.title": {
+    "message": "도구 모음 버튼"
+  },
+  "settings.viewer.font.ansi": {
+    "message": "ANSI(Windows)"
+  },
+  "settings.viewer.font.ascii": {
+    "message": "ASCII(DOS)"
+  },
+  "settings.viewer.font.auto": {
+    "message": "자동 감지"
+  },
+  "settings.viewer.font.label": {
+    "message": "시작 시 글꼴:"
+  },
+  "settings.viewer.font.variable": {
+    "message": "가변폭"
+  },
+  "settings.viewer.minimap": {
+    "message": "미니맵"
+  },
+  "settings.viewer.show": {
+    "message": "표시:"
+  },
+  "settings.viewer.start.auto": {
+    "message": "자동 감지"
+  },
+  "settings.viewer.start.binary": {
+    "message": "바이너리"
+  },
+  "settings.viewer.start.hex": {
+    "message": "16진수"
+  },
+  "settings.viewer.start.label": {
+    "message": "시작 시 표시 방식:"
+  },
+  "settings.viewer.start.text": {
+    "message": "텍스트"
+  },
+  "settings.viewer.title": {
+    "message": "F3 뷰어"
+  },
+  "settings.viewer.width.binary": {
+    "message": "바이너리"
+  },
+  "settings.viewer.width.label": {
+    "message": "표시 너비(문자 수):"
+  },
+  "settings.viewer.width.text": {
+    "message": "텍스트"
+  },
+  "settings.viewer.wrap": {
+    "message": "자동 줄 바꿈"
+  },
+  "shells.command_prompt": {
+    "message": "명령 프롬프트"
+  },
+  "sidebar.device.no_files": {
+    "message": "파일 공유 안 함"
+  },
+  "sidebar.device.not_answering": {
+    "message": "{name}이(가) 응답하지 않습니다. 장치의 잠금을 해제하고 KDE Connect를 연 다음 폴더를 다시 읽으세요(F2)."
+  },
+  "sidebar.device.not_answering_error": {
+    "message": "{name}이(가) 응답하지 않습니다({err}). 장치의 잠금을 해제하고 KDE Connect를 여세요."
+  },
+  "sidebar.device.not_connected": {
+    "message": "연결 안 됨"
+  },
+  "sidebar.device.opening": {
+    "message": "{name} 여는 중..."
+  },
+  "sidebar.device.reconnecting": {
+    "message": "{name}이(가) 응답하지 않음: 다시 연결 중..."
+  },
+  "sidebar.device.unmount_failed": {
+    "message": "{name}: 마운트를 해제하지 못했습니다: {err}"
+  },
+  "sidebar.group.bookmarks": {
+    "message": "책갈피"
+  },
+  "sidebar.group.cloud": {
+    "message": "클라우드"
+  },
+  "sidebar.group.devices": {
+    "message": "장치"
+  },
+  "sidebar.group.drives": {
+    "message": "드라이브"
+  },
+  "sidebar.group.network": {
+    "message": "네트워크"
+  },
+  "sidebar.section.connections": {
+    "message": "연결"
+  },
+  "sidebar.section.folders": {
+    "message": "폴더"
+  },
+  "sidebar.section.operations": {
+    "message": "작업"
+  },
+  "sidebar.section.places": {
+    "message": "위치"
+  },
+  "sidebar.volume.locked": {
+    "message": "잠김"
+  },
+  "sidebar.volume.mounting": {
+    "message": "{name} 마운트 중..."
+  },
+  "sidebar.volume.not_mounted": {
+    "message": "마운트 안 됨"
+  },
+  "sidebar.volume.open": {
+    "message": "열기"
+  },
+  "sidebar.volume.space": {
+    "message": "{total} 중 {free} 사용 가능"
+  },
+  "sidebar.volume.unmount": {
+    "message": "마운트 해제"
+  },
+  "sidebar.volume.unmount_failed": {
+    "message": "마운트를 해제하지 못했습니다: {err}"
+  },
+  "split.bad_size": {
+    "message": "‘{size}’은(는) 올바른 크기가 아닙니다: 100 MB, 1.5 GB, 650m"
+  },
+  "split.choose": {
+    "message": "분할할 파일에 커서를 놓으세요."
+  },
+  "split.combine.choose": {
+    "message": "분할된 조각(name.001)이나 해당 .crc 파일에 커서를 놓으세요."
+  },
+  "split.combine.dialog_title": {
+    "message": "파일 결합"
+  },
+  "split.combine.label": {
+    "message": "조각을 결합할 파일:"
+  },
+  "split.combine.title": {
+    "message": "‘{name}’ 결합"
+  },
+  "split.combined_no_crc": {
+    "message": "{count, plural, other {조각 #개 결합됨, 확인할 CRC 파일 없음}}"
+  },
+  "split.crc_mismatch": {
+    "message": "{target}이(가) {file}과(와) 일치하지 않음: 조각이 없거나 손상됨"
+  },
+  "split.crc_names_no_file": {
+    "message": "CRC 파일에 파일 이름이 없음"
+  },
+  "split.crc_unreadable": {
+    "message": "결합했지만 {file}을(를) 읽을 수 없음: {err}"
+  },
+  "split.dialog_title": {
+    "message": "파일 분할"
+  },
+  "split.label": {
+    "message": "‘{name}’을(를) 분할한 조각을 저장할 폴더:"
+  },
+  "split.part_missing": {
+    "message": "{path}이(가) 없음"
+  },
+  "split.part_size": {
+    "message": "조각 크기:"
+  },
+  "split.title": {
+    "message": "‘{name}’ 분할"
+  },
+  "sync.close": {
+    "message": "닫기"
+  },
+  "sync.column.date": {
+    "message": "날짜"
+  },
+  "sync.column.name": {
+    "message": "이름"
+  },
+  "sync.column.size": {
+    "message": "크기"
+  },
+  "sync.compare": {
+    "message": "비교"
+  },
+  "sync.confirm.copy_left": {
+    "message": "왼쪽으로 {count}개 복사({size})"
+  },
+  "sync.confirm.copy_right": {
+    "message": "오른쪽으로 {count}개 복사({size})"
+  },
+  "sync.confirm.delete_left": {
+    "message": "왼쪽에서 {count}개 삭제"
+  },
+  "sync.confirm.delete_right": {
+    "message": "오른쪽에서 {count}개 삭제"
+  },
+  "sync.confirm.ok": {
+    "message": "동기화"
+  },
+  "sync.confirm.text": {
+    "message": "{actions}. 복사한 파일은 기존 파일을 대체합니다.{trash, select, yes { 이 컴퓨터에서 삭제한 항목은 휴지통으로 이동합니다.} other {}}"
+  },
+  "sync.confirm.title": {
+    "message": "동기화"
+  },
+  "sync.error.changed": {
+    "message": "비교 후 변경됨, 다시 비교하세요"
+  },
+  "sync.error.compare": {
+    "message": "비교하지 못했습니다: {err}"
+  },
+  "sync.error.no_folders": {
+    "message": "폴더 동기화는 두 폴더를 비교합니다. 어느 패널에도 압축 파일이나 검색 결과가 표시되어 있으면 안 됩니다."
+  },
+  "sync.left": {
+    "message": "왼쪽"
+  },
+  "sync.mask.label": {
+    "message": "파일:"
+  },
+  "sync.option.asymmetric": {
+    "message": "비대칭(오른쪽을 왼쪽의 사본으로)"
+  },
+  "sync.option.by_content": {
+    "message": "내용 기준"
+  },
+  "sync.option.ignore_date": {
+    "message": "날짜 무시"
+  },
+  "sync.option.subfolders": {
+    "message": "하위 폴더"
+  },
+  "sync.result.done": {
+    "message": "{count, plural, other {#개 동기화됨}}"
+  },
+  "sync.result.failed": {
+    "message": "{count, plural, other {#개 동기화 안 됨}}; {first}"
+  },
+  "sync.right": {
+    "message": "오른쪽"
+  },
+  "sync.show.equal": {
+    "message": "= 같음"
+  },
+  "sync.show.label": {
+    "message": "표시:"
+  },
+  "sync.show.other": {
+    "message": "≠ 그대로 둠"
+  },
+  "sync.show.to_left": {
+    "message": "← 왼쪽으로"
+  },
+  "sync.show.to_right": {
+    "message": "→ 오른쪽으로"
+  },
+  "sync.status.both_empty": {
+    "message": "양쪽 모두 비어 있습니다."
+  },
+  "sync.status.comparing": {
+    "message": "비교 중: {folder}"
+  },
+  "sync.status.counts": {
+    "message": "오른쪽으로 복사 {right}, 왼쪽으로 복사 {left}, 삭제 {delete}, 같음 {equal}, 그대로 둠 {alone}"
+  },
+  "sync.status.stopped": {
+    "message": "중지됨."
+  },
+  "sync.stop": {
+    "message": "중지"
+  },
+  "sync.synchronize": {
+    "message": "동기화..."
+  },
+  "sync.task.title": {
+    "message": "{left} ↔ {right} 동기화"
+  },
+  "sync.title": {
+    "message": "폴더 동기화"
+  },
+  "tab_menu.close_all_tabs": {
+    "message": "모든 탭 닫기"
+  },
+  "tab_menu.close_duplicate_tabs": {
+    "message": "중복 탭 닫기"
+  },
+  "tab_menu.close_tab": {
+    "message": "이 탭 닫기"
+  },
+  "tab_menu.copy_tab_to_other_panel": {
+    "message": "반대쪽 패널로 탭 복사"
+  },
+  "tab_menu.duplicate_tab": {
+    "message": "이 탭 복제"
+  },
+  "tab_menu.list_tabs": {
+    "message": "모든 탭 목록 표시"
+  },
+  "tab_menu.lock_tab": {
+    "message": "이 탭 잠그기"
+  },
+  "tab_menu.none": {
+    "message": "(없음)"
+  },
+  "tab_menu.rename_tab": {
+    "message": "탭 이름 변경..."
+  },
+  "tabs.error.reopen": {
+    "message": "탭을 다시 열지 못했습니다: {err}"
+  },
+  "tabs.history.empty": {
+    "message": "아직 이 탭의 폴더 기록이 없습니다."
+  },
+  "tabs.new": {
+    "message": "새 탭"
+  },
+  "tabs.rename.label": {
+    "message": "새 이름:"
+  },
+  "tabs.rename.title": {
+    "message": "탭 이름 변경"
+  },
+  "tabs.search_results": {
+    "message": "검색 결과"
+  },
+  "terminal.busy": {
+    "message": "터미널에서 프로그램이 실행 중입니다. 프로그램이 끝난 후 명령을 실행하세요."
+  },
+  "terminal.close.idle": {
+    "message": "이 터미널 탭을 닫으시겠습니까? 셸이 종료됩니다."
+  },
+  "terminal.close.ok": {
+    "message": "닫기"
+  },
+  "terminal.close.running": {
+    "message": "이 터미널 탭을 닫으시겠습니까? 실행 중인 프로그램이 중지됩니다."
+  },
+  "terminal.close.title": {
+    "message": "탭 닫기"
+  },
+  "terminal.error.start_shell": {
+    "message": "셸을 시작하지 못했습니다: {err}"
+  },
+  "terminal.jump_to_bottom": {
+    "message": "맨 아래로 이동(Ctrl+End) ↓"
+  },
+  "terminal.menu.copy": {
+    "message": "복사"
+  },
+  "terminal.menu.paste": {
+    "message": "붙여넣기"
+  },
+  "toolbar.customize": {
+    "message": "도구 모음 사용자 지정…"
+  },
+  "tools.clear_key": {
+    "message": "지우기"
+  },
+  "tools.close": {
+    "message": "닫기"
+  },
+  "tools.delete": {
+    "message": "삭제"
+  },
+  "tools.empty": {
+    "message": "아직 도구가 없습니다. ‘새로 만들기...’로 추가하세요."
+  },
+  "tools.field.command": {
+    "message": "명령"
+  },
+  "tools.field.key": {
+    "message": "키"
+  },
+  "tools.field.name": {
+    "message": "이름"
+  },
+  "tools.intro": {
+    "message": "직접 만든 명령줄이 도구 메뉴에 표시됩니다. 메뉴에서 클릭하거나 지정한 키를 누르세요."
+  },
+  "tools.key.none": {
+    "message": "없음"
+  },
+  "tools.key.waiting": {
+    "message": "키를 누르세요... (Esc: 없음)"
+  },
+  "tools.move_down": {
+    "message": "아래로 이동"
+  },
+  "tools.move_up": {
+    "message": "위로 이동"
+  },
+  "tools.name.placeholder": {
+    "message": "반대쪽과 비교"
+  },
+  "tools.new": {
+    "message": "새로 만들기..."
+  },
+  "tools.new_name": {
+    "message": "도구 {number}"
+  },
+  "tools.no_command": {
+    "message": "{tool}에 아직 명령이 없습니다: 도구 > 도구 관리."
+  },
+  "tools.not_local": {
+    "message": "도구는 이 컴퓨터에서 실행되는데, 패널에 서버나 압축 파일이 표시되어 있습니다."
+  },
+  "tools.note.key_of_command": {
+    "message": "{key} 키는 {command}에도 지정되어 있습니다. 도구가 우선합니다."
+  },
+  "tools.note.key_of_other_tool": {
+    "message": "{key} 키는 {tool}에도 지정되어 있습니다. 목록에서 아래쪽 도구가 우선합니다."
+  },
+  "tools.placeholders": {
+    "message": "%P 이 패널의 폴더, %T 반대쪽 패널의 폴더(둘 다 구분자로 끝나므로 \"%P%N\"은 경로), %N 커서 아래의 파일, %O 확장자를 뺀 이름, %E 확장자, %S 선택한 파일(없으면 커서 위치의 파일), 각각 따옴표로 묶임. %%는 %. 나머지는 따옴표로 묶으세요: \"%P%N\"."
+  },
+  "tools.run_in_terminal": {
+    "message": "터미널에서 실행하여 출력 보기"
+  },
+  "tools.set_key": {
+    "message": "키 지정..."
+  },
+  "tools.title": {
+    "message": "도구"
+  },
+  "transfer.answer.cancel": {
+    "message": "취소"
+  },
+  "transfer.answer.elevate": {
+    "message": "관리자 권한으로"
+  },
+  "transfer.answer.overwrite": {
+    "message": "덮어쓰기"
+  },
+  "transfer.answer.overwrite_all": {
+    "message": "모두 덮어쓰기"
+  },
+  "transfer.answer.rename": {
+    "message": "이름 변경"
+  },
+  "transfer.answer.retry": {
+    "message": "다시 시도"
+  },
+  "transfer.answer.skip": {
+    "message": "건너뛰기"
+  },
+  "transfer.answer.skip_all": {
+    "message": "모두 건너뛰기"
+  },
+  "transfer.archive.local_only": {
+    "message": "이 컴퓨터의 파일만 압축 파일에 넣을 수 있습니다. 먼저 여기로 복사하세요."
+  },
+  "transfer.cancel": {
+    "message": "취소"
+  },
+  "transfer.error.elevate_hint": {
+    "message": "관리자 권한으로: 나머지 작업이 끝난 후 이 항목과 거부된 다른 항목을 처리하며, 암호는 한 번만 묻습니다."
+  },
+  "transfer.error.title": {
+    "message": "오류"
+  },
+  "transfer.exists.describe": {
+    "message": "{count, plural, other {{size}바이트, {time}}}"
+  },
+  "transfer.exists.text": {
+    "message": "기존 파일: {existing}\n새 파일: {new}"
+  },
+  "transfer.exists.title": {
+    "message": "파일이 이미 있음"
+  },
+  "transfer.extract_failed": {
+    "message": "꺼내지 못했습니다: {err}"
+  },
+  "transfer.into_archive.question_many": {
+    "message": "{count, plural, other {항목 #개}}를 {into}에 {kind, select, copy {복사} other {이동}}하시겠습니까? 그곳에 같은 이름이 있으면 대체됩니다."
+  },
+  "transfer.into_archive.question_one": {
+    "message": "‘{name}’을(를) {into}에 {kind, select, copy {복사} other {이동}}하시겠습니까? 그곳에 같은 이름이 있으면 대체됩니다."
+  },
+  "transfer.into_archive.title_many": {
+    "message": "{count, plural, other {항목 #개}}를 {archive}에 {kind, select, copy {복사} other {이동}}"
+  },
+  "transfer.into_archive.title_one": {
+    "message": "‘{name}’을(를) {archive}에 {kind, select, copy {복사} other {이동}}"
+  },
+  "transfer.label.many": {
+    "message": "{count, plural, other {항목 #개}}를 다음 위치로 {kind, select, copy {복사} other {이동}}:"
+  },
+  "transfer.label.many_server": {
+    "message": "{count, plural, other {항목 #개}}를 {server}의 다음 위치로 {kind, select, copy {복사} other {이동}}:"
+  },
+  "transfer.label.one": {
+    "message": "‘{name}’을(를) 다음 위치로 {kind, select, copy {복사} other {이동}}:"
+  },
+  "transfer.label.one_server": {
+    "message": "‘{name}’을(를) {server}의 다음 위치로 {kind, select, copy {복사} other {이동}}:"
+  },
+  "transfer.ok": {
+    "message": "확인"
+  },
+  "transfer.overwrite.all": {
+    "message": "모두 덮어쓰기"
+  },
+  "transfer.overwrite.ask": {
+    "message": "묻기"
+  },
+  "transfer.overwrite.label": {
+    "message": "대상에 같은 이름의 파일이 있을 때:"
+  },
+  "transfer.overwrite.older": {
+    "message": "오래된 파일만 덮어쓰기"
+  },
+  "transfer.overwrite.rename": {
+    "message": "복사본 이름 변경"
+  },
+  "transfer.overwrite.skip": {
+    "message": "모두 건너뛰기"
+  },
+  "transfer.remove_moved": {
+    "message": "{name}에서 이동한 항목 제거"
+  },
+  "transfer.speed": {
+    "message": "{size}/s"
+  },
+  "transfer.strip.counting": {
+    "message": "계산 중: {count, plural, other {파일 #개}}"
+  },
+  "transfer.strip.progress": {
+    "message": "{files} / {count, plural, other {파일 #개}}, {percent}%"
+  },
+  "transfer.strip.queue": {
+    "message": "대기열..."
+  },
+  "transfer.strip.queue_waiting": {
+    "message": "대기열({count, plural, other {#개 대기 중}})..."
+  },
+  "transfer.title.copy": {
+    "message": "복사"
+  },
+  "transfer.title.move": {
+    "message": "이동"
+  },
+  "viewer.as_text_hint": {
+    "message": "{err}. 1을 누르면 파일을 텍스트로 표시합니다."
+  },
+  "viewer.book.cannot_read": {
+    "message": "이 책을 읽을 수 없습니다: {err}. 1을 누르면 파일을 텍스트로 표시합니다."
+  },
+  "viewer.book.continuing": {
+    "message": "{percent}부터 이어서 읽기"
+  },
+  "viewer.book.error.compression": {
+    "message": "아직 읽을 수 없는 방식으로 압축됨({compression})"
+  },
+  "viewer.book.error.damaged": {
+    "message": "손상된 책"
+  },
+  "viewer.book.error.damaged_zip": {
+    "message": "손상된 zip"
+  },
+  "viewer.book.error.drm": {
+    "message": "DRM으로 보호됨: Kindle에서만 읽을 수 있음"
+  },
+  "viewer.book.error.huffman": {
+    "message": "Amazon 전용 책 방식(HUFF/CDIC)으로 압축되어 아직 읽을 수 없음"
+  },
+  "viewer.book.error.missing_part": {
+    "message": "책에 {name}이(가) 없음"
+  },
+  "viewer.book.error.no_package": {
+    "message": "책에 패키지 파일이 없음"
+  },
+  "viewer.book.error.no_text": {
+    "message": "책에 텍스트가 없음"
+  },
+  "viewer.book.error.not_zip": {
+    "message": "zip이 아님: 손상되었거나 DRM으로 보호된 책일 수 있음"
+  },
+  "viewer.book.error.zip_method": {
+    "message": "{name}: 여기서 읽을 수 없는 zip 압축 방식({method})"
+  },
+  "viewer.cannot_show": {
+    "message": "표시할 수 없습니다: {err}"
+  },
+  "viewer.convert.failed": {
+    "message": "{tool}에서 변환하지 못했습니다({status})"
+  },
+  "viewer.converting": {
+    "message": "{tool}(으)로 변환 중…"
+  },
+  "viewer.copy.too_large": {
+    "message": "{megabytes}MB를 넘는 선택 영역은 복사되지 않습니다."
+  },
+  "viewer.encoding.cp1250": {
+    "message": "동유럽어(1250)"
+  },
+  "viewer.encoding.cp1251": {
+    "message": "키릴 자모 Windows(1251)"
+  },
+  "viewer.encoding.cp1252": {
+    "message": "서유럽어 Latin1(1252)"
+  },
+  "viewer.encoding.cp1253": {
+    "message": "그리스어(1253)"
+  },
+  "viewer.encoding.cp1254": {
+    "message": "터키어(1254)"
+  },
+  "viewer.encoding.cp1255": {
+    "message": "히브리어(1255)"
+  },
+  "viewer.encoding.cp1256": {
+    "message": "아랍어(1256)"
+  },
+  "viewer.encoding.cp1257": {
+    "message": "발트어(1257)"
+  },
+  "viewer.encoding.cp1258": {
+    "message": "베트남어(1258)"
+  },
+  "viewer.encoding.cp20866": {
+    "message": "키릴 자모 KOI8-R(20866)"
+  },
+  "viewer.encoding.cp437": {
+    "message": "DOS-USA(437)"
+  },
+  "viewer.encoding.cp850": {
+    "message": "DOS-LATIN1(850)"
+  },
+  "viewer.encoding.cp852": {
+    "message": "DOS 중부 유럽어(852)"
+  },
+  "viewer.encoding.cp866": {
+    "message": "DOS 키릴 자모(866)"
+  },
+  "viewer.encoding.cp874": {
+    "message": "태국어(874)"
+  },
+  "viewer.encoding.cp932": {
+    "message": "일본어(932)"
+  },
+  "viewer.encoding.cp936": {
+    "message": "중국어 간체(936)"
+  },
+  "viewer.encoding.cp949": {
+    "message": "한국어(949)"
+  },
+  "viewer.encoding.cp950": {
+    "message": "중국어 번체(950)"
+  },
+  "viewer.find.not_found": {
+    "message": "찾을 수 없음: {text}"
+  },
+  "viewer.find.not_hex": {
+    "message": "16진수 문자열이 아님: {text}"
+  },
+  "viewer.find.nothing": {
+    "message": "찾을 내용이 없습니다."
+  },
+  "viewer.find.save_failed": {
+    "message": "검색 기록을 저장하지 못했습니다: {err}"
+  },
+  "viewer.loading": {
+    "message": "불러오는 중…"
+  },
+  "viewer.markdown.too_large": {
+    "message": "{megabytes}MB 초과: 1을 누르면 텍스트로 표시합니다."
+  },
+  "viewer.menu.binary": {
+    "message": "바이너리(고정 줄 길이)"
+  },
+  "viewer.menu.book": {
+    "message": "책(EPUB, FB2)"
+  },
+  "viewer.menu.close": {
+    "message": "닫기"
+  },
+  "viewer.menu.configure": {
+    "message": "구성..."
+  },
+  "viewer.menu.copy_hex": {
+    "message": "16진수 문자로 복사"
+  },
+  "viewer.menu.copy_text": {
+    "message": "텍스트로 복사"
+  },
+  "viewer.menu.edit": {
+    "message": "편집"
+  },
+  "viewer.menu.encoding": {
+    "message": "인코딩"
+  },
+  "viewer.menu.file": {
+    "message": "파일"
+  },
+  "viewer.menu.find": {
+    "message": "찾기..."
+  },
+  "viewer.menu.find_next": {
+    "message": "다음 찾기"
+  },
+  "viewer.menu.fit_image": {
+    "message": "이미지를 창에 맞추기"
+  },
+  "viewer.menu.font_ansi": {
+    "message": "ANSI(Windows 문자 집합)"
+  },
+  "viewer.menu.font_ascii": {
+    "message": "ASCII(DOS 문자 집합)"
+  },
+  "viewer.menu.font_page": {
+    "message": "글꼴 설정에 따름"
+  },
+  "viewer.menu.font_variable": {
+    "message": "가변 문자 너비"
+  },
+  "viewer.menu.hex": {
+    "message": "16진수"
+  },
+  "viewer.menu.html": {
+    "message": "HTML 텍스트(태그 제거)"
+  },
+  "viewer.menu.minimap": {
+    "message": "미니맵"
+  },
+  "viewer.menu.next_file": {
+    "message": "다음 파일"
+  },
+  "viewer.menu.only_larger": {
+    "message": "큰 이미지만 맞추기"
+  },
+  "viewer.menu.open": {
+    "message": "열기..."
+  },
+  "viewer.menu.options": {
+    "message": "옵션"
+  },
+  "viewer.menu.picture": {
+    "message": "이미지/멀티미디어"
+  },
+  "viewer.menu.previous_file": {
+    "message": "이전 파일"
+  },
+  "viewer.menu.reload": {
+    "message": "다시 불러오기"
+  },
+  "viewer.menu.save_as": {
+    "message": "다른 이름으로 저장..."
+  },
+  "viewer.menu.search_google": {
+    "message": "선택한 텍스트를 Google에서 검색"
+  },
+  "viewer.menu.select_all": {
+    "message": "모두 선택"
+  },
+  "viewer.menu.syntax_colors": {
+    "message": "구문 강조"
+  },
+  "viewer.menu.text_only": {
+    "message": "텍스트만"
+  },
+  "viewer.menu.unicode": {
+    "message": "유니코드(UTF-16)"
+  },
+  "viewer.menu.wrap": {
+    "message": "자동 줄 바꿈({columns, plural, other {#열}})"
+  },
+  "viewer.mode.binary": {
+    "message": "바이너리 · {page}"
+  },
+  "viewer.mode.book": {
+    "message": "책"
+  },
+  "viewer.mode.hex": {
+    "message": "16진수 · {page}"
+  },
+  "viewer.mode.html": {
+    "message": "HTML 텍스트"
+  },
+  "viewer.mode.image": {
+    "message": "이미지"
+  },
+  "viewer.mode.multimedia": {
+    "message": "멀티미디어"
+  },
+  "viewer.mode.pdf_by": {
+    "message": "PDF({tool} 변환)"
+  },
+  "viewer.mode.text": {
+    "message": "텍스트 · {page}"
+  },
+  "viewer.origin.not_editable": {
+    "message": "7z, zip, jar, tar 압축 파일 안의 파일만 편집할 수 있음"
+  },
+  "viewer.origin.updated": {
+    "message": "{archive} 업데이트됨"
+  },
+  "viewer.origin.updated_on": {
+    "message": "{server}의 {archive} 업데이트됨"
+  },
+  "viewer.origin.uploaded": {
+    "message": "{path} 업로드됨"
+  },
+  "viewer.pdf.cannot_show": {
+    "message": "이 PDF를 표시할 수 없습니다: {err}"
+  },
+  "viewer.pdf.loading": {
+    "message": "불러오는 중..."
+  },
+  "viewer.pdf.page": {
+    "message": "페이지 {page} / {pages}"
+  },
+  "viewer.picture.cannot_show": {
+    "message": "이 이미지를 표시할 수 없습니다. 1을 누르면 텍스트로 표시합니다."
+  },
+  "viewer.save_as.failed": {
+    "message": "{path}을(를) 저장하지 못했습니다: {err}"
+  },
+  "viewer.status.rows": {
+    "message": "{count, plural, other {{first}–{last} / {grouped}행}}"
+  },
+  "viewer.status.rows_so_far": {
+    "message": "{count, plural, other {지금까지 {grouped}행, {percent} 읽음}}"
+  },
+  "viewer.status.searching": {
+    "message": "검색 중…"
+  },
+  "viewer.status.size": {
+    "message": "{count, plural, other {{grouped}바이트}}"
+  },
+  "viewer.window.title": {
+    "message": "{path} — 뷰어"
+  },
+  "viewer.zoom.fit": {
+    "message": "창에 맞추기로 돌아가기(Ctrl+0)"
+  },
+  "viewer.zoom.in": {
+    "message": "확대(Ctrl++)"
+  },
+  "viewer.zoom.out": {
+    "message": "축소(Ctrl+-)"
+  },
+  "viewer.zoom.reset": {
+    "message": "100%로 돌아가기(Ctrl+0)"
+  },
+  "workspaces.button.close": {
+    "message": "닫기"
+  },
+  "workspaces.button.delete": {
+    "message": "삭제..."
+  },
+  "workspaces.button.duplicate": {
+    "message": "복제..."
+  },
+  "workspaces.button.new": {
+    "message": "새로 만들기..."
+  },
+  "workspaces.button.rename": {
+    "message": "이름 변경..."
+  },
+  "workspaces.delete.button": {
+    "message": "삭제"
+  },
+  "workspaces.delete.closed": {
+    "message": "‘{name}’ 작업 공간을 삭제하시겠습니까? 탭 구성은 사라집니다."
+  },
+  "workspaces.delete.closed_shells": {
+    "message": "‘{name}’ 작업 공간을 삭제하시겠습니까? 탭 구성은 사라지고 터미널 탭의 셸은 종료됩니다."
+  },
+  "workspaces.delete.open": {
+    "message": "‘{name}’ 작업 공간을 삭제하시겠습니까? 탭이 닫히고 대신 ‘{other}’ 작업 공간이 열립니다."
+  },
+  "workspaces.delete.open_shells": {
+    "message": "‘{name}’ 작업 공간을 삭제하시겠습니까? 탭이 닫히고 터미널 탭의 셸이 종료되며, 대신 ‘{other}’ 작업 공간이 열립니다."
+  },
+  "workspaces.delete.title": {
+    "message": "작업 공간 삭제"
+  },
+  "workspaces.duplicate.name": {
+    "message": "{name} 사본"
+  },
+  "workspaces.duplicate.title": {
+    "message": "작업 공간 복제"
+  },
+  "workspaces.error.name_taken": {
+    "message": "같은 이름의 작업 공간이 이미 있습니다."
+  },
+  "workspaces.error.no_name": {
+    "message": "작업 공간 이름을 입력해야 합니다."
+  },
+  "workspaces.error.save": {
+    "message": "작업 공간을 저장하지 못했습니다: {err}"
+  },
+  "workspaces.hint": {
+    "message": "표시 > 작업 공간에서 열 수 있습니다. 열려 있는 작업 공간의 변경 내용은 그 안에 저장됩니다."
+  },
+  "workspaces.name.label": {
+    "message": "이름:"
+  },
+  "workspaces.new.name": {
+    "message": "작업 공간 {number}"
+  },
+  "workspaces.new.title": {
+    "message": "새 작업 공간"
+  },
+  "workspaces.open": {
+    "message": "열림"
+  },
+  "workspaces.rename.title": {
+    "message": "작업 공간 이름 변경"
+  },
+  "workspaces.summary.panels": {
+    "message": "왼쪽 {left, plural, other {탭 #개}}, 오른쪽 {right, plural, other {탭 #개}}"
+  },
+  "workspaces.summary.terminal": {
+    "message": "왼쪽 {left, plural, other {탭 #개}}, 오른쪽 {right, plural, other {탭 #개}}, 터미널 {terminal, plural, other {탭 #개}}"
+  },
+  "workspaces.summary.terminal_hidden": {
+    "message": "왼쪽 {left, plural, other {탭 #개}}, 오른쪽 {right, plural, other {탭 #개}}, 터미널 {terminal, plural, other {탭 #개}}(숨김)"
+  },
+  "workspaces.title": {
+    "message": "작업 공간"
+  }
+}

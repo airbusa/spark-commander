@@ -1,0 +1,4823 @@
+{
+  "about.addons": {
+    "message": "Tillegg, lastet ned når du velger det"
+  },
+  "about.libraries": {
+    "message": "Bygget på"
+  },
+  "about.licence": {
+    "message": "Lisens:"
+  },
+  "about.made_with": {
+    "message": "Laget med arbeidet fra disse prosjektene"
+  },
+  "about.part.alacritty_terminal": {
+    "message": "Skjermen og skallet i den innebygde terminalen"
+  },
+  "about.part.encoding_rs": {
+    "message": "Kodesider"
+  },
+  "about.part.gpui": {
+    "message": "Vinduet, tegningen og inndataene (fra Zed)"
+  },
+  "about.part.gpui_kit": {
+    "message": "Kontroller: lister, menyer, felt, redigeringsprogrammet"
+  },
+  "about.part.html5ever": {
+    "message": "HTML og e-bøker i fremviseren"
+  },
+  "about.part.image": {
+    "message": "Bilder"
+  },
+  "about.part.keyring": {
+    "message": "Passord i systemets nøkkelring"
+  },
+  "about.part.lucide": {
+    "message": "Ikoner"
+  },
+  "about.part.material_icons": {
+    "message": "Fil- og mappeikoner"
+  },
+  "about.part.pdfium_render": {
+    "message": "PDFium fra Rust"
+  },
+  "about.part.ratatui": {
+    "message": "scmd, terminalversjonen"
+  },
+  "about.part.russh": {
+    "message": "SSH og SFTP"
+  },
+  "about.part.rustls": {
+    "message": "TLS"
+  },
+  "about.part.serde": {
+    "message": "Innstillingsfiler"
+  },
+  "about.part.similar": {
+    "message": "Sammenlign etter innhold"
+  },
+  "about.part.suppaftp": {
+    "message": "FTP og FTPS"
+  },
+  "about.part.tokio": {
+    "message": "Nettverksarbeid i bakgrunnen"
+  },
+  "about.part.trash": {
+    "message": "Papirkurven"
+  },
+  "about.part.tree_sitter": {
+    "message": "Syntaksfarger i fremviseren og redigeringsprogrammet"
+  },
+  "about.part.zbus": {
+    "message": "D-Bus: skrivebordet, enheter, KDE Connect"
+  },
+  "about.shipped": {
+    "message": "Følger med"
+  },
+  "about.tagline": {
+    "message": "En filbehandler med to paneler, fri programvare."
+  },
+  "about.title": {
+    "message": "Om Spark Commander"
+  },
+  "about.version": {
+    "message": "Versjon {version}"
+  },
+  "activity.clear": {
+    "message": "Tøm"
+  },
+  "activity.clear_failed": {
+    "message": "Kunne ikke tømme loggen: {err}"
+  },
+  "activity.empty": {
+    "message": "Ingenting er gjort ennå."
+  },
+  "activity.title": {
+    "message": "Aktivitetslogg"
+  },
+  "addons.error.damaged": {
+    "message": "nedlastingen er skadet: kontrollsummen stemmer ikke"
+  },
+  "addons.error.list": {
+    "message": "listen over tillegg: {err}"
+  },
+  "addons.error.missing_file": {
+    "message": "nedlastingen mangler {file}"
+  },
+  "addons.error.no_folder": {
+    "message": "ingen datamappe"
+  },
+  "addons.error.unpacking": {
+    "message": "utpakking: {err}"
+  },
+  "addons.installed": {
+    "message": "{addon} {version} er installert."
+  },
+  "addons.megabytes": {
+    "message": "{size} MB"
+  },
+  "addons.offer.never": {
+    "message": "Ikke vis igjen"
+  },
+  "addons.offer.no": {
+    "message": "Nei"
+  },
+  "addons.offer.text": {
+    "message": "{name} trenger et tillegg som ikke er installert: {addon}. Vil du laste det ned under Innstillinger > Tillegg?"
+  },
+  "addons.offer.title": {
+    "message": "Tillegg"
+  },
+  "addons.offer.yes": {
+    "message": "Ja"
+  },
+  "addons.purpose.cloud": {
+    "message": "Nettlagring: S3, Google Drive, OneDrive, Dropbox og andre tjenester."
+  },
+  "addons.purpose.media": {
+    "message": "Video og lyd, og HEIC- og AVIF-bilder: fremviseren og hurtigvisningen viser dem."
+  },
+  "addons.purpose.office": {
+    "message": "Office-dokumenter: fremviseren viser Word-, Excel- og PowerPoint-filer som PDF."
+  },
+  "addons.purpose.pdfium": {
+    "message": "PDF: fremviseren viser PDF-filer, og Office-dokumenter når de er konvertert."
+  },
+  "addons.purpose.seven_zip": {
+    "message": "Arkiver: pakker og pakker ut 7z, zip, rar, tar og andre."
+  },
+  "addons.update": {
+    "message": "Oppdater"
+  },
+  "addons.updates": {
+    "message": "Oppdateringer for tillegg: {names}"
+  },
+  "appearance.dark": {
+    "message": "Mørkt"
+  },
+  "appearance.light": {
+    "message": "Lyst"
+  },
+  "appearance.system": {
+    "message": "Som systemet"
+  },
+  "archive.cannot_read": {
+    "message": "{name}: kan ikke leses"
+  },
+  "archive.not_in_archive": {
+    "message": "{name} finnes ikke i arkivet"
+  },
+  "archive.not_own_folder": {
+    "message": "{folder} er ikke denne brukerens egen mappe"
+  },
+  "archive.seven_zip_failed": {
+    "message": "7-Zip mislyktes ({code})"
+  },
+  "archive.seven_zip_missing": {
+    "message": "7-Zip mangler: {path} (kjør vendor/7zip/fetch.sh eller fetch.bat)"
+  },
+  "archive.temp_not_utf8": {
+    "message": "navnet på den midlertidige mappen er ikke UTF-8"
+  },
+  "associations.add": {
+    "message": "Legg til..."
+  },
+  "associations.cancel": {
+    "message": "Avbryt"
+  },
+  "associations.close": {
+    "message": "Lukk"
+  },
+  "associations.column.edit": {
+    "message": "Rediger (F4)"
+  },
+  "associations.column.files": {
+    "message": "Filer"
+  },
+  "associations.column.open": {
+    "message": "Åpne (Enter)"
+  },
+  "associations.column.view": {
+    "message": "Vis (F3)"
+  },
+  "associations.edit": {
+    "message": "Rediger..."
+  },
+  "associations.edit_dialog.title": {
+    "message": "Knytt til"
+  },
+  "associations.empty": {
+    "message": "Ingen ennå."
+  },
+  "associations.field.edit": {
+    "message": "Rediger med (F4):"
+  },
+  "associations.field.files": {
+    "message": "Filer (*.jpg *.png):"
+  },
+  "associations.field.open": {
+    "message": "Åpne med (Enter):"
+  },
+  "associations.field.view": {
+    "message": "Vis med (F3):"
+  },
+  "associations.intro": {
+    "message": "Enter, F3 og F4 kjører disse programmene for filene som passer til en maske; tomt felt beholder standarden. %1 er filen."
+  },
+  "associations.mask_needed": {
+    "message": "Filmasken må fylles ut: *.txt"
+  },
+  "associations.no_file": {
+    "message": "Sett markøren på en fil av typen som skal knyttes til."
+  },
+  "associations.ok": {
+    "message": "OK"
+  },
+  "associations.remove": {
+    "message": "Fjern"
+  },
+  "associations.save_failed": {
+    "message": "Kunne ikke lagre innstillingene: {err}"
+  },
+  "associations.title": {
+    "message": "Interne tilknytninger"
+  },
+  "attributes.bad_time": {
+    "message": "«{text}» er ikke en dato og et klokkeslett: 2026-11-10 14:04:33"
+  },
+  "attributes.cancel": {
+    "message": "Avbryt"
+  },
+  "attributes.change_time": {
+    "message": "Endre dato/tid:"
+  },
+  "attributes.changed": {
+    "message": "{count, plural, one {# endret} other {# endret}}"
+  },
+  "attributes.changed_failed": {
+    "message": "{count, plural, one {# endret} other {# endret}}, {failed, plural, one {# mislyktes} other {# mislyktes}}"
+  },
+  "attributes.dialog_title_many": {
+    "message": "Endre attributter: {count, plural, one {# element} other {# elementer}}"
+  },
+  "attributes.dialog_title_one": {
+    "message": "Endre attributter: {name}"
+  },
+  "attributes.execute": {
+    "message": "Kjøre"
+  },
+  "attributes.group": {
+    "message": "Gruppe"
+  },
+  "attributes.in_archive": {
+    "message": "Attributter inne i arkiver kan ikke endres."
+  },
+  "attributes.no_bits": {
+    "message": "Disse filene har ingen tillatelsesbiter her; bare datoen kan endres."
+  },
+  "attributes.now": {
+    "message": "Nå"
+  },
+  "attributes.octal": {
+    "message": "Oktalt:"
+  },
+  "attributes.ok": {
+    "message": "OK"
+  },
+  "attributes.others": {
+    "message": "Andre"
+  },
+  "attributes.owner": {
+    "message": "Eier"
+  },
+  "attributes.read": {
+    "message": "Lese"
+  },
+  "attributes.recurse": {
+    "message": "Også alt inne i mappene"
+  },
+  "attributes.title_many": {
+    "message": "Endre attributter for {count, plural, one {# element} other {# elementer}}"
+  },
+  "attributes.title_one": {
+    "message": "Endre attributter for «{name}»"
+  },
+  "attributes.write": {
+    "message": "Skrive"
+  },
+  "bookmarks.add_current": {
+    "message": "Legg til gjeldende mappe"
+  },
+  "bookmarks.add_folders": {
+    "message": "Legg til mapper..."
+  },
+  "bookmarks.added": {
+    "message": "Bokmerke lagt til: {name}"
+  },
+  "bookmarks.already": {
+    "message": "{name} er allerede i Bokmerker."
+  },
+  "bookmarks.chooser.failed": {
+    "message": "Kunne ikke vise mappevelgeren: {err}"
+  },
+  "bookmarks.chooser.prompt": {
+    "message": "Bokmerk"
+  },
+  "bookmarks.close": {
+    "message": "Lukk"
+  },
+  "bookmarks.copy_name": {
+    "message": "Kopier navn"
+  },
+  "bookmarks.copy_path": {
+    "message": "Kopier sti"
+  },
+  "bookmarks.drop_here": {
+    "message": "Slipp mapper her."
+  },
+  "bookmarks.empty": {
+    "message": "Ingen bokmerker: legg til mapper, eller slipp dem her."
+  },
+  "bookmarks.intro": {
+    "message": "Mapper på denne datamaskinen, i samme rekkefølge som i Steder: dra en for å flytte den, eller slipp mapper her for å legge dem til."
+  },
+  "bookmarks.move_down": {
+    "message": "Flytt ned"
+  },
+  "bookmarks.move_up": {
+    "message": "Flytt opp"
+  },
+  "bookmarks.only_local": {
+    "message": "Bare mapper på denne datamaskinen kan bokmerkes."
+  },
+  "bookmarks.remove": {
+    "message": "Fjern"
+  },
+  "bookmarks.remove_from": {
+    "message": "Fjern fra Bokmerker"
+  },
+  "bookmarks.rename": {
+    "message": "Gi nytt navn..."
+  },
+  "bookmarks.rename_label": {
+    "message": "Navn (tomt: mappens navn):"
+  },
+  "bookmarks.rename_title": {
+    "message": "Gi bokmerket nytt navn"
+  },
+  "bookmarks.sort": {
+    "message": "Sorter A–Å"
+  },
+  "bookmarks.title": {
+    "message": "Bokmerker"
+  },
+  "button_bar.copy": {
+    "message": "Kopier"
+  },
+  "button_bar.delete": {
+    "message": "Slett"
+  },
+  "button_bar.edit": {
+    "message": "Rediger"
+  },
+  "button_bar.move": {
+    "message": "Flytt"
+  },
+  "button_bar.new_folder": {
+    "message": "Ny mappe"
+  },
+  "button_bar.quit": {
+    "message": "Avslutt"
+  },
+  "button_bar.view": {
+    "message": "Vis"
+  },
+  "checksum.create.title": {
+    "message": "Opprett {name}"
+  },
+  "checksum.create.title_separate": {
+    "message": "Opprett {method}-kontrollsumfiler"
+  },
+  "checksum.dialog_title": {
+    "message": "Opprett kontrollsumfiler"
+  },
+  "checksum.save_as": {
+    "message": "Lagre kontrollsumfilen som:"
+  },
+  "checksum.separate": {
+    "message": "En kontrollsumfil ved siden av hver fil i stedet"
+  },
+  "checksum.verify.all_ok": {
+    "message": "{count, plural, one {# fil er OK} other {alle # filer er OK}}"
+  },
+  "checksum.verify.choose": {
+    "message": "Velg kontrollsumfiler: .sfv, .md5, .sha1, .sha256 eller .sha512."
+  },
+  "checksum.verify.missing_file": {
+    "message": "mangler: {name}"
+  },
+  "checksum.verify.result": {
+    "message": "{ok, plural, one {# OK} other {# OK}}, {wrong, plural, one {# feil} other {# feil}}, {missing, plural, one {# mangler} other {# mangler}}"
+  },
+  "checksum.verify.title_many": {
+    "message": "Kontroller {count, plural, one {# kontrollsumfil} other {# kontrollsumfiler}}"
+  },
+  "checksum.verify.title_one": {
+    "message": "Kontroller {name}"
+  },
+  "checksum.verify.wrong_file": {
+    "message": "feil: {name}"
+  },
+  "command.about": {
+    "message": "Om Spark Commander"
+  },
+  "command.activity_log": {
+    "message": "Aktivitetslogg..."
+  },
+  "command.all_files": {
+    "message": "Alle filer"
+  },
+  "command.all_folder_sizes": {
+    "message": "Beregn størrelsen på alle mapper"
+  },
+  "command.all_with_extension": {
+    "message": "*.*"
+  },
+  "command.associate_with": {
+    "message": "Knytt til..."
+  },
+  "command.bookmark_folder": {
+    "message": "Bokmerk denne mappen"
+  },
+  "command.bookmarks": {
+    "message": "Bokmerker"
+  },
+  "command.branch_view": {
+    "message": "Grenvisning (med undermapper)"
+  },
+  "command.branch_view_selected": {
+    "message": "Grenvisning av merkede mapper"
+  },
+  "command.brief": {
+    "message": "Kort"
+  },
+  "command.calculate_occupied_space": {
+    "message": "Beregn brukt plass..."
+  },
+  "command.change_attributes": {
+    "message": "Endre attributter..."
+  },
+  "command.close_all_tabs": {
+    "message": "Lukk alle faner"
+  },
+  "command.close_duplicate_tabs": {
+    "message": "Lukk dupliserte faner"
+  },
+  "command.close_tab": {
+    "message": "Lukk fane"
+  },
+  "command.combine_files": {
+    "message": "Slå sammen filer..."
+  },
+  "command.compare_by_content": {
+    "message": "Sammenlign etter innhold..."
+  },
+  "command.compare_directories": {
+    "message": "Merk nyere"
+  },
+  "command.copy": {
+    "message": "Kopier..."
+  },
+  "command.copy_names_to_clipboard": {
+    "message": "Kopier merkede navn til utklippstavlen"
+  },
+  "command.copy_names_with_path_to_clipboard": {
+    "message": "Kopier navn med sti til utklippstavlen"
+  },
+  "command.copy_to_clipboard": {
+    "message": "Kopier filer"
+  },
+  "command.copy_with_all_details": {
+    "message": "Kopier til utklippstavlen med alle detaljer"
+  },
+  "command.copy_with_path_and_details": {
+    "message": "Kopier til utklippstavlen med sti+detaljer"
+  },
+  "command.create_checksum_files": {
+    "message": "Opprett kontrollsumfil(er) (CRC32, MD5, SHA1, SHA256, SHA512)..."
+  },
+  "command.create_link": {
+    "message": "Opprett lenke..."
+  },
+  "command.custom_filter": {
+    "message": "Egendefinert..."
+  },
+  "command.cut_to_clipboard": {
+    "message": "Klipp ut filer"
+  },
+  "command.delete": {
+    "message": "Slett"
+  },
+  "command.delete_permanently": {
+    "message": "Slett permanent"
+  },
+  "command.disconnect": {
+    "message": "Koble fra serveren"
+  },
+  "command.download_link": {
+    "message": "Last ned fra lenke..."
+  },
+  "command.duplicate_tab": {
+    "message": "Ny fane"
+  },
+  "command.duplicate_workspace": {
+    "message": "Dupliser arbeidsområde..."
+  },
+  "command.edit": {
+    "message": "Rediger"
+  },
+  "command.edit_externally": {
+    "message": "Rediger med eksternt redigeringsprogram"
+  },
+  "command.folder_history": {
+    "message": "Mappehistorikk..."
+  },
+  "command.full": {
+    "message": "Fullstendig"
+  },
+  "command.go_back": {
+    "message": "Tilbake"
+  },
+  "command.go_forward": {
+    "message": "Fremover"
+  },
+  "command.go_home": {
+    "message": "Hjem"
+  },
+  "command.go_to_root": {
+    "message": "Rotmappe"
+  },
+  "command.hidden_files": {
+    "message": "Skjulte filer"
+  },
+  "command.internal_associations": {
+    "message": "Interne tilknytninger (bare Spark Commander)..."
+  },
+  "command.invert_selection": {
+    "message": "Inverter merking"
+  },
+  "command.left_drives": {
+    "message": "Stasjoner (venstre panel)"
+  },
+  "command.list_tabs": {
+    "message": "Liste over faner"
+  },
+  "command.load_selection_from_file": {
+    "message": "Last inn merking fra fil"
+  },
+  "command.manage_bookmarks": {
+    "message": "Behandle bokmerker..."
+  },
+  "command.manage_tools": {
+    "message": "Behandle verktøy..."
+  },
+  "command.manage_workspaces": {
+    "message": "Behandle arbeidsområder..."
+  },
+  "command.mark_in_place": {
+    "message": "Merk / fjern merking uten å flytte markøren, med mappens størrelse målt"
+  },
+  "command.mark_newer_hide_same": {
+    "message": "Merk nyere, skjul like filer"
+  },
+  "command.move": {
+    "message": "Flytt..."
+  },
+  "command.multi_rename_tool": {
+    "message": "Verktøy for masseomdøping..."
+  },
+  "command.name_to_command_line": {
+    "message": "Navn til kommandolinjen"
+  },
+  "command.new_folder": {
+    "message": "Ny mappe..."
+  },
+  "command.new_terminal": {
+    "message": "Ny terminalfane"
+  },
+  "command.new_text_file": {
+    "message": "Ny fil..."
+  },
+  "command.new_workspace": {
+    "message": "Nytt arbeidsområde..."
+  },
+  "command.next_tab": {
+    "message": "Neste fane"
+  },
+  "command.only_selected_files": {
+    "message": "Bare merkede filer"
+  },
+  "command.open_in_left_panel": {
+    "message": "Vis i venstre panel"
+  },
+  "command.open_in_new_tab": {
+    "message": "Åpne mappe i ny fane"
+  },
+  "command.open_in_other_new_tab": {
+    "message": "Åpne mappen i en ny fane i det andre panelet"
+  },
+  "command.open_in_right_panel": {
+    "message": "Vis i høyre panel"
+  },
+  "command.open_terminal": {
+    "message": "Åpne terminal her"
+  },
+  "command.operation_queue": {
+    "message": "Operasjonskø..."
+  },
+  "command.pack": {
+    "message": "Pakk..."
+  },
+  "command.paste_from_clipboard": {
+    "message": "Lim inn filer"
+  },
+  "command.path_and_name_to_command_line": {
+    "message": "Sti og navn til kommandolinjen"
+  },
+  "command.path_to_command_line": {
+    "message": "Sti til kommandolinjen"
+  },
+  "command.previous_tab": {
+    "message": "Forrige fane"
+  },
+  "command.programs": {
+    "message": "Programmer"
+  },
+  "command.properties": {
+    "message": "Egenskaper..."
+  },
+  "command.quick_filter": {
+    "message": "Hurtigfilter"
+  },
+  "command.quick_open": {
+    "message": "Hurtigåpning..."
+  },
+  "command.quick_view_panel": {
+    "message": "Hurtigvisningspanel"
+  },
+  "command.quit": {
+    "message": "Avslutt"
+  },
+  "command.redo": {
+    "message": "Gjør om"
+  },
+  "command.rename_in_place": {
+    "message": "Gi nytt navn"
+  },
+  "command.reread_source": {
+    "message": "Les inn kilden på nytt"
+  },
+  "command.restore_selection": {
+    "message": "Gjenopprett merking"
+  },
+  "command.reversed_order": {
+    "message": "Omvendt rekkefølge"
+  },
+  "command.right_drives": {
+    "message": "Stasjoner (høyre panel)"
+  },
+  "command.save_selection": {
+    "message": "Lagre merking"
+  },
+  "command.save_selection_to_file": {
+    "message": "Lagre merking til fil"
+  },
+  "command.search": {
+    "message": "Søk..."
+  },
+  "command.search_in_separate_process": {
+    "message": "Søk i eget vindu..."
+  },
+  "command.select_all": {
+    "message": "Merk alle"
+  },
+  "command.select_all_with_same_extension": {
+    "message": "Merk alle med samme filendelse"
+  },
+  "command.select_group": {
+    "message": "Merk gruppe..."
+  },
+  "command.settings": {
+    "message": "Innstillinger..."
+  },
+  "command.shortcuts": {
+    "message": "Hurtigtaster..."
+  },
+  "command.sidebar_connections": {
+    "message": "Tilkoblinger"
+  },
+  "command.sidebar_operations": {
+    "message": "Operasjoner"
+  },
+  "command.sidebar_places": {
+    "message": "Steder"
+  },
+  "command.sidebar_tree": {
+    "message": "Mapper"
+  },
+  "command.sort_by_extension": {
+    "message": "Filendelse"
+  },
+  "command.sort_by_name": {
+    "message": "Navn"
+  },
+  "command.sort_by_size": {
+    "message": "Størrelse"
+  },
+  "command.sort_by_time": {
+    "message": "Tid"
+  },
+  "command.split_file": {
+    "message": "Del opp fil..."
+  },
+  "command.swap_panels": {
+    "message": "Bytt om panelene"
+  },
+  "command.swap_panels_and_tabs": {
+    "message": "Bytt om panelene med fanene deres"
+  },
+  "command.sync_browsing": {
+    "message": "Synkronisert navigering"
+  },
+  "command.synchronize_dirs": {
+    "message": "Synkroniser mapper..."
+  },
+  "command.target_equals_source": {
+    "message": "Mål = kilde"
+  },
+  "command.terminal_panel": {
+    "message": "Terminal"
+  },
+  "command.test_archives": {
+    "message": "Test arkiv(er)"
+  },
+  "command.thumbnail_view": {
+    "message": "Miniatyrvisning"
+  },
+  "command.toggle_mark": {
+    "message": "Merk / fjern merking"
+  },
+  "command.toggle_sidebar": {
+    "message": "Vis sidepanel"
+  },
+  "command.undo": {
+    "message": "Angre"
+  },
+  "command.unpack_specific_files": {
+    "message": "Pakk ut bestemte filer..."
+  },
+  "command.unselect_all": {
+    "message": "Fjern all merking"
+  },
+  "command.unselect_group": {
+    "message": "Fjern merking av gruppe..."
+  },
+  "command.unsorted": {
+    "message": "Usortert"
+  },
+  "command.verify_checksums": {
+    "message": "Kontroller kontrollsummer (fra kontrollsumfiler)"
+  },
+  "command.vertical_arrangement": {
+    "message": "Vertikal oppstilling"
+  },
+  "command.view": {
+    "message": "Vis"
+  },
+  "command.website": {
+    "message": "Nettstedet til Spark Commander"
+  },
+  "command.workspace1": {
+    "message": "Åpne arbeidsområde 1"
+  },
+  "command.workspace2": {
+    "message": "Åpne arbeidsområde 2"
+  },
+  "command.workspace3": {
+    "message": "Åpne arbeidsområde 3"
+  },
+  "command.workspace4": {
+    "message": "Åpne arbeidsområde 4"
+  },
+  "command.workspace5": {
+    "message": "Åpne arbeidsområde 5"
+  },
+  "command.workspace6": {
+    "message": "Åpne arbeidsområde 6"
+  },
+  "command.workspace7": {
+    "message": "Åpne arbeidsområde 7"
+  },
+  "command.workspace8": {
+    "message": "Åpne arbeidsområde 8"
+  },
+  "command.workspace9": {
+    "message": "Åpne arbeidsområde 9"
+  },
+  "command_line.error.cannot_run": {
+    "message": "{program}: kan ikke kjøres"
+  },
+  "command_line.error.not_found": {
+    "message": "{program}: fant ikke kommandoen"
+  },
+  "command_line.history.empty": {
+    "message": "Ingen kommandoer er kjørt ennå"
+  },
+  "command_line.on_server": {
+    "message": "Kommandoer kjøres på denne datamaskinen; panelet viser en server."
+  },
+  "command_name.all_files": {
+    "message": "Vis alle filer"
+  },
+  "command_name.all_with_extension": {
+    "message": "Vis *.*"
+  },
+  "command_name.brief": {
+    "message": "Kort visning"
+  },
+  "command_name.compare_directories": {
+    "message": "Sammenlign mapper: merk nyere"
+  },
+  "command_name.custom_filter": {
+    "message": "Egendefinert filter"
+  },
+  "command_name.duplicate_tab": {
+    "message": "Ny fane (en kopi av denne)"
+  },
+  "command_name.full": {
+    "message": "Fullstendig visning"
+  },
+  "command_name.go_back": {
+    "message": "Gå tilbake"
+  },
+  "command_name.go_forward": {
+    "message": "Gå fremover"
+  },
+  "command_name.go_home": {
+    "message": "Gå til hjemmemappen"
+  },
+  "command_name.hidden_files": {
+    "message": "Vis skjulte filer"
+  },
+  "command_name.only_selected_files": {
+    "message": "Vis bare merkede filer"
+  },
+  "command_name.programs": {
+    "message": "Vis programmer"
+  },
+  "command_name.quick_filter": {
+    "message": "Hurtigfilter"
+  },
+  "command_name.rename_in_place": {
+    "message": "Gi nytt navn direkte i listen"
+  },
+  "command_name.sidebar_connections": {
+    "message": "Sidepanel: Tilkoblinger"
+  },
+  "command_name.sidebar_operations": {
+    "message": "Sidepanel: Operasjoner"
+  },
+  "command_name.sidebar_places": {
+    "message": "Sidepanel: Steder"
+  },
+  "command_name.sidebar_tree": {
+    "message": "Sidepanel: Mapper"
+  },
+  "command_name.sort_by_extension": {
+    "message": "Sorter etter filendelse"
+  },
+  "command_name.sort_by_name": {
+    "message": "Sorter etter navn"
+  },
+  "command_name.sort_by_size": {
+    "message": "Sorter etter størrelse"
+  },
+  "command_name.sort_by_time": {
+    "message": "Sorter etter tid"
+  },
+  "command_name.toggle_sidebar": {
+    "message": "Sidepanel: vis eller skjul"
+  },
+  "command_name.unsorted": {
+    "message": "Vis usortert"
+  },
+  "compare.browse.prompt": {
+    "message": "Sammenlign"
+  },
+  "compare.button.compare": {
+    "message": "Sammenlign"
+  },
+  "compare.button.next": {
+    "message": "Neste forskjell (N)"
+  },
+  "compare.button.previous": {
+    "message": "Forrige forskjell (P)"
+  },
+  "compare.need_two_files": {
+    "message": "Sett markøren på en fil i hvert panel, eller merk to filer."
+  },
+  "compare.option.binary": {
+    "message": "Binært"
+  },
+  "compare.option.ignore_case": {
+    "message": "Ignorer store/små bokstaver"
+  },
+  "compare.option.ignore_spaces": {
+    "message": "Ignorer gjentatte mellomrom"
+  },
+  "compare.option.only_differences": {
+    "message": "Bare forskjeller"
+  },
+  "compare.status.bytes_differ": {
+    "message": "{place}: {count, plural, one {{grouped} byte er ulik} other {{grouped} byte er ulike}}, den første ved {first}; størrelser {left} og {right}."
+  },
+  "compare.status.comparing": {
+    "message": "Sammenligner…"
+  },
+  "compare.status.difference_of": {
+    "message": "Forskjell {at} av {count}"
+  },
+  "compare.status.differences": {
+    "message": "{count, plural, one {# forskjell} other {# forskjeller}}"
+  },
+  "compare.status.identical": {
+    "message": "{count, plural, one {Filene er identiske: {grouped} byte.} other {Filene er identiske: {grouped} byte.}}"
+  },
+  "compare.status.no_differences": {
+    "message": "Ingen forskjeller."
+  },
+  "compare.window.title": {
+    "message": "Sammenlign: {left} — {right}"
+  },
+  "connections.connect": {
+    "message": "Koble til"
+  },
+  "connections.copy_name": {
+    "message": "Kopier navn"
+  },
+  "connections.copy_path": {
+    "message": "Kopier sti"
+  },
+  "connections.delete": {
+    "message": "Slett"
+  },
+  "connections.dialog.title": {
+    "message": "Tilkobling"
+  },
+  "connections.disconnect": {
+    "message": "Koble fra"
+  },
+  "connections.duplicate": {
+    "message": "Dupliser"
+  },
+  "connections.duplicate_name": {
+    "message": "{name} (kopi)"
+  },
+  "connections.edit": {
+    "message": "Rediger..."
+  },
+  "connections.empty": {
+    "message": "Ingen tilkoblinger ennå."
+  },
+  "connections.error.no_server": {
+    "message": "En server må angis."
+  },
+  "connections.error.port": {
+    "message": "Ikke en port: {text}"
+  },
+  "connections.field.access_key": {
+    "message": "Tilgangsnøkkel"
+  },
+  "connections.field.api_key": {
+    "message": "API-nøkkel"
+  },
+  "connections.field.application_key": {
+    "message": "Programnøkkel"
+  },
+  "connections.field.bucket": {
+    "message": "Bøtte/mappe"
+  },
+  "connections.field.container": {
+    "message": "Beholder/mappe"
+  },
+  "connections.field.endpoint": {
+    "message": "Endepunkt"
+  },
+  "connections.field.key_id": {
+    "message": "Nøkkel-ID"
+  },
+  "connections.field.name": {
+    "message": "Navn"
+  },
+  "connections.field.password": {
+    "message": "Passord"
+  },
+  "connections.field.port": {
+    "message": "Port"
+  },
+  "connections.field.protocol": {
+    "message": "Protokoll"
+  },
+  "connections.field.secret_key": {
+    "message": "Hemmelig nøkkel"
+  },
+  "connections.field.server": {
+    "message": "Server"
+  },
+  "connections.field.start_folder": {
+    "message": "Startmappe"
+  },
+  "connections.field.user": {
+    "message": "Bruker"
+  },
+  "connections.folder.delete_confirm": {
+    "message": "{count, plural, one {Vil du slette mappen {name} og tilkoblingen i den?} other {Vil du slette mappen {name} og de # tilkoblingene i den?}}"
+  },
+  "connections.folder.delete_title": {
+    "message": "Slett mappe"
+  },
+  "connections.folder.exists": {
+    "message": "Det finnes allerede en mappe som heter {name}."
+  },
+  "connections.folder.name": {
+    "message": "Navn:"
+  },
+  "connections.folder.new_title": {
+    "message": "Ny mappe"
+  },
+  "connections.folder.rename": {
+    "message": "Gi nytt navn..."
+  },
+  "connections.folder.rename_title": {
+    "message": "Gi mappen nytt navn"
+  },
+  "connections.forget_password": {
+    "message": "Glem det lagrede passordet"
+  },
+  "connections.move_down": {
+    "message": "Flytt ned"
+  },
+  "connections.move_to_folder": {
+    "message": "Flytt til mappe"
+  },
+  "connections.move_up": {
+    "message": "Flytt opp"
+  },
+  "connections.new": {
+    "message": "Ny tilkobling..."
+  },
+  "connections.new_folder": {
+    "message": "Ny mappe..."
+  },
+  "connections.no_folder": {
+    "message": "Ingen mappe"
+  },
+  "connections.open_in_terminal": {
+    "message": "Åpne i terminal"
+  },
+  "connections.placeholder.name": {
+    "message": "slik listen viser den"
+  },
+  "connections.placeholder.password": {
+    "message": "lagres kryptert i innstillingsmappen; tomt felt beholder det"
+  },
+  "connections.placeholder.path": {
+    "message": "påloggingsmappen"
+  },
+  "connections.placeholder.port": {
+    "message": "standard"
+  },
+  "connections.placeholder.server": {
+    "message": "server, eller en vert fra ~/.ssh/config"
+  },
+  "connections.placeholder.user": {
+    "message": "som angitt i ~/.ssh/config, eller anonym"
+  },
+  "connections.save_failed": {
+    "message": "Kunne ikke lagre tilkoblingene: {err}"
+  },
+  "connections.ssh_config.read_only": {
+    "message": "Skrivebeskyttet: disse vertene redigeres i selve ~/.ssh/config"
+  },
+  "context_menu.action_failed": {
+    "message": "{name} mislyktes: {err}"
+  },
+  "context_menu.actions": {
+    "message": "Handlinger"
+  },
+  "context_menu.copy": {
+    "message": "Kopier"
+  },
+  "context_menu.create_new": {
+    "message": "Opprett ny"
+  },
+  "context_menu.cut": {
+    "message": "Klipp ut"
+  },
+  "context_menu.delete": {
+    "message": "Slett"
+  },
+  "context_menu.edit": {
+    "message": "Rediger"
+  },
+  "context_menu.empty_file": {
+    "message": "Tom fil…"
+  },
+  "context_menu.move_to_trash": {
+    "message": "Flytt til papirkurven"
+  },
+  "context_menu.new_file_dialog.label": {
+    "message": "Nytt filnavn:"
+  },
+  "context_menu.new_file_dialog.title": {
+    "message": "Ny fil"
+  },
+  "context_menu.new_file_failed": {
+    "message": "Kunne ikke opprette filen: {err}"
+  },
+  "context_menu.new_folder": {
+    "message": "Mappe…"
+  },
+  "context_menu.open": {
+    "message": "Åpne"
+  },
+  "context_menu.open_failed": {
+    "message": "Kunne ikke åpne: {err}"
+  },
+  "context_menu.open_terminal_here": {
+    "message": "Åpne terminal her"
+  },
+  "context_menu.open_with": {
+    "message": "Åpne med"
+  },
+  "context_menu.other_application": {
+    "message": "Annet program…"
+  },
+  "context_menu.pack": {
+    "message": "Pakk…"
+  },
+  "context_menu.pack_files": {
+    "message": "Pakk filer"
+  },
+  "context_menu.paste": {
+    "message": "Lim inn"
+  },
+  "context_menu.properties": {
+    "message": "Egenskaper"
+  },
+  "context_menu.properties_failed": {
+    "message": "Egenskaper: {err}"
+  },
+  "context_menu.rename": {
+    "message": "Gi nytt navn…"
+  },
+  "context_menu.rename_dialog.label": {
+    "message": "Nytt navn:"
+  },
+  "context_menu.rename_dialog.title": {
+    "message": "Gi nytt navn"
+  },
+  "context_menu.rename_failed": {
+    "message": "Kunne ikke gi nytt navn: {err}"
+  },
+  "context_menu.shell_menu_failed": {
+    "message": "Menyen: {err}"
+  },
+  "context_menu.show_failed": {
+    "message": "Kunne ikke vise det: {err}"
+  },
+  "context_menu.show_in_file_manager": {
+    "message": "Vis i filbehandler"
+  },
+  "context_menu.terminal_failed": {
+    "message": "Kunne ikke åpne en terminal: {err}"
+  },
+  "context_menu.terminal_not_local": {
+    "message": "En terminal kan bare åpnes i mapper på denne datamaskinen."
+  },
+  "context_menu.unpack": {
+    "message": "Pakk ut…"
+  },
+  "context_menu.view": {
+    "message": "Vis"
+  },
+  "desktop.no_app_chooser": {
+    "message": "skrivebordet har ingen programvelger ({err})"
+  },
+  "desktop.no_terminal": {
+    "message": "fant ingen terminal"
+  },
+  "desktop.nothing_to_run": {
+    "message": "{name}: ingenting å kjøre"
+  },
+  "desktop.scripts": {
+    "message": "Skript"
+  },
+  "devices.error.mount_failed": {
+    "message": "kunne ikke montere enheten"
+  },
+  "devices.error.no_folder": {
+    "message": "enheten deler ingen mappe"
+  },
+  "devices.error.system_only": {
+    "message": "bare systemet kan avmontere denne"
+  },
+  "devices.error.unreachable": {
+    "message": "kan ikke nås: er KDE Connect åpent på den, på dette nettverket?"
+  },
+  "devices.unlock.ask": {
+    "message": "Passordfrasen for {name}:"
+  },
+  "devices.unlock.ask_again": {
+    "message": "Feil passordfrase. Passordfrasen for {name}:"
+  },
+  "devices.unlock.title": {
+    "message": "Lås opp"
+  },
+  "devices.volume.share_on_server": {
+    "message": "{share} på {server}"
+  },
+  "devices.volume.unnamed": {
+    "message": "Volum på {size} GB"
+  },
+  "devices.volume.unnamed_encrypted": {
+    "message": "Kryptert volum på {size} GB"
+  },
+  "download.cancel": {
+    "message": "Avbryt"
+  },
+  "download.dialog_title": {
+    "message": "Last ned fra lenke"
+  },
+  "download.download": {
+    "message": "Last ned"
+  },
+  "download.folder_link": {
+    "message": "lenken peker til en mappe"
+  },
+  "download.incomplete": {
+    "message": "serveren sendte {got} av {size, plural, one {# byte} other {# byte}}; lastes den ned på nytt, fortsetter den derfra"
+  },
+  "download.into": {
+    "message": "Til {folder}"
+  },
+  "download.link": {
+    "message": "Lenke"
+  },
+  "download.link_placeholder": {
+    "message": "https://, http://, ftp:// eller ftps://"
+  },
+  "download.local_only": {
+    "message": "Nedlastinger havner i mapper på denne datamaskinen: åpne en i panelet først."
+  },
+  "download.name_placeholder": {
+    "message": "slik serveren eller lenken navngir den"
+  },
+  "download.no_file": {
+    "message": "lenken angir ingen fil"
+  },
+  "download.not_a_link": {
+    "message": "ikke en lenke som kan lastes ned"
+  },
+  "download.problem.bad_name": {
+    "message": "Bare et filnavn, uten mappe."
+  },
+  "download.problem.empty": {
+    "message": "Lim inn eller skriv inn en lenke."
+  },
+  "download.problem.exists": {
+    "message": "Det finnes allerede en {name} her: Erstatt laster ned over den."
+  },
+  "download.problem.not_link": {
+    "message": "Ikke en lenke som kan lastes ned: den må starte med https://, http://, ftp:// eller ftps://."
+  },
+  "download.replace": {
+    "message": "Erstatt"
+  },
+  "download.save_as": {
+    "message": "Lagre som"
+  },
+  "download.saved_as": {
+    "message": "lagret som {name}"
+  },
+  "download.title": {
+    "message": "Last ned «{name}»"
+  },
+  "download.title_link": {
+    "message": "Last ned {link}"
+  },
+  "editor.close.after_send": {
+    "message": "Det lukkes når serveren har mottatt filen."
+  },
+  "editor.close.discard": {
+    "message": "Ikke lagre"
+  },
+  "editor.close.save": {
+    "message": "Lagre"
+  },
+  "editor.close.title": {
+    "message": "Vil du lagre endringene?"
+  },
+  "editor.close.unsaved": {
+    "message": "{name} har endringer som ikke er lagret."
+  },
+  "editor.close.unsent": {
+    "message": "{name} er ikke lagret på serveren: sendingen mislyktes."
+  },
+  "editor.dialog.cancel": {
+    "message": "Avbryt"
+  },
+  "editor.edit.copy": {
+    "message": "Kopier"
+  },
+  "editor.edit.cut": {
+    "message": "Klipp ut"
+  },
+  "editor.edit.find": {
+    "message": "Finn..."
+  },
+  "editor.edit.find_next": {
+    "message": "Finn neste"
+  },
+  "editor.edit.find_previous": {
+    "message": "Finn forrige"
+  },
+  "editor.edit.go_to_line": {
+    "message": "Gå til linje..."
+  },
+  "editor.edit.paste": {
+    "message": "Lim inn"
+  },
+  "editor.edit.redo": {
+    "message": "Gjør om"
+  },
+  "editor.edit.replace": {
+    "message": "Erstatt..."
+  },
+  "editor.edit.undo": {
+    "message": "Angre"
+  },
+  "editor.external.not_set": {
+    "message": "ikke noe eksternt redigeringsprogram er angitt (Innstillinger, Rediger/vis)"
+  },
+  "editor.file.close": {
+    "message": "Lukk"
+  },
+  "editor.file.reload": {
+    "message": "Last inn på nytt"
+  },
+  "editor.file.save": {
+    "message": "Lagre"
+  },
+  "editor.file.save_as": {
+    "message": "Lagre som..."
+  },
+  "editor.find.close": {
+    "message": "Lukk (Escape)"
+  },
+  "editor.find.count": {
+    "message": "{current} av {total}"
+  },
+  "editor.find.in_selection": {
+    "message": "Finn i utvalg (Alt+L)"
+  },
+  "editor.find.match_case": {
+    "message": "Skill mellom store og små bokstaver (Alt+C)"
+  },
+  "editor.find.next": {
+    "message": "Neste treff (Enter)"
+  },
+  "editor.find.no_results": {
+    "message": "Ingen treff"
+  },
+  "editor.find.placeholder": {
+    "message": "Finn"
+  },
+  "editor.find.preserve_case": {
+    "message": "Bevar store/små bokstaver (Alt+P)"
+  },
+  "editor.find.previous": {
+    "message": "Forrige treff (Shift+Enter)"
+  },
+  "editor.find.regex": {
+    "message": "Bruk regulært uttrykk (Alt+R)"
+  },
+  "editor.find.replace": {
+    "message": "Erstatt (Ctrl+Shift+1)"
+  },
+  "editor.find.replace_all": {
+    "message": "Erstatt alle (Ctrl+Alt+Enter)"
+  },
+  "editor.find.replace_placeholder": {
+    "message": "Erstatt"
+  },
+  "editor.find.toggle_replace": {
+    "message": "Vis/skjul Erstatt"
+  },
+  "editor.find.whole_word": {
+    "message": "Bare hele ord (Alt+W)"
+  },
+  "editor.go_to_line.label": {
+    "message": "Linje, eller linje:kolonne"
+  },
+  "editor.go_to_line.title": {
+    "message": "Gå til linje"
+  },
+  "editor.language.by_file_name": {
+    "message": "Etter filnavnet"
+  },
+  "editor.language.plain_text": {
+    "message": "Ren tekst"
+  },
+  "editor.menu.edit": {
+    "message": "Rediger"
+  },
+  "editor.menu.file": {
+    "message": "Fil"
+  },
+  "editor.menu.language": {
+    "message": "Språk"
+  },
+  "editor.menu.selection": {
+    "message": "Utvalg"
+  },
+  "editor.menu.view": {
+    "message": "Vis"
+  },
+  "editor.open.too_large": {
+    "message": "over grensen på {limit_mb} MB for det innebygde redigeringsprogrammet (Innstillinger, Rediger/vis); Ctrl+Shift+F4 redigerer den i det eksterne"
+  },
+  "editor.reload.button": {
+    "message": "Last inn på nytt"
+  },
+  "editor.reload.failed": {
+    "message": "Kunne ikke laste den inn på nytt: {err}"
+  },
+  "editor.reload.text": {
+    "message": "Endringene som ikke er lagret, går tapt."
+  },
+  "editor.reload.title": {
+    "message": "Vil du laste inn filen på nytt?"
+  },
+  "editor.reload.unfit": {
+    "message": "Ikke lastet inn på nytt: {why, select, binary {den er binær} other {den er ikke UTF-8-tekst}}."
+  },
+  "editor.save.admin": {
+    "message": "Lagring av «{name}»"
+  },
+  "editor.save.failed": {
+    "message": "Kunne ikke lagre {path}: {err}"
+  },
+  "editor.save_anyway.button": {
+    "message": "Lagre likevel"
+  },
+  "editor.save_anyway.text": {
+    "message": "Filen var ikke tekst: lagringen skriver den slik den vises, så alt som ikke var tekst, endres for godt."
+  },
+  "editor.save_anyway.title": {
+    "message": "Vil du lagre den som tekst?"
+  },
+  "editor.selection.add_cursor_above": {
+    "message": "Legg til markør over"
+  },
+  "editor.selection.add_cursor_below": {
+    "message": "Legg til markør under"
+  },
+  "editor.selection.delete_lines": {
+    "message": "Slett linjer"
+  },
+  "editor.selection.duplicate_lines": {
+    "message": "Dupliser linjer"
+  },
+  "editor.selection.indent": {
+    "message": "Øk innrykk"
+  },
+  "editor.selection.lowercase": {
+    "message": "små bokstaver"
+  },
+  "editor.selection.move_lines_down": {
+    "message": "Flytt linjer ned"
+  },
+  "editor.selection.move_lines_up": {
+    "message": "Flytt linjer opp"
+  },
+  "editor.selection.outdent": {
+    "message": "Reduser innrykk"
+  },
+  "editor.selection.select_all": {
+    "message": "Merk alt"
+  },
+  "editor.selection.select_all_occurrences": {
+    "message": "Merk alle forekomster"
+  },
+  "editor.selection.sort_lines_ascending": {
+    "message": "Sorter linjer stigende"
+  },
+  "editor.selection.sort_lines_descending": {
+    "message": "Sorter linjer synkende"
+  },
+  "editor.selection.title_case": {
+    "message": "Stor Forbokstav"
+  },
+  "editor.selection.toggle_line_comment": {
+    "message": "Slå linjekommentar av/på"
+  },
+  "editor.selection.trim_trailing_whitespace": {
+    "message": "Fjern blanktegn på slutten av linjer"
+  },
+  "editor.selection.uppercase": {
+    "message": "STORE BOKSTAVER"
+  },
+  "editor.send.failed": {
+    "message": "Kunne ikke sende den tilbake: {err}. Lagre prøver på nytt."
+  },
+  "editor.status.modified": {
+    "message": "Endret"
+  },
+  "editor.status.position": {
+    "message": "Ln {line}, Kol {column}"
+  },
+  "editor.status.position_selected": {
+    "message": "Ln {line}, Kol {column} ({count, plural, one {# merket} other {# merket}})"
+  },
+  "editor.status.sending": {
+    "message": "Lagrer på serveren"
+  },
+  "editor.status.spaces": {
+    "message": "Mellomrom: {size}"
+  },
+  "editor.status.tab_size": {
+    "message": "Tabulatorstørrelse: {size}"
+  },
+  "editor.status.unsent": {
+    "message": "Ikke på serveren"
+  },
+  "editor.terminal.not_found": {
+    "message": "fant ikke noe redigeringsprogram; angi $EDITOR"
+  },
+  "editor.title": {
+    "message": "{path} — Redigeringsprogram"
+  },
+  "editor.unfit.open_anyway": {
+    "message": "Åpne likevel"
+  },
+  "editor.unfit.text": {
+    "message": "Filen vises ikke i redigeringsprogrammet fordi {why, select, binary {den er binær} other {den ikke er UTF-8-tekst}}."
+  },
+  "editor.view.folding": {
+    "message": "Kodebretting"
+  },
+  "editor.view.indent_guides": {
+    "message": "Innrykkslinjer"
+  },
+  "editor.view.indent_with_tabs": {
+    "message": "Innrykk med tabulatorer"
+  },
+  "editor.view.line_numbers": {
+    "message": "Linjenumre"
+  },
+  "editor.view.minimap": {
+    "message": "Minikart"
+  },
+  "editor.view.tab_width": {
+    "message": "Tabulatorbredde {width}"
+  },
+  "editor.view.unfold_all": {
+    "message": "Fold ut alt"
+  },
+  "editor.view.whitespace": {
+    "message": "Blanktegn"
+  },
+  "editor.view.word_wrap": {
+    "message": "Linjebryting"
+  },
+  "elevate.failed": {
+    "message": "som administrator mislyktes det også ({code})"
+  },
+  "elevate.no_consent": {
+    "message": "administratoren ga ikke samtykke"
+  },
+  "elevate.no_password": {
+    "message": "passordet ble ikke oppgitt"
+  },
+  "elevate.not_authorised": {
+    "message": "ikke autorisert"
+  },
+  "elevate.percent_name": {
+    "message": "{path}: et navn med % kan ikke håndteres som administrator; gi det nytt navn først"
+  },
+  "elevate.pkexec_missing": {
+    "message": "pkexec (polkit) er ikke installert"
+  },
+  "file_menu.change_tags_failed": {
+    "message": "Kunne ikke endre etikettene: {err}"
+  },
+  "file_menu.compress": {
+    "message": "{count, plural, =1 {Komprimer «{name}»…} one {Komprimer «{name}»…} other {Komprimer # objekter…}}"
+  },
+  "file_menu.copy": {
+    "message": "{count, plural, =1 {Kopier «{name}»} one {Kopier «{name}»} other {Kopier # objekter}}"
+  },
+  "file_menu.copy_path": {
+    "message": "Kopier sti til utklippstavlen"
+  },
+  "file_menu.delete": {
+    "message": "Slett"
+  },
+  "file_menu.duplicate": {
+    "message": "Dupliser"
+  },
+  "file_menu.duplicate_failed": {
+    "message": "Kunne ikke duplisere: {err}"
+  },
+  "file_menu.edit_tags": {
+    "message": "Etiketter…"
+  },
+  "file_menu.get_info": {
+    "message": "Vis info"
+  },
+  "file_menu.make_alias": {
+    "message": "Lag alias"
+  },
+  "file_menu.make_alias_failed": {
+    "message": "Kunne ikke lage aliaset: {err}"
+  },
+  "file_menu.move_to_trash": {
+    "message": "Flytt til papirkurven"
+  },
+  "file_menu.new_folder": {
+    "message": "Ny mappe"
+  },
+  "file_menu.open": {
+    "message": "Åpne"
+  },
+  "file_menu.open_failed": {
+    "message": "Kunne ikke åpne: {err}"
+  },
+  "file_menu.open_with": {
+    "message": "Åpne med"
+  },
+  "file_menu.open_with_default": {
+    "message": "{app} (standard)"
+  },
+  "file_menu.paste": {
+    "message": "Lim inn"
+  },
+  "file_menu.quick_look": {
+    "message": "{count, plural, =1 {Vis «{name}» med Quick Look} one {Vis «{name}» med Quick Look} other {Vis # objekter med Quick Look}}"
+  },
+  "file_menu.quick_look_failed": {
+    "message": "Quick Look: {err}"
+  },
+  "file_menu.rename": {
+    "message": "Gi nytt navn…"
+  },
+  "file_menu.reveal_failed": {
+    "message": "Kunne ikke vise det i Finder: {err}"
+  },
+  "file_menu.reveal_in_finder": {
+    "message": "Vis i Finder"
+  },
+  "file_menu.show_package_contents": {
+    "message": "Vis pakkeinnhold"
+  },
+  "file_menu.tag_dot.add": {
+    "message": "Legg til etiketten «{name}»"
+  },
+  "file_menu.tag_dot.remove": {
+    "message": "Fjern etiketten «{name}»"
+  },
+  "file_menu.tags_popover.show_all": {
+    "message": "Vis alle…"
+  },
+  "file_menu.tags_popover.title": {
+    "message": "{count, plural, =1 {Etiketter for «{name}»} one {Etiketter for «{name}»} other {Etiketter for # objekter}}"
+  },
+  "find.backwards": {
+    "message": "Søk bakover"
+  },
+  "find.cancel": {
+    "message": "Avbryt"
+  },
+  "find.case_sensitive": {
+    "message": "Skill mellom store og små bokstaver"
+  },
+  "find.hex": {
+    "message": "Søk etter heksadesimal streng"
+  },
+  "find.ok": {
+    "message": "OK"
+  },
+  "find.regex": {
+    "message": "RegEx"
+  },
+  "find.text.label": {
+    "message": "Skriv inn søketekst"
+  },
+  "find.title": {
+    "message": "Finn"
+  },
+  "find.whole_words": {
+    "message": "Bare hele ord"
+  },
+  "keys.apply": {
+    "message": "Bruk"
+  },
+  "keys.cancel": {
+    "message": "Avbryt"
+  },
+  "keys.clear.tooltip": {
+    "message": "Ingen tast"
+  },
+  "keys.column.alternate": {
+    "message": "Alternativ"
+  },
+  "keys.column.command": {
+    "message": "Kommando"
+  },
+  "keys.column.shortcut": {
+    "message": "Hurtigtast"
+  },
+  "keys.custom": {
+    "message": "Egendefinert"
+  },
+  "keys.delete_set": {
+    "message": "Slett"
+  },
+  "keys.note.custom_replaced": {
+    "message": "Dine egne taster ble erstattet av tastene fra {name}; Lagre som beholder dem."
+  },
+  "keys.note.deleted": {
+    "message": "{name} er slettet; OK eller Bruk gjør det endelig."
+  },
+  "keys.note.moved": {
+    "message": "{key} er nå {command}, ikke lenger {other}."
+  },
+  "keys.note.name_reserved": {
+    "message": "«{name}» er navnet på en forhåndsinnstilling; velg et annet."
+  },
+  "keys.note.press_new_key": {
+    "message": "Trykk den nye tasten; Esc lar den være som den var."
+  },
+  "keys.note.saved": {
+    "message": "Lagret som {name}; OK eller Bruk beholder det."
+  },
+  "keys.note.set": {
+    "message": "{key} er nå {command}."
+  },
+  "keys.note.taken_by_system": {
+    "message": "{key} brukes av {by}, så den når aldri frem til Spark Commander."
+  },
+  "keys.ok": {
+    "message": "OK"
+  },
+  "keys.press_key": {
+    "message": "Trykk en tast…"
+  },
+  "keys.reserved.application_launcher": {
+    "message": "{system}: programstarteren"
+  },
+  "keys.reserved.close_window": {
+    "message": "{system}: lukk vinduet"
+  },
+  "keys.reserved.close_window_or_tab": {
+    "message": "{system}: lukk vinduet eller fanen"
+  },
+  "keys.reserved.dock": {
+    "message": "{system}: Dock"
+  },
+  "keys.reserved.floating_window": {
+    "message": "{system}: det flytende vinduet"
+  },
+  "keys.reserved.force_quit": {
+    "message": "{system}: tving avslutning"
+  },
+  "keys.reserved.hide_program": {
+    "message": "{system}: skjul programmet"
+  },
+  "keys.reserved.input_source": {
+    "message": "{system}: inndatakilden"
+  },
+  "keys.reserved.keyboard_access": {
+    "message": "{system}: tastaturtilgang"
+  },
+  "keys.reserved.keyboard_navigation": {
+    "message": "{system}: tastaturnavigering"
+  },
+  "keys.reserved.krunner": {
+    "message": "{system}: KRunner"
+  },
+  "keys.reserved.lock_screen": {
+    "message": "{system}: lås skjermen"
+  },
+  "keys.reserved.log_out": {
+    "message": "{system}: logg ut"
+  },
+  "keys.reserved.maximize_window": {
+    "message": "{system}: maksimer vinduet"
+  },
+  "keys.reserved.menu_bar": {
+    "message": "{system}: menylinjen"
+  },
+  "keys.reserved.minimize": {
+    "message": "{system}: minimer"
+  },
+  "keys.reserved.mission_control": {
+    "message": "{system}: Mission Control"
+  },
+  "keys.reserved.move_window": {
+    "message": "{system}: flytt vinduet"
+  },
+  "keys.reserved.next_window": {
+    "message": "{system}: neste vindu"
+  },
+  "keys.reserved.present_windows": {
+    "message": "{system}: Vis vinduer"
+  },
+  "keys.reserved.present_windows_all": {
+    "message": "{system}: Vis vinduer (alle skrivebord)"
+  },
+  "keys.reserved.present_windows_class": {
+    "message": "{system}: Vis vinduer (vindusklasse)"
+  },
+  "keys.reserved.program_windows": {
+    "message": "{system}: programmets vinduer"
+  },
+  "keys.reserved.quit": {
+    "message": "{system}: avslutt"
+  },
+  "keys.reserved.resize_window": {
+    "message": "{system}: endre vindusstørrelse"
+  },
+  "keys.reserved.restore_window": {
+    "message": "{system}: gjenopprett vinduet"
+  },
+  "keys.reserved.run_command": {
+    "message": "{system}: kjør en kommando"
+  },
+  "keys.reserved.screenshot": {
+    "message": "{system}: skjermbilde"
+  },
+  "keys.reserved.security_screen": {
+    "message": "{system}: sikkerhetsskjermen"
+  },
+  "keys.reserved.show_desktop": {
+    "message": "{system}: vis skrivebordet"
+  },
+  "keys.reserved.space_left": {
+    "message": "{system}: området til venstre"
+  },
+  "keys.reserved.space_right": {
+    "message": "{system}: området til høyre"
+  },
+  "keys.reserved.spotlight": {
+    "message": "{system}: Spotlight"
+  },
+  "keys.reserved.start_menu": {
+    "message": "{system}: Start-menyen"
+  },
+  "keys.reserved.status_menus": {
+    "message": "{system}: statusmenyene"
+  },
+  "keys.reserved.suspend_compositing": {
+    "message": "{system}: suspender sammensetting"
+  },
+  "keys.reserved.switch_program_windows": {
+    "message": "{system}: bytt mellom programmets vinduer"
+  },
+  "keys.reserved.switch_programs": {
+    "message": "{system}: bytt mellom programmer"
+  },
+  "keys.reserved.switch_system_controls": {
+    "message": "{system}: bytt mellom systemkontroller"
+  },
+  "keys.reserved.switch_to_desktop": {
+    "message": "{system}: bytt til skrivebord {number}"
+  },
+  "keys.reserved.switch_windows": {
+    "message": "{system}: bytt mellom vinduer"
+  },
+  "keys.reserved.system_monitor": {
+    "message": "{system}: Systemovervåker"
+  },
+  "keys.reserved.task_manager": {
+    "message": "{system}: Oppgavebehandling"
+  },
+  "keys.reserved.text_console": {
+    "message": "{system}: bytt til en tekstkonsoll"
+  },
+  "keys.reserved.toolbar": {
+    "message": "{system}: verktøylinjen"
+  },
+  "keys.reserved.window_menu": {
+    "message": "{system}: vindusmenyen"
+  },
+  "keys.reserved.workspace_down": {
+    "message": "{system}: arbeidsområdet under"
+  },
+  "keys.reserved.workspace_left": {
+    "message": "{system}: arbeidsområdet til venstre"
+  },
+  "keys.reserved.workspace_right": {
+    "message": "{system}: arbeidsområdet til høyre"
+  },
+  "keys.reserved.workspace_up": {
+    "message": "{system}: arbeidsområdet over"
+  },
+  "keys.reset.tooltip": {
+    "message": "Tilbake til tastene fra {preset}"
+  },
+  "keys.reset_all": {
+    "message": "Tilbakestill alle"
+  },
+  "keys.save_as.button": {
+    "message": "Lagre som…"
+  },
+  "keys.save_as.default_name": {
+    "message": "Mine taster"
+  },
+  "keys.save_as.label": {
+    "message": "Navn:"
+  },
+  "keys.save_as.title": {
+    "message": "Lagre hurtigtaster"
+  },
+  "keys.search.placeholder": {
+    "message": "Søk etter en kommando eller en tast"
+  },
+  "keys.set_label": {
+    "message": "Taster:"
+  },
+  "keys.taken_by.tooltip": {
+    "message": "Brukes av {by}"
+  },
+  "keys.title": {
+    "message": "Hurtigtaster"
+  },
+  "main.admin.button": {
+    "message": "Som administrator"
+  },
+  "main.admin.deleting": {
+    "message": "Sletting av {count, plural, one {# element} other {# elementer}}"
+  },
+  "main.admin.failed": {
+    "message": "Som administrator: {err}"
+  },
+  "main.admin.making": {
+    "message": "Oppretting av «{name}»"
+  },
+  "main.admin.offer": {
+    "message": "{what}: tilgang nektet. Som administrator ber systemet om passordet."
+  },
+  "main.admin.offer_delete": {
+    "message": "{what}: tilgang nektet. Som administrator ber systemet om passordet. Det som slettes på denne måten, er borte for godt."
+  },
+  "main.admin.title": {
+    "message": "Tilgang nektet"
+  },
+  "main.delete.from_archive": {
+    "message": "{kind, select, folder {Vil du slette mappen «{name}» fra {archive}? Dette kan ikke angres.} file {Vil du slette filen «{name}» fra {archive}? Dette kan ikke angres.} other {Vil du slette {count, plural, one {# element} other {# elementer}} fra {archive}? Dette kan ikke angres.}}"
+  },
+  "main.delete.on_server": {
+    "message": "{kind, select, folder {Vil du slette mappen «{name}» på {server}? Dette kan ikke angres.} file {Vil du slette filen «{name}» på {server}? Dette kan ikke angres.} other {Vil du slette {count, plural, one {# element} other {# elementer}} på {server}? Dette kan ikke angres.}}"
+  },
+  "main.delete.permanently": {
+    "message": "{kind, select, folder {Vil du slette mappen «{name}» permanent? Dette kan ikke angres.} file {Vil du slette filen «{name}» permanent? Dette kan ikke angres.} other {Vil du slette {count, plural, one {# element} other {# elementer}} permanent? Dette kan ikke angres.}}"
+  },
+  "main.delete.title": {
+    "message": "Slett"
+  },
+  "main.delete.title_permanently": {
+    "message": "Slett permanent"
+  },
+  "main.delete.to_trash": {
+    "message": "{kind, select, folder {Vil du flytte mappen «{name}» til papirkurven?} file {Vil du flytte filen «{name}» til papirkurven?} other {Vil du flytte {count, plural, one {# element} other {# elementer}} til papirkurven?}}"
+  },
+  "main.download.edit": {
+    "message": "Last ned {file} for redigering"
+  },
+  "main.download.view": {
+    "message": "Last ned {file} for visning"
+  },
+  "main.error.make_folder": {
+    "message": "Kunne ikke opprette mappen: {err}"
+  },
+  "main.error.read_settings": {
+    "message": "Kunne ikke lese innstillingene: {err}"
+  },
+  "main.error.read_tabs": {
+    "message": "Kunne ikke lese de åpne fanene: {err}"
+  },
+  "main.error.read_workspaces": {
+    "message": "Kunne ikke lese arbeidsområdene: {err}"
+  },
+  "main.error.save_settings": {
+    "message": "Kunne ikke lagre innstillingene: {err}"
+  },
+  "main.folder_tree.home": {
+    "message": "Hjem"
+  },
+  "main.go.no_such_folder": {
+    "message": "{path}: ingen slik mappe på denne datamaskinen"
+  },
+  "main.new_folder.label": {
+    "message": "Ny mappe (katalog):"
+  },
+  "main.new_folder.title": {
+    "message": "Ny mappe"
+  },
+  "main.sync_browsing.lost": {
+    "message": "{err}. Synkronisert navigering er slått av."
+  },
+  "main.tool.needs_file": {
+    "message": "Markøren står ikke på en fil: %N, %O og %E trenger en."
+  },
+  "main.tool.needs_local_folder": {
+    "message": "Det andre panelet viser en server eller et arkiv: %T trenger en mappe på denne datamaskinen."
+  },
+  "main.undo.done": {
+    "message": "{way, select, redo {Gjort om: {title}} other {Angret: {title}}}"
+  },
+  "main.undo.failed": {
+    "message": "{way, select, redo {Kunne ikke gjøre om «{title}»: {err}} other {Kunne ikke angre «{title}»: {err}}}"
+  },
+  "main.undo.nothing": {
+    "message": "{way, select, redo {Ingenting å gjøre om.} other {Ingenting å angre.}}"
+  },
+  "main.undo.queued": {
+    "message": "{way, select, redo {I køen for å gjøres om: {title}} other {I køen for å angres: {title}}}"
+  },
+  "mark.compare.marked": {
+    "message": "{count, plural, one {# fil merket: nyere enn, eller mangler på, den andre siden.} other {# filer merket: nyere enn, eller mangler på, den andre siden.}}"
+  },
+  "mark.compare.same": {
+    "message": "Mappene har de samme filene."
+  },
+  "mark.load_selection.label": {
+    "message": "Merk navnene som står i filen:"
+  },
+  "mark.load_selection.title": {
+    "message": "Last inn merking"
+  },
+  "mark.save_selection.label": {
+    "message": "Lagre de merkede navnene i filen:"
+  },
+  "mark.save_selection.title": {
+    "message": "Lagre merking"
+  },
+  "mark.select_group.label": {
+    "message": "Merk filene (*.txt *.md; en mappemaske slutter med /):"
+  },
+  "mark.select_group.title": {
+    "message": "Merk gruppe"
+  },
+  "mark.selection_file.not_local": {
+    "message": "Merkingsfiler lagres på denne datamaskinen, utenfor arkiver."
+  },
+  "mark.unselect_group.label": {
+    "message": "Fjern merkingen av filene (*.txt *.md; en mappemaske slutter med /):"
+  },
+  "mark.unselect_group.title": {
+    "message": "Fjern merking av gruppe"
+  },
+  "media.cannot_play": {
+    "message": "Dette kan ikke spilles av: {err}"
+  },
+  "media.cannot_play_as_text": {
+    "message": "Dette kan ikke spilles av: {err}. 1 viser det som tekst."
+  },
+  "media.continuing": {
+    "message": "Fortsetter ved {time}"
+  },
+  "media.error.missing": {
+    "message": "libmpv mangler: Innstillinger > Tillegg laster det ned (bygget fra kildekode: vendor/mpv/{script})"
+  },
+  "media.error.not_started": {
+    "message": "libmpv kunne ikke starte"
+  },
+  "media.error.too_long": {
+    "message": "{path}: mpv brukte for lang tid"
+  },
+  "media.error.unsupported_system": {
+    "message": "video spilles foreløpig bare av på Linux, macOS og Windows"
+  },
+  "menu.archive": {
+    "message": "Arkiv"
+  },
+  "menu.associations": {
+    "message": "Tilknytninger"
+  },
+  "menu.button_bar": {
+    "message": "Knapperad"
+  },
+  "menu.checksums": {
+    "message": "Kontrollsummer"
+  },
+  "menu.commands": {
+    "message": "Kommandoer"
+  },
+  "menu.compare_directories": {
+    "message": "Sammenlign mapper"
+  },
+  "menu.configuration": {
+    "message": "Konfigurasjon"
+  },
+  "menu.copy_names": {
+    "message": "Kopier navn"
+  },
+  "menu.files": {
+    "message": "Filer"
+  },
+  "menu.filter": {
+    "message": "Filter"
+  },
+  "menu.go": {
+    "message": "Gå"
+  },
+  "menu.help": {
+    "message": "Hjelp"
+  },
+  "menu.mark": {
+    "message": "Merk"
+  },
+  "menu.other": {
+    "message": "Annet"
+  },
+  "menu.recently_closed_tabs": {
+    "message": "Nylig lukkede faner"
+  },
+  "menu.selection": {
+    "message": "Merking"
+  },
+  "menu.show": {
+    "message": "Vis"
+  },
+  "menu.sidebar": {
+    "message": "Sidepanel"
+  },
+  "menu.sort": {
+    "message": "Sorter"
+  },
+  "menu.split_and_combine": {
+    "message": "Del opp og slå sammen"
+  },
+  "menu.tabs": {
+    "message": "Faner"
+  },
+  "menu.tools": {
+    "message": "Verktøy"
+  },
+  "menu.workspaces": {
+    "message": "Arbeidsområder"
+  },
+  "menus.hide_app": {
+    "message": "Skjul Spark Commander"
+  },
+  "menus.hide_others": {
+    "message": "Skjul andre"
+  },
+  "menus.minimize": {
+    "message": "Minimer"
+  },
+  "menus.quit_app": {
+    "message": "Avslutt Spark Commander"
+  },
+  "menus.services": {
+    "message": "Tjenester"
+  },
+  "menus.show_all": {
+    "message": "Vis alle"
+  },
+  "menus.zoom": {
+    "message": "Zoom"
+  },
+  "name_dialog.cancel": {
+    "message": "Avbryt"
+  },
+  "name_dialog.ok": {
+    "message": "OK"
+  },
+  "operations.clear": {
+    "message": "Fjern fullførte"
+  },
+  "operations.duration.seconds": {
+    "message": "{seconds} s"
+  },
+  "operations.empty": {
+    "message": "Ingen operasjoner."
+  },
+  "operations.job.answer": {
+    "message": "Venter på svaret ditt"
+  },
+  "operations.job.bytes": {
+    "message": "{done} av {total}"
+  },
+  "operations.job.cancel_tooltip": {
+    "message": "Avbryt"
+  },
+  "operations.job.cancelled": {
+    "message": "Avbrutt"
+  },
+  "operations.job.counting": {
+    "message": "Teller: {count, plural, one {# fil} other {# filer}}"
+  },
+  "operations.job.done": {
+    "message": "Fullført"
+  },
+  "operations.job.done_skipped": {
+    "message": "Fullført, {count, plural, one {# hoppet over} other {# hoppet over}}"
+  },
+  "operations.job.failed": {
+    "message": "Mislyktes"
+  },
+  "operations.job.files": {
+    "message": "{files} / {count, plural, one {# fil} other {# filer}}"
+  },
+  "operations.job.left": {
+    "message": "{time} igjen"
+  },
+  "operations.job.running": {
+    "message": "Kjører"
+  },
+  "operations.job.waiting": {
+    "message": "Venter"
+  },
+  "operations.menu.cancel": {
+    "message": "Avbryt"
+  },
+  "operations.menu.clear": {
+    "message": "Fjern fullførte"
+  },
+  "operations.menu.move_down": {
+    "message": "Flytt ned"
+  },
+  "operations.menu.move_up": {
+    "message": "Flytt opp"
+  },
+  "operations.settings_tooltip": {
+    "message": "Innstillinger for operasjonskøen"
+  },
+  "operations.summary.failed": {
+    "message": "{count, plural, one {# mislyktes} other {# mislyktes}}"
+  },
+  "operations.summary.running": {
+    "message": "{count, plural, one {# kjører} other {# kjører}}"
+  },
+  "operations.summary.waiting": {
+    "message": "{count, plural, one {# venter} other {# venter}}"
+  },
+  "ops.as_administrator.failed": {
+    "message": "Som administrator: {err}"
+  },
+  "ops.as_administrator.progress": {
+    "message": "Som administrator…"
+  },
+  "ops.delete.title_many": {
+    "message": "Slett {count, plural, one {# element} other {# elementer}} i {folder}"
+  },
+  "ops.delete.title_one": {
+    "message": "Slett «{name}»"
+  },
+  "ops.delete.trash_title_many": {
+    "message": "Flytt {count, plural, one {# element} other {# elementer}} i {folder} til papirkurven"
+  },
+  "ops.delete.trash_title_one": {
+    "message": "Flytt «{name}» til papirkurven"
+  },
+  "ops.error.file_in_the_way": {
+    "message": "en fil med dette navnet er i veien"
+  },
+  "ops.error.into_itself": {
+    "message": "kan ikke kopieres inn i seg selv"
+  },
+  "ops.exists_already": {
+    "message": "{name} finnes allerede"
+  },
+  "ops.link.dialog_title": {
+    "message": "Opprett lenke"
+  },
+  "ops.link.failed": {
+    "message": "Kunne ikke opprette lenken: {err}"
+  },
+  "ops.link.kind.hard": {
+    "message": "Hard lenke"
+  },
+  "ops.link.kind.junction": {
+    "message": "Koblingspunkt"
+  },
+  "ops.link.kind.shortcut": {
+    "message": "Snarvei (.lnk)"
+  },
+  "ops.link.kind.symbolic": {
+    "message": "Symbolsk lenke"
+  },
+  "ops.link.label_many": {
+    "message": "Lenker til {count, plural, one {# element} other {de # elementene}}, i mappen:"
+  },
+  "ops.link.label_one": {
+    "message": "Lenke til «{name}» som:"
+  },
+  "ops.link.making": {
+    "message": "Oppretting av {kind, select, symbolic {den symbolske lenken} hard {den harde lenken} junction {koblingspunktet} other {snarveien (.lnk)}}"
+  },
+  "ops.link.needs_admin": {
+    "message": "symbolske lenker krever administrator eller utviklermodus"
+  },
+  "ops.link.thread_failed": {
+    "message": "snarveiens tråd mislyktes"
+  },
+  "ops.link.title_many": {
+    "message": "{kind, select, symbolic {Symbolske lenker} hard {Harde lenker} junction {Koblingspunkter} other {Snarveier (.lnk)}} til {count, plural, one {# element} other {# elementer}} i {folder}"
+  },
+  "ops.link.title_one": {
+    "message": "{kind, select, symbolic {Symbolsk lenke} hard {Hard lenke} junction {Koblingspunkt} other {Snarvei (.lnk)}} til «{name}» i {folder}"
+  },
+  "ops.link.windows_only": {
+    "message": "koblingspunkter og snarveier finnes bare i Windows"
+  },
+  "ops.redo.title": {
+    "message": "Gjør om: {what}"
+  },
+  "ops.title.many": {
+    "message": "{kind, select, copy {Kopier} other {Flytt}} {count, plural, one {# element} other {# elementer}} til {target}"
+  },
+  "ops.title.one": {
+    "message": "{kind, select, copy {Kopier} other {Flytt}} «{name}» til {target}"
+  },
+  "ops.undo.not_a_server": {
+    "message": "{url}: ikke en serveradresse"
+  },
+  "ops.undo.not_in_trash": {
+    "message": "de er ikke lenger i papirkurven"
+  },
+  "ops.undo.restore_title": {
+    "message": "{title}: det som ble overskrevet, tilbake fra papirkurven"
+  },
+  "ops.undo.title": {
+    "message": "Angre: {what}"
+  },
+  "pack.cancel": {
+    "message": "Avbryt"
+  },
+  "pack.compression": {
+    "message": "Komprimering:"
+  },
+  "pack.dialog_title": {
+    "message": "Pakk filer"
+  },
+  "pack.encrypt": {
+    "message": "Krypter med passordet"
+  },
+  "pack.format": {
+    "message": "Format:"
+  },
+  "pack.label": {
+    "message": "Pakk {count, plural, one {# element} other {# elementer}} i arkivet:"
+  },
+  "pack.level.fastest": {
+    "message": "Raskest"
+  },
+  "pack.level.maximum": {
+    "message": "Maksimal"
+  },
+  "pack.level.normal": {
+    "message": "Normal"
+  },
+  "pack.level.store": {
+    "message": "Ingen"
+  },
+  "pack.level.ultra": {
+    "message": "Ultra"
+  },
+  "pack.local_only": {
+    "message": "{what, select, packing {Pakking} unpacking {Utpakking} testing {Testing} creating_checksums {Oppretting av kontrollsummer} making_links {Oppretting av lenker} verifying_checksums {Kontroll av kontrollsummer} splitting {Oppdeling} combining {Sammenslåing} other {Dette}} fungerer bare på filer på denne datamaskinen, utenfor arkiver."
+  },
+  "pack.move_files": {
+    "message": "Flytt til arkiv (slett de pakkede filene)"
+  },
+  "pack.needs_password": {
+    "message": "det krever et passord"
+  },
+  "pack.ok": {
+    "message": "OK"
+  },
+  "pack.password_missing": {
+    "message": "Skriv inn passordet, eller slå av «Krypter med passordet»."
+  },
+  "pack.separate": {
+    "message": "Ett arkiv for hver merkede fil eller mappe"
+  },
+  "pack.split": {
+    "message": "Del opp i volumer på"
+  },
+  "pack.split_unit": {
+    "message": "MB"
+  },
+  "pack.test.broken": {
+    "message": "{broken, plural, one {# av {count} skadet} other {# av {count} skadet}}"
+  },
+  "pack.test.choose": {
+    "message": "Velg arkivene som skal testes."
+  },
+  "pack.test.ok": {
+    "message": "{count, plural, one {# arkiv OK} other {# arkiver OK}}"
+  },
+  "pack.test.title_many": {
+    "message": "Test {count, plural, one {# arkiv} other {# arkiver}}"
+  },
+  "pack.test.title_one": {
+    "message": "Test «{name}»"
+  },
+  "pack.title.many": {
+    "message": "Pakk {count, plural, one {# element} other {# elementer}} i {archive}"
+  },
+  "pack.title.many_separate": {
+    "message": "Pakk {count, plural, one {# element} other {# elementer}} i separate {format}-arkiver"
+  },
+  "pack.title.one": {
+    "message": "Pakk «{name}» i {archive}"
+  },
+  "pack.title.one_separate": {
+    "message": "Pakk «{name}» i separate {format}-arkiver"
+  },
+  "pack.unpack.choose": {
+    "message": "Velg arkivene som skal pakkes ut."
+  },
+  "pack.unpack.dialog_title": {
+    "message": "Pakk ut filer"
+  },
+  "pack.unpack.label": {
+    "message": "Pakk ut {count, plural, one {# arkiv} other {# arkiver}} til:"
+  },
+  "pack.unpack.mask": {
+    "message": "Bare filene:"
+  },
+  "pack.unpack.overwrite": {
+    "message": "Overskriv eksisterende filer (ellers beholdes de)"
+  },
+  "pack.unpack.password": {
+    "message": "Passord:"
+  },
+  "pack.unpack.separate": {
+    "message": "Hvert arkiv i en mappe med arkivets navn"
+  },
+  "pack.unpack.title_many": {
+    "message": "Pakk ut {count, plural, one {# arkiv} other {# arkiver}} til {target}"
+  },
+  "pack.unpack.title_one": {
+    "message": "Pakk ut «{name}» til {target}"
+  },
+  "pack.unpack.with_paths": {
+    "message": "Behold mappene som er lagret i arkivet"
+  },
+  "pack.volume_invalid": {
+    "message": "Volumstørrelsen må være et antall MB."
+  },
+  "pack.wrong_password": {
+    "message": "feil passord"
+  },
+  "panel.admin.renaming": {
+    "message": "Navneendring til «{name}»"
+  },
+  "panel.clipboard.copied": {
+    "message": "{count, plural, one {# element kopiert} other {# elementer kopiert}}: Ctrl+V limer dem inn."
+  },
+  "panel.clipboard.cut": {
+    "message": "{count, plural, one {# element klippet ut} other {# elementer klippet ut}}: Ctrl+V limer dem inn."
+  },
+  "panel.clipboard.no_cut_in_archive": {
+    "message": "Filer kan ikke klippes ut av arkiver; Ctrl+C kopierer dem."
+  },
+  "panel.clipboard.no_files": {
+    "message": "Utklippstavlen inneholder ingen filer."
+  },
+  "panel.clipboard.no_paste_in_archive": {
+    "message": "Filer kan ikke limes inn i arkiver ennå."
+  },
+  "panel.clipboard.same_folder": {
+    "message": "De ligger allerede i denne mappen: Ctrl+V limer inn i en annen."
+  },
+  "panel.column.attr": {
+    "message": "Attr"
+  },
+  "panel.column.date": {
+    "message": "Dato"
+  },
+  "panel.column.ext": {
+    "message": "End."
+  },
+  "panel.column.name": {
+    "message": "Navn"
+  },
+  "panel.column.size": {
+    "message": "Størrelse"
+  },
+  "panel.disconnect": {
+    "message": "Koble fra"
+  },
+  "panel.drag.items": {
+    "message": "{count, plural, one {# element} other {# elementer}}"
+  },
+  "panel.error.archive_not_updatable": {
+    "message": "{name}: 7-Zip endrer 7z-, zip- og tar-arkiver direkte, men ikke dette"
+  },
+  "panel.error.archive_on_server": {
+    "message": "{name}: arkiver på servere kan ikke endres ennå"
+  },
+  "panel.error.branch_view_local": {
+    "message": "Grenvisning viser bare mapper på denne datamaskinen"
+  },
+  "panel.error.exists": {
+    "message": "{name} finnes allerede"
+  },
+  "panel.error.folder_in_the_way": {
+    "message": "en mappe med dette navnet er i veien"
+  },
+  "panel.error.inside_archive": {
+    "message": "ikke inne i arkiver ennå"
+  },
+  "panel.error.make_file": {
+    "message": "Kunne ikke opprette filen: {err}"
+  },
+  "panel.error.no_name": {
+    "message": "ingen navn angitt"
+  },
+  "panel.error.not_a_name": {
+    "message": "{name}: ikke et gyldig navn"
+  },
+  "panel.error.other_drive": {
+    "message": "det andre panelet gikk til en annen stasjon"
+  },
+  "panel.error.rename": {
+    "message": "Kunne ikke gi nytt navn: {err}"
+  },
+  "panel.filter.custom.label": {
+    "message": "Filtyper, f.eks. *.txt *.md (etter |, de som utelates):"
+  },
+  "panel.filter.custom.title": {
+    "message": "Vis filer"
+  },
+  "panel.filter.programs": {
+    "message": "programmer"
+  },
+  "panel.filter.selected_files": {
+    "message": "merkede filer"
+  },
+  "panel.found.branch_view": {
+    "message": "Grenvisning:"
+  },
+  "panel.found.search_results": {
+    "message": "Søkeresultater:"
+  },
+  "panel.new_text_file.label": {
+    "message": "Filnavn, åpnes i redigeringsprogrammet:"
+  },
+  "panel.new_text_file.title": {
+    "message": "Ny tekstfil"
+  },
+  "panel.opening.cancel": {
+    "message": "Avbryt"
+  },
+  "panel.opening.reading": {
+    "message": "Leser…"
+  },
+  "panel.opening.title": {
+    "message": "Åpner arkiv"
+  },
+  "panel.quick_filter.hint": {
+    "message": "skjuler det som ikke passer; Escape viser alt"
+  },
+  "panel.quick_filter.label": {
+    "message": "Filter:"
+  },
+  "panel.quick_search.label": {
+    "message": "Søk:"
+  },
+  "panel.size.app": {
+    "message": "<APP>"
+  },
+  "panel.size.b": {
+    "message": "{size} B"
+  },
+  "panel.size.dir": {
+    "message": "<DIR>"
+  },
+  "panel.size.gb": {
+    "message": "{size} GB"
+  },
+  "panel.size.kb": {
+    "message": "{size} KB"
+  },
+  "panel.size.mb": {
+    "message": "{size} MB"
+  },
+  "panel.size.tb": {
+    "message": "{size} TB"
+  },
+  "panel.space.bytes": {
+    "message": "{count, plural, one {{size} byte ({human})} other {{size} byte ({human})}}"
+  },
+  "panel.space.close": {
+    "message": "Lukk"
+  },
+  "panel.space.counting": {
+    "message": "Teller…"
+  },
+  "panel.space.done": {
+    "message": "Ferdig."
+  },
+  "panel.space.files": {
+    "message": "Filer:"
+  },
+  "panel.space.folders": {
+    "message": "Mapper:"
+  },
+  "panel.space.in_archive": {
+    "message": "Inne i arkiver viser Størrelse-kolonnen allerede størrelsene."
+  },
+  "panel.space.title": {
+    "message": "Beregn brukt plass"
+  },
+  "panel.space.total": {
+    "message": "Total størrelse:"
+  },
+  "panel.space.unreadable": {
+    "message": "{count, plural, one {# element kunne ikke leses.} other {# elementer kunne ikke leses.}}"
+  },
+  "panel.status": {
+    "message": "{marked_size} k / {size} k i {marked_files} / {files, plural, one {# fil} other {# filer}}, {marked_folders} / {folders, plural, one {# mappe} other {# mapper}}"
+  },
+  "panel.sync_browsing.stop": {
+    "message": "Synkronisert navigering (klikk for å stoppe)"
+  },
+  "panel.undo.rename": {
+    "message": "Endre navn på «{name}» til «{to}»"
+  },
+  "passwords.about.set": {
+    "message": "Med et hovedpassord kan de lagrede passordene åpnes på en annen datamaskin når innstillingsmappen er kopiert og hovedpassordet skrives inn der. Glemmer du det, mister du bare de lagrede passordene: de må skrives inn på nytt."
+  },
+  "passwords.about.unlock": {
+    "message": "Innstillingene kom fra en annen datamaskin, eller denne har ingen nøkkelring: hovedpassordet åpner de lagrede passordene her."
+  },
+  "passwords.cancel": {
+    "message": "Avbryt"
+  },
+  "passwords.done.set": {
+    "message": "Hovedpassordet er angitt."
+  },
+  "passwords.done.unlocked": {
+    "message": "De lagrede passordene er åpnet."
+  },
+  "passwords.error.locked": {
+    "message": "de lagrede passordene er låst: lås dem opp med hovedpassordet (Konfigurasjon › Innstillinger › Passord)"
+  },
+  "passwords.error.no_master": {
+    "message": "ingen hovedpassord er angitt"
+  },
+  "passwords.error.no_random": {
+    "message": "ingen tilfeldige tall"
+  },
+  "passwords.error.not_opened": {
+    "message": "passordet for {what} kan ikke åpnes"
+  },
+  "passwords.error.not_sealed": {
+    "message": "passordet kunne ikke krypteres"
+  },
+  "passwords.error.salt_damaged": {
+    "message": "hovedpassordets salt er skadet"
+  },
+  "passwords.error.wrong": {
+    "message": "hovedpassordet er feil"
+  },
+  "passwords.field.again": {
+    "message": "Gjenta"
+  },
+  "passwords.field.master": {
+    "message": "Hovedpassord"
+  },
+  "passwords.locked_note": {
+    "message": "De lagrede passordene er låst på denne datamaskinen: hovedpassordet åpner dem."
+  },
+  "passwords.ok": {
+    "message": "OK"
+  },
+  "passwords.problem.differ": {
+    "message": "De to passordene er ikke like."
+  },
+  "passwords.problem.empty": {
+    "message": "Skriv inn hovedpassordet."
+  },
+  "passwords.title.set": {
+    "message": "Hovedpassord"
+  },
+  "passwords.title.unlock": {
+    "message": "Lås opp lagrede passord"
+  },
+  "passwords.unlock_button": {
+    "message": "Lås opp…"
+  },
+  "passwords.working": {
+    "message": "Arbeider…"
+  },
+  "properties.accessed": {
+    "message": "Åpnet:"
+  },
+  "properties.change_attributes": {
+    "message": "Endre attributter..."
+  },
+  "properties.close": {
+    "message": "Lukk"
+  },
+  "properties.contents": {
+    "message": "{file_count, plural, one {{files} fil} other {{files} filer}}, {folder_count, plural, one {{folders} mappe} other {{folders} mapper}}, {count, plural, one {{bytes} byte} other {{bytes} byte}} ({size})"
+  },
+  "properties.contents_counting": {
+    "message": "{file_count, plural, one {{files} fil} other {{files} filer}}, {folder_count, plural, one {{folders} mappe} other {{folders} mapper}}, {count, plural, one {{bytes} byte} other {{bytes} byte}} ({size}) (teller…)"
+  },
+  "properties.contents_label": {
+    "message": "Innhold:"
+  },
+  "properties.created": {
+    "message": "Opprettet:"
+  },
+  "properties.dialog_title": {
+    "message": "Egenskaper"
+  },
+  "properties.in_archive": {
+    "message": "Arkivets oppføring viser det den vet om filene."
+  },
+  "properties.kind.file": {
+    "message": "Fil"
+  },
+  "properties.kind.folder": {
+    "message": "Mappe"
+  },
+  "properties.kind.link": {
+    "message": "Lenke"
+  },
+  "properties.kind.link_to": {
+    "message": "Lenke til {target}"
+  },
+  "properties.location": {
+    "message": "Plassering:"
+  },
+  "properties.modified": {
+    "message": "Endret:"
+  },
+  "properties.name": {
+    "message": "Navn:"
+  },
+  "properties.no_system_dialog": {
+    "message": "ingen systemdialog for egenskaper her ennå"
+  },
+  "properties.owner": {
+    "message": "Eier / gruppe:"
+  },
+  "properties.permissions": {
+    "message": "Tillatelser:"
+  },
+  "properties.size": {
+    "message": "{count, plural, one {{bytes} byte ({size})} other {{bytes} byte ({size})}}"
+  },
+  "properties.size_label": {
+    "message": "Størrelse:"
+  },
+  "properties.type": {
+    "message": "Type:"
+  },
+  "quick_open.go_to": {
+    "message": "Gå til {path}"
+  },
+  "quick_open.group.bookmarks": {
+    "message": "Bokmerker"
+  },
+  "quick_open.group.connections": {
+    "message": "Tilkoblinger"
+  },
+  "quick_open.group.drives": {
+    "message": "Stasjoner"
+  },
+  "quick_open.group.path": {
+    "message": "Sti"
+  },
+  "quick_open.group.recent_folders": {
+    "message": "Nylige mapper"
+  },
+  "quick_open.group.tools": {
+    "message": "Verktøy"
+  },
+  "quick_open.group.workspaces": {
+    "message": "Arbeidsområder"
+  },
+  "quick_open.placeholder": {
+    "message": "En kommando, et bokmerke, en mappe, sti, server, stasjon, et arbeidsområde eller verktøy"
+  },
+  "quick_open.title": {
+    "message": "Hurtigåpning"
+  },
+  "quick_view.counting": {
+    "message": "Teller…"
+  },
+  "quick_view.downloading": {
+    "message": "Laster ned…"
+  },
+  "quick_view.empty": {
+    "message": "Hurtigvisning viser det markøren i det andre panelet står på."
+  },
+  "quick_view.extracting": {
+    "message": "Henter den ut av arkivet…"
+  },
+  "quick_view.files_only": {
+    "message": "På servere og inne i arkiver viser Hurtigvisning bare filer."
+  },
+  "quick_view.space.title": {
+    "message": "Total brukt plass:"
+  },
+  "quick_view.space.totals": {
+    "message": "{bytes, plural, one {{bytes_grouped} byte} other {{bytes_grouped} byte}} i {files, plural, one {{files_grouped} fil} other {{files_grouped} filer}}, {folders, plural, one {{folders_grouped} mappe} other {{folders_grouped} mapper}}"
+  },
+  "quick_view.space.unreadable": {
+    "message": "{count} kunne ikke leses."
+  },
+  "quick_view.too_large.download": {
+    "message": "{size} er for stor til å lastes ned her: F3 viser den."
+  },
+  "quick_view.too_large.extract": {
+    "message": "{size} er for stor til å hentes ut av arkivet her: F3 viser den."
+  },
+  "remote.cancelled": {
+    "message": "avbrutt"
+  },
+  "remote.cloud.ask": {
+    "message": "{kind, select, application_key {Programnøkkel for {user} på {host}:} api_key {API-nøkkel for {user} på {host}:} password {Passord for {user} på {host}:} other {Hemmelig nøkkel for {user} på {host}:}}"
+  },
+  "remote.cloud.ask_again": {
+    "message": "{kind, select, application_key {Feil programnøkkel. Programnøkkel for {user} på {host}:} api_key {Feil API-nøkkel. API-nøkkel for {user} på {host}:} password {Feil passord. Passord for {user} på {host}:} other {Feil nøkkel. Hemmelig nøkkel for {user} på {host}:}}"
+  },
+  "remote.cloud.obscure_failed": {
+    "message": "rclone kunne ikke ta imot passordet"
+  },
+  "remote.cloud.rclone_missing": {
+    "message": "rclone mangler: Innstillinger > Tillegg laster det ned"
+  },
+  "remote.cloud.title": {
+    "message": "{kind, select, application_key {Programnøkkel} api_key {API-nøkkel} password {Passord} other {Hemmelig nøkkel}}"
+  },
+  "remote.connecting": {
+    "message": "Kobler til {server}..."
+  },
+  "remote.dialog.cancel": {
+    "message": "Avbryt"
+  },
+  "remote.dialog.ok": {
+    "message": "OK"
+  },
+  "remote.disconnect_failed": {
+    "message": "{share}: kunne ikke koble fra: {err}"
+  },
+  "remote.ftp.password": {
+    "message": "Passord for {user}@{host}:"
+  },
+  "remote.ftp.password_again": {
+    "message": "Feil passord. Passord for {user}@{host}:"
+  },
+  "remote.ftps.changed": {
+    "message": "TLS-sertifikatet til {server} er ENDRET siden linje {line} i {file} registrerte det. Noen kan avlytte forbindelsen; hvis serveren har fått nytt sertifikat, fjerner du den linjen."
+  },
+  "remote.ftps.not_trusted": {
+    "message": "serverens sertifikat er ikke klarert"
+  },
+  "remote.login.password": {
+    "message": "Passord"
+  },
+  "remote.login.title": {
+    "message": "Logg på"
+  },
+  "remote.login.user": {
+    "message": "Bruker"
+  },
+  "remote.mount.login_wrong": {
+    "message": "brukeren eller passordet er feil"
+  },
+  "remote.mount.macos_failed": {
+    "message": "macOS kunne ikke montere den (NetFS {code})"
+  },
+  "remote.mount.needs_desktop": {
+    "message": "krever kio-fuse fra KDE eller gvfs fra GNOME"
+  },
+  "remote.mount.needs_login": {
+    "message": "den krever bruker og passord"
+  },
+  "remote.mount.no_fuse": {
+    "message": "montert, men det finnes ingen mappe for den: gvfs-fuse mangler"
+  },
+  "remote.mount.no_nfs_client": {
+    "message": "ikke funnet; NFS krever Klient for NFS i Windows (Windows-funksjoner)"
+  },
+  "remote.mount.no_share": {
+    "message": "delingen mangler: smb://server/deling"
+  },
+  "remote.mount.not_address": {
+    "message": "ikke en adresse"
+  },
+  "remote.mount.not_found": {
+    "message": "montert, men ikke funnet blant de monterte"
+  },
+  "remote.mount.other_user": {
+    "message": "Windows er koblet til denne serveren som en annen bruker: logg av, eller bruk den brukeren"
+  },
+  "remote.password.title": {
+    "message": "Passord"
+  },
+  "remote.remember_password": {
+    "message": "Husk det (Innstillinger › Passord)"
+  },
+  "remote.save_back_failed": {
+    "message": "Kunne ikke lagre den tilbake: {err}"
+  },
+  "remote.sftp.host_certificate": {
+    "message": "Serveren viser et vertssertifikat; det støttes ikke ennå."
+  },
+  "remote.sftp.key_changed": {
+    "message": "Vertsnøkkelen til {server} er ENDRET siden linje {line} i {file} registrerte den. Noen kan avlytte forbindelsen; hvis serveren er satt opp på nytt, fjerner du den linjen."
+  },
+  "remote.sftp.key_not_trusted": {
+    "message": "Vertsnøkkelen til {server} ble ikke klarert."
+  },
+  "remote.sftp.keys_refused": {
+    "message": "{user}@{host}: serveren avviste nøklene og godtar ikke passord"
+  },
+  "remote.sftp.login_refused": {
+    "message": "{user}@{host}: pålogging avvist"
+  },
+  "remote.sftp.passphrase": {
+    "message": "Passordfrase for {file}"
+  },
+  "remote.sftp.passphrase_title": {
+    "message": "Nøkkelens passordfrase"
+  },
+  "remote.sftp.password": {
+    "message": "Passord for {user}@{host}"
+  },
+  "remote.unknown_host.once": {
+    "message": "Koble til én gang"
+  },
+  "remote.unknown_host.remember": {
+    "message": "Koble til og husk"
+  },
+  "remote.unknown_host.text": {
+    "message": "{key_type, select, TLS {Serveren {host} er ikke kjent ennå. Fingeravtrykket til TLS-sertifikatet er} other {Serveren {host} er ikke kjent ennå. {key_type}-fingeravtrykket er}}\n\n{fingerprint}\n\nKoble bare til hvis dette er serveren du mener; administratoren kan bekrefte fingeravtrykket."
+  },
+  "remote.unknown_host.title": {
+    "message": "Ukjent server"
+  },
+  "rename.case": {
+    "message": "Store/små:"
+  },
+  "rename.case.first": {
+    "message": "Første bokstav"
+  },
+  "rename.case.lower": {
+    "message": "små bokstaver"
+  },
+  "rename.case.unchanged": {
+    "message": "Uendret"
+  },
+  "rename.case.upper": {
+    "message": "STORE BOKSTAVER"
+  },
+  "rename.case.words": {
+    "message": "Hvert Ord"
+  },
+  "rename.close": {
+    "message": "Lukk"
+  },
+  "rename.counter_start": {
+    "message": "Startverdi"
+  },
+  "rename.dialog_title": {
+    "message": "Verktøy for masseomdøping"
+  },
+  "rename.digits": {
+    "message": "Sifre"
+  },
+  "rename.extension": {
+    "message": "Filendelse"
+  },
+  "rename.field.counter": {
+    "message": "[C] Teller"
+  },
+  "rename.field.date": {
+    "message": "[Y][M][D] Dato"
+  },
+  "rename.field.extension": {
+    "message": "[E] Endelse"
+  },
+  "rename.field.folder": {
+    "message": "[P] Mappe"
+  },
+  "rename.field.name": {
+    "message": "[N] Navn"
+  },
+  "rename.field.range": {
+    "message": "[N1-3] Område"
+  },
+  "rename.field.time": {
+    "message": "[h][m][s] Tid"
+  },
+  "rename.first_only": {
+    "message": "Bare første"
+  },
+  "rename.in_archive": {
+    "message": "Filer inne i arkiver kan ikke få nytt navn ennå."
+  },
+  "rename.mask": {
+    "message": "Navnemaske: filnavn"
+  },
+  "rename.match_case": {
+    "message": "Skill store/små"
+  },
+  "rename.new_name": {
+    "message": "Nytt navn"
+  },
+  "rename.not_renamed_back": {
+    "message": "{from}: {err}; ikke tilbakestilt: {names}"
+  },
+  "rename.not_utf8": {
+    "message": "Navn som ikke er UTF-8, utelates."
+  },
+  "rename.old_name": {
+    "message": "Gammelt navn"
+  },
+  "rename.problem.bad_character": {
+    "message": "et tegn som navn ikke kan ha"
+  },
+  "rename.problem.exists": {
+    "message": "finnes allerede"
+  },
+  "rename.problem.no_name": {
+    "message": "intet navn"
+  },
+  "rename.problem.twice": {
+    "message": "to ganger i listen"
+  },
+  "rename.regex": {
+    "message": "Regulært uttrykk"
+  },
+  "rename.regex_error": {
+    "message": "Det regulære uttrykket: {err}"
+  },
+  "rename.replace": {
+    "message": "Erstatt med"
+  },
+  "rename.search": {
+    "message": "Søk etter"
+  },
+  "rename.start": {
+    "message": "Start!"
+  },
+  "rename.status.failed": {
+    "message": "Ingenting fikk nytt navn: {err}"
+  },
+  "rename.status.ready": {
+    "message": "Start gir dem nye navn."
+  },
+  "rename.status.renamed": {
+    "message": "{count, plural, one {# fikk nytt navn.} other {# fikk nytt navn.}}"
+  },
+  "rename.status.took_back": {
+    "message": "{count, plural, one {# fikk tilbake det gamle navnet.} other {# fikk tilbake de gamle navnene.}}"
+  },
+  "rename.step": {
+    "message": "Trinn"
+  },
+  "rename.undo": {
+    "message": "Angre"
+  },
+  "rename.was": {
+    "message": "{to} (var {from})"
+  },
+  "rename.with_extension": {
+    "message": "Med filendelse"
+  },
+  "scmd.column.modified": {
+    "message": "Endret"
+  },
+  "scmd.column.name": {
+    "message": "Navn"
+  },
+  "scmd.column.size": {
+    "message": "Størrelse"
+  },
+  "scmd.column.up_dir": {
+    "message": "OPP--MAPPE"
+  },
+  "scmd.command_line.not_on_server": {
+    "message": "Kommandoer kjøres på denne datamaskinen, ikke på serveren."
+  },
+  "scmd.compare.marked": {
+    "message": "{count, plural, one {# fil merket: nyere enn, eller mangler på, den andre siden.} other {# filer merket: nyere enn, eller mangler på, den andre siden.}}"
+  },
+  "scmd.compare.same": {
+    "message": "Mappene har de samme filene."
+  },
+  "scmd.copying": {
+    "message": "Kopierer {name}..."
+  },
+  "scmd.dialog.buttons": {
+    "message": "Enter OK   Esc Avbryt"
+  },
+  "scmd.error.read_settings": {
+    "message": "Kunne ikke lese innstillingene: {err}"
+  },
+  "scmd.error.read_tabs": {
+    "message": "Kunne ikke lese de åpne fanene: {err}"
+  },
+  "scmd.error.read_workspaces": {
+    "message": "Kunne ikke lese arbeidsområdene: {err}"
+  },
+  "scmd.error.save_back": {
+    "message": "Kunne ikke lagre den tilbake: {err}"
+  },
+  "scmd.error.save_searches": {
+    "message": "Kunne ikke lagre søkene: {err}"
+  },
+  "scmd.error.save_tabs": {
+    "message": "Kunne ikke lagre de åpne fanene: {err}"
+  },
+  "scmd.find.backwards": {
+    "message": "Bakover"
+  },
+  "scmd.find.case_sensitive": {
+    "message": "Skill mellom store og små bokstaver"
+  },
+  "scmd.find.hex": {
+    "message": "Heks (77 6F 72 64)"
+  },
+  "scmd.find.not_found": {
+    "message": "Ikke funnet: {text}"
+  },
+  "scmd.find.regex": {
+    "message": "Regulært uttrykk"
+  },
+  "scmd.find.search_for": {
+    "message": "Søk etter:"
+  },
+  "scmd.find.title": {
+    "message": "Finn"
+  },
+  "scmd.find.whole_words": {
+    "message": "Bare hele ord"
+  },
+  "scmd.group.files": {
+    "message": "Filer (*.txt *.md; mapper slutter med /):"
+  },
+  "scmd.group.select_title": {
+    "message": "Merk gruppe"
+  },
+  "scmd.group.unselect_title": {
+    "message": "Fjern merking av gruppe"
+  },
+  "scmd.key_bar.copy": {
+    "message": "Kopier"
+  },
+  "scmd.key_bar.delete": {
+    "message": "Slett"
+  },
+  "scmd.key_bar.edit": {
+    "message": "Redig."
+  },
+  "scmd.key_bar.menu": {
+    "message": "Meny"
+  },
+  "scmd.key_bar.mkdir": {
+    "message": "Mappe"
+  },
+  "scmd.key_bar.move": {
+    "message": "Flytt"
+  },
+  "scmd.key_bar.quit": {
+    "message": "Slutt"
+  },
+  "scmd.key_bar.view": {
+    "message": "Vis"
+  },
+  "scmd.message.error": {
+    "message": "Feil"
+  },
+  "scmd.message.ok": {
+    "message": "OK"
+  },
+  "scmd.not_yet": {
+    "message": "{what, select, menus {Menyene: finnes ikke i terminalversjonen ennå.} file_operations {Filoperasjoner: finnes ikke i terminalversjonen ennå.} servers {Servere: finnes ikke i terminalversjonen ennå.} other {Denne kommandoen: finnes ikke i terminalversjonen ennå.}}"
+  },
+  "scmd.picture.broken": {
+    "message": "et skadet bilde"
+  },
+  "scmd.picture.broken_page": {
+    "message": "en skadet side"
+  },
+  "scmd.picture.loading": {
+    "message": "Laster inn…"
+  },
+  "scmd.picture.no_page": {
+    "message": "PDF-en har ingen slik side"
+  },
+  "scmd.shell.press_enter": {
+    "message": "Trykk Enter for å gå tilbake til Spark Commander..."
+  },
+  "scmd.sync_browsing.off": {
+    "message": "Synkronisert navigering er av."
+  },
+  "scmd.sync_browsing.on": {
+    "message": "Synkronisert navigering er på."
+  },
+  "scmd.sync_browsing.stopped": {
+    "message": "{err}. Synkronisert navigering er slått av."
+  },
+  "scmd.viewer.column": {
+    "message": "Kol {column}"
+  },
+  "scmd.viewer.finding": {
+    "message": "søker…"
+  },
+  "scmd.viewer.key_bar.next": {
+    "message": "Neste"
+  },
+  "scmd.viewer.key_bar.quit": {
+    "message": "Slutt"
+  },
+  "scmd.viewer.key_bar.reload": {
+    "message": "Oppdat"
+  },
+  "scmd.viewer.key_bar.search": {
+    "message": "Søk"
+  },
+  "scmd.viewer.page": {
+    "message": "side {page} av {pages}"
+  },
+  "scmd.viewer.reading": {
+    "message": "leser {percent} %"
+  },
+  "scmd.viewer.wrap": {
+    "message": "Bryt"
+  },
+  "scmd.workspace.copy_name": {
+    "message": "{name} (kopi)"
+  },
+  "scmd.workspace.default_name": {
+    "message": "Arbeidsområde {number}"
+  },
+  "scmd.workspace.delete_question": {
+    "message": "Vil du slette «{name}»? Fanene glemmes."
+  },
+  "scmd.workspace.duplicate_title": {
+    "message": "Dupliser arbeidsområde"
+  },
+  "scmd.workspace.last_stays": {
+    "message": "Det siste arbeidsområdet kan ikke slettes."
+  },
+  "scmd.workspace.name": {
+    "message": "Navn:"
+  },
+  "scmd.workspace.name_or_default": {
+    "message": "Navn (tomt: {name}):"
+  },
+  "scmd.workspace.new_title": {
+    "message": "Nytt arbeidsområde"
+  },
+  "scmd.workspace.rename_title": {
+    "message": "Gi arbeidsområdet nytt navn"
+  },
+  "scmd.workspaces.keys": {
+    "message": "Enter Åpne  F7 Ny  F5 Kopier  F2 Omdøp  F8 Slett"
+  },
+  "scmd.workspaces.title": {
+    "message": "Arbeidsområder"
+  },
+  "search.age.days": {
+    "message": "dag(er)"
+  },
+  "search.age.hours": {
+    "message": "time(r)"
+  },
+  "search.age.minutes": {
+    "message": "minutt(er)"
+  },
+  "search.age.months": {
+    "message": "måned(er)"
+  },
+  "search.age.weeks": {
+    "message": "uke(r)"
+  },
+  "search.age.years": {
+    "message": "år"
+  },
+  "search.archives": {
+    "message": "Søk i arkiver"
+  },
+  "search.attribute.directory": {
+    "message": "Mappe"
+  },
+  "search.attribute.either": {
+    "message": "Uansett"
+  },
+  "search.attribute.executable": {
+    "message": "Kjørbar"
+  },
+  "search.attribute.hidden": {
+    "message": "Skjult"
+  },
+  "search.attribute.link": {
+    "message": "Symbolsk lenke"
+  },
+  "search.attribute.must": {
+    "message": "Må være"
+  },
+  "search.attribute.must_not": {
+    "message": "Må ikke være"
+  },
+  "search.attribute.read_only": {
+    "message": "Skrivebeskyttet"
+  },
+  "search.attributes.label": {
+    "message": "Attributter:"
+  },
+  "search.between.and": {
+    "message": "og"
+  },
+  "search.between.label": {
+    "message": "Dato mellom:"
+  },
+  "search.close": {
+    "message": "Lukk"
+  },
+  "search.depth.all": {
+    "message": "alle (ubegrenset dybde)"
+  },
+  "search.depth.current": {
+    "message": "bare gjeldende mappe"
+  },
+  "search.depth.label": {
+    "message": "Søk i undermapper:"
+  },
+  "search.depth.levels": {
+    "message": "{count, plural, one {# nivå} other {# nivåer}}"
+  },
+  "search.drives": {
+    "message": "Stasjoner"
+  },
+  "search.duplicates.content": {
+    "message": "samme innhold"
+  },
+  "search.duplicates.label": {
+    "message": "Finn dupliserte filer:"
+  },
+  "search.duplicates.name": {
+    "message": "samme navn"
+  },
+  "search.duplicates.size": {
+    "message": "samme størrelse"
+  },
+  "search.edit": {
+    "message": "F4 Rediger"
+  },
+  "search.error.between_days": {
+    "message": "Dato mellom krever begge dagene"
+  },
+  "search.error.date": {
+    "message": "{text} er ikke en dato som 2026-11-12"
+  },
+  "search.error.hex": {
+    "message": "{text} er ikke en heksadesimal streng som 48 65 6c"
+  },
+  "search.error.keep": {
+    "message": "Kunne ikke lagre søket: {err}"
+  },
+  "search.error.local_time": {
+    "message": "{text} er ikke et gyldig lokalt tidspunkt"
+  },
+  "search.error.names_regex": {
+    "message": "Navnets regulære uttrykk: {err}"
+  },
+  "search.error.newer_number": {
+    "message": "Ikke eldre enn krever et tall, ikke {text}"
+  },
+  "search.error.no_place": {
+    "message": "Søk i angir ingen mappe"
+  },
+  "search.error.no_text": {
+    "message": "Finn tekst angir ingen tekst"
+  },
+  "search.error.older_number": {
+    "message": "Eldre enn krever et tall, ikke {text}"
+  },
+  "search.error.save": {
+    "message": "Kunne ikke lagre søkene: {err}"
+  },
+  "search.error.size_number": {
+    "message": "Filstørrelse krever et tall, ikke {text}"
+  },
+  "search.error.text_regex": {
+    "message": "Tekstens regulære uttrykk: {err}"
+  },
+  "search.feed": {
+    "message": "Send til panelet"
+  },
+  "search.go_to_file": {
+    "message": "Gå til fil"
+  },
+  "search.in_found": {
+    "message": "F2 Søk i funne filer"
+  },
+  "search.locate": {
+    "message": "Fra locate-indeksen"
+  },
+  "search.names.label": {
+    "message": "Søk etter:"
+  },
+  "search.names.placeholder": {
+    "message": "*.txt *.md | backup*  (tomt: alle)"
+  },
+  "search.new": {
+    "message": "Nytt søk"
+  },
+  "search.newer.label": {
+    "message": "Ikke eldre enn:"
+  },
+  "search.older.label": {
+    "message": "Eldre enn:"
+  },
+  "search.only_selected": {
+    "message": "Søk bare i merkede filer/mapper"
+  },
+  "search.only_selected_count": {
+    "message": "{count, plural, one {Søk bare i den # merkede} other {Søk bare i de # merkede}}"
+  },
+  "search.page.advanced": {
+    "message": "Avansert"
+  },
+  "search.page.general": {
+    "message": "Generelt"
+  },
+  "search.page.load_save": {
+    "message": "Last inn/lagre"
+  },
+  "search.places.browse_prompt": {
+    "message": "Søk i"
+  },
+  "search.places.label": {
+    "message": "Søk i:"
+  },
+  "search.places.placeholder": {
+    "message": "Mapper, med ; mellom"
+  },
+  "search.regex": {
+    "message": "RegEx"
+  },
+  "search.results.label": {
+    "message": "Søkeresultater:"
+  },
+  "search.saved.delete": {
+    "message": "Slett"
+  },
+  "search.saved.label": {
+    "message": "Tidligere søk:"
+  },
+  "search.saved.load": {
+    "message": "Last inn"
+  },
+  "search.saved.name_first": {
+    "message": "Gi søket et navn først."
+  },
+  "search.saved.name_placeholder": {
+    "message": "Navn på søket"
+  },
+  "search.saved.save": {
+    "message": "Lagre"
+  },
+  "search.size.label": {
+    "message": "Filstørrelse:"
+  },
+  "search.start": {
+    "message": "Start søk"
+  },
+  "search.status.found": {
+    "message": "{files, plural, one {# fil} other {# filer}} og {dirs, plural, one {# mappe} other {# mapper}} funnet"
+  },
+  "search.status.searching": {
+    "message": "Søker…"
+  },
+  "search.status.searching_in": {
+    "message": "Søker: {folder}"
+  },
+  "search.status.stopped": {
+    "message": "Stoppet: {counts}"
+  },
+  "search.stop": {
+    "message": "Stopp"
+  },
+  "search.text.ansi": {
+    "message": "ANSI (kodeside {page})"
+  },
+  "search.text.case_sensitive": {
+    "message": "Skill mellom store og små bokstaver"
+  },
+  "search.text.hex": {
+    "message": "Heks"
+  },
+  "search.text.label": {
+    "message": "Finn tekst:"
+  },
+  "search.text.not_containing": {
+    "message": "Finn filer som IKKE inneholder teksten"
+  },
+  "search.text.office": {
+    "message": "Office-filer (docx, xlsx, pptx, odt…)"
+  },
+  "search.text.placeholder": {
+    "message": "Tekst å finne"
+  },
+  "search.text.whole_words": {
+    "message": "Bare hele ord"
+  },
+  "search.title": {
+    "message": "Finn filer"
+  },
+  "search.unit.bytes": {
+    "message": "byte"
+  },
+  "search.view": {
+    "message": "F3 Vis"
+  },
+  "settings.addons.builtin_version": {
+    "message": "{version}, følger med Spark Commander"
+  },
+  "settings.addons.check_daily": {
+    "message": "Se etter oppdateringer for tillegg ved oppstart og daglig, og tilby dem"
+  },
+  "settings.addons.check_failed": {
+    "message": "Kunne ikke se etter oppdateringer: {err}"
+  },
+  "settings.addons.check_now": {
+    "message": "Se etter nå"
+  },
+  "settings.addons.checking": {
+    "message": "Ser etter oppdateringer..."
+  },
+  "settings.addons.download": {
+    "message": "Last ned"
+  },
+  "settings.addons.downloading": {
+    "message": "Laster ned: {done} av {size}"
+  },
+  "settings.addons.file": {
+    "message": "Fil"
+  },
+  "settings.addons.installed.builtin": {
+    "message": "følger med Spark Commander"
+  },
+  "settings.addons.installed.label": {
+    "message": "Installert"
+  },
+  "settings.addons.installed.none": {
+    "message": "ingen"
+  },
+  "settings.addons.intro": {
+    "message": "Spark Commander bruker disse programmene fra andre prosjekter til noe av det det gjør. Tilleggene lastes ned separat, når du velger det; 7-Zip og PDFium følger med."
+  },
+  "settings.addons.never_offer": {
+    "message": "Tilby aldri tillegg når en fil trenger et"
+  },
+  "settings.addons.offers": {
+    "message": "Tilbud og oppdateringer"
+  },
+  "settings.addons.online.label": {
+    "message": "På nettet"
+  },
+  "settings.addons.online.looking": {
+    "message": "ser etter..."
+  },
+  "settings.addons.online.none": {
+    "message": "ingen for dette systemet"
+  },
+  "settings.addons.online.not_yet": {
+    "message": "ikke sjekket ennå"
+  },
+  "settings.addons.online.unknown": {
+    "message": "ukjent"
+  },
+  "settings.addons.remove": {
+    "message": "Fjern"
+  },
+  "settings.addons.up_to_date": {
+    "message": "Listen over tillegg er oppdatert."
+  },
+  "settings.addons.version": {
+    "message": "Versjon"
+  },
+  "settings.addons.website": {
+    "message": "Nettsted"
+  },
+  "settings.appearance.title": {
+    "message": "Utseende"
+  },
+  "settings.apply": {
+    "message": "Bruk"
+  },
+  "settings.backdrop.blur": {
+    "message": "Gjør skrivebordet bak uskarpt"
+  },
+  "settings.backdrop.clear": {
+    "message": "0 %, bare skrivebordet"
+  },
+  "settings.backdrop.cover": {
+    "message": "Hvor mye det dekker skrivebordet bak:"
+  },
+  "settings.backdrop.opacity": {
+    "message": "{opacity} %"
+  },
+  "settings.backdrop.sidebar": {
+    "message": "Sidepanel"
+  },
+  "settings.backdrop.solid": {
+    "message": "100 %, heldekkende"
+  },
+  "settings.backdrop.terminal": {
+    "message": "Terminal"
+  },
+  "settings.cancel": {
+    "message": "Avbryt"
+  },
+  "settings.date.as_system": {
+    "message": "Som systemet: {date}"
+  },
+  "settings.date.custom": {
+    "message": "Egendefinert:"
+  },
+  "settings.date.pattern_help": {
+    "message": "yyyy år, MM måned (MMM navnet), dd dag (ddd ukedagen)"
+  },
+  "settings.date.shown_as": {
+    "message": "Vises som"
+  },
+  "settings.date.shown_as_note": {
+    "message": "i fillistene; dialoger legger til sekundene"
+  },
+  "settings.date.title": {
+    "message": "Dato"
+  },
+  "settings.editor.browse": {
+    "message": "Bla gjennom..."
+  },
+  "settings.editor.choose": {
+    "message": "Velg"
+  },
+  "settings.editor.external": {
+    "message": "Eksternt redigeringsprogram (Ctrl+Shift+F4):"
+  },
+  "settings.editor.external_help": {
+    "message": "%1 er filen, ellers kommer den sist; f.eks. code --wait %1"
+  },
+  "settings.editor.limit": {
+    "message": "Det innebygde redigeringsprogrammet (F4) åpner filer opptil"
+  },
+  "settings.editor.limit_unit": {
+    "message": "MB"
+  },
+  "settings.editor.title": {
+    "message": "Redigeringsprogram for F4"
+  },
+  "settings.error.no_folder": {
+    "message": "ingen konfigurasjonsmappe"
+  },
+  "settings.files_shown.hidden": {
+    "message": "Skjulte filer"
+  },
+  "settings.files_shown.system": {
+    "message": "Systemfiler"
+  },
+  "settings.files_shown.title": {
+    "message": "Viste filer"
+  },
+  "settings.font.as_system": {
+    "message": "Som systemet"
+  },
+  "settings.font.chosen": {
+    "message": "Valgt; systemets er {family}, {size}"
+  },
+  "settings.font.fixed": {
+    "message": "Fremviser"
+  },
+  "settings.font.fixed_note": {
+    "message": "Bare skrift med fast bredde; brukes også av redigeringsprogrammet og filsammenligningen."
+  },
+  "settings.font.main": {
+    "message": "Skrift i hovedvinduet"
+  },
+  "settings.font.system": {
+    "message": "Systemets skrift"
+  },
+  "settings.language.system": {
+    "message": "Systemspråk"
+  },
+  "settings.language.system_named": {
+    "message": "Systemspråk: {language}"
+  },
+  "settings.language.title": {
+    "message": "Språk"
+  },
+  "settings.menus.automatic": {
+    "message": "Automatisk: en ☰-knapp i GNOME, ellers en menylinje"
+  },
+  "settings.menus.bar": {
+    "message": "Menylinje"
+  },
+  "settings.menus.button": {
+    "message": "☰-knapp i tittellinjen"
+  },
+  "settings.menus.title": {
+    "message": "Menyer"
+  },
+  "settings.ok": {
+    "message": "OK"
+  },
+  "settings.page.addons": {
+    "message": "Tillegg"
+  },
+  "settings.page.date": {
+    "message": "Dato"
+  },
+  "settings.page.display": {
+    "message": "Visning"
+  },
+  "settings.page.edit_view": {
+    "message": "Rediger/vis"
+  },
+  "settings.page.font": {
+    "message": "Skrift"
+  },
+  "settings.page.language": {
+    "message": "Språk"
+  },
+  "settings.page.layout": {
+    "message": "Oppsett"
+  },
+  "settings.page.operations": {
+    "message": "Operasjoner"
+  },
+  "settings.page.passwords": {
+    "message": "Passord"
+  },
+  "settings.page.terminal": {
+    "message": "Terminal"
+  },
+  "settings.page.toolbar": {
+    "message": "Verktøylinje"
+  },
+  "settings.passwords.change_master": {
+    "message": "Endre hovedpassord…"
+  },
+  "settings.passwords.locked": {
+    "message": "De er låst på denne datamaskinen: hovedpassordet åpner dem."
+  },
+  "settings.passwords.master_set": {
+    "message": "Et hovedpassord er angitt: når innstillingsmappen er kopiert, åpnes de på en annen datamaskin når det skrives inn der."
+  },
+  "settings.passwords.no_master": {
+    "message": "Ingen hovedpassord er angitt: når innstillingsmappen er kopiert, åpnes de ikke på en annen datamaskin; de må skrives inn på nytt der."
+  },
+  "settings.passwords.not_removed": {
+    "message": "Hovedpassordet ble ikke fjernet: {err}"
+  },
+  "settings.passwords.remove_master": {
+    "message": "Fjern hovedpassord"
+  },
+  "settings.passwords.saved": {
+    "message": "{count, plural, one {# passord er lagret} other {# passord er lagret}} (for servere, delinger og krypterte stasjoner), kryptert i innstillingsmappen; nøkkelen som åpner dem, ligger i nøkkelringen på denne datamaskinen."
+  },
+  "settings.passwords.set_master": {
+    "message": "Angi hovedpassord…"
+  },
+  "settings.passwords.title": {
+    "message": "Lagrede passord"
+  },
+  "settings.passwords.unlock": {
+    "message": "Lås opp…"
+  },
+  "settings.queue.clear_after": {
+    "message": "Fjern fullførte operasjoner etter"
+  },
+  "settings.queue.clear_after_help": {
+    "message": "0: med en gang de er ferdige. Mislykkede og avbrutte blir stående til de fjernes."
+  },
+  "settings.queue.clear_after_unit": {
+    "message": "minutter"
+  },
+  "settings.queue.download_limit": {
+    "message": "Grense for nedlastingshastighet"
+  },
+  "settings.queue.download_limit_help": {
+    "message": "Last ned fra lenke, og kopiering fra FTP- og SFTP-servere; også de som kjører. 0: ingen grense."
+  },
+  "settings.queue.download_limit_unit": {
+    "message": "KB/s"
+  },
+  "settings.queue.title": {
+    "message": "Operasjonskø"
+  },
+  "settings.shell.default": {
+    "message": "Standard: {shell}"
+  },
+  "settings.shell.note": {
+    "message": "Nye terminalfaner starter det."
+  },
+  "settings.shell.title": {
+    "message": "Skall"
+  },
+  "settings.sort_folders.by_name": {
+    "message": "Alltid etter navn"
+  },
+  "settings.sort_folders.like_files": {
+    "message": "Som filer (også etter tid)"
+  },
+  "settings.sort_folders.title": {
+    "message": "Sortering av mapper"
+  },
+  "settings.tabs.header_always": {
+    "message": "Vis fanelinjen også når det bare er én fane"
+  },
+  "settings.tabs.title": {
+    "message": "Mappefaner"
+  },
+  "settings.time.as_system": {
+    "message": "Som systemet"
+  },
+  "settings.time.h12": {
+    "message": "12 timer (2:05 PM)"
+  },
+  "settings.time.h24": {
+    "message": "24 timer (14:05)"
+  },
+  "settings.time.title": {
+    "message": "Tid"
+  },
+  "settings.title": {
+    "message": "Innstillinger"
+  },
+  "settings.toolbar.add": {
+    "message": "Legg til knapp…"
+  },
+  "settings.toolbar.move_down": {
+    "message": "Flytt ned"
+  },
+  "settings.toolbar.move_up": {
+    "message": "Flytt opp"
+  },
+  "settings.toolbar.place": {
+    "message": "Under menylinjen; i tittellinjen der menyene ligger bak ☰-knappen, slik GNOME-programmer har dem. Uten knapper vises ingen verktøylinje."
+  },
+  "settings.toolbar.remove": {
+    "message": "Fjern"
+  },
+  "settings.toolbar.replace": {
+    "message": "Erstatt…"
+  },
+  "settings.toolbar.restore_default": {
+    "message": "Gjenopprett standard"
+  },
+  "settings.toolbar.title": {
+    "message": "Verktøylinjeknapper"
+  },
+  "settings.viewer.font.ansi": {
+    "message": "ANSI (Windows)"
+  },
+  "settings.viewer.font.ascii": {
+    "message": "ASCII (DOS)"
+  },
+  "settings.viewer.font.auto": {
+    "message": "Oppdag automatisk"
+  },
+  "settings.viewer.font.label": {
+    "message": "Skrift ved oppstart:"
+  },
+  "settings.viewer.font.variable": {
+    "message": "Variabel bredde"
+  },
+  "settings.viewer.minimap": {
+    "message": "Minikart"
+  },
+  "settings.viewer.show": {
+    "message": "Vis:"
+  },
+  "settings.viewer.start.auto": {
+    "message": "Oppdag automatisk"
+  },
+  "settings.viewer.start.binary": {
+    "message": "Binær"
+  },
+  "settings.viewer.start.hex": {
+    "message": "Heks"
+  },
+  "settings.viewer.start.label": {
+    "message": "Visning ved oppstart:"
+  },
+  "settings.viewer.start.text": {
+    "message": "Tekst"
+  },
+  "settings.viewer.title": {
+    "message": "Fremviser for F3"
+  },
+  "settings.viewer.width.binary": {
+    "message": "Binær"
+  },
+  "settings.viewer.width.label": {
+    "message": "Visningsbredde (tegn):"
+  },
+  "settings.viewer.width.text": {
+    "message": "Tekst"
+  },
+  "settings.viewer.wrap": {
+    "message": "Bryt tekst"
+  },
+  "shells.command_prompt": {
+    "message": "Ledetekst"
+  },
+  "sidebar.device.no_files": {
+    "message": "deler ingen filer"
+  },
+  "sidebar.device.not_answering": {
+    "message": "{name} svarer ikke: lås den opp og åpne KDE Connect på den, og les deretter inn mappen på nytt (F2)."
+  },
+  "sidebar.device.not_answering_error": {
+    "message": "{name} svarer ikke ({err}): lås den opp og åpne KDE Connect på den."
+  },
+  "sidebar.device.not_connected": {
+    "message": "ikke tilkoblet"
+  },
+  "sidebar.device.opening": {
+    "message": "Åpner {name}..."
+  },
+  "sidebar.device.reconnecting": {
+    "message": "{name} svarer ikke: kobler til på nytt..."
+  },
+  "sidebar.device.unmount_failed": {
+    "message": "{name}: kunne ikke avmontere: {err}"
+  },
+  "sidebar.group.bookmarks": {
+    "message": "Bokmerker"
+  },
+  "sidebar.group.cloud": {
+    "message": "Sky"
+  },
+  "sidebar.group.devices": {
+    "message": "Enheter"
+  },
+  "sidebar.group.drives": {
+    "message": "Stasjoner"
+  },
+  "sidebar.group.network": {
+    "message": "Nettverk"
+  },
+  "sidebar.section.connections": {
+    "message": "Tilkoblinger"
+  },
+  "sidebar.section.folders": {
+    "message": "Mapper"
+  },
+  "sidebar.section.operations": {
+    "message": "Operasjoner"
+  },
+  "sidebar.section.places": {
+    "message": "Steder"
+  },
+  "sidebar.volume.locked": {
+    "message": "låst"
+  },
+  "sidebar.volume.mounting": {
+    "message": "Monterer {name}..."
+  },
+  "sidebar.volume.not_mounted": {
+    "message": "ikke montert"
+  },
+  "sidebar.volume.open": {
+    "message": "Åpne"
+  },
+  "sidebar.volume.space": {
+    "message": "{free} ledig av {total}"
+  },
+  "sidebar.volume.unmount": {
+    "message": "Avmonter"
+  },
+  "sidebar.volume.unmount_failed": {
+    "message": "Kunne ikke avmontere: {err}"
+  },
+  "split.bad_size": {
+    "message": "«{size}» er ikke en størrelse: 100 MB, 1.5 GB, 650m"
+  },
+  "split.choose": {
+    "message": "Sett markøren på filen som skal deles opp."
+  },
+  "split.combine.choose": {
+    "message": "Sett markøren på en del (navn.001) eller på .crc-filen."
+  },
+  "split.combine.dialog_title": {
+    "message": "Slå sammen filer"
+  },
+  "split.combine.label": {
+    "message": "Slå sammen delene til filen:"
+  },
+  "split.combine.title": {
+    "message": "Slå sammen «{name}»"
+  },
+  "split.combined_no_crc": {
+    "message": "{count, plural, one {# del slått sammen, ingen CRC-fil å kontrollere mot} other {# deler slått sammen, ingen CRC-fil å kontrollere mot}}"
+  },
+  "split.crc_mismatch": {
+    "message": "{target} stemmer ikke med {file}: en del mangler eller er skadet"
+  },
+  "split.crc_names_no_file": {
+    "message": "CRC-filen angir ingen fil"
+  },
+  "split.crc_unreadable": {
+    "message": "slått sammen, men {file} kunne ikke leses: {err}"
+  },
+  "split.dialog_title": {
+    "message": "Del opp fil"
+  },
+  "split.label": {
+    "message": "Del opp «{name}» i deler i mappen:"
+  },
+  "split.part_missing": {
+    "message": "{path} mangler"
+  },
+  "split.part_size": {
+    "message": "Delstørrelse:"
+  },
+  "split.title": {
+    "message": "Del opp «{name}»"
+  },
+  "sync.close": {
+    "message": "Lukk"
+  },
+  "sync.column.date": {
+    "message": "Dato"
+  },
+  "sync.column.name": {
+    "message": "Navn"
+  },
+  "sync.column.size": {
+    "message": "Størrelse"
+  },
+  "sync.compare": {
+    "message": "Sammenlign"
+  },
+  "sync.confirm.copy_left": {
+    "message": "Kopier {count} til venstre ({size})"
+  },
+  "sync.confirm.copy_right": {
+    "message": "Kopier {count} til høyre ({size})"
+  },
+  "sync.confirm.delete_left": {
+    "message": "Slett {count} til venstre"
+  },
+  "sync.confirm.delete_right": {
+    "message": "Slett {count} til høyre"
+  },
+  "sync.confirm.ok": {
+    "message": "Synkroniser"
+  },
+  "sync.confirm.text": {
+    "message": "{actions}. Kopierte filer erstatter de som ligger der.{trash, select, yes { Slettede filer på denne datamaskinen havner i papirkurven.} other {}}"
+  },
+  "sync.confirm.title": {
+    "message": "Synkroniser"
+  },
+  "sync.error.changed": {
+    "message": "endret siden sammenligningen; sammenlign på nytt"
+  },
+  "sync.error.compare": {
+    "message": "Kunne ikke sammenligne: {err}"
+  },
+  "sync.error.no_folders": {
+    "message": "Synkroniser mapper sammenligner to mapper: ingen av panelene kan vise et arkiv eller søkeresultater."
+  },
+  "sync.left": {
+    "message": "Venstre"
+  },
+  "sync.mask.label": {
+    "message": "Filer:"
+  },
+  "sync.option.asymmetric": {
+    "message": "Asymmetrisk (høyre blir en kopi av venstre)"
+  },
+  "sync.option.by_content": {
+    "message": "Etter innhold"
+  },
+  "sync.option.ignore_date": {
+    "message": "Ignorer dato"
+  },
+  "sync.option.subfolders": {
+    "message": "Undermapper"
+  },
+  "sync.result.done": {
+    "message": "{count, plural, one {# synkronisert} other {# synkronisert}}"
+  },
+  "sync.result.failed": {
+    "message": "{count, plural, one {# ikke synkronisert} other {# ikke synkronisert}}; {first}"
+  },
+  "sync.right": {
+    "message": "Høyre"
+  },
+  "sync.show.equal": {
+    "message": "= like"
+  },
+  "sync.show.label": {
+    "message": "Vis:"
+  },
+  "sync.show.other": {
+    "message": "≠ urørt"
+  },
+  "sync.show.to_left": {
+    "message": "← til venstre"
+  },
+  "sync.show.to_right": {
+    "message": "→ til høyre"
+  },
+  "sync.status.both_empty": {
+    "message": "Begge er tomme."
+  },
+  "sync.status.comparing": {
+    "message": "Sammenligner {folder}"
+  },
+  "sync.status.counts": {
+    "message": "{right} å kopiere til høyre, {left} å kopiere til venstre, {delete} å slette, {equal} like, {alone} urørt"
+  },
+  "sync.status.stopped": {
+    "message": "Stoppet."
+  },
+  "sync.stop": {
+    "message": "Stopp"
+  },
+  "sync.synchronize": {
+    "message": "Synkroniser..."
+  },
+  "sync.task.title": {
+    "message": "Synkroniser {left} og {right}"
+  },
+  "sync.title": {
+    "message": "Synkroniser mapper"
+  },
+  "tab_menu.close_all_tabs": {
+    "message": "Lukk alle faner"
+  },
+  "tab_menu.close_duplicate_tabs": {
+    "message": "Lukk dupliserte faner"
+  },
+  "tab_menu.close_tab": {
+    "message": "Lukk denne fanen"
+  },
+  "tab_menu.copy_tab_to_other_panel": {
+    "message": "Kopier fanen til det andre panelet"
+  },
+  "tab_menu.duplicate_tab": {
+    "message": "Dupliser denne fanen"
+  },
+  "tab_menu.list_tabs": {
+    "message": "Vis liste over alle faner"
+  },
+  "tab_menu.lock_tab": {
+    "message": "Lås denne fanen"
+  },
+  "tab_menu.none": {
+    "message": "(ingen)"
+  },
+  "tab_menu.rename_tab": {
+    "message": "Gi fanen nytt navn..."
+  },
+  "tabs.error.reopen": {
+    "message": "Kunne ikke åpne fanen igjen: {err}"
+  },
+  "tabs.history.empty": {
+    "message": "Ingen mapper i denne fanens historikk ennå."
+  },
+  "tabs.new": {
+    "message": "Ny fane"
+  },
+  "tabs.rename.label": {
+    "message": "Nytt navn:"
+  },
+  "tabs.rename.title": {
+    "message": "Gi fanen nytt navn"
+  },
+  "tabs.search_results": {
+    "message": "Søkeresultater"
+  },
+  "terminal.busy": {
+    "message": "Et program kjører i terminalen: kjør kommandoen når det er ferdig."
+  },
+  "terminal.close.idle": {
+    "message": "Vil du lukke denne terminalfanen? Skallet avsluttes."
+  },
+  "terminal.close.ok": {
+    "message": "Lukk"
+  },
+  "terminal.close.running": {
+    "message": "Vil du lukke denne terminalfanen? Programmet som kjører i den, stoppes."
+  },
+  "terminal.close.title": {
+    "message": "Lukk fane"
+  },
+  "terminal.error.start_shell": {
+    "message": "Kunne ikke starte skallet: {err}"
+  },
+  "terminal.jump_to_bottom": {
+    "message": "Gå til bunnen (Ctrl+End) ↓"
+  },
+  "terminal.menu.copy": {
+    "message": "Kopier"
+  },
+  "terminal.menu.paste": {
+    "message": "Lim inn"
+  },
+  "toolbar.customize": {
+    "message": "Tilpass verktøylinjen…"
+  },
+  "tools.clear_key": {
+    "message": "Fjern"
+  },
+  "tools.close": {
+    "message": "Lukk"
+  },
+  "tools.delete": {
+    "message": "Slett"
+  },
+  "tools.empty": {
+    "message": "Ingen verktøy ennå: Ny... legger til et."
+  },
+  "tools.field.command": {
+    "message": "Kommando"
+  },
+  "tools.field.key": {
+    "message": "Tast"
+  },
+  "tools.field.name": {
+    "message": "Navn"
+  },
+  "tools.intro": {
+    "message": "Dine egne kommandolinjer, i Verktøy-menyen: klikk på en der, eller trykk tasten dens."
+  },
+  "tools.key.none": {
+    "message": "Ingen"
+  },
+  "tools.key.waiting": {
+    "message": "Trykk tasten... (Esc: ingen)"
+  },
+  "tools.move_down": {
+    "message": "Flytt ned"
+  },
+  "tools.move_up": {
+    "message": "Flytt opp"
+  },
+  "tools.name.placeholder": {
+    "message": "Sammenlign med den andre siden"
+  },
+  "tools.new": {
+    "message": "Ny..."
+  },
+  "tools.new_name": {
+    "message": "Verktøy {number}"
+  },
+  "tools.no_command": {
+    "message": "{tool} har ingen kommando ennå: Verktøy > Behandle verktøy."
+  },
+  "tools.not_local": {
+    "message": "Verktøy kjøres på denne datamaskinen: panelet viser en server eller et arkiv."
+  },
+  "tools.note.key_of_command": {
+    "message": "{key} er også {command}: verktøyet tar den."
+  },
+  "tools.note.key_of_other_tool": {
+    "message": "{key} brukes også av {tool}: det nederste i listen tar den."
+  },
+  "tools.placeholders": {
+    "message": "%P mappen i dette panelet, %T mappen i det andre (begge slutter med et skilletegn, så \"%P%N\" er en sti), %N filen under markøren, %O navnet uten filendelse, %E filendelsen, %S de merkede filene (ellers den under markøren), hver i anførselstegn; %% gir et %. Sett anførselstegn rundt resten: \"%P%N\"."
+  },
+  "tools.run_in_terminal": {
+    "message": "Kjør i terminalen, for å se det det skriver ut"
+  },
+  "tools.set_key": {
+    "message": "Angi tast..."
+  },
+  "tools.title": {
+    "message": "Verktøy"
+  },
+  "transfer.answer.cancel": {
+    "message": "Avbryt"
+  },
+  "transfer.answer.elevate": {
+    "message": "Som administrator"
+  },
+  "transfer.answer.overwrite": {
+    "message": "Overskriv"
+  },
+  "transfer.answer.overwrite_all": {
+    "message": "Overskriv alle"
+  },
+  "transfer.answer.rename": {
+    "message": "Gi nytt navn"
+  },
+  "transfer.answer.retry": {
+    "message": "Prøv igjen"
+  },
+  "transfer.answer.skip": {
+    "message": "Hopp over"
+  },
+  "transfer.answer.skip_all": {
+    "message": "Hopp over alle"
+  },
+  "transfer.archive.local_only": {
+    "message": "Bare filer på denne datamaskinen kan legges i et arkiv: kopier dem hit først."
+  },
+  "transfer.cancel": {
+    "message": "Avbryt"
+  },
+  "transfer.error.elevate_hint": {
+    "message": "Som administrator: dette og alt annet som nektes, når resten er gjort, med én forespørsel om passordet."
+  },
+  "transfer.error.title": {
+    "message": "Feil"
+  },
+  "transfer.exists.describe": {
+    "message": "{count, plural, one {{size} byte, {time}} other {{size} byte, {time}}}"
+  },
+  "transfer.exists.text": {
+    "message": "Allerede der: {existing}\nDen nye: {new}"
+  },
+  "transfer.exists.title": {
+    "message": "Filen finnes"
+  },
+  "transfer.extract_failed": {
+    "message": "Kunne ikke hente dem ut: {err}"
+  },
+  "transfer.into_archive.question_many": {
+    "message": "{kind, select, copy {Vil du kopiere} other {Vil du flytte}} {count, plural, one {# element} other {# elementer}} til {into}? Det som har samme navn der, erstattes."
+  },
+  "transfer.into_archive.question_one": {
+    "message": "{kind, select, copy {Vil du kopiere} other {Vil du flytte}} «{name}» til {into}? Det som har samme navn der, erstattes."
+  },
+  "transfer.into_archive.title_many": {
+    "message": "{kind, select, copy {Kopier} other {Flytt}} {count, plural, one {# element} other {# elementer}} til {archive}"
+  },
+  "transfer.into_archive.title_one": {
+    "message": "{kind, select, copy {Kopier} other {Flytt}} «{name}» til {archive}"
+  },
+  "transfer.label.many": {
+    "message": "{kind, select, copy {Kopier} other {Flytt}} {count, plural, one {# element} other {# elementer}} til:"
+  },
+  "transfer.label.many_server": {
+    "message": "{kind, select, copy {Kopier} other {Flytt}} {count, plural, one {# element} other {# elementer}} til {server}:"
+  },
+  "transfer.label.one": {
+    "message": "{kind, select, copy {Kopier} other {Flytt}} «{name}» til:"
+  },
+  "transfer.label.one_server": {
+    "message": "{kind, select, copy {Kopier} other {Flytt}} «{name}» til {server}:"
+  },
+  "transfer.ok": {
+    "message": "OK"
+  },
+  "transfer.overwrite.all": {
+    "message": "Overskriv alle"
+  },
+  "transfer.overwrite.ask": {
+    "message": "Spør"
+  },
+  "transfer.overwrite.label": {
+    "message": "Der målet har en fil med samme navn:"
+  },
+  "transfer.overwrite.older": {
+    "message": "Overskriv eldre"
+  },
+  "transfer.overwrite.rename": {
+    "message": "Gi kopiene nye navn"
+  },
+  "transfer.overwrite.skip": {
+    "message": "Hopp over alle"
+  },
+  "transfer.remove_moved": {
+    "message": "Fjern de flyttede fra {name}"
+  },
+  "transfer.speed": {
+    "message": "{size}/s"
+  },
+  "transfer.strip.counting": {
+    "message": "teller: {count, plural, one {# fil} other {# filer}}"
+  },
+  "transfer.strip.progress": {
+    "message": "{files} / {count, plural, one {# fil} other {# filer}}, {percent} %"
+  },
+  "transfer.strip.queue": {
+    "message": "Kø..."
+  },
+  "transfer.strip.queue_waiting": {
+    "message": "Kø ({count, plural, one {# venter} other {# venter}})..."
+  },
+  "transfer.title.copy": {
+    "message": "Kopier"
+  },
+  "transfer.title.move": {
+    "message": "Flytt"
+  },
+  "viewer.as_text_hint": {
+    "message": "{err}. 1 viser filen som tekst."
+  },
+  "viewer.book.cannot_read": {
+    "message": "Denne boken kan ikke leses: {err}. 1 viser filen som tekst."
+  },
+  "viewer.book.continuing": {
+    "message": "Fortsetter ved {percent}"
+  },
+  "viewer.book.error.compression": {
+    "message": "komprimert på en måte som ikke kan leses ennå ({compression})"
+  },
+  "viewer.book.error.damaged": {
+    "message": "en skadet bok"
+  },
+  "viewer.book.error.damaged_zip": {
+    "message": "en skadet zip-fil"
+  },
+  "viewer.book.error.drm": {
+    "message": "DRM-beskyttet: bare Kindle kan lese den"
+  },
+  "viewer.book.error.huffman": {
+    "message": "komprimert slik Amazons egne bøker er (HUFF/CDIC), som ikke kan leses ennå"
+  },
+  "viewer.book.error.missing_part": {
+    "message": "{name} finnes ikke i boken"
+  },
+  "viewer.book.error.no_package": {
+    "message": "ingen pakkefil i boken"
+  },
+  "viewer.book.error.no_text": {
+    "message": "boken har ingen tekst"
+  },
+  "viewer.book.error.not_zip": {
+    "message": "ikke en zip-fil: en skadet eller DRM-beskyttet bok?"
+  },
+  "viewer.book.error.zip_method": {
+    "message": "{name}: komprimert på en måte zip-leseren her ikke kan lese ({method})"
+  },
+  "viewer.cannot_show": {
+    "message": "Kan ikke vise den: {err}"
+  },
+  "viewer.convert.failed": {
+    "message": "{tool} kunne ikke konvertere den ({status})"
+  },
+  "viewer.converting": {
+    "message": "Konverterer med {tool}…"
+  },
+  "viewer.copy.too_large": {
+    "message": "Merket tekst over {megabytes} MB kopieres ikke."
+  },
+  "viewer.encoding.cp1250": {
+    "message": "Østeuropeisk (1250)"
+  },
+  "viewer.encoding.cp1251": {
+    "message": "Kyrillisk Windows (1251)"
+  },
+  "viewer.encoding.cp1252": {
+    "message": "Vesteuropeisk Latin1 (1252)"
+  },
+  "viewer.encoding.cp1253": {
+    "message": "Gresk (1253)"
+  },
+  "viewer.encoding.cp1254": {
+    "message": "Tyrkisk (1254)"
+  },
+  "viewer.encoding.cp1255": {
+    "message": "Hebraisk (1255)"
+  },
+  "viewer.encoding.cp1256": {
+    "message": "Arabisk (1256)"
+  },
+  "viewer.encoding.cp1257": {
+    "message": "Baltisk (1257)"
+  },
+  "viewer.encoding.cp1258": {
+    "message": "Vietnamesisk (1258)"
+  },
+  "viewer.encoding.cp20866": {
+    "message": "Kyrillisk KOI8-R (20866)"
+  },
+  "viewer.encoding.cp437": {
+    "message": "DOS-USA (437)"
+  },
+  "viewer.encoding.cp850": {
+    "message": "DOS-LATIN1 (850)"
+  },
+  "viewer.encoding.cp852": {
+    "message": "DOS Sentral-Europa (852)"
+  },
+  "viewer.encoding.cp866": {
+    "message": "DOS Kyrillisk (866)"
+  },
+  "viewer.encoding.cp874": {
+    "message": "Thai (874)"
+  },
+  "viewer.encoding.cp932": {
+    "message": "Japansk (932)"
+  },
+  "viewer.encoding.cp936": {
+    "message": "Kinesisk, Fastlands-Kina (936)"
+  },
+  "viewer.encoding.cp949": {
+    "message": "Koreansk (949)"
+  },
+  "viewer.encoding.cp950": {
+    "message": "Kinesisk, Taiwan (950)"
+  },
+  "viewer.find.not_found": {
+    "message": "Ikke funnet: {text}"
+  },
+  "viewer.find.not_hex": {
+    "message": "Ikke en heksadesimal streng: {text}"
+  },
+  "viewer.find.nothing": {
+    "message": "Ingenting å søke etter."
+  },
+  "viewer.find.save_failed": {
+    "message": "Kunne ikke lagre søkene: {err}"
+  },
+  "viewer.loading": {
+    "message": "Laster inn…"
+  },
+  "viewer.markdown.too_large": {
+    "message": "Over {megabytes} MB: 1 viser den som tekst."
+  },
+  "viewer.menu.binary": {
+    "message": "Binær (fast linjelengde)"
+  },
+  "viewer.menu.book": {
+    "message": "Bok (EPUB, FB2)"
+  },
+  "viewer.menu.close": {
+    "message": "Lukk"
+  },
+  "viewer.menu.configure": {
+    "message": "Konfigurer..."
+  },
+  "viewer.menu.copy_hex": {
+    "message": "Kopier som heksadesimale tegn"
+  },
+  "viewer.menu.copy_text": {
+    "message": "Kopier som tekst"
+  },
+  "viewer.menu.edit": {
+    "message": "Rediger"
+  },
+  "viewer.menu.encoding": {
+    "message": "Koding"
+  },
+  "viewer.menu.file": {
+    "message": "Fil"
+  },
+  "viewer.menu.find": {
+    "message": "Finn..."
+  },
+  "viewer.menu.find_next": {
+    "message": "Finn neste"
+  },
+  "viewer.menu.fit_image": {
+    "message": "Tilpass bildet til vinduet"
+  },
+  "viewer.menu.font_ansi": {
+    "message": "ANSI (Windows-tegnsett)"
+  },
+  "viewer.menu.font_ascii": {
+    "message": "ASCII (DOS-tegnsett)"
+  },
+  "viewer.menu.font_page": {
+    "message": "Som angitt av skriften"
+  },
+  "viewer.menu.font_variable": {
+    "message": "Variabel tegnbredde"
+  },
+  "viewer.menu.hex": {
+    "message": "Heks"
+  },
+  "viewer.menu.html": {
+    "message": "HTML-tekst (fjern koder)"
+  },
+  "viewer.menu.minimap": {
+    "message": "Minikart"
+  },
+  "viewer.menu.next_file": {
+    "message": "Neste fil"
+  },
+  "viewer.menu.only_larger": {
+    "message": "Tilpass bare større bilder"
+  },
+  "viewer.menu.open": {
+    "message": "Åpne..."
+  },
+  "viewer.menu.options": {
+    "message": "Alternativer"
+  },
+  "viewer.menu.picture": {
+    "message": "Bilde/multimedia"
+  },
+  "viewer.menu.previous_file": {
+    "message": "Forrige fil"
+  },
+  "viewer.menu.reload": {
+    "message": "Last inn på nytt"
+  },
+  "viewer.menu.save_as": {
+    "message": "Lagre som..."
+  },
+  "viewer.menu.search_google": {
+    "message": "Søk etter merket tekst med Google"
+  },
+  "viewer.menu.select_all": {
+    "message": "Merk alt"
+  },
+  "viewer.menu.syntax_colors": {
+    "message": "Syntaksfarger"
+  },
+  "viewer.menu.text_only": {
+    "message": "Bare tekst"
+  },
+  "viewer.menu.unicode": {
+    "message": "Unicode (UTF-16)"
+  },
+  "viewer.menu.wrap": {
+    "message": "Bryt tekst ({columns, plural, one {# kolonne} other {# kolonner}})"
+  },
+  "viewer.mode.binary": {
+    "message": "Binær · {page}"
+  },
+  "viewer.mode.book": {
+    "message": "Bok"
+  },
+  "viewer.mode.hex": {
+    "message": "Heks · {page}"
+  },
+  "viewer.mode.html": {
+    "message": "HTML-tekst"
+  },
+  "viewer.mode.image": {
+    "message": "Bilde"
+  },
+  "viewer.mode.multimedia": {
+    "message": "Multimedia"
+  },
+  "viewer.mode.pdf_by": {
+    "message": "PDF fra {tool}"
+  },
+  "viewer.mode.text": {
+    "message": "Tekst · {page}"
+  },
+  "viewer.origin.not_editable": {
+    "message": "bare filer i 7z-, zip-, jar- og tar-arkiver kan redigeres"
+  },
+  "viewer.origin.updated": {
+    "message": "Oppdaterte {archive}"
+  },
+  "viewer.origin.updated_on": {
+    "message": "Oppdaterte {archive} på {server}"
+  },
+  "viewer.origin.uploaded": {
+    "message": "Lastet opp {path}"
+  },
+  "viewer.pdf.cannot_show": {
+    "message": "Denne PDF-en kan ikke vises: {err}"
+  },
+  "viewer.pdf.loading": {
+    "message": "Laster inn..."
+  },
+  "viewer.pdf.page": {
+    "message": "Side {page} / {pages}"
+  },
+  "viewer.picture.cannot_show": {
+    "message": "Dette bildet kan ikke vises; 1 viser det som tekst."
+  },
+  "viewer.save_as.failed": {
+    "message": "Kunne ikke lagre {path}: {err}"
+  },
+  "viewer.status.rows": {
+    "message": "{count, plural, one {{first}–{last} av {grouped} rad} other {{first}–{last} av {grouped} rader}}"
+  },
+  "viewer.status.rows_so_far": {
+    "message": "{count, plural, one {{grouped} rad så langt, {percent} lest} other {{grouped} rader så langt, {percent} lest}}"
+  },
+  "viewer.status.searching": {
+    "message": "Søker…"
+  },
+  "viewer.status.size": {
+    "message": "{count, plural, one {{grouped} byte} other {{grouped} byte}}"
+  },
+  "viewer.window.title": {
+    "message": "{path} — Fremviser"
+  },
+  "viewer.zoom.fit": {
+    "message": "Tilbake til tilpasning til vinduet (Ctrl+0)"
+  },
+  "viewer.zoom.in": {
+    "message": "Zoom inn (Ctrl++)"
+  },
+  "viewer.zoom.out": {
+    "message": "Zoom ut (Ctrl+-)"
+  },
+  "viewer.zoom.reset": {
+    "message": "Tilbake til 100 % (Ctrl+0)"
+  },
+  "workspaces.button.close": {
+    "message": "Lukk"
+  },
+  "workspaces.button.delete": {
+    "message": "Slett..."
+  },
+  "workspaces.button.duplicate": {
+    "message": "Dupliser..."
+  },
+  "workspaces.button.new": {
+    "message": "Ny..."
+  },
+  "workspaces.button.rename": {
+    "message": "Gi nytt navn..."
+  },
+  "workspaces.delete.button": {
+    "message": "Slett"
+  },
+  "workspaces.delete.closed": {
+    "message": "Vil du slette arbeidsområdet «{name}»? Fanene glemmes."
+  },
+  "workspaces.delete.closed_shells": {
+    "message": "Vil du slette arbeidsområdet «{name}»? Fanene glemmes, og skallene i terminalfanene avsluttes."
+  },
+  "workspaces.delete.open": {
+    "message": "Vil du slette arbeidsområdet «{name}»? Fanene lukkes; «{other}» åpnes i stedet."
+  },
+  "workspaces.delete.open_shells": {
+    "message": "Vil du slette arbeidsområdet «{name}»? Fanene lukkes, og skallene i terminalfanene avsluttes; «{other}» åpnes i stedet."
+  },
+  "workspaces.delete.title": {
+    "message": "Slett arbeidsområde"
+  },
+  "workspaces.duplicate.name": {
+    "message": "{name} (kopi)"
+  },
+  "workspaces.duplicate.title": {
+    "message": "Dupliser arbeidsområde"
+  },
+  "workspaces.error.name_taken": {
+    "message": "Et annet arbeidsområde har dette navnet."
+  },
+  "workspaces.error.no_name": {
+    "message": "Et arbeidsområde må ha et navn."
+  },
+  "workspaces.error.save": {
+    "message": "Kunne ikke lagre arbeidsområdene: {err}"
+  },
+  "workspaces.hint": {
+    "message": "Vis > Arbeidsområder åpner et. Endringer i det åpne arbeidsområdet lagres i det."
+  },
+  "workspaces.name.label": {
+    "message": "Navn:"
+  },
+  "workspaces.new.name": {
+    "message": "Arbeidsområde {number}"
+  },
+  "workspaces.new.title": {
+    "message": "Nytt arbeidsområde"
+  },
+  "workspaces.open": {
+    "message": "åpent"
+  },
+  "workspaces.rename.title": {
+    "message": "Gi arbeidsområdet nytt navn"
+  },
+  "workspaces.summary.panels": {
+    "message": "Venstre {left, plural, one {# fane} other {# faner}}, høyre {right, plural, one {# fane} other {# faner}}"
+  },
+  "workspaces.summary.terminal": {
+    "message": "Venstre {left, plural, one {# fane} other {# faner}}, høyre {right, plural, one {# fane} other {# faner}}, terminal {terminal, plural, one {# fane} other {# faner}}"
+  },
+  "workspaces.summary.terminal_hidden": {
+    "message": "Venstre {left, plural, one {# fane} other {# faner}}, høyre {right, plural, one {# fane} other {# faner}}, terminal {terminal, plural, one {# fane} other {# faner}} (skjult)"
+  },
+  "workspaces.title": {
+    "message": "Arbeidsområder"
+  }
+}

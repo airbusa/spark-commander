@@ -1,0 +1,4823 @@
+{
+  "about.addons": {
+    "message": "Lisamoodulid, mille laadid alla omal valikul"
+  },
+  "about.libraries": {
+    "message": "Põhineb"
+  },
+  "about.licence": {
+    "message": "Litsents:"
+  },
+  "about.made_with": {
+    "message": "Valminud nende projektide töö abil"
+  },
+  "about.part.alacritty_terminal": {
+    "message": "Sisseehitatud terminali ekraan ja kest"
+  },
+  "about.part.encoding_rs": {
+    "message": "Koodilehed"
+  },
+  "about.part.gpui": {
+    "message": "Aken, joonistamine ja sisend (Zedi oma)"
+  },
+  "about.part.gpui_kit": {
+    "message": "Juhtelemendid: loendid, menüüd, väljad, redaktor"
+  },
+  "about.part.html5ever": {
+    "message": "HTML ja e-raamatud vaaturis"
+  },
+  "about.part.image": {
+    "message": "Pildid"
+  },
+  "about.part.keyring": {
+    "message": "Paroolid süsteemi võtmerõngas"
+  },
+  "about.part.lucide": {
+    "message": "Ikoonid"
+  },
+  "about.part.material_icons": {
+    "message": "Failide ja kaustade ikoonid"
+  },
+  "about.part.pdfium_render": {
+    "message": "PDFium Rusti koodist"
+  },
+  "about.part.ratatui": {
+    "message": "scmd, terminaliversioon"
+  },
+  "about.part.russh": {
+    "message": "SSH ja SFTP"
+  },
+  "about.part.rustls": {
+    "message": "TLS"
+  },
+  "about.part.serde": {
+    "message": "Seadete failid"
+  },
+  "about.part.similar": {
+    "message": "Võrdle sisu järgi"
+  },
+  "about.part.suppaftp": {
+    "message": "FTP ja FTPS"
+  },
+  "about.part.tokio": {
+    "message": "Võrgutöö taustal"
+  },
+  "about.part.trash": {
+    "message": "Prügikast"
+  },
+  "about.part.tree_sitter": {
+    "message": "Koodi värvid vaaturis ja redaktoris"
+  },
+  "about.part.zbus": {
+    "message": "D-Bus: töölaud, seadmed, KDE Connect"
+  },
+  "about.shipped": {
+    "message": "Tuleb kaasa"
+  },
+  "about.tagline": {
+    "message": "Kahe paneeliga failihaldur, vaba tarkvara."
+  },
+  "about.title": {
+    "message": "Teave Spark Commanderi kohta"
+  },
+  "about.version": {
+    "message": "Versioon {version}"
+  },
+  "activity.clear": {
+    "message": "Tühjenda"
+  },
+  "activity.clear_failed": {
+    "message": "Logi ei õnnestunud tühjendada: {err}"
+  },
+  "activity.empty": {
+    "message": "Veel pole midagi tehtud."
+  },
+  "activity.title": {
+    "message": "Tegevuste logi"
+  },
+  "addons.error.damaged": {
+    "message": "allalaaditud fail on rikutud: kontrollsumma ei klapi"
+  },
+  "addons.error.list": {
+    "message": "lisamoodulite loend: {err}"
+  },
+  "addons.error.missing_file": {
+    "message": "allalaaditud failis puudub {file}"
+  },
+  "addons.error.no_folder": {
+    "message": "andmekausta pole"
+  },
+  "addons.error.unpacking": {
+    "message": "lahtipakkimine: {err}"
+  },
+  "addons.installed": {
+    "message": "{addon} {version} on installitud."
+  },
+  "addons.megabytes": {
+    "message": "{size} MB"
+  },
+  "addons.offer.never": {
+    "message": "Ära enam näita"
+  },
+  "addons.offer.no": {
+    "message": "Ei"
+  },
+  "addons.offer.text": {
+    "message": "{name} vajab lisamoodulit, mis pole installitud: {addon}. Kas laadida see alla jaotises Seaded > Lisamoodulid?"
+  },
+  "addons.offer.title": {
+    "message": "Lisamoodul"
+  },
+  "addons.offer.yes": {
+    "message": "Jah"
+  },
+  "addons.purpose.cloud": {
+    "message": "Võrgusalvestus: S3, Google Drive, OneDrive, Dropbox ja muud teenused."
+  },
+  "addons.purpose.media": {
+    "message": "Video ja heli ning HEIC- ja AVIF-fotod: vaatur ja kiirvaade näitavad neid."
+  },
+  "addons.purpose.office": {
+    "message": "Kontoridokumendid: vaatur näitab Wordi, Exceli ja PowerPointi faile PDF-ina."
+  },
+  "addons.purpose.pdfium": {
+    "message": "PDF: vaatur näitab PDF-faile ning teisendatud kontoridokumente."
+  },
+  "addons.purpose.seven_zip": {
+    "message": "Arhiivid: pakib ja pakib lahti 7z-, zip-, rar-, tar- ja muid arhiive."
+  },
+  "addons.update": {
+    "message": "Uuenda"
+  },
+  "addons.updates": {
+    "message": "Lisamoodulite uuendused: {names}"
+  },
+  "appearance.dark": {
+    "message": "Tume"
+  },
+  "appearance.light": {
+    "message": "Hele"
+  },
+  "appearance.system": {
+    "message": "Nagu süsteemis"
+  },
+  "archive.cannot_read": {
+    "message": "{name}: ei saa lugeda"
+  },
+  "archive.not_in_archive": {
+    "message": "{name} pole arhiivis"
+  },
+  "archive.not_own_folder": {
+    "message": "{folder} pole selle kasutaja oma kaust"
+  },
+  "archive.seven_zip_failed": {
+    "message": "7-Zip ebaõnnestus ({code})"
+  },
+  "archive.seven_zip_missing": {
+    "message": "7-Zip puudub: {path} (käivita vendor/7zip/fetch.sh või fetch.bat)"
+  },
+  "archive.temp_not_utf8": {
+    "message": "ajutise kausta nimi pole UTF-8"
+  },
+  "associations.add": {
+    "message": "Lisa..."
+  },
+  "associations.cancel": {
+    "message": "Tühista"
+  },
+  "associations.close": {
+    "message": "Sulge"
+  },
+  "associations.column.edit": {
+    "message": "Redigeeri (F4)"
+  },
+  "associations.column.files": {
+    "message": "Failid"
+  },
+  "associations.column.open": {
+    "message": "Ava (Enter)"
+  },
+  "associations.column.view": {
+    "message": "Vaata (F3)"
+  },
+  "associations.edit": {
+    "message": "Muuda..."
+  },
+  "associations.edit_dialog.title": {
+    "message": "Seosta"
+  },
+  "associations.empty": {
+    "message": "Veel pole ühtegi."
+  },
+  "associations.field.edit": {
+    "message": "Redigeeri (F4):"
+  },
+  "associations.field.files": {
+    "message": "Failid (*.jpg *.png):"
+  },
+  "associations.field.open": {
+    "message": "Ava (Enter):"
+  },
+  "associations.field.view": {
+    "message": "Vaata (F3):"
+  },
+  "associations.intro": {
+    "message": "Enter, F3 ja F4 käivitavad maskile vastavate failide jaoks need programmid; tühi jätab tavalise. %1 on fail."
+  },
+  "associations.mask_needed": {
+    "message": "Failimask on vajalik: *.txt"
+  },
+  "associations.no_file": {
+    "message": "Vii kursor seostatava tüübiga failile."
+  },
+  "associations.ok": {
+    "message": "OK"
+  },
+  "associations.remove": {
+    "message": "Eemalda"
+  },
+  "associations.save_failed": {
+    "message": "Seadeid ei õnnestunud salvestada: {err}"
+  },
+  "associations.title": {
+    "message": "Sisemised seosed"
+  },
+  "attributes.bad_time": {
+    "message": "„{text}“ pole kuupäev ja kellaaeg: 2026-11-10 14:04:33"
+  },
+  "attributes.cancel": {
+    "message": "Tühista"
+  },
+  "attributes.change_time": {
+    "message": "Muuda kuupäeva/kellaaega:"
+  },
+  "attributes.changed": {
+    "message": "{count, plural, one {# muudetud} other {# muudetud}}"
+  },
+  "attributes.changed_failed": {
+    "message": "{count, plural, one {# muudetud} other {# muudetud}}, {failed, plural, one {# ebaõnnestus} other {# ebaõnnestus}}"
+  },
+  "attributes.dialog_title_many": {
+    "message": "Muuda atribuute: {count, plural, one {# üksus} other {# üksust}}"
+  },
+  "attributes.dialog_title_one": {
+    "message": "Muuda atribuute: {name}"
+  },
+  "attributes.execute": {
+    "message": "Käivitus"
+  },
+  "attributes.group": {
+    "message": "Rühm"
+  },
+  "attributes.in_archive": {
+    "message": "Arhiivi sees olevate failide atribuute ei saa muuta."
+  },
+  "attributes.no_bits": {
+    "message": "Neil failidel pole siin õigusbitte; muuta saab ainult kuupäeva."
+  },
+  "attributes.now": {
+    "message": "Praegu"
+  },
+  "attributes.octal": {
+    "message": "Oktaalne:"
+  },
+  "attributes.ok": {
+    "message": "OK"
+  },
+  "attributes.others": {
+    "message": "Teised"
+  },
+  "attributes.owner": {
+    "message": "Omanik"
+  },
+  "attributes.read": {
+    "message": "Lugemine"
+  },
+  "attributes.recurse": {
+    "message": "Ka kõik kaustade sisu"
+  },
+  "attributes.title_many": {
+    "message": "Atribuutide muutmine: {count, plural, one {# üksus} other {# üksust}}"
+  },
+  "attributes.title_one": {
+    "message": "„{name}“ atribuutide muutmine"
+  },
+  "attributes.write": {
+    "message": "Kirjutamine"
+  },
+  "bookmarks.add_current": {
+    "message": "Lisa praegune kaust"
+  },
+  "bookmarks.add_folders": {
+    "message": "Lisa kaustu..."
+  },
+  "bookmarks.added": {
+    "message": "Lisatud järjehoidjatesse: {name}"
+  },
+  "bookmarks.already": {
+    "message": "{name} on juba järjehoidjates."
+  },
+  "bookmarks.chooser.failed": {
+    "message": "Kaustavalijat ei õnnestunud näidata: {err}"
+  },
+  "bookmarks.chooser.prompt": {
+    "message": "Lisa"
+  },
+  "bookmarks.close": {
+    "message": "Sulge"
+  },
+  "bookmarks.copy_name": {
+    "message": "Kopeeri nimi"
+  },
+  "bookmarks.copy_path": {
+    "message": "Kopeeri rada"
+  },
+  "bookmarks.drop_here": {
+    "message": "Lohista kaustad siia."
+  },
+  "bookmarks.empty": {
+    "message": "Järjehoidjaid pole: lisa kaustu või lohista need siia."
+  },
+  "bookmarks.intro": {
+    "message": "Selle arvuti kaustad asukohtade järjekorras: lohista kausta, et seda liigutada, või lohista kaustu siia, et neid lisada."
+  },
+  "bookmarks.move_down": {
+    "message": "Liiguta alla"
+  },
+  "bookmarks.move_up": {
+    "message": "Liiguta üles"
+  },
+  "bookmarks.only_local": {
+    "message": "Järjehoidjatesse saab lisada ainult selle arvuti kaustu."
+  },
+  "bookmarks.remove": {
+    "message": "Eemalda"
+  },
+  "bookmarks.remove_from": {
+    "message": "Eemalda järjehoidjatest"
+  },
+  "bookmarks.rename": {
+    "message": "Nimeta ümber..."
+  },
+  "bookmarks.rename_label": {
+    "message": "Nimi (tühi: kausta oma):"
+  },
+  "bookmarks.rename_title": {
+    "message": "Nimeta järjehoidja ümber"
+  },
+  "bookmarks.sort": {
+    "message": "Sordi A–Z"
+  },
+  "bookmarks.title": {
+    "message": "Järjehoidjad"
+  },
+  "button_bar.copy": {
+    "message": "Kopeeri"
+  },
+  "button_bar.delete": {
+    "message": "Kustuta"
+  },
+  "button_bar.edit": {
+    "message": "Redigeeri"
+  },
+  "button_bar.move": {
+    "message": "Teisalda"
+  },
+  "button_bar.new_folder": {
+    "message": "Uus kaust"
+  },
+  "button_bar.quit": {
+    "message": "Välju"
+  },
+  "button_bar.view": {
+    "message": "Vaata"
+  },
+  "checksum.create.title": {
+    "message": "Loo {name}"
+  },
+  "checksum.create.title_separate": {
+    "message": "Loo {method}-kontrollsummafailid"
+  },
+  "checksum.dialog_title": {
+    "message": "Kontrollsummafailide loomine"
+  },
+  "checksum.save_as": {
+    "message": "Salvesta kontrollsummafail nimega:"
+  },
+  "checksum.separate": {
+    "message": "Selle asemel iga faili kõrvale oma kontrollsummafail"
+  },
+  "checksum.verify.all_ok": {
+    "message": "{count, plural, one {# fail korras} other {kõik # faili korras}}"
+  },
+  "checksum.verify.choose": {
+    "message": "Vali kontrollsummafailid: .sfv, .md5, .sha1, .sha256 või .sha512."
+  },
+  "checksum.verify.missing_file": {
+    "message": "puudub: {name}"
+  },
+  "checksum.verify.result": {
+    "message": "{ok, plural, one {# korras} other {# korras}}, {wrong, plural, one {# vale} other {# vale}}, {missing, plural, one {# puudub} other {# puudu}}"
+  },
+  "checksum.verify.title_many": {
+    "message": "Kontrolli {count, plural, one {# kontrollsummafaili} other {# kontrollsummafaili}}"
+  },
+  "checksum.verify.title_one": {
+    "message": "Kontrolli faili {name}"
+  },
+  "checksum.verify.wrong_file": {
+    "message": "vale: {name}"
+  },
+  "command.about": {
+    "message": "Teave Spark Commanderi kohta"
+  },
+  "command.activity_log": {
+    "message": "Tegevuste logi..."
+  },
+  "command.all_files": {
+    "message": "Kõik failid"
+  },
+  "command.all_folder_sizes": {
+    "message": "Arvuta kõigi kaustade suurused"
+  },
+  "command.all_with_extension": {
+    "message": "*.*"
+  },
+  "command.associate_with": {
+    "message": "Seosta programmiga..."
+  },
+  "command.bookmark_folder": {
+    "message": "Lisa see kaust järjehoidjatesse"
+  },
+  "command.bookmarks": {
+    "message": "Järjehoidjad"
+  },
+  "command.branch_view": {
+    "message": "Haruvaade (koos alamkaustadega)"
+  },
+  "command.branch_view_selected": {
+    "message": "Valitud kaustade haruvaade"
+  },
+  "command.brief": {
+    "message": "Lühike"
+  },
+  "command.calculate_occupied_space": {
+    "message": "Arvuta hõivatud ruum..."
+  },
+  "command.change_attributes": {
+    "message": "Muuda atribuute..."
+  },
+  "command.close_all_tabs": {
+    "message": "Sulge kõik kaardid"
+  },
+  "command.close_duplicate_tabs": {
+    "message": "Sulge topeltkaardid"
+  },
+  "command.close_tab": {
+    "message": "Sulge kaart"
+  },
+  "command.combine_files": {
+    "message": "Ühenda failid..."
+  },
+  "command.compare_by_content": {
+    "message": "Võrdle sisu järgi..."
+  },
+  "command.compare_directories": {
+    "message": "Märgi uuemad"
+  },
+  "command.copy": {
+    "message": "Kopeeri..."
+  },
+  "command.copy_names_to_clipboard": {
+    "message": "Kopeeri valitud nimed lõikelauale"
+  },
+  "command.copy_names_with_path_to_clipboard": {
+    "message": "Kopeeri nimed koos rajaga lõikelauale"
+  },
+  "command.copy_to_clipboard": {
+    "message": "Kopeeri failid"
+  },
+  "command.copy_with_all_details": {
+    "message": "Kopeeri lõikelauale kõigi üksikasjadega"
+  },
+  "command.copy_with_path_and_details": {
+    "message": "Kopeeri lõikelauale koos raja ja üksikasjadega"
+  },
+  "command.create_checksum_files": {
+    "message": "Loo kontrollsummafail(id) (CRC32, MD5, SHA1, SHA256, SHA512)..."
+  },
+  "command.create_link": {
+    "message": "Loo link..."
+  },
+  "command.custom_filter": {
+    "message": "Kohandatud..."
+  },
+  "command.cut_to_clipboard": {
+    "message": "Lõika failid"
+  },
+  "command.delete": {
+    "message": "Kustuta"
+  },
+  "command.delete_permanently": {
+    "message": "Kustuta jäädavalt"
+  },
+  "command.disconnect": {
+    "message": "Katkesta ühendus serveriga"
+  },
+  "command.download_link": {
+    "message": "Laadi alla lingilt..."
+  },
+  "command.duplicate_tab": {
+    "message": "Uus kaart"
+  },
+  "command.duplicate_workspace": {
+    "message": "Tee tööruumist koopia..."
+  },
+  "command.edit": {
+    "message": "Redigeeri"
+  },
+  "command.edit_externally": {
+    "message": "Redigeeri välises redaktoris"
+  },
+  "command.folder_history": {
+    "message": "Kaustade ajalugu..."
+  },
+  "command.full": {
+    "message": "Täielik"
+  },
+  "command.go_back": {
+    "message": "Tagasi"
+  },
+  "command.go_forward": {
+    "message": "Edasi"
+  },
+  "command.go_home": {
+    "message": "Kodukaust"
+  },
+  "command.go_to_root": {
+    "message": "Juurkaust"
+  },
+  "command.hidden_files": {
+    "message": "Peidetud failid"
+  },
+  "command.internal_associations": {
+    "message": "Sisemised seosed (ainult Spark Commanderis)..."
+  },
+  "command.invert_selection": {
+    "message": "Pööra valik ümber"
+  },
+  "command.left_drives": {
+    "message": "Kettad (vasak paneel)"
+  },
+  "command.list_tabs": {
+    "message": "Kaartide loend"
+  },
+  "command.load_selection_from_file": {
+    "message": "Laadi valik failist"
+  },
+  "command.manage_bookmarks": {
+    "message": "Halda järjehoidjaid..."
+  },
+  "command.manage_tools": {
+    "message": "Halda tööriistu..."
+  },
+  "command.manage_workspaces": {
+    "message": "Halda tööruume..."
+  },
+  "command.mark_in_place": {
+    "message": "Märgi / tühista märge paigal, kausta suurus mõõdetakse"
+  },
+  "command.mark_newer_hide_same": {
+    "message": "Märgi uuemad, peida samad failid"
+  },
+  "command.move": {
+    "message": "Teisalda..."
+  },
+  "command.multi_rename_tool": {
+    "message": "Hulgi ümbernimetamine..."
+  },
+  "command.name_to_command_line": {
+    "message": "Nimi käsureale"
+  },
+  "command.new_folder": {
+    "message": "Uus kaust..."
+  },
+  "command.new_terminal": {
+    "message": "Uus terminalikaart"
+  },
+  "command.new_text_file": {
+    "message": "Uus fail..."
+  },
+  "command.new_workspace": {
+    "message": "Uus tööruum..."
+  },
+  "command.next_tab": {
+    "message": "Järgmine kaart"
+  },
+  "command.only_selected_files": {
+    "message": "Ainult valitud failid"
+  },
+  "command.open_in_left_panel": {
+    "message": "Näita vasakus paneelis"
+  },
+  "command.open_in_new_tab": {
+    "message": "Ava kaust uuel kaardil"
+  },
+  "command.open_in_other_new_tab": {
+    "message": "Ava kaust teise paneeli uuel kaardil"
+  },
+  "command.open_in_right_panel": {
+    "message": "Näita paremas paneelis"
+  },
+  "command.open_terminal": {
+    "message": "Ava terminal siin"
+  },
+  "command.operation_queue": {
+    "message": "Toimingute järjekord..."
+  },
+  "command.pack": {
+    "message": "Paki..."
+  },
+  "command.paste_from_clipboard": {
+    "message": "Kleebi failid"
+  },
+  "command.path_and_name_to_command_line": {
+    "message": "Rada ja nimi käsureale"
+  },
+  "command.path_to_command_line": {
+    "message": "Rada käsureale"
+  },
+  "command.previous_tab": {
+    "message": "Eelmine kaart"
+  },
+  "command.programs": {
+    "message": "Programmid"
+  },
+  "command.properties": {
+    "message": "Omadused..."
+  },
+  "command.quick_filter": {
+    "message": "Kiirfilter"
+  },
+  "command.quick_open": {
+    "message": "Kiiravamine..."
+  },
+  "command.quick_view_panel": {
+    "message": "Kiirvaate paneel"
+  },
+  "command.quit": {
+    "message": "Välju"
+  },
+  "command.redo": {
+    "message": "Tee uuesti"
+  },
+  "command.rename_in_place": {
+    "message": "Nimeta ümber"
+  },
+  "command.reread_source": {
+    "message": "Värskenda"
+  },
+  "command.restore_selection": {
+    "message": "Taasta valik"
+  },
+  "command.reversed_order": {
+    "message": "Vastupidine järjestus"
+  },
+  "command.right_drives": {
+    "message": "Kettad (parem paneel)"
+  },
+  "command.save_selection": {
+    "message": "Salvesta valik"
+  },
+  "command.save_selection_to_file": {
+    "message": "Salvesta valik faili"
+  },
+  "command.search": {
+    "message": "Otsi..."
+  },
+  "command.search_in_separate_process": {
+    "message": "Otsi eraldi aknas..."
+  },
+  "command.select_all": {
+    "message": "Vali kõik"
+  },
+  "command.select_all_with_same_extension": {
+    "message": "Vali kõik sama laiendiga"
+  },
+  "command.select_group": {
+    "message": "Vali rühm..."
+  },
+  "command.settings": {
+    "message": "Seaded..."
+  },
+  "command.shortcuts": {
+    "message": "Kiirklahvid..."
+  },
+  "command.sidebar_connections": {
+    "message": "Ühendused"
+  },
+  "command.sidebar_operations": {
+    "message": "Toimingud"
+  },
+  "command.sidebar_places": {
+    "message": "Asukohad"
+  },
+  "command.sidebar_tree": {
+    "message": "Kaustad"
+  },
+  "command.sort_by_extension": {
+    "message": "Laiend"
+  },
+  "command.sort_by_name": {
+    "message": "Nimi"
+  },
+  "command.sort_by_size": {
+    "message": "Suurus"
+  },
+  "command.sort_by_time": {
+    "message": "Aeg"
+  },
+  "command.split_file": {
+    "message": "Tükelda fail..."
+  },
+  "command.swap_panels": {
+    "message": "Vaheta paneelid"
+  },
+  "command.swap_panels_and_tabs": {
+    "message": "Vaheta paneelid koos kaartidega"
+  },
+  "command.sync_browsing": {
+    "message": "Sünkroonitud sirvimine"
+  },
+  "command.synchronize_dirs": {
+    "message": "Sünkrooni kaustad..."
+  },
+  "command.target_equals_source": {
+    "message": "Siht = allikas"
+  },
+  "command.terminal_panel": {
+    "message": "Terminal"
+  },
+  "command.test_archives": {
+    "message": "Testi arhiivi(e)"
+  },
+  "command.thumbnail_view": {
+    "message": "Pisipiltide vaade"
+  },
+  "command.toggle_mark": {
+    "message": "Märgi / tühista märge"
+  },
+  "command.toggle_sidebar": {
+    "message": "Näita külgriba"
+  },
+  "command.undo": {
+    "message": "Võta tagasi"
+  },
+  "command.unpack_specific_files": {
+    "message": "Paki lahti valitud failid..."
+  },
+  "command.unselect_all": {
+    "message": "Tühista kogu valik"
+  },
+  "command.unselect_group": {
+    "message": "Tühista rühma valik..."
+  },
+  "command.unsorted": {
+    "message": "Sortimata"
+  },
+  "command.verify_checksums": {
+    "message": "Kontrolli kontrollsummasid (kontrollsummafailidest)"
+  },
+  "command.vertical_arrangement": {
+    "message": "Vertikaalne paigutus"
+  },
+  "command.view": {
+    "message": "Vaata"
+  },
+  "command.website": {
+    "message": "Spark Commanderi veebisait"
+  },
+  "command.workspace1": {
+    "message": "Ava tööruum 1"
+  },
+  "command.workspace2": {
+    "message": "Ava tööruum 2"
+  },
+  "command.workspace3": {
+    "message": "Ava tööruum 3"
+  },
+  "command.workspace4": {
+    "message": "Ava tööruum 4"
+  },
+  "command.workspace5": {
+    "message": "Ava tööruum 5"
+  },
+  "command.workspace6": {
+    "message": "Ava tööruum 6"
+  },
+  "command.workspace7": {
+    "message": "Ava tööruum 7"
+  },
+  "command.workspace8": {
+    "message": "Ava tööruum 8"
+  },
+  "command.workspace9": {
+    "message": "Ava tööruum 9"
+  },
+  "command_line.error.cannot_run": {
+    "message": "{program}: ei saa käivitada"
+  },
+  "command_line.error.not_found": {
+    "message": "{program}: käsku ei leitud"
+  },
+  "command_line.history.empty": {
+    "message": "Käske pole veel käivitatud"
+  },
+  "command_line.on_server": {
+    "message": "Käsud käivituvad selles arvutis; paneel näitab serverit."
+  },
+  "command_name.all_files": {
+    "message": "Näita kõiki faile"
+  },
+  "command_name.all_with_extension": {
+    "message": "Näita *.*"
+  },
+  "command_name.brief": {
+    "message": "Lühivaade"
+  },
+  "command_name.compare_directories": {
+    "message": "Võrdle kaustu: märgi uuemad"
+  },
+  "command_name.custom_filter": {
+    "message": "Kohandatud filter"
+  },
+  "command_name.duplicate_tab": {
+    "message": "Uus kaart (selle koopia)"
+  },
+  "command_name.full": {
+    "message": "Täisvaade"
+  },
+  "command_name.go_back": {
+    "message": "Mine tagasi"
+  },
+  "command_name.go_forward": {
+    "message": "Mine edasi"
+  },
+  "command_name.go_home": {
+    "message": "Mine kodukausta"
+  },
+  "command_name.hidden_files": {
+    "message": "Näita peidetud faile"
+  },
+  "command_name.only_selected_files": {
+    "message": "Näita ainult valitud faile"
+  },
+  "command_name.programs": {
+    "message": "Näita programme"
+  },
+  "command_name.quick_filter": {
+    "message": "Kiirfilter"
+  },
+  "command_name.rename_in_place": {
+    "message": "Nimeta ümber paigal"
+  },
+  "command_name.sidebar_connections": {
+    "message": "Külgriba: ühendused"
+  },
+  "command_name.sidebar_operations": {
+    "message": "Külgriba: toimingud"
+  },
+  "command_name.sidebar_places": {
+    "message": "Külgriba: asukohad"
+  },
+  "command_name.sidebar_tree": {
+    "message": "Külgriba: kaustad"
+  },
+  "command_name.sort_by_extension": {
+    "message": "Sordi laiendi järgi"
+  },
+  "command_name.sort_by_name": {
+    "message": "Sordi nime järgi"
+  },
+  "command_name.sort_by_size": {
+    "message": "Sordi suuruse järgi"
+  },
+  "command_name.sort_by_time": {
+    "message": "Sordi aja järgi"
+  },
+  "command_name.toggle_sidebar": {
+    "message": "Külgriba: näita või peida"
+  },
+  "command_name.unsorted": {
+    "message": "Sortimata"
+  },
+  "compare.browse.prompt": {
+    "message": "Võrdle"
+  },
+  "compare.button.compare": {
+    "message": "Võrdle"
+  },
+  "compare.button.next": {
+    "message": "Järgmine erinevus (N)"
+  },
+  "compare.button.previous": {
+    "message": "Eelmine erinevus (P)"
+  },
+  "compare.need_two_files": {
+    "message": "Vii kursor mõlemas paneelis failile või märgi kaks faili."
+  },
+  "compare.option.binary": {
+    "message": "Binaarne"
+  },
+  "compare.option.ignore_case": {
+    "message": "Eira tähesuurust"
+  },
+  "compare.option.ignore_spaces": {
+    "message": "Eira korduvaid tühikuid"
+  },
+  "compare.option.only_differences": {
+    "message": "Ainult erinevused"
+  },
+  "compare.status.bytes_differ": {
+    "message": "{place}: {count, plural, one {{grouped} bait erineb} other {{grouped} baiti erineb}}, esimene kohal {first}; suurused {left} ja {right}."
+  },
+  "compare.status.comparing": {
+    "message": "Võrdlemine…"
+  },
+  "compare.status.difference_of": {
+    "message": "Erinevus {at} / {count}"
+  },
+  "compare.status.differences": {
+    "message": "{count, plural, one {# erinevus} other {# erinevust}}"
+  },
+  "compare.status.identical": {
+    "message": "{count, plural, one {Failid on identsed: {grouped} bait.} other {Failid on identsed: {grouped} baiti.}}"
+  },
+  "compare.status.no_differences": {
+    "message": "Erinevusi pole."
+  },
+  "compare.window.title": {
+    "message": "Võrdlus: {left} — {right}"
+  },
+  "connections.connect": {
+    "message": "Ühenda"
+  },
+  "connections.copy_name": {
+    "message": "Kopeeri nimi"
+  },
+  "connections.copy_path": {
+    "message": "Kopeeri rada"
+  },
+  "connections.delete": {
+    "message": "Kustuta"
+  },
+  "connections.dialog.title": {
+    "message": "Ühendus"
+  },
+  "connections.disconnect": {
+    "message": "Katkesta ühendus"
+  },
+  "connections.duplicate": {
+    "message": "Dubleeri"
+  },
+  "connections.duplicate_name": {
+    "message": "{name} (koopia)"
+  },
+  "connections.edit": {
+    "message": "Muuda..."
+  },
+  "connections.empty": {
+    "message": "Ühendusi veel pole."
+  },
+  "connections.error.no_server": {
+    "message": "Server on vajalik."
+  },
+  "connections.error.port": {
+    "message": "Pole port: {text}"
+  },
+  "connections.field.access_key": {
+    "message": "Juurdepääsuvõti"
+  },
+  "connections.field.api_key": {
+    "message": "API-võti"
+  },
+  "connections.field.application_key": {
+    "message": "Rakenduse võti"
+  },
+  "connections.field.bucket": {
+    "message": "Ämber/kaust"
+  },
+  "connections.field.container": {
+    "message": "Konteiner/kaust"
+  },
+  "connections.field.endpoint": {
+    "message": "Lõpp-punkt"
+  },
+  "connections.field.key_id": {
+    "message": "Võtme ID"
+  },
+  "connections.field.name": {
+    "message": "Nimi"
+  },
+  "connections.field.password": {
+    "message": "Parool"
+  },
+  "connections.field.port": {
+    "message": "Port"
+  },
+  "connections.field.protocol": {
+    "message": "Protokoll"
+  },
+  "connections.field.secret_key": {
+    "message": "Salavõti"
+  },
+  "connections.field.server": {
+    "message": "Server"
+  },
+  "connections.field.start_folder": {
+    "message": "Algkaust"
+  },
+  "connections.field.user": {
+    "message": "Kasutaja"
+  },
+  "connections.folder.delete_confirm": {
+    "message": "{count, plural, one {Kas kustutada kaust {name} ja selles olev ühendus?} other {Kas kustutada kaust {name} ja selles olevad # ühendust?}}"
+  },
+  "connections.folder.delete_title": {
+    "message": "Kustuta kaust"
+  },
+  "connections.folder.exists": {
+    "message": "Kaust nimega {name} on juba olemas."
+  },
+  "connections.folder.name": {
+    "message": "Nimi:"
+  },
+  "connections.folder.new_title": {
+    "message": "Uus kaust"
+  },
+  "connections.folder.rename": {
+    "message": "Nimeta ümber..."
+  },
+  "connections.folder.rename_title": {
+    "message": "Nimeta kaust ümber"
+  },
+  "connections.forget_password": {
+    "message": "Unusta salvestatud parool"
+  },
+  "connections.move_down": {
+    "message": "Liiguta alla"
+  },
+  "connections.move_to_folder": {
+    "message": "Teisalda kausta"
+  },
+  "connections.move_up": {
+    "message": "Liiguta üles"
+  },
+  "connections.new": {
+    "message": "Uus ühendus..."
+  },
+  "connections.new_folder": {
+    "message": "Uus kaust..."
+  },
+  "connections.no_folder": {
+    "message": "Kaustata"
+  },
+  "connections.open_in_terminal": {
+    "message": "Ava terminalis"
+  },
+  "connections.placeholder.name": {
+    "message": "nagu loend seda näitab"
+  },
+  "connections.placeholder.password": {
+    "message": "hoitakse krüptitult seadete kaustas; tühi jätab senise"
+  },
+  "connections.placeholder.path": {
+    "message": "sisselogimiskaust"
+  },
+  "connections.placeholder.port": {
+    "message": "vaikimisi"
+  },
+  "connections.placeholder.server": {
+    "message": "server või host failist ~/.ssh/config"
+  },
+  "connections.placeholder.user": {
+    "message": "nagu failis ~/.ssh/config või anonüümne"
+  },
+  "connections.save_failed": {
+    "message": "Ühendusi ei õnnestunud salvestada: {err}"
+  },
+  "connections.ssh_config.read_only": {
+    "message": "Kirjutuskaitstud: neid hoste muudetakse failis ~/.ssh/config"
+  },
+  "context_menu.action_failed": {
+    "message": "{name} ebaõnnestus: {err}"
+  },
+  "context_menu.actions": {
+    "message": "Tegevused"
+  },
+  "context_menu.copy": {
+    "message": "Kopeeri"
+  },
+  "context_menu.create_new": {
+    "message": "Loo uus"
+  },
+  "context_menu.cut": {
+    "message": "Lõika"
+  },
+  "context_menu.delete": {
+    "message": "Kustuta"
+  },
+  "context_menu.edit": {
+    "message": "Redigeeri"
+  },
+  "context_menu.empty_file": {
+    "message": "Tühi fail…"
+  },
+  "context_menu.move_to_trash": {
+    "message": "Viska prügikasti"
+  },
+  "context_menu.new_file_dialog.label": {
+    "message": "Uue faili nimi:"
+  },
+  "context_menu.new_file_dialog.title": {
+    "message": "Uus fail"
+  },
+  "context_menu.new_file_failed": {
+    "message": "Faili ei õnnestunud luua: {err}"
+  },
+  "context_menu.new_folder": {
+    "message": "Kaust…"
+  },
+  "context_menu.open": {
+    "message": "Ava"
+  },
+  "context_menu.open_failed": {
+    "message": "Ei õnnestunud avada: {err}"
+  },
+  "context_menu.open_terminal_here": {
+    "message": "Ava terminal siin"
+  },
+  "context_menu.open_with": {
+    "message": "Ava rakendusega"
+  },
+  "context_menu.other_application": {
+    "message": "Muu rakendus…"
+  },
+  "context_menu.pack": {
+    "message": "Paki…"
+  },
+  "context_menu.pack_files": {
+    "message": "Paki failid"
+  },
+  "context_menu.paste": {
+    "message": "Kleebi"
+  },
+  "context_menu.properties": {
+    "message": "Omadused"
+  },
+  "context_menu.properties_failed": {
+    "message": "Omadused: {err}"
+  },
+  "context_menu.rename": {
+    "message": "Nimeta ümber…"
+  },
+  "context_menu.rename_dialog.label": {
+    "message": "Uus nimi:"
+  },
+  "context_menu.rename_dialog.title": {
+    "message": "Nimeta ümber"
+  },
+  "context_menu.rename_failed": {
+    "message": "Ümbernimetamine ebaõnnestus: {err}"
+  },
+  "context_menu.shell_menu_failed": {
+    "message": "Menüü: {err}"
+  },
+  "context_menu.show_failed": {
+    "message": "Ei õnnestunud näidata: {err}"
+  },
+  "context_menu.show_in_file_manager": {
+    "message": "Näita failihalduris"
+  },
+  "context_menu.terminal_failed": {
+    "message": "Terminali ei õnnestunud avada: {err}"
+  },
+  "context_menu.terminal_not_local": {
+    "message": "Terminal avaneb ainult selle arvuti kaustades."
+  },
+  "context_menu.unpack": {
+    "message": "Paki lahti…"
+  },
+  "context_menu.view": {
+    "message": "Vaata"
+  },
+  "desktop.no_app_chooser": {
+    "message": "töölaual pole rakenduse valijat ({err})"
+  },
+  "desktop.no_terminal": {
+    "message": "terminali ei leitud"
+  },
+  "desktop.nothing_to_run": {
+    "message": "{name}: pole midagi käivitada"
+  },
+  "desktop.scripts": {
+    "message": "Skriptid"
+  },
+  "devices.error.mount_failed": {
+    "message": "seadet ei õnnestunud haakida"
+  },
+  "devices.error.no_folder": {
+    "message": "seade ei jaga ühtegi kausta"
+  },
+  "devices.error.system_only": {
+    "message": "seda saab lahutada ainult süsteem"
+  },
+  "devices.error.unreachable": {
+    "message": "pole kättesaadav: kas KDE Connect on seal avatud ja samas võrgus?"
+  },
+  "devices.unlock.ask": {
+    "message": "Ketta {name} paroolifraas:"
+  },
+  "devices.unlock.ask_again": {
+    "message": "Vale paroolifraas. Ketta {name} paroolifraas:"
+  },
+  "devices.unlock.title": {
+    "message": "Ava lukust"
+  },
+  "devices.volume.share_on_server": {
+    "message": "{share} serveris {server}"
+  },
+  "devices.volume.unnamed": {
+    "message": "{size} GB köide"
+  },
+  "devices.volume.unnamed_encrypted": {
+    "message": "{size} GB krüptitud köide"
+  },
+  "download.cancel": {
+    "message": "Tühista"
+  },
+  "download.dialog_title": {
+    "message": "Allalaadimine lingilt"
+  },
+  "download.download": {
+    "message": "Laadi alla"
+  },
+  "download.folder_link": {
+    "message": "link viitab kaustale"
+  },
+  "download.incomplete": {
+    "message": "server saatis {got} baiti {size, plural, one {# baidist} other {# baidist}}; uuesti alla laadides jätkatakse sealt"
+  },
+  "download.into": {
+    "message": "Kausta {folder}"
+  },
+  "download.link": {
+    "message": "Link"
+  },
+  "download.link_placeholder": {
+    "message": "https://, http://, ftp:// või ftps://"
+  },
+  "download.local_only": {
+    "message": "Allalaadimised lähevad selle arvuti kaustadesse: ava esmalt paneelis mõni neist."
+  },
+  "download.name_placeholder": {
+    "message": "nagu server või link selle nimetab"
+  },
+  "download.no_file": {
+    "message": "link ei nimeta ühtegi faili"
+  },
+  "download.not_a_link": {
+    "message": "pole allalaaditav link"
+  },
+  "download.problem.bad_name": {
+    "message": "Ainult faili nimi, ilma kaustata."
+  },
+  "download.problem.empty": {
+    "message": "Kleebi või sisesta link."
+  },
+  "download.problem.exists": {
+    "message": "Siin on juba {name}: Asenda laadib selle üle."
+  },
+  "download.problem.not_link": {
+    "message": "Pole allalaaditav link: see peab algama https://, http://, ftp:// või ftps://."
+  },
+  "download.replace": {
+    "message": "Asenda"
+  },
+  "download.save_as": {
+    "message": "Salvesta kui"
+  },
+  "download.saved_as": {
+    "message": "salvestatud nimega {name}"
+  },
+  "download.title": {
+    "message": "Laadi alla „{name}“"
+  },
+  "download.title_link": {
+    "message": "Laadi alla {link}"
+  },
+  "editor.close.after_send": {
+    "message": "See sulgub, kui server on faili kätte saanud."
+  },
+  "editor.close.discard": {
+    "message": "Ära salvesta"
+  },
+  "editor.close.save": {
+    "message": "Salvesta"
+  },
+  "editor.close.title": {
+    "message": "Kas salvestada muudatused?"
+  },
+  "editor.close.unsaved": {
+    "message": "Failis {name} on salvestamata muudatusi."
+  },
+  "editor.close.unsent": {
+    "message": "{name} pole oma serverisse salvestatud: saatmine ebaõnnestus."
+  },
+  "editor.dialog.cancel": {
+    "message": "Tühista"
+  },
+  "editor.edit.copy": {
+    "message": "Kopeeri"
+  },
+  "editor.edit.cut": {
+    "message": "Lõika"
+  },
+  "editor.edit.find": {
+    "message": "Otsi..."
+  },
+  "editor.edit.find_next": {
+    "message": "Otsi järgmine"
+  },
+  "editor.edit.find_previous": {
+    "message": "Otsi eelmine"
+  },
+  "editor.edit.go_to_line": {
+    "message": "Mine reale..."
+  },
+  "editor.edit.paste": {
+    "message": "Kleebi"
+  },
+  "editor.edit.redo": {
+    "message": "Tee uuesti"
+  },
+  "editor.edit.replace": {
+    "message": "Asenda..."
+  },
+  "editor.edit.undo": {
+    "message": "Võta tagasi"
+  },
+  "editor.external.not_set": {
+    "message": "välist redaktorit pole määratud (Seaded, Redaktor/vaatur)"
+  },
+  "editor.file.close": {
+    "message": "Sulge"
+  },
+  "editor.file.reload": {
+    "message": "Laadi uuesti"
+  },
+  "editor.file.save": {
+    "message": "Salvesta"
+  },
+  "editor.file.save_as": {
+    "message": "Salvesta kui..."
+  },
+  "editor.find.close": {
+    "message": "Sulge (Escape)"
+  },
+  "editor.find.count": {
+    "message": "{current} / {total}"
+  },
+  "editor.find.in_selection": {
+    "message": "Otsi valikust (Alt+L)"
+  },
+  "editor.find.match_case": {
+    "message": "Tõstutundlik (Alt+C)"
+  },
+  "editor.find.next": {
+    "message": "Järgmine vaste (Enter)"
+  },
+  "editor.find.no_results": {
+    "message": "Tulemusi pole"
+  },
+  "editor.find.placeholder": {
+    "message": "Otsi"
+  },
+  "editor.find.preserve_case": {
+    "message": "Säilita tähesuurus (Alt+P)"
+  },
+  "editor.find.previous": {
+    "message": "Eelmine vaste (Shift+Enter)"
+  },
+  "editor.find.regex": {
+    "message": "Kasuta regulaaravaldist (Alt+R)"
+  },
+  "editor.find.replace": {
+    "message": "Asenda (Ctrl+Shift+1)"
+  },
+  "editor.find.replace_all": {
+    "message": "Asenda kõik (Ctrl+Alt+Enter)"
+  },
+  "editor.find.replace_placeholder": {
+    "message": "Asendus"
+  },
+  "editor.find.toggle_replace": {
+    "message": "Näita/peida asendamine"
+  },
+  "editor.find.whole_word": {
+    "message": "Ainult terved sõnad (Alt+W)"
+  },
+  "editor.go_to_line.label": {
+    "message": "Rida või rida:veerg"
+  },
+  "editor.go_to_line.title": {
+    "message": "Mine reale"
+  },
+  "editor.language.by_file_name": {
+    "message": "Failinime järgi"
+  },
+  "editor.language.plain_text": {
+    "message": "Lihttekst"
+  },
+  "editor.menu.edit": {
+    "message": "Redigeerimine"
+  },
+  "editor.menu.file": {
+    "message": "Fail"
+  },
+  "editor.menu.language": {
+    "message": "Keel"
+  },
+  "editor.menu.selection": {
+    "message": "Valik"
+  },
+  "editor.menu.view": {
+    "message": "Vaade"
+  },
+  "editor.open.too_large": {
+    "message": "üle sisseehitatud redaktori piiri {limit_mb} MB (Seaded, Redaktor/vaatur); Ctrl+Shift+F4 redigeerib seda välises redaktoris"
+  },
+  "editor.reload.button": {
+    "message": "Laadi uuesti"
+  },
+  "editor.reload.failed": {
+    "message": "Uuesti laadimine ebaõnnestus: {err}"
+  },
+  "editor.reload.text": {
+    "message": "Salvestamata muudatused lähevad kaotsi."
+  },
+  "editor.reload.title": {
+    "message": "Kas laadida fail uuesti?"
+  },
+  "editor.reload.unfit": {
+    "message": "Uuesti ei laaditud: {why, select, binary {see on binaarfail} other {see pole UTF-8-tekst}}."
+  },
+  "editor.save.admin": {
+    "message": "„{name}“ salvestamine"
+  },
+  "editor.save.failed": {
+    "message": "Faili {path} ei õnnestunud salvestada: {err}"
+  },
+  "editor.save_anyway.button": {
+    "message": "Salvesta ikkagi"
+  },
+  "editor.save_anyway.text": {
+    "message": "Fail polnud tekst: salvestamine kirjutab selle nii, nagu seda näidatakse, ja kõik, mis polnud tekst, muutub jäädavalt."
+  },
+  "editor.save_anyway.title": {
+    "message": "Kas salvestada tekstina?"
+  },
+  "editor.selection.add_cursor_above": {
+    "message": "Lisa kursor üles"
+  },
+  "editor.selection.add_cursor_below": {
+    "message": "Lisa kursor alla"
+  },
+  "editor.selection.delete_lines": {
+    "message": "Kustuta read"
+  },
+  "editor.selection.duplicate_lines": {
+    "message": "Dubleeri read"
+  },
+  "editor.selection.indent": {
+    "message": "Taanda"
+  },
+  "editor.selection.lowercase": {
+    "message": "väiketähed"
+  },
+  "editor.selection.move_lines_down": {
+    "message": "Liiguta read alla"
+  },
+  "editor.selection.move_lines_up": {
+    "message": "Liiguta read üles"
+  },
+  "editor.selection.outdent": {
+    "message": "Vähenda taanet"
+  },
+  "editor.selection.select_all": {
+    "message": "Vali kõik"
+  },
+  "editor.selection.select_all_occurrences": {
+    "message": "Vali kõik esinemised"
+  },
+  "editor.selection.sort_lines_ascending": {
+    "message": "Sordi read kasvavalt"
+  },
+  "editor.selection.sort_lines_descending": {
+    "message": "Sordi read kahanevalt"
+  },
+  "editor.selection.title_case": {
+    "message": "Suured Algustähed"
+  },
+  "editor.selection.toggle_line_comment": {
+    "message": "Kommenteeri/ava read"
+  },
+  "editor.selection.trim_trailing_whitespace": {
+    "message": "Eemalda lõputühikud"
+  },
+  "editor.selection.uppercase": {
+    "message": "SUURTÄHED"
+  },
+  "editor.send.failed": {
+    "message": "Ei õnnestunud serverisse tagasi salvestada: {err}. Salvesta proovib uuesti."
+  },
+  "editor.status.modified": {
+    "message": "Muudetud"
+  },
+  "editor.status.position": {
+    "message": "Rida {line}, veerg {column}"
+  },
+  "editor.status.position_selected": {
+    "message": "Rida {line}, veerg {column} ({count, plural, one {# valitud} other {# valitud}})"
+  },
+  "editor.status.sending": {
+    "message": "Salvestamine serverisse"
+  },
+  "editor.status.spaces": {
+    "message": "Tühikud: {size}"
+  },
+  "editor.status.tab_size": {
+    "message": "Tabulaatori laius: {size}"
+  },
+  "editor.status.unsent": {
+    "message": "Pole serveris"
+  },
+  "editor.terminal.not_found": {
+    "message": "redaktorit ei leitud; määra $EDITOR"
+  },
+  "editor.title": {
+    "message": "{path} — Redaktor"
+  },
+  "editor.unfit.open_anyway": {
+    "message": "Ava ikkagi"
+  },
+  "editor.unfit.text": {
+    "message": "Faili ei näidata redaktoris, sest {why, select, binary {see on binaarfail} other {see pole UTF-8-tekst}}."
+  },
+  "editor.view.folding": {
+    "message": "Voltimine"
+  },
+  "editor.view.indent_guides": {
+    "message": "Taandejooned"
+  },
+  "editor.view.indent_with_tabs": {
+    "message": "Taanda tabulaatoriga"
+  },
+  "editor.view.line_numbers": {
+    "message": "Reanumbrid"
+  },
+  "editor.view.minimap": {
+    "message": "Minikaart"
+  },
+  "editor.view.tab_width": {
+    "message": "Tabulaatori laius {width}"
+  },
+  "editor.view.unfold_all": {
+    "message": "Ava kõik voldid"
+  },
+  "editor.view.whitespace": {
+    "message": "Tühimärgid"
+  },
+  "editor.view.word_wrap": {
+    "message": "Reamurdmine"
+  },
+  "elevate.failed": {
+    "message": "administraatorina ebaõnnestus samuti ({code})"
+  },
+  "elevate.no_consent": {
+    "message": "administraatori nõusolekut ei antud"
+  },
+  "elevate.no_password": {
+    "message": "parooli ei antud"
+  },
+  "elevate.not_authorised": {
+    "message": "pole volitatud"
+  },
+  "elevate.percent_name": {
+    "message": "{path}: %-märgiga nime ei saa administraatorina käsitleda; nimeta see esmalt ümber"
+  },
+  "elevate.pkexec_missing": {
+    "message": "pkexec (polkit) pole installitud"
+  },
+  "file_menu.change_tags_failed": {
+    "message": "Silte ei õnnestunud muuta: {err}"
+  },
+  "file_menu.compress": {
+    "message": "{count, plural, =1 {Tihenda „{name}“…} one {Tihenda # üksus…} other {Tihenda # üksust…}}"
+  },
+  "file_menu.copy": {
+    "message": "{count, plural, =1 {Kopeeri „{name}“} one {Kopeeri # üksus} other {Kopeeri # üksust}}"
+  },
+  "file_menu.copy_path": {
+    "message": "Kopeeri rada lõikelauale"
+  },
+  "file_menu.delete": {
+    "message": "Kustuta"
+  },
+  "file_menu.duplicate": {
+    "message": "Dubleeri"
+  },
+  "file_menu.duplicate_failed": {
+    "message": "Dubleerimine ebaõnnestus: {err}"
+  },
+  "file_menu.edit_tags": {
+    "message": "Sildid…"
+  },
+  "file_menu.get_info": {
+    "message": "Kuva teave"
+  },
+  "file_menu.make_alias": {
+    "message": "Loo alias"
+  },
+  "file_menu.make_alias_failed": {
+    "message": "Aliast ei õnnestunud luua: {err}"
+  },
+  "file_menu.move_to_trash": {
+    "message": "Liiguta prügikasti"
+  },
+  "file_menu.new_folder": {
+    "message": "Uus kaust"
+  },
+  "file_menu.open": {
+    "message": "Ava"
+  },
+  "file_menu.open_failed": {
+    "message": "Ei õnnestunud avada: {err}"
+  },
+  "file_menu.open_with": {
+    "message": "Ava rakendusega"
+  },
+  "file_menu.open_with_default": {
+    "message": "{app} (vaikimisi)"
+  },
+  "file_menu.paste": {
+    "message": "Kleebi"
+  },
+  "file_menu.quick_look": {
+    "message": "{count, plural, =1 {Quick Look „{name}“} one {Quick Look: # üksus} other {Quick Look: # üksust}}"
+  },
+  "file_menu.quick_look_failed": {
+    "message": "Quick Look: {err}"
+  },
+  "file_menu.rename": {
+    "message": "Nimeta ümber…"
+  },
+  "file_menu.reveal_failed": {
+    "message": "Finderis ei õnnestunud näidata: {err}"
+  },
+  "file_menu.reveal_in_finder": {
+    "message": "Näita Finderis"
+  },
+  "file_menu.show_package_contents": {
+    "message": "Kuva paketi sisu"
+  },
+  "file_menu.tag_dot.add": {
+    "message": "Lisa silt „{name}“"
+  },
+  "file_menu.tag_dot.remove": {
+    "message": "Eemalda silt „{name}“"
+  },
+  "file_menu.tags_popover.show_all": {
+    "message": "Kuva kõik…"
+  },
+  "file_menu.tags_popover.title": {
+    "message": "{count, plural, =1 {Määra sildid: „{name}“} one {Määra sildid: # üksus} other {Määra sildid: # üksust}}"
+  },
+  "find.backwards": {
+    "message": "Otsi tagurpidi"
+  },
+  "find.cancel": {
+    "message": "Tühista"
+  },
+  "find.case_sensitive": {
+    "message": "Tõstutundlik"
+  },
+  "find.hex": {
+    "message": "Otsi kuueteistkümnendbaite"
+  },
+  "find.ok": {
+    "message": "OK"
+  },
+  "find.regex": {
+    "message": "RegEx"
+  },
+  "find.text.label": {
+    "message": "Sisesta otsitav tekst"
+  },
+  "find.title": {
+    "message": "Otsing"
+  },
+  "find.whole_words": {
+    "message": "Ainult terved sõnad"
+  },
+  "keys.apply": {
+    "message": "Rakenda"
+  },
+  "keys.cancel": {
+    "message": "Tühista"
+  },
+  "keys.clear.tooltip": {
+    "message": "Klahvi pole"
+  },
+  "keys.column.alternate": {
+    "message": "Teine"
+  },
+  "keys.column.command": {
+    "message": "Käsk"
+  },
+  "keys.column.shortcut": {
+    "message": "Kiirklahv"
+  },
+  "keys.custom": {
+    "message": "Kohandatud"
+  },
+  "keys.delete_set": {
+    "message": "Kustuta"
+  },
+  "keys.note.custom_replaced": {
+    "message": "Sinu klahvid asendati komplekti {name} omadega; Salvesta kui hoiab need alles."
+  },
+  "keys.note.deleted": {
+    "message": "{name} on kustutatud; OK või Rakenda kinnitab selle."
+  },
+  "keys.note.moved": {
+    "message": "{key} on nüüd {command}, mitte enam {other}."
+  },
+  "keys.note.name_reserved": {
+    "message": "„{name}“ on eelseadistuse nimi; vali muu."
+  },
+  "keys.note.press_new_key": {
+    "message": "Vajuta uut klahvi; Esc jätab selle endiseks."
+  },
+  "keys.note.saved": {
+    "message": "Salvestatud nimega {name}; OK või Rakenda jätab selle alles."
+  },
+  "keys.note.set": {
+    "message": "{key} on nüüd {command}."
+  },
+  "keys.note.taken_by_system": {
+    "message": "{key} on hõivatud ({by}), seega see ei jõua kunagi Spark Commanderini."
+  },
+  "keys.ok": {
+    "message": "OK"
+  },
+  "keys.press_key": {
+    "message": "Vajuta klahvi…"
+  },
+  "keys.reserved.application_launcher": {
+    "message": "{system}: rakenduste käivitaja"
+  },
+  "keys.reserved.close_window": {
+    "message": "{system}: sulge aken"
+  },
+  "keys.reserved.close_window_or_tab": {
+    "message": "{system}: sulge aken või kaart"
+  },
+  "keys.reserved.dock": {
+    "message": "{system}: Dock"
+  },
+  "keys.reserved.floating_window": {
+    "message": "{system}: hõljuv aken"
+  },
+  "keys.reserved.force_quit": {
+    "message": "{system}: sundlõpetamine"
+  },
+  "keys.reserved.hide_program": {
+    "message": "{system}: peida programm"
+  },
+  "keys.reserved.input_source": {
+    "message": "{system}: sisendallikas"
+  },
+  "keys.reserved.keyboard_access": {
+    "message": "{system}: klaviatuuri juurdepääs"
+  },
+  "keys.reserved.keyboard_navigation": {
+    "message": "{system}: klaviatuuriga navigeerimine"
+  },
+  "keys.reserved.krunner": {
+    "message": "{system}: KRunner"
+  },
+  "keys.reserved.lock_screen": {
+    "message": "{system}: lukusta ekraan"
+  },
+  "keys.reserved.log_out": {
+    "message": "{system}: logi välja"
+  },
+  "keys.reserved.maximize_window": {
+    "message": "{system}: maksimeeri aken"
+  },
+  "keys.reserved.menu_bar": {
+    "message": "{system}: menüüriba"
+  },
+  "keys.reserved.minimize": {
+    "message": "{system}: minimeeri"
+  },
+  "keys.reserved.mission_control": {
+    "message": "{system}: Mission Control"
+  },
+  "keys.reserved.move_window": {
+    "message": "{system}: liiguta akent"
+  },
+  "keys.reserved.next_window": {
+    "message": "{system}: järgmine aken"
+  },
+  "keys.reserved.present_windows": {
+    "message": "{system}: akende esitlemine"
+  },
+  "keys.reserved.present_windows_all": {
+    "message": "{system}: akende esitlemine (kõik töölauad)"
+  },
+  "keys.reserved.present_windows_class": {
+    "message": "{system}: akende esitlemine (aknaklass)"
+  },
+  "keys.reserved.program_windows": {
+    "message": "{system}: programmi aknad"
+  },
+  "keys.reserved.quit": {
+    "message": "{system}: välju"
+  },
+  "keys.reserved.resize_window": {
+    "message": "{system}: muuda akna suurust"
+  },
+  "keys.reserved.restore_window": {
+    "message": "{system}: taasta aken"
+  },
+  "keys.reserved.run_command": {
+    "message": "{system}: käivita käsk"
+  },
+  "keys.reserved.screenshot": {
+    "message": "{system}: ekraanipilt"
+  },
+  "keys.reserved.security_screen": {
+    "message": "{system}: turvakuva"
+  },
+  "keys.reserved.show_desktop": {
+    "message": "{system}: näita töölauda"
+  },
+  "keys.reserved.space_left": {
+    "message": "{system}: vasakpoolne tööala"
+  },
+  "keys.reserved.space_right": {
+    "message": "{system}: parempoolne tööala"
+  },
+  "keys.reserved.spotlight": {
+    "message": "{system}: Spotlight"
+  },
+  "keys.reserved.start_menu": {
+    "message": "{system}: menüü Start"
+  },
+  "keys.reserved.status_menus": {
+    "message": "{system}: olekumenüüd"
+  },
+  "keys.reserved.suspend_compositing": {
+    "message": "{system}: peata komposiitimine"
+  },
+  "keys.reserved.switch_program_windows": {
+    "message": "{system}: lülitu programmi akende vahel"
+  },
+  "keys.reserved.switch_programs": {
+    "message": "{system}: lülitu programmide vahel"
+  },
+  "keys.reserved.switch_system_controls": {
+    "message": "{system}: lülitu süsteemi juhtelementidele"
+  },
+  "keys.reserved.switch_to_desktop": {
+    "message": "{system}: lülitu töölauale {number}"
+  },
+  "keys.reserved.switch_windows": {
+    "message": "{system}: lülitu akende vahel"
+  },
+  "keys.reserved.system_monitor": {
+    "message": "{system}: Süsteemi jälgija"
+  },
+  "keys.reserved.task_manager": {
+    "message": "{system}: Tegumihaldur"
+  },
+  "keys.reserved.text_console": {
+    "message": "{system}: lülitu tekstikonsoolile"
+  },
+  "keys.reserved.toolbar": {
+    "message": "{system}: tööriistariba"
+  },
+  "keys.reserved.window_menu": {
+    "message": "{system}: aknamenüü"
+  },
+  "keys.reserved.workspace_down": {
+    "message": "{system}: alumine tööala"
+  },
+  "keys.reserved.workspace_left": {
+    "message": "{system}: vasakpoolne tööala"
+  },
+  "keys.reserved.workspace_right": {
+    "message": "{system}: parempoolne tööala"
+  },
+  "keys.reserved.workspace_up": {
+    "message": "{system}: ülemine tööala"
+  },
+  "keys.reset.tooltip": {
+    "message": "Tagasi eelseadistuse {preset} klahvidele"
+  },
+  "keys.reset_all": {
+    "message": "Lähtesta kõik"
+  },
+  "keys.save_as.button": {
+    "message": "Salvesta kui…"
+  },
+  "keys.save_as.default_name": {
+    "message": "Minu klahvid"
+  },
+  "keys.save_as.label": {
+    "message": "Nimi:"
+  },
+  "keys.save_as.title": {
+    "message": "Salvesta kiirklahvid"
+  },
+  "keys.search.placeholder": {
+    "message": "Otsi käsku või klahvi"
+  },
+  "keys.set_label": {
+    "message": "Klahvid:"
+  },
+  "keys.taken_by.tooltip": {
+    "message": "Hõivatud: {by}"
+  },
+  "keys.title": {
+    "message": "Kiirklahvid"
+  },
+  "main.admin.button": {
+    "message": "Administraatorina"
+  },
+  "main.admin.deleting": {
+    "message": "{count, plural, one {# üksuse} other {# üksuse}} kustutamine"
+  },
+  "main.admin.failed": {
+    "message": "Administraatorina: {err}"
+  },
+  "main.admin.making": {
+    "message": "„{name}“ loomine"
+  },
+  "main.admin.offer": {
+    "message": "{what}: juurdepääs keelatud. Administraatorina küsib süsteem parooli."
+  },
+  "main.admin.offer_delete": {
+    "message": "{what}: juurdepääs keelatud. Administraatorina küsib süsteem parooli. Nii kustutatu kaob jäädavalt."
+  },
+  "main.admin.title": {
+    "message": "Juurdepääs keelatud"
+  },
+  "main.delete.from_archive": {
+    "message": "{kind, select, folder {Kas kustutada kaust „{name}“ arhiivist {archive}? Seda ei saa tagasi võtta.} file {Kas kustutada fail „{name}“ arhiivist {archive}? Seda ei saa tagasi võtta.} other {Kas kustutada {count, plural, one {# üksus} other {# üksust}} arhiivist {archive}? Seda ei saa tagasi võtta.}}"
+  },
+  "main.delete.on_server": {
+    "message": "{kind, select, folder {Kas kustutada kaust „{name}“ serveris {server}? Seda ei saa tagasi võtta.} file {Kas kustutada fail „{name}“ serveris {server}? Seda ei saa tagasi võtta.} other {Kas kustutada {count, plural, one {# üksus} other {# üksust}} serveris {server}? Seda ei saa tagasi võtta.}}"
+  },
+  "main.delete.permanently": {
+    "message": "{kind, select, folder {Kas kustutada kaust „{name}“ jäädavalt? Seda ei saa tagasi võtta.} file {Kas kustutada fail „{name}“ jäädavalt? Seda ei saa tagasi võtta.} other {Kas kustutada {count, plural, one {# üksus} other {# üksust}} jäädavalt? Seda ei saa tagasi võtta.}}"
+  },
+  "main.delete.title": {
+    "message": "Kustuta"
+  },
+  "main.delete.title_permanently": {
+    "message": "Kustuta jäädavalt"
+  },
+  "main.delete.to_trash": {
+    "message": "{kind, select, folder {Kas visata kaust „{name}“ prügikasti?} file {Kas visata fail „{name}“ prügikasti?} other {Kas visata {count, plural, one {# üksus} other {# üksust}} prügikasti?}}"
+  },
+  "main.download.edit": {
+    "message": "Laadi {file} redigeerimiseks alla"
+  },
+  "main.download.view": {
+    "message": "Laadi {file} vaatamiseks alla"
+  },
+  "main.error.make_folder": {
+    "message": "Kausta ei õnnestunud luua: {err}"
+  },
+  "main.error.read_settings": {
+    "message": "Seadeid ei õnnestunud lugeda: {err}"
+  },
+  "main.error.read_tabs": {
+    "message": "Avatud kaarte ei õnnestunud lugeda: {err}"
+  },
+  "main.error.read_workspaces": {
+    "message": "Tööruume ei õnnestunud lugeda: {err}"
+  },
+  "main.error.save_settings": {
+    "message": "Seadeid ei õnnestunud salvestada: {err}"
+  },
+  "main.folder_tree.home": {
+    "message": "Kodu"
+  },
+  "main.go.no_such_folder": {
+    "message": "{path}: sellist kausta selles arvutis pole"
+  },
+  "main.new_folder.label": {
+    "message": "Uus kaust (kataloog):"
+  },
+  "main.new_folder.title": {
+    "message": "Uus kaust"
+  },
+  "main.sync_browsing.lost": {
+    "message": "{err}. Sünkroonitud sirvimine on välja lülitatud."
+  },
+  "main.tool.needs_file": {
+    "message": "Kursor pole ühelgi failil: %N, %O ja %E vajavad faili."
+  },
+  "main.tool.needs_local_folder": {
+    "message": "Teine paneel näitab serverit või arhiivi: %T vajab selle arvuti kausta."
+  },
+  "main.undo.done": {
+    "message": "{way, select, redo {Uuesti tehtud: {title}} other {Tagasi võetud: {title}}}"
+  },
+  "main.undo.failed": {
+    "message": "{way, select, redo {Toimingut „{title}“ ei õnnestunud uuesti teha: {err}} other {Toimingut „{title}“ ei õnnestunud tagasi võtta: {err}}}"
+  },
+  "main.undo.nothing": {
+    "message": "{way, select, redo {Pole midagi uuesti teha.} other {Pole midagi tagasi võtta.}}"
+  },
+  "main.undo.queued": {
+    "message": "{way, select, redo {Järjekorras uuesti tegemiseks: {title}} other {Järjekorras tagasivõtmiseks: {title}}}"
+  },
+  "mark.compare.marked": {
+    "message": "{count, plural, one {# fail märgitud: uuem kui teisel pool või seal puudu.} other {# faili märgitud: uuemad kui teisel pool või seal puudu.}}"
+  },
+  "mark.compare.same": {
+    "message": "Kaustades on samad failid."
+  },
+  "mark.load_selection.label": {
+    "message": "Vali failis loetletud nimed:"
+  },
+  "mark.load_selection.title": {
+    "message": "Laadi valik"
+  },
+  "mark.save_selection.label": {
+    "message": "Salvesta valitud nimed faili:"
+  },
+  "mark.save_selection.title": {
+    "message": "Salvesta valik"
+  },
+  "mark.select_group.label": {
+    "message": "Vali failid (*.txt *.md; kaustamask lõpeb märgiga /):"
+  },
+  "mark.select_group.title": {
+    "message": "Vali rühm"
+  },
+  "mark.selection_file.not_local": {
+    "message": "Valikufaile hoitakse selles arvutis, väljaspool arhiive."
+  },
+  "mark.unselect_group.label": {
+    "message": "Tühista failide valik (*.txt *.md; kaustamask lõpeb märgiga /):"
+  },
+  "mark.unselect_group.title": {
+    "message": "Tühista rühma valik"
+  },
+  "media.cannot_play": {
+    "message": "Seda ei saa esitada: {err}"
+  },
+  "media.cannot_play_as_text": {
+    "message": "Seda ei saa esitada: {err}. 1 näitab seda tekstina."
+  },
+  "media.continuing": {
+    "message": "Jätkub kohalt {time}"
+  },
+  "media.error.missing": {
+    "message": "libmpv puudub: Seaded > Lisamoodulid laadib selle alla (lähtekoodist ehitades: vendor/mpv/{script})"
+  },
+  "media.error.not_started": {
+    "message": "libmpv ei käivitunud"
+  },
+  "media.error.too_long": {
+    "message": "{path}: mpv-l kulus liiga kaua"
+  },
+  "media.error.unsupported_system": {
+    "message": "videot saab praegu esitada ainult Linuxis, macOS-is ja Windowsis"
+  },
+  "menu.archive": {
+    "message": "Arhiiv"
+  },
+  "menu.associations": {
+    "message": "Seosed"
+  },
+  "menu.button_bar": {
+    "message": "Nupuriba"
+  },
+  "menu.checksums": {
+    "message": "Kontrollsummad"
+  },
+  "menu.commands": {
+    "message": "Käsud"
+  },
+  "menu.compare_directories": {
+    "message": "Võrdle kaustu"
+  },
+  "menu.configuration": {
+    "message": "Seadistus"
+  },
+  "menu.copy_names": {
+    "message": "Kopeeri nimed"
+  },
+  "menu.files": {
+    "message": "Failid"
+  },
+  "menu.filter": {
+    "message": "Filter"
+  },
+  "menu.go": {
+    "message": "Mine"
+  },
+  "menu.help": {
+    "message": "Abi"
+  },
+  "menu.mark": {
+    "message": "Märgi"
+  },
+  "menu.other": {
+    "message": "Muu"
+  },
+  "menu.recently_closed_tabs": {
+    "message": "Hiljuti suletud kaardid"
+  },
+  "menu.selection": {
+    "message": "Valik"
+  },
+  "menu.show": {
+    "message": "Kuva"
+  },
+  "menu.sidebar": {
+    "message": "Külgriba"
+  },
+  "menu.sort": {
+    "message": "Sortimine"
+  },
+  "menu.split_and_combine": {
+    "message": "Tükelda ja ühenda"
+  },
+  "menu.tabs": {
+    "message": "Kaardid"
+  },
+  "menu.tools": {
+    "message": "Tööriistad"
+  },
+  "menu.workspaces": {
+    "message": "Tööruumid"
+  },
+  "menus.hide_app": {
+    "message": "Peida Spark Commander"
+  },
+  "menus.hide_others": {
+    "message": "Peida teised"
+  },
+  "menus.minimize": {
+    "message": "Minimeeri"
+  },
+  "menus.quit_app": {
+    "message": "Lõpeta Spark Commander"
+  },
+  "menus.services": {
+    "message": "Teenused"
+  },
+  "menus.show_all": {
+    "message": "Kuva kõik"
+  },
+  "menus.zoom": {
+    "message": "Suumi"
+  },
+  "name_dialog.cancel": {
+    "message": "Tühista"
+  },
+  "name_dialog.ok": {
+    "message": "OK"
+  },
+  "operations.clear": {
+    "message": "Eemalda lõpetatud"
+  },
+  "operations.duration.seconds": {
+    "message": "{seconds} s"
+  },
+  "operations.empty": {
+    "message": "Toiminguid pole."
+  },
+  "operations.job.answer": {
+    "message": "Ootab sinu vastust"
+  },
+  "operations.job.bytes": {
+    "message": "{done} / {total}"
+  },
+  "operations.job.cancel_tooltip": {
+    "message": "Tühista"
+  },
+  "operations.job.cancelled": {
+    "message": "Tühistatud"
+  },
+  "operations.job.counting": {
+    "message": "Loendamine: {count, plural, one {# fail} other {# faili}}"
+  },
+  "operations.job.done": {
+    "message": "Valmis"
+  },
+  "operations.job.done_skipped": {
+    "message": "Valmis, {count, plural, one {# vahele jäetud} other {# vahele jäetud}}"
+  },
+  "operations.job.failed": {
+    "message": "Ebaõnnestus"
+  },
+  "operations.job.files": {
+    "message": "{files} / {count, plural, one {# fail} other {# faili}}"
+  },
+  "operations.job.left": {
+    "message": "{time} jäänud"
+  },
+  "operations.job.running": {
+    "message": "Käib"
+  },
+  "operations.job.waiting": {
+    "message": "Ootel"
+  },
+  "operations.menu.cancel": {
+    "message": "Tühista"
+  },
+  "operations.menu.clear": {
+    "message": "Eemalda lõpetatud"
+  },
+  "operations.menu.move_down": {
+    "message": "Liiguta alla"
+  },
+  "operations.menu.move_up": {
+    "message": "Liiguta üles"
+  },
+  "operations.settings_tooltip": {
+    "message": "Toimingute järjekorra seaded"
+  },
+  "operations.summary.failed": {
+    "message": "{count, plural, one {# ebaõnnestus} other {# ebaõnnestus}}"
+  },
+  "operations.summary.running": {
+    "message": "{count, plural, one {# käib} other {# käib}}"
+  },
+  "operations.summary.waiting": {
+    "message": "{count, plural, one {# ootel} other {# ootel}}"
+  },
+  "ops.as_administrator.failed": {
+    "message": "Administraatorina: {err}"
+  },
+  "ops.as_administrator.progress": {
+    "message": "Administraatorina…"
+  },
+  "ops.delete.title_many": {
+    "message": "Kustuta {count, plural, one {# üksus} other {# üksust}} kaustas {folder}"
+  },
+  "ops.delete.title_one": {
+    "message": "Kustuta „{name}“"
+  },
+  "ops.delete.trash_title_many": {
+    "message": "Viska {count, plural, one {# üksus} other {# üksust}} kaustast {folder} prügikasti"
+  },
+  "ops.delete.trash_title_one": {
+    "message": "Viska „{name}“ prügikasti"
+  },
+  "ops.error.file_in_the_way": {
+    "message": "selle nimega fail on ees"
+  },
+  "ops.error.into_itself": {
+    "message": "ei saa kopeerida iseendasse"
+  },
+  "ops.exists_already": {
+    "message": "{name} on juba olemas"
+  },
+  "ops.link.dialog_title": {
+    "message": "Loo link"
+  },
+  "ops.link.failed": {
+    "message": "Linki ei õnnestunud luua: {err}"
+  },
+  "ops.link.kind.hard": {
+    "message": "Kõva link"
+  },
+  "ops.link.kind.junction": {
+    "message": "Ühenduspunkt"
+  },
+  "ops.link.kind.shortcut": {
+    "message": "Otsetee (.lnk)"
+  },
+  "ops.link.kind.symbolic": {
+    "message": "Sümboolne link"
+  },
+  "ops.link.label_many": {
+    "message": "Lingid {count, plural, one {# üksusele} other {# üksusele}} kaustas:"
+  },
+  "ops.link.label_one": {
+    "message": "Link üksusele „{name}“ nimega:"
+  },
+  "ops.link.making": {
+    "message": "{kind, select, symbolic {Sümboolse lingi} hard {Kõva lingi} junction {Ühenduspunkti} other {Otsetee (.lnk)}} loomine"
+  },
+  "ops.link.needs_admin": {
+    "message": "sümboolsed lingid vajavad administraatorit või arendajarežiimi"
+  },
+  "ops.link.thread_failed": {
+    "message": "otsetee lõim ebaõnnestus"
+  },
+  "ops.link.title_many": {
+    "message": "{kind, select, symbolic {Sümboolsed lingid} hard {Kõvad lingid} junction {Ühenduspunktid} other {Otseteed (.lnk)}} {count, plural, one {# üksusele} other {# üksusele}} kaustas {folder}"
+  },
+  "ops.link.title_one": {
+    "message": "{kind, select, symbolic {Sümboolne link} hard {Kõva link} junction {Ühenduspunkt} other {Otsetee (.lnk)}} üksusele „{name}“ kaustas {folder}"
+  },
+  "ops.link.windows_only": {
+    "message": "ühenduspunktid ja otseteed on ainult Windowsis"
+  },
+  "ops.redo.title": {
+    "message": "Tee uuesti: {what}"
+  },
+  "ops.title.many": {
+    "message": "{kind, select, copy {Kopeeri} other {Teisalda}} {count, plural, one {# üksus} other {# üksust}} asukohta {target}"
+  },
+  "ops.title.one": {
+    "message": "{kind, select, copy {Kopeeri} other {Teisalda}} „{name}“ asukohta {target}"
+  },
+  "ops.undo.not_a_server": {
+    "message": "{url}: pole serveri aadress"
+  },
+  "ops.undo.not_in_trash": {
+    "message": "neid pole enam prügikastis"
+  },
+  "ops.undo.restore_title": {
+    "message": "{title}: ülekirjutatu tagasi prügikastist"
+  },
+  "ops.undo.title": {
+    "message": "Võta tagasi: {what}"
+  },
+  "pack.cancel": {
+    "message": "Tühista"
+  },
+  "pack.compression": {
+    "message": "Tihendus:"
+  },
+  "pack.dialog_title": {
+    "message": "Paki failid"
+  },
+  "pack.encrypt": {
+    "message": "Krüpti parooliga"
+  },
+  "pack.format": {
+    "message": "Vorming:"
+  },
+  "pack.label": {
+    "message": "Paki {count, plural, one {# üksus} other {# üksust}} arhiivi:"
+  },
+  "pack.level.fastest": {
+    "message": "Kiireim"
+  },
+  "pack.level.maximum": {
+    "message": "Maksimaalne"
+  },
+  "pack.level.normal": {
+    "message": "Tavaline"
+  },
+  "pack.level.store": {
+    "message": "Tihenduseta"
+  },
+  "pack.level.ultra": {
+    "message": "Ultra"
+  },
+  "pack.local_only": {
+    "message": "{what, select, packing {Pakkimine} unpacking {Lahtipakkimine} testing {Testimine} creating_checksums {Kontrollsummade loomine} making_links {Linkide loomine} verifying_checksums {Kontrollsummade kontrollimine} splitting {Tükeldamine} combining {Ühendamine} other {See}} töötab selle arvuti failidega, väljaspool arhiive."
+  },
+  "pack.move_files": {
+    "message": "Teisalda arhiivi (kustuta pakitud failid)"
+  },
+  "pack.needs_password": {
+    "message": "see vajab parooli"
+  },
+  "pack.ok": {
+    "message": "OK"
+  },
+  "pack.password_missing": {
+    "message": "Sisesta parool või lülita krüptimine välja."
+  },
+  "pack.separate": {
+    "message": "Iga valitud faili või kausta jaoks eraldi arhiiv"
+  },
+  "pack.split": {
+    "message": "Tükelda köideteks suurusega"
+  },
+  "pack.split_unit": {
+    "message": "MB"
+  },
+  "pack.test.broken": {
+    "message": "{broken, plural, one {# / {count} katki} other {# / {count} katki}}"
+  },
+  "pack.test.choose": {
+    "message": "Vali testitavad arhiivid."
+  },
+  "pack.test.ok": {
+    "message": "{count, plural, one {# arhiiv korras} other {# arhiivi korras}}"
+  },
+  "pack.test.title_many": {
+    "message": "Testi {count, plural, one {# arhiivi} other {# arhiivi}}"
+  },
+  "pack.test.title_one": {
+    "message": "Testi „{name}“"
+  },
+  "pack.title.many": {
+    "message": "Paki {count, plural, one {# üksus} other {# üksust}} arhiivi {archive}"
+  },
+  "pack.title.many_separate": {
+    "message": "Paki {count, plural, one {# üksus} other {# üksust}} eraldi {format}-arhiividesse"
+  },
+  "pack.title.one": {
+    "message": "Paki „{name}“ arhiivi {archive}"
+  },
+  "pack.title.one_separate": {
+    "message": "Paki „{name}“ eraldi {format}-arhiividesse"
+  },
+  "pack.unpack.choose": {
+    "message": "Vali lahtipakitavad arhiivid."
+  },
+  "pack.unpack.dialog_title": {
+    "message": "Paki failid lahti"
+  },
+  "pack.unpack.label": {
+    "message": "Paki {count, plural, one {# arhiiv} other {# arhiivi}} lahti kausta:"
+  },
+  "pack.unpack.mask": {
+    "message": "Ainult failid:"
+  },
+  "pack.unpack.overwrite": {
+    "message": "Kirjuta olemasolevad failid üle (muidu jäetakse alles)"
+  },
+  "pack.unpack.password": {
+    "message": "Parool:"
+  },
+  "pack.unpack.separate": {
+    "message": "Iga arhiiv oma nimega kausta"
+  },
+  "pack.unpack.title_many": {
+    "message": "Paki {count, plural, one {# arhiiv} other {# arhiivi}} lahti kausta {target}"
+  },
+  "pack.unpack.title_one": {
+    "message": "Paki „{name}“ lahti kausta {target}"
+  },
+  "pack.unpack.with_paths": {
+    "message": "Säilita arhiivis talletatud kaustad"
+  },
+  "pack.volume_invalid": {
+    "message": "Köite suurus on arv megabaitides."
+  },
+  "pack.wrong_password": {
+    "message": "vale parool"
+  },
+  "panel.admin.renaming": {
+    "message": "Ümbernimetamine nimeks „{name}“"
+  },
+  "panel.clipboard.copied": {
+    "message": "{count, plural, one {# üksus kopeeritud: Ctrl+V kleebib selle.} other {# üksust kopeeritud: Ctrl+V kleebib need.}}"
+  },
+  "panel.clipboard.cut": {
+    "message": "{count, plural, one {# üksus lõigatud: Ctrl+V kleebib selle.} other {# üksust lõigatud: Ctrl+V kleebib need.}}"
+  },
+  "panel.clipboard.no_cut_in_archive": {
+    "message": "Faile ei saa arhiividest välja lõigata; Ctrl+C kopeerib need."
+  },
+  "panel.clipboard.no_files": {
+    "message": "Lõikelaual pole faile."
+  },
+  "panel.clipboard.no_paste_in_archive": {
+    "message": "Faile ei saa veel arhiividesse kleepida."
+  },
+  "panel.clipboard.same_folder": {
+    "message": "Need on juba selles kaustas: Ctrl+V kleebib teise kausta."
+  },
+  "panel.column.attr": {
+    "message": "Atr"
+  },
+  "panel.column.date": {
+    "message": "Kuupäev"
+  },
+  "panel.column.ext": {
+    "message": "Laiend"
+  },
+  "panel.column.name": {
+    "message": "Nimi"
+  },
+  "panel.column.size": {
+    "message": "Suurus"
+  },
+  "panel.disconnect": {
+    "message": "Katkesta ühendus"
+  },
+  "panel.drag.items": {
+    "message": "{count, plural, one {# üksus} other {# üksust}}"
+  },
+  "panel.error.archive_not_updatable": {
+    "message": "{name}: 7-Zip muudab kohapeal 7z-, zip- ja tar-arhiive, kuid mitte seda"
+  },
+  "panel.error.archive_on_server": {
+    "message": "{name}: serverites olevaid arhiive ei saa veel muuta"
+  },
+  "panel.error.branch_view_local": {
+    "message": "Haruvaade näitab ainult selle arvuti kaustu"
+  },
+  "panel.error.exists": {
+    "message": "{name} on juba olemas"
+  },
+  "panel.error.folder_in_the_way": {
+    "message": "selle nimega kaust on ees"
+  },
+  "panel.error.inside_archive": {
+    "message": "arhiivides veel mitte"
+  },
+  "panel.error.make_file": {
+    "message": "Faili ei õnnestunud luua: {err}"
+  },
+  "panel.error.no_name": {
+    "message": "nime ei antud"
+  },
+  "panel.error.not_a_name": {
+    "message": "{name}: pole nimi"
+  },
+  "panel.error.other_drive": {
+    "message": "teine paneel läks teisele kettale"
+  },
+  "panel.error.rename": {
+    "message": "Ümbernimetamine ebaõnnestus: {err}"
+  },
+  "panel.filter.custom.label": {
+    "message": "Failitüübid, nt *.txt *.md (pärast | väljajäetavad):"
+  },
+  "panel.filter.custom.title": {
+    "message": "Näita faile"
+  },
+  "panel.filter.programs": {
+    "message": "programmid"
+  },
+  "panel.filter.selected_files": {
+    "message": "valitud failid"
+  },
+  "panel.found.branch_view": {
+    "message": "Haruvaade:"
+  },
+  "panel.found.search_results": {
+    "message": "Otsingutulemused:"
+  },
+  "panel.new_text_file.label": {
+    "message": "Faili nimi, avatakse redaktoris:"
+  },
+  "panel.new_text_file.title": {
+    "message": "Uus tekstifail"
+  },
+  "panel.opening.cancel": {
+    "message": "Tühista"
+  },
+  "panel.opening.reading": {
+    "message": "Lugemine…"
+  },
+  "panel.opening.title": {
+    "message": "Arhiivi avamine"
+  },
+  "panel.quick_filter.hint": {
+    "message": "peidab mittesobivad; Escape näitab kõiki"
+  },
+  "panel.quick_filter.label": {
+    "message": "Filter:"
+  },
+  "panel.quick_search.label": {
+    "message": "Otsing:"
+  },
+  "panel.size.app": {
+    "message": "<RAKENDUS>"
+  },
+  "panel.size.b": {
+    "message": "{size} B"
+  },
+  "panel.size.dir": {
+    "message": "<KAUST>"
+  },
+  "panel.size.gb": {
+    "message": "{size} GB"
+  },
+  "panel.size.kb": {
+    "message": "{size} KB"
+  },
+  "panel.size.mb": {
+    "message": "{size} MB"
+  },
+  "panel.size.tb": {
+    "message": "{size} TB"
+  },
+  "panel.space.bytes": {
+    "message": "{count, plural, one {{size} bait ({human})} other {{size} baiti ({human})}}"
+  },
+  "panel.space.close": {
+    "message": "Sulge"
+  },
+  "panel.space.counting": {
+    "message": "Loendamine…"
+  },
+  "panel.space.done": {
+    "message": "Valmis."
+  },
+  "panel.space.files": {
+    "message": "Faile:"
+  },
+  "panel.space.folders": {
+    "message": "Kaustu:"
+  },
+  "panel.space.in_archive": {
+    "message": "Arhiivides on suurused juba veerus Suurus."
+  },
+  "panel.space.title": {
+    "message": "Hõivatud ruumi arvutamine"
+  },
+  "panel.space.total": {
+    "message": "Kogusuurus:"
+  },
+  "panel.space.unreadable": {
+    "message": "{count, plural, one {# üksust ei saanud lugeda.} other {# üksust ei saanud lugeda.}}"
+  },
+  "panel.status": {
+    "message": "{marked_size} k / {size} k, {marked_files} / {files, plural, one {# fail} other {# faili}}, {marked_folders} / {folders, plural, one {# kaust} other {# kausta}}"
+  },
+  "panel.sync_browsing.stop": {
+    "message": "Sünkroonitud sirvimine (klõpsa peatamiseks)"
+  },
+  "panel.undo.rename": {
+    "message": "Nimeta „{name}“ ümber nimeks „{to}“"
+  },
+  "passwords.about.set": {
+    "message": "Ülemparooliga avanevad salvestatud paroolid ka teises arvutis, kui seadete kaust sinna kopeerida ja ülemparool seal sisestada. Kui see ununeb, lähevad kaotsi ainult need paroolid: need tuleb uuesti sisestada."
+  },
+  "passwords.about.unlock": {
+    "message": "Seaded tulid teisest arvutist või see arvuti ei kasuta võtmerõngast: ülemparool avab siin salvestatud paroolid."
+  },
+  "passwords.cancel": {
+    "message": "Tühista"
+  },
+  "passwords.done.set": {
+    "message": "Ülemparool on määratud."
+  },
+  "passwords.done.unlocked": {
+    "message": "Salvestatud paroolid on avatud."
+  },
+  "passwords.error.locked": {
+    "message": "salvestatud paroolid on lukus: ava need ülemparooliga (Seadistus › Seaded › Paroolid)"
+  },
+  "passwords.error.no_master": {
+    "message": "ülemparooli pole määratud"
+  },
+  "passwords.error.no_random": {
+    "message": "juhuslikke arve pole"
+  },
+  "passwords.error.not_opened": {
+    "message": "parooli serverile {what} ei saa avada"
+  },
+  "passwords.error.not_sealed": {
+    "message": "parooli ei õnnestunud krüptida"
+  },
+  "passwords.error.salt_damaged": {
+    "message": "ülemparooli sool on rikutud"
+  },
+  "passwords.error.wrong": {
+    "message": "ülemparool on vale"
+  },
+  "passwords.field.again": {
+    "message": "Uuesti"
+  },
+  "passwords.field.master": {
+    "message": "Ülemparool"
+  },
+  "passwords.locked_note": {
+    "message": "Salvestatud paroolid on selles arvutis lukus: ülemparool avab need."
+  },
+  "passwords.ok": {
+    "message": "OK"
+  },
+  "passwords.problem.differ": {
+    "message": "Need kaks ei ühti."
+  },
+  "passwords.problem.empty": {
+    "message": "Sisesta ülemparool."
+  },
+  "passwords.title.set": {
+    "message": "Ülemparool"
+  },
+  "passwords.title.unlock": {
+    "message": "Ava salvestatud paroolid"
+  },
+  "passwords.unlock_button": {
+    "message": "Ava…"
+  },
+  "passwords.working": {
+    "message": "Töötlemine…"
+  },
+  "properties.accessed": {
+    "message": "Kasutatud:"
+  },
+  "properties.change_attributes": {
+    "message": "Muuda atribuute..."
+  },
+  "properties.close": {
+    "message": "Sulge"
+  },
+  "properties.contents": {
+    "message": "{file_count, plural, one {{files} fail} other {{files} faili}}, {folder_count, plural, one {{folders} kaust} other {{folders} kausta}}, {count, plural, one {{bytes} bait} other {{bytes} baiti}} ({size})"
+  },
+  "properties.contents_counting": {
+    "message": "{file_count, plural, one {{files} fail} other {{files} faili}}, {folder_count, plural, one {{folders} kaust} other {{folders} kausta}}, {count, plural, one {{bytes} bait} other {{bytes} baiti}} ({size}) (loendamine…)"
+  },
+  "properties.contents_label": {
+    "message": "Sisu:"
+  },
+  "properties.created": {
+    "message": "Loodud:"
+  },
+  "properties.dialog_title": {
+    "message": "Omadused"
+  },
+  "properties.in_archive": {
+    "message": "Arhiivi loend näitab kõike, mida see oma failidest teab."
+  },
+  "properties.kind.file": {
+    "message": "Fail"
+  },
+  "properties.kind.folder": {
+    "message": "Kaust"
+  },
+  "properties.kind.link": {
+    "message": "Link"
+  },
+  "properties.kind.link_to": {
+    "message": "Link: {target}"
+  },
+  "properties.location": {
+    "message": "Asukoht:"
+  },
+  "properties.modified": {
+    "message": "Muudetud:"
+  },
+  "properties.name": {
+    "message": "Nimi:"
+  },
+  "properties.no_system_dialog": {
+    "message": "siin pole veel süsteemi omaduste dialoogi"
+  },
+  "properties.owner": {
+    "message": "Omanik / rühm:"
+  },
+  "properties.permissions": {
+    "message": "Õigused:"
+  },
+  "properties.size": {
+    "message": "{count, plural, one {{bytes} bait ({size})} other {{bytes} baiti ({size})}}"
+  },
+  "properties.size_label": {
+    "message": "Suurus:"
+  },
+  "properties.type": {
+    "message": "Tüüp:"
+  },
+  "quick_open.go_to": {
+    "message": "Mine asukohta {path}"
+  },
+  "quick_open.group.bookmarks": {
+    "message": "Järjehoidjad"
+  },
+  "quick_open.group.connections": {
+    "message": "Ühendused"
+  },
+  "quick_open.group.drives": {
+    "message": "Kettad"
+  },
+  "quick_open.group.path": {
+    "message": "Rada"
+  },
+  "quick_open.group.recent_folders": {
+    "message": "Hiljutised kaustad"
+  },
+  "quick_open.group.tools": {
+    "message": "Tööriistad"
+  },
+  "quick_open.group.workspaces": {
+    "message": "Tööruumid"
+  },
+  "quick_open.placeholder": {
+    "message": "Käsk, järjehoidja, kaust, rada, server, ketas, tööruum või tööriist"
+  },
+  "quick_open.title": {
+    "message": "Kiiravamine"
+  },
+  "quick_view.counting": {
+    "message": "Loendamine…"
+  },
+  "quick_view.downloading": {
+    "message": "Allalaadimine…"
+  },
+  "quick_view.empty": {
+    "message": "Kiirvaade näitab seda, millel on teise paneeli kursor."
+  },
+  "quick_view.extracting": {
+    "message": "Arhiivist väljavõtmine…"
+  },
+  "quick_view.files_only": {
+    "message": "Serverites ja arhiivides näitab kiirvaade ainult faile."
+  },
+  "quick_view.space.title": {
+    "message": "Hõivatud ruum kokku:"
+  },
+  "quick_view.space.totals": {
+    "message": "{bytes, plural, one {{bytes_grouped} bait} other {{bytes_grouped} baiti}}: {files, plural, one {{files_grouped} fail} other {{files_grouped} faili}}, {folders, plural, one {{folders_grouped} kaust} other {{folders_grouped} kausta}}"
+  },
+  "quick_view.space.unreadable": {
+    "message": "Lugeda ei saanud: {count}."
+  },
+  "quick_view.too_large.download": {
+    "message": "{size} on siin allalaadimiseks liiga suur: F3 näitab seda."
+  },
+  "quick_view.too_large.extract": {
+    "message": "{size} on siin arhiivist väljavõtmiseks liiga suur: F3 näitab seda."
+  },
+  "remote.cancelled": {
+    "message": "tühistatud"
+  },
+  "remote.cloud.ask": {
+    "message": "{kind, select, application_key {Kasutaja {user} rakenduse võti hostis {host}:} api_key {Kasutaja {user} API-võti hostis {host}:} password {Kasutaja {user} parool hostis {host}:} other {Kasutaja {user} salavõti hostis {host}:}}"
+  },
+  "remote.cloud.ask_again": {
+    "message": "{kind, select, application_key {Vale rakenduse võti. Kasutaja {user} rakenduse võti hostis {host}:} api_key {Vale API-võti. Kasutaja {user} API-võti hostis {host}:} password {Vale parool. Kasutaja {user} parool hostis {host}:} other {Vale võti. Kasutaja {user} salavõti hostis {host}:}}"
+  },
+  "remote.cloud.obscure_failed": {
+    "message": "rclone ei suutnud parooli vastu võtta"
+  },
+  "remote.cloud.rclone_missing": {
+    "message": "rclone puudub: Seaded > Lisamoodulid laadib selle alla"
+  },
+  "remote.cloud.title": {
+    "message": "{kind, select, application_key {Rakenduse võti} api_key {API-võti} password {Parool} other {Salavõti}}"
+  },
+  "remote.connecting": {
+    "message": "Ühendumine: {server}..."
+  },
+  "remote.dialog.cancel": {
+    "message": "Tühista"
+  },
+  "remote.dialog.ok": {
+    "message": "OK"
+  },
+  "remote.disconnect_failed": {
+    "message": "{share}: ühendust ei õnnestunud katkestada: {err}"
+  },
+  "remote.ftp.password": {
+    "message": "Kasutaja {user}@{host} parool:"
+  },
+  "remote.ftp.password_again": {
+    "message": "Vale parool. Kasutaja {user}@{host} parool:"
+  },
+  "remote.ftps.changed": {
+    "message": "Serveri {server} TLS-sertifikaat on MUUTUNUD pärast seda, kui faili {file} rida {line} selle salvestas. Keegi võib pealt kuulata; kui serveril on uus sertifikaat, eemalda see rida."
+  },
+  "remote.ftps.not_trusted": {
+    "message": "serveri sertifikaati ei usaldata"
+  },
+  "remote.login.password": {
+    "message": "Parool"
+  },
+  "remote.login.title": {
+    "message": "Sisselogimine"
+  },
+  "remote.login.user": {
+    "message": "Kasutaja"
+  },
+  "remote.mount.login_wrong": {
+    "message": "kasutaja või parool on vale"
+  },
+  "remote.mount.macos_failed": {
+    "message": "macOS ei suutnud seda haakida (NetFS {code})"
+  },
+  "remote.mount.needs_desktop": {
+    "message": "vajab KDE kio-fuse’i või GNOME gvfs-i"
+  },
+  "remote.mount.needs_login": {
+    "message": "see vajab kasutajat ja parooli"
+  },
+  "remote.mount.no_fuse": {
+    "message": "haagitud, kuid sellel pole kausta: gvfs-fuse puudub"
+  },
+  "remote.mount.no_nfs_client": {
+    "message": "ei leitud; NFS vajab Windowsi NFS-i klienti (Windowsi funktsioonid)"
+  },
+  "remote.mount.no_share": {
+    "message": "jagatud kaust puudub: smb://server/share"
+  },
+  "remote.mount.not_address": {
+    "message": "pole aadress"
+  },
+  "remote.mount.not_found": {
+    "message": "haagitud, kuid haagitute seast ei leitud"
+  },
+  "remote.mount.other_user": {
+    "message": "Windows on selle serveriga ühendatud teise kasutajana: logi välja või kasuta seda kasutajat"
+  },
+  "remote.password.title": {
+    "message": "Parool"
+  },
+  "remote.remember_password": {
+    "message": "Jäta meelde (Seaded › Paroolid)"
+  },
+  "remote.save_back_failed": {
+    "message": "Ei õnnestunud tagasi salvestada: {err}"
+  },
+  "remote.sftp.host_certificate": {
+    "message": "Server esitab hosti sertifikaadi; neid veel ei toetata."
+  },
+  "remote.sftp.key_changed": {
+    "message": "Serveri {server} hostivõti on MUUTUNUD pärast seda, kui faili {file} rida {line} selle salvestas. Keegi võib pealt kuulata; kui server seadistati uuesti, eemalda see rida."
+  },
+  "remote.sftp.key_not_trusted": {
+    "message": "Serveri {server} hostivõtit ei usaldatud."
+  },
+  "remote.sftp.keys_refused": {
+    "message": "{user}@{host}: server lükkas võtmed tagasi ega võta parooli vastu"
+  },
+  "remote.sftp.login_refused": {
+    "message": "{user}@{host}: sisselogimine keelati"
+  },
+  "remote.sftp.passphrase": {
+    "message": "Faili {file} paroolifraas"
+  },
+  "remote.sftp.passphrase_title": {
+    "message": "Võtme paroolifraas"
+  },
+  "remote.sftp.password": {
+    "message": "Kasutaja {user}@{host} parool"
+  },
+  "remote.unknown_host.once": {
+    "message": "Ühenda üks kord"
+  },
+  "remote.unknown_host.remember": {
+    "message": "Ühenda ja jäta meelde"
+  },
+  "remote.unknown_host.text": {
+    "message": "{key_type, select, TLS {Server {host} pole veel tuttav. Selle TLS-sertifikaadi sõrmejälg on} other {Server {host} pole veel tuttav. Selle {key_type}-sõrmejälg on}}\n\n{fingerprint}\n\nÜhenda ainult siis, kui see on server, mida mõtled; selle administraator saab sõrmejälje kinnitada."
+  },
+  "remote.unknown_host.title": {
+    "message": "Tundmatu server"
+  },
+  "rename.case": {
+    "message": "Tähesuurus:"
+  },
+  "rename.case.first": {
+    "message": "Esimene täht"
+  },
+  "rename.case.lower": {
+    "message": "väiketähed"
+  },
+  "rename.case.unchanged": {
+    "message": "Muutmata"
+  },
+  "rename.case.upper": {
+    "message": "SUURTÄHED"
+  },
+  "rename.case.words": {
+    "message": "Iga Sõna"
+  },
+  "rename.close": {
+    "message": "Sulge"
+  },
+  "rename.counter_start": {
+    "message": "Loenduri algus"
+  },
+  "rename.dialog_title": {
+    "message": "Hulgi ümbernimetamine"
+  },
+  "rename.digits": {
+    "message": "Numbrikohti"
+  },
+  "rename.extension": {
+    "message": "Laiend"
+  },
+  "rename.field.counter": {
+    "message": "[C] Loendur"
+  },
+  "rename.field.date": {
+    "message": "[Y][M][D] Kuupäev"
+  },
+  "rename.field.extension": {
+    "message": "[E] Laiend"
+  },
+  "rename.field.folder": {
+    "message": "[P] Kaust"
+  },
+  "rename.field.name": {
+    "message": "[N] Nimi"
+  },
+  "rename.field.range": {
+    "message": "[N1-3] Vahemik"
+  },
+  "rename.field.time": {
+    "message": "[h][m][s] Kellaaeg"
+  },
+  "rename.first_only": {
+    "message": "Ainult esimene"
+  },
+  "rename.in_archive": {
+    "message": "Arhiivides olevaid faile ei saa veel ümber nimetada."
+  },
+  "rename.mask": {
+    "message": "Nimemask: failinimi"
+  },
+  "rename.match_case": {
+    "message": "Tõstutundlik"
+  },
+  "rename.new_name": {
+    "message": "Uus nimi"
+  },
+  "rename.not_renamed_back": {
+    "message": "{from}: {err}; tagasi ümber nimetamata: {names}"
+  },
+  "rename.not_utf8": {
+    "message": "Nimed, mis pole UTF-8, jäetakse välja."
+  },
+  "rename.old_name": {
+    "message": "Vana nimi"
+  },
+  "rename.problem.bad_character": {
+    "message": "märk, mida nimes olla ei saa"
+  },
+  "rename.problem.exists": {
+    "message": "juba olemas"
+  },
+  "rename.problem.no_name": {
+    "message": "nimi puudub"
+  },
+  "rename.problem.twice": {
+    "message": "loendis kaks korda"
+  },
+  "rename.regex": {
+    "message": "Regulaaravaldis"
+  },
+  "rename.regex_error": {
+    "message": "Regulaaravaldis: {err}"
+  },
+  "rename.replace": {
+    "message": "Asenda millega"
+  },
+  "rename.search": {
+    "message": "Otsi"
+  },
+  "rename.start": {
+    "message": "Alusta!"
+  },
+  "rename.status.failed": {
+    "message": "Midagi ei nimetatud ümber: {err}"
+  },
+  "rename.status.ready": {
+    "message": "Alusta nimetab need ümber."
+  },
+  "rename.status.renamed": {
+    "message": "{count, plural, one {Ümber nimetatud: #.} other {Ümber nimetatud: #.}}"
+  },
+  "rename.status.took_back": {
+    "message": "{count, plural, one {Tagasi võetud: #.} other {Tagasi võetud: #.}}"
+  },
+  "rename.step": {
+    "message": "Samm"
+  },
+  "rename.undo": {
+    "message": "Võta tagasi"
+  },
+  "rename.was": {
+    "message": "{to} (oli {from})"
+  },
+  "rename.with_extension": {
+    "message": "Koos laiendiga"
+  },
+  "scmd.column.modified": {
+    "message": "Muudetud"
+  },
+  "scmd.column.name": {
+    "message": "Nimi"
+  },
+  "scmd.column.size": {
+    "message": "Suurus"
+  },
+  "scmd.column.up_dir": {
+    "message": "ÜLES-KAUST"
+  },
+  "scmd.command_line.not_on_server": {
+    "message": "Käsud käivituvad selles arvutis, mitte serveris."
+  },
+  "scmd.compare.marked": {
+    "message": "{count, plural, one {# fail märgitud: uuem kui teisel pool või seal puudu.} other {# faili märgitud: uuemad kui teisel pool või seal puudu.}}"
+  },
+  "scmd.compare.same": {
+    "message": "Kaustades on samad failid."
+  },
+  "scmd.copying": {
+    "message": "Faili {name} kopeerimine..."
+  },
+  "scmd.dialog.buttons": {
+    "message": "Enter OK   Esc Tühista"
+  },
+  "scmd.error.read_settings": {
+    "message": "Seadeid ei õnnestunud lugeda: {err}"
+  },
+  "scmd.error.read_tabs": {
+    "message": "Avatud kaarte ei õnnestunud lugeda: {err}"
+  },
+  "scmd.error.read_workspaces": {
+    "message": "Tööruume ei õnnestunud lugeda: {err}"
+  },
+  "scmd.error.save_back": {
+    "message": "Ei õnnestunud tagasi salvestada: {err}"
+  },
+  "scmd.error.save_searches": {
+    "message": "Otsinguid ei õnnestunud salvestada: {err}"
+  },
+  "scmd.error.save_tabs": {
+    "message": "Avatud kaarte ei õnnestunud salvestada: {err}"
+  },
+  "scmd.find.backwards": {
+    "message": "Tagurpidi"
+  },
+  "scmd.find.case_sensitive": {
+    "message": "Tõstutundlik"
+  },
+  "scmd.find.hex": {
+    "message": "Kuueteistkümnendbaidid (77 6F 72 64)"
+  },
+  "scmd.find.not_found": {
+    "message": "Ei leitud: {text}"
+  },
+  "scmd.find.regex": {
+    "message": "Regulaaravaldis"
+  },
+  "scmd.find.search_for": {
+    "message": "Otsi:"
+  },
+  "scmd.find.title": {
+    "message": "Otsing"
+  },
+  "scmd.find.whole_words": {
+    "message": "Ainult terved sõnad"
+  },
+  "scmd.group.files": {
+    "message": "Failid (*.txt *.md; kaustad lõpevad märgiga /):"
+  },
+  "scmd.group.select_title": {
+    "message": "Vali rühm"
+  },
+  "scmd.group.unselect_title": {
+    "message": "Tühista rühma valik"
+  },
+  "scmd.key_bar.copy": {
+    "message": "Kopeeri"
+  },
+  "scmd.key_bar.delete": {
+    "message": "Kustuta"
+  },
+  "scmd.key_bar.edit": {
+    "message": "Muuda"
+  },
+  "scmd.key_bar.menu": {
+    "message": "Menüü"
+  },
+  "scmd.key_bar.mkdir": {
+    "message": "Kaust"
+  },
+  "scmd.key_bar.move": {
+    "message": "Nihuta"
+  },
+  "scmd.key_bar.quit": {
+    "message": "Välju"
+  },
+  "scmd.key_bar.view": {
+    "message": "Vaata"
+  },
+  "scmd.message.error": {
+    "message": "Viga"
+  },
+  "scmd.message.ok": {
+    "message": "OK"
+  },
+  "scmd.not_yet": {
+    "message": "{what, select, menus {Menüüd: terminaliversioonis veel pole.} file_operations {Failitoimingud: terminaliversioonis veel pole.} servers {Serverid: terminaliversioonis veel pole.} other {See käsk: terminaliversioonis veel pole.}}"
+  },
+  "scmd.picture.broken": {
+    "message": "katkine pilt"
+  },
+  "scmd.picture.broken_page": {
+    "message": "katkine lehekülg"
+  },
+  "scmd.picture.loading": {
+    "message": "Laadimine…"
+  },
+  "scmd.picture.no_page": {
+    "message": "PDF-is pole sellist lehekülge"
+  },
+  "scmd.shell.press_enter": {
+    "message": "Vajuta Enter, et naasta Spark Commanderisse..."
+  },
+  "scmd.sync_browsing.off": {
+    "message": "Sünkroonitud sirvimine on väljas."
+  },
+  "scmd.sync_browsing.on": {
+    "message": "Sünkroonitud sirvimine on sees."
+  },
+  "scmd.sync_browsing.stopped": {
+    "message": "{err}. Sünkroonitud sirvimine on väljas."
+  },
+  "scmd.viewer.column": {
+    "message": "Veerg {column}"
+  },
+  "scmd.viewer.finding": {
+    "message": "otsimine…"
+  },
+  "scmd.viewer.key_bar.next": {
+    "message": "Edasi"
+  },
+  "scmd.viewer.key_bar.quit": {
+    "message": "Välju"
+  },
+  "scmd.viewer.key_bar.reload": {
+    "message": "Uuesti"
+  },
+  "scmd.viewer.key_bar.search": {
+    "message": "Otsi"
+  },
+  "scmd.viewer.page": {
+    "message": "lk {page} / {pages}"
+  },
+  "scmd.viewer.reading": {
+    "message": "lugemine {percent}%"
+  },
+  "scmd.viewer.wrap": {
+    "message": "Murdmine"
+  },
+  "scmd.workspace.copy_name": {
+    "message": "{name} koopia"
+  },
+  "scmd.workspace.default_name": {
+    "message": "Tööruum {number}"
+  },
+  "scmd.workspace.delete_question": {
+    "message": "Kas kustutada „{name}“? Selle kaardid unustatakse."
+  },
+  "scmd.workspace.duplicate_title": {
+    "message": "Tee tööruumist koopia"
+  },
+  "scmd.workspace.last_stays": {
+    "message": "Viimane tööruum jääb alles."
+  },
+  "scmd.workspace.name": {
+    "message": "Nimi:"
+  },
+  "scmd.workspace.name_or_default": {
+    "message": "Nimi (tühi: {name}):"
+  },
+  "scmd.workspace.new_title": {
+    "message": "Uus tööruum"
+  },
+  "scmd.workspace.rename_title": {
+    "message": "Nimeta tööruum ümber"
+  },
+  "scmd.workspaces.keys": {
+    "message": "Enter Ava  F7 Uus  F5 Kopeeri  F2 Nimeta  F8 Kustuta"
+  },
+  "scmd.workspaces.title": {
+    "message": "Tööruumid"
+  },
+  "search.age.days": {
+    "message": "päev(a)"
+  },
+  "search.age.hours": {
+    "message": "tund(i)"
+  },
+  "search.age.minutes": {
+    "message": "minut(it)"
+  },
+  "search.age.months": {
+    "message": "kuu(d)"
+  },
+  "search.age.weeks": {
+    "message": "nädal(at)"
+  },
+  "search.age.years": {
+    "message": "aasta(t)"
+  },
+  "search.archives": {
+    "message": "Otsi arhiividest"
+  },
+  "search.attribute.directory": {
+    "message": "Kaust"
+  },
+  "search.attribute.either": {
+    "message": "Ükskõik"
+  },
+  "search.attribute.executable": {
+    "message": "Käivitatav"
+  },
+  "search.attribute.hidden": {
+    "message": "Peidetud"
+  },
+  "search.attribute.link": {
+    "message": "Sümboolne link"
+  },
+  "search.attribute.must": {
+    "message": "Peab olema"
+  },
+  "search.attribute.must_not": {
+    "message": "Ei tohi olla"
+  },
+  "search.attribute.read_only": {
+    "message": "Kirjutuskaitstud"
+  },
+  "search.attributes.label": {
+    "message": "Atribuudid:"
+  },
+  "search.between.and": {
+    "message": "ja"
+  },
+  "search.between.label": {
+    "message": "Kuupäev vahemikus:"
+  },
+  "search.close": {
+    "message": "Sulge"
+  },
+  "search.depth.all": {
+    "message": "kõik (piiramatu sügavus)"
+  },
+  "search.depth.current": {
+    "message": "ainult praegune kaust"
+  },
+  "search.depth.label": {
+    "message": "Otsi alamkaustadest:"
+  },
+  "search.depth.levels": {
+    "message": "{count, plural, one {# tase} other {# taset}}"
+  },
+  "search.drives": {
+    "message": "Kettad"
+  },
+  "search.duplicates.content": {
+    "message": "sama sisu"
+  },
+  "search.duplicates.label": {
+    "message": "Otsi topeltfaile:"
+  },
+  "search.duplicates.name": {
+    "message": "sama nimi"
+  },
+  "search.duplicates.size": {
+    "message": "sama suurus"
+  },
+  "search.edit": {
+    "message": "F4 Redigeeri"
+  },
+  "search.error.between_days": {
+    "message": "Kuupäevavahemik vajab mõlemat päeva"
+  },
+  "search.error.date": {
+    "message": "{text} pole kuupäev kujul 2026-11-12"
+  },
+  "search.error.hex": {
+    "message": "{text} pole kuueteistkümnendstring kujul 48 65 6c"
+  },
+  "search.error.keep": {
+    "message": "Otsingut ei õnnestunud säilitada: {err}"
+  },
+  "search.error.local_time": {
+    "message": "{text} pole kohalik aeg"
+  },
+  "search.error.names_regex": {
+    "message": "Nime regulaaravaldis: {err}"
+  },
+  "search.error.newer_number": {
+    "message": "„Mitte vanem kui“ vajab arvu, mitte {text}"
+  },
+  "search.error.no_place": {
+    "message": "„Otsi kohast“ ei nimeta ühtegi kausta"
+  },
+  "search.error.no_text": {
+    "message": "„Otsi teksti“ ei sisalda teksti"
+  },
+  "search.error.older_number": {
+    "message": "„Vanem kui“ vajab arvu, mitte {text}"
+  },
+  "search.error.save": {
+    "message": "Otsinguid ei õnnestunud salvestada: {err}"
+  },
+  "search.error.size_number": {
+    "message": "„Faili suurus“ vajab arvu, mitte {text}"
+  },
+  "search.error.text_regex": {
+    "message": "Teksti regulaaravaldis: {err}"
+  },
+  "search.feed": {
+    "message": "Saada paneeli"
+  },
+  "search.go_to_file": {
+    "message": "Mine failile"
+  },
+  "search.in_found": {
+    "message": "F2 Otsi leitud failidest"
+  },
+  "search.locate": {
+    "message": "Programmi locate indeksist"
+  },
+  "search.names.label": {
+    "message": "Otsi faile:"
+  },
+  "search.names.placeholder": {
+    "message": "*.txt *.md | backup*  (tühi: kõik)"
+  },
+  "search.new": {
+    "message": "Uus otsing"
+  },
+  "search.newer.label": {
+    "message": "Mitte vanem kui:"
+  },
+  "search.older.label": {
+    "message": "Vanem kui:"
+  },
+  "search.only_selected": {
+    "message": "Otsi ainult valitud failidest/kaustadest"
+  },
+  "search.only_selected_count": {
+    "message": "{count, plural, one {Otsi ainult # valitud üksusest} other {Otsi ainult # valitud üksusest}}"
+  },
+  "search.page.advanced": {
+    "message": "Täpsemalt"
+  },
+  "search.page.general": {
+    "message": "Üldine"
+  },
+  "search.page.load_save": {
+    "message": "Laadi/salvesta"
+  },
+  "search.places.browse_prompt": {
+    "message": "Otsi kohast"
+  },
+  "search.places.label": {
+    "message": "Otsi kohast:"
+  },
+  "search.places.placeholder": {
+    "message": "Kaustad, nende vahel ;"
+  },
+  "search.regex": {
+    "message": "RegEx"
+  },
+  "search.results.label": {
+    "message": "Otsingutulemused:"
+  },
+  "search.saved.delete": {
+    "message": "Kustuta"
+  },
+  "search.saved.label": {
+    "message": "Varasemad otsingud:"
+  },
+  "search.saved.load": {
+    "message": "Laadi"
+  },
+  "search.saved.name_first": {
+    "message": "Anna otsingule esmalt nimi."
+  },
+  "search.saved.name_placeholder": {
+    "message": "Otsingu nimi"
+  },
+  "search.saved.save": {
+    "message": "Salvesta"
+  },
+  "search.size.label": {
+    "message": "Faili suurus:"
+  },
+  "search.start": {
+    "message": "Otsi"
+  },
+  "search.status.found": {
+    "message": "Leitud {files, plural, one {# fail} other {# faili}} ja {dirs, plural, one {# kaust} other {# kausta}}"
+  },
+  "search.status.searching": {
+    "message": "Otsimine…"
+  },
+  "search.status.searching_in": {
+    "message": "Otsimine: {folder}"
+  },
+  "search.status.stopped": {
+    "message": "Peatatud: {counts}"
+  },
+  "search.stop": {
+    "message": "Peata"
+  },
+  "search.text.ansi": {
+    "message": "ANSI (koodileht {page})"
+  },
+  "search.text.case_sensitive": {
+    "message": "Tõstutundlik"
+  },
+  "search.text.hex": {
+    "message": "Hex"
+  },
+  "search.text.label": {
+    "message": "Otsi teksti:"
+  },
+  "search.text.not_containing": {
+    "message": "Otsi faile, mis EI sisalda teksti"
+  },
+  "search.text.office": {
+    "message": "Kontorifailid (docx, xlsx, pptx, odt…)"
+  },
+  "search.text.placeholder": {
+    "message": "Otsitav tekst"
+  },
+  "search.text.whole_words": {
+    "message": "Ainult terved sõnad"
+  },
+  "search.title": {
+    "message": "Failide otsimine"
+  },
+  "search.unit.bytes": {
+    "message": "baiti"
+  },
+  "search.view": {
+    "message": "F3 Vaata"
+  },
+  "settings.addons.builtin_version": {
+    "message": "{version}, tuleb Spark Commanderiga kaasa"
+  },
+  "settings.addons.check_daily": {
+    "message": "Otsi lisamoodulite uuendusi käivitamisel ja iga päev ning paku neid"
+  },
+  "settings.addons.check_failed": {
+    "message": "Uuendusi ei õnnestunud otsida: {err}"
+  },
+  "settings.addons.check_now": {
+    "message": "Otsi kohe"
+  },
+  "settings.addons.checking": {
+    "message": "Uuenduste otsimine..."
+  },
+  "settings.addons.download": {
+    "message": "Laadi alla"
+  },
+  "settings.addons.downloading": {
+    "message": "Allalaadimine: {done} / {size}"
+  },
+  "settings.addons.file": {
+    "message": "Fail"
+  },
+  "settings.addons.installed.builtin": {
+    "message": "tuleb Spark Commanderiga kaasa"
+  },
+  "settings.addons.installed.label": {
+    "message": "Installitud"
+  },
+  "settings.addons.installed.none": {
+    "message": "puudub"
+  },
+  "settings.addons.intro": {
+    "message": "Spark Commander kasutab osa oma töö jaoks teiste projektide programme. Lisamoodulid laaditakse alla eraldi, kui sa seda soovid; 7-Zip ja PDFium tulevad kaasa."
+  },
+  "settings.addons.never_offer": {
+    "message": "Ära kunagi paku lisamooduleid, kui fail mõnda vajab"
+  },
+  "settings.addons.offers": {
+    "message": "Pakkumised ja uuendused"
+  },
+  "settings.addons.online.label": {
+    "message": "Võrgus"
+  },
+  "settings.addons.online.looking": {
+    "message": "otsimine..."
+  },
+  "settings.addons.online.none": {
+    "message": "selle süsteemi jaoks pole"
+  },
+  "settings.addons.online.not_yet": {
+    "message": "pole veel otsitud"
+  },
+  "settings.addons.online.unknown": {
+    "message": "teadmata"
+  },
+  "settings.addons.remove": {
+    "message": "Eemalda"
+  },
+  "settings.addons.up_to_date": {
+    "message": "Lisamoodulite loend on ajakohane."
+  },
+  "settings.addons.version": {
+    "message": "Versioon"
+  },
+  "settings.addons.website": {
+    "message": "Veebisait"
+  },
+  "settings.appearance.title": {
+    "message": "Välimus"
+  },
+  "settings.apply": {
+    "message": "Rakenda"
+  },
+  "settings.backdrop.blur": {
+    "message": "Hägusta selle taga olevat töölauda"
+  },
+  "settings.backdrop.clear": {
+    "message": "0%, ainult töölaud"
+  },
+  "settings.backdrop.cover": {
+    "message": "Kui palju see katab enda taga olevat töölauda:"
+  },
+  "settings.backdrop.opacity": {
+    "message": "{opacity}%"
+  },
+  "settings.backdrop.sidebar": {
+    "message": "Külgriba"
+  },
+  "settings.backdrop.solid": {
+    "message": "100%, läbipaistmatu"
+  },
+  "settings.backdrop.terminal": {
+    "message": "Terminal"
+  },
+  "settings.cancel": {
+    "message": "Tühista"
+  },
+  "settings.date.as_system": {
+    "message": "Nagu süsteemis: {date}"
+  },
+  "settings.date.custom": {
+    "message": "Kohandatud:"
+  },
+  "settings.date.pattern_help": {
+    "message": "yyyy aasta, MM kuu (MMM selle nimi), dd päev (ddd nädalapäev)"
+  },
+  "settings.date.shown_as": {
+    "message": "Kuvatakse nii"
+  },
+  "settings.date.shown_as_note": {
+    "message": "faililoendites; dialoogid lisavad sekundid"
+  },
+  "settings.date.title": {
+    "message": "Kuupäev"
+  },
+  "settings.editor.browse": {
+    "message": "Sirvi..."
+  },
+  "settings.editor.choose": {
+    "message": "Vali"
+  },
+  "settings.editor.external": {
+    "message": "Väline redaktor (Ctrl+Shift+F4):"
+  },
+  "settings.editor.external_help": {
+    "message": "%1 on fail, muidu lisatakse see lõppu; nt code --wait %1"
+  },
+  "settings.editor.limit": {
+    "message": "Sisseehitatud redaktor (F4) avab faile kuni"
+  },
+  "settings.editor.limit_unit": {
+    "message": "MB"
+  },
+  "settings.editor.title": {
+    "message": "Redaktor (F4)"
+  },
+  "settings.error.no_folder": {
+    "message": "seadete kausta pole"
+  },
+  "settings.files_shown.hidden": {
+    "message": "Peidetud failid"
+  },
+  "settings.files_shown.system": {
+    "message": "Süsteemifailid"
+  },
+  "settings.files_shown.title": {
+    "message": "Näidatavad failid"
+  },
+  "settings.font.as_system": {
+    "message": "Nagu süsteemis"
+  },
+  "settings.font.chosen": {
+    "message": "Valitud; süsteemi font on {family}, {size}"
+  },
+  "settings.font.fixed": {
+    "message": "Vaatur"
+  },
+  "settings.font.fixed_note": {
+    "message": "Ainult fikseeritud laiusega fondid; kehtib ka redaktorile ja failide võrdlusele."
+  },
+  "settings.font.main": {
+    "message": "Põhiakna font"
+  },
+  "settings.font.system": {
+    "message": "Süsteemi font"
+  },
+  "settings.language.system": {
+    "message": "Süsteemi keel"
+  },
+  "settings.language.system_named": {
+    "message": "Süsteemi keel: {language}"
+  },
+  "settings.language.title": {
+    "message": "Keel"
+  },
+  "settings.menus.automatic": {
+    "message": "Automaatne: GNOME-s ☰ nupp, mujal menüüriba"
+  },
+  "settings.menus.bar": {
+    "message": "Menüüriba"
+  },
+  "settings.menus.button": {
+    "message": "☰ nupp tiitliribal"
+  },
+  "settings.menus.title": {
+    "message": "Menüüd"
+  },
+  "settings.ok": {
+    "message": "OK"
+  },
+  "settings.page.addons": {
+    "message": "Lisamoodulid"
+  },
+  "settings.page.date": {
+    "message": "Kuupäev"
+  },
+  "settings.page.display": {
+    "message": "Kuva"
+  },
+  "settings.page.edit_view": {
+    "message": "Redaktor/vaatur"
+  },
+  "settings.page.font": {
+    "message": "Font"
+  },
+  "settings.page.language": {
+    "message": "Keel"
+  },
+  "settings.page.layout": {
+    "message": "Paigutus"
+  },
+  "settings.page.operations": {
+    "message": "Toimingud"
+  },
+  "settings.page.passwords": {
+    "message": "Paroolid"
+  },
+  "settings.page.terminal": {
+    "message": "Terminal"
+  },
+  "settings.page.toolbar": {
+    "message": "Tööriistariba"
+  },
+  "settings.passwords.change_master": {
+    "message": "Muuda ülemparooli…"
+  },
+  "settings.passwords.locked": {
+    "message": "Need on selles arvutis lukus: ülemparool avab need."
+  },
+  "settings.passwords.master_set": {
+    "message": "Ülemparool on määratud: kui seadete kaust kopeerida, avanevad need teises arvutis pärast ülemparooli sisestamist."
+  },
+  "settings.passwords.no_master": {
+    "message": "Ülemparooli pole määratud: kui seadete kaust kopeerida, ei avane need teises arvutis; seal tuleb need uuesti sisestada."
+  },
+  "settings.passwords.not_removed": {
+    "message": "Ülemparooli ei eemaldatud: {err}"
+  },
+  "settings.passwords.remove_master": {
+    "message": "Eemalda ülemparool"
+  },
+  "settings.passwords.saved": {
+    "message": "{count, plural, one {# parool on salvestatud} other {# parooli on salvestatud}} (serverite, jagatud kaustade, krüptitud ketaste), krüptituna seadete kaustas; neid avav võti on selle arvuti võtmerõngas."
+  },
+  "settings.passwords.set_master": {
+    "message": "Määra ülemparool…"
+  },
+  "settings.passwords.title": {
+    "message": "Salvestatud paroolid"
+  },
+  "settings.passwords.unlock": {
+    "message": "Ava…"
+  },
+  "settings.queue.clear_after": {
+    "message": "Eemalda lõpetatud toimingud pärast"
+  },
+  "settings.queue.clear_after_help": {
+    "message": "0: kohe, kui need lõpevad. Ebaõnnestunud ja tühistatud jäävad alles, kuni need eemaldatakse."
+  },
+  "settings.queue.clear_after_unit": {
+    "message": "minutit"
+  },
+  "settings.queue.download_limit": {
+    "message": "Allalaadimiskiiruse piirang"
+  },
+  "settings.queue.download_limit_help": {
+    "message": "Allalaadimine lingilt ning kopeerimine FTP- ja SFTP-serveritest; ka juba käimasolevad. 0: piiranguta."
+  },
+  "settings.queue.download_limit_unit": {
+    "message": "KB/s"
+  },
+  "settings.queue.title": {
+    "message": "Toimingute järjekord"
+  },
+  "settings.shell.default": {
+    "message": "Vaikimisi: {shell}"
+  },
+  "settings.shell.note": {
+    "message": "Uued terminalikaardid käivitavad selle."
+  },
+  "settings.shell.title": {
+    "message": "Kest"
+  },
+  "settings.sort_folders.by_name": {
+    "message": "Alati nime järgi"
+  },
+  "settings.sort_folders.like_files": {
+    "message": "Nagu failid (ka aja järgi)"
+  },
+  "settings.sort_folders.title": {
+    "message": "Kaustade sortimine"
+  },
+  "settings.tabs.header_always": {
+    "message": "Näita kaartide riba ka siis, kui avatud on ainult üks kaart"
+  },
+  "settings.tabs.title": {
+    "message": "Kaustade kaardid"
+  },
+  "settings.time.as_system": {
+    "message": "Nagu süsteemis"
+  },
+  "settings.time.h12": {
+    "message": "12 tundi (2:05 PM)"
+  },
+  "settings.time.h24": {
+    "message": "24 tundi (14:05)"
+  },
+  "settings.time.title": {
+    "message": "Kellaaeg"
+  },
+  "settings.title": {
+    "message": "Seaded"
+  },
+  "settings.toolbar.add": {
+    "message": "Lisa nupp…"
+  },
+  "settings.toolbar.move_down": {
+    "message": "Liiguta alla"
+  },
+  "settings.toolbar.move_up": {
+    "message": "Liiguta üles"
+  },
+  "settings.toolbar.place": {
+    "message": "Menüüriba all; tiitliribal, kui menüüd on ☰ nupu taga, nagu GNOME rakendustes. Kui nuppe pole, siis ribat pole."
+  },
+  "settings.toolbar.remove": {
+    "message": "Eemalda"
+  },
+  "settings.toolbar.replace": {
+    "message": "Asenda…"
+  },
+  "settings.toolbar.restore_default": {
+    "message": "Taasta vaikimisi"
+  },
+  "settings.toolbar.title": {
+    "message": "Tööriistariba nupud"
+  },
+  "settings.viewer.font.ansi": {
+    "message": "ANSI (Windows)"
+  },
+  "settings.viewer.font.ascii": {
+    "message": "ASCII (DOS)"
+  },
+  "settings.viewer.font.auto": {
+    "message": "Automaatne tuvastus"
+  },
+  "settings.viewer.font.label": {
+    "message": "Font käivitamisel:"
+  },
+  "settings.viewer.font.variable": {
+    "message": "Muutuva laiusega"
+  },
+  "settings.viewer.minimap": {
+    "message": "Minikaart"
+  },
+  "settings.viewer.show": {
+    "message": "Näita:"
+  },
+  "settings.viewer.start.auto": {
+    "message": "Automaatne tuvastus"
+  },
+  "settings.viewer.start.binary": {
+    "message": "Binaarne"
+  },
+  "settings.viewer.start.hex": {
+    "message": "Hex"
+  },
+  "settings.viewer.start.label": {
+    "message": "Kuva käivitamisel:"
+  },
+  "settings.viewer.start.text": {
+    "message": "Tekst"
+  },
+  "settings.viewer.title": {
+    "message": "Vaatur (F3)"
+  },
+  "settings.viewer.width.binary": {
+    "message": "Binaarne"
+  },
+  "settings.viewer.width.label": {
+    "message": "Kuva laius (märkides):"
+  },
+  "settings.viewer.width.text": {
+    "message": "Tekst"
+  },
+  "settings.viewer.wrap": {
+    "message": "Reamurdmine"
+  },
+  "shells.command_prompt": {
+    "message": "Käsuviip"
+  },
+  "sidebar.device.no_files": {
+    "message": "ei jaga faile"
+  },
+  "sidebar.device.not_answering": {
+    "message": "{name} ei vasta: ava selle lukk ja ava seal KDE Connect, seejärel loe kaust uuesti (F2)."
+  },
+  "sidebar.device.not_answering_error": {
+    "message": "{name} ei vasta ({err}): ava selle lukk ja ava seal KDE Connect."
+  },
+  "sidebar.device.not_connected": {
+    "message": "pole ühendatud"
+  },
+  "sidebar.device.opening": {
+    "message": "Seadme {name} avamine..."
+  },
+  "sidebar.device.reconnecting": {
+    "message": "{name} ei vasta: uuesti ühendamine..."
+  },
+  "sidebar.device.unmount_failed": {
+    "message": "{name}: lahutamine ebaõnnestus: {err}"
+  },
+  "sidebar.group.bookmarks": {
+    "message": "Järjehoidjad"
+  },
+  "sidebar.group.cloud": {
+    "message": "Pilv"
+  },
+  "sidebar.group.devices": {
+    "message": "Seadmed"
+  },
+  "sidebar.group.drives": {
+    "message": "Kettad"
+  },
+  "sidebar.group.network": {
+    "message": "Võrk"
+  },
+  "sidebar.section.connections": {
+    "message": "Ühendused"
+  },
+  "sidebar.section.folders": {
+    "message": "Kaustad"
+  },
+  "sidebar.section.operations": {
+    "message": "Toimingud"
+  },
+  "sidebar.section.places": {
+    "message": "Asukohad"
+  },
+  "sidebar.volume.locked": {
+    "message": "lukus"
+  },
+  "sidebar.volume.mounting": {
+    "message": "Ketta {name} haakimine..."
+  },
+  "sidebar.volume.not_mounted": {
+    "message": "haakimata"
+  },
+  "sidebar.volume.open": {
+    "message": "Ava"
+  },
+  "sidebar.volume.space": {
+    "message": "{free} vaba / {total}"
+  },
+  "sidebar.volume.unmount": {
+    "message": "Lahuta"
+  },
+  "sidebar.volume.unmount_failed": {
+    "message": "Lahutamine ebaõnnestus: {err}"
+  },
+  "split.bad_size": {
+    "message": "„{size}“ pole suurus: 100 MB, 1.5 GB, 650m"
+  },
+  "split.choose": {
+    "message": "Vii kursor tükeldatavale failile."
+  },
+  "split.combine.choose": {
+    "message": "Vii kursor osale (nimi.001) või selle .crc-failile."
+  },
+  "split.combine.dialog_title": {
+    "message": "Failide ühendamine"
+  },
+  "split.combine.label": {
+    "message": "Ühenda osad failiks:"
+  },
+  "split.combine.title": {
+    "message": "Ühenda „{name}“"
+  },
+  "split.combined_no_crc": {
+    "message": "{count, plural, one {# osa ühendatud, kontrollimiseks pole CRC-faili} other {# osa ühendatud, kontrollimiseks pole CRC-faili}}"
+  },
+  "split.crc_mismatch": {
+    "message": "{target} ei vasta failile {file}: mõni osa puudub või on rikutud"
+  },
+  "split.crc_names_no_file": {
+    "message": "CRC-fail ei nimeta ühtegi faili"
+  },
+  "split.crc_unreadable": {
+    "message": "ühendatud, kuid faili {file} ei saanud lugeda: {err}"
+  },
+  "split.dialog_title": {
+    "message": "Faili tükeldamine"
+  },
+  "split.label": {
+    "message": "Tükelda „{name}“ osadeks kausta:"
+  },
+  "split.part_missing": {
+    "message": "{path} puudub"
+  },
+  "split.part_size": {
+    "message": "Osa suurus:"
+  },
+  "split.title": {
+    "message": "Tükelda „{name}“"
+  },
+  "sync.close": {
+    "message": "Sulge"
+  },
+  "sync.column.date": {
+    "message": "Kuupäev"
+  },
+  "sync.column.name": {
+    "message": "Nimi"
+  },
+  "sync.column.size": {
+    "message": "Suurus"
+  },
+  "sync.compare": {
+    "message": "Võrdle"
+  },
+  "sync.confirm.copy_left": {
+    "message": "Kopeeri {count} vasakule ({size})"
+  },
+  "sync.confirm.copy_right": {
+    "message": "Kopeeri {count} paremale ({size})"
+  },
+  "sync.confirm.delete_left": {
+    "message": "Kustuta {count} vasakult"
+  },
+  "sync.confirm.delete_right": {
+    "message": "Kustuta {count} paremalt"
+  },
+  "sync.confirm.ok": {
+    "message": "Sünkrooni"
+  },
+  "sync.confirm.text": {
+    "message": "{actions}. Kopeeritud failid asendavad seal olevad.{trash, select, yes { Selles arvutis kustutatud failid visatakse prügikasti.} other {}}"
+  },
+  "sync.confirm.title": {
+    "message": "Sünkrooni"
+  },
+  "sync.error.changed": {
+    "message": "muutunud pärast võrdlemist; võrdle uuesti"
+  },
+  "sync.error.compare": {
+    "message": "Võrdlemine ebaõnnestus: {err}"
+  },
+  "sync.error.no_folders": {
+    "message": "Sünkrooni kaustad võrdleb kahte kausta: kumbki paneel ei tohi näidata arhiivi ega otsingutulemusi."
+  },
+  "sync.left": {
+    "message": "Vasak"
+  },
+  "sync.mask.label": {
+    "message": "Failid:"
+  },
+  "sync.option.asymmetric": {
+    "message": "Asümmeetriline (paremast saab vasaku koopia)"
+  },
+  "sync.option.by_content": {
+    "message": "Sisu järgi"
+  },
+  "sync.option.ignore_date": {
+    "message": "Eira kuupäeva"
+  },
+  "sync.option.subfolders": {
+    "message": "Alamkaustad"
+  },
+  "sync.result.done": {
+    "message": "{count, plural, one {# sünkroonitud} other {# sünkroonitud}}"
+  },
+  "sync.result.failed": {
+    "message": "{count, plural, one {# sünkroonimata} other {# sünkroonimata}}; {first}"
+  },
+  "sync.right": {
+    "message": "Parem"
+  },
+  "sync.show.equal": {
+    "message": "= võrdsed"
+  },
+  "sync.show.label": {
+    "message": "Näita:"
+  },
+  "sync.show.other": {
+    "message": "≠ puutumata"
+  },
+  "sync.show.to_left": {
+    "message": "← vasakule"
+  },
+  "sync.show.to_right": {
+    "message": "→ paremale"
+  },
+  "sync.status.both_empty": {
+    "message": "Mõlemad on tühjad."
+  },
+  "sync.status.comparing": {
+    "message": "Võrdlemine: {folder}"
+  },
+  "sync.status.counts": {
+    "message": "{right} kopeerida paremale, {left} kopeerida vasakule, {delete} kustutada, {equal} võrdset, {alone} puutumata"
+  },
+  "sync.status.stopped": {
+    "message": "Peatatud."
+  },
+  "sync.stop": {
+    "message": "Peata"
+  },
+  "sync.synchronize": {
+    "message": "Sünkrooni..."
+  },
+  "sync.task.title": {
+    "message": "Sünkrooni {left} ja {right}"
+  },
+  "sync.title": {
+    "message": "Sünkrooni kaustad"
+  },
+  "tab_menu.close_all_tabs": {
+    "message": "Sulge kõik kaardid"
+  },
+  "tab_menu.close_duplicate_tabs": {
+    "message": "Sulge topeltkaardid"
+  },
+  "tab_menu.close_tab": {
+    "message": "Sulge see kaart"
+  },
+  "tab_menu.copy_tab_to_other_panel": {
+    "message": "Kopeeri kaart teise paneeli"
+  },
+  "tab_menu.duplicate_tab": {
+    "message": "Dubleeri see kaart"
+  },
+  "tab_menu.list_tabs": {
+    "message": "Näita kõigi kaartide loendit"
+  },
+  "tab_menu.lock_tab": {
+    "message": "Lukusta see kaart"
+  },
+  "tab_menu.none": {
+    "message": "(puudub)"
+  },
+  "tab_menu.rename_tab": {
+    "message": "Nimeta kaart ümber..."
+  },
+  "tabs.error.reopen": {
+    "message": "Kaarti ei õnnestunud uuesti avada: {err}"
+  },
+  "tabs.history.empty": {
+    "message": "Selle kaardi ajaloos pole veel kaustu."
+  },
+  "tabs.new": {
+    "message": "Uus kaart"
+  },
+  "tabs.rename.label": {
+    "message": "Uus nimi:"
+  },
+  "tabs.rename.title": {
+    "message": "Nimeta kaart ümber"
+  },
+  "tabs.search_results": {
+    "message": "Otsingutulemused"
+  },
+  "terminal.busy": {
+    "message": "Terminalis töötab programm: käivita käsk, kui see lõpeb."
+  },
+  "terminal.close.idle": {
+    "message": "Kas sulgeda see terminalikaart? Selle kest lõpetatakse."
+  },
+  "terminal.close.ok": {
+    "message": "Sulge"
+  },
+  "terminal.close.running": {
+    "message": "Kas sulgeda see terminalikaart? Selles töötav programm peatatakse."
+  },
+  "terminal.close.title": {
+    "message": "Sulge kaart"
+  },
+  "terminal.error.start_shell": {
+    "message": "Kesta ei õnnestunud käivitada: {err}"
+  },
+  "terminal.jump_to_bottom": {
+    "message": "Mine lõppu (Ctrl+End) ↓"
+  },
+  "terminal.menu.copy": {
+    "message": "Kopeeri"
+  },
+  "terminal.menu.paste": {
+    "message": "Kleebi"
+  },
+  "toolbar.customize": {
+    "message": "Kohanda tööriistariba…"
+  },
+  "tools.clear_key": {
+    "message": "Tühjenda"
+  },
+  "tools.close": {
+    "message": "Sulge"
+  },
+  "tools.delete": {
+    "message": "Kustuta"
+  },
+  "tools.empty": {
+    "message": "Tööriistu veel pole: Uus... lisab ühe."
+  },
+  "tools.field.command": {
+    "message": "Käsk"
+  },
+  "tools.field.key": {
+    "message": "Klahv"
+  },
+  "tools.field.name": {
+    "message": "Nimi"
+  },
+  "tools.intro": {
+    "message": "Sinu enda käsuread menüüs Tööriistad: klõpsa seal ühel või vajuta selle klahvi."
+  },
+  "tools.key.none": {
+    "message": "Puudub"
+  },
+  "tools.key.waiting": {
+    "message": "Vajuta klahvi... (Esc: puudub)"
+  },
+  "tools.move_down": {
+    "message": "Liiguta alla"
+  },
+  "tools.move_up": {
+    "message": "Liiguta üles"
+  },
+  "tools.name.placeholder": {
+    "message": "Võrdle teise poolega"
+  },
+  "tools.new": {
+    "message": "Uus..."
+  },
+  "tools.new_name": {
+    "message": "Tööriist {number}"
+  },
+  "tools.no_command": {
+    "message": "Tööriistal {tool} pole veel käsku: Tööriistad > Halda tööriistu."
+  },
+  "tools.not_local": {
+    "message": "Tööriistad töötavad selles arvutis: paneel näitab serverit või arhiivi."
+  },
+  "tools.note.key_of_command": {
+    "message": "{key} on ka {command}: tööriist võtab selle üle."
+  },
+  "tools.note.key_of_other_tool": {
+    "message": "{key} on ka tööriista {tool} oma: loendis allpool olev võtab selle."
+  },
+  "tools.placeholders": {
+    "message": "%P selle paneeli kaust, %T teise paneeli oma (mõlemad lõpevad eraldajaga, seega \"%P%N\" on rada), %N kursori all olev fail, %O selle nimi ilma laiendita, %E laiend, %S valitud failid (muidu kursori oma), igaüks jutumärkides; %% on %. Pane ülejäänule jutumärgid ümber: \"%P%N\"."
+  },
+  "tools.run_in_terminal": {
+    "message": "Käivita terminalis, et näha selle väljundit"
+  },
+  "tools.set_key": {
+    "message": "Määra klahv..."
+  },
+  "tools.title": {
+    "message": "Tööriistad"
+  },
+  "transfer.answer.cancel": {
+    "message": "Tühista"
+  },
+  "transfer.answer.elevate": {
+    "message": "Administraatorina"
+  },
+  "transfer.answer.overwrite": {
+    "message": "Kirjuta üle"
+  },
+  "transfer.answer.overwrite_all": {
+    "message": "Kirjuta kõik üle"
+  },
+  "transfer.answer.rename": {
+    "message": "Nimeta ümber"
+  },
+  "transfer.answer.retry": {
+    "message": "Proovi uuesti"
+  },
+  "transfer.answer.skip": {
+    "message": "Jäta vahele"
+  },
+  "transfer.answer.skip_all": {
+    "message": "Jäta kõik vahele"
+  },
+  "transfer.archive.local_only": {
+    "message": "Arhiivi saab panna ainult selle arvuti faile: kopeeri need esmalt siia."
+  },
+  "transfer.cancel": {
+    "message": "Tühista"
+  },
+  "transfer.error.elevate_hint": {
+    "message": "Administraatorina: see ja kõik muu keelatu, kui ülejäänu on tehtud, küsides parooli ainult korra."
+  },
+  "transfer.error.title": {
+    "message": "Viga"
+  },
+  "transfer.exists.describe": {
+    "message": "{count, plural, one {{size} bait, {time}} other {{size} baiti, {time}}}"
+  },
+  "transfer.exists.text": {
+    "message": "Seal juba: {existing}\nUus: {new}"
+  },
+  "transfer.exists.title": {
+    "message": "Fail on olemas"
+  },
+  "transfer.extract_failed": {
+    "message": "Neid ei õnnestunud välja võtta: {err}"
+  },
+  "transfer.into_archive.question_many": {
+    "message": "{kind, select, copy {Kas kopeerida} other {Kas teisaldada}} {count, plural, one {# üksus} other {# üksust}} asukohta {into}? Seal olevad samanimelised asendatakse."
+  },
+  "transfer.into_archive.question_one": {
+    "message": "{kind, select, copy {Kas kopeerida} other {Kas teisaldada}} „{name}“ asukohta {into}? Seal olevad samanimelised asendatakse."
+  },
+  "transfer.into_archive.title_many": {
+    "message": "{kind, select, copy {Kopeeri} other {Teisalda}} {count, plural, one {# üksus} other {# üksust}} arhiivi {archive}"
+  },
+  "transfer.into_archive.title_one": {
+    "message": "{kind, select, copy {Kopeeri} other {Teisalda}} „{name}“ arhiivi {archive}"
+  },
+  "transfer.label.many": {
+    "message": "{kind, select, copy {Kopeeri} other {Teisalda}} {count, plural, one {# üksus} other {# üksust}} asukohta:"
+  },
+  "transfer.label.many_server": {
+    "message": "{kind, select, copy {Kopeeri} other {Teisalda}} {count, plural, one {# üksus} other {# üksust}} asukohta serveris {server}:"
+  },
+  "transfer.label.one": {
+    "message": "{kind, select, copy {Kopeeri} other {Teisalda}} „{name}“ asukohta:"
+  },
+  "transfer.label.one_server": {
+    "message": "{kind, select, copy {Kopeeri} other {Teisalda}} „{name}“ asukohta serveris {server}:"
+  },
+  "transfer.ok": {
+    "message": "OK"
+  },
+  "transfer.overwrite.all": {
+    "message": "Kirjuta kõik üle"
+  },
+  "transfer.overwrite.ask": {
+    "message": "Küsi"
+  },
+  "transfer.overwrite.label": {
+    "message": "Kui sihtkohas on samanimeline fail:"
+  },
+  "transfer.overwrite.older": {
+    "message": "Kirjuta vanemad üle"
+  },
+  "transfer.overwrite.rename": {
+    "message": "Nimeta koopiad ümber"
+  },
+  "transfer.overwrite.skip": {
+    "message": "Jäta kõik vahele"
+  },
+  "transfer.remove_moved": {
+    "message": "Eemalda teisaldatud arhiivist {name}"
+  },
+  "transfer.speed": {
+    "message": "{size}/s"
+  },
+  "transfer.strip.counting": {
+    "message": "loendamine: {count, plural, one {# fail} other {# faili}}"
+  },
+  "transfer.strip.progress": {
+    "message": "{files} / {count, plural, one {# fail} other {# faili}}, {percent}%"
+  },
+  "transfer.strip.queue": {
+    "message": "Järjekord..."
+  },
+  "transfer.strip.queue_waiting": {
+    "message": "Järjekord ({count, plural, one {# ootel} other {# ootel}})..."
+  },
+  "transfer.title.copy": {
+    "message": "Kopeeri"
+  },
+  "transfer.title.move": {
+    "message": "Teisalda"
+  },
+  "viewer.as_text_hint": {
+    "message": "{err}. 1 näitab faili tekstina."
+  },
+  "viewer.book.cannot_read": {
+    "message": "Seda raamatut ei saa lugeda: {err}. 1 näitab faili tekstina."
+  },
+  "viewer.book.continuing": {
+    "message": "Jätkub kohalt {percent}"
+  },
+  "viewer.book.error.compression": {
+    "message": "tihendatud viisil, mida veel ei loeta ({compression})"
+  },
+  "viewer.book.error.damaged": {
+    "message": "rikutud raamat"
+  },
+  "viewer.book.error.damaged_zip": {
+    "message": "rikutud zip"
+  },
+  "viewer.book.error.drm": {
+    "message": "DRM-kaitstud: seda saab lugeda ainult Kindle"
+  },
+  "viewer.book.error.huffman": {
+    "message": "tihendatud nagu Amazoni enda raamatud (HUFF/CDIC), mida veel ei loeta"
+  },
+  "viewer.book.error.missing_part": {
+    "message": "{name} pole raamatus"
+  },
+  "viewer.book.error.no_package": {
+    "message": "raamatus pole paketifaili"
+  },
+  "viewer.book.error.no_text": {
+    "message": "raamatus pole teksti"
+  },
+  "viewer.book.error.not_zip": {
+    "message": "pole zip: rikutud või DRM-kaitstud raamat?"
+  },
+  "viewer.book.error.zip_method": {
+    "message": "{name}: tihendatud viisil, mida zip siin lugeda ei saa ({method})"
+  },
+  "viewer.cannot_show": {
+    "message": "Ei saa näidata: {err}"
+  },
+  "viewer.convert.failed": {
+    "message": "{tool} ei suutnud seda teisendada ({status})"
+  },
+  "viewer.converting": {
+    "message": "Teisendamine tööriistaga {tool}…"
+  },
+  "viewer.copy.too_large": {
+    "message": "Üle {megabytes} MB valikuid ei kopeerita."
+  },
+  "viewer.encoding.cp1250": {
+    "message": "Ida-Euroopa (1250)"
+  },
+  "viewer.encoding.cp1251": {
+    "message": "Kirillitsa Windows (1251)"
+  },
+  "viewer.encoding.cp1252": {
+    "message": "Lääne Latin1 (1252)"
+  },
+  "viewer.encoding.cp1253": {
+    "message": "Kreeka (1253)"
+  },
+  "viewer.encoding.cp1254": {
+    "message": "Türgi (1254)"
+  },
+  "viewer.encoding.cp1255": {
+    "message": "Heebrea (1255)"
+  },
+  "viewer.encoding.cp1256": {
+    "message": "Araabia (1256)"
+  },
+  "viewer.encoding.cp1257": {
+    "message": "Balti (1257)"
+  },
+  "viewer.encoding.cp1258": {
+    "message": "Vietnami (1258)"
+  },
+  "viewer.encoding.cp20866": {
+    "message": "Kirillitsa KOI8-R (20866)"
+  },
+  "viewer.encoding.cp437": {
+    "message": "DOS-USA (437)"
+  },
+  "viewer.encoding.cp850": {
+    "message": "DOS-LATIN1 (850)"
+  },
+  "viewer.encoding.cp852": {
+    "message": "DOS Kesk-Euroopa (852)"
+  },
+  "viewer.encoding.cp866": {
+    "message": "DOS kirillitsa (866)"
+  },
+  "viewer.encoding.cp874": {
+    "message": "Tai (874)"
+  },
+  "viewer.encoding.cp932": {
+    "message": "Jaapani (932)"
+  },
+  "viewer.encoding.cp936": {
+    "message": "Hiina, Mandri-Hiina (936)"
+  },
+  "viewer.encoding.cp949": {
+    "message": "Korea (949)"
+  },
+  "viewer.encoding.cp950": {
+    "message": "Hiina, Taiwan (950)"
+  },
+  "viewer.find.not_found": {
+    "message": "Ei leitud: {text}"
+  },
+  "viewer.find.not_hex": {
+    "message": "Pole kuueteistkümnendstring: {text}"
+  },
+  "viewer.find.nothing": {
+    "message": "Pole midagi otsida."
+  },
+  "viewer.find.save_failed": {
+    "message": "Otsinguid ei õnnestunud salvestada: {err}"
+  },
+  "viewer.loading": {
+    "message": "Laadimine…"
+  },
+  "viewer.markdown.too_large": {
+    "message": "Üle {megabytes} MB: 1 näitab seda tekstina."
+  },
+  "viewer.menu.binary": {
+    "message": "Binaarne (fikseeritud reapikkus)"
+  },
+  "viewer.menu.book": {
+    "message": "Raamat (EPUB, FB2)"
+  },
+  "viewer.menu.close": {
+    "message": "Sulge"
+  },
+  "viewer.menu.configure": {
+    "message": "Seadista..."
+  },
+  "viewer.menu.copy_hex": {
+    "message": "Kopeeri kuueteistkümnendmärkidena"
+  },
+  "viewer.menu.copy_text": {
+    "message": "Kopeeri tekstina"
+  },
+  "viewer.menu.edit": {
+    "message": "Redigeerimine"
+  },
+  "viewer.menu.encoding": {
+    "message": "Kodeering"
+  },
+  "viewer.menu.file": {
+    "message": "Fail"
+  },
+  "viewer.menu.find": {
+    "message": "Otsi..."
+  },
+  "viewer.menu.find_next": {
+    "message": "Otsi järgmine"
+  },
+  "viewer.menu.fit_image": {
+    "message": "Sobita pilt aknasse"
+  },
+  "viewer.menu.font_ansi": {
+    "message": "ANSI (Windowsi märgistik)"
+  },
+  "viewer.menu.font_ascii": {
+    "message": "ASCII (DOS-i märgistik)"
+  },
+  "viewer.menu.font_page": {
+    "message": "Fondi järgi"
+  },
+  "viewer.menu.font_variable": {
+    "message": "Muutuva laiusega märgid"
+  },
+  "viewer.menu.hex": {
+    "message": "Hex"
+  },
+  "viewer.menu.html": {
+    "message": "HTML-tekst (eemalda sildid)"
+  },
+  "viewer.menu.minimap": {
+    "message": "Minikaart"
+  },
+  "viewer.menu.next_file": {
+    "message": "Järgmine fail"
+  },
+  "viewer.menu.only_larger": {
+    "message": "Sobita ainult suuremad pildid"
+  },
+  "viewer.menu.open": {
+    "message": "Ava..."
+  },
+  "viewer.menu.options": {
+    "message": "Valikud"
+  },
+  "viewer.menu.picture": {
+    "message": "Pilt/multimeedia"
+  },
+  "viewer.menu.previous_file": {
+    "message": "Eelmine fail"
+  },
+  "viewer.menu.reload": {
+    "message": "Laadi uuesti"
+  },
+  "viewer.menu.save_as": {
+    "message": "Salvesta kui..."
+  },
+  "viewer.menu.search_google": {
+    "message": "Otsi valitud teksti Google’ist"
+  },
+  "viewer.menu.select_all": {
+    "message": "Vali kõik"
+  },
+  "viewer.menu.syntax_colors": {
+    "message": "Süntaksi värvid"
+  },
+  "viewer.menu.text_only": {
+    "message": "Ainult tekst"
+  },
+  "viewer.menu.unicode": {
+    "message": "Unicode (UTF-16)"
+  },
+  "viewer.menu.wrap": {
+    "message": "Murra tekst ({columns, plural, one {# veerg} other {# veergu}})"
+  },
+  "viewer.mode.binary": {
+    "message": "Binaarne · {page}"
+  },
+  "viewer.mode.book": {
+    "message": "Raamat"
+  },
+  "viewer.mode.hex": {
+    "message": "Hex · {page}"
+  },
+  "viewer.mode.html": {
+    "message": "HTML-tekst"
+  },
+  "viewer.mode.image": {
+    "message": "Pilt"
+  },
+  "viewer.mode.multimedia": {
+    "message": "Multimeedia"
+  },
+  "viewer.mode.pdf_by": {
+    "message": "PDF ({tool})"
+  },
+  "viewer.mode.text": {
+    "message": "Tekst · {page}"
+  },
+  "viewer.origin.not_editable": {
+    "message": "redigeerida saab ainult 7z-, zip-, jar- ja tar-arhiivides olevaid faile"
+  },
+  "viewer.origin.updated": {
+    "message": "{archive} uuendatud"
+  },
+  "viewer.origin.updated_on": {
+    "message": "{archive} serveris {server} uuendatud"
+  },
+  "viewer.origin.uploaded": {
+    "message": "{path} üles laaditud"
+  },
+  "viewer.pdf.cannot_show": {
+    "message": "Seda PDF-i ei saa näidata: {err}"
+  },
+  "viewer.pdf.loading": {
+    "message": "Laadimine..."
+  },
+  "viewer.pdf.page": {
+    "message": "Lk {page} / {pages}"
+  },
+  "viewer.picture.cannot_show": {
+    "message": "Seda pilti ei saa näidata; 1 näitab seda tekstina."
+  },
+  "viewer.save_as.failed": {
+    "message": "Faili {path} ei õnnestunud salvestada: {err}"
+  },
+  "viewer.status.rows": {
+    "message": "{count, plural, one {{first}–{last} / {grouped} rida} other {{first}–{last} / {grouped} rida}}"
+  },
+  "viewer.status.rows_so_far": {
+    "message": "{count, plural, one {{grouped} rida seni, {percent} loetud} other {{grouped} rida seni, {percent} loetud}}"
+  },
+  "viewer.status.searching": {
+    "message": "Otsimine…"
+  },
+  "viewer.status.size": {
+    "message": "{count, plural, one {{grouped} bait} other {{grouped} baiti}}"
+  },
+  "viewer.window.title": {
+    "message": "{path} — Vaatur"
+  },
+  "viewer.zoom.fit": {
+    "message": "Tagasi akna suurusele (Ctrl+0)"
+  },
+  "viewer.zoom.in": {
+    "message": "Suurenda (Ctrl++)"
+  },
+  "viewer.zoom.out": {
+    "message": "Vähenda (Ctrl+-)"
+  },
+  "viewer.zoom.reset": {
+    "message": "Tagasi 100%-le (Ctrl+0)"
+  },
+  "workspaces.button.close": {
+    "message": "Sulge"
+  },
+  "workspaces.button.delete": {
+    "message": "Kustuta..."
+  },
+  "workspaces.button.duplicate": {
+    "message": "Dubleeri..."
+  },
+  "workspaces.button.new": {
+    "message": "Uus..."
+  },
+  "workspaces.button.rename": {
+    "message": "Nimeta ümber..."
+  },
+  "workspaces.delete.button": {
+    "message": "Kustuta"
+  },
+  "workspaces.delete.closed": {
+    "message": "Kas kustutada tööruum „{name}“? Selle kaardid unustatakse."
+  },
+  "workspaces.delete.closed_shells": {
+    "message": "Kas kustutada tööruum „{name}“? Selle kaardid unustatakse ja selle terminalikaartide kestad lõpetatakse."
+  },
+  "workspaces.delete.open": {
+    "message": "Kas kustutada tööruum „{name}“? Selle kaardid suletakse; selle asemel avatakse „{other}“."
+  },
+  "workspaces.delete.open_shells": {
+    "message": "Kas kustutada tööruum „{name}“? Selle kaardid suletakse ja terminalikaartide kestad lõpetatakse; selle asemel avatakse „{other}“."
+  },
+  "workspaces.delete.title": {
+    "message": "Kustuta tööruum"
+  },
+  "workspaces.duplicate.name": {
+    "message": "{name} koopia"
+  },
+  "workspaces.duplicate.title": {
+    "message": "Tee tööruumist koopia"
+  },
+  "workspaces.error.name_taken": {
+    "message": "Teisel tööruumil on juba see nimi."
+  },
+  "workspaces.error.no_name": {
+    "message": "Tööruum vajab nime."
+  },
+  "workspaces.error.save": {
+    "message": "Tööruume ei õnnestunud salvestada: {err}"
+  },
+  "workspaces.hint": {
+    "message": "Kuva > Tööruumid avab ühe. Avatud tööruumi muudatused jäävad sellesse alles."
+  },
+  "workspaces.name.label": {
+    "message": "Nimi:"
+  },
+  "workspaces.new.name": {
+    "message": "Tööruum {number}"
+  },
+  "workspaces.new.title": {
+    "message": "Uus tööruum"
+  },
+  "workspaces.open": {
+    "message": "avatud"
+  },
+  "workspaces.rename.title": {
+    "message": "Nimeta tööruum ümber"
+  },
+  "workspaces.summary.panels": {
+    "message": "Vasak {left, plural, one {# kaart} other {# kaarti}}, parem {right, plural, one {# kaart} other {# kaarti}}"
+  },
+  "workspaces.summary.terminal": {
+    "message": "Vasak {left, plural, one {# kaart} other {# kaarti}}, parem {right, plural, one {# kaart} other {# kaarti}}, terminal {terminal, plural, one {# kaart} other {# kaarti}}"
+  },
+  "workspaces.summary.terminal_hidden": {
+    "message": "Vasak {left, plural, one {# kaart} other {# kaarti}}, parem {right, plural, one {# kaart} other {# kaarti}}, terminal {terminal, plural, one {# kaart} other {# kaarti}} (peidetud)"
+  },
+  "workspaces.title": {
+    "message": "Tööruumid"
+  }
+}

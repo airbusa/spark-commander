@@ -80,7 +80,7 @@ fn options(address: &Address, user: &str, secret: String, program: &Path) -> io:
             options
         }
         _ => {
-            let mut options: Vec<_> = s3_options(address).into();
+            let mut options: Vec<_> = s3_options(address, super::connections::region_of(address)).into();
             options.push(("RCLONE_S3_ACCESS_KEY_ID", user));
             options.push(("RCLONE_S3_SECRET_ACCESS_KEY", secret));
             options
@@ -141,8 +141,8 @@ fn refused(err: &io::Error) -> bool {
     ["invalidaccesskeyid", "signaturedoesnotmatch", "401 unauthorized", "authorization failed", "failed to authorize account"].iter().any(|code| text.contains(code))
 }
 
-/// The endpoint's store, region and URL, as rclone's S3 takes them.
-fn s3_options(address: &Address) -> [(&'static str, String); 3] {
+/// The endpoint's store, region (`region` if given) and URL, as rclone's S3 takes them.
+fn s3_options(address: &Address, region: Option<String>) -> [(&'static str, String); 3] {
     let host = address.host.to_lowercase();
     let provider = match () {
         _ if host.ends_with(".amazonaws.com") => "AWS",
@@ -154,7 +154,7 @@ fn s3_options(address: &Address) -> [(&'static str, String); 3] {
     };
     let labels: Vec<&str> = host.split('.').collect();
     // s3.eu-central-1.amazonaws.com, s3.us-west-004.backblazeb2.com: the region comes second.
-    let region = match labels.as_slice() {
+    let derived = match labels.as_slice() {
         _ if provider == "Cloudflare" => "auto",
         ["s3", region, _, _, ..] => region,
         _ => "us-east-1",
@@ -170,7 +170,7 @@ fn s3_options(address: &Address) -> [(&'static str, String); 3] {
     let port = address.port.map(|port| format!(":{port}")).unwrap_or_default();
     [
         ("RCLONE_S3_PROVIDER", provider.to_owned()),
-        ("RCLONE_S3_REGION", region.to_owned()),
+        ("RCLONE_S3_REGION", region.unwrap_or_else(|| derived.to_owned())),
         ("RCLONE_S3_ENDPOINT", format!("{scheme}://{server}{port}")),
     ]
 }
@@ -184,7 +184,7 @@ mod tests {
 
     #[test]
     fn finds_the_store() {
-        let options = |url: &str| s3_options(&Address::parse(url).unwrap()).map(|(_, value)| value);
+        let options = |url: &str| s3_options(&Address::parse(url).unwrap(), None).map(|(_, value)| value);
         let aws = options("s3://AK@s3.eu-central-1.amazonaws.com/bucket");
         assert_eq!(aws, ["AWS", "eu-central-1", "https://s3.eu-central-1.amazonaws.com"]);
         let b2 = options("s3://AK@s3.us-west-004.backblazeb2.com");
@@ -193,6 +193,8 @@ mod tests {
         assert_eq!(r2, ["Cloudflare", "auto", "https://abc.r2.cloudflarestorage.com"]);
         let idrive = options("s3://AK@s3j8.fra.idrivee2-16.com/backup");
         assert_eq!(idrive, ["IDrive", "us-east-1", "https://s3j8.fra.idrivee2-16.com"]);
+        let given = s3_options(&Address::parse("s3://AK@s3.example.com").unwrap(), Some("eu-west-3".into()));
+        assert_eq!(given[1].1, "eu-west-3");
         let minio = options("s3://AK@192.168.1.5:9000");
         assert_eq!(minio, ["Other", "us-east-1", "http://192.168.1.5:9000"]);
     }

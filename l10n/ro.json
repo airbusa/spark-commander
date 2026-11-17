@@ -1028,6 +1028,9 @@
   "connections.field.protocol": {
     "message": "Protocol"
   },
+  "connections.field.region": {
+    "message": "Regiune"
+  },
   "connections.field.secret_key": {
     "message": "Cheie secretă"
   },
@@ -1096,6 +1099,9 @@
   },
   "connections.placeholder.port": {
     "message": "implicit"
+  },
+  "connections.placeholder.region": {
+    "message": "din endpoint, altfel us-east-1"
   },
   "connections.placeholder.server": {
     "message": "server sau o gazdă din ~/.ssh/config"

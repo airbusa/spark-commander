@@ -1028,6 +1028,9 @@
   "connections.field.protocol": {
     "message": "โปรโตคอล"
   },
+  "connections.field.region": {
+    "message": "ภูมิภาค"
+  },
   "connections.field.secret_key": {
     "message": "คีย์ลับ"
   },
@@ -1096,6 +1099,9 @@
   },
   "connections.placeholder.port": {
     "message": "ค่าเริ่มต้น"
+  },
+  "connections.placeholder.region": {
+    "message": "จากเอนด์พอยต์ หากไม่มีใช้ us-east-1"
   },
   "connections.placeholder.server": {
     "message": "เซิร์ฟเวอร์ หรือโฮสต์ใน ~/.ssh/config"

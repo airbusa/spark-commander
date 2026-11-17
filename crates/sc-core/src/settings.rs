@@ -121,7 +121,7 @@ pub struct QueueSettings {
 
 impl Default for QueueSettings {
     fn default() -> Self {
-        QueueSettings { clear_after_minutes: 1, download_limit_kb: 0 }
+        QueueSettings { clear_after_minutes: 0, download_limit_kb: 0 }
     }
 }
 

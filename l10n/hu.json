@@ -1028,6 +1028,9 @@
   "connections.field.protocol": {
     "message": "Protokoll"
   },
+  "connections.field.region": {
+    "message": "Régió"
+  },
   "connections.field.secret_key": {
     "message": "Titkos kulcs"
   },
@@ -1096,6 +1099,9 @@
   },
   "connections.placeholder.port": {
     "message": "alapértelmezett"
+  },
+  "connections.placeholder.region": {
+    "message": "a végpontból, különben us-east-1"
   },
   "connections.placeholder.server": {
     "message": "kiszolgáló, vagy egy gép a ~/.ssh/config fájlból"

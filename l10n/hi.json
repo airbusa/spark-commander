@@ -1028,6 +1028,9 @@
   "connections.field.protocol": {
     "message": "प्रोटोकॉल"
   },
+  "connections.field.region": {
+    "message": "क्षेत्र"
+  },
   "connections.field.secret_key": {
     "message": "सीक्रेट कुंजी"
   },
@@ -1096,6 +1099,9 @@
   },
   "connections.placeholder.port": {
     "message": "डिफ़ॉल्ट"
+  },
+  "connections.placeholder.region": {
+    "message": "एंडपॉइंट से, नहीं तो us-east-1"
   },
   "connections.placeholder.server": {
     "message": "सर्वर, या ~/.ssh/config का कोई होस्ट"

@@ -1028,6 +1028,9 @@
   "connections.field.protocol": {
     "message": "Protokol"
   },
+  "connections.field.region": {
+    "message": "Bölge"
+  },
   "connections.field.secret_key": {
     "message": "Gizli anahtar"
   },
@@ -1096,6 +1099,9 @@
   },
   "connections.placeholder.port": {
     "message": "varsayılan"
+  },
+  "connections.placeholder.region": {
+    "message": "uç noktadan, yoksa us-east-1"
   },
   "connections.placeholder.server": {
     "message": "sunucu veya ~/.ssh/config içindeki bir Host"

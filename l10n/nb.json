@@ -1028,6 +1028,9 @@
   "connections.field.protocol": {
     "message": "Protokoll"
   },
+  "connections.field.region": {
+    "message": "Region"
+  },
   "connections.field.secret_key": {
     "message": "Hemmelig nøkkel"
   },
@@ -1096,6 +1099,9 @@
   },
   "connections.placeholder.port": {
     "message": "standard"
+  },
+  "connections.placeholder.region": {
+    "message": "fra endepunktet, ellers us-east-1"
   },
   "connections.placeholder.server": {
     "message": "server, eller en vert fra ~/.ssh/config"

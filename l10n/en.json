@@ -1371,6 +1371,10 @@
     "description": "Label left of a field in the Connection dialog (a saved server's details). Keep it short: the label column is narrow. A list of SFTP, FTP, WebDAV, S3…",
     "message": "Protocol"
   },
+  "connections.field.region": {
+    "message": "Region",
+    "description": "The Connection dialog, S3 only: the label of the region field (AWS's eu-central-1 and the like). Keep it short."
+  },
   "connections.field.secret_key": {
     "description": "Label left of a field in the Connection dialog (a saved server's details). Keep it short: the label column is narrow. S3: the secret access key, which stands for the password.",
     "message": "Secret key"
@@ -1462,6 +1466,10 @@
   "connections.placeholder.port": {
     "description": "Grey hint inside the empty field of the Connection dialog, saying what an empty field means; lower case. Port field: empty, the protocol's usual port is used.",
     "message": "default"
+  },
+  "connections.placeholder.region": {
+    "message": "from the endpoint, else us-east-1",
+    "description": "Grey hint inside the empty Region field of the Connection dialog (S3), saying what an empty field means; lower case. Empty, the region comes from the endpoint's name (s3.eu-central-1.amazonaws.com), else us-east-1 is used. Keep us-east-1 as it is."
   },
   "connections.placeholder.server": {
     "description": "Grey hint inside the empty field of the Connection dialog, saying what an empty field means; lower case. Server field: a host name, or the name of a Host in the user's SSH configuration. Keep ~/.ssh/config as it is.",

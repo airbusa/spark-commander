@@ -1028,6 +1028,9 @@
   "connections.field.protocol": {
     "message": "Protokols"
   },
+  "connections.field.region": {
+    "message": "Reģions"
+  },
   "connections.field.secret_key": {
     "message": "Slepenā atslēga"
   },
@@ -1096,6 +1099,9 @@
   },
   "connections.placeholder.port": {
     "message": "noklusējuma"
+  },
+  "connections.placeholder.region": {
+    "message": "no galapunkta, citādi us-east-1"
   },
   "connections.placeholder.server": {
     "message": "serveris vai resursdators no ~/.ssh/config"

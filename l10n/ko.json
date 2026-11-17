@@ -1028,6 +1028,9 @@
   "connections.field.protocol": {
     "message": "프로토콜"
   },
+  "connections.field.region": {
+    "message": "리전"
+  },
   "connections.field.secret_key": {
     "message": "비밀 키"
   },
@@ -1096,6 +1099,9 @@
   },
   "connections.placeholder.port": {
     "message": "기본값"
+  },
+  "connections.placeholder.region": {
+    "message": "엔드포인트에서, 없으면 us-east-1"
   },
   "connections.placeholder.server": {
     "message": "서버 또는 ~/.ssh/config의 호스트"

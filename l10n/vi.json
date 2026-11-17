@@ -1028,6 +1028,9 @@
   "connections.field.protocol": {
     "message": "Giao thức"
   },
+  "connections.field.region": {
+    "message": "Khu vực"
+  },
   "connections.field.secret_key": {
     "message": "Khóa bí mật"
   },
@@ -1096,6 +1099,9 @@
   },
   "connections.placeholder.port": {
     "message": "mặc định"
+  },
+  "connections.placeholder.region": {
+    "message": "lấy từ endpoint, nếu không thì us-east-1"
   },
   "connections.placeholder.server": {
     "message": "máy chủ, hoặc một host trong ~/.ssh/config"

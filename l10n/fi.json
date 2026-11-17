@@ -1028,6 +1028,9 @@
   "connections.field.protocol": {
     "message": "Protokolla"
   },
+  "connections.field.region": {
+    "message": "Alue"
+  },
   "connections.field.secret_key": {
     "message": "Salainen avain"
   },
@@ -1096,6 +1099,9 @@
   },
   "connections.placeholder.port": {
     "message": "oletus"
+  },
+  "connections.placeholder.region": {
+    "message": "päätepisteestä, muuten us-east-1"
   },
   "connections.placeholder.server": {
     "message": "palvelin tai ~/.ssh/config-tiedoston isäntä"

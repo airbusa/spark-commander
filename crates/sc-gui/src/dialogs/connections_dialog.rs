@@ -48,6 +48,7 @@ pub(crate) fn open_edit(
         cx,
     );
     let path = input(connection.path.clone(), &t!("connections.placeholder.path"), cx);
+    let region = input(connection.region.clone(), &t!("connections.placeholder.region"), cx);
     let password = cx.new(|cx| {
         InputState::new(window, cx)
             .masked(true)
@@ -77,6 +78,7 @@ pub(crate) fn open_edit(
         }),
         protocol,
         fields: [name.clone(), host, port, user, path],
+        region,
         password,
         forget: false,
         folder: connection.folder.clone(),
@@ -103,6 +105,8 @@ struct EditConnection {
     _picked: Subscription,
     /// Name, host, port, user, path.
     fields: [Entity<InputState>; 5],
+    /// S3's alone.
+    region: Entity<InputState>,
     password: Entity<InputState>,
     forget: bool,
     /// The list's folder it is in, kept.
@@ -138,6 +142,7 @@ impl EditConnection {
             user: some(user),
             path: some(path),
             folder: self.folder.clone(),
+            region: (self.scheme == Scheme::S3).then(|| self.region.read(cx).value().trim().to_string()).and_then(some),
         };
         let password = self.password.read(cx).value().to_string();
         let key = remote::keyring_key(&connection.address());
@@ -197,6 +202,7 @@ impl Render for EditConnection {
                     .zip(rest)
                     .map(|(label, input)| field(label, input)),
             )
+            .when(self.scheme == Scheme::S3, |el| el.child(field(t!("connections.field.region"), &self.region)))
             .when(self.scheme.logs_in(), |el| {
                 el.child(field(secret, &self.password)).child(
                     h_flex().gap_3().child(div().w(px(96.)).flex_none()).child(

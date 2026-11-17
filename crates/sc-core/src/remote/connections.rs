@@ -19,6 +19,15 @@ pub struct Connection {
     pub path: Option<String>,
     /// The list's folder it is in; none: at the top.
     pub folder: Option<String>,
+    /// S3's region; none: the endpoint's (`s3.<region>.…`), else us-east-1.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub region: Option<String>,
+}
+
+/// The region a saved connection gives `address`'s server.
+pub fn region_of(address: &Address) -> Option<String> {
+    let saved = Connections::load().ok()?.saved;
+    saved.into_iter().find(|connection| connection.region.is_some() && connection.address().same_server(address))?.region
 }
 
 impl Connection {
@@ -216,6 +225,7 @@ mod tests {
             user: Some("me".into()),
             path: Some("/pub".into()),
             folder: None,
+            region: None,
         };
         assert_eq!(saved.url(), "ftps://me@ftp.example.org:990/pub");
         assert_eq!(Address::parse(&saved.url()), Some(saved.address()));

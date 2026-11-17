@@ -1028,6 +1028,9 @@
   "connections.field.protocol": {
     "message": "プロトコル"
   },
+  "connections.field.region": {
+    "message": "リージョン"
+  },
   "connections.field.secret_key": {
     "message": "シークレットキー"
   },
@@ -1096,6 +1099,9 @@
   },
   "connections.placeholder.port": {
     "message": "デフォルト"
+  },
+  "connections.placeholder.region": {
+    "message": "エンドポイントから、なければ us-east-1"
   },
   "connections.placeholder.server": {
     "message": "サーバー、または ~/.ssh/config のホスト"

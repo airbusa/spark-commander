@@ -1028,6 +1028,9 @@
   "connections.field.protocol": {
     "message": "Protocollo"
   },
+  "connections.field.region": {
+    "message": "Regione"
+  },
   "connections.field.secret_key": {
     "message": "Chiave segreta"
   },
@@ -1096,6 +1099,9 @@
   },
   "connections.placeholder.port": {
     "message": "predefinita"
+  },
+  "connections.placeholder.region": {
+    "message": "quella dell’endpoint, altrimenti us-east-1"
   },
   "connections.placeholder.server": {
     "message": "server, o un host di ~/.ssh/config"

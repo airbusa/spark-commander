@@ -1028,6 +1028,9 @@
   "connections.field.protocol": {
     "message": "Protokol"
   },
+  "connections.field.region": {
+    "message": "Regija"
+  },
   "connections.field.secret_key": {
     "message": "Tajni ključ"
   },
@@ -1096,6 +1099,9 @@
   },
   "connections.placeholder.port": {
     "message": "zadano"
+  },
+  "connections.placeholder.region": {
+    "message": "iz krajnje točke, inače us-east-1"
   },
   "connections.placeholder.server": {
     "message": "poslužitelj ili host iz ~/.ssh/config"

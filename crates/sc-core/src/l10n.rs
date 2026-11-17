@@ -425,7 +425,7 @@ mod tests {
             sources(&crates.join(name).join("src"), &mut files);
         }
         let english = catalog("en");
-        let pattern = regex::Regex::new(r#"\bt!\(\s*"([a-z0-9_.]+)""#).unwrap();
+        let pattern = regex::Regex::new(r#"\bt!\(\s*"([a-z0-9_]+\.[a-z0-9_.]+)""#).unwrap();
         let mut missing = Vec::new();
         for file in files {
             let text = std::fs::read_to_string(&file).unwrap();

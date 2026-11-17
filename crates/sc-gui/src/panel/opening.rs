@@ -34,7 +34,7 @@ pub fn show(name: String, watch: Watch, done: Arc<AtomicBool>, window: &mut Wind
     window.open_dialog(cx, move |dialog, _, cx| {
         let stop = view.read(cx).watch.stop.clone();
         dialog
-            .title("Opening archive")
+            .title(sc_core::t!("panel.opening.title"))
             .width(px(480.))
             .overlay_closable(false)
             .child(view.clone())
@@ -57,7 +57,7 @@ impl Render for Opening {
         let percent = self.watch.percent.load(Ordering::Relaxed);
         // A plain archive's listing, or a server's download, tells no percentage.
         let state = match percent {
-            0 => "Reading…".to_owned(),
+            0 => sc_core::t!("panel.opening.reading"),
             percent => format!("{percent}%"),
         };
         let stop = self.watch.stop.clone();
@@ -82,7 +82,7 @@ impl Render for Opening {
                 h_flex().justify_end().child(
                     Button::new("opening-cancel")
                         .outline()
-                        .label("Cancel")
+                        .label(sc_core::t!("panel.opening.cancel"))
                         .min_w(px(80.))
                         .on_click(move |_, window, cx| {
                             stop.store(true, Ordering::Relaxed);

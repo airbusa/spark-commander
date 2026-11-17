@@ -176,12 +176,12 @@ impl Workspaces {
     }
 
     /// Why `name` cannot be workspace `ix`'s (none: a new one's).
-    pub fn name_error(&self, name: &str, ix: Option<usize>) -> Option<&'static str> {
+    pub fn name_error(&self, name: &str, ix: Option<usize>) -> Option<String> {
         if name.trim().is_empty() {
-            return Some("A workspace needs a name.");
+            return Some(crate::t!("workspaces.error.no_name"));
         }
         let taken = self.list.iter().enumerate().any(|(at, other)| Some(at) != ix && other.name == name.trim());
-        taken.then_some("Another workspace has this name.")
+        taken.then(|| crate::t!("workspaces.error.name_taken"))
     }
 
     /// `base`, or with the first number that makes it a free name.

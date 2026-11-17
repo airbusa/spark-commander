@@ -141,7 +141,7 @@ pub fn part_of(from: &dyn Fs, source: &Path, meta: &Meta, target: &Path) -> Path
 pub fn replace(fs: &dyn Fs, part: &Path, target: &Path) -> io::Result<()> {
     match fs.metadata(target) {
         Err(_) => return fs.rename(part, target),
-        Ok(meta) if meta.is_dir && !meta.is_link => return Err(io::Error::other("a folder of this name is in the way")),
+        Ok(meta) if meta.is_dir && !meta.is_link => return Err(io::Error::other(crate::t!("panel.error.folder_in_the_way"))),
         Ok(_) => {}
     }
     let aside = (0..)

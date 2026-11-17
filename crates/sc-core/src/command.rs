@@ -36,9 +36,9 @@ pub fn run(line: &str, dir: &Path, failed: impl FnOnce(String) + Send + 'static)
 /// The shell's exit code for a program it could not find or run.
 fn not_run(program: &str, code: Option<i32>) -> Option<String> {
     match code? {
-        127 if cfg!(unix) => Some(format!("{program}: command not found")),
-        126 if cfg!(unix) => Some(format!("{program}: cannot be run")),
-        9009 if cfg!(windows) => Some(format!("{program}: command not found")),
+        127 if cfg!(unix) => Some(crate::t!("command_line.error.not_found", program = program)),
+        126 if cfg!(unix) => Some(crate::t!("command_line.error.cannot_run", program = program)),
+        9009 if cfg!(windows) => Some(crate::t!("command_line.error.not_found", program = program)),
         _ => None,
     }
 }

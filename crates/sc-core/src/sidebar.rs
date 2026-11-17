@@ -165,7 +165,7 @@ impl FolderTree {
 
 /// Home first, then the file system's roots.
 fn roots() -> Vec<(String, PathBuf)> {
-    let home = std::env::home_dir().map(|home| ("Home".to_owned(), home));
+    let home = std::env::home_dir().map(|home| (crate::t!("main.folder_tree.home"), home));
     let mut roots: Vec<_> = home.into_iter().collect();
     #[cfg(windows)]
     for letter in 'C'..='Z' {

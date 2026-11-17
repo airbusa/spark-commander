@@ -31,7 +31,7 @@ impl Commander {
         let side = self.active;
         let panel = self.panels[side].tabs.current();
         if panel.in_archive() {
-            let text = "Inside archives the Size column has the sizes already.";
+            let text = sc_core::t!("panel.space.in_archive");
             return window.push_notification(Notification::warning(text), cx);
         }
         // On `..`, the whole folder.
@@ -103,7 +103,7 @@ impl Commander {
         });
         window.open_dialog(cx, move |dialog, _, _| {
             dialog
-                .title("Calculate occupied space")
+                .title(sc_core::t!("panel.space.title"))
                 .width(px(420.))
                 .child(view.clone())
         });
@@ -118,7 +118,7 @@ impl Commander {
         let side = self.active;
         let panel = self.panels[side].tabs.current();
         if panel.in_archive() {
-            let text = "Inside archives the Size column has the sizes already.";
+            let text = sc_core::t!("panel.space.in_archive");
             return window.push_notification(Notification::warning(text), cx);
         }
         let folders: Vec<OsString> = panel.entries().iter().filter(|e| e.is_dir && !e.is_parent()).map(|e| e.name.clone()).collect();
@@ -197,7 +197,7 @@ impl Render for SpaceDialog {
             bytes,
             unreadable,
         } = found.space;
-        let line = |label: &'static str, value: String| {
+        let line = |label: String, value: String| {
             h_flex()
                 .gap_2()
                 .child(div().w(px(110.)).child(label))
@@ -207,25 +207,25 @@ impl Render for SpaceDialog {
             .w_full()
             .gap_2()
             .text_sm()
-            .child(line("Files:", grouped(files)))
-            .child(line("Folders:", grouped(dirs)))
+            .child(line(sc_core::t!("panel.space.files"), grouped(files)))
+            .child(line(sc_core::t!("panel.space.folders"), grouped(dirs)))
             .child(line(
-                "Total size:",
-                format!("{} bytes ({})", grouped(bytes), human_size(bytes)),
+                sc_core::t!("panel.space.total"),
+                sc_core::t!("panel.space.bytes", count = bytes, size = grouped(bytes), human = human_size(bytes)),
             ))
             .when(unreadable > 0, |el| {
-                el.child(format!("{unreadable} item(s) could not be read."))
+                el.child(sc_core::t!("panel.space.unreadable", count = unreadable))
             })
             .children(found.error.clone())
             .child(match found.done {
-                true => "Done.",
-                false => "Counting…",
+                true => sc_core::t!("panel.space.done"),
+                false => sc_core::t!("panel.space.counting"),
             })
             .child(
                 h_flex().justify_end().child(
                     Button::new("space-close")
                         .primary()
-                        .label("Close")
+                        .label(sc_core::t!("panel.space.close"))
                         .min_w(px(80.))
                         .on_click(|_, window, cx| window.close_dialog(cx)),
                 ),

@@ -189,9 +189,9 @@ impl Commander {
         match panel.rename_entry(&name, &to) {
             Err(err) if crate::denied(&err) => {
                 let action = sc_core::system::elevate::Action::Rename(folder.join(&name), folder.join(&to));
-                self.offer_admin(format!("Renaming to \"{to}\""), action, window, cx);
+                self.offer_admin(sc_core::t!("panel.admin.renaming", name = to), action, window, cx);
             }
-            Err(err) => window.push_notification(Notification::error(format!("Could not rename: {err}")), cx),
+            Err(err) => window.push_notification(Notification::error(sc_core::t!("panel.error.rename", err = err)), cx),
             Ok(()) => {}
         }
         self.refresh_folder(&folder, cx);
@@ -240,8 +240,8 @@ impl Commander {
     /// Custom...: file types typed, kept as the menu's next filter item.
     pub(crate) fn custom_filter(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let commander = cx.entity().downgrade();
-        let label = "File types, e.g. *.txt *.md (after |, those left out):";
-        name_dialog::open("Show files", label, crate::menus::last_filter(), window, cx, move |masks, window, cx| {
+        let label = sc_core::t!("panel.filter.custom.label").leak();
+        name_dialog::open(sc_core::t!("panel.filter.custom.title").leak(), label, crate::menus::last_filter(), window, cx, move |masks, window, cx| {
             let masks = masks.trim().to_owned();
             if masks.is_empty() {
                 return;
@@ -272,7 +272,7 @@ impl Commander {
     pub(crate) fn new_text_file(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let side = self.active;
         let commander = cx.entity().downgrade();
-        name_dialog::open("New text file", "File name, opened in the editor:", String::new(), window, cx, move |name, window, cx| {
+        name_dialog::open(sc_core::t!("panel.new_text_file.title").leak(), sc_core::t!("panel.new_text_file.label").leak(), String::new(), window, cx, move |name, window, cx| {
             let name = name.trim().to_owned();
             if name.is_empty() {
                 return;
@@ -291,7 +291,7 @@ impl Commander {
                     false => panel.new_file(&name, None),
                 };
                 if let Err(err) = made {
-                    window.push_notification(Notification::error(format!("Could not make the file: {err}")), cx);
+                    window.push_notification(Notification::error(sc_core::t!("panel.error.make_file", err = err)), cx);
                     return;
                 }
                 this.refresh_folder(&folder, cx);

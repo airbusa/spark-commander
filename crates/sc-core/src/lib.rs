@@ -114,9 +114,9 @@ impl FileFilter {
         match self {
             FileFilter::All => None,
             FileFilter::Programs if cfg!(windows) => Some(PROGRAMS.map(|ext| format!("*.{ext}")).join(" ")),
-            FileFilter::Programs => Some("programs".into()),
+            FileFilter::Programs => Some(crate::t!("panel.filter.programs")),
             FileFilter::Masks(masks) => Some(masks.clone()),
-            FileFilter::Selected(_) => Some("selected files".into()),
+            FileFilter::Selected(_) => Some(crate::t!("panel.filter.selected_files")),
             FileFilter::Quick(text) => Some(format!("*{text}*")),
         }
     }
@@ -247,10 +247,10 @@ impl Entry {
 
     pub fn size_text(&self) -> String {
         if self.is_app() {
-            return "<APP>".into();
+            return crate::t!("panel.size.app");
         }
         if self.is_dir {
-            return "<DIR>".into();
+            return crate::t!("panel.size.dir");
         }
         grouped(self.size)
     }
@@ -264,11 +264,11 @@ impl Entry {
 pub fn human_size(bytes: u64) -> String {
     const K: u64 = 1024;
     match bytes {
-        0..K => format!("{bytes} B"),
-        K..1_048_576 => format!("{:.1} KB", bytes as f64 / K as f64),
-        1_048_576..1_073_741_824 => format!("{:.1} MB", bytes as f64 / 1_048_576.),
-        1_073_741_824..1_099_511_627_776 => format!("{:.2} GB", bytes as f64 / 1_073_741_824.),
-        _ => format!("{:.2} TB", bytes as f64 / 1_099_511_627_776.),
+        0..K => crate::t!("panel.size.b", size = bytes),
+        K..1_048_576 => crate::t!("panel.size.kb", size = format!("{:.1}", bytes as f64 / K as f64)),
+        1_048_576..1_073_741_824 => crate::t!("panel.size.mb", size = format!("{:.1}", bytes as f64 / 1_048_576.)),
+        1_073_741_824..1_099_511_627_776 => crate::t!("panel.size.gb", size = format!("{:.2}", bytes as f64 / 1_073_741_824.)),
+        _ => crate::t!("panel.size.tb", size = format!("{:.2}", bytes as f64 / 1_099_511_627_776.)),
     }
 }
 
@@ -566,7 +566,7 @@ impl Panel {
             return name.clone();
         }
         if self.found.is_some() {
-            return "Search results".into();
+            return crate::t!("tabs.search_results");
         }
         let path = self.path();
         match path.file_name() {
@@ -1026,7 +1026,7 @@ impl Panel {
     pub fn new_folder(&mut self, name: &str) -> io::Result<()> {
         let name = name.trim();
         if name.is_empty() {
-            return Err(io::Error::new(io::ErrorKind::InvalidInput, "no name given"));
+            return Err(io::Error::new(io::ErrorKind::InvalidInput, crate::t!("panel.error.no_name")));
         }
         if self.archive.is_some() {
             let (archive, dir) = self.archive_place()?;
@@ -1039,7 +1039,7 @@ impl Panel {
         let target = self.path.join(name);
         let fs = self.fs();
         if fs.metadata(&target).is_ok() {
-            let err = format!("{name} exists already");
+            let err = crate::t!("panel.error.exists", name = name);
             return Err(io::Error::new(io::ErrorKind::AlreadyExists, err));
         }
         let made = vfs::create_all(&*fs, &target);
@@ -1057,12 +1057,12 @@ impl Panel {
         self.on_disk()?;
         let name = name.trim();
         if name.is_empty() || name.contains(['/', std::path::MAIN_SEPARATOR]) || name == "." || name == PARENT {
-            return Err(io::Error::new(io::ErrorKind::InvalidInput, format!("{name}: not a name")));
+            return Err(io::Error::new(io::ErrorKind::InvalidInput, crate::t!("panel.error.not_a_name", name = name)));
         }
         let target = self.path.join(name);
         let fs = self.fs();
         if fs.metadata(&target).is_ok() {
-            return Err(io::Error::new(io::ErrorKind::AlreadyExists, format!("{name} exists already")));
+            return Err(io::Error::new(io::ErrorKind::AlreadyExists, crate::t!("panel.error.exists", name = name)));
         }
         // A new file's times are now's, not the template's.
         let mut file = fs.create(&target)?;
@@ -1078,7 +1078,7 @@ impl Panel {
     pub fn rename_entry(&mut self, name: &OsStr, to: &str) -> io::Result<()> {
         let to = to.trim();
         if to.is_empty() || to.contains(['/', std::path::MAIN_SEPARATOR]) || to == "." || to == PARENT {
-            return Err(io::Error::new(io::ErrorKind::InvalidInput, format!("{to}: not a name")));
+            return Err(io::Error::new(io::ErrorKind::InvalidInput, crate::t!("panel.error.not_a_name", name = to)));
         }
         if self.archive.is_some() {
             let (archive, dir) = self.archive_place()?;
@@ -1099,12 +1099,12 @@ impl Panel {
             false => Vec::new(),
         };
         if ops::rename::in_the_way(&*fs, dir, old, OsStr::new(to), &names) {
-            return Err(io::Error::new(io::ErrorKind::AlreadyExists, format!("{to} exists already")));
+            return Err(io::Error::new(io::ErrorKind::AlreadyExists, crate::t!("panel.error.exists", name = to)));
         }
         let renamed = fs.rename(&from, &target);
         activity::note(format!("Rename {} to \"{to}\"", from.display()), &renamed);
         renamed?;
-        let title = format!("Rename \"{}\" to \"{to}\"", from.file_name().unwrap_or_default().to_string_lossy());
+        let title = crate::t!("panel.undo.rename", name = from.file_name().unwrap_or_default().to_string_lossy(), to = to);
         let at = std::time::SystemTime::now();
         let place = ops::undo::Place::of(&fs);
         ops::undo::remember(title, ops::undo::Step::Moved { from: place.clone(), to: place, moves: vec![(from.clone(), target.clone())], restore: Vec::new(), replaces: Vec::new(), at });
@@ -1163,10 +1163,10 @@ impl Panel {
         };
         let name = self.path.file_name().unwrap_or_default().to_string_lossy();
         if archive.origin.is_some() {
-            return Err(io::Error::new(io::ErrorKind::Unsupported, format!("{name}: archives on servers cannot be changed yet")));
+            return Err(io::Error::new(io::ErrorKind::Unsupported, crate::t!("panel.error.archive_on_server", name = name)));
         }
         if !archive::updatable(&self.path) {
-            let text = format!("{name}: 7-Zip changes 7z, zip and tar archives in place, not this one");
+            let text = crate::t!("panel.error.archive_not_updatable", name = name);
             return Err(io::Error::new(io::ErrorKind::Unsupported, text));
         }
         Ok((self.path.clone(), archive.dir.clone()))
@@ -1183,10 +1183,7 @@ impl Panel {
 
     fn on_disk(&self) -> io::Result<()> {
         match self.archive {
-            Some(_) => Err(io::Error::new(
-                io::ErrorKind::Unsupported,
-                "not inside archives yet",
-            )),
+            Some(_) => Err(io::Error::new(io::ErrorKind::Unsupported, crate::t!("panel.error.inside_archive"))),
             None => Ok(()),
         }
     }
@@ -1205,7 +1202,7 @@ impl Panel {
     /// Synchronized browsing: the other panel's move from `from` to `to` made here too.
     pub fn follow(&mut self, from: &Path, to: &Path) -> io::Result<()> {
         let (target, left) = followed(from, to, &self.path)
-            .ok_or_else(|| io::Error::other("the other panel went to another drive"))?;
+            .ok_or_else(|| io::Error::other(crate::t!("panel.error.other_drive")))?;
         // Named, as it is not where the panel is.
         let named = |err: io::Error| io::Error::new(err.kind(), format!("{}: {err}", target.display()));
         self.go_to(target.clone(), left).map_err(named)
@@ -1255,7 +1252,7 @@ impl Panel {
             return self.go_to(self.path.clone(), None);
         }
         if self.remote.is_some() || self.archive.is_some() {
-            return Err(io::Error::new(io::ErrorKind::Unsupported, "Branch View lists this computer's folders"));
+            return Err(io::Error::new(io::ErrorKind::Unsupported, crate::t!("panel.error.branch_view_local")));
         }
         let roots: Vec<PathBuf> = match marked_only {
             true => self.chosen().into_iter().filter(|entry| entry.is_dir && !entry.is_parent()).map(|entry| self.path.join(&entry.name)).collect(),
@@ -1335,14 +1332,14 @@ impl Panel {
         let bytes = |list: &mut dyn Iterator<Item = &&Entry>| {
             list.filter_map(|e| self.measured_size(e)).sum::<u64>() / 1024
         };
-        format!(
-            "{} k / {} k in {} / {} file(s), {} / {} dir(s)",
-            grouped(bytes(&mut all().filter(|e| self.is_marked(e)))),
-            grouped(bytes(&mut all())),
-            marked(&files),
-            files.len(),
-            marked(&dirs),
-            dirs.len()
+        crate::t!(
+            "panel.status",
+            marked_size = grouped(bytes(&mut all().filter(|e| self.is_marked(e)))),
+            size = grouped(bytes(&mut all())),
+            marked_files = marked(&files),
+            files = files.len(),
+            marked_folders = marked(&dirs),
+            folders = dirs.len()
         )
     }
 
@@ -2010,7 +2007,7 @@ mod tests {
         assert_eq!(panel.entries()[3].size_text(), "5");
         assert_eq!(
             panel.status_text(),
-            "0 k / 0 k in 0 / 1 file(s), 0 / 2 dir(s)"
+            "0 k / 0 k in 0 / 1 file, 0 / 2 dirs"
         );
 
         panel.set_cursor(99);
@@ -2302,7 +2299,7 @@ mod tests {
         assert_eq!(chosen(&panel), ["a.txt", "b.txt"]);
         assert_eq!(
             panel.status_text(),
-            "2 k / 2 k in 2 / 2 file(s), 0 / 1 dir(s)"
+            "2 k / 2 k in 2 / 2 files, 0 / 1 dir"
         );
         panel.reload().unwrap();
         assert_eq!(chosen(&panel).len(), 2, "kept on reload");

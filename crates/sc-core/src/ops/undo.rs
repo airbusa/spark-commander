@@ -37,7 +37,7 @@ impl Place {
             Place::Server { url, open } => match open.upgrade() {
                 Some(fs) => Ok(fs),
                 None => {
-                    let address = Address::parse(url).ok_or_else(|| io::Error::other(format!("{url}: not a server's address")))?;
+                    let address = Address::parse(url).ok_or_else(|| io::Error::other(crate::t!("ops.undo.not_a_server", url = url)))?;
                     let (server, _) = crate::remote::connect(&address, ask.clone())?;
                     Ok(server)
                 }
@@ -127,7 +127,10 @@ pub fn run(undo: Undo, queue: &Queue, redo: bool, ask: Ask) -> io::Result<bool> 
     let reversed = reverse(&step);
     let kept = (what.clone(), step.clone());
     let queued = matches!(step, Step::Moved { .. });
-    let title = format!("{}: {what}", if redo { "Redo" } else { "Undo" });
+    let title = match redo {
+        true => crate::t!("ops.redo.title", what = what),
+        false => crate::t!("ops.undo.title", what = what),
+    };
     let done = match step {
         // One gone already (a try before failed after it) is left out.
         Step::Copied { fs: fs @ Place::Server { .. }, made, .. } => {
@@ -163,7 +166,7 @@ pub fn run(undo: Undo, queue: &Queue, redo: bool, ask: Ask) -> io::Result<bool> 
             // After the moves back, the queue doing one at a time.
             if !restore.is_empty() {
                 let run = move |_: &mut crate::ops::Report| in_trash(&restore, at).and_then(put_back).map(|()| String::new());
-                queue.push_task(Task { title: format!("{title}: what it went over, back from the trash"), run: Box::new(run) });
+                queue.push_task(Task { title: crate::t!("ops.undo.restore_title", title = title), run: Box::new(run) });
             }
             Ok(())
         }
@@ -171,7 +174,7 @@ pub fn run(undo: Undo, queue: &Queue, redo: bool, ask: Ask) -> io::Result<bool> 
         Step::Trashed { paths, at, displaced } => {
             let undone = in_trash(&paths, at).and_then(|back| {
                 if back.is_empty() {
-                    return Err(io::Error::new(io::ErrorKind::NotFound, "they are no longer in the trash"));
+                    return Err(io::Error::new(io::ErrorKind::NotFound, crate::t!("ops.undo.not_in_trash")));
                 }
                 displaced.iter().try_for_each(|path| to_trash(path))?;
                 put_back(back)

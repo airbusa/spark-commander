@@ -22,7 +22,7 @@ impl Commander {
     pub(crate) fn change_attributes(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let panel = self.panels[self.active].tabs.current();
         if panel.in_archive() {
-            let text = "Attributes inside archives cannot be changed.";
+            let text = sc_core::t!("attributes.in_archive");
             return window.push_notification(Notification::warning(text), cx);
         }
         let chosen = panel.chosen();
@@ -40,8 +40,8 @@ impl Commander {
         }
         .unwrap_or_else(SystemTime::now);
         let title = match chosen.as_slice() {
-            [one] => format!("Change attributes: {}", one.display_name()),
-            many => format!("Change attributes: {} items", many.len()),
+            [one] => sc_core::t!("attributes.dialog_title_one", name = one.display_name()),
+            many => sc_core::t!("attributes.dialog_title_many", count = many.len()),
         };
         let any_dir = chosen.iter().any(|entry| entry.is_dir);
         let paths: Vec<PathBuf> = chosen
@@ -154,7 +154,7 @@ impl AttributesDialog {
         if self.time_on {
             let text = self.time.read(cx).value().to_string();
             let time = attributes::parse_time(&text)
-                .ok_or_else(|| format!("\"{text}\" is no date and time: 2026-11-10 14:04:33"))?;
+                .ok_or_else(|| sc_core::t!("attributes.bad_time", text = text))?;
             change.modified = Some(time);
         }
         Ok(change)
@@ -193,19 +193,19 @@ impl Render for AttributesDialog {
                     .when(!primary, |button| button.outline())
                     .on_click(cx.listener(move |this, _, window, cx| this.toggle(ix, window, cx)))
             };
-            let heading = |text: &'static str| div().w(px(56.)).child(text);
+            let heading = |text: String| div().w(px(56.)).child(text);
             v_flex()
                 .gap_1()
                 .child(
                     h_flex()
                         .gap_1()
                         .child(div().w(px(70.)))
-                        .child(heading("Read"))
-                        .child(heading("Write"))
-                        .child(heading("Execute")),
+                        .child(heading(sc_core::t!("attributes.read")))
+                        .child(heading(sc_core::t!("attributes.write")))
+                        .child(heading(sc_core::t!("attributes.execute"))),
                 )
                 .children(
-                    ["Owner", "Group", "Others"]
+                    [sc_core::t!("attributes.owner"), sc_core::t!("attributes.group"), sc_core::t!("attributes.others")]
                         .into_iter()
                         .enumerate()
                         .map(|(row, who)| {
@@ -221,7 +221,7 @@ impl Render for AttributesDialog {
                 .child(
                     h_flex()
                         .gap_2()
-                        .child(div().w(px(70.)).child("Octal:"))
+                        .child(div().w(px(70.)).child(sc_core::t!("attributes.octal")))
                         .child(div().w(px(90.)).child(Input::new(&self.octal).small())),
                 )
         });
@@ -231,14 +231,14 @@ impl Render for AttributesDialog {
             .text_sm()
             .children(grid)
             .when(self.bits.is_none(), |el| {
-                el.child("These files have no permission bits here; only the date can change.")
+                el.child(sc_core::t!("attributes.no_bits"))
             })
             .child(
                 h_flex()
                     .gap_2()
                     .child(
                         Checkbox::new("attr-time")
-                            .label("Change date/time:")
+                            .label(sc_core::t!("attributes.change_time"))
                             .checked(self.time_on)
                             .on_click(cx.listener(|this, on: &bool, _, cx| {
                                 this.time_on = *on;
@@ -250,7 +250,7 @@ impl Render for AttributesDialog {
                         Button::new("attr-now")
                             .small()
                             .outline()
-                            .label("Now")
+                            .label(sc_core::t!("attributes.now"))
                             .on_click(cx.listener(|this, _, window, cx| {
                                 let now =
                                     sc_core::local_time(SystemTime::now(), "%Y-%m-%d %H:%M:%S");
@@ -264,7 +264,7 @@ impl Render for AttributesDialog {
             .when(self.any_dir, |el| {
                 el.child(
                     Checkbox::new("attr-recurse")
-                        .label("Also everything inside the folders")
+                        .label(sc_core::t!("attributes.recurse"))
                         .checked(self.recurse)
                         .on_click(cx.listener(|this, on: &bool, _, cx| {
                             this.recurse = *on;
@@ -279,7 +279,7 @@ impl Render for AttributesDialog {
                     .child(
                         Button::new("attr-ok")
                             .primary()
-                            .label("OK")
+                            .label(sc_core::t!("attributes.ok"))
                             .min_w(px(80.))
                             .on_click(cx.listener(|this, _, window, cx| {
                                 if this.finish(window, cx) {
@@ -290,7 +290,7 @@ impl Render for AttributesDialog {
                     .child(
                         Button::new("attr-cancel")
                             .outline()
-                            .label("Cancel")
+                            .label(sc_core::t!("attributes.cancel"))
                             .min_w(px(80.))
                             .on_click(|_, window, cx| window.close_dialog(cx)),
                     ),

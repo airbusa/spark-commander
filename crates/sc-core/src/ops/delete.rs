@@ -12,10 +12,10 @@ use crate::ops::{Task, undo};
 pub fn title(paths: &[PathBuf], folder: &Path, to_trash: bool) -> String {
     let name = |path: &Path| path.file_name().unwrap_or_default().to_string_lossy().into_owned();
     match (paths, to_trash) {
-        ([one], false) => format!("Delete \"{}\"", name(one)),
-        ([one], true) => format!("Move \"{}\" to the trash", name(one)),
-        (many, false) => format!("Delete {} items in {}", many.len(), folder.display()),
-        (many, true) => format!("Move {} items in {} to the trash", many.len(), folder.display()),
+        ([one], false) => crate::t!("ops.delete.title_one", name = name(one)),
+        ([one], true) => crate::t!("ops.delete.trash_title_one", name = name(one)),
+        (many, false) => crate::t!("ops.delete.title_many", count = many.len(), folder = folder.display()),
+        (many, true) => crate::t!("ops.delete.trash_title_many", count = many.len(), folder = folder.display()),
     }
 }
 

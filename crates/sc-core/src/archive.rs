@@ -61,9 +61,9 @@ impl Member {
     fn found(&self, path: PathBuf) -> io::Result<PathBuf> {
         match path.exists() {
             true => Ok(path),
-            false => Err(io::Error::other(format!(
-                "{} is not in the archive",
-                self.listed
+            false => Err(io::Error::other(crate::t!(
+                "archive.not_in_archive",
+                name = self.listed
             ))),
         }
     }
@@ -250,7 +250,7 @@ fn make_private(dir: &Path) -> io::Result<()> {
         let mine = true;
         match meta.is_dir() && mine && meta.mode() & 0o077 == 0 {
             true => Ok(()),
-            false => Err(io::Error::new(io::ErrorKind::PermissionDenied, format!("{} is not this user's own folder", dir.display()))),
+            false => Err(io::Error::new(io::ErrorKind::PermissionDenied, crate::t!("archive.not_own_folder", folder = dir.display()))),
         }
     }
     #[cfg(not(unix))]
@@ -309,7 +309,7 @@ pub(crate) fn extract(
     let fail = |err: String| io::Error::other(format!("{name}: {err}"));
     let out = dir
         .to_str()
-        .ok_or_else(|| fail("the temporary folder's name is not UTF-8".into()))?;
+        .ok_or_else(|| fail(crate::t!("archive.temp_not_utf8")))?;
     let out = format!("-o{out}");
     // -spd: a name with `*` or `[` is no wildcard.
     let command = if folders { "x" } else { "e" };
@@ -430,7 +430,7 @@ fn unpacked_tar(archive: &Path) -> Option<PathBuf> {
 /// 7-Zip's percentage in `watch`; stopped, or failing, it leaves none.
 fn unpack_tar(archive: &Path, watch: &Watch) -> io::Result<PathBuf> {
     let name = archive.file_name().unwrap_or_default().to_string_lossy();
-    let tar = unpacked_tar(archive).ok_or_else(|| io::Error::other(format!("{name}: cannot be read")))?;
+    let tar = unpacked_tar(archive).ok_or_else(|| io::Error::other(crate::t!("archive.cannot_read", name = name)))?;
     if tar.is_file() {
         return Ok(tar);
     }
@@ -517,9 +517,9 @@ pub(crate) fn missing(err: io::Error) -> io::Error {
     match err.kind() {
         io::ErrorKind::NotFound => io::Error::new(
             err.kind(),
-            format!(
-                "7-Zip is missing: {} (run vendor/7zip/fetch.sh or fetch.bat)",
-                executable().display()
+            crate::t!(
+                "archive.seven_zip_missing",
+                path = executable().display()
             ),
         ),
         _ => err,
@@ -530,7 +530,7 @@ fn failure(status: ExitStatus, stderr: &[u8]) -> String {
     let stderr = String::from_utf8_lossy(stderr);
     match stderr.lines().map(str::trim).rfind(|line| !line.is_empty()) {
         Some(line) => line.to_owned(),
-        None => format!("7-Zip failed ({status})"),
+        None => crate::t!("archive.seven_zip_failed", code = status),
     }
 }
 

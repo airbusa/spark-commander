@@ -145,10 +145,10 @@ pub struct Create {
 
 pub fn create(create: Create) -> Task {
     let title = match create.separate {
-        true => format!("Create {} checksum files", create.method.label()),
-        false => format!(
-            "Create {}",
-            create.file.file_name().unwrap_or_default().display()
+        true => crate::t!("checksum.create.title_separate", method = create.method.label()),
+        false => crate::t!(
+            "checksum.create.title",
+            name = create.file.file_name().unwrap_or_default().display()
         ),
     };
     Task {
@@ -226,8 +226,8 @@ fn parse(text: &str, method: Option<Method>) -> Vec<(String, String)> {
 /// missing one fails the task, naming it.
 pub fn verify(files: Vec<PathBuf>) -> Task {
     let title = match files.as_slice() {
-        [one] => format!("Verify {}", one.file_name().unwrap_or_default().display()),
-        many => format!("Verify {} checksum files", many.len()),
+        [one] => crate::t!("checksum.verify.title_one", name = one.file_name().unwrap_or_default().display()),
+        many => crate::t!("checksum.verify.title_many", count = many.len()),
     };
     Task {
         title,
@@ -264,14 +264,14 @@ pub fn verify(files: Vec<PathBuf>) -> Task {
                 report.progress.files += 1;
             }
             if wrong.is_empty() && missing.is_empty() {
-                return Ok(format!("all {ok} file(s) OK"));
+                return Ok(crate::t!("checksum.verify.all_ok", count = ok));
             }
-            let mut text = format!("{ok} OK, {} wrong, {} missing", wrong.len(), missing.len());
+            let mut text = crate::t!("checksum.verify.result", ok = ok, wrong = wrong.len(), missing = missing.len());
             for name in wrong.iter().take(10) {
-                text += &format!("\nwrong: {name}");
+                text += &format!("\n{}", crate::t!("checksum.verify.wrong_file", name = name));
             }
             for name in missing.iter().take(10) {
-                text += &format!("\nmissing: {name}");
+                text += &format!("\n{}", crate::t!("checksum.verify.missing_file", name = name));
             }
             Err(io::Error::other(text))
         }),
@@ -295,6 +295,7 @@ mod tests {
 
     #[test]
     fn creates_and_verifies() {
+        crate::l10n::set_language(Some("en"));
         let root = std::env::temp_dir().join(format!("sc-checksum-{}", std::process::id()));
         let _ = std::fs::remove_dir_all(&root);
         std::fs::create_dir_all(root.join("sub")).unwrap();

@@ -488,6 +488,8 @@ struct Commander {
     vertical: bool,
     /// Synchronized browsing: the other panel makes the active one's moves too.
     sync_browsing: bool,
+    /// The menus show Branch View checked: the active tab's, as last built.
+    branch_ticked: bool,
     /// The window's place and size, kept for the next start.
     bounds: WindowBounds,
     workspaces: Workspaces,
@@ -665,6 +667,7 @@ impl Commander {
             app_icons: panel::app_icons::AppIcons::default(),
             vertical: session.vertical,
             sync_browsing: session.sync_browsing,
+            branch_ticked: false,
             bounds: window.window_bounds(),
             parked: workspaces.list.iter().map(|_| None).collect(),
             workspaces,
@@ -2419,8 +2422,12 @@ impl Commander {
 impl Render for Commander {
     fn render(&mut self, window: &mut Window, cx: &mut Context<Self>) -> impl IntoElement {
         self.sync_quick_view(window, cx);
-        // Go > Back and Forward list the active tab's places, wherever it went.
-        if menus::set_history(&self.panels[self.active].tabs.current().history) {
+        // Go > Back and Forward list the active tab's places, wherever it went; Branch View's tick
+        // follows its tab too, however the branch view came (walked in the background) or went.
+        let history = menus::set_history(&self.panels[self.active].tabs.current().history);
+        let branch = self.checked(Command::BranchView);
+        let branch_changed = branch != std::mem::replace(&mut self.branch_ticked, branch);
+        if history || branch_changed {
             self.reload_menus(cx);
         }
         #[cfg(target_os = "macos")]
@@ -2613,7 +2620,6 @@ impl Render for Commander {
                     Command::BranchView | Command::BranchViewSelected => {
                         let selected = *command == Command::BranchViewSelected;
                         this.navigate_on(this.active, true, move |panel| panel.toggle_branch(selected), window, cx);
-                        this.reload_menus(cx);
                     }
                     Command::HiddenFiles => {
                         // As Total Commander's button: hidden and system files together.

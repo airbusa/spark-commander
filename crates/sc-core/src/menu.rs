@@ -129,6 +129,8 @@ pub enum Command {
     Programs,
     AllWithExtension,
     CustomFilter,
+    /// A link's file (HTTP(S), FTP(S)) into the active panel's folder.
+    DownloadLink,
     /// Ctrl+I: what is typed hides the names without it, until Escape or another folder.
     QuickFilter,
     OnlySelectedFiles,
@@ -242,6 +244,7 @@ pub const MENUS: &[Menu] = &[
             cmd("Edit With External Editor", EditExternally),
             cmd("New File...", NewTextFile),
             cmd("New Folder...", NewFolder),
+            cmd("Download from Link...", DownloadLink),
             SEP,
             cmd("Copy...", Copy),
             cmd("Move...", Move),

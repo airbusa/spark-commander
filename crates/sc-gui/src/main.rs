@@ -76,7 +76,7 @@ actions!(
 include!(concat!(env!("OUT_DIR"), "/material_icons.rs"));
 
 // Lucide icons beyond GPUI Kit's own set.
-gpui_kit::assets::icon_assets!(ExtraIcons, [Bookmark, HardDrive, FolderClock, Wrench, SquareTerminal, Layers, PanelsTopLeft, Type, CalendarClock, Languages, FilePen, Puzzle, Server, Smartphone, Tablet, Laptop, Monitor, Tv, Usb, Menu, Cloud, CaseSensitive, WholeWord, Regex, Replace, ReplaceAll, CaseUpper, SquareDashedText, X, Funnel, Link, Pencil, FilePlus, FolderPlus, FolderInput, TextCursorInput, Trash, Diff, Package, PackageOpen, Split, Merge, Hash, ShieldCheck, LogOut, ListChecks, Scissors, ClipboardPaste, House, BookmarkPlus, Zap, FolderSync, GitCompareArrows, ListOrdered, ScrollText, ArrowLeftRight, Equal, Keyboard, Unplug, Rows2, Columns3, List, LayoutGrid, ListTree, Link2, FolderTree, PanelTop, KeyRound, Terminal, Lock]);
+gpui_kit::assets::icon_assets!(ExtraIcons, [Bookmark, HardDrive, FolderClock, Wrench, SquareTerminal, Layers, PanelsTopLeft, Type, CalendarClock, Languages, FilePen, Puzzle, Server, Smartphone, Tablet, Laptop, Monitor, Tv, Usb, Menu, Cloud, CaseSensitive, WholeWord, Regex, Replace, ReplaceAll, CaseUpper, SquareDashedText, X, Funnel, Link, Pencil, FilePlus, FolderPlus, FolderInput, TextCursorInput, Trash, Diff, Package, PackageOpen, Split, Merge, Hash, ShieldCheck, LogOut, ListChecks, Scissors, ClipboardPaste, House, BookmarkPlus, Zap, FolderSync, GitCompareArrows, ListOrdered, ScrollText, ArrowLeftRight, Equal, Keyboard, Unplug, Rows2, Columns3, List, LayoutGrid, ListTree, Link2, FolderTree, PanelTop, KeyRound, Terminal, Lock, Download]);
 
 /// GPUI Kit's icons, the file icons as `material/<name>.svg`, the player's as `media/`.
 struct AppAssets;
@@ -2511,6 +2511,7 @@ impl Render for Commander {
                     Command::QuickViewPanel => this.toggle_quick_view(window, cx),
                     Command::TerminalPanel => this.toggle_terminal(window, cx),
                     Command::NewTerminal => this.new_terminal_tab(window, cx),
+                    Command::DownloadLink => this.download_link(window, cx),
                     Command::Brief => this.set_view(View::Brief, cx),
                     Command::Full => this.set_view(View::Full, cx),
                     Command::ThumbnailView => this.set_view(View::Thumbnails, cx),

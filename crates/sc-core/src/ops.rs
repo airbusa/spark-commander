@@ -3,6 +3,7 @@
 
 pub mod attributes;
 pub mod checksum;
+pub mod download;
 pub mod links;
 pub mod rename;
 pub mod space;

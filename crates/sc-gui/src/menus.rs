@@ -65,6 +65,7 @@ pub fn icon(command: Command) -> Option<Lucide> {
         Edit => Lucide::Pencil,
         NewTextFile => Lucide::FilePlus,
         NewFolder => Lucide::FolderPlus,
+        DownloadLink => Lucide::Download,
         Copy | CopyToClipboard => Lucide::Copy,
         Move => Lucide::FolderInput,
         RenameInPlace => Lucide::TextCursorInput,

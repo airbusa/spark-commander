@@ -8,6 +8,7 @@ pub mod dates;
 pub mod edit;
 pub mod icons;
 pub mod keymap;
+pub mod l10n;
 pub mod menu;
 pub mod ops;
 pub mod remote;

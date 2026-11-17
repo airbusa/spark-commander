@@ -1,0 +1,63 @@
+{
+  "doNotTranslate": [
+    "Spark Commander",
+    "scmd",
+    "Total Commander",
+    "Midnight Commander",
+    "Krusader",
+    "ForkLift",
+    "7-Zip",
+    "PDFium",
+    "rclone",
+    "libmpv",
+    "Craft",
+    "SFTP",
+    "FTP",
+    "FTPS",
+    "WebDAV",
+    "SMB",
+    "NFS",
+    "S3",
+    "SSH",
+    "KDE",
+    "GNOME",
+    "Xfce",
+    "MATE",
+    "Cinnamon",
+    "Breeze",
+    "Lucide",
+    "KDE Connect"
+  ],
+  "terms": {
+    "panel": {
+      "description": "One of the two file lists side by side (the twin panels)."
+    },
+    "tab": {
+      "description": "A folder tab on top of a panel, as in a browser."
+    },
+    "sidebar": {
+      "description": "The pane on the left with Places, Folders, Connections and Operations."
+    },
+    "Places": {
+      "description": "Sidebar section: bookmarks, drives, cloud, devices. Translate as the file manager of the language's desktop does (Dolphin/Nautilus 'Places')."
+    },
+    "bookmark": {
+      "description": "A saved folder in Places, as browsers' bookmarks."
+    },
+    "connection": {
+      "description": "A saved server (SFTP, FTP, WebDAV, …) in the Connections section."
+    },
+    "operation": {
+      "description": "A job in the queue: a copy, move, download, packing, checksum…"
+    },
+    "trash": {
+      "description": "The desktop's trash / recycle bin. Use the platform's usual word."
+    },
+    "button bar": {
+      "description": "The F3–F8 function key buttons at the bottom, as Total Commander's."
+    },
+    "command line": {
+      "description": "The one-line command entry under the panels."
+    }
+  }
+}

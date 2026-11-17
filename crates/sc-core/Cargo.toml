@@ -32,6 +32,12 @@ russh = { version = "0.65", default-features = false, features = ["ring", "flate
 russh-config = "0.58"
 russh-sftp = "3"
 serde = { version = "1", features = ["derive"] }
+# The translations' plural forms, by CLDR's rules (Unicode-3.0), and the system's language.
+icu_plurals = "2"
+icu_locale_core = "2"
+# Thread-safe ICU data, as the language serves every thread.
+icu_provider = { version = "2", features = ["sync"] }
+sys-locale = "0.3"
 # Books for the viewer: an EPUB's zip, its package's and FB2's XML, pictures
 # inline; GPUI builds all three already.
 flate2 = "1"

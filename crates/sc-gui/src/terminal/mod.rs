@@ -27,6 +27,7 @@ use futures::channel::mpsc::{UnboundedSender, unbounded};
 use gpui_kit::component::ActiveTheme;
 use gpui_kit::component::menu::ContextMenuExt;
 use gpui_kit::*;
+use sc_core::t;
 
 /// The shell has ended.
 pub struct Exited;
@@ -558,7 +559,7 @@ impl Render for TerminalView {
                 .text_color(theme.popover_foreground)
                 .text_sm()
                 .cursor_pointer()
-                .child("Jump to bottom (Ctrl+End) ↓")
+                .child(t!("terminal.jump_to_bottom"))
                 .on_mouse_down(MouseButton::Left, cx.listener(|this, _, _, cx| {
                     cx.stop_propagation();
                     this.scroll(Scroll::Bottom, cx);
@@ -595,8 +596,8 @@ impl Render for TerminalView {
             .context_menu(move |menu, _, cx| {
                 let selected = menu_view.read_with(cx, |this, _| this.selected().is_some()).unwrap_or(false);
                 menu.action_context(menu_focus.clone())
-                    .menu_with_disabled("Copy", Box::new(CopySelection), !selected)
-                    .menu("Paste", Box::new(Paste))
+                    .menu_with_disabled(t!("terminal.menu.copy"), Box::new(CopySelection), !selected)
+                    .menu(t!("terminal.menu.paste"), Box::new(Paste))
             })
     }
 }

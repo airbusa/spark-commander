@@ -10,6 +10,7 @@ use std::sync::Arc;
 use std::sync::atomic::{AtomicBool, Ordering};
 
 use sc_core::settings::ViewerSettings;
+use sc_core::t;
 use sc_core::viewer::{Font, Mode, Query, Shown, TextFile};
 use ratatui::Frame;
 use ratatui::crossterm::event::{KeyCode, KeyEvent, KeyModifiers};
@@ -26,7 +27,21 @@ use crate::{App, Done};
 /// Left and Right move this many columns.
 const SIDEWAYS: usize = 4;
 
-pub const KEYS: [&str; 10] = ["", "Reload", "Next", "", "", "", "Search", "", "", "Quit"];
+fn keys() -> [String; 10] {
+    let none = String::new;
+    [
+        none(),
+        t!("scmd.viewer.key_bar.reload"),
+        t!("scmd.viewer.key_bar.next"),
+        none(),
+        none(),
+        none(),
+        t!("scmd.viewer.key_bar.search"),
+        none(),
+        none(),
+        t!("scmd.viewer.key_bar.quit"),
+    ]
+}
 
 pub struct Viewer {
     pub shown: Shown,
@@ -251,13 +266,13 @@ impl App {
         }
         let searches = self.searches();
         let query = searches.query.clone();
-        let form = Form::new("Find")
-            .text("Search for:", &query.text, searches.history.clone())
-            .check("Whole words only", query.whole_words)
-            .check("Case sensitive", query.case_sensitive)
-            .check("Backwards", query.backwards)
-            .check("Hex (77 6F 72 64)", query.hex)
-            .check("Regular expression", query.regex);
+        let form = Form::new(t!("scmd.find.title"))
+            .text(&t!("scmd.find.search_for"), &query.text, searches.history.clone())
+            .check(&t!("scmd.find.whole_words"), query.whole_words)
+            .check(&t!("scmd.find.case_sensitive"), query.case_sensitive)
+            .check(&t!("scmd.find.backwards"), query.backwards)
+            .check(&t!("scmd.find.hex"), query.hex)
+            .check(&t!("scmd.find.regex"), query.regex);
         self.form = Some((form, crate::Purpose::Find));
     }
 
@@ -276,7 +291,7 @@ impl App {
         let searches = self.searches();
         searches.add(query.clone());
         if let Err(err) = searches.save() {
-            self.say(format!("Could not save the searches: {err}"), true);
+            self.say(t!("scmd.error.save_searches", err = err), true);
         }
         let from = self.viewer.as_ref().map_or(0, Viewer::screen_top);
         self.run_find(&query, from, query.backwards);
@@ -333,7 +348,7 @@ impl App {
                         viewer.reveal = Some((found.start, viewer.height / 3));
                         viewer.selection = found;
                     }
-                    Ok(None) => app.say(format!("Not found: {searched}"), false),
+                    Ok(None) => app.say(t!("scmd.find.not_found", text = searched), false),
                     Err(err) => app.say(err.to_string(), true),
                 }
             }) as Done
@@ -378,7 +393,7 @@ pub fn draw(frame: &mut Frame, viewer: &mut Viewer) {
             picture::draw(frame, body, viewer);
             let about = match &viewer.picture {
                 _ if viewer.shown.mode == Mode::Pdf && viewer.pages > 0 => {
-                    format!(" · page {} of {}", viewer.page + 1, viewer.pages)
+                    format!(" · {}", t!("scmd.viewer.page", page = viewer.page + 1, pages = viewer.pages))
                 }
                 Some(Picture {
                     shown: Ok((_, about)),
@@ -400,7 +415,7 @@ pub fn draw(frame: &mut Frame, viewer: &mut Viewer) {
     ui::key_bar(
         buf,
         Rect::new(area.x, area.bottom() - 1, area.width, 1),
-        &KEYS,
+        &keys(),
     );
 }
 
@@ -444,18 +459,18 @@ fn draw_text(frame: &mut Frame, body: Rect, viewer: &mut Viewer) -> String {
         false => shown.first().map_or(0, |row| row.offset(0)) * 100 / len,
     };
     let place = match viewer.shown.wrap {
-        true => " · Wrap".to_owned(),
-        false if viewer.left > 0 => format!(" · Col {}", viewer.left + 1),
+        true => format!(" · {}", t!("scmd.viewer.wrap")),
+        false if viewer.left > 0 => format!(" · {}", t!("scmd.viewer.column", column = viewer.left + 1)),
         false => String::new(),
     };
     let indexing = match done {
         true => String::new(),
-        false => format!(" · reading {}%", scanned * 100 / len),
+        false => format!(" · {}", t!("scmd.viewer.reading", percent = scanned * 100 / len)),
     };
     let finding = if viewer.finding.is_some() {
-        " · finding…"
+        format!(" · {}", t!("scmd.viewer.finding"))
     } else {
-        ""
+        String::new()
     };
     format!(
         " {}{place}{indexing}{finding} · {percent:>3}% ",

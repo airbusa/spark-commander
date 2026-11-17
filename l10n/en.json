@@ -24,8 +24,8 @@
     "message": "Code pages"
   },
   "about.part.gpui": {
-    "description": "Help › About: what GPUI (made for the Zed editor) does in the app.",
-    "message": "The window, drawing and input (Zed's)"
+    "description": "Help › About: what GPUI (the UI framework the Zed editor's makers wrote) does in the app.",
+    "message": "The window, drawing and input (by the makers of the Zed editor)"
   },
   "about.part.gpui_kit": {
     "description": "Help › About: what GPUI Kit does in the app.",

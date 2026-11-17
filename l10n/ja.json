@@ -18,7 +18,7 @@
     "message": "コードページ"
   },
   "about.part.gpui": {
-    "message": "ウィンドウ、描画、入力（Zed 由来）"
+    "message": "ウィンドウ、描画、入力（Zed エディターの開発元による）"
   },
   "about.part.gpui_kit": {
     "message": "コントロール：リスト、メニュー、入力欄、エディター"

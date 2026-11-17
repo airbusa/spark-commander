@@ -20,13 +20,12 @@ use gpui_kit::prelude::FluentBuilder;
 use gpui_kit::*;
 use sc_core::viewer::origin::Origin;
 use sc_core::search::{self, Age, Attribute, Duplicates, Event, Found, Query, Saved, SizeOp, Text, Unit};
-use sc_core::grouped;
+use sc_core::{grouped, t};
 
 use crate::{Commander, MainWindow, editor, viewer};
 
 const CONTEXT: &str = "FindFiles";
 const ROW_HEIGHT: f32 = 22.;
-const PAGES: [&str; 3] = ["General", "Advanced", "Load/Save"];
 
 actions!(find_files, [ViewFound, EditFound, InFound, StopOrClose]);
 
@@ -70,7 +69,7 @@ impl Commander {
         let size = size(px(820.), px(700.)).min(&main.size);
         let origin = main.origin + point((main.size.width - size.width) / 2., (main.size.height - size.height) / 2.);
         let over = crate::Over::at(WindowBounds::Windowed(Bounds { origin, size }), window, cx);
-        let options = crate::over_main_window("Find Files".into(), over, cx);
+        let options = crate::over_main_window(t!("search.title"), over, cx);
         let commander = cx.entity().downgrade();
         let main = window.window_handle();
         let opened = gpui_kit::open_window(options, cx, |window, cx| {
@@ -167,10 +166,10 @@ impl FindFiles {
             let placeholder = placeholder.to_owned();
             cx.new(|cx| InputState::new(window, cx).placeholder(placeholder))
         };
-        let names = input("*.txt *.md | backup*  (empty: all)", window, cx);
-        let places = input("Folders, ; between them", window, cx);
+        let names = input(&t!("search.names.placeholder"), window, cx);
+        let places = input(&t!("search.places.placeholder"), window, cx);
         places.update(cx, |places, cx| places.set_value(folder.display().to_string(), window, cx));
-        let text = input("Text to find", window, cx);
+        let text = input(&t!("search.text.placeholder"), window, cx);
         let number = |value: &str, window: &mut Window, cx: &mut Context<Self>| {
             let value = value.to_owned();
             cx.new(|cx| InputState::new(window, cx).default_value(value))
@@ -220,7 +219,7 @@ impl FindFiles {
             has_locate: search::has_locate(),
             saved,
             saved_at: None,
-            save_name: input("Name of the search", window, cx),
+            save_name: input(&t!("search.saved.name_placeholder"), window, cx),
             results: Vec::new(),
             cursor: None,
             earlier: Vec::new(),
@@ -236,16 +235,16 @@ impl FindFiles {
 
     /// What the pages say, as a search to run or save.
     fn read_query(&self, cx: &App) -> Result<Query, String> {
-        let number = |number: &Number, what: &str| -> Result<Option<u64>, String> {
+        let number = |number: &Number, error: fn(&str) -> String| -> Result<Option<u64>, String> {
             let text = number.input.read(cx).value();
             match number.on {
-                true => text.trim().parse().map(Some).map_err(|_| format!("{what} needs a number, not {text}")),
+                true => text.trim().parse().map(Some).map_err(|_| error(&text)),
                 false => Ok(None),
             }
         };
         let day = |state: &Entity<DatePickerState>| match state.read(cx).date_time() {
             DateTime::Single(Some(time)) => Ok(time.date().format("%Y-%m-%d").to_string()),
-            _ => Err("Date between needs both days".to_owned()),
+            _ => Err(t!("search.error.between_days")),
         };
         let between = match self.between {
             true => Some((day(&self.from)?, day(&self.to)?)),
@@ -261,9 +260,9 @@ impl FindFiles {
                 ..self.text_options.clone()
             }),
             between,
-            newer: number(&self.newer, "Not older than")?.map(|n| (n as u32, self.newer_age)),
-            older: number(&self.older, "Older than")?.map(|n| (n as u32, self.older_age)),
-            size: number(&self.size, "File size")?.map(|n| (self.size_op, n, self.size_unit)),
+            newer: number(&self.newer, |text| t!("search.error.newer_number", text = text))?.map(|n| (n as u32, self.newer_age)),
+            older: number(&self.older, |text| t!("search.error.older_number", text = text))?.map(|n| (n as u32, self.older_age)),
+            size: number(&self.size, |text| t!("search.error.size_number", text = text))?.map(|n| (self.size_op, n, self.size_unit)),
             attributes: if self.attributes_on { attributes.collect() } else { Vec::new() },
             duplicates: self.duplicates_on.then_some(self.duplicates),
             ..self.query.clone()
@@ -330,7 +329,7 @@ impl FindFiles {
             Saved::remember(&mut saved.texts, &text.text);
         }
         if let Err(err) = saved.save() {
-            window.push_notification(Notification::error(format!("Could not keep the search: {err}")), cx);
+            window.push_notification(Notification::error(t!("search.error.keep", err = err)), cx);
         }
         // The results shown go to the history.
         self.earlier.truncate(self.at);
@@ -354,7 +353,7 @@ impl FindFiles {
             reported.lock().unwrap().done = Some(result);
         });
         self.stop = Some(stop);
-        self.status = "Searching…".into();
+        self.status = t!("search.status.searching");
         // The results show as they come, ten times a second.
         cx.spawn(async move |this, cx| {
             loop {
@@ -379,7 +378,7 @@ impl FindFiles {
         let (folder, done) = (progress.folder.take(), progress.done.take());
         drop(progress);
         if let Some(folder) = folder {
-            self.status = format!("Searching: {}", folder.display());
+            self.status = t!("search.status.searching_in", folder = folder.display());
         }
         cx.notify();
         let Some(done) = done else {
@@ -388,7 +387,7 @@ impl FindFiles {
         let stopped = self.stop.take().is_some_and(|stop| stop.load(Ordering::Relaxed));
         self.status = match done {
             Err(err) => err,
-            Ok(()) if stopped => format!("Stopped: {}", self.counts()),
+            Ok(()) if stopped => t!("search.status.stopped", counts = self.counts()),
             Ok(()) => self.counts(),
         };
         true
@@ -397,7 +396,7 @@ impl FindFiles {
     fn counts(&self) -> String {
         let dirs = self.results.iter().filter(|hit| hit.is_dir).count();
         let files = self.results.len() - dirs;
-        format!("{files} files and {dirs} directories found")
+        t!("search.status.found", files = files, dirs = dirs)
     }
 
     fn stop_search(&mut self) {
@@ -556,7 +555,7 @@ impl FindFiles {
     fn save(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let name = self.save_name.read(cx).value().trim().to_owned();
         if name.is_empty() {
-            return window.push_notification(Notification::warning("Name the search first."), cx);
+            return window.push_notification(Notification::warning(t!("search.saved.name_first")), cx);
         }
         let query = match self.read_query(cx) {
             Ok(query) => query,
@@ -582,7 +581,7 @@ impl FindFiles {
 
     fn write_saved(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         if let Err(err) = self.saved.save() {
-            window.push_notification(Notification::error(format!("Could not save the searches: {err}")), cx);
+            window.push_notification(Notification::error(t!("search.error.save", err = err)), cx);
         }
         cx.notify();
     }
@@ -601,7 +600,7 @@ impl FindFiles {
             files: false,
             directories: true,
             multiple: true,
-            prompt: Some("Search in".into()),
+            prompt: Some(t!("search.places.browse_prompt").into()),
         });
         cx.spawn_in(window, async move |this, cx| {
             let Ok(Ok(Some(paths))) = paths.await else {
@@ -676,10 +675,10 @@ impl FindFiles {
     }
 
     fn render_general(&self, cx: &mut Context<Self>) -> impl IntoElement {
-        let label = |text: &'static str| div().w(px(90.)).flex_none().child(text);
+        let label = |text: String| div().w(px(90.)).flex_none().child(text);
         let drives = {
             let places = self.places.clone();
-            Button::new("drives").small().outline().label("Drives").dropdown_caret(true).dropdown_menu(
+            Button::new("drives").small().outline().label(t!("search.drives")).dropdown_caret(true).dropdown_menu(
                 move |mut menu: PopupMenu, _, _| {
                     for drive in search::drives() {
                         let (places, text) = (places.clone(), drive.display().to_string());
@@ -692,8 +691,8 @@ impl FindFiles {
                 },
             )
         };
-        let mut depths = vec![(None, "all (unlimited depth)".to_owned()), (Some(0), "current dir only".to_owned())];
-        depths.extend((1..=9).map(|n| (Some(n), format!("{n} level{}", if n == 1 { "" } else { "s" }))));
+        let mut depths = vec![(None, t!("search.depth.all")), (Some(0), t!("search.depth.current"))];
+        depths.extend((1..=9).map(|n| (Some(n), t!("search.depth.levels", count = n))));
         let text_off = !self.find_text;
         let options = &self.text_options;
         let ansi = sc_core::viewer::codepage::system().0;
@@ -702,14 +701,14 @@ impl FindFiles {
             .child(
                 h_flex()
                     .gap_1()
-                    .child(label("Search for:"))
+                    .child(label(t!("search.names.label")))
                     .child(div().flex_1().child(Input::new(&self.names).small()))
                     .child(self.history("names-history", &self.names, &self.saved.names)),
             )
             .child(
                 h_flex()
                     .gap_1()
-                    .child(label("Search in:"))
+                    .child(label(t!("search.places.label")))
                     .child(div().flex_1().child(Input::new(&self.places).small().disabled(self.only_chosen)))
                     .child(self.history("places-history", &self.places, &self.saved.places))
                     .child(Button::new("browse").small().outline().label(">>").on_click(cx.listener(|this, _, window, cx| this.browse(window, cx))))
@@ -718,13 +717,13 @@ impl FindFiles {
             .child(
                 h_flex()
                     .gap_6()
-                    .child(self.check("names-regex", "RegEx", self.query.regex, |this, on| this.query.regex = on, cx))
+                    .child(self.check("names-regex", t!("search.regex"), self.query.regex, |this, on| this.query.regex = on, cx))
                     .child(
                         self.check(
                             "only-chosen",
                             match self.chosen.len() {
-                                0 => "Only search in selected files/folders".to_owned(),
-                                n => format!("Only search in the {n} selected"),
+                                0 => t!("search.only_selected"),
+                                n => t!("search.only_selected_count", count = n),
                             },
                             self.only_chosen,
                             |this, on| this.only_chosen = on,
@@ -732,22 +731,22 @@ impl FindFiles {
                         )
                         .disabled(self.chosen.is_empty()),
                     )
-                    .child(self.check("archives", "Search archives", self.query.archives, |this, on| this.query.archives = on, cx))
+                    .child(self.check("archives", t!("search.archives"), self.query.archives, |this, on| this.query.archives = on, cx))
                     .when(self.has_locate, |row| {
-                        row.child(self.check("locate", "From the locate index", self.query.locate, |this, on| this.query.locate = on, cx))
+                        row.child(self.check("locate", t!("search.locate"), self.query.locate, |this, on| this.query.locate = on, cx))
                     }),
             )
             .child(
                 h_flex()
                     .gap_2()
-                    .child("Search in subdirectories:")
+                    .child(t!("search.depth.label"))
                     .child(self.choice("depth", depths, self.query.depth, |this, depth| this.query.depth = depth, false, cx)),
             )
             .child(div().h_px().bg(cx.theme().border))
             .child(
                 h_flex()
                     .gap_1()
-                    .child(div().w(px(90.)).flex_none().child(self.check("find-text", "Find text:", self.find_text, |this, on| this.find_text = on, cx)))
+                    .child(div().w(px(90.)).flex_none().child(self.check("find-text", t!("search.text.label"), self.find_text, |this, on| this.find_text = on, cx)))
                     .child(div().flex_1().child(Input::new(&self.text).small().disabled(text_off)))
                     .child(self.history("texts-history", &self.text, &self.saved.texts)),
             )
@@ -759,12 +758,12 @@ impl FindFiles {
                     .child(
                         v_flex()
                             .gap_1()
-                            .child(self.check("whole-words", "Whole words only", options.whole_words, |this, on| this.text_options.whole_words = on, cx).disabled(text_off))
-                            .child(self.check("case", "Case sensitive", options.case_sensitive, |this, on| this.text_options.case_sensitive = on, cx).disabled(text_off))
-                            .child(self.check("text-regex", "RegEx", options.regex, |this, on| this.text_options.regex = on, cx).disabled(text_off))
-                            .child(self.check("hex", "Hex", options.hex, |this, on| this.text_options.hex = on, cx).disabled(text_off))
+                            .child(self.check("whole-words", t!("search.text.whole_words"), options.whole_words, |this, on| this.text_options.whole_words = on, cx).disabled(text_off))
+                            .child(self.check("case", t!("search.text.case_sensitive"), options.case_sensitive, |this, on| this.text_options.case_sensitive = on, cx).disabled(text_off))
+                            .child(self.check("text-regex", t!("search.regex"), options.regex, |this, on| this.text_options.regex = on, cx).disabled(text_off))
+                            .child(self.check("hex", t!("search.text.hex"), options.hex, |this, on| this.text_options.hex = on, cx).disabled(text_off))
                             .child(
-                                self.check("not-containing", "Find files NOT containing the text", options.not_containing, |this, on| this.text_options.not_containing = on, cx)
+                                self.check("not-containing", t!("search.text.not_containing"), options.not_containing, |this, on| this.text_options.not_containing = on, cx)
                                     .disabled(text_off),
                             ),
                     )
@@ -773,9 +772,9 @@ impl FindFiles {
                             .gap_1()
                             .child(self.check("utf8", "UTF-8", options.utf8, |this, on| this.text_options.utf8 = on, cx).disabled(text_off))
                             .child(self.check("utf16", "UTF-16", options.utf16, |this, on| this.text_options.utf16 = on, cx).disabled(text_off))
-                            .child(self.check("ansi", format!("ANSI (code page {ansi})"), options.ansi, |this, on| this.text_options.ansi = on, cx).disabled(text_off))
+                            .child(self.check("ansi", t!("search.text.ansi", page = ansi), options.ansi, |this, on| this.text_options.ansi = on, cx).disabled(text_off))
                             .child(
-                                self.check("office", "Office files (docx, xlsx, pptx, odt…)", options.office, |this, on| this.text_options.office = on, cx)
+                                self.check("office", t!("search.text.office"), options.office, |this, on| this.text_options.office = on, cx)
                                     .disabled(text_off),
                             ),
                     ),
@@ -783,15 +782,15 @@ impl FindFiles {
     }
 
     fn render_advanced(&self, cx: &mut Context<Self>) -> impl IntoElement {
-        let ages = || Age::ALL.map(|age| (age, age.name().to_owned())).to_vec();
+        let ages = || Age::ALL.map(|age| (age, age.name())).to_vec();
         let number = |number: &Number| div().w(px(70.)).child(Input::new(&number.input).small().disabled(!number.on));
         let label = |check: Checkbox| div().w(px(150.)).flex_none().child(check);
         let attributes = Attribute::ALL.into_iter().enumerate().map(|(at, attribute)| {
             // Click: wanted, not wanted, either.
             let (mark, tip) = match self.attributes[at] {
-                Some(true) => ("✓", "Must be"),
-                Some(false) => ("✗", "Must not be"),
-                None => ("–", "Either"),
+                Some(true) => ("✓", t!("search.attribute.must")),
+                Some(false) => ("✗", t!("search.attribute.must_not")),
+                None => ("–", t!("search.attribute.either")),
             };
             Button::new(("attribute", at))
                 .small()
@@ -816,52 +815,52 @@ impl FindFiles {
             .child(
                 h_flex()
                     .gap_2()
-                    .child(label(self.check("between", "Date between:", self.between, |this, on| this.between = on, cx)))
+                    .child(label(self.check("between", t!("search.between.label"), self.between, |this, on| this.between = on, cx)))
                     .child(div().w(px(150.)).child(DatePicker::new(&self.from).small().disabled(!self.between)))
-                    .child("and")
+                    .child(t!("search.between.and"))
                     .child(div().w(px(150.)).child(DatePicker::new(&self.to).small().disabled(!self.between))),
             )
             .child(
                 h_flex()
                     .gap_2()
-                    .child(label(self.check("newer", "Not older than:", self.newer.on, |this, on| this.newer.on = on, cx)))
+                    .child(label(self.check("newer", t!("search.newer.label"), self.newer.on, |this, on| this.newer.on = on, cx)))
                     .child(number(&self.newer))
                     .child(self.choice("newer-age", ages(), self.newer_age, |this, age| this.newer_age = age, !self.newer.on, cx)),
             )
             .child(
                 h_flex()
                     .gap_2()
-                    .child(label(self.check("older", "Older than:", self.older.on, |this, on| this.older.on = on, cx)))
+                    .child(label(self.check("older", t!("search.older.label"), self.older.on, |this, on| this.older.on = on, cx)))
                     .child(number(&self.older))
                     .child(self.choice("older-age", ages(), self.older_age, |this, age| this.older_age = age, !self.older.on, cx)),
             )
             .child(
                 h_flex()
                     .gap_2()
-                    .child(label(self.check("size", "File size:", self.size.on, |this, on| this.size.on = on, cx)))
+                    .child(label(self.check("size", t!("search.size.label"), self.size.on, |this, on| this.size.on = on, cx)))
                     .child(
                         self.choice("size-op", SizeOp::ALL.map(|op| (op, op.name().to_owned())).to_vec(), self.size_op, |this, op| this.size_op = op, !self.size.on, cx),
                     )
                     .child(number(&self.size))
                     .child(
-                        self.choice("size-unit", Unit::ALL.map(|unit| (unit, unit.name().to_owned())).to_vec(), self.size_unit, |this, unit| this.size_unit = unit, !self.size.on, cx),
+                        self.choice("size-unit", Unit::ALL.map(|unit| (unit, unit.name())).to_vec(), self.size_unit, |this, unit| this.size_unit = unit, !self.size.on, cx),
                     ),
             )
             .child(
                 h_flex()
                     .gap_2()
-                    .child(label(self.check("attributes", "Attributes:", self.attributes_on, |this, on| this.attributes_on = on, cx)))
+                    .child(label(self.check("attributes", t!("search.attributes.label"), self.attributes_on, |this, on| this.attributes_on = on, cx)))
                     .children(attributes),
             )
             .child(div().h_px().bg(cx.theme().border))
-            .child(self.check("duplicates", "Find duplicate files:", self.duplicates_on, |this, on| this.duplicates_on = on, cx))
+            .child(self.check("duplicates", t!("search.duplicates.label"), self.duplicates_on, |this, on| this.duplicates_on = on, cx))
             .child(
                 h_flex()
                     .gap_6()
                     .pl(px(24.))
-                    .child(self.check("same-name", "same name", duplicates.name, |this, on| this.duplicates.name = on, cx).disabled(off))
-                    .child(self.check("same-size", "same size", duplicates.size, |this, on| this.duplicates.size = on, cx).disabled(off))
-                    .child(self.check("same-content", "same contents", duplicates.content, |this, on| this.duplicates.content = on, cx).disabled(off)),
+                    .child(self.check("same-name", t!("search.duplicates.name"), duplicates.name, |this, on| this.duplicates.name = on, cx).disabled(off))
+                    .child(self.check("same-size", t!("search.duplicates.size"), duplicates.size, |this, on| this.duplicates.size = on, cx).disabled(off))
+                    .child(self.check("same-content", t!("search.duplicates.content"), duplicates.content, |this, on| this.duplicates.content = on, cx).disabled(off)),
             )
     }
 
@@ -888,7 +887,7 @@ impl FindFiles {
         v_flex()
             .gap_2()
             .size_full()
-            .child("Previous searches:")
+            .child(t!("search.saved.label"))
             .child(
                 v_flex()
                     .id("saved-searches")
@@ -904,12 +903,12 @@ impl FindFiles {
                 h_flex()
                     .gap_2()
                     .child(div().w(px(220.)).child(Input::new(&self.save_name).small()))
-                    .child(Button::new("save").small().outline().label("Save").on_click(cx.listener(|this, _, window, cx| this.save(window, cx))))
+                    .child(Button::new("save").small().outline().label(t!("search.saved.save")).on_click(cx.listener(|this, _, window, cx| this.save(window, cx))))
                     .child(
                         Button::new("load")
                             .small()
                             .outline()
-                            .label("Load")
+                            .label(t!("search.saved.load"))
                             .disabled(!chosen)
                             .on_click(cx.listener(|this, _, window, cx| this.load_saved(window, cx))),
                     )
@@ -917,7 +916,7 @@ impl FindFiles {
                         Button::new("delete")
                             .small()
                             .outline()
-                            .label("Delete")
+                            .label(t!("search.saved.delete"))
                             .disabled(!chosen)
                             .on_click(cx.listener(|this, _, window, cx| this.delete_saved(window, cx))),
                     ),
@@ -960,7 +959,7 @@ impl FindFiles {
 
 impl Render for FindFiles {
     fn render(&mut self, window: &mut Window, cx: &mut Context<Self>) -> impl IntoElement {
-        let header = crate::header::title_bar("Find Files", window, cx);
+        let header = crate::header::title_bar(t!("search.title"), window, cx);
         let page = match self.page {
             0 => self.render_general(cx).into_any_element(),
             1 => self.render_advanced(cx).into_any_element(),
@@ -977,7 +976,7 @@ impl Render for FindFiles {
         )
         .track_scroll(&self.scroll)
         .flex_1();
-        let button = |id: &'static str, label: &'static str| Button::new(id).small().outline().label(label);
+        let button = |id: &'static str, label: String| Button::new(id).small().outline().label(label);
         v_flex()
             .key_context(CONTEXT)
             .size_full()
@@ -1007,7 +1006,7 @@ impl Render for FindFiles {
                                     .small()
                                     .underline()
                                     .selected_index(self.page)
-                                    .children(PAGES.map(|name| Tab::new().label(name)))
+                                    .children([t!("search.page.general"), t!("search.page.advanced"), t!("search.page.load_save")].map(|name| Tab::new().label(name)))
                                     .on_click(cx.listener(|this, page: &usize, _, cx| {
                                         this.page = *page;
                                         cx.notify();
@@ -1043,7 +1042,7 @@ impl Render for FindFiles {
                             .child(match searching {
                                 true => Button::new("stop")
                                     .small()
-                                    .label("Stop")
+                                    .label(t!("search.stop"))
                                     .on_click(cx.listener(|this, _, _, cx| {
                                         this.stop_search();
                                         cx.notify();
@@ -1051,17 +1050,17 @@ impl Render for FindFiles {
                                 false => Button::new("start")
                                     .small()
                                     .primary()
-                                    .label("Start search")
+                                    .label(t!("search.start"))
                                     .on_click(cx.listener(|this, _, window, cx| this.start(window, cx))),
                             })
-                            .child(button("close", "Close").on_click(|_, window, _| window.remove_window())),
+                            .child(button("close", t!("search.close")).on_click(|_, window, _| window.remove_window())),
                     ),
             )
             .child(
                 h_flex()
                     .px_3()
                     .gap_2()
-                    .child("Search results:")
+                    .child(t!("search.results.label"))
                     .child(div().flex_1())
                     .child(
                         Button::new("earlier")
@@ -1081,7 +1080,7 @@ impl Render for FindFiles {
                     )
                     .child(
                         Checkbox::new("in-found")
-                            .label("F2 Search in found files")
+                            .label(t!("search.in_found"))
                             .checked(self.in_found)
                             .disabled(self.results.is_empty() || searching)
                             .on_click(cx.listener(|this, checked: &bool, _, cx| {
@@ -1119,9 +1118,9 @@ impl Render for FindFiles {
                 h_flex()
                     .p_3()
                     .gap_2()
-                    .child(button("view", "F3 View").disabled(!file).on_click(cx.listener(|this, _, window, cx| this.open_found(false, window, cx))))
-                    .child(button("edit", "F4 Edit").disabled(!file).on_click(cx.listener(|this, _, window, cx| this.open_found(true, window, cx))))
-                    .child(button("new", "New search").disabled(searching).on_click(cx.listener(|this, _, window, cx| {
+                    .child(button("view", t!("search.view")).disabled(!file).on_click(cx.listener(|this, _, window, cx| this.open_found(false, window, cx))))
+                    .child(button("edit", t!("search.edit")).disabled(!file).on_click(cx.listener(|this, _, window, cx| this.open_found(true, window, cx))))
+                    .child(button("new", t!("search.new")).disabled(searching).on_click(cx.listener(|this, _, window, cx| {
                         this.results.clear();
                         this.cursor = None;
                         this.in_found = false;
@@ -1130,9 +1129,9 @@ impl Render for FindFiles {
                         this.names.update(cx, |names, cx| names.focus(window, cx));
                         cx.notify();
                     })))
-                    .child(button("go", "Go to file").disabled(!some).on_click(cx.listener(|this, _, window, cx| this.go_to_found(window, cx))))
+                    .child(button("go", t!("search.go_to_file")).disabled(!some).on_click(cx.listener(|this, _, window, cx| this.go_to_found(window, cx))))
                     .child(
-                        button("feed", "Feed to listbox")
+                        button("feed", t!("search.feed"))
                             .disabled(searching || !self.results.iter().any(|hit| hit.member.is_none()))
                             .on_click(cx.listener(|this, _, window, cx| this.feed(window, cx))),
                     ),

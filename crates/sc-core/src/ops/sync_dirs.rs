@@ -255,7 +255,7 @@ fn fill(file: &mut dyn Read, buffer: &mut [u8]) -> io::Result<usize> {
 /// deletions here go to the trash. One that fails is left, the rest done.
 pub fn synchronize(left: Root, right: Root, items: Vec<Item>) -> Task {
     let items: Vec<Item> = items.into_iter().filter(|item| item.action != Action::Nothing).collect();
-    let title = format!("Synchronize {} and {}", place(&left), place(&right));
+    let title = crate::t!("sync.task.title", left = place(&left), right = place(&right));
     Task {
         title,
         run: Box::new(move |report| {
@@ -276,7 +276,7 @@ pub fn synchronize(left: Root, right: Root, items: Vec<Item>) -> Task {
                     Action::Nothing => true,
                 };
                 let done = match item.action {
-                    _ if !fresh => Err(io::Error::other("changed since the comparison; compare again")),
+                    _ if !fresh => Err(io::Error::other(crate::t!("sync.error.changed"))),
                     Action::ToRight => copy(&left, &right, &item.path, report),
                     Action::ToLeft => copy(&right, &left, &item.path, report),
                     Action::DeleteLeft => delete(&left, &item.path),
@@ -296,8 +296,8 @@ pub fn synchronize(left: Root, right: Root, items: Vec<Item>) -> Task {
                 report.show();
             }
             match first {
-                Some(first) => Err(io::Error::other(format!("{failed} not synchronized; {first}"))),
-                None => Ok(format!("{} synchronized", items.len())),
+                Some(first) => Err(io::Error::other(crate::t!("sync.result.failed", count = failed, first = first))),
+                None => Ok(crate::t!("sync.result.done", count = items.len())),
             }
         }),
     }

@@ -1,0 +1,526 @@
+{
+  "find.backwards": {
+    "description": "Viewer's Find dialog (F7 in the viewer): checkbox: search from the cursor towards the start.",
+    "message": "Search backwards"
+  },
+  "find.cancel": {
+    "description": "Viewer's Find dialog (F7 in the viewer): button that closes the dialog. Keep it short.",
+    "message": "Cancel"
+  },
+  "find.case_sensitive": {
+    "description": "Viewer's Find dialog (F7 in the viewer): checkbox: upper and lower case must match.",
+    "message": "Case sensitive"
+  },
+  "find.hex": {
+    "description": "Viewer's Find dialog (F7 in the viewer): checkbox: the text is hexadecimal bytes, e.g. 48 65 6c.",
+    "message": "Search hex string"
+  },
+  "find.ok": {
+    "description": "Viewer's Find dialog (F7 in the viewer): button that starts the search. Keep it short.",
+    "message": "OK"
+  },
+  "find.regex": {
+    "description": "Viewer's Find dialog (F7 in the viewer): checkbox: the text is a regular expression. Usually kept as RegEx. Keep it short.",
+    "message": "RegEx"
+  },
+  "find.text.label": {
+    "description": "Viewer's Find dialog (F7 in the viewer): label above the text field.",
+    "message": "Enter search text"
+  },
+  "find.title": {
+    "description": "Viewer's Find dialog (F7 in the viewer): the dialog's title. Keep it short.",
+    "message": "Find"
+  },
+  "find.whole_words": {
+    "description": "Viewer's Find dialog (F7 in the viewer): checkbox.",
+    "message": "Whole words only"
+  },
+  "search.age.days": {
+    "description": "Find Files window (Alt+F7), Advanced page: time unit after the number of Not older than / Older than, in a menu. Keep it short.",
+    "message": "day(s)"
+  },
+  "search.age.hours": {
+    "description": "Find Files window (Alt+F7), Advanced page: time unit after the number of Not older than / Older than, in a menu. Keep it short.",
+    "message": "hour(s)"
+  },
+  "search.age.minutes": {
+    "description": "Find Files window (Alt+F7), Advanced page: time unit after the number of Not older than / Older than, in a menu. Keep it short.",
+    "message": "minute(s)"
+  },
+  "search.age.months": {
+    "description": "Find Files window (Alt+F7), Advanced page: time unit after the number of Not older than / Older than, in a menu. Keep it short.",
+    "message": "month(s)"
+  },
+  "search.age.weeks": {
+    "description": "Find Files window (Alt+F7), Advanced page: time unit after the number of Not older than / Older than, in a menu. Keep it short.",
+    "message": "week(s)"
+  },
+  "search.age.years": {
+    "description": "Find Files window (Alt+F7), Advanced page: time unit after the number of Not older than / Older than, in a menu. Keep it short.",
+    "message": "year(s)"
+  },
+  "search.archives": {
+    "description": "Find Files window (Alt+F7), General page: checkbox: look inside zip, 7z and other archives too.",
+    "message": "Search archives"
+  },
+  "search.attribute.directory": {
+    "description": "Find Files window (Alt+F7), Advanced page: attribute button: the item is a folder. Keep it short.",
+    "message": "Directory"
+  },
+  "search.attribute.either": {
+    "description": "Find Files window (Alt+F7), Advanced page: tooltip of an attribute button marked –: it does not matter.",
+    "message": "Either"
+  },
+  "search.attribute.executable": {
+    "description": "Find Files window (Alt+F7), Advanced page: attribute button: a file that may be run. Keep it short.",
+    "message": "Executable"
+  },
+  "search.attribute.hidden": {
+    "description": "Find Files window (Alt+F7), Advanced page: attribute button: a hidden (dot) file. Keep it short.",
+    "message": "Hidden"
+  },
+  "search.attribute.link": {
+    "description": "Find Files window (Alt+F7), Advanced page: attribute button: a symbolic link. Keep it short.",
+    "message": "Symbolic link"
+  },
+  "search.attribute.must": {
+    "description": "Find Files window (Alt+F7), Advanced page: tooltip of an attribute button marked ✓: found files must have it.",
+    "message": "Must be"
+  },
+  "search.attribute.must_not": {
+    "description": "Find Files window (Alt+F7), Advanced page: tooltip of an attribute button marked ✗: found files must not have it.",
+    "message": "Must not be"
+  },
+  "search.attribute.read_only": {
+    "description": "Find Files window (Alt+F7), Advanced page: attribute button: its owner may not write it. Keep it short.",
+    "message": "Read only"
+  },
+  "search.attributes.label": {
+    "description": "Find Files window (Alt+F7), Advanced page: checkbox before the attribute buttons (Directory, Hidden, …). Keep it short.",
+    "message": "Attributes:"
+  },
+  "search.between.and": {
+    "description": "Find Files window (Alt+F7), Advanced page: the word between the two date fields of Date between: (from … and … to). Keep it short.",
+    "message": "and"
+  },
+  "search.between.label": {
+    "description": "Find Files window (Alt+F7), Advanced page: checkbox before two date fields: files modified between these days. Keep it short.",
+    "message": "Date between:"
+  },
+  "search.close": {
+    "description": "Find Files window (Alt+F7): button that closes the window. Keep it short.",
+    "message": "Close"
+  },
+  "search.depth.all": {
+    "description": "Find Files window (Alt+F7), General page: choice of Search in subdirectories: every level.",
+    "message": "all (unlimited depth)"
+  },
+  "search.depth.current": {
+    "description": "Find Files window (Alt+F7), General page: choice of Search in subdirectories: only the folder itself, none below.",
+    "message": "current dir only"
+  },
+  "search.depth.label": {
+    "description": "Find Files window (Alt+F7), General page: label before the menu choosing how many folder levels down to search.",
+    "message": "Search in subdirectories:"
+  },
+  "search.depth.levels": {
+    "description": "Find Files window (Alt+F7), General page: choice of Search in subdirectories: this many folder levels below. {count}: 1 to 9. Keep it short.",
+    "message": "{count, plural, one {# level} other {# levels}}"
+  },
+  "search.drives": {
+    "description": "Find Files window (Alt+F7), General page: menu button beside Search in listing the root, home and mounted disks. Keep it short.",
+    "message": "Drives"
+  },
+  "search.duplicates.content": {
+    "description": "Find Files window (Alt+F7), Advanced page: checkbox under Find duplicate files: duplicates have the same contents. Keep it short.",
+    "message": "same contents"
+  },
+  "search.duplicates.label": {
+    "description": "Find Files window (Alt+F7), Advanced page: checkbox: find files alike, by the choices under it.",
+    "message": "Find duplicate files:"
+  },
+  "search.duplicates.name": {
+    "description": "Find Files window (Alt+F7), Advanced page: checkbox under Find duplicate files: duplicates have the same name. Keep it short.",
+    "message": "same name"
+  },
+  "search.duplicates.size": {
+    "description": "Find Files window (Alt+F7), Advanced page: checkbox under Find duplicate files: duplicates have the same size. Keep it short.",
+    "message": "same size"
+  },
+  "search.edit": {
+    "description": "Find Files window (Alt+F7): button under the results that opens the file in the editor. F4 is the key; keep it. Keep it short.",
+    "message": "F4 Edit"
+  },
+  "search.error.between_days": {
+    "description": "Find Files window (Alt+F7), Advanced page: error when Date between is on but a day is not chosen.",
+    "message": "Date between needs both days"
+  },
+  "search.error.date": {
+    "description": "Find Files window (Alt+F7): error when a saved search's day is not a date. {text}: the wrong text, e.g. 2026-13-40. Keep the example date in this form.",
+    "message": "{text} is no date such as 2026-11-12"
+  },
+  "search.error.hex": {
+    "description": "Find Files window (Alt+F7): error when Hex is on and the text is not hexadecimal bytes. {text}: what was typed, e.g. 4g. Keep the example 48 65 6c.",
+    "message": "{text} is no hex string such as 48 65 6c"
+  },
+  "search.error.keep": {
+    "description": "Find Files window (Alt+F7): error when the history of names, places and texts typed could not be written. {err}: the system's error, e.g. Permission denied.",
+    "message": "Could not keep the search: {err}"
+  },
+  "search.error.local_time": {
+    "description": "Find Files window (Alt+F7): error when a day's midnight does not exist in the local time zone. {text}: the day, e.g. 2026-03-29.",
+    "message": "{text} is no local time"
+  },
+  "search.error.names_regex": {
+    "description": "Find Files window (Alt+F7): error when the Search for field, with RegEx on, is no valid regular expression. {err}: what is wrong with it, e.g. unclosed group.",
+    "message": "The name's regular expression: {err}"
+  },
+  "search.error.newer_number": {
+    "description": "Find Files window (Alt+F7), Advanced page: error when the Not older than field is no number. {text}: what was typed, e.g. abc.",
+    "message": "Not older than needs a number, not {text}"
+  },
+  "search.error.no_place": {
+    "description": "Find Files window (Alt+F7): error shown under the results when the Search in field is empty.",
+    "message": "Search in names no folder"
+  },
+  "search.error.no_text": {
+    "description": "Find Files window (Alt+F7): error when Find text is on but its field is empty.",
+    "message": "Find text names no text"
+  },
+  "search.error.older_number": {
+    "description": "Find Files window (Alt+F7), Advanced page: error when the Older than field is no number. {text}: what was typed, e.g. abc.",
+    "message": "Older than needs a number, not {text}"
+  },
+  "search.error.save": {
+    "description": "Find Files window (Alt+F7), Load/Save page: error when the saved searches could not be written. {err}: the system's error, e.g. Permission denied.",
+    "message": "Could not save the searches: {err}"
+  },
+  "search.error.size_number": {
+    "description": "Find Files window (Alt+F7), Advanced page: error when the File size field is no number. {text}: what was typed, e.g. abc.",
+    "message": "File size needs a number, not {text}"
+  },
+  "search.error.text_regex": {
+    "description": "Find Files window (Alt+F7): error when the Find text field, with RegEx on, is no valid regular expression. {err}: what is wrong with it, e.g. unclosed group.",
+    "message": "The text's regular expression: {err}"
+  },
+  "search.feed": {
+    "description": "Find Files window (Alt+F7): button under the results: the panel lists all files found, as Total Commander's Feed to listbox. Keep it short.",
+    "message": "Feed to listbox"
+  },
+  "search.go_to_file": {
+    "description": "Find Files window (Alt+F7): button under the results: the panel shows the chosen file, the cursor on it. Keep it short.",
+    "message": "Go to file"
+  },
+  "search.in_found": {
+    "description": "Find Files window (Alt+F7): checkbox above the results: the next search looks only in the files found. F2 is the key; keep it.",
+    "message": "F2 Search in found files"
+  },
+  "search.locate": {
+    "description": "Find Files window (Alt+F7), General page: checkbox: take the names from the system's locate database instead of reading the disk. locate is a program's name; keep it.",
+    "message": "From the locate index"
+  },
+  "search.names.label": {
+    "description": "Find Files window (Alt+F7), General page: label before the file names or masks field; the label column is narrow (90 px). Keep it short.",
+    "message": "Search for:"
+  },
+  "search.names.placeholder": {
+    "description": "Find Files window (Alt+F7), General page: grey hint in the names field. Keep the masks *.txt *.md | backup* as they are (after | come the names left out); translate only (empty: all).",
+    "message": "*.txt *.md | backup*  (empty: all)"
+  },
+  "search.new": {
+    "description": "Find Files window (Alt+F7): button under the results that clears them for a new search. Keep it short.",
+    "message": "New search"
+  },
+  "search.newer.label": {
+    "description": "Find Files window (Alt+F7), Advanced page: checkbox before a number and a unit (day(s), week(s)…): files modified at most this long ago. Keep it short.",
+    "message": "Not older than:"
+  },
+  "search.older.label": {
+    "description": "Find Files window (Alt+F7), Advanced page: checkbox before a number and a unit (day(s), week(s)…): files modified more than this long ago. Keep it short.",
+    "message": "Older than:"
+  },
+  "search.only_selected": {
+    "description": "Find Files window (Alt+F7), General page: checkbox, greyed, when nothing was selected in the panel.",
+    "message": "Only search in selected files/folders"
+  },
+  "search.only_selected_count": {
+    "description": "Find Files window (Alt+F7), General page: checkbox: search only in the files and folders selected in the panel. {count}: how many are selected, e.g. 3.",
+    "message": "{count, plural, one {Only search in the # selected} other {Only search in the # selected}}"
+  },
+  "search.page.advanced": {
+    "description": "Find Files window (Alt+F7): tab of the second page (dates, size, attributes, duplicates). Keep it short.",
+    "message": "Advanced"
+  },
+  "search.page.general": {
+    "description": "Find Files window (Alt+F7): tab of the first page (names, places, text). Keep it short.",
+    "message": "General"
+  },
+  "search.page.load_save": {
+    "description": "Find Files window (Alt+F7): tab of the page with the saved searches. Keep it short.",
+    "message": "Load/Save"
+  },
+  "search.places.browse_prompt": {
+    "description": "Find Files window (Alt+F7), General page: title of the folder picker opened by the >> button.",
+    "message": "Search in"
+  },
+  "search.places.label": {
+    "description": "Find Files window (Alt+F7), General page: label before the folders field; the label column is narrow (90 px). Keep it short.",
+    "message": "Search in:"
+  },
+  "search.places.placeholder": {
+    "description": "Find Files window (Alt+F7), General page: grey hint in the Search in field: folders to search, separated by a semicolon. Keep the ;.",
+    "message": "Folders, ; between them"
+  },
+  "search.regex": {
+    "description": "Find Files window (Alt+F7): checkbox under the names field and under the text field: the name or text is a regular expression. Usually kept as RegEx. Keep it short.",
+    "message": "RegEx"
+  },
+  "search.results.label": {
+    "description": "Find Files window (Alt+F7): label above the list of files found.",
+    "message": "Search results:"
+  },
+  "search.saved.delete": {
+    "description": "Find Files window (Alt+F7), Load/Save page: button that deletes the chosen saved search. Keep it short.",
+    "message": "Delete"
+  },
+  "search.saved.label": {
+    "description": "Find Files window (Alt+F7), Load/Save page: label above the list of saved searches.",
+    "message": "Previous searches:"
+  },
+  "search.saved.load": {
+    "description": "Find Files window (Alt+F7), Load/Save page: button that fills the pages with the chosen saved search. Keep it short.",
+    "message": "Load"
+  },
+  "search.saved.name_first": {
+    "description": "Find Files window (Alt+F7), Load/Save page: warning when Save is clicked with no name typed.",
+    "message": "Name the search first."
+  },
+  "search.saved.name_placeholder": {
+    "description": "Find Files window (Alt+F7), Load/Save page: grey hint in the field naming a search to save.",
+    "message": "Name of the search"
+  },
+  "search.saved.save": {
+    "description": "Find Files window (Alt+F7), Load/Save page: button that saves the current search under the name typed. Keep it short.",
+    "message": "Save"
+  },
+  "search.size.label": {
+    "description": "Find Files window (Alt+F7), Advanced page: checkbox before =, < or >, a number and a unit. Keep it short.",
+    "message": "File size:"
+  },
+  "search.start": {
+    "description": "Find Files window (Alt+F7): button that starts the search; the button column is narrow. Keep it short.",
+    "message": "Start search"
+  },
+  "search.status.found": {
+    "description": "Find Files window (Alt+F7): status line under the results when the search is done. {files}: number of files found, e.g. 12; {dirs}: number of folders found, e.g. 2.",
+    "message": "{files, plural, one {# file} other {# files}} and {dirs, plural, one {# directory} other {# directories}} found"
+  },
+  "search.status.searching": {
+    "description": "Find Files window (Alt+F7): status line under the results while the search starts.",
+    "message": "Searching…"
+  },
+  "search.status.searching_in": {
+    "description": "Find Files window (Alt+F7): status line under the results while searching. {folder}: the folder being looked in, e.g. /home/anna/Documents.",
+    "message": "Searching: {folder}"
+  },
+  "search.status.stopped": {
+    "description": "Find Files window (Alt+F7): status line when the search was stopped. {counts}: what was found by then, e.g. 12 files and 2 directories found.",
+    "message": "Stopped: {counts}"
+  },
+  "search.stop": {
+    "description": "Find Files window (Alt+F7): button that stops a running search, in place of Start search. Keep it short.",
+    "message": "Stop"
+  },
+  "search.text.ansi": {
+    "description": "Find Files window (Alt+F7), General page: checkbox under Find text: also search the text in the system's legacy encoding. {page}: its code page number, e.g. 1252. ANSI is a name; keep it.",
+    "message": "ANSI (code page {page})"
+  },
+  "search.text.case_sensitive": {
+    "description": "Find Files window (Alt+F7), General page: checkbox under Find text: upper and lower case must match.",
+    "message": "Case sensitive"
+  },
+  "search.text.hex": {
+    "description": "Find Files window (Alt+F7), General page: checkbox under Find text: the text is hexadecimal bytes, e.g. 48 65 6c. Keep it short.",
+    "message": "Hex"
+  },
+  "search.text.label": {
+    "description": "Find Files window (Alt+F7), General page: checkbox before the text field: search the files' contents; the label column is narrow (90 px). Keep it short.",
+    "message": "Find text:"
+  },
+  "search.text.not_containing": {
+    "description": "Find Files window (Alt+F7), General page: checkbox under Find text: find the files without the text. NOT is stressed.",
+    "message": "Find files NOT containing the text"
+  },
+  "search.text.office": {
+    "description": "Find Files window (Alt+F7), General page: checkbox under Find text: search the text of Office and OpenDocument files. Keep the file extensions.",
+    "message": "Office files (docx, xlsx, pptx, odt…)"
+  },
+  "search.text.placeholder": {
+    "description": "Find Files window (Alt+F7), General page: grey hint in the Find text field.",
+    "message": "Text to find"
+  },
+  "search.text.whole_words": {
+    "description": "Find Files window (Alt+F7), General page: checkbox under Find text.",
+    "message": "Whole words only"
+  },
+  "search.title": {
+    "description": "Find Files window (Alt+F7): the window's title, as Total Commander's Find Files.",
+    "message": "Find Files"
+  },
+  "search.unit.bytes": {
+    "description": "Find Files window (Alt+F7), Advanced page: size unit after the number of File size, in a menu beside KB, MB and GB. Keep it short.",
+    "message": "bytes"
+  },
+  "search.view": {
+    "description": "Find Files window (Alt+F7): button under the results that opens the file in the viewer. F3 is the key; keep it. Keep it short.",
+    "message": "F3 View"
+  },
+  "sync.close": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): button that closes the window. Keep it short.",
+    "message": "Close"
+  },
+  "sync.column.date": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): column title of a side's modification time, left and right. Keep it short.",
+    "message": "Date"
+  },
+  "sync.column.name": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): column title of the items' paths. Keep it short.",
+    "message": "Name"
+  },
+  "sync.column.size": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): column title of a side's size, left and right; the column is narrow (90 px). Keep it short.",
+    "message": "Size"
+  },
+  "sync.compare": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): button that compares the two folders again. Keep it short.",
+    "message": "Compare"
+  },
+  "sync.confirm.copy_left": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): one item of the comma-separated list in the question before synchronizing. {count}: number of items, e.g. 3; {size}: their size, e.g. 1.2 MB.",
+    "message": "Copy {count} to the left ({size})"
+  },
+  "sync.confirm.copy_right": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): one item of the comma-separated list in the question before synchronizing. {count}: number of items, e.g. 3; {size}: their size, e.g. 1.2 MB.",
+    "message": "Copy {count} to the right ({size})"
+  },
+  "sync.confirm.delete_left": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): one item of the comma-separated list in the question before synchronizing. {count}: number of items, e.g. 2.",
+    "message": "Delete {count} on the left"
+  },
+  "sync.confirm.delete_right": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): one item of the comma-separated list in the question before synchronizing. {count}: number of items, e.g. 2.",
+    "message": "Delete {count} on the right"
+  },
+  "sync.confirm.ok": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): OK button of the question asked before synchronizing. Keep it short.",
+    "message": "Synchronize"
+  },
+  "sync.confirm.text": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): the question before synchronizing. {actions}: the list of what is done, e.g. Copy 3 to the right (1.2 MB), Delete 2 on the left. {trash} is yes when something is deleted: then the sentence about the trash is added (mind its leading space).",
+    "message": "{actions}. Files copied replace those there.{trash, select, yes { Deleted ones on this computer go to the trash.} other {}}"
+  },
+  "sync.confirm.title": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): title of the question asked before synchronizing. Keep it short.",
+    "message": "Synchronize"
+  },
+  "sync.error.changed": {
+    "description": "The operations queue: why an item of a Synchronize Dirs job was not done, after its path, e.g. notes.txt: changed since the comparison; compare again.",
+    "message": "changed since the comparison; compare again"
+  },
+  "sync.error.compare": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): status line when the comparison failed. {err}: the system's error, e.g. Permission denied.",
+    "message": "Could not compare: {err}"
+  },
+  "sync.error.no_folders": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): warning when a panel shows an archive or search results, so the window does not open.",
+    "message": "Synchronize Dirs compares two folders: neither panel may show an archive or search results."
+  },
+  "sync.left": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): label before the left panel's folder at the top; the label column is narrow (44 px). Keep it short.",
+    "message": "Left"
+  },
+  "sync.mask.label": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): label before the file mask field (e.g. *.txt;*.md). Keep it short.",
+    "message": "Files:"
+  },
+  "sync.option.asymmetric": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): checkbox: what differs goes right, and what only the right side has is deleted.",
+    "message": "Asymmetric (right becomes a copy of left)"
+  },
+  "sync.option.by_content": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): checkbox: files of the same size are read and compared, not their times trusted. Keep it short.",
+    "message": "By content"
+  },
+  "sync.option.ignore_date": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): checkbox: the files' times are not compared. Keep it short.",
+    "message": "Ignore date"
+  },
+  "sync.option.subfolders": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): checkbox: compare the folders inside too. Keep it short.",
+    "message": "Subfolders"
+  },
+  "sync.result.done": {
+    "description": "The operations queue: result of a finished Synchronize Dirs job. {count}: number of items done, e.g. 12.",
+    "message": "{count, plural, one {# synchronized} other {# synchronized}}"
+  },
+  "sync.result.failed": {
+    "description": "The operations queue: error of a Synchronize Dirs job some items of which failed. {count}: how many failed, e.g. 2; {first}: the first one's path and error, e.g. notes.txt: Permission denied.",
+    "message": "{count, plural, one {# not synchronized} other {# not synchronized}}; {first}"
+  },
+  "sync.right": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): label before the right panel's folder at the top; the label column is narrow (44 px). Keep it short.",
+    "message": "Right"
+  },
+  "sync.show.equal": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): checkbox after Show: list the files alike on both sides. Keep the =. Keep it short.",
+    "message": "= equal"
+  },
+  "sync.show.label": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): label before the checkboxes choosing which items are listed. Keep it short.",
+    "message": "Show:"
+  },
+  "sync.show.other": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): checkbox after Show: list the files that differ but nothing is done with. Keep the ≠. Keep it short.",
+    "message": "≠ left alone"
+  },
+  "sync.show.to_left": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): checkbox after Show: list what is copied to the left. Keep the arrow. Keep it short.",
+    "message": "← to the left"
+  },
+  "sync.show.to_right": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): checkbox after Show: list what is copied to the right. Keep the arrow. Keep it short.",
+    "message": "→ to the right"
+  },
+  "sync.status.both_empty": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): status line when neither folder has anything to compare.",
+    "message": "Both are empty."
+  },
+  "sync.status.comparing": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): status line at the bottom while comparing. {folder}: the folder being compared, below both sides, e.g. docs/2026, or ... at the start.",
+    "message": "Comparing {folder}"
+  },
+  "sync.status.counts": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): status line after comparing. Each placeholder is a number of items, e.g. 3: {right} to copy to the right, {left} to copy to the left, {delete} to delete, {equal} alike, {alone} different but left as they are.",
+    "message": "{right} to copy right, {left} to copy left, {delete} to delete, {equal} equal, {alone} left alone"
+  },
+  "sync.status.stopped": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): status line when the comparison was stopped.",
+    "message": "Stopped."
+  },
+  "sync.stop": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): button that stops a comparison, in place of Compare. Keep it short.",
+    "message": "Stop"
+  },
+  "sync.synchronize": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): button at the bottom that asks, then does what the list says. Keep it short.",
+    "message": "Synchronize..."
+  },
+  "sync.task.title": {
+    "description": "The operations queue: title of the Synchronize Dirs job. {left} and {right}: the two folders, e.g. /home/anna/docs and /media/usb/docs.",
+    "message": "Synchronize {left} and {right}"
+  },
+  "sync.title": {
+    "description": "Synchronize Dirs window (Commands › Synchronize Dirs): the window's title, as Total Commander's Synchronize Dirs.",
+    "message": "Synchronize Dirs"
+  }
+}

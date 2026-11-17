@@ -6,6 +6,7 @@ use gpui_kit::component::input::{Input, InputState};
 use gpui_kit::component::menu::{DropdownMenu, PopupMenuItem};
 use gpui_kit::component::{Disableable, IconName, WindowExt, h_flex, v_flex};
 use gpui_kit::*;
+use sc_core::t;
 use sc_core::viewer::Query;
 
 type Done = Rc<dyn Fn(Query, &mut Window, &mut App)>;
@@ -29,7 +30,7 @@ pub fn open(
     window.open_dialog(cx, move |dialog, _, _| {
         let ok = view.clone();
         dialog
-            .title("Find")
+            .title(t!("find.title"))
             .width(px(460.))
             .overlay_closable(false)
             .child(view.clone())
@@ -64,7 +65,7 @@ impl FindDialog {
     fn option(
         &self,
         id: &'static str,
-        label: &'static str,
+        label: String,
         on: fn(&mut Query) -> &mut bool,
         cx: &mut Context<Self>,
     ) -> Checkbox {
@@ -100,20 +101,20 @@ impl Render for FindDialog {
         let left = v_flex()
             .flex_1()
             .gap_2()
-            .child(self.option("find-words", "Whole words only", |q| &mut q.whole_words, cx))
-            .child(self.option("find-back", "Search backwards", |q| &mut q.backwards, cx))
-            .child(self.option("find-regex", "RegEx", |q| &mut q.regex, cx));
+            .child(self.option("find-words", t!("find.whole_words"), |q| &mut q.whole_words, cx))
+            .child(self.option("find-back", t!("find.backwards"), |q| &mut q.backwards, cx))
+            .child(self.option("find-regex", t!("find.regex"), |q| &mut q.regex, cx));
         let right = v_flex()
             .flex_1()
             .gap_2()
-            .child(self.option("find-case", "Case sensitive", |q| &mut q.case_sensitive, cx))
-            .child(self.option("find-hex", "Search hex string", |q| &mut q.hex, cx));
+            .child(self.option("find-case", t!("find.case_sensitive"), |q| &mut q.case_sensitive, cx))
+            .child(self.option("find-hex", t!("find.hex"), |q| &mut q.hex, cx));
         v_flex()
             .w_full()
             .gap_3()
             .text_sm()
             .child(
-                v_flex().gap_1().child("Enter search text").child(
+                v_flex().gap_1().child(t!("find.text.label")).child(
                     h_flex()
                         .gap_1()
                         .child(div().flex_1().child(Input::new(&self.input)))
@@ -128,7 +129,7 @@ impl Render for FindDialog {
                     .child(
                         Button::new("find-ok")
                             .primary()
-                            .label("OK")
+                            .label(t!("find.ok"))
                             .min_w(px(80.))
                             .on_click(cx.listener(|this, _, window, cx| {
                                 this.finish(window, cx);
@@ -138,7 +139,7 @@ impl Render for FindDialog {
                     .child(
                         Button::new("find-cancel")
                             .outline()
-                            .label("Cancel")
+                            .label(t!("find.cancel"))
                             .min_w(px(80.))
                             .on_click(|_, window, cx| window.close_dialog(cx)),
                     ),

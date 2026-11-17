@@ -23,11 +23,12 @@ pub struct Connection {
 
 impl Connection {
     pub fn address(&self) -> Address {
+        let (host, port) = bare_host(&self.host);
         Address {
             scheme: self.scheme,
             user: self.user.clone().filter(|user| !user.is_empty()),
-            host: self.host.trim().to_owned(),
-            port: self.port,
+            host,
+            port: self.port.or(port),
             path: self.path.clone().filter(|path| path.starts_with('/')),
         }
     }
@@ -177,8 +178,30 @@ fn hosts_in(text: &str) -> Vec<String> {
     hosts
 }
 
+/// The server as typed, an endpoint's URL pasted whole too (`https://s3.example.com:9000/`):
+/// its scheme and path dropped, its port apart.
+fn bare_host(typed: &str) -> (String, Option<u16>) {
+    let typed = typed.trim();
+    let host = typed.split_once("://").map_or(typed, |(_, rest)| rest);
+    let host = host.split('/').next().unwrap_or_default();
+    // One colon is a port; more are IPv6's own.
+    match host.split_once(':') {
+        Some((name, port)) if !port.contains(':') => (name.to_owned(), port.parse().ok()),
+        _ => (host.trim_matches(['[', ']']).to_owned(), None),
+    }
+}
+
 #[cfg(test)]
 mod tests {
+    #[test]
+    fn takes_a_pasted_endpoint() {
+        let bare = |typed: &str| super::bare_host(typed);
+        assert_eq!(bare("https://s3j8.fra.idrivee2-16.com"), ("s3j8.fra.idrivee2-16.com".into(), None));
+        assert_eq!(bare(" http://minio.lan:9000/bucket/ "), ("minio.lan".into(), Some(9000)));
+        assert_eq!(bare("files.example.com"), ("files.example.com".into(), None));
+        assert_eq!(bare("fe80::1"), ("fe80::1".into(), None));
+    }
+
     use super::*;
 
     #[test]

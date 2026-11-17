@@ -148,6 +148,8 @@ fn s3_options(address: &Address) -> [(&'static str, String); 3] {
         _ if host.ends_with(".amazonaws.com") => "AWS",
         _ if host.ends_with(".r2.cloudflarestorage.com") => "Cloudflare",
         _ if host.ends_with(".wasabisys.com") => "Wasabi",
+        // s3j8.fra.idrivee2-16.com: it signs with no region.
+        _ if host.contains(".idrivee2-") && host.ends_with(".com") => "IDrive",
         _ => "Other",
     };
     let labels: Vec<&str> = host.split('.').collect();
@@ -189,6 +191,8 @@ mod tests {
         assert_eq!(b2, ["Other", "us-west-004", "https://s3.us-west-004.backblazeb2.com"]);
         let r2 = options("s3://AK@abc.r2.cloudflarestorage.com");
         assert_eq!(r2, ["Cloudflare", "auto", "https://abc.r2.cloudflarestorage.com"]);
+        let idrive = options("s3://AK@s3j8.fra.idrivee2-16.com/backup");
+        assert_eq!(idrive, ["IDrive", "us-east-1", "https://s3j8.fra.idrivee2-16.com"]);
         let minio = options("s3://AK@192.168.1.5:9000");
         assert_eq!(minio, ["Other", "us-east-1", "http://192.168.1.5:9000"]);
     }

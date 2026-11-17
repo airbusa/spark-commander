@@ -28,6 +28,11 @@ fn at_folder(panel: &Panel) -> bool {
     panel.current_entry().is_some_and(|entry| entry.is_dir && !entry.is_parent() && !entry.is_app())
 }
 
+/// The cursor is on an archive outside one: it opens as a folder, as Total Commander's.
+fn at_archive(panel: &Panel) -> bool {
+    !panel.in_archive() && panel.current_entry().is_some_and(|entry| !entry.is_dir && sc_core::archive::is_archive(&entry.name))
+}
+
 impl Commander {
     /// Ctrl+R and F2: the folder read again.
     pub(crate) fn reread_source(&mut self, window: &mut Window, cx: &mut Context<Self>) {
@@ -59,17 +64,20 @@ impl Commander {
     }
 
     /// Ctrl+Left and Ctrl+Right, as Total Commander's: panel `target` shows
-    /// the folder at the other panel's cursor, else that panel's own folder.
-    /// The active panel stays so.
+    /// the folder or archive at the other panel's cursor, else that panel's own
+    /// folder. The active panel stays so.
     pub(crate) fn show_in(&mut self, target: usize, window: &mut Window, cx: &mut Context<Self>) {
         let source = self.panels[1 - target].tabs.current();
-        let folder = at_folder(source);
+        let (folder, archive) = (at_folder(source), at_archive(source));
         let copy = source.copy_elsewhere();
         let remote = copy.remote().is_some();
         let side = &mut self.panels[target];
         let tab = side.tabs.active();
         side.tabs.navigated(tab, copy);
         side.scroll_to_cursor();
+        if archive {
+            return self.open_archive(target, window, cx);
+        }
         if folder {
             return self.navigate_on(target, remote, |panel| panel.open().map(drop), window, cx);
         }
@@ -82,16 +90,19 @@ impl Commander {
         self.navigate_on(self.active, remote, Panel::go_to_root, window, cx);
     }
 
-    /// Ctrl+Up: the folder at the cursor in a new tab; Ctrl+Shift+Up, in one
-    /// of the other panel. On a file, this folder.
+    /// Ctrl+Up: the folder or archive at the cursor in a new tab; Ctrl+Shift+Up,
+    /// in one of the other panel. On a file, this folder.
     pub(crate) fn open_in_new_tab(&mut self, other: bool, window: &mut Window, cx: &mut Context<Self>) {
         let source = self.panels[self.active].tabs.current();
-        let folder = at_folder(source);
+        let (folder, archive) = (at_folder(source), at_archive(source));
         let copy = source.copy_elsewhere();
         let remote = copy.remote().is_some();
         let target = if other { 1 - self.active } else { self.active };
         self.panels[target].tabs.add(copy);
         self.panels[target].scroll_to_cursor();
+        if archive {
+            return self.open_archive(target, window, cx);
+        }
         if folder {
             return self.navigate_on(target, remote, |panel| panel.open().map(drop), window, cx);
         }

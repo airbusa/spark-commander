@@ -1736,21 +1736,21 @@ impl Commander {
         let archive = !file && panel.current_entry().is_some_and(|e| !e.is_dir && archive::is_archive(&e.name));
         match file {
             true => self.launch(window, cx),
-            false if archive => self.open_archive(window, cx),
+            false if archive => self.open_archive(self.active, window, cx),
             false => self.navigate(|panel| panel.open().map(drop), window, cx),
         }
     }
 
-    /// An archive lists in the background: a big compressed tar is unpacked
-    /// whole for it. One that takes a while shows its progress, to cancel.
-    fn open_archive(&mut self, window: &mut Window, cx: &mut Context<Self>) {
-        let panel = self.panels[self.active].tabs.current();
+    /// The archive at panel `ix`'s cursor lists in the background: a big compressed
+    /// tar is unpacked whole for it. One that takes a while shows its progress, to cancel.
+    fn open_archive(&mut self, ix: usize, window: &mut Window, cx: &mut Context<Self>) {
+        let panel = self.panels[ix].tabs.current();
         let name = panel.current_entry().map(|e| e.name.to_string_lossy().into_owned()).unwrap_or_default();
         let watch = archive::Watch::default();
         let done = Arc::new(AtomicBool::new(false));
         let (listing, finished) = (watch.clone(), done.clone());
         self.navigate_on(
-            self.active,
+            ix,
             true,
             move |panel| {
                 let opened = panel.open_watched(&listing).map(drop);

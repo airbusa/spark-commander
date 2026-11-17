@@ -28,7 +28,7 @@ impl Commander {
         let this = self.panels[self.active].tabs.current();
         let other = self.panels[1 - self.active].tabs.current();
         let Some(files) = compare::pair(this, other) else {
-            let text = "Put the cursor on a file in each panel, or mark two files.";
+            let text = sc_core::t!("compare.need_two_files");
             return window.push_notification(Notification::warning(text), cx);
         };
         // The active panel's file on its own side.
@@ -51,7 +51,7 @@ fn title(files: &[Arc<Origin>; 2]) -> String {
         let file = Path::new(&name).file_name().map(|n| n.display().to_string());
         file.unwrap_or(name)
     };
-    format!("Compare: {} — {}", name(&files[0]), name(&files[1]))
+    sc_core::t!("compare.window.title", left = name(&files[0]), right = name(&files[1]))
 }
 
 fn open(files: [Arc<Origin>; 2], over: crate::Over, cx: &mut App) -> Result<(), String> {
@@ -235,7 +235,7 @@ impl CompareView {
             files: true,
             directories: false,
             multiple: false,
-            prompt: Some("Compare".into()),
+            prompt: Some(sc_core::t!("compare.browse.prompt").into()),
         });
         let input = self.inputs[side].clone();
         cx.spawn_in(window, async move |this, cx| {
@@ -366,22 +366,24 @@ impl CompareView {
     fn status(&self) -> String {
         let count = self.runs.len();
         let place = match self.at {
-            Some(at) => format!("Difference {} of {count}", at + 1),
-            None => format!("{count} difference(s)"),
+            Some(at) => sc_core::t!("compare.status.difference_of", at = at + 1, count = count),
+            None => sc_core::t!("compare.status.differences", count = count),
         };
         match &self.state {
-            State::Comparing => "Comparing…".into(),
+            State::Comparing => sc_core::t!("compare.status.comparing"),
             State::Failed(err) => err.clone(),
-            State::Done(Compared::Text(_)) if count == 0 => "No differences.".into(),
+            State::Done(Compared::Text(_)) if count == 0 => sc_core::t!("compare.status.no_differences"),
             State::Done(Compared::Text(_)) => place,
             State::Done(Compared::Bytes(bytes)) => match bytes.first {
-                None => format!("The files are identical: {} bytes.", grouped(bytes.sizes.0)),
-                Some(first) => format!(
-                    "{place}: {} byte(s) differ, the first at {}; sizes {} and {}.",
-                    grouped(bytes.differing),
-                    grouped(first),
-                    grouped(bytes.sizes.0),
-                    grouped(bytes.sizes.1)
+                None => sc_core::t!("compare.status.identical", count = bytes.sizes.0, grouped = grouped(bytes.sizes.0)),
+                Some(first) => sc_core::t!(
+                    "compare.status.bytes_differ",
+                    place = place,
+                    count = bytes.differing,
+                    grouped = grouped(bytes.differing),
+                    first = grouped(first),
+                    left = grouped(bytes.sizes.0),
+                    right = grouped(bytes.sizes.1)
                 ),
             },
         }
@@ -428,7 +430,7 @@ impl Render for CompareView {
                         })),
                 )
         };
-        let check = |id: &'static str, label: &'static str, on: bool| {
+        let check = |id: &'static str, label: String, on: bool| {
             Checkbox::new(id).label(label).checked(on)
         };
         let list = uniform_list(
@@ -488,14 +490,14 @@ impl Render for CompareView {
                         Button::new("compare-again")
                             .small()
                             .primary()
-                            .label("Compare")
+                            .label(sc_core::t!("compare.button.compare"))
                             .on_click(cx.listener(|this, _, _, cx| this.compare(cx))),
                     )
                     .child(
                         Button::new("compare-next")
                             .small()
                             .outline()
-                            .label("Next difference (N)")
+                            .label(sc_core::t!("compare.button.next"))
                             .disabled(none)
                             .on_click(cx.listener(|this, _, _, cx| this.go(true, cx))),
                     )
@@ -503,12 +505,12 @@ impl Render for CompareView {
                         Button::new("compare-previous")
                             .small()
                             .outline()
-                            .label("Previous difference (P)")
+                            .label(sc_core::t!("compare.button.previous"))
                             .disabled(none)
                             .on_click(cx.listener(|this, _, _, cx| this.go(false, cx))),
                     )
                     .child(
-                        check("compare-case", "Ignore case", self.options.ignore_case).on_click(
+                        check("compare-case", sc_core::t!("compare.option.ignore_case"), self.options.ignore_case).on_click(
                             cx.listener(|this, on: &bool, _, cx| {
                                 this.set_options(|o| o.ignore_case = *on, cx)
                             }),
@@ -517,7 +519,7 @@ impl Render for CompareView {
                     .child(
                         check(
                             "compare-spaces",
-                            "Ignore repeated spaces",
+                            sc_core::t!("compare.option.ignore_spaces"),
                             self.options.ignore_spaces,
                         )
                         .on_click(cx.listener(|this, on: &bool, _, cx| {
@@ -525,7 +527,7 @@ impl Render for CompareView {
                         })),
                     )
                     .child(
-                        check("compare-binary", "Binary", self.options.binary).on_click(
+                        check("compare-binary", sc_core::t!("compare.option.binary"), self.options.binary).on_click(
                             cx.listener(|this, on: &bool, _, cx| {
                                 this.set_options(|o| o.binary = *on, cx)
                             }),
@@ -534,7 +536,7 @@ impl Render for CompareView {
                     .child(
                         check(
                             "compare-only",
-                            "Only differences",
+                            sc_core::t!("compare.option.only_differences"),
                             self.only_differences,
                         )
                         .on_click(cx.listener(|this, on: &bool, _, cx| {

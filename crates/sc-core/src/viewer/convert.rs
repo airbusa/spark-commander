@@ -68,7 +68,7 @@ fn convert_into(folder: &Path, converter: &Converter, path: &Path) -> io::Result
         let _ = std::fs::remove_file(&part);
         let why = String::from_utf8_lossy(&done.stderr).trim().to_owned();
         let why = match why.is_empty() {
-            true => format!("{} could not convert it ({})", converter.name, done.status),
+            true => crate::t!("viewer.convert.failed", tool = converter.name, status = done.status),
             false => format!("{}: {why}", converter.name),
         };
         return Err(io::Error::other(why));

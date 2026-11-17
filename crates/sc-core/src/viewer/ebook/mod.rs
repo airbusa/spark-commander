@@ -73,8 +73,8 @@ impl Zip {
         let end = (last.saturating_sub(65535)..=last)
             .rev()
             .find(|&at| data.get(at..at + 4) == Some(&[0x50, 0x4b, 0x05, 0x06]))
-            .ok_or_else(|| invalid("not a zip: a damaged or a DRM-protected book?"))?;
-        let short = || invalid("a damaged zip");
+            .ok_or_else(|| invalid(crate::t!("viewer.book.error.not_zip")))?;
+        let short = || invalid(crate::t!("viewer.book.error.damaged_zip"));
         let (count, mut at) = (u16_at(end + 10).ok_or_else(short)?, u32_at(end + 16).ok_or_else(short)?);
         let mut entries = HashMap::new();
         for _ in 0..count {
@@ -94,12 +94,12 @@ impl Zip {
     }
 
     fn read(&self, name: &str) -> io::Result<Vec<u8>> {
-        let missing = || io::Error::new(io::ErrorKind::NotFound, format!("{name} is not in the book"));
+        let missing = || io::Error::new(io::ErrorKind::NotFound, crate::t!("viewer.book.error.missing_part", name = name));
         let &(local, method, size) = self.entries.get(name).ok_or_else(missing)?;
         let field = |at: usize| self.data.get(at..at + 2).map(|b| u16::from_le_bytes([b[0], b[1]]) as usize);
         let (name_len, extra) = (field(local + 26), field(local + 28));
         let start = local + 30 + name_len.ok_or_else(missing)? + extra.ok_or_else(missing)?;
-        let raw = self.data.get(start..start + size).ok_or_else(|| invalid("a damaged zip"))?;
+        let raw = self.data.get(start..start + size).ok_or_else(|| invalid(crate::t!("viewer.book.error.damaged_zip")))?;
         match method {
             0 => Ok(raw.to_vec()),
             8 => {
@@ -107,7 +107,7 @@ impl Zip {
                 flate2::read::DeflateDecoder::new(raw).read_to_end(&mut out)?;
                 Ok(out)
             }
-            _ => Err(invalid(format!("{name}: compressed as zip cannot read here ({method})"))),
+            _ => Err(invalid(crate::t!("viewer.book.error.zip_method", name = name, method = method))),
         }
     }
 
@@ -176,7 +176,7 @@ fn epub(zip: &Zip) -> io::Result<String> {
         .descendants()
         .find(|node| node.has_tag_name("rootfile"))
         .and_then(|node| node.attribute("full-path"))
-        .ok_or_else(|| invalid("no package file in the book"))?
+        .ok_or_else(|| invalid(crate::t!("viewer.book.error.no_package")))?
         .to_owned();
     let opf = zip.text(&package)?;
     let opf = roxmltree::Document::parse(&opf).map_err(|err| invalid(err.to_string()))?;
@@ -214,7 +214,7 @@ fn epub(zip: &Zip) -> io::Result<String> {
         }
     }
     if html.trim().is_empty() {
-        return Err(invalid("the book has no text"));
+        return Err(invalid(crate::t!("viewer.book.error.no_text")));
     }
     Ok(sheet.apply(&html))
 }
@@ -271,7 +271,7 @@ fn tidy(html: &str) -> String {
 /// pictures from the image records they number. As KindleUnpack reads them.
 fn kindle(data: Vec<u8>) -> io::Result<String> {
     use std::sync::LazyLock;
-    let damaged = || invalid("a damaged book");
+    let damaged = || invalid(crate::t!("viewer.book.error.damaged"));
     let u16_at = |at: usize| data.get(at..at + 2).map(|b| u16::from_be_bytes([b[0], b[1]]) as usize);
     let u32_at = |at: usize| data.get(at..at + 4).map(|b| u32::from_be_bytes([b[0], b[1], b[2], b[3]]) as usize);
     // The Palm database's records: each runs to where the next starts.
@@ -287,10 +287,10 @@ fn kindle(data: Vec<u8>) -> io::Result<String> {
     let (compression, texts, encryption) = (field16(0), field16(8), field16(12));
     let (compression, texts) = (compression.ok_or_else(damaged)?, texts.ok_or_else(damaged)?);
     if encryption.unwrap_or(0) != 0 {
-        return Err(invalid("DRM-protected: only Kindle can read it"));
+        return Err(invalid(crate::t!("viewer.book.error.drm")));
     }
     if compression == 17480 {
-        return Err(invalid("compressed as Amazon's own books are (HUFF/CDIC), which is not read yet"));
+        return Err(invalid(crate::t!("viewer.book.error.huffman")));
     }
     let encoding = field32(28).unwrap_or(1252);
     // Each text record ends in entries of the book's index, then the bytes of a
@@ -323,7 +323,7 @@ fn kindle(data: Vec<u8>) -> io::Result<String> {
         match compression {
             1 => text.extend_from_slice(content),
             2 => palmdoc(content, &mut text),
-            _ => return Err(invalid(format!("compressed in a way not read yet ({compression})"))),
+            _ => return Err(invalid(crate::t!("viewer.book.error.compression", compression = compression))),
         }
     }
     let text = match encoding {
@@ -370,7 +370,7 @@ fn kindle(data: Vec<u8>) -> io::Result<String> {
     let html = PAGE_BREAK.replace_all(&html, "<br/>");
     let html = tidy(&html);
     if html.trim().is_empty() {
-        return Err(invalid("the book has no text"));
+        return Err(invalid(crate::t!("viewer.book.error.no_text")));
     }
     Ok(sheet.apply(&html))
 }
@@ -430,7 +430,7 @@ fn fb2(xml: &str) -> io::Result<String> {
         fb2_node(body, &pictures, &mut html);
     }
     if html.trim().is_empty() {
-        return Err(invalid("the book has no text"));
+        return Err(invalid(crate::t!("viewer.book.error.no_text")));
     }
     Ok(html)
 }

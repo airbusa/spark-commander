@@ -203,7 +203,7 @@ impl Render for MediaView {
         let player = match &self.player {
             Ok(player) => player.clone(),
             Err(err) => {
-                let text = format!("This cannot be played: {err}. 1 shows it as text.");
+                let text = sc_core::t!("media.cannot_play_as_text", err = err);
                 return div().p_4().child(text).into_any_element();
             }
         };
@@ -224,7 +224,7 @@ impl Render for MediaView {
         )
         .size_full();
         let notice = match (&state.error, state.video) {
-            (Some(err), _) => Some(format!("This cannot be played: {err}")),
+            (Some(err), _) => Some(sc_core::t!("media.cannot_play", err = err)),
             (None, false) => Some(self.path.file_name().unwrap_or_default().display().to_string()),
             (None, true) => None,
         };
@@ -356,7 +356,7 @@ impl Render for MediaView {
                                 .bg(gpui_kit::black().opacity(0.6))
                                 .text_color(gpui_kit::white())
                                 .text_sm()
-                                .child(format!("Continuing at {}", clock(at))),
+                                .child(sc_core::t!("media.continuing", time = clock(at))),
                         )
                     })
                     .when_some(notice, |el, notice| {

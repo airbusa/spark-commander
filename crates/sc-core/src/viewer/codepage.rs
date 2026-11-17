@@ -3,28 +3,30 @@
 use encoding_rs::Encoding;
 
 /// The Encoding menu, as Total Commander's Lister has it.
-pub const MENU: &[(&str, u16)] = &[
-    ("MacOS", 10000),
-    ("Eastern Europe (1250)", 1250),
-    ("Cyrillic Windows (1251)", 1251),
-    ("Western Latin1 (1252)", 1252),
-    ("Greek (1253)", 1253),
-    ("Turkish (1254)", 1254),
-    ("Hebrew (1255)", 1255),
-    ("Arabic (1256)", 1256),
-    ("Baltic (1257)", 1257),
-    ("Vietnamese (1258)", 1258),
-    ("Chinese Main Land (936)", 936),
-    ("Chinese Taiwan (950)", 950),
-    ("Japanese (932)", 932),
-    ("Korean (949)", 949),
-    ("Thai (874)", 874),
-    ("DOS-USA (437)", 437),
-    ("DOS-LATIN1 (850)", 850),
-    ("DOS Central Europe (852)", 852),
-    ("DOS Cyrillic (866)", 866),
-    ("Cyrillic KOI8-R (20866)", 20866),
-];
+pub fn menu() -> [(String, u16); 20] {
+    [
+        ("MacOS".into(), 10000),
+        (crate::t!("viewer.encoding.cp1250"), 1250),
+        (crate::t!("viewer.encoding.cp1251"), 1251),
+        (crate::t!("viewer.encoding.cp1252"), 1252),
+        (crate::t!("viewer.encoding.cp1253"), 1253),
+        (crate::t!("viewer.encoding.cp1254"), 1254),
+        (crate::t!("viewer.encoding.cp1255"), 1255),
+        (crate::t!("viewer.encoding.cp1256"), 1256),
+        (crate::t!("viewer.encoding.cp1257"), 1257),
+        (crate::t!("viewer.encoding.cp1258"), 1258),
+        (crate::t!("viewer.encoding.cp936"), 936),
+        (crate::t!("viewer.encoding.cp950"), 950),
+        (crate::t!("viewer.encoding.cp932"), 932),
+        (crate::t!("viewer.encoding.cp949"), 949),
+        (crate::t!("viewer.encoding.cp874"), 874),
+        (crate::t!("viewer.encoding.cp437"), 437),
+        (crate::t!("viewer.encoding.cp850"), 850),
+        (crate::t!("viewer.encoding.cp852"), 852),
+        (crate::t!("viewer.encoding.cp866"), 866),
+        (crate::t!("viewer.encoding.cp20866"), 20866),
+    ]
+}
 
 pub fn decode(page: u16, bytes: &[u8]) -> String {
     let table = match page {
@@ -178,7 +180,7 @@ mod tests {
         assert_eq!(decode(437, b"\xc9\xcd\xbb"), "╔═╗");
         assert_eq!(by_language("hu_HU.UTF-8"), (1250, 852));
         assert_eq!(by_language("C"), (1252, 437));
-        for &(_, page) in MENU {
+        for (_, page) in menu() {
             assert!(!decode(page, b"abc").is_empty(), "{page}");
         }
         assert_eq!(chars(1250, b"\xc1r"), [('Á', 1), ('r', 1)]);

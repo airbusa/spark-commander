@@ -47,7 +47,7 @@ impl Vault {
     /// Every password sealed again under `new`, the check too.
     fn reseal(&mut self, old: &Key, new: &Key) -> io::Result<()> {
         for (what, sealed) in &mut self.passwords {
-            let plain = open(old, what, sealed).ok_or_else(|| io::Error::other(format!("the password for {what} cannot be opened")))?;
+            let plain = open(old, what, sealed).ok_or_else(|| io::Error::other(crate::t!("passwords.error.not_opened", what = what)))?;
             *sealed = seal(new, what, &plain)?;
         }
         self.check = seal(new, CHECK, CHECK.as_bytes())?;
@@ -114,11 +114,11 @@ pub fn locked() -> bool {
 /// keyring keeps the key from then on (without one, this run does).
 pub fn unlock(master: &str) -> io::Result<()> {
     let vault = load()?;
-    let (salt, rounds) = vault.master.clone().ok_or_else(|| io::Error::other("no master password is set"))?;
-    let salt = unhex(&salt).ok_or_else(|| io::Error::other("the master password's salt is damaged"))?;
+    let (salt, rounds) = vault.master.clone().ok_or_else(|| io::Error::other(crate::t!("passwords.error.no_master")))?;
+    let salt = unhex(&salt).ok_or_else(|| io::Error::other(crate::t!("passwords.error.salt_damaged")))?;
     let key = derive(master, &salt, rounds);
     if !vault.opens_with(&key) {
-        return Err(io::Error::new(io::ErrorKind::PermissionDenied, "the master password is wrong"));
+        return Err(io::Error::new(io::ErrorKind::PermissionDenied, crate::t!("passwords.error.wrong")));
     }
     *KEY.lock().unwrap() = Some(key);
     let _ = keep(&key);
@@ -188,7 +188,7 @@ fn ready(vault: &mut Vault) -> io::Result<Key> {
         return Ok(key);
     }
     if vault.master.is_some() {
-        return Err(io::Error::new(io::ErrorKind::PermissionDenied, "the saved passwords are locked: unlock them with the master password (Configuration › Settings › Passwords)"));
+        return Err(io::Error::new(io::ErrorKind::PermissionDenied, crate::t!("passwords.error.locked")));
     }
     let key: Key = random()?;
     keep(&key)?;
@@ -220,7 +220,7 @@ fn forget_old(what: &str) -> io::Result<()> {
 
 fn random<const N: usize>() -> io::Result<[u8; N]> {
     let mut bytes = [0; N];
-    SystemRandom::new().fill(&mut bytes).map_err(|_| io::Error::other("no random numbers"))?;
+    SystemRandom::new().fill(&mut bytes).map_err(|_| io::Error::other(crate::t!("passwords.error.no_random")))?;
     Ok(bytes)
 }
 
@@ -234,7 +234,8 @@ fn derive(master: &str, salt: &[u8], rounds: u32) -> Key {
 /// `plain` sealed under `key`, bound to `what` (a password moved to another
 /// entry does not open): the nonce, then the sealed bytes, in hex.
 fn seal(key: &Key, what: &str, plain: &[u8]) -> io::Result<String> {
-    let failed = |_| io::Error::other("the password could not be sealed");
+    let failed = |_| io::Error::other(crate::t!("passwords.error.not_sealed"));
+
     let nonce: [u8; NONCE_LEN] = random()?;
     let sealer = LessSafeKey::new(UnboundKey::new(&AES_256_GCM, key).map_err(failed)?);
     let mut sealed = plain.to_vec();

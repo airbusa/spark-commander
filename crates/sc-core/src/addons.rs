@@ -45,11 +45,11 @@ impl Addon {
     }
 
     /// What Spark Commander uses it for.
-    pub fn purpose(self) -> &'static str {
+    pub fn purpose(self) -> String {
         match self {
-            Addon::Office => "Office documents: the viewer shows Word, Excel and PowerPoint files as PDF.",
-            Addon::Media => "Video and sound, and HEIC and AVIF photos: the viewer and Quick View show them.",
-            Addon::Cloud => "Online storage: S3, Google Drive, OneDrive, Dropbox and other services.",
+            Addon::Office => crate::t!("addons.purpose.office"),
+            Addon::Media => crate::t!("addons.purpose.media"),
+            Addon::Cloud => crate::t!("addons.purpose.cloud"),
         }
     }
 
@@ -121,10 +121,10 @@ impl Builtin {
         }
     }
 
-    pub fn purpose(self) -> &'static str {
+    pub fn purpose(self) -> String {
         match self {
-            Builtin::SevenZip => "Archives: packs and unpacks 7z, zip, rar, tar and others.",
-            Builtin::Pdfium => "PDF: the viewer shows PDF files, and office documents once converted.",
+            Builtin::SevenZip => crate::t!("addons.purpose.seven_zip"),
+            Builtin::Pdfium => crate::t!("addons.purpose.pdfium"),
         }
     }
 
@@ -251,7 +251,7 @@ pub fn fetch() -> io::Result<Manifest> {
     let source = std::env::var("SC_ADDONS_MANIFEST").unwrap_or_else(|_| MANIFEST.to_owned());
     let mut text = String::new();
     open(&source)?.0.read_to_string(&mut text)?;
-    serde_json::from_str(&text).map_err(|err| io::Error::other(format!("the list of add-ons: {err}")))
+    serde_json::from_str(&text).map_err(|err| io::Error::other(crate::t!("addons.error.list", err = err)))
 }
 
 /// A URL's body and its length if known; a `file://` URL or a path reads the file.
@@ -270,7 +270,7 @@ fn open(source: &str) -> io::Result<(Box<dyn Read + Send>, Option<u64>)> {
 /// Downloads, checks and installs `release`, over what is there; `progress`
 /// gets the bytes so far. Blocks.
 pub fn install(addon: Addon, release: &Release, download: &Download, progress: &dyn Fn(u64)) -> io::Result<()> {
-    let root = folder().ok_or_else(|| io::Error::other("no data folder"))?;
+    let root = folder().ok_or_else(|| io::Error::other(crate::t!("addons.error.no_folder")))?;
     install_in(&root, addon, release, download, progress)
 }
 
@@ -289,7 +289,7 @@ fn install_in(root: &Path, addon: Addon, release: &Release, download: &Download,
         std::fs::create_dir_all(&fresh)?;
         unpack(&zip, &fresh)?;
         if !fresh.join(addon.files()[0]).exists() {
-            return Err(io::Error::other(format!("the download has no {}", addon.files()[0])));
+            return Err(io::Error::other(crate::t!("addons.error.missing_file", file = addon.files()[0])));
         }
         runnable(&fresh, addon)?;
         std::fs::write(fresh.join("version.txt"), &release.version)?;
@@ -313,7 +313,7 @@ fn install_in(root: &Path, addon: Addon, release: &Release, download: &Download,
 
 /// Removes the installed add-on.
 pub fn remove(addon: Addon) -> io::Result<()> {
-    let root = folder().ok_or_else(|| io::Error::other("no data folder"))?;
+    let root = folder().ok_or_else(|| io::Error::other(crate::t!("addons.error.no_folder")))?;
     match std::fs::remove_dir_all(root.join(addon.id())) {
         Err(err) if err.kind() != io::ErrorKind::NotFound => Err(err),
         _ => Ok(()),
@@ -341,7 +341,7 @@ fn fetch_checked(download: &Download, to: &Path, progress: &dyn Fn(u64)) -> io::
     let sum: String = digest.finish().as_ref().iter().map(|byte| format!("{byte:02x}")).collect();
     match sum.eq_ignore_ascii_case(&download.sha256) {
         true => Ok(()),
-        false => Err(io::Error::other("the download is damaged: its checksum differs")),
+        false => Err(io::Error::other(crate::t!("addons.error.damaged"))),
     }
 }
 
@@ -351,7 +351,7 @@ fn unpack(zip: &Path, dir: &Path) -> io::Result<()> {
     let done = crate::archive::seven_zip(&["x", "-y", &out], Some(zip)).output()?;
     match done.status.success() {
         true => Ok(()),
-        false => Err(io::Error::other(format!("unpacking: {}", String::from_utf8_lossy(&done.stderr).trim()))),
+        false => Err(io::Error::other(crate::t!("addons.error.unpacking", err = String::from_utf8_lossy(&done.stderr).trim()))),
     }
 }
 

@@ -20,6 +20,7 @@ use sc_core::dates::{self, Clock};
 use sc_core::menu::{self, Command};
 use sc_core::settings::{AddonUpdates, FontChoice, MenuStyle, PAGES, Settings, Blur, SidebarOpacity, TerminalOpacity, StartFont, StartMode};
 use sc_core::system::theme::Appearance;
+use sc_core::t;
 
 use crate::Commander;
 use crate::menus::toolbar_icon;
@@ -213,7 +214,7 @@ pub fn open(
     window.open_dialog(cx, move |dialog, _, cx| {
         let closing = view.clone();
         dialog
-            .title("Settings")
+            .title(t!("settings.title"))
             .width(px(WIDTH))
             .overlay_closable(false)
             .child(view.clone())
@@ -249,6 +250,24 @@ fn choices(dialog: WeakEntity<SettingsDialog>, shown: Vec<Command>, at: Option<u
                 })
             })
         })
+    }
+}
+
+/// A page's name, shown in the rail and over the page.
+fn page_name(page: &str) -> String {
+    match page {
+        "Layout" => t!("settings.page.layout"),
+        "Toolbar" => t!("settings.page.toolbar"),
+        "Display" => t!("settings.page.display"),
+        "Font" => t!("settings.page.font"),
+        "Date" => t!("settings.page.date"),
+        "Language" => t!("settings.page.language"),
+        "Edit/View" => t!("settings.page.edit_view"),
+        "Terminal" => t!("settings.page.terminal"),
+        "Operations" => t!("settings.page.operations"),
+        "Passwords" => t!("settings.page.passwords"),
+        "Add-ons" => t!("settings.page.addons"),
+        _ => page.to_owned(),
     }
 }
 
@@ -466,7 +485,7 @@ impl SettingsDialog {
                     .rounded(px(6.))
                     .cursor_pointer()
                     .child(Icon::new(ICONS[ix].clone()).size_4())
-                    .child(label)
+                    .child(page_name(label))
                     .when(!selected, |el| el.hover(|el| el.bg(subtle)))
                     .when(selected, |el| match mac {
                         Some(mac) => el.bg(mac.accent).text_color(mac.on_accent),
@@ -493,22 +512,22 @@ impl SettingsDialog {
         if sc_core::system::theme::desktop_dark().is_some() {
             return None;
         }
-        let looks = [(Appearance::System, "As the system"), (Appearance::Light, "Light"), (Appearance::Dark, "Dark")];
-        Some(GroupBox::new().outline().title("Appearance").child(
+        let looks = [Appearance::System, Appearance::Light, Appearance::Dark];
+        Some(GroupBox::new().outline().title(t!("settings.appearance.title")).child(
             RadioGroup::horizontal("appearance")
-                .children(looks.map(|(_, label)| label))
-                .selected_index(looks.iter().position(|(look, _)| *look == self.draft.appearance))
+                .children([t!("appearance.system"), t!("appearance.light"), t!("appearance.dark")])
+                .selected_index(looks.iter().position(|look| *look == self.draft.appearance))
                 .on_click(cx.listener(move |this, at: &usize, _, cx| {
-                    this.draft.appearance = looks[*at].0;
+                    this.draft.appearance = looks[*at];
                     cx.notify();
                 })),
         ))
     }
 
     fn render_tabs(&self, cx: &mut Context<Self>) -> GroupBox {
-        GroupBox::new().outline().title("Folder tabs").child(
+        GroupBox::new().outline().title(t!("settings.tabs.title")).child(
             Checkbox::new("tab-header-always")
-                .label("Show the tab header also when there is only one tab")
+                .label(t!("settings.tabs.header_always"))
                 .checked(self.draft.tab_header_always.0)
                 .on_click(cx.listener(|this, checked: &bool, _, cx| {
                     this.draft.tab_header_always = sc_core::settings::TabHeaderAlways(*checked);
@@ -518,14 +537,14 @@ impl SettingsDialog {
     }
 
     fn render_files(&self, cx: &mut Context<Self>) -> Vec<GroupBox> {
-        let folders = ["Always by name", "Like files (also by time)"];
+        let folders = [t!("settings.sort_folders.by_name"), t!("settings.sort_folders.like_files")];
         vec![
-            GroupBox::new().outline().title("Files shown").child(
+            GroupBox::new().outline().title(t!("settings.files_shown.title")).child(
                 h_flex()
                     .gap_6()
                     .child(
                         Checkbox::new("show-hidden")
-                            .label("Hidden files")
+                            .label(t!("settings.files_shown.hidden"))
                             .checked(self.draft.show_hidden)
                             .on_click(cx.listener(|this, checked: &bool, _, cx| {
                                 this.draft.show_hidden = *checked;
@@ -535,7 +554,7 @@ impl SettingsDialog {
                     .child(
                         // Linux and macOS have no system attribute.
                         Checkbox::new("show-system")
-                            .label("System files")
+                            .label(t!("settings.files_shown.system"))
                             .checked(self.draft.show_system)
                             .disabled(!cfg!(windows))
                             .on_click(cx.listener(|this, checked: &bool, _, cx| {
@@ -544,7 +563,7 @@ impl SettingsDialog {
                             })),
                     ),
             ),
-            GroupBox::new().outline().title("Sorting folders").child(
+            GroupBox::new().outline().title(t!("settings.sort_folders.title")).child(
                 RadioGroup::horizontal("folders-sort")
                     .children(folders)
                     .selected_index(Some(usize::from(self.draft.folders_like_files)))
@@ -570,12 +589,12 @@ impl SettingsDialog {
         let dim = theme.muted_foreground;
         let system = &picker.system;
         let state = match chosen {
-            None => "The system's font".to_owned(),
-            Some(_) => format!("Chosen; the system's is {}, {}", system.family, system.size),
+            None => t!("settings.font.system"),
+            Some(_) => t!("settings.font.chosen", family = system.family, size = system.size),
         };
         let (title, note, id) = match which {
-            Which::Main => ("Main window font", None, "font-system"),
-            Which::Fixed => ("Viewer", Some("Fixed-width fonts only; also the editor's and file comparison's."), "fixed-system"),
+            Which::Main => (t!("settings.font.main"), None, "font-system"),
+            Which::Fixed => (t!("settings.font.fixed"), Some(t!("settings.font.fixed_note")), "fixed-system"),
         };
         GroupBox::new().outline().title(title).child(
             v_flex()
@@ -589,7 +608,7 @@ impl SettingsDialog {
                         .child(
                             Button::new(id)
                                 .outline()
-                                .label("As the system")
+                                .label(t!("settings.font.as_system"))
                                 .disabled(chosen.is_none())
                                 .on_click(cx.listener(move |this, _, window, cx| {
                                     *this.chosen_mut(which) = None;
@@ -621,12 +640,12 @@ impl SettingsDialog {
         let pattern = self.pattern.clone();
         let clocks = [Clock::System, Clock::H24, Clock::H12];
         vec![
-            GroupBox::new().outline().title("Date").child(
+            GroupBox::new().outline().title(t!("settings.date.title")).child(
                 v_flex()
                     .gap_2()
                     .child(
                         RadioGroup::vertical("date-kind")
-                            .children([format!("As the system: {}", dates::system_date(now)), "Custom:".to_owned()])
+                            .children([t!("settings.date.as_system", date = dates::system_date(now)), t!("settings.date.custom")])
                             .selected_index(Some(usize::from(custom)))
                             .on_click(cx.listener(move |this, at: &usize, _, cx| {
                                 this.draft.date.custom = (*at == 1).then(|| pattern.read(cx).value().to_string());
@@ -638,23 +657,23 @@ impl SettingsDialog {
                             .pl_6()
                             .gap_1()
                             .child(div().w(px(240.)).child(Input::new(&self.pattern).disabled(!custom)))
-                            .child(div().text_color(dim).child("yyyy year, MM month (MMM its name), dd day (ddd the weekday)")),
+                            .child(div().text_color(dim).child(t!("settings.date.pattern_help"))),
                     ),
             ),
-            GroupBox::new().outline().title("Time").child(
+            GroupBox::new().outline().title(t!("settings.time.title")).child(
                 RadioGroup::horizontal("clock")
-                    .children(["As the system", "24 hours (14:05)", "12 hours (2:05 PM)"])
+                    .children([t!("settings.time.as_system"), t!("settings.time.h24"), t!("settings.time.h12")])
                     .selected_index(clocks.iter().position(|clock| *clock == self.draft.date.clock))
                     .on_click(cx.listener(move |this, at: &usize, _, cx| {
                         this.draft.date.clock = clocks[*at];
                         cx.notify();
                     })),
             ),
-            GroupBox::new().outline().title("Shown as").child(
+            GroupBox::new().outline().title(t!("settings.date.shown_as")).child(
                 h_flex()
                     .gap_2()
                     .child(dates::preview(&self.draft.date, now))
-                    .child(div().text_color(dim).child("in the file lists; dialogs add the seconds")),
+                    .child(div().text_color(dim).child(t!("settings.date.shown_as_note"))),
             ),
         ]
     }
@@ -665,8 +684,8 @@ impl SettingsDialog {
         let theme = cx.theme();
         let system = sc_core::l10n::languages().into_iter().find(|language| Some(&language.tag) == self.system_language.as_ref());
         let first = match system {
-            Some(language) => sc_core::t!("settings.language.system_named", language = language.native),
-            None => sc_core::t!("settings.language.system"),
+            Some(language) => t!("settings.language.system_named", language = language.native),
+            None => t!("settings.language.system"),
         };
         let rows = std::iter::once((None, first)).chain(sc_core::l10n::languages().into_iter().map(|language| {
             let text = match language.native == language.name {
@@ -689,7 +708,8 @@ impl SettingsDialog {
                     cx.notify();
                 }))
         });
-        GroupBox::new().outline().title(sc_core::t!("settings.language.title")).child(
+        GroupBox::new().outline().title(t!("settings.language.title")
+).child(
             v_flex()
                 .id("languages")
                 .h(px(380.))
@@ -705,28 +725,28 @@ impl SettingsDialog {
         let viewer = &self.draft.viewer;
         let start = START_MODES.iter().position(|&mode| mode == viewer.start);
         let font = START_FONTS.iter().position(|&font| font == viewer.font);
-        let width = |label: &'static str, input: &Entity<InputState>| {
+        let width = |label: String, input: &Entity<InputState>| {
             h_flex()
                 .gap_2()
                 .child(label)
                 .child(div().w(px(70.)).child(Input::new(input)))
         };
-        let start = v_flex().gap_2().child("Display at startup:").child(
+        let start = v_flex().gap_2().child(t!("settings.viewer.start.label")).child(
             RadioGroup::vertical("viewer-start")
-                .children(["Text", "Binary", "Hex", "Autodetect"])
+                .children([t!("settings.viewer.start.text"), t!("settings.viewer.start.binary"), t!("settings.viewer.start.hex"), t!("settings.viewer.start.auto")])
                 .selected_index(start)
                 .on_click(cx.listener(|this, ix: &usize, _, cx| {
                     this.draft.viewer.start = START_MODES[*ix];
                     cx.notify();
                 })),
         );
-        let font = v_flex().gap_2().child("Font at startup:").child(
+        let font = v_flex().gap_2().child(t!("settings.viewer.font.label")).child(
             RadioGroup::vertical("viewer-font")
                 .children([
-                    "ANSI (Windows)",
-                    "ASCII (DOS)",
-                    "Variable width",
-                    "Autodetect",
+                    t!("settings.viewer.font.ansi"),
+                    t!("settings.viewer.font.ascii"),
+                    t!("settings.viewer.font.variable"),
+                    t!("settings.viewer.font.auto"),
                 ])
                 .selected_index(font)
                 .on_click(cx.listener(|this, ix: &usize, _, cx| {
@@ -734,7 +754,7 @@ impl SettingsDialog {
                     cx.notify();
                 })),
         );
-        GroupBox::new().outline().title("Viewer for F3").child(
+        GroupBox::new().outline().title(t!("settings.viewer.title")).child(
             v_flex()
                 .gap_4()
                 .child(
@@ -746,10 +766,10 @@ impl SettingsDialog {
                         .child(
                             v_flex()
                                 .gap_2()
-                                .child("Show:")
+                                .child(t!("settings.viewer.show"))
                                 .child(
                                     Checkbox::new("viewer-wrap")
-                                        .label("Wrap text")
+                                        .label(t!("settings.viewer.wrap"))
                                         .checked(viewer.wrap)
                                         .on_click(cx.listener(|this, checked: &bool, _, cx| {
                                             this.draft.viewer.wrap = *checked;
@@ -759,7 +779,7 @@ impl SettingsDialog {
                                 .child(
                                     // Beside the editor too.
                                     Checkbox::new("viewer-minimap")
-                                        .label("Minimap")
+                                        .label(t!("settings.viewer.minimap"))
                                         .checked(viewer.minimap)
                                         .on_click(cx.listener(|this, checked: &bool, _, cx| {
                                             this.draft.viewer.minimap = *checked;
@@ -771,9 +791,9 @@ impl SettingsDialog {
                 .child(
                     h_flex()
                         .gap_6()
-                        .child("Display width (characters):")
-                        .child(width("Text", &self.text_width))
-                        .child(width("Binary", &self.binary_width)),
+                        .child(t!("settings.viewer.width.label"))
+                        .child(width(t!("settings.viewer.width.text"), &self.text_width))
+                        .child(width(t!("settings.viewer.width.binary"), &self.binary_width)),
                 ),
         )
     }
@@ -783,13 +803,13 @@ impl SettingsDialog {
         let external = self.external.clone();
         let browse = Button::new("editor-browse")
             .outline()
-            .label("Browse...")
+            .label(t!("settings.editor.browse"))
             .on_click(cx.listener(move |_, _, window, cx| {
                 let paths = cx.prompt_for_paths(PathPromptOptions {
                     files: true,
                     directories: false,
                     multiple: false,
-                    prompt: Some("Choose".into()),
+                    prompt: Some(t!("settings.editor.choose").into()),
                 });
                 let external = external.clone();
                 cx.spawn_in(window, async move |_, cx| {
@@ -807,20 +827,20 @@ impl SettingsDialog {
                 })
                 .detach();
             }));
-        GroupBox::new().outline().title("Editor for F4").child(
+        GroupBox::new().outline().title(t!("settings.editor.title")).child(
             v_flex()
                 .gap_3()
                 .child(
                     h_flex()
                         .gap_2()
-                        .child("Built-in editor (F4) opens files up to")
+                        .child(t!("settings.editor.limit"))
                         .child(div().w(px(70.)).child(Input::new(&self.limit)))
-                        .child("MB"),
+                        .child(t!("settings.editor.limit_unit")),
                 )
                 .child(
                     v_flex()
                         .gap_1()
-                        .child("External editor (Ctrl+Shift+F4):")
+                        .child(t!("settings.editor.external"))
                         .child(
                             h_flex()
                                 .gap_2()
@@ -830,24 +850,20 @@ impl SettingsDialog {
                         .child(
                             div()
                                 .text_color(theme.muted_foreground)
-                                .child("%1 is the file, else it goes last; e.g. code --wait %1"),
+                                .child(t!("settings.editor.external_help")),
                         ),
                 ),
         )
     }
 
     fn render_menus(&self, cx: &mut Context<Self>) -> GroupBox {
-        let styles = [
-            (MenuStyle::Automatic, "Automatic: a ☰ button on GNOME, a menu bar elsewhere"),
-            (MenuStyle::Bar, "Menu bar"),
-            (MenuStyle::Button, "☰ button in the title bar"),
-        ];
-        GroupBox::new().outline().title("Menus").child(
+        let styles = [MenuStyle::Automatic, MenuStyle::Bar, MenuStyle::Button];
+        GroupBox::new().outline().title(t!("settings.menus.title")).child(
             RadioGroup::vertical("menu-style")
-                .children(styles.map(|(_, label)| label))
-                .selected_index(styles.iter().position(|(style, _)| *style == self.draft.menu))
+                .children([t!("settings.menus.automatic"), t!("settings.menus.bar"), t!("settings.menus.button")])
+                .selected_index(styles.iter().position(|style| *style == self.draft.menu))
                 .on_click(cx.listener(move |this, at: &usize, _, cx| {
-                    this.draft.menu = styles[*at].0;
+                    this.draft.menu = styles[*at];
                     cx.notify();
                 })),
         )
@@ -856,17 +872,17 @@ impl SettingsDialog {
     /// The operation queue: how long done operations stay, how fast links download.
     fn render_queue(&self, cx: &mut Context<Self>) -> GroupBox {
         let muted = cx.theme().muted_foreground;
-        let row = |label: &'static str, input: &Entity<InputState>, unit: &'static str, about: &'static str| {
+        let row = |label: String, input: &Entity<InputState>, unit: String, about: String| {
             v_flex()
                 .gap_1()
                 .child(h_flex().gap_2().child(label).child(div().w(px(80.)).child(Input::new(input))).child(unit))
                 .child(div().whitespace_normal().text_color(muted).child(about))
         };
-        GroupBox::new().outline().title("Operation queue").child(
+        GroupBox::new().outline().title(t!("settings.queue.title")).child(
             v_flex()
                 .gap_4()
-                .child(row("Clear done operations after", &self.clear_after, "minutes", "0: as soon as they finish. Failed and cancelled ones stay until cleared."))
-                .child(row("Download speed limit", &self.download_limit, "KB/s", "Download from Link, and copies from FTP and SFTP servers; also those running. 0: no limit.")),
+                .child(row(t!("settings.queue.clear_after"), &self.clear_after, t!("settings.queue.clear_after_unit"), t!("settings.queue.clear_after_help")))
+                .child(row(t!("settings.queue.download_limit"), &self.download_limit, t!("settings.queue.download_limit_unit"), t!("settings.queue.download_limit_help"))),
         )
     }
 
@@ -876,7 +892,7 @@ impl SettingsDialog {
         let this = cx.weak_entity();
         let small = |id: (&'static str, usize), icon: Lucide| Button::new(id).ghost().small().icon(Icon::new(icon));
         let rows = shown.iter().enumerate().map(|(at, &command)| {
-            let replace = Button::new(("toolbar-replace", at)).ghost().small().label("Replace…").dropdown_menu(choices(this.clone(), shown.clone(), Some(at)));
+            let replace = Button::new(("toolbar-replace", at)).ghost().small().label(t!("settings.toolbar.replace")).dropdown_menu(choices(this.clone(), shown.clone(), Some(at)));
             let change = |change: fn(&mut Vec<Command>, usize)| {
                 let this = this.clone();
                 move |_: &ClickEvent, _: &mut Window, cx: &mut App| {
@@ -891,24 +907,24 @@ impl SettingsDialog {
                 .children(toolbar_icon(command).map(|icon| Icon::new(icon).size_4().mr_1()))
                 .child(div().flex_1().child(menu::name(command)))
                 .child(replace)
-                .child(small(("toolbar-up", at), Lucide::ChevronUp).tooltip("Move up").disabled(at == 0).on_click(change(|bar, at| bar.swap(at, at - 1))))
-                .child(small(("toolbar-down", at), Lucide::ChevronDown).tooltip("Move down").disabled(at + 1 == shown.len()).on_click(change(|bar, at| bar.swap(at, at + 1))))
-                .child(small(("toolbar-remove", at), Lucide::X).tooltip("Remove").on_click(change(|bar, at| {
+                .child(small(("toolbar-up", at), Lucide::ChevronUp).tooltip(t!("settings.toolbar.move_up")).disabled(at == 0).on_click(change(|bar, at| bar.swap(at, at - 1))))
+                .child(small(("toolbar-down", at), Lucide::ChevronDown).tooltip(t!("settings.toolbar.move_down")).disabled(at + 1 == shown.len()).on_click(change(|bar, at| bar.swap(at, at + 1))))
+                .child(small(("toolbar-remove", at), Lucide::X).tooltip(t!("settings.toolbar.remove")).on_click(change(|bar, at| {
                     bar.remove(at);
                 })))
         });
         let rows: Vec<_> = rows.collect();
         let buttons = h_flex()
             .gap_2()
-            .child(Button::new("toolbar-add").outline().label("Add Button…").dropdown_menu(choices(this.clone(), shown.clone(), None)))
-            .child(Button::new("toolbar-default").outline().label("Restore Default").disabled(self.draft.toolbar == Default::default()).on_click(cx.listener(
+            .child(Button::new("toolbar-add").outline().label(t!("settings.toolbar.add")).dropdown_menu(choices(this.clone(), shown.clone(), None)))
+            .child(Button::new("toolbar-default").outline().label(t!("settings.toolbar.restore_default")).disabled(self.draft.toolbar == Default::default()).on_click(cx.listener(
                 |this, _, _, cx| {
                     this.draft.toolbar = Default::default();
                     cx.notify();
                 },
             )));
-        let place = "Under the menu bar; in the title bar where the menus are behind the ☰ button, as GNOME's apps have them. With no buttons, none.";
-        GroupBox::new().outline().title("Toolbar buttons").child(
+        let place = t!("settings.toolbar.place");
+        GroupBox::new().outline().title(t!("settings.toolbar.title")).child(
             v_flex()
                 .gap_2()
                 .child(div().whitespace_normal().text_color(cx.theme().muted_foreground).child(place))
@@ -938,15 +954,11 @@ impl SettingsDialog {
     fn render_passwords(&self, cx: &mut Context<Self>) -> GroupBox {
         use crate::dialogs::passwords_dialog::{Ask, ask};
         let (saved, master, locked) = self.passwords;
-        let count = match saved {
-            1 => "1 password is saved".to_owned(),
-            n => format!("{n} passwords are saved"),
-        };
-        let place = format!("{count} (servers', shares', encrypted drives'), sealed in the settings folder; the key that opens them is in this computer's keyring.");
+        let place = t!("settings.passwords.saved", count = saved);
         let state = match (master, locked) {
-            (_, true) => "They are locked on this computer: the master password opens them.",
-            (true, false) => "A master password is set: with the settings folder copied, they open on another computer once it is typed there.",
-            (false, false) => "No master password is set: with the settings folder copied, they do not open on another computer; they are typed again there.",
+            (_, true) => t!("settings.passwords.locked"),
+            (true, false) => t!("settings.passwords.master_set"),
+            (false, false) => t!("settings.passwords.no_master"),
         };
         let this = cx.weak_entity();
         let read_again = move |_: &mut Window, cx: &mut App| {
@@ -955,14 +967,14 @@ impl SettingsDialog {
         let mut buttons = h_flex().gap_2();
         if locked {
             let done = read_again.clone();
-            buttons = buttons.child(Button::new("passwords-unlock").primary().label("Unlock…").on_click(move |_, window, cx| ask(Ask::Unlock, window, cx, done.clone())));
+            buttons = buttons.child(Button::new("passwords-unlock").primary().label(t!("settings.passwords.unlock")).on_click(move |_, window, cx| ask(Ask::Unlock, window, cx, done.clone())));
         } else {
             let done = read_again.clone();
-            let label = if master { "Change master password…" } else { "Set master password…" };
+            let label = if master { t!("settings.passwords.change_master") } else { t!("settings.passwords.set_master") };
             buttons = buttons.child(Button::new("passwords-master").outline().label(label).on_click(move |_, window, cx| ask(Ask::Set, window, cx, done.clone())));
         }
         if master && !locked {
-            buttons = buttons.child(Button::new("passwords-no-master").outline().label("Remove master password").on_click(move |_, window, cx| {
+            buttons = buttons.child(Button::new("passwords-no-master").outline().label(t!("settings.passwords.remove_master")).on_click(move |_, window, cx| {
                 let done = read_again.clone();
                 let removed = cx.background_spawn(async { sc_core::remote::secrets::set_master(None) });
                 window
@@ -970,7 +982,7 @@ impl SettingsDialog {
                         let removed = removed.await;
                         let _ = cx.update(|window, cx| {
                             if let Err(err) = removed {
-                                window.push_notification(Notification::error(format!("The master password was not removed: {err}")), cx);
+                                window.push_notification(Notification::error(t!("settings.passwords.not_removed", err = err)), cx);
                             }
                             done(window, cx);
                         });
@@ -978,7 +990,7 @@ impl SettingsDialog {
                     .detach();
             }));
         }
-        GroupBox::new().outline().title("Saved passwords").child(
+        GroupBox::new().outline().title(t!("settings.passwords.title")).child(
             v_flex()
                 .gap_3()
                 .child(div().whitespace_normal().child(place))
@@ -989,11 +1001,11 @@ impl SettingsDialog {
 
     /// The terminal's shell: the default one or another installed.
     fn render_shell(&self, cx: &mut Context<Self>) -> GroupBox {
-        let default = format!("Default: {}", sc_core::system::shells::default_name());
+        let default = t!("settings.shell.default", shell = sc_core::system::shells::default_name());
         let chosen = self.draft.terminal_shell.as_ref();
         let at = chosen.map_or(Some(0), |chosen| self.shells.iter().position(|shell| &shell.program == chosen).map(|ix| ix + 1));
         let programs: Vec<String> = self.shells.iter().map(|shell| shell.program.clone()).collect();
-        GroupBox::new().outline().title("Shell").child(
+        GroupBox::new().outline().title(t!("settings.shell.title")).child(
             v_flex()
                 .gap_2()
                 .child(
@@ -1006,25 +1018,25 @@ impl SettingsDialog {
                             cx.notify();
                         })),
                 )
-                .child(div().text_color(cx.theme().muted_foreground).child("New terminal tabs start it.")),
+                .child(div().text_color(cx.theme().muted_foreground).child(t!("settings.shell.note"))),
         )
     }
 
     /// The sidebar's or the `terminal`'s opacity over the desktop, and its blur.
     fn render_backdrop(&self, terminal: bool, cx: &mut Context<Self>) -> GroupBox {
         let (title, slider, opacity, blur) = match terminal {
-            false => ("Sidebar", &self.opacity, self.draft.sidebar_opacity.0, self.draft.sidebar_blur.0),
-            true => ("Terminal", &self.terminal_opacity, self.draft.terminal_opacity.0, self.draft.terminal_blur.0),
+            false => (t!("settings.backdrop.sidebar"), &self.opacity, self.draft.sidebar_opacity.0, self.draft.sidebar_blur.0),
+            true => (t!("settings.backdrop.terminal"), &self.terminal_opacity, self.draft.terminal_opacity.0, self.draft.terminal_blur.0),
         };
         let shown = match opacity {
-            100 => "100%, solid".to_owned(),
-            0 => "0%, only the desktop".to_owned(),
-            _ => format!("{opacity}%"),
+            100 => t!("settings.backdrop.solid"),
+            0 => t!("settings.backdrop.clear"),
+            _ => t!("settings.backdrop.opacity", opacity = opacity),
         };
         GroupBox::new().outline().title(title).child(
             v_flex()
                 .gap_2()
-                .child("How much it covers the desktop behind it:")
+                .child(t!("settings.backdrop.cover"))
                 .child(
                     h_flex()
                         .gap_4()
@@ -1033,7 +1045,7 @@ impl SettingsDialog {
                 )
                 .child(
                     Checkbox::new(if terminal { "terminal-blur" } else { "sidebar-blur" })
-                        .label("Blur the desktop behind it")
+                        .label(t!("settings.backdrop.blur"))
                         .checked(blur)
                         .on_click(cx.listener(move |this, checked: &bool, window, cx| {
                             match terminal {
@@ -1052,7 +1064,7 @@ impl SettingsDialog {
     fn render_addons(&self, cx: &mut Context<Self>) -> Vec<GroupBox> {
         let state = crate::addons::entity(cx).read(cx);
         let dim = cx.theme().muted_foreground;
-        let row = |label: &'static str, value: AnyElement| {
+        let row = |label: String, value: AnyElement| {
             h_flex()
                 .gap_2()
                 .child(div().w(px(80.)).flex_none().text_color(dim).child(label))
@@ -1062,25 +1074,22 @@ impl SettingsDialog {
             let link = Button::new(id).link().label(shown).on_click(move |_, _, cx| cx.open_url(url));
             h_flex().child(link).into_any_element()
         };
-        let mut groups = vec![GroupBox::new().child(div().text_color(dim).child(
-            "Spark Commander uses these programs of other projects for some of what it does. The add-ons \
-             are downloaded apart from it, when you choose; 7-Zip and PDFium come with it.",
-        ))];
+        let mut groups = vec![GroupBox::new().child(div().text_color(dim).child(t!("settings.addons.intro")))];
         groups.extend(Addon::ALL.into_iter().map(|addon| {
             let offer = state.manifest.as_ref().and_then(|manifest| manifest.offer(addon));
             let offered = offer.map(|(release, download)| (release.version.clone(), download.size));
             let presence = state.presence.get(&addon).cloned().unwrap_or(Presence::Missing);
             let installed = match &presence {
                 Presence::Ours(version) => version.clone(),
-                Presence::Elsewhere(_) => "comes with Spark Commander".to_owned(),
-                Presence::Missing => "none".to_owned(),
+                Presence::Elsewhere(_) => t!("settings.addons.installed.builtin"),
+                Presence::Missing => t!("settings.addons.installed.none"),
             };
             let online = match &offered {
                 Some((version, size)) => format!("{version} ({})", crate::addons::megabytes(*size)),
-                None if state.checking => "looking...".to_owned(),
-                None if state.check_error.is_some() => "unknown".to_owned(),
-                None if state.manifest.is_some() => "none for this system".to_owned(),
-                None => "not looked up yet".to_owned(),
+                None if state.checking => t!("settings.addons.online.looking"),
+                None if state.check_error.is_some() => t!("settings.addons.online.unknown"),
+                None if state.manifest.is_some() => t!("settings.addons.online.none"),
+                None => t!("settings.addons.online.not_yet"),
             };
             let progress = state.progress.get(&addon).copied();
             // Something to get: none here, or another version online.
@@ -1093,14 +1102,14 @@ impl SettingsDialog {
                 .gap_2()
                 .child(
                     Button::new(("addon-get", addon as usize))
-                        .label("Download")
+                        .label(t!("settings.addons.download"))
                         .disabled(!newer || progress.is_some())
                         .on_click(move |_, _, cx| crate::addons::install(addon, cx)),
                 )
                 .when(matches!(presence, Presence::Ours(_)), |el| {
                     el.child(
                         Button::new(("addon-remove", addon as usize))
-                            .label("Remove")
+                            .label(t!("settings.addons.remove"))
                             .disabled(progress.is_some())
                             .on_click(move |_, _, cx| crate::addons::remove(addon, cx)),
                     )
@@ -1119,19 +1128,15 @@ impl SettingsDialog {
                                     .flex_1()
                                     .min_w_0()
                                     .gap_1()
-                                    .child(row("Website", website(site, addon.website())))
-                                    .child(row("File", addon.files().join(", ").into_any_element()))
-                                    .child(row("Installed", installed.into_any_element()))
-                                    .child(row("Online", online.into_any_element())),
+                                    .child(row(t!("settings.addons.website"), website(site, addon.website())))
+                                    .child(row(t!("settings.addons.file"), addon.files().join(", ").into_any_element()))
+                                    .child(row(t!("settings.addons.installed.label"), installed.into_any_element()))
+                                    .child(row(t!("settings.addons.online.label"), online.into_any_element())),
                             )
                             .child(buttons),
                     )
                     .when_some(progress, |el, (done, of)| {
-                        el.child(format!(
-                            "Downloading: {} of {}",
-                            crate::addons::megabytes(done),
-                            crate::addons::megabytes(of)
-                        ))
+                        el.child(t!("settings.addons.downloading", done = crate::addons::megabytes(done), size = crate::addons::megabytes(of)))
                     })
                     .when_some(state.failed.get(&addon), |el, why| {
                         el.child(div().text_color(cx.theme().danger).child(why.clone()))
@@ -1147,26 +1152,26 @@ impl SettingsDialog {
                     .child(
                         v_flex()
                             .gap_1()
-                            .child(row("Website", website(site, builtin.website())))
-                            .child(row("File", builtin.file().into_any_element()))
-                            .child(row("Version", format!("{}, comes with Spark Commander", builtin.version()).into_any_element())),
+                            .child(row(t!("settings.addons.website"), website(site, builtin.website())))
+                            .child(row(t!("settings.addons.file"), builtin.file().into_any_element()))
+                            .child(row(t!("settings.addons.version"), t!("settings.addons.builtin_version", version = builtin.version()).into_any_element())),
                     ),
             )
         }));
         let looked_up = match (state.checking, &state.check_error, &state.manifest) {
-            (true, _, _) => "Looking for updates...".to_owned(),
-            (false, Some(err), _) => format!("Could not look for updates: {err}"),
-            (false, None, Some(_)) => "The list of add-ons is up to date.".to_owned(),
+            (true, _, _) => t!("settings.addons.checking"),
+            (false, Some(err), _) => t!("settings.addons.check_failed", err = err),
+            (false, None, Some(_)) => t!("settings.addons.up_to_date"),
             (false, None, None) => String::new(),
         };
         let checking = state.checking;
         groups.push(
-            GroupBox::new().outline().title("Offers and updates").child(
+            GroupBox::new().outline().title(t!("settings.addons.offers")).child(
                 v_flex()
                     .gap_2()
                     .child(
                         Checkbox::new("addon-never-offer")
-                            .label("Never offer add-ons when a file needs one")
+                            .label(t!("settings.addons.never_offer"))
                             .checked(self.draft.never_offer_addons)
                             .on_click(cx.listener(|this, checked: &bool, _, cx| {
                                 this.draft.never_offer_addons = *checked;
@@ -1175,7 +1180,7 @@ impl SettingsDialog {
                     )
                     .child(
                         Checkbox::new("addon-updates")
-                            .label("Look for add-on updates at start and daily, and offer them")
+                            .label(t!("settings.addons.check_daily"))
                             .checked(self.draft.addon_updates.0)
                             .on_click(cx.listener(|this, checked: &bool, _, cx| {
                                 this.draft.addon_updates = AddonUpdates(*checked);
@@ -1187,7 +1192,7 @@ impl SettingsDialog {
                             .gap_4()
                             .child(
                                 Button::new("addon-check")
-                                    .label("Look now")
+                                    .label(t!("settings.addons.check_now"))
                                     .disabled(checking)
                                     .on_click(|_, _, cx| crate::addons::check(false, cx)),
                             )
@@ -1248,7 +1253,7 @@ impl SettingsDialog {
                         _ if fluent => el.text_xl().font_semibold(),
                         _ => el.text_lg().font_semibold(),
                     })
-                    .child(title),
+                    .child(page_name(title)),
             )
             .child(
                 v_flex()
@@ -1285,7 +1290,7 @@ fn buttons(view: &Entity<SettingsDialog>, cx: &App) -> impl IntoElement {
         .child(
             Button::new("settings-ok")
                 .primary()
-                .label("OK")
+                .label(t!("settings.ok"))
                 .min_w(px(80.))
                 .on_click(move |_, window, cx| {
                     ok.update(cx, |this, cx| this.apply(window, cx));
@@ -1295,7 +1300,7 @@ fn buttons(view: &Entity<SettingsDialog>, cx: &App) -> impl IntoElement {
         .child(
             Button::new("settings-cancel")
                 .outline()
-                .label("Cancel")
+                .label(t!("settings.cancel"))
                 .min_w(px(80.))
                 .on_click(move |_, window, cx| {
                     cancel.update(cx, |this, cx| this.untry(window, cx));
@@ -1305,7 +1310,7 @@ fn buttons(view: &Entity<SettingsDialog>, cx: &App) -> impl IntoElement {
         .child(
             Button::new("settings-apply")
                 .outline()
-                .label("Apply")
+                .label(t!("settings.apply"))
                 .min_w(px(80.))
                 .disabled(!changed)
                 .on_click(move |_, window, cx| apply.update(cx, |this, cx| this.apply(window, cx))),

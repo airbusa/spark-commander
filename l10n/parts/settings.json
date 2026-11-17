@@ -1,0 +1,802 @@
+{
+  "about.addons": {
+    "description": "Help › About: heading over the add-ons, downloaded apart from the app.",
+    "message": "Add-ons, downloaded when you choose"
+  },
+  "about.libraries": {
+    "description": "Help › About: heading over the libraries the app is built on.",
+    "message": "Built on"
+  },
+  "about.licence": {
+    "description": "Help › About: before the app's licence's name (a link, left in English).",
+    "message": "Licence:"
+  },
+  "about.made_with": {
+    "description": "Help › About: the heading over the list of other projects' work.",
+    "message": "Made with the work of these projects"
+  },
+  "about.part.alacritty_terminal": {
+    "description": "Help › About: what alacritty_terminal does in the app.",
+    "message": "The built-in terminal's screen and shell"
+  },
+  "about.part.encoding_rs": {
+    "description": "Help › About: what encoding_rs does in the app (text in other character sets).",
+    "message": "Code pages"
+  },
+  "about.part.gpui": {
+    "description": "Help › About: what GPUI (made for the Zed editor) does in the app.",
+    "message": "The window, drawing and input (Zed's)"
+  },
+  "about.part.gpui_kit": {
+    "description": "Help › About: what GPUI Kit does in the app.",
+    "message": "Controls: lists, menus, fields, the editor"
+  },
+  "about.part.html5ever": {
+    "description": "Help › About: what html5ever does in the app.",
+    "message": "HTML and e-books in the viewer"
+  },
+  "about.part.image": {
+    "description": "Help › About: what the image library does in the app (reads pictures).",
+    "message": "Pictures"
+  },
+  "about.part.keyring": {
+    "description": "Help › About: what the keyring library does in the app.",
+    "message": "Passwords in the system's keyring"
+  },
+  "about.part.lucide": {
+    "description": "Help › About: what Lucide gives the app.",
+    "message": "Icons"
+  },
+  "about.part.material_icons": {
+    "description": "Help › About: what Material Icon Theme gives the app.",
+    "message": "File and folder icons"
+  },
+  "about.part.pdfium_render": {
+    "description": "Help › About: what pdfium-render does in the app (lets the app's code use PDFium).",
+    "message": "PDFium from Rust"
+  },
+  "about.part.ratatui": {
+    "description": "Help › About: what ratatui does: scmd, the app's version for text terminals (scmd stays as it is).",
+    "message": "scmd, the terminal version"
+  },
+  "about.part.russh": {
+    "description": "Help › About: what russh does in the app.",
+    "message": "SSH and SFTP"
+  },
+  "about.part.rustls": {
+    "description": "Help › About: what rustls does in the app.",
+    "message": "TLS"
+  },
+  "about.part.serde": {
+    "description": "Help › About: what serde does in the app (reads and writes the settings files).",
+    "message": "Settings files"
+  },
+  "about.part.similar": {
+    "description": "Help › About: what similar does in the app: the Compare By Content command; use that command's name.",
+    "message": "Compare By Content"
+  },
+  "about.part.suppaftp": {
+    "description": "Help › About: what suppaftp does in the app.",
+    "message": "FTP and FTPS"
+  },
+  "about.part.tokio": {
+    "description": "Help › About: what tokio does in the app.",
+    "message": "Network work in the background"
+  },
+  "about.part.trash": {
+    "description": "Help › About: what the trash library does in the app (moves files to the system's trash).",
+    "message": "The trash"
+  },
+  "about.part.tree_sitter": {
+    "description": "Help › About: what tree-sitter does in the app (syntax colouring).",
+    "message": "Code's colours in the viewer and editor"
+  },
+  "about.part.zbus": {
+    "description": "Help › About: what zbus does in the app.",
+    "message": "D-Bus: the desktop, devices, KDE Connect"
+  },
+  "about.shipped": {
+    "description": "Help › About: heading over the projects whose work comes with the app (7-Zip, PDFium, icons).",
+    "message": "Comes with it"
+  },
+  "about.tagline": {
+    "description": "Help › About: what the app is, under its version.",
+    "message": "A twin-panel file manager, free software."
+  },
+  "about.title": {
+    "description": "Help › About: the dialog's title.",
+    "message": "About Spark Commander"
+  },
+  "about.version": {
+    "description": "Help › About: under the app's name; version = its number, e.g. 0.9.2.",
+    "message": "Version {version}"
+  },
+  "activity.clear": {
+    "description": "Commands › Activity Log: button that empties the log; keep it short.",
+    "message": "Clear"
+  },
+  "activity.clear_failed": {
+    "description": "Commands › Activity Log: notification; err = the system's reason, e.g. Permission denied.",
+    "message": "Could not clear the log: {err}"
+  },
+  "activity.empty": {
+    "description": "Commands › Activity Log: shown while the log is empty.",
+    "message": "Nothing done yet."
+  },
+  "activity.title": {
+    "description": "Commands › Activity Log: the dialog's title, as the menu item.",
+    "message": "Activity Log"
+  },
+  "addons.error.damaged": {
+    "description": "Why an add-on could not be installed, lowercase.",
+    "message": "the download is damaged: its checksum differs"
+  },
+  "addons.error.list": {
+    "description": "Why looking for add-ons failed, shown after Could not look for updates:, lowercase; err = the reason, e.g. expected value at line 1 column 1.",
+    "message": "the list of add-ons: {err}"
+  },
+  "addons.error.missing_file": {
+    "description": "Why an add-on could not be installed, lowercase; file = the program it lacks, e.g. rclone.exe.",
+    "message": "the download has no {file}"
+  },
+  "addons.error.no_folder": {
+    "description": "Why an add-on could not be installed or removed (the system names no folder for the app's data), lowercase.",
+    "message": "no data folder"
+  },
+  "addons.error.unpacking": {
+    "description": "Why an add-on could not be installed: its zip did not unpack, lowercase; err = 7-Zip's message.",
+    "message": "unpacking: {err}"
+  },
+  "addons.installed": {
+    "description": "Notification after an add-on's download; addon = its name, e.g. rclone; version = e.g. 1.75.2.",
+    "message": "{addon} {version} is installed."
+  },
+  "addons.megabytes": {
+    "description": "A download's size in megabytes; size = the number, e.g. 24.3.",
+    "message": "{size} MB"
+  },
+  "addons.offer.never": {
+    "description": "Button of the dialog offering a missing add-on: goes on and never offers add-ons again.",
+    "message": "Never show again"
+  },
+  "addons.offer.no": {
+    "description": "Button of the dialog offering a missing add-on: goes on without it; keep it short.",
+    "message": "No"
+  },
+  "addons.offer.text": {
+    "description": "Dialog offering a missing add-on; name = the file opened, e.g. movie.mkv; addon = the add-on's name, e.g. mpv (libmpv). Settings > Add-ons is the settings dialog's page.",
+    "message": "{name} needs an add-on that is not installed: {addon}. Download it in Settings > Add-ons?"
+  },
+  "addons.offer.title": {
+    "description": "Title of the dialog offering a missing add-on a file needs.",
+    "message": "Add-on"
+  },
+  "addons.offer.yes": {
+    "description": "Button of the dialog offering a missing add-on: opens Settings › Add-ons; keep it short.",
+    "message": "Yes"
+  },
+  "addons.purpose.cloud": {
+    "description": "Settings › Add-ons and Help › About: what the rclone add-on does.",
+    "message": "Online storage: S3, Google Drive, OneDrive, Dropbox and other services."
+  },
+  "addons.purpose.media": {
+    "description": "Settings › Add-ons and Help › About: what the libmpv add-on does.",
+    "message": "Video and sound, and HEIC and AVIF photos: the viewer and Quick View show them."
+  },
+  "addons.purpose.office": {
+    "description": "Settings › Add-ons and Help › About: what the Craft tools add-on does.",
+    "message": "Office documents: the viewer shows Word, Excel and PowerPoint files as PDF."
+  },
+  "addons.purpose.pdfium": {
+    "description": "Settings › Add-ons and Help › About: what PDFium, which comes with the app, does.",
+    "message": "PDF: the viewer shows PDF files, and office documents once converted."
+  },
+  "addons.purpose.seven_zip": {
+    "description": "Settings › Add-ons and Help › About: what 7-Zip, which comes with the app, does.",
+    "message": "Archives: packs and unpacks 7z, zip, rar, tar and others."
+  },
+  "addons.update": {
+    "description": "Button in the notification offering add-on updates: installs them; keep it short.",
+    "message": "Update"
+  },
+  "addons.updates": {
+    "description": "Notification offering add-on updates; names = the add-ons with their new versions, e.g. rclone 1.75.2, mpv (libmpv) 0.40.",
+    "message": "Add-on updates: {names}"
+  },
+  "passwords.about.set": {
+    "description": "Master Password dialog: the explanation at its top.",
+    "message": "With a master password, the saved passwords open on another computer once it is typed there, the settings folder copied. Forgotten, only they are lost: they are typed again."
+  },
+  "passwords.about.unlock": {
+    "description": "Unlock Saved Passwords dialog: the explanation at its top.",
+    "message": "The settings came from another computer, or this one keeps no keyring: the master password opens the saved passwords here."
+  },
+  "passwords.cancel": {
+    "description": "Master password dialogs: the button that closes it; keep it short.",
+    "message": "Cancel"
+  },
+  "passwords.done.set": {
+    "description": "Notification after a master password was set or changed.",
+    "message": "The master password is set."
+  },
+  "passwords.done.unlocked": {
+    "description": "Notification after the master password unlocked the saved passwords.",
+    "message": "The saved passwords are open."
+  },
+  "passwords.error.locked": {
+    "description": "Error when a saved password is needed but the passwords are locked, lowercase; Configuration › Settings › Passwords is the menu path to the page: use the menus' and page's own words.",
+    "message": "the saved passwords are locked: unlock them with the master password (Configuration › Settings › Passwords)"
+  },
+  "passwords.error.no_master": {
+    "description": "Error while unlocking the saved passwords, lowercase (the app capitalizes it where it stands alone).",
+    "message": "no master password is set"
+  },
+  "passwords.error.no_random": {
+    "description": "Error when the system gave no random numbers to seal a password with, lowercase.",
+    "message": "no random numbers"
+  },
+  "passwords.error.not_opened": {
+    "description": "Error while the saved passwords are sealed again, lowercase (the app capitalizes it where it stands alone); what = the server it is for, e.g. sftp://me@example.com:22.",
+    "message": "the password for {what} cannot be opened"
+  },
+  "passwords.error.not_sealed": {
+    "description": "Error when a password could not be encrypted, lowercase.",
+    "message": "the password could not be sealed"
+  },
+  "passwords.error.salt_damaged": {
+    "description": "Error while unlocking the saved passwords (a stored random value is unreadable), lowercase (the app capitalizes it where it stands alone).",
+    "message": "the master password's salt is damaged"
+  },
+  "passwords.error.wrong": {
+    "description": "Error while unlocking the saved passwords, lowercase (the app capitalizes it where it stands alone).",
+    "message": "the master password is wrong"
+  },
+  "passwords.field.again": {
+    "description": "Master Password dialog: the label before the field where the new password is typed a second time; keep it short.",
+    "message": "Again"
+  },
+  "passwords.field.master": {
+    "description": "Master password dialogs: the label before the password field.",
+    "message": "Master password"
+  },
+  "passwords.locked_note": {
+    "description": "Notification soon after the start when the settings came from another computer.",
+    "message": "The saved passwords are locked on this computer: the master password opens them."
+  },
+  "passwords.ok": {
+    "description": "Master password dialogs: the button that confirms; keep it short.",
+    "message": "OK"
+  },
+  "passwords.problem.differ": {
+    "description": "Master Password dialog: shown when the password and its repeat differ.",
+    "message": "The two are not the same."
+  },
+  "passwords.problem.empty": {
+    "description": "Master password dialogs: shown when OK is pressed with the field empty.",
+    "message": "Type the master password."
+  },
+  "passwords.title.set": {
+    "description": "Title of the dialog setting or changing the master password.",
+    "message": "Master Password"
+  },
+  "passwords.title.unlock": {
+    "description": "Title of the dialog asking for the master password to open the saved passwords.",
+    "message": "Unlock Saved Passwords"
+  },
+  "passwords.unlock_button": {
+    "description": "Button in the notification that the saved passwords are locked: asks for the master password; keep it short.",
+    "message": "Unlock…"
+  },
+  "passwords.working": {
+    "description": "Master password dialogs: the OK button's text while the password is checked or set; keep it short.",
+    "message": "Working…"
+  },
+  "settings.addons.builtin_version": {
+    "description": "Settings › Add-ons › Version: for 7-Zip and PDFium; version = e.g. 25.01.",
+    "message": "{version}, comes with Spark Commander"
+  },
+  "settings.addons.check_daily": {
+    "description": "Settings › Add-ons: a check box.",
+    "message": "Look for add-on updates at start and daily, and offer them"
+  },
+  "settings.addons.check_failed": {
+    "description": "Settings › Add-ons: beside Look now; err = the reason, e.g. connection refused.",
+    "message": "Could not look for updates: {err}"
+  },
+  "settings.addons.check_now": {
+    "description": "Settings › Add-ons: button that looks for add-on updates now; keep it short.",
+    "message": "Look now"
+  },
+  "settings.addons.checking": {
+    "description": "Settings › Add-ons: beside Look now while the list is fetched.",
+    "message": "Looking for updates..."
+  },
+  "settings.addons.download": {
+    "description": "Settings › Add-ons: button that downloads and installs an add-on; keep it short.",
+    "message": "Download"
+  },
+  "settings.addons.downloading": {
+    "description": "Settings › Add-ons: an add-on's download under way; done and size = megabytes, e.g. 12.0 MB and 24.3 MB.",
+    "message": "Downloading: {done} of {size}"
+  },
+  "settings.addons.file": {
+    "description": "Settings › Add-ons: a row's label before the program's file names; keep it short.",
+    "message": "File"
+  },
+  "settings.addons.installed.builtin": {
+    "description": "Settings › Add-ons › Installed: none downloaded, but one comes with the app, lowercase.",
+    "message": "comes with Spark Commander"
+  },
+  "settings.addons.installed.label": {
+    "description": "Settings › Add-ons: a row's label before the version installed; keep it short.",
+    "message": "Installed"
+  },
+  "settings.addons.installed.none": {
+    "description": "Settings › Add-ons › Installed: none is installed, lowercase.",
+    "message": "none"
+  },
+  "settings.addons.intro": {
+    "description": "Settings › Add-ons: the text at the page's top.",
+    "message": "Spark Commander uses these programs of other projects for some of what it does. The add-ons are downloaded apart from it, when you choose; 7-Zip and PDFium come with it."
+  },
+  "settings.addons.never_offer": {
+    "description": "Settings › Add-ons: a check box.",
+    "message": "Never offer add-ons when a file needs one"
+  },
+  "settings.addons.offers": {
+    "description": "Settings › Add-ons: the box's title over the offers' and updates' options.",
+    "message": "Offers and updates"
+  },
+  "settings.addons.online.label": {
+    "description": "Settings › Add-ons: a row's label before the version to download; keep it short.",
+    "message": "Online"
+  },
+  "settings.addons.online.looking": {
+    "description": "Settings › Add-ons › Online: while the list of add-ons is fetched, lowercase.",
+    "message": "looking..."
+  },
+  "settings.addons.online.none": {
+    "description": "Settings › Add-ons › Online: no download for this operating system, lowercase.",
+    "message": "none for this system"
+  },
+  "settings.addons.online.not_yet": {
+    "description": "Settings › Add-ons › Online: the list was not fetched yet, lowercase.",
+    "message": "not looked up yet"
+  },
+  "settings.addons.online.unknown": {
+    "description": "Settings › Add-ons › Online: the list could not be fetched, lowercase.",
+    "message": "unknown"
+  },
+  "settings.addons.remove": {
+    "description": "Settings › Add-ons: button that removes an installed add-on; keep it short.",
+    "message": "Remove"
+  },
+  "settings.addons.up_to_date": {
+    "description": "Settings › Add-ons: beside Look now once the list was fetched.",
+    "message": "The list of add-ons is up to date."
+  },
+  "settings.addons.version": {
+    "description": "Settings › Add-ons: a row's label before the version of what comes with the app; keep it short.",
+    "message": "Version"
+  },
+  "settings.addons.website": {
+    "description": "Settings › Add-ons: a row's label before the project's site; keep it short.",
+    "message": "Website"
+  },
+  "settings.appearance.title": {
+    "description": "Settings › Layout: the box's title over light, dark or as the system.",
+    "message": "Appearance"
+  },
+  "settings.apply": {
+    "description": "Settings: the button that applies the changes and keeps the dialog open; keep it short.",
+    "message": "Apply"
+  },
+  "settings.backdrop.blur": {
+    "description": "Settings › Layout › Sidebar and Settings › Terminal: a check box.",
+    "message": "Blur the desktop behind it"
+  },
+  "settings.backdrop.clear": {
+    "description": "Settings › Layout › Sidebar and Settings › Terminal: beside the slider at 0%, only the desktop shows.",
+    "message": "0%, only the desktop"
+  },
+  "settings.backdrop.cover": {
+    "description": "Settings › Layout › Sidebar and Settings › Terminal: the label over the opacity slider.",
+    "message": "How much it covers the desktop behind it:"
+  },
+  "settings.backdrop.opacity": {
+    "description": "Settings › Layout › Sidebar and Settings › Terminal: beside the slider; opacity = the percentage, e.g. 85.",
+    "message": "{opacity}%"
+  },
+  "settings.backdrop.sidebar": {
+    "description": "Settings › Layout: the box's title over the sidebar's see-through options.",
+    "message": "Sidebar"
+  },
+  "settings.backdrop.solid": {
+    "description": "Settings › Layout › Sidebar and Settings › Terminal: beside the slider at 100%, nothing of the desktop shows.",
+    "message": "100%, solid"
+  },
+  "settings.backdrop.terminal": {
+    "description": "Settings › Terminal: the box's title over the terminal's see-through options.",
+    "message": "Terminal"
+  },
+  "settings.cancel": {
+    "description": "Settings: the button that closes the dialog without applying; keep it short.",
+    "message": "Cancel"
+  },
+  "settings.date.as_system": {
+    "description": "Settings › Date › Date: a choice; date = today's date as the system writes it, e.g. 17/11/2026.",
+    "message": "As the system: {date}"
+  },
+  "settings.date.custom": {
+    "description": "Settings › Date › Date: a choice, before the pattern field.",
+    "message": "Custom:"
+  },
+  "settings.date.pattern_help": {
+    "description": "Settings › Date: what the pattern's letters mean; keep yyyy, MM, MMM, dd and ddd as they are.",
+    "message": "yyyy year, MM month (MMM its name), dd day (ddd the weekday)"
+  },
+  "settings.date.shown_as": {
+    "description": "Settings › Date: the box's title over a sample of the date and time.",
+    "message": "Shown as"
+  },
+  "settings.date.shown_as_note": {
+    "description": "Settings › Date › Shown as: after the sample date and time, lowercase.",
+    "message": "in the file lists; dialogs add the seconds"
+  },
+  "settings.date.title": {
+    "description": "Settings › Date: the box's title over how dates are shown.",
+    "message": "Date"
+  },
+  "settings.editor.browse": {
+    "description": "Settings › Edit/View › Editor: button that picks the editor's program; keep it short.",
+    "message": "Browse..."
+  },
+  "settings.editor.choose": {
+    "description": "Settings › Edit/View › Editor: the file chooser's button that picks the program; keep it short.",
+    "message": "Choose"
+  },
+  "settings.editor.external": {
+    "description": "Settings › Edit/View › Editor: the label over the external editor's command.",
+    "message": "External editor (Ctrl+Shift+F4):"
+  },
+  "settings.editor.external_help": {
+    "description": "Settings › Edit/View › Editor: under the external editor's field; keep %1 and code --wait %1 as they are.",
+    "message": "%1 is the file, else it goes last; e.g. code --wait %1"
+  },
+  "settings.editor.limit": {
+    "description": "Settings › Edit/View › Editor: the text before a number field; the unit (MB) follows the field.",
+    "message": "Built-in editor (F4) opens files up to"
+  },
+  "settings.editor.limit_unit": {
+    "description": "Settings › Edit/View › Editor: the unit after the size field, megabytes; keep it short.",
+    "message": "MB"
+  },
+  "settings.editor.title": {
+    "description": "Settings › Edit/View: the box's title (F4 is the key).",
+    "message": "Editor for F4"
+  },
+  "settings.error.no_folder": {
+    "description": "Why the settings could not be saved (the system names no folder for them), lowercase, after Could not save the settings:.",
+    "message": "no configuration folder"
+  },
+  "settings.files_shown.hidden": {
+    "description": "Settings › Display › Files shown: a check box.",
+    "message": "Hidden files"
+  },
+  "settings.files_shown.system": {
+    "description": "Settings › Display › Files shown: a check box (Windows' system attribute).",
+    "message": "System files"
+  },
+  "settings.files_shown.title": {
+    "description": "Settings › Display: the box's title.",
+    "message": "Files shown"
+  },
+  "settings.font.as_system": {
+    "description": "Settings › Font: button that goes back to the desktop's font; keep it short.",
+    "message": "As the system"
+  },
+  "settings.font.chosen": {
+    "description": "Settings › Font: under the font's name while another is chosen; family = the desktop's font, e.g. Noto Sans; size = its size in points, e.g. 10.",
+    "message": "Chosen; the system's is {family}, {size}"
+  },
+  "settings.font.fixed": {
+    "description": "Settings › Font: the box's title over the viewer's fixed-width font.",
+    "message": "Viewer"
+  },
+  "settings.font.fixed_note": {
+    "description": "Settings › Font › Viewer: a note under the title.",
+    "message": "Fixed-width fonts only; also the editor's and file comparison's."
+  },
+  "settings.font.main": {
+    "description": "Settings › Font: the box's title over the panels' font.",
+    "message": "Main window font"
+  },
+  "settings.font.system": {
+    "description": "Settings › Font: under the font's name while the desktop's font is used.",
+    "message": "The system's font"
+  },
+  "settings.menus.automatic": {
+    "description": "Settings › Layout › Menus: a choice; ☰ is the menu button's icon.",
+    "message": "Automatic: a ☰ button on GNOME, a menu bar elsewhere"
+  },
+  "settings.menus.bar": {
+    "description": "Settings › Layout › Menus: a choice, the menus in a bar under the title.",
+    "message": "Menu bar"
+  },
+  "settings.menus.button": {
+    "description": "Settings › Layout › Menus: a choice, the menus behind a button with the ☰ icon.",
+    "message": "☰ button in the title bar"
+  },
+  "settings.menus.title": {
+    "description": "Settings › Layout: the box's title over how the menus are shown.",
+    "message": "Menus"
+  },
+  "settings.ok": {
+    "description": "Settings: the button that applies the changes and closes the dialog; keep it short.",
+    "message": "OK"
+  },
+  "settings.page.addons": {
+    "description": "Settings: a page's name in the list down the left and over the page; keep it short.",
+    "message": "Add-ons"
+  },
+  "settings.page.date": {
+    "description": "Settings: a page's name (dates' and times' format) in the list down the left and over the page; keep it short.",
+    "message": "Date"
+  },
+  "settings.page.display": {
+    "description": "Settings: a page's name (which files are shown, folders' order) in the list down the left and over the page; keep it short.",
+    "message": "Display"
+  },
+  "settings.page.edit_view": {
+    "description": "Settings: a page's name (the editor and the viewer) in the list down the left and over the page; keep it short.",
+    "message": "Edit/View"
+  },
+  "settings.page.font": {
+    "description": "Settings: a page's name in the list down the left and over the page; keep it short.",
+    "message": "Font"
+  },
+  "settings.page.language": {
+    "description": "Settings: a page's name in the list down the left and over the page; keep it short.",
+    "message": "Language"
+  },
+  "settings.page.layout": {
+    "description": "Settings: a page's name in the list down the left and over the page; keep it short.",
+    "message": "Layout"
+  },
+  "settings.page.operations": {
+    "description": "Settings: a page's name (the queue of copies, moves, downloads) in the list down the left and over the page; keep it short.",
+    "message": "Operations"
+  },
+  "settings.page.passwords": {
+    "description": "Settings: a page's name in the list down the left and over the page; keep it short.",
+    "message": "Passwords"
+  },
+  "settings.page.terminal": {
+    "description": "Settings: a page's name (the built-in terminal) in the list down the left and over the page; keep it short.",
+    "message": "Terminal"
+  },
+  "settings.page.toolbar": {
+    "description": "Settings: a page's name in the list down the left and over the page; keep it short.",
+    "message": "Toolbar"
+  },
+  "settings.passwords.change_master": {
+    "description": "Settings › Passwords: button, while one is set.",
+    "message": "Change master password…"
+  },
+  "settings.passwords.locked": {
+    "description": "Settings › Passwords: under the count, while the saved passwords are locked.",
+    "message": "They are locked on this computer: the master password opens them."
+  },
+  "settings.passwords.master_set": {
+    "description": "Settings › Passwords: under the count, while a master password is set.",
+    "message": "A master password is set: with the settings folder copied, they open on another computer once it is typed there."
+  },
+  "settings.passwords.no_master": {
+    "description": "Settings › Passwords: under the count, while no master password is set.",
+    "message": "No master password is set: with the settings folder copied, they do not open on another computer; they are typed again there."
+  },
+  "settings.passwords.not_removed": {
+    "description": "Settings › Passwords: notification; err = the reason, e.g. the keyring is locked.",
+    "message": "The master password was not removed: {err}"
+  },
+  "settings.passwords.remove_master": {
+    "description": "Settings › Passwords: button.",
+    "message": "Remove master password"
+  },
+  "settings.passwords.saved": {
+    "description": "Settings › Passwords: where the saved passwords are; count = how many, e.g. 3.",
+    "message": "{count, plural, one {# password is saved} other {# passwords are saved}} (servers', shares', encrypted drives'), sealed in the settings folder; the key that opens them is in this computer's keyring."
+  },
+  "settings.passwords.set_master": {
+    "description": "Settings › Passwords: button, while none is set.",
+    "message": "Set master password…"
+  },
+  "settings.passwords.title": {
+    "description": "Settings › Passwords: the box's title.",
+    "message": "Saved passwords"
+  },
+  "settings.passwords.unlock": {
+    "description": "Settings › Passwords: button that asks for the master password; keep it short.",
+    "message": "Unlock…"
+  },
+  "settings.queue.clear_after": {
+    "description": "Settings › Operations: the text before a number field; the unit (minutes) follows the field.",
+    "message": "Clear done operations after"
+  },
+  "settings.queue.clear_after_help": {
+    "description": "Settings › Operations: a note under Clear done operations after.",
+    "message": "0: as soon as they finish. Failed and cancelled ones stay until cleared."
+  },
+  "settings.queue.clear_after_unit": {
+    "description": "Settings › Operations: the unit after the field of Clear done operations after; keep it short.",
+    "message": "minutes"
+  },
+  "settings.queue.download_limit": {
+    "description": "Settings › Operations: the text before a number field; the unit (KB/s) follows the field.",
+    "message": "Download speed limit"
+  },
+  "settings.queue.download_limit_help": {
+    "description": "Settings › Operations: a note under Download speed limit; Download from Link is a command's name.",
+    "message": "Download from Link, and copies from FTP and SFTP servers; also those running. 0: no limit."
+  },
+  "settings.queue.download_limit_unit": {
+    "description": "Settings › Operations: the unit after the speed limit's field, kilobytes per second; keep it short.",
+    "message": "KB/s"
+  },
+  "settings.queue.title": {
+    "description": "Settings › Operations: the box's title.",
+    "message": "Operation queue"
+  },
+  "settings.shell.default": {
+    "description": "Settings › Terminal › Shell: a choice; shell = the default shell, e.g. /bin/bash or Windows PowerShell.",
+    "message": "Default: {shell}"
+  },
+  "settings.shell.note": {
+    "description": "Settings › Terminal › Shell: a note under the choices.",
+    "message": "New terminal tabs start it."
+  },
+  "settings.shell.title": {
+    "description": "Settings › Terminal: the box's title over the terminal's shell.",
+    "message": "Shell"
+  },
+  "settings.sort_folders.by_name": {
+    "description": "Settings › Display › Sorting folders: a choice.",
+    "message": "Always by name"
+  },
+  "settings.sort_folders.like_files": {
+    "description": "Settings › Display › Sorting folders: a choice, folders sorted by the files' column.",
+    "message": "Like files (also by time)"
+  },
+  "settings.sort_folders.title": {
+    "description": "Settings › Display: the box's title over how folders are ordered.",
+    "message": "Sorting folders"
+  },
+  "settings.tabs.header_always": {
+    "description": "Settings › Layout › Folder tabs: a check box.",
+    "message": "Show the tab header also when there is only one tab"
+  },
+  "settings.tabs.title": {
+    "description": "Settings › Layout: the box's title over the panels' tabs' options.",
+    "message": "Folder tabs"
+  },
+  "settings.time.as_system": {
+    "description": "Settings › Date › Time: a choice, the clock as the system shows it.",
+    "message": "As the system"
+  },
+  "settings.time.h12": {
+    "description": "Settings › Date › Time: a choice.",
+    "message": "12 hours (2:05 PM)"
+  },
+  "settings.time.h24": {
+    "description": "Settings › Date › Time: a choice.",
+    "message": "24 hours (14:05)"
+  },
+  "settings.time.title": {
+    "description": "Settings › Date: the box's title over how times are shown.",
+    "message": "Time"
+  },
+  "settings.title": {
+    "description": "The settings dialog's title.",
+    "message": "Settings"
+  },
+  "settings.toolbar.add": {
+    "description": "Settings › Toolbar: opens a menu of commands to add as a button; keep it short.",
+    "message": "Add Button…"
+  },
+  "settings.toolbar.move_down": {
+    "description": "Settings › Toolbar: tooltip of the arrow that moves a button one place down.",
+    "message": "Move down"
+  },
+  "settings.toolbar.move_up": {
+    "description": "Settings › Toolbar: tooltip of the arrow that moves a button one place up.",
+    "message": "Move up"
+  },
+  "settings.toolbar.place": {
+    "description": "Settings › Toolbar: where the toolbar is shown; ☰ is the menu button's icon.",
+    "message": "Under the menu bar; in the title bar where the menus are behind the ☰ button, as GNOME's apps have them. With no buttons, none."
+  },
+  "settings.toolbar.remove": {
+    "description": "Settings › Toolbar: tooltip of the × that takes a button off the toolbar.",
+    "message": "Remove"
+  },
+  "settings.toolbar.replace": {
+    "description": "Settings › Toolbar: a button's row, opens a menu of commands to put in its place; keep it short.",
+    "message": "Replace…"
+  },
+  "settings.toolbar.restore_default": {
+    "description": "Settings › Toolbar: puts back the toolbar's buttons as they first were; keep it short.",
+    "message": "Restore Default"
+  },
+  "settings.toolbar.title": {
+    "description": "Settings › Toolbar: the box's title.",
+    "message": "Toolbar buttons"
+  },
+  "settings.viewer.font.ansi": {
+    "description": "Settings › Edit/View › Viewer › Font at startup: a choice, Windows' code page.",
+    "message": "ANSI (Windows)"
+  },
+  "settings.viewer.font.ascii": {
+    "description": "Settings › Edit/View › Viewer › Font at startup: a choice, DOS's code page.",
+    "message": "ASCII (DOS)"
+  },
+  "settings.viewer.font.auto": {
+    "description": "Settings › Edit/View › Viewer › Font at startup: a choice, by the file's content.",
+    "message": "Autodetect"
+  },
+  "settings.viewer.font.label": {
+    "description": "Settings › Edit/View › Viewer: the label over the character sets.",
+    "message": "Font at startup:"
+  },
+  "settings.viewer.font.variable": {
+    "description": "Settings › Edit/View › Viewer › Font at startup: a choice, a proportional font.",
+    "message": "Variable width"
+  },
+  "settings.viewer.minimap": {
+    "description": "Settings › Edit/View › Viewer: a check box, the file's small overview at the side.",
+    "message": "Minimap"
+  },
+  "settings.viewer.show": {
+    "description": "Settings › Edit/View › Viewer: the label over Wrap text and Minimap.",
+    "message": "Show:"
+  },
+  "settings.viewer.start.auto": {
+    "description": "Settings › Edit/View › Viewer › Display at startup: a choice, by the file's content.",
+    "message": "Autodetect"
+  },
+  "settings.viewer.start.binary": {
+    "description": "Settings › Edit/View › Viewer › Display at startup: a choice, fixed-width lines.",
+    "message": "Binary"
+  },
+  "settings.viewer.start.hex": {
+    "description": "Settings › Edit/View › Viewer › Display at startup: a choice, hexadecimal.",
+    "message": "Hex"
+  },
+  "settings.viewer.start.label": {
+    "description": "Settings › Edit/View › Viewer: the label over how a file is shown first.",
+    "message": "Display at startup:"
+  },
+  "settings.viewer.start.text": {
+    "description": "Settings › Edit/View › Viewer › Display at startup: a choice.",
+    "message": "Text"
+  },
+  "settings.viewer.title": {
+    "description": "Settings › Edit/View: the box's title (F3 is the key).",
+    "message": "Viewer for F3"
+  },
+  "settings.viewer.width.binary": {
+    "description": "Settings › Edit/View › Viewer: before the binary mode's width field; keep it short.",
+    "message": "Binary"
+  },
+  "settings.viewer.width.label": {
+    "description": "Settings › Edit/View › Viewer: before the two widths' fields.",
+    "message": "Display width (characters):"
+  },
+  "settings.viewer.width.text": {
+    "description": "Settings › Edit/View › Viewer: before the text mode's width field; keep it short.",
+    "message": "Text"
+  },
+  "settings.viewer.wrap": {
+    "description": "Settings › Edit/View › Viewer: a check box.",
+    "message": "Wrap text"
+  }
+}

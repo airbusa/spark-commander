@@ -13,7 +13,7 @@ use std::process::{Child, Command, Stdio};
 #[derive(Debug, PartialEq)]
 pub enum Loaded {
     Text(String),
-    /// Editing it as text would change it: why, and the text shown anyway on request.
+    /// Editing it as text would change it: why (`binary`, `not_utf8`), and the text shown anyway on request.
     Unfit { why: &'static str, anyway: String },
 }
 
@@ -21,20 +21,18 @@ pub enum Loaded {
 pub fn load_text(path: &Path, limit_mb: u64) -> io::Result<Loaded> {
     let refuse = |why: &str| Err(io::Error::new(io::ErrorKind::InvalidData, why));
     if fs::metadata(path)?.len() > limit_mb << 20 {
-        let why = format!(
-            "over the built-in editor's {limit_mb} MB (Settings, Edit/View); Ctrl+Shift+F4 edits it in the external one"
-        );
+        let why = crate::t!("editor.open.too_large", limit_mb = limit_mb);
         return refuse(&why);
     }
     let bytes = fs::read(path)?;
     if bytes.contains(&0) {
         let anyway = as_text_anyway(&bytes);
-        return Ok(Loaded::Unfit { why: "it is binary", anyway });
+        return Ok(Loaded::Unfit { why: "binary", anyway });
     }
     Ok(match String::from_utf8(bytes) {
         Ok(text) => Loaded::Text(text),
         Err(err) => Loaded::Unfit {
-            why: "it is not UTF-8 text",
+            why: "not_utf8",
             anyway: as_text_anyway(err.as_bytes()),
         },
     })
@@ -110,7 +108,7 @@ pub fn edit_externally(line: &str, file: &Path) -> io::Result<()> {
 /// if the editor waits too (`code --wait`).
 pub fn start_editor(line: &str, file: &Path) -> io::Result<Child> {
     let (program, args) = command_line(line, file)
-        .ok_or_else(|| io::Error::other("no external editor is set (Settings, Edit/View)"))?;
+        .ok_or_else(|| io::Error::other(crate::t!("editor.external.not_set")))?;
     Command::new(&program)
         .args(args)
         .stdin(Stdio::null())
@@ -152,7 +150,7 @@ pub fn edit_in_terminal(file: &Path) -> io::Result<()> {
             Ok(_) => return Ok(()),
         }
     }
-    let why = "no editor found; set $EDITOR";
+    let why = crate::t!("editor.terminal.not_found");
     Err(io::Error::new(io::ErrorKind::NotFound, why))
 }
 
@@ -243,13 +241,13 @@ mod tests {
 
         fs::write(dir.join("bin"), b"a\0b\x7f\tc").unwrap();
         let binary = Loaded::Unfit {
-            why: "it is binary",
+            why: "binary",
             anyway: "a\u{2400}b\u{2421}\tc".into(),
         };
         assert_eq!(load_text(&dir.join("bin"), 32).unwrap(), binary);
         fs::write(dir.join("latin1"), b"caf\xe9").unwrap();
         let latin = Loaded::Unfit {
-            why: "it is not UTF-8 text",
+            why: "not_utf8",
             anyway: "caf\u{fffd}".into(),
         };
         assert_eq!(load_text(&dir.join("latin1"), 32).unwrap(), latin);

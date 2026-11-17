@@ -21,7 +21,7 @@ use gpui_kit::*;
 use crate::editor::find_bar::{FindBar, SelectAllMatches};
 use crate::menus::Entries;
 use minimap::Minimap;
-use sc_core::edit;
+use sc_core::{edit, t};
 use sc_core::settings::EditorSettings;
 use sc_core::edit::text_edit::{self, TextCase, TextEdit};
 
@@ -120,7 +120,26 @@ pub fn open(
 
 fn title(path: &std::path::Path, edited: bool) -> String {
     let mark = if edited { "*" } else { "" };
-    format!("{mark}{} — Editor", path.display())
+    format!("{mark}{}", t!("editor.title", path = path.display()))
+}
+
+/// A menu's name as shown; `MENUS` keeps the English to tell them apart.
+fn menu_name(name: &str) -> String {
+    match name {
+        "File" => t!("editor.menu.file"),
+        "Edit" => t!("editor.menu.edit"),
+        "Selection" => t!("editor.menu.selection"),
+        "View" => t!("editor.menu.view"),
+        _ => t!("editor.menu.language"),
+    }
+}
+
+/// A highlighter's name as shown: only plain text's is a word.
+fn language_label(label: &'static str, name: &str) -> String {
+    match name {
+        "text" => t!("editor.language.plain_text"),
+        _ => label.into(),
+    }
 }
 
 struct TextEditor {
@@ -214,7 +233,7 @@ fn menu_bar(this: WeakEntity<TextEditor>, cx: &mut App) -> Entity<AppMenuBar> {
             }
             None => menu,
         });
-        (name.into(), build)
+        (menu_name(name).into(), build)
     });
     AppMenuBar::built(menus.into(), cx)
 }
@@ -293,70 +312,70 @@ impl TextEditor {
         let unfit = self.unfit.is_some();
         match name {
             "File" => menu
-                .entry("Save", false, Box::new(Save), unfit)
-                .entry("Save as...", false, Box::new(SaveAs), unfit)
+                .entry(t!("editor.file.save"), false, Box::new(Save), unfit)
+                .entry(t!("editor.file.save_as"), false, Box::new(SaveAs), unfit)
                 .separator()
-                .entry("Reload", false, Box::new(Reload), unfit)
+                .entry(t!("editor.file.reload"), false, Box::new(Reload), unfit)
                 .separator()
-                .entry("Close", false, Box::new(Close), false),
+                .entry(t!("editor.file.close"), false, Box::new(Close), false),
             "Edit" => menu
-                .entry("Undo", false, Box::new(input::Undo), unfit)
-                .entry("Redo", false, Box::new(input::Redo), unfit)
+                .entry(t!("editor.edit.undo"), false, Box::new(input::Undo), unfit)
+                .entry(t!("editor.edit.redo"), false, Box::new(input::Redo), unfit)
                 .separator()
-                .entry("Cut", false, Box::new(input::Cut), unfit)
-                .entry("Copy", false, Box::new(input::Copy), unfit)
-                .entry("Paste", false, Box::new(input::Paste), unfit)
+                .entry(t!("editor.edit.cut"), false, Box::new(input::Cut), unfit)
+                .entry(t!("editor.edit.copy"), false, Box::new(input::Copy), unfit)
+                .entry(t!("editor.edit.paste"), false, Box::new(input::Paste), unfit)
                 .separator()
-                .entry("Find...", false, Box::new(input::Search), unfit)
-                .entry("Replace...", false, Box::new(input::Replace), unfit)
-                .entry("Find next", false, Box::new(FindNext), unfit)
-                .entry("Find previous", false, Box::new(FindPrevious), unfit)
+                .entry(t!("editor.edit.find"), false, Box::new(input::Search), unfit)
+                .entry(t!("editor.edit.replace"), false, Box::new(input::Replace), unfit)
+                .entry(t!("editor.edit.find_next"), false, Box::new(FindNext), unfit)
+                .entry(t!("editor.edit.find_previous"), false, Box::new(FindPrevious), unfit)
                 .separator()
-                .entry("Go to line...", false, Box::new(GoToLine), unfit),
+                .entry(t!("editor.edit.go_to_line"), false, Box::new(GoToLine), unfit),
             "Selection" => {
                 let comment = text_edit::line_comment(self.language).is_none();
-                menu.entry("Select all", false, Box::new(input::SelectAll), unfit)
-                    .entry("Select all occurrences", false, Box::new(SelectAllMatches), unfit)
-                    .entry("Add cursor above", false, Box::new(AddCursorAbove), unfit)
-                    .entry("Add cursor below", false, Box::new(AddCursorBelow), unfit)
+                menu.entry(t!("editor.selection.select_all"), false, Box::new(input::SelectAll), unfit)
+                    .entry(t!("editor.selection.select_all_occurrences"), false, Box::new(SelectAllMatches), unfit)
+                    .entry(t!("editor.selection.add_cursor_above"), false, Box::new(AddCursorAbove), unfit)
+                    .entry(t!("editor.selection.add_cursor_below"), false, Box::new(AddCursorBelow), unfit)
                     .separator()
-                    .entry("UPPERCASE", false, Box::new(UpperCase), unfit)
-                    .entry("lowercase", false, Box::new(LowerCase), unfit)
-                    .entry("Title Case", false, Box::new(TitleCase), unfit)
+                    .entry(t!("editor.selection.uppercase"), false, Box::new(UpperCase), unfit)
+                    .entry(t!("editor.selection.lowercase"), false, Box::new(LowerCase), unfit)
+                    .entry(t!("editor.selection.title_case"), false, Box::new(TitleCase), unfit)
                     .separator()
-                    .entry("Duplicate lines", false, Box::new(DuplicateLines), unfit)
-                    .entry("Move lines up", false, Box::new(MoveLinesUp), unfit)
-                    .entry("Move lines down", false, Box::new(MoveLinesDown), unfit)
-                    .entry("Delete lines", false, Box::new(DeleteLines), unfit)
+                    .entry(t!("editor.selection.duplicate_lines"), false, Box::new(DuplicateLines), unfit)
+                    .entry(t!("editor.selection.move_lines_up"), false, Box::new(MoveLinesUp), unfit)
+                    .entry(t!("editor.selection.move_lines_down"), false, Box::new(MoveLinesDown), unfit)
+                    .entry(t!("editor.selection.delete_lines"), false, Box::new(DeleteLines), unfit)
                     .separator()
-                    .entry("Sort lines ascending", false, Box::new(SortLines), unfit)
-                    .entry("Sort lines descending", false, Box::new(SortLinesDescending), unfit)
-                    .entry("Trim trailing whitespace", false, Box::new(TrimTrailingWhitespace), unfit)
+                    .entry(t!("editor.selection.sort_lines_ascending"), false, Box::new(SortLines), unfit)
+                    .entry(t!("editor.selection.sort_lines_descending"), false, Box::new(SortLinesDescending), unfit)
+                    .entry(t!("editor.selection.trim_trailing_whitespace"), false, Box::new(TrimTrailingWhitespace), unfit)
                     .separator()
-                    .entry("Toggle line comment", false, Box::new(ToggleComment), unfit || comment)
-                    .entry("Indent", false, Box::new(input::Indent), unfit)
-                    .entry("Outdent", false, Box::new(input::Outdent), unfit)
+                    .entry(t!("editor.selection.toggle_line_comment"), false, Box::new(ToggleComment), unfit || comment)
+                    .entry(t!("editor.selection.indent"), false, Box::new(input::Indent), unfit)
+                    .entry(t!("editor.selection.outdent"), false, Box::new(input::Outdent), unfit)
             }
             "View" => {
                 let mut menu = menu
-                    .entry("Word wrap", o.wrap, Box::new(ToggleWrap), false)
-                    .entry("Line numbers", o.line_numbers, Box::new(ToggleLineNumbers), false)
-                    .entry("Whitespace", o.whitespace, Box::new(ToggleWhitespace), false)
-                    .entry("Indent guides", o.indent_guides, Box::new(ToggleIndentGuides), false)
-                    .entry("Folding", o.folding, Box::new(ToggleFolding), false)
-                    .entry("Unfold all", false, Box::new(UnfoldAll), !o.folding)
+                    .entry(t!("editor.view.word_wrap"), o.wrap, Box::new(ToggleWrap), false)
+                    .entry(t!("editor.view.line_numbers"), o.line_numbers, Box::new(ToggleLineNumbers), false)
+                    .entry(t!("editor.view.whitespace"), o.whitespace, Box::new(ToggleWhitespace), false)
+                    .entry(t!("editor.view.indent_guides"), o.indent_guides, Box::new(ToggleIndentGuides), false)
+                    .entry(t!("editor.view.folding"), o.folding, Box::new(ToggleFolding), false)
+                    .entry(t!("editor.view.unfold_all"), false, Box::new(UnfoldAll), !o.folding)
                     .separator()
-                    .entry("Minimap", crate::minimap_shown(cx), Box::new(ToggleMinimap), false)
+                    .entry(t!("editor.view.minimap"), crate::minimap_shown(cx), Box::new(ToggleMinimap), false)
                     .separator();
                 for width in [2, 4, 8] {
-                    menu = menu.entry(format!("Tab width {width}"), o.tab_size == width, Box::new(SetTabSize(width)), false);
+                    menu = menu.entry(t!("editor.view.tab_width", width = width), o.tab_size == width, Box::new(SetTabSize(width)), false);
                 }
-                menu.entry("Indent with tabs", o.hard_tabs, Box::new(ToggleHardTabs), false)
+                menu.entry(t!("editor.view.indent_with_tabs"), o.hard_tabs, Box::new(ToggleHardTabs), false)
             }
             _ => {
-                let mut menu = menu.entry("By the file's name", !self.chosen_language, Box::new(SetLanguage(None)), false).separator();
+                let mut menu = menu.entry(t!("editor.language.by_file_name"), !self.chosen_language, Box::new(SetLanguage(None)), false).separator();
                 for &(label, name) in text_edit::LANGUAGES {
-                    menu = menu.entry(label, self.language == name, Box::new(SetLanguage(Some(name))), false);
+                    menu = menu.entry(language_label(label, name), self.language == name, Box::new(SetLanguage(Some(name))), false);
                 }
                 menu
             }
@@ -396,7 +415,7 @@ impl TextEditor {
                         let name = self.path.file_name().unwrap_or_default().to_string_lossy().into_owned();
                         let action = sc_core::system::elevate::Action::Write { from: staged.clone(), to: self.path.clone() };
                         let editor = cx.entity().downgrade();
-                        crate::offer_admin_in(format!("Saving \"{name}\""), action, window, cx, move |done, window, cx| {
+                        crate::offer_admin_in(t!("editor.save.admin", name = name), action, window, cx, move |done, window, cx| {
                             let _ = std::fs::remove_file(&staged);
                             if done {
                                 let _ = editor.update(cx, |this, cx| this.saved(window, cx));
@@ -404,14 +423,14 @@ impl TextEditor {
                         });
                     }
                     Err(err) => {
-                        let text = format!("Could not save {}: {err}", self.path.display());
+                        let text = t!("editor.save.failed", path = self.path.display(), err = err);
                         window.push_notification(Notification::error(text).autohide(false), cx);
                     }
                 }
                 false
             }
             Err(err) => {
-                let text = format!("Could not save {}: {err}", self.path.display());
+                let text = t!("editor.save.failed", path = self.path.display(), err = err);
                 window.push_notification(Notification::error(text).autohide(false), cx);
                 false
             }
@@ -459,7 +478,7 @@ impl TextEditor {
                     }
                     Err(err) => {
                         this.close_after = false;
-                        let text = format!("Could not save it back: {err}. Save tries again.");
+                        let text = t!("editor.send.failed", err = err);
                         window.push_notification(Notification::error(text).autohide(false), cx);
                     }
                 }
@@ -508,15 +527,15 @@ impl TextEditor {
             let buttons = h_flex()
                 .gap_2()
                 .justify_end()
-                .child(Button::new("editor-reload").danger().label("Reload").on_click(move |_, window, cx| {
+                .child(Button::new("editor-reload").danger().label(t!("editor.reload.button")).on_click(move |_, window, cx| {
                     window.close_dialog(cx);
                     let _ = reload.update(cx, |this, cx| this.read_again(window, cx));
                 }))
-                .child(Button::new("editor-reload-cancel").outline().label("Cancel").on_click(|_, window, cx| window.close_dialog(cx)));
+                .child(Button::new("editor-reload-cancel").outline().label(t!("editor.dialog.cancel")).on_click(|_, window, cx| window.close_dialog(cx)));
             dialog
-                .title("Reload the file?")
+                .title(t!("editor.reload.title"))
                 .overlay_closable(false)
-                .child("The changes that are not saved are lost.")
+                .child(t!("editor.reload.text"))
                 .footer(buttons)
         });
     }
@@ -531,10 +550,10 @@ impl TextEditor {
                 cx.notify();
             }
             Ok(edit::Loaded::Unfit { why, .. }) => {
-                window.push_notification(Notification::error(format!("Not reloaded: {why}.")), cx);
+                window.push_notification(Notification::error(t!("editor.reload.unfit", why = why)), cx);
             }
             Err(err) => {
-                window.push_notification(Notification::error(format!("Could not reload it: {err}")), cx);
+                window.push_notification(Notification::error(t!("editor.reload.failed", err = err)), cx);
             }
         }
     }
@@ -547,21 +566,18 @@ impl TextEditor {
             let buttons = h_flex()
                 .gap_2()
                 .justify_end()
-                .child(Button::new("editor-save-anyway").danger().label("Save anyway").on_click(move |_, window, cx| {
+                .child(Button::new("editor-save-anyway").danger().label(t!("editor.save_anyway.button")).on_click(move |_, window, cx| {
                     window.close_dialog(cx);
                     let _ = save.update(cx, |this, cx| {
                         this.forced = false;
                         this.save(window, cx)
                     });
                 }))
-                .child(Button::new("editor-save-cancel").outline().label("Cancel").on_click(|_, window, cx| window.close_dialog(cx)));
+                .child(Button::new("editor-save-cancel").outline().label(t!("editor.dialog.cancel")).on_click(|_, window, cx| window.close_dialog(cx)));
             dialog
-                .title("Save it as text?")
+                .title(t!("editor.save_anyway.title"))
                 .overlay_closable(false)
-                .child(
-                    "The file was not text: saving writes it as shown, \
-                     so whatever was not text changes for good.",
-                )
+                .child(t!("editor.save_anyway.text"))
                 .footer(buttons)
         });
     }
@@ -570,7 +586,7 @@ impl TextEditor {
     fn may_close(&mut self, window: &mut Window, cx: &mut Context<Self>) -> bool {
         if !self.edited && self.sending.is_some() {
             self.close_after = true;
-            window.push_notification(Notification::info("It closes once the server has it."), cx);
+            window.push_notification(Notification::info(t!("editor.close.after_send")), cx);
             return false;
         }
         if !self.edited && !self.unsent {
@@ -579,15 +595,15 @@ impl TextEditor {
         let this = cx.weak_entity();
         let name = self.path.file_name().unwrap_or_default().to_string_lossy().into_owned();
         let what = match self.edited {
-            true => format!("{name} has changes that are not saved."),
-            false => format!("{name} is not saved on its server: sending it failed."),
+            true => t!("editor.close.unsaved", name = name),
+            false => t!("editor.close.unsent", name = name),
         };
         window.open_dialog(cx, move |dialog, _, _| {
             let save = this.clone();
             let buttons = h_flex()
                 .gap_2()
                 .justify_end()
-                .child(Button::new("editor-save").primary().label("Save").on_click(move |_, window, cx| {
+                .child(Button::new("editor-save").primary().label(t!("editor.close.save")).on_click(move |_, window, cx| {
                     // A server's copy: closed once sent.
                     let saved = save.update(cx, |this, cx| {
                         let saved = match this.edited {
@@ -605,10 +621,10 @@ impl TextEditor {
                         _ => window.close_dialog(cx),
                     }
                 }))
-                .child(Button::new("editor-discard").outline().label("Don't save").on_click(|_, window, _| window.remove_window()))
-                .child(Button::new("editor-cancel").outline().label("Cancel").on_click(|_, window, cx| window.close_dialog(cx)));
+                .child(Button::new("editor-discard").outline().label(t!("editor.close.discard")).on_click(|_, window, _| window.remove_window()))
+                .child(Button::new("editor-cancel").outline().label(t!("editor.dialog.cancel")).on_click(|_, window, cx| window.close_dialog(cx)));
             dialog
-                .title("Save changes?")
+                .title(t!("editor.close.title"))
                 .overlay_closable(false)
                 .child(what.clone())
                 .footer(buttons)
@@ -655,7 +671,9 @@ impl TextEditor {
     fn go_to_line(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let line = self.editor.read(cx).cursor_position().line + 1;
         let editor = self.editor.clone();
-        crate::dialogs::name_dialog::open("Go to Line", "Line, or line:column", line.to_string(), window, cx, move |typed, window, cx| {
+        // shortcut: name_dialog takes &'static str, so these leak a few bytes per open; pass Strings once it takes them.
+        let (title, label): (&'static str, &'static str) = (t!("editor.go_to_line.title").leak(), t!("editor.go_to_line.label").leak());
+        crate::dialogs::name_dialog::open(title, label, line.to_string(), window, cx, move |typed, window, cx| {
             let mut parts = typed.trim().splitn(2, ':').map(|part| part.trim().parse::<u32>().ok());
             let Some(Some(line)) = parts.next() else {
                 return;
@@ -706,17 +724,22 @@ impl TextEditor {
         let editor = self.editor.read(cx);
         let at = editor.cursor_position();
         let selected = editor.selected_range();
-        let mut place = format!("Ln {}, Col {}", at.line + 1, at.character + 1);
-        if !selected.is_empty() {
-            place.push_str(&format!(" ({} selected)", editor.selected_text().to_string().chars().count()));
-        }
-        let indent = match self.options.hard_tabs {
-            true => format!("Tab size: {}", self.options.tab_size),
-            false => format!("Spaces: {}", self.options.tab_size),
+        let (line, column) = (at.line + 1, at.character + 1);
+        let place = match selected.is_empty() {
+            true => t!("editor.status.position", line = line, column = column),
+            false => {
+                let count = editor.selected_text().to_string().chars().count();
+                t!("editor.status.position_selected", line = line, column = column, count = count)
+            }
         };
-        let language = text_edit::LANGUAGES.iter().find(|(_, name)| *name == self.language).map_or("Plain Text", |(label, _)| label);
+        let indent = match self.options.hard_tabs {
+            true => t!("editor.status.tab_size", size = self.options.tab_size),
+            false => t!("editor.status.spaces", size = self.options.tab_size),
+        };
+        let language = text_edit::LANGUAGES.iter().find(|(_, name)| *name == self.language);
+        let language = language.map_or_else(|| t!("editor.language.plain_text"), |&(label, name)| language_label(label, name));
         let ends = if self.crlf { "CRLF" } else { "LF" };
-        vec![place, indent, "UTF-8".into(), ends.into(), language.into()]
+        vec![place, indent, "UTF-8".into(), ends.into(), language]
     }
 }
 
@@ -724,7 +747,7 @@ impl Render for TextEditor {
     fn render(&mut self, window: &mut Window, cx: &mut Context<Self>) -> impl IntoElement {
         #[cfg(target_os = "macos")]
         {
-            let menus = MENUS.map(|name| Menu::new(name).items(self.menu(name, Vec::new(), cx)));
+            let menus = MENUS.map(|name| Menu::new(menu_name(name)).items(self.menu(name, Vec::new(), cx)));
             crate::menus::show(window, menus.into(), cx);
         }
         let this = cx.weak_entity();
@@ -832,11 +855,11 @@ impl Render for TextEditor {
                     .justify_center()
                     .gap_3()
                     .child(Icon::new(IconName::TriangleAlert).size(px(40.)).text_color(theme.warning))
-                    .child(format!("The file is not shown in the editor because {why}."))
+                    .child(t!("editor.unfit.text", why = why))
                     .child(
                         Button::new("editor-open-anyway")
                             .primary()
-                            .label("Open Anyway")
+                            .label(t!("editor.unfit.open_anyway"))
                             .on_click(cx.listener(|this, _, window, cx| this.open_anyway(window, cx))),
                     )
                     .into_any_element(),
@@ -867,9 +890,9 @@ impl Render for TextEditor {
                     .text_sm()
                     .text_color(theme.muted_foreground)
                     .child(div().flex_1().min_w_0().truncate().child(self.path.display().to_string()))
-                    .when(self.edited, |el| el.child("Modified"))
-                    .when(!self.edited && self.sending.is_some(), |el| el.child("Saving to the server"))
-                    .when(!self.edited && self.unsent && self.sending.is_none(), |el| el.child("Not on the server"))
+                    .when(self.edited, |el| el.child(t!("editor.status.modified")))
+                    .when(!self.edited && self.sending.is_some(), |el| el.child(t!("editor.status.sending")))
+                    .when(!self.edited && self.unsent && self.sending.is_none(), |el| el.child(t!("editor.status.unsent")))
                     .when(self.unfit.is_none(), |el| el.children(status)),
             )
     }

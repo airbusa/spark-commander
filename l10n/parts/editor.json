@@ -1,0 +1,382 @@
+{
+  "editor.close.after_send": {
+    "description": "Editor's notification on closing it while the saved file is still being sent to its server (SFTP, cloud).",
+    "message": "It closes once the server has it."
+  },
+  "editor.close.discard": {
+    "description": "Button of the Save changes dialog: closes without saving. Keep it short.",
+    "message": "Don't save"
+  },
+  "editor.close.save": {
+    "description": "Button of the Save changes dialog: saves, then closes. Keep it short.",
+    "message": "Save"
+  },
+  "editor.close.title": {
+    "description": "Title of the dialog shown on closing the editor with unsaved changes.",
+    "message": "Save changes?"
+  },
+  "editor.close.unsaved": {
+    "description": "Text of the dialog shown on closing the editor with unsaved changes. {name} is the file's name (e.g. notes.txt).",
+    "message": "{name} has changes that are not saved."
+  },
+  "editor.close.unsent": {
+    "description": "Text of the dialog shown on closing the editor while a file from a server (SFTP, cloud) is saved here but could not be sent back. {name} is the file's name (e.g. notes.txt).",
+    "message": "{name} is not saved on its server: sending it failed."
+  },
+  "editor.dialog.cancel": {
+    "description": "Cancel button of the editor's dialogs (Reload, Save it as text, Save changes). Keep it short.",
+    "message": "Cancel"
+  },
+  "editor.edit.copy": {
+    "description": "Editor › Edit menu item. Keep it short; \"...\" means a dialog opens.",
+    "message": "Copy"
+  },
+  "editor.edit.cut": {
+    "description": "Editor › Edit menu item. Keep it short; \"...\" means a dialog opens.",
+    "message": "Cut"
+  },
+  "editor.edit.find": {
+    "description": "Editor › Edit menu item: opens the find bar. Keep it short; \"...\" means a dialog opens.",
+    "message": "Find..."
+  },
+  "editor.edit.find_next": {
+    "description": "Editor › Edit menu item. Keep it short; \"...\" means a dialog opens.",
+    "message": "Find next"
+  },
+  "editor.edit.find_previous": {
+    "description": "Editor › Edit menu item. Keep it short; \"...\" means a dialog opens.",
+    "message": "Find previous"
+  },
+  "editor.edit.go_to_line": {
+    "description": "Editor › Edit menu item: asks for a line number to jump to. Keep it short; \"...\" means a dialog opens.",
+    "message": "Go to line..."
+  },
+  "editor.edit.paste": {
+    "description": "Editor › Edit menu item. Keep it short; \"...\" means a dialog opens.",
+    "message": "Paste"
+  },
+  "editor.edit.redo": {
+    "description": "Editor › Edit menu item. Keep it short; \"...\" means a dialog opens.",
+    "message": "Redo"
+  },
+  "editor.edit.replace": {
+    "description": "Editor › Edit menu item: opens the find bar with replacing. Keep it short; \"...\" means a dialog opens.",
+    "message": "Replace..."
+  },
+  "editor.edit.undo": {
+    "description": "Editor › Edit menu item. Keep it short; \"...\" means a dialog opens.",
+    "message": "Undo"
+  },
+  "editor.external.not_set": {
+    "description": "Error shown after the file's name (\"notes.txt: …\") when Ctrl+Shift+F4 has no external editor to start; starts in lower case. \"Settings, Edit/View\" names the Settings page as it is called there.",
+    "message": "no external editor is set (Settings, Edit/View)"
+  },
+  "editor.file.close": {
+    "description": "Editor › File menu item: closes the editor's window. Keep it short; \"...\" means a dialog opens.",
+    "message": "Close"
+  },
+  "editor.file.reload": {
+    "description": "Editor › File menu item: reads the file again from the disk. Keep it short; \"...\" means a dialog opens.",
+    "message": "Reload"
+  },
+  "editor.file.save": {
+    "description": "Editor › File menu item: saves the file. Keep it short; \"...\" means a dialog opens.",
+    "message": "Save"
+  },
+  "editor.file.save_as": {
+    "description": "Editor › File menu item: saves the text to another file. Keep it short; \"...\" means a dialog opens.",
+    "message": "Save as..."
+  },
+  "editor.find.close": {
+    "description": "Editor's find bar (as VS Code's, top right of the text): tooltip of the button that closes the find bar. The key name in brackets stays as it is.",
+    "message": "Close (Escape)"
+  },
+  "editor.find.count": {
+    "description": "Editor's find bar: which match is selected of how many, as VS Code's. {current} is a number or ? (none selected), {total} a number or 20000+ (e.g. 3 of 12). Very little room: keep it short.",
+    "message": "{current} of {total}"
+  },
+  "editor.find.in_selection": {
+    "description": "Editor's find bar (as VS Code's, top right of the text): tooltip of the toggle that searches only the selected text. The key name in brackets stays as it is.",
+    "message": "Find in Selection (Alt+L)"
+  },
+  "editor.find.match_case": {
+    "description": "Editor's find bar (as VS Code's, top right of the text): tooltip of the toggle that finds only the same upper and lower case. The key name in brackets stays as it is.",
+    "message": "Match Case (Alt+C)"
+  },
+  "editor.find.next": {
+    "description": "Editor's find bar (as VS Code's, top right of the text): tooltip of the button that selects the next match. The key name in brackets stays as it is.",
+    "message": "Next Match (Enter)"
+  },
+  "editor.find.no_results": {
+    "description": "Editor's find bar: nothing matches the searched text. Very little room: keep it short.",
+    "message": "No results"
+  },
+  "editor.find.placeholder": {
+    "description": "Editor's find bar: placeholder of the field for the text to find. Keep it short.",
+    "message": "Find"
+  },
+  "editor.find.preserve_case": {
+    "description": "Editor's find bar (as VS Code's, top right of the text): tooltip of the toggle that keeps the replaced text's upper and lower case. The key name in brackets stays as it is.",
+    "message": "Preserve Case (Alt+P)"
+  },
+  "editor.find.previous": {
+    "description": "Editor's find bar (as VS Code's, top right of the text): tooltip of the button that selects the previous match. The key name in brackets stays as it is.",
+    "message": "Previous Match (Shift+Enter)"
+  },
+  "editor.find.regex": {
+    "description": "Editor's find bar (as VS Code's, top right of the text): tooltip of the toggle that reads the searched text as a regular expression. The key name in brackets stays as it is.",
+    "message": "Use Regular Expression (Alt+R)"
+  },
+  "editor.find.replace": {
+    "description": "Editor's find bar (as VS Code's, top right of the text): tooltip of the button that replaces the selected match. The key name in brackets stays as it is.",
+    "message": "Replace (Ctrl+Shift+1)"
+  },
+  "editor.find.replace_all": {
+    "description": "Editor's find bar (as VS Code's, top right of the text): tooltip of the button that replaces every match. The key name in brackets stays as it is.",
+    "message": "Replace All (Ctrl+Alt+Enter)"
+  },
+  "editor.find.replace_placeholder": {
+    "description": "Editor's find bar: placeholder of the field for the text to replace it with. Keep it short.",
+    "message": "Replace"
+  },
+  "editor.find.toggle_replace": {
+    "description": "Editor's find bar: tooltip of the arrow that shows or hides the replace field.",
+    "message": "Toggle Replace"
+  },
+  "editor.find.whole_word": {
+    "description": "Editor's find bar (as VS Code's, top right of the text): tooltip of the toggle that finds whole words only. The key name in brackets stays as it is.",
+    "message": "Match Whole Word (Alt+W)"
+  },
+  "editor.go_to_line.label": {
+    "description": "Label of the field in the Go to Line dialog: a line number, or line and column as 12:5. Keep the line:column form understandable.",
+    "message": "Line, or line:column"
+  },
+  "editor.go_to_line.title": {
+    "description": "Title of the dialog Edit › Go to line opens.",
+    "message": "Go to Line"
+  },
+  "editor.language.by_file_name": {
+    "description": "Editor › Language menu item, ticked while on: the text is coloured by the language its file name (extension) says. Keep it short.",
+    "message": "By the file's name"
+  },
+  "editor.language.plain_text": {
+    "description": "Editor › Language menu item and status bar: text with no syntax colouring. Keep it short.",
+    "message": "Plain Text"
+  },
+  "editor.menu.edit": {
+    "description": "Editor window's menu bar (F4's built-in text editor): the Edit menu. Keep it short.",
+    "message": "Edit"
+  },
+  "editor.menu.file": {
+    "description": "Editor window's menu bar (F4's built-in text editor): the File menu. Keep it short.",
+    "message": "File"
+  },
+  "editor.menu.language": {
+    "description": "Editor window's menu bar (F4's built-in text editor): the Language menu, which chooses the programming language the text is coloured as (syntax highlighting). Keep it short.",
+    "message": "Language"
+  },
+  "editor.menu.selection": {
+    "description": "Editor window's menu bar (F4's built-in text editor): the Selection menu. Keep it short.",
+    "message": "Selection"
+  },
+  "editor.menu.view": {
+    "description": "Editor window's menu bar (F4's built-in text editor): the View menu. Keep it short.",
+    "message": "View"
+  },
+  "editor.open.too_large": {
+    "description": "Error shown after the file's name (\"notes.log: …\") when the file is too large for the built-in editor; starts in lower case. {limit_mb} is the limit in megabytes (e.g. 32). \"Settings, Edit/View\" names the Settings page as it is called there; Ctrl+Shift+F4 stays as it is.",
+    "message": "over the built-in editor's {limit_mb} MB (Settings, Edit/View); Ctrl+Shift+F4 edits it in the external one"
+  },
+  "editor.reload.button": {
+    "description": "Button of the Reload dialog: reads the file again, losing the changes. Keep it short.",
+    "message": "Reload"
+  },
+  "editor.reload.failed": {
+    "description": "Editor's error notification: the file could not be read again. {err} is the system's error text (e.g. No such file or directory).",
+    "message": "Could not reload it: {err}"
+  },
+  "editor.reload.text": {
+    "description": "Text of the dialog File › Reload opens while the text has unsaved changes.",
+    "message": "The changes that are not saved are lost."
+  },
+  "editor.reload.title": {
+    "description": "Title of the dialog File › Reload opens while the text has unsaved changes.",
+    "message": "Reload the file?"
+  },
+  "editor.reload.unfit": {
+    "description": "Editor's error notification: the file changed on the disk into something that is not text, so it was not read again. {why} is one of: binary (the file holds zero bytes) or other (it is not UTF-8 text); translate the words inside each branch only.",
+    "message": "Not reloaded: {why, select, binary {it is binary} other {it is not UTF-8 text}}."
+  },
+  "editor.save.admin": {
+    "description": "What the system refused, as the start of a dialog's text that goes on \": permission denied. As administrator, the system asks for the password.\". {name} is the file's name (e.g. hosts).",
+    "message": "Saving \"{name}\""
+  },
+  "editor.save.failed": {
+    "description": "Editor's error notification. {path} is the file's full path (e.g. /etc/fstab); {err} is the system's error text (e.g. Permission denied).",
+    "message": "Could not save {path}: {err}"
+  },
+  "editor.save_anyway.button": {
+    "description": "Button of the Save it as text dialog: saves the file as shown. Keep it short.",
+    "message": "Save anyway"
+  },
+  "editor.save_anyway.text": {
+    "description": "Text of the dialog shown on saving a file that was not text (binary, or not UTF-8) but opened as text anyway.",
+    "message": "The file was not text: saving writes it as shown, so whatever was not text changes for good."
+  },
+  "editor.save_anyway.title": {
+    "description": "Title of the dialog shown on saving a file that was not text but opened as text anyway.",
+    "message": "Save it as text?"
+  },
+  "editor.selection.add_cursor_above": {
+    "description": "Editor › Selection menu item: another text cursor on the line above, for typing in several places at once. Keep it short.",
+    "message": "Add cursor above"
+  },
+  "editor.selection.add_cursor_below": {
+    "description": "Editor › Selection menu item: another text cursor on the line below. Keep it short.",
+    "message": "Add cursor below"
+  },
+  "editor.selection.delete_lines": {
+    "description": "Editor › Selection menu item. Keep it short.",
+    "message": "Delete lines"
+  },
+  "editor.selection.duplicate_lines": {
+    "description": "Editor › Selection menu item: copies the selected lines below themselves. Keep it short.",
+    "message": "Duplicate lines"
+  },
+  "editor.selection.indent": {
+    "description": "Editor › Selection menu item: moves the selected lines right by one indent. Keep it short.",
+    "message": "Indent"
+  },
+  "editor.selection.lowercase": {
+    "description": "Editor › Selection menu item: turns the selected text to lower case; written in lower case itself. Keep it short.",
+    "message": "lowercase"
+  },
+  "editor.selection.move_lines_down": {
+    "description": "Editor › Selection menu item. Keep it short.",
+    "message": "Move lines down"
+  },
+  "editor.selection.move_lines_up": {
+    "description": "Editor › Selection menu item. Keep it short.",
+    "message": "Move lines up"
+  },
+  "editor.selection.outdent": {
+    "description": "Editor › Selection menu item: moves the selected lines left by one indent. Keep it short.",
+    "message": "Outdent"
+  },
+  "editor.selection.select_all": {
+    "description": "Editor › Selection menu item. Keep it short.",
+    "message": "Select all"
+  },
+  "editor.selection.select_all_occurrences": {
+    "description": "Editor › Selection menu item: selects every place of the searched text (or the word at the cursor) to edit them at once. Keep it short.",
+    "message": "Select all occurrences"
+  },
+  "editor.selection.sort_lines_ascending": {
+    "description": "Editor › Selection menu item: sorts the selected lines A to Z. Keep it short.",
+    "message": "Sort lines ascending"
+  },
+  "editor.selection.sort_lines_descending": {
+    "description": "Editor › Selection menu item: sorts the selected lines Z to A. Keep it short.",
+    "message": "Sort lines descending"
+  },
+  "editor.selection.title_case": {
+    "description": "Editor › Selection menu item: capitalizes each word of the selected text; written that way itself. Keep it short.",
+    "message": "Title Case"
+  },
+  "editor.selection.toggle_line_comment": {
+    "description": "Editor › Selection menu item: comments the selected lines out in the program's language (// or #), or back in. Keep it short.",
+    "message": "Toggle line comment"
+  },
+  "editor.selection.trim_trailing_whitespace": {
+    "description": "Editor › Selection menu item: removes spaces and tabs at the lines' ends. Keep it short.",
+    "message": "Trim trailing whitespace"
+  },
+  "editor.selection.uppercase": {
+    "description": "Editor › Selection menu item: turns the selected text to upper case; written in upper case itself, as in VS Code. Keep it short.",
+    "message": "UPPERCASE"
+  },
+  "editor.send.failed": {
+    "description": "Editor's error notification: a file opened from a server (SFTP, cloud) was saved here but could not be sent back to the server. {err} is the error text (e.g. Connection refused).",
+    "message": "Could not save it back: {err}. Save tries again."
+  },
+  "editor.status.modified": {
+    "description": "Editor's status bar, under the text: the text has unsaved changes. Keep it short.",
+    "message": "Modified"
+  },
+  "editor.status.position": {
+    "description": "Editor's status bar, under the text: where the text cursor is, as VS Code's (Ln = line, Col = column). {line} and {column} are numbers, e.g. 12 and 5. Keep it short.",
+    "message": "Ln {line}, Col {column}"
+  },
+  "editor.status.position_selected": {
+    "description": "Editor's status bar, under the text: where the text cursor is, as VS Code's (Ln = line, Col = column), and how many characters are selected. {line} and {column} are numbers, e.g. 12 and 5; {count} is the number of selected characters. Keep it short.",
+    "message": "Ln {line}, Col {column} ({count, plural, one {# selected} other {# selected}})"
+  },
+  "editor.status.sending": {
+    "description": "Editor's status bar, under the text: the saved file is being sent back to its server (SFTP, cloud). Keep it short.",
+    "message": "Saving to the server"
+  },
+  "editor.status.spaces": {
+    "description": "Editor's status bar, under the text: the text is indented with spaces, {size} of them per level (e.g. 4). Keep it short.",
+    "message": "Spaces: {size}"
+  },
+  "editor.status.tab_size": {
+    "description": "Editor's status bar, under the text: the text is indented with tabs, each {size} columns wide (e.g. 4). Keep it short.",
+    "message": "Tab size: {size}"
+  },
+  "editor.status.unsent": {
+    "description": "Editor's status bar, under the text: the file is saved here, but sending it back to its server failed. Keep it short.",
+    "message": "Not on the server"
+  },
+  "editor.terminal.not_found": {
+    "description": "scmd (the terminal app): error shown after the file's name (\"notes.txt: …\") when F4 finds no terminal editor (nano, vi); starts in lower case. $EDITOR is an environment variable's name: keep it.",
+    "message": "no editor found; set $EDITOR"
+  },
+  "editor.title": {
+    "description": "Title of the editor's window. {path} is the edited file's full path (e.g. /home/anna/notes.txt); a * goes before it while there are unsaved changes.",
+    "message": "{path} — Editor"
+  },
+  "editor.unfit.open_anyway": {
+    "description": "Button under the editor's warning that the file is not text: shows it as text anyway. Keep it short.",
+    "message": "Open Anyway"
+  },
+  "editor.unfit.text": {
+    "description": "Shown in the editor's window instead of the text when editing it as text could change the file by accident. {why} is one of: binary (the file holds zero bytes) or other (it is not UTF-8 text); translate the words inside each branch only.",
+    "message": "The file is not shown in the editor because {why, select, binary {it is binary} other {it is not UTF-8 text}}."
+  },
+  "editor.view.folding": {
+    "description": "Editor › View menu item, ticked while on: blocks of code can be folded away. Keep it short.",
+    "message": "Folding"
+  },
+  "editor.view.indent_guides": {
+    "description": "Editor › View menu item, ticked while on: vertical lines at each indent level. Keep it short.",
+    "message": "Indent guides"
+  },
+  "editor.view.indent_with_tabs": {
+    "description": "Editor › View menu item, ticked while on: indent with tab characters instead of spaces. Keep it short.",
+    "message": "Indent with tabs"
+  },
+  "editor.view.line_numbers": {
+    "description": "Editor › View menu item, ticked while on. Keep it short.",
+    "message": "Line numbers"
+  },
+  "editor.view.minimap": {
+    "description": "Editor › View menu item, ticked while on: the small overview of the whole text at the right. Keep it short.",
+    "message": "Minimap"
+  },
+  "editor.view.tab_width": {
+    "description": "Editor › View menu item, ticked while on: the columns a tab is wide. {width} is 2, 4 or 8. Keep it short.",
+    "message": "Tab width {width}"
+  },
+  "editor.view.unfold_all": {
+    "description": "Editor › View menu item: opens every folded block. Keep it short.",
+    "message": "Unfold all"
+  },
+  "editor.view.whitespace": {
+    "description": "Editor › View menu item, ticked while on: spaces and tabs shown as marks. Keep it short.",
+    "message": "Whitespace"
+  },
+  "editor.view.word_wrap": {
+    "description": "Editor › View menu item, ticked while on: long lines wrap at the window's edge. Keep it short.",
+    "message": "Word wrap"
+  }
+}

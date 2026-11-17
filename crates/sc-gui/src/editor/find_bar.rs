@@ -15,6 +15,7 @@ use gpui_kit::prelude::FluentBuilder;
 use gpui_kit::*;
 
 use sc_core::edit::text_find::{self, Finder, LIMIT, Options, word_at};
+use sc_core::t;
 
 actions!(
     find_bar,
@@ -105,8 +106,8 @@ pub struct FindBar {
 
 impl FindBar {
     pub fn new(editor: Entity<EditorState>, window: &mut Window, cx: &mut Context<Self>) -> Self {
-        let query = cx.new(|cx| InputState::new(window, cx).placeholder("Find"));
-        let replacement = cx.new(|cx| InputState::new(window, cx).placeholder("Replace"));
+        let query = cx.new(|cx| InputState::new(window, cx).placeholder(t!("editor.find.placeholder")));
+        let replacement = cx.new(|cx| InputState::new(window, cx).placeholder(t!("editor.find.replace_placeholder")));
         let subscriptions = vec![
             cx.subscribe_in(&query, window, |this, _, event, window, cx| match event {
                 InputEvent::Change => {
@@ -534,14 +535,14 @@ impl FindBar {
 
     fn count(&self) -> String {
         match (self.matches.len(), self.current) {
-            (0, _) => "No results".into(),
+            (0, _) => t!("editor.find.no_results"),
             (n, current) => {
                 let total = match n >= LIMIT {
                     true => format!("{LIMIT}+"),
                     false => n.to_string(),
                 };
                 let at = current.map_or("?".to_owned(), |ix| (ix + 1).to_string());
-                format!("{at} of {total}")
+                t!("editor.find.count", current = at, total = total)
             }
         }
     }
@@ -550,7 +551,7 @@ impl FindBar {
 fn toggle(
     id: &'static str,
     icon: Lucide,
-    tooltip: &'static str,
+    tooltip: String,
     on: bool,
     cx: &Context<FindBar>,
     action: impl Fn(&mut FindBar, &mut Window, &mut Context<FindBar>) + 'static,
@@ -581,7 +582,7 @@ impl Render for FindBar {
             .child(toggle(
                 "find-case",
                 Lucide::CaseSensitive,
-                "Match Case (Alt+C)",
+                t!("editor.find.match_case"),
                 o.match_case,
                 cx,
                 |this, w, cx| this.toggle_option(|o| o.match_case = !o.match_case, w, cx),
@@ -589,7 +590,7 @@ impl Render for FindBar {
             .child(toggle(
                 "find-word",
                 Lucide::WholeWord,
-                "Match Whole Word (Alt+W)",
+                t!("editor.find.whole_word"),
                 o.whole_word,
                 cx,
                 |this, w, cx| this.toggle_option(|o| o.whole_word = !o.whole_word, w, cx),
@@ -597,7 +598,7 @@ impl Render for FindBar {
             .child(toggle(
                 "find-regex",
                 Lucide::Regex,
-                "Use Regular Expression (Alt+R)",
+                t!("editor.find.regex"),
                 o.regex,
                 cx,
                 |this, w, cx| this.toggle_option(|o| o.regex = !o.regex, w, cx),
@@ -613,7 +614,7 @@ impl Render for FindBar {
                         true => Lucide::ChevronDown,
                         false => Lucide::ChevronRight,
                     })
-                    .tooltip("Toggle Replace")
+                    .tooltip(t!("editor.find.toggle_replace"))
                     .on_click(cx.listener(|this, _, _, cx| {
                         this.expanded = !this.expanded;
                         cx.notify();
@@ -643,7 +644,7 @@ impl Render for FindBar {
                     .ghost()
                     .icon(Lucide::ChevronUp)
                     .disabled(!has_matches)
-                    .tooltip("Previous Match (Shift+Enter)")
+                    .tooltip(t!("editor.find.previous"))
                     .on_click(cx.listener(|this, _, window, cx| this.previous(window, cx))),
             )
             .child(
@@ -652,13 +653,13 @@ impl Render for FindBar {
                     .ghost()
                     .icon(Lucide::ChevronDown)
                     .disabled(!has_matches)
-                    .tooltip("Next Match (Enter)")
+                    .tooltip(t!("editor.find.next"))
                     .on_click(cx.listener(|this, _, window, cx| this.next(window, cx))),
             )
             .child(toggle(
                 "find-in-selection",
                 Lucide::SquareDashedText,
-                "Find in Selection (Alt+L)",
+                t!("editor.find.in_selection"),
                 self.scope.is_some(),
                 cx,
                 |this, w, cx| this.toggle_in_selection(w, cx),
@@ -668,7 +669,7 @@ impl Render for FindBar {
                     .xsmall()
                     .ghost()
                     .icon(Lucide::X)
-                    .tooltip("Close (Escape)")
+                    .tooltip(t!("editor.find.close"))
                     .on_click(cx.listener(|this, _, window, cx| this.close(window, cx))),
             );
         let replace_row =
@@ -680,7 +681,7 @@ impl Render for FindBar {
                     Input::new(&self.replacement).small().suffix(toggle(
                         "find-preserve-case",
                         Lucide::CaseUpper,
-                        "Preserve Case (Alt+P)",
+                        t!("editor.find.preserve_case"),
                         o.preserve_case,
                         cx,
                         |this, w, cx| {
@@ -694,7 +695,7 @@ impl Render for FindBar {
                         .ghost()
                         .icon(Lucide::Replace)
                         .disabled(!has_matches)
-                        .tooltip("Replace (Ctrl+Shift+1)")
+                        .tooltip(t!("editor.find.replace"))
                         .on_click(cx.listener(|this, _, window, cx| {
                             this.replace_one(&ReplaceOne, window, cx)
                         })),
@@ -705,7 +706,7 @@ impl Render for FindBar {
                         .ghost()
                         .icon(Lucide::ReplaceAll)
                         .disabled(!has_matches)
-                        .tooltip("Replace All (Ctrl+Alt+Enter)")
+                        .tooltip(t!("editor.find.replace_all"))
                         .on_click(cx.listener(|this, _, window, cx| {
                             this.replace_all(&ReplaceAll, window, cx)
                         })),

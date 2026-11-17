@@ -19,7 +19,7 @@ use sc_core::system::devices::{self, Device, Volume, VolumeKind};
 use sc_core::menu::Command;
 use sc_core::remote::{Address, Scheme};
 use sc_core::sidebar::{self, FolderTree, Group, SidebarTab};
-use sc_core::{icons, system::theme};
+use sc_core::{icons, system::theme, t};
 
 use crate::panel::drag_drop::{DragLabel, Dragged};
 use crate::menus::CommandEntry;
@@ -277,7 +277,7 @@ impl Commander {
         let mut all = Connections::load().unwrap_or_default();
         change(&mut all);
         if let Err(err) = all.save() {
-            window.push_notification(Notification::error(format!("Could not save the connections: {err}")), cx);
+            window.push_notification(Notification::error(t!("connections.save_failed", err = err)), cx);
         }
         self.sidebar.reload_servers();
         cx.notify();
@@ -291,7 +291,7 @@ impl Commander {
             None => Connection { folder: self.picked_folder(), ..Connection::default() },
         };
         if duplicate {
-            connection.name = format!("{} (copy)", connection.name);
+            connection.name = t!("connections.duplicate_name", name = connection.name);
         }
         let replace = ix.filter(|_| !duplicate);
         let this = cx.entity().downgrade();
@@ -337,18 +337,19 @@ impl Commander {
     /// A new folder of connections (none), or `old` renamed.
     fn name_server_folder(&mut self, old: Option<String>, window: &mut Window, cx: &mut Context<Self>) {
         let (title, value) = match &old {
-            Some(old) => ("Rename Folder", old.clone()),
-            None => ("New Folder", String::new()),
+            Some(old) => (t!("connections.folder.rename_title"), old.clone()),
+            None => (t!("connections.folder.new_title"), String::new()),
         };
         let this = cx.entity().downgrade();
-        crate::dialogs::name_dialog::open(title, "Name:", value, window, cx, move |name, window, cx| {
+        // shortcut: name_dialog takes &'static str, so a few bytes leak per open; drop .leak() once it takes a SharedString.
+        crate::dialogs::name_dialog::open(title.leak(), t!("connections.folder.name").leak(), value, window, cx, move |name, window, cx| {
             let _ = this.update(cx, |this, cx| {
                 let mut named = false;
                 this.change_servers(|all| named = all.name_folder(old.as_deref(), &name), window, cx);
                 match named {
                     true => this.sidebar.selected = Some(Picked::Folder(name.trim().to_owned())),
                     false if !name.trim().is_empty() => {
-                        window.push_notification(Notification::error(format!("There is a folder named {} already.", name.trim())), cx);
+                        window.push_notification(Notification::error(t!("connections.folder.exists", name = name.trim())), cx);
                     }
                     false => {}
                 }
@@ -359,10 +360,7 @@ impl Commander {
     /// A folder of connections gone, its connections too: asked first when it has any.
     fn delete_server_folder(&mut self, name: String, window: &mut Window, cx: &mut Context<Self>) {
         let inside = self.sidebar.connections.saved.iter().filter(|connection| connection.folder.as_deref() == Some(name.as_str())).count();
-        let text = match inside {
-            1 => format!("Delete the folder {name} and the connection in it?"),
-            n => format!("Delete the folder {name} and the {n} connections in it?"),
-        };
+        let text = t!("connections.folder.delete_confirm", name = name, count = inside);
         let delete = move |this: &mut Self, window: &mut Window, cx: &mut Context<Self>| {
             this.sidebar.selected = None;
             this.change_servers(
@@ -381,7 +379,7 @@ impl Commander {
         let this = cx.entity().downgrade();
         window.open_alert_dialog(cx, move |alert, _, _| {
             let (this, delete) = (this.clone(), delete.clone());
-            alert.title("Delete Folder").description(text.clone()).ok_text("Delete").show_cancel(true).on_ok(move |_, window, cx| {
+            alert.title(t!("connections.folder.delete_title")).description(text.clone()).ok_text(t!("connections.delete")).show_cancel(true).on_ok(move |_, window, cx| {
                 let delete = delete.clone();
                 let _ = this.update(cx, |this, cx| delete(this, window, cx));
                 true
@@ -426,10 +424,10 @@ impl Commander {
         }
         let background = self.colors.window.opacity(self.sidebar.tint.unwrap_or(1.));
         let sections = [
-            (SidebarTab::Places, Lucide::Bookmark, "Places"),
-            (SidebarTab::Tree, Lucide::FolderTree, "Folders"),
-            (SidebarTab::Connections, Lucide::Network, "Connections"),
-            (SidebarTab::Operations, Lucide::ListOrdered, "Operations"),
+            (SidebarTab::Places, Lucide::Bookmark, t!("sidebar.section.places")),
+            (SidebarTab::Tree, Lucide::FolderTree, t!("sidebar.section.folders")),
+            (SidebarTab::Connections, Lucide::Network, t!("sidebar.section.connections")),
+            (SidebarTab::Operations, Lucide::ListOrdered, t!("sidebar.section.operations")),
         ];
         let mut accordion = v_flex().h_full().flex_1().min_w_0();
         for (at, (which, icon, name)) in sections.into_iter().enumerate() {
@@ -447,7 +445,7 @@ impl Commander {
             let summary = summary.map(|(text, _)| div().text_xs().text_color(theme.muted_foreground).child(text));
             // A click opens it; the open one stays: one is always open.
             let header = h_flex()
-                .id(name)
+                .id(("sidebar-section", at))
                 .relative()
                 .flex_none()
                 .h(SECTION)
@@ -648,7 +646,7 @@ impl Commander {
             return self.open_folder(path, window, cx);
         }
         let name = volume.name.clone();
-        let note = Notification::info(format!("Mounting {name}...")).id1::<Mounting>(name.clone()).autohide(false);
+        let note = Notification::info(t!("sidebar.volume.mounting", name = name)).id1::<Mounting>(name.clone()).autohide(false);
         window.push_notification(note, cx);
         // A thread of its own: an encrypted one waits on its passphrase.
         let (ask, kept) = self.dialog_ask(window, cx);
@@ -711,7 +709,7 @@ impl Commander {
                     }
                     cx.notify();
                 }
-                Err(err) => window.push_notification(Notification::error(format!("Could not unmount: {err}")), cx),
+                Err(err) => window.push_notification(Notification::error(t!("sidebar.volume.unmount_failed", err = err)), cx),
             });
         })
         .detach();
@@ -722,15 +720,15 @@ impl Commander {
         let selected = volume.path.is_some() && volume.path.as_deref() == inside;
         let icon = volume_icon(volume.kind);
         let detail = match (&volume.path, &volume.udisks) {
-            (Some(_), _) => "",
-            (None, None) if volume.encrypted.is_some() => "locked",
-            (None, _) => "not mounted",
+            (Some(_), _) => String::new(),
+            (None, None) if volume.encrypted.is_some() => t!("sidebar.volume.locked"),
+            (None, _) => t!("sidebar.volume.not_mounted"),
         };
         // A disk's size and free space, under its name; not a share's, which may hang.
         let disk = matches!(volume.kind, VolumeKind::System | VolumeKind::Drive | VolumeKind::Removable);
         let space = (volume.path.as_deref().filter(|_| disk))
             .and_then(|path| devices::disk_space(path).ok())
-            .map(|(size, free)| format!("{} free of {}", sc_core::human_size(free), sc_core::human_size(size)));
+            .map(|(size, free)| t!("sidebar.volume.space", free = sc_core::human_size(free), total = sc_core::human_size(size)));
         let (opened, menu_volume) = (volume.clone(), volume.clone());
         let commander = cx.entity().downgrade();
         let name = v_flex()
@@ -757,7 +755,7 @@ impl Commander {
             .when(!detail.is_empty(), |el| el.child(div().flex_1().min_w_0().truncate().text_xs().text_color(theme.muted_foreground).child(detail)))
             .on_click(cx.listener(move |this, _, window, cx| this.open_volume(opened.clone(), window, cx)))
             .context_menu(move |menu, _, _| {
-                let act = |label: &'static str, unmount: bool| {
+                let act = |label: String, unmount: bool| {
                     let (commander, volume) = (commander.clone(), menu_volume.clone());
                     PopupMenuItem::new(label).on_click(move |_, window, cx| {
                         let volume = volume.clone();
@@ -768,9 +766,9 @@ impl Commander {
                     })
                 };
                 let mounted = menu_volume.path.is_some() && menu_volume.udisks.is_some();
-                let menu = menu.item(act("Open", false));
+                let menu = menu.item(act(t!("sidebar.volume.open"), false));
                 match mounted {
-                    true => menu.item(act("Unmount", true)),
+                    true => menu.item(act(t!("sidebar.volume.unmount"), true)),
                     false => menu,
                 }
             })
@@ -782,7 +780,7 @@ impl Commander {
         let (id, name) = (device.id.clone(), device.name.clone());
         // Mounted, it is quick.
         if !self.sidebar.device_folders.contains_key(&id) {
-            let note = Notification::info(format!("Opening {name}...")).id1::<Mounting>(id.clone()).autohide(false);
+            let note = Notification::info(t!("sidebar.device.opening", name = name)).id1::<Mounting>(id.clone()).autohide(false);
             window.push_notification(note, cx);
         }
         let mount = {
@@ -831,11 +829,11 @@ impl Commander {
     fn reconnect_device(&mut self, device: Device, window: &mut Window, cx: &mut Context<Self>) {
         let (id, name) = (device.id.clone(), device.name.clone());
         if self.sidebar.reconnected.get(&id).is_some_and(|at| at.elapsed() < Duration::from_secs(30)) {
-            let text = format!("{name} does not answer: unlock it and open KDE Connect on it, then read the folder again (F2).");
+            let text = t!("sidebar.device.not_answering", name = name);
             return window.push_notification(Notification::error(text).id1::<Mounting>(id), cx);
         }
         self.sidebar.reconnected.insert(id.clone(), std::time::Instant::now());
-        let note = Notification::info(format!("{name} does not answer: connecting again...")).id1::<Mounting>(id.clone()).autohide(false);
+        let note = Notification::info(t!("sidebar.device.reconnecting", name = name)).id1::<Mounting>(id.clone()).autohide(false);
         window.push_notification(note, cx);
         let mount = cx.background_executor().spawn({
             let id = id.clone();
@@ -863,7 +861,7 @@ impl Commander {
                         cx.notify();
                     }
                     Err(err) => {
-                        let text = format!("{name} does not answer ({err}): unlock it and open KDE Connect on it.");
+                        let text = t!("sidebar.device.not_answering_error", name = name, err = err);
                         window.push_notification(Notification::error(text).autohide(false), cx);
                     }
                 }
@@ -905,7 +903,7 @@ impl Commander {
                     this.sidebar.device_folders.remove(&id);
                     cx.notify();
                 }
-                Err(err) => window.push_notification(Notification::error(format!("{name}: could not unmount: {err}")), cx),
+                Err(err) => window.push_notification(Notification::error(t!("sidebar.device.unmount_failed", name = name, err = err)), cx),
             });
         })
         .detach();
@@ -929,19 +927,19 @@ impl Commander {
         let (phones, network) = (of(&[VolumeKind::Phone]), of(&[VolumeKind::Network]));
         let cloud = of(&[VolumeKind::Cloud]);
         if !drives.is_empty() {
-            list = list.child(section("Drives", cx));
+            list = list.child(section(t!("sidebar.group.drives"), cx));
         }
         for (ix, volume) in &drives {
             list = list.child(self.render_volume(*ix, volume, inside.as_deref(), cx));
         }
         if !cloud.is_empty() {
-            list = list.child(section("Cloud", cx));
+            list = list.child(section(t!("sidebar.group.cloud"), cx));
         }
         for (ix, volume) in &cloud {
             list = list.child(self.render_volume(*ix, volume, inside.as_deref(), cx));
         }
         if !phones.is_empty() || !self.sidebar.devices.is_empty() {
-            list = list.child(section("Devices", cx));
+            list = list.child(section(t!("sidebar.group.devices"), cx));
         }
         for (ix, volume) in &phones {
             list = list.child(self.render_volume(*ix, volume, inside.as_deref(), cx));
@@ -956,9 +954,9 @@ impl Commander {
                 _ => Lucide::Smartphone,
             };
             let detail = match (device.reachable, device.browsable) {
-                (false, _) => "not connected",
-                (true, false) => "shares no files",
-                (true, true) => "",
+                (false, _) => t!("sidebar.device.not_connected"),
+                (true, false) => t!("sidebar.device.no_files"),
+                (true, true) => String::new(),
             };
             let opened = device.clone();
             list = list.child(
@@ -1012,7 +1010,7 @@ impl Commander {
             }
         }
         if !network.is_empty() {
-            list = list.child(section("Network", cx));
+            list = list.child(section(t!("sidebar.group.network"), cx));
         }
         for (ix, volume) in &network {
             list = list.child(self.render_volume(*ix, volume, inside.as_deref(), cx));
@@ -1028,10 +1026,10 @@ impl Commander {
             .ghost()
             .xsmall()
             .icon(IconName::Ellipsis)
-            .tooltip("Manage Bookmarks...")
+            .tooltip(t!("command.manage_bookmarks"))
             .on_click(cx.listener(|this, _, window, cx| this.manage_bookmarks(window, cx)));
         let header = h_flex()
-            .child(section("Bookmarks", cx).flex_1())
+            .child(section(t!("sidebar.group.bookmarks"), cx).flex_1())
             .child(div().invisible().group_hover("bookmarks", |style| style.visible()).child(manage));
         let mut block = v_flex()
             .id("bookmarks")
@@ -1049,7 +1047,7 @@ impl Commander {
             .child(header);
         if self.settings.bookmarks.is_empty() {
             let hint = div().px_1().pb_1().text_xs().text_color(theme.muted_foreground);
-            block = block.child(hint.child("Drop folders here."));
+            block = block.child(hint.child(t!("bookmarks.drop_here")));
         }
         let home = std::env::home_dir();
         for (ix, path) in self.settings.bookmarks.iter().enumerate() {
@@ -1076,27 +1074,27 @@ impl Commander {
                     .child(div().flex_1().min_w_0().truncate().text_xs().text_color(theme.muted_foreground).children(parent))
                     .on_click(cx.listener(move |this, _, window, cx| this.open_folder(opened.clone(), window, cx)))
                     .context_menu(move |menu, _, _| {
-                        let act = |label: &'static str, run: fn(&mut Commander, usize, &mut Window, &mut Context<Commander>)| {
+                        let act = |label: String, run: fn(&mut Commander, usize, &mut Window, &mut Context<Commander>)| {
                             let commander = commander.clone();
                             PopupMenuItem::new(label).on_click(move |_, window, cx| {
                                 let _ = commander.update(cx, |this, cx| run(this, ix, window, cx));
                             })
                         };
-                        menu.item(act("Rename...", Commander::rename_bookmark))
-                            .item(act("Move Up", |this, ix, window, cx| this.move_bookmark(ix, ix.wrapping_sub(1), window, cx)))
-                            .item(act("Move Down", |this, ix, window, cx| this.move_bookmark(ix, ix + 1, window, cx)))
+                        menu.item(act(t!("bookmarks.rename"), Commander::rename_bookmark))
+                            .item(act(t!("bookmarks.move_up"), |this, ix, window, cx| this.move_bookmark(ix, ix.wrapping_sub(1), window, cx)))
+                            .item(act(t!("bookmarks.move_down"), |this, ix, window, cx| this.move_bookmark(ix, ix + 1, window, cx)))
                             .separator()
-                            .item(act("Copy Name", |this, ix, _, cx| {
+                            .item(act(t!("bookmarks.copy_name"), |this, ix, _, cx| {
                                 let name = this.settings.bookmarks.get(ix).map(|path| this.settings.bookmark_name(path));
                                 cx.write_to_clipboard(ClipboardItem::new_string(name.unwrap_or_default()));
                             }))
-                            .item(act("Copy Path", |this, ix, _, cx| {
+                            .item(act(t!("bookmarks.copy_path"), |this, ix, _, cx| {
                                 let path = this.settings.bookmarks.get(ix).map(|path| path.display().to_string());
                                 cx.write_to_clipboard(ClipboardItem::new_string(path.unwrap_or_default()));
                             }))
                             .separator()
-                            .item(act("Remove from Bookmarks", Commander::remove_bookmark))
-                            .item(act("Manage Bookmarks...", |this, _, window, cx| this.manage_bookmarks(window, cx)))
+                            .item(act(t!("bookmarks.remove_from"), Commander::remove_bookmark))
+                            .item(act(t!("command.manage_bookmarks"), |this, _, window, cx| this.manage_bookmarks(window, cx)))
                     }),
             );
         }
@@ -1108,12 +1106,12 @@ impl Commander {
         let panel = self.panels[self.active].tabs.current();
         let folder = panel.folder().to_owned();
         if panel.remote().is_some() || panel.in_archive() || panel.is_found() || !sc_core::settings::bookmarkable(&folder) {
-            return window.push_notification(Notification::warning(ONLY_LOCAL), cx);
+            return window.push_notification(Notification::warning(t!("bookmarks.only_local")), cx);
         }
         let name = folder.file_name().map_or_else(|| folder.display().to_string(), |name| name.to_string_lossy().into_owned());
         let note = match self.settings.bookmarks.contains(&folder) {
-            true => format!("{name} is in Bookmarks already."),
-            false => format!("Bookmarked: {name}"),
+            true => t!("bookmarks.already", name = name),
+            false => t!("bookmarks.added", name = name),
         };
         self.add_bookmarks(vec![folder], window, cx);
         window.push_notification(Notification::info(note), cx);
@@ -1126,7 +1124,7 @@ impl Commander {
         };
         let name = self.settings.bookmark_name(&path);
         let commander = cx.entity().downgrade();
-        crate::dialogs::name_dialog::open("Rename bookmark", "Name (empty: the folder's):", name, window, cx, move |name, window, cx| {
+        crate::dialogs::name_dialog::open(t!("bookmarks.rename_title").leak(), t!("bookmarks.rename_label").leak(), name, window, cx, move |name, window, cx| {
             let _ = commander.update(cx, |this, cx| {
                 match name.trim() {
                     "" => this.settings.bookmark_names.remove(&path),
@@ -1181,7 +1179,7 @@ impl Commander {
         let count = paths.len();
         let folders: Vec<PathBuf> = paths.into_iter().filter(|path| sc_core::settings::bookmarkable(path)).collect();
         if folders.len() < count {
-            window.push_notification(Notification::warning(ONLY_LOCAL), cx);
+            window.push_notification(Notification::warning(t!("bookmarks.only_local")), cx);
         }
         let bookmarks = &mut self.settings.bookmarks;
         let before = bookmarks.len();
@@ -1217,8 +1215,8 @@ impl Commander {
             if !bookmarks.is_empty() {
                 menu = menu.separator();
             }
-            menu.command("Add Current Folder", Command::BookmarkFolder)
-                .command("Manage Bookmarks...", Command::ManageBookmarks)
+            menu.command(t!("bookmarks.add_current"), Command::BookmarkFolder)
+                .command(t!("command.manage_bookmarks"), Command::ManageBookmarks)
                 .action_context(focus)
         });
         self.show_panel_list(list, window, cx);
@@ -1286,7 +1284,7 @@ impl Commander {
         };
         // ~/.ssh/config's hosts are its own: never changed here.
         let changeable = matches!(picked, Some(Picked::Saved(_) | Picked::Folder(_)));
-        let button = |id: &'static str, icon: Lucide, tip: &'static str| Button::new(id).ghost().small().icon(Icon::new(icon)).tooltip(tip);
+        let button = |id: &'static str, icon: Lucide, tip: String| Button::new(id).ghost().small().icon(Icon::new(icon)).tooltip(tip);
         let edit = picked.clone();
         let delete = picked.clone();
         let folders = all.folders.clone();
@@ -1295,7 +1293,7 @@ impl Commander {
             let Some(ix) = saved else {
                 return menu;
             };
-            let places = std::iter::once((None, "No Folder".to_owned())).chain(folders.iter().map(|folder| (Some(folder.clone()), folder.clone())));
+            let places = std::iter::once((None, t!("connections.no_folder"))).chain(folders.iter().map(|folder| (Some(folder.clone()), folder.clone())));
             places.fold(menu, |menu, (folder, label)| {
                 let commander = commander.clone();
                 menu.item(PopupMenuItem::new(label).on_click(move |_, window, cx| {
@@ -1308,21 +1306,21 @@ impl Commander {
             .flex_none()
             .px_1()
             .gap_0p5()
-            .child(button("server-new-folder", Lucide::FolderPlus, "New Folder...").on_click(cx.listener(|this, _, window, cx| this.name_server_folder(None, window, cx))))
-            .child(button("server-new", Lucide::Plus, "New Connection...").on_click(cx.listener(|this, _, window, cx| this.edit_server(None, false, window, cx))))
-            .child(button("server-edit", Lucide::Pencil, "Edit...").disabled(!changeable).on_click(cx.listener(move |this, _, window, cx| match edit.clone() {
+            .child(button("server-new-folder", Lucide::FolderPlus, t!("connections.new_folder")).on_click(cx.listener(|this, _, window, cx| this.name_server_folder(None, window, cx))))
+            .child(button("server-new", Lucide::Plus, t!("connections.new")).on_click(cx.listener(|this, _, window, cx| this.edit_server(None, false, window, cx))))
+            .child(button("server-edit", Lucide::Pencil, t!("connections.edit")).disabled(!changeable).on_click(cx.listener(move |this, _, window, cx| match edit.clone() {
                 Some(Picked::Saved(ix)) => this.edit_server(Some(ix), false, window, cx),
                 Some(Picked::Folder(name)) => this.name_server_folder(Some(name), window, cx),
                 _ => {}
             })))
-            .child(button("server-delete", Lucide::Trash, "Delete").disabled(!changeable).on_click(cx.listener(move |this, _, window, cx| match delete.clone() {
+            .child(button("server-delete", Lucide::Trash, t!("connections.delete")).disabled(!changeable).on_click(cx.listener(move |this, _, window, cx| match delete.clone() {
                 Some(Picked::Saved(ix)) => this.delete_server(ix, window, cx),
                 Some(Picked::Folder(name)) => this.delete_server_folder(name, window, cx),
                 _ => {}
             })))
-            .child(button("server-up", Lucide::ArrowUp, "Move Up").disabled(!up).on_click(cx.listener(|this, _, window, cx| this.step_server(true, window, cx))))
-            .child(button("server-down", Lucide::ArrowDown, "Move Down").disabled(!down).on_click(cx.listener(|this, _, window, cx| this.step_server(false, window, cx))))
-            .child(button("server-into", Lucide::FolderInput, "Move to Folder").disabled(saved.is_none()).dropdown_menu(into))
+            .child(button("server-up", Lucide::ArrowUp, t!("connections.move_up")).disabled(!up).on_click(cx.listener(|this, _, window, cx| this.step_server(true, window, cx))))
+            .child(button("server-down", Lucide::ArrowDown, t!("connections.move_down")).disabled(!down).on_click(cx.listener(|this, _, window, cx| this.step_server(false, window, cx))))
+            .child(button("server-into", Lucide::FolderInput, t!("connections.move_to_folder")).disabled(saved.is_none()).dropdown_menu(into))
     }
 
     fn render_connections(&self, cx: &mut Context<Self>) -> impl IntoElement + use<> {
@@ -1338,7 +1336,7 @@ impl Commander {
             .on_drop(cx.listener(|this, ServerFolderDrag(name): &ServerFolderDrag, window, cx| this.move_server_folder(name.clone(), None, window, cx)));
         if groups.iter().all(|(group, servers)| *group == Group::Top && servers.is_empty()) {
             let theme = cx.theme();
-            list = list.child(div().p_2().whitespace_normal().text_color(theme.muted_foreground).child("No connections yet."));
+            list = list.child(div().p_2().whitespace_normal().text_color(theme.muted_foreground).child(t!("connections.empty")));
         }
         for (group, servers) in groups {
             let open = !self.sidebar.closed.contains(&group);
@@ -1417,20 +1415,20 @@ impl Commander {
                 this.move_server_folder(moved.clone(), Some(before.clone()), window, cx)
             }))
             .context_menu(move |menu, _, _| {
-                let act = |label: &'static str, run: fn(&mut Commander, String, &mut Window, &mut Context<Commander>)| {
+                let act = |label: String, run: fn(&mut Commander, String, &mut Window, &mut Context<Commander>)| {
                     let (commander, name) = (commander.clone(), menu_name.clone());
                     PopupMenuItem::new(label).on_click(move |_, window, cx| {
                         let name = name.clone();
                         let _ = commander.update(cx, |this, cx| run(this, name, window, cx));
                     })
                 };
-                menu.item(act("New Connection...", |this, name, window, cx| {
+                menu.item(act(t!("connections.new"), |this, name, window, cx| {
                     this.sidebar.selected = Some(Picked::Folder(name));
                     this.edit_server(None, false, window, cx)
                 }))
                 .separator()
-                .item(act("Rename...", |this, name, window, cx| this.name_server_folder(Some(name), window, cx)))
-                .item(act("Delete", |this, name, window, cx| this.delete_server_folder(name, window, cx)))
+                .item(act(t!("connections.folder.rename"), |this, name, window, cx| this.name_server_folder(Some(name), window, cx)))
+                .item(act(t!("connections.delete"), |this, name, window, cx| this.delete_server_folder(name, window, cx)))
             })
     }
 
@@ -1446,7 +1444,7 @@ impl Commander {
             .rounded(theme.radius)
             .cursor_pointer()
             .hover(|style| style.bg(theme.foreground.opacity(0.06)))
-            .tooltip(|window, cx| gpui_kit::component::tooltip::Tooltip::new("Read only: these hosts are edited in ~/.ssh/config itself").build(window, cx))
+            .tooltip(|window, cx| gpui_kit::component::tooltip::Tooltip::new(t!("connections.ssh_config.read_only")).build(window, cx))
             .child(chevron)
             .child(Icon::new(Lucide::Lock).xsmall().text_color(theme.muted_foreground))
             .child(div().flex_1().font_semibold().child("~/.ssh/config"))
@@ -1523,11 +1521,9 @@ pub(crate) fn tilde(path: &Path, home: Option<&Path>) -> String {
     }
 }
 
-const ONLY_LOCAL: &str = "Only this computer's folders can be bookmarked.";
-
 /// A tab's title line; buttons go after it.
 /// A group's name in a tab: Drives, Phones, Network.
-fn section(title: &'static str, cx: &App) -> Div {
+fn section(title: String, cx: &App) -> Div {
     let label = div().text_xs().font_semibold().text_color(cx.theme().muted_foreground);
     label.px_1().pt_2().pb_0p5().child(title)
 }
@@ -1542,34 +1538,34 @@ fn server_menu(
     saved: Option<usize>,
     connected: bool,
 ) -> gpui_kit::component::menu::PopupMenu {
-    let copy = |label: &'static str, text: String| PopupMenuItem::new(label).on_click(move |_, _, cx| cx.write_to_clipboard(ClipboardItem::new_string(text.clone())));
+    let copy = |label: String, text: String| PopupMenuItem::new(label).on_click(move |_, _, cx| cx.write_to_clipboard(ClipboardItem::new_string(text.clone())));
     // Its address as typed to connect: no password is kept in it.
-    let (copy_name, copy_path) = (copy("Copy Name", name), copy("Copy Path", address.url()));
+    let (copy_name, copy_path) = (copy(t!("connections.copy_name"), name), copy(t!("connections.copy_path"), address.url()));
     let (commander_for_connect, ssh, server) = (commander.clone(), address.clone(), address.clone());
     let sftp = address.scheme == Scheme::Sftp;
-    let connect = PopupMenuItem::new("Connect").on_click(move |_, window, cx| {
+    let connect = PopupMenuItem::new(t!("connections.connect")).on_click(move |_, window, cx| {
         let _ = commander_for_connect.update(cx, |this, cx| this.connect(this.active, address.clone(), window, cx));
     });
     let mut menu = menu.item(connect);
     if sftp {
         let commander = commander.clone();
-        menu = menu.item(PopupMenuItem::new("Open in Terminal").on_click(move |_, window, cx| {
+        menu = menu.item(PopupMenuItem::new(t!("connections.open_in_terminal")).on_click(move |_, window, cx| {
             let _ = commander.update(cx, |this, cx| this.ssh_in_terminal(&ssh, window, cx));
         }));
     }
     if let Some(ix) = saved {
-        let edit = |label: &'static str, run: fn(&mut Commander, usize, &mut Window, &mut Context<Commander>)| {
+        let edit = |label: String, run: fn(&mut Commander, usize, &mut Window, &mut Context<Commander>)| {
             let commander = commander.clone();
             PopupMenuItem::new(label).on_click(move |_, window, cx| {
                 let _ = commander.update(cx, |this, cx| run(this, ix, window, cx));
             })
         };
         menu = menu
-            .item(edit("Edit...", |this, ix, window, cx| this.edit_server(Some(ix), false, window, cx)))
-            .item(edit("Duplicate", |this, ix, window, cx| this.edit_server(Some(ix), true, window, cx)))
-            .item(edit("Delete", |this, ix, window, cx| this.delete_server(ix, window, cx)));
+            .item(edit(t!("connections.edit"), |this, ix, window, cx| this.edit_server(Some(ix), false, window, cx)))
+            .item(edit(t!("connections.duplicate"), |this, ix, window, cx| this.edit_server(Some(ix), true, window, cx)))
+            .item(edit(t!("connections.delete"), |this, ix, window, cx| this.delete_server(ix, window, cx)));
     }
-    let disconnect = PopupMenuItem::new("Disconnect").disabled(!connected).on_click(move |_, window, cx| {
+    let disconnect = PopupMenuItem::new(t!("connections.disconnect")).disabled(!connected).on_click(move |_, window, cx| {
         let _ = commander.update(cx, |this, cx| this.disconnect_server(&server, window, cx));
     });
     menu.separator().item(copy_name).item(copy_path).separator().item(disconnect)

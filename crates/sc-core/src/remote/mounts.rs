@@ -256,7 +256,7 @@ mod gvfs {
         }
         let gio = gio.arg(&url).stdin(Stdio::piped()).stdout(Stdio::piped()).stderr(Stdio::piped()).spawn();
         let mut gio = gio.map_err(|err| match err.kind() {
-            io::ErrorKind::NotFound => io::Error::other("needs KDE's kio-fuse or GNOME's gvfs"),
+            io::ErrorKind::NotFound => io::Error::other(crate::t!("remote.mount.needs_desktop")),
             _ => err,
         })?;
         let refused = answer(&mut gio, login)?;
@@ -267,8 +267,8 @@ mod gvfs {
             let said = said.trim().rsplit(": ").next().unwrap_or_default();
             let why = match (refused, login) {
                 (false, _) => said.to_owned(),
-                (true, None) => "it needs a user and password".to_owned(),
-                (true, Some(_)) => "the user or password is wrong".to_owned(),
+                (true, None) => crate::t!("remote.mount.needs_login"),
+                (true, Some(_)) => crate::t!("remote.mount.login_wrong"),
             };
             return Err(io::Error::other(why));
         }
@@ -277,7 +277,7 @@ mod gvfs {
         let local = info.lines().find_map(|line| line.trim().strip_prefix("local path:"));
         local
             .map(|path| PathBuf::from(path.trim()))
-            .ok_or_else(|| io::Error::other("mounted, but there is no folder for it: gvfs-fuse is missing"))
+            .ok_or_else(|| io::Error::other(crate::t!("remote.mount.no_fuse")))
     }
 
     /// Answers gio's prompts (`User [me]: `, `Domain [WORKGROUP]: `,
@@ -361,7 +361,7 @@ mod system {
     }
 
     pub fn mount(url: &str, login: Option<&Login>) -> io::Result<PathBuf> {
-        let (path, share) = super::unc(url).ok_or_else(|| io::Error::other("the share is missing: smb://server/share"))?;
+        let (path, share) = super::unc(url).ok_or_else(|| io::Error::other(crate::t!("remote.mount.no_share")))?;
         if let Some(login) = login {
             let mut remote: Vec<u16> = share.encode_utf16().chain([0]).collect();
             let resource = NETRESOURCEW { dwType: RESOURCETYPE_DISK, lpRemoteName: PWSTR(remote.as_mut_ptr()), ..Default::default() };
@@ -369,15 +369,15 @@ mod system {
             let added = unsafe { WNetAddConnection2W(&resource, &password, &user, CONNECT_TEMPORARY) };
             match added.0 {
                 0 => {}
-                1326 => return Err(io::Error::other("the user or password is wrong")),
-                1219 => return Err(io::Error::other("Windows is connected to this server as another user: log off, or use that user")),
+                1326 => return Err(io::Error::other(crate::t!("remote.mount.login_wrong"))),
+                1219 => return Err(io::Error::other(crate::t!("remote.mount.other_user"))),
                 code => return Err(io::Error::from_raw_os_error(code as i32)),
             }
         }
         // Open to guests, or to the login Windows has for it: reading it tells.
         let nfs = url.get(..6).is_some_and(|scheme| scheme.eq_ignore_ascii_case("nfs://"));
         std::fs::read_dir(&path).map(|_| PathBuf::from(&path)).map_err(|err| match err.raw_os_error() {
-            Some(67) if nfs => io::Error::other("not found; NFS needs Windows' Client for NFS (Windows Features)"),
+            Some(67) if nfs => io::Error::other(crate::t!("remote.mount.no_nfs_client")),
             _ => err,
         })
     }
@@ -414,7 +414,7 @@ mod system {
     const EAUTH: c_int = 80;
 
     pub fn mount(url: &str, login: Option<&Login>) -> io::Result<PathBuf> {
-        let address = crate::remote::Address::parse(url).ok_or_else(|| io::Error::other("not an address"))?;
+        let address = crate::remote::Address::parse(url).ok_or_else(|| io::Error::other(crate::t!("remote.mount.not_address")))?;
         let path = address.path.clone().unwrap_or_default();
         let parts: Vec<&str> = path.split('/').filter(|part| !part.is_empty()).collect();
         // SMB mounts the share, the rest is a folder in it; NFS the path as given.
@@ -424,12 +424,12 @@ mod system {
             false => (&parts[..], &parts[..0]),
         };
         if mounted.is_empty() {
-            return Err(io::Error::other("the share is missing: smb://server/share"));
+            return Err(io::Error::other(crate::t!("remote.mount.no_share")));
         }
         let host = if address.host.contains(':') { format!("[{}]", address.host) } else { address.host.clone() };
         let port = address.port.map(|port| format!(":{port}")).unwrap_or_default();
         let target = format!("{}://{host}{port}/{}", address.scheme.name(), encode(&mounted.join("/")));
-        let url = CFURL::from_string(None, &CFString::from_str(&target), None).ok_or_else(|| io::Error::other("not an address"))?;
+        let url = CFURL::from_string(None, &CFString::from_str(&target), None).ok_or_else(|| io::Error::other(crate::t!("remote.mount.not_address")))?;
         let options = CFMutableDictionary::<CFString, CFType>::empty();
         options.set(&CFString::from_str("UIOption"), &CFString::from_str("NoUI"));
         if login.is_none() {
@@ -442,12 +442,12 @@ mod system {
         let at = match code {
             0 => points.and_then(|points| points.get(0)).map(|point| PathBuf::from(point.to_string())),
             EEXIST => mounted_at(&address.host, &mounted.join("/")),
-            EAUTH if login.is_some() => return Err(io::Error::other("the user or password is wrong")),
-            EAUTH => return Err(io::Error::other("it needs a user and password")),
+            EAUTH if login.is_some() => return Err(io::Error::other(crate::t!("remote.mount.login_wrong"))),
+            EAUTH => return Err(io::Error::other(crate::t!("remote.mount.needs_login"))),
             code if code > 0 => return Err(io::Error::from_raw_os_error(code)),
-            code => return Err(io::Error::other(format!("macOS could not mount it (NetFS {code})"))),
+            code => return Err(io::Error::other(crate::t!("remote.mount.macos_failed", code = code))),
         };
-        let at = at.ok_or_else(|| io::Error::other("mounted, but not found among the mounted"))?;
+        let at = at.ok_or_else(|| io::Error::other(crate::t!("remote.mount.not_found")))?;
         Ok(rest.iter().fold(at, |at, part| at.join(part)))
     }
 

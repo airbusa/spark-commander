@@ -6,7 +6,7 @@ use gpui_kit::component::notification::Notification;
 use gpui_kit::component::{ActiveTheme, Disableable, IconName, WindowExt, h_flex, v_flex};
 use gpui_kit::prelude::FluentBuilder;
 use gpui_kit::*;
-use sc_core::icons;
+use sc_core::{icons, t};
 
 use crate::Commander;
 use crate::panel::drag_drop::Dragged;
@@ -20,7 +20,7 @@ impl Commander {
             commander: commander.downgrade(),
             selected: None,
         });
-        window.open_dialog(cx, move |dialog, _, _| dialog.title("Bookmarks").width(px(640.)).child(view.clone()));
+        window.open_dialog(cx, move |dialog, _, _| dialog.title(t!("bookmarks.title")).width(px(640.)).child(view.clone()));
     }
 }
 
@@ -76,13 +76,13 @@ impl BookmarksDialog {
             files: false,
             directories: true,
             multiple: true,
-            prompt: Some("Bookmark".into()),
+            prompt: Some(t!("bookmarks.chooser.prompt").into()),
         });
         cx.spawn_in(window, async move |this, cx| {
             let chosen = paths.await;
             let _ = this.update_in(cx, |this, window, cx| match chosen {
                 Ok(Ok(Some(paths))) => this.add(paths, window, cx),
-                Ok(Err(err)) => window.push_notification(Notification::error(format!("Could not show the folder chooser: {err}")), cx),
+                Ok(Err(err)) => window.push_notification(Notification::error(t!("bookmarks.chooser.failed", err = err)), cx),
                 _ => {}
             });
         })
@@ -117,7 +117,7 @@ impl Render for BookmarksDialog {
             }))
             .on_drop(cx.listener(|this, paths: &ExternalPaths, window, cx| this.add(paths.paths().to_vec(), window, cx)));
         if rows.is_empty() {
-            list = list.child(div().p_2().text_sm().text_color(muted).child("No bookmarks: add folders, or drop them here."));
+            list = list.child(div().p_2().text_sm().text_color(muted).child(t!("bookmarks.empty")));
         }
         for (ix, (name, path)) in rows.iter().enumerate() {
             let theme = cx.theme();
@@ -158,19 +158,19 @@ impl Render for BookmarksDialog {
         };
         let buttons = h_flex()
             .gap_2()
-            .child(Button::new("bookmarks-add").outline().label("Add Folders...").on_click(cx.listener(|this, _, window, cx| this.browse(window, cx))))
-            .child(on_selected(Button::new("bookmarks-rename").label("Rename..."), |this, ix, window, cx| {
+            .child(Button::new("bookmarks-add").outline().label(t!("bookmarks.add_folders")).on_click(cx.listener(|this, _, window, cx| this.browse(window, cx))))
+            .child(on_selected(Button::new("bookmarks-rename").label(t!("bookmarks.rename")), |this, ix, window, cx| {
                 this.run(window, cx, |this, window, cx| this.rename_bookmark(ix, window, cx))
             }))
-            .child(on_selected(Button::new("bookmarks-remove").label("Remove"), Self::remove))
+            .child(on_selected(Button::new("bookmarks-remove").label(t!("bookmarks.remove")), Self::remove))
             .child(
-                on_selected(Button::new("bookmarks-up").icon(IconName::ArrowUp).tooltip("Move Up"), |this, ix, window, cx| {
+                on_selected(Button::new("bookmarks-up").icon(IconName::ArrowUp).tooltip(t!("bookmarks.move_up")), |this, ix, window, cx| {
                     this.move_to(ix, ix.wrapping_sub(1), window, cx)
                 })
                 .disabled(selected.is_none_or(|ix| ix == 0)),
             )
             .child(
-                on_selected(Button::new("bookmarks-down").icon(IconName::ArrowDown).tooltip("Move Down"), |this, ix, window, cx| {
+                on_selected(Button::new("bookmarks-down").icon(IconName::ArrowDown).tooltip(t!("bookmarks.move_down")), |this, ix, window, cx| {
                     this.move_to(ix, ix + 1, window, cx)
                 })
                 .disabled(selected.is_none_or(|ix| ix + 1 >= count)),
@@ -178,7 +178,7 @@ impl Render for BookmarksDialog {
             .child(
                 Button::new("bookmarks-sort")
                     .outline()
-                    .label("Sort A–Z")
+                    .label(t!("bookmarks.sort"))
                     .disabled(count < 2)
                     .on_click(cx.listener(|this, _, window, cx| {
                         this.run(window, cx, Commander::sort_bookmarks);
@@ -186,12 +186,12 @@ impl Render for BookmarksDialog {
                     })),
             )
             .child(div().flex_1())
-            .child(Button::new("bookmarks-close").primary().label("Close").min_w(px(80.)).on_click(|_, window, cx| window.close_dialog(cx)));
+            .child(Button::new("bookmarks-close").primary().label(t!("bookmarks.close")).min_w(px(80.)).on_click(|_, window, cx| window.close_dialog(cx)));
         v_flex()
             .w_full()
             .gap_2()
             .text_sm()
-            .child(div().text_color(muted).child("This computer's folders, in Places' order: drag one to move it, or drop folders here to add them."))
+            .child(div().text_color(muted).child(t!("bookmarks.intro")))
             .child(list)
             .child(buttons)
     }

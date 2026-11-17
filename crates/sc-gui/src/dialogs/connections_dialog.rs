@@ -14,6 +14,7 @@ use gpui_kit::*;
 use sc_core::remote::connections::Connection;
 use sc_core::remote::{self, Scheme};
 use sc_core::remote::secrets;
+use sc_core::t;
 
 type Protocols = SelectState<Vec<&'static str>>;
 
@@ -34,23 +35,23 @@ pub(crate) fn open_edit(
                 .default_value(value.unwrap_or_default())
         })
     };
-    let name = input(Some(connection.name.clone()), "as the list shows it", cx);
+    let name = input(Some(connection.name.clone()), &t!("connections.placeholder.name"), cx);
     let host = input(
         Some(connection.host.clone()),
-        "server, or a host of ~/.ssh/config",
+        &t!("connections.placeholder.server"),
         cx,
     );
-    let port = input(connection.port.map(|port| port.to_string()), "default", cx);
+    let port = input(connection.port.map(|port| port.to_string()), &t!("connections.placeholder.port"), cx);
     let user = input(
         connection.user.clone(),
-        "as ~/.ssh/config says, or anonymous",
+        &t!("connections.placeholder.user"),
         cx,
     );
-    let path = input(connection.path.clone(), "the login folder", cx);
+    let path = input(connection.path.clone(), &t!("connections.placeholder.path"), cx);
     let password = cx.new(|cx| {
         InputState::new(window, cx)
             .masked(true)
-            .placeholder("kept sealed in the settings folder; empty keeps it")
+            .placeholder(t!("connections.placeholder.password"))
     });
     let at = Scheme::ALL.iter().position(|scheme| *scheme == connection.scheme);
     let labels = Scheme::ALL.map(Scheme::label).to_vec();
@@ -84,7 +85,7 @@ pub(crate) fn open_edit(
     window.open_dialog(cx, move |dialog, _, _| {
         let enter = view.clone();
         dialog
-            .title("Connection")
+            .title(t!("connections.dialog.title"))
             .width(px(520.))
             .overlay_closable(false)
             .child(view.clone())
@@ -116,7 +117,7 @@ impl EditConnection {
             .each_ref()
             .map(|input| input.read(cx).value().trim().to_string());
         if host.is_empty() {
-            return window.push_notification(Notification::error("A server is needed."), cx);
+            return window.push_notification(Notification::error(t!("connections.error.no_server")), cx);
         }
         let port = match port.as_str() {
             "" => None,
@@ -124,7 +125,7 @@ impl EditConnection {
                 Ok(port) => Some(port),
                 Err(_) => {
                     return window
-                        .push_notification(Notification::error(format!("Not a port: {text}")), cx);
+                        .push_notification(Notification::error(t!("connections.error.port", text = text)), cx);
                 }
             },
         };
@@ -155,32 +156,45 @@ impl EditConnection {
 impl Render for EditConnection {
     fn render(&mut self, _: &mut Window, cx: &mut Context<Self>) -> impl IntoElement {
         let (labels, secret) = match self.scheme {
-            Scheme::S3 => (["Name", "Endpoint", "Port", "Access key", "Bucket/folder"], "Secret key"),
-            Scheme::B2 => (["Name", "Server", "Port", "Key ID", "Bucket/folder"], "Application key"),
-            Scheme::Swift => (["Name", "Server", "Port", "User", "Container/folder"], "API key"),
-            _ => (["Name", "Server", "Port", "User", "Start folder"], "Password"),
+            Scheme::S3 => (
+                [t!("connections.field.name"), t!("connections.field.endpoint"), t!("connections.field.port"), t!("connections.field.access_key"), t!("connections.field.bucket")],
+                t!("connections.field.secret_key"),
+            ),
+            Scheme::B2 => (
+                [t!("connections.field.name"), t!("connections.field.server"), t!("connections.field.port"), t!("connections.field.key_id"), t!("connections.field.bucket")],
+                t!("connections.field.application_key"),
+            ),
+            Scheme::Swift => (
+                [t!("connections.field.name"), t!("connections.field.server"), t!("connections.field.port"), t!("connections.field.user"), t!("connections.field.container")],
+                t!("connections.field.api_key"),
+            ),
+            _ => (
+                [t!("connections.field.name"), t!("connections.field.server"), t!("connections.field.port"), t!("connections.field.user"), t!("connections.field.start_folder")],
+                t!("connections.field.password"),
+            ),
         };
-        let field = |label: &'static str, input: &Entity<InputState>| {
+        let field = |label: String, input: &Entity<InputState>| {
             h_flex()
                 .gap_3()
                 .child(div().w(px(96.)).flex_none().child(label))
                 .child(div().flex_1().child(Input::new(input)))
         };
         let [name, rest @ ..] = &self.fields;
+        let [first, others @ ..] = labels;
         v_flex()
             .w_full()
             .gap_2()
             .text_sm()
-            .child(field(labels[0], name))
+            .child(field(first, name))
             .child(
                 h_flex()
                     .gap_3()
-                    .child(div().w(px(96.)).flex_none().child("Protocol"))
+                    .child(div().w(px(96.)).flex_none().child(t!("connections.field.protocol")))
                     .child(div().flex_1().child(Select::new(&self.protocol))),
             )
             .children(
-                labels[1..]
-                    .iter()
+                others
+                    .into_iter()
                     .zip(rest)
                     .map(|(label, input)| field(label, input)),
             )
@@ -188,7 +202,7 @@ impl Render for EditConnection {
                 el.child(field(secret, &self.password)).child(
                     h_flex().gap_3().child(div().w(px(96.)).flex_none()).child(
                         Checkbox::new("connection-forget")
-                            .label("Forget the kept password")
+                            .label(t!("connections.forget_password"))
                             .checked(self.forget)
                             .on_click(cx.listener(|this, checked: &bool, _, cx| {
                                 this.forget = *checked;
@@ -205,14 +219,14 @@ impl Render for EditConnection {
                     .child(
                         Button::new("connection-ok")
                             .primary()
-                            .label("OK")
+                            .label(t!("remote.dialog.ok"))
                             .min_w(px(80.))
                             .on_click(cx.listener(|this, _, window, cx| this.finish(window, cx))),
                     )
                     .child(
                         Button::new("connection-cancel")
                             .outline()
-                            .label("Cancel")
+                            .label(t!("remote.dialog.cancel"))
                             .min_w(px(80.))
                             .on_click(|_, window, cx| window.close_dialog(cx)),
                     ),

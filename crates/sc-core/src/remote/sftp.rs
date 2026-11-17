@@ -212,9 +212,7 @@ impl Handler for Client {
             Ok(false)
         };
         let PublicKeyOrCertificate::PublicKey { key, .. } = key else {
-            return refuse(
-                "The server shows a host certificate; those are not supported yet.".into(),
-            );
+            return refuse(crate::t!("remote.sftp.host_certificate"));
         };
         let server = match self.port {
             22 => self.host.clone(),
@@ -222,10 +220,11 @@ impl Handler for Client {
         };
         match keys::check_known_hosts_path(&self.host, self.port, key, &self.known_hosts) {
             Ok(true) => Ok(true),
-            Err(keys::Error::KeyChanged { line }) => refuse(format!(
-                "The host key of {server} has CHANGED since line {line} of {} recorded it. \
-                 Someone could be listening in; if the server was set up anew, remove that line.",
-                self.known_hosts.display()
+            Err(keys::Error::KeyChanged { line }) => refuse(crate::t!(
+                "remote.sftp.key_changed",
+                server = server,
+                line = line,
+                file = self.known_hosts.display()
             )),
             // Unknown, or no known_hosts file yet.
             _ => {
@@ -247,7 +246,7 @@ impl Handler for Client {
                         }
                         Ok(true)
                     }
-                    _ => refuse(format!("The host key of {server} was not trusted.")),
+                    _ => refuse(crate::t!("remote.sftp.key_not_trusted", server = server)),
                 }
             }
         }
@@ -288,8 +287,8 @@ async fn login(
             Ok(key) => key,
             Err(keys::Error::KeyIsEncrypted) => {
                 let prompt = Prompt::Secret {
-                    title: "Key passphrase".into(),
-                    text: format!("Passphrase for {}", file.display()),
+                    title: crate::t!("remote.sftp.passphrase_title"),
+                    text: crate::t!("remote.sftp.passphrase", file = file.display()),
                     keyring: None,
                 };
                 let Reply::Secret(passphrase) = ask_user(ask, prompt).await else {
@@ -324,13 +323,13 @@ async fn login(
         offered(MethodKind::KeyboardInteractive),
     );
     if !password && !interactive {
-        let refused = format!("{user}@{host}: the server refused the keys and takes no password");
+        let refused = crate::t!("remote.sftp.keys_refused", user = user, host = host);
         return Err(io::Error::new(io::ErrorKind::PermissionDenied, refused));
     }
     for _ in 0..3 {
         let prompt = Prompt::Secret {
-            title: "Password".into(),
-            text: format!("Password for {user}@{host}"),
+            title: crate::t!("remote.password.title"),
+            text: crate::t!("remote.sftp.password", user = user, host = host),
             keyring: Some(key.to_owned()),
         };
         let Reply::Secret(secret) = ask_user(ask, prompt).await else {
@@ -349,7 +348,7 @@ async fn login(
             return Ok(());
         }
     }
-    let refused = format!("{user}@{host}: login refused");
+    let refused = crate::t!("remote.sftp.login_refused", user = user, host = host);
     Err(io::Error::new(io::ErrorKind::PermissionDenied, refused))
 }
 

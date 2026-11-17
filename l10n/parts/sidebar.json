@@ -1,0 +1,590 @@
+{
+  "bookmarks.add_current": {
+    "description": "Go › Bookmarks list (as Total Commander's Directory Hotlist), under the bookmarks: bookmarks the active panel's folder.",
+    "message": "Add Current Folder"
+  },
+  "bookmarks.add_folders": {
+    "description": "Bookmarks dialog button: opens the system's folder chooser. \"...\" means a dialog opens.",
+    "message": "Add Folders..."
+  },
+  "bookmarks.added": {
+    "description": "Note after the active panel's folder was bookmarked (Ctrl+D). {name} is the folder's name, as \"Photos\".",
+    "message": "Bookmarked: {name}"
+  },
+  "bookmarks.already": {
+    "description": "Note when the folder bookmarked (Ctrl+D) is a bookmark already. {name} is the folder's name, as \"Photos\".",
+    "message": "{name} is in Bookmarks already."
+  },
+  "bookmarks.chooser.failed": {
+    "description": "Error when the system's folder chooser would not open. {err} is the system's own error text.",
+    "message": "Could not show the folder chooser: {err}"
+  },
+  "bookmarks.chooser.prompt": {
+    "description": "The OK button of the system's folder chooser opened by Add Folders...: a verb. Keep it short.",
+    "message": "Bookmark"
+  },
+  "bookmarks.close": {
+    "description": "Bookmarks dialog button closing it.",
+    "message": "Close"
+  },
+  "bookmarks.copy_name": {
+    "description": "Sidebar › Places: right-click menu of a bookmark. Copies the bookmark's name to the clipboard.",
+    "message": "Copy Name"
+  },
+  "bookmarks.copy_path": {
+    "description": "Sidebar › Places: right-click menu of a bookmark. Copies the folder's path to the clipboard.",
+    "message": "Copy Path"
+  },
+  "bookmarks.drop_here": {
+    "description": "Shown under Sidebar › Places › Bookmarks while there are none: folders dragged there get bookmarked.",
+    "message": "Drop folders here."
+  },
+  "bookmarks.empty": {
+    "description": "The Bookmarks dialog's list while it is empty.",
+    "message": "No bookmarks: add folders, or drop them here."
+  },
+  "bookmarks.intro": {
+    "description": "Line at the top of the Bookmarks dialog, above the list. \"Places\" is the sidebar section the bookmarks are shown in.",
+    "message": "This computer's folders, in Places' order: drag one to move it, or drop folders here to add them."
+  },
+  "bookmarks.move_down": {
+    "description": "Bookmarks dialog button tooltip, and a bookmark's right-click menu: moves it one place down in the list.",
+    "message": "Move Down"
+  },
+  "bookmarks.move_up": {
+    "description": "Bookmarks dialog button tooltip, and a bookmark's right-click menu: moves it one place up in the list.",
+    "message": "Move Up"
+  },
+  "bookmarks.only_local": {
+    "description": "Warning when a server's folder, a folder in an archive, or files are dropped on Bookmarks or bookmarked.",
+    "message": "Only this computer's folders can be bookmarked."
+  },
+  "bookmarks.remove": {
+    "description": "Bookmarks dialog button: removes the chosen bookmark (the folder itself stays).",
+    "message": "Remove"
+  },
+  "bookmarks.remove_from": {
+    "description": "Sidebar › Places: right-click menu of a bookmark. The folder itself stays.",
+    "message": "Remove from Bookmarks"
+  },
+  "bookmarks.rename": {
+    "description": "Bookmarks dialog button, and a bookmark's right-click menu in Sidebar › Places: gives the bookmark a name of its own. \"...\" means a dialog opens.",
+    "message": "Rename..."
+  },
+  "bookmarks.rename_label": {
+    "description": "Label of the field in the Rename bookmark dialog: left empty, the bookmark shows its folder's own name again.",
+    "message": "Name (empty: the folder's):"
+  },
+  "bookmarks.rename_title": {
+    "description": "Title of the dialog giving a bookmark a name of its own.",
+    "message": "Rename bookmark"
+  },
+  "bookmarks.sort": {
+    "description": "Bookmarks dialog button: sorts the bookmarks by name, alphabetically.",
+    "message": "Sort A–Z"
+  },
+  "bookmarks.title": {
+    "description": "Title of the dialog managing the bookmarks (Go › Manage Bookmarks).",
+    "message": "Bookmarks"
+  },
+  "connections.connect": {
+    "description": "Sidebar › Connections: right-click menu of a saved server. Opens the server in the active panel.",
+    "message": "Connect"
+  },
+  "connections.copy_name": {
+    "description": "Sidebar › Connections: right-click menu of a saved server. Copies the connection's name to the clipboard.",
+    "message": "Copy Name"
+  },
+  "connections.copy_path": {
+    "description": "Sidebar › Connections: right-click menu of a saved server. Copies the server's address (sftp://me@nas.lan/srv) to the clipboard.",
+    "message": "Copy Path"
+  },
+  "connections.delete": {
+    "description": "Sidebar › Connections: tooltip of an icon button above the list. Also in the right-click menus and the OK button of the question deleting a folder: deletes the chosen connection or folder.",
+    "message": "Delete"
+  },
+  "connections.dialog.title": {
+    "description": "Title of the dialog with a saved server's details (Sidebar › Connections › New Connection or Edit).",
+    "message": "Connection"
+  },
+  "connections.disconnect": {
+    "description": "Sidebar › Connections: right-click menu of a saved server. Every tab on that server goes to the home folder.",
+    "message": "Disconnect"
+  },
+  "connections.duplicate": {
+    "description": "Sidebar › Connections: right-click menu of a saved server. A copy of the connection, opened to be edited.",
+    "message": "Duplicate"
+  },
+  "connections.duplicate_name": {
+    "description": "The name a duplicated connection gets. {name} is the original's name, as \"Home NAS\".",
+    "message": "{name} (copy)"
+  },
+  "connections.edit": {
+    "description": "Sidebar › Connections: tooltip of an icon button above the list. Also in a server's right-click menu. Edits the chosen connection, or renames the chosen folder. \"...\" means a dialog opens.",
+    "message": "Edit..."
+  },
+  "connections.empty": {
+    "description": "Sidebar › Connections while no server is saved.",
+    "message": "No connections yet."
+  },
+  "connections.error.no_server": {
+    "description": "Error when OK is pressed in the Connection dialog with the Server field empty.",
+    "message": "A server is needed."
+  },
+  "connections.error.port": {
+    "description": "Error when the Port field of the Connection dialog holds no number. {text} is what was typed, as \"22a\".",
+    "message": "Not a port: {text}"
+  },
+  "connections.field.access_key": {
+    "description": "Label left of a field in the Connection dialog (a saved server's details). Keep it short: the label column is narrow. S3: the access key ID, which stands for the user.",
+    "message": "Access key"
+  },
+  "connections.field.api_key": {
+    "description": "Label left of a field in the Connection dialog (a saved server's details). Keep it short: the label column is narrow. Rackspace Cloud Files (Swift): the API key, which stands for the password.",
+    "message": "API key"
+  },
+  "connections.field.application_key": {
+    "description": "Label left of a field in the Connection dialog (a saved server's details). Keep it short: the label column is narrow. Backblaze B2: the application key, which stands for the password.",
+    "message": "Application key"
+  },
+  "connections.field.bucket": {
+    "description": "Label left of a field in the Connection dialog (a saved server's details). Keep it short: the label column is narrow. S3 and B2: the bucket, and a folder in it, to start in.",
+    "message": "Bucket/folder"
+  },
+  "connections.field.container": {
+    "description": "Label left of a field in the Connection dialog (a saved server's details). Keep it short: the label column is narrow. Rackspace Cloud Files (Swift): the container, and a folder in it, to start in.",
+    "message": "Container/folder"
+  },
+  "connections.field.endpoint": {
+    "description": "Label left of a field in the Connection dialog (a saved server's details). Keep it short: the label column is narrow. S3: the storage service's server address.",
+    "message": "Endpoint"
+  },
+  "connections.field.key_id": {
+    "description": "Label left of a field in the Connection dialog (a saved server's details). Keep it short: the label column is narrow. Backblaze B2: the application key's ID, which stands for the user.",
+    "message": "Key ID"
+  },
+  "connections.field.name": {
+    "description": "Label left of a field in the Connection dialog (a saved server's details). Keep it short: the label column is narrow. The name the Connections list shows.",
+    "message": "Name"
+  },
+  "connections.field.password": {
+    "description": "Label left of a field in the Connection dialog (a saved server's details). Keep it short: the label column is narrow.",
+    "message": "Password"
+  },
+  "connections.field.port": {
+    "description": "Label left of a field in the Connection dialog (a saved server's details). Keep it short: the label column is narrow. The network port number.",
+    "message": "Port"
+  },
+  "connections.field.protocol": {
+    "description": "Label left of a field in the Connection dialog (a saved server's details). Keep it short: the label column is narrow. A list of SFTP, FTP, WebDAV, S3…",
+    "message": "Protocol"
+  },
+  "connections.field.secret_key": {
+    "description": "Label left of a field in the Connection dialog (a saved server's details). Keep it short: the label column is narrow. S3: the secret access key, which stands for the password.",
+    "message": "Secret key"
+  },
+  "connections.field.server": {
+    "description": "Label left of a field in the Connection dialog (a saved server's details). Keep it short: the label column is narrow. The server's host name or address.",
+    "message": "Server"
+  },
+  "connections.field.start_folder": {
+    "description": "Label left of a field in the Connection dialog (a saved server's details). Keep it short: the label column is narrow. The folder shown after logging in.",
+    "message": "Start folder"
+  },
+  "connections.field.user": {
+    "description": "Label left of a field in the Connection dialog (a saved server's details). Keep it short: the label column is narrow. The user name to log in with.",
+    "message": "User"
+  },
+  "connections.folder.delete_confirm": {
+    "description": "Question before deleting a folder of Sidebar › Connections, its connections with it. {name} is the folder's name, as \"Work\"; {count} (#) how many connections it holds, 1 or more.",
+    "message": "{count, plural, one {Delete the folder {name} and the connection in it?} other {Delete the folder {name} and the # connections in it?}}"
+  },
+  "connections.folder.delete_title": {
+    "description": "Title of the question before deleting a folder of Sidebar › Connections that holds connections.",
+    "message": "Delete Folder"
+  },
+  "connections.folder.exists": {
+    "description": "Error naming a folder of Sidebar › Connections as another one. {name} is the name typed, as \"Work\".",
+    "message": "There is a folder named {name} already."
+  },
+  "connections.folder.name": {
+    "description": "Label of the name field in the New Folder and Rename Folder dialogs of Sidebar › Connections.",
+    "message": "Name:"
+  },
+  "connections.folder.new_title": {
+    "description": "Title of the dialog naming a new folder of Sidebar › Connections (it groups connections; not a folder on a disk).",
+    "message": "New Folder"
+  },
+  "connections.folder.rename": {
+    "description": "Sidebar › Connections: right-click menu of a folder grouping connections. \"...\" means a dialog opens.",
+    "message": "Rename..."
+  },
+  "connections.folder.rename_title": {
+    "description": "Title of the dialog renaming a folder of Sidebar › Connections (it groups connections; not a folder on a disk).",
+    "message": "Rename Folder"
+  },
+  "connections.forget_password": {
+    "description": "Checkbox in the Connection dialog: deletes the password kept for this server.",
+    "message": "Forget the kept password"
+  },
+  "connections.move_down": {
+    "description": "Sidebar › Connections: tooltip of an icon button above the list. Moves the chosen connection or folder one place down.",
+    "message": "Move Down"
+  },
+  "connections.move_to_folder": {
+    "description": "Sidebar › Connections: tooltip of an icon button above the list. Opens a list of the folders to move the chosen connection into.",
+    "message": "Move to Folder"
+  },
+  "connections.move_up": {
+    "description": "Sidebar › Connections: tooltip of an icon button above the list. Moves the chosen connection or folder one place up.",
+    "message": "Move Up"
+  },
+  "connections.new": {
+    "description": "Sidebar › Connections: tooltip of an icon button above the list. Also in a folder's right-click menu. Opens the Connection dialog for a new server. \"...\" means a dialog opens.",
+    "message": "New Connection..."
+  },
+  "connections.new_folder": {
+    "description": "Sidebar › Connections: tooltip of an icon button above the list. Makes a folder to group connections in the list (not a folder on a disk). \"...\" means a dialog opens.",
+    "message": "New Folder..."
+  },
+  "connections.no_folder": {
+    "description": "First item of Move to Folder's list: the top of the Connections list, outside any folder.",
+    "message": "No Folder"
+  },
+  "connections.open_in_terminal": {
+    "description": "Sidebar › Connections: right-click menu of a saved server. For SFTP servers: logs in with ssh in the terminal pane.",
+    "message": "Open in Terminal"
+  },
+  "connections.placeholder.name": {
+    "description": "Grey hint inside the empty field of the Connection dialog, saying what an empty field means; lower case. Name field.",
+    "message": "as the list shows it"
+  },
+  "connections.placeholder.password": {
+    "description": "Grey hint inside the empty field of the Connection dialog, saying what an empty field means; lower case. Password field: the password is kept encrypted; left empty, the one kept already stays.",
+    "message": "kept sealed in the settings folder; empty keeps it"
+  },
+  "connections.placeholder.path": {
+    "description": "Grey hint inside the empty field of the Connection dialog, saying what an empty field means; lower case. Start folder field: empty, the folder the server starts in after logging in.",
+    "message": "the login folder"
+  },
+  "connections.placeholder.port": {
+    "description": "Grey hint inside the empty field of the Connection dialog, saying what an empty field means; lower case. Port field: empty, the protocol's usual port is used.",
+    "message": "default"
+  },
+  "connections.placeholder.server": {
+    "description": "Grey hint inside the empty field of the Connection dialog, saying what an empty field means; lower case. Server field: a host name, or the name of a Host in the user's SSH configuration. Keep ~/.ssh/config as it is.",
+    "message": "server, or a host of ~/.ssh/config"
+  },
+  "connections.placeholder.user": {
+    "description": "Grey hint inside the empty field of the Connection dialog, saying what an empty field means; lower case. User field: empty, SSH's configuration names the user, and FTP logs in anonymously. Keep ~/.ssh/config as it is.",
+    "message": "as ~/.ssh/config says, or anonymous"
+  },
+  "connections.save_failed": {
+    "description": "Error writing the saved servers to the settings folder. {err} is the system's own error text.",
+    "message": "Could not save the connections: {err}"
+  },
+  "connections.ssh_config.read_only": {
+    "description": "Tooltip of the ~/.ssh/config heading in Sidebar › Connections, which lists the hosts of the user's SSH configuration file. Keep ~/.ssh/config as it is.",
+    "message": "Read only: these hosts are edited in ~/.ssh/config itself"
+  },
+  "devices.error.mount_failed": {
+    "description": "Error opening a phone paired through KDE Connect when KDE Connect gives no reason, shown after its name, as \"Pixel 8: could not mount the device\". Starts in lower case: it is shown after a name and a colon.",
+    "message": "could not mount the device"
+  },
+  "devices.error.no_folder": {
+    "description": "Error opening a phone paired through KDE Connect, shown after its name, as \"Pixel 8: the device shares no folder\". Starts in lower case: it is shown after a name and a colon.",
+    "message": "the device shares no folder"
+  },
+  "devices.error.system_only": {
+    "description": "Error unmounting a disk the system mounted itself, shown after \"Could not unmount: \". Starts in lower case: it is shown after a name and a colon.",
+    "message": "only the system can unmount this"
+  },
+  "devices.error.unreachable": {
+    "description": "Error opening a phone paired through KDE Connect, shown after its name, as \"Pixel 8: not reachable: …\". Starts in lower case: it is shown after a name and a colon.",
+    "message": "not reachable: is KDE Connect open on it, on this network?"
+  },
+  "devices.unlock.ask": {
+    "description": "Text of the dialog asking an encrypted disk's passphrase. {name} is the disk's name, as \"Backup\" or \"500.1 GB encrypted volume\".",
+    "message": "The passphrase of {name}:"
+  },
+  "devices.unlock.ask_again": {
+    "description": "Text of the dialog asking an encrypted disk's passphrase again after a wrong one. {name} is the disk's name, as \"Backup\" or \"500.1 GB encrypted volume\".",
+    "message": "Wrong passphrase. The passphrase of {name}:"
+  },
+  "devices.unlock.title": {
+    "description": "Title of the dialog asking an encrypted disk's passphrase.",
+    "message": "Unlock"
+  },
+  "devices.volume.share_on_server": {
+    "description": "Sidebar › Places › Network: the name of a share GNOME mounted. {share} is the share's name, as \"media\"; {server} the server's, as \"nas\".",
+    "message": "{share} on {server}"
+  },
+  "devices.volume.unnamed": {
+    "description": "Sidebar › Places: the name of a disk with no label. {size} is its size in gigabytes, as \"500.1\".",
+    "message": "{size} GB volume"
+  },
+  "devices.volume.unnamed_encrypted": {
+    "description": "Sidebar › Places: the name of an encrypted disk with no label. {size} is its size in gigabytes, as \"500.1\".",
+    "message": "{size} GB encrypted volume"
+  },
+  "remote.cancelled": {
+    "description": "Error when the password or passphrase dialog was cancelled, shown after the server's name and a colon, as \"nas.lan: cancelled\". Starts in lower case: it is shown after a name and a colon.",
+    "message": "cancelled"
+  },
+  "remote.cloud.ask": {
+    "description": "Text of the dialog asking the secret of an online storage, one choice per service (see remote.cloud.title). {user} is the key ID, access key or user, as \"AKIAEXAMPLE\"; {host} the server, as \"s3.eu-central-1.amazonaws.com\". Translate each choice.",
+    "message": "{kind, select, application_key {Application key of {user} at {host}:} api_key {API key of {user} at {host}:} password {Password of {user} at {host}:} other {Secret key of {user} at {host}:}}"
+  },
+  "remote.cloud.ask_again": {
+    "description": "As remote.cloud.ask, asked again after the service refused the secret given. {user} is the key ID, access key or user, as \"AKIAEXAMPLE\"; {host} the server, as \"s3.eu-central-1.amazonaws.com\". Translate each choice.",
+    "message": "{kind, select, application_key {Wrong application key. Application key of {user} at {host}:} api_key {Wrong API key. API key of {user} at {host}:} password {Wrong password. Password of {user} at {host}:} other {Wrong key. Secret key of {user} at {host}:}}"
+  },
+  "remote.cloud.obscure_failed": {
+    "description": "Error connecting to a WebDAV server through rclone, when rclone failed to encode the password.",
+    "message": "rclone could not take the password"
+  },
+  "remote.cloud.rclone_missing": {
+    "description": "Error connecting to online storage without the rclone add-on. Settings > Add-ons is the page of the Settings dialog that downloads it.",
+    "message": "rclone is missing: Settings > Add-ons downloads it"
+  },
+  "remote.cloud.title": {
+    "description": "Title of the dialog asking the secret of an online storage (through rclone): Backblaze B2's application key, Rackspace Cloud Files' API key, WebDAV's password, or S3's secret key. Translate each choice.",
+    "message": "{kind, select, application_key {Application key} api_key {API key} password {Password} other {Secret key}}"
+  },
+  "remote.connecting": {
+    "description": "Note while connecting to a server or share. {server} is its host name or address, as \"nas.lan\" or \"smb://nas/media\".",
+    "message": "Connecting to {server}..."
+  },
+  "remote.dialog.cancel": {
+    "description": "Button of the dialogs connecting to a server (password, login, unknown server) and of the Connection dialog.",
+    "message": "Cancel"
+  },
+  "remote.dialog.ok": {
+    "description": "Button of the dialogs connecting to a server (password, login, unknown server) and of the Connection dialog.",
+    "message": "OK"
+  },
+  "remote.disconnect_failed": {
+    "description": "Error letting go of a network share. {share} is its address or folder, as \"smb://nas/media\"; {err} the system's own error text.",
+    "message": "{share}: could not disconnect: {err}"
+  },
+  "remote.ftp.password": {
+    "description": "Text of the dialog asking an FTP server's password. {user}@{host} is the login, as \"me@ftp.example.org\": keep the @ between them.",
+    "message": "Password for {user}@{host}:"
+  },
+  "remote.ftp.password_again": {
+    "description": "Text of the dialog asking an FTP server's password again after a wrong one. {user}@{host} is the login, as \"me@ftp.example.org\": keep the @ between them.",
+    "message": "Wrong password. Password for {user}@{host}:"
+  },
+  "remote.ftps.changed": {
+    "description": "Security error connecting to an FTPS server whose certificate differs from the one recorded. {server} is the server and port, as \"ftp.example.org:21\"; {line} a line number; {file} the path of the file of known certificates. CHANGED is in capitals for emphasis.",
+    "message": "The TLS certificate of {server} has CHANGED since line {line} of {file} recorded it. Someone could be listening in; if the server has a new certificate, remove that line."
+  },
+  "remote.ftps.not_trusted": {
+    "description": "Error connecting to an FTPS server whose TLS certificate was not accepted. Starts in lower case: it is shown after a name and a colon.",
+    "message": "the server's certificate is not trusted"
+  },
+  "remote.login.password": {
+    "description": "Label of the password field in the Log in dialog. Keep it short: the label column is narrow.",
+    "message": "Password"
+  },
+  "remote.login.title": {
+    "description": "Title of the dialog asking a network share's (SMB, WebDAV) user and password after it refused to open.",
+    "message": "Log in"
+  },
+  "remote.login.user": {
+    "description": "Label of the user name field in the Log in dialog. Keep it short: the label column is narrow.",
+    "message": "User"
+  },
+  "remote.mount.login_wrong": {
+    "description": "Error opening a network share (SMB, NFS, WebDAV), shown after its address and a colon, as \"smb://nas/media: …\". Starts in lower case: it is shown after a name and a colon.",
+    "message": "the user or password is wrong"
+  },
+  "remote.mount.macos_failed": {
+    "description": "Error opening a network share (SMB, NFS, WebDAV), shown after its address and a colon, as \"smb://nas/media: …\". Starts in lower case: it is shown after a name and a colon. macOS only. {code} is NetFS's error number, as \"-5999\".",
+    "message": "macOS could not mount it (NetFS {code})"
+  },
+  "remote.mount.needs_desktop": {
+    "description": "Error opening a network share (SMB, NFS, WebDAV), shown after its address and a colon, as \"smb://nas/media: …\". Starts in lower case: it is shown after a name and a colon. kio-fuse and gvfs are programs' names.",
+    "message": "needs KDE's kio-fuse or GNOME's gvfs"
+  },
+  "remote.mount.needs_login": {
+    "description": "Error opening a network share (SMB, NFS, WebDAV), shown after its address and a colon, as \"smb://nas/media: …\". Starts in lower case: it is shown after a name and a colon.",
+    "message": "it needs a user and password"
+  },
+  "remote.mount.no_fuse": {
+    "description": "Error opening a network share (SMB, NFS, WebDAV), shown after its address and a colon, as \"smb://nas/media: …\". Starts in lower case: it is shown after a name and a colon. gvfs-fuse is a program's name.",
+    "message": "mounted, but there is no folder for it: gvfs-fuse is missing"
+  },
+  "remote.mount.no_nfs_client": {
+    "description": "Error opening a network share (SMB, NFS, WebDAV), shown after its address and a colon, as \"smb://nas/media: …\". Starts in lower case: it is shown after a name and a colon. Windows only: \"Client for NFS\" and \"Windows Features\" are Windows' own names; use Windows' names in your language.",
+    "message": "not found; NFS needs Windows' Client for NFS (Windows Features)"
+  },
+  "remote.mount.no_share": {
+    "description": "Error opening a network share (SMB, NFS, WebDAV), shown after its address and a colon, as \"smb://nas/media: …\". Starts in lower case: it is shown after a name and a colon. The address has no share after the server; smb://server/share shows the form it needs.",
+    "message": "the share is missing: smb://server/share"
+  },
+  "remote.mount.not_address": {
+    "description": "Error opening a network share (SMB, NFS, WebDAV), shown after its address and a colon, as \"smb://nas/media: …\". Starts in lower case: it is shown after a name and a colon. macOS only.",
+    "message": "not an address"
+  },
+  "remote.mount.not_found": {
+    "description": "Error opening a network share (SMB, NFS, WebDAV), shown after its address and a colon, as \"smb://nas/media: …\". Starts in lower case: it is shown after a name and a colon. macOS only: the share mounted, but its folder was not found.",
+    "message": "mounted, but not found among the mounted"
+  },
+  "remote.mount.other_user": {
+    "description": "Error opening a network share (SMB, NFS, WebDAV), shown after its address and a colon, as \"smb://nas/media: …\". Starts in lower case: it is shown after a name and a colon. Windows only.",
+    "message": "Windows is connected to this server as another user: log off, or use that user"
+  },
+  "remote.password.title": {
+    "description": "Title of the dialog asking an SFTP or FTP server's password.",
+    "message": "Password"
+  },
+  "remote.remember_password": {
+    "description": "Checkbox in the password and login dialogs: keeps the password. Settings › Passwords is the page of the Settings dialog where kept passwords are.",
+    "message": "Remember it (Settings › Passwords)"
+  },
+  "remote.save_back_failed": {
+    "description": "Error after a server's file was edited in an external editor: the changed file could not be uploaded to the server. {err} is the reason.",
+    "message": "Could not save it back: {err}"
+  },
+  "remote.sftp.host_certificate": {
+    "description": "Error connecting to an SFTP server that identifies itself with an SSH host certificate instead of a host key.",
+    "message": "The server shows a host certificate; those are not supported yet."
+  },
+  "remote.sftp.key_changed": {
+    "description": "Security error connecting to an SFTP server whose key differs from the one recorded. {server} is the server, as \"nas.lan\" or \"nas.lan:2222\"; {line} a line number; {file} the known_hosts file's path. CHANGED is in capitals for emphasis.",
+    "message": "The host key of {server} has CHANGED since line {line} of {file} recorded it. Someone could be listening in; if the server was set up anew, remove that line."
+  },
+  "remote.sftp.key_not_trusted": {
+    "description": "Error when the user did not accept an SFTP server's unknown key. {server} is the server, as \"nas.lan\" or \"nas.lan:2222\".",
+    "message": "The host key of {server} was not trusted."
+  },
+  "remote.sftp.keys_refused": {
+    "description": "Error connecting to an SFTP server. {user}@{host} is the login, as \"me@nas.lan\": keep the @ between them.",
+    "message": "{user}@{host}: the server refused the keys and takes no password"
+  },
+  "remote.sftp.login_refused": {
+    "description": "Error connecting to an SFTP server after wrong passwords. {user}@{host} is the login, as \"me@nas.lan\": keep the @ between them.",
+    "message": "{user}@{host}: login refused"
+  },
+  "remote.sftp.passphrase": {
+    "description": "Text of the dialog asking the passphrase of an encrypted SSH key file. {file} is the key file's path, as \"/home/me/.ssh/id_ed25519\".",
+    "message": "Passphrase for {file}"
+  },
+  "remote.sftp.passphrase_title": {
+    "description": "Title of the dialog asking the passphrase of an encrypted SSH key file.",
+    "message": "Key passphrase"
+  },
+  "remote.sftp.password": {
+    "description": "Text of the dialog asking an SFTP server's password. {user}@{host} is the login, as \"me@nas.lan\": keep the @ between them.",
+    "message": "Password for {user}@{host}"
+  },
+  "remote.unknown_host.once": {
+    "description": "Unknown server dialog button: trusts the server's key for this connection only.",
+    "message": "Connect once"
+  },
+  "remote.unknown_host.remember": {
+    "description": "Unknown server dialog button: trusts the server's key from now on.",
+    "message": "Connect and remember"
+  },
+  "remote.unknown_host.text": {
+    "description": "Text of the Unknown server dialog. {host} is the server, as \"nas.lan\" or \"ftp.example.org:21\"; {key_type} is \"TLS\" for an FTPS server's certificate (the first choice), else the SSH key's algorithm, as \"ssh-ed25519\" (the other choice; keep it as it is); {fingerprint} is the key's digest, as \"SHA256:3f9a…\". Translate both choices; keep the empty lines.",
+    "message": "{key_type, select, TLS {The server {host} is not known yet. Its TLS certificate fingerprint is} other {The server {host} is not known yet. Its {key_type} fingerprint is}}\n\n{fingerprint}\n\nConnect only if this is the server you mean; its administrator can confirm the fingerprint."
+  },
+  "remote.unknown_host.title": {
+    "description": "Title of the dialog asking whether to trust a server seen for the first time.",
+    "message": "Unknown server"
+  },
+  "sidebar.device.no_files": {
+    "description": "Grey note beside a name in Sidebar › Places, in small letters. Keep it short; lower case as it follows the name. A phone paired through KDE Connect whose file sharing is off.",
+    "message": "shares no files"
+  },
+  "sidebar.device.not_answering": {
+    "description": "Error when a phone's files stopped answering again soon after being connected again. {name} is the phone's name, as \"Pixel 8\". F2 is the key that reads the folder again.",
+    "message": "{name} does not answer: unlock it and open KDE Connect on it, then read the folder again (F2)."
+  },
+  "sidebar.device.not_answering_error": {
+    "description": "Error when connecting a phone's files again failed. {name} is the phone's name, as \"Pixel 8\"; {err} is the reason, as the system or KDE Connect says it.",
+    "message": "{name} does not answer ({err}): unlock it and open KDE Connect on it."
+  },
+  "sidebar.device.not_connected": {
+    "description": "Grey note beside a name in Sidebar › Places, in small letters. Keep it short; lower case as it follows the name. A phone paired through KDE Connect that is not reachable now.",
+    "message": "not connected"
+  },
+  "sidebar.device.opening": {
+    "description": "Note while a phone's files are being mounted (KDE Connect). {name} is the phone's name, as \"Pixel 8\".",
+    "message": "Opening {name}..."
+  },
+  "sidebar.device.reconnecting": {
+    "description": "Note while the files of a phone that stopped answering (it went to sleep) are connected again. {name} is the phone's name, as \"Pixel 8\".",
+    "message": "{name} does not answer: connecting again..."
+  },
+  "sidebar.device.unmount_failed": {
+    "description": "Error disconnecting a phone's files. {name} is the phone's name, as \"Pixel 8\"; {err} the system's own error text.",
+    "message": "{name}: could not unmount: {err}"
+  },
+  "sidebar.group.bookmarks": {
+    "description": "Sidebar › Places: heading of a group of places, in small letters above it. Keep it short. The folders the user bookmarked.",
+    "message": "Bookmarks"
+  },
+  "sidebar.group.cloud": {
+    "description": "Sidebar › Places: heading of a group of places, in small letters above it. Keep it short. The cloud apps' folders: OneDrive, Dropbox, iCloud Drive…",
+    "message": "Cloud"
+  },
+  "sidebar.group.devices": {
+    "description": "Sidebar › Places: heading of a group of places, in small letters above it. Keep it short. Phones and cameras, also those paired through KDE Connect.",
+    "message": "Devices"
+  },
+  "sidebar.group.drives": {
+    "description": "Sidebar › Places: heading of a group of places, in small letters above it. Keep it short. This computer's disks, cards and USB sticks.",
+    "message": "Drives"
+  },
+  "sidebar.group.network": {
+    "description": "Sidebar › Places: heading of a group of places, in small letters above it. Keep it short. Network shares the system mounted.",
+    "message": "Network"
+  },
+  "sidebar.section.connections": {
+    "description": "Sidebar section heading (the sidebar is an accordion: one section open at a time). Keep it short. Holds the saved servers (SFTP, FTP, WebDAV…).",
+    "message": "Connections"
+  },
+  "sidebar.section.folders": {
+    "description": "Sidebar section heading (the sidebar is an accordion: one section open at a time). Keep it short. Holds this computer's folders as a tree.",
+    "message": "Folders"
+  },
+  "sidebar.section.operations": {
+    "description": "Sidebar section heading (the sidebar is an accordion: one section open at a time). Keep it short. Holds the queue of jobs: copies, moves, downloads, packing…",
+    "message": "Operations"
+  },
+  "sidebar.section.places": {
+    "description": "Sidebar section heading (the sidebar is an accordion: one section open at a time). Keep it short. Holds bookmarks, drives, cloud folders, devices and network shares; translate as the desktop's file manager does (Dolphin, Nautilus).",
+    "message": "Places"
+  },
+  "sidebar.volume.locked": {
+    "description": "Grey note beside a name in Sidebar › Places, in small letters. Keep it short; lower case as it follows the name. An encrypted disk not unlocked yet.",
+    "message": "locked"
+  },
+  "sidebar.volume.mounting": {
+    "description": "Note while a disk is being mounted. {name} is the disk's name, as \"Backup\" or \"USB Stick\".",
+    "message": "Mounting {name}..."
+  },
+  "sidebar.volume.not_mounted": {
+    "description": "Grey note beside a name in Sidebar › Places, in small letters. Keep it short; lower case as it follows the name. A disk the system knows but has not mounted; a click mounts it.",
+    "message": "not mounted"
+  },
+  "sidebar.volume.open": {
+    "description": "Sidebar › Places: right-click menu of a disk: shows it in the active panel (mounting it first if needed).",
+    "message": "Open"
+  },
+  "sidebar.volume.space": {
+    "description": "Under a disk's name in Sidebar › Places, in small letters. {free} is the space left, {total} the disk's size, both with units, as \"120 GB\" and \"500 GB\". Keep it short.",
+    "message": "{free} free of {total}"
+  },
+  "sidebar.volume.unmount": {
+    "description": "Sidebar › Places: right-click menu of a mounted disk: unmounts it (and locks an encrypted one), so it can be removed safely.",
+    "message": "Unmount"
+  },
+  "sidebar.volume.unmount_failed": {
+    "description": "Error unmounting a disk. {err} is the system's own error text.",
+    "message": "Could not unmount: {err}"
+  }
+}

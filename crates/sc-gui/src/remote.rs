@@ -22,6 +22,7 @@ use sc_core::remote::{self, Address, Ask, Prompt, Reply};
 use sc_core::remote::mounts::{self, Login};
 use sc_core::remote::secrets;
 use sc_core::session::TabState;
+use sc_core::t;
 
 use crate::Commander;
 
@@ -40,7 +41,7 @@ impl Commander {
         }
         let (ask, kept) = self.dialog_ask(window, cx);
         let server = address.host.clone();
-        let text = format!("Connecting to {server}...");
+        let text = t!("remote.connecting", server = server);
         let note = Notification::info(text).id1::<Connecting>(server.clone()).autohide(false);
         window.push_notification(note, cx);
         // A thread of its own: it may wait long on the user.
@@ -115,7 +116,7 @@ impl Commander {
             };
             let (ask, kept) = self.dialog_ask(window, cx);
             let (switches, server, mark) = (self.switches, address.host.clone(), placeholder.mark());
-            let note = Notification::info(format!("Connecting to {server}...")).id1::<Connecting>(server.clone()).autohide(false);
+            let note = Notification::info(t!("remote.connecting", server = server)).id1::<Connecting>(server.clone()).autohide(false);
             window.push_notification(note, cx);
             let (done, connected) = oneshot::channel();
             std::thread::spawn(move || {
@@ -169,7 +170,7 @@ impl Commander {
     /// As `login`; else with the password the keyring keeps for the
     /// address's user, else as a guest. Refused, it asks for a login.
     fn mount_as(&mut self, side: usize, url: String, login: Option<Login>, remember: bool, window: &mut Window, cx: &mut Context<Self>) {
-        let note = Notification::info(format!("Connecting to {url}...")).id1::<Connecting>(url.clone()).autohide(false);
+        let note = Notification::info(t!("remote.connecting", server = url)).id1::<Connecting>(url.clone()).autohide(false);
         window.push_notification(note, cx);
         let address = Address::parse(&url).filter(|address| address.scheme.mounted() && address.scheme.logs_in());
         let mounting = {
@@ -291,7 +292,7 @@ impl Commander {
         let left = cx.background_executor().spawn(async move { mounts::leave(&root) });
         cx.spawn_in(window, async move |_, cx| {
             if let Err(err) = left.await {
-                let note = Notification::error(format!("{shown}: could not disconnect: {err}"));
+                let note = Notification::error(t!("remote.disconnect_failed", share = shown, err = err));
                 let _ = cx.update(|window, cx| window.push_notification(note, cx));
             }
         })
@@ -314,7 +315,7 @@ fn ask_login(commander: Entity<Commander>, side: usize, url: String, user: Strin
     window.open_dialog(cx, move |dialog, _, _| {
         let enter = view.clone();
         dialog
-            .title("Log in")
+            .title(t!("remote.login.title"))
             .width(px(520.))
             .overlay_closable(false)
             .child(view.clone())
@@ -350,7 +351,7 @@ impl LoginDialog {
 
 impl Render for LoginDialog {
     fn render(&mut self, _: &mut Window, cx: &mut Context<Self>) -> impl IntoElement {
-        let field = |label: &'static str, input: &Entity<InputState>| {
+        let field = |label: String, input: &Entity<InputState>| {
             h_flex().gap_3().child(div().w(px(80.)).flex_none().child(label)).child(div().flex_1().child(Input::new(input)))
         };
         let why = div().whitespace_normal().text_color(cx.theme().muted_foreground).child(self.why.clone());
@@ -359,11 +360,11 @@ impl Render for LoginDialog {
             .gap_3()
             .text_sm()
             .child(why)
-            .child(field("User", &self.user))
-            .child(field("Password", &self.password))
+            .child(field(t!("remote.login.user"), &self.user))
+            .child(field(t!("remote.login.password"), &self.password))
             .child(
                 Checkbox::new("login-remember")
-                    .label("Remember it (Settings › Passwords)")
+                    .label(t!("remote.remember_password"))
                     .checked(self.remember)
                     .on_click(cx.listener(|this, checked: &bool, _, cx| {
                         this.remember = *checked;
@@ -377,14 +378,14 @@ impl Render for LoginDialog {
                     .child(
                         Button::new("login-ok")
                             .primary()
-                            .label("OK")
+                            .label(t!("remote.dialog.ok"))
                             .min_w(px(80.))
                             .on_click(cx.listener(|this, _, window, cx| this.finish(window, cx))),
                     )
                     .child(
                         Button::new("login-cancel")
                             .outline()
-                            .label("Cancel")
+                            .label(t!("remote.dialog.cancel"))
                             .min_w(px(80.))
                             .on_click(|_, window, cx| window.close_dialog(cx)),
                     ),
@@ -423,7 +424,7 @@ pub(crate) fn edit_externally(
             let _ = cx.update(|window, cx| {
                 let note = match uploaded {
                     Ok(text) => Notification::success(text),
-                    Err(err) => Notification::error(format!("Could not save it back: {err}"))
+                    Err(err) => Notification::error(t!("remote.save_back_failed", err = err))
                         .autohide(false),
                 };
                 window.push_notification(note, cx);
@@ -468,14 +469,11 @@ fn ask_user(
             key_type,
             fingerprint,
         } => {
-            let text = format!(
-                "The server {host} is not known yet. Its {key_type} fingerprint is\n\n{fingerprint}\n\n\
-                 Connect only if this is the server you mean; its administrator can confirm the fingerprint."
-            );
+            let text = t!("remote.unknown_host.text", host = host, key_type = key_type, fingerprint = fingerprint);
             window.open_dialog(cx, move |dialog, _, _| {
-                let button = |label: &'static str, reply: Reply| {
+                let button = |id: &'static str, label: String, reply: Reply| {
                     let answer = answer.clone();
-                    Button::new(label)
+                    Button::new(id)
                         .label(label)
                         .on_click(move |_, window, cx| {
                             answer.borrow_mut().send(reply.clone());
@@ -483,7 +481,7 @@ fn ask_user(
                         })
                 };
                 dialog
-                    .title("Unknown server")
+                    .title(t!("remote.unknown_host.title"))
                     .width(px(560.))
                     .keyboard(false)
                     .close_button(false)
@@ -500,15 +498,16 @@ fn ask_user(
                                     .child(
                                         button(
                                             "Connect and remember",
+                                            t!("remote.unknown_host.remember"),
                                             Reply::Trust { remember: true },
                                         )
                                         .primary(),
                                     )
                                     .child(
-                                        button("Connect once", Reply::Trust { remember: false })
+                                        button("Connect once", t!("remote.unknown_host.once"), Reply::Trust { remember: false })
                                             .outline(),
                                     )
-                                    .child(button("Cancel", Reply::Cancel).outline()),
+                                    .child(button("Cancel", t!("remote.dialog.cancel"), Reply::Cancel).outline()),
                             ),
                     )
             });
@@ -580,7 +579,7 @@ impl Render for SecretDialog {
             .when(self.keyring.is_some(), |el| {
                 el.child(
                     Checkbox::new("secret-remember")
-                        .label("Remember it (Settings › Passwords)")
+                        .label(t!("remote.remember_password"))
                         .checked(self.remember)
                         .on_click(cx.listener(|this, checked: &bool, _, cx| {
                             this.remember = *checked;
@@ -595,14 +594,14 @@ impl Render for SecretDialog {
                     .child(
                         Button::new("secret-ok")
                             .primary()
-                            .label("OK")
+                            .label(t!("remote.dialog.ok"))
                             .min_w(px(80.))
                             .on_click(cx.listener(|this, _, window, cx| this.finish(window, cx))),
                     )
                     .child(
                         Button::new("secret-cancel")
                             .outline()
-                            .label("Cancel")
+                            .label(t!("remote.dialog.cancel"))
                             .min_w(px(80.))
                             .on_click(cx.listener(|this, _, window, cx| {
                                 this.answer.borrow_mut().send(Reply::Cancel);

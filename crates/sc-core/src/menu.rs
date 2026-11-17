@@ -381,9 +381,9 @@ pub const MENUS: &[Menu] = &[
                 items: &[
                     cmd("Show Sidebar", ToggleSidebar),
                     SEP,
+                    cmd("Places", SidebarPlaces),
                     cmd("Folders", SidebarTree),
                     cmd("Connections", SidebarConnections),
-                    cmd("Places", SidebarPlaces),
                 ],
             },
             cmd("Quick View Panel", QuickViewPanel),

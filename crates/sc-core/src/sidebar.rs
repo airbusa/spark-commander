@@ -5,7 +5,7 @@ use std::path::{Path, PathBuf};
 
 use serde::{Deserialize, Serialize};
 
-use crate::remote::connections::Connection;
+use crate::remote::connections::Connections;
 use crate::remote::{Address, Scheme};
 
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Serialize, Deserialize)]
@@ -202,30 +202,35 @@ pub struct Server {
     pub address: Address,
 }
 
-/// The servers by protocol: the saved, then `~/.ssh/config`'s hosts under
-/// SFTP. Protocols with none are left out.
-pub fn servers(saved: &[Connection], hosts: &[String]) -> Vec<(Scheme, Vec<Server>)> {
-    let groups = Scheme::ALL.map(|scheme| {
-        let saved = saved.iter().enumerate().filter(|(_, c)| c.scheme == scheme);
-        let mut servers: Vec<Server> = saved
-            .map(|(ix, connection)| Server {
-                name: connection.name.clone(),
-                detail: connection.url().split_once("://").map_or_else(String::new, |(_, rest)| rest.to_owned()),
-                saved: Some(ix),
-                address: connection.address(),
-            })
-            .collect();
-        if scheme == Scheme::Sftp {
-            servers.extend(hosts.iter().map(|host| Server {
-                name: host.clone(),
-                detail: "~/.ssh/config".to_owned(),
-                saved: None,
-                address: Address { scheme, user: None, host: host.clone(), port: None, path: None },
-            }));
-        }
-        (scheme, servers)
-    });
-    groups.into_iter().filter(|(_, servers)| !servers.is_empty()).collect()
+/// A group of the Connections list.
+#[derive(Clone, Debug, PartialEq)]
+pub enum Group {
+    /// The connections in no folder, first, under no heading.
+    Top,
+    Folder(String),
+    /// `~/.ssh/config`'s hosts, read only: that file is the user's.
+    SshConfig,
+}
+
+/// The servers as listed: those in no folder, each folder's (empty ones
+/// too), then `~/.ssh/config`'s hosts.
+pub fn servers(connections: &Connections, hosts: &[String]) -> Vec<(Group, Vec<Server>)> {
+    let saved = |folder: Option<&str>| -> Vec<Server> {
+        let inside = connections.saved.iter().enumerate().filter(|(_, c)| c.folder.as_deref() == folder);
+        inside.map(|(ix, connection)| Server { name: connection.name.clone(), detail: connection.url(), saved: Some(ix), address: connection.address() }).collect()
+    };
+    let mut groups = vec![(Group::Top, saved(None))];
+    groups.extend(connections.folders.iter().map(|folder| (Group::Folder(folder.clone()), saved(Some(folder)))));
+    let host = |host: &String| Server {
+        name: host.clone(),
+        detail: String::new(),
+        saved: None,
+        address: Address { scheme: Scheme::Sftp, user: None, host: host.clone(), port: None, path: None },
+    };
+    if !hosts.is_empty() {
+        groups.push((Group::SshConfig, hosts.iter().map(host).collect()));
+    }
+    groups
 }
 
 #[cfg(test)]
@@ -259,13 +264,14 @@ mod tests {
     }
 
     #[test]
-    fn groups_servers_by_protocol() {
-        let ftp = Connection { name: "nas".into(), scheme: Scheme::Ftp, host: "nas.lan".into(), user: Some("me".into()), ..Default::default() };
-        let groups = servers(&[ftp], &["homelab".into()]);
-        let shown: Vec<_> = groups.iter().map(|(scheme, servers)| (*scheme, servers.len())).collect();
-        assert_eq!(shown, [(Scheme::Sftp, 1), (Scheme::Ftp, 1)]);
-        assert_eq!(groups[1].1[0].detail, "me@nas.lan");
-        assert_eq!((groups[1].1[0].saved, groups[0].1[0].saved), (Some(0), None));
+    fn groups_servers_by_folder() {
+        let ftp = crate::remote::connections::Connection { name: "nas".into(), scheme: Scheme::Ftp, host: "nas.lan".into(), user: Some("me".into()), folder: Some("Home".into()), ..Default::default() };
+        let connections = Connections { saved: vec![ftp], folders: vec!["Work".into(), "Home".into()] };
+        let groups = servers(&connections, &["homelab".into()]);
+        let shown: Vec<_> = groups.iter().map(|(group, servers)| (group.clone(), servers.len())).collect();
+        assert_eq!(shown, [(Group::Top, 0), (Group::Folder("Work".into()), 0), (Group::Folder("Home".into()), 1), (Group::SshConfig, 1)]);
+        assert_eq!(groups[2].1[0].detail, "ftp://me@nas.lan");
+        assert_eq!((groups[2].1[0].saved, groups[3].1[0].saved), (Some(0), None));
     }
 
     /// Settings and sessions saved under the old names still load.

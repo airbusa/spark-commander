@@ -17,6 +17,8 @@ pub struct Connection {
     pub user: Option<String>,
     /// The folder it starts in; the login folder if none.
     pub path: Option<String>,
+    /// The list's folder it is in; none: at the top.
+    pub folder: Option<String>,
 }
 
 impl Connection {
@@ -37,19 +39,107 @@ impl Connection {
 }
 
 /// Kept in `connections.json`; passwords are in the system keyring.
-#[derive(Default, Serialize, Deserialize)]
+#[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
 #[serde(default)]
 pub struct Connections {
+    /// In the list's order within each folder.
     pub saved: Vec<Connection>,
+    /// The list's folders in their order, empty ones too.
+    pub folders: Vec<String>,
 }
 
 impl Connections {
     pub fn load() -> io::Result<Self> {
-        settings::read_json("connections.json")
+        let mut connections: Self = settings::read_json("connections.json")?;
+        // A folder named only by its connections (the file written by hand) is listed too.
+        for folder in connections.saved.iter().filter_map(|connection| connection.folder.clone()) {
+            if !connections.folders.contains(&folder) {
+                connections.folders.push(folder);
+            }
+        }
+        Ok(connections)
     }
 
     pub fn save(&self) -> io::Result<()> {
         settings::write_json("connections.json", self)
+    }
+
+    /// Saved connection `from` into `folder`, before `before` (one there), else
+    /// last in it; its place after.
+    pub fn move_connection(&mut self, from: usize, folder: Option<String>, before: Option<usize>) -> Option<usize> {
+        if self.saved.get(from)?.folder == folder && before == Some(from) {
+            return Some(from);
+        }
+        let mut moved = self.saved.remove(from);
+        moved.folder = folder;
+        let before = before.filter(|&at| at != from).map(|at| if at > from { at - 1 } else { at });
+        let there = |at: &usize| self.saved.get(*at).is_some_and(|other| other.folder == moved.folder);
+        let at = match before.filter(there) {
+            Some(at) => at,
+            None => self.saved.iter().rposition(|other| other.folder == moved.folder).map_or(self.saved.len(), |last| last + 1),
+        };
+        self.saved.insert(at, moved);
+        Some(at)
+    }
+
+    /// Saved connection `ix` a place up or down in its folder; its place after.
+    pub fn step_connection(&mut self, ix: usize, up: bool) -> Option<usize> {
+        let folder = self.saved.get(ix)?.folder.clone();
+        let mut same = (0..self.saved.len()).filter(|&at| self.saved[at].folder == folder);
+        let other = match up {
+            true => same.rfind(|&at| at < ix),
+            false => same.find(|&at| at > ix),
+        }?;
+        self.saved.swap(ix, other);
+        Some(other)
+    }
+
+    /// Folder `name` before `before`, else last.
+    pub fn move_folder(&mut self, name: &str, before: Option<&str>) {
+        let Some(from) = self.folders.iter().position(|folder| folder == name) else {
+            return;
+        };
+        if before == Some(name) {
+            return;
+        }
+        let moved = self.folders.remove(from);
+        let at = before.and_then(|before| self.folders.iter().position(|folder| folder == before));
+        self.folders.insert(at.unwrap_or(self.folders.len()), moved);
+    }
+
+    /// Folder `name` a place up or down; whether it moved.
+    pub fn step_folder(&mut self, name: &str, up: bool) -> bool {
+        let Some(ix) = self.folders.iter().position(|folder| folder == name) else {
+            return false;
+        };
+        let other = if up { ix.checked_sub(1) } else { Some(ix + 1).filter(|&at| at < self.folders.len()) };
+        other.inspect(|&other| self.folders.swap(ix, other)).is_some()
+    }
+
+    /// A folder named `new`, or `old` renamed to it; false when the name is
+    /// empty or another folder's.
+    pub fn name_folder(&mut self, old: Option<&str>, new: &str) -> bool {
+        let new = new.trim();
+        if new.is_empty() || old != Some(new) && self.folders.iter().any(|folder| folder == new) {
+            return false;
+        }
+        match old {
+            None => self.folders.push(new.to_owned()),
+            Some(old) => {
+                self.folders.iter_mut().filter(|folder| *folder == old).for_each(|folder| *folder = new.to_owned());
+                let inside = self.saved.iter_mut().filter(|connection| connection.folder.as_deref() == Some(old));
+                inside.for_each(|connection| connection.folder = Some(new.to_owned()));
+            }
+        }
+        true
+    }
+
+    /// Folder `name` gone with its connections; those removed.
+    pub fn remove_folder(&mut self, name: &str) -> Vec<Connection> {
+        self.folders.retain(|folder| folder != name);
+        let (gone, kept) = std::mem::take(&mut self.saved).into_iter().partition(|connection| connection.folder.as_deref() == Some(name));
+        self.saved = kept;
+        gone
     }
 }
 
@@ -102,6 +192,7 @@ mod tests {
             port: Some(990),
             user: Some("me".into()),
             path: Some("/pub".into()),
+            folder: None,
         };
         assert_eq!(saved.url(), "ftps://me@ftp.example.org:990/pub");
         assert_eq!(Address::parse(&saved.url()), Some(saved.address()));
@@ -110,5 +201,30 @@ mod tests {
             ..Connection::default()
         };
         assert_eq!(plain.url(), "sftp://web");
+    }
+
+    #[test]
+    fn folders_and_order() {
+        let named = |name: &str, folder: Option<&str>| Connection { name: name.into(), folder: folder.map(Into::into), ..Connection::default() };
+        let mut all = Connections { saved: vec![named("a", None), named("b", Some("Work")), named("c", None), named("d", Some("Work"))], folders: vec!["Work".into()] };
+        let names = |all: &Connections| all.saved.iter().map(|c| format!("{}{}", c.name, c.folder.as_deref().unwrap_or(""))).collect::<Vec<_>>();
+        // Into a folder before one of it; last into the top.
+        assert_eq!(all.move_connection(0, Some("Work".into()), Some(3)), Some(2));
+        assert_eq!(names(&all), ["bWork", "c", "aWork", "dWork"]);
+        assert_eq!(all.move_connection(3, None, None), Some(2));
+        assert_eq!(names(&all), ["bWork", "c", "d", "aWork"]);
+        assert_eq!(all.move_connection(1, None, Some(1)), Some(1), "onto itself: stays");
+        // Up past the top level's, among its folder's only.
+        assert_eq!(all.step_connection(3, true), Some(0));
+        assert_eq!(names(&all), ["aWork", "c", "d", "bWork"]);
+        assert_eq!(all.step_connection(0, true), None);
+        assert!(all.name_folder(None, "Home") && !all.name_folder(None, " Home ") && !all.name_folder(None, ""));
+        assert!(all.step_folder("Home", true) && !all.step_folder("Home", true));
+        all.move_folder("Home", None);
+        assert_eq!(all.folders, ["Work", "Home"]);
+        assert!(all.name_folder(Some("Work"), "Office"));
+        assert_eq!(names(&all), ["aOffice", "c", "d", "bOffice"]);
+        assert_eq!(all.remove_folder("Office").len(), 2);
+        assert_eq!((names(&all), all.folders.clone()), (vec!["c".to_owned(), "d".to_owned()], vec!["Home".to_owned()]));
     }
 }

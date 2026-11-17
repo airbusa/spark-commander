@@ -78,6 +78,7 @@ pub(crate) fn open_edit(
         fields: [name.clone(), host, port, user, path],
         password,
         forget: false,
+        folder: connection.folder.clone(),
         done: Rc::new(done),
     });
     window.open_dialog(cx, move |dialog, _, _| {
@@ -103,6 +104,8 @@ struct EditConnection {
     fields: [Entity<InputState>; 5],
     password: Entity<InputState>,
     forget: bool,
+    /// The list's folder it is in, kept.
+    folder: Option<String>,
     done: Saved,
 }
 
@@ -133,6 +136,7 @@ impl EditConnection {
             port,
             user: some(user),
             path: some(path),
+            folder: self.folder.clone(),
         };
         let password = self.password.read(cx).value().to_string();
         if self.scheme.logs_in() && (!password.is_empty() || self.forget) {

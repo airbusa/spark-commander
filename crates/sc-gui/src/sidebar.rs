@@ -8,20 +8,20 @@ use std::time::Duration;
 
 use gpui_kit::assets::IconName as Lucide;
 use gpui_kit::component::button::{Button, ButtonVariants};
-use gpui_kit::component::menu::{ContextMenuExt, PopupMenu, PopupMenuItem};
+use gpui_kit::component::menu::{ContextMenuExt, DropdownMenu, PopupMenu, PopupMenuItem};
 use gpui_kit::component::notification::Notification;
 use gpui_kit::component::scroll::Scrollbar;
-use gpui_kit::component::{ActiveTheme, Icon, IconName, Side, Sizable, StyledExt, WindowExt, h_flex, v_flex};
+use gpui_kit::component::{ActiveTheme, Disableable, Icon, IconName, Side, Sizable, StyledExt, WindowExt, h_flex, v_flex};
 use gpui_kit::prelude::FluentBuilder;
 use gpui_kit::*;
 use sc_core::remote::connections::{self, Connection, Connections};
 use sc_core::system::devices::{self, Device, Volume, VolumeKind};
 use sc_core::menu::Command;
 use sc_core::remote::{Address, Scheme};
-use sc_core::sidebar::{self, FolderTree, SidebarTab};
+use sc_core::sidebar::{self, FolderTree, Group, SidebarTab};
 use sc_core::{icons, system::theme};
 
-use crate::panel::drag_drop::Dragged;
+use crate::panel::drag_drop::{DragLabel, Dragged};
 use crate::menus::CommandEntry;
 use crate::{Commander, dialogs::connections_dialog};
 
@@ -53,10 +53,11 @@ pub(crate) struct Sidebar {
     tree_scroll: UniformListScrollHandle,
     /// The active panel's folder, where the tree last went.
     followed: Option<PathBuf>,
-    pub(crate) servers: Vec<Connection>,
+    pub(crate) connections: Connections,
     pub(crate) hosts: Vec<String>,
-    closed: Vec<Scheme>,
-    selected: Option<(Scheme, usize)>,
+    /// The Connections list's groups shut.
+    closed: Vec<Group>,
+    selected: Option<Picked>,
     /// KDE Connect's paired devices.
     devices: Vec<Device>,
     pub(crate) volumes: Vec<Volume>,
@@ -83,6 +84,23 @@ struct Mounting;
 /// Dragging the sidebar's edge.
 pub(crate) struct SidebarDrag;
 
+/// What is chosen in the Connections list.
+#[derive(Clone, PartialEq)]
+enum Picked {
+    Saved(usize),
+    Folder(String),
+    /// A host of `~/.ssh/config`, by its place there.
+    Host(usize),
+}
+
+/// A saved connection dragged, by its place.
+#[derive(Clone, Copy)]
+struct ServerDrag(usize);
+
+/// A folder of the Connections list dragged.
+#[derive(Clone)]
+struct ServerFolderDrag(String);
+
 impl Sidebar {
     pub(crate) fn new(tab: Option<SidebarTab>, width: f32, hidden: bool, opacity: u8, blur: bool) -> Self {
         Sidebar {
@@ -98,7 +116,7 @@ impl Sidebar {
             tree: FolderTree::new(hidden),
             tree_scroll: UniformListScrollHandle::new(),
             followed: None,
-            servers: Connections::load().unwrap_or_default().saved,
+            connections: Connections::load().unwrap_or_default(),
             hosts: connections::ssh_hosts(),
             closed: Vec::new(),
             selected: None,
@@ -126,7 +144,7 @@ impl Sidebar {
     }
 
     pub(crate) fn reload_servers(&mut self) {
-        self.servers = Connections::load().unwrap_or_default().saved;
+        self.connections = Connections::load().unwrap_or_default();
         self.hosts = connections::ssh_hosts();
     }
 }
@@ -254,9 +272,9 @@ impl Commander {
     }
 
     /// The saved servers as on disk, changed, saved and shown.
-    fn change_servers(&mut self, change: impl FnOnce(&mut Vec<Connection>), window: &mut Window, cx: &mut Context<Self>) {
+    fn change_servers(&mut self, change: impl FnOnce(&mut Connections), window: &mut Window, cx: &mut Context<Self>) {
         let mut all = Connections::load().unwrap_or_default();
-        change(&mut all.saved);
+        change(&mut all);
         if let Err(err) = all.save() {
             window.push_notification(Notification::error(format!("Could not save the connections: {err}")), cx);
         }
@@ -264,9 +282,13 @@ impl Commander {
         cx.notify();
     }
 
-    /// New (none), edit, or duplicate a saved server.
+    /// New (none: in the chosen one's folder), edit, or duplicate a saved server.
     fn edit_server(&mut self, ix: Option<usize>, duplicate: bool, window: &mut Window, cx: &mut Context<Self>) {
-        let mut connection = ix.and_then(|ix| self.sidebar.servers.get(ix).cloned()).unwrap_or_default();
+        let saved = &self.sidebar.connections.saved;
+        let mut connection = match ix.and_then(|ix| saved.get(ix).cloned()) {
+            Some(connection) => connection,
+            None => Connection { folder: self.picked_folder(), ..Connection::default() },
+        };
         if duplicate {
             connection.name = format!("{} (copy)", connection.name);
         }
@@ -274,24 +296,126 @@ impl Commander {
         let this = cx.entity().downgrade();
         connections_dialog::open_edit(connection, window, cx, move |connection, window, cx| {
             let _ = this.update(cx, |this, cx| {
-                let change = |saved: &mut Vec<Connection>| match replace.filter(|&ix| ix < saved.len()) {
-                    Some(ix) => saved[ix] = connection,
-                    None => saved.push(connection),
+                let mut at = None;
+                let change = |all: &mut Connections| match replace.filter(|&ix| ix < all.saved.len()) {
+                    Some(ix) => all.saved[ix] = connection,
+                    None => {
+                        // Last in its folder.
+                        all.saved.push(connection);
+                        at = all.move_connection(all.saved.len() - 1, all.saved.last().and_then(|last| last.folder.clone()), None);
+                    }
                 };
-                this.change_servers(change, window, cx)
+                this.change_servers(change, window, cx);
+                if let Some(at) = at.or(replace) {
+                    this.sidebar.selected = Some(Picked::Saved(at));
+                }
             });
         });
     }
 
+    /// The folder of what is chosen in the Connections list: a folder, or a connection's.
+    fn picked_folder(&self) -> Option<String> {
+        match self.sidebar.selected.as_ref()? {
+            Picked::Folder(name) => Some(name.clone()),
+            Picked::Saved(ix) => self.sidebar.connections.saved.get(*ix)?.folder.clone(),
+            Picked::Host(_) => None,
+        }
+    }
+
     fn delete_server(&mut self, ix: usize, window: &mut Window, cx: &mut Context<Self>) {
-        let delete = |saved: &mut Vec<Connection>| {
-            if ix < saved.len() {
-                let gone = saved.remove(ix);
-                connections::forget_password(saved, &gone);
+        let delete = |all: &mut Connections| {
+            if ix < all.saved.len() {
+                let gone = all.saved.remove(ix);
+                connections::forget_password(&all.saved, &gone);
             }
         };
         self.sidebar.selected = None;
         self.change_servers(delete, window, cx);
+    }
+
+    /// A new folder of connections (none), or `old` renamed.
+    fn name_server_folder(&mut self, old: Option<String>, window: &mut Window, cx: &mut Context<Self>) {
+        let (title, value) = match &old {
+            Some(old) => ("Rename Folder", old.clone()),
+            None => ("New Folder", String::new()),
+        };
+        let this = cx.entity().downgrade();
+        crate::dialogs::name_dialog::open(title, "Name:", value, window, cx, move |name, window, cx| {
+            let _ = this.update(cx, |this, cx| {
+                let mut named = false;
+                this.change_servers(|all| named = all.name_folder(old.as_deref(), &name), window, cx);
+                match named {
+                    true => this.sidebar.selected = Some(Picked::Folder(name.trim().to_owned())),
+                    false if !name.trim().is_empty() => {
+                        window.push_notification(Notification::error(format!("There is a folder named {} already.", name.trim())), cx);
+                    }
+                    false => {}
+                }
+            });
+        });
+    }
+
+    /// A folder of connections gone, its connections too: asked first when it has any.
+    fn delete_server_folder(&mut self, name: String, window: &mut Window, cx: &mut Context<Self>) {
+        let inside = self.sidebar.connections.saved.iter().filter(|connection| connection.folder.as_deref() == Some(name.as_str())).count();
+        let text = match inside {
+            1 => format!("Delete the folder {name} and the connection in it?"),
+            n => format!("Delete the folder {name} and the {n} connections in it?"),
+        };
+        let delete = move |this: &mut Self, window: &mut Window, cx: &mut Context<Self>| {
+            this.sidebar.selected = None;
+            this.change_servers(
+                |all| {
+                    for gone in all.remove_folder(&name) {
+                        connections::forget_password(&all.saved, &gone);
+                    }
+                },
+                window,
+                cx,
+            );
+        };
+        if inside == 0 {
+            return delete(self, window, cx);
+        }
+        let this = cx.entity().downgrade();
+        window.open_alert_dialog(cx, move |alert, _, _| {
+            let (this, delete) = (this.clone(), delete.clone());
+            alert.title("Delete Folder").description(text.clone()).ok_text("Delete").show_cancel(true).on_ok(move |_, window, cx| {
+                let delete = delete.clone();
+                let _ = this.update(cx, |this, cx| delete(this, window, cx));
+                true
+            })
+        });
+    }
+
+    /// The chosen connection or folder a place up or down.
+    fn step_server(&mut self, up: bool, window: &mut Window, cx: &mut Context<Self>) {
+        match self.sidebar.selected.clone() {
+            Some(Picked::Saved(ix)) => {
+                let mut at = None;
+                self.change_servers(|all| at = all.step_connection(ix, up), window, cx);
+                if let Some(at) = at {
+                    self.sidebar.selected = Some(Picked::Saved(at));
+                }
+            }
+            Some(Picked::Folder(name)) => self.change_servers(|all| _ = all.step_folder(&name, up), window, cx),
+            _ => {}
+        }
+    }
+
+    /// Saved connection `ix` into `folder` (none: the top), before `before` there, else last.
+    fn move_server(&mut self, ix: usize, folder: Option<String>, before: Option<usize>, window: &mut Window, cx: &mut Context<Self>) {
+        let mut at = None;
+        self.change_servers(|all| at = all.move_connection(ix, folder, before), window, cx);
+        if let Some(at) = at {
+            self.sidebar.selected = Some(Picked::Saved(at));
+        }
+    }
+
+    /// The Connections list's folder `name` before `before`, else last.
+    fn move_server_folder(&mut self, name: String, before: Option<String>, window: &mut Window, cx: &mut Context<Self>) {
+        self.change_servers(|all| all.move_folder(&name, before.as_deref()), window, cx);
+        self.sidebar.selected = Some(Picked::Folder(name));
     }
 
     pub(crate) fn render_sidebar(&mut self, cx: &mut Context<Self>) -> Option<AnyElement> {
@@ -301,14 +425,13 @@ impl Commander {
         }
         let background = self.colors.window.opacity(self.sidebar.tint.unwrap_or(1.));
         let sections = [
+            (SidebarTab::Places, Lucide::Bookmark, "Places"),
             (SidebarTab::Tree, Lucide::FolderTree, "Folders"),
             (SidebarTab::Connections, Lucide::Network, "Connections"),
-            (SidebarTab::Places, Lucide::Bookmark, "Places"),
         ];
         let mut accordion = v_flex().h_full().flex_1().min_w_0();
         for (at, (which, icon, name)) in sections.into_iter().enumerate() {
             let open = tab == which;
-            let button = (which == SidebarTab::Connections).then(|| self.new_connection_button(cx));
             let theme = cx.theme();
             let chevron = match open {
                 true => IconName::ChevronDown,
@@ -326,7 +449,6 @@ impl Commander {
                 .hover(|style| style.bg(theme.foreground.opacity(0.06)))
                 .child(Icon::new(icon).size_4().flex_none())
                 .child(div().flex_1().font_medium().child(name))
-                .children(button)
                 .child(Icon::new(chevron).xsmall().text_color(theme.muted_foreground))
                 .on_click(cx.listener(move |this, _, _, cx| this.open_section(which, cx)));
             accordion = accordion.child(header);
@@ -1136,102 +1258,246 @@ impl Commander {
         self.panel_letters = letters;
     }
 
-    /// On the Connections header: a new one.
-    fn new_connection_button(&self, cx: &mut Context<Self>) -> Button {
-        Button::new("server-new")
-            .ghost()
-            .xsmall()
-            .icon(IconName::Plus)
-            .tooltip("New connection...")
-            .on_click(cx.listener(|this, _, window, cx| this.edit_server(None, false, window, cx)))
+    /// Over the Connections list: new folder and connection; the chosen one
+    /// edited, deleted, moved up or down, or into another folder.
+    fn render_connections_toolbar(&self, cx: &mut Context<Self>) -> impl IntoElement + use<> {
+        let all = &self.sidebar.connections;
+        let picked = self.sidebar.selected.clone();
+        let saved = match picked {
+            Some(Picked::Saved(ix)) if ix < all.saved.len() => Some(ix),
+            _ => None,
+        };
+        let (up, down) = match &picked {
+            Some(Picked::Saved(ix)) => (all.clone().step_connection(*ix, true).is_some(), all.clone().step_connection(*ix, false).is_some()),
+            Some(Picked::Folder(name)) => (all.clone().step_folder(name, true), all.clone().step_folder(name, false)),
+            _ => (false, false),
+        };
+        // ~/.ssh/config's hosts are its own: never changed here.
+        let changeable = matches!(picked, Some(Picked::Saved(_) | Picked::Folder(_)));
+        let button = |id: &'static str, icon: Lucide, tip: &'static str| Button::new(id).ghost().small().icon(Icon::new(icon)).tooltip(tip);
+        let edit = picked.clone();
+        let delete = picked.clone();
+        let folders = all.folders.clone();
+        let commander = cx.entity().downgrade();
+        let into = move |menu: PopupMenu, _: &mut Window, _: &mut Context<PopupMenu>| {
+            let Some(ix) = saved else {
+                return menu;
+            };
+            let places = std::iter::once((None, "No Folder".to_owned())).chain(folders.iter().map(|folder| (Some(folder.clone()), folder.clone())));
+            places.fold(menu, |menu, (folder, label)| {
+                let commander = commander.clone();
+                menu.item(PopupMenuItem::new(label).on_click(move |_, window, cx| {
+                    let folder = folder.clone();
+                    let _ = commander.update(cx, |this, cx| this.move_server(ix, folder, None, window, cx));
+                }))
+            })
+        };
+        h_flex()
+            .flex_none()
+            .px_1()
+            .gap_0p5()
+            .child(button("server-new-folder", Lucide::FolderPlus, "New Folder...").on_click(cx.listener(|this, _, window, cx| this.name_server_folder(None, window, cx))))
+            .child(button("server-new", Lucide::Plus, "New Connection...").on_click(cx.listener(|this, _, window, cx| this.edit_server(None, false, window, cx))))
+            .child(button("server-edit", Lucide::Pencil, "Edit...").disabled(!changeable).on_click(cx.listener(move |this, _, window, cx| match edit.clone() {
+                Some(Picked::Saved(ix)) => this.edit_server(Some(ix), false, window, cx),
+                Some(Picked::Folder(name)) => this.name_server_folder(Some(name), window, cx),
+                _ => {}
+            })))
+            .child(button("server-delete", Lucide::Trash, "Delete").disabled(!changeable).on_click(cx.listener(move |this, _, window, cx| match delete.clone() {
+                Some(Picked::Saved(ix)) => this.delete_server(ix, window, cx),
+                Some(Picked::Folder(name)) => this.delete_server_folder(name, window, cx),
+                _ => {}
+            })))
+            .child(button("server-up", Lucide::ArrowUp, "Move Up").disabled(!up).on_click(cx.listener(|this, _, window, cx| this.step_server(true, window, cx))))
+            .child(button("server-down", Lucide::ArrowDown, "Move Down").disabled(!down).on_click(cx.listener(|this, _, window, cx| this.step_server(false, window, cx))))
+            .child(button("server-into", Lucide::FolderInput, "Move to Folder").disabled(saved.is_none()).dropdown_menu(into))
     }
 
     fn render_connections(&self, cx: &mut Context<Self>) -> impl IntoElement + use<> {
-        let theme = cx.theme();
-        let groups = sidebar::servers(&self.sidebar.servers, &self.sidebar.hosts);
-        let mut list = v_flex().id("connections").flex_1().min_h_0().overflow_y_scroll().px_1();
-        if groups.is_empty() {
-            list = list.child(
-                div()
-                    .p_2()
-                    .text_color(theme.muted_foreground)
-                    .child("No connections yet: + adds one."),
-            );
-        }
-        for (scheme, servers) in groups {
+        let groups = sidebar::servers(&self.sidebar.connections, &self.sidebar.hosts);
+        // A drop on no row: a connection last at the top, a folder last.
+        let mut list = v_flex()
+            .id("connections")
+            .flex_1()
+            .min_h_0()
+            .overflow_y_scroll()
+            .px_1()
+            .on_drop(cx.listener(|this, ServerDrag(ix): &ServerDrag, window, cx| this.move_server(*ix, None, None, window, cx)))
+            .on_drop(cx.listener(|this, ServerFolderDrag(name): &ServerFolderDrag, window, cx| this.move_server_folder(name.clone(), None, window, cx)));
+        if groups.iter().all(|(group, servers)| *group == Group::Top && servers.is_empty()) {
             let theme = cx.theme();
-            let open = !self.sidebar.closed.contains(&scheme);
-            let chevron = match open {
-                true => IconName::ChevronDown,
-                false => IconName::ChevronRight,
+            list = list.child(div().p_2().whitespace_normal().text_color(theme.muted_foreground).child("No connections yet."));
+        }
+        for (group, servers) in groups {
+            let open = !self.sidebar.closed.contains(&group);
+            let count = servers.len();
+            let folder = match &group {
+                Group::Top => None,
+                Group::Folder(name) => {
+                    list = list.child(self.render_server_folder(name.clone(), count, open, cx));
+                    Some(name.clone())
+                }
+                Group::SshConfig => {
+                    list = list.child(self.render_ssh_config(count, open, cx));
+                    None
+                }
             };
-            list = list.child(
-                h_flex()
-                    .id(("server-group", scheme as usize))
-                    .h(ROW)
-                    .px_1()
-                    .gap_1()
-                    .rounded(theme.radius)
-                    .cursor_pointer()
-                    .hover(|style| style.bg(theme.foreground.opacity(0.06)))
-                    .child(Icon::new(chevron).xsmall().text_color(theme.muted_foreground))
-                    .child(div().flex_1().font_semibold().child(scheme.label().to_uppercase()))
-                    .child(div().text_xs().text_color(theme.muted_foreground).child(servers.len().to_string()))
-                    .on_click(cx.listener(move |this, _, _, cx| {
-                        let closed = &mut this.sidebar.closed;
-                        match closed.iter().position(|&s| s == scheme) {
-                            Some(at) => drop(closed.remove(at)),
-                            None => closed.push(scheme),
-                        }
-                        cx.notify();
-                    })),
-            );
             if !open {
                 continue;
             }
-            for (ix, server) in servers.into_iter().enumerate() {
-                list = list.child(self.render_server(scheme, ix, server, cx));
+            let indent = if group == Group::Top { px(6.) } else { px(22.) };
+            for (at, server) in servers.into_iter().enumerate() {
+                list = list.child(self.render_server(at, server, folder.clone(), indent, cx));
             }
         }
-        v_flex().size_full().pt_1().child(list)
+        v_flex().size_full().child(self.render_connections_toolbar(cx)).child(list)
     }
 
-    fn render_server(&self, scheme: Scheme, ix: usize, server: sidebar::Server, cx: &mut Context<Self>) -> impl IntoElement + use<> {
+    /// A folder's heading: a click chooses it, its arrow or a double click
+    /// opens or shuts it; connections dropped on it go last in it, a folder before it.
+    fn render_server_folder(&self, name: String, count: usize, open: bool, cx: &mut Context<Self>) -> impl IntoElement + use<> {
         let theme = cx.theme();
-        let selected = self.sidebar.selected == Some((scheme, ix));
+        let selected = self.sidebar.selected.as_ref() == Some(&Picked::Folder(name.clone()));
+        let target = theme.drop_target;
+        let group = Group::Folder(name.clone());
+        let toggle = move |this: &mut Self, cx: &mut Context<Self>| {
+            match this.sidebar.closed.iter().position(|shut| *shut == group) {
+                Some(at) => drop(this.sidebar.closed.remove(at)),
+                None => this.sidebar.closed.push(group.clone()),
+            }
+            cx.notify();
+        };
+        let chevron = Icon::new(if open { IconName::ChevronDown } else { IconName::ChevronRight }).xsmall().text_color(theme.muted_foreground);
+        let arrow = div().id("folder-arrow").child(chevron).on_click({
+            let toggle = toggle.clone();
+            cx.listener(move |this, _, _, cx| {
+                cx.stop_propagation();
+                toggle(this, cx)
+            })
+        });
         let commander = cx.entity().downgrade();
-        let (address, saved, name) = (server.address.clone(), server.saved, server.name.clone());
+        let (dragged, into, before, menu_name) = (name.clone(), name.clone(), name.clone(), name.clone());
         h_flex()
-            .id((scheme.name(), ix))
+            .id(SharedString::from(format!("server-folder-{name}")))
+            .h(ROW)
+            .px_1()
+            .gap_1()
+            .rounded(theme.radius)
+            .cursor_pointer()
+            .when(selected, |el| el.bg(self.colors.sidebar_selection))
+            .when(!selected, |el| el.hover(|style| style.bg(theme.foreground.opacity(0.06))))
+            .child(arrow)
+            .child(Icon::new(if open { IconName::FolderOpen } else { IconName::FolderClosed }).xsmall().text_color(theme.muted_foreground))
+            .child(div().flex_1().min_w_0().truncate().font_semibold().child(name.clone()))
+            .child(div().text_xs().text_color(theme.muted_foreground).child(count.to_string()))
+            .on_click(cx.listener(move |this, event: &ClickEvent, _, cx| {
+                this.sidebar.selected = Some(Picked::Folder(name.clone()));
+                if event.click_count() == 2 {
+                    toggle(this, cx);
+                }
+                cx.notify();
+            }))
+            .on_drag(ServerFolderDrag(dragged.clone()), move |_, grab, _, cx| cx.new(|_| DragLabel { text: dragged.clone().into(), grab }))
+            .drag_over::<ServerDrag>(move |style, _, _, _| style.bg(target))
+            .drag_over::<ServerFolderDrag>(move |style, _, _, _| style.bg(target))
+            .on_drop(cx.listener(move |this, ServerDrag(ix): &ServerDrag, window, cx| this.move_server(*ix, Some(into.clone()), None, window, cx)))
+            .on_drop(cx.listener(move |this, ServerFolderDrag(moved): &ServerFolderDrag, window, cx| {
+                this.move_server_folder(moved.clone(), Some(before.clone()), window, cx)
+            }))
+            .context_menu(move |menu, _, _| {
+                let act = |label: &'static str, run: fn(&mut Commander, String, &mut Window, &mut Context<Commander>)| {
+                    let (commander, name) = (commander.clone(), menu_name.clone());
+                    PopupMenuItem::new(label).on_click(move |_, window, cx| {
+                        let name = name.clone();
+                        let _ = commander.update(cx, |this, cx| run(this, name, window, cx));
+                    })
+                };
+                menu.item(act("New Connection...", |this, name, window, cx| {
+                    this.sidebar.selected = Some(Picked::Folder(name));
+                    this.edit_server(None, false, window, cx)
+                }))
+                .separator()
+                .item(act("Rename...", |this, name, window, cx| this.name_server_folder(Some(name), window, cx)))
+                .item(act("Delete", |this, name, window, cx| this.delete_server_folder(name, window, cx)))
+            })
+    }
+
+    /// The heading of `~/.ssh/config`'s hosts: read only, that file is the user's.
+    fn render_ssh_config(&self, count: usize, open: bool, cx: &mut Context<Self>) -> impl IntoElement + use<> {
+        let theme = cx.theme();
+        let chevron = Icon::new(if open { IconName::ChevronDown } else { IconName::ChevronRight }).xsmall().text_color(theme.muted_foreground);
+        h_flex()
+            .id("server-ssh-config")
+            .h(ROW)
+            .px_1()
+            .gap_1()
+            .rounded(theme.radius)
+            .cursor_pointer()
+            .hover(|style| style.bg(theme.foreground.opacity(0.06)))
+            .tooltip(|window, cx| gpui_kit::component::tooltip::Tooltip::new("Read only: these hosts are edited in ~/.ssh/config itself").build(window, cx))
+            .child(chevron)
+            .child(Icon::new(Lucide::Lock).xsmall().text_color(theme.muted_foreground))
+            .child(div().flex_1().font_semibold().child("~/.ssh/config"))
+            .child(div().text_xs().text_color(theme.muted_foreground).child(count.to_string()))
+            // Nothing goes into it.
+            .on_drop(|_: &ServerDrag, _, _| {})
+            .on_drop(|_: &ServerFolderDrag, _, _| {})
+            .on_click(cx.listener(|this, _, _, cx| {
+                match this.sidebar.closed.iter().position(|shut| *shut == Group::SshConfig) {
+                    Some(at) => drop(this.sidebar.closed.remove(at)),
+                    None => this.sidebar.closed.push(Group::SshConfig),
+                }
+                cx.notify();
+            }))
+    }
+
+    /// A server's row, `at` in its group; a saved one is dragged, and takes
+    /// a connection dropped on it before it.
+    fn render_server(&self, at: usize, server: sidebar::Server, folder: Option<String>, indent: Pixels, cx: &mut Context<Self>) -> impl IntoElement + use<> {
+        let theme = cx.theme();
+        let picked = match server.saved {
+            Some(ix) => Picked::Saved(ix),
+            None => Picked::Host(at),
+        };
+        let selected = self.sidebar.selected.as_ref() == Some(&picked);
+        let commander = cx.entity().downgrade();
+        let target = theme.drop_target;
+        let (address, saved, name) = (server.address.clone(), server.saved, server.name.clone());
+        let id = match saved {
+            Some(ix) => ElementId::from(("server", ix)),
+            None => ElementId::from(("ssh-host", at)),
+        };
+        let row = h_flex()
+            .id(id)
             .h(ROW + px(2.))
-            .pl(px(22.))
+            .pl(indent)
             .pr_1()
             .gap_1p5()
             .rounded(theme.radius)
             .when(selected, |el| el.bg(self.colors.sidebar_selection))
             .when(!selected, |el| el.hover(|style| style.bg(theme.foreground.opacity(0.06))))
             .child(Icon::new(Lucide::Server).xsmall().text_color(theme.muted_foreground))
-            .child(div().flex_none().max_w(relative(0.6)).truncate().child(server.name))
-            .child(
-                div()
-                    .flex_1()
-                    .min_w_0()
-                    .truncate()
-                    .text_xs()
-                    .text_color(theme.muted_foreground)
-                    .child(server.detail),
-            )
+            .child(div().flex_none().max_w(relative(0.6)).truncate().child(server.name.clone()))
+            .child(div().flex_1().min_w_0().truncate().text_xs().text_color(theme.muted_foreground).child(server.detail))
             .on_click(cx.listener({
                 let address = address.clone();
                 move |this, event: &ClickEvent, window, cx| {
-                    this.sidebar.selected = Some((scheme, ix));
+                    this.sidebar.selected = Some(picked.clone());
                     if event.click_count() == 2 {
                         this.connect(this.active, address.clone(), window, cx);
                     }
                     cx.notify();
                 }
-            }))
-            .context_menu(move |menu, _, _| server_menu(menu, commander.clone(), address.clone(), name.clone(), saved))
+            }));
+        let row = match saved {
+            Some(ix) => row
+                .on_drag(ServerDrag(ix), move |_, grab, _, cx| cx.new(|_| DragLabel { text: server.name.clone().into(), grab }))
+                .drag_over::<ServerDrag>(move |style, _, _, _| style.bg(target))
+                .on_drop(cx.listener(move |this, ServerDrag(from): &ServerDrag, window, cx| this.move_server(*from, folder.clone(), Some(ix), window, cx))),
+            // ~/.ssh/config's: nothing goes there.
+            None => row.on_drop(|_: &ServerDrag, _, _| {}).on_drop(|_: &ServerFolderDrag, _, _| {}),
+        };
+        row.context_menu(move |menu, _, _| server_menu(menu, commander.clone(), address.clone(), name.clone(), saved))
     }
 }
 

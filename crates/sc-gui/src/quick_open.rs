@@ -146,7 +146,7 @@ impl Commander {
         });
         add("Drives", drives.collect());
 
-        let servers = sc_core::sidebar::servers(&self.sidebar.servers, &self.sidebar.hosts);
+        let servers = sc_core::sidebar::servers(&self.sidebar.connections, &self.sidebar.hosts);
         let servers = servers.into_iter().flat_map(|(_, servers)| servers).map(|server| {
             let label = format!("{}   {}", server.name, server.detail);
             (row(label, Lucide::Server), Pick::Server(server.address))

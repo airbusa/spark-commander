@@ -1509,7 +1509,8 @@ impl Commander {
             // ~/.ssh/config's: nothing goes there.
             None => row.on_drop(|_: &ServerDrag, _, _| {}).on_drop(|_: &ServerFolderDrag, _, _| {}),
         };
-        row.context_menu(move |menu, _, _| server_menu(menu, commander.clone(), address.clone(), name.clone(), saved))
+        let connected = self.connected_to(&address);
+        row.context_menu(move |menu, _, _| server_menu(menu, commander.clone(), address.clone(), name.clone(), saved, connected))
     }
 }
 
@@ -1531,24 +1532,20 @@ fn section(title: &'static str, cx: &App) -> Div {
     label.px_1().pt_2().pb_0p5().child(title)
 }
 
-/// A server's right-click menu; the saved ones can be changed.
+/// A server's right-click menu; the saved ones can be changed; Disconnect
+/// while a tab is on it.
 fn server_menu(
     menu: gpui_kit::component::menu::PopupMenu,
     commander: WeakEntity<Commander>,
     address: Address,
     name: String,
     saved: Option<usize>,
+    connected: bool,
 ) -> gpui_kit::component::menu::PopupMenu {
-    let act = |label: &'static str, run: fn(&mut Commander, &mut Window, &mut Context<Commander>)| {
-        let commander = commander.clone();
-        PopupMenuItem::new(label).on_click(move |_, window, cx| {
-            let _ = commander.update(cx, |this, cx| run(this, window, cx));
-        })
-    };
     let copy = |label: &'static str, text: String| PopupMenuItem::new(label).on_click(move |_, _, cx| cx.write_to_clipboard(ClipboardItem::new_string(text.clone())));
     // Its address as typed to connect: no password is kept in it.
     let (copy_name, copy_path) = (copy("Copy Name", name), copy("Copy Path", address.url()));
-    let (commander_for_connect, ssh) = (commander.clone(), address.clone());
+    let (commander_for_connect, ssh, server) = (commander.clone(), address.clone(), address.clone());
     let sftp = address.scheme == Scheme::Sftp;
     let connect = PopupMenuItem::new("Connect").on_click(move |_, window, cx| {
         let _ = commander_for_connect.update(cx, |this, cx| this.connect(this.active, address.clone(), window, cx));
@@ -1572,12 +1569,10 @@ fn server_menu(
             .item(edit("Duplicate", |this, ix, window, cx| this.edit_server(Some(ix), true, window, cx)))
             .item(edit("Delete", |this, ix, window, cx| this.delete_server(ix, window, cx)));
     }
-    menu.separator()
-        .item(copy_name)
-        .item(copy_path)
-        .separator()
-        .item(act("New connection...", |this, window, cx| this.edit_server(None, false, window, cx)))
-        .item(act("Disconnect", |this, window, cx| this.disconnect(window, cx)))
+    let disconnect = PopupMenuItem::new("Disconnect").disabled(!connected).on_click(move |_, window, cx| {
+        let _ = commander.update(cx, |this, cx| this.disconnect_server(&server, window, cx));
+    });
+    menu.separator().item(copy_name).item(copy_path).separator().item(disconnect)
 }
 
 /// An error of a mount whose connection is gone (sshfs's to a phone).

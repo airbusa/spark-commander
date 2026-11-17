@@ -120,6 +120,17 @@ pub struct Address {
 }
 
 impl Address {
+    /// Whether both name one server: the scheme, the host and the port (the
+    /// scheme's own when none); the user too where both name one.
+    pub fn same_server(&self, other: &Address) -> bool {
+        let port = |address: &Address| address.port.unwrap_or(address.scheme.default_port());
+        let users = match (&self.user, &other.user) {
+            (Some(one), Some(other)) => one == other,
+            _ => true,
+        };
+        self.scheme == other.scheme && self.host.eq_ignore_ascii_case(&other.host) && port(self) == port(other) && users
+    }
+
     pub fn parse(text: &str) -> Option<Self> {
         let (scheme, rest) = text.trim().split_once("://")?;
         let scheme = match scheme.to_ascii_lowercase().as_str() {
@@ -265,6 +276,16 @@ pub fn ssh_command(url: &str, dir: &std::path::Path) -> Option<(String, Vec<Stri
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn tells_one_server() {
+        let at = |text: &str| Address::parse(text).unwrap();
+        assert!(at("sftp://me@NAS.lan:22/srv").same_server(&at("sftp://nas.lan")));
+        assert!(at("ftp://nas.lan").same_server(&at("ftp://nas.lan:21/pub")));
+        assert!(!at("sftp://me@nas.lan").same_server(&at("sftp://you@nas.lan")));
+        assert!(!at("ftp://nas.lan").same_server(&at("ftps://nas.lan")));
+        assert!(!at("sftp://nas.lan:2222").same_server(&at("sftp://nas.lan")));
+    }
 
     #[test]
     fn opens_ssh_where_the_panel_is() {

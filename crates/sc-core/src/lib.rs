@@ -1497,6 +1497,16 @@ impl Tabs {
         &mut self.panels[self.active]
     }
 
+    /// Every open tab, to change in place.
+    pub fn panels_mut(&mut self) -> &mut [Panel] {
+        &mut self.panels
+    }
+
+    /// Recently closed tabs kept only where `keep` says.
+    pub fn retain_closed(&mut self, keep: impl Fn(&Panel) -> bool) {
+        self.closed.retain(keep);
+    }
+
     pub fn closed(&self) -> &[Panel] {
         &self.closed
     }

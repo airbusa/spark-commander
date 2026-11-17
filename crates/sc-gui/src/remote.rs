@@ -17,6 +17,7 @@ use gpui_kit::prelude::FluentBuilder;
 use gpui_kit::*;
 use sc_core::edit;
 use sc_core::viewer::origin::{self, Upload};
+use sc_core::Panel;
 use sc_core::remote::{self, Address, Ask, Prompt, Reply};
 use sc_core::remote::mounts::{self, Login};
 use sc_core::remote::secrets;
@@ -239,7 +240,44 @@ impl Commander {
     }
 }
 
+/// Whether `panel` is on `address`'s server: by its connection, or in a share
+/// mounted from it. Asks no server, so it may run as the window draws.
+pub(crate) fn on_server(panel: &Panel, address: &Address) -> bool {
+    let url = match panel.remote() {
+        Some(remote) => Some(remote.url()),
+        None => mounts::share_root(panel.folder()).and_then(|root| mounts::url_of(&root)),
+    };
+    url.as_deref().and_then(Address::parse).is_some_and(|there| there.same_server(address))
+}
+
 impl Commander {
+    /// Whether a tab, of either side, is on `address`'s server.
+    pub(crate) fn connected_to(&self, address: &Address) -> bool {
+        self.panels.iter().any(|side| side.tabs.panels().iter().any(|panel| on_server(panel, address)))
+    }
+
+    /// A connection's Disconnect: every tab on its server goes home, closed
+    /// ones from it are forgotten, and a share mounted from it is let go.
+    pub(crate) fn disconnect_server(&mut self, address: &Address, window: &mut Window, cx: &mut Context<Self>) {
+        let home = std::env::home_dir().unwrap_or_else(|| PathBuf::from("/"));
+        let mut share = None;
+        for side in &mut self.panels {
+            for panel in side.tabs.panels_mut().iter_mut().filter(|panel| on_server(panel, address)) {
+                if panel.remote().is_none() {
+                    share = share.or_else(|| mounts::share_root(panel.folder()));
+                }
+                // Home is this computer's: read at once.
+                let _ = panel.disconnect(home.clone());
+            }
+            side.tabs.retain_closed(|panel| !on_server(panel, address));
+        }
+        if let Some(root) = share {
+            self.leave_share(root, window, cx);
+        }
+        self.reload_menus(cx);
+        cx.notify();
+    }
+
     /// Panels in the share go home first, so nothing holds it; then it is let go.
     fn leave_share(&mut self, root: PathBuf, window: &mut Window, cx: &mut Context<Self>) {
         let home = std::env::home_dir().unwrap_or_else(|| PathBuf::from("/"));

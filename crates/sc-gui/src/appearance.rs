@@ -303,7 +303,6 @@ pub fn draw_toolkit_controls(window: &Window, cx: &mut App) {
     let scale = window.scale_factor();
     // Buttons are 2 rem high.
     let height = (f32::from(cx.theme().font_size) * 2.).round() as u32;
-    let dark = cx.theme().mode.is_dark();
     cx.spawn(async move |cx| {
         let drawn = cx.background_executor().spawn(async move { sc_core::system::toolkit_style::draw(scale, height) }).await;
         let controls = match drawn {
@@ -317,7 +316,9 @@ pub fn draw_toolkit_controls(window: &Window, cx: &mut App) {
             return;
         };
         cx.update(|cx| {
-            if drawn_dark == dark {
+            // The look now, not at the start: a window starts light until the
+            // desktop says it is dark, which may come while this draws.
+            if drawn_dark == cx.theme().mode.is_dark() {
                 cx.set_global(controls.clone());
                 cx.refresh_windows();
             }

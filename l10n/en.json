@@ -3117,7 +3117,7 @@
   },
   "ops.link.title_many": {
     "description": "Title of making links to several items, in the activity log and Undo. {kind} is symbolic, hard, junction or shortcut (keep the select's choices, translate the words in braces); {count} how many (3); {folder} where the links are made (\"/home/me/Desktop\").",
-    "message": "{kind, select, symbolic {Symbolic links} hard {Hard links} junction {Junctions} other {Shortcut (.lnk)s}} to {count, plural, one {# item} other {# items}} in {folder}"
+    "message": "{kind, select, symbolic {Symbolic links} hard {Hard links} junction {Junctions} other {Shortcuts (.lnk)}} to {count, plural, one {# item} other {# items}} in {folder}"
   },
   "ops.link.title_one": {
     "description": "Title of making one link, in the activity log and Undo. {kind} is symbolic, hard, junction or shortcut (keep the select's choices, translate the words in braces); {name} what it points to (\"notes.txt\"); {folder} where the link is made (\"/home/me/Desktop\").",

@@ -243,7 +243,7 @@ pub fn templates() -> Vec<PathBuf> {
 
 /// The desktop's terminal, in `dir`.
 pub fn open_terminal(dir: &Path) -> io::Result<()> {
-    let (program, folder_flag, _) = terminal().ok_or_else(|| io::Error::other("no terminal found"))?;
+    let (program, folder_flag, _) = terminal_or_err()?;
     let mut command = Command::new(&program);
     match folder_flag.strip_suffix('=') {
         Some(flag) => command.arg(format!("{flag}={}", dir.display())),
@@ -264,7 +264,7 @@ pub fn choose_app(path: &Path) -> io::Result<()> {
     let portal = "org.freedesktop.portal.Desktop";
     let call = ("", Fd::from(file.as_fd()), options);
     bus.call_method(Some(portal), "/org/freedesktop/portal/desktop", Some("org.freedesktop.portal.OpenURI"), "OpenFile", &call)
-        .map_err(|err| io::Error::other(format!("the desktop has no app chooser ({err})")))?;
+        .map_err(|err| io::Error::other(crate::t!("desktop.no_app_chooser", err = err)))?;
     Ok(())
 }
 
@@ -329,7 +329,7 @@ fn codes_in(line: &str) -> impl Iterator<Item = char> + '_ {
 /// Runs `argv` from `folder`, in the desktop's terminal when asked.
 fn start(mut argv: Vec<String>, terminal: bool, name: &str, folder: &Path) -> io::Result<()> {
     if argv.is_empty() {
-        return Err(io::Error::other(format!("{name}: nothing to run")));
+        return Err(io::Error::other(crate::t!("desktop.nothing_to_run", name = name)));
     }
     if terminal {
         let (program, _, run_flag) = terminal_or_err()?;
@@ -449,7 +449,7 @@ fn terminal() -> Option<(OsString, &'static str, Option<&'static str>)> {
 }
 
 fn terminal_or_err() -> io::Result<(OsString, &'static str, Option<&'static str>)> {
-    terminal().ok_or_else(|| io::Error::other("no terminal found"))
+    terminal().ok_or_else(|| io::Error::other(crate::t!("desktop.no_terminal")))
 }
 
 /// A program's path: as given when absolute, else found on `PATH`.
@@ -645,7 +645,7 @@ fn scripts(root: Option<PathBuf>, manager: &'static str, found: &mut Vec<Action>
     found.extend(scripts.into_iter().map(|(path, folder)| Action {
         name: folder + &path.file_name().unwrap_or_default().to_string_lossy(),
         icon: None,
-        submenu: Some("Scripts".into()),
+        submenu: Some(crate::t!("desktop.scripts")),
         top_level: true,
         run: Run::Script(path, manager),
     }));

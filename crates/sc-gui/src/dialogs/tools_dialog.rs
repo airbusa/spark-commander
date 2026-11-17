@@ -17,8 +17,6 @@ use crate::{Commander, dialogs::keys_dialog, menus};
 /// Keys that only change others; a tool's key needs one more.
 const MODIFIERS: [&str; 9] = ["", "shift", "control", "ctrl", "alt", "platform", "cmd", "super", "function"];
 
-const PLACEHOLDERS: &str = "%P this panel's folder, %T the other panel's (both end in a separator, so \"%P%N\" is a path), %N the file under the cursor, %O its name without the extension, %E the extension, %S the selected files (else the cursor's), each quoted; %% a %. Put quotes around the rest: \"%P%N\".";
-
 impl Commander {
     /// Tool `ix`, in the active panel's folder: in the terminal, or on its own.
     pub(crate) fn run_tool(&mut self, ix: usize, window: &mut Window, cx: &mut Context<Self>) {
@@ -27,11 +25,11 @@ impl Commander {
         };
         let warn = |text: String, window: &mut Window, cx: &mut Context<Self>| window.push_notification(Notification::warning(text), cx);
         if tool.command.trim().is_empty() {
-            return warn(format!("{} has no command yet: Tools > Manage Tools.", tool.name), window, cx);
+            return warn(sc_core::t!("tools.no_command", tool = tool.name), window, cx);
         }
         let panel = self.panels[self.active].tabs.current();
         if panel.remote().is_some() || panel.in_archive() {
-            return warn("Tools run on this computer: the panel shows a server or an archive.".into(), window, cx);
+            return warn(sc_core::t!("tools.not_local"), window, cx);
         }
         let other = self.panels[1 - self.active].tabs.current();
         let other = (other.remote().is_none() && !other.in_archive()).then(|| other.folder().to_owned());
@@ -89,7 +87,7 @@ impl Commander {
     pub(crate) fn manage_tools(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let commander = cx.entity().downgrade();
         let tools = self.settings.tools.clone();
-        let name = cx.new(|cx| InputState::new(window, cx).placeholder("Compare with the other side"));
+        let name = cx.new(|cx| InputState::new(window, cx).placeholder(sc_core::t!("tools.name.placeholder")));
         let command = cx.new(|cx| InputState::new(window, cx).placeholder("meld \"%P%N\" \"%T%N\""));
         let view = cx.new(|cx| {
             let this = cx.entity().downgrade();
@@ -117,7 +115,7 @@ impl Commander {
             ToolsDialog { commander, tools, selected: None, name, command, capturing: false, note: None, _capture: capture, _events: events }
         });
         view.update(cx, |this, cx| this.select(Some(0), window, cx));
-        window.open_dialog(cx, move |dialog, _, _| dialog.title("Tools").width(px(680.)).overlay_closable(false).child(view.clone()));
+        window.open_dialog(cx, move |dialog, _, _| dialog.title(sc_core::t!("tools.title")).width(px(680.)).overlay_closable(false).child(view.clone()));
     }
 }
 
@@ -165,7 +163,8 @@ impl ToolsDialog {
 
     fn add(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let names: Vec<&str> = self.tools.iter().map(|tool| tool.name.as_str()).collect();
-        let name = (1..).map(|n| format!("Tool {n}")).find(|name| !names.contains(&name.as_str())).unwrap_or_default();
+        // As many numbers as tools and one: one is free, and a message without {number} cannot loop.
+        let name = (1..=self.tools.len() + 1).map(|n| sc_core::t!("tools.new_name", number = n)).find(|name| !names.contains(&name.as_str())).unwrap_or_default();
         self.tools.push(Tool { name, ..Tool::default() });
         self.commit(window, cx);
         self.select(Some(self.tools.len() - 1), window, cx);
@@ -198,8 +197,8 @@ impl ToolsDialog {
         let command = self.commander.read_with(cx, |this, _| this.settings.keys.command_of(&key)).ok().flatten();
         let other = self.tools.iter().enumerate().find(|(ix, tool)| Some(*ix) != self.selected && tool.key == key).map(|(_, tool)| tool.name.clone());
         self.note = match (command, other) {
-            (_, Some(other)) => Some(format!("{shown} is {other}'s too: the lower one in the list takes it.").into()),
-            (Some(command), None) => Some(format!("{shown} is also {}: the tool takes it.", sc_core::menu::name(command)).into()),
+            (_, Some(other)) => Some(sc_core::t!("tools.note.key_of_other_tool", key = shown, tool = other).into()),
+            (Some(command), None) => Some(sc_core::t!("tools.note.key_of_command", key = shown, command = sc_core::menu::name(command)).into()),
             (None, None) => None,
         };
         self.edit(window, cx, |tool| tool.key = key);
@@ -212,7 +211,7 @@ impl Render for ToolsDialog {
         let selected = self.selected;
         let mut list = v_flex().id("tool-list").h(px(180.)).overflow_y_scroll().p_1().border_1().border_color(theme.border).rounded(theme.radius);
         if self.tools.is_empty() {
-            list = list.child(div().p_2().text_color(theme.muted_foreground).child("No tools yet: New... adds one."));
+            list = list.child(div().p_2().text_color(theme.muted_foreground).child(sc_core::t!("tools.empty")));
         }
         for (ix, tool) in self.tools.iter().enumerate() {
             let key = (!tool.key.is_empty()).then(|| keys_dialog::shown(&tool.key));
@@ -243,26 +242,26 @@ impl Render for ToolsDialog {
         };
         let buttons = h_flex()
             .gap_2()
-            .child(Button::new("tools-new").outline().label("New...").on_click(cx.listener(|this, _, window, cx| this.add(window, cx))))
-            .child(on_selected(Button::new("tools-delete").label("Delete"), Self::remove))
-            .child(on_selected(Button::new("tools-up").icon(IconName::ArrowUp).tooltip("Move Up"), |this, ix, window, cx| this.move_to(ix, ix.wrapping_sub(1), window, cx)).disabled(selected.is_none_or(|ix| ix == 0)))
-            .child(on_selected(Button::new("tools-down").icon(IconName::ArrowDown).tooltip("Move Down"), |this, ix, window, cx| this.move_to(ix, ix + 1, window, cx)).disabled(selected.is_none_or(|ix| ix + 1 >= count)));
+            .child(Button::new("tools-new").outline().label(sc_core::t!("tools.new")).on_click(cx.listener(|this, _, window, cx| this.add(window, cx))))
+            .child(on_selected(Button::new("tools-delete").label(sc_core::t!("tools.delete")), Self::remove))
+            .child(on_selected(Button::new("tools-up").icon(IconName::ArrowUp).tooltip(sc_core::t!("tools.move_up")), |this, ix, window, cx| this.move_to(ix, ix.wrapping_sub(1), window, cx)).disabled(selected.is_none_or(|ix| ix == 0)))
+            .child(on_selected(Button::new("tools-down").icon(IconName::ArrowDown).tooltip(sc_core::t!("tools.move_down")), |this, ix, window, cx| this.move_to(ix, ix + 1, window, cx)).disabled(selected.is_none_or(|ix| ix + 1 >= count)));
         let tool = selected.and_then(|ix| self.tools.get(ix)).cloned().unwrap_or_default();
         let none = selected.is_none();
-        let label = |text: &'static str| div().w(px(80.)).flex_none().text_color(theme.muted_foreground).child(text);
+        let label = |text: String| div().w(px(80.)).flex_none().text_color(theme.muted_foreground).child(text);
         let key = match (self.capturing, tool.key.is_empty()) {
-            (true, _) => "Press the key... (Esc: none)".to_owned(),
-            (false, true) => "None".to_owned(),
+            (true, _) => sc_core::t!("tools.key.waiting"),
+            (false, true) => sc_core::t!("tools.key.none"),
             (false, false) => keys_dialog::shown(&tool.key),
         };
         let editor = v_flex()
             .gap_2()
-            .child(h_flex().gap_2().child(label("Name")).child(div().flex_1().child(Input::new(&self.name).disabled(none))))
-            .child(h_flex().gap_2().child(label("Command")).child(div().flex_1().child(Input::new(&self.command).disabled(none))))
+            .child(h_flex().gap_2().child(label(sc_core::t!("tools.field.name"))).child(div().flex_1().child(Input::new(&self.name).disabled(none))))
+            .child(h_flex().gap_2().child(label(sc_core::t!("tools.field.command"))).child(div().flex_1().child(Input::new(&self.command).disabled(none))))
             .child(
-                h_flex().gap_2().child(label("")).child(
+                h_flex().gap_2().child(label(String::new())).child(
                     Checkbox::new("tool-terminal")
-                        .label("Run in the terminal, to see what it prints")
+                        .label(sc_core::t!("tools.run_in_terminal"))
                         .checked(tool.terminal)
                         .disabled(none)
                         .on_click(cx.listener(|this, checked: &bool, window, cx| this.edit(window, cx, |tool| tool.terminal = *checked))),
@@ -271,27 +270,27 @@ impl Render for ToolsDialog {
             .child(
                 h_flex()
                     .gap_2()
-                    .child(label("Key"))
+                    .child(label(sc_core::t!("tools.field.key")))
                     .child(div().min_w(px(160.)).child(key))
-                    .child(Button::new("tool-key").outline().label("Set Key...").disabled(none).on_click(cx.listener(|this, _, _, cx| {
+                    .child(Button::new("tool-key").outline().label(sc_core::t!("tools.set_key")).disabled(none).on_click(cx.listener(|this, _, _, cx| {
                         this.capturing = true;
                         cx.notify();
                     })))
-                    .child(Button::new("tool-key-clear").outline().label("Clear").disabled(none || tool.key.is_empty()).on_click(cx.listener(|this, _, window, cx| {
+                    .child(Button::new("tool-key-clear").outline().label(sc_core::t!("tools.clear_key")).disabled(none || tool.key.is_empty()).on_click(cx.listener(|this, _, window, cx| {
                         this.note = None;
                         this.edit(window, cx, |tool| tool.key.clear());
                     }))),
             )
             .children(self.note.clone().map(|note| div().text_color(theme.warning).child(note)))
-            .child(div().text_xs().text_color(theme.muted_foreground).child(PLACEHOLDERS));
+            .child(div().text_xs().text_color(theme.muted_foreground).child(sc_core::t!("tools.placeholders")));
         v_flex()
             .w_full()
             .gap_3()
             .text_sm()
-            .child(div().text_color(theme.muted_foreground).child("Your own command lines, in the Tools menu: click one there, or press its key."))
+            .child(div().text_color(theme.muted_foreground).child(sc_core::t!("tools.intro")))
             .child(list)
             .child(buttons)
             .child(editor)
-            .child(h_flex().child(div().flex_1()).child(Button::new("tools-close").primary().label("Close").min_w(px(80.)).on_click(|_, window, cx| window.close_dialog(cx))))
+            .child(h_flex().child(div().flex_1()).child(Button::new("tools-close").primary().label(sc_core::t!("tools.close")).min_w(px(80.)).on_click(|_, window, cx| window.close_dialog(cx))))
     }
 }

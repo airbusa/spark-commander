@@ -123,22 +123,27 @@ impl Commander {
         panels
             .on_action(cx.listener(|this, OpenWithApp(app): &OpenWithApp, window, cx| {
                 let app = app.clone();
-                this.on_menu_paths("Could not open", move |paths, folder| app.open(&paths, &folder), window, cx)
+                let failed = |err: io::Error| sc_core::t!("context_menu.open_failed", err = err);
+                this.on_menu_paths(failed, move |paths, folder| app.open(&paths, &folder), window, cx)
             }))
             .on_action(cx.listener(|this, RunAction(action): &RunAction, window, cx| {
                 let action = action.clone();
-                let failed = format!("{} failed", action.name);
+                let name = action.name.clone();
+                let failed = move |err: io::Error| sc_core::t!("context_menu.action_failed", name = name, err = err);
                 this.on_menu_paths(failed, move |paths, folder| action.run(&paths, &folder), window, cx)
             }))
             .on_action(cx.listener(|this, _: &OtherApplication, window, cx| {
-                this.on_menu_paths("Could not open", |paths, _| desktop::choose_app(&paths[0]), window, cx)
+                let failed = |err: io::Error| sc_core::t!("context_menu.open_failed", err = err);
+                this.on_menu_paths(failed, |paths, _| desktop::choose_app(&paths[0]), window, cx)
             }))
             .on_action(cx.listener(|this, _: &ShowInFileManager, window, cx| {
-                this.on_menu_paths("Could not show it", |paths, _| desktop::reveal(&paths), window, cx)
+                let failed = |err: io::Error| sc_core::t!("context_menu.show_failed", err = err);
+                this.on_menu_paths(failed, |paths, _| desktop::reveal(&paths), window, cx)
             }))
             .on_action(cx.listener(|this, _: &OpenTerminalHere, window, cx| this.open_terminal(window, cx)))
             .on_action(cx.listener(|this, _: &FolderProperties, window, cx| {
-                this.on_menu_paths("Properties", |_, folder| properties::show_in_system(&[folder]), window, cx)
+                let failed = |err: io::Error| sc_core::t!("context_menu.properties_failed", err = err);
+                this.on_menu_paths(failed, |_, folder| properties::show_in_system(&[folder]), window, cx)
             }))
             .on_action(cx.listener(|this, _: &NewFile, window, cx| this.new_file(None, window, cx)))
             .on_action(cx.listener(|this, NewFromTemplate(template): &NewFromTemplate, window, cx| {
@@ -147,10 +152,10 @@ impl Commander {
             .on_action(cx.listener(|this, _: &RenameFile, window, cx| this.rename_file(window, cx)))
     }
 
-    /// `run` away from the window, on what the menu was for.
+    /// `run` away from the window, on what the menu was for; `failed` says why it did not.
     fn on_menu_paths(
         &mut self,
-        failed: impl Into<String>,
+        failed: impl FnOnce(io::Error) -> String + 'static,
         run: impl FnOnce(Vec<PathBuf>, PathBuf) -> io::Result<()> + Send + 'static,
         window: &mut Window,
         cx: &mut Context<Self>,
@@ -158,11 +163,10 @@ impl Commander {
         let Some((paths, folder)) = self.menu_paths() else {
             return;
         };
-        let failed = failed.into();
         let task = cx.background_executor().spawn(async move { run(paths, folder) });
         cx.spawn_in(window, async move |_, cx| {
             if let Err(err) = task.await {
-                let _ = cx.update(|window, cx| window.push_notification(Notification::error(format!("{failed}: {err}")), cx));
+                let _ = cx.update(|window, cx| window.push_notification(Notification::error(failed(err)), cx));
             }
         })
         .detach();
@@ -172,12 +176,12 @@ impl Commander {
     pub(crate) fn open_terminal(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let panel = self.panels[self.active].tabs.current();
         if panel.remote().is_some() {
-            let text = "A terminal opens only in this computer's folders.";
+            let text = sc_core::t!("context_menu.terminal_not_local");
             window.push_notification(Notification::warning(text), cx);
             return;
         }
         if let Err(err) = desktop::open_terminal(panel.folder()) {
-            window.push_notification(Notification::error(format!("Could not open a terminal: {err}")), cx);
+            window.push_notification(Notification::error(sc_core::t!("context_menu.terminal_failed", err = err)), cx);
         }
     }
 
@@ -186,7 +190,8 @@ impl Commander {
         let side = self.active;
         let name = template.as_ref().and_then(|t| t.file_name()).map(|n| n.to_string_lossy().into_owned()).unwrap_or_default();
         let commander = cx.entity().downgrade();
-        name_dialog::open("New file", "New file name:", name, window, cx, move |name, window, cx| {
+        let (title, label) = (sc_core::t!("context_menu.new_file_dialog.title"), sc_core::t!("context_menu.new_file_dialog.label"));
+        name_dialog::open(title.leak(), label.leak(), name, window, cx, move |name, window, cx| {
             let template = template.clone();
             let _ = commander.update(cx, |this, cx| {
                 let panel = this.panels[side].tabs.current_mut();
@@ -196,7 +201,7 @@ impl Commander {
                 }
                 let folder = panel.folder().to_owned();
                 if let Err(err) = panel.new_file(&name, template.as_deref()) {
-                    window.push_notification(Notification::error(format!("Could not make the file: {err}")), cx);
+                    window.push_notification(Notification::error(sc_core::t!("context_menu.new_file_failed", err = err)), cx);
                 }
                 this.refresh_folder(&folder, cx);
             });
@@ -211,18 +216,18 @@ fn build(menu: PopupMenu, target: Target, window: &mut Window, cx: &mut Context<
     if folder {
         let mut menu = menu;
         if !in_archive {
-            menu = menu.submenu("Create New", window, cx, move |menu, _, _| {
-                let menu = menu.command("Folder…", Command::NewFolder).action_as("Empty File…", Command::NewTextFile, Box::new(NewFile)).separator();
+            menu = menu.submenu(sc_core::t!("context_menu.create_new"), window, cx, move |menu, _, _| {
+                let menu = menu.command(sc_core::t!("context_menu.new_folder"), Command::NewFolder).action_as(sc_core::t!("context_menu.empty_file"), Command::NewTextFile, Box::new(NewFile)).separator();
                 templates.iter().fold(menu, |menu, template| {
                     let name = template.file_stem().unwrap_or_default().to_string_lossy().into_owned();
                     menu.menu(name, Box::new(NewFromTemplate(template.clone())))
                 })
             });
         }
-        menu = menu.command("Paste", Command::PasteFromClipboard).separator();
+        menu = menu.command(sc_core::t!("context_menu.paste"), Command::PasteFromClipboard).separator();
         let mut actions = actions;
         if local {
-            menu = menu.action_as("Open Terminal Here", Command::OpenTerminal, Box::new(OpenTerminalHere));
+            menu = menu.action_as(sc_core::t!("context_menu.open_terminal_here"), Command::OpenTerminal, Box::new(OpenTerminalHere));
             // Xfce's default actions have one too.
             actions.retain(|action| !action.name.eq_ignore_ascii_case("Open Terminal Here"));
         }
@@ -230,19 +235,19 @@ fn build(menu: PopupMenu, target: Target, window: &mut Window, cx: &mut Context<
             true => Box::new(FolderProperties),
             false => Box::new(Run(Command::Properties)),
         };
-        return with_actions(menu, actions, window, cx).separator().action_as("Properties", Command::Properties, properties);
+        return with_actions(menu, actions, window, cx).separator().action_as(sc_core::t!("context_menu.properties"), Command::Properties, properties);
     }
     let mut menu = match &single {
         Some((name, _)) => {
             let name = SharedString::from(name.clone());
             menu.menu_element(Box::new(Open), move |_, _| div().font_weight(FontWeight::BOLD).child(name.clone()))
         }
-        None => menu.menu("Open", Box::new(Open)),
+        None => menu.menu(sc_core::t!("context_menu.open"), Box::new(Open)),
     };
     // The desktop's app chooser takes one file.
     let other = matches!(single, Some((_, true)));
     if local && (!apps.is_empty() || other) {
-        menu = menu.submenu("Open With", window, cx, move |menu, _, _| {
+        menu = menu.submenu(sc_core::t!("context_menu.open_with"), window, cx, move |menu, _, _| {
             let mut menu = menu;
             for (at, app) in apps.iter().enumerate() {
                 menu = item(menu, app.name.clone(), app.icon.clone(), Box::new(OpenWithApp(app.clone())));
@@ -252,28 +257,28 @@ fn build(menu: PopupMenu, target: Target, window: &mut Window, cx: &mut Context<
                 }
             }
             match other {
-                true => item(menu.separator(), "Other Application…", None, Box::new(OtherApplication)),
+                true => item(menu.separator(), sc_core::t!("context_menu.other_application"), None, Box::new(OtherApplication)),
                 false => menu,
             }
         });
     }
-    menu = menu.separator().command("View", Command::View).command("Edit", Command::Edit).separator();
+    menu = menu.separator().command(sc_core::t!("context_menu.view"), Command::View).command(sc_core::t!("context_menu.edit"), Command::Edit).separator();
     menu = with_actions(menu, actions, window, cx).separator();
-    menu = menu.command("Cut", Command::CutToClipboard).command("Copy", Command::CopyToClipboard).separator();
-    menu = menu.command("Pack…", Command::Pack);
+    menu = menu.command(sc_core::t!("context_menu.cut"), Command::CutToClipboard).command(sc_core::t!("context_menu.copy"), Command::CopyToClipboard).separator();
+    menu = menu.command(sc_core::t!("context_menu.pack"), Command::Pack);
     if archives {
-        menu = menu.command("Unpack…", Command::UnpackSpecificFiles);
+        menu = menu.command(sc_core::t!("context_menu.unpack"), Command::UnpackSpecificFiles);
     }
     menu = menu.separator();
     if single.is_some() && !in_archive {
-        menu = menu.action_as("Rename…", Command::RenameInPlace, Box::new(RenameFile));
+        menu = menu.action_as(sc_core::t!("context_menu.rename"), Command::RenameInPlace, Box::new(RenameFile));
     }
-    let delete = if local { "Move to Trash" } else { "Delete" };
+    let delete = if local { sc_core::t!("context_menu.move_to_trash") } else { sc_core::t!("context_menu.delete") };
     menu = menu.command(delete, Command::Delete).separator();
     if local {
-        menu = menu.menu("Show in File Manager", Box::new(ShowInFileManager));
+        menu = menu.menu(sc_core::t!("context_menu.show_in_file_manager"), Box::new(ShowInFileManager));
     }
-    menu.command("Properties", Command::Properties)
+    menu.command(sc_core::t!("context_menu.properties"), Command::Properties)
 }
 
 /// The desktop's actions: the top-level ones here, the rest in Actions;
@@ -283,7 +288,7 @@ fn with_actions(menu: PopupMenu, actions: Vec<DesktopAction>, window: &mut Windo
     let menu = group(menu, top, false, window, cx);
     match nested.is_empty() {
         true => menu,
-        false => menu.submenu("Actions", window, cx, move |menu, window, cx| group(menu, nested.clone(), true, window, cx)),
+        false => menu.submenu(sc_core::t!("context_menu.actions"), window, cx, move |menu, window, cx| group(menu, nested.clone(), true, window, cx)),
     }
 }
 

@@ -18,7 +18,11 @@ type Choices = SelectState<Vec<SharedString>>;
 
 /// The presets offered; Midnight Commander's waits for its keys to be right.
 const PRESETS: [Preset; 4] = [Preset::SparkCommander, Preset::TotalCommander, Preset::Krusader, Preset::ForkLift];
-const CUSTOM: &str = "Custom";
+
+/// The dropdown's item for keys of no preset or set.
+fn custom() -> SharedString {
+    sc_core::t!("keys.custom").into()
+}
 
 const WIDTH: f32 = 780.;
 const BODY_HEIGHT: f32 = 560.;
@@ -42,7 +46,7 @@ pub fn open(
     window: &mut Window,
     cx: &mut App,
 ) {
-    let search = cx.new(|cx| InputState::new(window, cx).placeholder("Search for a command or a key"));
+    let search = cx.new(|cx| InputState::new(window, cx).placeholder(sc_core::t!("keys.search.placeholder")));
     let (items, label) = choices(&keys);
     let at = items.iter().position(|item| *item == label);
     let choices = cx.new(|cx| SelectState::new(items.clone(), at.map(IndexPath::new), window, cx));
@@ -82,7 +86,7 @@ pub fn open(
     });
     window.open_dialog(cx, move |dialog, _, _| {
         dialog
-            .title("Shortcuts")
+            .title(sc_core::t!("keys.title"))
             .width(px(WIDTH))
             .overlay_closable(false)
             .child(view.clone())
@@ -101,12 +105,12 @@ fn choices(keys: &KeySettings) -> (Vec<SharedString>, SharedString) {
     }
     items.extend(keys.saved.keys().map(|name| SharedString::from(name.clone())));
     if choice == Choice::Custom {
-        items.push(CUSTOM.into());
+        items.push(custom());
     }
     let label = match choice {
         Choice::Preset(preset) => preset.name().into(),
         Choice::Saved(name) => name.into(),
-        Choice::Custom => CUSTOM.into(),
+        Choice::Custom => custom(),
     };
     (items, label)
 }
@@ -149,12 +153,12 @@ impl KeysDialog {
         let taken = self.draft.set(command, slot, key.clone());
         let name = shown(&key);
         self.note = Some(match (keymap::taken_by(&key, command), taken) {
-            (Some(by), _) => (format!("{name} is taken by {by}, so it never reaches Spark Commander.").into(), true),
+            (Some(by), _) => (sc_core::t!("keys.note.taken_by_system", key = name, by = by).into(), true),
             (None, Some(other)) => {
-                let text = format!("{name} is {} now, no longer {}.", self.label(command), self.label(other));
+                let text = sc_core::t!("keys.note.moved", key = name, command = self.label(command), other = self.label(other));
                 (text.into(), false)
             }
-            (None, None) => (format!("{name} is {} now.", self.label(command)).into(), false),
+            (None, None) => (sc_core::t!("keys.note.set", key = name, command = self.label(command)).into(), false),
         });
     }
 
@@ -181,7 +185,7 @@ impl KeysDialog {
             None if self.draft.saved.contains_key(label) => self.draft.use_saved(label),
             None => return,
         }
-        self.note = dropped.then(|| (format!("Your own keys gave way to {label}'s; Save as keeps them.").into(), false));
+        self.note = dropped.then(|| (sc_core::t!("keys.note.custom_replaced", name = label).into(), false));
         cx.notify();
     }
 
@@ -189,18 +193,19 @@ impl KeysDialog {
     fn save_as(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let name = match self.draft.choice() {
             Choice::Saved(name) => name,
-            _ => "My keys".to_owned(),
+            _ => sc_core::t!("keys.save_as.default_name"),
         };
         let this = cx.entity().downgrade();
-        name_dialog::open("Save shortcuts", "Name:", name, window, cx, move |name, _, cx| {
+        let (title, label) = (sc_core::t!("keys.save_as.title"), sc_core::t!("keys.save_as.label"));
+        name_dialog::open(title.leak(), label.leak(), name, window, cx, move |name, _, cx| {
             let name = name.trim().to_owned();
             let _ = this.update(cx, |this, cx| {
-                let reserved = name.is_empty() || name == CUSTOM || Preset::ALL.iter().any(|preset| preset.name() == name);
+                let reserved = name.is_empty() || name == custom() || Preset::ALL.iter().any(|preset| preset.name() == name);
                 this.note = Some(match reserved {
-                    true => (format!("\"{name}\" is a preset's name; choose another.").into(), true),
+                    true => (sc_core::t!("keys.note.name_reserved", name = name).into(), true),
                     false => {
                         this.draft.save_as(&name);
-                        (format!("Saved as {name}; OK or Apply keeps it.").into(), false)
+                        (sc_core::t!("keys.note.saved", name = name).into(), false)
                     }
                 });
                 cx.notify();
@@ -215,23 +220,23 @@ impl KeysDialog {
         };
         h_flex()
             .gap_2()
-            .child("Keys:")
+            .child(sc_core::t!("keys.set_label"))
             .child(div().w(px(240.)).child(Select::new(&self.choices)))
             .child(
                 Button::new("keys-save-as")
                     .outline()
-                    .label("Save as…")
+                    .label(sc_core::t!("keys.save_as.button"))
                     .on_click(cx.listener(|this, _, window, cx| this.save_as(window, cx))),
             )
             .child(
                 Button::new("keys-delete-set")
                     .outline()
-                    .label("Delete")
+                    .label(sc_core::t!("keys.delete_set"))
                     .disabled(saved.is_none())
                     .on_click(cx.listener(move |this, _, _, cx| {
                         if let Some(name) = &saved {
                             this.draft.delete_saved(name);
-                            this.note = Some((format!("{name} is deleted; OK or Apply makes it so.").into(), false));
+                            this.note = Some((sc_core::t!("keys.note.deleted", name = name).into(), false));
                             cx.notify();
                         }
                     })),
@@ -245,7 +250,7 @@ impl KeysDialog {
         let theme = cx.theme();
         let name = ["key-0", "key-1"][slot];
         let text = match waiting {
-            true => "Press a key…".to_owned(),
+            true => sc_core::t!("keys.press_key"),
             false => shown(&key),
         };
         let cell = h_flex()
@@ -269,18 +274,18 @@ impl KeysDialog {
             )
             .when_some(taken, |el, by| {
                 el.child(Icon::new(IconName::TriangleAlert).small().text_color(theme.warning))
-                    .tooltip(move |window, cx| Tooltip::new(format!("Taken by {by}")).build(window, cx))
+                    .tooltip(move |window, cx| Tooltip::new(sc_core::t!("keys.taken_by.tooltip", by = by)).build(window, cx))
             })
             .on_click(cx.listener(move |this, _, _, cx| {
                 this.capturing = Some((command, slot));
-                this.note = Some(("Press the new key; Esc leaves it as it was.".into(), false));
+                this.note = Some((sc_core::t!("keys.note.press_new_key").into(), false));
                 cx.notify();
             }));
         let clear = Button::new((["clear-0", "clear-1"][slot], command as usize))
             .ghost()
             .xsmall()
             .icon(IconName::Close)
-            .tooltip("No key")
+            .tooltip(sc_core::t!("keys.clear.tooltip"))
             .disabled(key.is_empty())
             .on_click(cx.listener(move |this, _, _, cx| {
                 this.draft.set(command, slot, String::new());
@@ -318,7 +323,7 @@ impl KeysDialog {
                     .ghost()
                     .xsmall()
                     .icon(IconName::Undo2)
-                    .tooltip(format!("Back to {}'s keys", self.draft.preset.name()))
+                    .tooltip(sc_core::t!("keys.reset.tooltip", preset = self.draft.preset.name()))
                     .disabled(!changed)
                     .on_click(cx.listener(move |this, _, _, cx| {
                         this.draft.reset(command);
@@ -349,9 +354,9 @@ impl KeysDialog {
                     .gap_2()
                     .border_b_1()
                     .border_color(theme.border)
-                    .child(div().flex_1().child("Command"))
-                    .child(div().w(px(KEY_WIDTH)).child("Shortcut"))
-                    .child(div().w(px(KEY_WIDTH)).child("Alternate"))
+                    .child(div().flex_1().child(sc_core::t!("keys.column.command")))
+                    .child(div().w(px(KEY_WIDTH)).child(sc_core::t!("keys.column.shortcut")))
+                    .child(div().w(px(KEY_WIDTH)).child(sc_core::t!("keys.column.alternate")))
                     .child(div().w(px(22.))),
             )
             .child(
@@ -401,7 +406,7 @@ impl Render for KeysDialog {
                     .child(
                         Button::new("keys-reset-all")
                             .outline()
-                            .label("Reset All")
+                            .label(sc_core::t!("keys.reset_all"))
                             .disabled(self.draft.choice() != Choice::Custom)
                             .on_click(cx.listener(|this, _, _, cx| {
                                 // Back to the set chosen, else the preset.
@@ -416,7 +421,7 @@ impl Render for KeysDialog {
                     .child(
                         Button::new("keys-ok")
                             .primary()
-                            .label("OK")
+                            .label(sc_core::t!("keys.ok"))
                             .min_w(px(80.))
                             .on_click(cx.listener(|this, _, window, cx| {
                                 this.apply(window, cx);
@@ -426,14 +431,14 @@ impl Render for KeysDialog {
                     .child(
                         Button::new("keys-cancel")
                             .outline()
-                            .label("Cancel")
+                            .label(sc_core::t!("keys.cancel"))
                             .min_w(px(80.))
                             .on_click(|_, window, cx| window.close_dialog(cx)),
                     )
                     .child(
                         Button::new("keys-apply")
                             .outline()
-                            .label("Apply")
+                            .label(sc_core::t!("keys.apply"))
                             .min_w(px(80.))
                             .disabled(!changed)
                             .on_click(cx.listener(|this, _, window, cx| this.apply(window, cx))),

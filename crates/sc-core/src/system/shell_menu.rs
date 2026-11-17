@@ -258,9 +258,9 @@ fn own_items(menu: &Menu, items: &IContextMenu, header: Option<(&str, bool)>) ->
         Some(pos) => pos + 1,
         None => count,
     };
-    add(view as u32, VIEW, "View")?;
+    add(view as u32, VIEW, &crate::t!("context_menu.view"))?;
     let pack = position(menu.0, |id| verb(items, id).as_deref() == Some("copy"));
-    add(pack.unwrap_or(u32::MAX), PACK, "Pack files")?;
+    add(pack.unwrap_or(u32::MAX), PACK, &crate::t!("context_menu.pack_files"))?;
     Ok(())
 }
 

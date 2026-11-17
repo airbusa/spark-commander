@@ -73,7 +73,7 @@ fn draw_still(path: &Path, within: u32) -> Result<(Frame, u32), String> {
     })?;
     let deadline = Instant::now() + Duration::from_secs(30);
     let tick = || match Instant::now() > deadline {
-        true => Err(format!("{}: mpv took too long", path.display())),
+        true => Err(crate::t!("media.error.too_long", path = path.display())),
         false => {
             let _ = wait.recv_timeout(Duration::from_millis(20));
             Ok(())
@@ -190,7 +190,7 @@ impl Player {
         // SAFETY: a plain constructor; null when it fails.
         let handle = Raw(unsafe { (mpv.create)() });
         if handle.0.is_null() {
-            return Err("libmpv could not start".into());
+            return Err(crate::t!("media.error.not_started"));
         }
         let shared = Arc::new(Shared {
             wake: Mutex::default(),
@@ -668,7 +668,7 @@ fn load() -> Result<Mpv, String> {
     let (name, script) = BUNDLED;
     let path = crate::addons::bundled::path("mpv", name);
     if !path.exists() {
-        return Err(format!("libmpv is missing: Settings > Add-ons downloads it (a source build: vendor/mpv/{script})"));
+        return Err(crate::t!("media.error.missing", script = script));
     }
     // SAFETY: loading libmpv runs only its libraries' initialisers.
     let library = unsafe { libloading::Library::new(&path) }.map_err(|err| format!("libmpv: {err}"))?;
@@ -1057,7 +1057,7 @@ mod gl {
 
     impl Context {
         pub fn new() -> Result<Box<Context>, String> {
-            Err("video is played only on Linux, macOS and Windows yet".into())
+            Err(crate::t!("media.error.unsupported_system"))
         }
     }
 

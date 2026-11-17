@@ -219,7 +219,7 @@ fn open_with(
 }
 
 fn title(path: &Path) -> String {
-    format!("{} — Viewer", path.display())
+    sc_core::t!("viewer.window.title", path = path.display())
 }
 
 /// Quick View: the viewer in a panel, showing what the other panel's cursor
@@ -386,9 +386,19 @@ fn menu_bar(viewer: WeakEntity<Viewer>, cx: &mut App) -> Entity<AppMenuBar> {
             }
             None => menu,
         });
-        (name.into(), build)
+        (menu_title(name).into(), build)
     });
     AppMenuBar::built(menus.into(), cx)
+}
+
+/// A menu's name as shown; `MENUS` keeps the English to tell them apart.
+fn menu_title(name: &str) -> String {
+    match name {
+        "File" => sc_core::t!("viewer.menu.file"),
+        "Edit" => sc_core::t!("viewer.menu.edit"),
+        "Options" => sc_core::t!("viewer.menu.options"),
+        _ => sc_core::t!("viewer.menu.encoding"),
+    }
 }
 
 /// How far a rendered page scrolls.
@@ -752,7 +762,7 @@ impl Viewer {
         match self.quick {
             true => {
                 self.media = None;
-                self.problem = Some(format!("Cannot show it: {err}").into());
+                self.problem = Some(sc_core::t!("viewer.cannot_show", err = err).into());
                 if crate::sidebar::lost_device(&err) {
                     crate::reconnect_devices(cx);
                 }
@@ -831,7 +841,7 @@ impl Viewer {
                 return;
             };
             if let Err(err) = std::fs::copy(&from, &to) {
-                let text = format!("Could not save {}: {err}", to.display());
+                let text = sc_core::t!("viewer.save_as.failed", path = to.display(), err = err);
                 let _ =
                     cx.update(|window, cx| window.push_notification(Notification::error(text), cx));
             }
@@ -917,7 +927,7 @@ impl Viewer {
             return;
         }
         if range.end - range.start > COPY_LIMIT {
-            let text = format!("Selections over {} MB are not copied.", COPY_LIMIT >> 20);
+            let text = sc_core::t!("viewer.copy.too_large", megabytes = COPY_LIMIT >> 20);
             window.push_notification(Notification::warning(text), cx);
             return;
         }
@@ -968,7 +978,7 @@ impl Viewer {
             let searches = searches(cx);
             searches.add(query.clone());
             if let Err(err) = searches.save() {
-                let text = format!("Could not save the searches: {err}");
+                let text = sc_core::t!("viewer.find.save_failed", err = err);
                 window.push_notification(Notification::error(text), cx);
             }
             let _ = viewer.update(cx, |this, cx| {
@@ -1034,7 +1044,7 @@ impl Viewer {
                         this.view.0.borrow_mut().reveal = Some(found.start);
                     }
                     Ok(None) => {
-                        let text = format!("Not found: {searched}");
+                        let text = sc_core::t!("viewer.find.not_found", text = searched);
                         window.push_notification(Notification::warning(text), cx);
                     }
                     Err(err) => this.failed(err, window, cx),
@@ -1180,12 +1190,12 @@ impl Viewer {
     fn render_zoom(&self, cx: &mut Context<Self>) -> impl IntoElement + use<> {
         let picture = self.shown.mode == Mode::Picture;
         let (shown, back) = match picture.then(|| self.picture_scale(cx)).flatten() {
-            Some(scale) => (scale, "Back to fitting the window (Ctrl+0)"),
-            None => (self.zoom, "Back to 100% (Ctrl+0)"),
+            Some(scale) => (scale, sc_core::t!("viewer.zoom.fit")),
+            None => (self.zoom, sc_core::t!("viewer.zoom.reset")),
         };
         let (now, most, _) = self.zoom_steps(cx);
         let (fewest, top) = (now <= ZOOMS[0] + 0.001, now >= most - 0.001);
-        let step = |id: &'static str, icon: IconName, tip: &'static str, steps: i32, at_end: bool| {
+        let step = |id: &'static str, icon: IconName, tip: String, steps: i32, at_end: bool| {
             Button::new(id)
                 .ghost()
                 .xsmall()
@@ -1196,7 +1206,7 @@ impl Viewer {
         };
         h_flex()
             .gap_0p5()
-            .child(step("zoom-out", IconName::Minus, "Zoom out (Ctrl+-)", -1, fewest))
+            .child(step("zoom-out", IconName::Minus, sc_core::t!("viewer.zoom.out"), -1, fewest))
             .child(
                 Button::new("zoom-reset")
                     .ghost()
@@ -1206,7 +1216,7 @@ impl Viewer {
                     .tooltip(back)
                     .on_click(cx.listener(|this, _, _, cx| this.zoom_by(0, cx))),
             )
-            .child(step("zoom-in", IconName::Plus, "Zoom in (Ctrl++)", 1, top))
+            .child(step("zoom-in", IconName::Plus, sc_core::t!("viewer.zoom.in"), 1, top))
     }
 
     /// Ctrl and the wheel zoom; caught before the views scroll with it.
@@ -1319,40 +1329,40 @@ impl Viewer {
         let columns = self.shown.settings.text_width;
         let none = self.selected().is_empty();
         let file = |menu: M| {
-            menu.entry("Open...", false, Box::new(OpenFile), false)
-                .entry("Save as...", false, Box::new(SaveAs), false)
+            menu.entry(sc_core::t!("viewer.menu.open"), false, Box::new(OpenFile), false)
+                .entry(sc_core::t!("viewer.menu.save_as"), false, Box::new(SaveAs), false)
                 .separator()
-                .entry("Next file", false, Box::new(NextFile), false)
-                .entry("Previous file", false, Box::new(PreviousFile), false)
+                .entry(sc_core::t!("viewer.menu.next_file"), false, Box::new(NextFile), false)
+                .entry(sc_core::t!("viewer.menu.previous_file"), false, Box::new(PreviousFile), false)
                 .separator()
-                .entry("Reload", false, Box::new(Reload), false)
+                .entry(sc_core::t!("viewer.menu.reload"), false, Box::new(Reload), false)
                 .separator()
-                .entry("Close", false, Box::new(Close), false)
+                .entry(sc_core::t!("viewer.menu.close"), false, Box::new(Close), false)
         };
         let picture_shown = matches!(mode, Mode::Picture | Mode::Markdown | Mode::Pdf);
         let edit = move |menu: M| {
-            menu.entry("Copy as text", false, Box::new(CopyText), none)
-                .entry("Select all", false, Box::new(SelectAll), false)
+            menu.entry(sc_core::t!("viewer.menu.copy_text"), false, Box::new(CopyText), none)
+                .entry(sc_core::t!("viewer.menu.select_all"), false, Box::new(SelectAll), false)
                 .separator()
-                .entry("Find...", false, Box::new(Find), picture_shown)
-                .entry("Find next", false, Box::new(FindNext), picture_shown)
+                .entry(sc_core::t!("viewer.menu.find"), false, Box::new(Find), picture_shown)
+                .entry(sc_core::t!("viewer.menu.find_next"), false, Box::new(FindNext), picture_shown)
         };
         let options = move |mut menu: M| {
-            let modes: [(&str, Mode, Box<dyn Action>); 10] = [
-                ("Text only", Mode::Text, Box::new(ShowText)),
+            let modes: [(String, Mode, Box<dyn Action>); 10] = [
+                (sc_core::t!("viewer.menu.text_only"), Mode::Text, Box::new(ShowText)),
                 (
-                    "Binary (fixed line length)",
+                    sc_core::t!("viewer.menu.binary"),
                     Mode::Binary,
                     Box::new(ShowBinary),
                 ),
-                ("Hex", Mode::Hex, Box::new(ShowHex)),
-                ("Image/Multimedia", Mode::Picture, Box::new(ShowPicture)),
-                ("HTML text (strip tags)", Mode::Html, Box::new(ShowHtml)),
-                ("Unicode (UTF-16)", Mode::Unicode, Box::new(ShowUnicode)),
-                ("UTF-8", Mode::Utf8, Box::new(ShowUtf8)),
-                ("Markdown", Mode::Markdown, Box::new(ShowMarkdown)),
-                ("PDF", Mode::Pdf, Box::new(ShowPdf)),
-                ("Book (EPUB, FB2)", Mode::Book, Box::new(ShowBook)),
+                (sc_core::t!("viewer.menu.hex"), Mode::Hex, Box::new(ShowHex)),
+                (sc_core::t!("viewer.menu.picture"), Mode::Picture, Box::new(ShowPicture)),
+                (sc_core::t!("viewer.menu.html"), Mode::Html, Box::new(ShowHtml)),
+                (sc_core::t!("viewer.menu.unicode"), Mode::Unicode, Box::new(ShowUnicode)),
+                ("UTF-8".into(), Mode::Utf8, Box::new(ShowUtf8)),
+                ("Markdown".into(), Mode::Markdown, Box::new(ShowMarkdown)),
+                ("PDF".into(), Mode::Pdf, Box::new(ShowPdf)),
+                (sc_core::t!("viewer.menu.book"), Mode::Book, Box::new(ShowBook)),
             ];
             let book = self.shown.book;
             for (label, this, action) in modes {
@@ -1360,11 +1370,11 @@ impl Viewer {
                 menu = menu.entry(label, mode == this, action, off);
             }
             menu = menu.separator();
-            let fonts: [(&str, Font, Box<dyn Action>); 3] = [
-                ("ANSI (Windows charset)", Font::Ansi, Box::new(FontAnsi)),
-                ("ASCII (DOS charset)", Font::Ascii, Box::new(FontAscii)),
+            let fonts: [(String, Font, Box<dyn Action>); 3] = [
+                (sc_core::t!("viewer.menu.font_ansi"), Font::Ansi, Box::new(FontAnsi)),
+                (sc_core::t!("viewer.menu.font_ascii"), Font::Ascii, Box::new(FontAscii)),
                 (
-                    "Variable char width",
+                    sc_core::t!("viewer.menu.font_variable"),
                     Font::Variable,
                     Box::new(FontVariable),
                 ),
@@ -1373,39 +1383,39 @@ impl Viewer {
                 menu = menu.entry(label, font == this, action, false);
             }
             let image = mode == Mode::Picture && !self.shown.media;
-            let larger = "Fit only larger images";
+            let larger = sc_core::t!("viewer.menu.only_larger");
             menu.separator()
                 .entry(
-                    format!("Wrap text ({columns} columns)"),
+                    sc_core::t!("viewer.menu.wrap", columns = columns),
                     wrap,
                     Box::new(ToggleWrap),
                     false,
                 )
                 .separator()
                 .entry(
-                    "Fit image to window",
+                    sc_core::t!("viewer.menu.fit_image"),
                     fit,
                     Box::new(FitImage),
                     !image,
                 )
                 .entry(larger, only_larger, Box::new(FitLarger), !image)
                 .separator()
-                .entry("Minimap", minimap, Box::new(ToggleMinimap), false)
-                .entry("Syntax colors", self.colours, Box::new(ToggleSyntax), !matches!(mode, Mode::Text | Mode::Utf8))
+                .entry(sc_core::t!("viewer.menu.minimap"), minimap, Box::new(ToggleMinimap), false)
+                .entry(sc_core::t!("viewer.menu.syntax_colors"), self.colours, Box::new(ToggleSyntax), !matches!(mode, Mode::Text | Mode::Utf8))
                 .separator()
-                .entry("Configure...", false, Box::new(Configure), false)
+                .entry(sc_core::t!("viewer.menu.configure"), false, Box::new(Configure), false)
         };
         let (ansi, dos) = codepage::system();
         let encoding = move |mut menu: M, off: bool| {
             menu = menu
                 .entry(
-                    "As set by the font",
+                    sc_core::t!("viewer.menu.font_page"),
                     page.is_none(),
                     Box::new(SetPage(None)),
                     off,
                 )
                 .separator();
-            for &(label, number) in codepage::MENU {
+            for (label, number) in codepage::menu() {
                 let local = match number {
                     _ if number == ansi => " (ANSI)",
                     _ if number == dos => " (DOS)",
@@ -1480,17 +1490,19 @@ impl Viewer {
         };
         let shown = self.view.0.borrow().visible().min(rows.saturating_sub(top));
         let status = match done {
-            _ if self.finding.is_some() => "Searching…".into(),
-            true => format!(
-                "{}–{} of {} rows",
-                sc_core::grouped(top as u64 + 1),
-                sc_core::grouped((top + shown) as u64),
-                sc_core::grouped(rows as u64)
+            _ if self.finding.is_some() => sc_core::t!("viewer.status.searching"),
+            true => sc_core::t!(
+                "viewer.status.rows",
+                count = rows,
+                first = sc_core::grouped(top as u64 + 1),
+                last = sc_core::grouped((top + shown) as u64),
+                grouped = sc_core::grouped(rows as u64)
             ),
-            false => format!(
-                "{} rows so far, {}% read",
-                sc_core::grouped(rows as u64),
-                scanned * 100 / self.text.len().max(1)
+            false => sc_core::t!(
+                "viewer.status.rows_so_far",
+                count = rows,
+                grouped = sc_core::grouped(rows as u64),
+                percent = format!("{}%", scanned * 100 / self.text.len().max(1))
             ),
         };
         let selection = self.selected();
@@ -1598,10 +1610,10 @@ impl Viewer {
             .context_menu(move |menu, _, cx| {
                 let none = viewer.read_with(cx, |this, _| this.selected().is_empty());
                 let none = none.unwrap_or(true);
-                let google = "Search for selected text with Google";
+                let google = sc_core::t!("viewer.menu.search_google");
                 menu.action_context(focus.clone())
-                    .menu_with_disabled("Copy as text", Box::new(CopyText), none)
-                    .menu_with_disabled("Copy as Hex characters", Box::new(CopyHex), none)
+                    .menu_with_disabled(sc_core::t!("viewer.menu.copy_text"), Box::new(CopyText), none)
+                    .menu_with_disabled(sc_core::t!("viewer.menu.copy_hex"), Box::new(CopyHex), none)
                     .menu_with_disabled(google, Box::new(SearchGoogle), none)
             });
         (rows.into_any_element(), status)
@@ -1663,7 +1675,7 @@ impl Viewer {
         let html = match &self.book {
             Some(Ok(html)) => html.clone(),
             Some(Err(err)) => {
-                let text = format!("This book cannot be read: {err}. 1 shows the file as text.");
+                let text = sc_core::t!("viewer.book.cannot_read", err = err);
                 return div().p_4().child(text).into_any_element();
             }
             None => SharedString::default(),
@@ -1713,7 +1725,7 @@ impl Viewer {
                         .bg(gpui_kit::black().opacity(0.6))
                         .text_color(gpui_kit::white())
                         .text_sm()
-                        .child(format!("Continuing at {:.0}%", at * 100.)),
+                        .child(sc_core::t!("viewer.book.continuing", percent = format!("{:.0}%", at * 100.))),
                 )
             })
             .into_any_element()
@@ -1722,7 +1734,7 @@ impl Viewer {
     fn render_markdown(&self, cx: &App) -> AnyElement {
         let source = self.markdown.clone().unwrap_or_else(|| {
             let limit = MARKDOWN_LIMIT >> 20;
-            format!("*Over {limit} MB: 1 shows it as text.*").into()
+            format!("*{}*", sc_core::t!("viewer.markdown.too_large", megabytes = limit)).into()
         });
         // Scrolled here, not by the view, so the minimap can follow it.
         let view = TextView::markdown("viewer-markdown", source).selectable(true);
@@ -1758,10 +1770,10 @@ impl Viewer {
             _ if !sc_core::viewer::media::is_still(self.shown.path()) => ImageSource::from(self.shown.path().to_owned()),
             Some((path, Ok(image))) if path == self.shown.path() => ImageSource::Render(image.clone()),
             Some((path, Err(err))) if path == self.shown.path() => {
-                let text = format!("{err}. 1 shows the file as text.");
+                let text = sc_core::t!("viewer.as_text_hint", err = err);
                 return div().p_4().child(text).into_any_element();
             }
-            _ => return div().p_4().child("Loading…").into_any_element(),
+            _ => return div().p_4().child(sc_core::t!("viewer.loading")).into_any_element(),
         };
         let picture = img(source)
             .size_full()
@@ -1769,11 +1781,11 @@ impl Viewer {
             .min_w_0()
             .min_h_0()
             .object_fit(fit)
-            .with_loading(|| div().p_4().child("Loading…").into_any_element())
+            .with_loading(|| div().p_4().child(sc_core::t!("viewer.loading")).into_any_element())
             .with_fallback(|| {
                 div()
                     .p_4()
-                    .child("This picture cannot be shown; 1 shows it as text.")
+                    .child(sc_core::t!("viewer.picture.cannot_show"))
                     .into_any_element()
             });
         let area = self.picture_area.get();
@@ -1818,7 +1830,7 @@ impl Render for Viewer {
         }
         #[cfg(target_os = "macos")]
         if !self.quick {
-            let menus = MENUS.map(|name| Menu::new(name).items(self.menu(name, Vec::new(), cx)));
+            let menus = MENUS.map(|name| Menu::new(menu_title(name)).items(self.menu(name, Vec::new(), cx)));
             crate::menus::show(window, menus.into(), cx);
         }
         let (content, status) = match self.shown.mode {
@@ -1831,11 +1843,11 @@ impl Render for Viewer {
             Mode::Pdf => match (&self.pdf, &self.converting) {
                 (Some(pdf), _) => (pdf.clone().into_any_element(), pdf.read(cx).status()),
                 (None, Some(Ok(tool))) => {
-                    let text = format!("Converting with {tool}…");
+                    let text = sc_core::t!("viewer.converting", tool = tool);
                     (div().p_4().child(text).into_any_element(), String::new())
                 }
                 (None, Some(Err(err))) => {
-                    let text = format!("{err}. 1 shows the file as text.");
+                    let text = sc_core::t!("viewer.as_text_hint", err = err);
                     (div().p_4().child(text).into_any_element(), String::new())
                 }
                 (None, None) => (div().into_any_element(), String::new()),
@@ -2099,7 +2111,7 @@ fn status_bar(path: &Path, len: u64, status: String, shown: String, cx: &App) ->
                 .truncate()
                 .child(path.display().to_string()),
         )
-        .child(format!("{} bytes", sc_core::grouped(len)))
+        .child(sc_core::t!("viewer.status.size", count = len, grouped = sc_core::grouped(len)))
         .child(status)
         .child(shown)
 }

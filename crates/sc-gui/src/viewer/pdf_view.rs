@@ -83,10 +83,11 @@ impl PdfView {
     pub fn status(&self) -> String {
         match (self.sizes.len(), &self.error) {
             (_, Some(_)) => String::new(),
-            (0, None) => "Loading...".into(),
-            (pages, None) => format!(
-                "Page {} / {pages}",
-                self.list.logical_scroll_top().item_ix + 1
+            (0, None) => sc_core::t!("viewer.pdf.loading"),
+            (pages, None) => sc_core::t!(
+                "viewer.pdf.page",
+                page = self.list.logical_scroll_top().item_ix + 1,
+                pages = pages
             ),
         }
     }
@@ -323,7 +324,7 @@ impl Render for PdfView {
         if let Some(error) = &self.error {
             return div()
                 .p_4()
-                .child(format!("This PDF cannot be shown: {error}"))
+                .child(sc_core::t!("viewer.pdf.cannot_show", err = error))
                 .into_any_element();
         }
         let (sizes, pages, width, zoom) = (self.sizes.clone(), self.pages.clone(), self.width.clone(), self.zoom);

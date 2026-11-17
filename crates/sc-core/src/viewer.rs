@@ -105,7 +105,7 @@ pub enum Pattern {
 impl Query {
     pub fn pattern(&self) -> Result<Pattern, String> {
         if self.text.is_empty() {
-            return Err("Nothing to find.".into());
+            return Err(crate::t!("viewer.find.nothing"));
         }
         if self.hex {
             let digits: String = self.text.split_whitespace().collect();
@@ -116,7 +116,7 @@ impl Query {
                     .step_by(2)
                     .map(|i| u8::from_str_radix(&digits[i..i + 2], 16).unwrap())
                     .collect(),
-                false => return Err(format!("Not a hex string: {}", self.text)),
+                false => return Err(crate::t!("viewer.find.not_hex", text = self.text)),
             };
             return Ok(Pattern::Bytes(bytes));
         }
@@ -1059,18 +1059,18 @@ impl Shown {
     pub fn describe(&self) -> String {
         let page = self.page();
         match self.mode {
-            Mode::Text => format!("Text · {page}"),
-            Mode::Binary => format!("Binary · {page}"),
-            Mode::Hex => format!("Hex · {page}"),
-            Mode::Picture if self.media => "Multimedia".into(),
-            Mode::Picture => "Image".into(),
-            Mode::Html => "HTML text".into(),
+            Mode::Text => crate::t!("viewer.mode.text", page = page),
+            Mode::Binary => crate::t!("viewer.mode.binary", page = page),
+            Mode::Hex => crate::t!("viewer.mode.hex", page = page),
+            Mode::Picture if self.media => crate::t!("viewer.mode.multimedia"),
+            Mode::Picture => crate::t!("viewer.mode.image"),
+            Mode::Html => crate::t!("viewer.mode.html"),
             Mode::Unicode => "UTF-16".into(),
             Mode::Utf8 => "UTF-8".into(),
             Mode::Markdown => "Markdown".into(),
-            Mode::Book => "Book".into(),
+            Mode::Book => crate::t!("viewer.mode.book"),
             Mode::Pdf => match &self.office {
-                Some(converter) => format!("PDF by {}", converter.name),
+                Some(converter) => crate::t!("viewer.mode.pdf_by", tool = converter.name),
                 None => "PDF".into(),
             },
         }

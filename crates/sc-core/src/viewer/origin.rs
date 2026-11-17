@@ -58,7 +58,7 @@ impl Origin {
             }
             Origin::Archive(member, origin) => {
                 if !member.updatable() {
-                    let why = "only files in 7z, zip, jar and tar archives can be edited";
+                    let why = crate::t!("viewer.origin.not_editable");
                     return Err(io::Error::new(io::ErrorKind::Unsupported, why));
                 }
                 let (dir, file) = member.extract_with_folders()?;
@@ -68,9 +68,9 @@ impl Origin {
                     let archive = archive.display().to_string();
                     if let Some((remote, path)) = &origin {
                         vfs::upload(&member.archive, &**remote, path)?;
-                        return Ok(format!("Updated {archive} on {}", remote.url()));
+                        return Ok(crate::t!("viewer.origin.updated_on", archive = archive, server = remote.url()));
                     }
-                    Ok(format!("Updated {archive}"))
+                    Ok(crate::t!("viewer.origin.updated", archive = archive))
                 });
                 Ok((file, Some(upload)))
             }
@@ -127,7 +127,7 @@ pub fn upload_to(fs: Arc<dyn Fs>, path: PathBuf) -> Upload {
         let named =
             |err: io::Error| io::Error::new(err.kind(), format!("{}: {err}", path.display()));
         vfs::upload(local, &*fs, &path).map_err(named)?;
-        Ok(format!("Uploaded {}", path.display()))
+        Ok(crate::t!("viewer.origin.uploaded", path = path.display()))
     })
 }
 

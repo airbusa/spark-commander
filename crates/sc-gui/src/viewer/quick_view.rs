@@ -149,20 +149,20 @@ impl Commander {
         }
         match wanted {
             Some((_, false)) if let Some((origin, size)) = copied.as_ref().filter(|(_, size)| *size > TAKEN_OUT_MAX) => {
-                let copy = match origin {
-                    Origin::Server(..) => "download",
-                    _ => "take out of the archive",
-                };
-                quick.note = Some(format!("{} is too large to {copy} here: F3 views it.", sc_core::human_size(*size)));
+                let size = sc_core::human_size(*size);
+                quick.note = Some(match origin {
+                    Origin::Server(..) => sc_core::t!("quick_view.too_large.download", size = size),
+                    _ => sc_core::t!("quick_view.too_large.extract", size = size),
+                });
             }
             Some((_, false)) if let Some((origin, _)) = copied => {
                 quick.note = Some(match origin {
-                    Origin::Server(..) => "Downloading…".into(),
-                    _ => "Taking it out of the archive…".into(),
+                    Origin::Server(..) => sc_core::t!("quick_view.downloading"),
+                    _ => sc_core::t!("quick_view.extracting"),
                 });
                 quick.taking = Some(take_out(origin, window, cx));
             }
-            Some((_, true)) if elsewhere => quick.note = Some("On servers and inside archives, Quick View shows files.".into()),
+            Some((_, true)) if elsewhere => quick.note = Some(sc_core::t!("quick_view.files_only")),
             Some((path, false)) => match &quick.viewer {
                 Some(viewer) => viewer.show(path, window, cx),
                 None => quick.viewer = Some(viewer::Quick::new(path, self.settings.viewer.clone(), window, cx)),
@@ -185,7 +185,7 @@ impl Commander {
             (Some((path, _)), _, _, Some(text)) => (name(path), note(text.clone(), cx)),
             (Some((path, false)), Some(viewer), _, _) => (name(path), viewer.view().into_any_element()),
             (Some((path, true)), _, Some(folder), _) => (path.display().to_string(), folder_text(path, folder.space, cx)),
-            _ => (String::new(), note("Quick View shows what the other panel's cursor is on.".into(), cx)),
+            _ => (String::new(), note(sc_core::t!("quick_view.empty"), cx)),
         };
         let (title_bg, title_fg, stripe) = match quick_focused {
             true => (self.colors.active_path, theme.foreground, theme.primary),
@@ -247,18 +247,26 @@ fn count(path: PathBuf, cx: &mut Context<Commander>) -> Folder {
 /// As Total Commander's: the folder, then what is in it.
 fn folder_text(path: &std::path::Path, space: Option<Space>, cx: &App) -> AnyElement {
     let lines = match space {
-        None => vec!["Counting…".to_owned()],
+        None => vec![sc_core::t!("quick_view.counting")],
         Some(space) => {
             // The folder itself counts as one.
             let folders = space.dirs.saturating_sub(1);
             let mut lines = vec![
-                "Total space occupied:".to_owned(),
-                format!("{} bytes in {} file(s), {} folder(s)", grouped(space.bytes), grouped(space.files), grouped(folders)),
+                sc_core::t!("quick_view.space.title"),
+                sc_core::t!(
+                    "quick_view.space.totals",
+                    bytes = space.bytes,
+                    bytes_grouped = grouped(space.bytes),
+                    files = space.files,
+                    files_grouped = grouped(space.files),
+                    folders = folders,
+                    folders_grouped = grouped(folders)
+                ),
                 format!("(= {})", human_size(space.bytes)),
             ];
             if space.unreadable > 0 {
                 lines.push(String::new());
-                lines.push(format!("{} could not be read.", grouped(space.unreadable)));
+                lines.push(sc_core::t!("quick_view.space.unreadable", count = grouped(space.unreadable)));
             }
             lines
         }

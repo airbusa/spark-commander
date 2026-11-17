@@ -95,14 +95,14 @@ pub enum Age {
 impl Age {
     pub const ALL: [Age; 6] = [Age::Minutes, Age::Hours, Age::Days, Age::Weeks, Age::Months, Age::Years];
 
-    pub fn name(self) -> &'static str {
+    pub fn name(self) -> String {
         match self {
-            Age::Minutes => "minute(s)",
-            Age::Hours => "hour(s)",
-            Age::Days => "day(s)",
-            Age::Weeks => "week(s)",
-            Age::Months => "month(s)",
-            Age::Years => "year(s)",
+            Age::Minutes => crate::t!("search.age.minutes"),
+            Age::Hours => crate::t!("search.age.hours"),
+            Age::Days => crate::t!("search.age.days"),
+            Age::Weeks => crate::t!("search.age.weeks"),
+            Age::Months => crate::t!("search.age.months"),
+            Age::Years => crate::t!("search.age.years"),
         }
     }
 
@@ -153,12 +153,12 @@ pub enum Unit {
 impl Unit {
     pub const ALL: [Unit; 4] = [Unit::Bytes, Unit::Kilo, Unit::Mega, Unit::Giga];
 
-    pub fn name(self) -> &'static str {
+    pub fn name(self) -> String {
         match self {
-            Unit::Bytes => "bytes",
-            Unit::Kilo => "KB",
-            Unit::Mega => "MB",
-            Unit::Giga => "GB",
+            Unit::Bytes => crate::t!("search.unit.bytes"),
+            Unit::Kilo => "KB".into(),
+            Unit::Mega => "MB".into(),
+            Unit::Giga => "GB".into(),
         }
     }
 
@@ -187,13 +187,13 @@ impl Attribute {
     pub const ALL: [Attribute; 5] =
         [Attribute::Directory, Attribute::Hidden, Attribute::ReadOnly, Attribute::Executable, Attribute::Link];
 
-    pub fn name(self) -> &'static str {
+    pub fn name(self) -> String {
         match self {
-            Attribute::Directory => "Directory",
-            Attribute::Hidden => "Hidden",
-            Attribute::ReadOnly => "Read only",
-            Attribute::Executable => "Executable",
-            Attribute::Link => "Symbolic link",
+            Attribute::Directory => crate::t!("search.attribute.directory"),
+            Attribute::Hidden => crate::t!("search.attribute.hidden"),
+            Attribute::ReadOnly => crate::t!("search.attribute.read_only"),
+            Attribute::Executable => crate::t!("search.attribute.executable"),
+            Attribute::Link => crate::t!("search.attribute.link"),
         }
     }
 }
@@ -240,7 +240,7 @@ impl Found {
 pub fn run(query: &Query, places: &[PathBuf], stop: &AtomicBool, event: &mut dyn FnMut(Event)) -> Result<(), String> {
     let search = Search::new(query, stop)?;
     if places.is_empty() {
-        return Err("Search in names no folder".into());
+        return Err(crate::t!("search.error.no_place"));
     }
     // Duplicates are compared once all are found.
     let mut found = Vec::new();
@@ -389,7 +389,7 @@ impl<'a> Search<'a> {
         }
         let names = match query.regex {
             true => Names::Regex(
-                Regex::new(&format!("(?i){}", wanted.trim())).map_err(|err| format!("The name's regular expression: {err}"))?,
+                Regex::new(&format!("(?i){}", wanted.trim())).map_err(|err| crate::t!("search.error.names_regex", err = err))?,
             ),
             false => {
                 let masks: Vec<String> = wanted.split([' ', ';']).filter(|m| !m.is_empty()).map(contains).collect();
@@ -403,10 +403,10 @@ impl<'a> Search<'a> {
         };
         let day = |text: &str, end: bool| -> Result<SystemTime, String> {
             let date = NaiveDate::parse_from_str(text.trim(), "%Y-%m-%d")
-                .map_err(|_| format!("{text} is no date such as 2026-11-12"))?;
+                .map_err(|_| crate::t!("search.error.date", text = text))?;
             let date = if end { date.succ_opt().unwrap_or(date) } else { date };
             let midnight = date.and_hms_opt(0, 0, 0).expect("midnight");
-            let local = Local.from_local_datetime(&midnight).earliest().ok_or(format!("{text} is no local time"))?;
+            let local = Local.from_local_datetime(&midnight).earliest().ok_or_else(|| crate::t!("search.error.local_time", text = text))?;
             Ok(local.into())
         };
         let now = Local::now();
@@ -676,7 +676,7 @@ fn unix_mode(attributes: &str) -> Option<u32> {
 impl TextSearch {
     fn new(text: &Text) -> Result<Self, String> {
         if text.text.is_empty() {
-            return Err("Find text names no text".into());
+            return Err(crate::t!("search.error.no_text"));
         }
         if text.hex {
             let digits: String = text.text.chars().filter(|c| !c.is_whitespace()).collect();
@@ -685,7 +685,7 @@ impl TextSearch {
                 .map(|at| digits.get(at..at + 2).and_then(|pair| u8::from_str_radix(pair, 16).ok()))
                 .collect::<Option<Vec<u8>>>()
                 .filter(|bytes| !bytes.is_empty())
-                .ok_or_else(|| format!("{} is no hex string such as 48 65 6c", text.text))?;
+                .ok_or_else(|| crate::t!("search.error.hex", text = text.text))?;
             return Ok(TextSearch {
                 hex: Some(bytes),
                 bytes: None,
@@ -704,7 +704,7 @@ impl TextSearch {
         let pattern = if text.whole_words { format!(r"\b(?:{pattern})\b") } else { pattern };
         // ^ and $ at each line's start and end, as grep has them.
         let pattern = if text.case_sensitive { format!("(?m){pattern}") } else { format!("(?mi){pattern}") };
-        let fail = |err: regex::Error| format!("The text's regular expression: {err}");
+        let fail = |err: regex::Error| crate::t!("search.error.text_regex", err = err);
         let any = text.utf8 || text.utf16 || text.ansi;
         Ok(TextSearch {
             hex: None,

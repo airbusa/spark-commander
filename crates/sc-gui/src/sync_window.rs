@@ -15,7 +15,7 @@ use gpui_kit::component::{ActiveTheme, Disableable, Sizable, WindowExt, h_flex, 
 use gpui_kit::prelude::FluentBuilder;
 use gpui_kit::*;
 use sc_core::ops::sync_dirs::{self, Action, Item, Options, Root, State};
-use sc_core::{grouped, human_size};
+use sc_core::{grouped, human_size, t};
 
 use crate::Commander;
 
@@ -37,14 +37,14 @@ impl Commander {
             folder.then(|| Root::new(panel.fs(), panel.remote().cloned(), panel.folder().to_owned()))
         });
         let [Some(left), Some(right)] = roots else {
-            let text = "Synchronize Dirs compares two folders: neither panel may show an archive or search results.";
+            let text = t!("sync.error.no_folders");
             return window.push_notification(Notification::warning(text), cx);
         };
         let main = window.bounds();
         let size = size(px(900.), px(680.)).min(&main.size);
         let origin = main.origin + point((main.size.width - size.width) / 2., (main.size.height - size.height) / 2.);
         let over = crate::Over::at(WindowBounds::Windowed(Bounds { origin, size }), window, cx);
-        let options = crate::over_main_window("Synchronize Dirs".into(), over, cx);
+        let options = crate::over_main_window(t!("sync.title"), over, cx);
         let commander = cx.entity().downgrade();
         let main = window.window_handle();
         let opened = gpui_kit::open_window(options, cx, |window, cx| {
@@ -160,7 +160,7 @@ impl SyncDirs {
     fn show_folder(&mut self, cx: &mut Context<Self>) {
         if let Some((_, at)) = &self.comparing {
             let folder = at.lock().unwrap().display().to_string();
-            self.status = format!("Comparing {}", if folder.is_empty() { "..." } else { &folder });
+            self.status = t!("sync.status.comparing", folder = if folder.is_empty() { "..." } else { &folder });
             cx.notify();
         }
     }
@@ -169,8 +169,8 @@ impl SyncDirs {
         self.comparing = None;
         match found {
             Ok(items) => self.items = items,
-            Err(err) if err.kind() == std::io::ErrorKind::Interrupted => self.status = "Stopped.".into(),
-            Err(err) => self.status = format!("Could not compare: {err}"),
+            Err(err) if err.kind() == std::io::ErrorKind::Interrupted => self.status = t!("sync.status.stopped"),
+            Err(err) => self.status = t!("sync.error.compare", err = err),
         }
         self.list(cx);
     }
@@ -181,16 +181,16 @@ impl SyncDirs {
         if self.comparing.is_none() && !self.items.is_empty() {
             let count = |actions: &[Action]| self.items.iter().filter(|item| actions.contains(&item.action)).count();
             let equal = self.items.iter().filter(|item| item.state == State::Equal).count();
-            self.status = format!(
-                "{} to copy right, {} to copy left, {} to delete, {} equal, {} left alone",
-                count(&[Action::ToRight]),
-                count(&[Action::ToLeft]),
-                count(&[Action::DeleteLeft, Action::DeleteRight]),
-                equal,
-                count(&[Action::Nothing]) - equal,
+            self.status = t!(
+                "sync.status.counts",
+                right = count(&[Action::ToRight]),
+                left = count(&[Action::ToLeft]),
+                delete = count(&[Action::DeleteLeft, Action::DeleteRight]),
+                equal = equal,
+                alone = count(&[Action::Nothing]) - equal,
             );
         } else if self.comparing.is_none() && self.status.is_empty() {
-            self.status = "Both are empty.".into();
+            self.status = t!("sync.status.both_empty");
         }
         cx.notify();
     }
@@ -231,23 +231,23 @@ impl SyncDirs {
         let (gone_right, _) = bytes(Action::DeleteRight, |item| item.right.as_ref());
         let mut lines = Vec::new();
         if right > 0 {
-            lines.push(format!("Copy {right} to the right ({})", human_size(right_bytes)));
+            lines.push(t!("sync.confirm.copy_right", count = right, size = human_size(right_bytes)));
         }
         if left > 0 {
-            lines.push(format!("Copy {left} to the left ({})", human_size(left_bytes)));
+            lines.push(t!("sync.confirm.copy_left", count = left, size = human_size(left_bytes)));
         }
         if gone_left > 0 {
-            lines.push(format!("Delete {gone_left} on the left"));
+            lines.push(t!("sync.confirm.delete_left", count = gone_left));
         }
         if gone_right > 0 {
-            lines.push(format!("Delete {gone_right} on the right"));
+            lines.push(t!("sync.confirm.delete_right", count = gone_right));
         }
-        let trash = if gone_left + gone_right > 0 { " Deleted ones on this computer go to the trash." } else { "" };
-        let text = format!("{}. Files copied replace those there.{trash}", lines.join(", "));
+        let trash = if gone_left + gone_right > 0 { "yes" } else { "no" };
+        let text = t!("sync.confirm.text", actions = lines.join(", "), trash = trash);
         let (commander, roots) = (self.commander.clone(), (self.left.clone(), self.right.clone()));
         window.open_alert_dialog(cx, move |alert, _, _| {
             let (commander, todo, roots) = (commander.clone(), todo.clone(), roots.clone());
-            alert.title("Synchronize").description(text.clone()).ok_text("Synchronize").show_cancel(true).on_ok(move |_, window, cx| {
+            alert.title(t!("sync.confirm.title")).description(text.clone()).ok_text(t!("sync.confirm.ok")).show_cancel(true).on_ok(move |_, window, cx| {
                 let task = sync_dirs::synchronize(roots.0.clone(), roots.1.clone(), todo.clone());
                 let _ = commander.update(cx, |this, _| this.transfers.queue.push_task(task));
                 // The queue under the panels shows how it goes.
@@ -308,22 +308,22 @@ impl SyncDirs {
 
 impl Render for SyncDirs {
     fn render(&mut self, window: &mut Window, cx: &mut Context<Self>) -> impl IntoElement {
-        let header = crate::header::title_bar("Synchronize Dirs", window, cx);
+        let header = crate::header::title_bar(t!("sync.title"), window, cx);
         let theme = cx.theme().clone();
         let comparing = self.comparing.is_some();
-        let option = |id: &'static str, label: &'static str, on: bool, set: fn(&mut Options, bool)| {
+        let option = |id: &'static str, label: String, on: bool, set: fn(&mut Options, bool)| {
             Checkbox::new(id).label(label).checked(on).disabled(comparing).on_click(cx.listener(move |this, checked: &bool, _, cx| {
                 set(&mut this.options, *checked);
                 cx.notify();
             }))
         };
-        let filter = |id: &'static str, label: &'static str, on: bool, set: fn(&mut Show, bool)| {
+        let filter = |id: &'static str, label: String, on: bool, set: fn(&mut Show, bool)| {
             Checkbox::new(id).label(label).checked(on).on_click(cx.listener(move |this, checked: &bool, _, cx| {
                 set(&mut this.show, *checked);
                 this.list(cx);
             }))
         };
-        let place = |label: &'static str, root: &Root| {
+        let place = |label: String, root: &Root| {
             h_flex()
                 .gap_2()
                 .min_w_0()
@@ -331,7 +331,7 @@ impl Render for SyncDirs {
                 .child(div().min_w_0().overflow_hidden().whitespace_nowrap().text_ellipsis_start().child(sync_dirs::place(root)))
         };
         let date = crate::date_fits(cx);
-        let column = |label: &'static str, width: Pixels, right: bool| div().w(width).flex_none().when(right, |el| el.text_right()).child(label);
+        let column = |label: String, width: Pixels, right: bool| div().w(width).flex_none().when(right, |el| el.text_right()).child(label);
         let list = uniform_list("sync-items", self.shown.len(), cx.processor(|this, range: std::ops::Range<usize>, _, cx| range.map(|row| this.render_row(row, cx)).collect()))
             .track_scroll(&self.scroll)
             .flex_1();
@@ -349,35 +349,35 @@ impl Render for SyncDirs {
                 v_flex()
                     .p_3()
                     .gap_2()
-                    .child(place("Left", &self.left))
-                    .child(place("Right", &self.right))
+                    .child(place(t!("sync.left"), &self.left))
+                    .child(place(t!("sync.right"), &self.right))
                     .child(
                         h_flex()
                             .gap_4()
-                            .child(option("subfolders", "Subfolders", self.options.subfolders, |options, on| options.subfolders = on))
-                            .child(option("content", "By content", self.options.by_content, |options, on| options.by_content = on))
-                            .child(option("ignore-date", "Ignore date", self.options.ignore_date, |options, on| options.ignore_date = on))
-                            .child(option("asymmetric", "Asymmetric (right becomes a copy of left)", self.options.asymmetric, |options, on| options.asymmetric = on)),
+                            .child(option("subfolders", t!("sync.option.subfolders"), self.options.subfolders, |options, on| options.subfolders = on))
+                            .child(option("content", t!("sync.option.by_content"), self.options.by_content, |options, on| options.by_content = on))
+                            .child(option("ignore-date", t!("sync.option.ignore_date"), self.options.ignore_date, |options, on| options.ignore_date = on))
+                            .child(option("asymmetric", t!("sync.option.asymmetric"), self.options.asymmetric, |options, on| options.asymmetric = on)),
                     )
                     .child(
                         h_flex()
                             .gap_2()
-                            .child("Files:")
+                            .child(t!("sync.mask.label"))
                             .child(div().w(px(220.)).child(Input::new(&self.mask).small()))
                             .child(div().flex_1())
                             .child(match comparing {
-                                true => Button::new("stop").small().label("Stop").on_click(cx.listener(|this, _, window, _| this.stop_or_close(window))),
-                                false => Button::new("compare").small().primary().label("Compare").on_click(cx.listener(|this, _, window, cx| this.compare(window, cx))),
+                                true => Button::new("stop").small().label(t!("sync.stop")).on_click(cx.listener(|this, _, window, _| this.stop_or_close(window))),
+                                false => Button::new("compare").small().primary().label(t!("sync.compare")).on_click(cx.listener(|this, _, window, cx| this.compare(window, cx))),
                             }),
                     )
                     .child(
                         h_flex()
                             .gap_4()
-                            .child(div().text_color(theme.muted_foreground).child("Show:"))
-                            .child(filter("show-right", "→ to the right", self.show.to_right, |show, on| show.to_right = on))
-                            .child(filter("show-left", "← to the left", self.show.to_left, |show, on| show.to_left = on))
-                            .child(filter("show-equal", "= equal", self.show.equal, |show, on| show.equal = on))
-                            .child(filter("show-other", "≠ left alone", self.show.other, |show, on| show.other = on)),
+                            .child(div().text_color(theme.muted_foreground).child(t!("sync.show.label")))
+                            .child(filter("show-right", t!("sync.show.to_right"), self.show.to_right, |show, on| show.to_right = on))
+                            .child(filter("show-left", t!("sync.show.to_left"), self.show.to_left, |show, on| show.to_left = on))
+                            .child(filter("show-equal", t!("sync.show.equal"), self.show.equal, |show, on| show.equal = on))
+                            .child(filter("show-other", t!("sync.show.other"), self.show.other, |show, on| show.other = on)),
                     ),
             )
             .child(
@@ -389,12 +389,12 @@ impl Render for SyncDirs {
                     .border_b_1()
                     .border_color(theme.border)
                     .text_color(theme.muted_foreground)
-                    .child(div().flex_1().child("Name"))
-                    .child(column("Size", px(90.), true))
-                    .child(column("Date", date, false))
-                    .child(column("", px(56.), false))
-                    .child(column("Date", date, false))
-                    .child(column("Size", px(90.), true)),
+                    .child(div().flex_1().child(t!("sync.column.name")))
+                    .child(column(t!("sync.column.size"), px(90.), true))
+                    .child(column(t!("sync.column.date"), date, false))
+                    .child(column(String::new(), px(56.), false))
+                    .child(column(t!("sync.column.date"), date, false))
+                    .child(column(t!("sync.column.size"), px(90.), true)),
             )
             .child(v_flex().flex_1().min_h_0().mx_3().child(list))
             .child(
@@ -408,11 +408,11 @@ impl Render for SyncDirs {
                         Button::new("synchronize")
                             .small()
                             .primary()
-                            .label("Synchronize...")
+                            .label(t!("sync.synchronize"))
                             .disabled(comparing || !todo)
                             .on_click(cx.listener(|this, _, window, cx| this.synchronize(window, cx))),
                     )
-                    .child(Button::new("close").small().outline().label("Close").on_click(|_, window, _| window.remove_window())),
+                    .child(Button::new("close").small().outline().label(t!("sync.close")).on_click(|_, window, _| window.remove_window())),
             )
     }
 }

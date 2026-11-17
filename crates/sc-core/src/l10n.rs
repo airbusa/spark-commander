@@ -424,13 +424,19 @@ mod tests {
         for name in ["sc-core", "sc-gui", "sc-tui"] {
             sources(&crates.join(name).join("src"), &mut files);
         }
-        let english = catalog("en");
+        let mut english: std::collections::HashSet<String> = catalog("en").keys().cloned().collect();
+        // Parts not yet merged into en.json (l10n/parts/*.json) count too.
+        let parts = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("../../l10n/parts");
+        for part in std::fs::read_dir(parts).into_iter().flatten().flatten() {
+            let entries: HashMap<String, Entry> = serde_json::from_str(&std::fs::read_to_string(part.path()).unwrap()).unwrap();
+            english.extend(entries.into_keys());
+        }
         let pattern = regex::Regex::new(r#"\bt!\(\s*"([a-z0-9_]+\.[a-z0-9_.]+)""#).unwrap();
         let mut missing = Vec::new();
         for file in files {
             let text = std::fs::read_to_string(&file).unwrap();
             for found in pattern.captures_iter(&text) {
-                if !english.contains_key(&found[1]) {
+                if !english.contains(&found[1]) {
                     missing.push(format!("{}: {}", file.display(), &found[1]));
                 }
             }

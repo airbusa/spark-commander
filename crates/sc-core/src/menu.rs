@@ -121,6 +121,8 @@ pub enum Command {
     QuickViewPanel,
     /// The built-in terminal under the panels, shown or hidden; its shell lives on.
     TerminalPanel,
+    /// Another tab of the built-in terminal, in the active panel's folder; shown if hidden.
+    NewTerminal,
     VerticalArrangement,
     DuplicateTab,
     AllFiles,
@@ -388,6 +390,7 @@ pub const MENUS: &[Menu] = &[
             },
             cmd("Quick View Panel", QuickViewPanel),
             cmd("Terminal", TerminalPanel),
+            cmd("New Terminal Tab", NewTerminal),
             cmd("Vertical Arrangement", VerticalArrangement),
             SEP,
             Item::Submenu {

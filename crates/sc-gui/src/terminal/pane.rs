@@ -314,8 +314,10 @@ impl Commander {
             .on_action(cx.listener(|this, _: &terminal::NextTerminalTab, window, cx| this.step_terminal_tab(true, window, cx)))
             .on_action(cx.listener(|this, _: &terminal::PreviousTerminalTab, window, cx| this.step_terminal_tab(false, window, cx)))
             .on_action(cx.listener(|this, Run(command): &Run, window, cx| {
-                if *command == Command::TerminalPanel {
-                    return this.toggle_terminal(window, cx);
+                match command {
+                    Command::TerminalPanel => return this.toggle_terminal(window, cx),
+                    Command::NewTerminal => return this.new_terminal_tab(window, cx),
+                    _ => {}
                 }
                 // A panels' command from the menus: the panels take the keys again.
                 // Outside this update: the panels' listeners update the commander too.

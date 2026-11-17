@@ -146,6 +146,7 @@ const SPARK_COMMANDER: Table = &[
     (QuickViewPanel, "alt-shift-q", ""),
     // Drop-down terminals' F12 (Yakuake, Guake); Ctrl+Shift+T where a terminal keeps its own keys.
     (TerminalPanel, "f12", "secondary-shift-t"),
+    (NewTerminal, "shift-f12", ""),
     (DuplicateTab, "secondary-t", ""),
     (AllFiles, "ctrl-shift-f10", ""),
     (Programs, "ctrl-shift-f11", ""),
@@ -238,6 +239,7 @@ const TOTAL_COMMANDER: Table = &[
     (ThumbnailView, "ctrl-shift-f1", ""),
     (QuickViewPanel, "ctrl-q", ""),
     (TerminalPanel, "f12", "secondary-shift-t"),
+    (NewTerminal, "shift-f12", ""),
     (DuplicateTab, "ctrl-t", ""),
     (AllFiles, "ctrl-f10", ""),
     (Programs, "ctrl-f11", ""),

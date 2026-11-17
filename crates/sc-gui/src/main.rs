@@ -2510,6 +2510,7 @@ impl Render for Commander {
                     Command::Disconnect => this.disconnect(window, cx),
                     Command::QuickViewPanel => this.toggle_quick_view(window, cx),
                     Command::TerminalPanel => this.toggle_terminal(window, cx),
+                    Command::NewTerminal => this.new_terminal_tab(window, cx),
                     Command::Brief => this.set_view(View::Brief, cx),
                     Command::Full => this.set_view(View::Full, cx),
                     Command::ThumbnailView => this.set_view(View::Thumbnails, cx),

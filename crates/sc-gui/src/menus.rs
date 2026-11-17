@@ -101,6 +101,7 @@ pub fn icon(command: Command) -> Option<Lucide> {
         ActivityLog => Lucide::ScrollText,
         // The system's terminal; the built-in one, a panel, is the framed prompt.
         OpenTerminal => Lucide::Terminal,
+        NewTerminal => Lucide::SquareTerminal,
         SwapPanels => Lucide::ArrowLeftRight,
         TargetEqualsSource => Lucide::Equal,
         RereadSource => Lucide::RefreshCw,
@@ -179,7 +180,7 @@ pub fn bind(keys: &KeySettings, before: Option<&KeySettings>, cx: &mut App) {
         KeyBinding::load(key, action, context, false, None, &DummyKeyboardMapper).ok()
     };
     // The terminal takes every other key, and keeps its own (Ctrl+Shift+T opens a tab there);
-    // the terminal's key hides it there, the tab keys go round its tabs.
+    // the terminal's keys hide it or open another tab there, the tab keys go round its tabs.
     let targets = |command: Command, key: &str| {
         // Workspace 1 to 9 open it wherever the keys are, their keys shown in Show > Workspaces.
         let own: Box<dyn Action> = match command.workspace() {
@@ -189,7 +190,7 @@ pub fn bind(keys: &KeySettings, before: Option<&KeySettings>, cx: &mut App) {
         let mut targets: Vec<(&str, Box<dyn Action>)> = vec![(crate::CONTEXT, own)];
         let terminal: Option<Box<dyn Action>> = match command {
             _ if crate::terminal::own_key(key) => None,
-            Command::TerminalPanel => Some(Box::new(Run(command))),
+            Command::TerminalPanel | Command::NewTerminal => Some(Box::new(Run(command))),
             _ if command.workspace().is_some() => command.workspace().map(|ix| Box::new(OpenWorkspace(ix)) as Box<dyn Action>),
             Command::NextTab => Some(Box::new(crate::terminal::NextTerminalTab)),
             Command::PreviousTab => Some(Box::new(crate::terminal::PreviousTerminalTab)),

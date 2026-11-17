@@ -110,19 +110,13 @@ pub struct Settings {
 }
 
 /// The operation queue's: how long done operations stay listed, how fast links download.
-#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
+#[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
 #[serde(default)]
 pub struct QueueSettings {
     /// Minutes a done operation stays listed; 0: none. Failed and cancelled ones stay until cleared.
     pub clear_after_minutes: u32,
     /// Download from Link's speed limit in KB/s; 0: none.
     pub download_limit_kb: u64,
-}
-
-impl Default for QueueSettings {
-    fn default() -> Self {
-        QueueSettings { clear_after_minutes: 0, download_limit_kb: 0 }
-    }
 }
 
 /// The toolbar's buttons in their order; none hides it.

@@ -623,7 +623,8 @@ impl Viewer {
             shown,
             text: Arc::new(text),
             fit: true,
-            only_larger: false,
+            // As Krusader's and Gwenview's: 100%, smaller only to fit the window.
+            only_larger: true,
             selection: (0, 0),
             selecting: false,
             finding: None,
@@ -1071,14 +1072,21 @@ impl Viewer {
         if zoom == self.zoom {
             return;
         }
-        // The picture's middle stays in the middle.
+        // What is in the middle of the view stays there: the picture's box, its
+        // own size times the scale, is centred while smaller than the view.
         let area = self.picture_area.get();
         let (before, offset) = (self.zoom, self.picture_scroll.offset());
-        let keep = |offset: Pixels, side: Pixels| -((-offset + side / 2.) * (zoom / before) - side / 2.);
-        self.picture_scroll.set_offset(point(keep(offset.x, area.width), keep(offset.y, area.height)));
+        if let (Some((width, height)), Some(scale)) = (self.natural_size(cx), self.picture_scale(cx)) {
+            let after = scale * zoom / before;
+            let keep = |offset: Pixels, side: Pixels, natural: f32| {
+                let (was, will) = (px(natural * scale), px(natural * after));
+                let margin = |size: Pixels| ((side - size) / 2.).max(px(0.));
+                let middle = (-offset + side / 2. - margin(was)) * (after / scale);
+                -(middle - side / 2. + margin(will)).clamp(px(0.), (will - side).max(px(0.)))
+            };
+            self.picture_scroll.set_offset(point(keep(offset.x, area.width, width), keep(offset.y, area.height, height)));
+        }
         self.zoom = zoom;
-        // Zooming a picture shows it as it fits, enlarged.
-        self.fit = true;
         self.zoom_pdf(cx);
         cx.notify();
     }
@@ -1126,12 +1134,13 @@ impl Viewer {
     fn picture_scale(&self, cx: &mut Context<Self>) -> Option<f32> {
         let (width, height) = self.natural_size(cx).filter(|(width, height)| *width > 0. && *height > 0.)?;
         let area = self.picture_area.get();
-        let fits = (f32::from(area.width) * self.zoom / width).min(f32::from(area.height) * self.zoom / height);
-        Some(match (self.fit, self.only_larger) {
+        let fits = (f32::from(area.width) / width).min(f32::from(area.height) / height);
+        let base = match (self.fit, self.only_larger) {
             (false, _) => 1.,
             (true, false) => fits,
             (true, true) => fits.min(1.),
-        })
+        };
+        Some(base * self.zoom)
     }
 
     /// − 100% +: the percentage goes back to 100%; a picture's says how large
@@ -1710,7 +1719,8 @@ impl Viewer {
             (true, true) => ObjectFit::ScaleDown,
             (false, _) => ObjectFit::None,
         };
-        let zoomed = self.fit && self.zoom != 1.;
+        // Zoomed: its own size times the scale, in a box that pans.
+        let zoomed = (self.zoom != 1.).then(|| Some((self.natural_size(cx)?, self.picture_scale(cx)?))).flatten();
         let source = match &self.still {
             _ if !sc_core::viewer::media::is_still(self.shown.path()) => ImageSource::from(self.shown.path().to_owned()),
             Some((path, Ok(image))) if path == self.shown.path() => ImageSource::Render(image.clone()),
@@ -1733,19 +1743,27 @@ impl Viewer {
                     .child("This picture cannot be shown; 1 shows it as text.")
                     .into_any_element()
             });
-        // Zoomed, it fits a box that much larger, which pans.
         let area = self.picture_area.get();
         let picture = match zoomed {
-            false => picture.into_any_element(),
-            true => div()
-                .id("picture-pan")
-                .size_full()
-                .flex()
-                .overflow_scroll()
-                .track_scroll(&self.picture_scroll)
-                .child(div().flex_none().m_auto().w(area.width * self.zoom).h(area.height * self.zoom).child(picture))
-                .into_any_element(),
+            None => picture.into_any_element(),
+            Some(((width, height), scale)) => {
+                let (width, height) = (px(width * scale), px(height * scale));
+                // Centred while smaller than the view, else from its corner (auto
+                // margins would centre a larger one too, past the scrolling).
+                let margin = |side: Pixels, size: Pixels| ((side - size) / 2.).max(px(0.));
+                let boxed = div().flex_none().ml(margin(area.width, width)).mt(margin(area.height, height)).w(width).h(height);
+                div()
+                    .id("picture-pan")
+                    .size_full()
+                    .flex()
+                    .items_start()
+                    .overflow_scroll()
+                    .track_scroll(&self.picture_scroll)
+                    .child(boxed.child(picture.object_fit(ObjectFit::Fill)))
+                    .into_any_element()
+            }
         };
+        let zoomed = zoomed.is_some();
         v_flex()
             .absolute()
             .inset_0()

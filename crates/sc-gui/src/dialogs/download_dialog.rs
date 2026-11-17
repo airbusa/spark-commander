@@ -20,7 +20,7 @@ impl Commander {
     pub(crate) fn download_link(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let panel = self.panels[self.active].tabs.current();
         if panel.remote().is_some() || panel.in_archive() {
-            let text = "Downloads go into this computer's folders: open one in the panel first.";
+            let text = sc_core::t!("download.local_only");
             return window.push_notification(Notification::warning(text), cx);
         }
         let dir = panel.folder().to_owned();
@@ -43,8 +43,8 @@ impl Commander {
 /// `done` gets them once they will do.
 fn open(dir: PathBuf, window: &mut Window, cx: &mut App, done: impl Fn(String, Option<String>, &mut Window, &mut App) + 'static) {
     let clipboard = cx.read_from_clipboard().and_then(|item| item.text()).filter(|text| download::is_link(text));
-    let link = cx.new(|cx| InputState::new(window, cx).placeholder("https://, http://, ftp:// or ftps://").default_value(clipboard.unwrap_or_default()));
-    let name = cx.new(|cx| InputState::new(window, cx).placeholder("as the server or the link names it"));
+    let link = cx.new(|cx| InputState::new(window, cx).placeholder(sc_core::t!("download.link_placeholder")).default_value(clipboard.unwrap_or_default()));
+    let name = cx.new(|cx| InputState::new(window, cx).placeholder(sc_core::t!("download.name_placeholder")));
     let view = cx.new(|cx| {
         // A changed name is asked about again.
         let changed = |cx: &mut Context<DownloadDialog>, input: &Entity<InputState>| {
@@ -68,7 +68,7 @@ fn open(dir: PathBuf, window: &mut Window, cx: &mut App, done: impl Fn(String, O
     window.open_dialog(cx, move |dialog, _, _| {
         let ok = view.clone();
         dialog
-            .title("Download from Link")
+            .title(sc_core::t!("download.dialog_title"))
             .width(px(560.))
             .overlay_closable(false)
             .child(view.clone())
@@ -97,12 +97,12 @@ impl DownloadDialog {
         let typed = self.name.read(cx).value().trim().to_string();
         let name = download::safe_name(&typed);
         self.problem = match () {
-            _ if link.is_empty() => Some("Paste or type a link.".into()),
-            _ if !download::is_link(&link) => Some("Not a link to download: it starts with https://, http://, ftp:// or ftps://.".into()),
-            _ if !typed.is_empty() && name.as_deref() != Some(typed.as_str()) => Some("A file's name, without a folder in it.".into()),
+            _ if link.is_empty() => Some(sc_core::t!("download.problem.empty")),
+            _ if !download::is_link(&link) => Some(sc_core::t!("download.problem.not_link")),
+            _ if !typed.is_empty() && name.as_deref() != Some(typed.as_str()) => Some(sc_core::t!("download.problem.bad_name")),
             _ if name.as_ref().is_some_and(|name| self.dir.join(name).exists() && self.replace.as_ref() != Some(name)) => {
                 self.replace = name.clone();
-                Some(format!("There is a {typed} here already: Replace downloads over it."))
+                Some(sc_core::t!("download.problem.exists", name = typed))
             }
             _ => None,
         };
@@ -117,22 +117,25 @@ impl DownloadDialog {
 impl Render for DownloadDialog {
     fn render(&mut self, _: &mut Window, cx: &mut Context<Self>) -> impl IntoElement {
         let theme = cx.theme();
-        let field = |label: &'static str, input: &Entity<InputState>| v_flex().gap_1().child(label).child(Input::new(input));
-        let ok = if self.replace.is_some() && self.problem.is_some() { "Replace" } else { "Download" };
+        let field = |label: String, input: &Entity<InputState>| v_flex().gap_1().child(label).child(Input::new(input));
+        let ok = match self.replace.is_some() && self.problem.is_some() {
+            true => sc_core::t!("download.replace"),
+            false => sc_core::t!("download.download"),
+        };
         v_flex()
             .w_full()
             .gap_3()
             .text_sm()
-            .child(field("Link", &self.link))
-            .child(field("Save as", &self.name))
-            .child(div().whitespace_normal().text_color(theme.muted_foreground).child(format!("Into {}", self.dir.display())))
+            .child(field(sc_core::t!("download.link"), &self.link))
+            .child(field(sc_core::t!("download.save_as"), &self.name))
+            .child(div().whitespace_normal().text_color(theme.muted_foreground).child(sc_core::t!("download.into", folder = self.dir.display())))
             .children(self.problem.clone().map(|problem| div().whitespace_normal().text_color(theme.danger).child(problem)))
             .child(
                 h_flex()
                     .gap_2()
                     .justify_end()
                     .child(Button::new("download-ok").primary().label(ok).min_w(px(80.)).on_click(cx.listener(|this, _, window, cx| this.finish(window, cx))))
-                    .child(Button::new("download-cancel").outline().label("Cancel").min_w(px(80.)).on_click(|_, window, cx| window.close_dialog(cx))),
+                    .child(Button::new("download-cancel").outline().label(sc_core::t!("download.cancel")).min_w(px(80.)).on_click(|_, window, cx| window.close_dialog(cx))),
             )
     }
 }

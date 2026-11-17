@@ -33,7 +33,7 @@ pub fn split(file: PathBuf, dir: PathBuf, size: u64) -> Task {
         .to_string_lossy()
         .into_owned();
     Task {
-        title: format!("Split \"{name}\""),
+        title: crate::t!("split.title", name = name),
         run: Box::new(move |report| {
             let total = std::fs::metadata(&file)?.len();
             report.progress.total_bytes = total;
@@ -93,7 +93,7 @@ pub fn split(file: PathBuf, dir: PathBuf, size: u64) -> Task {
 fn exists(path: &Path, err: io::Error) -> io::Error {
     match err.kind() {
         io::ErrorKind::AlreadyExists => {
-            let text = format!("{} exists already", path.display());
+            let text = crate::t!("ops.exists_already", name = path.display());
             io::Error::new(err.kind(), text)
         }
         _ => err,
@@ -155,7 +155,7 @@ fn read_crc(path: &Path) -> io::Result<(String, Option<u64>, Option<u32>)> {
             _ => {}
         }
     }
-    let name = name.ok_or_else(|| io::Error::other("the CRC file names no file"))?;
+    let name = name.ok_or_else(|| io::Error::other(crate::t!("split.crc_names_no_file")))?;
     Ok((name, size, crc))
 }
 
@@ -163,7 +163,7 @@ fn read_crc(path: &Path) -> io::Result<(String, Option<u64>, Option<u32>)> {
 /// the CRC file where there is one.
 pub fn combine(parts: Parts, target: PathBuf) -> Task {
     Task {
-        title: format!("Combine \"{}\"", parts.name),
+        title: crate::t!("split.combine.title", name = parts.name),
         run: Box::new(move |report| {
             let dir = parts.first.parent().unwrap_or(Path::new(""));
             let paths: Vec<PathBuf> = (1..)
@@ -173,7 +173,7 @@ pub fn combine(parts: Parts, target: PathBuf) -> Task {
             if paths.is_empty() {
                 return Err(io::Error::new(
                     io::ErrorKind::NotFound,
-                    format!("{} is missing", parts.first.display()),
+                    crate::t!("split.part_missing", path = parts.first.display()),
                 ));
             }
             report.progress.total_files = paths.len() as u64;
@@ -213,20 +213,17 @@ pub fn combine(parts: Parts, target: PathBuf) -> Task {
                 }
             };
             let Some(crc_file) = &parts.crc else {
-                return Ok(format!(
-                    "{} parts combined, no CRC file to check",
-                    paths.len()
-                ));
+                return Ok(crate::t!("split.combined_no_crc", count = paths.len()));
             };
-            let (_, size, crc) = read_crc(crc_file).map_err(|err| io::Error::new(err.kind(), format!("combined, but {} could not be read: {err}", crc_file.display())))?;
+            let (_, size, crc) = read_crc(crc_file).map_err(|err| io::Error::new(err.kind(), crate::t!("split.crc_unreadable", file = crc_file.display(), err = err)))?;
             let length = std::fs::metadata(&target)?.len();
             if size.is_some_and(|size| size != length) || crc.is_some_and(|crc| crc != found) {
                 // Known to be wrong: not left under the name asked for.
                 let _ = std::fs::remove_file(&target);
-                return Err(io::Error::other(format!(
-                    "{} does not match {}: a part is missing or damaged",
-                    target.display(),
-                    crc_file.display()
+                return Err(io::Error::other(crate::t!(
+                    "split.crc_mismatch",
+                    target = target.display(),
+                    file = crc_file.display()
                 )));
             }
             Ok(String::new())
@@ -251,6 +248,7 @@ mod tests {
 
     #[test]
     fn splits_and_combines() {
+        crate::l10n::set_language(Some("en"));
         assert_eq!(parse_size("100 MB"), Some(100 << 20));
         assert_eq!(parse_size("1,5G"), Some(3 << 29));
         assert_eq!(parse_size("2500"), Some(2500));

@@ -71,7 +71,7 @@ pub fn show_in_system(paths: &[std::path::PathBuf]) -> io::Result<()> {
         return Ok(());
     }
     #[allow(unreachable_code)]
-    Err(io::Error::new(io::ErrorKind::Unsupported, "no system properties dialog here yet"))
+    Err(io::Error::new(io::ErrorKind::Unsupported, crate::t!("properties.no_system_dialog")))
 }
 
 pub fn of(fs: &dyn Fs, local: bool, path: &Path) -> io::Result<Properties> {

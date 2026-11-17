@@ -123,21 +123,16 @@ pub struct Pack {
 }
 
 pub fn pack(pack: Pack) -> Task {
-    let what = match pack.names.as_slice() {
-        [one] => format!("\"{}\"", one.display()),
-        many => format!("{} items", many.len()),
-    };
-    let into = match pack.separate {
-        true => format!("separate {} archives", pack.format.label()),
-        false => pack
-            .archive
-            .file_name()
-            .unwrap_or_default()
-            .display()
-            .to_string(),
+    let archive = pack.archive.file_name().unwrap_or_default().display().to_string();
+    let format = pack.format.label();
+    let title = match (pack.names.as_slice(), pack.separate) {
+        ([one], false) => crate::t!("pack.title.one", name = one.display(), archive = archive),
+        ([one], true) => crate::t!("pack.title.one_separate", name = one.display(), format = format),
+        (many, false) => crate::t!("pack.title.many", count = many.len(), archive = archive),
+        (many, true) => crate::t!("pack.title.many_separate", count = many.len(), format = format),
     };
     Task {
-        title: format!("Pack {what} into {into}"),
+        title,
         run: Box::new(move |report| run_pack(&pack, report)),
     }
 }
@@ -175,7 +170,7 @@ fn run_pack(pack: &Pack, report: &mut Report) -> io::Result<String> {
             let name = archive.display();
             return Err(io::Error::new(
                 io::ErrorKind::AlreadyExists,
-                format!("{name} exists already"),
+                crate::t!("ops.exists_already", name = name),
             ));
         }
         let packed = pack_one(pack, &archive, &names, report, base, size);
@@ -287,12 +282,13 @@ pub struct Unpack {
 }
 
 pub fn unpack(unpack: Unpack) -> Task {
-    let what = match unpack.archives.as_slice() {
-        [one] => format!("\"{}\"", one.file_name().unwrap_or_default().display()),
-        many => format!("{} archives", many.len()),
+    let target = unpack.target.display();
+    let title = match unpack.archives.as_slice() {
+        [one] => crate::t!("pack.unpack.title_one", name = one.file_name().unwrap_or_default().display(), target = target),
+        many => crate::t!("pack.unpack.title_many", count = many.len(), target = target),
     };
     Task {
-        title: format!("Unpack {what} to {}", unpack.target.display()),
+        title,
         run: Box::new(move |report| run_unpack(&unpack, report)),
     }
 }
@@ -369,12 +365,12 @@ fn run_unpack(unpack: &Unpack, report: &mut Report) -> io::Result<String> {
 
 /// Tests each archive; a broken one fails the task, naming it.
 pub fn test(archives: Vec<PathBuf>, password: Option<String>) -> Task {
-    let what = match archives.as_slice() {
-        [one] => format!("\"{}\"", one.file_name().unwrap_or_default().display()),
-        many => format!("{} archives", many.len()),
+    let title = match archives.as_slice() {
+        [one] => crate::t!("pack.test.title_one", name = one.file_name().unwrap_or_default().display()),
+        many => crate::t!("pack.test.title_many", count = many.len()),
     };
     Task {
-        title: format!("Test {what}"),
+        title,
         run: Box::new(move |report| {
             let sizes: Vec<u64> = archives.iter().map(|a| size_of(a)).collect();
             report.progress.total_bytes = sizes.iter().sum();
@@ -394,11 +390,10 @@ pub fn test(archives: Vec<PathBuf>, password: Option<String>) -> Task {
                 report.progress.files += 1;
             }
             match broken.is_empty() {
-                true => Ok(format!("{} archive(s) OK", archives.len())),
+                true => Ok(crate::t!("pack.test.ok", count = archives.len())),
                 false => Err(io::Error::other(format!(
-                    "{} of {} broken\n{}",
-                    broken.len(),
-                    archives.len(),
+                    "{}\n{}",
+                    crate::t!("pack.test.broken", broken = broken.len(), count = archives.len()),
                     broken.join("\n")
                 ))),
             }
@@ -586,7 +581,7 @@ fn finish(child: &mut Child, errors: std::thread::JoinHandle<Vec<u8>>) -> io::Re
 /// 7-Zip's last words, its progress left out; a password it waited for in vain named.
 fn failure(code: Option<i32>, stderr: &[u8]) -> String {
     if code == Some(255) {
-        return "it needs a password".into();
+        return crate::t!("pack.needs_password");
     }
     let text = String::from_utf8_lossy(stderr);
     let lines = text.split(['\n', '\r', '\u{8}']).map(str::trim);
@@ -595,9 +590,9 @@ fn failure(code: Option<i32>, stderr: &[u8]) -> String {
     // "ERROR: name" comes before what is wrong.
     words.retain(|line| !line.starts_with("ERRORS:") && *line != "ERROR:");
     match words.iter().rev().find(|line| !line.starts_with("ERROR: ")) {
-        Some(line) if line.contains("Wrong password") => "wrong password".into(),
+        Some(line) if line.contains("Wrong password") => crate::t!("pack.wrong_password"),
         Some(line) => (*line).to_owned(),
-        None => format!("7-Zip failed ({})", code.unwrap_or(-1)),
+        None => crate::t!("archive.seven_zip_failed", code = code.unwrap_or(-1)),
     }
 }
 
@@ -652,6 +647,7 @@ mod tests {
 
     #[test]
     fn packs_tests_and_unpacks() {
+        crate::l10n::set_language(Some("en"));
         let root = std::env::temp_dir().join(format!("sc-packing-{}", std::process::id()));
         let _ = std::fs::remove_dir_all(&root);
         std::fs::create_dir_all(root.join("src/sub")).unwrap();

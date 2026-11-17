@@ -18,13 +18,17 @@ use sc_core::{Panel, archive, command};
 
 use crate::Commander;
 
-const LEVELS: [(u8, &str); 5] = [
-    (0, "Store"),
-    (1, "Fastest"),
-    (5, "Normal"),
-    (7, "Maximum"),
-    (9, "Ultra"),
-];
+const LEVELS: [u8; 5] = [0, 1, 5, 7, 9];
+
+fn level_label(level: u8) -> String {
+    match level {
+        0 => sc_core::t!("pack.level.store"),
+        1 => sc_core::t!("pack.level.fastest"),
+        5 => sc_core::t!("pack.level.normal"),
+        7 => sc_core::t!("pack.level.maximum"),
+        _ => sc_core::t!("pack.level.ultra"),
+    }
+}
 
 impl Commander {
     /// The other panel's folder, where packing and unpacking go; this one's
@@ -38,20 +42,19 @@ impl Commander {
         }
     }
 
-    /// The chosen entries on this computer, outside archives; else why not.
+    /// The chosen entries on this computer, outside archives; else why not,
+    /// `what` naming the work in its message (packing, splitting, …).
     pub(crate) fn local_chosen(&self, what: &str) -> Result<(&Panel, Vec<OsString>), String> {
         let panel = self.panels[self.active].tabs.current();
         if panel.remote().is_some() || panel.in_archive() {
-            return Err(format!(
-                "{what} works on this computer's files, outside archives."
-            ));
+            return Err(sc_core::t!("pack.local_only", what = what));
         }
         let names: Vec<OsString> = panel.chosen().iter().map(|e| e.name.clone()).collect();
         Ok((panel, names))
     }
 
     pub(crate) fn pack(&mut self, window: &mut Window, cx: &mut Context<Self>) {
-        let (panel, names) = match self.local_chosen("Packing") {
+        let (panel, names) = match self.local_chosen("packing") {
             Ok(found) => found,
             Err(err) => return window.push_notification(Notification::warning(err), cx),
         };
@@ -67,7 +70,7 @@ impl Commander {
         };
         let format = Format::Zip;
         let target = self.local_target().join(format.rename(&base));
-        let label = format!("Pack {} item(s) into the archive:", names.len());
+        let label = sc_core::t!("pack.label", count = names.len());
         let queue = self.transfers.queue.clone();
         let target =
             cx.new(|cx| InputState::new(window, cx).default_value(target.display().to_string()));
@@ -88,14 +91,14 @@ impl Commander {
             names,
             queue,
         });
-        open(view, "Pack files", window, cx, |this, window, cx| {
+        open(view, sc_core::t!("pack.dialog_title"), window, cx, |this, window, cx| {
             this.finish(window, cx)
         });
         focus_all(&target, window, cx);
     }
 
     pub(crate) fn unpack(&mut self, window: &mut Window, cx: &mut Context<Self>) {
-        let (panel, names) = match self.local_chosen("Unpacking") {
+        let (panel, names) = match self.local_chosen("unpacking") {
             Ok(found) => found,
             Err(err) => return window.push_notification(Notification::warning(err), cx),
         };
@@ -105,10 +108,10 @@ impl Commander {
             .map(|name| panel.folder().join(name))
             .collect();
         if archives.is_empty() {
-            let text = "Choose the archives to unpack.";
+            let text = sc_core::t!("pack.unpack.choose");
             return window.push_notification(Notification::warning(text), cx);
         }
-        let label = format!("Unpack {} archive(s) to:", archives.len());
+        let label = sc_core::t!("pack.unpack.label", count = archives.len());
         let target = self.local_target().display().to_string();
         let target = cx.new(|cx| InputState::new(window, cx).default_value(target));
         let mask = cx.new(|cx| InputState::new(window, cx).default_value("*"));
@@ -127,14 +130,14 @@ impl Commander {
             base,
             queue,
         });
-        open(view, "Unpack files", window, cx, |this, window, cx| {
+        open(view, sc_core::t!("pack.unpack.dialog_title"), window, cx, |this, window, cx| {
             this.finish(window, cx)
         });
         focus_all(&target, window, cx);
     }
 
     pub(crate) fn test_archives(&mut self, window: &mut Window, cx: &mut Context<Self>) {
-        let (panel, names) = match self.local_chosen("Testing") {
+        let (panel, names) = match self.local_chosen("testing") {
             Ok(found) => found,
             Err(err) => return window.push_notification(Notification::warning(err), cx),
         };
@@ -144,7 +147,7 @@ impl Commander {
             .map(|name| panel.folder().join(name))
             .collect();
         if archives.is_empty() {
-            let text = "Choose the archives to test.";
+            let text = sc_core::t!("pack.test.choose");
             return window.push_notification(Notification::warning(text), cx);
         }
         // shortcut: no password to give; an encrypted archive reports that it needs one.
@@ -157,7 +160,7 @@ impl Commander {
 /// A dialog of `view`; OK runs `finish`, which keeps it open by returning false.
 pub(crate) fn open<V: Render>(
     view: Entity<V>,
-    title: &'static str,
+    title: String,
     window: &mut Window,
     cx: &mut App,
     finish: fn(&mut V, &mut Window, &mut Context<V>) -> bool,
@@ -165,7 +168,7 @@ pub(crate) fn open<V: Render>(
     window.open_dialog(cx, move |dialog, _, _| {
         let ok = view.clone();
         dialog
-            .title(title)
+            .title(title.clone())
             .width(px(600.))
             .overlay_closable(false)
             .child(view.clone())
@@ -195,7 +198,7 @@ pub(crate) fn buttons<V: 'static>(
         .child(
             Button::new((id, 0usize))
                 .primary()
-                .label("OK")
+                .label(sc_core::t!("pack.ok"))
                 .min_w(px(80.))
                 .on_click(cx.listener(move |this, _, window, cx| {
                     if finish(this, window, cx) {
@@ -206,7 +209,7 @@ pub(crate) fn buttons<V: 'static>(
         .child(
             Button::new((id, 1usize))
                 .outline()
-                .label("Cancel")
+                .label(sc_core::t!("pack.cancel"))
                 .min_w(px(80.))
                 .on_click(|_, window, cx| window.close_dialog(cx)),
         )
@@ -214,7 +217,7 @@ pub(crate) fn buttons<V: 'static>(
 
 pub(crate) fn check<V: 'static>(
     id: &'static str,
-    label: &'static str,
+    label: String,
     on: bool,
     cx: &mut Context<V>,
     set: fn(&mut V, bool),
@@ -265,18 +268,18 @@ impl PackDialog {
         let archive = command::resolve(text.trim(), &self.folder);
         let password = self.password.read(cx).value().to_string();
         let encrypt = self.encrypt && self.format.encrypts();
-        let fail = |err: &str, window: &mut Window, cx: &mut Context<Self>| {
-            window.push_notification(Notification::error(err.to_string()), cx);
+        let fail = |err: String, window: &mut Window, cx: &mut Context<Self>| {
+            window.push_notification(Notification::error(err), cx);
             false
         };
         if encrypt && password.is_empty() {
-            return fail("Type the password, or leave Encrypt off.", window, cx);
+            return fail(sc_core::t!("pack.password_missing"), window, cx);
         }
         let volume_mb = match self.split && !self.format.compressed_tar() {
             false => None,
             true => match self.volume.read(cx).value().trim().parse::<u64>() {
                 Ok(mb) if mb > 0 => Some(mb),
-                _ => return fail("The volume size is a number of MB.", window, cx),
+                _ => return fail(sc_core::t!("pack.volume_invalid"), window, cx),
             },
         };
         self.queue.push_task(packing::pack(Pack {
@@ -297,7 +300,7 @@ impl PackDialog {
 impl Render for PackDialog {
     fn render(&mut self, _: &mut Window, cx: &mut Context<Self>) -> impl IntoElement {
         let format = Format::ALL.iter().position(|f| *f == self.format);
-        let level = LEVELS.iter().position(|(level, _)| *level == self.level);
+        let level = LEVELS.iter().position(|level| *level == self.level);
         let tar = self.format.compressed_tar();
         v_flex()
             .w_full()
@@ -312,7 +315,7 @@ impl Render for PackDialog {
             .child(
                 h_flex()
                     .gap_2()
-                    .child(div().w(px(100.)).child("Format:"))
+                    .child(div().w(px(100.)).child(sc_core::t!("pack.format")))
                     .child(
                         RadioGroup::horizontal("pack-format")
                             .children(Format::ALL.map(Format::label))
@@ -326,13 +329,13 @@ impl Render for PackDialog {
                 el.child(
                     h_flex()
                         .gap_2()
-                        .child(div().w(px(100.)).flex_none().child("Compression:"))
+                        .child(div().w(px(100.)).flex_none().child(sc_core::t!("pack.compression")))
                         .child(
                             RadioGroup::horizontal("pack-level")
-                                .children(LEVELS.map(|(_, label)| label))
+                                .children(LEVELS.map(level_label))
                                 .selected_index(level)
                                 .on_click(cx.listener(|this, ix: &usize, _, cx| {
-                                    this.level = LEVELS[*ix].0;
+                                    this.level = LEVELS[*ix];
                                     cx.notify();
                                 })),
                         ),
@@ -340,14 +343,14 @@ impl Render for PackDialog {
             })
             .child(check(
                 "pack-move",
-                "Move to archive (delete the packed files)",
+                sc_core::t!("pack.move_files"),
                 self.move_files,
                 cx,
                 |this, on| this.move_files = on,
             ))
             .child(check(
                 "pack-separate",
-                "One archive for each selected file or folder",
+                sc_core::t!("pack.separate"),
                 self.separate,
                 cx,
                 |this, on| this.separate = on,
@@ -358,13 +361,13 @@ impl Render for PackDialog {
                         .gap_2()
                         .child(check(
                             "pack-split",
-                            "Split into volumes of",
+                            sc_core::t!("pack.split"),
                             self.split,
                             cx,
                             |this, on| this.split = on,
                         ))
                         .child(div().w(px(80.)).child(Input::new(&self.volume).small()))
-                        .child("MB"),
+                        .child(sc_core::t!("pack.split_unit")),
                 )
             })
             .when(self.format.encrypts(), |el| {
@@ -373,7 +376,7 @@ impl Render for PackDialog {
                         .gap_2()
                         .child(check(
                             "pack-encrypt",
-                            "Encrypt with the password",
+                            sc_core::t!("pack.encrypt"),
                             self.encrypt,
                             cx,
                             |this, on| this.encrypt = on,
@@ -431,26 +434,26 @@ impl Render for UnpackDialog {
             .child(
                 h_flex()
                     .gap_2()
-                    .child(div().w(px(110.)).child("Only the files:"))
+                    .child(div().w(px(110.)).child(sc_core::t!("pack.unpack.mask")))
                     .child(div().flex_1().child(Input::new(&self.mask).small())),
             )
             .child(check(
                 "unpack-paths",
-                "Keep the folders stored in the archive",
+                sc_core::t!("pack.unpack.with_paths"),
                 self.with_paths,
                 cx,
                 |this, on| this.with_paths = on,
             ))
             .child(check(
                 "unpack-overwrite",
-                "Overwrite existing files (else they are kept)",
+                sc_core::t!("pack.unpack.overwrite"),
                 self.overwrite,
                 cx,
                 |this, on| this.overwrite = on,
             ))
             .child(check(
                 "unpack-separate",
-                "Each archive into a folder of its name",
+                sc_core::t!("pack.unpack.separate"),
                 self.separate,
                 cx,
                 |this, on| this.separate = on,
@@ -458,7 +461,7 @@ impl Render for UnpackDialog {
             .child(
                 h_flex()
                     .gap_2()
-                    .child(div().w(px(110.)).child("Password:"))
+                    .child(div().w(px(110.)).child(sc_core::t!("pack.unpack.password")))
                     .child(div().flex_1().child(Input::new(&self.password).small())),
             )
             .child(buttons("unpack", cx, UnpackDialog::finish))

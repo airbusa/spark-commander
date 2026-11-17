@@ -45,7 +45,7 @@ impl Commander {
     fn own_properties(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let panel = self.panels[self.active].tabs.current();
         if panel.in_archive() {
-            let text = "The archive's listing shows what it knows of its files.";
+            let text = sc_core::t!("properties.in_archive");
             return window.push_notification(Notification::warning(text), cx);
         }
         let path = match panel.current_entry() {
@@ -125,7 +125,7 @@ impl Commander {
                 });
                 window.open_dialog(cx, move |dialog, _, _| {
                     dialog
-                        .title("Properties")
+                        .title(sc_core::t!("properties.dialog_title"))
                         .width(px(520.))
                         .child(view.clone())
                 });
@@ -160,7 +160,7 @@ fn time(time: Option<SystemTime>) -> Option<String> {
 impl Render for PropertiesDialog {
     fn render(&mut self, _: &mut Window, _: &mut Context<Self>) -> impl IntoElement {
         let p = &self.properties;
-        let line = |label: &'static str, value: String| {
+        let line = |label: String, value: String| {
             h_flex()
                 .gap_2()
                 .items_start()
@@ -168,24 +168,22 @@ impl Render for PropertiesDialog {
                 .child(div().flex_1().min_w_0().child(value))
         };
         let kind = match &p.kind {
-            Kind::File => "File".to_string(),
-            Kind::Folder => "Folder".into(),
-            Kind::Link(target) if target.is_empty() => "Link".into(),
-            Kind::Link(target) => format!("Link to {target}"),
+            Kind::File => sc_core::t!("properties.kind.file"),
+            Kind::Folder => sc_core::t!("properties.kind.folder"),
+            Kind::Link(target) if target.is_empty() => sc_core::t!("properties.kind.link"),
+            Kind::Link(target) => sc_core::t!("properties.kind.link_to", target = target),
         };
         let size = match &self.contents {
             Some((counted, _)) => {
                 let (space, done) = *counted.lock().unwrap();
-                let more = if done { "" } else { " (counting…)" };
-                format!(
-                    "{} file(s), {} folder(s), {} bytes ({}){more}",
-                    grouped(space.files),
-                    grouped(space.dirs),
-                    grouped(space.bytes),
-                    human_size(space.bytes)
-                )
+                let (files, folders, bytes) = (grouped(space.files), grouped(space.dirs), grouped(space.bytes));
+                let size = human_size(space.bytes);
+                match done {
+                    true => sc_core::t!("properties.contents", file_count = space.files, files = files, folder_count = space.dirs, folders = folders, count = space.bytes, bytes = bytes, size = size),
+                    false => sc_core::t!("properties.contents_counting", file_count = space.files, files = files, folder_count = space.dirs, folders = folders, count = space.bytes, bytes = bytes, size = size),
+                }
             }
-            None => format!("{} bytes ({})", grouped(p.size), human_size(p.size)),
+            None => sc_core::t!("properties.size", count = p.size, bytes = grouped(p.size), size = human_size(p.size)),
         };
         let permissions = p.mode.map(|mode| {
             let text: String = sc_core::ops::attributes::BITS
@@ -203,22 +201,22 @@ impl Render for PropertiesDialog {
             .w_full()
             .gap_2()
             .text_sm()
-            .child(line("Name:", self.name.clone()))
-            .child(line("Location:", self.location.clone()))
-            .child(line("Type:", kind))
+            .child(line(sc_core::t!("properties.name"), self.name.clone()))
+            .child(line(sc_core::t!("properties.location"), self.location.clone()))
+            .child(line(sc_core::t!("properties.type"), kind))
             .child(line(
                 if self.contents.is_some() {
-                    "Contents:"
+                    sc_core::t!("properties.contents_label")
                 } else {
-                    "Size:"
+                    sc_core::t!("properties.size_label")
                 },
                 size,
             ))
-            .children(time(p.modified).map(|t| line("Modified:", t)))
-            .children(time(p.accessed).map(|t| line("Accessed:", t)))
-            .children(time(p.created).map(|t| line("Created:", t)))
-            .children(permissions.map(|t| line("Permissions:", t)))
-            .children(owner.map(|t| line("Owner / group:", t)))
+            .children(time(p.modified).map(|t| line(sc_core::t!("properties.modified"), t)))
+            .children(time(p.accessed).map(|t| line(sc_core::t!("properties.accessed"), t)))
+            .children(time(p.created).map(|t| line(sc_core::t!("properties.created"), t)))
+            .children(permissions.map(|t| line(sc_core::t!("properties.permissions"), t)))
+            .children(owner.map(|t| line(sc_core::t!("properties.owner"), t)))
             .child(
                 h_flex()
                     .gap_2()
@@ -227,7 +225,7 @@ impl Render for PropertiesDialog {
                         el.child(
                             Button::new("properties-attributes")
                                 .outline()
-                                .label("Change attributes...")
+                                .label(sc_core::t!("properties.change_attributes"))
                                 .on_click(move |_, window, cx| {
                                     window.close_dialog(cx);
                                     let _ = commander.update(cx, |commander, cx| {
@@ -239,7 +237,7 @@ impl Render for PropertiesDialog {
                     .child(
                         Button::new("properties-close")
                             .primary()
-                            .label("Close")
+                            .label(sc_core::t!("properties.close"))
                             .min_w(px(80.))
                             .on_click(|_, window, cx| window.close_dialog(cx)),
                     ),

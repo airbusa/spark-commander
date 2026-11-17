@@ -118,8 +118,8 @@ fn part_of(link: &str, target: &Path) -> PathBuf {
 pub fn download(link: String, dir: PathBuf, name: Option<String>, ask: Ask) -> Task {
     let shown = shown(&link);
     let title = match name.clone().or_else(|| link_name(&link)) {
-        Some(name) => format!("Download \"{name}\""),
-        None => format!("Download {shown}"),
+        Some(name) => crate::t!("download.title", name = name),
+        None => crate::t!("download.title_link", link = shown),
     };
     Task {
         title,
@@ -134,7 +134,7 @@ pub fn download(link: String, dir: PathBuf, name: Option<String>, ask: Ask) -> T
             fetch(&link, source, &target, Pace::download(), report)?;
             mark(&target, &shown);
             let saved = target.file_name().unwrap_or_default().to_string_lossy().into_owned();
-            Ok(format!("saved as {saved}"))
+            Ok(crate::t!("download.saved_as", name = saved))
         }),
     }
 }
@@ -192,8 +192,8 @@ fn open_web(link: &str) -> io::Result<Source> {
 /// FTP(S), logged in as the link says (its password, else the keyring's,
 /// else asked; anonymous without a user).
 fn open_server(link: &str, ask: Ask) -> io::Result<Source> {
-    let mut address = Address::parse(link).filter(|address| matches!(address.scheme, Scheme::Ftp | Scheme::Ftps)).ok_or_else(|| io::Error::other("not a link to download"))?;
-    let path = address.path.take().filter(|path| path.len() > 1).ok_or_else(|| io::Error::other("the link names no file"))?;
+    let mut address = Address::parse(link).filter(|address| matches!(address.scheme, Scheme::Ftp | Scheme::Ftps)).ok_or_else(|| io::Error::other(crate::t!("download.not_a_link")))?;
+    let path = address.path.take().filter(|path| path.len() > 1).ok_or_else(|| io::Error::other(crate::t!("download.no_file")))?;
     let path = PathBuf::from(unescape(&path));
     let password = address.user.as_mut().and_then(|user| {
         let (name, password) = user.split_once(':')?;
@@ -209,7 +209,7 @@ fn open_server(link: &str, ask: Ask) -> io::Result<Source> {
     let (server, _) = remote::connect(&address, ask)?;
     let meta = server.metadata(&path)?;
     if meta.is_dir {
-        return Err(io::Error::other("the link is a folder's"));
+        return Err(io::Error::other(crate::t!("download.folder_link")));
     }
     let reader = server.open(&path)?;
     let name = path.file_name().map(|name| name.to_string_lossy().into_owned()).and_then(|name| safe_name(&name));
@@ -271,7 +271,7 @@ fn fetch(link: &str, source: Source, target: &Path, mut pace: Pace, report: &mut
         return Err(err);
     }
     if let Some(size) = size.filter(|size| report.progress.bytes < *size) {
-        return Err(io::Error::other(format!("the server sent {} of {size} bytes; downloaded again, it goes on from there", report.progress.bytes)));
+        return Err(io::Error::other(crate::t!("download.incomplete", got = report.progress.bytes, size = size)));
     }
     report.progress.files = 1;
     report.show();
@@ -335,6 +335,7 @@ mod tests {
     /// the second download goes on from the part the first left.
     #[test]
     fn downloads_and_goes_on_from_a_part() {
+        crate::l10n::set_language(Some("en"));
         use std::net::TcpListener;
         let body: Vec<u8> = (0..200_000u32).map(|n| n as u8).collect();
         let listener = TcpListener::bind("127.0.0.1:0").unwrap();

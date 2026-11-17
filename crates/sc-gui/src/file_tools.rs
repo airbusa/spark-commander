@@ -23,7 +23,7 @@ const SIZES: [&str; 5] = ["10 MB", "100 MB", "700 MB", "1 GB", "4095 MB"];
 
 impl Commander {
     pub(crate) fn create_checksums(&mut self, window: &mut Window, cx: &mut Context<Self>) {
-        let (panel, names) = match self.local_chosen("Creating checksums") {
+        let (panel, names) = match self.local_chosen("creating_checksums") {
             Ok(found) => found,
             Err(err) => return window.push_notification(Notification::warning(err), cx),
         };
@@ -52,7 +52,7 @@ impl Commander {
         });
         open(
             view,
-            "Create checksum files",
+            sc_core::t!("checksum.dialog_title"),
             window,
             cx,
             ChecksumDialog::finish,
@@ -62,7 +62,7 @@ impl Commander {
 
     /// Ctrl+Shift+F5: links to the chosen in the other panel's folder.
     pub(crate) fn create_link(&mut self, window: &mut Window, cx: &mut Context<Self>) {
-        let (panel, names) = match self.local_chosen("Making links") {
+        let (panel, names) = match self.local_chosen("making_links") {
             Ok(found) => found,
             Err(err) => return window.push_notification(Notification::warning(err), cx),
         };
@@ -74,8 +74,8 @@ impl Commander {
         let folder = panel.folder().to_owned();
         let into = self.local_target();
         let (label, at) = match names.as_slice() {
-            [one] => (format!("Link to \"{}\" as:", one.to_string_lossy()), into.join(one)),
-            many => (format!("Links to the {} items, in the folder:", many.len()), into),
+            [one] => (sc_core::t!("ops.link.label_one", name = one.to_string_lossy()), into.join(one)),
+            many => (sc_core::t!("ops.link.label_many", count = many.len()), into),
         };
         let at = cx.new(|cx| InputState::new(window, cx).default_value(at.display().to_string()));
         let (commander, side) = (cx.entity().downgrade(), self.active);
@@ -90,12 +90,12 @@ impl Commander {
             commander,
             side,
         });
-        open(view, "Create link", window, cx, LinkDialog::finish);
+        open(view, sc_core::t!("ops.link.dialog_title"), window, cx, LinkDialog::finish);
         focus_all(&at, window, cx);
     }
 
     pub(crate) fn verify_checksums(&mut self, window: &mut Window, cx: &mut Context<Self>) {
-        let (panel, names) = match self.local_chosen("Verifying checksums") {
+        let (panel, names) = match self.local_chosen("verifying_checksums") {
             Ok(found) => found,
             Err(err) => return window.push_notification(Notification::warning(err), cx),
         };
@@ -105,26 +105,23 @@ impl Commander {
             .filter(|path| Method::of(path).is_some())
             .collect();
         if files.is_empty() {
-            let text = "Choose checksum files: .sfv, .md5, .sha1, .sha256 or .sha512.";
+            let text = sc_core::t!("checksum.verify.choose");
             return window.push_notification(Notification::warning(text), cx);
         }
         self.transfers.queue.push_task(checksum::verify(files));
     }
 
     pub(crate) fn split_file(&mut self, window: &mut Window, cx: &mut Context<Self>) {
-        let (panel, _) = match self.local_chosen("Splitting") {
+        let (panel, _) = match self.local_chosen("splitting") {
             Ok(found) => found,
             Err(err) => return window.push_notification(Notification::warning(err), cx),
         };
         let Some(entry) = panel.current_entry().filter(|e| !e.is_dir) else {
-            let text = "Put the cursor on the file to split.";
+            let text = sc_core::t!("split.choose");
             return window.push_notification(Notification::warning(text), cx);
         };
         let file = panel.folder().join(&entry.name);
-        let label = format!(
-            "Split \"{}\" into parts in the folder:",
-            entry.display_name()
-        );
+        let label = sc_core::t!("split.label", name = entry.display_name());
         let target = self.local_target().display().to_string();
         let target = cx.new(|cx| InputState::new(window, cx).default_value(target));
         let size = cx.new(|cx| InputState::new(window, cx).default_value(SIZES[1]));
@@ -138,12 +135,12 @@ impl Commander {
             base,
             queue,
         });
-        open(view, "Split file", window, cx, SplitDialog::finish);
+        open(view, sc_core::t!("split.dialog_title"), window, cx, SplitDialog::finish);
         focus_all(&target, window, cx);
     }
 
     pub(crate) fn combine_files(&mut self, window: &mut Window, cx: &mut Context<Self>) {
-        let (panel, _) = match self.local_chosen("Combining") {
+        let (panel, _) = match self.local_chosen("combining") {
             Ok(found) => found,
             Err(err) => return window.push_notification(Notification::warning(err), cx),
         };
@@ -151,7 +148,7 @@ impl Commander {
             .current_entry()
             .and_then(|entry| split::parts_of(&panel.folder().join(&entry.name)));
         let Some(parts) = parts else {
-            let text = "Put the cursor on a part (name.001) or on its .crc file.";
+            let text = sc_core::t!("split.combine.choose");
             return window.push_notification(Notification::warning(text), cx);
         };
         let target = self.local_target().join(&parts.name);
@@ -159,8 +156,8 @@ impl Commander {
         let queue = self.transfers.queue.clone();
         let parts = std::cell::RefCell::new(Some(parts));
         crate::dialogs::name_dialog::open(
-            "Combine files",
-            "Combine the parts into the file:",
+            sc_core::t!("split.combine.dialog_title"),
+            sc_core::t!("split.combine.label"),
             target.display().to_string(),
             window,
             cx,
@@ -208,9 +205,9 @@ impl LinkDialog {
             match made {
                 Err((err, rest)) if crate::denied(&err) && kind != Kind::Shortcut => {
                     let action = sc_core::system::elevate::Action::Link { kind, items: rest };
-                    this.offer_admin(format!("Making the {}", kind.label().to_lowercase()), action, window, cx);
+                    this.offer_admin(sc_core::t!("ops.link.making", kind = kind.id()), action, window, cx);
                 }
-                Err((err, _)) => window.push_notification(Notification::error(format!("Could not make the link: {err}")), cx),
+                Err((err, _)) => window.push_notification(Notification::error(sc_core::t!("ops.link.failed", err = err)), cx),
                 // The marks have done their work.
                 Ok(()) => this.panels[self.side].tabs.current_mut().mark_all(false),
             }
@@ -289,7 +286,7 @@ impl Render for ChecksumDialog {
             .child(
                 v_flex()
                     .gap_1()
-                    .child("Save the checksum file as:")
+                    .child(sc_core::t!("checksum.save_as"))
                     .child(Input::new(&self.file)),
             )
             .child(
@@ -302,7 +299,7 @@ impl Render for ChecksumDialog {
             )
             .child(check(
                 "checksum-separate",
-                "A checksum file beside each file instead",
+                sc_core::t!("checksum.separate"),
                 self.separate,
                 cx,
                 |this, on| this.separate = on,
@@ -324,7 +321,7 @@ impl SplitDialog {
     fn finish(&mut self, window: &mut Window, cx: &mut Context<Self>) -> bool {
         let size = self.size.read(cx).value().to_string();
         let Some(bytes) = split::parse_size(&size) else {
-            let text = format!("\"{size}\" is no size: 100 MB, 1.5 GB, 650m");
+            let text = sc_core::t!("split.bad_size", size = size);
             window.push_notification(Notification::error(text), cx);
             return false;
         };
@@ -351,7 +348,7 @@ impl Render for SplitDialog {
             .child(
                 h_flex()
                     .gap_2()
-                    .child(div().w(px(80.)).child("Part size:"))
+                    .child(div().w(px(80.)).child(sc_core::t!("split.part_size")))
                     .child(div().w(px(110.)).child(Input::new(&self.size).small()))
                     .children(SIZES.iter().enumerate().map(|(ix, size)| {
                         Button::new(("split-size", ix))

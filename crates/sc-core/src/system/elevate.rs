@@ -73,14 +73,14 @@ mod platform {
     pub fn run(action: &Action) -> io::Result<()> {
         let done = Command::new("pkexec").args(["/bin/sh", "-c", &script(action)]).output();
         let done = done.map_err(|err| match err.kind() {
-            io::ErrorKind::NotFound => io::Error::new(err.kind(), "pkexec (polkit) is not installed"),
+            io::ErrorKind::NotFound => io::Error::new(err.kind(), crate::t!("elevate.pkexec_missing")),
             _ => err,
         })?;
         match done.status.code() {
             Some(0) => Ok(()),
             // pkexec's: the prompt dismissed, or not allowed.
-            Some(126) => Err(io::Error::new(io::ErrorKind::Interrupted, "the password was not given")),
-            Some(127) => Err(io::Error::new(io::ErrorKind::PermissionDenied, "not authorised")),
+            Some(126) => Err(io::Error::new(io::ErrorKind::Interrupted, crate::t!("elevate.no_password"))),
+            Some(127) => Err(io::Error::new(io::ErrorKind::PermissionDenied, crate::t!("elevate.not_authorised"))),
             _ => Err(io::Error::other(String::from_utf8_lossy(&done.stderr).trim().to_owned())),
         }
     }
@@ -99,7 +99,7 @@ mod platform {
         match done.status.success() {
             true => Ok(()),
             // AppleScript's -128: the prompt cancelled.
-            false if why.contains("-128") => Err(io::Error::new(io::ErrorKind::Interrupted, "the password was not given")),
+            false if why.contains("-128") => Err(io::Error::new(io::ErrorKind::Interrupted, crate::t!("elevate.no_password"))),
             false => Err(io::Error::other(why)),
         }
     }
@@ -180,7 +180,7 @@ mod platform {
         // cmd reads %NAME% inside quotes too, and could make one path another.
         // shortcut: such names are refused; a helper of ours taking the paths whole would do them.
         if let Some(path) = paths(action).into_iter().find(|path| path.as_os_str().to_string_lossy().contains('%')) {
-            return Err(io::Error::new(io::ErrorKind::InvalidInput, format!("{}: a name with % cannot be handled as administrator; rename it first", path.display())));
+            return Err(io::Error::new(io::ErrorKind::InvalidInput, crate::t!("elevate.percent_name", path = path.display())));
         }
         // No AutoRun commands, no !NAME! read.
         let command = format!("/D /V:OFF /c {}", commands(action));
@@ -198,7 +198,7 @@ mod platform {
         unsafe {
             if let Err(err) = ShellExecuteExW(&mut info) {
                 return Err(match err.code() == ERROR_CANCELLED.to_hresult() {
-                    true => io::Error::new(io::ErrorKind::Interrupted, "the administrator's consent was not given"),
+                    true => io::Error::new(io::ErrorKind::Interrupted, crate::t!("elevate.no_consent")),
                     false => io::Error::other(err.to_string()),
                 });
             }
@@ -209,7 +209,7 @@ mod platform {
             got.map_err(|err| io::Error::other(err.to_string()))?;
             match code {
                 0 => Ok(()),
-                code => Err(io::Error::other(format!("as administrator it failed too ({code})"))),
+                code => Err(io::Error::other(crate::t!("elevate.failed", code = code))),
             }
         }
     }

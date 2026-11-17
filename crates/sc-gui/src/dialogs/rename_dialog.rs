@@ -21,22 +21,27 @@ use sc_core::vfs::Fs;
 use crate::Commander;
 
 /// What the buttons put into the name mask.
-const FIELDS: [(&str, &str); 7] = [
-    ("[N] Name", "[N]"),
-    ("[E] Ext.", "[E]"),
-    ("[C] Counter", "[C]"),
-    ("[P] Folder", "[P]"),
-    ("[Y][M][D] Date", "[Y]-[M]-[D]"),
-    ("[h][m][s] Time", "[h][m][s]"),
-    ("[N1-3] Range", "[N1-3]"),
-];
+const FIELDS: [&str; 7] = ["[N]", "[E]", "[C]", "[P]", "[Y]-[M]-[D]", "[h][m][s]", "[N1-3]"];
+
+/// The buttons' labels, in `FIELDS`' order.
+fn field_labels() -> [String; 7] {
+    [
+        sc_core::t!("rename.field.name"),
+        sc_core::t!("rename.field.extension"),
+        sc_core::t!("rename.field.counter"),
+        sc_core::t!("rename.field.folder"),
+        sc_core::t!("rename.field.date"),
+        sc_core::t!("rename.field.time"),
+        sc_core::t!("rename.field.range"),
+    ]
+}
 
 impl Commander {
     pub(crate) fn multi_rename(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let side = self.active;
         let panel = self.panels[side].tabs.current();
         if panel.in_archive() {
-            let text = "Files inside archives cannot be renamed yet.";
+            let text = sc_core::t!("rename.in_archive");
             return window.push_notification(Notification::warning(text), cx);
         }
         let chosen = panel.chosen();
@@ -51,7 +56,7 @@ impl Commander {
             })
             .collect();
         if sources.len() < chosen.len() {
-            let text = "Names that are not UTF-8 are left out.";
+            let text = sc_core::t!("rename.not_utf8");
             window.push_notification(Notification::warning(text), cx);
         }
         if sources.is_empty() {
@@ -108,7 +113,7 @@ impl Commander {
                 folder,
                 fs,
                 undo: None,
-                status: "Start renames them.".into(),
+                status: sc_core::t!("rename.status.ready"),
                 busy: false,
                 commander,
                 side,
@@ -117,7 +122,7 @@ impl Commander {
         });
         window.open_dialog(cx, move |dialog, _, _| {
             dialog
-                .title("Multi-Rename Tool")
+                .title(sc_core::t!("rename.dialog_title"))
                 .width(px(980.))
                 .overlay_closable(false)
                 .child(view.clone())
@@ -211,12 +216,12 @@ impl RenameDialog {
                             }
                         }
                         this.status = match forward {
-                            true => format!("Renamed {}.", done.len()),
-                            false => format!("Took back {}.", done.len()),
+                            true => sc_core::t!("rename.status.renamed", count = done.len()),
+                            false => sc_core::t!("rename.status.took_back", count = done.len()),
                         };
                         this.undo = forward.then_some(done);
                     }
-                    Err(err) => this.status = format!("Nothing renamed: {err}"),
+                    Err(err) => this.status = sc_core::t!("rename.status.failed", err = err),
                 }
                 let side = this.side;
                 let _ = this
@@ -289,14 +294,14 @@ impl Render for RenameDialog {
             }
             Err(_) => true,
         };
-        let labeled = |label: &'static str, input: &Entity<InputState>, width: f32| {
+        let labeled = |label: String, input: &Entity<InputState>, width: f32| {
             v_flex()
                 .gap_1()
                 .child(label)
                 .child(div().w(px(width)).child(Input::new(input).small()))
         };
         let flag = |id: &'static str,
-                    label: &'static str,
+                    label: String,
                     on: bool,
                     set: fn(&mut Self, bool),
                     cx: &mut Context<Self>| {
@@ -348,21 +353,21 @@ impl Render for RenameDialog {
                 h_flex()
                     .gap_3()
                     .items_end()
-                    .child(labeled("Rename mask: file name", &self.name_mask, 380.))
-                    .child(labeled("Extension", &self.ext_mask, 120.))
-                    .child(labeled("Counter start", &self.start, 80.))
-                    .child(labeled("Step", &self.step, 60.))
-                    .child(labeled("Digits", &self.digits, 60.)),
+                    .child(labeled(sc_core::t!("rename.mask"), &self.name_mask, 380.))
+                    .child(labeled(sc_core::t!("rename.extension"), &self.ext_mask, 120.))
+                    .child(labeled(sc_core::t!("rename.counter_start"), &self.start, 80.))
+                    .child(labeled(sc_core::t!("rename.step"), &self.step, 60.))
+                    .child(labeled(sc_core::t!("rename.digits"), &self.digits, 60.)),
             )
             .child(
                 h_flex()
                     .gap_1()
                     .flex_wrap()
-                    .children(FIELDS.iter().enumerate().map(|(ix, (label, field))| {
+                    .children(FIELDS.iter().zip(field_labels()).enumerate().map(|(ix, (field, label))| {
                         Button::new(("rename-field", ix))
                             .outline()
                             .xsmall()
-                            .label(*label)
+                            .label(label)
                             .on_click(cx.listener(move |this, _, window, cx| {
                                 this.insert(field, window, cx)
                             }))
@@ -372,8 +377,8 @@ impl Render for RenameDialog {
                 h_flex()
                     .gap_3()
                     .items_end()
-                    .child(labeled("Search for", &self.search, 260.))
-                    .child(labeled("Replace with", &self.replace, 260.))
+                    .child(labeled(sc_core::t!("rename.search"), &self.search, 260.))
+                    .child(labeled(sc_core::t!("rename.replace"), &self.replace, 260.))
                     .child(
                         v_flex()
                             .gap_1()
@@ -382,14 +387,14 @@ impl Render for RenameDialog {
                                     .gap_3()
                                     .child(flag(
                                         "rename-case",
-                                        "Match case",
+                                        sc_core::t!("rename.match_case"),
                                         self.case_sensitive,
                                         |t, on| t.case_sensitive = on,
                                         cx,
                                     ))
                                     .child(flag(
                                         "rename-first",
-                                        "First only",
+                                        sc_core::t!("rename.first_only"),
                                         self.first_only,
                                         |t, on| t.first_only = on,
                                         cx,
@@ -400,14 +405,14 @@ impl Render for RenameDialog {
                                     .gap_3()
                                     .child(flag(
                                         "rename-ext",
-                                        "With extension",
+                                        sc_core::t!("rename.with_extension"),
                                         self.with_extension,
                                         |t, on| t.with_extension = on,
                                         cx,
                                     ))
                                     .child(flag(
                                         "rename-regex",
-                                        "Regular expression",
+                                        sc_core::t!("rename.regex"),
                                         self.regex,
                                         |t, on| t.regex = on,
                                         cx,
@@ -416,7 +421,7 @@ impl Render for RenameDialog {
                     ),
             )
             .child(
-                h_flex().gap_2().child("Case:").child(
+                h_flex().gap_2().child(sc_core::t!("rename.case")).child(
                     RadioGroup::horizontal("rename-upper")
                         .children(Case::ALL.map(Case::label))
                         .selected_index(Case::ALL.iter().position(|c| *c == self.case))
@@ -433,8 +438,8 @@ impl Render for RenameDialog {
                         h_flex()
                             .gap_2()
                             .text_color(muted)
-                            .child(div().w(px(420.)).child("Old name"))
-                            .child("New name"),
+                            .child(div().w(px(420.)).child(sc_core::t!("rename.old_name")))
+                            .child(sc_core::t!("rename.new_name")),
                     )
                     .child(
                         div()
@@ -454,7 +459,7 @@ impl Render for RenameDialog {
                     .child(
                         Button::new("rename-start")
                             .primary()
-                            .label("Start!")
+                            .label(sc_core::t!("rename.start"))
                             .min_w(px(80.))
                             .disabled(blocked || self.busy)
                             .on_click(cx.listener(|this, _, _, cx| this.start(cx))),
@@ -462,7 +467,7 @@ impl Render for RenameDialog {
                     .child(
                         Button::new("rename-undo")
                             .outline()
-                            .label("Undo")
+                            .label(sc_core::t!("rename.undo"))
                             .min_w(px(80.))
                             .disabled(self.undo.is_none() || self.busy)
                             .on_click(cx.listener(|this, _, _, cx| this.undo(cx))),
@@ -470,7 +475,7 @@ impl Render for RenameDialog {
                     .child(
                         Button::new("rename-close")
                             .outline()
-                            .label("Close")
+                            .label(sc_core::t!("rename.close"))
                             .min_w(px(80.))
                             .on_click(|_, window, cx| window.close_dialog(cx)),
                     ),

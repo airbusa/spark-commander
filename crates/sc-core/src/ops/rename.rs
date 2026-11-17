@@ -33,13 +33,13 @@ impl Case {
         Case::Words,
     ];
 
-    pub fn label(self) -> &'static str {
+    pub fn label(self) -> String {
         match self {
-            Case::Unchanged => "Unchanged",
-            Case::Lower => "lowercase",
-            Case::Upper => "UPPERCASE",
-            Case::First => "First letter",
-            Case::Words => "Every Word",
+            Case::Unchanged => crate::t!("rename.case.unchanged"),
+            Case::Lower => crate::t!("rename.case.lower"),
+            Case::Upper => crate::t!("rename.case.upper"),
+            Case::First => crate::t!("rename.case.first"),
+            Case::Words => crate::t!("rename.case.words"),
         }
     }
 }
@@ -111,7 +111,7 @@ pub fn preview(rules: &Rules, sources: &[Source], folder: &Path) -> Result<Vec<S
             let built = RegexBuilder::new(&pattern)
                 .case_insensitive(!rules.case_sensitive)
                 .build()
-                .map_err(|err| format!("The regular expression: {err}"))?;
+                .map_err(|err| crate::t!("rename.regex_error", err = err))?;
             Some(built)
         }
     };
@@ -301,24 +301,21 @@ pub fn problems(old: &[String], new: &[String], taken: &HashSet<String>) -> Vec<
     old.iter()
         .zip(new)
         .map(|(old, new)| {
-            Some(
-                match () {
-                    _ if new.trim().is_empty() => "no name",
-                    _ if new.contains('/')
-                        || (cfg!(windows)
-                            && new.contains(['\\', ':', '*', '?', '"', '<', '>', '|'])) =>
-                    {
-                        "a character names cannot have"
-                    }
-                    _ if new == "." || new == ".." => "no name",
-                    _ if duplicates.contains(&fold(new)) => "twice in the list",
-                    _ if new != old && taken.contains(new) && !leaving.contains(new) => {
-                        "exists already"
-                    }
-                    _ => return None,
+            Some(match () {
+                _ if new.trim().is_empty() => crate::t!("rename.problem.no_name"),
+                _ if new.contains('/')
+                    || (cfg!(windows)
+                        && new.contains(['\\', ':', '*', '?', '"', '<', '>', '|'])) =>
+                {
+                    crate::t!("rename.problem.bad_character")
                 }
-                .to_owned(),
-            )
+                _ if new == "." || new == ".." => crate::t!("rename.problem.no_name"),
+                _ if duplicates.contains(&fold(new)) => crate::t!("rename.problem.twice"),
+                _ if new != old && taken.contains(new) && !leaving.contains(new) => {
+                    crate::t!("rename.problem.exists")
+                }
+                _ => return None,
+            })
         })
         .collect()
 }
@@ -363,7 +360,7 @@ pub fn rename_all(
     }
     for (from, to) in steps {
         let renamed = match in_the_way(fs, folder, from.as_ref(), to.as_ref(), &names) {
-            true => Err(io::Error::new(io::ErrorKind::AlreadyExists, format!("{to} exists already"))),
+            true => Err(io::Error::new(io::ErrorKind::AlreadyExists, crate::t!("ops.exists_already", name = to))),
             false => fs.rename(&folder.join(&from), &folder.join(&to)),
         };
         if let Err(err) = renamed {
@@ -371,13 +368,13 @@ pub fn rename_all(
                 .iter()
                 .rev()
                 .filter(|(from, to)| fs.rename(&folder.join(to), &folder.join(from)).is_err())
-                .map(|(from, to)| format!("{to} (was {from})"))
+                .map(|(from, to)| crate::t!("rename.was", to = to, from = from))
                 .collect();
-            let left = match stuck.is_empty() {
-                true => String::new(),
-                false => format!("; not renamed back: {}", stuck.join(", ")),
+            let text = match stuck.is_empty() {
+                true => format!("{from}: {err}"),
+                false => crate::t!("rename.not_renamed_back", from = from, err = err, names = stuck.join(", ")),
             };
-            return Err(io::Error::new(err.kind(), format!("{from}: {err}{left}")));
+            return Err(io::Error::new(err.kind(), text));
         }
         names.retain(|name| *name != *from);
         names.push(to.clone().into());
@@ -465,6 +462,7 @@ mod tests {
 
     #[test]
     fn finds_problems_and_renames_crosswise() {
+        crate::l10n::set_language(Some("en"));
         let old: Vec<String> = ["a", "b", "c"].map(String::from).to_vec();
         let new: Vec<String> = ["b", "a", "x"].map(String::from).to_vec();
         let taken: HashSet<String> = ["a", "b", "c", "x"].map(String::from).into();

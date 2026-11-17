@@ -1,0 +1,1122 @@
+{
+  "archive.cannot_read": {
+    "description": "Error when a compressed tar cannot be unpacked to be listed. {name} is the archive's name (\"backup.tar.gz\").",
+    "message": "{name}: cannot be read"
+  },
+  "archive.not_in_archive": {
+    "description": "Error when a file opened from inside an archive is not found in it. {name} is its path inside the archive (\"docs/a.txt\").",
+    "message": "{name} is not in the archive"
+  },
+  "archive.not_own_folder": {
+    "description": "Error when the temporary folder for archives belongs to another user or others can read it. {folder} is its path (\"/tmp/sparkcommander-1234\").",
+    "message": "{folder} is not this user's own folder"
+  },
+  "archive.seven_zip_failed": {
+    "description": "Error when 7-Zip failed without saying why. {code} is its exit status (\"exit status: 2\" or 2).",
+    "message": "7-Zip failed ({code})"
+  },
+  "archive.seven_zip_missing": {
+    "description": "Error when the 7-Zip program the app uses is not there. {path} is where it was looked for (\"/opt/sparkcommander/7zz\"). Keep the script names as they are.",
+    "message": "7-Zip is missing: {path} (run vendor/7zip/fetch.sh or fetch.bat)"
+  },
+  "archive.temp_not_utf8": {
+    "description": "Error when the temporary folder's path cannot be given to 7-Zip.",
+    "message": "the temporary folder's name is not UTF-8"
+  },
+  "attributes.bad_time": {
+    "description": "Error when the Change Attributes dialog's date cannot be read. {text} is what was typed (\"yesterday\"); after the colon an example of the form it understands, keep it as it is.",
+    "message": "\"{text}\" is no date and time: 2026-11-10 14:04:33"
+  },
+  "attributes.cancel": {
+    "description": "Change Attributes dialog's Cancel button.",
+    "message": "Cancel"
+  },
+  "attributes.change_time": {
+    "description": "Change Attributes dialog: a checkbox before the date and time field. Keep it short.",
+    "message": "Change date/time:"
+  },
+  "attributes.changed": {
+    "description": "Note of a finished Change Attributes job: how many files it changed (12). A list of the failures' paths and errors follows on its own lines.",
+    "message": "{count, plural, one {# changed} other {# changed}}"
+  },
+  "attributes.changed_failed": {
+    "description": "Note of a Change Attributes job where some files failed. {count} is how many it changed (12); {failed} how many failed (2). The failures' paths and errors follow on their own lines.",
+    "message": "{count, plural, one {# changed} other {# changed}}, {failed, plural, one {# failed} other {# failed}}"
+  },
+  "attributes.dialog_title_many": {
+    "description": "Title of the Change Attributes dialog for several entries. {count} is how many (3).",
+    "message": "Change attributes: {count, plural, one {# item} other {# items}}"
+  },
+  "attributes.dialog_title_one": {
+    "description": "Title of the Change Attributes dialog. {name} is the file or folder name (\"notes.txt\").",
+    "message": "Change attributes: {name}"
+  },
+  "attributes.execute": {
+    "description": "Change Attributes dialog: the heading of the execute permission column. Keep it short.",
+    "message": "Execute"
+  },
+  "attributes.group": {
+    "description": "Change Attributes dialog: the row of the group's permissions. Keep it short.",
+    "message": "Group"
+  },
+  "attributes.in_archive": {
+    "description": "Warning when Change Attributes is used inside an archive.",
+    "message": "Attributes inside archives cannot be changed."
+  },
+  "attributes.no_bits": {
+    "description": "Change Attributes dialog, for files whose file system has no Unix permissions.",
+    "message": "These files have no permission bits here; only the date can change."
+  },
+  "attributes.now": {
+    "description": "Change Attributes dialog: a button that puts the current date and time into the field. Keep it short.",
+    "message": "Now"
+  },
+  "attributes.octal": {
+    "description": "Change Attributes dialog: the label before the permissions as an octal number (755). Keep it short.",
+    "message": "Octal:"
+  },
+  "attributes.ok": {
+    "description": "Change Attributes dialog's OK button.",
+    "message": "OK"
+  },
+  "attributes.others": {
+    "description": "Change Attributes dialog: the row of everyone else's permissions. Keep it short.",
+    "message": "Others"
+  },
+  "attributes.owner": {
+    "description": "Change Attributes dialog: the row of the owner's permissions. Keep it short.",
+    "message": "Owner"
+  },
+  "attributes.read": {
+    "description": "Change Attributes dialog: the heading of the read permission column. Keep it short.",
+    "message": "Read"
+  },
+  "attributes.recurse": {
+    "description": "Change Attributes dialog: a checkbox, the change made on the folders' contents too.",
+    "message": "Also everything inside the folders"
+  },
+  "attributes.title_many": {
+    "description": "Title of a Change Attributes job for several entries, in the operation queue. {count} is how many (3).",
+    "message": "Change attributes of {count, plural, one {# item} other {# items}}"
+  },
+  "attributes.title_one": {
+    "description": "Title of a Change Attributes job in the operation queue. {name} is the file or folder name (\"notes.txt\").",
+    "message": "Change attributes of \"{name}\""
+  },
+  "attributes.write": {
+    "description": "Change Attributes dialog: the heading of the write permission column. Keep it short.",
+    "message": "Write"
+  },
+  "checksum.create.title": {
+    "description": "Title of the job that writes one checksum file, in the operation queue. {name} is the checksum file's name (\"photos.md5\").",
+    "message": "Create {name}"
+  },
+  "checksum.create.title_separate": {
+    "description": "Title of the job that writes a checksum file beside each file, in the operation queue. {method} is the checksum's name (\"MD5\", \"CRC32 (SFV)\").",
+    "message": "Create {method} checksum files"
+  },
+  "checksum.dialog_title": {
+    "description": "Title of the Files › Create Checksum Files dialog.",
+    "message": "Create checksum files"
+  },
+  "checksum.save_as": {
+    "description": "Create Checksum Files dialog: the label above the checksum file's path.",
+    "message": "Save the checksum file as:"
+  },
+  "checksum.separate": {
+    "description": "Create Checksum Files dialog: a checkbox to write one checksum file next to each file rather than one for all.",
+    "message": "A checksum file beside each file instead"
+  },
+  "checksum.verify.all_ok": {
+    "description": "Note of a checksum check where every file matched. {count} is how many files were checked (12).",
+    "message": "{count, plural, one {all # file(s) OK} other {all # file(s) OK}}"
+  },
+  "checksum.verify.choose": {
+    "description": "Warning when Files › Verify Checksums is used without a checksum file chosen. Keep the extensions as they are.",
+    "message": "Choose checksum files: .sfv, .md5, .sha1, .sha256 or .sha512."
+  },
+  "checksum.verify.missing_file": {
+    "description": "A line under a failed checksum check: a file that is not there. {name} is its name as the checksum file lists it (\"sub/a.txt\").",
+    "message": "missing: {name}"
+  },
+  "checksum.verify.result": {
+    "description": "Error of a checksum check where some files did not match or were not found. {ok} is how many matched (10), {wrong} how many differ (1), {missing} how many are not there (1). The files follow on their own lines.",
+    "message": "{ok, plural, one {# OK} other {# OK}}, {wrong, plural, one {# wrong} other {# wrong}}, {missing, plural, one {# missing} other {# missing}}"
+  },
+  "checksum.verify.title_many": {
+    "description": "Title of the job that checks several checksum files' files, in the operation queue. {count} is how many checksum files (3).",
+    "message": "Verify {count, plural, one {# checksum file} other {# checksum files}}"
+  },
+  "checksum.verify.title_one": {
+    "description": "Title of the job that checks the files a checksum file lists, in the operation queue. {name} is the checksum file's name (\"photos.md5\").",
+    "message": "Verify {name}"
+  },
+  "checksum.verify.wrong_file": {
+    "description": "A line under a failed checksum check: a file whose checksum differs. {name} is its name as the checksum file lists it (\"sub/a.txt\").",
+    "message": "wrong: {name}"
+  },
+  "download.cancel": {
+    "description": "Download from Link dialog's Cancel button.",
+    "message": "Cancel"
+  },
+  "download.dialog_title": {
+    "description": "Title of the Files › Download from Link dialog.",
+    "message": "Download from Link"
+  },
+  "download.download": {
+    "description": "Download from Link dialog: the OK button. Keep it short.",
+    "message": "Download"
+  },
+  "download.folder_link": {
+    "description": "Error when an FTP(S) link points at a folder, not a file.",
+    "message": "the link is a folder's"
+  },
+  "download.incomplete": {
+    "description": "Error of a download the server ended early. {got} is how many bytes came (1048576); {size} the file's size in bytes (4194304). Downloading it again resumes from the part kept.",
+    "message": "the server sent {got} of {size, plural, one {# bytes} other {# bytes}}; downloaded again, it goes on from there"
+  },
+  "download.into": {
+    "description": "Download from Link dialog: where the file goes. {folder} is the folder (\"/home/me/Downloads\").",
+    "message": "Into {folder}"
+  },
+  "download.link": {
+    "description": "Download from Link dialog: the label above the link field. Keep it short.",
+    "message": "Link"
+  },
+  "download.link_placeholder": {
+    "description": "Download from Link dialog: the grey hint in the empty link field. Keep the protocols as they are.",
+    "message": "https://, http://, ftp:// or ftps://"
+  },
+  "download.local_only": {
+    "description": "Warning when Download from Link is used in a server's folder or inside an archive.",
+    "message": "Downloads go into this computer's folders: open one in the panel first."
+  },
+  "download.name_placeholder": {
+    "description": "Download from Link dialog: the grey hint in the empty file name field: left empty, the file gets the name the server or the link gives.",
+    "message": "as the server or the link names it"
+  },
+  "download.no_file": {
+    "description": "Error when an FTP(S) link points at no file.",
+    "message": "the link names no file"
+  },
+  "download.not_a_link": {
+    "description": "Error when a download's link is not an FTP(S) link it can fetch.",
+    "message": "not a link to download"
+  },
+  "download.problem.bad_name": {
+    "description": "Download from Link dialog: shown when the name to save as has a folder or a slash in it.",
+    "message": "A file's name, without a folder in it."
+  },
+  "download.problem.empty": {
+    "description": "Download from Link dialog: shown when OK is pressed with no link.",
+    "message": "Paste or type a link."
+  },
+  "download.problem.exists": {
+    "description": "Download from Link dialog: shown when a file of the name to save as is there; Replace is the OK button's new text. {name} is the name (\"ubuntu.iso\").",
+    "message": "There is a {name} here already: Replace downloads over it."
+  },
+  "download.problem.not_link": {
+    "description": "Download from Link dialog: shown when the link is not one it can download. Keep the protocols as they are.",
+    "message": "Not a link to download: it starts with https://, http://, ftp:// or ftps://."
+  },
+  "download.replace": {
+    "description": "Download from Link dialog: the OK button once told a file of that name is there; pressed, the download goes over it. Keep it short.",
+    "message": "Replace"
+  },
+  "download.save_as": {
+    "description": "Download from Link dialog: the label above the file name field. Keep it short.",
+    "message": "Save as"
+  },
+  "download.saved_as": {
+    "description": "Note of a finished download. {name} is the file name it was saved under (\"data (2).bin\").",
+    "message": "saved as {name}"
+  },
+  "download.title": {
+    "description": "Title of a download job in the operation queue. {name} is the file's name (\"ubuntu.iso\").",
+    "message": "Download \"{name}\""
+  },
+  "download.title_link": {
+    "description": "Title of a download job whose file name is not known yet. {link} is the link (\"https://example.org/get?id=3\").",
+    "message": "Download {link}"
+  },
+  "elevate.failed": {
+    "description": "Error on Windows when the command run as administrator failed as well. {code} is its exit code (1).",
+    "message": "as administrator it failed too ({code})"
+  },
+  "elevate.no_consent": {
+    "description": "Error on Windows when the administrator prompt was cancelled.",
+    "message": "the administrator's consent was not given"
+  },
+  "elevate.no_password": {
+    "description": "Error when the administrator's password prompt was cancelled.",
+    "message": "the password was not given"
+  },
+  "elevate.not_authorised": {
+    "description": "Error when the system did not allow doing it as administrator.",
+    "message": "not authorised"
+  },
+  "elevate.percent_name": {
+    "description": "Error on Windows when a path with a % sign is to be handled as administrator. {path} is the path (\"C:\\100% done.txt\").",
+    "message": "{path}: a name with % cannot be handled as administrator; rename it first"
+  },
+  "elevate.pkexec_missing": {
+    "description": "Error when doing something as administrator on Linux, and pkexec, the program that asks for the password, is not there. Keep pkexec and polkit as they are.",
+    "message": "pkexec (polkit) is not installed"
+  },
+  "name_dialog.cancel": {
+    "description": "Cancel button of the small dialogs that ask for one name or text (New folder, Rename, Combine files…).",
+    "message": "Cancel"
+  },
+  "name_dialog.ok": {
+    "description": "OK button of the small dialogs that ask for one name or text (New folder, Rename, Combine files…).",
+    "message": "OK"
+  },
+  "operations.clear": {
+    "description": "Button under the sidebar's Operations list that removes the finished jobs. Keep it short.",
+    "message": "Clear finished"
+  },
+  "operations.duration.seconds": {
+    "description": "Time left of a job in the Operations list, under a minute. {seconds} is the number (12). Longer times show as 4:10 or 1:05:00. Keep it short.",
+    "message": "{seconds} s"
+  },
+  "operations.empty": {
+    "description": "The sidebar's Operations list when there are no jobs.",
+    "message": "No operations."
+  },
+  "operations.job.answer": {
+    "description": "Under a job in the Operations list that asked a question (a file exists, an error). Keep it short.",
+    "message": "Waiting for your answer"
+  },
+  "operations.job.bytes": {
+    "description": "Under a running job in the Operations list: how much is done. {done} and {total} are sizes with their unit (\"12 MB\", \"1.4 GB\"). Keep it short.",
+    "message": "{done} of {total}"
+  },
+  "operations.job.cancel_tooltip": {
+    "description": "Tooltip of the × button of a job in the Operations list.",
+    "message": "Cancel"
+  },
+  "operations.job.cancelled": {
+    "description": "Under a cancelled job in the Operations list. Keep it short.",
+    "message": "Cancelled"
+  },
+  "operations.job.counting": {
+    "description": "Under a job in the Operations list while it counts what to do. {count} is how many files so far (120). Keep it short.",
+    "message": "Counting: {count, plural, one {# files} other {# files}}"
+  },
+  "operations.job.done": {
+    "description": "Under a finished job in the Operations list. Keep it short.",
+    "message": "Done"
+  },
+  "operations.job.done_skipped": {
+    "description": "Under a finished job in the Operations list that left some files out. {count} is how many (2). Keep it short.",
+    "message": "Done, {count, plural, one {# skipped} other {# skipped}}"
+  },
+  "operations.job.failed": {
+    "description": "Under a failed job in the Operations list, when it gave no reason. Keep it short.",
+    "message": "Failed"
+  },
+  "operations.job.files": {
+    "description": "Under a running job in the Operations list: files done of all. {files} is how many are done (3); {count} how many in all (12). Keep it short.",
+    "message": "{files} / {count, plural, one {# files} other {# files}}"
+  },
+  "operations.job.left": {
+    "description": "Under a running job in the Operations list: the time left. {time} is \"12 s\", \"4:10\" or \"1:05:00\". Keep it short.",
+    "message": "{time} left"
+  },
+  "operations.job.running": {
+    "description": "Under a running job in the Operations list, before anything else is known. Keep it short.",
+    "message": "Running"
+  },
+  "operations.job.waiting": {
+    "description": "Under a job in the Operations list that waits for its turn. Keep it short.",
+    "message": "Waiting"
+  },
+  "operations.menu.cancel": {
+    "description": "Context menu of a running or waiting job in the Operations list.",
+    "message": "Cancel"
+  },
+  "operations.menu.clear": {
+    "description": "Context menu of a finished job in the Operations list: removes the finished jobs.",
+    "message": "Clear Finished"
+  },
+  "operations.menu.move_down": {
+    "description": "Context menu of a waiting job in the Operations list: later in the queue.",
+    "message": "Move Down"
+  },
+  "operations.menu.move_up": {
+    "description": "Context menu of a waiting job in the Operations list: earlier in the queue.",
+    "message": "Move Up"
+  },
+  "operations.settings_tooltip": {
+    "description": "Tooltip of the gear button under the sidebar's Operations list.",
+    "message": "Operation queue settings"
+  },
+  "operations.summary.failed": {
+    "description": "The sidebar's Operations header: how many jobs failed (1). Joined to the others with a dot. Keep it short.",
+    "message": "{count, plural, one {# failed} other {# failed}}"
+  },
+  "operations.summary.running": {
+    "description": "The sidebar's Operations header: how many jobs run (1). Joined to the others with a dot. Keep it short.",
+    "message": "{count, plural, one {# running} other {# running}}"
+  },
+  "operations.summary.waiting": {
+    "description": "The sidebar's Operations header: how many jobs wait (2). Joined to the others with a dot. Keep it short.",
+    "message": "{count, plural, one {# waiting} other {# waiting}}"
+  },
+  "ops.as_administrator.failed": {
+    "description": "A copy or move job's note when doing the refused files as administrator failed. {err} is the system's error (\"the password was not given\").",
+    "message": "As administrator: {err}"
+  },
+  "ops.as_administrator.progress": {
+    "description": "Shown in a copy's progress, where the file being copied is, while what permission refused is done as administrator. Keep it short.",
+    "message": "As administrator…"
+  },
+  "ops.delete.title_many": {
+    "description": "Title of a delete job for several entries. {count} is how many (3); {folder} the folder they are in (\"/home/me/Downloads\").",
+    "message": "Delete {count, plural, one {# item} other {# items}} in {folder}"
+  },
+  "ops.delete.title_one": {
+    "description": "Title of a delete job in the operation queue, the activity log and Undo. {name} is the file or folder name (\"notes.txt\").",
+    "message": "Delete \"{name}\""
+  },
+  "ops.delete.trash_title_many": {
+    "description": "Title of a move-to-trash job for several entries. {count} is how many (3); {folder} the folder they are in (\"/home/me/Downloads\").",
+    "message": "Move {count, plural, one {# item} other {# items}} in {folder} to the trash"
+  },
+  "ops.delete.trash_title_one": {
+    "description": "Title of a move-to-trash job in the operation queue, the activity log and Undo. {name} is the file or folder name (\"notes.txt\").",
+    "message": "Move \"{name}\" to the trash"
+  },
+  "ops.error.file_in_the_way": {
+    "description": "Error under a folder's path when a copied folder cannot be made because a file has its name there.",
+    "message": "a file of this name is in the way"
+  },
+  "ops.error.into_itself": {
+    "description": "Error under a folder's path when it is copied or moved into a folder inside itself.",
+    "message": "cannot be copied into itself"
+  },
+  "ops.exists_already": {
+    "description": "Error when a file to be made (an archive, a split part, a renamed file) is there already. {name} is its name or path (\"photos.tar.gz\").",
+    "message": "{name} exists already"
+  },
+  "ops.link.dialog_title": {
+    "description": "Title of the Files › Create Link dialog (Ctrl+Shift+F5).",
+    "message": "Create link"
+  },
+  "ops.link.failed": {
+    "description": "Error notification of Files › Create Link. {err} is the system's error (\"File exists\").",
+    "message": "Could not make the link: {err}"
+  },
+  "ops.link.kind.hard": {
+    "description": "Files › Create Link: a choice of the kind of link. Keep it short.",
+    "message": "Hard link"
+  },
+  "ops.link.kind.junction": {
+    "description": "Files › Create Link: a choice of the kind of link (Windows' folder junction). Keep it short.",
+    "message": "Junction"
+  },
+  "ops.link.kind.shortcut": {
+    "description": "Files › Create Link: a choice of the kind of link (a Windows .lnk shortcut file). Keep it short.",
+    "message": "Shortcut (.lnk)"
+  },
+  "ops.link.kind.symbolic": {
+    "description": "Files › Create Link: a choice of the kind of link. Keep it short.",
+    "message": "Symbolic link"
+  },
+  "ops.link.label_many": {
+    "description": "Create Link dialog: the label above the folder the links go into. {count} is how many items are chosen (3).",
+    "message": "Links to the {count, plural, one {# item} other {# items}}, in the folder:"
+  },
+  "ops.link.label_one": {
+    "description": "Create Link dialog: the label above the new link's path. {name} is what it points to (\"notes.txt\").",
+    "message": "Link to \"{name}\" as:"
+  },
+  "ops.link.making": {
+    "description": "What failed for lack of permission, at the start of the question whether to do it as administrator (\"Making the symbolic link: permission denied. …\"). {kind} is symbolic, hard, junction or shortcut (keep the select's choices, translate the words in braces).",
+    "message": "Making the {kind, select, symbolic {symbolic link} hard {hard link} junction {junction} other {shortcut (.lnk)}}"
+  },
+  "ops.link.needs_admin": {
+    "description": "Error on Windows when making a symbolic link is not allowed. Developer Mode is Windows' setting of that name.",
+    "message": "symbolic links need an administrator, or Developer Mode"
+  },
+  "ops.link.thread_failed": {
+    "description": "Error on Windows when making a .lnk shortcut failed unexpectedly.",
+    "message": "the shortcut's thread failed"
+  },
+  "ops.link.title_many": {
+    "description": "Title of making links to several items, in the activity log and Undo. {kind} is symbolic, hard, junction or shortcut (keep the select's choices, translate the words in braces); {count} how many (3); {folder} where the links are made (\"/home/me/Desktop\").",
+    "message": "{kind, select, symbolic {Symbolic links} hard {Hard links} junction {Junctions} other {Shortcut (.lnk)s}} to {count, plural, one {# item} other {# items}} in {folder}"
+  },
+  "ops.link.title_one": {
+    "description": "Title of making one link, in the activity log and Undo. {kind} is symbolic, hard, junction or shortcut (keep the select's choices, translate the words in braces); {name} what it points to (\"notes.txt\"); {folder} where the link is made (\"/home/me/Desktop\").",
+    "message": "{kind, select, symbolic {Symbolic link} hard {Hard link} junction {Junction} other {Shortcut (.lnk)}} to \"{name}\" in {folder}"
+  },
+  "ops.link.windows_only": {
+    "description": "Error when a junction or .lnk shortcut is asked for on a system other than Windows.",
+    "message": "junctions and shortcuts are Windows'"
+  },
+  "ops.redo.title": {
+    "description": "The title of a Redo job in the activity log. {what} is the redone job's own title (Copy \"a.txt\" to /tmp).",
+    "message": "Redo: {what}"
+  },
+  "ops.title.many": {
+    "description": "A copy or move job's title for several files and folders, in the operation queue, the activity log and Undo. {kind} is copy or move (keep the select's choices, translate the words in braces); {count} how many (3); {target} the target folder (\"/home/me/Documents\").",
+    "message": "{kind, select, copy {Copy} other {Move}} {count, plural, one {# item} other {# items}} to {target}"
+  },
+  "ops.title.one": {
+    "description": "A copy or move job's title in the operation queue, the activity log and Undo. {kind} is copy or move (keep the select's choices, translate the words in braces); {name} the file or folder name (\"notes.txt\"); {target} the target folder or path (\"/home/me/Documents\").",
+    "message": "{kind, select, copy {Copy} other {Move}} \"{name}\" to {target}"
+  },
+  "ops.undo.not_a_server": {
+    "description": "Error when Undo cannot connect again to the server a job used. {url} is the remembered address (\"sftp://me@host\").",
+    "message": "{url}: not a server's address"
+  },
+  "ops.undo.not_in_trash": {
+    "description": "Error when undoing a move to the trash finds none of the files in the trash any more.",
+    "message": "they are no longer in the trash"
+  },
+  "ops.undo.restore_title": {
+    "description": "Title of the queue job that, after an undone move, brings back from the trash the files the move had replaced. {title} is the Undo or Redo title (\"Undo: Move 3 items to /tmp\").",
+    "message": "{title}: what it went over, back from the trash"
+  },
+  "ops.undo.title": {
+    "description": "The title of an Undo job in the operation queue and the activity log. {what} is the undone job's own title (Copy \"a.txt\" to /tmp).",
+    "message": "Undo: {what}"
+  },
+  "pack.cancel": {
+    "description": "Cancel button of the Pack, Unpack, Create Checksum Files, Split File and Create Link dialogs.",
+    "message": "Cancel"
+  },
+  "pack.compression": {
+    "description": "Pack dialog: the label before the compression levels. Keep it short.",
+    "message": "Compression:"
+  },
+  "pack.dialog_title": {
+    "description": "Title of the Files › Pack dialog (Alt+F5).",
+    "message": "Pack files"
+  },
+  "pack.encrypt": {
+    "description": "Pack dialog: a checkbox, followed by the password field.",
+    "message": "Encrypt with the password"
+  },
+  "pack.format": {
+    "description": "Pack dialog: the label before the archive formats (ZIP, 7-Zip, TAR…). Keep it short.",
+    "message": "Format:"
+  },
+  "pack.label": {
+    "description": "Pack dialog: the label above the archive's path. {count} is how many entries are chosen (3).",
+    "message": "Pack {count, plural, one {# item(s)} other {# item(s)}} into the archive:"
+  },
+  "pack.level.fastest": {
+    "description": "Pack dialog: a compression level. Keep it short.",
+    "message": "Fastest"
+  },
+  "pack.level.maximum": {
+    "description": "Pack dialog: a compression level. Keep it short.",
+    "message": "Maximum"
+  },
+  "pack.level.normal": {
+    "description": "Pack dialog: a compression level. Keep it short.",
+    "message": "Normal"
+  },
+  "pack.level.store": {
+    "description": "Pack dialog: a compression level, none at all. Keep it short.",
+    "message": "Store"
+  },
+  "pack.level.ultra": {
+    "description": "Pack dialog: the strongest compression level. Keep it short.",
+    "message": "Ultra"
+  },
+  "pack.local_only": {
+    "description": "Warning when a file tool is used on a server's folder or inside an archive. {what} names the tool (keep the select's choices, translate the words in braces).",
+    "message": "{what, select, packing {Packing} unpacking {Unpacking} testing {Testing} creating_checksums {Creating checksums} making_links {Making links} verifying_checksums {Verifying checksums} splitting {Splitting} combining {Combining} other {This}} works on this computer's files, outside archives."
+  },
+  "pack.move_files": {
+    "description": "Pack dialog: a checkbox.",
+    "message": "Move to archive (delete the packed files)"
+  },
+  "pack.needs_password": {
+    "description": "Error of packing, unpacking or testing an encrypted archive without its password.",
+    "message": "it needs a password"
+  },
+  "pack.ok": {
+    "description": "OK button of the Pack, Unpack, Create Checksum Files, Split File and Create Link dialogs.",
+    "message": "OK"
+  },
+  "pack.password_missing": {
+    "description": "Error in the Pack dialog when Encrypt is on without a password. Encrypt is the checkbox \"Encrypt with the password\".",
+    "message": "Type the password, or leave Encrypt off."
+  },
+  "pack.separate": {
+    "description": "Pack dialog: a checkbox.",
+    "message": "One archive for each selected file or folder"
+  },
+  "pack.split": {
+    "description": "Pack dialog: a checkbox, followed by a size field and MB.",
+    "message": "Split into volumes of"
+  },
+  "pack.split_unit": {
+    "description": "Pack dialog: the unit after the volume size field (megabytes).",
+    "message": "MB"
+  },
+  "pack.test.broken": {
+    "description": "Error of an archive test where some were broken. {broken} is how many are broken (1); {count} how many were tested (3). The broken ones and why follow on their own lines.",
+    "message": "{broken, plural, one {# of {count} broken} other {# of {count} broken}}"
+  },
+  "pack.test.choose": {
+    "description": "Warning when Test Archives is used without an archive chosen.",
+    "message": "Choose the archives to test."
+  },
+  "pack.test.ok": {
+    "description": "Note of a finished archive test where all were sound. {count} is how many were tested (3).",
+    "message": "{count, plural, one {# archive(s) OK} other {# archive(s) OK}}"
+  },
+  "pack.test.title_many": {
+    "description": "Title of the job testing several archives, in the operation queue. {count} is how many (3).",
+    "message": "Test {count, plural, one {# archive} other {# archives}}"
+  },
+  "pack.test.title_one": {
+    "description": "Title of the job testing an archive, in the operation queue. {name} is the archive's name (\"photos.zip\").",
+    "message": "Test \"{name}\""
+  },
+  "pack.title.many": {
+    "description": "Title of a pack job for several entries, in the operation queue. {count} is how many (3); {archive} the archive's name (\"photos.zip\").",
+    "message": "Pack {count, plural, one {# item} other {# items}} into {archive}"
+  },
+  "pack.title.many_separate": {
+    "description": "Title of a pack job making an archive of each of several entries. {count} is how many (3); {format} the archive format (\"ZIP\", \"7-Zip\").",
+    "message": "Pack {count, plural, one {# item} other {# items}} into separate {format} archives"
+  },
+  "pack.title.one": {
+    "description": "Title of a pack job in the operation queue. {name} is the packed file or folder (\"photos\"); {archive} the archive's name (\"photos.zip\").",
+    "message": "Pack \"{name}\" into {archive}"
+  },
+  "pack.title.one_separate": {
+    "description": "Title of a pack job making an archive of each entry. {name} is the packed file or folder (\"photos\"); {format} the archive format (\"ZIP\", \"7-Zip\").",
+    "message": "Pack \"{name}\" into separate {format} archives"
+  },
+  "pack.unpack.choose": {
+    "description": "Warning when Unpack is used without an archive chosen.",
+    "message": "Choose the archives to unpack."
+  },
+  "pack.unpack.dialog_title": {
+    "description": "Title of the Files › Unpack Specific Files dialog (Alt+F9).",
+    "message": "Unpack files"
+  },
+  "pack.unpack.label": {
+    "description": "Unpack dialog: the label above the target folder. {count} is how many archives are chosen (2).",
+    "message": "Unpack {count, plural, one {# archive(s)} other {# archive(s)}} to:"
+  },
+  "pack.unpack.mask": {
+    "description": "Unpack dialog: the label before the file mask (*.txt). Keep it short.",
+    "message": "Only the files:"
+  },
+  "pack.unpack.overwrite": {
+    "description": "Unpack dialog: a checkbox.",
+    "message": "Overwrite existing files (else they are kept)"
+  },
+  "pack.unpack.password": {
+    "description": "Unpack dialog: the label before the password field. Keep it short.",
+    "message": "Password:"
+  },
+  "pack.unpack.separate": {
+    "description": "Unpack dialog: a checkbox.",
+    "message": "Each archive into a folder of its name"
+  },
+  "pack.unpack.title_many": {
+    "description": "Title of an unpack job for several archives. {count} is how many (3); {target} the folder they go into (\"/home/me/Pictures\").",
+    "message": "Unpack {count, plural, one {# archive} other {# archives}} to {target}"
+  },
+  "pack.unpack.title_one": {
+    "description": "Title of an unpack job in the operation queue. {name} is the archive's name (\"photos.zip\"); {target} the folder it goes into (\"/home/me/Pictures\").",
+    "message": "Unpack \"{name}\" to {target}"
+  },
+  "pack.unpack.with_paths": {
+    "description": "Unpack dialog: a checkbox.",
+    "message": "Keep the folders stored in the archive"
+  },
+  "pack.volume_invalid": {
+    "description": "Error in the Pack dialog when the volume size is not a number.",
+    "message": "The volume size is a number of MB."
+  },
+  "pack.wrong_password": {
+    "description": "Error of unpacking or testing an encrypted archive with a wrong password.",
+    "message": "wrong password"
+  },
+  "properties.accessed": {
+    "description": "Properties dialog: a row's label, when it was last read. Keep it short.",
+    "message": "Accessed:"
+  },
+  "properties.change_attributes": {
+    "description": "Properties dialog: the button that opens Change Attributes.",
+    "message": "Change attributes..."
+  },
+  "properties.close": {
+    "description": "Properties dialog: the button that closes it.",
+    "message": "Close"
+  },
+  "properties.contents": {
+    "description": "Properties dialog: what a folder holds, once counted. {file_count}, {folder_count} and {count} are the numbers of files, folders and bytes, for the plurals (1234); {files}, {folders} and {bytes} the same numbers written in groups (\"1 234\"); {size} the size with its unit (\"1.2 GB\").",
+    "message": "{file_count, plural, one {{files} file(s)} other {{files} file(s)}}, {folder_count, plural, one {{folders} folder(s)} other {{folders} folder(s)}}, {count, plural, one {{bytes} bytes} other {{bytes} bytes}} ({size})"
+  },
+  "properties.contents_counting": {
+    "description": "Properties dialog: what a folder holds, while it is still being counted. {file_count}, {folder_count} and {count} are the numbers of files, folders and bytes, for the plurals (1234); {files}, {folders} and {bytes} the same numbers written in groups (\"1 234\"); {size} the size with its unit (\"1.2 GB\").",
+    "message": "{file_count, plural, one {{files} file(s)} other {{files} file(s)}}, {folder_count, plural, one {{folders} folder(s)} other {{folders} folder(s)}}, {count, plural, one {{bytes} bytes} other {{bytes} bytes}} ({size}) (counting…)"
+  },
+  "properties.contents_label": {
+    "description": "Properties dialog: a folder's row label for what it holds. Keep it short.",
+    "message": "Contents:"
+  },
+  "properties.created": {
+    "description": "Properties dialog: a row's label, when it was made. Keep it short.",
+    "message": "Created:"
+  },
+  "properties.dialog_title": {
+    "description": "Title of the Properties dialog (Alt+Enter) of a file or folder.",
+    "message": "Properties"
+  },
+  "properties.in_archive": {
+    "description": "Note when Properties is asked for inside an archive, where the panel's columns already show all it knows.",
+    "message": "The archive's listing shows what it knows of its files."
+  },
+  "properties.kind.file": {
+    "description": "Properties dialog: the Type of a file. Keep it short.",
+    "message": "File"
+  },
+  "properties.kind.folder": {
+    "description": "Properties dialog: the Type of a folder. Keep it short.",
+    "message": "Folder"
+  },
+  "properties.kind.link": {
+    "description": "Properties dialog: the Type of a link whose target is not known. Keep it short.",
+    "message": "Link"
+  },
+  "properties.kind.link_to": {
+    "description": "Properties dialog: the Type of a link. {target} is what it points to (\"../notes.txt\").",
+    "message": "Link to {target}"
+  },
+  "properties.location": {
+    "description": "Properties dialog: a row's label, the folder the item is in. Keep it short.",
+    "message": "Location:"
+  },
+  "properties.modified": {
+    "description": "Properties dialog: a row's label, when it was last changed. Keep it short.",
+    "message": "Modified:"
+  },
+  "properties.name": {
+    "description": "Properties dialog: a row's label. Keep it short.",
+    "message": "Name:"
+  },
+  "properties.no_system_dialog": {
+    "description": "Error when this system has no properties dialog of its own to show (the app shows its own then).",
+    "message": "no system properties dialog here yet"
+  },
+  "properties.owner": {
+    "description": "Properties dialog: a row's label, the owning user and group. Keep it short.",
+    "message": "Owner / group:"
+  },
+  "properties.permissions": {
+    "description": "Properties dialog: a row's label (rwxr-xr-x). Keep it short.",
+    "message": "Permissions:"
+  },
+  "properties.size": {
+    "description": "Properties dialog: a file's size. {count} is the number of bytes, for the plural (1234); {bytes} the same written in groups (\"1 234\"); {size} the size with its unit (\"1.2 KB\").",
+    "message": "{count, plural, one {{bytes} bytes ({size})} other {{bytes} bytes ({size})}}"
+  },
+  "properties.size_label": {
+    "description": "Properties dialog: a file's row label for its size. Keep it short.",
+    "message": "Size:"
+  },
+  "properties.type": {
+    "description": "Properties dialog: a row's label (File, Folder, Link). Keep it short.",
+    "message": "Type:"
+  },
+  "rename.case": {
+    "description": "Multi-Rename Tool: the label before the capital-letter choices. Keep it short.",
+    "message": "Case:"
+  },
+  "rename.case.first": {
+    "description": "Multi-Rename Tool: a Case choice, only the name's first letter a capital. Keep it short.",
+    "message": "First letter"
+  },
+  "rename.case.lower": {
+    "description": "Multi-Rename Tool: a Case choice, all letters made small; written as it does. Keep it short.",
+    "message": "lowercase"
+  },
+  "rename.case.unchanged": {
+    "description": "Multi-Rename Tool: a Case choice, the names' letters kept as they are. Keep it short.",
+    "message": "Unchanged"
+  },
+  "rename.case.upper": {
+    "description": "Multi-Rename Tool: a Case choice, all letters made capitals; written as it does. Keep it short.",
+    "message": "UPPERCASE"
+  },
+  "rename.case.words": {
+    "description": "Multi-Rename Tool: a Case choice, each word's first letter a capital; written as it does. Keep it short.",
+    "message": "Every Word"
+  },
+  "rename.close": {
+    "description": "Multi-Rename Tool: the button that closes it. Keep it short.",
+    "message": "Close"
+  },
+  "rename.counter_start": {
+    "description": "Multi-Rename Tool: the label above the counter's first number. Keep it short.",
+    "message": "Counter start"
+  },
+  "rename.dialog_title": {
+    "description": "Title of the Multi-Rename Tool dialog (Ctrl+M), as Total Commander's.",
+    "message": "Multi-Rename Tool"
+  },
+  "rename.digits": {
+    "description": "Multi-Rename Tool: the label above the counter's number of digits. Keep it short.",
+    "message": "Digits"
+  },
+  "rename.extension": {
+    "description": "Multi-Rename Tool: the label above the extension mask field. Keep it short.",
+    "message": "Extension"
+  },
+  "rename.field.counter": {
+    "description": "Multi-Rename Tool: a button that puts [C], the counter, into the mask. Keep [C] as it is. Keep it short.",
+    "message": "[C] Counter"
+  },
+  "rename.field.date": {
+    "description": "Multi-Rename Tool: a button that puts the file's date (year, month, day) into the mask. Keep [Y][M][D] as it is. Keep it short.",
+    "message": "[Y][M][D] Date"
+  },
+  "rename.field.extension": {
+    "description": "Multi-Rename Tool: a button that puts [E], the old extension, into the mask. Keep [E] as it is. Keep it short.",
+    "message": "[E] Ext."
+  },
+  "rename.field.folder": {
+    "description": "Multi-Rename Tool: a button that puts [P], the folder's name, into the mask. Keep [P] as it is. Keep it short.",
+    "message": "[P] Folder"
+  },
+  "rename.field.name": {
+    "description": "Multi-Rename Tool: a button that puts [N], the old name, into the mask. Keep [N] as it is. Keep it short.",
+    "message": "[N] Name"
+  },
+  "rename.field.range": {
+    "description": "Multi-Rename Tool: a button that puts [N1-3], the old name's first three letters, into the mask. Keep [N1-3] as it is. Keep it short.",
+    "message": "[N1-3] Range"
+  },
+  "rename.field.time": {
+    "description": "Multi-Rename Tool: a button that puts the file's time (hours, minutes, seconds) into the mask. Keep [h][m][s] as it is. Keep it short.",
+    "message": "[h][m][s] Time"
+  },
+  "rename.first_only": {
+    "description": "Multi-Rename Tool: a checkbox for Search for, only its first match replaced. Keep it short.",
+    "message": "First only"
+  },
+  "rename.in_archive": {
+    "description": "Warning when the Multi-Rename Tool is used inside an archive.",
+    "message": "Files inside archives cannot be renamed yet."
+  },
+  "rename.mask": {
+    "description": "Multi-Rename Tool: the label above the name mask field ([N], [C]…). Keep it short.",
+    "message": "Rename mask: file name"
+  },
+  "rename.match_case": {
+    "description": "Multi-Rename Tool: a checkbox for Search for. Keep it short.",
+    "message": "Match case"
+  },
+  "rename.new_name": {
+    "description": "Multi-Rename Tool: the heading of the list's new names. Keep it short.",
+    "message": "New name"
+  },
+  "rename.not_renamed_back": {
+    "description": "Error of a failed multi-rename that could not undo all it had done. {from} is the file that failed (\"a.txt\"); {err} the system's error; {names} the files left renamed, as \"b.txt (was a.txt)\", separated by commas.",
+    "message": "{from}: {err}; not renamed back: {names}"
+  },
+  "rename.not_utf8": {
+    "description": "Warning when some chosen names cannot be shown in the Multi-Rename Tool.",
+    "message": "Names that are not UTF-8 are left out."
+  },
+  "rename.old_name": {
+    "description": "Multi-Rename Tool: the heading of the list's old names. Keep it short.",
+    "message": "Old name"
+  },
+  "rename.problem.bad_character": {
+    "description": "Multi-Rename Tool: after a new name in the list, in brackets, when it has a slash or another character file names cannot have. Keep it short.",
+    "message": "a character names cannot have"
+  },
+  "rename.problem.exists": {
+    "description": "Multi-Rename Tool: after a new name in the list, in brackets, when another file in the folder has it. Keep it short.",
+    "message": "exists already"
+  },
+  "rename.problem.no_name": {
+    "description": "Multi-Rename Tool: after a new name in the list, in brackets, when it is empty. Keep it short.",
+    "message": "no name"
+  },
+  "rename.problem.twice": {
+    "description": "Multi-Rename Tool: after a new name in the list, in brackets, when two files would get it. Keep it short.",
+    "message": "twice in the list"
+  },
+  "rename.regex": {
+    "description": "Multi-Rename Tool: a checkbox for Search for, the text is a regular expression. Keep it short.",
+    "message": "Regular expression"
+  },
+  "rename.regex_error": {
+    "description": "Multi-Rename Tool: shown in the list when the search text is not a valid regular expression. {err} is the regex library's own explanation (in English).",
+    "message": "The regular expression: {err}"
+  },
+  "rename.replace": {
+    "description": "Multi-Rename Tool: the label above what the found text is replaced with. Keep it short.",
+    "message": "Replace with"
+  },
+  "rename.search": {
+    "description": "Multi-Rename Tool: the label above the text to search for in the names. Keep it short.",
+    "message": "Search for"
+  },
+  "rename.start": {
+    "description": "Multi-Rename Tool: the button that renames, as Total Commander's. Keep it short.",
+    "message": "Start!"
+  },
+  "rename.status.failed": {
+    "description": "Multi-Rename Tool: the status line when renaming failed and what was done was undone. {err} is the error (\"a.txt: Permission denied\").",
+    "message": "Nothing renamed: {err}"
+  },
+  "rename.status.ready": {
+    "description": "Multi-Rename Tool: the status line before renaming; Start is the button \"Start!\".",
+    "message": "Start renames them."
+  },
+  "rename.status.renamed": {
+    "description": "Multi-Rename Tool: the status line after renaming. {count} is how many files were renamed (12).",
+    "message": "{count, plural, one {Renamed #.} other {Renamed #.}}"
+  },
+  "rename.status.took_back": {
+    "description": "Multi-Rename Tool: the status line after Undo. {count} is how many files got their old names back (12).",
+    "message": "{count, plural, one {Took back #.} other {Took back #.}}"
+  },
+  "rename.step": {
+    "description": "Multi-Rename Tool: the label above the counter's step. Keep it short.",
+    "message": "Step"
+  },
+  "rename.undo": {
+    "description": "Multi-Rename Tool: the button that gives the files their old names back. Keep it short.",
+    "message": "Undo"
+  },
+  "rename.was": {
+    "description": "One of the files a failed multi-rename could not give back its name: {to} its name now (\"b.txt\"), {from} its old one (\"a.txt\").",
+    "message": "{to} (was {from})"
+  },
+  "rename.with_extension": {
+    "description": "Multi-Rename Tool: a checkbox for Search for, the extension searched too. Keep it short.",
+    "message": "With extension"
+  },
+  "split.bad_size": {
+    "description": "Error when the Split File dialog's part size cannot be read. {size} is what was typed (\"ten\"); the examples after the colon are what it understands, keep them as they are.",
+    "message": "\"{size}\" is no size: 100 MB, 1.5 GB, 650m"
+  },
+  "split.choose": {
+    "description": "Warning when Files › Split File is used without the cursor on a file.",
+    "message": "Put the cursor on the file to split."
+  },
+  "split.combine.choose": {
+    "description": "Warning when Files › Combine Files is used without the cursor on a split part or .crc file.",
+    "message": "Put the cursor on a part (name.001) or on its .crc file."
+  },
+  "split.combine.dialog_title": {
+    "description": "Title of the Files › Combine Files dialog.",
+    "message": "Combine files"
+  },
+  "split.combine.label": {
+    "description": "Combine Files dialog: the label above the whole file's path.",
+    "message": "Combine the parts into the file:"
+  },
+  "split.combine.title": {
+    "description": "Title of the job that joins split parts into the whole file, in the operation queue. {name} is the whole file's name (\"movie.mkv\").",
+    "message": "Combine \"{name}\""
+  },
+  "split.combined_no_crc": {
+    "description": "Note of a finished Combine job that had no .crc file to check the result with. {count} is how many parts were joined (4).",
+    "message": "{count, plural, one {# parts combined, no CRC file to check} other {# parts combined, no CRC file to check}}"
+  },
+  "split.crc_mismatch": {
+    "description": "Error of a Combine job whose result differs from what the .crc file says. {target} is the joined file's path (\"/home/me/movie.mkv\"); {file} the .crc file's path.",
+    "message": "{target} does not match {file}: a part is missing or damaged"
+  },
+  "split.crc_names_no_file": {
+    "description": "Error when the .crc file beside split parts does not say which file they make.",
+    "message": "the CRC file names no file"
+  },
+  "split.crc_unreadable": {
+    "description": "Error of a Combine job: the parts were joined but their .crc file could not be read. {file} is its path (\"/home/me/movie.crc\"); {err} the system's error.",
+    "message": "combined, but {file} could not be read: {err}"
+  },
+  "split.dialog_title": {
+    "description": "Title of the Files › Split File dialog.",
+    "message": "Split file"
+  },
+  "split.label": {
+    "description": "Split File dialog: the label above the folder the parts go into. {name} is the file's name (\"movie.mkv\").",
+    "message": "Split \"{name}\" into parts in the folder:"
+  },
+  "split.part_missing": {
+    "description": "Error when combining finds no first part. {path} is the part's path (\"/home/me/movie.mkv.001\").",
+    "message": "{path} is missing"
+  },
+  "split.part_size": {
+    "description": "Split File dialog: the label before the size of each part. Keep it short.",
+    "message": "Part size:"
+  },
+  "split.title": {
+    "description": "Title of the job that splits a file into parts, in the operation queue. {name} is the file's name (\"movie.mkv\").",
+    "message": "Split \"{name}\""
+  },
+  "transfer.answer.cancel": {
+    "description": "A button of the file-exists and error questions: stop the whole job. Keep it short.",
+    "message": "Cancel"
+  },
+  "transfer.answer.elevate": {
+    "description": "A button of the error question when permission is denied: do it as administrator, the system asking for the password. Keep it short.",
+    "message": "As administrator"
+  },
+  "transfer.answer.overwrite": {
+    "description": "A button of the file-exists question: overwrite this file. Keep it short.",
+    "message": "Overwrite"
+  },
+  "transfer.answer.overwrite_all": {
+    "description": "A button of the file-exists question: overwrite this and all the others. Keep it short.",
+    "message": "Overwrite all"
+  },
+  "transfer.answer.rename": {
+    "description": "A button of the file-exists question: copy this one under a free name (\"a (2).txt\"). Keep it short.",
+    "message": "Rename"
+  },
+  "transfer.answer.retry": {
+    "description": "A button of the error question during a copy: try again. Keep it short.",
+    "message": "Retry"
+  },
+  "transfer.answer.skip": {
+    "description": "A button of the file-exists and error questions: leave this file out. Keep it short.",
+    "message": "Skip"
+  },
+  "transfer.answer.skip_all": {
+    "description": "A button of the file-exists and error questions: leave out this and all the others alike. Keep it short.",
+    "message": "Skip all"
+  },
+  "transfer.archive.local_only": {
+    "description": "Warning when files from a server are copied or moved into an archive.",
+    "message": "Only this computer's files go into an archive: copy them here first."
+  },
+  "transfer.cancel": {
+    "description": "F5/F6 dialog's Cancel button.",
+    "message": "Cancel"
+  },
+  "transfer.error.elevate_hint": {
+    "description": "The error question when permission was denied: explains the As administrator button. Shown under the path and the error.",
+    "message": "As administrator: this and what else is refused, once the rest is done, asking for the password once."
+  },
+  "transfer.error.title": {
+    "description": "Title of the question when copying or moving a file failed.",
+    "message": "Error"
+  },
+  "transfer.exists.describe": {
+    "description": "A file in the file-exists question. {count} is its size in bytes, for the plural (1234); {size} the same, written in groups (\"1 234\"); {time} when it was changed (\"2026-11-10 14:04:33\").",
+    "message": "{count, plural, one {{size} bytes, {time}} other {{size} bytes, {time}}}"
+  },
+  "transfer.exists.text": {
+    "description": "The question when a copied file is already in the target, under the target's path. {existing} and {new} describe the file there and the one copied (\"1 234 bytes, 2026-11-10 14:04:33\").",
+    "message": "There already: {existing}\nThe new one: {new}"
+  },
+  "transfer.exists.title": {
+    "description": "Title of the question when a copied file is already in the target.",
+    "message": "File exists"
+  },
+  "transfer.extract_failed": {
+    "description": "Error when the files copied or moved out of an archive could not be unpacked first. {err} is the error (\"7-Zip failed (exit status: 2)\").",
+    "message": "Could not take them out: {err}"
+  },
+  "transfer.into_archive.question_many": {
+    "description": "The question before copying or moving several entries into an archive. {kind} is copy or move (keep the select's choices, translate the words in braces); {count} how many (3); {into} the archive and the folder in it (\"backup.zip/docs\").",
+    "message": "{kind, select, copy {Copy} other {Move}} {count, plural, one {# item} other {# items}} into {into}? What has their names there is replaced."
+  },
+  "transfer.into_archive.question_one": {
+    "description": "The question before copying or moving a file into an archive. {kind} is copy or move (keep the select's choices, translate the words in braces); {name} the file or folder name (\"notes.txt\"); {into} the archive and the folder in it (\"backup.zip/docs\").",
+    "message": "{kind, select, copy {Copy} other {Move}} \"{name}\" into {into}? What has their names there is replaced."
+  },
+  "transfer.into_archive.title_many": {
+    "description": "Title of the queue job copying or moving several entries into an archive. {kind} is copy or move (keep the select's choices, translate the words in braces); {count} how many (3); {archive} the archive's name (\"backup.zip\").",
+    "message": "{kind, select, copy {Copy} other {Move}} {count, plural, one {# item} other {# items}} into {archive}"
+  },
+  "transfer.into_archive.title_one": {
+    "description": "Title of the queue job copying or moving a file into an archive. {kind} is copy or move (keep the select's choices, translate the words in braces); {name} the file or folder name (\"notes.txt\"); {archive} the archive's name (\"backup.zip\").",
+    "message": "{kind, select, copy {Copy} other {Move}} \"{name}\" into {archive}"
+  },
+  "transfer.label.many": {
+    "description": "F5/F6 dialog: the label above the target folder. {kind} is copy or move (keep the select's choices, translate the words in braces); {count} how many are chosen (3).",
+    "message": "{kind, select, copy {Copy} other {Move}} {count, plural, one {# item} other {# items}} to:"
+  },
+  "transfer.label.many_server": {
+    "description": "F5/F6 dialog, to a server: the label above the target folder. {kind} is copy or move (keep the select's choices, translate the words in braces); {count} how many are chosen (3); {server} the server's address (\"sftp://me@host\").",
+    "message": "{kind, select, copy {Copy} other {Move}} {count, plural, one {# item} other {# items}} to {server}:"
+  },
+  "transfer.label.one": {
+    "description": "F5/F6 dialog: the label above the target path. {kind} is copy or move (keep the select's choices, translate the words in braces); {name} the file or folder name (\"notes.txt\").",
+    "message": "{kind, select, copy {Copy} other {Move}} \"{name}\" to:"
+  },
+  "transfer.label.one_server": {
+    "description": "F5/F6 dialog, to a server: the label above the target path. {kind} is copy or move (keep the select's choices, translate the words in braces); {name} the file or folder name (\"notes.txt\"); {server} the server's address (\"sftp://me@host\").",
+    "message": "{kind, select, copy {Copy} other {Move}} \"{name}\" to {server}:"
+  },
+  "transfer.ok": {
+    "description": "F5/F6 dialog's OK button.",
+    "message": "OK"
+  },
+  "transfer.overwrite.all": {
+    "description": "F5/F6 dialog: a choice for files already in the target, overwrite them all. Keep it short.",
+    "message": "Overwrite all"
+  },
+  "transfer.overwrite.ask": {
+    "description": "F5/F6 dialog: a choice for files already in the target, ask each time. Keep it short.",
+    "message": "Ask"
+  },
+  "transfer.overwrite.label": {
+    "description": "F5/F6 dialog: the heading of the choices what to do with files already in the target.",
+    "message": "Where the target has a file of the same name:"
+  },
+  "transfer.overwrite.older": {
+    "description": "F5/F6 dialog: a choice for files already in the target, overwrite only those older than the copied one. Keep it short.",
+    "message": "Overwrite older"
+  },
+  "transfer.overwrite.rename": {
+    "description": "F5/F6 dialog: a choice for files already in the target, the copy gets a free name (\"a (2).txt\"). Keep it short.",
+    "message": "Rename the copies"
+  },
+  "transfer.overwrite.skip": {
+    "description": "F5/F6 dialog: a choice for files already in the target, leave them all and skip those copies. Keep it short.",
+    "message": "Skip all"
+  },
+  "transfer.remove_moved": {
+    "description": "Title of the queue job that, after a move out of an archive, deletes the moved files from it. {name} is the archive's name (\"backup.zip\").",
+    "message": "Remove the moved from {name}"
+  },
+  "transfer.speed": {
+    "description": "A running job's speed, in the progress strip and the Operations list. {size} is a size with its unit (\"12.5 MB\"). Keep it short.",
+    "message": "{size}/s"
+  },
+  "transfer.strip.counting": {
+    "description": "The progress strip above the button bar while a copy counts what it copies. {count} is how many files so far (120). Keep it short.",
+    "message": "counting: {count, plural, one {# file(s)} other {# file(s)}}"
+  },
+  "transfer.strip.progress": {
+    "description": "The progress strip above the button bar while a job runs. {files} is how many are done (3), {count} how many in all (12), {percent} how far by bytes (25). Keep it short.",
+    "message": "{files} / {count, plural, one {# file(s)} other {# file(s)}}, {percent}%"
+  },
+  "transfer.strip.queue": {
+    "description": "The progress strip's button that shows the operation queue. Keep it short.",
+    "message": "Queue..."
+  },
+  "transfer.strip.queue_waiting": {
+    "description": "The progress strip's button that shows the operation queue, with how many jobs wait after the running one (2). Keep it short.",
+    "message": "Queue ({count, plural, one {# waiting} other {# waiting}})..."
+  },
+  "transfer.title.copy": {
+    "description": "Title and button of the F5 Copy dialog, and of the question when copying into an archive. Keep it short.",
+    "message": "Copy"
+  },
+  "transfer.title.move": {
+    "description": "Title and button of the F6 Move dialog, and of the question when moving into an archive. Keep it short.",
+    "message": "Move"
+  }
+}

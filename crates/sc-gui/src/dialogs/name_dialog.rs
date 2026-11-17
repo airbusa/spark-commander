@@ -9,14 +9,15 @@ type Done = Rc<dyn Fn(String, &mut Window, &mut App)>;
 
 /// Asks for a name; `done` gets it on OK or Enter.
 pub fn open(
-    title: &'static str,
-    label: &'static str,
+    title: impl Into<SharedString>,
+    label: impl Into<SharedString>,
     value: String,
     window: &mut Window,
     cx: &mut App,
     done: impl Fn(String, &mut Window, &mut App) + 'static,
 ) {
     let input = cx.new(|cx| InputState::new(window, cx).default_value(value));
+    let (title, label) = (title.into(), label.into());
     let view = cx.new(|_| NameDialog {
         label,
         input: input.clone(),
@@ -25,7 +26,7 @@ pub fn open(
     window.open_dialog(cx, move |dialog, _, _| {
         let ok = view.clone();
         dialog
-            .title(title)
+            .title(title.clone())
             .width(px(400.))
             .overlay_closable(false)
             .child(view.clone())
@@ -38,7 +39,7 @@ pub fn open(
 }
 
 struct NameDialog {
-    label: &'static str,
+    label: SharedString,
     input: Entity<InputState>,
     done: Done,
 }
@@ -59,7 +60,7 @@ impl Render for NameDialog {
             .child(
                 v_flex()
                     .gap_1()
-                    .child(self.label)
+                    .child(self.label.clone())
                     .child(Input::new(&self.input)),
             )
             .child(
@@ -69,7 +70,7 @@ impl Render for NameDialog {
                     .child(
                         Button::new("name-ok")
                             .primary()
-                            .label("OK")
+                            .label(sc_core::t!("name_dialog.ok"))
                             .min_w(px(80.))
                             .on_click(cx.listener(|this, _, window, cx| {
                                 this.finish(window, cx);
@@ -79,7 +80,7 @@ impl Render for NameDialog {
                     .child(
                         Button::new("name-cancel")
                             .outline()
-                            .label("Cancel")
+                            .label(sc_core::t!("name_dialog.cancel"))
                             .min_w(px(80.))
                             .on_click(|_, window, cx| window.close_dialog(cx)),
                     ),

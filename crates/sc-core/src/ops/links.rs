@@ -22,12 +22,22 @@ impl Kind {
         false => &[Kind::Symbolic, Kind::Hard],
     };
 
-    pub fn label(self) -> &'static str {
+    pub fn label(self) -> String {
         match self {
-            Kind::Symbolic => "Symbolic link",
-            Kind::Hard => "Hard link",
-            Kind::Junction => "Junction",
-            Kind::Shortcut => "Shortcut (.lnk)",
+            Kind::Symbolic => crate::t!("ops.link.kind.symbolic"),
+            Kind::Hard => crate::t!("ops.link.kind.hard"),
+            Kind::Junction => crate::t!("ops.link.kind.junction"),
+            Kind::Shortcut => crate::t!("ops.link.kind.shortcut"),
+        }
+    }
+
+    /// Its choice in the messages' selects.
+    pub fn id(self) -> &'static str {
+        match self {
+            Kind::Symbolic => "symbolic",
+            Kind::Hard => "hard",
+            Kind::Junction => "junction",
+            Kind::Shortcut => "shortcut",
         }
     }
 
@@ -67,13 +77,13 @@ pub fn make_all(kind: Kind, items: &[(PathBuf, PathBuf)]) -> (Vec<PathBuf>, io::
 /// those not made.
 pub fn create(kind: Kind, items: &[(PathBuf, PathBuf)]) -> Result<(), (io::Error, Vec<(PathBuf, PathBuf)>)> {
     let title = match items {
-        [(target, link)] => format!(
-            "{} to \"{}\" in {}",
-            kind.label(),
-            target.file_name().unwrap_or_default().to_string_lossy(),
-            link.parent().unwrap_or(Path::new("")).display()
+        [(target, link)] => crate::t!(
+            "ops.link.title_one",
+            kind = kind.id(),
+            name = target.file_name().unwrap_or_default().to_string_lossy(),
+            folder = link.parent().unwrap_or(Path::new("")).display()
         ),
-        _ => format!("{}s to {} items in {}", kind.label(), items.len(), items[0].1.parent().unwrap_or(Path::new("")).display()),
+        _ => crate::t!("ops.link.title_many", kind = kind.id(), count = items.len(), folder = items[0].1.parent().unwrap_or(Path::new("")).display()),
     };
     let (made, done) = make_all(kind, items);
     crate::activity::note(&title, &done);
@@ -92,7 +102,7 @@ mod platform {
         match kind {
             Kind::Hard => std::fs::hard_link(target, link),
             Kind::Symbolic => std::os::unix::fs::symlink(target, link),
-            _ => Err(io::Error::new(io::ErrorKind::Unsupported, "junctions and shortcuts are Windows'")),
+            _ => Err(io::Error::new(io::ErrorKind::Unsupported, crate::t!("ops.link.windows_only"))),
         }
     }
 }
@@ -117,7 +127,7 @@ mod platform {
                     false => std::os::windows::fs::symlink_file(target, link),
                 };
                 made.map_err(|err| match err.raw_os_error() {
-                    Some(NOT_HELD) => io::Error::new(io::ErrorKind::PermissionDenied, "symbolic links need an administrator, or Developer Mode"),
+                    Some(NOT_HELD) => io::Error::new(io::ErrorKind::PermissionDenied, crate::t!("ops.link.needs_admin")),
                     _ => err,
                 })
             }
@@ -125,7 +135,7 @@ mod platform {
             Kind::Shortcut => {
                 let (target, link) = (target.to_owned(), link.to_owned());
                 // Its own thread: COM as the shell wants it, whatever the caller's.
-                std::thread::spawn(move || shortcut(&target, &link)).join().map_err(|_| io::Error::other("the shortcut's thread failed"))?
+                std::thread::spawn(move || shortcut(&target, &link)).join().map_err(|_| io::Error::other(crate::t!("ops.link.thread_failed")))?
             }
         }
     }

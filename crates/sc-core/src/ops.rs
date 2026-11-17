@@ -123,16 +123,16 @@ pub struct Operation {
 
 impl Operation {
     pub fn title(&self) -> String {
-        let verb = match self.kind {
-            Kind::Copy => "Copy",
-            Kind::Move => "Move",
-        };
-        let what = match self.sources.as_slice() {
-            [one] => format!("\"{}\"", name(one)),
-            many => format!("{} items", many.len()),
+        let kind = match self.kind {
+            Kind::Copy => "copy",
+            Kind::Move => "move",
         };
         let (Target::Into(target) | Target::As(target)) = &self.target;
-        format!("{verb} {what} to {}", target.display())
+        let target = target.display();
+        match self.sources.as_slice() {
+            [one] => crate::t!("ops.title.one", kind = kind, name = name(one), target = target),
+            many => crate::t!("ops.title.many", kind = kind, count = many.len(), target = target),
+        }
     }
 
     fn same_fs(&self) -> bool {
@@ -292,7 +292,7 @@ impl Queue {
 
     /// Undo's move back, which Undo does not remember in its turn.
     pub fn push_reversal(&self, operation: Operation) -> u64 {
-        self.add(format!("Undo: {}", operation.title()), Work::Copy(operation, false))
+        self.add(crate::t!("ops.undo.title", what = operation.title()), Work::Copy(operation, false))
     }
 
     pub fn push_task(&self, task: Task) -> u64 {
@@ -635,11 +635,11 @@ impl Run<'_> {
         }
         // One password for all that was refused.
         if !self.refused.is_empty() {
-            self.progress.current = PathBuf::from("As administrator…");
+            self.progress.current = PathBuf::from(crate::t!("ops.as_administrator.progress"));
             self.report();
             let action = crate::system::elevate::Action::Copy { items: std::mem::take(&mut self.refused), remove: op.kind == Kind::Move };
             if let Err(err) = crate::system::elevate::run(&action) {
-                self.elevated = Some(format!("As administrator: {err}"));
+                self.elevated = Some(crate::t!("ops.as_administrator.failed", err = err));
             }
         }
         Ok(())
@@ -679,7 +679,7 @@ impl Run<'_> {
         };
         if self.op.same_fs() && into_itself {
             let into_itself =
-                |_: &mut Self| Err::<(), _>(io::Error::other("cannot be copied into itself"));
+                |_: &mut Self| Err::<(), _>(io::Error::other(crate::t!("ops.error.into_itself")));
             return self.attempt(source, into_itself).map(drop);
         }
         if meta.is_dir && !meta.is_link {
@@ -769,7 +769,7 @@ impl Run<'_> {
         let new = to.metadata(target).is_err();
         let made = self.attempt(target, |_| match to.metadata(target) {
             Ok(existing) if existing.is_dir => Ok(()),
-            Ok(_) => Err(io::Error::other("a file of this name is in the way")),
+            Ok(_) => Err(io::Error::other(crate::t!("ops.error.file_in_the_way"))),
             Err(_) => to.mkdir(target),
         })?;
         if made.is_none() {
@@ -1195,6 +1195,7 @@ mod tests {
 
     #[test]
     fn refuses_to_copy_a_folder_into_itself() {
+        crate::l10n::set_language(Some("en"));
         let dir = temp("itself");
         fs::create_dir_all(dir.join("a/b")).unwrap();
         let op = operation(

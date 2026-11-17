@@ -86,11 +86,11 @@ pub fn parse_time(text: &str) -> Option<SystemTime> {
 /// The change on `paths`, in the queue: errors are counted and named, not fatal.
 pub fn task(fs: Arc<dyn Fs>, paths: Vec<PathBuf>, change: Change) -> Task {
     let title = match paths.as_slice() {
-        [one] => format!(
-            "Change attributes of \"{}\"",
-            one.file_name().unwrap_or_default().display()
+        [one] => crate::t!(
+            "attributes.title_one",
+            name = one.file_name().unwrap_or_default().display()
         ),
-        many => format!("Change attributes of {} items", many.len()),
+        many => crate::t!("attributes.title_many", count = many.len()),
     };
     Task {
         title,
@@ -154,9 +154,9 @@ fn apply(
 
 /// What a task did, naming the first few failures.
 pub(crate) fn summary(done: u64, failed: &[String]) -> String {
-    let mut text = format!("{done} changed");
+    let mut text = crate::t!("attributes.changed", count = done);
     if !failed.is_empty() {
-        text += &format!(", {} failed", failed.len());
+        text = crate::t!("attributes.changed_failed", count = done, failed = failed.len());
         for line in failed.iter().take(5) {
             text += &format!("\n{line}");
         }

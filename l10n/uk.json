@@ -1,0 +1,4823 @@
+{
+  "about.addons": {
+    "message": "Доповнення, що завантажуються на ваш вибір"
+  },
+  "about.libraries": {
+    "message": "Створено на основі"
+  },
+  "about.licence": {
+    "message": "Ліцензія:"
+  },
+  "about.made_with": {
+    "message": "Створено завдяки праці цих проєктів"
+  },
+  "about.part.alacritty_terminal": {
+    "message": "Екран і оболонка вбудованого термінала"
+  },
+  "about.part.encoding_rs": {
+    "message": "Кодові сторінки"
+  },
+  "about.part.gpui": {
+    "message": "Вікно, малювання та введення (від Zed)"
+  },
+  "about.part.gpui_kit": {
+    "message": "Елементи керування: списки, меню, поля, редактор"
+  },
+  "about.part.html5ever": {
+    "message": "HTML та електронні книги в переглядачі"
+  },
+  "about.part.image": {
+    "message": "Зображення"
+  },
+  "about.part.keyring": {
+    "message": "Паролі в системному сховищі ключів"
+  },
+  "about.part.lucide": {
+    "message": "Значки"
+  },
+  "about.part.material_icons": {
+    "message": "Значки файлів і тек"
+  },
+  "about.part.pdfium_render": {
+    "message": "PDFium із Rust"
+  },
+  "about.part.ratatui": {
+    "message": "scmd, версія для термінала"
+  },
+  "about.part.russh": {
+    "message": "SSH і SFTP"
+  },
+  "about.part.rustls": {
+    "message": "TLS"
+  },
+  "about.part.serde": {
+    "message": "Файли параметрів"
+  },
+  "about.part.similar": {
+    "message": "Порівняти за вмістом"
+  },
+  "about.part.suppaftp": {
+    "message": "FTP і FTPS"
+  },
+  "about.part.tokio": {
+    "message": "Мережеві операції у фоні"
+  },
+  "about.part.trash": {
+    "message": "Смітник"
+  },
+  "about.part.tree_sitter": {
+    "message": "Підсвічування коду в переглядачі та редакторі"
+  },
+  "about.part.zbus": {
+    "message": "D-Bus: стільниця, пристрої, KDE Connect"
+  },
+  "about.shipped": {
+    "message": "Постачається разом із програмою"
+  },
+  "about.tagline": {
+    "message": "Двопанельний файловий менеджер, вільне програмне забезпечення."
+  },
+  "about.title": {
+    "message": "Про Spark Commander"
+  },
+  "about.version": {
+    "message": "Версія {version}"
+  },
+  "activity.clear": {
+    "message": "Очистити"
+  },
+  "activity.clear_failed": {
+    "message": "Не вдалося очистити журнал: {err}"
+  },
+  "activity.empty": {
+    "message": "Поки що нічого не зроблено."
+  },
+  "activity.title": {
+    "message": "Журнал дій"
+  },
+  "addons.error.damaged": {
+    "message": "завантажений файл пошкоджено: контрольна сума не збігається"
+  },
+  "addons.error.list": {
+    "message": "список доповнень: {err}"
+  },
+  "addons.error.missing_file": {
+    "message": "у завантаженні немає {file}"
+  },
+  "addons.error.no_folder": {
+    "message": "немає теки для даних"
+  },
+  "addons.error.unpacking": {
+    "message": "розпакування: {err}"
+  },
+  "addons.installed": {
+    "message": "{addon} {version} встановлено."
+  },
+  "addons.megabytes": {
+    "message": "{size} МБ"
+  },
+  "addons.offer.never": {
+    "message": "Більше не показувати"
+  },
+  "addons.offer.no": {
+    "message": "Ні"
+  },
+  "addons.offer.text": {
+    "message": "Для {name} потрібне доповнення, яке не встановлено: {addon}. Завантажити його в розділі «Параметри > Доповнення»?"
+  },
+  "addons.offer.title": {
+    "message": "Доповнення"
+  },
+  "addons.offer.yes": {
+    "message": "Так"
+  },
+  "addons.purpose.cloud": {
+    "message": "Онлайн-сховища: S3, Google Drive, OneDrive, Dropbox та інші сервіси."
+  },
+  "addons.purpose.media": {
+    "message": "Відео і звук, а також фото HEIC і AVIF: їх показують переглядач і швидкий перегляд."
+  },
+  "addons.purpose.office": {
+    "message": "Офісні документи: переглядач показує файли Word, Excel і PowerPoint як PDF."
+  },
+  "addons.purpose.pdfium": {
+    "message": "PDF: переглядач показує файли PDF, а також офісні документи після перетворення."
+  },
+  "addons.purpose.seven_zip": {
+    "message": "Архіви: пакує й розпаковує 7z, zip, rar, tar та інші."
+  },
+  "addons.update": {
+    "message": "Оновити"
+  },
+  "addons.updates": {
+    "message": "Оновлення доповнень: {names}"
+  },
+  "appearance.dark": {
+    "message": "Темний"
+  },
+  "appearance.light": {
+    "message": "Світлий"
+  },
+  "appearance.system": {
+    "message": "Як у системі"
+  },
+  "archive.cannot_read": {
+    "message": "{name}: не вдається прочитати"
+  },
+  "archive.not_in_archive": {
+    "message": "{name} немає в архіві"
+  },
+  "archive.not_own_folder": {
+    "message": "{folder} не є власною текою цього користувача"
+  },
+  "archive.seven_zip_failed": {
+    "message": "Помилка 7-Zip ({code})"
+  },
+  "archive.seven_zip_missing": {
+    "message": "Немає 7-Zip: {path} (запустіть vendor/7zip/fetch.sh або fetch.bat)"
+  },
+  "archive.temp_not_utf8": {
+    "message": "назва тимчасової теки не в UTF-8"
+  },
+  "associations.add": {
+    "message": "Додати..."
+  },
+  "associations.cancel": {
+    "message": "Скасувати"
+  },
+  "associations.close": {
+    "message": "Закрити"
+  },
+  "associations.column.edit": {
+    "message": "Редагувати (F4)"
+  },
+  "associations.column.files": {
+    "message": "Файли"
+  },
+  "associations.column.open": {
+    "message": "Відкрити (Enter)"
+  },
+  "associations.column.view": {
+    "message": "Перегляд (F3)"
+  },
+  "associations.edit": {
+    "message": "Змінити..."
+  },
+  "associations.edit_dialog.title": {
+    "message": "Асоціювати"
+  },
+  "associations.empty": {
+    "message": "Поки що немає."
+  },
+  "associations.field.edit": {
+    "message": "Редагувати в (F4):"
+  },
+  "associations.field.files": {
+    "message": "Файли (*.jpg *.png):"
+  },
+  "associations.field.open": {
+    "message": "Відкривати в (Enter):"
+  },
+  "associations.field.view": {
+    "message": "Переглядати в (F3):"
+  },
+  "associations.intro": {
+    "message": "Enter, F3 і F4 запускають ці програми для файлів за маскою; порожнє поле — як зазвичай. %1 — це файл."
+  },
+  "associations.mask_needed": {
+    "message": "Потрібна маска файлів: *.txt"
+  },
+  "associations.no_file": {
+    "message": "Поставте курсор на файл того типу, який треба асоціювати."
+  },
+  "associations.ok": {
+    "message": "OK"
+  },
+  "associations.remove": {
+    "message": "Вилучити"
+  },
+  "associations.save_failed": {
+    "message": "Не вдалося зберегти параметри: {err}"
+  },
+  "associations.title": {
+    "message": "Внутрішні асоціації"
+  },
+  "attributes.bad_time": {
+    "message": "«{text}» — це не дата й час: 2026-11-10 14:04:33"
+  },
+  "attributes.cancel": {
+    "message": "Скасувати"
+  },
+  "attributes.change_time": {
+    "message": "Змінити дату/час:"
+  },
+  "attributes.changed": {
+    "message": "{count, plural, one {Змінено: #} few {Змінено: #} many {Змінено: #} other {Змінено: #}}"
+  },
+  "attributes.changed_failed": {
+    "message": "{count, plural, one {Змінено: #} few {Змінено: #} many {Змінено: #} other {Змінено: #}}, {failed, plural, one {не вдалося: #} few {не вдалося: #} many {не вдалося: #} other {не вдалося: #}}"
+  },
+  "attributes.dialog_title_many": {
+    "message": "Змінити атрибути: {count, plural, one {# елемент} few {# елементи} many {# елементів} other {# елемента}}"
+  },
+  "attributes.dialog_title_one": {
+    "message": "Змінити атрибути: {name}"
+  },
+  "attributes.execute": {
+    "message": "Виконання"
+  },
+  "attributes.group": {
+    "message": "Група"
+  },
+  "attributes.in_archive": {
+    "message": "Атрибути всередині архівів змінити не можна."
+  },
+  "attributes.no_bits": {
+    "message": "Ці файли тут не мають прав доступу; змінити можна лише дату."
+  },
+  "attributes.now": {
+    "message": "Зараз"
+  },
+  "attributes.octal": {
+    "message": "Вісімкове:"
+  },
+  "attributes.ok": {
+    "message": "OK"
+  },
+  "attributes.others": {
+    "message": "Інші"
+  },
+  "attributes.owner": {
+    "message": "Власник"
+  },
+  "attributes.read": {
+    "message": "Читання"
+  },
+  "attributes.recurse": {
+    "message": "Також увесь вміст тек"
+  },
+  "attributes.title_many": {
+    "message": "Зміна атрибутів {count, plural, one {# елемента} few {# елементів} many {# елементів} other {# елемента}}"
+  },
+  "attributes.title_one": {
+    "message": "Зміна атрибутів «{name}»"
+  },
+  "attributes.write": {
+    "message": "Запис"
+  },
+  "bookmarks.add_current": {
+    "message": "Додати поточну теку"
+  },
+  "bookmarks.add_folders": {
+    "message": "Додати теки..."
+  },
+  "bookmarks.added": {
+    "message": "Додано до закладок: {name}"
+  },
+  "bookmarks.already": {
+    "message": "{name} уже є в закладках."
+  },
+  "bookmarks.chooser.failed": {
+    "message": "Не вдалося відкрити вікно вибору теки: {err}"
+  },
+  "bookmarks.chooser.prompt": {
+    "message": "Додати"
+  },
+  "bookmarks.close": {
+    "message": "Закрити"
+  },
+  "bookmarks.copy_name": {
+    "message": "Копіювати назву"
+  },
+  "bookmarks.copy_path": {
+    "message": "Копіювати шлях"
+  },
+  "bookmarks.drop_here": {
+    "message": "Перетягніть теки сюди."
+  },
+  "bookmarks.empty": {
+    "message": "Немає закладок: додайте теки або перетягніть їх сюди."
+  },
+  "bookmarks.intro": {
+    "message": "Теки цього комп’ютера в порядку розділу «Місця»: перетягніть теку, щоб змінити її місце, або перетягніть сюди нові теки, щоб додати їх."
+  },
+  "bookmarks.move_down": {
+    "message": "Перемістити вниз"
+  },
+  "bookmarks.move_up": {
+    "message": "Перемістити вгору"
+  },
+  "bookmarks.only_local": {
+    "message": "До закладок можна додавати лише теки цього комп’ютера."
+  },
+  "bookmarks.remove": {
+    "message": "Вилучити"
+  },
+  "bookmarks.remove_from": {
+    "message": "Вилучити із закладок"
+  },
+  "bookmarks.rename": {
+    "message": "Перейменувати..."
+  },
+  "bookmarks.rename_label": {
+    "message": "Назва (порожня — як у теки):"
+  },
+  "bookmarks.rename_title": {
+    "message": "Перейменувати закладку"
+  },
+  "bookmarks.sort": {
+    "message": "Сортувати А–Я"
+  },
+  "bookmarks.title": {
+    "message": "Закладки"
+  },
+  "button_bar.copy": {
+    "message": "Копіювати"
+  },
+  "button_bar.delete": {
+    "message": "Видалити"
+  },
+  "button_bar.edit": {
+    "message": "Правка"
+  },
+  "button_bar.move": {
+    "message": "Перемістити"
+  },
+  "button_bar.new_folder": {
+    "message": "Нова тека"
+  },
+  "button_bar.quit": {
+    "message": "Вихід"
+  },
+  "button_bar.view": {
+    "message": "Перегляд"
+  },
+  "checksum.create.title": {
+    "message": "Створення {name}"
+  },
+  "checksum.create.title_separate": {
+    "message": "Створення файлів контрольних сум {method}"
+  },
+  "checksum.dialog_title": {
+    "message": "Створити файли контрольних сум"
+  },
+  "checksum.save_as": {
+    "message": "Зберегти файл контрольної суми як:"
+  },
+  "checksum.separate": {
+    "message": "Натомість окремий файл контрольної суми поруч із кожним файлом"
+  },
+  "checksum.verify.all_ok": {
+    "message": "{count, plural, one {Усе гаразд: # файл} few {Усе гаразд: # файли} many {Усе гаразд: # файлів} other {Усе гаразд: # файлу}}"
+  },
+  "checksum.verify.choose": {
+    "message": "Виберіть файли контрольних сум: .sfv, .md5, .sha1, .sha256 або .sha512."
+  },
+  "checksum.verify.missing_file": {
+    "message": "відсутній: {name}"
+  },
+  "checksum.verify.result": {
+    "message": "{ok, plural, one {# у порядку} few {# у порядку} many {# у порядку} other {# у порядку}}, {wrong, plural, one {# не збігається} few {# не збігаються} many {# не збігаються} other {# не збігається}}, {missing, plural, one {# відсутній} few {# відсутні} many {# відсутні} other {# відсутні}}"
+  },
+  "checksum.verify.title_many": {
+    "message": "Перевірка {count, plural, one {# файлу контрольних сум} few {# файлів контрольних сум} many {# файлів контрольних сум} other {# файлу контрольних сум}}"
+  },
+  "checksum.verify.title_one": {
+    "message": "Перевірка {name}"
+  },
+  "checksum.verify.wrong_file": {
+    "message": "не збігається: {name}"
+  },
+  "command.about": {
+    "message": "Про Spark Commander"
+  },
+  "command.activity_log": {
+    "message": "Журнал дій..."
+  },
+  "command.all_files": {
+    "message": "Усі файли"
+  },
+  "command.all_folder_sizes": {
+    "message": "Обчислити розміри всіх тек"
+  },
+  "command.all_with_extension": {
+    "message": "*.*"
+  },
+  "command.associate_with": {
+    "message": "Асоціювати з..."
+  },
+  "command.bookmark_folder": {
+    "message": "Додати цю теку в закладки"
+  },
+  "command.bookmarks": {
+    "message": "Закладки"
+  },
+  "command.branch_view": {
+    "message": "Вигляд гілки (з підтеками)"
+  },
+  "command.branch_view_selected": {
+    "message": "Вигляд гілки виділених тек"
+  },
+  "command.brief": {
+    "message": "Короткий"
+  },
+  "command.calculate_occupied_space": {
+    "message": "Обчислити зайняте місце..."
+  },
+  "command.change_attributes": {
+    "message": "Змінити атрибути..."
+  },
+  "command.close_all_tabs": {
+    "message": "Закрити всі вкладки"
+  },
+  "command.close_duplicate_tabs": {
+    "message": "Закрити дублікати вкладок"
+  },
+  "command.close_tab": {
+    "message": "Закрити вкладку"
+  },
+  "command.combine_files": {
+    "message": "Об’єднати файли..."
+  },
+  "command.compare_by_content": {
+    "message": "Порівняти за вмістом..."
+  },
+  "command.compare_directories": {
+    "message": "Виділити новіші"
+  },
+  "command.copy": {
+    "message": "Копіювати..."
+  },
+  "command.copy_names_to_clipboard": {
+    "message": "Копіювати виділені імена в буфер обміну"
+  },
+  "command.copy_names_with_path_to_clipboard": {
+    "message": "Копіювати імена зі шляхом у буфер обміну"
+  },
+  "command.copy_to_clipboard": {
+    "message": "Копіювати файли"
+  },
+  "command.copy_with_all_details": {
+    "message": "Копіювати в буфер обміну з усіма даними"
+  },
+  "command.copy_with_path_and_details": {
+    "message": "Копіювати в буфер обміну зі шляхом і даними"
+  },
+  "command.create_checksum_files": {
+    "message": "Створити файл(и) контрольних сум (CRC32, MD5, SHA1, SHA256, SHA512)..."
+  },
+  "command.create_link": {
+    "message": "Створити посилання..."
+  },
+  "command.custom_filter": {
+    "message": "Власний..."
+  },
+  "command.cut_to_clipboard": {
+    "message": "Вирізати файли"
+  },
+  "command.delete": {
+    "message": "Видалити"
+  },
+  "command.delete_permanently": {
+    "message": "Видалити остаточно"
+  },
+  "command.disconnect": {
+    "message": "Від’єднатися від сервера"
+  },
+  "command.download_link": {
+    "message": "Завантажити за посиланням..."
+  },
+  "command.duplicate_tab": {
+    "message": "Нова вкладка"
+  },
+  "command.duplicate_workspace": {
+    "message": "Дублювати робочий простір..."
+  },
+  "command.edit": {
+    "message": "Редагувати"
+  },
+  "command.edit_externally": {
+    "message": "Редагувати в зовнішньому редакторі"
+  },
+  "command.folder_history": {
+    "message": "Історія тек..."
+  },
+  "command.full": {
+    "message": "Повний"
+  },
+  "command.go_back": {
+    "message": "Назад"
+  },
+  "command.go_forward": {
+    "message": "Уперед"
+  },
+  "command.go_home": {
+    "message": "Домашня тека"
+  },
+  "command.go_to_root": {
+    "message": "Коренева тека"
+  },
+  "command.hidden_files": {
+    "message": "Приховані файли"
+  },
+  "command.internal_associations": {
+    "message": "Внутрішні асоціації (лише Spark Commander)..."
+  },
+  "command.invert_selection": {
+    "message": "Інвертувати виділення"
+  },
+  "command.left_drives": {
+    "message": "Диски (ліва панель)"
+  },
+  "command.list_tabs": {
+    "message": "Список вкладок"
+  },
+  "command.load_selection_from_file": {
+    "message": "Завантажити виділення з файлу"
+  },
+  "command.manage_bookmarks": {
+    "message": "Керувати закладками..."
+  },
+  "command.manage_tools": {
+    "message": "Керувати інструментами..."
+  },
+  "command.manage_workspaces": {
+    "message": "Керувати робочими просторами..."
+  },
+  "command.mark_in_place": {
+    "message": "Виділити / зняти виділення на місці, з розміром теки"
+  },
+  "command.mark_newer_hide_same": {
+    "message": "Виділити новіші, приховати однакові файли"
+  },
+  "command.move": {
+    "message": "Перемістити..."
+  },
+  "command.multi_rename_tool": {
+    "message": "Групове перейменування..."
+  },
+  "command.name_to_command_line": {
+    "message": "Ім’я в командний рядок"
+  },
+  "command.new_folder": {
+    "message": "Нова тека..."
+  },
+  "command.new_terminal": {
+    "message": "Нова вкладка термінала"
+  },
+  "command.new_text_file": {
+    "message": "Новий файл..."
+  },
+  "command.new_workspace": {
+    "message": "Новий робочий простір..."
+  },
+  "command.next_tab": {
+    "message": "Наступна вкладка"
+  },
+  "command.only_selected_files": {
+    "message": "Лише виділені файли"
+  },
+  "command.open_in_left_panel": {
+    "message": "Показати в лівій панелі"
+  },
+  "command.open_in_new_tab": {
+    "message": "Відкрити теку в новій вкладці"
+  },
+  "command.open_in_other_new_tab": {
+    "message": "Відкрити теку в новій вкладці іншої панелі"
+  },
+  "command.open_in_right_panel": {
+    "message": "Показати в правій панелі"
+  },
+  "command.open_terminal": {
+    "message": "Відкрити термінал тут"
+  },
+  "command.operation_queue": {
+    "message": "Черга операцій..."
+  },
+  "command.pack": {
+    "message": "Запакувати..."
+  },
+  "command.paste_from_clipboard": {
+    "message": "Вставити файли"
+  },
+  "command.path_and_name_to_command_line": {
+    "message": "Шлях та ім’я в командний рядок"
+  },
+  "command.path_to_command_line": {
+    "message": "Шлях у командний рядок"
+  },
+  "command.previous_tab": {
+    "message": "Попередня вкладка"
+  },
+  "command.programs": {
+    "message": "Програми"
+  },
+  "command.properties": {
+    "message": "Властивості..."
+  },
+  "command.quick_filter": {
+    "message": "Швидкий фільтр"
+  },
+  "command.quick_open": {
+    "message": "Швидке відкриття..."
+  },
+  "command.quick_view_panel": {
+    "message": "Панель швидкого перегляду"
+  },
+  "command.quit": {
+    "message": "Вийти"
+  },
+  "command.redo": {
+    "message": "Повторити"
+  },
+  "command.rename_in_place": {
+    "message": "Перейменувати"
+  },
+  "command.reread_source": {
+    "message": "Оновити панель"
+  },
+  "command.restore_selection": {
+    "message": "Відновити виділення"
+  },
+  "command.reversed_order": {
+    "message": "Зворотний порядок"
+  },
+  "command.right_drives": {
+    "message": "Диски (права панель)"
+  },
+  "command.save_selection": {
+    "message": "Зберегти виділення"
+  },
+  "command.save_selection_to_file": {
+    "message": "Зберегти виділення у файл"
+  },
+  "command.search": {
+    "message": "Пошук..."
+  },
+  "command.search_in_separate_process": {
+    "message": "Пошук в окремому вікні..."
+  },
+  "command.select_all": {
+    "message": "Виділити все"
+  },
+  "command.select_all_with_same_extension": {
+    "message": "Виділити все з тим самим розширенням"
+  },
+  "command.select_group": {
+    "message": "Виділити групу..."
+  },
+  "command.settings": {
+    "message": "Параметри..."
+  },
+  "command.shortcuts": {
+    "message": "Сполучення клавіш..."
+  },
+  "command.sidebar_connections": {
+    "message": "Підключення"
+  },
+  "command.sidebar_operations": {
+    "message": "Операції"
+  },
+  "command.sidebar_places": {
+    "message": "Місця"
+  },
+  "command.sidebar_tree": {
+    "message": "Теки"
+  },
+  "command.sort_by_extension": {
+    "message": "Розширення"
+  },
+  "command.sort_by_name": {
+    "message": "Ім’я"
+  },
+  "command.sort_by_size": {
+    "message": "Розмір"
+  },
+  "command.sort_by_time": {
+    "message": "Час"
+  },
+  "command.split_file": {
+    "message": "Розділити файл..."
+  },
+  "command.swap_panels": {
+    "message": "Поміняти панелі місцями"
+  },
+  "command.swap_panels_and_tabs": {
+    "message": "Поміняти панелі місцями разом із вкладками"
+  },
+  "command.sync_browsing": {
+    "message": "Синхронна навігація"
+  },
+  "command.synchronize_dirs": {
+    "message": "Синхронізувати теки..."
+  },
+  "command.target_equals_source": {
+    "message": "Ціль = джерело"
+  },
+  "command.terminal_panel": {
+    "message": "Термінал"
+  },
+  "command.test_archives": {
+    "message": "Перевірити архів(и)"
+  },
+  "command.thumbnail_view": {
+    "message": "Ескізи"
+  },
+  "command.toggle_mark": {
+    "message": "Виділити / зняти виділення"
+  },
+  "command.toggle_sidebar": {
+    "message": "Показати бічну панель"
+  },
+  "command.undo": {
+    "message": "Скасувати"
+  },
+  "command.unpack_specific_files": {
+    "message": "Розпакувати окремі файли..."
+  },
+  "command.unselect_all": {
+    "message": "Зняти виділення з усіх"
+  },
+  "command.unselect_group": {
+    "message": "Зняти виділення з групи..."
+  },
+  "command.unsorted": {
+    "message": "Без сортування"
+  },
+  "command.verify_checksums": {
+    "message": "Перевірити контрольні суми (з файлів контрольних сум)"
+  },
+  "command.vertical_arrangement": {
+    "message": "Вертикальне розташування"
+  },
+  "command.view": {
+    "message": "Переглянути"
+  },
+  "command.website": {
+    "message": "Вебсайт Spark Commander"
+  },
+  "command.workspace1": {
+    "message": "Відкрити робочий простір 1"
+  },
+  "command.workspace2": {
+    "message": "Відкрити робочий простір 2"
+  },
+  "command.workspace3": {
+    "message": "Відкрити робочий простір 3"
+  },
+  "command.workspace4": {
+    "message": "Відкрити робочий простір 4"
+  },
+  "command.workspace5": {
+    "message": "Відкрити робочий простір 5"
+  },
+  "command.workspace6": {
+    "message": "Відкрити робочий простір 6"
+  },
+  "command.workspace7": {
+    "message": "Відкрити робочий простір 7"
+  },
+  "command.workspace8": {
+    "message": "Відкрити робочий простір 8"
+  },
+  "command.workspace9": {
+    "message": "Відкрити робочий простір 9"
+  },
+  "command_line.error.cannot_run": {
+    "message": "{program}: не вдається запустити"
+  },
+  "command_line.error.not_found": {
+    "message": "{program}: команду не знайдено"
+  },
+  "command_line.history.empty": {
+    "message": "Ще не виконано жодної команди"
+  },
+  "command_line.on_server": {
+    "message": "Команди виконуються на цьому комп’ютері, а панель показує сервер."
+  },
+  "command_name.all_files": {
+    "message": "Показати всі файли"
+  },
+  "command_name.all_with_extension": {
+    "message": "Показати *.*"
+  },
+  "command_name.brief": {
+    "message": "Короткий вигляд"
+  },
+  "command_name.compare_directories": {
+    "message": "Порівняти теки: виділити новіші"
+  },
+  "command_name.custom_filter": {
+    "message": "Власний фільтр"
+  },
+  "command_name.duplicate_tab": {
+    "message": "Нова вкладка (копія поточної)"
+  },
+  "command_name.full": {
+    "message": "Повний вигляд"
+  },
+  "command_name.go_back": {
+    "message": "Перейти назад"
+  },
+  "command_name.go_forward": {
+    "message": "Перейти вперед"
+  },
+  "command_name.go_home": {
+    "message": "Перейти до домашньої теки"
+  },
+  "command_name.hidden_files": {
+    "message": "Показати приховані файли"
+  },
+  "command_name.only_selected_files": {
+    "message": "Показати лише виділені файли"
+  },
+  "command_name.programs": {
+    "message": "Показати програми"
+  },
+  "command_name.quick_filter": {
+    "message": "Швидкий фільтр"
+  },
+  "command_name.rename_in_place": {
+    "message": "Перейменувати на місці"
+  },
+  "command_name.sidebar_connections": {
+    "message": "Бічна панель: підключення"
+  },
+  "command_name.sidebar_operations": {
+    "message": "Бічна панель: операції"
+  },
+  "command_name.sidebar_places": {
+    "message": "Бічна панель: місця"
+  },
+  "command_name.sidebar_tree": {
+    "message": "Бічна панель: теки"
+  },
+  "command_name.sort_by_extension": {
+    "message": "Сортувати за розширенням"
+  },
+  "command_name.sort_by_name": {
+    "message": "Сортувати за ім’ям"
+  },
+  "command_name.sort_by_size": {
+    "message": "Сортувати за розміром"
+  },
+  "command_name.sort_by_time": {
+    "message": "Сортувати за часом"
+  },
+  "command_name.toggle_sidebar": {
+    "message": "Бічна панель: показати або приховати"
+  },
+  "command_name.unsorted": {
+    "message": "Без сортування"
+  },
+  "compare.browse.prompt": {
+    "message": "Порівняти"
+  },
+  "compare.button.compare": {
+    "message": "Порівняти"
+  },
+  "compare.button.next": {
+    "message": "Наступна відмінність (N)"
+  },
+  "compare.button.previous": {
+    "message": "Попередня відмінність (P)"
+  },
+  "compare.need_two_files": {
+    "message": "Поставте курсор на файл у кожній панелі або виділіть два файли."
+  },
+  "compare.option.binary": {
+    "message": "Двійкове"
+  },
+  "compare.option.ignore_case": {
+    "message": "Ігнорувати регістр"
+  },
+  "compare.option.ignore_spaces": {
+    "message": "Ігнорувати повторювані пробіли"
+  },
+  "compare.option.only_differences": {
+    "message": "Лише відмінності"
+  },
+  "compare.status.bytes_differ": {
+    "message": "{place}: {count, plural, one {{grouped} байт відрізняється} few {{grouped} байти відрізняються} many {{grouped} байтів відрізняються} other {{grouped} байта відрізняється}}, перший на позиції {first}; розміри {left} і {right}."
+  },
+  "compare.status.comparing": {
+    "message": "Порівняння…"
+  },
+  "compare.status.difference_of": {
+    "message": "Відмінність {at} з {count}"
+  },
+  "compare.status.differences": {
+    "message": "{count, plural, one {# відмінність} few {# відмінності} many {# відмінностей} other {# відмінності}}"
+  },
+  "compare.status.identical": {
+    "message": "{count, plural, one {Файли однакові: {grouped} байт.} few {Файли однакові: {grouped} байти.} many {Файли однакові: {grouped} байтів.} other {Файли однакові: {grouped} байта.}}"
+  },
+  "compare.status.no_differences": {
+    "message": "Відмінностей немає."
+  },
+  "compare.window.title": {
+    "message": "Порівняння: {left} — {right}"
+  },
+  "connections.connect": {
+    "message": "Підключитися"
+  },
+  "connections.copy_name": {
+    "message": "Копіювати назву"
+  },
+  "connections.copy_path": {
+    "message": "Копіювати шлях"
+  },
+  "connections.delete": {
+    "message": "Видалити"
+  },
+  "connections.dialog.title": {
+    "message": "Підключення"
+  },
+  "connections.disconnect": {
+    "message": "Від’єднатися"
+  },
+  "connections.duplicate": {
+    "message": "Дублювати"
+  },
+  "connections.duplicate_name": {
+    "message": "{name} (копія)"
+  },
+  "connections.edit": {
+    "message": "Змінити..."
+  },
+  "connections.empty": {
+    "message": "Ще немає підключень."
+  },
+  "connections.error.no_server": {
+    "message": "Потрібно вказати сервер."
+  },
+  "connections.error.port": {
+    "message": "Це не номер порту: {text}"
+  },
+  "connections.field.access_key": {
+    "message": "Ключ доступу"
+  },
+  "connections.field.api_key": {
+    "message": "Ключ API"
+  },
+  "connections.field.application_key": {
+    "message": "Ключ програми"
+  },
+  "connections.field.bucket": {
+    "message": "Кошик/тека"
+  },
+  "connections.field.container": {
+    "message": "Контейнер/тека"
+  },
+  "connections.field.endpoint": {
+    "message": "Кінцева точка"
+  },
+  "connections.field.key_id": {
+    "message": "ID ключа"
+  },
+  "connections.field.name": {
+    "message": "Назва"
+  },
+  "connections.field.password": {
+    "message": "Пароль"
+  },
+  "connections.field.port": {
+    "message": "Порт"
+  },
+  "connections.field.protocol": {
+    "message": "Протокол"
+  },
+  "connections.field.secret_key": {
+    "message": "Секретний ключ"
+  },
+  "connections.field.server": {
+    "message": "Сервер"
+  },
+  "connections.field.start_folder": {
+    "message": "Початкова тека"
+  },
+  "connections.field.user": {
+    "message": "Користувач"
+  },
+  "connections.folder.delete_confirm": {
+    "message": "{count, plural, one {Видалити теку «{name}» і # підключення в ній?} few {Видалити теку «{name}» і # підключення в ній?} many {Видалити теку «{name}» і # підключень у ній?} other {Видалити теку «{name}» і # підключення в ній?}}"
+  },
+  "connections.folder.delete_title": {
+    "message": "Видалити теку"
+  },
+  "connections.folder.exists": {
+    "message": "Тека з назвою «{name}» уже існує."
+  },
+  "connections.folder.name": {
+    "message": "Назва:"
+  },
+  "connections.folder.new_title": {
+    "message": "Нова тека"
+  },
+  "connections.folder.rename": {
+    "message": "Перейменувати..."
+  },
+  "connections.folder.rename_title": {
+    "message": "Перейменувати теку"
+  },
+  "connections.forget_password": {
+    "message": "Забути збережений пароль"
+  },
+  "connections.move_down": {
+    "message": "Перемістити вниз"
+  },
+  "connections.move_to_folder": {
+    "message": "Перемістити в теку"
+  },
+  "connections.move_up": {
+    "message": "Перемістити вгору"
+  },
+  "connections.new": {
+    "message": "Нове підключення..."
+  },
+  "connections.new_folder": {
+    "message": "Нова тека..."
+  },
+  "connections.no_folder": {
+    "message": "Без теки"
+  },
+  "connections.open_in_terminal": {
+    "message": "Відкрити в терміналі"
+  },
+  "connections.placeholder.name": {
+    "message": "як у списку"
+  },
+  "connections.placeholder.password": {
+    "message": "зберігається зашифрованим у теці параметрів; порожнє — лишити збережений"
+  },
+  "connections.placeholder.path": {
+    "message": "тека після входу"
+  },
+  "connections.placeholder.port": {
+    "message": "типовий"
+  },
+  "connections.placeholder.server": {
+    "message": "сервер або хост із ~/.ssh/config"
+  },
+  "connections.placeholder.user": {
+    "message": "як у ~/.ssh/config або анонімно"
+  },
+  "connections.save_failed": {
+    "message": "Не вдалося зберегти підключення: {err}"
+  },
+  "connections.ssh_config.read_only": {
+    "message": "Лише для читання: ці хости редагуються безпосередньо в ~/.ssh/config"
+  },
+  "context_menu.action_failed": {
+    "message": "Помилка дії «{name}»: {err}"
+  },
+  "context_menu.actions": {
+    "message": "Дії"
+  },
+  "context_menu.copy": {
+    "message": "Копіювати"
+  },
+  "context_menu.create_new": {
+    "message": "Створити"
+  },
+  "context_menu.cut": {
+    "message": "Вирізати"
+  },
+  "context_menu.delete": {
+    "message": "Видалити"
+  },
+  "context_menu.edit": {
+    "message": "Редагувати"
+  },
+  "context_menu.empty_file": {
+    "message": "Порожній файл…"
+  },
+  "context_menu.move_to_trash": {
+    "message": "Перемістити до смітника"
+  },
+  "context_menu.new_file_dialog.label": {
+    "message": "Ім’я нового файлу:"
+  },
+  "context_menu.new_file_dialog.title": {
+    "message": "Новий файл"
+  },
+  "context_menu.new_file_failed": {
+    "message": "Не вдалося створити файл: {err}"
+  },
+  "context_menu.new_folder": {
+    "message": "Тека…"
+  },
+  "context_menu.open": {
+    "message": "Відкрити"
+  },
+  "context_menu.open_failed": {
+    "message": "Не вдалося відкрити: {err}"
+  },
+  "context_menu.open_terminal_here": {
+    "message": "Відкрити термінал тут"
+  },
+  "context_menu.open_with": {
+    "message": "Відкрити за допомогою"
+  },
+  "context_menu.other_application": {
+    "message": "Інша програма…"
+  },
+  "context_menu.pack": {
+    "message": "Запакувати…"
+  },
+  "context_menu.pack_files": {
+    "message": "Запакувати файли"
+  },
+  "context_menu.paste": {
+    "message": "Вставити"
+  },
+  "context_menu.properties": {
+    "message": "Властивості"
+  },
+  "context_menu.properties_failed": {
+    "message": "Властивості: {err}"
+  },
+  "context_menu.rename": {
+    "message": "Перейменувати…"
+  },
+  "context_menu.rename_dialog.label": {
+    "message": "Нове ім’я:"
+  },
+  "context_menu.rename_dialog.title": {
+    "message": "Перейменувати"
+  },
+  "context_menu.rename_failed": {
+    "message": "Не вдалося перейменувати: {err}"
+  },
+  "context_menu.shell_menu_failed": {
+    "message": "Меню: {err}"
+  },
+  "context_menu.show_failed": {
+    "message": "Не вдалося показати: {err}"
+  },
+  "context_menu.show_in_file_manager": {
+    "message": "Показати в менеджері файлів"
+  },
+  "context_menu.terminal_failed": {
+    "message": "Не вдалося відкрити термінал: {err}"
+  },
+  "context_menu.terminal_not_local": {
+    "message": "Термінал відкривається лише в теках цього комп’ютера."
+  },
+  "context_menu.unpack": {
+    "message": "Розпакувати…"
+  },
+  "context_menu.view": {
+    "message": "Переглянути"
+  },
+  "desktop.no_app_chooser": {
+    "message": "у стільниці немає вікна вибору програми ({err})"
+  },
+  "desktop.no_terminal": {
+    "message": "термінал не знайдено"
+  },
+  "desktop.nothing_to_run": {
+    "message": "{name}: нічого запускати"
+  },
+  "desktop.scripts": {
+    "message": "Скрипти"
+  },
+  "devices.error.mount_failed": {
+    "message": "не вдалося змонтувати пристрій"
+  },
+  "devices.error.no_folder": {
+    "message": "пристрій не надає спільних тек"
+  },
+  "devices.error.system_only": {
+    "message": "демонтувати це може лише система"
+  },
+  "devices.error.unreachable": {
+    "message": "недоступний: чи відкрито на ньому KDE Connect у цій мережі?"
+  },
+  "devices.unlock.ask": {
+    "message": "Парольна фраза для {name}:"
+  },
+  "devices.unlock.ask_again": {
+    "message": "Неправильна парольна фраза. Парольна фраза для {name}:"
+  },
+  "devices.unlock.title": {
+    "message": "Розблокувати"
+  },
+  "devices.volume.share_on_server": {
+    "message": "{share} на {server}"
+  },
+  "devices.volume.unnamed": {
+    "message": "Том {size} ГБ"
+  },
+  "devices.volume.unnamed_encrypted": {
+    "message": "Зашифрований том {size} ГБ"
+  },
+  "download.cancel": {
+    "message": "Скасувати"
+  },
+  "download.dialog_title": {
+    "message": "Завантажити за посиланням"
+  },
+  "download.download": {
+    "message": "Завантажити"
+  },
+  "download.folder_link": {
+    "message": "посилання веде на теку"
+  },
+  "download.incomplete": {
+    "message": "сервер надіслав {got} із {size, plural, one {# байта} few {# байтів} many {# байтів} other {# байта}}; повторне завантаження продовжиться з цього місця"
+  },
+  "download.into": {
+    "message": "У теку {folder}"
+  },
+  "download.link": {
+    "message": "Посилання"
+  },
+  "download.link_placeholder": {
+    "message": "https://, http://, ftp:// або ftps://"
+  },
+  "download.local_only": {
+    "message": "Файли завантажуються в теки цього комп’ютера: спершу відкрийте таку теку в панелі."
+  },
+  "download.name_placeholder": {
+    "message": "як називає сервер або посилання"
+  },
+  "download.no_file": {
+    "message": "посилання не вказує на файл"
+  },
+  "download.not_a_link": {
+    "message": "це не посилання для завантаження"
+  },
+  "download.problem.bad_name": {
+    "message": "Лише ім’я файлу, без теки."
+  },
+  "download.problem.empty": {
+    "message": "Вставте або введіть посилання."
+  },
+  "download.problem.exists": {
+    "message": "Тут уже є {name}: «Замінити» завантажить поверх нього."
+  },
+  "download.problem.not_link": {
+    "message": "Це не посилання для завантаження: воно має починатися з https://, http://, ftp:// або ftps://."
+  },
+  "download.replace": {
+    "message": "Замінити"
+  },
+  "download.save_as": {
+    "message": "Зберегти як"
+  },
+  "download.saved_as": {
+    "message": "збережено як {name}"
+  },
+  "download.title": {
+    "message": "Завантаження «{name}»"
+  },
+  "download.title_link": {
+    "message": "Завантаження {link}"
+  },
+  "editor.close.after_send": {
+    "message": "Редактор закриється, щойно сервер отримає файл."
+  },
+  "editor.close.discard": {
+    "message": "Не зберігати"
+  },
+  "editor.close.save": {
+    "message": "Зберегти"
+  },
+  "editor.close.title": {
+    "message": "Зберегти зміни?"
+  },
+  "editor.close.unsaved": {
+    "message": "Файл {name} має незбережені зміни."
+  },
+  "editor.close.unsent": {
+    "message": "Файл {name} не збережено на сервері: не вдалося його надіслати."
+  },
+  "editor.dialog.cancel": {
+    "message": "Скасувати"
+  },
+  "editor.edit.copy": {
+    "message": "Копіювати"
+  },
+  "editor.edit.cut": {
+    "message": "Вирізати"
+  },
+  "editor.edit.find": {
+    "message": "Знайти..."
+  },
+  "editor.edit.find_next": {
+    "message": "Знайти наступне"
+  },
+  "editor.edit.find_previous": {
+    "message": "Знайти попереднє"
+  },
+  "editor.edit.go_to_line": {
+    "message": "Перейти до рядка..."
+  },
+  "editor.edit.paste": {
+    "message": "Вставити"
+  },
+  "editor.edit.redo": {
+    "message": "Повторити"
+  },
+  "editor.edit.replace": {
+    "message": "Замінити..."
+  },
+  "editor.edit.undo": {
+    "message": "Скасувати"
+  },
+  "editor.external.not_set": {
+    "message": "зовнішній редактор не задано (Параметри, Редагування/перегляд)"
+  },
+  "editor.file.close": {
+    "message": "Закрити"
+  },
+  "editor.file.reload": {
+    "message": "Перезавантажити"
+  },
+  "editor.file.save": {
+    "message": "Зберегти"
+  },
+  "editor.file.save_as": {
+    "message": "Зберегти як..."
+  },
+  "editor.find.close": {
+    "message": "Закрити (Escape)"
+  },
+  "editor.find.count": {
+    "message": "{current} з {total}"
+  },
+  "editor.find.in_selection": {
+    "message": "Знайти у виділеному (Alt+L)"
+  },
+  "editor.find.match_case": {
+    "message": "Враховувати регістр (Alt+C)"
+  },
+  "editor.find.next": {
+    "message": "Наступний збіг (Enter)"
+  },
+  "editor.find.no_results": {
+    "message": "Немає результатів"
+  },
+  "editor.find.placeholder": {
+    "message": "Знайти"
+  },
+  "editor.find.preserve_case": {
+    "message": "Зберігати регістр (Alt+P)"
+  },
+  "editor.find.previous": {
+    "message": "Попередній збіг (Shift+Enter)"
+  },
+  "editor.find.regex": {
+    "message": "Регулярний вираз (Alt+R)"
+  },
+  "editor.find.replace": {
+    "message": "Замінити (Ctrl+Shift+1)"
+  },
+  "editor.find.replace_all": {
+    "message": "Замінити все (Ctrl+Alt+Enter)"
+  },
+  "editor.find.replace_placeholder": {
+    "message": "Замінити"
+  },
+  "editor.find.toggle_replace": {
+    "message": "Показати/приховати заміну"
+  },
+  "editor.find.whole_word": {
+    "message": "Лише слово цілком (Alt+W)"
+  },
+  "editor.go_to_line.label": {
+    "message": "Рядок або рядок:стовпець"
+  },
+  "editor.go_to_line.title": {
+    "message": "Перейти до рядка"
+  },
+  "editor.language.by_file_name": {
+    "message": "За ім’ям файлу"
+  },
+  "editor.language.plain_text": {
+    "message": "Звичайний текст"
+  },
+  "editor.menu.edit": {
+    "message": "Редагування"
+  },
+  "editor.menu.file": {
+    "message": "Файл"
+  },
+  "editor.menu.language": {
+    "message": "Мова"
+  },
+  "editor.menu.selection": {
+    "message": "Виділення"
+  },
+  "editor.menu.view": {
+    "message": "Вигляд"
+  },
+  "editor.open.too_large": {
+    "message": "більший за {limit_mb} МБ, ліміт вбудованого редактора (Параметри, Редагування/перегляд); Ctrl+Shift+F4 відкриває його в зовнішньому"
+  },
+  "editor.reload.button": {
+    "message": "Перезавантажити"
+  },
+  "editor.reload.failed": {
+    "message": "Не вдалося перезавантажити: {err}"
+  },
+  "editor.reload.text": {
+    "message": "Незбережені зміни буде втрачено."
+  },
+  "editor.reload.title": {
+    "message": "Перезавантажити файл?"
+  },
+  "editor.reload.unfit": {
+    "message": "Не перезавантажено: {why, select, binary {файл двійковий} other {це не текст UTF-8}}."
+  },
+  "editor.save.admin": {
+    "message": "Збереження «{name}»"
+  },
+  "editor.save.failed": {
+    "message": "Не вдалося зберегти {path}: {err}"
+  },
+  "editor.save_anyway.button": {
+    "message": "Усе одно зберегти"
+  },
+  "editor.save_anyway.text": {
+    "message": "Файл не був текстовим: його буде записано так, як показано, тож усе нетекстове зміниться назавжди."
+  },
+  "editor.save_anyway.title": {
+    "message": "Зберегти як текст?"
+  },
+  "editor.selection.add_cursor_above": {
+    "message": "Додати курсор вище"
+  },
+  "editor.selection.add_cursor_below": {
+    "message": "Додати курсор нижче"
+  },
+  "editor.selection.delete_lines": {
+    "message": "Видалити рядки"
+  },
+  "editor.selection.duplicate_lines": {
+    "message": "Дублювати рядки"
+  },
+  "editor.selection.indent": {
+    "message": "Збільшити відступ"
+  },
+  "editor.selection.lowercase": {
+    "message": "нижній регістр"
+  },
+  "editor.selection.move_lines_down": {
+    "message": "Перемістити рядки вниз"
+  },
+  "editor.selection.move_lines_up": {
+    "message": "Перемістити рядки вгору"
+  },
+  "editor.selection.outdent": {
+    "message": "Зменшити відступ"
+  },
+  "editor.selection.select_all": {
+    "message": "Виділити все"
+  },
+  "editor.selection.select_all_occurrences": {
+    "message": "Виділити всі входження"
+  },
+  "editor.selection.sort_lines_ascending": {
+    "message": "Сортувати рядки за зростанням"
+  },
+  "editor.selection.sort_lines_descending": {
+    "message": "Сортувати рядки за спаданням"
+  },
+  "editor.selection.title_case": {
+    "message": "Кожне Слово З Великої"
+  },
+  "editor.selection.toggle_line_comment": {
+    "message": "Закоментувати/розкоментувати"
+  },
+  "editor.selection.trim_trailing_whitespace": {
+    "message": "Обрізати пробіли в кінці рядків"
+  },
+  "editor.selection.uppercase": {
+    "message": "ВЕРХНІЙ РЕГІСТР"
+  },
+  "editor.send.failed": {
+    "message": "Не вдалося надіслати на сервер: {err}. «Зберегти» спробує ще раз."
+  },
+  "editor.status.modified": {
+    "message": "Змінено"
+  },
+  "editor.status.position": {
+    "message": "Рд {line}, Ст {column}"
+  },
+  "editor.status.position_selected": {
+    "message": "Рд {line}, Ст {column} ({count, plural, one {виділено #} few {виділено #} many {виділено #} other {виділено #}})"
+  },
+  "editor.status.sending": {
+    "message": "Збереження на сервер"
+  },
+  "editor.status.spaces": {
+    "message": "Пробіли: {size}"
+  },
+  "editor.status.tab_size": {
+    "message": "Розмір табуляції: {size}"
+  },
+  "editor.status.unsent": {
+    "message": "Не на сервері"
+  },
+  "editor.terminal.not_found": {
+    "message": "редактор не знайдено; задайте $EDITOR"
+  },
+  "editor.title": {
+    "message": "{path} — Редактор"
+  },
+  "editor.unfit.open_anyway": {
+    "message": "Усе одно відкрити"
+  },
+  "editor.unfit.text": {
+    "message": "Файл не показано в редакторі, бо {why, select, binary {він двійковий} other {це не текст UTF-8}}."
+  },
+  "editor.view.folding": {
+    "message": "Згортання"
+  },
+  "editor.view.indent_guides": {
+    "message": "Напрямні відступів"
+  },
+  "editor.view.indent_with_tabs": {
+    "message": "Відступи табуляцією"
+  },
+  "editor.view.line_numbers": {
+    "message": "Номери рядків"
+  },
+  "editor.view.minimap": {
+    "message": "Мінікарта"
+  },
+  "editor.view.tab_width": {
+    "message": "Ширина табуляції {width}"
+  },
+  "editor.view.unfold_all": {
+    "message": "Розгорнути все"
+  },
+  "editor.view.whitespace": {
+    "message": "Пробільні символи"
+  },
+  "editor.view.word_wrap": {
+    "message": "Перенесення рядків"
+  },
+  "elevate.failed": {
+    "message": "від імені адміністратора теж не вдалося ({code})"
+  },
+  "elevate.no_consent": {
+    "message": "згоди адміністратора не надано"
+  },
+  "elevate.no_password": {
+    "message": "пароль не введено"
+  },
+  "elevate.not_authorised": {
+    "message": "немає дозволу"
+  },
+  "elevate.percent_name": {
+    "message": "{path}: ім’я зі знаком % не можна обробити від імені адміністратора; спершу перейменуйте його"
+  },
+  "elevate.pkexec_missing": {
+    "message": "pkexec (polkit) не встановлено"
+  },
+  "file_menu.change_tags_failed": {
+    "message": "Не вдалося змінити теги: {err}"
+  },
+  "file_menu.compress": {
+    "message": "{count, plural, =1 {Стиснути «{name}»…} one {Стиснути # об’єкт…} few {Стиснути # об’єкти…} many {Стиснути # об’єктів…} other {Стиснути # об’єкта…}}"
+  },
+  "file_menu.copy": {
+    "message": "{count, plural, =1 {Скопіювати «{name}»} one {Скопіювати # об’єкт} few {Скопіювати # об’єкти} many {Скопіювати # об’єктів} other {Скопіювати # об’єкта}}"
+  },
+  "file_menu.copy_path": {
+    "message": "Скопіювати шлях у буфер обміну"
+  },
+  "file_menu.delete": {
+    "message": "Видалити"
+  },
+  "file_menu.duplicate": {
+    "message": "Дублювати"
+  },
+  "file_menu.duplicate_failed": {
+    "message": "Не вдалося дублювати: {err}"
+  },
+  "file_menu.edit_tags": {
+    "message": "Теги…"
+  },
+  "file_menu.get_info": {
+    "message": "Отримати інфо"
+  },
+  "file_menu.make_alias": {
+    "message": "Створити псевдонім"
+  },
+  "file_menu.make_alias_failed": {
+    "message": "Не вдалося створити псевдонім: {err}"
+  },
+  "file_menu.move_to_trash": {
+    "message": "Перемістити в Смітник"
+  },
+  "file_menu.new_folder": {
+    "message": "Нова тека"
+  },
+  "file_menu.open": {
+    "message": "Відкрити"
+  },
+  "file_menu.open_failed": {
+    "message": "Не вдалося відкрити: {err}"
+  },
+  "file_menu.open_with": {
+    "message": "Відкрити за допомогою"
+  },
+  "file_menu.open_with_default": {
+    "message": "{app} (типово)"
+  },
+  "file_menu.paste": {
+    "message": "Вставити"
+  },
+  "file_menu.quick_look": {
+    "message": "{count, plural, =1 {Quick Look: «{name}»} one {Quick Look: # об’єкт} few {Quick Look: # об’єкти} many {Quick Look: # об’єктів} other {Quick Look: # об’єкта}}"
+  },
+  "file_menu.quick_look_failed": {
+    "message": "Quick Look: {err}"
+  },
+  "file_menu.rename": {
+    "message": "Перейменувати…"
+  },
+  "file_menu.reveal_failed": {
+    "message": "Не вдалося показати у Finder: {err}"
+  },
+  "file_menu.reveal_in_finder": {
+    "message": "Показати у Finder"
+  },
+  "file_menu.show_package_contents": {
+    "message": "Показати вміст пакета"
+  },
+  "file_menu.tag_dot.add": {
+    "message": "Додати тег «{name}»"
+  },
+  "file_menu.tag_dot.remove": {
+    "message": "Вилучити тег «{name}»"
+  },
+  "file_menu.tags_popover.show_all": {
+    "message": "Показати всі…"
+  },
+  "file_menu.tags_popover.title": {
+    "message": "{count, plural, =1 {Теги для «{name}»} one {Теги для # об’єкта} few {Теги для # об’єктів} many {Теги для # об’єктів} other {Теги для # об’єкта}}"
+  },
+  "find.backwards": {
+    "message": "Шукати назад"
+  },
+  "find.cancel": {
+    "message": "Скасувати"
+  },
+  "find.case_sensitive": {
+    "message": "Враховувати регістр"
+  },
+  "find.hex": {
+    "message": "Шукати шістнадцятковий рядок"
+  },
+  "find.ok": {
+    "message": "OK"
+  },
+  "find.regex": {
+    "message": "RegEx"
+  },
+  "find.text.label": {
+    "message": "Введіть текст для пошуку"
+  },
+  "find.title": {
+    "message": "Пошук"
+  },
+  "find.whole_words": {
+    "message": "Лише цілі слова"
+  },
+  "keys.apply": {
+    "message": "Застосувати"
+  },
+  "keys.cancel": {
+    "message": "Скасувати"
+  },
+  "keys.clear.tooltip": {
+    "message": "Без клавіші"
+  },
+  "keys.column.alternate": {
+    "message": "Додаткове"
+  },
+  "keys.column.command": {
+    "message": "Команда"
+  },
+  "keys.column.shortcut": {
+    "message": "Сполучення"
+  },
+  "keys.custom": {
+    "message": "Власні"
+  },
+  "keys.delete_set": {
+    "message": "Видалити"
+  },
+  "keys.note.custom_replaced": {
+    "message": "Ваші власні клавіші замінено клавішами набору {name}; «Зберегти як…» збереже їх."
+  },
+  "keys.note.deleted": {
+    "message": "{name} буде видалено; OK або «Застосувати» підтвердять це."
+  },
+  "keys.note.moved": {
+    "message": "{key} тепер виконує «{command}», а не «{other}»."
+  },
+  "keys.note.name_reserved": {
+    "message": "«{name}» — це назва готового набору; виберіть іншу."
+  },
+  "keys.note.press_new_key": {
+    "message": "Натисніть нову клавішу; Esc залишить усе як було."
+  },
+  "keys.note.saved": {
+    "message": "Збережено як {name}; OK або «Застосувати» збереже це."
+  },
+  "keys.note.set": {
+    "message": "{key} тепер виконує «{command}»."
+  },
+  "keys.note.taken_by_system": {
+    "message": "{key} зайнято ({by}), тому до Spark Commander це сполучення не доходить."
+  },
+  "keys.ok": {
+    "message": "OK"
+  },
+  "keys.press_key": {
+    "message": "Натисніть клавішу…"
+  },
+  "keys.reserved.application_launcher": {
+    "message": "{system}: засіб запуску програм"
+  },
+  "keys.reserved.close_window": {
+    "message": "{system}: закрити вікно"
+  },
+  "keys.reserved.close_window_or_tab": {
+    "message": "{system}: закрити вікно або вкладку"
+  },
+  "keys.reserved.dock": {
+    "message": "{system}: Dock"
+  },
+  "keys.reserved.floating_window": {
+    "message": "{system}: плаваюче вікно"
+  },
+  "keys.reserved.force_quit": {
+    "message": "{system}: примусове завершення"
+  },
+  "keys.reserved.hide_program": {
+    "message": "{system}: сховати програму"
+  },
+  "keys.reserved.input_source": {
+    "message": "{system}: джерело вводу"
+  },
+  "keys.reserved.keyboard_access": {
+    "message": "{system}: доступ із клавіатури"
+  },
+  "keys.reserved.keyboard_navigation": {
+    "message": "{system}: навігація клавіатурою"
+  },
+  "keys.reserved.krunner": {
+    "message": "{system}: KRunner"
+  },
+  "keys.reserved.lock_screen": {
+    "message": "{system}: заблокувати екран"
+  },
+  "keys.reserved.log_out": {
+    "message": "{system}: вийти з системи"
+  },
+  "keys.reserved.maximize_window": {
+    "message": "{system}: розгорнути вікно"
+  },
+  "keys.reserved.menu_bar": {
+    "message": "{system}: смуга меню"
+  },
+  "keys.reserved.minimize": {
+    "message": "{system}: згорнути"
+  },
+  "keys.reserved.mission_control": {
+    "message": "{system}: Mission Control"
+  },
+  "keys.reserved.move_window": {
+    "message": "{system}: перемістити вікно"
+  },
+  "keys.reserved.next_window": {
+    "message": "{system}: наступне вікно"
+  },
+  "keys.reserved.present_windows": {
+    "message": "{system}: показ вікон"
+  },
+  "keys.reserved.present_windows_all": {
+    "message": "{system}: показ вікон (усі стільниці)"
+  },
+  "keys.reserved.present_windows_class": {
+    "message": "{system}: показ вікон (клас вікна)"
+  },
+  "keys.reserved.program_windows": {
+    "message": "{system}: вікна програми"
+  },
+  "keys.reserved.quit": {
+    "message": "{system}: вийти"
+  },
+  "keys.reserved.resize_window": {
+    "message": "{system}: змінити розмір вікна"
+  },
+  "keys.reserved.restore_window": {
+    "message": "{system}: відновити вікно"
+  },
+  "keys.reserved.run_command": {
+    "message": "{system}: виконати команду"
+  },
+  "keys.reserved.screenshot": {
+    "message": "{system}: знімок екрана"
+  },
+  "keys.reserved.security_screen": {
+    "message": "{system}: екран безпеки"
+  },
+  "keys.reserved.show_desktop": {
+    "message": "{system}: показати стільницю"
+  },
+  "keys.reserved.space_left": {
+    "message": "{system}: простір ліворуч"
+  },
+  "keys.reserved.space_right": {
+    "message": "{system}: простір праворуч"
+  },
+  "keys.reserved.spotlight": {
+    "message": "{system}: Spotlight"
+  },
+  "keys.reserved.start_menu": {
+    "message": "{system}: меню «Пуск»"
+  },
+  "keys.reserved.status_menus": {
+    "message": "{system}: меню стану"
+  },
+  "keys.reserved.suspend_compositing": {
+    "message": "{system}: призупинити композитне відтворення"
+  },
+  "keys.reserved.switch_program_windows": {
+    "message": "{system}: перемкнути вікна програми"
+  },
+  "keys.reserved.switch_programs": {
+    "message": "{system}: перемкнути програми"
+  },
+  "keys.reserved.switch_system_controls": {
+    "message": "{system}: перемкнути системні елементи керування"
+  },
+  "keys.reserved.switch_to_desktop": {
+    "message": "{system}: перейти на стільницю {number}"
+  },
+  "keys.reserved.switch_windows": {
+    "message": "{system}: перемкнути вікна"
+  },
+  "keys.reserved.system_monitor": {
+    "message": "{system}: Системний монітор"
+  },
+  "keys.reserved.task_manager": {
+    "message": "{system}: Диспетчер завдань"
+  },
+  "keys.reserved.text_console": {
+    "message": "{system}: перейти до текстової консолі"
+  },
+  "keys.reserved.toolbar": {
+    "message": "{system}: панель інструментів"
+  },
+  "keys.reserved.window_menu": {
+    "message": "{system}: меню вікна"
+  },
+  "keys.reserved.workspace_down": {
+    "message": "{system}: робочий простір нижче"
+  },
+  "keys.reserved.workspace_left": {
+    "message": "{system}: робочий простір ліворуч"
+  },
+  "keys.reserved.workspace_right": {
+    "message": "{system}: робочий простір праворуч"
+  },
+  "keys.reserved.workspace_up": {
+    "message": "{system}: робочий простір вище"
+  },
+  "keys.reset.tooltip": {
+    "message": "Повернути клавіші набору {preset}"
+  },
+  "keys.reset_all": {
+    "message": "Скинути все"
+  },
+  "keys.save_as.button": {
+    "message": "Зберегти як…"
+  },
+  "keys.save_as.default_name": {
+    "message": "Мої клавіші"
+  },
+  "keys.save_as.label": {
+    "message": "Назва:"
+  },
+  "keys.save_as.title": {
+    "message": "Зберегти сполучення клавіш"
+  },
+  "keys.search.placeholder": {
+    "message": "Пошук команди або клавіші"
+  },
+  "keys.set_label": {
+    "message": "Клавіші:"
+  },
+  "keys.taken_by.tooltip": {
+    "message": "Зайнято: {by}"
+  },
+  "keys.title": {
+    "message": "Сполучення клавіш"
+  },
+  "main.admin.button": {
+    "message": "Як адміністратор"
+  },
+  "main.admin.deleting": {
+    "message": "Видалення {count, plural, one {# елемента} few {# елементів} many {# елементів} other {# елемента}}"
+  },
+  "main.admin.failed": {
+    "message": "Від імені адміністратора: {err}"
+  },
+  "main.admin.making": {
+    "message": "Створення «{name}»"
+  },
+  "main.admin.offer": {
+    "message": "{what}: відмовлено в доступі. Щоб виконати це від імені адміністратора, система запитає пароль."
+  },
+  "main.admin.offer_delete": {
+    "message": "{what}: відмовлено в доступі. Щоб виконати це від імені адміністратора, система запитає пароль. Видалене так буде втрачено назавжди."
+  },
+  "main.admin.title": {
+    "message": "Відмовлено в доступі"
+  },
+  "main.delete.from_archive": {
+    "message": "{kind, select, folder {Видалити теку «{name}» з {archive}? Цю дію не можна скасувати.} file {Видалити файл «{name}» з {archive}? Цю дію не можна скасувати.} other {Видалити {count, plural, one {# елемент} few {# елементи} many {# елементів} other {# елемента}} з {archive}? Цю дію не можна скасувати.}}"
+  },
+  "main.delete.on_server": {
+    "message": "{kind, select, folder {Видалити теку «{name}» на {server}? Цю дію не можна скасувати.} file {Видалити файл «{name}» на {server}? Цю дію не можна скасувати.} other {Видалити {count, plural, one {# елемент} few {# елементи} many {# елементів} other {# елемента}} на {server}? Цю дію не можна скасувати.}}"
+  },
+  "main.delete.permanently": {
+    "message": "{kind, select, folder {Остаточно видалити теку «{name}»? Цю дію не можна скасувати.} file {Остаточно видалити файл «{name}»? Цю дію не можна скасувати.} other {Остаточно видалити {count, plural, one {# елемент} few {# елементи} many {# елементів} other {# елемента}}? Цю дію не можна скасувати.}}"
+  },
+  "main.delete.title": {
+    "message": "Видалити"
+  },
+  "main.delete.title_permanently": {
+    "message": "Видалити остаточно"
+  },
+  "main.delete.to_trash": {
+    "message": "{kind, select, folder {Перемістити теку «{name}» до смітника?} file {Перемістити файл «{name}» до смітника?} other {Перемістити {count, plural, one {# елемент} few {# елементи} many {# елементів} other {# елемента}} до смітника?}}"
+  },
+  "main.download.edit": {
+    "message": "Завантаження {file} для редагування"
+  },
+  "main.download.view": {
+    "message": "Завантаження {file} для перегляду"
+  },
+  "main.error.make_folder": {
+    "message": "Не вдалося створити теку: {err}"
+  },
+  "main.error.read_settings": {
+    "message": "Не вдалося прочитати параметри: {err}"
+  },
+  "main.error.read_tabs": {
+    "message": "Не вдалося прочитати відкриті вкладки: {err}"
+  },
+  "main.error.read_workspaces": {
+    "message": "Не вдалося прочитати робочі простори: {err}"
+  },
+  "main.error.save_settings": {
+    "message": "Не вдалося зберегти параметри: {err}"
+  },
+  "main.folder_tree.home": {
+    "message": "Домівка"
+  },
+  "main.go.no_such_folder": {
+    "message": "{path}: такої теки на цьому комп’ютері немає"
+  },
+  "main.new_folder.label": {
+    "message": "Нова тека (каталог):"
+  },
+  "main.new_folder.title": {
+    "message": "Нова тека"
+  },
+  "main.sync_browsing.lost": {
+    "message": "{err}. Синхронну навігацію вимкнено."
+  },
+  "main.tool.needs_file": {
+    "message": "Курсор не на файлі: %N, %O і %E потребують файлу."
+  },
+  "main.tool.needs_local_folder": {
+    "message": "Інша панель показує сервер або архів: %T потребує теки на цьому комп’ютері."
+  },
+  "main.undo.done": {
+    "message": "{way, select, redo {Повторено: {title}} other {Скасовано: {title}}}"
+  },
+  "main.undo.failed": {
+    "message": "{way, select, redo {Не вдалося повторити «{title}»: {err}} other {Не вдалося скасувати «{title}»: {err}}}"
+  },
+  "main.undo.nothing": {
+    "message": "{way, select, redo {Нічого повторювати.} other {Нічого скасовувати.}}"
+  },
+  "main.undo.queued": {
+    "message": "{way, select, redo {У черзі на повторення: {title}} other {У черзі на скасування: {title}}}"
+  },
+  "mark.compare.marked": {
+    "message": "{count, plural, one {Виділено # файл: новіший або відсутній на іншому боці.} few {Виділено # файли: новіші або відсутні на іншому боці.} many {Виділено # файлів: новіші або відсутні на іншому боці.} other {Виділено # файлу: новіші або відсутні на іншому боці.}}"
+  },
+  "mark.compare.same": {
+    "message": "У теках однакові файли."
+  },
+  "mark.load_selection.label": {
+    "message": "Виділити імена, перелічені у файлі:"
+  },
+  "mark.load_selection.title": {
+    "message": "Завантажити виділення"
+  },
+  "mark.save_selection.label": {
+    "message": "Зберегти виділені імена у файл:"
+  },
+  "mark.save_selection.title": {
+    "message": "Зберегти виділення"
+  },
+  "mark.select_group.label": {
+    "message": "Виділити файли (*.txt *.md; маска теки закінчується на /):"
+  },
+  "mark.select_group.title": {
+    "message": "Виділити групу"
+  },
+  "mark.selection_file.not_local": {
+    "message": "Файли виділення зберігаються на цьому комп’ютері, поза архівами."
+  },
+  "mark.unselect_group.label": {
+    "message": "Зняти виділення з файлів (*.txt *.md; маска теки закінчується на /):"
+  },
+  "mark.unselect_group.title": {
+    "message": "Зняти виділення з групи"
+  },
+  "media.cannot_play": {
+    "message": "Не вдається відтворити: {err}"
+  },
+  "media.cannot_play_as_text": {
+    "message": "Не вдається відтворити: {err}. Клавіша 1 покаже це як текст."
+  },
+  "media.continuing": {
+    "message": "Продовження з {time}"
+  },
+  "media.error.missing": {
+    "message": "Немає libmpv: його можна завантажити в «Параметри > Доповнення» (збирання з коду: vendor/mpv/{script})"
+  },
+  "media.error.not_started": {
+    "message": "не вдалося запустити libmpv"
+  },
+  "media.error.too_long": {
+    "message": "{path}: mpv працював надто довго"
+  },
+  "media.error.unsupported_system": {
+    "message": "відео поки відтворюється лише в Linux, macOS і Windows"
+  },
+  "menu.archive": {
+    "message": "Архів"
+  },
+  "menu.associations": {
+    "message": "Асоціації"
+  },
+  "menu.button_bar": {
+    "message": "Панель кнопок"
+  },
+  "menu.checksums": {
+    "message": "Контрольні суми"
+  },
+  "menu.commands": {
+    "message": "Команди"
+  },
+  "menu.compare_directories": {
+    "message": "Порівняти теки"
+  },
+  "menu.configuration": {
+    "message": "Конфігурація"
+  },
+  "menu.copy_names": {
+    "message": "Копіювати імена"
+  },
+  "menu.files": {
+    "message": "Файли"
+  },
+  "menu.filter": {
+    "message": "Фільтр"
+  },
+  "menu.go": {
+    "message": "Перехід"
+  },
+  "menu.help": {
+    "message": "Довідка"
+  },
+  "menu.mark": {
+    "message": "Виділення"
+  },
+  "menu.other": {
+    "message": "Інше"
+  },
+  "menu.recently_closed_tabs": {
+    "message": "Нещодавно закриті вкладки"
+  },
+  "menu.selection": {
+    "message": "Збереження виділення"
+  },
+  "menu.show": {
+    "message": "Вигляд"
+  },
+  "menu.sidebar": {
+    "message": "Бічна панель"
+  },
+  "menu.sort": {
+    "message": "Сортування"
+  },
+  "menu.split_and_combine": {
+    "message": "Розділення та об’єднання"
+  },
+  "menu.tabs": {
+    "message": "Вкладки"
+  },
+  "menu.tools": {
+    "message": "Інструменти"
+  },
+  "menu.workspaces": {
+    "message": "Робочі простори"
+  },
+  "menus.hide_app": {
+    "message": "Сховати Spark Commander"
+  },
+  "menus.hide_others": {
+    "message": "Сховати інші"
+  },
+  "menus.minimize": {
+    "message": "Згорнути"
+  },
+  "menus.quit_app": {
+    "message": "Вийти з Spark Commander"
+  },
+  "menus.services": {
+    "message": "Послуги"
+  },
+  "menus.show_all": {
+    "message": "Показати всі"
+  },
+  "menus.zoom": {
+    "message": "Масштабувати"
+  },
+  "name_dialog.cancel": {
+    "message": "Скасувати"
+  },
+  "name_dialog.ok": {
+    "message": "OK"
+  },
+  "operations.clear": {
+    "message": "Очистити завершені"
+  },
+  "operations.duration.seconds": {
+    "message": "{seconds} с"
+  },
+  "operations.empty": {
+    "message": "Немає операцій."
+  },
+  "operations.job.answer": {
+    "message": "Очікує вашої відповіді"
+  },
+  "operations.job.bytes": {
+    "message": "{done} з {total}"
+  },
+  "operations.job.cancel_tooltip": {
+    "message": "Скасувати"
+  },
+  "operations.job.cancelled": {
+    "message": "Скасовано"
+  },
+  "operations.job.counting": {
+    "message": "Підрахунок: {count, plural, one {# файл} few {# файли} many {# файлів} other {# файлу}}"
+  },
+  "operations.job.done": {
+    "message": "Готово"
+  },
+  "operations.job.done_skipped": {
+    "message": "Готово, {count, plural, one {пропущено #} few {пропущено #} many {пропущено #} other {пропущено #}}"
+  },
+  "operations.job.failed": {
+    "message": "Помилка"
+  },
+  "operations.job.files": {
+    "message": "{files} / {count, plural, one {# файл} few {# файли} many {# файлів} other {# файлу}}"
+  },
+  "operations.job.left": {
+    "message": "Залишилося {time}"
+  },
+  "operations.job.running": {
+    "message": "Виконується"
+  },
+  "operations.job.waiting": {
+    "message": "Очікує"
+  },
+  "operations.menu.cancel": {
+    "message": "Скасувати"
+  },
+  "operations.menu.clear": {
+    "message": "Очистити завершені"
+  },
+  "operations.menu.move_down": {
+    "message": "Перемістити вниз"
+  },
+  "operations.menu.move_up": {
+    "message": "Перемістити вгору"
+  },
+  "operations.settings_tooltip": {
+    "message": "Параметри черги операцій"
+  },
+  "operations.summary.failed": {
+    "message": "{count, plural, one {# невдала} few {# невдалі} many {# невдалих} other {# невдалої}}"
+  },
+  "operations.summary.running": {
+    "message": "{count, plural, one {# виконується} few {# виконуються} many {# виконуються} other {# виконується}}"
+  },
+  "operations.summary.waiting": {
+    "message": "{count, plural, one {# очікує} few {# очікують} many {# очікують} other {# очікує}}"
+  },
+  "ops.as_administrator.failed": {
+    "message": "Від імені адміністратора: {err}"
+  },
+  "ops.as_administrator.progress": {
+    "message": "Від імені адміністратора…"
+  },
+  "ops.delete.title_many": {
+    "message": "Видалення {count, plural, one {# елемента} few {# елементів} many {# елементів} other {# елемента}} у {folder}"
+  },
+  "ops.delete.title_one": {
+    "message": "Видалення «{name}»"
+  },
+  "ops.delete.trash_title_many": {
+    "message": "Переміщення {count, plural, one {# елемента} few {# елементів} many {# елементів} other {# елемента}} з {folder} до смітника"
+  },
+  "ops.delete.trash_title_one": {
+    "message": "Переміщення «{name}» до смітника"
+  },
+  "ops.error.file_in_the_way": {
+    "message": "заважає файл із такою самою назвою"
+  },
+  "ops.error.into_itself": {
+    "message": "неможливо скопіювати в саму себе"
+  },
+  "ops.exists_already": {
+    "message": "{name} уже існує"
+  },
+  "ops.link.dialog_title": {
+    "message": "Створити посилання"
+  },
+  "ops.link.failed": {
+    "message": "Не вдалося створити посилання: {err}"
+  },
+  "ops.link.kind.hard": {
+    "message": "Жорстке посилання"
+  },
+  "ops.link.kind.junction": {
+    "message": "Точка з’єднання"
+  },
+  "ops.link.kind.shortcut": {
+    "message": "Ярлик (.lnk)"
+  },
+  "ops.link.kind.symbolic": {
+    "message": "Символьне посилання"
+  },
+  "ops.link.label_many": {
+    "message": "Посилання на {count, plural, one {# елемент} few {# елементи} many {# елементів} other {# елемента}} у теці:"
+  },
+  "ops.link.label_one": {
+    "message": "Посилання на «{name}» як:"
+  },
+  "ops.link.making": {
+    "message": "Створення {kind, select, symbolic {символьного посилання} hard {жорсткого посилання} junction {точки з’єднання} other {ярлика (.lnk)}}"
+  },
+  "ops.link.needs_admin": {
+    "message": "символьні посилання потребують прав адміністратора або режиму розробника"
+  },
+  "ops.link.thread_failed": {
+    "message": "збій потоку створення ярлика"
+  },
+  "ops.link.title_many": {
+    "message": "{kind, select, symbolic {Символьні посилання} hard {Жорсткі посилання} junction {Точки з’єднання} other {Ярлики (.lnk)}} на {count, plural, one {# елемент} few {# елементи} many {# елементів} other {# елемента}} у {folder}"
+  },
+  "ops.link.title_one": {
+    "message": "{kind, select, symbolic {Символьне посилання} hard {Жорстке посилання} junction {Точка з’єднання} other {Ярлик (.lnk)}} на «{name}» у {folder}"
+  },
+  "ops.link.windows_only": {
+    "message": "точки з’єднання та ярлики є лише у Windows"
+  },
+  "ops.redo.title": {
+    "message": "Повторення: {what}"
+  },
+  "ops.title.many": {
+    "message": "{kind, select, copy {Копіювання} other {Переміщення}} {count, plural, one {# елемента} few {# елементів} many {# елементів} other {# елемента}} до {target}"
+  },
+  "ops.title.one": {
+    "message": "{kind, select, copy {Копіювання} other {Переміщення}} «{name}» до {target}"
+  },
+  "ops.undo.not_a_server": {
+    "message": "{url}: це не адреса сервера"
+  },
+  "ops.undo.not_in_trash": {
+    "message": "їх уже немає в смітнику"
+  },
+  "ops.undo.restore_title": {
+    "message": "{title}: повернення замінених файлів зі смітника"
+  },
+  "ops.undo.title": {
+    "message": "Скасування: {what}"
+  },
+  "pack.cancel": {
+    "message": "Скасувати"
+  },
+  "pack.compression": {
+    "message": "Стиснення:"
+  },
+  "pack.dialog_title": {
+    "message": "Запакувати файли"
+  },
+  "pack.encrypt": {
+    "message": "Зашифрувати паролем"
+  },
+  "pack.format": {
+    "message": "Формат:"
+  },
+  "pack.label": {
+    "message": "Запакувати {count, plural, one {# елемент} few {# елементи} many {# елементів} other {# елемента}} в архів:"
+  },
+  "pack.level.fastest": {
+    "message": "Найшвидше"
+  },
+  "pack.level.maximum": {
+    "message": "Максимальне"
+  },
+  "pack.level.normal": {
+    "message": "Звичайне"
+  },
+  "pack.level.store": {
+    "message": "Без стиснення"
+  },
+  "pack.level.ultra": {
+    "message": "Ультра"
+  },
+  "pack.local_only": {
+    "message": "{what, select, packing {Пакування} unpacking {Розпакування} testing {Перевірка} creating_checksums {Створення контрольних сум} making_links {Створення посилань} verifying_checksums {Перевірка контрольних сум} splitting {Розділення} combining {Об’єднання} other {Це}} працює лише з файлами цього комп’ютера, поза архівами."
+  },
+  "pack.move_files": {
+    "message": "Перемістити в архів (видалити запаковані файли)"
+  },
+  "pack.needs_password": {
+    "message": "потрібен пароль"
+  },
+  "pack.ok": {
+    "message": "OK"
+  },
+  "pack.password_missing": {
+    "message": "Введіть пароль або зніміть позначку «Зашифрувати паролем»."
+  },
+  "pack.separate": {
+    "message": "Окремий архів для кожного виділеного файлу чи теки"
+  },
+  "pack.split": {
+    "message": "Розділити на томи по"
+  },
+  "pack.split_unit": {
+    "message": "МБ"
+  },
+  "pack.test.broken": {
+    "message": "{broken, plural, one {Пошкоджено: # з {count}} few {Пошкоджено: # з {count}} many {Пошкоджено: # з {count}} other {Пошкоджено: # з {count}}}"
+  },
+  "pack.test.choose": {
+    "message": "Виберіть архіви для перевірки."
+  },
+  "pack.test.ok": {
+    "message": "{count, plural, one {# архів у порядку} few {# архіви в порядку} many {# архівів у порядку} other {# архіву в порядку}}"
+  },
+  "pack.test.title_many": {
+    "message": "Перевірка {count, plural, one {# архіву} few {# архівів} many {# архівів} other {# архіву}}"
+  },
+  "pack.test.title_one": {
+    "message": "Перевірка «{name}»"
+  },
+  "pack.title.many": {
+    "message": "Пакування {count, plural, one {# елемента} few {# елементів} many {# елементів} other {# елемента}} в {archive}"
+  },
+  "pack.title.many_separate": {
+    "message": "Пакування {count, plural, one {# елемента} few {# елементів} many {# елементів} other {# елемента}} в окремі архіви {format}"
+  },
+  "pack.title.one": {
+    "message": "Пакування «{name}» в {archive}"
+  },
+  "pack.title.one_separate": {
+    "message": "Пакування «{name}» в окремі архіви {format}"
+  },
+  "pack.unpack.choose": {
+    "message": "Виберіть архіви для розпакування."
+  },
+  "pack.unpack.dialog_title": {
+    "message": "Розпакувати файли"
+  },
+  "pack.unpack.label": {
+    "message": "Розпакувати {count, plural, one {# архів} few {# архіви} many {# архівів} other {# архіву}} в:"
+  },
+  "pack.unpack.mask": {
+    "message": "Лише файли:"
+  },
+  "pack.unpack.overwrite": {
+    "message": "Перезаписувати наявні файли (інакше вони залишаються)"
+  },
+  "pack.unpack.password": {
+    "message": "Пароль:"
+  },
+  "pack.unpack.separate": {
+    "message": "Кожен архів в окрему теку з його назвою"
+  },
+  "pack.unpack.title_many": {
+    "message": "Розпакування {count, plural, one {# архіву} few {# архівів} many {# архівів} other {# архіву}} в {target}"
+  },
+  "pack.unpack.title_one": {
+    "message": "Розпакування «{name}» в {target}"
+  },
+  "pack.unpack.with_paths": {
+    "message": "Зберегти структуру тек з архіву"
+  },
+  "pack.volume_invalid": {
+    "message": "Розмір тому — це число в МБ."
+  },
+  "pack.wrong_password": {
+    "message": "неправильний пароль"
+  },
+  "panel.admin.renaming": {
+    "message": "Перейменування на «{name}»"
+  },
+  "panel.clipboard.copied": {
+    "message": "{count, plural, one {Скопійовано # елемент} few {Скопійовано # елементи} many {Скопійовано # елементів} other {Скопійовано # елемента}}: Ctrl+V вставить їх."
+  },
+  "panel.clipboard.cut": {
+    "message": "{count, plural, one {Вирізано # елемент} few {Вирізано # елементи} many {Вирізано # елементів} other {Вирізано # елемента}}: Ctrl+V вставить їх."
+  },
+  "panel.clipboard.no_cut_in_archive": {
+    "message": "З архівів не можна вирізати файли; Ctrl+C копіює їх."
+  },
+  "panel.clipboard.no_files": {
+    "message": "У буфері обміну немає файлів."
+  },
+  "panel.clipboard.no_paste_in_archive": {
+    "message": "Вставляти файли в архіви поки не можна."
+  },
+  "panel.clipboard.same_folder": {
+    "message": "Вони вже в цій теці: Ctrl+V вставляє в іншу."
+  },
+  "panel.column.attr": {
+    "message": "Атр"
+  },
+  "panel.column.date": {
+    "message": "Дата"
+  },
+  "panel.column.ext": {
+    "message": "Розш"
+  },
+  "panel.column.name": {
+    "message": "Ім’я"
+  },
+  "panel.column.size": {
+    "message": "Розмір"
+  },
+  "panel.disconnect": {
+    "message": "Від’єднатися"
+  },
+  "panel.drag.items": {
+    "message": "{count, plural, one {# елемент} few {# елементи} many {# елементів} other {# елемента}}"
+  },
+  "panel.error.archive_not_updatable": {
+    "message": "{name}: 7-Zip змінює на місці архіви 7z, zip і tar, але не цей"
+  },
+  "panel.error.archive_on_server": {
+    "message": "{name}: архіви на серверах поки не можна змінювати"
+  },
+  "panel.error.branch_view_local": {
+    "message": "Вигляд гілки показує лише теки цього комп’ютера"
+  },
+  "panel.error.exists": {
+    "message": "{name} уже існує"
+  },
+  "panel.error.folder_in_the_way": {
+    "message": "заважає тека з такою самою назвою"
+  },
+  "panel.error.inside_archive": {
+    "message": "поки не працює всередині архівів"
+  },
+  "panel.error.make_file": {
+    "message": "Не вдалося створити файл: {err}"
+  },
+  "panel.error.no_name": {
+    "message": "ім’я не вказано"
+  },
+  "panel.error.not_a_name": {
+    "message": "{name}: недопустиме ім’я"
+  },
+  "panel.error.other_drive": {
+    "message": "інша панель перейшла на інший диск"
+  },
+  "panel.error.rename": {
+    "message": "Не вдалося перейменувати: {err}"
+  },
+  "panel.filter.custom.label": {
+    "message": "Типи файлів, напр. *.txt *.md (після | — ті, що виключено):"
+  },
+  "panel.filter.custom.title": {
+    "message": "Показати файли"
+  },
+  "panel.filter.programs": {
+    "message": "програми"
+  },
+  "panel.filter.selected_files": {
+    "message": "виділені файли"
+  },
+  "panel.found.branch_view": {
+    "message": "Вигляд гілки:"
+  },
+  "panel.found.search_results": {
+    "message": "Результати пошуку:"
+  },
+  "panel.new_text_file.label": {
+    "message": "Ім’я файлу (відкриється в редакторі):"
+  },
+  "panel.new_text_file.title": {
+    "message": "Новий текстовий файл"
+  },
+  "panel.opening.cancel": {
+    "message": "Скасувати"
+  },
+  "panel.opening.reading": {
+    "message": "Читання…"
+  },
+  "panel.opening.title": {
+    "message": "Відкриття архіву"
+  },
+  "panel.quick_filter.hint": {
+    "message": "приховує невідповідне; Escape показує все"
+  },
+  "panel.quick_filter.label": {
+    "message": "Фільтр:"
+  },
+  "panel.quick_search.label": {
+    "message": "Пошук:"
+  },
+  "panel.size.app": {
+    "message": "<APP>"
+  },
+  "panel.size.b": {
+    "message": "{size} Б"
+  },
+  "panel.size.dir": {
+    "message": "<DIR>"
+  },
+  "panel.size.gb": {
+    "message": "{size} ГБ"
+  },
+  "panel.size.kb": {
+    "message": "{size} КБ"
+  },
+  "panel.size.mb": {
+    "message": "{size} МБ"
+  },
+  "panel.size.tb": {
+    "message": "{size} ТБ"
+  },
+  "panel.space.bytes": {
+    "message": "{count, plural, one {{size} байт ({human})} few {{size} байти ({human})} many {{size} байтів ({human})} other {{size} байта ({human})}}"
+  },
+  "panel.space.close": {
+    "message": "Закрити"
+  },
+  "panel.space.counting": {
+    "message": "Підрахунок…"
+  },
+  "panel.space.done": {
+    "message": "Готово."
+  },
+  "panel.space.files": {
+    "message": "Файлів:"
+  },
+  "panel.space.folders": {
+    "message": "Тек:"
+  },
+  "panel.space.in_archive": {
+    "message": "В архівах стовпець «Розмір» уже показує розміри."
+  },
+  "panel.space.title": {
+    "message": "Обчислення зайнятого місця"
+  },
+  "panel.space.total": {
+    "message": "Загальний розмір:"
+  },
+  "panel.space.unreadable": {
+    "message": "{count, plural, one {Не вдалося прочитати # елемент.} few {Не вдалося прочитати # елементи.} many {Не вдалося прочитати # елементів.} other {Не вдалося прочитати # елемента.}}"
+  },
+  "panel.status": {
+    "message": "{marked_size} К / {size} К, {marked_files} / {files, plural, one {# файл} few {# файли} many {# файлів} other {# файлу}}, {marked_folders} / {folders, plural, one {# тека} few {# теки} many {# тек} other {# теки}}"
+  },
+  "panel.sync_browsing.stop": {
+    "message": "Синхронна навігація (клацніть, щоб зупинити)"
+  },
+  "panel.undo.rename": {
+    "message": "Перейменування «{name}» на «{to}»"
+  },
+  "passwords.about.set": {
+    "message": "З головним паролем збережені паролі відкриються на іншому комп’ютері, куди скопійовано теку параметрів, щойно там введуть цей пароль. Якщо його забути, втратяться лише збережені паролі: їх доведеться ввести знову."
+  },
+  "passwords.about.unlock": {
+    "message": "Параметри перенесено з іншого комп’ютера, або на цьому немає сховища ключів: головний пароль відкриває тут збережені паролі."
+  },
+  "passwords.cancel": {
+    "message": "Скасувати"
+  },
+  "passwords.done.set": {
+    "message": "Головний пароль встановлено."
+  },
+  "passwords.done.unlocked": {
+    "message": "Збережені паролі відкрито."
+  },
+  "passwords.error.locked": {
+    "message": "збережені паролі заблоковано: розблокуйте їх головним паролем (Конфігурація › Параметри › Паролі)"
+  },
+  "passwords.error.no_master": {
+    "message": "головний пароль не встановлено"
+  },
+  "passwords.error.no_random": {
+    "message": "немає випадкових чисел"
+  },
+  "passwords.error.not_opened": {
+    "message": "пароль для {what} не вдається відкрити"
+  },
+  "passwords.error.not_sealed": {
+    "message": "не вдалося зашифрувати пароль"
+  },
+  "passwords.error.salt_damaged": {
+    "message": "сіль головного пароля пошкоджено"
+  },
+  "passwords.error.wrong": {
+    "message": "неправильний головний пароль"
+  },
+  "passwords.field.again": {
+    "message": "Ще раз"
+  },
+  "passwords.field.master": {
+    "message": "Головний пароль"
+  },
+  "passwords.locked_note": {
+    "message": "Збережені паролі на цьому комп’ютері заблоковано: їх відкриває головний пароль."
+  },
+  "passwords.ok": {
+    "message": "OK"
+  },
+  "passwords.problem.differ": {
+    "message": "Паролі не збігаються."
+  },
+  "passwords.problem.empty": {
+    "message": "Введіть головний пароль."
+  },
+  "passwords.title.set": {
+    "message": "Головний пароль"
+  },
+  "passwords.title.unlock": {
+    "message": "Розблокувати збережені паролі"
+  },
+  "passwords.unlock_button": {
+    "message": "Розблокувати…"
+  },
+  "passwords.working": {
+    "message": "Обробка…"
+  },
+  "properties.accessed": {
+    "message": "Відкрито:"
+  },
+  "properties.change_attributes": {
+    "message": "Змінити атрибути..."
+  },
+  "properties.close": {
+    "message": "Закрити"
+  },
+  "properties.contents": {
+    "message": "{file_count, plural, one {{files} файл} few {{files} файли} many {{files} файлів} other {{files} файлу}}, {folder_count, plural, one {{folders} тека} few {{folders} теки} many {{folders} тек} other {{folders} теки}}, {count, plural, one {{bytes} байт} few {{bytes} байти} many {{bytes} байтів} other {{bytes} байта}} ({size})"
+  },
+  "properties.contents_counting": {
+    "message": "{file_count, plural, one {{files} файл} few {{files} файли} many {{files} файлів} other {{files} файлу}}, {folder_count, plural, one {{folders} тека} few {{folders} теки} many {{folders} тек} other {{folders} теки}}, {count, plural, one {{bytes} байт} few {{bytes} байти} many {{bytes} байтів} other {{bytes} байта}} ({size}) (підрахунок…)"
+  },
+  "properties.contents_label": {
+    "message": "Вміст:"
+  },
+  "properties.created": {
+    "message": "Створено:"
+  },
+  "properties.dialog_title": {
+    "message": "Властивості"
+  },
+  "properties.in_archive": {
+    "message": "Список архіву показує все, що відомо про його файли."
+  },
+  "properties.kind.file": {
+    "message": "Файл"
+  },
+  "properties.kind.folder": {
+    "message": "Тека"
+  },
+  "properties.kind.link": {
+    "message": "Посилання"
+  },
+  "properties.kind.link_to": {
+    "message": "Посилання на {target}"
+  },
+  "properties.location": {
+    "message": "Розташування:"
+  },
+  "properties.modified": {
+    "message": "Змінено:"
+  },
+  "properties.name": {
+    "message": "Ім’я:"
+  },
+  "properties.no_system_dialog": {
+    "message": "у цій системі поки немає системного вікна властивостей"
+  },
+  "properties.owner": {
+    "message": "Власник / група:"
+  },
+  "properties.permissions": {
+    "message": "Права доступу:"
+  },
+  "properties.size": {
+    "message": "{count, plural, one {{bytes} байт ({size})} few {{bytes} байти ({size})} many {{bytes} байтів ({size})} other {{bytes} байта ({size})}}"
+  },
+  "properties.size_label": {
+    "message": "Розмір:"
+  },
+  "properties.type": {
+    "message": "Тип:"
+  },
+  "quick_open.go_to": {
+    "message": "Перейти до {path}"
+  },
+  "quick_open.group.bookmarks": {
+    "message": "Закладки"
+  },
+  "quick_open.group.connections": {
+    "message": "Підключення"
+  },
+  "quick_open.group.drives": {
+    "message": "Диски"
+  },
+  "quick_open.group.path": {
+    "message": "Шлях"
+  },
+  "quick_open.group.recent_folders": {
+    "message": "Нещодавні теки"
+  },
+  "quick_open.group.tools": {
+    "message": "Інструменти"
+  },
+  "quick_open.group.workspaces": {
+    "message": "Робочі простори"
+  },
+  "quick_open.placeholder": {
+    "message": "Команда, закладка, тека, шлях, сервер, диск, робочий простір або інструмент"
+  },
+  "quick_open.title": {
+    "message": "Швидке відкриття"
+  },
+  "quick_view.counting": {
+    "message": "Підрахунок…"
+  },
+  "quick_view.downloading": {
+    "message": "Завантаження…"
+  },
+  "quick_view.empty": {
+    "message": "Швидкий перегляд показує те, на чому стоїть курсор іншої панелі."
+  },
+  "quick_view.extracting": {
+    "message": "Видобування з архіву…"
+  },
+  "quick_view.files_only": {
+    "message": "На серверах і в архівах швидкий перегляд показує лише файли."
+  },
+  "quick_view.space.title": {
+    "message": "Усього зайнято:"
+  },
+  "quick_view.space.totals": {
+    "message": "{bytes, plural, one {{bytes_grouped} байт} few {{bytes_grouped} байти} many {{bytes_grouped} байтів} other {{bytes_grouped} байта}} у {files, plural, one {{files_grouped} файлі} few {{files_grouped} файлах} many {{files_grouped} файлах} other {{files_grouped} файла}}, {folders, plural, one {{folders_grouped} теці} few {{folders_grouped} теках} many {{folders_grouped} теках} other {{folders_grouped} теки}}"
+  },
+  "quick_view.space.unreadable": {
+    "message": "Не вдалося прочитати: {count}."
+  },
+  "quick_view.too_large.download": {
+    "message": "Файл розміром {size} завеликий, щоб завантажувати його тут: F3 відкриє його в переглядачі."
+  },
+  "quick_view.too_large.extract": {
+    "message": "Файл розміром {size} завеликий, щоб видобувати його з архіву тут: F3 відкриє його в переглядачі."
+  },
+  "remote.cancelled": {
+    "message": "скасовано"
+  },
+  "remote.cloud.ask": {
+    "message": "{kind, select, application_key {Ключ програми для {user} на {host}:} api_key {Ключ API для {user} на {host}:} password {Пароль для {user} на {host}:} other {Секретний ключ для {user} на {host}:}}"
+  },
+  "remote.cloud.ask_again": {
+    "message": "{kind, select, application_key {Неправильний ключ програми. Ключ програми для {user} на {host}:} api_key {Неправильний ключ API. Ключ API для {user} на {host}:} password {Неправильний пароль. Пароль для {user} на {host}:} other {Неправильний ключ. Секретний ключ для {user} на {host}:}}"
+  },
+  "remote.cloud.obscure_failed": {
+    "message": "rclone не зміг прийняти пароль"
+  },
+  "remote.cloud.rclone_missing": {
+    "message": "Немає rclone: його можна завантажити в «Параметри > Доповнення»"
+  },
+  "remote.cloud.title": {
+    "message": "{kind, select, application_key {Ключ програми} api_key {Ключ API} password {Пароль} other {Секретний ключ}}"
+  },
+  "remote.connecting": {
+    "message": "Підключення до {server}..."
+  },
+  "remote.dialog.cancel": {
+    "message": "Скасувати"
+  },
+  "remote.dialog.ok": {
+    "message": "OK"
+  },
+  "remote.disconnect_failed": {
+    "message": "{share}: не вдалося від’єднатися: {err}"
+  },
+  "remote.ftp.password": {
+    "message": "Пароль для {user}@{host}:"
+  },
+  "remote.ftp.password_again": {
+    "message": "Неправильний пароль. Пароль для {user}@{host}:"
+  },
+  "remote.ftps.changed": {
+    "message": "TLS-сертифікат {server} ЗМІНИВСЯ відтоді, як його записано в рядку {line} файлу {file}. Хтось може підслуховувати; якщо на сервері новий сертифікат, видаліть цей рядок."
+  },
+  "remote.ftps.not_trusted": {
+    "message": "сертифікат сервера не є довіреним"
+  },
+  "remote.login.password": {
+    "message": "Пароль"
+  },
+  "remote.login.title": {
+    "message": "Вхід"
+  },
+  "remote.login.user": {
+    "message": "Користувач"
+  },
+  "remote.mount.login_wrong": {
+    "message": "неправильне ім’я користувача або пароль"
+  },
+  "remote.mount.macos_failed": {
+    "message": "macOS не вдалося змонтувати ресурс (NetFS {code})"
+  },
+  "remote.mount.needs_desktop": {
+    "message": "потрібен kio-fuse від KDE або gvfs від GNOME"
+  },
+  "remote.mount.needs_login": {
+    "message": "потрібні ім’я користувача й пароль"
+  },
+  "remote.mount.no_fuse": {
+    "message": "змонтовано, але для ресурсу немає теки: бракує gvfs-fuse"
+  },
+  "remote.mount.no_nfs_client": {
+    "message": "не знайдено; для NFS потрібен «Клієнт для NFS» Windows (Компоненти Windows)"
+  },
+  "remote.mount.no_share": {
+    "message": "не вказано спільний ресурс: smb://server/share"
+  },
+  "remote.mount.not_address": {
+    "message": "це не адреса"
+  },
+  "remote.mount.not_found": {
+    "message": "змонтовано, але серед змонтованих не знайдено"
+  },
+  "remote.mount.other_user": {
+    "message": "Windows уже підключено до цього сервера від імені іншого користувача: вийдіть із системи або використайте того користувача"
+  },
+  "remote.password.title": {
+    "message": "Пароль"
+  },
+  "remote.remember_password": {
+    "message": "Запам’ятати (Параметри › Паролі)"
+  },
+  "remote.save_back_failed": {
+    "message": "Не вдалося зберегти на сервері: {err}"
+  },
+  "remote.sftp.host_certificate": {
+    "message": "Сервер надає сертифікат хоста; такі сертифікати поки не підтримуються."
+  },
+  "remote.sftp.key_changed": {
+    "message": "Ключ хоста {server} ЗМІНИВСЯ відтоді, як його записано в рядку {line} файлу {file}. Хтось може підслуховувати; якщо сервер налаштовано заново, видаліть цей рядок."
+  },
+  "remote.sftp.key_not_trusted": {
+    "message": "Ключу хоста {server} не довірено."
+  },
+  "remote.sftp.keys_refused": {
+    "message": "{user}@{host}: сервер відхилив ключі й не приймає пароля"
+  },
+  "remote.sftp.login_refused": {
+    "message": "{user}@{host}: у вході відмовлено"
+  },
+  "remote.sftp.passphrase": {
+    "message": "Парольна фраза для {file}"
+  },
+  "remote.sftp.passphrase_title": {
+    "message": "Парольна фраза ключа"
+  },
+  "remote.sftp.password": {
+    "message": "Пароль для {user}@{host}"
+  },
+  "remote.unknown_host.once": {
+    "message": "Підключитися один раз"
+  },
+  "remote.unknown_host.remember": {
+    "message": "Підключитися й запам’ятати"
+  },
+  "remote.unknown_host.text": {
+    "message": "{key_type, select, TLS {Сервер {host} ще невідомий. Відбиток його TLS-сертифіката:} other {Сервер {host} ще невідомий. Його відбиток {key_type}:}}\n\n{fingerprint}\n\nПідключайтеся, лише якщо це саме той сервер, який вам потрібен; його адміністратор може підтвердити відбиток."
+  },
+  "remote.unknown_host.title": {
+    "message": "Невідомий сервер"
+  },
+  "rename.case": {
+    "message": "Регістр:"
+  },
+  "rename.case.first": {
+    "message": "Перша літера"
+  },
+  "rename.case.lower": {
+    "message": "нижній регістр"
+  },
+  "rename.case.unchanged": {
+    "message": "Без змін"
+  },
+  "rename.case.upper": {
+    "message": "ВЕРХНІЙ РЕГІСТР"
+  },
+  "rename.case.words": {
+    "message": "Кожне Слово"
+  },
+  "rename.close": {
+    "message": "Закрити"
+  },
+  "rename.counter_start": {
+    "message": "Початок лічильника"
+  },
+  "rename.dialog_title": {
+    "message": "Групове перейменування"
+  },
+  "rename.digits": {
+    "message": "Цифр"
+  },
+  "rename.extension": {
+    "message": "Розширення"
+  },
+  "rename.field.counter": {
+    "message": "[C] Лічильник"
+  },
+  "rename.field.date": {
+    "message": "[Y][M][D] Дата"
+  },
+  "rename.field.extension": {
+    "message": "[E] Розш."
+  },
+  "rename.field.folder": {
+    "message": "[P] Тека"
+  },
+  "rename.field.name": {
+    "message": "[N] Ім’я"
+  },
+  "rename.field.range": {
+    "message": "[N1-3] Діапазон"
+  },
+  "rename.field.time": {
+    "message": "[h][m][s] Час"
+  },
+  "rename.first_only": {
+    "message": "Лише перше"
+  },
+  "rename.in_archive": {
+    "message": "Файли всередині архівів поки не можна перейменовувати."
+  },
+  "rename.mask": {
+    "message": "Маска перейменування: ім’я файлу"
+  },
+  "rename.match_case": {
+    "message": "Враховувати регістр"
+  },
+  "rename.new_name": {
+    "message": "Нове ім’я"
+  },
+  "rename.not_renamed_back": {
+    "message": "{from}: {err}; не повернуто старі імена: {names}"
+  },
+  "rename.not_utf8": {
+    "message": "Імена не в UTF-8 пропущено."
+  },
+  "rename.old_name": {
+    "message": "Старе ім’я"
+  },
+  "rename.problem.bad_character": {
+    "message": "недопустимий символ"
+  },
+  "rename.problem.exists": {
+    "message": "уже існує"
+  },
+  "rename.problem.no_name": {
+    "message": "немає імені"
+  },
+  "rename.problem.twice": {
+    "message": "двічі в списку"
+  },
+  "rename.regex": {
+    "message": "Регулярний вираз"
+  },
+  "rename.regex_error": {
+    "message": "Регулярний вираз: {err}"
+  },
+  "rename.replace": {
+    "message": "Замінити на"
+  },
+  "rename.search": {
+    "message": "Шукати"
+  },
+  "rename.start": {
+    "message": "Почати!"
+  },
+  "rename.status.failed": {
+    "message": "Нічого не перейменовано: {err}"
+  },
+  "rename.status.ready": {
+    "message": "«Почати!» перейменує їх."
+  },
+  "rename.status.renamed": {
+    "message": "{count, plural, one {Перейменовано: #.} few {Перейменовано: #.} many {Перейменовано: #.} other {Перейменовано: #.}}"
+  },
+  "rename.status.took_back": {
+    "message": "{count, plural, one {Повернуто старі імена: #.} few {Повернуто старі імена: #.} many {Повернуто старі імена: #.} other {Повернуто старі імена: #.}}"
+  },
+  "rename.step": {
+    "message": "Крок"
+  },
+  "rename.undo": {
+    "message": "Скасувати"
+  },
+  "rename.was": {
+    "message": "{to} (було {from})"
+  },
+  "rename.with_extension": {
+    "message": "З розширенням"
+  },
+  "scmd.column.modified": {
+    "message": "Змінено"
+  },
+  "scmd.column.name": {
+    "message": "Ім’я"
+  },
+  "scmd.column.size": {
+    "message": "Розмір"
+  },
+  "scmd.column.up_dir": {
+    "message": "ВГОРУ"
+  },
+  "scmd.command_line.not_on_server": {
+    "message": "Команди виконуються на цьому комп’ютері, а не на сервері."
+  },
+  "scmd.compare.marked": {
+    "message": "{count, plural, one {Виділено # файл: новіший або відсутній на іншому боці.} few {Виділено # файли: новіші або відсутні на іншому боці.} many {Виділено # файлів: новіші або відсутні на іншому боці.} other {Виділено # файлу: новіші або відсутні на іншому боці.}}"
+  },
+  "scmd.compare.same": {
+    "message": "У теках однакові файли."
+  },
+  "scmd.copying": {
+    "message": "Копіювання {name}..."
+  },
+  "scmd.dialog.buttons": {
+    "message": "Enter OK   Esc Скасувати"
+  },
+  "scmd.error.read_settings": {
+    "message": "Не вдалося прочитати параметри: {err}"
+  },
+  "scmd.error.read_tabs": {
+    "message": "Не вдалося прочитати відкриті вкладки: {err}"
+  },
+  "scmd.error.read_workspaces": {
+    "message": "Не вдалося прочитати робочі простори: {err}"
+  },
+  "scmd.error.save_back": {
+    "message": "Не вдалося записати назад: {err}"
+  },
+  "scmd.error.save_searches": {
+    "message": "Не вдалося зберегти історію пошуку: {err}"
+  },
+  "scmd.error.save_tabs": {
+    "message": "Не вдалося зберегти відкриті вкладки: {err}"
+  },
+  "scmd.find.backwards": {
+    "message": "Назад"
+  },
+  "scmd.find.case_sensitive": {
+    "message": "Враховувати регістр"
+  },
+  "scmd.find.hex": {
+    "message": "Шістнадцяткове (77 6F 72 64)"
+  },
+  "scmd.find.not_found": {
+    "message": "Не знайдено: {text}"
+  },
+  "scmd.find.regex": {
+    "message": "Регулярний вираз"
+  },
+  "scmd.find.search_for": {
+    "message": "Шукати:"
+  },
+  "scmd.find.title": {
+    "message": "Пошук"
+  },
+  "scmd.find.whole_words": {
+    "message": "Лише цілі слова"
+  },
+  "scmd.group.files": {
+    "message": "Файли (*.txt *.md; теки закінчуються на /):"
+  },
+  "scmd.group.select_title": {
+    "message": "Виділити групу"
+  },
+  "scmd.group.unselect_title": {
+    "message": "Зняти виділення з групи"
+  },
+  "scmd.key_bar.copy": {
+    "message": "Копія"
+  },
+  "scmd.key_bar.delete": {
+    "message": "Видал"
+  },
+  "scmd.key_bar.edit": {
+    "message": "Правка"
+  },
+  "scmd.key_bar.menu": {
+    "message": "Меню"
+  },
+  "scmd.key_bar.mkdir": {
+    "message": "Тека"
+  },
+  "scmd.key_bar.move": {
+    "message": "Перем"
+  },
+  "scmd.key_bar.quit": {
+    "message": "Вихід"
+  },
+  "scmd.key_bar.view": {
+    "message": "Перегл"
+  },
+  "scmd.message.error": {
+    "message": "Помилка"
+  },
+  "scmd.message.ok": {
+    "message": "OK"
+  },
+  "scmd.not_yet": {
+    "message": "{what, select, menus {Меню поки недоступні у версії для термінала.} file_operations {Файлові операції поки недоступні у версії для термінала.} servers {Сервери поки недоступні у версії для термінала.} other {Ця команда поки недоступна у версії для термінала.}}"
+  },
+  "scmd.picture.broken": {
+    "message": "пошкоджене зображення"
+  },
+  "scmd.picture.broken_page": {
+    "message": "пошкоджена сторінка"
+  },
+  "scmd.picture.loading": {
+    "message": "Завантаження…"
+  },
+  "scmd.picture.no_page": {
+    "message": "у PDF немає такої сторінки"
+  },
+  "scmd.shell.press_enter": {
+    "message": "Натисніть Enter, щоб повернутися до Spark Commander..."
+  },
+  "scmd.sync_browsing.off": {
+    "message": "Синхронну навігацію вимкнено."
+  },
+  "scmd.sync_browsing.on": {
+    "message": "Синхронну навігацію ввімкнено."
+  },
+  "scmd.sync_browsing.stopped": {
+    "message": "{err}. Синхронну навігацію вимкнено."
+  },
+  "scmd.viewer.column": {
+    "message": "Ст {column}"
+  },
+  "scmd.viewer.finding": {
+    "message": "пошук…"
+  },
+  "scmd.viewer.key_bar.next": {
+    "message": "Далі"
+  },
+  "scmd.viewer.key_bar.quit": {
+    "message": "Вихід"
+  },
+  "scmd.viewer.key_bar.reload": {
+    "message": "Знову"
+  },
+  "scmd.viewer.key_bar.search": {
+    "message": "Пошук"
+  },
+  "scmd.viewer.page": {
+    "message": "стор. {page} з {pages}"
+  },
+  "scmd.viewer.reading": {
+    "message": "читання {percent}%"
+  },
+  "scmd.viewer.wrap": {
+    "message": "Перенос"
+  },
+  "scmd.workspace.copy_name": {
+    "message": "{name} (копія)"
+  },
+  "scmd.workspace.default_name": {
+    "message": "Робочий простір {number}"
+  },
+  "scmd.workspace.delete_question": {
+    "message": "Видалити «{name}»? Його вкладки буде забуто."
+  },
+  "scmd.workspace.duplicate_title": {
+    "message": "Дублювати робочий простір"
+  },
+  "scmd.workspace.last_stays": {
+    "message": "Останній робочий простір видалити не можна."
+  },
+  "scmd.workspace.name": {
+    "message": "Назва:"
+  },
+  "scmd.workspace.name_or_default": {
+    "message": "Назва (порожня: {name}):"
+  },
+  "scmd.workspace.new_title": {
+    "message": "Новий робочий простір"
+  },
+  "scmd.workspace.rename_title": {
+    "message": "Перейменувати робочий простір"
+  },
+  "scmd.workspaces.keys": {
+    "message": "Enter Відкрити  F7 Новий  F5 Копія  F2 Перейм.  F8 Видалити"
+  },
+  "scmd.workspaces.title": {
+    "message": "Робочі простори"
+  },
+  "search.age.days": {
+    "message": "дн."
+  },
+  "search.age.hours": {
+    "message": "год."
+  },
+  "search.age.minutes": {
+    "message": "хв."
+  },
+  "search.age.months": {
+    "message": "міс."
+  },
+  "search.age.weeks": {
+    "message": "тиж."
+  },
+  "search.age.years": {
+    "message": "р."
+  },
+  "search.archives": {
+    "message": "Шукати в архівах"
+  },
+  "search.attribute.directory": {
+    "message": "Тека"
+  },
+  "search.attribute.either": {
+    "message": "Неважливо"
+  },
+  "search.attribute.executable": {
+    "message": "Виконуваний"
+  },
+  "search.attribute.hidden": {
+    "message": "Прихований"
+  },
+  "search.attribute.link": {
+    "message": "Символьне посилання"
+  },
+  "search.attribute.must": {
+    "message": "Має бути"
+  },
+  "search.attribute.must_not": {
+    "message": "Не має бути"
+  },
+  "search.attribute.read_only": {
+    "message": "Лише читання"
+  },
+  "search.attributes.label": {
+    "message": "Атрибути:"
+  },
+  "search.between.and": {
+    "message": "і"
+  },
+  "search.between.label": {
+    "message": "Дата між:"
+  },
+  "search.close": {
+    "message": "Закрити"
+  },
+  "search.depth.all": {
+    "message": "усі (необмежена глибина)"
+  },
+  "search.depth.current": {
+    "message": "лише поточна тека"
+  },
+  "search.depth.label": {
+    "message": "Шукати в підтеках:"
+  },
+  "search.depth.levels": {
+    "message": "{count, plural, one {# рівень} few {# рівні} many {# рівнів} other {# рівня}}"
+  },
+  "search.drives": {
+    "message": "Диски"
+  },
+  "search.duplicates.content": {
+    "message": "однаковий вміст"
+  },
+  "search.duplicates.label": {
+    "message": "Шукати дублікати файлів:"
+  },
+  "search.duplicates.name": {
+    "message": "однакове ім’я"
+  },
+  "search.duplicates.size": {
+    "message": "однаковий розмір"
+  },
+  "search.edit": {
+    "message": "F4 Правка"
+  },
+  "search.error.between_days": {
+    "message": "Для «Дата між» потрібні обидві дати"
+  },
+  "search.error.date": {
+    "message": "{text} — не дата на зразок 2026-11-12"
+  },
+  "search.error.hex": {
+    "message": "{text} — не шістнадцятковий рядок на зразок 48 65 6c"
+  },
+  "search.error.keep": {
+    "message": "Не вдалося зберегти пошук: {err}"
+  },
+  "search.error.local_time": {
+    "message": "{text} — такого місцевого часу не існує"
+  },
+  "search.error.names_regex": {
+    "message": "Регулярний вираз імені: {err}"
+  },
+  "search.error.newer_number": {
+    "message": "«Не старші ніж» потребує числа, а не {text}"
+  },
+  "search.error.no_place": {
+    "message": "У полі «Шукати в» не вказано теки"
+  },
+  "search.error.no_text": {
+    "message": "У полі «Знайти текст» не вказано тексту"
+  },
+  "search.error.older_number": {
+    "message": "«Старші ніж» потребує числа, а не {text}"
+  },
+  "search.error.save": {
+    "message": "Не вдалося зберегти пошуки: {err}"
+  },
+  "search.error.size_number": {
+    "message": "«Розмір файлу» потребує числа, а не {text}"
+  },
+  "search.error.text_regex": {
+    "message": "Регулярний вираз тексту: {err}"
+  },
+  "search.feed": {
+    "message": "Файли в панель"
+  },
+  "search.go_to_file": {
+    "message": "Перейти до файлу"
+  },
+  "search.in_found": {
+    "message": "F2 Шукати в знайдених файлах"
+  },
+  "search.locate": {
+    "message": "З індексу locate"
+  },
+  "search.names.label": {
+    "message": "Шукати:"
+  },
+  "search.names.placeholder": {
+    "message": "*.txt *.md | backup*  (порожнє: усі)"
+  },
+  "search.new": {
+    "message": "Новий пошук"
+  },
+  "search.newer.label": {
+    "message": "Не старші ніж:"
+  },
+  "search.older.label": {
+    "message": "Старші ніж:"
+  },
+  "search.only_selected": {
+    "message": "Шукати лише у виділених файлах/теках"
+  },
+  "search.only_selected_count": {
+    "message": "{count, plural, one {Шукати лише в # виділеному} few {Шукати лише в # виділених} many {Шукати лише в # виділених} other {Шукати лише в # виділеного}}"
+  },
+  "search.page.advanced": {
+    "message": "Додатково"
+  },
+  "search.page.general": {
+    "message": "Загальне"
+  },
+  "search.page.load_save": {
+    "message": "Збережені"
+  },
+  "search.places.browse_prompt": {
+    "message": "Шукати в"
+  },
+  "search.places.label": {
+    "message": "Шукати в:"
+  },
+  "search.places.placeholder": {
+    "message": "Теки, через ;"
+  },
+  "search.regex": {
+    "message": "RegEx"
+  },
+  "search.results.label": {
+    "message": "Результати пошуку:"
+  },
+  "search.saved.delete": {
+    "message": "Видалити"
+  },
+  "search.saved.label": {
+    "message": "Попередні пошуки:"
+  },
+  "search.saved.load": {
+    "message": "Завантажити"
+  },
+  "search.saved.name_first": {
+    "message": "Спершу дайте назву пошуку."
+  },
+  "search.saved.name_placeholder": {
+    "message": "Назва пошуку"
+  },
+  "search.saved.save": {
+    "message": "Зберегти"
+  },
+  "search.size.label": {
+    "message": "Розмір файлу:"
+  },
+  "search.start": {
+    "message": "Почати пошук"
+  },
+  "search.status.found": {
+    "message": "Знайдено {files, plural, one {# файл} few {# файли} many {# файлів} other {# файлу}} і {dirs, plural, one {# теку} few {# теки} many {# тек} other {# теки}}"
+  },
+  "search.status.searching": {
+    "message": "Пошук…"
+  },
+  "search.status.searching_in": {
+    "message": "Пошук: {folder}"
+  },
+  "search.status.stopped": {
+    "message": "Зупинено: {counts}"
+  },
+  "search.stop": {
+    "message": "Зупинити"
+  },
+  "search.text.ansi": {
+    "message": "ANSI (кодова сторінка {page})"
+  },
+  "search.text.case_sensitive": {
+    "message": "Враховувати регістр"
+  },
+  "search.text.hex": {
+    "message": "Hex"
+  },
+  "search.text.label": {
+    "message": "Знайти текст:"
+  },
+  "search.text.not_containing": {
+    "message": "Шукати файли, які НЕ містять тексту"
+  },
+  "search.text.office": {
+    "message": "Офісні файли (docx, xlsx, pptx, odt…)"
+  },
+  "search.text.placeholder": {
+    "message": "Текст для пошуку"
+  },
+  "search.text.whole_words": {
+    "message": "Лише цілі слова"
+  },
+  "search.title": {
+    "message": "Пошук файлів"
+  },
+  "search.unit.bytes": {
+    "message": "байти"
+  },
+  "search.view": {
+    "message": "F3 Перегляд"
+  },
+  "settings.addons.builtin_version": {
+    "message": "{version}, постачається зі Spark Commander"
+  },
+  "settings.addons.check_daily": {
+    "message": "Шукати оновлення доповнень під час запуску й щодня та пропонувати їх"
+  },
+  "settings.addons.check_failed": {
+    "message": "Не вдалося перевірити оновлення: {err}"
+  },
+  "settings.addons.check_now": {
+    "message": "Перевірити зараз"
+  },
+  "settings.addons.checking": {
+    "message": "Пошук оновлень..."
+  },
+  "settings.addons.download": {
+    "message": "Завантажити"
+  },
+  "settings.addons.downloading": {
+    "message": "Завантаження: {done} з {size}"
+  },
+  "settings.addons.file": {
+    "message": "Файл"
+  },
+  "settings.addons.installed.builtin": {
+    "message": "постачається зі Spark Commander"
+  },
+  "settings.addons.installed.label": {
+    "message": "Встановлено"
+  },
+  "settings.addons.installed.none": {
+    "message": "немає"
+  },
+  "settings.addons.intro": {
+    "message": "Spark Commander використовує для деяких своїх функцій ці програми інших проєктів. Доповнення завантажуються окремо, на ваш вибір; 7-Zip і PDFium постачаються разом із програмою."
+  },
+  "settings.addons.never_offer": {
+    "message": "Ніколи не пропонувати доповнення, коли вони потрібні файлу"
+  },
+  "settings.addons.offers": {
+    "message": "Пропозиції та оновлення"
+  },
+  "settings.addons.online.label": {
+    "message": "Доступна"
+  },
+  "settings.addons.online.looking": {
+    "message": "пошук..."
+  },
+  "settings.addons.online.none": {
+    "message": "немає для цієї системи"
+  },
+  "settings.addons.online.not_yet": {
+    "message": "ще не перевірено"
+  },
+  "settings.addons.online.unknown": {
+    "message": "невідомо"
+  },
+  "settings.addons.remove": {
+    "message": "Вилучити"
+  },
+  "settings.addons.up_to_date": {
+    "message": "Список доповнень актуальний."
+  },
+  "settings.addons.version": {
+    "message": "Версія"
+  },
+  "settings.addons.website": {
+    "message": "Вебсайт"
+  },
+  "settings.appearance.title": {
+    "message": "Вигляд"
+  },
+  "settings.apply": {
+    "message": "Застосувати"
+  },
+  "settings.backdrop.blur": {
+    "message": "Розмивати стільницю позаду"
+  },
+  "settings.backdrop.clear": {
+    "message": "0%, лише стільниця"
+  },
+  "settings.backdrop.cover": {
+    "message": "Наскільки перекривати стільницю позаду:"
+  },
+  "settings.backdrop.opacity": {
+    "message": "{opacity}%"
+  },
+  "settings.backdrop.sidebar": {
+    "message": "Бічна панель"
+  },
+  "settings.backdrop.solid": {
+    "message": "100%, суцільний"
+  },
+  "settings.backdrop.terminal": {
+    "message": "Термінал"
+  },
+  "settings.cancel": {
+    "message": "Скасувати"
+  },
+  "settings.date.as_system": {
+    "message": "Як у системі: {date}"
+  },
+  "settings.date.custom": {
+    "message": "Власний:"
+  },
+  "settings.date.pattern_help": {
+    "message": "yyyy рік, MM місяць (MMM його назва), dd день (ddd день тижня)"
+  },
+  "settings.date.shown_as": {
+    "message": "Вигляд"
+  },
+  "settings.date.shown_as_note": {
+    "message": "у списках файлів; діалоги додають секунди"
+  },
+  "settings.date.title": {
+    "message": "Дата"
+  },
+  "settings.editor.browse": {
+    "message": "Огляд..."
+  },
+  "settings.editor.choose": {
+    "message": "Вибрати"
+  },
+  "settings.editor.external": {
+    "message": "Зовнішній редактор (Ctrl+Shift+F4):"
+  },
+  "settings.editor.external_help": {
+    "message": "%1 — це файл, інакше він додається в кінець; напр. code --wait %1"
+  },
+  "settings.editor.limit": {
+    "message": "Вбудований редактор (F4) відкриває файли до"
+  },
+  "settings.editor.limit_unit": {
+    "message": "МБ"
+  },
+  "settings.editor.title": {
+    "message": "Редактор для F4"
+  },
+  "settings.error.no_folder": {
+    "message": "немає теки конфігурації"
+  },
+  "settings.files_shown.hidden": {
+    "message": "Приховані файли"
+  },
+  "settings.files_shown.system": {
+    "message": "Системні файли"
+  },
+  "settings.files_shown.title": {
+    "message": "Показ файлів"
+  },
+  "settings.font.as_system": {
+    "message": "Як у системі"
+  },
+  "settings.font.chosen": {
+    "message": "Вибрано; системний — {family}, {size}"
+  },
+  "settings.font.fixed": {
+    "message": "Переглядач"
+  },
+  "settings.font.fixed_note": {
+    "message": "Лише моноширинні шрифти; також для редактора й порівняння файлів."
+  },
+  "settings.font.main": {
+    "message": "Шрифт головного вікна"
+  },
+  "settings.font.system": {
+    "message": "Системний шрифт"
+  },
+  "settings.language.system": {
+    "message": "Мова системи"
+  },
+  "settings.language.system_named": {
+    "message": "Мова системи: {language}"
+  },
+  "settings.language.title": {
+    "message": "Мова"
+  },
+  "settings.menus.automatic": {
+    "message": "Автоматично: кнопка ☰ у GNOME, смуга меню в інших"
+  },
+  "settings.menus.bar": {
+    "message": "Смуга меню"
+  },
+  "settings.menus.button": {
+    "message": "Кнопка ☰ у заголовку вікна"
+  },
+  "settings.menus.title": {
+    "message": "Меню"
+  },
+  "settings.ok": {
+    "message": "OK"
+  },
+  "settings.page.addons": {
+    "message": "Доповнення"
+  },
+  "settings.page.date": {
+    "message": "Дата"
+  },
+  "settings.page.display": {
+    "message": "Відображення"
+  },
+  "settings.page.edit_view": {
+    "message": "Редагування/перегляд"
+  },
+  "settings.page.font": {
+    "message": "Шрифт"
+  },
+  "settings.page.language": {
+    "message": "Мова"
+  },
+  "settings.page.layout": {
+    "message": "Компонування"
+  },
+  "settings.page.operations": {
+    "message": "Операції"
+  },
+  "settings.page.passwords": {
+    "message": "Паролі"
+  },
+  "settings.page.terminal": {
+    "message": "Термінал"
+  },
+  "settings.page.toolbar": {
+    "message": "Панель інструментів"
+  },
+  "settings.passwords.change_master": {
+    "message": "Змінити головний пароль…"
+  },
+  "settings.passwords.locked": {
+    "message": "На цьому комп’ютері їх заблоковано: їх відкриває головний пароль."
+  },
+  "settings.passwords.master_set": {
+    "message": "Головний пароль встановлено: якщо скопіювати теку параметрів, вони відкриються на іншому комп’ютері, щойно там введуть цей пароль."
+  },
+  "settings.passwords.no_master": {
+    "message": "Головний пароль не встановлено: якщо скопіювати теку параметрів, на іншому комп’ютері вони не відкриються; там їх доведеться ввести знову."
+  },
+  "settings.passwords.not_removed": {
+    "message": "Головний пароль не вилучено: {err}"
+  },
+  "settings.passwords.remove_master": {
+    "message": "Вилучити головний пароль"
+  },
+  "settings.passwords.saved": {
+    "message": "{count, plural, one {Збережено # пароль} few {Збережено # паролі} many {Збережено # паролів} other {Збережено # пароля}} (серверів, спільних ресурсів, зашифрованих дисків), зашифровано в теці параметрів; ключ до них зберігається в сховищі ключів цього комп’ютера."
+  },
+  "settings.passwords.set_master": {
+    "message": "Встановити головний пароль…"
+  },
+  "settings.passwords.title": {
+    "message": "Збережені паролі"
+  },
+  "settings.passwords.unlock": {
+    "message": "Розблокувати…"
+  },
+  "settings.queue.clear_after": {
+    "message": "Очищати завершені операції через"
+  },
+  "settings.queue.clear_after_help": {
+    "message": "0: одразу після завершення. Невдалі та скасовані залишаються, доки їх не очистять."
+  },
+  "settings.queue.clear_after_unit": {
+    "message": "хв"
+  },
+  "settings.queue.download_limit": {
+    "message": "Обмеження швидкості завантаження"
+  },
+  "settings.queue.download_limit_help": {
+    "message": "«Завантажити за посиланням», а також копіювання з серверів FTP і SFTP, зокрема вже запущені. 0: без обмеження."
+  },
+  "settings.queue.download_limit_unit": {
+    "message": "КБ/с"
+  },
+  "settings.queue.title": {
+    "message": "Черга операцій"
+  },
+  "settings.shell.default": {
+    "message": "Типова: {shell}"
+  },
+  "settings.shell.note": {
+    "message": "Її запускають нові вкладки термінала."
+  },
+  "settings.shell.title": {
+    "message": "Оболонка"
+  },
+  "settings.sort_folders.by_name": {
+    "message": "Завжди за ім’ям"
+  },
+  "settings.sort_folders.like_files": {
+    "message": "Як файли (також за часом)"
+  },
+  "settings.sort_folders.title": {
+    "message": "Сортування тек"
+  },
+  "settings.tabs.header_always": {
+    "message": "Показувати заголовок вкладок, навіть коли вкладка лише одна"
+  },
+  "settings.tabs.title": {
+    "message": "Вкладки тек"
+  },
+  "settings.time.as_system": {
+    "message": "Як у системі"
+  },
+  "settings.time.h12": {
+    "message": "12 годин (2:05 PM)"
+  },
+  "settings.time.h24": {
+    "message": "24 години (14:05)"
+  },
+  "settings.time.title": {
+    "message": "Час"
+  },
+  "settings.title": {
+    "message": "Параметри"
+  },
+  "settings.toolbar.add": {
+    "message": "Додати кнопку…"
+  },
+  "settings.toolbar.move_down": {
+    "message": "Перемістити вниз"
+  },
+  "settings.toolbar.move_up": {
+    "message": "Перемістити вгору"
+  },
+  "settings.toolbar.place": {
+    "message": "Під смугою меню; у заголовку вікна, якщо меню сховано за кнопкою ☰, як у програмах GNOME. Без кнопок панелі немає."
+  },
+  "settings.toolbar.remove": {
+    "message": "Вилучити"
+  },
+  "settings.toolbar.replace": {
+    "message": "Замінити…"
+  },
+  "settings.toolbar.restore_default": {
+    "message": "Відновити типові"
+  },
+  "settings.toolbar.title": {
+    "message": "Кнопки панелі інструментів"
+  },
+  "settings.viewer.font.ansi": {
+    "message": "ANSI (Windows)"
+  },
+  "settings.viewer.font.ascii": {
+    "message": "ASCII (DOS)"
+  },
+  "settings.viewer.font.auto": {
+    "message": "Автовизначення"
+  },
+  "settings.viewer.font.label": {
+    "message": "Шрифт під час запуску:"
+  },
+  "settings.viewer.font.variable": {
+    "message": "Змінна ширина"
+  },
+  "settings.viewer.minimap": {
+    "message": "Мінікарта"
+  },
+  "settings.viewer.show": {
+    "message": "Показувати:"
+  },
+  "settings.viewer.start.auto": {
+    "message": "Автовизначення"
+  },
+  "settings.viewer.start.binary": {
+    "message": "Двійковий"
+  },
+  "settings.viewer.start.hex": {
+    "message": "Шістнадцятковий"
+  },
+  "settings.viewer.start.label": {
+    "message": "Режим під час запуску:"
+  },
+  "settings.viewer.start.text": {
+    "message": "Текст"
+  },
+  "settings.viewer.title": {
+    "message": "Переглядач для F3"
+  },
+  "settings.viewer.width.binary": {
+    "message": "Двійковий"
+  },
+  "settings.viewer.width.label": {
+    "message": "Ширина відображення (символів):"
+  },
+  "settings.viewer.width.text": {
+    "message": "Текст"
+  },
+  "settings.viewer.wrap": {
+    "message": "Переносити текст"
+  },
+  "shells.command_prompt": {
+    "message": "Командний рядок"
+  },
+  "sidebar.device.no_files": {
+    "message": "не надає файлів"
+  },
+  "sidebar.device.not_answering": {
+    "message": "{name} не відповідає: розблокуйте пристрій і відкрийте на ньому KDE Connect, потім перечитайте теку (F2)."
+  },
+  "sidebar.device.not_answering_error": {
+    "message": "{name} не відповідає ({err}): розблокуйте пристрій і відкрийте на ньому KDE Connect."
+  },
+  "sidebar.device.not_connected": {
+    "message": "не підключено"
+  },
+  "sidebar.device.opening": {
+    "message": "Відкриття {name}..."
+  },
+  "sidebar.device.reconnecting": {
+    "message": "{name} не відповідає: повторне підключення..."
+  },
+  "sidebar.device.unmount_failed": {
+    "message": "{name}: не вдалося демонтувати: {err}"
+  },
+  "sidebar.group.bookmarks": {
+    "message": "Закладки"
+  },
+  "sidebar.group.cloud": {
+    "message": "Хмара"
+  },
+  "sidebar.group.devices": {
+    "message": "Пристрої"
+  },
+  "sidebar.group.drives": {
+    "message": "Диски"
+  },
+  "sidebar.group.network": {
+    "message": "Мережа"
+  },
+  "sidebar.section.connections": {
+    "message": "Підключення"
+  },
+  "sidebar.section.folders": {
+    "message": "Теки"
+  },
+  "sidebar.section.operations": {
+    "message": "Операції"
+  },
+  "sidebar.section.places": {
+    "message": "Місця"
+  },
+  "sidebar.volume.locked": {
+    "message": "заблоковано"
+  },
+  "sidebar.volume.mounting": {
+    "message": "Монтування {name}..."
+  },
+  "sidebar.volume.not_mounted": {
+    "message": "не змонтовано"
+  },
+  "sidebar.volume.open": {
+    "message": "Відкрити"
+  },
+  "sidebar.volume.space": {
+    "message": "{free} вільно з {total}"
+  },
+  "sidebar.volume.unmount": {
+    "message": "Демонтувати"
+  },
+  "sidebar.volume.unmount_failed": {
+    "message": "Не вдалося демонтувати: {err}"
+  },
+  "split.bad_size": {
+    "message": "«{size}» — це не розмір: 100 MB, 1.5 GB, 650m"
+  },
+  "split.choose": {
+    "message": "Поставте курсор на файл, який треба розділити."
+  },
+  "split.combine.choose": {
+    "message": "Поставте курсор на частину (name.001) або на її файл .crc."
+  },
+  "split.combine.dialog_title": {
+    "message": "Об’єднати файли"
+  },
+  "split.combine.label": {
+    "message": "Об’єднати частини у файл:"
+  },
+  "split.combine.title": {
+    "message": "Об’єднання «{name}»"
+  },
+  "split.combined_no_crc": {
+    "message": "{count, plural, one {Об’єднано # частину, файлу CRC для перевірки немає} few {Об’єднано # частини, файлу CRC для перевірки немає} many {Об’єднано # частин, файлу CRC для перевірки немає} other {Об’єднано # частини, файлу CRC для перевірки немає}}"
+  },
+  "split.crc_mismatch": {
+    "message": "{target} не відповідає {file}: якоїсь частини бракує або її пошкоджено"
+  },
+  "split.crc_names_no_file": {
+    "message": "файл CRC не вказує жодного файлу"
+  },
+  "split.crc_unreadable": {
+    "message": "об’єднано, але не вдалося прочитати {file}: {err}"
+  },
+  "split.dialog_title": {
+    "message": "Розділити файл"
+  },
+  "split.label": {
+    "message": "Розділити «{name}» на частини в теці:"
+  },
+  "split.part_missing": {
+    "message": "Немає {path}"
+  },
+  "split.part_size": {
+    "message": "Розмір частини:"
+  },
+  "split.title": {
+    "message": "Розділення «{name}»"
+  },
+  "sync.close": {
+    "message": "Закрити"
+  },
+  "sync.column.date": {
+    "message": "Дата"
+  },
+  "sync.column.name": {
+    "message": "Ім’я"
+  },
+  "sync.column.size": {
+    "message": "Розмір"
+  },
+  "sync.compare": {
+    "message": "Порівняти"
+  },
+  "sync.confirm.copy_left": {
+    "message": "Копіювати {count} ліворуч ({size})"
+  },
+  "sync.confirm.copy_right": {
+    "message": "Копіювати {count} праворуч ({size})"
+  },
+  "sync.confirm.delete_left": {
+    "message": "Видалити {count} ліворуч"
+  },
+  "sync.confirm.delete_right": {
+    "message": "Видалити {count} праворуч"
+  },
+  "sync.confirm.ok": {
+    "message": "Синхронізувати"
+  },
+  "sync.confirm.text": {
+    "message": "{actions}. Скопійовані файли замінять наявні.{trash, select, yes { Видалені на цьому комп’ютері файли буде переміщено до смітника.} other {}}"
+  },
+  "sync.confirm.title": {
+    "message": "Синхронізація"
+  },
+  "sync.error.changed": {
+    "message": "змінено після порівняння; порівняйте знову"
+  },
+  "sync.error.compare": {
+    "message": "Не вдалося порівняти: {err}"
+  },
+  "sync.error.no_folders": {
+    "message": "Синхронізація тек порівнює дві теки: жодна панель не повинна показувати архів чи результати пошуку."
+  },
+  "sync.left": {
+    "message": "Ліва"
+  },
+  "sync.mask.label": {
+    "message": "Файли:"
+  },
+  "sync.option.asymmetric": {
+    "message": "Асиметрично (права стає копією лівої)"
+  },
+  "sync.option.by_content": {
+    "message": "За вмістом"
+  },
+  "sync.option.ignore_date": {
+    "message": "Ігнорувати дату"
+  },
+  "sync.option.subfolders": {
+    "message": "Підтеки"
+  },
+  "sync.result.done": {
+    "message": "{count, plural, one {Синхронізовано: #} few {Синхронізовано: #} many {Синхронізовано: #} other {Синхронізовано: #}}"
+  },
+  "sync.result.failed": {
+    "message": "{count, plural, one {Не синхронізовано: #} few {Не синхронізовано: #} many {Не синхронізовано: #} other {Не синхронізовано: #}}; {first}"
+  },
+  "sync.right": {
+    "message": "Права"
+  },
+  "sync.show.equal": {
+    "message": "= однакові"
+  },
+  "sync.show.label": {
+    "message": "Показати:"
+  },
+  "sync.show.other": {
+    "message": "≠ без змін"
+  },
+  "sync.show.to_left": {
+    "message": "← ліворуч"
+  },
+  "sync.show.to_right": {
+    "message": "→ праворуч"
+  },
+  "sync.status.both_empty": {
+    "message": "Обидві теки порожні."
+  },
+  "sync.status.comparing": {
+    "message": "Порівняння {folder}"
+  },
+  "sync.status.counts": {
+    "message": "праворуч: {right}, ліворуч: {left}, видалити: {delete}, однакових: {equal}, без змін: {alone}"
+  },
+  "sync.status.stopped": {
+    "message": "Зупинено."
+  },
+  "sync.stop": {
+    "message": "Зупинити"
+  },
+  "sync.synchronize": {
+    "message": "Синхронізувати..."
+  },
+  "sync.task.title": {
+    "message": "Синхронізація {left} і {right}"
+  },
+  "sync.title": {
+    "message": "Синхронізація тек"
+  },
+  "tab_menu.close_all_tabs": {
+    "message": "Закрити всі вкладки"
+  },
+  "tab_menu.close_duplicate_tabs": {
+    "message": "Закрити дублікати вкладок"
+  },
+  "tab_menu.close_tab": {
+    "message": "Закрити цю вкладку"
+  },
+  "tab_menu.copy_tab_to_other_panel": {
+    "message": "Копіювати вкладку в іншу панель"
+  },
+  "tab_menu.duplicate_tab": {
+    "message": "Дублювати цю вкладку"
+  },
+  "tab_menu.list_tabs": {
+    "message": "Показати список усіх вкладок"
+  },
+  "tab_menu.lock_tab": {
+    "message": "Заблокувати цю вкладку"
+  },
+  "tab_menu.none": {
+    "message": "(немає)"
+  },
+  "tab_menu.rename_tab": {
+    "message": "Перейменувати вкладку..."
+  },
+  "tabs.error.reopen": {
+    "message": "Не вдалося знову відкрити вкладку: {err}"
+  },
+  "tabs.history.empty": {
+    "message": "В історії цієї вкладки ще немає тек."
+  },
+  "tabs.new": {
+    "message": "Нова вкладка"
+  },
+  "tabs.rename.label": {
+    "message": "Нова назва:"
+  },
+  "tabs.rename.title": {
+    "message": "Перейменувати вкладку"
+  },
+  "tabs.search_results": {
+    "message": "Результати пошуку"
+  },
+  "terminal.busy": {
+    "message": "У терміналі виконується програма: запустіть команду, коли вона завершиться."
+  },
+  "terminal.close.idle": {
+    "message": "Закрити цю вкладку термінала? Її оболонку буде завершено."
+  },
+  "terminal.close.ok": {
+    "message": "Закрити"
+  },
+  "terminal.close.running": {
+    "message": "Закрити цю вкладку термінала? Програму, що в ній виконується, буде зупинено."
+  },
+  "terminal.close.title": {
+    "message": "Закрити вкладку"
+  },
+  "terminal.error.start_shell": {
+    "message": "Не вдалося запустити оболонку: {err}"
+  },
+  "terminal.jump_to_bottom": {
+    "message": "До кінця (Ctrl+End) ↓"
+  },
+  "terminal.menu.copy": {
+    "message": "Копіювати"
+  },
+  "terminal.menu.paste": {
+    "message": "Вставити"
+  },
+  "toolbar.customize": {
+    "message": "Налаштувати панель інструментів…"
+  },
+  "tools.clear_key": {
+    "message": "Очистити"
+  },
+  "tools.close": {
+    "message": "Закрити"
+  },
+  "tools.delete": {
+    "message": "Видалити"
+  },
+  "tools.empty": {
+    "message": "Інструментів ще немає: «Новий...» додасть інструмент."
+  },
+  "tools.field.command": {
+    "message": "Команда"
+  },
+  "tools.field.key": {
+    "message": "Клавіша"
+  },
+  "tools.field.name": {
+    "message": "Назва"
+  },
+  "tools.intro": {
+    "message": "Ваші власні командні рядки в меню «Інструменти»: клацніть потрібний там або натисніть його клавішу."
+  },
+  "tools.key.none": {
+    "message": "Немає"
+  },
+  "tools.key.waiting": {
+    "message": "Натисніть клавішу... (Esc: немає)"
+  },
+  "tools.move_down": {
+    "message": "Перемістити вниз"
+  },
+  "tools.move_up": {
+    "message": "Перемістити вгору"
+  },
+  "tools.name.placeholder": {
+    "message": "Порівняти з іншою стороною"
+  },
+  "tools.new": {
+    "message": "Новий..."
+  },
+  "tools.new_name": {
+    "message": "Інструмент {number}"
+  },
+  "tools.no_command": {
+    "message": "{tool} ще не має команди: Інструменти > Керувати інструментами."
+  },
+  "tools.not_local": {
+    "message": "Інструменти виконуються на цьому комп’ютері: панель показує сервер або архів."
+  },
+  "tools.note.key_of_command": {
+    "message": "{key} також виконує «{command}»: його перехоплює інструмент."
+  },
+  "tools.note.key_of_other_tool": {
+    "message": "{key} також має {tool}: спрацює нижчий у списку."
+  },
+  "tools.placeholders": {
+    "message": "%P — тека цієї панелі, %T — іншої (обидві закінчуються роздільником, тож \"%P%N\" — це шлях), %N — файл під курсором, %O — його ім’я без розширення, %E — розширення, %S — виділені файли (інакше той, що під курсором), кожен у лапках; %% — знак %. Решту беріть у лапки: \"%P%N\"."
+  },
+  "tools.run_in_terminal": {
+    "message": "Виконувати в терміналі, щоб бачити, що він виводить"
+  },
+  "tools.set_key": {
+    "message": "Задати клавішу..."
+  },
+  "tools.title": {
+    "message": "Інструменти"
+  },
+  "transfer.answer.cancel": {
+    "message": "Скасувати"
+  },
+  "transfer.answer.elevate": {
+    "message": "Як адміністратор"
+  },
+  "transfer.answer.overwrite": {
+    "message": "Замінити"
+  },
+  "transfer.answer.overwrite_all": {
+    "message": "Замінити все"
+  },
+  "transfer.answer.rename": {
+    "message": "Перейменувати"
+  },
+  "transfer.answer.retry": {
+    "message": "Повторити"
+  },
+  "transfer.answer.skip": {
+    "message": "Пропустити"
+  },
+  "transfer.answer.skip_all": {
+    "message": "Пропустити все"
+  },
+  "transfer.archive.local_only": {
+    "message": "В архів можна додати лише файли цього комп’ютера: спершу скопіюйте їх сюди."
+  },
+  "transfer.cancel": {
+    "message": "Скасувати"
+  },
+  "transfer.error.elevate_hint": {
+    "message": "«Як адміністратор»: це та все інше, у чому буде відмовлено, виконається після решти, з одним запитом пароля."
+  },
+  "transfer.error.title": {
+    "message": "Помилка"
+  },
+  "transfer.exists.describe": {
+    "message": "{count, plural, one {{size} байт, {time}} few {{size} байти, {time}} many {{size} байтів, {time}} other {{size} байта, {time}}}"
+  },
+  "transfer.exists.text": {
+    "message": "Наявний: {existing}\nНовий: {new}"
+  },
+  "transfer.exists.title": {
+    "message": "Файл уже існує"
+  },
+  "transfer.extract_failed": {
+    "message": "Не вдалося видобути їх: {err}"
+  },
+  "transfer.into_archive.question_many": {
+    "message": "{kind, select, copy {Копіювати} other {Перемістити}} {count, plural, one {# елемент} few {# елементи} many {# елементів} other {# елемента}} в {into}? Елементи з такими самими іменами там буде замінено."
+  },
+  "transfer.into_archive.question_one": {
+    "message": "{kind, select, copy {Копіювати} other {Перемістити}} «{name}» в {into}? Елемент із таким самим ім’ям там буде замінено."
+  },
+  "transfer.into_archive.title_many": {
+    "message": "{kind, select, copy {Копіювання} other {Переміщення}} {count, plural, one {# елемента} few {# елементів} many {# елементів} other {# елемента}} в {archive}"
+  },
+  "transfer.into_archive.title_one": {
+    "message": "{kind, select, copy {Копіювання} other {Переміщення}} «{name}» в {archive}"
+  },
+  "transfer.label.many": {
+    "message": "{kind, select, copy {Копіювати} other {Перемістити}} {count, plural, one {# елемент} few {# елементи} many {# елементів} other {# елемента}} до:"
+  },
+  "transfer.label.many_server": {
+    "message": "{kind, select, copy {Копіювати} other {Перемістити}} {count, plural, one {# елемент} few {# елементи} many {# елементів} other {# елемента}} до {server}:"
+  },
+  "transfer.label.one": {
+    "message": "{kind, select, copy {Копіювати} other {Перемістити}} «{name}» до:"
+  },
+  "transfer.label.one_server": {
+    "message": "{kind, select, copy {Копіювати} other {Перемістити}} «{name}» до {server}:"
+  },
+  "transfer.ok": {
+    "message": "OK"
+  },
+  "transfer.overwrite.all": {
+    "message": "Замінити всі"
+  },
+  "transfer.overwrite.ask": {
+    "message": "Запитувати"
+  },
+  "transfer.overwrite.label": {
+    "message": "Якщо в цілі є файл із таким самим ім’ям:"
+  },
+  "transfer.overwrite.older": {
+    "message": "Замінити старіші"
+  },
+  "transfer.overwrite.rename": {
+    "message": "Перейменувати копії"
+  },
+  "transfer.overwrite.skip": {
+    "message": "Пропустити всі"
+  },
+  "transfer.remove_moved": {
+    "message": "Вилучення переміщених файлів із {name}"
+  },
+  "transfer.speed": {
+    "message": "{size}/с"
+  },
+  "transfer.strip.counting": {
+    "message": "підрахунок: {count, plural, one {# файл} few {# файли} many {# файлів} other {# файлу}}"
+  },
+  "transfer.strip.progress": {
+    "message": "{files} / {count, plural, one {# файл} few {# файли} many {# файлів} other {# файлу}}, {percent}%"
+  },
+  "transfer.strip.queue": {
+    "message": "Черга..."
+  },
+  "transfer.strip.queue_waiting": {
+    "message": "Черга ({count, plural, one {# очікує} few {# очікують} many {# очікують} other {# очікує}})..."
+  },
+  "transfer.title.copy": {
+    "message": "Копіювати"
+  },
+  "transfer.title.move": {
+    "message": "Перемістити"
+  },
+  "viewer.as_text_hint": {
+    "message": "{err}. Клавіша 1 покаже файл як текст."
+  },
+  "viewer.book.cannot_read": {
+    "message": "Не вдається прочитати книжку: {err}. Клавіша 1 покаже файл як текст."
+  },
+  "viewer.book.continuing": {
+    "message": "Продовження з {percent}"
+  },
+  "viewer.book.error.compression": {
+    "message": "стиснено способом, який поки не підтримується ({compression})"
+  },
+  "viewer.book.error.damaged": {
+    "message": "пошкоджена книжка"
+  },
+  "viewer.book.error.damaged_zip": {
+    "message": "пошкоджений zip"
+  },
+  "viewer.book.error.drm": {
+    "message": "захищено DRM: прочитати можна лише в Kindle"
+  },
+  "viewer.book.error.huffman": {
+    "message": "стиснено так, як власні книжки Amazon (HUFF/CDIC), а це поки не підтримується"
+  },
+  "viewer.book.error.missing_part": {
+    "message": "{name} немає в книжці"
+  },
+  "viewer.book.error.no_package": {
+    "message": "у книжці немає файлу пакета"
+  },
+  "viewer.book.error.no_text": {
+    "message": "у книжці немає тексту"
+  },
+  "viewer.book.error.not_zip": {
+    "message": "не zip: пошкоджена книжка чи захищена DRM?"
+  },
+  "viewer.book.error.zip_method": {
+    "message": "{name}: стиснено методом zip, який тут не прочитати ({method})"
+  },
+  "viewer.cannot_show": {
+    "message": "Не вдається показати: {err}"
+  },
+  "viewer.convert.failed": {
+    "message": "{tool} не вдалося перетворити документ ({status})"
+  },
+  "viewer.converting": {
+    "message": "Перетворення за допомогою {tool}…"
+  },
+  "viewer.copy.too_large": {
+    "message": "Виділення понад {megabytes} МБ не копіюються."
+  },
+  "viewer.encoding.cp1250": {
+    "message": "Східна Європа (1250)"
+  },
+  "viewer.encoding.cp1251": {
+    "message": "Кирилиця Windows (1251)"
+  },
+  "viewer.encoding.cp1252": {
+    "message": "Західна Latin1 (1252)"
+  },
+  "viewer.encoding.cp1253": {
+    "message": "Грецька (1253)"
+  },
+  "viewer.encoding.cp1254": {
+    "message": "Турецька (1254)"
+  },
+  "viewer.encoding.cp1255": {
+    "message": "Іврит (1255)"
+  },
+  "viewer.encoding.cp1256": {
+    "message": "Арабська (1256)"
+  },
+  "viewer.encoding.cp1257": {
+    "message": "Балтійська (1257)"
+  },
+  "viewer.encoding.cp1258": {
+    "message": "В’єтнамська (1258)"
+  },
+  "viewer.encoding.cp20866": {
+    "message": "Кирилиця KOI8-R (20866)"
+  },
+  "viewer.encoding.cp437": {
+    "message": "DOS-USA (437)"
+  },
+  "viewer.encoding.cp850": {
+    "message": "DOS-LATIN1 (850)"
+  },
+  "viewer.encoding.cp852": {
+    "message": "DOS Центральна Європа (852)"
+  },
+  "viewer.encoding.cp866": {
+    "message": "DOS Кирилиця (866)"
+  },
+  "viewer.encoding.cp874": {
+    "message": "Тайська (874)"
+  },
+  "viewer.encoding.cp932": {
+    "message": "Японська (932)"
+  },
+  "viewer.encoding.cp936": {
+    "message": "Китайська, материк (936)"
+  },
+  "viewer.encoding.cp949": {
+    "message": "Корейська (949)"
+  },
+  "viewer.encoding.cp950": {
+    "message": "Китайська, Тайвань (950)"
+  },
+  "viewer.find.not_found": {
+    "message": "Не знайдено: {text}"
+  },
+  "viewer.find.not_hex": {
+    "message": "Не шістнадцятковий рядок: {text}"
+  },
+  "viewer.find.nothing": {
+    "message": "Нічого шукати."
+  },
+  "viewer.find.save_failed": {
+    "message": "Не вдалося зберегти пошуки: {err}"
+  },
+  "viewer.loading": {
+    "message": "Завантаження…"
+  },
+  "viewer.markdown.too_large": {
+    "message": "Понад {megabytes} МБ: клавіша 1 покаже файл як текст."
+  },
+  "viewer.menu.binary": {
+    "message": "Двійковий (фіксована довжина рядка)"
+  },
+  "viewer.menu.book": {
+    "message": "Книжка (EPUB, FB2)"
+  },
+  "viewer.menu.close": {
+    "message": "Закрити"
+  },
+  "viewer.menu.configure": {
+    "message": "Налаштувати..."
+  },
+  "viewer.menu.copy_hex": {
+    "message": "Копіювати як шістнадцяткові символи"
+  },
+  "viewer.menu.copy_text": {
+    "message": "Копіювати як текст"
+  },
+  "viewer.menu.edit": {
+    "message": "Правка"
+  },
+  "viewer.menu.encoding": {
+    "message": "Кодування"
+  },
+  "viewer.menu.file": {
+    "message": "Файл"
+  },
+  "viewer.menu.find": {
+    "message": "Знайти..."
+  },
+  "viewer.menu.find_next": {
+    "message": "Знайти далі"
+  },
+  "viewer.menu.fit_image": {
+    "message": "Припасувати зображення до вікна"
+  },
+  "viewer.menu.font_ansi": {
+    "message": "ANSI (кодування Windows)"
+  },
+  "viewer.menu.font_ascii": {
+    "message": "ASCII (кодування DOS)"
+  },
+  "viewer.menu.font_page": {
+    "message": "Як задано шрифтом"
+  },
+  "viewer.menu.font_variable": {
+    "message": "Змінна ширина символів"
+  },
+  "viewer.menu.hex": {
+    "message": "Шістнадцятковий"
+  },
+  "viewer.menu.html": {
+    "message": "Текст HTML (без тегів)"
+  },
+  "viewer.menu.minimap": {
+    "message": "Мінікарта"
+  },
+  "viewer.menu.next_file": {
+    "message": "Наступний файл"
+  },
+  "viewer.menu.only_larger": {
+    "message": "Припасовувати лише більші зображення"
+  },
+  "viewer.menu.open": {
+    "message": "Відкрити..."
+  },
+  "viewer.menu.options": {
+    "message": "Параметри"
+  },
+  "viewer.menu.picture": {
+    "message": "Зображення/мультимедіа"
+  },
+  "viewer.menu.previous_file": {
+    "message": "Попередній файл"
+  },
+  "viewer.menu.reload": {
+    "message": "Перезавантажити"
+  },
+  "viewer.menu.save_as": {
+    "message": "Зберегти як..."
+  },
+  "viewer.menu.search_google": {
+    "message": "Шукати виділений текст у Google"
+  },
+  "viewer.menu.select_all": {
+    "message": "Виділити все"
+  },
+  "viewer.menu.syntax_colors": {
+    "message": "Підсвічування синтаксису"
+  },
+  "viewer.menu.text_only": {
+    "message": "Лише текст"
+  },
+  "viewer.menu.unicode": {
+    "message": "Юнікод (UTF-16)"
+  },
+  "viewer.menu.wrap": {
+    "message": "Переносити текст ({columns, plural, one {# стовпець} few {# стовпці} many {# стовпців} other {# стовпця}})"
+  },
+  "viewer.mode.binary": {
+    "message": "Двійковий · {page}"
+  },
+  "viewer.mode.book": {
+    "message": "Книжка"
+  },
+  "viewer.mode.hex": {
+    "message": "Hex · {page}"
+  },
+  "viewer.mode.html": {
+    "message": "Текст HTML"
+  },
+  "viewer.mode.image": {
+    "message": "Зображення"
+  },
+  "viewer.mode.multimedia": {
+    "message": "Мультимедіа"
+  },
+  "viewer.mode.pdf_by": {
+    "message": "PDF через {tool}"
+  },
+  "viewer.mode.text": {
+    "message": "Текст · {page}"
+  },
+  "viewer.origin.not_editable": {
+    "message": "редагувати можна лише файли в архівах 7z, zip, jar і tar"
+  },
+  "viewer.origin.updated": {
+    "message": "Оновлено {archive}"
+  },
+  "viewer.origin.updated_on": {
+    "message": "Оновлено {archive} на {server}"
+  },
+  "viewer.origin.uploaded": {
+    "message": "Вивантажено {path}"
+  },
+  "viewer.pdf.cannot_show": {
+    "message": "Не вдається показати цей PDF: {err}"
+  },
+  "viewer.pdf.loading": {
+    "message": "Завантаження..."
+  },
+  "viewer.pdf.page": {
+    "message": "Сторінка {page} / {pages}"
+  },
+  "viewer.picture.cannot_show": {
+    "message": "Не вдається показати це зображення; клавіша 1 покаже його як текст."
+  },
+  "viewer.save_as.failed": {
+    "message": "Не вдалося зберегти {path}: {err}"
+  },
+  "viewer.status.rows": {
+    "message": "{count, plural, one {{first}–{last} з {grouped} рядка} few {{first}–{last} з {grouped} рядків} many {{first}–{last} з {grouped} рядків} other {{first}–{last} з {grouped} рядка}}"
+  },
+  "viewer.status.rows_so_far": {
+    "message": "{count, plural, one {Поки що {grouped} рядок, прочитано {percent}} few {Поки що {grouped} рядки, прочитано {percent}} many {Поки що {grouped} рядків, прочитано {percent}} other {Поки що {grouped} рядка, прочитано {percent}}}"
+  },
+  "viewer.status.searching": {
+    "message": "Пошук…"
+  },
+  "viewer.status.size": {
+    "message": "{count, plural, one {{grouped} байт} few {{grouped} байти} many {{grouped} байтів} other {{grouped} байта}}"
+  },
+  "viewer.window.title": {
+    "message": "{path} — Переглядач"
+  },
+  "viewer.zoom.fit": {
+    "message": "Знову за розміром вікна (Ctrl+0)"
+  },
+  "viewer.zoom.in": {
+    "message": "Збільшити (Ctrl++)"
+  },
+  "viewer.zoom.out": {
+    "message": "Зменшити (Ctrl+-)"
+  },
+  "viewer.zoom.reset": {
+    "message": "Знову 100% (Ctrl+0)"
+  },
+  "workspaces.button.close": {
+    "message": "Закрити"
+  },
+  "workspaces.button.delete": {
+    "message": "Видалити..."
+  },
+  "workspaces.button.duplicate": {
+    "message": "Дублювати..."
+  },
+  "workspaces.button.new": {
+    "message": "Новий..."
+  },
+  "workspaces.button.rename": {
+    "message": "Перейменувати..."
+  },
+  "workspaces.delete.button": {
+    "message": "Видалити"
+  },
+  "workspaces.delete.closed": {
+    "message": "Видалити робочий простір «{name}»? Його вкладки буде забуто."
+  },
+  "workspaces.delete.closed_shells": {
+    "message": "Видалити робочий простір «{name}»? Його вкладки буде забуто, а оболонки в його вкладках термінала завершаться."
+  },
+  "workspaces.delete.open": {
+    "message": "Видалити робочий простір «{name}»? Його вкладки закриються; натомість відкриється «{other}»."
+  },
+  "workspaces.delete.open_shells": {
+    "message": "Видалити робочий простір «{name}»? Його вкладки закриються, а оболонки в його вкладках термінала завершаться; натомість відкриється «{other}»."
+  },
+  "workspaces.delete.title": {
+    "message": "Видалити робочий простір"
+  },
+  "workspaces.duplicate.name": {
+    "message": "{name} (копія)"
+  },
+  "workspaces.duplicate.title": {
+    "message": "Дублювати робочий простір"
+  },
+  "workspaces.error.name_taken": {
+    "message": "Інший робочий простір уже має цю назву."
+  },
+  "workspaces.error.no_name": {
+    "message": "Робочому простору потрібна назва."
+  },
+  "workspaces.error.save": {
+    "message": "Не вдалося зберегти робочі простори: {err}"
+  },
+  "workspaces.hint": {
+    "message": "«Вигляд > Робочі простори» відкриває робочий простір. Зміни у відкритому зберігаються в ньому."
+  },
+  "workspaces.name.label": {
+    "message": "Назва:"
+  },
+  "workspaces.new.name": {
+    "message": "Робочий простір {number}"
+  },
+  "workspaces.new.title": {
+    "message": "Новий робочий простір"
+  },
+  "workspaces.open": {
+    "message": "відкрито"
+  },
+  "workspaces.rename.title": {
+    "message": "Перейменувати робочий простір"
+  },
+  "workspaces.summary.panels": {
+    "message": "Ліва: {left, plural, one {# вкладка} few {# вкладки} many {# вкладок} other {# вкладки}}, права: {right, plural, one {# вкладка} few {# вкладки} many {# вкладок} other {# вкладки}}"
+  },
+  "workspaces.summary.terminal": {
+    "message": "Ліва: {left, plural, one {# вкладка} few {# вкладки} many {# вкладок} other {# вкладки}}, права: {right, plural, one {# вкладка} few {# вкладки} many {# вкладок} other {# вкладки}}, термінал: {terminal, plural, one {# вкладка} few {# вкладки} many {# вкладок} other {# вкладки}}"
+  },
+  "workspaces.summary.terminal_hidden": {
+    "message": "Ліва: {left, plural, one {# вкладка} few {# вкладки} many {# вкладок} other {# вкладки}}, права: {right, plural, one {# вкладка} few {# вкладки} many {# вкладок} other {# вкладки}}, термінал: {terminal, plural, one {# вкладка} few {# вкладки} many {# вкладок} other {# вкладки}} (приховано)"
+  },
+  "workspaces.title": {
+    "message": "Робочі простори"
+  }
+}

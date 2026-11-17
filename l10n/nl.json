@@ -1,0 +1,4823 @@
+{
+  "about.addons": {
+    "message": "Add-ons, gedownload wanneer je dat kiest"
+  },
+  "about.libraries": {
+    "message": "Gebouwd op"
+  },
+  "about.licence": {
+    "message": "Licentie:"
+  },
+  "about.made_with": {
+    "message": "Gemaakt met het werk van deze projecten"
+  },
+  "about.part.alacritty_terminal": {
+    "message": "Scherm en shell van de ingebouwde terminal"
+  },
+  "about.part.encoding_rs": {
+    "message": "Codetabellen"
+  },
+  "about.part.gpui": {
+    "message": "Het venster, tekenen en invoer (van Zed)"
+  },
+  "about.part.gpui_kit": {
+    "message": "Bedieningselementen: lijsten, menu’s, velden, de editor"
+  },
+  "about.part.html5ever": {
+    "message": "HTML en e-books in de viewer"
+  },
+  "about.part.image": {
+    "message": "Afbeeldingen"
+  },
+  "about.part.keyring": {
+    "message": "Wachtwoorden in de sleutelbos van het systeem"
+  },
+  "about.part.lucide": {
+    "message": "Pictogrammen"
+  },
+  "about.part.material_icons": {
+    "message": "Bestands- en mappictogrammen"
+  },
+  "about.part.pdfium_render": {
+    "message": "PDFium vanuit Rust"
+  },
+  "about.part.ratatui": {
+    "message": "scmd, de terminalversie"
+  },
+  "about.part.russh": {
+    "message": "SSH en SFTP"
+  },
+  "about.part.rustls": {
+    "message": "TLS"
+  },
+  "about.part.serde": {
+    "message": "Instellingenbestanden"
+  },
+  "about.part.similar": {
+    "message": "Vergelijken op inhoud"
+  },
+  "about.part.suppaftp": {
+    "message": "FTP en FTPS"
+  },
+  "about.part.tokio": {
+    "message": "Netwerkverkeer op de achtergrond"
+  },
+  "about.part.trash": {
+    "message": "De prullenbak"
+  },
+  "about.part.tree_sitter": {
+    "message": "Syntaxiskleuren in de viewer en de editor"
+  },
+  "about.part.zbus": {
+    "message": "D-Bus: het bureaublad, apparaten, KDE Connect"
+  },
+  "about.shipped": {
+    "message": "Wordt meegeleverd"
+  },
+  "about.tagline": {
+    "message": "Een bestandsbeheerder met twee panelen, vrije software."
+  },
+  "about.title": {
+    "message": "Over Spark Commander"
+  },
+  "about.version": {
+    "message": "Versie {version}"
+  },
+  "activity.clear": {
+    "message": "Wissen"
+  },
+  "activity.clear_failed": {
+    "message": "Kan het logboek niet wissen: {err}"
+  },
+  "activity.empty": {
+    "message": "Nog niets gedaan."
+  },
+  "activity.title": {
+    "message": "Activiteitenlogboek"
+  },
+  "addons.error.damaged": {
+    "message": "de download is beschadigd: de controlesom klopt niet"
+  },
+  "addons.error.list": {
+    "message": "de lijst met add-ons: {err}"
+  },
+  "addons.error.missing_file": {
+    "message": "de download bevat geen {file}"
+  },
+  "addons.error.no_folder": {
+    "message": "geen gegevensmap"
+  },
+  "addons.error.unpacking": {
+    "message": "uitpakken: {err}"
+  },
+  "addons.installed": {
+    "message": "{addon} {version} is geïnstalleerd."
+  },
+  "addons.megabytes": {
+    "message": "{size} MB"
+  },
+  "addons.offer.never": {
+    "message": "Nooit meer tonen"
+  },
+  "addons.offer.no": {
+    "message": "Nee"
+  },
+  "addons.offer.text": {
+    "message": "{name} heeft een add-on nodig die niet is geïnstalleerd: {addon}. Downloaden via Instellingen > Add-ons?"
+  },
+  "addons.offer.title": {
+    "message": "Add-on"
+  },
+  "addons.offer.yes": {
+    "message": "Ja"
+  },
+  "addons.purpose.cloud": {
+    "message": "Onlineopslag: S3, Google Drive, OneDrive, Dropbox en andere diensten."
+  },
+  "addons.purpose.media": {
+    "message": "Video en geluid, en HEIC- en AVIF-foto’s: de viewer en Snelweergave tonen ze."
+  },
+  "addons.purpose.office": {
+    "message": "Office-documenten: de viewer toont Word-, Excel- en PowerPoint-bestanden als PDF."
+  },
+  "addons.purpose.pdfium": {
+    "message": "PDF: de viewer toont PDF-bestanden, en ook Office-documenten na conversie."
+  },
+  "addons.purpose.seven_zip": {
+    "message": "Archieven: pakt 7z, zip, rar, tar en andere in en uit."
+  },
+  "addons.update": {
+    "message": "Bijwerken"
+  },
+  "addons.updates": {
+    "message": "Updates voor add-ons: {names}"
+  },
+  "appearance.dark": {
+    "message": "Donker"
+  },
+  "appearance.light": {
+    "message": "Licht"
+  },
+  "appearance.system": {
+    "message": "Zoals het systeem"
+  },
+  "archive.cannot_read": {
+    "message": "{name}: kan niet worden gelezen"
+  },
+  "archive.not_in_archive": {
+    "message": "{name} staat niet in het archief"
+  },
+  "archive.not_own_folder": {
+    "message": "{folder} is niet de eigen map van deze gebruiker"
+  },
+  "archive.seven_zip_failed": {
+    "message": "7-Zip is mislukt ({code})"
+  },
+  "archive.seven_zip_missing": {
+    "message": "7-Zip ontbreekt: {path} (voer vendor/7zip/fetch.sh of fetch.bat uit)"
+  },
+  "archive.temp_not_utf8": {
+    "message": "de naam van de tijdelijke map is geen UTF-8"
+  },
+  "associations.add": {
+    "message": "Toevoegen..."
+  },
+  "associations.cancel": {
+    "message": "Annuleren"
+  },
+  "associations.close": {
+    "message": "Sluiten"
+  },
+  "associations.column.edit": {
+    "message": "Bewerken (F4)"
+  },
+  "associations.column.files": {
+    "message": "Bestanden"
+  },
+  "associations.column.open": {
+    "message": "Openen (Enter)"
+  },
+  "associations.column.view": {
+    "message": "Bekijken (F3)"
+  },
+  "associations.edit": {
+    "message": "Bewerken..."
+  },
+  "associations.edit_dialog.title": {
+    "message": "Koppelen"
+  },
+  "associations.empty": {
+    "message": "Nog geen."
+  },
+  "associations.field.edit": {
+    "message": "Bewerken met (F4):"
+  },
+  "associations.field.files": {
+    "message": "Bestanden (*.jpg *.png):"
+  },
+  "associations.field.open": {
+    "message": "Openen met (Enter):"
+  },
+  "associations.field.view": {
+    "message": "Bekijken met (F3):"
+  },
+  "associations.intro": {
+    "message": "Enter, F3 en F4 starten deze programma’s voor de bestanden van een masker; leeg houdt het gebruikelijke. %1 is het bestand."
+  },
+  "associations.mask_needed": {
+    "message": "Het bestandsmasker is nodig: *.txt"
+  },
+  "associations.no_file": {
+    "message": "Zet de cursor op een bestand van het type dat je wilt koppelen."
+  },
+  "associations.ok": {
+    "message": "OK"
+  },
+  "associations.remove": {
+    "message": "Verwijderen"
+  },
+  "associations.save_failed": {
+    "message": "Kan de instellingen niet opslaan: {err}"
+  },
+  "associations.title": {
+    "message": "Interne koppelingen"
+  },
+  "attributes.bad_time": {
+    "message": "“{text}” is geen datum en tijd: 2026-11-10 14:04:33"
+  },
+  "attributes.cancel": {
+    "message": "Annuleren"
+  },
+  "attributes.change_time": {
+    "message": "Datum/tijd wijzigen:"
+  },
+  "attributes.changed": {
+    "message": "{count, plural, one {# gewijzigd} other {# gewijzigd}}"
+  },
+  "attributes.changed_failed": {
+    "message": "{count, plural, one {# gewijzigd} other {# gewijzigd}}, {failed, plural, one {# mislukt} other {# mislukt}}"
+  },
+  "attributes.dialog_title_many": {
+    "message": "Kenmerken wijzigen: {count, plural, one {# item} other {# items}}"
+  },
+  "attributes.dialog_title_one": {
+    "message": "Kenmerken wijzigen: {name}"
+  },
+  "attributes.execute": {
+    "message": "Uitvoeren"
+  },
+  "attributes.group": {
+    "message": "Groep"
+  },
+  "attributes.in_archive": {
+    "message": "Kenmerken in archieven kunnen niet worden gewijzigd."
+  },
+  "attributes.no_bits": {
+    "message": "Deze bestanden hebben hier geen rechtenbits; alleen de datum kan worden gewijzigd."
+  },
+  "attributes.now": {
+    "message": "Nu"
+  },
+  "attributes.octal": {
+    "message": "Octaal:"
+  },
+  "attributes.ok": {
+    "message": "OK"
+  },
+  "attributes.others": {
+    "message": "Anderen"
+  },
+  "attributes.owner": {
+    "message": "Eigenaar"
+  },
+  "attributes.read": {
+    "message": "Lezen"
+  },
+  "attributes.recurse": {
+    "message": "Ook alles in de mappen"
+  },
+  "attributes.title_many": {
+    "message": "Kenmerken van {count, plural, one {# item} other {# items}} wijzigen"
+  },
+  "attributes.title_one": {
+    "message": "Kenmerken van “{name}” wijzigen"
+  },
+  "attributes.write": {
+    "message": "Schrijven"
+  },
+  "bookmarks.add_current": {
+    "message": "Huidige map toevoegen"
+  },
+  "bookmarks.add_folders": {
+    "message": "Mappen toevoegen..."
+  },
+  "bookmarks.added": {
+    "message": "Aan bladwijzers toegevoegd: {name}"
+  },
+  "bookmarks.already": {
+    "message": "{name} staat al in Bladwijzers."
+  },
+  "bookmarks.chooser.failed": {
+    "message": "Kan de mappenkiezer niet tonen: {err}"
+  },
+  "bookmarks.chooser.prompt": {
+    "message": "Toevoegen"
+  },
+  "bookmarks.close": {
+    "message": "Sluiten"
+  },
+  "bookmarks.copy_name": {
+    "message": "Naam kopiëren"
+  },
+  "bookmarks.copy_path": {
+    "message": "Pad kopiëren"
+  },
+  "bookmarks.drop_here": {
+    "message": "Sleep mappen hierheen."
+  },
+  "bookmarks.empty": {
+    "message": "Geen bladwijzers: voeg mappen toe of sleep ze hierheen."
+  },
+  "bookmarks.intro": {
+    "message": "De mappen van deze computer, in de volgorde van Plaatsen: sleep er een om hem te verplaatsen, of sleep mappen hierheen om ze toe te voegen."
+  },
+  "bookmarks.move_down": {
+    "message": "Omlaag"
+  },
+  "bookmarks.move_up": {
+    "message": "Omhoog"
+  },
+  "bookmarks.only_local": {
+    "message": "Alleen mappen van deze computer kunnen aan de bladwijzers worden toegevoegd."
+  },
+  "bookmarks.remove": {
+    "message": "Verwijderen"
+  },
+  "bookmarks.remove_from": {
+    "message": "Uit Bladwijzers verwijderen"
+  },
+  "bookmarks.rename": {
+    "message": "Naam wijzigen..."
+  },
+  "bookmarks.rename_label": {
+    "message": "Naam (leeg: die van de map):"
+  },
+  "bookmarks.rename_title": {
+    "message": "Naam van bladwijzer wijzigen"
+  },
+  "bookmarks.sort": {
+    "message": "Sorteren A–Z"
+  },
+  "bookmarks.title": {
+    "message": "Bladwijzers"
+  },
+  "button_bar.copy": {
+    "message": "Kopiëren"
+  },
+  "button_bar.delete": {
+    "message": "Verwijderen"
+  },
+  "button_bar.edit": {
+    "message": "Bewerken"
+  },
+  "button_bar.move": {
+    "message": "Verplaatsen"
+  },
+  "button_bar.new_folder": {
+    "message": "Nieuwe map"
+  },
+  "button_bar.quit": {
+    "message": "Afsluiten"
+  },
+  "button_bar.view": {
+    "message": "Bekijken"
+  },
+  "checksum.create.title": {
+    "message": "{name} maken"
+  },
+  "checksum.create.title_separate": {
+    "message": "{method}-controlesombestanden maken"
+  },
+  "checksum.dialog_title": {
+    "message": "Controlesombestanden maken"
+  },
+  "checksum.save_as": {
+    "message": "Controlesombestand opslaan als:"
+  },
+  "checksum.separate": {
+    "message": "In plaats daarvan een controlesombestand naast elk bestand"
+  },
+  "checksum.verify.all_ok": {
+    "message": "{count, plural, one {# bestand OK} other {alle # bestanden OK}}"
+  },
+  "checksum.verify.choose": {
+    "message": "Kies controlesombestanden: .sfv, .md5, .sha1, .sha256 of .sha512."
+  },
+  "checksum.verify.missing_file": {
+    "message": "ontbreekt: {name}"
+  },
+  "checksum.verify.result": {
+    "message": "{ok, plural, one {# OK} other {# OK}}, {wrong, plural, one {# fout} other {# fout}}, {missing, plural, one {# ontbreekt} other {# ontbreken}}"
+  },
+  "checksum.verify.title_many": {
+    "message": "{count, plural, one {# controlesombestand} other {# controlesombestanden}} verifiëren"
+  },
+  "checksum.verify.title_one": {
+    "message": "{name} verifiëren"
+  },
+  "checksum.verify.wrong_file": {
+    "message": "fout: {name}"
+  },
+  "command.about": {
+    "message": "Over Spark Commander"
+  },
+  "command.activity_log": {
+    "message": "Activiteitenlogboek..."
+  },
+  "command.all_files": {
+    "message": "Alle bestanden"
+  },
+  "command.all_folder_sizes": {
+    "message": "Grootte van alle mappen berekenen"
+  },
+  "command.all_with_extension": {
+    "message": "*.*"
+  },
+  "command.associate_with": {
+    "message": "Koppelen aan..."
+  },
+  "command.bookmark_folder": {
+    "message": "Deze map aan bladwijzers toevoegen"
+  },
+  "command.bookmarks": {
+    "message": "Bladwijzers"
+  },
+  "command.branch_view": {
+    "message": "Vertakkingsweergave (met submappen)"
+  },
+  "command.branch_view_selected": {
+    "message": "Vertakkingsweergave van geselecteerde mappen"
+  },
+  "command.brief": {
+    "message": "Kort"
+  },
+  "command.calculate_occupied_space": {
+    "message": "Gebruikte ruimte berekenen..."
+  },
+  "command.change_attributes": {
+    "message": "Kenmerken wijzigen..."
+  },
+  "command.close_all_tabs": {
+    "message": "Alle tabbladen sluiten"
+  },
+  "command.close_duplicate_tabs": {
+    "message": "Dubbele tabbladen sluiten"
+  },
+  "command.close_tab": {
+    "message": "Tabblad sluiten"
+  },
+  "command.combine_files": {
+    "message": "Bestanden samenvoegen..."
+  },
+  "command.compare_by_content": {
+    "message": "Vergelijken op inhoud..."
+  },
+  "command.compare_directories": {
+    "message": "Nieuwere markeren"
+  },
+  "command.copy": {
+    "message": "Kopiëren..."
+  },
+  "command.copy_names_to_clipboard": {
+    "message": "Geselecteerde namen naar klembord kopiëren"
+  },
+  "command.copy_names_with_path_to_clipboard": {
+    "message": "Namen met pad naar klembord kopiëren"
+  },
+  "command.copy_to_clipboard": {
+    "message": "Bestanden kopiëren"
+  },
+  "command.copy_with_all_details": {
+    "message": "Met alle details naar klembord kopiëren"
+  },
+  "command.copy_with_path_and_details": {
+    "message": "Met pad+details naar klembord kopiëren"
+  },
+  "command.create_checksum_files": {
+    "message": "Controlesombestand(en) maken (CRC32, MD5, SHA1, SHA256, SHA512)..."
+  },
+  "command.create_link": {
+    "message": "Link maken..."
+  },
+  "command.custom_filter": {
+    "message": "Aangepast..."
+  },
+  "command.cut_to_clipboard": {
+    "message": "Bestanden knippen"
+  },
+  "command.delete": {
+    "message": "Verwijderen"
+  },
+  "command.delete_permanently": {
+    "message": "Definitief verwijderen"
+  },
+  "command.disconnect": {
+    "message": "Verbinding met de server verbreken"
+  },
+  "command.download_link": {
+    "message": "Downloaden via link..."
+  },
+  "command.duplicate_tab": {
+    "message": "Nieuw tabblad"
+  },
+  "command.duplicate_workspace": {
+    "message": "Werkruimte dupliceren..."
+  },
+  "command.edit": {
+    "message": "Bewerken"
+  },
+  "command.edit_externally": {
+    "message": "Bewerken met externe editor"
+  },
+  "command.folder_history": {
+    "message": "Mapgeschiedenis..."
+  },
+  "command.full": {
+    "message": "Volledig"
+  },
+  "command.go_back": {
+    "message": "Terug"
+  },
+  "command.go_forward": {
+    "message": "Vooruit"
+  },
+  "command.go_home": {
+    "message": "Persoonlijke map"
+  },
+  "command.go_to_root": {
+    "message": "Hoofdmap"
+  },
+  "command.hidden_files": {
+    "message": "Verborgen bestanden"
+  },
+  "command.internal_associations": {
+    "message": "Interne koppelingen (alleen Spark Commander)..."
+  },
+  "command.invert_selection": {
+    "message": "Selectie omkeren"
+  },
+  "command.left_drives": {
+    "message": "Stations (linkerpaneel)"
+  },
+  "command.list_tabs": {
+    "message": "Lijst met tabbladen"
+  },
+  "command.load_selection_from_file": {
+    "message": "Selectie uit bestand laden"
+  },
+  "command.manage_bookmarks": {
+    "message": "Bladwijzers beheren..."
+  },
+  "command.manage_tools": {
+    "message": "Hulpmiddelen beheren..."
+  },
+  "command.manage_workspaces": {
+    "message": "Werkruimten beheren..."
+  },
+  "command.mark_in_place": {
+    "message": "Markeren / demarkeren ter plekke, map gemeten"
+  },
+  "command.mark_newer_hide_same": {
+    "message": "Nieuwere markeren, gelijke bestanden verbergen"
+  },
+  "command.move": {
+    "message": "Verplaatsen..."
+  },
+  "command.multi_rename_tool": {
+    "message": "Meerdere namen wijzigen..."
+  },
+  "command.name_to_command_line": {
+    "message": "Naam naar de opdrachtregel"
+  },
+  "command.new_folder": {
+    "message": "Nieuwe map..."
+  },
+  "command.new_terminal": {
+    "message": "Nieuw terminaltabblad"
+  },
+  "command.new_text_file": {
+    "message": "Nieuw bestand..."
+  },
+  "command.new_workspace": {
+    "message": "Nieuwe werkruimte..."
+  },
+  "command.next_tab": {
+    "message": "Volgend tabblad"
+  },
+  "command.only_selected_files": {
+    "message": "Alleen geselecteerde bestanden"
+  },
+  "command.open_in_left_panel": {
+    "message": "Tonen in het linkerpaneel"
+  },
+  "command.open_in_new_tab": {
+    "message": "Map openen in nieuw tabblad"
+  },
+  "command.open_in_other_new_tab": {
+    "message": "De map openen in een nieuw tabblad van het andere paneel"
+  },
+  "command.open_in_right_panel": {
+    "message": "Tonen in het rechterpaneel"
+  },
+  "command.open_terminal": {
+    "message": "Terminal hier openen"
+  },
+  "command.operation_queue": {
+    "message": "Bewerkingswachtrij..."
+  },
+  "command.pack": {
+    "message": "Inpakken..."
+  },
+  "command.paste_from_clipboard": {
+    "message": "Bestanden plakken"
+  },
+  "command.path_and_name_to_command_line": {
+    "message": "Pad en naam naar de opdrachtregel"
+  },
+  "command.path_to_command_line": {
+    "message": "Pad naar de opdrachtregel"
+  },
+  "command.previous_tab": {
+    "message": "Vorig tabblad"
+  },
+  "command.programs": {
+    "message": "Programma’s"
+  },
+  "command.properties": {
+    "message": "Eigenschappen..."
+  },
+  "command.quick_filter": {
+    "message": "Snelfilter"
+  },
+  "command.quick_open": {
+    "message": "Snel openen..."
+  },
+  "command.quick_view_panel": {
+    "message": "Snelweergavepaneel"
+  },
+  "command.quit": {
+    "message": "Afsluiten"
+  },
+  "command.redo": {
+    "message": "Opnieuw uitvoeren"
+  },
+  "command.rename_in_place": {
+    "message": "Naam wijzigen"
+  },
+  "command.reread_source": {
+    "message": "Bron opnieuw inlezen"
+  },
+  "command.restore_selection": {
+    "message": "Selectie herstellen"
+  },
+  "command.reversed_order": {
+    "message": "Omgekeerde volgorde"
+  },
+  "command.right_drives": {
+    "message": "Stations (rechterpaneel)"
+  },
+  "command.save_selection": {
+    "message": "Selectie opslaan"
+  },
+  "command.save_selection_to_file": {
+    "message": "Selectie in bestand opslaan"
+  },
+  "command.search": {
+    "message": "Zoeken..."
+  },
+  "command.search_in_separate_process": {
+    "message": "Zoeken in apart venster..."
+  },
+  "command.select_all": {
+    "message": "Alles selecteren"
+  },
+  "command.select_all_with_same_extension": {
+    "message": "Alles met dezelfde extensie selecteren"
+  },
+  "command.select_group": {
+    "message": "Groep selecteren..."
+  },
+  "command.settings": {
+    "message": "Instellingen..."
+  },
+  "command.shortcuts": {
+    "message": "Sneltoetsen..."
+  },
+  "command.sidebar_connections": {
+    "message": "Verbindingen"
+  },
+  "command.sidebar_operations": {
+    "message": "Bewerkingen"
+  },
+  "command.sidebar_places": {
+    "message": "Plaatsen"
+  },
+  "command.sidebar_tree": {
+    "message": "Mappen"
+  },
+  "command.sort_by_extension": {
+    "message": "Extensie"
+  },
+  "command.sort_by_name": {
+    "message": "Naam"
+  },
+  "command.sort_by_size": {
+    "message": "Grootte"
+  },
+  "command.sort_by_time": {
+    "message": "Tijd"
+  },
+  "command.split_file": {
+    "message": "Bestand splitsen..."
+  },
+  "command.swap_panels": {
+    "message": "Panelen verwisselen"
+  },
+  "command.swap_panels_and_tabs": {
+    "message": "Panelen met hun tabbladen verwisselen"
+  },
+  "command.sync_browsing": {
+    "message": "Gesynchroniseerd bladeren"
+  },
+  "command.synchronize_dirs": {
+    "message": "Mappen synchroniseren..."
+  },
+  "command.target_equals_source": {
+    "message": "Doel = bron"
+  },
+  "command.terminal_panel": {
+    "message": "Terminal"
+  },
+  "command.test_archives": {
+    "message": "Archieven testen"
+  },
+  "command.thumbnail_view": {
+    "message": "Miniatuurweergave"
+  },
+  "command.toggle_mark": {
+    "message": "Markeren / demarkeren"
+  },
+  "command.toggle_sidebar": {
+    "message": "Zijbalk tonen"
+  },
+  "command.undo": {
+    "message": "Ongedaan maken"
+  },
+  "command.unpack_specific_files": {
+    "message": "Bepaalde bestanden uitpakken..."
+  },
+  "command.unselect_all": {
+    "message": "Alles deselecteren"
+  },
+  "command.unselect_group": {
+    "message": "Groep deselecteren..."
+  },
+  "command.unsorted": {
+    "message": "Ongesorteerd"
+  },
+  "command.verify_checksums": {
+    "message": "Controlesommen verifiëren (uit controlesombestanden)"
+  },
+  "command.vertical_arrangement": {
+    "message": "Verticale indeling"
+  },
+  "command.view": {
+    "message": "Bekijken"
+  },
+  "command.website": {
+    "message": "Website van Spark Commander"
+  },
+  "command.workspace1": {
+    "message": "Werkruimte 1 openen"
+  },
+  "command.workspace2": {
+    "message": "Werkruimte 2 openen"
+  },
+  "command.workspace3": {
+    "message": "Werkruimte 3 openen"
+  },
+  "command.workspace4": {
+    "message": "Werkruimte 4 openen"
+  },
+  "command.workspace5": {
+    "message": "Werkruimte 5 openen"
+  },
+  "command.workspace6": {
+    "message": "Werkruimte 6 openen"
+  },
+  "command.workspace7": {
+    "message": "Werkruimte 7 openen"
+  },
+  "command.workspace8": {
+    "message": "Werkruimte 8 openen"
+  },
+  "command.workspace9": {
+    "message": "Werkruimte 9 openen"
+  },
+  "command_line.error.cannot_run": {
+    "message": "{program}: kan niet worden uitgevoerd"
+  },
+  "command_line.error.not_found": {
+    "message": "{program}: opdracht niet gevonden"
+  },
+  "command_line.history.empty": {
+    "message": "Nog geen opdrachten uitgevoerd"
+  },
+  "command_line.on_server": {
+    "message": "Opdrachten worden op deze computer uitgevoerd; het paneel toont een server."
+  },
+  "command_name.all_files": {
+    "message": "Alle bestanden tonen"
+  },
+  "command_name.all_with_extension": {
+    "message": "*.* tonen"
+  },
+  "command_name.brief": {
+    "message": "Korte weergave"
+  },
+  "command_name.compare_directories": {
+    "message": "Mappen vergelijken: nieuwere markeren"
+  },
+  "command_name.custom_filter": {
+    "message": "Aangepast filter"
+  },
+  "command_name.duplicate_tab": {
+    "message": "Nieuw tabblad (kopie van dit tabblad)"
+  },
+  "command_name.full": {
+    "message": "Volledige weergave"
+  },
+  "command_name.go_back": {
+    "message": "Teruggaan"
+  },
+  "command_name.go_forward": {
+    "message": "Vooruitgaan"
+  },
+  "command_name.go_home": {
+    "message": "Naar persoonlijke map"
+  },
+  "command_name.hidden_files": {
+    "message": "Verborgen bestanden tonen"
+  },
+  "command_name.only_selected_files": {
+    "message": "Alleen geselecteerde bestanden tonen"
+  },
+  "command_name.programs": {
+    "message": "Programma’s tonen"
+  },
+  "command_name.quick_filter": {
+    "message": "Snelfilter"
+  },
+  "command_name.rename_in_place": {
+    "message": "Naam ter plekke wijzigen"
+  },
+  "command_name.sidebar_connections": {
+    "message": "Zijbalk: Verbindingen"
+  },
+  "command_name.sidebar_operations": {
+    "message": "Zijbalk: Bewerkingen"
+  },
+  "command_name.sidebar_places": {
+    "message": "Zijbalk: Plaatsen"
+  },
+  "command_name.sidebar_tree": {
+    "message": "Zijbalk: Mappen"
+  },
+  "command_name.sort_by_extension": {
+    "message": "Sorteren op extensie"
+  },
+  "command_name.sort_by_name": {
+    "message": "Sorteren op naam"
+  },
+  "command_name.sort_by_size": {
+    "message": "Sorteren op grootte"
+  },
+  "command_name.sort_by_time": {
+    "message": "Sorteren op tijd"
+  },
+  "command_name.toggle_sidebar": {
+    "message": "Zijbalk: tonen of verbergen"
+  },
+  "command_name.unsorted": {
+    "message": "Niet sorteren"
+  },
+  "compare.browse.prompt": {
+    "message": "Vergelijken"
+  },
+  "compare.button.compare": {
+    "message": "Vergelijken"
+  },
+  "compare.button.next": {
+    "message": "Volgend verschil (N)"
+  },
+  "compare.button.previous": {
+    "message": "Vorig verschil (P)"
+  },
+  "compare.need_two_files": {
+    "message": "Zet de cursor op een bestand in elk paneel, of markeer twee bestanden."
+  },
+  "compare.option.binary": {
+    "message": "Binair"
+  },
+  "compare.option.ignore_case": {
+    "message": "Hoofdletters negeren"
+  },
+  "compare.option.ignore_spaces": {
+    "message": "Herhaalde spaties negeren"
+  },
+  "compare.option.only_differences": {
+    "message": "Alleen verschillen"
+  },
+  "compare.status.bytes_differ": {
+    "message": "{place}: {count, plural, one {{grouped} byte verschilt} other {{grouped} bytes verschillen}}, de eerste op {first}; groottes {left} en {right}."
+  },
+  "compare.status.comparing": {
+    "message": "Vergelijken…"
+  },
+  "compare.status.difference_of": {
+    "message": "Verschil {at} van {count}"
+  },
+  "compare.status.differences": {
+    "message": "{count, plural, one {# verschil} other {# verschillen}}"
+  },
+  "compare.status.identical": {
+    "message": "{count, plural, one {De bestanden zijn identiek: {grouped} byte.} other {De bestanden zijn identiek: {grouped} bytes.}}"
+  },
+  "compare.status.no_differences": {
+    "message": "Geen verschillen."
+  },
+  "compare.window.title": {
+    "message": "Vergelijken: {left} — {right}"
+  },
+  "connections.connect": {
+    "message": "Verbinden"
+  },
+  "connections.copy_name": {
+    "message": "Naam kopiëren"
+  },
+  "connections.copy_path": {
+    "message": "Pad kopiëren"
+  },
+  "connections.delete": {
+    "message": "Verwijderen"
+  },
+  "connections.dialog.title": {
+    "message": "Verbinding"
+  },
+  "connections.disconnect": {
+    "message": "Verbinding verbreken"
+  },
+  "connections.duplicate": {
+    "message": "Dupliceren"
+  },
+  "connections.duplicate_name": {
+    "message": "{name} (kopie)"
+  },
+  "connections.edit": {
+    "message": "Bewerken..."
+  },
+  "connections.empty": {
+    "message": "Nog geen verbindingen."
+  },
+  "connections.error.no_server": {
+    "message": "Er is een server nodig."
+  },
+  "connections.error.port": {
+    "message": "Geen poort: {text}"
+  },
+  "connections.field.access_key": {
+    "message": "Toegangssleutel"
+  },
+  "connections.field.api_key": {
+    "message": "API-sleutel"
+  },
+  "connections.field.application_key": {
+    "message": "App-sleutel"
+  },
+  "connections.field.bucket": {
+    "message": "Bucket/map"
+  },
+  "connections.field.container": {
+    "message": "Container/map"
+  },
+  "connections.field.endpoint": {
+    "message": "Eindpunt"
+  },
+  "connections.field.key_id": {
+    "message": "Sleutel-ID"
+  },
+  "connections.field.name": {
+    "message": "Naam"
+  },
+  "connections.field.password": {
+    "message": "Wachtwoord"
+  },
+  "connections.field.port": {
+    "message": "Poort"
+  },
+  "connections.field.protocol": {
+    "message": "Protocol"
+  },
+  "connections.field.secret_key": {
+    "message": "Geheime sleutel"
+  },
+  "connections.field.server": {
+    "message": "Server"
+  },
+  "connections.field.start_folder": {
+    "message": "Startmap"
+  },
+  "connections.field.user": {
+    "message": "Gebruiker"
+  },
+  "connections.folder.delete_confirm": {
+    "message": "{count, plural, one {De map {name} en de verbinding erin verwijderen?} other {De map {name} en de # verbindingen erin verwijderen?}}"
+  },
+  "connections.folder.delete_title": {
+    "message": "Map verwijderen"
+  },
+  "connections.folder.exists": {
+    "message": "Er is al een map met de naam {name}."
+  },
+  "connections.folder.name": {
+    "message": "Naam:"
+  },
+  "connections.folder.new_title": {
+    "message": "Nieuwe map"
+  },
+  "connections.folder.rename": {
+    "message": "Naam wijzigen..."
+  },
+  "connections.folder.rename_title": {
+    "message": "Naam van map wijzigen"
+  },
+  "connections.forget_password": {
+    "message": "Bewaard wachtwoord vergeten"
+  },
+  "connections.move_down": {
+    "message": "Omlaag"
+  },
+  "connections.move_to_folder": {
+    "message": "Naar map verplaatsen"
+  },
+  "connections.move_up": {
+    "message": "Omhoog"
+  },
+  "connections.new": {
+    "message": "Nieuwe verbinding..."
+  },
+  "connections.new_folder": {
+    "message": "Nieuwe map..."
+  },
+  "connections.no_folder": {
+    "message": "Geen map"
+  },
+  "connections.open_in_terminal": {
+    "message": "Openen in terminal"
+  },
+  "connections.placeholder.name": {
+    "message": "zoals de lijst het toont"
+  },
+  "connections.placeholder.password": {
+    "message": "versleuteld bewaard in de instellingenmap; leeg houdt het bewaarde"
+  },
+  "connections.placeholder.path": {
+    "message": "de inlogmap"
+  },
+  "connections.placeholder.port": {
+    "message": "standaard"
+  },
+  "connections.placeholder.server": {
+    "message": "server, of een host uit ~/.ssh/config"
+  },
+  "connections.placeholder.user": {
+    "message": "zoals in ~/.ssh/config, of anoniem"
+  },
+  "connections.save_failed": {
+    "message": "Kan de verbindingen niet opslaan: {err}"
+  },
+  "connections.ssh_config.read_only": {
+    "message": "Alleen-lezen: deze hosts bewerk je in ~/.ssh/config zelf"
+  },
+  "context_menu.action_failed": {
+    "message": "{name} mislukt: {err}"
+  },
+  "context_menu.actions": {
+    "message": "Acties"
+  },
+  "context_menu.copy": {
+    "message": "Kopiëren"
+  },
+  "context_menu.create_new": {
+    "message": "Nieuw aanmaken"
+  },
+  "context_menu.cut": {
+    "message": "Knippen"
+  },
+  "context_menu.delete": {
+    "message": "Verwijderen"
+  },
+  "context_menu.edit": {
+    "message": "Bewerken"
+  },
+  "context_menu.empty_file": {
+    "message": "Leeg bestand…"
+  },
+  "context_menu.move_to_trash": {
+    "message": "Naar prullenbak verplaatsen"
+  },
+  "context_menu.new_file_dialog.label": {
+    "message": "Nieuwe bestandsnaam:"
+  },
+  "context_menu.new_file_dialog.title": {
+    "message": "Nieuw bestand"
+  },
+  "context_menu.new_file_failed": {
+    "message": "Kan het bestand niet maken: {err}"
+  },
+  "context_menu.new_folder": {
+    "message": "Map…"
+  },
+  "context_menu.open": {
+    "message": "Openen"
+  },
+  "context_menu.open_failed": {
+    "message": "Kan niet openen: {err}"
+  },
+  "context_menu.open_terminal_here": {
+    "message": "Terminal hier openen"
+  },
+  "context_menu.open_with": {
+    "message": "Openen met"
+  },
+  "context_menu.other_application": {
+    "message": "Andere toepassing…"
+  },
+  "context_menu.pack": {
+    "message": "Inpakken…"
+  },
+  "context_menu.pack_files": {
+    "message": "Bestanden inpakken"
+  },
+  "context_menu.paste": {
+    "message": "Plakken"
+  },
+  "context_menu.properties": {
+    "message": "Eigenschappen"
+  },
+  "context_menu.properties_failed": {
+    "message": "Eigenschappen: {err}"
+  },
+  "context_menu.rename": {
+    "message": "Naam wijzigen…"
+  },
+  "context_menu.rename_dialog.label": {
+    "message": "Nieuwe naam:"
+  },
+  "context_menu.rename_dialog.title": {
+    "message": "Naam wijzigen"
+  },
+  "context_menu.rename_failed": {
+    "message": "Kan de naam niet wijzigen: {err}"
+  },
+  "context_menu.shell_menu_failed": {
+    "message": "Het menu: {err}"
+  },
+  "context_menu.show_failed": {
+    "message": "Kan het niet tonen: {err}"
+  },
+  "context_menu.show_in_file_manager": {
+    "message": "Tonen in bestandsbeheerder"
+  },
+  "context_menu.terminal_failed": {
+    "message": "Kan geen terminal openen: {err}"
+  },
+  "context_menu.terminal_not_local": {
+    "message": "Een terminal opent alleen in mappen van deze computer."
+  },
+  "context_menu.unpack": {
+    "message": "Uitpakken…"
+  },
+  "context_menu.view": {
+    "message": "Bekijken"
+  },
+  "desktop.no_app_chooser": {
+    "message": "het bureaublad heeft geen app-kiezer ({err})"
+  },
+  "desktop.no_terminal": {
+    "message": "geen terminal gevonden"
+  },
+  "desktop.nothing_to_run": {
+    "message": "{name}: niets om uit te voeren"
+  },
+  "desktop.scripts": {
+    "message": "Scripts"
+  },
+  "devices.error.mount_failed": {
+    "message": "kan het apparaat niet aankoppelen"
+  },
+  "devices.error.no_folder": {
+    "message": "het apparaat deelt geen map"
+  },
+  "devices.error.system_only": {
+    "message": "alleen het systeem kan dit ontkoppelen"
+  },
+  "devices.error.unreachable": {
+    "message": "niet bereikbaar: is KDE Connect erop geopend, op dit netwerk?"
+  },
+  "devices.unlock.ask": {
+    "message": "De wachtwoordzin van {name}:"
+  },
+  "devices.unlock.ask_again": {
+    "message": "Verkeerde wachtwoordzin. De wachtwoordzin van {name}:"
+  },
+  "devices.unlock.title": {
+    "message": "Ontgrendelen"
+  },
+  "devices.volume.share_on_server": {
+    "message": "{share} op {server}"
+  },
+  "devices.volume.unnamed": {
+    "message": "Volume van {size} GB"
+  },
+  "devices.volume.unnamed_encrypted": {
+    "message": "Versleuteld volume van {size} GB"
+  },
+  "download.cancel": {
+    "message": "Annuleren"
+  },
+  "download.dialog_title": {
+    "message": "Downloaden via link"
+  },
+  "download.download": {
+    "message": "Downloaden"
+  },
+  "download.folder_link": {
+    "message": "de link verwijst naar een map"
+  },
+  "download.incomplete": {
+    "message": "de server stuurde {got} van {size, plural, one {# byte} other {# bytes}}; bij opnieuw downloaden gaat het daar verder"
+  },
+  "download.into": {
+    "message": "Naar {folder}"
+  },
+  "download.link": {
+    "message": "Link"
+  },
+  "download.link_placeholder": {
+    "message": "https://, http://, ftp:// of ftps://"
+  },
+  "download.local_only": {
+    "message": "Downloads gaan naar mappen van deze computer: open er eerst een in het paneel."
+  },
+  "download.name_placeholder": {
+    "message": "zoals de server of de link het noemt"
+  },
+  "download.no_file": {
+    "message": "de link verwijst niet naar een bestand"
+  },
+  "download.not_a_link": {
+    "message": "geen link om te downloaden"
+  },
+  "download.problem.bad_name": {
+    "message": "Alleen een bestandsnaam, zonder map erin."
+  },
+  "download.problem.empty": {
+    "message": "Plak of typ een link."
+  },
+  "download.problem.exists": {
+    "message": "Er staat hier al een {name}: Vervangen downloadt eroverheen."
+  },
+  "download.problem.not_link": {
+    "message": "Geen link om te downloaden: die begint met https://, http://, ftp:// of ftps://."
+  },
+  "download.replace": {
+    "message": "Vervangen"
+  },
+  "download.save_as": {
+    "message": "Opslaan als"
+  },
+  "download.saved_as": {
+    "message": "opgeslagen als {name}"
+  },
+  "download.title": {
+    "message": "“{name}” downloaden"
+  },
+  "download.title_link": {
+    "message": "{link} downloaden"
+  },
+  "editor.close.after_send": {
+    "message": "De editor sluit zodra de server het bestand heeft."
+  },
+  "editor.close.discard": {
+    "message": "Niet opslaan"
+  },
+  "editor.close.save": {
+    "message": "Opslaan"
+  },
+  "editor.close.title": {
+    "message": "Wijzigingen opslaan?"
+  },
+  "editor.close.unsaved": {
+    "message": "{name} heeft wijzigingen die niet zijn opgeslagen."
+  },
+  "editor.close.unsent": {
+    "message": "{name} is niet opgeslagen op de server: verzenden is mislukt."
+  },
+  "editor.dialog.cancel": {
+    "message": "Annuleren"
+  },
+  "editor.edit.copy": {
+    "message": "Kopiëren"
+  },
+  "editor.edit.cut": {
+    "message": "Knippen"
+  },
+  "editor.edit.find": {
+    "message": "Zoeken..."
+  },
+  "editor.edit.find_next": {
+    "message": "Volgende zoeken"
+  },
+  "editor.edit.find_previous": {
+    "message": "Vorige zoeken"
+  },
+  "editor.edit.go_to_line": {
+    "message": "Ga naar regel..."
+  },
+  "editor.edit.paste": {
+    "message": "Plakken"
+  },
+  "editor.edit.redo": {
+    "message": "Opnieuw uitvoeren"
+  },
+  "editor.edit.replace": {
+    "message": "Vervangen..."
+  },
+  "editor.edit.undo": {
+    "message": "Ongedaan maken"
+  },
+  "editor.external.not_set": {
+    "message": "er is geen externe editor ingesteld (Instellingen, Bewerken/Bekijken)"
+  },
+  "editor.file.close": {
+    "message": "Sluiten"
+  },
+  "editor.file.reload": {
+    "message": "Opnieuw laden"
+  },
+  "editor.file.save": {
+    "message": "Opslaan"
+  },
+  "editor.file.save_as": {
+    "message": "Opslaan als..."
+  },
+  "editor.find.close": {
+    "message": "Sluiten (Escape)"
+  },
+  "editor.find.count": {
+    "message": "{current} van {total}"
+  },
+  "editor.find.in_selection": {
+    "message": "Zoeken in selectie (Alt+L)"
+  },
+  "editor.find.match_case": {
+    "message": "Hoofdlettergevoelig (Alt+C)"
+  },
+  "editor.find.next": {
+    "message": "Volgende overeenkomst (Enter)"
+  },
+  "editor.find.no_results": {
+    "message": "Geen resultaten"
+  },
+  "editor.find.placeholder": {
+    "message": "Zoeken"
+  },
+  "editor.find.preserve_case": {
+    "message": "Hoofdletters behouden (Alt+P)"
+  },
+  "editor.find.previous": {
+    "message": "Vorige overeenkomst (Shift+Enter)"
+  },
+  "editor.find.regex": {
+    "message": "Reguliere expressie gebruiken (Alt+R)"
+  },
+  "editor.find.replace": {
+    "message": "Vervangen (Ctrl+Shift+1)"
+  },
+  "editor.find.replace_all": {
+    "message": "Alles vervangen (Ctrl+Alt+Enter)"
+  },
+  "editor.find.replace_placeholder": {
+    "message": "Vervangen"
+  },
+  "editor.find.toggle_replace": {
+    "message": "Vervangen tonen/verbergen"
+  },
+  "editor.find.whole_word": {
+    "message": "Heel woord (Alt+W)"
+  },
+  "editor.go_to_line.label": {
+    "message": "Regel, of regel:kolom"
+  },
+  "editor.go_to_line.title": {
+    "message": "Ga naar regel"
+  },
+  "editor.language.by_file_name": {
+    "message": "Volgens de bestandsnaam"
+  },
+  "editor.language.plain_text": {
+    "message": "Platte tekst"
+  },
+  "editor.menu.edit": {
+    "message": "Bewerken"
+  },
+  "editor.menu.file": {
+    "message": "Bestand"
+  },
+  "editor.menu.language": {
+    "message": "Taal"
+  },
+  "editor.menu.selection": {
+    "message": "Selectie"
+  },
+  "editor.menu.view": {
+    "message": "Beeld"
+  },
+  "editor.open.too_large": {
+    "message": "groter dan de {limit_mb} MB van de ingebouwde editor (Instellingen, Bewerken/Bekijken); Ctrl+Shift+F4 bewerkt het in de externe editor"
+  },
+  "editor.reload.button": {
+    "message": "Opnieuw laden"
+  },
+  "editor.reload.failed": {
+    "message": "Kan het niet opnieuw laden: {err}"
+  },
+  "editor.reload.text": {
+    "message": "De wijzigingen die niet zijn opgeslagen, gaan verloren."
+  },
+  "editor.reload.title": {
+    "message": "Het bestand opnieuw laden?"
+  },
+  "editor.reload.unfit": {
+    "message": "Niet opnieuw geladen: {why, select, binary {het is binair} other {het is geen UTF-8-tekst}}."
+  },
+  "editor.save.admin": {
+    "message": "“{name}” opslaan"
+  },
+  "editor.save.failed": {
+    "message": "Kan {path} niet opslaan: {err}"
+  },
+  "editor.save_anyway.button": {
+    "message": "Toch opslaan"
+  },
+  "editor.save_anyway.text": {
+    "message": "Het bestand was geen tekst: bij opslaan wordt het geschreven zoals getoond, dus alles wat geen tekst was, verandert definitief."
+  },
+  "editor.save_anyway.title": {
+    "message": "Opslaan als tekst?"
+  },
+  "editor.selection.add_cursor_above": {
+    "message": "Cursor erboven toevoegen"
+  },
+  "editor.selection.add_cursor_below": {
+    "message": "Cursor eronder toevoegen"
+  },
+  "editor.selection.delete_lines": {
+    "message": "Regels verwijderen"
+  },
+  "editor.selection.duplicate_lines": {
+    "message": "Regels dupliceren"
+  },
+  "editor.selection.indent": {
+    "message": "Inspringen"
+  },
+  "editor.selection.lowercase": {
+    "message": "kleine letters"
+  },
+  "editor.selection.move_lines_down": {
+    "message": "Regels omlaag"
+  },
+  "editor.selection.move_lines_up": {
+    "message": "Regels omhoog"
+  },
+  "editor.selection.outdent": {
+    "message": "Uitspringen"
+  },
+  "editor.selection.select_all": {
+    "message": "Alles selecteren"
+  },
+  "editor.selection.select_all_occurrences": {
+    "message": "Alle exemplaren selecteren"
+  },
+  "editor.selection.sort_lines_ascending": {
+    "message": "Regels oplopend sorteren"
+  },
+  "editor.selection.sort_lines_descending": {
+    "message": "Regels aflopend sorteren"
+  },
+  "editor.selection.title_case": {
+    "message": "Hoofdletter Per Woord"
+  },
+  "editor.selection.toggle_line_comment": {
+    "message": "Regelcommentaar aan/uit"
+  },
+  "editor.selection.trim_trailing_whitespace": {
+    "message": "Witruimte aan regeleinde wissen"
+  },
+  "editor.selection.uppercase": {
+    "message": "HOOFDLETTERS"
+  },
+  "editor.send.failed": {
+    "message": "Kan het niet terugzetten op de server: {err}. Opslaan probeert het opnieuw."
+  },
+  "editor.status.modified": {
+    "message": "Gewijzigd"
+  },
+  "editor.status.position": {
+    "message": "Rg {line}, Kol {column}"
+  },
+  "editor.status.position_selected": {
+    "message": "Rg {line}, Kol {column} ({count, plural, one {# geselecteerd} other {# geselecteerd}})"
+  },
+  "editor.status.sending": {
+    "message": "Opslaan op de server"
+  },
+  "editor.status.spaces": {
+    "message": "Spaties: {size}"
+  },
+  "editor.status.tab_size": {
+    "message": "Tabgrootte: {size}"
+  },
+  "editor.status.unsent": {
+    "message": "Niet op de server"
+  },
+  "editor.terminal.not_found": {
+    "message": "geen editor gevonden; stel $EDITOR in"
+  },
+  "editor.title": {
+    "message": "{path} — Editor"
+  },
+  "editor.unfit.open_anyway": {
+    "message": "Toch openen"
+  },
+  "editor.unfit.text": {
+    "message": "Het bestand wordt niet in de editor getoond omdat {why, select, binary {het binair is} other {het geen UTF-8-tekst is}}."
+  },
+  "editor.view.folding": {
+    "message": "Invouwen"
+  },
+  "editor.view.indent_guides": {
+    "message": "Inspringhulplijnen"
+  },
+  "editor.view.indent_with_tabs": {
+    "message": "Inspringen met tabs"
+  },
+  "editor.view.line_numbers": {
+    "message": "Regelnummers"
+  },
+  "editor.view.minimap": {
+    "message": "Minimap"
+  },
+  "editor.view.tab_width": {
+    "message": "Tabbreedte {width}"
+  },
+  "editor.view.unfold_all": {
+    "message": "Alles uitvouwen"
+  },
+  "editor.view.whitespace": {
+    "message": "Witruimte"
+  },
+  "editor.view.word_wrap": {
+    "message": "Regelterugloop"
+  },
+  "elevate.failed": {
+    "message": "ook als administrator mislukt ({code})"
+  },
+  "elevate.no_consent": {
+    "message": "de administrator heeft geen toestemming gegeven"
+  },
+  "elevate.no_password": {
+    "message": "het wachtwoord is niet opgegeven"
+  },
+  "elevate.not_authorised": {
+    "message": "niet gemachtigd"
+  },
+  "elevate.percent_name": {
+    "message": "{path}: een naam met % kan niet als administrator worden verwerkt; wijzig eerst de naam"
+  },
+  "elevate.pkexec_missing": {
+    "message": "pkexec (polkit) is niet geïnstalleerd"
+  },
+  "file_menu.change_tags_failed": {
+    "message": "Kan de tags niet wijzigen: {err}"
+  },
+  "file_menu.compress": {
+    "message": "{count, plural, =1 {Comprimeer “{name}”…} one {Comprimeer # onderdeel…} other {Comprimeer # onderdelen…}}"
+  },
+  "file_menu.copy": {
+    "message": "{count, plural, =1 {Kopieer “{name}”} one {Kopieer # onderdeel} other {Kopieer # onderdelen}}"
+  },
+  "file_menu.copy_path": {
+    "message": "Kopieer pad naar klembord"
+  },
+  "file_menu.delete": {
+    "message": "Verwijder"
+  },
+  "file_menu.duplicate": {
+    "message": "Dupliceer"
+  },
+  "file_menu.duplicate_failed": {
+    "message": "Kan niet dupliceren: {err}"
+  },
+  "file_menu.edit_tags": {
+    "message": "Tags…"
+  },
+  "file_menu.get_info": {
+    "message": "Toon info"
+  },
+  "file_menu.make_alias": {
+    "message": "Maak alias"
+  },
+  "file_menu.make_alias_failed": {
+    "message": "Kan de alias niet maken: {err}"
+  },
+  "file_menu.move_to_trash": {
+    "message": "Verplaats naar prullenmand"
+  },
+  "file_menu.new_folder": {
+    "message": "Nieuwe map"
+  },
+  "file_menu.open": {
+    "message": "Open"
+  },
+  "file_menu.open_failed": {
+    "message": "Kan niet openen: {err}"
+  },
+  "file_menu.open_with": {
+    "message": "Open met"
+  },
+  "file_menu.open_with_default": {
+    "message": "{app} (standaard)"
+  },
+  "file_menu.paste": {
+    "message": "Plak"
+  },
+  "file_menu.quick_look": {
+    "message": "{count, plural, =1 {Quick Look van “{name}”} one {Quick Look van # onderdeel} other {Quick Look van # onderdelen}}"
+  },
+  "file_menu.quick_look_failed": {
+    "message": "Quick Look: {err}"
+  },
+  "file_menu.rename": {
+    "message": "Wijzig naam…"
+  },
+  "file_menu.reveal_failed": {
+    "message": "Kan het niet tonen in Finder: {err}"
+  },
+  "file_menu.reveal_in_finder": {
+    "message": "Toon in Finder"
+  },
+  "file_menu.show_package_contents": {
+    "message": "Toon pakketinhoud"
+  },
+  "file_menu.tag_dot.add": {
+    "message": "Tag “{name}” toevoegen"
+  },
+  "file_menu.tag_dot.remove": {
+    "message": "Tag “{name}” verwijderen"
+  },
+  "file_menu.tags_popover.show_all": {
+    "message": "Toon alle…"
+  },
+  "file_menu.tags_popover.title": {
+    "message": "{count, plural, =1 {Wijs tags toe aan “{name}”} one {Wijs tags toe aan # onderdeel} other {Wijs tags toe aan # onderdelen}}"
+  },
+  "find.backwards": {
+    "message": "Achterwaarts zoeken"
+  },
+  "find.cancel": {
+    "message": "Annuleren"
+  },
+  "find.case_sensitive": {
+    "message": "Hoofdlettergevoelig"
+  },
+  "find.hex": {
+    "message": "Hexadecimale reeks zoeken"
+  },
+  "find.ok": {
+    "message": "OK"
+  },
+  "find.regex": {
+    "message": "RegEx"
+  },
+  "find.text.label": {
+    "message": "Zoektekst invoeren"
+  },
+  "find.title": {
+    "message": "Zoeken"
+  },
+  "find.whole_words": {
+    "message": "Alleen hele woorden"
+  },
+  "keys.apply": {
+    "message": "Toepassen"
+  },
+  "keys.cancel": {
+    "message": "Annuleren"
+  },
+  "keys.clear.tooltip": {
+    "message": "Geen toets"
+  },
+  "keys.column.alternate": {
+    "message": "Alternatief"
+  },
+  "keys.column.command": {
+    "message": "Opdracht"
+  },
+  "keys.column.shortcut": {
+    "message": "Sneltoets"
+  },
+  "keys.custom": {
+    "message": "Aangepast"
+  },
+  "keys.delete_set": {
+    "message": "Verwijderen"
+  },
+  "keys.note.custom_replaced": {
+    "message": "Je eigen toetsen hebben plaatsgemaakt voor die van {name}; Opslaan als bewaart ze."
+  },
+  "keys.note.deleted": {
+    "message": "{name} is verwijderd; OK of Toepassen maakt het definitief."
+  },
+  "keys.note.moved": {
+    "message": "{key} is nu {command}, niet langer {other}."
+  },
+  "keys.note.name_reserved": {
+    "message": "“{name}” is de naam van een voorinstelling; kies een andere."
+  },
+  "keys.note.press_new_key": {
+    "message": "Druk op de nieuwe toets; Esc laat alles zoals het was."
+  },
+  "keys.note.saved": {
+    "message": "Opgeslagen als {name}; OK of Toepassen bewaart het."
+  },
+  "keys.note.set": {
+    "message": "{key} is nu {command}."
+  },
+  "keys.note.taken_by_system": {
+    "message": "{key} is bezet door {by}, dus de toets bereikt Spark Commander nooit."
+  },
+  "keys.ok": {
+    "message": "OK"
+  },
+  "keys.press_key": {
+    "message": "Druk op een toets…"
+  },
+  "keys.reserved.application_launcher": {
+    "message": "{system}: de programmastarter"
+  },
+  "keys.reserved.close_window": {
+    "message": "{system}: venster sluiten"
+  },
+  "keys.reserved.close_window_or_tab": {
+    "message": "{system}: venster of tabblad sluiten"
+  },
+  "keys.reserved.dock": {
+    "message": "{system}: het Dock"
+  },
+  "keys.reserved.floating_window": {
+    "message": "{system}: het zwevende venster"
+  },
+  "keys.reserved.force_quit": {
+    "message": "{system}: forceer stoppen"
+  },
+  "keys.reserved.hide_program": {
+    "message": "{system}: programma verbergen"
+  },
+  "keys.reserved.input_source": {
+    "message": "{system}: de invoerbron"
+  },
+  "keys.reserved.keyboard_access": {
+    "message": "{system}: toetsenbordtoegang"
+  },
+  "keys.reserved.keyboard_navigation": {
+    "message": "{system}: toetsenbordnavigatie"
+  },
+  "keys.reserved.krunner": {
+    "message": "{system}: KRunner"
+  },
+  "keys.reserved.lock_screen": {
+    "message": "{system}: scherm vergrendelen"
+  },
+  "keys.reserved.log_out": {
+    "message": "{system}: afmelden"
+  },
+  "keys.reserved.maximize_window": {
+    "message": "{system}: venster maximaliseren"
+  },
+  "keys.reserved.menu_bar": {
+    "message": "{system}: de menubalk"
+  },
+  "keys.reserved.minimize": {
+    "message": "{system}: minimaliseren"
+  },
+  "keys.reserved.mission_control": {
+    "message": "{system}: Mission Control"
+  },
+  "keys.reserved.move_window": {
+    "message": "{system}: venster verplaatsen"
+  },
+  "keys.reserved.next_window": {
+    "message": "{system}: het volgende venster"
+  },
+  "keys.reserved.present_windows": {
+    "message": "{system}: Vensters presenteren"
+  },
+  "keys.reserved.present_windows_all": {
+    "message": "{system}: Vensters presenteren (alle bureaubladen)"
+  },
+  "keys.reserved.present_windows_class": {
+    "message": "{system}: Vensters presenteren (vensterklasse)"
+  },
+  "keys.reserved.program_windows": {
+    "message": "{system}: de vensters van het programma"
+  },
+  "keys.reserved.quit": {
+    "message": "{system}: afsluiten"
+  },
+  "keys.reserved.resize_window": {
+    "message": "{system}: venstergrootte wijzigen"
+  },
+  "keys.reserved.restore_window": {
+    "message": "{system}: venster herstellen"
+  },
+  "keys.reserved.run_command": {
+    "message": "{system}: opdracht uitvoeren"
+  },
+  "keys.reserved.screenshot": {
+    "message": "{system}: schermafdruk"
+  },
+  "keys.reserved.security_screen": {
+    "message": "{system}: het beveiligingsscherm"
+  },
+  "keys.reserved.show_desktop": {
+    "message": "{system}: bureaublad tonen"
+  },
+  "keys.reserved.space_left": {
+    "message": "{system}: de space links"
+  },
+  "keys.reserved.space_right": {
+    "message": "{system}: de space rechts"
+  },
+  "keys.reserved.spotlight": {
+    "message": "{system}: Spotlight"
+  },
+  "keys.reserved.start_menu": {
+    "message": "{system}: het menu Start"
+  },
+  "keys.reserved.status_menus": {
+    "message": "{system}: de statusmenu’s"
+  },
+  "keys.reserved.suspend_compositing": {
+    "message": "{system}: compositing onderbreken"
+  },
+  "keys.reserved.switch_program_windows": {
+    "message": "{system}: wisselen tussen de vensters van het programma"
+  },
+  "keys.reserved.switch_programs": {
+    "message": "{system}: wisselen tussen programma’s"
+  },
+  "keys.reserved.switch_system_controls": {
+    "message": "{system}: systeembediening wisselen"
+  },
+  "keys.reserved.switch_to_desktop": {
+    "message": "{system}: naar bureaublad {number}"
+  },
+  "keys.reserved.switch_windows": {
+    "message": "{system}: wisselen tussen vensters"
+  },
+  "keys.reserved.system_monitor": {
+    "message": "{system}: Systeemmonitor"
+  },
+  "keys.reserved.task_manager": {
+    "message": "{system}: Taakbeheer"
+  },
+  "keys.reserved.text_console": {
+    "message": "{system}: naar een tekstconsole"
+  },
+  "keys.reserved.toolbar": {
+    "message": "{system}: de knoppenbalk"
+  },
+  "keys.reserved.window_menu": {
+    "message": "{system}: het venstermenu"
+  },
+  "keys.reserved.workspace_down": {
+    "message": "{system}: het werkblad eronder"
+  },
+  "keys.reserved.workspace_left": {
+    "message": "{system}: het werkblad links"
+  },
+  "keys.reserved.workspace_right": {
+    "message": "{system}: het werkblad rechts"
+  },
+  "keys.reserved.workspace_up": {
+    "message": "{system}: het werkblad erboven"
+  },
+  "keys.reset.tooltip": {
+    "message": "Terug naar de toetsen van {preset}"
+  },
+  "keys.reset_all": {
+    "message": "Alles herstellen"
+  },
+  "keys.save_as.button": {
+    "message": "Opslaan als…"
+  },
+  "keys.save_as.default_name": {
+    "message": "Mijn toetsen"
+  },
+  "keys.save_as.label": {
+    "message": "Naam:"
+  },
+  "keys.save_as.title": {
+    "message": "Sneltoetsen opslaan"
+  },
+  "keys.search.placeholder": {
+    "message": "Zoek een opdracht of een toets"
+  },
+  "keys.set_label": {
+    "message": "Toetsen:"
+  },
+  "keys.taken_by.tooltip": {
+    "message": "Bezet door {by}"
+  },
+  "keys.title": {
+    "message": "Sneltoetsen"
+  },
+  "main.admin.button": {
+    "message": "Als administrator"
+  },
+  "main.admin.deleting": {
+    "message": "{count, plural, one {# item} other {# items}} verwijderen"
+  },
+  "main.admin.failed": {
+    "message": "Als administrator: {err}"
+  },
+  "main.admin.making": {
+    "message": "“{name}” maken"
+  },
+  "main.admin.offer": {
+    "message": "{what}: toegang geweigerd. Als administrator vraagt het systeem om het wachtwoord."
+  },
+  "main.admin.offer_delete": {
+    "message": "{what}: toegang geweigerd. Als administrator vraagt het systeem om het wachtwoord. Wat zo wordt verwijderd, is definitief weg."
+  },
+  "main.admin.title": {
+    "message": "Toegang geweigerd"
+  },
+  "main.delete.from_archive": {
+    "message": "{kind, select, folder {De map “{name}” uit {archive} verwijderen? Dit kan niet ongedaan worden gemaakt.} file {Het bestand “{name}” uit {archive} verwijderen? Dit kan niet ongedaan worden gemaakt.} other {{count, plural, one {# item} other {# items}} uit {archive} verwijderen? Dit kan niet ongedaan worden gemaakt.}}"
+  },
+  "main.delete.on_server": {
+    "message": "{kind, select, folder {De map “{name}” op {server} verwijderen? Dit kan niet ongedaan worden gemaakt.} file {Het bestand “{name}” op {server} verwijderen? Dit kan niet ongedaan worden gemaakt.} other {{count, plural, one {# item} other {# items}} op {server} verwijderen? Dit kan niet ongedaan worden gemaakt.}}"
+  },
+  "main.delete.permanently": {
+    "message": "{kind, select, folder {De map “{name}” definitief verwijderen? Dit kan niet ongedaan worden gemaakt.} file {Het bestand “{name}” definitief verwijderen? Dit kan niet ongedaan worden gemaakt.} other {{count, plural, one {# item} other {# items}} definitief verwijderen? Dit kan niet ongedaan worden gemaakt.}}"
+  },
+  "main.delete.title": {
+    "message": "Verwijderen"
+  },
+  "main.delete.title_permanently": {
+    "message": "Definitief verwijderen"
+  },
+  "main.delete.to_trash": {
+    "message": "{kind, select, folder {De map “{name}” naar de prullenbak verplaatsen?} file {Het bestand “{name}” naar de prullenbak verplaatsen?} other {{count, plural, one {# item} other {# items}} naar de prullenbak verplaatsen?}}"
+  },
+  "main.download.edit": {
+    "message": "{file} downloaden om te bewerken"
+  },
+  "main.download.view": {
+    "message": "{file} downloaden om te bekijken"
+  },
+  "main.error.make_folder": {
+    "message": "Kan de map niet maken: {err}"
+  },
+  "main.error.read_settings": {
+    "message": "Kan de instellingen niet lezen: {err}"
+  },
+  "main.error.read_tabs": {
+    "message": "Kan de geopende tabbladen niet lezen: {err}"
+  },
+  "main.error.read_workspaces": {
+    "message": "Kan de werkruimten niet lezen: {err}"
+  },
+  "main.error.save_settings": {
+    "message": "Kan de instellingen niet opslaan: {err}"
+  },
+  "main.folder_tree.home": {
+    "message": "Persoonlijke map"
+  },
+  "main.go.no_such_folder": {
+    "message": "{path}: deze map bestaat niet op deze computer"
+  },
+  "main.new_folder.label": {
+    "message": "Nieuwe map:"
+  },
+  "main.new_folder.title": {
+    "message": "Nieuwe map"
+  },
+  "main.sync_browsing.lost": {
+    "message": "{err}. Gesynchroniseerd bladeren is uitgeschakeld."
+  },
+  "main.tool.needs_file": {
+    "message": "De cursor staat niet op een bestand: %N, %O en %E hebben er een nodig."
+  },
+  "main.tool.needs_local_folder": {
+    "message": "Het andere paneel toont een server of een archief: %T heeft een map op deze computer nodig."
+  },
+  "main.undo.done": {
+    "message": "{way, select, redo {Opnieuw uitgevoerd: {title}} other {Ongedaan gemaakt: {title}}}"
+  },
+  "main.undo.failed": {
+    "message": "{way, select, redo {Kan “{title}” niet opnieuw uitvoeren: {err}} other {Kan “{title}” niet ongedaan maken: {err}}}"
+  },
+  "main.undo.nothing": {
+    "message": "{way, select, redo {Niets om opnieuw uit te voeren.} other {Niets om ongedaan te maken.}}"
+  },
+  "main.undo.queued": {
+    "message": "{way, select, redo {In de wachtrij om opnieuw uit te voeren: {title}} other {In de wachtrij om ongedaan te maken: {title}}}"
+  },
+  "mark.compare.marked": {
+    "message": "{count, plural, one {# bestand gemarkeerd: nieuwer dan aan de andere kant, of daar ontbrekend.} other {# bestanden gemarkeerd: nieuwer dan aan de andere kant, of daar ontbrekend.}}"
+  },
+  "mark.compare.same": {
+    "message": "De mappen bevatten dezelfde bestanden."
+  },
+  "mark.load_selection.label": {
+    "message": "Selecteer de namen die in het bestand staan:"
+  },
+  "mark.load_selection.title": {
+    "message": "Selectie laden"
+  },
+  "mark.save_selection.label": {
+    "message": "De geselecteerde namen opslaan in het bestand:"
+  },
+  "mark.save_selection.title": {
+    "message": "Selectie opslaan"
+  },
+  "mark.select_group.label": {
+    "message": "Selecteer de bestanden (*.txt *.md; een mapmasker eindigt op /):"
+  },
+  "mark.select_group.title": {
+    "message": "Groep selecteren"
+  },
+  "mark.selection_file.not_local": {
+    "message": "Selectiebestanden worden op deze computer bewaard, buiten archieven."
+  },
+  "mark.unselect_group.label": {
+    "message": "Deselecteer de bestanden (*.txt *.md; een mapmasker eindigt op /):"
+  },
+  "mark.unselect_group.title": {
+    "message": "Groep deselecteren"
+  },
+  "media.cannot_play": {
+    "message": "Dit kan niet worden afgespeeld: {err}"
+  },
+  "media.cannot_play_as_text": {
+    "message": "Dit kan niet worden afgespeeld: {err}. 1 toont het als tekst."
+  },
+  "media.continuing": {
+    "message": "Verder bij {time}"
+  },
+  "media.error.missing": {
+    "message": "libmpv ontbreekt: Instellingen > Add-ons downloadt het (een build vanuit de broncode: vendor/mpv/{script})"
+  },
+  "media.error.not_started": {
+    "message": "libmpv kon niet starten"
+  },
+  "media.error.too_long": {
+    "message": "{path}: mpv deed er te lang over"
+  },
+  "media.error.unsupported_system": {
+    "message": "video wordt voorlopig alleen afgespeeld op Linux, macOS en Windows"
+  },
+  "menu.archive": {
+    "message": "Archief"
+  },
+  "menu.associations": {
+    "message": "Koppelingen"
+  },
+  "menu.button_bar": {
+    "message": "Knoppenbalk"
+  },
+  "menu.checksums": {
+    "message": "Controlesommen"
+  },
+  "menu.commands": {
+    "message": "Opdrachten"
+  },
+  "menu.compare_directories": {
+    "message": "Mappen vergelijken"
+  },
+  "menu.configuration": {
+    "message": "Configuratie"
+  },
+  "menu.copy_names": {
+    "message": "Namen kopiëren"
+  },
+  "menu.files": {
+    "message": "Bestanden"
+  },
+  "menu.filter": {
+    "message": "Filter"
+  },
+  "menu.go": {
+    "message": "Ga naar"
+  },
+  "menu.help": {
+    "message": "Help"
+  },
+  "menu.mark": {
+    "message": "Markeren"
+  },
+  "menu.other": {
+    "message": "Overig"
+  },
+  "menu.recently_closed_tabs": {
+    "message": "Onlangs gesloten tabbladen"
+  },
+  "menu.selection": {
+    "message": "Selectie"
+  },
+  "menu.show": {
+    "message": "Weergave"
+  },
+  "menu.sidebar": {
+    "message": "Zijbalk"
+  },
+  "menu.sort": {
+    "message": "Sorteren"
+  },
+  "menu.split_and_combine": {
+    "message": "Splitsen en samenvoegen"
+  },
+  "menu.tabs": {
+    "message": "Tabbladen"
+  },
+  "menu.tools": {
+    "message": "Hulpmiddelen"
+  },
+  "menu.workspaces": {
+    "message": "Werkruimten"
+  },
+  "menus.hide_app": {
+    "message": "Verberg Spark Commander"
+  },
+  "menus.hide_others": {
+    "message": "Verberg andere"
+  },
+  "menus.minimize": {
+    "message": "Minimaliseer"
+  },
+  "menus.quit_app": {
+    "message": "Stop Spark Commander"
+  },
+  "menus.services": {
+    "message": "Voorzieningen"
+  },
+  "menus.show_all": {
+    "message": "Toon alles"
+  },
+  "menus.zoom": {
+    "message": "Zoom"
+  },
+  "name_dialog.cancel": {
+    "message": "Annuleren"
+  },
+  "name_dialog.ok": {
+    "message": "OK"
+  },
+  "operations.clear": {
+    "message": "Voltooide wissen"
+  },
+  "operations.duration.seconds": {
+    "message": "{seconds} s"
+  },
+  "operations.empty": {
+    "message": "Geen bewerkingen."
+  },
+  "operations.job.answer": {
+    "message": "Wacht op je antwoord"
+  },
+  "operations.job.bytes": {
+    "message": "{done} van {total}"
+  },
+  "operations.job.cancel_tooltip": {
+    "message": "Annuleren"
+  },
+  "operations.job.cancelled": {
+    "message": "Geannuleerd"
+  },
+  "operations.job.counting": {
+    "message": "Tellen: {count, plural, one {# bestand} other {# bestanden}}"
+  },
+  "operations.job.done": {
+    "message": "Klaar"
+  },
+  "operations.job.done_skipped": {
+    "message": "Klaar, {count, plural, one {# overgeslagen} other {# overgeslagen}}"
+  },
+  "operations.job.failed": {
+    "message": "Mislukt"
+  },
+  "operations.job.files": {
+    "message": "{files} / {count, plural, one {# bestand} other {# bestanden}}"
+  },
+  "operations.job.left": {
+    "message": "nog {time}"
+  },
+  "operations.job.running": {
+    "message": "Bezig"
+  },
+  "operations.job.waiting": {
+    "message": "Wachtend"
+  },
+  "operations.menu.cancel": {
+    "message": "Annuleren"
+  },
+  "operations.menu.clear": {
+    "message": "Voltooide wissen"
+  },
+  "operations.menu.move_down": {
+    "message": "Omlaag"
+  },
+  "operations.menu.move_up": {
+    "message": "Omhoog"
+  },
+  "operations.settings_tooltip": {
+    "message": "Instellingen van de bewerkingswachtrij"
+  },
+  "operations.summary.failed": {
+    "message": "{count, plural, one {# mislukt} other {# mislukt}}"
+  },
+  "operations.summary.running": {
+    "message": "{count, plural, one {# bezig} other {# bezig}}"
+  },
+  "operations.summary.waiting": {
+    "message": "{count, plural, one {# wachtend} other {# wachtend}}"
+  },
+  "ops.as_administrator.failed": {
+    "message": "Als administrator: {err}"
+  },
+  "ops.as_administrator.progress": {
+    "message": "Als administrator…"
+  },
+  "ops.delete.title_many": {
+    "message": "{count, plural, one {# item} other {# items}} in {folder} verwijderen"
+  },
+  "ops.delete.title_one": {
+    "message": "“{name}” verwijderen"
+  },
+  "ops.delete.trash_title_many": {
+    "message": "{count, plural, one {# item} other {# items}} in {folder} naar de prullenbak verplaatsen"
+  },
+  "ops.delete.trash_title_one": {
+    "message": "“{name}” naar de prullenbak verplaatsen"
+  },
+  "ops.error.file_in_the_way": {
+    "message": "een bestand met deze naam staat in de weg"
+  },
+  "ops.error.into_itself": {
+    "message": "kan niet in zichzelf worden gekopieerd"
+  },
+  "ops.exists_already": {
+    "message": "{name} bestaat al"
+  },
+  "ops.link.dialog_title": {
+    "message": "Link maken"
+  },
+  "ops.link.failed": {
+    "message": "Kan de link niet maken: {err}"
+  },
+  "ops.link.kind.hard": {
+    "message": "Harde link"
+  },
+  "ops.link.kind.junction": {
+    "message": "Junction"
+  },
+  "ops.link.kind.shortcut": {
+    "message": "Snelkoppeling (.lnk)"
+  },
+  "ops.link.kind.symbolic": {
+    "message": "Symbolische link"
+  },
+  "ops.link.label_many": {
+    "message": "Links naar {count, plural, one {# item} other {de # items}}, in de map:"
+  },
+  "ops.link.label_one": {
+    "message": "Link naar “{name}” als:"
+  },
+  "ops.link.making": {
+    "message": "{kind, select, symbolic {Symbolische link} hard {Harde link} junction {Junction} other {Snelkoppeling (.lnk)}} maken"
+  },
+  "ops.link.needs_admin": {
+    "message": "symbolische links vereisen een administrator, of Ontwikkelaarsmodus"
+  },
+  "ops.link.thread_failed": {
+    "message": "de thread van de snelkoppeling is mislukt"
+  },
+  "ops.link.title_many": {
+    "message": "{kind, select, symbolic {Symbolische links} hard {Harde links} junction {Junctions} other {Snelkoppelingen (.lnk)}} naar {count, plural, one {# item} other {# items}} in {folder}"
+  },
+  "ops.link.title_one": {
+    "message": "{kind, select, symbolic {Symbolische link} hard {Harde link} junction {Junction} other {Snelkoppeling (.lnk)}} naar “{name}” in {folder}"
+  },
+  "ops.link.windows_only": {
+    "message": "junctions en snelkoppelingen bestaan alleen op Windows"
+  },
+  "ops.redo.title": {
+    "message": "Opnieuw uitvoeren: {what}"
+  },
+  "ops.title.many": {
+    "message": "{count, plural, one {# item} other {# items}} {kind, select, copy {kopiëren} other {verplaatsen}} naar {target}"
+  },
+  "ops.title.one": {
+    "message": "“{name}” {kind, select, copy {kopiëren} other {verplaatsen}} naar {target}"
+  },
+  "ops.undo.not_a_server": {
+    "message": "{url}: geen serveradres"
+  },
+  "ops.undo.not_in_trash": {
+    "message": "ze staan niet meer in de prullenbak"
+  },
+  "ops.undo.restore_title": {
+    "message": "{title}: wat werd overschreven, terug uit de prullenbak"
+  },
+  "ops.undo.title": {
+    "message": "Ongedaan maken: {what}"
+  },
+  "pack.cancel": {
+    "message": "Annuleren"
+  },
+  "pack.compression": {
+    "message": "Compressie:"
+  },
+  "pack.dialog_title": {
+    "message": "Bestanden inpakken"
+  },
+  "pack.encrypt": {
+    "message": "Versleutelen met het wachtwoord"
+  },
+  "pack.format": {
+    "message": "Formaat:"
+  },
+  "pack.label": {
+    "message": "{count, plural, one {# item} other {# items}} inpakken in het archief:"
+  },
+  "pack.level.fastest": {
+    "message": "Snelst"
+  },
+  "pack.level.maximum": {
+    "message": "Maximaal"
+  },
+  "pack.level.normal": {
+    "message": "Normaal"
+  },
+  "pack.level.store": {
+    "message": "Opslaan"
+  },
+  "pack.level.ultra": {
+    "message": "Ultra"
+  },
+  "pack.local_only": {
+    "message": "{what, select, packing {Inpakken} unpacking {Uitpakken} testing {Testen} creating_checksums {Controlesommen maken} making_links {Links maken} verifying_checksums {Controlesommen verifiëren} splitting {Splitsen} combining {Samenvoegen} other {Dit}} werkt op bestanden van deze computer, buiten archieven."
+  },
+  "pack.move_files": {
+    "message": "Naar archief verplaatsen (ingepakte bestanden verwijderen)"
+  },
+  "pack.needs_password": {
+    "message": "er is een wachtwoord nodig"
+  },
+  "pack.ok": {
+    "message": "OK"
+  },
+  "pack.password_missing": {
+    "message": "Typ het wachtwoord, of laat Versleutelen uit."
+  },
+  "pack.separate": {
+    "message": "Eén archief per geselecteerd bestand of geselecteerde map"
+  },
+  "pack.split": {
+    "message": "Splitsen in volumes van"
+  },
+  "pack.split_unit": {
+    "message": "MB"
+  },
+  "pack.test.broken": {
+    "message": "{broken, plural, one {# van {count} beschadigd} other {# van {count} beschadigd}}"
+  },
+  "pack.test.choose": {
+    "message": "Kies de archieven om te testen."
+  },
+  "pack.test.ok": {
+    "message": "{count, plural, one {# archief OK} other {# archieven OK}}"
+  },
+  "pack.test.title_many": {
+    "message": "{count, plural, one {# archief} other {# archieven}} testen"
+  },
+  "pack.test.title_one": {
+    "message": "“{name}” testen"
+  },
+  "pack.title.many": {
+    "message": "{count, plural, one {# item} other {# items}} inpakken in {archive}"
+  },
+  "pack.title.many_separate": {
+    "message": "{count, plural, one {# item} other {# items}} inpakken in afzonderlijke {format}-archieven"
+  },
+  "pack.title.one": {
+    "message": "“{name}” inpakken in {archive}"
+  },
+  "pack.title.one_separate": {
+    "message": "“{name}” inpakken in afzonderlijke {format}-archieven"
+  },
+  "pack.unpack.choose": {
+    "message": "Kies de archieven om uit te pakken."
+  },
+  "pack.unpack.dialog_title": {
+    "message": "Bestanden uitpakken"
+  },
+  "pack.unpack.label": {
+    "message": "{count, plural, one {# archief} other {# archieven}} uitpakken naar:"
+  },
+  "pack.unpack.mask": {
+    "message": "Alleen de bestanden:"
+  },
+  "pack.unpack.overwrite": {
+    "message": "Bestaande bestanden overschrijven (anders blijven ze behouden)"
+  },
+  "pack.unpack.password": {
+    "message": "Wachtwoord:"
+  },
+  "pack.unpack.separate": {
+    "message": "Elk archief in een map met zijn naam"
+  },
+  "pack.unpack.title_many": {
+    "message": "{count, plural, one {# archief} other {# archieven}} uitpakken naar {target}"
+  },
+  "pack.unpack.title_one": {
+    "message": "“{name}” uitpakken naar {target}"
+  },
+  "pack.unpack.with_paths": {
+    "message": "De mappen in het archief behouden"
+  },
+  "pack.volume_invalid": {
+    "message": "De volumegrootte is een aantal MB."
+  },
+  "pack.wrong_password": {
+    "message": "verkeerd wachtwoord"
+  },
+  "panel.admin.renaming": {
+    "message": "Naam wijzigen in “{name}”"
+  },
+  "panel.clipboard.copied": {
+    "message": "{count, plural, one {# item gekopieerd: Ctrl+V plakt het.} other {# items gekopieerd: Ctrl+V plakt ze.}}"
+  },
+  "panel.clipboard.cut": {
+    "message": "{count, plural, one {# item geknipt: Ctrl+V plakt het.} other {# items geknipt: Ctrl+V plakt ze.}}"
+  },
+  "panel.clipboard.no_cut_in_archive": {
+    "message": "Bestanden kunnen niet uit archieven worden geknipt; Ctrl+C kopieert ze."
+  },
+  "panel.clipboard.no_files": {
+    "message": "Het klembord bevat geen bestanden."
+  },
+  "panel.clipboard.no_paste_in_archive": {
+    "message": "Bestanden kunnen nog niet in archieven worden geplakt."
+  },
+  "panel.clipboard.same_folder": {
+    "message": "Ze staan al in deze map: Ctrl+V plakt in een andere map."
+  },
+  "panel.column.attr": {
+    "message": "Attr"
+  },
+  "panel.column.date": {
+    "message": "Datum"
+  },
+  "panel.column.ext": {
+    "message": "Ext"
+  },
+  "panel.column.name": {
+    "message": "Naam"
+  },
+  "panel.column.size": {
+    "message": "Grootte"
+  },
+  "panel.disconnect": {
+    "message": "Verbinding verbreken"
+  },
+  "panel.drag.items": {
+    "message": "{count, plural, one {# item} other {# items}}"
+  },
+  "panel.error.archive_not_updatable": {
+    "message": "{name}: 7-Zip wijzigt 7z-, zip- en tar-archieven ter plekke, dit archief niet"
+  },
+  "panel.error.archive_on_server": {
+    "message": "{name}: archieven op servers kunnen nog niet worden gewijzigd"
+  },
+  "panel.error.branch_view_local": {
+    "message": "Vertakkingsweergave toont alleen mappen van deze computer"
+  },
+  "panel.error.exists": {
+    "message": "{name} bestaat al"
+  },
+  "panel.error.folder_in_the_way": {
+    "message": "een map met deze naam staat in de weg"
+  },
+  "panel.error.inside_archive": {
+    "message": "nog niet in archieven"
+  },
+  "panel.error.make_file": {
+    "message": "Kan het bestand niet maken: {err}"
+  },
+  "panel.error.no_name": {
+    "message": "geen naam opgegeven"
+  },
+  "panel.error.not_a_name": {
+    "message": "{name}: geen geldige naam"
+  },
+  "panel.error.other_drive": {
+    "message": "het andere paneel ging naar een ander station"
+  },
+  "panel.error.rename": {
+    "message": "Kan de naam niet wijzigen: {err}"
+  },
+  "panel.filter.custom.label": {
+    "message": "Bestandstypen, bijv. *.txt *.md (na | de uitgesloten):"
+  },
+  "panel.filter.custom.title": {
+    "message": "Bestanden tonen"
+  },
+  "panel.filter.programs": {
+    "message": "programma’s"
+  },
+  "panel.filter.selected_files": {
+    "message": "geselecteerde bestanden"
+  },
+  "panel.found.branch_view": {
+    "message": "Vertakkingsweergave:"
+  },
+  "panel.found.search_results": {
+    "message": "Zoekresultaten:"
+  },
+  "panel.new_text_file.label": {
+    "message": "Bestandsnaam, geopend in de editor:"
+  },
+  "panel.new_text_file.title": {
+    "message": "Nieuw tekstbestand"
+  },
+  "panel.opening.cancel": {
+    "message": "Annuleren"
+  },
+  "panel.opening.reading": {
+    "message": "Lezen…"
+  },
+  "panel.opening.title": {
+    "message": "Archief openen"
+  },
+  "panel.quick_filter.hint": {
+    "message": "verbergt wat niet overeenkomt; Escape toont alles"
+  },
+  "panel.quick_filter.label": {
+    "message": "Filter:"
+  },
+  "panel.quick_search.label": {
+    "message": "Zoeken:"
+  },
+  "panel.size.app": {
+    "message": "<APP>"
+  },
+  "panel.size.b": {
+    "message": "{size} B"
+  },
+  "panel.size.dir": {
+    "message": "<DIR>"
+  },
+  "panel.size.gb": {
+    "message": "{size} GB"
+  },
+  "panel.size.kb": {
+    "message": "{size} KB"
+  },
+  "panel.size.mb": {
+    "message": "{size} MB"
+  },
+  "panel.size.tb": {
+    "message": "{size} TB"
+  },
+  "panel.space.bytes": {
+    "message": "{count, plural, one {{size} byte ({human})} other {{size} bytes ({human})}}"
+  },
+  "panel.space.close": {
+    "message": "Sluiten"
+  },
+  "panel.space.counting": {
+    "message": "Tellen…"
+  },
+  "panel.space.done": {
+    "message": "Klaar."
+  },
+  "panel.space.files": {
+    "message": "Bestanden:"
+  },
+  "panel.space.folders": {
+    "message": "Mappen:"
+  },
+  "panel.space.in_archive": {
+    "message": "In archieven bevat de kolom Grootte de groottes al."
+  },
+  "panel.space.title": {
+    "message": "Gebruikte ruimte berekenen"
+  },
+  "panel.space.total": {
+    "message": "Totale grootte:"
+  },
+  "panel.space.unreadable": {
+    "message": "{count, plural, one {# item kon niet worden gelezen.} other {# items konden niet worden gelezen.}}"
+  },
+  "panel.status": {
+    "message": "{marked_size} k / {size} k in {marked_files} / {files, plural, one {# bestand} other {# bestanden}}, {marked_folders} / {folders, plural, one {# map} other {# mappen}}"
+  },
+  "panel.sync_browsing.stop": {
+    "message": "Gesynchroniseerd bladeren (klik om te stoppen)"
+  },
+  "panel.undo.rename": {
+    "message": "Naam van “{name}” wijzigen in “{to}”"
+  },
+  "passwords.about.set": {
+    "message": "Met een hoofdwachtwoord gaan de opgeslagen wachtwoorden ook op een andere computer open zodra je het daar typt, nadat de instellingenmap is gekopieerd. Vergeet je het, dan raak je alleen die wachtwoorden kwijt: je typt ze opnieuw."
+  },
+  "passwords.about.unlock": {
+    "message": "De instellingen komen van een andere computer, of deze computer heeft geen sleutelbos: het hoofdwachtwoord ontgrendelt hier de opgeslagen wachtwoorden."
+  },
+  "passwords.cancel": {
+    "message": "Annuleren"
+  },
+  "passwords.done.set": {
+    "message": "Het hoofdwachtwoord is ingesteld."
+  },
+  "passwords.done.unlocked": {
+    "message": "De opgeslagen wachtwoorden zijn ontgrendeld."
+  },
+  "passwords.error.locked": {
+    "message": "de opgeslagen wachtwoorden zijn vergrendeld: ontgrendel ze met het hoofdwachtwoord (Configuratie › Instellingen › Wachtwoorden)"
+  },
+  "passwords.error.no_master": {
+    "message": "er is geen hoofdwachtwoord ingesteld"
+  },
+  "passwords.error.no_random": {
+    "message": "geen willekeurige getallen"
+  },
+  "passwords.error.not_opened": {
+    "message": "het wachtwoord voor {what} kan niet worden geopend"
+  },
+  "passwords.error.not_sealed": {
+    "message": "het wachtwoord kon niet worden versleuteld"
+  },
+  "passwords.error.salt_damaged": {
+    "message": "de salt van het hoofdwachtwoord is beschadigd"
+  },
+  "passwords.error.wrong": {
+    "message": "het hoofdwachtwoord is onjuist"
+  },
+  "passwords.field.again": {
+    "message": "Herhalen"
+  },
+  "passwords.field.master": {
+    "message": "Hoofdwachtwoord"
+  },
+  "passwords.locked_note": {
+    "message": "De opgeslagen wachtwoorden zijn op deze computer vergrendeld: het hoofdwachtwoord ontgrendelt ze."
+  },
+  "passwords.ok": {
+    "message": "OK"
+  },
+  "passwords.problem.differ": {
+    "message": "De twee zijn niet gelijk."
+  },
+  "passwords.problem.empty": {
+    "message": "Typ het hoofdwachtwoord."
+  },
+  "passwords.title.set": {
+    "message": "Hoofdwachtwoord"
+  },
+  "passwords.title.unlock": {
+    "message": "Opgeslagen wachtwoorden ontgrendelen"
+  },
+  "passwords.unlock_button": {
+    "message": "Ontgrendelen…"
+  },
+  "passwords.working": {
+    "message": "Bezig…"
+  },
+  "properties.accessed": {
+    "message": "Geopend:"
+  },
+  "properties.change_attributes": {
+    "message": "Kenmerken wijzigen..."
+  },
+  "properties.close": {
+    "message": "Sluiten"
+  },
+  "properties.contents": {
+    "message": "{file_count, plural, one {{files} bestand} other {{files} bestanden}}, {folder_count, plural, one {{folders} map} other {{folders} mappen}}, {count, plural, one {{bytes} byte} other {{bytes} bytes}} ({size})"
+  },
+  "properties.contents_counting": {
+    "message": "{file_count, plural, one {{files} bestand} other {{files} bestanden}}, {folder_count, plural, one {{folders} map} other {{folders} mappen}}, {count, plural, one {{bytes} byte} other {{bytes} bytes}} ({size}) (tellen…)"
+  },
+  "properties.contents_label": {
+    "message": "Inhoud:"
+  },
+  "properties.created": {
+    "message": "Gemaakt:"
+  },
+  "properties.dialog_title": {
+    "message": "Eigenschappen"
+  },
+  "properties.in_archive": {
+    "message": "De lijst van het archief toont wat het van zijn bestanden weet."
+  },
+  "properties.kind.file": {
+    "message": "Bestand"
+  },
+  "properties.kind.folder": {
+    "message": "Map"
+  },
+  "properties.kind.link": {
+    "message": "Link"
+  },
+  "properties.kind.link_to": {
+    "message": "Link naar {target}"
+  },
+  "properties.location": {
+    "message": "Locatie:"
+  },
+  "properties.modified": {
+    "message": "Gewijzigd:"
+  },
+  "properties.name": {
+    "message": "Naam:"
+  },
+  "properties.no_system_dialog": {
+    "message": "hier nog geen eigenschappenvenster van het systeem"
+  },
+  "properties.owner": {
+    "message": "Eigenaar / groep:"
+  },
+  "properties.permissions": {
+    "message": "Rechten:"
+  },
+  "properties.size": {
+    "message": "{count, plural, one {{bytes} byte ({size})} other {{bytes} bytes ({size})}}"
+  },
+  "properties.size_label": {
+    "message": "Grootte:"
+  },
+  "properties.type": {
+    "message": "Type:"
+  },
+  "quick_open.go_to": {
+    "message": "Ga naar {path}"
+  },
+  "quick_open.group.bookmarks": {
+    "message": "Bladwijzers"
+  },
+  "quick_open.group.connections": {
+    "message": "Verbindingen"
+  },
+  "quick_open.group.drives": {
+    "message": "Stations"
+  },
+  "quick_open.group.path": {
+    "message": "Pad"
+  },
+  "quick_open.group.recent_folders": {
+    "message": "Recente mappen"
+  },
+  "quick_open.group.tools": {
+    "message": "Hulpmiddelen"
+  },
+  "quick_open.group.workspaces": {
+    "message": "Werkruimten"
+  },
+  "quick_open.placeholder": {
+    "message": "Een opdracht, bladwijzer, map, pad, server, station, werkruimte of hulpmiddel"
+  },
+  "quick_open.title": {
+    "message": "Snel openen"
+  },
+  "quick_view.counting": {
+    "message": "Tellen…"
+  },
+  "quick_view.downloading": {
+    "message": "Downloaden…"
+  },
+  "quick_view.empty": {
+    "message": "Snelweergave toont waar de cursor van het andere paneel op staat."
+  },
+  "quick_view.extracting": {
+    "message": "Uit het archief halen…"
+  },
+  "quick_view.files_only": {
+    "message": "Op servers en in archieven toont Snelweergave alleen bestanden."
+  },
+  "quick_view.space.title": {
+    "message": "Totaal gebruikte ruimte:"
+  },
+  "quick_view.space.totals": {
+    "message": "{bytes, plural, one {{bytes_grouped} byte} other {{bytes_grouped} bytes}} in {files, plural, one {{files_grouped} bestand} other {{files_grouped} bestanden}}, {folders, plural, one {{folders_grouped} map} other {{folders_grouped} mappen}}"
+  },
+  "quick_view.space.unreadable": {
+    "message": "Onleesbaar: {count}."
+  },
+  "quick_view.too_large.download": {
+    "message": "{size} is te groot om hier te downloaden: F3 toont het."
+  },
+  "quick_view.too_large.extract": {
+    "message": "{size} is te groot om hier uit het archief te halen: F3 toont het."
+  },
+  "remote.cancelled": {
+    "message": "geannuleerd"
+  },
+  "remote.cloud.ask": {
+    "message": "{kind, select, application_key {App-sleutel van {user} op {host}:} api_key {API-sleutel van {user} op {host}:} password {Wachtwoord van {user} op {host}:} other {Geheime sleutel van {user} op {host}:}}"
+  },
+  "remote.cloud.ask_again": {
+    "message": "{kind, select, application_key {Verkeerde app-sleutel. App-sleutel van {user} op {host}:} api_key {Verkeerde API-sleutel. API-sleutel van {user} op {host}:} password {Verkeerd wachtwoord. Wachtwoord van {user} op {host}:} other {Verkeerde sleutel. Geheime sleutel van {user} op {host}:}}"
+  },
+  "remote.cloud.obscure_failed": {
+    "message": "rclone kon het wachtwoord niet verwerken"
+  },
+  "remote.cloud.rclone_missing": {
+    "message": "rclone ontbreekt: Instellingen > Add-ons downloadt het"
+  },
+  "remote.cloud.title": {
+    "message": "{kind, select, application_key {App-sleutel} api_key {API-sleutel} password {Wachtwoord} other {Geheime sleutel}}"
+  },
+  "remote.connecting": {
+    "message": "Verbinden met {server}..."
+  },
+  "remote.dialog.cancel": {
+    "message": "Annuleren"
+  },
+  "remote.dialog.ok": {
+    "message": "OK"
+  },
+  "remote.disconnect_failed": {
+    "message": "{share}: kan de verbinding niet verbreken: {err}"
+  },
+  "remote.ftp.password": {
+    "message": "Wachtwoord voor {user}@{host}:"
+  },
+  "remote.ftp.password_again": {
+    "message": "Verkeerd wachtwoord. Wachtwoord voor {user}@{host}:"
+  },
+  "remote.ftps.changed": {
+    "message": "Het TLS-certificaat van {server} is GEWIJZIGD sinds regel {line} van {file} het vastlegde. Iemand kan meeluisteren; als de server een nieuw certificaat heeft, verwijder dan die regel."
+  },
+  "remote.ftps.not_trusted": {
+    "message": "het certificaat van de server wordt niet vertrouwd"
+  },
+  "remote.login.password": {
+    "message": "Wachtwoord"
+  },
+  "remote.login.title": {
+    "message": "Aanmelden"
+  },
+  "remote.login.user": {
+    "message": "Gebruiker"
+  },
+  "remote.mount.login_wrong": {
+    "message": "de gebruiker of het wachtwoord is onjuist"
+  },
+  "remote.mount.macos_failed": {
+    "message": "macOS kon het niet aankoppelen (NetFS {code})"
+  },
+  "remote.mount.needs_desktop": {
+    "message": "vereist kio-fuse van KDE of gvfs van GNOME"
+  },
+  "remote.mount.needs_login": {
+    "message": "er zijn een gebruiker en een wachtwoord nodig"
+  },
+  "remote.mount.no_fuse": {
+    "message": "aangekoppeld, maar er is geen map voor: gvfs-fuse ontbreekt"
+  },
+  "remote.mount.no_nfs_client": {
+    "message": "niet gevonden; NFS vereist Client voor NFS van Windows (Windows-onderdelen)"
+  },
+  "remote.mount.no_share": {
+    "message": "de gedeelde map ontbreekt: smb://server/share"
+  },
+  "remote.mount.not_address": {
+    "message": "geen adres"
+  },
+  "remote.mount.not_found": {
+    "message": "aangekoppeld, maar niet gevonden tussen de aangekoppelde"
+  },
+  "remote.mount.other_user": {
+    "message": "Windows is met deze server verbonden als een andere gebruiker: meld je af, of gebruik die gebruiker"
+  },
+  "remote.password.title": {
+    "message": "Wachtwoord"
+  },
+  "remote.remember_password": {
+    "message": "Onthouden (Instellingen › Wachtwoorden)"
+  },
+  "remote.save_back_failed": {
+    "message": "Kan het niet terugzetten: {err}"
+  },
+  "remote.sftp.host_certificate": {
+    "message": "De server toont een hostcertificaat; die worden nog niet ondersteund."
+  },
+  "remote.sftp.key_changed": {
+    "message": "De hostsleutel van {server} is GEWIJZIGD sinds regel {line} van {file} hem vastlegde. Iemand kan meeluisteren; als de server opnieuw is ingericht, verwijder dan die regel."
+  },
+  "remote.sftp.key_not_trusted": {
+    "message": "De hostsleutel van {server} werd niet vertrouwd."
+  },
+  "remote.sftp.keys_refused": {
+    "message": "{user}@{host}: de server weigerde de sleutels en accepteert geen wachtwoord"
+  },
+  "remote.sftp.login_refused": {
+    "message": "{user}@{host}: aanmelding geweigerd"
+  },
+  "remote.sftp.passphrase": {
+    "message": "Wachtwoordzin voor {file}"
+  },
+  "remote.sftp.passphrase_title": {
+    "message": "Wachtwoordzin van sleutel"
+  },
+  "remote.sftp.password": {
+    "message": "Wachtwoord voor {user}@{host}"
+  },
+  "remote.unknown_host.once": {
+    "message": "Eenmalig verbinden"
+  },
+  "remote.unknown_host.remember": {
+    "message": "Verbinden en onthouden"
+  },
+  "remote.unknown_host.text": {
+    "message": "{key_type, select, TLS {De server {host} is nog niet bekend. De vingerafdruk van het TLS-certificaat is} other {De server {host} is nog niet bekend. De {key_type}-vingerafdruk is}}\n\n{fingerprint}\n\nVerbind alleen als dit de server is die je bedoelt; de beheerder ervan kan de vingerafdruk bevestigen."
+  },
+  "remote.unknown_host.title": {
+    "message": "Onbekende server"
+  },
+  "rename.case": {
+    "message": "Hoofdletters:"
+  },
+  "rename.case.first": {
+    "message": "Eerste letter"
+  },
+  "rename.case.lower": {
+    "message": "kleine letters"
+  },
+  "rename.case.unchanged": {
+    "message": "Ongewijzigd"
+  },
+  "rename.case.upper": {
+    "message": "HOOFDLETTERS"
+  },
+  "rename.case.words": {
+    "message": "Elk Woord"
+  },
+  "rename.close": {
+    "message": "Sluiten"
+  },
+  "rename.counter_start": {
+    "message": "Teller start"
+  },
+  "rename.dialog_title": {
+    "message": "Meerdere namen wijzigen"
+  },
+  "rename.digits": {
+    "message": "Cijfers"
+  },
+  "rename.extension": {
+    "message": "Extensie"
+  },
+  "rename.field.counter": {
+    "message": "[C] Teller"
+  },
+  "rename.field.date": {
+    "message": "[Y][M][D] Datum"
+  },
+  "rename.field.extension": {
+    "message": "[E] Ext."
+  },
+  "rename.field.folder": {
+    "message": "[P] Map"
+  },
+  "rename.field.name": {
+    "message": "[N] Naam"
+  },
+  "rename.field.range": {
+    "message": "[N1-3] Bereik"
+  },
+  "rename.field.time": {
+    "message": "[h][m][s] Tijd"
+  },
+  "rename.first_only": {
+    "message": "Alleen eerste"
+  },
+  "rename.in_archive": {
+    "message": "De naam van bestanden in archieven kan nog niet worden gewijzigd."
+  },
+  "rename.mask": {
+    "message": "Naammasker: bestandsnaam"
+  },
+  "rename.match_case": {
+    "message": "Hoofdlettergevoelig"
+  },
+  "rename.new_name": {
+    "message": "Nieuwe naam"
+  },
+  "rename.not_renamed_back": {
+    "message": "{from}: {err}; naam niet teruggezet: {names}"
+  },
+  "rename.not_utf8": {
+    "message": "Namen die geen UTF-8 zijn, worden overgeslagen."
+  },
+  "rename.old_name": {
+    "message": "Oude naam"
+  },
+  "rename.problem.bad_character": {
+    "message": "teken dat niet in namen mag"
+  },
+  "rename.problem.exists": {
+    "message": "bestaat al"
+  },
+  "rename.problem.no_name": {
+    "message": "geen naam"
+  },
+  "rename.problem.twice": {
+    "message": "twee keer in de lijst"
+  },
+  "rename.regex": {
+    "message": "Reguliere expressie"
+  },
+  "rename.regex_error": {
+    "message": "De reguliere expressie: {err}"
+  },
+  "rename.replace": {
+    "message": "Vervangen door"
+  },
+  "rename.search": {
+    "message": "Zoeken naar"
+  },
+  "rename.start": {
+    "message": "Start!"
+  },
+  "rename.status.failed": {
+    "message": "Geen namen gewijzigd: {err}"
+  },
+  "rename.status.ready": {
+    "message": "Start! wijzigt de namen."
+  },
+  "rename.status.renamed": {
+    "message": "{count, plural, one {# naam gewijzigd.} other {# namen gewijzigd.}}"
+  },
+  "rename.status.took_back": {
+    "message": "{count, plural, one {# naam teruggezet.} other {# namen teruggezet.}}"
+  },
+  "rename.step": {
+    "message": "Stap"
+  },
+  "rename.undo": {
+    "message": "Ongedaan maken"
+  },
+  "rename.was": {
+    "message": "{to} (was {from})"
+  },
+  "rename.with_extension": {
+    "message": "Met extensie"
+  },
+  "scmd.column.modified": {
+    "message": "Gewijzigd"
+  },
+  "scmd.column.name": {
+    "message": "Naam"
+  },
+  "scmd.column.size": {
+    "message": "Grootte"
+  },
+  "scmd.column.up_dir": {
+    "message": "OMHOOG"
+  },
+  "scmd.command_line.not_on_server": {
+    "message": "Opdrachten worden op deze computer uitgevoerd, niet op de server."
+  },
+  "scmd.compare.marked": {
+    "message": "{count, plural, one {# bestand gemarkeerd: nieuwer dan aan de andere kant, of daar ontbrekend.} other {# bestanden gemarkeerd: nieuwer dan aan de andere kant, of daar ontbrekend.}}"
+  },
+  "scmd.compare.same": {
+    "message": "De mappen bevatten dezelfde bestanden."
+  },
+  "scmd.copying": {
+    "message": "{name} kopiëren..."
+  },
+  "scmd.dialog.buttons": {
+    "message": "Enter OK   Esc Annuleren"
+  },
+  "scmd.error.read_settings": {
+    "message": "Kan de instellingen niet lezen: {err}"
+  },
+  "scmd.error.read_tabs": {
+    "message": "Kan de geopende tabbladen niet lezen: {err}"
+  },
+  "scmd.error.read_workspaces": {
+    "message": "Kan de werkruimten niet lezen: {err}"
+  },
+  "scmd.error.save_back": {
+    "message": "Kan het niet terugzetten: {err}"
+  },
+  "scmd.error.save_searches": {
+    "message": "Kan de zoekopdrachten niet opslaan: {err}"
+  },
+  "scmd.error.save_tabs": {
+    "message": "Kan de geopende tabbladen niet opslaan: {err}"
+  },
+  "scmd.find.backwards": {
+    "message": "Achterwaarts"
+  },
+  "scmd.find.case_sensitive": {
+    "message": "Hoofdlettergevoelig"
+  },
+  "scmd.find.hex": {
+    "message": "Hex (77 6F 72 64)"
+  },
+  "scmd.find.not_found": {
+    "message": "Niet gevonden: {text}"
+  },
+  "scmd.find.regex": {
+    "message": "Reguliere expressie"
+  },
+  "scmd.find.search_for": {
+    "message": "Zoeken naar:"
+  },
+  "scmd.find.title": {
+    "message": "Zoeken"
+  },
+  "scmd.find.whole_words": {
+    "message": "Alleen hele woorden"
+  },
+  "scmd.group.files": {
+    "message": "Bestanden (*.txt *.md; mappen eindigen op /):"
+  },
+  "scmd.group.select_title": {
+    "message": "Groep selecteren"
+  },
+  "scmd.group.unselect_title": {
+    "message": "Groep deselecteren"
+  },
+  "scmd.key_bar.copy": {
+    "message": "Kopie"
+  },
+  "scmd.key_bar.delete": {
+    "message": "Wis"
+  },
+  "scmd.key_bar.edit": {
+    "message": "Bewerk"
+  },
+  "scmd.key_bar.menu": {
+    "message": "Menu"
+  },
+  "scmd.key_bar.mkdir": {
+    "message": "NwMap"
+  },
+  "scmd.key_bar.move": {
+    "message": "Verpl"
+  },
+  "scmd.key_bar.quit": {
+    "message": "Stop"
+  },
+  "scmd.key_bar.view": {
+    "message": "Toon"
+  },
+  "scmd.message.error": {
+    "message": "Fout"
+  },
+  "scmd.message.ok": {
+    "message": "OK"
+  },
+  "scmd.not_yet": {
+    "message": "{what, select, menus {De menu’s: nog niet in de terminalversie.} file_operations {Bestandsbewerkingen: nog niet in de terminalversie.} servers {Servers: nog niet in de terminalversie.} other {Deze opdracht: nog niet in de terminalversie.}}"
+  },
+  "scmd.picture.broken": {
+    "message": "een beschadigde afbeelding"
+  },
+  "scmd.picture.broken_page": {
+    "message": "een beschadigde pagina"
+  },
+  "scmd.picture.loading": {
+    "message": "Laden…"
+  },
+  "scmd.picture.no_page": {
+    "message": "de PDF heeft deze pagina niet"
+  },
+  "scmd.shell.press_enter": {
+    "message": "Druk op Enter om terug te gaan naar Spark Commander..."
+  },
+  "scmd.sync_browsing.off": {
+    "message": "Gesynchroniseerd bladeren is uitgeschakeld."
+  },
+  "scmd.sync_browsing.on": {
+    "message": "Gesynchroniseerd bladeren is ingeschakeld."
+  },
+  "scmd.sync_browsing.stopped": {
+    "message": "{err}. Gesynchroniseerd bladeren is uitgeschakeld."
+  },
+  "scmd.viewer.column": {
+    "message": "Kol {column}"
+  },
+  "scmd.viewer.finding": {
+    "message": "zoeken…"
+  },
+  "scmd.viewer.key_bar.next": {
+    "message": "Volg"
+  },
+  "scmd.viewer.key_bar.quit": {
+    "message": "Stop"
+  },
+  "scmd.viewer.key_bar.reload": {
+    "message": "Herlaad"
+  },
+  "scmd.viewer.key_bar.search": {
+    "message": "Zoek"
+  },
+  "scmd.viewer.page": {
+    "message": "pagina {page} van {pages}"
+  },
+  "scmd.viewer.reading": {
+    "message": "lezen {percent}%"
+  },
+  "scmd.viewer.wrap": {
+    "message": "Terugloop"
+  },
+  "scmd.workspace.copy_name": {
+    "message": "{name} kopie"
+  },
+  "scmd.workspace.default_name": {
+    "message": "Werkruimte {number}"
+  },
+  "scmd.workspace.delete_question": {
+    "message": "“{name}” verwijderen? De tabbladen ervan worden vergeten."
+  },
+  "scmd.workspace.duplicate_title": {
+    "message": "Werkruimte dupliceren"
+  },
+  "scmd.workspace.last_stays": {
+    "message": "De laatste werkruimte blijft."
+  },
+  "scmd.workspace.name": {
+    "message": "Naam:"
+  },
+  "scmd.workspace.name_or_default": {
+    "message": "Naam (leeg: {name}):"
+  },
+  "scmd.workspace.new_title": {
+    "message": "Nieuwe werkruimte"
+  },
+  "scmd.workspace.rename_title": {
+    "message": "Naam van werkruimte wijzigen"
+  },
+  "scmd.workspaces.keys": {
+    "message": "Enter Openen  F7 Nieuw  F5 Kopie  F2 Naam  F8 Wis"
+  },
+  "scmd.workspaces.title": {
+    "message": "Werkruimten"
+  },
+  "search.age.days": {
+    "message": "dag(en)"
+  },
+  "search.age.hours": {
+    "message": "uur"
+  },
+  "search.age.minutes": {
+    "message": "minuut/minuten"
+  },
+  "search.age.months": {
+    "message": "maand(en)"
+  },
+  "search.age.weeks": {
+    "message": "week/weken"
+  },
+  "search.age.years": {
+    "message": "jaar"
+  },
+  "search.archives": {
+    "message": "In archieven zoeken"
+  },
+  "search.attribute.directory": {
+    "message": "Map"
+  },
+  "search.attribute.either": {
+    "message": "Maakt niet uit"
+  },
+  "search.attribute.executable": {
+    "message": "Uitvoerbaar"
+  },
+  "search.attribute.hidden": {
+    "message": "Verborgen"
+  },
+  "search.attribute.link": {
+    "message": "Symbolische link"
+  },
+  "search.attribute.must": {
+    "message": "Moet zijn"
+  },
+  "search.attribute.must_not": {
+    "message": "Mag niet zijn"
+  },
+  "search.attribute.read_only": {
+    "message": "Alleen-lezen"
+  },
+  "search.attributes.label": {
+    "message": "Kenmerken:"
+  },
+  "search.between.and": {
+    "message": "en"
+  },
+  "search.between.label": {
+    "message": "Datum tussen:"
+  },
+  "search.close": {
+    "message": "Sluiten"
+  },
+  "search.depth.all": {
+    "message": "alle (onbeperkte diepte)"
+  },
+  "search.depth.current": {
+    "message": "alleen huidige map"
+  },
+  "search.depth.label": {
+    "message": "Zoeken in submappen:"
+  },
+  "search.depth.levels": {
+    "message": "{count, plural, one {# niveau} other {# niveaus}}"
+  },
+  "search.drives": {
+    "message": "Stations"
+  },
+  "search.duplicates.content": {
+    "message": "zelfde inhoud"
+  },
+  "search.duplicates.label": {
+    "message": "Dubbele bestanden zoeken:"
+  },
+  "search.duplicates.name": {
+    "message": "zelfde naam"
+  },
+  "search.duplicates.size": {
+    "message": "zelfde grootte"
+  },
+  "search.edit": {
+    "message": "F4 Bewerken"
+  },
+  "search.error.between_days": {
+    "message": "Datum tussen heeft beide dagen nodig"
+  },
+  "search.error.date": {
+    "message": "{text} is geen datum zoals 2026-11-12"
+  },
+  "search.error.hex": {
+    "message": "{text} is geen hexadecimale reeks zoals 48 65 6c"
+  },
+  "search.error.keep": {
+    "message": "Kan de zoekopdracht niet bewaren: {err}"
+  },
+  "search.error.local_time": {
+    "message": "{text} is geen lokale tijd"
+  },
+  "search.error.names_regex": {
+    "message": "De reguliere expressie van de naam: {err}"
+  },
+  "search.error.newer_number": {
+    "message": "Niet ouder dan heeft een getal nodig, niet {text}"
+  },
+  "search.error.no_place": {
+    "message": "Zoeken in noemt geen map"
+  },
+  "search.error.no_text": {
+    "message": "Tekst zoeken noemt geen tekst"
+  },
+  "search.error.older_number": {
+    "message": "Ouder dan heeft een getal nodig, niet {text}"
+  },
+  "search.error.save": {
+    "message": "Kan de zoekopdrachten niet opslaan: {err}"
+  },
+  "search.error.size_number": {
+    "message": "Bestandsgrootte heeft een getal nodig, niet {text}"
+  },
+  "search.error.text_regex": {
+    "message": "De reguliere expressie van de tekst: {err}"
+  },
+  "search.feed": {
+    "message": "Naar paneel"
+  },
+  "search.go_to_file": {
+    "message": "Ga naar bestand"
+  },
+  "search.in_found": {
+    "message": "F2 Zoeken in gevonden bestanden"
+  },
+  "search.locate": {
+    "message": "Uit de locate-index"
+  },
+  "search.names.label": {
+    "message": "Zoeken naar:"
+  },
+  "search.names.placeholder": {
+    "message": "*.txt *.md | backup*  (leeg: alles)"
+  },
+  "search.new": {
+    "message": "Nieuwe zoekopdracht"
+  },
+  "search.newer.label": {
+    "message": "Niet ouder dan:"
+  },
+  "search.older.label": {
+    "message": "Ouder dan:"
+  },
+  "search.only_selected": {
+    "message": "Alleen zoeken in geselecteerde bestanden/mappen"
+  },
+  "search.only_selected_count": {
+    "message": "{count, plural, one {Alleen zoeken in het # geselecteerde item} other {Alleen zoeken in de # geselecteerde items}}"
+  },
+  "search.page.advanced": {
+    "message": "Geavanceerd"
+  },
+  "search.page.general": {
+    "message": "Algemeen"
+  },
+  "search.page.load_save": {
+    "message": "Laden/opslaan"
+  },
+  "search.places.browse_prompt": {
+    "message": "Zoeken in"
+  },
+  "search.places.label": {
+    "message": "Zoeken in:"
+  },
+  "search.places.placeholder": {
+    "message": "Mappen, ; ertussen"
+  },
+  "search.regex": {
+    "message": "RegEx"
+  },
+  "search.results.label": {
+    "message": "Zoekresultaten:"
+  },
+  "search.saved.delete": {
+    "message": "Verwijderen"
+  },
+  "search.saved.label": {
+    "message": "Eerdere zoekopdrachten:"
+  },
+  "search.saved.load": {
+    "message": "Laden"
+  },
+  "search.saved.name_first": {
+    "message": "Geef de zoekopdracht eerst een naam."
+  },
+  "search.saved.name_placeholder": {
+    "message": "Naam van de zoekopdracht"
+  },
+  "search.saved.save": {
+    "message": "Opslaan"
+  },
+  "search.size.label": {
+    "message": "Bestandsgrootte:"
+  },
+  "search.start": {
+    "message": "Zoeken starten"
+  },
+  "search.status.found": {
+    "message": "{files, plural, one {# bestand} other {# bestanden}} en {dirs, plural, one {# map} other {# mappen}} gevonden"
+  },
+  "search.status.searching": {
+    "message": "Zoeken…"
+  },
+  "search.status.searching_in": {
+    "message": "Zoeken: {folder}"
+  },
+  "search.status.stopped": {
+    "message": "Gestopt: {counts}"
+  },
+  "search.stop": {
+    "message": "Stoppen"
+  },
+  "search.text.ansi": {
+    "message": "ANSI (codetabel {page})"
+  },
+  "search.text.case_sensitive": {
+    "message": "Hoofdlettergevoelig"
+  },
+  "search.text.hex": {
+    "message": "Hex"
+  },
+  "search.text.label": {
+    "message": "Tekst zoeken:"
+  },
+  "search.text.not_containing": {
+    "message": "Bestanden zoeken die de tekst NIET bevatten"
+  },
+  "search.text.office": {
+    "message": "Office-bestanden (docx, xlsx, pptx, odt…)"
+  },
+  "search.text.placeholder": {
+    "message": "Te zoeken tekst"
+  },
+  "search.text.whole_words": {
+    "message": "Alleen hele woorden"
+  },
+  "search.title": {
+    "message": "Bestanden zoeken"
+  },
+  "search.unit.bytes": {
+    "message": "bytes"
+  },
+  "search.view": {
+    "message": "F3 Bekijken"
+  },
+  "settings.addons.builtin_version": {
+    "message": "{version}, meegeleverd met Spark Commander"
+  },
+  "settings.addons.check_daily": {
+    "message": "Bij het starten en dagelijks naar updates voor add-ons zoeken en ze aanbieden"
+  },
+  "settings.addons.check_failed": {
+    "message": "Kan niet naar updates zoeken: {err}"
+  },
+  "settings.addons.check_now": {
+    "message": "Nu zoeken"
+  },
+  "settings.addons.checking": {
+    "message": "Naar updates zoeken..."
+  },
+  "settings.addons.download": {
+    "message": "Downloaden"
+  },
+  "settings.addons.downloading": {
+    "message": "Downloaden: {done} van {size}"
+  },
+  "settings.addons.file": {
+    "message": "Bestand"
+  },
+  "settings.addons.installed.builtin": {
+    "message": "meegeleverd met Spark Commander"
+  },
+  "settings.addons.installed.label": {
+    "message": "Geïnstalleerd"
+  },
+  "settings.addons.installed.none": {
+    "message": "geen"
+  },
+  "settings.addons.intro": {
+    "message": "Spark Commander gebruikt deze programma’s van andere projecten voor een deel van zijn werk. De add-ons worden apart gedownload, wanneer je dat kiest; 7-Zip en PDFium worden meegeleverd."
+  },
+  "settings.addons.never_offer": {
+    "message": "Nooit add-ons aanbieden als een bestand er een nodig heeft"
+  },
+  "settings.addons.offers": {
+    "message": "Aanbiedingen en updates"
+  },
+  "settings.addons.online.label": {
+    "message": "Online"
+  },
+  "settings.addons.online.looking": {
+    "message": "zoeken..."
+  },
+  "settings.addons.online.none": {
+    "message": "geen voor dit systeem"
+  },
+  "settings.addons.online.not_yet": {
+    "message": "nog niet opgezocht"
+  },
+  "settings.addons.online.unknown": {
+    "message": "onbekend"
+  },
+  "settings.addons.remove": {
+    "message": "Verwijderen"
+  },
+  "settings.addons.up_to_date": {
+    "message": "De lijst met add-ons is bijgewerkt."
+  },
+  "settings.addons.version": {
+    "message": "Versie"
+  },
+  "settings.addons.website": {
+    "message": "Website"
+  },
+  "settings.appearance.title": {
+    "message": "Uiterlijk"
+  },
+  "settings.apply": {
+    "message": "Toepassen"
+  },
+  "settings.backdrop.blur": {
+    "message": "Het bureaublad erachter vervagen"
+  },
+  "settings.backdrop.clear": {
+    "message": "0%, alleen het bureaublad"
+  },
+  "settings.backdrop.cover": {
+    "message": "Hoeveel het bureaublad erachter wordt bedekt:"
+  },
+  "settings.backdrop.opacity": {
+    "message": "{opacity}%"
+  },
+  "settings.backdrop.sidebar": {
+    "message": "Zijbalk"
+  },
+  "settings.backdrop.solid": {
+    "message": "100%, ondoorzichtig"
+  },
+  "settings.backdrop.terminal": {
+    "message": "Terminal"
+  },
+  "settings.cancel": {
+    "message": "Annuleren"
+  },
+  "settings.date.as_system": {
+    "message": "Zoals het systeem: {date}"
+  },
+  "settings.date.custom": {
+    "message": "Aangepast:"
+  },
+  "settings.date.pattern_help": {
+    "message": "yyyy jaar, MM maand (MMM de naam), dd dag (ddd de weekdag)"
+  },
+  "settings.date.shown_as": {
+    "message": "Getoond als"
+  },
+  "settings.date.shown_as_note": {
+    "message": "in de bestandslijsten; dialoogvensters voegen de seconden toe"
+  },
+  "settings.date.title": {
+    "message": "Datum"
+  },
+  "settings.editor.browse": {
+    "message": "Bladeren..."
+  },
+  "settings.editor.choose": {
+    "message": "Kiezen"
+  },
+  "settings.editor.external": {
+    "message": "Externe editor (Ctrl+Shift+F4):"
+  },
+  "settings.editor.external_help": {
+    "message": "%1 is het bestand, anders komt het als laatste; bijv. code --wait %1"
+  },
+  "settings.editor.limit": {
+    "message": "Ingebouwde editor (F4) opent bestanden tot"
+  },
+  "settings.editor.limit_unit": {
+    "message": "MB"
+  },
+  "settings.editor.title": {
+    "message": "Editor voor F4"
+  },
+  "settings.error.no_folder": {
+    "message": "geen configuratiemap"
+  },
+  "settings.files_shown.hidden": {
+    "message": "Verborgen bestanden"
+  },
+  "settings.files_shown.system": {
+    "message": "Systeembestanden"
+  },
+  "settings.files_shown.title": {
+    "message": "Getoonde bestanden"
+  },
+  "settings.font.as_system": {
+    "message": "Zoals het systeem"
+  },
+  "settings.font.chosen": {
+    "message": "Gekozen; dat van het systeem is {family}, {size}"
+  },
+  "settings.font.fixed": {
+    "message": "Viewer"
+  },
+  "settings.font.fixed_note": {
+    "message": "Alleen lettertypen met vaste breedte; ook voor de editor en het vergelijken van bestanden."
+  },
+  "settings.font.main": {
+    "message": "Lettertype van het hoofdvenster"
+  },
+  "settings.font.system": {
+    "message": "Het lettertype van het systeem"
+  },
+  "settings.language.system": {
+    "message": "Systeemtaal"
+  },
+  "settings.language.system_named": {
+    "message": "Systeemtaal: {language}"
+  },
+  "settings.language.title": {
+    "message": "Taal"
+  },
+  "settings.menus.automatic": {
+    "message": "Automatisch: een ☰-knop in GNOME, elders een menubalk"
+  },
+  "settings.menus.bar": {
+    "message": "Menubalk"
+  },
+  "settings.menus.button": {
+    "message": "☰-knop in de titelbalk"
+  },
+  "settings.menus.title": {
+    "message": "Menu’s"
+  },
+  "settings.ok": {
+    "message": "OK"
+  },
+  "settings.page.addons": {
+    "message": "Add-ons"
+  },
+  "settings.page.date": {
+    "message": "Datum"
+  },
+  "settings.page.display": {
+    "message": "Weergave"
+  },
+  "settings.page.edit_view": {
+    "message": "Bewerken/Bekijken"
+  },
+  "settings.page.font": {
+    "message": "Lettertype"
+  },
+  "settings.page.language": {
+    "message": "Taal"
+  },
+  "settings.page.layout": {
+    "message": "Indeling"
+  },
+  "settings.page.operations": {
+    "message": "Bewerkingen"
+  },
+  "settings.page.passwords": {
+    "message": "Wachtwoorden"
+  },
+  "settings.page.terminal": {
+    "message": "Terminal"
+  },
+  "settings.page.toolbar": {
+    "message": "Werkbalk"
+  },
+  "settings.passwords.change_master": {
+    "message": "Hoofdwachtwoord wijzigen…"
+  },
+  "settings.passwords.locked": {
+    "message": "Ze zijn op deze computer vergrendeld: het hoofdwachtwoord ontgrendelt ze."
+  },
+  "settings.passwords.master_set": {
+    "message": "Er is een hoofdwachtwoord ingesteld: met de instellingenmap gekopieerd, gaan ze ook op een andere computer open zodra je het daar typt."
+  },
+  "settings.passwords.no_master": {
+    "message": "Er is geen hoofdwachtwoord ingesteld: met de instellingenmap gekopieerd, gaan ze op een andere computer niet open; daar typ je ze opnieuw."
+  },
+  "settings.passwords.not_removed": {
+    "message": "Het hoofdwachtwoord is niet verwijderd: {err}"
+  },
+  "settings.passwords.remove_master": {
+    "message": "Hoofdwachtwoord verwijderen"
+  },
+  "settings.passwords.saved": {
+    "message": "{count, plural, one {# wachtwoord is opgeslagen} other {# wachtwoorden zijn opgeslagen}} (van servers, gedeelde mappen, versleutelde schijven), versleuteld in de instellingenmap; de sleutel die ze opent, staat in de sleutelbos van deze computer."
+  },
+  "settings.passwords.set_master": {
+    "message": "Hoofdwachtwoord instellen…"
+  },
+  "settings.passwords.title": {
+    "message": "Opgeslagen wachtwoorden"
+  },
+  "settings.passwords.unlock": {
+    "message": "Ontgrendelen…"
+  },
+  "settings.queue.clear_after": {
+    "message": "Voltooide bewerkingen wissen na"
+  },
+  "settings.queue.clear_after_help": {
+    "message": "0: zodra ze klaar zijn. Mislukte en geannuleerde blijven staan tot ze worden gewist."
+  },
+  "settings.queue.clear_after_unit": {
+    "message": "minuten"
+  },
+  "settings.queue.download_limit": {
+    "message": "Maximale downloadsnelheid"
+  },
+  "settings.queue.download_limit_help": {
+    "message": "Downloaden via link, en kopieën van FTP- en SFTP-servers; ook lopende. 0: geen limiet."
+  },
+  "settings.queue.download_limit_unit": {
+    "message": "KB/s"
+  },
+  "settings.queue.title": {
+    "message": "Bewerkingswachtrij"
+  },
+  "settings.shell.default": {
+    "message": "Standaard: {shell}"
+  },
+  "settings.shell.note": {
+    "message": "Nieuwe terminaltabbladen starten deze shell."
+  },
+  "settings.shell.title": {
+    "message": "Shell"
+  },
+  "settings.sort_folders.by_name": {
+    "message": "Altijd op naam"
+  },
+  "settings.sort_folders.like_files": {
+    "message": "Zoals bestanden (ook op tijd)"
+  },
+  "settings.sort_folders.title": {
+    "message": "Mappen sorteren"
+  },
+  "settings.tabs.header_always": {
+    "message": "De tabbladbalk ook tonen als er maar één tabblad is"
+  },
+  "settings.tabs.title": {
+    "message": "Maptabbladen"
+  },
+  "settings.time.as_system": {
+    "message": "Zoals het systeem"
+  },
+  "settings.time.h12": {
+    "message": "12 uur (2:05 PM)"
+  },
+  "settings.time.h24": {
+    "message": "24 uur (14:05)"
+  },
+  "settings.time.title": {
+    "message": "Tijd"
+  },
+  "settings.title": {
+    "message": "Instellingen"
+  },
+  "settings.toolbar.add": {
+    "message": "Knop toevoegen…"
+  },
+  "settings.toolbar.move_down": {
+    "message": "Omlaag"
+  },
+  "settings.toolbar.move_up": {
+    "message": "Omhoog"
+  },
+  "settings.toolbar.place": {
+    "message": "Onder de menubalk; in de titelbalk als de menu’s achter de ☰-knop zitten, zoals bij de apps van GNOME. Zonder knoppen geen werkbalk."
+  },
+  "settings.toolbar.remove": {
+    "message": "Verwijderen"
+  },
+  "settings.toolbar.replace": {
+    "message": "Vervangen…"
+  },
+  "settings.toolbar.restore_default": {
+    "message": "Standaard herstellen"
+  },
+  "settings.toolbar.title": {
+    "message": "Werkbalkknoppen"
+  },
+  "settings.viewer.font.ansi": {
+    "message": "ANSI (Windows)"
+  },
+  "settings.viewer.font.ascii": {
+    "message": "ASCII (DOS)"
+  },
+  "settings.viewer.font.auto": {
+    "message": "Automatisch detecteren"
+  },
+  "settings.viewer.font.label": {
+    "message": "Lettertype bij het starten:"
+  },
+  "settings.viewer.font.variable": {
+    "message": "Variabele breedte"
+  },
+  "settings.viewer.minimap": {
+    "message": "Minimap"
+  },
+  "settings.viewer.show": {
+    "message": "Tonen:"
+  },
+  "settings.viewer.start.auto": {
+    "message": "Automatisch detecteren"
+  },
+  "settings.viewer.start.binary": {
+    "message": "Binair"
+  },
+  "settings.viewer.start.hex": {
+    "message": "Hex"
+  },
+  "settings.viewer.start.label": {
+    "message": "Weergave bij het starten:"
+  },
+  "settings.viewer.start.text": {
+    "message": "Tekst"
+  },
+  "settings.viewer.title": {
+    "message": "Viewer voor F3"
+  },
+  "settings.viewer.width.binary": {
+    "message": "Binair"
+  },
+  "settings.viewer.width.label": {
+    "message": "Weergavebreedte (tekens):"
+  },
+  "settings.viewer.width.text": {
+    "message": "Tekst"
+  },
+  "settings.viewer.wrap": {
+    "message": "Tekstterugloop"
+  },
+  "shells.command_prompt": {
+    "message": "Opdrachtprompt"
+  },
+  "sidebar.device.no_files": {
+    "message": "deelt geen bestanden"
+  },
+  "sidebar.device.not_answering": {
+    "message": "{name} reageert niet: ontgrendel het apparaat en open KDE Connect erop, en lees de map dan opnieuw in (F2)."
+  },
+  "sidebar.device.not_answering_error": {
+    "message": "{name} reageert niet ({err}): ontgrendel het apparaat en open KDE Connect erop."
+  },
+  "sidebar.device.not_connected": {
+    "message": "niet verbonden"
+  },
+  "sidebar.device.opening": {
+    "message": "{name} openen..."
+  },
+  "sidebar.device.reconnecting": {
+    "message": "{name} reageert niet: opnieuw verbinden..."
+  },
+  "sidebar.device.unmount_failed": {
+    "message": "{name}: kan niet ontkoppelen: {err}"
+  },
+  "sidebar.group.bookmarks": {
+    "message": "Bladwijzers"
+  },
+  "sidebar.group.cloud": {
+    "message": "Cloud"
+  },
+  "sidebar.group.devices": {
+    "message": "Apparaten"
+  },
+  "sidebar.group.drives": {
+    "message": "Stations"
+  },
+  "sidebar.group.network": {
+    "message": "Netwerk"
+  },
+  "sidebar.section.connections": {
+    "message": "Verbindingen"
+  },
+  "sidebar.section.folders": {
+    "message": "Mappen"
+  },
+  "sidebar.section.operations": {
+    "message": "Bewerkingen"
+  },
+  "sidebar.section.places": {
+    "message": "Plaatsen"
+  },
+  "sidebar.volume.locked": {
+    "message": "vergrendeld"
+  },
+  "sidebar.volume.mounting": {
+    "message": "{name} aankoppelen..."
+  },
+  "sidebar.volume.not_mounted": {
+    "message": "niet aangekoppeld"
+  },
+  "sidebar.volume.open": {
+    "message": "Openen"
+  },
+  "sidebar.volume.space": {
+    "message": "{free} vrij van {total}"
+  },
+  "sidebar.volume.unmount": {
+    "message": "Ontkoppelen"
+  },
+  "sidebar.volume.unmount_failed": {
+    "message": "Kan niet ontkoppelen: {err}"
+  },
+  "split.bad_size": {
+    "message": "“{size}” is geen grootte: 100 MB, 1.5 GB, 650m"
+  },
+  "split.choose": {
+    "message": "Zet de cursor op het bestand dat je wilt splitsen."
+  },
+  "split.combine.choose": {
+    "message": "Zet de cursor op een deel (name.001) of op het .crc-bestand ervan."
+  },
+  "split.combine.dialog_title": {
+    "message": "Bestanden samenvoegen"
+  },
+  "split.combine.label": {
+    "message": "De delen samenvoegen tot het bestand:"
+  },
+  "split.combine.title": {
+    "message": "“{name}” samenvoegen"
+  },
+  "split.combined_no_crc": {
+    "message": "{count, plural, one {# deel samengevoegd, geen CRC-bestand om te controleren} other {# delen samengevoegd, geen CRC-bestand om te controleren}}"
+  },
+  "split.crc_mismatch": {
+    "message": "{target} komt niet overeen met {file}: een deel ontbreekt of is beschadigd"
+  },
+  "split.crc_names_no_file": {
+    "message": "het CRC-bestand noemt geen bestand"
+  },
+  "split.crc_unreadable": {
+    "message": "samengevoegd, maar {file} kon niet worden gelezen: {err}"
+  },
+  "split.dialog_title": {
+    "message": "Bestand splitsen"
+  },
+  "split.label": {
+    "message": "“{name}” splitsen in delen in de map:"
+  },
+  "split.part_missing": {
+    "message": "{path} ontbreekt"
+  },
+  "split.part_size": {
+    "message": "Grootte van delen:"
+  },
+  "split.title": {
+    "message": "“{name}” splitsen"
+  },
+  "sync.close": {
+    "message": "Sluiten"
+  },
+  "sync.column.date": {
+    "message": "Datum"
+  },
+  "sync.column.name": {
+    "message": "Naam"
+  },
+  "sync.column.size": {
+    "message": "Grootte"
+  },
+  "sync.compare": {
+    "message": "Vergelijken"
+  },
+  "sync.confirm.copy_left": {
+    "message": "{count} naar links kopiëren ({size})"
+  },
+  "sync.confirm.copy_right": {
+    "message": "{count} naar rechts kopiëren ({size})"
+  },
+  "sync.confirm.delete_left": {
+    "message": "{count} links verwijderen"
+  },
+  "sync.confirm.delete_right": {
+    "message": "{count} rechts verwijderen"
+  },
+  "sync.confirm.ok": {
+    "message": "Synchroniseren"
+  },
+  "sync.confirm.text": {
+    "message": "{actions}. Gekopieerde bestanden vervangen de bestaande.{trash, select, yes { Verwijderde bestanden op deze computer gaan naar de prullenbak.} other {}}"
+  },
+  "sync.confirm.title": {
+    "message": "Synchroniseren"
+  },
+  "sync.error.changed": {
+    "message": "gewijzigd sinds de vergelijking; vergelijk opnieuw"
+  },
+  "sync.error.compare": {
+    "message": "Kan niet vergelijken: {err}"
+  },
+  "sync.error.no_folders": {
+    "message": "Mappen synchroniseren vergelijkt twee mappen: geen van beide panelen mag een archief of zoekresultaten tonen."
+  },
+  "sync.left": {
+    "message": "Links"
+  },
+  "sync.mask.label": {
+    "message": "Bestanden:"
+  },
+  "sync.option.asymmetric": {
+    "message": "Asymmetrisch (rechts wordt een kopie van links)"
+  },
+  "sync.option.by_content": {
+    "message": "Op inhoud"
+  },
+  "sync.option.ignore_date": {
+    "message": "Datum negeren"
+  },
+  "sync.option.subfolders": {
+    "message": "Submappen"
+  },
+  "sync.result.done": {
+    "message": "{count, plural, one {# gesynchroniseerd} other {# gesynchroniseerd}}"
+  },
+  "sync.result.failed": {
+    "message": "{count, plural, one {# niet gesynchroniseerd} other {# niet gesynchroniseerd}}; {first}"
+  },
+  "sync.right": {
+    "message": "Rechts"
+  },
+  "sync.show.equal": {
+    "message": "= gelijk"
+  },
+  "sync.show.label": {
+    "message": "Tonen:"
+  },
+  "sync.show.other": {
+    "message": "≠ ongemoeid"
+  },
+  "sync.show.to_left": {
+    "message": "← naar links"
+  },
+  "sync.show.to_right": {
+    "message": "→ naar rechts"
+  },
+  "sync.status.both_empty": {
+    "message": "Beide zijn leeg."
+  },
+  "sync.status.comparing": {
+    "message": "Vergelijken: {folder}"
+  },
+  "sync.status.counts": {
+    "message": "{right} naar rechts te kopiëren, {left} naar links te kopiëren, {delete} te verwijderen, {equal} gelijk, {alone} ongemoeid"
+  },
+  "sync.status.stopped": {
+    "message": "Gestopt."
+  },
+  "sync.stop": {
+    "message": "Stoppen"
+  },
+  "sync.synchronize": {
+    "message": "Synchroniseren..."
+  },
+  "sync.task.title": {
+    "message": "{left} en {right} synchroniseren"
+  },
+  "sync.title": {
+    "message": "Mappen synchroniseren"
+  },
+  "tab_menu.close_all_tabs": {
+    "message": "Alle tabbladen sluiten"
+  },
+  "tab_menu.close_duplicate_tabs": {
+    "message": "Dubbele tabbladen sluiten"
+  },
+  "tab_menu.close_tab": {
+    "message": "Dit tabblad sluiten"
+  },
+  "tab_menu.copy_tab_to_other_panel": {
+    "message": "Tabblad naar ander paneel kopiëren"
+  },
+  "tab_menu.duplicate_tab": {
+    "message": "Dit tabblad dupliceren"
+  },
+  "tab_menu.list_tabs": {
+    "message": "Lijst van alle tabbladen tonen"
+  },
+  "tab_menu.lock_tab": {
+    "message": "Dit tabblad vergrendelen"
+  },
+  "tab_menu.none": {
+    "message": "(geen)"
+  },
+  "tab_menu.rename_tab": {
+    "message": "Naam van tabblad wijzigen..."
+  },
+  "tabs.error.reopen": {
+    "message": "Kan het tabblad niet opnieuw openen: {err}"
+  },
+  "tabs.history.empty": {
+    "message": "Nog geen mappen in de geschiedenis van dit tabblad."
+  },
+  "tabs.new": {
+    "message": "Nieuw tabblad"
+  },
+  "tabs.rename.label": {
+    "message": "Nieuwe naam:"
+  },
+  "tabs.rename.title": {
+    "message": "Naam van tabblad wijzigen"
+  },
+  "tabs.search_results": {
+    "message": "Zoekresultaten"
+  },
+  "terminal.busy": {
+    "message": "Er draait een programma in de terminal: voer de opdracht uit zodra het klaar is."
+  },
+  "terminal.close.idle": {
+    "message": "Dit terminaltabblad sluiten? De shell wordt beëindigd."
+  },
+  "terminal.close.ok": {
+    "message": "Sluiten"
+  },
+  "terminal.close.running": {
+    "message": "Dit terminaltabblad sluiten? Het programma dat erin draait, wordt gestopt."
+  },
+  "terminal.close.title": {
+    "message": "Tabblad sluiten"
+  },
+  "terminal.error.start_shell": {
+    "message": "Kan de shell niet starten: {err}"
+  },
+  "terminal.jump_to_bottom": {
+    "message": "Naar onderen (Ctrl+End) ↓"
+  },
+  "terminal.menu.copy": {
+    "message": "Kopiëren"
+  },
+  "terminal.menu.paste": {
+    "message": "Plakken"
+  },
+  "toolbar.customize": {
+    "message": "Werkbalk aanpassen…"
+  },
+  "tools.clear_key": {
+    "message": "Wissen"
+  },
+  "tools.close": {
+    "message": "Sluiten"
+  },
+  "tools.delete": {
+    "message": "Verwijderen"
+  },
+  "tools.empty": {
+    "message": "Nog geen hulpmiddelen: Nieuw... voegt er een toe."
+  },
+  "tools.field.command": {
+    "message": "Opdracht"
+  },
+  "tools.field.key": {
+    "message": "Toets"
+  },
+  "tools.field.name": {
+    "message": "Naam"
+  },
+  "tools.intro": {
+    "message": "Je eigen opdrachtregels, in het menu Hulpmiddelen: klik daar op een ervan, of druk op de toets ervan."
+  },
+  "tools.key.none": {
+    "message": "Geen"
+  },
+  "tools.key.waiting": {
+    "message": "Druk op de toets... (Esc: geen)"
+  },
+  "tools.move_down": {
+    "message": "Omlaag"
+  },
+  "tools.move_up": {
+    "message": "Omhoog"
+  },
+  "tools.name.placeholder": {
+    "message": "Vergelijken met de andere kant"
+  },
+  "tools.new": {
+    "message": "Nieuw..."
+  },
+  "tools.new_name": {
+    "message": "Hulpmiddel {number}"
+  },
+  "tools.no_command": {
+    "message": "{tool} heeft nog geen opdracht: Hulpmiddelen > Hulpmiddelen beheren."
+  },
+  "tools.not_local": {
+    "message": "Hulpmiddelen worden op deze computer uitgevoerd: het paneel toont een server of een archief."
+  },
+  "tools.note.key_of_command": {
+    "message": "{key} is ook {command}: het hulpmiddel krijgt de toets."
+  },
+  "tools.note.key_of_other_tool": {
+    "message": "{key} hoort ook bij {tool}: de onderste in de lijst krijgt de toets."
+  },
+  "tools.placeholders": {
+    "message": "%P de map van dit paneel, %T die van het andere paneel (beide eindigen op een scheidingsteken, dus \"%P%N\" is een pad), %N het bestand onder de cursor, %O de naam ervan zonder extensie, %E de extensie, %S de geselecteerde bestanden (anders dat onder de cursor), elk tussen aanhalingstekens; %% een %. Zet de rest tussen aanhalingstekens: \"%P%N\"."
+  },
+  "tools.run_in_terminal": {
+    "message": "Uitvoeren in de terminal, om de uitvoer te zien"
+  },
+  "tools.set_key": {
+    "message": "Toets instellen..."
+  },
+  "tools.title": {
+    "message": "Hulpmiddelen"
+  },
+  "transfer.answer.cancel": {
+    "message": "Annuleren"
+  },
+  "transfer.answer.elevate": {
+    "message": "Als administrator"
+  },
+  "transfer.answer.overwrite": {
+    "message": "Overschrijven"
+  },
+  "transfer.answer.overwrite_all": {
+    "message": "Alles overschrijven"
+  },
+  "transfer.answer.rename": {
+    "message": "Naam wijzigen"
+  },
+  "transfer.answer.retry": {
+    "message": "Opnieuw proberen"
+  },
+  "transfer.answer.skip": {
+    "message": "Overslaan"
+  },
+  "transfer.answer.skip_all": {
+    "message": "Alles overslaan"
+  },
+  "transfer.archive.local_only": {
+    "message": "Alleen bestanden van deze computer gaan in een archief: kopieer ze eerst hierheen."
+  },
+  "transfer.cancel": {
+    "message": "Annuleren"
+  },
+  "transfer.error.elevate_hint": {
+    "message": "Als administrator: dit en wat verder wordt geweigerd, nadat de rest klaar is, met één keer om het wachtwoord vragen."
+  },
+  "transfer.error.title": {
+    "message": "Fout"
+  },
+  "transfer.exists.describe": {
+    "message": "{count, plural, one {{size} byte, {time}} other {{size} bytes, {time}}}"
+  },
+  "transfer.exists.text": {
+    "message": "Al aanwezig: {existing}\nHet nieuwe: {new}"
+  },
+  "transfer.exists.title": {
+    "message": "Bestand bestaat al"
+  },
+  "transfer.extract_failed": {
+    "message": "Kan ze er niet uithalen: {err}"
+  },
+  "transfer.into_archive.question_many": {
+    "message": "{count, plural, one {# item} other {# items}} {kind, select, copy {kopiëren} other {verplaatsen}} naar {into}? Wat daar dezelfde naam heeft, wordt vervangen."
+  },
+  "transfer.into_archive.question_one": {
+    "message": "“{name}” {kind, select, copy {kopiëren} other {verplaatsen}} naar {into}? Wat daar dezelfde naam heeft, wordt vervangen."
+  },
+  "transfer.into_archive.title_many": {
+    "message": "{count, plural, one {# item} other {# items}} {kind, select, copy {kopiëren} other {verplaatsen}} naar {archive}"
+  },
+  "transfer.into_archive.title_one": {
+    "message": "“{name}” {kind, select, copy {kopiëren} other {verplaatsen}} naar {archive}"
+  },
+  "transfer.label.many": {
+    "message": "{count, plural, one {# item} other {# items}} {kind, select, copy {kopiëren} other {verplaatsen}} naar:"
+  },
+  "transfer.label.many_server": {
+    "message": "{count, plural, one {# item} other {# items}} {kind, select, copy {kopiëren} other {verplaatsen}} naar {server}:"
+  },
+  "transfer.label.one": {
+    "message": "“{name}” {kind, select, copy {kopiëren} other {verplaatsen}} naar:"
+  },
+  "transfer.label.one_server": {
+    "message": "“{name}” {kind, select, copy {kopiëren} other {verplaatsen}} naar {server}:"
+  },
+  "transfer.ok": {
+    "message": "OK"
+  },
+  "transfer.overwrite.all": {
+    "message": "Alles overschrijven"
+  },
+  "transfer.overwrite.ask": {
+    "message": "Vragen"
+  },
+  "transfer.overwrite.label": {
+    "message": "Als het doel een bestand met dezelfde naam heeft:"
+  },
+  "transfer.overwrite.older": {
+    "message": "Oudere overschrijven"
+  },
+  "transfer.overwrite.rename": {
+    "message": "Kopieën hernoemen"
+  },
+  "transfer.overwrite.skip": {
+    "message": "Alles overslaan"
+  },
+  "transfer.remove_moved": {
+    "message": "Verplaatste items uit {name} verwijderen"
+  },
+  "transfer.speed": {
+    "message": "{size}/s"
+  },
+  "transfer.strip.counting": {
+    "message": "tellen: {count, plural, one {# bestand} other {# bestanden}}"
+  },
+  "transfer.strip.progress": {
+    "message": "{files} / {count, plural, one {# bestand} other {# bestanden}}, {percent}%"
+  },
+  "transfer.strip.queue": {
+    "message": "Wachtrij..."
+  },
+  "transfer.strip.queue_waiting": {
+    "message": "Wachtrij ({count, plural, one {# wachtend} other {# wachtend}})..."
+  },
+  "transfer.title.copy": {
+    "message": "Kopiëren"
+  },
+  "transfer.title.move": {
+    "message": "Verplaatsen"
+  },
+  "viewer.as_text_hint": {
+    "message": "{err}. 1 toont het bestand als tekst."
+  },
+  "viewer.book.cannot_read": {
+    "message": "Dit boek kan niet worden gelezen: {err}. 1 toont het bestand als tekst."
+  },
+  "viewer.book.continuing": {
+    "message": "Verder bij {percent}"
+  },
+  "viewer.book.error.compression": {
+    "message": "gecomprimeerd op een manier die nog niet wordt gelezen ({compression})"
+  },
+  "viewer.book.error.damaged": {
+    "message": "een beschadigd boek"
+  },
+  "viewer.book.error.damaged_zip": {
+    "message": "een beschadigde zip"
+  },
+  "viewer.book.error.drm": {
+    "message": "beveiligd met DRM: alleen Kindle kan het lezen"
+  },
+  "viewer.book.error.huffman": {
+    "message": "gecomprimeerd zoals Amazons eigen boeken (HUFF/CDIC), wat nog niet wordt gelezen"
+  },
+  "viewer.book.error.missing_part": {
+    "message": "{name} staat niet in het boek"
+  },
+  "viewer.book.error.no_package": {
+    "message": "geen pakketbestand in het boek"
+  },
+  "viewer.book.error.no_text": {
+    "message": "het boek heeft geen tekst"
+  },
+  "viewer.book.error.not_zip": {
+    "message": "geen zip: een beschadigd of met DRM beveiligd boek?"
+  },
+  "viewer.book.error.zip_method": {
+    "message": "{name}: gecomprimeerd op een manier die zip hier niet kan lezen ({method})"
+  },
+  "viewer.cannot_show": {
+    "message": "Kan het niet tonen: {err}"
+  },
+  "viewer.convert.failed": {
+    "message": "{tool} kon het niet converteren ({status})"
+  },
+  "viewer.converting": {
+    "message": "Converteren met {tool}…"
+  },
+  "viewer.copy.too_large": {
+    "message": "Selecties groter dan {megabytes} MB worden niet gekopieerd."
+  },
+  "viewer.encoding.cp1250": {
+    "message": "Oost-Europees (1250)"
+  },
+  "viewer.encoding.cp1251": {
+    "message": "Cyrillisch Windows (1251)"
+  },
+  "viewer.encoding.cp1252": {
+    "message": "West-Europees Latin1 (1252)"
+  },
+  "viewer.encoding.cp1253": {
+    "message": "Grieks (1253)"
+  },
+  "viewer.encoding.cp1254": {
+    "message": "Turks (1254)"
+  },
+  "viewer.encoding.cp1255": {
+    "message": "Hebreeuws (1255)"
+  },
+  "viewer.encoding.cp1256": {
+    "message": "Arabisch (1256)"
+  },
+  "viewer.encoding.cp1257": {
+    "message": "Baltisch (1257)"
+  },
+  "viewer.encoding.cp1258": {
+    "message": "Vietnamees (1258)"
+  },
+  "viewer.encoding.cp20866": {
+    "message": "Cyrillisch KOI8-R (20866)"
+  },
+  "viewer.encoding.cp437": {
+    "message": "DOS-USA (437)"
+  },
+  "viewer.encoding.cp850": {
+    "message": "DOS-LATIN1 (850)"
+  },
+  "viewer.encoding.cp852": {
+    "message": "DOS Centraal-Europees (852)"
+  },
+  "viewer.encoding.cp866": {
+    "message": "DOS Cyrillisch (866)"
+  },
+  "viewer.encoding.cp874": {
+    "message": "Thai (874)"
+  },
+  "viewer.encoding.cp932": {
+    "message": "Japans (932)"
+  },
+  "viewer.encoding.cp936": {
+    "message": "Chinees vasteland (936)"
+  },
+  "viewer.encoding.cp949": {
+    "message": "Koreaans (949)"
+  },
+  "viewer.encoding.cp950": {
+    "message": "Chinees Taiwan (950)"
+  },
+  "viewer.find.not_found": {
+    "message": "Niet gevonden: {text}"
+  },
+  "viewer.find.not_hex": {
+    "message": "Geen hexadecimale reeks: {text}"
+  },
+  "viewer.find.nothing": {
+    "message": "Niets om te zoeken."
+  },
+  "viewer.find.save_failed": {
+    "message": "Kan de zoekopdrachten niet opslaan: {err}"
+  },
+  "viewer.loading": {
+    "message": "Laden…"
+  },
+  "viewer.markdown.too_large": {
+    "message": "Groter dan {megabytes} MB: 1 toont het als tekst."
+  },
+  "viewer.menu.binary": {
+    "message": "Binair (vaste regellengte)"
+  },
+  "viewer.menu.book": {
+    "message": "Boek (EPUB, FB2)"
+  },
+  "viewer.menu.close": {
+    "message": "Sluiten"
+  },
+  "viewer.menu.configure": {
+    "message": "Configureren..."
+  },
+  "viewer.menu.copy_hex": {
+    "message": "Kopiëren als hexadecimale tekens"
+  },
+  "viewer.menu.copy_text": {
+    "message": "Kopiëren als tekst"
+  },
+  "viewer.menu.edit": {
+    "message": "Bewerken"
+  },
+  "viewer.menu.encoding": {
+    "message": "Codering"
+  },
+  "viewer.menu.file": {
+    "message": "Bestand"
+  },
+  "viewer.menu.find": {
+    "message": "Zoeken..."
+  },
+  "viewer.menu.find_next": {
+    "message": "Volgende zoeken"
+  },
+  "viewer.menu.fit_image": {
+    "message": "Afbeelding aan venster aanpassen"
+  },
+  "viewer.menu.font_ansi": {
+    "message": "ANSI (Windows-tekenset)"
+  },
+  "viewer.menu.font_ascii": {
+    "message": "ASCII (DOS-tekenset)"
+  },
+  "viewer.menu.font_page": {
+    "message": "Zoals ingesteld door het lettertype"
+  },
+  "viewer.menu.font_variable": {
+    "message": "Variabele tekenbreedte"
+  },
+  "viewer.menu.hex": {
+    "message": "Hex"
+  },
+  "viewer.menu.html": {
+    "message": "HTML-tekst (tags verwijderen)"
+  },
+  "viewer.menu.minimap": {
+    "message": "Minimap"
+  },
+  "viewer.menu.next_file": {
+    "message": "Volgend bestand"
+  },
+  "viewer.menu.only_larger": {
+    "message": "Alleen grotere afbeeldingen aanpassen"
+  },
+  "viewer.menu.open": {
+    "message": "Openen..."
+  },
+  "viewer.menu.options": {
+    "message": "Opties"
+  },
+  "viewer.menu.picture": {
+    "message": "Afbeelding/multimedia"
+  },
+  "viewer.menu.previous_file": {
+    "message": "Vorig bestand"
+  },
+  "viewer.menu.reload": {
+    "message": "Opnieuw laden"
+  },
+  "viewer.menu.save_as": {
+    "message": "Opslaan als..."
+  },
+  "viewer.menu.search_google": {
+    "message": "Geselecteerde tekst zoeken met Google"
+  },
+  "viewer.menu.select_all": {
+    "message": "Alles selecteren"
+  },
+  "viewer.menu.syntax_colors": {
+    "message": "Syntaxiskleuren"
+  },
+  "viewer.menu.text_only": {
+    "message": "Alleen tekst"
+  },
+  "viewer.menu.unicode": {
+    "message": "Unicode (UTF-16)"
+  },
+  "viewer.menu.wrap": {
+    "message": "Tekstterugloop ({columns, plural, one {# kolom} other {# kolommen}})"
+  },
+  "viewer.mode.binary": {
+    "message": "Binair · {page}"
+  },
+  "viewer.mode.book": {
+    "message": "Boek"
+  },
+  "viewer.mode.hex": {
+    "message": "Hex · {page}"
+  },
+  "viewer.mode.html": {
+    "message": "HTML-tekst"
+  },
+  "viewer.mode.image": {
+    "message": "Afbeelding"
+  },
+  "viewer.mode.multimedia": {
+    "message": "Multimedia"
+  },
+  "viewer.mode.pdf_by": {
+    "message": "PDF door {tool}"
+  },
+  "viewer.mode.text": {
+    "message": "Tekst · {page}"
+  },
+  "viewer.origin.not_editable": {
+    "message": "alleen bestanden in 7z-, zip-, jar- en tar-archieven kunnen worden bewerkt"
+  },
+  "viewer.origin.updated": {
+    "message": "{archive} bijgewerkt"
+  },
+  "viewer.origin.updated_on": {
+    "message": "{archive} op {server} bijgewerkt"
+  },
+  "viewer.origin.uploaded": {
+    "message": "{path} geüpload"
+  },
+  "viewer.pdf.cannot_show": {
+    "message": "Deze PDF kan niet worden getoond: {err}"
+  },
+  "viewer.pdf.loading": {
+    "message": "Laden..."
+  },
+  "viewer.pdf.page": {
+    "message": "Pagina {page} / {pages}"
+  },
+  "viewer.picture.cannot_show": {
+    "message": "Deze afbeelding kan niet worden getoond; 1 toont het als tekst."
+  },
+  "viewer.save_as.failed": {
+    "message": "Kan {path} niet opslaan: {err}"
+  },
+  "viewer.status.rows": {
+    "message": "{count, plural, one {{first}–{last} van {grouped} regel} other {{first}–{last} van {grouped} regels}}"
+  },
+  "viewer.status.rows_so_far": {
+    "message": "{count, plural, one {{grouped} regel tot nu toe, {percent} gelezen} other {{grouped} regels tot nu toe, {percent} gelezen}}"
+  },
+  "viewer.status.searching": {
+    "message": "Zoeken…"
+  },
+  "viewer.status.size": {
+    "message": "{count, plural, one {{grouped} byte} other {{grouped} bytes}}"
+  },
+  "viewer.window.title": {
+    "message": "{path} — Viewer"
+  },
+  "viewer.zoom.fit": {
+    "message": "Terug naar passend in venster (Ctrl+0)"
+  },
+  "viewer.zoom.in": {
+    "message": "Inzoomen (Ctrl++)"
+  },
+  "viewer.zoom.out": {
+    "message": "Uitzoomen (Ctrl+-)"
+  },
+  "viewer.zoom.reset": {
+    "message": "Terug naar 100% (Ctrl+0)"
+  },
+  "workspaces.button.close": {
+    "message": "Sluiten"
+  },
+  "workspaces.button.delete": {
+    "message": "Verwijderen..."
+  },
+  "workspaces.button.duplicate": {
+    "message": "Dupliceren..."
+  },
+  "workspaces.button.new": {
+    "message": "Nieuw..."
+  },
+  "workspaces.button.rename": {
+    "message": "Naam wijzigen..."
+  },
+  "workspaces.delete.button": {
+    "message": "Verwijderen"
+  },
+  "workspaces.delete.closed": {
+    "message": "De werkruimte “{name}” verwijderen? De tabbladen ervan worden vergeten."
+  },
+  "workspaces.delete.closed_shells": {
+    "message": "De werkruimte “{name}” verwijderen? De tabbladen ervan worden vergeten en de shells in de terminaltabbladen worden beëindigd."
+  },
+  "workspaces.delete.open": {
+    "message": "De werkruimte “{name}” verwijderen? De tabbladen ervan worden gesloten; in plaats daarvan wordt “{other}” geopend."
+  },
+  "workspaces.delete.open_shells": {
+    "message": "De werkruimte “{name}” verwijderen? De tabbladen ervan worden gesloten en de shells in de terminaltabbladen worden beëindigd; in plaats daarvan wordt “{other}” geopend."
+  },
+  "workspaces.delete.title": {
+    "message": "Werkruimte verwijderen"
+  },
+  "workspaces.duplicate.name": {
+    "message": "{name} kopie"
+  },
+  "workspaces.duplicate.title": {
+    "message": "Werkruimte dupliceren"
+  },
+  "workspaces.error.name_taken": {
+    "message": "Een andere werkruimte heeft deze naam al."
+  },
+  "workspaces.error.no_name": {
+    "message": "Een werkruimte heeft een naam nodig."
+  },
+  "workspaces.error.save": {
+    "message": "Kan de werkruimten niet opslaan: {err}"
+  },
+  "workspaces.hint": {
+    "message": "Weergave > Werkruimten opent er een. Wat er in de geopende verandert, wordt erin bewaard."
+  },
+  "workspaces.name.label": {
+    "message": "Naam:"
+  },
+  "workspaces.new.name": {
+    "message": "Werkruimte {number}"
+  },
+  "workspaces.new.title": {
+    "message": "Nieuwe werkruimte"
+  },
+  "workspaces.open": {
+    "message": "geopend"
+  },
+  "workspaces.rename.title": {
+    "message": "Naam van werkruimte wijzigen"
+  },
+  "workspaces.summary.panels": {
+    "message": "Links {left, plural, one {# tabblad} other {# tabbladen}}, rechts {right, plural, one {# tabblad} other {# tabbladen}}"
+  },
+  "workspaces.summary.terminal": {
+    "message": "Links {left, plural, one {# tabblad} other {# tabbladen}}, rechts {right, plural, one {# tabblad} other {# tabbladen}}, terminal {terminal, plural, one {# tabblad} other {# tabbladen}}"
+  },
+  "workspaces.summary.terminal_hidden": {
+    "message": "Links {left, plural, one {# tabblad} other {# tabbladen}}, rechts {right, plural, one {# tabblad} other {# tabbladen}}, terminal {terminal, plural, one {# tabblad} other {# tabbladen}} (verborgen)"
+  },
+  "workspaces.title": {
+    "message": "Werkruimten"
+  }
+}

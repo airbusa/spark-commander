@@ -1,0 +1,4823 @@
+{
+  "about.addons": {
+    "message": "Suplementos, transferidos quando escolher"
+  },
+  "about.libraries": {
+    "message": "Baseado em"
+  },
+  "about.licence": {
+    "message": "Licença:"
+  },
+  "about.made_with": {
+    "message": "Feito com o trabalho destes projetos"
+  },
+  "about.part.alacritty_terminal": {
+    "message": "O ecrã e a shell do terminal integrado"
+  },
+  "about.part.encoding_rs": {
+    "message": "Páginas de código"
+  },
+  "about.part.gpui": {
+    "message": "A janela, o desenho e a entrada (do Zed)"
+  },
+  "about.part.gpui_kit": {
+    "message": "Controlos: listas, menus, campos, o editor"
+  },
+  "about.part.html5ever": {
+    "message": "HTML e livros eletrónicos no visualizador"
+  },
+  "about.part.image": {
+    "message": "Imagens"
+  },
+  "about.part.keyring": {
+    "message": "Palavras-passe no porta-chaves do sistema"
+  },
+  "about.part.lucide": {
+    "message": "Ícones"
+  },
+  "about.part.material_icons": {
+    "message": "Ícones de ficheiros e pastas"
+  },
+  "about.part.pdfium_render": {
+    "message": "PDFium a partir de Rust"
+  },
+  "about.part.ratatui": {
+    "message": "scmd, a versão para terminal"
+  },
+  "about.part.russh": {
+    "message": "SSH e SFTP"
+  },
+  "about.part.rustls": {
+    "message": "TLS"
+  },
+  "about.part.serde": {
+    "message": "Ficheiros de definições"
+  },
+  "about.part.similar": {
+    "message": "Comparar por conteúdo"
+  },
+  "about.part.suppaftp": {
+    "message": "FTP e FTPS"
+  },
+  "about.part.tokio": {
+    "message": "Trabalho de rede em segundo plano"
+  },
+  "about.part.trash": {
+    "message": "A Reciclagem"
+  },
+  "about.part.tree_sitter": {
+    "message": "As cores do código no visualizador e no editor"
+  },
+  "about.part.zbus": {
+    "message": "D-Bus: o ambiente de trabalho, os dispositivos, o KDE Connect"
+  },
+  "about.shipped": {
+    "message": "Incluído na aplicação"
+  },
+  "about.tagline": {
+    "message": "Um gestor de ficheiros de dois painéis, software livre."
+  },
+  "about.title": {
+    "message": "Acerca do Spark Commander"
+  },
+  "about.version": {
+    "message": "Versão {version}"
+  },
+  "activity.clear": {
+    "message": "Limpar"
+  },
+  "activity.clear_failed": {
+    "message": "Não foi possível limpar o registo: {err}"
+  },
+  "activity.empty": {
+    "message": "Ainda não foi feito nada."
+  },
+  "activity.title": {
+    "message": "Registo de atividade"
+  },
+  "addons.error.damaged": {
+    "message": "a transferência está danificada: a soma de verificação não coincide"
+  },
+  "addons.error.list": {
+    "message": "a lista de suplementos: {err}"
+  },
+  "addons.error.missing_file": {
+    "message": "a transferência não contém {file}"
+  },
+  "addons.error.no_folder": {
+    "message": "não há pasta de dados"
+  },
+  "addons.error.unpacking": {
+    "message": "descompactação: {err}"
+  },
+  "addons.installed": {
+    "message": "{addon} {version} está instalado."
+  },
+  "addons.megabytes": {
+    "message": "{size} MB"
+  },
+  "addons.offer.never": {
+    "message": "Não mostrar novamente"
+  },
+  "addons.offer.no": {
+    "message": "Não"
+  },
+  "addons.offer.text": {
+    "message": "{name} precisa de um suplemento que não está instalado: {addon}. Transferi-lo em Definições > Suplementos?"
+  },
+  "addons.offer.title": {
+    "message": "Suplemento"
+  },
+  "addons.offer.yes": {
+    "message": "Sim"
+  },
+  "addons.purpose.cloud": {
+    "message": "Armazenamento online: S3, Google Drive, OneDrive, Dropbox e outros serviços."
+  },
+  "addons.purpose.media": {
+    "message": "Vídeo e som, e fotografias HEIC e AVIF: o visualizador e a Vista rápida mostram-nos."
+  },
+  "addons.purpose.office": {
+    "message": "Documentos do Office: o visualizador mostra ficheiros Word, Excel e PowerPoint como PDF."
+  },
+  "addons.purpose.pdfium": {
+    "message": "PDF: o visualizador mostra ficheiros PDF e, depois de convertidos, documentos do Office."
+  },
+  "addons.purpose.seven_zip": {
+    "message": "Arquivos: compacta e descompacta 7z, zip, rar, tar e outros."
+  },
+  "addons.update": {
+    "message": "Atualizar"
+  },
+  "addons.updates": {
+    "message": "Atualizações de suplementos: {names}"
+  },
+  "appearance.dark": {
+    "message": "Escuro"
+  },
+  "appearance.light": {
+    "message": "Claro"
+  },
+  "appearance.system": {
+    "message": "Como o sistema"
+  },
+  "archive.cannot_read": {
+    "message": "{name}: não é possível ler"
+  },
+  "archive.not_in_archive": {
+    "message": "{name} não está no arquivo"
+  },
+  "archive.not_own_folder": {
+    "message": "{folder} não é uma pasta própria deste utilizador"
+  },
+  "archive.seven_zip_failed": {
+    "message": "O 7-Zip falhou ({code})"
+  },
+  "archive.seven_zip_missing": {
+    "message": "O 7-Zip não foi encontrado: {path} (execute vendor/7zip/fetch.sh ou fetch.bat)"
+  },
+  "archive.temp_not_utf8": {
+    "message": "o nome da pasta temporária não é UTF-8"
+  },
+  "associations.add": {
+    "message": "Adicionar..."
+  },
+  "associations.cancel": {
+    "message": "Cancelar"
+  },
+  "associations.close": {
+    "message": "Fechar"
+  },
+  "associations.column.edit": {
+    "message": "Editar (F4)"
+  },
+  "associations.column.files": {
+    "message": "Ficheiros"
+  },
+  "associations.column.open": {
+    "message": "Abrir (Enter)"
+  },
+  "associations.column.view": {
+    "message": "Ver (F3)"
+  },
+  "associations.edit": {
+    "message": "Editar..."
+  },
+  "associations.edit_dialog.title": {
+    "message": "Associar"
+  },
+  "associations.empty": {
+    "message": "Ainda não há nenhuma."
+  },
+  "associations.field.edit": {
+    "message": "Editar com (F4):"
+  },
+  "associations.field.files": {
+    "message": "Ficheiros (*.jpg *.png):"
+  },
+  "associations.field.open": {
+    "message": "Abrir com (Enter):"
+  },
+  "associations.field.view": {
+    "message": "Ver com (F3):"
+  },
+  "associations.intro": {
+    "message": "Enter, F3 e F4 executam estes programas para os ficheiros de uma máscara; vazio mantém o habitual. %1 é o ficheiro."
+  },
+  "associations.mask_needed": {
+    "message": "É necessária a máscara dos ficheiros: *.txt"
+  },
+  "associations.no_file": {
+    "message": "Coloque o cursor num ficheiro do tipo a associar."
+  },
+  "associations.ok": {
+    "message": "OK"
+  },
+  "associations.remove": {
+    "message": "Remover"
+  },
+  "associations.save_failed": {
+    "message": "Não foi possível guardar as definições: {err}"
+  },
+  "associations.title": {
+    "message": "Associações internas"
+  },
+  "attributes.bad_time": {
+    "message": "«{text}» não é uma data e hora: 2026-11-10 14:04:33"
+  },
+  "attributes.cancel": {
+    "message": "Cancelar"
+  },
+  "attributes.change_time": {
+    "message": "Alterar data/hora:"
+  },
+  "attributes.changed": {
+    "message": "{count, plural, one {# alterado} other {# alterados}}"
+  },
+  "attributes.changed_failed": {
+    "message": "{count, plural, one {# alterado} other {# alterados}}, {failed, plural, one {# falhou} other {# falharam}}"
+  },
+  "attributes.dialog_title_many": {
+    "message": "Alterar atributos: {count, plural, one {# item} other {# itens}}"
+  },
+  "attributes.dialog_title_one": {
+    "message": "Alterar atributos: {name}"
+  },
+  "attributes.execute": {
+    "message": "Execução"
+  },
+  "attributes.group": {
+    "message": "Grupo"
+  },
+  "attributes.in_archive": {
+    "message": "Não é possível alterar atributos dentro de arquivos."
+  },
+  "attributes.no_bits": {
+    "message": "Estes ficheiros não têm bits de permissão aqui; só é possível alterar a data."
+  },
+  "attributes.now": {
+    "message": "Agora"
+  },
+  "attributes.octal": {
+    "message": "Octal:"
+  },
+  "attributes.ok": {
+    "message": "OK"
+  },
+  "attributes.others": {
+    "message": "Outros"
+  },
+  "attributes.owner": {
+    "message": "Proprietário"
+  },
+  "attributes.read": {
+    "message": "Leitura"
+  },
+  "attributes.recurse": {
+    "message": "Também todo o conteúdo das pastas"
+  },
+  "attributes.title_many": {
+    "message": "Alterar atributos de {count, plural, one {# item} other {# itens}}"
+  },
+  "attributes.title_one": {
+    "message": "Alterar atributos de «{name}»"
+  },
+  "attributes.write": {
+    "message": "Escrita"
+  },
+  "bookmarks.add_current": {
+    "message": "Adicionar a pasta atual"
+  },
+  "bookmarks.add_folders": {
+    "message": "Adicionar pastas..."
+  },
+  "bookmarks.added": {
+    "message": "Adicionado aos marcadores: {name}"
+  },
+  "bookmarks.already": {
+    "message": "{name} já está nos Marcadores."
+  },
+  "bookmarks.chooser.failed": {
+    "message": "Não foi possível mostrar o seletor de pastas: {err}"
+  },
+  "bookmarks.chooser.prompt": {
+    "message": "Adicionar"
+  },
+  "bookmarks.close": {
+    "message": "Fechar"
+  },
+  "bookmarks.copy_name": {
+    "message": "Copiar nome"
+  },
+  "bookmarks.copy_path": {
+    "message": "Copiar caminho"
+  },
+  "bookmarks.drop_here": {
+    "message": "Largue pastas aqui."
+  },
+  "bookmarks.empty": {
+    "message": "Sem marcadores: adicione pastas ou largue-as aqui."
+  },
+  "bookmarks.intro": {
+    "message": "Pastas deste computador, pela ordem de Locais: arraste uma para a mover ou largue pastas aqui para as adicionar."
+  },
+  "bookmarks.move_down": {
+    "message": "Mover para baixo"
+  },
+  "bookmarks.move_up": {
+    "message": "Mover para cima"
+  },
+  "bookmarks.only_local": {
+    "message": "Só é possível adicionar aos marcadores pastas deste computador."
+  },
+  "bookmarks.remove": {
+    "message": "Remover"
+  },
+  "bookmarks.remove_from": {
+    "message": "Remover dos Marcadores"
+  },
+  "bookmarks.rename": {
+    "message": "Mudar o nome..."
+  },
+  "bookmarks.rename_label": {
+    "message": "Nome (vazio: o da pasta):"
+  },
+  "bookmarks.rename_title": {
+    "message": "Mudar o nome do marcador"
+  },
+  "bookmarks.sort": {
+    "message": "Ordenar A–Z"
+  },
+  "bookmarks.title": {
+    "message": "Marcadores"
+  },
+  "button_bar.copy": {
+    "message": "Copiar"
+  },
+  "button_bar.delete": {
+    "message": "Eliminar"
+  },
+  "button_bar.edit": {
+    "message": "Editar"
+  },
+  "button_bar.move": {
+    "message": "Mover"
+  },
+  "button_bar.new_folder": {
+    "message": "Nova pasta"
+  },
+  "button_bar.quit": {
+    "message": "Sair"
+  },
+  "button_bar.view": {
+    "message": "Ver"
+  },
+  "checksum.create.title": {
+    "message": "Criar {name}"
+  },
+  "checksum.create.title_separate": {
+    "message": "Criar ficheiros de soma de verificação {method}"
+  },
+  "checksum.dialog_title": {
+    "message": "Criar ficheiros de soma de verificação"
+  },
+  "checksum.save_as": {
+    "message": "Guardar o ficheiro de soma de verificação como:"
+  },
+  "checksum.separate": {
+    "message": "Em vez disso, um ficheiro de soma de verificação junto a cada ficheiro"
+  },
+  "checksum.verify.all_ok": {
+    "message": "{count, plural, one {# ficheiro OK} other {todos os # ficheiros OK}}"
+  },
+  "checksum.verify.choose": {
+    "message": "Escolha ficheiros de soma de verificação: .sfv, .md5, .sha1, .sha256 ou .sha512."
+  },
+  "checksum.verify.missing_file": {
+    "message": "em falta: {name}"
+  },
+  "checksum.verify.result": {
+    "message": "{ok, plural, one {# OK} other {# OK}}, {wrong, plural, one {# incorreto} other {# incorretos}}, {missing, plural, one {# em falta} other {# em falta}}"
+  },
+  "checksum.verify.title_many": {
+    "message": "Verificar {count, plural, one {# ficheiro de soma de verificação} other {# ficheiros de soma de verificação}}"
+  },
+  "checksum.verify.title_one": {
+    "message": "Verificar {name}"
+  },
+  "checksum.verify.wrong_file": {
+    "message": "incorreto: {name}"
+  },
+  "command.about": {
+    "message": "Acerca do Spark Commander"
+  },
+  "command.activity_log": {
+    "message": "Registo de atividade..."
+  },
+  "command.all_files": {
+    "message": "Todos os ficheiros"
+  },
+  "command.all_folder_sizes": {
+    "message": "Calcular o tamanho de todas as pastas"
+  },
+  "command.all_with_extension": {
+    "message": "*.*"
+  },
+  "command.associate_with": {
+    "message": "Associar a..."
+  },
+  "command.bookmark_folder": {
+    "message": "Adicionar esta pasta aos marcadores"
+  },
+  "command.bookmarks": {
+    "message": "Marcadores"
+  },
+  "command.branch_view": {
+    "message": "Vista ramificada (com subpastas)"
+  },
+  "command.branch_view_selected": {
+    "message": "Vista ramificada das pastas selecionadas"
+  },
+  "command.brief": {
+    "message": "Breve"
+  },
+  "command.calculate_occupied_space": {
+    "message": "Calcular espaço ocupado..."
+  },
+  "command.change_attributes": {
+    "message": "Alterar atributos..."
+  },
+  "command.close_all_tabs": {
+    "message": "Fechar todos os separadores"
+  },
+  "command.close_duplicate_tabs": {
+    "message": "Fechar separadores duplicados"
+  },
+  "command.close_tab": {
+    "message": "Fechar separador"
+  },
+  "command.combine_files": {
+    "message": "Combinar ficheiros..."
+  },
+  "command.compare_by_content": {
+    "message": "Comparar por conteúdo..."
+  },
+  "command.compare_directories": {
+    "message": "Marcar os mais recentes"
+  },
+  "command.copy": {
+    "message": "Copiar..."
+  },
+  "command.copy_names_to_clipboard": {
+    "message": "Copiar nomes selecionados para a área de transferência"
+  },
+  "command.copy_names_with_path_to_clipboard": {
+    "message": "Copiar nomes com caminho para a área de transferência"
+  },
+  "command.copy_to_clipboard": {
+    "message": "Copiar ficheiros"
+  },
+  "command.copy_with_all_details": {
+    "message": "Copiar para a área de transferência com todos os detalhes"
+  },
+  "command.copy_with_path_and_details": {
+    "message": "Copiar para a área de transferência com caminho+detalhes"
+  },
+  "command.create_checksum_files": {
+    "message": "Criar ficheiro(s) de soma de verificação (CRC32, MD5, SHA1, SHA256, SHA512)..."
+  },
+  "command.create_link": {
+    "message": "Criar ligação..."
+  },
+  "command.custom_filter": {
+    "message": "Personalizado..."
+  },
+  "command.cut_to_clipboard": {
+    "message": "Cortar ficheiros"
+  },
+  "command.delete": {
+    "message": "Eliminar"
+  },
+  "command.delete_permanently": {
+    "message": "Eliminar permanentemente"
+  },
+  "command.disconnect": {
+    "message": "Desligar do servidor"
+  },
+  "command.download_link": {
+    "message": "Transferir de uma ligação..."
+  },
+  "command.duplicate_tab": {
+    "message": "Novo separador"
+  },
+  "command.duplicate_workspace": {
+    "message": "Duplicar espaço de trabalho..."
+  },
+  "command.edit": {
+    "message": "Editar"
+  },
+  "command.edit_externally": {
+    "message": "Editar com editor externo"
+  },
+  "command.folder_history": {
+    "message": "Histórico de pastas..."
+  },
+  "command.full": {
+    "message": "Completa"
+  },
+  "command.go_back": {
+    "message": "Retroceder"
+  },
+  "command.go_forward": {
+    "message": "Avançar"
+  },
+  "command.go_home": {
+    "message": "Pasta pessoal"
+  },
+  "command.go_to_root": {
+    "message": "Pasta raiz"
+  },
+  "command.hidden_files": {
+    "message": "Ficheiros ocultos"
+  },
+  "command.internal_associations": {
+    "message": "Associações internas (apenas Spark Commander)..."
+  },
+  "command.invert_selection": {
+    "message": "Inverter seleção"
+  },
+  "command.left_drives": {
+    "message": "Unidades (painel esquerdo)"
+  },
+  "command.list_tabs": {
+    "message": "Lista de separadores"
+  },
+  "command.load_selection_from_file": {
+    "message": "Carregar seleção de ficheiro"
+  },
+  "command.manage_bookmarks": {
+    "message": "Gerir marcadores..."
+  },
+  "command.manage_tools": {
+    "message": "Gerir ferramentas..."
+  },
+  "command.manage_workspaces": {
+    "message": "Gerir espaços de trabalho..."
+  },
+  "command.mark_in_place": {
+    "message": "Marcar / desmarcar sem mover o cursor, medindo a pasta"
+  },
+  "command.mark_newer_hide_same": {
+    "message": "Marcar os mais recentes, ocultar ficheiros iguais"
+  },
+  "command.move": {
+    "message": "Mover..."
+  },
+  "command.multi_rename_tool": {
+    "message": "Ferramenta de mudança de nome múltipla..."
+  },
+  "command.name_to_command_line": {
+    "message": "Nome para a linha de comandos"
+  },
+  "command.new_folder": {
+    "message": "Nova pasta..."
+  },
+  "command.new_terminal": {
+    "message": "Novo separador de terminal"
+  },
+  "command.new_text_file": {
+    "message": "Novo ficheiro..."
+  },
+  "command.new_workspace": {
+    "message": "Novo espaço de trabalho..."
+  },
+  "command.next_tab": {
+    "message": "Separador seguinte"
+  },
+  "command.only_selected_files": {
+    "message": "Apenas ficheiros selecionados"
+  },
+  "command.open_in_left_panel": {
+    "message": "Mostrar no painel esquerdo"
+  },
+  "command.open_in_new_tab": {
+    "message": "Abrir pasta num novo separador"
+  },
+  "command.open_in_other_new_tab": {
+    "message": "Abrir a pasta num novo separador do outro painel"
+  },
+  "command.open_in_right_panel": {
+    "message": "Mostrar no painel direito"
+  },
+  "command.open_terminal": {
+    "message": "Abrir terminal aqui"
+  },
+  "command.operation_queue": {
+    "message": "Fila de operações..."
+  },
+  "command.pack": {
+    "message": "Compactar..."
+  },
+  "command.paste_from_clipboard": {
+    "message": "Colar ficheiros"
+  },
+  "command.path_and_name_to_command_line": {
+    "message": "Caminho e nome para a linha de comandos"
+  },
+  "command.path_to_command_line": {
+    "message": "Caminho para a linha de comandos"
+  },
+  "command.previous_tab": {
+    "message": "Separador anterior"
+  },
+  "command.programs": {
+    "message": "Programas"
+  },
+  "command.properties": {
+    "message": "Propriedades..."
+  },
+  "command.quick_filter": {
+    "message": "Filtro rápido"
+  },
+  "command.quick_open": {
+    "message": "Abertura rápida..."
+  },
+  "command.quick_view_panel": {
+    "message": "Painel de vista rápida"
+  },
+  "command.quit": {
+    "message": "Sair"
+  },
+  "command.redo": {
+    "message": "Refazer"
+  },
+  "command.rename_in_place": {
+    "message": "Mudar o nome"
+  },
+  "command.reread_source": {
+    "message": "Reler a origem"
+  },
+  "command.restore_selection": {
+    "message": "Restaurar seleção"
+  },
+  "command.reversed_order": {
+    "message": "Ordem inversa"
+  },
+  "command.right_drives": {
+    "message": "Unidades (painel direito)"
+  },
+  "command.save_selection": {
+    "message": "Guardar seleção"
+  },
+  "command.save_selection_to_file": {
+    "message": "Guardar seleção em ficheiro"
+  },
+  "command.search": {
+    "message": "Procurar..."
+  },
+  "command.search_in_separate_process": {
+    "message": "Procurar numa janela separada..."
+  },
+  "command.select_all": {
+    "message": "Selecionar tudo"
+  },
+  "command.select_all_with_same_extension": {
+    "message": "Selecionar todos com a mesma extensão"
+  },
+  "command.select_group": {
+    "message": "Selecionar grupo..."
+  },
+  "command.settings": {
+    "message": "Definições..."
+  },
+  "command.shortcuts": {
+    "message": "Atalhos..."
+  },
+  "command.sidebar_connections": {
+    "message": "Ligações"
+  },
+  "command.sidebar_operations": {
+    "message": "Operações"
+  },
+  "command.sidebar_places": {
+    "message": "Locais"
+  },
+  "command.sidebar_tree": {
+    "message": "Pastas"
+  },
+  "command.sort_by_extension": {
+    "message": "Extensão"
+  },
+  "command.sort_by_name": {
+    "message": "Nome"
+  },
+  "command.sort_by_size": {
+    "message": "Tamanho"
+  },
+  "command.sort_by_time": {
+    "message": "Data"
+  },
+  "command.split_file": {
+    "message": "Dividir ficheiro..."
+  },
+  "command.swap_panels": {
+    "message": "Trocar painéis"
+  },
+  "command.swap_panels_and_tabs": {
+    "message": "Trocar painéis com os seus separadores"
+  },
+  "command.sync_browsing": {
+    "message": "Navegação sincronizada"
+  },
+  "command.synchronize_dirs": {
+    "message": "Sincronizar diretórios..."
+  },
+  "command.target_equals_source": {
+    "message": "Destino = Origem"
+  },
+  "command.terminal_panel": {
+    "message": "Terminal"
+  },
+  "command.test_archives": {
+    "message": "Testar arquivo(s)"
+  },
+  "command.thumbnail_view": {
+    "message": "Vista de miniaturas"
+  },
+  "command.toggle_mark": {
+    "message": "Marcar / desmarcar"
+  },
+  "command.toggle_sidebar": {
+    "message": "Mostrar barra lateral"
+  },
+  "command.undo": {
+    "message": "Anular"
+  },
+  "command.unpack_specific_files": {
+    "message": "Descompactar ficheiros específicos..."
+  },
+  "command.unselect_all": {
+    "message": "Desmarcar tudo"
+  },
+  "command.unselect_group": {
+    "message": "Desmarcar grupo..."
+  },
+  "command.unsorted": {
+    "message": "Sem ordenação"
+  },
+  "command.verify_checksums": {
+    "message": "Verificar somas de verificação (a partir de ficheiros de soma)"
+  },
+  "command.vertical_arrangement": {
+    "message": "Disposição vertical"
+  },
+  "command.view": {
+    "message": "Ver"
+  },
+  "command.website": {
+    "message": "Site do Spark Commander"
+  },
+  "command.workspace1": {
+    "message": "Abrir espaço de trabalho 1"
+  },
+  "command.workspace2": {
+    "message": "Abrir espaço de trabalho 2"
+  },
+  "command.workspace3": {
+    "message": "Abrir espaço de trabalho 3"
+  },
+  "command.workspace4": {
+    "message": "Abrir espaço de trabalho 4"
+  },
+  "command.workspace5": {
+    "message": "Abrir espaço de trabalho 5"
+  },
+  "command.workspace6": {
+    "message": "Abrir espaço de trabalho 6"
+  },
+  "command.workspace7": {
+    "message": "Abrir espaço de trabalho 7"
+  },
+  "command.workspace8": {
+    "message": "Abrir espaço de trabalho 8"
+  },
+  "command.workspace9": {
+    "message": "Abrir espaço de trabalho 9"
+  },
+  "command_line.error.cannot_run": {
+    "message": "{program}: não é possível executar"
+  },
+  "command_line.error.not_found": {
+    "message": "{program}: comando não encontrado"
+  },
+  "command_line.history.empty": {
+    "message": "Ainda não foi executado nenhum comando"
+  },
+  "command_line.on_server": {
+    "message": "Os comandos são executados neste computador; o painel está num servidor."
+  },
+  "command_name.all_files": {
+    "message": "Mostrar todos os ficheiros"
+  },
+  "command_name.all_with_extension": {
+    "message": "Mostrar *.*"
+  },
+  "command_name.brief": {
+    "message": "Vista breve"
+  },
+  "command_name.compare_directories": {
+    "message": "Comparar diretórios: marcar os mais recentes"
+  },
+  "command_name.custom_filter": {
+    "message": "Filtro personalizado"
+  },
+  "command_name.duplicate_tab": {
+    "message": "Novo separador (cópia deste)"
+  },
+  "command_name.full": {
+    "message": "Vista completa"
+  },
+  "command_name.go_back": {
+    "message": "Retroceder"
+  },
+  "command_name.go_forward": {
+    "message": "Avançar"
+  },
+  "command_name.go_home": {
+    "message": "Ir para a pasta pessoal"
+  },
+  "command_name.hidden_files": {
+    "message": "Mostrar ficheiros ocultos"
+  },
+  "command_name.only_selected_files": {
+    "message": "Mostrar apenas os ficheiros selecionados"
+  },
+  "command_name.programs": {
+    "message": "Mostrar programas"
+  },
+  "command_name.quick_filter": {
+    "message": "Filtro rápido"
+  },
+  "command_name.rename_in_place": {
+    "message": "Mudar o nome no local"
+  },
+  "command_name.sidebar_connections": {
+    "message": "Barra lateral: Ligações"
+  },
+  "command_name.sidebar_operations": {
+    "message": "Barra lateral: Operações"
+  },
+  "command_name.sidebar_places": {
+    "message": "Barra lateral: Locais"
+  },
+  "command_name.sidebar_tree": {
+    "message": "Barra lateral: Pastas"
+  },
+  "command_name.sort_by_extension": {
+    "message": "Ordenar por extensão"
+  },
+  "command_name.sort_by_name": {
+    "message": "Ordenar por nome"
+  },
+  "command_name.sort_by_size": {
+    "message": "Ordenar por tamanho"
+  },
+  "command_name.sort_by_time": {
+    "message": "Ordenar por data"
+  },
+  "command_name.toggle_sidebar": {
+    "message": "Barra lateral: mostrar ou ocultar"
+  },
+  "command_name.unsorted": {
+    "message": "Não ordenar"
+  },
+  "compare.browse.prompt": {
+    "message": "Comparar"
+  },
+  "compare.button.compare": {
+    "message": "Comparar"
+  },
+  "compare.button.next": {
+    "message": "Diferença seguinte (N)"
+  },
+  "compare.button.previous": {
+    "message": "Diferença anterior (P)"
+  },
+  "compare.need_two_files": {
+    "message": "Coloque o cursor num ficheiro em cada painel ou marque dois ficheiros."
+  },
+  "compare.option.binary": {
+    "message": "Binário"
+  },
+  "compare.option.ignore_case": {
+    "message": "Ignorar maiúsculas/minúsculas"
+  },
+  "compare.option.ignore_spaces": {
+    "message": "Ignorar espaços repetidos"
+  },
+  "compare.option.only_differences": {
+    "message": "Apenas diferenças"
+  },
+  "compare.status.bytes_differ": {
+    "message": "{place}: {count, plural, one {{grouped} byte diferente} other {{grouped} bytes diferentes}}, o primeiro na posição {first}; tamanhos {left} e {right}."
+  },
+  "compare.status.comparing": {
+    "message": "A comparar…"
+  },
+  "compare.status.difference_of": {
+    "message": "Diferença {at} de {count}"
+  },
+  "compare.status.differences": {
+    "message": "{count, plural, one {# diferença} other {# diferenças}}"
+  },
+  "compare.status.identical": {
+    "message": "{count, plural, one {Os ficheiros são idênticos: {grouped} byte.} other {Os ficheiros são idênticos: {grouped} bytes.}}"
+  },
+  "compare.status.no_differences": {
+    "message": "Sem diferenças."
+  },
+  "compare.window.title": {
+    "message": "Comparar: {left} — {right}"
+  },
+  "connections.connect": {
+    "message": "Ligar"
+  },
+  "connections.copy_name": {
+    "message": "Copiar nome"
+  },
+  "connections.copy_path": {
+    "message": "Copiar caminho"
+  },
+  "connections.delete": {
+    "message": "Eliminar"
+  },
+  "connections.dialog.title": {
+    "message": "Ligação"
+  },
+  "connections.disconnect": {
+    "message": "Desligar"
+  },
+  "connections.duplicate": {
+    "message": "Duplicar"
+  },
+  "connections.duplicate_name": {
+    "message": "{name} (cópia)"
+  },
+  "connections.edit": {
+    "message": "Editar..."
+  },
+  "connections.empty": {
+    "message": "Ainda não há ligações."
+  },
+  "connections.error.no_server": {
+    "message": "É necessário um servidor."
+  },
+  "connections.error.port": {
+    "message": "Não é uma porta: {text}"
+  },
+  "connections.field.access_key": {
+    "message": "Chave de acesso"
+  },
+  "connections.field.api_key": {
+    "message": "Chave de API"
+  },
+  "connections.field.application_key": {
+    "message": "Chave da aplicação"
+  },
+  "connections.field.bucket": {
+    "message": "Bucket/pasta"
+  },
+  "connections.field.container": {
+    "message": "Contentor/pasta"
+  },
+  "connections.field.endpoint": {
+    "message": "Endpoint"
+  },
+  "connections.field.key_id": {
+    "message": "ID da chave"
+  },
+  "connections.field.name": {
+    "message": "Nome"
+  },
+  "connections.field.password": {
+    "message": "Palavra-passe"
+  },
+  "connections.field.port": {
+    "message": "Porta"
+  },
+  "connections.field.protocol": {
+    "message": "Protocolo"
+  },
+  "connections.field.secret_key": {
+    "message": "Chave secreta"
+  },
+  "connections.field.server": {
+    "message": "Servidor"
+  },
+  "connections.field.start_folder": {
+    "message": "Pasta inicial"
+  },
+  "connections.field.user": {
+    "message": "Utilizador"
+  },
+  "connections.folder.delete_confirm": {
+    "message": "{count, plural, one {Eliminar a pasta {name} e a ligação que contém?} other {Eliminar a pasta {name} e as # ligações que contém?}}"
+  },
+  "connections.folder.delete_title": {
+    "message": "Eliminar pasta"
+  },
+  "connections.folder.exists": {
+    "message": "Já existe uma pasta com o nome {name}."
+  },
+  "connections.folder.name": {
+    "message": "Nome:"
+  },
+  "connections.folder.new_title": {
+    "message": "Nova pasta"
+  },
+  "connections.folder.rename": {
+    "message": "Mudar o nome..."
+  },
+  "connections.folder.rename_title": {
+    "message": "Mudar o nome da pasta"
+  },
+  "connections.forget_password": {
+    "message": "Esquecer a palavra-passe guardada"
+  },
+  "connections.move_down": {
+    "message": "Mover para baixo"
+  },
+  "connections.move_to_folder": {
+    "message": "Mover para pasta"
+  },
+  "connections.move_up": {
+    "message": "Mover para cima"
+  },
+  "connections.new": {
+    "message": "Nova ligação..."
+  },
+  "connections.new_folder": {
+    "message": "Nova pasta..."
+  },
+  "connections.no_folder": {
+    "message": "Sem pasta"
+  },
+  "connections.open_in_terminal": {
+    "message": "Abrir no terminal"
+  },
+  "connections.placeholder.name": {
+    "message": "como a lista a mostra"
+  },
+  "connections.placeholder.password": {
+    "message": "guardada cifrada na pasta de definições; vazio mantém-na"
+  },
+  "connections.placeholder.path": {
+    "message": "a pasta de início de sessão"
+  },
+  "connections.placeholder.port": {
+    "message": "predefinida"
+  },
+  "connections.placeholder.server": {
+    "message": "servidor ou um anfitrião de ~/.ssh/config"
+  },
+  "connections.placeholder.user": {
+    "message": "como indica ~/.ssh/config, ou anónimo"
+  },
+  "connections.save_failed": {
+    "message": "Não foi possível guardar as ligações: {err}"
+  },
+  "connections.ssh_config.read_only": {
+    "message": "Só de leitura: estes anfitriões são editados no próprio ~/.ssh/config"
+  },
+  "context_menu.action_failed": {
+    "message": "{name} falhou: {err}"
+  },
+  "context_menu.actions": {
+    "message": "Ações"
+  },
+  "context_menu.copy": {
+    "message": "Copiar"
+  },
+  "context_menu.create_new": {
+    "message": "Criar novo"
+  },
+  "context_menu.cut": {
+    "message": "Cortar"
+  },
+  "context_menu.delete": {
+    "message": "Eliminar"
+  },
+  "context_menu.edit": {
+    "message": "Editar"
+  },
+  "context_menu.empty_file": {
+    "message": "Ficheiro vazio…"
+  },
+  "context_menu.move_to_trash": {
+    "message": "Mover para a Reciclagem"
+  },
+  "context_menu.new_file_dialog.label": {
+    "message": "Nome do novo ficheiro:"
+  },
+  "context_menu.new_file_dialog.title": {
+    "message": "Novo ficheiro"
+  },
+  "context_menu.new_file_failed": {
+    "message": "Não foi possível criar o ficheiro: {err}"
+  },
+  "context_menu.new_folder": {
+    "message": "Pasta…"
+  },
+  "context_menu.open": {
+    "message": "Abrir"
+  },
+  "context_menu.open_failed": {
+    "message": "Não foi possível abrir: {err}"
+  },
+  "context_menu.open_terminal_here": {
+    "message": "Abrir terminal aqui"
+  },
+  "context_menu.open_with": {
+    "message": "Abrir com"
+  },
+  "context_menu.other_application": {
+    "message": "Outra aplicação…"
+  },
+  "context_menu.pack": {
+    "message": "Compactar…"
+  },
+  "context_menu.pack_files": {
+    "message": "Compactar ficheiros"
+  },
+  "context_menu.paste": {
+    "message": "Colar"
+  },
+  "context_menu.properties": {
+    "message": "Propriedades"
+  },
+  "context_menu.properties_failed": {
+    "message": "Propriedades: {err}"
+  },
+  "context_menu.rename": {
+    "message": "Mudar o nome…"
+  },
+  "context_menu.rename_dialog.label": {
+    "message": "Novo nome:"
+  },
+  "context_menu.rename_dialog.title": {
+    "message": "Mudar o nome"
+  },
+  "context_menu.rename_failed": {
+    "message": "Não foi possível mudar o nome: {err}"
+  },
+  "context_menu.shell_menu_failed": {
+    "message": "O menu: {err}"
+  },
+  "context_menu.show_failed": {
+    "message": "Não foi possível mostrar: {err}"
+  },
+  "context_menu.show_in_file_manager": {
+    "message": "Mostrar no gestor de ficheiros"
+  },
+  "context_menu.terminal_failed": {
+    "message": "Não foi possível abrir um terminal: {err}"
+  },
+  "context_menu.terminal_not_local": {
+    "message": "Só é possível abrir um terminal nas pastas deste computador."
+  },
+  "context_menu.unpack": {
+    "message": "Descompactar…"
+  },
+  "context_menu.view": {
+    "message": "Ver"
+  },
+  "desktop.no_app_chooser": {
+    "message": "o ambiente de trabalho não tem seletor de aplicações ({err})"
+  },
+  "desktop.no_terminal": {
+    "message": "nenhum terminal encontrado"
+  },
+  "desktop.nothing_to_run": {
+    "message": "{name}: nada para executar"
+  },
+  "desktop.scripts": {
+    "message": "Scripts"
+  },
+  "devices.error.mount_failed": {
+    "message": "não foi possível montar o dispositivo"
+  },
+  "devices.error.no_folder": {
+    "message": "o dispositivo não partilha nenhuma pasta"
+  },
+  "devices.error.system_only": {
+    "message": "só o sistema pode desmontar isto"
+  },
+  "devices.error.unreachable": {
+    "message": "inacessível: o KDE Connect está aberto no dispositivo, nesta rede?"
+  },
+  "devices.unlock.ask": {
+    "message": "A frase de acesso de {name}:"
+  },
+  "devices.unlock.ask_again": {
+    "message": "Frase de acesso incorreta. A frase de acesso de {name}:"
+  },
+  "devices.unlock.title": {
+    "message": "Desbloquear"
+  },
+  "devices.volume.share_on_server": {
+    "message": "{share} em {server}"
+  },
+  "devices.volume.unnamed": {
+    "message": "Volume de {size} GB"
+  },
+  "devices.volume.unnamed_encrypted": {
+    "message": "Volume cifrado de {size} GB"
+  },
+  "download.cancel": {
+    "message": "Cancelar"
+  },
+  "download.dialog_title": {
+    "message": "Transferir de uma ligação"
+  },
+  "download.download": {
+    "message": "Transferir"
+  },
+  "download.folder_link": {
+    "message": "a ligação é de uma pasta"
+  },
+  "download.incomplete": {
+    "message": "o servidor enviou {got} de {size, plural, one {# byte} other {# bytes}}; se o transferir novamente, continua a partir daí"
+  },
+  "download.into": {
+    "message": "Para {folder}"
+  },
+  "download.link": {
+    "message": "Ligação"
+  },
+  "download.link_placeholder": {
+    "message": "https://, http://, ftp:// ou ftps://"
+  },
+  "download.local_only": {
+    "message": "As transferências vão para as pastas deste computador: abra primeiro uma no painel."
+  },
+  "download.name_placeholder": {
+    "message": "como o servidor ou a ligação o designa"
+  },
+  "download.no_file": {
+    "message": "a ligação não indica nenhum ficheiro"
+  },
+  "download.not_a_link": {
+    "message": "não é uma ligação para transferir"
+  },
+  "download.problem.bad_name": {
+    "message": "O nome de um ficheiro, sem pasta."
+  },
+  "download.problem.empty": {
+    "message": "Cole ou escreva uma ligação."
+  },
+  "download.problem.exists": {
+    "message": "Já existe {name} aqui: Substituir transfere por cima dele."
+  },
+  "download.problem.not_link": {
+    "message": "Não é uma ligação transferível: deve começar por https://, http://, ftp:// ou ftps://."
+  },
+  "download.replace": {
+    "message": "Substituir"
+  },
+  "download.save_as": {
+    "message": "Guardar como"
+  },
+  "download.saved_as": {
+    "message": "guardado como {name}"
+  },
+  "download.title": {
+    "message": "Transferir «{name}»"
+  },
+  "download.title_link": {
+    "message": "Transferir {link}"
+  },
+  "editor.close.after_send": {
+    "message": "Fecha assim que o servidor o receber."
+  },
+  "editor.close.discard": {
+    "message": "Não guardar"
+  },
+  "editor.close.save": {
+    "message": "Guardar"
+  },
+  "editor.close.title": {
+    "message": "Guardar alterações?"
+  },
+  "editor.close.unsaved": {
+    "message": "{name} tem alterações não guardadas."
+  },
+  "editor.close.unsent": {
+    "message": "{name} não está guardado no seu servidor: o envio falhou."
+  },
+  "editor.dialog.cancel": {
+    "message": "Cancelar"
+  },
+  "editor.edit.copy": {
+    "message": "Copiar"
+  },
+  "editor.edit.cut": {
+    "message": "Cortar"
+  },
+  "editor.edit.find": {
+    "message": "Localizar..."
+  },
+  "editor.edit.find_next": {
+    "message": "Localizar seguinte"
+  },
+  "editor.edit.find_previous": {
+    "message": "Localizar anterior"
+  },
+  "editor.edit.go_to_line": {
+    "message": "Ir para a linha..."
+  },
+  "editor.edit.paste": {
+    "message": "Colar"
+  },
+  "editor.edit.redo": {
+    "message": "Refazer"
+  },
+  "editor.edit.replace": {
+    "message": "Substituir..."
+  },
+  "editor.edit.undo": {
+    "message": "Anular"
+  },
+  "editor.external.not_set": {
+    "message": "não está definido nenhum editor externo (Definições, Editar/Ver)"
+  },
+  "editor.file.close": {
+    "message": "Fechar"
+  },
+  "editor.file.reload": {
+    "message": "Recarregar"
+  },
+  "editor.file.save": {
+    "message": "Guardar"
+  },
+  "editor.file.save_as": {
+    "message": "Guardar como..."
+  },
+  "editor.find.close": {
+    "message": "Fechar (Escape)"
+  },
+  "editor.find.count": {
+    "message": "{current} de {total}"
+  },
+  "editor.find.in_selection": {
+    "message": "Localizar na seleção (Alt+L)"
+  },
+  "editor.find.match_case": {
+    "message": "Maiúsculas/minúsculas (Alt+C)"
+  },
+  "editor.find.next": {
+    "message": "Correspondência seguinte (Enter)"
+  },
+  "editor.find.no_results": {
+    "message": "Sem resultados"
+  },
+  "editor.find.placeholder": {
+    "message": "Localizar"
+  },
+  "editor.find.preserve_case": {
+    "message": "Manter maiúsculas/minúsculas (Alt+P)"
+  },
+  "editor.find.previous": {
+    "message": "Correspondência anterior (Shift+Enter)"
+  },
+  "editor.find.regex": {
+    "message": "Usar expressão regular (Alt+R)"
+  },
+  "editor.find.replace": {
+    "message": "Substituir (Ctrl+Shift+1)"
+  },
+  "editor.find.replace_all": {
+    "message": "Substituir tudo (Ctrl+Alt+Enter)"
+  },
+  "editor.find.replace_placeholder": {
+    "message": "Substituir"
+  },
+  "editor.find.toggle_replace": {
+    "message": "Mostrar/ocultar substituição"
+  },
+  "editor.find.whole_word": {
+    "message": "Palavra inteira (Alt+W)"
+  },
+  "editor.go_to_line.label": {
+    "message": "Linha, ou linha:coluna"
+  },
+  "editor.go_to_line.title": {
+    "message": "Ir para a linha"
+  },
+  "editor.language.by_file_name": {
+    "message": "Pelo nome do ficheiro"
+  },
+  "editor.language.plain_text": {
+    "message": "Texto simples"
+  },
+  "editor.menu.edit": {
+    "message": "Editar"
+  },
+  "editor.menu.file": {
+    "message": "Ficheiro"
+  },
+  "editor.menu.language": {
+    "message": "Linguagem"
+  },
+  "editor.menu.selection": {
+    "message": "Seleção"
+  },
+  "editor.menu.view": {
+    "message": "Ver"
+  },
+  "editor.open.too_large": {
+    "message": "excede os {limit_mb} MB do editor integrado (Definições, Editar/Ver); Ctrl+Shift+F4 edita-o no editor externo"
+  },
+  "editor.reload.button": {
+    "message": "Recarregar"
+  },
+  "editor.reload.failed": {
+    "message": "Não foi possível recarregar: {err}"
+  },
+  "editor.reload.text": {
+    "message": "As alterações não guardadas perdem-se."
+  },
+  "editor.reload.title": {
+    "message": "Recarregar o ficheiro?"
+  },
+  "editor.reload.unfit": {
+    "message": "Não recarregado: {why, select, binary {é binário} other {não é texto UTF-8}}."
+  },
+  "editor.save.admin": {
+    "message": "Guardar «{name}»"
+  },
+  "editor.save.failed": {
+    "message": "Não foi possível guardar {path}: {err}"
+  },
+  "editor.save_anyway.button": {
+    "message": "Guardar mesmo assim"
+  },
+  "editor.save_anyway.text": {
+    "message": "O ficheiro não era texto: ao guardar, é escrito tal como é mostrado, pelo que tudo o que não era texto muda definitivamente."
+  },
+  "editor.save_anyway.title": {
+    "message": "Guardar como texto?"
+  },
+  "editor.selection.add_cursor_above": {
+    "message": "Adicionar cursor acima"
+  },
+  "editor.selection.add_cursor_below": {
+    "message": "Adicionar cursor abaixo"
+  },
+  "editor.selection.delete_lines": {
+    "message": "Eliminar linhas"
+  },
+  "editor.selection.duplicate_lines": {
+    "message": "Duplicar linhas"
+  },
+  "editor.selection.indent": {
+    "message": "Aumentar avanço"
+  },
+  "editor.selection.lowercase": {
+    "message": "minúsculas"
+  },
+  "editor.selection.move_lines_down": {
+    "message": "Mover linhas para baixo"
+  },
+  "editor.selection.move_lines_up": {
+    "message": "Mover linhas para cima"
+  },
+  "editor.selection.outdent": {
+    "message": "Diminuir avanço"
+  },
+  "editor.selection.select_all": {
+    "message": "Selecionar tudo"
+  },
+  "editor.selection.select_all_occurrences": {
+    "message": "Selecionar todas as ocorrências"
+  },
+  "editor.selection.sort_lines_ascending": {
+    "message": "Ordenar linhas (crescente)"
+  },
+  "editor.selection.sort_lines_descending": {
+    "message": "Ordenar linhas (decrescente)"
+  },
+  "editor.selection.title_case": {
+    "message": "Iniciais Maiúsculas"
+  },
+  "editor.selection.toggle_line_comment": {
+    "message": "Comentar/descomentar linhas"
+  },
+  "editor.selection.trim_trailing_whitespace": {
+    "message": "Remover espaços no fim das linhas"
+  },
+  "editor.selection.uppercase": {
+    "message": "MAIÚSCULAS"
+  },
+  "editor.send.failed": {
+    "message": "Não foi possível enviá-lo de volta para o servidor: {err}. Guardar tenta novamente."
+  },
+  "editor.status.modified": {
+    "message": "Modificado"
+  },
+  "editor.status.position": {
+    "message": "Ln {line}, Col {column}"
+  },
+  "editor.status.position_selected": {
+    "message": "Ln {line}, Col {column} ({count, plural, one {# selecionado} other {# selecionados}})"
+  },
+  "editor.status.sending": {
+    "message": "A guardar no servidor"
+  },
+  "editor.status.spaces": {
+    "message": "Espaços: {size}"
+  },
+  "editor.status.tab_size": {
+    "message": "Tabulação: {size}"
+  },
+  "editor.status.unsent": {
+    "message": "Não está no servidor"
+  },
+  "editor.terminal.not_found": {
+    "message": "nenhum editor encontrado; defina $EDITOR"
+  },
+  "editor.title": {
+    "message": "{path} — Editor"
+  },
+  "editor.unfit.open_anyway": {
+    "message": "Abrir mesmo assim"
+  },
+  "editor.unfit.text": {
+    "message": "O ficheiro não é mostrado no editor porque {why, select, binary {é binário} other {não é texto UTF-8}}."
+  },
+  "editor.view.folding": {
+    "message": "Dobragem de código"
+  },
+  "editor.view.indent_guides": {
+    "message": "Guias de avanço"
+  },
+  "editor.view.indent_with_tabs": {
+    "message": "Avanço com tabulações"
+  },
+  "editor.view.line_numbers": {
+    "message": "Números de linha"
+  },
+  "editor.view.minimap": {
+    "message": "Minimapa"
+  },
+  "editor.view.tab_width": {
+    "message": "Largura da tabulação {width}"
+  },
+  "editor.view.unfold_all": {
+    "message": "Expandir tudo"
+  },
+  "editor.view.whitespace": {
+    "message": "Espaços em branco"
+  },
+  "editor.view.word_wrap": {
+    "message": "Moldar texto"
+  },
+  "elevate.failed": {
+    "message": "como administrador também falhou ({code})"
+  },
+  "elevate.no_consent": {
+    "message": "o administrador não deu o consentimento"
+  },
+  "elevate.no_password": {
+    "message": "a palavra-passe não foi introduzida"
+  },
+  "elevate.not_authorised": {
+    "message": "não autorizado"
+  },
+  "elevate.percent_name": {
+    "message": "{path}: um nome com % não pode ser tratado como administrador; mude-lhe primeiro o nome"
+  },
+  "elevate.pkexec_missing": {
+    "message": "o pkexec (polkit) não está instalado"
+  },
+  "file_menu.change_tags_failed": {
+    "message": "Não foi possível alterar as etiquetas: {err}"
+  },
+  "file_menu.compress": {
+    "message": "{count, plural, =1 {Comprimir «{name}»…} one {Comprimir # elemento…} other {Comprimir # elementos…}}"
+  },
+  "file_menu.copy": {
+    "message": "{count, plural, =1 {Copiar «{name}»} one {Copiar # elemento} other {Copiar # elementos}}"
+  },
+  "file_menu.copy_path": {
+    "message": "Copiar caminho para a área de transferência"
+  },
+  "file_menu.delete": {
+    "message": "Eliminar"
+  },
+  "file_menu.duplicate": {
+    "message": "Duplicar"
+  },
+  "file_menu.duplicate_failed": {
+    "message": "Não foi possível duplicar: {err}"
+  },
+  "file_menu.edit_tags": {
+    "message": "Etiquetas…"
+  },
+  "file_menu.get_info": {
+    "message": "Obter informações"
+  },
+  "file_menu.make_alias": {
+    "message": "Criar alias"
+  },
+  "file_menu.make_alias_failed": {
+    "message": "Não foi possível criar o alias: {err}"
+  },
+  "file_menu.move_to_trash": {
+    "message": "Mover para a Reciclagem"
+  },
+  "file_menu.new_folder": {
+    "message": "Nova pasta"
+  },
+  "file_menu.open": {
+    "message": "Abrir"
+  },
+  "file_menu.open_failed": {
+    "message": "Não foi possível abrir: {err}"
+  },
+  "file_menu.open_with": {
+    "message": "Abrir com"
+  },
+  "file_menu.open_with_default": {
+    "message": "{app} (predefinida)"
+  },
+  "file_menu.paste": {
+    "message": "Colar"
+  },
+  "file_menu.quick_look": {
+    "message": "{count, plural, =1 {Quick Look de «{name}»} one {Quick Look de # elemento} other {Quick Look de # elementos}}"
+  },
+  "file_menu.quick_look_failed": {
+    "message": "Quick Look: {err}"
+  },
+  "file_menu.rename": {
+    "message": "Mudar o nome…"
+  },
+  "file_menu.reveal_failed": {
+    "message": "Não foi possível mostrar no Finder: {err}"
+  },
+  "file_menu.reveal_in_finder": {
+    "message": "Mostrar no Finder"
+  },
+  "file_menu.show_package_contents": {
+    "message": "Mostrar conteúdo do pacote"
+  },
+  "file_menu.tag_dot.add": {
+    "message": "Adicionar etiqueta «{name}»"
+  },
+  "file_menu.tag_dot.remove": {
+    "message": "Remover etiqueta «{name}»"
+  },
+  "file_menu.tags_popover.show_all": {
+    "message": "Mostrar todas…"
+  },
+  "file_menu.tags_popover.title": {
+    "message": "{count, plural, =1 {Atribuir etiquetas a «{name}»} one {Atribuir etiquetas a # elemento} other {Atribuir etiquetas a # elementos}}"
+  },
+  "find.backwards": {
+    "message": "Procurar para trás"
+  },
+  "find.cancel": {
+    "message": "Cancelar"
+  },
+  "find.case_sensitive": {
+    "message": "Diferenciar maiúsculas/minúsculas"
+  },
+  "find.hex": {
+    "message": "Procurar cadeia hexadecimal"
+  },
+  "find.ok": {
+    "message": "OK"
+  },
+  "find.regex": {
+    "message": "RegEx"
+  },
+  "find.text.label": {
+    "message": "Introduza o texto a procurar"
+  },
+  "find.title": {
+    "message": "Localizar"
+  },
+  "find.whole_words": {
+    "message": "Apenas palavras inteiras"
+  },
+  "keys.apply": {
+    "message": "Aplicar"
+  },
+  "keys.cancel": {
+    "message": "Cancelar"
+  },
+  "keys.clear.tooltip": {
+    "message": "Sem tecla"
+  },
+  "keys.column.alternate": {
+    "message": "Alternativa"
+  },
+  "keys.column.command": {
+    "message": "Comando"
+  },
+  "keys.column.shortcut": {
+    "message": "Atalho"
+  },
+  "keys.custom": {
+    "message": "Personalizado"
+  },
+  "keys.delete_set": {
+    "message": "Eliminar"
+  },
+  "keys.note.custom_replaced": {
+    "message": "As suas teclas deram lugar às de {name}; Guardar como mantém-nas."
+  },
+  "keys.note.deleted": {
+    "message": "{name} foi eliminado; OK ou Aplicar confirma-o."
+  },
+  "keys.note.moved": {
+    "message": "{key} é agora {command}, já não {other}."
+  },
+  "keys.note.name_reserved": {
+    "message": "«{name}» é o nome de uma predefinição; escolha outro."
+  },
+  "keys.note.press_new_key": {
+    "message": "Prima a nova tecla; Esc deixa-a como estava."
+  },
+  "keys.note.saved": {
+    "message": "Guardado como {name}; OK ou Aplicar mantém-no."
+  },
+  "keys.note.set": {
+    "message": "{key} é agora {command}."
+  },
+  "keys.note.taken_by_system": {
+    "message": "{key} está ocupada por {by}, por isso nunca chega ao Spark Commander."
+  },
+  "keys.ok": {
+    "message": "OK"
+  },
+  "keys.press_key": {
+    "message": "Prima uma tecla…"
+  },
+  "keys.reserved.application_launcher": {
+    "message": "{system}: o lançador de aplicações"
+  },
+  "keys.reserved.close_window": {
+    "message": "{system}: fechar a janela"
+  },
+  "keys.reserved.close_window_or_tab": {
+    "message": "{system}: fechar a janela ou o separador"
+  },
+  "keys.reserved.dock": {
+    "message": "{system}: a Dock"
+  },
+  "keys.reserved.floating_window": {
+    "message": "{system}: a janela flutuante"
+  },
+  "keys.reserved.force_quit": {
+    "message": "{system}: forçar a saída"
+  },
+  "keys.reserved.hide_program": {
+    "message": "{system}: ocultar o programa"
+  },
+  "keys.reserved.input_source": {
+    "message": "{system}: a fonte de entrada"
+  },
+  "keys.reserved.keyboard_access": {
+    "message": "{system}: acesso pelo teclado"
+  },
+  "keys.reserved.keyboard_navigation": {
+    "message": "{system}: navegação pelo teclado"
+  },
+  "keys.reserved.krunner": {
+    "message": "{system}: KRunner"
+  },
+  "keys.reserved.lock_screen": {
+    "message": "{system}: bloquear o ecrã"
+  },
+  "keys.reserved.log_out": {
+    "message": "{system}: terminar sessão"
+  },
+  "keys.reserved.maximize_window": {
+    "message": "{system}: maximizar a janela"
+  },
+  "keys.reserved.menu_bar": {
+    "message": "{system}: a barra de menus"
+  },
+  "keys.reserved.minimize": {
+    "message": "{system}: minimizar"
+  },
+  "keys.reserved.mission_control": {
+    "message": "{system}: Mission Control"
+  },
+  "keys.reserved.move_window": {
+    "message": "{system}: mover a janela"
+  },
+  "keys.reserved.next_window": {
+    "message": "{system}: a janela seguinte"
+  },
+  "keys.reserved.present_windows": {
+    "message": "{system}: Apresentar as janelas"
+  },
+  "keys.reserved.present_windows_all": {
+    "message": "{system}: Apresentar as janelas (todos os ecrãs virtuais)"
+  },
+  "keys.reserved.present_windows_class": {
+    "message": "{system}: Apresentar as janelas (classe da janela)"
+  },
+  "keys.reserved.program_windows": {
+    "message": "{system}: as janelas do programa"
+  },
+  "keys.reserved.quit": {
+    "message": "{system}: sair"
+  },
+  "keys.reserved.resize_window": {
+    "message": "{system}: redimensionar a janela"
+  },
+  "keys.reserved.restore_window": {
+    "message": "{system}: restaurar a janela"
+  },
+  "keys.reserved.run_command": {
+    "message": "{system}: executar um comando"
+  },
+  "keys.reserved.screenshot": {
+    "message": "{system}: captura de ecrã"
+  },
+  "keys.reserved.security_screen": {
+    "message": "{system}: o ecrã de segurança"
+  },
+  "keys.reserved.show_desktop": {
+    "message": "{system}: mostrar o ambiente de trabalho"
+  },
+  "keys.reserved.space_left": {
+    "message": "{system}: o espaço à esquerda"
+  },
+  "keys.reserved.space_right": {
+    "message": "{system}: o espaço à direita"
+  },
+  "keys.reserved.spotlight": {
+    "message": "{system}: Spotlight"
+  },
+  "keys.reserved.start_menu": {
+    "message": "{system}: o menu Iniciar"
+  },
+  "keys.reserved.status_menus": {
+    "message": "{system}: os menus de estado"
+  },
+  "keys.reserved.suspend_compositing": {
+    "message": "{system}: suspender a composição"
+  },
+  "keys.reserved.switch_program_windows": {
+    "message": "{system}: alternar entre as janelas do programa"
+  },
+  "keys.reserved.switch_programs": {
+    "message": "{system}: alternar entre programas"
+  },
+  "keys.reserved.switch_system_controls": {
+    "message": "{system}: alternar entre os controlos do sistema"
+  },
+  "keys.reserved.switch_to_desktop": {
+    "message": "{system}: mudar para o ecrã virtual {number}"
+  },
+  "keys.reserved.switch_windows": {
+    "message": "{system}: alternar entre janelas"
+  },
+  "keys.reserved.system_monitor": {
+    "message": "{system}: Monitor do Sistema"
+  },
+  "keys.reserved.task_manager": {
+    "message": "{system}: Gestor de Tarefas"
+  },
+  "keys.reserved.text_console": {
+    "message": "{system}: mudar para uma consola de texto"
+  },
+  "keys.reserved.toolbar": {
+    "message": "{system}: a barra de ferramentas"
+  },
+  "keys.reserved.window_menu": {
+    "message": "{system}: o menu da janela"
+  },
+  "keys.reserved.workspace_down": {
+    "message": "{system}: a área de trabalho abaixo"
+  },
+  "keys.reserved.workspace_left": {
+    "message": "{system}: a área de trabalho à esquerda"
+  },
+  "keys.reserved.workspace_right": {
+    "message": "{system}: a área de trabalho à direita"
+  },
+  "keys.reserved.workspace_up": {
+    "message": "{system}: a área de trabalho acima"
+  },
+  "keys.reset.tooltip": {
+    "message": "Voltar às teclas de {preset}"
+  },
+  "keys.reset_all": {
+    "message": "Repor tudo"
+  },
+  "keys.save_as.button": {
+    "message": "Guardar como…"
+  },
+  "keys.save_as.default_name": {
+    "message": "As minhas teclas"
+  },
+  "keys.save_as.label": {
+    "message": "Nome:"
+  },
+  "keys.save_as.title": {
+    "message": "Guardar atalhos"
+  },
+  "keys.search.placeholder": {
+    "message": "Procurar um comando ou uma tecla"
+  },
+  "keys.set_label": {
+    "message": "Teclas:"
+  },
+  "keys.taken_by.tooltip": {
+    "message": "Ocupada por {by}"
+  },
+  "keys.title": {
+    "message": "Atalhos"
+  },
+  "main.admin.button": {
+    "message": "Como administrador"
+  },
+  "main.admin.deleting": {
+    "message": "Eliminar {count, plural, one {# item} other {# itens}}"
+  },
+  "main.admin.failed": {
+    "message": "Como administrador: {err}"
+  },
+  "main.admin.making": {
+    "message": "Criar «{name}»"
+  },
+  "main.admin.offer": {
+    "message": "{what}: permissão negada. Como administrador, o sistema pede a palavra-passe."
+  },
+  "main.admin.offer_delete": {
+    "message": "{what}: permissão negada. Como administrador, o sistema pede a palavra-passe. O que for eliminado assim desaparece definitivamente."
+  },
+  "main.admin.title": {
+    "message": "Permissão negada"
+  },
+  "main.delete.from_archive": {
+    "message": "{kind, select, folder {Eliminar a pasta «{name}» de {archive}? Esta ação não pode ser anulada.} file {Eliminar o ficheiro «{name}» de {archive}? Esta ação não pode ser anulada.} other {Eliminar {count, plural, one {# item} other {# itens}} de {archive}? Esta ação não pode ser anulada.}}"
+  },
+  "main.delete.on_server": {
+    "message": "{kind, select, folder {Eliminar a pasta «{name}» em {server}? Esta ação não pode ser anulada.} file {Eliminar o ficheiro «{name}» em {server}? Esta ação não pode ser anulada.} other {Eliminar {count, plural, one {# item} other {# itens}} em {server}? Esta ação não pode ser anulada.}}"
+  },
+  "main.delete.permanently": {
+    "message": "{kind, select, folder {Eliminar permanentemente a pasta «{name}»? Esta ação não pode ser anulada.} file {Eliminar permanentemente o ficheiro «{name}»? Esta ação não pode ser anulada.} other {Eliminar permanentemente {count, plural, one {# item} other {# itens}}? Esta ação não pode ser anulada.}}"
+  },
+  "main.delete.title": {
+    "message": "Eliminar"
+  },
+  "main.delete.title_permanently": {
+    "message": "Eliminar permanentemente"
+  },
+  "main.delete.to_trash": {
+    "message": "{kind, select, folder {Mover a pasta «{name}» para a Reciclagem?} file {Mover o ficheiro «{name}» para a Reciclagem?} other {Mover {count, plural, one {# item} other {# itens}} para a Reciclagem?}}"
+  },
+  "main.download.edit": {
+    "message": "Transferir {file} para editar"
+  },
+  "main.download.view": {
+    "message": "Transferir {file} para ver"
+  },
+  "main.error.make_folder": {
+    "message": "Não foi possível criar a pasta: {err}"
+  },
+  "main.error.read_settings": {
+    "message": "Não foi possível ler as definições: {err}"
+  },
+  "main.error.read_tabs": {
+    "message": "Não foi possível ler os separadores abertos: {err}"
+  },
+  "main.error.read_workspaces": {
+    "message": "Não foi possível ler os espaços de trabalho: {err}"
+  },
+  "main.error.save_settings": {
+    "message": "Não foi possível guardar as definições: {err}"
+  },
+  "main.folder_tree.home": {
+    "message": "Pasta pessoal"
+  },
+  "main.go.no_such_folder": {
+    "message": "{path}: esta pasta não existe neste computador"
+  },
+  "main.new_folder.label": {
+    "message": "Nova pasta (diretório):"
+  },
+  "main.new_folder.title": {
+    "message": "Nova pasta"
+  },
+  "main.sync_browsing.lost": {
+    "message": "{err}. A navegação sincronizada está desativada."
+  },
+  "main.tool.needs_file": {
+    "message": "O cursor não está em nenhum ficheiro: %N, %O e %E precisam de um."
+  },
+  "main.tool.needs_local_folder": {
+    "message": "O outro painel mostra um servidor ou um arquivo: %T precisa de uma pasta neste computador."
+  },
+  "main.undo.done": {
+    "message": "{way, select, redo {Refeito: {title}} other {Anulado: {title}}}"
+  },
+  "main.undo.failed": {
+    "message": "{way, select, redo {Não foi possível refazer «{title}»: {err}} other {Não foi possível anular «{title}»: {err}}}"
+  },
+  "main.undo.nothing": {
+    "message": "{way, select, redo {Nada para refazer.} other {Nada para anular.}}"
+  },
+  "main.undo.queued": {
+    "message": "{way, select, redo {Na fila para refazer: {title}} other {Na fila para anular: {title}}}"
+  },
+  "mark.compare.marked": {
+    "message": "{count, plural, one {# ficheiro marcado: mais recente do que no outro lado, ou em falta nele.} other {# ficheiros marcados: mais recentes do que no outro lado, ou em falta nele.}}"
+  },
+  "mark.compare.same": {
+    "message": "As pastas têm os mesmos ficheiros."
+  },
+  "mark.load_selection.label": {
+    "message": "Selecionar os nomes listados no ficheiro:"
+  },
+  "mark.load_selection.title": {
+    "message": "Carregar seleção"
+  },
+  "mark.save_selection.label": {
+    "message": "Guardar os nomes selecionados no ficheiro:"
+  },
+  "mark.save_selection.title": {
+    "message": "Guardar seleção"
+  },
+  "mark.select_group.label": {
+    "message": "Selecionar os ficheiros (*.txt *.md; uma máscara de pasta termina em /):"
+  },
+  "mark.select_group.title": {
+    "message": "Selecionar grupo"
+  },
+  "mark.selection_file.not_local": {
+    "message": "Os ficheiros de seleção são guardados neste computador, fora de arquivos."
+  },
+  "mark.unselect_group.label": {
+    "message": "Desmarcar os ficheiros (*.txt *.md; uma máscara de pasta termina em /):"
+  },
+  "mark.unselect_group.title": {
+    "message": "Desmarcar grupo"
+  },
+  "media.cannot_play": {
+    "message": "Não é possível reproduzir: {err}"
+  },
+  "media.cannot_play_as_text": {
+    "message": "Não é possível reproduzir: {err}. 1 mostra-o como texto."
+  },
+  "media.continuing": {
+    "message": "A continuar em {time}"
+  },
+  "media.error.missing": {
+    "message": "O libmpv não foi encontrado: Definições > Suplementos transfere-o (compilação a partir do código: vendor/mpv/{script})"
+  },
+  "media.error.not_started": {
+    "message": "Não foi possível iniciar o libmpv"
+  },
+  "media.error.too_long": {
+    "message": "{path}: o mpv demorou demasiado"
+  },
+  "media.error.unsupported_system": {
+    "message": "por enquanto, o vídeo só é reproduzido em Linux, macOS e Windows"
+  },
+  "menu.archive": {
+    "message": "Arquivo"
+  },
+  "menu.associations": {
+    "message": "Associações"
+  },
+  "menu.button_bar": {
+    "message": "Barra de botões"
+  },
+  "menu.checksums": {
+    "message": "Somas de verificação"
+  },
+  "menu.commands": {
+    "message": "Comandos"
+  },
+  "menu.compare_directories": {
+    "message": "Comparar diretórios"
+  },
+  "menu.configuration": {
+    "message": "Configuração"
+  },
+  "menu.copy_names": {
+    "message": "Copiar nomes"
+  },
+  "menu.files": {
+    "message": "Ficheiros"
+  },
+  "menu.filter": {
+    "message": "Filtro"
+  },
+  "menu.go": {
+    "message": "Ir"
+  },
+  "menu.help": {
+    "message": "Ajuda"
+  },
+  "menu.mark": {
+    "message": "Marcar"
+  },
+  "menu.other": {
+    "message": "Outros"
+  },
+  "menu.recently_closed_tabs": {
+    "message": "Separadores fechados recentemente"
+  },
+  "menu.selection": {
+    "message": "Seleção"
+  },
+  "menu.show": {
+    "message": "Mostrar"
+  },
+  "menu.sidebar": {
+    "message": "Barra lateral"
+  },
+  "menu.sort": {
+    "message": "Ordenar"
+  },
+  "menu.split_and_combine": {
+    "message": "Dividir e combinar"
+  },
+  "menu.tabs": {
+    "message": "Separadores"
+  },
+  "menu.tools": {
+    "message": "Ferramentas"
+  },
+  "menu.workspaces": {
+    "message": "Espaços de trabalho"
+  },
+  "menus.hide_app": {
+    "message": "Ocultar Spark Commander"
+  },
+  "menus.hide_others": {
+    "message": "Ocultar outras"
+  },
+  "menus.minimize": {
+    "message": "Minimizar"
+  },
+  "menus.quit_app": {
+    "message": "Sair do Spark Commander"
+  },
+  "menus.services": {
+    "message": "Serviços"
+  },
+  "menus.show_all": {
+    "message": "Mostrar tudo"
+  },
+  "menus.zoom": {
+    "message": "Zoom"
+  },
+  "name_dialog.cancel": {
+    "message": "Cancelar"
+  },
+  "name_dialog.ok": {
+    "message": "OK"
+  },
+  "operations.clear": {
+    "message": "Limpar terminadas"
+  },
+  "operations.duration.seconds": {
+    "message": "{seconds} s"
+  },
+  "operations.empty": {
+    "message": "Nenhuma operação."
+  },
+  "operations.job.answer": {
+    "message": "À espera da sua resposta"
+  },
+  "operations.job.bytes": {
+    "message": "{done} de {total}"
+  },
+  "operations.job.cancel_tooltip": {
+    "message": "Cancelar"
+  },
+  "operations.job.cancelled": {
+    "message": "Cancelada"
+  },
+  "operations.job.counting": {
+    "message": "A contar: {count, plural, one {# ficheiro} other {# ficheiros}}"
+  },
+  "operations.job.done": {
+    "message": "Concluída"
+  },
+  "operations.job.done_skipped": {
+    "message": "Concluída, {count, plural, one {# ignorado} other {# ignorados}}"
+  },
+  "operations.job.failed": {
+    "message": "Falhou"
+  },
+  "operations.job.files": {
+    "message": "{files} / {count, plural, one {# ficheiro} other {# ficheiros}}"
+  },
+  "operations.job.left": {
+    "message": "Restam {time}"
+  },
+  "operations.job.running": {
+    "message": "Em curso"
+  },
+  "operations.job.waiting": {
+    "message": "Em espera"
+  },
+  "operations.menu.cancel": {
+    "message": "Cancelar"
+  },
+  "operations.menu.clear": {
+    "message": "Limpar terminadas"
+  },
+  "operations.menu.move_down": {
+    "message": "Mover para baixo"
+  },
+  "operations.menu.move_up": {
+    "message": "Mover para cima"
+  },
+  "operations.settings_tooltip": {
+    "message": "Definições da fila de operações"
+  },
+  "operations.summary.failed": {
+    "message": "{count, plural, one {# falhou} other {# falharam}}"
+  },
+  "operations.summary.running": {
+    "message": "{count, plural, one {# em curso} other {# em curso}}"
+  },
+  "operations.summary.waiting": {
+    "message": "{count, plural, one {# em espera} other {# em espera}}"
+  },
+  "ops.as_administrator.failed": {
+    "message": "Como administrador: {err}"
+  },
+  "ops.as_administrator.progress": {
+    "message": "Como administrador…"
+  },
+  "ops.delete.title_many": {
+    "message": "Eliminar {count, plural, one {# item} other {# itens}} em {folder}"
+  },
+  "ops.delete.title_one": {
+    "message": "Eliminar «{name}»"
+  },
+  "ops.delete.trash_title_many": {
+    "message": "Mover {count, plural, one {# item} other {# itens}} de {folder} para a Reciclagem"
+  },
+  "ops.delete.trash_title_one": {
+    "message": "Mover «{name}» para a Reciclagem"
+  },
+  "ops.error.file_in_the_way": {
+    "message": "já existe um ficheiro com este nome"
+  },
+  "ops.error.into_itself": {
+    "message": "não pode ser copiada para dentro de si própria"
+  },
+  "ops.exists_already": {
+    "message": "{name} já existe"
+  },
+  "ops.link.dialog_title": {
+    "message": "Criar ligação"
+  },
+  "ops.link.failed": {
+    "message": "Não foi possível criar a ligação: {err}"
+  },
+  "ops.link.kind.hard": {
+    "message": "Ligação física"
+  },
+  "ops.link.kind.junction": {
+    "message": "Junção"
+  },
+  "ops.link.kind.shortcut": {
+    "message": "Atalho (.lnk)"
+  },
+  "ops.link.kind.symbolic": {
+    "message": "Ligação simbólica"
+  },
+  "ops.link.label_many": {
+    "message": "Ligações para {count, plural, one {o # item} other {os # itens}}, na pasta:"
+  },
+  "ops.link.label_one": {
+    "message": "Ligação para «{name}» como:"
+  },
+  "ops.link.making": {
+    "message": "Criar {kind, select, symbolic {a ligação simbólica} hard {a ligação física} junction {a junção} other {o atalho (.lnk)}}"
+  },
+  "ops.link.needs_admin": {
+    "message": "as ligações simbólicas precisam de um administrador ou do Modo de programador"
+  },
+  "ops.link.thread_failed": {
+    "message": "a thread do atalho falhou"
+  },
+  "ops.link.title_many": {
+    "message": "{kind, select, symbolic {Ligações simbólicas} hard {Ligações físicas} junction {Junções} other {Atalhos (.lnk)}} para {count, plural, one {# item} other {# itens}} em {folder}"
+  },
+  "ops.link.title_one": {
+    "message": "{kind, select, symbolic {Ligação simbólica} hard {Ligação física} junction {Junção} other {Atalho (.lnk)}} para «{name}» em {folder}"
+  },
+  "ops.link.windows_only": {
+    "message": "as junções e os atalhos são exclusivos do Windows"
+  },
+  "ops.redo.title": {
+    "message": "Refazer: {what}"
+  },
+  "ops.title.many": {
+    "message": "{kind, select, copy {Copiar} other {Mover}} {count, plural, one {# item} other {# itens}} para {target}"
+  },
+  "ops.title.one": {
+    "message": "{kind, select, copy {Copiar} other {Mover}} «{name}» para {target}"
+  },
+  "ops.undo.not_a_server": {
+    "message": "{url}: não é o endereço de um servidor"
+  },
+  "ops.undo.not_in_trash": {
+    "message": "já não estão na Reciclagem"
+  },
+  "ops.undo.restore_title": {
+    "message": "{title}: o que foi substituído, de volta da Reciclagem"
+  },
+  "ops.undo.title": {
+    "message": "Anular: {what}"
+  },
+  "pack.cancel": {
+    "message": "Cancelar"
+  },
+  "pack.compression": {
+    "message": "Compressão:"
+  },
+  "pack.dialog_title": {
+    "message": "Compactar ficheiros"
+  },
+  "pack.encrypt": {
+    "message": "Cifrar com a palavra-passe"
+  },
+  "pack.format": {
+    "message": "Formato:"
+  },
+  "pack.label": {
+    "message": "Compactar {count, plural, one {# item} other {# itens}} no arquivo:"
+  },
+  "pack.level.fastest": {
+    "message": "Mais rápida"
+  },
+  "pack.level.maximum": {
+    "message": "Máxima"
+  },
+  "pack.level.normal": {
+    "message": "Normal"
+  },
+  "pack.level.store": {
+    "message": "Armazenar"
+  },
+  "pack.level.ultra": {
+    "message": "Ultra"
+  },
+  "pack.local_only": {
+    "message": "{what, select, packing {A compactação} unpacking {A descompactação} testing {O teste} creating_checksums {A criação de somas de verificação} making_links {A criação de ligações} verifying_checksums {A verificação de somas de verificação} splitting {A divisão} combining {A combinação} other {Isto}} funciona com os ficheiros deste computador, fora de arquivos."
+  },
+  "pack.move_files": {
+    "message": "Mover para o arquivo (eliminar os ficheiros compactados)"
+  },
+  "pack.needs_password": {
+    "message": "precisa de uma palavra-passe"
+  },
+  "pack.ok": {
+    "message": "OK"
+  },
+  "pack.password_missing": {
+    "message": "Escreva a palavra-passe ou desmarque «Cifrar com a palavra-passe»."
+  },
+  "pack.separate": {
+    "message": "Um arquivo para cada ficheiro ou pasta selecionado"
+  },
+  "pack.split": {
+    "message": "Dividir em volumes de"
+  },
+  "pack.split_unit": {
+    "message": "MB"
+  },
+  "pack.test.broken": {
+    "message": "{broken, plural, one {# de {count} danificado} other {# de {count} danificados}}"
+  },
+  "pack.test.choose": {
+    "message": "Escolha os arquivos a testar."
+  },
+  "pack.test.ok": {
+    "message": "{count, plural, one {# arquivo OK} other {# arquivos OK}}"
+  },
+  "pack.test.title_many": {
+    "message": "Testar {count, plural, one {# arquivo} other {# arquivos}}"
+  },
+  "pack.test.title_one": {
+    "message": "Testar «{name}»"
+  },
+  "pack.title.many": {
+    "message": "Compactar {count, plural, one {# item} other {# itens}} em {archive}"
+  },
+  "pack.title.many_separate": {
+    "message": "Compactar {count, plural, one {# item} other {# itens}} em arquivos {format} separados"
+  },
+  "pack.title.one": {
+    "message": "Compactar «{name}» em {archive}"
+  },
+  "pack.title.one_separate": {
+    "message": "Compactar «{name}» em arquivos {format} separados"
+  },
+  "pack.unpack.choose": {
+    "message": "Escolha os arquivos a descompactar."
+  },
+  "pack.unpack.dialog_title": {
+    "message": "Descompactar ficheiros"
+  },
+  "pack.unpack.label": {
+    "message": "Descompactar {count, plural, one {# arquivo} other {# arquivos}} para:"
+  },
+  "pack.unpack.mask": {
+    "message": "Apenas os ficheiros:"
+  },
+  "pack.unpack.overwrite": {
+    "message": "Substituir ficheiros existentes (caso contrário, são mantidos)"
+  },
+  "pack.unpack.password": {
+    "message": "Palavra-passe:"
+  },
+  "pack.unpack.separate": {
+    "message": "Cada arquivo numa pasta com o seu nome"
+  },
+  "pack.unpack.title_many": {
+    "message": "Descompactar {count, plural, one {# arquivo} other {# arquivos}} para {target}"
+  },
+  "pack.unpack.title_one": {
+    "message": "Descompactar «{name}» para {target}"
+  },
+  "pack.unpack.with_paths": {
+    "message": "Manter as pastas guardadas no arquivo"
+  },
+  "pack.volume_invalid": {
+    "message": "O tamanho do volume é um número de MB."
+  },
+  "pack.wrong_password": {
+    "message": "palavra-passe incorreta"
+  },
+  "panel.admin.renaming": {
+    "message": "Mudar o nome para «{name}»"
+  },
+  "panel.clipboard.copied": {
+    "message": "{count, plural, one {# item copiado: Ctrl+V cola-o.} other {# itens copiados: Ctrl+V cola-os.}}"
+  },
+  "panel.clipboard.cut": {
+    "message": "{count, plural, one {# item cortado: Ctrl+V cola-o.} other {# itens cortados: Ctrl+V cola-os.}}"
+  },
+  "panel.clipboard.no_cut_in_archive": {
+    "message": "Não é possível cortar ficheiros de arquivos; Ctrl+C copia-os."
+  },
+  "panel.clipboard.no_files": {
+    "message": "A área de transferência não contém ficheiros."
+  },
+  "panel.clipboard.no_paste_in_archive": {
+    "message": "Ainda não é possível colar ficheiros em arquivos."
+  },
+  "panel.clipboard.same_folder": {
+    "message": "Já estão nesta pasta: Ctrl+V cola-os noutra."
+  },
+  "panel.column.attr": {
+    "message": "Atr"
+  },
+  "panel.column.date": {
+    "message": "Data"
+  },
+  "panel.column.ext": {
+    "message": "Ext"
+  },
+  "panel.column.name": {
+    "message": "Nome"
+  },
+  "panel.column.size": {
+    "message": "Tamanho"
+  },
+  "panel.disconnect": {
+    "message": "Desligar"
+  },
+  "panel.drag.items": {
+    "message": "{count, plural, one {# item} other {# itens}}"
+  },
+  "panel.error.archive_not_updatable": {
+    "message": "{name}: o 7-Zip altera diretamente arquivos 7z, zip e tar, mas não este"
+  },
+  "panel.error.archive_on_server": {
+    "message": "{name}: ainda não é possível alterar arquivos em servidores"
+  },
+  "panel.error.branch_view_local": {
+    "message": "A Vista ramificada lista as pastas deste computador"
+  },
+  "panel.error.exists": {
+    "message": "{name} já existe"
+  },
+  "panel.error.folder_in_the_way": {
+    "message": "já existe uma pasta com este nome"
+  },
+  "panel.error.inside_archive": {
+    "message": "ainda não é possível dentro de arquivos"
+  },
+  "panel.error.make_file": {
+    "message": "Não foi possível criar o ficheiro: {err}"
+  },
+  "panel.error.no_name": {
+    "message": "não foi indicado nenhum nome"
+  },
+  "panel.error.not_a_name": {
+    "message": "{name}: não é um nome válido"
+  },
+  "panel.error.other_drive": {
+    "message": "o outro painel foi para outra unidade"
+  },
+  "panel.error.rename": {
+    "message": "Não foi possível mudar o nome: {err}"
+  },
+  "panel.filter.custom.label": {
+    "message": "Tipos de ficheiro, p. ex. *.txt *.md (depois de |, os excluídos):"
+  },
+  "panel.filter.custom.title": {
+    "message": "Mostrar ficheiros"
+  },
+  "panel.filter.programs": {
+    "message": "programas"
+  },
+  "panel.filter.selected_files": {
+    "message": "ficheiros selecionados"
+  },
+  "panel.found.branch_view": {
+    "message": "Vista ramificada:"
+  },
+  "panel.found.search_results": {
+    "message": "Resultados da pesquisa:"
+  },
+  "panel.new_text_file.label": {
+    "message": "Nome do ficheiro, aberto no editor:"
+  },
+  "panel.new_text_file.title": {
+    "message": "Novo ficheiro de texto"
+  },
+  "panel.opening.cancel": {
+    "message": "Cancelar"
+  },
+  "panel.opening.reading": {
+    "message": "A ler…"
+  },
+  "panel.opening.title": {
+    "message": "A abrir o arquivo"
+  },
+  "panel.quick_filter.hint": {
+    "message": "oculta o que não corresponde; Escape mostra tudo"
+  },
+  "panel.quick_filter.label": {
+    "message": "Filtro:"
+  },
+  "panel.quick_search.label": {
+    "message": "Procurar:"
+  },
+  "panel.size.app": {
+    "message": "<APP>"
+  },
+  "panel.size.b": {
+    "message": "{size} B"
+  },
+  "panel.size.dir": {
+    "message": "<DIR>"
+  },
+  "panel.size.gb": {
+    "message": "{size} GB"
+  },
+  "panel.size.kb": {
+    "message": "{size} KB"
+  },
+  "panel.size.mb": {
+    "message": "{size} MB"
+  },
+  "panel.size.tb": {
+    "message": "{size} TB"
+  },
+  "panel.space.bytes": {
+    "message": "{count, plural, one {{size} byte ({human})} other {{size} bytes ({human})}}"
+  },
+  "panel.space.close": {
+    "message": "Fechar"
+  },
+  "panel.space.counting": {
+    "message": "A contar…"
+  },
+  "panel.space.done": {
+    "message": "Concluído."
+  },
+  "panel.space.files": {
+    "message": "Ficheiros:"
+  },
+  "panel.space.folders": {
+    "message": "Pastas:"
+  },
+  "panel.space.in_archive": {
+    "message": "Dentro de arquivos, a coluna Tamanho já mostra os tamanhos."
+  },
+  "panel.space.title": {
+    "message": "Calcular espaço ocupado"
+  },
+  "panel.space.total": {
+    "message": "Tamanho total:"
+  },
+  "panel.space.unreadable": {
+    "message": "{count, plural, one {Não foi possível ler # item.} other {Não foi possível ler # itens.}}"
+  },
+  "panel.status": {
+    "message": "{marked_size} k / {size} k em {marked_files} / {files, plural, one {# ficheiro} other {# ficheiros}}, {marked_folders} / {folders, plural, one {# pasta} other {# pastas}}"
+  },
+  "panel.sync_browsing.stop": {
+    "message": "Navegação sincronizada (clique para parar)"
+  },
+  "panel.undo.rename": {
+    "message": "Mudar o nome de «{name}» para «{to}»"
+  },
+  "passwords.about.set": {
+    "message": "Com uma palavra-passe mestra, as palavras-passe guardadas abrem-se noutro computador quando a introduzir lá, depois de copiar a pasta de definições. Se a esquecer, perdem-se apenas as palavras-passe guardadas: basta introduzi-las novamente."
+  },
+  "passwords.about.unlock": {
+    "message": "As definições vieram de outro computador, ou este não tem porta-chaves: a palavra-passe mestra desbloqueia aqui as palavras-passe guardadas."
+  },
+  "passwords.cancel": {
+    "message": "Cancelar"
+  },
+  "passwords.done.set": {
+    "message": "A palavra-passe mestra está definida."
+  },
+  "passwords.done.unlocked": {
+    "message": "As palavras-passe guardadas estão desbloqueadas."
+  },
+  "passwords.error.locked": {
+    "message": "as palavras-passe guardadas estão bloqueadas: desbloqueie-as com a palavra-passe mestra (Configuração › Definições › Palavras-passe)"
+  },
+  "passwords.error.no_master": {
+    "message": "não está definida nenhuma palavra-passe mestra"
+  },
+  "passwords.error.no_random": {
+    "message": "não há números aleatórios"
+  },
+  "passwords.error.not_opened": {
+    "message": "não é possível abrir a palavra-passe de {what}"
+  },
+  "passwords.error.not_sealed": {
+    "message": "não foi possível cifrar a palavra-passe"
+  },
+  "passwords.error.salt_damaged": {
+    "message": "o salt da palavra-passe mestra está danificado"
+  },
+  "passwords.error.wrong": {
+    "message": "a palavra-passe mestra está incorreta"
+  },
+  "passwords.field.again": {
+    "message": "Repetir"
+  },
+  "passwords.field.master": {
+    "message": "Palavra-passe mestra"
+  },
+  "passwords.locked_note": {
+    "message": "As palavras-passe guardadas estão bloqueadas neste computador: a palavra-passe mestra desbloqueia-as."
+  },
+  "passwords.ok": {
+    "message": "OK"
+  },
+  "passwords.problem.differ": {
+    "message": "As duas não são iguais."
+  },
+  "passwords.problem.empty": {
+    "message": "Introduza a palavra-passe mestra."
+  },
+  "passwords.title.set": {
+    "message": "Palavra-passe mestra"
+  },
+  "passwords.title.unlock": {
+    "message": "Desbloquear palavras-passe guardadas"
+  },
+  "passwords.unlock_button": {
+    "message": "Desbloquear…"
+  },
+  "passwords.working": {
+    "message": "A processar…"
+  },
+  "properties.accessed": {
+    "message": "Acedido:"
+  },
+  "properties.change_attributes": {
+    "message": "Alterar atributos..."
+  },
+  "properties.close": {
+    "message": "Fechar"
+  },
+  "properties.contents": {
+    "message": "{file_count, plural, one {{files} ficheiro} other {{files} ficheiros}}, {folder_count, plural, one {{folders} pasta} other {{folders} pastas}}, {count, plural, one {{bytes} byte} other {{bytes} bytes}} ({size})"
+  },
+  "properties.contents_counting": {
+    "message": "{file_count, plural, one {{files} ficheiro} other {{files} ficheiros}}, {folder_count, plural, one {{folders} pasta} other {{folders} pastas}}, {count, plural, one {{bytes} byte} other {{bytes} bytes}} ({size}) (a contar…)"
+  },
+  "properties.contents_label": {
+    "message": "Conteúdo:"
+  },
+  "properties.created": {
+    "message": "Criado:"
+  },
+  "properties.dialog_title": {
+    "message": "Propriedades"
+  },
+  "properties.in_archive": {
+    "message": "A listagem do arquivo mostra o que este sabe sobre os seus ficheiros."
+  },
+  "properties.kind.file": {
+    "message": "Ficheiro"
+  },
+  "properties.kind.folder": {
+    "message": "Pasta"
+  },
+  "properties.kind.link": {
+    "message": "Ligação"
+  },
+  "properties.kind.link_to": {
+    "message": "Ligação para {target}"
+  },
+  "properties.location": {
+    "message": "Localização:"
+  },
+  "properties.modified": {
+    "message": "Modificado:"
+  },
+  "properties.name": {
+    "message": "Nome:"
+  },
+  "properties.no_system_dialog": {
+    "message": "ainda não há aqui uma caixa de diálogo de propriedades do sistema"
+  },
+  "properties.owner": {
+    "message": "Proprietário / grupo:"
+  },
+  "properties.permissions": {
+    "message": "Permissões:"
+  },
+  "properties.size": {
+    "message": "{count, plural, one {{bytes} byte ({size})} other {{bytes} bytes ({size})}}"
+  },
+  "properties.size_label": {
+    "message": "Tamanho:"
+  },
+  "properties.type": {
+    "message": "Tipo:"
+  },
+  "quick_open.go_to": {
+    "message": "Ir para {path}"
+  },
+  "quick_open.group.bookmarks": {
+    "message": "Marcadores"
+  },
+  "quick_open.group.connections": {
+    "message": "Ligações"
+  },
+  "quick_open.group.drives": {
+    "message": "Unidades"
+  },
+  "quick_open.group.path": {
+    "message": "Caminho"
+  },
+  "quick_open.group.recent_folders": {
+    "message": "Pastas recentes"
+  },
+  "quick_open.group.tools": {
+    "message": "Ferramentas"
+  },
+  "quick_open.group.workspaces": {
+    "message": "Espaços de trabalho"
+  },
+  "quick_open.placeholder": {
+    "message": "Um comando, marcador, pasta, caminho, servidor, unidade, espaço de trabalho ou ferramenta"
+  },
+  "quick_open.title": {
+    "message": "Abertura rápida"
+  },
+  "quick_view.counting": {
+    "message": "A contar…"
+  },
+  "quick_view.downloading": {
+    "message": "A transferir…"
+  },
+  "quick_view.empty": {
+    "message": "A Vista rápida mostra aquilo em que está o cursor do outro painel."
+  },
+  "quick_view.extracting": {
+    "message": "A extrair do arquivo…"
+  },
+  "quick_view.files_only": {
+    "message": "Em servidores e dentro de arquivos, a Vista rápida mostra ficheiros."
+  },
+  "quick_view.space.title": {
+    "message": "Espaço total ocupado:"
+  },
+  "quick_view.space.totals": {
+    "message": "{bytes, plural, one {{bytes_grouped} byte} other {{bytes_grouped} bytes}} em {files, plural, one {{files_grouped} ficheiro} other {{files_grouped} ficheiros}}, {folders, plural, one {{folders_grouped} pasta} other {{folders_grouped} pastas}}"
+  },
+  "quick_view.space.unreadable": {
+    "message": "Não foi possível ler {count}."
+  },
+  "quick_view.too_large.download": {
+    "message": "{size} é demasiado grande para transferir aqui: F3 mostra-o."
+  },
+  "quick_view.too_large.extract": {
+    "message": "{size} é demasiado grande para extrair do arquivo aqui: F3 mostra-o."
+  },
+  "remote.cancelled": {
+    "message": "cancelado"
+  },
+  "remote.cloud.ask": {
+    "message": "{kind, select, application_key {Chave da aplicação de {user} em {host}:} api_key {Chave de API de {user} em {host}:} password {Palavra-passe de {user} em {host}:} other {Chave secreta de {user} em {host}:}}"
+  },
+  "remote.cloud.ask_again": {
+    "message": "{kind, select, application_key {Chave da aplicação incorreta. Chave da aplicação de {user} em {host}:} api_key {Chave de API incorreta. Chave de API de {user} em {host}:} password {Palavra-passe incorreta. Palavra-passe de {user} em {host}:} other {Chave incorreta. Chave secreta de {user} em {host}:}}"
+  },
+  "remote.cloud.obscure_failed": {
+    "message": "o rclone não conseguiu aceitar a palavra-passe"
+  },
+  "remote.cloud.rclone_missing": {
+    "message": "o rclone não foi encontrado: Definições > Suplementos transfere-o"
+  },
+  "remote.cloud.title": {
+    "message": "{kind, select, application_key {Chave da aplicação} api_key {Chave de API} password {Palavra-passe} other {Chave secreta}}"
+  },
+  "remote.connecting": {
+    "message": "A ligar a {server}..."
+  },
+  "remote.dialog.cancel": {
+    "message": "Cancelar"
+  },
+  "remote.dialog.ok": {
+    "message": "OK"
+  },
+  "remote.disconnect_failed": {
+    "message": "{share}: não foi possível desligar: {err}"
+  },
+  "remote.ftp.password": {
+    "message": "Palavra-passe de {user}@{host}:"
+  },
+  "remote.ftp.password_again": {
+    "message": "Palavra-passe incorreta. Palavra-passe de {user}@{host}:"
+  },
+  "remote.ftps.changed": {
+    "message": "O certificado TLS de {server} MUDOU desde que a linha {line} de {file} o registou. Alguém pode estar a escutar; se o servidor tiver um certificado novo, remova essa linha."
+  },
+  "remote.ftps.not_trusted": {
+    "message": "o certificado do servidor não é fidedigno"
+  },
+  "remote.login.password": {
+    "message": "Palavra-passe"
+  },
+  "remote.login.title": {
+    "message": "Iniciar sessão"
+  },
+  "remote.login.user": {
+    "message": "Utilizador"
+  },
+  "remote.mount.login_wrong": {
+    "message": "o utilizador ou a palavra-passe estão incorretos"
+  },
+  "remote.mount.macos_failed": {
+    "message": "o macOS não conseguiu montá-lo (NetFS {code})"
+  },
+  "remote.mount.needs_desktop": {
+    "message": "precisa do kio-fuse do KDE ou do gvfs do GNOME"
+  },
+  "remote.mount.needs_login": {
+    "message": "precisa de um utilizador e de uma palavra-passe"
+  },
+  "remote.mount.no_fuse": {
+    "message": "montado, mas não há pasta para ele: falta o gvfs-fuse"
+  },
+  "remote.mount.no_nfs_client": {
+    "message": "não encontrado; o NFS precisa do Cliente para NFS do Windows (Funcionalidades do Windows)"
+  },
+  "remote.mount.no_share": {
+    "message": "falta a partilha: smb://servidor/partilha"
+  },
+  "remote.mount.not_address": {
+    "message": "não é um endereço"
+  },
+  "remote.mount.not_found": {
+    "message": "montado, mas não encontrado entre os volumes montados"
+  },
+  "remote.mount.other_user": {
+    "message": "o Windows está ligado a este servidor como outro utilizador: termine sessão ou use esse utilizador"
+  },
+  "remote.password.title": {
+    "message": "Palavra-passe"
+  },
+  "remote.remember_password": {
+    "message": "Memorizar (Definições › Palavras-passe)"
+  },
+  "remote.save_back_failed": {
+    "message": "Não foi possível guardá-lo de volta: {err}"
+  },
+  "remote.sftp.host_certificate": {
+    "message": "O servidor apresenta um certificado de anfitrião; ainda não são suportados."
+  },
+  "remote.sftp.key_changed": {
+    "message": "A chave de anfitrião de {server} MUDOU desde que a linha {line} de {file} a registou. Alguém pode estar a escutar; se o servidor foi reinstalado, remova essa linha."
+  },
+  "remote.sftp.key_not_trusted": {
+    "message": "A chave de anfitrião de {server} não foi aceite como fidedigna."
+  },
+  "remote.sftp.keys_refused": {
+    "message": "{user}@{host}: o servidor recusou as chaves e não aceita palavra-passe"
+  },
+  "remote.sftp.login_refused": {
+    "message": "{user}@{host}: início de sessão recusado"
+  },
+  "remote.sftp.passphrase": {
+    "message": "Frase de acesso de {file}"
+  },
+  "remote.sftp.passphrase_title": {
+    "message": "Frase de acesso da chave"
+  },
+  "remote.sftp.password": {
+    "message": "Palavra-passe de {user}@{host}"
+  },
+  "remote.unknown_host.once": {
+    "message": "Ligar uma vez"
+  },
+  "remote.unknown_host.remember": {
+    "message": "Ligar e memorizar"
+  },
+  "remote.unknown_host.text": {
+    "message": "{key_type, select, TLS {O servidor {host} ainda não é conhecido. A impressão digital do seu certificado TLS é} other {O servidor {host} ainda não é conhecido. A sua impressão digital {key_type} é}}\n\n{fingerprint}\n\nLigue-se apenas se este for o servidor pretendido; o administrador do servidor pode confirmar a impressão digital."
+  },
+  "remote.unknown_host.title": {
+    "message": "Servidor desconhecido"
+  },
+  "rename.case": {
+    "message": "Maiúsculas:"
+  },
+  "rename.case.first": {
+    "message": "Primeira letra"
+  },
+  "rename.case.lower": {
+    "message": "minúsculas"
+  },
+  "rename.case.unchanged": {
+    "message": "Sem alteração"
+  },
+  "rename.case.upper": {
+    "message": "MAIÚSCULAS"
+  },
+  "rename.case.words": {
+    "message": "Cada Palavra"
+  },
+  "rename.close": {
+    "message": "Fechar"
+  },
+  "rename.counter_start": {
+    "message": "Início do contador"
+  },
+  "rename.dialog_title": {
+    "message": "Ferramenta de mudança de nome múltipla"
+  },
+  "rename.digits": {
+    "message": "Dígitos"
+  },
+  "rename.extension": {
+    "message": "Extensão"
+  },
+  "rename.field.counter": {
+    "message": "[C] Contador"
+  },
+  "rename.field.date": {
+    "message": "[Y][M][D] Data"
+  },
+  "rename.field.extension": {
+    "message": "[E] Ext."
+  },
+  "rename.field.folder": {
+    "message": "[P] Pasta"
+  },
+  "rename.field.name": {
+    "message": "[N] Nome"
+  },
+  "rename.field.range": {
+    "message": "[N1-3] Intervalo"
+  },
+  "rename.field.time": {
+    "message": "[h][m][s] Hora"
+  },
+  "rename.first_only": {
+    "message": "Só a primeira"
+  },
+  "rename.in_archive": {
+    "message": "Ainda não é possível mudar o nome de ficheiros dentro de arquivos."
+  },
+  "rename.mask": {
+    "message": "Máscara: nome do ficheiro"
+  },
+  "rename.match_case": {
+    "message": "Diferenciar maiúsculas"
+  },
+  "rename.new_name": {
+    "message": "Novo nome"
+  },
+  "rename.not_renamed_back": {
+    "message": "{from}: {err}; nomes não repostos: {names}"
+  },
+  "rename.not_utf8": {
+    "message": "Os nomes que não são UTF-8 são excluídos."
+  },
+  "rename.old_name": {
+    "message": "Nome antigo"
+  },
+  "rename.problem.bad_character": {
+    "message": "carácter não permitido em nomes"
+  },
+  "rename.problem.exists": {
+    "message": "já existe"
+  },
+  "rename.problem.no_name": {
+    "message": "sem nome"
+  },
+  "rename.problem.twice": {
+    "message": "repetido na lista"
+  },
+  "rename.regex": {
+    "message": "Expressão regular"
+  },
+  "rename.regex_error": {
+    "message": "A expressão regular: {err}"
+  },
+  "rename.replace": {
+    "message": "Substituir por"
+  },
+  "rename.search": {
+    "message": "Procurar"
+  },
+  "rename.start": {
+    "message": "Iniciar!"
+  },
+  "rename.status.failed": {
+    "message": "Nenhum nome alterado: {err}"
+  },
+  "rename.status.ready": {
+    "message": "Iniciar! muda o nome dos ficheiros."
+  },
+  "rename.status.renamed": {
+    "message": "{count, plural, one {# nome alterado.} other {# nomes alterados.}}"
+  },
+  "rename.status.took_back": {
+    "message": "{count, plural, one {# nome reposto.} other {# nomes repostos.}}"
+  },
+  "rename.step": {
+    "message": "Passo"
+  },
+  "rename.undo": {
+    "message": "Anular"
+  },
+  "rename.was": {
+    "message": "{to} (era {from})"
+  },
+  "rename.with_extension": {
+    "message": "Com extensão"
+  },
+  "scmd.column.modified": {
+    "message": "Modificado"
+  },
+  "scmd.column.name": {
+    "message": "Nome"
+  },
+  "scmd.column.size": {
+    "message": "Tamanho"
+  },
+  "scmd.column.up_dir": {
+    "message": "DIR-ACIMA"
+  },
+  "scmd.command_line.not_on_server": {
+    "message": "Os comandos são executados neste computador, não no servidor."
+  },
+  "scmd.compare.marked": {
+    "message": "{count, plural, one {# ficheiro marcado: mais recente do que no outro lado, ou em falta nele.} other {# ficheiros marcados: mais recentes do que no outro lado, ou em falta nele.}}"
+  },
+  "scmd.compare.same": {
+    "message": "As pastas têm os mesmos ficheiros."
+  },
+  "scmd.copying": {
+    "message": "A copiar {name}..."
+  },
+  "scmd.dialog.buttons": {
+    "message": "Enter OK   Esc Cancelar"
+  },
+  "scmd.error.read_settings": {
+    "message": "Não foi possível ler as definições: {err}"
+  },
+  "scmd.error.read_tabs": {
+    "message": "Não foi possível ler os separadores abertos: {err}"
+  },
+  "scmd.error.read_workspaces": {
+    "message": "Não foi possível ler os espaços de trabalho: {err}"
+  },
+  "scmd.error.save_back": {
+    "message": "Não foi possível guardá-lo de volta: {err}"
+  },
+  "scmd.error.save_searches": {
+    "message": "Não foi possível guardar as pesquisas: {err}"
+  },
+  "scmd.error.save_tabs": {
+    "message": "Não foi possível guardar os separadores abertos: {err}"
+  },
+  "scmd.find.backwards": {
+    "message": "Para trás"
+  },
+  "scmd.find.case_sensitive": {
+    "message": "Diferenciar maiúsculas/minúsculas"
+  },
+  "scmd.find.hex": {
+    "message": "Hex (77 6F 72 64)"
+  },
+  "scmd.find.not_found": {
+    "message": "Não encontrado: {text}"
+  },
+  "scmd.find.regex": {
+    "message": "Expressão regular"
+  },
+  "scmd.find.search_for": {
+    "message": "Procurar:"
+  },
+  "scmd.find.title": {
+    "message": "Localizar"
+  },
+  "scmd.find.whole_words": {
+    "message": "Apenas palavras inteiras"
+  },
+  "scmd.group.files": {
+    "message": "Ficheiros (*.txt *.md; as pastas terminam em /):"
+  },
+  "scmd.group.select_title": {
+    "message": "Selecionar grupo"
+  },
+  "scmd.group.unselect_title": {
+    "message": "Desmarcar grupo"
+  },
+  "scmd.key_bar.copy": {
+    "message": "Copiar"
+  },
+  "scmd.key_bar.delete": {
+    "message": "Apagar"
+  },
+  "scmd.key_bar.edit": {
+    "message": "Editar"
+  },
+  "scmd.key_bar.menu": {
+    "message": "Menu"
+  },
+  "scmd.key_bar.mkdir": {
+    "message": "NPasta"
+  },
+  "scmd.key_bar.move": {
+    "message": "Mover"
+  },
+  "scmd.key_bar.quit": {
+    "message": "Sair"
+  },
+  "scmd.key_bar.view": {
+    "message": "Ver"
+  },
+  "scmd.message.error": {
+    "message": "Erro"
+  },
+  "scmd.message.ok": {
+    "message": "OK"
+  },
+  "scmd.not_yet": {
+    "message": "{what, select, menus {Os menus: ainda não existem na versão para terminal.} file_operations {Operações com ficheiros: ainda não existem na versão para terminal.} servers {Servidores: ainda não existem na versão para terminal.} other {Este comando: ainda não existe na versão para terminal.}}"
+  },
+  "scmd.picture.broken": {
+    "message": "uma imagem danificada"
+  },
+  "scmd.picture.broken_page": {
+    "message": "uma página danificada"
+  },
+  "scmd.picture.loading": {
+    "message": "A carregar…"
+  },
+  "scmd.picture.no_page": {
+    "message": "o PDF não tem esta página"
+  },
+  "scmd.shell.press_enter": {
+    "message": "Prima Enter para voltar ao Spark Commander..."
+  },
+  "scmd.sync_browsing.off": {
+    "message": "A navegação sincronizada está desativada."
+  },
+  "scmd.sync_browsing.on": {
+    "message": "A navegação sincronizada está ativada."
+  },
+  "scmd.sync_browsing.stopped": {
+    "message": "{err}. A navegação sincronizada está desativada."
+  },
+  "scmd.viewer.column": {
+    "message": "Col {column}"
+  },
+  "scmd.viewer.finding": {
+    "message": "a procurar…"
+  },
+  "scmd.viewer.key_bar.next": {
+    "message": "Próx."
+  },
+  "scmd.viewer.key_bar.quit": {
+    "message": "Sair"
+  },
+  "scmd.viewer.key_bar.reload": {
+    "message": "Reler"
+  },
+  "scmd.viewer.key_bar.search": {
+    "message": "Pesq."
+  },
+  "scmd.viewer.page": {
+    "message": "página {page} de {pages}"
+  },
+  "scmd.viewer.reading": {
+    "message": "a ler {percent}%"
+  },
+  "scmd.viewer.wrap": {
+    "message": "Moldar"
+  },
+  "scmd.workspace.copy_name": {
+    "message": "{name} cópia"
+  },
+  "scmd.workspace.default_name": {
+    "message": "Espaço de trabalho {number}"
+  },
+  "scmd.workspace.delete_question": {
+    "message": "Eliminar «{name}»? Os seus separadores serão esquecidos."
+  },
+  "scmd.workspace.duplicate_title": {
+    "message": "Duplicar espaço de trabalho"
+  },
+  "scmd.workspace.last_stays": {
+    "message": "O último espaço de trabalho tem de ficar."
+  },
+  "scmd.workspace.name": {
+    "message": "Nome:"
+  },
+  "scmd.workspace.name_or_default": {
+    "message": "Nome (vazio: {name}):"
+  },
+  "scmd.workspace.new_title": {
+    "message": "Novo espaço de trabalho"
+  },
+  "scmd.workspace.rename_title": {
+    "message": "Mudar o nome do espaço de trabalho"
+  },
+  "scmd.workspaces.keys": {
+    "message": "Enter Abrir  F7 Novo  F5 Copiar  F2 Nome  F8 Eliminar"
+  },
+  "scmd.workspaces.title": {
+    "message": "Espaços de trabalho"
+  },
+  "search.age.days": {
+    "message": "dia(s)"
+  },
+  "search.age.hours": {
+    "message": "hora(s)"
+  },
+  "search.age.minutes": {
+    "message": "minuto(s)"
+  },
+  "search.age.months": {
+    "message": "mês(es)"
+  },
+  "search.age.weeks": {
+    "message": "semana(s)"
+  },
+  "search.age.years": {
+    "message": "ano(s)"
+  },
+  "search.archives": {
+    "message": "Procurar em arquivos"
+  },
+  "search.attribute.directory": {
+    "message": "Diretório"
+  },
+  "search.attribute.either": {
+    "message": "Indiferente"
+  },
+  "search.attribute.executable": {
+    "message": "Executável"
+  },
+  "search.attribute.hidden": {
+    "message": "Oculto"
+  },
+  "search.attribute.link": {
+    "message": "Ligação simbólica"
+  },
+  "search.attribute.must": {
+    "message": "Tem de ser"
+  },
+  "search.attribute.must_not": {
+    "message": "Não pode ser"
+  },
+  "search.attribute.read_only": {
+    "message": "Só de leitura"
+  },
+  "search.attributes.label": {
+    "message": "Atributos:"
+  },
+  "search.between.and": {
+    "message": "e"
+  },
+  "search.between.label": {
+    "message": "Data entre:"
+  },
+  "search.close": {
+    "message": "Fechar"
+  },
+  "search.depth.all": {
+    "message": "todos (profundidade ilimitada)"
+  },
+  "search.depth.current": {
+    "message": "só o diretório atual"
+  },
+  "search.depth.label": {
+    "message": "Procurar em subdiretórios:"
+  },
+  "search.depth.levels": {
+    "message": "{count, plural, one {# nível} other {# níveis}}"
+  },
+  "search.drives": {
+    "message": "Unidades"
+  },
+  "search.duplicates.content": {
+    "message": "mesmo conteúdo"
+  },
+  "search.duplicates.label": {
+    "message": "Procurar ficheiros duplicados:"
+  },
+  "search.duplicates.name": {
+    "message": "mesmo nome"
+  },
+  "search.duplicates.size": {
+    "message": "mesmo tamanho"
+  },
+  "search.edit": {
+    "message": "F4 Editar"
+  },
+  "search.error.between_days": {
+    "message": "Data entre precisa dos dois dias"
+  },
+  "search.error.date": {
+    "message": "{text} não é uma data como 2026-11-12"
+  },
+  "search.error.hex": {
+    "message": "{text} não é uma cadeia hexadecimal como 48 65 6c"
+  },
+  "search.error.keep": {
+    "message": "Não foi possível guardar a pesquisa: {err}"
+  },
+  "search.error.local_time": {
+    "message": "{text} não é uma hora local"
+  },
+  "search.error.names_regex": {
+    "message": "A expressão regular do nome: {err}"
+  },
+  "search.error.newer_number": {
+    "message": "Não mais antigo que precisa de um número, não de {text}"
+  },
+  "search.error.no_place": {
+    "message": "Procurar em não indica nenhuma pasta"
+  },
+  "search.error.no_text": {
+    "message": "Localizar texto não indica nenhum texto"
+  },
+  "search.error.older_number": {
+    "message": "Mais antigo que precisa de um número, não de {text}"
+  },
+  "search.error.save": {
+    "message": "Não foi possível guardar as pesquisas: {err}"
+  },
+  "search.error.size_number": {
+    "message": "Tamanho do ficheiro precisa de um número, não de {text}"
+  },
+  "search.error.text_regex": {
+    "message": "A expressão regular do texto: {err}"
+  },
+  "search.feed": {
+    "message": "Enviar para o painel"
+  },
+  "search.go_to_file": {
+    "message": "Ir para o ficheiro"
+  },
+  "search.in_found": {
+    "message": "F2 Procurar nos ficheiros encontrados"
+  },
+  "search.locate": {
+    "message": "A partir do índice do locate"
+  },
+  "search.names.label": {
+    "message": "Procurar:"
+  },
+  "search.names.placeholder": {
+    "message": "*.txt *.md | backup*  (vazio: todos)"
+  },
+  "search.new": {
+    "message": "Nova pesquisa"
+  },
+  "search.newer.label": {
+    "message": "Não mais antigo que:"
+  },
+  "search.older.label": {
+    "message": "Mais antigo que:"
+  },
+  "search.only_selected": {
+    "message": "Procurar apenas nos ficheiros/pastas selecionados"
+  },
+  "search.only_selected_count": {
+    "message": "{count, plural, one {Procurar apenas no # selecionado} other {Procurar apenas nos # selecionados}}"
+  },
+  "search.page.advanced": {
+    "message": "Avançado"
+  },
+  "search.page.general": {
+    "message": "Geral"
+  },
+  "search.page.load_save": {
+    "message": "Carregar/Guardar"
+  },
+  "search.places.browse_prompt": {
+    "message": "Procurar em"
+  },
+  "search.places.label": {
+    "message": "Procurar em:"
+  },
+  "search.places.placeholder": {
+    "message": "Pastas, separadas por ;"
+  },
+  "search.regex": {
+    "message": "RegEx"
+  },
+  "search.results.label": {
+    "message": "Resultados da pesquisa:"
+  },
+  "search.saved.delete": {
+    "message": "Eliminar"
+  },
+  "search.saved.label": {
+    "message": "Pesquisas anteriores:"
+  },
+  "search.saved.load": {
+    "message": "Carregar"
+  },
+  "search.saved.name_first": {
+    "message": "Dê primeiro um nome à pesquisa."
+  },
+  "search.saved.name_placeholder": {
+    "message": "Nome da pesquisa"
+  },
+  "search.saved.save": {
+    "message": "Guardar"
+  },
+  "search.size.label": {
+    "message": "Tamanho do ficheiro:"
+  },
+  "search.start": {
+    "message": "Iniciar pesquisa"
+  },
+  "search.status.found": {
+    "message": "{files, plural, one {# ficheiro} other {# ficheiros}} e {dirs, plural, one {# diretório encontrado} other {# diretórios encontrados}}"
+  },
+  "search.status.searching": {
+    "message": "A procurar…"
+  },
+  "search.status.searching_in": {
+    "message": "A procurar: {folder}"
+  },
+  "search.status.stopped": {
+    "message": "Parada: {counts}"
+  },
+  "search.stop": {
+    "message": "Parar"
+  },
+  "search.text.ansi": {
+    "message": "ANSI (página de código {page})"
+  },
+  "search.text.case_sensitive": {
+    "message": "Diferenciar maiúsculas/minúsculas"
+  },
+  "search.text.hex": {
+    "message": "Hex"
+  },
+  "search.text.label": {
+    "message": "Localizar texto:"
+  },
+  "search.text.not_containing": {
+    "message": "Procurar ficheiros que NÃO contêm o texto"
+  },
+  "search.text.office": {
+    "message": "Ficheiros do Office (docx, xlsx, pptx, odt…)"
+  },
+  "search.text.placeholder": {
+    "message": "Texto a localizar"
+  },
+  "search.text.whole_words": {
+    "message": "Apenas palavras inteiras"
+  },
+  "search.title": {
+    "message": "Procurar ficheiros"
+  },
+  "search.unit.bytes": {
+    "message": "bytes"
+  },
+  "search.view": {
+    "message": "F3 Ver"
+  },
+  "settings.addons.builtin_version": {
+    "message": "{version}, incluído no Spark Commander"
+  },
+  "settings.addons.check_daily": {
+    "message": "Procurar atualizações de suplementos ao iniciar e diariamente, e propô-las"
+  },
+  "settings.addons.check_failed": {
+    "message": "Não foi possível procurar atualizações: {err}"
+  },
+  "settings.addons.check_now": {
+    "message": "Procurar agora"
+  },
+  "settings.addons.checking": {
+    "message": "A procurar atualizações..."
+  },
+  "settings.addons.download": {
+    "message": "Transferir"
+  },
+  "settings.addons.downloading": {
+    "message": "A transferir: {done} de {size}"
+  },
+  "settings.addons.file": {
+    "message": "Ficheiro"
+  },
+  "settings.addons.installed.builtin": {
+    "message": "incluído no Spark Commander"
+  },
+  "settings.addons.installed.label": {
+    "message": "Instalado"
+  },
+  "settings.addons.installed.none": {
+    "message": "nenhum"
+  },
+  "settings.addons.intro": {
+    "message": "O Spark Commander usa estes programas de outros projetos para algumas das suas funções. Os suplementos são transferidos à parte, quando escolher; o 7-Zip e o PDFium vêm incluídos."
+  },
+  "settings.addons.never_offer": {
+    "message": "Nunca propor suplementos quando um ficheiro precisar de um"
+  },
+  "settings.addons.offers": {
+    "message": "Propostas e atualizações"
+  },
+  "settings.addons.online.label": {
+    "message": "Online"
+  },
+  "settings.addons.online.looking": {
+    "message": "a procurar..."
+  },
+  "settings.addons.online.none": {
+    "message": "nenhum para este sistema"
+  },
+  "settings.addons.online.not_yet": {
+    "message": "ainda não procurado"
+  },
+  "settings.addons.online.unknown": {
+    "message": "desconhecido"
+  },
+  "settings.addons.remove": {
+    "message": "Remover"
+  },
+  "settings.addons.up_to_date": {
+    "message": "A lista de suplementos está atualizada."
+  },
+  "settings.addons.version": {
+    "message": "Versão"
+  },
+  "settings.addons.website": {
+    "message": "Site"
+  },
+  "settings.appearance.title": {
+    "message": "Aspeto"
+  },
+  "settings.apply": {
+    "message": "Aplicar"
+  },
+  "settings.backdrop.blur": {
+    "message": "Desfocar o ambiente de trabalho por trás"
+  },
+  "settings.backdrop.clear": {
+    "message": "0%, só o ambiente de trabalho"
+  },
+  "settings.backdrop.cover": {
+    "message": "Quanto cobre o ambiente de trabalho por trás:"
+  },
+  "settings.backdrop.opacity": {
+    "message": "{opacity}%"
+  },
+  "settings.backdrop.sidebar": {
+    "message": "Barra lateral"
+  },
+  "settings.backdrop.solid": {
+    "message": "100%, opaco"
+  },
+  "settings.backdrop.terminal": {
+    "message": "Terminal"
+  },
+  "settings.cancel": {
+    "message": "Cancelar"
+  },
+  "settings.date.as_system": {
+    "message": "Como o sistema: {date}"
+  },
+  "settings.date.custom": {
+    "message": "Personalizado:"
+  },
+  "settings.date.pattern_help": {
+    "message": "yyyy ano, MM mês (MMM o seu nome), dd dia (ddd o dia da semana)"
+  },
+  "settings.date.shown_as": {
+    "message": "Mostrado como"
+  },
+  "settings.date.shown_as_note": {
+    "message": "nas listas de ficheiros; as caixas de diálogo acrescentam os segundos"
+  },
+  "settings.date.title": {
+    "message": "Data"
+  },
+  "settings.editor.browse": {
+    "message": "Procurar..."
+  },
+  "settings.editor.choose": {
+    "message": "Escolher"
+  },
+  "settings.editor.external": {
+    "message": "Editor externo (Ctrl+Shift+F4):"
+  },
+  "settings.editor.external_help": {
+    "message": "%1 é o ficheiro; sem ele, o ficheiro vai no fim; p. ex. code --wait %1"
+  },
+  "settings.editor.limit": {
+    "message": "O editor integrado (F4) abre ficheiros até"
+  },
+  "settings.editor.limit_unit": {
+    "message": "MB"
+  },
+  "settings.editor.title": {
+    "message": "Editor para F4"
+  },
+  "settings.error.no_folder": {
+    "message": "não há pasta de configuração"
+  },
+  "settings.files_shown.hidden": {
+    "message": "Ficheiros ocultos"
+  },
+  "settings.files_shown.system": {
+    "message": "Ficheiros de sistema"
+  },
+  "settings.files_shown.title": {
+    "message": "Ficheiros mostrados"
+  },
+  "settings.font.as_system": {
+    "message": "Como o sistema"
+  },
+  "settings.font.chosen": {
+    "message": "Escolhido; o do sistema é {family}, {size}"
+  },
+  "settings.font.fixed": {
+    "message": "Visualizador"
+  },
+  "settings.font.fixed_note": {
+    "message": "Apenas tipos de letra de largura fixa; também para o editor e a comparação de ficheiros."
+  },
+  "settings.font.main": {
+    "message": "Tipo de letra da janela principal"
+  },
+  "settings.font.system": {
+    "message": "O tipo de letra do sistema"
+  },
+  "settings.language.system": {
+    "message": "Idioma do sistema"
+  },
+  "settings.language.system_named": {
+    "message": "Idioma do sistema: {language}"
+  },
+  "settings.language.title": {
+    "message": "Idioma"
+  },
+  "settings.menus.automatic": {
+    "message": "Automático: um botão ☰ no GNOME, uma barra de menus nos outros"
+  },
+  "settings.menus.bar": {
+    "message": "Barra de menus"
+  },
+  "settings.menus.button": {
+    "message": "Botão ☰ na barra de título"
+  },
+  "settings.menus.title": {
+    "message": "Menus"
+  },
+  "settings.ok": {
+    "message": "OK"
+  },
+  "settings.page.addons": {
+    "message": "Suplementos"
+  },
+  "settings.page.date": {
+    "message": "Data"
+  },
+  "settings.page.display": {
+    "message": "Apresentação"
+  },
+  "settings.page.edit_view": {
+    "message": "Editar/Ver"
+  },
+  "settings.page.font": {
+    "message": "Tipo de letra"
+  },
+  "settings.page.language": {
+    "message": "Idioma"
+  },
+  "settings.page.layout": {
+    "message": "Disposição"
+  },
+  "settings.page.operations": {
+    "message": "Operações"
+  },
+  "settings.page.passwords": {
+    "message": "Palavras-passe"
+  },
+  "settings.page.terminal": {
+    "message": "Terminal"
+  },
+  "settings.page.toolbar": {
+    "message": "Barra de ferramentas"
+  },
+  "settings.passwords.change_master": {
+    "message": "Alterar palavra-passe mestra…"
+  },
+  "settings.passwords.locked": {
+    "message": "Estão bloqueadas neste computador: a palavra-passe mestra desbloqueia-as."
+  },
+  "settings.passwords.master_set": {
+    "message": "Está definida uma palavra-passe mestra: depois de copiar a pasta de definições, abrem-se noutro computador quando a introduzir lá."
+  },
+  "settings.passwords.no_master": {
+    "message": "Não está definida nenhuma palavra-passe mestra: depois de copiar a pasta de definições, não se abrem noutro computador; terá de as introduzir novamente lá."
+  },
+  "settings.passwords.not_removed": {
+    "message": "A palavra-passe mestra não foi removida: {err}"
+  },
+  "settings.passwords.remove_master": {
+    "message": "Remover palavra-passe mestra"
+  },
+  "settings.passwords.saved": {
+    "message": "{count, plural, one {# palavra-passe guardada} other {# palavras-passe guardadas}} (de servidores, partilhas e unidades cifradas), cifradas na pasta de definições; a chave que as abre está no porta-chaves deste computador."
+  },
+  "settings.passwords.set_master": {
+    "message": "Definir palavra-passe mestra…"
+  },
+  "settings.passwords.title": {
+    "message": "Palavras-passe guardadas"
+  },
+  "settings.passwords.unlock": {
+    "message": "Desbloquear…"
+  },
+  "settings.queue.clear_after": {
+    "message": "Limpar operações concluídas após"
+  },
+  "settings.queue.clear_after_help": {
+    "message": "0: assim que terminam. As falhadas e canceladas ficam até serem limpas."
+  },
+  "settings.queue.clear_after_unit": {
+    "message": "minutos"
+  },
+  "settings.queue.download_limit": {
+    "message": "Limite de velocidade de transferência"
+  },
+  "settings.queue.download_limit_help": {
+    "message": "Transferir de uma ligação e cópias de servidores FTP e SFTP; também as que estão em curso. 0: sem limite."
+  },
+  "settings.queue.download_limit_unit": {
+    "message": "KB/s"
+  },
+  "settings.queue.title": {
+    "message": "Fila de operações"
+  },
+  "settings.shell.default": {
+    "message": "Predefinida: {shell}"
+  },
+  "settings.shell.note": {
+    "message": "Os novos separadores de terminal iniciam-na."
+  },
+  "settings.shell.title": {
+    "message": "Shell"
+  },
+  "settings.sort_folders.by_name": {
+    "message": "Sempre por nome"
+  },
+  "settings.sort_folders.like_files": {
+    "message": "Como os ficheiros (também por data)"
+  },
+  "settings.sort_folders.title": {
+    "message": "Ordenação das pastas"
+  },
+  "settings.tabs.header_always": {
+    "message": "Mostrar a barra de separadores também quando há só um separador"
+  },
+  "settings.tabs.title": {
+    "message": "Separadores de pastas"
+  },
+  "settings.time.as_system": {
+    "message": "Como o sistema"
+  },
+  "settings.time.h12": {
+    "message": "12 horas (2:05 PM)"
+  },
+  "settings.time.h24": {
+    "message": "24 horas (14:05)"
+  },
+  "settings.time.title": {
+    "message": "Hora"
+  },
+  "settings.title": {
+    "message": "Definições"
+  },
+  "settings.toolbar.add": {
+    "message": "Adicionar botão…"
+  },
+  "settings.toolbar.move_down": {
+    "message": "Mover para baixo"
+  },
+  "settings.toolbar.move_up": {
+    "message": "Mover para cima"
+  },
+  "settings.toolbar.place": {
+    "message": "Por baixo da barra de menus; na barra de título quando os menus estão atrás do botão ☰, como nas aplicações do GNOME. Sem botões, não aparece."
+  },
+  "settings.toolbar.remove": {
+    "message": "Remover"
+  },
+  "settings.toolbar.replace": {
+    "message": "Substituir…"
+  },
+  "settings.toolbar.restore_default": {
+    "message": "Repor predefinição"
+  },
+  "settings.toolbar.title": {
+    "message": "Botões da barra de ferramentas"
+  },
+  "settings.viewer.font.ansi": {
+    "message": "ANSI (Windows)"
+  },
+  "settings.viewer.font.ascii": {
+    "message": "ASCII (DOS)"
+  },
+  "settings.viewer.font.auto": {
+    "message": "Detetar automaticamente"
+  },
+  "settings.viewer.font.label": {
+    "message": "Tipo de letra ao iniciar:"
+  },
+  "settings.viewer.font.variable": {
+    "message": "Largura variável"
+  },
+  "settings.viewer.minimap": {
+    "message": "Minimapa"
+  },
+  "settings.viewer.show": {
+    "message": "Mostrar:"
+  },
+  "settings.viewer.start.auto": {
+    "message": "Detetar automaticamente"
+  },
+  "settings.viewer.start.binary": {
+    "message": "Binário"
+  },
+  "settings.viewer.start.hex": {
+    "message": "Hex"
+  },
+  "settings.viewer.start.label": {
+    "message": "Apresentação ao iniciar:"
+  },
+  "settings.viewer.start.text": {
+    "message": "Texto"
+  },
+  "settings.viewer.title": {
+    "message": "Visualizador para F3"
+  },
+  "settings.viewer.width.binary": {
+    "message": "Binário"
+  },
+  "settings.viewer.width.label": {
+    "message": "Largura de apresentação (caracteres):"
+  },
+  "settings.viewer.width.text": {
+    "message": "Texto"
+  },
+  "settings.viewer.wrap": {
+    "message": "Moldar texto"
+  },
+  "shells.command_prompt": {
+    "message": "Linha de Comandos"
+  },
+  "sidebar.device.no_files": {
+    "message": "não partilha ficheiros"
+  },
+  "sidebar.device.not_answering": {
+    "message": "{name} não responde: desbloqueie-o e abra o KDE Connect nele; depois, leia novamente a pasta (F2)."
+  },
+  "sidebar.device.not_answering_error": {
+    "message": "{name} não responde ({err}): desbloqueie-o e abra o KDE Connect nele."
+  },
+  "sidebar.device.not_connected": {
+    "message": "não ligado"
+  },
+  "sidebar.device.opening": {
+    "message": "A abrir {name}..."
+  },
+  "sidebar.device.reconnecting": {
+    "message": "{name} não responde: a ligar novamente..."
+  },
+  "sidebar.device.unmount_failed": {
+    "message": "{name}: não foi possível desmontar: {err}"
+  },
+  "sidebar.group.bookmarks": {
+    "message": "Marcadores"
+  },
+  "sidebar.group.cloud": {
+    "message": "Nuvem"
+  },
+  "sidebar.group.devices": {
+    "message": "Dispositivos"
+  },
+  "sidebar.group.drives": {
+    "message": "Unidades"
+  },
+  "sidebar.group.network": {
+    "message": "Rede"
+  },
+  "sidebar.section.connections": {
+    "message": "Ligações"
+  },
+  "sidebar.section.folders": {
+    "message": "Pastas"
+  },
+  "sidebar.section.operations": {
+    "message": "Operações"
+  },
+  "sidebar.section.places": {
+    "message": "Locais"
+  },
+  "sidebar.volume.locked": {
+    "message": "bloqueado"
+  },
+  "sidebar.volume.mounting": {
+    "message": "A montar {name}..."
+  },
+  "sidebar.volume.not_mounted": {
+    "message": "não montado"
+  },
+  "sidebar.volume.open": {
+    "message": "Abrir"
+  },
+  "sidebar.volume.space": {
+    "message": "{free} livres de {total}"
+  },
+  "sidebar.volume.unmount": {
+    "message": "Desmontar"
+  },
+  "sidebar.volume.unmount_failed": {
+    "message": "Não foi possível desmontar: {err}"
+  },
+  "split.bad_size": {
+    "message": "«{size}» não é um tamanho: 100 MB, 1.5 GB, 650m"
+  },
+  "split.choose": {
+    "message": "Coloque o cursor no ficheiro a dividir."
+  },
+  "split.combine.choose": {
+    "message": "Coloque o cursor numa parte (nome.001) ou no seu ficheiro .crc."
+  },
+  "split.combine.dialog_title": {
+    "message": "Combinar ficheiros"
+  },
+  "split.combine.label": {
+    "message": "Combinar as partes no ficheiro:"
+  },
+  "split.combine.title": {
+    "message": "Combinar «{name}»"
+  },
+  "split.combined_no_crc": {
+    "message": "{count, plural, one {# parte combinada, sem ficheiro CRC para verificar} other {# partes combinadas, sem ficheiro CRC para verificar}}"
+  },
+  "split.crc_mismatch": {
+    "message": "{target} não corresponde a {file}: falta uma parte ou está danificada"
+  },
+  "split.crc_names_no_file": {
+    "message": "o ficheiro CRC não indica nenhum ficheiro"
+  },
+  "split.crc_unreadable": {
+    "message": "combinado, mas não foi possível ler {file}: {err}"
+  },
+  "split.dialog_title": {
+    "message": "Dividir ficheiro"
+  },
+  "split.label": {
+    "message": "Dividir «{name}» em partes na pasta:"
+  },
+  "split.part_missing": {
+    "message": "{path} não foi encontrado"
+  },
+  "split.part_size": {
+    "message": "Tamanho das partes:"
+  },
+  "split.title": {
+    "message": "Dividir «{name}»"
+  },
+  "sync.close": {
+    "message": "Fechar"
+  },
+  "sync.column.date": {
+    "message": "Data"
+  },
+  "sync.column.name": {
+    "message": "Nome"
+  },
+  "sync.column.size": {
+    "message": "Tamanho"
+  },
+  "sync.compare": {
+    "message": "Comparar"
+  },
+  "sync.confirm.copy_left": {
+    "message": "Copiar {count} para a esquerda ({size})"
+  },
+  "sync.confirm.copy_right": {
+    "message": "Copiar {count} para a direita ({size})"
+  },
+  "sync.confirm.delete_left": {
+    "message": "Eliminar {count} à esquerda"
+  },
+  "sync.confirm.delete_right": {
+    "message": "Eliminar {count} à direita"
+  },
+  "sync.confirm.ok": {
+    "message": "Sincronizar"
+  },
+  "sync.confirm.text": {
+    "message": "{actions}. Os ficheiros copiados substituem os que lá estão.{trash, select, yes { Os eliminados neste computador vão para a Reciclagem.} other {}}"
+  },
+  "sync.confirm.title": {
+    "message": "Sincronizar"
+  },
+  "sync.error.changed": {
+    "message": "alterado desde a comparação; compare novamente"
+  },
+  "sync.error.compare": {
+    "message": "Não foi possível comparar: {err}"
+  },
+  "sync.error.no_folders": {
+    "message": "Sincronizar diretórios compara duas pastas: nenhum dos painéis pode mostrar um arquivo ou resultados de pesquisa."
+  },
+  "sync.left": {
+    "message": "Esq."
+  },
+  "sync.mask.label": {
+    "message": "Ficheiros:"
+  },
+  "sync.option.asymmetric": {
+    "message": "Assimétrico (a direita torna-se uma cópia da esquerda)"
+  },
+  "sync.option.by_content": {
+    "message": "Por conteúdo"
+  },
+  "sync.option.ignore_date": {
+    "message": "Ignorar data"
+  },
+  "sync.option.subfolders": {
+    "message": "Subpastas"
+  },
+  "sync.result.done": {
+    "message": "{count, plural, one {# sincronizado} other {# sincronizados}}"
+  },
+  "sync.result.failed": {
+    "message": "{count, plural, one {# não sincronizado} other {# não sincronizados}}; {first}"
+  },
+  "sync.right": {
+    "message": "Dir."
+  },
+  "sync.show.equal": {
+    "message": "= iguais"
+  },
+  "sync.show.label": {
+    "message": "Mostrar:"
+  },
+  "sync.show.other": {
+    "message": "≠ sem ação"
+  },
+  "sync.show.to_left": {
+    "message": "← para a esquerda"
+  },
+  "sync.show.to_right": {
+    "message": "→ para a direita"
+  },
+  "sync.status.both_empty": {
+    "message": "Ambas estão vazias."
+  },
+  "sync.status.comparing": {
+    "message": "A comparar {folder}"
+  },
+  "sync.status.counts": {
+    "message": "{right} a copiar para a direita, {left} a copiar para a esquerda, {delete} a eliminar, {equal} iguais, {alone} sem ação"
+  },
+  "sync.status.stopped": {
+    "message": "Parado."
+  },
+  "sync.stop": {
+    "message": "Parar"
+  },
+  "sync.synchronize": {
+    "message": "Sincronizar..."
+  },
+  "sync.task.title": {
+    "message": "Sincronizar {left} e {right}"
+  },
+  "sync.title": {
+    "message": "Sincronizar diretórios"
+  },
+  "tab_menu.close_all_tabs": {
+    "message": "Fechar todos os separadores"
+  },
+  "tab_menu.close_duplicate_tabs": {
+    "message": "Fechar separadores duplicados"
+  },
+  "tab_menu.close_tab": {
+    "message": "Fechar este separador"
+  },
+  "tab_menu.copy_tab_to_other_panel": {
+    "message": "Copiar separador para o outro painel"
+  },
+  "tab_menu.duplicate_tab": {
+    "message": "Duplicar este separador"
+  },
+  "tab_menu.list_tabs": {
+    "message": "Mostrar lista de todos os separadores"
+  },
+  "tab_menu.lock_tab": {
+    "message": "Bloquear este separador"
+  },
+  "tab_menu.none": {
+    "message": "(nenhum)"
+  },
+  "tab_menu.rename_tab": {
+    "message": "Mudar o nome do separador..."
+  },
+  "tabs.error.reopen": {
+    "message": "Não foi possível reabrir o separador: {err}"
+  },
+  "tabs.history.empty": {
+    "message": "Ainda não há pastas no histórico deste separador."
+  },
+  "tabs.new": {
+    "message": "Novo separador"
+  },
+  "tabs.rename.label": {
+    "message": "Novo nome:"
+  },
+  "tabs.rename.title": {
+    "message": "Mudar o nome do separador"
+  },
+  "tabs.search_results": {
+    "message": "Resultados da pesquisa"
+  },
+  "terminal.busy": {
+    "message": "Está um programa em execução no terminal: execute o comando quando este terminar."
+  },
+  "terminal.close.idle": {
+    "message": "Fechar este separador de terminal? A sua shell será terminada."
+  },
+  "terminal.close.ok": {
+    "message": "Fechar"
+  },
+  "terminal.close.running": {
+    "message": "Fechar este separador de terminal? O programa em execução será parado."
+  },
+  "terminal.close.title": {
+    "message": "Fechar separador"
+  },
+  "terminal.error.start_shell": {
+    "message": "Não foi possível iniciar a shell: {err}"
+  },
+  "terminal.jump_to_bottom": {
+    "message": "Ir para o fim (Ctrl+End) ↓"
+  },
+  "terminal.menu.copy": {
+    "message": "Copiar"
+  },
+  "terminal.menu.paste": {
+    "message": "Colar"
+  },
+  "toolbar.customize": {
+    "message": "Personalizar barra de ferramentas…"
+  },
+  "tools.clear_key": {
+    "message": "Limpar"
+  },
+  "tools.close": {
+    "message": "Fechar"
+  },
+  "tools.delete": {
+    "message": "Eliminar"
+  },
+  "tools.empty": {
+    "message": "Ainda não há ferramentas: Nova... adiciona uma."
+  },
+  "tools.field.command": {
+    "message": "Comando"
+  },
+  "tools.field.key": {
+    "message": "Tecla"
+  },
+  "tools.field.name": {
+    "message": "Nome"
+  },
+  "tools.intro": {
+    "message": "As suas próprias linhas de comandos, no menu Ferramentas: clique numa delas ou prima a sua tecla."
+  },
+  "tools.key.none": {
+    "message": "Nenhuma"
+  },
+  "tools.key.waiting": {
+    "message": "Prima a tecla... (Esc: nenhuma)"
+  },
+  "tools.move_down": {
+    "message": "Mover para baixo"
+  },
+  "tools.move_up": {
+    "message": "Mover para cima"
+  },
+  "tools.name.placeholder": {
+    "message": "Comparar com o outro lado"
+  },
+  "tools.new": {
+    "message": "Nova..."
+  },
+  "tools.new_name": {
+    "message": "Ferramenta {number}"
+  },
+  "tools.no_command": {
+    "message": "{tool} ainda não tem comando: Ferramentas > Gerir ferramentas."
+  },
+  "tools.not_local": {
+    "message": "As ferramentas são executadas neste computador: o painel mostra um servidor ou um arquivo."
+  },
+  "tools.note.key_of_command": {
+    "message": "{key} também é {command}: a ferramenta fica com ela."
+  },
+  "tools.note.key_of_other_tool": {
+    "message": "{key} também é de {tool}: fica com ela a que estiver mais abaixo na lista."
+  },
+  "tools.placeholders": {
+    "message": "%P a pasta deste painel, %T a do outro painel (ambas terminam num separador de caminho, por isso \"%P%N\" é um caminho), %N o ficheiro sob o cursor, %O o seu nome sem a extensão, %E a extensão, %S os ficheiros selecionados (ou o do cursor), cada um entre aspas; %% um %. Coloque aspas à volta do resto: \"%P%N\"."
+  },
+  "tools.run_in_terminal": {
+    "message": "Executar no terminal, para ver o que escreve"
+  },
+  "tools.set_key": {
+    "message": "Definir tecla..."
+  },
+  "tools.title": {
+    "message": "Ferramentas"
+  },
+  "transfer.answer.cancel": {
+    "message": "Cancelar"
+  },
+  "transfer.answer.elevate": {
+    "message": "Como administrador"
+  },
+  "transfer.answer.overwrite": {
+    "message": "Substituir"
+  },
+  "transfer.answer.overwrite_all": {
+    "message": "Substituir todos"
+  },
+  "transfer.answer.rename": {
+    "message": "Mudar o nome"
+  },
+  "transfer.answer.retry": {
+    "message": "Tentar novamente"
+  },
+  "transfer.answer.skip": {
+    "message": "Ignorar"
+  },
+  "transfer.answer.skip_all": {
+    "message": "Ignorar todos"
+  },
+  "transfer.archive.local_only": {
+    "message": "Só os ficheiros deste computador podem ir para um arquivo: copie-os primeiro para aqui."
+  },
+  "transfer.cancel": {
+    "message": "Cancelar"
+  },
+  "transfer.error.elevate_hint": {
+    "message": "Como administrador: este e o que mais for recusado, depois de feito o resto, pedindo a palavra-passe uma só vez."
+  },
+  "transfer.error.title": {
+    "message": "Erro"
+  },
+  "transfer.exists.describe": {
+    "message": "{count, plural, one {{size} byte, {time}} other {{size} bytes, {time}}}"
+  },
+  "transfer.exists.text": {
+    "message": "O existente: {existing}\nO novo: {new}"
+  },
+  "transfer.exists.title": {
+    "message": "O ficheiro já existe"
+  },
+  "transfer.extract_failed": {
+    "message": "Não foi possível extraí-los: {err}"
+  },
+  "transfer.into_archive.question_many": {
+    "message": "{kind, select, copy {Copiar} other {Mover}} {count, plural, one {# item} other {# itens}} para {into}? O que tiver os mesmos nomes lá é substituído."
+  },
+  "transfer.into_archive.question_one": {
+    "message": "{kind, select, copy {Copiar} other {Mover}} «{name}» para {into}? O que tiver o mesmo nome lá é substituído."
+  },
+  "transfer.into_archive.title_many": {
+    "message": "{kind, select, copy {Copiar} other {Mover}} {count, plural, one {# item} other {# itens}} para {archive}"
+  },
+  "transfer.into_archive.title_one": {
+    "message": "{kind, select, copy {Copiar} other {Mover}} «{name}» para {archive}"
+  },
+  "transfer.label.many": {
+    "message": "{kind, select, copy {Copiar} other {Mover}} {count, plural, one {# item} other {# itens}} para:"
+  },
+  "transfer.label.many_server": {
+    "message": "{kind, select, copy {Copiar} other {Mover}} {count, plural, one {# item} other {# itens}} para {server}:"
+  },
+  "transfer.label.one": {
+    "message": "{kind, select, copy {Copiar} other {Mover}} «{name}» para:"
+  },
+  "transfer.label.one_server": {
+    "message": "{kind, select, copy {Copiar} other {Mover}} «{name}» para {server}:"
+  },
+  "transfer.ok": {
+    "message": "OK"
+  },
+  "transfer.overwrite.all": {
+    "message": "Substituir todos"
+  },
+  "transfer.overwrite.ask": {
+    "message": "Perguntar"
+  },
+  "transfer.overwrite.label": {
+    "message": "Quando o destino tem um ficheiro com o mesmo nome:"
+  },
+  "transfer.overwrite.older": {
+    "message": "Substituir mais antigos"
+  },
+  "transfer.overwrite.rename": {
+    "message": "Mudar o nome das cópias"
+  },
+  "transfer.overwrite.skip": {
+    "message": "Ignorar todos"
+  },
+  "transfer.remove_moved": {
+    "message": "Remover os movidos de {name}"
+  },
+  "transfer.speed": {
+    "message": "{size}/s"
+  },
+  "transfer.strip.counting": {
+    "message": "a contar: {count, plural, one {# ficheiro} other {# ficheiros}}"
+  },
+  "transfer.strip.progress": {
+    "message": "{files} / {count, plural, one {# ficheiro} other {# ficheiros}}, {percent}%"
+  },
+  "transfer.strip.queue": {
+    "message": "Fila..."
+  },
+  "transfer.strip.queue_waiting": {
+    "message": "Fila ({count, plural, one {# em espera} other {# em espera}})..."
+  },
+  "transfer.title.copy": {
+    "message": "Copiar"
+  },
+  "transfer.title.move": {
+    "message": "Mover"
+  },
+  "viewer.as_text_hint": {
+    "message": "{err}. 1 mostra o ficheiro como texto."
+  },
+  "viewer.book.cannot_read": {
+    "message": "Não é possível ler este livro: {err}. 1 mostra o ficheiro como texto."
+  },
+  "viewer.book.continuing": {
+    "message": "A continuar em {percent}"
+  },
+  "viewer.book.error.compression": {
+    "message": "comprimido de uma forma que ainda não é lida ({compression})"
+  },
+  "viewer.book.error.damaged": {
+    "message": "um livro danificado"
+  },
+  "viewer.book.error.damaged_zip": {
+    "message": "um zip danificado"
+  },
+  "viewer.book.error.drm": {
+    "message": "protegido por DRM: só o Kindle o consegue ler"
+  },
+  "viewer.book.error.huffman": {
+    "message": "comprimido como os livros da própria Amazon (HUFF/CDIC), o que ainda não é lido"
+  },
+  "viewer.book.error.missing_part": {
+    "message": "{name} não está no livro"
+  },
+  "viewer.book.error.no_package": {
+    "message": "o livro não tem ficheiro de pacote"
+  },
+  "viewer.book.error.no_text": {
+    "message": "o livro não tem texto"
+  },
+  "viewer.book.error.not_zip": {
+    "message": "não é um zip: um livro danificado ou protegido por DRM?"
+  },
+  "viewer.book.error.zip_method": {
+    "message": "{name}: comprimido de uma forma que o zip não consegue ler aqui ({method})"
+  },
+  "viewer.cannot_show": {
+    "message": "Não é possível mostrar: {err}"
+  },
+  "viewer.convert.failed": {
+    "message": "O {tool} não conseguiu convertê-lo ({status})"
+  },
+  "viewer.converting": {
+    "message": "A converter com {tool}…"
+  },
+  "viewer.copy.too_large": {
+    "message": "As seleções com mais de {megabytes} MB não são copiadas."
+  },
+  "viewer.encoding.cp1250": {
+    "message": "Europa de Leste (1250)"
+  },
+  "viewer.encoding.cp1251": {
+    "message": "Cirílico Windows (1251)"
+  },
+  "viewer.encoding.cp1252": {
+    "message": "Latim 1 Ocidental (1252)"
+  },
+  "viewer.encoding.cp1253": {
+    "message": "Grego (1253)"
+  },
+  "viewer.encoding.cp1254": {
+    "message": "Turco (1254)"
+  },
+  "viewer.encoding.cp1255": {
+    "message": "Hebraico (1255)"
+  },
+  "viewer.encoding.cp1256": {
+    "message": "Árabe (1256)"
+  },
+  "viewer.encoding.cp1257": {
+    "message": "Báltico (1257)"
+  },
+  "viewer.encoding.cp1258": {
+    "message": "Vietnamita (1258)"
+  },
+  "viewer.encoding.cp20866": {
+    "message": "Cirílico KOI8-R (20866)"
+  },
+  "viewer.encoding.cp437": {
+    "message": "DOS-EUA (437)"
+  },
+  "viewer.encoding.cp850": {
+    "message": "DOS-LATIN1 (850)"
+  },
+  "viewer.encoding.cp852": {
+    "message": "DOS Europa Central (852)"
+  },
+  "viewer.encoding.cp866": {
+    "message": "DOS Cirílico (866)"
+  },
+  "viewer.encoding.cp874": {
+    "message": "Tailandês (874)"
+  },
+  "viewer.encoding.cp932": {
+    "message": "Japonês (932)"
+  },
+  "viewer.encoding.cp936": {
+    "message": "Chinês Continental (936)"
+  },
+  "viewer.encoding.cp949": {
+    "message": "Coreano (949)"
+  },
+  "viewer.encoding.cp950": {
+    "message": "Chinês Taiwan (950)"
+  },
+  "viewer.find.not_found": {
+    "message": "Não encontrado: {text}"
+  },
+  "viewer.find.not_hex": {
+    "message": "Não é uma cadeia hexadecimal: {text}"
+  },
+  "viewer.find.nothing": {
+    "message": "Nada para procurar."
+  },
+  "viewer.find.save_failed": {
+    "message": "Não foi possível guardar as pesquisas: {err}"
+  },
+  "viewer.loading": {
+    "message": "A carregar…"
+  },
+  "viewer.markdown.too_large": {
+    "message": "Mais de {megabytes} MB: 1 mostra-o como texto."
+  },
+  "viewer.menu.binary": {
+    "message": "Binário (comprimento de linha fixo)"
+  },
+  "viewer.menu.book": {
+    "message": "Livro (EPUB, FB2)"
+  },
+  "viewer.menu.close": {
+    "message": "Fechar"
+  },
+  "viewer.menu.configure": {
+    "message": "Configurar..."
+  },
+  "viewer.menu.copy_hex": {
+    "message": "Copiar como caracteres hexadecimais"
+  },
+  "viewer.menu.copy_text": {
+    "message": "Copiar como texto"
+  },
+  "viewer.menu.edit": {
+    "message": "Editar"
+  },
+  "viewer.menu.encoding": {
+    "message": "Codificação"
+  },
+  "viewer.menu.file": {
+    "message": "Ficheiro"
+  },
+  "viewer.menu.find": {
+    "message": "Localizar..."
+  },
+  "viewer.menu.find_next": {
+    "message": "Localizar seguinte"
+  },
+  "viewer.menu.fit_image": {
+    "message": "Ajustar imagem à janela"
+  },
+  "viewer.menu.font_ansi": {
+    "message": "ANSI (conjunto de caracteres Windows)"
+  },
+  "viewer.menu.font_ascii": {
+    "message": "ASCII (conjunto de caracteres DOS)"
+  },
+  "viewer.menu.font_page": {
+    "message": "Conforme o tipo de letra"
+  },
+  "viewer.menu.font_variable": {
+    "message": "Largura de caracteres variável"
+  },
+  "viewer.menu.hex": {
+    "message": "Hex"
+  },
+  "viewer.menu.html": {
+    "message": "Texto HTML (sem etiquetas)"
+  },
+  "viewer.menu.minimap": {
+    "message": "Minimapa"
+  },
+  "viewer.menu.next_file": {
+    "message": "Ficheiro seguinte"
+  },
+  "viewer.menu.only_larger": {
+    "message": "Ajustar apenas imagens maiores"
+  },
+  "viewer.menu.open": {
+    "message": "Abrir..."
+  },
+  "viewer.menu.options": {
+    "message": "Opções"
+  },
+  "viewer.menu.picture": {
+    "message": "Imagem/Multimédia"
+  },
+  "viewer.menu.previous_file": {
+    "message": "Ficheiro anterior"
+  },
+  "viewer.menu.reload": {
+    "message": "Recarregar"
+  },
+  "viewer.menu.save_as": {
+    "message": "Guardar como..."
+  },
+  "viewer.menu.search_google": {
+    "message": "Procurar o texto selecionado no Google"
+  },
+  "viewer.menu.select_all": {
+    "message": "Selecionar tudo"
+  },
+  "viewer.menu.syntax_colors": {
+    "message": "Cores de sintaxe"
+  },
+  "viewer.menu.text_only": {
+    "message": "Só texto"
+  },
+  "viewer.menu.unicode": {
+    "message": "Unicode (UTF-16)"
+  },
+  "viewer.menu.wrap": {
+    "message": "Moldar texto ({columns, plural, one {# coluna} other {# colunas}})"
+  },
+  "viewer.mode.binary": {
+    "message": "Binário · {page}"
+  },
+  "viewer.mode.book": {
+    "message": "Livro"
+  },
+  "viewer.mode.hex": {
+    "message": "Hex · {page}"
+  },
+  "viewer.mode.html": {
+    "message": "Texto HTML"
+  },
+  "viewer.mode.image": {
+    "message": "Imagem"
+  },
+  "viewer.mode.multimedia": {
+    "message": "Multimédia"
+  },
+  "viewer.mode.pdf_by": {
+    "message": "PDF por {tool}"
+  },
+  "viewer.mode.text": {
+    "message": "Texto · {page}"
+  },
+  "viewer.origin.not_editable": {
+    "message": "só é possível editar ficheiros em arquivos 7z, zip, jar e tar"
+  },
+  "viewer.origin.updated": {
+    "message": "{archive} atualizado"
+  },
+  "viewer.origin.updated_on": {
+    "message": "{archive} atualizado em {server}"
+  },
+  "viewer.origin.uploaded": {
+    "message": "{path} carregado"
+  },
+  "viewer.pdf.cannot_show": {
+    "message": "Não é possível mostrar este PDF: {err}"
+  },
+  "viewer.pdf.loading": {
+    "message": "A carregar..."
+  },
+  "viewer.pdf.page": {
+    "message": "Página {page} / {pages}"
+  },
+  "viewer.picture.cannot_show": {
+    "message": "Não é possível mostrar esta imagem; 1 mostra-a como texto."
+  },
+  "viewer.save_as.failed": {
+    "message": "Não foi possível guardar {path}: {err}"
+  },
+  "viewer.status.rows": {
+    "message": "{count, plural, one {{first}–{last} de {grouped} linha} other {{first}–{last} de {grouped} linhas}}"
+  },
+  "viewer.status.rows_so_far": {
+    "message": "{count, plural, one {{grouped} linha até agora, {percent} lido} other {{grouped} linhas até agora, {percent} lido}}"
+  },
+  "viewer.status.searching": {
+    "message": "A procurar…"
+  },
+  "viewer.status.size": {
+    "message": "{count, plural, one {{grouped} byte} other {{grouped} bytes}}"
+  },
+  "viewer.window.title": {
+    "message": "{path} — Visualizador"
+  },
+  "viewer.zoom.fit": {
+    "message": "Voltar a ajustar à janela (Ctrl+0)"
+  },
+  "viewer.zoom.in": {
+    "message": "Ampliar (Ctrl++)"
+  },
+  "viewer.zoom.out": {
+    "message": "Reduzir (Ctrl+-)"
+  },
+  "viewer.zoom.reset": {
+    "message": "Voltar a 100% (Ctrl+0)"
+  },
+  "workspaces.button.close": {
+    "message": "Fechar"
+  },
+  "workspaces.button.delete": {
+    "message": "Eliminar..."
+  },
+  "workspaces.button.duplicate": {
+    "message": "Duplicar..."
+  },
+  "workspaces.button.new": {
+    "message": "Novo..."
+  },
+  "workspaces.button.rename": {
+    "message": "Mudar o nome..."
+  },
+  "workspaces.delete.button": {
+    "message": "Eliminar"
+  },
+  "workspaces.delete.closed": {
+    "message": "Eliminar o espaço de trabalho «{name}»? Os seus separadores serão esquecidos."
+  },
+  "workspaces.delete.closed_shells": {
+    "message": "Eliminar o espaço de trabalho «{name}»? Os seus separadores serão esquecidos e as shells dos seus separadores de terminal terminam."
+  },
+  "workspaces.delete.open": {
+    "message": "Eliminar o espaço de trabalho «{name}»? Os seus separadores fecham-se; em vez dele, abre-se «{other}»."
+  },
+  "workspaces.delete.open_shells": {
+    "message": "Eliminar o espaço de trabalho «{name}»? Os seus separadores fecham-se e as shells dos seus separadores de terminal terminam; em vez dele, abre-se «{other}»."
+  },
+  "workspaces.delete.title": {
+    "message": "Eliminar espaço de trabalho"
+  },
+  "workspaces.duplicate.name": {
+    "message": "{name} cópia"
+  },
+  "workspaces.duplicate.title": {
+    "message": "Duplicar espaço de trabalho"
+  },
+  "workspaces.error.name_taken": {
+    "message": "Já existe outro espaço de trabalho com este nome."
+  },
+  "workspaces.error.no_name": {
+    "message": "Um espaço de trabalho precisa de um nome."
+  },
+  "workspaces.error.save": {
+    "message": "Não foi possível guardar os espaços de trabalho: {err}"
+  },
+  "workspaces.hint": {
+    "message": "Mostrar > Espaços de trabalho abre um. O que muda no que está aberto fica guardado nele."
+  },
+  "workspaces.name.label": {
+    "message": "Nome:"
+  },
+  "workspaces.new.name": {
+    "message": "Espaço de trabalho {number}"
+  },
+  "workspaces.new.title": {
+    "message": "Novo espaço de trabalho"
+  },
+  "workspaces.open": {
+    "message": "aberto"
+  },
+  "workspaces.rename.title": {
+    "message": "Mudar o nome do espaço de trabalho"
+  },
+  "workspaces.summary.panels": {
+    "message": "Esquerdo: {left, plural, one {# separador} other {# separadores}}, direito: {right, plural, one {# separador} other {# separadores}}"
+  },
+  "workspaces.summary.terminal": {
+    "message": "Esquerdo: {left, plural, one {# separador} other {# separadores}}, direito: {right, plural, one {# separador} other {# separadores}}, terminal: {terminal, plural, one {# separador} other {# separadores}}"
+  },
+  "workspaces.summary.terminal_hidden": {
+    "message": "Esquerdo: {left, plural, one {# separador} other {# separadores}}, direito: {right, plural, one {# separador} other {# separadores}}, terminal: {terminal, plural, one {# separador} other {# separadores}} (oculto)"
+  },
+  "workspaces.title": {
+    "message": "Espaços de trabalho"
+  }
+}

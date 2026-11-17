@@ -1,0 +1,4823 @@
+{
+  "about.addons": {
+    "message": "Tillägg som hämtas när du vill"
+  },
+  "about.libraries": {
+    "message": "Byggd på"
+  },
+  "about.licence": {
+    "message": "Licens:"
+  },
+  "about.made_with": {
+    "message": "Skapad med arbete från dessa projekt"
+  },
+  "about.part.alacritty_terminal": {
+    "message": "Den inbyggda terminalens skärm och skal"
+  },
+  "about.part.encoding_rs": {
+    "message": "Teckentabeller"
+  },
+  "about.part.gpui": {
+    "message": "Fönstret, ritningen och inmatningen (från Zed)"
+  },
+  "about.part.gpui_kit": {
+    "message": "Kontroller: listor, menyer, fält, redigeraren"
+  },
+  "about.part.html5ever": {
+    "message": "HTML och e-böcker i visaren"
+  },
+  "about.part.image": {
+    "message": "Bilder"
+  },
+  "about.part.keyring": {
+    "message": "Lösenord i systemets nyckelring"
+  },
+  "about.part.lucide": {
+    "message": "Ikoner"
+  },
+  "about.part.material_icons": {
+    "message": "Fil- och mappikoner"
+  },
+  "about.part.pdfium_render": {
+    "message": "PDFium från Rust"
+  },
+  "about.part.ratatui": {
+    "message": "scmd, terminalversionen"
+  },
+  "about.part.russh": {
+    "message": "SSH och SFTP"
+  },
+  "about.part.rustls": {
+    "message": "TLS"
+  },
+  "about.part.serde": {
+    "message": "Inställningsfiler"
+  },
+  "about.part.similar": {
+    "message": "Jämför innehåll"
+  },
+  "about.part.suppaftp": {
+    "message": "FTP och FTPS"
+  },
+  "about.part.tokio": {
+    "message": "Nätverksarbete i bakgrunden"
+  },
+  "about.part.trash": {
+    "message": "Papperskorgen"
+  },
+  "about.part.tree_sitter": {
+    "message": "Kodens färger i visaren och redigeraren"
+  },
+  "about.part.zbus": {
+    "message": "D-Bus: skrivbordet, enheter, KDE Connect"
+  },
+  "about.shipped": {
+    "message": "Medföljer"
+  },
+  "about.tagline": {
+    "message": "En filhanterare med två paneler, fri programvara."
+  },
+  "about.title": {
+    "message": "Om Spark Commander"
+  },
+  "about.version": {
+    "message": "Version {version}"
+  },
+  "activity.clear": {
+    "message": "Rensa"
+  },
+  "activity.clear_failed": {
+    "message": "Det gick inte att rensa loggen: {err}"
+  },
+  "activity.empty": {
+    "message": "Inget har gjorts än."
+  },
+  "activity.title": {
+    "message": "Aktivitetslogg"
+  },
+  "addons.error.damaged": {
+    "message": "nedladdningen är skadad: kontrollsumman stämmer inte"
+  },
+  "addons.error.list": {
+    "message": "listan över tillägg: {err}"
+  },
+  "addons.error.missing_file": {
+    "message": "nedladdningen saknar {file}"
+  },
+  "addons.error.no_folder": {
+    "message": "ingen datamapp"
+  },
+  "addons.error.unpacking": {
+    "message": "uppackning: {err}"
+  },
+  "addons.installed": {
+    "message": "{addon} {version} är installerat."
+  },
+  "addons.megabytes": {
+    "message": "{size} MB"
+  },
+  "addons.offer.never": {
+    "message": "Visa aldrig igen"
+  },
+  "addons.offer.no": {
+    "message": "Nej"
+  },
+  "addons.offer.text": {
+    "message": "{name} behöver ett tillägg som inte är installerat: {addon}. Vill du hämta det under Inställningar > Tillägg?"
+  },
+  "addons.offer.title": {
+    "message": "Tillägg"
+  },
+  "addons.offer.yes": {
+    "message": "Ja"
+  },
+  "addons.purpose.cloud": {
+    "message": "Onlinelagring: S3, Google Drive, OneDrive, Dropbox och andra tjänster."
+  },
+  "addons.purpose.media": {
+    "message": "Video och ljud samt HEIC- och AVIF-foton: visaren och Snabbvisning visar dem."
+  },
+  "addons.purpose.office": {
+    "message": "Office-dokument: visaren visar Word-, Excel- och PowerPoint-filer som PDF."
+  },
+  "addons.purpose.pdfium": {
+    "message": "PDF: visaren visar PDF-filer, och Office-dokument när de har konverterats."
+  },
+  "addons.purpose.seven_zip": {
+    "message": "Arkiv: packar och packar upp 7z, zip, rar, tar med flera."
+  },
+  "addons.update": {
+    "message": "Uppdatera"
+  },
+  "addons.updates": {
+    "message": "Uppdateringar av tillägg: {names}"
+  },
+  "appearance.dark": {
+    "message": "Mörkt"
+  },
+  "appearance.light": {
+    "message": "Ljust"
+  },
+  "appearance.system": {
+    "message": "Som systemet"
+  },
+  "archive.cannot_read": {
+    "message": "{name}: kan inte läsas"
+  },
+  "archive.not_in_archive": {
+    "message": "{name} finns inte i arkivet"
+  },
+  "archive.not_own_folder": {
+    "message": "{folder} är inte den här användarens egen mapp"
+  },
+  "archive.seven_zip_failed": {
+    "message": "7-Zip misslyckades ({code})"
+  },
+  "archive.seven_zip_missing": {
+    "message": "7-Zip saknas: {path} (kör vendor/7zip/fetch.sh eller fetch.bat)"
+  },
+  "archive.temp_not_utf8": {
+    "message": "den tillfälliga mappens namn är inte UTF-8"
+  },
+  "associations.add": {
+    "message": "Lägg till..."
+  },
+  "associations.cancel": {
+    "message": "Avbryt"
+  },
+  "associations.close": {
+    "message": "Stäng"
+  },
+  "associations.column.edit": {
+    "message": "Redigera (F4)"
+  },
+  "associations.column.files": {
+    "message": "Filer"
+  },
+  "associations.column.open": {
+    "message": "Öppna (Enter)"
+  },
+  "associations.column.view": {
+    "message": "Visa (F3)"
+  },
+  "associations.edit": {
+    "message": "Redigera..."
+  },
+  "associations.edit_dialog.title": {
+    "message": "Associera"
+  },
+  "associations.empty": {
+    "message": "Inga än."
+  },
+  "associations.field.edit": {
+    "message": "Redigera med (F4):"
+  },
+  "associations.field.files": {
+    "message": "Filer (*.jpg *.png):"
+  },
+  "associations.field.open": {
+    "message": "Öppna med (Enter):"
+  },
+  "associations.field.view": {
+    "message": "Visa med (F3):"
+  },
+  "associations.intro": {
+    "message": "Enter, F3 och F4 kör dessa program för filer som matchar en mask; tomt behåller standardvalet. %1 är filen."
+  },
+  "associations.mask_needed": {
+    "message": "Filmasken krävs: *.txt"
+  },
+  "associations.no_file": {
+    "message": "Placera markören på en fil av den typ som ska associeras."
+  },
+  "associations.ok": {
+    "message": "OK"
+  },
+  "associations.remove": {
+    "message": "Ta bort"
+  },
+  "associations.save_failed": {
+    "message": "Det gick inte att spara inställningarna: {err}"
+  },
+  "associations.title": {
+    "message": "Interna associationer"
+  },
+  "attributes.bad_time": {
+    "message": "”{text}” är inget datum och klockslag: 2026-11-10 14:04:33"
+  },
+  "attributes.cancel": {
+    "message": "Avbryt"
+  },
+  "attributes.change_time": {
+    "message": "Ändra datum/tid:"
+  },
+  "attributes.changed": {
+    "message": "{count, plural, one {# ändrad} other {# ändrade}}"
+  },
+  "attributes.changed_failed": {
+    "message": "{count, plural, one {# ändrad} other {# ändrade}}, {failed, plural, one {# misslyckades} other {# misslyckades}}"
+  },
+  "attributes.dialog_title_many": {
+    "message": "Ändra attribut: {count, plural, one {# objekt} other {# objekt}}"
+  },
+  "attributes.dialog_title_one": {
+    "message": "Ändra attribut: {name}"
+  },
+  "attributes.execute": {
+    "message": "Köra"
+  },
+  "attributes.group": {
+    "message": "Grupp"
+  },
+  "attributes.in_archive": {
+    "message": "Attribut i arkiv kan inte ändras."
+  },
+  "attributes.no_bits": {
+    "message": "Filerna har inga behörighetsbitar här; bara datumet kan ändras."
+  },
+  "attributes.now": {
+    "message": "Nu"
+  },
+  "attributes.octal": {
+    "message": "Oktalt:"
+  },
+  "attributes.ok": {
+    "message": "OK"
+  },
+  "attributes.others": {
+    "message": "Övriga"
+  },
+  "attributes.owner": {
+    "message": "Ägare"
+  },
+  "attributes.read": {
+    "message": "Läsa"
+  },
+  "attributes.recurse": {
+    "message": "Även allt inuti mapparna"
+  },
+  "attributes.title_many": {
+    "message": "Ändra attribut för {count, plural, one {# objekt} other {# objekt}}"
+  },
+  "attributes.title_one": {
+    "message": "Ändra attribut för ”{name}”"
+  },
+  "attributes.write": {
+    "message": "Skriva"
+  },
+  "bookmarks.add_current": {
+    "message": "Lägg till aktuell mapp"
+  },
+  "bookmarks.add_folders": {
+    "message": "Lägg till mappar..."
+  },
+  "bookmarks.added": {
+    "message": "Bokmärkt: {name}"
+  },
+  "bookmarks.already": {
+    "message": "{name} finns redan i Bokmärken."
+  },
+  "bookmarks.chooser.failed": {
+    "message": "Det gick inte att visa mappväljaren: {err}"
+  },
+  "bookmarks.chooser.prompt": {
+    "message": "Bokmärk"
+  },
+  "bookmarks.close": {
+    "message": "Stäng"
+  },
+  "bookmarks.copy_name": {
+    "message": "Kopiera namn"
+  },
+  "bookmarks.copy_path": {
+    "message": "Kopiera sökväg"
+  },
+  "bookmarks.drop_here": {
+    "message": "Släpp mappar här."
+  },
+  "bookmarks.empty": {
+    "message": "Inga bokmärken: lägg till mappar eller släpp dem här."
+  },
+  "bookmarks.intro": {
+    "message": "Den här datorns mappar, i samma ordning som under Platser: dra en för att flytta den, eller släpp mappar här för att lägga till dem."
+  },
+  "bookmarks.move_down": {
+    "message": "Flytta ned"
+  },
+  "bookmarks.move_up": {
+    "message": "Flytta upp"
+  },
+  "bookmarks.only_local": {
+    "message": "Bara mappar på den här datorn kan bokmärkas."
+  },
+  "bookmarks.remove": {
+    "message": "Ta bort"
+  },
+  "bookmarks.remove_from": {
+    "message": "Ta bort från Bokmärken"
+  },
+  "bookmarks.rename": {
+    "message": "Byt namn..."
+  },
+  "bookmarks.rename_label": {
+    "message": "Namn (tomt: mappens):"
+  },
+  "bookmarks.rename_title": {
+    "message": "Byt namn på bokmärke"
+  },
+  "bookmarks.sort": {
+    "message": "Sortera A–Ö"
+  },
+  "bookmarks.title": {
+    "message": "Bokmärken"
+  },
+  "button_bar.copy": {
+    "message": "Kopiera"
+  },
+  "button_bar.delete": {
+    "message": "Ta bort"
+  },
+  "button_bar.edit": {
+    "message": "Redigera"
+  },
+  "button_bar.move": {
+    "message": "Flytta"
+  },
+  "button_bar.new_folder": {
+    "message": "Ny mapp"
+  },
+  "button_bar.quit": {
+    "message": "Avsluta"
+  },
+  "button_bar.view": {
+    "message": "Visa"
+  },
+  "checksum.create.title": {
+    "message": "Skapa {name}"
+  },
+  "checksum.create.title_separate": {
+    "message": "Skapa {method}-kontrollsummefiler"
+  },
+  "checksum.dialog_title": {
+    "message": "Skapa kontrollsummefiler"
+  },
+  "checksum.save_as": {
+    "message": "Spara kontrollsummefilen som:"
+  },
+  "checksum.separate": {
+    "message": "En kontrollsummefil bredvid varje fil i stället"
+  },
+  "checksum.verify.all_ok": {
+    "message": "{count, plural, one {# fil OK} other {alla # filer OK}}"
+  },
+  "checksum.verify.choose": {
+    "message": "Välj kontrollsummefiler: .sfv, .md5, .sha1, .sha256 eller .sha512."
+  },
+  "checksum.verify.missing_file": {
+    "message": "saknas: {name}"
+  },
+  "checksum.verify.result": {
+    "message": "{ok, plural, one {# OK} other {# OK}}, {wrong, plural, one {# fel} other {# fel}}, {missing, plural, one {# saknas} other {# saknas}}"
+  },
+  "checksum.verify.title_many": {
+    "message": "Verifiera {count, plural, one {# kontrollsummefil} other {# kontrollsummefiler}}"
+  },
+  "checksum.verify.title_one": {
+    "message": "Verifiera {name}"
+  },
+  "checksum.verify.wrong_file": {
+    "message": "fel: {name}"
+  },
+  "command.about": {
+    "message": "Om Spark Commander"
+  },
+  "command.activity_log": {
+    "message": "Aktivitetslogg..."
+  },
+  "command.all_files": {
+    "message": "Alla filer"
+  },
+  "command.all_folder_sizes": {
+    "message": "Beräkna storlek på alla mappar"
+  },
+  "command.all_with_extension": {
+    "message": "*.*"
+  },
+  "command.associate_with": {
+    "message": "Associera med..."
+  },
+  "command.bookmark_folder": {
+    "message": "Bokmärk den här mappen"
+  },
+  "command.bookmarks": {
+    "message": "Bokmärken"
+  },
+  "command.branch_view": {
+    "message": "Grenvy (med undermappar)"
+  },
+  "command.branch_view_selected": {
+    "message": "Grenvy av markerade mappar"
+  },
+  "command.brief": {
+    "message": "Kort"
+  },
+  "command.calculate_occupied_space": {
+    "message": "Beräkna använt utrymme..."
+  },
+  "command.change_attributes": {
+    "message": "Ändra attribut..."
+  },
+  "command.close_all_tabs": {
+    "message": "Stäng alla flikar"
+  },
+  "command.close_duplicate_tabs": {
+    "message": "Stäng dubblettflikar"
+  },
+  "command.close_tab": {
+    "message": "Stäng flik"
+  },
+  "command.combine_files": {
+    "message": "Sammanfoga filer..."
+  },
+  "command.compare_by_content": {
+    "message": "Jämför innehåll..."
+  },
+  "command.compare_directories": {
+    "message": "Markera nyare"
+  },
+  "command.copy": {
+    "message": "Kopiera..."
+  },
+  "command.copy_names_to_clipboard": {
+    "message": "Kopiera markerade namn till Urklipp"
+  },
+  "command.copy_names_with_path_to_clipboard": {
+    "message": "Kopiera namn med sökväg till Urklipp"
+  },
+  "command.copy_to_clipboard": {
+    "message": "Kopiera filer"
+  },
+  "command.copy_with_all_details": {
+    "message": "Kopiera till Urklipp med alla detaljer"
+  },
+  "command.copy_with_path_and_details": {
+    "message": "Kopiera till Urklipp med sökväg+detaljer"
+  },
+  "command.create_checksum_files": {
+    "message": "Skapa kontrollsummefil(er) (CRC32, MD5, SHA1, SHA256, SHA512)..."
+  },
+  "command.create_link": {
+    "message": "Skapa länk..."
+  },
+  "command.custom_filter": {
+    "message": "Anpassat..."
+  },
+  "command.cut_to_clipboard": {
+    "message": "Klipp ut filer"
+  },
+  "command.delete": {
+    "message": "Ta bort"
+  },
+  "command.delete_permanently": {
+    "message": "Ta bort permanent"
+  },
+  "command.disconnect": {
+    "message": "Koppla från servern"
+  },
+  "command.download_link": {
+    "message": "Hämta från länk..."
+  },
+  "command.duplicate_tab": {
+    "message": "Ny flik"
+  },
+  "command.duplicate_workspace": {
+    "message": "Duplicera arbetsyta..."
+  },
+  "command.edit": {
+    "message": "Redigera"
+  },
+  "command.edit_externally": {
+    "message": "Redigera med extern redigerare"
+  },
+  "command.folder_history": {
+    "message": "Mapphistorik..."
+  },
+  "command.full": {
+    "message": "Fullständig"
+  },
+  "command.go_back": {
+    "message": "Bakåt"
+  },
+  "command.go_forward": {
+    "message": "Framåt"
+  },
+  "command.go_home": {
+    "message": "Hemmapp"
+  },
+  "command.go_to_root": {
+    "message": "Rotmapp"
+  },
+  "command.hidden_files": {
+    "message": "Dolda filer"
+  },
+  "command.internal_associations": {
+    "message": "Interna associationer (endast Spark Commander)..."
+  },
+  "command.invert_selection": {
+    "message": "Invertera markering"
+  },
+  "command.left_drives": {
+    "message": "Enheter (vänster panel)"
+  },
+  "command.list_tabs": {
+    "message": "Lista över flikar"
+  },
+  "command.load_selection_from_file": {
+    "message": "Läs in markering från fil"
+  },
+  "command.manage_bookmarks": {
+    "message": "Hantera bokmärken..."
+  },
+  "command.manage_tools": {
+    "message": "Hantera verktyg..."
+  },
+  "command.manage_workspaces": {
+    "message": "Hantera arbetsytor..."
+  },
+  "command.mark_in_place": {
+    "message": "Markera / avmarkera på plats, med mappens storlek"
+  },
+  "command.mark_newer_hide_same": {
+    "message": "Markera nyare, dölj lika filer"
+  },
+  "command.move": {
+    "message": "Flytta..."
+  },
+  "command.multi_rename_tool": {
+    "message": "Massnamnbyte..."
+  },
+  "command.name_to_command_line": {
+    "message": "Namn till kommandoraden"
+  },
+  "command.new_folder": {
+    "message": "Ny mapp..."
+  },
+  "command.new_terminal": {
+    "message": "Ny terminalflik"
+  },
+  "command.new_text_file": {
+    "message": "Ny fil..."
+  },
+  "command.new_workspace": {
+    "message": "Ny arbetsyta..."
+  },
+  "command.next_tab": {
+    "message": "Nästa flik"
+  },
+  "command.only_selected_files": {
+    "message": "Endast markerade filer"
+  },
+  "command.open_in_left_panel": {
+    "message": "Visa i vänster panel"
+  },
+  "command.open_in_new_tab": {
+    "message": "Öppna mapp i ny flik"
+  },
+  "command.open_in_other_new_tab": {
+    "message": "Öppna mappen i en ny flik i den andra panelen"
+  },
+  "command.open_in_right_panel": {
+    "message": "Visa i höger panel"
+  },
+  "command.open_terminal": {
+    "message": "Öppna terminal här"
+  },
+  "command.operation_queue": {
+    "message": "Åtgärdskö..."
+  },
+  "command.pack": {
+    "message": "Packa..."
+  },
+  "command.paste_from_clipboard": {
+    "message": "Klistra in filer"
+  },
+  "command.path_and_name_to_command_line": {
+    "message": "Sökväg och namn till kommandoraden"
+  },
+  "command.path_to_command_line": {
+    "message": "Sökväg till kommandoraden"
+  },
+  "command.previous_tab": {
+    "message": "Föregående flik"
+  },
+  "command.programs": {
+    "message": "Program"
+  },
+  "command.properties": {
+    "message": "Egenskaper..."
+  },
+  "command.quick_filter": {
+    "message": "Snabbfilter"
+  },
+  "command.quick_open": {
+    "message": "Snabböppna..."
+  },
+  "command.quick_view_panel": {
+    "message": "Snabbvisningspanel"
+  },
+  "command.quit": {
+    "message": "Avsluta"
+  },
+  "command.redo": {
+    "message": "Gör om"
+  },
+  "command.rename_in_place": {
+    "message": "Byt namn"
+  },
+  "command.reread_source": {
+    "message": "Läs om källan"
+  },
+  "command.restore_selection": {
+    "message": "Återställ markering"
+  },
+  "command.reversed_order": {
+    "message": "Omvänd ordning"
+  },
+  "command.right_drives": {
+    "message": "Enheter (höger panel)"
+  },
+  "command.save_selection": {
+    "message": "Spara markering"
+  },
+  "command.save_selection_to_file": {
+    "message": "Spara markering till fil"
+  },
+  "command.search": {
+    "message": "Sök..."
+  },
+  "command.search_in_separate_process": {
+    "message": "Sök i separat fönster..."
+  },
+  "command.select_all": {
+    "message": "Markera alla"
+  },
+  "command.select_all_with_same_extension": {
+    "message": "Markera alla med samma filändelse"
+  },
+  "command.select_group": {
+    "message": "Markera grupp..."
+  },
+  "command.settings": {
+    "message": "Inställningar..."
+  },
+  "command.shortcuts": {
+    "message": "Kortkommandon..."
+  },
+  "command.sidebar_connections": {
+    "message": "Anslutningar"
+  },
+  "command.sidebar_operations": {
+    "message": "Åtgärder"
+  },
+  "command.sidebar_places": {
+    "message": "Platser"
+  },
+  "command.sidebar_tree": {
+    "message": "Mappar"
+  },
+  "command.sort_by_extension": {
+    "message": "Filändelse"
+  },
+  "command.sort_by_name": {
+    "message": "Namn"
+  },
+  "command.sort_by_size": {
+    "message": "Storlek"
+  },
+  "command.sort_by_time": {
+    "message": "Tid"
+  },
+  "command.split_file": {
+    "message": "Dela upp fil..."
+  },
+  "command.swap_panels": {
+    "message": "Byt plats på panelerna"
+  },
+  "command.swap_panels_and_tabs": {
+    "message": "Byt plats på panelerna med deras flikar"
+  },
+  "command.sync_browsing": {
+    "message": "Synkroniserad bläddring"
+  },
+  "command.synchronize_dirs": {
+    "message": "Synkronisera mappar..."
+  },
+  "command.target_equals_source": {
+    "message": "Mål = källa"
+  },
+  "command.terminal_panel": {
+    "message": "Terminal"
+  },
+  "command.test_archives": {
+    "message": "Testa arkiv"
+  },
+  "command.thumbnail_view": {
+    "message": "Miniatyrvy"
+  },
+  "command.toggle_mark": {
+    "message": "Markera / avmarkera"
+  },
+  "command.toggle_sidebar": {
+    "message": "Visa sidopanel"
+  },
+  "command.undo": {
+    "message": "Ångra"
+  },
+  "command.unpack_specific_files": {
+    "message": "Packa upp valda filer..."
+  },
+  "command.unselect_all": {
+    "message": "Avmarkera alla"
+  },
+  "command.unselect_group": {
+    "message": "Avmarkera grupp..."
+  },
+  "command.unsorted": {
+    "message": "Osorterat"
+  },
+  "command.verify_checksums": {
+    "message": "Verifiera kontrollsummor (från kontrollsummefiler)"
+  },
+  "command.vertical_arrangement": {
+    "message": "Lodrät placering"
+  },
+  "command.view": {
+    "message": "Visa"
+  },
+  "command.website": {
+    "message": "Spark Commanders webbplats"
+  },
+  "command.workspace1": {
+    "message": "Öppna arbetsyta 1"
+  },
+  "command.workspace2": {
+    "message": "Öppna arbetsyta 2"
+  },
+  "command.workspace3": {
+    "message": "Öppna arbetsyta 3"
+  },
+  "command.workspace4": {
+    "message": "Öppna arbetsyta 4"
+  },
+  "command.workspace5": {
+    "message": "Öppna arbetsyta 5"
+  },
+  "command.workspace6": {
+    "message": "Öppna arbetsyta 6"
+  },
+  "command.workspace7": {
+    "message": "Öppna arbetsyta 7"
+  },
+  "command.workspace8": {
+    "message": "Öppna arbetsyta 8"
+  },
+  "command.workspace9": {
+    "message": "Öppna arbetsyta 9"
+  },
+  "command_line.error.cannot_run": {
+    "message": "{program}: kan inte köras"
+  },
+  "command_line.error.not_found": {
+    "message": "{program}: kommandot hittades inte"
+  },
+  "command_line.history.empty": {
+    "message": "Inga kommandon har körts än"
+  },
+  "command_line.on_server": {
+    "message": "Kommandon körs på den här datorn; panelen visar en server."
+  },
+  "command_name.all_files": {
+    "message": "Visa alla filer"
+  },
+  "command_name.all_with_extension": {
+    "message": "Visa *.*"
+  },
+  "command_name.brief": {
+    "message": "Kort vy"
+  },
+  "command_name.compare_directories": {
+    "message": "Jämför mappar: markera nyare"
+  },
+  "command_name.custom_filter": {
+    "message": "Anpassat filter"
+  },
+  "command_name.duplicate_tab": {
+    "message": "Ny flik (en kopia av den här)"
+  },
+  "command_name.full": {
+    "message": "Fullständig vy"
+  },
+  "command_name.go_back": {
+    "message": "Gå bakåt"
+  },
+  "command_name.go_forward": {
+    "message": "Gå framåt"
+  },
+  "command_name.go_home": {
+    "message": "Gå till hemmappen"
+  },
+  "command_name.hidden_files": {
+    "message": "Visa dolda filer"
+  },
+  "command_name.only_selected_files": {
+    "message": "Visa endast markerade filer"
+  },
+  "command_name.programs": {
+    "message": "Visa program"
+  },
+  "command_name.quick_filter": {
+    "message": "Snabbfilter"
+  },
+  "command_name.rename_in_place": {
+    "message": "Byt namn på plats"
+  },
+  "command_name.sidebar_connections": {
+    "message": "Sidopanel: Anslutningar"
+  },
+  "command_name.sidebar_operations": {
+    "message": "Sidopanel: Åtgärder"
+  },
+  "command_name.sidebar_places": {
+    "message": "Sidopanel: Platser"
+  },
+  "command_name.sidebar_tree": {
+    "message": "Sidopanel: Mappar"
+  },
+  "command_name.sort_by_extension": {
+    "message": "Sortera efter filändelse"
+  },
+  "command_name.sort_by_name": {
+    "message": "Sortera efter namn"
+  },
+  "command_name.sort_by_size": {
+    "message": "Sortera efter storlek"
+  },
+  "command_name.sort_by_time": {
+    "message": "Sortera efter tid"
+  },
+  "command_name.toggle_sidebar": {
+    "message": "Sidopanel: visa eller dölj"
+  },
+  "command_name.unsorted": {
+    "message": "Ingen sortering"
+  },
+  "compare.browse.prompt": {
+    "message": "Jämför"
+  },
+  "compare.button.compare": {
+    "message": "Jämför"
+  },
+  "compare.button.next": {
+    "message": "Nästa skillnad (N)"
+  },
+  "compare.button.previous": {
+    "message": "Föregående skillnad (P)"
+  },
+  "compare.need_two_files": {
+    "message": "Placera markören på en fil i varje panel, eller markera två filer."
+  },
+  "compare.option.binary": {
+    "message": "Binärt"
+  },
+  "compare.option.ignore_case": {
+    "message": "Ignorera skiftläge"
+  },
+  "compare.option.ignore_spaces": {
+    "message": "Ignorera upprepade blanksteg"
+  },
+  "compare.option.only_differences": {
+    "message": "Endast skillnader"
+  },
+  "compare.status.bytes_differ": {
+    "message": "{place}: {count, plural, one {{grouped} byte skiljer sig} other {{grouped} byte skiljer sig}}, den första vid {first}; storlekar {left} och {right}."
+  },
+  "compare.status.comparing": {
+    "message": "Jämför…"
+  },
+  "compare.status.difference_of": {
+    "message": "Skillnad {at} av {count}"
+  },
+  "compare.status.differences": {
+    "message": "{count, plural, one {# skillnad} other {# skillnader}}"
+  },
+  "compare.status.identical": {
+    "message": "{count, plural, one {Filerna är identiska: {grouped} byte.} other {Filerna är identiska: {grouped} byte.}}"
+  },
+  "compare.status.no_differences": {
+    "message": "Inga skillnader."
+  },
+  "compare.window.title": {
+    "message": "Jämför: {left} — {right}"
+  },
+  "connections.connect": {
+    "message": "Anslut"
+  },
+  "connections.copy_name": {
+    "message": "Kopiera namn"
+  },
+  "connections.copy_path": {
+    "message": "Kopiera sökväg"
+  },
+  "connections.delete": {
+    "message": "Ta bort"
+  },
+  "connections.dialog.title": {
+    "message": "Anslutning"
+  },
+  "connections.disconnect": {
+    "message": "Koppla från"
+  },
+  "connections.duplicate": {
+    "message": "Duplicera"
+  },
+  "connections.duplicate_name": {
+    "message": "{name} (kopia)"
+  },
+  "connections.edit": {
+    "message": "Redigera..."
+  },
+  "connections.empty": {
+    "message": "Inga anslutningar än."
+  },
+  "connections.error.no_server": {
+    "message": "En server krävs."
+  },
+  "connections.error.port": {
+    "message": "Inte ett portnummer: {text}"
+  },
+  "connections.field.access_key": {
+    "message": "Åtkomstnyckel"
+  },
+  "connections.field.api_key": {
+    "message": "API-nyckel"
+  },
+  "connections.field.application_key": {
+    "message": "Programnyckel"
+  },
+  "connections.field.bucket": {
+    "message": "Bucket/mapp"
+  },
+  "connections.field.container": {
+    "message": "Behållare/mapp"
+  },
+  "connections.field.endpoint": {
+    "message": "Slutpunkt"
+  },
+  "connections.field.key_id": {
+    "message": "Nyckel-ID"
+  },
+  "connections.field.name": {
+    "message": "Namn"
+  },
+  "connections.field.password": {
+    "message": "Lösenord"
+  },
+  "connections.field.port": {
+    "message": "Port"
+  },
+  "connections.field.protocol": {
+    "message": "Protokoll"
+  },
+  "connections.field.secret_key": {
+    "message": "Hemlig nyckel"
+  },
+  "connections.field.server": {
+    "message": "Server"
+  },
+  "connections.field.start_folder": {
+    "message": "Startmapp"
+  },
+  "connections.field.user": {
+    "message": "Användare"
+  },
+  "connections.folder.delete_confirm": {
+    "message": "{count, plural, one {Vill du ta bort mappen {name} och anslutningen i den?} other {Vill du ta bort mappen {name} och de # anslutningarna i den?}}"
+  },
+  "connections.folder.delete_title": {
+    "message": "Ta bort mapp"
+  },
+  "connections.folder.exists": {
+    "message": "Det finns redan en mapp med namnet {name}."
+  },
+  "connections.folder.name": {
+    "message": "Namn:"
+  },
+  "connections.folder.new_title": {
+    "message": "Ny mapp"
+  },
+  "connections.folder.rename": {
+    "message": "Byt namn..."
+  },
+  "connections.folder.rename_title": {
+    "message": "Byt namn på mapp"
+  },
+  "connections.forget_password": {
+    "message": "Glöm det sparade lösenordet"
+  },
+  "connections.move_down": {
+    "message": "Flytta ned"
+  },
+  "connections.move_to_folder": {
+    "message": "Flytta till mapp"
+  },
+  "connections.move_up": {
+    "message": "Flytta upp"
+  },
+  "connections.new": {
+    "message": "Ny anslutning..."
+  },
+  "connections.new_folder": {
+    "message": "Ny mapp..."
+  },
+  "connections.no_folder": {
+    "message": "Ingen mapp"
+  },
+  "connections.open_in_terminal": {
+    "message": "Öppna i terminal"
+  },
+  "connections.placeholder.name": {
+    "message": "som listan visar den"
+  },
+  "connections.placeholder.password": {
+    "message": "sparas krypterat i inställningsmappen; tomt behåller det"
+  },
+  "connections.placeholder.path": {
+    "message": "inloggningsmappen"
+  },
+  "connections.placeholder.port": {
+    "message": "standard"
+  },
+  "connections.placeholder.server": {
+    "message": "server, eller en värd i ~/.ssh/config"
+  },
+  "connections.placeholder.user": {
+    "message": "enligt ~/.ssh/config, eller anonym"
+  },
+  "connections.save_failed": {
+    "message": "Det gick inte att spara anslutningarna: {err}"
+  },
+  "connections.ssh_config.read_only": {
+    "message": "Skrivskyddat: dessa värdar redigeras i själva ~/.ssh/config"
+  },
+  "context_menu.action_failed": {
+    "message": "{name} misslyckades: {err}"
+  },
+  "context_menu.actions": {
+    "message": "Åtgärder"
+  },
+  "context_menu.copy": {
+    "message": "Kopiera"
+  },
+  "context_menu.create_new": {
+    "message": "Skapa ny"
+  },
+  "context_menu.cut": {
+    "message": "Klipp ut"
+  },
+  "context_menu.delete": {
+    "message": "Ta bort"
+  },
+  "context_menu.edit": {
+    "message": "Redigera"
+  },
+  "context_menu.empty_file": {
+    "message": "Tom fil…"
+  },
+  "context_menu.move_to_trash": {
+    "message": "Flytta till papperskorgen"
+  },
+  "context_menu.new_file_dialog.label": {
+    "message": "Nytt filnamn:"
+  },
+  "context_menu.new_file_dialog.title": {
+    "message": "Ny fil"
+  },
+  "context_menu.new_file_failed": {
+    "message": "Det gick inte att skapa filen: {err}"
+  },
+  "context_menu.new_folder": {
+    "message": "Mapp…"
+  },
+  "context_menu.open": {
+    "message": "Öppna"
+  },
+  "context_menu.open_failed": {
+    "message": "Det gick inte att öppna: {err}"
+  },
+  "context_menu.open_terminal_here": {
+    "message": "Öppna terminal här"
+  },
+  "context_menu.open_with": {
+    "message": "Öppna med"
+  },
+  "context_menu.other_application": {
+    "message": "Annat program…"
+  },
+  "context_menu.pack": {
+    "message": "Packa…"
+  },
+  "context_menu.pack_files": {
+    "message": "Packa filer"
+  },
+  "context_menu.paste": {
+    "message": "Klistra in"
+  },
+  "context_menu.properties": {
+    "message": "Egenskaper"
+  },
+  "context_menu.properties_failed": {
+    "message": "Egenskaper: {err}"
+  },
+  "context_menu.rename": {
+    "message": "Byt namn…"
+  },
+  "context_menu.rename_dialog.label": {
+    "message": "Nytt namn:"
+  },
+  "context_menu.rename_dialog.title": {
+    "message": "Byt namn"
+  },
+  "context_menu.rename_failed": {
+    "message": "Det gick inte att byta namn: {err}"
+  },
+  "context_menu.shell_menu_failed": {
+    "message": "Menyn: {err}"
+  },
+  "context_menu.show_failed": {
+    "message": "Det gick inte att visa det: {err}"
+  },
+  "context_menu.show_in_file_manager": {
+    "message": "Visa i filhanteraren"
+  },
+  "context_menu.terminal_failed": {
+    "message": "Det gick inte att öppna en terminal: {err}"
+  },
+  "context_menu.terminal_not_local": {
+    "message": "En terminal kan bara öppnas i mappar på den här datorn."
+  },
+  "context_menu.unpack": {
+    "message": "Packa upp…"
+  },
+  "context_menu.view": {
+    "message": "Visa"
+  },
+  "desktop.no_app_chooser": {
+    "message": "skrivbordet har ingen programväljare ({err})"
+  },
+  "desktop.no_terminal": {
+    "message": "ingen terminal hittades"
+  },
+  "desktop.nothing_to_run": {
+    "message": "{name}: inget att köra"
+  },
+  "desktop.scripts": {
+    "message": "Skript"
+  },
+  "devices.error.mount_failed": {
+    "message": "det gick inte att montera enheten"
+  },
+  "devices.error.no_folder": {
+    "message": "enheten delar ingen mapp"
+  },
+  "devices.error.system_only": {
+    "message": "bara systemet kan avmontera den här"
+  },
+  "devices.error.unreachable": {
+    "message": "kan inte nås: är KDE Connect öppet på den, i det här nätverket?"
+  },
+  "devices.unlock.ask": {
+    "message": "Lösenfrasen för {name}:"
+  },
+  "devices.unlock.ask_again": {
+    "message": "Fel lösenfras. Lösenfrasen för {name}:"
+  },
+  "devices.unlock.title": {
+    "message": "Lås upp"
+  },
+  "devices.volume.share_on_server": {
+    "message": "{share} på {server}"
+  },
+  "devices.volume.unnamed": {
+    "message": "{size} GB-volym"
+  },
+  "devices.volume.unnamed_encrypted": {
+    "message": "{size} GB krypterad volym"
+  },
+  "download.cancel": {
+    "message": "Avbryt"
+  },
+  "download.dialog_title": {
+    "message": "Hämta från länk"
+  },
+  "download.download": {
+    "message": "Hämta"
+  },
+  "download.folder_link": {
+    "message": "länken pekar på en mapp"
+  },
+  "download.incomplete": {
+    "message": "servern skickade {got} av {size, plural, one {# byte} other {# byte}}; om du hämtar den igen fortsätter den därifrån"
+  },
+  "download.into": {
+    "message": "Till {folder}"
+  },
+  "download.link": {
+    "message": "Länk"
+  },
+  "download.link_placeholder": {
+    "message": "https://, http://, ftp:// eller ftps://"
+  },
+  "download.local_only": {
+    "message": "Nedladdningar hamnar i mappar på den här datorn: öppna en i panelen först."
+  },
+  "download.name_placeholder": {
+    "message": "som servern eller länken namnger den"
+  },
+  "download.no_file": {
+    "message": "länken anger ingen fil"
+  },
+  "download.not_a_link": {
+    "message": "inte en länk som kan hämtas"
+  },
+  "download.problem.bad_name": {
+    "message": "Ett filnamn, utan mapp i det."
+  },
+  "download.problem.empty": {
+    "message": "Klistra in eller skriv en länk."
+  },
+  "download.problem.exists": {
+    "message": "Det finns redan en {name} här: Ersätt hämtar över den."
+  },
+  "download.problem.not_link": {
+    "message": "Inte en länk som kan hämtas: en sådan börjar med https://, http://, ftp:// eller ftps://."
+  },
+  "download.replace": {
+    "message": "Ersätt"
+  },
+  "download.save_as": {
+    "message": "Spara som"
+  },
+  "download.saved_as": {
+    "message": "sparad som {name}"
+  },
+  "download.title": {
+    "message": "Hämta ”{name}”"
+  },
+  "download.title_link": {
+    "message": "Hämta {link}"
+  },
+  "editor.close.after_send": {
+    "message": "Den stängs när servern har fått filen."
+  },
+  "editor.close.discard": {
+    "message": "Spara inte"
+  },
+  "editor.close.save": {
+    "message": "Spara"
+  },
+  "editor.close.title": {
+    "message": "Spara ändringarna?"
+  },
+  "editor.close.unsaved": {
+    "message": "{name} har ändringar som inte har sparats."
+  },
+  "editor.close.unsent": {
+    "message": "{name} är inte sparad på sin server: det gick inte att skicka den."
+  },
+  "editor.dialog.cancel": {
+    "message": "Avbryt"
+  },
+  "editor.edit.copy": {
+    "message": "Kopiera"
+  },
+  "editor.edit.cut": {
+    "message": "Klipp ut"
+  },
+  "editor.edit.find": {
+    "message": "Sök..."
+  },
+  "editor.edit.find_next": {
+    "message": "Sök nästa"
+  },
+  "editor.edit.find_previous": {
+    "message": "Sök föregående"
+  },
+  "editor.edit.go_to_line": {
+    "message": "Gå till rad..."
+  },
+  "editor.edit.paste": {
+    "message": "Klistra in"
+  },
+  "editor.edit.redo": {
+    "message": "Gör om"
+  },
+  "editor.edit.replace": {
+    "message": "Ersätt..."
+  },
+  "editor.edit.undo": {
+    "message": "Ångra"
+  },
+  "editor.external.not_set": {
+    "message": "ingen extern redigerare är inställd (Inställningar, Redigera/Visa)"
+  },
+  "editor.file.close": {
+    "message": "Stäng"
+  },
+  "editor.file.reload": {
+    "message": "Läs in igen"
+  },
+  "editor.file.save": {
+    "message": "Spara"
+  },
+  "editor.file.save_as": {
+    "message": "Spara som..."
+  },
+  "editor.find.close": {
+    "message": "Stäng (Escape)"
+  },
+  "editor.find.count": {
+    "message": "{current} av {total}"
+  },
+  "editor.find.in_selection": {
+    "message": "Sök i markering (Alt+L)"
+  },
+  "editor.find.match_case": {
+    "message": "Matcha skiftläge (Alt+C)"
+  },
+  "editor.find.next": {
+    "message": "Nästa träff (Enter)"
+  },
+  "editor.find.no_results": {
+    "message": "Inga träffar"
+  },
+  "editor.find.placeholder": {
+    "message": "Sök"
+  },
+  "editor.find.preserve_case": {
+    "message": "Bevara skiftläge (Alt+P)"
+  },
+  "editor.find.previous": {
+    "message": "Föregående träff (Shift+Enter)"
+  },
+  "editor.find.regex": {
+    "message": "Använd reguljärt uttryck (Alt+R)"
+  },
+  "editor.find.replace": {
+    "message": "Ersätt (Ctrl+Shift+1)"
+  },
+  "editor.find.replace_all": {
+    "message": "Ersätt alla (Ctrl+Alt+Enter)"
+  },
+  "editor.find.replace_placeholder": {
+    "message": "Ersätt"
+  },
+  "editor.find.toggle_replace": {
+    "message": "Visa/dölj Ersätt"
+  },
+  "editor.find.whole_word": {
+    "message": "Matcha hela ord (Alt+W)"
+  },
+  "editor.go_to_line.label": {
+    "message": "Rad, eller rad:kolumn"
+  },
+  "editor.go_to_line.title": {
+    "message": "Gå till rad"
+  },
+  "editor.language.by_file_name": {
+    "message": "Efter filnamnet"
+  },
+  "editor.language.plain_text": {
+    "message": "Oformaterad text"
+  },
+  "editor.menu.edit": {
+    "message": "Redigera"
+  },
+  "editor.menu.file": {
+    "message": "Fil"
+  },
+  "editor.menu.language": {
+    "message": "Språk"
+  },
+  "editor.menu.selection": {
+    "message": "Markering"
+  },
+  "editor.menu.view": {
+    "message": "Visa"
+  },
+  "editor.open.too_large": {
+    "message": "större än den inbyggda redigerarens {limit_mb} MB (Inställningar, Redigera/Visa); Ctrl+Shift+F4 redigerar den i den externa"
+  },
+  "editor.reload.button": {
+    "message": "Läs in igen"
+  },
+  "editor.reload.failed": {
+    "message": "Det gick inte att läsa in den igen: {err}"
+  },
+  "editor.reload.text": {
+    "message": "De ändringar som inte har sparats går förlorade."
+  },
+  "editor.reload.title": {
+    "message": "Läsa in filen igen?"
+  },
+  "editor.reload.unfit": {
+    "message": "Inte inläst igen: {why, select, binary {den är binär} other {den är inte UTF-8-text}}."
+  },
+  "editor.save.admin": {
+    "message": "Sparande av ”{name}”"
+  },
+  "editor.save.failed": {
+    "message": "Det gick inte att spara {path}: {err}"
+  },
+  "editor.save_anyway.button": {
+    "message": "Spara ändå"
+  },
+  "editor.save_anyway.text": {
+    "message": "Filen var inte text: när den sparas skrivs den som den visas, så det som inte var text ändras för gott."
+  },
+  "editor.save_anyway.title": {
+    "message": "Spara som text?"
+  },
+  "editor.selection.add_cursor_above": {
+    "message": "Lägg till markör ovanför"
+  },
+  "editor.selection.add_cursor_below": {
+    "message": "Lägg till markör nedanför"
+  },
+  "editor.selection.delete_lines": {
+    "message": "Ta bort rader"
+  },
+  "editor.selection.duplicate_lines": {
+    "message": "Duplicera rader"
+  },
+  "editor.selection.indent": {
+    "message": "Öka indrag"
+  },
+  "editor.selection.lowercase": {
+    "message": "gemener"
+  },
+  "editor.selection.move_lines_down": {
+    "message": "Flytta rader nedåt"
+  },
+  "editor.selection.move_lines_up": {
+    "message": "Flytta rader uppåt"
+  },
+  "editor.selection.outdent": {
+    "message": "Minska indrag"
+  },
+  "editor.selection.select_all": {
+    "message": "Markera allt"
+  },
+  "editor.selection.select_all_occurrences": {
+    "message": "Markera alla förekomster"
+  },
+  "editor.selection.sort_lines_ascending": {
+    "message": "Sortera rader stigande"
+  },
+  "editor.selection.sort_lines_descending": {
+    "message": "Sortera rader fallande"
+  },
+  "editor.selection.title_case": {
+    "message": "Inledande Versal"
+  },
+  "editor.selection.toggle_line_comment": {
+    "message": "Växla radkommentar"
+  },
+  "editor.selection.trim_trailing_whitespace": {
+    "message": "Ta bort avslutande blanksteg"
+  },
+  "editor.selection.uppercase": {
+    "message": "VERSALER"
+  },
+  "editor.send.failed": {
+    "message": "Det gick inte att spara tillbaka den: {err}. Spara försöker igen."
+  },
+  "editor.status.modified": {
+    "message": "Ändrad"
+  },
+  "editor.status.position": {
+    "message": "Rad {line}, kol {column}"
+  },
+  "editor.status.position_selected": {
+    "message": "Rad {line}, kol {column} ({count, plural, one {# markerat} other {# markerade}})"
+  },
+  "editor.status.sending": {
+    "message": "Sparar till servern"
+  },
+  "editor.status.spaces": {
+    "message": "Blanksteg: {size}"
+  },
+  "editor.status.tab_size": {
+    "message": "Tabbstorlek: {size}"
+  },
+  "editor.status.unsent": {
+    "message": "Inte på servern"
+  },
+  "editor.terminal.not_found": {
+    "message": "ingen redigerare hittades; ange $EDITOR"
+  },
+  "editor.title": {
+    "message": "{path} — Redigerare"
+  },
+  "editor.unfit.open_anyway": {
+    "message": "Öppna ändå"
+  },
+  "editor.unfit.text": {
+    "message": "Filen visas inte i redigeraren eftersom {why, select, binary {den är binär} other {den inte är UTF-8-text}}."
+  },
+  "editor.view.folding": {
+    "message": "Vikning"
+  },
+  "editor.view.indent_guides": {
+    "message": "Indragsguider"
+  },
+  "editor.view.indent_with_tabs": {
+    "message": "Indrag med tabbar"
+  },
+  "editor.view.line_numbers": {
+    "message": "Radnummer"
+  },
+  "editor.view.minimap": {
+    "message": "Minikarta"
+  },
+  "editor.view.tab_width": {
+    "message": "Tabbredd {width}"
+  },
+  "editor.view.unfold_all": {
+    "message": "Fäll ut alla"
+  },
+  "editor.view.whitespace": {
+    "message": "Blanksteg"
+  },
+  "editor.view.word_wrap": {
+    "message": "Radbrytning"
+  },
+  "elevate.failed": {
+    "message": "som administratör misslyckades det också ({code})"
+  },
+  "elevate.no_consent": {
+    "message": "administratören gav inte sitt medgivande"
+  },
+  "elevate.no_password": {
+    "message": "lösenordet angavs inte"
+  },
+  "elevate.not_authorised": {
+    "message": "inte behörig"
+  },
+  "elevate.percent_name": {
+    "message": "{path}: ett namn med % kan inte hanteras som administratör; byt namn på det först"
+  },
+  "elevate.pkexec_missing": {
+    "message": "pkexec (polkit) är inte installerat"
+  },
+  "file_menu.change_tags_failed": {
+    "message": "Det gick inte att ändra taggarna: {err}"
+  },
+  "file_menu.compress": {
+    "message": "{count, plural, =1 {Komprimera ”{name}”…} one {Komprimera # objekt…} other {Komprimera # objekt…}}"
+  },
+  "file_menu.copy": {
+    "message": "{count, plural, =1 {Kopiera ”{name}”} one {Kopiera # objekt} other {Kopiera # objekt}}"
+  },
+  "file_menu.copy_path": {
+    "message": "Kopiera sökväg till Urklipp"
+  },
+  "file_menu.delete": {
+    "message": "Radera"
+  },
+  "file_menu.duplicate": {
+    "message": "Duplicera"
+  },
+  "file_menu.duplicate_failed": {
+    "message": "Det gick inte att duplicera: {err}"
+  },
+  "file_menu.edit_tags": {
+    "message": "Taggar…"
+  },
+  "file_menu.get_info": {
+    "message": "Visa info"
+  },
+  "file_menu.make_alias": {
+    "message": "Skapa alias"
+  },
+  "file_menu.make_alias_failed": {
+    "message": "Det gick inte att skapa aliaset: {err}"
+  },
+  "file_menu.move_to_trash": {
+    "message": "Flytta till papperskorgen"
+  },
+  "file_menu.new_folder": {
+    "message": "Ny mapp"
+  },
+  "file_menu.open": {
+    "message": "Öppna"
+  },
+  "file_menu.open_failed": {
+    "message": "Det gick inte att öppna: {err}"
+  },
+  "file_menu.open_with": {
+    "message": "Öppna med"
+  },
+  "file_menu.open_with_default": {
+    "message": "{app} (förval)"
+  },
+  "file_menu.paste": {
+    "message": "Klistra in"
+  },
+  "file_menu.quick_look": {
+    "message": "{count, plural, =1 {Snabbtitt på ”{name}”} one {Snabbtitt på # objekt} other {Snabbtitt på # objekt}}"
+  },
+  "file_menu.quick_look_failed": {
+    "message": "Snabbtitt: {err}"
+  },
+  "file_menu.rename": {
+    "message": "Byt namn…"
+  },
+  "file_menu.reveal_failed": {
+    "message": "Det gick inte att visa det i Finder: {err}"
+  },
+  "file_menu.reveal_in_finder": {
+    "message": "Visa i Finder"
+  },
+  "file_menu.show_package_contents": {
+    "message": "Visa paketinnehåll"
+  },
+  "file_menu.tag_dot.add": {
+    "message": "Lägg till taggen ”{name}”"
+  },
+  "file_menu.tag_dot.remove": {
+    "message": "Ta bort taggen ”{name}”"
+  },
+  "file_menu.tags_popover.show_all": {
+    "message": "Visa alla…"
+  },
+  "file_menu.tags_popover.title": {
+    "message": "{count, plural, =1 {Tilldela taggar till ”{name}”} one {Tilldela taggar till # objekt} other {Tilldela taggar till # objekt}}"
+  },
+  "find.backwards": {
+    "message": "Sök bakåt"
+  },
+  "find.cancel": {
+    "message": "Avbryt"
+  },
+  "find.case_sensitive": {
+    "message": "Skiftlägeskänslig"
+  },
+  "find.hex": {
+    "message": "Sök hexsträng"
+  },
+  "find.ok": {
+    "message": "OK"
+  },
+  "find.regex": {
+    "message": "RegEx"
+  },
+  "find.text.label": {
+    "message": "Ange söktext"
+  },
+  "find.title": {
+    "message": "Sök"
+  },
+  "find.whole_words": {
+    "message": "Endast hela ord"
+  },
+  "keys.apply": {
+    "message": "Verkställ"
+  },
+  "keys.cancel": {
+    "message": "Avbryt"
+  },
+  "keys.clear.tooltip": {
+    "message": "Ingen tangent"
+  },
+  "keys.column.alternate": {
+    "message": "Alternativ"
+  },
+  "keys.column.command": {
+    "message": "Kommando"
+  },
+  "keys.column.shortcut": {
+    "message": "Kortkommando"
+  },
+  "keys.custom": {
+    "message": "Anpassat"
+  },
+  "keys.delete_set": {
+    "message": "Ta bort"
+  },
+  "keys.note.custom_replaced": {
+    "message": "Dina egna tangenter ersattes av tangenterna från {name}; Spara som behåller dem."
+  },
+  "keys.note.deleted": {
+    "message": "{name} är borttagen; OK eller Verkställ gör det slutgiltigt."
+  },
+  "keys.note.moved": {
+    "message": "{key} är nu {command}, inte längre {other}."
+  },
+  "keys.note.name_reserved": {
+    "message": "”{name}” är namnet på en förinställning; välj ett annat."
+  },
+  "keys.note.press_new_key": {
+    "message": "Tryck på den nya tangenten; Esc lämnar den som den var."
+  },
+  "keys.note.saved": {
+    "message": "Sparad som {name}; OK eller Verkställ behåller den."
+  },
+  "keys.note.set": {
+    "message": "{key} är nu {command}."
+  },
+  "keys.note.taken_by_system": {
+    "message": "{key} används av {by}, så den når aldrig Spark Commander."
+  },
+  "keys.ok": {
+    "message": "OK"
+  },
+  "keys.press_key": {
+    "message": "Tryck på en tangent…"
+  },
+  "keys.reserved.application_launcher": {
+    "message": "{system}: programstartaren"
+  },
+  "keys.reserved.close_window": {
+    "message": "{system}: stäng fönstret"
+  },
+  "keys.reserved.close_window_or_tab": {
+    "message": "{system}: stäng fönstret eller fliken"
+  },
+  "keys.reserved.dock": {
+    "message": "{system}: Dock"
+  },
+  "keys.reserved.floating_window": {
+    "message": "{system}: det flytande fönstret"
+  },
+  "keys.reserved.force_quit": {
+    "message": "{system}: tvångsavsluta"
+  },
+  "keys.reserved.hide_program": {
+    "message": "{system}: dölj programmet"
+  },
+  "keys.reserved.input_source": {
+    "message": "{system}: inmatningskällan"
+  },
+  "keys.reserved.keyboard_access": {
+    "message": "{system}: tangentbordsåtkomst"
+  },
+  "keys.reserved.keyboard_navigation": {
+    "message": "{system}: tangentbordsnavigering"
+  },
+  "keys.reserved.krunner": {
+    "message": "{system}: KRunner"
+  },
+  "keys.reserved.lock_screen": {
+    "message": "{system}: lås skärmen"
+  },
+  "keys.reserved.log_out": {
+    "message": "{system}: logga ut"
+  },
+  "keys.reserved.maximize_window": {
+    "message": "{system}: maximera fönstret"
+  },
+  "keys.reserved.menu_bar": {
+    "message": "{system}: menyraden"
+  },
+  "keys.reserved.minimize": {
+    "message": "{system}: minimera"
+  },
+  "keys.reserved.mission_control": {
+    "message": "{system}: Mission Control"
+  },
+  "keys.reserved.move_window": {
+    "message": "{system}: flytta fönstret"
+  },
+  "keys.reserved.next_window": {
+    "message": "{system}: nästa fönster"
+  },
+  "keys.reserved.present_windows": {
+    "message": "{system}: Presentera fönster"
+  },
+  "keys.reserved.present_windows_all": {
+    "message": "{system}: Presentera fönster (alla skrivbord)"
+  },
+  "keys.reserved.present_windows_class": {
+    "message": "{system}: Presentera fönster (fönsterklass)"
+  },
+  "keys.reserved.program_windows": {
+    "message": "{system}: programmets fönster"
+  },
+  "keys.reserved.quit": {
+    "message": "{system}: avsluta"
+  },
+  "keys.reserved.resize_window": {
+    "message": "{system}: ändra fönstrets storlek"
+  },
+  "keys.reserved.restore_window": {
+    "message": "{system}: återställ fönstret"
+  },
+  "keys.reserved.run_command": {
+    "message": "{system}: kör ett kommando"
+  },
+  "keys.reserved.screenshot": {
+    "message": "{system}: skärmbild"
+  },
+  "keys.reserved.security_screen": {
+    "message": "{system}: säkerhetsskärmen"
+  },
+  "keys.reserved.show_desktop": {
+    "message": "{system}: visa skrivbordet"
+  },
+  "keys.reserved.space_left": {
+    "message": "{system}: space till vänster"
+  },
+  "keys.reserved.space_right": {
+    "message": "{system}: space till höger"
+  },
+  "keys.reserved.spotlight": {
+    "message": "{system}: Spotlight"
+  },
+  "keys.reserved.start_menu": {
+    "message": "{system}: Start-menyn"
+  },
+  "keys.reserved.status_menus": {
+    "message": "{system}: statusmenyerna"
+  },
+  "keys.reserved.suspend_compositing": {
+    "message": "{system}: stoppa sammansättning tillfälligt"
+  },
+  "keys.reserved.switch_program_windows": {
+    "message": "{system}: växla mellan programmets fönster"
+  },
+  "keys.reserved.switch_programs": {
+    "message": "{system}: växla program"
+  },
+  "keys.reserved.switch_system_controls": {
+    "message": "{system}: växla systemkontroller"
+  },
+  "keys.reserved.switch_to_desktop": {
+    "message": "{system}: byt till skrivbord {number}"
+  },
+  "keys.reserved.switch_windows": {
+    "message": "{system}: växla fönster"
+  },
+  "keys.reserved.system_monitor": {
+    "message": "{system}: Systemövervakare"
+  },
+  "keys.reserved.task_manager": {
+    "message": "{system}: Aktivitetshanteraren"
+  },
+  "keys.reserved.text_console": {
+    "message": "{system}: byt till en textkonsol"
+  },
+  "keys.reserved.toolbar": {
+    "message": "{system}: verktygsfältet"
+  },
+  "keys.reserved.window_menu": {
+    "message": "{system}: fönstermenyn"
+  },
+  "keys.reserved.workspace_down": {
+    "message": "{system}: arbetsytan nedanför"
+  },
+  "keys.reserved.workspace_left": {
+    "message": "{system}: arbetsytan till vänster"
+  },
+  "keys.reserved.workspace_right": {
+    "message": "{system}: arbetsytan till höger"
+  },
+  "keys.reserved.workspace_up": {
+    "message": "{system}: arbetsytan ovanför"
+  },
+  "keys.reset.tooltip": {
+    "message": "Tillbaka till tangenterna från {preset}"
+  },
+  "keys.reset_all": {
+    "message": "Återställ alla"
+  },
+  "keys.save_as.button": {
+    "message": "Spara som…"
+  },
+  "keys.save_as.default_name": {
+    "message": "Mina tangenter"
+  },
+  "keys.save_as.label": {
+    "message": "Namn:"
+  },
+  "keys.save_as.title": {
+    "message": "Spara kortkommandon"
+  },
+  "keys.search.placeholder": {
+    "message": "Sök efter ett kommando eller en tangent"
+  },
+  "keys.set_label": {
+    "message": "Tangenter:"
+  },
+  "keys.taken_by.tooltip": {
+    "message": "Används av {by}"
+  },
+  "keys.title": {
+    "message": "Kortkommandon"
+  },
+  "main.admin.button": {
+    "message": "Som administratör"
+  },
+  "main.admin.deleting": {
+    "message": "Borttagning av {count, plural, one {# objekt} other {# objekt}}"
+  },
+  "main.admin.failed": {
+    "message": "Som administratör: {err}"
+  },
+  "main.admin.making": {
+    "message": "Skapande av ”{name}”"
+  },
+  "main.admin.offer": {
+    "message": "{what}: åtkomst nekad. Som administratör frågar systemet efter lösenordet."
+  },
+  "main.admin.offer_delete": {
+    "message": "{what}: åtkomst nekad. Som administratör frågar systemet efter lösenordet. Det som tas bort på det sättet försvinner för gott."
+  },
+  "main.admin.title": {
+    "message": "Åtkomst nekad"
+  },
+  "main.delete.from_archive": {
+    "message": "{kind, select, folder {Vill du ta bort mappen ”{name}” från {archive}? Det går inte att ångra.} file {Vill du ta bort filen ”{name}” från {archive}? Det går inte att ångra.} other {Vill du ta bort {count, plural, one {# objekt} other {# objekt}} från {archive}? Det går inte att ångra.}}"
+  },
+  "main.delete.on_server": {
+    "message": "{kind, select, folder {Vill du ta bort mappen ”{name}” på {server}? Det går inte att ångra.} file {Vill du ta bort filen ”{name}” på {server}? Det går inte att ångra.} other {Vill du ta bort {count, plural, one {# objekt} other {# objekt}} på {server}? Det går inte att ångra.}}"
+  },
+  "main.delete.permanently": {
+    "message": "{kind, select, folder {Vill du ta bort mappen ”{name}” permanent? Det går inte att ångra.} file {Vill du ta bort filen ”{name}” permanent? Det går inte att ångra.} other {Vill du ta bort {count, plural, one {# objekt} other {# objekt}} permanent? Det går inte att ångra.}}"
+  },
+  "main.delete.title": {
+    "message": "Ta bort"
+  },
+  "main.delete.title_permanently": {
+    "message": "Ta bort permanent"
+  },
+  "main.delete.to_trash": {
+    "message": "{kind, select, folder {Vill du flytta mappen ”{name}” till papperskorgen?} file {Vill du flytta filen ”{name}” till papperskorgen?} other {Vill du flytta {count, plural, one {# objekt} other {# objekt}} till papperskorgen?}}"
+  },
+  "main.download.edit": {
+    "message": "Hämta {file} för redigering"
+  },
+  "main.download.view": {
+    "message": "Hämta {file} för visning"
+  },
+  "main.error.make_folder": {
+    "message": "Det gick inte att skapa mappen: {err}"
+  },
+  "main.error.read_settings": {
+    "message": "Det gick inte att läsa inställningarna: {err}"
+  },
+  "main.error.read_tabs": {
+    "message": "Det gick inte att läsa de öppna flikarna: {err}"
+  },
+  "main.error.read_workspaces": {
+    "message": "Det gick inte att läsa arbetsytorna: {err}"
+  },
+  "main.error.save_settings": {
+    "message": "Det gick inte att spara inställningarna: {err}"
+  },
+  "main.folder_tree.home": {
+    "message": "Hem"
+  },
+  "main.go.no_such_folder": {
+    "message": "{path}: ingen sådan mapp på den här datorn"
+  },
+  "main.new_folder.label": {
+    "message": "Ny mapp (katalog):"
+  },
+  "main.new_folder.title": {
+    "message": "Ny mapp"
+  },
+  "main.sync_browsing.lost": {
+    "message": "{err}. Synkroniserad bläddring är avstängd."
+  },
+  "main.tool.needs_file": {
+    "message": "Markören står inte på någon fil: %N, %O och %E behöver en."
+  },
+  "main.tool.needs_local_folder": {
+    "message": "Den andra panelen visar en server eller ett arkiv: %T behöver en mapp på den här datorn."
+  },
+  "main.undo.done": {
+    "message": "{way, select, redo {Gjort om: {title}} other {Ångrat: {title}}}"
+  },
+  "main.undo.failed": {
+    "message": "{way, select, redo {Det gick inte att göra om ”{title}”: {err}} other {Det gick inte att ångra ”{title}”: {err}}}"
+  },
+  "main.undo.nothing": {
+    "message": "{way, select, redo {Inget att göra om.} other {Inget att ångra.}}"
+  },
+  "main.undo.queued": {
+    "message": "{way, select, redo {I kön för att göras om: {title}} other {I kön för att ångras: {title}}}"
+  },
+  "mark.compare.marked": {
+    "message": "{count, plural, one {# fil markerad: nyare än på andra sidan, eller saknas där.} other {# filer markerade: nyare än på andra sidan, eller saknas där.}}"
+  },
+  "mark.compare.same": {
+    "message": "Mapparna har samma filer."
+  },
+  "mark.load_selection.label": {
+    "message": "Markera namnen som listas i filen:"
+  },
+  "mark.load_selection.title": {
+    "message": "Läs in markering"
+  },
+  "mark.save_selection.label": {
+    "message": "Spara de markerade namnen i filen:"
+  },
+  "mark.save_selection.title": {
+    "message": "Spara markering"
+  },
+  "mark.select_group.label": {
+    "message": "Markera filerna (*.txt *.md; en mappmask slutar med /):"
+  },
+  "mark.select_group.title": {
+    "message": "Markera grupp"
+  },
+  "mark.selection_file.not_local": {
+    "message": "Markeringsfiler sparas på den här datorn, utanför arkiv."
+  },
+  "mark.unselect_group.label": {
+    "message": "Avmarkera filerna (*.txt *.md; en mappmask slutar med /):"
+  },
+  "mark.unselect_group.title": {
+    "message": "Avmarkera grupp"
+  },
+  "media.cannot_play": {
+    "message": "Det här kan inte spelas upp: {err}"
+  },
+  "media.cannot_play_as_text": {
+    "message": "Det här kan inte spelas upp: {err}. 1 visar det som text."
+  },
+  "media.continuing": {
+    "message": "Fortsätter vid {time}"
+  },
+  "media.error.missing": {
+    "message": "libmpv saknas: Inställningar > Tillägg hämtar det (vid bygge från källkod: vendor/mpv/{script})"
+  },
+  "media.error.not_started": {
+    "message": "libmpv kunde inte starta"
+  },
+  "media.error.too_long": {
+    "message": "{path}: mpv tog för lång tid"
+  },
+  "media.error.unsupported_system": {
+    "message": "video spelas än så länge bara upp på Linux, macOS och Windows"
+  },
+  "menu.archive": {
+    "message": "Arkiv"
+  },
+  "menu.associations": {
+    "message": "Associationer"
+  },
+  "menu.button_bar": {
+    "message": "Knappfält"
+  },
+  "menu.checksums": {
+    "message": "Kontrollsummor"
+  },
+  "menu.commands": {
+    "message": "Kommandon"
+  },
+  "menu.compare_directories": {
+    "message": "Jämför mappar"
+  },
+  "menu.configuration": {
+    "message": "Konfiguration"
+  },
+  "menu.copy_names": {
+    "message": "Kopiera namn"
+  },
+  "menu.files": {
+    "message": "Filer"
+  },
+  "menu.filter": {
+    "message": "Filter"
+  },
+  "menu.go": {
+    "message": "Gå"
+  },
+  "menu.help": {
+    "message": "Hjälp"
+  },
+  "menu.mark": {
+    "message": "Markera"
+  },
+  "menu.other": {
+    "message": "Övrigt"
+  },
+  "menu.recently_closed_tabs": {
+    "message": "Nyligen stängda flikar"
+  },
+  "menu.selection": {
+    "message": "Markering"
+  },
+  "menu.show": {
+    "message": "Visa"
+  },
+  "menu.sidebar": {
+    "message": "Sidopanel"
+  },
+  "menu.sort": {
+    "message": "Sortera"
+  },
+  "menu.split_and_combine": {
+    "message": "Dela upp och sammanfoga"
+  },
+  "menu.tabs": {
+    "message": "Flikar"
+  },
+  "menu.tools": {
+    "message": "Verktyg"
+  },
+  "menu.workspaces": {
+    "message": "Arbetsytor"
+  },
+  "menus.hide_app": {
+    "message": "Göm Spark Commander"
+  },
+  "menus.hide_others": {
+    "message": "Göm övriga"
+  },
+  "menus.minimize": {
+    "message": "Minimera"
+  },
+  "menus.quit_app": {
+    "message": "Avsluta Spark Commander"
+  },
+  "menus.services": {
+    "message": "Tjänster"
+  },
+  "menus.show_all": {
+    "message": "Visa alla"
+  },
+  "menus.zoom": {
+    "message": "Zooma"
+  },
+  "name_dialog.cancel": {
+    "message": "Avbryt"
+  },
+  "name_dialog.ok": {
+    "message": "OK"
+  },
+  "operations.clear": {
+    "message": "Rensa klara"
+  },
+  "operations.duration.seconds": {
+    "message": "{seconds} s"
+  },
+  "operations.empty": {
+    "message": "Inga åtgärder."
+  },
+  "operations.job.answer": {
+    "message": "Väntar på ditt svar"
+  },
+  "operations.job.bytes": {
+    "message": "{done} av {total}"
+  },
+  "operations.job.cancel_tooltip": {
+    "message": "Avbryt"
+  },
+  "operations.job.cancelled": {
+    "message": "Avbruten"
+  },
+  "operations.job.counting": {
+    "message": "Räknar: {count, plural, one {# fil} other {# filer}}"
+  },
+  "operations.job.done": {
+    "message": "Klar"
+  },
+  "operations.job.done_skipped": {
+    "message": "Klar, {count, plural, one {# överhoppad} other {# överhoppade}}"
+  },
+  "operations.job.failed": {
+    "message": "Misslyckades"
+  },
+  "operations.job.files": {
+    "message": "{files} / {count, plural, one {# fil} other {# filer}}"
+  },
+  "operations.job.left": {
+    "message": "{time} kvar"
+  },
+  "operations.job.running": {
+    "message": "Körs"
+  },
+  "operations.job.waiting": {
+    "message": "Väntar"
+  },
+  "operations.menu.cancel": {
+    "message": "Avbryt"
+  },
+  "operations.menu.clear": {
+    "message": "Rensa klara"
+  },
+  "operations.menu.move_down": {
+    "message": "Flytta ned"
+  },
+  "operations.menu.move_up": {
+    "message": "Flytta upp"
+  },
+  "operations.settings_tooltip": {
+    "message": "Inställningar för åtgärdskön"
+  },
+  "operations.summary.failed": {
+    "message": "{count, plural, one {# misslyckad} other {# misslyckade}}"
+  },
+  "operations.summary.running": {
+    "message": "{count, plural, one {# körs} other {# körs}}"
+  },
+  "operations.summary.waiting": {
+    "message": "{count, plural, one {# väntar} other {# väntar}}"
+  },
+  "ops.as_administrator.failed": {
+    "message": "Som administratör: {err}"
+  },
+  "ops.as_administrator.progress": {
+    "message": "Som administratör…"
+  },
+  "ops.delete.title_many": {
+    "message": "Ta bort {count, plural, one {# objekt} other {# objekt}} i {folder}"
+  },
+  "ops.delete.title_one": {
+    "message": "Ta bort ”{name}”"
+  },
+  "ops.delete.trash_title_many": {
+    "message": "Flytta {count, plural, one {# objekt} other {# objekt}} i {folder} till papperskorgen"
+  },
+  "ops.delete.trash_title_one": {
+    "message": "Flytta ”{name}” till papperskorgen"
+  },
+  "ops.error.file_in_the_way": {
+    "message": "en fil med det här namnet är i vägen"
+  },
+  "ops.error.into_itself": {
+    "message": "kan inte kopieras in i sig själv"
+  },
+  "ops.exists_already": {
+    "message": "{name} finns redan"
+  },
+  "ops.link.dialog_title": {
+    "message": "Skapa länk"
+  },
+  "ops.link.failed": {
+    "message": "Det gick inte att skapa länken: {err}"
+  },
+  "ops.link.kind.hard": {
+    "message": "Hård länk"
+  },
+  "ops.link.kind.junction": {
+    "message": "Katalogkoppling"
+  },
+  "ops.link.kind.shortcut": {
+    "message": "Genväg (.lnk)"
+  },
+  "ops.link.kind.symbolic": {
+    "message": "Symbolisk länk"
+  },
+  "ops.link.label_many": {
+    "message": "Länkar till {count, plural, one {# objekt} other {# objekt}}, i mappen:"
+  },
+  "ops.link.label_one": {
+    "message": "Länk till ”{name}” som:"
+  },
+  "ops.link.making": {
+    "message": "Skapande av {kind, select, symbolic {den symboliska länken} hard {den hårda länken} junction {katalogkopplingen} other {genvägen (.lnk)}}"
+  },
+  "ops.link.needs_admin": {
+    "message": "symboliska länkar kräver en administratör eller Utvecklarläge"
+  },
+  "ops.link.thread_failed": {
+    "message": "genvägens tråd misslyckades"
+  },
+  "ops.link.title_many": {
+    "message": "{kind, select, symbolic {Symboliska länkar} hard {Hårda länkar} junction {Katalogkopplingar} other {Genvägar (.lnk)}} till {count, plural, one {# objekt} other {# objekt}} i {folder}"
+  },
+  "ops.link.title_one": {
+    "message": "{kind, select, symbolic {Symbolisk länk} hard {Hård länk} junction {Katalogkoppling} other {Genväg (.lnk)}} till ”{name}” i {folder}"
+  },
+  "ops.link.windows_only": {
+    "message": "katalogkopplingar och genvägar finns bara i Windows"
+  },
+  "ops.redo.title": {
+    "message": "Gör om: {what}"
+  },
+  "ops.title.many": {
+    "message": "{kind, select, copy {Kopiera} other {Flytta}} {count, plural, one {# objekt} other {# objekt}} till {target}"
+  },
+  "ops.title.one": {
+    "message": "{kind, select, copy {Kopiera} other {Flytta}} ”{name}” till {target}"
+  },
+  "ops.undo.not_a_server": {
+    "message": "{url}: inte en serveradress"
+  },
+  "ops.undo.not_in_trash": {
+    "message": "de finns inte längre i papperskorgen"
+  },
+  "ops.undo.restore_title": {
+    "message": "{title}: det som skrevs över, tillbaka från papperskorgen"
+  },
+  "ops.undo.title": {
+    "message": "Ångra: {what}"
+  },
+  "pack.cancel": {
+    "message": "Avbryt"
+  },
+  "pack.compression": {
+    "message": "Komprimering:"
+  },
+  "pack.dialog_title": {
+    "message": "Packa filer"
+  },
+  "pack.encrypt": {
+    "message": "Kryptera med lösenordet"
+  },
+  "pack.format": {
+    "message": "Format:"
+  },
+  "pack.label": {
+    "message": "Packa {count, plural, one {# objekt} other {# objekt}} i arkivet:"
+  },
+  "pack.level.fastest": {
+    "message": "Snabbast"
+  },
+  "pack.level.maximum": {
+    "message": "Maximal"
+  },
+  "pack.level.normal": {
+    "message": "Normal"
+  },
+  "pack.level.store": {
+    "message": "Lagra"
+  },
+  "pack.level.ultra": {
+    "message": "Ultra"
+  },
+  "pack.local_only": {
+    "message": "{what, select, packing {Packning} unpacking {Uppackning} testing {Testning} creating_checksums {Skapande av kontrollsummor} making_links {Skapande av länkar} verifying_checksums {Verifiering av kontrollsummor} splitting {Uppdelning} combining {Sammanfogning} other {Det här}} fungerar på filer på den här datorn, utanför arkiv."
+  },
+  "pack.move_files": {
+    "message": "Flytta till arkiv (ta bort de packade filerna)"
+  },
+  "pack.needs_password": {
+    "message": "det krävs ett lösenord"
+  },
+  "pack.ok": {
+    "message": "OK"
+  },
+  "pack.password_missing": {
+    "message": "Skriv lösenordet, eller låt Kryptera vara avmarkerat."
+  },
+  "pack.separate": {
+    "message": "Ett arkiv för varje markerad fil eller mapp"
+  },
+  "pack.split": {
+    "message": "Dela upp i volymer om"
+  },
+  "pack.split_unit": {
+    "message": "MB"
+  },
+  "pack.test.broken": {
+    "message": "{broken, plural, one {# av {count} trasigt} other {# av {count} trasiga}}"
+  },
+  "pack.test.choose": {
+    "message": "Välj de arkiv som ska testas."
+  },
+  "pack.test.ok": {
+    "message": "{count, plural, one {# arkiv OK} other {# arkiv OK}}"
+  },
+  "pack.test.title_many": {
+    "message": "Testa {count, plural, one {# arkiv} other {# arkiv}}"
+  },
+  "pack.test.title_one": {
+    "message": "Testa ”{name}”"
+  },
+  "pack.title.many": {
+    "message": "Packa {count, plural, one {# objekt} other {# objekt}} i {archive}"
+  },
+  "pack.title.many_separate": {
+    "message": "Packa {count, plural, one {# objekt} other {# objekt}} i separata {format}-arkiv"
+  },
+  "pack.title.one": {
+    "message": "Packa ”{name}” i {archive}"
+  },
+  "pack.title.one_separate": {
+    "message": "Packa ”{name}” i separata {format}-arkiv"
+  },
+  "pack.unpack.choose": {
+    "message": "Välj de arkiv som ska packas upp."
+  },
+  "pack.unpack.dialog_title": {
+    "message": "Packa upp filer"
+  },
+  "pack.unpack.label": {
+    "message": "Packa upp {count, plural, one {# arkiv} other {# arkiv}} till:"
+  },
+  "pack.unpack.mask": {
+    "message": "Endast filerna:"
+  },
+  "pack.unpack.overwrite": {
+    "message": "Skriv över befintliga filer (annars behålls de)"
+  },
+  "pack.unpack.password": {
+    "message": "Lösenord:"
+  },
+  "pack.unpack.separate": {
+    "message": "Varje arkiv i en mapp med dess namn"
+  },
+  "pack.unpack.title_many": {
+    "message": "Packa upp {count, plural, one {# arkiv} other {# arkiv}} till {target}"
+  },
+  "pack.unpack.title_one": {
+    "message": "Packa upp ”{name}” till {target}"
+  },
+  "pack.unpack.with_paths": {
+    "message": "Behåll mapparna som finns i arkivet"
+  },
+  "pack.volume_invalid": {
+    "message": "Volymstorleken anges som ett antal MB."
+  },
+  "pack.wrong_password": {
+    "message": "fel lösenord"
+  },
+  "panel.admin.renaming": {
+    "message": "Namnbyte till ”{name}”"
+  },
+  "panel.clipboard.copied": {
+    "message": "{count, plural, one {# objekt kopierat: Ctrl+V klistrar in det.} other {# objekt kopierade: Ctrl+V klistrar in dem.}}"
+  },
+  "panel.clipboard.cut": {
+    "message": "{count, plural, one {# objekt urklippt: Ctrl+V klistrar in det.} other {# objekt urklippta: Ctrl+V klistrar in dem.}}"
+  },
+  "panel.clipboard.no_cut_in_archive": {
+    "message": "Filer kan inte klippas ut ur arkiv; Ctrl+C kopierar dem."
+  },
+  "panel.clipboard.no_files": {
+    "message": "Urklipp innehåller inga filer."
+  },
+  "panel.clipboard.no_paste_in_archive": {
+    "message": "Filer kan inte klistras in i arkiv än."
+  },
+  "panel.clipboard.same_folder": {
+    "message": "De finns redan i den här mappen: Ctrl+V klistrar in i en annan."
+  },
+  "panel.column.attr": {
+    "message": "Attr"
+  },
+  "panel.column.date": {
+    "message": "Datum"
+  },
+  "panel.column.ext": {
+    "message": "Typ"
+  },
+  "panel.column.name": {
+    "message": "Namn"
+  },
+  "panel.column.size": {
+    "message": "Storlek"
+  },
+  "panel.disconnect": {
+    "message": "Koppla från"
+  },
+  "panel.drag.items": {
+    "message": "{count, plural, one {# objekt} other {# objekt}}"
+  },
+  "panel.error.archive_not_updatable": {
+    "message": "{name}: 7-Zip ändrar 7z-, zip- och tar-arkiv direkt, men inte det här"
+  },
+  "panel.error.archive_on_server": {
+    "message": "{name}: arkiv på servrar kan inte ändras än"
+  },
+  "panel.error.branch_view_local": {
+    "message": "Grenvy listar mappar på den här datorn"
+  },
+  "panel.error.exists": {
+    "message": "{name} finns redan"
+  },
+  "panel.error.folder_in_the_way": {
+    "message": "en mapp med det här namnet är i vägen"
+  },
+  "panel.error.inside_archive": {
+    "message": "inte i arkiv än"
+  },
+  "panel.error.make_file": {
+    "message": "Det gick inte att skapa filen: {err}"
+  },
+  "panel.error.no_name": {
+    "message": "inget namn angavs"
+  },
+  "panel.error.not_a_name": {
+    "message": "{name}: inte ett giltigt namn"
+  },
+  "panel.error.other_drive": {
+    "message": "den andra panelen bytte till en annan enhet"
+  },
+  "panel.error.rename": {
+    "message": "Det gick inte att byta namn: {err}"
+  },
+  "panel.filter.custom.label": {
+    "message": "Filtyper, t.ex. *.txt *.md (efter | de som utesluts):"
+  },
+  "panel.filter.custom.title": {
+    "message": "Visa filer"
+  },
+  "panel.filter.programs": {
+    "message": "program"
+  },
+  "panel.filter.selected_files": {
+    "message": "markerade filer"
+  },
+  "panel.found.branch_view": {
+    "message": "Grenvy:"
+  },
+  "panel.found.search_results": {
+    "message": "Sökresultat:"
+  },
+  "panel.new_text_file.label": {
+    "message": "Filnamn, öppnas i redigeraren:"
+  },
+  "panel.new_text_file.title": {
+    "message": "Ny textfil"
+  },
+  "panel.opening.cancel": {
+    "message": "Avbryt"
+  },
+  "panel.opening.reading": {
+    "message": "Läser…"
+  },
+  "panel.opening.title": {
+    "message": "Öppnar arkiv"
+  },
+  "panel.quick_filter.hint": {
+    "message": "döljer det som inte matchar; Escape visar allt"
+  },
+  "panel.quick_filter.label": {
+    "message": "Filter:"
+  },
+  "panel.quick_search.label": {
+    "message": "Sök:"
+  },
+  "panel.size.app": {
+    "message": "<APP>"
+  },
+  "panel.size.b": {
+    "message": "{size} B"
+  },
+  "panel.size.dir": {
+    "message": "<DIR>"
+  },
+  "panel.size.gb": {
+    "message": "{size} GB"
+  },
+  "panel.size.kb": {
+    "message": "{size} KB"
+  },
+  "panel.size.mb": {
+    "message": "{size} MB"
+  },
+  "panel.size.tb": {
+    "message": "{size} TB"
+  },
+  "panel.space.bytes": {
+    "message": "{count, plural, one {{size} byte ({human})} other {{size} byte ({human})}}"
+  },
+  "panel.space.close": {
+    "message": "Stäng"
+  },
+  "panel.space.counting": {
+    "message": "Räknar…"
+  },
+  "panel.space.done": {
+    "message": "Klart."
+  },
+  "panel.space.files": {
+    "message": "Filer:"
+  },
+  "panel.space.folders": {
+    "message": "Mappar:"
+  },
+  "panel.space.in_archive": {
+    "message": "I arkiv visar kolumnen Storlek redan storlekarna."
+  },
+  "panel.space.title": {
+    "message": "Beräkna använt utrymme"
+  },
+  "panel.space.total": {
+    "message": "Total storlek:"
+  },
+  "panel.space.unreadable": {
+    "message": "{count, plural, one {# objekt kunde inte läsas.} other {# objekt kunde inte läsas.}}"
+  },
+  "panel.status": {
+    "message": "{marked_size} k / {size} k i {marked_files} / {files, plural, one {# fil} other {# filer}}, {marked_folders} / {folders, plural, one {# mapp} other {# mappar}}"
+  },
+  "panel.sync_browsing.stop": {
+    "message": "Synkroniserad bläddring (klicka för att stoppa)"
+  },
+  "panel.undo.rename": {
+    "message": "Byt namn på ”{name}” till ”{to}”"
+  },
+  "passwords.about.set": {
+    "message": "Med ett huvudlösenord kan de sparade lösenorden öppnas på en annan dator när det skrivs in där, sedan inställningsmappen har kopierats. Glömmer du det förloras bara de sparade lösenorden: de skrivs in igen."
+  },
+  "passwords.about.unlock": {
+    "message": "Inställningarna kom från en annan dator, eller så har den här datorn ingen nyckelring: huvudlösenordet öppnar de sparade lösenorden här."
+  },
+  "passwords.cancel": {
+    "message": "Avbryt"
+  },
+  "passwords.done.set": {
+    "message": "Huvudlösenordet är inställt."
+  },
+  "passwords.done.unlocked": {
+    "message": "De sparade lösenorden är öppna."
+  },
+  "passwords.error.locked": {
+    "message": "de sparade lösenorden är låsta: lås upp dem med huvudlösenordet (Konfiguration › Inställningar › Lösenord)"
+  },
+  "passwords.error.no_master": {
+    "message": "inget huvudlösenord är inställt"
+  },
+  "passwords.error.no_random": {
+    "message": "inga slumptal"
+  },
+  "passwords.error.not_opened": {
+    "message": "lösenordet för {what} kan inte öppnas"
+  },
+  "passwords.error.not_sealed": {
+    "message": "lösenordet kunde inte förseglas"
+  },
+  "passwords.error.salt_damaged": {
+    "message": "huvudlösenordets salt är skadat"
+  },
+  "passwords.error.wrong": {
+    "message": "huvudlösenordet är fel"
+  },
+  "passwords.field.again": {
+    "message": "Igen"
+  },
+  "passwords.field.master": {
+    "message": "Huvudlösenord"
+  },
+  "passwords.locked_note": {
+    "message": "De sparade lösenorden är låsta på den här datorn: huvudlösenordet öppnar dem."
+  },
+  "passwords.ok": {
+    "message": "OK"
+  },
+  "passwords.problem.differ": {
+    "message": "De två stämmer inte överens."
+  },
+  "passwords.problem.empty": {
+    "message": "Skriv huvudlösenordet."
+  },
+  "passwords.title.set": {
+    "message": "Huvudlösenord"
+  },
+  "passwords.title.unlock": {
+    "message": "Lås upp sparade lösenord"
+  },
+  "passwords.unlock_button": {
+    "message": "Lås upp…"
+  },
+  "passwords.working": {
+    "message": "Arbetar…"
+  },
+  "properties.accessed": {
+    "message": "Öppnad:"
+  },
+  "properties.change_attributes": {
+    "message": "Ändra attribut..."
+  },
+  "properties.close": {
+    "message": "Stäng"
+  },
+  "properties.contents": {
+    "message": "{file_count, plural, one {{files} fil} other {{files} filer}}, {folder_count, plural, one {{folders} mapp} other {{folders} mappar}}, {count, plural, one {{bytes} byte} other {{bytes} byte}} ({size})"
+  },
+  "properties.contents_counting": {
+    "message": "{file_count, plural, one {{files} fil} other {{files} filer}}, {folder_count, plural, one {{folders} mapp} other {{folders} mappar}}, {count, plural, one {{bytes} byte} other {{bytes} byte}} ({size}) (räknar…)"
+  },
+  "properties.contents_label": {
+    "message": "Innehåll:"
+  },
+  "properties.created": {
+    "message": "Skapad:"
+  },
+  "properties.dialog_title": {
+    "message": "Egenskaper"
+  },
+  "properties.in_archive": {
+    "message": "Arkivets listning visar det den vet om sina filer."
+  },
+  "properties.kind.file": {
+    "message": "Fil"
+  },
+  "properties.kind.folder": {
+    "message": "Mapp"
+  },
+  "properties.kind.link": {
+    "message": "Länk"
+  },
+  "properties.kind.link_to": {
+    "message": "Länk till {target}"
+  },
+  "properties.location": {
+    "message": "Plats:"
+  },
+  "properties.modified": {
+    "message": "Ändrad:"
+  },
+  "properties.name": {
+    "message": "Namn:"
+  },
+  "properties.no_system_dialog": {
+    "message": "här finns ingen egenskapsdialog från systemet än"
+  },
+  "properties.owner": {
+    "message": "Ägare / grupp:"
+  },
+  "properties.permissions": {
+    "message": "Behörigheter:"
+  },
+  "properties.size": {
+    "message": "{count, plural, one {{bytes} byte ({size})} other {{bytes} byte ({size})}}"
+  },
+  "properties.size_label": {
+    "message": "Storlek:"
+  },
+  "properties.type": {
+    "message": "Typ:"
+  },
+  "quick_open.go_to": {
+    "message": "Gå till {path}"
+  },
+  "quick_open.group.bookmarks": {
+    "message": "Bokmärken"
+  },
+  "quick_open.group.connections": {
+    "message": "Anslutningar"
+  },
+  "quick_open.group.drives": {
+    "message": "Enheter"
+  },
+  "quick_open.group.path": {
+    "message": "Sökväg"
+  },
+  "quick_open.group.recent_folders": {
+    "message": "Senaste mappar"
+  },
+  "quick_open.group.tools": {
+    "message": "Verktyg"
+  },
+  "quick_open.group.workspaces": {
+    "message": "Arbetsytor"
+  },
+  "quick_open.placeholder": {
+    "message": "Kommando, bokmärke, mapp, sökväg, server, enhet, arbetsyta eller verktyg"
+  },
+  "quick_open.title": {
+    "message": "Snabböppna"
+  },
+  "quick_view.counting": {
+    "message": "Räknar…"
+  },
+  "quick_view.downloading": {
+    "message": "Hämtar…"
+  },
+  "quick_view.empty": {
+    "message": "Snabbvisning visar det som markören i den andra panelen står på."
+  },
+  "quick_view.extracting": {
+    "message": "Tar ut den ur arkivet…"
+  },
+  "quick_view.files_only": {
+    "message": "På servrar och i arkiv visar Snabbvisning bara filer."
+  },
+  "quick_view.space.title": {
+    "message": "Totalt använt utrymme:"
+  },
+  "quick_view.space.totals": {
+    "message": "{bytes, plural, one {{bytes_grouped} byte} other {{bytes_grouped} byte}} i {files, plural, one {{files_grouped} fil} other {{files_grouped} filer}}, {folders, plural, one {{folders_grouped} mapp} other {{folders_grouped} mappar}}"
+  },
+  "quick_view.space.unreadable": {
+    "message": "{count} kunde inte läsas."
+  },
+  "quick_view.too_large.download": {
+    "message": "{size} är för stor för att hämtas här: F3 visar den."
+  },
+  "quick_view.too_large.extract": {
+    "message": "{size} är för stor för att tas ut ur arkivet här: F3 visar den."
+  },
+  "remote.cancelled": {
+    "message": "avbrutet"
+  },
+  "remote.cloud.ask": {
+    "message": "{kind, select, application_key {Programnyckel för {user} på {host}:} api_key {API-nyckel för {user} på {host}:} password {Lösenord för {user} på {host}:} other {Hemlig nyckel för {user} på {host}:}}"
+  },
+  "remote.cloud.ask_again": {
+    "message": "{kind, select, application_key {Fel programnyckel. Programnyckel för {user} på {host}:} api_key {Fel API-nyckel. API-nyckel för {user} på {host}:} password {Fel lösenord. Lösenord för {user} på {host}:} other {Fel nyckel. Hemlig nyckel för {user} på {host}:}}"
+  },
+  "remote.cloud.obscure_failed": {
+    "message": "rclone kunde inte ta emot lösenordet"
+  },
+  "remote.cloud.rclone_missing": {
+    "message": "rclone saknas: Inställningar > Tillägg hämtar det"
+  },
+  "remote.cloud.title": {
+    "message": "{kind, select, application_key {Programnyckel} api_key {API-nyckel} password {Lösenord} other {Hemlig nyckel}}"
+  },
+  "remote.connecting": {
+    "message": "Ansluter till {server}..."
+  },
+  "remote.dialog.cancel": {
+    "message": "Avbryt"
+  },
+  "remote.dialog.ok": {
+    "message": "OK"
+  },
+  "remote.disconnect_failed": {
+    "message": "{share}: det gick inte att koppla från: {err}"
+  },
+  "remote.ftp.password": {
+    "message": "Lösenord för {user}@{host}:"
+  },
+  "remote.ftp.password_again": {
+    "message": "Fel lösenord. Lösenord för {user}@{host}:"
+  },
+  "remote.ftps.changed": {
+    "message": "TLS-certifikatet för {server} har ÄNDRATS sedan rad {line} i {file} registrerade det. Någon kan avlyssna anslutningen; om servern har ett nytt certifikat, ta bort den raden."
+  },
+  "remote.ftps.not_trusted": {
+    "message": "serverns certifikat är inte betrott"
+  },
+  "remote.login.password": {
+    "message": "Lösenord"
+  },
+  "remote.login.title": {
+    "message": "Logga in"
+  },
+  "remote.login.user": {
+    "message": "Användare"
+  },
+  "remote.mount.login_wrong": {
+    "message": "användarnamnet eller lösenordet är fel"
+  },
+  "remote.mount.macos_failed": {
+    "message": "macOS kunde inte montera den (NetFS {code})"
+  },
+  "remote.mount.needs_desktop": {
+    "message": "kräver KDE:s kio-fuse eller GNOME:s gvfs"
+  },
+  "remote.mount.needs_login": {
+    "message": "den kräver användarnamn och lösenord"
+  },
+  "remote.mount.no_fuse": {
+    "message": "monterad, men det finns ingen mapp för den: gvfs-fuse saknas"
+  },
+  "remote.mount.no_nfs_client": {
+    "message": "hittades inte; NFS kräver Windows-komponenten Klient för NFS (Windows-funktioner)"
+  },
+  "remote.mount.no_share": {
+    "message": "resursen saknas: smb://server/resurs"
+  },
+  "remote.mount.not_address": {
+    "message": "inte en adress"
+  },
+  "remote.mount.not_found": {
+    "message": "monterad, men hittades inte bland de monterade"
+  },
+  "remote.mount.other_user": {
+    "message": "Windows är anslutet till den här servern som en annan användare: logga ut, eller använd den användaren"
+  },
+  "remote.password.title": {
+    "message": "Lösenord"
+  },
+  "remote.remember_password": {
+    "message": "Kom ihåg det (Inställningar › Lösenord)"
+  },
+  "remote.save_back_failed": {
+    "message": "Det gick inte att spara tillbaka den: {err}"
+  },
+  "remote.sftp.host_certificate": {
+    "message": "Servern visar ett värdcertifikat; sådana stöds inte än."
+  },
+  "remote.sftp.key_changed": {
+    "message": "Värdnyckeln för {server} har ÄNDRATS sedan rad {line} i {file} registrerade den. Någon kan avlyssna anslutningen; om servern har installerats på nytt, ta bort den raden."
+  },
+  "remote.sftp.key_not_trusted": {
+    "message": "Värdnyckeln för {server} betroddes inte."
+  },
+  "remote.sftp.keys_refused": {
+    "message": "{user}@{host}: servern avvisade nycklarna och tar inte emot lösenord"
+  },
+  "remote.sftp.login_refused": {
+    "message": "{user}@{host}: inloggningen nekades"
+  },
+  "remote.sftp.passphrase": {
+    "message": "Lösenfras för {file}"
+  },
+  "remote.sftp.passphrase_title": {
+    "message": "Nyckelns lösenfras"
+  },
+  "remote.sftp.password": {
+    "message": "Lösenord för {user}@{host}"
+  },
+  "remote.unknown_host.once": {
+    "message": "Anslut en gång"
+  },
+  "remote.unknown_host.remember": {
+    "message": "Anslut och kom ihåg"
+  },
+  "remote.unknown_host.text": {
+    "message": "{key_type, select, TLS {Servern {host} är inte känd än. Fingeravtrycket för dess TLS-certifikat är} other {Servern {host} är inte känd än. Dess {key_type}-fingeravtryck är}}\n\n{fingerprint}\n\nAnslut bara om det här är den server du menar; dess administratör kan bekräfta fingeravtrycket."
+  },
+  "remote.unknown_host.title": {
+    "message": "Okänd server"
+  },
+  "rename.case": {
+    "message": "Skiftläge:"
+  },
+  "rename.case.first": {
+    "message": "Första bokstaven"
+  },
+  "rename.case.lower": {
+    "message": "gemener"
+  },
+  "rename.case.unchanged": {
+    "message": "Oförändrat"
+  },
+  "rename.case.upper": {
+    "message": "VERSALER"
+  },
+  "rename.case.words": {
+    "message": "Varje Ord"
+  },
+  "rename.close": {
+    "message": "Stäng"
+  },
+  "rename.counter_start": {
+    "message": "Räknarstart"
+  },
+  "rename.dialog_title": {
+    "message": "Massnamnbyte"
+  },
+  "rename.digits": {
+    "message": "Siffror"
+  },
+  "rename.extension": {
+    "message": "Filändelse"
+  },
+  "rename.field.counter": {
+    "message": "[C] Räknare"
+  },
+  "rename.field.date": {
+    "message": "[Y][M][D] Datum"
+  },
+  "rename.field.extension": {
+    "message": "[E] Ändelse"
+  },
+  "rename.field.folder": {
+    "message": "[P] Mapp"
+  },
+  "rename.field.name": {
+    "message": "[N] Namn"
+  },
+  "rename.field.range": {
+    "message": "[N1-3] Intervall"
+  },
+  "rename.field.time": {
+    "message": "[h][m][s] Tid"
+  },
+  "rename.first_only": {
+    "message": "Endast första"
+  },
+  "rename.in_archive": {
+    "message": "Det går inte att byta namn på filer i arkiv än."
+  },
+  "rename.mask": {
+    "message": "Namnmask: filnamn"
+  },
+  "rename.match_case": {
+    "message": "Matcha skiftläge"
+  },
+  "rename.new_name": {
+    "message": "Nytt namn"
+  },
+  "rename.not_renamed_back": {
+    "message": "{from}: {err}; inte återställda: {names}"
+  },
+  "rename.not_utf8": {
+    "message": "Namn som inte är UTF-8 utelämnas."
+  },
+  "rename.old_name": {
+    "message": "Gammalt namn"
+  },
+  "rename.problem.bad_character": {
+    "message": "otillåtet tecken"
+  },
+  "rename.problem.exists": {
+    "message": "finns redan"
+  },
+  "rename.problem.no_name": {
+    "message": "inget namn"
+  },
+  "rename.problem.twice": {
+    "message": "två gånger i listan"
+  },
+  "rename.regex": {
+    "message": "Reguljärt uttryck"
+  },
+  "rename.regex_error": {
+    "message": "Det reguljära uttrycket: {err}"
+  },
+  "rename.replace": {
+    "message": "Ersätt med"
+  },
+  "rename.search": {
+    "message": "Sök efter"
+  },
+  "rename.start": {
+    "message": "Starta!"
+  },
+  "rename.status.failed": {
+    "message": "Inga namn byttes: {err}"
+  },
+  "rename.status.ready": {
+    "message": "Starta byter namnen."
+  },
+  "rename.status.renamed": {
+    "message": "{count, plural, one {# namn bytt.} other {# namn bytta.}}"
+  },
+  "rename.status.took_back": {
+    "message": "{count, plural, one {# namn återställt.} other {# namn återställda.}}"
+  },
+  "rename.step": {
+    "message": "Steg"
+  },
+  "rename.undo": {
+    "message": "Ångra"
+  },
+  "rename.was": {
+    "message": "{to} (var {from})"
+  },
+  "rename.with_extension": {
+    "message": "Med filändelse"
+  },
+  "scmd.column.modified": {
+    "message": "Ändrad"
+  },
+  "scmd.column.name": {
+    "message": "Namn"
+  },
+  "scmd.column.size": {
+    "message": "Storlek"
+  },
+  "scmd.column.up_dir": {
+    "message": "UPP--MAPP"
+  },
+  "scmd.command_line.not_on_server": {
+    "message": "Kommandon körs på den här datorn, inte på servern."
+  },
+  "scmd.compare.marked": {
+    "message": "{count, plural, one {# fil markerad: nyare än på andra sidan, eller saknas där.} other {# filer markerade: nyare än på andra sidan, eller saknas där.}}"
+  },
+  "scmd.compare.same": {
+    "message": "Mapparna har samma filer."
+  },
+  "scmd.copying": {
+    "message": "Kopierar {name}..."
+  },
+  "scmd.dialog.buttons": {
+    "message": "Enter OK   Esc Avbryt"
+  },
+  "scmd.error.read_settings": {
+    "message": "Det gick inte att läsa inställningarna: {err}"
+  },
+  "scmd.error.read_tabs": {
+    "message": "Det gick inte att läsa de öppna flikarna: {err}"
+  },
+  "scmd.error.read_workspaces": {
+    "message": "Det gick inte att läsa arbetsytorna: {err}"
+  },
+  "scmd.error.save_back": {
+    "message": "Det gick inte att spara tillbaka den: {err}"
+  },
+  "scmd.error.save_searches": {
+    "message": "Det gick inte att spara sökningarna: {err}"
+  },
+  "scmd.error.save_tabs": {
+    "message": "Det gick inte att spara de öppna flikarna: {err}"
+  },
+  "scmd.find.backwards": {
+    "message": "Bakåt"
+  },
+  "scmd.find.case_sensitive": {
+    "message": "Skiftlägeskänslig"
+  },
+  "scmd.find.hex": {
+    "message": "Hex (77 6F 72 64)"
+  },
+  "scmd.find.not_found": {
+    "message": "Hittades inte: {text}"
+  },
+  "scmd.find.regex": {
+    "message": "Reguljärt uttryck"
+  },
+  "scmd.find.search_for": {
+    "message": "Sök efter:"
+  },
+  "scmd.find.title": {
+    "message": "Sök"
+  },
+  "scmd.find.whole_words": {
+    "message": "Endast hela ord"
+  },
+  "scmd.group.files": {
+    "message": "Filer (*.txt *.md; mappar slutar med /):"
+  },
+  "scmd.group.select_title": {
+    "message": "Markera grupp"
+  },
+  "scmd.group.unselect_title": {
+    "message": "Avmarkera grupp"
+  },
+  "scmd.key_bar.copy": {
+    "message": "Kopia"
+  },
+  "scmd.key_bar.delete": {
+    "message": "Radera"
+  },
+  "scmd.key_bar.edit": {
+    "message": "Redig."
+  },
+  "scmd.key_bar.menu": {
+    "message": "Meny"
+  },
+  "scmd.key_bar.mkdir": {
+    "message": "NyMapp"
+  },
+  "scmd.key_bar.move": {
+    "message": "Flytta"
+  },
+  "scmd.key_bar.quit": {
+    "message": "Avsl."
+  },
+  "scmd.key_bar.view": {
+    "message": "Visa"
+  },
+  "scmd.message.error": {
+    "message": "Fel"
+  },
+  "scmd.message.ok": {
+    "message": "OK"
+  },
+  "scmd.not_yet": {
+    "message": "{what, select, menus {Menyerna: finns inte i terminalversionen än.} file_operations {Filåtgärder: finns inte i terminalversionen än.} servers {Servrar: finns inte i terminalversionen än.} other {Det här kommandot: finns inte i terminalversionen än.}}"
+  },
+  "scmd.picture.broken": {
+    "message": "en trasig bild"
+  },
+  "scmd.picture.broken_page": {
+    "message": "en trasig sida"
+  },
+  "scmd.picture.loading": {
+    "message": "Läser in…"
+  },
+  "scmd.picture.no_page": {
+    "message": "PDF-filen har ingen sådan sida"
+  },
+  "scmd.shell.press_enter": {
+    "message": "Tryck på Enter för att återgå till Spark Commander..."
+  },
+  "scmd.sync_browsing.off": {
+    "message": "Synkroniserad bläddring är avstängd."
+  },
+  "scmd.sync_browsing.on": {
+    "message": "Synkroniserad bläddring är på."
+  },
+  "scmd.sync_browsing.stopped": {
+    "message": "{err}. Synkroniserad bläddring är avstängd."
+  },
+  "scmd.viewer.column": {
+    "message": "Kol {column}"
+  },
+  "scmd.viewer.finding": {
+    "message": "söker…"
+  },
+  "scmd.viewer.key_bar.next": {
+    "message": "Nästa"
+  },
+  "scmd.viewer.key_bar.quit": {
+    "message": "Avsl."
+  },
+  "scmd.viewer.key_bar.reload": {
+    "message": "Läs om"
+  },
+  "scmd.viewer.key_bar.search": {
+    "message": "Sök"
+  },
+  "scmd.viewer.page": {
+    "message": "sida {page} av {pages}"
+  },
+  "scmd.viewer.reading": {
+    "message": "läser {percent} %"
+  },
+  "scmd.viewer.wrap": {
+    "message": "Radbryt"
+  },
+  "scmd.workspace.copy_name": {
+    "message": "{name} kopia"
+  },
+  "scmd.workspace.default_name": {
+    "message": "Arbetsyta {number}"
+  },
+  "scmd.workspace.delete_question": {
+    "message": "Vill du ta bort ”{name}”? Dess flikar glöms."
+  },
+  "scmd.workspace.duplicate_title": {
+    "message": "Duplicera arbetsyta"
+  },
+  "scmd.workspace.last_stays": {
+    "message": "Den sista arbetsytan blir kvar."
+  },
+  "scmd.workspace.name": {
+    "message": "Namn:"
+  },
+  "scmd.workspace.name_or_default": {
+    "message": "Namn (tomt: {name}):"
+  },
+  "scmd.workspace.new_title": {
+    "message": "Ny arbetsyta"
+  },
+  "scmd.workspace.rename_title": {
+    "message": "Byt namn på arbetsyta"
+  },
+  "scmd.workspaces.keys": {
+    "message": "Enter Öppna  F7 Ny  F5 Kopiera  F2 Byt namn  F8 Ta bort"
+  },
+  "scmd.workspaces.title": {
+    "message": "Arbetsytor"
+  },
+  "search.age.days": {
+    "message": "dagar"
+  },
+  "search.age.hours": {
+    "message": "timmar"
+  },
+  "search.age.minutes": {
+    "message": "minuter"
+  },
+  "search.age.months": {
+    "message": "månader"
+  },
+  "search.age.weeks": {
+    "message": "veckor"
+  },
+  "search.age.years": {
+    "message": "år"
+  },
+  "search.archives": {
+    "message": "Sök i arkiv"
+  },
+  "search.attribute.directory": {
+    "message": "Mapp"
+  },
+  "search.attribute.either": {
+    "message": "Spelar ingen roll"
+  },
+  "search.attribute.executable": {
+    "message": "Körbar"
+  },
+  "search.attribute.hidden": {
+    "message": "Dold"
+  },
+  "search.attribute.link": {
+    "message": "Symbolisk länk"
+  },
+  "search.attribute.must": {
+    "message": "Måste vara"
+  },
+  "search.attribute.must_not": {
+    "message": "Får inte vara"
+  },
+  "search.attribute.read_only": {
+    "message": "Skrivskyddad"
+  },
+  "search.attributes.label": {
+    "message": "Attribut:"
+  },
+  "search.between.and": {
+    "message": "och"
+  },
+  "search.between.label": {
+    "message": "Datum mellan:"
+  },
+  "search.close": {
+    "message": "Stäng"
+  },
+  "search.depth.all": {
+    "message": "alla (obegränsat djup)"
+  },
+  "search.depth.current": {
+    "message": "endast aktuell mapp"
+  },
+  "search.depth.label": {
+    "message": "Sök i undermappar:"
+  },
+  "search.depth.levels": {
+    "message": "{count, plural, one {# nivå} other {# nivåer}}"
+  },
+  "search.drives": {
+    "message": "Enheter"
+  },
+  "search.duplicates.content": {
+    "message": "samma innehåll"
+  },
+  "search.duplicates.label": {
+    "message": "Sök dubblettfiler:"
+  },
+  "search.duplicates.name": {
+    "message": "samma namn"
+  },
+  "search.duplicates.size": {
+    "message": "samma storlek"
+  },
+  "search.edit": {
+    "message": "F4 Redigera"
+  },
+  "search.error.between_days": {
+    "message": "Datum mellan kräver båda dagarna"
+  },
+  "search.error.date": {
+    "message": "{text} är inget datum som 2026-11-12"
+  },
+  "search.error.hex": {
+    "message": "{text} är ingen hexsträng som 48 65 6c"
+  },
+  "search.error.keep": {
+    "message": "Det gick inte att spara sökningen: {err}"
+  },
+  "search.error.local_time": {
+    "message": "{text} är ingen lokal tid"
+  },
+  "search.error.names_regex": {
+    "message": "Namnets reguljära uttryck: {err}"
+  },
+  "search.error.newer_number": {
+    "message": "Inte äldre än kräver ett tal, inte {text}"
+  },
+  "search.error.no_place": {
+    "message": "Sök i anger ingen mapp"
+  },
+  "search.error.no_text": {
+    "message": "Sök text anger ingen text"
+  },
+  "search.error.older_number": {
+    "message": "Äldre än kräver ett tal, inte {text}"
+  },
+  "search.error.save": {
+    "message": "Det gick inte att spara sökningarna: {err}"
+  },
+  "search.error.size_number": {
+    "message": "Filstorlek kräver ett tal, inte {text}"
+  },
+  "search.error.text_regex": {
+    "message": "Textens reguljära uttryck: {err}"
+  },
+  "search.feed": {
+    "message": "Lista i panelen"
+  },
+  "search.go_to_file": {
+    "message": "Gå till fil"
+  },
+  "search.in_found": {
+    "message": "F2 Sök i hittade filer"
+  },
+  "search.locate": {
+    "message": "Från locate-indexet"
+  },
+  "search.names.label": {
+    "message": "Sök efter:"
+  },
+  "search.names.placeholder": {
+    "message": "*.txt *.md | backup*  (tomt: alla)"
+  },
+  "search.new": {
+    "message": "Ny sökning"
+  },
+  "search.newer.label": {
+    "message": "Inte äldre än:"
+  },
+  "search.older.label": {
+    "message": "Äldre än:"
+  },
+  "search.only_selected": {
+    "message": "Sök endast i markerade filer/mappar"
+  },
+  "search.only_selected_count": {
+    "message": "{count, plural, one {Sök endast i det # markerade} other {Sök endast i de # markerade}}"
+  },
+  "search.page.advanced": {
+    "message": "Avancerat"
+  },
+  "search.page.general": {
+    "message": "Allmänt"
+  },
+  "search.page.load_save": {
+    "message": "Läs in/Spara"
+  },
+  "search.places.browse_prompt": {
+    "message": "Sök i"
+  },
+  "search.places.label": {
+    "message": "Sök i:"
+  },
+  "search.places.placeholder": {
+    "message": "Mappar, ; mellan dem"
+  },
+  "search.regex": {
+    "message": "RegEx"
+  },
+  "search.results.label": {
+    "message": "Sökresultat:"
+  },
+  "search.saved.delete": {
+    "message": "Ta bort"
+  },
+  "search.saved.label": {
+    "message": "Tidigare sökningar:"
+  },
+  "search.saved.load": {
+    "message": "Läs in"
+  },
+  "search.saved.name_first": {
+    "message": "Ge sökningen ett namn först."
+  },
+  "search.saved.name_placeholder": {
+    "message": "Sökningens namn"
+  },
+  "search.saved.save": {
+    "message": "Spara"
+  },
+  "search.size.label": {
+    "message": "Filstorlek:"
+  },
+  "search.start": {
+    "message": "Starta sökning"
+  },
+  "search.status.found": {
+    "message": "{files, plural, one {# fil} other {# filer}} och {dirs, plural, one {# mapp} other {# mappar}} hittades"
+  },
+  "search.status.searching": {
+    "message": "Söker…"
+  },
+  "search.status.searching_in": {
+    "message": "Söker: {folder}"
+  },
+  "search.status.stopped": {
+    "message": "Stoppad: {counts}"
+  },
+  "search.stop": {
+    "message": "Stoppa"
+  },
+  "search.text.ansi": {
+    "message": "ANSI (teckentabell {page})"
+  },
+  "search.text.case_sensitive": {
+    "message": "Skiftlägeskänslig"
+  },
+  "search.text.hex": {
+    "message": "Hex"
+  },
+  "search.text.label": {
+    "message": "Sök text:"
+  },
+  "search.text.not_containing": {
+    "message": "Sök filer som INTE innehåller texten"
+  },
+  "search.text.office": {
+    "message": "Office-filer (docx, xlsx, pptx, odt…)"
+  },
+  "search.text.placeholder": {
+    "message": "Text att söka efter"
+  },
+  "search.text.whole_words": {
+    "message": "Endast hela ord"
+  },
+  "search.title": {
+    "message": "Sök filer"
+  },
+  "search.unit.bytes": {
+    "message": "byte"
+  },
+  "search.view": {
+    "message": "F3 Visa"
+  },
+  "settings.addons.builtin_version": {
+    "message": "{version}, medföljer Spark Commander"
+  },
+  "settings.addons.check_daily": {
+    "message": "Sök efter uppdateringar av tillägg vid start och dagligen, och erbjud dem"
+  },
+  "settings.addons.check_failed": {
+    "message": "Det gick inte att söka efter uppdateringar: {err}"
+  },
+  "settings.addons.check_now": {
+    "message": "Sök nu"
+  },
+  "settings.addons.checking": {
+    "message": "Söker efter uppdateringar..."
+  },
+  "settings.addons.download": {
+    "message": "Hämta"
+  },
+  "settings.addons.downloading": {
+    "message": "Hämtar: {done} av {size}"
+  },
+  "settings.addons.file": {
+    "message": "Fil"
+  },
+  "settings.addons.installed.builtin": {
+    "message": "medföljer Spark Commander"
+  },
+  "settings.addons.installed.label": {
+    "message": "Installerat"
+  },
+  "settings.addons.installed.none": {
+    "message": "inget"
+  },
+  "settings.addons.intro": {
+    "message": "Spark Commander använder de här programmen från andra projekt för en del av det den gör. Tilläggen hämtas separat, när du vill; 7-Zip och PDFium medföljer."
+  },
+  "settings.addons.never_offer": {
+    "message": "Erbjud aldrig tillägg när en fil behöver ett"
+  },
+  "settings.addons.offers": {
+    "message": "Erbjudanden och uppdateringar"
+  },
+  "settings.addons.online.label": {
+    "message": "Online"
+  },
+  "settings.addons.online.looking": {
+    "message": "söker..."
+  },
+  "settings.addons.online.none": {
+    "message": "inget för det här systemet"
+  },
+  "settings.addons.online.not_yet": {
+    "message": "inte kontrollerat än"
+  },
+  "settings.addons.online.unknown": {
+    "message": "okänt"
+  },
+  "settings.addons.remove": {
+    "message": "Ta bort"
+  },
+  "settings.addons.up_to_date": {
+    "message": "Listan över tillägg är aktuell."
+  },
+  "settings.addons.version": {
+    "message": "Version"
+  },
+  "settings.addons.website": {
+    "message": "Webbplats"
+  },
+  "settings.appearance.title": {
+    "message": "Utseende"
+  },
+  "settings.apply": {
+    "message": "Verkställ"
+  },
+  "settings.backdrop.blur": {
+    "message": "Gör skrivbordet bakom suddigt"
+  },
+  "settings.backdrop.clear": {
+    "message": "0 %, bara skrivbordet"
+  },
+  "settings.backdrop.cover": {
+    "message": "Hur mycket den täcker skrivbordet bakom:"
+  },
+  "settings.backdrop.opacity": {
+    "message": "{opacity} %"
+  },
+  "settings.backdrop.sidebar": {
+    "message": "Sidopanel"
+  },
+  "settings.backdrop.solid": {
+    "message": "100 %, heltäckande"
+  },
+  "settings.backdrop.terminal": {
+    "message": "Terminal"
+  },
+  "settings.cancel": {
+    "message": "Avbryt"
+  },
+  "settings.date.as_system": {
+    "message": "Som systemet: {date}"
+  },
+  "settings.date.custom": {
+    "message": "Anpassat:"
+  },
+  "settings.date.pattern_help": {
+    "message": "yyyy år, MM månad (MMM dess namn), dd dag (ddd veckodagen)"
+  },
+  "settings.date.shown_as": {
+    "message": "Visas som"
+  },
+  "settings.date.shown_as_note": {
+    "message": "i fillistorna; dialogrutor lägger till sekunderna"
+  },
+  "settings.date.title": {
+    "message": "Datum"
+  },
+  "settings.editor.browse": {
+    "message": "Bläddra..."
+  },
+  "settings.editor.choose": {
+    "message": "Välj"
+  },
+  "settings.editor.external": {
+    "message": "Extern redigerare (Ctrl+Shift+F4):"
+  },
+  "settings.editor.external_help": {
+    "message": "%1 är filen, annars läggs den sist; t.ex. code --wait %1"
+  },
+  "settings.editor.limit": {
+    "message": "Den inbyggda redigeraren (F4) öppnar filer upp till"
+  },
+  "settings.editor.limit_unit": {
+    "message": "MB"
+  },
+  "settings.editor.title": {
+    "message": "Redigerare för F4"
+  },
+  "settings.error.no_folder": {
+    "message": "ingen konfigurationsmapp"
+  },
+  "settings.files_shown.hidden": {
+    "message": "Dolda filer"
+  },
+  "settings.files_shown.system": {
+    "message": "Systemfiler"
+  },
+  "settings.files_shown.title": {
+    "message": "Visade filer"
+  },
+  "settings.font.as_system": {
+    "message": "Som systemet"
+  },
+  "settings.font.chosen": {
+    "message": "Valt; systemets är {family}, {size}"
+  },
+  "settings.font.fixed": {
+    "message": "Visare"
+  },
+  "settings.font.fixed_note": {
+    "message": "Endast teckensnitt med fast bredd; används även av redigeraren och filjämförelsen."
+  },
+  "settings.font.main": {
+    "message": "Huvudfönstrets teckensnitt"
+  },
+  "settings.font.system": {
+    "message": "Systemets teckensnitt"
+  },
+  "settings.language.system": {
+    "message": "Systemets språk"
+  },
+  "settings.language.system_named": {
+    "message": "Systemets språk: {language}"
+  },
+  "settings.language.title": {
+    "message": "Språk"
+  },
+  "settings.menus.automatic": {
+    "message": "Automatiskt: en ☰-knapp i GNOME, annars en menyrad"
+  },
+  "settings.menus.bar": {
+    "message": "Menyrad"
+  },
+  "settings.menus.button": {
+    "message": "☰-knapp i namnlisten"
+  },
+  "settings.menus.title": {
+    "message": "Menyer"
+  },
+  "settings.ok": {
+    "message": "OK"
+  },
+  "settings.page.addons": {
+    "message": "Tillägg"
+  },
+  "settings.page.date": {
+    "message": "Datum"
+  },
+  "settings.page.display": {
+    "message": "Visning"
+  },
+  "settings.page.edit_view": {
+    "message": "Redigera/Visa"
+  },
+  "settings.page.font": {
+    "message": "Teckensnitt"
+  },
+  "settings.page.language": {
+    "message": "Språk"
+  },
+  "settings.page.layout": {
+    "message": "Layout"
+  },
+  "settings.page.operations": {
+    "message": "Åtgärder"
+  },
+  "settings.page.passwords": {
+    "message": "Lösenord"
+  },
+  "settings.page.terminal": {
+    "message": "Terminal"
+  },
+  "settings.page.toolbar": {
+    "message": "Verktygsfält"
+  },
+  "settings.passwords.change_master": {
+    "message": "Ändra huvudlösenord…"
+  },
+  "settings.passwords.locked": {
+    "message": "De är låsta på den här datorn: huvudlösenordet öppnar dem."
+  },
+  "settings.passwords.master_set": {
+    "message": "Ett huvudlösenord är inställt: med inställningsmappen kopierad öppnas de på en annan dator när det skrivs in där."
+  },
+  "settings.passwords.no_master": {
+    "message": "Inget huvudlösenord är inställt: med inställningsmappen kopierad öppnas de inte på en annan dator; där skrivs de in igen."
+  },
+  "settings.passwords.not_removed": {
+    "message": "Huvudlösenordet togs inte bort: {err}"
+  },
+  "settings.passwords.remove_master": {
+    "message": "Ta bort huvudlösenord"
+  },
+  "settings.passwords.saved": {
+    "message": "{count, plural, one {# lösenord är sparat} other {# lösenord är sparade}} (för servrar, resurser, krypterade enheter), förseglade i inställningsmappen; nyckeln som öppnar dem finns i den här datorns nyckelring."
+  },
+  "settings.passwords.set_master": {
+    "message": "Ange huvudlösenord…"
+  },
+  "settings.passwords.title": {
+    "message": "Sparade lösenord"
+  },
+  "settings.passwords.unlock": {
+    "message": "Lås upp…"
+  },
+  "settings.queue.clear_after": {
+    "message": "Rensa klara åtgärder efter"
+  },
+  "settings.queue.clear_after_help": {
+    "message": "0: så snart de är klara. Misslyckade och avbrutna blir kvar tills de rensas."
+  },
+  "settings.queue.clear_after_unit": {
+    "message": "minuter"
+  },
+  "settings.queue.download_limit": {
+    "message": "Gräns för nedladdningshastighet"
+  },
+  "settings.queue.download_limit_help": {
+    "message": "Hämta från länk, och kopior från FTP- och SFTP-servrar; även de som körs. 0: ingen gräns."
+  },
+  "settings.queue.download_limit_unit": {
+    "message": "KB/s"
+  },
+  "settings.queue.title": {
+    "message": "Åtgärdskö"
+  },
+  "settings.shell.default": {
+    "message": "Standard: {shell}"
+  },
+  "settings.shell.note": {
+    "message": "Nya terminalflikar startar det."
+  },
+  "settings.shell.title": {
+    "message": "Skal"
+  },
+  "settings.sort_folders.by_name": {
+    "message": "Alltid efter namn"
+  },
+  "settings.sort_folders.like_files": {
+    "message": "Som filer (även efter tid)"
+  },
+  "settings.sort_folders.title": {
+    "message": "Sortering av mappar"
+  },
+  "settings.tabs.header_always": {
+    "message": "Visa flikraden även när det bara finns en flik"
+  },
+  "settings.tabs.title": {
+    "message": "Mappflikar"
+  },
+  "settings.time.as_system": {
+    "message": "Som systemet"
+  },
+  "settings.time.h12": {
+    "message": "12 timmar (2:05 PM)"
+  },
+  "settings.time.h24": {
+    "message": "24 timmar (14:05)"
+  },
+  "settings.time.title": {
+    "message": "Tid"
+  },
+  "settings.title": {
+    "message": "Inställningar"
+  },
+  "settings.toolbar.add": {
+    "message": "Lägg till knapp…"
+  },
+  "settings.toolbar.move_down": {
+    "message": "Flytta ned"
+  },
+  "settings.toolbar.move_up": {
+    "message": "Flytta upp"
+  },
+  "settings.toolbar.place": {
+    "message": "Under menyraden; i namnlisten där menyerna finns bakom ☰-knappen, som i GNOME:s appar. Utan knappar visas inget."
+  },
+  "settings.toolbar.remove": {
+    "message": "Ta bort"
+  },
+  "settings.toolbar.replace": {
+    "message": "Ersätt…"
+  },
+  "settings.toolbar.restore_default": {
+    "message": "Återställ standard"
+  },
+  "settings.toolbar.title": {
+    "message": "Knappar i verktygsfältet"
+  },
+  "settings.viewer.font.ansi": {
+    "message": "ANSI (Windows)"
+  },
+  "settings.viewer.font.ascii": {
+    "message": "ASCII (DOS)"
+  },
+  "settings.viewer.font.auto": {
+    "message": "Identifiera automatiskt"
+  },
+  "settings.viewer.font.label": {
+    "message": "Teckensnitt vid start:"
+  },
+  "settings.viewer.font.variable": {
+    "message": "Variabel bredd"
+  },
+  "settings.viewer.minimap": {
+    "message": "Minikarta"
+  },
+  "settings.viewer.show": {
+    "message": "Visa:"
+  },
+  "settings.viewer.start.auto": {
+    "message": "Identifiera automatiskt"
+  },
+  "settings.viewer.start.binary": {
+    "message": "Binärt"
+  },
+  "settings.viewer.start.hex": {
+    "message": "Hex"
+  },
+  "settings.viewer.start.label": {
+    "message": "Visning vid start:"
+  },
+  "settings.viewer.start.text": {
+    "message": "Text"
+  },
+  "settings.viewer.title": {
+    "message": "Visare för F3"
+  },
+  "settings.viewer.width.binary": {
+    "message": "Binärt"
+  },
+  "settings.viewer.width.label": {
+    "message": "Visningsbredd (tecken):"
+  },
+  "settings.viewer.width.text": {
+    "message": "Text"
+  },
+  "settings.viewer.wrap": {
+    "message": "Radbryt text"
+  },
+  "shells.command_prompt": {
+    "message": "Kommandotolken"
+  },
+  "sidebar.device.no_files": {
+    "message": "delar inga filer"
+  },
+  "sidebar.device.not_answering": {
+    "message": "{name} svarar inte: lås upp den och öppna KDE Connect på den, läs sedan in mappen igen (F2)."
+  },
+  "sidebar.device.not_answering_error": {
+    "message": "{name} svarar inte ({err}): lås upp den och öppna KDE Connect på den."
+  },
+  "sidebar.device.not_connected": {
+    "message": "inte ansluten"
+  },
+  "sidebar.device.opening": {
+    "message": "Öppnar {name}..."
+  },
+  "sidebar.device.reconnecting": {
+    "message": "{name} svarar inte: ansluter igen..."
+  },
+  "sidebar.device.unmount_failed": {
+    "message": "{name}: det gick inte att avmontera: {err}"
+  },
+  "sidebar.group.bookmarks": {
+    "message": "Bokmärken"
+  },
+  "sidebar.group.cloud": {
+    "message": "Moln"
+  },
+  "sidebar.group.devices": {
+    "message": "Enheter"
+  },
+  "sidebar.group.drives": {
+    "message": "Diskar"
+  },
+  "sidebar.group.network": {
+    "message": "Nätverk"
+  },
+  "sidebar.section.connections": {
+    "message": "Anslutningar"
+  },
+  "sidebar.section.folders": {
+    "message": "Mappar"
+  },
+  "sidebar.section.operations": {
+    "message": "Åtgärder"
+  },
+  "sidebar.section.places": {
+    "message": "Platser"
+  },
+  "sidebar.volume.locked": {
+    "message": "låst"
+  },
+  "sidebar.volume.mounting": {
+    "message": "Monterar {name}..."
+  },
+  "sidebar.volume.not_mounted": {
+    "message": "inte monterad"
+  },
+  "sidebar.volume.open": {
+    "message": "Öppna"
+  },
+  "sidebar.volume.space": {
+    "message": "{free} ledigt av {total}"
+  },
+  "sidebar.volume.unmount": {
+    "message": "Avmontera"
+  },
+  "sidebar.volume.unmount_failed": {
+    "message": "Det gick inte att avmontera: {err}"
+  },
+  "split.bad_size": {
+    "message": "”{size}” är ingen storlek: 100 MB, 1.5 GB, 650m"
+  },
+  "split.choose": {
+    "message": "Placera markören på filen som ska delas upp."
+  },
+  "split.combine.choose": {
+    "message": "Placera markören på en del (namn.001) eller på dess .crc-fil."
+  },
+  "split.combine.dialog_title": {
+    "message": "Sammanfoga filer"
+  },
+  "split.combine.label": {
+    "message": "Sammanfoga delarna till filen:"
+  },
+  "split.combine.title": {
+    "message": "Sammanfoga ”{name}”"
+  },
+  "split.combined_no_crc": {
+    "message": "{count, plural, one {# del sammanfogad, ingen CRC-fil att kontrollera med} other {# delar sammanfogade, ingen CRC-fil att kontrollera med}}"
+  },
+  "split.crc_mismatch": {
+    "message": "{target} stämmer inte med {file}: en del saknas eller är skadad"
+  },
+  "split.crc_names_no_file": {
+    "message": "CRC-filen anger ingen fil"
+  },
+  "split.crc_unreadable": {
+    "message": "sammanfogad, men {file} kunde inte läsas: {err}"
+  },
+  "split.dialog_title": {
+    "message": "Dela upp fil"
+  },
+  "split.label": {
+    "message": "Dela upp ”{name}” i delar i mappen:"
+  },
+  "split.part_missing": {
+    "message": "{path} saknas"
+  },
+  "split.part_size": {
+    "message": "Delstorlek:"
+  },
+  "split.title": {
+    "message": "Dela upp ”{name}”"
+  },
+  "sync.close": {
+    "message": "Stäng"
+  },
+  "sync.column.date": {
+    "message": "Datum"
+  },
+  "sync.column.name": {
+    "message": "Namn"
+  },
+  "sync.column.size": {
+    "message": "Storlek"
+  },
+  "sync.compare": {
+    "message": "Jämför"
+  },
+  "sync.confirm.copy_left": {
+    "message": "Kopiera {count} till vänster ({size})"
+  },
+  "sync.confirm.copy_right": {
+    "message": "Kopiera {count} till höger ({size})"
+  },
+  "sync.confirm.delete_left": {
+    "message": "Ta bort {count} till vänster"
+  },
+  "sync.confirm.delete_right": {
+    "message": "Ta bort {count} till höger"
+  },
+  "sync.confirm.ok": {
+    "message": "Synkronisera"
+  },
+  "sync.confirm.text": {
+    "message": "{actions}. Kopierade filer ersätter de som finns där.{trash, select, yes { Borttagna filer på den här datorn hamnar i papperskorgen.} other {}}"
+  },
+  "sync.confirm.title": {
+    "message": "Synkronisera"
+  },
+  "sync.error.changed": {
+    "message": "ändrad sedan jämförelsen; jämför igen"
+  },
+  "sync.error.compare": {
+    "message": "Det gick inte att jämföra: {err}"
+  },
+  "sync.error.no_folders": {
+    "message": "Synkronisera mappar jämför två mappar: ingen av panelerna får visa ett arkiv eller sökresultat."
+  },
+  "sync.left": {
+    "message": "Vänster"
+  },
+  "sync.mask.label": {
+    "message": "Filer:"
+  },
+  "sync.option.asymmetric": {
+    "message": "Asymmetriskt (höger blir en kopia av vänster)"
+  },
+  "sync.option.by_content": {
+    "message": "Efter innehåll"
+  },
+  "sync.option.ignore_date": {
+    "message": "Ignorera datum"
+  },
+  "sync.option.subfolders": {
+    "message": "Undermappar"
+  },
+  "sync.result.done": {
+    "message": "{count, plural, one {# synkroniserad} other {# synkroniserade}}"
+  },
+  "sync.result.failed": {
+    "message": "{count, plural, one {# inte synkroniserad} other {# inte synkroniserade}}; {first}"
+  },
+  "sync.right": {
+    "message": "Höger"
+  },
+  "sync.show.equal": {
+    "message": "= lika"
+  },
+  "sync.show.label": {
+    "message": "Visa:"
+  },
+  "sync.show.other": {
+    "message": "≠ orörda"
+  },
+  "sync.show.to_left": {
+    "message": "← till vänster"
+  },
+  "sync.show.to_right": {
+    "message": "→ till höger"
+  },
+  "sync.status.both_empty": {
+    "message": "Båda är tomma."
+  },
+  "sync.status.comparing": {
+    "message": "Jämför {folder}"
+  },
+  "sync.status.counts": {
+    "message": "{right} att kopiera till höger, {left} att kopiera till vänster, {delete} att ta bort, {equal} lika, {alone} orörda"
+  },
+  "sync.status.stopped": {
+    "message": "Stoppad."
+  },
+  "sync.stop": {
+    "message": "Stoppa"
+  },
+  "sync.synchronize": {
+    "message": "Synkronisera..."
+  },
+  "sync.task.title": {
+    "message": "Synkronisera {left} och {right}"
+  },
+  "sync.title": {
+    "message": "Synkronisera mappar"
+  },
+  "tab_menu.close_all_tabs": {
+    "message": "Stäng alla flikar"
+  },
+  "tab_menu.close_duplicate_tabs": {
+    "message": "Stäng dubblettflikar"
+  },
+  "tab_menu.close_tab": {
+    "message": "Stäng den här fliken"
+  },
+  "tab_menu.copy_tab_to_other_panel": {
+    "message": "Kopiera fliken till andra panelen"
+  },
+  "tab_menu.duplicate_tab": {
+    "message": "Duplicera den här fliken"
+  },
+  "tab_menu.list_tabs": {
+    "message": "Visa lista över alla flikar"
+  },
+  "tab_menu.lock_tab": {
+    "message": "Lås den här fliken"
+  },
+  "tab_menu.none": {
+    "message": "(inga)"
+  },
+  "tab_menu.rename_tab": {
+    "message": "Byt namn på flik..."
+  },
+  "tabs.error.reopen": {
+    "message": "Det gick inte att öppna fliken igen: {err}"
+  },
+  "tabs.history.empty": {
+    "message": "Inga mappar i flikens historik än."
+  },
+  "tabs.new": {
+    "message": "Ny flik"
+  },
+  "tabs.rename.label": {
+    "message": "Nytt namn:"
+  },
+  "tabs.rename.title": {
+    "message": "Byt namn på flik"
+  },
+  "tabs.search_results": {
+    "message": "Sökresultat"
+  },
+  "terminal.busy": {
+    "message": "Ett program körs i terminalen: kör kommandot när det är klart."
+  },
+  "terminal.close.idle": {
+    "message": "Vill du stänga den här terminalfliken? Dess skal avslutas."
+  },
+  "terminal.close.ok": {
+    "message": "Stäng"
+  },
+  "terminal.close.running": {
+    "message": "Vill du stänga den här terminalfliken? Programmet som körs i den stoppas."
+  },
+  "terminal.close.title": {
+    "message": "Stäng flik"
+  },
+  "terminal.error.start_shell": {
+    "message": "Det gick inte att starta skalet: {err}"
+  },
+  "terminal.jump_to_bottom": {
+    "message": "Hoppa till slutet (Ctrl+End) ↓"
+  },
+  "terminal.menu.copy": {
+    "message": "Kopiera"
+  },
+  "terminal.menu.paste": {
+    "message": "Klistra in"
+  },
+  "toolbar.customize": {
+    "message": "Anpassa verktygsfält…"
+  },
+  "tools.clear_key": {
+    "message": "Rensa"
+  },
+  "tools.close": {
+    "message": "Stäng"
+  },
+  "tools.delete": {
+    "message": "Ta bort"
+  },
+  "tools.empty": {
+    "message": "Inga verktyg än: Nytt... lägger till ett."
+  },
+  "tools.field.command": {
+    "message": "Kommando"
+  },
+  "tools.field.key": {
+    "message": "Tangent"
+  },
+  "tools.field.name": {
+    "message": "Namn"
+  },
+  "tools.intro": {
+    "message": "Dina egna kommandorader, i menyn Verktyg: klicka på en där, eller tryck på dess tangent."
+  },
+  "tools.key.none": {
+    "message": "Ingen"
+  },
+  "tools.key.waiting": {
+    "message": "Tryck på tangenten... (Esc: ingen)"
+  },
+  "tools.move_down": {
+    "message": "Flytta ned"
+  },
+  "tools.move_up": {
+    "message": "Flytta upp"
+  },
+  "tools.name.placeholder": {
+    "message": "Jämför med andra sidan"
+  },
+  "tools.new": {
+    "message": "Nytt..."
+  },
+  "tools.new_name": {
+    "message": "Verktyg {number}"
+  },
+  "tools.no_command": {
+    "message": "{tool} har inget kommando än: Verktyg > Hantera verktyg."
+  },
+  "tools.not_local": {
+    "message": "Verktyg körs på den här datorn: panelen visar en server eller ett arkiv."
+  },
+  "tools.note.key_of_command": {
+    "message": "{key} är också {command}: verktyget tar den."
+  },
+  "tools.note.key_of_other_tool": {
+    "message": "{key} tillhör även {tool}: det som står längre ned i listan tar den."
+  },
+  "tools.placeholders": {
+    "message": "%P den här panelens mapp, %T den andra panelens (båda slutar med en avgränsare, så \"%P%N\" är en sökväg), %N filen under markören, %O dess namn utan filändelse, %E filändelsen, %S de markerade filerna (annars markörens), var och en inom citattecken; %% ett %. Sätt citattecken kring resten: \"%P%N\"."
+  },
+  "tools.run_in_terminal": {
+    "message": "Kör i terminalen, för att se vad det skriver ut"
+  },
+  "tools.set_key": {
+    "message": "Ange tangent..."
+  },
+  "tools.title": {
+    "message": "Verktyg"
+  },
+  "transfer.answer.cancel": {
+    "message": "Avbryt"
+  },
+  "transfer.answer.elevate": {
+    "message": "Som administratör"
+  },
+  "transfer.answer.overwrite": {
+    "message": "Skriv över"
+  },
+  "transfer.answer.overwrite_all": {
+    "message": "Skriv över alla"
+  },
+  "transfer.answer.rename": {
+    "message": "Byt namn"
+  },
+  "transfer.answer.retry": {
+    "message": "Försök igen"
+  },
+  "transfer.answer.skip": {
+    "message": "Hoppa över"
+  },
+  "transfer.answer.skip_all": {
+    "message": "Hoppa över alla"
+  },
+  "transfer.archive.local_only": {
+    "message": "Bara filer på den här datorn kan läggas i ett arkiv: kopiera dem hit först."
+  },
+  "transfer.cancel": {
+    "message": "Avbryt"
+  },
+  "transfer.error.elevate_hint": {
+    "message": "Som administratör: detta och allt annat som nekas, när resten är klart, med en enda fråga om lösenordet."
+  },
+  "transfer.error.title": {
+    "message": "Fel"
+  },
+  "transfer.exists.describe": {
+    "message": "{count, plural, one {{size} byte, {time}} other {{size} byte, {time}}}"
+  },
+  "transfer.exists.text": {
+    "message": "Redan där: {existing}\nDen nya: {new}"
+  },
+  "transfer.exists.title": {
+    "message": "Filen finns redan"
+  },
+  "transfer.extract_failed": {
+    "message": "Det gick inte att ta ut dem: {err}"
+  },
+  "transfer.into_archive.question_many": {
+    "message": "{kind, select, copy {Vill du kopiera} other {Vill du flytta}} {count, plural, one {# objekt} other {# objekt}} till {into}? Det som har samma namn där ersätts."
+  },
+  "transfer.into_archive.question_one": {
+    "message": "{kind, select, copy {Vill du kopiera} other {Vill du flytta}} ”{name}” till {into}? Det som har samma namn där ersätts."
+  },
+  "transfer.into_archive.title_many": {
+    "message": "{kind, select, copy {Kopiera} other {Flytta}} {count, plural, one {# objekt} other {# objekt}} till {archive}"
+  },
+  "transfer.into_archive.title_one": {
+    "message": "{kind, select, copy {Kopiera} other {Flytta}} ”{name}” till {archive}"
+  },
+  "transfer.label.many": {
+    "message": "{kind, select, copy {Kopiera} other {Flytta}} {count, plural, one {# objekt} other {# objekt}} till:"
+  },
+  "transfer.label.many_server": {
+    "message": "{kind, select, copy {Kopiera} other {Flytta}} {count, plural, one {# objekt} other {# objekt}} till {server}:"
+  },
+  "transfer.label.one": {
+    "message": "{kind, select, copy {Kopiera} other {Flytta}} ”{name}” till:"
+  },
+  "transfer.label.one_server": {
+    "message": "{kind, select, copy {Kopiera} other {Flytta}} ”{name}” till {server}:"
+  },
+  "transfer.ok": {
+    "message": "OK"
+  },
+  "transfer.overwrite.all": {
+    "message": "Skriv över alla"
+  },
+  "transfer.overwrite.ask": {
+    "message": "Fråga"
+  },
+  "transfer.overwrite.label": {
+    "message": "Där målet har en fil med samma namn:"
+  },
+  "transfer.overwrite.older": {
+    "message": "Skriv över äldre"
+  },
+  "transfer.overwrite.rename": {
+    "message": "Byt namn på kopiorna"
+  },
+  "transfer.overwrite.skip": {
+    "message": "Hoppa över alla"
+  },
+  "transfer.remove_moved": {
+    "message": "Ta bort de flyttade från {name}"
+  },
+  "transfer.speed": {
+    "message": "{size}/s"
+  },
+  "transfer.strip.counting": {
+    "message": "räknar: {count, plural, one {# fil} other {# filer}}"
+  },
+  "transfer.strip.progress": {
+    "message": "{files} / {count, plural, one {# fil} other {# filer}}, {percent} %"
+  },
+  "transfer.strip.queue": {
+    "message": "Kö..."
+  },
+  "transfer.strip.queue_waiting": {
+    "message": "Kö ({count, plural, one {# väntar} other {# väntar}})..."
+  },
+  "transfer.title.copy": {
+    "message": "Kopiera"
+  },
+  "transfer.title.move": {
+    "message": "Flytta"
+  },
+  "viewer.as_text_hint": {
+    "message": "{err}. 1 visar filen som text."
+  },
+  "viewer.book.cannot_read": {
+    "message": "Boken kan inte läsas: {err}. 1 visar filen som text."
+  },
+  "viewer.book.continuing": {
+    "message": "Fortsätter vid {percent}"
+  },
+  "viewer.book.error.compression": {
+    "message": "komprimerad på ett sätt som inte kan läsas än ({compression})"
+  },
+  "viewer.book.error.damaged": {
+    "message": "en skadad bok"
+  },
+  "viewer.book.error.damaged_zip": {
+    "message": "en skadad zip"
+  },
+  "viewer.book.error.drm": {
+    "message": "DRM-skyddad: bara Kindle kan läsa den"
+  },
+  "viewer.book.error.huffman": {
+    "message": "komprimerad som Amazons egna böcker (HUFF/CDIC), vilket inte kan läsas än"
+  },
+  "viewer.book.error.missing_part": {
+    "message": "{name} finns inte i boken"
+  },
+  "viewer.book.error.no_package": {
+    "message": "ingen paketfil i boken"
+  },
+  "viewer.book.error.no_text": {
+    "message": "boken har ingen text"
+  },
+  "viewer.book.error.not_zip": {
+    "message": "inte en zip: en skadad eller DRM-skyddad bok?"
+  },
+  "viewer.book.error.zip_method": {
+    "message": "{name}: komprimerad på ett sätt som zip inte kan läsa här ({method})"
+  },
+  "viewer.cannot_show": {
+    "message": "Kan inte visa den: {err}"
+  },
+  "viewer.convert.failed": {
+    "message": "{tool} kunde inte konvertera den ({status})"
+  },
+  "viewer.converting": {
+    "message": "Konverterar med {tool}…"
+  },
+  "viewer.copy.too_large": {
+    "message": "Markeringar över {megabytes} MB kopieras inte."
+  },
+  "viewer.encoding.cp1250": {
+    "message": "Östeuropa (1250)"
+  },
+  "viewer.encoding.cp1251": {
+    "message": "Kyrilliska Windows (1251)"
+  },
+  "viewer.encoding.cp1252": {
+    "message": "Västerländsk Latin1 (1252)"
+  },
+  "viewer.encoding.cp1253": {
+    "message": "Grekiska (1253)"
+  },
+  "viewer.encoding.cp1254": {
+    "message": "Turkiska (1254)"
+  },
+  "viewer.encoding.cp1255": {
+    "message": "Hebreiska (1255)"
+  },
+  "viewer.encoding.cp1256": {
+    "message": "Arabiska (1256)"
+  },
+  "viewer.encoding.cp1257": {
+    "message": "Baltiska (1257)"
+  },
+  "viewer.encoding.cp1258": {
+    "message": "Vietnamesiska (1258)"
+  },
+  "viewer.encoding.cp20866": {
+    "message": "Kyrilliska KOI8-R (20866)"
+  },
+  "viewer.encoding.cp437": {
+    "message": "DOS-USA (437)"
+  },
+  "viewer.encoding.cp850": {
+    "message": "DOS-LATIN1 (850)"
+  },
+  "viewer.encoding.cp852": {
+    "message": "DOS Centraleuropa (852)"
+  },
+  "viewer.encoding.cp866": {
+    "message": "DOS Kyrilliska (866)"
+  },
+  "viewer.encoding.cp874": {
+    "message": "Thailändska (874)"
+  },
+  "viewer.encoding.cp932": {
+    "message": "Japanska (932)"
+  },
+  "viewer.encoding.cp936": {
+    "message": "Kinesiska, Fastlandskina (936)"
+  },
+  "viewer.encoding.cp949": {
+    "message": "Koreanska (949)"
+  },
+  "viewer.encoding.cp950": {
+    "message": "Kinesiska, Taiwan (950)"
+  },
+  "viewer.find.not_found": {
+    "message": "Hittades inte: {text}"
+  },
+  "viewer.find.not_hex": {
+    "message": "Inte en hexsträng: {text}"
+  },
+  "viewer.find.nothing": {
+    "message": "Inget att söka efter."
+  },
+  "viewer.find.save_failed": {
+    "message": "Det gick inte att spara sökningarna: {err}"
+  },
+  "viewer.loading": {
+    "message": "Läser in…"
+  },
+  "viewer.markdown.too_large": {
+    "message": "Över {megabytes} MB: 1 visar det som text."
+  },
+  "viewer.menu.binary": {
+    "message": "Binärt (fast radlängd)"
+  },
+  "viewer.menu.book": {
+    "message": "Bok (EPUB, FB2)"
+  },
+  "viewer.menu.close": {
+    "message": "Stäng"
+  },
+  "viewer.menu.configure": {
+    "message": "Konfigurera..."
+  },
+  "viewer.menu.copy_hex": {
+    "message": "Kopiera som hextecken"
+  },
+  "viewer.menu.copy_text": {
+    "message": "Kopiera som text"
+  },
+  "viewer.menu.edit": {
+    "message": "Redigera"
+  },
+  "viewer.menu.encoding": {
+    "message": "Kodning"
+  },
+  "viewer.menu.file": {
+    "message": "Fil"
+  },
+  "viewer.menu.find": {
+    "message": "Sök..."
+  },
+  "viewer.menu.find_next": {
+    "message": "Sök nästa"
+  },
+  "viewer.menu.fit_image": {
+    "message": "Anpassa bilden till fönstret"
+  },
+  "viewer.menu.font_ansi": {
+    "message": "ANSI (Windows-teckenuppsättning)"
+  },
+  "viewer.menu.font_ascii": {
+    "message": "ASCII (DOS-teckenuppsättning)"
+  },
+  "viewer.menu.font_page": {
+    "message": "Enligt teckensnittet"
+  },
+  "viewer.menu.font_variable": {
+    "message": "Variabel teckenbredd"
+  },
+  "viewer.menu.hex": {
+    "message": "Hex"
+  },
+  "viewer.menu.html": {
+    "message": "HTML-text (utan taggar)"
+  },
+  "viewer.menu.minimap": {
+    "message": "Minikarta"
+  },
+  "viewer.menu.next_file": {
+    "message": "Nästa fil"
+  },
+  "viewer.menu.only_larger": {
+    "message": "Anpassa bara större bilder"
+  },
+  "viewer.menu.open": {
+    "message": "Öppna..."
+  },
+  "viewer.menu.options": {
+    "message": "Alternativ"
+  },
+  "viewer.menu.picture": {
+    "message": "Bild/multimedia"
+  },
+  "viewer.menu.previous_file": {
+    "message": "Föregående fil"
+  },
+  "viewer.menu.reload": {
+    "message": "Läs in igen"
+  },
+  "viewer.menu.save_as": {
+    "message": "Spara som..."
+  },
+  "viewer.menu.search_google": {
+    "message": "Sök efter markerad text med Google"
+  },
+  "viewer.menu.select_all": {
+    "message": "Markera allt"
+  },
+  "viewer.menu.syntax_colors": {
+    "message": "Syntaxfärger"
+  },
+  "viewer.menu.text_only": {
+    "message": "Endast text"
+  },
+  "viewer.menu.unicode": {
+    "message": "Unicode (UTF-16)"
+  },
+  "viewer.menu.wrap": {
+    "message": "Radbryt text ({columns, plural, one {# kolumn} other {# kolumner}})"
+  },
+  "viewer.mode.binary": {
+    "message": "Binärt · {page}"
+  },
+  "viewer.mode.book": {
+    "message": "Bok"
+  },
+  "viewer.mode.hex": {
+    "message": "Hex · {page}"
+  },
+  "viewer.mode.html": {
+    "message": "HTML-text"
+  },
+  "viewer.mode.image": {
+    "message": "Bild"
+  },
+  "viewer.mode.multimedia": {
+    "message": "Multimedia"
+  },
+  "viewer.mode.pdf_by": {
+    "message": "PDF via {tool}"
+  },
+  "viewer.mode.text": {
+    "message": "Text · {page}"
+  },
+  "viewer.origin.not_editable": {
+    "message": "bara filer i 7z-, zip-, jar- och tar-arkiv kan redigeras"
+  },
+  "viewer.origin.updated": {
+    "message": "Uppdaterade {archive}"
+  },
+  "viewer.origin.updated_on": {
+    "message": "Uppdaterade {archive} på {server}"
+  },
+  "viewer.origin.uploaded": {
+    "message": "Laddade upp {path}"
+  },
+  "viewer.pdf.cannot_show": {
+    "message": "PDF-filen kan inte visas: {err}"
+  },
+  "viewer.pdf.loading": {
+    "message": "Läser in..."
+  },
+  "viewer.pdf.page": {
+    "message": "Sida {page} / {pages}"
+  },
+  "viewer.picture.cannot_show": {
+    "message": "Bilden kan inte visas; 1 visar den som text."
+  },
+  "viewer.save_as.failed": {
+    "message": "Det gick inte att spara {path}: {err}"
+  },
+  "viewer.status.rows": {
+    "message": "{count, plural, one {{first}–{last} av {grouped} rad} other {{first}–{last} av {grouped} rader}}"
+  },
+  "viewer.status.rows_so_far": {
+    "message": "{count, plural, one {{grouped} rad hittills, {percent} läst} other {{grouped} rader hittills, {percent} läst}}"
+  },
+  "viewer.status.searching": {
+    "message": "Söker…"
+  },
+  "viewer.status.size": {
+    "message": "{count, plural, one {{grouped} byte} other {{grouped} byte}}"
+  },
+  "viewer.window.title": {
+    "message": "{path} — Visare"
+  },
+  "viewer.zoom.fit": {
+    "message": "Tillbaka till fönsteranpassning (Ctrl+0)"
+  },
+  "viewer.zoom.in": {
+    "message": "Zooma in (Ctrl++)"
+  },
+  "viewer.zoom.out": {
+    "message": "Zooma ut (Ctrl+-)"
+  },
+  "viewer.zoom.reset": {
+    "message": "Tillbaka till 100 % (Ctrl+0)"
+  },
+  "workspaces.button.close": {
+    "message": "Stäng"
+  },
+  "workspaces.button.delete": {
+    "message": "Ta bort..."
+  },
+  "workspaces.button.duplicate": {
+    "message": "Duplicera..."
+  },
+  "workspaces.button.new": {
+    "message": "Ny..."
+  },
+  "workspaces.button.rename": {
+    "message": "Byt namn..."
+  },
+  "workspaces.delete.button": {
+    "message": "Ta bort"
+  },
+  "workspaces.delete.closed": {
+    "message": "Vill du ta bort arbetsytan ”{name}”? Dess flikar glöms."
+  },
+  "workspaces.delete.closed_shells": {
+    "message": "Vill du ta bort arbetsytan ”{name}”? Dess flikar glöms, och skalen i dess terminalflikar avslutas."
+  },
+  "workspaces.delete.open": {
+    "message": "Vill du ta bort arbetsytan ”{name}”? Dess flikar stängs; ”{other}” öppnas i stället."
+  },
+  "workspaces.delete.open_shells": {
+    "message": "Vill du ta bort arbetsytan ”{name}”? Dess flikar stängs och skalen i dess terminalflikar avslutas; ”{other}” öppnas i stället."
+  },
+  "workspaces.delete.title": {
+    "message": "Ta bort arbetsyta"
+  },
+  "workspaces.duplicate.name": {
+    "message": "{name} kopia"
+  },
+  "workspaces.duplicate.title": {
+    "message": "Duplicera arbetsyta"
+  },
+  "workspaces.error.name_taken": {
+    "message": "En annan arbetsyta har det här namnet."
+  },
+  "workspaces.error.no_name": {
+    "message": "En arbetsyta behöver ett namn."
+  },
+  "workspaces.error.save": {
+    "message": "Det gick inte att spara arbetsytorna: {err}"
+  },
+  "workspaces.hint": {
+    "message": "Visa > Arbetsytor öppnar en. Det som ändras i den öppna sparas i den."
+  },
+  "workspaces.name.label": {
+    "message": "Namn:"
+  },
+  "workspaces.new.name": {
+    "message": "Arbetsyta {number}"
+  },
+  "workspaces.new.title": {
+    "message": "Ny arbetsyta"
+  },
+  "workspaces.open": {
+    "message": "öppen"
+  },
+  "workspaces.rename.title": {
+    "message": "Byt namn på arbetsyta"
+  },
+  "workspaces.summary.panels": {
+    "message": "Vänster {left, plural, one {# flik} other {# flikar}}, höger {right, plural, one {# flik} other {# flikar}}"
+  },
+  "workspaces.summary.terminal": {
+    "message": "Vänster {left, plural, one {# flik} other {# flikar}}, höger {right, plural, one {# flik} other {# flikar}}, terminal {terminal, plural, one {# flik} other {# flikar}}"
+  },
+  "workspaces.summary.terminal_hidden": {
+    "message": "Vänster {left, plural, one {# flik} other {# flikar}}, höger {right, plural, one {# flik} other {# flikar}}, terminal {terminal, plural, one {# flik} other {# flikar}} (dold)"
+  },
+  "workspaces.title": {
+    "message": "Arbetsytor"
+  }
+}

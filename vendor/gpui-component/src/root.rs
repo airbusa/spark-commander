@@ -457,6 +457,9 @@ impl gpui_base::RootPlugin for WindowState {
             .text_color(cx.theme().foreground)
             .rounded_tl(top_left)
             .rounded_tr(top_right);
+        // SparkCommander patch: the theme's fallback families, see `Theme::font_fallbacks`.
+        let mut style = style;
+        style.text.font_fallbacks = cx.theme().font_fallbacks.clone();
         // SparkCommander patch: see `see_through`.
         let style = match self.see_through {
             true => style,

@@ -1,0 +1,4823 @@
+{
+  "about.addons": {
+    "message": "Tiện ích bổ sung, tải về khi bạn chọn"
+  },
+  "about.libraries": {
+    "message": "Xây dựng trên"
+  },
+  "about.licence": {
+    "message": "Giấy phép:"
+  },
+  "about.made_with": {
+    "message": "Được tạo nên nhờ công sức của các dự án sau"
+  },
+  "about.part.alacritty_terminal": {
+    "message": "Màn hình và shell của terminal tích hợp"
+  },
+  "about.part.encoding_rs": {
+    "message": "Bảng mã"
+  },
+  "about.part.gpui": {
+    "message": "Cửa sổ, đồ họa và nhập liệu (của Zed)"
+  },
+  "about.part.gpui_kit": {
+    "message": "Điều khiển: danh sách, menu, trường nhập, trình soạn thảo"
+  },
+  "about.part.html5ever": {
+    "message": "HTML và sách điện tử trong trình xem"
+  },
+  "about.part.image": {
+    "message": "Hình ảnh"
+  },
+  "about.part.keyring": {
+    "message": "Mật khẩu trong kho khóa của hệ thống"
+  },
+  "about.part.lucide": {
+    "message": "Biểu tượng"
+  },
+  "about.part.material_icons": {
+    "message": "Biểu tượng tệp và thư mục"
+  },
+  "about.part.pdfium_render": {
+    "message": "PDFium từ Rust"
+  },
+  "about.part.ratatui": {
+    "message": "scmd, phiên bản cho terminal"
+  },
+  "about.part.russh": {
+    "message": "SSH và SFTP"
+  },
+  "about.part.rustls": {
+    "message": "TLS"
+  },
+  "about.part.serde": {
+    "message": "Tệp cài đặt"
+  },
+  "about.part.similar": {
+    "message": "So sánh theo nội dung"
+  },
+  "about.part.suppaftp": {
+    "message": "FTP và FTPS"
+  },
+  "about.part.tokio": {
+    "message": "Tác vụ mạng chạy nền"
+  },
+  "about.part.trash": {
+    "message": "Thùng rác"
+  },
+  "about.part.tree_sitter": {
+    "message": "Tô màu mã trong trình xem và trình soạn thảo"
+  },
+  "about.part.zbus": {
+    "message": "D-Bus: môi trường desktop, thiết bị, KDE Connect"
+  },
+  "about.shipped": {
+    "message": "Đi kèm ứng dụng"
+  },
+  "about.tagline": {
+    "message": "Trình quản lý tệp hai khung, phần mềm tự do."
+  },
+  "about.title": {
+    "message": "Giới thiệu về Spark Commander"
+  },
+  "about.version": {
+    "message": "Phiên bản {version}"
+  },
+  "activity.clear": {
+    "message": "Xóa hết"
+  },
+  "activity.clear_failed": {
+    "message": "Không xóa được nhật ký: {err}"
+  },
+  "activity.empty": {
+    "message": "Chưa có thao tác nào."
+  },
+  "activity.title": {
+    "message": "Nhật ký hoạt động"
+  },
+  "addons.error.damaged": {
+    "message": "tệp tải về bị hỏng: tổng kiểm tra không khớp"
+  },
+  "addons.error.list": {
+    "message": "danh sách tiện ích bổ sung: {err}"
+  },
+  "addons.error.missing_file": {
+    "message": "tệp tải về không có {file}"
+  },
+  "addons.error.no_folder": {
+    "message": "không có thư mục dữ liệu"
+  },
+  "addons.error.unpacking": {
+    "message": "giải nén: {err}"
+  },
+  "addons.installed": {
+    "message": "Đã cài đặt {addon} {version}."
+  },
+  "addons.megabytes": {
+    "message": "{size} MB"
+  },
+  "addons.offer.never": {
+    "message": "Không hiển thị lại"
+  },
+  "addons.offer.no": {
+    "message": "Không"
+  },
+  "addons.offer.text": {
+    "message": "{name} cần một tiện ích bổ sung chưa được cài đặt: {addon}. Tải về trong Cài đặt > Tiện ích bổ sung?"
+  },
+  "addons.offer.title": {
+    "message": "Tiện ích bổ sung"
+  },
+  "addons.offer.yes": {
+    "message": "Có"
+  },
+  "addons.purpose.cloud": {
+    "message": "Lưu trữ trực tuyến: S3, Google Drive, OneDrive, Dropbox và các dịch vụ khác."
+  },
+  "addons.purpose.media": {
+    "message": "Video, âm thanh và ảnh HEIC, AVIF: trình xem và Xem nhanh sẽ hiển thị chúng."
+  },
+  "addons.purpose.office": {
+    "message": "Tài liệu văn phòng: trình xem hiển thị tệp Word, Excel và PowerPoint dưới dạng PDF."
+  },
+  "addons.purpose.pdfium": {
+    "message": "PDF: trình xem hiển thị tệp PDF, và cả tài liệu văn phòng sau khi chuyển đổi."
+  },
+  "addons.purpose.seven_zip": {
+    "message": "Tệp nén: nén và giải nén 7z, zip, rar, tar và các định dạng khác."
+  },
+  "addons.update": {
+    "message": "Cập nhật"
+  },
+  "addons.updates": {
+    "message": "Cập nhật tiện ích bổ sung: {names}"
+  },
+  "appearance.dark": {
+    "message": "Tối"
+  },
+  "appearance.light": {
+    "message": "Sáng"
+  },
+  "appearance.system": {
+    "message": "Theo hệ thống"
+  },
+  "archive.cannot_read": {
+    "message": "{name}: không đọc được"
+  },
+  "archive.not_in_archive": {
+    "message": "{name} không có trong tệp nén"
+  },
+  "archive.not_own_folder": {
+    "message": "{folder} không phải thư mục riêng của người dùng này"
+  },
+  "archive.seven_zip_failed": {
+    "message": "7-Zip bị lỗi ({code})"
+  },
+  "archive.seven_zip_missing": {
+    "message": "Thiếu 7-Zip: {path} (hãy chạy vendor/7zip/fetch.sh hoặc fetch.bat)"
+  },
+  "archive.temp_not_utf8": {
+    "message": "tên thư mục tạm không phải UTF-8"
+  },
+  "associations.add": {
+    "message": "Thêm..."
+  },
+  "associations.cancel": {
+    "message": "Hủy"
+  },
+  "associations.close": {
+    "message": "Đóng"
+  },
+  "associations.column.edit": {
+    "message": "Sửa (F4)"
+  },
+  "associations.column.files": {
+    "message": "Tệp"
+  },
+  "associations.column.open": {
+    "message": "Mở (Enter)"
+  },
+  "associations.column.view": {
+    "message": "Xem (F3)"
+  },
+  "associations.edit": {
+    "message": "Sửa..."
+  },
+  "associations.edit_dialog.title": {
+    "message": "Gán chương trình"
+  },
+  "associations.empty": {
+    "message": "Chưa có mục nào."
+  },
+  "associations.field.edit": {
+    "message": "Sửa bằng (F4):"
+  },
+  "associations.field.files": {
+    "message": "Tệp (*.jpg *.png):"
+  },
+  "associations.field.open": {
+    "message": "Mở bằng (Enter):"
+  },
+  "associations.field.view": {
+    "message": "Xem bằng (F3):"
+  },
+  "associations.intro": {
+    "message": "Enter, F3 và F4 chạy các chương trình này cho tệp khớp mẫu; để trống thì dùng như thường lệ. %1 là tệp."
+  },
+  "associations.mask_needed": {
+    "message": "Cần có mẫu tên tệp: *.txt"
+  },
+  "associations.no_file": {
+    "message": "Hãy đặt con trỏ vào một tệp thuộc loại cần gán chương trình."
+  },
+  "associations.ok": {
+    "message": "OK"
+  },
+  "associations.remove": {
+    "message": "Xóa"
+  },
+  "associations.save_failed": {
+    "message": "Không lưu được cài đặt: {err}"
+  },
+  "associations.title": {
+    "message": "Gán chương trình nội bộ"
+  },
+  "attributes.bad_time": {
+    "message": "“{text}” không phải ngày giờ hợp lệ: 2026-11-10 14:04:33"
+  },
+  "attributes.cancel": {
+    "message": "Hủy"
+  },
+  "attributes.change_time": {
+    "message": "Đổi ngày/giờ:"
+  },
+  "attributes.changed": {
+    "message": "{count, plural, other {Đã thay đổi # mục}}"
+  },
+  "attributes.changed_failed": {
+    "message": "{count, plural, other {Đã thay đổi # mục}}, {failed, plural, other {# mục bị lỗi}}"
+  },
+  "attributes.dialog_title_many": {
+    "message": "Thay đổi thuộc tính: {count, plural, other {# mục}}"
+  },
+  "attributes.dialog_title_one": {
+    "message": "Thay đổi thuộc tính: {name}"
+  },
+  "attributes.execute": {
+    "message": "Thực thi"
+  },
+  "attributes.group": {
+    "message": "Nhóm"
+  },
+  "attributes.in_archive": {
+    "message": "Không thể thay đổi thuộc tính bên trong tệp nén."
+  },
+  "attributes.no_bits": {
+    "message": "Các tệp này không có bit quyền ở đây; chỉ có thể đổi ngày giờ."
+  },
+  "attributes.now": {
+    "message": "Bây giờ"
+  },
+  "attributes.octal": {
+    "message": "Bát phân:"
+  },
+  "attributes.ok": {
+    "message": "OK"
+  },
+  "attributes.others": {
+    "message": "Người khác"
+  },
+  "attributes.owner": {
+    "message": "Chủ sở hữu"
+  },
+  "attributes.read": {
+    "message": "Đọc"
+  },
+  "attributes.recurse": {
+    "message": "Áp dụng cả cho mọi thứ bên trong thư mục"
+  },
+  "attributes.title_many": {
+    "message": "Thay đổi thuộc tính của {count, plural, other {# mục}}"
+  },
+  "attributes.title_one": {
+    "message": "Thay đổi thuộc tính của “{name}”"
+  },
+  "attributes.write": {
+    "message": "Ghi"
+  },
+  "bookmarks.add_current": {
+    "message": "Thêm thư mục hiện tại"
+  },
+  "bookmarks.add_folders": {
+    "message": "Thêm thư mục..."
+  },
+  "bookmarks.added": {
+    "message": "Đã thêm dấu trang: {name}"
+  },
+  "bookmarks.already": {
+    "message": "{name} đã có trong Dấu trang."
+  },
+  "bookmarks.chooser.failed": {
+    "message": "Không mở được hộp chọn thư mục: {err}"
+  },
+  "bookmarks.chooser.prompt": {
+    "message": "Thêm dấu trang"
+  },
+  "bookmarks.close": {
+    "message": "Đóng"
+  },
+  "bookmarks.copy_name": {
+    "message": "Sao chép tên"
+  },
+  "bookmarks.copy_path": {
+    "message": "Sao chép đường dẫn"
+  },
+  "bookmarks.drop_here": {
+    "message": "Thả thư mục vào đây."
+  },
+  "bookmarks.empty": {
+    "message": "Chưa có dấu trang: hãy thêm thư mục hoặc thả chúng vào đây."
+  },
+  "bookmarks.intro": {
+    "message": "Các thư mục trên máy tính này, theo thứ tự trong Vị trí: kéo một mục để di chuyển, hoặc thả thư mục vào đây để thêm."
+  },
+  "bookmarks.move_down": {
+    "message": "Chuyển xuống"
+  },
+  "bookmarks.move_up": {
+    "message": "Chuyển lên"
+  },
+  "bookmarks.only_local": {
+    "message": "Chỉ có thể thêm dấu trang cho thư mục trên máy tính này."
+  },
+  "bookmarks.remove": {
+    "message": "Xóa"
+  },
+  "bookmarks.remove_from": {
+    "message": "Xóa khỏi Dấu trang"
+  },
+  "bookmarks.rename": {
+    "message": "Đổi tên..."
+  },
+  "bookmarks.rename_label": {
+    "message": "Tên (để trống: tên thư mục):"
+  },
+  "bookmarks.rename_title": {
+    "message": "Đổi tên dấu trang"
+  },
+  "bookmarks.sort": {
+    "message": "Sắp xếp A–Z"
+  },
+  "bookmarks.title": {
+    "message": "Dấu trang"
+  },
+  "button_bar.copy": {
+    "message": "Sao chép"
+  },
+  "button_bar.delete": {
+    "message": "Xóa"
+  },
+  "button_bar.edit": {
+    "message": "Sửa"
+  },
+  "button_bar.move": {
+    "message": "Di chuyển"
+  },
+  "button_bar.new_folder": {
+    "message": "Thư mục mới"
+  },
+  "button_bar.quit": {
+    "message": "Thoát"
+  },
+  "button_bar.view": {
+    "message": "Xem"
+  },
+  "checksum.create.title": {
+    "message": "Tạo {name}"
+  },
+  "checksum.create.title_separate": {
+    "message": "Tạo tệp tổng kiểm tra {method}"
+  },
+  "checksum.dialog_title": {
+    "message": "Tạo tệp tổng kiểm tra"
+  },
+  "checksum.save_as": {
+    "message": "Lưu tệp tổng kiểm tra thành:"
+  },
+  "checksum.separate": {
+    "message": "Thay vào đó, tạo một tệp tổng kiểm tra cạnh mỗi tệp"
+  },
+  "checksum.verify.all_ok": {
+    "message": "{count, plural, other {cả # tệp đều khớp}}"
+  },
+  "checksum.verify.choose": {
+    "message": "Hãy chọn tệp tổng kiểm tra: .sfv, .md5, .sha1, .sha256 hoặc .sha512."
+  },
+  "checksum.verify.missing_file": {
+    "message": "thiếu: {name}"
+  },
+  "checksum.verify.result": {
+    "message": "{ok, plural, other {# khớp}}, {wrong, plural, other {# sai}}, {missing, plural, other {# thiếu}}"
+  },
+  "checksum.verify.title_many": {
+    "message": "Xác minh {count, plural, other {# tệp tổng kiểm tra}}"
+  },
+  "checksum.verify.title_one": {
+    "message": "Xác minh {name}"
+  },
+  "checksum.verify.wrong_file": {
+    "message": "sai: {name}"
+  },
+  "command.about": {
+    "message": "Giới thiệu về Spark Commander"
+  },
+  "command.activity_log": {
+    "message": "Nhật ký hoạt động..."
+  },
+  "command.all_files": {
+    "message": "Tất cả tệp"
+  },
+  "command.all_folder_sizes": {
+    "message": "Tính kích thước mọi thư mục"
+  },
+  "command.all_with_extension": {
+    "message": "*.*"
+  },
+  "command.associate_with": {
+    "message": "Gán chương trình..."
+  },
+  "command.bookmark_folder": {
+    "message": "Thêm thư mục này vào Dấu trang"
+  },
+  "command.bookmarks": {
+    "message": "Dấu trang"
+  },
+  "command.branch_view": {
+    "message": "Xem nhánh (kèm thư mục con)"
+  },
+  "command.branch_view_selected": {
+    "message": "Xem nhánh các thư mục đã chọn"
+  },
+  "command.brief": {
+    "message": "Ngắn gọn"
+  },
+  "command.calculate_occupied_space": {
+    "message": "Tính dung lượng chiếm dụng..."
+  },
+  "command.change_attributes": {
+    "message": "Thay đổi thuộc tính..."
+  },
+  "command.close_all_tabs": {
+    "message": "Đóng mọi thẻ"
+  },
+  "command.close_duplicate_tabs": {
+    "message": "Đóng các thẻ trùng lặp"
+  },
+  "command.close_tab": {
+    "message": "Đóng thẻ"
+  },
+  "command.combine_files": {
+    "message": "Ghép tệp..."
+  },
+  "command.compare_by_content": {
+    "message": "So sánh theo nội dung..."
+  },
+  "command.compare_directories": {
+    "message": "Đánh dấu tệp mới hơn"
+  },
+  "command.copy": {
+    "message": "Sao chép..."
+  },
+  "command.copy_names_to_clipboard": {
+    "message": "Sao chép tên đã chọn vào bộ nhớ tạm"
+  },
+  "command.copy_names_with_path_to_clipboard": {
+    "message": "Sao chép tên kèm đường dẫn vào bộ nhớ tạm"
+  },
+  "command.copy_to_clipboard": {
+    "message": "Sao chép tệp"
+  },
+  "command.copy_with_all_details": {
+    "message": "Sao chép vào bộ nhớ tạm kèm mọi chi tiết"
+  },
+  "command.copy_with_path_and_details": {
+    "message": "Sao chép vào bộ nhớ tạm kèm đường dẫn+chi tiết"
+  },
+  "command.create_checksum_files": {
+    "message": "Tạo tệp tổng kiểm tra (CRC32, MD5, SHA1, SHA256, SHA512)..."
+  },
+  "command.create_link": {
+    "message": "Tạo liên kết..."
+  },
+  "command.custom_filter": {
+    "message": "Tùy chỉnh..."
+  },
+  "command.cut_to_clipboard": {
+    "message": "Cắt tệp"
+  },
+  "command.delete": {
+    "message": "Xóa"
+  },
+  "command.delete_permanently": {
+    "message": "Xóa vĩnh viễn"
+  },
+  "command.disconnect": {
+    "message": "Ngắt kết nối khỏi máy chủ"
+  },
+  "command.download_link": {
+    "message": "Tải về từ liên kết..."
+  },
+  "command.duplicate_tab": {
+    "message": "Thẻ mới"
+  },
+  "command.duplicate_workspace": {
+    "message": "Nhân bản không gian làm việc..."
+  },
+  "command.edit": {
+    "message": "Sửa"
+  },
+  "command.edit_externally": {
+    "message": "Sửa bằng trình soạn thảo ngoài"
+  },
+  "command.folder_history": {
+    "message": "Lịch sử thư mục..."
+  },
+  "command.full": {
+    "message": "Đầy đủ"
+  },
+  "command.go_back": {
+    "message": "Quay lại"
+  },
+  "command.go_forward": {
+    "message": "Tiến tới"
+  },
+  "command.go_home": {
+    "message": "Thư mục cá nhân"
+  },
+  "command.go_to_root": {
+    "message": "Thư mục gốc"
+  },
+  "command.hidden_files": {
+    "message": "Tệp ẩn"
+  },
+  "command.internal_associations": {
+    "message": "Gán chương trình nội bộ (chỉ trong Spark Commander)..."
+  },
+  "command.invert_selection": {
+    "message": "Đảo vùng chọn"
+  },
+  "command.left_drives": {
+    "message": "Ổ đĩa (khung trái)"
+  },
+  "command.list_tabs": {
+    "message": "Danh sách thẻ"
+  },
+  "command.load_selection_from_file": {
+    "message": "Tải vùng chọn từ tệp"
+  },
+  "command.manage_bookmarks": {
+    "message": "Quản lý dấu trang..."
+  },
+  "command.manage_tools": {
+    "message": "Quản lý công cụ..."
+  },
+  "command.manage_workspaces": {
+    "message": "Quản lý không gian làm việc..."
+  },
+  "command.mark_in_place": {
+    "message": "Đánh dấu / bỏ đánh dấu tại chỗ, có tính kích thước thư mục"
+  },
+  "command.mark_newer_hide_same": {
+    "message": "Đánh dấu tệp mới hơn, ẩn tệp giống nhau"
+  },
+  "command.move": {
+    "message": "Di chuyển..."
+  },
+  "command.multi_rename_tool": {
+    "message": "Công cụ đổi tên hàng loạt..."
+  },
+  "command.name_to_command_line": {
+    "message": "Đưa tên vào dòng lệnh"
+  },
+  "command.new_folder": {
+    "message": "Thư mục mới..."
+  },
+  "command.new_terminal": {
+    "message": "Thẻ terminal mới"
+  },
+  "command.new_text_file": {
+    "message": "Tệp mới..."
+  },
+  "command.new_workspace": {
+    "message": "Không gian làm việc mới..."
+  },
+  "command.next_tab": {
+    "message": "Thẻ tiếp theo"
+  },
+  "command.only_selected_files": {
+    "message": "Chỉ các tệp đã chọn"
+  },
+  "command.open_in_left_panel": {
+    "message": "Hiển thị trong khung trái"
+  },
+  "command.open_in_new_tab": {
+    "message": "Mở thư mục trong thẻ mới"
+  },
+  "command.open_in_other_new_tab": {
+    "message": "Mở thư mục trong thẻ mới của khung bên kia"
+  },
+  "command.open_in_right_panel": {
+    "message": "Hiển thị trong khung phải"
+  },
+  "command.open_terminal": {
+    "message": "Mở terminal tại đây"
+  },
+  "command.operation_queue": {
+    "message": "Hàng đợi thao tác..."
+  },
+  "command.pack": {
+    "message": "Nén..."
+  },
+  "command.paste_from_clipboard": {
+    "message": "Dán tệp"
+  },
+  "command.path_and_name_to_command_line": {
+    "message": "Đưa đường dẫn và tên vào dòng lệnh"
+  },
+  "command.path_to_command_line": {
+    "message": "Đưa đường dẫn vào dòng lệnh"
+  },
+  "command.previous_tab": {
+    "message": "Thẻ trước"
+  },
+  "command.programs": {
+    "message": "Chương trình"
+  },
+  "command.properties": {
+    "message": "Thuộc tính..."
+  },
+  "command.quick_filter": {
+    "message": "Lọc nhanh"
+  },
+  "command.quick_open": {
+    "message": "Mở nhanh..."
+  },
+  "command.quick_view_panel": {
+    "message": "Khung xem nhanh"
+  },
+  "command.quit": {
+    "message": "Thoát"
+  },
+  "command.redo": {
+    "message": "Làm lại"
+  },
+  "command.rename_in_place": {
+    "message": "Đổi tên"
+  },
+  "command.reread_source": {
+    "message": "Làm mới"
+  },
+  "command.restore_selection": {
+    "message": "Khôi phục vùng chọn"
+  },
+  "command.reversed_order": {
+    "message": "Thứ tự đảo ngược"
+  },
+  "command.right_drives": {
+    "message": "Ổ đĩa (khung phải)"
+  },
+  "command.save_selection": {
+    "message": "Lưu vùng chọn"
+  },
+  "command.save_selection_to_file": {
+    "message": "Lưu vùng chọn vào tệp"
+  },
+  "command.search": {
+    "message": "Tìm kiếm..."
+  },
+  "command.search_in_separate_process": {
+    "message": "Tìm kiếm trong cửa sổ riêng..."
+  },
+  "command.select_all": {
+    "message": "Chọn tất cả"
+  },
+  "command.select_all_with_same_extension": {
+    "message": "Chọn mọi tệp cùng phần mở rộng"
+  },
+  "command.select_group": {
+    "message": "Chọn nhóm..."
+  },
+  "command.settings": {
+    "message": "Cài đặt..."
+  },
+  "command.shortcuts": {
+    "message": "Phím tắt..."
+  },
+  "command.sidebar_connections": {
+    "message": "Kết nối"
+  },
+  "command.sidebar_operations": {
+    "message": "Thao tác"
+  },
+  "command.sidebar_places": {
+    "message": "Vị trí"
+  },
+  "command.sidebar_tree": {
+    "message": "Thư mục"
+  },
+  "command.sort_by_extension": {
+    "message": "Phần mở rộng"
+  },
+  "command.sort_by_name": {
+    "message": "Tên"
+  },
+  "command.sort_by_size": {
+    "message": "Kích thước"
+  },
+  "command.sort_by_time": {
+    "message": "Thời gian"
+  },
+  "command.split_file": {
+    "message": "Chia tệp..."
+  },
+  "command.swap_panels": {
+    "message": "Hoán đổi khung"
+  },
+  "command.swap_panels_and_tabs": {
+    "message": "Hoán đổi khung cùng các thẻ"
+  },
+  "command.sync_browsing": {
+    "message": "Duyệt đồng bộ"
+  },
+  "command.synchronize_dirs": {
+    "message": "Đồng bộ thư mục..."
+  },
+  "command.target_equals_source": {
+    "message": "Đích = Nguồn"
+  },
+  "command.terminal_panel": {
+    "message": "Terminal"
+  },
+  "command.test_archives": {
+    "message": "Kiểm tra tệp nén"
+  },
+  "command.thumbnail_view": {
+    "message": "Xem hình thu nhỏ"
+  },
+  "command.toggle_mark": {
+    "message": "Đánh dấu / bỏ đánh dấu"
+  },
+  "command.toggle_sidebar": {
+    "message": "Hiện thanh bên"
+  },
+  "command.undo": {
+    "message": "Hoàn tác"
+  },
+  "command.unpack_specific_files": {
+    "message": "Giải nén một số tệp..."
+  },
+  "command.unselect_all": {
+    "message": "Bỏ chọn tất cả"
+  },
+  "command.unselect_group": {
+    "message": "Bỏ chọn nhóm..."
+  },
+  "command.unsorted": {
+    "message": "Không sắp xếp"
+  },
+  "command.verify_checksums": {
+    "message": "Xác minh tổng kiểm tra (từ tệp tổng kiểm tra)"
+  },
+  "command.vertical_arrangement": {
+    "message": "Xếp dọc"
+  },
+  "command.view": {
+    "message": "Xem"
+  },
+  "command.website": {
+    "message": "Trang web Spark Commander"
+  },
+  "command.workspace1": {
+    "message": "Mở không gian làm việc 1"
+  },
+  "command.workspace2": {
+    "message": "Mở không gian làm việc 2"
+  },
+  "command.workspace3": {
+    "message": "Mở không gian làm việc 3"
+  },
+  "command.workspace4": {
+    "message": "Mở không gian làm việc 4"
+  },
+  "command.workspace5": {
+    "message": "Mở không gian làm việc 5"
+  },
+  "command.workspace6": {
+    "message": "Mở không gian làm việc 6"
+  },
+  "command.workspace7": {
+    "message": "Mở không gian làm việc 7"
+  },
+  "command.workspace8": {
+    "message": "Mở không gian làm việc 8"
+  },
+  "command.workspace9": {
+    "message": "Mở không gian làm việc 9"
+  },
+  "command_line.error.cannot_run": {
+    "message": "{program}: không chạy được"
+  },
+  "command_line.error.not_found": {
+    "message": "{program}: không tìm thấy lệnh"
+  },
+  "command_line.history.empty": {
+    "message": "Chưa chạy lệnh nào"
+  },
+  "command_line.on_server": {
+    "message": "Lệnh chạy trên máy tính này; khung đang hiển thị một máy chủ."
+  },
+  "command_name.all_files": {
+    "message": "Hiện tất cả tệp"
+  },
+  "command_name.all_with_extension": {
+    "message": "Hiện *.*"
+  },
+  "command_name.brief": {
+    "message": "Chế độ xem ngắn gọn"
+  },
+  "command_name.compare_directories": {
+    "message": "So sánh thư mục: đánh dấu tệp mới hơn"
+  },
+  "command_name.custom_filter": {
+    "message": "Bộ lọc tùy chỉnh"
+  },
+  "command_name.duplicate_tab": {
+    "message": "Thẻ mới (bản sao của thẻ này)"
+  },
+  "command_name.full": {
+    "message": "Chế độ xem đầy đủ"
+  },
+  "command_name.go_back": {
+    "message": "Quay lại"
+  },
+  "command_name.go_forward": {
+    "message": "Tiến tới"
+  },
+  "command_name.go_home": {
+    "message": "Về thư mục cá nhân"
+  },
+  "command_name.hidden_files": {
+    "message": "Hiện tệp ẩn"
+  },
+  "command_name.only_selected_files": {
+    "message": "Chỉ hiện các tệp đã chọn"
+  },
+  "command_name.programs": {
+    "message": "Hiện chương trình"
+  },
+  "command_name.quick_filter": {
+    "message": "Lọc nhanh"
+  },
+  "command_name.rename_in_place": {
+    "message": "Đổi tên tại chỗ"
+  },
+  "command_name.sidebar_connections": {
+    "message": "Thanh bên: Kết nối"
+  },
+  "command_name.sidebar_operations": {
+    "message": "Thanh bên: Thao tác"
+  },
+  "command_name.sidebar_places": {
+    "message": "Thanh bên: Vị trí"
+  },
+  "command_name.sidebar_tree": {
+    "message": "Thanh bên: Thư mục"
+  },
+  "command_name.sort_by_extension": {
+    "message": "Sắp xếp theo phần mở rộng"
+  },
+  "command_name.sort_by_name": {
+    "message": "Sắp xếp theo tên"
+  },
+  "command_name.sort_by_size": {
+    "message": "Sắp xếp theo kích thước"
+  },
+  "command_name.sort_by_time": {
+    "message": "Sắp xếp theo thời gian"
+  },
+  "command_name.toggle_sidebar": {
+    "message": "Thanh bên: hiện hoặc ẩn"
+  },
+  "command_name.unsorted": {
+    "message": "Không sắp xếp"
+  },
+  "compare.browse.prompt": {
+    "message": "So sánh"
+  },
+  "compare.button.compare": {
+    "message": "So sánh"
+  },
+  "compare.button.next": {
+    "message": "Khác biệt tiếp theo (N)"
+  },
+  "compare.button.previous": {
+    "message": "Khác biệt trước (P)"
+  },
+  "compare.need_two_files": {
+    "message": "Hãy đặt con trỏ vào một tệp ở mỗi khung, hoặc đánh dấu hai tệp."
+  },
+  "compare.option.binary": {
+    "message": "Nhị phân"
+  },
+  "compare.option.ignore_case": {
+    "message": "Không phân biệt hoa thường"
+  },
+  "compare.option.ignore_spaces": {
+    "message": "Bỏ qua khoảng trắng lặp lại"
+  },
+  "compare.option.only_differences": {
+    "message": "Chỉ hiện khác biệt"
+  },
+  "compare.status.bytes_differ": {
+    "message": "{place}: {count, plural, other {{grouped} byte khác nhau}}, byte đầu tiên ở vị trí {first}; kích thước {left} và {right}."
+  },
+  "compare.status.comparing": {
+    "message": "Đang so sánh…"
+  },
+  "compare.status.difference_of": {
+    "message": "Khác biệt {at} trên {count}"
+  },
+  "compare.status.differences": {
+    "message": "{count, plural, other {# khác biệt}}"
+  },
+  "compare.status.identical": {
+    "message": "{count, plural, other {Các tệp giống hệt nhau: {grouped} byte.}}"
+  },
+  "compare.status.no_differences": {
+    "message": "Không có khác biệt."
+  },
+  "compare.window.title": {
+    "message": "So sánh: {left} — {right}"
+  },
+  "connections.connect": {
+    "message": "Kết nối"
+  },
+  "connections.copy_name": {
+    "message": "Sao chép tên"
+  },
+  "connections.copy_path": {
+    "message": "Sao chép đường dẫn"
+  },
+  "connections.delete": {
+    "message": "Xóa"
+  },
+  "connections.dialog.title": {
+    "message": "Kết nối"
+  },
+  "connections.disconnect": {
+    "message": "Ngắt kết nối"
+  },
+  "connections.duplicate": {
+    "message": "Nhân bản"
+  },
+  "connections.duplicate_name": {
+    "message": "{name} (bản sao)"
+  },
+  "connections.edit": {
+    "message": "Sửa..."
+  },
+  "connections.empty": {
+    "message": "Chưa có kết nối nào."
+  },
+  "connections.error.no_server": {
+    "message": "Cần có máy chủ."
+  },
+  "connections.error.port": {
+    "message": "Không phải cổng hợp lệ: {text}"
+  },
+  "connections.field.access_key": {
+    "message": "Khóa truy cập"
+  },
+  "connections.field.api_key": {
+    "message": "Khóa API"
+  },
+  "connections.field.application_key": {
+    "message": "Khóa ứng dụng"
+  },
+  "connections.field.bucket": {
+    "message": "Bucket/thư mục"
+  },
+  "connections.field.container": {
+    "message": "Container/thư mục"
+  },
+  "connections.field.endpoint": {
+    "message": "Endpoint"
+  },
+  "connections.field.key_id": {
+    "message": "ID khóa"
+  },
+  "connections.field.name": {
+    "message": "Tên"
+  },
+  "connections.field.password": {
+    "message": "Mật khẩu"
+  },
+  "connections.field.port": {
+    "message": "Cổng"
+  },
+  "connections.field.protocol": {
+    "message": "Giao thức"
+  },
+  "connections.field.secret_key": {
+    "message": "Khóa bí mật"
+  },
+  "connections.field.server": {
+    "message": "Máy chủ"
+  },
+  "connections.field.start_folder": {
+    "message": "Thư mục đầu"
+  },
+  "connections.field.user": {
+    "message": "Người dùng"
+  },
+  "connections.folder.delete_confirm": {
+    "message": "{count, plural, other {Xóa thư mục {name} cùng # kết nối bên trong?}}"
+  },
+  "connections.folder.delete_title": {
+    "message": "Xóa thư mục"
+  },
+  "connections.folder.exists": {
+    "message": "Đã có một thư mục tên {name}."
+  },
+  "connections.folder.name": {
+    "message": "Tên:"
+  },
+  "connections.folder.new_title": {
+    "message": "Thư mục mới"
+  },
+  "connections.folder.rename": {
+    "message": "Đổi tên..."
+  },
+  "connections.folder.rename_title": {
+    "message": "Đổi tên thư mục"
+  },
+  "connections.forget_password": {
+    "message": "Quên mật khẩu đã lưu"
+  },
+  "connections.move_down": {
+    "message": "Chuyển xuống"
+  },
+  "connections.move_to_folder": {
+    "message": "Chuyển vào thư mục"
+  },
+  "connections.move_up": {
+    "message": "Chuyển lên"
+  },
+  "connections.new": {
+    "message": "Kết nối mới..."
+  },
+  "connections.new_folder": {
+    "message": "Thư mục mới..."
+  },
+  "connections.no_folder": {
+    "message": "Không có thư mục"
+  },
+  "connections.open_in_terminal": {
+    "message": "Mở trong terminal"
+  },
+  "connections.placeholder.name": {
+    "message": "như danh sách hiển thị"
+  },
+  "connections.placeholder.password": {
+    "message": "được mã hóa trong thư mục cài đặt; để trống thì giữ nguyên"
+  },
+  "connections.placeholder.path": {
+    "message": "thư mục khi đăng nhập"
+  },
+  "connections.placeholder.port": {
+    "message": "mặc định"
+  },
+  "connections.placeholder.server": {
+    "message": "máy chủ, hoặc một host trong ~/.ssh/config"
+  },
+  "connections.placeholder.user": {
+    "message": "theo ~/.ssh/config, hoặc ẩn danh"
+  },
+  "connections.save_failed": {
+    "message": "Không lưu được các kết nối: {err}"
+  },
+  "connections.ssh_config.read_only": {
+    "message": "Chỉ đọc: các host này được sửa ngay trong ~/.ssh/config"
+  },
+  "context_menu.action_failed": {
+    "message": "{name} bị lỗi: {err}"
+  },
+  "context_menu.actions": {
+    "message": "Hành động"
+  },
+  "context_menu.copy": {
+    "message": "Sao chép"
+  },
+  "context_menu.create_new": {
+    "message": "Tạo mới"
+  },
+  "context_menu.cut": {
+    "message": "Cắt"
+  },
+  "context_menu.delete": {
+    "message": "Xóa"
+  },
+  "context_menu.edit": {
+    "message": "Sửa"
+  },
+  "context_menu.empty_file": {
+    "message": "Tệp trống…"
+  },
+  "context_menu.move_to_trash": {
+    "message": "Chuyển vào Thùng rác"
+  },
+  "context_menu.new_file_dialog.label": {
+    "message": "Tên tệp mới:"
+  },
+  "context_menu.new_file_dialog.title": {
+    "message": "Tệp mới"
+  },
+  "context_menu.new_file_failed": {
+    "message": "Không tạo được tệp: {err}"
+  },
+  "context_menu.new_folder": {
+    "message": "Thư mục…"
+  },
+  "context_menu.open": {
+    "message": "Mở"
+  },
+  "context_menu.open_failed": {
+    "message": "Không mở được: {err}"
+  },
+  "context_menu.open_terminal_here": {
+    "message": "Mở terminal tại đây"
+  },
+  "context_menu.open_with": {
+    "message": "Mở bằng"
+  },
+  "context_menu.other_application": {
+    "message": "Ứng dụng khác…"
+  },
+  "context_menu.pack": {
+    "message": "Nén…"
+  },
+  "context_menu.pack_files": {
+    "message": "Nén tệp"
+  },
+  "context_menu.paste": {
+    "message": "Dán"
+  },
+  "context_menu.properties": {
+    "message": "Thuộc tính"
+  },
+  "context_menu.properties_failed": {
+    "message": "Thuộc tính: {err}"
+  },
+  "context_menu.rename": {
+    "message": "Đổi tên…"
+  },
+  "context_menu.rename_dialog.label": {
+    "message": "Tên mới:"
+  },
+  "context_menu.rename_dialog.title": {
+    "message": "Đổi tên"
+  },
+  "context_menu.rename_failed": {
+    "message": "Không đổi tên được: {err}"
+  },
+  "context_menu.shell_menu_failed": {
+    "message": "Menu: {err}"
+  },
+  "context_menu.show_failed": {
+    "message": "Không hiển thị được: {err}"
+  },
+  "context_menu.show_in_file_manager": {
+    "message": "Hiển thị trong trình quản lý tệp"
+  },
+  "context_menu.terminal_failed": {
+    "message": "Không mở được terminal: {err}"
+  },
+  "context_menu.terminal_not_local": {
+    "message": "Chỉ mở được terminal trong thư mục trên máy tính này."
+  },
+  "context_menu.unpack": {
+    "message": "Giải nén…"
+  },
+  "context_menu.view": {
+    "message": "Xem"
+  },
+  "desktop.no_app_chooser": {
+    "message": "môi trường desktop không có hộp chọn ứng dụng ({err})"
+  },
+  "desktop.no_terminal": {
+    "message": "không tìm thấy terminal"
+  },
+  "desktop.nothing_to_run": {
+    "message": "{name}: không có gì để chạy"
+  },
+  "desktop.scripts": {
+    "message": "Script"
+  },
+  "devices.error.mount_failed": {
+    "message": "không gắn được thiết bị"
+  },
+  "devices.error.no_folder": {
+    "message": "thiết bị không chia sẻ thư mục nào"
+  },
+  "devices.error.system_only": {
+    "message": "chỉ hệ thống mới tháo gắn được ổ này"
+  },
+  "devices.error.unreachable": {
+    "message": "không kết nối được: KDE Connect có đang mở trên thiết bị, trong cùng mạng này không?"
+  },
+  "devices.unlock.ask": {
+    "message": "Cụm mật khẩu của {name}:"
+  },
+  "devices.unlock.ask_again": {
+    "message": "Sai cụm mật khẩu. Cụm mật khẩu của {name}:"
+  },
+  "devices.unlock.title": {
+    "message": "Mở khóa"
+  },
+  "devices.volume.share_on_server": {
+    "message": "{share} trên {server}"
+  },
+  "devices.volume.unnamed": {
+    "message": "Ổ đĩa {size} GB"
+  },
+  "devices.volume.unnamed_encrypted": {
+    "message": "Ổ đĩa mã hóa {size} GB"
+  },
+  "download.cancel": {
+    "message": "Hủy"
+  },
+  "download.dialog_title": {
+    "message": "Tải về từ liên kết"
+  },
+  "download.download": {
+    "message": "Tải về"
+  },
+  "download.folder_link": {
+    "message": "liên kết trỏ tới một thư mục"
+  },
+  "download.incomplete": {
+    "message": "máy chủ đã gửi {got} trên {size, plural, other {# byte}}; nếu tải lại, quá trình sẽ tiếp tục từ chỗ đó"
+  },
+  "download.into": {
+    "message": "Vào {folder}"
+  },
+  "download.link": {
+    "message": "Liên kết"
+  },
+  "download.link_placeholder": {
+    "message": "https://, http://, ftp:// hoặc ftps://"
+  },
+  "download.local_only": {
+    "message": "Tệp tải về được lưu vào thư mục trên máy tính này: trước tiên hãy mở một thư mục như vậy trong khung."
+  },
+  "download.name_placeholder": {
+    "message": "theo tên máy chủ hoặc liên kết đặt"
+  },
+  "download.no_file": {
+    "message": "liên kết không chỉ tới tệp nào"
+  },
+  "download.not_a_link": {
+    "message": "không phải liên kết có thể tải về"
+  },
+  "download.problem.bad_name": {
+    "message": "Chỉ nhập tên tệp, không kèm thư mục."
+  },
+  "download.problem.empty": {
+    "message": "Hãy dán hoặc nhập một liên kết."
+  },
+  "download.problem.exists": {
+    "message": "Ở đây đã có {name}: Thay thế sẽ tải về đè lên tệp đó."
+  },
+  "download.problem.not_link": {
+    "message": "Không phải liên kết có thể tải về: liên kết phải bắt đầu bằng https://, http://, ftp:// hoặc ftps://."
+  },
+  "download.replace": {
+    "message": "Thay thế"
+  },
+  "download.save_as": {
+    "message": "Lưu thành"
+  },
+  "download.saved_as": {
+    "message": "đã lưu thành {name}"
+  },
+  "download.title": {
+    "message": "Tải về “{name}”"
+  },
+  "download.title_link": {
+    "message": "Tải về {link}"
+  },
+  "editor.close.after_send": {
+    "message": "Trình soạn thảo sẽ đóng khi máy chủ nhận được tệp."
+  },
+  "editor.close.discard": {
+    "message": "Không lưu"
+  },
+  "editor.close.save": {
+    "message": "Lưu"
+  },
+  "editor.close.title": {
+    "message": "Lưu thay đổi?"
+  },
+  "editor.close.unsaved": {
+    "message": "{name} có thay đổi chưa được lưu."
+  },
+  "editor.close.unsent": {
+    "message": "{name} chưa được lưu trên máy chủ của nó: gửi tệp không thành công."
+  },
+  "editor.dialog.cancel": {
+    "message": "Hủy"
+  },
+  "editor.edit.copy": {
+    "message": "Sao chép"
+  },
+  "editor.edit.cut": {
+    "message": "Cắt"
+  },
+  "editor.edit.find": {
+    "message": "Tìm..."
+  },
+  "editor.edit.find_next": {
+    "message": "Tìm tiếp"
+  },
+  "editor.edit.find_previous": {
+    "message": "Tìm ngược lại"
+  },
+  "editor.edit.go_to_line": {
+    "message": "Đi tới dòng..."
+  },
+  "editor.edit.paste": {
+    "message": "Dán"
+  },
+  "editor.edit.redo": {
+    "message": "Làm lại"
+  },
+  "editor.edit.replace": {
+    "message": "Thay thế..."
+  },
+  "editor.edit.undo": {
+    "message": "Hoàn tác"
+  },
+  "editor.external.not_set": {
+    "message": "chưa đặt trình soạn thảo ngoài (Cài đặt, Sửa/Xem)"
+  },
+  "editor.file.close": {
+    "message": "Đóng"
+  },
+  "editor.file.reload": {
+    "message": "Tải lại"
+  },
+  "editor.file.save": {
+    "message": "Lưu"
+  },
+  "editor.file.save_as": {
+    "message": "Lưu thành..."
+  },
+  "editor.find.close": {
+    "message": "Đóng (Escape)"
+  },
+  "editor.find.count": {
+    "message": "{current}/{total}"
+  },
+  "editor.find.in_selection": {
+    "message": "Tìm trong vùng chọn (Alt+L)"
+  },
+  "editor.find.match_case": {
+    "message": "Phân biệt hoa thường (Alt+C)"
+  },
+  "editor.find.next": {
+    "message": "Kết quả tiếp theo (Enter)"
+  },
+  "editor.find.no_results": {
+    "message": "Không có kết quả"
+  },
+  "editor.find.placeholder": {
+    "message": "Tìm"
+  },
+  "editor.find.preserve_case": {
+    "message": "Giữ nguyên hoa thường (Alt+P)"
+  },
+  "editor.find.previous": {
+    "message": "Kết quả trước (Shift+Enter)"
+  },
+  "editor.find.regex": {
+    "message": "Dùng biểu thức chính quy (Alt+R)"
+  },
+  "editor.find.replace": {
+    "message": "Thay thế (Ctrl+Shift+1)"
+  },
+  "editor.find.replace_all": {
+    "message": "Thay thế tất cả (Ctrl+Alt+Enter)"
+  },
+  "editor.find.replace_placeholder": {
+    "message": "Thay thế"
+  },
+  "editor.find.toggle_replace": {
+    "message": "Bật/tắt thay thế"
+  },
+  "editor.find.whole_word": {
+    "message": "Khớp cả từ (Alt+W)"
+  },
+  "editor.go_to_line.label": {
+    "message": "Dòng, hoặc dòng:cột"
+  },
+  "editor.go_to_line.title": {
+    "message": "Đi tới dòng"
+  },
+  "editor.language.by_file_name": {
+    "message": "Theo tên tệp"
+  },
+  "editor.language.plain_text": {
+    "message": "Văn bản thuần"
+  },
+  "editor.menu.edit": {
+    "message": "Sửa"
+  },
+  "editor.menu.file": {
+    "message": "Tệp"
+  },
+  "editor.menu.language": {
+    "message": "Ngôn ngữ"
+  },
+  "editor.menu.selection": {
+    "message": "Vùng chọn"
+  },
+  "editor.menu.view": {
+    "message": "Xem"
+  },
+  "editor.open.too_large": {
+    "message": "vượt quá {limit_mb} MB của trình soạn thảo tích hợp (Cài đặt, Sửa/Xem); Ctrl+Shift+F4 sẽ sửa tệp bằng trình soạn thảo ngoài"
+  },
+  "editor.reload.button": {
+    "message": "Tải lại"
+  },
+  "editor.reload.failed": {
+    "message": "Không tải lại được: {err}"
+  },
+  "editor.reload.text": {
+    "message": "Các thay đổi chưa lưu sẽ bị mất."
+  },
+  "editor.reload.title": {
+    "message": "Tải lại tệp?"
+  },
+  "editor.reload.unfit": {
+    "message": "Không tải lại: {why, select, binary {đây là tệp nhị phân} other {đây không phải văn bản UTF-8}}."
+  },
+  "editor.save.admin": {
+    "message": "Lưu “{name}”"
+  },
+  "editor.save.failed": {
+    "message": "Không lưu được {path}: {err}"
+  },
+  "editor.save_anyway.button": {
+    "message": "Vẫn lưu"
+  },
+  "editor.save_anyway.text": {
+    "message": "Tệp này không phải văn bản: khi lưu, tệp sẽ được ghi đúng như đang hiển thị, nên những phần không phải văn bản sẽ bị thay đổi vĩnh viễn."
+  },
+  "editor.save_anyway.title": {
+    "message": "Lưu dưới dạng văn bản?"
+  },
+  "editor.selection.add_cursor_above": {
+    "message": "Thêm con trỏ ở trên"
+  },
+  "editor.selection.add_cursor_below": {
+    "message": "Thêm con trỏ ở dưới"
+  },
+  "editor.selection.delete_lines": {
+    "message": "Xóa dòng"
+  },
+  "editor.selection.duplicate_lines": {
+    "message": "Nhân bản dòng"
+  },
+  "editor.selection.indent": {
+    "message": "Thụt lề"
+  },
+  "editor.selection.lowercase": {
+    "message": "chữ thường"
+  },
+  "editor.selection.move_lines_down": {
+    "message": "Chuyển dòng xuống"
+  },
+  "editor.selection.move_lines_up": {
+    "message": "Chuyển dòng lên"
+  },
+  "editor.selection.outdent": {
+    "message": "Giảm thụt lề"
+  },
+  "editor.selection.select_all": {
+    "message": "Chọn tất cả"
+  },
+  "editor.selection.select_all_occurrences": {
+    "message": "Chọn mọi chỗ xuất hiện"
+  },
+  "editor.selection.sort_lines_ascending": {
+    "message": "Sắp xếp dòng tăng dần"
+  },
+  "editor.selection.sort_lines_descending": {
+    "message": "Sắp xếp dòng giảm dần"
+  },
+  "editor.selection.title_case": {
+    "message": "Viết Hoa Chữ Đầu"
+  },
+  "editor.selection.toggle_line_comment": {
+    "message": "Bật/tắt chú thích dòng"
+  },
+  "editor.selection.trim_trailing_whitespace": {
+    "message": "Xóa khoảng trắng cuối dòng"
+  },
+  "editor.selection.uppercase": {
+    "message": "CHỮ HOA"
+  },
+  "editor.send.failed": {
+    "message": "Không gửi lại được lên máy chủ: {err}. Lưu sẽ thử lại."
+  },
+  "editor.status.modified": {
+    "message": "Đã sửa đổi"
+  },
+  "editor.status.position": {
+    "message": "Dòng {line}, Cột {column}"
+  },
+  "editor.status.position_selected": {
+    "message": "Dòng {line}, Cột {column} ({count, plural, other {đã chọn #}})"
+  },
+  "editor.status.sending": {
+    "message": "Đang lưu lên máy chủ"
+  },
+  "editor.status.spaces": {
+    "message": "Dấu cách: {size}"
+  },
+  "editor.status.tab_size": {
+    "message": "Cỡ tab: {size}"
+  },
+  "editor.status.unsent": {
+    "message": "Chưa có trên máy chủ"
+  },
+  "editor.terminal.not_found": {
+    "message": "không tìm thấy trình soạn thảo; hãy đặt $EDITOR"
+  },
+  "editor.title": {
+    "message": "{path} — Trình soạn thảo"
+  },
+  "editor.unfit.open_anyway": {
+    "message": "Vẫn mở"
+  },
+  "editor.unfit.text": {
+    "message": "Tệp không được hiển thị trong trình soạn thảo vì {why, select, binary {đây là tệp nhị phân} other {đây không phải văn bản UTF-8}}."
+  },
+  "editor.view.folding": {
+    "message": "Thu gọn mã"
+  },
+  "editor.view.indent_guides": {
+    "message": "Đường dẫn thụt lề"
+  },
+  "editor.view.indent_with_tabs": {
+    "message": "Thụt lề bằng tab"
+  },
+  "editor.view.line_numbers": {
+    "message": "Số dòng"
+  },
+  "editor.view.minimap": {
+    "message": "Bản đồ thu nhỏ"
+  },
+  "editor.view.tab_width": {
+    "message": "Độ rộng tab {width}"
+  },
+  "editor.view.unfold_all": {
+    "message": "Mở rộng tất cả"
+  },
+  "editor.view.whitespace": {
+    "message": "Khoảng trắng"
+  },
+  "editor.view.word_wrap": {
+    "message": "Ngắt dòng"
+  },
+  "elevate.failed": {
+    "message": "chạy với quyền quản trị cũng bị lỗi ({code})"
+  },
+  "elevate.no_consent": {
+    "message": "chưa được quản trị viên đồng ý"
+  },
+  "elevate.no_password": {
+    "message": "chưa nhập mật khẩu"
+  },
+  "elevate.not_authorised": {
+    "message": "không được cấp quyền"
+  },
+  "elevate.percent_name": {
+    "message": "{path}: không thể xử lý tên có ký tự % với quyền quản trị; hãy đổi tên trước"
+  },
+  "elevate.pkexec_missing": {
+    "message": "chưa cài đặt pkexec (polkit)"
+  },
+  "file_menu.change_tags_failed": {
+    "message": "Không thay đổi được thẻ: {err}"
+  },
+  "file_menu.compress": {
+    "message": "{count, plural, =1 {Nén “{name}”…} other {Nén # mục…}}"
+  },
+  "file_menu.copy": {
+    "message": "{count, plural, =1 {Sao chép “{name}”} other {Sao chép # mục}}"
+  },
+  "file_menu.copy_path": {
+    "message": "Sao chép đường dẫn vào bộ nhớ tạm"
+  },
+  "file_menu.delete": {
+    "message": "Xóa"
+  },
+  "file_menu.duplicate": {
+    "message": "Tạo bản sao"
+  },
+  "file_menu.duplicate_failed": {
+    "message": "Không tạo được bản sao: {err}"
+  },
+  "file_menu.edit_tags": {
+    "message": "Thẻ…"
+  },
+  "file_menu.get_info": {
+    "message": "Lấy thông tin"
+  },
+  "file_menu.make_alias": {
+    "message": "Tạo bí danh"
+  },
+  "file_menu.make_alias_failed": {
+    "message": "Không tạo được bí danh: {err}"
+  },
+  "file_menu.move_to_trash": {
+    "message": "Chuyển vào Thùng rác"
+  },
+  "file_menu.new_folder": {
+    "message": "Thư mục mới"
+  },
+  "file_menu.open": {
+    "message": "Mở"
+  },
+  "file_menu.open_failed": {
+    "message": "Không mở được: {err}"
+  },
+  "file_menu.open_with": {
+    "message": "Mở bằng"
+  },
+  "file_menu.open_with_default": {
+    "message": "{app} (mặc định)"
+  },
+  "file_menu.paste": {
+    "message": "Dán"
+  },
+  "file_menu.quick_look": {
+    "message": "{count, plural, =1 {Quick Look “{name}”} other {Quick Look # mục}}"
+  },
+  "file_menu.quick_look_failed": {
+    "message": "Quick Look: {err}"
+  },
+  "file_menu.rename": {
+    "message": "Đổi tên…"
+  },
+  "file_menu.reveal_failed": {
+    "message": "Không hiển thị được trong Finder: {err}"
+  },
+  "file_menu.reveal_in_finder": {
+    "message": "Hiển thị trong Finder"
+  },
+  "file_menu.show_package_contents": {
+    "message": "Hiển thị nội dung gói"
+  },
+  "file_menu.tag_dot.add": {
+    "message": "Thêm thẻ “{name}”"
+  },
+  "file_menu.tag_dot.remove": {
+    "message": "Xóa thẻ “{name}”"
+  },
+  "file_menu.tags_popover.show_all": {
+    "message": "Hiển thị tất cả…"
+  },
+  "file_menu.tags_popover.title": {
+    "message": "{count, plural, =1 {Gán thẻ cho “{name}”} other {Gán thẻ cho # mục}}"
+  },
+  "find.backwards": {
+    "message": "Tìm ngược lên"
+  },
+  "find.cancel": {
+    "message": "Hủy"
+  },
+  "find.case_sensitive": {
+    "message": "Phân biệt hoa thường"
+  },
+  "find.hex": {
+    "message": "Tìm chuỗi hex"
+  },
+  "find.ok": {
+    "message": "OK"
+  },
+  "find.regex": {
+    "message": "RegEx"
+  },
+  "find.text.label": {
+    "message": "Nhập nội dung cần tìm"
+  },
+  "find.title": {
+    "message": "Tìm"
+  },
+  "find.whole_words": {
+    "message": "Chỉ khớp cả từ"
+  },
+  "keys.apply": {
+    "message": "Áp dụng"
+  },
+  "keys.cancel": {
+    "message": "Hủy"
+  },
+  "keys.clear.tooltip": {
+    "message": "Không có phím"
+  },
+  "keys.column.alternate": {
+    "message": "Phím phụ"
+  },
+  "keys.column.command": {
+    "message": "Lệnh"
+  },
+  "keys.column.shortcut": {
+    "message": "Phím tắt"
+  },
+  "keys.custom": {
+    "message": "Tùy chỉnh"
+  },
+  "keys.delete_set": {
+    "message": "Xóa"
+  },
+  "keys.note.custom_replaced": {
+    "message": "Phím của bạn đã được thay bằng phím của {name}; Lưu thành sẽ giữ lại chúng."
+  },
+  "keys.note.deleted": {
+    "message": "Đã xóa {name}; OK hoặc Áp dụng sẽ xác nhận việc này."
+  },
+  "keys.note.moved": {
+    "message": "{key} giờ là {command}, không còn là {other}."
+  },
+  "keys.note.name_reserved": {
+    "message": "“{name}” là tên của một bộ phím có sẵn; hãy chọn tên khác."
+  },
+  "keys.note.press_new_key": {
+    "message": "Nhấn phím mới; Esc để giữ nguyên."
+  },
+  "keys.note.saved": {
+    "message": "Đã lưu thành {name}; OK hoặc Áp dụng sẽ giữ lại."
+  },
+  "keys.note.set": {
+    "message": "{key} giờ là {command}."
+  },
+  "keys.note.taken_by_system": {
+    "message": "{key} đã được dùng cho {by}, nên phím này không bao giờ tới được Spark Commander."
+  },
+  "keys.ok": {
+    "message": "OK"
+  },
+  "keys.press_key": {
+    "message": "Nhấn phím…"
+  },
+  "keys.reserved.application_launcher": {
+    "message": "{system}: trình khởi chạy ứng dụng"
+  },
+  "keys.reserved.close_window": {
+    "message": "{system}: đóng cửa sổ"
+  },
+  "keys.reserved.close_window_or_tab": {
+    "message": "{system}: đóng cửa sổ hoặc thẻ"
+  },
+  "keys.reserved.dock": {
+    "message": "{system}: Dock"
+  },
+  "keys.reserved.floating_window": {
+    "message": "{system}: cửa sổ nổi"
+  },
+  "keys.reserved.force_quit": {
+    "message": "{system}: buộc thoát"
+  },
+  "keys.reserved.hide_program": {
+    "message": "{system}: ẩn chương trình"
+  },
+  "keys.reserved.input_source": {
+    "message": "{system}: nguồn đầu vào"
+  },
+  "keys.reserved.keyboard_access": {
+    "message": "{system}: truy cập bằng bàn phím"
+  },
+  "keys.reserved.keyboard_navigation": {
+    "message": "{system}: điều hướng bằng bàn phím"
+  },
+  "keys.reserved.krunner": {
+    "message": "{system}: KRunner"
+  },
+  "keys.reserved.lock_screen": {
+    "message": "{system}: khóa màn hình"
+  },
+  "keys.reserved.log_out": {
+    "message": "{system}: đăng xuất"
+  },
+  "keys.reserved.maximize_window": {
+    "message": "{system}: phóng to cửa sổ"
+  },
+  "keys.reserved.menu_bar": {
+    "message": "{system}: thanh menu"
+  },
+  "keys.reserved.minimize": {
+    "message": "{system}: thu nhỏ"
+  },
+  "keys.reserved.mission_control": {
+    "message": "{system}: Mission Control"
+  },
+  "keys.reserved.move_window": {
+    "message": "{system}: di chuyển cửa sổ"
+  },
+  "keys.reserved.next_window": {
+    "message": "{system}: cửa sổ tiếp theo"
+  },
+  "keys.reserved.present_windows": {
+    "message": "{system}: Hiện các cửa sổ"
+  },
+  "keys.reserved.present_windows_all": {
+    "message": "{system}: Hiện các cửa sổ (mọi màn hình nền)"
+  },
+  "keys.reserved.present_windows_class": {
+    "message": "{system}: Hiện các cửa sổ (lớp cửa sổ)"
+  },
+  "keys.reserved.program_windows": {
+    "message": "{system}: các cửa sổ của chương trình"
+  },
+  "keys.reserved.quit": {
+    "message": "{system}: thoát"
+  },
+  "keys.reserved.resize_window": {
+    "message": "{system}: đổi kích thước cửa sổ"
+  },
+  "keys.reserved.restore_window": {
+    "message": "{system}: khôi phục cửa sổ"
+  },
+  "keys.reserved.run_command": {
+    "message": "{system}: chạy lệnh"
+  },
+  "keys.reserved.screenshot": {
+    "message": "{system}: chụp màn hình"
+  },
+  "keys.reserved.security_screen": {
+    "message": "{system}: màn hình bảo mật"
+  },
+  "keys.reserved.show_desktop": {
+    "message": "{system}: hiện màn hình nền"
+  },
+  "keys.reserved.space_left": {
+    "message": "{system}: không gian bên trái"
+  },
+  "keys.reserved.space_right": {
+    "message": "{system}: không gian bên phải"
+  },
+  "keys.reserved.spotlight": {
+    "message": "{system}: Spotlight"
+  },
+  "keys.reserved.start_menu": {
+    "message": "{system}: menu Bắt đầu"
+  },
+  "keys.reserved.status_menus": {
+    "message": "{system}: menu trạng thái"
+  },
+  "keys.reserved.suspend_compositing": {
+    "message": "{system}: tạm dừng hiệu ứng tổng hợp"
+  },
+  "keys.reserved.switch_program_windows": {
+    "message": "{system}: chuyển giữa các cửa sổ của chương trình"
+  },
+  "keys.reserved.switch_programs": {
+    "message": "{system}: chuyển chương trình"
+  },
+  "keys.reserved.switch_system_controls": {
+    "message": "{system}: chuyển điều khiển hệ thống"
+  },
+  "keys.reserved.switch_to_desktop": {
+    "message": "{system}: chuyển sang màn hình nền {number}"
+  },
+  "keys.reserved.switch_windows": {
+    "message": "{system}: chuyển cửa sổ"
+  },
+  "keys.reserved.system_monitor": {
+    "message": "{system}: Theo dõi hệ thống"
+  },
+  "keys.reserved.task_manager": {
+    "message": "{system}: Trình quản lý Tác vụ"
+  },
+  "keys.reserved.text_console": {
+    "message": "{system}: chuyển sang bảng điều khiển văn bản"
+  },
+  "keys.reserved.toolbar": {
+    "message": "{system}: thanh công cụ"
+  },
+  "keys.reserved.window_menu": {
+    "message": "{system}: menu cửa sổ"
+  },
+  "keys.reserved.workspace_down": {
+    "message": "{system}: không gian làm việc bên dưới"
+  },
+  "keys.reserved.workspace_left": {
+    "message": "{system}: không gian làm việc bên trái"
+  },
+  "keys.reserved.workspace_right": {
+    "message": "{system}: không gian làm việc bên phải"
+  },
+  "keys.reserved.workspace_up": {
+    "message": "{system}: không gian làm việc bên trên"
+  },
+  "keys.reset.tooltip": {
+    "message": "Trở về phím của {preset}"
+  },
+  "keys.reset_all": {
+    "message": "Đặt lại tất cả"
+  },
+  "keys.save_as.button": {
+    "message": "Lưu thành…"
+  },
+  "keys.save_as.default_name": {
+    "message": "Phím của tôi"
+  },
+  "keys.save_as.label": {
+    "message": "Tên:"
+  },
+  "keys.save_as.title": {
+    "message": "Lưu phím tắt"
+  },
+  "keys.search.placeholder": {
+    "message": "Tìm lệnh hoặc phím"
+  },
+  "keys.set_label": {
+    "message": "Bộ phím:"
+  },
+  "keys.taken_by.tooltip": {
+    "message": "Đã được dùng cho {by}"
+  },
+  "keys.title": {
+    "message": "Phím tắt"
+  },
+  "main.admin.button": {
+    "message": "Với quyền quản trị"
+  },
+  "main.admin.deleting": {
+    "message": "Xóa {count, plural, other {# mục}}"
+  },
+  "main.admin.failed": {
+    "message": "Với quyền quản trị: {err}"
+  },
+  "main.admin.making": {
+    "message": "Tạo “{name}”"
+  },
+  "main.admin.offer": {
+    "message": "{what}: không có quyền. Với quyền quản trị, hệ thống sẽ hỏi mật khẩu."
+  },
+  "main.admin.offer_delete": {
+    "message": "{what}: không có quyền. Với quyền quản trị, hệ thống sẽ hỏi mật khẩu. Những gì bị xóa theo cách này sẽ mất vĩnh viễn."
+  },
+  "main.admin.title": {
+    "message": "Không có quyền"
+  },
+  "main.delete.from_archive": {
+    "message": "{kind, select, folder {Xóa thư mục “{name}” khỏi {archive}? Không thể hoàn tác thao tác này.} file {Xóa tệp “{name}” khỏi {archive}? Không thể hoàn tác thao tác này.} other {Xóa {count, plural, other {# mục}} khỏi {archive}? Không thể hoàn tác thao tác này.}}"
+  },
+  "main.delete.on_server": {
+    "message": "{kind, select, folder {Xóa thư mục “{name}” trên {server}? Không thể hoàn tác thao tác này.} file {Xóa tệp “{name}” trên {server}? Không thể hoàn tác thao tác này.} other {Xóa {count, plural, other {# mục}} trên {server}? Không thể hoàn tác thao tác này.}}"
+  },
+  "main.delete.permanently": {
+    "message": "{kind, select, folder {Xóa vĩnh viễn thư mục “{name}”? Không thể hoàn tác thao tác này.} file {Xóa vĩnh viễn tệp “{name}”? Không thể hoàn tác thao tác này.} other {Xóa vĩnh viễn {count, plural, other {# mục}}? Không thể hoàn tác thao tác này.}}"
+  },
+  "main.delete.title": {
+    "message": "Xóa"
+  },
+  "main.delete.title_permanently": {
+    "message": "Xóa vĩnh viễn"
+  },
+  "main.delete.to_trash": {
+    "message": "{kind, select, folder {Chuyển thư mục “{name}” vào Thùng rác?} file {Chuyển tệp “{name}” vào Thùng rác?} other {Chuyển {count, plural, other {# mục}} vào Thùng rác?}}"
+  },
+  "main.download.edit": {
+    "message": "Tải về {file} để sửa"
+  },
+  "main.download.view": {
+    "message": "Tải về {file} để xem"
+  },
+  "main.error.make_folder": {
+    "message": "Không tạo được thư mục: {err}"
+  },
+  "main.error.read_settings": {
+    "message": "Không đọc được cài đặt: {err}"
+  },
+  "main.error.read_tabs": {
+    "message": "Không đọc được các thẻ đang mở: {err}"
+  },
+  "main.error.read_workspaces": {
+    "message": "Không đọc được các không gian làm việc: {err}"
+  },
+  "main.error.save_settings": {
+    "message": "Không lưu được cài đặt: {err}"
+  },
+  "main.folder_tree.home": {
+    "message": "Thư mục cá nhân"
+  },
+  "main.go.no_such_folder": {
+    "message": "{path}: không có thư mục này trên máy tính này"
+  },
+  "main.new_folder.label": {
+    "message": "Thư mục mới:"
+  },
+  "main.new_folder.title": {
+    "message": "Thư mục mới"
+  },
+  "main.sync_browsing.lost": {
+    "message": "{err}. Đã tắt duyệt đồng bộ."
+  },
+  "main.tool.needs_file": {
+    "message": "Con trỏ không nằm trên tệp nào: %N, %O và %E cần một tệp."
+  },
+  "main.tool.needs_local_folder": {
+    "message": "Khung bên kia đang hiển thị máy chủ hoặc tệp nén: %T cần một thư mục trên máy tính này."
+  },
+  "main.undo.done": {
+    "message": "{way, select, redo {Đã làm lại: {title}} other {Đã hoàn tác: {title}}}"
+  },
+  "main.undo.failed": {
+    "message": "{way, select, redo {Không làm lại được “{title}”: {err}} other {Không hoàn tác được “{title}”: {err}}}"
+  },
+  "main.undo.nothing": {
+    "message": "{way, select, redo {Không có gì để làm lại.} other {Không có gì để hoàn tác.}}"
+  },
+  "main.undo.queued": {
+    "message": "{way, select, redo {Đang chờ trong hàng đợi để làm lại: {title}} other {Đang chờ trong hàng đợi để hoàn tác: {title}}}"
+  },
+  "mark.compare.marked": {
+    "message": "{count, plural, other {Đã đánh dấu # tệp: mới hơn, hoặc không có ở bên kia.}}"
+  },
+  "mark.compare.same": {
+    "message": "Hai thư mục có các tệp giống nhau."
+  },
+  "mark.load_selection.label": {
+    "message": "Chọn các tên được liệt kê trong tệp:"
+  },
+  "mark.load_selection.title": {
+    "message": "Tải vùng chọn"
+  },
+  "mark.save_selection.label": {
+    "message": "Lưu các tên đã chọn vào tệp:"
+  },
+  "mark.save_selection.title": {
+    "message": "Lưu vùng chọn"
+  },
+  "mark.select_group.label": {
+    "message": "Chọn các tệp (*.txt *.md; mẫu thư mục kết thúc bằng /):"
+  },
+  "mark.select_group.title": {
+    "message": "Chọn nhóm"
+  },
+  "mark.selection_file.not_local": {
+    "message": "Tệp vùng chọn được lưu trên máy tính này, bên ngoài tệp nén."
+  },
+  "mark.unselect_group.label": {
+    "message": "Bỏ chọn các tệp (*.txt *.md; mẫu thư mục kết thúc bằng /):"
+  },
+  "mark.unselect_group.title": {
+    "message": "Bỏ chọn nhóm"
+  },
+  "media.cannot_play": {
+    "message": "Không phát được: {err}"
+  },
+  "media.cannot_play_as_text": {
+    "message": "Không phát được: {err}. Phím 1 hiển thị dưới dạng văn bản."
+  },
+  "media.continuing": {
+    "message": "Tiếp tục từ {time}"
+  },
+  "media.error.missing": {
+    "message": "Thiếu libmpv: Cài đặt > Tiện ích bổ sung sẽ tải về (bản dựng từ mã nguồn: vendor/mpv/{script})"
+  },
+  "media.error.not_started": {
+    "message": "libmpv không khởi động được"
+  },
+  "media.error.too_long": {
+    "message": "{path}: mpv mất quá nhiều thời gian"
+  },
+  "media.error.unsupported_system": {
+    "message": "hiện chỉ phát được video trên Linux, macOS và Windows"
+  },
+  "menu.archive": {
+    "message": "Tệp nén"
+  },
+  "menu.associations": {
+    "message": "Gán chương trình"
+  },
+  "menu.button_bar": {
+    "message": "Thanh nút"
+  },
+  "menu.checksums": {
+    "message": "Tổng kiểm tra"
+  },
+  "menu.commands": {
+    "message": "Lệnh"
+  },
+  "menu.compare_directories": {
+    "message": "So sánh thư mục"
+  },
+  "menu.configuration": {
+    "message": "Cấu hình"
+  },
+  "menu.copy_names": {
+    "message": "Sao chép tên"
+  },
+  "menu.files": {
+    "message": "Tệp"
+  },
+  "menu.filter": {
+    "message": "Bộ lọc"
+  },
+  "menu.go": {
+    "message": "Đi tới"
+  },
+  "menu.help": {
+    "message": "Trợ giúp"
+  },
+  "menu.mark": {
+    "message": "Đánh dấu"
+  },
+  "menu.other": {
+    "message": "Khác"
+  },
+  "menu.recently_closed_tabs": {
+    "message": "Thẻ đóng gần đây"
+  },
+  "menu.selection": {
+    "message": "Vùng chọn"
+  },
+  "menu.show": {
+    "message": "Hiển thị"
+  },
+  "menu.sidebar": {
+    "message": "Thanh bên"
+  },
+  "menu.sort": {
+    "message": "Sắp xếp"
+  },
+  "menu.split_and_combine": {
+    "message": "Chia và ghép"
+  },
+  "menu.tabs": {
+    "message": "Thẻ"
+  },
+  "menu.tools": {
+    "message": "Công cụ"
+  },
+  "menu.workspaces": {
+    "message": "Không gian làm việc"
+  },
+  "menus.hide_app": {
+    "message": "Ẩn Spark Commander"
+  },
+  "menus.hide_others": {
+    "message": "Ẩn các ứng dụng khác"
+  },
+  "menus.minimize": {
+    "message": "Thu nhỏ"
+  },
+  "menus.quit_app": {
+    "message": "Thoát Spark Commander"
+  },
+  "menus.services": {
+    "message": "Dịch vụ"
+  },
+  "menus.show_all": {
+    "message": "Hiển thị tất cả"
+  },
+  "menus.zoom": {
+    "message": "Thu/Phóng"
+  },
+  "name_dialog.cancel": {
+    "message": "Hủy"
+  },
+  "name_dialog.ok": {
+    "message": "OK"
+  },
+  "operations.clear": {
+    "message": "Xóa mục đã xong"
+  },
+  "operations.duration.seconds": {
+    "message": "{seconds} giây"
+  },
+  "operations.empty": {
+    "message": "Không có thao tác nào."
+  },
+  "operations.job.answer": {
+    "message": "Đang chờ bạn trả lời"
+  },
+  "operations.job.bytes": {
+    "message": "{done}/{total}"
+  },
+  "operations.job.cancel_tooltip": {
+    "message": "Hủy"
+  },
+  "operations.job.cancelled": {
+    "message": "Đã hủy"
+  },
+  "operations.job.counting": {
+    "message": "Đang đếm: {count, plural, other {# tệp}}"
+  },
+  "operations.job.done": {
+    "message": "Xong"
+  },
+  "operations.job.done_skipped": {
+    "message": "Xong, {count, plural, other {bỏ qua #}}"
+  },
+  "operations.job.failed": {
+    "message": "Lỗi"
+  },
+  "operations.job.files": {
+    "message": "{files} / {count, plural, other {# tệp}}"
+  },
+  "operations.job.left": {
+    "message": "Còn {time}"
+  },
+  "operations.job.running": {
+    "message": "Đang chạy"
+  },
+  "operations.job.waiting": {
+    "message": "Đang chờ"
+  },
+  "operations.menu.cancel": {
+    "message": "Hủy"
+  },
+  "operations.menu.clear": {
+    "message": "Xóa mục đã xong"
+  },
+  "operations.menu.move_down": {
+    "message": "Chuyển xuống"
+  },
+  "operations.menu.move_up": {
+    "message": "Chuyển lên"
+  },
+  "operations.settings_tooltip": {
+    "message": "Cài đặt hàng đợi thao tác"
+  },
+  "operations.summary.failed": {
+    "message": "{count, plural, other {# lỗi}}"
+  },
+  "operations.summary.running": {
+    "message": "{count, plural, other {# đang chạy}}"
+  },
+  "operations.summary.waiting": {
+    "message": "{count, plural, other {# đang chờ}}"
+  },
+  "ops.as_administrator.failed": {
+    "message": "Với quyền quản trị: {err}"
+  },
+  "ops.as_administrator.progress": {
+    "message": "Với quyền quản trị…"
+  },
+  "ops.delete.title_many": {
+    "message": "Xóa {count, plural, other {# mục}} trong {folder}"
+  },
+  "ops.delete.title_one": {
+    "message": "Xóa “{name}”"
+  },
+  "ops.delete.trash_title_many": {
+    "message": "Chuyển {count, plural, other {# mục}} trong {folder} vào Thùng rác"
+  },
+  "ops.delete.trash_title_one": {
+    "message": "Chuyển “{name}” vào Thùng rác"
+  },
+  "ops.error.file_in_the_way": {
+    "message": "đã có một tệp trùng tên ở đó"
+  },
+  "ops.error.into_itself": {
+    "message": "không thể sao chép vào chính nó"
+  },
+  "ops.exists_already": {
+    "message": "{name} đã tồn tại"
+  },
+  "ops.link.dialog_title": {
+    "message": "Tạo liên kết"
+  },
+  "ops.link.failed": {
+    "message": "Không tạo được liên kết: {err}"
+  },
+  "ops.link.kind.hard": {
+    "message": "Liên kết cứng"
+  },
+  "ops.link.kind.junction": {
+    "message": "Điểm nối"
+  },
+  "ops.link.kind.shortcut": {
+    "message": "Lối tắt (.lnk)"
+  },
+  "ops.link.kind.symbolic": {
+    "message": "Liên kết tượng trưng"
+  },
+  "ops.link.label_many": {
+    "message": "Liên kết tới {count, plural, other {# mục}}, trong thư mục:"
+  },
+  "ops.link.label_one": {
+    "message": "Liên kết tới “{name}” thành:"
+  },
+  "ops.link.making": {
+    "message": "Tạo {kind, select, symbolic {liên kết tượng trưng} hard {liên kết cứng} junction {điểm nối} other {lối tắt (.lnk)}}"
+  },
+  "ops.link.needs_admin": {
+    "message": "liên kết tượng trưng cần quyền quản trị hoặc Chế độ nhà phát triển"
+  },
+  "ops.link.thread_failed": {
+    "message": "luồng tạo lối tắt bị lỗi"
+  },
+  "ops.link.title_many": {
+    "message": "{kind, select, symbolic {Liên kết tượng trưng} hard {Liên kết cứng} junction {Điểm nối} other {Lối tắt (.lnk)}} tới {count, plural, other {# mục}} trong {folder}"
+  },
+  "ops.link.title_one": {
+    "message": "{kind, select, symbolic {Liên kết tượng trưng} hard {Liên kết cứng} junction {Điểm nối} other {Lối tắt (.lnk)}} tới “{name}” trong {folder}"
+  },
+  "ops.link.windows_only": {
+    "message": "điểm nối và lối tắt chỉ có trên Windows"
+  },
+  "ops.redo.title": {
+    "message": "Làm lại: {what}"
+  },
+  "ops.title.many": {
+    "message": "{kind, select, copy {Sao chép} other {Di chuyển}} {count, plural, other {# mục}} tới {target}"
+  },
+  "ops.title.one": {
+    "message": "{kind, select, copy {Sao chép} other {Di chuyển}} “{name}” tới {target}"
+  },
+  "ops.undo.not_a_server": {
+    "message": "{url}: không phải địa chỉ máy chủ"
+  },
+  "ops.undo.not_in_trash": {
+    "message": "các tệp không còn trong Thùng rác"
+  },
+  "ops.undo.restore_title": {
+    "message": "{title}: khôi phục từ Thùng rác những gì đã bị ghi đè"
+  },
+  "ops.undo.title": {
+    "message": "Hoàn tác: {what}"
+  },
+  "pack.cancel": {
+    "message": "Hủy"
+  },
+  "pack.compression": {
+    "message": "Mức nén:"
+  },
+  "pack.dialog_title": {
+    "message": "Nén tệp"
+  },
+  "pack.encrypt": {
+    "message": "Mã hóa bằng mật khẩu"
+  },
+  "pack.format": {
+    "message": "Định dạng:"
+  },
+  "pack.label": {
+    "message": "Nén {count, plural, other {# mục}} vào tệp nén:"
+  },
+  "pack.level.fastest": {
+    "message": "Nhanh nhất"
+  },
+  "pack.level.maximum": {
+    "message": "Tối đa"
+  },
+  "pack.level.normal": {
+    "message": "Bình thường"
+  },
+  "pack.level.store": {
+    "message": "Không nén"
+  },
+  "pack.level.ultra": {
+    "message": "Siêu nén"
+  },
+  "pack.local_only": {
+    "message": "{what, select, packing {Nén} unpacking {Giải nén} testing {Kiểm tra} creating_checksums {Tạo tổng kiểm tra} making_links {Tạo liên kết} verifying_checksums {Xác minh tổng kiểm tra} splitting {Chia tệp} combining {Ghép tệp} other {Chức năng này}} chỉ hoạt động với tệp trên máy tính này, bên ngoài tệp nén."
+  },
+  "pack.move_files": {
+    "message": "Chuyển vào tệp nén (xóa các tệp đã nén)"
+  },
+  "pack.needs_password": {
+    "message": "cần mật khẩu"
+  },
+  "pack.ok": {
+    "message": "OK"
+  },
+  "pack.password_missing": {
+    "message": "Hãy nhập mật khẩu, hoặc bỏ chọn Mã hóa."
+  },
+  "pack.separate": {
+    "message": "Mỗi tệp hoặc thư mục đã chọn một tệp nén riêng"
+  },
+  "pack.split": {
+    "message": "Chia thành các phần, mỗi phần"
+  },
+  "pack.split_unit": {
+    "message": "MB"
+  },
+  "pack.test.broken": {
+    "message": "{broken, plural, other {# trên {count} bị hỏng}}"
+  },
+  "pack.test.choose": {
+    "message": "Hãy chọn các tệp nén cần kiểm tra."
+  },
+  "pack.test.ok": {
+    "message": "{count, plural, other {# tệp nén đều tốt}}"
+  },
+  "pack.test.title_many": {
+    "message": "Kiểm tra {count, plural, other {# tệp nén}}"
+  },
+  "pack.test.title_one": {
+    "message": "Kiểm tra “{name}”"
+  },
+  "pack.title.many": {
+    "message": "Nén {count, plural, other {# mục}} vào {archive}"
+  },
+  "pack.title.many_separate": {
+    "message": "Nén {count, plural, other {# mục}} thành các tệp nén {format} riêng"
+  },
+  "pack.title.one": {
+    "message": "Nén “{name}” vào {archive}"
+  },
+  "pack.title.one_separate": {
+    "message": "Nén “{name}” thành các tệp nén {format} riêng"
+  },
+  "pack.unpack.choose": {
+    "message": "Hãy chọn các tệp nén cần giải nén."
+  },
+  "pack.unpack.dialog_title": {
+    "message": "Giải nén tệp"
+  },
+  "pack.unpack.label": {
+    "message": "Giải nén {count, plural, other {# tệp nén}} vào:"
+  },
+  "pack.unpack.mask": {
+    "message": "Chỉ các tệp:"
+  },
+  "pack.unpack.overwrite": {
+    "message": "Ghi đè tệp đã có (nếu không, tệp cũ được giữ lại)"
+  },
+  "pack.unpack.password": {
+    "message": "Mật khẩu:"
+  },
+  "pack.unpack.separate": {
+    "message": "Mỗi tệp nén vào một thư mục mang tên của nó"
+  },
+  "pack.unpack.title_many": {
+    "message": "Giải nén {count, plural, other {# tệp nén}} vào {target}"
+  },
+  "pack.unpack.title_one": {
+    "message": "Giải nén “{name}” vào {target}"
+  },
+  "pack.unpack.with_paths": {
+    "message": "Giữ cấu trúc thư mục trong tệp nén"
+  },
+  "pack.volume_invalid": {
+    "message": "Kích thước phần phải là một số MB."
+  },
+  "pack.wrong_password": {
+    "message": "sai mật khẩu"
+  },
+  "panel.admin.renaming": {
+    "message": "Đổi tên thành “{name}”"
+  },
+  "panel.clipboard.copied": {
+    "message": "{count, plural, other {Đã sao chép # mục}}: Ctrl+V để dán."
+  },
+  "panel.clipboard.cut": {
+    "message": "{count, plural, other {Đã cắt # mục}}: Ctrl+V để dán."
+  },
+  "panel.clipboard.no_cut_in_archive": {
+    "message": "Không thể cắt tệp ra khỏi tệp nén; Ctrl+C để sao chép."
+  },
+  "panel.clipboard.no_files": {
+    "message": "Bộ nhớ tạm không chứa tệp nào."
+  },
+  "panel.clipboard.no_paste_in_archive": {
+    "message": "Hiện chưa thể dán tệp vào tệp nén."
+  },
+  "panel.clipboard.same_folder": {
+    "message": "Các tệp đã ở trong thư mục này: Ctrl+V để dán vào thư mục khác."
+  },
+  "panel.column.attr": {
+    "message": "Th.tính"
+  },
+  "panel.column.date": {
+    "message": "Ngày"
+  },
+  "panel.column.ext": {
+    "message": "Đuôi"
+  },
+  "panel.column.name": {
+    "message": "Tên"
+  },
+  "panel.column.size": {
+    "message": "Kích thước"
+  },
+  "panel.disconnect": {
+    "message": "Ngắt kết nối"
+  },
+  "panel.drag.items": {
+    "message": "{count, plural, other {# mục}}"
+  },
+  "panel.error.archive_not_updatable": {
+    "message": "{name}: 7-Zip chỉ sửa trực tiếp được tệp nén 7z, zip và tar, không sửa được tệp này"
+  },
+  "panel.error.archive_on_server": {
+    "message": "{name}: hiện chưa thể thay đổi tệp nén trên máy chủ"
+  },
+  "panel.error.branch_view_local": {
+    "message": "Xem nhánh chỉ liệt kê thư mục trên máy tính này"
+  },
+  "panel.error.exists": {
+    "message": "{name} đã tồn tại"
+  },
+  "panel.error.folder_in_the_way": {
+    "message": "đã có một thư mục trùng tên ở đó"
+  },
+  "panel.error.inside_archive": {
+    "message": "hiện chưa làm được bên trong tệp nén"
+  },
+  "panel.error.make_file": {
+    "message": "Không tạo được tệp: {err}"
+  },
+  "panel.error.no_name": {
+    "message": "chưa nhập tên"
+  },
+  "panel.error.not_a_name": {
+    "message": "{name}: không phải tên hợp lệ"
+  },
+  "panel.error.other_drive": {
+    "message": "khung bên kia đã chuyển sang ổ đĩa khác"
+  },
+  "panel.error.rename": {
+    "message": "Không đổi tên được: {err}"
+  },
+  "panel.filter.custom.label": {
+    "message": "Loại tệp, ví dụ *.txt *.md (sau | là các loại bị loại trừ):"
+  },
+  "panel.filter.custom.title": {
+    "message": "Hiển thị tệp"
+  },
+  "panel.filter.programs": {
+    "message": "chương trình"
+  },
+  "panel.filter.selected_files": {
+    "message": "tệp đã chọn"
+  },
+  "panel.found.branch_view": {
+    "message": "Xem nhánh:"
+  },
+  "panel.found.search_results": {
+    "message": "Kết quả tìm kiếm:"
+  },
+  "panel.new_text_file.label": {
+    "message": "Tên tệp, sẽ mở trong trình soạn thảo:"
+  },
+  "panel.new_text_file.title": {
+    "message": "Tệp văn bản mới"
+  },
+  "panel.opening.cancel": {
+    "message": "Hủy"
+  },
+  "panel.opening.reading": {
+    "message": "Đang đọc…"
+  },
+  "panel.opening.title": {
+    "message": "Đang mở tệp nén"
+  },
+  "panel.quick_filter.hint": {
+    "message": "ẩn những gì không khớp; Escape để hiện tất cả"
+  },
+  "panel.quick_filter.label": {
+    "message": "Lọc:"
+  },
+  "panel.quick_search.label": {
+    "message": "Tìm:"
+  },
+  "panel.size.app": {
+    "message": "<APP>"
+  },
+  "panel.size.b": {
+    "message": "{size} B"
+  },
+  "panel.size.dir": {
+    "message": "<DIR>"
+  },
+  "panel.size.gb": {
+    "message": "{size} GB"
+  },
+  "panel.size.kb": {
+    "message": "{size} KB"
+  },
+  "panel.size.mb": {
+    "message": "{size} MB"
+  },
+  "panel.size.tb": {
+    "message": "{size} TB"
+  },
+  "panel.space.bytes": {
+    "message": "{count, plural, other {{size} byte ({human})}}"
+  },
+  "panel.space.close": {
+    "message": "Đóng"
+  },
+  "panel.space.counting": {
+    "message": "Đang đếm…"
+  },
+  "panel.space.done": {
+    "message": "Xong."
+  },
+  "panel.space.files": {
+    "message": "Tệp:"
+  },
+  "panel.space.folders": {
+    "message": "Thư mục:"
+  },
+  "panel.space.in_archive": {
+    "message": "Bên trong tệp nén, cột Kích thước đã có sẵn kích thước."
+  },
+  "panel.space.title": {
+    "message": "Tính dung lượng chiếm dụng"
+  },
+  "panel.space.total": {
+    "message": "Tổng kích thước:"
+  },
+  "panel.space.unreadable": {
+    "message": "{count, plural, other {Không đọc được # mục.}}"
+  },
+  "panel.status": {
+    "message": "{marked_size} k / {size} k trong {marked_files} / {files, plural, other {# tệp}}, {marked_folders} / {folders, plural, other {# thư mục}}"
+  },
+  "panel.sync_browsing.stop": {
+    "message": "Duyệt đồng bộ (nhấp để dừng)"
+  },
+  "panel.undo.rename": {
+    "message": "Đổi tên “{name}” thành “{to}”"
+  },
+  "passwords.about.set": {
+    "message": "Với mật khẩu chính, các mật khẩu đã lưu sẽ mở được trên máy tính khác sau khi nhập mật khẩu chính ở đó, khi đã sao chép thư mục cài đặt sang. Nếu quên mật khẩu chính, chỉ các mật khẩu đã lưu bị mất: bạn sẽ nhập lại chúng."
+  },
+  "passwords.about.unlock": {
+    "message": "Cài đặt được chuyển từ máy tính khác, hoặc máy này không có kho khóa: mật khẩu chính sẽ mở các mật khẩu đã lưu tại đây."
+  },
+  "passwords.cancel": {
+    "message": "Hủy"
+  },
+  "passwords.done.set": {
+    "message": "Đã đặt mật khẩu chính."
+  },
+  "passwords.done.unlocked": {
+    "message": "Đã mở các mật khẩu đã lưu."
+  },
+  "passwords.error.locked": {
+    "message": "các mật khẩu đã lưu đang bị khóa: hãy mở khóa bằng mật khẩu chính (Cấu hình › Cài đặt › Mật khẩu)"
+  },
+  "passwords.error.no_master": {
+    "message": "chưa đặt mật khẩu chính"
+  },
+  "passwords.error.no_random": {
+    "message": "không có số ngẫu nhiên"
+  },
+  "passwords.error.not_opened": {
+    "message": "không mở được mật khẩu cho {what}"
+  },
+  "passwords.error.not_sealed": {
+    "message": "không mã hóa được mật khẩu"
+  },
+  "passwords.error.salt_damaged": {
+    "message": "giá trị salt của mật khẩu chính bị hỏng"
+  },
+  "passwords.error.wrong": {
+    "message": "mật khẩu chính không đúng"
+  },
+  "passwords.field.again": {
+    "message": "Nhập lại"
+  },
+  "passwords.field.master": {
+    "message": "Mật khẩu chính"
+  },
+  "passwords.locked_note": {
+    "message": "Các mật khẩu đã lưu đang bị khóa trên máy tính này: mật khẩu chính sẽ mở chúng."
+  },
+  "passwords.ok": {
+    "message": "OK"
+  },
+  "passwords.problem.differ": {
+    "message": "Hai mật khẩu không giống nhau."
+  },
+  "passwords.problem.empty": {
+    "message": "Hãy nhập mật khẩu chính."
+  },
+  "passwords.title.set": {
+    "message": "Mật khẩu chính"
+  },
+  "passwords.title.unlock": {
+    "message": "Mở khóa mật khẩu đã lưu"
+  },
+  "passwords.unlock_button": {
+    "message": "Mở khóa…"
+  },
+  "passwords.working": {
+    "message": "Đang xử lý…"
+  },
+  "properties.accessed": {
+    "message": "Truy cập:"
+  },
+  "properties.change_attributes": {
+    "message": "Thay đổi thuộc tính..."
+  },
+  "properties.close": {
+    "message": "Đóng"
+  },
+  "properties.contents": {
+    "message": "{file_count, plural, other {{files} tệp}}, {folder_count, plural, other {{folders} thư mục}}, {count, plural, other {{bytes} byte}} ({size})"
+  },
+  "properties.contents_counting": {
+    "message": "{file_count, plural, other {{files} tệp}}, {folder_count, plural, other {{folders} thư mục}}, {count, plural, other {{bytes} byte}} ({size}) (đang đếm…)"
+  },
+  "properties.contents_label": {
+    "message": "Nội dung:"
+  },
+  "properties.created": {
+    "message": "Ngày tạo:"
+  },
+  "properties.dialog_title": {
+    "message": "Thuộc tính"
+  },
+  "properties.in_archive": {
+    "message": "Danh sách của tệp nén đã hiển thị những gì nó biết về các tệp bên trong."
+  },
+  "properties.kind.file": {
+    "message": "Tệp"
+  },
+  "properties.kind.folder": {
+    "message": "Thư mục"
+  },
+  "properties.kind.link": {
+    "message": "Liên kết"
+  },
+  "properties.kind.link_to": {
+    "message": "Liên kết tới {target}"
+  },
+  "properties.location": {
+    "message": "Vị trí:"
+  },
+  "properties.modified": {
+    "message": "Ngày sửa:"
+  },
+  "properties.name": {
+    "message": "Tên:"
+  },
+  "properties.no_system_dialog": {
+    "message": "hệ thống này chưa có hộp thoại thuộc tính riêng"
+  },
+  "properties.owner": {
+    "message": "Chủ sở hữu / nhóm:"
+  },
+  "properties.permissions": {
+    "message": "Quyền:"
+  },
+  "properties.size": {
+    "message": "{count, plural, other {{bytes} byte ({size})}}"
+  },
+  "properties.size_label": {
+    "message": "Kích thước:"
+  },
+  "properties.type": {
+    "message": "Loại:"
+  },
+  "quick_open.go_to": {
+    "message": "Đi tới {path}"
+  },
+  "quick_open.group.bookmarks": {
+    "message": "Dấu trang"
+  },
+  "quick_open.group.connections": {
+    "message": "Kết nối"
+  },
+  "quick_open.group.drives": {
+    "message": "Ổ đĩa"
+  },
+  "quick_open.group.path": {
+    "message": "Đường dẫn"
+  },
+  "quick_open.group.recent_folders": {
+    "message": "Thư mục gần đây"
+  },
+  "quick_open.group.tools": {
+    "message": "Công cụ"
+  },
+  "quick_open.group.workspaces": {
+    "message": "Không gian làm việc"
+  },
+  "quick_open.placeholder": {
+    "message": "Lệnh, dấu trang, thư mục, đường dẫn, máy chủ, ổ đĩa, không gian làm việc hoặc công cụ"
+  },
+  "quick_open.title": {
+    "message": "Mở nhanh"
+  },
+  "quick_view.counting": {
+    "message": "Đang đếm…"
+  },
+  "quick_view.downloading": {
+    "message": "Đang tải về…"
+  },
+  "quick_view.empty": {
+    "message": "Xem nhanh hiển thị mục mà con trỏ của khung bên kia đang trỏ tới."
+  },
+  "quick_view.extracting": {
+    "message": "Đang lấy ra khỏi tệp nén…"
+  },
+  "quick_view.files_only": {
+    "message": "Trên máy chủ và bên trong tệp nén, Xem nhanh chỉ hiển thị tệp."
+  },
+  "quick_view.space.title": {
+    "message": "Tổng dung lượng chiếm dụng:"
+  },
+  "quick_view.space.totals": {
+    "message": "{bytes, plural, other {{bytes_grouped} byte}} trong {files, plural, other {{files_grouped} tệp}}, {folders, plural, other {{folders_grouped} thư mục}}"
+  },
+  "quick_view.space.unreadable": {
+    "message": "Không đọc được {count} mục."
+  },
+  "quick_view.too_large.download": {
+    "message": "{size} quá lớn để tải về ở đây: F3 để xem."
+  },
+  "quick_view.too_large.extract": {
+    "message": "{size} quá lớn để lấy ra khỏi tệp nén ở đây: F3 để xem."
+  },
+  "remote.cancelled": {
+    "message": "đã hủy"
+  },
+  "remote.cloud.ask": {
+    "message": "{kind, select, application_key {Khóa ứng dụng của {user} tại {host}:} api_key {Khóa API của {user} tại {host}:} password {Mật khẩu của {user} tại {host}:} other {Khóa bí mật của {user} tại {host}:}}"
+  },
+  "remote.cloud.ask_again": {
+    "message": "{kind, select, application_key {Sai khóa ứng dụng. Khóa ứng dụng của {user} tại {host}:} api_key {Sai khóa API. Khóa API của {user} tại {host}:} password {Sai mật khẩu. Mật khẩu của {user} tại {host}:} other {Sai khóa. Khóa bí mật của {user} tại {host}:}}"
+  },
+  "remote.cloud.obscure_failed": {
+    "message": "rclone không nhận được mật khẩu"
+  },
+  "remote.cloud.rclone_missing": {
+    "message": "Thiếu rclone: Cài đặt > Tiện ích bổ sung sẽ tải về"
+  },
+  "remote.cloud.title": {
+    "message": "{kind, select, application_key {Khóa ứng dụng} api_key {Khóa API} password {Mật khẩu} other {Khóa bí mật}}"
+  },
+  "remote.connecting": {
+    "message": "Đang kết nối tới {server}..."
+  },
+  "remote.dialog.cancel": {
+    "message": "Hủy"
+  },
+  "remote.dialog.ok": {
+    "message": "OK"
+  },
+  "remote.disconnect_failed": {
+    "message": "{share}: không ngắt kết nối được: {err}"
+  },
+  "remote.ftp.password": {
+    "message": "Mật khẩu cho {user}@{host}:"
+  },
+  "remote.ftp.password_again": {
+    "message": "Sai mật khẩu. Mật khẩu cho {user}@{host}:"
+  },
+  "remote.ftps.changed": {
+    "message": "Chứng chỉ TLS của {server} đã THAY ĐỔI kể từ khi được ghi ở dòng {line} của {file}. Có thể có người đang nghe lén; nếu máy chủ có chứng chỉ mới, hãy xóa dòng đó."
+  },
+  "remote.ftps.not_trusted": {
+    "message": "chứng chỉ của máy chủ không được tin cậy"
+  },
+  "remote.login.password": {
+    "message": "Mật khẩu"
+  },
+  "remote.login.title": {
+    "message": "Đăng nhập"
+  },
+  "remote.login.user": {
+    "message": "Người dùng"
+  },
+  "remote.mount.login_wrong": {
+    "message": "sai tên người dùng hoặc mật khẩu"
+  },
+  "remote.mount.macos_failed": {
+    "message": "macOS không gắn được (NetFS {code})"
+  },
+  "remote.mount.needs_desktop": {
+    "message": "cần kio-fuse của KDE hoặc gvfs của GNOME"
+  },
+  "remote.mount.needs_login": {
+    "message": "cần tên người dùng và mật khẩu"
+  },
+  "remote.mount.no_fuse": {
+    "message": "đã gắn, nhưng không có thư mục cho nó: thiếu gvfs-fuse"
+  },
+  "remote.mount.no_nfs_client": {
+    "message": "không tìm thấy; NFS cần Máy khách cho NFS của Windows (Tính năng Windows)"
+  },
+  "remote.mount.no_share": {
+    "message": "thiếu tên thư mục chia sẻ: smb://server/share"
+  },
+  "remote.mount.not_address": {
+    "message": "không phải địa chỉ"
+  },
+  "remote.mount.not_found": {
+    "message": "đã gắn, nhưng không tìm thấy trong số các ổ đã gắn"
+  },
+  "remote.mount.other_user": {
+    "message": "Windows đang kết nối tới máy chủ này bằng người dùng khác: hãy đăng xuất, hoặc dùng người dùng đó"
+  },
+  "remote.password.title": {
+    "message": "Mật khẩu"
+  },
+  "remote.remember_password": {
+    "message": "Ghi nhớ (Cài đặt › Mật khẩu)"
+  },
+  "remote.save_back_failed": {
+    "message": "Không lưu lại lên máy chủ được: {err}"
+  },
+  "remote.sftp.host_certificate": {
+    "message": "Máy chủ dùng chứng chỉ host; hiện chưa hỗ trợ loại này."
+  },
+  "remote.sftp.key_changed": {
+    "message": "Khóa host của {server} đã THAY ĐỔI kể từ khi được ghi ở dòng {line} của {file}. Có thể có người đang nghe lén; nếu máy chủ vừa được cài đặt lại, hãy xóa dòng đó."
+  },
+  "remote.sftp.key_not_trusted": {
+    "message": "Khóa host của {server} không được tin cậy."
+  },
+  "remote.sftp.keys_refused": {
+    "message": "{user}@{host}: máy chủ từ chối các khóa và không nhận mật khẩu"
+  },
+  "remote.sftp.login_refused": {
+    "message": "{user}@{host}: đăng nhập bị từ chối"
+  },
+  "remote.sftp.passphrase": {
+    "message": "Cụm mật khẩu cho {file}"
+  },
+  "remote.sftp.passphrase_title": {
+    "message": "Cụm mật khẩu của khóa"
+  },
+  "remote.sftp.password": {
+    "message": "Mật khẩu cho {user}@{host}"
+  },
+  "remote.unknown_host.once": {
+    "message": "Kết nối một lần"
+  },
+  "remote.unknown_host.remember": {
+    "message": "Kết nối và ghi nhớ"
+  },
+  "remote.unknown_host.text": {
+    "message": "{key_type, select, TLS {Máy chủ {host} chưa được biết. Dấu vân tay chứng chỉ TLS của nó là} other {Máy chủ {host} chưa được biết. Dấu vân tay {key_type} của nó là}}\n\n{fingerprint}\n\nChỉ kết nối nếu đây đúng là máy chủ bạn muốn; quản trị viên của máy chủ có thể xác nhận dấu vân tay."
+  },
+  "remote.unknown_host.title": {
+    "message": "Máy chủ lạ"
+  },
+  "rename.case": {
+    "message": "Chữ hoa/thường:"
+  },
+  "rename.case.first": {
+    "message": "Chữ cái đầu"
+  },
+  "rename.case.lower": {
+    "message": "chữ thường"
+  },
+  "rename.case.unchanged": {
+    "message": "Giữ nguyên"
+  },
+  "rename.case.upper": {
+    "message": "CHỮ HOA"
+  },
+  "rename.case.words": {
+    "message": "Viết Hoa Mỗi Từ"
+  },
+  "rename.close": {
+    "message": "Đóng"
+  },
+  "rename.counter_start": {
+    "message": "Số bắt đầu"
+  },
+  "rename.dialog_title": {
+    "message": "Công cụ đổi tên hàng loạt"
+  },
+  "rename.digits": {
+    "message": "Số chữ số"
+  },
+  "rename.extension": {
+    "message": "Phần mở rộng"
+  },
+  "rename.field.counter": {
+    "message": "[C] Bộ đếm"
+  },
+  "rename.field.date": {
+    "message": "[Y][M][D] Ngày"
+  },
+  "rename.field.extension": {
+    "message": "[E] Đuôi"
+  },
+  "rename.field.folder": {
+    "message": "[P] Thư mục"
+  },
+  "rename.field.name": {
+    "message": "[N] Tên"
+  },
+  "rename.field.range": {
+    "message": "[N1-3] Khoảng"
+  },
+  "rename.field.time": {
+    "message": "[h][m][s] Giờ"
+  },
+  "rename.first_only": {
+    "message": "Chỉ lần đầu"
+  },
+  "rename.in_archive": {
+    "message": "Hiện chưa thể đổi tên tệp bên trong tệp nén."
+  },
+  "rename.mask": {
+    "message": "Mẫu đổi tên: tên tệp"
+  },
+  "rename.match_case": {
+    "message": "Phân biệt hoa thường"
+  },
+  "rename.new_name": {
+    "message": "Tên mới"
+  },
+  "rename.not_renamed_back": {
+    "message": "{from}: {err}; chưa đổi lại tên: {names}"
+  },
+  "rename.not_utf8": {
+    "message": "Các tên không phải UTF-8 bị bỏ qua."
+  },
+  "rename.old_name": {
+    "message": "Tên cũ"
+  },
+  "rename.problem.bad_character": {
+    "message": "có ký tự không được dùng trong tên"
+  },
+  "rename.problem.exists": {
+    "message": "đã tồn tại"
+  },
+  "rename.problem.no_name": {
+    "message": "không có tên"
+  },
+  "rename.problem.twice": {
+    "message": "trùng trong danh sách"
+  },
+  "rename.regex": {
+    "message": "Biểu thức chính quy"
+  },
+  "rename.regex_error": {
+    "message": "Biểu thức chính quy: {err}"
+  },
+  "rename.replace": {
+    "message": "Thay bằng"
+  },
+  "rename.search": {
+    "message": "Tìm"
+  },
+  "rename.start": {
+    "message": "Bắt đầu!"
+  },
+  "rename.status.failed": {
+    "message": "Không đổi tên tệp nào: {err}"
+  },
+  "rename.status.ready": {
+    "message": "Nhấn Bắt đầu! để đổi tên."
+  },
+  "rename.status.renamed": {
+    "message": "{count, plural, other {Đã đổi tên #.}}"
+  },
+  "rename.status.took_back": {
+    "message": "{count, plural, other {Đã khôi phục #.}}"
+  },
+  "rename.step": {
+    "message": "Bước"
+  },
+  "rename.undo": {
+    "message": "Hoàn tác"
+  },
+  "rename.was": {
+    "message": "{to} (trước là {from})"
+  },
+  "rename.with_extension": {
+    "message": "Kèm phần mở rộng"
+  },
+  "scmd.column.modified": {
+    "message": "Ngày sửa"
+  },
+  "scmd.column.name": {
+    "message": "Tên"
+  },
+  "scmd.column.size": {
+    "message": "Kích thước"
+  },
+  "scmd.column.up_dir": {
+    "message": "--LÊN--"
+  },
+  "scmd.command_line.not_on_server": {
+    "message": "Lệnh chạy trên máy tính này, không chạy trên máy chủ."
+  },
+  "scmd.compare.marked": {
+    "message": "{count, plural, other {Đã đánh dấu # tệp: mới hơn, hoặc không có ở bên kia.}}"
+  },
+  "scmd.compare.same": {
+    "message": "Hai thư mục có các tệp giống nhau."
+  },
+  "scmd.copying": {
+    "message": "Đang sao chép {name}..."
+  },
+  "scmd.dialog.buttons": {
+    "message": "Enter OK   Esc Hủy"
+  },
+  "scmd.error.read_settings": {
+    "message": "Không đọc được cài đặt: {err}"
+  },
+  "scmd.error.read_tabs": {
+    "message": "Không đọc được các thẻ đang mở: {err}"
+  },
+  "scmd.error.read_workspaces": {
+    "message": "Không đọc được các không gian làm việc: {err}"
+  },
+  "scmd.error.save_back": {
+    "message": "Không lưu lại được: {err}"
+  },
+  "scmd.error.save_searches": {
+    "message": "Không lưu được lịch sử tìm kiếm: {err}"
+  },
+  "scmd.error.save_tabs": {
+    "message": "Không lưu được các thẻ đang mở: {err}"
+  },
+  "scmd.find.backwards": {
+    "message": "Tìm ngược lên"
+  },
+  "scmd.find.case_sensitive": {
+    "message": "Phân biệt hoa thường"
+  },
+  "scmd.find.hex": {
+    "message": "Hex (77 6F 72 64)"
+  },
+  "scmd.find.not_found": {
+    "message": "Không tìm thấy: {text}"
+  },
+  "scmd.find.regex": {
+    "message": "Biểu thức chính quy"
+  },
+  "scmd.find.search_for": {
+    "message": "Tìm:"
+  },
+  "scmd.find.title": {
+    "message": "Tìm"
+  },
+  "scmd.find.whole_words": {
+    "message": "Chỉ khớp cả từ"
+  },
+  "scmd.group.files": {
+    "message": "Tệp (*.txt *.md; thư mục kết thúc bằng /):"
+  },
+  "scmd.group.select_title": {
+    "message": "Chọn nhóm"
+  },
+  "scmd.group.unselect_title": {
+    "message": "Bỏ chọn nhóm"
+  },
+  "scmd.key_bar.copy": {
+    "message": "Chép"
+  },
+  "scmd.key_bar.delete": {
+    "message": "Xóa"
+  },
+  "scmd.key_bar.edit": {
+    "message": "Sửa"
+  },
+  "scmd.key_bar.menu": {
+    "message": "Menu"
+  },
+  "scmd.key_bar.mkdir": {
+    "message": "Tạo TM"
+  },
+  "scmd.key_bar.move": {
+    "message": "Chuyển"
+  },
+  "scmd.key_bar.quit": {
+    "message": "Thoát"
+  },
+  "scmd.key_bar.view": {
+    "message": "Xem"
+  },
+  "scmd.message.error": {
+    "message": "Lỗi"
+  },
+  "scmd.message.ok": {
+    "message": "OK"
+  },
+  "scmd.not_yet": {
+    "message": "{what, select, menus {Menu: chưa có trong phiên bản terminal.} file_operations {Thao tác tệp: chưa có trong phiên bản terminal.} servers {Máy chủ: chưa có trong phiên bản terminal.} other {Lệnh này: chưa có trong phiên bản terminal.}}"
+  },
+  "scmd.picture.broken": {
+    "message": "ảnh bị hỏng"
+  },
+  "scmd.picture.broken_page": {
+    "message": "trang bị hỏng"
+  },
+  "scmd.picture.loading": {
+    "message": "Đang tải…"
+  },
+  "scmd.picture.no_page": {
+    "message": "tệp PDF không có trang này"
+  },
+  "scmd.shell.press_enter": {
+    "message": "Nhấn Enter để quay lại Spark Commander..."
+  },
+  "scmd.sync_browsing.off": {
+    "message": "Đã tắt duyệt đồng bộ."
+  },
+  "scmd.sync_browsing.on": {
+    "message": "Đã bật duyệt đồng bộ."
+  },
+  "scmd.sync_browsing.stopped": {
+    "message": "{err}. Đã tắt duyệt đồng bộ."
+  },
+  "scmd.viewer.column": {
+    "message": "Cột {column}"
+  },
+  "scmd.viewer.finding": {
+    "message": "đang tìm…"
+  },
+  "scmd.viewer.key_bar.next": {
+    "message": "Tiếp"
+  },
+  "scmd.viewer.key_bar.quit": {
+    "message": "Thoát"
+  },
+  "scmd.viewer.key_bar.reload": {
+    "message": "Đọc lại"
+  },
+  "scmd.viewer.key_bar.search": {
+    "message": "Tìm"
+  },
+  "scmd.viewer.page": {
+    "message": "trang {page}/{pages}"
+  },
+  "scmd.viewer.reading": {
+    "message": "đang đọc {percent}%"
+  },
+  "scmd.viewer.wrap": {
+    "message": "Ngắt dòng"
+  },
+  "scmd.workspace.copy_name": {
+    "message": "{name} bản sao"
+  },
+  "scmd.workspace.default_name": {
+    "message": "Không gian làm việc {number}"
+  },
+  "scmd.workspace.delete_question": {
+    "message": "Xóa “{name}”? Các thẻ của nó sẽ bị quên."
+  },
+  "scmd.workspace.duplicate_title": {
+    "message": "Nhân bản không gian làm việc"
+  },
+  "scmd.workspace.last_stays": {
+    "message": "Không gian làm việc cuối cùng phải được giữ lại."
+  },
+  "scmd.workspace.name": {
+    "message": "Tên:"
+  },
+  "scmd.workspace.name_or_default": {
+    "message": "Tên (để trống: {name}):"
+  },
+  "scmd.workspace.new_title": {
+    "message": "Không gian làm việc mới"
+  },
+  "scmd.workspace.rename_title": {
+    "message": "Đổi tên không gian làm việc"
+  },
+  "scmd.workspaces.keys": {
+    "message": "Enter Mở  F7 Mới  F5 Chép  F2 Đổi tên  F8 Xóa"
+  },
+  "scmd.workspaces.title": {
+    "message": "Không gian làm việc"
+  },
+  "search.age.days": {
+    "message": "ngày"
+  },
+  "search.age.hours": {
+    "message": "giờ"
+  },
+  "search.age.minutes": {
+    "message": "phút"
+  },
+  "search.age.months": {
+    "message": "tháng"
+  },
+  "search.age.weeks": {
+    "message": "tuần"
+  },
+  "search.age.years": {
+    "message": "năm"
+  },
+  "search.archives": {
+    "message": "Tìm trong tệp nén"
+  },
+  "search.attribute.directory": {
+    "message": "Thư mục"
+  },
+  "search.attribute.either": {
+    "message": "Không quan trọng"
+  },
+  "search.attribute.executable": {
+    "message": "Thực thi được"
+  },
+  "search.attribute.hidden": {
+    "message": "Ẩn"
+  },
+  "search.attribute.link": {
+    "message": "Liên kết tượng trưng"
+  },
+  "search.attribute.must": {
+    "message": "Phải có"
+  },
+  "search.attribute.must_not": {
+    "message": "Không được có"
+  },
+  "search.attribute.read_only": {
+    "message": "Chỉ đọc"
+  },
+  "search.attributes.label": {
+    "message": "Thuộc tính:"
+  },
+  "search.between.and": {
+    "message": "và"
+  },
+  "search.between.label": {
+    "message": "Ngày trong khoảng:"
+  },
+  "search.close": {
+    "message": "Đóng"
+  },
+  "search.depth.all": {
+    "message": "tất cả (không giới hạn độ sâu)"
+  },
+  "search.depth.current": {
+    "message": "chỉ thư mục hiện tại"
+  },
+  "search.depth.label": {
+    "message": "Tìm trong thư mục con:"
+  },
+  "search.depth.levels": {
+    "message": "{count, plural, other {# cấp}}"
+  },
+  "search.drives": {
+    "message": "Ổ đĩa"
+  },
+  "search.duplicates.content": {
+    "message": "cùng nội dung"
+  },
+  "search.duplicates.label": {
+    "message": "Tìm tệp trùng lặp:"
+  },
+  "search.duplicates.name": {
+    "message": "cùng tên"
+  },
+  "search.duplicates.size": {
+    "message": "cùng kích thước"
+  },
+  "search.edit": {
+    "message": "F4 Sửa"
+  },
+  "search.error.between_days": {
+    "message": "Ngày trong khoảng cần có cả hai ngày"
+  },
+  "search.error.date": {
+    "message": "{text} không phải ngày dạng 2026-11-12"
+  },
+  "search.error.hex": {
+    "message": "{text} không phải chuỗi hex dạng 48 65 6c"
+  },
+  "search.error.keep": {
+    "message": "Không lưu được nội dung tìm kiếm: {err}"
+  },
+  "search.error.local_time": {
+    "message": "{text} không tồn tại theo giờ địa phương"
+  },
+  "search.error.names_regex": {
+    "message": "Biểu thức chính quy của tên: {err}"
+  },
+  "search.error.newer_number": {
+    "message": "Không cũ hơn cần một số, không phải {text}"
+  },
+  "search.error.no_place": {
+    "message": "Tìm trong chưa có thư mục nào"
+  },
+  "search.error.no_text": {
+    "message": "Tìm văn bản chưa có nội dung"
+  },
+  "search.error.older_number": {
+    "message": "Cũ hơn cần một số, không phải {text}"
+  },
+  "search.error.save": {
+    "message": "Không lưu được các tìm kiếm: {err}"
+  },
+  "search.error.size_number": {
+    "message": "Kích thước tệp cần một số, không phải {text}"
+  },
+  "search.error.text_regex": {
+    "message": "Biểu thức chính quy của văn bản: {err}"
+  },
+  "search.feed": {
+    "message": "Đưa vào khung"
+  },
+  "search.go_to_file": {
+    "message": "Đi tới tệp"
+  },
+  "search.in_found": {
+    "message": "F2 Tìm trong các tệp đã tìm thấy"
+  },
+  "search.locate": {
+    "message": "Từ chỉ mục locate"
+  },
+  "search.names.label": {
+    "message": "Tìm:"
+  },
+  "search.names.placeholder": {
+    "message": "*.txt *.md | backup*  (để trống: tất cả)"
+  },
+  "search.new": {
+    "message": "Tìm mới"
+  },
+  "search.newer.label": {
+    "message": "Không cũ hơn:"
+  },
+  "search.older.label": {
+    "message": "Cũ hơn:"
+  },
+  "search.only_selected": {
+    "message": "Chỉ tìm trong tệp/thư mục đã chọn"
+  },
+  "search.only_selected_count": {
+    "message": "{count, plural, other {Chỉ tìm trong # mục đã chọn}}"
+  },
+  "search.page.advanced": {
+    "message": "Nâng cao"
+  },
+  "search.page.general": {
+    "message": "Chung"
+  },
+  "search.page.load_save": {
+    "message": "Tải/Lưu"
+  },
+  "search.places.browse_prompt": {
+    "message": "Tìm trong"
+  },
+  "search.places.label": {
+    "message": "Tìm trong:"
+  },
+  "search.places.placeholder": {
+    "message": "Thư mục, ngăn cách bằng ;"
+  },
+  "search.regex": {
+    "message": "RegEx"
+  },
+  "search.results.label": {
+    "message": "Kết quả tìm kiếm:"
+  },
+  "search.saved.delete": {
+    "message": "Xóa"
+  },
+  "search.saved.label": {
+    "message": "Các tìm kiếm trước:"
+  },
+  "search.saved.load": {
+    "message": "Tải"
+  },
+  "search.saved.name_first": {
+    "message": "Hãy đặt tên cho tìm kiếm trước."
+  },
+  "search.saved.name_placeholder": {
+    "message": "Tên tìm kiếm"
+  },
+  "search.saved.save": {
+    "message": "Lưu"
+  },
+  "search.size.label": {
+    "message": "Kích thước tệp:"
+  },
+  "search.start": {
+    "message": "Bắt đầu tìm"
+  },
+  "search.status.found": {
+    "message": "Tìm thấy {files, plural, other {# tệp}} và {dirs, plural, other {# thư mục}}"
+  },
+  "search.status.searching": {
+    "message": "Đang tìm…"
+  },
+  "search.status.searching_in": {
+    "message": "Đang tìm: {folder}"
+  },
+  "search.status.stopped": {
+    "message": "Đã dừng: {counts}"
+  },
+  "search.stop": {
+    "message": "Dừng"
+  },
+  "search.text.ansi": {
+    "message": "ANSI (bảng mã {page})"
+  },
+  "search.text.case_sensitive": {
+    "message": "Phân biệt hoa thường"
+  },
+  "search.text.hex": {
+    "message": "Hex"
+  },
+  "search.text.label": {
+    "message": "Tìm văn bản:"
+  },
+  "search.text.not_containing": {
+    "message": "Tìm tệp KHÔNG chứa văn bản"
+  },
+  "search.text.office": {
+    "message": "Tệp Office (docx, xlsx, pptx, odt…)"
+  },
+  "search.text.placeholder": {
+    "message": "Văn bản cần tìm"
+  },
+  "search.text.whole_words": {
+    "message": "Chỉ khớp cả từ"
+  },
+  "search.title": {
+    "message": "Tìm tệp"
+  },
+  "search.unit.bytes": {
+    "message": "byte"
+  },
+  "search.view": {
+    "message": "F3 Xem"
+  },
+  "settings.addons.builtin_version": {
+    "message": "{version}, đi kèm Spark Commander"
+  },
+  "settings.addons.check_daily": {
+    "message": "Tìm bản cập nhật tiện ích bổ sung khi khởi động và hằng ngày, rồi đề xuất"
+  },
+  "settings.addons.check_failed": {
+    "message": "Không tìm được bản cập nhật: {err}"
+  },
+  "settings.addons.check_now": {
+    "message": "Tìm ngay"
+  },
+  "settings.addons.checking": {
+    "message": "Đang tìm bản cập nhật..."
+  },
+  "settings.addons.download": {
+    "message": "Tải về"
+  },
+  "settings.addons.downloading": {
+    "message": "Đang tải về: {done} trên {size}"
+  },
+  "settings.addons.file": {
+    "message": "Tệp"
+  },
+  "settings.addons.installed.builtin": {
+    "message": "đi kèm Spark Commander"
+  },
+  "settings.addons.installed.label": {
+    "message": "Đã cài đặt"
+  },
+  "settings.addons.installed.none": {
+    "message": "không có"
+  },
+  "settings.addons.intro": {
+    "message": "Spark Commander dùng các chương trình này của những dự án khác cho một số tính năng. Tiện ích bổ sung được tải về riêng, khi bạn chọn; 7-Zip và PDFium đi kèm ứng dụng."
+  },
+  "settings.addons.never_offer": {
+    "message": "Không bao giờ đề xuất tiện ích bổ sung khi một tệp cần đến"
+  },
+  "settings.addons.offers": {
+    "message": "Đề xuất và cập nhật"
+  },
+  "settings.addons.online.label": {
+    "message": "Trực tuyến"
+  },
+  "settings.addons.online.looking": {
+    "message": "đang tìm..."
+  },
+  "settings.addons.online.none": {
+    "message": "không có cho hệ thống này"
+  },
+  "settings.addons.online.not_yet": {
+    "message": "chưa tìm"
+  },
+  "settings.addons.online.unknown": {
+    "message": "không rõ"
+  },
+  "settings.addons.remove": {
+    "message": "Gỡ bỏ"
+  },
+  "settings.addons.up_to_date": {
+    "message": "Danh sách tiện ích bổ sung đã được cập nhật."
+  },
+  "settings.addons.version": {
+    "message": "Phiên bản"
+  },
+  "settings.addons.website": {
+    "message": "Trang web"
+  },
+  "settings.appearance.title": {
+    "message": "Giao diện"
+  },
+  "settings.apply": {
+    "message": "Áp dụng"
+  },
+  "settings.backdrop.blur": {
+    "message": "Làm mờ màn hình nền phía sau"
+  },
+  "settings.backdrop.clear": {
+    "message": "0%, chỉ màn hình nền"
+  },
+  "settings.backdrop.cover": {
+    "message": "Mức che phủ màn hình nền phía sau:"
+  },
+  "settings.backdrop.opacity": {
+    "message": "{opacity}%"
+  },
+  "settings.backdrop.sidebar": {
+    "message": "Thanh bên"
+  },
+  "settings.backdrop.solid": {
+    "message": "100%, đặc"
+  },
+  "settings.backdrop.terminal": {
+    "message": "Terminal"
+  },
+  "settings.cancel": {
+    "message": "Hủy"
+  },
+  "settings.date.as_system": {
+    "message": "Theo hệ thống: {date}"
+  },
+  "settings.date.custom": {
+    "message": "Tùy chỉnh:"
+  },
+  "settings.date.pattern_help": {
+    "message": "yyyy năm, MM tháng (MMM tên tháng), dd ngày (ddd thứ trong tuần)"
+  },
+  "settings.date.shown_as": {
+    "message": "Hiển thị dạng"
+  },
+  "settings.date.shown_as_note": {
+    "message": "trong danh sách tệp; hộp thoại có thêm giây"
+  },
+  "settings.date.title": {
+    "message": "Ngày"
+  },
+  "settings.editor.browse": {
+    "message": "Duyệt..."
+  },
+  "settings.editor.choose": {
+    "message": "Chọn"
+  },
+  "settings.editor.external": {
+    "message": "Trình soạn thảo ngoài (Ctrl+Shift+F4):"
+  },
+  "settings.editor.external_help": {
+    "message": "%1 là tệp, nếu không có thì tệp được đặt cuối; ví dụ code --wait %1"
+  },
+  "settings.editor.limit": {
+    "message": "Trình soạn thảo tích hợp (F4) mở tệp tối đa"
+  },
+  "settings.editor.limit_unit": {
+    "message": "MB"
+  },
+  "settings.editor.title": {
+    "message": "Trình soạn thảo cho F4"
+  },
+  "settings.error.no_folder": {
+    "message": "không có thư mục cấu hình"
+  },
+  "settings.files_shown.hidden": {
+    "message": "Tệp ẩn"
+  },
+  "settings.files_shown.system": {
+    "message": "Tệp hệ thống"
+  },
+  "settings.files_shown.title": {
+    "message": "Tệp được hiển thị"
+  },
+  "settings.font.as_system": {
+    "message": "Theo hệ thống"
+  },
+  "settings.font.chosen": {
+    "message": "Đã chọn; phông của hệ thống là {family}, {size}"
+  },
+  "settings.font.fixed": {
+    "message": "Trình xem"
+  },
+  "settings.font.fixed_note": {
+    "message": "Chỉ phông có độ rộng cố định; dùng cả cho trình soạn thảo và so sánh tệp."
+  },
+  "settings.font.main": {
+    "message": "Phông cửa sổ chính"
+  },
+  "settings.font.system": {
+    "message": "Phông của hệ thống"
+  },
+  "settings.language.system": {
+    "message": "Ngôn ngữ hệ thống"
+  },
+  "settings.language.system_named": {
+    "message": "Ngôn ngữ hệ thống: {language}"
+  },
+  "settings.language.title": {
+    "message": "Ngôn ngữ"
+  },
+  "settings.menus.automatic": {
+    "message": "Tự động: nút ☰ trên GNOME, thanh menu ở nơi khác"
+  },
+  "settings.menus.bar": {
+    "message": "Thanh menu"
+  },
+  "settings.menus.button": {
+    "message": "Nút ☰ trên thanh tiêu đề"
+  },
+  "settings.menus.title": {
+    "message": "Menu"
+  },
+  "settings.ok": {
+    "message": "OK"
+  },
+  "settings.page.addons": {
+    "message": "Tiện ích bổ sung"
+  },
+  "settings.page.date": {
+    "message": "Ngày"
+  },
+  "settings.page.display": {
+    "message": "Hiển thị"
+  },
+  "settings.page.edit_view": {
+    "message": "Sửa/Xem"
+  },
+  "settings.page.font": {
+    "message": "Phông chữ"
+  },
+  "settings.page.language": {
+    "message": "Ngôn ngữ"
+  },
+  "settings.page.layout": {
+    "message": "Bố cục"
+  },
+  "settings.page.operations": {
+    "message": "Thao tác"
+  },
+  "settings.page.passwords": {
+    "message": "Mật khẩu"
+  },
+  "settings.page.terminal": {
+    "message": "Terminal"
+  },
+  "settings.page.toolbar": {
+    "message": "Thanh công cụ"
+  },
+  "settings.passwords.change_master": {
+    "message": "Đổi mật khẩu chính…"
+  },
+  "settings.passwords.locked": {
+    "message": "Các mật khẩu đang bị khóa trên máy tính này: mật khẩu chính sẽ mở chúng."
+  },
+  "settings.passwords.master_set": {
+    "message": "Đã đặt mật khẩu chính: khi sao chép thư mục cài đặt, các mật khẩu sẽ mở được trên máy tính khác sau khi nhập mật khẩu chính ở đó."
+  },
+  "settings.passwords.no_master": {
+    "message": "Chưa đặt mật khẩu chính: khi sao chép thư mục cài đặt, các mật khẩu sẽ không mở được trên máy tính khác; bạn sẽ phải nhập lại chúng ở đó."
+  },
+  "settings.passwords.not_removed": {
+    "message": "Chưa gỡ được mật khẩu chính: {err}"
+  },
+  "settings.passwords.remove_master": {
+    "message": "Gỡ mật khẩu chính"
+  },
+  "settings.passwords.saved": {
+    "message": "{count, plural, other {Đã lưu # mật khẩu}} (của máy chủ, thư mục chia sẻ, ổ đĩa mã hóa), được mã hóa trong thư mục cài đặt; khóa để mở chúng nằm trong kho khóa của máy tính này."
+  },
+  "settings.passwords.set_master": {
+    "message": "Đặt mật khẩu chính…"
+  },
+  "settings.passwords.title": {
+    "message": "Mật khẩu đã lưu"
+  },
+  "settings.passwords.unlock": {
+    "message": "Mở khóa…"
+  },
+  "settings.queue.clear_after": {
+    "message": "Xóa thao tác đã xong sau"
+  },
+  "settings.queue.clear_after_help": {
+    "message": "0: ngay khi xong. Thao tác bị lỗi hoặc bị hủy vẫn được giữ đến khi bạn xóa."
+  },
+  "settings.queue.clear_after_unit": {
+    "message": "phút"
+  },
+  "settings.queue.download_limit": {
+    "message": "Giới hạn tốc độ tải về"
+  },
+  "settings.queue.download_limit_help": {
+    "message": "Tải về từ liên kết, và sao chép từ máy chủ FTP và SFTP; áp dụng cả cho các tác vụ đang chạy. 0: không giới hạn."
+  },
+  "settings.queue.download_limit_unit": {
+    "message": "KB/s"
+  },
+  "settings.queue.title": {
+    "message": "Hàng đợi thao tác"
+  },
+  "settings.shell.default": {
+    "message": "Mặc định: {shell}"
+  },
+  "settings.shell.note": {
+    "message": "Các thẻ terminal mới sẽ khởi động shell này."
+  },
+  "settings.shell.title": {
+    "message": "Shell"
+  },
+  "settings.sort_folders.by_name": {
+    "message": "Luôn theo tên"
+  },
+  "settings.sort_folders.like_files": {
+    "message": "Như tệp (cả theo thời gian)"
+  },
+  "settings.sort_folders.title": {
+    "message": "Sắp xếp thư mục"
+  },
+  "settings.tabs.header_always": {
+    "message": "Hiện thanh thẻ ngay cả khi chỉ có một thẻ"
+  },
+  "settings.tabs.title": {
+    "message": "Thẻ thư mục"
+  },
+  "settings.time.as_system": {
+    "message": "Theo hệ thống"
+  },
+  "settings.time.h12": {
+    "message": "12 giờ (2:05 CH)"
+  },
+  "settings.time.h24": {
+    "message": "24 giờ (14:05)"
+  },
+  "settings.time.title": {
+    "message": "Giờ"
+  },
+  "settings.title": {
+    "message": "Cài đặt"
+  },
+  "settings.toolbar.add": {
+    "message": "Thêm nút…"
+  },
+  "settings.toolbar.move_down": {
+    "message": "Chuyển xuống"
+  },
+  "settings.toolbar.move_up": {
+    "message": "Chuyển lên"
+  },
+  "settings.toolbar.place": {
+    "message": "Dưới thanh menu; trên thanh tiêu đề khi menu nằm sau nút ☰, như các ứng dụng GNOME. Không có nút nào thì không hiện thanh công cụ."
+  },
+  "settings.toolbar.remove": {
+    "message": "Xóa"
+  },
+  "settings.toolbar.replace": {
+    "message": "Thay thế…"
+  },
+  "settings.toolbar.restore_default": {
+    "message": "Khôi phục mặc định"
+  },
+  "settings.toolbar.title": {
+    "message": "Nút trên thanh công cụ"
+  },
+  "settings.viewer.font.ansi": {
+    "message": "ANSI (Windows)"
+  },
+  "settings.viewer.font.ascii": {
+    "message": "ASCII (DOS)"
+  },
+  "settings.viewer.font.auto": {
+    "message": "Tự động nhận dạng"
+  },
+  "settings.viewer.font.label": {
+    "message": "Phông khi khởi động:"
+  },
+  "settings.viewer.font.variable": {
+    "message": "Độ rộng thay đổi"
+  },
+  "settings.viewer.minimap": {
+    "message": "Bản đồ thu nhỏ"
+  },
+  "settings.viewer.show": {
+    "message": "Hiển thị:"
+  },
+  "settings.viewer.start.auto": {
+    "message": "Tự động nhận dạng"
+  },
+  "settings.viewer.start.binary": {
+    "message": "Nhị phân"
+  },
+  "settings.viewer.start.hex": {
+    "message": "Hex"
+  },
+  "settings.viewer.start.label": {
+    "message": "Chế độ hiển thị khi khởi động:"
+  },
+  "settings.viewer.start.text": {
+    "message": "Văn bản"
+  },
+  "settings.viewer.title": {
+    "message": "Trình xem cho F3"
+  },
+  "settings.viewer.width.binary": {
+    "message": "Nhị phân"
+  },
+  "settings.viewer.width.label": {
+    "message": "Độ rộng hiển thị (ký tự):"
+  },
+  "settings.viewer.width.text": {
+    "message": "Văn bản"
+  },
+  "settings.viewer.wrap": {
+    "message": "Ngắt dòng"
+  },
+  "shells.command_prompt": {
+    "message": "Dấu nhắc Lệnh"
+  },
+  "sidebar.device.no_files": {
+    "message": "không chia sẻ tệp"
+  },
+  "sidebar.device.not_answering": {
+    "message": "{name} không phản hồi: hãy mở khóa thiết bị và mở KDE Connect trên đó, rồi đọc lại thư mục (F2)."
+  },
+  "sidebar.device.not_answering_error": {
+    "message": "{name} không phản hồi ({err}): hãy mở khóa thiết bị và mở KDE Connect trên đó."
+  },
+  "sidebar.device.not_connected": {
+    "message": "chưa kết nối"
+  },
+  "sidebar.device.opening": {
+    "message": "Đang mở {name}..."
+  },
+  "sidebar.device.reconnecting": {
+    "message": "{name} không phản hồi: đang kết nối lại..."
+  },
+  "sidebar.device.unmount_failed": {
+    "message": "{name}: không tháo gắn được: {err}"
+  },
+  "sidebar.group.bookmarks": {
+    "message": "Dấu trang"
+  },
+  "sidebar.group.cloud": {
+    "message": "Đám mây"
+  },
+  "sidebar.group.devices": {
+    "message": "Thiết bị"
+  },
+  "sidebar.group.drives": {
+    "message": "Ổ đĩa"
+  },
+  "sidebar.group.network": {
+    "message": "Mạng"
+  },
+  "sidebar.section.connections": {
+    "message": "Kết nối"
+  },
+  "sidebar.section.folders": {
+    "message": "Thư mục"
+  },
+  "sidebar.section.operations": {
+    "message": "Thao tác"
+  },
+  "sidebar.section.places": {
+    "message": "Vị trí"
+  },
+  "sidebar.volume.locked": {
+    "message": "đã khóa"
+  },
+  "sidebar.volume.mounting": {
+    "message": "Đang gắn {name}..."
+  },
+  "sidebar.volume.not_mounted": {
+    "message": "chưa gắn"
+  },
+  "sidebar.volume.open": {
+    "message": "Mở"
+  },
+  "sidebar.volume.space": {
+    "message": "Trống {free} trên {total}"
+  },
+  "sidebar.volume.unmount": {
+    "message": "Tháo gắn"
+  },
+  "sidebar.volume.unmount_failed": {
+    "message": "Không tháo gắn được: {err}"
+  },
+  "split.bad_size": {
+    "message": "“{size}” không phải kích thước hợp lệ: 100 MB, 1.5 GB, 650m"
+  },
+  "split.choose": {
+    "message": "Hãy đặt con trỏ vào tệp cần chia."
+  },
+  "split.combine.choose": {
+    "message": "Hãy đặt con trỏ vào một phần (name.001) hoặc vào tệp .crc của nó."
+  },
+  "split.combine.dialog_title": {
+    "message": "Ghép tệp"
+  },
+  "split.combine.label": {
+    "message": "Ghép các phần thành tệp:"
+  },
+  "split.combine.title": {
+    "message": "Ghép “{name}”"
+  },
+  "split.combined_no_crc": {
+    "message": "{count, plural, other {Đã ghép # phần, không có tệp CRC để kiểm tra}}"
+  },
+  "split.crc_mismatch": {
+    "message": "{target} không khớp với {file}: có phần bị thiếu hoặc bị hỏng"
+  },
+  "split.crc_names_no_file": {
+    "message": "tệp CRC không ghi tên tệp nào"
+  },
+  "split.crc_unreadable": {
+    "message": "đã ghép, nhưng không đọc được {file}: {err}"
+  },
+  "split.dialog_title": {
+    "message": "Chia tệp"
+  },
+  "split.label": {
+    "message": "Chia “{name}” thành các phần trong thư mục:"
+  },
+  "split.part_missing": {
+    "message": "Thiếu {path}"
+  },
+  "split.part_size": {
+    "message": "Kích thước phần:"
+  },
+  "split.title": {
+    "message": "Chia “{name}”"
+  },
+  "sync.close": {
+    "message": "Đóng"
+  },
+  "sync.column.date": {
+    "message": "Ngày"
+  },
+  "sync.column.name": {
+    "message": "Tên"
+  },
+  "sync.column.size": {
+    "message": "Kích thước"
+  },
+  "sync.compare": {
+    "message": "So sánh"
+  },
+  "sync.confirm.copy_left": {
+    "message": "Sao chép {count} sang trái ({size})"
+  },
+  "sync.confirm.copy_right": {
+    "message": "Sao chép {count} sang phải ({size})"
+  },
+  "sync.confirm.delete_left": {
+    "message": "Xóa {count} bên trái"
+  },
+  "sync.confirm.delete_right": {
+    "message": "Xóa {count} bên phải"
+  },
+  "sync.confirm.ok": {
+    "message": "Đồng bộ"
+  },
+  "sync.confirm.text": {
+    "message": "{actions}. Các tệp được sao chép sẽ thay thế tệp ở đó.{trash, select, yes { Các mục bị xóa trên máy tính này sẽ được chuyển vào Thùng rác.} other {}}"
+  },
+  "sync.confirm.title": {
+    "message": "Đồng bộ"
+  },
+  "sync.error.changed": {
+    "message": "đã thay đổi kể từ lúc so sánh; hãy so sánh lại"
+  },
+  "sync.error.compare": {
+    "message": "Không so sánh được: {err}"
+  },
+  "sync.error.no_folders": {
+    "message": "Đồng bộ thư mục so sánh hai thư mục: không khung nào được hiển thị tệp nén hoặc kết quả tìm kiếm."
+  },
+  "sync.left": {
+    "message": "Trái"
+  },
+  "sync.mask.label": {
+    "message": "Tệp:"
+  },
+  "sync.option.asymmetric": {
+    "message": "Bất đối xứng (bên phải thành bản sao của bên trái)"
+  },
+  "sync.option.by_content": {
+    "message": "Theo nội dung"
+  },
+  "sync.option.ignore_date": {
+    "message": "Bỏ qua ngày"
+  },
+  "sync.option.subfolders": {
+    "message": "Thư mục con"
+  },
+  "sync.result.done": {
+    "message": "{count, plural, other {Đã đồng bộ #}}"
+  },
+  "sync.result.failed": {
+    "message": "{count, plural, other {# mục chưa đồng bộ}}; {first}"
+  },
+  "sync.right": {
+    "message": "Phải"
+  },
+  "sync.show.equal": {
+    "message": "= giống nhau"
+  },
+  "sync.show.label": {
+    "message": "Hiện:"
+  },
+  "sync.show.other": {
+    "message": "≠ để nguyên"
+  },
+  "sync.show.to_left": {
+    "message": "← sang trái"
+  },
+  "sync.show.to_right": {
+    "message": "→ sang phải"
+  },
+  "sync.status.both_empty": {
+    "message": "Cả hai đều trống."
+  },
+  "sync.status.comparing": {
+    "message": "Đang so sánh {folder}"
+  },
+  "sync.status.counts": {
+    "message": "{right} cần chép sang phải, {left} cần chép sang trái, {delete} cần xóa, {equal} giống nhau, {alone} để nguyên"
+  },
+  "sync.status.stopped": {
+    "message": "Đã dừng."
+  },
+  "sync.stop": {
+    "message": "Dừng"
+  },
+  "sync.synchronize": {
+    "message": "Đồng bộ..."
+  },
+  "sync.task.title": {
+    "message": "Đồng bộ {left} và {right}"
+  },
+  "sync.title": {
+    "message": "Đồng bộ thư mục"
+  },
+  "tab_menu.close_all_tabs": {
+    "message": "Đóng mọi thẻ"
+  },
+  "tab_menu.close_duplicate_tabs": {
+    "message": "Đóng các thẻ trùng lặp"
+  },
+  "tab_menu.close_tab": {
+    "message": "Đóng thẻ này"
+  },
+  "tab_menu.copy_tab_to_other_panel": {
+    "message": "Sao chép thẻ sang khung bên kia"
+  },
+  "tab_menu.duplicate_tab": {
+    "message": "Nhân bản thẻ này"
+  },
+  "tab_menu.list_tabs": {
+    "message": "Hiện danh sách mọi thẻ"
+  },
+  "tab_menu.lock_tab": {
+    "message": "Khóa thẻ này"
+  },
+  "tab_menu.none": {
+    "message": "(không có)"
+  },
+  "tab_menu.rename_tab": {
+    "message": "Đổi tên thẻ..."
+  },
+  "tabs.error.reopen": {
+    "message": "Không mở lại được thẻ: {err}"
+  },
+  "tabs.history.empty": {
+    "message": "Lịch sử thư mục của thẻ này chưa có gì."
+  },
+  "tabs.new": {
+    "message": "Thẻ mới"
+  },
+  "tabs.rename.label": {
+    "message": "Tên mới:"
+  },
+  "tabs.rename.title": {
+    "message": "Đổi tên thẻ"
+  },
+  "tabs.search_results": {
+    "message": "Kết quả tìm kiếm"
+  },
+  "terminal.busy": {
+    "message": "Một chương trình đang chạy trong terminal: hãy chạy lệnh khi chương trình kết thúc."
+  },
+  "terminal.close.idle": {
+    "message": "Đóng thẻ terminal này? Shell của nó sẽ kết thúc."
+  },
+  "terminal.close.ok": {
+    "message": "Đóng"
+  },
+  "terminal.close.running": {
+    "message": "Đóng thẻ terminal này? Chương trình đang chạy trong đó sẽ bị dừng."
+  },
+  "terminal.close.title": {
+    "message": "Đóng thẻ"
+  },
+  "terminal.error.start_shell": {
+    "message": "Không khởi động được shell: {err}"
+  },
+  "terminal.jump_to_bottom": {
+    "message": "Xuống cuối (Ctrl+End) ↓"
+  },
+  "terminal.menu.copy": {
+    "message": "Sao chép"
+  },
+  "terminal.menu.paste": {
+    "message": "Dán"
+  },
+  "toolbar.customize": {
+    "message": "Tùy chỉnh thanh công cụ…"
+  },
+  "tools.clear_key": {
+    "message": "Xóa phím"
+  },
+  "tools.close": {
+    "message": "Đóng"
+  },
+  "tools.delete": {
+    "message": "Xóa"
+  },
+  "tools.empty": {
+    "message": "Chưa có công cụ nào: Mới... để thêm."
+  },
+  "tools.field.command": {
+    "message": "Lệnh"
+  },
+  "tools.field.key": {
+    "message": "Phím"
+  },
+  "tools.field.name": {
+    "message": "Tên"
+  },
+  "tools.intro": {
+    "message": "Các dòng lệnh của riêng bạn, trong menu Công cụ: nhấp vào một lệnh ở đó, hoặc nhấn phím của nó."
+  },
+  "tools.key.none": {
+    "message": "Không có"
+  },
+  "tools.key.waiting": {
+    "message": "Nhấn phím... (Esc: không có)"
+  },
+  "tools.move_down": {
+    "message": "Chuyển xuống"
+  },
+  "tools.move_up": {
+    "message": "Chuyển lên"
+  },
+  "tools.name.placeholder": {
+    "message": "So sánh với bên kia"
+  },
+  "tools.new": {
+    "message": "Mới..."
+  },
+  "tools.new_name": {
+    "message": "Công cụ {number}"
+  },
+  "tools.no_command": {
+    "message": "{tool} chưa có lệnh: Công cụ > Quản lý công cụ."
+  },
+  "tools.not_local": {
+    "message": "Công cụ chạy trên máy tính này: khung đang hiển thị máy chủ hoặc tệp nén."
+  },
+  "tools.note.key_of_command": {
+    "message": "{key} cũng là {command}: công cụ sẽ dùng phím này."
+  },
+  "tools.note.key_of_other_tool": {
+    "message": "{key} cũng là phím của {tool}: công cụ nằm dưới trong danh sách sẽ dùng phím này."
+  },
+  "tools.placeholders": {
+    "message": "%P thư mục của khung này, %T thư mục của khung bên kia (cả hai kết thúc bằng dấu phân cách, nên \"%P%N\" là một đường dẫn), %N tệp dưới con trỏ, %O tên tệp không có phần mở rộng, %E phần mở rộng, %S các tệp đã chọn (nếu không thì tệp dưới con trỏ), mỗi tệp được đặt trong ngoặc kép; %% là một ký tự %. Hãy đặt ngoặc kép quanh phần còn lại: \"%P%N\"."
+  },
+  "tools.run_in_terminal": {
+    "message": "Chạy trong terminal để xem nội dung in ra"
+  },
+  "tools.set_key": {
+    "message": "Đặt phím..."
+  },
+  "tools.title": {
+    "message": "Công cụ"
+  },
+  "transfer.answer.cancel": {
+    "message": "Hủy"
+  },
+  "transfer.answer.elevate": {
+    "message": "Với quyền quản trị"
+  },
+  "transfer.answer.overwrite": {
+    "message": "Ghi đè"
+  },
+  "transfer.answer.overwrite_all": {
+    "message": "Ghi đè tất cả"
+  },
+  "transfer.answer.rename": {
+    "message": "Đổi tên"
+  },
+  "transfer.answer.retry": {
+    "message": "Thử lại"
+  },
+  "transfer.answer.skip": {
+    "message": "Bỏ qua"
+  },
+  "transfer.answer.skip_all": {
+    "message": "Bỏ qua tất cả"
+  },
+  "transfer.archive.local_only": {
+    "message": "Chỉ tệp trên máy tính này mới đưa vào tệp nén được: trước tiên hãy sao chép chúng về đây."
+  },
+  "transfer.cancel": {
+    "message": "Hủy"
+  },
+  "transfer.error.elevate_hint": {
+    "message": "Với quyền quản trị: mục này và các mục khác bị từ chối sẽ được xử lý sau khi phần còn lại xong, chỉ hỏi mật khẩu một lần."
+  },
+  "transfer.error.title": {
+    "message": "Lỗi"
+  },
+  "transfer.exists.describe": {
+    "message": "{count, plural, other {{size} byte, {time}}}"
+  },
+  "transfer.exists.text": {
+    "message": "Tệp đã có: {existing}\nTệp mới: {new}"
+  },
+  "transfer.exists.title": {
+    "message": "Tệp đã tồn tại"
+  },
+  "transfer.extract_failed": {
+    "message": "Không lấy được ra khỏi tệp nén: {err}"
+  },
+  "transfer.into_archive.question_many": {
+    "message": "{kind, select, copy {Sao chép} other {Di chuyển}} {count, plural, other {# mục}} vào {into}? Những mục trùng tên ở đó sẽ bị thay thế."
+  },
+  "transfer.into_archive.question_one": {
+    "message": "{kind, select, copy {Sao chép} other {Di chuyển}} “{name}” vào {into}? Những mục trùng tên ở đó sẽ bị thay thế."
+  },
+  "transfer.into_archive.title_many": {
+    "message": "{kind, select, copy {Sao chép} other {Di chuyển}} {count, plural, other {# mục}} vào {archive}"
+  },
+  "transfer.into_archive.title_one": {
+    "message": "{kind, select, copy {Sao chép} other {Di chuyển}} “{name}” vào {archive}"
+  },
+  "transfer.label.many": {
+    "message": "{kind, select, copy {Sao chép} other {Di chuyển}} {count, plural, other {# mục}} tới:"
+  },
+  "transfer.label.many_server": {
+    "message": "{kind, select, copy {Sao chép} other {Di chuyển}} {count, plural, other {# mục}} tới {server}:"
+  },
+  "transfer.label.one": {
+    "message": "{kind, select, copy {Sao chép} other {Di chuyển}} “{name}” tới:"
+  },
+  "transfer.label.one_server": {
+    "message": "{kind, select, copy {Sao chép} other {Di chuyển}} “{name}” tới {server}:"
+  },
+  "transfer.ok": {
+    "message": "OK"
+  },
+  "transfer.overwrite.all": {
+    "message": "Ghi đè tất cả"
+  },
+  "transfer.overwrite.ask": {
+    "message": "Hỏi"
+  },
+  "transfer.overwrite.label": {
+    "message": "Khi ở đích đã có tệp cùng tên:"
+  },
+  "transfer.overwrite.older": {
+    "message": "Ghi đè tệp cũ hơn"
+  },
+  "transfer.overwrite.rename": {
+    "message": "Đổi tên bản sao"
+  },
+  "transfer.overwrite.skip": {
+    "message": "Bỏ qua tất cả"
+  },
+  "transfer.remove_moved": {
+    "message": "Xóa các mục đã di chuyển khỏi {name}"
+  },
+  "transfer.speed": {
+    "message": "{size}/s"
+  },
+  "transfer.strip.counting": {
+    "message": "đang đếm: {count, plural, other {# tệp}}"
+  },
+  "transfer.strip.progress": {
+    "message": "{files} / {count, plural, other {# tệp}}, {percent}%"
+  },
+  "transfer.strip.queue": {
+    "message": "Hàng đợi..."
+  },
+  "transfer.strip.queue_waiting": {
+    "message": "Hàng đợi ({count, plural, other {# đang chờ}})..."
+  },
+  "transfer.title.copy": {
+    "message": "Sao chép"
+  },
+  "transfer.title.move": {
+    "message": "Di chuyển"
+  },
+  "viewer.as_text_hint": {
+    "message": "{err}. Phím 1 hiển thị tệp dưới dạng văn bản."
+  },
+  "viewer.book.cannot_read": {
+    "message": "Không đọc được sách này: {err}. Phím 1 hiển thị tệp dưới dạng văn bản."
+  },
+  "viewer.book.continuing": {
+    "message": "Tiếp tục từ {percent}"
+  },
+  "viewer.book.error.compression": {
+    "message": "được nén theo cách chưa đọc được ({compression})"
+  },
+  "viewer.book.error.damaged": {
+    "message": "sách bị hỏng"
+  },
+  "viewer.book.error.damaged_zip": {
+    "message": "tệp zip bị hỏng"
+  },
+  "viewer.book.error.drm": {
+    "message": "được bảo vệ bằng DRM: chỉ Kindle đọc được"
+  },
+  "viewer.book.error.huffman": {
+    "message": "được nén theo kiểu sách riêng của Amazon (HUFF/CDIC), hiện chưa đọc được"
+  },
+  "viewer.book.error.missing_part": {
+    "message": "{name} không có trong sách"
+  },
+  "viewer.book.error.no_package": {
+    "message": "sách không có tệp gói"
+  },
+  "viewer.book.error.no_text": {
+    "message": "sách không có văn bản"
+  },
+  "viewer.book.error.not_zip": {
+    "message": "không phải tệp zip: sách bị hỏng hoặc được bảo vệ bằng DRM?"
+  },
+  "viewer.book.error.zip_method": {
+    "message": "{name}: được nén theo kiểu zip chưa đọc được ở đây ({method})"
+  },
+  "viewer.cannot_show": {
+    "message": "Không hiển thị được: {err}"
+  },
+  "viewer.convert.failed": {
+    "message": "{tool} không chuyển đổi được ({status})"
+  },
+  "viewer.converting": {
+    "message": "Đang chuyển đổi bằng {tool}…"
+  },
+  "viewer.copy.too_large": {
+    "message": "Vùng chọn lớn hơn {megabytes} MB sẽ không được sao chép."
+  },
+  "viewer.encoding.cp1250": {
+    "message": "Đông Âu (1250)"
+  },
+  "viewer.encoding.cp1251": {
+    "message": "Kirin Windows (1251)"
+  },
+  "viewer.encoding.cp1252": {
+    "message": "Latin1 Tây Âu (1252)"
+  },
+  "viewer.encoding.cp1253": {
+    "message": "Hy Lạp (1253)"
+  },
+  "viewer.encoding.cp1254": {
+    "message": "Thổ Nhĩ Kỳ (1254)"
+  },
+  "viewer.encoding.cp1255": {
+    "message": "Do Thái (1255)"
+  },
+  "viewer.encoding.cp1256": {
+    "message": "Ả Rập (1256)"
+  },
+  "viewer.encoding.cp1257": {
+    "message": "Baltic (1257)"
+  },
+  "viewer.encoding.cp1258": {
+    "message": "Tiếng Việt (1258)"
+  },
+  "viewer.encoding.cp20866": {
+    "message": "Kirin KOI8-R (20866)"
+  },
+  "viewer.encoding.cp437": {
+    "message": "DOS-USA (437)"
+  },
+  "viewer.encoding.cp850": {
+    "message": "DOS-LATIN1 (850)"
+  },
+  "viewer.encoding.cp852": {
+    "message": "DOS Trung Âu (852)"
+  },
+  "viewer.encoding.cp866": {
+    "message": "DOS Kirin (866)"
+  },
+  "viewer.encoding.cp874": {
+    "message": "Thái (874)"
+  },
+  "viewer.encoding.cp932": {
+    "message": "Nhật (932)"
+  },
+  "viewer.encoding.cp936": {
+    "message": "Trung Quốc đại lục (936)"
+  },
+  "viewer.encoding.cp949": {
+    "message": "Hàn (949)"
+  },
+  "viewer.encoding.cp950": {
+    "message": "Trung Quốc Đài Loan (950)"
+  },
+  "viewer.find.not_found": {
+    "message": "Không tìm thấy: {text}"
+  },
+  "viewer.find.not_hex": {
+    "message": "Không phải chuỗi hex: {text}"
+  },
+  "viewer.find.nothing": {
+    "message": "Không có gì để tìm."
+  },
+  "viewer.find.save_failed": {
+    "message": "Không lưu được lịch sử tìm kiếm: {err}"
+  },
+  "viewer.loading": {
+    "message": "Đang tải…"
+  },
+  "viewer.markdown.too_large": {
+    "message": "Lớn hơn {megabytes} MB: phím 1 hiển thị dưới dạng văn bản."
+  },
+  "viewer.menu.binary": {
+    "message": "Nhị phân (độ dài dòng cố định)"
+  },
+  "viewer.menu.book": {
+    "message": "Sách (EPUB, FB2)"
+  },
+  "viewer.menu.close": {
+    "message": "Đóng"
+  },
+  "viewer.menu.configure": {
+    "message": "Cấu hình..."
+  },
+  "viewer.menu.copy_hex": {
+    "message": "Sao chép dạng ký tự hex"
+  },
+  "viewer.menu.copy_text": {
+    "message": "Sao chép dạng văn bản"
+  },
+  "viewer.menu.edit": {
+    "message": "Sửa"
+  },
+  "viewer.menu.encoding": {
+    "message": "Bảng mã"
+  },
+  "viewer.menu.file": {
+    "message": "Tệp"
+  },
+  "viewer.menu.find": {
+    "message": "Tìm..."
+  },
+  "viewer.menu.find_next": {
+    "message": "Tìm tiếp"
+  },
+  "viewer.menu.fit_image": {
+    "message": "Vừa ảnh với cửa sổ"
+  },
+  "viewer.menu.font_ansi": {
+    "message": "ANSI (bộ ký tự Windows)"
+  },
+  "viewer.menu.font_ascii": {
+    "message": "ASCII (bộ ký tự DOS)"
+  },
+  "viewer.menu.font_page": {
+    "message": "Theo phông chữ"
+  },
+  "viewer.menu.font_variable": {
+    "message": "Độ rộng ký tự thay đổi"
+  },
+  "viewer.menu.hex": {
+    "message": "Hex"
+  },
+  "viewer.menu.html": {
+    "message": "Văn bản HTML (bỏ thẻ)"
+  },
+  "viewer.menu.minimap": {
+    "message": "Bản đồ thu nhỏ"
+  },
+  "viewer.menu.next_file": {
+    "message": "Tệp tiếp theo"
+  },
+  "viewer.menu.only_larger": {
+    "message": "Chỉ thu vừa ảnh lớn hơn"
+  },
+  "viewer.menu.open": {
+    "message": "Mở..."
+  },
+  "viewer.menu.options": {
+    "message": "Tùy chọn"
+  },
+  "viewer.menu.picture": {
+    "message": "Hình ảnh/Đa phương tiện"
+  },
+  "viewer.menu.previous_file": {
+    "message": "Tệp trước"
+  },
+  "viewer.menu.reload": {
+    "message": "Tải lại"
+  },
+  "viewer.menu.save_as": {
+    "message": "Lưu thành..."
+  },
+  "viewer.menu.search_google": {
+    "message": "Tìm văn bản đã chọn bằng Google"
+  },
+  "viewer.menu.select_all": {
+    "message": "Chọn tất cả"
+  },
+  "viewer.menu.syntax_colors": {
+    "message": "Tô màu cú pháp"
+  },
+  "viewer.menu.text_only": {
+    "message": "Chỉ văn bản"
+  },
+  "viewer.menu.unicode": {
+    "message": "Unicode (UTF-16)"
+  },
+  "viewer.menu.wrap": {
+    "message": "Ngắt dòng ({columns, plural, other {# cột}})"
+  },
+  "viewer.mode.binary": {
+    "message": "Nhị phân · {page}"
+  },
+  "viewer.mode.book": {
+    "message": "Sách"
+  },
+  "viewer.mode.hex": {
+    "message": "Hex · {page}"
+  },
+  "viewer.mode.html": {
+    "message": "Văn bản HTML"
+  },
+  "viewer.mode.image": {
+    "message": "Hình ảnh"
+  },
+  "viewer.mode.multimedia": {
+    "message": "Đa phương tiện"
+  },
+  "viewer.mode.pdf_by": {
+    "message": "PDF bằng {tool}"
+  },
+  "viewer.mode.text": {
+    "message": "Văn bản · {page}"
+  },
+  "viewer.origin.not_editable": {
+    "message": "chỉ sửa được tệp trong tệp nén 7z, zip, jar và tar"
+  },
+  "viewer.origin.updated": {
+    "message": "Đã cập nhật {archive}"
+  },
+  "viewer.origin.updated_on": {
+    "message": "Đã cập nhật {archive} trên {server}"
+  },
+  "viewer.origin.uploaded": {
+    "message": "Đã tải lên {path}"
+  },
+  "viewer.pdf.cannot_show": {
+    "message": "Không hiển thị được tệp PDF này: {err}"
+  },
+  "viewer.pdf.loading": {
+    "message": "Đang tải..."
+  },
+  "viewer.pdf.page": {
+    "message": "Trang {page} / {pages}"
+  },
+  "viewer.picture.cannot_show": {
+    "message": "Không hiển thị được ảnh này; phím 1 hiển thị dưới dạng văn bản."
+  },
+  "viewer.save_as.failed": {
+    "message": "Không lưu được {path}: {err}"
+  },
+  "viewer.status.rows": {
+    "message": "{count, plural, other {{first}–{last} trên {grouped} dòng}}"
+  },
+  "viewer.status.rows_so_far": {
+    "message": "{count, plural, other {{grouped} dòng cho đến giờ, đã đọc {percent}}}"
+  },
+  "viewer.status.searching": {
+    "message": "Đang tìm…"
+  },
+  "viewer.status.size": {
+    "message": "{count, plural, other {{grouped} byte}}"
+  },
+  "viewer.window.title": {
+    "message": "{path} — Trình xem"
+  },
+  "viewer.zoom.fit": {
+    "message": "Trở về vừa cửa sổ (Ctrl+0)"
+  },
+  "viewer.zoom.in": {
+    "message": "Phóng to (Ctrl++)"
+  },
+  "viewer.zoom.out": {
+    "message": "Thu nhỏ (Ctrl+-)"
+  },
+  "viewer.zoom.reset": {
+    "message": "Trở về 100% (Ctrl+0)"
+  },
+  "workspaces.button.close": {
+    "message": "Đóng"
+  },
+  "workspaces.button.delete": {
+    "message": "Xóa..."
+  },
+  "workspaces.button.duplicate": {
+    "message": "Nhân bản..."
+  },
+  "workspaces.button.new": {
+    "message": "Mới..."
+  },
+  "workspaces.button.rename": {
+    "message": "Đổi tên..."
+  },
+  "workspaces.delete.button": {
+    "message": "Xóa"
+  },
+  "workspaces.delete.closed": {
+    "message": "Xóa không gian làm việc “{name}”? Các thẻ của nó sẽ bị quên."
+  },
+  "workspaces.delete.closed_shells": {
+    "message": "Xóa không gian làm việc “{name}”? Các thẻ của nó sẽ bị quên, và shell trong các thẻ terminal của nó sẽ kết thúc."
+  },
+  "workspaces.delete.open": {
+    "message": "Xóa không gian làm việc “{name}”? Các thẻ của nó sẽ đóng; “{other}” sẽ được mở thay thế."
+  },
+  "workspaces.delete.open_shells": {
+    "message": "Xóa không gian làm việc “{name}”? Các thẻ của nó sẽ đóng, và shell trong các thẻ terminal của nó sẽ kết thúc; “{other}” sẽ được mở thay thế."
+  },
+  "workspaces.delete.title": {
+    "message": "Xóa không gian làm việc"
+  },
+  "workspaces.duplicate.name": {
+    "message": "{name} bản sao"
+  },
+  "workspaces.duplicate.title": {
+    "message": "Nhân bản không gian làm việc"
+  },
+  "workspaces.error.name_taken": {
+    "message": "Đã có không gian làm việc khác mang tên này."
+  },
+  "workspaces.error.no_name": {
+    "message": "Không gian làm việc cần có tên."
+  },
+  "workspaces.error.save": {
+    "message": "Không lưu được các không gian làm việc: {err}"
+  },
+  "workspaces.hint": {
+    "message": "Hiển thị > Không gian làm việc sẽ mở một không gian. Mọi thay đổi trong không gian đang mở đều được lưu vào đó."
+  },
+  "workspaces.name.label": {
+    "message": "Tên:"
+  },
+  "workspaces.new.name": {
+    "message": "Không gian làm việc {number}"
+  },
+  "workspaces.new.title": {
+    "message": "Không gian làm việc mới"
+  },
+  "workspaces.open": {
+    "message": "đang mở"
+  },
+  "workspaces.rename.title": {
+    "message": "Đổi tên không gian làm việc"
+  },
+  "workspaces.summary.panels": {
+    "message": "Trái {left, plural, other {# thẻ}}, phải {right, plural, other {# thẻ}}"
+  },
+  "workspaces.summary.terminal": {
+    "message": "Trái {left, plural, other {# thẻ}}, phải {right, plural, other {# thẻ}}, terminal {terminal, plural, other {# thẻ}}"
+  },
+  "workspaces.summary.terminal_hidden": {
+    "message": "Trái {left, plural, other {# thẻ}}, phải {right, plural, other {# thẻ}}, terminal {terminal, plural, other {# thẻ}} (ẩn)"
+  },
+  "workspaces.title": {
+    "message": "Không gian làm việc"
+  }
+}

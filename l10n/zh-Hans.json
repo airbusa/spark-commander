@@ -1,0 +1,4823 @@
+{
+  "about.addons": {
+    "message": "附加组件（按需下载）"
+  },
+  "about.libraries": {
+    "message": "基于以下项目构建"
+  },
+  "about.licence": {
+    "message": "许可证："
+  },
+  "about.made_with": {
+    "message": "本软件使用了以下项目的成果"
+  },
+  "about.part.alacritty_terminal": {
+    "message": "内置终端的屏幕和 Shell"
+  },
+  "about.part.encoding_rs": {
+    "message": "代码页"
+  },
+  "about.part.gpui": {
+    "message": "窗口、绘制和输入（来自 Zed）"
+  },
+  "about.part.gpui_kit": {
+    "message": "控件：列表、菜单、输入框、编辑器"
+  },
+  "about.part.html5ever": {
+    "message": "查看器中的 HTML 和电子书"
+  },
+  "about.part.image": {
+    "message": "图片"
+  },
+  "about.part.keyring": {
+    "message": "系统密钥环中的密码"
+  },
+  "about.part.lucide": {
+    "message": "图标"
+  },
+  "about.part.material_icons": {
+    "message": "文件和文件夹图标"
+  },
+  "about.part.pdfium_render": {
+    "message": "在 Rust 中调用 PDFium"
+  },
+  "about.part.ratatui": {
+    "message": "scmd，终端版本"
+  },
+  "about.part.russh": {
+    "message": "SSH 和 SFTP"
+  },
+  "about.part.rustls": {
+    "message": "TLS"
+  },
+  "about.part.serde": {
+    "message": "设置文件"
+  },
+  "about.part.similar": {
+    "message": "按内容比较"
+  },
+  "about.part.suppaftp": {
+    "message": "FTP 和 FTPS"
+  },
+  "about.part.tokio": {
+    "message": "后台网络任务"
+  },
+  "about.part.trash": {
+    "message": "回收站"
+  },
+  "about.part.tree_sitter": {
+    "message": "查看器和编辑器中的语法高亮"
+  },
+  "about.part.zbus": {
+    "message": "D-Bus：桌面、设备、KDE Connect"
+  },
+  "about.shipped": {
+    "message": "随附组件"
+  },
+  "about.tagline": {
+    "message": "双面板文件管理器，自由软件。"
+  },
+  "about.title": {
+    "message": "关于 Spark Commander"
+  },
+  "about.version": {
+    "message": "版本 {version}"
+  },
+  "activity.clear": {
+    "message": "清除"
+  },
+  "activity.clear_failed": {
+    "message": "无法清除日志：{err}"
+  },
+  "activity.empty": {
+    "message": "尚无任何操作。"
+  },
+  "activity.title": {
+    "message": "活动日志"
+  },
+  "addons.error.damaged": {
+    "message": "下载的文件已损坏：校验和不符"
+  },
+  "addons.error.list": {
+    "message": "附加组件列表：{err}"
+  },
+  "addons.error.missing_file": {
+    "message": "下载的文件中缺少 {file}"
+  },
+  "addons.error.no_folder": {
+    "message": "没有数据文件夹"
+  },
+  "addons.error.unpacking": {
+    "message": "解压时出错：{err}"
+  },
+  "addons.installed": {
+    "message": "已安装 {addon} {version}。"
+  },
+  "addons.megabytes": {
+    "message": "{size} MB"
+  },
+  "addons.offer.never": {
+    "message": "不再显示"
+  },
+  "addons.offer.no": {
+    "message": "否"
+  },
+  "addons.offer.text": {
+    "message": "{name} 需要一个尚未安装的附加组件：{addon}。要在“设置 > 附加组件”中下载吗？"
+  },
+  "addons.offer.title": {
+    "message": "附加组件"
+  },
+  "addons.offer.yes": {
+    "message": "是"
+  },
+  "addons.purpose.cloud": {
+    "message": "在线存储：S3、Google Drive、OneDrive、Dropbox 及其他服务。"
+  },
+  "addons.purpose.media": {
+    "message": "视频和音频，以及 HEIC 和 AVIF 照片：可在查看器和快速查看中显示。"
+  },
+  "addons.purpose.office": {
+    "message": "Office 文档：查看器将 Word、Excel 和 PowerPoint 文件显示为 PDF。"
+  },
+  "addons.purpose.pdfium": {
+    "message": "PDF：查看器显示 PDF 文件，以及转换后的 Office 文档。"
+  },
+  "addons.purpose.seven_zip": {
+    "message": "压缩包：压缩和解压 7z、zip、rar、tar 等格式。"
+  },
+  "addons.update": {
+    "message": "更新"
+  },
+  "addons.updates": {
+    "message": "附加组件更新：{names}"
+  },
+  "appearance.dark": {
+    "message": "深色"
+  },
+  "appearance.light": {
+    "message": "浅色"
+  },
+  "appearance.system": {
+    "message": "跟随系统"
+  },
+  "archive.cannot_read": {
+    "message": "{name}：无法读取"
+  },
+  "archive.not_in_archive": {
+    "message": "{name} 不在压缩包中"
+  },
+  "archive.not_own_folder": {
+    "message": "{folder} 不是当前用户自己的文件夹"
+  },
+  "archive.seven_zip_failed": {
+    "message": "7-Zip 执行失败（{code}）"
+  },
+  "archive.seven_zip_missing": {
+    "message": "缺少 7-Zip：{path}（请运行 vendor/7zip/fetch.sh 或 fetch.bat）"
+  },
+  "archive.temp_not_utf8": {
+    "message": "临时文件夹的名称不是 UTF-8 编码"
+  },
+  "associations.add": {
+    "message": "添加..."
+  },
+  "associations.cancel": {
+    "message": "取消"
+  },
+  "associations.close": {
+    "message": "关闭"
+  },
+  "associations.column.edit": {
+    "message": "编辑（F4）"
+  },
+  "associations.column.files": {
+    "message": "文件"
+  },
+  "associations.column.open": {
+    "message": "打开（Enter）"
+  },
+  "associations.column.view": {
+    "message": "查看（F3）"
+  },
+  "associations.edit": {
+    "message": "编辑..."
+  },
+  "associations.edit_dialog.title": {
+    "message": "关联"
+  },
+  "associations.empty": {
+    "message": "暂无关联。"
+  },
+  "associations.field.edit": {
+    "message": "编辑程序（F4）："
+  },
+  "associations.field.files": {
+    "message": "文件（*.jpg *.png）："
+  },
+  "associations.field.open": {
+    "message": "打开程序（Enter）："
+  },
+  "associations.field.view": {
+    "message": "查看程序（F3）："
+  },
+  "associations.intro": {
+    "message": "对匹配掩码的文件，Enter、F3 和 F4 将运行这些程序；留空则使用默认程序。%1 代表该文件。"
+  },
+  "associations.mask_needed": {
+    "message": "需要填写文件掩码：*.txt"
+  },
+  "associations.no_file": {
+    "message": "请将光标放在要关联的类型的文件上。"
+  },
+  "associations.ok": {
+    "message": "确定"
+  },
+  "associations.remove": {
+    "message": "移除"
+  },
+  "associations.save_failed": {
+    "message": "无法保存设置：{err}"
+  },
+  "associations.title": {
+    "message": "内部关联"
+  },
+  "attributes.bad_time": {
+    "message": "“{text}”不是有效的日期和时间：2026-11-10 14:04:33"
+  },
+  "attributes.cancel": {
+    "message": "取消"
+  },
+  "attributes.change_time": {
+    "message": "更改日期/时间："
+  },
+  "attributes.changed": {
+    "message": "{count, plural, other {已更改 # 个}}"
+  },
+  "attributes.changed_failed": {
+    "message": "{count, plural, other {已更改 # 个}}，{failed, plural, other {# 个失败}}"
+  },
+  "attributes.dialog_title_many": {
+    "message": "更改属性：{count, plural, other {# 个项目}}"
+  },
+  "attributes.dialog_title_one": {
+    "message": "更改属性：{name}"
+  },
+  "attributes.execute": {
+    "message": "执行"
+  },
+  "attributes.group": {
+    "message": "组"
+  },
+  "attributes.in_archive": {
+    "message": "无法更改压缩包内项目的属性。"
+  },
+  "attributes.no_bits": {
+    "message": "这些文件在此处没有权限位，只能更改日期。"
+  },
+  "attributes.now": {
+    "message": "现在"
+  },
+  "attributes.octal": {
+    "message": "八进制："
+  },
+  "attributes.ok": {
+    "message": "确定"
+  },
+  "attributes.others": {
+    "message": "其他人"
+  },
+  "attributes.owner": {
+    "message": "所有者"
+  },
+  "attributes.read": {
+    "message": "读取"
+  },
+  "attributes.recurse": {
+    "message": "同时应用于文件夹内的所有内容"
+  },
+  "attributes.title_many": {
+    "message": "更改 {count, plural, other {# 个项目}}的属性"
+  },
+  "attributes.title_one": {
+    "message": "更改“{name}”的属性"
+  },
+  "attributes.write": {
+    "message": "写入"
+  },
+  "bookmarks.add_current": {
+    "message": "添加当前文件夹"
+  },
+  "bookmarks.add_folders": {
+    "message": "添加文件夹..."
+  },
+  "bookmarks.added": {
+    "message": "已添加书签：{name}"
+  },
+  "bookmarks.already": {
+    "message": "{name} 已在书签中。"
+  },
+  "bookmarks.chooser.failed": {
+    "message": "无法显示文件夹选择器：{err}"
+  },
+  "bookmarks.chooser.prompt": {
+    "message": "添加书签"
+  },
+  "bookmarks.close": {
+    "message": "关闭"
+  },
+  "bookmarks.copy_name": {
+    "message": "复制名称"
+  },
+  "bookmarks.copy_path": {
+    "message": "复制路径"
+  },
+  "bookmarks.drop_here": {
+    "message": "将文件夹拖放到此处。"
+  },
+  "bookmarks.empty": {
+    "message": "没有书签：请添加文件夹，或将文件夹拖放到此处。"
+  },
+  "bookmarks.intro": {
+    "message": "本机的文件夹，按“位置”中的顺序排列：拖动可调整顺序，将文件夹拖放到此处即可添加。"
+  },
+  "bookmarks.move_down": {
+    "message": "下移"
+  },
+  "bookmarks.move_up": {
+    "message": "上移"
+  },
+  "bookmarks.only_local": {
+    "message": "只能为本机的文件夹添加书签。"
+  },
+  "bookmarks.remove": {
+    "message": "移除"
+  },
+  "bookmarks.remove_from": {
+    "message": "从书签中移除"
+  },
+  "bookmarks.rename": {
+    "message": "重命名..."
+  },
+  "bookmarks.rename_label": {
+    "message": "名称（留空则使用文件夹名）："
+  },
+  "bookmarks.rename_title": {
+    "message": "重命名书签"
+  },
+  "bookmarks.sort": {
+    "message": "按名称排序"
+  },
+  "bookmarks.title": {
+    "message": "书签"
+  },
+  "button_bar.copy": {
+    "message": "复制"
+  },
+  "button_bar.delete": {
+    "message": "删除"
+  },
+  "button_bar.edit": {
+    "message": "编辑"
+  },
+  "button_bar.move": {
+    "message": "移动"
+  },
+  "button_bar.new_folder": {
+    "message": "新建文件夹"
+  },
+  "button_bar.quit": {
+    "message": "退出"
+  },
+  "button_bar.view": {
+    "message": "查看"
+  },
+  "checksum.create.title": {
+    "message": "创建 {name}"
+  },
+  "checksum.create.title_separate": {
+    "message": "创建 {method} 校验文件"
+  },
+  "checksum.dialog_title": {
+    "message": "创建校验文件"
+  },
+  "checksum.save_as": {
+    "message": "将校验文件保存为："
+  },
+  "checksum.separate": {
+    "message": "改为在每个文件旁各创建一个校验文件"
+  },
+  "checksum.verify.all_ok": {
+    "message": "{count, plural, other {全部 # 个文件均正常}}"
+  },
+  "checksum.verify.choose": {
+    "message": "请选择校验文件：.sfv、.md5、.sha1、.sha256 或 .sha512。"
+  },
+  "checksum.verify.missing_file": {
+    "message": "缺失：{name}"
+  },
+  "checksum.verify.result": {
+    "message": "{ok, plural, other {# 个正常}}，{wrong, plural, other {# 个不匹配}}，{missing, plural, other {# 个缺失}}"
+  },
+  "checksum.verify.title_many": {
+    "message": "校验 {count, plural, other {# 个校验文件}}"
+  },
+  "checksum.verify.title_one": {
+    "message": "校验 {name}"
+  },
+  "checksum.verify.wrong_file": {
+    "message": "不匹配：{name}"
+  },
+  "command.about": {
+    "message": "关于 Spark Commander"
+  },
+  "command.activity_log": {
+    "message": "活动日志..."
+  },
+  "command.all_files": {
+    "message": "所有文件"
+  },
+  "command.all_folder_sizes": {
+    "message": "计算所有文件夹大小"
+  },
+  "command.all_with_extension": {
+    "message": "*.*"
+  },
+  "command.associate_with": {
+    "message": "关联到..."
+  },
+  "command.bookmark_folder": {
+    "message": "将此文件夹加入书签"
+  },
+  "command.bookmarks": {
+    "message": "书签"
+  },
+  "command.branch_view": {
+    "message": "平铺视图（含子文件夹）"
+  },
+  "command.branch_view_selected": {
+    "message": "所选文件夹的平铺视图"
+  },
+  "command.brief": {
+    "message": "简要"
+  },
+  "command.calculate_occupied_space": {
+    "message": "计算占用空间..."
+  },
+  "command.change_attributes": {
+    "message": "更改属性..."
+  },
+  "command.close_all_tabs": {
+    "message": "关闭所有标签页"
+  },
+  "command.close_duplicate_tabs": {
+    "message": "关闭重复的标签页"
+  },
+  "command.close_tab": {
+    "message": "关闭标签页"
+  },
+  "command.combine_files": {
+    "message": "合并文件..."
+  },
+  "command.compare_by_content": {
+    "message": "按内容比较..."
+  },
+  "command.compare_directories": {
+    "message": "标记较新文件"
+  },
+  "command.copy": {
+    "message": "复制..."
+  },
+  "command.copy_names_to_clipboard": {
+    "message": "复制所选名称到剪贴板"
+  },
+  "command.copy_names_with_path_to_clipboard": {
+    "message": "复制名称及路径到剪贴板"
+  },
+  "command.copy_to_clipboard": {
+    "message": "复制文件"
+  },
+  "command.copy_with_all_details": {
+    "message": "复制名称及全部详细信息到剪贴板"
+  },
+  "command.copy_with_path_and_details": {
+    "message": "复制路径及详细信息到剪贴板"
+  },
+  "command.create_checksum_files": {
+    "message": "创建校验文件（CRC32、MD5、SHA1、SHA256、SHA512）..."
+  },
+  "command.create_link": {
+    "message": "创建链接..."
+  },
+  "command.custom_filter": {
+    "message": "自定义..."
+  },
+  "command.cut_to_clipboard": {
+    "message": "剪切文件"
+  },
+  "command.delete": {
+    "message": "删除"
+  },
+  "command.delete_permanently": {
+    "message": "永久删除"
+  },
+  "command.disconnect": {
+    "message": "断开与服务器的连接"
+  },
+  "command.download_link": {
+    "message": "从链接下载..."
+  },
+  "command.duplicate_tab": {
+    "message": "新建标签页"
+  },
+  "command.duplicate_workspace": {
+    "message": "复制工作区..."
+  },
+  "command.edit": {
+    "message": "编辑"
+  },
+  "command.edit_externally": {
+    "message": "用外部编辑器编辑"
+  },
+  "command.folder_history": {
+    "message": "文件夹历史记录..."
+  },
+  "command.full": {
+    "message": "详细"
+  },
+  "command.go_back": {
+    "message": "后退"
+  },
+  "command.go_forward": {
+    "message": "前进"
+  },
+  "command.go_home": {
+    "message": "主文件夹"
+  },
+  "command.go_to_root": {
+    "message": "根文件夹"
+  },
+  "command.hidden_files": {
+    "message": "隐藏文件"
+  },
+  "command.internal_associations": {
+    "message": "内部关联（仅限 Spark Commander）..."
+  },
+  "command.invert_selection": {
+    "message": "反向选择"
+  },
+  "command.left_drives": {
+    "message": "驱动器（左面板）"
+  },
+  "command.list_tabs": {
+    "message": "标签页列表"
+  },
+  "command.load_selection_from_file": {
+    "message": "从文件加载选择"
+  },
+  "command.manage_bookmarks": {
+    "message": "管理书签..."
+  },
+  "command.manage_tools": {
+    "message": "管理工具..."
+  },
+  "command.manage_workspaces": {
+    "message": "管理工作区..."
+  },
+  "command.mark_in_place": {
+    "message": "原地标记/取消标记，并计算文件夹大小"
+  },
+  "command.mark_newer_hide_same": {
+    "message": "标记较新文件，隐藏相同文件"
+  },
+  "command.move": {
+    "message": "移动..."
+  },
+  "command.multi_rename_tool": {
+    "message": "批量重命名工具..."
+  },
+  "command.name_to_command_line": {
+    "message": "将名称填入命令行"
+  },
+  "command.new_folder": {
+    "message": "新建文件夹..."
+  },
+  "command.new_terminal": {
+    "message": "新建终端标签页"
+  },
+  "command.new_text_file": {
+    "message": "新建文件..."
+  },
+  "command.new_workspace": {
+    "message": "新建工作区..."
+  },
+  "command.next_tab": {
+    "message": "下一个标签页"
+  },
+  "command.only_selected_files": {
+    "message": "仅所选文件"
+  },
+  "command.open_in_left_panel": {
+    "message": "在左面板中显示"
+  },
+  "command.open_in_new_tab": {
+    "message": "在新标签页中打开文件夹"
+  },
+  "command.open_in_other_new_tab": {
+    "message": "在另一面板的新标签页中打开文件夹"
+  },
+  "command.open_in_right_panel": {
+    "message": "在右面板中显示"
+  },
+  "command.open_terminal": {
+    "message": "在此处打开终端"
+  },
+  "command.operation_queue": {
+    "message": "操作队列..."
+  },
+  "command.pack": {
+    "message": "压缩..."
+  },
+  "command.paste_from_clipboard": {
+    "message": "粘贴文件"
+  },
+  "command.path_and_name_to_command_line": {
+    "message": "将路径和名称填入命令行"
+  },
+  "command.path_to_command_line": {
+    "message": "将路径填入命令行"
+  },
+  "command.previous_tab": {
+    "message": "上一个标签页"
+  },
+  "command.programs": {
+    "message": "程序"
+  },
+  "command.properties": {
+    "message": "属性..."
+  },
+  "command.quick_filter": {
+    "message": "快速筛选"
+  },
+  "command.quick_open": {
+    "message": "快速打开..."
+  },
+  "command.quick_view_panel": {
+    "message": "快速查看面板"
+  },
+  "command.quit": {
+    "message": "退出"
+  },
+  "command.redo": {
+    "message": "重做"
+  },
+  "command.rename_in_place": {
+    "message": "重命名"
+  },
+  "command.reread_source": {
+    "message": "刷新"
+  },
+  "command.restore_selection": {
+    "message": "恢复选择"
+  },
+  "command.reversed_order": {
+    "message": "倒序"
+  },
+  "command.right_drives": {
+    "message": "驱动器（右面板）"
+  },
+  "command.save_selection": {
+    "message": "保存选择"
+  },
+  "command.save_selection_to_file": {
+    "message": "将选择保存到文件"
+  },
+  "command.search": {
+    "message": "搜索..."
+  },
+  "command.search_in_separate_process": {
+    "message": "在单独窗口中搜索..."
+  },
+  "command.select_all": {
+    "message": "全选"
+  },
+  "command.select_all_with_same_extension": {
+    "message": "选择所有相同扩展名的文件"
+  },
+  "command.select_group": {
+    "message": "选择文件组..."
+  },
+  "command.settings": {
+    "message": "设置..."
+  },
+  "command.shortcuts": {
+    "message": "快捷键..."
+  },
+  "command.sidebar_connections": {
+    "message": "连接"
+  },
+  "command.sidebar_operations": {
+    "message": "操作"
+  },
+  "command.sidebar_places": {
+    "message": "位置"
+  },
+  "command.sidebar_tree": {
+    "message": "文件夹"
+  },
+  "command.sort_by_extension": {
+    "message": "扩展名"
+  },
+  "command.sort_by_name": {
+    "message": "名称"
+  },
+  "command.sort_by_size": {
+    "message": "大小"
+  },
+  "command.sort_by_time": {
+    "message": "时间"
+  },
+  "command.split_file": {
+    "message": "分割文件..."
+  },
+  "command.swap_panels": {
+    "message": "交换面板"
+  },
+  "command.swap_panels_and_tabs": {
+    "message": "交换面板及其标签页"
+  },
+  "command.sync_browsing": {
+    "message": "同步浏览"
+  },
+  "command.synchronize_dirs": {
+    "message": "同步文件夹..."
+  },
+  "command.target_equals_source": {
+    "message": "目标 = 来源"
+  },
+  "command.terminal_panel": {
+    "message": "终端"
+  },
+  "command.test_archives": {
+    "message": "测试压缩包"
+  },
+  "command.thumbnail_view": {
+    "message": "缩略图视图"
+  },
+  "command.toggle_mark": {
+    "message": "标记/取消标记"
+  },
+  "command.toggle_sidebar": {
+    "message": "显示侧边栏"
+  },
+  "command.undo": {
+    "message": "撤销"
+  },
+  "command.unpack_specific_files": {
+    "message": "解压指定文件..."
+  },
+  "command.unselect_all": {
+    "message": "取消全选"
+  },
+  "command.unselect_group": {
+    "message": "取消选择文件组..."
+  },
+  "command.unsorted": {
+    "message": "不排序"
+  },
+  "command.verify_checksums": {
+    "message": "验证校验和（根据校验文件）"
+  },
+  "command.vertical_arrangement": {
+    "message": "垂直排列"
+  },
+  "command.view": {
+    "message": "查看"
+  },
+  "command.website": {
+    "message": "Spark Commander 网站"
+  },
+  "command.workspace1": {
+    "message": "打开工作区 1"
+  },
+  "command.workspace2": {
+    "message": "打开工作区 2"
+  },
+  "command.workspace3": {
+    "message": "打开工作区 3"
+  },
+  "command.workspace4": {
+    "message": "打开工作区 4"
+  },
+  "command.workspace5": {
+    "message": "打开工作区 5"
+  },
+  "command.workspace6": {
+    "message": "打开工作区 6"
+  },
+  "command.workspace7": {
+    "message": "打开工作区 7"
+  },
+  "command.workspace8": {
+    "message": "打开工作区 8"
+  },
+  "command.workspace9": {
+    "message": "打开工作区 9"
+  },
+  "command_line.error.cannot_run": {
+    "message": "{program}：无法运行"
+  },
+  "command_line.error.not_found": {
+    "message": "{program}：找不到命令"
+  },
+  "command_line.history.empty": {
+    "message": "尚未运行任何命令"
+  },
+  "command_line.on_server": {
+    "message": "命令在本机上运行，而当前面板位于服务器上。"
+  },
+  "command_name.all_files": {
+    "message": "显示所有文件"
+  },
+  "command_name.all_with_extension": {
+    "message": "显示 *.*"
+  },
+  "command_name.brief": {
+    "message": "简要视图"
+  },
+  "command_name.compare_directories": {
+    "message": "比较文件夹：标记较新文件"
+  },
+  "command_name.custom_filter": {
+    "message": "自定义筛选"
+  },
+  "command_name.duplicate_tab": {
+    "message": "新建标签页（复制当前标签页）"
+  },
+  "command_name.full": {
+    "message": "详细视图"
+  },
+  "command_name.go_back": {
+    "message": "后退"
+  },
+  "command_name.go_forward": {
+    "message": "前进"
+  },
+  "command_name.go_home": {
+    "message": "转到主文件夹"
+  },
+  "command_name.hidden_files": {
+    "message": "显示隐藏文件"
+  },
+  "command_name.only_selected_files": {
+    "message": "仅显示所选文件"
+  },
+  "command_name.programs": {
+    "message": "显示程序"
+  },
+  "command_name.quick_filter": {
+    "message": "快速筛选"
+  },
+  "command_name.rename_in_place": {
+    "message": "原地重命名"
+  },
+  "command_name.sidebar_connections": {
+    "message": "侧边栏：连接"
+  },
+  "command_name.sidebar_operations": {
+    "message": "侧边栏：操作"
+  },
+  "command_name.sidebar_places": {
+    "message": "侧边栏：位置"
+  },
+  "command_name.sidebar_tree": {
+    "message": "侧边栏：文件夹"
+  },
+  "command_name.sort_by_extension": {
+    "message": "按扩展名排序"
+  },
+  "command_name.sort_by_name": {
+    "message": "按名称排序"
+  },
+  "command_name.sort_by_size": {
+    "message": "按大小排序"
+  },
+  "command_name.sort_by_time": {
+    "message": "按时间排序"
+  },
+  "command_name.toggle_sidebar": {
+    "message": "侧边栏：显示或隐藏"
+  },
+  "command_name.unsorted": {
+    "message": "不排序"
+  },
+  "compare.browse.prompt": {
+    "message": "比较"
+  },
+  "compare.button.compare": {
+    "message": "比较"
+  },
+  "compare.button.next": {
+    "message": "下一处差异（N）"
+  },
+  "compare.button.previous": {
+    "message": "上一处差异（P）"
+  },
+  "compare.need_two_files": {
+    "message": "请在两个面板中各将光标放在一个文件上，或标记两个文件。"
+  },
+  "compare.option.binary": {
+    "message": "二进制"
+  },
+  "compare.option.ignore_case": {
+    "message": "忽略大小写"
+  },
+  "compare.option.ignore_spaces": {
+    "message": "忽略连续空格"
+  },
+  "compare.option.only_differences": {
+    "message": "仅显示差异"
+  },
+  "compare.status.bytes_differ": {
+    "message": "{place}：{count, plural, other {{grouped} 个字节不同}}，第一处位于 {first}；大小分别为 {left} 和 {right}。"
+  },
+  "compare.status.comparing": {
+    "message": "正在比较…"
+  },
+  "compare.status.difference_of": {
+    "message": "第 {at} 处差异，共 {count} 处"
+  },
+  "compare.status.differences": {
+    "message": "{count, plural, other {# 处差异}}"
+  },
+  "compare.status.identical": {
+    "message": "{count, plural, other {文件完全相同：{grouped} 字节。}}"
+  },
+  "compare.status.no_differences": {
+    "message": "没有差异。"
+  },
+  "compare.window.title": {
+    "message": "比较：{left} — {right}"
+  },
+  "connections.connect": {
+    "message": "连接"
+  },
+  "connections.copy_name": {
+    "message": "复制名称"
+  },
+  "connections.copy_path": {
+    "message": "复制路径"
+  },
+  "connections.delete": {
+    "message": "删除"
+  },
+  "connections.dialog.title": {
+    "message": "连接"
+  },
+  "connections.disconnect": {
+    "message": "断开连接"
+  },
+  "connections.duplicate": {
+    "message": "创建副本"
+  },
+  "connections.duplicate_name": {
+    "message": "{name}（副本）"
+  },
+  "connections.edit": {
+    "message": "编辑..."
+  },
+  "connections.empty": {
+    "message": "尚无连接。"
+  },
+  "connections.error.no_server": {
+    "message": "需要填写服务器。"
+  },
+  "connections.error.port": {
+    "message": "不是有效的端口：{text}"
+  },
+  "connections.field.access_key": {
+    "message": "访问密钥"
+  },
+  "connections.field.api_key": {
+    "message": "API 密钥"
+  },
+  "connections.field.application_key": {
+    "message": "应用密钥"
+  },
+  "connections.field.bucket": {
+    "message": "存储桶/文件夹"
+  },
+  "connections.field.container": {
+    "message": "容器/文件夹"
+  },
+  "connections.field.endpoint": {
+    "message": "端点"
+  },
+  "connections.field.key_id": {
+    "message": "密钥 ID"
+  },
+  "connections.field.name": {
+    "message": "名称"
+  },
+  "connections.field.password": {
+    "message": "密码"
+  },
+  "connections.field.port": {
+    "message": "端口"
+  },
+  "connections.field.protocol": {
+    "message": "协议"
+  },
+  "connections.field.secret_key": {
+    "message": "私有密钥"
+  },
+  "connections.field.server": {
+    "message": "服务器"
+  },
+  "connections.field.start_folder": {
+    "message": "起始文件夹"
+  },
+  "connections.field.user": {
+    "message": "用户"
+  },
+  "connections.folder.delete_confirm": {
+    "message": "{count, plural, other {要删除文件夹“{name}”及其中的 # 个连接吗？}}"
+  },
+  "connections.folder.delete_title": {
+    "message": "删除文件夹"
+  },
+  "connections.folder.exists": {
+    "message": "已存在名为“{name}”的文件夹。"
+  },
+  "connections.folder.name": {
+    "message": "名称："
+  },
+  "connections.folder.new_title": {
+    "message": "新建文件夹"
+  },
+  "connections.folder.rename": {
+    "message": "重命名..."
+  },
+  "connections.folder.rename_title": {
+    "message": "重命名文件夹"
+  },
+  "connections.forget_password": {
+    "message": "清除已保存的密码"
+  },
+  "connections.move_down": {
+    "message": "下移"
+  },
+  "connections.move_to_folder": {
+    "message": "移动到文件夹"
+  },
+  "connections.move_up": {
+    "message": "上移"
+  },
+  "connections.new": {
+    "message": "新建连接..."
+  },
+  "connections.new_folder": {
+    "message": "新建文件夹..."
+  },
+  "connections.no_folder": {
+    "message": "无文件夹"
+  },
+  "connections.open_in_terminal": {
+    "message": "在终端中打开"
+  },
+  "connections.placeholder.name": {
+    "message": "与列表中显示的相同"
+  },
+  "connections.placeholder.password": {
+    "message": "加密保存在设置文件夹中；留空则保留原密码"
+  },
+  "connections.placeholder.path": {
+    "message": "登录后的文件夹"
+  },
+  "connections.placeholder.port": {
+    "message": "默认"
+  },
+  "connections.placeholder.server": {
+    "message": "服务器，或 ~/.ssh/config 中的主机"
+  },
+  "connections.placeholder.user": {
+    "message": "按 ~/.ssh/config 中的设置，或匿名"
+  },
+  "connections.save_failed": {
+    "message": "无法保存连接：{err}"
+  },
+  "connections.ssh_config.read_only": {
+    "message": "只读：这些主机需在 ~/.ssh/config 中编辑"
+  },
+  "context_menu.action_failed": {
+    "message": "{name} 失败：{err}"
+  },
+  "context_menu.actions": {
+    "message": "操作"
+  },
+  "context_menu.copy": {
+    "message": "复制"
+  },
+  "context_menu.create_new": {
+    "message": "新建"
+  },
+  "context_menu.cut": {
+    "message": "剪切"
+  },
+  "context_menu.delete": {
+    "message": "删除"
+  },
+  "context_menu.edit": {
+    "message": "编辑"
+  },
+  "context_menu.empty_file": {
+    "message": "空文件…"
+  },
+  "context_menu.move_to_trash": {
+    "message": "移到回收站"
+  },
+  "context_menu.new_file_dialog.label": {
+    "message": "新文件名："
+  },
+  "context_menu.new_file_dialog.title": {
+    "message": "新建文件"
+  },
+  "context_menu.new_file_failed": {
+    "message": "无法创建文件：{err}"
+  },
+  "context_menu.new_folder": {
+    "message": "文件夹…"
+  },
+  "context_menu.open": {
+    "message": "打开"
+  },
+  "context_menu.open_failed": {
+    "message": "无法打开：{err}"
+  },
+  "context_menu.open_terminal_here": {
+    "message": "在此处打开终端"
+  },
+  "context_menu.open_with": {
+    "message": "打开方式"
+  },
+  "context_menu.other_application": {
+    "message": "其他应用程序…"
+  },
+  "context_menu.pack": {
+    "message": "压缩…"
+  },
+  "context_menu.pack_files": {
+    "message": "压缩文件"
+  },
+  "context_menu.paste": {
+    "message": "粘贴"
+  },
+  "context_menu.properties": {
+    "message": "属性"
+  },
+  "context_menu.properties_failed": {
+    "message": "属性：{err}"
+  },
+  "context_menu.rename": {
+    "message": "重命名…"
+  },
+  "context_menu.rename_dialog.label": {
+    "message": "新名称："
+  },
+  "context_menu.rename_dialog.title": {
+    "message": "重命名"
+  },
+  "context_menu.rename_failed": {
+    "message": "无法重命名：{err}"
+  },
+  "context_menu.shell_menu_failed": {
+    "message": "菜单：{err}"
+  },
+  "context_menu.show_failed": {
+    "message": "无法显示：{err}"
+  },
+  "context_menu.show_in_file_manager": {
+    "message": "在文件管理器中显示"
+  },
+  "context_menu.terminal_failed": {
+    "message": "无法打开终端：{err}"
+  },
+  "context_menu.terminal_not_local": {
+    "message": "只能在本机的文件夹中打开终端。"
+  },
+  "context_menu.unpack": {
+    "message": "解压…"
+  },
+  "context_menu.view": {
+    "message": "查看"
+  },
+  "desktop.no_app_chooser": {
+    "message": "桌面环境没有应用程序选择器（{err}）"
+  },
+  "desktop.no_terminal": {
+    "message": "找不到终端"
+  },
+  "desktop.nothing_to_run": {
+    "message": "{name}：没有可运行的内容"
+  },
+  "desktop.scripts": {
+    "message": "脚本"
+  },
+  "devices.error.mount_failed": {
+    "message": "无法挂载设备"
+  },
+  "devices.error.no_folder": {
+    "message": "设备未共享任何文件夹"
+  },
+  "devices.error.system_only": {
+    "message": "只有系统才能卸载它"
+  },
+  "devices.error.unreachable": {
+    "message": "无法访问：设备上的 KDE Connect 是否已打开并连接到此网络？"
+  },
+  "devices.unlock.ask": {
+    "message": "{name} 的密码："
+  },
+  "devices.unlock.ask_again": {
+    "message": "密码错误。{name} 的密码："
+  },
+  "devices.unlock.title": {
+    "message": "解锁"
+  },
+  "devices.volume.share_on_server": {
+    "message": "{server} 上的 {share}"
+  },
+  "devices.volume.unnamed": {
+    "message": "{size} GB 卷"
+  },
+  "devices.volume.unnamed_encrypted": {
+    "message": "{size} GB 加密卷"
+  },
+  "download.cancel": {
+    "message": "取消"
+  },
+  "download.dialog_title": {
+    "message": "从链接下载"
+  },
+  "download.download": {
+    "message": "下载"
+  },
+  "download.folder_link": {
+    "message": "该链接指向一个文件夹"
+  },
+  "download.incomplete": {
+    "message": "服务器只发送了 {got} 字节，文件共 {size, plural, other {# 字节}}；再次下载将从中断处继续"
+  },
+  "download.into": {
+    "message": "保存到 {folder}"
+  },
+  "download.link": {
+    "message": "链接"
+  },
+  "download.link_placeholder": {
+    "message": "https://、http://、ftp:// 或 ftps://"
+  },
+  "download.local_only": {
+    "message": "只能下载到本机的文件夹：请先在面板中打开一个本机文件夹。"
+  },
+  "download.name_placeholder": {
+    "message": "使用服务器或链接给出的名称"
+  },
+  "download.no_file": {
+    "message": "该链接未指向任何文件"
+  },
+  "download.not_a_link": {
+    "message": "不是可下载的链接"
+  },
+  "download.problem.bad_name": {
+    "message": "请填写文件名，不要包含文件夹。"
+  },
+  "download.problem.empty": {
+    "message": "请粘贴或输入链接。"
+  },
+  "download.problem.exists": {
+    "message": "此处已有 {name}：点击“替换”将覆盖它。"
+  },
+  "download.problem.not_link": {
+    "message": "不是可下载的链接：链接应以 https://、http://、ftp:// 或 ftps:// 开头。"
+  },
+  "download.replace": {
+    "message": "替换"
+  },
+  "download.save_as": {
+    "message": "另存为"
+  },
+  "download.saved_as": {
+    "message": "已保存为 {name}"
+  },
+  "download.title": {
+    "message": "下载“{name}”"
+  },
+  "download.title_link": {
+    "message": "下载 {link}"
+  },
+  "editor.close.after_send": {
+    "message": "文件发送到服务器后，编辑器将关闭。"
+  },
+  "editor.close.discard": {
+    "message": "不保存"
+  },
+  "editor.close.save": {
+    "message": "保存"
+  },
+  "editor.close.title": {
+    "message": "保存更改吗？"
+  },
+  "editor.close.unsaved": {
+    "message": "{name} 有尚未保存的更改。"
+  },
+  "editor.close.unsent": {
+    "message": "{name} 未保存到服务器：发送失败。"
+  },
+  "editor.dialog.cancel": {
+    "message": "取消"
+  },
+  "editor.edit.copy": {
+    "message": "复制"
+  },
+  "editor.edit.cut": {
+    "message": "剪切"
+  },
+  "editor.edit.find": {
+    "message": "查找..."
+  },
+  "editor.edit.find_next": {
+    "message": "查找下一个"
+  },
+  "editor.edit.find_previous": {
+    "message": "查找上一个"
+  },
+  "editor.edit.go_to_line": {
+    "message": "转到行..."
+  },
+  "editor.edit.paste": {
+    "message": "粘贴"
+  },
+  "editor.edit.redo": {
+    "message": "重做"
+  },
+  "editor.edit.replace": {
+    "message": "替换..."
+  },
+  "editor.edit.undo": {
+    "message": "撤销"
+  },
+  "editor.external.not_set": {
+    "message": "未设置外部编辑器（设置，编辑/查看）"
+  },
+  "editor.file.close": {
+    "message": "关闭"
+  },
+  "editor.file.reload": {
+    "message": "重新加载"
+  },
+  "editor.file.save": {
+    "message": "保存"
+  },
+  "editor.file.save_as": {
+    "message": "另存为..."
+  },
+  "editor.find.close": {
+    "message": "关闭（Escape）"
+  },
+  "editor.find.count": {
+    "message": "{current}/{total}"
+  },
+  "editor.find.in_selection": {
+    "message": "在选定内容中查找（Alt+L）"
+  },
+  "editor.find.match_case": {
+    "message": "区分大小写（Alt+C）"
+  },
+  "editor.find.next": {
+    "message": "下一个匹配项（Enter）"
+  },
+  "editor.find.no_results": {
+    "message": "无结果"
+  },
+  "editor.find.placeholder": {
+    "message": "查找"
+  },
+  "editor.find.preserve_case": {
+    "message": "保留大小写（Alt+P）"
+  },
+  "editor.find.previous": {
+    "message": "上一个匹配项（Shift+Enter）"
+  },
+  "editor.find.regex": {
+    "message": "使用正则表达式（Alt+R）"
+  },
+  "editor.find.replace": {
+    "message": "替换（Ctrl+Shift+1）"
+  },
+  "editor.find.replace_all": {
+    "message": "全部替换（Ctrl+Alt+Enter）"
+  },
+  "editor.find.replace_placeholder": {
+    "message": "替换"
+  },
+  "editor.find.toggle_replace": {
+    "message": "切换替换"
+  },
+  "editor.find.whole_word": {
+    "message": "全字匹配（Alt+W）"
+  },
+  "editor.go_to_line.label": {
+    "message": "行号，或 行:列"
+  },
+  "editor.go_to_line.title": {
+    "message": "转到行"
+  },
+  "editor.language.by_file_name": {
+    "message": "根据文件名"
+  },
+  "editor.language.plain_text": {
+    "message": "纯文本"
+  },
+  "editor.menu.edit": {
+    "message": "编辑"
+  },
+  "editor.menu.file": {
+    "message": "文件"
+  },
+  "editor.menu.language": {
+    "message": "语言"
+  },
+  "editor.menu.selection": {
+    "message": "选择"
+  },
+  "editor.menu.view": {
+    "message": "查看"
+  },
+  "editor.open.too_large": {
+    "message": "超过内置编辑器的 {limit_mb} MB 上限（设置，编辑/查看）；按 Ctrl+Shift+F4 可用外部编辑器编辑"
+  },
+  "editor.reload.button": {
+    "message": "重新加载"
+  },
+  "editor.reload.failed": {
+    "message": "无法重新加载：{err}"
+  },
+  "editor.reload.text": {
+    "message": "未保存的更改将会丢失。"
+  },
+  "editor.reload.title": {
+    "message": "重新加载文件吗？"
+  },
+  "editor.reload.unfit": {
+    "message": "未重新加载：{why, select, binary {它是二进制文件} other {它不是 UTF-8 文本}}。"
+  },
+  "editor.save.admin": {
+    "message": "保存“{name}”"
+  },
+  "editor.save.failed": {
+    "message": "无法保存 {path}：{err}"
+  },
+  "editor.save_anyway.button": {
+    "message": "仍然保存"
+  },
+  "editor.save_anyway.text": {
+    "message": "此文件不是文本：保存时将按显示的内容写入，非文本部分将被永久更改。"
+  },
+  "editor.save_anyway.title": {
+    "message": "以文本形式保存吗？"
+  },
+  "editor.selection.add_cursor_above": {
+    "message": "在上方添加光标"
+  },
+  "editor.selection.add_cursor_below": {
+    "message": "在下方添加光标"
+  },
+  "editor.selection.delete_lines": {
+    "message": "删除行"
+  },
+  "editor.selection.duplicate_lines": {
+    "message": "复制行"
+  },
+  "editor.selection.indent": {
+    "message": "增加缩进"
+  },
+  "editor.selection.lowercase": {
+    "message": "转换为小写"
+  },
+  "editor.selection.move_lines_down": {
+    "message": "向下移动行"
+  },
+  "editor.selection.move_lines_up": {
+    "message": "向上移动行"
+  },
+  "editor.selection.outdent": {
+    "message": "减少缩进"
+  },
+  "editor.selection.select_all": {
+    "message": "全选"
+  },
+  "editor.selection.select_all_occurrences": {
+    "message": "选择所有匹配项"
+  },
+  "editor.selection.sort_lines_ascending": {
+    "message": "按升序排列行"
+  },
+  "editor.selection.sort_lines_descending": {
+    "message": "按降序排列行"
+  },
+  "editor.selection.title_case": {
+    "message": "转换为词首字母大写"
+  },
+  "editor.selection.toggle_line_comment": {
+    "message": "切换行注释"
+  },
+  "editor.selection.trim_trailing_whitespace": {
+    "message": "删除行尾空白"
+  },
+  "editor.selection.uppercase": {
+    "message": "转换为大写"
+  },
+  "editor.send.failed": {
+    "message": "无法保存回服务器：{err}。再次保存将重试。"
+  },
+  "editor.status.modified": {
+    "message": "已修改"
+  },
+  "editor.status.position": {
+    "message": "行 {line}，列 {column}"
+  },
+  "editor.status.position_selected": {
+    "message": "行 {line}，列 {column}（{count, plural, other {已选择 #}}）"
+  },
+  "editor.status.sending": {
+    "message": "正在保存到服务器"
+  },
+  "editor.status.spaces": {
+    "message": "空格：{size}"
+  },
+  "editor.status.tab_size": {
+    "message": "制表符长度：{size}"
+  },
+  "editor.status.unsent": {
+    "message": "未保存到服务器"
+  },
+  "editor.terminal.not_found": {
+    "message": "找不到编辑器；请设置 $EDITOR"
+  },
+  "editor.title": {
+    "message": "{path} — 编辑器"
+  },
+  "editor.unfit.open_anyway": {
+    "message": "仍然打开"
+  },
+  "editor.unfit.text": {
+    "message": "此文件未在编辑器中显示，因为{why, select, binary {它是二进制文件} other {它不是 UTF-8 文本}}。"
+  },
+  "editor.view.folding": {
+    "message": "代码折叠"
+  },
+  "editor.view.indent_guides": {
+    "message": "缩进参考线"
+  },
+  "editor.view.indent_with_tabs": {
+    "message": "使用制表符缩进"
+  },
+  "editor.view.line_numbers": {
+    "message": "行号"
+  },
+  "editor.view.minimap": {
+    "message": "缩略图"
+  },
+  "editor.view.tab_width": {
+    "message": "制表符宽度 {width}"
+  },
+  "editor.view.unfold_all": {
+    "message": "全部展开"
+  },
+  "editor.view.whitespace": {
+    "message": "空白字符"
+  },
+  "editor.view.word_wrap": {
+    "message": "自动换行"
+  },
+  "elevate.failed": {
+    "message": "以管理员身份运行也失败了（{code}）"
+  },
+  "elevate.no_consent": {
+    "message": "未获得管理员许可"
+  },
+  "elevate.no_password": {
+    "message": "未输入密码"
+  },
+  "elevate.not_authorised": {
+    "message": "未获授权"
+  },
+  "elevate.percent_name": {
+    "message": "{path}：名称中含有 % 的项目无法以管理员身份处理，请先重命名"
+  },
+  "elevate.pkexec_missing": {
+    "message": "未安装 pkexec（polkit）"
+  },
+  "file_menu.change_tags_failed": {
+    "message": "无法更改标签：{err}"
+  },
+  "file_menu.compress": {
+    "message": "{count, plural, =1 {压缩“{name}”…} other {压缩 # 个项目…}}"
+  },
+  "file_menu.copy": {
+    "message": "{count, plural, =1 {拷贝“{name}”} other {拷贝 # 个项目}}"
+  },
+  "file_menu.copy_path": {
+    "message": "将路径拷贝到剪贴板"
+  },
+  "file_menu.delete": {
+    "message": "删除"
+  },
+  "file_menu.duplicate": {
+    "message": "复制"
+  },
+  "file_menu.duplicate_failed": {
+    "message": "无法复制：{err}"
+  },
+  "file_menu.edit_tags": {
+    "message": "标签…"
+  },
+  "file_menu.get_info": {
+    "message": "显示简介"
+  },
+  "file_menu.make_alias": {
+    "message": "制作替身"
+  },
+  "file_menu.make_alias_failed": {
+    "message": "无法制作替身：{err}"
+  },
+  "file_menu.move_to_trash": {
+    "message": "移到废纸篓"
+  },
+  "file_menu.new_folder": {
+    "message": "新建文件夹"
+  },
+  "file_menu.open": {
+    "message": "打开"
+  },
+  "file_menu.open_failed": {
+    "message": "无法打开：{err}"
+  },
+  "file_menu.open_with": {
+    "message": "打开方式"
+  },
+  "file_menu.open_with_default": {
+    "message": "{app}（默认）"
+  },
+  "file_menu.paste": {
+    "message": "粘贴"
+  },
+  "file_menu.quick_look": {
+    "message": "{count, plural, =1 {快速查看“{name}”} other {快速查看 # 个项目}}"
+  },
+  "file_menu.quick_look_failed": {
+    "message": "快速查看：{err}"
+  },
+  "file_menu.rename": {
+    "message": "重新命名…"
+  },
+  "file_menu.reveal_failed": {
+    "message": "无法在访达中显示：{err}"
+  },
+  "file_menu.reveal_in_finder": {
+    "message": "在访达中显示"
+  },
+  "file_menu.show_package_contents": {
+    "message": "显示包内容"
+  },
+  "file_menu.tag_dot.add": {
+    "message": "添加标签“{name}”"
+  },
+  "file_menu.tag_dot.remove": {
+    "message": "移除标签“{name}”"
+  },
+  "file_menu.tags_popover.show_all": {
+    "message": "显示全部…"
+  },
+  "file_menu.tags_popover.title": {
+    "message": "{count, plural, =1 {为“{name}”分配标签} other {为 # 个项目分配标签}}"
+  },
+  "find.backwards": {
+    "message": "反向搜索"
+  },
+  "find.cancel": {
+    "message": "取消"
+  },
+  "find.case_sensitive": {
+    "message": "区分大小写"
+  },
+  "find.hex": {
+    "message": "搜索十六进制字符串"
+  },
+  "find.ok": {
+    "message": "确定"
+  },
+  "find.regex": {
+    "message": "正则表达式"
+  },
+  "find.text.label": {
+    "message": "输入搜索文本"
+  },
+  "find.title": {
+    "message": "查找"
+  },
+  "find.whole_words": {
+    "message": "全字匹配"
+  },
+  "keys.apply": {
+    "message": "应用"
+  },
+  "keys.cancel": {
+    "message": "取消"
+  },
+  "keys.clear.tooltip": {
+    "message": "无快捷键"
+  },
+  "keys.column.alternate": {
+    "message": "备用"
+  },
+  "keys.column.command": {
+    "message": "命令"
+  },
+  "keys.column.shortcut": {
+    "message": "快捷键"
+  },
+  "keys.custom": {
+    "message": "自定义"
+  },
+  "keys.delete_set": {
+    "message": "删除"
+  },
+  "keys.note.custom_replaced": {
+    "message": "您自己的快捷键已被 {name} 的快捷键取代；点击“另存为”可保留它们。"
+  },
+  "keys.note.deleted": {
+    "message": "已删除 {name}；点击“确定”或“应用”后生效。"
+  },
+  "keys.note.moved": {
+    "message": "{key} 现在用于“{command}”，不再用于“{other}”。"
+  },
+  "keys.note.name_reserved": {
+    "message": "“{name}”是预设方案的名称，请另选一个。"
+  },
+  "keys.note.press_new_key": {
+    "message": "请按新的快捷键；按 Esc 则保持不变。"
+  },
+  "keys.note.saved": {
+    "message": "已另存为 {name}；点击“确定”或“应用”后保留。"
+  },
+  "keys.note.set": {
+    "message": "{key} 现在用于“{command}”。"
+  },
+  "keys.note.taken_by_system": {
+    "message": "{key} 已被 {by} 占用，因此 Spark Commander 无法接收到它。"
+  },
+  "keys.ok": {
+    "message": "确定"
+  },
+  "keys.press_key": {
+    "message": "请按键…"
+  },
+  "keys.reserved.application_launcher": {
+    "message": "{system}：应用程序启动器"
+  },
+  "keys.reserved.close_window": {
+    "message": "{system}：关闭窗口"
+  },
+  "keys.reserved.close_window_or_tab": {
+    "message": "{system}：关闭窗口或标签页"
+  },
+  "keys.reserved.dock": {
+    "message": "{system}：程序坞"
+  },
+  "keys.reserved.floating_window": {
+    "message": "{system}：浮动窗口"
+  },
+  "keys.reserved.force_quit": {
+    "message": "{system}：强制退出"
+  },
+  "keys.reserved.hide_program": {
+    "message": "{system}：隐藏程序"
+  },
+  "keys.reserved.input_source": {
+    "message": "{system}：输入法"
+  },
+  "keys.reserved.keyboard_access": {
+    "message": "{system}：键盘访问"
+  },
+  "keys.reserved.keyboard_navigation": {
+    "message": "{system}：键盘导航"
+  },
+  "keys.reserved.krunner": {
+    "message": "{system}：KRunner"
+  },
+  "keys.reserved.lock_screen": {
+    "message": "{system}：锁定屏幕"
+  },
+  "keys.reserved.log_out": {
+    "message": "{system}：注销"
+  },
+  "keys.reserved.maximize_window": {
+    "message": "{system}：最大化窗口"
+  },
+  "keys.reserved.menu_bar": {
+    "message": "{system}：菜单栏"
+  },
+  "keys.reserved.minimize": {
+    "message": "{system}：最小化"
+  },
+  "keys.reserved.mission_control": {
+    "message": "{system}：调度中心"
+  },
+  "keys.reserved.move_window": {
+    "message": "{system}：移动窗口"
+  },
+  "keys.reserved.next_window": {
+    "message": "{system}：下一个窗口"
+  },
+  "keys.reserved.present_windows": {
+    "message": "{system}：展示窗口"
+  },
+  "keys.reserved.present_windows_all": {
+    "message": "{system}：展示窗口（所有桌面）"
+  },
+  "keys.reserved.present_windows_class": {
+    "message": "{system}：展示窗口（窗口类）"
+  },
+  "keys.reserved.program_windows": {
+    "message": "{system}：应用程序窗口"
+  },
+  "keys.reserved.quit": {
+    "message": "{system}：退出"
+  },
+  "keys.reserved.resize_window": {
+    "message": "{system}：调整窗口大小"
+  },
+  "keys.reserved.restore_window": {
+    "message": "{system}：还原窗口"
+  },
+  "keys.reserved.run_command": {
+    "message": "{system}：运行命令"
+  },
+  "keys.reserved.screenshot": {
+    "message": "{system}：截图"
+  },
+  "keys.reserved.security_screen": {
+    "message": "{system}：安全选项屏幕"
+  },
+  "keys.reserved.show_desktop": {
+    "message": "{system}：显示桌面"
+  },
+  "keys.reserved.space_left": {
+    "message": "{system}：左侧的空间"
+  },
+  "keys.reserved.space_right": {
+    "message": "{system}：右侧的空间"
+  },
+  "keys.reserved.spotlight": {
+    "message": "{system}：Spotlight"
+  },
+  "keys.reserved.start_menu": {
+    "message": "{system}：开始菜单"
+  },
+  "keys.reserved.status_menus": {
+    "message": "{system}：状态菜单"
+  },
+  "keys.reserved.suspend_compositing": {
+    "message": "{system}：暂停混成"
+  },
+  "keys.reserved.switch_program_windows": {
+    "message": "{system}：切换程序的窗口"
+  },
+  "keys.reserved.switch_programs": {
+    "message": "{system}：切换程序"
+  },
+  "keys.reserved.switch_system_controls": {
+    "message": "{system}：切换系统控件"
+  },
+  "keys.reserved.switch_to_desktop": {
+    "message": "{system}：切换到桌面 {number}"
+  },
+  "keys.reserved.switch_windows": {
+    "message": "{system}：切换窗口"
+  },
+  "keys.reserved.system_monitor": {
+    "message": "{system}：系统监视器"
+  },
+  "keys.reserved.task_manager": {
+    "message": "{system}：任务管理器"
+  },
+  "keys.reserved.text_console": {
+    "message": "{system}：切换到文本控制台"
+  },
+  "keys.reserved.toolbar": {
+    "message": "{system}：工具栏"
+  },
+  "keys.reserved.window_menu": {
+    "message": "{system}：窗口菜单"
+  },
+  "keys.reserved.workspace_down": {
+    "message": "{system}：下方的工作区"
+  },
+  "keys.reserved.workspace_left": {
+    "message": "{system}：左侧的工作区"
+  },
+  "keys.reserved.workspace_right": {
+    "message": "{system}：右侧的工作区"
+  },
+  "keys.reserved.workspace_up": {
+    "message": "{system}：上方的工作区"
+  },
+  "keys.reset.tooltip": {
+    "message": "恢复为 {preset} 的快捷键"
+  },
+  "keys.reset_all": {
+    "message": "全部重置"
+  },
+  "keys.save_as.button": {
+    "message": "另存为…"
+  },
+  "keys.save_as.default_name": {
+    "message": "我的快捷键"
+  },
+  "keys.save_as.label": {
+    "message": "名称："
+  },
+  "keys.save_as.title": {
+    "message": "保存快捷键"
+  },
+  "keys.search.placeholder": {
+    "message": "搜索命令或按键"
+  },
+  "keys.set_label": {
+    "message": "键位方案："
+  },
+  "keys.taken_by.tooltip": {
+    "message": "已被 {by} 占用"
+  },
+  "keys.title": {
+    "message": "快捷键"
+  },
+  "main.admin.button": {
+    "message": "以管理员身份"
+  },
+  "main.admin.deleting": {
+    "message": "删除 {count, plural, other {# 个项目}}"
+  },
+  "main.admin.failed": {
+    "message": "以管理员身份：{err}"
+  },
+  "main.admin.making": {
+    "message": "创建“{name}”"
+  },
+  "main.admin.offer": {
+    "message": "{what}：权限被拒绝。以管理员身份执行时，系统会要求输入密码。"
+  },
+  "main.admin.offer_delete": {
+    "message": "{what}：权限被拒绝。以管理员身份执行时，系统会要求输入密码。以此方式删除的内容将永久消失。"
+  },
+  "main.admin.title": {
+    "message": "权限被拒绝"
+  },
+  "main.delete.from_archive": {
+    "message": "{kind, select, folder {要从 {archive} 中删除文件夹“{name}”吗？此操作无法撤销。} file {要从 {archive} 中删除文件“{name}”吗？此操作无法撤销。} other {要从 {archive} 中删除 {count, plural, other {# 个项目}}吗？此操作无法撤销。}}"
+  },
+  "main.delete.on_server": {
+    "message": "{kind, select, folder {要删除 {server} 上的文件夹“{name}”吗？此操作无法撤销。} file {要删除 {server} 上的文件“{name}”吗？此操作无法撤销。} other {要删除 {server} 上的 {count, plural, other {# 个项目}}吗？此操作无法撤销。}}"
+  },
+  "main.delete.permanently": {
+    "message": "{kind, select, folder {要永久删除文件夹“{name}”吗？此操作无法撤销。} file {要永久删除文件“{name}”吗？此操作无法撤销。} other {要永久删除 {count, plural, other {# 个项目}}吗？此操作无法撤销。}}"
+  },
+  "main.delete.title": {
+    "message": "删除"
+  },
+  "main.delete.title_permanently": {
+    "message": "永久删除"
+  },
+  "main.delete.to_trash": {
+    "message": "{kind, select, folder {要将文件夹“{name}”移到回收站吗？} file {要将文件“{name}”移到回收站吗？} other {要将 {count, plural, other {# 个项目}}移到回收站吗？}}"
+  },
+  "main.download.edit": {
+    "message": "下载 {file} 以编辑"
+  },
+  "main.download.view": {
+    "message": "下载 {file} 以查看"
+  },
+  "main.error.make_folder": {
+    "message": "无法创建文件夹：{err}"
+  },
+  "main.error.read_settings": {
+    "message": "无法读取设置：{err}"
+  },
+  "main.error.read_tabs": {
+    "message": "无法读取已打开的标签页：{err}"
+  },
+  "main.error.read_workspaces": {
+    "message": "无法读取工作区：{err}"
+  },
+  "main.error.save_settings": {
+    "message": "无法保存设置：{err}"
+  },
+  "main.folder_tree.home": {
+    "message": "主文件夹"
+  },
+  "main.go.no_such_folder": {
+    "message": "{path}：本机上没有此文件夹"
+  },
+  "main.new_folder.label": {
+    "message": "新文件夹（目录）："
+  },
+  "main.new_folder.title": {
+    "message": "新建文件夹"
+  },
+  "main.sync_browsing.lost": {
+    "message": "{err}。同步浏览已关闭。"
+  },
+  "main.tool.needs_file": {
+    "message": "光标不在文件上：%N、%O 和 %E 需要一个文件。"
+  },
+  "main.tool.needs_local_folder": {
+    "message": "另一面板显示的是服务器或压缩包：%T 需要本机上的文件夹。"
+  },
+  "main.undo.done": {
+    "message": "{way, select, redo {已重做：{title}} other {已撤销：{title}}}"
+  },
+  "main.undo.failed": {
+    "message": "{way, select, redo {无法重做“{title}”：{err}} other {无法撤销“{title}”：{err}}}"
+  },
+  "main.undo.nothing": {
+    "message": "{way, select, redo {没有可重做的操作。} other {没有可撤销的操作。}}"
+  },
+  "main.undo.queued": {
+    "message": "{way, select, redo {已在队列中等待重做：{title}} other {已在队列中等待撤销：{title}}}"
+  },
+  "mark.compare.marked": {
+    "message": "{count, plural, other {已标记 # 个文件：比另一侧的新，或另一侧没有。}}"
+  },
+  "mark.compare.same": {
+    "message": "两个文件夹中的文件相同。"
+  },
+  "mark.load_selection.label": {
+    "message": "选择文件中列出的名称："
+  },
+  "mark.load_selection.title": {
+    "message": "加载选择"
+  },
+  "mark.save_selection.label": {
+    "message": "将所选名称保存到文件："
+  },
+  "mark.save_selection.title": {
+    "message": "保存选择"
+  },
+  "mark.select_group.label": {
+    "message": "选择文件（*.txt *.md；文件夹掩码以 / 结尾）："
+  },
+  "mark.select_group.title": {
+    "message": "选择文件组"
+  },
+  "mark.selection_file.not_local": {
+    "message": "选择文件只能保存在本机上，且不能位于压缩包内。"
+  },
+  "mark.unselect_group.label": {
+    "message": "取消选择文件（*.txt *.md；文件夹掩码以 / 结尾）："
+  },
+  "mark.unselect_group.title": {
+    "message": "取消选择文件组"
+  },
+  "media.cannot_play": {
+    "message": "无法播放：{err}"
+  },
+  "media.cannot_play_as_text": {
+    "message": "无法播放：{err}。按 1 以文本形式显示。"
+  },
+  "media.continuing": {
+    "message": "从 {time} 继续播放"
+  },
+  "media.error.missing": {
+    "message": "缺少 libmpv：可在“设置 > 附加组件”中下载（源码构建：vendor/mpv/{script}）"
+  },
+  "media.error.not_started": {
+    "message": "libmpv 无法启动"
+  },
+  "media.error.too_long": {
+    "message": "{path}：mpv 耗时过长"
+  },
+  "media.error.unsupported_system": {
+    "message": "目前仅在 Linux、macOS 和 Windows 上支持播放视频"
+  },
+  "menu.archive": {
+    "message": "压缩包"
+  },
+  "menu.associations": {
+    "message": "文件关联"
+  },
+  "menu.button_bar": {
+    "message": "按钮栏"
+  },
+  "menu.checksums": {
+    "message": "校验和"
+  },
+  "menu.commands": {
+    "message": "命令"
+  },
+  "menu.compare_directories": {
+    "message": "比较文件夹"
+  },
+  "menu.configuration": {
+    "message": "配置"
+  },
+  "menu.copy_names": {
+    "message": "复制名称"
+  },
+  "menu.files": {
+    "message": "文件"
+  },
+  "menu.filter": {
+    "message": "筛选"
+  },
+  "menu.go": {
+    "message": "转到"
+  },
+  "menu.help": {
+    "message": "帮助"
+  },
+  "menu.mark": {
+    "message": "标记"
+  },
+  "menu.other": {
+    "message": "其他"
+  },
+  "menu.recently_closed_tabs": {
+    "message": "最近关闭的标签页"
+  },
+  "menu.selection": {
+    "message": "选择"
+  },
+  "menu.show": {
+    "message": "显示"
+  },
+  "menu.sidebar": {
+    "message": "侧边栏"
+  },
+  "menu.sort": {
+    "message": "排序"
+  },
+  "menu.split_and_combine": {
+    "message": "分割与合并"
+  },
+  "menu.tabs": {
+    "message": "标签页"
+  },
+  "menu.tools": {
+    "message": "工具"
+  },
+  "menu.workspaces": {
+    "message": "工作区"
+  },
+  "menus.hide_app": {
+    "message": "隐藏 Spark Commander"
+  },
+  "menus.hide_others": {
+    "message": "隐藏其他"
+  },
+  "menus.minimize": {
+    "message": "最小化"
+  },
+  "menus.quit_app": {
+    "message": "退出 Spark Commander"
+  },
+  "menus.services": {
+    "message": "服务"
+  },
+  "menus.show_all": {
+    "message": "全部显示"
+  },
+  "menus.zoom": {
+    "message": "缩放"
+  },
+  "name_dialog.cancel": {
+    "message": "取消"
+  },
+  "name_dialog.ok": {
+    "message": "确定"
+  },
+  "operations.clear": {
+    "message": "清除已完成"
+  },
+  "operations.duration.seconds": {
+    "message": "{seconds} 秒"
+  },
+  "operations.empty": {
+    "message": "没有操作。"
+  },
+  "operations.job.answer": {
+    "message": "等待您的回答"
+  },
+  "operations.job.bytes": {
+    "message": "{done} / {total}"
+  },
+  "operations.job.cancel_tooltip": {
+    "message": "取消"
+  },
+  "operations.job.cancelled": {
+    "message": "已取消"
+  },
+  "operations.job.counting": {
+    "message": "正在统计：{count, plural, other {# 个文件}}"
+  },
+  "operations.job.done": {
+    "message": "已完成"
+  },
+  "operations.job.done_skipped": {
+    "message": "已完成，{count, plural, other {跳过 # 个}}"
+  },
+  "operations.job.failed": {
+    "message": "失败"
+  },
+  "operations.job.files": {
+    "message": "{files} / {count, plural, other {# 个文件}}"
+  },
+  "operations.job.left": {
+    "message": "剩余 {time}"
+  },
+  "operations.job.running": {
+    "message": "正在运行"
+  },
+  "operations.job.waiting": {
+    "message": "等待中"
+  },
+  "operations.menu.cancel": {
+    "message": "取消"
+  },
+  "operations.menu.clear": {
+    "message": "清除已完成"
+  },
+  "operations.menu.move_down": {
+    "message": "下移"
+  },
+  "operations.menu.move_up": {
+    "message": "上移"
+  },
+  "operations.settings_tooltip": {
+    "message": "操作队列设置"
+  },
+  "operations.summary.failed": {
+    "message": "{count, plural, other {# 个失败}}"
+  },
+  "operations.summary.running": {
+    "message": "{count, plural, other {# 个运行中}}"
+  },
+  "operations.summary.waiting": {
+    "message": "{count, plural, other {# 个等待中}}"
+  },
+  "ops.as_administrator.failed": {
+    "message": "以管理员身份：{err}"
+  },
+  "ops.as_administrator.progress": {
+    "message": "以管理员身份…"
+  },
+  "ops.delete.title_many": {
+    "message": "删除 {folder} 中的 {count, plural, other {# 个项目}}"
+  },
+  "ops.delete.title_one": {
+    "message": "删除“{name}”"
+  },
+  "ops.delete.trash_title_many": {
+    "message": "将 {folder} 中的 {count, plural, other {# 个项目}}移到回收站"
+  },
+  "ops.delete.trash_title_one": {
+    "message": "将“{name}”移到回收站"
+  },
+  "ops.error.file_in_the_way": {
+    "message": "已有同名文件占用此名称"
+  },
+  "ops.error.into_itself": {
+    "message": "无法复制到其自身中"
+  },
+  "ops.exists_already": {
+    "message": "{name} 已存在"
+  },
+  "ops.link.dialog_title": {
+    "message": "创建链接"
+  },
+  "ops.link.failed": {
+    "message": "无法创建链接：{err}"
+  },
+  "ops.link.kind.hard": {
+    "message": "硬链接"
+  },
+  "ops.link.kind.junction": {
+    "message": "目录联接"
+  },
+  "ops.link.kind.shortcut": {
+    "message": "快捷方式（.lnk）"
+  },
+  "ops.link.kind.symbolic": {
+    "message": "符号链接"
+  },
+  "ops.link.label_many": {
+    "message": "为这 {count, plural, other {# 个项目}}创建链接，放在文件夹："
+  },
+  "ops.link.label_one": {
+    "message": "将指向“{name}”的链接创建为："
+  },
+  "ops.link.making": {
+    "message": "创建{kind, select, symbolic {符号链接} hard {硬链接} junction {目录联接} other {快捷方式（.lnk）}}"
+  },
+  "ops.link.needs_admin": {
+    "message": "创建符号链接需要管理员权限或开发人员模式"
+  },
+  "ops.link.thread_failed": {
+    "message": "快捷方式的线程失败"
+  },
+  "ops.link.title_many": {
+    "message": "在 {folder} 中创建指向 {count, plural, other {# 个项目}}的{kind, select, symbolic {符号链接} hard {硬链接} junction {目录联接} other {快捷方式（.lnk）}}"
+  },
+  "ops.link.title_one": {
+    "message": "在 {folder} 中创建指向“{name}”的{kind, select, symbolic {符号链接} hard {硬链接} junction {目录联接} other {快捷方式（.lnk）}}"
+  },
+  "ops.link.windows_only": {
+    "message": "目录联接和快捷方式仅适用于 Windows"
+  },
+  "ops.redo.title": {
+    "message": "重做：{what}"
+  },
+  "ops.title.many": {
+    "message": "将 {count, plural, other {# 个项目}}{kind, select, copy {复制} other {移动}}到 {target}"
+  },
+  "ops.title.one": {
+    "message": "将“{name}”{kind, select, copy {复制} other {移动}}到 {target}"
+  },
+  "ops.undo.not_a_server": {
+    "message": "{url}：不是服务器地址"
+  },
+  "ops.undo.not_in_trash": {
+    "message": "它们已不在回收站中"
+  },
+  "ops.undo.restore_title": {
+    "message": "{title}：从回收站恢复被覆盖的文件"
+  },
+  "ops.undo.title": {
+    "message": "撤销：{what}"
+  },
+  "pack.cancel": {
+    "message": "取消"
+  },
+  "pack.compression": {
+    "message": "压缩级别："
+  },
+  "pack.dialog_title": {
+    "message": "压缩文件"
+  },
+  "pack.encrypt": {
+    "message": "使用密码加密"
+  },
+  "pack.format": {
+    "message": "格式："
+  },
+  "pack.label": {
+    "message": "将 {count, plural, other {# 个项目}}压缩到压缩包："
+  },
+  "pack.level.fastest": {
+    "message": "最快"
+  },
+  "pack.level.maximum": {
+    "message": "最大"
+  },
+  "pack.level.normal": {
+    "message": "标准"
+  },
+  "pack.level.store": {
+    "message": "仅存储"
+  },
+  "pack.level.ultra": {
+    "message": "极限"
+  },
+  "pack.local_only": {
+    "message": "{what, select, packing {压缩} unpacking {解压} testing {测试} creating_checksums {创建校验和} making_links {创建链接} verifying_checksums {验证校验和} splitting {分割} combining {合并} other {此功能}}仅适用于本机上压缩包之外的文件。"
+  },
+  "pack.move_files": {
+    "message": "移动到压缩包（删除已压缩的文件）"
+  },
+  "pack.needs_password": {
+    "message": "需要密码"
+  },
+  "pack.ok": {
+    "message": "确定"
+  },
+  "pack.password_missing": {
+    "message": "请输入密码，或不勾选“使用密码加密”。"
+  },
+  "pack.separate": {
+    "message": "为每个所选文件或文件夹各创建一个压缩包"
+  },
+  "pack.split": {
+    "message": "分卷，每卷大小"
+  },
+  "pack.split_unit": {
+    "message": "MB"
+  },
+  "pack.test.broken": {
+    "message": "{broken, plural, other {{count} 个中有 # 个已损坏}}"
+  },
+  "pack.test.choose": {
+    "message": "请选择要测试的压缩包。"
+  },
+  "pack.test.ok": {
+    "message": "{count, plural, other {# 个压缩包均正常}}"
+  },
+  "pack.test.title_many": {
+    "message": "测试 {count, plural, other {# 个压缩包}}"
+  },
+  "pack.test.title_one": {
+    "message": "测试“{name}”"
+  },
+  "pack.title.many": {
+    "message": "将 {count, plural, other {# 个项目}}压缩到 {archive}"
+  },
+  "pack.title.many_separate": {
+    "message": "将 {count, plural, other {# 个项目}}分别压缩为 {format} 压缩包"
+  },
+  "pack.title.one": {
+    "message": "将“{name}”压缩到 {archive}"
+  },
+  "pack.title.one_separate": {
+    "message": "将“{name}”分别压缩为 {format} 压缩包"
+  },
+  "pack.unpack.choose": {
+    "message": "请选择要解压的压缩包。"
+  },
+  "pack.unpack.dialog_title": {
+    "message": "解压文件"
+  },
+  "pack.unpack.label": {
+    "message": "将 {count, plural, other {# 个压缩包}}解压到："
+  },
+  "pack.unpack.mask": {
+    "message": "仅限文件："
+  },
+  "pack.unpack.overwrite": {
+    "message": "覆盖已有文件（否则保留）"
+  },
+  "pack.unpack.password": {
+    "message": "密码："
+  },
+  "pack.unpack.separate": {
+    "message": "将每个压缩包解压到同名文件夹"
+  },
+  "pack.unpack.title_many": {
+    "message": "将 {count, plural, other {# 个压缩包}}解压到 {target}"
+  },
+  "pack.unpack.title_one": {
+    "message": "将“{name}”解压到 {target}"
+  },
+  "pack.unpack.with_paths": {
+    "message": "保留压缩包中的文件夹结构"
+  },
+  "pack.volume_invalid": {
+    "message": "分卷大小应为以 MB 为单位的数字。"
+  },
+  "pack.wrong_password": {
+    "message": "密码错误"
+  },
+  "panel.admin.renaming": {
+    "message": "重命名为“{name}”"
+  },
+  "panel.clipboard.copied": {
+    "message": "{count, plural, other {已复制 # 个项目}}：按 Ctrl+V 粘贴。"
+  },
+  "panel.clipboard.cut": {
+    "message": "{count, plural, other {已剪切 # 个项目}}：按 Ctrl+V 粘贴。"
+  },
+  "panel.clipboard.no_cut_in_archive": {
+    "message": "无法从压缩包中剪切文件；请按 Ctrl+C 复制。"
+  },
+  "panel.clipboard.no_files": {
+    "message": "剪贴板中没有文件。"
+  },
+  "panel.clipboard.no_paste_in_archive": {
+    "message": "目前还无法将文件粘贴到压缩包中。"
+  },
+  "panel.clipboard.same_folder": {
+    "message": "它们已在此文件夹中：请在其他文件夹中按 Ctrl+V 粘贴。"
+  },
+  "panel.column.attr": {
+    "message": "属性"
+  },
+  "panel.column.date": {
+    "message": "日期"
+  },
+  "panel.column.ext": {
+    "message": "扩展名"
+  },
+  "panel.column.name": {
+    "message": "名称"
+  },
+  "panel.column.size": {
+    "message": "大小"
+  },
+  "panel.disconnect": {
+    "message": "断开连接"
+  },
+  "panel.drag.items": {
+    "message": "{count, plural, other {# 个项目}}"
+  },
+  "panel.error.archive_not_updatable": {
+    "message": "{name}：7-Zip 只能直接修改 7z、zip 和 tar 压缩包，无法修改此压缩包"
+  },
+  "panel.error.archive_on_server": {
+    "message": "{name}：目前还无法修改服务器上的压缩包"
+  },
+  "panel.error.branch_view_local": {
+    "message": "平铺视图只能列出本机的文件夹"
+  },
+  "panel.error.exists": {
+    "message": "{name} 已存在"
+  },
+  "panel.error.folder_in_the_way": {
+    "message": "已有同名文件夹占用此名称"
+  },
+  "panel.error.inside_archive": {
+    "message": "目前还不支持在压缩包内执行"
+  },
+  "panel.error.make_file": {
+    "message": "无法创建文件：{err}"
+  },
+  "panel.error.no_name": {
+    "message": "未输入名称"
+  },
+  "panel.error.not_a_name": {
+    "message": "{name}：不是有效的名称"
+  },
+  "panel.error.other_drive": {
+    "message": "另一面板已切换到其他驱动器"
+  },
+  "panel.error.rename": {
+    "message": "无法重命名：{err}"
+  },
+  "panel.filter.custom.label": {
+    "message": "文件类型，例如 *.txt *.md（| 之后为排除的类型）："
+  },
+  "panel.filter.custom.title": {
+    "message": "显示文件"
+  },
+  "panel.filter.programs": {
+    "message": "程序"
+  },
+  "panel.filter.selected_files": {
+    "message": "所选文件"
+  },
+  "panel.found.branch_view": {
+    "message": "平铺视图："
+  },
+  "panel.found.search_results": {
+    "message": "搜索结果："
+  },
+  "panel.new_text_file.label": {
+    "message": "文件名（将在编辑器中打开）："
+  },
+  "panel.new_text_file.title": {
+    "message": "新建文本文件"
+  },
+  "panel.opening.cancel": {
+    "message": "取消"
+  },
+  "panel.opening.reading": {
+    "message": "正在读取…"
+  },
+  "panel.opening.title": {
+    "message": "正在打开压缩包"
+  },
+  "panel.quick_filter.hint": {
+    "message": "隐藏不匹配的项；按 Escape 显示全部"
+  },
+  "panel.quick_filter.label": {
+    "message": "筛选："
+  },
+  "panel.quick_search.label": {
+    "message": "搜索："
+  },
+  "panel.size.app": {
+    "message": "<APP>"
+  },
+  "panel.size.b": {
+    "message": "{size} B"
+  },
+  "panel.size.dir": {
+    "message": "<DIR>"
+  },
+  "panel.size.gb": {
+    "message": "{size} GB"
+  },
+  "panel.size.kb": {
+    "message": "{size} KB"
+  },
+  "panel.size.mb": {
+    "message": "{size} MB"
+  },
+  "panel.size.tb": {
+    "message": "{size} TB"
+  },
+  "panel.space.bytes": {
+    "message": "{count, plural, other {{size} 字节（{human}）}}"
+  },
+  "panel.space.close": {
+    "message": "关闭"
+  },
+  "panel.space.counting": {
+    "message": "正在统计…"
+  },
+  "panel.space.done": {
+    "message": "已完成。"
+  },
+  "panel.space.files": {
+    "message": "文件："
+  },
+  "panel.space.folders": {
+    "message": "文件夹："
+  },
+  "panel.space.in_archive": {
+    "message": "在压缩包内，“大小”列已显示了各项的大小。"
+  },
+  "panel.space.title": {
+    "message": "计算占用空间"
+  },
+  "panel.space.total": {
+    "message": "总大小："
+  },
+  "panel.space.unreadable": {
+    "message": "{count, plural, other {有 # 个项目无法读取。}}"
+  },
+  "panel.status": {
+    "message": "{marked_size} k / {size} k，{marked_files} / {files, plural, other {# 个文件}}，{marked_folders} / {folders, plural, other {# 个文件夹}}"
+  },
+  "panel.sync_browsing.stop": {
+    "message": "同步浏览（点击停止）"
+  },
+  "panel.undo.rename": {
+    "message": "将“{name}”重命名为“{to}”"
+  },
+  "passwords.about.set": {
+    "message": "设置主密码后，只要复制设置文件夹，并在另一台计算机上输入主密码，即可在那里使用已保存的密码。如果忘记了主密码，只会丢失这些已保存的密码：重新输入即可。"
+  },
+  "passwords.about.unlock": {
+    "message": "设置来自另一台计算机，或本机没有密钥环：输入主密码即可在此解锁已保存的密码。"
+  },
+  "passwords.cancel": {
+    "message": "取消"
+  },
+  "passwords.done.set": {
+    "message": "已设置主密码。"
+  },
+  "passwords.done.unlocked": {
+    "message": "已保存的密码已解锁。"
+  },
+  "passwords.error.locked": {
+    "message": "已保存的密码已锁定：请用主密码解锁（配置 › 设置 › 密码）"
+  },
+  "passwords.error.no_master": {
+    "message": "未设置主密码"
+  },
+  "passwords.error.no_random": {
+    "message": "无法获取随机数"
+  },
+  "passwords.error.not_opened": {
+    "message": "无法解开 {what} 的密码"
+  },
+  "passwords.error.not_sealed": {
+    "message": "无法加密密码"
+  },
+  "passwords.error.salt_damaged": {
+    "message": "主密码的盐值已损坏"
+  },
+  "passwords.error.wrong": {
+    "message": "主密码错误"
+  },
+  "passwords.field.again": {
+    "message": "确认密码"
+  },
+  "passwords.field.master": {
+    "message": "主密码"
+  },
+  "passwords.locked_note": {
+    "message": "已保存的密码在本机上处于锁定状态：请用主密码解锁。"
+  },
+  "passwords.ok": {
+    "message": "确定"
+  },
+  "passwords.problem.differ": {
+    "message": "两次输入的密码不一致。"
+  },
+  "passwords.problem.empty": {
+    "message": "请输入主密码。"
+  },
+  "passwords.title.set": {
+    "message": "主密码"
+  },
+  "passwords.title.unlock": {
+    "message": "解锁已保存的密码"
+  },
+  "passwords.unlock_button": {
+    "message": "解锁…"
+  },
+  "passwords.working": {
+    "message": "正在处理…"
+  },
+  "properties.accessed": {
+    "message": "访问时间："
+  },
+  "properties.change_attributes": {
+    "message": "更改属性..."
+  },
+  "properties.close": {
+    "message": "关闭"
+  },
+  "properties.contents": {
+    "message": "{file_count, plural, other {{files} 个文件}}，{folder_count, plural, other {{folders} 个文件夹}}，{count, plural, other {{bytes} 字节}}（{size}）"
+  },
+  "properties.contents_counting": {
+    "message": "{file_count, plural, other {{files} 个文件}}，{folder_count, plural, other {{folders} 个文件夹}}，{count, plural, other {{bytes} 字节}}（{size}）（正在统计…）"
+  },
+  "properties.contents_label": {
+    "message": "内容："
+  },
+  "properties.created": {
+    "message": "创建时间："
+  },
+  "properties.dialog_title": {
+    "message": "属性"
+  },
+  "properties.in_archive": {
+    "message": "压缩包的列表中已显示了其中文件的全部已知信息。"
+  },
+  "properties.kind.file": {
+    "message": "文件"
+  },
+  "properties.kind.folder": {
+    "message": "文件夹"
+  },
+  "properties.kind.link": {
+    "message": "链接"
+  },
+  "properties.kind.link_to": {
+    "message": "指向 {target} 的链接"
+  },
+  "properties.location": {
+    "message": "位置："
+  },
+  "properties.modified": {
+    "message": "修改时间："
+  },
+  "properties.name": {
+    "message": "名称："
+  },
+  "properties.no_system_dialog": {
+    "message": "此系统上暂无系统属性对话框"
+  },
+  "properties.owner": {
+    "message": "所有者/组："
+  },
+  "properties.permissions": {
+    "message": "权限："
+  },
+  "properties.size": {
+    "message": "{count, plural, other {{bytes} 字节（{size}）}}"
+  },
+  "properties.size_label": {
+    "message": "大小："
+  },
+  "properties.type": {
+    "message": "类型："
+  },
+  "quick_open.go_to": {
+    "message": "转到 {path}"
+  },
+  "quick_open.group.bookmarks": {
+    "message": "书签"
+  },
+  "quick_open.group.connections": {
+    "message": "连接"
+  },
+  "quick_open.group.drives": {
+    "message": "驱动器"
+  },
+  "quick_open.group.path": {
+    "message": "路径"
+  },
+  "quick_open.group.recent_folders": {
+    "message": "最近的文件夹"
+  },
+  "quick_open.group.tools": {
+    "message": "工具"
+  },
+  "quick_open.group.workspaces": {
+    "message": "工作区"
+  },
+  "quick_open.placeholder": {
+    "message": "命令、书签、文件夹、路径、服务器、驱动器、工作区或工具"
+  },
+  "quick_open.title": {
+    "message": "快速打开"
+  },
+  "quick_view.counting": {
+    "message": "正在统计…"
+  },
+  "quick_view.downloading": {
+    "message": "正在下载…"
+  },
+  "quick_view.empty": {
+    "message": "快速查看会显示另一面板光标所在的项目。"
+  },
+  "quick_view.extracting": {
+    "message": "正在从压缩包中提取…"
+  },
+  "quick_view.files_only": {
+    "message": "在服务器上和压缩包内，快速查看仅显示文件。"
+  },
+  "quick_view.space.title": {
+    "message": "占用的总空间："
+  },
+  "quick_view.space.totals": {
+    "message": "{files, plural, other {{files_grouped} 个文件}}、{folders, plural, other {{folders_grouped} 个文件夹}}，共 {bytes, plural, other {{bytes_grouped} 字节}}"
+  },
+  "quick_view.space.unreadable": {
+    "message": "{count} 个无法读取。"
+  },
+  "quick_view.too_large.download": {
+    "message": "{size} 太大，无法在此处下载：请按 F3 查看。"
+  },
+  "quick_view.too_large.extract": {
+    "message": "{size} 太大，无法在此处从压缩包中提取：请按 F3 查看。"
+  },
+  "remote.cancelled": {
+    "message": "已取消"
+  },
+  "remote.cloud.ask": {
+    "message": "{kind, select, application_key {{host} 上 {user} 的应用密钥：} api_key {{host} 上 {user} 的 API 密钥：} password {{host} 上 {user} 的密码：} other {{host} 上 {user} 的私有密钥：}}"
+  },
+  "remote.cloud.ask_again": {
+    "message": "{kind, select, application_key {应用密钥错误。{host} 上 {user} 的应用密钥：} api_key {API 密钥错误。{host} 上 {user} 的 API 密钥：} password {密码错误。{host} 上 {user} 的密码：} other {密钥错误。{host} 上 {user} 的私有密钥：}}"
+  },
+  "remote.cloud.obscure_failed": {
+    "message": "rclone 无法处理该密码"
+  },
+  "remote.cloud.rclone_missing": {
+    "message": "缺少 rclone：可在“设置 > 附加组件”中下载"
+  },
+  "remote.cloud.title": {
+    "message": "{kind, select, application_key {应用密钥} api_key {API 密钥} password {密码} other {私有密钥}}"
+  },
+  "remote.connecting": {
+    "message": "正在连接到 {server}..."
+  },
+  "remote.dialog.cancel": {
+    "message": "取消"
+  },
+  "remote.dialog.ok": {
+    "message": "确定"
+  },
+  "remote.disconnect_failed": {
+    "message": "{share}：无法断开连接：{err}"
+  },
+  "remote.ftp.password": {
+    "message": "{user}@{host} 的密码："
+  },
+  "remote.ftp.password_again": {
+    "message": "密码错误。{user}@{host} 的密码："
+  },
+  "remote.ftps.changed": {
+    "message": "{server} 的 TLS 证书与 {file} 第 {line} 行记录的不同——证书已更改！可能有人在窃听；如果服务器确实更换了证书，请删除该行。"
+  },
+  "remote.ftps.not_trusted": {
+    "message": "服务器的证书不受信任"
+  },
+  "remote.login.password": {
+    "message": "密码"
+  },
+  "remote.login.title": {
+    "message": "登录"
+  },
+  "remote.login.user": {
+    "message": "用户"
+  },
+  "remote.mount.login_wrong": {
+    "message": "用户名或密码错误"
+  },
+  "remote.mount.macos_failed": {
+    "message": "macOS 无法挂载（NetFS {code}）"
+  },
+  "remote.mount.needs_desktop": {
+    "message": "需要 KDE 的 kio-fuse 或 GNOME 的 gvfs"
+  },
+  "remote.mount.needs_login": {
+    "message": "需要用户名和密码"
+  },
+  "remote.mount.no_fuse": {
+    "message": "已挂载，但没有对应的文件夹：缺少 gvfs-fuse"
+  },
+  "remote.mount.no_nfs_client": {
+    "message": "未找到；NFS 需要 Windows 的“NFS 客户端”（在“Windows 功能”中启用）"
+  },
+  "remote.mount.no_share": {
+    "message": "缺少共享名：smb://server/share"
+  },
+  "remote.mount.not_address": {
+    "message": "不是有效的地址"
+  },
+  "remote.mount.not_found": {
+    "message": "已挂载，但在已挂载项中找不到"
+  },
+  "remote.mount.other_user": {
+    "message": "Windows 已以其他用户身份连接到此服务器：请注销，或使用该用户"
+  },
+  "remote.password.title": {
+    "message": "密码"
+  },
+  "remote.remember_password": {
+    "message": "记住密码（设置 › 密码）"
+  },
+  "remote.save_back_failed": {
+    "message": "无法保存回服务器：{err}"
+  },
+  "remote.sftp.host_certificate": {
+    "message": "服务器提供的是主机证书，目前尚不支持。"
+  },
+  "remote.sftp.key_changed": {
+    "message": "{server} 的主机密钥与 {file} 第 {line} 行记录的不同——密钥已更改！可能有人在窃听；如果服务器是重新安装的，请删除该行。"
+  },
+  "remote.sftp.key_not_trusted": {
+    "message": "未信任 {server} 的主机密钥。"
+  },
+  "remote.sftp.keys_refused": {
+    "message": "{user}@{host}：服务器拒绝了密钥，且不接受密码"
+  },
+  "remote.sftp.login_refused": {
+    "message": "{user}@{host}：登录被拒绝"
+  },
+  "remote.sftp.passphrase": {
+    "message": "{file} 的密码短语"
+  },
+  "remote.sftp.passphrase_title": {
+    "message": "密钥密码短语"
+  },
+  "remote.sftp.password": {
+    "message": "{user}@{host} 的密码"
+  },
+  "remote.unknown_host.once": {
+    "message": "仅连接这一次"
+  },
+  "remote.unknown_host.remember": {
+    "message": "连接并记住"
+  },
+  "remote.unknown_host.text": {
+    "message": "{key_type, select, TLS {服务器 {host} 尚未被识别。它的 TLS 证书指纹为：} other {服务器 {host} 尚未被识别。它的 {key_type} 指纹为：}}\n\n{fingerprint}\n\n请仅在确认这是您要连接的服务器时再连接；服务器管理员可以确认该指纹。"
+  },
+  "remote.unknown_host.title": {
+    "message": "未知服务器"
+  },
+  "rename.case": {
+    "message": "大小写："
+  },
+  "rename.case.first": {
+    "message": "首字母大写"
+  },
+  "rename.case.lower": {
+    "message": "全部小写"
+  },
+  "rename.case.unchanged": {
+    "message": "不变"
+  },
+  "rename.case.upper": {
+    "message": "全部大写"
+  },
+  "rename.case.words": {
+    "message": "每个单词首字母大写"
+  },
+  "rename.close": {
+    "message": "关闭"
+  },
+  "rename.counter_start": {
+    "message": "计数器起始值"
+  },
+  "rename.dialog_title": {
+    "message": "批量重命名工具"
+  },
+  "rename.digits": {
+    "message": "位数"
+  },
+  "rename.extension": {
+    "message": "扩展名"
+  },
+  "rename.field.counter": {
+    "message": "[C] 计数器"
+  },
+  "rename.field.date": {
+    "message": "[Y][M][D] 日期"
+  },
+  "rename.field.extension": {
+    "message": "[E] 扩展名"
+  },
+  "rename.field.folder": {
+    "message": "[P] 文件夹"
+  },
+  "rename.field.name": {
+    "message": "[N] 名称"
+  },
+  "rename.field.range": {
+    "message": "[N1-3] 范围"
+  },
+  "rename.field.time": {
+    "message": "[h][m][s] 时间"
+  },
+  "rename.first_only": {
+    "message": "仅替换第一个"
+  },
+  "rename.in_archive": {
+    "message": "目前还无法重命名压缩包内的文件。"
+  },
+  "rename.mask": {
+    "message": "重命名掩码：文件名"
+  },
+  "rename.match_case": {
+    "message": "区分大小写"
+  },
+  "rename.new_name": {
+    "message": "新名称"
+  },
+  "rename.not_renamed_back": {
+    "message": "{from}：{err}；未能恢复原名：{names}"
+  },
+  "rename.not_utf8": {
+    "message": "非 UTF-8 的名称已被忽略。"
+  },
+  "rename.old_name": {
+    "message": "原名称"
+  },
+  "rename.problem.bad_character": {
+    "message": "含有文件名不允许的字符"
+  },
+  "rename.problem.exists": {
+    "message": "已存在"
+  },
+  "rename.problem.no_name": {
+    "message": "无名称"
+  },
+  "rename.problem.twice": {
+    "message": "列表中重复"
+  },
+  "rename.regex": {
+    "message": "正则表达式"
+  },
+  "rename.regex_error": {
+    "message": "正则表达式：{err}"
+  },
+  "rename.replace": {
+    "message": "替换为"
+  },
+  "rename.search": {
+    "message": "查找"
+  },
+  "rename.start": {
+    "message": "开始！"
+  },
+  "rename.status.failed": {
+    "message": "未重命名任何文件：{err}"
+  },
+  "rename.status.ready": {
+    "message": "点击“开始！”进行重命名。"
+  },
+  "rename.status.renamed": {
+    "message": "{count, plural, other {已重命名 # 个。}}"
+  },
+  "rename.status.took_back": {
+    "message": "{count, plural, other {已恢复 # 个。}}"
+  },
+  "rename.step": {
+    "message": "步长"
+  },
+  "rename.undo": {
+    "message": "撤销"
+  },
+  "rename.was": {
+    "message": "{to}（原为 {from}）"
+  },
+  "rename.with_extension": {
+    "message": "包括扩展名"
+  },
+  "scmd.column.modified": {
+    "message": "修改时间"
+  },
+  "scmd.column.name": {
+    "message": "名称"
+  },
+  "scmd.column.size": {
+    "message": "大小"
+  },
+  "scmd.column.up_dir": {
+    "message": "上级目录"
+  },
+  "scmd.command_line.not_on_server": {
+    "message": "命令在本机上运行，而不是在服务器上。"
+  },
+  "scmd.compare.marked": {
+    "message": "{count, plural, other {已标记 # 个文件：比另一侧的新，或另一侧没有。}}"
+  },
+  "scmd.compare.same": {
+    "message": "两个文件夹中的文件相同。"
+  },
+  "scmd.copying": {
+    "message": "正在复制 {name}..."
+  },
+  "scmd.dialog.buttons": {
+    "message": "Enter 确定   Esc 取消"
+  },
+  "scmd.error.read_settings": {
+    "message": "无法读取设置：{err}"
+  },
+  "scmd.error.read_tabs": {
+    "message": "无法读取已打开的标签页：{err}"
+  },
+  "scmd.error.read_workspaces": {
+    "message": "无法读取工作区：{err}"
+  },
+  "scmd.error.save_back": {
+    "message": "无法写回：{err}"
+  },
+  "scmd.error.save_searches": {
+    "message": "无法保存搜索记录：{err}"
+  },
+  "scmd.error.save_tabs": {
+    "message": "无法保存已打开的标签页：{err}"
+  },
+  "scmd.find.backwards": {
+    "message": "反向搜索"
+  },
+  "scmd.find.case_sensitive": {
+    "message": "区分大小写"
+  },
+  "scmd.find.hex": {
+    "message": "十六进制（77 6F 72 64）"
+  },
+  "scmd.find.not_found": {
+    "message": "未找到：{text}"
+  },
+  "scmd.find.regex": {
+    "message": "正则表达式"
+  },
+  "scmd.find.search_for": {
+    "message": "查找内容："
+  },
+  "scmd.find.title": {
+    "message": "查找"
+  },
+  "scmd.find.whole_words": {
+    "message": "全字匹配"
+  },
+  "scmd.group.files": {
+    "message": "文件（*.txt *.md；文件夹以 / 结尾）："
+  },
+  "scmd.group.select_title": {
+    "message": "选择文件组"
+  },
+  "scmd.group.unselect_title": {
+    "message": "取消选择文件组"
+  },
+  "scmd.key_bar.copy": {
+    "message": "复制"
+  },
+  "scmd.key_bar.delete": {
+    "message": "删除"
+  },
+  "scmd.key_bar.edit": {
+    "message": "编辑"
+  },
+  "scmd.key_bar.menu": {
+    "message": "菜单"
+  },
+  "scmd.key_bar.mkdir": {
+    "message": "新建"
+  },
+  "scmd.key_bar.move": {
+    "message": "移动"
+  },
+  "scmd.key_bar.quit": {
+    "message": "退出"
+  },
+  "scmd.key_bar.view": {
+    "message": "查看"
+  },
+  "scmd.message.error": {
+    "message": "错误"
+  },
+  "scmd.message.ok": {
+    "message": "确定"
+  },
+  "scmd.not_yet": {
+    "message": "{what, select, menus {菜单：终端版本暂不支持。} file_operations {文件操作：终端版本暂不支持。} servers {服务器：终端版本暂不支持。} other {此命令：终端版本暂不支持。}}"
+  },
+  "scmd.picture.broken": {
+    "message": "图片已损坏"
+  },
+  "scmd.picture.broken_page": {
+    "message": "页面已损坏"
+  },
+  "scmd.picture.loading": {
+    "message": "正在加载…"
+  },
+  "scmd.picture.no_page": {
+    "message": "PDF 中没有此页"
+  },
+  "scmd.shell.press_enter": {
+    "message": "按 Enter 返回 Spark Commander..."
+  },
+  "scmd.sync_browsing.off": {
+    "message": "同步浏览已关闭。"
+  },
+  "scmd.sync_browsing.on": {
+    "message": "同步浏览已开启。"
+  },
+  "scmd.sync_browsing.stopped": {
+    "message": "{err}。同步浏览已关闭。"
+  },
+  "scmd.viewer.column": {
+    "message": "列 {column}"
+  },
+  "scmd.viewer.finding": {
+    "message": "正在查找…"
+  },
+  "scmd.viewer.key_bar.next": {
+    "message": "下一个"
+  },
+  "scmd.viewer.key_bar.quit": {
+    "message": "退出"
+  },
+  "scmd.viewer.key_bar.reload": {
+    "message": "重载"
+  },
+  "scmd.viewer.key_bar.search": {
+    "message": "查找"
+  },
+  "scmd.viewer.page": {
+    "message": "第 {page}/{pages} 页"
+  },
+  "scmd.viewer.reading": {
+    "message": "正在读取 {percent}%"
+  },
+  "scmd.viewer.wrap": {
+    "message": "换行"
+  },
+  "scmd.workspace.copy_name": {
+    "message": "{name} 副本"
+  },
+  "scmd.workspace.default_name": {
+    "message": "工作区 {number}"
+  },
+  "scmd.workspace.delete_question": {
+    "message": "要删除“{name}”吗？其中的标签页将不再保留。"
+  },
+  "scmd.workspace.duplicate_title": {
+    "message": "复制工作区"
+  },
+  "scmd.workspace.last_stays": {
+    "message": "必须保留最后一个工作区。"
+  },
+  "scmd.workspace.name": {
+    "message": "名称："
+  },
+  "scmd.workspace.name_or_default": {
+    "message": "名称（留空则为 {name}）："
+  },
+  "scmd.workspace.new_title": {
+    "message": "新建工作区"
+  },
+  "scmd.workspace.rename_title": {
+    "message": "重命名工作区"
+  },
+  "scmd.workspaces.keys": {
+    "message": "Enter 打开  F7 新建  F5 复制  F2 重命名  F8 删除"
+  },
+  "scmd.workspaces.title": {
+    "message": "工作区"
+  },
+  "search.age.days": {
+    "message": "天"
+  },
+  "search.age.hours": {
+    "message": "小时"
+  },
+  "search.age.minutes": {
+    "message": "分钟"
+  },
+  "search.age.months": {
+    "message": "个月"
+  },
+  "search.age.weeks": {
+    "message": "周"
+  },
+  "search.age.years": {
+    "message": "年"
+  },
+  "search.archives": {
+    "message": "搜索压缩包"
+  },
+  "search.attribute.directory": {
+    "message": "目录"
+  },
+  "search.attribute.either": {
+    "message": "任意"
+  },
+  "search.attribute.executable": {
+    "message": "可执行"
+  },
+  "search.attribute.hidden": {
+    "message": "隐藏"
+  },
+  "search.attribute.link": {
+    "message": "符号链接"
+  },
+  "search.attribute.must": {
+    "message": "必须是"
+  },
+  "search.attribute.must_not": {
+    "message": "必须不是"
+  },
+  "search.attribute.read_only": {
+    "message": "只读"
+  },
+  "search.attributes.label": {
+    "message": "属性："
+  },
+  "search.between.and": {
+    "message": "至"
+  },
+  "search.between.label": {
+    "message": "日期介于："
+  },
+  "search.close": {
+    "message": "关闭"
+  },
+  "search.depth.all": {
+    "message": "全部（无深度限制）"
+  },
+  "search.depth.current": {
+    "message": "仅当前目录"
+  },
+  "search.depth.label": {
+    "message": "搜索子目录："
+  },
+  "search.depth.levels": {
+    "message": "{count, plural, other {# 层}}"
+  },
+  "search.drives": {
+    "message": "驱动器"
+  },
+  "search.duplicates.content": {
+    "message": "内容相同"
+  },
+  "search.duplicates.label": {
+    "message": "查找重复文件："
+  },
+  "search.duplicates.name": {
+    "message": "名称相同"
+  },
+  "search.duplicates.size": {
+    "message": "大小相同"
+  },
+  "search.edit": {
+    "message": "F4 编辑"
+  },
+  "search.error.between_days": {
+    "message": "“日期介于”需要填写两个日期"
+  },
+  "search.error.date": {
+    "message": "{text} 不是有效日期，格式应如 2026-11-12"
+  },
+  "search.error.hex": {
+    "message": "{text} 不是有效的十六进制字符串，格式应如 48 65 6c"
+  },
+  "search.error.keep": {
+    "message": "无法保存搜索记录：{err}"
+  },
+  "search.error.local_time": {
+    "message": "{text} 不是有效的本地时间"
+  },
+  "search.error.names_regex": {
+    "message": "名称的正则表达式：{err}"
+  },
+  "search.error.newer_number": {
+    "message": "“不早于”需要填写数字，而不是 {text}"
+  },
+  "search.error.no_place": {
+    "message": "“搜索位置”中没有指定文件夹"
+  },
+  "search.error.no_text": {
+    "message": "“查找文本”中没有指定文本"
+  },
+  "search.error.older_number": {
+    "message": "“早于”需要填写数字，而不是 {text}"
+  },
+  "search.error.save": {
+    "message": "无法保存搜索：{err}"
+  },
+  "search.error.size_number": {
+    "message": "“文件大小”需要填写数字，而不是 {text}"
+  },
+  "search.error.text_regex": {
+    "message": "文本的正则表达式：{err}"
+  },
+  "search.feed": {
+    "message": "输出到列表框"
+  },
+  "search.go_to_file": {
+    "message": "转到文件"
+  },
+  "search.in_found": {
+    "message": "F2 在结果中搜索"
+  },
+  "search.locate": {
+    "message": "使用 locate 索引"
+  },
+  "search.names.label": {
+    "message": "查找："
+  },
+  "search.names.placeholder": {
+    "message": "*.txt *.md | backup*  （留空：全部）"
+  },
+  "search.new": {
+    "message": "新搜索"
+  },
+  "search.newer.label": {
+    "message": "不早于："
+  },
+  "search.older.label": {
+    "message": "早于："
+  },
+  "search.only_selected": {
+    "message": "仅在所选文件/文件夹中搜索"
+  },
+  "search.only_selected_count": {
+    "message": "{count, plural, other {仅在所选的 # 项中搜索}}"
+  },
+  "search.page.advanced": {
+    "message": "高级"
+  },
+  "search.page.general": {
+    "message": "常规"
+  },
+  "search.page.load_save": {
+    "message": "加载/保存"
+  },
+  "search.places.browse_prompt": {
+    "message": "搜索位置"
+  },
+  "search.places.label": {
+    "message": "搜索位置："
+  },
+  "search.places.placeholder": {
+    "message": "文件夹，以 ; 分隔"
+  },
+  "search.regex": {
+    "message": "正则表达式"
+  },
+  "search.results.label": {
+    "message": "搜索结果："
+  },
+  "search.saved.delete": {
+    "message": "删除"
+  },
+  "search.saved.label": {
+    "message": "以前的搜索："
+  },
+  "search.saved.load": {
+    "message": "加载"
+  },
+  "search.saved.name_first": {
+    "message": "请先为搜索命名。"
+  },
+  "search.saved.name_placeholder": {
+    "message": "搜索名称"
+  },
+  "search.saved.save": {
+    "message": "保存"
+  },
+  "search.size.label": {
+    "message": "文件大小："
+  },
+  "search.start": {
+    "message": "开始搜索"
+  },
+  "search.status.found": {
+    "message": "找到 {files, plural, other {# 个文件}}和 {dirs, plural, other {# 个目录}}"
+  },
+  "search.status.searching": {
+    "message": "正在搜索…"
+  },
+  "search.status.searching_in": {
+    "message": "正在搜索：{folder}"
+  },
+  "search.status.stopped": {
+    "message": "已停止：{counts}"
+  },
+  "search.stop": {
+    "message": "停止"
+  },
+  "search.text.ansi": {
+    "message": "ANSI（代码页 {page}）"
+  },
+  "search.text.case_sensitive": {
+    "message": "区分大小写"
+  },
+  "search.text.hex": {
+    "message": "十六进制"
+  },
+  "search.text.label": {
+    "message": "查找文本："
+  },
+  "search.text.not_containing": {
+    "message": "查找“不”包含该文本的文件"
+  },
+  "search.text.office": {
+    "message": "Office 文件（docx、xlsx、pptx、odt…）"
+  },
+  "search.text.placeholder": {
+    "message": "要查找的文本"
+  },
+  "search.text.whole_words": {
+    "message": "全字匹配"
+  },
+  "search.title": {
+    "message": "查找文件"
+  },
+  "search.unit.bytes": {
+    "message": "字节"
+  },
+  "search.view": {
+    "message": "F3 查看"
+  },
+  "settings.addons.builtin_version": {
+    "message": "{version}，随 Spark Commander 附带"
+  },
+  "settings.addons.check_daily": {
+    "message": "启动时及每天检查附加组件更新，并提示安装"
+  },
+  "settings.addons.check_failed": {
+    "message": "无法检查更新：{err}"
+  },
+  "settings.addons.check_now": {
+    "message": "立即检查"
+  },
+  "settings.addons.checking": {
+    "message": "正在检查更新..."
+  },
+  "settings.addons.download": {
+    "message": "下载"
+  },
+  "settings.addons.downloading": {
+    "message": "正在下载：{done} / {size}"
+  },
+  "settings.addons.file": {
+    "message": "文件"
+  },
+  "settings.addons.installed.builtin": {
+    "message": "随 Spark Commander 附带"
+  },
+  "settings.addons.installed.label": {
+    "message": "已安装"
+  },
+  "settings.addons.installed.none": {
+    "message": "无"
+  },
+  "settings.addons.intro": {
+    "message": "Spark Commander 的部分功能使用了其他项目的程序。附加组件需另行下载，由您决定是否下载；7-Zip 和 PDFium 随本软件附带。"
+  },
+  "settings.addons.never_offer": {
+    "message": "文件需要附加组件时不再提示"
+  },
+  "settings.addons.offers": {
+    "message": "提示和更新"
+  },
+  "settings.addons.online.label": {
+    "message": "在线"
+  },
+  "settings.addons.online.looking": {
+    "message": "正在检查..."
+  },
+  "settings.addons.online.none": {
+    "message": "没有适用于此系统的版本"
+  },
+  "settings.addons.online.not_yet": {
+    "message": "尚未检查"
+  },
+  "settings.addons.online.unknown": {
+    "message": "未知"
+  },
+  "settings.addons.remove": {
+    "message": "移除"
+  },
+  "settings.addons.up_to_date": {
+    "message": "附加组件列表已是最新。"
+  },
+  "settings.addons.version": {
+    "message": "版本"
+  },
+  "settings.addons.website": {
+    "message": "网站"
+  },
+  "settings.appearance.title": {
+    "message": "外观"
+  },
+  "settings.apply": {
+    "message": "应用"
+  },
+  "settings.backdrop.blur": {
+    "message": "模糊其后方的桌面"
+  },
+  "settings.backdrop.clear": {
+    "message": "0%，仅显示桌面"
+  },
+  "settings.backdrop.cover": {
+    "message": "对后方桌面的遮盖程度："
+  },
+  "settings.backdrop.opacity": {
+    "message": "{opacity}%"
+  },
+  "settings.backdrop.sidebar": {
+    "message": "侧边栏"
+  },
+  "settings.backdrop.solid": {
+    "message": "100%，完全不透明"
+  },
+  "settings.backdrop.terminal": {
+    "message": "终端"
+  },
+  "settings.cancel": {
+    "message": "取消"
+  },
+  "settings.date.as_system": {
+    "message": "跟随系统：{date}"
+  },
+  "settings.date.custom": {
+    "message": "自定义："
+  },
+  "settings.date.pattern_help": {
+    "message": "yyyy 年，MM 月（MMM 为月份名称），dd 日（ddd 为星期）"
+  },
+  "settings.date.shown_as": {
+    "message": "显示效果"
+  },
+  "settings.date.shown_as_note": {
+    "message": "用于文件列表；对话框中会加上秒"
+  },
+  "settings.date.title": {
+    "message": "日期"
+  },
+  "settings.editor.browse": {
+    "message": "浏览..."
+  },
+  "settings.editor.choose": {
+    "message": "选择"
+  },
+  "settings.editor.external": {
+    "message": "外部编辑器（Ctrl+Shift+F4）："
+  },
+  "settings.editor.external_help": {
+    "message": "%1 代表文件，否则文件放在最后；例如 code --wait %1"
+  },
+  "settings.editor.limit": {
+    "message": "内置编辑器（F4）可打开的文件大小上限"
+  },
+  "settings.editor.limit_unit": {
+    "message": "MB"
+  },
+  "settings.editor.title": {
+    "message": "F4 编辑器"
+  },
+  "settings.error.no_folder": {
+    "message": "没有配置文件夹"
+  },
+  "settings.files_shown.hidden": {
+    "message": "隐藏文件"
+  },
+  "settings.files_shown.system": {
+    "message": "系统文件"
+  },
+  "settings.files_shown.title": {
+    "message": "显示的文件"
+  },
+  "settings.font.as_system": {
+    "message": "跟随系统"
+  },
+  "settings.font.chosen": {
+    "message": "已自定义；系统字体为 {family}，{size}"
+  },
+  "settings.font.fixed": {
+    "message": "查看器"
+  },
+  "settings.font.fixed_note": {
+    "message": "仅限等宽字体；也用于编辑器和文件比较。"
+  },
+  "settings.font.main": {
+    "message": "主窗口字体"
+  },
+  "settings.font.system": {
+    "message": "系统字体"
+  },
+  "settings.language.system": {
+    "message": "系统语言"
+  },
+  "settings.language.system_named": {
+    "message": "系统语言：{language}"
+  },
+  "settings.language.title": {
+    "message": "语言"
+  },
+  "settings.menus.automatic": {
+    "message": "自动：GNOME 上为 ☰ 按钮，其他环境为菜单栏"
+  },
+  "settings.menus.bar": {
+    "message": "菜单栏"
+  },
+  "settings.menus.button": {
+    "message": "标题栏中的 ☰ 按钮"
+  },
+  "settings.menus.title": {
+    "message": "菜单"
+  },
+  "settings.ok": {
+    "message": "确定"
+  },
+  "settings.page.addons": {
+    "message": "附加组件"
+  },
+  "settings.page.date": {
+    "message": "日期"
+  },
+  "settings.page.display": {
+    "message": "显示"
+  },
+  "settings.page.edit_view": {
+    "message": "编辑/查看"
+  },
+  "settings.page.font": {
+    "message": "字体"
+  },
+  "settings.page.language": {
+    "message": "语言"
+  },
+  "settings.page.layout": {
+    "message": "布局"
+  },
+  "settings.page.operations": {
+    "message": "操作"
+  },
+  "settings.page.passwords": {
+    "message": "密码"
+  },
+  "settings.page.terminal": {
+    "message": "终端"
+  },
+  "settings.page.toolbar": {
+    "message": "工具栏"
+  },
+  "settings.passwords.change_master": {
+    "message": "更改主密码…"
+  },
+  "settings.passwords.locked": {
+    "message": "它们在本机上处于锁定状态：请用主密码解锁。"
+  },
+  "settings.passwords.master_set": {
+    "message": "已设置主密码：复制设置文件夹后，在另一台计算机上输入主密码即可使用这些密码。"
+  },
+  "settings.passwords.no_master": {
+    "message": "未设置主密码：复制设置文件夹后，这些密码在另一台计算机上无法使用，需要在那里重新输入。"
+  },
+  "settings.passwords.not_removed": {
+    "message": "未移除主密码：{err}"
+  },
+  "settings.passwords.remove_master": {
+    "message": "移除主密码"
+  },
+  "settings.passwords.saved": {
+    "message": "已保存 {count, plural, other {# 个密码}}（服务器、共享和加密驱动器的密码），加密存储在设置文件夹中；解锁它们的密钥保存在本机的密钥环中。"
+  },
+  "settings.passwords.set_master": {
+    "message": "设置主密码…"
+  },
+  "settings.passwords.title": {
+    "message": "已保存的密码"
+  },
+  "settings.passwords.unlock": {
+    "message": "解锁…"
+  },
+  "settings.queue.clear_after": {
+    "message": "已完成的操作保留时长"
+  },
+  "settings.queue.clear_after_help": {
+    "message": "0：完成后立即清除。失败和已取消的操作会一直保留，直到手动清除。"
+  },
+  "settings.queue.clear_after_unit": {
+    "message": "分钟"
+  },
+  "settings.queue.download_limit": {
+    "message": "下载速度限制"
+  },
+  "settings.queue.download_limit_help": {
+    "message": "适用于“从链接下载”以及从 FTP 和 SFTP 服务器复制，包括正在进行的操作。0：不限制。"
+  },
+  "settings.queue.download_limit_unit": {
+    "message": "KB/s"
+  },
+  "settings.queue.title": {
+    "message": "操作队列"
+  },
+  "settings.shell.default": {
+    "message": "默认：{shell}"
+  },
+  "settings.shell.note": {
+    "message": "新的终端标签页将使用它。"
+  },
+  "settings.shell.title": {
+    "message": "Shell"
+  },
+  "settings.sort_folders.by_name": {
+    "message": "始终按名称"
+  },
+  "settings.sort_folders.like_files": {
+    "message": "与文件相同（也可按时间）"
+  },
+  "settings.sort_folders.title": {
+    "message": "文件夹排序"
+  },
+  "settings.tabs.header_always": {
+    "message": "只有一个标签页时也显示标签栏"
+  },
+  "settings.tabs.title": {
+    "message": "文件夹标签页"
+  },
+  "settings.time.as_system": {
+    "message": "跟随系统"
+  },
+  "settings.time.h12": {
+    "message": "12 小时制（下午 2:05）"
+  },
+  "settings.time.h24": {
+    "message": "24 小时制（14:05）"
+  },
+  "settings.time.title": {
+    "message": "时间"
+  },
+  "settings.title": {
+    "message": "设置"
+  },
+  "settings.toolbar.add": {
+    "message": "添加按钮…"
+  },
+  "settings.toolbar.move_down": {
+    "message": "下移"
+  },
+  "settings.toolbar.move_up": {
+    "message": "上移"
+  },
+  "settings.toolbar.place": {
+    "message": "位于菜单栏下方；若菜单收在 ☰ 按钮中（如 GNOME 应用），则位于标题栏中。没有按钮时不显示。"
+  },
+  "settings.toolbar.remove": {
+    "message": "移除"
+  },
+  "settings.toolbar.replace": {
+    "message": "替换…"
+  },
+  "settings.toolbar.restore_default": {
+    "message": "恢复默认"
+  },
+  "settings.toolbar.title": {
+    "message": "工具栏按钮"
+  },
+  "settings.viewer.font.ansi": {
+    "message": "ANSI（Windows）"
+  },
+  "settings.viewer.font.ascii": {
+    "message": "ASCII（DOS）"
+  },
+  "settings.viewer.font.auto": {
+    "message": "自动检测"
+  },
+  "settings.viewer.font.label": {
+    "message": "启动时的字体："
+  },
+  "settings.viewer.font.variable": {
+    "message": "可变宽度"
+  },
+  "settings.viewer.minimap": {
+    "message": "缩略图"
+  },
+  "settings.viewer.show": {
+    "message": "显示："
+  },
+  "settings.viewer.start.auto": {
+    "message": "自动检测"
+  },
+  "settings.viewer.start.binary": {
+    "message": "二进制"
+  },
+  "settings.viewer.start.hex": {
+    "message": "十六进制"
+  },
+  "settings.viewer.start.label": {
+    "message": "启动时的显示方式："
+  },
+  "settings.viewer.start.text": {
+    "message": "文本"
+  },
+  "settings.viewer.title": {
+    "message": "F3 查看器"
+  },
+  "settings.viewer.width.binary": {
+    "message": "二进制"
+  },
+  "settings.viewer.width.label": {
+    "message": "显示宽度（字符数）："
+  },
+  "settings.viewer.width.text": {
+    "message": "文本"
+  },
+  "settings.viewer.wrap": {
+    "message": "自动换行"
+  },
+  "shells.command_prompt": {
+    "message": "命令提示符"
+  },
+  "sidebar.device.no_files": {
+    "message": "未共享文件"
+  },
+  "sidebar.device.not_answering": {
+    "message": "{name} 没有响应：请解锁设备并在其上打开 KDE Connect，然后重新读取文件夹（F2）。"
+  },
+  "sidebar.device.not_answering_error": {
+    "message": "{name} 没有响应（{err}）：请解锁设备并在其上打开 KDE Connect。"
+  },
+  "sidebar.device.not_connected": {
+    "message": "未连接"
+  },
+  "sidebar.device.opening": {
+    "message": "正在打开 {name}..."
+  },
+  "sidebar.device.reconnecting": {
+    "message": "{name} 没有响应：正在重新连接..."
+  },
+  "sidebar.device.unmount_failed": {
+    "message": "{name}：无法卸载：{err}"
+  },
+  "sidebar.group.bookmarks": {
+    "message": "书签"
+  },
+  "sidebar.group.cloud": {
+    "message": "云存储"
+  },
+  "sidebar.group.devices": {
+    "message": "设备"
+  },
+  "sidebar.group.drives": {
+    "message": "驱动器"
+  },
+  "sidebar.group.network": {
+    "message": "网络"
+  },
+  "sidebar.section.connections": {
+    "message": "连接"
+  },
+  "sidebar.section.folders": {
+    "message": "文件夹"
+  },
+  "sidebar.section.operations": {
+    "message": "操作"
+  },
+  "sidebar.section.places": {
+    "message": "位置"
+  },
+  "sidebar.volume.locked": {
+    "message": "已锁定"
+  },
+  "sidebar.volume.mounting": {
+    "message": "正在挂载 {name}..."
+  },
+  "sidebar.volume.not_mounted": {
+    "message": "未挂载"
+  },
+  "sidebar.volume.open": {
+    "message": "打开"
+  },
+  "sidebar.volume.space": {
+    "message": "可用 {free}，共 {total}"
+  },
+  "sidebar.volume.unmount": {
+    "message": "卸载"
+  },
+  "sidebar.volume.unmount_failed": {
+    "message": "无法卸载：{err}"
+  },
+  "split.bad_size": {
+    "message": "“{size}”不是有效的大小：100 MB, 1.5 GB, 650m"
+  },
+  "split.choose": {
+    "message": "请将光标放在要分割的文件上。"
+  },
+  "split.combine.choose": {
+    "message": "请将光标放在分卷文件（name.001）或其 .crc 文件上。"
+  },
+  "split.combine.dialog_title": {
+    "message": "合并文件"
+  },
+  "split.combine.label": {
+    "message": "将各分卷合并为文件："
+  },
+  "split.combine.title": {
+    "message": "合并“{name}”"
+  },
+  "split.combined_no_crc": {
+    "message": "{count, plural, other {已合并 # 个分卷，没有可用于校验的 CRC 文件}}"
+  },
+  "split.crc_mismatch": {
+    "message": "{target} 与 {file} 不符：有分卷缺失或已损坏"
+  },
+  "split.crc_names_no_file": {
+    "message": "CRC 文件中未指明任何文件"
+  },
+  "split.crc_unreadable": {
+    "message": "已合并，但无法读取 {file}：{err}"
+  },
+  "split.dialog_title": {
+    "message": "分割文件"
+  },
+  "split.label": {
+    "message": "将“{name}”分割为分卷，保存到文件夹："
+  },
+  "split.part_missing": {
+    "message": "缺少 {path}"
+  },
+  "split.part_size": {
+    "message": "分卷大小："
+  },
+  "split.title": {
+    "message": "分割“{name}”"
+  },
+  "sync.close": {
+    "message": "关闭"
+  },
+  "sync.column.date": {
+    "message": "日期"
+  },
+  "sync.column.name": {
+    "message": "名称"
+  },
+  "sync.column.size": {
+    "message": "大小"
+  },
+  "sync.compare": {
+    "message": "比较"
+  },
+  "sync.confirm.copy_left": {
+    "message": "向左复制 {count} 项（{size}）"
+  },
+  "sync.confirm.copy_right": {
+    "message": "向右复制 {count} 项（{size}）"
+  },
+  "sync.confirm.delete_left": {
+    "message": "删除左侧 {count} 项"
+  },
+  "sync.confirm.delete_right": {
+    "message": "删除右侧 {count} 项"
+  },
+  "sync.confirm.ok": {
+    "message": "同步"
+  },
+  "sync.confirm.text": {
+    "message": "{actions}。复制的文件将替换目标位置的同名文件。{trash, select, yes {本机上删除的项目将移到回收站。} other {}}"
+  },
+  "sync.confirm.title": {
+    "message": "同步"
+  },
+  "sync.error.changed": {
+    "message": "比较后已发生更改；请重新比较"
+  },
+  "sync.error.compare": {
+    "message": "无法比较：{err}"
+  },
+  "sync.error.no_folders": {
+    "message": "同步文件夹需要比较两个文件夹：两个面板都不能显示压缩包或搜索结果。"
+  },
+  "sync.left": {
+    "message": "左侧"
+  },
+  "sync.mask.label": {
+    "message": "文件："
+  },
+  "sync.option.asymmetric": {
+    "message": "非对称（右侧成为左侧的副本）"
+  },
+  "sync.option.by_content": {
+    "message": "按内容"
+  },
+  "sync.option.ignore_date": {
+    "message": "忽略日期"
+  },
+  "sync.option.subfolders": {
+    "message": "子文件夹"
+  },
+  "sync.result.done": {
+    "message": "{count, plural, other {已同步 # 项}}"
+  },
+  "sync.result.failed": {
+    "message": "{count, plural, other {# 项未同步}}；{first}"
+  },
+  "sync.right": {
+    "message": "右侧"
+  },
+  "sync.show.equal": {
+    "message": "= 相同"
+  },
+  "sync.show.label": {
+    "message": "显示："
+  },
+  "sync.show.other": {
+    "message": "≠ 不处理"
+  },
+  "sync.show.to_left": {
+    "message": "← 复制到左侧"
+  },
+  "sync.show.to_right": {
+    "message": "→ 复制到右侧"
+  },
+  "sync.status.both_empty": {
+    "message": "两侧均为空。"
+  },
+  "sync.status.comparing": {
+    "message": "正在比较 {folder}"
+  },
+  "sync.status.counts": {
+    "message": "{right} 项待复制到右侧，{left} 项待复制到左侧，{delete} 项待删除，{equal} 项相同，{alone} 项不处理"
+  },
+  "sync.status.stopped": {
+    "message": "已停止。"
+  },
+  "sync.stop": {
+    "message": "停止"
+  },
+  "sync.synchronize": {
+    "message": "同步..."
+  },
+  "sync.task.title": {
+    "message": "同步 {left} 和 {right}"
+  },
+  "sync.title": {
+    "message": "同步文件夹"
+  },
+  "tab_menu.close_all_tabs": {
+    "message": "关闭所有标签页"
+  },
+  "tab_menu.close_duplicate_tabs": {
+    "message": "关闭重复的标签页"
+  },
+  "tab_menu.close_tab": {
+    "message": "关闭此标签页"
+  },
+  "tab_menu.copy_tab_to_other_panel": {
+    "message": "将标签页复制到另一面板"
+  },
+  "tab_menu.duplicate_tab": {
+    "message": "复制此标签页"
+  },
+  "tab_menu.list_tabs": {
+    "message": "显示所有标签页的列表"
+  },
+  "tab_menu.lock_tab": {
+    "message": "锁定此标签页"
+  },
+  "tab_menu.none": {
+    "message": "（无）"
+  },
+  "tab_menu.rename_tab": {
+    "message": "重命名标签页..."
+  },
+  "tabs.error.reopen": {
+    "message": "无法重新打开标签页：{err}"
+  },
+  "tabs.history.empty": {
+    "message": "此标签页的历史记录中尚无文件夹。"
+  },
+  "tabs.new": {
+    "message": "新建标签页"
+  },
+  "tabs.rename.label": {
+    "message": "新名称："
+  },
+  "tabs.rename.title": {
+    "message": "重命名标签页"
+  },
+  "tabs.search_results": {
+    "message": "搜索结果"
+  },
+  "terminal.busy": {
+    "message": "终端中有程序正在运行：请在其结束后再运行命令。"
+  },
+  "terminal.close.idle": {
+    "message": "要关闭此终端标签页吗？其 Shell 将会结束。"
+  },
+  "terminal.close.ok": {
+    "message": "关闭"
+  },
+  "terminal.close.running": {
+    "message": "要关闭此终端标签页吗？其中正在运行的程序将被终止。"
+  },
+  "terminal.close.title": {
+    "message": "关闭标签页"
+  },
+  "terminal.error.start_shell": {
+    "message": "无法启动 Shell：{err}"
+  },
+  "terminal.jump_to_bottom": {
+    "message": "跳到底部（Ctrl+End）↓"
+  },
+  "terminal.menu.copy": {
+    "message": "复制"
+  },
+  "terminal.menu.paste": {
+    "message": "粘贴"
+  },
+  "toolbar.customize": {
+    "message": "自定义工具栏…"
+  },
+  "tools.clear_key": {
+    "message": "清除"
+  },
+  "tools.close": {
+    "message": "关闭"
+  },
+  "tools.delete": {
+    "message": "删除"
+  },
+  "tools.empty": {
+    "message": "尚无工具：点击“新建...”添加。"
+  },
+  "tools.field.command": {
+    "message": "命令"
+  },
+  "tools.field.key": {
+    "message": "快捷键"
+  },
+  "tools.field.name": {
+    "message": "名称"
+  },
+  "tools.intro": {
+    "message": "您自己的命令行，位于“工具”菜单中：在菜单中点击，或按其快捷键。"
+  },
+  "tools.key.none": {
+    "message": "无"
+  },
+  "tools.key.waiting": {
+    "message": "请按键...（Esc：无）"
+  },
+  "tools.move_down": {
+    "message": "下移"
+  },
+  "tools.move_up": {
+    "message": "上移"
+  },
+  "tools.name.placeholder": {
+    "message": "与另一侧比较"
+  },
+  "tools.new": {
+    "message": "新建..."
+  },
+  "tools.new_name": {
+    "message": "工具 {number}"
+  },
+  "tools.no_command": {
+    "message": "{tool} 尚未设置命令：工具 > 管理工具。"
+  },
+  "tools.not_local": {
+    "message": "工具在本机上运行：当前面板显示的是服务器或压缩包。"
+  },
+  "tools.note.key_of_command": {
+    "message": "{key} 同时也是“{command}”的快捷键：由此工具使用。"
+  },
+  "tools.note.key_of_other_tool": {
+    "message": "{key} 同时也是“{tool}”的快捷键：由列表中靠下的那个使用。"
+  },
+  "tools.placeholders": {
+    "message": "%P 为本面板的文件夹，%T 为另一面板的文件夹（两者都以分隔符结尾，因此 \"%P%N\" 是一个路径），%N 为光标所在的文件，%O 为不含扩展名的文件名，%E 为扩展名，%S 为所选文件（否则为光标所在的文件），各自带引号；%% 表示一个 %。其余部分请加上引号：\"%P%N\"。"
+  },
+  "tools.run_in_terminal": {
+    "message": "在终端中运行，以查看其输出"
+  },
+  "tools.set_key": {
+    "message": "设置快捷键..."
+  },
+  "tools.title": {
+    "message": "工具"
+  },
+  "transfer.answer.cancel": {
+    "message": "取消"
+  },
+  "transfer.answer.elevate": {
+    "message": "以管理员身份"
+  },
+  "transfer.answer.overwrite": {
+    "message": "覆盖"
+  },
+  "transfer.answer.overwrite_all": {
+    "message": "全部覆盖"
+  },
+  "transfer.answer.rename": {
+    "message": "重命名"
+  },
+  "transfer.answer.retry": {
+    "message": "重试"
+  },
+  "transfer.answer.skip": {
+    "message": "跳过"
+  },
+  "transfer.answer.skip_all": {
+    "message": "全部跳过"
+  },
+  "transfer.archive.local_only": {
+    "message": "只有本机的文件才能放入压缩包：请先将它们复制到本机。"
+  },
+  "transfer.cancel": {
+    "message": "取消"
+  },
+  "transfer.error.elevate_hint": {
+    "message": "以管理员身份：在其余项目完成后，处理此项及其他被拒绝的项目，只需输入一次密码。"
+  },
+  "transfer.error.title": {
+    "message": "错误"
+  },
+  "transfer.exists.describe": {
+    "message": "{count, plural, other {{size} 字节，{time}}}"
+  },
+  "transfer.exists.text": {
+    "message": "已有文件：{existing}\n新文件：{new}"
+  },
+  "transfer.exists.title": {
+    "message": "文件已存在"
+  },
+  "transfer.extract_failed": {
+    "message": "无法提取：{err}"
+  },
+  "transfer.into_archive.question_many": {
+    "message": "要将 {count, plural, other {# 个项目}}{kind, select, copy {复制} other {移动}}到 {into} 吗？其中的同名项目将被替换。"
+  },
+  "transfer.into_archive.question_one": {
+    "message": "要将“{name}”{kind, select, copy {复制} other {移动}}到 {into} 吗？其中的同名项目将被替换。"
+  },
+  "transfer.into_archive.title_many": {
+    "message": "将 {count, plural, other {# 个项目}}{kind, select, copy {复制} other {移动}}到 {archive}"
+  },
+  "transfer.into_archive.title_one": {
+    "message": "将“{name}”{kind, select, copy {复制} other {移动}}到 {archive}"
+  },
+  "transfer.label.many": {
+    "message": "将 {count, plural, other {# 个项目}}{kind, select, copy {复制} other {移动}}到："
+  },
+  "transfer.label.many_server": {
+    "message": "将 {count, plural, other {# 个项目}}{kind, select, copy {复制} other {移动}}到 {server}："
+  },
+  "transfer.label.one": {
+    "message": "将“{name}”{kind, select, copy {复制} other {移动}}到："
+  },
+  "transfer.label.one_server": {
+    "message": "将“{name}”{kind, select, copy {复制} other {移动}}到 {server}："
+  },
+  "transfer.ok": {
+    "message": "确定"
+  },
+  "transfer.overwrite.all": {
+    "message": "全部覆盖"
+  },
+  "transfer.overwrite.ask": {
+    "message": "询问"
+  },
+  "transfer.overwrite.label": {
+    "message": "目标位置已有同名文件时："
+  },
+  "transfer.overwrite.older": {
+    "message": "覆盖较旧的文件"
+  },
+  "transfer.overwrite.rename": {
+    "message": "重命名副本"
+  },
+  "transfer.overwrite.skip": {
+    "message": "全部跳过"
+  },
+  "transfer.remove_moved": {
+    "message": "从 {name} 中删除已移出的项目"
+  },
+  "transfer.speed": {
+    "message": "{size}/s"
+  },
+  "transfer.strip.counting": {
+    "message": "正在统计：{count, plural, other {# 个文件}}"
+  },
+  "transfer.strip.progress": {
+    "message": "{files} / {count, plural, other {# 个文件}}，{percent}%"
+  },
+  "transfer.strip.queue": {
+    "message": "队列..."
+  },
+  "transfer.strip.queue_waiting": {
+    "message": "队列（{count, plural, other {# 个等待中}}）..."
+  },
+  "transfer.title.copy": {
+    "message": "复制"
+  },
+  "transfer.title.move": {
+    "message": "移动"
+  },
+  "viewer.as_text_hint": {
+    "message": "{err}。按 1 以文本形式显示文件。"
+  },
+  "viewer.book.cannot_read": {
+    "message": "无法阅读此书：{err}。按 1 以文本形式显示文件。"
+  },
+  "viewer.book.continuing": {
+    "message": "从 {percent} 处继续"
+  },
+  "viewer.book.error.compression": {
+    "message": "使用了暂不支持的压缩方式（{compression}）"
+  },
+  "viewer.book.error.damaged": {
+    "message": "书籍已损坏"
+  },
+  "viewer.book.error.damaged_zip": {
+    "message": "zip 已损坏"
+  },
+  "viewer.book.error.drm": {
+    "message": "受 DRM 保护：只能用 Kindle 阅读"
+  },
+  "viewer.book.error.huffman": {
+    "message": "使用了亚马逊自有书籍的压缩方式（HUFF/CDIC），暂不支持"
+  },
+  "viewer.book.error.missing_part": {
+    "message": "书中没有 {name}"
+  },
+  "viewer.book.error.no_package": {
+    "message": "书中没有包文件"
+  },
+  "viewer.book.error.no_text": {
+    "message": "书中没有文本"
+  },
+  "viewer.book.error.not_zip": {
+    "message": "不是 zip 文件：书籍可能已损坏或受 DRM 保护？"
+  },
+  "viewer.book.error.zip_method": {
+    "message": "{name}：使用了此处无法读取的 zip 压缩方式（{method}）"
+  },
+  "viewer.cannot_show": {
+    "message": "无法显示：{err}"
+  },
+  "viewer.convert.failed": {
+    "message": "{tool} 无法转换（{status}）"
+  },
+  "viewer.converting": {
+    "message": "正在使用 {tool} 转换…"
+  },
+  "viewer.copy.too_large": {
+    "message": "超过 {megabytes} MB 的选定内容不会被复制。"
+  },
+  "viewer.encoding.cp1250": {
+    "message": "中欧（1250）"
+  },
+  "viewer.encoding.cp1251": {
+    "message": "西里尔文 Windows（1251）"
+  },
+  "viewer.encoding.cp1252": {
+    "message": "西欧 Latin1（1252）"
+  },
+  "viewer.encoding.cp1253": {
+    "message": "希腊文（1253）"
+  },
+  "viewer.encoding.cp1254": {
+    "message": "土耳其文（1254）"
+  },
+  "viewer.encoding.cp1255": {
+    "message": "希伯来文（1255）"
+  },
+  "viewer.encoding.cp1256": {
+    "message": "阿拉伯文（1256）"
+  },
+  "viewer.encoding.cp1257": {
+    "message": "波罗的海文（1257）"
+  },
+  "viewer.encoding.cp1258": {
+    "message": "越南文（1258）"
+  },
+  "viewer.encoding.cp20866": {
+    "message": "西里尔文 KOI8-R（20866）"
+  },
+  "viewer.encoding.cp437": {
+    "message": "DOS-美国（437）"
+  },
+  "viewer.encoding.cp850": {
+    "message": "DOS-LATIN1（850）"
+  },
+  "viewer.encoding.cp852": {
+    "message": "DOS 中欧（852）"
+  },
+  "viewer.encoding.cp866": {
+    "message": "DOS 西里尔文（866）"
+  },
+  "viewer.encoding.cp874": {
+    "message": "泰文（874）"
+  },
+  "viewer.encoding.cp932": {
+    "message": "日文（932）"
+  },
+  "viewer.encoding.cp936": {
+    "message": "简体中文（936）"
+  },
+  "viewer.encoding.cp949": {
+    "message": "韩文（949）"
+  },
+  "viewer.encoding.cp950": {
+    "message": "繁体中文（950）"
+  },
+  "viewer.find.not_found": {
+    "message": "未找到：{text}"
+  },
+  "viewer.find.not_hex": {
+    "message": "不是十六进制字符串：{text}"
+  },
+  "viewer.find.nothing": {
+    "message": "没有要查找的内容。"
+  },
+  "viewer.find.save_failed": {
+    "message": "无法保存搜索记录：{err}"
+  },
+  "viewer.loading": {
+    "message": "正在加载…"
+  },
+  "viewer.markdown.too_large": {
+    "message": "超过 {megabytes} MB：按 1 以文本形式显示。"
+  },
+  "viewer.menu.binary": {
+    "message": "二进制（固定行长）"
+  },
+  "viewer.menu.book": {
+    "message": "电子书（EPUB、FB2）"
+  },
+  "viewer.menu.close": {
+    "message": "关闭"
+  },
+  "viewer.menu.configure": {
+    "message": "配置..."
+  },
+  "viewer.menu.copy_hex": {
+    "message": "复制为十六进制字符"
+  },
+  "viewer.menu.copy_text": {
+    "message": "复制为文本"
+  },
+  "viewer.menu.edit": {
+    "message": "编辑"
+  },
+  "viewer.menu.encoding": {
+    "message": "编码"
+  },
+  "viewer.menu.file": {
+    "message": "文件"
+  },
+  "viewer.menu.find": {
+    "message": "查找..."
+  },
+  "viewer.menu.find_next": {
+    "message": "查找下一个"
+  },
+  "viewer.menu.fit_image": {
+    "message": "图像适应窗口"
+  },
+  "viewer.menu.font_ansi": {
+    "message": "ANSI（Windows 字符集）"
+  },
+  "viewer.menu.font_ascii": {
+    "message": "ASCII（DOS 字符集）"
+  },
+  "viewer.menu.font_page": {
+    "message": "跟随字体设置"
+  },
+  "viewer.menu.font_variable": {
+    "message": "可变字符宽度"
+  },
+  "viewer.menu.hex": {
+    "message": "十六进制"
+  },
+  "viewer.menu.html": {
+    "message": "HTML 文本（去除标签）"
+  },
+  "viewer.menu.minimap": {
+    "message": "缩略图"
+  },
+  "viewer.menu.next_file": {
+    "message": "下一个文件"
+  },
+  "viewer.menu.only_larger": {
+    "message": "仅缩小较大的图像"
+  },
+  "viewer.menu.open": {
+    "message": "打开..."
+  },
+  "viewer.menu.options": {
+    "message": "选项"
+  },
+  "viewer.menu.picture": {
+    "message": "图像/多媒体"
+  },
+  "viewer.menu.previous_file": {
+    "message": "上一个文件"
+  },
+  "viewer.menu.reload": {
+    "message": "重新加载"
+  },
+  "viewer.menu.save_as": {
+    "message": "另存为..."
+  },
+  "viewer.menu.search_google": {
+    "message": "用 Google 搜索选定的文本"
+  },
+  "viewer.menu.select_all": {
+    "message": "全选"
+  },
+  "viewer.menu.syntax_colors": {
+    "message": "语法高亮"
+  },
+  "viewer.menu.text_only": {
+    "message": "纯文本"
+  },
+  "viewer.menu.unicode": {
+    "message": "Unicode（UTF-16）"
+  },
+  "viewer.menu.wrap": {
+    "message": "自动换行（{columns, plural, other {# 列}}）"
+  },
+  "viewer.mode.binary": {
+    "message": "二进制 · {page}"
+  },
+  "viewer.mode.book": {
+    "message": "电子书"
+  },
+  "viewer.mode.hex": {
+    "message": "十六进制 · {page}"
+  },
+  "viewer.mode.html": {
+    "message": "HTML 文本"
+  },
+  "viewer.mode.image": {
+    "message": "图像"
+  },
+  "viewer.mode.multimedia": {
+    "message": "多媒体"
+  },
+  "viewer.mode.pdf_by": {
+    "message": "PDF（由 {tool} 转换）"
+  },
+  "viewer.mode.text": {
+    "message": "文本 · {page}"
+  },
+  "viewer.origin.not_editable": {
+    "message": "只能编辑 7z、zip、jar 和 tar 压缩包中的文件"
+  },
+  "viewer.origin.updated": {
+    "message": "已更新 {archive}"
+  },
+  "viewer.origin.updated_on": {
+    "message": "已更新 {server} 上的 {archive}"
+  },
+  "viewer.origin.uploaded": {
+    "message": "已上传 {path}"
+  },
+  "viewer.pdf.cannot_show": {
+    "message": "无法显示此 PDF：{err}"
+  },
+  "viewer.pdf.loading": {
+    "message": "正在加载..."
+  },
+  "viewer.pdf.page": {
+    "message": "第 {page} / {pages} 页"
+  },
+  "viewer.picture.cannot_show": {
+    "message": "无法显示此图片；按 1 以文本形式显示。"
+  },
+  "viewer.save_as.failed": {
+    "message": "无法保存 {path}：{err}"
+  },
+  "viewer.status.rows": {
+    "message": "{count, plural, other {第 {first}–{last} 行，共 {grouped} 行}}"
+  },
+  "viewer.status.rows_so_far": {
+    "message": "{count, plural, other {目前 {grouped} 行，已读取 {percent}}}"
+  },
+  "viewer.status.searching": {
+    "message": "正在搜索…"
+  },
+  "viewer.status.size": {
+    "message": "{count, plural, other {{grouped} 字节}}"
+  },
+  "viewer.window.title": {
+    "message": "{path} — 查看器"
+  },
+  "viewer.zoom.fit": {
+    "message": "恢复适应窗口（Ctrl+0）"
+  },
+  "viewer.zoom.in": {
+    "message": "放大（Ctrl++）"
+  },
+  "viewer.zoom.out": {
+    "message": "缩小（Ctrl+-）"
+  },
+  "viewer.zoom.reset": {
+    "message": "恢复到 100%（Ctrl+0）"
+  },
+  "workspaces.button.close": {
+    "message": "关闭"
+  },
+  "workspaces.button.delete": {
+    "message": "删除..."
+  },
+  "workspaces.button.duplicate": {
+    "message": "创建副本..."
+  },
+  "workspaces.button.new": {
+    "message": "新建..."
+  },
+  "workspaces.button.rename": {
+    "message": "重命名..."
+  },
+  "workspaces.delete.button": {
+    "message": "删除"
+  },
+  "workspaces.delete.closed": {
+    "message": "要删除工作区“{name}”吗？其中的标签页将不再保留。"
+  },
+  "workspaces.delete.closed_shells": {
+    "message": "要删除工作区“{name}”吗？其中的标签页将不再保留，其终端标签页中的 Shell 也将结束。"
+  },
+  "workspaces.delete.open": {
+    "message": "要删除工作区“{name}”吗？其中的标签页将关闭，并改为打开“{other}”。"
+  },
+  "workspaces.delete.open_shells": {
+    "message": "要删除工作区“{name}”吗？其中的标签页将关闭，其终端标签页中的 Shell 也将结束，并改为打开“{other}”。"
+  },
+  "workspaces.delete.title": {
+    "message": "删除工作区"
+  },
+  "workspaces.duplicate.name": {
+    "message": "{name} 副本"
+  },
+  "workspaces.duplicate.title": {
+    "message": "复制工作区"
+  },
+  "workspaces.error.name_taken": {
+    "message": "已有其他工作区使用此名称。"
+  },
+  "workspaces.error.no_name": {
+    "message": "工作区需要名称。"
+  },
+  "workspaces.error.save": {
+    "message": "无法保存工作区：{err}"
+  },
+  "workspaces.hint": {
+    "message": "通过“显示 > 工作区”打开工作区。在已打开的工作区中所做的更改会保存在其中。"
+  },
+  "workspaces.name.label": {
+    "message": "名称："
+  },
+  "workspaces.new.name": {
+    "message": "工作区 {number}"
+  },
+  "workspaces.new.title": {
+    "message": "新建工作区"
+  },
+  "workspaces.open": {
+    "message": "已打开"
+  },
+  "workspaces.rename.title": {
+    "message": "重命名工作区"
+  },
+  "workspaces.summary.panels": {
+    "message": "左侧 {left, plural, other {# 个标签页}}，右侧 {right, plural, other {# 个标签页}}"
+  },
+  "workspaces.summary.terminal": {
+    "message": "左侧 {left, plural, other {# 个标签页}}，右侧 {right, plural, other {# 个标签页}}，终端 {terminal, plural, other {# 个标签页}}"
+  },
+  "workspaces.summary.terminal_hidden": {
+    "message": "左侧 {left, plural, other {# 个标签页}}，右侧 {right, plural, other {# 个标签页}}，终端 {terminal, plural, other {# 个标签页}}（已隐藏）"
+  },
+  "workspaces.title": {
+    "message": "工作区"
+  }
+}

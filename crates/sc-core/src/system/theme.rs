@@ -266,6 +266,42 @@ fn real_family(family: String) -> String {
     matched.and_then(|out| String::from_utf8(out.stdout).ok()).filter(|f| !f.is_empty()).unwrap_or(family)
 }
 
+/// The families fontconfig picks for scripts a UI font often lacks (Han, kana,
+/// Hangul, Thai, Devanagari), `language`'s (the app's) first, so its characters
+/// take its own forms; none on Windows and macOS, whose text systems fall back.
+pub fn script_fonts(language: &str) -> Vec<String> {
+    static FONTS: OnceLock<Vec<(&'static str, String)>> = OnceLock::new();
+    let fonts = FONTS.get_or_init(|| {
+        if cfg!(any(windows, target_os = "macos")) {
+            return Vec::new();
+        }
+        let asked: Vec<_> = [("zh-Hans", "zh-cn"), ("zh-Hant", "zh-tw"), ("ja", "ja"), ("ko", "ko"), ("th", "th"), ("hi", "hi")]
+            .into_iter()
+            .filter_map(|(tag, lang)| {
+                let pattern = format!("sans-serif:lang={lang}");
+                Some((tag, Command::new("fc-match").args(["-f", "%{family[0]}", &pattern]).stdout(std::process::Stdio::piped()).spawn().ok()?))
+            })
+            .collect();
+        asked
+            .into_iter()
+            .filter_map(|(tag, child)| Some((tag, String::from_utf8(child.wait_with_output().ok()?.stdout).ok()?)))
+            .filter(|(_, family)| !family.is_empty())
+            .collect()
+    });
+    ordered(fonts, language)
+}
+
+/// The families, `language`'s first, each once.
+fn ordered(fonts: &[(&str, String)], language: &str) -> Vec<String> {
+    let mut families: Vec<String> = Vec::new();
+    for (_, family) in fonts.iter().filter(|(tag, _)| *tag == language).chain(fonts) {
+        if !families.contains(family) {
+            families.push(family.clone());
+        }
+    }
+    families
+}
+
 /// Whether menu items show icons: GNOME's apps' none, KDE's unless turned
 /// off (kdeglobals' ShowIconsInMenuItems), other desktops' and systems' do.
 pub fn menu_icons() -> bool {
@@ -857,6 +893,13 @@ fn luminance(rgb: u32) -> f32 {
 
 #[cfg(test)]
 mod tests {
+    #[test]
+    fn puts_the_languages_script_font_first() {
+        let fonts = [("zh-Hans", "YaHei".to_owned()), ("ja", "Droid".to_owned()), ("ko", "Malgun".to_owned()), ("zh-Hant", "Droid".to_owned())];
+        assert_eq!(ordered(&fonts, "ko"), ["Malgun", "YaHei", "Droid"]);
+        assert_eq!(ordered(&fonts, "de"), ["YaHei", "Droid", "Malgun"]);
+    }
+
     use super::*;
 
     #[test]

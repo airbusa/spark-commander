@@ -1,0 +1,4823 @@
+{
+  "about.addons": {
+    "message": "İsteğe bağlı indirilen eklentiler"
+  },
+  "about.libraries": {
+    "message": "Temel aldığı kitaplıklar"
+  },
+  "about.licence": {
+    "message": "Lisans:"
+  },
+  "about.made_with": {
+    "message": "Bu projelerin emeğiyle yapıldı"
+  },
+  "about.part.alacritty_terminal": {
+    "message": "Yerleşik terminalin ekranı ve kabuğu"
+  },
+  "about.part.encoding_rs": {
+    "message": "Kod sayfaları"
+  },
+  "about.part.gpui": {
+    "message": "Pencere, çizim ve girdi (Zed’in)"
+  },
+  "about.part.gpui_kit": {
+    "message": "Denetimler: listeler, menüler, alanlar, düzenleyici"
+  },
+  "about.part.html5ever": {
+    "message": "Görüntüleyicide HTML ve e-kitaplar"
+  },
+  "about.part.image": {
+    "message": "Resimler"
+  },
+  "about.part.keyring": {
+    "message": "Sistemin anahtarlığındaki parolalar"
+  },
+  "about.part.lucide": {
+    "message": "Simgeler"
+  },
+  "about.part.material_icons": {
+    "message": "Dosya ve klasör simgeleri"
+  },
+  "about.part.pdfium_render": {
+    "message": "Rust’tan PDFium"
+  },
+  "about.part.ratatui": {
+    "message": "scmd, terminal sürümü"
+  },
+  "about.part.russh": {
+    "message": "SSH ve SFTP"
+  },
+  "about.part.rustls": {
+    "message": "TLS"
+  },
+  "about.part.serde": {
+    "message": "Ayar dosyaları"
+  },
+  "about.part.similar": {
+    "message": "İçeriğe göre karşılaştır"
+  },
+  "about.part.suppaftp": {
+    "message": "FTP ve FTPS"
+  },
+  "about.part.tokio": {
+    "message": "Arka planda ağ işleri"
+  },
+  "about.part.trash": {
+    "message": "Çöp kutusu"
+  },
+  "about.part.tree_sitter": {
+    "message": "Görüntüleyici ve düzenleyicide kod renklendirme"
+  },
+  "about.part.zbus": {
+    "message": "D-Bus: masaüstü, cihazlar, KDE Connect"
+  },
+  "about.shipped": {
+    "message": "Birlikte gelenler"
+  },
+  "about.tagline": {
+    "message": "İki panelli bir dosya yöneticisi, özgür yazılım."
+  },
+  "about.title": {
+    "message": "Spark Commander hakkında"
+  },
+  "about.version": {
+    "message": "Sürüm {version}"
+  },
+  "activity.clear": {
+    "message": "Temizle"
+  },
+  "activity.clear_failed": {
+    "message": "Günlük temizlenemedi: {err}"
+  },
+  "activity.empty": {
+    "message": "Henüz bir şey yapılmadı."
+  },
+  "activity.title": {
+    "message": "Etkinlik günlüğü"
+  },
+  "addons.error.damaged": {
+    "message": "indirilen dosya bozuk: sağlama toplamı farklı"
+  },
+  "addons.error.list": {
+    "message": "eklenti listesi: {err}"
+  },
+  "addons.error.missing_file": {
+    "message": "indirilen dosyada {file} yok"
+  },
+  "addons.error.no_folder": {
+    "message": "veri klasörü yok"
+  },
+  "addons.error.unpacking": {
+    "message": "paketten çıkarılamadı: {err}"
+  },
+  "addons.installed": {
+    "message": "{addon} {version} yüklendi."
+  },
+  "addons.megabytes": {
+    "message": "{size} MB"
+  },
+  "addons.offer.never": {
+    "message": "Bir daha gösterme"
+  },
+  "addons.offer.no": {
+    "message": "Hayır"
+  },
+  "addons.offer.text": {
+    "message": "{name} için yüklü olmayan bir eklenti gerekiyor: {addon}. Ayarlar > Eklentiler bölümünden indirilsin mi?"
+  },
+  "addons.offer.title": {
+    "message": "Eklenti"
+  },
+  "addons.offer.yes": {
+    "message": "Evet"
+  },
+  "addons.purpose.cloud": {
+    "message": "Çevrimiçi depolama: S3, Google Drive, OneDrive, Dropbox ve diğer hizmetler."
+  },
+  "addons.purpose.media": {
+    "message": "Video ve ses, HEIC ve AVIF fotoğraflar: görüntüleyici ve Hızlı görünüm bunları gösterir."
+  },
+  "addons.purpose.office": {
+    "message": "Office belgeleri: görüntüleyici Word, Excel ve PowerPoint dosyalarını PDF olarak gösterir."
+  },
+  "addons.purpose.pdfium": {
+    "message": "PDF: görüntüleyici PDF dosyalarını ve dönüştürüldükten sonra Office belgelerini gösterir."
+  },
+  "addons.purpose.seven_zip": {
+    "message": "Arşivler: 7z, zip, rar, tar ve diğerlerini paketler ve açar."
+  },
+  "addons.update": {
+    "message": "Güncelle"
+  },
+  "addons.updates": {
+    "message": "Eklenti güncellemeleri: {names}"
+  },
+  "appearance.dark": {
+    "message": "Koyu"
+  },
+  "appearance.light": {
+    "message": "Açık"
+  },
+  "appearance.system": {
+    "message": "Sistemle aynı"
+  },
+  "archive.cannot_read": {
+    "message": "{name}: okunamıyor"
+  },
+  "archive.not_in_archive": {
+    "message": "{name} arşivde yok"
+  },
+  "archive.not_own_folder": {
+    "message": "{folder} bu kullanıcının kendi klasörü değil"
+  },
+  "archive.seven_zip_failed": {
+    "message": "7-Zip başarısız oldu ({code})"
+  },
+  "archive.seven_zip_missing": {
+    "message": "7-Zip eksik: {path} (vendor/7zip/fetch.sh veya fetch.bat çalıştırın)"
+  },
+  "archive.temp_not_utf8": {
+    "message": "geçici klasörün adı UTF-8 değil"
+  },
+  "associations.add": {
+    "message": "Ekle..."
+  },
+  "associations.cancel": {
+    "message": "İptal"
+  },
+  "associations.close": {
+    "message": "Kapat"
+  },
+  "associations.column.edit": {
+    "message": "Düzenle (F4)"
+  },
+  "associations.column.files": {
+    "message": "Dosyalar"
+  },
+  "associations.column.open": {
+    "message": "Aç (Enter)"
+  },
+  "associations.column.view": {
+    "message": "Görüntüle (F3)"
+  },
+  "associations.edit": {
+    "message": "Düzenle..."
+  },
+  "associations.edit_dialog.title": {
+    "message": "İlişkilendir"
+  },
+  "associations.empty": {
+    "message": "Henüz yok."
+  },
+  "associations.field.edit": {
+    "message": "Birlikte düzenle (F4):"
+  },
+  "associations.field.files": {
+    "message": "Dosyalar (*.jpg *.png):"
+  },
+  "associations.field.open": {
+    "message": "Birlikte aç (Enter):"
+  },
+  "associations.field.view": {
+    "message": "Birlikte görüntüle (F3):"
+  },
+  "associations.intro": {
+    "message": "Enter, F3 ve F4, bir maskeye uyan dosyalar için bu programları çalıştırır; boş bırakılırsa olağan program kullanılır. %1 dosyanın kendisidir."
+  },
+  "associations.mask_needed": {
+    "message": "Dosya maskesi gerekli: *.txt"
+  },
+  "associations.no_file": {
+    "message": "İmleci, ilişkilendirilecek türde bir dosyanın üzerine getirin."
+  },
+  "associations.ok": {
+    "message": "Tamam"
+  },
+  "associations.remove": {
+    "message": "Kaldır"
+  },
+  "associations.save_failed": {
+    "message": "Ayarlar kaydedilemedi: {err}"
+  },
+  "associations.title": {
+    "message": "Dahili ilişkilendirmeler"
+  },
+  "attributes.bad_time": {
+    "message": "“{text}” bir tarih ve saat değil: 2026-11-10 14:04:33"
+  },
+  "attributes.cancel": {
+    "message": "İptal"
+  },
+  "attributes.change_time": {
+    "message": "Tarihi/saati değiştir:"
+  },
+  "attributes.changed": {
+    "message": "{count, plural, one {# değiştirildi} other {# değiştirildi}}"
+  },
+  "attributes.changed_failed": {
+    "message": "{count, plural, one {# değiştirildi} other {# değiştirildi}}, {failed, plural, one {# başarısız} other {# başarısız}}"
+  },
+  "attributes.dialog_title_many": {
+    "message": "Öznitelikleri değiştir: {count, plural, one {# öğe} other {# öğe}}"
+  },
+  "attributes.dialog_title_one": {
+    "message": "Öznitelikleri değiştir: {name}"
+  },
+  "attributes.execute": {
+    "message": "Çalıştırma"
+  },
+  "attributes.group": {
+    "message": "Grup"
+  },
+  "attributes.in_archive": {
+    "message": "Arşivlerin içindeki öznitelikler değiştirilemez."
+  },
+  "attributes.no_bits": {
+    "message": "Bu dosyaların burada izin bitleri yok; yalnızca tarih değiştirilebilir."
+  },
+  "attributes.now": {
+    "message": "Şimdi"
+  },
+  "attributes.octal": {
+    "message": "Sekizlik:"
+  },
+  "attributes.ok": {
+    "message": "Tamam"
+  },
+  "attributes.others": {
+    "message": "Diğerleri"
+  },
+  "attributes.owner": {
+    "message": "Sahip"
+  },
+  "attributes.read": {
+    "message": "Okuma"
+  },
+  "attributes.recurse": {
+    "message": "Klasörlerin içindeki her şeye de uygula"
+  },
+  "attributes.title_many": {
+    "message": "{count, plural, one {# öğenin} other {# öğenin}} özniteliklerini değiştir"
+  },
+  "attributes.title_one": {
+    "message": "“{name}” öğesinin özniteliklerini değiştir"
+  },
+  "attributes.write": {
+    "message": "Yazma"
+  },
+  "bookmarks.add_current": {
+    "message": "Geçerli klasörü ekle"
+  },
+  "bookmarks.add_folders": {
+    "message": "Klasör ekle..."
+  },
+  "bookmarks.added": {
+    "message": "Yer imlerine eklendi: {name}"
+  },
+  "bookmarks.already": {
+    "message": "{name} zaten yer imlerinde."
+  },
+  "bookmarks.chooser.failed": {
+    "message": "Klasör seçici gösterilemedi: {err}"
+  },
+  "bookmarks.chooser.prompt": {
+    "message": "Yer imi ekle"
+  },
+  "bookmarks.close": {
+    "message": "Kapat"
+  },
+  "bookmarks.copy_name": {
+    "message": "Adı kopyala"
+  },
+  "bookmarks.copy_path": {
+    "message": "Yolu kopyala"
+  },
+  "bookmarks.drop_here": {
+    "message": "Klasörleri buraya bırakın."
+  },
+  "bookmarks.empty": {
+    "message": "Yer imi yok: klasör ekleyin ya da buraya bırakın."
+  },
+  "bookmarks.intro": {
+    "message": "Bu bilgisayarın klasörleri, Yerler’deki sırasıyla: taşımak için birini sürükleyin ya da eklemek için klasörleri buraya bırakın."
+  },
+  "bookmarks.move_down": {
+    "message": "Aşağı taşı"
+  },
+  "bookmarks.move_up": {
+    "message": "Yukarı taşı"
+  },
+  "bookmarks.only_local": {
+    "message": "Yalnızca bu bilgisayarın klasörleri yer imlerine eklenebilir."
+  },
+  "bookmarks.remove": {
+    "message": "Kaldır"
+  },
+  "bookmarks.remove_from": {
+    "message": "Yer imlerinden kaldır"
+  },
+  "bookmarks.rename": {
+    "message": "Yeniden adlandır..."
+  },
+  "bookmarks.rename_label": {
+    "message": "Ad (boş: klasörün adı):"
+  },
+  "bookmarks.rename_title": {
+    "message": "Yer imini yeniden adlandır"
+  },
+  "bookmarks.sort": {
+    "message": "A–Z sırala"
+  },
+  "bookmarks.title": {
+    "message": "Yer imleri"
+  },
+  "button_bar.copy": {
+    "message": "Kopyala"
+  },
+  "button_bar.delete": {
+    "message": "Sil"
+  },
+  "button_bar.edit": {
+    "message": "Düzenle"
+  },
+  "button_bar.move": {
+    "message": "Taşı"
+  },
+  "button_bar.new_folder": {
+    "message": "Yeni klasör"
+  },
+  "button_bar.quit": {
+    "message": "Çıkış"
+  },
+  "button_bar.view": {
+    "message": "Görüntüle"
+  },
+  "checksum.create.title": {
+    "message": "{name} dosyasını oluştur"
+  },
+  "checksum.create.title_separate": {
+    "message": "{method} sağlama toplamı dosyaları oluştur"
+  },
+  "checksum.dialog_title": {
+    "message": "Sağlama toplamı dosyaları oluştur"
+  },
+  "checksum.save_as": {
+    "message": "Sağlama toplamı dosyasını şuraya kaydet:"
+  },
+  "checksum.separate": {
+    "message": "Bunun yerine her dosyanın yanına ayrı bir sağlama toplamı dosyası"
+  },
+  "checksum.verify.all_ok": {
+    "message": "{count, plural, one {# dosya doğru} other {# dosyanın tümü doğru}}"
+  },
+  "checksum.verify.choose": {
+    "message": "Sağlama toplamı dosyalarını seçin: .sfv, .md5, .sha1, .sha256 veya .sha512."
+  },
+  "checksum.verify.missing_file": {
+    "message": "eksik: {name}"
+  },
+  "checksum.verify.result": {
+    "message": "{ok, plural, one {# doğru} other {# doğru}}, {wrong, plural, one {# yanlış} other {# yanlış}}, {missing, plural, one {# eksik} other {# eksik}}"
+  },
+  "checksum.verify.title_many": {
+    "message": "{count, plural, one {# sağlama toplamı dosyasını} other {# sağlama toplamı dosyasını}} doğrula"
+  },
+  "checksum.verify.title_one": {
+    "message": "{name} dosyasını doğrula"
+  },
+  "checksum.verify.wrong_file": {
+    "message": "yanlış: {name}"
+  },
+  "command.about": {
+    "message": "Spark Commander hakkında"
+  },
+  "command.activity_log": {
+    "message": "Etkinlik günlüğü..."
+  },
+  "command.all_files": {
+    "message": "Tüm dosyalar"
+  },
+  "command.all_folder_sizes": {
+    "message": "Tüm klasör boyutlarını hesapla"
+  },
+  "command.all_with_extension": {
+    "message": "*.*"
+  },
+  "command.associate_with": {
+    "message": "İlişkilendir..."
+  },
+  "command.bookmark_folder": {
+    "message": "Bu klasörü yer imlerine ekle"
+  },
+  "command.bookmarks": {
+    "message": "Yer imleri"
+  },
+  "command.branch_view": {
+    "message": "Dal görünümü (alt klasörlerle)"
+  },
+  "command.branch_view_selected": {
+    "message": "Seçili klasörlerin dal görünümü"
+  },
+  "command.brief": {
+    "message": "Kısa"
+  },
+  "command.calculate_occupied_space": {
+    "message": "Kaplanan alanı hesapla..."
+  },
+  "command.change_attributes": {
+    "message": "Öznitelikleri değiştir..."
+  },
+  "command.close_all_tabs": {
+    "message": "Tüm sekmeleri kapat"
+  },
+  "command.close_duplicate_tabs": {
+    "message": "Yinelenen sekmeleri kapat"
+  },
+  "command.close_tab": {
+    "message": "Sekmeyi kapat"
+  },
+  "command.combine_files": {
+    "message": "Dosyaları birleştir..."
+  },
+  "command.compare_by_content": {
+    "message": "İçeriğe göre karşılaştır..."
+  },
+  "command.compare_directories": {
+    "message": "Daha yenileri işaretle"
+  },
+  "command.copy": {
+    "message": "Kopyala..."
+  },
+  "command.copy_names_to_clipboard": {
+    "message": "Seçili adları panoya kopyala"
+  },
+  "command.copy_names_with_path_to_clipboard": {
+    "message": "Adları yollarıyla panoya kopyala"
+  },
+  "command.copy_to_clipboard": {
+    "message": "Dosyaları kopyala"
+  },
+  "command.copy_with_all_details": {
+    "message": "Tüm ayrıntılarla panoya kopyala"
+  },
+  "command.copy_with_path_and_details": {
+    "message": "Yol ve ayrıntılarla panoya kopyala"
+  },
+  "command.create_checksum_files": {
+    "message": "Sağlama toplamı dosyası oluştur (CRC32, MD5, SHA1, SHA256, SHA512)..."
+  },
+  "command.create_link": {
+    "message": "Bağlantı oluştur..."
+  },
+  "command.custom_filter": {
+    "message": "Özel..."
+  },
+  "command.cut_to_clipboard": {
+    "message": "Dosyaları kes"
+  },
+  "command.delete": {
+    "message": "Sil"
+  },
+  "command.delete_permanently": {
+    "message": "Kalıcı olarak sil"
+  },
+  "command.disconnect": {
+    "message": "Sunucu bağlantısını kes"
+  },
+  "command.download_link": {
+    "message": "Bağlantıdan indir..."
+  },
+  "command.duplicate_tab": {
+    "message": "Yeni sekme"
+  },
+  "command.duplicate_workspace": {
+    "message": "Çalışma alanını çoğalt..."
+  },
+  "command.edit": {
+    "message": "Düzenle"
+  },
+  "command.edit_externally": {
+    "message": "Harici düzenleyiciyle düzenle"
+  },
+  "command.folder_history": {
+    "message": "Klasör geçmişi..."
+  },
+  "command.full": {
+    "message": "Ayrıntılı"
+  },
+  "command.go_back": {
+    "message": "Geri"
+  },
+  "command.go_forward": {
+    "message": "İleri"
+  },
+  "command.go_home": {
+    "message": "Ev klasörü"
+  },
+  "command.go_to_root": {
+    "message": "Kök klasör"
+  },
+  "command.hidden_files": {
+    "message": "Gizli dosyalar"
+  },
+  "command.internal_associations": {
+    "message": "Dahili ilişkilendirmeler (yalnızca Spark Commander)..."
+  },
+  "command.invert_selection": {
+    "message": "Seçimi tersine çevir"
+  },
+  "command.left_drives": {
+    "message": "Sürücüler (sol panel)"
+  },
+  "command.list_tabs": {
+    "message": "Sekme listesi"
+  },
+  "command.load_selection_from_file": {
+    "message": "Seçimi dosyadan yükle"
+  },
+  "command.manage_bookmarks": {
+    "message": "Yer imlerini yönet..."
+  },
+  "command.manage_tools": {
+    "message": "Araçları yönet..."
+  },
+  "command.manage_workspaces": {
+    "message": "Çalışma alanlarını yönet..."
+  },
+  "command.mark_in_place": {
+    "message": "Yerinde işaretle / işareti kaldır, klasörün boyutu ölçülür"
+  },
+  "command.mark_newer_hide_same": {
+    "message": "Daha yenileri işaretle, aynı dosyaları gizle"
+  },
+  "command.move": {
+    "message": "Taşı..."
+  },
+  "command.multi_rename_tool": {
+    "message": "Toplu yeniden adlandırma aracı..."
+  },
+  "command.name_to_command_line": {
+    "message": "Adı komut satırına aktar"
+  },
+  "command.new_folder": {
+    "message": "Yeni klasör..."
+  },
+  "command.new_terminal": {
+    "message": "Yeni terminal sekmesi"
+  },
+  "command.new_text_file": {
+    "message": "Yeni dosya..."
+  },
+  "command.new_workspace": {
+    "message": "Yeni çalışma alanı..."
+  },
+  "command.next_tab": {
+    "message": "Sonraki sekme"
+  },
+  "command.only_selected_files": {
+    "message": "Yalnızca seçili dosyalar"
+  },
+  "command.open_in_left_panel": {
+    "message": "Sol panelde göster"
+  },
+  "command.open_in_new_tab": {
+    "message": "Klasörü yeni sekmede aç"
+  },
+  "command.open_in_other_new_tab": {
+    "message": "Klasörü diğer panelin yeni sekmesinde aç"
+  },
+  "command.open_in_right_panel": {
+    "message": "Sağ panelde göster"
+  },
+  "command.open_terminal": {
+    "message": "Terminali burada aç"
+  },
+  "command.operation_queue": {
+    "message": "İşlem kuyruğu..."
+  },
+  "command.pack": {
+    "message": "Paketle..."
+  },
+  "command.paste_from_clipboard": {
+    "message": "Dosyaları yapıştır"
+  },
+  "command.path_and_name_to_command_line": {
+    "message": "Yolu ve adı komut satırına aktar"
+  },
+  "command.path_to_command_line": {
+    "message": "Yolu komut satırına aktar"
+  },
+  "command.previous_tab": {
+    "message": "Önceki sekme"
+  },
+  "command.programs": {
+    "message": "Programlar"
+  },
+  "command.properties": {
+    "message": "Özellikler..."
+  },
+  "command.quick_filter": {
+    "message": "Hızlı filtre"
+  },
+  "command.quick_open": {
+    "message": "Hızlı aç..."
+  },
+  "command.quick_view_panel": {
+    "message": "Hızlı görünüm paneli"
+  },
+  "command.quit": {
+    "message": "Çıkış"
+  },
+  "command.redo": {
+    "message": "Yinele"
+  },
+  "command.rename_in_place": {
+    "message": "Yeniden adlandır"
+  },
+  "command.reread_source": {
+    "message": "Kaynağı yeniden oku"
+  },
+  "command.restore_selection": {
+    "message": "Seçimi geri yükle"
+  },
+  "command.reversed_order": {
+    "message": "Ters sıra"
+  },
+  "command.right_drives": {
+    "message": "Sürücüler (sağ panel)"
+  },
+  "command.save_selection": {
+    "message": "Seçimi kaydet"
+  },
+  "command.save_selection_to_file": {
+    "message": "Seçimi dosyaya kaydet"
+  },
+  "command.search": {
+    "message": "Ara..."
+  },
+  "command.search_in_separate_process": {
+    "message": "Ayrı pencerede ara..."
+  },
+  "command.select_all": {
+    "message": "Tümünü seç"
+  },
+  "command.select_all_with_same_extension": {
+    "message": "Aynı uzantılı tümünü seç"
+  },
+  "command.select_group": {
+    "message": "Grup seç..."
+  },
+  "command.settings": {
+    "message": "Ayarlar..."
+  },
+  "command.shortcuts": {
+    "message": "Kısayollar..."
+  },
+  "command.sidebar_connections": {
+    "message": "Bağlantılar"
+  },
+  "command.sidebar_operations": {
+    "message": "İşlemler"
+  },
+  "command.sidebar_places": {
+    "message": "Yerler"
+  },
+  "command.sidebar_tree": {
+    "message": "Klasörler"
+  },
+  "command.sort_by_extension": {
+    "message": "Uzantı"
+  },
+  "command.sort_by_name": {
+    "message": "Ad"
+  },
+  "command.sort_by_size": {
+    "message": "Boyut"
+  },
+  "command.sort_by_time": {
+    "message": "Zaman"
+  },
+  "command.split_file": {
+    "message": "Dosyayı böl..."
+  },
+  "command.swap_panels": {
+    "message": "Panelleri değiştir"
+  },
+  "command.swap_panels_and_tabs": {
+    "message": "Panelleri sekmeleriyle değiştir"
+  },
+  "command.sync_browsing": {
+    "message": "Eşzamanlı gezinme"
+  },
+  "command.synchronize_dirs": {
+    "message": "Dizinleri eşitle..."
+  },
+  "command.target_equals_source": {
+    "message": "Hedef = Kaynak"
+  },
+  "command.terminal_panel": {
+    "message": "Terminal"
+  },
+  "command.test_archives": {
+    "message": "Arşivleri test et"
+  },
+  "command.thumbnail_view": {
+    "message": "Küçük resim görünümü"
+  },
+  "command.toggle_mark": {
+    "message": "İşaretle / işareti kaldır"
+  },
+  "command.toggle_sidebar": {
+    "message": "Kenar çubuğunu göster"
+  },
+  "command.undo": {
+    "message": "Geri al"
+  },
+  "command.unpack_specific_files": {
+    "message": "Belirli dosyaları paketten çıkar..."
+  },
+  "command.unselect_all": {
+    "message": "Tüm seçimi kaldır"
+  },
+  "command.unselect_group": {
+    "message": "Grup seçimini kaldır..."
+  },
+  "command.unsorted": {
+    "message": "Sıralanmamış"
+  },
+  "command.verify_checksums": {
+    "message": "Sağlama toplamlarını doğrula (sağlama toplamı dosyalarından)"
+  },
+  "command.vertical_arrangement": {
+    "message": "Dikey yerleşim"
+  },
+  "command.view": {
+    "message": "Görüntüle"
+  },
+  "command.website": {
+    "message": "Spark Commander web sitesi"
+  },
+  "command.workspace1": {
+    "message": "1. çalışma alanını aç"
+  },
+  "command.workspace2": {
+    "message": "2. çalışma alanını aç"
+  },
+  "command.workspace3": {
+    "message": "3. çalışma alanını aç"
+  },
+  "command.workspace4": {
+    "message": "4. çalışma alanını aç"
+  },
+  "command.workspace5": {
+    "message": "5. çalışma alanını aç"
+  },
+  "command.workspace6": {
+    "message": "6. çalışma alanını aç"
+  },
+  "command.workspace7": {
+    "message": "7. çalışma alanını aç"
+  },
+  "command.workspace8": {
+    "message": "8. çalışma alanını aç"
+  },
+  "command.workspace9": {
+    "message": "9. çalışma alanını aç"
+  },
+  "command_line.error.cannot_run": {
+    "message": "{program}: çalıştırılamıyor"
+  },
+  "command_line.error.not_found": {
+    "message": "{program}: komut bulunamadı"
+  },
+  "command_line.history.empty": {
+    "message": "Henüz komut çalıştırılmadı"
+  },
+  "command_line.on_server": {
+    "message": "Komutlar bu bilgisayarda çalışır; panel bir sunucuyu gösteriyor."
+  },
+  "command_name.all_files": {
+    "message": "Tüm dosyaları göster"
+  },
+  "command_name.all_with_extension": {
+    "message": "*.* göster"
+  },
+  "command_name.brief": {
+    "message": "Kısa görünüm"
+  },
+  "command_name.compare_directories": {
+    "message": "Dizinleri karşılaştır: daha yenileri işaretle"
+  },
+  "command_name.custom_filter": {
+    "message": "Özel filtre"
+  },
+  "command_name.duplicate_tab": {
+    "message": "Yeni sekme (bunun bir kopyası)"
+  },
+  "command_name.full": {
+    "message": "Ayrıntılı görünüm"
+  },
+  "command_name.go_back": {
+    "message": "Geri git"
+  },
+  "command_name.go_forward": {
+    "message": "İleri git"
+  },
+  "command_name.go_home": {
+    "message": "Ev klasörüne git"
+  },
+  "command_name.hidden_files": {
+    "message": "Gizli dosyaları göster"
+  },
+  "command_name.only_selected_files": {
+    "message": "Yalnızca seçili dosyaları göster"
+  },
+  "command_name.programs": {
+    "message": "Programları göster"
+  },
+  "command_name.quick_filter": {
+    "message": "Hızlı filtre"
+  },
+  "command_name.rename_in_place": {
+    "message": "Yerinde yeniden adlandır"
+  },
+  "command_name.sidebar_connections": {
+    "message": "Kenar çubuğu: Bağlantılar"
+  },
+  "command_name.sidebar_operations": {
+    "message": "Kenar çubuğu: İşlemler"
+  },
+  "command_name.sidebar_places": {
+    "message": "Kenar çubuğu: Yerler"
+  },
+  "command_name.sidebar_tree": {
+    "message": "Kenar çubuğu: Klasörler"
+  },
+  "command_name.sort_by_extension": {
+    "message": "Uzantıya göre sırala"
+  },
+  "command_name.sort_by_name": {
+    "message": "Ada göre sırala"
+  },
+  "command_name.sort_by_size": {
+    "message": "Boyuta göre sırala"
+  },
+  "command_name.sort_by_time": {
+    "message": "Zamana göre sırala"
+  },
+  "command_name.toggle_sidebar": {
+    "message": "Kenar çubuğu: göster veya gizle"
+  },
+  "command_name.unsorted": {
+    "message": "Sıralama yok"
+  },
+  "compare.browse.prompt": {
+    "message": "Karşılaştır"
+  },
+  "compare.button.compare": {
+    "message": "Karşılaştır"
+  },
+  "compare.button.next": {
+    "message": "Sonraki fark (N)"
+  },
+  "compare.button.previous": {
+    "message": "Önceki fark (P)"
+  },
+  "compare.need_two_files": {
+    "message": "İmleci her panelde bir dosyanın üzerine getirin ya da iki dosya işaretleyin."
+  },
+  "compare.option.binary": {
+    "message": "İkili"
+  },
+  "compare.option.ignore_case": {
+    "message": "Büyük/küçük harfi yoksay"
+  },
+  "compare.option.ignore_spaces": {
+    "message": "Yinelenen boşlukları yoksay"
+  },
+  "compare.option.only_differences": {
+    "message": "Yalnızca farklar"
+  },
+  "compare.status.bytes_differ": {
+    "message": "{place}: {count, plural, one {{grouped} bayt farklı} other {{grouped} bayt farklı}}, ilki {first} konumunda; boyutlar {left} ve {right}."
+  },
+  "compare.status.comparing": {
+    "message": "Karşılaştırılıyor…"
+  },
+  "compare.status.difference_of": {
+    "message": "Fark {at} / {count}"
+  },
+  "compare.status.differences": {
+    "message": "{count, plural, one {# fark} other {# fark}}"
+  },
+  "compare.status.identical": {
+    "message": "{count, plural, one {Dosyalar aynı: {grouped} bayt.} other {Dosyalar aynı: {grouped} bayt.}}"
+  },
+  "compare.status.no_differences": {
+    "message": "Fark yok."
+  },
+  "compare.window.title": {
+    "message": "Karşılaştır: {left} — {right}"
+  },
+  "connections.connect": {
+    "message": "Bağlan"
+  },
+  "connections.copy_name": {
+    "message": "Adı kopyala"
+  },
+  "connections.copy_path": {
+    "message": "Yolu kopyala"
+  },
+  "connections.delete": {
+    "message": "Sil"
+  },
+  "connections.dialog.title": {
+    "message": "Bağlantı"
+  },
+  "connections.disconnect": {
+    "message": "Bağlantıyı kes"
+  },
+  "connections.duplicate": {
+    "message": "Çoğalt"
+  },
+  "connections.duplicate_name": {
+    "message": "{name} (kopya)"
+  },
+  "connections.edit": {
+    "message": "Düzenle..."
+  },
+  "connections.empty": {
+    "message": "Henüz bağlantı yok."
+  },
+  "connections.error.no_server": {
+    "message": "Bir sunucu gerekli."
+  },
+  "connections.error.port": {
+    "message": "Geçerli bir bağlantı noktası değil: {text}"
+  },
+  "connections.field.access_key": {
+    "message": "Erişim anahtarı"
+  },
+  "connections.field.api_key": {
+    "message": "API anahtarı"
+  },
+  "connections.field.application_key": {
+    "message": "Uygulama anahtarı"
+  },
+  "connections.field.bucket": {
+    "message": "Kova/klasör"
+  },
+  "connections.field.container": {
+    "message": "Kapsayıcı/klasör"
+  },
+  "connections.field.endpoint": {
+    "message": "Uç nokta"
+  },
+  "connections.field.key_id": {
+    "message": "Anahtar kimliği"
+  },
+  "connections.field.name": {
+    "message": "Ad"
+  },
+  "connections.field.password": {
+    "message": "Parola"
+  },
+  "connections.field.port": {
+    "message": "Bağlantı noktası"
+  },
+  "connections.field.protocol": {
+    "message": "Protokol"
+  },
+  "connections.field.secret_key": {
+    "message": "Gizli anahtar"
+  },
+  "connections.field.server": {
+    "message": "Sunucu"
+  },
+  "connections.field.start_folder": {
+    "message": "Başlangıç klasörü"
+  },
+  "connections.field.user": {
+    "message": "Kullanıcı"
+  },
+  "connections.folder.delete_confirm": {
+    "message": "{count, plural, one {{name} klasörü ve içindeki bağlantı silinsin mi?} other {{name} klasörü ve içindeki # bağlantı silinsin mi?}}"
+  },
+  "connections.folder.delete_title": {
+    "message": "Klasörü sil"
+  },
+  "connections.folder.exists": {
+    "message": "{name} adında bir klasör zaten var."
+  },
+  "connections.folder.name": {
+    "message": "Ad:"
+  },
+  "connections.folder.new_title": {
+    "message": "Yeni klasör"
+  },
+  "connections.folder.rename": {
+    "message": "Yeniden adlandır..."
+  },
+  "connections.folder.rename_title": {
+    "message": "Klasörü yeniden adlandır"
+  },
+  "connections.forget_password": {
+    "message": "Saklanan parolayı unut"
+  },
+  "connections.move_down": {
+    "message": "Aşağı taşı"
+  },
+  "connections.move_to_folder": {
+    "message": "Klasöre taşı"
+  },
+  "connections.move_up": {
+    "message": "Yukarı taşı"
+  },
+  "connections.new": {
+    "message": "Yeni bağlantı..."
+  },
+  "connections.new_folder": {
+    "message": "Yeni klasör..."
+  },
+  "connections.no_folder": {
+    "message": "Klasör yok"
+  },
+  "connections.open_in_terminal": {
+    "message": "Terminalde aç"
+  },
+  "connections.placeholder.name": {
+    "message": "listede görüneceği gibi"
+  },
+  "connections.placeholder.password": {
+    "message": "ayarlar klasöründe şifreli saklanır; boş bırakılırsa korunur"
+  },
+  "connections.placeholder.path": {
+    "message": "oturum açma klasörü"
+  },
+  "connections.placeholder.port": {
+    "message": "varsayılan"
+  },
+  "connections.placeholder.server": {
+    "message": "sunucu veya ~/.ssh/config içindeki bir Host"
+  },
+  "connections.placeholder.user": {
+    "message": "~/.ssh/config dosyasına göre ya da anonim"
+  },
+  "connections.save_failed": {
+    "message": "Bağlantılar kaydedilemedi: {err}"
+  },
+  "connections.ssh_config.read_only": {
+    "message": "Salt okunur: bu sunucular doğrudan ~/.ssh/config içinde düzenlenir"
+  },
+  "context_menu.action_failed": {
+    "message": "{name} başarısız oldu: {err}"
+  },
+  "context_menu.actions": {
+    "message": "Eylemler"
+  },
+  "context_menu.copy": {
+    "message": "Kopyala"
+  },
+  "context_menu.create_new": {
+    "message": "Yeni oluştur"
+  },
+  "context_menu.cut": {
+    "message": "Kes"
+  },
+  "context_menu.delete": {
+    "message": "Sil"
+  },
+  "context_menu.edit": {
+    "message": "Düzenle"
+  },
+  "context_menu.empty_file": {
+    "message": "Boş dosya…"
+  },
+  "context_menu.move_to_trash": {
+    "message": "Çöp kutusuna taşı"
+  },
+  "context_menu.new_file_dialog.label": {
+    "message": "Yeni dosya adı:"
+  },
+  "context_menu.new_file_dialog.title": {
+    "message": "Yeni dosya"
+  },
+  "context_menu.new_file_failed": {
+    "message": "Dosya oluşturulamadı: {err}"
+  },
+  "context_menu.new_folder": {
+    "message": "Klasör…"
+  },
+  "context_menu.open": {
+    "message": "Aç"
+  },
+  "context_menu.open_failed": {
+    "message": "Açılamadı: {err}"
+  },
+  "context_menu.open_terminal_here": {
+    "message": "Terminali burada aç"
+  },
+  "context_menu.open_with": {
+    "message": "Birlikte aç"
+  },
+  "context_menu.other_application": {
+    "message": "Başka bir uygulama…"
+  },
+  "context_menu.pack": {
+    "message": "Paketle…"
+  },
+  "context_menu.pack_files": {
+    "message": "Dosyaları paketle"
+  },
+  "context_menu.paste": {
+    "message": "Yapıştır"
+  },
+  "context_menu.properties": {
+    "message": "Özellikler"
+  },
+  "context_menu.properties_failed": {
+    "message": "Özellikler: {err}"
+  },
+  "context_menu.rename": {
+    "message": "Yeniden adlandır…"
+  },
+  "context_menu.rename_dialog.label": {
+    "message": "Yeni ad:"
+  },
+  "context_menu.rename_dialog.title": {
+    "message": "Yeniden adlandır"
+  },
+  "context_menu.rename_failed": {
+    "message": "Yeniden adlandırılamadı: {err}"
+  },
+  "context_menu.shell_menu_failed": {
+    "message": "Menü: {err}"
+  },
+  "context_menu.show_failed": {
+    "message": "Gösterilemedi: {err}"
+  },
+  "context_menu.show_in_file_manager": {
+    "message": "Dosya yöneticisinde göster"
+  },
+  "context_menu.terminal_failed": {
+    "message": "Terminal açılamadı: {err}"
+  },
+  "context_menu.terminal_not_local": {
+    "message": "Terminal yalnızca bu bilgisayarın klasörlerinde açılır."
+  },
+  "context_menu.unpack": {
+    "message": "Paketten çıkar…"
+  },
+  "context_menu.view": {
+    "message": "Görüntüle"
+  },
+  "desktop.no_app_chooser": {
+    "message": "masaüstünde uygulama seçici yok ({err})"
+  },
+  "desktop.no_terminal": {
+    "message": "terminal bulunamadı"
+  },
+  "desktop.nothing_to_run": {
+    "message": "{name}: çalıştırılacak bir şey yok"
+  },
+  "desktop.scripts": {
+    "message": "Betikler"
+  },
+  "devices.error.mount_failed": {
+    "message": "cihaz bağlanamadı"
+  },
+  "devices.error.no_folder": {
+    "message": "cihaz hiçbir klasör paylaşmıyor"
+  },
+  "devices.error.system_only": {
+    "message": "bunun bağlantısını yalnızca sistem kaldırabilir"
+  },
+  "devices.error.unreachable": {
+    "message": "ulaşılamıyor: KDE Connect cihazda, bu ağda açık mı?"
+  },
+  "devices.unlock.ask": {
+    "message": "{name} için parola:"
+  },
+  "devices.unlock.ask_again": {
+    "message": "Yanlış parola. {name} için parola:"
+  },
+  "devices.unlock.title": {
+    "message": "Kilidi aç"
+  },
+  "devices.volume.share_on_server": {
+    "message": "{share} ({server} üzerinde)"
+  },
+  "devices.volume.unnamed": {
+    "message": "{size} GB birim"
+  },
+  "devices.volume.unnamed_encrypted": {
+    "message": "{size} GB şifreli birim"
+  },
+  "download.cancel": {
+    "message": "İptal"
+  },
+  "download.dialog_title": {
+    "message": "Bağlantıdan indir"
+  },
+  "download.download": {
+    "message": "İndir"
+  },
+  "download.folder_link": {
+    "message": "bağlantı bir klasörü gösteriyor"
+  },
+  "download.incomplete": {
+    "message": "sunucu {size, plural, one {# bayttan} other {# bayttan}} yalnızca {got} bayt gönderdi; yeniden indirildiğinde kaldığı yerden devam eder"
+  },
+  "download.into": {
+    "message": "Hedef klasör: {folder}"
+  },
+  "download.link": {
+    "message": "Bağlantı"
+  },
+  "download.link_placeholder": {
+    "message": "https://, http://, ftp:// veya ftps://"
+  },
+  "download.local_only": {
+    "message": "İndirilenler bu bilgisayarın klasörlerine kaydedilir: önce panelde böyle bir klasör açın."
+  },
+  "download.name_placeholder": {
+    "message": "sunucunun veya bağlantının verdiği ad"
+  },
+  "download.no_file": {
+    "message": "bağlantı bir dosya belirtmiyor"
+  },
+  "download.not_a_link": {
+    "message": "indirilebilecek bir bağlantı değil"
+  },
+  "download.problem.bad_name": {
+    "message": "Yalnızca dosya adı yazın, klasör olmadan."
+  },
+  "download.problem.empty": {
+    "message": "Bir bağlantı yapıştırın veya yazın."
+  },
+  "download.problem.exists": {
+    "message": "Burada {name} adlı bir dosya zaten var: Değiştir, onun üzerine indirir."
+  },
+  "download.problem.not_link": {
+    "message": "İndirilebilecek bir bağlantı değil: https://, http://, ftp:// veya ftps:// ile başlamalı."
+  },
+  "download.replace": {
+    "message": "Değiştir"
+  },
+  "download.save_as": {
+    "message": "Farklı kaydet"
+  },
+  "download.saved_as": {
+    "message": "{name} olarak kaydedildi"
+  },
+  "download.title": {
+    "message": "“{name}” dosyasını indir"
+  },
+  "download.title_link": {
+    "message": "İndir: {link}"
+  },
+  "editor.close.after_send": {
+    "message": "Sunucuya ulaştığında kapanacak."
+  },
+  "editor.close.discard": {
+    "message": "Kaydetme"
+  },
+  "editor.close.save": {
+    "message": "Kaydet"
+  },
+  "editor.close.title": {
+    "message": "Değişiklikler kaydedilsin mi?"
+  },
+  "editor.close.unsaved": {
+    "message": "{name} dosyasında kaydedilmemiş değişiklikler var."
+  },
+  "editor.close.unsent": {
+    "message": "{name} dosyası sunucusuna kaydedilmedi: gönderme başarısız oldu."
+  },
+  "editor.dialog.cancel": {
+    "message": "İptal"
+  },
+  "editor.edit.copy": {
+    "message": "Kopyala"
+  },
+  "editor.edit.cut": {
+    "message": "Kes"
+  },
+  "editor.edit.find": {
+    "message": "Bul..."
+  },
+  "editor.edit.find_next": {
+    "message": "Sonrakini bul"
+  },
+  "editor.edit.find_previous": {
+    "message": "Öncekini bul"
+  },
+  "editor.edit.go_to_line": {
+    "message": "Satıra git..."
+  },
+  "editor.edit.paste": {
+    "message": "Yapıştır"
+  },
+  "editor.edit.redo": {
+    "message": "Yinele"
+  },
+  "editor.edit.replace": {
+    "message": "Değiştir..."
+  },
+  "editor.edit.undo": {
+    "message": "Geri al"
+  },
+  "editor.external.not_set": {
+    "message": "harici düzenleyici ayarlanmamış (Ayarlar, Düzenle/Görüntüle)"
+  },
+  "editor.file.close": {
+    "message": "Kapat"
+  },
+  "editor.file.reload": {
+    "message": "Yeniden yükle"
+  },
+  "editor.file.save": {
+    "message": "Kaydet"
+  },
+  "editor.file.save_as": {
+    "message": "Farklı kaydet..."
+  },
+  "editor.find.close": {
+    "message": "Kapat (Escape)"
+  },
+  "editor.find.count": {
+    "message": "{current} / {total}"
+  },
+  "editor.find.in_selection": {
+    "message": "Seçimde bul (Alt+L)"
+  },
+  "editor.find.match_case": {
+    "message": "Büyük/küçük harf eşleştir (Alt+C)"
+  },
+  "editor.find.next": {
+    "message": "Sonraki eşleşme (Enter)"
+  },
+  "editor.find.no_results": {
+    "message": "Sonuç yok"
+  },
+  "editor.find.placeholder": {
+    "message": "Bul"
+  },
+  "editor.find.preserve_case": {
+    "message": "Büyük/küçük harfi koru (Alt+P)"
+  },
+  "editor.find.previous": {
+    "message": "Önceki eşleşme (Shift+Enter)"
+  },
+  "editor.find.regex": {
+    "message": "Normal ifade kullan (Alt+R)"
+  },
+  "editor.find.replace": {
+    "message": "Değiştir (Ctrl+Shift+1)"
+  },
+  "editor.find.replace_all": {
+    "message": "Tümünü değiştir (Ctrl+Alt+Enter)"
+  },
+  "editor.find.replace_placeholder": {
+    "message": "Değiştir"
+  },
+  "editor.find.toggle_replace": {
+    "message": "Değiştirmeyi aç/kapat"
+  },
+  "editor.find.whole_word": {
+    "message": "Tam sözcük eşleştir (Alt+W)"
+  },
+  "editor.go_to_line.label": {
+    "message": "Satır veya satır:sütun"
+  },
+  "editor.go_to_line.title": {
+    "message": "Satıra git"
+  },
+  "editor.language.by_file_name": {
+    "message": "Dosya adına göre"
+  },
+  "editor.language.plain_text": {
+    "message": "Düz metin"
+  },
+  "editor.menu.edit": {
+    "message": "Düzen"
+  },
+  "editor.menu.file": {
+    "message": "Dosya"
+  },
+  "editor.menu.language": {
+    "message": "Dil"
+  },
+  "editor.menu.selection": {
+    "message": "Seçim"
+  },
+  "editor.menu.view": {
+    "message": "Görünüm"
+  },
+  "editor.open.too_large": {
+    "message": "yerleşik düzenleyicinin {limit_mb} MB sınırını aşıyor (Ayarlar, Düzenle/Görüntüle); Ctrl+Shift+F4 harici düzenleyicide düzenler"
+  },
+  "editor.reload.button": {
+    "message": "Yeniden yükle"
+  },
+  "editor.reload.failed": {
+    "message": "Yeniden yüklenemedi: {err}"
+  },
+  "editor.reload.text": {
+    "message": "Kaydedilmemiş değişiklikler kaybolur."
+  },
+  "editor.reload.title": {
+    "message": "Dosya yeniden yüklensin mi?"
+  },
+  "editor.reload.unfit": {
+    "message": "Yeniden yüklenmedi: {why, select, binary {dosya ikili} other {dosya UTF-8 metni değil}}."
+  },
+  "editor.save.admin": {
+    "message": "“{name}” dosyası kaydedilirken"
+  },
+  "editor.save.failed": {
+    "message": "{path} kaydedilemedi: {err}"
+  },
+  "editor.save_anyway.button": {
+    "message": "Yine de kaydet"
+  },
+  "editor.save_anyway.text": {
+    "message": "Dosya metin değildi: kaydetmek onu gösterildiği gibi yazar, böylece metin olmayan her şey kalıcı olarak değişir."
+  },
+  "editor.save_anyway.title": {
+    "message": "Metin olarak kaydedilsin mi?"
+  },
+  "editor.selection.add_cursor_above": {
+    "message": "Yukarıya imleç ekle"
+  },
+  "editor.selection.add_cursor_below": {
+    "message": "Aşağıya imleç ekle"
+  },
+  "editor.selection.delete_lines": {
+    "message": "Satırları sil"
+  },
+  "editor.selection.duplicate_lines": {
+    "message": "Satırları çoğalt"
+  },
+  "editor.selection.indent": {
+    "message": "Girintile"
+  },
+  "editor.selection.lowercase": {
+    "message": "küçük harf"
+  },
+  "editor.selection.move_lines_down": {
+    "message": "Satırları aşağı taşı"
+  },
+  "editor.selection.move_lines_up": {
+    "message": "Satırları yukarı taşı"
+  },
+  "editor.selection.outdent": {
+    "message": "Girintiyi azalt"
+  },
+  "editor.selection.select_all": {
+    "message": "Tümünü seç"
+  },
+  "editor.selection.select_all_occurrences": {
+    "message": "Tüm geçtiği yerleri seç"
+  },
+  "editor.selection.sort_lines_ascending": {
+    "message": "Satırları artan sırala"
+  },
+  "editor.selection.sort_lines_descending": {
+    "message": "Satırları azalan sırala"
+  },
+  "editor.selection.title_case": {
+    "message": "Baş Harfler Büyük"
+  },
+  "editor.selection.toggle_line_comment": {
+    "message": "Satır yorumunu aç/kapat"
+  },
+  "editor.selection.trim_trailing_whitespace": {
+    "message": "Sondaki boşlukları kırp"
+  },
+  "editor.selection.uppercase": {
+    "message": "BÜYÜK HARF"
+  },
+  "editor.send.failed": {
+    "message": "Sunucuya geri kaydedilemedi: {err}. Kaydet yeniden dener."
+  },
+  "editor.status.modified": {
+    "message": "Değiştirildi"
+  },
+  "editor.status.position": {
+    "message": "Sat {line}, Süt {column}"
+  },
+  "editor.status.position_selected": {
+    "message": "Sat {line}, Süt {column} ({count, plural, one {# seçili} other {# seçili}})"
+  },
+  "editor.status.sending": {
+    "message": "Sunucuya kaydediliyor"
+  },
+  "editor.status.spaces": {
+    "message": "Boşluk: {size}"
+  },
+  "editor.status.tab_size": {
+    "message": "Sekme boyutu: {size}"
+  },
+  "editor.status.unsent": {
+    "message": "Sunucuda değil"
+  },
+  "editor.terminal.not_found": {
+    "message": "düzenleyici bulunamadı; $EDITOR değişkenini ayarlayın"
+  },
+  "editor.title": {
+    "message": "{path} — Düzenleyici"
+  },
+  "editor.unfit.open_anyway": {
+    "message": "Yine de aç"
+  },
+  "editor.unfit.text": {
+    "message": "Dosya düzenleyicide gösterilmiyor, çünkü {why, select, binary {ikili bir dosya} other {UTF-8 metni değil}}."
+  },
+  "editor.view.folding": {
+    "message": "Katlama"
+  },
+  "editor.view.indent_guides": {
+    "message": "Girinti kılavuzları"
+  },
+  "editor.view.indent_with_tabs": {
+    "message": "Sekmelerle girintile"
+  },
+  "editor.view.line_numbers": {
+    "message": "Satır numaraları"
+  },
+  "editor.view.minimap": {
+    "message": "Mini harita"
+  },
+  "editor.view.tab_width": {
+    "message": "Sekme genişliği {width}"
+  },
+  "editor.view.unfold_all": {
+    "message": "Tümünü aç"
+  },
+  "editor.view.whitespace": {
+    "message": "Boşluk karakterleri"
+  },
+  "editor.view.word_wrap": {
+    "message": "Sözcük kaydırma"
+  },
+  "elevate.failed": {
+    "message": "yönetici olarak da başarısız oldu ({code})"
+  },
+  "elevate.no_consent": {
+    "message": "yönetici onayı verilmedi"
+  },
+  "elevate.no_password": {
+    "message": "parola girilmedi"
+  },
+  "elevate.not_authorised": {
+    "message": "yetki verilmedi"
+  },
+  "elevate.percent_name": {
+    "message": "{path}: % içeren bir ad yönetici olarak işlenemez; önce yeniden adlandırın"
+  },
+  "elevate.pkexec_missing": {
+    "message": "pkexec (polkit) yüklü değil"
+  },
+  "file_menu.change_tags_failed": {
+    "message": "Etiketler değiştirilemedi: {err}"
+  },
+  "file_menu.compress": {
+    "message": "{count, plural, =1 {“{name}” öğesini sıkıştır…} one {# öğeyi sıkıştır…} other {# öğeyi sıkıştır…}}"
+  },
+  "file_menu.copy": {
+    "message": "{count, plural, =1 {“{name}” öğesini kopyala} one {# öğeyi kopyala} other {# öğeyi kopyala}}"
+  },
+  "file_menu.copy_path": {
+    "message": "Yolu panoya kopyala"
+  },
+  "file_menu.delete": {
+    "message": "Sil"
+  },
+  "file_menu.duplicate": {
+    "message": "Çoğalt"
+  },
+  "file_menu.duplicate_failed": {
+    "message": "Çoğaltılamadı: {err}"
+  },
+  "file_menu.edit_tags": {
+    "message": "Etiketler…"
+  },
+  "file_menu.get_info": {
+    "message": "Bilgi al"
+  },
+  "file_menu.make_alias": {
+    "message": "Takma ad yarat"
+  },
+  "file_menu.make_alias_failed": {
+    "message": "Takma ad yaratılamadı: {err}"
+  },
+  "file_menu.move_to_trash": {
+    "message": "Çöp Sepeti’ne taşı"
+  },
+  "file_menu.new_folder": {
+    "message": "Yeni klasör"
+  },
+  "file_menu.open": {
+    "message": "Aç"
+  },
+  "file_menu.open_failed": {
+    "message": "Açılamadı: {err}"
+  },
+  "file_menu.open_with": {
+    "message": "Birlikte aç"
+  },
+  "file_menu.open_with_default": {
+    "message": "{app} (varsayılan)"
+  },
+  "file_menu.paste": {
+    "message": "Yapıştır"
+  },
+  "file_menu.quick_look": {
+    "message": "{count, plural, =1 {“{name}” öğesine Hızlı Bakış} one {# öğeye Hızlı Bakış} other {# öğeye Hızlı Bakış}}"
+  },
+  "file_menu.quick_look_failed": {
+    "message": "Hızlı Bakış: {err}"
+  },
+  "file_menu.rename": {
+    "message": "Yeniden adlandır…"
+  },
+  "file_menu.reveal_failed": {
+    "message": "Finder’da gösterilemedi: {err}"
+  },
+  "file_menu.reveal_in_finder": {
+    "message": "Finder’da göster"
+  },
+  "file_menu.show_package_contents": {
+    "message": "Paket içeriğini göster"
+  },
+  "file_menu.tag_dot.add": {
+    "message": "“{name}” etiketini ekle"
+  },
+  "file_menu.tag_dot.remove": {
+    "message": "“{name}” etiketini kaldır"
+  },
+  "file_menu.tags_popover.show_all": {
+    "message": "Tümünü göster…"
+  },
+  "file_menu.tags_popover.title": {
+    "message": "{count, plural, =1 {“{name}” öğesine etiket ata} one {# öğeye etiket ata} other {# öğeye etiket ata}}"
+  },
+  "find.backwards": {
+    "message": "Geriye doğru ara"
+  },
+  "find.cancel": {
+    "message": "İptal"
+  },
+  "find.case_sensitive": {
+    "message": "Büyük/küçük harf duyarlı"
+  },
+  "find.hex": {
+    "message": "Onaltılık dizi ara"
+  },
+  "find.ok": {
+    "message": "Tamam"
+  },
+  "find.regex": {
+    "message": "RegEx"
+  },
+  "find.text.label": {
+    "message": "Aranacak metni girin"
+  },
+  "find.title": {
+    "message": "Bul"
+  },
+  "find.whole_words": {
+    "message": "Yalnızca tam sözcükler"
+  },
+  "keys.apply": {
+    "message": "Uygula"
+  },
+  "keys.cancel": {
+    "message": "İptal"
+  },
+  "keys.clear.tooltip": {
+    "message": "Tuş yok"
+  },
+  "keys.column.alternate": {
+    "message": "Alternatif"
+  },
+  "keys.column.command": {
+    "message": "Komut"
+  },
+  "keys.column.shortcut": {
+    "message": "Kısayol"
+  },
+  "keys.custom": {
+    "message": "Özel"
+  },
+  "keys.delete_set": {
+    "message": "Sil"
+  },
+  "keys.note.custom_replaced": {
+    "message": "Kendi tuşlarınızın yerini {name} tuşları aldı; Farklı kaydet onları korur."
+  },
+  "keys.note.deleted": {
+    "message": "{name} silinecek; Tamam veya Uygula ile kesinleşir."
+  },
+  "keys.note.moved": {
+    "message": "{key} artık {command} komutunu çalıştırır, {other} komutunu değil."
+  },
+  "keys.note.name_reserved": {
+    "message": "“{name}” bir hazır ayarın adı; başka bir ad seçin."
+  },
+  "keys.note.press_new_key": {
+    "message": "Yeni tuşa basın; Esc tuşu eskisini korur."
+  },
+  "keys.note.saved": {
+    "message": "{name} olarak kaydedildi; Tamam veya Uygula ile korunur."
+  },
+  "keys.note.set": {
+    "message": "{key} artık {command} komutunu çalıştırır."
+  },
+  "keys.note.taken_by_system": {
+    "message": "{key} sistem tarafından kullanılıyor ({by}), bu yüzden Spark Commander’a hiç ulaşmaz."
+  },
+  "keys.ok": {
+    "message": "Tamam"
+  },
+  "keys.press_key": {
+    "message": "Bir tuşa basın…"
+  },
+  "keys.reserved.application_launcher": {
+    "message": "{system}: uygulama başlatıcı"
+  },
+  "keys.reserved.close_window": {
+    "message": "{system}: pencereyi kapat"
+  },
+  "keys.reserved.close_window_or_tab": {
+    "message": "{system}: pencereyi veya sekmeyi kapat"
+  },
+  "keys.reserved.dock": {
+    "message": "{system}: Dock"
+  },
+  "keys.reserved.floating_window": {
+    "message": "{system}: kayan pencere"
+  },
+  "keys.reserved.force_quit": {
+    "message": "{system}: Çıkmaya Zorla"
+  },
+  "keys.reserved.hide_program": {
+    "message": "{system}: programı gizle"
+  },
+  "keys.reserved.input_source": {
+    "message": "{system}: girdi kaynağı"
+  },
+  "keys.reserved.keyboard_access": {
+    "message": "{system}: klavye erişimi"
+  },
+  "keys.reserved.keyboard_navigation": {
+    "message": "{system}: klavyeyle gezinme"
+  },
+  "keys.reserved.krunner": {
+    "message": "{system}: KRunner"
+  },
+  "keys.reserved.lock_screen": {
+    "message": "{system}: ekranı kilitle"
+  },
+  "keys.reserved.log_out": {
+    "message": "{system}: oturumu kapat"
+  },
+  "keys.reserved.maximize_window": {
+    "message": "{system}: pencereyi büyüt"
+  },
+  "keys.reserved.menu_bar": {
+    "message": "{system}: menü çubuğu"
+  },
+  "keys.reserved.minimize": {
+    "message": "{system}: simge durumuna küçült"
+  },
+  "keys.reserved.mission_control": {
+    "message": "{system}: Mission Control"
+  },
+  "keys.reserved.move_window": {
+    "message": "{system}: pencereyi taşı"
+  },
+  "keys.reserved.next_window": {
+    "message": "{system}: sonraki pencere"
+  },
+  "keys.reserved.present_windows": {
+    "message": "{system}: Pencereleri Göster"
+  },
+  "keys.reserved.present_windows_all": {
+    "message": "{system}: Pencereleri Göster (tüm masaüstleri)"
+  },
+  "keys.reserved.present_windows_class": {
+    "message": "{system}: Pencereleri Göster (pencere sınıfı)"
+  },
+  "keys.reserved.program_windows": {
+    "message": "{system}: programın pencereleri"
+  },
+  "keys.reserved.quit": {
+    "message": "{system}: çık"
+  },
+  "keys.reserved.resize_window": {
+    "message": "{system}: pencereyi yeniden boyutlandır"
+  },
+  "keys.reserved.restore_window": {
+    "message": "{system}: pencereyi eski boyutuna getir"
+  },
+  "keys.reserved.run_command": {
+    "message": "{system}: komut çalıştır"
+  },
+  "keys.reserved.screenshot": {
+    "message": "{system}: ekran görüntüsü"
+  },
+  "keys.reserved.security_screen": {
+    "message": "{system}: güvenlik ekranı"
+  },
+  "keys.reserved.show_desktop": {
+    "message": "{system}: masaüstünü göster"
+  },
+  "keys.reserved.space_left": {
+    "message": "{system}: soldaki alan"
+  },
+  "keys.reserved.space_right": {
+    "message": "{system}: sağdaki alan"
+  },
+  "keys.reserved.spotlight": {
+    "message": "{system}: Spotlight"
+  },
+  "keys.reserved.start_menu": {
+    "message": "{system}: Başlat menüsü"
+  },
+  "keys.reserved.status_menus": {
+    "message": "{system}: durum menüleri"
+  },
+  "keys.reserved.suspend_compositing": {
+    "message": "{system}: birleştirmeyi askıya al"
+  },
+  "keys.reserved.switch_program_windows": {
+    "message": "{system}: programın pencereleri arasında geçiş"
+  },
+  "keys.reserved.switch_programs": {
+    "message": "{system}: programlar arasında geçiş"
+  },
+  "keys.reserved.switch_system_controls": {
+    "message": "{system}: sistem denetimleri arasında geçiş"
+  },
+  "keys.reserved.switch_to_desktop": {
+    "message": "{system}: {number}. masaüstüne geç"
+  },
+  "keys.reserved.switch_windows": {
+    "message": "{system}: pencereler arasında geçiş"
+  },
+  "keys.reserved.system_monitor": {
+    "message": "{system}: Sistem İzleyici"
+  },
+  "keys.reserved.task_manager": {
+    "message": "{system}: Görev Yöneticisi"
+  },
+  "keys.reserved.text_console": {
+    "message": "{system}: metin konsoluna geç"
+  },
+  "keys.reserved.toolbar": {
+    "message": "{system}: araç çubuğu"
+  },
+  "keys.reserved.window_menu": {
+    "message": "{system}: pencere menüsü"
+  },
+  "keys.reserved.workspace_down": {
+    "message": "{system}: alttaki çalışma alanı"
+  },
+  "keys.reserved.workspace_left": {
+    "message": "{system}: soldaki çalışma alanı"
+  },
+  "keys.reserved.workspace_right": {
+    "message": "{system}: sağdaki çalışma alanı"
+  },
+  "keys.reserved.workspace_up": {
+    "message": "{system}: üstteki çalışma alanı"
+  },
+  "keys.reset.tooltip": {
+    "message": "{preset} tuşlarına dön"
+  },
+  "keys.reset_all": {
+    "message": "Tümünü sıfırla"
+  },
+  "keys.save_as.button": {
+    "message": "Farklı kaydet…"
+  },
+  "keys.save_as.default_name": {
+    "message": "Tuşlarım"
+  },
+  "keys.save_as.label": {
+    "message": "Ad:"
+  },
+  "keys.save_as.title": {
+    "message": "Kısayolları kaydet"
+  },
+  "keys.search.placeholder": {
+    "message": "Komut veya tuş ara"
+  },
+  "keys.set_label": {
+    "message": "Tuşlar:"
+  },
+  "keys.taken_by.tooltip": {
+    "message": "Sistem kullanıyor: {by}"
+  },
+  "keys.title": {
+    "message": "Kısayollar"
+  },
+  "main.admin.button": {
+    "message": "Yönetici olarak"
+  },
+  "main.admin.deleting": {
+    "message": "{count, plural, one {# öğe silinirken} other {# öğe silinirken}}"
+  },
+  "main.admin.failed": {
+    "message": "Yönetici olarak: {err}"
+  },
+  "main.admin.making": {
+    "message": "“{name}” oluşturulurken"
+  },
+  "main.admin.offer": {
+    "message": "{what}: izin reddedildi. Yönetici olarak yapmak için sistem parolayı sorar."
+  },
+  "main.admin.offer_delete": {
+    "message": "{what}: izin reddedildi. Yönetici olarak yapmak için sistem parolayı sorar. Bu şekilde silinenler kalıcı olarak gider."
+  },
+  "main.admin.title": {
+    "message": "İzin reddedildi"
+  },
+  "main.delete.from_archive": {
+    "message": "{kind, select, folder {“{name}” klasörü {archive} arşivinden silinsin mi? Bu işlem geri alınamaz.} file {“{name}” dosyası {archive} arşivinden silinsin mi? Bu işlem geri alınamaz.} other {{count, plural, one {# öğe} other {# öğe}} {archive} arşivinden silinsin mi? Bu işlem geri alınamaz.}}"
+  },
+  "main.delete.on_server": {
+    "message": "{kind, select, folder {{server} üzerindeki “{name}” klasörü silinsin mi? Bu işlem geri alınamaz.} file {{server} üzerindeki “{name}” dosyası silinsin mi? Bu işlem geri alınamaz.} other {{server} üzerindeki {count, plural, one {# öğe} other {# öğe}} silinsin mi? Bu işlem geri alınamaz.}}"
+  },
+  "main.delete.permanently": {
+    "message": "{kind, select, folder {“{name}” klasörü kalıcı olarak silinsin mi? Bu işlem geri alınamaz.} file {“{name}” dosyası kalıcı olarak silinsin mi? Bu işlem geri alınamaz.} other {{count, plural, one {# öğe} other {# öğe}} kalıcı olarak silinsin mi? Bu işlem geri alınamaz.}}"
+  },
+  "main.delete.title": {
+    "message": "Sil"
+  },
+  "main.delete.title_permanently": {
+    "message": "Kalıcı olarak sil"
+  },
+  "main.delete.to_trash": {
+    "message": "{kind, select, folder {“{name}” klasörü çöp kutusuna taşınsın mı?} file {“{name}” dosyası çöp kutusuna taşınsın mı?} other {{count, plural, one {# öğe} other {# öğe}} çöp kutusuna taşınsın mı?}}"
+  },
+  "main.download.edit": {
+    "message": "{file} dosyasını düzenlemek için indir"
+  },
+  "main.download.view": {
+    "message": "{file} dosyasını görüntülemek için indir"
+  },
+  "main.error.make_folder": {
+    "message": "Klasör oluşturulamadı: {err}"
+  },
+  "main.error.read_settings": {
+    "message": "Ayarlar okunamadı: {err}"
+  },
+  "main.error.read_tabs": {
+    "message": "Açık sekmeler okunamadı: {err}"
+  },
+  "main.error.read_workspaces": {
+    "message": "Çalışma alanları okunamadı: {err}"
+  },
+  "main.error.save_settings": {
+    "message": "Ayarlar kaydedilemedi: {err}"
+  },
+  "main.folder_tree.home": {
+    "message": "Ev"
+  },
+  "main.go.no_such_folder": {
+    "message": "{path}: bu bilgisayarda böyle bir klasör yok"
+  },
+  "main.new_folder.label": {
+    "message": "Yeni klasör (dizin):"
+  },
+  "main.new_folder.title": {
+    "message": "Yeni klasör"
+  },
+  "main.sync_browsing.lost": {
+    "message": "{err}. Eşzamanlı gezinme kapatıldı."
+  },
+  "main.tool.needs_file": {
+    "message": "İmleç bir dosyanın üzerinde değil: %N, %O ve %E bir dosya gerektirir."
+  },
+  "main.tool.needs_local_folder": {
+    "message": "Diğer panel bir sunucuyu veya arşivi gösteriyor: %T bu bilgisayarda bir klasör gerektirir."
+  },
+  "main.undo.done": {
+    "message": "{way, select, redo {Yinelendi: {title}} other {Geri alındı: {title}}}"
+  },
+  "main.undo.failed": {
+    "message": "{way, select, redo {“{title}” yinelenemedi: {err}} other {“{title}” geri alınamadı: {err}}}"
+  },
+  "main.undo.nothing": {
+    "message": "{way, select, redo {Yinelenecek bir şey yok.} other {Geri alınacak bir şey yok.}}"
+  },
+  "main.undo.queued": {
+    "message": "{way, select, redo {Yinelemek için kuyrukta: {title}} other {Geri almak için kuyrukta: {title}}}"
+  },
+  "mark.compare.marked": {
+    "message": "{count, plural, one {# dosya işaretlendi: diğer taraftakinden daha yeni ya da orada yok.} other {# dosya işaretlendi: diğer taraftakinden daha yeni ya da orada yok.}}"
+  },
+  "mark.compare.same": {
+    "message": "Klasörlerde aynı dosyalar var."
+  },
+  "mark.load_selection.label": {
+    "message": "Şu dosyada listelenen adları seç:"
+  },
+  "mark.load_selection.title": {
+    "message": "Seçimi yükle"
+  },
+  "mark.save_selection.label": {
+    "message": "Seçili adları şu dosyaya kaydet:"
+  },
+  "mark.save_selection.title": {
+    "message": "Seçimi kaydet"
+  },
+  "mark.select_group.label": {
+    "message": "Seçilecek dosyalar (*.txt *.md; klasör maskesi / ile biter):"
+  },
+  "mark.select_group.title": {
+    "message": "Grup seç"
+  },
+  "mark.selection_file.not_local": {
+    "message": "Seçim dosyaları bu bilgisayarda, arşivlerin dışında tutulur."
+  },
+  "mark.unselect_group.label": {
+    "message": "Seçimi kaldırılacak dosyalar (*.txt *.md; klasör maskesi / ile biter):"
+  },
+  "mark.unselect_group.title": {
+    "message": "Grup seçimini kaldır"
+  },
+  "media.cannot_play": {
+    "message": "Bu oynatılamıyor: {err}"
+  },
+  "media.cannot_play_as_text": {
+    "message": "Bu oynatılamıyor: {err}. 1 tuşu metin olarak gösterir."
+  },
+  "media.continuing": {
+    "message": "{time} konumundan devam ediliyor"
+  },
+  "media.error.missing": {
+    "message": "libmpv eksik: Ayarlar > Eklentiler sayfasından indirilebilir (kaynaktan derleme: vendor/mpv/{script})"
+  },
+  "media.error.not_started": {
+    "message": "libmpv başlatılamadı"
+  },
+  "media.error.too_long": {
+    "message": "{path}: mpv çok uzun sürdü"
+  },
+  "media.error.unsupported_system": {
+    "message": "video şimdilik yalnızca Linux, macOS ve Windows’ta oynatılır"
+  },
+  "menu.archive": {
+    "message": "Arşiv"
+  },
+  "menu.associations": {
+    "message": "İlişkilendirmeler"
+  },
+  "menu.button_bar": {
+    "message": "Düğme çubuğu"
+  },
+  "menu.checksums": {
+    "message": "Sağlama toplamları"
+  },
+  "menu.commands": {
+    "message": "Komutlar"
+  },
+  "menu.compare_directories": {
+    "message": "Dizinleri karşılaştır"
+  },
+  "menu.configuration": {
+    "message": "Yapılandırma"
+  },
+  "menu.copy_names": {
+    "message": "Adları kopyala"
+  },
+  "menu.files": {
+    "message": "Dosyalar"
+  },
+  "menu.filter": {
+    "message": "Filtre"
+  },
+  "menu.go": {
+    "message": "Git"
+  },
+  "menu.help": {
+    "message": "Yardım"
+  },
+  "menu.mark": {
+    "message": "İşaretle"
+  },
+  "menu.other": {
+    "message": "Diğer"
+  },
+  "menu.recently_closed_tabs": {
+    "message": "Son kapatılan sekmeler"
+  },
+  "menu.selection": {
+    "message": "Seçim"
+  },
+  "menu.show": {
+    "message": "Göster"
+  },
+  "menu.sidebar": {
+    "message": "Kenar çubuğu"
+  },
+  "menu.sort": {
+    "message": "Sırala"
+  },
+  "menu.split_and_combine": {
+    "message": "Böl ve birleştir"
+  },
+  "menu.tabs": {
+    "message": "Sekmeler"
+  },
+  "menu.tools": {
+    "message": "Araçlar"
+  },
+  "menu.workspaces": {
+    "message": "Çalışma alanları"
+  },
+  "menus.hide_app": {
+    "message": "Spark Commander’ı gizle"
+  },
+  "menus.hide_others": {
+    "message": "Diğerlerini gizle"
+  },
+  "menus.minimize": {
+    "message": "Küçült"
+  },
+  "menus.quit_app": {
+    "message": "Spark Commander’dan çık"
+  },
+  "menus.services": {
+    "message": "Servisler"
+  },
+  "menus.show_all": {
+    "message": "Tümünü göster"
+  },
+  "menus.zoom": {
+    "message": "Büyüt"
+  },
+  "name_dialog.cancel": {
+    "message": "İptal"
+  },
+  "name_dialog.ok": {
+    "message": "Tamam"
+  },
+  "operations.clear": {
+    "message": "Bitenleri temizle"
+  },
+  "operations.duration.seconds": {
+    "message": "{seconds} sn"
+  },
+  "operations.empty": {
+    "message": "İşlem yok."
+  },
+  "operations.job.answer": {
+    "message": "Yanıtınız bekleniyor"
+  },
+  "operations.job.bytes": {
+    "message": "{done} / {total}"
+  },
+  "operations.job.cancel_tooltip": {
+    "message": "İptal"
+  },
+  "operations.job.cancelled": {
+    "message": "İptal edildi"
+  },
+  "operations.job.counting": {
+    "message": "Sayılıyor: {count, plural, one {# dosya} other {# dosya}}"
+  },
+  "operations.job.done": {
+    "message": "Bitti"
+  },
+  "operations.job.done_skipped": {
+    "message": "Bitti, {count, plural, one {# atlandı} other {# atlandı}}"
+  },
+  "operations.job.failed": {
+    "message": "Başarısız"
+  },
+  "operations.job.files": {
+    "message": "{files} / {count, plural, one {# dosya} other {# dosya}}"
+  },
+  "operations.job.left": {
+    "message": "{time} kaldı"
+  },
+  "operations.job.running": {
+    "message": "Çalışıyor"
+  },
+  "operations.job.waiting": {
+    "message": "Bekliyor"
+  },
+  "operations.menu.cancel": {
+    "message": "İptal et"
+  },
+  "operations.menu.clear": {
+    "message": "Bitenleri temizle"
+  },
+  "operations.menu.move_down": {
+    "message": "Aşağı taşı"
+  },
+  "operations.menu.move_up": {
+    "message": "Yukarı taşı"
+  },
+  "operations.settings_tooltip": {
+    "message": "İşlem kuyruğu ayarları"
+  },
+  "operations.summary.failed": {
+    "message": "{count, plural, one {# başarısız} other {# başarısız}}"
+  },
+  "operations.summary.running": {
+    "message": "{count, plural, one {# çalışıyor} other {# çalışıyor}}"
+  },
+  "operations.summary.waiting": {
+    "message": "{count, plural, one {# bekliyor} other {# bekliyor}}"
+  },
+  "ops.as_administrator.failed": {
+    "message": "Yönetici olarak: {err}"
+  },
+  "ops.as_administrator.progress": {
+    "message": "Yönetici olarak…"
+  },
+  "ops.delete.title_many": {
+    "message": "{folder} içindeki {count, plural, one {# öğeyi} other {# öğeyi}} sil"
+  },
+  "ops.delete.title_one": {
+    "message": "“{name}” öğesini sil"
+  },
+  "ops.delete.trash_title_many": {
+    "message": "{folder} içindeki {count, plural, one {# öğeyi} other {# öğeyi}} çöp kutusuna taşı"
+  },
+  "ops.delete.trash_title_one": {
+    "message": "“{name}” öğesini çöp kutusuna taşı"
+  },
+  "ops.error.file_in_the_way": {
+    "message": "bu adda bir dosya engel oluyor"
+  },
+  "ops.error.into_itself": {
+    "message": "kendi içine kopyalanamaz"
+  },
+  "ops.exists_already": {
+    "message": "{name} zaten var"
+  },
+  "ops.link.dialog_title": {
+    "message": "Bağlantı oluştur"
+  },
+  "ops.link.failed": {
+    "message": "Bağlantı oluşturulamadı: {err}"
+  },
+  "ops.link.kind.hard": {
+    "message": "Sabit bağlantı"
+  },
+  "ops.link.kind.junction": {
+    "message": "Dizin bağlantısı"
+  },
+  "ops.link.kind.shortcut": {
+    "message": "Kısayol (.lnk)"
+  },
+  "ops.link.kind.symbolic": {
+    "message": "Sembolik bağlantı"
+  },
+  "ops.link.label_many": {
+    "message": "{count, plural, one {# öğenin} other {# öğenin}} bağlantıları şu klasöre:"
+  },
+  "ops.link.label_one": {
+    "message": "“{name}” öğesinin bağlantısı:"
+  },
+  "ops.link.making": {
+    "message": "{kind, select, symbolic {Sembolik bağlantı} hard {Sabit bağlantı} junction {Dizin bağlantısı} other {Kısayol (.lnk)}} oluşturulurken"
+  },
+  "ops.link.needs_admin": {
+    "message": "sembolik bağlantılar yönetici izni veya Geliştirici Modu gerektirir"
+  },
+  "ops.link.thread_failed": {
+    "message": "kısayolun iş parçacığı başarısız oldu"
+  },
+  "ops.link.title_many": {
+    "message": "{folder} içinde {count, plural, one {# öğeye} other {# öğeye}} {kind, select, symbolic {sembolik bağlantılar} hard {sabit bağlantılar} junction {dizin bağlantıları} other {kısayollar (.lnk)}}"
+  },
+  "ops.link.title_one": {
+    "message": "{folder} içinde “{name}” öğesine {kind, select, symbolic {sembolik bağlantı} hard {sabit bağlantı} junction {dizin bağlantısı} other {kısayol (.lnk)}}"
+  },
+  "ops.link.windows_only": {
+    "message": "dizin bağlantıları ve kısayollar yalnızca Windows’ta vardır"
+  },
+  "ops.redo.title": {
+    "message": "Yinele: {what}"
+  },
+  "ops.title.many": {
+    "message": "{count, plural, one {# öğeyi} other {# öğeyi}} {target} konumuna {kind, select, copy {kopyala} other {taşı}}"
+  },
+  "ops.title.one": {
+    "message": "“{name}” öğesini {target} konumuna {kind, select, copy {kopyala} other {taşı}}"
+  },
+  "ops.undo.not_a_server": {
+    "message": "{url}: bir sunucu adresi değil"
+  },
+  "ops.undo.not_in_trash": {
+    "message": "artık çöp kutusunda değiller"
+  },
+  "ops.undo.restore_title": {
+    "message": "{title}: üzerine yazılanları çöp kutusundan geri getir"
+  },
+  "ops.undo.title": {
+    "message": "Geri al: {what}"
+  },
+  "pack.cancel": {
+    "message": "İptal"
+  },
+  "pack.compression": {
+    "message": "Sıkıştırma:"
+  },
+  "pack.dialog_title": {
+    "message": "Dosyaları paketle"
+  },
+  "pack.encrypt": {
+    "message": "Parolayla şifrele"
+  },
+  "pack.format": {
+    "message": "Biçim:"
+  },
+  "pack.label": {
+    "message": "{count, plural, one {# öğeyi} other {# öğeyi}} şu arşive paketle:"
+  },
+  "pack.level.fastest": {
+    "message": "En hızlı"
+  },
+  "pack.level.maximum": {
+    "message": "En yüksek"
+  },
+  "pack.level.normal": {
+    "message": "Normal"
+  },
+  "pack.level.store": {
+    "message": "Sıkıştırmasız"
+  },
+  "pack.level.ultra": {
+    "message": "Ultra"
+  },
+  "pack.local_only": {
+    "message": "{what, select, packing {Paketleme} unpacking {Paketten çıkarma} testing {Test etme} creating_checksums {Sağlama toplamı oluşturma} making_links {Bağlantı oluşturma} verifying_checksums {Sağlama toplamı doğrulama} splitting {Bölme} combining {Birleştirme} other {Bu işlem}} yalnızca bu bilgisayarın dosyalarında, arşivlerin dışında çalışır."
+  },
+  "pack.move_files": {
+    "message": "Arşive taşı (paketlenen dosyaları sil)"
+  },
+  "pack.needs_password": {
+    "message": "parola gerekiyor"
+  },
+  "pack.ok": {
+    "message": "Tamam"
+  },
+  "pack.password_missing": {
+    "message": "Parolayı yazın ya da Şifrele seçeneğini kapalı bırakın."
+  },
+  "pack.separate": {
+    "message": "Seçili her dosya veya klasör için ayrı arşiv"
+  },
+  "pack.split": {
+    "message": "Parçalara böl, boyut:"
+  },
+  "pack.split_unit": {
+    "message": "MB"
+  },
+  "pack.test.broken": {
+    "message": "{broken, plural, one {{count} arşivden # tanesi bozuk} other {{count} arşivden # tanesi bozuk}}"
+  },
+  "pack.test.choose": {
+    "message": "Test edilecek arşivleri seçin."
+  },
+  "pack.test.ok": {
+    "message": "{count, plural, one {# arşiv sağlam} other {# arşivin tümü sağlam}}"
+  },
+  "pack.test.title_many": {
+    "message": "{count, plural, one {# arşivi} other {# arşivi}} test et"
+  },
+  "pack.test.title_one": {
+    "message": "“{name}” arşivini test et"
+  },
+  "pack.title.many": {
+    "message": "{count, plural, one {# öğeyi} other {# öğeyi}} {archive} arşivine paketle"
+  },
+  "pack.title.many_separate": {
+    "message": "{count, plural, one {# öğeyi} other {# öğeyi}} ayrı {format} arşivlerine paketle"
+  },
+  "pack.title.one": {
+    "message": "“{name}” öğesini {archive} arşivine paketle"
+  },
+  "pack.title.one_separate": {
+    "message": "“{name}” öğesini ayrı {format} arşivlerine paketle"
+  },
+  "pack.unpack.choose": {
+    "message": "Paketten çıkarılacak arşivleri seçin."
+  },
+  "pack.unpack.dialog_title": {
+    "message": "Dosyaları paketten çıkar"
+  },
+  "pack.unpack.label": {
+    "message": "{count, plural, one {# arşivi} other {# arşivi}} şuraya paketten çıkar:"
+  },
+  "pack.unpack.mask": {
+    "message": "Yalnızca şu dosyalar:"
+  },
+  "pack.unpack.overwrite": {
+    "message": "Var olan dosyaların üzerine yaz (yoksa korunurlar)"
+  },
+  "pack.unpack.password": {
+    "message": "Parola:"
+  },
+  "pack.unpack.separate": {
+    "message": "Her arşivi kendi adını taşıyan bir klasöre"
+  },
+  "pack.unpack.title_many": {
+    "message": "{count, plural, one {# arşivi} other {# arşivi}} {target} konumuna paketten çıkar"
+  },
+  "pack.unpack.title_one": {
+    "message": "“{name}” arşivini {target} konumuna paketten çıkar"
+  },
+  "pack.unpack.with_paths": {
+    "message": "Arşivde saklanan klasörleri koru"
+  },
+  "pack.volume_invalid": {
+    "message": "Parça boyutu MB cinsinden bir sayı olmalı."
+  },
+  "pack.wrong_password": {
+    "message": "yanlış parola"
+  },
+  "panel.admin.renaming": {
+    "message": "“{name}” olarak yeniden adlandırılırken"
+  },
+  "panel.clipboard.copied": {
+    "message": "{count, plural, one {# öğe kopyalandı} other {# öğe kopyalandı}}: Ctrl+V ile yapıştırın."
+  },
+  "panel.clipboard.cut": {
+    "message": "{count, plural, one {# öğe kesildi} other {# öğe kesildi}}: Ctrl+V ile yapıştırın."
+  },
+  "panel.clipboard.no_cut_in_archive": {
+    "message": "Dosyalar arşivlerden kesilemez; Ctrl+C ile kopyalayın."
+  },
+  "panel.clipboard.no_files": {
+    "message": "Panoda dosya yok."
+  },
+  "panel.clipboard.no_paste_in_archive": {
+    "message": "Dosyalar henüz arşivlere yapıştırılamaz."
+  },
+  "panel.clipboard.same_folder": {
+    "message": "Bunlar zaten bu klasörde: Ctrl+V ile başka bir klasöre yapıştırın."
+  },
+  "panel.column.attr": {
+    "message": "Özn"
+  },
+  "panel.column.date": {
+    "message": "Tarih"
+  },
+  "panel.column.ext": {
+    "message": "Uzt"
+  },
+  "panel.column.name": {
+    "message": "Ad"
+  },
+  "panel.column.size": {
+    "message": "Boyut"
+  },
+  "panel.disconnect": {
+    "message": "Bağlantıyı kes"
+  },
+  "panel.drag.items": {
+    "message": "{count, plural, one {# öğe} other {# öğe}}"
+  },
+  "panel.error.archive_not_updatable": {
+    "message": "{name}: 7-Zip yalnızca 7z, zip ve tar arşivlerini yerinde değiştirir, bunu değil"
+  },
+  "panel.error.archive_on_server": {
+    "message": "{name}: sunuculardaki arşivler henüz değiştirilemez"
+  },
+  "panel.error.branch_view_local": {
+    "message": "Dal görünümü yalnızca bu bilgisayarın klasörlerini listeler"
+  },
+  "panel.error.exists": {
+    "message": "{name} zaten var"
+  },
+  "panel.error.folder_in_the_way": {
+    "message": "bu adda bir klasör engel oluyor"
+  },
+  "panel.error.inside_archive": {
+    "message": "arşivlerin içinde henüz yapılamıyor"
+  },
+  "panel.error.make_file": {
+    "message": "Dosya oluşturulamadı: {err}"
+  },
+  "panel.error.no_name": {
+    "message": "ad girilmedi"
+  },
+  "panel.error.not_a_name": {
+    "message": "{name}: geçerli bir ad değil"
+  },
+  "panel.error.other_drive": {
+    "message": "diğer panel başka bir sürücüye geçti"
+  },
+  "panel.error.rename": {
+    "message": "Yeniden adlandırılamadı: {err}"
+  },
+  "panel.filter.custom.label": {
+    "message": "Dosya türleri, örn. *.txt *.md (| sonrasındakiler hariç tutulur):"
+  },
+  "panel.filter.custom.title": {
+    "message": "Dosyaları göster"
+  },
+  "panel.filter.programs": {
+    "message": "programlar"
+  },
+  "panel.filter.selected_files": {
+    "message": "seçili dosyalar"
+  },
+  "panel.found.branch_view": {
+    "message": "Dal görünümü:"
+  },
+  "panel.found.search_results": {
+    "message": "Arama sonuçları:"
+  },
+  "panel.new_text_file.label": {
+    "message": "Dosya adı (düzenleyicide açılır):"
+  },
+  "panel.new_text_file.title": {
+    "message": "Yeni metin dosyası"
+  },
+  "panel.opening.cancel": {
+    "message": "İptal"
+  },
+  "panel.opening.reading": {
+    "message": "Okunuyor…"
+  },
+  "panel.opening.title": {
+    "message": "Arşiv açılıyor"
+  },
+  "panel.quick_filter.hint": {
+    "message": "eşleşmeyenleri gizler; Escape tümünü gösterir"
+  },
+  "panel.quick_filter.label": {
+    "message": "Filtre:"
+  },
+  "panel.quick_search.label": {
+    "message": "Ara:"
+  },
+  "panel.size.app": {
+    "message": "<APP>"
+  },
+  "panel.size.b": {
+    "message": "{size} B"
+  },
+  "panel.size.dir": {
+    "message": "<DIR>"
+  },
+  "panel.size.gb": {
+    "message": "{size} GB"
+  },
+  "panel.size.kb": {
+    "message": "{size} KB"
+  },
+  "panel.size.mb": {
+    "message": "{size} MB"
+  },
+  "panel.size.tb": {
+    "message": "{size} TB"
+  },
+  "panel.space.bytes": {
+    "message": "{count, plural, one {{size} bayt ({human})} other {{size} bayt ({human})}}"
+  },
+  "panel.space.close": {
+    "message": "Kapat"
+  },
+  "panel.space.counting": {
+    "message": "Sayılıyor…"
+  },
+  "panel.space.done": {
+    "message": "Bitti."
+  },
+  "panel.space.files": {
+    "message": "Dosyalar:"
+  },
+  "panel.space.folders": {
+    "message": "Klasörler:"
+  },
+  "panel.space.in_archive": {
+    "message": "Arşivlerin içinde Boyut sütunu boyutları zaten gösterir."
+  },
+  "panel.space.title": {
+    "message": "Kaplanan alanı hesapla"
+  },
+  "panel.space.total": {
+    "message": "Toplam boyut:"
+  },
+  "panel.space.unreadable": {
+    "message": "{count, plural, one {# öğe okunamadı.} other {# öğe okunamadı.}}"
+  },
+  "panel.status": {
+    "message": "{marked_size} k / {size} k, {marked_files} / {files, plural, one {# dosya} other {# dosya}}, {marked_folders} / {folders, plural, one {# dizin} other {# dizin}}"
+  },
+  "panel.sync_browsing.stop": {
+    "message": "Eşzamanlı gezinme (durdurmak için tıklayın)"
+  },
+  "panel.undo.rename": {
+    "message": "“{name}” adını “{to}” olarak değiştir"
+  },
+  "passwords.about.set": {
+    "message": "Ana parola belirlerseniz, ayarlar klasörü kopyalandığında kayıtlı parolalar başka bir bilgisayarda da ana parola yazılınca açılır. Ana parola unutulursa yalnızca kayıtlı parolalar kaybolur: bunlar yeniden yazılır."
+  },
+  "passwords.about.unlock": {
+    "message": "Ayarlar başka bir bilgisayardan geldi ya da bu bilgisayarda anahtarlık yok: kayıtlı parolaları burada ana parola açar."
+  },
+  "passwords.cancel": {
+    "message": "İptal"
+  },
+  "passwords.done.set": {
+    "message": "Ana parola belirlendi."
+  },
+  "passwords.done.unlocked": {
+    "message": "Kayıtlı parolaların kilidi açıldı."
+  },
+  "passwords.error.locked": {
+    "message": "kayıtlı parolalar kilitli: kilidi ana parolayla açın (Yapılandırma › Ayarlar › Parolalar)"
+  },
+  "passwords.error.no_master": {
+    "message": "ana parola belirlenmemiş"
+  },
+  "passwords.error.no_random": {
+    "message": "rastgele sayı alınamadı"
+  },
+  "passwords.error.not_opened": {
+    "message": "{what} için parola açılamıyor"
+  },
+  "passwords.error.not_sealed": {
+    "message": "parola şifrelenemedi"
+  },
+  "passwords.error.salt_damaged": {
+    "message": "ana parolanın tuzu bozuk"
+  },
+  "passwords.error.wrong": {
+    "message": "ana parola yanlış"
+  },
+  "passwords.field.again": {
+    "message": "Yeniden"
+  },
+  "passwords.field.master": {
+    "message": "Ana parola"
+  },
+  "passwords.locked_note": {
+    "message": "Kayıtlı parolalar bu bilgisayarda kilitli: ana parola kilidi açar."
+  },
+  "passwords.ok": {
+    "message": "Tamam"
+  },
+  "passwords.problem.differ": {
+    "message": "İki parola aynı değil."
+  },
+  "passwords.problem.empty": {
+    "message": "Ana parolayı yazın."
+  },
+  "passwords.title.set": {
+    "message": "Ana parola"
+  },
+  "passwords.title.unlock": {
+    "message": "Kayıtlı parolaların kilidini aç"
+  },
+  "passwords.unlock_button": {
+    "message": "Kilidi aç…"
+  },
+  "passwords.working": {
+    "message": "Çalışıyor…"
+  },
+  "properties.accessed": {
+    "message": "Erişilme:"
+  },
+  "properties.change_attributes": {
+    "message": "Öznitelikleri değiştir..."
+  },
+  "properties.close": {
+    "message": "Kapat"
+  },
+  "properties.contents": {
+    "message": "{file_count, plural, one {{files} dosya} other {{files} dosya}}, {folder_count, plural, one {{folders} klasör} other {{folders} klasör}}, {count, plural, one {{bytes} bayt} other {{bytes} bayt}} ({size})"
+  },
+  "properties.contents_counting": {
+    "message": "{file_count, plural, one {{files} dosya} other {{files} dosya}}, {folder_count, plural, one {{folders} klasör} other {{folders} klasör}}, {count, plural, one {{bytes} bayt} other {{bytes} bayt}} ({size}) (sayılıyor…)"
+  },
+  "properties.contents_label": {
+    "message": "İçerik:"
+  },
+  "properties.created": {
+    "message": "Oluşturulma:"
+  },
+  "properties.dialog_title": {
+    "message": "Özellikler"
+  },
+  "properties.in_archive": {
+    "message": "Arşivin listesi, dosyaları hakkında bildiği her şeyi gösterir."
+  },
+  "properties.kind.file": {
+    "message": "Dosya"
+  },
+  "properties.kind.folder": {
+    "message": "Klasör"
+  },
+  "properties.kind.link": {
+    "message": "Bağlantı"
+  },
+  "properties.kind.link_to": {
+    "message": "Bağlantı: {target}"
+  },
+  "properties.location": {
+    "message": "Konum:"
+  },
+  "properties.modified": {
+    "message": "Değiştirilme:"
+  },
+  "properties.name": {
+    "message": "Ad:"
+  },
+  "properties.no_system_dialog": {
+    "message": "burada henüz sistemin bir özellikler penceresi yok"
+  },
+  "properties.owner": {
+    "message": "Sahip / grup:"
+  },
+  "properties.permissions": {
+    "message": "İzinler:"
+  },
+  "properties.size": {
+    "message": "{count, plural, one {{bytes} bayt ({size})} other {{bytes} bayt ({size})}}"
+  },
+  "properties.size_label": {
+    "message": "Boyut:"
+  },
+  "properties.type": {
+    "message": "Tür:"
+  },
+  "quick_open.go_to": {
+    "message": "Git: {path}"
+  },
+  "quick_open.group.bookmarks": {
+    "message": "Yer imleri"
+  },
+  "quick_open.group.connections": {
+    "message": "Bağlantılar"
+  },
+  "quick_open.group.drives": {
+    "message": "Sürücüler"
+  },
+  "quick_open.group.path": {
+    "message": "Yol"
+  },
+  "quick_open.group.recent_folders": {
+    "message": "Son klasörler"
+  },
+  "quick_open.group.tools": {
+    "message": "Araçlar"
+  },
+  "quick_open.group.workspaces": {
+    "message": "Çalışma alanları"
+  },
+  "quick_open.placeholder": {
+    "message": "Komut, yer imi, klasör, yol, sunucu, sürücü, çalışma alanı veya araç"
+  },
+  "quick_open.title": {
+    "message": "Hızlı aç"
+  },
+  "quick_view.counting": {
+    "message": "Sayılıyor…"
+  },
+  "quick_view.downloading": {
+    "message": "İndiriliyor…"
+  },
+  "quick_view.empty": {
+    "message": "Hızlı görünüm, diğer paneldeki imlecin üzerinde olduğu öğeyi gösterir."
+  },
+  "quick_view.extracting": {
+    "message": "Arşivden çıkarılıyor…"
+  },
+  "quick_view.files_only": {
+    "message": "Sunucularda ve arşivlerin içinde Hızlı görünüm yalnızca dosyaları gösterir."
+  },
+  "quick_view.space.title": {
+    "message": "Kaplanan toplam alan:"
+  },
+  "quick_view.space.totals": {
+    "message": "{files, plural, one {{files_grouped} dosya} other {{files_grouped} dosya}}, {folders, plural, one {{folders_grouped} klasörde} other {{folders_grouped} klasörde}} {bytes, plural, one {{bytes_grouped} bayt} other {{bytes_grouped} bayt}}"
+  },
+  "quick_view.space.unreadable": {
+    "message": "{count} öğe okunamadı."
+  },
+  "quick_view.too_large.download": {
+    "message": "{size} burada indirmek için çok büyük: F3 ile görüntüleyin."
+  },
+  "quick_view.too_large.extract": {
+    "message": "{size} burada arşivden çıkarmak için çok büyük: F3 ile görüntüleyin."
+  },
+  "remote.cancelled": {
+    "message": "iptal edildi"
+  },
+  "remote.cloud.ask": {
+    "message": "{kind, select, application_key {{host} üzerindeki {user} için uygulama anahtarı:} api_key {{host} üzerindeki {user} için API anahtarı:} password {{host} üzerindeki {user} için parola:} other {{host} üzerindeki {user} için gizli anahtar:}}"
+  },
+  "remote.cloud.ask_again": {
+    "message": "{kind, select, application_key {Yanlış uygulama anahtarı. {host} üzerindeki {user} için uygulama anahtarı:} api_key {Yanlış API anahtarı. {host} üzerindeki {user} için API anahtarı:} password {Yanlış parola. {host} üzerindeki {user} için parola:} other {Yanlış anahtar. {host} üzerindeki {user} için gizli anahtar:}}"
+  },
+  "remote.cloud.obscure_failed": {
+    "message": "rclone parolayı alamadı"
+  },
+  "remote.cloud.rclone_missing": {
+    "message": "rclone eksik: Ayarlar > Eklentiler sayfasından indirilebilir"
+  },
+  "remote.cloud.title": {
+    "message": "{kind, select, application_key {Uygulama anahtarı} api_key {API anahtarı} password {Parola} other {Gizli anahtar}}"
+  },
+  "remote.connecting": {
+    "message": "{server} sunucusuna bağlanılıyor..."
+  },
+  "remote.dialog.cancel": {
+    "message": "İptal"
+  },
+  "remote.dialog.ok": {
+    "message": "Tamam"
+  },
+  "remote.disconnect_failed": {
+    "message": "{share}: bağlantı kesilemedi: {err}"
+  },
+  "remote.ftp.password": {
+    "message": "{user}@{host} için parola:"
+  },
+  "remote.ftp.password_again": {
+    "message": "Yanlış parola. {user}@{host} için parola:"
+  },
+  "remote.ftps.changed": {
+    "message": "{server} sunucusunun TLS sertifikası, {file} dosyasının {line}. satırına kaydedildiğinden bu yana DEĞİŞTİ. Biri bağlantıyı dinliyor olabilir; sunucunun yeni bir sertifikası varsa o satırı silin."
+  },
+  "remote.ftps.not_trusted": {
+    "message": "sunucunun sertifikasına güvenilmiyor"
+  },
+  "remote.login.password": {
+    "message": "Parola"
+  },
+  "remote.login.title": {
+    "message": "Oturum aç"
+  },
+  "remote.login.user": {
+    "message": "Kullanıcı"
+  },
+  "remote.mount.login_wrong": {
+    "message": "kullanıcı adı veya parola yanlış"
+  },
+  "remote.mount.macos_failed": {
+    "message": "macOS bağlayamadı (NetFS {code})"
+  },
+  "remote.mount.needs_desktop": {
+    "message": "KDE’nin kio-fuse ya da GNOME’un gvfs bileşeni gerekiyor"
+  },
+  "remote.mount.needs_login": {
+    "message": "kullanıcı adı ve parola gerekiyor"
+  },
+  "remote.mount.no_fuse": {
+    "message": "bağlandı ama ona ait bir klasör yok: gvfs-fuse eksik"
+  },
+  "remote.mount.no_nfs_client": {
+    "message": "bulunamadı; NFS için Windows’un “NFS için İstemci” özelliği gerekir (Windows Özellikleri)"
+  },
+  "remote.mount.no_share": {
+    "message": "paylaşım eksik: smb://sunucu/paylaşım"
+  },
+  "remote.mount.not_address": {
+    "message": "bir adres değil"
+  },
+  "remote.mount.not_found": {
+    "message": "bağlandı ama bağlananlar arasında bulunamadı"
+  },
+  "remote.mount.other_user": {
+    "message": "Windows bu sunucuya başka bir kullanıcıyla bağlı: oturumu kapatın ya da o kullanıcıyı kullanın"
+  },
+  "remote.password.title": {
+    "message": "Parola"
+  },
+  "remote.remember_password": {
+    "message": "Hatırla (Ayarlar › Parolalar)"
+  },
+  "remote.save_back_failed": {
+    "message": "Geri kaydedilemedi: {err}"
+  },
+  "remote.sftp.host_certificate": {
+    "message": "Sunucu bir ana makine sertifikası gösteriyor; bunlar henüz desteklenmiyor."
+  },
+  "remote.sftp.key_changed": {
+    "message": "{server} sunucusunun ana makine anahtarı, {file} dosyasının {line}. satırına kaydedildiğinden bu yana DEĞİŞTİ. Biri bağlantıyı dinliyor olabilir; sunucu yeniden kurulduysa o satırı silin."
+  },
+  "remote.sftp.key_not_trusted": {
+    "message": "{server} sunucusunun ana makine anahtarına güvenilmedi."
+  },
+  "remote.sftp.keys_refused": {
+    "message": "{user}@{host}: sunucu anahtarları reddetti ve parola kabul etmiyor"
+  },
+  "remote.sftp.login_refused": {
+    "message": "{user}@{host}: oturum açma reddedildi"
+  },
+  "remote.sftp.passphrase": {
+    "message": "{file} için anahtar parolası"
+  },
+  "remote.sftp.passphrase_title": {
+    "message": "Anahtar parolası"
+  },
+  "remote.sftp.password": {
+    "message": "{user}@{host} için parola"
+  },
+  "remote.unknown_host.once": {
+    "message": "Bir kez bağlan"
+  },
+  "remote.unknown_host.remember": {
+    "message": "Bağlan ve hatırla"
+  },
+  "remote.unknown_host.text": {
+    "message": "{key_type, select, TLS {{host} sunucusu henüz bilinmiyor. TLS sertifikasının parmak izi:} other {{host} sunucusu henüz bilinmiyor. {key_type} parmak izi:}}\n\n{fingerprint}\n\nYalnızca bağlanmak istediğiniz sunucu buysa bağlanın; parmak izini sunucunun yöneticisi doğrulayabilir."
+  },
+  "remote.unknown_host.title": {
+    "message": "Bilinmeyen sunucu"
+  },
+  "rename.case": {
+    "message": "Harf:"
+  },
+  "rename.case.first": {
+    "message": "İlk harf büyük"
+  },
+  "rename.case.lower": {
+    "message": "küçük harf"
+  },
+  "rename.case.unchanged": {
+    "message": "Olduğu gibi"
+  },
+  "rename.case.upper": {
+    "message": "BÜYÜK HARF"
+  },
+  "rename.case.words": {
+    "message": "Her Sözcük"
+  },
+  "rename.close": {
+    "message": "Kapat"
+  },
+  "rename.counter_start": {
+    "message": "Sayaç başlangıcı"
+  },
+  "rename.dialog_title": {
+    "message": "Toplu yeniden adlandırma aracı"
+  },
+  "rename.digits": {
+    "message": "Basamak"
+  },
+  "rename.extension": {
+    "message": "Uzantı"
+  },
+  "rename.field.counter": {
+    "message": "[C] Sayaç"
+  },
+  "rename.field.date": {
+    "message": "[Y][M][D] Tarih"
+  },
+  "rename.field.extension": {
+    "message": "[E] Uzantı"
+  },
+  "rename.field.folder": {
+    "message": "[P] Klasör"
+  },
+  "rename.field.name": {
+    "message": "[N] Ad"
+  },
+  "rename.field.range": {
+    "message": "[N1-3] Aralık"
+  },
+  "rename.field.time": {
+    "message": "[h][m][s] Saat"
+  },
+  "rename.first_only": {
+    "message": "Yalnızca ilki"
+  },
+  "rename.in_archive": {
+    "message": "Arşivlerin içindeki dosyalar henüz yeniden adlandırılamaz."
+  },
+  "rename.mask": {
+    "message": "Yeniden adlandırma maskesi: dosya adı"
+  },
+  "rename.match_case": {
+    "message": "Büyük/küçük harf eşleştir"
+  },
+  "rename.new_name": {
+    "message": "Yeni ad"
+  },
+  "rename.not_renamed_back": {
+    "message": "{from}: {err}; eski adına döndürülemeyenler: {names}"
+  },
+  "rename.not_utf8": {
+    "message": "UTF-8 olmayan adlar dışarıda bırakıldı."
+  },
+  "rename.old_name": {
+    "message": "Eski ad"
+  },
+  "rename.problem.bad_character": {
+    "message": "adlarda olamayan bir karakter"
+  },
+  "rename.problem.exists": {
+    "message": "zaten var"
+  },
+  "rename.problem.no_name": {
+    "message": "ad yok"
+  },
+  "rename.problem.twice": {
+    "message": "listede iki kez"
+  },
+  "rename.regex": {
+    "message": "Normal ifade"
+  },
+  "rename.regex_error": {
+    "message": "Normal ifade: {err}"
+  },
+  "rename.replace": {
+    "message": "Şununla değiştir"
+  },
+  "rename.search": {
+    "message": "Aranacak"
+  },
+  "rename.start": {
+    "message": "Başlat!"
+  },
+  "rename.status.failed": {
+    "message": "Hiçbir şey yeniden adlandırılmadı: {err}"
+  },
+  "rename.status.ready": {
+    "message": "Başlat düğmesi bunları yeniden adlandırır."
+  },
+  "rename.status.renamed": {
+    "message": "{count, plural, one {# dosya yeniden adlandırıldı.} other {# dosya yeniden adlandırıldı.}}"
+  },
+  "rename.status.took_back": {
+    "message": "{count, plural, one {# dosyanın adı geri alındı.} other {# dosyanın adı geri alındı.}}"
+  },
+  "rename.step": {
+    "message": "Adım"
+  },
+  "rename.undo": {
+    "message": "Geri al"
+  },
+  "rename.was": {
+    "message": "{to} (önceden {from})"
+  },
+  "rename.with_extension": {
+    "message": "Uzantıyla birlikte"
+  },
+  "scmd.column.modified": {
+    "message": "Değiştirilme"
+  },
+  "scmd.column.name": {
+    "message": "Ad"
+  },
+  "scmd.column.size": {
+    "message": "Boyut"
+  },
+  "scmd.column.up_dir": {
+    "message": "ÜST-DİZİN"
+  },
+  "scmd.command_line.not_on_server": {
+    "message": "Komutlar sunucuda değil, bu bilgisayarda çalışır."
+  },
+  "scmd.compare.marked": {
+    "message": "{count, plural, one {# dosya işaretlendi: diğer taraftakinden daha yeni ya da orada yok.} other {# dosya işaretlendi: diğer taraftakinden daha yeni ya da orada yok.}}"
+  },
+  "scmd.compare.same": {
+    "message": "Klasörlerde aynı dosyalar var."
+  },
+  "scmd.copying": {
+    "message": "{name} kopyalanıyor..."
+  },
+  "scmd.dialog.buttons": {
+    "message": "Enter Tamam   Esc İptal"
+  },
+  "scmd.error.read_settings": {
+    "message": "Ayarlar okunamadı: {err}"
+  },
+  "scmd.error.read_tabs": {
+    "message": "Açık sekmeler okunamadı: {err}"
+  },
+  "scmd.error.read_workspaces": {
+    "message": "Çalışma alanları okunamadı: {err}"
+  },
+  "scmd.error.save_back": {
+    "message": "Geri kaydedilemedi: {err}"
+  },
+  "scmd.error.save_searches": {
+    "message": "Aramalar kaydedilemedi: {err}"
+  },
+  "scmd.error.save_tabs": {
+    "message": "Açık sekmeler kaydedilemedi: {err}"
+  },
+  "scmd.find.backwards": {
+    "message": "Geriye doğru"
+  },
+  "scmd.find.case_sensitive": {
+    "message": "Büyük/küçük harf duyarlı"
+  },
+  "scmd.find.hex": {
+    "message": "Onaltılık (77 6F 72 64)"
+  },
+  "scmd.find.not_found": {
+    "message": "Bulunamadı: {text}"
+  },
+  "scmd.find.regex": {
+    "message": "Normal ifade"
+  },
+  "scmd.find.search_for": {
+    "message": "Aranacak:"
+  },
+  "scmd.find.title": {
+    "message": "Bul"
+  },
+  "scmd.find.whole_words": {
+    "message": "Yalnızca tam sözcükler"
+  },
+  "scmd.group.files": {
+    "message": "Dosyalar (*.txt *.md; klasörler / ile biter):"
+  },
+  "scmd.group.select_title": {
+    "message": "Grup seç"
+  },
+  "scmd.group.unselect_title": {
+    "message": "Grup seçimini kaldır"
+  },
+  "scmd.key_bar.copy": {
+    "message": "Kopya"
+  },
+  "scmd.key_bar.delete": {
+    "message": "Sil"
+  },
+  "scmd.key_bar.edit": {
+    "message": "Düzen"
+  },
+  "scmd.key_bar.menu": {
+    "message": "Menü"
+  },
+  "scmd.key_bar.mkdir": {
+    "message": "Klasör"
+  },
+  "scmd.key_bar.move": {
+    "message": "Taşı"
+  },
+  "scmd.key_bar.quit": {
+    "message": "Çık"
+  },
+  "scmd.key_bar.view": {
+    "message": "Göster"
+  },
+  "scmd.message.error": {
+    "message": "Hata"
+  },
+  "scmd.message.ok": {
+    "message": "Tamam"
+  },
+  "scmd.not_yet": {
+    "message": "{what, select, menus {Menüler: terminal sürümünde henüz yok.} file_operations {Dosya işlemleri: terminal sürümünde henüz yok.} servers {Sunucular: terminal sürümünde henüz yok.} other {Bu komut: terminal sürümünde henüz yok.}}"
+  },
+  "scmd.picture.broken": {
+    "message": "bozuk bir resim"
+  },
+  "scmd.picture.broken_page": {
+    "message": "bozuk bir sayfa"
+  },
+  "scmd.picture.loading": {
+    "message": "Yükleniyor…"
+  },
+  "scmd.picture.no_page": {
+    "message": "PDF’de böyle bir sayfa yok"
+  },
+  "scmd.shell.press_enter": {
+    "message": "Spark Commander’a dönmek için Enter tuşuna basın..."
+  },
+  "scmd.sync_browsing.off": {
+    "message": "Eşzamanlı gezinme kapalı."
+  },
+  "scmd.sync_browsing.on": {
+    "message": "Eşzamanlı gezinme açık."
+  },
+  "scmd.sync_browsing.stopped": {
+    "message": "{err}. Eşzamanlı gezinme kapatıldı."
+  },
+  "scmd.viewer.column": {
+    "message": "Süt {column}"
+  },
+  "scmd.viewer.finding": {
+    "message": "aranıyor…"
+  },
+  "scmd.viewer.key_bar.next": {
+    "message": "Devam"
+  },
+  "scmd.viewer.key_bar.quit": {
+    "message": "Çık"
+  },
+  "scmd.viewer.key_bar.reload": {
+    "message": "Yenile"
+  },
+  "scmd.viewer.key_bar.search": {
+    "message": "Ara"
+  },
+  "scmd.viewer.page": {
+    "message": "sayfa {page}/{pages}"
+  },
+  "scmd.viewer.reading": {
+    "message": "okunuyor %{percent}"
+  },
+  "scmd.viewer.wrap": {
+    "message": "Kaydır"
+  },
+  "scmd.workspace.copy_name": {
+    "message": "{name} kopyası"
+  },
+  "scmd.workspace.default_name": {
+    "message": "Çalışma alanı {number}"
+  },
+  "scmd.workspace.delete_question": {
+    "message": "“{name}” silinsin mi? Sekmeleri unutulur."
+  },
+  "scmd.workspace.duplicate_title": {
+    "message": "Çalışma alanını çoğalt"
+  },
+  "scmd.workspace.last_stays": {
+    "message": "Son çalışma alanı silinemez."
+  },
+  "scmd.workspace.name": {
+    "message": "Ad:"
+  },
+  "scmd.workspace.name_or_default": {
+    "message": "Ad (boş: {name}):"
+  },
+  "scmd.workspace.new_title": {
+    "message": "Yeni çalışma alanı"
+  },
+  "scmd.workspace.rename_title": {
+    "message": "Çalışma alanını yeniden adlandır"
+  },
+  "scmd.workspaces.keys": {
+    "message": "Enter Aç  F7 Yeni  F5 Kopyala  F2 Adlandır  F8 Sil"
+  },
+  "scmd.workspaces.title": {
+    "message": "Çalışma alanları"
+  },
+  "search.age.days": {
+    "message": "gün"
+  },
+  "search.age.hours": {
+    "message": "saat"
+  },
+  "search.age.minutes": {
+    "message": "dakika"
+  },
+  "search.age.months": {
+    "message": "ay"
+  },
+  "search.age.weeks": {
+    "message": "hafta"
+  },
+  "search.age.years": {
+    "message": "yıl"
+  },
+  "search.archives": {
+    "message": "Arşivlerde ara"
+  },
+  "search.attribute.directory": {
+    "message": "Dizin"
+  },
+  "search.attribute.either": {
+    "message": "Fark etmez"
+  },
+  "search.attribute.executable": {
+    "message": "Çalıştırılabilir"
+  },
+  "search.attribute.hidden": {
+    "message": "Gizli"
+  },
+  "search.attribute.link": {
+    "message": "Sembolik bağlantı"
+  },
+  "search.attribute.must": {
+    "message": "Olmalı"
+  },
+  "search.attribute.must_not": {
+    "message": "Olmamalı"
+  },
+  "search.attribute.read_only": {
+    "message": "Salt okunur"
+  },
+  "search.attributes.label": {
+    "message": "Öznitelikler:"
+  },
+  "search.between.and": {
+    "message": "ile"
+  },
+  "search.between.label": {
+    "message": "Tarih aralığı:"
+  },
+  "search.close": {
+    "message": "Kapat"
+  },
+  "search.depth.all": {
+    "message": "tümü (sınırsız derinlik)"
+  },
+  "search.depth.current": {
+    "message": "yalnızca geçerli dizin"
+  },
+  "search.depth.label": {
+    "message": "Alt dizinlerde ara:"
+  },
+  "search.depth.levels": {
+    "message": "{count, plural, one {# düzey} other {# düzey}}"
+  },
+  "search.drives": {
+    "message": "Sürücüler"
+  },
+  "search.duplicates.content": {
+    "message": "aynı içerik"
+  },
+  "search.duplicates.label": {
+    "message": "Yinelenen dosyaları bul:"
+  },
+  "search.duplicates.name": {
+    "message": "aynı ad"
+  },
+  "search.duplicates.size": {
+    "message": "aynı boyut"
+  },
+  "search.edit": {
+    "message": "F4 Düzenle"
+  },
+  "search.error.between_days": {
+    "message": "Tarih aralığı için iki gün de gerekli"
+  },
+  "search.error.date": {
+    "message": "{text}, 2026-11-12 gibi bir tarih değil"
+  },
+  "search.error.hex": {
+    "message": "{text}, 48 65 6c gibi onaltılık bir dizi değil"
+  },
+  "search.error.keep": {
+    "message": "Arama kaydedilemedi: {err}"
+  },
+  "search.error.local_time": {
+    "message": "{text} yerel saatte yok"
+  },
+  "search.error.names_regex": {
+    "message": "Adın normal ifadesi: {err}"
+  },
+  "search.error.newer_number": {
+    "message": "“Şundan eski değil” için bir sayı gerekli, {text} değil"
+  },
+  "search.error.no_place": {
+    "message": "Arama yeri boş: bir klasör girin"
+  },
+  "search.error.no_text": {
+    "message": "Metin bul için bir metin girin"
+  },
+  "search.error.older_number": {
+    "message": "“Şundan eski” için bir sayı gerekli, {text} değil"
+  },
+  "search.error.save": {
+    "message": "Aramalar kaydedilemedi: {err}"
+  },
+  "search.error.size_number": {
+    "message": "Dosya boyutu için bir sayı gerekli, {text} değil"
+  },
+  "search.error.text_regex": {
+    "message": "Metnin normal ifadesi: {err}"
+  },
+  "search.feed": {
+    "message": "Listeye aktar"
+  },
+  "search.go_to_file": {
+    "message": "Dosyaya git"
+  },
+  "search.in_found": {
+    "message": "F2 Bulunan dosyalarda ara"
+  },
+  "search.locate": {
+    "message": "locate veritabanından"
+  },
+  "search.names.label": {
+    "message": "Aranacak:"
+  },
+  "search.names.placeholder": {
+    "message": "*.txt *.md | backup*  (boş: tümü)"
+  },
+  "search.new": {
+    "message": "Yeni arama"
+  },
+  "search.newer.label": {
+    "message": "Şundan eski değil:"
+  },
+  "search.older.label": {
+    "message": "Şundan eski:"
+  },
+  "search.only_selected": {
+    "message": "Yalnızca seçili dosya/klasörlerde ara"
+  },
+  "search.only_selected_count": {
+    "message": "{count, plural, one {Yalnızca seçili # öğede ara} other {Yalnızca seçili # öğede ara}}"
+  },
+  "search.page.advanced": {
+    "message": "Gelişmiş"
+  },
+  "search.page.general": {
+    "message": "Genel"
+  },
+  "search.page.load_save": {
+    "message": "Yükle/Kaydet"
+  },
+  "search.places.browse_prompt": {
+    "message": "Arama yeri"
+  },
+  "search.places.label": {
+    "message": "Arama yeri:"
+  },
+  "search.places.placeholder": {
+    "message": "Klasörler, aralarında ;"
+  },
+  "search.regex": {
+    "message": "RegEx"
+  },
+  "search.results.label": {
+    "message": "Arama sonuçları:"
+  },
+  "search.saved.delete": {
+    "message": "Sil"
+  },
+  "search.saved.label": {
+    "message": "Önceki aramalar:"
+  },
+  "search.saved.load": {
+    "message": "Yükle"
+  },
+  "search.saved.name_first": {
+    "message": "Önce aramaya bir ad verin."
+  },
+  "search.saved.name_placeholder": {
+    "message": "Aramanın adı"
+  },
+  "search.saved.save": {
+    "message": "Kaydet"
+  },
+  "search.size.label": {
+    "message": "Dosya boyutu:"
+  },
+  "search.start": {
+    "message": "Aramayı başlat"
+  },
+  "search.status.found": {
+    "message": "{files, plural, one {# dosya} other {# dosya}} ve {dirs, plural, one {# dizin} other {# dizin}} bulundu"
+  },
+  "search.status.searching": {
+    "message": "Aranıyor…"
+  },
+  "search.status.searching_in": {
+    "message": "Aranıyor: {folder}"
+  },
+  "search.status.stopped": {
+    "message": "Durduruldu: {counts}"
+  },
+  "search.stop": {
+    "message": "Durdur"
+  },
+  "search.text.ansi": {
+    "message": "ANSI (kod sayfası {page})"
+  },
+  "search.text.case_sensitive": {
+    "message": "Büyük/küçük harf duyarlı"
+  },
+  "search.text.hex": {
+    "message": "Hex"
+  },
+  "search.text.label": {
+    "message": "Metin bul:"
+  },
+  "search.text.not_containing": {
+    "message": "Metni İÇERMEYEN dosyaları bul"
+  },
+  "search.text.office": {
+    "message": "Office dosyaları (docx, xlsx, pptx, odt…)"
+  },
+  "search.text.placeholder": {
+    "message": "Bulunacak metin"
+  },
+  "search.text.whole_words": {
+    "message": "Yalnızca tam sözcükler"
+  },
+  "search.title": {
+    "message": "Dosya bul"
+  },
+  "search.unit.bytes": {
+    "message": "bayt"
+  },
+  "search.view": {
+    "message": "F3 Görüntüle"
+  },
+  "settings.addons.builtin_version": {
+    "message": "{version}, Spark Commander ile birlikte gelir"
+  },
+  "settings.addons.check_daily": {
+    "message": "Eklenti güncellemelerini başlangıçta ve her gün denetle ve öner"
+  },
+  "settings.addons.check_failed": {
+    "message": "Güncellemeler denetlenemedi: {err}"
+  },
+  "settings.addons.check_now": {
+    "message": "Şimdi denetle"
+  },
+  "settings.addons.checking": {
+    "message": "Güncellemeler denetleniyor..."
+  },
+  "settings.addons.download": {
+    "message": "İndir"
+  },
+  "settings.addons.downloading": {
+    "message": "İndiriliyor: {done} / {size}"
+  },
+  "settings.addons.file": {
+    "message": "Dosya"
+  },
+  "settings.addons.installed.builtin": {
+    "message": "Spark Commander ile birlikte gelir"
+  },
+  "settings.addons.installed.label": {
+    "message": "Yüklü"
+  },
+  "settings.addons.installed.none": {
+    "message": "yok"
+  },
+  "settings.addons.intro": {
+    "message": "Spark Commander, yaptığı bazı işler için diğer projelerin bu programlarını kullanır. Eklentiler uygulamadan ayrı olarak, siz seçtiğinizde indirilir; 7-Zip ve PDFium uygulamayla birlikte gelir."
+  },
+  "settings.addons.never_offer": {
+    "message": "Bir dosya eklenti gerektirdiğinde hiçbir zaman eklenti önerme"
+  },
+  "settings.addons.offers": {
+    "message": "Öneriler ve güncellemeler"
+  },
+  "settings.addons.online.label": {
+    "message": "Çevrimiçi"
+  },
+  "settings.addons.online.looking": {
+    "message": "denetleniyor..."
+  },
+  "settings.addons.online.none": {
+    "message": "bu sistem için yok"
+  },
+  "settings.addons.online.not_yet": {
+    "message": "henüz denetlenmedi"
+  },
+  "settings.addons.online.unknown": {
+    "message": "bilinmiyor"
+  },
+  "settings.addons.remove": {
+    "message": "Kaldır"
+  },
+  "settings.addons.up_to_date": {
+    "message": "Eklenti listesi güncel."
+  },
+  "settings.addons.version": {
+    "message": "Sürüm"
+  },
+  "settings.addons.website": {
+    "message": "Web sitesi"
+  },
+  "settings.appearance.title": {
+    "message": "Görünüm"
+  },
+  "settings.apply": {
+    "message": "Uygula"
+  },
+  "settings.backdrop.blur": {
+    "message": "Arkasındaki masaüstünü bulanıklaştır"
+  },
+  "settings.backdrop.clear": {
+    "message": "%0, yalnızca masaüstü"
+  },
+  "settings.backdrop.cover": {
+    "message": "Arkasındaki masaüstünü ne kadar örttüğü:"
+  },
+  "settings.backdrop.opacity": {
+    "message": "%{opacity}"
+  },
+  "settings.backdrop.sidebar": {
+    "message": "Kenar çubuğu"
+  },
+  "settings.backdrop.solid": {
+    "message": "%100, opak"
+  },
+  "settings.backdrop.terminal": {
+    "message": "Terminal"
+  },
+  "settings.cancel": {
+    "message": "İptal"
+  },
+  "settings.date.as_system": {
+    "message": "Sistemle aynı: {date}"
+  },
+  "settings.date.custom": {
+    "message": "Özel:"
+  },
+  "settings.date.pattern_help": {
+    "message": "yyyy yıl, MM ay (MMM adı), dd gün (ddd haftanın günü)"
+  },
+  "settings.date.shown_as": {
+    "message": "Gösterim"
+  },
+  "settings.date.shown_as_note": {
+    "message": "dosya listelerinde; pencereler saniyeleri de ekler"
+  },
+  "settings.date.title": {
+    "message": "Tarih"
+  },
+  "settings.editor.browse": {
+    "message": "Gözat..."
+  },
+  "settings.editor.choose": {
+    "message": "Seç"
+  },
+  "settings.editor.external": {
+    "message": "Harici düzenleyici (Ctrl+Shift+F4):"
+  },
+  "settings.editor.external_help": {
+    "message": "%1 dosyadır, yoksa dosya sona eklenir; örn. code --wait %1"
+  },
+  "settings.editor.limit": {
+    "message": "Yerleşik düzenleyicinin (F4) açacağı en büyük dosya:"
+  },
+  "settings.editor.limit_unit": {
+    "message": "MB"
+  },
+  "settings.editor.title": {
+    "message": "F4 düzenleyicisi"
+  },
+  "settings.error.no_folder": {
+    "message": "yapılandırma klasörü yok"
+  },
+  "settings.files_shown.hidden": {
+    "message": "Gizli dosyalar"
+  },
+  "settings.files_shown.system": {
+    "message": "Sistem dosyaları"
+  },
+  "settings.files_shown.title": {
+    "message": "Gösterilen dosyalar"
+  },
+  "settings.font.as_system": {
+    "message": "Sistemle aynı"
+  },
+  "settings.font.chosen": {
+    "message": "Seçildi; sistemin yazı tipi: {family}, {size}"
+  },
+  "settings.font.fixed": {
+    "message": "Görüntüleyici"
+  },
+  "settings.font.fixed_note": {
+    "message": "Yalnızca sabit genişlikli yazı tipleri; düzenleyici ve dosya karşılaştırma da bunu kullanır."
+  },
+  "settings.font.main": {
+    "message": "Ana pencere yazı tipi"
+  },
+  "settings.font.system": {
+    "message": "Sistemin yazı tipi"
+  },
+  "settings.language.system": {
+    "message": "Sistem dili"
+  },
+  "settings.language.system_named": {
+    "message": "Sistem dili: {language}"
+  },
+  "settings.language.title": {
+    "message": "Dil"
+  },
+  "settings.menus.automatic": {
+    "message": "Otomatik: GNOME’da ☰ düğmesi, diğerlerinde menü çubuğu"
+  },
+  "settings.menus.bar": {
+    "message": "Menü çubuğu"
+  },
+  "settings.menus.button": {
+    "message": "Başlık çubuğunda ☰ düğmesi"
+  },
+  "settings.menus.title": {
+    "message": "Menüler"
+  },
+  "settings.ok": {
+    "message": "Tamam"
+  },
+  "settings.page.addons": {
+    "message": "Eklentiler"
+  },
+  "settings.page.date": {
+    "message": "Tarih"
+  },
+  "settings.page.display": {
+    "message": "Gösterim"
+  },
+  "settings.page.edit_view": {
+    "message": "Düzenle/Görüntüle"
+  },
+  "settings.page.font": {
+    "message": "Yazı tipi"
+  },
+  "settings.page.language": {
+    "message": "Dil"
+  },
+  "settings.page.layout": {
+    "message": "Yerleşim"
+  },
+  "settings.page.operations": {
+    "message": "İşlemler"
+  },
+  "settings.page.passwords": {
+    "message": "Parolalar"
+  },
+  "settings.page.terminal": {
+    "message": "Terminal"
+  },
+  "settings.page.toolbar": {
+    "message": "Araç çubuğu"
+  },
+  "settings.passwords.change_master": {
+    "message": "Ana parolayı değiştir…"
+  },
+  "settings.passwords.locked": {
+    "message": "Bu bilgisayarda kilitliler: ana parola kilidi açar."
+  },
+  "settings.passwords.master_set": {
+    "message": "Ana parola belirlendi: ayarlar klasörü kopyalanırsa, başka bir bilgisayarda ana parola yazılınca açılırlar."
+  },
+  "settings.passwords.no_master": {
+    "message": "Ana parola belirlenmedi: ayarlar klasörü kopyalanırsa başka bir bilgisayarda açılmazlar; orada yeniden yazılmaları gerekir."
+  },
+  "settings.passwords.not_removed": {
+    "message": "Ana parola kaldırılmadı: {err}"
+  },
+  "settings.passwords.remove_master": {
+    "message": "Ana parolayı kaldır"
+  },
+  "settings.passwords.saved": {
+    "message": "{count, plural, one {# parola kayıtlı} other {# parola kayıtlı}} (sunucular, paylaşımlar, şifreli sürücüler için); ayarlar klasöründe şifreli olarak saklanır, onları açan anahtar bu bilgisayarın anahtarlığındadır."
+  },
+  "settings.passwords.set_master": {
+    "message": "Ana parola belirle…"
+  },
+  "settings.passwords.title": {
+    "message": "Kayıtlı parolalar"
+  },
+  "settings.passwords.unlock": {
+    "message": "Kilidi aç…"
+  },
+  "settings.queue.clear_after": {
+    "message": "Biten işlemleri temizleme süresi:"
+  },
+  "settings.queue.clear_after_help": {
+    "message": "0: biter bitmez. Başarısız ve iptal edilenler temizlenene kadar kalır."
+  },
+  "settings.queue.clear_after_unit": {
+    "message": "dakika"
+  },
+  "settings.queue.download_limit": {
+    "message": "İndirme hızı sınırı"
+  },
+  "settings.queue.download_limit_help": {
+    "message": "Bağlantıdan indir ile FTP ve SFTP sunucularından kopyalamalar; çalışmakta olanlar da dahil. 0: sınır yok."
+  },
+  "settings.queue.download_limit_unit": {
+    "message": "KB/sn"
+  },
+  "settings.queue.title": {
+    "message": "İşlem kuyruğu"
+  },
+  "settings.shell.default": {
+    "message": "Varsayılan: {shell}"
+  },
+  "settings.shell.note": {
+    "message": "Yeni terminal sekmeleri bunu başlatır."
+  },
+  "settings.shell.title": {
+    "message": "Kabuk"
+  },
+  "settings.sort_folders.by_name": {
+    "message": "Her zaman ada göre"
+  },
+  "settings.sort_folders.like_files": {
+    "message": "Dosyalar gibi (zamana göre de)"
+  },
+  "settings.sort_folders.title": {
+    "message": "Klasörleri sıralama"
+  },
+  "settings.tabs.header_always": {
+    "message": "Yalnızca bir sekme olduğunda da sekme başlığını göster"
+  },
+  "settings.tabs.title": {
+    "message": "Klasör sekmeleri"
+  },
+  "settings.time.as_system": {
+    "message": "Sistemle aynı"
+  },
+  "settings.time.h12": {
+    "message": "12 saat (2:05 ÖS)"
+  },
+  "settings.time.h24": {
+    "message": "24 saat (14:05)"
+  },
+  "settings.time.title": {
+    "message": "Saat"
+  },
+  "settings.title": {
+    "message": "Ayarlar"
+  },
+  "settings.toolbar.add": {
+    "message": "Düğme ekle…"
+  },
+  "settings.toolbar.move_down": {
+    "message": "Aşağı taşı"
+  },
+  "settings.toolbar.move_up": {
+    "message": "Yukarı taşı"
+  },
+  "settings.toolbar.place": {
+    "message": "Menü çubuğunun altında; menülerin ☰ düğmesinin arkasında olduğu yerde, GNOME uygulamalarındaki gibi başlık çubuğunda. Düğme yoksa araç çubuğu da gösterilmez."
+  },
+  "settings.toolbar.remove": {
+    "message": "Kaldır"
+  },
+  "settings.toolbar.replace": {
+    "message": "Değiştir…"
+  },
+  "settings.toolbar.restore_default": {
+    "message": "Varsayılana dön"
+  },
+  "settings.toolbar.title": {
+    "message": "Araç çubuğu düğmeleri"
+  },
+  "settings.viewer.font.ansi": {
+    "message": "ANSI (Windows)"
+  },
+  "settings.viewer.font.ascii": {
+    "message": "ASCII (DOS)"
+  },
+  "settings.viewer.font.auto": {
+    "message": "Otomatik algıla"
+  },
+  "settings.viewer.font.label": {
+    "message": "Başlangıçta yazı tipi:"
+  },
+  "settings.viewer.font.variable": {
+    "message": "Değişken genişlik"
+  },
+  "settings.viewer.minimap": {
+    "message": "Mini harita"
+  },
+  "settings.viewer.show": {
+    "message": "Göster:"
+  },
+  "settings.viewer.start.auto": {
+    "message": "Otomatik algıla"
+  },
+  "settings.viewer.start.binary": {
+    "message": "İkili"
+  },
+  "settings.viewer.start.hex": {
+    "message": "Onaltılık"
+  },
+  "settings.viewer.start.label": {
+    "message": "Başlangıçta gösterim:"
+  },
+  "settings.viewer.start.text": {
+    "message": "Metin"
+  },
+  "settings.viewer.title": {
+    "message": "F3 görüntüleyicisi"
+  },
+  "settings.viewer.width.binary": {
+    "message": "İkili"
+  },
+  "settings.viewer.width.label": {
+    "message": "Gösterim genişliği (karakter):"
+  },
+  "settings.viewer.width.text": {
+    "message": "Metin"
+  },
+  "settings.viewer.wrap": {
+    "message": "Metni kaydır"
+  },
+  "shells.command_prompt": {
+    "message": "Komut İstemi"
+  },
+  "sidebar.device.no_files": {
+    "message": "dosya paylaşmıyor"
+  },
+  "sidebar.device.not_answering": {
+    "message": "{name} yanıt vermiyor: kilidini açıp üzerinde KDE Connect’i açın, sonra klasörü yeniden okuyun (F2)."
+  },
+  "sidebar.device.not_answering_error": {
+    "message": "{name} yanıt vermiyor ({err}): kilidini açıp üzerinde KDE Connect’i açın."
+  },
+  "sidebar.device.not_connected": {
+    "message": "bağlı değil"
+  },
+  "sidebar.device.opening": {
+    "message": "{name} açılıyor..."
+  },
+  "sidebar.device.reconnecting": {
+    "message": "{name} yanıt vermiyor: yeniden bağlanılıyor..."
+  },
+  "sidebar.device.unmount_failed": {
+    "message": "{name}: bağlantısı kaldırılamadı: {err}"
+  },
+  "sidebar.group.bookmarks": {
+    "message": "Yer imleri"
+  },
+  "sidebar.group.cloud": {
+    "message": "Bulut"
+  },
+  "sidebar.group.devices": {
+    "message": "Cihazlar"
+  },
+  "sidebar.group.drives": {
+    "message": "Sürücüler"
+  },
+  "sidebar.group.network": {
+    "message": "Ağ"
+  },
+  "sidebar.section.connections": {
+    "message": "Bağlantılar"
+  },
+  "sidebar.section.folders": {
+    "message": "Klasörler"
+  },
+  "sidebar.section.operations": {
+    "message": "İşlemler"
+  },
+  "sidebar.section.places": {
+    "message": "Yerler"
+  },
+  "sidebar.volume.locked": {
+    "message": "kilitli"
+  },
+  "sidebar.volume.mounting": {
+    "message": "{name} bağlanıyor..."
+  },
+  "sidebar.volume.not_mounted": {
+    "message": "bağlı değil"
+  },
+  "sidebar.volume.open": {
+    "message": "Aç"
+  },
+  "sidebar.volume.space": {
+    "message": "{free} boş / {total}"
+  },
+  "sidebar.volume.unmount": {
+    "message": "Bağlantıyı kaldır"
+  },
+  "sidebar.volume.unmount_failed": {
+    "message": "Bağlantı kaldırılamadı: {err}"
+  },
+  "split.bad_size": {
+    "message": "“{size}” bir boyut değil: 100 MB, 1.5 GB, 650m"
+  },
+  "split.choose": {
+    "message": "İmleci bölünecek dosyanın üzerine getirin."
+  },
+  "split.combine.choose": {
+    "message": "İmleci bir parçanın (ad.001) ya da onun .crc dosyasının üzerine getirin."
+  },
+  "split.combine.dialog_title": {
+    "message": "Dosyaları birleştir"
+  },
+  "split.combine.label": {
+    "message": "Parçaları şu dosyada birleştir:"
+  },
+  "split.combine.title": {
+    "message": "“{name}” dosyasını birleştir"
+  },
+  "split.combined_no_crc": {
+    "message": "{count, plural, one {# parça birleştirildi, denetlenecek CRC dosyası yok} other {# parça birleştirildi, denetlenecek CRC dosyası yok}}"
+  },
+  "split.crc_mismatch": {
+    "message": "{target}, {file} ile eşleşmiyor: bir parça eksik ya da bozuk"
+  },
+  "split.crc_names_no_file": {
+    "message": "CRC dosyası bir dosya adı belirtmiyor"
+  },
+  "split.crc_unreadable": {
+    "message": "birleştirildi, ancak {file} okunamadı: {err}"
+  },
+  "split.dialog_title": {
+    "message": "Dosyayı böl"
+  },
+  "split.label": {
+    "message": "“{name}” dosyasını şu klasörde parçalara böl:"
+  },
+  "split.part_missing": {
+    "message": "{path} eksik"
+  },
+  "split.part_size": {
+    "message": "Parça boyutu:"
+  },
+  "split.title": {
+    "message": "“{name}” dosyasını böl"
+  },
+  "sync.close": {
+    "message": "Kapat"
+  },
+  "sync.column.date": {
+    "message": "Tarih"
+  },
+  "sync.column.name": {
+    "message": "Ad"
+  },
+  "sync.column.size": {
+    "message": "Boyut"
+  },
+  "sync.compare": {
+    "message": "Karşılaştır"
+  },
+  "sync.confirm.copy_left": {
+    "message": "{count} öğeyi sola kopyala ({size})"
+  },
+  "sync.confirm.copy_right": {
+    "message": "{count} öğeyi sağa kopyala ({size})"
+  },
+  "sync.confirm.delete_left": {
+    "message": "Soldaki {count} öğeyi sil"
+  },
+  "sync.confirm.delete_right": {
+    "message": "Sağdaki {count} öğeyi sil"
+  },
+  "sync.confirm.ok": {
+    "message": "Eşitle"
+  },
+  "sync.confirm.text": {
+    "message": "{actions}. Kopyalanan dosyalar oradakilerin yerini alır.{trash, select, yes { Bu bilgisayarda silinenler çöp kutusuna gider.} other {}}"
+  },
+  "sync.confirm.title": {
+    "message": "Eşitle"
+  },
+  "sync.error.changed": {
+    "message": "karşılaştırmadan bu yana değişti; yeniden karşılaştırın"
+  },
+  "sync.error.compare": {
+    "message": "Karşılaştırılamadı: {err}"
+  },
+  "sync.error.no_folders": {
+    "message": "Dizinleri eşitle iki klasörü karşılaştırır: panellerden hiçbiri bir arşivi ya da arama sonuçlarını göstermemeli."
+  },
+  "sync.left": {
+    "message": "Sol"
+  },
+  "sync.mask.label": {
+    "message": "Dosyalar:"
+  },
+  "sync.option.asymmetric": {
+    "message": "Asimetrik (sağ, solun kopyası olur)"
+  },
+  "sync.option.by_content": {
+    "message": "İçeriğe göre"
+  },
+  "sync.option.ignore_date": {
+    "message": "Tarihi yoksay"
+  },
+  "sync.option.subfolders": {
+    "message": "Alt klasörler"
+  },
+  "sync.result.done": {
+    "message": "{count, plural, one {# öğe eşitlendi} other {# öğe eşitlendi}}"
+  },
+  "sync.result.failed": {
+    "message": "{count, plural, one {# öğe eşitlenemedi} other {# öğe eşitlenemedi}}; {first}"
+  },
+  "sync.right": {
+    "message": "Sağ"
+  },
+  "sync.show.equal": {
+    "message": "= eşit"
+  },
+  "sync.show.label": {
+    "message": "Göster:"
+  },
+  "sync.show.other": {
+    "message": "≠ dokunulmayan"
+  },
+  "sync.show.to_left": {
+    "message": "← sola"
+  },
+  "sync.show.to_right": {
+    "message": "→ sağa"
+  },
+  "sync.status.both_empty": {
+    "message": "İkisi de boş."
+  },
+  "sync.status.comparing": {
+    "message": "Karşılaştırılıyor: {folder}"
+  },
+  "sync.status.counts": {
+    "message": "{right} sağa kopyalanacak, {left} sola kopyalanacak, {delete} silinecek, {equal} eşit, {alone} dokunulmayacak"
+  },
+  "sync.status.stopped": {
+    "message": "Durduruldu."
+  },
+  "sync.stop": {
+    "message": "Durdur"
+  },
+  "sync.synchronize": {
+    "message": "Eşitle..."
+  },
+  "sync.task.title": {
+    "message": "{left} ile {right} klasörlerini eşitle"
+  },
+  "sync.title": {
+    "message": "Dizinleri eşitle"
+  },
+  "tab_menu.close_all_tabs": {
+    "message": "Tüm sekmeleri kapat"
+  },
+  "tab_menu.close_duplicate_tabs": {
+    "message": "Yinelenen sekmeleri kapat"
+  },
+  "tab_menu.close_tab": {
+    "message": "Bu sekmeyi kapat"
+  },
+  "tab_menu.copy_tab_to_other_panel": {
+    "message": "Sekmeyi diğer panele kopyala"
+  },
+  "tab_menu.duplicate_tab": {
+    "message": "Bu sekmeyi çoğalt"
+  },
+  "tab_menu.list_tabs": {
+    "message": "Tüm sekmelerin listesini göster"
+  },
+  "tab_menu.lock_tab": {
+    "message": "Bu sekmeyi kilitle"
+  },
+  "tab_menu.none": {
+    "message": "(yok)"
+  },
+  "tab_menu.rename_tab": {
+    "message": "Sekmeyi yeniden adlandır..."
+  },
+  "tabs.error.reopen": {
+    "message": "Sekme yeniden açılamadı: {err}"
+  },
+  "tabs.history.empty": {
+    "message": "Bu sekmenin geçmişinde henüz klasör yok."
+  },
+  "tabs.new": {
+    "message": "Yeni sekme"
+  },
+  "tabs.rename.label": {
+    "message": "Yeni ad:"
+  },
+  "tabs.rename.title": {
+    "message": "Sekmeyi yeniden adlandır"
+  },
+  "tabs.search_results": {
+    "message": "Arama sonuçları"
+  },
+  "terminal.busy": {
+    "message": "Terminalde bir program çalışıyor: komutu program bitince çalıştırın."
+  },
+  "terminal.close.idle": {
+    "message": "Bu terminal sekmesi kapatılsın mı? Kabuğu sonlanacak."
+  },
+  "terminal.close.ok": {
+    "message": "Kapat"
+  },
+  "terminal.close.running": {
+    "message": "Bu terminal sekmesi kapatılsın mı? İçinde çalışan program durdurulacak."
+  },
+  "terminal.close.title": {
+    "message": "Sekmeyi kapat"
+  },
+  "terminal.error.start_shell": {
+    "message": "Kabuk başlatılamadı: {err}"
+  },
+  "terminal.jump_to_bottom": {
+    "message": "En alta git (Ctrl+End) ↓"
+  },
+  "terminal.menu.copy": {
+    "message": "Kopyala"
+  },
+  "terminal.menu.paste": {
+    "message": "Yapıştır"
+  },
+  "toolbar.customize": {
+    "message": "Araç çubuğunu özelleştir…"
+  },
+  "tools.clear_key": {
+    "message": "Temizle"
+  },
+  "tools.close": {
+    "message": "Kapat"
+  },
+  "tools.delete": {
+    "message": "Sil"
+  },
+  "tools.empty": {
+    "message": "Henüz araç yok: Yeni... ile ekleyin."
+  },
+  "tools.field.command": {
+    "message": "Komut"
+  },
+  "tools.field.key": {
+    "message": "Tuş"
+  },
+  "tools.field.name": {
+    "message": "Ad"
+  },
+  "tools.intro": {
+    "message": "Araçlar menüsündeki kendi komut satırlarınız: orada birine tıklayın ya da tuşuna basın."
+  },
+  "tools.key.none": {
+    "message": "Yok"
+  },
+  "tools.key.waiting": {
+    "message": "Tuşa basın... (Esc: yok)"
+  },
+  "tools.move_down": {
+    "message": "Aşağı taşı"
+  },
+  "tools.move_up": {
+    "message": "Yukarı taşı"
+  },
+  "tools.name.placeholder": {
+    "message": "Diğer taraftakiyle karşılaştır"
+  },
+  "tools.new": {
+    "message": "Yeni..."
+  },
+  "tools.new_name": {
+    "message": "Araç {number}"
+  },
+  "tools.no_command": {
+    "message": "{tool} için henüz komut yok: Araçlar > Araçları yönet."
+  },
+  "tools.not_local": {
+    "message": "Araçlar bu bilgisayarda çalışır: panel bir sunucuyu veya arşivi gösteriyor."
+  },
+  "tools.note.key_of_command": {
+    "message": "{key} aynı zamanda {command} komutunun tuşu: araç onu alır."
+  },
+  "tools.note.key_of_other_tool": {
+    "message": "{key} aynı zamanda {tool} aracının tuşu: listede alttaki onu alır."
+  },
+  "tools.placeholders": {
+    "message": "%P bu panelin klasörü, %T diğer panelinki (ikisi de ayırıcıyla biter, böylece \"%P%N\" bir yoldur), %N imlecin üzerindeki dosya, %O uzantısız adı, %E uzantı, %S seçili dosyalar (yoksa imlecinki), her biri tırnak içinde; %% bir %. Geri kalanı tırnak içine alın: \"%P%N\"."
+  },
+  "tools.run_in_terminal": {
+    "message": "Çıktısını görmek için terminalde çalıştır"
+  },
+  "tools.set_key": {
+    "message": "Tuş ata..."
+  },
+  "tools.title": {
+    "message": "Araçlar"
+  },
+  "transfer.answer.cancel": {
+    "message": "İptal"
+  },
+  "transfer.answer.elevate": {
+    "message": "Yönetici olarak"
+  },
+  "transfer.answer.overwrite": {
+    "message": "Üzerine yaz"
+  },
+  "transfer.answer.overwrite_all": {
+    "message": "Tümünün üzerine yaz"
+  },
+  "transfer.answer.rename": {
+    "message": "Yeniden adlandır"
+  },
+  "transfer.answer.retry": {
+    "message": "Yeniden dene"
+  },
+  "transfer.answer.skip": {
+    "message": "Atla"
+  },
+  "transfer.answer.skip_all": {
+    "message": "Tümünü atla"
+  },
+  "transfer.archive.local_only": {
+    "message": "Arşive yalnızca bu bilgisayarın dosyaları eklenebilir: önce onları buraya kopyalayın."
+  },
+  "transfer.cancel": {
+    "message": "İptal"
+  },
+  "transfer.error.elevate_hint": {
+    "message": "Yönetici olarak: bu ve reddedilen diğerleri, geri kalanı bittikten sonra parola bir kez sorularak yapılır."
+  },
+  "transfer.error.title": {
+    "message": "Hata"
+  },
+  "transfer.exists.describe": {
+    "message": "{count, plural, one {{size} bayt, {time}} other {{size} bayt, {time}}}"
+  },
+  "transfer.exists.text": {
+    "message": "Orada olan: {existing}\nYeni olan: {new}"
+  },
+  "transfer.exists.title": {
+    "message": "Dosya zaten var"
+  },
+  "transfer.extract_failed": {
+    "message": "Arşivden çıkarılamadı: {err}"
+  },
+  "transfer.into_archive.question_many": {
+    "message": "{count, plural, one {# öğe} other {# öğe}} {into} içine {kind, select, copy {kopyalansın} other {taşınsın}} mı? Orada aynı adı taşıyanlar değiştirilir."
+  },
+  "transfer.into_archive.question_one": {
+    "message": "“{name}” {into} içine {kind, select, copy {kopyalansın} other {taşınsın}} mı? Orada aynı adı taşıyanlar değiştirilir."
+  },
+  "transfer.into_archive.title_many": {
+    "message": "{count, plural, one {# öğeyi} other {# öğeyi}} {archive} arşivine {kind, select, copy {kopyala} other {taşı}}"
+  },
+  "transfer.into_archive.title_one": {
+    "message": "“{name}” öğesini {archive} arşivine {kind, select, copy {kopyala} other {taşı}}"
+  },
+  "transfer.label.many": {
+    "message": "{count, plural, one {# öğeyi} other {# öğeyi}} şuraya {kind, select, copy {kopyala} other {taşı}}:"
+  },
+  "transfer.label.many_server": {
+    "message": "{count, plural, one {# öğeyi} other {# öğeyi}} {server} üzerinde şuraya {kind, select, copy {kopyala} other {taşı}}:"
+  },
+  "transfer.label.one": {
+    "message": "“{name}” öğesini şuraya {kind, select, copy {kopyala} other {taşı}}:"
+  },
+  "transfer.label.one_server": {
+    "message": "“{name}” öğesini {server} üzerinde şuraya {kind, select, copy {kopyala} other {taşı}}:"
+  },
+  "transfer.ok": {
+    "message": "Tamam"
+  },
+  "transfer.overwrite.all": {
+    "message": "Tümünün üzerine yaz"
+  },
+  "transfer.overwrite.ask": {
+    "message": "Sor"
+  },
+  "transfer.overwrite.label": {
+    "message": "Hedefte aynı adlı bir dosya varsa:"
+  },
+  "transfer.overwrite.older": {
+    "message": "Eskilerin üzerine yaz"
+  },
+  "transfer.overwrite.rename": {
+    "message": "Kopyaları yeniden adlandır"
+  },
+  "transfer.overwrite.skip": {
+    "message": "Tümünü atla"
+  },
+  "transfer.remove_moved": {
+    "message": "Taşınanları {name} arşivinden kaldır"
+  },
+  "transfer.speed": {
+    "message": "{size}/sn"
+  },
+  "transfer.strip.counting": {
+    "message": "sayılıyor: {count, plural, one {# dosya} other {# dosya}}"
+  },
+  "transfer.strip.progress": {
+    "message": "{files} / {count, plural, one {# dosya} other {# dosya}}, %{percent}"
+  },
+  "transfer.strip.queue": {
+    "message": "Kuyruk..."
+  },
+  "transfer.strip.queue_waiting": {
+    "message": "Kuyruk ({count, plural, one {# bekliyor} other {# bekliyor}})..."
+  },
+  "transfer.title.copy": {
+    "message": "Kopyala"
+  },
+  "transfer.title.move": {
+    "message": "Taşı"
+  },
+  "viewer.as_text_hint": {
+    "message": "{err}. 1 tuşu dosyayı metin olarak gösterir."
+  },
+  "viewer.book.cannot_read": {
+    "message": "Bu kitap okunamıyor: {err}. 1 tuşu dosyayı metin olarak gösterir."
+  },
+  "viewer.book.continuing": {
+    "message": "{percent} konumundan devam ediliyor"
+  },
+  "viewer.book.error.compression": {
+    "message": "henüz okunamayan bir biçimde sıkıştırılmış ({compression})"
+  },
+  "viewer.book.error.damaged": {
+    "message": "bozuk bir kitap"
+  },
+  "viewer.book.error.damaged_zip": {
+    "message": "bozuk bir zip"
+  },
+  "viewer.book.error.drm": {
+    "message": "DRM korumalı: yalnızca Kindle okuyabilir"
+  },
+  "viewer.book.error.huffman": {
+    "message": "Amazon’un kendi kitapları gibi sıkıştırılmış (HUFF/CDIC); bu henüz okunamıyor"
+  },
+  "viewer.book.error.missing_part": {
+    "message": "{name} kitapta yok"
+  },
+  "viewer.book.error.no_package": {
+    "message": "kitapta paket dosyası yok"
+  },
+  "viewer.book.error.no_text": {
+    "message": "kitapta metin yok"
+  },
+  "viewer.book.error.not_zip": {
+    "message": "zip değil: bozuk ya da DRM korumalı bir kitap mı?"
+  },
+  "viewer.book.error.zip_method": {
+    "message": "{name}: burada okunamayan bir zip yöntemiyle sıkıştırılmış ({method})"
+  },
+  "viewer.cannot_show": {
+    "message": "Gösterilemiyor: {err}"
+  },
+  "viewer.convert.failed": {
+    "message": "{tool} dönüştüremedi ({status})"
+  },
+  "viewer.converting": {
+    "message": "{tool} ile dönüştürülüyor…"
+  },
+  "viewer.copy.too_large": {
+    "message": "{megabytes} MB üzerindeki seçimler kopyalanmaz."
+  },
+  "viewer.encoding.cp1250": {
+    "message": "Doğu Avrupa (1250)"
+  },
+  "viewer.encoding.cp1251": {
+    "message": "Kiril Windows (1251)"
+  },
+  "viewer.encoding.cp1252": {
+    "message": "Batı Latin1 (1252)"
+  },
+  "viewer.encoding.cp1253": {
+    "message": "Yunanca (1253)"
+  },
+  "viewer.encoding.cp1254": {
+    "message": "Türkçe (1254)"
+  },
+  "viewer.encoding.cp1255": {
+    "message": "İbranice (1255)"
+  },
+  "viewer.encoding.cp1256": {
+    "message": "Arapça (1256)"
+  },
+  "viewer.encoding.cp1257": {
+    "message": "Baltık (1257)"
+  },
+  "viewer.encoding.cp1258": {
+    "message": "Vietnamca (1258)"
+  },
+  "viewer.encoding.cp20866": {
+    "message": "Kiril KOI8-R (20866)"
+  },
+  "viewer.encoding.cp437": {
+    "message": "DOS-ABD (437)"
+  },
+  "viewer.encoding.cp850": {
+    "message": "DOS-LATIN1 (850)"
+  },
+  "viewer.encoding.cp852": {
+    "message": "DOS Orta Avrupa (852)"
+  },
+  "viewer.encoding.cp866": {
+    "message": "DOS Kiril (866)"
+  },
+  "viewer.encoding.cp874": {
+    "message": "Tayca (874)"
+  },
+  "viewer.encoding.cp932": {
+    "message": "Japonca (932)"
+  },
+  "viewer.encoding.cp936": {
+    "message": "Çince Anakara (936)"
+  },
+  "viewer.encoding.cp949": {
+    "message": "Korece (949)"
+  },
+  "viewer.encoding.cp950": {
+    "message": "Çince Tayvan (950)"
+  },
+  "viewer.find.not_found": {
+    "message": "Bulunamadı: {text}"
+  },
+  "viewer.find.not_hex": {
+    "message": "Onaltılık bir dizi değil: {text}"
+  },
+  "viewer.find.nothing": {
+    "message": "Aranacak bir şey yok."
+  },
+  "viewer.find.save_failed": {
+    "message": "Aramalar kaydedilemedi: {err}"
+  },
+  "viewer.loading": {
+    "message": "Yükleniyor…"
+  },
+  "viewer.markdown.too_large": {
+    "message": "{megabytes} MB üzerinde: 1 tuşu metin olarak gösterir."
+  },
+  "viewer.menu.binary": {
+    "message": "İkili (sabit satır uzunluğu)"
+  },
+  "viewer.menu.book": {
+    "message": "Kitap (EPUB, FB2)"
+  },
+  "viewer.menu.close": {
+    "message": "Kapat"
+  },
+  "viewer.menu.configure": {
+    "message": "Yapılandır..."
+  },
+  "viewer.menu.copy_hex": {
+    "message": "Onaltılık karakterler olarak kopyala"
+  },
+  "viewer.menu.copy_text": {
+    "message": "Metin olarak kopyala"
+  },
+  "viewer.menu.edit": {
+    "message": "Düzen"
+  },
+  "viewer.menu.encoding": {
+    "message": "Kodlama"
+  },
+  "viewer.menu.file": {
+    "message": "Dosya"
+  },
+  "viewer.menu.find": {
+    "message": "Bul..."
+  },
+  "viewer.menu.find_next": {
+    "message": "Sonrakini bul"
+  },
+  "viewer.menu.fit_image": {
+    "message": "Resmi pencereye sığdır"
+  },
+  "viewer.menu.font_ansi": {
+    "message": "ANSI (Windows karakter kümesi)"
+  },
+  "viewer.menu.font_ascii": {
+    "message": "ASCII (DOS karakter kümesi)"
+  },
+  "viewer.menu.font_page": {
+    "message": "Yazı tipine göre"
+  },
+  "viewer.menu.font_variable": {
+    "message": "Değişken karakter genişliği"
+  },
+  "viewer.menu.hex": {
+    "message": "Onaltılık"
+  },
+  "viewer.menu.html": {
+    "message": "HTML metni (etiketleri kaldır)"
+  },
+  "viewer.menu.minimap": {
+    "message": "Mini harita"
+  },
+  "viewer.menu.next_file": {
+    "message": "Sonraki dosya"
+  },
+  "viewer.menu.only_larger": {
+    "message": "Yalnızca büyük resimleri sığdır"
+  },
+  "viewer.menu.open": {
+    "message": "Aç..."
+  },
+  "viewer.menu.options": {
+    "message": "Seçenekler"
+  },
+  "viewer.menu.picture": {
+    "message": "Resim/Çoklu ortam"
+  },
+  "viewer.menu.previous_file": {
+    "message": "Önceki dosya"
+  },
+  "viewer.menu.reload": {
+    "message": "Yeniden yükle"
+  },
+  "viewer.menu.save_as": {
+    "message": "Farklı kaydet..."
+  },
+  "viewer.menu.search_google": {
+    "message": "Seçili metni Google’da ara"
+  },
+  "viewer.menu.select_all": {
+    "message": "Tümünü seç"
+  },
+  "viewer.menu.syntax_colors": {
+    "message": "Sözdizimi renkleri"
+  },
+  "viewer.menu.text_only": {
+    "message": "Yalnızca metin"
+  },
+  "viewer.menu.unicode": {
+    "message": "Unicode (UTF-16)"
+  },
+  "viewer.menu.wrap": {
+    "message": "Metni kaydır ({columns, plural, one {# sütun} other {# sütun}})"
+  },
+  "viewer.mode.binary": {
+    "message": "İkili · {page}"
+  },
+  "viewer.mode.book": {
+    "message": "Kitap"
+  },
+  "viewer.mode.hex": {
+    "message": "Onaltılık · {page}"
+  },
+  "viewer.mode.html": {
+    "message": "HTML metni"
+  },
+  "viewer.mode.image": {
+    "message": "Resim"
+  },
+  "viewer.mode.multimedia": {
+    "message": "Çoklu ortam"
+  },
+  "viewer.mode.pdf_by": {
+    "message": "PDF ({tool} ile)"
+  },
+  "viewer.mode.text": {
+    "message": "Metin · {page}"
+  },
+  "viewer.origin.not_editable": {
+    "message": "yalnızca 7z, zip, jar ve tar arşivlerindeki dosyalar düzenlenebilir"
+  },
+  "viewer.origin.updated": {
+    "message": "{archive} güncellendi"
+  },
+  "viewer.origin.updated_on": {
+    "message": "{server} üzerindeki {archive} güncellendi"
+  },
+  "viewer.origin.uploaded": {
+    "message": "{path} karşıya yüklendi"
+  },
+  "viewer.pdf.cannot_show": {
+    "message": "Bu PDF gösterilemiyor: {err}"
+  },
+  "viewer.pdf.loading": {
+    "message": "Yükleniyor..."
+  },
+  "viewer.pdf.page": {
+    "message": "Sayfa {page} / {pages}"
+  },
+  "viewer.picture.cannot_show": {
+    "message": "Bu resim gösterilemiyor; 1 tuşu metin olarak gösterir."
+  },
+  "viewer.save_as.failed": {
+    "message": "{path} kaydedilemedi: {err}"
+  },
+  "viewer.status.rows": {
+    "message": "{count, plural, one {{first}–{last} / {grouped} satır} other {{first}–{last} / {grouped} satır}}"
+  },
+  "viewer.status.rows_so_far": {
+    "message": "{count, plural, one {şimdiye dek {grouped} satır, {percent} okundu} other {şimdiye dek {grouped} satır, {percent} okundu}}"
+  },
+  "viewer.status.searching": {
+    "message": "Aranıyor…"
+  },
+  "viewer.status.size": {
+    "message": "{count, plural, one {{grouped} bayt} other {{grouped} bayt}}"
+  },
+  "viewer.window.title": {
+    "message": "{path} — Görüntüleyici"
+  },
+  "viewer.zoom.fit": {
+    "message": "Pencereye sığdırmaya dön (Ctrl+0)"
+  },
+  "viewer.zoom.in": {
+    "message": "Yakınlaştır (Ctrl++)"
+  },
+  "viewer.zoom.out": {
+    "message": "Uzaklaştır (Ctrl+-)"
+  },
+  "viewer.zoom.reset": {
+    "message": "%100 boyuta dön (Ctrl+0)"
+  },
+  "workspaces.button.close": {
+    "message": "Kapat"
+  },
+  "workspaces.button.delete": {
+    "message": "Sil..."
+  },
+  "workspaces.button.duplicate": {
+    "message": "Çoğalt..."
+  },
+  "workspaces.button.new": {
+    "message": "Yeni..."
+  },
+  "workspaces.button.rename": {
+    "message": "Yeniden adlandır..."
+  },
+  "workspaces.delete.button": {
+    "message": "Sil"
+  },
+  "workspaces.delete.closed": {
+    "message": "“{name}” çalışma alanı silinsin mi? Sekmeleri unutulur."
+  },
+  "workspaces.delete.closed_shells": {
+    "message": "“{name}” çalışma alanı silinsin mi? Sekmeleri unutulur ve terminal sekmelerindeki kabuklar sonlanır."
+  },
+  "workspaces.delete.open": {
+    "message": "“{name}” çalışma alanı silinsin mi? Sekmeleri kapanır; yerine “{other}” açılır."
+  },
+  "workspaces.delete.open_shells": {
+    "message": "“{name}” çalışma alanı silinsin mi? Sekmeleri kapanır ve terminal sekmelerindeki kabuklar sonlanır; yerine “{other}” açılır."
+  },
+  "workspaces.delete.title": {
+    "message": "Çalışma alanını sil"
+  },
+  "workspaces.duplicate.name": {
+    "message": "{name} kopyası"
+  },
+  "workspaces.duplicate.title": {
+    "message": "Çalışma alanını çoğalt"
+  },
+  "workspaces.error.name_taken": {
+    "message": "Bu ad başka bir çalışma alanında kullanılıyor."
+  },
+  "workspaces.error.no_name": {
+    "message": "Çalışma alanının bir adı olmalı."
+  },
+  "workspaces.error.save": {
+    "message": "Çalışma alanları kaydedilemedi: {err}"
+  },
+  "workspaces.hint": {
+    "message": "Göster > Çalışma alanları birini açar. Açık olanda yapılan değişiklikler onda saklanır."
+  },
+  "workspaces.name.label": {
+    "message": "Ad:"
+  },
+  "workspaces.new.name": {
+    "message": "Çalışma alanı {number}"
+  },
+  "workspaces.new.title": {
+    "message": "Yeni çalışma alanı"
+  },
+  "workspaces.open": {
+    "message": "açık"
+  },
+  "workspaces.rename.title": {
+    "message": "Çalışma alanını yeniden adlandır"
+  },
+  "workspaces.summary.panels": {
+    "message": "Sol {left, plural, one {# sekme} other {# sekme}}, sağ {right, plural, one {# sekme} other {# sekme}}"
+  },
+  "workspaces.summary.terminal": {
+    "message": "Sol {left, plural, one {# sekme} other {# sekme}}, sağ {right, plural, one {# sekme} other {# sekme}}, terminal {terminal, plural, one {# sekme} other {# sekme}}"
+  },
+  "workspaces.summary.terminal_hidden": {
+    "message": "Sol {left, plural, one {# sekme} other {# sekme}}, sağ {right, plural, one {# sekme} other {# sekme}}, terminal {terminal, plural, one {# sekme} other {# sekme}} (gizli)"
+  },
+  "workspaces.title": {
+    "message": "Çalışma alanları"
+  }
+}

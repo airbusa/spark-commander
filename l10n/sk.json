@@ -1,0 +1,4823 @@
+{
+  "about.addons": {
+    "message": "Doplnky sťahované na požiadanie"
+  },
+  "about.libraries": {
+    "message": "Založené na"
+  },
+  "about.licence": {
+    "message": "Licencia:"
+  },
+  "about.made_with": {
+    "message": "Vytvorené vďaka práci týchto projektov"
+  },
+  "about.part.alacritty_terminal": {
+    "message": "Obrazovka a shell vstavaného terminálu"
+  },
+  "about.part.encoding_rs": {
+    "message": "Kódové stránky"
+  },
+  "about.part.gpui": {
+    "message": "Okno, vykresľovanie a vstup (z editora Zed)"
+  },
+  "about.part.gpui_kit": {
+    "message": "Ovládacie prvky: zoznamy, ponuky, polia, editor"
+  },
+  "about.part.html5ever": {
+    "message": "HTML a e-knihy v prehliadači"
+  },
+  "about.part.image": {
+    "message": "Obrázky"
+  },
+  "about.part.keyring": {
+    "message": "Heslá v systémovej kľúčenke"
+  },
+  "about.part.lucide": {
+    "message": "Ikony"
+  },
+  "about.part.material_icons": {
+    "message": "Ikony súborov a priečinkov"
+  },
+  "about.part.pdfium_render": {
+    "message": "PDFium z jazyka Rust"
+  },
+  "about.part.ratatui": {
+    "message": "scmd, verzia pre terminál"
+  },
+  "about.part.russh": {
+    "message": "SSH a SFTP"
+  },
+  "about.part.rustls": {
+    "message": "TLS"
+  },
+  "about.part.serde": {
+    "message": "Súbory nastavení"
+  },
+  "about.part.similar": {
+    "message": "Porovnať podľa obsahu"
+  },
+  "about.part.suppaftp": {
+    "message": "FTP a FTPS"
+  },
+  "about.part.tokio": {
+    "message": "Sieťové operácie na pozadí"
+  },
+  "about.part.trash": {
+    "message": "Kôš"
+  },
+  "about.part.tree_sitter": {
+    "message": "Farby kódu v prehliadači a editore"
+  },
+  "about.part.zbus": {
+    "message": "D-Bus: pracovné prostredie, zariadenia, KDE Connect"
+  },
+  "about.shipped": {
+    "message": "Dodávané s aplikáciou"
+  },
+  "about.tagline": {
+    "message": "Dvojpanelový správca súborov, slobodný softvér."
+  },
+  "about.title": {
+    "message": "O aplikácii Spark Commander"
+  },
+  "about.version": {
+    "message": "Verzia {version}"
+  },
+  "activity.clear": {
+    "message": "Vymazať"
+  },
+  "activity.clear_failed": {
+    "message": "Denník sa nepodarilo vymazať: {err}"
+  },
+  "activity.empty": {
+    "message": "Zatiaľ sa nič nevykonalo."
+  },
+  "activity.title": {
+    "message": "Denník činností"
+  },
+  "addons.error.damaged": {
+    "message": "stiahnutý súbor je poškodený: jeho kontrolný súčet nesedí"
+  },
+  "addons.error.list": {
+    "message": "zoznam doplnkov: {err}"
+  },
+  "addons.error.missing_file": {
+    "message": "v stiahnutom súbore chýba {file}"
+  },
+  "addons.error.no_folder": {
+    "message": "chýba priečinok pre údaje"
+  },
+  "addons.error.unpacking": {
+    "message": "rozbaľovanie: {err}"
+  },
+  "addons.installed": {
+    "message": "Doplnok {addon} {version} je nainštalovaný."
+  },
+  "addons.megabytes": {
+    "message": "{size} MB"
+  },
+  "addons.offer.never": {
+    "message": "Už nikdy nezobrazovať"
+  },
+  "addons.offer.no": {
+    "message": "Nie"
+  },
+  "addons.offer.text": {
+    "message": "Súbor {name} potrebuje doplnok, ktorý nie je nainštalovaný: {addon}. Chcete ho stiahnuť v časti Nastavenia > Doplnky?"
+  },
+  "addons.offer.title": {
+    "message": "Doplnok"
+  },
+  "addons.offer.yes": {
+    "message": "Áno"
+  },
+  "addons.purpose.cloud": {
+    "message": "Online úložiská: S3, Google Drive, OneDrive, Dropbox a ďalšie služby."
+  },
+  "addons.purpose.media": {
+    "message": "Video a zvuk, fotky HEIC a AVIF: zobrazí ich prehliadač aj Rýchle zobrazenie."
+  },
+  "addons.purpose.office": {
+    "message": "Dokumenty Office: prehliadač zobrazí súbory Word, Excel a PowerPoint ako PDF."
+  },
+  "addons.purpose.pdfium": {
+    "message": "PDF: prehliadač zobrazí súbory PDF a po prevode aj dokumenty Office."
+  },
+  "addons.purpose.seven_zip": {
+    "message": "Archívy: zbaľuje a rozbaľuje 7z, zip, rar, tar a ďalšie."
+  },
+  "addons.update": {
+    "message": "Aktualizovať"
+  },
+  "addons.updates": {
+    "message": "Aktualizácie doplnkov: {names}"
+  },
+  "appearance.dark": {
+    "message": "Tmavý"
+  },
+  "appearance.light": {
+    "message": "Svetlý"
+  },
+  "appearance.system": {
+    "message": "Podľa systému"
+  },
+  "archive.cannot_read": {
+    "message": "{name}: nedá sa prečítať"
+  },
+  "archive.not_in_archive": {
+    "message": "{name} sa v archíve nenachádza"
+  },
+  "archive.not_own_folder": {
+    "message": "{folder} nie je vlastným priečinkom tohto používateľa"
+  },
+  "archive.seven_zip_failed": {
+    "message": "7-Zip zlyhal ({code})"
+  },
+  "archive.seven_zip_missing": {
+    "message": "7-Zip chýba: {path} (spustite vendor/7zip/fetch.sh alebo fetch.bat)"
+  },
+  "archive.temp_not_utf8": {
+    "message": "názov dočasného priečinka nie je v UTF-8"
+  },
+  "associations.add": {
+    "message": "Pridať..."
+  },
+  "associations.cancel": {
+    "message": "Zrušiť"
+  },
+  "associations.close": {
+    "message": "Zavrieť"
+  },
+  "associations.column.edit": {
+    "message": "Upraviť (F4)"
+  },
+  "associations.column.files": {
+    "message": "Súbory"
+  },
+  "associations.column.open": {
+    "message": "Otvoriť (Enter)"
+  },
+  "associations.column.view": {
+    "message": "Zobraziť (F3)"
+  },
+  "associations.edit": {
+    "message": "Upraviť..."
+  },
+  "associations.edit_dialog.title": {
+    "message": "Priradiť"
+  },
+  "associations.empty": {
+    "message": "Zatiaľ žiadne."
+  },
+  "associations.field.edit": {
+    "message": "Upraviť v (F4):"
+  },
+  "associations.field.files": {
+    "message": "Súbory (*.jpg *.png):"
+  },
+  "associations.field.open": {
+    "message": "Otvoriť v (Enter):"
+  },
+  "associations.field.view": {
+    "message": "Zobraziť v (F3):"
+  },
+  "associations.intro": {
+    "message": "Enter, F3 a F4 spúšťajú tieto programy pre súbory zodpovedajúce maske; prázdne pole ponechá predvolené správanie. %1 je súbor."
+  },
+  "associations.mask_needed": {
+    "message": "Je potrebná maska súborov: *.txt"
+  },
+  "associations.no_file": {
+    "message": "Umiestnite kurzor na súbor typu, ktorý chcete priradiť."
+  },
+  "associations.ok": {
+    "message": "OK"
+  },
+  "associations.remove": {
+    "message": "Odstrániť"
+  },
+  "associations.save_failed": {
+    "message": "Nastavenia sa nepodarilo uložiť: {err}"
+  },
+  "associations.title": {
+    "message": "Interné priradenia"
+  },
+  "attributes.bad_time": {
+    "message": "„{text}“ nie je dátum a čas: 2026-11-10 14:04:33"
+  },
+  "attributes.cancel": {
+    "message": "Zrušiť"
+  },
+  "attributes.change_time": {
+    "message": "Zmeniť dátum/čas:"
+  },
+  "attributes.changed": {
+    "message": "{count, plural, one {Zmenená # položka} few {Zmenené # položky} other {Zmenených # položiek}}"
+  },
+  "attributes.changed_failed": {
+    "message": "{count, plural, one {Zmenená # položka} few {Zmenené # položky} other {Zmenených # položiek}}, {failed, plural, one {# zlyhala} few {# zlyhali} other {# zlyhalo}}"
+  },
+  "attributes.dialog_title_many": {
+    "message": "Zmeniť atribúty: {count, plural, one {# položka} few {# položky} other {# položiek}}"
+  },
+  "attributes.dialog_title_one": {
+    "message": "Zmeniť atribúty: {name}"
+  },
+  "attributes.execute": {
+    "message": "Spúšťanie"
+  },
+  "attributes.group": {
+    "message": "Skupina"
+  },
+  "attributes.in_archive": {
+    "message": "Atribúty v archívoch sa nedajú zmeniť."
+  },
+  "attributes.no_bits": {
+    "message": "Tieto súbory tu nemajú prístupové práva; zmeniť sa dá iba dátum."
+  },
+  "attributes.now": {
+    "message": "Teraz"
+  },
+  "attributes.octal": {
+    "message": "Osmičkovo:"
+  },
+  "attributes.ok": {
+    "message": "OK"
+  },
+  "attributes.others": {
+    "message": "Ostatní"
+  },
+  "attributes.owner": {
+    "message": "Vlastník"
+  },
+  "attributes.read": {
+    "message": "Čítanie"
+  },
+  "attributes.recurse": {
+    "message": "Aj celý obsah priečinkov"
+  },
+  "attributes.title_many": {
+    "message": "Zmena atribútov {count, plural, one {# položky} few {# položiek} other {# položiek}}"
+  },
+  "attributes.title_one": {
+    "message": "Zmena atribútov „{name}“"
+  },
+  "attributes.write": {
+    "message": "Zápis"
+  },
+  "bookmarks.add_current": {
+    "message": "Pridať aktuálny priečinok"
+  },
+  "bookmarks.add_folders": {
+    "message": "Pridať priečinky..."
+  },
+  "bookmarks.added": {
+    "message": "Pridané do záložiek: {name}"
+  },
+  "bookmarks.already": {
+    "message": "{name} už je v záložkách."
+  },
+  "bookmarks.chooser.failed": {
+    "message": "Výber priečinka sa nepodarilo zobraziť: {err}"
+  },
+  "bookmarks.chooser.prompt": {
+    "message": "Pridať"
+  },
+  "bookmarks.close": {
+    "message": "Zavrieť"
+  },
+  "bookmarks.copy_name": {
+    "message": "Kopírovať názov"
+  },
+  "bookmarks.copy_path": {
+    "message": "Kopírovať cestu"
+  },
+  "bookmarks.drop_here": {
+    "message": "Sem pretiahnite priečinky."
+  },
+  "bookmarks.empty": {
+    "message": "Žiadne záložky: pridajte priečinky alebo ich sem pretiahnite."
+  },
+  "bookmarks.intro": {
+    "message": "Priečinky tohto počítača v poradí ako v Miestach: potiahnutím priečinok presuniete, pretiahnutím priečinkov sem ich pridáte."
+  },
+  "bookmarks.move_down": {
+    "message": "Posunúť nadol"
+  },
+  "bookmarks.move_up": {
+    "message": "Posunúť nahor"
+  },
+  "bookmarks.only_local": {
+    "message": "Do záložiek sa dajú pridať iba priečinky tohto počítača."
+  },
+  "bookmarks.remove": {
+    "message": "Odstrániť"
+  },
+  "bookmarks.remove_from": {
+    "message": "Odstrániť zo záložiek"
+  },
+  "bookmarks.rename": {
+    "message": "Premenovať..."
+  },
+  "bookmarks.rename_label": {
+    "message": "Názov (prázdny: názov priečinka):"
+  },
+  "bookmarks.rename_title": {
+    "message": "Premenovať záložku"
+  },
+  "bookmarks.sort": {
+    "message": "Zoradiť A–Z"
+  },
+  "bookmarks.title": {
+    "message": "Záložky"
+  },
+  "button_bar.copy": {
+    "message": "Kopírovať"
+  },
+  "button_bar.delete": {
+    "message": "Odstrániť"
+  },
+  "button_bar.edit": {
+    "message": "Upraviť"
+  },
+  "button_bar.move": {
+    "message": "Presunúť"
+  },
+  "button_bar.new_folder": {
+    "message": "Nový priečinok"
+  },
+  "button_bar.quit": {
+    "message": "Koniec"
+  },
+  "button_bar.view": {
+    "message": "Zobraziť"
+  },
+  "checksum.create.title": {
+    "message": "Vytvoriť {name}"
+  },
+  "checksum.create.title_separate": {
+    "message": "Vytvoriť súbory kontrolných súčtov {method}"
+  },
+  "checksum.dialog_title": {
+    "message": "Vytvoriť súbory kontrolných súčtov"
+  },
+  "checksum.save_as": {
+    "message": "Uložiť súbor kontrolného súčtu ako:"
+  },
+  "checksum.separate": {
+    "message": "Namiesto toho súbor kontrolného súčtu pri každom súbore"
+  },
+  "checksum.verify.all_ok": {
+    "message": "{count, plural, one {# súbor je v poriadku} few {všetky # súbory sú v poriadku} other {všetkých # súborov je v poriadku}}"
+  },
+  "checksum.verify.choose": {
+    "message": "Vyberte súbory kontrolných súčtov: .sfv, .md5, .sha1, .sha256 alebo .sha512."
+  },
+  "checksum.verify.missing_file": {
+    "message": "chýba: {name}"
+  },
+  "checksum.verify.result": {
+    "message": "{ok, plural, one {# v poriadku} few {# v poriadku} other {# v poriadku}}, {wrong, plural, one {# chybný} few {# chybné} other {# chybných}}, {missing, plural, one {# chýba} few {# chýbajú} other {# chýba}}"
+  },
+  "checksum.verify.title_many": {
+    "message": "Overiť {count, plural, one {# súbor kontrolných súčtov} few {# súbory kontrolných súčtov} other {# súborov kontrolných súčtov}}"
+  },
+  "checksum.verify.title_one": {
+    "message": "Overiť {name}"
+  },
+  "checksum.verify.wrong_file": {
+    "message": "chybný: {name}"
+  },
+  "command.about": {
+    "message": "O aplikácii Spark Commander"
+  },
+  "command.activity_log": {
+    "message": "Denník činností..."
+  },
+  "command.all_files": {
+    "message": "Všetky súbory"
+  },
+  "command.all_folder_sizes": {
+    "message": "Vypočítať veľkosti všetkých priečinkov"
+  },
+  "command.all_with_extension": {
+    "message": "*.*"
+  },
+  "command.associate_with": {
+    "message": "Priradiť k..."
+  },
+  "command.bookmark_folder": {
+    "message": "Pridať priečinok do záložiek"
+  },
+  "command.bookmarks": {
+    "message": "Záložky"
+  },
+  "command.branch_view": {
+    "message": "Zobrazenie vetvy (s podpriečinkami)"
+  },
+  "command.branch_view_selected": {
+    "message": "Zobrazenie vetvy vybraných priečinkov"
+  },
+  "command.brief": {
+    "message": "Stručné"
+  },
+  "command.calculate_occupied_space": {
+    "message": "Vypočítať obsadené miesto..."
+  },
+  "command.change_attributes": {
+    "message": "Zmeniť atribúty..."
+  },
+  "command.close_all_tabs": {
+    "message": "Zavrieť všetky karty"
+  },
+  "command.close_duplicate_tabs": {
+    "message": "Zavrieť duplicitné karty"
+  },
+  "command.close_tab": {
+    "message": "Zavrieť kartu"
+  },
+  "command.combine_files": {
+    "message": "Spojiť súbory..."
+  },
+  "command.compare_by_content": {
+    "message": "Porovnať podľa obsahu..."
+  },
+  "command.compare_directories": {
+    "message": "Označiť novšie"
+  },
+  "command.copy": {
+    "message": "Kopírovať..."
+  },
+  "command.copy_names_to_clipboard": {
+    "message": "Kopírovať vybrané názvy do schránky"
+  },
+  "command.copy_names_with_path_to_clipboard": {
+    "message": "Kopírovať názvy s cestou do schránky"
+  },
+  "command.copy_to_clipboard": {
+    "message": "Kopírovať súbory"
+  },
+  "command.copy_with_all_details": {
+    "message": "Kopírovať do schránky so všetkými údajmi"
+  },
+  "command.copy_with_path_and_details": {
+    "message": "Kopírovať do schránky s cestou a údajmi"
+  },
+  "command.create_checksum_files": {
+    "message": "Vytvoriť súbor(y) kontrolných súčtov (CRC32, MD5, SHA1, SHA256, SHA512)..."
+  },
+  "command.create_link": {
+    "message": "Vytvoriť odkaz..."
+  },
+  "command.custom_filter": {
+    "message": "Vlastný..."
+  },
+  "command.cut_to_clipboard": {
+    "message": "Vystrihnúť súbory"
+  },
+  "command.delete": {
+    "message": "Odstrániť"
+  },
+  "command.delete_permanently": {
+    "message": "Odstrániť natrvalo"
+  },
+  "command.disconnect": {
+    "message": "Odpojiť od servera"
+  },
+  "command.download_link": {
+    "message": "Stiahnuť z odkazu..."
+  },
+  "command.duplicate_tab": {
+    "message": "Nová karta"
+  },
+  "command.duplicate_workspace": {
+    "message": "Duplikovať pracovný priestor..."
+  },
+  "command.edit": {
+    "message": "Upraviť"
+  },
+  "command.edit_externally": {
+    "message": "Upraviť v externom editore"
+  },
+  "command.folder_history": {
+    "message": "História priečinkov..."
+  },
+  "command.full": {
+    "message": "Úplné"
+  },
+  "command.go_back": {
+    "message": "Späť"
+  },
+  "command.go_forward": {
+    "message": "Dopredu"
+  },
+  "command.go_home": {
+    "message": "Domovský priečinok"
+  },
+  "command.go_to_root": {
+    "message": "Koreňový priečinok"
+  },
+  "command.hidden_files": {
+    "message": "Skryté súbory"
+  },
+  "command.internal_associations": {
+    "message": "Interné priradenia (iba Spark Commander)..."
+  },
+  "command.invert_selection": {
+    "message": "Invertovať výber"
+  },
+  "command.left_drives": {
+    "message": "Jednotky (ľavý panel)"
+  },
+  "command.list_tabs": {
+    "message": "Zoznam kariet"
+  },
+  "command.load_selection_from_file": {
+    "message": "Načítať výber zo súboru"
+  },
+  "command.manage_bookmarks": {
+    "message": "Spravovať záložky..."
+  },
+  "command.manage_tools": {
+    "message": "Spravovať nástroje..."
+  },
+  "command.manage_workspaces": {
+    "message": "Spravovať pracovné priestory..."
+  },
+  "command.mark_in_place": {
+    "message": "Označiť / odznačiť bez posunu, s výpočtom veľkosti priečinka"
+  },
+  "command.mark_newer_hide_same": {
+    "message": "Označiť novšie, skryť rovnaké súbory"
+  },
+  "command.move": {
+    "message": "Presunúť..."
+  },
+  "command.multi_rename_tool": {
+    "message": "Hromadné premenovanie..."
+  },
+  "command.name_to_command_line": {
+    "message": "Názov do príkazového riadka"
+  },
+  "command.new_folder": {
+    "message": "Nový priečinok..."
+  },
+  "command.new_terminal": {
+    "message": "Nová karta terminálu"
+  },
+  "command.new_text_file": {
+    "message": "Nový súbor..."
+  },
+  "command.new_workspace": {
+    "message": "Nový pracovný priestor..."
+  },
+  "command.next_tab": {
+    "message": "Ďalšia karta"
+  },
+  "command.only_selected_files": {
+    "message": "Iba vybrané súbory"
+  },
+  "command.open_in_left_panel": {
+    "message": "Zobraziť v ľavom paneli"
+  },
+  "command.open_in_new_tab": {
+    "message": "Otvoriť priečinok na novej karte"
+  },
+  "command.open_in_other_new_tab": {
+    "message": "Otvoriť priečinok na novej karte druhého panela"
+  },
+  "command.open_in_right_panel": {
+    "message": "Zobraziť v pravom paneli"
+  },
+  "command.open_terminal": {
+    "message": "Otvoriť terminál tu"
+  },
+  "command.operation_queue": {
+    "message": "Rad operácií..."
+  },
+  "command.pack": {
+    "message": "Zbaliť..."
+  },
+  "command.paste_from_clipboard": {
+    "message": "Vložiť súbory"
+  },
+  "command.path_and_name_to_command_line": {
+    "message": "Cesta a názov do príkazového riadka"
+  },
+  "command.path_to_command_line": {
+    "message": "Cesta do príkazového riadka"
+  },
+  "command.previous_tab": {
+    "message": "Predchádzajúca karta"
+  },
+  "command.programs": {
+    "message": "Programy"
+  },
+  "command.properties": {
+    "message": "Vlastnosti..."
+  },
+  "command.quick_filter": {
+    "message": "Rýchly filter"
+  },
+  "command.quick_open": {
+    "message": "Rýchle otvorenie..."
+  },
+  "command.quick_view_panel": {
+    "message": "Panel rýchleho zobrazenia"
+  },
+  "command.quit": {
+    "message": "Ukončiť"
+  },
+  "command.redo": {
+    "message": "Opakovať"
+  },
+  "command.rename_in_place": {
+    "message": "Premenovať"
+  },
+  "command.reread_source": {
+    "message": "Znova načítať zdroj"
+  },
+  "command.restore_selection": {
+    "message": "Obnoviť výber"
+  },
+  "command.reversed_order": {
+    "message": "Obrátené poradie"
+  },
+  "command.right_drives": {
+    "message": "Jednotky (pravý panel)"
+  },
+  "command.save_selection": {
+    "message": "Uložiť výber"
+  },
+  "command.save_selection_to_file": {
+    "message": "Uložiť výber do súboru"
+  },
+  "command.search": {
+    "message": "Hľadať..."
+  },
+  "command.search_in_separate_process": {
+    "message": "Hľadať v samostatnom okne..."
+  },
+  "command.select_all": {
+    "message": "Vybrať všetko"
+  },
+  "command.select_all_with_same_extension": {
+    "message": "Vybrať všetko s rovnakou príponou"
+  },
+  "command.select_group": {
+    "message": "Vybrať skupinu..."
+  },
+  "command.settings": {
+    "message": "Nastavenia..."
+  },
+  "command.shortcuts": {
+    "message": "Klávesové skratky..."
+  },
+  "command.sidebar_connections": {
+    "message": "Pripojenia"
+  },
+  "command.sidebar_operations": {
+    "message": "Operácie"
+  },
+  "command.sidebar_places": {
+    "message": "Miesta"
+  },
+  "command.sidebar_tree": {
+    "message": "Priečinky"
+  },
+  "command.sort_by_extension": {
+    "message": "Prípona"
+  },
+  "command.sort_by_name": {
+    "message": "Názov"
+  },
+  "command.sort_by_size": {
+    "message": "Veľkosť"
+  },
+  "command.sort_by_time": {
+    "message": "Čas"
+  },
+  "command.split_file": {
+    "message": "Rozdeliť súbor..."
+  },
+  "command.swap_panels": {
+    "message": "Vymeniť panely"
+  },
+  "command.swap_panels_and_tabs": {
+    "message": "Vymeniť panely aj s kartami"
+  },
+  "command.sync_browsing": {
+    "message": "Synchronizované prehliadanie"
+  },
+  "command.synchronize_dirs": {
+    "message": "Synchronizovať priečinky..."
+  },
+  "command.target_equals_source": {
+    "message": "Cieľ = zdroj"
+  },
+  "command.terminal_panel": {
+    "message": "Terminál"
+  },
+  "command.test_archives": {
+    "message": "Otestovať archív(y)"
+  },
+  "command.thumbnail_view": {
+    "message": "Zobrazenie miniatúr"
+  },
+  "command.toggle_mark": {
+    "message": "Označiť / odznačiť"
+  },
+  "command.toggle_sidebar": {
+    "message": "Zobraziť bočný panel"
+  },
+  "command.undo": {
+    "message": "Vrátiť späť"
+  },
+  "command.unpack_specific_files": {
+    "message": "Rozbaliť konkrétne súbory..."
+  },
+  "command.unselect_all": {
+    "message": "Zrušiť celý výber"
+  },
+  "command.unselect_group": {
+    "message": "Zrušiť výber skupiny..."
+  },
+  "command.unsorted": {
+    "message": "Nezoradené"
+  },
+  "command.verify_checksums": {
+    "message": "Overiť kontrolné súčty (zo súborov kontrolných súčtov)"
+  },
+  "command.vertical_arrangement": {
+    "message": "Zvislé usporiadanie"
+  },
+  "command.view": {
+    "message": "Zobraziť"
+  },
+  "command.website": {
+    "message": "Webová stránka Spark Commander"
+  },
+  "command.workspace1": {
+    "message": "Otvoriť pracovný priestor 1"
+  },
+  "command.workspace2": {
+    "message": "Otvoriť pracovný priestor 2"
+  },
+  "command.workspace3": {
+    "message": "Otvoriť pracovný priestor 3"
+  },
+  "command.workspace4": {
+    "message": "Otvoriť pracovný priestor 4"
+  },
+  "command.workspace5": {
+    "message": "Otvoriť pracovný priestor 5"
+  },
+  "command.workspace6": {
+    "message": "Otvoriť pracovný priestor 6"
+  },
+  "command.workspace7": {
+    "message": "Otvoriť pracovný priestor 7"
+  },
+  "command.workspace8": {
+    "message": "Otvoriť pracovný priestor 8"
+  },
+  "command.workspace9": {
+    "message": "Otvoriť pracovný priestor 9"
+  },
+  "command_line.error.cannot_run": {
+    "message": "{program}: nedá sa spustiť"
+  },
+  "command_line.error.not_found": {
+    "message": "{program}: príkaz sa nenašiel"
+  },
+  "command_line.history.empty": {
+    "message": "Zatiaľ neboli spustené žiadne príkazy"
+  },
+  "command_line.on_server": {
+    "message": "Príkazy sa spúšťajú na tomto počítači; panel je na serveri."
+  },
+  "command_name.all_files": {
+    "message": "Zobraziť všetky súbory"
+  },
+  "command_name.all_with_extension": {
+    "message": "Zobraziť *.*"
+  },
+  "command_name.brief": {
+    "message": "Stručné zobrazenie"
+  },
+  "command_name.compare_directories": {
+    "message": "Porovnať priečinky: označiť novšie"
+  },
+  "command_name.custom_filter": {
+    "message": "Vlastný filter"
+  },
+  "command_name.duplicate_tab": {
+    "message": "Nová karta (kópia tejto)"
+  },
+  "command_name.full": {
+    "message": "Úplné zobrazenie"
+  },
+  "command_name.go_back": {
+    "message": "Prejsť späť"
+  },
+  "command_name.go_forward": {
+    "message": "Prejsť dopredu"
+  },
+  "command_name.go_home": {
+    "message": "Prejsť do domovského priečinka"
+  },
+  "command_name.hidden_files": {
+    "message": "Zobraziť skryté súbory"
+  },
+  "command_name.only_selected_files": {
+    "message": "Zobraziť iba vybrané súbory"
+  },
+  "command_name.programs": {
+    "message": "Zobraziť programy"
+  },
+  "command_name.quick_filter": {
+    "message": "Rýchly filter"
+  },
+  "command_name.rename_in_place": {
+    "message": "Premenovať na mieste"
+  },
+  "command_name.sidebar_connections": {
+    "message": "Bočný panel: Pripojenia"
+  },
+  "command_name.sidebar_operations": {
+    "message": "Bočný panel: Operácie"
+  },
+  "command_name.sidebar_places": {
+    "message": "Bočný panel: Miesta"
+  },
+  "command_name.sidebar_tree": {
+    "message": "Bočný panel: Priečinky"
+  },
+  "command_name.sort_by_extension": {
+    "message": "Zoradiť podľa prípony"
+  },
+  "command_name.sort_by_name": {
+    "message": "Zoradiť podľa názvu"
+  },
+  "command_name.sort_by_size": {
+    "message": "Zoradiť podľa veľkosti"
+  },
+  "command_name.sort_by_time": {
+    "message": "Zoradiť podľa času"
+  },
+  "command_name.toggle_sidebar": {
+    "message": "Bočný panel: zobraziť alebo skryť"
+  },
+  "command_name.unsorted": {
+    "message": "Bez zoradenia"
+  },
+  "compare.browse.prompt": {
+    "message": "Porovnať"
+  },
+  "compare.button.compare": {
+    "message": "Porovnať"
+  },
+  "compare.button.next": {
+    "message": "Ďalší rozdiel (N)"
+  },
+  "compare.button.previous": {
+    "message": "Predchádzajúci rozdiel (P)"
+  },
+  "compare.need_two_files": {
+    "message": "Umiestnite kurzor na súbor v každom paneli alebo označte dva súbory."
+  },
+  "compare.option.binary": {
+    "message": "Binárne"
+  },
+  "compare.option.ignore_case": {
+    "message": "Ignorovať veľkosť písmen"
+  },
+  "compare.option.ignore_spaces": {
+    "message": "Ignorovať opakované medzery"
+  },
+  "compare.option.only_differences": {
+    "message": "Iba rozdiely"
+  },
+  "compare.status.bytes_differ": {
+    "message": "{place}: {count, plural, one {{grouped} bajt sa líši} few {{grouped} bajty sa líšia} other {{grouped} bajtov sa líši}}, prvý na pozícii {first}; veľkosti {left} a {right}."
+  },
+  "compare.status.comparing": {
+    "message": "Porovnáva sa…"
+  },
+  "compare.status.difference_of": {
+    "message": "Rozdiel {at} z {count}"
+  },
+  "compare.status.differences": {
+    "message": "{count, plural, one {# rozdiel} few {# rozdiely} other {# rozdielov}}"
+  },
+  "compare.status.identical": {
+    "message": "{count, plural, one {Súbory sú zhodné: {grouped} bajt.} few {Súbory sú zhodné: {grouped} bajty.} other {Súbory sú zhodné: {grouped} bajtov.}}"
+  },
+  "compare.status.no_differences": {
+    "message": "Žiadne rozdiely."
+  },
+  "compare.window.title": {
+    "message": "Porovnanie: {left} — {right}"
+  },
+  "connections.connect": {
+    "message": "Pripojiť"
+  },
+  "connections.copy_name": {
+    "message": "Kopírovať názov"
+  },
+  "connections.copy_path": {
+    "message": "Kopírovať cestu"
+  },
+  "connections.delete": {
+    "message": "Odstrániť"
+  },
+  "connections.dialog.title": {
+    "message": "Pripojenie"
+  },
+  "connections.disconnect": {
+    "message": "Odpojiť"
+  },
+  "connections.duplicate": {
+    "message": "Duplikovať"
+  },
+  "connections.duplicate_name": {
+    "message": "{name} (kópia)"
+  },
+  "connections.edit": {
+    "message": "Upraviť..."
+  },
+  "connections.empty": {
+    "message": "Zatiaľ žiadne pripojenia."
+  },
+  "connections.error.no_server": {
+    "message": "Je potrebný server."
+  },
+  "connections.error.port": {
+    "message": "Nie je to port: {text}"
+  },
+  "connections.field.access_key": {
+    "message": "Prístupový kľúč"
+  },
+  "connections.field.api_key": {
+    "message": "Kľúč API"
+  },
+  "connections.field.application_key": {
+    "message": "Kľúč aplikácie"
+  },
+  "connections.field.bucket": {
+    "message": "Bucket/priečinok"
+  },
+  "connections.field.container": {
+    "message": "Kontajner/priečinok"
+  },
+  "connections.field.endpoint": {
+    "message": "Koncový bod"
+  },
+  "connections.field.key_id": {
+    "message": "ID kľúča"
+  },
+  "connections.field.name": {
+    "message": "Názov"
+  },
+  "connections.field.password": {
+    "message": "Heslo"
+  },
+  "connections.field.port": {
+    "message": "Port"
+  },
+  "connections.field.protocol": {
+    "message": "Protokol"
+  },
+  "connections.field.secret_key": {
+    "message": "Tajný kľúč"
+  },
+  "connections.field.server": {
+    "message": "Server"
+  },
+  "connections.field.start_folder": {
+    "message": "Úvodný priečinok"
+  },
+  "connections.field.user": {
+    "message": "Používateľ"
+  },
+  "connections.folder.delete_confirm": {
+    "message": "{count, plural, one {Odstrániť priečinok {name} a pripojenie v ňom?} few {Odstrániť priečinok {name} a # pripojenia v ňom?} other {Odstrániť priečinok {name} a # pripojení v ňom?}}"
+  },
+  "connections.folder.delete_title": {
+    "message": "Odstrániť priečinok"
+  },
+  "connections.folder.exists": {
+    "message": "Priečinok s názvom {name} už existuje."
+  },
+  "connections.folder.name": {
+    "message": "Názov:"
+  },
+  "connections.folder.new_title": {
+    "message": "Nový priečinok"
+  },
+  "connections.folder.rename": {
+    "message": "Premenovať..."
+  },
+  "connections.folder.rename_title": {
+    "message": "Premenovať priečinok"
+  },
+  "connections.forget_password": {
+    "message": "Zabudnúť uložené heslo"
+  },
+  "connections.move_down": {
+    "message": "Posunúť nadol"
+  },
+  "connections.move_to_folder": {
+    "message": "Presunúť do priečinka"
+  },
+  "connections.move_up": {
+    "message": "Posunúť nahor"
+  },
+  "connections.new": {
+    "message": "Nové pripojenie..."
+  },
+  "connections.new_folder": {
+    "message": "Nový priečinok..."
+  },
+  "connections.no_folder": {
+    "message": "Bez priečinka"
+  },
+  "connections.open_in_terminal": {
+    "message": "Otvoriť v termináli"
+  },
+  "connections.placeholder.name": {
+    "message": "ako sa zobrazí v zozname"
+  },
+  "connections.placeholder.password": {
+    "message": "uchováva sa šifrované v priečinku nastavení; prázdne ponechá uložené"
+  },
+  "connections.placeholder.path": {
+    "message": "priečinok po prihlásení"
+  },
+  "connections.placeholder.port": {
+    "message": "predvolený"
+  },
+  "connections.placeholder.server": {
+    "message": "server alebo hostiteľ z ~/.ssh/config"
+  },
+  "connections.placeholder.user": {
+    "message": "podľa ~/.ssh/config, inak anonymne"
+  },
+  "connections.save_failed": {
+    "message": "Pripojenia sa nepodarilo uložiť: {err}"
+  },
+  "connections.ssh_config.read_only": {
+    "message": "Iba na čítanie: tieto hostitele sa upravujú priamo v ~/.ssh/config"
+  },
+  "context_menu.action_failed": {
+    "message": "{name} zlyhalo: {err}"
+  },
+  "context_menu.actions": {
+    "message": "Akcie"
+  },
+  "context_menu.copy": {
+    "message": "Kopírovať"
+  },
+  "context_menu.create_new": {
+    "message": "Vytvoriť nový"
+  },
+  "context_menu.cut": {
+    "message": "Vystrihnúť"
+  },
+  "context_menu.delete": {
+    "message": "Odstrániť"
+  },
+  "context_menu.edit": {
+    "message": "Upraviť"
+  },
+  "context_menu.empty_file": {
+    "message": "Prázdny súbor…"
+  },
+  "context_menu.move_to_trash": {
+    "message": "Presunúť do koša"
+  },
+  "context_menu.new_file_dialog.label": {
+    "message": "Názov nového súboru:"
+  },
+  "context_menu.new_file_dialog.title": {
+    "message": "Nový súbor"
+  },
+  "context_menu.new_file_failed": {
+    "message": "Súbor sa nepodarilo vytvoriť: {err}"
+  },
+  "context_menu.new_folder": {
+    "message": "Priečinok…"
+  },
+  "context_menu.open": {
+    "message": "Otvoriť"
+  },
+  "context_menu.open_failed": {
+    "message": "Nepodarilo sa otvoriť: {err}"
+  },
+  "context_menu.open_terminal_here": {
+    "message": "Otvoriť terminál tu"
+  },
+  "context_menu.open_with": {
+    "message": "Otvoriť pomocou"
+  },
+  "context_menu.other_application": {
+    "message": "Iná aplikácia…"
+  },
+  "context_menu.pack": {
+    "message": "Zbaliť…"
+  },
+  "context_menu.pack_files": {
+    "message": "Zbaliť súbory"
+  },
+  "context_menu.paste": {
+    "message": "Vložiť"
+  },
+  "context_menu.properties": {
+    "message": "Vlastnosti"
+  },
+  "context_menu.properties_failed": {
+    "message": "Vlastnosti: {err}"
+  },
+  "context_menu.rename": {
+    "message": "Premenovať…"
+  },
+  "context_menu.rename_dialog.label": {
+    "message": "Nový názov:"
+  },
+  "context_menu.rename_dialog.title": {
+    "message": "Premenovať"
+  },
+  "context_menu.rename_failed": {
+    "message": "Nepodarilo sa premenovať: {err}"
+  },
+  "context_menu.shell_menu_failed": {
+    "message": "Ponuka: {err}"
+  },
+  "context_menu.show_failed": {
+    "message": "Nepodarilo sa zobraziť: {err}"
+  },
+  "context_menu.show_in_file_manager": {
+    "message": "Zobraziť v správcovi súborov"
+  },
+  "context_menu.terminal_failed": {
+    "message": "Terminál sa nepodarilo otvoriť: {err}"
+  },
+  "context_menu.terminal_not_local": {
+    "message": "Terminál sa otvára iba v priečinkoch tohto počítača."
+  },
+  "context_menu.unpack": {
+    "message": "Rozbaliť…"
+  },
+  "context_menu.view": {
+    "message": "Zobraziť"
+  },
+  "desktop.no_app_chooser": {
+    "message": "pracovné prostredie nemá výber aplikácií ({err})"
+  },
+  "desktop.no_terminal": {
+    "message": "nenašiel sa žiadny terminál"
+  },
+  "desktop.nothing_to_run": {
+    "message": "{name}: nie je čo spustiť"
+  },
+  "desktop.scripts": {
+    "message": "Skripty"
+  },
+  "devices.error.mount_failed": {
+    "message": "zariadenie sa nepodarilo pripojiť"
+  },
+  "devices.error.no_folder": {
+    "message": "zariadenie nezdieľa žiadny priečinok"
+  },
+  "devices.error.system_only": {
+    "message": "toto môže odpojiť iba systém"
+  },
+  "devices.error.unreachable": {
+    "message": "nedostupné: je na ňom otvorený KDE Connect v tejto sieti?"
+  },
+  "devices.unlock.ask": {
+    "message": "Prístupová fráza pre {name}:"
+  },
+  "devices.unlock.ask_again": {
+    "message": "Nesprávna prístupová fráza. Prístupová fráza pre {name}:"
+  },
+  "devices.unlock.title": {
+    "message": "Odomknúť"
+  },
+  "devices.volume.share_on_server": {
+    "message": "{share} na {server}"
+  },
+  "devices.volume.unnamed": {
+    "message": "Zväzok {size} GB"
+  },
+  "devices.volume.unnamed_encrypted": {
+    "message": "Šifrovaný zväzok {size} GB"
+  },
+  "download.cancel": {
+    "message": "Zrušiť"
+  },
+  "download.dialog_title": {
+    "message": "Stiahnuť z odkazu"
+  },
+  "download.download": {
+    "message": "Stiahnuť"
+  },
+  "download.folder_link": {
+    "message": "odkaz vedie na priečinok"
+  },
+  "download.incomplete": {
+    "message": "server poslal {got} z {size, plural, one {# bajtu} few {# bajtov} other {# bajtov}}; pri opätovnom stiahnutí sa pokračuje odtiaľ"
+  },
+  "download.into": {
+    "message": "Do priečinka {folder}"
+  },
+  "download.link": {
+    "message": "Odkaz"
+  },
+  "download.link_placeholder": {
+    "message": "https://, http://, ftp:// alebo ftps://"
+  },
+  "download.local_only": {
+    "message": "Sťahuje sa do priečinkov tohto počítača: najprv niektorý otvorte v paneli."
+  },
+  "download.name_placeholder": {
+    "message": "podľa servera alebo odkazu"
+  },
+  "download.no_file": {
+    "message": "odkaz neobsahuje názov súboru"
+  },
+  "download.not_a_link": {
+    "message": "nie je to odkaz na stiahnutie"
+  },
+  "download.problem.bad_name": {
+    "message": "Iba názov súboru, bez priečinka."
+  },
+  "download.problem.empty": {
+    "message": "Vložte alebo napíšte odkaz."
+  },
+  "download.problem.exists": {
+    "message": "Súbor {name} tu už existuje: tlačidlo Nahradiť ho prepíše."
+  },
+  "download.problem.not_link": {
+    "message": "Nie je to odkaz na stiahnutie: musí začínať https://, http://, ftp:// alebo ftps://."
+  },
+  "download.replace": {
+    "message": "Nahradiť"
+  },
+  "download.save_as": {
+    "message": "Uložiť ako"
+  },
+  "download.saved_as": {
+    "message": "uložené ako {name}"
+  },
+  "download.title": {
+    "message": "Stiahnuť „{name}“"
+  },
+  "download.title_link": {
+    "message": "Stiahnuť {link}"
+  },
+  "editor.close.after_send": {
+    "message": "Zavrie sa, keď ho server prijme."
+  },
+  "editor.close.discard": {
+    "message": "Neukladať"
+  },
+  "editor.close.save": {
+    "message": "Uložiť"
+  },
+  "editor.close.title": {
+    "message": "Uložiť zmeny?"
+  },
+  "editor.close.unsaved": {
+    "message": "{name} obsahuje neuložené zmeny."
+  },
+  "editor.close.unsent": {
+    "message": "{name} nie je uložený na serveri: odoslanie zlyhalo."
+  },
+  "editor.dialog.cancel": {
+    "message": "Zrušiť"
+  },
+  "editor.edit.copy": {
+    "message": "Kopírovať"
+  },
+  "editor.edit.cut": {
+    "message": "Vystrihnúť"
+  },
+  "editor.edit.find": {
+    "message": "Hľadať..."
+  },
+  "editor.edit.find_next": {
+    "message": "Hľadať ďalej"
+  },
+  "editor.edit.find_previous": {
+    "message": "Hľadať dozadu"
+  },
+  "editor.edit.go_to_line": {
+    "message": "Prejsť na riadok..."
+  },
+  "editor.edit.paste": {
+    "message": "Vložiť"
+  },
+  "editor.edit.redo": {
+    "message": "Opakovať"
+  },
+  "editor.edit.replace": {
+    "message": "Nahradiť..."
+  },
+  "editor.edit.undo": {
+    "message": "Vrátiť späť"
+  },
+  "editor.external.not_set": {
+    "message": "nie je nastavený externý editor (Nastavenia, Editor/prehliadač)"
+  },
+  "editor.file.close": {
+    "message": "Zavrieť"
+  },
+  "editor.file.reload": {
+    "message": "Znova načítať"
+  },
+  "editor.file.save": {
+    "message": "Uložiť"
+  },
+  "editor.file.save_as": {
+    "message": "Uložiť ako..."
+  },
+  "editor.find.close": {
+    "message": "Zavrieť (Escape)"
+  },
+  "editor.find.count": {
+    "message": "{current} z {total}"
+  },
+  "editor.find.in_selection": {
+    "message": "Hľadať vo výbere (Alt+L)"
+  },
+  "editor.find.match_case": {
+    "message": "Rozlišovať veľké a malé písmená (Alt+C)"
+  },
+  "editor.find.next": {
+    "message": "Ďalšia zhoda (Enter)"
+  },
+  "editor.find.no_results": {
+    "message": "Žiadne výsledky"
+  },
+  "editor.find.placeholder": {
+    "message": "Hľadať"
+  },
+  "editor.find.preserve_case": {
+    "message": "Zachovať veľkosť písmen (Alt+P)"
+  },
+  "editor.find.previous": {
+    "message": "Predchádzajúca zhoda (Shift+Enter)"
+  },
+  "editor.find.regex": {
+    "message": "Použiť regulárny výraz (Alt+R)"
+  },
+  "editor.find.replace": {
+    "message": "Nahradiť (Ctrl+Shift+1)"
+  },
+  "editor.find.replace_all": {
+    "message": "Nahradiť všetko (Ctrl+Alt+Enter)"
+  },
+  "editor.find.replace_placeholder": {
+    "message": "Nahradiť"
+  },
+  "editor.find.toggle_replace": {
+    "message": "Zobraziť/skryť nahradenie"
+  },
+  "editor.find.whole_word": {
+    "message": "Iba celé slová (Alt+W)"
+  },
+  "editor.go_to_line.label": {
+    "message": "Riadok alebo riadok:stĺpec"
+  },
+  "editor.go_to_line.title": {
+    "message": "Prejsť na riadok"
+  },
+  "editor.language.by_file_name": {
+    "message": "Podľa názvu súboru"
+  },
+  "editor.language.plain_text": {
+    "message": "Obyčajný text"
+  },
+  "editor.menu.edit": {
+    "message": "Úpravy"
+  },
+  "editor.menu.file": {
+    "message": "Súbor"
+  },
+  "editor.menu.language": {
+    "message": "Jazyk"
+  },
+  "editor.menu.selection": {
+    "message": "Výber"
+  },
+  "editor.menu.view": {
+    "message": "Zobraziť"
+  },
+  "editor.open.too_large": {
+    "message": "presahuje {limit_mb} MB vstavaného editora (Nastavenia, Editor/prehliadač); Ctrl+Shift+F4 ho upraví v externom"
+  },
+  "editor.reload.button": {
+    "message": "Znova načítať"
+  },
+  "editor.reload.failed": {
+    "message": "Nepodarilo sa znova načítať: {err}"
+  },
+  "editor.reload.text": {
+    "message": "Neuložené zmeny sa stratia."
+  },
+  "editor.reload.title": {
+    "message": "Znova načítať súbor?"
+  },
+  "editor.reload.unfit": {
+    "message": "Nenačítané znova: {why, select, binary {súbor je binárny} other {nie je to text v UTF-8}}."
+  },
+  "editor.save.admin": {
+    "message": "Uloženie „{name}“"
+  },
+  "editor.save.failed": {
+    "message": "{path} sa nepodarilo uložiť: {err}"
+  },
+  "editor.save_anyway.button": {
+    "message": "Napriek tomu uložiť"
+  },
+  "editor.save_anyway.text": {
+    "message": "Súbor nebol text: uloží sa tak, ako je zobrazený, takže všetko, čo nebolo textom, sa natrvalo zmení."
+  },
+  "editor.save_anyway.title": {
+    "message": "Uložiť ako text?"
+  },
+  "editor.selection.add_cursor_above": {
+    "message": "Pridať kurzor nad"
+  },
+  "editor.selection.add_cursor_below": {
+    "message": "Pridať kurzor pod"
+  },
+  "editor.selection.delete_lines": {
+    "message": "Odstrániť riadky"
+  },
+  "editor.selection.duplicate_lines": {
+    "message": "Duplikovať riadky"
+  },
+  "editor.selection.indent": {
+    "message": "Zväčšiť odsadenie"
+  },
+  "editor.selection.lowercase": {
+    "message": "malé písmená"
+  },
+  "editor.selection.move_lines_down": {
+    "message": "Posunúť riadky nadol"
+  },
+  "editor.selection.move_lines_up": {
+    "message": "Posunúť riadky nahor"
+  },
+  "editor.selection.outdent": {
+    "message": "Zmenšiť odsadenie"
+  },
+  "editor.selection.select_all": {
+    "message": "Vybrať všetko"
+  },
+  "editor.selection.select_all_occurrences": {
+    "message": "Vybrať všetky výskyty"
+  },
+  "editor.selection.sort_lines_ascending": {
+    "message": "Zoradiť riadky vzostupne"
+  },
+  "editor.selection.sort_lines_descending": {
+    "message": "Zoradiť riadky zostupne"
+  },
+  "editor.selection.title_case": {
+    "message": "Veľké Začiatočné Písmená"
+  },
+  "editor.selection.toggle_line_comment": {
+    "message": "Zapnúť/vypnúť komentár riadka"
+  },
+  "editor.selection.trim_trailing_whitespace": {
+    "message": "Orezať medzery na konci riadkov"
+  },
+  "editor.selection.uppercase": {
+    "message": "VEĽKÉ PÍSMENÁ"
+  },
+  "editor.send.failed": {
+    "message": "Nepodarilo sa uložiť späť na server: {err}. Uloženie to skúsi znova."
+  },
+  "editor.status.modified": {
+    "message": "Zmenené"
+  },
+  "editor.status.position": {
+    "message": "Riad. {line}, stĺp. {column}"
+  },
+  "editor.status.position_selected": {
+    "message": "Riad. {line}, stĺp. {column} ({count, plural, one {# vybraný} few {# vybrané} other {# vybraných}})"
+  },
+  "editor.status.sending": {
+    "message": "Ukladá sa na server"
+  },
+  "editor.status.spaces": {
+    "message": "Medzery: {size}"
+  },
+  "editor.status.tab_size": {
+    "message": "Veľkosť tabulátora: {size}"
+  },
+  "editor.status.unsent": {
+    "message": "Nie je na serveri"
+  },
+  "editor.terminal.not_found": {
+    "message": "nenašiel sa žiadny editor; nastavte $EDITOR"
+  },
+  "editor.title": {
+    "message": "{path} — Editor"
+  },
+  "editor.unfit.open_anyway": {
+    "message": "Napriek tomu otvoriť"
+  },
+  "editor.unfit.text": {
+    "message": "Súbor sa v editore nezobrazuje, pretože {why, select, binary {je binárny} other {nie je to text v UTF-8}}."
+  },
+  "editor.view.folding": {
+    "message": "Zbaľovanie"
+  },
+  "editor.view.indent_guides": {
+    "message": "Vodiace čiary odsadenia"
+  },
+  "editor.view.indent_with_tabs": {
+    "message": "Odsadzovať tabulátormi"
+  },
+  "editor.view.line_numbers": {
+    "message": "Čísla riadkov"
+  },
+  "editor.view.minimap": {
+    "message": "Minimapa"
+  },
+  "editor.view.tab_width": {
+    "message": "Šírka tabulátora {width}"
+  },
+  "editor.view.unfold_all": {
+    "message": "Rozbaliť všetko"
+  },
+  "editor.view.whitespace": {
+    "message": "Biele znaky"
+  },
+  "editor.view.word_wrap": {
+    "message": "Zalamovanie riadkov"
+  },
+  "elevate.failed": {
+    "message": "zlyhalo aj s právami správcu ({code})"
+  },
+  "elevate.no_consent": {
+    "message": "súhlas správcu nebol udelený"
+  },
+  "elevate.no_password": {
+    "message": "heslo nebolo zadané"
+  },
+  "elevate.not_authorised": {
+    "message": "nepovolené"
+  },
+  "elevate.percent_name": {
+    "message": "{path}: názov so znakom % sa nedá spracovať ako správca; najprv ho premenujte"
+  },
+  "elevate.pkexec_missing": {
+    "message": "pkexec (polkit) nie je nainštalovaný"
+  },
+  "file_menu.change_tags_failed": {
+    "message": "Značky sa nepodarilo zmeniť: {err}"
+  },
+  "file_menu.compress": {
+    "message": "{count, plural, =1 {Komprimovať „{name}“…} one {Komprimovať # položku…} few {Komprimovať # položky…} other {Komprimovať # položiek…}}"
+  },
+  "file_menu.copy": {
+    "message": "{count, plural, =1 {Kopírovať „{name}“} one {Kopírovať # položku} few {Kopírovať # položky} other {Kopírovať # položiek}}"
+  },
+  "file_menu.copy_path": {
+    "message": "Kopírovať cestu do schránky"
+  },
+  "file_menu.delete": {
+    "message": "Odstrániť"
+  },
+  "file_menu.duplicate": {
+    "message": "Duplikovať"
+  },
+  "file_menu.duplicate_failed": {
+    "message": "Nepodarilo sa duplikovať: {err}"
+  },
+  "file_menu.edit_tags": {
+    "message": "Značky…"
+  },
+  "file_menu.get_info": {
+    "message": "Informácie"
+  },
+  "file_menu.make_alias": {
+    "message": "Vytvoriť alias"
+  },
+  "file_menu.make_alias_failed": {
+    "message": "Alias sa nepodarilo vytvoriť: {err}"
+  },
+  "file_menu.move_to_trash": {
+    "message": "Presunúť do koša"
+  },
+  "file_menu.new_folder": {
+    "message": "Nový priečinok"
+  },
+  "file_menu.open": {
+    "message": "Otvoriť"
+  },
+  "file_menu.open_failed": {
+    "message": "Nepodarilo sa otvoriť: {err}"
+  },
+  "file_menu.open_with": {
+    "message": "Otvoriť v aplikácii"
+  },
+  "file_menu.open_with_default": {
+    "message": "{app} (predvolená)"
+  },
+  "file_menu.paste": {
+    "message": "Vložiť"
+  },
+  "file_menu.quick_look": {
+    "message": "{count, plural, =1 {Rýchly náhľad „{name}“} one {Rýchly náhľad # položky} few {Rýchly náhľad # položiek} other {Rýchly náhľad # položiek}}"
+  },
+  "file_menu.quick_look_failed": {
+    "message": "Rýchly náhľad: {err}"
+  },
+  "file_menu.rename": {
+    "message": "Premenovať…"
+  },
+  "file_menu.reveal_failed": {
+    "message": "Nepodarilo sa zobraziť vo Finderi: {err}"
+  },
+  "file_menu.reveal_in_finder": {
+    "message": "Zobraziť vo Finderi"
+  },
+  "file_menu.show_package_contents": {
+    "message": "Zobraziť obsah balíka"
+  },
+  "file_menu.tag_dot.add": {
+    "message": "Pridať značku „{name}“"
+  },
+  "file_menu.tag_dot.remove": {
+    "message": "Odstrániť značku „{name}“"
+  },
+  "file_menu.tags_popover.show_all": {
+    "message": "Zobraziť všetky…"
+  },
+  "file_menu.tags_popover.title": {
+    "message": "{count, plural, =1 {Priradiť značky k „{name}“} one {Priradiť značky # položke} few {Priradiť značky # položkám} other {Priradiť značky # položkám}}"
+  },
+  "find.backwards": {
+    "message": "Hľadať dozadu"
+  },
+  "find.cancel": {
+    "message": "Zrušiť"
+  },
+  "find.case_sensitive": {
+    "message": "Rozlišovať veľké a malé písmená"
+  },
+  "find.hex": {
+    "message": "Hľadať hexadecimálny reťazec"
+  },
+  "find.ok": {
+    "message": "OK"
+  },
+  "find.regex": {
+    "message": "RegEx"
+  },
+  "find.text.label": {
+    "message": "Zadajte hľadaný text"
+  },
+  "find.title": {
+    "message": "Hľadať"
+  },
+  "find.whole_words": {
+    "message": "Iba celé slová"
+  },
+  "keys.apply": {
+    "message": "Použiť"
+  },
+  "keys.cancel": {
+    "message": "Zrušiť"
+  },
+  "keys.clear.tooltip": {
+    "message": "Bez klávesu"
+  },
+  "keys.column.alternate": {
+    "message": "Alternatívna"
+  },
+  "keys.column.command": {
+    "message": "Príkaz"
+  },
+  "keys.column.shortcut": {
+    "message": "Skratka"
+  },
+  "keys.custom": {
+    "message": "Vlastné"
+  },
+  "keys.delete_set": {
+    "message": "Odstrániť"
+  },
+  "keys.note.custom_replaced": {
+    "message": "Vaše vlastné klávesy nahradila sada {name}; tlačidlom Uložiť ako ich zachováte."
+  },
+  "keys.note.deleted": {
+    "message": "Sada {name} je odstránená; potvrdíte to tlačidlom OK alebo Použiť."
+  },
+  "keys.note.moved": {
+    "message": "{key} teraz spúšťa {command}, už nie {other}."
+  },
+  "keys.note.name_reserved": {
+    "message": "„{name}“ je názov predvoľby; zvoľte iný."
+  },
+  "keys.note.press_new_key": {
+    "message": "Stlačte nový kláves; Esc ho ponechá bez zmeny."
+  },
+  "keys.note.saved": {
+    "message": "Uložené ako {name}; tlačidlom OK alebo Použiť to zachováte."
+  },
+  "keys.note.set": {
+    "message": "{key} teraz spúšťa {command}."
+  },
+  "keys.note.taken_by_system": {
+    "message": "{key} je obsadený ({by}), preto sa do aplikácie Spark Commander nikdy nedostane."
+  },
+  "keys.ok": {
+    "message": "OK"
+  },
+  "keys.press_key": {
+    "message": "Stlačte kláves…"
+  },
+  "keys.reserved.application_launcher": {
+    "message": "{system}: spúšťač aplikácií"
+  },
+  "keys.reserved.close_window": {
+    "message": "{system}: zavrieť okno"
+  },
+  "keys.reserved.close_window_or_tab": {
+    "message": "{system}: zavrieť okno alebo kartu"
+  },
+  "keys.reserved.dock": {
+    "message": "{system}: Dock"
+  },
+  "keys.reserved.floating_window": {
+    "message": "{system}: plávajúce okno"
+  },
+  "keys.reserved.force_quit": {
+    "message": "{system}: vynútiť ukončenie"
+  },
+  "keys.reserved.hide_program": {
+    "message": "{system}: skryť program"
+  },
+  "keys.reserved.input_source": {
+    "message": "{system}: zdroj vstupu"
+  },
+  "keys.reserved.keyboard_access": {
+    "message": "{system}: prístup z klávesnice"
+  },
+  "keys.reserved.keyboard_navigation": {
+    "message": "{system}: navigácia klávesnicou"
+  },
+  "keys.reserved.krunner": {
+    "message": "{system}: KRunner"
+  },
+  "keys.reserved.lock_screen": {
+    "message": "{system}: zamknúť obrazovku"
+  },
+  "keys.reserved.log_out": {
+    "message": "{system}: odhlásiť sa"
+  },
+  "keys.reserved.maximize_window": {
+    "message": "{system}: maximalizovať okno"
+  },
+  "keys.reserved.menu_bar": {
+    "message": "{system}: lišta menu"
+  },
+  "keys.reserved.minimize": {
+    "message": "{system}: minimalizovať"
+  },
+  "keys.reserved.mission_control": {
+    "message": "{system}: Mission Control"
+  },
+  "keys.reserved.move_window": {
+    "message": "{system}: presunúť okno"
+  },
+  "keys.reserved.next_window": {
+    "message": "{system}: ďalšie okno"
+  },
+  "keys.reserved.present_windows": {
+    "message": "{system}: Prezentovať okná"
+  },
+  "keys.reserved.present_windows_all": {
+    "message": "{system}: Prezentovať okná (všetky plochy)"
+  },
+  "keys.reserved.present_windows_class": {
+    "message": "{system}: Prezentovať okná (trieda okna)"
+  },
+  "keys.reserved.program_windows": {
+    "message": "{system}: okná programu"
+  },
+  "keys.reserved.quit": {
+    "message": "{system}: ukončiť"
+  },
+  "keys.reserved.resize_window": {
+    "message": "{system}: zmeniť veľkosť okna"
+  },
+  "keys.reserved.restore_window": {
+    "message": "{system}: obnoviť okno"
+  },
+  "keys.reserved.run_command": {
+    "message": "{system}: spustiť príkaz"
+  },
+  "keys.reserved.screenshot": {
+    "message": "{system}: snímka obrazovky"
+  },
+  "keys.reserved.security_screen": {
+    "message": "{system}: obrazovka zabezpečenia"
+  },
+  "keys.reserved.show_desktop": {
+    "message": "{system}: zobraziť plochu"
+  },
+  "keys.reserved.space_left": {
+    "message": "{system}: plocha vľavo"
+  },
+  "keys.reserved.space_right": {
+    "message": "{system}: plocha vpravo"
+  },
+  "keys.reserved.spotlight": {
+    "message": "{system}: Spotlight"
+  },
+  "keys.reserved.start_menu": {
+    "message": "{system}: ponuka Štart"
+  },
+  "keys.reserved.status_menus": {
+    "message": "{system}: stavové menu"
+  },
+  "keys.reserved.suspend_compositing": {
+    "message": "{system}: pozastaviť kompozíciu"
+  },
+  "keys.reserved.switch_program_windows": {
+    "message": "{system}: prepínať okná programu"
+  },
+  "keys.reserved.switch_programs": {
+    "message": "{system}: prepínať programy"
+  },
+  "keys.reserved.switch_system_controls": {
+    "message": "{system}: prepínať systémové ovládacie prvky"
+  },
+  "keys.reserved.switch_to_desktop": {
+    "message": "{system}: prepnúť na plochu {number}"
+  },
+  "keys.reserved.switch_windows": {
+    "message": "{system}: prepínať okná"
+  },
+  "keys.reserved.system_monitor": {
+    "message": "{system}: Monitor systému"
+  },
+  "keys.reserved.task_manager": {
+    "message": "{system}: Správca úloh"
+  },
+  "keys.reserved.text_console": {
+    "message": "{system}: prepnúť na textovú konzolu"
+  },
+  "keys.reserved.toolbar": {
+    "message": "{system}: panel s nástrojmi"
+  },
+  "keys.reserved.window_menu": {
+    "message": "{system}: ponuka okna"
+  },
+  "keys.reserved.workspace_down": {
+    "message": "{system}: pracovná plocha nižšie"
+  },
+  "keys.reserved.workspace_left": {
+    "message": "{system}: pracovná plocha vľavo"
+  },
+  "keys.reserved.workspace_right": {
+    "message": "{system}: pracovná plocha vpravo"
+  },
+  "keys.reserved.workspace_up": {
+    "message": "{system}: pracovná plocha vyššie"
+  },
+  "keys.reset.tooltip": {
+    "message": "Vrátiť klávesy predvoľby {preset}"
+  },
+  "keys.reset_all": {
+    "message": "Obnoviť všetko"
+  },
+  "keys.save_as.button": {
+    "message": "Uložiť ako…"
+  },
+  "keys.save_as.default_name": {
+    "message": "Moje klávesy"
+  },
+  "keys.save_as.label": {
+    "message": "Názov:"
+  },
+  "keys.save_as.title": {
+    "message": "Uložiť klávesové skratky"
+  },
+  "keys.search.placeholder": {
+    "message": "Hľadať príkaz alebo kláves"
+  },
+  "keys.set_label": {
+    "message": "Klávesy:"
+  },
+  "keys.taken_by.tooltip": {
+    "message": "Obsadené: {by}"
+  },
+  "keys.title": {
+    "message": "Klávesové skratky"
+  },
+  "main.admin.button": {
+    "message": "Ako správca"
+  },
+  "main.admin.deleting": {
+    "message": "Odstránenie {count, plural, one {# položky} few {# položiek} other {# položiek}}"
+  },
+  "main.admin.failed": {
+    "message": "Ako správca: {err}"
+  },
+  "main.admin.making": {
+    "message": "Vytvorenie „{name}“"
+  },
+  "main.admin.offer": {
+    "message": "{what}: prístup bol odmietnutý. Pri spustení ako správca si systém vyžiada heslo."
+  },
+  "main.admin.offer_delete": {
+    "message": "{what}: prístup bol odmietnutý. Pri spustení ako správca si systém vyžiada heslo. Takto odstránené položky sú nenávratne preč."
+  },
+  "main.admin.title": {
+    "message": "Prístup bol odmietnutý"
+  },
+  "main.delete.from_archive": {
+    "message": "{kind, select, folder {Odstrániť priečinok „{name}“ z archívu {archive}? Túto akciu nemožno vrátiť späť.} file {Odstrániť súbor „{name}“ z archívu {archive}? Túto akciu nemožno vrátiť späť.} other {Odstrániť {count, plural, one {# položku} few {# položky} other {# položiek}} z archívu {archive}? Túto akciu nemožno vrátiť späť.}}"
+  },
+  "main.delete.on_server": {
+    "message": "{kind, select, folder {Odstrániť priečinok „{name}“ na serveri {server}? Túto akciu nemožno vrátiť späť.} file {Odstrániť súbor „{name}“ na serveri {server}? Túto akciu nemožno vrátiť späť.} other {Odstrániť {count, plural, one {# položku} few {# položky} other {# položiek}} na serveri {server}? Túto akciu nemožno vrátiť späť.}}"
+  },
+  "main.delete.permanently": {
+    "message": "{kind, select, folder {Natrvalo odstrániť priečinok „{name}“? Túto akciu nemožno vrátiť späť.} file {Natrvalo odstrániť súbor „{name}“? Túto akciu nemožno vrátiť späť.} other {Natrvalo odstrániť {count, plural, one {# položku} few {# položky} other {# položiek}}? Túto akciu nemožno vrátiť späť.}}"
+  },
+  "main.delete.title": {
+    "message": "Odstrániť"
+  },
+  "main.delete.title_permanently": {
+    "message": "Odstrániť natrvalo"
+  },
+  "main.delete.to_trash": {
+    "message": "{kind, select, folder {Presunúť priečinok „{name}“ do koša?} file {Presunúť súbor „{name}“ do koša?} other {Presunúť {count, plural, one {# položku} few {# položky} other {# položiek}} do koša?}}"
+  },
+  "main.download.edit": {
+    "message": "Stiahnuť {file} na úpravu"
+  },
+  "main.download.view": {
+    "message": "Stiahnuť {file} na zobrazenie"
+  },
+  "main.error.make_folder": {
+    "message": "Priečinok sa nepodarilo vytvoriť: {err}"
+  },
+  "main.error.read_settings": {
+    "message": "Nastavenia sa nepodarilo načítať: {err}"
+  },
+  "main.error.read_tabs": {
+    "message": "Otvorené karty sa nepodarilo načítať: {err}"
+  },
+  "main.error.read_workspaces": {
+    "message": "Pracovné priestory sa nepodarilo načítať: {err}"
+  },
+  "main.error.save_settings": {
+    "message": "Nastavenia sa nepodarilo uložiť: {err}"
+  },
+  "main.folder_tree.home": {
+    "message": "Domov"
+  },
+  "main.go.no_such_folder": {
+    "message": "{path}: taký priečinok na tomto počítači neexistuje"
+  },
+  "main.new_folder.label": {
+    "message": "Nový priečinok (adresár):"
+  },
+  "main.new_folder.title": {
+    "message": "Nový priečinok"
+  },
+  "main.sync_browsing.lost": {
+    "message": "{err}. Synchronizované prehliadanie je vypnuté."
+  },
+  "main.tool.needs_file": {
+    "message": "Kurzor nie je na žiadnom súbore: %N, %O a %E ho potrebujú."
+  },
+  "main.tool.needs_local_folder": {
+    "message": "Druhý panel zobrazuje server alebo archív: %T potrebuje priečinok na tomto počítači."
+  },
+  "main.undo.done": {
+    "message": "{way, select, redo {Opakované: {title}} other {Vrátené späť: {title}}}"
+  },
+  "main.undo.failed": {
+    "message": "{way, select, redo {„{title}“ sa nepodarilo opakovať: {err}} other {„{title}“ sa nepodarilo vrátiť späť: {err}}}"
+  },
+  "main.undo.nothing": {
+    "message": "{way, select, redo {Nie je čo opakovať.} other {Nie je čo vrátiť späť.}}"
+  },
+  "main.undo.queued": {
+    "message": "{way, select, redo {V rade na opakovanie: {title}} other {V rade na vrátenie späť: {title}}}"
+  },
+  "mark.compare.marked": {
+    "message": "{count, plural, one {Označený # súbor: novší alebo chýbajúci na druhej strane.} few {Označené # súbory: novšie alebo chýbajúce na druhej strane.} other {Označených # súborov: novšie alebo chýbajúce na druhej strane.}}"
+  },
+  "mark.compare.same": {
+    "message": "Priečinky obsahujú rovnaké súbory."
+  },
+  "mark.load_selection.label": {
+    "message": "Vybrať názvy uvedené v súbore:"
+  },
+  "mark.load_selection.title": {
+    "message": "Načítať výber"
+  },
+  "mark.save_selection.label": {
+    "message": "Uložiť vybrané názvy do súboru:"
+  },
+  "mark.save_selection.title": {
+    "message": "Uložiť výber"
+  },
+  "mark.select_group.label": {
+    "message": "Vybrať súbory (*.txt *.md; maska priečinka končí na /):"
+  },
+  "mark.select_group.title": {
+    "message": "Vybrať skupinu"
+  },
+  "mark.selection_file.not_local": {
+    "message": "Súbory výberu sa ukladajú na tomto počítači, mimo archívov."
+  },
+  "mark.unselect_group.label": {
+    "message": "Zrušiť výber súborov (*.txt *.md; maska priečinka končí na /):"
+  },
+  "mark.unselect_group.title": {
+    "message": "Zrušiť výber skupiny"
+  },
+  "media.cannot_play": {
+    "message": "Nedá sa prehrať: {err}"
+  },
+  "media.cannot_play_as_text": {
+    "message": "Nedá sa prehrať: {err}. Kláves 1 ho zobrazí ako text."
+  },
+  "media.continuing": {
+    "message": "Pokračuje sa od {time}"
+  },
+  "media.error.missing": {
+    "message": "libmpv chýba: stiahnete ho v časti Nastavenia > Doplnky (zostavenie zo zdrojov: vendor/mpv/{script})"
+  },
+  "media.error.not_started": {
+    "message": "libmpv sa nepodarilo spustiť"
+  },
+  "media.error.too_long": {
+    "message": "{path}: mpv trvalo príliš dlho"
+  },
+  "media.error.unsupported_system": {
+    "message": "video sa zatiaľ prehráva iba v systémoch Linux, macOS a Windows"
+  },
+  "menu.archive": {
+    "message": "Archív"
+  },
+  "menu.associations": {
+    "message": "Priradenia"
+  },
+  "menu.button_bar": {
+    "message": "Panel tlačidiel"
+  },
+  "menu.checksums": {
+    "message": "Kontrolné súčty"
+  },
+  "menu.commands": {
+    "message": "Príkazy"
+  },
+  "menu.compare_directories": {
+    "message": "Porovnať priečinky"
+  },
+  "menu.configuration": {
+    "message": "Konfigurácia"
+  },
+  "menu.copy_names": {
+    "message": "Kopírovať názvy"
+  },
+  "menu.files": {
+    "message": "Súbory"
+  },
+  "menu.filter": {
+    "message": "Filter"
+  },
+  "menu.go": {
+    "message": "Prejsť"
+  },
+  "menu.help": {
+    "message": "Pomocník"
+  },
+  "menu.mark": {
+    "message": "Označiť"
+  },
+  "menu.other": {
+    "message": "Ostatné"
+  },
+  "menu.recently_closed_tabs": {
+    "message": "Nedávno zatvorené karty"
+  },
+  "menu.selection": {
+    "message": "Výber"
+  },
+  "menu.show": {
+    "message": "Zobrazenie"
+  },
+  "menu.sidebar": {
+    "message": "Bočný panel"
+  },
+  "menu.sort": {
+    "message": "Zoradiť"
+  },
+  "menu.split_and_combine": {
+    "message": "Rozdeliť a spojiť"
+  },
+  "menu.tabs": {
+    "message": "Karty"
+  },
+  "menu.tools": {
+    "message": "Nástroje"
+  },
+  "menu.workspaces": {
+    "message": "Pracovné priestory"
+  },
+  "menus.hide_app": {
+    "message": "Skryť Spark Commander"
+  },
+  "menus.hide_others": {
+    "message": "Skryť ostatné"
+  },
+  "menus.minimize": {
+    "message": "Minimalizovať"
+  },
+  "menus.quit_app": {
+    "message": "Ukončiť Spark Commander"
+  },
+  "menus.services": {
+    "message": "Služby"
+  },
+  "menus.show_all": {
+    "message": "Zobraziť všetko"
+  },
+  "menus.zoom": {
+    "message": "Zväčšiť"
+  },
+  "name_dialog.cancel": {
+    "message": "Zrušiť"
+  },
+  "name_dialog.ok": {
+    "message": "OK"
+  },
+  "operations.clear": {
+    "message": "Vymazať dokončené"
+  },
+  "operations.duration.seconds": {
+    "message": "{seconds} s"
+  },
+  "operations.empty": {
+    "message": "Žiadne operácie."
+  },
+  "operations.job.answer": {
+    "message": "Čaká na vašu odpoveď"
+  },
+  "operations.job.bytes": {
+    "message": "{done} z {total}"
+  },
+  "operations.job.cancel_tooltip": {
+    "message": "Zrušiť"
+  },
+  "operations.job.cancelled": {
+    "message": "Zrušené"
+  },
+  "operations.job.counting": {
+    "message": "Počítanie: {count, plural, one {# súbor} few {# súbory} other {# súborov}}"
+  },
+  "operations.job.done": {
+    "message": "Hotovo"
+  },
+  "operations.job.done_skipped": {
+    "message": "Hotovo, {count, plural, one {# vynechaný} few {# vynechané} other {# vynechaných}}"
+  },
+  "operations.job.failed": {
+    "message": "Zlyhalo"
+  },
+  "operations.job.files": {
+    "message": "{files} / {count, plural, one {# súbor} few {# súbory} other {# súborov}}"
+  },
+  "operations.job.left": {
+    "message": "zostáva {time}"
+  },
+  "operations.job.running": {
+    "message": "Prebieha"
+  },
+  "operations.job.waiting": {
+    "message": "Čaká"
+  },
+  "operations.menu.cancel": {
+    "message": "Zrušiť"
+  },
+  "operations.menu.clear": {
+    "message": "Vymazať dokončené"
+  },
+  "operations.menu.move_down": {
+    "message": "Posunúť nadol"
+  },
+  "operations.menu.move_up": {
+    "message": "Posunúť nahor"
+  },
+  "operations.settings_tooltip": {
+    "message": "Nastavenia radu operácií"
+  },
+  "operations.summary.failed": {
+    "message": "{count, plural, one {# zlyhala} few {# zlyhali} other {# zlyhalo}}"
+  },
+  "operations.summary.running": {
+    "message": "{count, plural, one {# prebieha} few {# prebiehajú} other {# prebieha}}"
+  },
+  "operations.summary.waiting": {
+    "message": "{count, plural, one {# čaká} few {# čakajú} other {# čaká}}"
+  },
+  "ops.as_administrator.failed": {
+    "message": "Ako správca: {err}"
+  },
+  "ops.as_administrator.progress": {
+    "message": "Ako správca…"
+  },
+  "ops.delete.title_many": {
+    "message": "Odstrániť {count, plural, one {# položku} few {# položky} other {# položiek}} v priečinku {folder}"
+  },
+  "ops.delete.title_one": {
+    "message": "Odstrániť „{name}“"
+  },
+  "ops.delete.trash_title_many": {
+    "message": "Presunúť {count, plural, one {# položku} few {# položky} other {# položiek}} z priečinka {folder} do koša"
+  },
+  "ops.delete.trash_title_one": {
+    "message": "Presunúť „{name}“ do koša"
+  },
+  "ops.error.file_in_the_way": {
+    "message": "prekáža súbor s týmto názvom"
+  },
+  "ops.error.into_itself": {
+    "message": "nedá sa kopírovať sám do seba"
+  },
+  "ops.exists_already": {
+    "message": "{name} už existuje"
+  },
+  "ops.link.dialog_title": {
+    "message": "Vytvoriť odkaz"
+  },
+  "ops.link.failed": {
+    "message": "Odkaz sa nepodarilo vytvoriť: {err}"
+  },
+  "ops.link.kind.hard": {
+    "message": "Pevný odkaz"
+  },
+  "ops.link.kind.junction": {
+    "message": "Spojenie (junction)"
+  },
+  "ops.link.kind.shortcut": {
+    "message": "Odkaz (.lnk)"
+  },
+  "ops.link.kind.symbolic": {
+    "message": "Symbolický odkaz"
+  },
+  "ops.link.label_many": {
+    "message": "Odkazy na {count, plural, one {# položku} few {# položky} other {# položiek}} v priečinku:"
+  },
+  "ops.link.label_one": {
+    "message": "Odkaz na „{name}“ ako:"
+  },
+  "ops.link.making": {
+    "message": "Vytvorenie {kind, select, symbolic {symbolického odkazu} hard {pevného odkazu} junction {spojenia} other {odkazu (.lnk)}}"
+  },
+  "ops.link.needs_admin": {
+    "message": "symbolické odkazy vyžadujú správcu alebo Režim vývojára"
+  },
+  "ops.link.thread_failed": {
+    "message": "vlákno odkazu zlyhalo"
+  },
+  "ops.link.title_many": {
+    "message": "{kind, select, symbolic {Symbolické odkazy} hard {Pevné odkazy} junction {Spojenia} other {Odkazy (.lnk)}} na {count, plural, one {# položku} few {# položky} other {# položiek}} v priečinku {folder}"
+  },
+  "ops.link.title_one": {
+    "message": "{kind, select, symbolic {Symbolický odkaz} hard {Pevný odkaz} junction {Spojenie} other {Odkaz (.lnk)}} na „{name}“ v priečinku {folder}"
+  },
+  "ops.link.windows_only": {
+    "message": "spojenia a odkazy .lnk existujú iba vo Windows"
+  },
+  "ops.redo.title": {
+    "message": "Opakovať: {what}"
+  },
+  "ops.title.many": {
+    "message": "{kind, select, copy {Kopírovať} other {Presunúť}} {count, plural, one {# položku} few {# položky} other {# položiek}} do {target}"
+  },
+  "ops.title.one": {
+    "message": "{kind, select, copy {Kopírovať} other {Presunúť}} „{name}“ do {target}"
+  },
+  "ops.undo.not_a_server": {
+    "message": "{url}: nie je adresa servera"
+  },
+  "ops.undo.not_in_trash": {
+    "message": "už nie sú v koši"
+  },
+  "ops.undo.restore_title": {
+    "message": "{title}: obnovenie prepísaných súborov z koša"
+  },
+  "ops.undo.title": {
+    "message": "Vrátiť späť: {what}"
+  },
+  "pack.cancel": {
+    "message": "Zrušiť"
+  },
+  "pack.compression": {
+    "message": "Kompresia:"
+  },
+  "pack.dialog_title": {
+    "message": "Zbaliť súbory"
+  },
+  "pack.encrypt": {
+    "message": "Zašifrovať heslom"
+  },
+  "pack.format": {
+    "message": "Formát:"
+  },
+  "pack.label": {
+    "message": "Zbaliť {count, plural, one {# položku} few {# položky} other {# položiek}} do archívu:"
+  },
+  "pack.level.fastest": {
+    "message": "Najrýchlejšia"
+  },
+  "pack.level.maximum": {
+    "message": "Maximálna"
+  },
+  "pack.level.normal": {
+    "message": "Normálna"
+  },
+  "pack.level.store": {
+    "message": "Bez kompresie"
+  },
+  "pack.level.ultra": {
+    "message": "Ultra"
+  },
+  "pack.local_only": {
+    "message": "{what, select, packing {Zbaľovanie} unpacking {Rozbaľovanie} testing {Testovanie} creating_checksums {Vytváranie kontrolných súčtov} making_links {Vytváranie odkazov} verifying_checksums {Overovanie kontrolných súčtov} splitting {Rozdeľovanie} combining {Spájanie} other {Toto}} funguje iba so súbormi tohto počítača, mimo archívov."
+  },
+  "pack.move_files": {
+    "message": "Presunúť do archívu (odstrániť zbalené súbory)"
+  },
+  "pack.needs_password": {
+    "message": "vyžaduje heslo"
+  },
+  "pack.ok": {
+    "message": "OK"
+  },
+  "pack.password_missing": {
+    "message": "Zadajte heslo alebo vypnite šifrovanie."
+  },
+  "pack.separate": {
+    "message": "Samostatný archív pre každý vybraný súbor alebo priečinok"
+  },
+  "pack.split": {
+    "message": "Rozdeliť na zväzky po"
+  },
+  "pack.split_unit": {
+    "message": "MB"
+  },
+  "pack.test.broken": {
+    "message": "{broken, plural, one {# z {count} poškodený} few {# z {count} poškodené} other {# z {count} poškodených}}"
+  },
+  "pack.test.choose": {
+    "message": "Vyberte archívy, ktoré chcete otestovať."
+  },
+  "pack.test.ok": {
+    "message": "{count, plural, one {# archív je v poriadku} few {# archívy sú v poriadku} other {# archívov je v poriadku}}"
+  },
+  "pack.test.title_many": {
+    "message": "Otestovať {count, plural, one {# archív} few {# archívy} other {# archívov}}"
+  },
+  "pack.test.title_one": {
+    "message": "Otestovať „{name}“"
+  },
+  "pack.title.many": {
+    "message": "Zbaliť {count, plural, one {# položku} few {# položky} other {# položiek}} do {archive}"
+  },
+  "pack.title.many_separate": {
+    "message": "Zbaliť {count, plural, one {# položku} few {# položky} other {# položiek}} do samostatných archívov {format}"
+  },
+  "pack.title.one": {
+    "message": "Zbaliť „{name}“ do {archive}"
+  },
+  "pack.title.one_separate": {
+    "message": "Zbaliť „{name}“ do samostatných archívov {format}"
+  },
+  "pack.unpack.choose": {
+    "message": "Vyberte archívy, ktoré chcete rozbaliť."
+  },
+  "pack.unpack.dialog_title": {
+    "message": "Rozbaliť súbory"
+  },
+  "pack.unpack.label": {
+    "message": "Rozbaliť {count, plural, one {# archív} few {# archívy} other {# archívov}} do:"
+  },
+  "pack.unpack.mask": {
+    "message": "Iba súbory:"
+  },
+  "pack.unpack.overwrite": {
+    "message": "Prepísať existujúce súbory (inak sa ponechajú)"
+  },
+  "pack.unpack.password": {
+    "message": "Heslo:"
+  },
+  "pack.unpack.separate": {
+    "message": "Každý archív do priečinka s jeho názvom"
+  },
+  "pack.unpack.title_many": {
+    "message": "Rozbaliť {count, plural, one {# archív} few {# archívy} other {# archívov}} do {target}"
+  },
+  "pack.unpack.title_one": {
+    "message": "Rozbaliť „{name}“ do {target}"
+  },
+  "pack.unpack.with_paths": {
+    "message": "Zachovať priečinky uložené v archíve"
+  },
+  "pack.volume_invalid": {
+    "message": "Veľkosť zväzku sa zadáva ako počet MB."
+  },
+  "pack.wrong_password": {
+    "message": "nesprávne heslo"
+  },
+  "panel.admin.renaming": {
+    "message": "Premenovanie na „{name}“"
+  },
+  "panel.clipboard.copied": {
+    "message": "{count, plural, one {Skopírovaná # položka} few {Skopírované # položky} other {Skopírovaných # položiek}}: Ctrl+V ich vloží."
+  },
+  "panel.clipboard.cut": {
+    "message": "{count, plural, one {Vystrihnutá # položka} few {Vystrihnuté # položky} other {Vystrihnutých # položiek}}: Ctrl+V ich vloží."
+  },
+  "panel.clipboard.no_cut_in_archive": {
+    "message": "Súbory sa z archívov nedajú vystrihnúť; Ctrl+C ich skopíruje."
+  },
+  "panel.clipboard.no_files": {
+    "message": "Schránka neobsahuje žiadne súbory."
+  },
+  "panel.clipboard.no_paste_in_archive": {
+    "message": "Do archívov sa súbory zatiaľ nedajú vkladať."
+  },
+  "panel.clipboard.same_folder": {
+    "message": "Už sú v tomto priečinku: Ctrl+V ich vloží do iného."
+  },
+  "panel.column.attr": {
+    "message": "Atr"
+  },
+  "panel.column.date": {
+    "message": "Dátum"
+  },
+  "panel.column.ext": {
+    "message": "Príp"
+  },
+  "panel.column.name": {
+    "message": "Názov"
+  },
+  "panel.column.size": {
+    "message": "Veľkosť"
+  },
+  "panel.disconnect": {
+    "message": "Odpojiť"
+  },
+  "panel.drag.items": {
+    "message": "{count, plural, one {# položka} few {# položky} other {# položiek}}"
+  },
+  "panel.error.archive_not_updatable": {
+    "message": "{name}: 7-Zip priamo upravuje iba archívy 7z, zip a tar, tento nie"
+  },
+  "panel.error.archive_on_server": {
+    "message": "{name}: archívy na serveroch sa zatiaľ nedajú meniť"
+  },
+  "panel.error.branch_view_local": {
+    "message": "Zobrazenie vetvy zobrazuje iba priečinky tohto počítača"
+  },
+  "panel.error.exists": {
+    "message": "{name} už existuje"
+  },
+  "panel.error.folder_in_the_way": {
+    "message": "prekáža priečinok s týmto názvom"
+  },
+  "panel.error.inside_archive": {
+    "message": "v archívoch zatiaľ nie"
+  },
+  "panel.error.make_file": {
+    "message": "Súbor sa nepodarilo vytvoriť: {err}"
+  },
+  "panel.error.no_name": {
+    "message": "nebol zadaný názov"
+  },
+  "panel.error.not_a_name": {
+    "message": "{name}: neplatný názov"
+  },
+  "panel.error.other_drive": {
+    "message": "druhý panel prešiel na inú jednotku"
+  },
+  "panel.error.rename": {
+    "message": "Nepodarilo sa premenovať: {err}"
+  },
+  "panel.filter.custom.label": {
+    "message": "Typy súborov, napr. *.txt *.md (za | vynechané):"
+  },
+  "panel.filter.custom.title": {
+    "message": "Zobraziť súbory"
+  },
+  "panel.filter.programs": {
+    "message": "programy"
+  },
+  "panel.filter.selected_files": {
+    "message": "vybrané súbory"
+  },
+  "panel.found.branch_view": {
+    "message": "Zobrazenie vetvy:"
+  },
+  "panel.found.search_results": {
+    "message": "Výsledky hľadania:"
+  },
+  "panel.new_text_file.label": {
+    "message": "Názov súboru (otvorí sa v editore):"
+  },
+  "panel.new_text_file.title": {
+    "message": "Nový textový súbor"
+  },
+  "panel.opening.cancel": {
+    "message": "Zrušiť"
+  },
+  "panel.opening.reading": {
+    "message": "Načítava sa…"
+  },
+  "panel.opening.title": {
+    "message": "Otvára sa archív"
+  },
+  "panel.quick_filter.hint": {
+    "message": "skryje, čo nezodpovedá; Escape zobrazí všetko"
+  },
+  "panel.quick_filter.label": {
+    "message": "Filter:"
+  },
+  "panel.quick_search.label": {
+    "message": "Hľadať:"
+  },
+  "panel.size.app": {
+    "message": "<APP>"
+  },
+  "panel.size.b": {
+    "message": "{size} B"
+  },
+  "panel.size.dir": {
+    "message": "<DIR>"
+  },
+  "panel.size.gb": {
+    "message": "{size} GB"
+  },
+  "panel.size.kb": {
+    "message": "{size} KB"
+  },
+  "panel.size.mb": {
+    "message": "{size} MB"
+  },
+  "panel.size.tb": {
+    "message": "{size} TB"
+  },
+  "panel.space.bytes": {
+    "message": "{count, plural, one {{size} bajt ({human})} few {{size} bajty ({human})} other {{size} bajtov ({human})}}"
+  },
+  "panel.space.close": {
+    "message": "Zavrieť"
+  },
+  "panel.space.counting": {
+    "message": "Počíta sa…"
+  },
+  "panel.space.done": {
+    "message": "Hotovo."
+  },
+  "panel.space.files": {
+    "message": "Súbory:"
+  },
+  "panel.space.folders": {
+    "message": "Priečinky:"
+  },
+  "panel.space.in_archive": {
+    "message": "V archívoch stĺpec Veľkosť už veľkosti obsahuje."
+  },
+  "panel.space.title": {
+    "message": "Vypočítať obsadené miesto"
+  },
+  "panel.space.total": {
+    "message": "Celková veľkosť:"
+  },
+  "panel.space.unreadable": {
+    "message": "{count, plural, one {# položku sa nepodarilo prečítať.} few {# položky sa nepodarilo prečítať.} other {# položiek sa nepodarilo prečítať.}}"
+  },
+  "panel.status": {
+    "message": "{marked_size} k / {size} k v {marked_files} / {files, plural, one {# súbore} few {# súboroch} other {# súboroch}}, {marked_folders} / {folders, plural, one {# adr.} few {# adr.} other {# adr.}}"
+  },
+  "panel.sync_browsing.stop": {
+    "message": "Synchronizované prehliadanie (kliknutím zastavíte)"
+  },
+  "panel.undo.rename": {
+    "message": "Premenovať „{name}“ na „{to}“"
+  },
+  "passwords.about.set": {
+    "message": "S hlavným heslom sa uložené heslá otvoria aj na inom počítači: skopírujte tam priečinok nastavení a zadajte ho. Ak ho zabudnete, stratia sa iba uložené heslá a zadáte ich znova."
+  },
+  "passwords.about.unlock": {
+    "message": "Nastavenia pochádzajú z iného počítača alebo tento počítač nemá kľúčenku: hlavné heslo tu odomkne uložené heslá."
+  },
+  "passwords.cancel": {
+    "message": "Zrušiť"
+  },
+  "passwords.done.set": {
+    "message": "Hlavné heslo je nastavené."
+  },
+  "passwords.done.unlocked": {
+    "message": "Uložené heslá sú odomknuté."
+  },
+  "passwords.error.locked": {
+    "message": "uložené heslá sú zamknuté: odomknite ich hlavným heslom (Konfigurácia › Nastavenia › Heslá)"
+  },
+  "passwords.error.no_master": {
+    "message": "nie je nastavené hlavné heslo"
+  },
+  "passwords.error.no_random": {
+    "message": "chýbajú náhodné čísla"
+  },
+  "passwords.error.not_opened": {
+    "message": "heslo pre {what} sa nedá otvoriť"
+  },
+  "passwords.error.not_sealed": {
+    "message": "heslo sa nepodarilo zašifrovať"
+  },
+  "passwords.error.salt_damaged": {
+    "message": "soľ hlavného hesla je poškodená"
+  },
+  "passwords.error.wrong": {
+    "message": "hlavné heslo je nesprávne"
+  },
+  "passwords.field.again": {
+    "message": "Znova"
+  },
+  "passwords.field.master": {
+    "message": "Hlavné heslo"
+  },
+  "passwords.locked_note": {
+    "message": "Uložené heslá sú na tomto počítači zamknuté: odomkne ich hlavné heslo."
+  },
+  "passwords.ok": {
+    "message": "OK"
+  },
+  "passwords.problem.differ": {
+    "message": "Heslá sa nezhodujú."
+  },
+  "passwords.problem.empty": {
+    "message": "Zadajte hlavné heslo."
+  },
+  "passwords.title.set": {
+    "message": "Hlavné heslo"
+  },
+  "passwords.title.unlock": {
+    "message": "Odomknúť uložené heslá"
+  },
+  "passwords.unlock_button": {
+    "message": "Odomknúť…"
+  },
+  "passwords.working": {
+    "message": "Pracuje sa…"
+  },
+  "properties.accessed": {
+    "message": "Prístup:"
+  },
+  "properties.change_attributes": {
+    "message": "Zmeniť atribúty..."
+  },
+  "properties.close": {
+    "message": "Zavrieť"
+  },
+  "properties.contents": {
+    "message": "{file_count, plural, one {{files} súbor} few {{files} súbory} other {{files} súborov}}, {folder_count, plural, one {{folders} priečinok} few {{folders} priečinky} other {{folders} priečinkov}}, {count, plural, one {{bytes} bajt} few {{bytes} bajty} other {{bytes} bajtov}} ({size})"
+  },
+  "properties.contents_counting": {
+    "message": "{file_count, plural, one {{files} súbor} few {{files} súbory} other {{files} súborov}}, {folder_count, plural, one {{folders} priečinok} few {{folders} priečinky} other {{folders} priečinkov}}, {count, plural, one {{bytes} bajt} few {{bytes} bajty} other {{bytes} bajtov}} ({size}) (počíta sa…)"
+  },
+  "properties.contents_label": {
+    "message": "Obsah:"
+  },
+  "properties.created": {
+    "message": "Vytvorené:"
+  },
+  "properties.dialog_title": {
+    "message": "Vlastnosti"
+  },
+  "properties.in_archive": {
+    "message": "Výpis archívu zobrazuje všetko, čo o svojich súboroch vie."
+  },
+  "properties.kind.file": {
+    "message": "Súbor"
+  },
+  "properties.kind.folder": {
+    "message": "Priečinok"
+  },
+  "properties.kind.link": {
+    "message": "Odkaz"
+  },
+  "properties.kind.link_to": {
+    "message": "Odkaz na {target}"
+  },
+  "properties.location": {
+    "message": "Umiestnenie:"
+  },
+  "properties.modified": {
+    "message": "Zmenené:"
+  },
+  "properties.name": {
+    "message": "Názov:"
+  },
+  "properties.no_system_dialog": {
+    "message": "systémové dialógové okno vlastností tu zatiaľ nie je"
+  },
+  "properties.owner": {
+    "message": "Vlastník / skupina:"
+  },
+  "properties.permissions": {
+    "message": "Oprávnenia:"
+  },
+  "properties.size": {
+    "message": "{count, plural, one {{bytes} bajt ({size})} few {{bytes} bajty ({size})} other {{bytes} bajtov ({size})}}"
+  },
+  "properties.size_label": {
+    "message": "Veľkosť:"
+  },
+  "properties.type": {
+    "message": "Typ:"
+  },
+  "quick_open.go_to": {
+    "message": "Prejsť na {path}"
+  },
+  "quick_open.group.bookmarks": {
+    "message": "Záložky"
+  },
+  "quick_open.group.connections": {
+    "message": "Pripojenia"
+  },
+  "quick_open.group.drives": {
+    "message": "Jednotky"
+  },
+  "quick_open.group.path": {
+    "message": "Cesta"
+  },
+  "quick_open.group.recent_folders": {
+    "message": "Nedávne priečinky"
+  },
+  "quick_open.group.tools": {
+    "message": "Nástroje"
+  },
+  "quick_open.group.workspaces": {
+    "message": "Pracovné priestory"
+  },
+  "quick_open.placeholder": {
+    "message": "Príkaz, záložka, priečinok, cesta, server, jednotka, pracovný priestor alebo nástroj"
+  },
+  "quick_open.title": {
+    "message": "Rýchle otvorenie"
+  },
+  "quick_view.counting": {
+    "message": "Počíta sa…"
+  },
+  "quick_view.downloading": {
+    "message": "Sťahuje sa…"
+  },
+  "quick_view.empty": {
+    "message": "Rýchle zobrazenie ukazuje položku pod kurzorom druhého panela."
+  },
+  "quick_view.extracting": {
+    "message": "Vyberá sa z archívu…"
+  },
+  "quick_view.files_only": {
+    "message": "Na serveroch a v archívoch Rýchle zobrazenie ukazuje iba súbory."
+  },
+  "quick_view.space.title": {
+    "message": "Celkové obsadené miesto:"
+  },
+  "quick_view.space.totals": {
+    "message": "{bytes, plural, one {{bytes_grouped} bajt} few {{bytes_grouped} bajty} other {{bytes_grouped} bajtov}} v {files, plural, one {{files_grouped} súbore} few {{files_grouped} súboroch} other {{files_grouped} súboroch}}, {folders, plural, one {{folders_grouped} priečinku} few {{folders_grouped} priečinkoch} other {{folders_grouped} priečinkoch}}"
+  },
+  "quick_view.space.unreadable": {
+    "message": "Nepodarilo sa prečítať: {count}."
+  },
+  "quick_view.too_large.download": {
+    "message": "Súbor ({size}) je príliš veľký na stiahnutie sem: F3 ho zobrazí."
+  },
+  "quick_view.too_large.extract": {
+    "message": "Súbor ({size}) je príliš veľký na vybratie z archívu sem: F3 ho zobrazí."
+  },
+  "remote.cancelled": {
+    "message": "zrušené"
+  },
+  "remote.cloud.ask": {
+    "message": "{kind, select, application_key {Kľúč aplikácie pre {user} na {host}:} api_key {Kľúč API pre {user} na {host}:} password {Heslo pre {user} na {host}:} other {Tajný kľúč pre {user} na {host}:}}"
+  },
+  "remote.cloud.ask_again": {
+    "message": "{kind, select, application_key {Nesprávny kľúč aplikácie. Kľúč aplikácie pre {user} na {host}:} api_key {Nesprávny kľúč API. Kľúč API pre {user} na {host}:} password {Nesprávne heslo. Heslo pre {user} na {host}:} other {Nesprávny kľúč. Tajný kľúč pre {user} na {host}:}}"
+  },
+  "remote.cloud.obscure_failed": {
+    "message": "rclone nedokázal spracovať heslo"
+  },
+  "remote.cloud.rclone_missing": {
+    "message": "rclone chýba: stiahnete ho v časti Nastavenia > Doplnky"
+  },
+  "remote.cloud.title": {
+    "message": "{kind, select, application_key {Kľúč aplikácie} api_key {Kľúč API} password {Heslo} other {Tajný kľúč}}"
+  },
+  "remote.connecting": {
+    "message": "Pripája sa k {server}..."
+  },
+  "remote.dialog.cancel": {
+    "message": "Zrušiť"
+  },
+  "remote.dialog.ok": {
+    "message": "OK"
+  },
+  "remote.disconnect_failed": {
+    "message": "{share}: nepodarilo sa odpojiť: {err}"
+  },
+  "remote.ftp.password": {
+    "message": "Heslo pre {user}@{host}:"
+  },
+  "remote.ftp.password_again": {
+    "message": "Nesprávne heslo. Heslo pre {user}@{host}:"
+  },
+  "remote.ftps.changed": {
+    "message": "Certifikát TLS servera {server} sa ZMENIL od chvíle, keď ho zaznamenal riadok {line} súboru {file}. Niekto môže odpočúvať; ak má server nový certifikát, odstráňte tento riadok."
+  },
+  "remote.ftps.not_trusted": {
+    "message": "certifikát servera nie je dôveryhodný"
+  },
+  "remote.login.password": {
+    "message": "Heslo"
+  },
+  "remote.login.title": {
+    "message": "Prihlásiť sa"
+  },
+  "remote.login.user": {
+    "message": "Používateľ"
+  },
+  "remote.mount.login_wrong": {
+    "message": "používateľ alebo heslo je nesprávne"
+  },
+  "remote.mount.macos_failed": {
+    "message": "macOS ho nedokázal pripojiť (NetFS {code})"
+  },
+  "remote.mount.needs_desktop": {
+    "message": "vyžaduje kio-fuse z KDE alebo gvfs z GNOME"
+  },
+  "remote.mount.needs_login": {
+    "message": "vyžaduje používateľa a heslo"
+  },
+  "remote.mount.no_fuse": {
+    "message": "pripojené, ale chýba preň priečinok: chýba gvfs-fuse"
+  },
+  "remote.mount.no_nfs_client": {
+    "message": "nenašlo sa; NFS vyžaduje Klienta pre systém NFS (Súčasti systému Windows)"
+  },
+  "remote.mount.no_share": {
+    "message": "chýba zdieľaný priečinok: smb://server/share"
+  },
+  "remote.mount.not_address": {
+    "message": "nie je to adresa"
+  },
+  "remote.mount.not_found": {
+    "message": "pripojené, ale medzi pripojenými sa nenašlo"
+  },
+  "remote.mount.other_user": {
+    "message": "Windows je k tomuto serveru pripojený ako iný používateľ: odhláste sa alebo použite toho používateľa"
+  },
+  "remote.password.title": {
+    "message": "Heslo"
+  },
+  "remote.remember_password": {
+    "message": "Zapamätať si (Nastavenia › Heslá)"
+  },
+  "remote.save_back_failed": {
+    "message": "Nepodarilo sa uložiť späť: {err}"
+  },
+  "remote.sftp.host_certificate": {
+    "message": "Server sa preukazuje certifikátom hostiteľa; tie zatiaľ nie sú podporované."
+  },
+  "remote.sftp.key_changed": {
+    "message": "Kľúč hostiteľa {server} sa ZMENIL od chvíle, keď ho zaznamenal riadok {line} súboru {file}. Niekto môže odpočúvať; ak bol server nanovo nainštalovaný, odstráňte tento riadok."
+  },
+  "remote.sftp.key_not_trusted": {
+    "message": "Kľúč hostiteľa {server} nebol prijatý ako dôveryhodný."
+  },
+  "remote.sftp.keys_refused": {
+    "message": "{user}@{host}: server odmietol kľúče a heslo neprijíma"
+  },
+  "remote.sftp.login_refused": {
+    "message": "{user}@{host}: prihlásenie bolo odmietnuté"
+  },
+  "remote.sftp.passphrase": {
+    "message": "Prístupová fráza pre {file}"
+  },
+  "remote.sftp.passphrase_title": {
+    "message": "Prístupová fráza kľúča"
+  },
+  "remote.sftp.password": {
+    "message": "Heslo pre {user}@{host}"
+  },
+  "remote.unknown_host.once": {
+    "message": "Pripojiť raz"
+  },
+  "remote.unknown_host.remember": {
+    "message": "Pripojiť a zapamätať"
+  },
+  "remote.unknown_host.text": {
+    "message": "{key_type, select, TLS {Server {host} zatiaľ nie je známy. Odtlačok jeho certifikátu TLS je} other {Server {host} zatiaľ nie je známy. Jeho odtlačok {key_type} je}}\n\n{fingerprint}\n\nPripojte sa, iba ak je to server, ktorý máte na mysli; jeho správca môže odtlačok potvrdiť."
+  },
+  "remote.unknown_host.title": {
+    "message": "Neznámy server"
+  },
+  "rename.case": {
+    "message": "Veľkosť písmen:"
+  },
+  "rename.case.first": {
+    "message": "Prvé písmeno"
+  },
+  "rename.case.lower": {
+    "message": "malé písmená"
+  },
+  "rename.case.unchanged": {
+    "message": "Nezmenené"
+  },
+  "rename.case.upper": {
+    "message": "VEĽKÉ PÍSMENÁ"
+  },
+  "rename.case.words": {
+    "message": "Každé Slovo"
+  },
+  "rename.close": {
+    "message": "Zavrieť"
+  },
+  "rename.counter_start": {
+    "message": "Začiatok počítadla"
+  },
+  "rename.dialog_title": {
+    "message": "Hromadné premenovanie"
+  },
+  "rename.digits": {
+    "message": "Číslice"
+  },
+  "rename.extension": {
+    "message": "Prípona"
+  },
+  "rename.field.counter": {
+    "message": "[C] Počítadlo"
+  },
+  "rename.field.date": {
+    "message": "[Y][M][D] Dátum"
+  },
+  "rename.field.extension": {
+    "message": "[E] Príp."
+  },
+  "rename.field.folder": {
+    "message": "[P] Priečinok"
+  },
+  "rename.field.name": {
+    "message": "[N] Názov"
+  },
+  "rename.field.range": {
+    "message": "[N1-3] Rozsah"
+  },
+  "rename.field.time": {
+    "message": "[h][m][s] Čas"
+  },
+  "rename.first_only": {
+    "message": "Iba prvý výskyt"
+  },
+  "rename.in_archive": {
+    "message": "Súbory v archívoch sa zatiaľ nedajú premenovať."
+  },
+  "rename.mask": {
+    "message": "Maska premenovania: názov súboru"
+  },
+  "rename.match_case": {
+    "message": "Rozlišovať veľkosť"
+  },
+  "rename.new_name": {
+    "message": "Nový názov"
+  },
+  "rename.not_renamed_back": {
+    "message": "{from}: {err}; nepremenované späť: {names}"
+  },
+  "rename.not_utf8": {
+    "message": "Názvy, ktoré nie sú v UTF-8, sa vynechajú."
+  },
+  "rename.old_name": {
+    "message": "Pôvodný názov"
+  },
+  "rename.problem.bad_character": {
+    "message": "nepovolený znak"
+  },
+  "rename.problem.exists": {
+    "message": "už existuje"
+  },
+  "rename.problem.no_name": {
+    "message": "bez názvu"
+  },
+  "rename.problem.twice": {
+    "message": "dvakrát v zozname"
+  },
+  "rename.regex": {
+    "message": "Regulárny výraz"
+  },
+  "rename.regex_error": {
+    "message": "Regulárny výraz: {err}"
+  },
+  "rename.replace": {
+    "message": "Nahradiť za"
+  },
+  "rename.search": {
+    "message": "Hľadať"
+  },
+  "rename.start": {
+    "message": "Spustiť!"
+  },
+  "rename.status.failed": {
+    "message": "Nič nebolo premenované: {err}"
+  },
+  "rename.status.ready": {
+    "message": "Tlačidlo Spustiť! ich premenuje."
+  },
+  "rename.status.renamed": {
+    "message": "{count, plural, one {Premenovaný # súbor.} few {Premenované # súbory.} other {Premenovaných # súborov.}}"
+  },
+  "rename.status.took_back": {
+    "message": "{count, plural, one {Vrátený späť # súbor.} few {Vrátené späť # súbory.} other {Vrátených späť # súborov.}}"
+  },
+  "rename.step": {
+    "message": "Krok"
+  },
+  "rename.undo": {
+    "message": "Vrátiť späť"
+  },
+  "rename.was": {
+    "message": "{to} (pôvodne {from})"
+  },
+  "rename.with_extension": {
+    "message": "Aj s príponou"
+  },
+  "scmd.column.modified": {
+    "message": "Zmenené"
+  },
+  "scmd.column.name": {
+    "message": "Názov"
+  },
+  "scmd.column.size": {
+    "message": "Veľkosť"
+  },
+  "scmd.column.up_dir": {
+    "message": "NAHOR"
+  },
+  "scmd.command_line.not_on_server": {
+    "message": "Príkazy sa spúšťajú na tomto počítači, nie na serveri."
+  },
+  "scmd.compare.marked": {
+    "message": "{count, plural, one {Označený # súbor: novší alebo chýbajúci na druhej strane.} few {Označené # súbory: novšie alebo chýbajúce na druhej strane.} other {Označených # súborov: novšie alebo chýbajúce na druhej strane.}}"
+  },
+  "scmd.compare.same": {
+    "message": "Priečinky obsahujú rovnaké súbory."
+  },
+  "scmd.copying": {
+    "message": "Kopíruje sa {name}..."
+  },
+  "scmd.dialog.buttons": {
+    "message": "Enter OK   Esc Zrušiť"
+  },
+  "scmd.error.read_settings": {
+    "message": "Nastavenia sa nepodarilo načítať: {err}"
+  },
+  "scmd.error.read_tabs": {
+    "message": "Otvorené karty sa nepodarilo načítať: {err}"
+  },
+  "scmd.error.read_workspaces": {
+    "message": "Pracovné priestory sa nepodarilo načítať: {err}"
+  },
+  "scmd.error.save_back": {
+    "message": "Nepodarilo sa uložiť späť: {err}"
+  },
+  "scmd.error.save_searches": {
+    "message": "Hľadania sa nepodarilo uložiť: {err}"
+  },
+  "scmd.error.save_tabs": {
+    "message": "Otvorené karty sa nepodarilo uložiť: {err}"
+  },
+  "scmd.find.backwards": {
+    "message": "Dozadu"
+  },
+  "scmd.find.case_sensitive": {
+    "message": "Rozlišovať veľké a malé písmená"
+  },
+  "scmd.find.hex": {
+    "message": "Hex (77 6F 72 64)"
+  },
+  "scmd.find.not_found": {
+    "message": "Nenašlo sa: {text}"
+  },
+  "scmd.find.regex": {
+    "message": "Regulárny výraz"
+  },
+  "scmd.find.search_for": {
+    "message": "Hľadať:"
+  },
+  "scmd.find.title": {
+    "message": "Hľadať"
+  },
+  "scmd.find.whole_words": {
+    "message": "Iba celé slová"
+  },
+  "scmd.group.files": {
+    "message": "Súbory (*.txt *.md; priečinky končia na /):"
+  },
+  "scmd.group.select_title": {
+    "message": "Vybrať skupinu"
+  },
+  "scmd.group.unselect_title": {
+    "message": "Zrušiť výber skupiny"
+  },
+  "scmd.key_bar.copy": {
+    "message": "Kopír"
+  },
+  "scmd.key_bar.delete": {
+    "message": "Zmaž"
+  },
+  "scmd.key_bar.edit": {
+    "message": "Uprav"
+  },
+  "scmd.key_bar.menu": {
+    "message": "Menu"
+  },
+  "scmd.key_bar.mkdir": {
+    "message": "NovPr"
+  },
+  "scmd.key_bar.move": {
+    "message": "Presuň"
+  },
+  "scmd.key_bar.quit": {
+    "message": "Koniec"
+  },
+  "scmd.key_bar.view": {
+    "message": "Zobraz"
+  },
+  "scmd.message.error": {
+    "message": "Chyba"
+  },
+  "scmd.message.ok": {
+    "message": "OK"
+  },
+  "scmd.not_yet": {
+    "message": "{what, select, menus {Ponuky: v terminálovej verzii zatiaľ nie sú.} file_operations {Operácie so súbormi: v terminálovej verzii zatiaľ nie sú.} servers {Servery: v terminálovej verzii zatiaľ nie sú.} other {Tento príkaz: v terminálovej verzii zatiaľ nie je.}}"
+  },
+  "scmd.picture.broken": {
+    "message": "poškodený obrázok"
+  },
+  "scmd.picture.broken_page": {
+    "message": "poškodená strana"
+  },
+  "scmd.picture.loading": {
+    "message": "Načítava sa…"
+  },
+  "scmd.picture.no_page": {
+    "message": "PDF takú stranu nemá"
+  },
+  "scmd.shell.press_enter": {
+    "message": "Stlačením Enter sa vrátite do Spark Commander..."
+  },
+  "scmd.sync_browsing.off": {
+    "message": "Synchronizované prehliadanie je vypnuté."
+  },
+  "scmd.sync_browsing.on": {
+    "message": "Synchronizované prehliadanie je zapnuté."
+  },
+  "scmd.sync_browsing.stopped": {
+    "message": "{err}. Synchronizované prehliadanie je vypnuté."
+  },
+  "scmd.viewer.column": {
+    "message": "Stĺp. {column}"
+  },
+  "scmd.viewer.finding": {
+    "message": "hľadá sa…"
+  },
+  "scmd.viewer.key_bar.next": {
+    "message": "Ďalší"
+  },
+  "scmd.viewer.key_bar.quit": {
+    "message": "Koniec"
+  },
+  "scmd.viewer.key_bar.reload": {
+    "message": "Obnov"
+  },
+  "scmd.viewer.key_bar.search": {
+    "message": "Hľadaj"
+  },
+  "scmd.viewer.page": {
+    "message": "strana {page} z {pages}"
+  },
+  "scmd.viewer.reading": {
+    "message": "načítava sa {percent} %"
+  },
+  "scmd.viewer.wrap": {
+    "message": "Zalomenie"
+  },
+  "scmd.workspace.copy_name": {
+    "message": "{name} – kópia"
+  },
+  "scmd.workspace.default_name": {
+    "message": "Pracovný priestor {number}"
+  },
+  "scmd.workspace.delete_question": {
+    "message": "Odstrániť „{name}“? Jeho karty sa zabudnú."
+  },
+  "scmd.workspace.duplicate_title": {
+    "message": "Duplikovať pracovný priestor"
+  },
+  "scmd.workspace.last_stays": {
+    "message": "Posledný pracovný priestor musí zostať."
+  },
+  "scmd.workspace.name": {
+    "message": "Názov:"
+  },
+  "scmd.workspace.name_or_default": {
+    "message": "Názov (prázdny: {name}):"
+  },
+  "scmd.workspace.new_title": {
+    "message": "Nový pracovný priestor"
+  },
+  "scmd.workspace.rename_title": {
+    "message": "Premenovať pracovný priestor"
+  },
+  "scmd.workspaces.keys": {
+    "message": "Enter Otvoriť  F7 Nový  F5 Kópia  F2 Premenovať  F8 Odstrániť"
+  },
+  "scmd.workspaces.title": {
+    "message": "Pracovné priestory"
+  },
+  "search.age.days": {
+    "message": "dni"
+  },
+  "search.age.hours": {
+    "message": "hodiny"
+  },
+  "search.age.minutes": {
+    "message": "minúty"
+  },
+  "search.age.months": {
+    "message": "mesiace"
+  },
+  "search.age.weeks": {
+    "message": "týždne"
+  },
+  "search.age.years": {
+    "message": "roky"
+  },
+  "search.archives": {
+    "message": "Hľadať v archívoch"
+  },
+  "search.attribute.directory": {
+    "message": "Priečinok"
+  },
+  "search.attribute.either": {
+    "message": "Na tom nezáleží"
+  },
+  "search.attribute.executable": {
+    "message": "Spustiteľný"
+  },
+  "search.attribute.hidden": {
+    "message": "Skrytý"
+  },
+  "search.attribute.link": {
+    "message": "Symbolický odkaz"
+  },
+  "search.attribute.must": {
+    "message": "Musí byť"
+  },
+  "search.attribute.must_not": {
+    "message": "Nesmie byť"
+  },
+  "search.attribute.read_only": {
+    "message": "Iba na čítanie"
+  },
+  "search.attributes.label": {
+    "message": "Atribúty:"
+  },
+  "search.between.and": {
+    "message": "a"
+  },
+  "search.between.label": {
+    "message": "Dátum medzi:"
+  },
+  "search.close": {
+    "message": "Zavrieť"
+  },
+  "search.depth.all": {
+    "message": "všetky (neobmedzená hĺbka)"
+  },
+  "search.depth.current": {
+    "message": "iba aktuálny priečinok"
+  },
+  "search.depth.label": {
+    "message": "Hľadať v podpriečinkoch:"
+  },
+  "search.depth.levels": {
+    "message": "{count, plural, one {# úroveň} few {# úrovne} other {# úrovní}}"
+  },
+  "search.drives": {
+    "message": "Jednotky"
+  },
+  "search.duplicates.content": {
+    "message": "rovnaký obsah"
+  },
+  "search.duplicates.label": {
+    "message": "Hľadať duplicitné súbory:"
+  },
+  "search.duplicates.name": {
+    "message": "rovnaký názov"
+  },
+  "search.duplicates.size": {
+    "message": "rovnaká veľkosť"
+  },
+  "search.edit": {
+    "message": "F4 Upraviť"
+  },
+  "search.error.between_days": {
+    "message": "Dátum medzi vyžaduje oba dni"
+  },
+  "search.error.date": {
+    "message": "{text} nie je dátum v tvare 2026-11-12"
+  },
+  "search.error.hex": {
+    "message": "{text} nie je hexadecimálny reťazec ako 48 65 6c"
+  },
+  "search.error.keep": {
+    "message": "Hľadanie sa nepodarilo uložiť: {err}"
+  },
+  "search.error.local_time": {
+    "message": "{text} nie je platný miestny čas"
+  },
+  "search.error.names_regex": {
+    "message": "Regulárny výraz názvu: {err}"
+  },
+  "search.error.newer_number": {
+    "message": "Pole Nie staršie ako vyžaduje číslo, nie {text}"
+  },
+  "search.error.no_place": {
+    "message": "Pole Hľadať v neobsahuje žiadny priečinok"
+  },
+  "search.error.no_text": {
+    "message": "Pole Hľadať text neobsahuje žiadny text"
+  },
+  "search.error.older_number": {
+    "message": "Pole Staršie ako vyžaduje číslo, nie {text}"
+  },
+  "search.error.save": {
+    "message": "Hľadania sa nepodarilo uložiť: {err}"
+  },
+  "search.error.size_number": {
+    "message": "Pole Veľkosť súboru vyžaduje číslo, nie {text}"
+  },
+  "search.error.text_regex": {
+    "message": "Regulárny výraz textu: {err}"
+  },
+  "search.feed": {
+    "message": "Výsledky do panela"
+  },
+  "search.go_to_file": {
+    "message": "Prejsť na súbor"
+  },
+  "search.in_found": {
+    "message": "F2 Hľadať v nájdených súboroch"
+  },
+  "search.locate": {
+    "message": "Z indexu locate"
+  },
+  "search.names.label": {
+    "message": "Hľadať:"
+  },
+  "search.names.placeholder": {
+    "message": "*.txt *.md | backup*  (prázdne: všetko)"
+  },
+  "search.new": {
+    "message": "Nové hľadanie"
+  },
+  "search.newer.label": {
+    "message": "Nie staršie ako:"
+  },
+  "search.older.label": {
+    "message": "Staršie ako:"
+  },
+  "search.only_selected": {
+    "message": "Hľadať iba vo vybraných súboroch/priečinkoch"
+  },
+  "search.only_selected_count": {
+    "message": "{count, plural, one {Hľadať iba v # vybranej položke} few {Hľadať iba v # vybraných položkách} other {Hľadať iba v # vybraných položkách}}"
+  },
+  "search.page.advanced": {
+    "message": "Rozšírené"
+  },
+  "search.page.general": {
+    "message": "Všeobecné"
+  },
+  "search.page.load_save": {
+    "message": "Načítať/Uložiť"
+  },
+  "search.places.browse_prompt": {
+    "message": "Hľadať v"
+  },
+  "search.places.label": {
+    "message": "Hľadať v:"
+  },
+  "search.places.placeholder": {
+    "message": "Priečinky oddelené ;"
+  },
+  "search.regex": {
+    "message": "RegEx"
+  },
+  "search.results.label": {
+    "message": "Výsledky hľadania:"
+  },
+  "search.saved.delete": {
+    "message": "Odstrániť"
+  },
+  "search.saved.label": {
+    "message": "Predchádzajúce hľadania:"
+  },
+  "search.saved.load": {
+    "message": "Načítať"
+  },
+  "search.saved.name_first": {
+    "message": "Najprv zadajte názov hľadania."
+  },
+  "search.saved.name_placeholder": {
+    "message": "Názov hľadania"
+  },
+  "search.saved.save": {
+    "message": "Uložiť"
+  },
+  "search.size.label": {
+    "message": "Veľkosť súboru:"
+  },
+  "search.start": {
+    "message": "Hľadať"
+  },
+  "search.status.found": {
+    "message": "Nájdené: {files, plural, one {# súbor} few {# súbory} other {# súborov}} a {dirs, plural, one {# priečinok} few {# priečinky} other {# priečinkov}}"
+  },
+  "search.status.searching": {
+    "message": "Hľadá sa…"
+  },
+  "search.status.searching_in": {
+    "message": "Hľadá sa: {folder}"
+  },
+  "search.status.stopped": {
+    "message": "Zastavené: {counts}"
+  },
+  "search.stop": {
+    "message": "Zastaviť"
+  },
+  "search.text.ansi": {
+    "message": "ANSI (kódová stránka {page})"
+  },
+  "search.text.case_sensitive": {
+    "message": "Rozlišovať veľké a malé písmená"
+  },
+  "search.text.hex": {
+    "message": "Hex"
+  },
+  "search.text.label": {
+    "message": "Hľadať text:"
+  },
+  "search.text.not_containing": {
+    "message": "Hľadať súbory, ktoré text NEOBSAHUJÚ"
+  },
+  "search.text.office": {
+    "message": "Súbory Office (docx, xlsx, pptx, odt…)"
+  },
+  "search.text.placeholder": {
+    "message": "Hľadaný text"
+  },
+  "search.text.whole_words": {
+    "message": "Iba celé slová"
+  },
+  "search.title": {
+    "message": "Hľadať súbory"
+  },
+  "search.unit.bytes": {
+    "message": "bajty"
+  },
+  "search.view": {
+    "message": "F3 Zobraziť"
+  },
+  "settings.addons.builtin_version": {
+    "message": "{version}, súčasť Spark Commander"
+  },
+  "settings.addons.check_daily": {
+    "message": "Hľadať aktualizácie doplnkov pri spustení a denne a ponúkať ich"
+  },
+  "settings.addons.check_failed": {
+    "message": "Aktualizácie sa nepodarilo vyhľadať: {err}"
+  },
+  "settings.addons.check_now": {
+    "message": "Hľadať teraz"
+  },
+  "settings.addons.checking": {
+    "message": "Hľadajú sa aktualizácie..."
+  },
+  "settings.addons.download": {
+    "message": "Stiahnuť"
+  },
+  "settings.addons.downloading": {
+    "message": "Sťahuje sa: {done} z {size}"
+  },
+  "settings.addons.file": {
+    "message": "Súbor"
+  },
+  "settings.addons.installed.builtin": {
+    "message": "súčasť Spark Commander"
+  },
+  "settings.addons.installed.label": {
+    "message": "Nainštalované"
+  },
+  "settings.addons.installed.none": {
+    "message": "žiadne"
+  },
+  "settings.addons.intro": {
+    "message": "Spark Commander na niektoré funkcie používa tieto programy iných projektov. Doplnky sa sťahujú samostatne, keď si ich vyberiete; 7-Zip a PDFium sú jeho súčasťou."
+  },
+  "settings.addons.never_offer": {
+    "message": "Nikdy neponúkať doplnky, keď ich súbor potrebuje"
+  },
+  "settings.addons.offers": {
+    "message": "Ponuky a aktualizácie"
+  },
+  "settings.addons.online.label": {
+    "message": "Online"
+  },
+  "settings.addons.online.looking": {
+    "message": "hľadá sa..."
+  },
+  "settings.addons.online.none": {
+    "message": "pre tento systém žiadne"
+  },
+  "settings.addons.online.not_yet": {
+    "message": "zatiaľ nevyhľadané"
+  },
+  "settings.addons.online.unknown": {
+    "message": "neznáme"
+  },
+  "settings.addons.remove": {
+    "message": "Odstrániť"
+  },
+  "settings.addons.up_to_date": {
+    "message": "Zoznam doplnkov je aktuálny."
+  },
+  "settings.addons.version": {
+    "message": "Verzia"
+  },
+  "settings.addons.website": {
+    "message": "Webová stránka"
+  },
+  "settings.appearance.title": {
+    "message": "Vzhľad"
+  },
+  "settings.apply": {
+    "message": "Použiť"
+  },
+  "settings.backdrop.blur": {
+    "message": "Rozmazať plochu za ním"
+  },
+  "settings.backdrop.clear": {
+    "message": "0 %, iba plocha"
+  },
+  "settings.backdrop.cover": {
+    "message": "Nakoľko zakrýva plochu za sebou:"
+  },
+  "settings.backdrop.opacity": {
+    "message": "{opacity} %"
+  },
+  "settings.backdrop.sidebar": {
+    "message": "Bočný panel"
+  },
+  "settings.backdrop.solid": {
+    "message": "100 %, nepriehľadné"
+  },
+  "settings.backdrop.terminal": {
+    "message": "Terminál"
+  },
+  "settings.cancel": {
+    "message": "Zrušiť"
+  },
+  "settings.date.as_system": {
+    "message": "Podľa systému: {date}"
+  },
+  "settings.date.custom": {
+    "message": "Vlastný:"
+  },
+  "settings.date.pattern_help": {
+    "message": "yyyy rok, MM mesiac (MMM jeho názov), dd deň (ddd deň v týždni)"
+  },
+  "settings.date.shown_as": {
+    "message": "Zobrazenie"
+  },
+  "settings.date.shown_as_note": {
+    "message": "v zoznamoch súborov; dialógové okná pridávajú sekundy"
+  },
+  "settings.date.title": {
+    "message": "Dátum"
+  },
+  "settings.editor.browse": {
+    "message": "Prehľadávať..."
+  },
+  "settings.editor.choose": {
+    "message": "Vybrať"
+  },
+  "settings.editor.external": {
+    "message": "Externý editor (Ctrl+Shift+F4):"
+  },
+  "settings.editor.external_help": {
+    "message": "%1 je súbor, inak sa pridá na koniec; napr. code --wait %1"
+  },
+  "settings.editor.limit": {
+    "message": "Vstavaný editor (F4) otvára súbory do"
+  },
+  "settings.editor.limit_unit": {
+    "message": "MB"
+  },
+  "settings.editor.title": {
+    "message": "Editor pre F4"
+  },
+  "settings.error.no_folder": {
+    "message": "chýba priečinok konfigurácie"
+  },
+  "settings.files_shown.hidden": {
+    "message": "Skryté súbory"
+  },
+  "settings.files_shown.system": {
+    "message": "Systémové súbory"
+  },
+  "settings.files_shown.title": {
+    "message": "Zobrazené súbory"
+  },
+  "settings.font.as_system": {
+    "message": "Podľa systému"
+  },
+  "settings.font.chosen": {
+    "message": "Vybrané; systémové je {family}, {size}"
+  },
+  "settings.font.fixed": {
+    "message": "Prehliadač"
+  },
+  "settings.font.fixed_note": {
+    "message": "Iba písma s pevnou šírkou; platí aj pre editor a porovnávanie súborov."
+  },
+  "settings.font.main": {
+    "message": "Písmo hlavného okna"
+  },
+  "settings.font.system": {
+    "message": "Systémové písmo"
+  },
+  "settings.language.system": {
+    "message": "Jazyk systému"
+  },
+  "settings.language.system_named": {
+    "message": "Jazyk systému: {language}"
+  },
+  "settings.language.title": {
+    "message": "Jazyk"
+  },
+  "settings.menus.automatic": {
+    "message": "Automaticky: tlačidlo ☰ v GNOME, inde lišta ponúk"
+  },
+  "settings.menus.bar": {
+    "message": "Lišta ponúk"
+  },
+  "settings.menus.button": {
+    "message": "Tlačidlo ☰ v záhlaví okna"
+  },
+  "settings.menus.title": {
+    "message": "Ponuky"
+  },
+  "settings.ok": {
+    "message": "OK"
+  },
+  "settings.page.addons": {
+    "message": "Doplnky"
+  },
+  "settings.page.date": {
+    "message": "Dátum"
+  },
+  "settings.page.display": {
+    "message": "Zobrazenie"
+  },
+  "settings.page.edit_view": {
+    "message": "Editor/prehliadač"
+  },
+  "settings.page.font": {
+    "message": "Písmo"
+  },
+  "settings.page.language": {
+    "message": "Jazyk"
+  },
+  "settings.page.layout": {
+    "message": "Rozloženie"
+  },
+  "settings.page.operations": {
+    "message": "Operácie"
+  },
+  "settings.page.passwords": {
+    "message": "Heslá"
+  },
+  "settings.page.terminal": {
+    "message": "Terminál"
+  },
+  "settings.page.toolbar": {
+    "message": "Panel nástrojov"
+  },
+  "settings.passwords.change_master": {
+    "message": "Zmeniť hlavné heslo…"
+  },
+  "settings.passwords.locked": {
+    "message": "Na tomto počítači sú zamknuté: odomkne ich hlavné heslo."
+  },
+  "settings.passwords.master_set": {
+    "message": "Hlavné heslo je nastavené: po skopírovaní priečinka nastavení sa heslá otvoria aj na inom počítači, keď ho tam zadáte."
+  },
+  "settings.passwords.no_master": {
+    "message": "Hlavné heslo nie je nastavené: po skopírovaní priečinka nastavení sa heslá na inom počítači neotvoria; treba ich tam zadať znova."
+  },
+  "settings.passwords.not_removed": {
+    "message": "Hlavné heslo sa nepodarilo odstrániť: {err}"
+  },
+  "settings.passwords.remove_master": {
+    "message": "Odstrániť hlavné heslo"
+  },
+  "settings.passwords.saved": {
+    "message": "{count, plural, one {Uložené je # heslo} few {Uložené sú # heslá} other {Uložených je # hesiel}} (pre servery, zdieľané priečinky, šifrované jednotky), zašifrované v priečinku nastavení; kľúč, ktorý ich otvára, je v kľúčenke tohto počítača."
+  },
+  "settings.passwords.set_master": {
+    "message": "Nastaviť hlavné heslo…"
+  },
+  "settings.passwords.title": {
+    "message": "Uložené heslá"
+  },
+  "settings.passwords.unlock": {
+    "message": "Odomknúť…"
+  },
+  "settings.queue.clear_after": {
+    "message": "Vymazať dokončené operácie po"
+  },
+  "settings.queue.clear_after_help": {
+    "message": "0: hneď po dokončení. Neúspešné a zrušené zostanú, kým ich nevymažete."
+  },
+  "settings.queue.clear_after_unit": {
+    "message": "minútach"
+  },
+  "settings.queue.download_limit": {
+    "message": "Obmedzenie rýchlosti sťahovania"
+  },
+  "settings.queue.download_limit_help": {
+    "message": "Stiahnuť z odkazu a kopírovanie zo serverov FTP a SFTP, aj prebiehajúce. 0: bez obmedzenia."
+  },
+  "settings.queue.download_limit_unit": {
+    "message": "KB/s"
+  },
+  "settings.queue.title": {
+    "message": "Rad operácií"
+  },
+  "settings.shell.default": {
+    "message": "Predvolený: {shell}"
+  },
+  "settings.shell.note": {
+    "message": "Spúšťa sa na nových kartách terminálu."
+  },
+  "settings.shell.title": {
+    "message": "Shell"
+  },
+  "settings.sort_folders.by_name": {
+    "message": "Vždy podľa názvu"
+  },
+  "settings.sort_folders.like_files": {
+    "message": "Ako súbory (aj podľa času)"
+  },
+  "settings.sort_folders.title": {
+    "message": "Zoradenie priečinkov"
+  },
+  "settings.tabs.header_always": {
+    "message": "Zobraziť lištu kariet aj vtedy, keď je otvorená iba jedna karta"
+  },
+  "settings.tabs.title": {
+    "message": "Karty priečinkov"
+  },
+  "settings.time.as_system": {
+    "message": "Podľa systému"
+  },
+  "settings.time.h12": {
+    "message": "12 hodín (2:05 PM)"
+  },
+  "settings.time.h24": {
+    "message": "24 hodín (14:05)"
+  },
+  "settings.time.title": {
+    "message": "Čas"
+  },
+  "settings.title": {
+    "message": "Nastavenia"
+  },
+  "settings.toolbar.add": {
+    "message": "Pridať tlačidlo…"
+  },
+  "settings.toolbar.move_down": {
+    "message": "Posunúť nadol"
+  },
+  "settings.toolbar.move_up": {
+    "message": "Posunúť nahor"
+  },
+  "settings.toolbar.place": {
+    "message": "Pod lištou ponúk; v záhlaví okna, ak sú ponuky za tlačidlom ☰ ako v aplikáciách GNOME. Bez tlačidiel sa nezobrazí."
+  },
+  "settings.toolbar.remove": {
+    "message": "Odstrániť"
+  },
+  "settings.toolbar.replace": {
+    "message": "Nahradiť…"
+  },
+  "settings.toolbar.restore_default": {
+    "message": "Obnoviť predvolené"
+  },
+  "settings.toolbar.title": {
+    "message": "Tlačidlá panela nástrojov"
+  },
+  "settings.viewer.font.ansi": {
+    "message": "ANSI (Windows)"
+  },
+  "settings.viewer.font.ascii": {
+    "message": "ASCII (DOS)"
+  },
+  "settings.viewer.font.auto": {
+    "message": "Automaticky rozpoznať"
+  },
+  "settings.viewer.font.label": {
+    "message": "Písmo pri spustení:"
+  },
+  "settings.viewer.font.variable": {
+    "message": "Premenlivá šírka"
+  },
+  "settings.viewer.minimap": {
+    "message": "Minimapa"
+  },
+  "settings.viewer.show": {
+    "message": "Zobraziť:"
+  },
+  "settings.viewer.start.auto": {
+    "message": "Automaticky rozpoznať"
+  },
+  "settings.viewer.start.binary": {
+    "message": "Binárne"
+  },
+  "settings.viewer.start.hex": {
+    "message": "Hex"
+  },
+  "settings.viewer.start.label": {
+    "message": "Zobrazenie pri spustení:"
+  },
+  "settings.viewer.start.text": {
+    "message": "Text"
+  },
+  "settings.viewer.title": {
+    "message": "Prehliadač pre F3"
+  },
+  "settings.viewer.width.binary": {
+    "message": "Binárne"
+  },
+  "settings.viewer.width.label": {
+    "message": "Šírka zobrazenia (znaky):"
+  },
+  "settings.viewer.width.text": {
+    "message": "Text"
+  },
+  "settings.viewer.wrap": {
+    "message": "Zalamovať text"
+  },
+  "shells.command_prompt": {
+    "message": "Príkazový riadok"
+  },
+  "sidebar.device.no_files": {
+    "message": "nezdieľa súbory"
+  },
+  "sidebar.device.not_answering": {
+    "message": "{name} neodpovedá: odomknite ho, otvorte v ňom KDE Connect a potom znova načítajte priečinok (F2)."
+  },
+  "sidebar.device.not_answering_error": {
+    "message": "{name} neodpovedá ({err}): odomknite ho a otvorte v ňom KDE Connect."
+  },
+  "sidebar.device.not_connected": {
+    "message": "nepripojené"
+  },
+  "sidebar.device.opening": {
+    "message": "Otvára sa {name}..."
+  },
+  "sidebar.device.reconnecting": {
+    "message": "{name} neodpovedá: pripája sa znova..."
+  },
+  "sidebar.device.unmount_failed": {
+    "message": "{name}: nepodarilo sa odpojiť: {err}"
+  },
+  "sidebar.group.bookmarks": {
+    "message": "Záložky"
+  },
+  "sidebar.group.cloud": {
+    "message": "Cloud"
+  },
+  "sidebar.group.devices": {
+    "message": "Zariadenia"
+  },
+  "sidebar.group.drives": {
+    "message": "Jednotky"
+  },
+  "sidebar.group.network": {
+    "message": "Sieť"
+  },
+  "sidebar.section.connections": {
+    "message": "Pripojenia"
+  },
+  "sidebar.section.folders": {
+    "message": "Priečinky"
+  },
+  "sidebar.section.operations": {
+    "message": "Operácie"
+  },
+  "sidebar.section.places": {
+    "message": "Miesta"
+  },
+  "sidebar.volume.locked": {
+    "message": "zamknutý"
+  },
+  "sidebar.volume.mounting": {
+    "message": "Pripája sa {name}..."
+  },
+  "sidebar.volume.not_mounted": {
+    "message": "nepripojený"
+  },
+  "sidebar.volume.open": {
+    "message": "Otvoriť"
+  },
+  "sidebar.volume.space": {
+    "message": "voľných {free} z {total}"
+  },
+  "sidebar.volume.unmount": {
+    "message": "Odpojiť"
+  },
+  "sidebar.volume.unmount_failed": {
+    "message": "Nepodarilo sa odpojiť: {err}"
+  },
+  "split.bad_size": {
+    "message": "„{size}“ nie je veľkosť: 100 MB, 1.5 GB, 650m"
+  },
+  "split.choose": {
+    "message": "Umiestnite kurzor na súbor, ktorý chcete rozdeliť."
+  },
+  "split.combine.choose": {
+    "message": "Umiestnite kurzor na časť (name.001) alebo na jej súbor .crc."
+  },
+  "split.combine.dialog_title": {
+    "message": "Spojiť súbory"
+  },
+  "split.combine.label": {
+    "message": "Spojiť časti do súboru:"
+  },
+  "split.combine.title": {
+    "message": "Spojiť „{name}“"
+  },
+  "split.combined_no_crc": {
+    "message": "{count, plural, one {Spojená # časť, žiadny súbor CRC na kontrolu} few {Spojené # časti, žiadny súbor CRC na kontrolu} other {Spojených # častí, žiadny súbor CRC na kontrolu}}"
+  },
+  "split.crc_mismatch": {
+    "message": "{target} nezodpovedá {file}: niektorá časť chýba alebo je poškodená"
+  },
+  "split.crc_names_no_file": {
+    "message": "súbor CRC neuvádza žiadny súbor"
+  },
+  "split.crc_unreadable": {
+    "message": "spojené, ale {file} sa nepodarilo prečítať: {err}"
+  },
+  "split.dialog_title": {
+    "message": "Rozdeliť súbor"
+  },
+  "split.label": {
+    "message": "Rozdeliť „{name}“ na časti do priečinka:"
+  },
+  "split.part_missing": {
+    "message": "{path} chýba"
+  },
+  "split.part_size": {
+    "message": "Veľkosť časti:"
+  },
+  "split.title": {
+    "message": "Rozdeliť „{name}“"
+  },
+  "sync.close": {
+    "message": "Zavrieť"
+  },
+  "sync.column.date": {
+    "message": "Dátum"
+  },
+  "sync.column.name": {
+    "message": "Názov"
+  },
+  "sync.column.size": {
+    "message": "Veľkosť"
+  },
+  "sync.compare": {
+    "message": "Porovnať"
+  },
+  "sync.confirm.copy_left": {
+    "message": "Kopírovať {count} doľava ({size})"
+  },
+  "sync.confirm.copy_right": {
+    "message": "Kopírovať {count} doprava ({size})"
+  },
+  "sync.confirm.delete_left": {
+    "message": "Odstrániť {count} vľavo"
+  },
+  "sync.confirm.delete_right": {
+    "message": "Odstrániť {count} vpravo"
+  },
+  "sync.confirm.ok": {
+    "message": "Synchronizovať"
+  },
+  "sync.confirm.text": {
+    "message": "{actions}. Skopírované súbory nahradia tie existujúce.{trash, select, yes { Odstránené súbory na tomto počítači sa presunú do koša.} other {}}"
+  },
+  "sync.confirm.title": {
+    "message": "Synchronizovať"
+  },
+  "sync.error.changed": {
+    "message": "od porovnania sa zmenilo; porovnajte znova"
+  },
+  "sync.error.compare": {
+    "message": "Nepodarilo sa porovnať: {err}"
+  },
+  "sync.error.no_folders": {
+    "message": "Synchronizácia priečinkov porovnáva dva priečinky: žiadny panel nesmie zobrazovať archív ani výsledky hľadania."
+  },
+  "sync.left": {
+    "message": "Ľavý"
+  },
+  "sync.mask.label": {
+    "message": "Súbory:"
+  },
+  "sync.option.asymmetric": {
+    "message": "Asymetricky (pravý bude kópiou ľavého)"
+  },
+  "sync.option.by_content": {
+    "message": "Podľa obsahu"
+  },
+  "sync.option.ignore_date": {
+    "message": "Ignorovať dátum"
+  },
+  "sync.option.subfolders": {
+    "message": "Podpriečinky"
+  },
+  "sync.result.done": {
+    "message": "{count, plural, one {Synchronizovaná # položka} few {Synchronizované # položky} other {Synchronizovaných # položiek}}"
+  },
+  "sync.result.failed": {
+    "message": "{count, plural, one {Nesynchronizovaná # položka} few {Nesynchronizované # položky} other {Nesynchronizovaných # položiek}}; {first}"
+  },
+  "sync.right": {
+    "message": "Pravý"
+  },
+  "sync.show.equal": {
+    "message": "= rovnaké"
+  },
+  "sync.show.label": {
+    "message": "Zobraziť:"
+  },
+  "sync.show.other": {
+    "message": "≠ ponechané"
+  },
+  "sync.show.to_left": {
+    "message": "← doľava"
+  },
+  "sync.show.to_right": {
+    "message": "→ doprava"
+  },
+  "sync.status.both_empty": {
+    "message": "Oba sú prázdne."
+  },
+  "sync.status.comparing": {
+    "message": "Porovnáva sa {folder}"
+  },
+  "sync.status.counts": {
+    "message": "doprava: {right}, doľava: {left}, odstrániť: {delete}, rovnaké: {equal}, ponechané: {alone}"
+  },
+  "sync.status.stopped": {
+    "message": "Zastavené."
+  },
+  "sync.stop": {
+    "message": "Zastaviť"
+  },
+  "sync.synchronize": {
+    "message": "Synchronizovať..."
+  },
+  "sync.task.title": {
+    "message": "Synchronizovať {left} a {right}"
+  },
+  "sync.title": {
+    "message": "Synchronizovať priečinky"
+  },
+  "tab_menu.close_all_tabs": {
+    "message": "Zavrieť všetky karty"
+  },
+  "tab_menu.close_duplicate_tabs": {
+    "message": "Zavrieť duplicitné karty"
+  },
+  "tab_menu.close_tab": {
+    "message": "Zavrieť túto kartu"
+  },
+  "tab_menu.copy_tab_to_other_panel": {
+    "message": "Kopírovať kartu do druhého panela"
+  },
+  "tab_menu.duplicate_tab": {
+    "message": "Duplikovať túto kartu"
+  },
+  "tab_menu.list_tabs": {
+    "message": "Zobraziť zoznam všetkých kariet"
+  },
+  "tab_menu.lock_tab": {
+    "message": "Zamknúť túto kartu"
+  },
+  "tab_menu.none": {
+    "message": "(žiadne)"
+  },
+  "tab_menu.rename_tab": {
+    "message": "Premenovať kartu..."
+  },
+  "tabs.error.reopen": {
+    "message": "Kartu sa nepodarilo znova otvoriť: {err}"
+  },
+  "tabs.history.empty": {
+    "message": "História tejto karty zatiaľ neobsahuje žiadne priečinky."
+  },
+  "tabs.new": {
+    "message": "Nová karta"
+  },
+  "tabs.rename.label": {
+    "message": "Nový názov:"
+  },
+  "tabs.rename.title": {
+    "message": "Premenovať kartu"
+  },
+  "tabs.search_results": {
+    "message": "Výsledky hľadania"
+  },
+  "terminal.busy": {
+    "message": "V termináli beží program: príkaz spustite, keď skončí."
+  },
+  "terminal.close.idle": {
+    "message": "Zavrieť túto kartu terminálu? Jej shell sa ukončí."
+  },
+  "terminal.close.ok": {
+    "message": "Zavrieť"
+  },
+  "terminal.close.running": {
+    "message": "Zavrieť túto kartu terminálu? Program, ktorý v nej beží, sa zastaví."
+  },
+  "terminal.close.title": {
+    "message": "Zavrieť kartu"
+  },
+  "terminal.error.start_shell": {
+    "message": "Shell sa nepodarilo spustiť: {err}"
+  },
+  "terminal.jump_to_bottom": {
+    "message": "Na koniec (Ctrl+End) ↓"
+  },
+  "terminal.menu.copy": {
+    "message": "Kopírovať"
+  },
+  "terminal.menu.paste": {
+    "message": "Vložiť"
+  },
+  "toolbar.customize": {
+    "message": "Prispôsobiť panel nástrojov…"
+  },
+  "tools.clear_key": {
+    "message": "Vymazať"
+  },
+  "tools.close": {
+    "message": "Zavrieť"
+  },
+  "tools.delete": {
+    "message": "Odstrániť"
+  },
+  "tools.empty": {
+    "message": "Zatiaľ žiadne nástroje: pridáte ich tlačidlom Nový..."
+  },
+  "tools.field.command": {
+    "message": "Príkaz"
+  },
+  "tools.field.key": {
+    "message": "Kláves"
+  },
+  "tools.field.name": {
+    "message": "Názov"
+  },
+  "tools.intro": {
+    "message": "Vaše vlastné príkazové riadky v ponuke Nástroje: kliknite tam na niektorý alebo stlačte jeho kláves."
+  },
+  "tools.key.none": {
+    "message": "Žiadny"
+  },
+  "tools.key.waiting": {
+    "message": "Stlačte kláves... (Esc: žiadny)"
+  },
+  "tools.move_down": {
+    "message": "Posunúť nadol"
+  },
+  "tools.move_up": {
+    "message": "Posunúť nahor"
+  },
+  "tools.name.placeholder": {
+    "message": "Porovnať s druhou stranou"
+  },
+  "tools.new": {
+    "message": "Nový..."
+  },
+  "tools.new_name": {
+    "message": "Nástroj {number}"
+  },
+  "tools.no_command": {
+    "message": "{tool} zatiaľ nemá príkaz: Nástroje > Spravovať nástroje."
+  },
+  "tools.not_local": {
+    "message": "Nástroje sa spúšťajú na tomto počítači: panel zobrazuje server alebo archív."
+  },
+  "tools.note.key_of_command": {
+    "message": "{key} je aj {command}: prednosť má nástroj."
+  },
+  "tools.note.key_of_other_tool": {
+    "message": "{key} má aj {tool}: prednosť má ten nižšie v zozname."
+  },
+  "tools.placeholders": {
+    "message": "%P priečinok tohto panela, %T priečinok druhého panela (oba končia oddeľovačom, takže \"%P%N\" je cesta), %N súbor pod kurzorom, %O jeho názov bez prípony, %E prípona, %S vybrané súbory (inak ten pod kurzorom), každý v úvodzovkách; %% znak %. Ostatné dajte do úvodzoviek: \"%P%N\"."
+  },
+  "tools.run_in_terminal": {
+    "message": "Spustiť v termináli a zobraziť výstup"
+  },
+  "tools.set_key": {
+    "message": "Nastaviť kláves..."
+  },
+  "tools.title": {
+    "message": "Nástroje"
+  },
+  "transfer.answer.cancel": {
+    "message": "Zrušiť"
+  },
+  "transfer.answer.elevate": {
+    "message": "Ako správca"
+  },
+  "transfer.answer.overwrite": {
+    "message": "Prepísať"
+  },
+  "transfer.answer.overwrite_all": {
+    "message": "Prepísať všetko"
+  },
+  "transfer.answer.rename": {
+    "message": "Premenovať"
+  },
+  "transfer.answer.retry": {
+    "message": "Skúsiť znova"
+  },
+  "transfer.answer.skip": {
+    "message": "Preskočiť"
+  },
+  "transfer.answer.skip_all": {
+    "message": "Preskočiť všetko"
+  },
+  "transfer.archive.local_only": {
+    "message": "Do archívu možno vložiť iba súbory tohto počítača: najprv ich sem skopírujte."
+  },
+  "transfer.cancel": {
+    "message": "Zrušiť"
+  },
+  "transfer.error.elevate_hint": {
+    "message": "Ako správca: toto aj všetko ďalšie odmietnuté sa vykoná po dokončení zvyšku a heslo sa vyžiada iba raz."
+  },
+  "transfer.error.title": {
+    "message": "Chyba"
+  },
+  "transfer.exists.describe": {
+    "message": "{count, plural, one {{size} bajt, {time}} few {{size} bajty, {time}} other {{size} bajtov, {time}}}"
+  },
+  "transfer.exists.text": {
+    "message": "Existujúci: {existing}\nNový: {new}"
+  },
+  "transfer.exists.title": {
+    "message": "Súbor existuje"
+  },
+  "transfer.extract_failed": {
+    "message": "Nepodarilo sa ich vybrať z archívu: {err}"
+  },
+  "transfer.into_archive.question_many": {
+    "message": "{kind, select, copy {Kopírovať} other {Presunúť}} {count, plural, one {# položku} few {# položky} other {# položiek}} do {into}? Položky s rovnakými názvami sa tam nahradia."
+  },
+  "transfer.into_archive.question_one": {
+    "message": "{kind, select, copy {Kopírovať} other {Presunúť}} „{name}“ do {into}? Položka s rovnakým názvom sa tam nahradí."
+  },
+  "transfer.into_archive.title_many": {
+    "message": "{kind, select, copy {Kopírovať} other {Presunúť}} {count, plural, one {# položku} few {# položky} other {# položiek}} do {archive}"
+  },
+  "transfer.into_archive.title_one": {
+    "message": "{kind, select, copy {Kopírovať} other {Presunúť}} „{name}“ do {archive}"
+  },
+  "transfer.label.many": {
+    "message": "{kind, select, copy {Kopírovať} other {Presunúť}} {count, plural, one {# položku} few {# položky} other {# položiek}} do:"
+  },
+  "transfer.label.many_server": {
+    "message": "{kind, select, copy {Kopírovať} other {Presunúť}} {count, plural, one {# položku} few {# položky} other {# položiek}} na {server}:"
+  },
+  "transfer.label.one": {
+    "message": "{kind, select, copy {Kopírovať} other {Presunúť}} „{name}“ do:"
+  },
+  "transfer.label.one_server": {
+    "message": "{kind, select, copy {Kopírovať} other {Presunúť}} „{name}“ na {server}:"
+  },
+  "transfer.ok": {
+    "message": "OK"
+  },
+  "transfer.overwrite.all": {
+    "message": "Prepísať všetko"
+  },
+  "transfer.overwrite.ask": {
+    "message": "Opýtať sa"
+  },
+  "transfer.overwrite.label": {
+    "message": "Ak cieľ obsahuje súbor s rovnakým názvom:"
+  },
+  "transfer.overwrite.older": {
+    "message": "Prepísať staršie"
+  },
+  "transfer.overwrite.rename": {
+    "message": "Premenovať kópie"
+  },
+  "transfer.overwrite.skip": {
+    "message": "Preskočiť všetko"
+  },
+  "transfer.remove_moved": {
+    "message": "Odstrániť presunuté z {name}"
+  },
+  "transfer.speed": {
+    "message": "{size}/s"
+  },
+  "transfer.strip.counting": {
+    "message": "počítanie: {count, plural, one {# súbor} few {# súbory} other {# súborov}}"
+  },
+  "transfer.strip.progress": {
+    "message": "{files} / {count, plural, one {# súbor} few {# súbory} other {# súborov}}, {percent} %"
+  },
+  "transfer.strip.queue": {
+    "message": "Rad..."
+  },
+  "transfer.strip.queue_waiting": {
+    "message": "Rad ({count, plural, one {# čaká} few {# čakajú} other {# čaká}})..."
+  },
+  "transfer.title.copy": {
+    "message": "Kopírovať"
+  },
+  "transfer.title.move": {
+    "message": "Presunúť"
+  },
+  "viewer.as_text_hint": {
+    "message": "{err}. Kláves 1 zobrazí súbor ako text."
+  },
+  "viewer.book.cannot_read": {
+    "message": "Túto knihu nemožno prečítať: {err}. Kláves 1 zobrazí súbor ako text."
+  },
+  "viewer.book.continuing": {
+    "message": "Pokračuje sa na {percent}"
+  },
+  "viewer.book.error.compression": {
+    "message": "komprimovaná spôsobom, ktorý sa zatiaľ nedá čítať ({compression})"
+  },
+  "viewer.book.error.damaged": {
+    "message": "poškodená kniha"
+  },
+  "viewer.book.error.damaged_zip": {
+    "message": "poškodený zip"
+  },
+  "viewer.book.error.drm": {
+    "message": "chránená DRM: prečíta ju iba Kindle"
+  },
+  "viewer.book.error.huffman": {
+    "message": "komprimovaná ako vlastné knihy Amazonu (HUFF/CDIC), čo sa zatiaľ nedá čítať"
+  },
+  "viewer.book.error.missing_part": {
+    "message": "{name} v knihe chýba"
+  },
+  "viewer.book.error.no_package": {
+    "message": "v knihe chýba súbor balíka"
+  },
+  "viewer.book.error.no_text": {
+    "message": "kniha neobsahuje text"
+  },
+  "viewer.book.error.not_zip": {
+    "message": "nie je to zip: poškodená kniha alebo kniha chránená DRM?"
+  },
+  "viewer.book.error.zip_method": {
+    "message": "{name}: komprimované metódou zip, ktorú tu nemožno čítať ({method})"
+  },
+  "viewer.cannot_show": {
+    "message": "Nedá sa zobraziť: {err}"
+  },
+  "viewer.convert.failed": {
+    "message": "{tool} ho nedokázal previesť ({status})"
+  },
+  "viewer.converting": {
+    "message": "Prevádza sa pomocou {tool}…"
+  },
+  "viewer.copy.too_large": {
+    "message": "Výbery väčšie ako {megabytes} MB sa nekopírujú."
+  },
+  "viewer.encoding.cp1250": {
+    "message": "Stredná Európa (1250)"
+  },
+  "viewer.encoding.cp1251": {
+    "message": "Cyrilika Windows (1251)"
+  },
+  "viewer.encoding.cp1252": {
+    "message": "Západná Latin1 (1252)"
+  },
+  "viewer.encoding.cp1253": {
+    "message": "Gréčtina (1253)"
+  },
+  "viewer.encoding.cp1254": {
+    "message": "Turečtina (1254)"
+  },
+  "viewer.encoding.cp1255": {
+    "message": "Hebrejčina (1255)"
+  },
+  "viewer.encoding.cp1256": {
+    "message": "Arabčina (1256)"
+  },
+  "viewer.encoding.cp1257": {
+    "message": "Pobaltie (1257)"
+  },
+  "viewer.encoding.cp1258": {
+    "message": "Vietnamčina (1258)"
+  },
+  "viewer.encoding.cp20866": {
+    "message": "Cyrilika KOI8-R (20866)"
+  },
+  "viewer.encoding.cp437": {
+    "message": "DOS-USA (437)"
+  },
+  "viewer.encoding.cp850": {
+    "message": "DOS-LATIN1 (850)"
+  },
+  "viewer.encoding.cp852": {
+    "message": "DOS Stredná Európa (852)"
+  },
+  "viewer.encoding.cp866": {
+    "message": "DOS Cyrilika (866)"
+  },
+  "viewer.encoding.cp874": {
+    "message": "Thajčina (874)"
+  },
+  "viewer.encoding.cp932": {
+    "message": "Japončina (932)"
+  },
+  "viewer.encoding.cp936": {
+    "message": "Čínština pevninská (936)"
+  },
+  "viewer.encoding.cp949": {
+    "message": "Kórejčina (949)"
+  },
+  "viewer.encoding.cp950": {
+    "message": "Čínština Taiwan (950)"
+  },
+  "viewer.find.not_found": {
+    "message": "Nenašlo sa: {text}"
+  },
+  "viewer.find.not_hex": {
+    "message": "Nie je to hexadecimálny reťazec: {text}"
+  },
+  "viewer.find.nothing": {
+    "message": "Nie je čo hľadať."
+  },
+  "viewer.find.save_failed": {
+    "message": "Hľadania sa nepodarilo uložiť: {err}"
+  },
+  "viewer.loading": {
+    "message": "Načítava sa…"
+  },
+  "viewer.markdown.too_large": {
+    "message": "Viac ako {megabytes} MB: kláves 1 ho zobrazí ako text."
+  },
+  "viewer.menu.binary": {
+    "message": "Binárne (pevná dĺžka riadka)"
+  },
+  "viewer.menu.book": {
+    "message": "Kniha (EPUB, FB2)"
+  },
+  "viewer.menu.close": {
+    "message": "Zavrieť"
+  },
+  "viewer.menu.configure": {
+    "message": "Nastaviť..."
+  },
+  "viewer.menu.copy_hex": {
+    "message": "Kopírovať ako hexadecimálne znaky"
+  },
+  "viewer.menu.copy_text": {
+    "message": "Kopírovať ako text"
+  },
+  "viewer.menu.edit": {
+    "message": "Úpravy"
+  },
+  "viewer.menu.encoding": {
+    "message": "Kódovanie"
+  },
+  "viewer.menu.file": {
+    "message": "Súbor"
+  },
+  "viewer.menu.find": {
+    "message": "Hľadať..."
+  },
+  "viewer.menu.find_next": {
+    "message": "Hľadať ďalej"
+  },
+  "viewer.menu.fit_image": {
+    "message": "Prispôsobiť obrázok oknu"
+  },
+  "viewer.menu.font_ansi": {
+    "message": "ANSI (znaková sada Windows)"
+  },
+  "viewer.menu.font_ascii": {
+    "message": "ASCII (znaková sada DOS)"
+  },
+  "viewer.menu.font_page": {
+    "message": "Podľa písma"
+  },
+  "viewer.menu.font_variable": {
+    "message": "Premenlivá šírka znakov"
+  },
+  "viewer.menu.hex": {
+    "message": "Hex"
+  },
+  "viewer.menu.html": {
+    "message": "Text HTML (bez značiek)"
+  },
+  "viewer.menu.minimap": {
+    "message": "Minimapa"
+  },
+  "viewer.menu.next_file": {
+    "message": "Ďalší súbor"
+  },
+  "viewer.menu.only_larger": {
+    "message": "Prispôsobiť iba väčšie obrázky"
+  },
+  "viewer.menu.open": {
+    "message": "Otvoriť..."
+  },
+  "viewer.menu.options": {
+    "message": "Možnosti"
+  },
+  "viewer.menu.picture": {
+    "message": "Obrázok/multimédiá"
+  },
+  "viewer.menu.previous_file": {
+    "message": "Predchádzajúci súbor"
+  },
+  "viewer.menu.reload": {
+    "message": "Znova načítať"
+  },
+  "viewer.menu.save_as": {
+    "message": "Uložiť ako..."
+  },
+  "viewer.menu.search_google": {
+    "message": "Hľadať vybraný text v Google"
+  },
+  "viewer.menu.select_all": {
+    "message": "Vybrať všetko"
+  },
+  "viewer.menu.syntax_colors": {
+    "message": "Farebné zvýraznenie syntaxe"
+  },
+  "viewer.menu.text_only": {
+    "message": "Iba text"
+  },
+  "viewer.menu.unicode": {
+    "message": "Unicode (UTF-16)"
+  },
+  "viewer.menu.wrap": {
+    "message": "Zalamovať text ({columns, plural, one {# stĺpec} few {# stĺpce} other {# stĺpcov}})"
+  },
+  "viewer.mode.binary": {
+    "message": "Binárne · {page}"
+  },
+  "viewer.mode.book": {
+    "message": "Kniha"
+  },
+  "viewer.mode.hex": {
+    "message": "Hex · {page}"
+  },
+  "viewer.mode.html": {
+    "message": "Text HTML"
+  },
+  "viewer.mode.image": {
+    "message": "Obrázok"
+  },
+  "viewer.mode.multimedia": {
+    "message": "Multimédiá"
+  },
+  "viewer.mode.pdf_by": {
+    "message": "PDF pomocou {tool}"
+  },
+  "viewer.mode.text": {
+    "message": "Text · {page}"
+  },
+  "viewer.origin.not_editable": {
+    "message": "upravovať sa dajú iba súbory v archívoch 7z, zip, jar a tar"
+  },
+  "viewer.origin.updated": {
+    "message": "Archív {archive} bol aktualizovaný"
+  },
+  "viewer.origin.updated_on": {
+    "message": "Archív {archive} na {server} bol aktualizovaný"
+  },
+  "viewer.origin.uploaded": {
+    "message": "Nahrané: {path}"
+  },
+  "viewer.pdf.cannot_show": {
+    "message": "Toto PDF sa nedá zobraziť: {err}"
+  },
+  "viewer.pdf.loading": {
+    "message": "Načítava sa..."
+  },
+  "viewer.pdf.page": {
+    "message": "Strana {page} / {pages}"
+  },
+  "viewer.picture.cannot_show": {
+    "message": "Tento obrázok sa nedá zobraziť; kláves 1 ho zobrazí ako text."
+  },
+  "viewer.save_as.failed": {
+    "message": "{path} sa nepodarilo uložiť: {err}"
+  },
+  "viewer.status.rows": {
+    "message": "{count, plural, one {{first}–{last} z {grouped} riadka} few {{first}–{last} z {grouped} riadkov} other {{first}–{last} z {grouped} riadkov}}"
+  },
+  "viewer.status.rows_so_far": {
+    "message": "{count, plural, one {zatiaľ {grouped} riadok, prečítané {percent}} few {zatiaľ {grouped} riadky, prečítané {percent}} other {zatiaľ {grouped} riadkov, prečítané {percent}}}"
+  },
+  "viewer.status.searching": {
+    "message": "Hľadá sa…"
+  },
+  "viewer.status.size": {
+    "message": "{count, plural, one {{grouped} bajt} few {{grouped} bajty} other {{grouped} bajtov}}"
+  },
+  "viewer.window.title": {
+    "message": "{path} — Prehliadač"
+  },
+  "viewer.zoom.fit": {
+    "message": "Späť na prispôsobenie oknu (Ctrl+0)"
+  },
+  "viewer.zoom.in": {
+    "message": "Priblížiť (Ctrl++)"
+  },
+  "viewer.zoom.out": {
+    "message": "Oddialiť (Ctrl+-)"
+  },
+  "viewer.zoom.reset": {
+    "message": "Späť na 100 % (Ctrl+0)"
+  },
+  "workspaces.button.close": {
+    "message": "Zavrieť"
+  },
+  "workspaces.button.delete": {
+    "message": "Odstrániť..."
+  },
+  "workspaces.button.duplicate": {
+    "message": "Duplikovať..."
+  },
+  "workspaces.button.new": {
+    "message": "Nový..."
+  },
+  "workspaces.button.rename": {
+    "message": "Premenovať..."
+  },
+  "workspaces.delete.button": {
+    "message": "Odstrániť"
+  },
+  "workspaces.delete.closed": {
+    "message": "Odstrániť pracovný priestor „{name}“? Jeho karty sa zabudnú."
+  },
+  "workspaces.delete.closed_shells": {
+    "message": "Odstrániť pracovný priestor „{name}“? Jeho karty sa zabudnú a shelly na jeho kartách terminálu sa ukončia."
+  },
+  "workspaces.delete.open": {
+    "message": "Odstrániť pracovný priestor „{name}“? Jeho karty sa zatvoria; namiesto neho sa otvorí „{other}“."
+  },
+  "workspaces.delete.open_shells": {
+    "message": "Odstrániť pracovný priestor „{name}“? Jeho karty sa zatvoria a shelly na jeho kartách terminálu sa ukončia; namiesto neho sa otvorí „{other}“."
+  },
+  "workspaces.delete.title": {
+    "message": "Odstrániť pracovný priestor"
+  },
+  "workspaces.duplicate.name": {
+    "message": "{name} – kópia"
+  },
+  "workspaces.duplicate.title": {
+    "message": "Duplikovať pracovný priestor"
+  },
+  "workspaces.error.name_taken": {
+    "message": "Tento názov už má iný pracovný priestor."
+  },
+  "workspaces.error.no_name": {
+    "message": "Pracovný priestor potrebuje názov."
+  },
+  "workspaces.error.save": {
+    "message": "Pracovné priestory sa nepodarilo uložiť: {err}"
+  },
+  "workspaces.hint": {
+    "message": "Zobrazenie > Pracovné priestory ho otvorí. Zmeny v otvorenom pracovnom priestore sa v ňom uchovajú."
+  },
+  "workspaces.name.label": {
+    "message": "Názov:"
+  },
+  "workspaces.new.name": {
+    "message": "Pracovný priestor {number}"
+  },
+  "workspaces.new.title": {
+    "message": "Nový pracovný priestor"
+  },
+  "workspaces.open": {
+    "message": "otvorený"
+  },
+  "workspaces.rename.title": {
+    "message": "Premenovať pracovný priestor"
+  },
+  "workspaces.summary.panels": {
+    "message": "Vľavo {left, plural, one {# karta} few {# karty} other {# kariet}}, vpravo {right, plural, one {# karta} few {# karty} other {# kariet}}"
+  },
+  "workspaces.summary.terminal": {
+    "message": "Vľavo {left, plural, one {# karta} few {# karty} other {# kariet}}, vpravo {right, plural, one {# karta} few {# karty} other {# kariet}}, terminál {terminal, plural, one {# karta} few {# karty} other {# kariet}}"
+  },
+  "workspaces.summary.terminal_hidden": {
+    "message": "Vľavo {left, plural, one {# karta} few {# karty} other {# kariet}}, vpravo {right, plural, one {# karta} few {# karty} other {# kariet}}, terminál {terminal, plural, one {# karta} few {# karty} other {# kariet}} (skrytý)"
+  },
+  "workspaces.title": {
+    "message": "Pracovné priestory"
+  }
+}

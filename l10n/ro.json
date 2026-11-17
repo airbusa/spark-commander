@@ -1,0 +1,4823 @@
+{
+  "about.addons": {
+    "message": "Suplimente, descărcate când alegeți"
+  },
+  "about.libraries": {
+    "message": "Bazat pe"
+  },
+  "about.licence": {
+    "message": "Licență:"
+  },
+  "about.made_with": {
+    "message": "Realizat cu ajutorul acestor proiecte"
+  },
+  "about.part.alacritty_terminal": {
+    "message": "Ecranul și shell-ul terminalului integrat"
+  },
+  "about.part.encoding_rs": {
+    "message": "Pagini de cod"
+  },
+  "about.part.gpui": {
+    "message": "Fereastra, desenarea și intrarea (din Zed)"
+  },
+  "about.part.gpui_kit": {
+    "message": "Controale: liste, meniuri, câmpuri, editorul"
+  },
+  "about.part.html5ever": {
+    "message": "HTML și cărți electronice în vizualizator"
+  },
+  "about.part.image": {
+    "message": "Imagini"
+  },
+  "about.part.keyring": {
+    "message": "Parolele din depozitul de chei al sistemului"
+  },
+  "about.part.lucide": {
+    "message": "Pictograme"
+  },
+  "about.part.material_icons": {
+    "message": "Pictograme pentru fișiere și foldere"
+  },
+  "about.part.pdfium_render": {
+    "message": "PDFium din Rust"
+  },
+  "about.part.ratatui": {
+    "message": "scmd, versiunea pentru terminal"
+  },
+  "about.part.russh": {
+    "message": "SSH și SFTP"
+  },
+  "about.part.rustls": {
+    "message": "TLS"
+  },
+  "about.part.serde": {
+    "message": "Fișierele de setări"
+  },
+  "about.part.similar": {
+    "message": "Comparați după conținut"
+  },
+  "about.part.suppaftp": {
+    "message": "FTP și FTPS"
+  },
+  "about.part.tokio": {
+    "message": "Operațiile de rețea în fundal"
+  },
+  "about.part.trash": {
+    "message": "Coșul de gunoi"
+  },
+  "about.part.tree_sitter": {
+    "message": "Culorile codului în vizualizator și editor"
+  },
+  "about.part.zbus": {
+    "message": "D-Bus: desktopul, dispozitivele, KDE Connect"
+  },
+  "about.shipped": {
+    "message": "Incluse în aplicație"
+  },
+  "about.tagline": {
+    "message": "Un manager de fișiere cu două panouri, software liber."
+  },
+  "about.title": {
+    "message": "Despre Spark Commander"
+  },
+  "about.version": {
+    "message": "Versiunea {version}"
+  },
+  "activity.clear": {
+    "message": "Goliți"
+  },
+  "activity.clear_failed": {
+    "message": "Jurnalul nu a putut fi golit: {err}"
+  },
+  "activity.empty": {
+    "message": "Nicio acțiune încă."
+  },
+  "activity.title": {
+    "message": "Jurnal de activitate"
+  },
+  "addons.error.damaged": {
+    "message": "descărcarea este deteriorată: suma de control diferă"
+  },
+  "addons.error.list": {
+    "message": "lista de suplimente: {err}"
+  },
+  "addons.error.missing_file": {
+    "message": "descărcarea nu conține {file}"
+  },
+  "addons.error.no_folder": {
+    "message": "niciun folder de date"
+  },
+  "addons.error.unpacking": {
+    "message": "dezarhivare: {err}"
+  },
+  "addons.installed": {
+    "message": "{addon} {version} este instalat."
+  },
+  "addons.megabytes": {
+    "message": "{size} MB"
+  },
+  "addons.offer.never": {
+    "message": "Nu mai afișați niciodată"
+  },
+  "addons.offer.no": {
+    "message": "Nu"
+  },
+  "addons.offer.text": {
+    "message": "{name} are nevoie de un supliment care nu este instalat: {addon}. Îl descărcați din Setări > Suplimente?"
+  },
+  "addons.offer.title": {
+    "message": "Supliment"
+  },
+  "addons.offer.yes": {
+    "message": "Da"
+  },
+  "addons.purpose.cloud": {
+    "message": "Stocare online: S3, Google Drive, OneDrive, Dropbox și alte servicii."
+  },
+  "addons.purpose.media": {
+    "message": "Video și sunet, plus fotografii HEIC și AVIF: vizualizatorul și Vizualizarea rapidă le afișează."
+  },
+  "addons.purpose.office": {
+    "message": "Documente Office: vizualizatorul afișează fișierele Word, Excel și PowerPoint ca PDF."
+  },
+  "addons.purpose.pdfium": {
+    "message": "PDF: vizualizatorul afișează fișierele PDF și documentele Office după conversie."
+  },
+  "addons.purpose.seven_zip": {
+    "message": "Arhive: arhivează și dezarhivează 7z, zip, rar, tar și altele."
+  },
+  "addons.update": {
+    "message": "Actualizați"
+  },
+  "addons.updates": {
+    "message": "Actualizări de suplimente: {names}"
+  },
+  "appearance.dark": {
+    "message": "Întunecat"
+  },
+  "appearance.light": {
+    "message": "Luminos"
+  },
+  "appearance.system": {
+    "message": "Conform sistemului"
+  },
+  "archive.cannot_read": {
+    "message": "{name}: nu poate fi citit"
+  },
+  "archive.not_in_archive": {
+    "message": "{name} nu se află în arhivă"
+  },
+  "archive.not_own_folder": {
+    "message": "{folder} nu este folderul propriu al acestui utilizator"
+  },
+  "archive.seven_zip_failed": {
+    "message": "7-Zip a eșuat ({code})"
+  },
+  "archive.seven_zip_missing": {
+    "message": "7-Zip lipsește: {path} (rulați vendor/7zip/fetch.sh sau fetch.bat)"
+  },
+  "archive.temp_not_utf8": {
+    "message": "numele folderului temporar nu este UTF-8"
+  },
+  "associations.add": {
+    "message": "Adăugați..."
+  },
+  "associations.cancel": {
+    "message": "Anulați"
+  },
+  "associations.close": {
+    "message": "Închideți"
+  },
+  "associations.column.edit": {
+    "message": "Editare (F4)"
+  },
+  "associations.column.files": {
+    "message": "Fișiere"
+  },
+  "associations.column.open": {
+    "message": "Deschidere (Enter)"
+  },
+  "associations.column.view": {
+    "message": "Vizualizare (F3)"
+  },
+  "associations.edit": {
+    "message": "Editați..."
+  },
+  "associations.edit_dialog.title": {
+    "message": "Asociere"
+  },
+  "associations.empty": {
+    "message": "Niciuna încă."
+  },
+  "associations.field.edit": {
+    "message": "Editare cu (F4):"
+  },
+  "associations.field.files": {
+    "message": "Fișiere (*.jpg *.png):"
+  },
+  "associations.field.open": {
+    "message": "Deschidere cu (Enter):"
+  },
+  "associations.field.view": {
+    "message": "Vizualizare cu (F3):"
+  },
+  "associations.intro": {
+    "message": "Enter, F3 și F4 rulează aceste programe pentru fișierele unei măști; un câmp gol păstrează comportamentul obișnuit. %1 este fișierul."
+  },
+  "associations.mask_needed": {
+    "message": "Este necesară masca fișierelor: *.txt"
+  },
+  "associations.no_file": {
+    "message": "Puneți cursorul pe un fișier de tipul pe care vreți să-l asociați."
+  },
+  "associations.ok": {
+    "message": "OK"
+  },
+  "associations.remove": {
+    "message": "Eliminați"
+  },
+  "associations.save_failed": {
+    "message": "Setările nu au putut fi salvate: {err}"
+  },
+  "associations.title": {
+    "message": "Asocieri interne"
+  },
+  "attributes.bad_time": {
+    "message": "„{text}” nu este o dată și o oră: 2026-11-10 14:04:33"
+  },
+  "attributes.cancel": {
+    "message": "Anulați"
+  },
+  "attributes.change_time": {
+    "message": "Schimbați data/ora:"
+  },
+  "attributes.changed": {
+    "message": "{count, plural, one {# fișier modificat} few {# fișiere modificate} other {# de fișiere modificate}}"
+  },
+  "attributes.changed_failed": {
+    "message": "{count, plural, one {# fișier modificat} few {# fișiere modificate} other {# de fișiere modificate}}, {failed, plural, one {# eroare} few {# erori} other {# de erori}}"
+  },
+  "attributes.dialog_title_many": {
+    "message": "Schimbați atributele: {count, plural, one {# element} few {# elemente} other {# de elemente}}"
+  },
+  "attributes.dialog_title_one": {
+    "message": "Schimbați atributele: {name}"
+  },
+  "attributes.execute": {
+    "message": "Execuție"
+  },
+  "attributes.group": {
+    "message": "Grup"
+  },
+  "attributes.in_archive": {
+    "message": "Atributele din arhive nu pot fi modificate."
+  },
+  "attributes.no_bits": {
+    "message": "Aceste fișiere nu au aici biți de permisiuni; se poate schimba doar data."
+  },
+  "attributes.now": {
+    "message": "Acum"
+  },
+  "attributes.octal": {
+    "message": "Octal:"
+  },
+  "attributes.ok": {
+    "message": "OK"
+  },
+  "attributes.others": {
+    "message": "Alții"
+  },
+  "attributes.owner": {
+    "message": "Proprietar"
+  },
+  "attributes.read": {
+    "message": "Citire"
+  },
+  "attributes.recurse": {
+    "message": "Și tot conținutul folderelor"
+  },
+  "attributes.title_many": {
+    "message": "Schimbare atribute pentru {count, plural, one {# element} few {# elemente} other {# de elemente}}"
+  },
+  "attributes.title_one": {
+    "message": "Schimbare atribute pentru „{name}”"
+  },
+  "attributes.write": {
+    "message": "Scriere"
+  },
+  "bookmarks.add_current": {
+    "message": "Adăugați folderul curent"
+  },
+  "bookmarks.add_folders": {
+    "message": "Adăugați foldere..."
+  },
+  "bookmarks.added": {
+    "message": "Adăugat la marcaje: {name}"
+  },
+  "bookmarks.already": {
+    "message": "{name} este deja în Marcaje."
+  },
+  "bookmarks.chooser.failed": {
+    "message": "Selectorul de foldere nu a putut fi afișat: {err}"
+  },
+  "bookmarks.chooser.prompt": {
+    "message": "Marcați"
+  },
+  "bookmarks.close": {
+    "message": "Închideți"
+  },
+  "bookmarks.copy_name": {
+    "message": "Copiați numele"
+  },
+  "bookmarks.copy_path": {
+    "message": "Copiați calea"
+  },
+  "bookmarks.drop_here": {
+    "message": "Plasați folderele aici."
+  },
+  "bookmarks.empty": {
+    "message": "Niciun marcaj: adăugați foldere sau plasați-le aici."
+  },
+  "bookmarks.intro": {
+    "message": "Folderele acestui computer, în ordinea din Locuri: trageți unul pentru a-l muta sau plasați foldere aici pentru a le adăuga."
+  },
+  "bookmarks.move_down": {
+    "message": "Mutați în jos"
+  },
+  "bookmarks.move_up": {
+    "message": "Mutați în sus"
+  },
+  "bookmarks.only_local": {
+    "message": "Doar folderele acestui computer pot fi marcate."
+  },
+  "bookmarks.remove": {
+    "message": "Eliminați"
+  },
+  "bookmarks.remove_from": {
+    "message": "Eliminați din Marcaje"
+  },
+  "bookmarks.rename": {
+    "message": "Redenumiți..."
+  },
+  "bookmarks.rename_label": {
+    "message": "Nume (gol: al folderului):"
+  },
+  "bookmarks.rename_title": {
+    "message": "Redenumiți marcajul"
+  },
+  "bookmarks.sort": {
+    "message": "Sortați A–Z"
+  },
+  "bookmarks.title": {
+    "message": "Marcaje"
+  },
+  "button_bar.copy": {
+    "message": "Copiere"
+  },
+  "button_bar.delete": {
+    "message": "Ștergere"
+  },
+  "button_bar.edit": {
+    "message": "Editare"
+  },
+  "button_bar.move": {
+    "message": "Mutare"
+  },
+  "button_bar.new_folder": {
+    "message": "Folder nou"
+  },
+  "button_bar.quit": {
+    "message": "Ieșire"
+  },
+  "button_bar.view": {
+    "message": "Vizualizare"
+  },
+  "checksum.create.title": {
+    "message": "Creare {name}"
+  },
+  "checksum.create.title_separate": {
+    "message": "Creare fișiere de sumă de control {method}"
+  },
+  "checksum.dialog_title": {
+    "message": "Creați fișiere de sumă de control"
+  },
+  "checksum.save_as": {
+    "message": "Salvați fișierul de sumă de control ca:"
+  },
+  "checksum.separate": {
+    "message": "Câte un fișier de sumă de control lângă fiecare fișier"
+  },
+  "checksum.verify.all_ok": {
+    "message": "{count, plural, one {# fișier OK} few {toate cele # fișiere sunt OK} other {toate cele # de fișiere sunt OK}}"
+  },
+  "checksum.verify.choose": {
+    "message": "Alegeți fișiere de sumă de control: .sfv, .md5, .sha1, .sha256 sau .sha512."
+  },
+  "checksum.verify.missing_file": {
+    "message": "lipsă: {name}"
+  },
+  "checksum.verify.result": {
+    "message": "{ok, plural, one {OK: #} few {OK: #} other {OK: #}}, {wrong, plural, one {greșit: #} few {greșite: #} other {greșite: #}}, {missing, plural, one {lipsă: #} few {lipsă: #} other {lipsă: #}}"
+  },
+  "checksum.verify.title_many": {
+    "message": "Verificare {count, plural, one {# fișier de sumă de control} few {# fișiere de sumă de control} other {# de fișiere de sumă de control}}"
+  },
+  "checksum.verify.title_one": {
+    "message": "Verificare {name}"
+  },
+  "checksum.verify.wrong_file": {
+    "message": "greșit: {name}"
+  },
+  "command.about": {
+    "message": "Despre Spark Commander"
+  },
+  "command.activity_log": {
+    "message": "Jurnal de activitate..."
+  },
+  "command.all_files": {
+    "message": "Toate fișierele"
+  },
+  "command.all_folder_sizes": {
+    "message": "Calculați dimensiunile tuturor folderelor"
+  },
+  "command.all_with_extension": {
+    "message": "*.*"
+  },
+  "command.associate_with": {
+    "message": "Asociați cu..."
+  },
+  "command.bookmark_folder": {
+    "message": "Marcați acest folder"
+  },
+  "command.bookmarks": {
+    "message": "Marcaje"
+  },
+  "command.branch_view": {
+    "message": "Vizualizare ramură (cu subfoldere)"
+  },
+  "command.branch_view_selected": {
+    "message": "Vizualizare ramură pentru folderele selectate"
+  },
+  "command.brief": {
+    "message": "Sumar"
+  },
+  "command.calculate_occupied_space": {
+    "message": "Calculați spațiul ocupat..."
+  },
+  "command.change_attributes": {
+    "message": "Schimbați atributele..."
+  },
+  "command.close_all_tabs": {
+    "message": "Închideți toate filele"
+  },
+  "command.close_duplicate_tabs": {
+    "message": "Închideți filele duplicate"
+  },
+  "command.close_tab": {
+    "message": "Închideți fila"
+  },
+  "command.combine_files": {
+    "message": "Combinați fișierele..."
+  },
+  "command.compare_by_content": {
+    "message": "Comparați după conținut..."
+  },
+  "command.compare_directories": {
+    "message": "Marcați fișierele mai noi"
+  },
+  "command.copy": {
+    "message": "Copiați..."
+  },
+  "command.copy_names_to_clipboard": {
+    "message": "Copiați numele selectate în clipboard"
+  },
+  "command.copy_names_with_path_to_clipboard": {
+    "message": "Copiați numele cu cale în clipboard"
+  },
+  "command.copy_to_clipboard": {
+    "message": "Copiați fișierele"
+  },
+  "command.copy_with_all_details": {
+    "message": "Copiați în clipboard cu toate detaliile"
+  },
+  "command.copy_with_path_and_details": {
+    "message": "Copiați în clipboard cu cale+detalii"
+  },
+  "command.create_checksum_files": {
+    "message": "Creați fișiere de sumă de control (CRC32, MD5, SHA1, SHA256, SHA512)..."
+  },
+  "command.create_link": {
+    "message": "Creați o legătură..."
+  },
+  "command.custom_filter": {
+    "message": "Personalizat..."
+  },
+  "command.cut_to_clipboard": {
+    "message": "Decupați fișierele"
+  },
+  "command.delete": {
+    "message": "Ștergeți"
+  },
+  "command.delete_permanently": {
+    "message": "Ștergeți definitiv"
+  },
+  "command.disconnect": {
+    "message": "Deconectați-vă de la server"
+  },
+  "command.download_link": {
+    "message": "Descărcați dintr-un link..."
+  },
+  "command.duplicate_tab": {
+    "message": "Filă nouă"
+  },
+  "command.duplicate_workspace": {
+    "message": "Duplicați spațiul de lucru..."
+  },
+  "command.edit": {
+    "message": "Editați"
+  },
+  "command.edit_externally": {
+    "message": "Editați cu un editor extern"
+  },
+  "command.folder_history": {
+    "message": "Istoricul folderelor..."
+  },
+  "command.full": {
+    "message": "Complet"
+  },
+  "command.go_back": {
+    "message": "Înapoi"
+  },
+  "command.go_forward": {
+    "message": "Înainte"
+  },
+  "command.go_home": {
+    "message": "Folderul personal"
+  },
+  "command.go_to_root": {
+    "message": "Folderul rădăcină"
+  },
+  "command.hidden_files": {
+    "message": "Fișiere ascunse"
+  },
+  "command.internal_associations": {
+    "message": "Asocieri interne (doar Spark Commander)..."
+  },
+  "command.invert_selection": {
+    "message": "Inversați selecția"
+  },
+  "command.left_drives": {
+    "message": "Unități (panoul stâng)"
+  },
+  "command.list_tabs": {
+    "message": "Lista filelor"
+  },
+  "command.load_selection_from_file": {
+    "message": "Încărcați selecția din fișier"
+  },
+  "command.manage_bookmarks": {
+    "message": "Gestionați marcajele..."
+  },
+  "command.manage_tools": {
+    "message": "Gestionați instrumentele..."
+  },
+  "command.manage_workspaces": {
+    "message": "Gestionați spațiile de lucru..."
+  },
+  "command.mark_in_place": {
+    "message": "Marcați / demarcați pe loc, măsurând folderul"
+  },
+  "command.mark_newer_hide_same": {
+    "message": "Marcați fișierele mai noi, ascundeți fișierele identice"
+  },
+  "command.move": {
+    "message": "Mutați..."
+  },
+  "command.multi_rename_tool": {
+    "message": "Redenumire multiplă..."
+  },
+  "command.name_to_command_line": {
+    "message": "Numele în linia de comandă"
+  },
+  "command.new_folder": {
+    "message": "Folder nou..."
+  },
+  "command.new_terminal": {
+    "message": "Filă de terminal nouă"
+  },
+  "command.new_text_file": {
+    "message": "Fișier nou..."
+  },
+  "command.new_workspace": {
+    "message": "Spațiu de lucru nou..."
+  },
+  "command.next_tab": {
+    "message": "Fila următoare"
+  },
+  "command.only_selected_files": {
+    "message": "Doar fișierele selectate"
+  },
+  "command.open_in_left_panel": {
+    "message": "Afișați în panoul stâng"
+  },
+  "command.open_in_new_tab": {
+    "message": "Deschideți folderul într-o filă nouă"
+  },
+  "command.open_in_other_new_tab": {
+    "message": "Deschideți folderul într-o filă nouă a celuilalt panou"
+  },
+  "command.open_in_right_panel": {
+    "message": "Afișați în panoul drept"
+  },
+  "command.open_terminal": {
+    "message": "Deschideți terminalul aici"
+  },
+  "command.operation_queue": {
+    "message": "Coada de operații..."
+  },
+  "command.pack": {
+    "message": "Arhivați..."
+  },
+  "command.paste_from_clipboard": {
+    "message": "Lipiți fișierele"
+  },
+  "command.path_and_name_to_command_line": {
+    "message": "Calea și numele în linia de comandă"
+  },
+  "command.path_to_command_line": {
+    "message": "Calea în linia de comandă"
+  },
+  "command.previous_tab": {
+    "message": "Fila anterioară"
+  },
+  "command.programs": {
+    "message": "Programe"
+  },
+  "command.properties": {
+    "message": "Proprietăți..."
+  },
+  "command.quick_filter": {
+    "message": "Filtru rapid"
+  },
+  "command.quick_open": {
+    "message": "Deschidere rapidă..."
+  },
+  "command.quick_view_panel": {
+    "message": "Panou de vizualizare rapidă"
+  },
+  "command.quit": {
+    "message": "Ieșiți"
+  },
+  "command.redo": {
+    "message": "Refaceți acțiunea"
+  },
+  "command.rename_in_place": {
+    "message": "Redenumiți"
+  },
+  "command.reread_source": {
+    "message": "Reîncărcați sursa"
+  },
+  "command.restore_selection": {
+    "message": "Restabiliți selecția"
+  },
+  "command.reversed_order": {
+    "message": "Ordine inversă"
+  },
+  "command.right_drives": {
+    "message": "Unități (panoul drept)"
+  },
+  "command.save_selection": {
+    "message": "Salvați selecția"
+  },
+  "command.save_selection_to_file": {
+    "message": "Salvați selecția în fișier"
+  },
+  "command.search": {
+    "message": "Căutați..."
+  },
+  "command.search_in_separate_process": {
+    "message": "Căutați într-o fereastră separată..."
+  },
+  "command.select_all": {
+    "message": "Selectați tot"
+  },
+  "command.select_all_with_same_extension": {
+    "message": "Selectați tot cu aceeași extensie"
+  },
+  "command.select_group": {
+    "message": "Selectați un grup..."
+  },
+  "command.settings": {
+    "message": "Setări..."
+  },
+  "command.shortcuts": {
+    "message": "Comenzi rapide..."
+  },
+  "command.sidebar_connections": {
+    "message": "Conexiuni"
+  },
+  "command.sidebar_operations": {
+    "message": "Operații"
+  },
+  "command.sidebar_places": {
+    "message": "Locuri"
+  },
+  "command.sidebar_tree": {
+    "message": "Foldere"
+  },
+  "command.sort_by_extension": {
+    "message": "Extensie"
+  },
+  "command.sort_by_name": {
+    "message": "Nume"
+  },
+  "command.sort_by_size": {
+    "message": "Dimensiune"
+  },
+  "command.sort_by_time": {
+    "message": "Dată"
+  },
+  "command.split_file": {
+    "message": "Divizați fișierul..."
+  },
+  "command.swap_panels": {
+    "message": "Inversați panourile"
+  },
+  "command.swap_panels_and_tabs": {
+    "message": "Inversați panourile cu filele lor"
+  },
+  "command.sync_browsing": {
+    "message": "Navigare sincronizată"
+  },
+  "command.synchronize_dirs": {
+    "message": "Sincronizați folderele..."
+  },
+  "command.target_equals_source": {
+    "message": "Destinație = sursă"
+  },
+  "command.terminal_panel": {
+    "message": "Terminal"
+  },
+  "command.test_archives": {
+    "message": "Testați arhivele"
+  },
+  "command.thumbnail_view": {
+    "message": "Vizualizare miniaturi"
+  },
+  "command.toggle_mark": {
+    "message": "Marcați / demarcați"
+  },
+  "command.toggle_sidebar": {
+    "message": "Afișați bara laterală"
+  },
+  "command.undo": {
+    "message": "Anulați acțiunea"
+  },
+  "command.unpack_specific_files": {
+    "message": "Dezarhivați anumite fișiere..."
+  },
+  "command.unselect_all": {
+    "message": "Deselectați tot"
+  },
+  "command.unselect_group": {
+    "message": "Deselectați un grup..."
+  },
+  "command.unsorted": {
+    "message": "Nesortat"
+  },
+  "command.verify_checksums": {
+    "message": "Verificați sumele de control (din fișiere de sumă de control)"
+  },
+  "command.vertical_arrangement": {
+    "message": "Aranjare verticală"
+  },
+  "command.view": {
+    "message": "Vizualizați"
+  },
+  "command.website": {
+    "message": "Site-ul web Spark Commander"
+  },
+  "command.workspace1": {
+    "message": "Deschideți spațiul de lucru 1"
+  },
+  "command.workspace2": {
+    "message": "Deschideți spațiul de lucru 2"
+  },
+  "command.workspace3": {
+    "message": "Deschideți spațiul de lucru 3"
+  },
+  "command.workspace4": {
+    "message": "Deschideți spațiul de lucru 4"
+  },
+  "command.workspace5": {
+    "message": "Deschideți spațiul de lucru 5"
+  },
+  "command.workspace6": {
+    "message": "Deschideți spațiul de lucru 6"
+  },
+  "command.workspace7": {
+    "message": "Deschideți spațiul de lucru 7"
+  },
+  "command.workspace8": {
+    "message": "Deschideți spațiul de lucru 8"
+  },
+  "command.workspace9": {
+    "message": "Deschideți spațiul de lucru 9"
+  },
+  "command_line.error.cannot_run": {
+    "message": "{program}: nu poate fi rulat"
+  },
+  "command_line.error.not_found": {
+    "message": "{program}: comanda nu a fost găsită"
+  },
+  "command_line.history.empty": {
+    "message": "Nicio comandă rulată încă"
+  },
+  "command_line.on_server": {
+    "message": "Comenzile rulează pe acest computer; panoul este pe un server."
+  },
+  "command_name.all_files": {
+    "message": "Afișați toate fișierele"
+  },
+  "command_name.all_with_extension": {
+    "message": "Afișați *.*"
+  },
+  "command_name.brief": {
+    "message": "Vizualizare sumară"
+  },
+  "command_name.compare_directories": {
+    "message": "Comparați folderele: marcați fișierele mai noi"
+  },
+  "command_name.custom_filter": {
+    "message": "Filtru personalizat"
+  },
+  "command_name.duplicate_tab": {
+    "message": "Filă nouă (o copie a acesteia)"
+  },
+  "command_name.full": {
+    "message": "Vizualizare completă"
+  },
+  "command_name.go_back": {
+    "message": "Mergeți înapoi"
+  },
+  "command_name.go_forward": {
+    "message": "Mergeți înainte"
+  },
+  "command_name.go_home": {
+    "message": "Mergeți la folderul personal"
+  },
+  "command_name.hidden_files": {
+    "message": "Afișați fișierele ascunse"
+  },
+  "command_name.only_selected_files": {
+    "message": "Afișați doar fișierele selectate"
+  },
+  "command_name.programs": {
+    "message": "Afișați programele"
+  },
+  "command_name.quick_filter": {
+    "message": "Filtru rapid"
+  },
+  "command_name.rename_in_place": {
+    "message": "Redenumiți pe loc"
+  },
+  "command_name.sidebar_connections": {
+    "message": "Bara laterală: Conexiuni"
+  },
+  "command_name.sidebar_operations": {
+    "message": "Bara laterală: Operații"
+  },
+  "command_name.sidebar_places": {
+    "message": "Bara laterală: Locuri"
+  },
+  "command_name.sidebar_tree": {
+    "message": "Bara laterală: Foldere"
+  },
+  "command_name.sort_by_extension": {
+    "message": "Sortați după extensie"
+  },
+  "command_name.sort_by_name": {
+    "message": "Sortați după nume"
+  },
+  "command_name.sort_by_size": {
+    "message": "Sortați după dimensiune"
+  },
+  "command_name.sort_by_time": {
+    "message": "Sortați după dată"
+  },
+  "command_name.toggle_sidebar": {
+    "message": "Bara laterală: afișați sau ascundeți"
+  },
+  "command_name.unsorted": {
+    "message": "Fără sortare"
+  },
+  "compare.browse.prompt": {
+    "message": "Comparați"
+  },
+  "compare.button.compare": {
+    "message": "Comparați"
+  },
+  "compare.button.next": {
+    "message": "Diferența următoare (N)"
+  },
+  "compare.button.previous": {
+    "message": "Diferența anterioară (P)"
+  },
+  "compare.need_two_files": {
+    "message": "Puneți cursorul pe câte un fișier în fiecare panou sau marcați două fișiere."
+  },
+  "compare.option.binary": {
+    "message": "Binar"
+  },
+  "compare.option.ignore_case": {
+    "message": "Ignorați majusculele"
+  },
+  "compare.option.ignore_spaces": {
+    "message": "Ignorați spațiile repetate"
+  },
+  "compare.option.only_differences": {
+    "message": "Doar diferențele"
+  },
+  "compare.status.bytes_differ": {
+    "message": "{place}: {count, plural, one {{grouped} octet diferă} few {{grouped} octeți diferă} other {{grouped} de octeți diferă}}, primul la {first}; dimensiuni {left} și {right}."
+  },
+  "compare.status.comparing": {
+    "message": "Se compară…"
+  },
+  "compare.status.difference_of": {
+    "message": "Diferența {at} din {count}"
+  },
+  "compare.status.differences": {
+    "message": "{count, plural, one {# diferență} few {# diferențe} other {# de diferențe}}"
+  },
+  "compare.status.identical": {
+    "message": "{count, plural, one {Fișierele sunt identice: {grouped} octet.} few {Fișierele sunt identice: {grouped} octeți.} other {Fișierele sunt identice: {grouped} de octeți.}}"
+  },
+  "compare.status.no_differences": {
+    "message": "Nicio diferență."
+  },
+  "compare.window.title": {
+    "message": "Comparare: {left} — {right}"
+  },
+  "connections.connect": {
+    "message": "Conectați"
+  },
+  "connections.copy_name": {
+    "message": "Copiați numele"
+  },
+  "connections.copy_path": {
+    "message": "Copiați calea"
+  },
+  "connections.delete": {
+    "message": "Ștergeți"
+  },
+  "connections.dialog.title": {
+    "message": "Conexiune"
+  },
+  "connections.disconnect": {
+    "message": "Deconectați"
+  },
+  "connections.duplicate": {
+    "message": "Duplicați"
+  },
+  "connections.duplicate_name": {
+    "message": "{name} (copie)"
+  },
+  "connections.edit": {
+    "message": "Editați..."
+  },
+  "connections.empty": {
+    "message": "Nicio conexiune încă."
+  },
+  "connections.error.no_server": {
+    "message": "Este necesar un server."
+  },
+  "connections.error.port": {
+    "message": "Nu este un port: {text}"
+  },
+  "connections.field.access_key": {
+    "message": "Cheie de acces"
+  },
+  "connections.field.api_key": {
+    "message": "Cheie API"
+  },
+  "connections.field.application_key": {
+    "message": "Cheie aplicație"
+  },
+  "connections.field.bucket": {
+    "message": "Bucket/folder"
+  },
+  "connections.field.container": {
+    "message": "Container/folder"
+  },
+  "connections.field.endpoint": {
+    "message": "Endpoint"
+  },
+  "connections.field.key_id": {
+    "message": "ID cheie"
+  },
+  "connections.field.name": {
+    "message": "Nume"
+  },
+  "connections.field.password": {
+    "message": "Parolă"
+  },
+  "connections.field.port": {
+    "message": "Port"
+  },
+  "connections.field.protocol": {
+    "message": "Protocol"
+  },
+  "connections.field.secret_key": {
+    "message": "Cheie secretă"
+  },
+  "connections.field.server": {
+    "message": "Server"
+  },
+  "connections.field.start_folder": {
+    "message": "Folder inițial"
+  },
+  "connections.field.user": {
+    "message": "Utilizator"
+  },
+  "connections.folder.delete_confirm": {
+    "message": "{count, plural, one {Ștergeți folderul {name} și conexiunea din el?} few {Ștergeți folderul {name} și cele # conexiuni din el?} other {Ștergeți folderul {name} și cele # de conexiuni din el?}}"
+  },
+  "connections.folder.delete_title": {
+    "message": "Ștergeți folderul"
+  },
+  "connections.folder.exists": {
+    "message": "Există deja un folder numit {name}."
+  },
+  "connections.folder.name": {
+    "message": "Nume:"
+  },
+  "connections.folder.new_title": {
+    "message": "Folder nou"
+  },
+  "connections.folder.rename": {
+    "message": "Redenumiți..."
+  },
+  "connections.folder.rename_title": {
+    "message": "Redenumiți folderul"
+  },
+  "connections.forget_password": {
+    "message": "Uitați parola păstrată"
+  },
+  "connections.move_down": {
+    "message": "Mutați în jos"
+  },
+  "connections.move_to_folder": {
+    "message": "Mutați în folder"
+  },
+  "connections.move_up": {
+    "message": "Mutați în sus"
+  },
+  "connections.new": {
+    "message": "Conexiune nouă..."
+  },
+  "connections.new_folder": {
+    "message": "Folder nou..."
+  },
+  "connections.no_folder": {
+    "message": "Fără folder"
+  },
+  "connections.open_in_terminal": {
+    "message": "Deschideți în terminal"
+  },
+  "connections.placeholder.name": {
+    "message": "așa cum apare în listă"
+  },
+  "connections.placeholder.password": {
+    "message": "păstrată criptată în folderul de setări; gol o păstrează pe cea existentă"
+  },
+  "connections.placeholder.path": {
+    "message": "folderul de autentificare"
+  },
+  "connections.placeholder.port": {
+    "message": "implicit"
+  },
+  "connections.placeholder.server": {
+    "message": "server sau o gazdă din ~/.ssh/config"
+  },
+  "connections.placeholder.user": {
+    "message": "conform ~/.ssh/config sau anonim"
+  },
+  "connections.save_failed": {
+    "message": "Conexiunile nu au putut fi salvate: {err}"
+  },
+  "connections.ssh_config.read_only": {
+    "message": "Doar citire: aceste gazde se editează direct în ~/.ssh/config"
+  },
+  "context_menu.action_failed": {
+    "message": "{name} a eșuat: {err}"
+  },
+  "context_menu.actions": {
+    "message": "Acțiuni"
+  },
+  "context_menu.copy": {
+    "message": "Copiați"
+  },
+  "context_menu.create_new": {
+    "message": "Creați nou"
+  },
+  "context_menu.cut": {
+    "message": "Decupați"
+  },
+  "context_menu.delete": {
+    "message": "Ștergeți"
+  },
+  "context_menu.edit": {
+    "message": "Editați"
+  },
+  "context_menu.empty_file": {
+    "message": "Fișier gol…"
+  },
+  "context_menu.move_to_trash": {
+    "message": "Mutați la coșul de gunoi"
+  },
+  "context_menu.new_file_dialog.label": {
+    "message": "Numele fișierului nou:"
+  },
+  "context_menu.new_file_dialog.title": {
+    "message": "Fișier nou"
+  },
+  "context_menu.new_file_failed": {
+    "message": "Fișierul nu a putut fi creat: {err}"
+  },
+  "context_menu.new_folder": {
+    "message": "Folder…"
+  },
+  "context_menu.open": {
+    "message": "Deschideți"
+  },
+  "context_menu.open_failed": {
+    "message": "Nu s-a putut deschide: {err}"
+  },
+  "context_menu.open_terminal_here": {
+    "message": "Deschideți terminalul aici"
+  },
+  "context_menu.open_with": {
+    "message": "Deschideți cu"
+  },
+  "context_menu.other_application": {
+    "message": "Altă aplicație…"
+  },
+  "context_menu.pack": {
+    "message": "Arhivați…"
+  },
+  "context_menu.pack_files": {
+    "message": "Arhivați fișierele"
+  },
+  "context_menu.paste": {
+    "message": "Lipiți"
+  },
+  "context_menu.properties": {
+    "message": "Proprietăți"
+  },
+  "context_menu.properties_failed": {
+    "message": "Proprietăți: {err}"
+  },
+  "context_menu.rename": {
+    "message": "Redenumiți…"
+  },
+  "context_menu.rename_dialog.label": {
+    "message": "Nume nou:"
+  },
+  "context_menu.rename_dialog.title": {
+    "message": "Redenumiți"
+  },
+  "context_menu.rename_failed": {
+    "message": "Nu s-a putut redenumi: {err}"
+  },
+  "context_menu.shell_menu_failed": {
+    "message": "Meniul: {err}"
+  },
+  "context_menu.show_failed": {
+    "message": "Nu s-a putut afișa: {err}"
+  },
+  "context_menu.show_in_file_manager": {
+    "message": "Afișați în managerul de fișiere"
+  },
+  "context_menu.terminal_failed": {
+    "message": "Nu s-a putut deschide un terminal: {err}"
+  },
+  "context_menu.terminal_not_local": {
+    "message": "Un terminal se deschide doar în folderele acestui computer."
+  },
+  "context_menu.unpack": {
+    "message": "Dezarhivați…"
+  },
+  "context_menu.view": {
+    "message": "Vizualizați"
+  },
+  "desktop.no_app_chooser": {
+    "message": "desktopul nu are un selector de aplicații ({err})"
+  },
+  "desktop.no_terminal": {
+    "message": "nu s-a găsit niciun terminal"
+  },
+  "desktop.nothing_to_run": {
+    "message": "{name}: nimic de rulat"
+  },
+  "desktop.scripts": {
+    "message": "Scripturi"
+  },
+  "devices.error.mount_failed": {
+    "message": "dispozitivul nu a putut fi montat"
+  },
+  "devices.error.no_folder": {
+    "message": "dispozitivul nu partajează niciun folder"
+  },
+  "devices.error.system_only": {
+    "message": "doar sistemul îl poate demonta"
+  },
+  "devices.error.unreachable": {
+    "message": "inaccesibil: este KDE Connect deschis pe el, în această rețea?"
+  },
+  "devices.unlock.ask": {
+    "message": "Fraza de acces pentru {name}:"
+  },
+  "devices.unlock.ask_again": {
+    "message": "Frază de acces greșită. Fraza de acces pentru {name}:"
+  },
+  "devices.unlock.title": {
+    "message": "Deblocați"
+  },
+  "devices.volume.share_on_server": {
+    "message": "{share} pe {server}"
+  },
+  "devices.volume.unnamed": {
+    "message": "Volum de {size} GB"
+  },
+  "devices.volume.unnamed_encrypted": {
+    "message": "Volum criptat de {size} GB"
+  },
+  "download.cancel": {
+    "message": "Anulați"
+  },
+  "download.dialog_title": {
+    "message": "Descărcați dintr-un link"
+  },
+  "download.download": {
+    "message": "Descărcați"
+  },
+  "download.folder_link": {
+    "message": "linkul este al unui folder"
+  },
+  "download.incomplete": {
+    "message": "serverul a trimis {got} din {size, plural, one {# octet} few {# octeți} other {# de octeți}}; dacă îl descărcați din nou, continuă de acolo"
+  },
+  "download.into": {
+    "message": "În {folder}"
+  },
+  "download.link": {
+    "message": "Link"
+  },
+  "download.link_placeholder": {
+    "message": "https://, http://, ftp:// sau ftps://"
+  },
+  "download.local_only": {
+    "message": "Descărcările ajung în folderele acestui computer: deschideți mai întâi unul în panou."
+  },
+  "download.name_placeholder": {
+    "message": "așa cum îl numește serverul sau linkul"
+  },
+  "download.no_file": {
+    "message": "linkul nu indică niciun fișier"
+  },
+  "download.not_a_link": {
+    "message": "nu este un link de descărcare"
+  },
+  "download.problem.bad_name": {
+    "message": "Numele unui fișier, fără niciun folder în el."
+  },
+  "download.problem.empty": {
+    "message": "Lipiți sau tastați un link."
+  },
+  "download.problem.exists": {
+    "message": "Aici există deja {name}: butonul Înlocuiți descarcă peste el."
+  },
+  "download.problem.not_link": {
+    "message": "Nu este un link de descărcare: trebuie să înceapă cu https://, http://, ftp:// sau ftps://."
+  },
+  "download.replace": {
+    "message": "Înlocuiți"
+  },
+  "download.save_as": {
+    "message": "Salvați ca"
+  },
+  "download.saved_as": {
+    "message": "salvat ca {name}"
+  },
+  "download.title": {
+    "message": "Descărcare „{name}”"
+  },
+  "download.title_link": {
+    "message": "Descărcare {link}"
+  },
+  "editor.close.after_send": {
+    "message": "Se închide după ce serverul primește fișierul."
+  },
+  "editor.close.discard": {
+    "message": "Nu salvați"
+  },
+  "editor.close.save": {
+    "message": "Salvați"
+  },
+  "editor.close.title": {
+    "message": "Salvați modificările?"
+  },
+  "editor.close.unsaved": {
+    "message": "{name} are modificări nesalvate."
+  },
+  "editor.close.unsent": {
+    "message": "{name} nu este salvat pe serverul său: trimiterea a eșuat."
+  },
+  "editor.dialog.cancel": {
+    "message": "Anulați"
+  },
+  "editor.edit.copy": {
+    "message": "Copiați"
+  },
+  "editor.edit.cut": {
+    "message": "Decupați"
+  },
+  "editor.edit.find": {
+    "message": "Căutați..."
+  },
+  "editor.edit.find_next": {
+    "message": "Căutați următorul"
+  },
+  "editor.edit.find_previous": {
+    "message": "Căutați anteriorul"
+  },
+  "editor.edit.go_to_line": {
+    "message": "Salt la linia..."
+  },
+  "editor.edit.paste": {
+    "message": "Lipiți"
+  },
+  "editor.edit.redo": {
+    "message": "Refaceți acțiunea"
+  },
+  "editor.edit.replace": {
+    "message": "Înlocuiți..."
+  },
+  "editor.edit.undo": {
+    "message": "Anulați acțiunea"
+  },
+  "editor.external.not_set": {
+    "message": "nu este setat niciun editor extern (Setări, Editare/Vizualizare)"
+  },
+  "editor.file.close": {
+    "message": "Închideți"
+  },
+  "editor.file.reload": {
+    "message": "Reîncărcați"
+  },
+  "editor.file.save": {
+    "message": "Salvați"
+  },
+  "editor.file.save_as": {
+    "message": "Salvați ca..."
+  },
+  "editor.find.close": {
+    "message": "Închideți (Escape)"
+  },
+  "editor.find.count": {
+    "message": "{current} din {total}"
+  },
+  "editor.find.in_selection": {
+    "message": "Căutați în selecție (Alt+L)"
+  },
+  "editor.find.match_case": {
+    "message": "Potrivire majuscule/minuscule (Alt+C)"
+  },
+  "editor.find.next": {
+    "message": "Rezultatul următor (Enter)"
+  },
+  "editor.find.no_results": {
+    "message": "Niciun rezultat"
+  },
+  "editor.find.placeholder": {
+    "message": "Căutați"
+  },
+  "editor.find.preserve_case": {
+    "message": "Păstrați majusculele (Alt+P)"
+  },
+  "editor.find.previous": {
+    "message": "Rezultatul anterior (Shift+Enter)"
+  },
+  "editor.find.regex": {
+    "message": "Utilizați expresii regulate (Alt+R)"
+  },
+  "editor.find.replace": {
+    "message": "Înlocuiți (Ctrl+Shift+1)"
+  },
+  "editor.find.replace_all": {
+    "message": "Înlocuiți tot (Ctrl+Alt+Enter)"
+  },
+  "editor.find.replace_placeholder": {
+    "message": "Înlocuiți"
+  },
+  "editor.find.toggle_replace": {
+    "message": "Comutați înlocuirea"
+  },
+  "editor.find.whole_word": {
+    "message": "Potrivire cuvânt întreg (Alt+W)"
+  },
+  "editor.go_to_line.label": {
+    "message": "Linie sau linie:coloană"
+  },
+  "editor.go_to_line.title": {
+    "message": "Salt la linie"
+  },
+  "editor.language.by_file_name": {
+    "message": "După numele fișierului"
+  },
+  "editor.language.plain_text": {
+    "message": "Text simplu"
+  },
+  "editor.menu.edit": {
+    "message": "Editare"
+  },
+  "editor.menu.file": {
+    "message": "Fișier"
+  },
+  "editor.menu.language": {
+    "message": "Limbaj"
+  },
+  "editor.menu.selection": {
+    "message": "Selecție"
+  },
+  "editor.menu.view": {
+    "message": "Vizualizare"
+  },
+  "editor.open.too_large": {
+    "message": "depășește limita de {limit_mb} MB a editorului integrat (Setări, Editare/Vizualizare); Ctrl+Shift+F4 îl editează în cel extern"
+  },
+  "editor.reload.button": {
+    "message": "Reîncărcați"
+  },
+  "editor.reload.failed": {
+    "message": "Nu s-a putut reîncărca: {err}"
+  },
+  "editor.reload.text": {
+    "message": "Modificările nesalvate se vor pierde."
+  },
+  "editor.reload.title": {
+    "message": "Reîncărcați fișierul?"
+  },
+  "editor.reload.unfit": {
+    "message": "Nereîncărcat: {why, select, binary {este binar} other {nu este text UTF-8}}."
+  },
+  "editor.save.admin": {
+    "message": "Salvarea „{name}”"
+  },
+  "editor.save.failed": {
+    "message": "Nu s-a putut salva {path}: {err}"
+  },
+  "editor.save_anyway.button": {
+    "message": "Salvați oricum"
+  },
+  "editor.save_anyway.text": {
+    "message": "Fișierul nu era text: salvarea îl scrie așa cum este afișat, deci tot ce nu era text se modifică definitiv."
+  },
+  "editor.save_anyway.title": {
+    "message": "Îl salvați ca text?"
+  },
+  "editor.selection.add_cursor_above": {
+    "message": "Adăugați cursor deasupra"
+  },
+  "editor.selection.add_cursor_below": {
+    "message": "Adăugați cursor dedesubt"
+  },
+  "editor.selection.delete_lines": {
+    "message": "Ștergeți liniile"
+  },
+  "editor.selection.duplicate_lines": {
+    "message": "Duplicați liniile"
+  },
+  "editor.selection.indent": {
+    "message": "Indentați"
+  },
+  "editor.selection.lowercase": {
+    "message": "minuscule"
+  },
+  "editor.selection.move_lines_down": {
+    "message": "Mutați liniile în jos"
+  },
+  "editor.selection.move_lines_up": {
+    "message": "Mutați liniile în sus"
+  },
+  "editor.selection.outdent": {
+    "message": "Reduceți indentarea"
+  },
+  "editor.selection.select_all": {
+    "message": "Selectați tot"
+  },
+  "editor.selection.select_all_occurrences": {
+    "message": "Selectați toate aparițiile"
+  },
+  "editor.selection.sort_lines_ascending": {
+    "message": "Sortați liniile crescător"
+  },
+  "editor.selection.sort_lines_descending": {
+    "message": "Sortați liniile descrescător"
+  },
+  "editor.selection.title_case": {
+    "message": "Prima Literă Mare"
+  },
+  "editor.selection.toggle_line_comment": {
+    "message": "Comutați comentariul de linie"
+  },
+  "editor.selection.trim_trailing_whitespace": {
+    "message": "Eliminați spațiile de la final"
+  },
+  "editor.selection.uppercase": {
+    "message": "MAJUSCULE"
+  },
+  "editor.send.failed": {
+    "message": "Nu s-a putut trimite înapoi: {err}. Salvați pentru a reîncerca."
+  },
+  "editor.status.modified": {
+    "message": "Modificat"
+  },
+  "editor.status.position": {
+    "message": "Ln {line}, Col {column}"
+  },
+  "editor.status.position_selected": {
+    "message": "Ln {line}, Col {column} ({count, plural, one {selectat: #} few {selectate: #} other {selectate: #}})"
+  },
+  "editor.status.sending": {
+    "message": "Se salvează pe server"
+  },
+  "editor.status.spaces": {
+    "message": "Spații: {size}"
+  },
+  "editor.status.tab_size": {
+    "message": "Dimensiune tab: {size}"
+  },
+  "editor.status.unsent": {
+    "message": "Nu este pe server"
+  },
+  "editor.terminal.not_found": {
+    "message": "nu s-a găsit niciun editor; setați $EDITOR"
+  },
+  "editor.title": {
+    "message": "{path} — Editor"
+  },
+  "editor.unfit.open_anyway": {
+    "message": "Deschideți oricum"
+  },
+  "editor.unfit.text": {
+    "message": "Fișierul nu este afișat în editor deoarece {why, select, binary {este binar} other {nu este text UTF-8}}."
+  },
+  "editor.view.folding": {
+    "message": "Pliere"
+  },
+  "editor.view.indent_guides": {
+    "message": "Ghidaje de indentare"
+  },
+  "editor.view.indent_with_tabs": {
+    "message": "Indentare cu taburi"
+  },
+  "editor.view.line_numbers": {
+    "message": "Numere de linie"
+  },
+  "editor.view.minimap": {
+    "message": "Minihartă"
+  },
+  "editor.view.tab_width": {
+    "message": "Lățime tab {width}"
+  },
+  "editor.view.unfold_all": {
+    "message": "Desfășurați tot"
+  },
+  "editor.view.whitespace": {
+    "message": "Spații albe"
+  },
+  "editor.view.word_wrap": {
+    "message": "Încadrare cuvinte"
+  },
+  "elevate.failed": {
+    "message": "nici ca administrator nu a reușit ({code})"
+  },
+  "elevate.no_consent": {
+    "message": "acordul administratorului nu a fost dat"
+  },
+  "elevate.no_password": {
+    "message": "parola nu a fost introdusă"
+  },
+  "elevate.not_authorised": {
+    "message": "neautorizat"
+  },
+  "elevate.percent_name": {
+    "message": "{path}: un nume cu % nu poate fi gestionat ca administrator; redenumiți-l mai întâi"
+  },
+  "elevate.pkexec_missing": {
+    "message": "pkexec (polkit) nu este instalat"
+  },
+  "file_menu.change_tags_failed": {
+    "message": "Etichetele nu au putut fi schimbate: {err}"
+  },
+  "file_menu.compress": {
+    "message": "{count, plural, =1 {Comprimă „{name}”…} one {Comprimă # articol…} few {Comprimă # articole…} other {Comprimă # de articole…}}"
+  },
+  "file_menu.copy": {
+    "message": "{count, plural, =1 {Copiază „{name}”} one {Copiază # articol} few {Copiază # articole} other {Copiază # de articole}}"
+  },
+  "file_menu.copy_path": {
+    "message": "Copiază calea în clipboard"
+  },
+  "file_menu.delete": {
+    "message": "Șterge"
+  },
+  "file_menu.duplicate": {
+    "message": "Duplică"
+  },
+  "file_menu.duplicate_failed": {
+    "message": "Nu s-a putut duplica: {err}"
+  },
+  "file_menu.edit_tags": {
+    "message": "Etichete…"
+  },
+  "file_menu.get_info": {
+    "message": "Obține informații"
+  },
+  "file_menu.make_alias": {
+    "message": "Creează alias"
+  },
+  "file_menu.make_alias_failed": {
+    "message": "Aliasul nu a putut fi creat: {err}"
+  },
+  "file_menu.move_to_trash": {
+    "message": "Mută în Coș"
+  },
+  "file_menu.new_folder": {
+    "message": "Dosar nou"
+  },
+  "file_menu.open": {
+    "message": "Deschide"
+  },
+  "file_menu.open_failed": {
+    "message": "Nu s-a putut deschide: {err}"
+  },
+  "file_menu.open_with": {
+    "message": "Deschide cu"
+  },
+  "file_menu.open_with_default": {
+    "message": "{app} (implicit)"
+  },
+  "file_menu.paste": {
+    "message": "Lipește"
+  },
+  "file_menu.quick_look": {
+    "message": "{count, plural, =1 {Quick Look „{name}”} one {Quick Look # articol} few {Quick Look # articole} other {Quick Look # de articole}}"
+  },
+  "file_menu.quick_look_failed": {
+    "message": "Quick Look: {err}"
+  },
+  "file_menu.rename": {
+    "message": "Redenumește…"
+  },
+  "file_menu.reveal_failed": {
+    "message": "Nu s-a putut afișa în Finder: {err}"
+  },
+  "file_menu.reveal_in_finder": {
+    "message": "Afișează în Finder"
+  },
+  "file_menu.show_package_contents": {
+    "message": "Afișează conținutul pachetului"
+  },
+  "file_menu.tag_dot.add": {
+    "message": "Adaugă eticheta „{name}”"
+  },
+  "file_menu.tag_dot.remove": {
+    "message": "Elimină eticheta „{name}”"
+  },
+  "file_menu.tags_popover.show_all": {
+    "message": "Afișează toate…"
+  },
+  "file_menu.tags_popover.title": {
+    "message": "{count, plural, =1 {Atribuie etichete pentru „{name}”} one {Atribuie etichete pentru # articol} few {Atribuie etichete pentru # articole} other {Atribuie etichete pentru # de articole}}"
+  },
+  "find.backwards": {
+    "message": "Căutați înapoi"
+  },
+  "find.cancel": {
+    "message": "Anulați"
+  },
+  "find.case_sensitive": {
+    "message": "Sensibil la majuscule"
+  },
+  "find.hex": {
+    "message": "Căutați un șir hexazecimal"
+  },
+  "find.ok": {
+    "message": "OK"
+  },
+  "find.regex": {
+    "message": "RegEx"
+  },
+  "find.text.label": {
+    "message": "Introduceți textul căutat"
+  },
+  "find.title": {
+    "message": "Căutare"
+  },
+  "find.whole_words": {
+    "message": "Doar cuvinte întregi"
+  },
+  "keys.apply": {
+    "message": "Aplicați"
+  },
+  "keys.cancel": {
+    "message": "Anulați"
+  },
+  "keys.clear.tooltip": {
+    "message": "Nicio tastă"
+  },
+  "keys.column.alternate": {
+    "message": "Alternativă"
+  },
+  "keys.column.command": {
+    "message": "Comandă"
+  },
+  "keys.column.shortcut": {
+    "message": "Comandă rapidă"
+  },
+  "keys.custom": {
+    "message": "Personalizat"
+  },
+  "keys.delete_set": {
+    "message": "Ștergeți"
+  },
+  "keys.note.custom_replaced": {
+    "message": "Tastele dvs. au fost înlocuite cu cele din {name}; „Salvați ca” le păstrează."
+  },
+  "keys.note.deleted": {
+    "message": "{name} este șters; OK sau Aplicați confirmă ștergerea."
+  },
+  "keys.note.moved": {
+    "message": "{key} execută acum {command}, nu mai execută {other}."
+  },
+  "keys.note.name_reserved": {
+    "message": "„{name}” este numele unei presetări; alegeți altul."
+  },
+  "keys.note.press_new_key": {
+    "message": "Apăsați tasta nouă; Esc o lasă neschimbată."
+  },
+  "keys.note.saved": {
+    "message": "Salvat ca {name}; OK sau Aplicați îl păstrează."
+  },
+  "keys.note.set": {
+    "message": "{key} execută acum {command}."
+  },
+  "keys.note.taken_by_system": {
+    "message": "{key} este ocupată de {by}, deci nu ajunge niciodată la Spark Commander."
+  },
+  "keys.ok": {
+    "message": "OK"
+  },
+  "keys.press_key": {
+    "message": "Apăsați o tastă…"
+  },
+  "keys.reserved.application_launcher": {
+    "message": "{system}: lansatorul de aplicații"
+  },
+  "keys.reserved.close_window": {
+    "message": "{system}: închiderea ferestrei"
+  },
+  "keys.reserved.close_window_or_tab": {
+    "message": "{system}: închiderea ferestrei sau a filei"
+  },
+  "keys.reserved.dock": {
+    "message": "{system}: Dock"
+  },
+  "keys.reserved.floating_window": {
+    "message": "{system}: fereastra flotantă"
+  },
+  "keys.reserved.force_quit": {
+    "message": "{system}: forțarea ieșirii"
+  },
+  "keys.reserved.hide_program": {
+    "message": "{system}: ascunderea programului"
+  },
+  "keys.reserved.input_source": {
+    "message": "{system}: sursa de intrare"
+  },
+  "keys.reserved.keyboard_access": {
+    "message": "{system}: accesul de la tastatură"
+  },
+  "keys.reserved.keyboard_navigation": {
+    "message": "{system}: navigarea de la tastatură"
+  },
+  "keys.reserved.krunner": {
+    "message": "{system}: KRunner"
+  },
+  "keys.reserved.lock_screen": {
+    "message": "{system}: blocarea ecranului"
+  },
+  "keys.reserved.log_out": {
+    "message": "{system}: deconectarea"
+  },
+  "keys.reserved.maximize_window": {
+    "message": "{system}: maximizarea ferestrei"
+  },
+  "keys.reserved.menu_bar": {
+    "message": "{system}: bara de meniu"
+  },
+  "keys.reserved.minimize": {
+    "message": "{system}: minimizarea"
+  },
+  "keys.reserved.mission_control": {
+    "message": "{system}: Mission Control"
+  },
+  "keys.reserved.move_window": {
+    "message": "{system}: mutarea ferestrei"
+  },
+  "keys.reserved.next_window": {
+    "message": "{system}: fereastra următoare"
+  },
+  "keys.reserved.present_windows": {
+    "message": "{system}: Prezentare ferestre"
+  },
+  "keys.reserved.present_windows_all": {
+    "message": "{system}: Prezentare ferestre (toate desktopurile)"
+  },
+  "keys.reserved.present_windows_class": {
+    "message": "{system}: Prezentare ferestre (clasa ferestrei)"
+  },
+  "keys.reserved.program_windows": {
+    "message": "{system}: ferestrele programului"
+  },
+  "keys.reserved.quit": {
+    "message": "{system}: ieșirea"
+  },
+  "keys.reserved.resize_window": {
+    "message": "{system}: redimensionarea ferestrei"
+  },
+  "keys.reserved.restore_window": {
+    "message": "{system}: restabilirea ferestrei"
+  },
+  "keys.reserved.run_command": {
+    "message": "{system}: rularea unei comenzi"
+  },
+  "keys.reserved.screenshot": {
+    "message": "{system}: captura de ecran"
+  },
+  "keys.reserved.security_screen": {
+    "message": "{system}: ecranul de securitate"
+  },
+  "keys.reserved.show_desktop": {
+    "message": "{system}: afișarea desktopului"
+  },
+  "keys.reserved.space_left": {
+    "message": "{system}: spațiul din stânga"
+  },
+  "keys.reserved.space_right": {
+    "message": "{system}: spațiul din dreapta"
+  },
+  "keys.reserved.spotlight": {
+    "message": "{system}: Spotlight"
+  },
+  "keys.reserved.start_menu": {
+    "message": "{system}: meniul Start"
+  },
+  "keys.reserved.status_menus": {
+    "message": "{system}: meniurile de stare"
+  },
+  "keys.reserved.suspend_compositing": {
+    "message": "{system}: suspendarea compoziției"
+  },
+  "keys.reserved.switch_program_windows": {
+    "message": "{system}: comutarea între ferestrele programului"
+  },
+  "keys.reserved.switch_programs": {
+    "message": "{system}: comutarea între programe"
+  },
+  "keys.reserved.switch_system_controls": {
+    "message": "{system}: comutarea între controalele sistemului"
+  },
+  "keys.reserved.switch_to_desktop": {
+    "message": "{system}: comutarea la desktopul {number}"
+  },
+  "keys.reserved.switch_windows": {
+    "message": "{system}: comutarea între ferestre"
+  },
+  "keys.reserved.system_monitor": {
+    "message": "{system}: Monitor de sistem"
+  },
+  "keys.reserved.task_manager": {
+    "message": "{system}: Manager de activități"
+  },
+  "keys.reserved.text_console": {
+    "message": "{system}: comutarea la o consolă text"
+  },
+  "keys.reserved.toolbar": {
+    "message": "{system}: bara de instrumente"
+  },
+  "keys.reserved.window_menu": {
+    "message": "{system}: meniul ferestrei"
+  },
+  "keys.reserved.workspace_down": {
+    "message": "{system}: spațiul de lucru de dedesubt"
+  },
+  "keys.reserved.workspace_left": {
+    "message": "{system}: spațiul de lucru din stânga"
+  },
+  "keys.reserved.workspace_right": {
+    "message": "{system}: spațiul de lucru din dreapta"
+  },
+  "keys.reserved.workspace_up": {
+    "message": "{system}: spațiul de lucru de deasupra"
+  },
+  "keys.reset.tooltip": {
+    "message": "Reveniți la tastele din {preset}"
+  },
+  "keys.reset_all": {
+    "message": "Resetați tot"
+  },
+  "keys.save_as.button": {
+    "message": "Salvați ca…"
+  },
+  "keys.save_as.default_name": {
+    "message": "Tastele mele"
+  },
+  "keys.save_as.label": {
+    "message": "Nume:"
+  },
+  "keys.save_as.title": {
+    "message": "Salvați comenzile rapide"
+  },
+  "keys.search.placeholder": {
+    "message": "Căutați o comandă sau o tastă"
+  },
+  "keys.set_label": {
+    "message": "Taste:"
+  },
+  "keys.taken_by.tooltip": {
+    "message": "Ocupată de {by}"
+  },
+  "keys.title": {
+    "message": "Comenzi rapide"
+  },
+  "main.admin.button": {
+    "message": "Ca administrator"
+  },
+  "main.admin.deleting": {
+    "message": "{count, plural, one {Ștergerea unui element} few {Ștergerea a # elemente} other {Ștergerea a # de elemente}}"
+  },
+  "main.admin.failed": {
+    "message": "Ca administrator: {err}"
+  },
+  "main.admin.making": {
+    "message": "Crearea folderului „{name}”"
+  },
+  "main.admin.offer": {
+    "message": "{what}: permisiune refuzată. Ca administrator, sistemul cere parola."
+  },
+  "main.admin.offer_delete": {
+    "message": "{what}: permisiune refuzată. Ca administrator, sistemul cere parola. Ce se șterge astfel dispare definitiv."
+  },
+  "main.admin.title": {
+    "message": "Permisiune refuzată"
+  },
+  "main.delete.from_archive": {
+    "message": "{kind, select, folder {Ștergeți folderul „{name}” din {archive}? Acțiunea nu poate fi anulată.} file {Ștergeți fișierul „{name}” din {archive}? Acțiunea nu poate fi anulată.} other {Ștergeți {count, plural, one {# element} few {# elemente} other {# de elemente}} din {archive}? Acțiunea nu poate fi anulată.}}"
+  },
+  "main.delete.on_server": {
+    "message": "{kind, select, folder {Ștergeți folderul „{name}” de pe {server}? Acțiunea nu poate fi anulată.} file {Ștergeți fișierul „{name}” de pe {server}? Acțiunea nu poate fi anulată.} other {Ștergeți {count, plural, one {# element} few {# elemente} other {# de elemente}} de pe {server}? Acțiunea nu poate fi anulată.}}"
+  },
+  "main.delete.permanently": {
+    "message": "{kind, select, folder {Ștergeți definitiv folderul „{name}”? Acțiunea nu poate fi anulată.} file {Ștergeți definitiv fișierul „{name}”? Acțiunea nu poate fi anulată.} other {Ștergeți definitiv {count, plural, one {# element} few {# elemente} other {# de elemente}}? Acțiunea nu poate fi anulată.}}"
+  },
+  "main.delete.title": {
+    "message": "Ștergeți"
+  },
+  "main.delete.title_permanently": {
+    "message": "Ștergeți definitiv"
+  },
+  "main.delete.to_trash": {
+    "message": "{kind, select, folder {Mutați folderul „{name}” la coșul de gunoi?} file {Mutați fișierul „{name}” la coșul de gunoi?} other {Mutați {count, plural, one {# element} few {# elemente} other {# de elemente}} la coșul de gunoi?}}"
+  },
+  "main.download.edit": {
+    "message": "Descărcare {file} pentru editare"
+  },
+  "main.download.view": {
+    "message": "Descărcare {file} pentru vizualizare"
+  },
+  "main.error.make_folder": {
+    "message": "Folderul nu a putut fi creat: {err}"
+  },
+  "main.error.read_settings": {
+    "message": "Setările nu au putut fi citite: {err}"
+  },
+  "main.error.read_tabs": {
+    "message": "Filele deschise nu au putut fi citite: {err}"
+  },
+  "main.error.read_workspaces": {
+    "message": "Spațiile de lucru nu au putut fi citite: {err}"
+  },
+  "main.error.save_settings": {
+    "message": "Setările nu au putut fi salvate: {err}"
+  },
+  "main.folder_tree.home": {
+    "message": "Personal"
+  },
+  "main.go.no_such_folder": {
+    "message": "{path}: acest folder nu există pe acest computer"
+  },
+  "main.new_folder.label": {
+    "message": "Folder nou (director):"
+  },
+  "main.new_folder.title": {
+    "message": "Folder nou"
+  },
+  "main.sync_browsing.lost": {
+    "message": "{err}. Navigarea sincronizată este dezactivată."
+  },
+  "main.tool.needs_file": {
+    "message": "Cursorul nu este pe niciun fișier: %N, %O și %E au nevoie de unul."
+  },
+  "main.tool.needs_local_folder": {
+    "message": "Celălalt panou afișează un server sau o arhivă: %T are nevoie de un folder pe acest computer."
+  },
+  "main.undo.done": {
+    "message": "{way, select, redo {Refăcut: {title}} other {Anulat: {title}}}"
+  },
+  "main.undo.failed": {
+    "message": "{way, select, redo {Nu s-a putut reface „{title}”: {err}} other {Nu s-a putut anula „{title}”: {err}}}"
+  },
+  "main.undo.nothing": {
+    "message": "{way, select, redo {Nimic de refăcut.} other {Nimic de anulat.}}"
+  },
+  "main.undo.queued": {
+    "message": "{way, select, redo {În coadă pentru refacere: {title}} other {În coadă pentru anulare: {title}}}"
+  },
+  "mark.compare.marked": {
+    "message": "{count, plural, one {# fișier marcat: mai nou sau lipsă în partea cealaltă.} few {# fișiere marcate: mai noi sau lipsă în partea cealaltă.} other {# de fișiere marcate: mai noi sau lipsă în partea cealaltă.}}"
+  },
+  "mark.compare.same": {
+    "message": "Folderele au aceleași fișiere."
+  },
+  "mark.load_selection.label": {
+    "message": "Selectați numele listate în fișierul:"
+  },
+  "mark.load_selection.title": {
+    "message": "Încărcați selecția"
+  },
+  "mark.save_selection.label": {
+    "message": "Salvați numele selectate în fișierul:"
+  },
+  "mark.save_selection.title": {
+    "message": "Salvați selecția"
+  },
+  "mark.select_group.label": {
+    "message": "Selectați fișierele (*.txt *.md; o mască de folder se termină cu /):"
+  },
+  "mark.select_group.title": {
+    "message": "Selectați un grup"
+  },
+  "mark.selection_file.not_local": {
+    "message": "Fișierele de selecție sunt păstrate pe acest computer, în afara arhivelor."
+  },
+  "mark.unselect_group.label": {
+    "message": "Deselectați fișierele (*.txt *.md; o mască de folder se termină cu /):"
+  },
+  "mark.unselect_group.title": {
+    "message": "Deselectați un grup"
+  },
+  "media.cannot_play": {
+    "message": "Nu poate fi redat: {err}"
+  },
+  "media.cannot_play_as_text": {
+    "message": "Nu poate fi redat: {err}. Tasta 1 îl afișează ca text."
+  },
+  "media.continuing": {
+    "message": "Se continuă de la {time}"
+  },
+  "media.error.missing": {
+    "message": "libmpv lipsește: Setări > Suplimente îl descarcă (o versiune compilată din sursă: vendor/mpv/{script})"
+  },
+  "media.error.not_started": {
+    "message": "libmpv nu a putut porni"
+  },
+  "media.error.too_long": {
+    "message": "{path}: mpv a durat prea mult"
+  },
+  "media.error.unsupported_system": {
+    "message": "deocamdată video se redă doar pe Linux, macOS și Windows"
+  },
+  "menu.archive": {
+    "message": "Arhivă"
+  },
+  "menu.associations": {
+    "message": "Asocieri"
+  },
+  "menu.button_bar": {
+    "message": "Bara de butoane"
+  },
+  "menu.checksums": {
+    "message": "Sume de control"
+  },
+  "menu.commands": {
+    "message": "Comenzi"
+  },
+  "menu.compare_directories": {
+    "message": "Comparați folderele"
+  },
+  "menu.configuration": {
+    "message": "Configurare"
+  },
+  "menu.copy_names": {
+    "message": "Copiați numele"
+  },
+  "menu.files": {
+    "message": "Fișiere"
+  },
+  "menu.filter": {
+    "message": "Filtru"
+  },
+  "menu.go": {
+    "message": "Navigare"
+  },
+  "menu.help": {
+    "message": "Ajutor"
+  },
+  "menu.mark": {
+    "message": "Marcare"
+  },
+  "menu.other": {
+    "message": "Altele"
+  },
+  "menu.recently_closed_tabs": {
+    "message": "File închise recent"
+  },
+  "menu.selection": {
+    "message": "Selecție"
+  },
+  "menu.show": {
+    "message": "Afișare"
+  },
+  "menu.sidebar": {
+    "message": "Bară laterală"
+  },
+  "menu.sort": {
+    "message": "Sortare"
+  },
+  "menu.split_and_combine": {
+    "message": "Divizare și combinare"
+  },
+  "menu.tabs": {
+    "message": "File"
+  },
+  "menu.tools": {
+    "message": "Instrumente"
+  },
+  "menu.workspaces": {
+    "message": "Spații de lucru"
+  },
+  "menus.hide_app": {
+    "message": "Ascunde Spark Commander"
+  },
+  "menus.hide_others": {
+    "message": "Ascunde-le pe celelalte"
+  },
+  "menus.minimize": {
+    "message": "Minimizează"
+  },
+  "menus.quit_app": {
+    "message": "Ieși din Spark Commander"
+  },
+  "menus.services": {
+    "message": "Servicii"
+  },
+  "menus.show_all": {
+    "message": "Afișează-le pe toate"
+  },
+  "menus.zoom": {
+    "message": "Zoom"
+  },
+  "name_dialog.cancel": {
+    "message": "Anulați"
+  },
+  "name_dialog.ok": {
+    "message": "OK"
+  },
+  "operations.clear": {
+    "message": "Eliminați finalizatele"
+  },
+  "operations.duration.seconds": {
+    "message": "{seconds} s"
+  },
+  "operations.empty": {
+    "message": "Nicio operație."
+  },
+  "operations.job.answer": {
+    "message": "Se așteaptă răspunsul dvs."
+  },
+  "operations.job.bytes": {
+    "message": "{done} din {total}"
+  },
+  "operations.job.cancel_tooltip": {
+    "message": "Anulați"
+  },
+  "operations.job.cancelled": {
+    "message": "Anulat"
+  },
+  "operations.job.counting": {
+    "message": "Numărare: {count, plural, one {# fișier} few {# fișiere} other {# de fișiere}}"
+  },
+  "operations.job.done": {
+    "message": "Gata"
+  },
+  "operations.job.done_skipped": {
+    "message": "Gata, {count, plural, one {# fișier omis} few {# fișiere omise} other {# de fișiere omise}}"
+  },
+  "operations.job.failed": {
+    "message": "Eșuat"
+  },
+  "operations.job.files": {
+    "message": "{files} / {count, plural, one {# fișier} few {# fișiere} other {# de fișiere}}"
+  },
+  "operations.job.left": {
+    "message": "Rămas: {time}"
+  },
+  "operations.job.running": {
+    "message": "Rulează"
+  },
+  "operations.job.waiting": {
+    "message": "În așteptare"
+  },
+  "operations.menu.cancel": {
+    "message": "Anulați"
+  },
+  "operations.menu.clear": {
+    "message": "Eliminați finalizatele"
+  },
+  "operations.menu.move_down": {
+    "message": "Mutați în jos"
+  },
+  "operations.menu.move_up": {
+    "message": "Mutați în sus"
+  },
+  "operations.settings_tooltip": {
+    "message": "Setările cozii de operații"
+  },
+  "operations.summary.failed": {
+    "message": "{count, plural, one {eșuate: #} few {eșuate: #} other {eșuate: #}}"
+  },
+  "operations.summary.running": {
+    "message": "{count, plural, one {rulează: #} few {rulează: #} other {rulează: #}}"
+  },
+  "operations.summary.waiting": {
+    "message": "{count, plural, one {în așteptare: #} few {în așteptare: #} other {în așteptare: #}}"
+  },
+  "ops.as_administrator.failed": {
+    "message": "Ca administrator: {err}"
+  },
+  "ops.as_administrator.progress": {
+    "message": "Ca administrator…"
+  },
+  "ops.delete.title_many": {
+    "message": "Ștergere {count, plural, one {# element} few {# elemente} other {# de elemente}} din {folder}"
+  },
+  "ops.delete.title_one": {
+    "message": "Ștergere „{name}”"
+  },
+  "ops.delete.trash_title_many": {
+    "message": "Mutare {count, plural, one {# element} few {# elemente} other {# de elemente}} din {folder} la coșul de gunoi"
+  },
+  "ops.delete.trash_title_one": {
+    "message": "Mutare „{name}” la coșul de gunoi"
+  },
+  "ops.error.file_in_the_way": {
+    "message": "există deja un fișier cu acest nume"
+  },
+  "ops.error.into_itself": {
+    "message": "nu poate fi copiat în el însuși"
+  },
+  "ops.exists_already": {
+    "message": "{name} există deja"
+  },
+  "ops.link.dialog_title": {
+    "message": "Creați o legătură"
+  },
+  "ops.link.failed": {
+    "message": "Legătura nu a putut fi creată: {err}"
+  },
+  "ops.link.kind.hard": {
+    "message": "Legătură fizică"
+  },
+  "ops.link.kind.junction": {
+    "message": "Joncțiune"
+  },
+  "ops.link.kind.shortcut": {
+    "message": "Comandă rapidă (.lnk)"
+  },
+  "ops.link.kind.symbolic": {
+    "message": "Legătură simbolică"
+  },
+  "ops.link.label_many": {
+    "message": "Legături către {count, plural, one {# element} few {cele # elemente} other {cele # de elemente}}, în folderul:"
+  },
+  "ops.link.label_one": {
+    "message": "Legătură către „{name}” ca:"
+  },
+  "ops.link.making": {
+    "message": "Crearea {kind, select, symbolic {legăturii simbolice} hard {legăturii fizice} junction {joncțiunii} other {comenzii rapide (.lnk)}}"
+  },
+  "ops.link.needs_admin": {
+    "message": "legăturile simbolice necesită un administrator sau Modul dezvoltator"
+  },
+  "ops.link.thread_failed": {
+    "message": "firul de execuție al comenzii rapide a eșuat"
+  },
+  "ops.link.title_many": {
+    "message": "{kind, select, symbolic {Legături simbolice} hard {Legături fizice} junction {Joncțiuni} other {Comenzi rapide (.lnk)}} către {count, plural, one {# element} few {# elemente} other {# de elemente}} în {folder}"
+  },
+  "ops.link.title_one": {
+    "message": "{kind, select, symbolic {Legătură simbolică} hard {Legătură fizică} junction {Joncțiune} other {Comandă rapidă (.lnk)}} către „{name}” în {folder}"
+  },
+  "ops.link.windows_only": {
+    "message": "joncțiunile și comenzile rapide există doar în Windows"
+  },
+  "ops.redo.title": {
+    "message": "Refacere: {what}"
+  },
+  "ops.title.many": {
+    "message": "{kind, select, copy {Copiere} other {Mutare}} {count, plural, one {# element} few {# elemente} other {# de elemente}} în {target}"
+  },
+  "ops.title.one": {
+    "message": "{kind, select, copy {Copiere} other {Mutare}} „{name}” în {target}"
+  },
+  "ops.undo.not_a_server": {
+    "message": "{url}: nu este adresa unui server"
+  },
+  "ops.undo.not_in_trash": {
+    "message": "nu mai sunt în coșul de gunoi"
+  },
+  "ops.undo.restore_title": {
+    "message": "{title}: ce a fost suprascris, readus din coșul de gunoi"
+  },
+  "ops.undo.title": {
+    "message": "Anulare: {what}"
+  },
+  "pack.cancel": {
+    "message": "Anulați"
+  },
+  "pack.compression": {
+    "message": "Compresie:"
+  },
+  "pack.dialog_title": {
+    "message": "Arhivați fișierele"
+  },
+  "pack.encrypt": {
+    "message": "Criptați cu parola"
+  },
+  "pack.format": {
+    "message": "Format:"
+  },
+  "pack.label": {
+    "message": "Arhivați {count, plural, one {# element} few {# elemente} other {# de elemente}} în arhiva:"
+  },
+  "pack.level.fastest": {
+    "message": "Cea mai rapidă"
+  },
+  "pack.level.maximum": {
+    "message": "Maximă"
+  },
+  "pack.level.normal": {
+    "message": "Normală"
+  },
+  "pack.level.store": {
+    "message": "Fără compresie"
+  },
+  "pack.level.ultra": {
+    "message": "Ultra"
+  },
+  "pack.local_only": {
+    "message": "{what, select, packing {Arhivarea} unpacking {Dezarhivarea} testing {Testarea} creating_checksums {Crearea sumelor de control} making_links {Crearea legăturilor} verifying_checksums {Verificarea sumelor de control} splitting {Divizarea} combining {Combinarea} other {Această funcție}} funcționează doar cu fișierele acestui computer, în afara arhivelor."
+  },
+  "pack.move_files": {
+    "message": "Mutați în arhivă (ștergeți fișierele arhivate)"
+  },
+  "pack.needs_password": {
+    "message": "este necesară o parolă"
+  },
+  "pack.ok": {
+    "message": "OK"
+  },
+  "pack.password_missing": {
+    "message": "Tastați parola sau debifați „Criptați cu parola”."
+  },
+  "pack.separate": {
+    "message": "O arhivă pentru fiecare fișier sau folder selectat"
+  },
+  "pack.split": {
+    "message": "Divizați în volume de"
+  },
+  "pack.split_unit": {
+    "message": "MB"
+  },
+  "pack.test.broken": {
+    "message": "{broken, plural, one {# din {count} deteriorată} few {# din {count} deteriorate} other {# din {count} deteriorate}}"
+  },
+  "pack.test.choose": {
+    "message": "Alegeți arhivele de testat."
+  },
+  "pack.test.ok": {
+    "message": "{count, plural, one {# arhivă OK} few {# arhive OK} other {# de arhive OK}}"
+  },
+  "pack.test.title_many": {
+    "message": "Testare {count, plural, one {# arhivă} few {# arhive} other {# de arhive}}"
+  },
+  "pack.test.title_one": {
+    "message": "Testare „{name}”"
+  },
+  "pack.title.many": {
+    "message": "Arhivare {count, plural, one {# element} few {# elemente} other {# de elemente}} în {archive}"
+  },
+  "pack.title.many_separate": {
+    "message": "Arhivare {count, plural, one {# element} few {# elemente} other {# de elemente}} în arhive {format} separate"
+  },
+  "pack.title.one": {
+    "message": "Arhivare „{name}” în {archive}"
+  },
+  "pack.title.one_separate": {
+    "message": "Arhivare „{name}” în arhive {format} separate"
+  },
+  "pack.unpack.choose": {
+    "message": "Alegeți arhivele de dezarhivat."
+  },
+  "pack.unpack.dialog_title": {
+    "message": "Dezarhivați fișierele"
+  },
+  "pack.unpack.label": {
+    "message": "Dezarhivați {count, plural, one {# arhivă} few {# arhive} other {# de arhive}} în:"
+  },
+  "pack.unpack.mask": {
+    "message": "Doar fișierele:"
+  },
+  "pack.unpack.overwrite": {
+    "message": "Suprascrieți fișierele existente (altfel sunt păstrate)"
+  },
+  "pack.unpack.password": {
+    "message": "Parolă:"
+  },
+  "pack.unpack.separate": {
+    "message": "Fiecare arhivă într-un folder cu numele ei"
+  },
+  "pack.unpack.title_many": {
+    "message": "Dezarhivare {count, plural, one {# arhivă} few {# arhive} other {# de arhive}} în {target}"
+  },
+  "pack.unpack.title_one": {
+    "message": "Dezarhivare „{name}” în {target}"
+  },
+  "pack.unpack.with_paths": {
+    "message": "Păstrați folderele stocate în arhivă"
+  },
+  "pack.volume_invalid": {
+    "message": "Dimensiunea volumului trebuie să fie un număr de MB."
+  },
+  "pack.wrong_password": {
+    "message": "parolă greșită"
+  },
+  "panel.admin.renaming": {
+    "message": "Redenumirea în „{name}”"
+  },
+  "panel.clipboard.copied": {
+    "message": "{count, plural, one {# element copiat: Ctrl+V îl lipește.} few {# elemente copiate: Ctrl+V le lipește.} other {# de elemente copiate: Ctrl+V le lipește.}}"
+  },
+  "panel.clipboard.cut": {
+    "message": "{count, plural, one {# element decupat: Ctrl+V îl lipește.} few {# elemente decupate: Ctrl+V le lipește.} other {# de elemente decupate: Ctrl+V le lipește.}}"
+  },
+  "panel.clipboard.no_cut_in_archive": {
+    "message": "Fișierele nu pot fi decupate din arhive; Ctrl+C le copiază."
+  },
+  "panel.clipboard.no_files": {
+    "message": "Clipboardul nu conține fișiere."
+  },
+  "panel.clipboard.no_paste_in_archive": {
+    "message": "Fișierele nu pot fi lipite încă în arhive."
+  },
+  "panel.clipboard.same_folder": {
+    "message": "Sunt deja în acest folder: Ctrl+V le lipește în altul."
+  },
+  "panel.column.attr": {
+    "message": "Atr"
+  },
+  "panel.column.date": {
+    "message": "Dată"
+  },
+  "panel.column.ext": {
+    "message": "Ext"
+  },
+  "panel.column.name": {
+    "message": "Nume"
+  },
+  "panel.column.size": {
+    "message": "Dimensiune"
+  },
+  "panel.disconnect": {
+    "message": "Deconectați"
+  },
+  "panel.drag.items": {
+    "message": "{count, plural, one {# element} few {# elemente} other {# de elemente}}"
+  },
+  "panel.error.archive_not_updatable": {
+    "message": "{name}: 7-Zip modifică direct doar arhivele 7z, zip și tar, nu și pe aceasta"
+  },
+  "panel.error.archive_on_server": {
+    "message": "{name}: arhivele de pe servere nu pot fi modificate încă"
+  },
+  "panel.error.branch_view_local": {
+    "message": "Vizualizarea ramură listează doar folderele acestui computer"
+  },
+  "panel.error.exists": {
+    "message": "{name} există deja"
+  },
+  "panel.error.folder_in_the_way": {
+    "message": "există deja un folder cu acest nume"
+  },
+  "panel.error.inside_archive": {
+    "message": "încă nu este posibil în arhive"
+  },
+  "panel.error.make_file": {
+    "message": "Fișierul nu a putut fi creat: {err}"
+  },
+  "panel.error.no_name": {
+    "message": "nu a fost introdus niciun nume"
+  },
+  "panel.error.not_a_name": {
+    "message": "{name}: nu este un nume valid"
+  },
+  "panel.error.other_drive": {
+    "message": "celălalt panou a trecut pe altă unitate"
+  },
+  "panel.error.rename": {
+    "message": "Nu s-a putut redenumi: {err}"
+  },
+  "panel.filter.custom.label": {
+    "message": "Tipuri de fișiere, de ex. *.txt *.md (după |, cele excluse):"
+  },
+  "panel.filter.custom.title": {
+    "message": "Afișați fișierele"
+  },
+  "panel.filter.programs": {
+    "message": "programe"
+  },
+  "panel.filter.selected_files": {
+    "message": "fișiere selectate"
+  },
+  "panel.found.branch_view": {
+    "message": "Vizualizare ramură:"
+  },
+  "panel.found.search_results": {
+    "message": "Rezultatele căutării:"
+  },
+  "panel.new_text_file.label": {
+    "message": "Numele fișierului, deschis în editor:"
+  },
+  "panel.new_text_file.title": {
+    "message": "Fișier text nou"
+  },
+  "panel.opening.cancel": {
+    "message": "Anulați"
+  },
+  "panel.opening.reading": {
+    "message": "Se citește…"
+  },
+  "panel.opening.title": {
+    "message": "Se deschide arhiva"
+  },
+  "panel.quick_filter.hint": {
+    "message": "ascunde ce nu se potrivește; Escape afișează tot"
+  },
+  "panel.quick_filter.label": {
+    "message": "Filtru:"
+  },
+  "panel.quick_search.label": {
+    "message": "Căutare:"
+  },
+  "panel.size.app": {
+    "message": "<APP>"
+  },
+  "panel.size.b": {
+    "message": "{size} B"
+  },
+  "panel.size.dir": {
+    "message": "<DIR>"
+  },
+  "panel.size.gb": {
+    "message": "{size} GB"
+  },
+  "panel.size.kb": {
+    "message": "{size} KB"
+  },
+  "panel.size.mb": {
+    "message": "{size} MB"
+  },
+  "panel.size.tb": {
+    "message": "{size} TB"
+  },
+  "panel.space.bytes": {
+    "message": "{count, plural, one {{size} octet ({human})} few {{size} octeți ({human})} other {{size} de octeți ({human})}}"
+  },
+  "panel.space.close": {
+    "message": "Închideți"
+  },
+  "panel.space.counting": {
+    "message": "Se numără…"
+  },
+  "panel.space.done": {
+    "message": "Gata."
+  },
+  "panel.space.files": {
+    "message": "Fișiere:"
+  },
+  "panel.space.folders": {
+    "message": "Foldere:"
+  },
+  "panel.space.in_archive": {
+    "message": "În arhive, coloana Dimensiune conține deja dimensiunile."
+  },
+  "panel.space.title": {
+    "message": "Calculați spațiul ocupat"
+  },
+  "panel.space.total": {
+    "message": "Dimensiune totală:"
+  },
+  "panel.space.unreadable": {
+    "message": "{count, plural, one {# element nu a putut fi citit.} few {# elemente nu au putut fi citite.} other {# de elemente nu au putut fi citite.}}"
+  },
+  "panel.status": {
+    "message": "{marked_size} k / {size} k în {marked_files} / {files, plural, one {# fișier} few {# fișiere} other {# de fișiere}}, {marked_folders} / {folders, plural, one {# folder} few {# foldere} other {# de foldere}}"
+  },
+  "panel.sync_browsing.stop": {
+    "message": "Navigare sincronizată (clic pentru oprire)"
+  },
+  "panel.undo.rename": {
+    "message": "Redenumire „{name}” în „{to}”"
+  },
+  "passwords.about.set": {
+    "message": "Cu o parolă principală, parolele salvate se deschid pe alt computer după ce o tastați acolo, cu folderul de setări copiat. Dacă o uitați, se pierd doar parolele salvate: le tastați din nou."
+  },
+  "passwords.about.unlock": {
+    "message": "Setările provin de pe alt computer sau acesta nu are un depozit de chei: parola principală deschide aici parolele salvate."
+  },
+  "passwords.cancel": {
+    "message": "Anulați"
+  },
+  "passwords.done.set": {
+    "message": "Parola principală este setată."
+  },
+  "passwords.done.unlocked": {
+    "message": "Parolele salvate sunt deschise."
+  },
+  "passwords.error.locked": {
+    "message": "parolele salvate sunt blocate: deblocați-le cu parola principală (Configurare › Setări › Parole)"
+  },
+  "passwords.error.no_master": {
+    "message": "nu este setată nicio parolă principală"
+  },
+  "passwords.error.no_random": {
+    "message": "nu există numere aleatorii"
+  },
+  "passwords.error.not_opened": {
+    "message": "parola pentru {what} nu poate fi deschisă"
+  },
+  "passwords.error.not_sealed": {
+    "message": "parola nu a putut fi criptată"
+  },
+  "passwords.error.salt_damaged": {
+    "message": "sarea parolei principale este deteriorată"
+  },
+  "passwords.error.wrong": {
+    "message": "parola principală este greșită"
+  },
+  "passwords.field.again": {
+    "message": "Din nou"
+  },
+  "passwords.field.master": {
+    "message": "Parola principală"
+  },
+  "passwords.locked_note": {
+    "message": "Parolele salvate sunt blocate pe acest computer: parola principală le deschide."
+  },
+  "passwords.ok": {
+    "message": "OK"
+  },
+  "passwords.problem.differ": {
+    "message": "Cele două nu coincid."
+  },
+  "passwords.problem.empty": {
+    "message": "Tastați parola principală."
+  },
+  "passwords.title.set": {
+    "message": "Parolă principală"
+  },
+  "passwords.title.unlock": {
+    "message": "Deblocați parolele salvate"
+  },
+  "passwords.unlock_button": {
+    "message": "Deblocați…"
+  },
+  "passwords.working": {
+    "message": "Se lucrează…"
+  },
+  "properties.accessed": {
+    "message": "Accesat:"
+  },
+  "properties.change_attributes": {
+    "message": "Schimbați atributele..."
+  },
+  "properties.close": {
+    "message": "Închideți"
+  },
+  "properties.contents": {
+    "message": "{file_count, plural, one {{files} fișier} few {{files} fișiere} other {{files} de fișiere}}, {folder_count, plural, one {{folders} folder} few {{folders} foldere} other {{folders} de foldere}}, {count, plural, one {{bytes} octet} few {{bytes} octeți} other {{bytes} de octeți}} ({size})"
+  },
+  "properties.contents_counting": {
+    "message": "{file_count, plural, one {{files} fișier} few {{files} fișiere} other {{files} de fișiere}}, {folder_count, plural, one {{folders} folder} few {{folders} foldere} other {{folders} de foldere}}, {count, plural, one {{bytes} octet} few {{bytes} octeți} other {{bytes} de octeți}} ({size}) (se numără…)"
+  },
+  "properties.contents_label": {
+    "message": "Conținut:"
+  },
+  "properties.created": {
+    "message": "Creat:"
+  },
+  "properties.dialog_title": {
+    "message": "Proprietăți"
+  },
+  "properties.in_archive": {
+    "message": "Lista arhivei arată tot ce se știe despre fișierele sale."
+  },
+  "properties.kind.file": {
+    "message": "Fișier"
+  },
+  "properties.kind.folder": {
+    "message": "Folder"
+  },
+  "properties.kind.link": {
+    "message": "Legătură"
+  },
+  "properties.kind.link_to": {
+    "message": "Legătură către {target}"
+  },
+  "properties.location": {
+    "message": "Locație:"
+  },
+  "properties.modified": {
+    "message": "Modificat:"
+  },
+  "properties.name": {
+    "message": "Nume:"
+  },
+  "properties.no_system_dialog": {
+    "message": "încă nu există aici un dialog de proprietăți al sistemului"
+  },
+  "properties.owner": {
+    "message": "Proprietar / grup:"
+  },
+  "properties.permissions": {
+    "message": "Permisiuni:"
+  },
+  "properties.size": {
+    "message": "{count, plural, one {{bytes} octet ({size})} few {{bytes} octeți ({size})} other {{bytes} de octeți ({size})}}"
+  },
+  "properties.size_label": {
+    "message": "Dimensiune:"
+  },
+  "properties.type": {
+    "message": "Tip:"
+  },
+  "quick_open.go_to": {
+    "message": "Salt la {path}"
+  },
+  "quick_open.group.bookmarks": {
+    "message": "Marcaje"
+  },
+  "quick_open.group.connections": {
+    "message": "Conexiuni"
+  },
+  "quick_open.group.drives": {
+    "message": "Unități"
+  },
+  "quick_open.group.path": {
+    "message": "Cale"
+  },
+  "quick_open.group.recent_folders": {
+    "message": "Foldere recente"
+  },
+  "quick_open.group.tools": {
+    "message": "Instrumente"
+  },
+  "quick_open.group.workspaces": {
+    "message": "Spații de lucru"
+  },
+  "quick_open.placeholder": {
+    "message": "O comandă, un marcaj, folder, cale, server, unitate, spațiu de lucru sau instrument"
+  },
+  "quick_open.title": {
+    "message": "Deschidere rapidă"
+  },
+  "quick_view.counting": {
+    "message": "Se numără…"
+  },
+  "quick_view.downloading": {
+    "message": "Se descarcă…"
+  },
+  "quick_view.empty": {
+    "message": "Vizualizarea rapidă arată elementul de sub cursorul celuilalt panou."
+  },
+  "quick_view.extracting": {
+    "message": "Se extrage din arhivă…"
+  },
+  "quick_view.files_only": {
+    "message": "Pe servere și în arhive, Vizualizarea rapidă afișează doar fișiere."
+  },
+  "quick_view.space.title": {
+    "message": "Spațiu total ocupat:"
+  },
+  "quick_view.space.totals": {
+    "message": "{bytes, plural, one {{bytes_grouped} octet} few {{bytes_grouped} octeți} other {{bytes_grouped} de octeți}} în {files, plural, one {{files_grouped} fișier} few {{files_grouped} fișiere} other {{files_grouped} de fișiere}}, {folders, plural, one {{folders_grouped} folder} few {{folders_grouped} foldere} other {{folders_grouped} de foldere}}"
+  },
+  "quick_view.space.unreadable": {
+    "message": "Necitite: {count}."
+  },
+  "quick_view.too_large.download": {
+    "message": "{size} este prea mare pentru a fi descărcat aici: F3 îl vizualizează."
+  },
+  "quick_view.too_large.extract": {
+    "message": "{size} este prea mare pentru a fi extras din arhivă aici: F3 îl vizualizează."
+  },
+  "remote.cancelled": {
+    "message": "anulat"
+  },
+  "remote.cloud.ask": {
+    "message": "{kind, select, application_key {Cheia aplicației pentru {user} la {host}:} api_key {Cheia API pentru {user} la {host}:} password {Parola pentru {user} la {host}:} other {Cheia secretă pentru {user} la {host}:}}"
+  },
+  "remote.cloud.ask_again": {
+    "message": "{kind, select, application_key {Cheie de aplicație greșită. Cheia aplicației pentru {user} la {host}:} api_key {Cheie API greșită. Cheia API pentru {user} la {host}:} password {Parolă greșită. Parola pentru {user} la {host}:} other {Cheie greșită. Cheia secretă pentru {user} la {host}:}}"
+  },
+  "remote.cloud.obscure_failed": {
+    "message": "rclone nu a putut prelua parola"
+  },
+  "remote.cloud.rclone_missing": {
+    "message": "rclone lipsește: Setări > Suplimente îl descarcă"
+  },
+  "remote.cloud.title": {
+    "message": "{kind, select, application_key {Cheie aplicație} api_key {Cheie API} password {Parolă} other {Cheie secretă}}"
+  },
+  "remote.connecting": {
+    "message": "Se conectează la {server}..."
+  },
+  "remote.dialog.cancel": {
+    "message": "Anulați"
+  },
+  "remote.dialog.ok": {
+    "message": "OK"
+  },
+  "remote.disconnect_failed": {
+    "message": "{share}: nu s-a putut deconecta: {err}"
+  },
+  "remote.ftp.password": {
+    "message": "Parola pentru {user}@{host}:"
+  },
+  "remote.ftp.password_again": {
+    "message": "Parolă greșită. Parola pentru {user}@{host}:"
+  },
+  "remote.ftps.changed": {
+    "message": "Certificatul TLS al serverului {server} s-a SCHIMBAT de când linia {line} din {file} l-a înregistrat. Cineva ar putea intercepta conexiunea; dacă serverul are un certificat nou, eliminați acea linie."
+  },
+  "remote.ftps.not_trusted": {
+    "message": "certificatul serverului nu este de încredere"
+  },
+  "remote.login.password": {
+    "message": "Parolă"
+  },
+  "remote.login.title": {
+    "message": "Autentificare"
+  },
+  "remote.login.user": {
+    "message": "Utilizator"
+  },
+  "remote.mount.login_wrong": {
+    "message": "utilizatorul sau parola sunt greșite"
+  },
+  "remote.mount.macos_failed": {
+    "message": "macOS nu a putut să-l monteze (NetFS {code})"
+  },
+  "remote.mount.needs_desktop": {
+    "message": "necesită kio-fuse din KDE sau gvfs din GNOME"
+  },
+  "remote.mount.needs_login": {
+    "message": "necesită un utilizator și o parolă"
+  },
+  "remote.mount.no_fuse": {
+    "message": "montat, dar nu există un folder pentru el: lipsește gvfs-fuse"
+  },
+  "remote.mount.no_nfs_client": {
+    "message": "negăsit; NFS necesită Client pentru NFS din Windows (Caracteristici Windows)"
+  },
+  "remote.mount.no_share": {
+    "message": "lipsește partajarea: smb://server/partajare"
+  },
+  "remote.mount.not_address": {
+    "message": "nu este o adresă"
+  },
+  "remote.mount.not_found": {
+    "message": "montat, dar negăsit printre cele montate"
+  },
+  "remote.mount.other_user": {
+    "message": "Windows este conectat la acest server ca alt utilizator: deconectați-vă sau folosiți acel utilizator"
+  },
+  "remote.password.title": {
+    "message": "Parolă"
+  },
+  "remote.remember_password": {
+    "message": "Memorați parola (Setări › Parole)"
+  },
+  "remote.save_back_failed": {
+    "message": "Nu s-a putut salva înapoi: {err}"
+  },
+  "remote.sftp.host_certificate": {
+    "message": "Serverul prezintă un certificat de gazdă; acestea nu sunt încă acceptate."
+  },
+  "remote.sftp.key_changed": {
+    "message": "Cheia de gazdă a serverului {server} s-a SCHIMBAT de când linia {line} din {file} a înregistrat-o. Cineva ar putea intercepta conexiunea; dacă serverul a fost reinstalat, eliminați acea linie."
+  },
+  "remote.sftp.key_not_trusted": {
+    "message": "Cheia de gazdă a serverului {server} nu a fost acceptată ca de încredere."
+  },
+  "remote.sftp.keys_refused": {
+    "message": "{user}@{host}: serverul a refuzat cheile și nu acceptă parolă"
+  },
+  "remote.sftp.login_refused": {
+    "message": "{user}@{host}: autentificare refuzată"
+  },
+  "remote.sftp.passphrase": {
+    "message": "Fraza de acces pentru {file}"
+  },
+  "remote.sftp.passphrase_title": {
+    "message": "Fraza de acces a cheii"
+  },
+  "remote.sftp.password": {
+    "message": "Parola pentru {user}@{host}"
+  },
+  "remote.unknown_host.once": {
+    "message": "Conectați-vă o dată"
+  },
+  "remote.unknown_host.remember": {
+    "message": "Conectați-vă și memorați"
+  },
+  "remote.unknown_host.text": {
+    "message": "{key_type, select, TLS {Serverul {host} nu este cunoscut încă. Amprenta certificatului său TLS este} other {Serverul {host} nu este cunoscut încă. Amprenta sa {key_type} este}}\n\n{fingerprint}\n\nConectați-vă doar dacă acesta este serverul dorit; administratorul său poate confirma amprenta."
+  },
+  "remote.unknown_host.title": {
+    "message": "Server necunoscut"
+  },
+  "rename.case": {
+    "message": "Majuscule:"
+  },
+  "rename.case.first": {
+    "message": "Prima literă"
+  },
+  "rename.case.lower": {
+    "message": "minuscule"
+  },
+  "rename.case.unchanged": {
+    "message": "Neschimbat"
+  },
+  "rename.case.upper": {
+    "message": "MAJUSCULE"
+  },
+  "rename.case.words": {
+    "message": "Fiecare Cuvânt"
+  },
+  "rename.close": {
+    "message": "Închideți"
+  },
+  "rename.counter_start": {
+    "message": "Început contor"
+  },
+  "rename.dialog_title": {
+    "message": "Redenumire multiplă"
+  },
+  "rename.digits": {
+    "message": "Cifre"
+  },
+  "rename.extension": {
+    "message": "Extensie"
+  },
+  "rename.field.counter": {
+    "message": "[C] Contor"
+  },
+  "rename.field.date": {
+    "message": "[Y][M][D] Dată"
+  },
+  "rename.field.extension": {
+    "message": "[E] Ext."
+  },
+  "rename.field.folder": {
+    "message": "[P] Folder"
+  },
+  "rename.field.name": {
+    "message": "[N] Nume"
+  },
+  "rename.field.range": {
+    "message": "[N1-3] Interval"
+  },
+  "rename.field.time": {
+    "message": "[h][m][s] Oră"
+  },
+  "rename.first_only": {
+    "message": "Doar primul"
+  },
+  "rename.in_archive": {
+    "message": "Fișierele din arhive nu pot fi redenumite încă."
+  },
+  "rename.mask": {
+    "message": "Mască de redenumire: nume fișier"
+  },
+  "rename.match_case": {
+    "message": "Potrivire majuscule"
+  },
+  "rename.new_name": {
+    "message": "Nume nou"
+  },
+  "rename.not_renamed_back": {
+    "message": "{from}: {err}; nu au fost redenumite înapoi: {names}"
+  },
+  "rename.not_utf8": {
+    "message": "Numele care nu sunt UTF-8 sunt omise."
+  },
+  "rename.old_name": {
+    "message": "Nume vechi"
+  },
+  "rename.problem.bad_character": {
+    "message": "caracter nepermis în nume"
+  },
+  "rename.problem.exists": {
+    "message": "există deja"
+  },
+  "rename.problem.no_name": {
+    "message": "fără nume"
+  },
+  "rename.problem.twice": {
+    "message": "de două ori în listă"
+  },
+  "rename.regex": {
+    "message": "Expresie regulată"
+  },
+  "rename.regex_error": {
+    "message": "Expresia regulată: {err}"
+  },
+  "rename.replace": {
+    "message": "Înlocuiți cu"
+  },
+  "rename.search": {
+    "message": "Căutați"
+  },
+  "rename.start": {
+    "message": "Start!"
+  },
+  "rename.status.failed": {
+    "message": "Nimic redenumit: {err}"
+  },
+  "rename.status.ready": {
+    "message": "Start! le redenumește."
+  },
+  "rename.status.renamed": {
+    "message": "{count, plural, one {S-a redenumit # fișier.} few {S-au redenumit # fișiere.} other {S-au redenumit # de fișiere.}}"
+  },
+  "rename.status.took_back": {
+    "message": "{count, plural, one {# fișier și-a recăpătat numele vechi.} few {# fișiere și-au recăpătat numele vechi.} other {# de fișiere și-au recăpătat numele vechi.}}"
+  },
+  "rename.step": {
+    "message": "Pas"
+  },
+  "rename.undo": {
+    "message": "Anulați acțiunea"
+  },
+  "rename.was": {
+    "message": "{to} (era {from})"
+  },
+  "rename.with_extension": {
+    "message": "Cu extensie"
+  },
+  "scmd.column.modified": {
+    "message": "Modificat"
+  },
+  "scmd.column.name": {
+    "message": "Nume"
+  },
+  "scmd.column.size": {
+    "message": "Dimensiune"
+  },
+  "scmd.column.up_dir": {
+    "message": "SUS--DIR"
+  },
+  "scmd.command_line.not_on_server": {
+    "message": "Comenzile rulează pe acest computer, nu pe server."
+  },
+  "scmd.compare.marked": {
+    "message": "{count, plural, one {# fișier marcat: mai nou sau lipsă în partea cealaltă.} few {# fișiere marcate: mai noi sau lipsă în partea cealaltă.} other {# de fișiere marcate: mai noi sau lipsă în partea cealaltă.}}"
+  },
+  "scmd.compare.same": {
+    "message": "Folderele au aceleași fișiere."
+  },
+  "scmd.copying": {
+    "message": "Se copiază {name}..."
+  },
+  "scmd.dialog.buttons": {
+    "message": "Enter OK   Esc Anulați"
+  },
+  "scmd.error.read_settings": {
+    "message": "Setările nu au putut fi citite: {err}"
+  },
+  "scmd.error.read_tabs": {
+    "message": "Filele deschise nu au putut fi citite: {err}"
+  },
+  "scmd.error.read_workspaces": {
+    "message": "Spațiile de lucru nu au putut fi citite: {err}"
+  },
+  "scmd.error.save_back": {
+    "message": "Nu s-a putut salva înapoi: {err}"
+  },
+  "scmd.error.save_searches": {
+    "message": "Căutările nu au putut fi salvate: {err}"
+  },
+  "scmd.error.save_tabs": {
+    "message": "Filele deschise nu au putut fi salvate: {err}"
+  },
+  "scmd.find.backwards": {
+    "message": "Înapoi"
+  },
+  "scmd.find.case_sensitive": {
+    "message": "Sensibil la majuscule"
+  },
+  "scmd.find.hex": {
+    "message": "Hex (77 6F 72 64)"
+  },
+  "scmd.find.not_found": {
+    "message": "Negăsit: {text}"
+  },
+  "scmd.find.regex": {
+    "message": "Expresie regulată"
+  },
+  "scmd.find.search_for": {
+    "message": "Căutați:"
+  },
+  "scmd.find.title": {
+    "message": "Căutare"
+  },
+  "scmd.find.whole_words": {
+    "message": "Doar cuvinte întregi"
+  },
+  "scmd.group.files": {
+    "message": "Fișiere (*.txt *.md; folderele se termină cu /):"
+  },
+  "scmd.group.select_title": {
+    "message": "Selectați un grup"
+  },
+  "scmd.group.unselect_title": {
+    "message": "Deselectați un grup"
+  },
+  "scmd.key_bar.copy": {
+    "message": "Copie"
+  },
+  "scmd.key_bar.delete": {
+    "message": "Șterge"
+  },
+  "scmd.key_bar.edit": {
+    "message": "Edit"
+  },
+  "scmd.key_bar.menu": {
+    "message": "Meniu"
+  },
+  "scmd.key_bar.mkdir": {
+    "message": "DirNou"
+  },
+  "scmd.key_bar.move": {
+    "message": "Mută"
+  },
+  "scmd.key_bar.quit": {
+    "message": "Ieși"
+  },
+  "scmd.key_bar.view": {
+    "message": "Vezi"
+  },
+  "scmd.message.error": {
+    "message": "Eroare"
+  },
+  "scmd.message.ok": {
+    "message": "OK"
+  },
+  "scmd.not_yet": {
+    "message": "{what, select, menus {Meniurile: încă nu există în versiunea pentru terminal.} file_operations {Operațiile cu fișiere: încă nu există în versiunea pentru terminal.} servers {Serverele: încă nu există în versiunea pentru terminal.} other {Această comandă: încă nu există în versiunea pentru terminal.}}"
+  },
+  "scmd.picture.broken": {
+    "message": "o imagine deteriorată"
+  },
+  "scmd.picture.broken_page": {
+    "message": "o pagină deteriorată"
+  },
+  "scmd.picture.loading": {
+    "message": "Se încarcă…"
+  },
+  "scmd.picture.no_page": {
+    "message": "PDF-ul nu are această pagină"
+  },
+  "scmd.shell.press_enter": {
+    "message": "Apăsați Enter pentru a reveni la Spark Commander..."
+  },
+  "scmd.sync_browsing.off": {
+    "message": "Navigarea sincronizată este dezactivată."
+  },
+  "scmd.sync_browsing.on": {
+    "message": "Navigarea sincronizată este activată."
+  },
+  "scmd.sync_browsing.stopped": {
+    "message": "{err}. Navigarea sincronizată este dezactivată."
+  },
+  "scmd.viewer.column": {
+    "message": "Col {column}"
+  },
+  "scmd.viewer.finding": {
+    "message": "se caută…"
+  },
+  "scmd.viewer.key_bar.next": {
+    "message": "Urm."
+  },
+  "scmd.viewer.key_bar.quit": {
+    "message": "Ieși"
+  },
+  "scmd.viewer.key_bar.reload": {
+    "message": "Reînc."
+  },
+  "scmd.viewer.key_bar.search": {
+    "message": "Caută"
+  },
+  "scmd.viewer.page": {
+    "message": "pagina {page} din {pages}"
+  },
+  "scmd.viewer.reading": {
+    "message": "se citește {percent}%"
+  },
+  "scmd.viewer.wrap": {
+    "message": "Încadrare"
+  },
+  "scmd.workspace.copy_name": {
+    "message": "{name} copie"
+  },
+  "scmd.workspace.default_name": {
+    "message": "Spațiu de lucru {number}"
+  },
+  "scmd.workspace.delete_question": {
+    "message": "Ștergeți „{name}”? Filele sale vor fi uitate."
+  },
+  "scmd.workspace.duplicate_title": {
+    "message": "Duplicați spațiul de lucru"
+  },
+  "scmd.workspace.last_stays": {
+    "message": "Ultimul spațiu de lucru nu poate fi șters."
+  },
+  "scmd.workspace.name": {
+    "message": "Nume:"
+  },
+  "scmd.workspace.name_or_default": {
+    "message": "Nume (gol: {name}):"
+  },
+  "scmd.workspace.new_title": {
+    "message": "Spațiu de lucru nou"
+  },
+  "scmd.workspace.rename_title": {
+    "message": "Redenumiți spațiul de lucru"
+  },
+  "scmd.workspaces.keys": {
+    "message": "Enter Deschide  F7 Nou  F5 Copie  F2 Redenumește  F8 Șterge"
+  },
+  "scmd.workspaces.title": {
+    "message": "Spații de lucru"
+  },
+  "search.age.days": {
+    "message": "zile"
+  },
+  "search.age.hours": {
+    "message": "ore"
+  },
+  "search.age.minutes": {
+    "message": "minute"
+  },
+  "search.age.months": {
+    "message": "luni"
+  },
+  "search.age.weeks": {
+    "message": "săptămâni"
+  },
+  "search.age.years": {
+    "message": "ani"
+  },
+  "search.archives": {
+    "message": "Căutați în arhive"
+  },
+  "search.attribute.directory": {
+    "message": "Director"
+  },
+  "search.attribute.either": {
+    "message": "Oricare"
+  },
+  "search.attribute.executable": {
+    "message": "Executabil"
+  },
+  "search.attribute.hidden": {
+    "message": "Ascuns"
+  },
+  "search.attribute.link": {
+    "message": "Legătură simbolică"
+  },
+  "search.attribute.must": {
+    "message": "Trebuie să fie"
+  },
+  "search.attribute.must_not": {
+    "message": "Nu trebuie să fie"
+  },
+  "search.attribute.read_only": {
+    "message": "Doar citire"
+  },
+  "search.attributes.label": {
+    "message": "Atribute:"
+  },
+  "search.between.and": {
+    "message": "și"
+  },
+  "search.between.label": {
+    "message": "Dată între:"
+  },
+  "search.close": {
+    "message": "Închideți"
+  },
+  "search.depth.all": {
+    "message": "toate (adâncime nelimitată)"
+  },
+  "search.depth.current": {
+    "message": "doar folderul curent"
+  },
+  "search.depth.label": {
+    "message": "Căutați în subfoldere:"
+  },
+  "search.depth.levels": {
+    "message": "{count, plural, one {# nivel} few {# niveluri} other {# de niveluri}}"
+  },
+  "search.drives": {
+    "message": "Unități"
+  },
+  "search.duplicates.content": {
+    "message": "același conținut"
+  },
+  "search.duplicates.label": {
+    "message": "Căutați fișiere duplicate:"
+  },
+  "search.duplicates.name": {
+    "message": "același nume"
+  },
+  "search.duplicates.size": {
+    "message": "aceeași dimensiune"
+  },
+  "search.edit": {
+    "message": "F4 Editare"
+  },
+  "search.error.between_days": {
+    "message": "„Dată între” necesită ambele zile"
+  },
+  "search.error.date": {
+    "message": "{text} nu este o dată de forma 2026-11-12"
+  },
+  "search.error.hex": {
+    "message": "{text} nu este un șir hexazecimal de forma 48 65 6c"
+  },
+  "search.error.keep": {
+    "message": "Căutarea nu a putut fi păstrată: {err}"
+  },
+  "search.error.local_time": {
+    "message": "{text} nu este o oră locală validă"
+  },
+  "search.error.names_regex": {
+    "message": "Expresia regulată a numelui: {err}"
+  },
+  "search.error.newer_number": {
+    "message": "„Nu mai vechi de” necesită un număr, nu {text}"
+  },
+  "search.error.no_place": {
+    "message": "„Căutați în” nu indică niciun folder"
+  },
+  "search.error.no_text": {
+    "message": "„Căutați text” nu conține niciun text"
+  },
+  "search.error.older_number": {
+    "message": "„Mai vechi de” necesită un număr, nu {text}"
+  },
+  "search.error.save": {
+    "message": "Căutările nu au putut fi salvate: {err}"
+  },
+  "search.error.size_number": {
+    "message": "„Dimensiune fișier” necesită un număr, nu {text}"
+  },
+  "search.error.text_regex": {
+    "message": "Expresia regulată a textului: {err}"
+  },
+  "search.feed": {
+    "message": "Afișați în panou"
+  },
+  "search.go_to_file": {
+    "message": "Salt la fișier"
+  },
+  "search.in_found": {
+    "message": "F2 Căutați în fișierele găsite"
+  },
+  "search.locate": {
+    "message": "Din indexul locate"
+  },
+  "search.names.label": {
+    "message": "Căutați:"
+  },
+  "search.names.placeholder": {
+    "message": "*.txt *.md | backup*  (gol: toate)"
+  },
+  "search.new": {
+    "message": "Căutare nouă"
+  },
+  "search.newer.label": {
+    "message": "Nu mai vechi de:"
+  },
+  "search.older.label": {
+    "message": "Mai vechi de:"
+  },
+  "search.only_selected": {
+    "message": "Căutați doar în fișierele/folderele selectate"
+  },
+  "search.only_selected_count": {
+    "message": "{count, plural, one {Căutați doar în elementul selectat} few {Căutați doar în cele # elemente selectate} other {Căutați doar în cele # de elemente selectate}}"
+  },
+  "search.page.advanced": {
+    "message": "Avansat"
+  },
+  "search.page.general": {
+    "message": "General"
+  },
+  "search.page.load_save": {
+    "message": "Încărcare/Salvare"
+  },
+  "search.places.browse_prompt": {
+    "message": "Căutați în"
+  },
+  "search.places.label": {
+    "message": "Căutați în:"
+  },
+  "search.places.placeholder": {
+    "message": "Foldere, separate prin ;"
+  },
+  "search.regex": {
+    "message": "RegEx"
+  },
+  "search.results.label": {
+    "message": "Rezultatele căutării:"
+  },
+  "search.saved.delete": {
+    "message": "Ștergeți"
+  },
+  "search.saved.label": {
+    "message": "Căutări anterioare:"
+  },
+  "search.saved.load": {
+    "message": "Încărcați"
+  },
+  "search.saved.name_first": {
+    "message": "Mai întâi denumiți căutarea."
+  },
+  "search.saved.name_placeholder": {
+    "message": "Numele căutării"
+  },
+  "search.saved.save": {
+    "message": "Salvați"
+  },
+  "search.size.label": {
+    "message": "Dimensiune fișier:"
+  },
+  "search.start": {
+    "message": "Porniți căutarea"
+  },
+  "search.status.found": {
+    "message": "{files, plural, one {# fișier} few {# fișiere} other {# de fișiere}} și {dirs, plural, one {# folder} few {# foldere} other {# de foldere}} găsite"
+  },
+  "search.status.searching": {
+    "message": "Se caută…"
+  },
+  "search.status.searching_in": {
+    "message": "Se caută: {folder}"
+  },
+  "search.status.stopped": {
+    "message": "Oprit: {counts}"
+  },
+  "search.stop": {
+    "message": "Opriți"
+  },
+  "search.text.ansi": {
+    "message": "ANSI (pagina de cod {page})"
+  },
+  "search.text.case_sensitive": {
+    "message": "Sensibil la majuscule"
+  },
+  "search.text.hex": {
+    "message": "Hex"
+  },
+  "search.text.label": {
+    "message": "Căutați text:"
+  },
+  "search.text.not_containing": {
+    "message": "Căutați fișierele care NU conțin textul"
+  },
+  "search.text.office": {
+    "message": "Fișiere Office (docx, xlsx, pptx, odt…)"
+  },
+  "search.text.placeholder": {
+    "message": "Textul căutat"
+  },
+  "search.text.whole_words": {
+    "message": "Doar cuvinte întregi"
+  },
+  "search.title": {
+    "message": "Căutare fișiere"
+  },
+  "search.unit.bytes": {
+    "message": "octeți"
+  },
+  "search.view": {
+    "message": "F3 Vizualizare"
+  },
+  "settings.addons.builtin_version": {
+    "message": "{version}, inclus în Spark Commander"
+  },
+  "settings.addons.check_daily": {
+    "message": "Caută actualizări ale suplimentelor la pornire și zilnic și le oferă"
+  },
+  "settings.addons.check_failed": {
+    "message": "Nu s-au putut căuta actualizări: {err}"
+  },
+  "settings.addons.check_now": {
+    "message": "Căutați acum"
+  },
+  "settings.addons.checking": {
+    "message": "Se caută actualizări..."
+  },
+  "settings.addons.download": {
+    "message": "Descărcați"
+  },
+  "settings.addons.downloading": {
+    "message": "Se descarcă: {done} din {size}"
+  },
+  "settings.addons.file": {
+    "message": "Fișier"
+  },
+  "settings.addons.installed.builtin": {
+    "message": "inclus în Spark Commander"
+  },
+  "settings.addons.installed.label": {
+    "message": "Instalat"
+  },
+  "settings.addons.installed.none": {
+    "message": "niciunul"
+  },
+  "settings.addons.intro": {
+    "message": "Spark Commander folosește aceste programe ale altor proiecte pentru o parte din funcțiile sale. Suplimentele se descarcă separat, când alegeți; 7-Zip și PDFium sunt incluse."
+  },
+  "settings.addons.never_offer": {
+    "message": "Nu se oferă niciodată suplimente când un fișier are nevoie de unul"
+  },
+  "settings.addons.offers": {
+    "message": "Oferte și actualizări"
+  },
+  "settings.addons.online.label": {
+    "message": "Online"
+  },
+  "settings.addons.online.looking": {
+    "message": "se caută..."
+  },
+  "settings.addons.online.none": {
+    "message": "niciunul pentru acest sistem"
+  },
+  "settings.addons.online.not_yet": {
+    "message": "necăutat încă"
+  },
+  "settings.addons.online.unknown": {
+    "message": "necunoscut"
+  },
+  "settings.addons.remove": {
+    "message": "Eliminați"
+  },
+  "settings.addons.up_to_date": {
+    "message": "Lista de suplimente este actualizată."
+  },
+  "settings.addons.version": {
+    "message": "Versiune"
+  },
+  "settings.addons.website": {
+    "message": "Site web"
+  },
+  "settings.appearance.title": {
+    "message": "Aspect"
+  },
+  "settings.apply": {
+    "message": "Aplicați"
+  },
+  "settings.backdrop.blur": {
+    "message": "Estompează desktopul din spate"
+  },
+  "settings.backdrop.clear": {
+    "message": "0%, doar desktopul"
+  },
+  "settings.backdrop.cover": {
+    "message": "Cât acoperă desktopul din spate:"
+  },
+  "settings.backdrop.opacity": {
+    "message": "{opacity}%"
+  },
+  "settings.backdrop.sidebar": {
+    "message": "Bară laterală"
+  },
+  "settings.backdrop.solid": {
+    "message": "100%, opac"
+  },
+  "settings.backdrop.terminal": {
+    "message": "Terminal"
+  },
+  "settings.cancel": {
+    "message": "Anulați"
+  },
+  "settings.date.as_system": {
+    "message": "Conform sistemului: {date}"
+  },
+  "settings.date.custom": {
+    "message": "Personalizat:"
+  },
+  "settings.date.pattern_help": {
+    "message": "yyyy anul, MM luna (MMM numele ei), dd ziua (ddd ziua săptămânii)"
+  },
+  "settings.date.shown_as": {
+    "message": "Afișat ca"
+  },
+  "settings.date.shown_as_note": {
+    "message": "în listele de fișiere; dialogurile adaugă secundele"
+  },
+  "settings.date.title": {
+    "message": "Dată"
+  },
+  "settings.editor.browse": {
+    "message": "Răsfoiți..."
+  },
+  "settings.editor.choose": {
+    "message": "Alegeți"
+  },
+  "settings.editor.external": {
+    "message": "Editor extern (Ctrl+Shift+F4):"
+  },
+  "settings.editor.external_help": {
+    "message": "%1 este fișierul, altfel se adaugă la final; de ex. code --wait %1"
+  },
+  "settings.editor.limit": {
+    "message": "Editorul integrat (F4) deschide fișiere de până la"
+  },
+  "settings.editor.limit_unit": {
+    "message": "MB"
+  },
+  "settings.editor.title": {
+    "message": "Editor pentru F4"
+  },
+  "settings.error.no_folder": {
+    "message": "niciun folder de configurare"
+  },
+  "settings.files_shown.hidden": {
+    "message": "Fișiere ascunse"
+  },
+  "settings.files_shown.system": {
+    "message": "Fișiere de sistem"
+  },
+  "settings.files_shown.title": {
+    "message": "Fișiere afișate"
+  },
+  "settings.font.as_system": {
+    "message": "Conform sistemului"
+  },
+  "settings.font.chosen": {
+    "message": "Ales; fontul sistemului este {family}, {size}"
+  },
+  "settings.font.fixed": {
+    "message": "Vizualizator"
+  },
+  "settings.font.fixed_note": {
+    "message": "Doar fonturi cu lățime fixă; folosit și de editor și de compararea fișierelor."
+  },
+  "settings.font.main": {
+    "message": "Fontul ferestrei principale"
+  },
+  "settings.font.system": {
+    "message": "Fontul sistemului"
+  },
+  "settings.language.system": {
+    "message": "Limba sistemului"
+  },
+  "settings.language.system_named": {
+    "message": "Limba sistemului: {language}"
+  },
+  "settings.language.title": {
+    "message": "Limbă"
+  },
+  "settings.menus.automatic": {
+    "message": "Automat: un buton ☰ în GNOME, o bară de meniu în rest"
+  },
+  "settings.menus.bar": {
+    "message": "Bară de meniu"
+  },
+  "settings.menus.button": {
+    "message": "Buton ☰ în bara de titlu"
+  },
+  "settings.menus.title": {
+    "message": "Meniuri"
+  },
+  "settings.ok": {
+    "message": "OK"
+  },
+  "settings.page.addons": {
+    "message": "Suplimente"
+  },
+  "settings.page.date": {
+    "message": "Dată"
+  },
+  "settings.page.display": {
+    "message": "Afișare"
+  },
+  "settings.page.edit_view": {
+    "message": "Editare/Vizualizare"
+  },
+  "settings.page.font": {
+    "message": "Font"
+  },
+  "settings.page.language": {
+    "message": "Limbă"
+  },
+  "settings.page.layout": {
+    "message": "Dispunere"
+  },
+  "settings.page.operations": {
+    "message": "Operații"
+  },
+  "settings.page.passwords": {
+    "message": "Parole"
+  },
+  "settings.page.terminal": {
+    "message": "Terminal"
+  },
+  "settings.page.toolbar": {
+    "message": "Bară de instrumente"
+  },
+  "settings.passwords.change_master": {
+    "message": "Schimbați parola principală…"
+  },
+  "settings.passwords.locked": {
+    "message": "Sunt blocate pe acest computer: parola principală le deschide."
+  },
+  "settings.passwords.master_set": {
+    "message": "Este setată o parolă principală: cu folderul de setări copiat, parolele se deschid pe alt computer după ce o tastați acolo."
+  },
+  "settings.passwords.no_master": {
+    "message": "Nu este setată nicio parolă principală: cu folderul de setări copiat, parolele nu se deschid pe alt computer; trebuie tastate din nou acolo."
+  },
+  "settings.passwords.not_removed": {
+    "message": "Parola principală nu a fost eliminată: {err}"
+  },
+  "settings.passwords.remove_master": {
+    "message": "Eliminați parola principală"
+  },
+  "settings.passwords.saved": {
+    "message": "Parole salvate: {count, plural, one {#} few {#} other {#}} (pentru servere, partajări, unități criptate), sigilate în folderul de setări; cheia care le deschide se află în depozitul de chei al acestui computer."
+  },
+  "settings.passwords.set_master": {
+    "message": "Setați parola principală…"
+  },
+  "settings.passwords.title": {
+    "message": "Parole salvate"
+  },
+  "settings.passwords.unlock": {
+    "message": "Deblocați…"
+  },
+  "settings.queue.clear_after": {
+    "message": "Eliminați operațiile finalizate după"
+  },
+  "settings.queue.clear_after_help": {
+    "message": "0: imediat ce se termină. Cele eșuate și anulate rămân până le eliminați."
+  },
+  "settings.queue.clear_after_unit": {
+    "message": "minute"
+  },
+  "settings.queue.download_limit": {
+    "message": "Limită de viteză la descărcare"
+  },
+  "settings.queue.download_limit_help": {
+    "message": "Pentru „Descărcați dintr-un link” și copierile de pe servere FTP și SFTP, inclusiv cele în curs. 0: fără limită."
+  },
+  "settings.queue.download_limit_unit": {
+    "message": "KB/s"
+  },
+  "settings.queue.title": {
+    "message": "Coada de operații"
+  },
+  "settings.shell.default": {
+    "message": "Implicit: {shell}"
+  },
+  "settings.shell.note": {
+    "message": "Filele noi de terminal îl pornesc."
+  },
+  "settings.shell.title": {
+    "message": "Shell"
+  },
+  "settings.sort_folders.by_name": {
+    "message": "Întotdeauna după nume"
+  },
+  "settings.sort_folders.like_files": {
+    "message": "Ca fișierele (inclusiv după dată)"
+  },
+  "settings.sort_folders.title": {
+    "message": "Sortarea folderelor"
+  },
+  "settings.tabs.header_always": {
+    "message": "Afișează antetul filelor și când există o singură filă"
+  },
+  "settings.tabs.title": {
+    "message": "File de foldere"
+  },
+  "settings.time.as_system": {
+    "message": "Conform sistemului"
+  },
+  "settings.time.h12": {
+    "message": "12 ore (2:05 PM)"
+  },
+  "settings.time.h24": {
+    "message": "24 de ore (14:05)"
+  },
+  "settings.time.title": {
+    "message": "Oră"
+  },
+  "settings.title": {
+    "message": "Setări"
+  },
+  "settings.toolbar.add": {
+    "message": "Adăugați un buton…"
+  },
+  "settings.toolbar.move_down": {
+    "message": "Mutați în jos"
+  },
+  "settings.toolbar.move_up": {
+    "message": "Mutați în sus"
+  },
+  "settings.toolbar.place": {
+    "message": "Sub bara de meniu; în bara de titlu când meniurile sunt în spatele butonului ☰, ca în aplicațiile GNOME. Fără butoane, nu apare."
+  },
+  "settings.toolbar.remove": {
+    "message": "Eliminați"
+  },
+  "settings.toolbar.replace": {
+    "message": "Înlocuiți…"
+  },
+  "settings.toolbar.restore_default": {
+    "message": "Restabiliți implicit"
+  },
+  "settings.toolbar.title": {
+    "message": "Butoanele barei de instrumente"
+  },
+  "settings.viewer.font.ansi": {
+    "message": "ANSI (Windows)"
+  },
+  "settings.viewer.font.ascii": {
+    "message": "ASCII (DOS)"
+  },
+  "settings.viewer.font.auto": {
+    "message": "Detectare automată"
+  },
+  "settings.viewer.font.label": {
+    "message": "Font la pornire:"
+  },
+  "settings.viewer.font.variable": {
+    "message": "Lățime variabilă"
+  },
+  "settings.viewer.minimap": {
+    "message": "Minihartă"
+  },
+  "settings.viewer.show": {
+    "message": "Afișare:"
+  },
+  "settings.viewer.start.auto": {
+    "message": "Detectare automată"
+  },
+  "settings.viewer.start.binary": {
+    "message": "Binar"
+  },
+  "settings.viewer.start.hex": {
+    "message": "Hex"
+  },
+  "settings.viewer.start.label": {
+    "message": "Afișare la pornire:"
+  },
+  "settings.viewer.start.text": {
+    "message": "Text"
+  },
+  "settings.viewer.title": {
+    "message": "Vizualizator pentru F3"
+  },
+  "settings.viewer.width.binary": {
+    "message": "Binar"
+  },
+  "settings.viewer.width.label": {
+    "message": "Lățime de afișare (caractere):"
+  },
+  "settings.viewer.width.text": {
+    "message": "Text"
+  },
+  "settings.viewer.wrap": {
+    "message": "Încadrare text"
+  },
+  "shells.command_prompt": {
+    "message": "Linie de comandă"
+  },
+  "sidebar.device.no_files": {
+    "message": "nu partajează fișiere"
+  },
+  "sidebar.device.not_answering": {
+    "message": "{name} nu răspunde: deblocați-l și deschideți KDE Connect pe el, apoi recitiți folderul (F2)."
+  },
+  "sidebar.device.not_answering_error": {
+    "message": "{name} nu răspunde ({err}): deblocați-l și deschideți KDE Connect pe el."
+  },
+  "sidebar.device.not_connected": {
+    "message": "neconectat"
+  },
+  "sidebar.device.opening": {
+    "message": "Se deschide {name}..."
+  },
+  "sidebar.device.reconnecting": {
+    "message": "{name} nu răspunde: se reconectează..."
+  },
+  "sidebar.device.unmount_failed": {
+    "message": "{name}: nu s-a putut demonta: {err}"
+  },
+  "sidebar.group.bookmarks": {
+    "message": "Marcaje"
+  },
+  "sidebar.group.cloud": {
+    "message": "Cloud"
+  },
+  "sidebar.group.devices": {
+    "message": "Dispozitive"
+  },
+  "sidebar.group.drives": {
+    "message": "Unități"
+  },
+  "sidebar.group.network": {
+    "message": "Rețea"
+  },
+  "sidebar.section.connections": {
+    "message": "Conexiuni"
+  },
+  "sidebar.section.folders": {
+    "message": "Foldere"
+  },
+  "sidebar.section.operations": {
+    "message": "Operații"
+  },
+  "sidebar.section.places": {
+    "message": "Locuri"
+  },
+  "sidebar.volume.locked": {
+    "message": "blocat"
+  },
+  "sidebar.volume.mounting": {
+    "message": "Se montează {name}..."
+  },
+  "sidebar.volume.not_mounted": {
+    "message": "nemontat"
+  },
+  "sidebar.volume.open": {
+    "message": "Deschideți"
+  },
+  "sidebar.volume.space": {
+    "message": "{free} liberi din {total}"
+  },
+  "sidebar.volume.unmount": {
+    "message": "Demontați"
+  },
+  "sidebar.volume.unmount_failed": {
+    "message": "Nu s-a putut demonta: {err}"
+  },
+  "split.bad_size": {
+    "message": "„{size}” nu este o dimensiune: 100 MB, 1.5 GB, 650m"
+  },
+  "split.choose": {
+    "message": "Puneți cursorul pe fișierul de divizat."
+  },
+  "split.combine.choose": {
+    "message": "Puneți cursorul pe o parte (name.001) sau pe fișierul ei .crc."
+  },
+  "split.combine.dialog_title": {
+    "message": "Combinați fișierele"
+  },
+  "split.combine.label": {
+    "message": "Combinați părțile în fișierul:"
+  },
+  "split.combine.title": {
+    "message": "Combinare „{name}”"
+  },
+  "split.combined_no_crc": {
+    "message": "{count, plural, one {# parte combinată, niciun fișier CRC pentru verificare} few {# părți combinate, niciun fișier CRC pentru verificare} other {# de părți combinate, niciun fișier CRC pentru verificare}}"
+  },
+  "split.crc_mismatch": {
+    "message": "{target} nu corespunde cu {file}: o parte lipsește sau este deteriorată"
+  },
+  "split.crc_names_no_file": {
+    "message": "fișierul CRC nu indică niciun fișier"
+  },
+  "split.crc_unreadable": {
+    "message": "combinat, dar {file} nu a putut fi citit: {err}"
+  },
+  "split.dialog_title": {
+    "message": "Divizați fișierul"
+  },
+  "split.label": {
+    "message": "Divizați „{name}” în părți în folderul:"
+  },
+  "split.part_missing": {
+    "message": "{path} lipsește"
+  },
+  "split.part_size": {
+    "message": "Dimensiunea părții:"
+  },
+  "split.title": {
+    "message": "Divizare „{name}”"
+  },
+  "sync.close": {
+    "message": "Închideți"
+  },
+  "sync.column.date": {
+    "message": "Dată"
+  },
+  "sync.column.name": {
+    "message": "Nume"
+  },
+  "sync.column.size": {
+    "message": "Dimensiune"
+  },
+  "sync.compare": {
+    "message": "Comparați"
+  },
+  "sync.confirm.copy_left": {
+    "message": "Copiați {count} spre stânga ({size})"
+  },
+  "sync.confirm.copy_right": {
+    "message": "Copiați {count} spre dreapta ({size})"
+  },
+  "sync.confirm.delete_left": {
+    "message": "Ștergeți {count} în stânga"
+  },
+  "sync.confirm.delete_right": {
+    "message": "Ștergeți {count} în dreapta"
+  },
+  "sync.confirm.ok": {
+    "message": "Sincronizați"
+  },
+  "sync.confirm.text": {
+    "message": "{actions}. Fișierele copiate le înlocuiesc pe cele existente.{trash, select, yes { Cele șterse de pe acest computer ajung în coșul de gunoi.} other {}}"
+  },
+  "sync.confirm.title": {
+    "message": "Sincronizare"
+  },
+  "sync.error.changed": {
+    "message": "modificat de la comparare; comparați din nou"
+  },
+  "sync.error.compare": {
+    "message": "Nu s-a putut compara: {err}"
+  },
+  "sync.error.no_folders": {
+    "message": "Sincronizarea folderelor compară două foldere: niciun panou nu poate afișa o arhivă sau rezultatele unei căutări."
+  },
+  "sync.left": {
+    "message": "Stânga"
+  },
+  "sync.mask.label": {
+    "message": "Fișiere:"
+  },
+  "sync.option.asymmetric": {
+    "message": "Asimetric (dreapta devine o copie a stângii)"
+  },
+  "sync.option.by_content": {
+    "message": "După conținut"
+  },
+  "sync.option.ignore_date": {
+    "message": "Ignorați data"
+  },
+  "sync.option.subfolders": {
+    "message": "Subfoldere"
+  },
+  "sync.result.done": {
+    "message": "{count, plural, one {# element sincronizat} few {# elemente sincronizate} other {# de elemente sincronizate}}"
+  },
+  "sync.result.failed": {
+    "message": "{count, plural, one {# element nesincronizat} few {# elemente nesincronizate} other {# de elemente nesincronizate}}; {first}"
+  },
+  "sync.right": {
+    "message": "Dreapta"
+  },
+  "sync.show.equal": {
+    "message": "= identice"
+  },
+  "sync.show.label": {
+    "message": "Afișare:"
+  },
+  "sync.show.other": {
+    "message": "≠ neschimbate"
+  },
+  "sync.show.to_left": {
+    "message": "← spre stânga"
+  },
+  "sync.show.to_right": {
+    "message": "→ spre dreapta"
+  },
+  "sync.status.both_empty": {
+    "message": "Ambele sunt goale."
+  },
+  "sync.status.comparing": {
+    "message": "Se compară {folder}"
+  },
+  "sync.status.counts": {
+    "message": "{right} de copiat la dreapta, {left} de copiat la stânga, {delete} de șters, {equal} identice, {alone} lăsate neschimbate"
+  },
+  "sync.status.stopped": {
+    "message": "Oprit."
+  },
+  "sync.stop": {
+    "message": "Opriți"
+  },
+  "sync.synchronize": {
+    "message": "Sincronizați..."
+  },
+  "sync.task.title": {
+    "message": "Sincronizare {left} și {right}"
+  },
+  "sync.title": {
+    "message": "Sincronizare foldere"
+  },
+  "tab_menu.close_all_tabs": {
+    "message": "Închideți toate filele"
+  },
+  "tab_menu.close_duplicate_tabs": {
+    "message": "Închideți filele duplicate"
+  },
+  "tab_menu.close_tab": {
+    "message": "Închideți această filă"
+  },
+  "tab_menu.copy_tab_to_other_panel": {
+    "message": "Copiați fila în celălalt panou"
+  },
+  "tab_menu.duplicate_tab": {
+    "message": "Duplicați această filă"
+  },
+  "tab_menu.list_tabs": {
+    "message": "Afișați lista tuturor filelor"
+  },
+  "tab_menu.lock_tab": {
+    "message": "Blocați această filă"
+  },
+  "tab_menu.none": {
+    "message": "(niciuna)"
+  },
+  "tab_menu.rename_tab": {
+    "message": "Redenumiți fila..."
+  },
+  "tabs.error.reopen": {
+    "message": "Fila nu a putut fi redeschisă: {err}"
+  },
+  "tabs.history.empty": {
+    "message": "Încă nu există foldere în istoricul acestei file."
+  },
+  "tabs.new": {
+    "message": "Filă nouă"
+  },
+  "tabs.rename.label": {
+    "message": "Nume nou:"
+  },
+  "tabs.rename.title": {
+    "message": "Redenumiți fila"
+  },
+  "tabs.search_results": {
+    "message": "Rezultatele căutării"
+  },
+  "terminal.busy": {
+    "message": "Un program rulează în terminal: rulați comanda după ce se termină."
+  },
+  "terminal.close.idle": {
+    "message": "Închideți această filă de terminal? Shell-ul ei se va încheia."
+  },
+  "terminal.close.ok": {
+    "message": "Închideți"
+  },
+  "terminal.close.running": {
+    "message": "Închideți această filă de terminal? Programul care rulează în ea va fi oprit."
+  },
+  "terminal.close.title": {
+    "message": "Închideți fila"
+  },
+  "terminal.error.start_shell": {
+    "message": "Shell-ul nu a putut fi pornit: {err}"
+  },
+  "terminal.jump_to_bottom": {
+    "message": "Salt la final (Ctrl+End) ↓"
+  },
+  "terminal.menu.copy": {
+    "message": "Copiați"
+  },
+  "terminal.menu.paste": {
+    "message": "Lipiți"
+  },
+  "toolbar.customize": {
+    "message": "Personalizați bara de instrumente…"
+  },
+  "tools.clear_key": {
+    "message": "Goliți"
+  },
+  "tools.close": {
+    "message": "Închideți"
+  },
+  "tools.delete": {
+    "message": "Ștergeți"
+  },
+  "tools.empty": {
+    "message": "Niciun instrument încă: Nou... adaugă unul."
+  },
+  "tools.field.command": {
+    "message": "Comandă"
+  },
+  "tools.field.key": {
+    "message": "Tastă"
+  },
+  "tools.field.name": {
+    "message": "Nume"
+  },
+  "tools.intro": {
+    "message": "Propriile dvs. linii de comandă, în meniul Instrumente: faceți clic pe una acolo sau apăsați tasta ei."
+  },
+  "tools.key.none": {
+    "message": "Niciuna"
+  },
+  "tools.key.waiting": {
+    "message": "Apăsați tasta... (Esc: niciuna)"
+  },
+  "tools.move_down": {
+    "message": "Mutați în jos"
+  },
+  "tools.move_up": {
+    "message": "Mutați în sus"
+  },
+  "tools.name.placeholder": {
+    "message": "Comparați cu partea cealaltă"
+  },
+  "tools.new": {
+    "message": "Nou..."
+  },
+  "tools.new_name": {
+    "message": "Instrumentul {number}"
+  },
+  "tools.no_command": {
+    "message": "{tool} nu are încă o comandă: Instrumente > Gestionați instrumentele."
+  },
+  "tools.not_local": {
+    "message": "Instrumentele rulează pe acest computer: panoul afișează un server sau o arhivă."
+  },
+  "tools.note.key_of_command": {
+    "message": "{key} aparține și comenzii {command}: instrumentul o preia."
+  },
+  "tools.note.key_of_other_tool": {
+    "message": "{key} aparține și instrumentului {tool}: o preia cel aflat mai jos în listă."
+  },
+  "tools.placeholders": {
+    "message": "%P folderul acestui panou, %T al celuilalt panou (ambele se termină cu un separator, deci \"%P%N\" este o cale), %N fișierul de sub cursor, %O numele său fără extensie, %E extensia, %S fișierele selectate (altfel cel de sub cursor), fiecare între ghilimele; %% un %. Puneți restul între ghilimele: \"%P%N\"."
+  },
+  "tools.run_in_terminal": {
+    "message": "Rulează în terminal, pentru a vedea ce afișează"
+  },
+  "tools.set_key": {
+    "message": "Setați tasta..."
+  },
+  "tools.title": {
+    "message": "Instrumente"
+  },
+  "transfer.answer.cancel": {
+    "message": "Anulați"
+  },
+  "transfer.answer.elevate": {
+    "message": "Ca administrator"
+  },
+  "transfer.answer.overwrite": {
+    "message": "Suprascrieți"
+  },
+  "transfer.answer.overwrite_all": {
+    "message": "Suprascrieți tot"
+  },
+  "transfer.answer.rename": {
+    "message": "Redenumiți"
+  },
+  "transfer.answer.retry": {
+    "message": "Reîncercați"
+  },
+  "transfer.answer.skip": {
+    "message": "Omiteți"
+  },
+  "transfer.answer.skip_all": {
+    "message": "Omiteți tot"
+  },
+  "transfer.archive.local_only": {
+    "message": "Doar fișierele acestui computer pot intra într-o arhivă: copiați-le mai întâi aici."
+  },
+  "transfer.cancel": {
+    "message": "Anulați"
+  },
+  "transfer.error.elevate_hint": {
+    "message": "Ca administrator: acesta și tot ce mai este refuzat, după ce se termină restul, cu parola cerută o singură dată."
+  },
+  "transfer.error.title": {
+    "message": "Eroare"
+  },
+  "transfer.exists.describe": {
+    "message": "{count, plural, one {{size} octet, {time}} few {{size} octeți, {time}} other {{size} de octeți, {time}}}"
+  },
+  "transfer.exists.text": {
+    "message": "Existent: {existing}\nNoul fișier: {new}"
+  },
+  "transfer.exists.title": {
+    "message": "Fișierul există"
+  },
+  "transfer.extract_failed": {
+    "message": "Nu au putut fi extrase: {err}"
+  },
+  "transfer.into_archive.question_many": {
+    "message": "{kind, select, copy {Copiați} other {Mutați}} {count, plural, one {# element} few {# elemente} other {# de elemente}} în {into}? Ce are aceleași nume acolo va fi înlocuit."
+  },
+  "transfer.into_archive.question_one": {
+    "message": "{kind, select, copy {Copiați} other {Mutați}} „{name}” în {into}? Ce are același nume acolo va fi înlocuit."
+  },
+  "transfer.into_archive.title_many": {
+    "message": "{kind, select, copy {Copiere} other {Mutare}} {count, plural, one {# element} few {# elemente} other {# de elemente}} în {archive}"
+  },
+  "transfer.into_archive.title_one": {
+    "message": "{kind, select, copy {Copiere} other {Mutare}} „{name}” în {archive}"
+  },
+  "transfer.label.many": {
+    "message": "{kind, select, copy {Copiați} other {Mutați}} {count, plural, one {# element} few {# elemente} other {# de elemente}} în:"
+  },
+  "transfer.label.many_server": {
+    "message": "{kind, select, copy {Copiați} other {Mutați}} {count, plural, one {# element} few {# elemente} other {# de elemente}} pe {server}:"
+  },
+  "transfer.label.one": {
+    "message": "{kind, select, copy {Copiați} other {Mutați}} „{name}” în:"
+  },
+  "transfer.label.one_server": {
+    "message": "{kind, select, copy {Copiați} other {Mutați}} „{name}” pe {server}:"
+  },
+  "transfer.ok": {
+    "message": "OK"
+  },
+  "transfer.overwrite.all": {
+    "message": "Suprascrieți tot"
+  },
+  "transfer.overwrite.ask": {
+    "message": "Întrebați"
+  },
+  "transfer.overwrite.label": {
+    "message": "Când destinația are un fișier cu același nume:"
+  },
+  "transfer.overwrite.older": {
+    "message": "Suprascrieți cele mai vechi"
+  },
+  "transfer.overwrite.rename": {
+    "message": "Redenumiți copiile"
+  },
+  "transfer.overwrite.skip": {
+    "message": "Omiteți tot"
+  },
+  "transfer.remove_moved": {
+    "message": "Eliminarea celor mutate din {name}"
+  },
+  "transfer.speed": {
+    "message": "{size}/s"
+  },
+  "transfer.strip.counting": {
+    "message": "numărare: {count, plural, one {# fișier} few {# fișiere} other {# de fișiere}}"
+  },
+  "transfer.strip.progress": {
+    "message": "{files} / {count, plural, one {# fișier} few {# fișiere} other {# de fișiere}}, {percent}%"
+  },
+  "transfer.strip.queue": {
+    "message": "Coadă..."
+  },
+  "transfer.strip.queue_waiting": {
+    "message": "Coadă ({count, plural, one {# în așteptare} few {# în așteptare} other {# în așteptare}})..."
+  },
+  "transfer.title.copy": {
+    "message": "Copiați"
+  },
+  "transfer.title.move": {
+    "message": "Mutați"
+  },
+  "viewer.as_text_hint": {
+    "message": "{err}. Tasta 1 afișează fișierul ca text."
+  },
+  "viewer.book.cannot_read": {
+    "message": "Această carte nu poate fi citită: {err}. Tasta 1 afișează fișierul ca text."
+  },
+  "viewer.book.continuing": {
+    "message": "Se continuă de la {percent}"
+  },
+  "viewer.book.error.compression": {
+    "message": "comprimată într-un mod încă necitit ({compression})"
+  },
+  "viewer.book.error.damaged": {
+    "message": "o carte deteriorată"
+  },
+  "viewer.book.error.damaged_zip": {
+    "message": "un zip deteriorat"
+  },
+  "viewer.book.error.drm": {
+    "message": "protejată prin DRM: doar Kindle o poate citi"
+  },
+  "viewer.book.error.huffman": {
+    "message": "comprimată ca propriile cărți ale Amazon (HUFF/CDIC), format încă necitit"
+  },
+  "viewer.book.error.missing_part": {
+    "message": "{name} nu există în carte"
+  },
+  "viewer.book.error.no_package": {
+    "message": "niciun fișier de pachet în carte"
+  },
+  "viewer.book.error.no_text": {
+    "message": "cartea nu are text"
+  },
+  "viewer.book.error.not_zip": {
+    "message": "nu este un zip: o carte deteriorată sau protejată prin DRM?"
+  },
+  "viewer.book.error.zip_method": {
+    "message": "{name}: comprimat într-un mod zip care nu poate fi citit aici ({method})"
+  },
+  "viewer.cannot_show": {
+    "message": "Nu poate fi afișat: {err}"
+  },
+  "viewer.convert.failed": {
+    "message": "{tool} nu l-a putut converti ({status})"
+  },
+  "viewer.converting": {
+    "message": "Se convertește cu {tool}…"
+  },
+  "viewer.copy.too_large": {
+    "message": "Selecțiile de peste {megabytes} MB nu se copiază."
+  },
+  "viewer.encoding.cp1250": {
+    "message": "Europa de Est (1250)"
+  },
+  "viewer.encoding.cp1251": {
+    "message": "Chirilic Windows (1251)"
+  },
+  "viewer.encoding.cp1252": {
+    "message": "Vest Latin1 (1252)"
+  },
+  "viewer.encoding.cp1253": {
+    "message": "Greacă (1253)"
+  },
+  "viewer.encoding.cp1254": {
+    "message": "Turcă (1254)"
+  },
+  "viewer.encoding.cp1255": {
+    "message": "Ebraică (1255)"
+  },
+  "viewer.encoding.cp1256": {
+    "message": "Arabă (1256)"
+  },
+  "viewer.encoding.cp1257": {
+    "message": "Baltică (1257)"
+  },
+  "viewer.encoding.cp1258": {
+    "message": "Vietnameză (1258)"
+  },
+  "viewer.encoding.cp20866": {
+    "message": "Chirilic KOI8-R (20866)"
+  },
+  "viewer.encoding.cp437": {
+    "message": "DOS-SUA (437)"
+  },
+  "viewer.encoding.cp850": {
+    "message": "DOS-LATIN1 (850)"
+  },
+  "viewer.encoding.cp852": {
+    "message": "DOS Europa Centrală (852)"
+  },
+  "viewer.encoding.cp866": {
+    "message": "DOS Chirilic (866)"
+  },
+  "viewer.encoding.cp874": {
+    "message": "Thailandeză (874)"
+  },
+  "viewer.encoding.cp932": {
+    "message": "Japoneză (932)"
+  },
+  "viewer.encoding.cp936": {
+    "message": "Chineză continentală (936)"
+  },
+  "viewer.encoding.cp949": {
+    "message": "Coreeană (949)"
+  },
+  "viewer.encoding.cp950": {
+    "message": "Chineză Taiwan (950)"
+  },
+  "viewer.find.not_found": {
+    "message": "Negăsit: {text}"
+  },
+  "viewer.find.not_hex": {
+    "message": "Nu este un șir hexazecimal: {text}"
+  },
+  "viewer.find.nothing": {
+    "message": "Nimic de căutat."
+  },
+  "viewer.find.save_failed": {
+    "message": "Căutările nu au putut fi salvate: {err}"
+  },
+  "viewer.loading": {
+    "message": "Se încarcă…"
+  },
+  "viewer.markdown.too_large": {
+    "message": "Peste {megabytes} MB: tasta 1 îl afișează ca text."
+  },
+  "viewer.menu.binary": {
+    "message": "Binar (lungime fixă a liniei)"
+  },
+  "viewer.menu.book": {
+    "message": "Carte (EPUB, FB2)"
+  },
+  "viewer.menu.close": {
+    "message": "Închideți"
+  },
+  "viewer.menu.configure": {
+    "message": "Configurați..."
+  },
+  "viewer.menu.copy_hex": {
+    "message": "Copiați ca caractere hexazecimale"
+  },
+  "viewer.menu.copy_text": {
+    "message": "Copiați ca text"
+  },
+  "viewer.menu.edit": {
+    "message": "Editare"
+  },
+  "viewer.menu.encoding": {
+    "message": "Codificare"
+  },
+  "viewer.menu.file": {
+    "message": "Fișier"
+  },
+  "viewer.menu.find": {
+    "message": "Căutați..."
+  },
+  "viewer.menu.find_next": {
+    "message": "Căutați următorul"
+  },
+  "viewer.menu.fit_image": {
+    "message": "Potriviți imaginea în fereastră"
+  },
+  "viewer.menu.font_ansi": {
+    "message": "ANSI (set de caractere Windows)"
+  },
+  "viewer.menu.font_ascii": {
+    "message": "ASCII (set de caractere DOS)"
+  },
+  "viewer.menu.font_page": {
+    "message": "Conform fontului"
+  },
+  "viewer.menu.font_variable": {
+    "message": "Lățime variabilă a caracterelor"
+  },
+  "viewer.menu.hex": {
+    "message": "Hex"
+  },
+  "viewer.menu.html": {
+    "message": "Text HTML (fără etichete)"
+  },
+  "viewer.menu.minimap": {
+    "message": "Minihartă"
+  },
+  "viewer.menu.next_file": {
+    "message": "Fișierul următor"
+  },
+  "viewer.menu.only_larger": {
+    "message": "Potriviți doar imaginile mai mari"
+  },
+  "viewer.menu.open": {
+    "message": "Deschideți..."
+  },
+  "viewer.menu.options": {
+    "message": "Opțiuni"
+  },
+  "viewer.menu.picture": {
+    "message": "Imagine/Multimedia"
+  },
+  "viewer.menu.previous_file": {
+    "message": "Fișierul anterior"
+  },
+  "viewer.menu.reload": {
+    "message": "Reîncărcați"
+  },
+  "viewer.menu.save_as": {
+    "message": "Salvați ca..."
+  },
+  "viewer.menu.search_google": {
+    "message": "Căutați textul selectat cu Google"
+  },
+  "viewer.menu.select_all": {
+    "message": "Selectați tot"
+  },
+  "viewer.menu.syntax_colors": {
+    "message": "Culori de sintaxă"
+  },
+  "viewer.menu.text_only": {
+    "message": "Doar text"
+  },
+  "viewer.menu.unicode": {
+    "message": "Unicode (UTF-16)"
+  },
+  "viewer.menu.wrap": {
+    "message": "Încadrare text ({columns, plural, one {# coloană} few {# coloane} other {# de coloane}})"
+  },
+  "viewer.mode.binary": {
+    "message": "Binar · {page}"
+  },
+  "viewer.mode.book": {
+    "message": "Carte"
+  },
+  "viewer.mode.hex": {
+    "message": "Hex · {page}"
+  },
+  "viewer.mode.html": {
+    "message": "Text HTML"
+  },
+  "viewer.mode.image": {
+    "message": "Imagine"
+  },
+  "viewer.mode.multimedia": {
+    "message": "Multimedia"
+  },
+  "viewer.mode.pdf_by": {
+    "message": "PDF prin {tool}"
+  },
+  "viewer.mode.text": {
+    "message": "Text · {page}"
+  },
+  "viewer.origin.not_editable": {
+    "message": "doar fișierele din arhivele 7z, zip, jar și tar pot fi editate"
+  },
+  "viewer.origin.updated": {
+    "message": "{archive} a fost actualizată"
+  },
+  "viewer.origin.updated_on": {
+    "message": "{archive} a fost actualizată pe {server}"
+  },
+  "viewer.origin.uploaded": {
+    "message": "{path} a fost încărcat"
+  },
+  "viewer.pdf.cannot_show": {
+    "message": "Acest PDF nu poate fi afișat: {err}"
+  },
+  "viewer.pdf.loading": {
+    "message": "Se încarcă..."
+  },
+  "viewer.pdf.page": {
+    "message": "Pagina {page} / {pages}"
+  },
+  "viewer.picture.cannot_show": {
+    "message": "Această imagine nu poate fi afișată; tasta 1 o afișează ca text."
+  },
+  "viewer.save_as.failed": {
+    "message": "Nu s-a putut salva {path}: {err}"
+  },
+  "viewer.status.rows": {
+    "message": "{count, plural, one {{first}–{last} din {grouped} rând} few {{first}–{last} din {grouped} rânduri} other {{first}–{last} din {grouped} de rânduri}}"
+  },
+  "viewer.status.rows_so_far": {
+    "message": "{count, plural, one {{grouped} rând până acum, {percent} citit} few {{grouped} rânduri până acum, {percent} citit} other {{grouped} de rânduri până acum, {percent} citit}}"
+  },
+  "viewer.status.searching": {
+    "message": "Se caută…"
+  },
+  "viewer.status.size": {
+    "message": "{count, plural, one {{grouped} octet} few {{grouped} octeți} other {{grouped} de octeți}}"
+  },
+  "viewer.window.title": {
+    "message": "{path} — Vizualizator"
+  },
+  "viewer.zoom.fit": {
+    "message": "Înapoi la potrivirea în fereastră (Ctrl+0)"
+  },
+  "viewer.zoom.in": {
+    "message": "Mărire (Ctrl++)"
+  },
+  "viewer.zoom.out": {
+    "message": "Micșorare (Ctrl+-)"
+  },
+  "viewer.zoom.reset": {
+    "message": "Înapoi la 100% (Ctrl+0)"
+  },
+  "workspaces.button.close": {
+    "message": "Închideți"
+  },
+  "workspaces.button.delete": {
+    "message": "Ștergeți..."
+  },
+  "workspaces.button.duplicate": {
+    "message": "Duplicați..."
+  },
+  "workspaces.button.new": {
+    "message": "Nou..."
+  },
+  "workspaces.button.rename": {
+    "message": "Redenumiți..."
+  },
+  "workspaces.delete.button": {
+    "message": "Ștergeți"
+  },
+  "workspaces.delete.closed": {
+    "message": "Ștergeți spațiul de lucru „{name}”? Filele sale vor fi uitate."
+  },
+  "workspaces.delete.closed_shells": {
+    "message": "Ștergeți spațiul de lucru „{name}”? Filele sale vor fi uitate, iar shell-urile din filele sale de terminal se vor încheia."
+  },
+  "workspaces.delete.open": {
+    "message": "Ștergeți spațiul de lucru „{name}”? Filele sale se închid; în locul lui se deschide „{other}”."
+  },
+  "workspaces.delete.open_shells": {
+    "message": "Ștergeți spațiul de lucru „{name}”? Filele sale se închid, iar shell-urile din filele sale de terminal se încheie; în locul lui se deschide „{other}”."
+  },
+  "workspaces.delete.title": {
+    "message": "Ștergeți spațiul de lucru"
+  },
+  "workspaces.duplicate.name": {
+    "message": "{name} copie"
+  },
+  "workspaces.duplicate.title": {
+    "message": "Duplicați spațiul de lucru"
+  },
+  "workspaces.error.name_taken": {
+    "message": "Alt spațiu de lucru are deja acest nume."
+  },
+  "workspaces.error.no_name": {
+    "message": "Un spațiu de lucru are nevoie de un nume."
+  },
+  "workspaces.error.save": {
+    "message": "Spațiile de lucru nu au putut fi salvate: {err}"
+  },
+  "workspaces.hint": {
+    "message": "Afișare > Spații de lucru deschide unul. Ce se schimbă în cel deschis se păstrează în el."
+  },
+  "workspaces.name.label": {
+    "message": "Nume:"
+  },
+  "workspaces.new.name": {
+    "message": "Spațiu de lucru {number}"
+  },
+  "workspaces.new.title": {
+    "message": "Spațiu de lucru nou"
+  },
+  "workspaces.open": {
+    "message": "deschis"
+  },
+  "workspaces.rename.title": {
+    "message": "Redenumiți spațiul de lucru"
+  },
+  "workspaces.summary.panels": {
+    "message": "Stânga {left, plural, one {# filă} few {# file} other {# de file}}, dreapta {right, plural, one {# filă} few {# file} other {# de file}}"
+  },
+  "workspaces.summary.terminal": {
+    "message": "Stânga {left, plural, one {# filă} few {# file} other {# de file}}, dreapta {right, plural, one {# filă} few {# file} other {# de file}}, terminal {terminal, plural, one {# filă} few {# file} other {# de file}}"
+  },
+  "workspaces.summary.terminal_hidden": {
+    "message": "Stânga {left, plural, one {# filă} few {# file} other {# de file}}, dreapta {right, plural, one {# filă} few {# file} other {# de file}}, terminal {terminal, plural, one {# filă} few {# file} other {# de file}} (ascuns)"
+  },
+  "workspaces.title": {
+    "message": "Spații de lucru"
+  }
+}

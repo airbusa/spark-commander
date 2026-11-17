@@ -63,7 +63,10 @@ pub fn apply(palette: &Palette, cx: &mut App) -> PanelColors {
         None => sc_core::system::theme::desktop_fixed_font(),
     };
     let fixed = fixed.filter(|(family, _)| installed(family, cx));
+    let scripts = sc_core::system::theme::script_fonts(sc_core::l10n::language());
     KitTheme::update(cx, |kit| {
+        // Fonts for the scripts the UI font lacks: else GPUI may take one that only half has them (Hangul as loose letters).
+        kit.font_fallbacks = (!scripts.is_empty()).then(|| gpui_kit::FontFallbacks::from_fonts(scripts));
         if let Some(font) = font {
             kit.font_family = font.into();
         }

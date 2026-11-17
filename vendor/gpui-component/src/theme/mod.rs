@@ -181,6 +181,10 @@ pub struct Theme {
     pub mono_font_family: SharedString,
     /// The monospace font size for the application, default is 13px.
     pub mono_font_size: Pixels,
+    /// SparkCommander patch: the families tried, in order, for characters the
+    /// fonts lack (Hangul, CJK, Thai…), given to every window by `Root`.
+    #[serde(skip)]
+    pub font_fallbacks: Option<gpui::FontFallbacks>,
     /// Radius for the general elements.
     pub radius: Pixels,
     /// Radius for the large elements, e.g.: Dialog, Notification border radius.
@@ -771,6 +775,7 @@ impl From<&ThemeColor> for Theme {
             font_size: px(16.),
             mono_font_family: mono_font::default_mono_font_family(),
             mono_font_size: px(13.),
+            font_fallbacks: None,
             radius: px(6.),
             radius_lg: px(8.),
             shadow: true,

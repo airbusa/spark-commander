@@ -1,0 +1,4823 @@
+{
+  "about.addons": {
+    "message": "附加元件，由你決定是否下載"
+  },
+  "about.libraries": {
+    "message": "建構基礎"
+  },
+  "about.licence": {
+    "message": "授權："
+  },
+  "about.made_with": {
+    "message": "本程式使用了以下專案的成果"
+  },
+  "about.part.alacritty_terminal": {
+    "message": "內建終端機的畫面與 Shell"
+  },
+  "about.part.encoding_rs": {
+    "message": "字碼頁"
+  },
+  "about.part.gpui": {
+    "message": "視窗、繪圖與輸入（來自 Zed）"
+  },
+  "about.part.gpui_kit": {
+    "message": "控制項：清單、選單、欄位、編輯器"
+  },
+  "about.part.html5ever": {
+    "message": "檢視器中的 HTML 與電子書"
+  },
+  "about.part.image": {
+    "message": "圖片"
+  },
+  "about.part.keyring": {
+    "message": "系統金鑰圈中的密碼"
+  },
+  "about.part.lucide": {
+    "message": "圖示"
+  },
+  "about.part.material_icons": {
+    "message": "檔案與資料夾圖示"
+  },
+  "about.part.pdfium_render": {
+    "message": "從 Rust 使用 PDFium"
+  },
+  "about.part.ratatui": {
+    "message": "scmd，終端機版本"
+  },
+  "about.part.russh": {
+    "message": "SSH 與 SFTP"
+  },
+  "about.part.rustls": {
+    "message": "TLS"
+  },
+  "about.part.serde": {
+    "message": "設定檔"
+  },
+  "about.part.similar": {
+    "message": "依內容比較"
+  },
+  "about.part.suppaftp": {
+    "message": "FTP 與 FTPS"
+  },
+  "about.part.tokio": {
+    "message": "背景網路作業"
+  },
+  "about.part.trash": {
+    "message": "資源回收筒"
+  },
+  "about.part.tree_sitter": {
+    "message": "檢視器與編輯器中的程式碼色彩"
+  },
+  "about.part.zbus": {
+    "message": "D-Bus：桌面、裝置、KDE Connect"
+  },
+  "about.shipped": {
+    "message": "隨附元件"
+  },
+  "about.tagline": {
+    "message": "雙面板檔案管理員，自由軟體。"
+  },
+  "about.title": {
+    "message": "關於 Spark Commander"
+  },
+  "about.version": {
+    "message": "版本 {version}"
+  },
+  "activity.clear": {
+    "message": "清除"
+  },
+  "activity.clear_failed": {
+    "message": "無法清除記錄：{err}"
+  },
+  "activity.empty": {
+    "message": "尚未執行任何操作。"
+  },
+  "activity.title": {
+    "message": "活動記錄"
+  },
+  "addons.error.damaged": {
+    "message": "下載的檔案已損毀：總和檢查碼不符"
+  },
+  "addons.error.list": {
+    "message": "附加元件清單：{err}"
+  },
+  "addons.error.missing_file": {
+    "message": "下載內容中沒有 {file}"
+  },
+  "addons.error.no_folder": {
+    "message": "系統未指定資料資料夾"
+  },
+  "addons.error.unpacking": {
+    "message": "解壓縮：{err}"
+  },
+  "addons.installed": {
+    "message": "已安裝 {addon} {version}。"
+  },
+  "addons.megabytes": {
+    "message": "{size} MB"
+  },
+  "addons.offer.never": {
+    "message": "不再顯示"
+  },
+  "addons.offer.no": {
+    "message": "否"
+  },
+  "addons.offer.text": {
+    "message": "{name} 需要尚未安裝的附加元件：{addon}。要在「設定 > 附加元件」中下載嗎？"
+  },
+  "addons.offer.title": {
+    "message": "附加元件"
+  },
+  "addons.offer.yes": {
+    "message": "是"
+  },
+  "addons.purpose.cloud": {
+    "message": "線上儲存空間：S3、Google Drive、OneDrive、Dropbox 及其他服務。"
+  },
+  "addons.purpose.media": {
+    "message": "影片和聲音，以及 HEIC 和 AVIF 相片：由檢視器和快速檢視顯示。"
+  },
+  "addons.purpose.office": {
+    "message": "Office 文件：檢視器會將 Word、Excel 和 PowerPoint 檔案以 PDF 顯示。"
+  },
+  "addons.purpose.pdfium": {
+    "message": "PDF：檢視器會顯示 PDF 檔案，以及轉換後的 Office 文件。"
+  },
+  "addons.purpose.seven_zip": {
+    "message": "壓縮檔：壓縮及解壓縮 7z、zip、rar、tar 等格式。"
+  },
+  "addons.update": {
+    "message": "更新"
+  },
+  "addons.updates": {
+    "message": "附加元件更新：{names}"
+  },
+  "appearance.dark": {
+    "message": "深色"
+  },
+  "appearance.light": {
+    "message": "淺色"
+  },
+  "appearance.system": {
+    "message": "跟隨系統"
+  },
+  "archive.cannot_read": {
+    "message": "{name}：無法讀取"
+  },
+  "archive.not_in_archive": {
+    "message": "{name} 不在壓縮檔中"
+  },
+  "archive.not_own_folder": {
+    "message": "{folder} 不是此使用者自己的資料夾"
+  },
+  "archive.seven_zip_failed": {
+    "message": "7-Zip 執行失敗（{code}）"
+  },
+  "archive.seven_zip_missing": {
+    "message": "找不到 7-Zip：{path}（請執行 vendor/7zip/fetch.sh 或 fetch.bat）"
+  },
+  "archive.temp_not_utf8": {
+    "message": "暫存資料夾的名稱不是 UTF-8"
+  },
+  "associations.add": {
+    "message": "新增..."
+  },
+  "associations.cancel": {
+    "message": "取消"
+  },
+  "associations.close": {
+    "message": "關閉"
+  },
+  "associations.column.edit": {
+    "message": "編輯 (F4)"
+  },
+  "associations.column.files": {
+    "message": "檔案"
+  },
+  "associations.column.open": {
+    "message": "開啟 (Enter)"
+  },
+  "associations.column.view": {
+    "message": "檢視 (F3)"
+  },
+  "associations.edit": {
+    "message": "編輯..."
+  },
+  "associations.edit_dialog.title": {
+    "message": "關聯"
+  },
+  "associations.empty": {
+    "message": "尚無任何關聯。"
+  },
+  "associations.field.edit": {
+    "message": "編輯程式 (F4)："
+  },
+  "associations.field.files": {
+    "message": "檔案 (*.jpg *.png)："
+  },
+  "associations.field.open": {
+    "message": "開啟程式 (Enter)："
+  },
+  "associations.field.view": {
+    "message": "檢視程式 (F3)："
+  },
+  "associations.intro": {
+    "message": "Enter、F3 和 F4 會對符合遮罩的檔案執行這些程式；留空則維持一般行為。%1 代表檔案。"
+  },
+  "associations.mask_needed": {
+    "message": "需要檔案遮罩：*.txt"
+  },
+  "associations.no_file": {
+    "message": "請將游標移到要關聯之類型的檔案上。"
+  },
+  "associations.ok": {
+    "message": "確定"
+  },
+  "associations.remove": {
+    "message": "移除"
+  },
+  "associations.save_failed": {
+    "message": "無法儲存設定：{err}"
+  },
+  "associations.title": {
+    "message": "內部關聯"
+  },
+  "attributes.bad_time": {
+    "message": "「{text}」不是有效的日期和時間：2026-11-10 14:04:33"
+  },
+  "attributes.cancel": {
+    "message": "取消"
+  },
+  "attributes.change_time": {
+    "message": "變更日期/時間："
+  },
+  "attributes.changed": {
+    "message": "{count, plural, other {已變更 # 個}}"
+  },
+  "attributes.changed_failed": {
+    "message": "{count, plural, other {已變更 # 個}}，{failed, plural, other {# 個失敗}}"
+  },
+  "attributes.dialog_title_many": {
+    "message": "變更屬性：{count, plural, other {# 個項目}}"
+  },
+  "attributes.dialog_title_one": {
+    "message": "變更屬性：{name}"
+  },
+  "attributes.execute": {
+    "message": "執行"
+  },
+  "attributes.group": {
+    "message": "群組"
+  },
+  "attributes.in_archive": {
+    "message": "無法變更壓縮檔內項目的屬性。"
+  },
+  "attributes.no_bits": {
+    "message": "這些檔案在此沒有權限位元，只能變更日期。"
+  },
+  "attributes.now": {
+    "message": "現在"
+  },
+  "attributes.octal": {
+    "message": "八進位："
+  },
+  "attributes.ok": {
+    "message": "確定"
+  },
+  "attributes.others": {
+    "message": "其他人"
+  },
+  "attributes.owner": {
+    "message": "擁有者"
+  },
+  "attributes.read": {
+    "message": "讀取"
+  },
+  "attributes.recurse": {
+    "message": "同時套用到資料夾內的所有內容"
+  },
+  "attributes.title_many": {
+    "message": "變更 {count, plural, other {# 個項目}}的屬性"
+  },
+  "attributes.title_one": {
+    "message": "變更「{name}」的屬性"
+  },
+  "attributes.write": {
+    "message": "寫入"
+  },
+  "bookmarks.add_current": {
+    "message": "加入目前資料夾"
+  },
+  "bookmarks.add_folders": {
+    "message": "加入資料夾..."
+  },
+  "bookmarks.added": {
+    "message": "已加入書籤：{name}"
+  },
+  "bookmarks.already": {
+    "message": "{name} 已在書籤中。"
+  },
+  "bookmarks.chooser.failed": {
+    "message": "無法顯示資料夾選擇器：{err}"
+  },
+  "bookmarks.chooser.prompt": {
+    "message": "加入書籤"
+  },
+  "bookmarks.close": {
+    "message": "關閉"
+  },
+  "bookmarks.copy_name": {
+    "message": "複製名稱"
+  },
+  "bookmarks.copy_path": {
+    "message": "複製路徑"
+  },
+  "bookmarks.drop_here": {
+    "message": "將資料夾拖放到這裡。"
+  },
+  "bookmarks.empty": {
+    "message": "沒有書籤：請加入資料夾，或將資料夾拖放到這裡。"
+  },
+  "bookmarks.intro": {
+    "message": "這台電腦的資料夾，依「位置」中的順序排列：拖曳即可移動，或將資料夾拖放到這裡來加入。"
+  },
+  "bookmarks.move_down": {
+    "message": "下移"
+  },
+  "bookmarks.move_up": {
+    "message": "上移"
+  },
+  "bookmarks.only_local": {
+    "message": "只能將這台電腦的資料夾加入書籤。"
+  },
+  "bookmarks.remove": {
+    "message": "移除"
+  },
+  "bookmarks.remove_from": {
+    "message": "從書籤中移除"
+  },
+  "bookmarks.rename": {
+    "message": "重新命名..."
+  },
+  "bookmarks.rename_label": {
+    "message": "名稱（留空則使用資料夾名稱）："
+  },
+  "bookmarks.rename_title": {
+    "message": "重新命名書籤"
+  },
+  "bookmarks.sort": {
+    "message": "排序 A–Z"
+  },
+  "bookmarks.title": {
+    "message": "書籤"
+  },
+  "button_bar.copy": {
+    "message": "複製"
+  },
+  "button_bar.delete": {
+    "message": "刪除"
+  },
+  "button_bar.edit": {
+    "message": "編輯"
+  },
+  "button_bar.move": {
+    "message": "移動"
+  },
+  "button_bar.new_folder": {
+    "message": "新增資料夾"
+  },
+  "button_bar.quit": {
+    "message": "結束"
+  },
+  "button_bar.view": {
+    "message": "檢視"
+  },
+  "checksum.create.title": {
+    "message": "建立 {name}"
+  },
+  "checksum.create.title_separate": {
+    "message": "建立 {method} 總和檢查碼檔案"
+  },
+  "checksum.dialog_title": {
+    "message": "建立總和檢查碼檔案"
+  },
+  "checksum.save_as": {
+    "message": "將總和檢查碼檔案儲存為："
+  },
+  "checksum.separate": {
+    "message": "改為在每個檔案旁各建立一個總和檢查碼檔案"
+  },
+  "checksum.verify.all_ok": {
+    "message": "{count, plural, other {全部 # 個檔案皆正確}}"
+  },
+  "checksum.verify.choose": {
+    "message": "請選擇總和檢查碼檔案：.sfv、.md5、.sha1、.sha256 或 .sha512。"
+  },
+  "checksum.verify.missing_file": {
+    "message": "遺失：{name}"
+  },
+  "checksum.verify.result": {
+    "message": "{ok, plural, other {# 個正確}}，{wrong, plural, other {# 個錯誤}}，{missing, plural, other {# 個遺失}}"
+  },
+  "checksum.verify.title_many": {
+    "message": "驗證 {count, plural, other {# 個總和檢查碼檔案}}"
+  },
+  "checksum.verify.title_one": {
+    "message": "驗證 {name}"
+  },
+  "checksum.verify.wrong_file": {
+    "message": "錯誤：{name}"
+  },
+  "command.about": {
+    "message": "關於 Spark Commander"
+  },
+  "command.activity_log": {
+    "message": "活動記錄..."
+  },
+  "command.all_files": {
+    "message": "所有檔案"
+  },
+  "command.all_folder_sizes": {
+    "message": "計算所有資料夾大小"
+  },
+  "command.all_with_extension": {
+    "message": "*.*"
+  },
+  "command.associate_with": {
+    "message": "關聯至..."
+  },
+  "command.bookmark_folder": {
+    "message": "將此資料夾加入書籤"
+  },
+  "command.bookmarks": {
+    "message": "書籤"
+  },
+  "command.branch_view": {
+    "message": "分支檢視（含子目錄）"
+  },
+  "command.branch_view_selected": {
+    "message": "所選資料夾的分支檢視"
+  },
+  "command.brief": {
+    "message": "簡要"
+  },
+  "command.calculate_occupied_space": {
+    "message": "計算佔用空間..."
+  },
+  "command.change_attributes": {
+    "message": "變更屬性..."
+  },
+  "command.close_all_tabs": {
+    "message": "關閉所有分頁"
+  },
+  "command.close_duplicate_tabs": {
+    "message": "關閉重複的分頁"
+  },
+  "command.close_tab": {
+    "message": "關閉分頁"
+  },
+  "command.combine_files": {
+    "message": "合併檔案..."
+  },
+  "command.compare_by_content": {
+    "message": "依內容比較..."
+  },
+  "command.compare_directories": {
+    "message": "標記較新的檔案"
+  },
+  "command.copy": {
+    "message": "複製..."
+  },
+  "command.copy_names_to_clipboard": {
+    "message": "將所選名稱複製到剪貼簿"
+  },
+  "command.copy_names_with_path_to_clipboard": {
+    "message": "將名稱連同路徑複製到剪貼簿"
+  },
+  "command.copy_to_clipboard": {
+    "message": "複製檔案"
+  },
+  "command.copy_with_all_details": {
+    "message": "連同所有詳細資料複製到剪貼簿"
+  },
+  "command.copy_with_path_and_details": {
+    "message": "連同路徑及詳細資料複製到剪貼簿"
+  },
+  "command.create_checksum_files": {
+    "message": "建立總和檢查碼檔案 (CRC32、MD5、SHA1、SHA256、SHA512)..."
+  },
+  "command.create_link": {
+    "message": "建立連結..."
+  },
+  "command.custom_filter": {
+    "message": "自訂..."
+  },
+  "command.cut_to_clipboard": {
+    "message": "剪下檔案"
+  },
+  "command.delete": {
+    "message": "刪除"
+  },
+  "command.delete_permanently": {
+    "message": "永久刪除"
+  },
+  "command.disconnect": {
+    "message": "中斷與伺服器的連線"
+  },
+  "command.download_link": {
+    "message": "從連結下載..."
+  },
+  "command.duplicate_tab": {
+    "message": "新增分頁"
+  },
+  "command.duplicate_workspace": {
+    "message": "複製工作區..."
+  },
+  "command.edit": {
+    "message": "編輯"
+  },
+  "command.edit_externally": {
+    "message": "用外部編輯器編輯"
+  },
+  "command.folder_history": {
+    "message": "資料夾歷程記錄..."
+  },
+  "command.full": {
+    "message": "詳細"
+  },
+  "command.go_back": {
+    "message": "返回"
+  },
+  "command.go_forward": {
+    "message": "前進"
+  },
+  "command.go_home": {
+    "message": "家目錄"
+  },
+  "command.go_to_root": {
+    "message": "根資料夾"
+  },
+  "command.hidden_files": {
+    "message": "隱藏檔案"
+  },
+  "command.internal_associations": {
+    "message": "內部關聯（僅限 Spark Commander）..."
+  },
+  "command.invert_selection": {
+    "message": "反向選取"
+  },
+  "command.left_drives": {
+    "message": "磁碟機（左面板）"
+  },
+  "command.list_tabs": {
+    "message": "分頁清單"
+  },
+  "command.load_selection_from_file": {
+    "message": "從檔案載入選取項目"
+  },
+  "command.manage_bookmarks": {
+    "message": "管理書籤..."
+  },
+  "command.manage_tools": {
+    "message": "管理工具..."
+  },
+  "command.manage_workspaces": {
+    "message": "管理工作區..."
+  },
+  "command.mark_in_place": {
+    "message": "原地標記/取消標記，並計算資料夾大小"
+  },
+  "command.mark_newer_hide_same": {
+    "message": "標記較新的檔案，隱藏相同的檔案"
+  },
+  "command.move": {
+    "message": "移動..."
+  },
+  "command.multi_rename_tool": {
+    "message": "批次重新命名工具..."
+  },
+  "command.name_to_command_line": {
+    "message": "將名稱傳送到命令列"
+  },
+  "command.new_folder": {
+    "message": "新增資料夾..."
+  },
+  "command.new_terminal": {
+    "message": "新增終端機分頁"
+  },
+  "command.new_text_file": {
+    "message": "新增檔案..."
+  },
+  "command.new_workspace": {
+    "message": "新增工作區..."
+  },
+  "command.next_tab": {
+    "message": "下一個分頁"
+  },
+  "command.only_selected_files": {
+    "message": "僅限所選檔案"
+  },
+  "command.open_in_left_panel": {
+    "message": "在左面板中顯示"
+  },
+  "command.open_in_new_tab": {
+    "message": "在新分頁中開啟資料夾"
+  },
+  "command.open_in_other_new_tab": {
+    "message": "在另一個面板的新分頁中開啟資料夾"
+  },
+  "command.open_in_right_panel": {
+    "message": "在右面板中顯示"
+  },
+  "command.open_terminal": {
+    "message": "在此開啟終端機"
+  },
+  "command.operation_queue": {
+    "message": "作業佇列..."
+  },
+  "command.pack": {
+    "message": "壓縮..."
+  },
+  "command.paste_from_clipboard": {
+    "message": "貼上檔案"
+  },
+  "command.path_and_name_to_command_line": {
+    "message": "將路徑和名稱傳送到命令列"
+  },
+  "command.path_to_command_line": {
+    "message": "將路徑傳送到命令列"
+  },
+  "command.previous_tab": {
+    "message": "上一個分頁"
+  },
+  "command.programs": {
+    "message": "程式"
+  },
+  "command.properties": {
+    "message": "內容..."
+  },
+  "command.quick_filter": {
+    "message": "快速篩選"
+  },
+  "command.quick_open": {
+    "message": "快速開啟..."
+  },
+  "command.quick_view_panel": {
+    "message": "快速檢視面板"
+  },
+  "command.quit": {
+    "message": "結束"
+  },
+  "command.redo": {
+    "message": "取消復原"
+  },
+  "command.rename_in_place": {
+    "message": "重新命名"
+  },
+  "command.reread_source": {
+    "message": "重新讀取來源"
+  },
+  "command.restore_selection": {
+    "message": "還原選取"
+  },
+  "command.reversed_order": {
+    "message": "反向排序"
+  },
+  "command.right_drives": {
+    "message": "磁碟機（右面板）"
+  },
+  "command.save_selection": {
+    "message": "儲存選取"
+  },
+  "command.save_selection_to_file": {
+    "message": "將選取項目儲存到檔案"
+  },
+  "command.search": {
+    "message": "搜尋..."
+  },
+  "command.search_in_separate_process": {
+    "message": "在獨立視窗中搜尋..."
+  },
+  "command.select_all": {
+    "message": "全選"
+  },
+  "command.select_all_with_same_extension": {
+    "message": "選取所有相同副檔名的檔案"
+  },
+  "command.select_group": {
+    "message": "選取群組..."
+  },
+  "command.settings": {
+    "message": "設定..."
+  },
+  "command.shortcuts": {
+    "message": "快速鍵..."
+  },
+  "command.sidebar_connections": {
+    "message": "連線"
+  },
+  "command.sidebar_operations": {
+    "message": "作業"
+  },
+  "command.sidebar_places": {
+    "message": "位置"
+  },
+  "command.sidebar_tree": {
+    "message": "資料夾"
+  },
+  "command.sort_by_extension": {
+    "message": "副檔名"
+  },
+  "command.sort_by_name": {
+    "message": "名稱"
+  },
+  "command.sort_by_size": {
+    "message": "大小"
+  },
+  "command.sort_by_time": {
+    "message": "時間"
+  },
+  "command.split_file": {
+    "message": "分割檔案..."
+  },
+  "command.swap_panels": {
+    "message": "交換面板"
+  },
+  "command.swap_panels_and_tabs": {
+    "message": "交換面板及其分頁"
+  },
+  "command.sync_browsing": {
+    "message": "同步瀏覽"
+  },
+  "command.synchronize_dirs": {
+    "message": "同步目錄..."
+  },
+  "command.target_equals_source": {
+    "message": "目標 = 來源"
+  },
+  "command.terminal_panel": {
+    "message": "終端機"
+  },
+  "command.test_archives": {
+    "message": "測試壓縮檔"
+  },
+  "command.thumbnail_view": {
+    "message": "縮圖檢視"
+  },
+  "command.toggle_mark": {
+    "message": "標記/取消標記"
+  },
+  "command.toggle_sidebar": {
+    "message": "顯示側邊欄"
+  },
+  "command.undo": {
+    "message": "復原"
+  },
+  "command.unpack_specific_files": {
+    "message": "解壓縮指定檔案..."
+  },
+  "command.unselect_all": {
+    "message": "全部取消選取"
+  },
+  "command.unselect_group": {
+    "message": "取消選取群組..."
+  },
+  "command.unsorted": {
+    "message": "不排序"
+  },
+  "command.verify_checksums": {
+    "message": "驗證總和檢查碼（從總和檢查碼檔案）"
+  },
+  "command.vertical_arrangement": {
+    "message": "垂直排列"
+  },
+  "command.view": {
+    "message": "檢視"
+  },
+  "command.website": {
+    "message": "Spark Commander 網站"
+  },
+  "command.workspace1": {
+    "message": "開啟工作區 1"
+  },
+  "command.workspace2": {
+    "message": "開啟工作區 2"
+  },
+  "command.workspace3": {
+    "message": "開啟工作區 3"
+  },
+  "command.workspace4": {
+    "message": "開啟工作區 4"
+  },
+  "command.workspace5": {
+    "message": "開啟工作區 5"
+  },
+  "command.workspace6": {
+    "message": "開啟工作區 6"
+  },
+  "command.workspace7": {
+    "message": "開啟工作區 7"
+  },
+  "command.workspace8": {
+    "message": "開啟工作區 8"
+  },
+  "command.workspace9": {
+    "message": "開啟工作區 9"
+  },
+  "command_line.error.cannot_run": {
+    "message": "{program}：無法執行"
+  },
+  "command_line.error.not_found": {
+    "message": "{program}：找不到命令"
+  },
+  "command_line.history.empty": {
+    "message": "尚未執行任何命令"
+  },
+  "command_line.on_server": {
+    "message": "命令只會在這台電腦上執行；目前面板顯示的是伺服器。"
+  },
+  "command_name.all_files": {
+    "message": "顯示所有檔案"
+  },
+  "command_name.all_with_extension": {
+    "message": "顯示 *.*"
+  },
+  "command_name.brief": {
+    "message": "簡要檢視"
+  },
+  "command_name.compare_directories": {
+    "message": "比較目錄：標記較新的檔案"
+  },
+  "command_name.custom_filter": {
+    "message": "自訂篩選"
+  },
+  "command_name.duplicate_tab": {
+    "message": "新增分頁（複製目前分頁）"
+  },
+  "command_name.full": {
+    "message": "詳細檢視"
+  },
+  "command_name.go_back": {
+    "message": "返回"
+  },
+  "command_name.go_forward": {
+    "message": "前進"
+  },
+  "command_name.go_home": {
+    "message": "前往家目錄"
+  },
+  "command_name.hidden_files": {
+    "message": "顯示隱藏檔案"
+  },
+  "command_name.only_selected_files": {
+    "message": "僅顯示所選檔案"
+  },
+  "command_name.programs": {
+    "message": "顯示程式"
+  },
+  "command_name.quick_filter": {
+    "message": "快速篩選"
+  },
+  "command_name.rename_in_place": {
+    "message": "就地重新命名"
+  },
+  "command_name.sidebar_connections": {
+    "message": "側邊欄：連線"
+  },
+  "command_name.sidebar_operations": {
+    "message": "側邊欄：作業"
+  },
+  "command_name.sidebar_places": {
+    "message": "側邊欄：位置"
+  },
+  "command_name.sidebar_tree": {
+    "message": "側邊欄：資料夾"
+  },
+  "command_name.sort_by_extension": {
+    "message": "依副檔名排序"
+  },
+  "command_name.sort_by_name": {
+    "message": "依名稱排序"
+  },
+  "command_name.sort_by_size": {
+    "message": "依大小排序"
+  },
+  "command_name.sort_by_time": {
+    "message": "依時間排序"
+  },
+  "command_name.toggle_sidebar": {
+    "message": "側邊欄：顯示或隱藏"
+  },
+  "command_name.unsorted": {
+    "message": "不排序"
+  },
+  "compare.browse.prompt": {
+    "message": "比較"
+  },
+  "compare.button.compare": {
+    "message": "比較"
+  },
+  "compare.button.next": {
+    "message": "下一個差異 (N)"
+  },
+  "compare.button.previous": {
+    "message": "上一個差異 (P)"
+  },
+  "compare.need_two_files": {
+    "message": "請將游標分別移到兩個面板中的檔案上，或標記兩個檔案。"
+  },
+  "compare.option.binary": {
+    "message": "二進位"
+  },
+  "compare.option.ignore_case": {
+    "message": "忽略大小寫"
+  },
+  "compare.option.ignore_spaces": {
+    "message": "忽略重複的空格"
+  },
+  "compare.option.only_differences": {
+    "message": "僅顯示差異"
+  },
+  "compare.status.bytes_differ": {
+    "message": "{place}：{count, plural, other {{grouped} 個位元組不同}}，第一個位於 {first}；大小分別為 {left} 和 {right}。"
+  },
+  "compare.status.comparing": {
+    "message": "正在比較…"
+  },
+  "compare.status.difference_of": {
+    "message": "第 {at} 個差異，共 {count} 個"
+  },
+  "compare.status.differences": {
+    "message": "{count, plural, other {# 個差異}}"
+  },
+  "compare.status.identical": {
+    "message": "{count, plural, other {檔案完全相同：{grouped} 位元組。}}"
+  },
+  "compare.status.no_differences": {
+    "message": "沒有差異。"
+  },
+  "compare.window.title": {
+    "message": "比較：{left} — {right}"
+  },
+  "connections.connect": {
+    "message": "連線"
+  },
+  "connections.copy_name": {
+    "message": "複製名稱"
+  },
+  "connections.copy_path": {
+    "message": "複製路徑"
+  },
+  "connections.delete": {
+    "message": "刪除"
+  },
+  "connections.dialog.title": {
+    "message": "連線"
+  },
+  "connections.disconnect": {
+    "message": "中斷連線"
+  },
+  "connections.duplicate": {
+    "message": "建立副本"
+  },
+  "connections.duplicate_name": {
+    "message": "{name}（副本）"
+  },
+  "connections.edit": {
+    "message": "編輯..."
+  },
+  "connections.empty": {
+    "message": "尚無任何連線。"
+  },
+  "connections.error.no_server": {
+    "message": "必須填寫伺服器。"
+  },
+  "connections.error.port": {
+    "message": "不是有效的連接埠：{text}"
+  },
+  "connections.field.access_key": {
+    "message": "存取金鑰"
+  },
+  "connections.field.api_key": {
+    "message": "API 金鑰"
+  },
+  "connections.field.application_key": {
+    "message": "應用程式金鑰"
+  },
+  "connections.field.bucket": {
+    "message": "儲存貯體/資料夾"
+  },
+  "connections.field.container": {
+    "message": "容器/資料夾"
+  },
+  "connections.field.endpoint": {
+    "message": "端點"
+  },
+  "connections.field.key_id": {
+    "message": "金鑰 ID"
+  },
+  "connections.field.name": {
+    "message": "名稱"
+  },
+  "connections.field.password": {
+    "message": "密碼"
+  },
+  "connections.field.port": {
+    "message": "連接埠"
+  },
+  "connections.field.protocol": {
+    "message": "通訊協定"
+  },
+  "connections.field.secret_key": {
+    "message": "秘密金鑰"
+  },
+  "connections.field.server": {
+    "message": "伺服器"
+  },
+  "connections.field.start_folder": {
+    "message": "起始資料夾"
+  },
+  "connections.field.user": {
+    "message": "使用者"
+  },
+  "connections.folder.delete_confirm": {
+    "message": "{count, plural, other {要刪除資料夾 {name} 及其中的 # 個連線嗎？}}"
+  },
+  "connections.folder.delete_title": {
+    "message": "刪除資料夾"
+  },
+  "connections.folder.exists": {
+    "message": "已有名為 {name} 的資料夾。"
+  },
+  "connections.folder.name": {
+    "message": "名稱："
+  },
+  "connections.folder.new_title": {
+    "message": "新增資料夾"
+  },
+  "connections.folder.rename": {
+    "message": "重新命名..."
+  },
+  "connections.folder.rename_title": {
+    "message": "重新命名資料夾"
+  },
+  "connections.forget_password": {
+    "message": "忘記已儲存的密碼"
+  },
+  "connections.move_down": {
+    "message": "下移"
+  },
+  "connections.move_to_folder": {
+    "message": "移至資料夾"
+  },
+  "connections.move_up": {
+    "message": "上移"
+  },
+  "connections.new": {
+    "message": "新增連線..."
+  },
+  "connections.new_folder": {
+    "message": "新增資料夾..."
+  },
+  "connections.no_folder": {
+    "message": "不放入資料夾"
+  },
+  "connections.open_in_terminal": {
+    "message": "在終端機中開啟"
+  },
+  "connections.placeholder.name": {
+    "message": "清單中顯示的名稱"
+  },
+  "connections.placeholder.password": {
+    "message": "加密保存在設定資料夾中；留空則保留現有密碼"
+  },
+  "connections.placeholder.path": {
+    "message": "登入後的資料夾"
+  },
+  "connections.placeholder.port": {
+    "message": "預設"
+  },
+  "connections.placeholder.server": {
+    "message": "伺服器，或 ~/.ssh/config 中的主機"
+  },
+  "connections.placeholder.user": {
+    "message": "依 ~/.ssh/config 設定，或匿名"
+  },
+  "connections.save_failed": {
+    "message": "無法儲存連線：{err}"
+  },
+  "connections.ssh_config.read_only": {
+    "message": "唯讀：這些主機須直接在 ~/.ssh/config 中編輯"
+  },
+  "context_menu.action_failed": {
+    "message": "{name} 失敗：{err}"
+  },
+  "context_menu.actions": {
+    "message": "動作"
+  },
+  "context_menu.copy": {
+    "message": "複製"
+  },
+  "context_menu.create_new": {
+    "message": "新增"
+  },
+  "context_menu.cut": {
+    "message": "剪下"
+  },
+  "context_menu.delete": {
+    "message": "刪除"
+  },
+  "context_menu.edit": {
+    "message": "編輯"
+  },
+  "context_menu.empty_file": {
+    "message": "空白檔案…"
+  },
+  "context_menu.move_to_trash": {
+    "message": "移至資源回收筒"
+  },
+  "context_menu.new_file_dialog.label": {
+    "message": "新檔案名稱："
+  },
+  "context_menu.new_file_dialog.title": {
+    "message": "新增檔案"
+  },
+  "context_menu.new_file_failed": {
+    "message": "無法建立檔案：{err}"
+  },
+  "context_menu.new_folder": {
+    "message": "資料夾…"
+  },
+  "context_menu.open": {
+    "message": "開啟"
+  },
+  "context_menu.open_failed": {
+    "message": "無法開啟：{err}"
+  },
+  "context_menu.open_terminal_here": {
+    "message": "在此開啟終端機"
+  },
+  "context_menu.open_with": {
+    "message": "開啟方式"
+  },
+  "context_menu.other_application": {
+    "message": "其他應用程式…"
+  },
+  "context_menu.pack": {
+    "message": "壓縮…"
+  },
+  "context_menu.pack_files": {
+    "message": "壓縮檔案"
+  },
+  "context_menu.paste": {
+    "message": "貼上"
+  },
+  "context_menu.properties": {
+    "message": "內容"
+  },
+  "context_menu.properties_failed": {
+    "message": "內容：{err}"
+  },
+  "context_menu.rename": {
+    "message": "重新命名…"
+  },
+  "context_menu.rename_dialog.label": {
+    "message": "新名稱："
+  },
+  "context_menu.rename_dialog.title": {
+    "message": "重新命名"
+  },
+  "context_menu.rename_failed": {
+    "message": "無法重新命名：{err}"
+  },
+  "context_menu.shell_menu_failed": {
+    "message": "選單：{err}"
+  },
+  "context_menu.show_failed": {
+    "message": "無法顯示：{err}"
+  },
+  "context_menu.show_in_file_manager": {
+    "message": "在檔案管理員中顯示"
+  },
+  "context_menu.terminal_failed": {
+    "message": "無法開啟終端機：{err}"
+  },
+  "context_menu.terminal_not_local": {
+    "message": "只能在這台電腦的資料夾中開啟終端機。"
+  },
+  "context_menu.unpack": {
+    "message": "解壓縮…"
+  },
+  "context_menu.view": {
+    "message": "檢視"
+  },
+  "desktop.no_app_chooser": {
+    "message": "桌面環境沒有應用程式選擇器（{err}）"
+  },
+  "desktop.no_terminal": {
+    "message": "找不到終端機"
+  },
+  "desktop.nothing_to_run": {
+    "message": "{name}：沒有可執行的內容"
+  },
+  "desktop.scripts": {
+    "message": "命令稿"
+  },
+  "devices.error.mount_failed": {
+    "message": "無法掛載裝置"
+  },
+  "devices.error.no_folder": {
+    "message": "裝置未分享任何資料夾"
+  },
+  "devices.error.system_only": {
+    "message": "只有系統能卸載此裝置"
+  },
+  "devices.error.unreachable": {
+    "message": "無法連線：裝置上是否已開啟 KDE Connect，並連上同一個網路？"
+  },
+  "devices.unlock.ask": {
+    "message": "{name} 的密碼片語："
+  },
+  "devices.unlock.ask_again": {
+    "message": "密碼片語錯誤。{name} 的密碼片語："
+  },
+  "devices.unlock.title": {
+    "message": "解鎖"
+  },
+  "devices.volume.share_on_server": {
+    "message": "{server} 上的 {share}"
+  },
+  "devices.volume.unnamed": {
+    "message": "{size} GB 磁碟區"
+  },
+  "devices.volume.unnamed_encrypted": {
+    "message": "{size} GB 加密磁碟區"
+  },
+  "download.cancel": {
+    "message": "取消"
+  },
+  "download.dialog_title": {
+    "message": "從連結下載"
+  },
+  "download.download": {
+    "message": "下載"
+  },
+  "download.folder_link": {
+    "message": "此連結指向資料夾"
+  },
+  "download.incomplete": {
+    "message": "伺服器只傳送了 {got} / {size, plural, other {# 位元組}}；重新下載時會從中斷處繼續"
+  },
+  "download.into": {
+    "message": "下載至 {folder}"
+  },
+  "download.link": {
+    "message": "連結"
+  },
+  "download.link_placeholder": {
+    "message": "https://、http://、ftp:// 或 ftps://"
+  },
+  "download.local_only": {
+    "message": "只能下載到這台電腦的資料夾：請先在面板中開啟一個。"
+  },
+  "download.name_placeholder": {
+    "message": "使用伺服器或連結提供的名稱"
+  },
+  "download.no_file": {
+    "message": "此連結未指向任何檔案"
+  },
+  "download.not_a_link": {
+    "message": "不是可下載的連結"
+  },
+  "download.problem.bad_name": {
+    "message": "請輸入檔案名稱，不要包含資料夾。"
+  },
+  "download.problem.empty": {
+    "message": "請貼上或輸入連結。"
+  },
+  "download.problem.exists": {
+    "message": "這裡已有 {name}：按「取代」即會覆寫。"
+  },
+  "download.problem.not_link": {
+    "message": "不是可下載的連結：必須以 https://、http://、ftp:// 或 ftps:// 開頭。"
+  },
+  "download.replace": {
+    "message": "取代"
+  },
+  "download.save_as": {
+    "message": "另存為"
+  },
+  "download.saved_as": {
+    "message": "已儲存為 {name}"
+  },
+  "download.title": {
+    "message": "下載「{name}」"
+  },
+  "download.title_link": {
+    "message": "下載 {link}"
+  },
+  "editor.close.after_send": {
+    "message": "伺服器收到檔案後就會關閉。"
+  },
+  "editor.close.discard": {
+    "message": "不儲存"
+  },
+  "editor.close.save": {
+    "message": "儲存"
+  },
+  "editor.close.title": {
+    "message": "要儲存變更嗎？"
+  },
+  "editor.close.unsaved": {
+    "message": "{name} 有尚未儲存的變更。"
+  },
+  "editor.close.unsent": {
+    "message": "{name} 未儲存到其伺服器：傳送失敗。"
+  },
+  "editor.dialog.cancel": {
+    "message": "取消"
+  },
+  "editor.edit.copy": {
+    "message": "複製"
+  },
+  "editor.edit.cut": {
+    "message": "剪下"
+  },
+  "editor.edit.find": {
+    "message": "尋找..."
+  },
+  "editor.edit.find_next": {
+    "message": "尋找下一個"
+  },
+  "editor.edit.find_previous": {
+    "message": "尋找上一個"
+  },
+  "editor.edit.go_to_line": {
+    "message": "移至行..."
+  },
+  "editor.edit.paste": {
+    "message": "貼上"
+  },
+  "editor.edit.redo": {
+    "message": "取消復原"
+  },
+  "editor.edit.replace": {
+    "message": "取代..."
+  },
+  "editor.edit.undo": {
+    "message": "復原"
+  },
+  "editor.external.not_set": {
+    "message": "未設定外部編輯器（設定，編輯/檢視）"
+  },
+  "editor.file.close": {
+    "message": "關閉"
+  },
+  "editor.file.reload": {
+    "message": "重新載入"
+  },
+  "editor.file.save": {
+    "message": "儲存"
+  },
+  "editor.file.save_as": {
+    "message": "另存新檔..."
+  },
+  "editor.find.close": {
+    "message": "關閉 (Escape)"
+  },
+  "editor.find.count": {
+    "message": "{current}/{total}"
+  },
+  "editor.find.in_selection": {
+    "message": "在選取範圍中尋找 (Alt+L)"
+  },
+  "editor.find.match_case": {
+    "message": "大小寫須相符 (Alt+C)"
+  },
+  "editor.find.next": {
+    "message": "下一個相符項目 (Enter)"
+  },
+  "editor.find.no_results": {
+    "message": "沒有結果"
+  },
+  "editor.find.placeholder": {
+    "message": "尋找"
+  },
+  "editor.find.preserve_case": {
+    "message": "保留大小寫 (Alt+P)"
+  },
+  "editor.find.previous": {
+    "message": "上一個相符項目 (Shift+Enter)"
+  },
+  "editor.find.regex": {
+    "message": "使用規則運算式 (Alt+R)"
+  },
+  "editor.find.replace": {
+    "message": "取代 (Ctrl+Shift+1)"
+  },
+  "editor.find.replace_all": {
+    "message": "全部取代 (Ctrl+Alt+Enter)"
+  },
+  "editor.find.replace_placeholder": {
+    "message": "取代"
+  },
+  "editor.find.toggle_replace": {
+    "message": "切換取代"
+  },
+  "editor.find.whole_word": {
+    "message": "全字拼寫須相符 (Alt+W)"
+  },
+  "editor.go_to_line.label": {
+    "message": "行，或 行:欄"
+  },
+  "editor.go_to_line.title": {
+    "message": "移至行"
+  },
+  "editor.language.by_file_name": {
+    "message": "依檔案名稱"
+  },
+  "editor.language.plain_text": {
+    "message": "純文字"
+  },
+  "editor.menu.edit": {
+    "message": "編輯"
+  },
+  "editor.menu.file": {
+    "message": "檔案"
+  },
+  "editor.menu.language": {
+    "message": "語言"
+  },
+  "editor.menu.selection": {
+    "message": "選取項目"
+  },
+  "editor.menu.view": {
+    "message": "檢視"
+  },
+  "editor.open.too_large": {
+    "message": "超過內建編輯器的 {limit_mb} MB 上限（設定，編輯/檢視）；按 Ctrl+Shift+F4 可用外部編輯器編輯"
+  },
+  "editor.reload.button": {
+    "message": "重新載入"
+  },
+  "editor.reload.failed": {
+    "message": "無法重新載入：{err}"
+  },
+  "editor.reload.text": {
+    "message": "尚未儲存的變更將會遺失。"
+  },
+  "editor.reload.title": {
+    "message": "要重新載入檔案嗎？"
+  },
+  "editor.reload.unfit": {
+    "message": "未重新載入：{why, select, binary {這是二進位檔案} other {這不是 UTF-8 文字}}。"
+  },
+  "editor.save.admin": {
+    "message": "儲存「{name}」"
+  },
+  "editor.save.failed": {
+    "message": "無法儲存 {path}：{err}"
+  },
+  "editor.save_anyway.button": {
+    "message": "仍要儲存"
+  },
+  "editor.save_anyway.text": {
+    "message": "這個檔案原本不是文字：儲存時會依顯示的內容寫入，非文字的部分將永久改變。"
+  },
+  "editor.save_anyway.title": {
+    "message": "要儲存為文字嗎？"
+  },
+  "editor.selection.add_cursor_above": {
+    "message": "在上方新增游標"
+  },
+  "editor.selection.add_cursor_below": {
+    "message": "在下方新增游標"
+  },
+  "editor.selection.delete_lines": {
+    "message": "刪除行"
+  },
+  "editor.selection.duplicate_lines": {
+    "message": "複製行"
+  },
+  "editor.selection.indent": {
+    "message": "增加縮排"
+  },
+  "editor.selection.lowercase": {
+    "message": "小寫"
+  },
+  "editor.selection.move_lines_down": {
+    "message": "下移行"
+  },
+  "editor.selection.move_lines_up": {
+    "message": "上移行"
+  },
+  "editor.selection.outdent": {
+    "message": "減少縮排"
+  },
+  "editor.selection.select_all": {
+    "message": "全選"
+  },
+  "editor.selection.select_all_occurrences": {
+    "message": "選取所有相符項目"
+  },
+  "editor.selection.sort_lines_ascending": {
+    "message": "遞增排序行"
+  },
+  "editor.selection.sort_lines_descending": {
+    "message": "遞減排序行"
+  },
+  "editor.selection.title_case": {
+    "message": "字首大寫"
+  },
+  "editor.selection.toggle_line_comment": {
+    "message": "切換行註解"
+  },
+  "editor.selection.trim_trailing_whitespace": {
+    "message": "刪除行尾空白"
+  },
+  "editor.selection.uppercase": {
+    "message": "大寫"
+  },
+  "editor.send.failed": {
+    "message": "無法存回伺服器：{err}。儲存時會再試一次。"
+  },
+  "editor.status.modified": {
+    "message": "已修改"
+  },
+  "editor.status.position": {
+    "message": "行 {line}，欄 {column}"
+  },
+  "editor.status.position_selected": {
+    "message": "行 {line}，欄 {column}（{count, plural, other {已選取 #}}）"
+  },
+  "editor.status.sending": {
+    "message": "正在儲存到伺服器"
+  },
+  "editor.status.spaces": {
+    "message": "空格：{size}"
+  },
+  "editor.status.tab_size": {
+    "message": "Tab 大小：{size}"
+  },
+  "editor.status.unsent": {
+    "message": "未存到伺服器"
+  },
+  "editor.terminal.not_found": {
+    "message": "找不到編輯器；請設定 $EDITOR"
+  },
+  "editor.title": {
+    "message": "{path} — 編輯器"
+  },
+  "editor.unfit.open_anyway": {
+    "message": "仍要開啟"
+  },
+  "editor.unfit.text": {
+    "message": "編輯器未顯示此檔案，因為{why, select, binary {它是二進位檔案} other {它不是 UTF-8 文字}}。"
+  },
+  "editor.view.folding": {
+    "message": "摺疊"
+  },
+  "editor.view.indent_guides": {
+    "message": "縮排輔助線"
+  },
+  "editor.view.indent_with_tabs": {
+    "message": "使用 Tab 縮排"
+  },
+  "editor.view.line_numbers": {
+    "message": "行號"
+  },
+  "editor.view.minimap": {
+    "message": "迷你地圖"
+  },
+  "editor.view.tab_width": {
+    "message": "Tab 寬度 {width}"
+  },
+  "editor.view.unfold_all": {
+    "message": "全部展開"
+  },
+  "editor.view.whitespace": {
+    "message": "空白字元"
+  },
+  "editor.view.word_wrap": {
+    "message": "自動換行"
+  },
+  "elevate.failed": {
+    "message": "以系統管理員身分執行也失敗了（{code}）"
+  },
+  "elevate.no_consent": {
+    "message": "未取得系統管理員的同意"
+  },
+  "elevate.no_password": {
+    "message": "未提供密碼"
+  },
+  "elevate.not_authorised": {
+    "message": "未獲授權"
+  },
+  "elevate.percent_name": {
+    "message": "{path}：含有 % 的名稱無法以系統管理員身分處理；請先重新命名"
+  },
+  "elevate.pkexec_missing": {
+    "message": "未安裝 pkexec (polkit)"
+  },
+  "file_menu.change_tags_failed": {
+    "message": "無法變更標籤：{err}"
+  },
+  "file_menu.compress": {
+    "message": "{count, plural, =1 {壓縮「{name}」…} other {壓縮 # 個項目…}}"
+  },
+  "file_menu.copy": {
+    "message": "{count, plural, =1 {拷貝「{name}」} other {拷貝 # 個項目}}"
+  },
+  "file_menu.copy_path": {
+    "message": "將路徑拷貝到剪貼簿"
+  },
+  "file_menu.delete": {
+    "message": "刪除"
+  },
+  "file_menu.duplicate": {
+    "message": "複製"
+  },
+  "file_menu.duplicate_failed": {
+    "message": "無法複製：{err}"
+  },
+  "file_menu.edit_tags": {
+    "message": "標籤…"
+  },
+  "file_menu.get_info": {
+    "message": "取得資訊"
+  },
+  "file_menu.make_alias": {
+    "message": "製作替身"
+  },
+  "file_menu.make_alias_failed": {
+    "message": "無法製作替身：{err}"
+  },
+  "file_menu.move_to_trash": {
+    "message": "丟到垃圾桶"
+  },
+  "file_menu.new_folder": {
+    "message": "新增檔案夾"
+  },
+  "file_menu.open": {
+    "message": "打開"
+  },
+  "file_menu.open_failed": {
+    "message": "無法打開：{err}"
+  },
+  "file_menu.open_with": {
+    "message": "打開檔案的應用程式"
+  },
+  "file_menu.open_with_default": {
+    "message": "{app}（預設）"
+  },
+  "file_menu.paste": {
+    "message": "貼上"
+  },
+  "file_menu.quick_look": {
+    "message": "{count, plural, =1 {快速查看「{name}」} other {快速查看 # 個項目}}"
+  },
+  "file_menu.quick_look_failed": {
+    "message": "快速查看：{err}"
+  },
+  "file_menu.rename": {
+    "message": "重新命名…"
+  },
+  "file_menu.reveal_failed": {
+    "message": "無法在 Finder 中顯示：{err}"
+  },
+  "file_menu.reveal_in_finder": {
+    "message": "在 Finder 中顯示"
+  },
+  "file_menu.show_package_contents": {
+    "message": "顯示套件內容"
+  },
+  "file_menu.tag_dot.add": {
+    "message": "加入標籤「{name}」"
+  },
+  "file_menu.tag_dot.remove": {
+    "message": "移除標籤「{name}」"
+  },
+  "file_menu.tags_popover.show_all": {
+    "message": "顯示全部…"
+  },
+  "file_menu.tags_popover.title": {
+    "message": "{count, plural, =1 {為「{name}」指定標籤} other {為 # 個項目指定標籤}}"
+  },
+  "find.backwards": {
+    "message": "反向搜尋"
+  },
+  "find.cancel": {
+    "message": "取消"
+  },
+  "find.case_sensitive": {
+    "message": "區分大小寫"
+  },
+  "find.hex": {
+    "message": "搜尋十六進位字串"
+  },
+  "find.ok": {
+    "message": "確定"
+  },
+  "find.regex": {
+    "message": "RegEx"
+  },
+  "find.text.label": {
+    "message": "輸入搜尋文字"
+  },
+  "find.title": {
+    "message": "尋找"
+  },
+  "find.whole_words": {
+    "message": "僅限完整單字"
+  },
+  "keys.apply": {
+    "message": "套用"
+  },
+  "keys.cancel": {
+    "message": "取消"
+  },
+  "keys.clear.tooltip": {
+    "message": "無按鍵"
+  },
+  "keys.column.alternate": {
+    "message": "替代按鍵"
+  },
+  "keys.column.command": {
+    "message": "命令"
+  },
+  "keys.column.shortcut": {
+    "message": "快速鍵"
+  },
+  "keys.custom": {
+    "message": "自訂"
+  },
+  "keys.delete_set": {
+    "message": "刪除"
+  },
+  "keys.note.custom_replaced": {
+    "message": "你自訂的按鍵已改用 {name} 的按鍵；「另存為」可保留自訂按鍵。"
+  },
+  "keys.note.deleted": {
+    "message": "{name} 已刪除；按「確定」或「套用」後生效。"
+  },
+  "keys.note.moved": {
+    "message": "{key} 現在是「{command}」，不再是「{other}」。"
+  },
+  "keys.note.name_reserved": {
+    "message": "「{name}」是預設組合的名稱；請另選一個。"
+  },
+  "keys.note.press_new_key": {
+    "message": "請按下新的按鍵；按 Esc 則維持原狀。"
+  },
+  "keys.note.saved": {
+    "message": "已儲存為 {name}；按「確定」或「套用」即可保留。"
+  },
+  "keys.note.set": {
+    "message": "{key} 現在是「{command}」。"
+  },
+  "keys.note.taken_by_system": {
+    "message": "{key} 已被 {by} 佔用，因此 Spark Commander 收不到這個按鍵。"
+  },
+  "keys.ok": {
+    "message": "確定"
+  },
+  "keys.press_key": {
+    "message": "請按鍵…"
+  },
+  "keys.reserved.application_launcher": {
+    "message": "{system}：應用程式啟動器"
+  },
+  "keys.reserved.close_window": {
+    "message": "{system}：關閉視窗"
+  },
+  "keys.reserved.close_window_or_tab": {
+    "message": "{system}：關閉視窗或分頁"
+  },
+  "keys.reserved.dock": {
+    "message": "{system}：Dock"
+  },
+  "keys.reserved.floating_window": {
+    "message": "{system}：浮動視窗"
+  },
+  "keys.reserved.force_quit": {
+    "message": "{system}：強制結束"
+  },
+  "keys.reserved.hide_program": {
+    "message": "{system}：隱藏程式"
+  },
+  "keys.reserved.input_source": {
+    "message": "{system}：輸入方式"
+  },
+  "keys.reserved.keyboard_access": {
+    "message": "{system}：鍵盤取用"
+  },
+  "keys.reserved.keyboard_navigation": {
+    "message": "{system}：鍵盤導覽"
+  },
+  "keys.reserved.krunner": {
+    "message": "{system}：KRunner"
+  },
+  "keys.reserved.lock_screen": {
+    "message": "{system}：鎖定螢幕"
+  },
+  "keys.reserved.log_out": {
+    "message": "{system}：登出"
+  },
+  "keys.reserved.maximize_window": {
+    "message": "{system}：最大化視窗"
+  },
+  "keys.reserved.menu_bar": {
+    "message": "{system}：選單列"
+  },
+  "keys.reserved.minimize": {
+    "message": "{system}：縮到最小"
+  },
+  "keys.reserved.mission_control": {
+    "message": "{system}：Mission Control"
+  },
+  "keys.reserved.move_window": {
+    "message": "{system}：移動視窗"
+  },
+  "keys.reserved.next_window": {
+    "message": "{system}：下一個視窗"
+  },
+  "keys.reserved.present_windows": {
+    "message": "{system}：展示視窗"
+  },
+  "keys.reserved.present_windows_all": {
+    "message": "{system}：展示視窗（所有桌面）"
+  },
+  "keys.reserved.present_windows_class": {
+    "message": "{system}：展示視窗（視窗類別）"
+  },
+  "keys.reserved.program_windows": {
+    "message": "{system}：程式的視窗"
+  },
+  "keys.reserved.quit": {
+    "message": "{system}：結束"
+  },
+  "keys.reserved.resize_window": {
+    "message": "{system}：調整視窗大小"
+  },
+  "keys.reserved.restore_window": {
+    "message": "{system}：還原視窗"
+  },
+  "keys.reserved.run_command": {
+    "message": "{system}：執行命令"
+  },
+  "keys.reserved.screenshot": {
+    "message": "{system}：螢幕截圖"
+  },
+  "keys.reserved.security_screen": {
+    "message": "{system}：安全性畫面"
+  },
+  "keys.reserved.show_desktop": {
+    "message": "{system}：顯示桌面"
+  },
+  "keys.reserved.space_left": {
+    "message": "{system}：左邊的空間"
+  },
+  "keys.reserved.space_right": {
+    "message": "{system}：右邊的空間"
+  },
+  "keys.reserved.spotlight": {
+    "message": "{system}：Spotlight"
+  },
+  "keys.reserved.start_menu": {
+    "message": "{system}：開始功能表"
+  },
+  "keys.reserved.status_menus": {
+    "message": "{system}：狀態選單"
+  },
+  "keys.reserved.suspend_compositing": {
+    "message": "{system}：暫停合成"
+  },
+  "keys.reserved.switch_program_windows": {
+    "message": "{system}：切換程式的視窗"
+  },
+  "keys.reserved.switch_programs": {
+    "message": "{system}：切換程式"
+  },
+  "keys.reserved.switch_system_controls": {
+    "message": "{system}：切換系統控制項"
+  },
+  "keys.reserved.switch_to_desktop": {
+    "message": "{system}：切換到桌面 {number}"
+  },
+  "keys.reserved.switch_windows": {
+    "message": "{system}：切換視窗"
+  },
+  "keys.reserved.system_monitor": {
+    "message": "{system}：系統監視器"
+  },
+  "keys.reserved.task_manager": {
+    "message": "{system}：工作管理員"
+  },
+  "keys.reserved.text_console": {
+    "message": "{system}：切換到文字主控台"
+  },
+  "keys.reserved.toolbar": {
+    "message": "{system}：工具列"
+  },
+  "keys.reserved.window_menu": {
+    "message": "{system}：視窗選單"
+  },
+  "keys.reserved.workspace_down": {
+    "message": "{system}：下方的工作區"
+  },
+  "keys.reserved.workspace_left": {
+    "message": "{system}：左邊的工作區"
+  },
+  "keys.reserved.workspace_right": {
+    "message": "{system}：右邊的工作區"
+  },
+  "keys.reserved.workspace_up": {
+    "message": "{system}：上方的工作區"
+  },
+  "keys.reset.tooltip": {
+    "message": "還原為 {preset} 的按鍵"
+  },
+  "keys.reset_all": {
+    "message": "全部重設"
+  },
+  "keys.save_as.button": {
+    "message": "另存為…"
+  },
+  "keys.save_as.default_name": {
+    "message": "我的按鍵"
+  },
+  "keys.save_as.label": {
+    "message": "名稱："
+  },
+  "keys.save_as.title": {
+    "message": "儲存快速鍵"
+  },
+  "keys.search.placeholder": {
+    "message": "搜尋命令或按鍵"
+  },
+  "keys.set_label": {
+    "message": "按鍵："
+  },
+  "keys.taken_by.tooltip": {
+    "message": "已被 {by} 佔用"
+  },
+  "keys.title": {
+    "message": "快速鍵"
+  },
+  "main.admin.button": {
+    "message": "以系統管理員身分"
+  },
+  "main.admin.deleting": {
+    "message": "刪除 {count, plural, other {# 個項目}}"
+  },
+  "main.admin.failed": {
+    "message": "以系統管理員身分：{err}"
+  },
+  "main.admin.making": {
+    "message": "建立「{name}」"
+  },
+  "main.admin.offer": {
+    "message": "{what}：權限遭拒。若以系統管理員身分執行，系統會要求輸入密碼。"
+  },
+  "main.admin.offer_delete": {
+    "message": "{what}：權限遭拒。若以系統管理員身分執行，系統會要求輸入密碼。以此方式刪除的項目將永久消失。"
+  },
+  "main.admin.title": {
+    "message": "權限遭拒"
+  },
+  "main.delete.from_archive": {
+    "message": "{kind, select, folder {要從 {archive} 中刪除資料夾「{name}」嗎？此動作無法復原。} file {要從 {archive} 中刪除檔案「{name}」嗎？此動作無法復原。} other {要從 {archive} 中刪除 {count, plural, other {# 個項目}}嗎？此動作無法復原。}}"
+  },
+  "main.delete.on_server": {
+    "message": "{kind, select, folder {要刪除 {server} 上的資料夾「{name}」嗎？此動作無法復原。} file {要刪除 {server} 上的檔案「{name}」嗎？此動作無法復原。} other {要刪除 {server} 上的 {count, plural, other {# 個項目}}嗎？此動作無法復原。}}"
+  },
+  "main.delete.permanently": {
+    "message": "{kind, select, folder {要永久刪除資料夾「{name}」嗎？此動作無法復原。} file {要永久刪除檔案「{name}」嗎？此動作無法復原。} other {要永久刪除 {count, plural, other {# 個項目}}嗎？此動作無法復原。}}"
+  },
+  "main.delete.title": {
+    "message": "刪除"
+  },
+  "main.delete.title_permanently": {
+    "message": "永久刪除"
+  },
+  "main.delete.to_trash": {
+    "message": "{kind, select, folder {要將資料夾「{name}」移至資源回收筒嗎？} file {要將檔案「{name}」移至資源回收筒嗎？} other {要將 {count, plural, other {# 個項目}}移至資源回收筒嗎？}}"
+  },
+  "main.download.edit": {
+    "message": "下載 {file} 以編輯"
+  },
+  "main.download.view": {
+    "message": "下載 {file} 以檢視"
+  },
+  "main.error.make_folder": {
+    "message": "無法建立資料夾：{err}"
+  },
+  "main.error.read_settings": {
+    "message": "無法讀取設定：{err}"
+  },
+  "main.error.read_tabs": {
+    "message": "無法讀取開啟的分頁：{err}"
+  },
+  "main.error.read_workspaces": {
+    "message": "無法讀取工作區：{err}"
+  },
+  "main.error.save_settings": {
+    "message": "無法儲存設定：{err}"
+  },
+  "main.folder_tree.home": {
+    "message": "家目錄"
+  },
+  "main.go.no_such_folder": {
+    "message": "{path}：這台電腦上沒有此資料夾"
+  },
+  "main.new_folder.label": {
+    "message": "新資料夾（目錄）："
+  },
+  "main.new_folder.title": {
+    "message": "新增資料夾"
+  },
+  "main.sync_browsing.lost": {
+    "message": "{err}。已關閉同步瀏覽。"
+  },
+  "main.tool.needs_file": {
+    "message": "游標不在任何檔案上：%N、%O 和 %E 需要一個檔案。"
+  },
+  "main.tool.needs_local_folder": {
+    "message": "另一個面板顯示的是伺服器或壓縮檔：%T 需要這台電腦上的資料夾。"
+  },
+  "main.undo.done": {
+    "message": "{way, select, redo {已取消復原：{title}} other {已復原：{title}}}"
+  },
+  "main.undo.failed": {
+    "message": "{way, select, redo {無法取消復原「{title}」：{err}} other {無法復原「{title}」：{err}}}"
+  },
+  "main.undo.nothing": {
+    "message": "{way, select, redo {沒有可取消復原的動作。} other {沒有可復原的動作。}}"
+  },
+  "main.undo.queued": {
+    "message": "{way, select, redo {已排入佇列等待取消復原：{title}} other {已排入佇列等待復原：{title}}}"
+  },
+  "mark.compare.marked": {
+    "message": "{count, plural, other {已標記 # 個檔案：比另一側新，或另一側沒有。}}"
+  },
+  "mark.compare.same": {
+    "message": "兩個資料夾中的檔案相同。"
+  },
+  "mark.load_selection.label": {
+    "message": "選取檔案中列出的名稱："
+  },
+  "mark.load_selection.title": {
+    "message": "載入選取"
+  },
+  "mark.save_selection.label": {
+    "message": "將所選名稱儲存到檔案："
+  },
+  "mark.save_selection.title": {
+    "message": "儲存選取"
+  },
+  "mark.select_group.label": {
+    "message": "選取檔案（*.txt *.md；資料夾遮罩以 / 結尾）："
+  },
+  "mark.select_group.title": {
+    "message": "選取群組"
+  },
+  "mark.selection_file.not_local": {
+    "message": "選取檔案只能存放在這台電腦上、壓縮檔以外的位置。"
+  },
+  "mark.unselect_group.label": {
+    "message": "取消選取檔案（*.txt *.md；資料夾遮罩以 / 結尾）："
+  },
+  "mark.unselect_group.title": {
+    "message": "取消選取群組"
+  },
+  "media.cannot_play": {
+    "message": "無法播放：{err}"
+  },
+  "media.cannot_play_as_text": {
+    "message": "無法播放：{err}。按 1 以文字顯示。"
+  },
+  "media.continuing": {
+    "message": "從 {time} 繼續播放"
+  },
+  "media.error.missing": {
+    "message": "缺少 libmpv：可在「設定 > 附加元件」中下載（從原始碼建置：vendor/mpv/{script}）"
+  },
+  "media.error.not_started": {
+    "message": "無法啟動 libmpv"
+  },
+  "media.error.too_long": {
+    "message": "{path}：mpv 處理時間過長"
+  },
+  "media.error.unsupported_system": {
+    "message": "目前只能在 Linux、macOS 和 Windows 上播放影片"
+  },
+  "menu.archive": {
+    "message": "壓縮檔"
+  },
+  "menu.associations": {
+    "message": "關聯"
+  },
+  "menu.button_bar": {
+    "message": "按鈕列"
+  },
+  "menu.checksums": {
+    "message": "總和檢查碼"
+  },
+  "menu.commands": {
+    "message": "命令"
+  },
+  "menu.compare_directories": {
+    "message": "比較目錄"
+  },
+  "menu.configuration": {
+    "message": "組態"
+  },
+  "menu.copy_names": {
+    "message": "複製名稱"
+  },
+  "menu.files": {
+    "message": "檔案"
+  },
+  "menu.filter": {
+    "message": "篩選"
+  },
+  "menu.go": {
+    "message": "前往"
+  },
+  "menu.help": {
+    "message": "說明"
+  },
+  "menu.mark": {
+    "message": "標記"
+  },
+  "menu.other": {
+    "message": "其他"
+  },
+  "menu.recently_closed_tabs": {
+    "message": "最近關閉的分頁"
+  },
+  "menu.selection": {
+    "message": "選取"
+  },
+  "menu.show": {
+    "message": "顯示"
+  },
+  "menu.sidebar": {
+    "message": "側邊欄"
+  },
+  "menu.sort": {
+    "message": "排序"
+  },
+  "menu.split_and_combine": {
+    "message": "分割與合併"
+  },
+  "menu.tabs": {
+    "message": "分頁"
+  },
+  "menu.tools": {
+    "message": "工具"
+  },
+  "menu.workspaces": {
+    "message": "工作區"
+  },
+  "menus.hide_app": {
+    "message": "隱藏 Spark Commander"
+  },
+  "menus.hide_others": {
+    "message": "隱藏其他"
+  },
+  "menus.minimize": {
+    "message": "縮到最小"
+  },
+  "menus.quit_app": {
+    "message": "結束 Spark Commander"
+  },
+  "menus.services": {
+    "message": "服務"
+  },
+  "menus.show_all": {
+    "message": "顯示全部"
+  },
+  "menus.zoom": {
+    "message": "縮放"
+  },
+  "name_dialog.cancel": {
+    "message": "取消"
+  },
+  "name_dialog.ok": {
+    "message": "確定"
+  },
+  "operations.clear": {
+    "message": "清除已完成"
+  },
+  "operations.duration.seconds": {
+    "message": "{seconds} 秒"
+  },
+  "operations.empty": {
+    "message": "沒有作業。"
+  },
+  "operations.job.answer": {
+    "message": "等待你的回應"
+  },
+  "operations.job.bytes": {
+    "message": "{done} / {total}"
+  },
+  "operations.job.cancel_tooltip": {
+    "message": "取消"
+  },
+  "operations.job.cancelled": {
+    "message": "已取消"
+  },
+  "operations.job.counting": {
+    "message": "正在計算：{count, plural, other {# 個檔案}}"
+  },
+  "operations.job.done": {
+    "message": "完成"
+  },
+  "operations.job.done_skipped": {
+    "message": "完成，{count, plural, other {已略過 # 個}}"
+  },
+  "operations.job.failed": {
+    "message": "失敗"
+  },
+  "operations.job.files": {
+    "message": "{files} / {count, plural, other {# 個檔案}}"
+  },
+  "operations.job.left": {
+    "message": "剩餘 {time}"
+  },
+  "operations.job.running": {
+    "message": "執行中"
+  },
+  "operations.job.waiting": {
+    "message": "等待中"
+  },
+  "operations.menu.cancel": {
+    "message": "取消"
+  },
+  "operations.menu.clear": {
+    "message": "清除已完成"
+  },
+  "operations.menu.move_down": {
+    "message": "下移"
+  },
+  "operations.menu.move_up": {
+    "message": "上移"
+  },
+  "operations.settings_tooltip": {
+    "message": "作業佇列設定"
+  },
+  "operations.summary.failed": {
+    "message": "{count, plural, other {# 個失敗}}"
+  },
+  "operations.summary.running": {
+    "message": "{count, plural, other {# 個執行中}}"
+  },
+  "operations.summary.waiting": {
+    "message": "{count, plural, other {# 個等待中}}"
+  },
+  "ops.as_administrator.failed": {
+    "message": "以系統管理員身分：{err}"
+  },
+  "ops.as_administrator.progress": {
+    "message": "以系統管理員身分執行中…"
+  },
+  "ops.delete.title_many": {
+    "message": "刪除 {folder} 中的 {count, plural, other {# 個項目}}"
+  },
+  "ops.delete.title_one": {
+    "message": "刪除「{name}」"
+  },
+  "ops.delete.trash_title_many": {
+    "message": "將 {folder} 中的 {count, plural, other {# 個項目}}移至資源回收筒"
+  },
+  "ops.delete.trash_title_one": {
+    "message": "將「{name}」移至資源回收筒"
+  },
+  "ops.error.file_in_the_way": {
+    "message": "此處已有同名的檔案"
+  },
+  "ops.error.into_itself": {
+    "message": "無法複製到自身之內"
+  },
+  "ops.exists_already": {
+    "message": "{name} 已存在"
+  },
+  "ops.link.dialog_title": {
+    "message": "建立連結"
+  },
+  "ops.link.failed": {
+    "message": "無法建立連結：{err}"
+  },
+  "ops.link.kind.hard": {
+    "message": "硬式連結"
+  },
+  "ops.link.kind.junction": {
+    "message": "目錄連接"
+  },
+  "ops.link.kind.shortcut": {
+    "message": "捷徑 (.lnk)"
+  },
+  "ops.link.kind.symbolic": {
+    "message": "符號連結"
+  },
+  "ops.link.label_many": {
+    "message": "指向 {count, plural, other {# 個項目}}的連結，建立在資料夾："
+  },
+  "ops.link.label_one": {
+    "message": "指向「{name}」的連結，建立為："
+  },
+  "ops.link.making": {
+    "message": "建立{kind, select, symbolic {符號連結} hard {硬式連結} junction {目錄連接} other {捷徑 (.lnk)}}"
+  },
+  "ops.link.needs_admin": {
+    "message": "建立符號連結需要系統管理員權限或開發人員模式"
+  },
+  "ops.link.thread_failed": {
+    "message": "捷徑的執行緒失敗"
+  },
+  "ops.link.title_many": {
+    "message": "在 {folder} 中建立指向 {count, plural, other {# 個項目}}的{kind, select, symbolic {符號連結} hard {硬式連結} junction {目錄連接} other {捷徑 (.lnk)}}"
+  },
+  "ops.link.title_one": {
+    "message": "在 {folder} 中建立指向「{name}」的{kind, select, symbolic {符號連結} hard {硬式連結} junction {目錄連接} other {捷徑 (.lnk)}}"
+  },
+  "ops.link.windows_only": {
+    "message": "目錄連接和捷徑僅適用於 Windows"
+  },
+  "ops.redo.title": {
+    "message": "取消復原：{what}"
+  },
+  "ops.title.many": {
+    "message": "{kind, select, copy {複製} other {移動}} {count, plural, other {# 個項目}}到 {target}"
+  },
+  "ops.title.one": {
+    "message": "{kind, select, copy {複製} other {移動}}「{name}」到 {target}"
+  },
+  "ops.undo.not_a_server": {
+    "message": "{url}：不是伺服器位址"
+  },
+  "ops.undo.not_in_trash": {
+    "message": "這些檔案已不在資源回收筒中"
+  },
+  "ops.undo.restore_title": {
+    "message": "{title}：從資源回收筒還原被覆蓋的項目"
+  },
+  "ops.undo.title": {
+    "message": "復原：{what}"
+  },
+  "pack.cancel": {
+    "message": "取消"
+  },
+  "pack.compression": {
+    "message": "壓縮率："
+  },
+  "pack.dialog_title": {
+    "message": "壓縮檔案"
+  },
+  "pack.encrypt": {
+    "message": "使用密碼加密"
+  },
+  "pack.format": {
+    "message": "格式："
+  },
+  "pack.label": {
+    "message": "將 {count, plural, other {# 個項目}}壓縮到壓縮檔："
+  },
+  "pack.level.fastest": {
+    "message": "最快"
+  },
+  "pack.level.maximum": {
+    "message": "最大"
+  },
+  "pack.level.normal": {
+    "message": "標準"
+  },
+  "pack.level.store": {
+    "message": "僅儲存"
+  },
+  "pack.level.ultra": {
+    "message": "極限"
+  },
+  "pack.local_only": {
+    "message": "{what, select, packing {壓縮} unpacking {解壓縮} testing {測試} creating_checksums {建立總和檢查碼} making_links {建立連結} verifying_checksums {驗證總和檢查碼} splitting {分割} combining {合併} other {此功能}}只能用於這台電腦上、壓縮檔以外的檔案。"
+  },
+  "pack.move_files": {
+    "message": "移入壓縮檔（刪除已壓縮的檔案）"
+  },
+  "pack.needs_password": {
+    "message": "需要密碼"
+  },
+  "pack.ok": {
+    "message": "確定"
+  },
+  "pack.password_missing": {
+    "message": "請輸入密碼，或不要勾選加密。"
+  },
+  "pack.separate": {
+    "message": "每個選取的檔案或資料夾各建立一個壓縮檔"
+  },
+  "pack.split": {
+    "message": "分割成每個大小為"
+  },
+  "pack.split_unit": {
+    "message": "MB"
+  },
+  "pack.test.broken": {
+    "message": "{broken, plural, other {{count} 個中有 # 個損毀}}"
+  },
+  "pack.test.choose": {
+    "message": "請選擇要測試的壓縮檔。"
+  },
+  "pack.test.ok": {
+    "message": "{count, plural, other {# 個壓縮檔正常}}"
+  },
+  "pack.test.title_many": {
+    "message": "測試 {count, plural, other {# 個壓縮檔}}"
+  },
+  "pack.test.title_one": {
+    "message": "測試「{name}」"
+  },
+  "pack.title.many": {
+    "message": "將 {count, plural, other {# 個項目}}壓縮到 {archive}"
+  },
+  "pack.title.many_separate": {
+    "message": "將 {count, plural, other {# 個項目}}分別壓縮成 {format} 壓縮檔"
+  },
+  "pack.title.one": {
+    "message": "將「{name}」壓縮到 {archive}"
+  },
+  "pack.title.one_separate": {
+    "message": "將「{name}」分別壓縮成 {format} 壓縮檔"
+  },
+  "pack.unpack.choose": {
+    "message": "請選擇要解壓縮的壓縮檔。"
+  },
+  "pack.unpack.dialog_title": {
+    "message": "解壓縮檔案"
+  },
+  "pack.unpack.label": {
+    "message": "將 {count, plural, other {# 個壓縮檔}}解壓縮到："
+  },
+  "pack.unpack.mask": {
+    "message": "僅限檔案："
+  },
+  "pack.unpack.overwrite": {
+    "message": "覆寫現有檔案（否則保留）"
+  },
+  "pack.unpack.password": {
+    "message": "密碼："
+  },
+  "pack.unpack.separate": {
+    "message": "每個壓縮檔解壓縮到同名資料夾"
+  },
+  "pack.unpack.title_many": {
+    "message": "將 {count, plural, other {# 個壓縮檔}}解壓縮到 {target}"
+  },
+  "pack.unpack.title_one": {
+    "message": "將「{name}」解壓縮到 {target}"
+  },
+  "pack.unpack.with_paths": {
+    "message": "保留壓縮檔中的資料夾結構"
+  },
+  "pack.volume_invalid": {
+    "message": "分割大小必須是以 MB 為單位的數字。"
+  },
+  "pack.wrong_password": {
+    "message": "密碼錯誤"
+  },
+  "panel.admin.renaming": {
+    "message": "重新命名為「{name}」"
+  },
+  "panel.clipboard.copied": {
+    "message": "{count, plural, other {已複製 # 個項目}}：按 Ctrl+V 即可貼上。"
+  },
+  "panel.clipboard.cut": {
+    "message": "{count, plural, other {已剪下 # 個項目}}：按 Ctrl+V 即可貼上。"
+  },
+  "panel.clipboard.no_cut_in_archive": {
+    "message": "無法從壓縮檔中剪下檔案；請按 Ctrl+C 複製。"
+  },
+  "panel.clipboard.no_files": {
+    "message": "剪貼簿中沒有檔案。"
+  },
+  "panel.clipboard.no_paste_in_archive": {
+    "message": "目前還無法將檔案貼到壓縮檔中。"
+  },
+  "panel.clipboard.same_folder": {
+    "message": "這些檔案已在此資料夾中：請在其他資料夾按 Ctrl+V 貼上。"
+  },
+  "panel.column.attr": {
+    "message": "屬性"
+  },
+  "panel.column.date": {
+    "message": "日期"
+  },
+  "panel.column.ext": {
+    "message": "副檔名"
+  },
+  "panel.column.name": {
+    "message": "名稱"
+  },
+  "panel.column.size": {
+    "message": "大小"
+  },
+  "panel.disconnect": {
+    "message": "中斷連線"
+  },
+  "panel.drag.items": {
+    "message": "{count, plural, other {# 個項目}}"
+  },
+  "panel.error.archive_not_updatable": {
+    "message": "{name}：7-Zip 只能直接修改 7z、zip 和 tar 壓縮檔，無法修改此檔案"
+  },
+  "panel.error.archive_on_server": {
+    "message": "{name}：目前還無法修改伺服器上的壓縮檔"
+  },
+  "panel.error.branch_view_local": {
+    "message": "分支檢視只能列出這台電腦上的資料夾"
+  },
+  "panel.error.exists": {
+    "message": "{name} 已存在"
+  },
+  "panel.error.folder_in_the_way": {
+    "message": "此處已有同名的資料夾"
+  },
+  "panel.error.inside_archive": {
+    "message": "目前還無法在壓縮檔內執行"
+  },
+  "panel.error.make_file": {
+    "message": "無法建立檔案：{err}"
+  },
+  "panel.error.no_name": {
+    "message": "未提供名稱"
+  },
+  "panel.error.not_a_name": {
+    "message": "{name}：不是有效的名稱"
+  },
+  "panel.error.other_drive": {
+    "message": "另一個面板已切換到其他磁碟機"
+  },
+  "panel.error.rename": {
+    "message": "無法重新命名：{err}"
+  },
+  "panel.filter.custom.label": {
+    "message": "檔案類型，例如 *.txt *.md（| 之後為要排除的類型）："
+  },
+  "panel.filter.custom.title": {
+    "message": "顯示檔案"
+  },
+  "panel.filter.programs": {
+    "message": "程式"
+  },
+  "panel.filter.selected_files": {
+    "message": "所選檔案"
+  },
+  "panel.found.branch_view": {
+    "message": "分支檢視："
+  },
+  "panel.found.search_results": {
+    "message": "搜尋結果："
+  },
+  "panel.new_text_file.label": {
+    "message": "檔案名稱（將在編輯器中開啟）："
+  },
+  "panel.new_text_file.title": {
+    "message": "新增文字檔"
+  },
+  "panel.opening.cancel": {
+    "message": "取消"
+  },
+  "panel.opening.reading": {
+    "message": "正在讀取…"
+  },
+  "panel.opening.title": {
+    "message": "正在開啟壓縮檔"
+  },
+  "panel.quick_filter.hint": {
+    "message": "隱藏不符合的項目；按 Escape 顯示全部"
+  },
+  "panel.quick_filter.label": {
+    "message": "篩選："
+  },
+  "panel.quick_search.label": {
+    "message": "搜尋："
+  },
+  "panel.size.app": {
+    "message": "<APP>"
+  },
+  "panel.size.b": {
+    "message": "{size} B"
+  },
+  "panel.size.dir": {
+    "message": "<DIR>"
+  },
+  "panel.size.gb": {
+    "message": "{size} GB"
+  },
+  "panel.size.kb": {
+    "message": "{size} KB"
+  },
+  "panel.size.mb": {
+    "message": "{size} MB"
+  },
+  "panel.size.tb": {
+    "message": "{size} TB"
+  },
+  "panel.space.bytes": {
+    "message": "{count, plural, other {{size} 位元組（{human}）}}"
+  },
+  "panel.space.close": {
+    "message": "關閉"
+  },
+  "panel.space.counting": {
+    "message": "正在計算…"
+  },
+  "panel.space.done": {
+    "message": "完成。"
+  },
+  "panel.space.files": {
+    "message": "檔案："
+  },
+  "panel.space.folders": {
+    "message": "資料夾："
+  },
+  "panel.space.in_archive": {
+    "message": "在壓縮檔內，「大小」欄已顯示大小。"
+  },
+  "panel.space.title": {
+    "message": "計算佔用空間"
+  },
+  "panel.space.total": {
+    "message": "總大小："
+  },
+  "panel.space.unreadable": {
+    "message": "{count, plural, other {有 # 個項目無法讀取。}}"
+  },
+  "panel.status": {
+    "message": "{marked_size} k / {size} k，{marked_files} / {files, plural, other {# 個檔案}}，{marked_folders} / {folders, plural, other {# 個目錄}}"
+  },
+  "panel.sync_browsing.stop": {
+    "message": "同步瀏覽（按一下即可停止）"
+  },
+  "panel.undo.rename": {
+    "message": "將「{name}」重新命名為「{to}」"
+  },
+  "passwords.about.set": {
+    "message": "設定主密碼後，只要複製設定資料夾，並在另一台電腦上輸入主密碼，就能在那裡開啟已儲存的密碼。若忘記主密碼，只會遺失這些已儲存的密碼：重新輸入即可。"
+  },
+  "passwords.about.unlock": {
+    "message": "設定來自另一台電腦，或這台電腦沒有金鑰圈：請用主密碼在這裡開啟已儲存的密碼。"
+  },
+  "passwords.cancel": {
+    "message": "取消"
+  },
+  "passwords.done.set": {
+    "message": "已設定主密碼。"
+  },
+  "passwords.done.unlocked": {
+    "message": "已開啟儲存的密碼。"
+  },
+  "passwords.error.locked": {
+    "message": "已儲存的密碼已鎖定：請用主密碼解鎖（組態 › 設定 › 密碼）"
+  },
+  "passwords.error.no_master": {
+    "message": "尚未設定主密碼"
+  },
+  "passwords.error.no_random": {
+    "message": "無法取得亂數"
+  },
+  "passwords.error.not_opened": {
+    "message": "無法開啟 {what} 的密碼"
+  },
+  "passwords.error.not_sealed": {
+    "message": "無法加密密碼"
+  },
+  "passwords.error.salt_damaged": {
+    "message": "主密碼的 salt 已損毀"
+  },
+  "passwords.error.wrong": {
+    "message": "主密碼錯誤"
+  },
+  "passwords.field.again": {
+    "message": "再次輸入"
+  },
+  "passwords.field.master": {
+    "message": "主密碼"
+  },
+  "passwords.locked_note": {
+    "message": "這台電腦上已儲存的密碼已鎖定：請用主密碼開啟。"
+  },
+  "passwords.ok": {
+    "message": "確定"
+  },
+  "passwords.problem.differ": {
+    "message": "兩次輸入的密碼不一致。"
+  },
+  "passwords.problem.empty": {
+    "message": "請輸入主密碼。"
+  },
+  "passwords.title.set": {
+    "message": "主密碼"
+  },
+  "passwords.title.unlock": {
+    "message": "解鎖已儲存的密碼"
+  },
+  "passwords.unlock_button": {
+    "message": "解鎖…"
+  },
+  "passwords.working": {
+    "message": "處理中…"
+  },
+  "properties.accessed": {
+    "message": "存取時間："
+  },
+  "properties.change_attributes": {
+    "message": "變更屬性..."
+  },
+  "properties.close": {
+    "message": "關閉"
+  },
+  "properties.contents": {
+    "message": "{file_count, plural, other {{files} 個檔案}}，{folder_count, plural, other {{folders} 個資料夾}}，{count, plural, other {{bytes} 位元組}}（{size}）"
+  },
+  "properties.contents_counting": {
+    "message": "{file_count, plural, other {{files} 個檔案}}，{folder_count, plural, other {{folders} 個資料夾}}，{count, plural, other {{bytes} 位元組}}（{size}）（正在計算…）"
+  },
+  "properties.contents_label": {
+    "message": "內容："
+  },
+  "properties.created": {
+    "message": "建立時間："
+  },
+  "properties.dialog_title": {
+    "message": "內容"
+  },
+  "properties.in_archive": {
+    "message": "壓縮檔的清單已顯示它所知道的檔案資訊。"
+  },
+  "properties.kind.file": {
+    "message": "檔案"
+  },
+  "properties.kind.folder": {
+    "message": "資料夾"
+  },
+  "properties.kind.link": {
+    "message": "連結"
+  },
+  "properties.kind.link_to": {
+    "message": "指向 {target} 的連結"
+  },
+  "properties.location": {
+    "message": "位置："
+  },
+  "properties.modified": {
+    "message": "修改時間："
+  },
+  "properties.name": {
+    "message": "名稱："
+  },
+  "properties.no_system_dialog": {
+    "message": "此系統目前沒有內容對話方塊"
+  },
+  "properties.owner": {
+    "message": "擁有者/群組："
+  },
+  "properties.permissions": {
+    "message": "權限："
+  },
+  "properties.size": {
+    "message": "{count, plural, other {{bytes} 位元組（{size}）}}"
+  },
+  "properties.size_label": {
+    "message": "大小："
+  },
+  "properties.type": {
+    "message": "類型："
+  },
+  "quick_open.go_to": {
+    "message": "前往 {path}"
+  },
+  "quick_open.group.bookmarks": {
+    "message": "書籤"
+  },
+  "quick_open.group.connections": {
+    "message": "連線"
+  },
+  "quick_open.group.drives": {
+    "message": "磁碟機"
+  },
+  "quick_open.group.path": {
+    "message": "路徑"
+  },
+  "quick_open.group.recent_folders": {
+    "message": "最近的資料夾"
+  },
+  "quick_open.group.tools": {
+    "message": "工具"
+  },
+  "quick_open.group.workspaces": {
+    "message": "工作區"
+  },
+  "quick_open.placeholder": {
+    "message": "命令、書籤、資料夾、路徑、伺服器、磁碟機、工作區或工具"
+  },
+  "quick_open.title": {
+    "message": "快速開啟"
+  },
+  "quick_view.counting": {
+    "message": "正在計算…"
+  },
+  "quick_view.downloading": {
+    "message": "正在下載…"
+  },
+  "quick_view.empty": {
+    "message": "快速檢視會顯示另一個面板游標所在的項目。"
+  },
+  "quick_view.extracting": {
+    "message": "正在從壓縮檔中取出…"
+  },
+  "quick_view.files_only": {
+    "message": "在伺服器上和壓縮檔內，快速檢視只會顯示檔案。"
+  },
+  "quick_view.space.title": {
+    "message": "佔用的總空間："
+  },
+  "quick_view.space.totals": {
+    "message": "{files, plural, other {{files_grouped} 個檔案}}、{folders, plural, other {{folders_grouped} 個資料夾}}，共 {bytes, plural, other {{bytes_grouped} 位元組}}"
+  },
+  "quick_view.space.unreadable": {
+    "message": "{count} 個項目無法讀取。"
+  },
+  "quick_view.too_large.download": {
+    "message": "{size} 太大，無法在此下載：請按 F3 檢視。"
+  },
+  "quick_view.too_large.extract": {
+    "message": "{size} 太大，無法在此從壓縮檔中取出：請按 F3 檢視。"
+  },
+  "remote.cancelled": {
+    "message": "已取消"
+  },
+  "remote.cloud.ask": {
+    "message": "{kind, select, application_key {{user} 在 {host} 的應用程式金鑰：} api_key {{user} 在 {host} 的 API 金鑰：} password {{user} 在 {host} 的密碼：} other {{user} 在 {host} 的秘密金鑰：}}"
+  },
+  "remote.cloud.ask_again": {
+    "message": "{kind, select, application_key {應用程式金鑰錯誤。{user} 在 {host} 的應用程式金鑰：} api_key {API 金鑰錯誤。{user} 在 {host} 的 API 金鑰：} password {密碼錯誤。{user} 在 {host} 的密碼：} other {金鑰錯誤。{user} 在 {host} 的秘密金鑰：}}"
+  },
+  "remote.cloud.obscure_failed": {
+    "message": "rclone 無法處理此密碼"
+  },
+  "remote.cloud.rclone_missing": {
+    "message": "缺少 rclone：可在「設定 > 附加元件」中下載"
+  },
+  "remote.cloud.title": {
+    "message": "{kind, select, application_key {應用程式金鑰} api_key {API 金鑰} password {密碼} other {秘密金鑰}}"
+  },
+  "remote.connecting": {
+    "message": "正在連線到 {server}..."
+  },
+  "remote.dialog.cancel": {
+    "message": "取消"
+  },
+  "remote.dialog.ok": {
+    "message": "確定"
+  },
+  "remote.disconnect_failed": {
+    "message": "{share}：無法中斷連線：{err}"
+  },
+  "remote.ftp.password": {
+    "message": "{user}@{host} 的密碼："
+  },
+  "remote.ftp.password_again": {
+    "message": "密碼錯誤。{user}@{host} 的密碼："
+  },
+  "remote.ftps.changed": {
+    "message": "{server} 的 TLS 憑證與 {file} 第 {line} 行記錄的不同，已經「變更」！可能有人正在竊聽；如果伺服器換了新憑證，請刪除該行。"
+  },
+  "remote.ftps.not_trusted": {
+    "message": "伺服器的憑證不受信任"
+  },
+  "remote.login.password": {
+    "message": "密碼"
+  },
+  "remote.login.title": {
+    "message": "登入"
+  },
+  "remote.login.user": {
+    "message": "使用者"
+  },
+  "remote.mount.login_wrong": {
+    "message": "使用者或密碼錯誤"
+  },
+  "remote.mount.macos_failed": {
+    "message": "macOS 無法掛載（NetFS {code}）"
+  },
+  "remote.mount.needs_desktop": {
+    "message": "需要 KDE 的 kio-fuse 或 GNOME 的 gvfs"
+  },
+  "remote.mount.needs_login": {
+    "message": "需要使用者名稱和密碼"
+  },
+  "remote.mount.no_fuse": {
+    "message": "已掛載，但沒有對應的資料夾：缺少 gvfs-fuse"
+  },
+  "remote.mount.no_nfs_client": {
+    "message": "找不到；NFS 需要 Windows 的「NFS 用戶端」（Windows 功能）"
+  },
+  "remote.mount.no_share": {
+    "message": "缺少共用名稱：smb://伺服器/共用"
+  },
+  "remote.mount.not_address": {
+    "message": "不是有效的位址"
+  },
+  "remote.mount.not_found": {
+    "message": "已掛載，但在已掛載的項目中找不到"
+  },
+  "remote.mount.other_user": {
+    "message": "Windows 已用其他使用者身分連線到此伺服器：請登出，或改用該使用者"
+  },
+  "remote.password.title": {
+    "message": "密碼"
+  },
+  "remote.remember_password": {
+    "message": "記住密碼（設定 › 密碼）"
+  },
+  "remote.save_back_failed": {
+    "message": "無法存回：{err}"
+  },
+  "remote.sftp.host_certificate": {
+    "message": "伺服器出示了主機憑證；目前尚不支援主機憑證。"
+  },
+  "remote.sftp.key_changed": {
+    "message": "{server} 的主機金鑰與 {file} 第 {line} 行記錄的不同，已經「變更」！可能有人正在竊聽；如果伺服器是重新安裝的，請刪除該行。"
+  },
+  "remote.sftp.key_not_trusted": {
+    "message": "未信任 {server} 的主機金鑰。"
+  },
+  "remote.sftp.keys_refused": {
+    "message": "{user}@{host}：伺服器拒絕了金鑰，且不接受密碼"
+  },
+  "remote.sftp.login_refused": {
+    "message": "{user}@{host}：登入遭拒"
+  },
+  "remote.sftp.passphrase": {
+    "message": "{file} 的密碼片語"
+  },
+  "remote.sftp.passphrase_title": {
+    "message": "金鑰密碼片語"
+  },
+  "remote.sftp.password": {
+    "message": "{user}@{host} 的密碼"
+  },
+  "remote.unknown_host.once": {
+    "message": "僅連線這一次"
+  },
+  "remote.unknown_host.remember": {
+    "message": "連線並記住"
+  },
+  "remote.unknown_host.text": {
+    "message": "{key_type, select, TLS {尚不認識伺服器 {host}。它的 TLS 憑證指紋為：} other {尚不認識伺服器 {host}。它的 {key_type} 指紋為：}}\n\n{fingerprint}\n\n請確認這就是你要連線的伺服器再連線；伺服器的管理員可以為你確認此指紋。"
+  },
+  "remote.unknown_host.title": {
+    "message": "不明的伺服器"
+  },
+  "rename.case": {
+    "message": "大小寫："
+  },
+  "rename.case.first": {
+    "message": "僅首字母大寫"
+  },
+  "rename.case.lower": {
+    "message": "小寫"
+  },
+  "rename.case.unchanged": {
+    "message": "不變"
+  },
+  "rename.case.upper": {
+    "message": "大寫"
+  },
+  "rename.case.words": {
+    "message": "每字字首大寫"
+  },
+  "rename.close": {
+    "message": "關閉"
+  },
+  "rename.counter_start": {
+    "message": "計數器起始值"
+  },
+  "rename.dialog_title": {
+    "message": "批次重新命名工具"
+  },
+  "rename.digits": {
+    "message": "位數"
+  },
+  "rename.extension": {
+    "message": "副檔名"
+  },
+  "rename.field.counter": {
+    "message": "[C] 計數器"
+  },
+  "rename.field.date": {
+    "message": "[Y][M][D] 日期"
+  },
+  "rename.field.extension": {
+    "message": "[E] 副檔名"
+  },
+  "rename.field.folder": {
+    "message": "[P] 資料夾"
+  },
+  "rename.field.name": {
+    "message": "[N] 名稱"
+  },
+  "rename.field.range": {
+    "message": "[N1-3] 範圍"
+  },
+  "rename.field.time": {
+    "message": "[h][m][s] 時間"
+  },
+  "rename.first_only": {
+    "message": "僅第一個"
+  },
+  "rename.in_archive": {
+    "message": "目前還無法重新命名壓縮檔內的檔案。"
+  },
+  "rename.mask": {
+    "message": "重新命名遮罩：檔案名稱"
+  },
+  "rename.match_case": {
+    "message": "區分大小寫"
+  },
+  "rename.new_name": {
+    "message": "新名稱"
+  },
+  "rename.not_renamed_back": {
+    "message": "{from}：{err}；未能改回原名：{names}"
+  },
+  "rename.not_utf8": {
+    "message": "已略過不是 UTF-8 的名稱。"
+  },
+  "rename.old_name": {
+    "message": "舊名稱"
+  },
+  "rename.problem.bad_character": {
+    "message": "含有名稱不允許的字元"
+  },
+  "rename.problem.exists": {
+    "message": "已存在"
+  },
+  "rename.problem.no_name": {
+    "message": "沒有名稱"
+  },
+  "rename.problem.twice": {
+    "message": "清單中重複"
+  },
+  "rename.regex": {
+    "message": "規則運算式"
+  },
+  "rename.regex_error": {
+    "message": "規則運算式：{err}"
+  },
+  "rename.replace": {
+    "message": "取代為"
+  },
+  "rename.search": {
+    "message": "搜尋"
+  },
+  "rename.start": {
+    "message": "開始！"
+  },
+  "rename.status.failed": {
+    "message": "未重新命名任何檔案：{err}"
+  },
+  "rename.status.ready": {
+    "message": "按「開始！」即可重新命名。"
+  },
+  "rename.status.renamed": {
+    "message": "{count, plural, other {已重新命名 # 個。}}"
+  },
+  "rename.status.took_back": {
+    "message": "{count, plural, other {已還原 # 個。}}"
+  },
+  "rename.step": {
+    "message": "遞增值"
+  },
+  "rename.undo": {
+    "message": "復原"
+  },
+  "rename.was": {
+    "message": "{to}（原為 {from}）"
+  },
+  "rename.with_extension": {
+    "message": "包含副檔名"
+  },
+  "scmd.column.modified": {
+    "message": "修改時間"
+  },
+  "scmd.column.name": {
+    "message": "名稱"
+  },
+  "scmd.column.size": {
+    "message": "大小"
+  },
+  "scmd.column.up_dir": {
+    "message": "上層目錄"
+  },
+  "scmd.command_line.not_on_server": {
+    "message": "命令只會在這台電腦上執行，不會在伺服器上執行。"
+  },
+  "scmd.compare.marked": {
+    "message": "{count, plural, other {已標記 # 個檔案：比另一側新，或另一側沒有。}}"
+  },
+  "scmd.compare.same": {
+    "message": "兩個資料夾中的檔案相同。"
+  },
+  "scmd.copying": {
+    "message": "正在複製 {name}..."
+  },
+  "scmd.dialog.buttons": {
+    "message": "Enter 確定   Esc 取消"
+  },
+  "scmd.error.read_settings": {
+    "message": "無法讀取設定：{err}"
+  },
+  "scmd.error.read_tabs": {
+    "message": "無法讀取開啟的分頁：{err}"
+  },
+  "scmd.error.read_workspaces": {
+    "message": "無法讀取工作區：{err}"
+  },
+  "scmd.error.save_back": {
+    "message": "無法存回：{err}"
+  },
+  "scmd.error.save_searches": {
+    "message": "無法儲存搜尋記錄：{err}"
+  },
+  "scmd.error.save_tabs": {
+    "message": "無法儲存開啟的分頁：{err}"
+  },
+  "scmd.find.backwards": {
+    "message": "反向"
+  },
+  "scmd.find.case_sensitive": {
+    "message": "區分大小寫"
+  },
+  "scmd.find.hex": {
+    "message": "十六進位 (77 6F 72 64)"
+  },
+  "scmd.find.not_found": {
+    "message": "找不到：{text}"
+  },
+  "scmd.find.regex": {
+    "message": "規則運算式"
+  },
+  "scmd.find.search_for": {
+    "message": "搜尋："
+  },
+  "scmd.find.title": {
+    "message": "尋找"
+  },
+  "scmd.find.whole_words": {
+    "message": "僅限完整單字"
+  },
+  "scmd.group.files": {
+    "message": "檔案（*.txt *.md；資料夾以 / 結尾）："
+  },
+  "scmd.group.select_title": {
+    "message": "選取群組"
+  },
+  "scmd.group.unselect_title": {
+    "message": "取消選取群組"
+  },
+  "scmd.key_bar.copy": {
+    "message": "複製"
+  },
+  "scmd.key_bar.delete": {
+    "message": "刪除"
+  },
+  "scmd.key_bar.edit": {
+    "message": "編輯"
+  },
+  "scmd.key_bar.menu": {
+    "message": "選單"
+  },
+  "scmd.key_bar.mkdir": {
+    "message": "建目錄"
+  },
+  "scmd.key_bar.move": {
+    "message": "移動"
+  },
+  "scmd.key_bar.quit": {
+    "message": "結束"
+  },
+  "scmd.key_bar.view": {
+    "message": "檢視"
+  },
+  "scmd.message.error": {
+    "message": "錯誤"
+  },
+  "scmd.message.ok": {
+    "message": "確定"
+  },
+  "scmd.not_yet": {
+    "message": "{what, select, menus {選單：終端機版本尚未支援。} file_operations {檔案操作：終端機版本尚未支援。} servers {伺服器：終端機版本尚未支援。} other {此命令：終端機版本尚未支援。}}"
+  },
+  "scmd.picture.broken": {
+    "message": "損毀的圖片"
+  },
+  "scmd.picture.broken_page": {
+    "message": "損毀的頁面"
+  },
+  "scmd.picture.loading": {
+    "message": "正在載入…"
+  },
+  "scmd.picture.no_page": {
+    "message": "PDF 沒有這一頁"
+  },
+  "scmd.shell.press_enter": {
+    "message": "按 Enter 返回 Spark Commander..."
+  },
+  "scmd.sync_browsing.off": {
+    "message": "已關閉同步瀏覽。"
+  },
+  "scmd.sync_browsing.on": {
+    "message": "已開啟同步瀏覽。"
+  },
+  "scmd.sync_browsing.stopped": {
+    "message": "{err}。已關閉同步瀏覽。"
+  },
+  "scmd.viewer.column": {
+    "message": "欄 {column}"
+  },
+  "scmd.viewer.finding": {
+    "message": "尋找中…"
+  },
+  "scmd.viewer.key_bar.next": {
+    "message": "下一個"
+  },
+  "scmd.viewer.key_bar.quit": {
+    "message": "結束"
+  },
+  "scmd.viewer.key_bar.reload": {
+    "message": "重載"
+  },
+  "scmd.viewer.key_bar.search": {
+    "message": "搜尋"
+  },
+  "scmd.viewer.page": {
+    "message": "第 {page}/{pages} 頁"
+  },
+  "scmd.viewer.reading": {
+    "message": "讀取中 {percent}%"
+  },
+  "scmd.viewer.wrap": {
+    "message": "換行"
+  },
+  "scmd.workspace.copy_name": {
+    "message": "{name} 副本"
+  },
+  "scmd.workspace.default_name": {
+    "message": "工作區 {number}"
+  },
+  "scmd.workspace.delete_question": {
+    "message": "要刪除「{name}」嗎？其中的分頁將不會保留。"
+  },
+  "scmd.workspace.duplicate_title": {
+    "message": "複製工作區"
+  },
+  "scmd.workspace.last_stays": {
+    "message": "必須保留最後一個工作區。"
+  },
+  "scmd.workspace.name": {
+    "message": "名稱："
+  },
+  "scmd.workspace.name_or_default": {
+    "message": "名稱（留空：{name}）："
+  },
+  "scmd.workspace.new_title": {
+    "message": "新增工作區"
+  },
+  "scmd.workspace.rename_title": {
+    "message": "重新命名工作區"
+  },
+  "scmd.workspaces.keys": {
+    "message": "Enter 開啟  F7 新增  F5 複製  F2 改名  F8 刪除"
+  },
+  "scmd.workspaces.title": {
+    "message": "工作區"
+  },
+  "search.age.days": {
+    "message": "天"
+  },
+  "search.age.hours": {
+    "message": "小時"
+  },
+  "search.age.minutes": {
+    "message": "分鐘"
+  },
+  "search.age.months": {
+    "message": "個月"
+  },
+  "search.age.weeks": {
+    "message": "週"
+  },
+  "search.age.years": {
+    "message": "年"
+  },
+  "search.archives": {
+    "message": "搜尋壓縮檔"
+  },
+  "search.attribute.directory": {
+    "message": "目錄"
+  },
+  "search.attribute.either": {
+    "message": "皆可"
+  },
+  "search.attribute.executable": {
+    "message": "可執行"
+  },
+  "search.attribute.hidden": {
+    "message": "隱藏"
+  },
+  "search.attribute.link": {
+    "message": "符號連結"
+  },
+  "search.attribute.must": {
+    "message": "必須是"
+  },
+  "search.attribute.must_not": {
+    "message": "不可以是"
+  },
+  "search.attribute.read_only": {
+    "message": "唯讀"
+  },
+  "search.attributes.label": {
+    "message": "屬性："
+  },
+  "search.between.and": {
+    "message": "到"
+  },
+  "search.between.label": {
+    "message": "日期介於："
+  },
+  "search.close": {
+    "message": "關閉"
+  },
+  "search.depth.all": {
+    "message": "全部（不限深度）"
+  },
+  "search.depth.current": {
+    "message": "僅目前目錄"
+  },
+  "search.depth.label": {
+    "message": "搜尋子目錄："
+  },
+  "search.depth.levels": {
+    "message": "{count, plural, other {# 層}}"
+  },
+  "search.drives": {
+    "message": "磁碟機"
+  },
+  "search.duplicates.content": {
+    "message": "內容相同"
+  },
+  "search.duplicates.label": {
+    "message": "尋找重複檔案："
+  },
+  "search.duplicates.name": {
+    "message": "名稱相同"
+  },
+  "search.duplicates.size": {
+    "message": "大小相同"
+  },
+  "search.edit": {
+    "message": "F4 編輯"
+  },
+  "search.error.between_days": {
+    "message": "「日期介於」需要兩個日期"
+  },
+  "search.error.date": {
+    "message": "{text} 不是有效的日期，例如 2026-11-12"
+  },
+  "search.error.hex": {
+    "message": "{text} 不是有效的十六進位字串，例如 48 65 6c"
+  },
+  "search.error.keep": {
+    "message": "無法保留搜尋記錄：{err}"
+  },
+  "search.error.local_time": {
+    "message": "{text} 不是有效的本地時間"
+  },
+  "search.error.names_regex": {
+    "message": "名稱的規則運算式：{err}"
+  },
+  "search.error.newer_number": {
+    "message": "「不超過」需要數字，而不是 {text}"
+  },
+  "search.error.no_place": {
+    "message": "「搜尋位置」中沒有指定資料夾"
+  },
+  "search.error.no_text": {
+    "message": "「尋找文字」中沒有指定文字"
+  },
+  "search.error.older_number": {
+    "message": "「超過」需要數字，而不是 {text}"
+  },
+  "search.error.save": {
+    "message": "無法儲存搜尋：{err}"
+  },
+  "search.error.size_number": {
+    "message": "「檔案大小」需要數字，而不是 {text}"
+  },
+  "search.error.text_regex": {
+    "message": "文字的規則運算式：{err}"
+  },
+  "search.feed": {
+    "message": "送到面板"
+  },
+  "search.go_to_file": {
+    "message": "前往檔案"
+  },
+  "search.in_found": {
+    "message": "F2 在找到的檔案中搜尋"
+  },
+  "search.locate": {
+    "message": "使用 locate 索引"
+  },
+  "search.names.label": {
+    "message": "搜尋名稱："
+  },
+  "search.names.placeholder": {
+    "message": "*.txt *.md | backup*  （留空表示全部）"
+  },
+  "search.new": {
+    "message": "新搜尋"
+  },
+  "search.newer.label": {
+    "message": "不超過："
+  },
+  "search.older.label": {
+    "message": "超過："
+  },
+  "search.only_selected": {
+    "message": "僅在所選檔案/資料夾中搜尋"
+  },
+  "search.only_selected_count": {
+    "message": "{count, plural, other {僅在所選的 # 個項目中搜尋}}"
+  },
+  "search.page.advanced": {
+    "message": "進階"
+  },
+  "search.page.general": {
+    "message": "一般"
+  },
+  "search.page.load_save": {
+    "message": "載入/儲存"
+  },
+  "search.places.browse_prompt": {
+    "message": "搜尋位置"
+  },
+  "search.places.label": {
+    "message": "搜尋位置："
+  },
+  "search.places.placeholder": {
+    "message": "資料夾，以 ; 分隔"
+  },
+  "search.regex": {
+    "message": "RegEx"
+  },
+  "search.results.label": {
+    "message": "搜尋結果："
+  },
+  "search.saved.delete": {
+    "message": "刪除"
+  },
+  "search.saved.label": {
+    "message": "先前的搜尋："
+  },
+  "search.saved.load": {
+    "message": "載入"
+  },
+  "search.saved.name_first": {
+    "message": "請先為搜尋命名。"
+  },
+  "search.saved.name_placeholder": {
+    "message": "搜尋名稱"
+  },
+  "search.saved.save": {
+    "message": "儲存"
+  },
+  "search.size.label": {
+    "message": "檔案大小："
+  },
+  "search.start": {
+    "message": "開始搜尋"
+  },
+  "search.status.found": {
+    "message": "找到 {files, plural, other {# 個檔案}}和 {dirs, plural, other {# 個目錄}}"
+  },
+  "search.status.searching": {
+    "message": "正在搜尋…"
+  },
+  "search.status.searching_in": {
+    "message": "正在搜尋：{folder}"
+  },
+  "search.status.stopped": {
+    "message": "已停止：{counts}"
+  },
+  "search.stop": {
+    "message": "停止"
+  },
+  "search.text.ansi": {
+    "message": "ANSI（字碼頁 {page}）"
+  },
+  "search.text.case_sensitive": {
+    "message": "區分大小寫"
+  },
+  "search.text.hex": {
+    "message": "十六進位"
+  },
+  "search.text.label": {
+    "message": "尋找文字："
+  },
+  "search.text.not_containing": {
+    "message": "尋找「不」包含此文字的檔案"
+  },
+  "search.text.office": {
+    "message": "Office 檔案 (docx、xlsx、pptx、odt…)"
+  },
+  "search.text.placeholder": {
+    "message": "要尋找的文字"
+  },
+  "search.text.whole_words": {
+    "message": "僅限完整單字"
+  },
+  "search.title": {
+    "message": "尋找檔案"
+  },
+  "search.unit.bytes": {
+    "message": "位元組"
+  },
+  "search.view": {
+    "message": "F3 檢視"
+  },
+  "settings.addons.builtin_version": {
+    "message": "{version}，隨附於 Spark Commander"
+  },
+  "settings.addons.check_daily": {
+    "message": "啟動時及每天檢查附加元件更新，並提供更新"
+  },
+  "settings.addons.check_failed": {
+    "message": "無法檢查更新：{err}"
+  },
+  "settings.addons.check_now": {
+    "message": "立即檢查"
+  },
+  "settings.addons.checking": {
+    "message": "正在檢查更新..."
+  },
+  "settings.addons.download": {
+    "message": "下載"
+  },
+  "settings.addons.downloading": {
+    "message": "正在下載：{done} / {size}"
+  },
+  "settings.addons.file": {
+    "message": "檔案"
+  },
+  "settings.addons.installed.builtin": {
+    "message": "隨附於 Spark Commander"
+  },
+  "settings.addons.installed.label": {
+    "message": "已安裝"
+  },
+  "settings.addons.installed.none": {
+    "message": "無"
+  },
+  "settings.addons.intro": {
+    "message": "Spark Commander 的部分功能使用了其他專案的這些程式。附加元件與本程式分開下載，由你決定是否下載；7-Zip 和 PDFium 已隨附。"
+  },
+  "settings.addons.never_offer": {
+    "message": "檔案需要附加元件時，一律不提供下載"
+  },
+  "settings.addons.offers": {
+    "message": "提供與更新"
+  },
+  "settings.addons.online.label": {
+    "message": "線上"
+  },
+  "settings.addons.online.looking": {
+    "message": "正在查詢..."
+  },
+  "settings.addons.online.none": {
+    "message": "沒有適用於此系統的版本"
+  },
+  "settings.addons.online.not_yet": {
+    "message": "尚未查詢"
+  },
+  "settings.addons.online.unknown": {
+    "message": "不明"
+  },
+  "settings.addons.remove": {
+    "message": "移除"
+  },
+  "settings.addons.up_to_date": {
+    "message": "附加元件清單已是最新狀態。"
+  },
+  "settings.addons.version": {
+    "message": "版本"
+  },
+  "settings.addons.website": {
+    "message": "網站"
+  },
+  "settings.appearance.title": {
+    "message": "外觀"
+  },
+  "settings.apply": {
+    "message": "套用"
+  },
+  "settings.backdrop.blur": {
+    "message": "模糊後方的桌面"
+  },
+  "settings.backdrop.clear": {
+    "message": "0%，只顯示桌面"
+  },
+  "settings.backdrop.cover": {
+    "message": "覆蓋後方桌面的程度："
+  },
+  "settings.backdrop.opacity": {
+    "message": "{opacity}%"
+  },
+  "settings.backdrop.sidebar": {
+    "message": "側邊欄"
+  },
+  "settings.backdrop.solid": {
+    "message": "100%，不透明"
+  },
+  "settings.backdrop.terminal": {
+    "message": "終端機"
+  },
+  "settings.cancel": {
+    "message": "取消"
+  },
+  "settings.date.as_system": {
+    "message": "跟隨系統：{date}"
+  },
+  "settings.date.custom": {
+    "message": "自訂："
+  },
+  "settings.date.pattern_help": {
+    "message": "yyyy 年、MM 月（MMM 為月份名稱）、dd 日（ddd 為星期）"
+  },
+  "settings.date.shown_as": {
+    "message": "顯示方式"
+  },
+  "settings.date.shown_as_note": {
+    "message": "用於檔案清單；對話方塊中會加上秒數"
+  },
+  "settings.date.title": {
+    "message": "日期"
+  },
+  "settings.editor.browse": {
+    "message": "瀏覽..."
+  },
+  "settings.editor.choose": {
+    "message": "選擇"
+  },
+  "settings.editor.external": {
+    "message": "外部編輯器 (Ctrl+Shift+F4)："
+  },
+  "settings.editor.external_help": {
+    "message": "%1 代表檔案，否則檔案會放在最後；例如 code --wait %1"
+  },
+  "settings.editor.limit": {
+    "message": "內建編輯器 (F4) 可開啟的檔案大小上限"
+  },
+  "settings.editor.limit_unit": {
+    "message": "MB"
+  },
+  "settings.editor.title": {
+    "message": "F4 編輯器"
+  },
+  "settings.error.no_folder": {
+    "message": "沒有設定資料夾"
+  },
+  "settings.files_shown.hidden": {
+    "message": "隱藏檔案"
+  },
+  "settings.files_shown.system": {
+    "message": "系統檔案"
+  },
+  "settings.files_shown.title": {
+    "message": "顯示的檔案"
+  },
+  "settings.font.as_system": {
+    "message": "跟隨系統"
+  },
+  "settings.font.chosen": {
+    "message": "已選擇；系統字型為 {family}，{size}"
+  },
+  "settings.font.fixed": {
+    "message": "檢視器"
+  },
+  "settings.font.fixed_note": {
+    "message": "僅限等寬字型；也用於編輯器和檔案比較。"
+  },
+  "settings.font.main": {
+    "message": "主視窗字型"
+  },
+  "settings.font.system": {
+    "message": "系統字型"
+  },
+  "settings.language.system": {
+    "message": "系統語言"
+  },
+  "settings.language.system_named": {
+    "message": "系統語言：{language}"
+  },
+  "settings.language.title": {
+    "message": "語言"
+  },
+  "settings.menus.automatic": {
+    "message": "自動：GNOME 上使用 ☰ 按鈕，其他環境使用選單列"
+  },
+  "settings.menus.bar": {
+    "message": "選單列"
+  },
+  "settings.menus.button": {
+    "message": "標題列中的 ☰ 按鈕"
+  },
+  "settings.menus.title": {
+    "message": "選單"
+  },
+  "settings.ok": {
+    "message": "確定"
+  },
+  "settings.page.addons": {
+    "message": "附加元件"
+  },
+  "settings.page.date": {
+    "message": "日期"
+  },
+  "settings.page.display": {
+    "message": "顯示"
+  },
+  "settings.page.edit_view": {
+    "message": "編輯/檢視"
+  },
+  "settings.page.font": {
+    "message": "字型"
+  },
+  "settings.page.language": {
+    "message": "語言"
+  },
+  "settings.page.layout": {
+    "message": "版面配置"
+  },
+  "settings.page.operations": {
+    "message": "作業"
+  },
+  "settings.page.passwords": {
+    "message": "密碼"
+  },
+  "settings.page.terminal": {
+    "message": "終端機"
+  },
+  "settings.page.toolbar": {
+    "message": "工具列"
+  },
+  "settings.passwords.change_master": {
+    "message": "變更主密碼…"
+  },
+  "settings.passwords.locked": {
+    "message": "這些密碼在這台電腦上已鎖定：主密碼可以開啟它們。"
+  },
+  "settings.passwords.master_set": {
+    "message": "已設定主密碼：複製設定資料夾後，只要在另一台電腦上輸入主密碼即可開啟。"
+  },
+  "settings.passwords.no_master": {
+    "message": "未設定主密碼：複製設定資料夾後，無法在另一台電腦上開啟這些密碼，需要在那裡重新輸入。"
+  },
+  "settings.passwords.not_removed": {
+    "message": "未移除主密碼：{err}"
+  },
+  "settings.passwords.remove_master": {
+    "message": "移除主密碼"
+  },
+  "settings.passwords.saved": {
+    "message": "{count, plural, other {已儲存 # 組密碼}}（伺服器、共用資料夾、加密磁碟機），加密保存在設定資料夾中；開啟它們的金鑰位於這台電腦的金鑰圈中。"
+  },
+  "settings.passwords.set_master": {
+    "message": "設定主密碼…"
+  },
+  "settings.passwords.title": {
+    "message": "已儲存的密碼"
+  },
+  "settings.passwords.unlock": {
+    "message": "解鎖…"
+  },
+  "settings.queue.clear_after": {
+    "message": "已完成的作業在多久後清除"
+  },
+  "settings.queue.clear_after_help": {
+    "message": "0：完成後立即清除。失敗及已取消的作業會保留到手動清除為止。"
+  },
+  "settings.queue.clear_after_unit": {
+    "message": "分鐘"
+  },
+  "settings.queue.download_limit": {
+    "message": "下載速度上限"
+  },
+  "settings.queue.download_limit_help": {
+    "message": "適用於「從連結下載」，以及從 FTP 和 SFTP 伺服器複製的作業，也包括正在執行的作業。0：不限制。"
+  },
+  "settings.queue.download_limit_unit": {
+    "message": "KB/s"
+  },
+  "settings.queue.title": {
+    "message": "作業佇列"
+  },
+  "settings.shell.default": {
+    "message": "預設：{shell}"
+  },
+  "settings.shell.note": {
+    "message": "新的終端機分頁會啟動此 Shell。"
+  },
+  "settings.shell.title": {
+    "message": "Shell"
+  },
+  "settings.sort_folders.by_name": {
+    "message": "一律依名稱"
+  },
+  "settings.sort_folders.like_files": {
+    "message": "與檔案相同（也依時間）"
+  },
+  "settings.sort_folders.title": {
+    "message": "資料夾排序"
+  },
+  "settings.tabs.header_always": {
+    "message": "只有一個分頁時也顯示分頁標頭"
+  },
+  "settings.tabs.title": {
+    "message": "資料夾分頁"
+  },
+  "settings.time.as_system": {
+    "message": "跟隨系統"
+  },
+  "settings.time.h12": {
+    "message": "12 小時制 (2:05 PM)"
+  },
+  "settings.time.h24": {
+    "message": "24 小時制 (14:05)"
+  },
+  "settings.time.title": {
+    "message": "時間"
+  },
+  "settings.title": {
+    "message": "設定"
+  },
+  "settings.toolbar.add": {
+    "message": "新增按鈕…"
+  },
+  "settings.toolbar.move_down": {
+    "message": "下移"
+  },
+  "settings.toolbar.move_up": {
+    "message": "上移"
+  },
+  "settings.toolbar.place": {
+    "message": "位於選單列下方；若選單收在 ☰ 按鈕中（如 GNOME 應用程式），則位於標題列中。沒有按鈕時不顯示。"
+  },
+  "settings.toolbar.remove": {
+    "message": "移除"
+  },
+  "settings.toolbar.replace": {
+    "message": "取代…"
+  },
+  "settings.toolbar.restore_default": {
+    "message": "還原預設值"
+  },
+  "settings.toolbar.title": {
+    "message": "工具列按鈕"
+  },
+  "settings.viewer.font.ansi": {
+    "message": "ANSI (Windows)"
+  },
+  "settings.viewer.font.ascii": {
+    "message": "ASCII (DOS)"
+  },
+  "settings.viewer.font.auto": {
+    "message": "自動偵測"
+  },
+  "settings.viewer.font.label": {
+    "message": "啟動時的字型："
+  },
+  "settings.viewer.font.variable": {
+    "message": "可變寬度"
+  },
+  "settings.viewer.minimap": {
+    "message": "迷你地圖"
+  },
+  "settings.viewer.show": {
+    "message": "顯示："
+  },
+  "settings.viewer.start.auto": {
+    "message": "自動偵測"
+  },
+  "settings.viewer.start.binary": {
+    "message": "二進位"
+  },
+  "settings.viewer.start.hex": {
+    "message": "十六進位"
+  },
+  "settings.viewer.start.label": {
+    "message": "啟動時的顯示方式："
+  },
+  "settings.viewer.start.text": {
+    "message": "文字"
+  },
+  "settings.viewer.title": {
+    "message": "F3 檢視器"
+  },
+  "settings.viewer.width.binary": {
+    "message": "二進位"
+  },
+  "settings.viewer.width.label": {
+    "message": "顯示寬度（字元）："
+  },
+  "settings.viewer.width.text": {
+    "message": "文字"
+  },
+  "settings.viewer.wrap": {
+    "message": "自動換行"
+  },
+  "shells.command_prompt": {
+    "message": "命令提示字元"
+  },
+  "sidebar.device.no_files": {
+    "message": "未分享檔案"
+  },
+  "sidebar.device.not_answering": {
+    "message": "{name} 沒有回應：請將它解鎖並開啟其上的 KDE Connect，然後重新讀取資料夾 (F2)。"
+  },
+  "sidebar.device.not_answering_error": {
+    "message": "{name} 沒有回應（{err}）：請將它解鎖並開啟其上的 KDE Connect。"
+  },
+  "sidebar.device.not_connected": {
+    "message": "未連線"
+  },
+  "sidebar.device.opening": {
+    "message": "正在開啟 {name}..."
+  },
+  "sidebar.device.reconnecting": {
+    "message": "{name} 沒有回應：正在重新連線..."
+  },
+  "sidebar.device.unmount_failed": {
+    "message": "{name}：無法卸載：{err}"
+  },
+  "sidebar.group.bookmarks": {
+    "message": "書籤"
+  },
+  "sidebar.group.cloud": {
+    "message": "雲端"
+  },
+  "sidebar.group.devices": {
+    "message": "裝置"
+  },
+  "sidebar.group.drives": {
+    "message": "磁碟機"
+  },
+  "sidebar.group.network": {
+    "message": "網路"
+  },
+  "sidebar.section.connections": {
+    "message": "連線"
+  },
+  "sidebar.section.folders": {
+    "message": "資料夾"
+  },
+  "sidebar.section.operations": {
+    "message": "作業"
+  },
+  "sidebar.section.places": {
+    "message": "位置"
+  },
+  "sidebar.volume.locked": {
+    "message": "已鎖定"
+  },
+  "sidebar.volume.mounting": {
+    "message": "正在掛載 {name}..."
+  },
+  "sidebar.volume.not_mounted": {
+    "message": "未掛載"
+  },
+  "sidebar.volume.open": {
+    "message": "開啟"
+  },
+  "sidebar.volume.space": {
+    "message": "{free} 可用，共 {total}"
+  },
+  "sidebar.volume.unmount": {
+    "message": "卸載"
+  },
+  "sidebar.volume.unmount_failed": {
+    "message": "無法卸載：{err}"
+  },
+  "split.bad_size": {
+    "message": "「{size}」不是有效的大小：100 MB, 1.5 GB, 650m"
+  },
+  "split.choose": {
+    "message": "請將游標移到要分割的檔案上。"
+  },
+  "split.combine.choose": {
+    "message": "請將游標移到分割檔 (name.001) 或其 .crc 檔案上。"
+  },
+  "split.combine.dialog_title": {
+    "message": "合併檔案"
+  },
+  "split.combine.label": {
+    "message": "將分割檔合併為檔案："
+  },
+  "split.combine.title": {
+    "message": "合併「{name}」"
+  },
+  "split.combined_no_crc": {
+    "message": "{count, plural, other {已合併 # 個分割檔，沒有 CRC 檔案可供檢查}}"
+  },
+  "split.crc_mismatch": {
+    "message": "{target} 與 {file} 不符：有分割檔遺失或損毀"
+  },
+  "split.crc_names_no_file": {
+    "message": "CRC 檔案未指定任何檔案"
+  },
+  "split.crc_unreadable": {
+    "message": "已合併，但無法讀取 {file}：{err}"
+  },
+  "split.dialog_title": {
+    "message": "分割檔案"
+  },
+  "split.label": {
+    "message": "將「{name}」分割成多個部分，放在資料夾："
+  },
+  "split.part_missing": {
+    "message": "找不到 {path}"
+  },
+  "split.part_size": {
+    "message": "分割大小："
+  },
+  "split.title": {
+    "message": "分割「{name}」"
+  },
+  "sync.close": {
+    "message": "關閉"
+  },
+  "sync.column.date": {
+    "message": "日期"
+  },
+  "sync.column.name": {
+    "message": "名稱"
+  },
+  "sync.column.size": {
+    "message": "大小"
+  },
+  "sync.compare": {
+    "message": "比較"
+  },
+  "sync.confirm.copy_left": {
+    "message": "將 {count} 個複製到左側（{size}）"
+  },
+  "sync.confirm.copy_right": {
+    "message": "將 {count} 個複製到右側（{size}）"
+  },
+  "sync.confirm.delete_left": {
+    "message": "刪除左側的 {count} 個"
+  },
+  "sync.confirm.delete_right": {
+    "message": "刪除右側的 {count} 個"
+  },
+  "sync.confirm.ok": {
+    "message": "同步"
+  },
+  "sync.confirm.text": {
+    "message": "{actions}。複製的檔案會取代目的地中的檔案。{trash, select, yes {這台電腦上刪除的檔案會移至資源回收筒。} other {}}"
+  },
+  "sync.confirm.title": {
+    "message": "同步"
+  },
+  "sync.error.changed": {
+    "message": "比較後已有變更；請重新比較"
+  },
+  "sync.error.compare": {
+    "message": "無法比較：{err}"
+  },
+  "sync.error.no_folders": {
+    "message": "同步目錄會比較兩個資料夾：兩個面板都不能顯示壓縮檔或搜尋結果。"
+  },
+  "sync.left": {
+    "message": "左側"
+  },
+  "sync.mask.label": {
+    "message": "檔案："
+  },
+  "sync.option.asymmetric": {
+    "message": "非對稱（右側成為左側的副本）"
+  },
+  "sync.option.by_content": {
+    "message": "依內容"
+  },
+  "sync.option.ignore_date": {
+    "message": "忽略日期"
+  },
+  "sync.option.subfolders": {
+    "message": "子資料夾"
+  },
+  "sync.result.done": {
+    "message": "{count, plural, other {已同步 # 個}}"
+  },
+  "sync.result.failed": {
+    "message": "{count, plural, other {# 個未同步}}；{first}"
+  },
+  "sync.right": {
+    "message": "右側"
+  },
+  "sync.show.equal": {
+    "message": "= 相同"
+  },
+  "sync.show.label": {
+    "message": "顯示："
+  },
+  "sync.show.other": {
+    "message": "≠ 不處理"
+  },
+  "sync.show.to_left": {
+    "message": "← 到左側"
+  },
+  "sync.show.to_right": {
+    "message": "→ 到右側"
+  },
+  "sync.status.both_empty": {
+    "message": "兩側都是空的。"
+  },
+  "sync.status.comparing": {
+    "message": "正在比較 {folder}"
+  },
+  "sync.status.counts": {
+    "message": "{right} 個要複製到右側，{left} 個要複製到左側，{delete} 個要刪除，{equal} 個相同，{alone} 個不處理"
+  },
+  "sync.status.stopped": {
+    "message": "已停止。"
+  },
+  "sync.stop": {
+    "message": "停止"
+  },
+  "sync.synchronize": {
+    "message": "同步..."
+  },
+  "sync.task.title": {
+    "message": "同步 {left} 和 {right}"
+  },
+  "sync.title": {
+    "message": "同步目錄"
+  },
+  "tab_menu.close_all_tabs": {
+    "message": "關閉所有分頁"
+  },
+  "tab_menu.close_duplicate_tabs": {
+    "message": "關閉重複的分頁"
+  },
+  "tab_menu.close_tab": {
+    "message": "關閉此分頁"
+  },
+  "tab_menu.copy_tab_to_other_panel": {
+    "message": "將分頁複製到另一個面板"
+  },
+  "tab_menu.duplicate_tab": {
+    "message": "複製此分頁"
+  },
+  "tab_menu.list_tabs": {
+    "message": "顯示所有分頁的清單"
+  },
+  "tab_menu.lock_tab": {
+    "message": "鎖定此分頁"
+  },
+  "tab_menu.none": {
+    "message": "（無）"
+  },
+  "tab_menu.rename_tab": {
+    "message": "重新命名分頁..."
+  },
+  "tabs.error.reopen": {
+    "message": "無法重新開啟分頁：{err}"
+  },
+  "tabs.history.empty": {
+    "message": "此分頁的歷程記錄中還沒有其他資料夾。"
+  },
+  "tabs.new": {
+    "message": "新增分頁"
+  },
+  "tabs.rename.label": {
+    "message": "新名稱："
+  },
+  "tabs.rename.title": {
+    "message": "重新命名分頁"
+  },
+  "tabs.search_results": {
+    "message": "搜尋結果"
+  },
+  "terminal.busy": {
+    "message": "終端機中有程式正在執行：請在它結束後再執行命令。"
+  },
+  "terminal.close.idle": {
+    "message": "要關閉此終端機分頁嗎？其 Shell 將會結束。"
+  },
+  "terminal.close.ok": {
+    "message": "關閉"
+  },
+  "terminal.close.running": {
+    "message": "要關閉此終端機分頁嗎？其中執行的程式將會停止。"
+  },
+  "terminal.close.title": {
+    "message": "關閉分頁"
+  },
+  "terminal.error.start_shell": {
+    "message": "無法啟動 Shell：{err}"
+  },
+  "terminal.jump_to_bottom": {
+    "message": "跳到底部 (Ctrl+End) ↓"
+  },
+  "terminal.menu.copy": {
+    "message": "複製"
+  },
+  "terminal.menu.paste": {
+    "message": "貼上"
+  },
+  "toolbar.customize": {
+    "message": "自訂工具列…"
+  },
+  "tools.clear_key": {
+    "message": "清除"
+  },
+  "tools.close": {
+    "message": "關閉"
+  },
+  "tools.delete": {
+    "message": "刪除"
+  },
+  "tools.empty": {
+    "message": "尚無工具：按「新增...」即可加入。"
+  },
+  "tools.field.command": {
+    "message": "命令"
+  },
+  "tools.field.key": {
+    "message": "按鍵"
+  },
+  "tools.field.name": {
+    "message": "名稱"
+  },
+  "tools.intro": {
+    "message": "你自己的命令列，位於「工具」選單中：在那裡按一下，或按下它的按鍵。"
+  },
+  "tools.key.none": {
+    "message": "無"
+  },
+  "tools.key.waiting": {
+    "message": "請按鍵...（Esc：無）"
+  },
+  "tools.move_down": {
+    "message": "下移"
+  },
+  "tools.move_up": {
+    "message": "上移"
+  },
+  "tools.name.placeholder": {
+    "message": "與另一側比較"
+  },
+  "tools.new": {
+    "message": "新增..."
+  },
+  "tools.new_name": {
+    "message": "工具 {number}"
+  },
+  "tools.no_command": {
+    "message": "{tool} 尚未設定命令：工具 > 管理工具。"
+  },
+  "tools.not_local": {
+    "message": "工具會在這台電腦上執行：目前面板顯示的是伺服器或壓縮檔。"
+  },
+  "tools.note.key_of_command": {
+    "message": "{key} 也是「{command}」的按鍵：由此工具使用。"
+  },
+  "tools.note.key_of_other_tool": {
+    "message": "{key} 也是 {tool} 的按鍵：由清單中較下方的工具使用。"
+  },
+  "tools.placeholders": {
+    "message": "%P 此面板的資料夾，%T 另一個面板的資料夾（兩者都以分隔符號結尾，因此 \"%P%N\" 就是路徑），%N 游標所在的檔案，%O 不含副檔名的名稱，%E 副檔名，%S 所選檔案（若無則為游標所在的檔案），各自加上引號；%% 代表一個 %。其餘部分請自行加上引號：\"%P%N\"。"
+  },
+  "tools.run_in_terminal": {
+    "message": "在終端機中執行，以查看其輸出"
+  },
+  "tools.set_key": {
+    "message": "設定按鍵..."
+  },
+  "tools.title": {
+    "message": "工具"
+  },
+  "transfer.answer.cancel": {
+    "message": "取消"
+  },
+  "transfer.answer.elevate": {
+    "message": "以系統管理員身分"
+  },
+  "transfer.answer.overwrite": {
+    "message": "覆寫"
+  },
+  "transfer.answer.overwrite_all": {
+    "message": "全部覆寫"
+  },
+  "transfer.answer.rename": {
+    "message": "重新命名"
+  },
+  "transfer.answer.retry": {
+    "message": "重試"
+  },
+  "transfer.answer.skip": {
+    "message": "略過"
+  },
+  "transfer.answer.skip_all": {
+    "message": "全部略過"
+  },
+  "transfer.archive.local_only": {
+    "message": "只有這台電腦上的檔案可以放入壓縮檔：請先將它們複製到這裡。"
+  },
+  "transfer.cancel": {
+    "message": "取消"
+  },
+  "transfer.error.elevate_hint": {
+    "message": "以系統管理員身分：在其餘項目完成後，處理此項目及其他遭拒的項目，只需輸入一次密碼。"
+  },
+  "transfer.error.title": {
+    "message": "錯誤"
+  },
+  "transfer.exists.describe": {
+    "message": "{count, plural, other {{size} 位元組，{time}}}"
+  },
+  "transfer.exists.text": {
+    "message": "已存在：{existing}\n新檔案：{new}"
+  },
+  "transfer.exists.title": {
+    "message": "檔案已存在"
+  },
+  "transfer.extract_failed": {
+    "message": "無法取出：{err}"
+  },
+  "transfer.into_archive.question_many": {
+    "message": "要{kind, select, copy {複製} other {移動}} {count, plural, other {# 個項目}}到 {into} 嗎？其中的同名項目將被取代。"
+  },
+  "transfer.into_archive.question_one": {
+    "message": "要{kind, select, copy {複製} other {移動}}「{name}」到 {into} 嗎？其中的同名項目將被取代。"
+  },
+  "transfer.into_archive.title_many": {
+    "message": "{kind, select, copy {複製} other {移動}} {count, plural, other {# 個項目}}到 {archive}"
+  },
+  "transfer.into_archive.title_one": {
+    "message": "{kind, select, copy {複製} other {移動}}「{name}」到 {archive}"
+  },
+  "transfer.label.many": {
+    "message": "{kind, select, copy {複製} other {移動}} {count, plural, other {# 個項目}}到："
+  },
+  "transfer.label.many_server": {
+    "message": "{kind, select, copy {複製} other {移動}} {count, plural, other {# 個項目}}到 {server}："
+  },
+  "transfer.label.one": {
+    "message": "{kind, select, copy {複製} other {移動}}「{name}」到："
+  },
+  "transfer.label.one_server": {
+    "message": "{kind, select, copy {複製} other {移動}}「{name}」到 {server}："
+  },
+  "transfer.ok": {
+    "message": "確定"
+  },
+  "transfer.overwrite.all": {
+    "message": "全部覆寫"
+  },
+  "transfer.overwrite.ask": {
+    "message": "詢問"
+  },
+  "transfer.overwrite.label": {
+    "message": "目標中有同名檔案時："
+  },
+  "transfer.overwrite.older": {
+    "message": "覆寫較舊的"
+  },
+  "transfer.overwrite.rename": {
+    "message": "重新命名複本"
+  },
+  "transfer.overwrite.skip": {
+    "message": "全部略過"
+  },
+  "transfer.remove_moved": {
+    "message": "從 {name} 中移除已移出的項目"
+  },
+  "transfer.speed": {
+    "message": "{size}/s"
+  },
+  "transfer.strip.counting": {
+    "message": "計算中：{count, plural, other {# 個檔案}}"
+  },
+  "transfer.strip.progress": {
+    "message": "{files} / {count, plural, other {# 個檔案}}，{percent}%"
+  },
+  "transfer.strip.queue": {
+    "message": "佇列..."
+  },
+  "transfer.strip.queue_waiting": {
+    "message": "佇列（{count, plural, other {# 個等待中}}）..."
+  },
+  "transfer.title.copy": {
+    "message": "複製"
+  },
+  "transfer.title.move": {
+    "message": "移動"
+  },
+  "viewer.as_text_hint": {
+    "message": "{err}。按 1 以文字顯示檔案。"
+  },
+  "viewer.book.cannot_read": {
+    "message": "無法閱讀此電子書：{err}。按 1 以文字顯示檔案。"
+  },
+  "viewer.book.continuing": {
+    "message": "從 {percent} 處繼續"
+  },
+  "viewer.book.error.compression": {
+    "message": "使用尚不支援的壓縮方式（{compression}）"
+  },
+  "viewer.book.error.damaged": {
+    "message": "電子書已損毀"
+  },
+  "viewer.book.error.damaged_zip": {
+    "message": "zip 已損毀"
+  },
+  "viewer.book.error.drm": {
+    "message": "受 DRM 保護：只有 Kindle 能閱讀"
+  },
+  "viewer.book.error.huffman": {
+    "message": "使用 Amazon 自有電子書的壓縮方式 (HUFF/CDIC)，目前尚不支援"
+  },
+  "viewer.book.error.missing_part": {
+    "message": "電子書中沒有 {name}"
+  },
+  "viewer.book.error.no_package": {
+    "message": "電子書中沒有套件檔案"
+  },
+  "viewer.book.error.no_text": {
+    "message": "電子書中沒有文字"
+  },
+  "viewer.book.error.not_zip": {
+    "message": "不是 zip：電子書可能已損毀或受 DRM 保護？"
+  },
+  "viewer.book.error.zip_method": {
+    "message": "{name}：使用此處無法讀取的 zip 壓縮方式（{method}）"
+  },
+  "viewer.cannot_show": {
+    "message": "無法顯示：{err}"
+  },
+  "viewer.convert.failed": {
+    "message": "{tool} 無法轉換（{status}）"
+  },
+  "viewer.converting": {
+    "message": "正在用 {tool} 轉換…"
+  },
+  "viewer.copy.too_large": {
+    "message": "超過 {megabytes} MB 的選取範圍不會複製。"
+  },
+  "viewer.encoding.cp1250": {
+    "message": "中歐 (1250)"
+  },
+  "viewer.encoding.cp1251": {
+    "message": "西里爾文 Windows (1251)"
+  },
+  "viewer.encoding.cp1252": {
+    "message": "西歐 Latin1 (1252)"
+  },
+  "viewer.encoding.cp1253": {
+    "message": "希臘文 (1253)"
+  },
+  "viewer.encoding.cp1254": {
+    "message": "土耳其文 (1254)"
+  },
+  "viewer.encoding.cp1255": {
+    "message": "希伯來文 (1255)"
+  },
+  "viewer.encoding.cp1256": {
+    "message": "阿拉伯文 (1256)"
+  },
+  "viewer.encoding.cp1257": {
+    "message": "波羅的海語系 (1257)"
+  },
+  "viewer.encoding.cp1258": {
+    "message": "越南文 (1258)"
+  },
+  "viewer.encoding.cp20866": {
+    "message": "西里爾文 KOI8-R (20866)"
+  },
+  "viewer.encoding.cp437": {
+    "message": "DOS-美國 (437)"
+  },
+  "viewer.encoding.cp850": {
+    "message": "DOS-LATIN1 (850)"
+  },
+  "viewer.encoding.cp852": {
+    "message": "DOS 中歐 (852)"
+  },
+  "viewer.encoding.cp866": {
+    "message": "DOS 西里爾文 (866)"
+  },
+  "viewer.encoding.cp874": {
+    "message": "泰文 (874)"
+  },
+  "viewer.encoding.cp932": {
+    "message": "日文 (932)"
+  },
+  "viewer.encoding.cp936": {
+    "message": "簡體中文 (936)"
+  },
+  "viewer.encoding.cp949": {
+    "message": "韓文 (949)"
+  },
+  "viewer.encoding.cp950": {
+    "message": "繁體中文 (950)"
+  },
+  "viewer.find.not_found": {
+    "message": "找不到：{text}"
+  },
+  "viewer.find.not_hex": {
+    "message": "不是十六進位字串：{text}"
+  },
+  "viewer.find.nothing": {
+    "message": "沒有要尋找的內容。"
+  },
+  "viewer.find.save_failed": {
+    "message": "無法儲存搜尋記錄：{err}"
+  },
+  "viewer.loading": {
+    "message": "正在載入…"
+  },
+  "viewer.markdown.too_large": {
+    "message": "超過 {megabytes} MB：按 1 以文字顯示。"
+  },
+  "viewer.menu.binary": {
+    "message": "二進位（固定行長）"
+  },
+  "viewer.menu.book": {
+    "message": "電子書 (EPUB, FB2)"
+  },
+  "viewer.menu.close": {
+    "message": "關閉"
+  },
+  "viewer.menu.configure": {
+    "message": "設定..."
+  },
+  "viewer.menu.copy_hex": {
+    "message": "以十六進位字元複製"
+  },
+  "viewer.menu.copy_text": {
+    "message": "以文字複製"
+  },
+  "viewer.menu.edit": {
+    "message": "編輯"
+  },
+  "viewer.menu.encoding": {
+    "message": "編碼"
+  },
+  "viewer.menu.file": {
+    "message": "檔案"
+  },
+  "viewer.menu.find": {
+    "message": "尋找..."
+  },
+  "viewer.menu.find_next": {
+    "message": "尋找下一個"
+  },
+  "viewer.menu.fit_image": {
+    "message": "圖片縮放至視窗大小"
+  },
+  "viewer.menu.font_ansi": {
+    "message": "ANSI（Windows 字元集）"
+  },
+  "viewer.menu.font_ascii": {
+    "message": "ASCII（DOS 字元集）"
+  },
+  "viewer.menu.font_page": {
+    "message": "依字型設定"
+  },
+  "viewer.menu.font_variable": {
+    "message": "可變字元寬度"
+  },
+  "viewer.menu.hex": {
+    "message": "十六進位"
+  },
+  "viewer.menu.html": {
+    "message": "HTML 文字（移除標籤）"
+  },
+  "viewer.menu.minimap": {
+    "message": "迷你地圖"
+  },
+  "viewer.menu.next_file": {
+    "message": "下一個檔案"
+  },
+  "viewer.menu.only_larger": {
+    "message": "僅縮放較大的圖片"
+  },
+  "viewer.menu.open": {
+    "message": "開啟..."
+  },
+  "viewer.menu.options": {
+    "message": "選項"
+  },
+  "viewer.menu.picture": {
+    "message": "圖片/多媒體"
+  },
+  "viewer.menu.previous_file": {
+    "message": "上一個檔案"
+  },
+  "viewer.menu.reload": {
+    "message": "重新載入"
+  },
+  "viewer.menu.save_as": {
+    "message": "另存新檔..."
+  },
+  "viewer.menu.search_google": {
+    "message": "用 Google 搜尋選取的文字"
+  },
+  "viewer.menu.select_all": {
+    "message": "全選"
+  },
+  "viewer.menu.syntax_colors": {
+    "message": "語法色彩"
+  },
+  "viewer.menu.text_only": {
+    "message": "純文字"
+  },
+  "viewer.menu.unicode": {
+    "message": "Unicode (UTF-16)"
+  },
+  "viewer.menu.wrap": {
+    "message": "自動換行（{columns, plural, other {# 欄}}）"
+  },
+  "viewer.mode.binary": {
+    "message": "二進位 · {page}"
+  },
+  "viewer.mode.book": {
+    "message": "電子書"
+  },
+  "viewer.mode.hex": {
+    "message": "十六進位 · {page}"
+  },
+  "viewer.mode.html": {
+    "message": "HTML 文字"
+  },
+  "viewer.mode.image": {
+    "message": "圖片"
+  },
+  "viewer.mode.multimedia": {
+    "message": "多媒體"
+  },
+  "viewer.mode.pdf_by": {
+    "message": "由 {tool} 轉換的 PDF"
+  },
+  "viewer.mode.text": {
+    "message": "文字 · {page}"
+  },
+  "viewer.origin.not_editable": {
+    "message": "只能編輯 7z、zip、jar 和 tar 壓縮檔中的檔案"
+  },
+  "viewer.origin.updated": {
+    "message": "已更新 {archive}"
+  },
+  "viewer.origin.updated_on": {
+    "message": "已更新 {server} 上的 {archive}"
+  },
+  "viewer.origin.uploaded": {
+    "message": "已上傳 {path}"
+  },
+  "viewer.pdf.cannot_show": {
+    "message": "無法顯示此 PDF：{err}"
+  },
+  "viewer.pdf.loading": {
+    "message": "正在載入..."
+  },
+  "viewer.pdf.page": {
+    "message": "第 {page} / {pages} 頁"
+  },
+  "viewer.picture.cannot_show": {
+    "message": "無法顯示此圖片；按 1 以文字顯示。"
+  },
+  "viewer.save_as.failed": {
+    "message": "無法儲存 {path}：{err}"
+  },
+  "viewer.status.rows": {
+    "message": "{count, plural, other {第 {first}–{last} 行，共 {grouped} 行}}"
+  },
+  "viewer.status.rows_so_far": {
+    "message": "{count, plural, other {目前 {grouped} 行，已讀取 {percent}}}"
+  },
+  "viewer.status.searching": {
+    "message": "正在搜尋…"
+  },
+  "viewer.status.size": {
+    "message": "{count, plural, other {{grouped} 位元組}}"
+  },
+  "viewer.window.title": {
+    "message": "{path} — 檢視器"
+  },
+  "viewer.zoom.fit": {
+    "message": "回到符合視窗大小 (Ctrl+0)"
+  },
+  "viewer.zoom.in": {
+    "message": "放大 (Ctrl++)"
+  },
+  "viewer.zoom.out": {
+    "message": "縮小 (Ctrl+-)"
+  },
+  "viewer.zoom.reset": {
+    "message": "回到 100% (Ctrl+0)"
+  },
+  "workspaces.button.close": {
+    "message": "關閉"
+  },
+  "workspaces.button.delete": {
+    "message": "刪除..."
+  },
+  "workspaces.button.duplicate": {
+    "message": "複製..."
+  },
+  "workspaces.button.new": {
+    "message": "新增..."
+  },
+  "workspaces.button.rename": {
+    "message": "重新命名..."
+  },
+  "workspaces.delete.button": {
+    "message": "刪除"
+  },
+  "workspaces.delete.closed": {
+    "message": "要刪除工作區「{name}」嗎？其中的分頁將不會保留。"
+  },
+  "workspaces.delete.closed_shells": {
+    "message": "要刪除工作區「{name}」嗎？其中的分頁將不會保留，終端機分頁中的 Shell 也會結束。"
+  },
+  "workspaces.delete.open": {
+    "message": "要刪除工作區「{name}」嗎？其中的分頁會關閉，並改為開啟「{other}」。"
+  },
+  "workspaces.delete.open_shells": {
+    "message": "要刪除工作區「{name}」嗎？其中的分頁會關閉，終端機分頁中的 Shell 也會結束；並改為開啟「{other}」。"
+  },
+  "workspaces.delete.title": {
+    "message": "刪除工作區"
+  },
+  "workspaces.duplicate.name": {
+    "message": "{name} 副本"
+  },
+  "workspaces.duplicate.title": {
+    "message": "複製工作區"
+  },
+  "workspaces.error.name_taken": {
+    "message": "已有其他工作區使用此名稱。"
+  },
+  "workspaces.error.no_name": {
+    "message": "工作區必須有名稱。"
+  },
+  "workspaces.error.save": {
+    "message": "無法儲存工作區：{err}"
+  },
+  "workspaces.hint": {
+    "message": "從「顯示 > 工作區」開啟工作區。在開啟的工作區中所做的變更都會保留在其中。"
+  },
+  "workspaces.name.label": {
+    "message": "名稱："
+  },
+  "workspaces.new.name": {
+    "message": "工作區 {number}"
+  },
+  "workspaces.new.title": {
+    "message": "新增工作區"
+  },
+  "workspaces.open": {
+    "message": "已開啟"
+  },
+  "workspaces.rename.title": {
+    "message": "重新命名工作區"
+  },
+  "workspaces.summary.panels": {
+    "message": "左側 {left, plural, other {# 個分頁}}，右側 {right, plural, other {# 個分頁}}"
+  },
+  "workspaces.summary.terminal": {
+    "message": "左側 {left, plural, other {# 個分頁}}，右側 {right, plural, other {# 個分頁}}，終端機 {terminal, plural, other {# 個分頁}}"
+  },
+  "workspaces.summary.terminal_hidden": {
+    "message": "左側 {left, plural, other {# 個分頁}}，右側 {right, plural, other {# 個分頁}}，終端機 {terminal, plural, other {# 個分頁}}（已隱藏）"
+  },
+  "workspaces.title": {
+    "message": "工作區"
+  }
+}

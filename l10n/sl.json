@@ -1,0 +1,4823 @@
+{
+  "about.addons": {
+    "message": "Dodatki, preneseni po vaši izbiri"
+  },
+  "about.libraries": {
+    "message": "Temelji na"
+  },
+  "about.licence": {
+    "message": "Licenca:"
+  },
+  "about.made_with": {
+    "message": "Nastalo z delom teh projektov"
+  },
+  "about.part.alacritty_terminal": {
+    "message": "Zaslon in lupina vgrajenega terminala"
+  },
+  "about.part.encoding_rs": {
+    "message": "Kodne strani"
+  },
+  "about.part.gpui": {
+    "message": "Okno, izris in vnos (iz urejevalnika Zed)"
+  },
+  "about.part.gpui_kit": {
+    "message": "Kontrolniki: seznami, meniji, polja, urejevalnik"
+  },
+  "about.part.html5ever": {
+    "message": "HTML in e-knjige v pregledovalniku"
+  },
+  "about.part.image": {
+    "message": "Slike"
+  },
+  "about.part.keyring": {
+    "message": "Gesla v sistemski zbirki ključev"
+  },
+  "about.part.lucide": {
+    "message": "Ikone"
+  },
+  "about.part.material_icons": {
+    "message": "Ikone datotek in map"
+  },
+  "about.part.pdfium_render": {
+    "message": "PDFium iz jezika Rust"
+  },
+  "about.part.ratatui": {
+    "message": "scmd, različica za terminal"
+  },
+  "about.part.russh": {
+    "message": "SSH in SFTP"
+  },
+  "about.part.rustls": {
+    "message": "TLS"
+  },
+  "about.part.serde": {
+    "message": "Datoteke z nastavitvami"
+  },
+  "about.part.similar": {
+    "message": "Primerjaj po vsebini"
+  },
+  "about.part.suppaftp": {
+    "message": "FTP in FTPS"
+  },
+  "about.part.tokio": {
+    "message": "Omrežno delo v ozadju"
+  },
+  "about.part.trash": {
+    "message": "Koš"
+  },
+  "about.part.tree_sitter": {
+    "message": "Barvanje kode v pregledovalniku in urejevalniku"
+  },
+  "about.part.zbus": {
+    "message": "D-Bus: namizje, naprave, KDE Connect"
+  },
+  "about.shipped": {
+    "message": "Priloženo"
+  },
+  "about.tagline": {
+    "message": "Upravitelj datotek z dvema ploščama, prosto programje."
+  },
+  "about.title": {
+    "message": "O programu Spark Commander"
+  },
+  "about.version": {
+    "message": "Različica {version}"
+  },
+  "activity.clear": {
+    "message": "Počisti"
+  },
+  "activity.clear_failed": {
+    "message": "Dnevnika ni bilo mogoče počistiti: {err}"
+  },
+  "activity.empty": {
+    "message": "Nič še ni bilo narejeno."
+  },
+  "activity.title": {
+    "message": "Dnevnik dejavnosti"
+  },
+  "addons.error.damaged": {
+    "message": "prenos je poškodovan: kontrolna vsota se ne ujema"
+  },
+  "addons.error.list": {
+    "message": "seznam dodatkov: {err}"
+  },
+  "addons.error.missing_file": {
+    "message": "v prenosu ni datoteke {file}"
+  },
+  "addons.error.no_folder": {
+    "message": "ni mape za podatke"
+  },
+  "addons.error.unpacking": {
+    "message": "razpakiranje: {err}"
+  },
+  "addons.installed": {
+    "message": "Dodatek {addon} {version} je nameščen."
+  },
+  "addons.megabytes": {
+    "message": "{size} MB"
+  },
+  "addons.offer.never": {
+    "message": "Ne prikaži več"
+  },
+  "addons.offer.no": {
+    "message": "Ne"
+  },
+  "addons.offer.text": {
+    "message": "Za {name} je potreben dodatek, ki ni nameščen: {addon}. Ga želite prenesti v razdelku Nastavitve > Dodatki?"
+  },
+  "addons.offer.title": {
+    "message": "Dodatek"
+  },
+  "addons.offer.yes": {
+    "message": "Da"
+  },
+  "addons.purpose.cloud": {
+    "message": "Spletna shramba: S3, Google Drive, OneDrive, Dropbox in druge storitve."
+  },
+  "addons.purpose.media": {
+    "message": "Video in zvok ter fotografije HEIC in AVIF: prikažeta jih pregledovalnik in Hitri ogled."
+  },
+  "addons.purpose.office": {
+    "message": "Pisarniški dokumenti: pregledovalnik prikaže datoteke Word, Excel in PowerPoint kot PDF."
+  },
+  "addons.purpose.pdfium": {
+    "message": "PDF: pregledovalnik prikaže datoteke PDF in pretvorjene pisarniške dokumente."
+  },
+  "addons.purpose.seven_zip": {
+    "message": "Arhivi: zapakira in razpakira 7z, zip, rar, tar in druge."
+  },
+  "addons.update": {
+    "message": "Posodobi"
+  },
+  "addons.updates": {
+    "message": "Posodobitve dodatkov: {names}"
+  },
+  "appearance.dark": {
+    "message": "Temen"
+  },
+  "appearance.light": {
+    "message": "Svetel"
+  },
+  "appearance.system": {
+    "message": "Kot v sistemu"
+  },
+  "archive.cannot_read": {
+    "message": "{name}: ni mogoče prebrati"
+  },
+  "archive.not_in_archive": {
+    "message": "{name} ni v arhivu"
+  },
+  "archive.not_own_folder": {
+    "message": "{folder} ni lastna mapa tega uporabnika"
+  },
+  "archive.seven_zip_failed": {
+    "message": "Napaka programa 7-Zip ({code})"
+  },
+  "archive.seven_zip_missing": {
+    "message": "7-Zip manjka: {path} (zaženite vendor/7zip/fetch.sh ali fetch.bat)"
+  },
+  "archive.temp_not_utf8": {
+    "message": "ime začasne mape ni v UTF-8"
+  },
+  "associations.add": {
+    "message": "Dodaj..."
+  },
+  "associations.cancel": {
+    "message": "Prekliči"
+  },
+  "associations.close": {
+    "message": "Zapri"
+  },
+  "associations.column.edit": {
+    "message": "Uredi (F4)"
+  },
+  "associations.column.files": {
+    "message": "Datoteke"
+  },
+  "associations.column.open": {
+    "message": "Odpri (Enter)"
+  },
+  "associations.column.view": {
+    "message": "Ogled (F3)"
+  },
+  "associations.edit": {
+    "message": "Uredi..."
+  },
+  "associations.edit_dialog.title": {
+    "message": "Poveži"
+  },
+  "associations.empty": {
+    "message": "Še nobene."
+  },
+  "associations.field.edit": {
+    "message": "Uredi z (F4):"
+  },
+  "associations.field.files": {
+    "message": "Datoteke (*.jpg *.png):"
+  },
+  "associations.field.open": {
+    "message": "Odpri z (Enter):"
+  },
+  "associations.field.view": {
+    "message": "Ogled z (F3):"
+  },
+  "associations.intro": {
+    "message": "Enter, F3 in F4 za datoteke maske zaženejo te programe; prazno pusti običajni program. %1 je datoteka."
+  },
+  "associations.mask_needed": {
+    "message": "Potrebna je maska datotek: *.txt"
+  },
+  "associations.no_file": {
+    "message": "Postavite kazalko na datoteko vrste, ki jo želite povezati."
+  },
+  "associations.ok": {
+    "message": "V redu"
+  },
+  "associations.remove": {
+    "message": "Odstrani"
+  },
+  "associations.save_failed": {
+    "message": "Nastavitev ni bilo mogoče shraniti: {err}"
+  },
+  "associations.title": {
+    "message": "Notranje povezave"
+  },
+  "attributes.bad_time": {
+    "message": "„{text}“ ni datum in čas: 2026-11-10 14:04:33"
+  },
+  "attributes.cancel": {
+    "message": "Prekliči"
+  },
+  "attributes.change_time": {
+    "message": "Spremeni datum/čas:"
+  },
+  "attributes.changed": {
+    "message": "{count, plural, one {# spremenjen} two {# spremenjena} few {# spremenjeni} other {# spremenjenih}}"
+  },
+  "attributes.changed_failed": {
+    "message": "{count, plural, one {# spremenjen} two {# spremenjena} few {# spremenjeni} other {# spremenjenih}}, {failed, plural, one {# neuspešen} two {# neuspešna} few {# neuspešni} other {# neuspešnih}}"
+  },
+  "attributes.dialog_title_many": {
+    "message": "Spremeni atribute: {count, plural, one {# element} two {# elementa} few {# elementi} other {# elementov}}"
+  },
+  "attributes.dialog_title_one": {
+    "message": "Spremeni atribute: {name}"
+  },
+  "attributes.execute": {
+    "message": "Izvajanje"
+  },
+  "attributes.group": {
+    "message": "Skupina"
+  },
+  "attributes.in_archive": {
+    "message": "Atributov v arhivih ni mogoče spreminjati."
+  },
+  "attributes.no_bits": {
+    "message": "Te datoteke tukaj nimajo dovoljenj; spremeni se lahko le datum."
+  },
+  "attributes.now": {
+    "message": "Zdaj"
+  },
+  "attributes.octal": {
+    "message": "Osmiško:"
+  },
+  "attributes.ok": {
+    "message": "V redu"
+  },
+  "attributes.others": {
+    "message": "Drugi"
+  },
+  "attributes.owner": {
+    "message": "Lastnik"
+  },
+  "attributes.read": {
+    "message": "Branje"
+  },
+  "attributes.recurse": {
+    "message": "Tudi vse v mapah"
+  },
+  "attributes.title_many": {
+    "message": "Spremeni atribute {count, plural, one {# elementa} two {# elementov} few {# elementov} other {# elementov}}"
+  },
+  "attributes.title_one": {
+    "message": "Spremeni atribute „{name}“"
+  },
+  "attributes.write": {
+    "message": "Pisanje"
+  },
+  "bookmarks.add_current": {
+    "message": "Dodaj trenutno mapo"
+  },
+  "bookmarks.add_folders": {
+    "message": "Dodaj mape..."
+  },
+  "bookmarks.added": {
+    "message": "Dodano med zaznamke: {name}"
+  },
+  "bookmarks.already": {
+    "message": "{name} je že med zaznamki."
+  },
+  "bookmarks.chooser.failed": {
+    "message": "Izbirnika map ni bilo mogoče prikazati: {err}"
+  },
+  "bookmarks.chooser.prompt": {
+    "message": "Zaznamuj"
+  },
+  "bookmarks.close": {
+    "message": "Zapri"
+  },
+  "bookmarks.copy_name": {
+    "message": "Kopiraj ime"
+  },
+  "bookmarks.copy_path": {
+    "message": "Kopiraj pot"
+  },
+  "bookmarks.drop_here": {
+    "message": "Spustite mape sem."
+  },
+  "bookmarks.empty": {
+    "message": "Ni zaznamkov: dodajte mape ali jih spustite sem."
+  },
+  "bookmarks.intro": {
+    "message": "Mape tega računalnika v vrstnem redu Mest: povlecite mapo, da jo premaknete, ali spustite mape sem, da jih dodate."
+  },
+  "bookmarks.move_down": {
+    "message": "Premakni navzdol"
+  },
+  "bookmarks.move_up": {
+    "message": "Premakni navzgor"
+  },
+  "bookmarks.only_local": {
+    "message": "Med zaznamke je mogoče dodati le mape tega računalnika."
+  },
+  "bookmarks.remove": {
+    "message": "Odstrani"
+  },
+  "bookmarks.remove_from": {
+    "message": "Odstrani iz zaznamkov"
+  },
+  "bookmarks.rename": {
+    "message": "Preimenuj..."
+  },
+  "bookmarks.rename_label": {
+    "message": "Ime (prazno: ime mape):"
+  },
+  "bookmarks.rename_title": {
+    "message": "Preimenuj zaznamek"
+  },
+  "bookmarks.sort": {
+    "message": "Razvrsti A–Ž"
+  },
+  "bookmarks.title": {
+    "message": "Zaznamki"
+  },
+  "button_bar.copy": {
+    "message": "Kopiraj"
+  },
+  "button_bar.delete": {
+    "message": "Izbriši"
+  },
+  "button_bar.edit": {
+    "message": "Uredi"
+  },
+  "button_bar.move": {
+    "message": "Premakni"
+  },
+  "button_bar.new_folder": {
+    "message": "Nova mapa"
+  },
+  "button_bar.quit": {
+    "message": "Izhod"
+  },
+  "button_bar.view": {
+    "message": "Ogled"
+  },
+  "checksum.create.title": {
+    "message": "Ustvari {name}"
+  },
+  "checksum.create.title_separate": {
+    "message": "Ustvari datoteke s kontrolnimi vsotami {method}"
+  },
+  "checksum.dialog_title": {
+    "message": "Ustvari datoteke s kontrolnimi vsotami"
+  },
+  "checksum.save_as": {
+    "message": "Shrani datoteko s kontrolnimi vsotami kot:"
+  },
+  "checksum.separate": {
+    "message": "Namesto tega datoteka s kontrolno vsoto ob vsaki datoteki"
+  },
+  "checksum.verify.all_ok": {
+    "message": "{count, plural, one {# datoteka, vse v redu} two {# datoteki, vse v redu} few {# datoteke, vse v redu} other {# datotek, vse v redu}}"
+  },
+  "checksum.verify.choose": {
+    "message": "Izberite datoteke s kontrolnimi vsotami: .sfv, .md5, .sha1, .sha256 ali .sha512."
+  },
+  "checksum.verify.missing_file": {
+    "message": "manjka: {name}"
+  },
+  "checksum.verify.result": {
+    "message": "{ok, plural, one {# v redu} two {# v redu} few {# v redu} other {# v redu}}, {wrong, plural, one {# napačna} two {# napačni} few {# napačne} other {# napačnih}}, {missing, plural, one {# manjka} two {# manjkata} few {# manjkajo} other {# manjka}}"
+  },
+  "checksum.verify.title_many": {
+    "message": "Preveri {count, plural, one {# datoteko s kontrolnimi vsotami} two {# datoteki s kontrolnimi vsotami} few {# datoteke s kontrolnimi vsotami} other {# datotek s kontrolnimi vsotami}}"
+  },
+  "checksum.verify.title_one": {
+    "message": "Preveri {name}"
+  },
+  "checksum.verify.wrong_file": {
+    "message": "napačna: {name}"
+  },
+  "command.about": {
+    "message": "O programu Spark Commander"
+  },
+  "command.activity_log": {
+    "message": "Dnevnik dejavnosti..."
+  },
+  "command.all_files": {
+    "message": "Vse datoteke"
+  },
+  "command.all_folder_sizes": {
+    "message": "Izračunaj velikosti vseh map"
+  },
+  "command.all_with_extension": {
+    "message": "*.*"
+  },
+  "command.associate_with": {
+    "message": "Poveži s programom..."
+  },
+  "command.bookmark_folder": {
+    "message": "Dodaj to mapo med zaznamke"
+  },
+  "command.bookmarks": {
+    "message": "Zaznamki"
+  },
+  "command.branch_view": {
+    "message": "Pogled veje (s podmapami)"
+  },
+  "command.branch_view_selected": {
+    "message": "Pogled veje izbranih map"
+  },
+  "command.brief": {
+    "message": "Kratko"
+  },
+  "command.calculate_occupied_space": {
+    "message": "Izračunaj zasedeni prostor..."
+  },
+  "command.change_attributes": {
+    "message": "Spremeni atribute..."
+  },
+  "command.close_all_tabs": {
+    "message": "Zapri vse zavihke"
+  },
+  "command.close_duplicate_tabs": {
+    "message": "Zapri podvojene zavihke"
+  },
+  "command.close_tab": {
+    "message": "Zapri zavihek"
+  },
+  "command.combine_files": {
+    "message": "Združi datoteke..."
+  },
+  "command.compare_by_content": {
+    "message": "Primerjaj po vsebini..."
+  },
+  "command.compare_directories": {
+    "message": "Označi novejše"
+  },
+  "command.copy": {
+    "message": "Kopiraj..."
+  },
+  "command.copy_names_to_clipboard": {
+    "message": "Kopiraj izbrana imena v odložišče"
+  },
+  "command.copy_names_with_path_to_clipboard": {
+    "message": "Kopiraj imena s potjo v odložišče"
+  },
+  "command.copy_to_clipboard": {
+    "message": "Kopiraj datoteke"
+  },
+  "command.copy_with_all_details": {
+    "message": "Kopiraj v odložišče z vsemi podrobnostmi"
+  },
+  "command.copy_with_path_and_details": {
+    "message": "Kopiraj v odložišče s potjo in podrobnostmi"
+  },
+  "command.create_checksum_files": {
+    "message": "Ustvari datoteke s kontrolnimi vsotami (CRC32, MD5, SHA1, SHA256, SHA512)..."
+  },
+  "command.create_link": {
+    "message": "Ustvari povezavo..."
+  },
+  "command.custom_filter": {
+    "message": "Po meri..."
+  },
+  "command.cut_to_clipboard": {
+    "message": "Izreži datoteke"
+  },
+  "command.delete": {
+    "message": "Izbriši"
+  },
+  "command.delete_permanently": {
+    "message": "Trajno izbriši"
+  },
+  "command.disconnect": {
+    "message": "Prekini povezavo s strežnikom"
+  },
+  "command.download_link": {
+    "message": "Prenesi s povezave..."
+  },
+  "command.duplicate_tab": {
+    "message": "Nov zavihek"
+  },
+  "command.duplicate_workspace": {
+    "message": "Podvoji delovni prostor..."
+  },
+  "command.edit": {
+    "message": "Uredi"
+  },
+  "command.edit_externally": {
+    "message": "Uredi z zunanjim urejevalnikom"
+  },
+  "command.folder_history": {
+    "message": "Zgodovina map..."
+  },
+  "command.full": {
+    "message": "Podrobno"
+  },
+  "command.go_back": {
+    "message": "Nazaj"
+  },
+  "command.go_forward": {
+    "message": "Naprej"
+  },
+  "command.go_home": {
+    "message": "Domača mapa"
+  },
+  "command.go_to_root": {
+    "message": "Korenska mapa"
+  },
+  "command.hidden_files": {
+    "message": "Skrite datoteke"
+  },
+  "command.internal_associations": {
+    "message": "Notranje povezave (samo Spark Commander)..."
+  },
+  "command.invert_selection": {
+    "message": "Obrni izbor"
+  },
+  "command.left_drives": {
+    "message": "Pogoni (leva plošča)"
+  },
+  "command.list_tabs": {
+    "message": "Seznam zavihkov"
+  },
+  "command.load_selection_from_file": {
+    "message": "Naloži izbor iz datoteke"
+  },
+  "command.manage_bookmarks": {
+    "message": "Upravljaj zaznamke..."
+  },
+  "command.manage_tools": {
+    "message": "Upravljaj orodja..."
+  },
+  "command.manage_workspaces": {
+    "message": "Upravljaj delovne prostore..."
+  },
+  "command.mark_in_place": {
+    "message": "Označi / odznači na mestu, z izmero mape"
+  },
+  "command.mark_newer_hide_same": {
+    "message": "Označi novejše, skrij enake datoteke"
+  },
+  "command.move": {
+    "message": "Premakni..."
+  },
+  "command.multi_rename_tool": {
+    "message": "Orodje za množično preimenovanje..."
+  },
+  "command.name_to_command_line": {
+    "message": "Ime v ukazno vrstico"
+  },
+  "command.new_folder": {
+    "message": "Nova mapa..."
+  },
+  "command.new_terminal": {
+    "message": "Nov zavihek terminala"
+  },
+  "command.new_text_file": {
+    "message": "Nova datoteka..."
+  },
+  "command.new_workspace": {
+    "message": "Nov delovni prostor..."
+  },
+  "command.next_tab": {
+    "message": "Naslednji zavihek"
+  },
+  "command.only_selected_files": {
+    "message": "Samo izbrane datoteke"
+  },
+  "command.open_in_left_panel": {
+    "message": "Pokaži v levi plošči"
+  },
+  "command.open_in_new_tab": {
+    "message": "Odpri mapo v novem zavihku"
+  },
+  "command.open_in_other_new_tab": {
+    "message": "Odpri mapo v novem zavihku druge plošče"
+  },
+  "command.open_in_right_panel": {
+    "message": "Pokaži v desni plošči"
+  },
+  "command.open_terminal": {
+    "message": "Odpri terminal tukaj"
+  },
+  "command.operation_queue": {
+    "message": "Čakalna vrsta opravil..."
+  },
+  "command.pack": {
+    "message": "Zapakiraj..."
+  },
+  "command.paste_from_clipboard": {
+    "message": "Prilepi datoteke"
+  },
+  "command.path_and_name_to_command_line": {
+    "message": "Pot in ime v ukazno vrstico"
+  },
+  "command.path_to_command_line": {
+    "message": "Pot v ukazno vrstico"
+  },
+  "command.previous_tab": {
+    "message": "Prejšnji zavihek"
+  },
+  "command.programs": {
+    "message": "Programi"
+  },
+  "command.properties": {
+    "message": "Lastnosti..."
+  },
+  "command.quick_filter": {
+    "message": "Hitri filter"
+  },
+  "command.quick_open": {
+    "message": "Hitro odpiranje..."
+  },
+  "command.quick_view_panel": {
+    "message": "Plošča hitrega ogleda"
+  },
+  "command.quit": {
+    "message": "Izhod"
+  },
+  "command.redo": {
+    "message": "Ponovi"
+  },
+  "command.rename_in_place": {
+    "message": "Preimenuj"
+  },
+  "command.reread_source": {
+    "message": "Znova preberi vir"
+  },
+  "command.restore_selection": {
+    "message": "Obnovi izbor"
+  },
+  "command.reversed_order": {
+    "message": "Obratni vrstni red"
+  },
+  "command.right_drives": {
+    "message": "Pogoni (desna plošča)"
+  },
+  "command.save_selection": {
+    "message": "Shrani izbor"
+  },
+  "command.save_selection_to_file": {
+    "message": "Shrani izbor v datoteko"
+  },
+  "command.search": {
+    "message": "Iskanje..."
+  },
+  "command.search_in_separate_process": {
+    "message": "Iskanje v ločenem oknu..."
+  },
+  "command.select_all": {
+    "message": "Izberi vse"
+  },
+  "command.select_all_with_same_extension": {
+    "message": "Izberi vse z enako končnico"
+  },
+  "command.select_group": {
+    "message": "Izberi skupino..."
+  },
+  "command.settings": {
+    "message": "Nastavitve..."
+  },
+  "command.shortcuts": {
+    "message": "Bližnjice..."
+  },
+  "command.sidebar_connections": {
+    "message": "Povezave"
+  },
+  "command.sidebar_operations": {
+    "message": "Opravila"
+  },
+  "command.sidebar_places": {
+    "message": "Mesta"
+  },
+  "command.sidebar_tree": {
+    "message": "Mape"
+  },
+  "command.sort_by_extension": {
+    "message": "Končnica"
+  },
+  "command.sort_by_name": {
+    "message": "Ime"
+  },
+  "command.sort_by_size": {
+    "message": "Velikost"
+  },
+  "command.sort_by_time": {
+    "message": "Čas"
+  },
+  "command.split_file": {
+    "message": "Razdeli datoteko..."
+  },
+  "command.swap_panels": {
+    "message": "Zamenjaj plošči"
+  },
+  "command.swap_panels_and_tabs": {
+    "message": "Zamenjaj plošči z njunimi zavihki"
+  },
+  "command.sync_browsing": {
+    "message": "Sinhronizirano brskanje"
+  },
+  "command.synchronize_dirs": {
+    "message": "Sinhroniziraj mape..."
+  },
+  "command.target_equals_source": {
+    "message": "Cilj = vir"
+  },
+  "command.terminal_panel": {
+    "message": "Terminal"
+  },
+  "command.test_archives": {
+    "message": "Preizkusi arhive"
+  },
+  "command.thumbnail_view": {
+    "message": "Pogled sličic"
+  },
+  "command.toggle_mark": {
+    "message": "Označi / odznači"
+  },
+  "command.toggle_sidebar": {
+    "message": "Pokaži stransko vrstico"
+  },
+  "command.undo": {
+    "message": "Razveljavi"
+  },
+  "command.unpack_specific_files": {
+    "message": "Razpakiraj izbrane datoteke..."
+  },
+  "command.unselect_all": {
+    "message": "Počisti izbor"
+  },
+  "command.unselect_group": {
+    "message": "Odstrani skupino iz izbora..."
+  },
+  "command.unsorted": {
+    "message": "Nerazvrščeno"
+  },
+  "command.verify_checksums": {
+    "message": "Preveri kontrolne vsote (iz datotek s kontrolnimi vsotami)"
+  },
+  "command.vertical_arrangement": {
+    "message": "Navpična razporeditev"
+  },
+  "command.view": {
+    "message": "Ogled"
+  },
+  "command.website": {
+    "message": "Spletno mesto Spark Commander"
+  },
+  "command.workspace1": {
+    "message": "Odpri delovni prostor 1"
+  },
+  "command.workspace2": {
+    "message": "Odpri delovni prostor 2"
+  },
+  "command.workspace3": {
+    "message": "Odpri delovni prostor 3"
+  },
+  "command.workspace4": {
+    "message": "Odpri delovni prostor 4"
+  },
+  "command.workspace5": {
+    "message": "Odpri delovni prostor 5"
+  },
+  "command.workspace6": {
+    "message": "Odpri delovni prostor 6"
+  },
+  "command.workspace7": {
+    "message": "Odpri delovni prostor 7"
+  },
+  "command.workspace8": {
+    "message": "Odpri delovni prostor 8"
+  },
+  "command.workspace9": {
+    "message": "Odpri delovni prostor 9"
+  },
+  "command_line.error.cannot_run": {
+    "message": "{program}: ni mogoče zagnati"
+  },
+  "command_line.error.not_found": {
+    "message": "{program}: ukaza ni mogoče najti"
+  },
+  "command_line.history.empty": {
+    "message": "Zagnan še ni bil noben ukaz"
+  },
+  "command_line.on_server": {
+    "message": "Ukazi se izvajajo v tem računalniku; plošča je na strežniku."
+  },
+  "command_name.all_files": {
+    "message": "Pokaži vse datoteke"
+  },
+  "command_name.all_with_extension": {
+    "message": "Pokaži *.*"
+  },
+  "command_name.brief": {
+    "message": "Kratek pogled"
+  },
+  "command_name.compare_directories": {
+    "message": "Primerjaj mape: označi novejše"
+  },
+  "command_name.custom_filter": {
+    "message": "Filter po meri"
+  },
+  "command_name.duplicate_tab": {
+    "message": "Nov zavihek (kopija tega)"
+  },
+  "command_name.full": {
+    "message": "Podroben pogled"
+  },
+  "command_name.go_back": {
+    "message": "Pojdi nazaj"
+  },
+  "command_name.go_forward": {
+    "message": "Pojdi naprej"
+  },
+  "command_name.go_home": {
+    "message": "Pojdi v domačo mapo"
+  },
+  "command_name.hidden_files": {
+    "message": "Pokaži skrite datoteke"
+  },
+  "command_name.only_selected_files": {
+    "message": "Pokaži samo izbrane datoteke"
+  },
+  "command_name.programs": {
+    "message": "Pokaži programe"
+  },
+  "command_name.quick_filter": {
+    "message": "Hitri filter"
+  },
+  "command_name.rename_in_place": {
+    "message": "Preimenuj na mestu"
+  },
+  "command_name.sidebar_connections": {
+    "message": "Stranska vrstica: Povezave"
+  },
+  "command_name.sidebar_operations": {
+    "message": "Stranska vrstica: Opravila"
+  },
+  "command_name.sidebar_places": {
+    "message": "Stranska vrstica: Mesta"
+  },
+  "command_name.sidebar_tree": {
+    "message": "Stranska vrstica: Mape"
+  },
+  "command_name.sort_by_extension": {
+    "message": "Razvrsti po končnici"
+  },
+  "command_name.sort_by_name": {
+    "message": "Razvrsti po imenu"
+  },
+  "command_name.sort_by_size": {
+    "message": "Razvrsti po velikosti"
+  },
+  "command_name.sort_by_time": {
+    "message": "Razvrsti po času"
+  },
+  "command_name.toggle_sidebar": {
+    "message": "Stranska vrstica: pokaži ali skrij"
+  },
+  "command_name.unsorted": {
+    "message": "Brez razvrščanja"
+  },
+  "compare.browse.prompt": {
+    "message": "Primerjaj"
+  },
+  "compare.button.compare": {
+    "message": "Primerjaj"
+  },
+  "compare.button.next": {
+    "message": "Naslednja razlika (N)"
+  },
+  "compare.button.previous": {
+    "message": "Prejšnja razlika (P)"
+  },
+  "compare.need_two_files": {
+    "message": "Postavite kazalko na datoteko v vsaki plošči ali označite dve datoteki."
+  },
+  "compare.option.binary": {
+    "message": "Binarno"
+  },
+  "compare.option.ignore_case": {
+    "message": "Prezri velikost črk"
+  },
+  "compare.option.ignore_spaces": {
+    "message": "Prezri ponovljene presledke"
+  },
+  "compare.option.only_differences": {
+    "message": "Samo razlike"
+  },
+  "compare.status.bytes_differ": {
+    "message": "{place}: {count, plural, one {razlikuje se {grouped} bajt} two {razlikujeta se {grouped} bajta} few {razlikujejo se {grouped} bajti} other {razlikuje se {grouped} bajtov}}, prvi pri {first}; velikosti {left} in {right}."
+  },
+  "compare.status.comparing": {
+    "message": "Primerjanje …"
+  },
+  "compare.status.difference_of": {
+    "message": "Razlika {at} od {count}"
+  },
+  "compare.status.differences": {
+    "message": "{count, plural, one {# razlika} two {# razliki} few {# razlike} other {# razlik}}"
+  },
+  "compare.status.identical": {
+    "message": "{count, plural, one {Datoteki sta enaki: {grouped} bajt.} two {Datoteki sta enaki: {grouped} bajta.} few {Datoteki sta enaki: {grouped} bajti.} other {Datoteki sta enaki: {grouped} bajtov.}}"
+  },
+  "compare.status.no_differences": {
+    "message": "Ni razlik."
+  },
+  "compare.window.title": {
+    "message": "Primerjava: {left} — {right}"
+  },
+  "connections.connect": {
+    "message": "Poveži"
+  },
+  "connections.copy_name": {
+    "message": "Kopiraj ime"
+  },
+  "connections.copy_path": {
+    "message": "Kopiraj pot"
+  },
+  "connections.delete": {
+    "message": "Izbriši"
+  },
+  "connections.dialog.title": {
+    "message": "Povezava"
+  },
+  "connections.disconnect": {
+    "message": "Prekini povezavo"
+  },
+  "connections.duplicate": {
+    "message": "Podvoji"
+  },
+  "connections.duplicate_name": {
+    "message": "{name} (kopija)"
+  },
+  "connections.edit": {
+    "message": "Uredi..."
+  },
+  "connections.empty": {
+    "message": "Še ni povezav."
+  },
+  "connections.error.no_server": {
+    "message": "Potreben je strežnik."
+  },
+  "connections.error.port": {
+    "message": "Ni vrata: {text}"
+  },
+  "connections.field.access_key": {
+    "message": "Ključ za dostop"
+  },
+  "connections.field.api_key": {
+    "message": "Ključ API"
+  },
+  "connections.field.application_key": {
+    "message": "Ključ aplikacije"
+  },
+  "connections.field.bucket": {
+    "message": "Vedro/mapa"
+  },
+  "connections.field.container": {
+    "message": "Vsebnik/mapa"
+  },
+  "connections.field.endpoint": {
+    "message": "Končna točka"
+  },
+  "connections.field.key_id": {
+    "message": "ID ključa"
+  },
+  "connections.field.name": {
+    "message": "Ime"
+  },
+  "connections.field.password": {
+    "message": "Geslo"
+  },
+  "connections.field.port": {
+    "message": "Vrata"
+  },
+  "connections.field.protocol": {
+    "message": "Protokol"
+  },
+  "connections.field.secret_key": {
+    "message": "Skrivni ključ"
+  },
+  "connections.field.server": {
+    "message": "Strežnik"
+  },
+  "connections.field.start_folder": {
+    "message": "Začetna mapa"
+  },
+  "connections.field.user": {
+    "message": "Uporabnik"
+  },
+  "connections.folder.delete_confirm": {
+    "message": "{count, plural, one {Želite izbrisati mapo {name} in povezavo v njej?} two {Želite izbrisati mapo {name} in # povezavi v njej?} few {Želite izbrisati mapo {name} in # povezave v njej?} other {Želite izbrisati mapo {name} in # povezav v njej?}}"
+  },
+  "connections.folder.delete_title": {
+    "message": "Izbriši mapo"
+  },
+  "connections.folder.exists": {
+    "message": "Mapa z imenom {name} že obstaja."
+  },
+  "connections.folder.name": {
+    "message": "Ime:"
+  },
+  "connections.folder.new_title": {
+    "message": "Nova mapa"
+  },
+  "connections.folder.rename": {
+    "message": "Preimenuj..."
+  },
+  "connections.folder.rename_title": {
+    "message": "Preimenuj mapo"
+  },
+  "connections.forget_password": {
+    "message": "Pozabi shranjeno geslo"
+  },
+  "connections.move_down": {
+    "message": "Premakni navzdol"
+  },
+  "connections.move_to_folder": {
+    "message": "Premakni v mapo"
+  },
+  "connections.move_up": {
+    "message": "Premakni navzgor"
+  },
+  "connections.new": {
+    "message": "Nova povezava..."
+  },
+  "connections.new_folder": {
+    "message": "Nova mapa..."
+  },
+  "connections.no_folder": {
+    "message": "Brez mape"
+  },
+  "connections.open_in_terminal": {
+    "message": "Odpri v terminalu"
+  },
+  "connections.placeholder.name": {
+    "message": "kot ga prikaže seznam"
+  },
+  "connections.placeholder.password": {
+    "message": "šifrirano v mapi z nastavitvami; prazno ga ohrani"
+  },
+  "connections.placeholder.path": {
+    "message": "mapa ob prijavi"
+  },
+  "connections.placeholder.port": {
+    "message": "privzeto"
+  },
+  "connections.placeholder.server": {
+    "message": "strežnik ali gostitelj iz ~/.ssh/config"
+  },
+  "connections.placeholder.user": {
+    "message": "kot pravi ~/.ssh/config ali anonimno"
+  },
+  "connections.save_failed": {
+    "message": "Povezav ni bilo mogoče shraniti: {err}"
+  },
+  "connections.ssh_config.read_only": {
+    "message": "Samo za branje: te gostitelje urejate v datoteki ~/.ssh/config"
+  },
+  "context_menu.action_failed": {
+    "message": "{name} ni uspelo: {err}"
+  },
+  "context_menu.actions": {
+    "message": "Dejanja"
+  },
+  "context_menu.copy": {
+    "message": "Kopiraj"
+  },
+  "context_menu.create_new": {
+    "message": "Ustvari novo"
+  },
+  "context_menu.cut": {
+    "message": "Izreži"
+  },
+  "context_menu.delete": {
+    "message": "Izbriši"
+  },
+  "context_menu.edit": {
+    "message": "Uredi"
+  },
+  "context_menu.empty_file": {
+    "message": "Prazna datoteka …"
+  },
+  "context_menu.move_to_trash": {
+    "message": "Premakni v koš"
+  },
+  "context_menu.new_file_dialog.label": {
+    "message": "Ime nove datoteke:"
+  },
+  "context_menu.new_file_dialog.title": {
+    "message": "Nova datoteka"
+  },
+  "context_menu.new_file_failed": {
+    "message": "Datoteke ni bilo mogoče ustvariti: {err}"
+  },
+  "context_menu.new_folder": {
+    "message": "Mapa …"
+  },
+  "context_menu.open": {
+    "message": "Odpri"
+  },
+  "context_menu.open_failed": {
+    "message": "Ni mogoče odpreti: {err}"
+  },
+  "context_menu.open_terminal_here": {
+    "message": "Odpri terminal tukaj"
+  },
+  "context_menu.open_with": {
+    "message": "Odpri s programom"
+  },
+  "context_menu.other_application": {
+    "message": "Drug program …"
+  },
+  "context_menu.pack": {
+    "message": "Zapakiraj …"
+  },
+  "context_menu.pack_files": {
+    "message": "Zapakiraj datoteke"
+  },
+  "context_menu.paste": {
+    "message": "Prilepi"
+  },
+  "context_menu.properties": {
+    "message": "Lastnosti"
+  },
+  "context_menu.properties_failed": {
+    "message": "Lastnosti: {err}"
+  },
+  "context_menu.rename": {
+    "message": "Preimenuj …"
+  },
+  "context_menu.rename_dialog.label": {
+    "message": "Novo ime:"
+  },
+  "context_menu.rename_dialog.title": {
+    "message": "Preimenuj"
+  },
+  "context_menu.rename_failed": {
+    "message": "Ni mogoče preimenovati: {err}"
+  },
+  "context_menu.shell_menu_failed": {
+    "message": "Meni: {err}"
+  },
+  "context_menu.show_failed": {
+    "message": "Ni mogoče prikazati: {err}"
+  },
+  "context_menu.show_in_file_manager": {
+    "message": "Pokaži v upravitelju datotek"
+  },
+  "context_menu.terminal_failed": {
+    "message": "Terminala ni bilo mogoče odpreti: {err}"
+  },
+  "context_menu.terminal_not_local": {
+    "message": "Terminal se odpre le v mapah tega računalnika."
+  },
+  "context_menu.unpack": {
+    "message": "Razpakiraj …"
+  },
+  "context_menu.view": {
+    "message": "Ogled"
+  },
+  "desktop.no_app_chooser": {
+    "message": "namizje nima izbirnika programov ({err})"
+  },
+  "desktop.no_terminal": {
+    "message": "terminala ni mogoče najti"
+  },
+  "desktop.nothing_to_run": {
+    "message": "{name}: ničesar ni za zagon"
+  },
+  "desktop.scripts": {
+    "message": "Skripti"
+  },
+  "devices.error.mount_failed": {
+    "message": "naprave ni bilo mogoče priklopiti"
+  },
+  "devices.error.no_folder": {
+    "message": "naprava ne deli nobene mape"
+  },
+  "devices.error.system_only": {
+    "message": "to lahko odklopi le sistem"
+  },
+  "devices.error.unreachable": {
+    "message": "ni dosegljivo: je KDE Connect na njej odprt, v tem omrežju?"
+  },
+  "devices.unlock.ask": {
+    "message": "Geslo za {name}:"
+  },
+  "devices.unlock.ask_again": {
+    "message": "Napačno geslo. Geslo za {name}:"
+  },
+  "devices.unlock.title": {
+    "message": "Odkleni"
+  },
+  "devices.volume.share_on_server": {
+    "message": "{share} na {server}"
+  },
+  "devices.volume.unnamed": {
+    "message": "Nosilec {size} GB"
+  },
+  "devices.volume.unnamed_encrypted": {
+    "message": "Šifriran nosilec {size} GB"
+  },
+  "download.cancel": {
+    "message": "Prekliči"
+  },
+  "download.dialog_title": {
+    "message": "Prenesi s povezave"
+  },
+  "download.download": {
+    "message": "Prenesi"
+  },
+  "download.folder_link": {
+    "message": "povezava kaže na mapo"
+  },
+  "download.incomplete": {
+    "message": "strežnik je poslal {got} od {size, plural, one {# bajta} two {# bajtov} few {# bajtov} other {# bajtov}}; ob ponovnem prenosu se nadaljuje od tam"
+  },
+  "download.into": {
+    "message": "V {folder}"
+  },
+  "download.link": {
+    "message": "Povezava"
+  },
+  "download.link_placeholder": {
+    "message": "https://, http://, ftp:// ali ftps://"
+  },
+  "download.local_only": {
+    "message": "Prenosi gredo v mape tega računalnika: najprej odprite eno v plošči."
+  },
+  "download.name_placeholder": {
+    "message": "kot jo poimenuje strežnik ali povezava"
+  },
+  "download.no_file": {
+    "message": "povezava ne navaja datoteke"
+  },
+  "download.not_a_link": {
+    "message": "ni povezava za prenos"
+  },
+  "download.problem.bad_name": {
+    "message": "Ime datoteke, brez mape v njem."
+  },
+  "download.problem.empty": {
+    "message": "Prilepite ali vnesite povezavo."
+  },
+  "download.problem.exists": {
+    "message": "{name} tukaj že obstaja: Zamenjaj prenese čeznjo."
+  },
+  "download.problem.not_link": {
+    "message": "Ni povezava za prenos: začne se s https://, http://, ftp:// ali ftps://."
+  },
+  "download.replace": {
+    "message": "Zamenjaj"
+  },
+  "download.save_as": {
+    "message": "Shrani kot"
+  },
+  "download.saved_as": {
+    "message": "shranjeno kot {name}"
+  },
+  "download.title": {
+    "message": "Prenesi „{name}“"
+  },
+  "download.title_link": {
+    "message": "Prenesi {link}"
+  },
+  "editor.close.after_send": {
+    "message": "Zaprl se bo, ko ga bo strežnik prejel."
+  },
+  "editor.close.discard": {
+    "message": "Ne shrani"
+  },
+  "editor.close.save": {
+    "message": "Shrani"
+  },
+  "editor.close.title": {
+    "message": "Želite shraniti spremembe?"
+  },
+  "editor.close.unsaved": {
+    "message": "{name} ima neshranjene spremembe."
+  },
+  "editor.close.unsent": {
+    "message": "{name} ni shranjen na svojem strežniku: pošiljanje ni uspelo."
+  },
+  "editor.dialog.cancel": {
+    "message": "Prekliči"
+  },
+  "editor.edit.copy": {
+    "message": "Kopiraj"
+  },
+  "editor.edit.cut": {
+    "message": "Izreži"
+  },
+  "editor.edit.find": {
+    "message": "Najdi..."
+  },
+  "editor.edit.find_next": {
+    "message": "Najdi naslednje"
+  },
+  "editor.edit.find_previous": {
+    "message": "Najdi prejšnje"
+  },
+  "editor.edit.go_to_line": {
+    "message": "Pojdi na vrstico..."
+  },
+  "editor.edit.paste": {
+    "message": "Prilepi"
+  },
+  "editor.edit.redo": {
+    "message": "Ponovi"
+  },
+  "editor.edit.replace": {
+    "message": "Zamenjaj..."
+  },
+  "editor.edit.undo": {
+    "message": "Razveljavi"
+  },
+  "editor.external.not_set": {
+    "message": "zunanji urejevalnik ni nastavljen (Nastavitve, Urejanje/ogled)"
+  },
+  "editor.file.close": {
+    "message": "Zapri"
+  },
+  "editor.file.reload": {
+    "message": "Znova naloži"
+  },
+  "editor.file.save": {
+    "message": "Shrani"
+  },
+  "editor.file.save_as": {
+    "message": "Shrani kot..."
+  },
+  "editor.find.close": {
+    "message": "Zapri (Escape)"
+  },
+  "editor.find.count": {
+    "message": "{current} od {total}"
+  },
+  "editor.find.in_selection": {
+    "message": "Najdi v izboru (Alt+L)"
+  },
+  "editor.find.match_case": {
+    "message": "Razlikuj velike in male črke (Alt+C)"
+  },
+  "editor.find.next": {
+    "message": "Naslednje ujemanje (Enter)"
+  },
+  "editor.find.no_results": {
+    "message": "Ni zadetkov"
+  },
+  "editor.find.placeholder": {
+    "message": "Najdi"
+  },
+  "editor.find.preserve_case": {
+    "message": "Ohrani velikost črk (Alt+P)"
+  },
+  "editor.find.previous": {
+    "message": "Prejšnje ujemanje (Shift+Enter)"
+  },
+  "editor.find.regex": {
+    "message": "Uporabi regularni izraz (Alt+R)"
+  },
+  "editor.find.replace": {
+    "message": "Zamenjaj (Ctrl+Shift+1)"
+  },
+  "editor.find.replace_all": {
+    "message": "Zamenjaj vse (Ctrl+Alt+Enter)"
+  },
+  "editor.find.replace_placeholder": {
+    "message": "Zamenjaj"
+  },
+  "editor.find.toggle_replace": {
+    "message": "Preklopi zamenjavo"
+  },
+  "editor.find.whole_word": {
+    "message": "Samo cele besede (Alt+W)"
+  },
+  "editor.go_to_line.label": {
+    "message": "Vrstica ali vrstica:stolpec"
+  },
+  "editor.go_to_line.title": {
+    "message": "Pojdi na vrstico"
+  },
+  "editor.language.by_file_name": {
+    "message": "Po imenu datoteke"
+  },
+  "editor.language.plain_text": {
+    "message": "Navadno besedilo"
+  },
+  "editor.menu.edit": {
+    "message": "Urejanje"
+  },
+  "editor.menu.file": {
+    "message": "Datoteka"
+  },
+  "editor.menu.language": {
+    "message": "Jezik"
+  },
+  "editor.menu.selection": {
+    "message": "Izbor"
+  },
+  "editor.menu.view": {
+    "message": "Pogled"
+  },
+  "editor.open.too_large": {
+    "message": "presega {limit_mb} MB vgrajenega urejevalnika (Nastavitve, Urejanje/ogled); Ctrl+Shift+F4 jo uredi v zunanjem"
+  },
+  "editor.reload.button": {
+    "message": "Znova naloži"
+  },
+  "editor.reload.failed": {
+    "message": "Ni je bilo mogoče znova naložiti: {err}"
+  },
+  "editor.reload.text": {
+    "message": "Neshranjene spremembe bodo izgubljene."
+  },
+  "editor.reload.title": {
+    "message": "Želite znova naložiti datoteko?"
+  },
+  "editor.reload.unfit": {
+    "message": "Ni znova naloženo: {why, select, binary {datoteka je binarna} other {datoteka ni besedilo UTF-8}}."
+  },
+  "editor.save.admin": {
+    "message": "Shranjevanje „{name}“"
+  },
+  "editor.save.failed": {
+    "message": "{path} ni bilo mogoče shraniti: {err}"
+  },
+  "editor.save_anyway.button": {
+    "message": "Vseeno shrani"
+  },
+  "editor.save_anyway.text": {
+    "message": "Datoteka ni bila besedilo: shranjevanje jo zapiše, kot je prikazana, zato se vse, kar ni bilo besedilo, trajno spremeni."
+  },
+  "editor.save_anyway.title": {
+    "message": "Želite shraniti kot besedilo?"
+  },
+  "editor.selection.add_cursor_above": {
+    "message": "Dodaj kazalko zgoraj"
+  },
+  "editor.selection.add_cursor_below": {
+    "message": "Dodaj kazalko spodaj"
+  },
+  "editor.selection.delete_lines": {
+    "message": "Izbriši vrstice"
+  },
+  "editor.selection.duplicate_lines": {
+    "message": "Podvoji vrstice"
+  },
+  "editor.selection.indent": {
+    "message": "Zamakni"
+  },
+  "editor.selection.lowercase": {
+    "message": "male črke"
+  },
+  "editor.selection.move_lines_down": {
+    "message": "Premakni vrstice navzdol"
+  },
+  "editor.selection.move_lines_up": {
+    "message": "Premakni vrstice navzgor"
+  },
+  "editor.selection.outdent": {
+    "message": "Zmanjšaj zamik"
+  },
+  "editor.selection.select_all": {
+    "message": "Izberi vse"
+  },
+  "editor.selection.select_all_occurrences": {
+    "message": "Izberi vse pojavitve"
+  },
+  "editor.selection.sort_lines_ascending": {
+    "message": "Razvrsti vrstice naraščajoče"
+  },
+  "editor.selection.sort_lines_descending": {
+    "message": "Razvrsti vrstice padajoče"
+  },
+  "editor.selection.title_case": {
+    "message": "Velike Začetnice"
+  },
+  "editor.selection.toggle_line_comment": {
+    "message": "Preklopi komentar vrstice"
+  },
+  "editor.selection.trim_trailing_whitespace": {
+    "message": "Odstrani končne presledke"
+  },
+  "editor.selection.uppercase": {
+    "message": "VELIKE ČRKE"
+  },
+  "editor.send.failed": {
+    "message": "Ni je bilo mogoče shraniti nazaj: {err}. Shrani poskusi znova."
+  },
+  "editor.status.modified": {
+    "message": "Spremenjeno"
+  },
+  "editor.status.position": {
+    "message": "Vr. {line}, st. {column}"
+  },
+  "editor.status.position_selected": {
+    "message": "Vr. {line}, st. {column} ({count, plural, one {# izbran} two {# izbrana} few {# izbrani} other {# izbranih}})"
+  },
+  "editor.status.sending": {
+    "message": "Shranjevanje na strežnik"
+  },
+  "editor.status.spaces": {
+    "message": "Presledki: {size}"
+  },
+  "editor.status.tab_size": {
+    "message": "Velikost tabulatorja: {size}"
+  },
+  "editor.status.unsent": {
+    "message": "Ni na strežniku"
+  },
+  "editor.terminal.not_found": {
+    "message": "urejevalnika ni mogoče najti; nastavite $EDITOR"
+  },
+  "editor.title": {
+    "message": "{path} — urejevalnik"
+  },
+  "editor.unfit.open_anyway": {
+    "message": "Vseeno odpri"
+  },
+  "editor.unfit.text": {
+    "message": "Datoteka ni prikazana v urejevalniku, ker {why, select, binary {je binarna} other {ni besedilo UTF-8}}."
+  },
+  "editor.view.folding": {
+    "message": "Zlaganje"
+  },
+  "editor.view.indent_guides": {
+    "message": "Vodila zamikov"
+  },
+  "editor.view.indent_with_tabs": {
+    "message": "Zamik s tabulatorji"
+  },
+  "editor.view.line_numbers": {
+    "message": "Številke vrstic"
+  },
+  "editor.view.minimap": {
+    "message": "Mini zemljevid"
+  },
+  "editor.view.tab_width": {
+    "message": "Širina tabulatorja {width}"
+  },
+  "editor.view.unfold_all": {
+    "message": "Razgrni vse"
+  },
+  "editor.view.whitespace": {
+    "message": "Presledki"
+  },
+  "editor.view.word_wrap": {
+    "message": "Prelom besed"
+  },
+  "elevate.failed": {
+    "message": "tudi kot skrbnik ni uspelo ({code})"
+  },
+  "elevate.no_consent": {
+    "message": "skrbnik ni dal soglasja"
+  },
+  "elevate.no_password": {
+    "message": "geslo ni bilo vneseno"
+  },
+  "elevate.not_authorised": {
+    "message": "ni pooblaščeno"
+  },
+  "elevate.percent_name": {
+    "message": "{path}: imena z znakom % ni mogoče obdelati kot skrbnik; najprej ga preimenujte"
+  },
+  "elevate.pkexec_missing": {
+    "message": "pkexec (polkit) ni nameščen"
+  },
+  "file_menu.change_tags_failed": {
+    "message": "Oznak ni bilo mogoče spremeniti: {err}"
+  },
+  "file_menu.compress": {
+    "message": "{count, plural, =1 {Stisni „{name}“ …} one {Stisni # element …} two {Stisni # elementa …} few {Stisni # elemente …} other {Stisni # elementov …}}"
+  },
+  "file_menu.copy": {
+    "message": "{count, plural, =1 {Kopiraj „{name}“} one {Kopiraj # element} two {Kopiraj # elementa} few {Kopiraj # elemente} other {Kopiraj # elementov}}"
+  },
+  "file_menu.copy_path": {
+    "message": "Kopiraj pot v odložišče"
+  },
+  "file_menu.delete": {
+    "message": "Izbriši"
+  },
+  "file_menu.duplicate": {
+    "message": "Podvoji"
+  },
+  "file_menu.duplicate_failed": {
+    "message": "Ni mogoče podvojiti: {err}"
+  },
+  "file_menu.edit_tags": {
+    "message": "Oznake …"
+  },
+  "file_menu.get_info": {
+    "message": "Pridobi informacije"
+  },
+  "file_menu.make_alias": {
+    "message": "Ustvari vzdevek"
+  },
+  "file_menu.make_alias_failed": {
+    "message": "Vzdevka ni bilo mogoče ustvariti: {err}"
+  },
+  "file_menu.move_to_trash": {
+    "message": "Premakni v Smeti"
+  },
+  "file_menu.new_folder": {
+    "message": "Nova mapa"
+  },
+  "file_menu.open": {
+    "message": "Odpri"
+  },
+  "file_menu.open_failed": {
+    "message": "Ni mogoče odpreti: {err}"
+  },
+  "file_menu.open_with": {
+    "message": "Odpri z"
+  },
+  "file_menu.open_with_default": {
+    "message": "{app} (privzeto)"
+  },
+  "file_menu.paste": {
+    "message": "Prilepi"
+  },
+  "file_menu.quick_look": {
+    "message": "{count, plural, =1 {Quick Look za „{name}“} one {Quick Look za # element} two {Quick Look za # elementa} few {Quick Look za # elemente} other {Quick Look za # elementov}}"
+  },
+  "file_menu.quick_look_failed": {
+    "message": "Quick Look: {err}"
+  },
+  "file_menu.rename": {
+    "message": "Preimenuj …"
+  },
+  "file_menu.reveal_failed": {
+    "message": "Ni mogoče prikazati v Finderju: {err}"
+  },
+  "file_menu.reveal_in_finder": {
+    "message": "Pokaži v Finderju"
+  },
+  "file_menu.show_package_contents": {
+    "message": "Pokaži vsebino paketa"
+  },
+  "file_menu.tag_dot.add": {
+    "message": "Dodaj oznako „{name}“"
+  },
+  "file_menu.tag_dot.remove": {
+    "message": "Odstrani oznako „{name}“"
+  },
+  "file_menu.tags_popover.show_all": {
+    "message": "Pokaži vse …"
+  },
+  "file_menu.tags_popover.title": {
+    "message": "{count, plural, =1 {Oznake za „{name}“} one {Oznake za # element} two {Oznake za # elementa} few {Oznake za # elemente} other {Oznake za # elementov}}"
+  },
+  "find.backwards": {
+    "message": "Išči nazaj"
+  },
+  "find.cancel": {
+    "message": "Prekliči"
+  },
+  "find.case_sensitive": {
+    "message": "Razlikuj velike in male črke"
+  },
+  "find.hex": {
+    "message": "Išči šestnajstiški niz"
+  },
+  "find.ok": {
+    "message": "V redu"
+  },
+  "find.regex": {
+    "message": "RegEx"
+  },
+  "find.text.label": {
+    "message": "Vnesite iskano besedilo"
+  },
+  "find.title": {
+    "message": "Iskanje"
+  },
+  "find.whole_words": {
+    "message": "Samo cele besede"
+  },
+  "keys.apply": {
+    "message": "Uporabi"
+  },
+  "keys.cancel": {
+    "message": "Prekliči"
+  },
+  "keys.clear.tooltip": {
+    "message": "Brez tipke"
+  },
+  "keys.column.alternate": {
+    "message": "Nadomestna"
+  },
+  "keys.column.command": {
+    "message": "Ukaz"
+  },
+  "keys.column.shortcut": {
+    "message": "Bližnjica"
+  },
+  "keys.custom": {
+    "message": "Po meri"
+  },
+  "keys.delete_set": {
+    "message": "Izbriši"
+  },
+  "keys.note.custom_replaced": {
+    "message": "Vaše tipke so se umaknile tipkam nabora {name}; Shrani kot jih ohrani."
+  },
+  "keys.note.deleted": {
+    "message": "{name} je izbrisan; V redu ali Uporabi to potrdi."
+  },
+  "keys.note.moved": {
+    "message": "{key} je zdaj {command}, ne več {other}."
+  },
+  "keys.note.name_reserved": {
+    "message": "„{name}“ je ime prednastavitve; izberite drugo."
+  },
+  "keys.note.press_new_key": {
+    "message": "Pritisnite novo tipko; Esc jo pusti, kot je bila."
+  },
+  "keys.note.saved": {
+    "message": "Shranjeno kot {name}; V redu ali Uporabi to ohrani."
+  },
+  "keys.note.set": {
+    "message": "{key} je zdaj {command}."
+  },
+  "keys.note.taken_by_system": {
+    "message": "{key} zaseda {by}, zato nikoli ne doseže programa Spark Commander."
+  },
+  "keys.ok": {
+    "message": "V redu"
+  },
+  "keys.press_key": {
+    "message": "Pritisnite tipko …"
+  },
+  "keys.reserved.application_launcher": {
+    "message": "{system}: zaganjalnik programov"
+  },
+  "keys.reserved.close_window": {
+    "message": "{system}: zapiranje okna"
+  },
+  "keys.reserved.close_window_or_tab": {
+    "message": "{system}: zapiranje okna ali zavihka"
+  },
+  "keys.reserved.dock": {
+    "message": "{system}: Dock"
+  },
+  "keys.reserved.floating_window": {
+    "message": "{system}: plavajoče okno"
+  },
+  "keys.reserved.force_quit": {
+    "message": "{system}: prisilni izhod"
+  },
+  "keys.reserved.hide_program": {
+    "message": "{system}: skrivanje programa"
+  },
+  "keys.reserved.input_source": {
+    "message": "{system}: vir vnosa"
+  },
+  "keys.reserved.keyboard_access": {
+    "message": "{system}: dostop s tipkovnico"
+  },
+  "keys.reserved.keyboard_navigation": {
+    "message": "{system}: krmarjenje s tipkovnico"
+  },
+  "keys.reserved.krunner": {
+    "message": "{system}: KRunner"
+  },
+  "keys.reserved.lock_screen": {
+    "message": "{system}: zaklepanje zaslona"
+  },
+  "keys.reserved.log_out": {
+    "message": "{system}: odjava"
+  },
+  "keys.reserved.maximize_window": {
+    "message": "{system}: razpenjanje okna"
+  },
+  "keys.reserved.menu_bar": {
+    "message": "{system}: menijska vrstica"
+  },
+  "keys.reserved.minimize": {
+    "message": "{system}: pomanjšanje"
+  },
+  "keys.reserved.mission_control": {
+    "message": "{system}: Mission Control"
+  },
+  "keys.reserved.move_window": {
+    "message": "{system}: premikanje okna"
+  },
+  "keys.reserved.next_window": {
+    "message": "{system}: naslednje okno"
+  },
+  "keys.reserved.present_windows": {
+    "message": "{system}: Predstavi okna"
+  },
+  "keys.reserved.present_windows_all": {
+    "message": "{system}: Predstavi okna (vsa namizja)"
+  },
+  "keys.reserved.present_windows_class": {
+    "message": "{system}: Predstavi okna (razred okna)"
+  },
+  "keys.reserved.program_windows": {
+    "message": "{system}: okna programa"
+  },
+  "keys.reserved.quit": {
+    "message": "{system}: izhod"
+  },
+  "keys.reserved.resize_window": {
+    "message": "{system}: spreminjanje velikosti okna"
+  },
+  "keys.reserved.restore_window": {
+    "message": "{system}: obnovitev okna"
+  },
+  "keys.reserved.run_command": {
+    "message": "{system}: zagon ukaza"
+  },
+  "keys.reserved.screenshot": {
+    "message": "{system}: posnetek zaslona"
+  },
+  "keys.reserved.security_screen": {
+    "message": "{system}: varnostni zaslon"
+  },
+  "keys.reserved.show_desktop": {
+    "message": "{system}: prikaz namizja"
+  },
+  "keys.reserved.space_left": {
+    "message": "{system}: prostor na levi"
+  },
+  "keys.reserved.space_right": {
+    "message": "{system}: prostor na desni"
+  },
+  "keys.reserved.spotlight": {
+    "message": "{system}: Spotlight"
+  },
+  "keys.reserved.start_menu": {
+    "message": "{system}: meni Start"
+  },
+  "keys.reserved.status_menus": {
+    "message": "{system}: menija stanja"
+  },
+  "keys.reserved.suspend_compositing": {
+    "message": "{system}: začasna ustavitev skladanja"
+  },
+  "keys.reserved.switch_program_windows": {
+    "message": "{system}: preklop med okni programa"
+  },
+  "keys.reserved.switch_programs": {
+    "message": "{system}: preklop med programi"
+  },
+  "keys.reserved.switch_system_controls": {
+    "message": "{system}: preklop sistemskih kontrolnikov"
+  },
+  "keys.reserved.switch_to_desktop": {
+    "message": "{system}: preklop na namizje {number}"
+  },
+  "keys.reserved.switch_windows": {
+    "message": "{system}: preklop med okni"
+  },
+  "keys.reserved.system_monitor": {
+    "message": "{system}: Sistemski nadzornik"
+  },
+  "keys.reserved.task_manager": {
+    "message": "{system}: Upravitelj opravil"
+  },
+  "keys.reserved.text_console": {
+    "message": "{system}: preklop na besedilno konzolo"
+  },
+  "keys.reserved.toolbar": {
+    "message": "{system}: orodna vrstica"
+  },
+  "keys.reserved.window_menu": {
+    "message": "{system}: meni okna"
+  },
+  "keys.reserved.workspace_down": {
+    "message": "{system}: delovni prostor spodaj"
+  },
+  "keys.reserved.workspace_left": {
+    "message": "{system}: delovni prostor na levi"
+  },
+  "keys.reserved.workspace_right": {
+    "message": "{system}: delovni prostor na desni"
+  },
+  "keys.reserved.workspace_up": {
+    "message": "{system}: delovni prostor zgoraj"
+  },
+  "keys.reset.tooltip": {
+    "message": "Nazaj na tipke nabora {preset}"
+  },
+  "keys.reset_all": {
+    "message": "Ponastavi vse"
+  },
+  "keys.save_as.button": {
+    "message": "Shrani kot …"
+  },
+  "keys.save_as.default_name": {
+    "message": "Moje tipke"
+  },
+  "keys.save_as.label": {
+    "message": "Ime:"
+  },
+  "keys.save_as.title": {
+    "message": "Shrani bližnjice"
+  },
+  "keys.search.placeholder": {
+    "message": "Poiščite ukaz ali tipko"
+  },
+  "keys.set_label": {
+    "message": "Tipke:"
+  },
+  "keys.taken_by.tooltip": {
+    "message": "Zaseda: {by}"
+  },
+  "keys.title": {
+    "message": "Bližnjice"
+  },
+  "main.admin.button": {
+    "message": "Kot skrbnik"
+  },
+  "main.admin.deleting": {
+    "message": "Brisanje {count, plural, one {# elementa} two {# elementov} few {# elementov} other {# elementov}}"
+  },
+  "main.admin.failed": {
+    "message": "Kot skrbnik: {err}"
+  },
+  "main.admin.making": {
+    "message": "Ustvarjanje „{name}“"
+  },
+  "main.admin.offer": {
+    "message": "{what}: dovoljenje zavrnjeno. Za izvedbo kot skrbnik bo sistem zahteval geslo."
+  },
+  "main.admin.offer_delete": {
+    "message": "{what}: dovoljenje zavrnjeno. Za izvedbo kot skrbnik bo sistem zahteval geslo. Kar je izbrisano na ta način, je trajno izgubljeno."
+  },
+  "main.admin.title": {
+    "message": "Dovoljenje zavrnjeno"
+  },
+  "main.delete.from_archive": {
+    "message": "{kind, select, folder {Želite izbrisati mapo „{name}“ iz arhiva {archive}? Tega ni mogoče razveljaviti.} file {Želite izbrisati datoteko „{name}“ iz arhiva {archive}? Tega ni mogoče razveljaviti.} other {Želite izbrisati {count, plural, one {# element} two {# elementa} few {# elemente} other {# elementov}} iz arhiva {archive}? Tega ni mogoče razveljaviti.}}"
+  },
+  "main.delete.on_server": {
+    "message": "{kind, select, folder {Želite izbrisati mapo „{name}“ na strežniku {server}? Tega ni mogoče razveljaviti.} file {Želite izbrisati datoteko „{name}“ na strežniku {server}? Tega ni mogoče razveljaviti.} other {Želite izbrisati {count, plural, one {# element} two {# elementa} few {# elemente} other {# elementov}} na strežniku {server}? Tega ni mogoče razveljaviti.}}"
+  },
+  "main.delete.permanently": {
+    "message": "{kind, select, folder {Želite trajno izbrisati mapo „{name}“? Tega ni mogoče razveljaviti.} file {Želite trajno izbrisati datoteko „{name}“? Tega ni mogoče razveljaviti.} other {Želite trajno izbrisati {count, plural, one {# element} two {# elementa} few {# elemente} other {# elementov}}? Tega ni mogoče razveljaviti.}}"
+  },
+  "main.delete.title": {
+    "message": "Izbriši"
+  },
+  "main.delete.title_permanently": {
+    "message": "Trajno izbriši"
+  },
+  "main.delete.to_trash": {
+    "message": "{kind, select, folder {Želite premakniti mapo „{name}“ v koš?} file {Želite premakniti datoteko „{name}“ v koš?} other {Želite premakniti {count, plural, one {# element} two {# elementa} few {# elemente} other {# elementov}} v koš?}}"
+  },
+  "main.download.edit": {
+    "message": "Prenesi {file} za urejanje"
+  },
+  "main.download.view": {
+    "message": "Prenesi {file} za ogled"
+  },
+  "main.error.make_folder": {
+    "message": "Mape ni bilo mogoče ustvariti: {err}"
+  },
+  "main.error.read_settings": {
+    "message": "Nastavitev ni bilo mogoče prebrati: {err}"
+  },
+  "main.error.read_tabs": {
+    "message": "Odprtih zavihkov ni bilo mogoče prebrati: {err}"
+  },
+  "main.error.read_workspaces": {
+    "message": "Delovnih prostorov ni bilo mogoče prebrati: {err}"
+  },
+  "main.error.save_settings": {
+    "message": "Nastavitev ni bilo mogoče shraniti: {err}"
+  },
+  "main.folder_tree.home": {
+    "message": "Domov"
+  },
+  "main.go.no_such_folder": {
+    "message": "{path}: te mape v tem računalniku ni"
+  },
+  "main.new_folder.label": {
+    "message": "Nova mapa (imenik):"
+  },
+  "main.new_folder.title": {
+    "message": "Nova mapa"
+  },
+  "main.sync_browsing.lost": {
+    "message": "{err}. Sinhronizirano brskanje je izklopljeno."
+  },
+  "main.tool.needs_file": {
+    "message": "Kazalka ni na datoteki: %N, %O in %E jo potrebujejo."
+  },
+  "main.tool.needs_local_folder": {
+    "message": "Druga plošča prikazuje strežnik ali arhiv: %T potrebuje mapo v tem računalniku."
+  },
+  "main.undo.done": {
+    "message": "{way, select, redo {Ponovljeno: {title}} other {Razveljavljeno: {title}}}"
+  },
+  "main.undo.failed": {
+    "message": "{way, select, redo {„{title}“ ni bilo mogoče ponoviti: {err}} other {„{title}“ ni bilo mogoče razveljaviti: {err}}}"
+  },
+  "main.undo.nothing": {
+    "message": "{way, select, redo {Ničesar ni za ponovitev.} other {Ničesar ni za razveljavitev.}}"
+  },
+  "main.undo.queued": {
+    "message": "{way, select, redo {V čakalni vrsti za ponovitev: {title}} other {V čakalni vrsti za razveljavitev: {title}}}"
+  },
+  "mark.compare.marked": {
+    "message": "{count, plural, one {Označena # datoteka: novejša ali manjkajoča na drugi strani.} two {Označeni # datoteki: novejši ali manjkajoči na drugi strani.} few {Označene # datoteke: novejše ali manjkajoče na drugi strani.} other {Označenih # datotek: novejše ali manjkajoče na drugi strani.}}"
+  },
+  "mark.compare.same": {
+    "message": "Mapi imata enake datoteke."
+  },
+  "mark.load_selection.label": {
+    "message": "Izberi imena, navedena v datoteki:"
+  },
+  "mark.load_selection.title": {
+    "message": "Naloži izbor"
+  },
+  "mark.save_selection.label": {
+    "message": "Shrani izbrana imena v datoteko:"
+  },
+  "mark.save_selection.title": {
+    "message": "Shrani izbor"
+  },
+  "mark.select_group.label": {
+    "message": "Izberi datoteke (*.txt *.md; maska mape se konča z /):"
+  },
+  "mark.select_group.title": {
+    "message": "Izberi skupino"
+  },
+  "mark.selection_file.not_local": {
+    "message": "Datoteke z izborom so shranjene v tem računalniku, zunaj arhivov."
+  },
+  "mark.unselect_group.label": {
+    "message": "Odstrani iz izbora datoteke (*.txt *.md; maska mape se konča z /):"
+  },
+  "mark.unselect_group.title": {
+    "message": "Odstrani skupino iz izbora"
+  },
+  "media.cannot_play": {
+    "message": "Tega ni mogoče predvajati: {err}"
+  },
+  "media.cannot_play_as_text": {
+    "message": "Tega ni mogoče predvajati: {err}. Tipka 1 to prikaže kot besedilo."
+  },
+  "media.continuing": {
+    "message": "Nadaljevanje pri {time}"
+  },
+  "media.error.missing": {
+    "message": "libmpv manjka: prenesete ga v Nastavitve > Dodatki (gradnja iz izvorne kode: vendor/mpv/{script})"
+  },
+  "media.error.not_started": {
+    "message": "libmpv se ni mogel zagnati"
+  },
+  "media.error.too_long": {
+    "message": "{path}: mpv je potreboval predolgo"
+  },
+  "media.error.unsupported_system": {
+    "message": "video se zaenkrat predvaja le v sistemih Linux, macOS in Windows"
+  },
+  "menu.archive": {
+    "message": "Arhiv"
+  },
+  "menu.associations": {
+    "message": "Povezave datotek"
+  },
+  "menu.button_bar": {
+    "message": "Vrstica z gumbi"
+  },
+  "menu.checksums": {
+    "message": "Kontrolne vsote"
+  },
+  "menu.commands": {
+    "message": "Ukazi"
+  },
+  "menu.compare_directories": {
+    "message": "Primerjaj mape"
+  },
+  "menu.configuration": {
+    "message": "Konfiguracija"
+  },
+  "menu.copy_names": {
+    "message": "Kopiraj imena"
+  },
+  "menu.files": {
+    "message": "Datoteke"
+  },
+  "menu.filter": {
+    "message": "Filter"
+  },
+  "menu.go": {
+    "message": "Pojdi"
+  },
+  "menu.help": {
+    "message": "Pomoč"
+  },
+  "menu.mark": {
+    "message": "Označi"
+  },
+  "menu.other": {
+    "message": "Drugo"
+  },
+  "menu.recently_closed_tabs": {
+    "message": "Nedavno zaprti zavihki"
+  },
+  "menu.selection": {
+    "message": "Izbor"
+  },
+  "menu.show": {
+    "message": "Prikaz"
+  },
+  "menu.sidebar": {
+    "message": "Stranska vrstica"
+  },
+  "menu.sort": {
+    "message": "Razvrsti"
+  },
+  "menu.split_and_combine": {
+    "message": "Razdeli in združi"
+  },
+  "menu.tabs": {
+    "message": "Zavihki"
+  },
+  "menu.tools": {
+    "message": "Orodja"
+  },
+  "menu.workspaces": {
+    "message": "Delovni prostori"
+  },
+  "menus.hide_app": {
+    "message": "Skrij Spark Commander"
+  },
+  "menus.hide_others": {
+    "message": "Skrij druge"
+  },
+  "menus.minimize": {
+    "message": "Pomanjšaj"
+  },
+  "menus.quit_app": {
+    "message": "Končaj Spark Commander"
+  },
+  "menus.services": {
+    "message": "Storitve"
+  },
+  "menus.show_all": {
+    "message": "Pokaži vse"
+  },
+  "menus.zoom": {
+    "message": "Povečaj"
+  },
+  "name_dialog.cancel": {
+    "message": "Prekliči"
+  },
+  "name_dialog.ok": {
+    "message": "V redu"
+  },
+  "operations.clear": {
+    "message": "Počisti končana"
+  },
+  "operations.duration.seconds": {
+    "message": "{seconds} s"
+  },
+  "operations.empty": {
+    "message": "Ni opravil."
+  },
+  "operations.job.answer": {
+    "message": "Čaka na vaš odgovor"
+  },
+  "operations.job.bytes": {
+    "message": "{done} od {total}"
+  },
+  "operations.job.cancel_tooltip": {
+    "message": "Prekliči"
+  },
+  "operations.job.cancelled": {
+    "message": "Preklicano"
+  },
+  "operations.job.counting": {
+    "message": "Štetje: {count, plural, one {# datoteka} two {# datoteki} few {# datoteke} other {# datotek}}"
+  },
+  "operations.job.done": {
+    "message": "Končano"
+  },
+  "operations.job.done_skipped": {
+    "message": "Končano, {count, plural, one {# preskočena} two {# preskočeni} few {# preskočene} other {# preskočenih}}"
+  },
+  "operations.job.failed": {
+    "message": "Ni uspelo"
+  },
+  "operations.job.files": {
+    "message": "{files} / {count, plural, one {# datoteka} two {# datoteki} few {# datoteke} other {# datotek}}"
+  },
+  "operations.job.left": {
+    "message": "še {time}"
+  },
+  "operations.job.running": {
+    "message": "Se izvaja"
+  },
+  "operations.job.waiting": {
+    "message": "Čaka"
+  },
+  "operations.menu.cancel": {
+    "message": "Prekliči"
+  },
+  "operations.menu.clear": {
+    "message": "Počisti končana"
+  },
+  "operations.menu.move_down": {
+    "message": "Premakni navzdol"
+  },
+  "operations.menu.move_up": {
+    "message": "Premakni navzgor"
+  },
+  "operations.settings_tooltip": {
+    "message": "Nastavitve čakalne vrste opravil"
+  },
+  "operations.summary.failed": {
+    "message": "{count, plural, one {# neuspešno} two {# neuspešni} few {# neuspešna} other {# neuspešnih}}"
+  },
+  "operations.summary.running": {
+    "message": "{count, plural, one {# se izvaja} two {# se izvajata} few {# se izvajajo} other {# se izvaja}}"
+  },
+  "operations.summary.waiting": {
+    "message": "{count, plural, one {# čaka} two {# čakata} few {# čakajo} other {# čaka}}"
+  },
+  "ops.as_administrator.failed": {
+    "message": "Kot skrbnik: {err}"
+  },
+  "ops.as_administrator.progress": {
+    "message": "Kot skrbnik …"
+  },
+  "ops.delete.title_many": {
+    "message": "Izbriši {count, plural, one {# element} two {# elementa} few {# elemente} other {# elementov}} v {folder}"
+  },
+  "ops.delete.title_one": {
+    "message": "Izbriši „{name}“"
+  },
+  "ops.delete.trash_title_many": {
+    "message": "Premakni {count, plural, one {# element} two {# elementa} few {# elemente} other {# elementov}} iz {folder} v koš"
+  },
+  "ops.delete.trash_title_one": {
+    "message": "Premakni „{name}“ v koš"
+  },
+  "ops.error.file_in_the_way": {
+    "message": "datoteka s tem imenom je v napoto"
+  },
+  "ops.error.into_itself": {
+    "message": "ni je mogoče kopirati same vase"
+  },
+  "ops.exists_already": {
+    "message": "{name} že obstaja"
+  },
+  "ops.link.dialog_title": {
+    "message": "Ustvari povezavo"
+  },
+  "ops.link.failed": {
+    "message": "Povezave ni bilo mogoče ustvariti: {err}"
+  },
+  "ops.link.kind.hard": {
+    "message": "Trda povezava"
+  },
+  "ops.link.kind.junction": {
+    "message": "Stičišče"
+  },
+  "ops.link.kind.shortcut": {
+    "message": "Bližnjica (.lnk)"
+  },
+  "ops.link.kind.symbolic": {
+    "message": "Simbolna povezava"
+  },
+  "ops.link.label_many": {
+    "message": "Povezave do {count, plural, one {# elementa} two {# elementov} few {# elementov} other {# elementov}} v mapi:"
+  },
+  "ops.link.label_one": {
+    "message": "Povezava do „{name}“ kot:"
+  },
+  "ops.link.making": {
+    "message": "Ustvarjanje {kind, select, symbolic {simbolne povezave} hard {trde povezave} junction {stičišča} other {bližnjice (.lnk)}}"
+  },
+  "ops.link.needs_admin": {
+    "message": "simbolne povezave zahtevajo skrbnika ali Način za razvijalce"
+  },
+  "ops.link.thread_failed": {
+    "message": "nit bližnjice ni uspela"
+  },
+  "ops.link.title_many": {
+    "message": "{kind, select, symbolic {Simbolne povezave} hard {Trde povezave} junction {Stičišča} other {Bližnjice (.lnk)}} do {count, plural, one {# elementa} two {# elementov} few {# elementov} other {# elementov}} v {folder}"
+  },
+  "ops.link.title_one": {
+    "message": "{kind, select, symbolic {Simbolna povezava} hard {Trda povezava} junction {Stičišče} other {Bližnjica (.lnk)}} do „{name}“ v {folder}"
+  },
+  "ops.link.windows_only": {
+    "message": "stičišča in bližnjice obstajajo le v sistemu Windows"
+  },
+  "ops.redo.title": {
+    "message": "Ponovi: {what}"
+  },
+  "ops.title.many": {
+    "message": "{kind, select, copy {Kopiraj} other {Premakni}} {count, plural, one {# element} two {# elementa} few {# elemente} other {# elementov}} v {target}"
+  },
+  "ops.title.one": {
+    "message": "{kind, select, copy {Kopiraj} other {Premakni}} „{name}“ v {target}"
+  },
+  "ops.undo.not_a_server": {
+    "message": "{url}: ni naslov strežnika"
+  },
+  "ops.undo.not_in_trash": {
+    "message": "niso več v košu"
+  },
+  "ops.undo.restore_title": {
+    "message": "{title}: vrnitev prepisanega iz koša"
+  },
+  "ops.undo.title": {
+    "message": "Razveljavi: {what}"
+  },
+  "pack.cancel": {
+    "message": "Prekliči"
+  },
+  "pack.compression": {
+    "message": "Stiskanje:"
+  },
+  "pack.dialog_title": {
+    "message": "Zapakiraj datoteke"
+  },
+  "pack.encrypt": {
+    "message": "Šifriraj z geslom"
+  },
+  "pack.format": {
+    "message": "Oblika:"
+  },
+  "pack.label": {
+    "message": "Zapakiraj {count, plural, one {# element} two {# elementa} few {# elemente} other {# elementov}} v arhiv:"
+  },
+  "pack.level.fastest": {
+    "message": "Najhitrejše"
+  },
+  "pack.level.maximum": {
+    "message": "Največje"
+  },
+  "pack.level.normal": {
+    "message": "Običajno"
+  },
+  "pack.level.store": {
+    "message": "Brez stiskanja"
+  },
+  "pack.level.ultra": {
+    "message": "Ultra"
+  },
+  "pack.local_only": {
+    "message": "{what, select, packing {Pakiranje} unpacking {Razpakiranje} testing {Preizkušanje} creating_checksums {Ustvarjanje kontrolnih vsot} making_links {Ustvarjanje povezav} verifying_checksums {Preverjanje kontrolnih vsot} splitting {Razdeljevanje} combining {Združevanje} other {To}} deluje na datotekah tega računalnika, zunaj arhivov."
+  },
+  "pack.move_files": {
+    "message": "Premakni v arhiv (izbriši zapakirane datoteke)"
+  },
+  "pack.needs_password": {
+    "message": "potrebno je geslo"
+  },
+  "pack.ok": {
+    "message": "V redu"
+  },
+  "pack.password_missing": {
+    "message": "Vnesite geslo ali pustite možnost Šifriraj z geslom izklopljeno."
+  },
+  "pack.separate": {
+    "message": "En arhiv za vsako izbrano datoteko ali mapo"
+  },
+  "pack.split": {
+    "message": "Razdeli na dele po"
+  },
+  "pack.split_unit": {
+    "message": "MB"
+  },
+  "pack.test.broken": {
+    "message": "{broken, plural, one {# od {count} poškodovan} two {# od {count} poškodovana} few {# od {count} poškodovani} other {# od {count} poškodovanih}}"
+  },
+  "pack.test.choose": {
+    "message": "Izberite arhive za preizkus."
+  },
+  "pack.test.ok": {
+    "message": "{count, plural, one {# arhiv v redu} two {# arhiva v redu} few {# arhivi v redu} other {# arhivov v redu}}"
+  },
+  "pack.test.title_many": {
+    "message": "Preizkusi {count, plural, one {# arhiv} two {# arhiva} few {# arhive} other {# arhivov}}"
+  },
+  "pack.test.title_one": {
+    "message": "Preizkusi „{name}“"
+  },
+  "pack.title.many": {
+    "message": "Zapakiraj {count, plural, one {# element} two {# elementa} few {# elemente} other {# elementov}} v {archive}"
+  },
+  "pack.title.many_separate": {
+    "message": "Zapakiraj {count, plural, one {# element} two {# elementa} few {# elemente} other {# elementov}} v ločene arhive {format}"
+  },
+  "pack.title.one": {
+    "message": "Zapakiraj „{name}“ v {archive}"
+  },
+  "pack.title.one_separate": {
+    "message": "Zapakiraj „{name}“ v ločene arhive {format}"
+  },
+  "pack.unpack.choose": {
+    "message": "Izberite arhive za razpakiranje."
+  },
+  "pack.unpack.dialog_title": {
+    "message": "Razpakiraj datoteke"
+  },
+  "pack.unpack.label": {
+    "message": "Razpakiraj {count, plural, one {# arhiv} two {# arhiva} few {# arhive} other {# arhivov}} v:"
+  },
+  "pack.unpack.mask": {
+    "message": "Samo datoteke:"
+  },
+  "pack.unpack.overwrite": {
+    "message": "Prepiši obstoječe datoteke (sicer se ohranijo)"
+  },
+  "pack.unpack.password": {
+    "message": "Geslo:"
+  },
+  "pack.unpack.separate": {
+    "message": "Vsak arhiv v mapo z njegovim imenom"
+  },
+  "pack.unpack.title_many": {
+    "message": "Razpakiraj {count, plural, one {# arhiv} two {# arhiva} few {# arhive} other {# arhivov}} v {target}"
+  },
+  "pack.unpack.title_one": {
+    "message": "Razpakiraj „{name}“ v {target}"
+  },
+  "pack.unpack.with_paths": {
+    "message": "Ohrani mape, shranjene v arhivu"
+  },
+  "pack.volume_invalid": {
+    "message": "Velikost dela je število MB."
+  },
+  "pack.wrong_password": {
+    "message": "napačno geslo"
+  },
+  "panel.admin.renaming": {
+    "message": "Preimenovanje v „{name}“"
+  },
+  "panel.clipboard.copied": {
+    "message": "{count, plural, one {Kopiran # element: Ctrl+V ga prilepi.} two {Kopirana # elementa: Ctrl+V ju prilepi.} few {Kopirani # elementi: Ctrl+V jih prilepi.} other {Kopiranih # elementov: Ctrl+V jih prilepi.}}"
+  },
+  "panel.clipboard.cut": {
+    "message": "{count, plural, one {Izrezan # element: Ctrl+V ga prilepi.} two {Izrezana # elementa: Ctrl+V ju prilepi.} few {Izrezani # elementi: Ctrl+V jih prilepi.} other {Izrezanih # elementov: Ctrl+V jih prilepi.}}"
+  },
+  "panel.clipboard.no_cut_in_archive": {
+    "message": "Datotek ni mogoče izrezati iz arhivov; Ctrl+C jih kopira."
+  },
+  "panel.clipboard.no_files": {
+    "message": "Odložišče ne vsebuje datotek."
+  },
+  "panel.clipboard.no_paste_in_archive": {
+    "message": "Datotek v arhive še ni mogoče prilepiti."
+  },
+  "panel.clipboard.same_folder": {
+    "message": "Že so v tej mapi: Ctrl+V jih prilepi v drugo."
+  },
+  "panel.column.attr": {
+    "message": "Atr."
+  },
+  "panel.column.date": {
+    "message": "Datum"
+  },
+  "panel.column.ext": {
+    "message": "Konč."
+  },
+  "panel.column.name": {
+    "message": "Ime"
+  },
+  "panel.column.size": {
+    "message": "Velikost"
+  },
+  "panel.disconnect": {
+    "message": "Prekini povezavo"
+  },
+  "panel.drag.items": {
+    "message": "{count, plural, one {# element} two {# elementa} few {# elementi} other {# elementov}}"
+  },
+  "panel.error.archive_not_updatable": {
+    "message": "{name}: 7-Zip neposredno spreminja arhive 7z, zip in tar, tega pa ne"
+  },
+  "panel.error.archive_on_server": {
+    "message": "{name}: arhivov na strežnikih še ni mogoče spreminjati"
+  },
+  "panel.error.branch_view_local": {
+    "message": "Pogled veje prikazuje mape tega računalnika"
+  },
+  "panel.error.exists": {
+    "message": "{name} že obstaja"
+  },
+  "panel.error.folder_in_the_way": {
+    "message": "mapa s tem imenom je v napoto"
+  },
+  "panel.error.inside_archive": {
+    "message": "v arhivih še ni mogoče"
+  },
+  "panel.error.make_file": {
+    "message": "Datoteke ni bilo mogoče ustvariti: {err}"
+  },
+  "panel.error.no_name": {
+    "message": "ime ni podano"
+  },
+  "panel.error.not_a_name": {
+    "message": "{name}: ni veljavno ime"
+  },
+  "panel.error.other_drive": {
+    "message": "druga plošča je prešla na drug pogon"
+  },
+  "panel.error.rename": {
+    "message": "Ni mogoče preimenovati: {err}"
+  },
+  "panel.filter.custom.label": {
+    "message": "Vrste datotek, npr. *.txt *.md (za | izpuščene):"
+  },
+  "panel.filter.custom.title": {
+    "message": "Prikaži datoteke"
+  },
+  "panel.filter.programs": {
+    "message": "programi"
+  },
+  "panel.filter.selected_files": {
+    "message": "izbrane datoteke"
+  },
+  "panel.found.branch_view": {
+    "message": "Pogled veje:"
+  },
+  "panel.found.search_results": {
+    "message": "Rezultati iskanja:"
+  },
+  "panel.new_text_file.label": {
+    "message": "Ime datoteke, odprte v urejevalniku:"
+  },
+  "panel.new_text_file.title": {
+    "message": "Nova besedilna datoteka"
+  },
+  "panel.opening.cancel": {
+    "message": "Prekliči"
+  },
+  "panel.opening.reading": {
+    "message": "Branje …"
+  },
+  "panel.opening.title": {
+    "message": "Odpiranje arhiva"
+  },
+  "panel.quick_filter.hint": {
+    "message": "skrije, kar se ne ujema; Escape pokaže vse"
+  },
+  "panel.quick_filter.label": {
+    "message": "Filter:"
+  },
+  "panel.quick_search.label": {
+    "message": "Iskanje:"
+  },
+  "panel.size.app": {
+    "message": "<APP>"
+  },
+  "panel.size.b": {
+    "message": "{size} B"
+  },
+  "panel.size.dir": {
+    "message": "<DIR>"
+  },
+  "panel.size.gb": {
+    "message": "{size} GB"
+  },
+  "panel.size.kb": {
+    "message": "{size} KB"
+  },
+  "panel.size.mb": {
+    "message": "{size} MB"
+  },
+  "panel.size.tb": {
+    "message": "{size} TB"
+  },
+  "panel.space.bytes": {
+    "message": "{count, plural, one {{size} bajt ({human})} two {{size} bajta ({human})} few {{size} bajti ({human})} other {{size} bajtov ({human})}}"
+  },
+  "panel.space.close": {
+    "message": "Zapri"
+  },
+  "panel.space.counting": {
+    "message": "Štetje …"
+  },
+  "panel.space.done": {
+    "message": "Končano."
+  },
+  "panel.space.files": {
+    "message": "Datoteke:"
+  },
+  "panel.space.folders": {
+    "message": "Mape:"
+  },
+  "panel.space.in_archive": {
+    "message": "V arhivih stolpec Velikost že prikazuje velikosti."
+  },
+  "panel.space.title": {
+    "message": "Izračunaj zasedeni prostor"
+  },
+  "panel.space.total": {
+    "message": "Skupna velikost:"
+  },
+  "panel.space.unreadable": {
+    "message": "{count, plural, one {# elementa ni bilo mogoče prebrati.} two {# elementov ni bilo mogoče prebrati.} few {# elementov ni bilo mogoče prebrati.} other {# elementov ni bilo mogoče prebrati.}}"
+  },
+  "panel.status": {
+    "message": "{marked_size} k / {size} k v {marked_files} / {files, plural, one {# datoteki} two {# datotekah} few {# datotekah} other {# datotekah}}, {marked_folders} / {folders, plural, one {# mapi} two {# mapah} few {# mapah} other {# mapah}}"
+  },
+  "panel.sync_browsing.stop": {
+    "message": "Sinhronizirano brskanje (kliknite za ustavitev)"
+  },
+  "panel.undo.rename": {
+    "message": "Preimenuj „{name}“ v „{to}“"
+  },
+  "passwords.about.set": {
+    "message": "Z glavnim geslom se shranjena gesla odprejo v drugem računalniku, ko tja kopirate mapo z nastavitvami in tam vnesete glavno geslo. Če ga pozabite, izgubite le shranjena gesla: znova jih vnesete."
+  },
+  "passwords.about.unlock": {
+    "message": "Nastavitve so prišle iz drugega računalnika ali ta nima zbirke ključev: glavno geslo tukaj odpre shranjena gesla."
+  },
+  "passwords.cancel": {
+    "message": "Prekliči"
+  },
+  "passwords.done.set": {
+    "message": "Glavno geslo je nastavljeno."
+  },
+  "passwords.done.unlocked": {
+    "message": "Shranjena gesla so odprta."
+  },
+  "passwords.error.locked": {
+    "message": "shranjena gesla so zaklenjena: odklenite jih z glavnim geslom (Konfiguracija › Nastavitve › Gesla)"
+  },
+  "passwords.error.no_master": {
+    "message": "glavno geslo ni nastavljeno"
+  },
+  "passwords.error.no_random": {
+    "message": "ni naključnih števil"
+  },
+  "passwords.error.not_opened": {
+    "message": "gesla za {what} ni mogoče odpreti"
+  },
+  "passwords.error.not_sealed": {
+    "message": "gesla ni bilo mogoče šifrirati"
+  },
+  "passwords.error.salt_damaged": {
+    "message": "sol glavnega gesla je poškodovana"
+  },
+  "passwords.error.wrong": {
+    "message": "glavno geslo je napačno"
+  },
+  "passwords.field.again": {
+    "message": "Ponovno"
+  },
+  "passwords.field.master": {
+    "message": "Glavno geslo"
+  },
+  "passwords.locked_note": {
+    "message": "Shranjena gesla so v tem računalniku zaklenjena: odpre jih glavno geslo."
+  },
+  "passwords.ok": {
+    "message": "V redu"
+  },
+  "passwords.problem.differ": {
+    "message": "Gesli se ne ujemata."
+  },
+  "passwords.problem.empty": {
+    "message": "Vnesite glavno geslo."
+  },
+  "passwords.title.set": {
+    "message": "Glavno geslo"
+  },
+  "passwords.title.unlock": {
+    "message": "Odkleni shranjena gesla"
+  },
+  "passwords.unlock_button": {
+    "message": "Odkleni …"
+  },
+  "passwords.working": {
+    "message": "Obdelava …"
+  },
+  "properties.accessed": {
+    "message": "Dostopano:"
+  },
+  "properties.change_attributes": {
+    "message": "Spremeni atribute..."
+  },
+  "properties.close": {
+    "message": "Zapri"
+  },
+  "properties.contents": {
+    "message": "{file_count, plural, one {{files} datoteka} two {{files} datoteki} few {{files} datoteke} other {{files} datotek}}, {folder_count, plural, one {{folders} mapa} two {{folders} mapi} few {{folders} mape} other {{folders} map}}, {count, plural, one {{bytes} bajt} two {{bytes} bajta} few {{bytes} bajti} other {{bytes} bajtov}} ({size})"
+  },
+  "properties.contents_counting": {
+    "message": "{file_count, plural, one {{files} datoteka} two {{files} datoteki} few {{files} datoteke} other {{files} datotek}}, {folder_count, plural, one {{folders} mapa} two {{folders} mapi} few {{folders} mape} other {{folders} map}}, {count, plural, one {{bytes} bajt} two {{bytes} bajta} few {{bytes} bajti} other {{bytes} bajtov}} ({size}) (štetje …)"
+  },
+  "properties.contents_label": {
+    "message": "Vsebina:"
+  },
+  "properties.created": {
+    "message": "Ustvarjeno:"
+  },
+  "properties.dialog_title": {
+    "message": "Lastnosti"
+  },
+  "properties.in_archive": {
+    "message": "Seznam arhiva prikaže, kar ve o svojih datotekah."
+  },
+  "properties.kind.file": {
+    "message": "Datoteka"
+  },
+  "properties.kind.folder": {
+    "message": "Mapa"
+  },
+  "properties.kind.link": {
+    "message": "Povezava"
+  },
+  "properties.kind.link_to": {
+    "message": "Povezava do {target}"
+  },
+  "properties.location": {
+    "message": "Mesto:"
+  },
+  "properties.modified": {
+    "message": "Spremenjeno:"
+  },
+  "properties.name": {
+    "message": "Ime:"
+  },
+  "properties.no_system_dialog": {
+    "message": "tukaj še ni sistemskega pogovornega okna z lastnostmi"
+  },
+  "properties.owner": {
+    "message": "Lastnik / skupina:"
+  },
+  "properties.permissions": {
+    "message": "Dovoljenja:"
+  },
+  "properties.size": {
+    "message": "{count, plural, one {{bytes} bajt ({size})} two {{bytes} bajta ({size})} few {{bytes} bajti ({size})} other {{bytes} bajtov ({size})}}"
+  },
+  "properties.size_label": {
+    "message": "Velikost:"
+  },
+  "properties.type": {
+    "message": "Vrsta:"
+  },
+  "quick_open.go_to": {
+    "message": "Pojdi na {path}"
+  },
+  "quick_open.group.bookmarks": {
+    "message": "Zaznamki"
+  },
+  "quick_open.group.connections": {
+    "message": "Povezave"
+  },
+  "quick_open.group.drives": {
+    "message": "Pogoni"
+  },
+  "quick_open.group.path": {
+    "message": "Pot"
+  },
+  "quick_open.group.recent_folders": {
+    "message": "Nedavne mape"
+  },
+  "quick_open.group.tools": {
+    "message": "Orodja"
+  },
+  "quick_open.group.workspaces": {
+    "message": "Delovni prostori"
+  },
+  "quick_open.placeholder": {
+    "message": "Ukaz, zaznamek, mapa, pot, strežnik, pogon, delovni prostor ali orodje"
+  },
+  "quick_open.title": {
+    "message": "Hitro odpiranje"
+  },
+  "quick_view.counting": {
+    "message": "Štetje …"
+  },
+  "quick_view.downloading": {
+    "message": "Prenašanje …"
+  },
+  "quick_view.empty": {
+    "message": "Hitri ogled prikaže, na čem je kazalka druge plošče."
+  },
+  "quick_view.extracting": {
+    "message": "Razpakiranje iz arhiva …"
+  },
+  "quick_view.files_only": {
+    "message": "Na strežnikih in v arhivih Hitri ogled prikazuje datoteke."
+  },
+  "quick_view.space.title": {
+    "message": "Skupni zasedeni prostor:"
+  },
+  "quick_view.space.totals": {
+    "message": "{bytes, plural, one {{bytes_grouped} bajt} two {{bytes_grouped} bajta} few {{bytes_grouped} bajti} other {{bytes_grouped} bajtov}} v {files, plural, one {{files_grouped} datoteki} two {{files_grouped} datotekah} few {{files_grouped} datotekah} other {{files_grouped} datotekah}}, {folders, plural, one {{folders_grouped} mapi} two {{folders_grouped} mapah} few {{folders_grouped} mapah} other {{folders_grouped} mapah}}"
+  },
+  "quick_view.space.unreadable": {
+    "message": "Ni bilo mogoče prebrati: {count}."
+  },
+  "quick_view.too_large.download": {
+    "message": "{size} je preveč za prenos tukaj: F3 to prikaže."
+  },
+  "quick_view.too_large.extract": {
+    "message": "{size} je preveč za razpakiranje tukaj: F3 to prikaže."
+  },
+  "remote.cancelled": {
+    "message": "preklicano"
+  },
+  "remote.cloud.ask": {
+    "message": "{kind, select, application_key {Ključ aplikacije za {user} na {host}:} api_key {Ključ API za {user} na {host}:} password {Geslo za {user} na {host}:} other {Skrivni ključ za {user} na {host}:}}"
+  },
+  "remote.cloud.ask_again": {
+    "message": "{kind, select, application_key {Napačen ključ aplikacije. Ključ aplikacije za {user} na {host}:} api_key {Napačen ključ API. Ključ API za {user} na {host}:} password {Napačno geslo. Geslo za {user} na {host}:} other {Napačen ključ. Skrivni ključ za {user} na {host}:}}"
+  },
+  "remote.cloud.obscure_failed": {
+    "message": "rclone ni mogel sprejeti gesla"
+  },
+  "remote.cloud.rclone_missing": {
+    "message": "rclone manjka: prenesete ga v Nastavitve > Dodatki"
+  },
+  "remote.cloud.title": {
+    "message": "{kind, select, application_key {Ključ aplikacije} api_key {Ključ API} password {Geslo} other {Skrivni ključ}}"
+  },
+  "remote.connecting": {
+    "message": "Povezovanje s strežnikom {server}..."
+  },
+  "remote.dialog.cancel": {
+    "message": "Prekliči"
+  },
+  "remote.dialog.ok": {
+    "message": "V redu"
+  },
+  "remote.disconnect_failed": {
+    "message": "{share}: povezave ni bilo mogoče prekiniti: {err}"
+  },
+  "remote.ftp.password": {
+    "message": "Geslo za {user}@{host}:"
+  },
+  "remote.ftp.password_again": {
+    "message": "Napačno geslo. Geslo za {user}@{host}:"
+  },
+  "remote.ftps.changed": {
+    "message": "Potrdilo TLS strežnika {server} se je SPREMENILO, odkar ga je zabeležila vrstica {line} v {file}. Nekdo bi lahko prisluškoval; če ima strežnik novo potrdilo, odstranite to vrstico."
+  },
+  "remote.ftps.not_trusted": {
+    "message": "potrdilu strežnika ni zaupano"
+  },
+  "remote.login.password": {
+    "message": "Geslo"
+  },
+  "remote.login.title": {
+    "message": "Prijava"
+  },
+  "remote.login.user": {
+    "message": "Uporabnik"
+  },
+  "remote.mount.login_wrong": {
+    "message": "uporabnik ali geslo je napačno"
+  },
+  "remote.mount.macos_failed": {
+    "message": "macOS ga ni mogel priklopiti (NetFS {code})"
+  },
+  "remote.mount.needs_desktop": {
+    "message": "potreben je kio-fuse iz KDE ali gvfs iz GNOME"
+  },
+  "remote.mount.needs_login": {
+    "message": "potrebna sta uporabnik in geslo"
+  },
+  "remote.mount.no_fuse": {
+    "message": "priklopljeno, vendar zanj ni mape: gvfs-fuse manjka"
+  },
+  "remote.mount.no_nfs_client": {
+    "message": "ni najdeno; NFS potrebuje Odjemalca za NFS (Funkcije sistema Windows)"
+  },
+  "remote.mount.no_share": {
+    "message": "manjka skupna raba: smb://server/share"
+  },
+  "remote.mount.not_address": {
+    "message": "ni naslov"
+  },
+  "remote.mount.not_found": {
+    "message": "priklopljeno, vendar ga ni med priklopljenimi"
+  },
+  "remote.mount.other_user": {
+    "message": "Windows je s tem strežnikom povezan kot drug uporabnik: odjavite se ali uporabite tega uporabnika"
+  },
+  "remote.password.title": {
+    "message": "Geslo"
+  },
+  "remote.remember_password": {
+    "message": "Zapomni si ga (Nastavitve › Gesla)"
+  },
+  "remote.save_back_failed": {
+    "message": "Ni ga bilo mogoče shraniti nazaj: {err}"
+  },
+  "remote.sftp.host_certificate": {
+    "message": "Strežnik se predstavi s potrdilom gostitelja; ta še niso podprta."
+  },
+  "remote.sftp.key_changed": {
+    "message": "Ključ gostitelja {server} se je SPREMENIL, odkar ga je zabeležila vrstica {line} v {file}. Nekdo bi lahko prisluškoval; če je bil strežnik na novo nameščen, odstranite to vrstico."
+  },
+  "remote.sftp.key_not_trusted": {
+    "message": "Ključu gostitelja {server} ni bilo zaupano."
+  },
+  "remote.sftp.keys_refused": {
+    "message": "{user}@{host}: strežnik je zavrnil ključe in ne sprejema gesla"
+  },
+  "remote.sftp.login_refused": {
+    "message": "{user}@{host}: prijava zavrnjena"
+  },
+  "remote.sftp.passphrase": {
+    "message": "Geslo za {file}"
+  },
+  "remote.sftp.passphrase_title": {
+    "message": "Geslo ključa"
+  },
+  "remote.sftp.password": {
+    "message": "Geslo za {user}@{host}"
+  },
+  "remote.unknown_host.once": {
+    "message": "Poveži enkrat"
+  },
+  "remote.unknown_host.remember": {
+    "message": "Poveži in si zapomni"
+  },
+  "remote.unknown_host.text": {
+    "message": "{key_type, select, TLS {Strežnik {host} še ni znan. Prstni odtis njegovega potrdila TLS je} other {Strežnik {host} še ni znan. Njegov prstni odtis {key_type} je}}\n\n{fingerprint}\n\nPovežite se le, če je to strežnik, ki ga želite; njegov skrbnik lahko potrdi prstni odtis."
+  },
+  "remote.unknown_host.title": {
+    "message": "Neznan strežnik"
+  },
+  "rename.case": {
+    "message": "Velikost črk:"
+  },
+  "rename.case.first": {
+    "message": "Prva črka"
+  },
+  "rename.case.lower": {
+    "message": "male črke"
+  },
+  "rename.case.unchanged": {
+    "message": "Nespremenjeno"
+  },
+  "rename.case.upper": {
+    "message": "VELIKE ČRKE"
+  },
+  "rename.case.words": {
+    "message": "Vsaka Beseda"
+  },
+  "rename.close": {
+    "message": "Zapri"
+  },
+  "rename.counter_start": {
+    "message": "Začetek števca"
+  },
+  "rename.dialog_title": {
+    "message": "Orodje za množično preimenovanje"
+  },
+  "rename.digits": {
+    "message": "Števke"
+  },
+  "rename.extension": {
+    "message": "Končnica"
+  },
+  "rename.field.counter": {
+    "message": "[C] Števec"
+  },
+  "rename.field.date": {
+    "message": "[Y][M][D] Datum"
+  },
+  "rename.field.extension": {
+    "message": "[E] Konč."
+  },
+  "rename.field.folder": {
+    "message": "[P] Mapa"
+  },
+  "rename.field.name": {
+    "message": "[N] Ime"
+  },
+  "rename.field.range": {
+    "message": "[N1-3] Obseg"
+  },
+  "rename.field.time": {
+    "message": "[h][m][s] Čas"
+  },
+  "rename.first_only": {
+    "message": "Samo prvo"
+  },
+  "rename.in_archive": {
+    "message": "Datotek v arhivih še ni mogoče preimenovati."
+  },
+  "rename.mask": {
+    "message": "Maska za preimenovanje: ime datoteke"
+  },
+  "rename.match_case": {
+    "message": "Razlikuj velikost črk"
+  },
+  "rename.new_name": {
+    "message": "Novo ime"
+  },
+  "rename.not_renamed_back": {
+    "message": "{from}: {err}; ni preimenovano nazaj: {names}"
+  },
+  "rename.not_utf8": {
+    "message": "Imena, ki niso v UTF-8, so izpuščena."
+  },
+  "rename.old_name": {
+    "message": "Staro ime"
+  },
+  "rename.problem.bad_character": {
+    "message": "nedovoljen znak"
+  },
+  "rename.problem.exists": {
+    "message": "že obstaja"
+  },
+  "rename.problem.no_name": {
+    "message": "brez imena"
+  },
+  "rename.problem.twice": {
+    "message": "dvakrat na seznamu"
+  },
+  "rename.regex": {
+    "message": "Regularni izraz"
+  },
+  "rename.regex_error": {
+    "message": "Regularni izraz: {err}"
+  },
+  "rename.replace": {
+    "message": "Zamenjaj z"
+  },
+  "rename.search": {
+    "message": "Išči"
+  },
+  "rename.start": {
+    "message": "Začni!"
+  },
+  "rename.status.failed": {
+    "message": "Nič ni preimenovano: {err}"
+  },
+  "rename.status.ready": {
+    "message": "Začni jih preimenuje."
+  },
+  "rename.status.renamed": {
+    "message": "{count, plural, one {Preimenovana #.} two {Preimenovani #.} few {Preimenovane #.} other {Preimenovanih #.}}"
+  },
+  "rename.status.took_back": {
+    "message": "{count, plural, one {Vrnjena #.} two {Vrnjeni #.} few {Vrnjene #.} other {Vrnjenih #.}}"
+  },
+  "rename.step": {
+    "message": "Korak"
+  },
+  "rename.undo": {
+    "message": "Razveljavi"
+  },
+  "rename.was": {
+    "message": "{to} (prej {from})"
+  },
+  "rename.with_extension": {
+    "message": "S končnico"
+  },
+  "scmd.column.modified": {
+    "message": "Spremenjeno"
+  },
+  "scmd.column.name": {
+    "message": "Ime"
+  },
+  "scmd.column.size": {
+    "message": "Velikost"
+  },
+  "scmd.column.up_dir": {
+    "message": "GOR--MAPA"
+  },
+  "scmd.command_line.not_on_server": {
+    "message": "Ukazi se izvajajo v tem računalniku, ne na strežniku."
+  },
+  "scmd.compare.marked": {
+    "message": "{count, plural, one {Označena # datoteka: novejša ali manjkajoča na drugi strani.} two {Označeni # datoteki: novejši ali manjkajoči na drugi strani.} few {Označene # datoteke: novejše ali manjkajoče na drugi strani.} other {Označenih # datotek: novejše ali manjkajoče na drugi strani.}}"
+  },
+  "scmd.compare.same": {
+    "message": "Mapi imata enake datoteke."
+  },
+  "scmd.copying": {
+    "message": "Kopiranje {name}..."
+  },
+  "scmd.dialog.buttons": {
+    "message": "Enter V redu   Esc Prekliči"
+  },
+  "scmd.error.read_settings": {
+    "message": "Nastavitev ni bilo mogoče prebrati: {err}"
+  },
+  "scmd.error.read_tabs": {
+    "message": "Odprtih zavihkov ni bilo mogoče prebrati: {err}"
+  },
+  "scmd.error.read_workspaces": {
+    "message": "Delovnih prostorov ni bilo mogoče prebrati: {err}"
+  },
+  "scmd.error.save_back": {
+    "message": "Ni ga bilo mogoče shraniti nazaj: {err}"
+  },
+  "scmd.error.save_searches": {
+    "message": "Iskanj ni bilo mogoče shraniti: {err}"
+  },
+  "scmd.error.save_tabs": {
+    "message": "Odprtih zavihkov ni bilo mogoče shraniti: {err}"
+  },
+  "scmd.find.backwards": {
+    "message": "Nazaj"
+  },
+  "scmd.find.case_sensitive": {
+    "message": "Razlikuj velike in male črke"
+  },
+  "scmd.find.hex": {
+    "message": "Šestnajstiško (77 6F 72 64)"
+  },
+  "scmd.find.not_found": {
+    "message": "Ni najdeno: {text}"
+  },
+  "scmd.find.regex": {
+    "message": "Regularni izraz"
+  },
+  "scmd.find.search_for": {
+    "message": "Išči:"
+  },
+  "scmd.find.title": {
+    "message": "Iskanje"
+  },
+  "scmd.find.whole_words": {
+    "message": "Samo cele besede"
+  },
+  "scmd.group.files": {
+    "message": "Datoteke (*.txt *.md; mape se končajo z /):"
+  },
+  "scmd.group.select_title": {
+    "message": "Izberi skupino"
+  },
+  "scmd.group.unselect_title": {
+    "message": "Odstrani skupino iz izbora"
+  },
+  "scmd.key_bar.copy": {
+    "message": "Kopir."
+  },
+  "scmd.key_bar.delete": {
+    "message": "Briši"
+  },
+  "scmd.key_bar.edit": {
+    "message": "Uredi"
+  },
+  "scmd.key_bar.menu": {
+    "message": "Meni"
+  },
+  "scmd.key_bar.mkdir": {
+    "message": "Mapa"
+  },
+  "scmd.key_bar.move": {
+    "message": "Premik"
+  },
+  "scmd.key_bar.quit": {
+    "message": "Izhod"
+  },
+  "scmd.key_bar.view": {
+    "message": "Ogled"
+  },
+  "scmd.message.error": {
+    "message": "Napaka"
+  },
+  "scmd.message.ok": {
+    "message": "V redu"
+  },
+  "scmd.not_yet": {
+    "message": "{what, select, menus {Meniji: v različici za terminal jih še ni.} file_operations {Opravila z datotekami: v različici za terminal jih še ni.} servers {Strežniki: v različici za terminal jih še ni.} other {Ta ukaz: v različici za terminal ga še ni.}}"
+  },
+  "scmd.picture.broken": {
+    "message": "poškodovana slika"
+  },
+  "scmd.picture.broken_page": {
+    "message": "poškodovana stran"
+  },
+  "scmd.picture.loading": {
+    "message": "Nalaganje …"
+  },
+  "scmd.picture.no_page": {
+    "message": "PDF nima te strani"
+  },
+  "scmd.shell.press_enter": {
+    "message": "Pritisnite Enter za vrnitev v Spark Commander..."
+  },
+  "scmd.sync_browsing.off": {
+    "message": "Sinhronizirano brskanje je izklopljeno."
+  },
+  "scmd.sync_browsing.on": {
+    "message": "Sinhronizirano brskanje je vklopljeno."
+  },
+  "scmd.sync_browsing.stopped": {
+    "message": "{err}. Sinhronizirano brskanje je izklopljeno."
+  },
+  "scmd.viewer.column": {
+    "message": "St. {column}"
+  },
+  "scmd.viewer.finding": {
+    "message": "iskanje …"
+  },
+  "scmd.viewer.key_bar.next": {
+    "message": "Nasl."
+  },
+  "scmd.viewer.key_bar.quit": {
+    "message": "Izhod"
+  },
+  "scmd.viewer.key_bar.reload": {
+    "message": "Osveži"
+  },
+  "scmd.viewer.key_bar.search": {
+    "message": "Išči"
+  },
+  "scmd.viewer.page": {
+    "message": "stran {page} od {pages}"
+  },
+  "scmd.viewer.reading": {
+    "message": "branje {percent} %"
+  },
+  "scmd.viewer.wrap": {
+    "message": "Prelom"
+  },
+  "scmd.workspace.copy_name": {
+    "message": "{name} – kopija"
+  },
+  "scmd.workspace.default_name": {
+    "message": "Delovni prostor {number}"
+  },
+  "scmd.workspace.delete_question": {
+    "message": "Želite izbrisati „{name}“? Njegovi zavihki bodo pozabljeni."
+  },
+  "scmd.workspace.duplicate_title": {
+    "message": "Podvoji delovni prostor"
+  },
+  "scmd.workspace.last_stays": {
+    "message": "Zadnji delovni prostor ostane."
+  },
+  "scmd.workspace.name": {
+    "message": "Ime:"
+  },
+  "scmd.workspace.name_or_default": {
+    "message": "Ime (prazno: {name}):"
+  },
+  "scmd.workspace.new_title": {
+    "message": "Nov delovni prostor"
+  },
+  "scmd.workspace.rename_title": {
+    "message": "Preimenuj delovni prostor"
+  },
+  "scmd.workspaces.keys": {
+    "message": "Enter Odpri  F7 Nov  F5 Kopiraj  F2 Preimenuj  F8 Izbriši"
+  },
+  "scmd.workspaces.title": {
+    "message": "Delovni prostori"
+  },
+  "search.age.days": {
+    "message": "dni"
+  },
+  "search.age.hours": {
+    "message": "ur"
+  },
+  "search.age.minutes": {
+    "message": "minut"
+  },
+  "search.age.months": {
+    "message": "mesecev"
+  },
+  "search.age.weeks": {
+    "message": "tednov"
+  },
+  "search.age.years": {
+    "message": "let"
+  },
+  "search.archives": {
+    "message": "Išči v arhivih"
+  },
+  "search.attribute.directory": {
+    "message": "Mapa"
+  },
+  "search.attribute.either": {
+    "message": "Vseeno"
+  },
+  "search.attribute.executable": {
+    "message": "Izvedljiva"
+  },
+  "search.attribute.hidden": {
+    "message": "Skrita"
+  },
+  "search.attribute.link": {
+    "message": "Simbolna povezava"
+  },
+  "search.attribute.must": {
+    "message": "Mora biti"
+  },
+  "search.attribute.must_not": {
+    "message": "Ne sme biti"
+  },
+  "search.attribute.read_only": {
+    "message": "Samo za branje"
+  },
+  "search.attributes.label": {
+    "message": "Atributi:"
+  },
+  "search.between.and": {
+    "message": "in"
+  },
+  "search.between.label": {
+    "message": "Datum med:"
+  },
+  "search.close": {
+    "message": "Zapri"
+  },
+  "search.depth.all": {
+    "message": "vse (neomejena globina)"
+  },
+  "search.depth.current": {
+    "message": "samo trenutna mapa"
+  },
+  "search.depth.label": {
+    "message": "Išči v podmapah:"
+  },
+  "search.depth.levels": {
+    "message": "{count, plural, one {# raven} two {# ravni} few {# ravni} other {# ravni}}"
+  },
+  "search.drives": {
+    "message": "Pogoni"
+  },
+  "search.duplicates.content": {
+    "message": "enaka vsebina"
+  },
+  "search.duplicates.label": {
+    "message": "Najdi podvojene datoteke:"
+  },
+  "search.duplicates.name": {
+    "message": "enako ime"
+  },
+  "search.duplicates.size": {
+    "message": "enaka velikost"
+  },
+  "search.edit": {
+    "message": "F4 Uredi"
+  },
+  "search.error.between_days": {
+    "message": "Datum med potrebuje oba dneva"
+  },
+  "search.error.date": {
+    "message": "{text} ni datum, kot je 2026-11-12"
+  },
+  "search.error.hex": {
+    "message": "{text} ni šestnajstiški niz, kot je 48 65 6c"
+  },
+  "search.error.keep": {
+    "message": "Iskanja ni bilo mogoče ohraniti: {err}"
+  },
+  "search.error.local_time": {
+    "message": "{text} ni veljaven krajevni čas"
+  },
+  "search.error.names_regex": {
+    "message": "Regularni izraz imena: {err}"
+  },
+  "search.error.newer_number": {
+    "message": "Ne starejše od potrebuje število, ne {text}"
+  },
+  "search.error.no_place": {
+    "message": "Išči v ne navaja nobene mape"
+  },
+  "search.error.no_text": {
+    "message": "Najdi besedilo ne navaja nobenega besedila"
+  },
+  "search.error.older_number": {
+    "message": "Starejše od potrebuje število, ne {text}"
+  },
+  "search.error.save": {
+    "message": "Iskanj ni bilo mogoče shraniti: {err}"
+  },
+  "search.error.size_number": {
+    "message": "Velikost datoteke potrebuje število, ne {text}"
+  },
+  "search.error.text_regex": {
+    "message": "Regularni izraz besedila: {err}"
+  },
+  "search.feed": {
+    "message": "Prenesi v seznam"
+  },
+  "search.go_to_file": {
+    "message": "Pojdi na datoteko"
+  },
+  "search.in_found": {
+    "message": "F2 Išči v najdenih datotekah"
+  },
+  "search.locate": {
+    "message": "Iz indeksa locate"
+  },
+  "search.names.label": {
+    "message": "Išči:"
+  },
+  "search.names.placeholder": {
+    "message": "*.txt *.md | backup*  (prazno: vse)"
+  },
+  "search.new": {
+    "message": "Novo iskanje"
+  },
+  "search.newer.label": {
+    "message": "Ne starejše od:"
+  },
+  "search.older.label": {
+    "message": "Starejše od:"
+  },
+  "search.only_selected": {
+    "message": "Išči samo v izbranih datotekah/mapah"
+  },
+  "search.only_selected_count": {
+    "message": "{count, plural, one {Išči samo v # izbranem} two {Išči samo v # izbranih} few {Išči samo v # izbranih} other {Išči samo v # izbranih}}"
+  },
+  "search.page.advanced": {
+    "message": "Napredno"
+  },
+  "search.page.general": {
+    "message": "Splošno"
+  },
+  "search.page.load_save": {
+    "message": "Naloži/shrani"
+  },
+  "search.places.browse_prompt": {
+    "message": "Išči v"
+  },
+  "search.places.label": {
+    "message": "Išči v:"
+  },
+  "search.places.placeholder": {
+    "message": "Mape, med njimi ;"
+  },
+  "search.regex": {
+    "message": "RegEx"
+  },
+  "search.results.label": {
+    "message": "Rezultati iskanja:"
+  },
+  "search.saved.delete": {
+    "message": "Izbriši"
+  },
+  "search.saved.label": {
+    "message": "Prejšnja iskanja:"
+  },
+  "search.saved.load": {
+    "message": "Naloži"
+  },
+  "search.saved.name_first": {
+    "message": "Najprej poimenujte iskanje."
+  },
+  "search.saved.name_placeholder": {
+    "message": "Ime iskanja"
+  },
+  "search.saved.save": {
+    "message": "Shrani"
+  },
+  "search.size.label": {
+    "message": "Velikost datoteke:"
+  },
+  "search.start": {
+    "message": "Začni iskanje"
+  },
+  "search.status.found": {
+    "message": "Najdeno: {files, plural, one {# datoteka} two {# datoteki} few {# datoteke} other {# datotek}} in {dirs, plural, one {# mapa} two {# mapi} few {# mape} other {# map}}"
+  },
+  "search.status.searching": {
+    "message": "Iskanje …"
+  },
+  "search.status.searching_in": {
+    "message": "Iskanje: {folder}"
+  },
+  "search.status.stopped": {
+    "message": "Ustavljeno. {counts}"
+  },
+  "search.stop": {
+    "message": "Ustavi"
+  },
+  "search.text.ansi": {
+    "message": "ANSI (kodna stran {page})"
+  },
+  "search.text.case_sensitive": {
+    "message": "Razlikuj velike in male črke"
+  },
+  "search.text.hex": {
+    "message": "Šestnajstiško"
+  },
+  "search.text.label": {
+    "message": "Najdi besedilo:"
+  },
+  "search.text.not_containing": {
+    "message": "Najdi datoteke, ki besedila NE vsebujejo"
+  },
+  "search.text.office": {
+    "message": "Pisarniške datoteke (docx, xlsx, pptx, odt …)"
+  },
+  "search.text.placeholder": {
+    "message": "Iskano besedilo"
+  },
+  "search.text.whole_words": {
+    "message": "Samo cele besede"
+  },
+  "search.title": {
+    "message": "Iskanje datotek"
+  },
+  "search.unit.bytes": {
+    "message": "bajtov"
+  },
+  "search.view": {
+    "message": "F3 Ogled"
+  },
+  "settings.addons.builtin_version": {
+    "message": "{version}, priloženo programu Spark Commander"
+  },
+  "settings.addons.check_daily": {
+    "message": "Ob zagonu in dnevno preveri posodobitve dodatkov in jih ponudi"
+  },
+  "settings.addons.check_failed": {
+    "message": "Posodobitev ni bilo mogoče preveriti: {err}"
+  },
+  "settings.addons.check_now": {
+    "message": "Preveri zdaj"
+  },
+  "settings.addons.checking": {
+    "message": "Iskanje posodobitev..."
+  },
+  "settings.addons.download": {
+    "message": "Prenesi"
+  },
+  "settings.addons.downloading": {
+    "message": "Prenašanje: {done} od {size}"
+  },
+  "settings.addons.file": {
+    "message": "Datoteka"
+  },
+  "settings.addons.installed.builtin": {
+    "message": "priloženo programu Spark Commander"
+  },
+  "settings.addons.installed.label": {
+    "message": "Nameščeno"
+  },
+  "settings.addons.installed.none": {
+    "message": "nič"
+  },
+  "settings.addons.intro": {
+    "message": "Spark Commander za nekatera opravila uporablja te programe drugih projektov. Dodatki se prenesejo ločeno, ko se za to odločite; 7-Zip in PDFium sta priložena."
+  },
+  "settings.addons.never_offer": {
+    "message": "Nikoli ne ponudi dodatkov, ko jih datoteka potrebuje"
+  },
+  "settings.addons.offers": {
+    "message": "Ponudbe in posodobitve"
+  },
+  "settings.addons.online.label": {
+    "message": "Na spletu"
+  },
+  "settings.addons.online.looking": {
+    "message": "iskanje..."
+  },
+  "settings.addons.online.none": {
+    "message": "nič za ta sistem"
+  },
+  "settings.addons.online.not_yet": {
+    "message": "še ni preverjeno"
+  },
+  "settings.addons.online.unknown": {
+    "message": "neznano"
+  },
+  "settings.addons.remove": {
+    "message": "Odstrani"
+  },
+  "settings.addons.up_to_date": {
+    "message": "Seznam dodatkov je posodobljen."
+  },
+  "settings.addons.version": {
+    "message": "Različica"
+  },
+  "settings.addons.website": {
+    "message": "Spletno mesto"
+  },
+  "settings.appearance.title": {
+    "message": "Videz"
+  },
+  "settings.apply": {
+    "message": "Uporabi"
+  },
+  "settings.backdrop.blur": {
+    "message": "Zabriši namizje v ozadju"
+  },
+  "settings.backdrop.clear": {
+    "message": "0 %, samo namizje"
+  },
+  "settings.backdrop.cover": {
+    "message": "Koliko prekrije namizje v ozadju:"
+  },
+  "settings.backdrop.opacity": {
+    "message": "{opacity} %"
+  },
+  "settings.backdrop.sidebar": {
+    "message": "Stranska vrstica"
+  },
+  "settings.backdrop.solid": {
+    "message": "100 %, neprosojno"
+  },
+  "settings.backdrop.terminal": {
+    "message": "Terminal"
+  },
+  "settings.cancel": {
+    "message": "Prekliči"
+  },
+  "settings.date.as_system": {
+    "message": "Kot v sistemu: {date}"
+  },
+  "settings.date.custom": {
+    "message": "Po meri:"
+  },
+  "settings.date.pattern_help": {
+    "message": "yyyy leto, MM mesec (MMM njegovo ime), dd dan (ddd dan v tednu)"
+  },
+  "settings.date.shown_as": {
+    "message": "Prikazano kot"
+  },
+  "settings.date.shown_as_note": {
+    "message": "v seznamih datotek; pogovorna okna dodajo sekunde"
+  },
+  "settings.date.title": {
+    "message": "Datum"
+  },
+  "settings.editor.browse": {
+    "message": "Prebrskaj..."
+  },
+  "settings.editor.choose": {
+    "message": "Izberi"
+  },
+  "settings.editor.external": {
+    "message": "Zunanji urejevalnik (Ctrl+Shift+F4):"
+  },
+  "settings.editor.external_help": {
+    "message": "%1 je datoteka, sicer gre na konec; npr. code --wait %1"
+  },
+  "settings.editor.limit": {
+    "message": "Vgrajeni urejevalnik (F4) odpre datoteke do"
+  },
+  "settings.editor.limit_unit": {
+    "message": "MB"
+  },
+  "settings.editor.title": {
+    "message": "Urejevalnik za F4"
+  },
+  "settings.error.no_folder": {
+    "message": "ni mape za konfiguracijo"
+  },
+  "settings.files_shown.hidden": {
+    "message": "Skrite datoteke"
+  },
+  "settings.files_shown.system": {
+    "message": "Sistemske datoteke"
+  },
+  "settings.files_shown.title": {
+    "message": "Prikazane datoteke"
+  },
+  "settings.font.as_system": {
+    "message": "Kot v sistemu"
+  },
+  "settings.font.chosen": {
+    "message": "Izbrana; sistemska je {family}, {size}"
+  },
+  "settings.font.fixed": {
+    "message": "Pregledovalnik"
+  },
+  "settings.font.fixed_note": {
+    "message": "Samo pisave s fiksno širino; velja tudi za urejevalnik in primerjavo datotek."
+  },
+  "settings.font.main": {
+    "message": "Pisava glavnega okna"
+  },
+  "settings.font.system": {
+    "message": "Sistemska pisava"
+  },
+  "settings.language.system": {
+    "message": "Jezik sistema"
+  },
+  "settings.language.system_named": {
+    "message": "Jezik sistema: {language}"
+  },
+  "settings.language.title": {
+    "message": "Jezik"
+  },
+  "settings.menus.automatic": {
+    "message": "Samodejno: gumb ☰ v GNOME, drugje menijska vrstica"
+  },
+  "settings.menus.bar": {
+    "message": "Menijska vrstica"
+  },
+  "settings.menus.button": {
+    "message": "Gumb ☰ v naslovni vrstici"
+  },
+  "settings.menus.title": {
+    "message": "Meniji"
+  },
+  "settings.ok": {
+    "message": "V redu"
+  },
+  "settings.page.addons": {
+    "message": "Dodatki"
+  },
+  "settings.page.date": {
+    "message": "Datum"
+  },
+  "settings.page.display": {
+    "message": "Prikaz"
+  },
+  "settings.page.edit_view": {
+    "message": "Urejanje/ogled"
+  },
+  "settings.page.font": {
+    "message": "Pisava"
+  },
+  "settings.page.language": {
+    "message": "Jezik"
+  },
+  "settings.page.layout": {
+    "message": "Postavitev"
+  },
+  "settings.page.operations": {
+    "message": "Opravila"
+  },
+  "settings.page.passwords": {
+    "message": "Gesla"
+  },
+  "settings.page.terminal": {
+    "message": "Terminal"
+  },
+  "settings.page.toolbar": {
+    "message": "Orodna vrstica"
+  },
+  "settings.passwords.change_master": {
+    "message": "Spremeni glavno geslo …"
+  },
+  "settings.passwords.locked": {
+    "message": "V tem računalniku so zaklenjena: odpre jih glavno geslo."
+  },
+  "settings.passwords.master_set": {
+    "message": "Glavno geslo je nastavljeno: ko kopirate mapo z nastavitvami, se gesla odprejo v drugem računalniku, ko tam vnesete glavno geslo."
+  },
+  "settings.passwords.no_master": {
+    "message": "Glavno geslo ni nastavljeno: ko kopirate mapo z nastavitvami, se gesla v drugem računalniku ne odprejo; tam jih vnesete znova."
+  },
+  "settings.passwords.not_removed": {
+    "message": "Glavno geslo ni bilo odstranjeno: {err}"
+  },
+  "settings.passwords.remove_master": {
+    "message": "Odstrani glavno geslo"
+  },
+  "settings.passwords.saved": {
+    "message": "{count, plural, one {Shranjeno je # geslo} two {Shranjeni sta # gesli} few {Shranjena so # gesla} other {Shranjenih je # gesel}} (za strežnike, skupne rabe, šifrirane pogone), šifrirano v mapi z nastavitvami; ključ, ki jih odpre, je v zbirki ključev tega računalnika."
+  },
+  "settings.passwords.set_master": {
+    "message": "Nastavi glavno geslo …"
+  },
+  "settings.passwords.title": {
+    "message": "Shranjena gesla"
+  },
+  "settings.passwords.unlock": {
+    "message": "Odkleni …"
+  },
+  "settings.queue.clear_after": {
+    "message": "Počisti končana opravila po"
+  },
+  "settings.queue.clear_after_help": {
+    "message": "0: takoj, ko se končajo. Neuspešna in preklicana ostanejo, dokler jih ne počistite."
+  },
+  "settings.queue.clear_after_unit": {
+    "message": "minutah"
+  },
+  "settings.queue.download_limit": {
+    "message": "Omejitev hitrosti prenosa"
+  },
+  "settings.queue.download_limit_help": {
+    "message": "Prenesi s povezave ter kopiranje s strežnikov FTP in SFTP; tudi tista, ki že tečejo. 0: brez omejitve."
+  },
+  "settings.queue.download_limit_unit": {
+    "message": "KB/s"
+  },
+  "settings.queue.title": {
+    "message": "Čakalna vrsta opravil"
+  },
+  "settings.shell.default": {
+    "message": "Privzeto: {shell}"
+  },
+  "settings.shell.note": {
+    "message": "Zagnajo jo novi zavihki terminala."
+  },
+  "settings.shell.title": {
+    "message": "Lupina"
+  },
+  "settings.sort_folders.by_name": {
+    "message": "Vedno po imenu"
+  },
+  "settings.sort_folders.like_files": {
+    "message": "Kot datoteke (tudi po času)"
+  },
+  "settings.sort_folders.title": {
+    "message": "Razvrščanje map"
+  },
+  "settings.tabs.header_always": {
+    "message": "Pokaži vrstico zavihkov tudi, ko je odprt le en zavihek"
+  },
+  "settings.tabs.title": {
+    "message": "Zavihki map"
+  },
+  "settings.time.as_system": {
+    "message": "Kot v sistemu"
+  },
+  "settings.time.h12": {
+    "message": "12 ur (2:05 PM)"
+  },
+  "settings.time.h24": {
+    "message": "24 ur (14:05)"
+  },
+  "settings.time.title": {
+    "message": "Čas"
+  },
+  "settings.title": {
+    "message": "Nastavitve"
+  },
+  "settings.toolbar.add": {
+    "message": "Dodaj gumb …"
+  },
+  "settings.toolbar.move_down": {
+    "message": "Premakni navzdol"
+  },
+  "settings.toolbar.move_up": {
+    "message": "Premakni navzgor"
+  },
+  "settings.toolbar.place": {
+    "message": "Pod menijsko vrstico; v naslovni vrstici, kjer so meniji za gumbom ☰, kot v programih GNOME. Brez gumbov je ni."
+  },
+  "settings.toolbar.remove": {
+    "message": "Odstrani"
+  },
+  "settings.toolbar.replace": {
+    "message": "Zamenjaj …"
+  },
+  "settings.toolbar.restore_default": {
+    "message": "Obnovi privzeto"
+  },
+  "settings.toolbar.title": {
+    "message": "Gumbi orodne vrstice"
+  },
+  "settings.viewer.font.ansi": {
+    "message": "ANSI (Windows)"
+  },
+  "settings.viewer.font.ascii": {
+    "message": "ASCII (DOS)"
+  },
+  "settings.viewer.font.auto": {
+    "message": "Samodejno zaznaj"
+  },
+  "settings.viewer.font.label": {
+    "message": "Pisava ob zagonu:"
+  },
+  "settings.viewer.font.variable": {
+    "message": "Spremenljiva širina"
+  },
+  "settings.viewer.minimap": {
+    "message": "Mini zemljevid"
+  },
+  "settings.viewer.show": {
+    "message": "Pokaži:"
+  },
+  "settings.viewer.start.auto": {
+    "message": "Samodejno zaznaj"
+  },
+  "settings.viewer.start.binary": {
+    "message": "Binarno"
+  },
+  "settings.viewer.start.hex": {
+    "message": "Šestnajstiško"
+  },
+  "settings.viewer.start.label": {
+    "message": "Prikaz ob zagonu:"
+  },
+  "settings.viewer.start.text": {
+    "message": "Besedilo"
+  },
+  "settings.viewer.title": {
+    "message": "Pregledovalnik za F3"
+  },
+  "settings.viewer.width.binary": {
+    "message": "Binarno"
+  },
+  "settings.viewer.width.label": {
+    "message": "Širina prikaza (znaki):"
+  },
+  "settings.viewer.width.text": {
+    "message": "Besedilo"
+  },
+  "settings.viewer.wrap": {
+    "message": "Prelomi besedilo"
+  },
+  "shells.command_prompt": {
+    "message": "Ukazni poziv"
+  },
+  "sidebar.device.no_files": {
+    "message": "ne deli datotek"
+  },
+  "sidebar.device.not_answering": {
+    "message": "{name} se ne odziva: odklenite napravo in na njej odprite KDE Connect, nato znova preberite mapo (F2)."
+  },
+  "sidebar.device.not_answering_error": {
+    "message": "{name} se ne odziva ({err}): odklenite napravo in na njej odprite KDE Connect."
+  },
+  "sidebar.device.not_connected": {
+    "message": "ni povezano"
+  },
+  "sidebar.device.opening": {
+    "message": "Odpiranje {name}..."
+  },
+  "sidebar.device.reconnecting": {
+    "message": "{name} se ne odziva: vnovično povezovanje..."
+  },
+  "sidebar.device.unmount_failed": {
+    "message": "{name}: ni mogoče odklopiti: {err}"
+  },
+  "sidebar.group.bookmarks": {
+    "message": "Zaznamki"
+  },
+  "sidebar.group.cloud": {
+    "message": "Oblak"
+  },
+  "sidebar.group.devices": {
+    "message": "Naprave"
+  },
+  "sidebar.group.drives": {
+    "message": "Pogoni"
+  },
+  "sidebar.group.network": {
+    "message": "Omrežje"
+  },
+  "sidebar.section.connections": {
+    "message": "Povezave"
+  },
+  "sidebar.section.folders": {
+    "message": "Mape"
+  },
+  "sidebar.section.operations": {
+    "message": "Opravila"
+  },
+  "sidebar.section.places": {
+    "message": "Mesta"
+  },
+  "sidebar.volume.locked": {
+    "message": "zaklenjeno"
+  },
+  "sidebar.volume.mounting": {
+    "message": "Priklapljanje {name}..."
+  },
+  "sidebar.volume.not_mounted": {
+    "message": "ni priklopljeno"
+  },
+  "sidebar.volume.open": {
+    "message": "Odpri"
+  },
+  "sidebar.volume.space": {
+    "message": "{free} prosto od {total}"
+  },
+  "sidebar.volume.unmount": {
+    "message": "Odklopi"
+  },
+  "sidebar.volume.unmount_failed": {
+    "message": "Ni mogoče odklopiti: {err}"
+  },
+  "split.bad_size": {
+    "message": "„{size}“ ni velikost: 100 MB, 1.5 GB, 650m"
+  },
+  "split.choose": {
+    "message": "Postavite kazalko na datoteko, ki jo želite razdeliti."
+  },
+  "split.combine.choose": {
+    "message": "Postavite kazalko na del (name.001) ali na njegovo datoteko .crc."
+  },
+  "split.combine.dialog_title": {
+    "message": "Združi datoteke"
+  },
+  "split.combine.label": {
+    "message": "Združi dele v datoteko:"
+  },
+  "split.combine.title": {
+    "message": "Združi „{name}“"
+  },
+  "split.combined_no_crc": {
+    "message": "{count, plural, one {# del združen, ni datoteke CRC za preverjanje} two {# dela združena, ni datoteke CRC za preverjanje} few {# deli združeni, ni datoteke CRC za preverjanje} other {# delov združenih, ni datoteke CRC za preverjanje}}"
+  },
+  "split.crc_mismatch": {
+    "message": "{target} se ne ujema s podatki v {file}: del manjka ali je poškodovan"
+  },
+  "split.crc_names_no_file": {
+    "message": "datoteka CRC ne navaja nobene datoteke"
+  },
+  "split.crc_unreadable": {
+    "message": "združeno, vendar {file} ni bilo mogoče prebrati: {err}"
+  },
+  "split.dialog_title": {
+    "message": "Razdeli datoteko"
+  },
+  "split.label": {
+    "message": "Razdeli „{name}“ na dele v mapi:"
+  },
+  "split.part_missing": {
+    "message": "{path} manjka"
+  },
+  "split.part_size": {
+    "message": "Velikost dela:"
+  },
+  "split.title": {
+    "message": "Razdeli „{name}“"
+  },
+  "sync.close": {
+    "message": "Zapri"
+  },
+  "sync.column.date": {
+    "message": "Datum"
+  },
+  "sync.column.name": {
+    "message": "Ime"
+  },
+  "sync.column.size": {
+    "message": "Velikost"
+  },
+  "sync.compare": {
+    "message": "Primerjaj"
+  },
+  "sync.confirm.copy_left": {
+    "message": "Kopiraj {count} na levo ({size})"
+  },
+  "sync.confirm.copy_right": {
+    "message": "Kopiraj {count} na desno ({size})"
+  },
+  "sync.confirm.delete_left": {
+    "message": "Izbriši {count} na levi"
+  },
+  "sync.confirm.delete_right": {
+    "message": "Izbriši {count} na desni"
+  },
+  "sync.confirm.ok": {
+    "message": "Sinhroniziraj"
+  },
+  "sync.confirm.text": {
+    "message": "{actions}. Kopirane datoteke zamenjajo tamkajšnje.{trash, select, yes { Izbrisane v tem računalniku gredo v koš.} other {}}"
+  },
+  "sync.confirm.title": {
+    "message": "Sinhroniziraj"
+  },
+  "sync.error.changed": {
+    "message": "spremenjeno po primerjavi; primerjajte znova"
+  },
+  "sync.error.compare": {
+    "message": "Ni mogoče primerjati: {err}"
+  },
+  "sync.error.no_folders": {
+    "message": "Sinhroniziraj mape primerja dve mapi: nobena plošča ne sme prikazovati arhiva ali rezultatov iskanja."
+  },
+  "sync.left": {
+    "message": "Levo"
+  },
+  "sync.mask.label": {
+    "message": "Datoteke:"
+  },
+  "sync.option.asymmetric": {
+    "message": "Asimetrično (desna postane kopija leve)"
+  },
+  "sync.option.by_content": {
+    "message": "Po vsebini"
+  },
+  "sync.option.ignore_date": {
+    "message": "Prezri datum"
+  },
+  "sync.option.subfolders": {
+    "message": "Podmape"
+  },
+  "sync.result.done": {
+    "message": "{count, plural, one {# sinhroniziran} two {# sinhronizirana} few {# sinhronizirani} other {# sinhroniziranih}}"
+  },
+  "sync.result.failed": {
+    "message": "{count, plural, one {# nesinhroniziran} two {# nesinhronizirana} few {# nesinhronizirani} other {# nesinhroniziranih}}; {first}"
+  },
+  "sync.right": {
+    "message": "Desno"
+  },
+  "sync.show.equal": {
+    "message": "= enake"
+  },
+  "sync.show.label": {
+    "message": "Pokaži:"
+  },
+  "sync.show.other": {
+    "message": "≠ pri miru"
+  },
+  "sync.show.to_left": {
+    "message": "← na levo"
+  },
+  "sync.show.to_right": {
+    "message": "→ na desno"
+  },
+  "sync.status.both_empty": {
+    "message": "Obe sta prazni."
+  },
+  "sync.status.comparing": {
+    "message": "Primerjanje {folder}"
+  },
+  "sync.status.counts": {
+    "message": "kopiranje na desno: {right}, kopiranje na levo: {left}, brisanje: {delete}, enakih: {equal}, pri miru: {alone}"
+  },
+  "sync.status.stopped": {
+    "message": "Ustavljeno."
+  },
+  "sync.stop": {
+    "message": "Ustavi"
+  },
+  "sync.synchronize": {
+    "message": "Sinhroniziraj..."
+  },
+  "sync.task.title": {
+    "message": "Sinhroniziraj {left} in {right}"
+  },
+  "sync.title": {
+    "message": "Sinhroniziraj mape"
+  },
+  "tab_menu.close_all_tabs": {
+    "message": "Zapri vse zavihke"
+  },
+  "tab_menu.close_duplicate_tabs": {
+    "message": "Zapri podvojene zavihke"
+  },
+  "tab_menu.close_tab": {
+    "message": "Zapri ta zavihek"
+  },
+  "tab_menu.copy_tab_to_other_panel": {
+    "message": "Kopiraj zavihek v drugo ploščo"
+  },
+  "tab_menu.duplicate_tab": {
+    "message": "Podvoji ta zavihek"
+  },
+  "tab_menu.list_tabs": {
+    "message": "Pokaži seznam vseh zavihkov"
+  },
+  "tab_menu.lock_tab": {
+    "message": "Zakleni ta zavihek"
+  },
+  "tab_menu.none": {
+    "message": "(nič)"
+  },
+  "tab_menu.rename_tab": {
+    "message": "Preimenuj zavihek..."
+  },
+  "tabs.error.reopen": {
+    "message": "Zavihka ni bilo mogoče znova odpreti: {err}"
+  },
+  "tabs.history.empty": {
+    "message": "V zgodovini tega zavihka še ni map."
+  },
+  "tabs.new": {
+    "message": "Nov zavihek"
+  },
+  "tabs.rename.label": {
+    "message": "Novo ime:"
+  },
+  "tabs.rename.title": {
+    "message": "Preimenuj zavihek"
+  },
+  "tabs.search_results": {
+    "message": "Rezultati iskanja"
+  },
+  "terminal.busy": {
+    "message": "V terminalu se izvaja program: ukaz zaženite, ko se konča."
+  },
+  "terminal.close.idle": {
+    "message": "Želite zapreti ta zavihek terminala? Njegova lupina se bo končala."
+  },
+  "terminal.close.ok": {
+    "message": "Zapri"
+  },
+  "terminal.close.running": {
+    "message": "Želite zapreti ta zavihek terminala? Program, ki se v njem izvaja, bo ustavljen."
+  },
+  "terminal.close.title": {
+    "message": "Zapri zavihek"
+  },
+  "terminal.error.start_shell": {
+    "message": "Lupine ni bilo mogoče zagnati: {err}"
+  },
+  "terminal.jump_to_bottom": {
+    "message": "Skoči na dno (Ctrl+End) ↓"
+  },
+  "terminal.menu.copy": {
+    "message": "Kopiraj"
+  },
+  "terminal.menu.paste": {
+    "message": "Prilepi"
+  },
+  "toolbar.customize": {
+    "message": "Prilagodi orodno vrstico …"
+  },
+  "tools.clear_key": {
+    "message": "Počisti"
+  },
+  "tools.close": {
+    "message": "Zapri"
+  },
+  "tools.delete": {
+    "message": "Izbriši"
+  },
+  "tools.empty": {
+    "message": "Še ni orodij: Novo... doda orodje."
+  },
+  "tools.field.command": {
+    "message": "Ukaz"
+  },
+  "tools.field.key": {
+    "message": "Tipka"
+  },
+  "tools.field.name": {
+    "message": "Ime"
+  },
+  "tools.intro": {
+    "message": "Vaše lastne ukazne vrstice v meniju Orodja: kliknite eno tam ali pritisnite njeno tipko."
+  },
+  "tools.key.none": {
+    "message": "Brez"
+  },
+  "tools.key.waiting": {
+    "message": "Pritisnite tipko... (Esc: brez)"
+  },
+  "tools.move_down": {
+    "message": "Premakni navzdol"
+  },
+  "tools.move_up": {
+    "message": "Premakni navzgor"
+  },
+  "tools.name.placeholder": {
+    "message": "Primerjaj z drugo stranjo"
+  },
+  "tools.new": {
+    "message": "Novo..."
+  },
+  "tools.new_name": {
+    "message": "Orodje {number}"
+  },
+  "tools.no_command": {
+    "message": "{tool} še nima ukaza: Orodja > Upravljaj orodja."
+  },
+  "tools.not_local": {
+    "message": "Orodja se izvajajo v tem računalniku: plošča prikazuje strežnik ali arhiv."
+  },
+  "tools.note.key_of_command": {
+    "message": "{key} je tudi {command}: prevzame jo orodje."
+  },
+  "tools.note.key_of_other_tool": {
+    "message": "{key} ima tudi {tool}: prevzame jo tisto, ki je nižje na seznamu."
+  },
+  "tools.placeholders": {
+    "message": "%P mapa te plošče, %T mapa druge (obe se končata z ločilom, zato je \"%P%N\" pot), %N datoteka pod kazalko, %O njeno ime brez končnice, %E končnica, %S izbrane datoteke (sicer tista pod kazalko), vsaka v narekovajih; %% je %. Ostalo dajte v narekovaje: \"%P%N\"."
+  },
+  "tools.run_in_terminal": {
+    "message": "Zaženi v terminalu, da vidite, kaj izpiše"
+  },
+  "tools.set_key": {
+    "message": "Nastavi tipko..."
+  },
+  "tools.title": {
+    "message": "Orodja"
+  },
+  "transfer.answer.cancel": {
+    "message": "Prekliči"
+  },
+  "transfer.answer.elevate": {
+    "message": "Kot skrbnik"
+  },
+  "transfer.answer.overwrite": {
+    "message": "Prepiši"
+  },
+  "transfer.answer.overwrite_all": {
+    "message": "Prepiši vse"
+  },
+  "transfer.answer.rename": {
+    "message": "Preimenuj"
+  },
+  "transfer.answer.retry": {
+    "message": "Poskusi znova"
+  },
+  "transfer.answer.skip": {
+    "message": "Preskoči"
+  },
+  "transfer.answer.skip_all": {
+    "message": "Preskoči vse"
+  },
+  "transfer.archive.local_only": {
+    "message": "V arhiv gredo le datoteke tega računalnika: najprej jih kopirajte sem."
+  },
+  "transfer.cancel": {
+    "message": "Prekliči"
+  },
+  "transfer.error.elevate_hint": {
+    "message": "Kot skrbnik: to in vse drugo, kar je zavrnjeno, ko je ostalo končano, z enkratnim vnosom gesla."
+  },
+  "transfer.error.title": {
+    "message": "Napaka"
+  },
+  "transfer.exists.describe": {
+    "message": "{count, plural, one {{size} bajt, {time}} two {{size} bajta, {time}} few {{size} bajti, {time}} other {{size} bajtov, {time}}}"
+  },
+  "transfer.exists.text": {
+    "message": "Že tam: {existing}\nNova: {new}"
+  },
+  "transfer.exists.title": {
+    "message": "Datoteka obstaja"
+  },
+  "transfer.extract_failed": {
+    "message": "Ni jih bilo mogoče vzeti iz arhiva: {err}"
+  },
+  "transfer.into_archive.question_many": {
+    "message": "{kind, select, copy {Želite kopirati} other {Želite premakniti}} {count, plural, one {# element} two {# elementa} few {# elemente} other {# elementov}} v {into}? Kar ima tam enaka imena, bo zamenjano."
+  },
+  "transfer.into_archive.question_one": {
+    "message": "{kind, select, copy {Želite kopirati} other {Želite premakniti}} „{name}“ v {into}? Kar ima tam enako ime, bo zamenjano."
+  },
+  "transfer.into_archive.title_many": {
+    "message": "{kind, select, copy {Kopiraj} other {Premakni}} {count, plural, one {# element} two {# elementa} few {# elemente} other {# elementov}} v {archive}"
+  },
+  "transfer.into_archive.title_one": {
+    "message": "{kind, select, copy {Kopiraj} other {Premakni}} „{name}“ v {archive}"
+  },
+  "transfer.label.many": {
+    "message": "{kind, select, copy {Kopiraj} other {Premakni}} {count, plural, one {# element} two {# elementa} few {# elemente} other {# elementov}} v:"
+  },
+  "transfer.label.many_server": {
+    "message": "{kind, select, copy {Kopiraj} other {Premakni}} {count, plural, one {# element} two {# elementa} few {# elemente} other {# elementov}} na {server}:"
+  },
+  "transfer.label.one": {
+    "message": "{kind, select, copy {Kopiraj} other {Premakni}} „{name}“ v:"
+  },
+  "transfer.label.one_server": {
+    "message": "{kind, select, copy {Kopiraj} other {Premakni}} „{name}“ na {server}:"
+  },
+  "transfer.ok": {
+    "message": "V redu"
+  },
+  "transfer.overwrite.all": {
+    "message": "Prepiši vse"
+  },
+  "transfer.overwrite.ask": {
+    "message": "Vprašaj"
+  },
+  "transfer.overwrite.label": {
+    "message": "Kjer ima cilj datoteko z enakim imenom:"
+  },
+  "transfer.overwrite.older": {
+    "message": "Prepiši starejše"
+  },
+  "transfer.overwrite.rename": {
+    "message": "Preimenuj kopije"
+  },
+  "transfer.overwrite.skip": {
+    "message": "Preskoči vse"
+  },
+  "transfer.remove_moved": {
+    "message": "Odstrani premaknjeno iz {name}"
+  },
+  "transfer.speed": {
+    "message": "{size}/s"
+  },
+  "transfer.strip.counting": {
+    "message": "štetje: {count, plural, one {# datoteka} two {# datoteki} few {# datoteke} other {# datotek}}"
+  },
+  "transfer.strip.progress": {
+    "message": "{files} / {count, plural, one {# datoteka} two {# datoteki} few {# datoteke} other {# datotek}}, {percent} %"
+  },
+  "transfer.strip.queue": {
+    "message": "Čakalna vrsta..."
+  },
+  "transfer.strip.queue_waiting": {
+    "message": "Čakalna vrsta ({count, plural, one {# čaka} two {# čakata} few {# čakajo} other {# čaka}})..."
+  },
+  "transfer.title.copy": {
+    "message": "Kopiraj"
+  },
+  "transfer.title.move": {
+    "message": "Premakni"
+  },
+  "viewer.as_text_hint": {
+    "message": "{err}. Tipka 1 prikaže datoteko kot besedilo."
+  },
+  "viewer.book.cannot_read": {
+    "message": "Te knjige ni mogoče prebrati: {err}. Tipka 1 prikaže datoteko kot besedilo."
+  },
+  "viewer.book.continuing": {
+    "message": "Nadaljevanje pri {percent}"
+  },
+  "viewer.book.error.compression": {
+    "message": "stisnjena na način, ki se še ne bere ({compression})"
+  },
+  "viewer.book.error.damaged": {
+    "message": "poškodovana knjiga"
+  },
+  "viewer.book.error.damaged_zip": {
+    "message": "poškodovan zip"
+  },
+  "viewer.book.error.drm": {
+    "message": "zaščitena z DRM: brati jo je mogoče le v Kindlu"
+  },
+  "viewer.book.error.huffman": {
+    "message": "stisnjena kot Amazonove lastne knjige (HUFF/CDIC), kar se še ne bere"
+  },
+  "viewer.book.error.missing_part": {
+    "message": "{name} ni v knjigi"
+  },
+  "viewer.book.error.no_package": {
+    "message": "v knjigi ni datoteke paketa"
+  },
+  "viewer.book.error.no_text": {
+    "message": "knjiga nima besedila"
+  },
+  "viewer.book.error.not_zip": {
+    "message": "ni zip: poškodovana ali z DRM zaščitena knjiga?"
+  },
+  "viewer.book.error.zip_method": {
+    "message": "{name}: stisnjeno z načinom zip, ki ga tukaj ni mogoče brati ({method})"
+  },
+  "viewer.cannot_show": {
+    "message": "Ni mogoče prikazati: {err}"
+  },
+  "viewer.convert.failed": {
+    "message": "{tool} ga ni mogel pretvoriti ({status})"
+  },
+  "viewer.converting": {
+    "message": "Pretvarjanje s programom {tool} …"
+  },
+  "viewer.copy.too_large": {
+    "message": "Izbori, večji od {megabytes} MB, se ne kopirajo."
+  },
+  "viewer.encoding.cp1250": {
+    "message": "Vzhodna Evropa (1250)"
+  },
+  "viewer.encoding.cp1251": {
+    "message": "Cirilica Windows (1251)"
+  },
+  "viewer.encoding.cp1252": {
+    "message": "Zahodna Latin1 (1252)"
+  },
+  "viewer.encoding.cp1253": {
+    "message": "Grščina (1253)"
+  },
+  "viewer.encoding.cp1254": {
+    "message": "Turščina (1254)"
+  },
+  "viewer.encoding.cp1255": {
+    "message": "Hebrejščina (1255)"
+  },
+  "viewer.encoding.cp1256": {
+    "message": "Arabščina (1256)"
+  },
+  "viewer.encoding.cp1257": {
+    "message": "Baltski jeziki (1257)"
+  },
+  "viewer.encoding.cp1258": {
+    "message": "Vietnamščina (1258)"
+  },
+  "viewer.encoding.cp20866": {
+    "message": "Cirilica KOI8-R (20866)"
+  },
+  "viewer.encoding.cp437": {
+    "message": "DOS-USA (437)"
+  },
+  "viewer.encoding.cp850": {
+    "message": "DOS-LATIN1 (850)"
+  },
+  "viewer.encoding.cp852": {
+    "message": "DOS Srednja Evropa (852)"
+  },
+  "viewer.encoding.cp866": {
+    "message": "DOS cirilica (866)"
+  },
+  "viewer.encoding.cp874": {
+    "message": "Tajščina (874)"
+  },
+  "viewer.encoding.cp932": {
+    "message": "Japonščina (932)"
+  },
+  "viewer.encoding.cp936": {
+    "message": "Kitajščina, celinska (936)"
+  },
+  "viewer.encoding.cp949": {
+    "message": "Korejščina (949)"
+  },
+  "viewer.encoding.cp950": {
+    "message": "Kitajščina, Tajvan (950)"
+  },
+  "viewer.find.not_found": {
+    "message": "Ni najdeno: {text}"
+  },
+  "viewer.find.not_hex": {
+    "message": "Ni šestnajstiški niz: {text}"
+  },
+  "viewer.find.nothing": {
+    "message": "Ničesar ni za iskanje."
+  },
+  "viewer.find.save_failed": {
+    "message": "Iskanj ni bilo mogoče shraniti: {err}"
+  },
+  "viewer.loading": {
+    "message": "Nalaganje …"
+  },
+  "viewer.markdown.too_large": {
+    "message": "Več kot {megabytes} MB: tipka 1 to prikaže kot besedilo."
+  },
+  "viewer.menu.binary": {
+    "message": "Binarno (fiksna dolžina vrstice)"
+  },
+  "viewer.menu.book": {
+    "message": "Knjiga (EPUB, FB2)"
+  },
+  "viewer.menu.close": {
+    "message": "Zapri"
+  },
+  "viewer.menu.configure": {
+    "message": "Nastavi..."
+  },
+  "viewer.menu.copy_hex": {
+    "message": "Kopiraj kot šestnajstiške znake"
+  },
+  "viewer.menu.copy_text": {
+    "message": "Kopiraj kot besedilo"
+  },
+  "viewer.menu.edit": {
+    "message": "Urejanje"
+  },
+  "viewer.menu.encoding": {
+    "message": "Kodiranje"
+  },
+  "viewer.menu.file": {
+    "message": "Datoteka"
+  },
+  "viewer.menu.find": {
+    "message": "Najdi..."
+  },
+  "viewer.menu.find_next": {
+    "message": "Najdi naslednje"
+  },
+  "viewer.menu.fit_image": {
+    "message": "Prilagodi sliko oknu"
+  },
+  "viewer.menu.font_ansi": {
+    "message": "ANSI (nabor znakov Windows)"
+  },
+  "viewer.menu.font_ascii": {
+    "message": "ASCII (nabor znakov DOS)"
+  },
+  "viewer.menu.font_page": {
+    "message": "Kot določa pisava"
+  },
+  "viewer.menu.font_variable": {
+    "message": "Spremenljiva širina znakov"
+  },
+  "viewer.menu.hex": {
+    "message": "Šestnajstiško"
+  },
+  "viewer.menu.html": {
+    "message": "Besedilo HTML (brez oznak)"
+  },
+  "viewer.menu.minimap": {
+    "message": "Mini zemljevid"
+  },
+  "viewer.menu.next_file": {
+    "message": "Naslednja datoteka"
+  },
+  "viewer.menu.only_larger": {
+    "message": "Prilagodi le večje slike"
+  },
+  "viewer.menu.open": {
+    "message": "Odpri..."
+  },
+  "viewer.menu.options": {
+    "message": "Možnosti"
+  },
+  "viewer.menu.picture": {
+    "message": "Slika/večpredstavnost"
+  },
+  "viewer.menu.previous_file": {
+    "message": "Prejšnja datoteka"
+  },
+  "viewer.menu.reload": {
+    "message": "Znova naloži"
+  },
+  "viewer.menu.save_as": {
+    "message": "Shrani kot..."
+  },
+  "viewer.menu.search_google": {
+    "message": "Poišči izbrano besedilo z Googlom"
+  },
+  "viewer.menu.select_all": {
+    "message": "Izberi vse"
+  },
+  "viewer.menu.syntax_colors": {
+    "message": "Barvanje sintakse"
+  },
+  "viewer.menu.text_only": {
+    "message": "Samo besedilo"
+  },
+  "viewer.menu.unicode": {
+    "message": "Unicode (UTF-16)"
+  },
+  "viewer.menu.wrap": {
+    "message": "Prelomi besedilo ({columns, plural, one {# stolpec} two {# stolpca} few {# stolpci} other {# stolpcev}})"
+  },
+  "viewer.mode.binary": {
+    "message": "Binarno · {page}"
+  },
+  "viewer.mode.book": {
+    "message": "Knjiga"
+  },
+  "viewer.mode.hex": {
+    "message": "Šestnajstiško · {page}"
+  },
+  "viewer.mode.html": {
+    "message": "Besedilo HTML"
+  },
+  "viewer.mode.image": {
+    "message": "Slika"
+  },
+  "viewer.mode.multimedia": {
+    "message": "Večpredstavnost"
+  },
+  "viewer.mode.pdf_by": {
+    "message": "PDF s programom {tool}"
+  },
+  "viewer.mode.text": {
+    "message": "Besedilo · {page}"
+  },
+  "viewer.origin.not_editable": {
+    "message": "urejati je mogoče le datoteke v arhivih 7z, zip, jar in tar"
+  },
+  "viewer.origin.updated": {
+    "message": "Arhiv {archive} je posodobljen"
+  },
+  "viewer.origin.updated_on": {
+    "message": "Arhiv {archive} na {server} je posodobljen"
+  },
+  "viewer.origin.uploaded": {
+    "message": "Naloženo: {path}"
+  },
+  "viewer.pdf.cannot_show": {
+    "message": "Tega PDF-ja ni mogoče prikazati: {err}"
+  },
+  "viewer.pdf.loading": {
+    "message": "Nalaganje..."
+  },
+  "viewer.pdf.page": {
+    "message": "Stran {page} / {pages}"
+  },
+  "viewer.picture.cannot_show": {
+    "message": "Te slike ni mogoče prikazati; tipka 1 jo prikaže kot besedilo."
+  },
+  "viewer.save_as.failed": {
+    "message": "{path} ni bilo mogoče shraniti: {err}"
+  },
+  "viewer.status.rows": {
+    "message": "{count, plural, one {{first}–{last} od {grouped} vrstice} two {{first}–{last} od {grouped} vrstic} few {{first}–{last} od {grouped} vrstic} other {{first}–{last} od {grouped} vrstic}}"
+  },
+  "viewer.status.rows_so_far": {
+    "message": "{count, plural, one {Doslej {grouped} vrstica, prebrano {percent}} two {Doslej {grouped} vrstici, prebrano {percent}} few {Doslej {grouped} vrstice, prebrano {percent}} other {Doslej {grouped} vrstic, prebrano {percent}}}"
+  },
+  "viewer.status.searching": {
+    "message": "Iskanje …"
+  },
+  "viewer.status.size": {
+    "message": "{count, plural, one {{grouped} bajt} two {{grouped} bajta} few {{grouped} bajti} other {{grouped} bajtov}}"
+  },
+  "viewer.window.title": {
+    "message": "{path} — pregledovalnik"
+  },
+  "viewer.zoom.fit": {
+    "message": "Nazaj na prilagoditev oknu (Ctrl+0)"
+  },
+  "viewer.zoom.in": {
+    "message": "Povečaj (Ctrl++)"
+  },
+  "viewer.zoom.out": {
+    "message": "Pomanjšaj (Ctrl+-)"
+  },
+  "viewer.zoom.reset": {
+    "message": "Nazaj na 100 % (Ctrl+0)"
+  },
+  "workspaces.button.close": {
+    "message": "Zapri"
+  },
+  "workspaces.button.delete": {
+    "message": "Izbriši..."
+  },
+  "workspaces.button.duplicate": {
+    "message": "Podvoji..."
+  },
+  "workspaces.button.new": {
+    "message": "Nov..."
+  },
+  "workspaces.button.rename": {
+    "message": "Preimenuj..."
+  },
+  "workspaces.delete.button": {
+    "message": "Izbriši"
+  },
+  "workspaces.delete.closed": {
+    "message": "Želite izbrisati delovni prostor „{name}“? Njegovi zavihki bodo pozabljeni."
+  },
+  "workspaces.delete.closed_shells": {
+    "message": "Želite izbrisati delovni prostor „{name}“? Njegovi zavihki bodo pozabljeni, lupine v njegovih zavihkih terminala pa se bodo končale."
+  },
+  "workspaces.delete.open": {
+    "message": "Želite izbrisati delovni prostor „{name}“? Njegovi zavihki se zaprejo; namesto njega se odpre „{other}“."
+  },
+  "workspaces.delete.open_shells": {
+    "message": "Želite izbrisati delovni prostor „{name}“? Njegovi zavihki se zaprejo, lupine v njegovih zavihkih terminala se končajo; namesto njega se odpre „{other}“."
+  },
+  "workspaces.delete.title": {
+    "message": "Izbriši delovni prostor"
+  },
+  "workspaces.duplicate.name": {
+    "message": "{name} – kopija"
+  },
+  "workspaces.duplicate.title": {
+    "message": "Podvoji delovni prostor"
+  },
+  "workspaces.error.name_taken": {
+    "message": "Drug delovni prostor že ima to ime."
+  },
+  "workspaces.error.no_name": {
+    "message": "Delovni prostor potrebuje ime."
+  },
+  "workspaces.error.save": {
+    "message": "Delovnih prostorov ni bilo mogoče shraniti: {err}"
+  },
+  "workspaces.hint": {
+    "message": "Prikaz > Delovni prostori odpre enega. Spremembe v odprtem se shranijo vanj."
+  },
+  "workspaces.name.label": {
+    "message": "Ime:"
+  },
+  "workspaces.new.name": {
+    "message": "Delovni prostor {number}"
+  },
+  "workspaces.new.title": {
+    "message": "Nov delovni prostor"
+  },
+  "workspaces.open": {
+    "message": "odprt"
+  },
+  "workspaces.rename.title": {
+    "message": "Preimenuj delovni prostor"
+  },
+  "workspaces.summary.panels": {
+    "message": "Levo {left, plural, one {# zavihek} two {# zavihka} few {# zavihki} other {# zavihkov}}, desno {right, plural, one {# zavihek} two {# zavihka} few {# zavihki} other {# zavihkov}}"
+  },
+  "workspaces.summary.terminal": {
+    "message": "Levo {left, plural, one {# zavihek} two {# zavihka} few {# zavihki} other {# zavihkov}}, desno {right, plural, one {# zavihek} two {# zavihka} few {# zavihki} other {# zavihkov}}, terminal {terminal, plural, one {# zavihek} two {# zavihka} few {# zavihki} other {# zavihkov}}"
+  },
+  "workspaces.summary.terminal_hidden": {
+    "message": "Levo {left, plural, one {# zavihek} two {# zavihka} few {# zavihki} other {# zavihkov}}, desno {right, plural, one {# zavihek} two {# zavihka} few {# zavihki} other {# zavihkov}}, terminal {terminal, plural, one {# zavihek} two {# zavihka} few {# zavihki} other {# zavihkov}} (skrit)"
+  },
+  "workspaces.title": {
+    "message": "Delovni prostori"
+  }
+}

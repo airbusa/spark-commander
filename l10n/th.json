@@ -1,0 +1,4823 @@
+{
+  "about.addons": {
+    "message": "ส่วนเสริม ดาวน์โหลดเมื่อคุณเลือก"
+  },
+  "about.libraries": {
+    "message": "สร้างขึ้นบน"
+  },
+  "about.licence": {
+    "message": "สัญญาอนุญาต:"
+  },
+  "about.made_with": {
+    "message": "สร้างด้วยผลงานของโปรเจกต์เหล่านี้"
+  },
+  "about.part.alacritty_terminal": {
+    "message": "หน้าจอและเชลล์ของเทอร์มินัลในตัว"
+  },
+  "about.part.encoding_rs": {
+    "message": "โค้ดเพจ"
+  },
+  "about.part.gpui": {
+    "message": "หน้าต่าง การวาด และการป้อนข้อมูล (ของ Zed)"
+  },
+  "about.part.gpui_kit": {
+    "message": "ตัวควบคุม: รายการ เมนู ช่องข้อมูล ตัวแก้ไข"
+  },
+  "about.part.html5ever": {
+    "message": "HTML และอีบุ๊กในตัวแสดงไฟล์"
+  },
+  "about.part.image": {
+    "message": "รูปภาพ"
+  },
+  "about.part.keyring": {
+    "message": "รหัสผ่านในพวงกุญแจของระบบ"
+  },
+  "about.part.lucide": {
+    "message": "ไอคอน"
+  },
+  "about.part.material_icons": {
+    "message": "ไอคอนไฟล์และโฟลเดอร์"
+  },
+  "about.part.pdfium_render": {
+    "message": "PDFium จาก Rust"
+  },
+  "about.part.ratatui": {
+    "message": "scmd เวอร์ชันสำหรับเทอร์มินัล"
+  },
+  "about.part.russh": {
+    "message": "SSH และ SFTP"
+  },
+  "about.part.rustls": {
+    "message": "TLS"
+  },
+  "about.part.serde": {
+    "message": "ไฟล์การตั้งค่า"
+  },
+  "about.part.similar": {
+    "message": "เปรียบเทียบตามเนื้อหา"
+  },
+  "about.part.suppaftp": {
+    "message": "FTP และ FTPS"
+  },
+  "about.part.tokio": {
+    "message": "งานเครือข่ายเบื้องหลัง"
+  },
+  "about.part.trash": {
+    "message": "ถังขยะ"
+  },
+  "about.part.tree_sitter": {
+    "message": "สีของโค้ดในตัวแสดงไฟล์และตัวแก้ไข"
+  },
+  "about.part.zbus": {
+    "message": "D-Bus: เดสก์ท็อป อุปกรณ์ และ KDE Connect"
+  },
+  "about.shipped": {
+    "message": "มาพร้อมกับแอป"
+  },
+  "about.tagline": {
+    "message": "ตัวจัดการไฟล์แบบสองแผง ซอฟต์แวร์เสรี"
+  },
+  "about.title": {
+    "message": "เกี่ยวกับ Spark Commander"
+  },
+  "about.version": {
+    "message": "เวอร์ชัน {version}"
+  },
+  "activity.clear": {
+    "message": "ล้าง"
+  },
+  "activity.clear_failed": {
+    "message": "ล้างบันทึกไม่ได้: {err}"
+  },
+  "activity.empty": {
+    "message": "ยังไม่มีการดำเนินการใดๆ"
+  },
+  "activity.title": {
+    "message": "บันทึกกิจกรรม"
+  },
+  "addons.error.damaged": {
+    "message": "ไฟล์ที่ดาวน์โหลดเสียหาย: เช็กซัมไม่ตรงกัน"
+  },
+  "addons.error.list": {
+    "message": "รายการส่วนเสริม: {err}"
+  },
+  "addons.error.missing_file": {
+    "message": "ไฟล์ที่ดาวน์โหลดไม่มี {file}"
+  },
+  "addons.error.no_folder": {
+    "message": "ไม่มีโฟลเดอร์ข้อมูล"
+  },
+  "addons.error.unpacking": {
+    "message": "การแตกไฟล์: {err}"
+  },
+  "addons.installed": {
+    "message": "ติดตั้ง {addon} {version} แล้ว"
+  },
+  "addons.megabytes": {
+    "message": "{size} MB"
+  },
+  "addons.offer.never": {
+    "message": "ไม่ต้องแสดงอีก"
+  },
+  "addons.offer.no": {
+    "message": "ไม่"
+  },
+  "addons.offer.text": {
+    "message": "{name} ต้องใช้ส่วนเสริมที่ยังไม่ได้ติดตั้ง: {addon} ต้องการดาวน์โหลดใน การตั้งค่า > ส่วนเสริม หรือไม่"
+  },
+  "addons.offer.title": {
+    "message": "ส่วนเสริม"
+  },
+  "addons.offer.yes": {
+    "message": "ใช่"
+  },
+  "addons.purpose.cloud": {
+    "message": "พื้นที่จัดเก็บออนไลน์: S3, Google Drive, OneDrive, Dropbox และบริการอื่นๆ"
+  },
+  "addons.purpose.media": {
+    "message": "วิดีโอและเสียง รวมถึงรูปภาพ HEIC และ AVIF: แสดงในตัวแสดงไฟล์และมุมมองด่วน"
+  },
+  "addons.purpose.office": {
+    "message": "เอกสารสำนักงาน: ตัวแสดงไฟล์แสดงไฟล์ Word, Excel และ PowerPoint เป็น PDF"
+  },
+  "addons.purpose.pdfium": {
+    "message": "PDF: ตัวแสดงไฟล์แสดงไฟล์ PDF และเอกสารสำนักงานที่แปลงแล้ว"
+  },
+  "addons.purpose.seven_zip": {
+    "message": "ไฟล์บีบอัด: บีบอัดและแตกไฟล์ 7z, zip, rar, tar และอื่นๆ"
+  },
+  "addons.update": {
+    "message": "อัปเดต"
+  },
+  "addons.updates": {
+    "message": "อัปเดตส่วนเสริม: {names}"
+  },
+  "appearance.dark": {
+    "message": "มืด"
+  },
+  "appearance.light": {
+    "message": "สว่าง"
+  },
+  "appearance.system": {
+    "message": "ตามระบบ"
+  },
+  "archive.cannot_read": {
+    "message": "{name}: อ่านไม่ได้"
+  },
+  "archive.not_in_archive": {
+    "message": "ไม่มี {name} ในไฟล์บีบอัด"
+  },
+  "archive.not_own_folder": {
+    "message": "{folder} ไม่ใช่โฟลเดอร์ของผู้ใช้นี้"
+  },
+  "archive.seven_zip_failed": {
+    "message": "7-Zip ล้มเหลว ({code})"
+  },
+  "archive.seven_zip_missing": {
+    "message": "ไม่พบ 7-Zip: {path} (เรียกใช้ vendor/7zip/fetch.sh หรือ fetch.bat)"
+  },
+  "archive.temp_not_utf8": {
+    "message": "ชื่อของโฟลเดอร์ชั่วคราวไม่ใช่ UTF-8"
+  },
+  "associations.add": {
+    "message": "เพิ่ม..."
+  },
+  "associations.cancel": {
+    "message": "ยกเลิก"
+  },
+  "associations.close": {
+    "message": "ปิด"
+  },
+  "associations.column.edit": {
+    "message": "แก้ไข (F4)"
+  },
+  "associations.column.files": {
+    "message": "ไฟล์"
+  },
+  "associations.column.open": {
+    "message": "เปิด (Enter)"
+  },
+  "associations.column.view": {
+    "message": "ดู (F3)"
+  },
+  "associations.edit": {
+    "message": "แก้ไข..."
+  },
+  "associations.edit_dialog.title": {
+    "message": "เชื่อมโยง"
+  },
+  "associations.empty": {
+    "message": "ยังไม่มี"
+  },
+  "associations.field.edit": {
+    "message": "แก้ไขด้วย (F4):"
+  },
+  "associations.field.files": {
+    "message": "ไฟล์ (*.jpg *.png):"
+  },
+  "associations.field.open": {
+    "message": "เปิดด้วย (Enter):"
+  },
+  "associations.field.view": {
+    "message": "ดูด้วย (F3):"
+  },
+  "associations.intro": {
+    "message": "Enter, F3 และ F4 จะเรียกใช้โปรแกรมเหล่านี้กับไฟล์ที่ตรงกับมาสก์ ปล่อยว่างไว้เพื่อใช้ค่าปกติ %1 คือไฟล์"
+  },
+  "associations.mask_needed": {
+    "message": "ต้องระบุมาสก์ของไฟล์: *.txt"
+  },
+  "associations.no_file": {
+    "message": "วางเคอร์เซอร์บนไฟล์ประเภทที่ต้องการเชื่อมโยง"
+  },
+  "associations.ok": {
+    "message": "ตกลง"
+  },
+  "associations.remove": {
+    "message": "เอาออก"
+  },
+  "associations.save_failed": {
+    "message": "บันทึกการตั้งค่าไม่ได้: {err}"
+  },
+  "associations.title": {
+    "message": "การเชื่อมโยงภายใน"
+  },
+  "attributes.bad_time": {
+    "message": "“{text}” ไม่ใช่วันที่และเวลา: 2026-11-10 14:04:33"
+  },
+  "attributes.cancel": {
+    "message": "ยกเลิก"
+  },
+  "attributes.change_time": {
+    "message": "เปลี่ยนวันที่/เวลา:"
+  },
+  "attributes.changed": {
+    "message": "{count, plural, other {เปลี่ยนแล้ว # รายการ}}"
+  },
+  "attributes.changed_failed": {
+    "message": "{count, plural, other {เปลี่ยนแล้ว # รายการ}}, {failed, plural, other {ล้มเหลว # รายการ}}"
+  },
+  "attributes.dialog_title_many": {
+    "message": "เปลี่ยนแอตทริบิวต์: {count, plural, other {# รายการ}}"
+  },
+  "attributes.dialog_title_one": {
+    "message": "เปลี่ยนแอตทริบิวต์: {name}"
+  },
+  "attributes.execute": {
+    "message": "เรียกใช้"
+  },
+  "attributes.group": {
+    "message": "กลุ่ม"
+  },
+  "attributes.in_archive": {
+    "message": "เปลี่ยนแอตทริบิวต์ภายในไฟล์บีบอัดไม่ได้"
+  },
+  "attributes.no_bits": {
+    "message": "ไฟล์เหล่านี้ไม่มีบิตสิทธิ์ในที่นี้ เปลี่ยนได้เฉพาะวันที่"
+  },
+  "attributes.now": {
+    "message": "ตอนนี้"
+  },
+  "attributes.octal": {
+    "message": "ฐานแปด:"
+  },
+  "attributes.ok": {
+    "message": "ตกลง"
+  },
+  "attributes.others": {
+    "message": "ผู้อื่น"
+  },
+  "attributes.owner": {
+    "message": "เจ้าของ"
+  },
+  "attributes.read": {
+    "message": "อ่าน"
+  },
+  "attributes.recurse": {
+    "message": "รวมทุกอย่างภายในโฟลเดอร์ด้วย"
+  },
+  "attributes.title_many": {
+    "message": "เปลี่ยนแอตทริบิวต์ของ {count, plural, other {# รายการ}}"
+  },
+  "attributes.title_one": {
+    "message": "เปลี่ยนแอตทริบิวต์ของ “{name}”"
+  },
+  "attributes.write": {
+    "message": "เขียน"
+  },
+  "bookmarks.add_current": {
+    "message": "เพิ่มโฟลเดอร์ปัจจุบัน"
+  },
+  "bookmarks.add_folders": {
+    "message": "เพิ่มโฟลเดอร์..."
+  },
+  "bookmarks.added": {
+    "message": "เพิ่มที่คั่นหน้าแล้ว: {name}"
+  },
+  "bookmarks.already": {
+    "message": "{name} อยู่ในที่คั่นหน้าแล้ว"
+  },
+  "bookmarks.chooser.failed": {
+    "message": "แสดงหน้าต่างเลือกโฟลเดอร์ไม่ได้: {err}"
+  },
+  "bookmarks.chooser.prompt": {
+    "message": "คั่นหน้า"
+  },
+  "bookmarks.close": {
+    "message": "ปิด"
+  },
+  "bookmarks.copy_name": {
+    "message": "คัดลอกชื่อ"
+  },
+  "bookmarks.copy_path": {
+    "message": "คัดลอกพาธ"
+  },
+  "bookmarks.drop_here": {
+    "message": "วางโฟลเดอร์ที่นี่"
+  },
+  "bookmarks.empty": {
+    "message": "ไม่มีที่คั่นหน้า: เพิ่มโฟลเดอร์ หรือวางโฟลเดอร์ที่นี่"
+  },
+  "bookmarks.intro": {
+    "message": "โฟลเดอร์ของคอมพิวเตอร์เครื่องนี้ตามลำดับใน “ตำแหน่ง”: ลากเพื่อย้าย หรือวางโฟลเดอร์ที่นี่เพื่อเพิ่ม"
+  },
+  "bookmarks.move_down": {
+    "message": "ย้ายลง"
+  },
+  "bookmarks.move_up": {
+    "message": "ย้ายขึ้น"
+  },
+  "bookmarks.only_local": {
+    "message": "เพิ่มที่คั่นหน้าได้เฉพาะโฟลเดอร์ของคอมพิวเตอร์เครื่องนี้"
+  },
+  "bookmarks.remove": {
+    "message": "เอาออก"
+  },
+  "bookmarks.remove_from": {
+    "message": "เอาออกจากที่คั่นหน้า"
+  },
+  "bookmarks.rename": {
+    "message": "เปลี่ยนชื่อ..."
+  },
+  "bookmarks.rename_label": {
+    "message": "ชื่อ (ว่าง: ใช้ชื่อโฟลเดอร์):"
+  },
+  "bookmarks.rename_title": {
+    "message": "เปลี่ยนชื่อที่คั่นหน้า"
+  },
+  "bookmarks.sort": {
+    "message": "เรียงตามตัวอักษร"
+  },
+  "bookmarks.title": {
+    "message": "ที่คั่นหน้า"
+  },
+  "button_bar.copy": {
+    "message": "คัดลอก"
+  },
+  "button_bar.delete": {
+    "message": "ลบ"
+  },
+  "button_bar.edit": {
+    "message": "แก้ไข"
+  },
+  "button_bar.move": {
+    "message": "ย้าย"
+  },
+  "button_bar.new_folder": {
+    "message": "โฟลเดอร์ใหม่"
+  },
+  "button_bar.quit": {
+    "message": "ออก"
+  },
+  "button_bar.view": {
+    "message": "ดู"
+  },
+  "checksum.create.title": {
+    "message": "สร้าง {name}"
+  },
+  "checksum.create.title_separate": {
+    "message": "สร้างไฟล์เช็กซัม {method}"
+  },
+  "checksum.dialog_title": {
+    "message": "สร้างไฟล์เช็กซัม"
+  },
+  "checksum.save_as": {
+    "message": "บันทึกไฟล์เช็กซัมเป็น:"
+  },
+  "checksum.separate": {
+    "message": "สร้างไฟล์เช็กซัมแยกไว้ข้างแต่ละไฟล์แทน"
+  },
+  "checksum.verify.all_ok": {
+    "message": "{count, plural, other {ถูกต้องทั้งหมด # ไฟล์}}"
+  },
+  "checksum.verify.choose": {
+    "message": "เลือกไฟล์เช็กซัม: .sfv, .md5, .sha1, .sha256 หรือ .sha512"
+  },
+  "checksum.verify.missing_file": {
+    "message": "ไม่พบ: {name}"
+  },
+  "checksum.verify.result": {
+    "message": "{ok, plural, other {ถูกต้อง # ไฟล์}}, {wrong, plural, other {ไม่ตรง # ไฟล์}}, {missing, plural, other {ไม่พบ # ไฟล์}}"
+  },
+  "checksum.verify.title_many": {
+    "message": "ตรวจสอบ{count, plural, other {ไฟล์เช็กซัม # ไฟล์}}"
+  },
+  "checksum.verify.title_one": {
+    "message": "ตรวจสอบ {name}"
+  },
+  "checksum.verify.wrong_file": {
+    "message": "ไม่ตรง: {name}"
+  },
+  "command.about": {
+    "message": "เกี่ยวกับ Spark Commander"
+  },
+  "command.activity_log": {
+    "message": "บันทึกกิจกรรม..."
+  },
+  "command.all_files": {
+    "message": "ไฟล์ทั้งหมด"
+  },
+  "command.all_folder_sizes": {
+    "message": "คำนวณขนาดโฟลเดอร์ทั้งหมด"
+  },
+  "command.all_with_extension": {
+    "message": "*.*"
+  },
+  "command.associate_with": {
+    "message": "เชื่อมโยงกับ..."
+  },
+  "command.bookmark_folder": {
+    "message": "เพิ่มโฟลเดอร์นี้ในที่คั่นหน้า"
+  },
+  "command.bookmarks": {
+    "message": "ที่คั่นหน้า"
+  },
+  "command.branch_view": {
+    "message": "มุมมองแบบแตกแขนง (รวมโฟลเดอร์ย่อย)"
+  },
+  "command.branch_view_selected": {
+    "message": "มุมมองแบบแตกแขนงของโฟลเดอร์ที่เลือก"
+  },
+  "command.brief": {
+    "message": "แบบย่อ"
+  },
+  "command.calculate_occupied_space": {
+    "message": "คำนวณพื้นที่ที่ใช้..."
+  },
+  "command.change_attributes": {
+    "message": "เปลี่ยนแอตทริบิวต์..."
+  },
+  "command.close_all_tabs": {
+    "message": "ปิดแท็บทั้งหมด"
+  },
+  "command.close_duplicate_tabs": {
+    "message": "ปิดแท็บที่ซ้ำกัน"
+  },
+  "command.close_tab": {
+    "message": "ปิดแท็บ"
+  },
+  "command.combine_files": {
+    "message": "รวมไฟล์..."
+  },
+  "command.compare_by_content": {
+    "message": "เปรียบเทียบตามเนื้อหา..."
+  },
+  "command.compare_directories": {
+    "message": "เลือกไฟล์ที่ใหม่กว่า"
+  },
+  "command.copy": {
+    "message": "คัดลอก..."
+  },
+  "command.copy_names_to_clipboard": {
+    "message": "คัดลอกชื่อที่เลือกไปยังคลิปบอร์ด"
+  },
+  "command.copy_names_with_path_to_clipboard": {
+    "message": "คัดลอกชื่อพร้อมพาธไปยังคลิปบอร์ด"
+  },
+  "command.copy_to_clipboard": {
+    "message": "คัดลอกไฟล์"
+  },
+  "command.copy_with_all_details": {
+    "message": "คัดลอกไปยังคลิปบอร์ดพร้อมรายละเอียดทั้งหมด"
+  },
+  "command.copy_with_path_and_details": {
+    "message": "คัดลอกไปยังคลิปบอร์ดพร้อมพาธและรายละเอียด"
+  },
+  "command.create_checksum_files": {
+    "message": "สร้างไฟล์เช็กซัม (CRC32, MD5, SHA1, SHA256, SHA512)..."
+  },
+  "command.create_link": {
+    "message": "สร้างลิงก์..."
+  },
+  "command.custom_filter": {
+    "message": "กำหนดเอง..."
+  },
+  "command.cut_to_clipboard": {
+    "message": "ตัดไฟล์"
+  },
+  "command.delete": {
+    "message": "ลบ"
+  },
+  "command.delete_permanently": {
+    "message": "ลบถาวร"
+  },
+  "command.disconnect": {
+    "message": "ตัดการเชื่อมต่อจากเซิร์ฟเวอร์"
+  },
+  "command.download_link": {
+    "message": "ดาวน์โหลดจากลิงก์..."
+  },
+  "command.duplicate_tab": {
+    "message": "แท็บใหม่"
+  },
+  "command.duplicate_workspace": {
+    "message": "ทำสำเนาพื้นที่ทำงาน..."
+  },
+  "command.edit": {
+    "message": "แก้ไข"
+  },
+  "command.edit_externally": {
+    "message": "แก้ไขด้วยตัวแก้ไขภายนอก"
+  },
+  "command.folder_history": {
+    "message": "ประวัติโฟลเดอร์..."
+  },
+  "command.full": {
+    "message": "แบบเต็ม"
+  },
+  "command.go_back": {
+    "message": "ย้อนกลับ"
+  },
+  "command.go_forward": {
+    "message": "ไปข้างหน้า"
+  },
+  "command.go_home": {
+    "message": "โฟลเดอร์โฮม"
+  },
+  "command.go_to_root": {
+    "message": "โฟลเดอร์ราก"
+  },
+  "command.hidden_files": {
+    "message": "ไฟล์ที่ซ่อน"
+  },
+  "command.internal_associations": {
+    "message": "การเชื่อมโยงภายใน (เฉพาะ Spark Commander)..."
+  },
+  "command.invert_selection": {
+    "message": "กลับการเลือก"
+  },
+  "command.left_drives": {
+    "message": "ไดรฟ์ (แผงซ้าย)"
+  },
+  "command.list_tabs": {
+    "message": "รายการแท็บ"
+  },
+  "command.load_selection_from_file": {
+    "message": "โหลดการเลือกจากไฟล์"
+  },
+  "command.manage_bookmarks": {
+    "message": "จัดการที่คั่นหน้า..."
+  },
+  "command.manage_tools": {
+    "message": "จัดการเครื่องมือ..."
+  },
+  "command.manage_workspaces": {
+    "message": "จัดการพื้นที่ทำงาน..."
+  },
+  "command.mark_in_place": {
+    "message": "เลือก / ยกเลิกการเลือกโดยไม่เลื่อนเคอร์เซอร์ และวัดขนาดโฟลเดอร์"
+  },
+  "command.mark_newer_hide_same": {
+    "message": "เลือกไฟล์ที่ใหม่กว่า ซ่อนไฟล์ที่เหมือนกัน"
+  },
+  "command.move": {
+    "message": "ย้าย..."
+  },
+  "command.multi_rename_tool": {
+    "message": "เครื่องมือเปลี่ยนชื่อหลายไฟล์..."
+  },
+  "command.name_to_command_line": {
+    "message": "ส่งชื่อไปยังบรรทัดคำสั่ง"
+  },
+  "command.new_folder": {
+    "message": "โฟลเดอร์ใหม่..."
+  },
+  "command.new_terminal": {
+    "message": "แท็บเทอร์มินัลใหม่"
+  },
+  "command.new_text_file": {
+    "message": "ไฟล์ใหม่..."
+  },
+  "command.new_workspace": {
+    "message": "พื้นที่ทำงานใหม่..."
+  },
+  "command.next_tab": {
+    "message": "แท็บถัดไป"
+  },
+  "command.only_selected_files": {
+    "message": "เฉพาะไฟล์ที่เลือก"
+  },
+  "command.open_in_left_panel": {
+    "message": "แสดงในแผงซ้าย"
+  },
+  "command.open_in_new_tab": {
+    "message": "เปิดโฟลเดอร์ในแท็บใหม่"
+  },
+  "command.open_in_other_new_tab": {
+    "message": "เปิดโฟลเดอร์ในแท็บใหม่ของอีกแผง"
+  },
+  "command.open_in_right_panel": {
+    "message": "แสดงในแผงขวา"
+  },
+  "command.open_terminal": {
+    "message": "เปิดเทอร์มินัลที่นี่"
+  },
+  "command.operation_queue": {
+    "message": "คิวการดำเนินการ..."
+  },
+  "command.pack": {
+    "message": "บีบอัด..."
+  },
+  "command.paste_from_clipboard": {
+    "message": "วางไฟล์"
+  },
+  "command.path_and_name_to_command_line": {
+    "message": "ส่งพาธและชื่อไปยังบรรทัดคำสั่ง"
+  },
+  "command.path_to_command_line": {
+    "message": "ส่งพาธไปยังบรรทัดคำสั่ง"
+  },
+  "command.previous_tab": {
+    "message": "แท็บก่อนหน้า"
+  },
+  "command.programs": {
+    "message": "โปรแกรม"
+  },
+  "command.properties": {
+    "message": "คุณสมบัติ..."
+  },
+  "command.quick_filter": {
+    "message": "ตัวกรองด่วน"
+  },
+  "command.quick_open": {
+    "message": "เปิดด่วน..."
+  },
+  "command.quick_view_panel": {
+    "message": "แผงมุมมองด่วน"
+  },
+  "command.quit": {
+    "message": "ออก"
+  },
+  "command.redo": {
+    "message": "ทำซ้ำ"
+  },
+  "command.rename_in_place": {
+    "message": "เปลี่ยนชื่อ"
+  },
+  "command.reread_source": {
+    "message": "อ่านแหล่งที่มาใหม่"
+  },
+  "command.restore_selection": {
+    "message": "คืนค่าการเลือก"
+  },
+  "command.reversed_order": {
+    "message": "ลำดับย้อนกลับ"
+  },
+  "command.right_drives": {
+    "message": "ไดรฟ์ (แผงขวา)"
+  },
+  "command.save_selection": {
+    "message": "บันทึกการเลือก"
+  },
+  "command.save_selection_to_file": {
+    "message": "บันทึกการเลือกลงไฟล์"
+  },
+  "command.search": {
+    "message": "ค้นหา..."
+  },
+  "command.search_in_separate_process": {
+    "message": "ค้นหาในหน้าต่างแยก..."
+  },
+  "command.select_all": {
+    "message": "เลือกทั้งหมด"
+  },
+  "command.select_all_with_same_extension": {
+    "message": "เลือกทั้งหมดที่มีนามสกุลเดียวกัน"
+  },
+  "command.select_group": {
+    "message": "เลือกกลุ่ม..."
+  },
+  "command.settings": {
+    "message": "การตั้งค่า..."
+  },
+  "command.shortcuts": {
+    "message": "ปุ่มลัด..."
+  },
+  "command.sidebar_connections": {
+    "message": "การเชื่อมต่อ"
+  },
+  "command.sidebar_operations": {
+    "message": "การดำเนินการ"
+  },
+  "command.sidebar_places": {
+    "message": "ตำแหน่ง"
+  },
+  "command.sidebar_tree": {
+    "message": "โฟลเดอร์"
+  },
+  "command.sort_by_extension": {
+    "message": "นามสกุล"
+  },
+  "command.sort_by_name": {
+    "message": "ชื่อ"
+  },
+  "command.sort_by_size": {
+    "message": "ขนาด"
+  },
+  "command.sort_by_time": {
+    "message": "เวลา"
+  },
+  "command.split_file": {
+    "message": "แยกไฟล์..."
+  },
+  "command.swap_panels": {
+    "message": "สลับแผง"
+  },
+  "command.swap_panels_and_tabs": {
+    "message": "สลับแผงพร้อมแท็บ"
+  },
+  "command.sync_browsing": {
+    "message": "เรียกดูแบบซิงค์"
+  },
+  "command.synchronize_dirs": {
+    "message": "ซิงค์โฟลเดอร์..."
+  },
+  "command.target_equals_source": {
+    "message": "ปลายทาง = ต้นทาง"
+  },
+  "command.terminal_panel": {
+    "message": "เทอร์มินัล"
+  },
+  "command.test_archives": {
+    "message": "ทดสอบไฟล์บีบอัด"
+  },
+  "command.thumbnail_view": {
+    "message": "มุมมองภาพย่อ"
+  },
+  "command.toggle_mark": {
+    "message": "เลือก / ยกเลิกการเลือก"
+  },
+  "command.toggle_sidebar": {
+    "message": "แสดงแถบด้านข้าง"
+  },
+  "command.undo": {
+    "message": "เลิกทำ"
+  },
+  "command.unpack_specific_files": {
+    "message": "แตกไฟล์ที่ระบุ..."
+  },
+  "command.unselect_all": {
+    "message": "ยกเลิกการเลือกทั้งหมด"
+  },
+  "command.unselect_group": {
+    "message": "ยกเลิกการเลือกกลุ่ม..."
+  },
+  "command.unsorted": {
+    "message": "ไม่เรียงลำดับ"
+  },
+  "command.verify_checksums": {
+    "message": "ตรวจสอบเช็กซัม (จากไฟล์เช็กซัม)"
+  },
+  "command.vertical_arrangement": {
+    "message": "จัดเรียงแนวตั้ง"
+  },
+  "command.view": {
+    "message": "ดู"
+  },
+  "command.website": {
+    "message": "เว็บไซต์ Spark Commander"
+  },
+  "command.workspace1": {
+    "message": "เปิดพื้นที่ทำงาน 1"
+  },
+  "command.workspace2": {
+    "message": "เปิดพื้นที่ทำงาน 2"
+  },
+  "command.workspace3": {
+    "message": "เปิดพื้นที่ทำงาน 3"
+  },
+  "command.workspace4": {
+    "message": "เปิดพื้นที่ทำงาน 4"
+  },
+  "command.workspace5": {
+    "message": "เปิดพื้นที่ทำงาน 5"
+  },
+  "command.workspace6": {
+    "message": "เปิดพื้นที่ทำงาน 6"
+  },
+  "command.workspace7": {
+    "message": "เปิดพื้นที่ทำงาน 7"
+  },
+  "command.workspace8": {
+    "message": "เปิดพื้นที่ทำงาน 8"
+  },
+  "command.workspace9": {
+    "message": "เปิดพื้นที่ทำงาน 9"
+  },
+  "command_line.error.cannot_run": {
+    "message": "{program}: เรียกใช้ไม่ได้"
+  },
+  "command_line.error.not_found": {
+    "message": "{program}: ไม่พบคำสั่ง"
+  },
+  "command_line.history.empty": {
+    "message": "ยังไม่มีคำสั่งที่เรียกใช้"
+  },
+  "command_line.on_server": {
+    "message": "คำสั่งจะทำงานบนคอมพิวเตอร์เครื่องนี้ แต่แผงกำลังแสดงเซิร์ฟเวอร์"
+  },
+  "command_name.all_files": {
+    "message": "แสดงไฟล์ทั้งหมด"
+  },
+  "command_name.all_with_extension": {
+    "message": "แสดง *.*"
+  },
+  "command_name.brief": {
+    "message": "มุมมองแบบย่อ"
+  },
+  "command_name.compare_directories": {
+    "message": "เปรียบเทียบโฟลเดอร์: เลือกไฟล์ที่ใหม่กว่า"
+  },
+  "command_name.custom_filter": {
+    "message": "ตัวกรองที่กำหนดเอง"
+  },
+  "command_name.duplicate_tab": {
+    "message": "แท็บใหม่ (สำเนาของแท็บนี้)"
+  },
+  "command_name.full": {
+    "message": "มุมมองแบบเต็ม"
+  },
+  "command_name.go_back": {
+    "message": "ย้อนกลับ"
+  },
+  "command_name.go_forward": {
+    "message": "ไปข้างหน้า"
+  },
+  "command_name.go_home": {
+    "message": "ไปที่โฟลเดอร์โฮม"
+  },
+  "command_name.hidden_files": {
+    "message": "แสดงไฟล์ที่ซ่อน"
+  },
+  "command_name.only_selected_files": {
+    "message": "แสดงเฉพาะไฟล์ที่เลือก"
+  },
+  "command_name.programs": {
+    "message": "แสดงโปรแกรม"
+  },
+  "command_name.quick_filter": {
+    "message": "ตัวกรองด่วน"
+  },
+  "command_name.rename_in_place": {
+    "message": "เปลี่ยนชื่อในตำแหน่ง"
+  },
+  "command_name.sidebar_connections": {
+    "message": "แถบด้านข้าง: การเชื่อมต่อ"
+  },
+  "command_name.sidebar_operations": {
+    "message": "แถบด้านข้าง: การดำเนินการ"
+  },
+  "command_name.sidebar_places": {
+    "message": "แถบด้านข้าง: ตำแหน่ง"
+  },
+  "command_name.sidebar_tree": {
+    "message": "แถบด้านข้าง: โฟลเดอร์"
+  },
+  "command_name.sort_by_extension": {
+    "message": "เรียงตามนามสกุล"
+  },
+  "command_name.sort_by_name": {
+    "message": "เรียงตามชื่อ"
+  },
+  "command_name.sort_by_size": {
+    "message": "เรียงตามขนาด"
+  },
+  "command_name.sort_by_time": {
+    "message": "เรียงตามเวลา"
+  },
+  "command_name.toggle_sidebar": {
+    "message": "แถบด้านข้าง: แสดงหรือซ่อน"
+  },
+  "command_name.unsorted": {
+    "message": "ไม่เรียงลำดับ"
+  },
+  "compare.browse.prompt": {
+    "message": "เปรียบเทียบ"
+  },
+  "compare.button.compare": {
+    "message": "เปรียบเทียบ"
+  },
+  "compare.button.next": {
+    "message": "จุดต่างถัดไป (N)"
+  },
+  "compare.button.previous": {
+    "message": "จุดต่างก่อนหน้า (P)"
+  },
+  "compare.need_two_files": {
+    "message": "วางเคอร์เซอร์บนไฟล์ในแต่ละแผง หรือเลือกไฟล์สองไฟล์"
+  },
+  "compare.option.binary": {
+    "message": "ไบนารี"
+  },
+  "compare.option.ignore_case": {
+    "message": "ไม่สนใจตัวพิมพ์เล็ก/ใหญ่"
+  },
+  "compare.option.ignore_spaces": {
+    "message": "ไม่สนใจช่องว่างที่ซ้ำกัน"
+  },
+  "compare.option.only_differences": {
+    "message": "เฉพาะจุดที่ต่างกัน"
+  },
+  "compare.status.bytes_differ": {
+    "message": "{place}: {count, plural, other {ต่างกัน {grouped} ไบต์}} เริ่มที่ {first} ขนาด {left} และ {right}"
+  },
+  "compare.status.comparing": {
+    "message": "กำลังเปรียบเทียบ…"
+  },
+  "compare.status.difference_of": {
+    "message": "จุดต่างที่ {at} จาก {count}"
+  },
+  "compare.status.differences": {
+    "message": "{count, plural, other {ต่างกัน # จุด}}"
+  },
+  "compare.status.identical": {
+    "message": "{count, plural, other {ไฟล์เหมือนกัน: {grouped} ไบต์}}"
+  },
+  "compare.status.no_differences": {
+    "message": "ไม่มีจุดที่ต่างกัน"
+  },
+  "compare.window.title": {
+    "message": "เปรียบเทียบ: {left} — {right}"
+  },
+  "connections.connect": {
+    "message": "เชื่อมต่อ"
+  },
+  "connections.copy_name": {
+    "message": "คัดลอกชื่อ"
+  },
+  "connections.copy_path": {
+    "message": "คัดลอกพาธ"
+  },
+  "connections.delete": {
+    "message": "ลบ"
+  },
+  "connections.dialog.title": {
+    "message": "การเชื่อมต่อ"
+  },
+  "connections.disconnect": {
+    "message": "ตัดการเชื่อมต่อ"
+  },
+  "connections.duplicate": {
+    "message": "ทำสำเนา"
+  },
+  "connections.duplicate_name": {
+    "message": "{name} (สำเนา)"
+  },
+  "connections.edit": {
+    "message": "แก้ไข..."
+  },
+  "connections.empty": {
+    "message": "ยังไม่มีการเชื่อมต่อ"
+  },
+  "connections.error.no_server": {
+    "message": "ต้องระบุเซิร์ฟเวอร์"
+  },
+  "connections.error.port": {
+    "message": "ไม่ใช่พอร์ต: {text}"
+  },
+  "connections.field.access_key": {
+    "message": "คีย์การเข้าถึง"
+  },
+  "connections.field.api_key": {
+    "message": "คีย์ API"
+  },
+  "connections.field.application_key": {
+    "message": "คีย์แอปพลิเคชัน"
+  },
+  "connections.field.bucket": {
+    "message": "บักเก็ต/โฟลเดอร์"
+  },
+  "connections.field.container": {
+    "message": "คอนเทนเนอร์/โฟลเดอร์"
+  },
+  "connections.field.endpoint": {
+    "message": "เอนด์พอยต์"
+  },
+  "connections.field.key_id": {
+    "message": "ID ของคีย์"
+  },
+  "connections.field.name": {
+    "message": "ชื่อ"
+  },
+  "connections.field.password": {
+    "message": "รหัสผ่าน"
+  },
+  "connections.field.port": {
+    "message": "พอร์ต"
+  },
+  "connections.field.protocol": {
+    "message": "โปรโตคอล"
+  },
+  "connections.field.secret_key": {
+    "message": "คีย์ลับ"
+  },
+  "connections.field.server": {
+    "message": "เซิร์ฟเวอร์"
+  },
+  "connections.field.start_folder": {
+    "message": "โฟลเดอร์เริ่มต้น"
+  },
+  "connections.field.user": {
+    "message": "ผู้ใช้"
+  },
+  "connections.folder.delete_confirm": {
+    "message": "{count, plural, other {ลบโฟลเดอร์ {name} และการเชื่อมต่อ # รายการในโฟลเดอร์หรือไม่}}"
+  },
+  "connections.folder.delete_title": {
+    "message": "ลบโฟลเดอร์"
+  },
+  "connections.folder.exists": {
+    "message": "มีโฟลเดอร์ชื่อ {name} อยู่แล้ว"
+  },
+  "connections.folder.name": {
+    "message": "ชื่อ:"
+  },
+  "connections.folder.new_title": {
+    "message": "โฟลเดอร์ใหม่"
+  },
+  "connections.folder.rename": {
+    "message": "เปลี่ยนชื่อ..."
+  },
+  "connections.folder.rename_title": {
+    "message": "เปลี่ยนชื่อโฟลเดอร์"
+  },
+  "connections.forget_password": {
+    "message": "ลืมรหัสผ่านที่เก็บไว้"
+  },
+  "connections.move_down": {
+    "message": "ย้ายลง"
+  },
+  "connections.move_to_folder": {
+    "message": "ย้ายไปยังโฟลเดอร์"
+  },
+  "connections.move_up": {
+    "message": "ย้ายขึ้น"
+  },
+  "connections.new": {
+    "message": "การเชื่อมต่อใหม่..."
+  },
+  "connections.new_folder": {
+    "message": "โฟลเดอร์ใหม่..."
+  },
+  "connections.no_folder": {
+    "message": "ไม่มีโฟลเดอร์"
+  },
+  "connections.open_in_terminal": {
+    "message": "เปิดในเทอร์มินัล"
+  },
+  "connections.placeholder.name": {
+    "message": "ตามที่แสดงในรายการ"
+  },
+  "connections.placeholder.password": {
+    "message": "เก็บแบบเข้ารหัสในโฟลเดอร์การตั้งค่า ปล่อยว่างเพื่อใช้รหัสเดิม"
+  },
+  "connections.placeholder.path": {
+    "message": "โฟลเดอร์หลังเข้าสู่ระบบ"
+  },
+  "connections.placeholder.port": {
+    "message": "ค่าเริ่มต้น"
+  },
+  "connections.placeholder.server": {
+    "message": "เซิร์ฟเวอร์ หรือโฮสต์ใน ~/.ssh/config"
+  },
+  "connections.placeholder.user": {
+    "message": "ตาม ~/.ssh/config หรือแบบไม่ระบุตัวตน"
+  },
+  "connections.save_failed": {
+    "message": "บันทึกการเชื่อมต่อไม่ได้: {err}"
+  },
+  "connections.ssh_config.read_only": {
+    "message": "อ่านอย่างเดียว: แก้ไขโฮสต์เหล่านี้ได้ใน ~/.ssh/config โดยตรง"
+  },
+  "context_menu.action_failed": {
+    "message": "{name} ล้มเหลว: {err}"
+  },
+  "context_menu.actions": {
+    "message": "การกระทำ"
+  },
+  "context_menu.copy": {
+    "message": "คัดลอก"
+  },
+  "context_menu.create_new": {
+    "message": "สร้างใหม่"
+  },
+  "context_menu.cut": {
+    "message": "ตัด"
+  },
+  "context_menu.delete": {
+    "message": "ลบ"
+  },
+  "context_menu.edit": {
+    "message": "แก้ไข"
+  },
+  "context_menu.empty_file": {
+    "message": "ไฟล์เปล่า…"
+  },
+  "context_menu.move_to_trash": {
+    "message": "ย้ายไปถังขยะ"
+  },
+  "context_menu.new_file_dialog.label": {
+    "message": "ชื่อไฟล์ใหม่:"
+  },
+  "context_menu.new_file_dialog.title": {
+    "message": "ไฟล์ใหม่"
+  },
+  "context_menu.new_file_failed": {
+    "message": "สร้างไฟล์ไม่ได้: {err}"
+  },
+  "context_menu.new_folder": {
+    "message": "โฟลเดอร์…"
+  },
+  "context_menu.open": {
+    "message": "เปิด"
+  },
+  "context_menu.open_failed": {
+    "message": "เปิดไม่ได้: {err}"
+  },
+  "context_menu.open_terminal_here": {
+    "message": "เปิดเทอร์มินัลที่นี่"
+  },
+  "context_menu.open_with": {
+    "message": "เปิดด้วย"
+  },
+  "context_menu.other_application": {
+    "message": "แอปพลิเคชันอื่น…"
+  },
+  "context_menu.pack": {
+    "message": "บีบอัด…"
+  },
+  "context_menu.pack_files": {
+    "message": "บีบอัดไฟล์"
+  },
+  "context_menu.paste": {
+    "message": "วาง"
+  },
+  "context_menu.properties": {
+    "message": "คุณสมบัติ"
+  },
+  "context_menu.properties_failed": {
+    "message": "คุณสมบัติ: {err}"
+  },
+  "context_menu.rename": {
+    "message": "เปลี่ยนชื่อ…"
+  },
+  "context_menu.rename_dialog.label": {
+    "message": "ชื่อใหม่:"
+  },
+  "context_menu.rename_dialog.title": {
+    "message": "เปลี่ยนชื่อ"
+  },
+  "context_menu.rename_failed": {
+    "message": "เปลี่ยนชื่อไม่ได้: {err}"
+  },
+  "context_menu.shell_menu_failed": {
+    "message": "เมนู: {err}"
+  },
+  "context_menu.show_failed": {
+    "message": "แสดงไม่ได้: {err}"
+  },
+  "context_menu.show_in_file_manager": {
+    "message": "แสดงในตัวจัดการไฟล์"
+  },
+  "context_menu.terminal_failed": {
+    "message": "เปิดเทอร์มินัลไม่ได้: {err}"
+  },
+  "context_menu.terminal_not_local": {
+    "message": "เปิดเทอร์มินัลได้เฉพาะในโฟลเดอร์ของคอมพิวเตอร์เครื่องนี้"
+  },
+  "context_menu.unpack": {
+    "message": "แตกไฟล์…"
+  },
+  "context_menu.view": {
+    "message": "ดู"
+  },
+  "desktop.no_app_chooser": {
+    "message": "เดสก์ท็อปไม่มีหน้าต่างเลือกแอป ({err})"
+  },
+  "desktop.no_terminal": {
+    "message": "ไม่พบเทอร์มินัล"
+  },
+  "desktop.nothing_to_run": {
+    "message": "{name}: ไม่มีอะไรให้เรียกใช้"
+  },
+  "desktop.scripts": {
+    "message": "สคริปต์"
+  },
+  "devices.error.mount_failed": {
+    "message": "เมานต์อุปกรณ์ไม่ได้"
+  },
+  "devices.error.no_folder": {
+    "message": "อุปกรณ์ไม่ได้แชร์โฟลเดอร์ใดๆ"
+  },
+  "devices.error.system_only": {
+    "message": "มีเพียงระบบเท่านั้นที่ยกเลิกการเมานต์ได้"
+  },
+  "devices.error.unreachable": {
+    "message": "เข้าถึงไม่ได้: เปิด KDE Connect บนอุปกรณ์และอยู่ในเครือข่ายนี้หรือไม่"
+  },
+  "devices.unlock.ask": {
+    "message": "วลีรหัสผ่านของ {name}:"
+  },
+  "devices.unlock.ask_again": {
+    "message": "วลีรหัสผ่านไม่ถูกต้อง วลีรหัสผ่านของ {name}:"
+  },
+  "devices.unlock.title": {
+    "message": "ปลดล็อก"
+  },
+  "devices.volume.share_on_server": {
+    "message": "{share} บน {server}"
+  },
+  "devices.volume.unnamed": {
+    "message": "โวลุม {size} GB"
+  },
+  "devices.volume.unnamed_encrypted": {
+    "message": "โวลุมที่เข้ารหัส {size} GB"
+  },
+  "download.cancel": {
+    "message": "ยกเลิก"
+  },
+  "download.dialog_title": {
+    "message": "ดาวน์โหลดจากลิงก์"
+  },
+  "download.download": {
+    "message": "ดาวน์โหลด"
+  },
+  "download.folder_link": {
+    "message": "ลิงก์นี้เป็นของโฟลเดอร์"
+  },
+  "download.incomplete": {
+    "message": "เซิร์ฟเวอร์ส่งมา {got} จาก {size, plural, other {# ไบต์}} หากดาวน์โหลดอีกครั้ง จะดำเนินต่อจากจุดนั้น"
+  },
+  "download.into": {
+    "message": "ไปยัง {folder}"
+  },
+  "download.link": {
+    "message": "ลิงก์"
+  },
+  "download.link_placeholder": {
+    "message": "https://, http://, ftp:// หรือ ftps://"
+  },
+  "download.local_only": {
+    "message": "ไฟล์ที่ดาวน์โหลดจะไปยังโฟลเดอร์ของคอมพิวเตอร์เครื่องนี้ ให้เปิดโฟลเดอร์หนึ่งในแผงก่อน"
+  },
+  "download.name_placeholder": {
+    "message": "ตามชื่อที่เซิร์ฟเวอร์หรือลิงก์กำหนด"
+  },
+  "download.no_file": {
+    "message": "ลิงก์ไม่ได้ระบุไฟล์"
+  },
+  "download.not_a_link": {
+    "message": "ไม่ใช่ลิงก์สำหรับดาวน์โหลด"
+  },
+  "download.problem.bad_name": {
+    "message": "ใส่ชื่อไฟล์ โดยไม่มีโฟลเดอร์"
+  },
+  "download.problem.empty": {
+    "message": "วางหรือพิมพ์ลิงก์"
+  },
+  "download.problem.exists": {
+    "message": "มี {name} อยู่ที่นี่แล้ว: “แทนที่” จะดาวน์โหลดทับไฟล์นั้น"
+  },
+  "download.problem.not_link": {
+    "message": "ไม่ใช่ลิงก์สำหรับดาวน์โหลด: ต้องขึ้นต้นด้วย https://, http://, ftp:// หรือ ftps://"
+  },
+  "download.replace": {
+    "message": "แทนที่"
+  },
+  "download.save_as": {
+    "message": "บันทึกเป็น"
+  },
+  "download.saved_as": {
+    "message": "บันทึกเป็น {name} แล้ว"
+  },
+  "download.title": {
+    "message": "ดาวน์โหลด “{name}”"
+  },
+  "download.title_link": {
+    "message": "ดาวน์โหลด {link}"
+  },
+  "editor.close.after_send": {
+    "message": "จะปิดเมื่อเซิร์ฟเวอร์ได้รับไฟล์แล้ว"
+  },
+  "editor.close.discard": {
+    "message": "ไม่บันทึก"
+  },
+  "editor.close.save": {
+    "message": "บันทึก"
+  },
+  "editor.close.title": {
+    "message": "บันทึกการเปลี่ยนแปลงหรือไม่"
+  },
+  "editor.close.unsaved": {
+    "message": "{name} มีการเปลี่ยนแปลงที่ยังไม่ได้บันทึก"
+  },
+  "editor.close.unsent": {
+    "message": "{name} ยังไม่ได้บันทึกบนเซิร์ฟเวอร์: การส่งไฟล์ล้มเหลว"
+  },
+  "editor.dialog.cancel": {
+    "message": "ยกเลิก"
+  },
+  "editor.edit.copy": {
+    "message": "คัดลอก"
+  },
+  "editor.edit.cut": {
+    "message": "ตัด"
+  },
+  "editor.edit.find": {
+    "message": "ค้นหา..."
+  },
+  "editor.edit.find_next": {
+    "message": "ค้นหาถัดไป"
+  },
+  "editor.edit.find_previous": {
+    "message": "ค้นหาก่อนหน้า"
+  },
+  "editor.edit.go_to_line": {
+    "message": "ไปที่บรรทัด..."
+  },
+  "editor.edit.paste": {
+    "message": "วาง"
+  },
+  "editor.edit.redo": {
+    "message": "ทำซ้ำ"
+  },
+  "editor.edit.replace": {
+    "message": "แทนที่..."
+  },
+  "editor.edit.undo": {
+    "message": "เลิกทำ"
+  },
+  "editor.external.not_set": {
+    "message": "ยังไม่ได้ตั้งค่าตัวแก้ไขภายนอก (การตั้งค่า, แก้ไข/ดู)"
+  },
+  "editor.file.close": {
+    "message": "ปิด"
+  },
+  "editor.file.reload": {
+    "message": "โหลดใหม่"
+  },
+  "editor.file.save": {
+    "message": "บันทึก"
+  },
+  "editor.file.save_as": {
+    "message": "บันทึกเป็น..."
+  },
+  "editor.find.close": {
+    "message": "ปิด (Escape)"
+  },
+  "editor.find.count": {
+    "message": "{current} จาก {total}"
+  },
+  "editor.find.in_selection": {
+    "message": "ค้นหาในส่วนที่เลือก (Alt+L)"
+  },
+  "editor.find.match_case": {
+    "message": "ตรงตามตัวพิมพ์ (Alt+C)"
+  },
+  "editor.find.next": {
+    "message": "รายการที่ตรงกันถัดไป (Enter)"
+  },
+  "editor.find.no_results": {
+    "message": "ไม่พบผลลัพธ์"
+  },
+  "editor.find.placeholder": {
+    "message": "ค้นหา"
+  },
+  "editor.find.preserve_case": {
+    "message": "คงตัวพิมพ์เดิม (Alt+P)"
+  },
+  "editor.find.previous": {
+    "message": "รายการที่ตรงกันก่อนหน้า (Shift+Enter)"
+  },
+  "editor.find.regex": {
+    "message": "ใช้นิพจน์ทั่วไป (Alt+R)"
+  },
+  "editor.find.replace": {
+    "message": "แทนที่ (Ctrl+Shift+1)"
+  },
+  "editor.find.replace_all": {
+    "message": "แทนที่ทั้งหมด (Ctrl+Alt+Enter)"
+  },
+  "editor.find.replace_placeholder": {
+    "message": "แทนที่"
+  },
+  "editor.find.toggle_replace": {
+    "message": "สลับการแทนที่"
+  },
+  "editor.find.whole_word": {
+    "message": "ตรงทั้งคำ (Alt+W)"
+  },
+  "editor.go_to_line.label": {
+    "message": "บรรทัด หรือ บรรทัด:คอลัมน์"
+  },
+  "editor.go_to_line.title": {
+    "message": "ไปที่บรรทัด"
+  },
+  "editor.language.by_file_name": {
+    "message": "ตามชื่อไฟล์"
+  },
+  "editor.language.plain_text": {
+    "message": "ข้อความธรรมดา"
+  },
+  "editor.menu.edit": {
+    "message": "แก้ไข"
+  },
+  "editor.menu.file": {
+    "message": "ไฟล์"
+  },
+  "editor.menu.language": {
+    "message": "ภาษา"
+  },
+  "editor.menu.selection": {
+    "message": "การเลือก"
+  },
+  "editor.menu.view": {
+    "message": "มุมมอง"
+  },
+  "editor.open.too_large": {
+    "message": "เกิน {limit_mb} MB ของตัวแก้ไขในตัว (การตั้งค่า, แก้ไข/ดู) ใช้ Ctrl+Shift+F4 เพื่อแก้ไขด้วยตัวแก้ไขภายนอก"
+  },
+  "editor.reload.button": {
+    "message": "โหลดใหม่"
+  },
+  "editor.reload.failed": {
+    "message": "โหลดใหม่ไม่ได้: {err}"
+  },
+  "editor.reload.text": {
+    "message": "การเปลี่ยนแปลงที่ยังไม่ได้บันทึกจะหายไป"
+  },
+  "editor.reload.title": {
+    "message": "โหลดไฟล์ใหม่หรือไม่"
+  },
+  "editor.reload.unfit": {
+    "message": "ไม่ได้โหลดใหม่: {why, select, binary {ไฟล์เป็นไบนารี} other {ไฟล์ไม่ใช่ข้อความ UTF-8}}"
+  },
+  "editor.save.admin": {
+    "message": "การบันทึก “{name}”"
+  },
+  "editor.save.failed": {
+    "message": "บันทึก {path} ไม่ได้: {err}"
+  },
+  "editor.save_anyway.button": {
+    "message": "บันทึกต่อไป"
+  },
+  "editor.save_anyway.text": {
+    "message": "ไฟล์นี้ไม่ใช่ข้อความ: การบันทึกจะเขียนตามที่แสดง ส่วนที่ไม่ใช่ข้อความจะเปลี่ยนไปอย่างถาวร"
+  },
+  "editor.save_anyway.title": {
+    "message": "บันทึกเป็นข้อความหรือไม่"
+  },
+  "editor.selection.add_cursor_above": {
+    "message": "เพิ่มเคอร์เซอร์ด้านบน"
+  },
+  "editor.selection.add_cursor_below": {
+    "message": "เพิ่มเคอร์เซอร์ด้านล่าง"
+  },
+  "editor.selection.delete_lines": {
+    "message": "ลบบรรทัด"
+  },
+  "editor.selection.duplicate_lines": {
+    "message": "ทำสำเนาบรรทัด"
+  },
+  "editor.selection.indent": {
+    "message": "เพิ่มการเยื้อง"
+  },
+  "editor.selection.lowercase": {
+    "message": "ตัวพิมพ์เล็ก"
+  },
+  "editor.selection.move_lines_down": {
+    "message": "ย้ายบรรทัดลง"
+  },
+  "editor.selection.move_lines_up": {
+    "message": "ย้ายบรรทัดขึ้น"
+  },
+  "editor.selection.outdent": {
+    "message": "ลดการเยื้อง"
+  },
+  "editor.selection.select_all": {
+    "message": "เลือกทั้งหมด"
+  },
+  "editor.selection.select_all_occurrences": {
+    "message": "เลือกทุกรายการที่พบ"
+  },
+  "editor.selection.sort_lines_ascending": {
+    "message": "เรียงบรรทัดจากน้อยไปมาก"
+  },
+  "editor.selection.sort_lines_descending": {
+    "message": "เรียงบรรทัดจากมากไปน้อย"
+  },
+  "editor.selection.title_case": {
+    "message": "ขึ้นต้นคำด้วยตัวพิมพ์ใหญ่"
+  },
+  "editor.selection.toggle_line_comment": {
+    "message": "สลับความคิดเห็นบรรทัด"
+  },
+  "editor.selection.trim_trailing_whitespace": {
+    "message": "ตัดช่องว่างท้ายบรรทัด"
+  },
+  "editor.selection.uppercase": {
+    "message": "ตัวพิมพ์ใหญ่"
+  },
+  "editor.send.failed": {
+    "message": "ส่งกลับไปบันทึกไม่ได้: {err} กด “บันทึก” เพื่อลองอีกครั้ง"
+  },
+  "editor.status.modified": {
+    "message": "แก้ไขแล้ว"
+  },
+  "editor.status.position": {
+    "message": "บรรทัด {line}, คอลัมน์ {column}"
+  },
+  "editor.status.position_selected": {
+    "message": "บรรทัด {line}, คอลัมน์ {column} ({count, plural, other {เลือก #}})"
+  },
+  "editor.status.sending": {
+    "message": "กำลังบันทึกไปยังเซิร์ฟเวอร์"
+  },
+  "editor.status.spaces": {
+    "message": "ช่องว่าง: {size}"
+  },
+  "editor.status.tab_size": {
+    "message": "ขนาดแท็บ: {size}"
+  },
+  "editor.status.unsent": {
+    "message": "ไม่อยู่บนเซิร์ฟเวอร์"
+  },
+  "editor.terminal.not_found": {
+    "message": "ไม่พบตัวแก้ไข ให้ตั้งค่า $EDITOR"
+  },
+  "editor.title": {
+    "message": "{path} — ตัวแก้ไข"
+  },
+  "editor.unfit.open_anyway": {
+    "message": "เปิดต่อไป"
+  },
+  "editor.unfit.text": {
+    "message": "ไม่แสดงไฟล์ในตัวแก้ไขเนื่องจาก{why, select, binary {ไฟล์เป็นไบนารี} other {ไฟล์ไม่ใช่ข้อความ UTF-8}}"
+  },
+  "editor.view.folding": {
+    "message": "การพับโค้ด"
+  },
+  "editor.view.indent_guides": {
+    "message": "เส้นนำการเยื้อง"
+  },
+  "editor.view.indent_with_tabs": {
+    "message": "เยื้องด้วยแท็บ"
+  },
+  "editor.view.line_numbers": {
+    "message": "หมายเลขบรรทัด"
+  },
+  "editor.view.minimap": {
+    "message": "แผนที่ย่อ"
+  },
+  "editor.view.tab_width": {
+    "message": "ความกว้างแท็บ {width}"
+  },
+  "editor.view.unfold_all": {
+    "message": "คลี่ทั้งหมด"
+  },
+  "editor.view.whitespace": {
+    "message": "อักขระช่องว่าง"
+  },
+  "editor.view.word_wrap": {
+    "message": "ตัดคำ"
+  },
+  "elevate.failed": {
+    "message": "เมื่อเรียกใช้ในฐานะผู้ดูแลระบบก็ล้มเหลวเช่นกัน ({code})"
+  },
+  "elevate.no_consent": {
+    "message": "ไม่ได้รับความยินยอมจากผู้ดูแลระบบ"
+  },
+  "elevate.no_password": {
+    "message": "ไม่ได้ป้อนรหัสผ่าน"
+  },
+  "elevate.not_authorised": {
+    "message": "ไม่ได้รับอนุญาต"
+  },
+  "elevate.percent_name": {
+    "message": "{path}: ไม่สามารถจัดการชื่อที่มี % ในฐานะผู้ดูแลระบบได้ ให้เปลี่ยนชื่อก่อน"
+  },
+  "elevate.pkexec_missing": {
+    "message": "ไม่ได้ติดตั้ง pkexec (polkit)"
+  },
+  "file_menu.change_tags_failed": {
+    "message": "เปลี่ยนแท็กไม่ได้: {err}"
+  },
+  "file_menu.compress": {
+    "message": "{count, plural, =1 {บีบอัด “{name}”…} other {บีบอัด # รายการ…}}"
+  },
+  "file_menu.copy": {
+    "message": "{count, plural, =1 {คัดลอก “{name}”} other {คัดลอก # รายการ}}"
+  },
+  "file_menu.copy_path": {
+    "message": "คัดลอกพาธไปยังคลิปบอร์ด"
+  },
+  "file_menu.delete": {
+    "message": "ลบ"
+  },
+  "file_menu.duplicate": {
+    "message": "ทำสำเนา"
+  },
+  "file_menu.duplicate_failed": {
+    "message": "ทำสำเนาไม่ได้: {err}"
+  },
+  "file_menu.edit_tags": {
+    "message": "แท็ก…"
+  },
+  "file_menu.get_info": {
+    "message": "ขอข้อมูล"
+  },
+  "file_menu.make_alias": {
+    "message": "สร้างนามแฝง"
+  },
+  "file_menu.make_alias_failed": {
+    "message": "สร้างนามแฝงไม่ได้: {err}"
+  },
+  "file_menu.move_to_trash": {
+    "message": "ย้ายไปที่ถังขยะ"
+  },
+  "file_menu.new_folder": {
+    "message": "โฟลเดอร์ใหม่"
+  },
+  "file_menu.open": {
+    "message": "เปิด"
+  },
+  "file_menu.open_failed": {
+    "message": "เปิดไม่ได้: {err}"
+  },
+  "file_menu.open_with": {
+    "message": "เปิดด้วย"
+  },
+  "file_menu.open_with_default": {
+    "message": "{app} (ค่าเริ่มต้น)"
+  },
+  "file_menu.paste": {
+    "message": "วาง"
+  },
+  "file_menu.quick_look": {
+    "message": "{count, plural, =1 {Quick Look “{name}”} other {Quick Look # รายการ}}"
+  },
+  "file_menu.quick_look_failed": {
+    "message": "Quick Look: {err}"
+  },
+  "file_menu.rename": {
+    "message": "เปลี่ยนชื่อ…"
+  },
+  "file_menu.reveal_failed": {
+    "message": "แสดงใน Finder ไม่ได้: {err}"
+  },
+  "file_menu.reveal_in_finder": {
+    "message": "แสดงใน Finder"
+  },
+  "file_menu.show_package_contents": {
+    "message": "แสดงเนื้อหาแพ็คเกจ"
+  },
+  "file_menu.tag_dot.add": {
+    "message": "เพิ่มแท็ก “{name}”"
+  },
+  "file_menu.tag_dot.remove": {
+    "message": "เอาแท็ก “{name}” ออก"
+  },
+  "file_menu.tags_popover.show_all": {
+    "message": "แสดงทั้งหมด…"
+  },
+  "file_menu.tags_popover.title": {
+    "message": "{count, plural, =1 {กำหนดแท็กให้ “{name}”} other {กำหนดแท็กให้ # รายการ}}"
+  },
+  "find.backwards": {
+    "message": "ค้นหาย้อนกลับ"
+  },
+  "find.cancel": {
+    "message": "ยกเลิก"
+  },
+  "find.case_sensitive": {
+    "message": "ตรงตามตัวพิมพ์"
+  },
+  "find.hex": {
+    "message": "ค้นหาสตริงฐานสิบหก"
+  },
+  "find.ok": {
+    "message": "ตกลง"
+  },
+  "find.regex": {
+    "message": "RegEx"
+  },
+  "find.text.label": {
+    "message": "ป้อนข้อความที่จะค้นหา"
+  },
+  "find.title": {
+    "message": "ค้นหา"
+  },
+  "find.whole_words": {
+    "message": "เฉพาะทั้งคำ"
+  },
+  "keys.apply": {
+    "message": "นำไปใช้"
+  },
+  "keys.cancel": {
+    "message": "ยกเลิก"
+  },
+  "keys.clear.tooltip": {
+    "message": "ไม่มีปุ่ม"
+  },
+  "keys.column.alternate": {
+    "message": "ปุ่มสำรอง"
+  },
+  "keys.column.command": {
+    "message": "คำสั่ง"
+  },
+  "keys.column.shortcut": {
+    "message": "ปุ่มลัด"
+  },
+  "keys.custom": {
+    "message": "กำหนดเอง"
+  },
+  "keys.delete_set": {
+    "message": "ลบ"
+  },
+  "keys.note.custom_replaced": {
+    "message": "ปุ่มที่คุณกำหนดเองถูกแทนที่ด้วยปุ่มของ {name} “บันทึกเป็น” จะเก็บปุ่มของคุณไว้"
+  },
+  "keys.note.deleted": {
+    "message": "ลบ {name} แล้ว กด “ตกลง” หรือ “นำไปใช้” เพื่อยืนยัน"
+  },
+  "keys.note.moved": {
+    "message": "ตอนนี้ {key} คือ {command} ไม่ใช่ {other} อีกต่อไป"
+  },
+  "keys.note.name_reserved": {
+    "message": "“{name}” เป็นชื่อของชุดสำเร็จรูป ให้เลือกชื่ออื่น"
+  },
+  "keys.note.press_new_key": {
+    "message": "กดปุ่มใหม่ Esc จะคงค่าเดิมไว้"
+  },
+  "keys.note.saved": {
+    "message": "บันทึกเป็น {name} แล้ว กด “ตกลง” หรือ “นำไปใช้” เพื่อเก็บไว้"
+  },
+  "keys.note.set": {
+    "message": "ตอนนี้ {key} คือ {command}"
+  },
+  "keys.note.taken_by_system": {
+    "message": "{key} ถูกใช้โดย {by} จึงไม่ถูกส่งถึง Spark Commander"
+  },
+  "keys.ok": {
+    "message": "ตกลง"
+  },
+  "keys.press_key": {
+    "message": "กดปุ่ม…"
+  },
+  "keys.reserved.application_launcher": {
+    "message": "{system}: ตัวเรียกใช้แอปพลิเคชัน"
+  },
+  "keys.reserved.close_window": {
+    "message": "{system}: ปิดหน้าต่าง"
+  },
+  "keys.reserved.close_window_or_tab": {
+    "message": "{system}: ปิดหน้าต่างหรือแท็บ"
+  },
+  "keys.reserved.dock": {
+    "message": "{system}: Dock"
+  },
+  "keys.reserved.floating_window": {
+    "message": "{system}: หน้าต่างลอย"
+  },
+  "keys.reserved.force_quit": {
+    "message": "{system}: บังคับออก"
+  },
+  "keys.reserved.hide_program": {
+    "message": "{system}: ซ่อนโปรแกรม"
+  },
+  "keys.reserved.input_source": {
+    "message": "{system}: แหล่งป้อนข้อมูล"
+  },
+  "keys.reserved.keyboard_access": {
+    "message": "{system}: การเข้าถึงด้วยแป้นพิมพ์"
+  },
+  "keys.reserved.keyboard_navigation": {
+    "message": "{system}: การนำทางด้วยแป้นพิมพ์"
+  },
+  "keys.reserved.krunner": {
+    "message": "{system}: KRunner"
+  },
+  "keys.reserved.lock_screen": {
+    "message": "{system}: ล็อกหน้าจอ"
+  },
+  "keys.reserved.log_out": {
+    "message": "{system}: ออกจากระบบ"
+  },
+  "keys.reserved.maximize_window": {
+    "message": "{system}: ขยายหน้าต่างให้ใหญ่สุด"
+  },
+  "keys.reserved.menu_bar": {
+    "message": "{system}: แถบเมนู"
+  },
+  "keys.reserved.minimize": {
+    "message": "{system}: ย่อหน้าต่าง"
+  },
+  "keys.reserved.mission_control": {
+    "message": "{system}: Mission Control"
+  },
+  "keys.reserved.move_window": {
+    "message": "{system}: ย้ายหน้าต่าง"
+  },
+  "keys.reserved.next_window": {
+    "message": "{system}: หน้าต่างถัดไป"
+  },
+  "keys.reserved.present_windows": {
+    "message": "{system}: แสดงหน้าต่าง"
+  },
+  "keys.reserved.present_windows_all": {
+    "message": "{system}: แสดงหน้าต่าง (ทุกเดสก์ท็อป)"
+  },
+  "keys.reserved.present_windows_class": {
+    "message": "{system}: แสดงหน้าต่าง (คลาสหน้าต่าง)"
+  },
+  "keys.reserved.program_windows": {
+    "message": "{system}: หน้าต่างของโปรแกรม"
+  },
+  "keys.reserved.quit": {
+    "message": "{system}: ออก"
+  },
+  "keys.reserved.resize_window": {
+    "message": "{system}: ปรับขนาดหน้าต่าง"
+  },
+  "keys.reserved.restore_window": {
+    "message": "{system}: คืนขนาดหน้าต่าง"
+  },
+  "keys.reserved.run_command": {
+    "message": "{system}: เรียกใช้คำสั่ง"
+  },
+  "keys.reserved.screenshot": {
+    "message": "{system}: ภาพหน้าจอ"
+  },
+  "keys.reserved.security_screen": {
+    "message": "{system}: หน้าจอความปลอดภัย"
+  },
+  "keys.reserved.show_desktop": {
+    "message": "{system}: แสดงเดสก์ท็อป"
+  },
+  "keys.reserved.space_left": {
+    "message": "{system}: พื้นที่ทางซ้าย"
+  },
+  "keys.reserved.space_right": {
+    "message": "{system}: พื้นที่ทางขวา"
+  },
+  "keys.reserved.spotlight": {
+    "message": "{system}: Spotlight"
+  },
+  "keys.reserved.start_menu": {
+    "message": "{system}: เมนูเริ่ม"
+  },
+  "keys.reserved.status_menus": {
+    "message": "{system}: เมนูสถานะ"
+  },
+  "keys.reserved.suspend_compositing": {
+    "message": "{system}: พักการคอมโพสิต"
+  },
+  "keys.reserved.switch_program_windows": {
+    "message": "{system}: สลับหน้าต่างของโปรแกรม"
+  },
+  "keys.reserved.switch_programs": {
+    "message": "{system}: สลับโปรแกรม"
+  },
+  "keys.reserved.switch_system_controls": {
+    "message": "{system}: สลับตัวควบคุมระบบ"
+  },
+  "keys.reserved.switch_to_desktop": {
+    "message": "{system}: สลับไปเดสก์ท็อป {number}"
+  },
+  "keys.reserved.switch_windows": {
+    "message": "{system}: สลับหน้าต่าง"
+  },
+  "keys.reserved.system_monitor": {
+    "message": "{system}: ตัวตรวจสอบระบบ"
+  },
+  "keys.reserved.task_manager": {
+    "message": "{system}: ตัวจัดการงาน"
+  },
+  "keys.reserved.text_console": {
+    "message": "{system}: สลับไปคอนโซลข้อความ"
+  },
+  "keys.reserved.toolbar": {
+    "message": "{system}: แถบเครื่องมือ"
+  },
+  "keys.reserved.window_menu": {
+    "message": "{system}: เมนูหน้าต่าง"
+  },
+  "keys.reserved.workspace_down": {
+    "message": "{system}: พื้นที่ทำงานด้านล่าง"
+  },
+  "keys.reserved.workspace_left": {
+    "message": "{system}: พื้นที่ทำงานทางซ้าย"
+  },
+  "keys.reserved.workspace_right": {
+    "message": "{system}: พื้นที่ทำงานทางขวา"
+  },
+  "keys.reserved.workspace_up": {
+    "message": "{system}: พื้นที่ทำงานด้านบน"
+  },
+  "keys.reset.tooltip": {
+    "message": "กลับไปใช้ปุ่มของ {preset}"
+  },
+  "keys.reset_all": {
+    "message": "รีเซ็ตทั้งหมด"
+  },
+  "keys.save_as.button": {
+    "message": "บันทึกเป็น…"
+  },
+  "keys.save_as.default_name": {
+    "message": "ปุ่มของฉัน"
+  },
+  "keys.save_as.label": {
+    "message": "ชื่อ:"
+  },
+  "keys.save_as.title": {
+    "message": "บันทึกปุ่มลัด"
+  },
+  "keys.search.placeholder": {
+    "message": "ค้นหาคำสั่งหรือปุ่ม"
+  },
+  "keys.set_label": {
+    "message": "ชุดปุ่ม:"
+  },
+  "keys.taken_by.tooltip": {
+    "message": "ถูกใช้โดย {by}"
+  },
+  "keys.title": {
+    "message": "ปุ่มลัด"
+  },
+  "main.admin.button": {
+    "message": "ทำในฐานะผู้ดูแลระบบ"
+  },
+  "main.admin.deleting": {
+    "message": "การลบ {count, plural, other {# รายการ}}"
+  },
+  "main.admin.failed": {
+    "message": "ในฐานะผู้ดูแลระบบ: {err}"
+  },
+  "main.admin.making": {
+    "message": "การสร้าง “{name}”"
+  },
+  "main.admin.offer": {
+    "message": "{what}: ไม่ได้รับอนุญาต หากทำในฐานะผู้ดูแลระบบ ระบบจะขอรหัสผ่าน"
+  },
+  "main.admin.offer_delete": {
+    "message": "{what}: ไม่ได้รับอนุญาต หากทำในฐานะผู้ดูแลระบบ ระบบจะขอรหัสผ่าน สิ่งที่ลบด้วยวิธีนี้จะหายไปอย่างถาวร"
+  },
+  "main.admin.title": {
+    "message": "ไม่ได้รับอนุญาต"
+  },
+  "main.delete.from_archive": {
+    "message": "{kind, select, folder {ลบโฟลเดอร์ “{name}” ออกจาก {archive} หรือไม่ การดำเนินการนี้เลิกทำไม่ได้} file {ลบไฟล์ “{name}” ออกจาก {archive} หรือไม่ การดำเนินการนี้เลิกทำไม่ได้} other {ลบ {count, plural, other {# รายการ}} ออกจาก {archive} หรือไม่ การดำเนินการนี้เลิกทำไม่ได้}}"
+  },
+  "main.delete.on_server": {
+    "message": "{kind, select, folder {ลบโฟลเดอร์ “{name}” บน {server} หรือไม่ การดำเนินการนี้เลิกทำไม่ได้} file {ลบไฟล์ “{name}” บน {server} หรือไม่ การดำเนินการนี้เลิกทำไม่ได้} other {ลบ {count, plural, other {# รายการ}} บน {server} หรือไม่ การดำเนินการนี้เลิกทำไม่ได้}}"
+  },
+  "main.delete.permanently": {
+    "message": "{kind, select, folder {ลบโฟลเดอร์ “{name}” อย่างถาวรหรือไม่ การดำเนินการนี้เลิกทำไม่ได้} file {ลบไฟล์ “{name}” อย่างถาวรหรือไม่ การดำเนินการนี้เลิกทำไม่ได้} other {ลบ {count, plural, other {# รายการ}} อย่างถาวรหรือไม่ การดำเนินการนี้เลิกทำไม่ได้}}"
+  },
+  "main.delete.title": {
+    "message": "ลบ"
+  },
+  "main.delete.title_permanently": {
+    "message": "ลบถาวร"
+  },
+  "main.delete.to_trash": {
+    "message": "{kind, select, folder {ย้ายโฟลเดอร์ “{name}” ไปถังขยะหรือไม่} file {ย้ายไฟล์ “{name}” ไปถังขยะหรือไม่} other {ย้าย {count, plural, other {# รายการ}} ไปถังขยะหรือไม่}}"
+  },
+  "main.download.edit": {
+    "message": "ดาวน์โหลด {file} เพื่อแก้ไข"
+  },
+  "main.download.view": {
+    "message": "ดาวน์โหลด {file} เพื่อดู"
+  },
+  "main.error.make_folder": {
+    "message": "สร้างโฟลเดอร์ไม่ได้: {err}"
+  },
+  "main.error.read_settings": {
+    "message": "อ่านการตั้งค่าไม่ได้: {err}"
+  },
+  "main.error.read_tabs": {
+    "message": "อ่านแท็บที่เปิดอยู่ไม่ได้: {err}"
+  },
+  "main.error.read_workspaces": {
+    "message": "อ่านพื้นที่ทำงานไม่ได้: {err}"
+  },
+  "main.error.save_settings": {
+    "message": "บันทึกการตั้งค่าไม่ได้: {err}"
+  },
+  "main.folder_tree.home": {
+    "message": "โฮม"
+  },
+  "main.go.no_such_folder": {
+    "message": "{path}: ไม่มีโฟลเดอร์นี้ในคอมพิวเตอร์เครื่องนี้"
+  },
+  "main.new_folder.label": {
+    "message": "โฟลเดอร์ใหม่ (ไดเรกทอรี):"
+  },
+  "main.new_folder.title": {
+    "message": "โฟลเดอร์ใหม่"
+  },
+  "main.sync_browsing.lost": {
+    "message": "{err} ปิดการเรียกดูแบบซิงค์แล้ว"
+  },
+  "main.tool.needs_file": {
+    "message": "เคอร์เซอร์ไม่ได้อยู่บนไฟล์: %N, %O และ %E ต้องใช้ไฟล์"
+  },
+  "main.tool.needs_local_folder": {
+    "message": "อีกแผงแสดงเซิร์ฟเวอร์หรือไฟล์บีบอัด: %T ต้องใช้โฟลเดอร์ในคอมพิวเตอร์เครื่องนี้"
+  },
+  "main.undo.done": {
+    "message": "{way, select, redo {ทำซ้ำแล้ว: {title}} other {เลิกทำแล้ว: {title}}}"
+  },
+  "main.undo.failed": {
+    "message": "{way, select, redo {ทำซ้ำ “{title}” ไม่ได้: {err}} other {เลิกทำ “{title}” ไม่ได้: {err}}}"
+  },
+  "main.undo.nothing": {
+    "message": "{way, select, redo {ไม่มีอะไรให้ทำซ้ำ} other {ไม่มีอะไรให้เลิกทำ}}"
+  },
+  "main.undo.queued": {
+    "message": "{way, select, redo {อยู่ในคิวเพื่อทำซ้ำ: {title}} other {อยู่ในคิวเพื่อเลิกทำ: {title}}}"
+  },
+  "mark.compare.marked": {
+    "message": "{count, plural, other {เลือกแล้ว # ไฟล์: ใหม่กว่า หรือไม่มีอยู่ในอีกฝั่ง}}"
+  },
+  "mark.compare.same": {
+    "message": "โฟลเดอร์มีไฟล์เหมือนกัน"
+  },
+  "mark.load_selection.label": {
+    "message": "เลือกชื่อที่ระบุไว้ในไฟล์:"
+  },
+  "mark.load_selection.title": {
+    "message": "โหลดการเลือก"
+  },
+  "mark.save_selection.label": {
+    "message": "บันทึกชื่อที่เลือกลงในไฟล์:"
+  },
+  "mark.save_selection.title": {
+    "message": "บันทึกการเลือก"
+  },
+  "mark.select_group.label": {
+    "message": "เลือกไฟล์ (*.txt *.md; มาสก์โฟลเดอร์ลงท้ายด้วย /):"
+  },
+  "mark.select_group.title": {
+    "message": "เลือกกลุ่ม"
+  },
+  "mark.selection_file.not_local": {
+    "message": "ไฟล์การเลือกจะเก็บไว้ในคอมพิวเตอร์เครื่องนี้ นอกไฟล์บีบอัด"
+  },
+  "mark.unselect_group.label": {
+    "message": "ยกเลิกการเลือกไฟล์ (*.txt *.md; มาสก์โฟลเดอร์ลงท้ายด้วย /):"
+  },
+  "mark.unselect_group.title": {
+    "message": "ยกเลิกการเลือกกลุ่ม"
+  },
+  "media.cannot_play": {
+    "message": "เล่นไม่ได้: {err}"
+  },
+  "media.cannot_play_as_text": {
+    "message": "เล่นไม่ได้: {err} กด 1 เพื่อแสดงเป็นข้อความ"
+  },
+  "media.continuing": {
+    "message": "เล่นต่อที่ {time}"
+  },
+  "media.error.missing": {
+    "message": "ไม่พบ libmpv: ดาวน์โหลดได้ใน การตั้งค่า > ส่วนเสริม (หากสร้างจากซอร์ส: vendor/mpv/{script})"
+  },
+  "media.error.not_started": {
+    "message": "libmpv เริ่มทำงานไม่ได้"
+  },
+  "media.error.too_long": {
+    "message": "{path}: mpv ใช้เวลานานเกินไป"
+  },
+  "media.error.unsupported_system": {
+    "message": "ขณะนี้เล่นวิดีโอได้เฉพาะบน Linux, macOS และ Windows"
+  },
+  "menu.archive": {
+    "message": "ไฟล์บีบอัด"
+  },
+  "menu.associations": {
+    "message": "การเชื่อมโยง"
+  },
+  "menu.button_bar": {
+    "message": "แถบปุ่ม"
+  },
+  "menu.checksums": {
+    "message": "เช็กซัม"
+  },
+  "menu.commands": {
+    "message": "คำสั่ง"
+  },
+  "menu.compare_directories": {
+    "message": "เปรียบเทียบโฟลเดอร์"
+  },
+  "menu.configuration": {
+    "message": "การกำหนดค่า"
+  },
+  "menu.copy_names": {
+    "message": "คัดลอกชื่อ"
+  },
+  "menu.files": {
+    "message": "ไฟล์"
+  },
+  "menu.filter": {
+    "message": "ตัวกรอง"
+  },
+  "menu.go": {
+    "message": "ไปที่"
+  },
+  "menu.help": {
+    "message": "ความช่วยเหลือ"
+  },
+  "menu.mark": {
+    "message": "เลือก"
+  },
+  "menu.other": {
+    "message": "อื่นๆ"
+  },
+  "menu.recently_closed_tabs": {
+    "message": "แท็บที่ปิดล่าสุด"
+  },
+  "menu.selection": {
+    "message": "การเลือก"
+  },
+  "menu.show": {
+    "message": "แสดง"
+  },
+  "menu.sidebar": {
+    "message": "แถบด้านข้าง"
+  },
+  "menu.sort": {
+    "message": "เรียงลำดับ"
+  },
+  "menu.split_and_combine": {
+    "message": "แยกและรวมไฟล์"
+  },
+  "menu.tabs": {
+    "message": "แท็บ"
+  },
+  "menu.tools": {
+    "message": "เครื่องมือ"
+  },
+  "menu.workspaces": {
+    "message": "พื้นที่ทำงาน"
+  },
+  "menus.hide_app": {
+    "message": "ซ่อน Spark Commander"
+  },
+  "menus.hide_others": {
+    "message": "ซ่อนรายการอื่น"
+  },
+  "menus.minimize": {
+    "message": "ย่อ"
+  },
+  "menus.quit_app": {
+    "message": "ออกจาก Spark Commander"
+  },
+  "menus.services": {
+    "message": "บริการ"
+  },
+  "menus.show_all": {
+    "message": "แสดงทั้งหมด"
+  },
+  "menus.zoom": {
+    "message": "ซูม"
+  },
+  "name_dialog.cancel": {
+    "message": "ยกเลิก"
+  },
+  "name_dialog.ok": {
+    "message": "ตกลง"
+  },
+  "operations.clear": {
+    "message": "ล้างงานที่เสร็จแล้ว"
+  },
+  "operations.duration.seconds": {
+    "message": "{seconds} วิ"
+  },
+  "operations.empty": {
+    "message": "ไม่มีการดำเนินการ"
+  },
+  "operations.job.answer": {
+    "message": "รอคำตอบของคุณ"
+  },
+  "operations.job.bytes": {
+    "message": "{done} จาก {total}"
+  },
+  "operations.job.cancel_tooltip": {
+    "message": "ยกเลิก"
+  },
+  "operations.job.cancelled": {
+    "message": "ยกเลิกแล้ว"
+  },
+  "operations.job.counting": {
+    "message": "กำลังนับ: {count, plural, other {# ไฟล์}}"
+  },
+  "operations.job.done": {
+    "message": "เสร็จแล้ว"
+  },
+  "operations.job.done_skipped": {
+    "message": "เสร็จแล้ว {count, plural, other {ข้าม #}}"
+  },
+  "operations.job.failed": {
+    "message": "ล้มเหลว"
+  },
+  "operations.job.files": {
+    "message": "{files} / {count, plural, other {# ไฟล์}}"
+  },
+  "operations.job.left": {
+    "message": "เหลือ {time}"
+  },
+  "operations.job.running": {
+    "message": "กำลังทำงาน"
+  },
+  "operations.job.waiting": {
+    "message": "กำลังรอ"
+  },
+  "operations.menu.cancel": {
+    "message": "ยกเลิก"
+  },
+  "operations.menu.clear": {
+    "message": "ล้างงานที่เสร็จแล้ว"
+  },
+  "operations.menu.move_down": {
+    "message": "ย้ายลง"
+  },
+  "operations.menu.move_up": {
+    "message": "ย้ายขึ้น"
+  },
+  "operations.settings_tooltip": {
+    "message": "การตั้งค่าคิวการดำเนินการ"
+  },
+  "operations.summary.failed": {
+    "message": "{count, plural, other {ล้มเหลว #}}"
+  },
+  "operations.summary.running": {
+    "message": "{count, plural, other {ทำงาน #}}"
+  },
+  "operations.summary.waiting": {
+    "message": "{count, plural, other {รอ #}}"
+  },
+  "ops.as_administrator.failed": {
+    "message": "ในฐานะผู้ดูแลระบบ: {err}"
+  },
+  "ops.as_administrator.progress": {
+    "message": "ในฐานะผู้ดูแลระบบ…"
+  },
+  "ops.delete.title_many": {
+    "message": "ลบ {count, plural, other {# รายการ}} ใน {folder}"
+  },
+  "ops.delete.title_one": {
+    "message": "ลบ “{name}”"
+  },
+  "ops.delete.trash_title_many": {
+    "message": "ย้าย {count, plural, other {# รายการ}} ใน {folder} ไปถังขยะ"
+  },
+  "ops.delete.trash_title_one": {
+    "message": "ย้าย “{name}” ไปถังขยะ"
+  },
+  "ops.error.file_in_the_way": {
+    "message": "มีไฟล์ชื่อนี้ขวางอยู่"
+  },
+  "ops.error.into_itself": {
+    "message": "คัดลอกเข้าไปในตัวเองไม่ได้"
+  },
+  "ops.exists_already": {
+    "message": "มี {name} อยู่แล้ว"
+  },
+  "ops.link.dialog_title": {
+    "message": "สร้างลิงก์"
+  },
+  "ops.link.failed": {
+    "message": "สร้างลิงก์ไม่ได้: {err}"
+  },
+  "ops.link.kind.hard": {
+    "message": "ฮาร์ดลิงก์"
+  },
+  "ops.link.kind.junction": {
+    "message": "จุดเชื่อมต่อ (junction)"
+  },
+  "ops.link.kind.shortcut": {
+    "message": "ทางลัด (.lnk)"
+  },
+  "ops.link.kind.symbolic": {
+    "message": "ลิงก์สัญลักษณ์"
+  },
+  "ops.link.label_many": {
+    "message": "ลิงก์ไปยัง {count, plural, other {# รายการ}} ในโฟลเดอร์:"
+  },
+  "ops.link.label_one": {
+    "message": "ลิงก์ไปยัง “{name}” เป็น:"
+  },
+  "ops.link.making": {
+    "message": "การสร้าง{kind, select, symbolic {ลิงก์สัญลักษณ์} hard {ฮาร์ดลิงก์} junction {จุดเชื่อมต่อ} other {ทางลัด (.lnk)}}"
+  },
+  "ops.link.needs_admin": {
+    "message": "ลิงก์สัญลักษณ์ต้องใช้สิทธิ์ผู้ดูแลระบบ หรือ Developer Mode"
+  },
+  "ops.link.thread_failed": {
+    "message": "เธรดของทางลัดล้มเหลว"
+  },
+  "ops.link.title_many": {
+    "message": "{kind, select, symbolic {ลิงก์สัญลักษณ์} hard {ฮาร์ดลิงก์} junction {จุดเชื่อมต่อ} other {ทางลัด (.lnk)}} ไปยัง {count, plural, other {# รายการ}} ใน {folder}"
+  },
+  "ops.link.title_one": {
+    "message": "{kind, select, symbolic {ลิงก์สัญลักษณ์} hard {ฮาร์ดลิงก์} junction {จุดเชื่อมต่อ} other {ทางลัด (.lnk)}} ไปยัง “{name}” ใน {folder}"
+  },
+  "ops.link.windows_only": {
+    "message": "จุดเชื่อมต่อและทางลัดมีเฉพาะใน Windows"
+  },
+  "ops.redo.title": {
+    "message": "ทำซ้ำ: {what}"
+  },
+  "ops.title.many": {
+    "message": "{kind, select, copy {คัดลอก} other {ย้าย}} {count, plural, other {# รายการ}} ไปยัง {target}"
+  },
+  "ops.title.one": {
+    "message": "{kind, select, copy {คัดลอก} other {ย้าย}} “{name}” ไปยัง {target}"
+  },
+  "ops.undo.not_a_server": {
+    "message": "{url}: ไม่ใช่ที่อยู่ของเซิร์ฟเวอร์"
+  },
+  "ops.undo.not_in_trash": {
+    "message": "ไฟล์ไม่อยู่ในถังขยะแล้ว"
+  },
+  "ops.undo.restore_title": {
+    "message": "{title}: นำไฟล์ที่ถูกเขียนทับกลับมาจากถังขยะ"
+  },
+  "ops.undo.title": {
+    "message": "เลิกทำ: {what}"
+  },
+  "pack.cancel": {
+    "message": "ยกเลิก"
+  },
+  "pack.compression": {
+    "message": "การบีบอัด:"
+  },
+  "pack.dialog_title": {
+    "message": "บีบอัดไฟล์"
+  },
+  "pack.encrypt": {
+    "message": "เข้ารหัสด้วยรหัสผ่าน"
+  },
+  "pack.format": {
+    "message": "รูปแบบ:"
+  },
+  "pack.label": {
+    "message": "บีบอัด {count, plural, other {# รายการ}} ลงในไฟล์บีบอัด:"
+  },
+  "pack.level.fastest": {
+    "message": "เร็วที่สุด"
+  },
+  "pack.level.maximum": {
+    "message": "สูงสุด"
+  },
+  "pack.level.normal": {
+    "message": "ปกติ"
+  },
+  "pack.level.store": {
+    "message": "จัดเก็บ"
+  },
+  "pack.level.ultra": {
+    "message": "อัลตรา"
+  },
+  "pack.local_only": {
+    "message": "{what, select, packing {การบีบอัด} unpacking {การแตกไฟล์} testing {การทดสอบ} creating_checksums {การสร้างเช็กซัม} making_links {การสร้างลิงก์} verifying_checksums {การตรวจสอบเช็กซัม} splitting {การแยกไฟล์} combining {การรวมไฟล์} other {ฟังก์ชันนี้}}ใช้ได้กับไฟล์ของคอมพิวเตอร์เครื่องนี้ที่อยู่นอกไฟล์บีบอัดเท่านั้น"
+  },
+  "pack.move_files": {
+    "message": "ย้ายไปไว้ในไฟล์บีบอัด (ลบไฟล์ที่บีบอัดแล้ว)"
+  },
+  "pack.needs_password": {
+    "message": "ต้องใช้รหัสผ่าน"
+  },
+  "pack.ok": {
+    "message": "ตกลง"
+  },
+  "pack.password_missing": {
+    "message": "พิมพ์รหัสผ่าน หรือไม่ต้องเลือก “เข้ารหัสด้วยรหัสผ่าน”"
+  },
+  "pack.separate": {
+    "message": "แยกไฟล์บีบอัดสำหรับแต่ละไฟล์หรือโฟลเดอร์ที่เลือก"
+  },
+  "pack.split": {
+    "message": "แบ่งเป็นวอลุมขนาด"
+  },
+  "pack.split_unit": {
+    "message": "MB"
+  },
+  "pack.test.broken": {
+    "message": "{broken, plural, other {เสีย # จาก {count}}}"
+  },
+  "pack.test.choose": {
+    "message": "เลือกไฟล์บีบอัดที่จะทดสอบ"
+  },
+  "pack.test.ok": {
+    "message": "{count, plural, other {ไฟล์บีบอัดถูกต้อง # ไฟล์}}"
+  },
+  "pack.test.title_many": {
+    "message": "ทดสอบ{count, plural, other {ไฟล์บีบอัด # ไฟล์}}"
+  },
+  "pack.test.title_one": {
+    "message": "ทดสอบ “{name}”"
+  },
+  "pack.title.many": {
+    "message": "บีบอัด {count, plural, other {# รายการ}} ลงใน {archive}"
+  },
+  "pack.title.many_separate": {
+    "message": "บีบอัด {count, plural, other {# รายการ}} เป็นไฟล์บีบอัด {format} แยกกัน"
+  },
+  "pack.title.one": {
+    "message": "บีบอัด “{name}” ลงใน {archive}"
+  },
+  "pack.title.one_separate": {
+    "message": "บีบอัด “{name}” เป็นไฟล์บีบอัด {format} แยกกัน"
+  },
+  "pack.unpack.choose": {
+    "message": "เลือกไฟล์บีบอัดที่จะแตกไฟล์"
+  },
+  "pack.unpack.dialog_title": {
+    "message": "แตกไฟล์"
+  },
+  "pack.unpack.label": {
+    "message": "แตก{count, plural, other {ไฟล์บีบอัด # ไฟล์}}ไปยัง:"
+  },
+  "pack.unpack.mask": {
+    "message": "เฉพาะไฟล์:"
+  },
+  "pack.unpack.overwrite": {
+    "message": "เขียนทับไฟล์ที่มีอยู่ (มิฉะนั้นจะเก็บไว้)"
+  },
+  "pack.unpack.password": {
+    "message": "รหัสผ่าน:"
+  },
+  "pack.unpack.separate": {
+    "message": "แตกแต่ละไฟล์บีบอัดลงในโฟลเดอร์ตามชื่อของไฟล์นั้น"
+  },
+  "pack.unpack.title_many": {
+    "message": "แตก{count, plural, other {ไฟล์บีบอัด # ไฟล์}}ไปยัง {target}"
+  },
+  "pack.unpack.title_one": {
+    "message": "แตก “{name}” ไปยัง {target}"
+  },
+  "pack.unpack.with_paths": {
+    "message": "คงโครงสร้างโฟลเดอร์ที่เก็บไว้ในไฟล์บีบอัด"
+  },
+  "pack.volume_invalid": {
+    "message": "ขนาดวอลุมต้องเป็นตัวเลขหน่วย MB"
+  },
+  "pack.wrong_password": {
+    "message": "รหัสผ่านไม่ถูกต้อง"
+  },
+  "panel.admin.renaming": {
+    "message": "การเปลี่ยนชื่อเป็น “{name}”"
+  },
+  "panel.clipboard.copied": {
+    "message": "{count, plural, other {คัดลอก # รายการแล้ว}}: กด Ctrl+V เพื่อวาง"
+  },
+  "panel.clipboard.cut": {
+    "message": "{count, plural, other {ตัด # รายการแล้ว}}: กด Ctrl+V เพื่อวาง"
+  },
+  "panel.clipboard.no_cut_in_archive": {
+    "message": "ตัดไฟล์ออกจากไฟล์บีบอัดไม่ได้ ใช้ Ctrl+C เพื่อคัดลอกแทน"
+  },
+  "panel.clipboard.no_files": {
+    "message": "คลิปบอร์ดไม่มีไฟล์"
+  },
+  "panel.clipboard.no_paste_in_archive": {
+    "message": "ยังวางไฟล์ลงในไฟล์บีบอัดไม่ได้"
+  },
+  "panel.clipboard.same_folder": {
+    "message": "ไฟล์อยู่ในโฟลเดอร์นี้อยู่แล้ว: Ctrl+V จะวางลงในโฟลเดอร์อื่น"
+  },
+  "panel.column.attr": {
+    "message": "สิทธิ์"
+  },
+  "panel.column.date": {
+    "message": "วันที่"
+  },
+  "panel.column.ext": {
+    "message": "นามสกุล"
+  },
+  "panel.column.name": {
+    "message": "ชื่อ"
+  },
+  "panel.column.size": {
+    "message": "ขนาด"
+  },
+  "panel.disconnect": {
+    "message": "ตัดการเชื่อมต่อ"
+  },
+  "panel.drag.items": {
+    "message": "{count, plural, other {# รายการ}}"
+  },
+  "panel.error.archive_not_updatable": {
+    "message": "{name}: 7-Zip แก้ไขได้เฉพาะไฟล์บีบอัด 7z, zip และ tar ไม่ใช่ไฟล์นี้"
+  },
+  "panel.error.archive_on_server": {
+    "message": "{name}: ยังแก้ไขไฟล์บีบอัดบนเซิร์ฟเวอร์ไม่ได้"
+  },
+  "panel.error.branch_view_local": {
+    "message": "มุมมองแบบแตกแขนงแสดงได้เฉพาะโฟลเดอร์ของคอมพิวเตอร์เครื่องนี้"
+  },
+  "panel.error.exists": {
+    "message": "มี {name} อยู่แล้ว"
+  },
+  "panel.error.folder_in_the_way": {
+    "message": "มีโฟลเดอร์ชื่อนี้ขวางอยู่"
+  },
+  "panel.error.inside_archive": {
+    "message": "ยังทำภายในไฟล์บีบอัดไม่ได้"
+  },
+  "panel.error.make_file": {
+    "message": "สร้างไฟล์ไม่ได้: {err}"
+  },
+  "panel.error.no_name": {
+    "message": "ไม่ได้ระบุชื่อ"
+  },
+  "panel.error.not_a_name": {
+    "message": "{name}: ไม่ใช่ชื่อที่ใช้ได้"
+  },
+  "panel.error.other_drive": {
+    "message": "อีกแผงไปยังไดรฟ์อื่นแล้ว"
+  },
+  "panel.error.rename": {
+    "message": "เปลี่ยนชื่อไม่ได้: {err}"
+  },
+  "panel.filter.custom.label": {
+    "message": "ประเภทไฟล์ เช่น *.txt *.md (หลัง | คือที่ไม่แสดง):"
+  },
+  "panel.filter.custom.title": {
+    "message": "แสดงไฟล์"
+  },
+  "panel.filter.programs": {
+    "message": "โปรแกรม"
+  },
+  "panel.filter.selected_files": {
+    "message": "ไฟล์ที่เลือก"
+  },
+  "panel.found.branch_view": {
+    "message": "มุมมองแบบแตกแขนง:"
+  },
+  "panel.found.search_results": {
+    "message": "ผลการค้นหา:"
+  },
+  "panel.new_text_file.label": {
+    "message": "ชื่อไฟล์ (เปิดในตัวแก้ไข):"
+  },
+  "panel.new_text_file.title": {
+    "message": "ไฟล์ข้อความใหม่"
+  },
+  "panel.opening.cancel": {
+    "message": "ยกเลิก"
+  },
+  "panel.opening.reading": {
+    "message": "กำลังอ่าน…"
+  },
+  "panel.opening.title": {
+    "message": "กำลังเปิดไฟล์บีบอัด"
+  },
+  "panel.quick_filter.hint": {
+    "message": "ซ่อนรายการที่ไม่ตรงกัน Escape เพื่อแสดงทั้งหมด"
+  },
+  "panel.quick_filter.label": {
+    "message": "กรอง:"
+  },
+  "panel.quick_search.label": {
+    "message": "ค้นหา:"
+  },
+  "panel.size.app": {
+    "message": "<APP>"
+  },
+  "panel.size.b": {
+    "message": "{size} ไบต์"
+  },
+  "panel.size.dir": {
+    "message": "<DIR>"
+  },
+  "panel.size.gb": {
+    "message": "{size} GB"
+  },
+  "panel.size.kb": {
+    "message": "{size} KB"
+  },
+  "panel.size.mb": {
+    "message": "{size} MB"
+  },
+  "panel.size.tb": {
+    "message": "{size} TB"
+  },
+  "panel.space.bytes": {
+    "message": "{count, plural, other {{size} ไบต์ ({human})}}"
+  },
+  "panel.space.close": {
+    "message": "ปิด"
+  },
+  "panel.space.counting": {
+    "message": "กำลังนับ…"
+  },
+  "panel.space.done": {
+    "message": "เสร็จแล้ว"
+  },
+  "panel.space.files": {
+    "message": "ไฟล์:"
+  },
+  "panel.space.folders": {
+    "message": "โฟลเดอร์:"
+  },
+  "panel.space.in_archive": {
+    "message": "ภายในไฟล์บีบอัด คอลัมน์ “ขนาด” แสดงขนาดอยู่แล้ว"
+  },
+  "panel.space.title": {
+    "message": "คำนวณพื้นที่ที่ใช้"
+  },
+  "panel.space.total": {
+    "message": "ขนาดรวม:"
+  },
+  "panel.space.unreadable": {
+    "message": "{count, plural, other {อ่านไม่ได้ # รายการ}}"
+  },
+  "panel.status": {
+    "message": "{marked_size} k / {size} k ใน {marked_files} / {files, plural, other {# ไฟล์}}, {marked_folders} / {folders, plural, other {# โฟลเดอร์}}"
+  },
+  "panel.sync_browsing.stop": {
+    "message": "เรียกดูแบบซิงค์ (คลิกเพื่อหยุด)"
+  },
+  "panel.undo.rename": {
+    "message": "เปลี่ยนชื่อ “{name}” เป็น “{to}”"
+  },
+  "passwords.about.set": {
+    "message": "เมื่อมีรหัสผ่านหลัก รหัสผ่านที่บันทึกไว้จะเปิดบนคอมพิวเตอร์เครื่องอื่นได้เมื่อพิมพ์รหัสผ่านหลักที่นั่น หลังจากคัดลอกโฟลเดอร์การตั้งค่าไปแล้ว หากลืม จะเสียเพียงรหัสผ่านที่บันทึกไว้ ซึ่งพิมพ์ใหม่ได้"
+  },
+  "passwords.about.unlock": {
+    "message": "การตั้งค่ามาจากคอมพิวเตอร์เครื่องอื่น หรือเครื่องนี้ไม่มีพวงกุญแจ: รหัสผ่านหลักจะเปิดรหัสผ่านที่บันทึกไว้ที่นี่"
+  },
+  "passwords.cancel": {
+    "message": "ยกเลิก"
+  },
+  "passwords.done.set": {
+    "message": "ตั้งรหัสผ่านหลักแล้ว"
+  },
+  "passwords.done.unlocked": {
+    "message": "เปิดรหัสผ่านที่บันทึกไว้แล้ว"
+  },
+  "passwords.error.locked": {
+    "message": "รหัสผ่านที่บันทึกไว้ถูกล็อก: ปลดล็อกด้วยรหัสผ่านหลัก (การกำหนดค่า › การตั้งค่า › รหัสผ่าน)"
+  },
+  "passwords.error.no_master": {
+    "message": "ยังไม่ได้ตั้งรหัสผ่านหลัก"
+  },
+  "passwords.error.no_random": {
+    "message": "ไม่มีตัวเลขสุ่ม"
+  },
+  "passwords.error.not_opened": {
+    "message": "เปิดรหัสผ่านสำหรับ {what} ไม่ได้"
+  },
+  "passwords.error.not_sealed": {
+    "message": "เข้ารหัสรหัสผ่านไม่ได้"
+  },
+  "passwords.error.salt_damaged": {
+    "message": "ซอลต์ของรหัสผ่านหลักเสียหาย"
+  },
+  "passwords.error.wrong": {
+    "message": "รหัสผ่านหลักไม่ถูกต้อง"
+  },
+  "passwords.field.again": {
+    "message": "อีกครั้ง"
+  },
+  "passwords.field.master": {
+    "message": "รหัสผ่านหลัก"
+  },
+  "passwords.locked_note": {
+    "message": "รหัสผ่านที่บันทึกไว้ถูกล็อกบนคอมพิวเตอร์เครื่องนี้: รหัสผ่านหลักจะเปิดรหัสผ่านเหล่านั้น"
+  },
+  "passwords.ok": {
+    "message": "ตกลง"
+  },
+  "passwords.problem.differ": {
+    "message": "รหัสผ่านทั้งสองไม่ตรงกัน"
+  },
+  "passwords.problem.empty": {
+    "message": "พิมพ์รหัสผ่านหลัก"
+  },
+  "passwords.title.set": {
+    "message": "รหัสผ่านหลัก"
+  },
+  "passwords.title.unlock": {
+    "message": "ปลดล็อกรหัสผ่านที่บันทึกไว้"
+  },
+  "passwords.unlock_button": {
+    "message": "ปลดล็อก…"
+  },
+  "passwords.working": {
+    "message": "กำลังดำเนินการ…"
+  },
+  "properties.accessed": {
+    "message": "เข้าถึงเมื่อ:"
+  },
+  "properties.change_attributes": {
+    "message": "เปลี่ยนแอตทริบิวต์..."
+  },
+  "properties.close": {
+    "message": "ปิด"
+  },
+  "properties.contents": {
+    "message": "{file_count, plural, other {{files} ไฟล์}}, {folder_count, plural, other {{folders} โฟลเดอร์}}, {count, plural, other {{bytes} ไบต์}} ({size})"
+  },
+  "properties.contents_counting": {
+    "message": "{file_count, plural, other {{files} ไฟล์}}, {folder_count, plural, other {{folders} โฟลเดอร์}}, {count, plural, other {{bytes} ไบต์}} ({size}) (กำลังนับ…)"
+  },
+  "properties.contents_label": {
+    "message": "เนื้อหา:"
+  },
+  "properties.created": {
+    "message": "สร้างเมื่อ:"
+  },
+  "properties.dialog_title": {
+    "message": "คุณสมบัติ"
+  },
+  "properties.in_archive": {
+    "message": "รายการของไฟล์บีบอัดแสดงข้อมูลทั้งหมดที่ทราบเกี่ยวกับไฟล์แล้ว"
+  },
+  "properties.kind.file": {
+    "message": "ไฟล์"
+  },
+  "properties.kind.folder": {
+    "message": "โฟลเดอร์"
+  },
+  "properties.kind.link": {
+    "message": "ลิงก์"
+  },
+  "properties.kind.link_to": {
+    "message": "ลิงก์ไปยัง {target}"
+  },
+  "properties.location": {
+    "message": "ตำแหน่งที่ตั้ง:"
+  },
+  "properties.modified": {
+    "message": "แก้ไขเมื่อ:"
+  },
+  "properties.name": {
+    "message": "ชื่อ:"
+  },
+  "properties.no_system_dialog": {
+    "message": "ระบบนี้ยังไม่มีหน้าต่างคุณสมบัติของตัวเอง"
+  },
+  "properties.owner": {
+    "message": "เจ้าของ / กลุ่ม:"
+  },
+  "properties.permissions": {
+    "message": "สิทธิ์:"
+  },
+  "properties.size": {
+    "message": "{count, plural, other {{bytes} ไบต์ ({size})}}"
+  },
+  "properties.size_label": {
+    "message": "ขนาด:"
+  },
+  "properties.type": {
+    "message": "ประเภท:"
+  },
+  "quick_open.go_to": {
+    "message": "ไปที่ {path}"
+  },
+  "quick_open.group.bookmarks": {
+    "message": "ที่คั่นหน้า"
+  },
+  "quick_open.group.connections": {
+    "message": "การเชื่อมต่อ"
+  },
+  "quick_open.group.drives": {
+    "message": "ไดรฟ์"
+  },
+  "quick_open.group.path": {
+    "message": "พาธ"
+  },
+  "quick_open.group.recent_folders": {
+    "message": "โฟลเดอร์ล่าสุด"
+  },
+  "quick_open.group.tools": {
+    "message": "เครื่องมือ"
+  },
+  "quick_open.group.workspaces": {
+    "message": "พื้นที่ทำงาน"
+  },
+  "quick_open.placeholder": {
+    "message": "คำสั่ง ที่คั่นหน้า โฟลเดอร์ พาธ เซิร์ฟเวอร์ ไดรฟ์ พื้นที่ทำงาน หรือเครื่องมือ"
+  },
+  "quick_open.title": {
+    "message": "เปิดด่วน"
+  },
+  "quick_view.counting": {
+    "message": "กำลังนับ…"
+  },
+  "quick_view.downloading": {
+    "message": "กำลังดาวน์โหลด…"
+  },
+  "quick_view.empty": {
+    "message": "มุมมองด่วนแสดงรายการที่เคอร์เซอร์ของอีกแผงชี้อยู่"
+  },
+  "quick_view.extracting": {
+    "message": "กำลังนำออกจากไฟล์บีบอัด…"
+  },
+  "quick_view.files_only": {
+    "message": "บนเซิร์ฟเวอร์และภายในไฟล์บีบอัด มุมมองด่วนแสดงได้เฉพาะไฟล์"
+  },
+  "quick_view.space.title": {
+    "message": "พื้นที่ที่ใช้ทั้งหมด:"
+  },
+  "quick_view.space.totals": {
+    "message": "{bytes, plural, other {{bytes_grouped} ไบต์}} ใน {files, plural, other {{files_grouped} ไฟล์}}, {folders, plural, other {{folders_grouped} โฟลเดอร์}}"
+  },
+  "quick_view.space.unreadable": {
+    "message": "อ่านไม่ได้ {count} รายการ"
+  },
+  "quick_view.too_large.download": {
+    "message": "{size} ใหญ่เกินกว่าจะดาวน์โหลดที่นี่: กด F3 เพื่อดู"
+  },
+  "quick_view.too_large.extract": {
+    "message": "{size} ใหญ่เกินกว่าจะนำออกจากไฟล์บีบอัดที่นี่: กด F3 เพื่อดู"
+  },
+  "remote.cancelled": {
+    "message": "ยกเลิกแล้ว"
+  },
+  "remote.cloud.ask": {
+    "message": "{kind, select, application_key {คีย์แอปพลิเคชันของ {user} ที่ {host}:} api_key {คีย์ API ของ {user} ที่ {host}:} password {รหัสผ่านของ {user} ที่ {host}:} other {คีย์ลับของ {user} ที่ {host}:}}"
+  },
+  "remote.cloud.ask_again": {
+    "message": "{kind, select, application_key {คีย์แอปพลิเคชันไม่ถูกต้อง คีย์แอปพลิเคชันของ {user} ที่ {host}:} api_key {คีย์ API ไม่ถูกต้อง คีย์ API ของ {user} ที่ {host}:} password {รหัสผ่านไม่ถูกต้อง รหัสผ่านของ {user} ที่ {host}:} other {คีย์ไม่ถูกต้อง คีย์ลับของ {user} ที่ {host}:}}"
+  },
+  "remote.cloud.obscure_failed": {
+    "message": "rclone รับรหัสผ่านไม่ได้"
+  },
+  "remote.cloud.rclone_missing": {
+    "message": "ไม่พบ rclone: ดาวน์โหลดได้ใน การตั้งค่า > ส่วนเสริม"
+  },
+  "remote.cloud.title": {
+    "message": "{kind, select, application_key {คีย์แอปพลิเคชัน} api_key {คีย์ API} password {รหัสผ่าน} other {คีย์ลับ}}"
+  },
+  "remote.connecting": {
+    "message": "กำลังเชื่อมต่อกับ {server}..."
+  },
+  "remote.dialog.cancel": {
+    "message": "ยกเลิก"
+  },
+  "remote.dialog.ok": {
+    "message": "ตกลง"
+  },
+  "remote.disconnect_failed": {
+    "message": "{share}: ตัดการเชื่อมต่อไม่ได้: {err}"
+  },
+  "remote.ftp.password": {
+    "message": "รหัสผ่านสำหรับ {user}@{host}:"
+  },
+  "remote.ftp.password_again": {
+    "message": "รหัสผ่านไม่ถูกต้อง รหัสผ่านสำหรับ {user}@{host}:"
+  },
+  "remote.ftps.changed": {
+    "message": "ใบรับรอง TLS ของ {server} เปลี่ยนไปแล้ว นับจากที่บรรทัด {line} ของ {file} บันทึกไว้ อาจมีผู้ดักฟังอยู่ หากเซิร์ฟเวอร์มีใบรับรองใหม่ ให้ลบบรรทัดนั้น"
+  },
+  "remote.ftps.not_trusted": {
+    "message": "ใบรับรองของเซิร์ฟเวอร์ไม่น่าเชื่อถือ"
+  },
+  "remote.login.password": {
+    "message": "รหัสผ่าน"
+  },
+  "remote.login.title": {
+    "message": "เข้าสู่ระบบ"
+  },
+  "remote.login.user": {
+    "message": "ผู้ใช้"
+  },
+  "remote.mount.login_wrong": {
+    "message": "ผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
+  },
+  "remote.mount.macos_failed": {
+    "message": "macOS เมานต์ไม่ได้ (NetFS {code})"
+  },
+  "remote.mount.needs_desktop": {
+    "message": "ต้องใช้ kio-fuse ของ KDE หรือ gvfs ของ GNOME"
+  },
+  "remote.mount.needs_login": {
+    "message": "ต้องใช้ผู้ใช้และรหัสผ่าน"
+  },
+  "remote.mount.no_fuse": {
+    "message": "เมานต์แล้ว แต่ไม่มีโฟลเดอร์สำหรับเข้าถึง: ไม่พบ gvfs-fuse"
+  },
+  "remote.mount.no_nfs_client": {
+    "message": "ไม่พบ NFS ต้องใช้ “ไคลเอ็นต์สำหรับ NFS” ของ Windows (คุณลักษณะของ Windows)"
+  },
+  "remote.mount.no_share": {
+    "message": "ไม่ได้ระบุการแชร์: smb://server/share"
+  },
+  "remote.mount.not_address": {
+    "message": "ไม่ใช่ที่อยู่"
+  },
+  "remote.mount.not_found": {
+    "message": "เมานต์แล้ว แต่ไม่พบในรายการที่เมานต์"
+  },
+  "remote.mount.other_user": {
+    "message": "Windows เชื่อมต่อกับเซิร์ฟเวอร์นี้ด้วยผู้ใช้อื่นอยู่: ให้ออกจากระบบ หรือใช้ผู้ใช้นั้น"
+  },
+  "remote.password.title": {
+    "message": "รหัสผ่าน"
+  },
+  "remote.remember_password": {
+    "message": "จดจำรหัสผ่าน (การตั้งค่า › รหัสผ่าน)"
+  },
+  "remote.save_back_failed": {
+    "message": "ส่งกลับไปบันทึกไม่ได้: {err}"
+  },
+  "remote.sftp.host_certificate": {
+    "message": "เซิร์ฟเวอร์แสดงใบรับรองโฮสต์ ซึ่งยังไม่รองรับ"
+  },
+  "remote.sftp.key_changed": {
+    "message": "คีย์โฮสต์ของ {server} เปลี่ยนไปแล้ว นับจากที่บรรทัด {line} ของ {file} บันทึกไว้ อาจมีผู้ดักฟังอยู่ หากเซิร์ฟเวอร์ถูกติดตั้งใหม่ ให้ลบบรรทัดนั้น"
+  },
+  "remote.sftp.key_not_trusted": {
+    "message": "ไม่ได้เชื่อถือคีย์โฮสต์ของ {server}"
+  },
+  "remote.sftp.keys_refused": {
+    "message": "{user}@{host}: เซิร์ฟเวอร์ปฏิเสธคีย์และไม่รับรหัสผ่าน"
+  },
+  "remote.sftp.login_refused": {
+    "message": "{user}@{host}: ปฏิเสธการเข้าสู่ระบบ"
+  },
+  "remote.sftp.passphrase": {
+    "message": "วลีรหัสผ่านสำหรับ {file}"
+  },
+  "remote.sftp.passphrase_title": {
+    "message": "วลีรหัสผ่านของคีย์"
+  },
+  "remote.sftp.password": {
+    "message": "รหัสผ่านสำหรับ {user}@{host}"
+  },
+  "remote.unknown_host.once": {
+    "message": "เชื่อมต่อครั้งเดียว"
+  },
+  "remote.unknown_host.remember": {
+    "message": "เชื่อมต่อและจดจำ"
+  },
+  "remote.unknown_host.text": {
+    "message": "{key_type, select, TLS {ยังไม่รู้จักเซิร์ฟเวอร์ {host} ลายนิ้วมือใบรับรอง TLS ของเซิร์ฟเวอร์คือ} other {ยังไม่รู้จักเซิร์ฟเวอร์ {host} ลายนิ้วมือ {key_type} ของเซิร์ฟเวอร์คือ}}\n\n{fingerprint}\n\nเชื่อมต่อเฉพาะเมื่อนี่คือเซิร์ฟเวอร์ที่คุณต้องการ ผู้ดูแลเซิร์ฟเวอร์สามารถยืนยันลายนิ้วมือได้"
+  },
+  "remote.unknown_host.title": {
+    "message": "เซิร์ฟเวอร์ที่ไม่รู้จัก"
+  },
+  "rename.case": {
+    "message": "ตัวพิมพ์:"
+  },
+  "rename.case.first": {
+    "message": "ตัวแรกพิมพ์ใหญ่"
+  },
+  "rename.case.lower": {
+    "message": "ตัวพิมพ์เล็ก"
+  },
+  "rename.case.unchanged": {
+    "message": "ไม่เปลี่ยน"
+  },
+  "rename.case.upper": {
+    "message": "ตัวพิมพ์ใหญ่"
+  },
+  "rename.case.words": {
+    "message": "ขึ้นต้นทุกคำด้วยตัวพิมพ์ใหญ่"
+  },
+  "rename.close": {
+    "message": "ปิด"
+  },
+  "rename.counter_start": {
+    "message": "ตัวนับเริ่มที่"
+  },
+  "rename.dialog_title": {
+    "message": "เครื่องมือเปลี่ยนชื่อหลายไฟล์"
+  },
+  "rename.digits": {
+    "message": "จำนวนหลัก"
+  },
+  "rename.extension": {
+    "message": "นามสกุล"
+  },
+  "rename.field.counter": {
+    "message": "[C] ตัวนับ"
+  },
+  "rename.field.date": {
+    "message": "[Y][M][D] วันที่"
+  },
+  "rename.field.extension": {
+    "message": "[E] นามสกุล"
+  },
+  "rename.field.folder": {
+    "message": "[P] โฟลเดอร์"
+  },
+  "rename.field.name": {
+    "message": "[N] ชื่อ"
+  },
+  "rename.field.range": {
+    "message": "[N1-3] ช่วง"
+  },
+  "rename.field.time": {
+    "message": "[h][m][s] เวลา"
+  },
+  "rename.first_only": {
+    "message": "เฉพาะรายการแรก"
+  },
+  "rename.in_archive": {
+    "message": "ยังเปลี่ยนชื่อไฟล์ภายในไฟล์บีบอัดไม่ได้"
+  },
+  "rename.mask": {
+    "message": "มาสก์เปลี่ยนชื่อ: ชื่อไฟล์"
+  },
+  "rename.match_case": {
+    "message": "ตรงตามตัวพิมพ์"
+  },
+  "rename.new_name": {
+    "message": "ชื่อใหม่"
+  },
+  "rename.not_renamed_back": {
+    "message": "{from}: {err} ไม่ได้เปลี่ยนชื่อกลับ: {names}"
+  },
+  "rename.not_utf8": {
+    "message": "ชื่อที่ไม่ใช่ UTF-8 จะถูกข้ามไป"
+  },
+  "rename.old_name": {
+    "message": "ชื่อเดิม"
+  },
+  "rename.problem.bad_character": {
+    "message": "มีอักขระที่ใช้ในชื่อไม่ได้"
+  },
+  "rename.problem.exists": {
+    "message": "มีอยู่แล้ว"
+  },
+  "rename.problem.no_name": {
+    "message": "ไม่มีชื่อ"
+  },
+  "rename.problem.twice": {
+    "message": "ซ้ำในรายการ"
+  },
+  "rename.regex": {
+    "message": "นิพจน์ทั่วไป"
+  },
+  "rename.regex_error": {
+    "message": "นิพจน์ทั่วไป: {err}"
+  },
+  "rename.replace": {
+    "message": "แทนที่ด้วย"
+  },
+  "rename.search": {
+    "message": "ค้นหา"
+  },
+  "rename.start": {
+    "message": "เริ่ม!"
+  },
+  "rename.status.failed": {
+    "message": "ไม่ได้เปลี่ยนชื่อไฟล์ใด: {err}"
+  },
+  "rename.status.ready": {
+    "message": "กด “เริ่ม!” เพื่อเปลี่ยนชื่อ"
+  },
+  "rename.status.renamed": {
+    "message": "{count, plural, other {เปลี่ยนชื่อแล้ว # รายการ}}"
+  },
+  "rename.status.took_back": {
+    "message": "{count, plural, other {คืนชื่อเดิมแล้ว # รายการ}}"
+  },
+  "rename.step": {
+    "message": "ขั้น"
+  },
+  "rename.undo": {
+    "message": "เลิกทำ"
+  },
+  "rename.was": {
+    "message": "{to} (เดิมคือ {from})"
+  },
+  "rename.with_extension": {
+    "message": "รวมนามสกุล"
+  },
+  "scmd.column.modified": {
+    "message": "แก้ไขเมื่อ"
+  },
+  "scmd.column.name": {
+    "message": "ชื่อ"
+  },
+  "scmd.column.size": {
+    "message": "ขนาด"
+  },
+  "scmd.column.up_dir": {
+    "message": "--ขึ้นบน--"
+  },
+  "scmd.command_line.not_on_server": {
+    "message": "คำสั่งจะทำงานบนคอมพิวเตอร์เครื่องนี้ ไม่ใช่บนเซิร์ฟเวอร์"
+  },
+  "scmd.compare.marked": {
+    "message": "{count, plural, other {เลือกแล้ว # ไฟล์: ใหม่กว่า หรือไม่มีอยู่ในอีกฝั่ง}}"
+  },
+  "scmd.compare.same": {
+    "message": "โฟลเดอร์มีไฟล์เหมือนกัน"
+  },
+  "scmd.copying": {
+    "message": "กำลังคัดลอก {name}..."
+  },
+  "scmd.dialog.buttons": {
+    "message": "Enter ตกลง   Esc ยกเลิก"
+  },
+  "scmd.error.read_settings": {
+    "message": "อ่านการตั้งค่าไม่ได้: {err}"
+  },
+  "scmd.error.read_tabs": {
+    "message": "อ่านแท็บที่เปิดอยู่ไม่ได้: {err}"
+  },
+  "scmd.error.read_workspaces": {
+    "message": "อ่านพื้นที่ทำงานไม่ได้: {err}"
+  },
+  "scmd.error.save_back": {
+    "message": "ส่งกลับไปบันทึกไม่ได้: {err}"
+  },
+  "scmd.error.save_searches": {
+    "message": "บันทึกประวัติการค้นหาไม่ได้: {err}"
+  },
+  "scmd.error.save_tabs": {
+    "message": "บันทึกแท็บที่เปิดอยู่ไม่ได้: {err}"
+  },
+  "scmd.find.backwards": {
+    "message": "ย้อนกลับ"
+  },
+  "scmd.find.case_sensitive": {
+    "message": "ตรงตามตัวพิมพ์"
+  },
+  "scmd.find.hex": {
+    "message": "ฐานสิบหก (77 6F 72 64)"
+  },
+  "scmd.find.not_found": {
+    "message": "ไม่พบ: {text}"
+  },
+  "scmd.find.regex": {
+    "message": "นิพจน์ทั่วไป"
+  },
+  "scmd.find.search_for": {
+    "message": "ค้นหา:"
+  },
+  "scmd.find.title": {
+    "message": "ค้นหา"
+  },
+  "scmd.find.whole_words": {
+    "message": "เฉพาะทั้งคำ"
+  },
+  "scmd.group.files": {
+    "message": "ไฟล์ (*.txt *.md; โฟลเดอร์ลงท้ายด้วย /):"
+  },
+  "scmd.group.select_title": {
+    "message": "เลือกกลุ่ม"
+  },
+  "scmd.group.unselect_title": {
+    "message": "ยกเลิกการเลือกกลุ่ม"
+  },
+  "scmd.key_bar.copy": {
+    "message": "คัดลอก"
+  },
+  "scmd.key_bar.delete": {
+    "message": "ลบ"
+  },
+  "scmd.key_bar.edit": {
+    "message": "แก้ไข"
+  },
+  "scmd.key_bar.menu": {
+    "message": "เมนู"
+  },
+  "scmd.key_bar.mkdir": {
+    "message": "สร้าง"
+  },
+  "scmd.key_bar.move": {
+    "message": "ย้าย"
+  },
+  "scmd.key_bar.quit": {
+    "message": "ออก"
+  },
+  "scmd.key_bar.view": {
+    "message": "ดู"
+  },
+  "scmd.message.error": {
+    "message": "ข้อผิดพลาด"
+  },
+  "scmd.message.ok": {
+    "message": "ตกลง"
+  },
+  "scmd.not_yet": {
+    "message": "{what, select, menus {เมนู: ยังไม่มีในเวอร์ชันเทอร์มินัล} file_operations {การจัดการไฟล์: ยังไม่มีในเวอร์ชันเทอร์มินัล} servers {เซิร์ฟเวอร์: ยังไม่มีในเวอร์ชันเทอร์มินัล} other {คำสั่งนี้: ยังไม่มีในเวอร์ชันเทอร์มินัล}}"
+  },
+  "scmd.picture.broken": {
+    "message": "รูปภาพเสียหาย"
+  },
+  "scmd.picture.broken_page": {
+    "message": "หน้าเสียหาย"
+  },
+  "scmd.picture.loading": {
+    "message": "กำลังโหลด…"
+  },
+  "scmd.picture.no_page": {
+    "message": "PDF ไม่มีหน้านี้"
+  },
+  "scmd.shell.press_enter": {
+    "message": "กด Enter เพื่อกลับไปที่ Spark Commander..."
+  },
+  "scmd.sync_browsing.off": {
+    "message": "ปิดการเรียกดูแบบซิงค์แล้ว"
+  },
+  "scmd.sync_browsing.on": {
+    "message": "เปิดการเรียกดูแบบซิงค์แล้ว"
+  },
+  "scmd.sync_browsing.stopped": {
+    "message": "{err} ปิดการเรียกดูแบบซิงค์แล้ว"
+  },
+  "scmd.viewer.column": {
+    "message": "คอลัมน์ {column}"
+  },
+  "scmd.viewer.finding": {
+    "message": "กำลังค้นหา…"
+  },
+  "scmd.viewer.key_bar.next": {
+    "message": "ถัดไป"
+  },
+  "scmd.viewer.key_bar.quit": {
+    "message": "ออก"
+  },
+  "scmd.viewer.key_bar.reload": {
+    "message": "รีโหลด"
+  },
+  "scmd.viewer.key_bar.search": {
+    "message": "ค้นหา"
+  },
+  "scmd.viewer.page": {
+    "message": "หน้า {page} จาก {pages}"
+  },
+  "scmd.viewer.reading": {
+    "message": "กำลังอ่าน {percent}%"
+  },
+  "scmd.viewer.wrap": {
+    "message": "ตัดบรรทัด"
+  },
+  "scmd.workspace.copy_name": {
+    "message": "{name} สำเนา"
+  },
+  "scmd.workspace.default_name": {
+    "message": "พื้นที่ทำงาน {number}"
+  },
+  "scmd.workspace.delete_question": {
+    "message": "ลบ “{name}” หรือไม่ แท็บของพื้นที่ทำงานนี้จะหายไป"
+  },
+  "scmd.workspace.duplicate_title": {
+    "message": "ทำสำเนาพื้นที่ทำงาน"
+  },
+  "scmd.workspace.last_stays": {
+    "message": "ต้องเหลือพื้นที่ทำงานไว้อย่างน้อยหนึ่งรายการ"
+  },
+  "scmd.workspace.name": {
+    "message": "ชื่อ:"
+  },
+  "scmd.workspace.name_or_default": {
+    "message": "ชื่อ (ว่าง: {name}):"
+  },
+  "scmd.workspace.new_title": {
+    "message": "พื้นที่ทำงานใหม่"
+  },
+  "scmd.workspace.rename_title": {
+    "message": "เปลี่ยนชื่อพื้นที่ทำงาน"
+  },
+  "scmd.workspaces.keys": {
+    "message": "Enter เปิด  F7 ใหม่  F5 คัดลอก  F2 เปลี่ยนชื่อ  F8 ลบ"
+  },
+  "scmd.workspaces.title": {
+    "message": "พื้นที่ทำงาน"
+  },
+  "search.age.days": {
+    "message": "วัน"
+  },
+  "search.age.hours": {
+    "message": "ชั่วโมง"
+  },
+  "search.age.minutes": {
+    "message": "นาที"
+  },
+  "search.age.months": {
+    "message": "เดือน"
+  },
+  "search.age.weeks": {
+    "message": "สัปดาห์"
+  },
+  "search.age.years": {
+    "message": "ปี"
+  },
+  "search.archives": {
+    "message": "ค้นหาในไฟล์บีบอัด"
+  },
+  "search.attribute.directory": {
+    "message": "โฟลเดอร์"
+  },
+  "search.attribute.either": {
+    "message": "อย่างใดก็ได้"
+  },
+  "search.attribute.executable": {
+    "message": "เรียกใช้ได้"
+  },
+  "search.attribute.hidden": {
+    "message": "ซ่อน"
+  },
+  "search.attribute.link": {
+    "message": "ลิงก์สัญลักษณ์"
+  },
+  "search.attribute.must": {
+    "message": "ต้องเป็น"
+  },
+  "search.attribute.must_not": {
+    "message": "ต้องไม่เป็น"
+  },
+  "search.attribute.read_only": {
+    "message": "อ่านอย่างเดียว"
+  },
+  "search.attributes.label": {
+    "message": "แอตทริบิวต์:"
+  },
+  "search.between.and": {
+    "message": "ถึง"
+  },
+  "search.between.label": {
+    "message": "วันที่ระหว่าง:"
+  },
+  "search.close": {
+    "message": "ปิด"
+  },
+  "search.depth.all": {
+    "message": "ทั้งหมด (ไม่จำกัดระดับ)"
+  },
+  "search.depth.current": {
+    "message": "เฉพาะโฟลเดอร์ปัจจุบัน"
+  },
+  "search.depth.label": {
+    "message": "ค้นหาในโฟลเดอร์ย่อย:"
+  },
+  "search.depth.levels": {
+    "message": "{count, plural, other {# ระดับ}}"
+  },
+  "search.drives": {
+    "message": "ไดรฟ์"
+  },
+  "search.duplicates.content": {
+    "message": "เนื้อหาเหมือนกัน"
+  },
+  "search.duplicates.label": {
+    "message": "ค้นหาไฟล์ที่ซ้ำกัน:"
+  },
+  "search.duplicates.name": {
+    "message": "ชื่อเหมือนกัน"
+  },
+  "search.duplicates.size": {
+    "message": "ขนาดเท่ากัน"
+  },
+  "search.edit": {
+    "message": "F4 แก้ไข"
+  },
+  "search.error.between_days": {
+    "message": "“วันที่ระหว่าง” ต้องระบุทั้งสองวัน"
+  },
+  "search.error.date": {
+    "message": "{text} ไม่ใช่วันที่ในรูปแบบ 2026-11-12"
+  },
+  "search.error.hex": {
+    "message": "{text} ไม่ใช่สตริงฐานสิบหกในรูปแบบ 48 65 6c"
+  },
+  "search.error.keep": {
+    "message": "เก็บประวัติการค้นหาไม่ได้: {err}"
+  },
+  "search.error.local_time": {
+    "message": "{text} ไม่ใช่เวลาท้องถิ่นที่มีอยู่จริง"
+  },
+  "search.error.names_regex": {
+    "message": "นิพจน์ทั่วไปของชื่อ: {err}"
+  },
+  "search.error.newer_number": {
+    "message": "“ไม่เก่ากว่า” ต้องเป็นตัวเลข ไม่ใช่ {text}"
+  },
+  "search.error.no_place": {
+    "message": "“ค้นหาใน” ไม่ได้ระบุโฟลเดอร์"
+  },
+  "search.error.no_text": {
+    "message": "“ค้นหาข้อความ” ไม่ได้ระบุข้อความ"
+  },
+  "search.error.older_number": {
+    "message": "“เก่ากว่า” ต้องเป็นตัวเลข ไม่ใช่ {text}"
+  },
+  "search.error.save": {
+    "message": "บันทึกการค้นหาไม่ได้: {err}"
+  },
+  "search.error.size_number": {
+    "message": "“ขนาดไฟล์” ต้องเป็นตัวเลข ไม่ใช่ {text}"
+  },
+  "search.error.text_regex": {
+    "message": "นิพจน์ทั่วไปของข้อความ: {err}"
+  },
+  "search.feed": {
+    "message": "ส่งไปยังแผง"
+  },
+  "search.go_to_file": {
+    "message": "ไปที่ไฟล์"
+  },
+  "search.in_found": {
+    "message": "F2 ค้นหาในไฟล์ที่พบ"
+  },
+  "search.locate": {
+    "message": "จากดัชนีของ locate"
+  },
+  "search.names.label": {
+    "message": "ค้นหา:"
+  },
+  "search.names.placeholder": {
+    "message": "*.txt *.md | backup*  (ว่าง: ทั้งหมด)"
+  },
+  "search.new": {
+    "message": "ค้นหาใหม่"
+  },
+  "search.newer.label": {
+    "message": "ไม่เก่ากว่า:"
+  },
+  "search.older.label": {
+    "message": "เก่ากว่า:"
+  },
+  "search.only_selected": {
+    "message": "ค้นหาเฉพาะในไฟล์/โฟลเดอร์ที่เลือก"
+  },
+  "search.only_selected_count": {
+    "message": "{count, plural, other {ค้นหาเฉพาะใน # รายการที่เลือก}}"
+  },
+  "search.page.advanced": {
+    "message": "ขั้นสูง"
+  },
+  "search.page.general": {
+    "message": "ทั่วไป"
+  },
+  "search.page.load_save": {
+    "message": "โหลด/บันทึก"
+  },
+  "search.places.browse_prompt": {
+    "message": "ค้นหาใน"
+  },
+  "search.places.label": {
+    "message": "ค้นหาใน:"
+  },
+  "search.places.placeholder": {
+    "message": "โฟลเดอร์ คั่นด้วย ;"
+  },
+  "search.regex": {
+    "message": "RegEx"
+  },
+  "search.results.label": {
+    "message": "ผลการค้นหา:"
+  },
+  "search.saved.delete": {
+    "message": "ลบ"
+  },
+  "search.saved.label": {
+    "message": "การค้นหาก่อนหน้า:"
+  },
+  "search.saved.load": {
+    "message": "โหลด"
+  },
+  "search.saved.name_first": {
+    "message": "ตั้งชื่อการค้นหาก่อน"
+  },
+  "search.saved.name_placeholder": {
+    "message": "ชื่อของการค้นหา"
+  },
+  "search.saved.save": {
+    "message": "บันทึก"
+  },
+  "search.size.label": {
+    "message": "ขนาดไฟล์:"
+  },
+  "search.start": {
+    "message": "เริ่มค้นหา"
+  },
+  "search.status.found": {
+    "message": "พบ {files, plural, other {# ไฟล์}} และ {dirs, plural, other {# โฟลเดอร์}}"
+  },
+  "search.status.searching": {
+    "message": "กำลังค้นหา…"
+  },
+  "search.status.searching_in": {
+    "message": "กำลังค้นหา: {folder}"
+  },
+  "search.status.stopped": {
+    "message": "หยุดแล้ว: {counts}"
+  },
+  "search.stop": {
+    "message": "หยุด"
+  },
+  "search.text.ansi": {
+    "message": "ANSI (โค้ดเพจ {page})"
+  },
+  "search.text.case_sensitive": {
+    "message": "ตรงตามตัวพิมพ์"
+  },
+  "search.text.hex": {
+    "message": "ฐานสิบหก"
+  },
+  "search.text.label": {
+    "message": "ค้นหาข้อความ:"
+  },
+  "search.text.not_containing": {
+    "message": "ค้นหาไฟล์ที่ “ไม่มี” ข้อความนี้"
+  },
+  "search.text.office": {
+    "message": "ไฟล์ Office (docx, xlsx, pptx, odt…)"
+  },
+  "search.text.placeholder": {
+    "message": "ข้อความที่จะค้นหา"
+  },
+  "search.text.whole_words": {
+    "message": "เฉพาะทั้งคำ"
+  },
+  "search.title": {
+    "message": "ค้นหาไฟล์"
+  },
+  "search.unit.bytes": {
+    "message": "ไบต์"
+  },
+  "search.view": {
+    "message": "F3 ดู"
+  },
+  "settings.addons.builtin_version": {
+    "message": "{version} มาพร้อมกับ Spark Commander"
+  },
+  "settings.addons.check_daily": {
+    "message": "ตรวจหาอัปเดตส่วนเสริมเมื่อเริ่มโปรแกรมและทุกวัน แล้วเสนอให้ติดตั้ง"
+  },
+  "settings.addons.check_failed": {
+    "message": "ตรวจหาอัปเดตไม่ได้: {err}"
+  },
+  "settings.addons.check_now": {
+    "message": "ตรวจหาเดี๋ยวนี้"
+  },
+  "settings.addons.checking": {
+    "message": "กำลังตรวจหาอัปเดต..."
+  },
+  "settings.addons.download": {
+    "message": "ดาวน์โหลด"
+  },
+  "settings.addons.downloading": {
+    "message": "กำลังดาวน์โหลด: {done} จาก {size}"
+  },
+  "settings.addons.file": {
+    "message": "ไฟล์"
+  },
+  "settings.addons.installed.builtin": {
+    "message": "มาพร้อมกับ Spark Commander"
+  },
+  "settings.addons.installed.label": {
+    "message": "ติดตั้งแล้ว"
+  },
+  "settings.addons.installed.none": {
+    "message": "ไม่มี"
+  },
+  "settings.addons.intro": {
+    "message": "Spark Commander ใช้โปรแกรมเหล่านี้จากโปรเจกต์อื่นสำหรับงานบางอย่าง ส่วนเสริมจะดาวน์โหลดแยกต่างหากเมื่อคุณเลือก ส่วน 7-Zip และ PDFium มาพร้อมกับโปรแกรม"
+  },
+  "settings.addons.never_offer": {
+    "message": "ไม่ต้องเสนอส่วนเสริมเมื่อไฟล์ต้องการ"
+  },
+  "settings.addons.offers": {
+    "message": "ข้อเสนอและอัปเดต"
+  },
+  "settings.addons.online.label": {
+    "message": "ออนไลน์"
+  },
+  "settings.addons.online.looking": {
+    "message": "กำลังตรวจหา..."
+  },
+  "settings.addons.online.none": {
+    "message": "ไม่มีสำหรับระบบนี้"
+  },
+  "settings.addons.online.not_yet": {
+    "message": "ยังไม่ได้ตรวจหา"
+  },
+  "settings.addons.online.unknown": {
+    "message": "ไม่ทราบ"
+  },
+  "settings.addons.remove": {
+    "message": "เอาออก"
+  },
+  "settings.addons.up_to_date": {
+    "message": "รายการส่วนเสริมเป็นปัจจุบันแล้ว"
+  },
+  "settings.addons.version": {
+    "message": "เวอร์ชัน"
+  },
+  "settings.addons.website": {
+    "message": "เว็บไซต์"
+  },
+  "settings.appearance.title": {
+    "message": "รูปลักษณ์"
+  },
+  "settings.apply": {
+    "message": "นำไปใช้"
+  },
+  "settings.backdrop.blur": {
+    "message": "เบลอเดสก์ท็อปที่อยู่ด้านหลัง"
+  },
+  "settings.backdrop.clear": {
+    "message": "0% เห็นแต่เดสก์ท็อป"
+  },
+  "settings.backdrop.cover": {
+    "message": "ความทึบที่บังเดสก์ท็อปด้านหลัง:"
+  },
+  "settings.backdrop.opacity": {
+    "message": "{opacity}%"
+  },
+  "settings.backdrop.sidebar": {
+    "message": "แถบด้านข้าง"
+  },
+  "settings.backdrop.solid": {
+    "message": "100% ทึบ"
+  },
+  "settings.backdrop.terminal": {
+    "message": "เทอร์มินัล"
+  },
+  "settings.cancel": {
+    "message": "ยกเลิก"
+  },
+  "settings.date.as_system": {
+    "message": "ตามระบบ: {date}"
+  },
+  "settings.date.custom": {
+    "message": "กำหนดเอง:"
+  },
+  "settings.date.pattern_help": {
+    "message": "yyyy ปี, MM เดือน (MMM ชื่อเดือน), dd วัน (ddd วันในสัปดาห์)"
+  },
+  "settings.date.shown_as": {
+    "message": "แสดงเป็น"
+  },
+  "settings.date.shown_as_note": {
+    "message": "ในรายการไฟล์ ส่วนหน้าต่างโต้ตอบจะแสดงวินาทีด้วย"
+  },
+  "settings.date.title": {
+    "message": "วันที่"
+  },
+  "settings.editor.browse": {
+    "message": "เรียกดู..."
+  },
+  "settings.editor.choose": {
+    "message": "เลือก"
+  },
+  "settings.editor.external": {
+    "message": "ตัวแก้ไขภายนอก (Ctrl+Shift+F4):"
+  },
+  "settings.editor.external_help": {
+    "message": "%1 คือไฟล์ หากไม่ระบุจะต่อท้ายคำสั่ง เช่น code --wait %1"
+  },
+  "settings.editor.limit": {
+    "message": "ตัวแก้ไขในตัว (F4) เปิดไฟล์ขนาดไม่เกิน"
+  },
+  "settings.editor.limit_unit": {
+    "message": "MB"
+  },
+  "settings.editor.title": {
+    "message": "ตัวแก้ไขสำหรับ F4"
+  },
+  "settings.error.no_folder": {
+    "message": "ไม่มีโฟลเดอร์การกำหนดค่า"
+  },
+  "settings.files_shown.hidden": {
+    "message": "ไฟล์ที่ซ่อน"
+  },
+  "settings.files_shown.system": {
+    "message": "ไฟล์ระบบ"
+  },
+  "settings.files_shown.title": {
+    "message": "ไฟล์ที่แสดง"
+  },
+  "settings.font.as_system": {
+    "message": "ตามระบบ"
+  },
+  "settings.font.chosen": {
+    "message": "เลือกเองแล้ว ฟอนต์ของระบบคือ {family}, {size}"
+  },
+  "settings.font.fixed": {
+    "message": "ตัวแสดงไฟล์"
+  },
+  "settings.font.fixed_note": {
+    "message": "เฉพาะฟอนต์ความกว้างคงที่ ใช้กับตัวแก้ไขและการเปรียบเทียบไฟล์ด้วย"
+  },
+  "settings.font.main": {
+    "message": "ฟอนต์หน้าต่างหลัก"
+  },
+  "settings.font.system": {
+    "message": "ฟอนต์ของระบบ"
+  },
+  "settings.language.system": {
+    "message": "ภาษาของระบบ"
+  },
+  "settings.language.system_named": {
+    "message": "ภาษาของระบบ: {language}"
+  },
+  "settings.language.title": {
+    "message": "ภาษา"
+  },
+  "settings.menus.automatic": {
+    "message": "อัตโนมัติ: ปุ่ม ☰ บน GNOME แถบเมนูบนระบบอื่น"
+  },
+  "settings.menus.bar": {
+    "message": "แถบเมนู"
+  },
+  "settings.menus.button": {
+    "message": "ปุ่ม ☰ ในแถบชื่อเรื่อง"
+  },
+  "settings.menus.title": {
+    "message": "เมนู"
+  },
+  "settings.ok": {
+    "message": "ตกลง"
+  },
+  "settings.page.addons": {
+    "message": "ส่วนเสริม"
+  },
+  "settings.page.date": {
+    "message": "วันที่"
+  },
+  "settings.page.display": {
+    "message": "การแสดงผล"
+  },
+  "settings.page.edit_view": {
+    "message": "แก้ไข/ดู"
+  },
+  "settings.page.font": {
+    "message": "ฟอนต์"
+  },
+  "settings.page.language": {
+    "message": "ภาษา"
+  },
+  "settings.page.layout": {
+    "message": "เค้าโครง"
+  },
+  "settings.page.operations": {
+    "message": "การดำเนินการ"
+  },
+  "settings.page.passwords": {
+    "message": "รหัสผ่าน"
+  },
+  "settings.page.terminal": {
+    "message": "เทอร์มินัล"
+  },
+  "settings.page.toolbar": {
+    "message": "แถบเครื่องมือ"
+  },
+  "settings.passwords.change_master": {
+    "message": "เปลี่ยนรหัสผ่านหลัก…"
+  },
+  "settings.passwords.locked": {
+    "message": "รหัสผ่านถูกล็อกบนคอมพิวเตอร์เครื่องนี้: รหัสผ่านหลักจะเปิดรหัสผ่านเหล่านั้น"
+  },
+  "settings.passwords.master_set": {
+    "message": "ตั้งรหัสผ่านหลักแล้ว: เมื่อคัดลอกโฟลเดอร์การตั้งค่าไป รหัสผ่านจะเปิดบนคอมพิวเตอร์เครื่องอื่นได้เมื่อพิมพ์รหัสผ่านหลักที่นั่น"
+  },
+  "settings.passwords.no_master": {
+    "message": "ยังไม่ได้ตั้งรหัสผ่านหลัก: เมื่อคัดลอกโฟลเดอร์การตั้งค่าไป รหัสผ่านจะไม่เปิดบนคอมพิวเตอร์เครื่องอื่น ต้องพิมพ์ใหม่ที่นั่น"
+  },
+  "settings.passwords.not_removed": {
+    "message": "ไม่ได้เอารหัสผ่านหลักออก: {err}"
+  },
+  "settings.passwords.remove_master": {
+    "message": "เอารหัสผ่านหลักออก"
+  },
+  "settings.passwords.saved": {
+    "message": "{count, plural, other {บันทึกรหัสผ่านไว้ # รายการ}} (ของเซิร์ฟเวอร์ การแชร์ และไดรฟ์ที่เข้ารหัส) เก็บแบบเข้ารหัสในโฟลเดอร์การตั้งค่า คีย์ที่ใช้เปิดอยู่ในพวงกุญแจของคอมพิวเตอร์เครื่องนี้"
+  },
+  "settings.passwords.set_master": {
+    "message": "ตั้งรหัสผ่านหลัก…"
+  },
+  "settings.passwords.title": {
+    "message": "รหัสผ่านที่บันทึกไว้"
+  },
+  "settings.passwords.unlock": {
+    "message": "ปลดล็อก…"
+  },
+  "settings.queue.clear_after": {
+    "message": "ล้างการดำเนินการที่เสร็จแล้วหลังจาก"
+  },
+  "settings.queue.clear_after_help": {
+    "message": "0: ทันทีที่เสร็จ รายการที่ล้มเหลวและถูกยกเลิกจะคงอยู่จนกว่าจะล้าง"
+  },
+  "settings.queue.clear_after_unit": {
+    "message": "นาที"
+  },
+  "settings.queue.download_limit": {
+    "message": "จำกัดความเร็วดาวน์โหลด"
+  },
+  "settings.queue.download_limit_help": {
+    "message": "ใช้กับ “ดาวน์โหลดจากลิงก์” และการคัดลอกจากเซิร์ฟเวอร์ FTP และ SFTP รวมถึงที่กำลังทำงานอยู่ 0: ไม่จำกัด"
+  },
+  "settings.queue.download_limit_unit": {
+    "message": "KB/s"
+  },
+  "settings.queue.title": {
+    "message": "คิวการดำเนินการ"
+  },
+  "settings.shell.default": {
+    "message": "ค่าเริ่มต้น: {shell}"
+  },
+  "settings.shell.note": {
+    "message": "แท็บเทอร์มินัลใหม่จะเริ่มเชลล์นี้"
+  },
+  "settings.shell.title": {
+    "message": "เชลล์"
+  },
+  "settings.sort_folders.by_name": {
+    "message": "ตามชื่อเสมอ"
+  },
+  "settings.sort_folders.like_files": {
+    "message": "เหมือนไฟล์ (รวมถึงตามเวลา)"
+  },
+  "settings.sort_folders.title": {
+    "message": "การเรียงโฟลเดอร์"
+  },
+  "settings.tabs.header_always": {
+    "message": "แสดงแถบแท็บแม้มีเพียงแท็บเดียว"
+  },
+  "settings.tabs.title": {
+    "message": "แท็บโฟลเดอร์"
+  },
+  "settings.time.as_system": {
+    "message": "ตามระบบ"
+  },
+  "settings.time.h12": {
+    "message": "12 ชั่วโมง (2:05 PM)"
+  },
+  "settings.time.h24": {
+    "message": "24 ชั่วโมง (14:05)"
+  },
+  "settings.time.title": {
+    "message": "เวลา"
+  },
+  "settings.title": {
+    "message": "การตั้งค่า"
+  },
+  "settings.toolbar.add": {
+    "message": "เพิ่มปุ่ม…"
+  },
+  "settings.toolbar.move_down": {
+    "message": "ย้ายลง"
+  },
+  "settings.toolbar.move_up": {
+    "message": "ย้ายขึ้น"
+  },
+  "settings.toolbar.place": {
+    "message": "อยู่ใต้แถบเมนู หรืออยู่ในแถบชื่อเรื่องเมื่อเมนูอยู่หลังปุ่ม ☰ แบบแอปของ GNOME ถ้าไม่มีปุ่มก็จะไม่แสดง"
+  },
+  "settings.toolbar.remove": {
+    "message": "เอาออก"
+  },
+  "settings.toolbar.replace": {
+    "message": "แทนที่…"
+  },
+  "settings.toolbar.restore_default": {
+    "message": "คืนค่าเริ่มต้น"
+  },
+  "settings.toolbar.title": {
+    "message": "ปุ่มบนแถบเครื่องมือ"
+  },
+  "settings.viewer.font.ansi": {
+    "message": "ANSI (Windows)"
+  },
+  "settings.viewer.font.ascii": {
+    "message": "ASCII (DOS)"
+  },
+  "settings.viewer.font.auto": {
+    "message": "ตรวจหาอัตโนมัติ"
+  },
+  "settings.viewer.font.label": {
+    "message": "ฟอนต์เมื่อเริ่มต้น:"
+  },
+  "settings.viewer.font.variable": {
+    "message": "ความกว้างไม่คงที่"
+  },
+  "settings.viewer.minimap": {
+    "message": "แผนที่ย่อ"
+  },
+  "settings.viewer.show": {
+    "message": "แสดง:"
+  },
+  "settings.viewer.start.auto": {
+    "message": "ตรวจหาอัตโนมัติ"
+  },
+  "settings.viewer.start.binary": {
+    "message": "ไบนารี"
+  },
+  "settings.viewer.start.hex": {
+    "message": "ฐานสิบหก"
+  },
+  "settings.viewer.start.label": {
+    "message": "การแสดงผลเมื่อเริ่มต้น:"
+  },
+  "settings.viewer.start.text": {
+    "message": "ข้อความ"
+  },
+  "settings.viewer.title": {
+    "message": "ตัวแสดงไฟล์สำหรับ F3"
+  },
+  "settings.viewer.width.binary": {
+    "message": "ไบนารี"
+  },
+  "settings.viewer.width.label": {
+    "message": "ความกว้างการแสดงผล (อักขระ):"
+  },
+  "settings.viewer.width.text": {
+    "message": "ข้อความ"
+  },
+  "settings.viewer.wrap": {
+    "message": "ตัดบรรทัด"
+  },
+  "shells.command_prompt": {
+    "message": "พร้อมท์คำสั่ง"
+  },
+  "sidebar.device.no_files": {
+    "message": "ไม่ได้แชร์ไฟล์"
+  },
+  "sidebar.device.not_answering": {
+    "message": "{name} ไม่ตอบสนอง: ปลดล็อกอุปกรณ์และเปิด KDE Connect บนอุปกรณ์ แล้วอ่านโฟลเดอร์ใหม่ (F2)"
+  },
+  "sidebar.device.not_answering_error": {
+    "message": "{name} ไม่ตอบสนอง ({err}): ปลดล็อกอุปกรณ์และเปิด KDE Connect บนอุปกรณ์"
+  },
+  "sidebar.device.not_connected": {
+    "message": "ไม่ได้เชื่อมต่อ"
+  },
+  "sidebar.device.opening": {
+    "message": "กำลังเปิด {name}..."
+  },
+  "sidebar.device.reconnecting": {
+    "message": "{name} ไม่ตอบสนอง: กำลังเชื่อมต่อใหม่..."
+  },
+  "sidebar.device.unmount_failed": {
+    "message": "{name}: ยกเลิกการเมานต์ไม่ได้: {err}"
+  },
+  "sidebar.group.bookmarks": {
+    "message": "ที่คั่นหน้า"
+  },
+  "sidebar.group.cloud": {
+    "message": "คลาวด์"
+  },
+  "sidebar.group.devices": {
+    "message": "อุปกรณ์"
+  },
+  "sidebar.group.drives": {
+    "message": "ไดรฟ์"
+  },
+  "sidebar.group.network": {
+    "message": "เครือข่าย"
+  },
+  "sidebar.section.connections": {
+    "message": "การเชื่อมต่อ"
+  },
+  "sidebar.section.folders": {
+    "message": "โฟลเดอร์"
+  },
+  "sidebar.section.operations": {
+    "message": "การดำเนินการ"
+  },
+  "sidebar.section.places": {
+    "message": "ตำแหน่ง"
+  },
+  "sidebar.volume.locked": {
+    "message": "ล็อกอยู่"
+  },
+  "sidebar.volume.mounting": {
+    "message": "กำลังเมานต์ {name}..."
+  },
+  "sidebar.volume.not_mounted": {
+    "message": "ไม่ได้เมานต์"
+  },
+  "sidebar.volume.open": {
+    "message": "เปิด"
+  },
+  "sidebar.volume.space": {
+    "message": "ว่าง {free} จาก {total}"
+  },
+  "sidebar.volume.unmount": {
+    "message": "ยกเลิกการเมานต์"
+  },
+  "sidebar.volume.unmount_failed": {
+    "message": "ยกเลิกการเมานต์ไม่ได้: {err}"
+  },
+  "split.bad_size": {
+    "message": "“{size}” ไม่ใช่ขนาด: 100 MB, 1.5 GB, 650m"
+  },
+  "split.choose": {
+    "message": "วางเคอร์เซอร์บนไฟล์ที่จะแยก"
+  },
+  "split.combine.choose": {
+    "message": "วางเคอร์เซอร์บนส่วนของไฟล์ (name.001) หรือบนไฟล์ .crc ของส่วนนั้น"
+  },
+  "split.combine.dialog_title": {
+    "message": "รวมไฟล์"
+  },
+  "split.combine.label": {
+    "message": "รวมส่วนต่างๆ เป็นไฟล์:"
+  },
+  "split.combine.title": {
+    "message": "รวม “{name}”"
+  },
+  "split.combined_no_crc": {
+    "message": "{count, plural, other {รวมแล้ว # ส่วน ไม่มีไฟล์ CRC ให้ตรวจสอบ}}"
+  },
+  "split.crc_mismatch": {
+    "message": "{target} ไม่ตรงกับ {file}: มีส่วนที่ขาดหายหรือเสียหาย"
+  },
+  "split.crc_names_no_file": {
+    "message": "ไฟล์ CRC ไม่ได้ระบุชื่อไฟล์"
+  },
+  "split.crc_unreadable": {
+    "message": "รวมแล้ว แต่อ่าน {file} ไม่ได้: {err}"
+  },
+  "split.dialog_title": {
+    "message": "แยกไฟล์"
+  },
+  "split.label": {
+    "message": "แยก “{name}” เป็นส่วนๆ ไว้ในโฟลเดอร์:"
+  },
+  "split.part_missing": {
+    "message": "ไม่พบ {path}"
+  },
+  "split.part_size": {
+    "message": "ขนาดแต่ละส่วน:"
+  },
+  "split.title": {
+    "message": "แยก “{name}”"
+  },
+  "sync.close": {
+    "message": "ปิด"
+  },
+  "sync.column.date": {
+    "message": "วันที่"
+  },
+  "sync.column.name": {
+    "message": "ชื่อ"
+  },
+  "sync.column.size": {
+    "message": "ขนาด"
+  },
+  "sync.compare": {
+    "message": "เปรียบเทียบ"
+  },
+  "sync.confirm.copy_left": {
+    "message": "คัดลอก {count} รายการไปทางซ้าย ({size})"
+  },
+  "sync.confirm.copy_right": {
+    "message": "คัดลอก {count} รายการไปทางขวา ({size})"
+  },
+  "sync.confirm.delete_left": {
+    "message": "ลบ {count} รายการทางซ้าย"
+  },
+  "sync.confirm.delete_right": {
+    "message": "ลบ {count} รายการทางขวา"
+  },
+  "sync.confirm.ok": {
+    "message": "ซิงค์"
+  },
+  "sync.confirm.text": {
+    "message": "{actions} ไฟล์ที่คัดลอกจะแทนที่ไฟล์ที่มีอยู่ปลายทาง{trash, select, yes { ไฟล์ที่ลบในคอมพิวเตอร์เครื่องนี้จะไปอยู่ในถังขยะ} other {}}"
+  },
+  "sync.confirm.title": {
+    "message": "ซิงค์"
+  },
+  "sync.error.changed": {
+    "message": "มีการเปลี่ยนแปลงหลังการเปรียบเทียบ ให้เปรียบเทียบอีกครั้ง"
+  },
+  "sync.error.compare": {
+    "message": "เปรียบเทียบไม่ได้: {err}"
+  },
+  "sync.error.no_folders": {
+    "message": "การซิงค์โฟลเดอร์เปรียบเทียบสองโฟลเดอร์: ทั้งสองแผงต้องไม่แสดงไฟล์บีบอัดหรือผลการค้นหา"
+  },
+  "sync.left": {
+    "message": "ซ้าย"
+  },
+  "sync.mask.label": {
+    "message": "ไฟล์:"
+  },
+  "sync.option.asymmetric": {
+    "message": "ไม่สมมาตร (ขวาจะเป็นสำเนาของซ้าย)"
+  },
+  "sync.option.by_content": {
+    "message": "ตามเนื้อหา"
+  },
+  "sync.option.ignore_date": {
+    "message": "ไม่สนใจวันที่"
+  },
+  "sync.option.subfolders": {
+    "message": "โฟลเดอร์ย่อย"
+  },
+  "sync.result.done": {
+    "message": "{count, plural, other {ซิงค์แล้ว # รายการ}}"
+  },
+  "sync.result.failed": {
+    "message": "{count, plural, other {ซิงค์ไม่สำเร็จ # รายการ}}; {first}"
+  },
+  "sync.right": {
+    "message": "ขวา"
+  },
+  "sync.show.equal": {
+    "message": "= เหมือนกัน"
+  },
+  "sync.show.label": {
+    "message": "แสดง:"
+  },
+  "sync.show.other": {
+    "message": "≠ ปล่อยไว้"
+  },
+  "sync.show.to_left": {
+    "message": "← ไปทางซ้าย"
+  },
+  "sync.show.to_right": {
+    "message": "→ ไปทางขวา"
+  },
+  "sync.status.both_empty": {
+    "message": "ทั้งสองโฟลเดอร์ว่างเปล่า"
+  },
+  "sync.status.comparing": {
+    "message": "กำลังเปรียบเทียบ {folder}"
+  },
+  "sync.status.counts": {
+    "message": "คัดลอกไปขวา {right}, คัดลอกไปซ้าย {left}, ลบ {delete}, เหมือนกัน {equal}, ปล่อยไว้ {alone}"
+  },
+  "sync.status.stopped": {
+    "message": "หยุดแล้ว"
+  },
+  "sync.stop": {
+    "message": "หยุด"
+  },
+  "sync.synchronize": {
+    "message": "ซิงค์..."
+  },
+  "sync.task.title": {
+    "message": "ซิงค์ {left} และ {right}"
+  },
+  "sync.title": {
+    "message": "ซิงค์โฟลเดอร์"
+  },
+  "tab_menu.close_all_tabs": {
+    "message": "ปิดแท็บทั้งหมด"
+  },
+  "tab_menu.close_duplicate_tabs": {
+    "message": "ปิดแท็บที่ซ้ำกัน"
+  },
+  "tab_menu.close_tab": {
+    "message": "ปิดแท็บนี้"
+  },
+  "tab_menu.copy_tab_to_other_panel": {
+    "message": "คัดลอกแท็บไปยังอีกแผง"
+  },
+  "tab_menu.duplicate_tab": {
+    "message": "ทำสำเนาแท็บนี้"
+  },
+  "tab_menu.list_tabs": {
+    "message": "แสดงรายการแท็บทั้งหมด"
+  },
+  "tab_menu.lock_tab": {
+    "message": "ล็อกแท็บนี้"
+  },
+  "tab_menu.none": {
+    "message": "(ไม่มี)"
+  },
+  "tab_menu.rename_tab": {
+    "message": "เปลี่ยนชื่อแท็บ..."
+  },
+  "tabs.error.reopen": {
+    "message": "เปิดแท็บอีกครั้งไม่ได้: {err}"
+  },
+  "tabs.history.empty": {
+    "message": "ยังไม่มีโฟลเดอร์ในประวัติของแท็บนี้"
+  },
+  "tabs.new": {
+    "message": "แท็บใหม่"
+  },
+  "tabs.rename.label": {
+    "message": "ชื่อใหม่:"
+  },
+  "tabs.rename.title": {
+    "message": "เปลี่ยนชื่อแท็บ"
+  },
+  "tabs.search_results": {
+    "message": "ผลการค้นหา"
+  },
+  "terminal.busy": {
+    "message": "มีโปรแกรมทำงานอยู่ในเทอร์มินัล: เรียกใช้คำสั่งเมื่อโปรแกรมนั้นจบแล้ว"
+  },
+  "terminal.close.idle": {
+    "message": "ปิดแท็บเทอร์มินัลนี้หรือไม่ เชลล์จะสิ้นสุดการทำงาน"
+  },
+  "terminal.close.ok": {
+    "message": "ปิด"
+  },
+  "terminal.close.running": {
+    "message": "ปิดแท็บเทอร์มินัลนี้หรือไม่ โปรแกรมที่ทำงานอยู่ในแท็บจะถูกหยุด"
+  },
+  "terminal.close.title": {
+    "message": "ปิดแท็บ"
+  },
+  "terminal.error.start_shell": {
+    "message": "เริ่มเชลล์ไม่ได้: {err}"
+  },
+  "terminal.jump_to_bottom": {
+    "message": "ไปที่ด้านล่างสุด (Ctrl+End) ↓"
+  },
+  "terminal.menu.copy": {
+    "message": "คัดลอก"
+  },
+  "terminal.menu.paste": {
+    "message": "วาง"
+  },
+  "toolbar.customize": {
+    "message": "ปรับแต่งแถบเครื่องมือ…"
+  },
+  "tools.clear_key": {
+    "message": "ล้าง"
+  },
+  "tools.close": {
+    "message": "ปิด"
+  },
+  "tools.delete": {
+    "message": "ลบ"
+  },
+  "tools.empty": {
+    "message": "ยังไม่มีเครื่องมือ: กด “ใหม่...” เพื่อเพิ่ม"
+  },
+  "tools.field.command": {
+    "message": "คำสั่ง"
+  },
+  "tools.field.key": {
+    "message": "ปุ่ม"
+  },
+  "tools.field.name": {
+    "message": "ชื่อ"
+  },
+  "tools.intro": {
+    "message": "บรรทัดคำสั่งของคุณเองในเมนู “เครื่องมือ”: คลิกที่เมนูนั้น หรือกดปุ่มของเครื่องมือ"
+  },
+  "tools.key.none": {
+    "message": "ไม่มี"
+  },
+  "tools.key.waiting": {
+    "message": "กดปุ่ม... (Esc: ไม่มี)"
+  },
+  "tools.move_down": {
+    "message": "ย้ายลง"
+  },
+  "tools.move_up": {
+    "message": "ย้ายขึ้น"
+  },
+  "tools.name.placeholder": {
+    "message": "เปรียบเทียบกับอีกฝั่ง"
+  },
+  "tools.new": {
+    "message": "ใหม่..."
+  },
+  "tools.new_name": {
+    "message": "เครื่องมือ {number}"
+  },
+  "tools.no_command": {
+    "message": "{tool} ยังไม่มีคำสั่ง: เครื่องมือ > จัดการเครื่องมือ"
+  },
+  "tools.not_local": {
+    "message": "เครื่องมือทำงานบนคอมพิวเตอร์เครื่องนี้ แต่แผงแสดงเซิร์ฟเวอร์หรือไฟล์บีบอัด"
+  },
+  "tools.note.key_of_command": {
+    "message": "{key} เป็นปุ่มของ {command} ด้วย: เครื่องมือจะใช้ปุ่มนี้แทน"
+  },
+  "tools.note.key_of_other_tool": {
+    "message": "{key} เป็นปุ่มของ {tool} ด้วย: เครื่องมือที่อยู่ล่างกว่าในรายการจะใช้ปุ่มนี้"
+  },
+  "tools.placeholders": {
+    "message": "%P โฟลเดอร์ของแผงนี้, %T ของอีกแผง (ทั้งคู่ลงท้ายด้วยตัวคั่น ดังนั้น \"%P%N\" คือพาธ), %N ไฟล์ใต้เคอร์เซอร์, %O ชื่อไฟล์ไม่รวมนามสกุล, %E นามสกุล, %S ไฟล์ที่เลือก (หรือไฟล์ใต้เคอร์เซอร์) แต่ละรายการอยู่ในเครื่องหมายคำพูด; %% คือ % ให้ใส่เครื่องหมายคำพูดรอบส่วนอื่นๆ: \"%P%N\""
+  },
+  "tools.run_in_terminal": {
+    "message": "เรียกใช้ในเทอร์มินัล เพื่อดูผลลัพธ์ที่พิมพ์ออกมา"
+  },
+  "tools.set_key": {
+    "message": "กำหนดปุ่ม..."
+  },
+  "tools.title": {
+    "message": "เครื่องมือ"
+  },
+  "transfer.answer.cancel": {
+    "message": "ยกเลิก"
+  },
+  "transfer.answer.elevate": {
+    "message": "ในฐานะผู้ดูแลระบบ"
+  },
+  "transfer.answer.overwrite": {
+    "message": "เขียนทับ"
+  },
+  "transfer.answer.overwrite_all": {
+    "message": "เขียนทับทั้งหมด"
+  },
+  "transfer.answer.rename": {
+    "message": "เปลี่ยนชื่อ"
+  },
+  "transfer.answer.retry": {
+    "message": "ลองอีกครั้ง"
+  },
+  "transfer.answer.skip": {
+    "message": "ข้าม"
+  },
+  "transfer.answer.skip_all": {
+    "message": "ข้ามทั้งหมด"
+  },
+  "transfer.archive.local_only": {
+    "message": "ใส่ลงในไฟล์บีบอัดได้เฉพาะไฟล์ของคอมพิวเตอร์เครื่องนี้: ให้คัดลอกมาที่นี่ก่อน"
+  },
+  "transfer.cancel": {
+    "message": "ยกเลิก"
+  },
+  "transfer.error.elevate_hint": {
+    "message": "ในฐานะผู้ดูแลระบบ: ทำรายการนี้และรายการอื่นที่ถูกปฏิเสธหลังจากทำส่วนที่เหลือเสร็จ โดยขอรหัสผ่านครั้งเดียว"
+  },
+  "transfer.error.title": {
+    "message": "ข้อผิดพลาด"
+  },
+  "transfer.exists.describe": {
+    "message": "{count, plural, other {{size} ไบต์, {time}}}"
+  },
+  "transfer.exists.text": {
+    "message": "ไฟล์ที่มีอยู่: {existing}\nไฟล์ใหม่: {new}"
+  },
+  "transfer.exists.title": {
+    "message": "มีไฟล์อยู่แล้ว"
+  },
+  "transfer.extract_failed": {
+    "message": "นำไฟล์ออกมาไม่ได้: {err}"
+  },
+  "transfer.into_archive.question_many": {
+    "message": "{kind, select, copy {คัดลอก} other {ย้าย}} {count, plural, other {# รายการ}} ลงใน {into} หรือไม่ รายการที่มีชื่อเดียวกันในนั้นจะถูกแทนที่"
+  },
+  "transfer.into_archive.question_one": {
+    "message": "{kind, select, copy {คัดลอก} other {ย้าย}} “{name}” ลงใน {into} หรือไม่ รายการที่มีชื่อเดียวกันในนั้นจะถูกแทนที่"
+  },
+  "transfer.into_archive.title_many": {
+    "message": "{kind, select, copy {คัดลอก} other {ย้าย}} {count, plural, other {# รายการ}} ลงใน {archive}"
+  },
+  "transfer.into_archive.title_one": {
+    "message": "{kind, select, copy {คัดลอก} other {ย้าย}} “{name}” ลงใน {archive}"
+  },
+  "transfer.label.many": {
+    "message": "{kind, select, copy {คัดลอก} other {ย้าย}} {count, plural, other {# รายการ}} ไปยัง:"
+  },
+  "transfer.label.many_server": {
+    "message": "{kind, select, copy {คัดลอก} other {ย้าย}} {count, plural, other {# รายการ}} ไปยัง {server}:"
+  },
+  "transfer.label.one": {
+    "message": "{kind, select, copy {คัดลอก} other {ย้าย}} “{name}” ไปยัง:"
+  },
+  "transfer.label.one_server": {
+    "message": "{kind, select, copy {คัดลอก} other {ย้าย}} “{name}” ไปยัง {server}:"
+  },
+  "transfer.ok": {
+    "message": "ตกลง"
+  },
+  "transfer.overwrite.all": {
+    "message": "เขียนทับทั้งหมด"
+  },
+  "transfer.overwrite.ask": {
+    "message": "ถาม"
+  },
+  "transfer.overwrite.label": {
+    "message": "เมื่อปลายทางมีไฟล์ชื่อเดียวกัน:"
+  },
+  "transfer.overwrite.older": {
+    "message": "เขียนทับไฟล์ที่เก่ากว่า"
+  },
+  "transfer.overwrite.rename": {
+    "message": "เปลี่ยนชื่อสำเนา"
+  },
+  "transfer.overwrite.skip": {
+    "message": "ข้ามทั้งหมด"
+  },
+  "transfer.remove_moved": {
+    "message": "ลบไฟล์ที่ย้ายแล้วออกจาก {name}"
+  },
+  "transfer.speed": {
+    "message": "{size}/s"
+  },
+  "transfer.strip.counting": {
+    "message": "กำลังนับ: {count, plural, other {# ไฟล์}}"
+  },
+  "transfer.strip.progress": {
+    "message": "{files} / {count, plural, other {# ไฟล์}}, {percent}%"
+  },
+  "transfer.strip.queue": {
+    "message": "คิว..."
+  },
+  "transfer.strip.queue_waiting": {
+    "message": "คิว ({count, plural, other {รอ #}})..."
+  },
+  "transfer.title.copy": {
+    "message": "คัดลอก"
+  },
+  "transfer.title.move": {
+    "message": "ย้าย"
+  },
+  "viewer.as_text_hint": {
+    "message": "{err} กด 1 เพื่อแสดงไฟล์เป็นข้อความ"
+  },
+  "viewer.book.cannot_read": {
+    "message": "อ่านหนังสือเล่มนี้ไม่ได้: {err} กด 1 เพื่อแสดงไฟล์เป็นข้อความ"
+  },
+  "viewer.book.continuing": {
+    "message": "อ่านต่อที่ {percent}"
+  },
+  "viewer.book.error.compression": {
+    "message": "บีบอัดด้วยรูปแบบที่ยังอ่านไม่ได้ ({compression})"
+  },
+  "viewer.book.error.damaged": {
+    "message": "หนังสือเสียหาย"
+  },
+  "viewer.book.error.damaged_zip": {
+    "message": "zip เสียหาย"
+  },
+  "viewer.book.error.drm": {
+    "message": "มีการป้องกันด้วย DRM: อ่านได้เฉพาะใน Kindle"
+  },
+  "viewer.book.error.huffman": {
+    "message": "บีบอัดแบบหนังสือของ Amazon (HUFF/CDIC) ซึ่งยังอ่านไม่ได้"
+  },
+  "viewer.book.error.missing_part": {
+    "message": "ไม่มี {name} ในหนังสือ"
+  },
+  "viewer.book.error.no_package": {
+    "message": "ไม่มีไฟล์แพ็กเกจในหนังสือ"
+  },
+  "viewer.book.error.no_text": {
+    "message": "หนังสือไม่มีข้อความ"
+  },
+  "viewer.book.error.not_zip": {
+    "message": "ไม่ใช่ zip: หนังสือเสียหายหรือมีการป้องกันด้วย DRM หรือไม่"
+  },
+  "viewer.book.error.zip_method": {
+    "message": "{name}: บีบอัดด้วยวิธี zip ที่อ่านไม่ได้ที่นี่ ({method})"
+  },
+  "viewer.cannot_show": {
+    "message": "แสดงไม่ได้: {err}"
+  },
+  "viewer.convert.failed": {
+    "message": "{tool} แปลงไฟล์ไม่ได้ ({status})"
+  },
+  "viewer.converting": {
+    "message": "กำลังแปลงด้วย {tool}…"
+  },
+  "viewer.copy.too_large": {
+    "message": "ไม่คัดลอกส่วนที่เลือกที่เกิน {megabytes} MB"
+  },
+  "viewer.encoding.cp1250": {
+    "message": "ยุโรปตะวันออก (1250)"
+  },
+  "viewer.encoding.cp1251": {
+    "message": "ซีริลลิก Windows (1251)"
+  },
+  "viewer.encoding.cp1252": {
+    "message": "ละตินตะวันตก Latin1 (1252)"
+  },
+  "viewer.encoding.cp1253": {
+    "message": "กรีก (1253)"
+  },
+  "viewer.encoding.cp1254": {
+    "message": "ตุรกี (1254)"
+  },
+  "viewer.encoding.cp1255": {
+    "message": "ฮีบรู (1255)"
+  },
+  "viewer.encoding.cp1256": {
+    "message": "อาหรับ (1256)"
+  },
+  "viewer.encoding.cp1257": {
+    "message": "บอลติก (1257)"
+  },
+  "viewer.encoding.cp1258": {
+    "message": "เวียดนาม (1258)"
+  },
+  "viewer.encoding.cp20866": {
+    "message": "ซีริลลิก KOI8-R (20866)"
+  },
+  "viewer.encoding.cp437": {
+    "message": "DOS-USA (437)"
+  },
+  "viewer.encoding.cp850": {
+    "message": "DOS-LATIN1 (850)"
+  },
+  "viewer.encoding.cp852": {
+    "message": "DOS ยุโรปกลาง (852)"
+  },
+  "viewer.encoding.cp866": {
+    "message": "DOS ซีริลลิก (866)"
+  },
+  "viewer.encoding.cp874": {
+    "message": "ไทย (874)"
+  },
+  "viewer.encoding.cp932": {
+    "message": "ญี่ปุ่น (932)"
+  },
+  "viewer.encoding.cp936": {
+    "message": "จีนแผ่นดินใหญ่ (936)"
+  },
+  "viewer.encoding.cp949": {
+    "message": "เกาหลี (949)"
+  },
+  "viewer.encoding.cp950": {
+    "message": "จีนไต้หวัน (950)"
+  },
+  "viewer.find.not_found": {
+    "message": "ไม่พบ: {text}"
+  },
+  "viewer.find.not_hex": {
+    "message": "ไม่ใช่สตริงฐานสิบหก: {text}"
+  },
+  "viewer.find.nothing": {
+    "message": "ไม่มีข้อความให้ค้นหา"
+  },
+  "viewer.find.save_failed": {
+    "message": "บันทึกประวัติการค้นหาไม่ได้: {err}"
+  },
+  "viewer.loading": {
+    "message": "กำลังโหลด…"
+  },
+  "viewer.markdown.too_large": {
+    "message": "เกิน {megabytes} MB: กด 1 เพื่อแสดงเป็นข้อความ"
+  },
+  "viewer.menu.binary": {
+    "message": "ไบนารี (ความยาวบรรทัดคงที่)"
+  },
+  "viewer.menu.book": {
+    "message": "หนังสือ (EPUB, FB2)"
+  },
+  "viewer.menu.close": {
+    "message": "ปิด"
+  },
+  "viewer.menu.configure": {
+    "message": "กำหนดค่า..."
+  },
+  "viewer.menu.copy_hex": {
+    "message": "คัดลอกเป็นอักขระฐานสิบหก"
+  },
+  "viewer.menu.copy_text": {
+    "message": "คัดลอกเป็นข้อความ"
+  },
+  "viewer.menu.edit": {
+    "message": "แก้ไข"
+  },
+  "viewer.menu.encoding": {
+    "message": "การเข้ารหัสอักขระ"
+  },
+  "viewer.menu.file": {
+    "message": "ไฟล์"
+  },
+  "viewer.menu.find": {
+    "message": "ค้นหา..."
+  },
+  "viewer.menu.find_next": {
+    "message": "ค้นหาถัดไป"
+  },
+  "viewer.menu.fit_image": {
+    "message": "ปรับภาพให้พอดีหน้าต่าง"
+  },
+  "viewer.menu.font_ansi": {
+    "message": "ANSI (ชุดอักขระ Windows)"
+  },
+  "viewer.menu.font_ascii": {
+    "message": "ASCII (ชุดอักขระ DOS)"
+  },
+  "viewer.menu.font_page": {
+    "message": "ตามที่ฟอนต์กำหนด"
+  },
+  "viewer.menu.font_variable": {
+    "message": "อักขระความกว้างไม่คงที่"
+  },
+  "viewer.menu.hex": {
+    "message": "ฐานสิบหก"
+  },
+  "viewer.menu.html": {
+    "message": "ข้อความ HTML (ตัดแท็กออก)"
+  },
+  "viewer.menu.minimap": {
+    "message": "แผนที่ย่อ"
+  },
+  "viewer.menu.next_file": {
+    "message": "ไฟล์ถัดไป"
+  },
+  "viewer.menu.only_larger": {
+    "message": "ปรับเฉพาะภาพที่ใหญ่กว่า"
+  },
+  "viewer.menu.open": {
+    "message": "เปิด..."
+  },
+  "viewer.menu.options": {
+    "message": "ตัวเลือก"
+  },
+  "viewer.menu.picture": {
+    "message": "ภาพ/มัลติมีเดีย"
+  },
+  "viewer.menu.previous_file": {
+    "message": "ไฟล์ก่อนหน้า"
+  },
+  "viewer.menu.reload": {
+    "message": "โหลดใหม่"
+  },
+  "viewer.menu.save_as": {
+    "message": "บันทึกเป็น..."
+  },
+  "viewer.menu.search_google": {
+    "message": "ค้นหาข้อความที่เลือกด้วย Google"
+  },
+  "viewer.menu.select_all": {
+    "message": "เลือกทั้งหมด"
+  },
+  "viewer.menu.syntax_colors": {
+    "message": "สีไวยากรณ์"
+  },
+  "viewer.menu.text_only": {
+    "message": "ข้อความเท่านั้น"
+  },
+  "viewer.menu.unicode": {
+    "message": "Unicode (UTF-16)"
+  },
+  "viewer.menu.wrap": {
+    "message": "ตัดบรรทัด ({columns, plural, other {# คอลัมน์}})"
+  },
+  "viewer.mode.binary": {
+    "message": "ไบนารี · {page}"
+  },
+  "viewer.mode.book": {
+    "message": "หนังสือ"
+  },
+  "viewer.mode.hex": {
+    "message": "ฐานสิบหก · {page}"
+  },
+  "viewer.mode.html": {
+    "message": "ข้อความ HTML"
+  },
+  "viewer.mode.image": {
+    "message": "ภาพ"
+  },
+  "viewer.mode.multimedia": {
+    "message": "มัลติมีเดีย"
+  },
+  "viewer.mode.pdf_by": {
+    "message": "PDF โดย {tool}"
+  },
+  "viewer.mode.text": {
+    "message": "ข้อความ · {page}"
+  },
+  "viewer.origin.not_editable": {
+    "message": "แก้ไขได้เฉพาะไฟล์ในไฟล์บีบอัด 7z, zip, jar และ tar"
+  },
+  "viewer.origin.updated": {
+    "message": "อัปเดต {archive} แล้ว"
+  },
+  "viewer.origin.updated_on": {
+    "message": "อัปเดต {archive} บน {server} แล้ว"
+  },
+  "viewer.origin.uploaded": {
+    "message": "อัปโหลด {path} แล้ว"
+  },
+  "viewer.pdf.cannot_show": {
+    "message": "แสดง PDF นี้ไม่ได้: {err}"
+  },
+  "viewer.pdf.loading": {
+    "message": "กำลังโหลด..."
+  },
+  "viewer.pdf.page": {
+    "message": "หน้า {page} / {pages}"
+  },
+  "viewer.picture.cannot_show": {
+    "message": "แสดงภาพนี้ไม่ได้ กด 1 เพื่อแสดงเป็นข้อความ"
+  },
+  "viewer.save_as.failed": {
+    "message": "บันทึก {path} ไม่ได้: {err}"
+  },
+  "viewer.status.rows": {
+    "message": "{count, plural, other {{first}–{last} จาก {grouped} แถว}}"
+  },
+  "viewer.status.rows_so_far": {
+    "message": "{count, plural, other {พบแล้ว {grouped} แถว อ่านแล้ว {percent}}}"
+  },
+  "viewer.status.searching": {
+    "message": "กำลังค้นหา…"
+  },
+  "viewer.status.size": {
+    "message": "{count, plural, other {{grouped} ไบต์}}"
+  },
+  "viewer.window.title": {
+    "message": "{path} — ตัวแสดงไฟล์"
+  },
+  "viewer.zoom.fit": {
+    "message": "กลับไปปรับให้พอดีหน้าต่าง (Ctrl+0)"
+  },
+  "viewer.zoom.in": {
+    "message": "ซูมเข้า (Ctrl++)"
+  },
+  "viewer.zoom.out": {
+    "message": "ซูมออก (Ctrl+-)"
+  },
+  "viewer.zoom.reset": {
+    "message": "กลับไปที่ 100% (Ctrl+0)"
+  },
+  "workspaces.button.close": {
+    "message": "ปิด"
+  },
+  "workspaces.button.delete": {
+    "message": "ลบ..."
+  },
+  "workspaces.button.duplicate": {
+    "message": "ทำสำเนา..."
+  },
+  "workspaces.button.new": {
+    "message": "ใหม่..."
+  },
+  "workspaces.button.rename": {
+    "message": "เปลี่ยนชื่อ..."
+  },
+  "workspaces.delete.button": {
+    "message": "ลบ"
+  },
+  "workspaces.delete.closed": {
+    "message": "ลบพื้นที่ทำงาน “{name}” หรือไม่ แท็บของพื้นที่ทำงานนี้จะหายไป"
+  },
+  "workspaces.delete.closed_shells": {
+    "message": "ลบพื้นที่ทำงาน “{name}” หรือไม่ แท็บของพื้นที่ทำงานนี้จะหายไป และเชลล์ในแท็บเทอร์มินัลจะสิ้นสุดการทำงาน"
+  },
+  "workspaces.delete.open": {
+    "message": "ลบพื้นที่ทำงาน “{name}” หรือไม่ แท็บของพื้นที่ทำงานนี้จะถูกปิด และจะเปิด “{other}” แทน"
+  },
+  "workspaces.delete.open_shells": {
+    "message": "ลบพื้นที่ทำงาน “{name}” หรือไม่ แท็บของพื้นที่ทำงานนี้จะถูกปิด เชลล์ในแท็บเทอร์มินัลจะสิ้นสุดการทำงาน และจะเปิด “{other}” แทน"
+  },
+  "workspaces.delete.title": {
+    "message": "ลบพื้นที่ทำงาน"
+  },
+  "workspaces.duplicate.name": {
+    "message": "{name} สำเนา"
+  },
+  "workspaces.duplicate.title": {
+    "message": "ทำสำเนาพื้นที่ทำงาน"
+  },
+  "workspaces.error.name_taken": {
+    "message": "มีพื้นที่ทำงานอื่นใช้ชื่อนี้แล้ว"
+  },
+  "workspaces.error.no_name": {
+    "message": "พื้นที่ทำงานต้องมีชื่อ"
+  },
+  "workspaces.error.save": {
+    "message": "บันทึกพื้นที่ทำงานไม่ได้: {err}"
+  },
+  "workspaces.hint": {
+    "message": "แสดง > พื้นที่ทำงาน ใช้เปิดพื้นที่ทำงาน การเปลี่ยนแปลงในพื้นที่ทำงานที่เปิดอยู่จะถูกเก็บไว้ในพื้นที่ทำงานนั้น"
+  },
+  "workspaces.name.label": {
+    "message": "ชื่อ:"
+  },
+  "workspaces.new.name": {
+    "message": "พื้นที่ทำงาน {number}"
+  },
+  "workspaces.new.title": {
+    "message": "พื้นที่ทำงานใหม่"
+  },
+  "workspaces.open": {
+    "message": "เปิดอยู่"
+  },
+  "workspaces.rename.title": {
+    "message": "เปลี่ยนชื่อพื้นที่ทำงาน"
+  },
+  "workspaces.summary.panels": {
+    "message": "ซ้าย {left, plural, other {# แท็บ}}, ขวา {right, plural, other {# แท็บ}}"
+  },
+  "workspaces.summary.terminal": {
+    "message": "ซ้าย {left, plural, other {# แท็บ}}, ขวา {right, plural, other {# แท็บ}}, เทอร์มินัล {terminal, plural, other {# แท็บ}}"
+  },
+  "workspaces.summary.terminal_hidden": {
+    "message": "ซ้าย {left, plural, other {# แท็บ}}, ขวา {right, plural, other {# แท็บ}}, เทอร์มินัล {terminal, plural, other {# แท็บ}} (ซ่อนอยู่)"
+  },
+  "workspaces.title": {
+    "message": "พื้นที่ทำงาน"
+  }
+}

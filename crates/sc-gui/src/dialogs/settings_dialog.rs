@@ -194,6 +194,7 @@ pub fn open(
             opacity,
             terminal_opacity,
             shells: sc_core::system::shells::others(),
+            system_language: sc_core::l10n::system_language(),
             passwords: (0, false, false),
             _opacity: trying,
             _addons: cx.observe(&crate::addons::entity(cx), |_, _, cx| cx.notify()),
@@ -232,9 +233,9 @@ fn choices(dialog: WeakEntity<SettingsDialog>, shown: Vec<Command>, at: Option<u
             }
             let (dialog, shown) = (dialog.clone(), shown.clone());
             menu.submenu(group, window, cx, move |menu, _, _| {
-                commands.iter().fold(menu, |menu, &(label, command, icon)| {
-                    let dialog = dialog.clone();
-                    let item = PopupMenuItem::new(label).icon(Icon::new(icon)).disabled(shown.contains(&command)).on_click(move |_, _, cx| {
+                commands.iter().fold(menu, |menu, (label, command, icon)| {
+                    let (dialog, command, icon) = (dialog.clone(), *command, *icon);
+                    let item = PopupMenuItem::new(label.clone()).icon(Icon::new(icon)).disabled(shown.contains(&command)).on_click(move |_, _, cx| {
                         let _ = dialog.update(cx, |this, cx| {
                             let bar = &mut this.draft.toolbar.0;
                             match at {
@@ -373,6 +374,8 @@ struct SettingsDialog {
     terminal_opacity: Entity<SliderState>,
     /// The shells installed besides the default one.
     shells: Vec<sc_core::system::shells::Shell>,
+    /// The system's language, where the app speaks it.
+    system_language: Option<String>,
     /// The saved passwords: how many, a master password set, locked here;
     /// read as the page is shown.
     passwords: (usize, bool, bool),
@@ -656,9 +659,45 @@ impl SettingsDialog {
         ]
     }
 
-    fn render_language(&self) -> GroupBox {
-        GroupBox::new().outline().title("Language").child(
-            RadioGroup::vertical("language").children(["English"]).selected_index(Some(0)),
+    /// The app's languages in a list, as Total Commander's: the system's
+    /// first, then each in its own words and English.
+    fn render_language(&self, cx: &mut Context<Self>) -> GroupBox {
+        let theme = cx.theme();
+        let system = sc_core::l10n::languages().into_iter().find(|language| Some(&language.tag) == self.system_language.as_ref());
+        let first = match system {
+            Some(language) => sc_core::t!("settings.language.system_named", language = language.native),
+            None => sc_core::t!("settings.language.system"),
+        };
+        let rows = std::iter::once((None, first)).chain(sc_core::l10n::languages().into_iter().map(|language| {
+            let text = match language.native == language.name {
+                true => language.native,
+                false => format!("{} ({})", language.native, language.name),
+            };
+            (Some(language.tag), text)
+        }));
+        let list = rows.enumerate().map(|(ix, (tag, text))| {
+            let chosen = self.draft.language == tag;
+            div()
+                .id(("language", ix))
+                .px_2()
+                .py_0p5()
+                .when(chosen, |row| row.bg(theme.primary).text_color(theme.primary_foreground))
+                .when(!chosen, |row| row.hover(|style| style.bg(theme.foreground.opacity(0.06))))
+                .child(text)
+                .on_click(cx.listener(move |this, _, _, cx| {
+                    this.draft.language = tag.clone();
+                    cx.notify();
+                }))
+        });
+        GroupBox::new().outline().title(sc_core::t!("settings.language.title")).child(
+            v_flex()
+                .id("languages")
+                .h(px(380.))
+                .overflow_y_scroll()
+                .border_1()
+                .border_color(theme.border)
+                .bg(theme.background)
+                .children(list),
         )
     }
 
@@ -1179,7 +1218,7 @@ impl SettingsDialog {
             "Display" => self.render_files(cx),
             "Font" => vec![self.render_font(Which::Main, cx), self.render_font(Which::Fixed, cx)],
             "Date" => self.render_date(cx),
-            "Language" => vec![self.render_language()],
+            "Language" => vec![self.render_language(cx)],
             "Edit/View" => vec![self.render_viewer(cx), self.render_editor(cx)],
             "Terminal" => {
                 let mut groups = vec![self.render_shell(cx)];

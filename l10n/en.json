@@ -1,1 +1,810 @@
-{}
+{
+  "appearance.dark": {
+    "description": "Show › Appearance: the dark look.",
+    "message": "Dark"
+  },
+  "appearance.light": {
+    "description": "Show › Appearance: the light look.",
+    "message": "Light"
+  },
+  "appearance.system": {
+    "description": "Show › Appearance: follow the system's light or dark look.",
+    "message": "As the system"
+  },
+  "button_bar.copy": {
+    "description": "Function key button under the panels (as Total Commander's F3 View, F5 Copy): keep it short.",
+    "message": "Copy"
+  },
+  "button_bar.delete": {
+    "description": "Function key button under the panels (as Total Commander's F3 View, F5 Copy): keep it short.",
+    "message": "Delete"
+  },
+  "button_bar.edit": {
+    "description": "Function key button under the panels (as Total Commander's F3 View, F5 Copy): keep it short.",
+    "message": "Edit"
+  },
+  "button_bar.move": {
+    "description": "Function key button under the panels (as Total Commander's F3 View, F5 Copy): keep it short.",
+    "message": "Move"
+  },
+  "button_bar.new_folder": {
+    "description": "Function key button under the panels (as Total Commander's F3 View, F5 Copy): keep it short.",
+    "message": "New Folder"
+  },
+  "button_bar.quit": {
+    "description": "Function key button under the panels (as Total Commander's F3 View, F5 Copy): keep it short.",
+    "message": "Exit"
+  },
+  "button_bar.view": {
+    "description": "Function key button under the panels (as Total Commander's F3 View, F5 Copy): keep it short.",
+    "message": "View"
+  },
+  "command.about": {
+    "description": "Menu item: Help. \"...\" means a dialog opens.",
+    "message": "About Spark Commander"
+  },
+  "command.activity_log": {
+    "description": "Menu item: Commands. \"...\" means a dialog opens.",
+    "message": "Activity Log..."
+  },
+  "command.all_files": {
+    "description": "Menu item: Show › Filter. \"...\" means a dialog opens.",
+    "message": "All Files"
+  },
+  "command.all_folder_sizes": {
+    "description": "Menu item: Files. \"...\" means a dialog opens.",
+    "message": "Calculate All Folder Sizes"
+  },
+  "command.all_with_extension": {
+    "description": "Menu item: Show › Filter. \"...\" means a dialog opens.",
+    "message": "*.*"
+  },
+  "command.associate_with": {
+    "description": "Menu item: Files › Associations. \"...\" means a dialog opens.",
+    "message": "Associate With..."
+  },
+  "command.bookmark_folder": {
+    "description": "Menu item: Go. \"...\" means a dialog opens.",
+    "message": "Bookmark This Folder"
+  },
+  "command.bookmarks": {
+    "description": "Menu item: Go. \"...\" means a dialog opens.",
+    "message": "Bookmarks"
+  },
+  "command.branch_view": {
+    "description": "Menu item: Commands. \"...\" means a dialog opens.",
+    "message": "Branch View (With Subdirs)"
+  },
+  "command.branch_view_selected": {
+    "description": "Menu item: Commands. \"...\" means a dialog opens.",
+    "message": "Branch View of Selected Folders"
+  },
+  "command.brief": {
+    "description": "Menu item: Show. \"...\" means a dialog opens.",
+    "message": "Brief"
+  },
+  "command.calculate_occupied_space": {
+    "description": "Menu item: Files. \"...\" means a dialog opens.",
+    "message": "Calculate Occupied Space..."
+  },
+  "command.change_attributes": {
+    "description": "Menu item: Files. \"...\" means a dialog opens.",
+    "message": "Change Attributes..."
+  },
+  "command.close_all_tabs": {
+    "description": "Menu item: Show › Tabs. \"...\" means a dialog opens.",
+    "message": "Close All Tabs"
+  },
+  "command.close_duplicate_tabs": {
+    "description": "Menu item: Show › Tabs. \"...\" means a dialog opens.",
+    "message": "Close Duplicate Tabs"
+  },
+  "command.close_tab": {
+    "description": "Menu item: Show › Tabs. \"...\" means a dialog opens.",
+    "message": "Close Tab"
+  },
+  "command.combine_files": {
+    "description": "Menu item: Files › Split and Combine. \"...\" means a dialog opens.",
+    "message": "Combine Files..."
+  },
+  "command.compare_by_content": {
+    "description": "Menu item: Files. \"...\" means a dialog opens.",
+    "message": "Compare By Content..."
+  },
+  "command.compare_directories": {
+    "description": "Menu item: Mark › Compare Directories. \"...\" means a dialog opens.",
+    "message": "Mark Newer"
+  },
+  "command.copy": {
+    "description": "Menu item: Files. \"...\" means a dialog opens.",
+    "message": "Copy..."
+  },
+  "command.copy_names_to_clipboard": {
+    "description": "Menu item: Mark › Copy Names. \"...\" means a dialog opens.",
+    "message": "Copy Selected Names To Clipboard"
+  },
+  "command.copy_names_with_path_to_clipboard": {
+    "description": "Menu item: Mark › Copy Names. \"...\" means a dialog opens.",
+    "message": "Copy Names With Path To Clipboard"
+  },
+  "command.copy_to_clipboard": {
+    "description": "Menu item: Mark. \"...\" means a dialog opens.",
+    "message": "Copy Files"
+  },
+  "command.copy_with_all_details": {
+    "description": "Menu item: Mark › Copy Names. \"...\" means a dialog opens.",
+    "message": "Copy To Clipboard With All Details"
+  },
+  "command.copy_with_path_and_details": {
+    "description": "Menu item: Mark › Copy Names. \"...\" means a dialog opens.",
+    "message": "Copy To Clipboard With Path+Details"
+  },
+  "command.create_checksum_files": {
+    "description": "Menu item: Files › Checksums. \"...\" means a dialog opens.",
+    "message": "Create Checksum File(s) (CRC32, MD5, SHA1, SHA256, SHA512)..."
+  },
+  "command.create_link": {
+    "description": "Menu item: Files. \"...\" means a dialog opens.",
+    "message": "Create Link..."
+  },
+  "command.custom_filter": {
+    "description": "Menu item: Show › Filter. \"...\" means a dialog opens.",
+    "message": "Custom..."
+  },
+  "command.cut_to_clipboard": {
+    "description": "Menu item: Mark. \"...\" means a dialog opens.",
+    "message": "Cut Files"
+  },
+  "command.delete": {
+    "description": "Menu item: Files. \"...\" means a dialog opens.",
+    "message": "Delete"
+  },
+  "command.delete_permanently": {
+    "description": "Menu item: Files. \"...\" means a dialog opens.",
+    "message": "Delete Permanently"
+  },
+  "command.disconnect": {
+    "description": "A command on no menu: its name in the Shortcuts dialog and Quick Open.",
+    "message": "Disconnect from the server"
+  },
+  "command.download_link": {
+    "description": "Menu item: Files. \"...\" means a dialog opens.",
+    "message": "Download from Link..."
+  },
+  "command.duplicate_tab": {
+    "description": "Menu item: Show › Tabs. \"...\" means a dialog opens.",
+    "message": "New Tab"
+  },
+  "command.duplicate_workspace": {
+    "description": "Menu item: Show › Workspaces. \"...\" means a dialog opens.",
+    "message": "Duplicate Workspace..."
+  },
+  "command.edit": {
+    "description": "Menu item: Files. \"...\" means a dialog opens.",
+    "message": "Edit"
+  },
+  "command.edit_externally": {
+    "description": "Menu item: Files. \"...\" means a dialog opens.",
+    "message": "Edit With External Editor"
+  },
+  "command.folder_history": {
+    "description": "Menu item: Go. \"...\" means a dialog opens.",
+    "message": "Folder History..."
+  },
+  "command.full": {
+    "description": "Menu item: Show. \"...\" means a dialog opens.",
+    "message": "Full"
+  },
+  "command.go_back": {
+    "description": "Menu item: Go. \"...\" means a dialog opens.",
+    "message": "Back"
+  },
+  "command.go_forward": {
+    "description": "Menu item: Go. \"...\" means a dialog opens.",
+    "message": "Forward"
+  },
+  "command.go_home": {
+    "description": "Menu item: Go. \"...\" means a dialog opens.",
+    "message": "Home"
+  },
+  "command.go_to_root": {
+    "description": "Menu item: Go. \"...\" means a dialog opens.",
+    "message": "Root Folder"
+  },
+  "command.hidden_files": {
+    "description": "Menu item: Show. \"...\" means a dialog opens.",
+    "message": "Hidden Files"
+  },
+  "command.internal_associations": {
+    "description": "Menu item: Files › Associations. \"...\" means a dialog opens.",
+    "message": "Internal Associations (Spark Commander Only)..."
+  },
+  "command.invert_selection": {
+    "description": "Menu item: Mark. \"...\" means a dialog opens.",
+    "message": "Invert Selection"
+  },
+  "command.left_drives": {
+    "description": "Menu item: Go. \"...\" means a dialog opens.",
+    "message": "Drives (Left Panel)"
+  },
+  "command.list_tabs": {
+    "description": "Menu item: Show › Tabs. \"...\" means a dialog opens.",
+    "message": "List of Tabs"
+  },
+  "command.load_selection_from_file": {
+    "description": "Menu item: Mark › Selection. \"...\" means a dialog opens.",
+    "message": "Load Selection From File"
+  },
+  "command.manage_bookmarks": {
+    "description": "Menu item: Go. \"...\" means a dialog opens.",
+    "message": "Manage Bookmarks..."
+  },
+  "command.manage_tools": {
+    "description": "Menu item: Tools. \"...\" means a dialog opens.",
+    "message": "Manage Tools..."
+  },
+  "command.manage_workspaces": {
+    "description": "Menu item: Show › Workspaces. \"...\" means a dialog opens.",
+    "message": "Manage Workspaces..."
+  },
+  "command.mark_in_place": {
+    "description": "A command on no menu: its name in the Shortcuts dialog and Quick Open.",
+    "message": "Mark / Unmark in place, a folder measured"
+  },
+  "command.mark_newer_hide_same": {
+    "description": "Menu item: Mark › Compare Directories. \"...\" means a dialog opens.",
+    "message": "Mark Newer, Hide Same Files"
+  },
+  "command.move": {
+    "description": "Menu item: Files. \"...\" means a dialog opens.",
+    "message": "Move..."
+  },
+  "command.multi_rename_tool": {
+    "description": "Menu item: Files. \"...\" means a dialog opens.",
+    "message": "Multi-Rename Tool..."
+  },
+  "command.name_to_command_line": {
+    "description": "A command on no menu: its name in the Shortcuts dialog and Quick Open.",
+    "message": "Name to the command line"
+  },
+  "command.new_folder": {
+    "description": "Menu item: Files. \"...\" means a dialog opens.",
+    "message": "New Folder..."
+  },
+  "command.new_terminal": {
+    "description": "Menu item: Show. \"...\" means a dialog opens.",
+    "message": "New Terminal Tab"
+  },
+  "command.new_text_file": {
+    "description": "Menu item: Files. \"...\" means a dialog opens.",
+    "message": "New File..."
+  },
+  "command.new_workspace": {
+    "description": "Menu item: Show › Workspaces. \"...\" means a dialog opens.",
+    "message": "New Workspace..."
+  },
+  "command.next_tab": {
+    "description": "Menu item: Show › Tabs. \"...\" means a dialog opens.",
+    "message": "Next Tab"
+  },
+  "command.only_selected_files": {
+    "description": "Menu item: Show › Filter. \"...\" means a dialog opens.",
+    "message": "Only Selected Files"
+  },
+  "command.open_in_left_panel": {
+    "description": "A command on no menu: its name in the Shortcuts dialog and Quick Open.",
+    "message": "Show in the left panel"
+  },
+  "command.open_in_new_tab": {
+    "description": "Menu item: Show › Tabs. \"...\" means a dialog opens.",
+    "message": "Open Folder in New Tab"
+  },
+  "command.open_in_other_new_tab": {
+    "description": "A command on no menu: its name in the Shortcuts dialog and Quick Open.",
+    "message": "Open the folder in a new tab of the other panel"
+  },
+  "command.open_in_right_panel": {
+    "description": "A command on no menu: its name in the Shortcuts dialog and Quick Open.",
+    "message": "Show in the right panel"
+  },
+  "command.open_terminal": {
+    "description": "Menu item: Commands. \"...\" means a dialog opens.",
+    "message": "Open Terminal Here"
+  },
+  "command.operation_queue": {
+    "description": "Menu item: Commands. \"...\" means a dialog opens.",
+    "message": "Operation Queue..."
+  },
+  "command.pack": {
+    "description": "Menu item: Files › Archive. \"...\" means a dialog opens.",
+    "message": "Pack..."
+  },
+  "command.paste_from_clipboard": {
+    "description": "Menu item: Mark. \"...\" means a dialog opens.",
+    "message": "Paste Files"
+  },
+  "command.path_and_name_to_command_line": {
+    "description": "A command on no menu: its name in the Shortcuts dialog and Quick Open.",
+    "message": "Path and name to the command line"
+  },
+  "command.path_to_command_line": {
+    "description": "A command on no menu: its name in the Shortcuts dialog and Quick Open.",
+    "message": "Path to the command line"
+  },
+  "command.previous_tab": {
+    "description": "Menu item: Show › Tabs. \"...\" means a dialog opens.",
+    "message": "Previous Tab"
+  },
+  "command.programs": {
+    "description": "Menu item: Show › Filter. \"...\" means a dialog opens.",
+    "message": "Programs"
+  },
+  "command.properties": {
+    "description": "Menu item: Files. \"...\" means a dialog opens.",
+    "message": "Properties..."
+  },
+  "command.quick_filter": {
+    "description": "Menu item: Show › Filter. \"...\" means a dialog opens.",
+    "message": "Quick Filter"
+  },
+  "command.quick_open": {
+    "description": "Menu item: Go. \"...\" means a dialog opens.",
+    "message": "Quick Open..."
+  },
+  "command.quick_view_panel": {
+    "description": "Menu item: Show. \"...\" means a dialog opens.",
+    "message": "Quick View Panel"
+  },
+  "command.quit": {
+    "description": "Menu item: Files. \"...\" means a dialog opens.",
+    "message": "Quit"
+  },
+  "command.redo": {
+    "description": "Menu item: Commands. \"...\" means a dialog opens.",
+    "message": "Redo"
+  },
+  "command.rename_in_place": {
+    "description": "Menu item: Files. \"...\" means a dialog opens.",
+    "message": "Rename"
+  },
+  "command.reread_source": {
+    "description": "Menu item: Show. \"...\" means a dialog opens.",
+    "message": "Reread Source"
+  },
+  "command.restore_selection": {
+    "description": "Menu item: Mark › Selection. \"...\" means a dialog opens.",
+    "message": "Restore Selection"
+  },
+  "command.reversed_order": {
+    "description": "Menu item: Show › Sort. \"...\" means a dialog opens.",
+    "message": "Reversed Order"
+  },
+  "command.right_drives": {
+    "description": "Menu item: Go. \"...\" means a dialog opens.",
+    "message": "Drives (Right Panel)"
+  },
+  "command.save_selection": {
+    "description": "Menu item: Mark › Selection. \"...\" means a dialog opens.",
+    "message": "Save Selection"
+  },
+  "command.save_selection_to_file": {
+    "description": "Menu item: Mark › Selection. \"...\" means a dialog opens.",
+    "message": "Save Selection To File"
+  },
+  "command.search": {
+    "description": "Menu item: Commands. \"...\" means a dialog opens.",
+    "message": "Search..."
+  },
+  "command.search_in_separate_process": {
+    "description": "Menu item: Commands. \"...\" means a dialog opens.",
+    "message": "Search in Separate Window..."
+  },
+  "command.select_all": {
+    "description": "Menu item: Mark. \"...\" means a dialog opens.",
+    "message": "Select All"
+  },
+  "command.select_all_with_same_extension": {
+    "description": "Menu item: Mark. \"...\" means a dialog opens.",
+    "message": "Select All With Same Extension"
+  },
+  "command.select_group": {
+    "description": "Menu item: Mark. \"...\" means a dialog opens.",
+    "message": "Select Group..."
+  },
+  "command.settings": {
+    "description": "Menu item: Configuration. \"...\" means a dialog opens.",
+    "message": "Settings..."
+  },
+  "command.shortcuts": {
+    "description": "Menu item: Configuration. \"...\" means a dialog opens.",
+    "message": "Shortcuts..."
+  },
+  "command.sidebar_connections": {
+    "description": "Menu item: Show › Sidebar. \"...\" means a dialog opens.",
+    "message": "Connections"
+  },
+  "command.sidebar_operations": {
+    "description": "Menu item: Show › Sidebar. \"...\" means a dialog opens.",
+    "message": "Operations"
+  },
+  "command.sidebar_places": {
+    "description": "Menu item: Show › Sidebar. \"...\" means a dialog opens.",
+    "message": "Places"
+  },
+  "command.sidebar_tree": {
+    "description": "Menu item: Show › Sidebar. \"...\" means a dialog opens.",
+    "message": "Folders"
+  },
+  "command.sort_by_extension": {
+    "description": "Menu item: Show › Sort. \"...\" means a dialog opens.",
+    "message": "Extension"
+  },
+  "command.sort_by_name": {
+    "description": "Menu item: Show › Sort. \"...\" means a dialog opens.",
+    "message": "Name"
+  },
+  "command.sort_by_size": {
+    "description": "Menu item: Show › Sort. \"...\" means a dialog opens.",
+    "message": "Size"
+  },
+  "command.sort_by_time": {
+    "description": "Menu item: Show › Sort. \"...\" means a dialog opens.",
+    "message": "Time"
+  },
+  "command.split_file": {
+    "description": "Menu item: Files › Split and Combine. \"...\" means a dialog opens.",
+    "message": "Split File..."
+  },
+  "command.swap_panels": {
+    "description": "Menu item: Commands. \"...\" means a dialog opens.",
+    "message": "Swap Panels"
+  },
+  "command.swap_panels_and_tabs": {
+    "description": "Menu item: Commands. \"...\" means a dialog opens.",
+    "message": "Swap Panels With Their Tabs"
+  },
+  "command.sync_browsing": {
+    "description": "Menu item: Commands. \"...\" means a dialog opens.",
+    "message": "Synchronized Browsing"
+  },
+  "command.synchronize_dirs": {
+    "description": "Menu item: Commands. \"...\" means a dialog opens.",
+    "message": "Synchronize Dirs..."
+  },
+  "command.target_equals_source": {
+    "description": "Menu item: Commands. \"...\" means a dialog opens.",
+    "message": "Target = Source"
+  },
+  "command.terminal_panel": {
+    "description": "Menu item: Show. \"...\" means a dialog opens.",
+    "message": "Terminal"
+  },
+  "command.test_archives": {
+    "description": "Menu item: Files › Archive. \"...\" means a dialog opens.",
+    "message": "Test Archive(s)"
+  },
+  "command.thumbnail_view": {
+    "description": "Menu item: Show. \"...\" means a dialog opens.",
+    "message": "Thumbnail View"
+  },
+  "command.toggle_mark": {
+    "description": "Menu item: Mark. \"...\" means a dialog opens.",
+    "message": "Mark / Unmark"
+  },
+  "command.toggle_sidebar": {
+    "description": "Menu item: Show › Sidebar. \"...\" means a dialog opens.",
+    "message": "Show Sidebar"
+  },
+  "command.undo": {
+    "description": "Menu item: Commands. \"...\" means a dialog opens.",
+    "message": "Undo"
+  },
+  "command.unpack_specific_files": {
+    "description": "Menu item: Files › Archive. \"...\" means a dialog opens.",
+    "message": "Unpack Specific Files..."
+  },
+  "command.unselect_all": {
+    "description": "Menu item: Mark. \"...\" means a dialog opens.",
+    "message": "Unselect All"
+  },
+  "command.unselect_group": {
+    "description": "Menu item: Mark. \"...\" means a dialog opens.",
+    "message": "Unselect Group..."
+  },
+  "command.unsorted": {
+    "description": "Menu item: Show › Sort. \"...\" means a dialog opens.",
+    "message": "Unsorted"
+  },
+  "command.verify_checksums": {
+    "description": "Menu item: Files › Checksums. \"...\" means a dialog opens.",
+    "message": "Verify Checksums (from checksum files)"
+  },
+  "command.vertical_arrangement": {
+    "description": "Menu item: Show. \"...\" means a dialog opens.",
+    "message": "Vertical Arrangement"
+  },
+  "command.view": {
+    "description": "Menu item: Files. \"...\" means a dialog opens.",
+    "message": "View"
+  },
+  "command.website": {
+    "description": "Menu item: Help. \"...\" means a dialog opens.",
+    "message": "Spark Commander Website"
+  },
+  "command.workspace1": {
+    "description": "A command on no menu: its name in the Shortcuts dialog and Quick Open.",
+    "message": "Open Workspace 1"
+  },
+  "command.workspace2": {
+    "description": "A command on no menu: its name in the Shortcuts dialog and Quick Open.",
+    "message": "Open Workspace 2"
+  },
+  "command.workspace3": {
+    "description": "A command on no menu: its name in the Shortcuts dialog and Quick Open.",
+    "message": "Open Workspace 3"
+  },
+  "command.workspace4": {
+    "description": "A command on no menu: its name in the Shortcuts dialog and Quick Open.",
+    "message": "Open Workspace 4"
+  },
+  "command.workspace5": {
+    "description": "A command on no menu: its name in the Shortcuts dialog and Quick Open.",
+    "message": "Open Workspace 5"
+  },
+  "command.workspace6": {
+    "description": "A command on no menu: its name in the Shortcuts dialog and Quick Open.",
+    "message": "Open Workspace 6"
+  },
+  "command.workspace7": {
+    "description": "A command on no menu: its name in the Shortcuts dialog and Quick Open.",
+    "message": "Open Workspace 7"
+  },
+  "command.workspace8": {
+    "description": "A command on no menu: its name in the Shortcuts dialog and Quick Open.",
+    "message": "Open Workspace 8"
+  },
+  "command.workspace9": {
+    "description": "A command on no menu: its name in the Shortcuts dialog and Quick Open.",
+    "message": "Open Workspace 9"
+  },
+  "command_name.all_files": {
+    "description": "A command's name where no menu tells what it belongs to (Shortcuts dialog, Quick Open, toolbar tooltips).",
+    "message": "Show All Files"
+  },
+  "command_name.all_with_extension": {
+    "description": "A command's name where no menu tells what it belongs to (Shortcuts dialog, Quick Open, toolbar tooltips).",
+    "message": "Show *.*"
+  },
+  "command_name.brief": {
+    "description": "A command's name where no menu tells what it belongs to (Shortcuts dialog, Quick Open, toolbar tooltips).",
+    "message": "Brief View"
+  },
+  "command_name.compare_directories": {
+    "description": "A command's name where no menu tells what it belongs to (Shortcuts dialog, Quick Open, toolbar tooltips).",
+    "message": "Compare Directories: Mark Newer"
+  },
+  "command_name.custom_filter": {
+    "description": "A command's name where no menu tells what it belongs to (Shortcuts dialog, Quick Open, toolbar tooltips).",
+    "message": "Custom Filter"
+  },
+  "command_name.duplicate_tab": {
+    "description": "A command's name where no menu tells what it belongs to (Shortcuts dialog, Quick Open, toolbar tooltips).",
+    "message": "New Tab (a copy of this one)"
+  },
+  "command_name.full": {
+    "description": "A command's name where no menu tells what it belongs to (Shortcuts dialog, Quick Open, toolbar tooltips).",
+    "message": "Full View"
+  },
+  "command_name.go_back": {
+    "description": "A command's name where no menu tells what it belongs to (Shortcuts dialog, Quick Open, toolbar tooltips).",
+    "message": "Go Back"
+  },
+  "command_name.go_forward": {
+    "description": "A command's name where no menu tells what it belongs to (Shortcuts dialog, Quick Open, toolbar tooltips).",
+    "message": "Go Forward"
+  },
+  "command_name.go_home": {
+    "description": "A command's name where no menu tells what it belongs to (Shortcuts dialog, Quick Open, toolbar tooltips).",
+    "message": "Go Home"
+  },
+  "command_name.hidden_files": {
+    "description": "A command's name where no menu tells what it belongs to (Shortcuts dialog, Quick Open, toolbar tooltips).",
+    "message": "Show Hidden Files"
+  },
+  "command_name.only_selected_files": {
+    "description": "A command's name where no menu tells what it belongs to (Shortcuts dialog, Quick Open, toolbar tooltips).",
+    "message": "Show Only Selected Files"
+  },
+  "command_name.programs": {
+    "description": "A command's name where no menu tells what it belongs to (Shortcuts dialog, Quick Open, toolbar tooltips).",
+    "message": "Show Programs"
+  },
+  "command_name.quick_filter": {
+    "description": "A command's name where no menu tells what it belongs to (Shortcuts dialog, Quick Open, toolbar tooltips).",
+    "message": "Quick Filter"
+  },
+  "command_name.rename_in_place": {
+    "description": "A command's name where no menu tells what it belongs to (Shortcuts dialog, Quick Open, toolbar tooltips).",
+    "message": "Rename in place"
+  },
+  "command_name.sidebar_connections": {
+    "description": "A command's name where no menu tells what it belongs to (Shortcuts dialog, Quick Open, toolbar tooltips).",
+    "message": "Sidebar: Connections"
+  },
+  "command_name.sidebar_operations": {
+    "description": "A command's name where no menu tells what it belongs to (Shortcuts dialog, Quick Open, toolbar tooltips).",
+    "message": "Sidebar: Operations"
+  },
+  "command_name.sidebar_places": {
+    "description": "A command's name where no menu tells what it belongs to (Shortcuts dialog, Quick Open, toolbar tooltips).",
+    "message": "Sidebar: Places"
+  },
+  "command_name.sidebar_tree": {
+    "description": "A command's name where no menu tells what it belongs to (Shortcuts dialog, Quick Open, toolbar tooltips).",
+    "message": "Sidebar: Folders"
+  },
+  "command_name.sort_by_extension": {
+    "description": "A command's name where no menu tells what it belongs to (Shortcuts dialog, Quick Open, toolbar tooltips).",
+    "message": "Sort by Extension"
+  },
+  "command_name.sort_by_name": {
+    "description": "A command's name where no menu tells what it belongs to (Shortcuts dialog, Quick Open, toolbar tooltips).",
+    "message": "Sort by Name"
+  },
+  "command_name.sort_by_size": {
+    "description": "A command's name where no menu tells what it belongs to (Shortcuts dialog, Quick Open, toolbar tooltips).",
+    "message": "Sort by Size"
+  },
+  "command_name.sort_by_time": {
+    "description": "A command's name where no menu tells what it belongs to (Shortcuts dialog, Quick Open, toolbar tooltips).",
+    "message": "Sort by Time"
+  },
+  "command_name.toggle_sidebar": {
+    "description": "A command's name where no menu tells what it belongs to (Shortcuts dialog, Quick Open, toolbar tooltips).",
+    "message": "Sidebar: show or hide"
+  },
+  "command_name.unsorted": {
+    "description": "A command's name where no menu tells what it belongs to (Shortcuts dialog, Quick Open, toolbar tooltips).",
+    "message": "Sort Unsorted"
+  },
+  "menu.archive": {
+    "description": "Submenu of Files.",
+    "message": "Archive"
+  },
+  "menu.associations": {
+    "description": "Submenu of Files.",
+    "message": "Associations"
+  },
+  "menu.button_bar": {
+    "description": "A group of commands in the Shortcuts dialog.",
+    "message": "Button bar"
+  },
+  "menu.checksums": {
+    "description": "Submenu of Files.",
+    "message": "Checksums"
+  },
+  "menu.commands": {
+    "description": "A menu of the menu bar.",
+    "message": "Commands"
+  },
+  "menu.compare_directories": {
+    "description": "Submenu of Mark.",
+    "message": "Compare Directories"
+  },
+  "menu.configuration": {
+    "description": "A menu of the menu bar.",
+    "message": "Configuration"
+  },
+  "menu.copy_names": {
+    "description": "Submenu of Mark.",
+    "message": "Copy Names"
+  },
+  "menu.files": {
+    "description": "A menu of the menu bar.",
+    "message": "Files"
+  },
+  "menu.filter": {
+    "description": "Submenu of Show.",
+    "message": "Filter"
+  },
+  "menu.go": {
+    "description": "A menu of the menu bar.",
+    "message": "Go"
+  },
+  "menu.help": {
+    "description": "A menu of the menu bar.",
+    "message": "Help"
+  },
+  "menu.mark": {
+    "description": "A menu of the menu bar.",
+    "message": "Mark"
+  },
+  "menu.other": {
+    "description": "A group of commands in the Shortcuts dialog.",
+    "message": "Other"
+  },
+  "menu.recently_closed_tabs": {
+    "description": "Submenu of .",
+    "message": "Recently closed tabs"
+  },
+  "menu.selection": {
+    "description": "Submenu of Mark.",
+    "message": "Selection"
+  },
+  "menu.show": {
+    "description": "A menu of the menu bar.",
+    "message": "Show"
+  },
+  "menu.sidebar": {
+    "description": "Submenu of Show.",
+    "message": "Sidebar"
+  },
+  "menu.sort": {
+    "description": "Submenu of Show.",
+    "message": "Sort"
+  },
+  "menu.split_and_combine": {
+    "description": "Submenu of Files.",
+    "message": "Split and Combine"
+  },
+  "menu.tabs": {
+    "description": "Submenu of Show.",
+    "message": "Tabs"
+  },
+  "menu.tools": {
+    "description": "A menu of the menu bar.",
+    "message": "Tools"
+  },
+  "menu.workspaces": {
+    "description": "Submenu of Show.",
+    "message": "Workspaces"
+  },
+  "settings.language.system": {
+    "description": "Settings › Language: the first row, the app follows the system's language.",
+    "message": "System language"
+  },
+  "settings.language.system_named": {
+    "description": "Settings › Language: the first row; language = the system's language in its own words, e.g. Deutsch.",
+    "message": "System language: {language}"
+  },
+  "settings.language.title": {
+    "description": "Settings › Language: the box's title.",
+    "message": "Language"
+  },
+  "tab_menu.close_all_tabs": {
+    "description": "Right-click menu of a folder tab.",
+    "message": "Close all tabs"
+  },
+  "tab_menu.close_duplicate_tabs": {
+    "description": "Right-click menu of a folder tab.",
+    "message": "Close duplicate tabs"
+  },
+  "tab_menu.close_tab": {
+    "description": "Right-click menu of a folder tab.",
+    "message": "Close this tab"
+  },
+  "tab_menu.copy_tab_to_other_panel": {
+    "description": "Right-click menu of a folder tab.",
+    "message": "Copy tab to other panel"
+  },
+  "tab_menu.duplicate_tab": {
+    "description": "Right-click menu of a folder tab.",
+    "message": "Duplicate this tab"
+  },
+  "tab_menu.list_tabs": {
+    "description": "Right-click menu of a folder tab.",
+    "message": "Show list of all tabs"
+  },
+  "tab_menu.lock_tab": {
+    "description": "Right-click menu of a folder tab.",
+    "message": "Lock this tab"
+  },
+  "tab_menu.none": {
+    "description": "Recently closed tabs submenu when there are none.",
+    "message": "(none)"
+  },
+  "tab_menu.rename_tab": {
+    "description": "Right-click menu of a folder tab.",
+    "message": "Rename tab..."
+  }
+}

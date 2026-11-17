@@ -408,7 +408,7 @@ pub fn set(chosen: Appearance, checked: &dyn Fn(Command) -> bool, cx: &mut App) 
 
 /// The main window's menus; `checked` commands show a check mark.
 pub fn main_menus(chosen: Appearance, checked: &dyn Fn(Command) -> bool) -> Vec<Menu> {
-    let menus = MENUS.iter().map(|menu| Menu::new(menu.label).items(items(menu.items, chosen, checked)));
+    let menus = MENUS.iter().map(|menu| Menu::new(sc_core::menu::menu_label(menu.label)).items(items(menu.items, chosen, checked)));
     menus.filter(|menu| !menu.items.is_empty()).collect()
 }
 
@@ -416,34 +416,35 @@ fn items(list: &[Item], chosen: Appearance, checked: &dyn Fn(Command) -> bool) -
     let one = |entry: &Item| match *entry {
         Item::Separator => Some(MenuItem::separator()),
         Item::Submenu { label, items: sub } => Some(MenuItem::submenu(
-            Menu::new(label).items(items(sub, chosen, checked)),
+            Menu::new(sc_core::menu::menu_label(label)).items(items(sub, chosen, checked)),
         )),
         #[cfg(target_os = "macos")]
         Item::Command { command, .. } if IN_APP_MENU.contains(&command) => None,
         Item::Command { command: Command::AllWithExtension, .. } => {
             Some(item(last_filter().into(), checked(Command::AllWithExtension), Box::new(Run(Command::AllWithExtension)), false))
         }
-        Item::Command { label, command, .. } => {
-            Some(item(label.into(), checked(command), Box::new(Run(command)), false))
+        Item::Command { command, .. } => {
+            Some(item(sc_core::menu::label(command).into(), checked(command), Box::new(Run(command)), false))
         }
         // Xfce's, MATE's and Cinnamon's look is their theme's: no other to choose.
         Item::Appearance { .. } if sc_core::system::theme::desktop_dark().is_some() => None,
         Item::Appearance { label } => {
             let each = [
-                ("As the system", Appearance::System),
-                ("Light", Appearance::Light),
-                ("Dark", Appearance::Dark),
+                (sc_core::t!("appearance.system"), Appearance::System),
+                (sc_core::t!("appearance.light"), Appearance::Light),
+                (sc_core::t!("appearance.dark"), Appearance::Dark),
             ]
             .map(|(name, appearance)| {
                 MenuItem::action(name, SetAppearance(appearance)).checked(chosen == appearance)
             });
-            Some(MenuItem::submenu(Menu::new(label).items(each)))
+            Some(MenuItem::submenu(Menu::new(sc_core::menu::menu_label(label)).items(each)))
         }
         Item::ClosedTabs { .. } => None,
         // A submenu whose first item is its own name: GPUI Kit runs that when it is
         // clicked (macOS shows it first in the submenu); the places that way after.
-        Item::History { label, command } => {
-            let own = item(label.into(), checked(command), Box::new(Run(command)), false);
+        Item::History { command, .. } => {
+            let label = sc_core::menu::label(command);
+            let own = item(label.clone().into(), checked(command), Box::new(Run(command)), false);
             let ways = history_ways(command);
             if ways.is_empty() {
                 return Some(own);
@@ -453,6 +454,7 @@ fn items(list: &[Item], chosen: Appearance, checked: &dyn Fn(Command) -> bool) -
             Some(MenuItem::submenu(Menu::new(label).items(all)))
         }
         Item::Workspaces { label, items: rest } => {
+            let label = sc_core::menu::menu_label(label);
             let (names, current) = WORKSPACES.lock().unwrap_or_else(|err| err.into_inner()).clone();
             let each = names.into_iter().enumerate();
             let each = each.map(|(ix, name)| item(name.into(), current == ix, Box::new(OpenWorkspace(ix)), false));
@@ -602,15 +604,15 @@ pub fn context_menu(
 ) -> PopupMenu {
     for item in items {
         menu = match *item {
-            Item::Command { label, command, .. } if !checked(command) => menu.command(label, command),
-            Item::Command { label, command, .. } => menu.menu_with_check(label, true, Box::new(Run(command))),
+            Item::Command { command, .. } if !checked(command) => menu.command(sc_core::menu::tab_label(command), command),
+            Item::Command { command, .. } => menu.menu_with_check(sc_core::menu::tab_label(command), true, Box::new(Run(command))),
             Item::Separator => menu.separator(),
             Item::ClosedTabs { label } => {
                 let closed = closed.clone();
-                menu.submenu(label, window, cx, move |mut menu, _, _| {
+                menu.submenu(sc_core::menu::menu_label(label), window, cx, move |mut menu, _, _| {
                     if closed.is_empty() {
                         return menu.menu_with_check_and_disabled(
-                            "(none)",
+                            sc_core::t!("tab_menu.none"),
                             false,
                             Box::new(ReopenTab(0)),
                             true,

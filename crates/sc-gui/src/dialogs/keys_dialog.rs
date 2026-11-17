@@ -127,13 +127,13 @@ struct KeysDialog {
     _capture: Subscription,
     /// What the last change did.
     note: Option<(SharedString, bool)>,
-    groups: Vec<(&'static str, Vec<(&'static str, Command)>)>,
+    groups: Vec<(String, Vec<(String, Command)>)>,
 }
 
 impl KeysDialog {
-    fn label(&self, command: Command) -> &'static str {
+    fn label(&self, command: Command) -> &str {
         let mut all = self.groups.iter().flat_map(|(_, commands)| commands);
-        all.find(|(_, c)| *c == command).map_or("", |(label, _)| label)
+        all.find(|(_, c)| *c == command).map_or("", |(label, _)| label.as_str())
     }
 
     fn captured(&mut self, key: &Keystroke, cx: &mut Context<Self>) {
@@ -310,9 +310,9 @@ impl KeysDialog {
                     .py_1()
                     .bg(theme.muted)
                     .text_color(theme.muted_foreground)
-                    .child(*group),
+                    .child(group.clone()),
             );
-            for &&(label, command) in &rows {
+            for (label, command) in rows.iter().map(|row| (row.0.clone(), row.1)) {
                 let changed = self.draft.is_changed(command);
                 let reset = Button::new(("reset", command as usize))
                     .ghost()

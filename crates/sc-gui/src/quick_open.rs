@@ -108,7 +108,7 @@ impl Commander {
     /// Go > Quick Open.
     pub(crate) fn quick_open(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let (mut groups, mut picks) = (Vec::new(), Vec::new());
-        let mut add = |label: &'static str, rows: Vec<(CommandItem, Pick)>| {
+        let mut add = |label: SharedString, rows: Vec<(CommandItem, Pick)>| {
             if !rows.is_empty() {
                 let (items, rows): (Vec<_>, Vec<_>) = rows.into_iter().unzip();
                 groups.push(CommandGroup::new().label(label).items(items));
@@ -123,7 +123,7 @@ impl Commander {
             let label = format!("{}   {}", self.settings.bookmark_name(path), tilde(path, home));
             (row(label, Lucide::Bookmark), Pick::Folder(path.clone()))
         });
-        add("Bookmarks", bookmarks.collect());
+        add("Bookmarks".into(), bookmarks.collect());
 
         // The active tab's history, the latest first, each place once.
         let history = &self.panels[self.active].tabs.current().history;
@@ -135,7 +135,7 @@ impl Commander {
                 recent.push((row(place_label(place), Lucide::FolderClock), Pick::Action(Box::new(GoToHistory(ix)))));
             }
         }
-        add("Recent Folders", recent);
+        add("Recent Folders".into(), recent);
 
         let drives = self.sidebar.volumes.iter().map(|volume| {
             let label = match &volume.path {
@@ -144,38 +144,38 @@ impl Commander {
             };
             (row(label, Lucide::HardDrive), Pick::Volume(volume.clone()))
         });
-        add("Drives", drives.collect());
+        add("Drives".into(), drives.collect());
 
         let servers = sc_core::sidebar::servers(&self.sidebar.connections, &self.sidebar.hosts);
         let servers = servers.into_iter().flat_map(|(_, servers)| servers).map(|server| {
             let label = format!("{}   {}", server.name, server.detail);
             (row(label, Lucide::Server), Pick::Server(server.address))
         });
-        add("Connections", servers.collect());
+        add("Connections".into(), servers.collect());
 
         let workspaces = self.workspaces.list.iter().enumerate().map(|(ix, workspace)| {
             let item = row(workspace.name.clone(), Lucide::Layers).checked(ix == self.workspaces.current);
             (item.keys_of(Box::new(OpenWorkspace(ix))), Pick::Action(Box::new(OpenWorkspace(ix))))
         });
-        add("Workspaces", workspaces.collect());
+        add("Workspaces".into(), workspaces.collect());
 
         let tools = self.settings.tools.iter().enumerate().map(|(ix, tool)| {
             let item = row(tool.name.clone(), Lucide::Wrench).keys_of(Box::new(RunTool(ix)));
             (item, Pick::Action(Box::new(RunTool(ix))))
         });
-        add("Tools", tools.collect());
+        add("Tools".into(), tools.collect());
 
         // Every command, under its menu's name; workspaces are listed by theirs above.
         for (menu_name, commands) in menu::groups() {
             let listed = commands.iter().filter(|(_, command)| *command != Command::QuickOpen && command.workspace().is_none());
             let rows = listed.map(|(label, command)| {
-                let mut item = CommandItem::new().label(*label).keys_of(Box::new(Run(*command)));
+                let mut item = CommandItem::new().label(label.clone()).keys_of(Box::new(Run(*command)));
                 if let Some(icon) = crate::menus::toolbar_icon(*command) {
                     item = item.icon(Icon::new(icon));
                 }
                 (item, Pick::Action(Box::new(Run(*command))))
             });
-            add(menu_name, rows.collect());
+            add(menu_name.into(), rows.collect());
         }
 
         let state = cx.new(|cx| CommandState::new(window, cx));

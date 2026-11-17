@@ -105,6 +105,8 @@ pub struct Settings {
     #[serde(skip_serializing_if = "Toolbar::is_default")]
     pub toolbar: Toolbar,
     pub queue: QueueSettings,
+    /// The app's language, a tag of `l10n/`; the system's when none.
+    pub language: Option<String>,
 }
 
 /// The operation queue's: how long done operations stay listed, how fast links download.
@@ -299,6 +301,7 @@ impl Settings {
         crate::dates::set(&self.date);
         crate::set_folders_like_files(self.folders_like_files);
         crate::ops::set_download_limit(self.queue.download_limit_kb.saturating_mul(1024));
+        crate::l10n::set_language(self.language.as_deref());
     }
 
     /// On the first start, Home, Desktop, Documents and Downloads are

@@ -705,6 +705,7 @@ impl Commander {
         }
         // The download limit too: running transfers follow it at once.
         settings.apply_globally();
+        let language = settings.language != self.settings.language;
         if (&settings.date, settings.folders_like_files) != (&self.settings.date, self.settings.folders_like_files) {
             if settings.folders_like_files != self.settings.folders_like_files {
                 for side in &mut self.panels {
@@ -725,6 +726,11 @@ impl Commander {
         if look {
             self.colors = appearance::apply(&palette(&self.settings, window), cx);
             self.set_backdrop(window, cx);
+            self.reload_menus(cx);
+            cx.refresh_windows();
+        }
+        // Words are read as drawn; the menus are made ahead.
+        if language {
             self.reload_menus(cx);
             cx.refresh_windows();
         }
@@ -1476,7 +1482,8 @@ impl Commander {
 
     fn render_button_bar(&self, cx: &mut Context<Self>) -> impl IntoElement {
         let buttons = BUTTON_BAR.iter().filter_map(|item| match *item {
-            Item::Command { label, command } => {
+            Item::Command { command, .. } => {
+                let label = sc_core::menu::button_label(command);
                 let [key, _] = self.settings.keys.keys_of(command);
                 Some((label, key, command))
             }
@@ -1490,7 +1497,7 @@ impl Commander {
                 let key = dialogs::keys_dialog::shown(&keys);
                 // A rule between the buttons, as Total Commander's are apart.
                 let rule = (ix > 0).then(|| div().flex_none().w_px().h(px(14.)).bg(divider).into_any_element());
-                let button = Button::new(label)
+                let button = Button::new(("button-bar", command as usize))
                     .ghost()
                     .small()
                     .flex_1()

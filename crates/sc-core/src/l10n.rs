@@ -76,6 +76,11 @@ fn pick<'a>(tag: &str, ours: &[&'a str]) -> Option<&'a str> {
     })
 }
 
+/// The system's language, where the app speaks it.
+pub fn system_language() -> Option<String> {
+    sys_locale::get_locale().and_then(|tag| supported(&tag)).map(str::to_owned)
+}
+
 /// Chooses the language: `choice` (a tag), else the system's, else English.
 pub fn set_language(choice: Option<&str>) {
     let system = || sys_locale::get_locale().and_then(|tag| supported(&tag));
@@ -399,6 +404,38 @@ mod tests {
         assert_eq!(arguments("{kind, select, dir {Folder {name}} other {File}} in {where}"), ["kind", "name", "where"]);
         assert_eq!(arguments("{count, plural, one {# file} other {# files}}"), ["count"]);
         assert_eq!(arguments("It''s '{'not'}'"), Vec::<String>::new());
+    }
+
+    /// Every `t!("…")` of the code has its English.
+    #[test]
+    fn code_keys_are_in_english() {
+        fn sources(dir: &std::path::Path, out: &mut Vec<std::path::PathBuf>) {
+            for entry in std::fs::read_dir(dir).unwrap().flatten() {
+                let path = entry.path();
+                if path.is_dir() {
+                    sources(&path, out);
+                } else if path.extension().is_some_and(|ext| ext == "rs") {
+                    out.push(path);
+                }
+            }
+        }
+        let crates = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("..");
+        let mut files = Vec::new();
+        for name in ["sc-core", "sc-gui", "sc-tui"] {
+            sources(&crates.join(name).join("src"), &mut files);
+        }
+        let english = catalog("en");
+        let pattern = regex::Regex::new(r#"\bt!\(\s*"([a-z0-9_.]+)""#).unwrap();
+        let mut missing = Vec::new();
+        for file in files {
+            let text = std::fs::read_to_string(&file).unwrap();
+            for found in pattern.captures_iter(&text) {
+                if !english.contains_key(&found[1]) {
+                    missing.push(format!("{}: {}", file.display(), &found[1]));
+                }
+            }
+        }
+        assert!(missing.is_empty(), "not in l10n/en.json:\n{}", missing.join("\n"));
     }
 
     /// Every language's keys are English's, with its arguments.

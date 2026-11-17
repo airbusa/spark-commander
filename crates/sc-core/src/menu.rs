@@ -567,21 +567,83 @@ const FULL_NAMES: &[(Command, &str)] = &[
     (DuplicateTab, "New Tab (a copy of this one)"),
 ];
 
-/// A command's name, as the Shortcuts dialog lists it.
-pub fn name(command: Command) -> &'static str {
-    let all = groups().into_iter().flat_map(|(_, commands)| commands);
-    all.into_iter().find(|(_, listed)| *listed == command).map_or("", |(label, _)| label)
+/// `CopyNamesToClipboard`, `Split and Combine`: `copy_names_to_clipboard`, `split_and_combine`.
+fn key_words(text: &str) -> String {
+    let mut out = String::new();
+    for c in text.chars() {
+        match c {
+            c if c.is_ascii_uppercase() && !out.is_empty() && !out.ends_with('_') => {
+                out.push('_');
+                out.push(c.to_ascii_lowercase());
+            }
+            c if c.is_ascii_alphanumeric() => out.push(c.to_ascii_lowercase()),
+            _ if !out.is_empty() && !out.ends_with('_') => out.push('_'),
+            _ => {}
+        }
+    }
+    out.trim_end_matches('_').to_owned()
 }
 
-/// Every command once, under its menu's name, for the Shortcuts dialog.
-pub fn groups() -> Vec<(&'static str, Vec<(&'static str, Command)>)> {
-    fn walk(items: &[Item], seen: &mut Vec<Command>, out: &mut Vec<(&'static str, Command)>) {
+/// The list a command's label is in, by its translation key's area: the
+/// menus' (and the other commands'), the tab menu's, the button bar's.
+const LISTS: [(&str, &[Item]); 3] = [("tab_menu", TAB_MENU), ("button_bar", BUTTON_BAR), ("command", OTHER)];
+
+fn command_key(area: &str, command: Command) -> String {
+    format!("{area}.{}", key_words(&format!("{command:?}")))
+}
+
+/// A command's label in the menus (or, not on them, its own), in the app's language.
+pub fn label(command: Command) -> String {
+    crate::l10n::tr(&command_key("command", command))
+}
+
+/// A command's label on the tab's right-click menu.
+pub fn tab_label(command: Command) -> String {
+    crate::l10n::tr(&command_key("tab_menu", command))
+}
+
+/// A command's label on the button bar.
+pub fn button_label(command: Command) -> String {
+    crate::l10n::tr(&command_key("button_bar", command))
+}
+
+/// A menu's, a submenu's or a group's name, given in English: `Files`.
+pub fn menu_label(english: &str) -> String {
+    crate::l10n::tr(&format!("menu.{}", key_words(english)))
+}
+
+/// A command's name where no menu tells what it is part of: Shortcuts,
+/// Quick Open, the toolbar's tooltips.
+pub fn name(command: Command) -> String {
+    if FULL_NAMES.iter().any(|(named, _)| *named == command) {
+        return crate::l10n::tr(&command_key("command_name", command));
+    }
+    let in_menus = |items: &[Item]| contains(items, command);
+    let area = match () {
+        _ if MENUS.iter().any(|menu| in_menus(menu.items)) => "command",
+        _ => LISTS.iter().find(|(_, items)| in_menus(items)).map_or("command", |(area, _)| area),
+    };
+    let label = crate::l10n::tr(&command_key(area, command));
+    label.trim_end_matches("...").trim_end_matches('…').to_owned()
+}
+
+fn contains(items: &[Item], wanted: Command) -> bool {
+    items.iter().any(|item| match *item {
+        Item::Command { command, .. } | Item::History { command, .. } => command == wanted,
+        Item::Submenu { items, .. } | Item::Workspaces { items, .. } => contains(items, wanted),
+        _ => false,
+    })
+}
+
+/// Every command once, under its menu's name, for the Shortcuts dialog; in
+/// the app's language.
+pub fn groups() -> Vec<(String, Vec<(String, Command)>)> {
+    fn walk(items: &[Item], seen: &mut Vec<Command>, out: &mut Vec<(String, Command)>) {
         for item in items {
             match *item {
-                Item::Command { label, command } | Item::History { label, command } if !seen.contains(&command) => {
+                Item::Command { command, .. } | Item::History { command, .. } if !seen.contains(&command) => {
                     seen.push(command);
-                    let full = FULL_NAMES.iter().find(|(c, _)| *c == command);
-                    out.push((full.map_or(label.trim_end_matches("..."), |(_, name)| name), command));
+                    out.push((name(command), command));
                 }
                 Item::Submenu { items, .. } | Item::Workspaces { items, .. } => walk(items, seen, out),
                 _ => {}
@@ -596,10 +658,56 @@ pub fn groups() -> Vec<(&'static str, Vec<(&'static str, Command)>)> {
         let mut commands = Vec::new();
         walk(items, &mut seen, &mut commands);
         if !commands.is_empty() {
-            groups.push((name, commands));
+            groups.push((menu_label(name), commands));
         }
     }
     groups
+}
+
+/// The menus' words as `l10n/en.json` holds them: each key, its English and
+/// a note for the translators.
+pub fn english_entries() -> Vec<(String, String, String)> {
+    let mut entries: Vec<(String, String, String)> = Vec::new();
+    let mut add = |key: String, message: &str, note: String| {
+        if !entries.iter().any(|(known, ..)| *known == key) {
+            entries.push((key, message.to_owned(), note));
+        }
+    };
+    fn walk(items: &[Item], path: &str, area: &str, add: &mut dyn FnMut(String, &str, String)) {
+        for item in items {
+            match *item {
+                Item::Command { label, command } | Item::History { label, command } => {
+                    let note = match area {
+                        "tab_menu" => "Right-click menu of a folder tab.".to_owned(),
+                        "button_bar" => "Function key button under the panels (as Total Commander's F3 View, F5 Copy): keep it short.".to_owned(),
+                        _ if path.is_empty() => "A command on no menu: its name in the Shortcuts dialog and Quick Open.".to_owned(),
+                        _ => format!("Menu item: {path}. \"...\" means a dialog opens."),
+                    };
+                    add(command_key(area, command), label, note);
+                }
+                Item::Submenu { label, items } | Item::Workspaces { label, items } => {
+                    add(format!("menu.{}", key_words(label)), label, format!("Submenu of {path}."));
+                    walk(items, &format!("{path} › {label}"), area, add);
+                }
+                Item::Appearance { label } | Item::ClosedTabs { label } => add(format!("menu.{}", key_words(label)), label, format!("Submenu of {path}.")),
+                Item::Tools | Item::Separator => {}
+            }
+        }
+    }
+    for menu in MENUS {
+        add(format!("menu.{}", key_words(menu.label)), menu.label, "A menu of the menu bar.".to_owned());
+        walk(menu.items, menu.label, "command", &mut add);
+    }
+    for (area, items) in LISTS {
+        walk(items, "", area, &mut add);
+    }
+    for group in ["Tabs", "Button bar", "Other"] {
+        add(format!("menu.{}", key_words(group)), group, "A group of commands in the Shortcuts dialog.".to_owned());
+    }
+    for (command, name) in FULL_NAMES {
+        add(command_key("command_name", *command), name, "A command's name where no menu tells what it belongs to (Shortcuts dialog, Quick Open, toolbar tooltips).".to_owned());
+    }
+    entries
 }
 
 #[cfg(test)]
@@ -613,6 +721,31 @@ mod tests {
         struct Bar(#[serde(deserialize_with = "known")] Vec<Command>);
         let bar: Bar = serde_json::from_str(r#"["Search", "Gone", "Pack"]"#).unwrap();
         assert_eq!(bar.0, [Search, Pack]);
+    }
+
+    /// The menus' English in `l10n/en.json` is the menus' own.
+    #[test]
+    fn menu_words_are_in_english() {
+        let file = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("../../l10n/en.json");
+        let english: serde_json::Value = serde_json::from_str(&std::fs::read_to_string(file).unwrap()).unwrap();
+        for (key, message, _) in english_entries() {
+            assert_eq!(english[&key]["message"].as_str(), Some(message.as_str()), "{key}: run `cargo test -p sc-core writes_menu_words -- --ignored`");
+        }
+        assert_eq!(key_words("CopyNamesToClipboard"), "copy_names_to_clipboard");
+        assert_eq!(key_words("Split and Combine"), "split_and_combine");
+    }
+
+    /// Writes the menus' entries into `l10n/en.json`, the others kept.
+    #[test]
+    #[ignore]
+    fn writes_menu_words() {
+        let file = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("../../l10n/en.json");
+        let mut english: serde_json::Map<String, serde_json::Value> = serde_json::from_str(&std::fs::read_to_string(&file).unwrap()).unwrap();
+        for (key, message, note) in english_entries() {
+            english.insert(key, serde_json::json!({ "message": message, "description": note }));
+        }
+        let sorted: std::collections::BTreeMap<_, _> = english.into_iter().collect();
+        std::fs::write(&file, serde_json::to_string_pretty(&sorted).unwrap() + "\n").unwrap();
     }
 
     #[test]

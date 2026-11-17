@@ -34,7 +34,7 @@ Microsoft, then the pCloud e-mail, and Google last.
 Have these ready:
 
 - **App name:** "Spark Commander". Dropbox needs a name nobody else uses, so have a second choice ready.
-- **Homepage:** https://github.com/airbusa/spark-commander
+- **Homepage:** https://github.com/remoxio/spark-commander
 - **Privacy policy page:** Google, and Dropbox's production review, ask for one. A short page on GitHub Pages is enough. It can say the app keeps the login tokens on the user's computer, in the system keyring, and sends files only to the service the user picked.
 - **Icon:** the Lightning icon from the icon pack.
 - **Support e-mail:** one you are happy to show to users on the login screen.
@@ -157,7 +157,7 @@ own documentation is silent). A draft:
 >
 > Hello, I develop Spark Commander, a free, open-source (GPL-3.0) twin-panel
 > file manager for Linux, Windows and macOS
-> (https://github.com/airbusa/spark-commander). I would like to let its users
+> (https://github.com/remoxio/spark-commander). I would like to let its users
 > open their pCloud storage in the app, through rclone. Could you please
 > create an OAuth 2.0 app for it and send me its client ID and client secret?
 > Redirect URI: http://localhost:53682/

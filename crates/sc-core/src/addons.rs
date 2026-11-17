@@ -14,7 +14,7 @@ use std::path::{Path, PathBuf};
 use serde::Deserialize;
 
 /// The list of add-ons; `SC_ADDONS_MANIFEST` names another (a URL or a file), for testing.
-const MANIFEST: &str = "https://github.com/airbusa/spark-commander/releases/download/addons/addons.json";
+const MANIFEST: &str = "https://github.com/remoxio/spark-commander/releases/download/addons/addons.json";
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
 pub enum Addon {

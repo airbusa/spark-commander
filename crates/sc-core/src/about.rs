@@ -2,7 +2,7 @@
 
 pub const NAME: &str = "Spark Commander";
 pub const VERSION: &str = env!("CARGO_PKG_VERSION");
-pub const WEBSITE: &str = "https://github.com/airbusa/spark-commander";
+pub const WEBSITE: &str = "https://github.com/remoxio/spark-commander";
 /// Its licence's name, and its text.
 pub const LICENCE: (&str, &str) = ("GNU General Public License 3.0 or later", "https://www.gnu.org/licenses/gpl-3.0.html");
 

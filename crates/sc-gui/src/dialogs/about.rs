@@ -9,11 +9,12 @@ use gpui_kit::component::{ActiveTheme, StyledExt, WindowExt, h_flex, v_flex};
 use gpui_kit::*;
 use sc_core::about;
 use sc_core::addons::{Addon, Builtin};
+use sc_core::t;
 
 pub fn open(window: &mut Window, cx: &mut App) {
     // Closed by its ×, as Settings: not by a click beside it.
     window.open_dialog(cx, |dialog, _, cx| {
-        dialog.title("About Spark Commander").width(px(600.)).overlay_closable(false).child(content(cx))
+        dialog.title(t!("about.title")).width(px(600.)).overlay_closable(false).child(content(cx))
     });
 }
 
@@ -45,10 +46,10 @@ fn content(cx: &App) -> impl IntoElement + use<> {
                 .gap_1()
                 .items_start()
                 .child(div().text_xl().font_semibold().child(about::NAME))
-                .child(div().text_color(dim).child(format!("Version {}", about::VERSION)))
-                .child("A twin-panel file manager, free software.")
+                .child(div().text_color(dim).child(t!("about.version", version = about::VERSION)))
+                .child(t!("about.tagline"))
                 .child(link("about-site", site, about::WEBSITE))
-                .child(h_flex().gap_1().child("Licence:").child(link("about-licence", licence, licence_url))),
+                .child(h_flex().gap_1().child(t!("about.licence")).child(link("about-licence", licence, licence_url))),
         );
     // Each project: its name to its site, its licence, what it does here.
     let row = |group: &'static str, ix: usize, name: &str, what: &str, licence: &str, website: &'static str| {
@@ -62,22 +63,22 @@ fn content(cx: &App) -> impl IntoElement + use<> {
             )
             .child(div().text_xs().text_color(dim).child(what.to_owned()))
     };
-    let heading = |text: &'static str| div().pt_2().font_semibold().child(text);
+    let heading = |text: String| div().pt_2().font_semibold().child(text);
     let shipped = Builtin::ALL
         .iter()
         .map(|b| (b.name(), b.purpose(), b.licence(), b.website().1))
-        .chain(about::SHIPPED.iter().map(|p| (p.name, p.what, p.licence, p.website)));
+        .chain(about::SHIPPED.iter().map(|p| (p.name, (p.what)(), p.licence, p.website)));
     let addons = Addon::ALL.iter().map(|a| (a.name(), a.purpose(), a.licence(), a.website().1));
-    let libraries = about::LIBRARIES.iter().map(|p| (p.name, p.what, p.licence, p.website));
+    let libraries = about::LIBRARIES.iter().map(|p| (p.name, (p.what)(), p.licence, p.website));
     let mut parts = v_flex().pr_3();
     for (group, title, list) in [
-        ("shipped", "Comes with it", shipped.collect::<Vec<_>>()),
-        ("addons", "Add-ons, downloaded when you choose", addons.collect()),
-        ("libraries", "Built on", libraries.collect()),
+        ("shipped", t!("about.shipped"), shipped.collect::<Vec<_>>()),
+        ("addons", t!("about.addons"), addons.collect()),
+        ("libraries", t!("about.libraries"), libraries.collect()),
     ] {
         parts = parts.child(heading(title));
         for (ix, (name, what, licence, website)) in list.into_iter().enumerate() {
-            parts = parts.child(row(group, ix, name, what, licence, website));
+            parts = parts.child(row(group, ix, name, &what, licence, website));
         }
     }
     v_flex()
@@ -85,7 +86,7 @@ fn content(cx: &App) -> impl IntoElement + use<> {
         .text_sm()
         .child(header)
         .child(div().border_t_1().border_color(cx.theme().border))
-        .child(div().font_semibold().child("Made with the work of these projects"))
+        .child(div().font_semibold().child(t!("about.made_with")))
         // A box of its own height, the list scrolling in it.
         .child(v_flex().h(px(340.)).child(div().id("about-parts").flex_1().min_h_0().overflow_y_scrollbar().child(parts)))
 }

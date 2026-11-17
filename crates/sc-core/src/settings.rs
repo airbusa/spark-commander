@@ -355,7 +355,7 @@ pub(crate) fn read_json<T: Default + DeserializeOwned>(file: &str) -> io::Result
 
 /// Write then rename, so a failed save keeps the old file.
 pub(crate) fn write_json(file: &str, value: &impl Serialize) -> io::Result<()> {
-    let dir = config_dir().ok_or_else(|| io::Error::other("no configuration folder"))?;
+    let dir = config_dir().ok_or_else(|| io::Error::other(crate::t!("settings.error.no_folder")))?;
     fs::create_dir_all(&dir)?;
     // Each save its own, beside another window's or app's; the last one in place wins.
     static SAVES: std::sync::atomic::AtomicU64 = std::sync::atomic::AtomicU64::new(0);

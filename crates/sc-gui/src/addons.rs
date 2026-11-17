@@ -14,6 +14,7 @@ use gpui_kit::component::notification::Notification;
 use gpui_kit::component::{WindowExt, h_flex, v_flex};
 use gpui_kit::*;
 use sc_core::addons::{Addon, Manifest, Presence};
+use sc_core::t;
 
 /// After the window is up, then a day apart.
 const FIRST: Duration = Duration::from_secs(5);
@@ -125,12 +126,12 @@ pub fn check(offer: bool, cx: &mut App) {
 
 fn offer_updates(updates: Vec<(Addon, String)>, cx: &mut App) {
     let names: Vec<String> = updates.iter().map(|(addon, version)| format!("{} {version}", addon.name())).collect();
-    let text = format!("Add-on updates: {}", names.join(", "));
+    let text = t!("addons.updates", names = names.join(", "));
     let addons: Vec<Addon> = updates.into_iter().map(|(addon, _)| addon).collect();
     crate::notify_main(
         Notification::info(text).action(move |_, _, _| {
             let addons = addons.clone();
-            Button::new("addon-update").primary().label("Update").on_click(move |_, _, cx| {
+            Button::new("addon-update").primary().label(t!("addons.update")).on_click(move |_, _, cx| {
                 for &addon in &addons {
                     install(addon, cx);
                 }
@@ -150,13 +151,13 @@ pub fn offer(
     cx: &mut App,
     go_on: impl Fn(&mut Window, &mut App) + 'static,
 ) {
-    let text = format!("{name} needs an add-on that is not installed: {}. Download it in Settings > Add-ons?", addon.name());
+    let text = t!("addons.offer.text", name = name, addon = addon.name());
     let go_on: Rc<dyn Fn(&mut Window, &mut App)> = Rc::new(go_on);
     window.open_dialog(cx, move |dialog, _, _| {
         let (yes, no, never, cancel) = (commander.clone(), go_on.clone(), go_on.clone(), go_on.clone());
         let commander = commander.clone();
         dialog
-            .title("Add-on")
+            .title(t!("addons.offer.title"))
             .width(px(480.))
             .overlay_closable(false)
             .on_cancel(move |_, window, cx| {
@@ -172,17 +173,17 @@ pub fn offer(
                         h_flex()
                             .gap_2()
                             .justify_end()
-                            .child(Button::new("offer-yes").primary().label("Yes").on_click(move |_, window, cx| {
+                            .child(Button::new("offer-yes").primary().label(t!("addons.offer.yes")).on_click(move |_, window, cx| {
                                 window.close_dialog(cx);
                                 let Some(settings) = yes.upgrade().map(|this| this.read(cx).settings.clone()) else { return };
                                 let page = sc_core::settings::PAGES.iter().position(|&page| page == "Add-ons").unwrap_or(0);
                                 crate::dialogs::settings_dialog::open(yes.clone(), settings, page, window, cx);
                             }))
-                            .child(Button::new("offer-no").outline().label("No").on_click(move |_, window, cx| {
+                            .child(Button::new("offer-no").outline().label(t!("addons.offer.no")).on_click(move |_, window, cx| {
                                 window.close_dialog(cx);
                                 no(window, cx);
                             }))
-                            .child(Button::new("offer-never").outline().label("Never show again").on_click(
+                            .child(Button::new("offer-never").outline().label(t!("addons.offer.never")).on_click(
                                 move |_, window, cx| {
                                     window.close_dialog(cx);
                                     let _ = commander.update(cx, |this, cx| {
@@ -252,7 +253,7 @@ pub fn install(addon: Addon, cx: &mut App) {
                 cx.notify();
             });
             let notification = match installed {
-                Ok(()) => Notification::success(format!("{} {version} is installed.", addon.name())),
+                Ok(()) => Notification::success(t!("addons.installed", addon = addon.name(), version = version)),
                 Err(err) => Notification::error(format!("{}: {err}", addon.name())),
             };
             crate::notify_main(notification, cx);
@@ -283,5 +284,5 @@ pub fn remove(addon: Addon, cx: &mut App) {
 
 /// "24.3 MB".
 pub fn megabytes(bytes: u64) -> String {
-    format!("{:.1} MB", bytes as f64 / 1_000_000.)
+    t!("addons.megabytes", size = format!("{:.1}", bytes as f64 / 1_000_000.))
 }

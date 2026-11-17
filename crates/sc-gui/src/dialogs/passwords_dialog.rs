@@ -10,6 +10,7 @@ use gpui_kit::component::notification::Notification;
 use gpui_kit::component::{ActiveTheme, WindowExt, h_flex, v_flex};
 use gpui_kit::*;
 use sc_core::remote::secrets;
+use sc_core::t;
 
 /// What the master password is asked for.
 #[derive(Clone, Copy, PartialEq)]
@@ -39,8 +40,8 @@ pub fn init(cx: &mut App) {
 }
 
 fn offer_unlock(cx: &mut App) {
-    let note = Notification::info("The saved passwords are locked on this computer: the master password opens them.").id::<Locked>().autohide(false).action(|_, _, _| {
-        Button::new("unlock-passwords").primary().label("Unlock…").on_click(|_, window, cx| ask(Ask::Unlock, window, cx, |_, _| {}))
+    let note = Notification::info(t!("passwords.locked_note")).id::<Locked>().autohide(false).action(|_, _, _| {
+        Button::new("unlock-passwords").primary().label(t!("passwords.unlock_button")).on_click(|_, window, cx| ask(Ask::Unlock, window, cx, |_, _| {}))
     });
     crate::notify_main(note, cx);
 }
@@ -53,13 +54,13 @@ pub fn ask(what: Ask, window: &mut Window, cx: &mut App, done: impl Fn(&mut Wind
     let again = (what == Ask::Set).then(|| masked(cx));
     let view = cx.new(|_| MasterDialog { what, first: first.clone(), again, problem: None, working: false, done: Rc::new(done) });
     let title = match what {
-        Ask::Unlock => "Unlock Saved Passwords",
-        Ask::Set => "Master Password",
+        Ask::Unlock => t!("passwords.title.unlock"),
+        Ask::Set => t!("passwords.title.set"),
     };
     window.open_dialog(cx, move |dialog, _, _| {
         let ok = view.clone();
         dialog
-            .title(title)
+            .title(title.clone())
             .width(px(480.))
             .overlay_closable(false)
             .child(view.clone())
@@ -89,8 +90,8 @@ impl MasterDialog {
         let master = self.first.read(cx).value().to_string();
         let again = self.again.as_ref().map(|again| again.read(cx).value().to_string());
         self.problem = match () {
-            _ if master.is_empty() => Some("Type the master password.".into()),
-            _ if again.is_some_and(|again| again != master) => Some("The two are not the same.".into()),
+            _ if master.is_empty() => Some(t!("passwords.problem.empty")),
+            _ if again.is_some_and(|again| again != master) => Some(t!("passwords.problem.differ")),
             _ => None,
         };
         if self.problem.is_some() {
@@ -114,8 +115,8 @@ impl MasterDialog {
                     Ok(()) => {
                         window.close_dialog(cx);
                         let text = match this.what {
-                            Ask::Unlock => "The saved passwords are open.",
-                            Ask::Set => "The master password is set.",
+                            Ask::Unlock => t!("passwords.done.unlocked"),
+                            Ask::Set => t!("passwords.done.set"),
                         };
                         window.remove_notification::<Locked>(cx);
                         window.push_notification(Notification::success(text), cx);
@@ -137,21 +138,18 @@ impl MasterDialog {
 impl Render for MasterDialog {
     fn render(&mut self, _: &mut Window, cx: &mut Context<Self>) -> impl IntoElement {
         let about = match self.what {
-            Ask::Unlock => "The settings came from another computer, or this one keeps no keyring: the master password opens the saved passwords here.",
-            Ask::Set => {
-                "With a master password, the saved passwords open on another computer once it is typed there, the settings folder copied. \
-                 Forgotten, only they are lost: they are typed again."
-            }
+            Ask::Unlock => t!("passwords.about.unlock"),
+            Ask::Set => t!("passwords.about.set"),
         };
-        let field = |label: &'static str, input: &Entity<InputState>| h_flex().gap_3().child(div().w(px(130.)).flex_none().child(label)).child(div().flex_1().child(Input::new(input)));
+        let field = |label: String, input: &Entity<InputState>| h_flex().gap_3().child(div().w(px(130.)).flex_none().child(label)).child(div().flex_1().child(Input::new(input)));
         let theme = cx.theme();
         v_flex()
             .w_full()
             .gap_3()
             .text_sm()
             .child(div().whitespace_normal().text_color(theme.muted_foreground).child(about))
-            .child(field("Master password", &self.first))
-            .children(self.again.as_ref().map(|again| field("Again", again)))
+            .child(field(t!("passwords.field.master"), &self.first))
+            .children(self.again.as_ref().map(|again| field(t!("passwords.field.again"), again)))
             .children(self.problem.clone().map(|problem| div().whitespace_normal().text_color(theme.danger).child(problem)))
             .child(
                 h_flex()
@@ -160,11 +158,11 @@ impl Render for MasterDialog {
                     .child(
                         Button::new("master-ok")
                             .primary()
-                            .label(if self.working { "Working…" } else { "OK" })
+                            .label(if self.working { t!("passwords.working") } else { t!("passwords.ok") })
                             .min_w(px(80.))
                             .on_click(cx.listener(|this, _, window, cx| this.finish(window, cx))),
                     )
-                    .child(Button::new("master-cancel").outline().label("Cancel").min_w(px(80.)).on_click(|_, window, cx| window.close_dialog(cx))),
+                    .child(Button::new("master-cancel").outline().label(t!("passwords.cancel")).min_w(px(80.)).on_click(|_, window, cx| window.close_dialog(cx))),
             )
     }
 }

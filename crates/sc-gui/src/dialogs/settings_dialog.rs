@@ -48,7 +48,7 @@ fn fluent() -> bool {
 const SAMPLE: &str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz äöüéèêàñç 0123456789";
 const SIZES: [&str; 15] = ["7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "18", "20", "22", "24", "28"];
 /// Each page's icon in the rail, as `PAGES`.
-const ICONS: [Lucide; 10] = [
+const ICONS: [Lucide; 11] = [
     Lucide::PanelsTopLeft,
     Lucide::PanelTop,
     Lucide::Eye,
@@ -57,6 +57,7 @@ const ICONS: [Lucide; 10] = [
     Lucide::Languages,
     Lucide::FilePen,
     Lucide::SquareTerminal,
+    Lucide::ListOrdered,
     Lucide::KeyRound,
     Lucide::Puzzle,
 ];
@@ -72,22 +73,23 @@ pub fn open(
     window: &mut Window,
     cx: &mut App,
 ) {
-    let mut input = |value: String, digits: bool, cx: &mut App| {
+    // At most `digits` digits; any text with none.
+    let mut input = |value: String, digits: usize, cx: &mut App| {
         cx.new(|cx| {
             let state = InputState::new(window, cx).default_value(value);
             match digits {
-                true => state.validate(|text, _| {
-                    text.len() <= 4 && text.chars().all(|c| c.is_ascii_digit())
-                }),
-                false => state,
+                0 => state,
+                _ => state.validate(move |text, _| text.len() <= digits && text.chars().all(|c| c.is_ascii_digit())),
             }
         })
     };
-    let text_width = input(settings.viewer.text_width.to_string(), true, cx);
-    let binary_width = input(settings.viewer.binary_width.to_string(), true, cx);
-    let limit = input(settings.editor.limit_mb.to_string(), true, cx);
-    let external = input(settings.editor.external.clone(), false, cx);
-    let pattern = input(settings.date.custom.clone().unwrap_or_else(|| "yyyy-MM-dd".into()), false, cx);
+    let text_width = input(settings.viewer.text_width.to_string(), 4, cx);
+    let binary_width = input(settings.viewer.binary_width.to_string(), 4, cx);
+    let limit = input(settings.editor.limit_mb.to_string(), 4, cx);
+    let external = input(settings.editor.external.clone(), 0, cx);
+    let pattern = input(settings.date.custom.clone().unwrap_or_else(|| "yyyy-MM-dd".into()), 0, cx);
+    let clear_after = input(settings.queue.clear_after_minutes.to_string(), 4, cx);
+    let download_limit = input(settings.queue.download_limit_kb.to_string(), 7, cx);
     let slider = |value: u8, cx: &mut App| cx.new(|_| SliderState::new().min(0.).max(100.).step(5.).default_value(f32::from(value)));
     let opacity = slider(settings.sidebar_opacity.0, cx);
     let terminal_opacity = slider(settings.terminal_opacity.0, cx);
@@ -173,6 +175,9 @@ pub fn open(
                         s.date.custom = Some(text.to_owned());
                     }
                 }),
+                // Empty is 0.
+                bind(cx, &clear_after, |s, text| s.queue.clear_after_minutes = text.parse().unwrap_or(0)),
+                bind(cx, &download_limit, |s, text| s.queue.download_limit_kb = text.parse().unwrap_or(0)),
             ],
             _pickers: pickers.into_iter().flatten().collect(),
             _measuring: measuring,
@@ -181,6 +186,8 @@ pub fn open(
             limit,
             external,
             pattern,
+            clear_after,
+            download_limit,
             main,
             fixed,
             installed,
@@ -356,6 +363,8 @@ struct SettingsDialog {
     limit: Entity<InputState>,
     external: Entity<InputState>,
     pattern: Entity<InputState>,
+    clear_after: Entity<InputState>,
+    download_limit: Entity<InputState>,
     main: Picker,
     fixed: Picker,
     /// The fonts this computer has, for the samples.
@@ -367,7 +376,7 @@ struct SettingsDialog {
     /// The saved passwords: how many, a master password set, locked here;
     /// read as the page is shown.
     passwords: (usize, bool, bool),
-    _inputs: [Subscription; 5],
+    _inputs: [Subscription; 7],
     _pickers: Vec<Subscription>,
     _measuring: Task<()>,
     _opacity: [Subscription; 2],
@@ -805,6 +814,23 @@ impl SettingsDialog {
         )
     }
 
+    /// The operation queue: how long done operations stay, how fast links download.
+    fn render_queue(&self, cx: &mut Context<Self>) -> GroupBox {
+        let muted = cx.theme().muted_foreground;
+        let row = |label: &'static str, input: &Entity<InputState>, unit: &'static str, about: &'static str| {
+            v_flex()
+                .gap_1()
+                .child(h_flex().gap_2().child(label).child(div().w(px(80.)).child(Input::new(input))).child(unit))
+                .child(div().whitespace_normal().text_color(muted).child(about))
+        };
+        GroupBox::new().outline().title("Operation queue").child(
+            v_flex()
+                .gap_4()
+                .child(row("Clear done operations after", &self.clear_after, "minutes", "0: as soon as they finish. Failed and cancelled ones stay until cleared."))
+                .child(row("Download speed limit", &self.download_limit, "KB/s", "Files > Download from Link; 0: no limit.")),
+        )
+    }
+
     /// The toolbar's buttons in order: each replaced, moved or removed; more added.
     fn render_toolbar(&self, cx: &mut Context<Self>) -> GroupBox {
         let shown = self.draft.toolbar.0.clone();
@@ -1162,6 +1188,7 @@ impl SettingsDialog {
                 }
                 groups
             }
+            "Operations" => vec![self.render_queue(cx)],
             "Passwords" => vec![self.render_passwords(cx)],
             "Add-ons" => self.render_addons(cx),
             _ => Vec::new(),

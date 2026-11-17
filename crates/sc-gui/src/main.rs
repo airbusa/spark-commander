@@ -1538,16 +1538,18 @@ impl Commander {
             let commander = commander.clone();
             let item = PopupMenuItem::new("Customize Toolbar…").when_some(menus::menu_icon(Command::Settings), |item, icon| item.icon(Icon::new(icon)));
             menu.item(item.on_click(move |_, window, cx| {
-                let page = settings::PAGES.iter().position(|&page| page == "Toolbar").unwrap_or(0);
-                if let Some(this) = commander.upgrade() {
-                    let settings = this.read(cx).settings.clone();
-                    dialogs::settings_dialog::open(commander.clone(), settings, page, window, cx);
-                }
+                let _ = commander.update(cx, |this, cx| this.open_settings_at("Toolbar", window, cx));
             }))
         };
         // A press on it must not start moving the window from the title bar.
         let bar = h_flex().id("toolbar").gap_0p5().px_1().py_0p5().on_mouse_down(MouseButton::Left, |_, _, cx| cx.stop_propagation());
         Some(bar.children(buttons).context_menu(customize).into_any_element())
+    }
+
+    /// Settings, on the page named `page`.
+    pub(crate) fn open_settings_at(&mut self, page: &str, window: &mut Window, cx: &mut Context<Self>) {
+        let page = settings::PAGES.iter().position(|&name| name == page).unwrap_or(0);
+        dialogs::settings_dialog::open(cx.entity().downgrade(), self.settings.clone(), page, window, cx);
     }
 
     fn session(&self) -> Session {

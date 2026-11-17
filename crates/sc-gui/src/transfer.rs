@@ -12,7 +12,7 @@ use gpui_kit::component::input::{Input, InputState};
 use gpui_kit::component::notification::Notification;
 use gpui_kit::component::progress::Progress as Bar;
 use gpui_kit::component::radio::RadioGroup;
-use gpui_kit::component::{ActiveTheme, IconName, Sizable, WindowExt, h_flex, v_flex};
+use gpui_kit::component::{ActiveTheme, Icon, IconName, Sizable, WindowExt, h_flex, v_flex};
 use gpui_kit::prelude::FluentBuilder;
 use gpui_kit::*;
 use sc_core::Panel;
@@ -347,7 +347,13 @@ impl Commander {
                 cx.background_executor()
                     .timer(Duration::from_millis(150))
                     .await;
-                let watched = this.update_in(cx, |this, window, cx| this.queue_changed(window, cx));
+                let watched = this.update_in(cx, |this, window, cx| {
+                    this.queue_changed(window, cx);
+                    // After the finished were taken in (their notes, the panels read again);
+                    // failed and cancelled ones stay until cleared.
+                    let minutes = u64::from(this.settings.queue.clear_after_minutes);
+                    this.transfers.queue.forget_done(Duration::from_secs(minutes * 60));
+                });
                 if watched.is_err() {
                     break;
                 }
@@ -357,7 +363,6 @@ impl Commander {
     }
 
     fn queue_changed(&mut self, window: &mut Window, cx: &mut Context<Self>) {
-        self.transfers.queue.forget_done(DONE_KEPT);
         let transfers = &mut self.transfers;
         let version = transfers.queue.version();
         if version == transfers.version {
@@ -704,9 +709,6 @@ fn describe(meta: &Meta) -> String {
 #[derive(Clone, Copy)]
 struct JobDrag(u64);
 
-/// A done job stays listed this long; failed and cancelled ones until cleared.
-const DONE_KEPT: Duration = Duration::from_secs(300);
-
 /// How far a job is, 0 to 1, by its bytes, else its files; none while counting.
 fn done_part(progress: &sc_core::ops::Progress) -> Option<f32> {
     let part = match (progress.total_bytes, progress.total_files) {
@@ -796,11 +798,14 @@ impl Commander {
             true => list.child(div().p_2().text_color(theme.muted_foreground).child("No operations.")),
             false => list,
         };
-        v_flex().size_full().child(list).when(!finished.is_empty(), |el| {
-            el.child(
-                h_flex().px_1().pt_1().justify_end().child(Button::new("operations-clear").ghost().small().label("Clear finished").on_click(move |_, _, _| queue.clear_finished())),
-            )
-        })
+        let settings = Button::new("operations-settings")
+            .ghost()
+            .small()
+            .icon(Icon::new(gpui_kit::assets::IconName::Settings))
+            .tooltip("Operation queue settings")
+            .on_click(cx.listener(|this, _, window, cx| this.open_settings_at("Operations", window, cx)));
+        let clear = (!finished.is_empty()).then(|| Button::new("operations-clear").ghost().small().label("Clear finished").on_click(move |_, _, _| queue.clear_finished()));
+        v_flex().size_full().child(list).child(h_flex().px_1().pt_1().child(settings).child(div().flex_1()).children(clear))
     }
 
     fn render_job(&self, job: &JobView, waiting: Rc<Vec<u64>>, cx: &mut Context<Self>) -> impl IntoElement + use<> {

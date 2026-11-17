@@ -319,7 +319,8 @@ impl Commander {
             _ => None,
         };
         let push = move |sources: Vec<PathBuf>| {
-            queue.push(Operation {
+            // An item a job: each cancelled apart.
+            queue.push_each(Operation {
                 kind,
                 from,
                 sources: sources.clone(),

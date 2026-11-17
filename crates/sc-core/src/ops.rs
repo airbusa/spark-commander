@@ -230,9 +230,23 @@ pub struct Task {
 pub type TaskFn = Box<dyn FnOnce(&mut Report) -> io::Result<String> + Send>;
 
 enum Work {
-    /// Remembered for Undo, unless it is one's reversal.
-    Copy(Operation, bool),
+    /// Remembered for Undo, unless it is one's reversal; its batch's choices shared.
+    Copy(Operation, bool, Batch),
     Task(Task),
+}
+
+/// The jobs one copy was split into, item by item: an "all" answer in one holds
+/// for those after it, and Cancel in a question stops them all (one job runs at a time).
+#[derive(Clone, Default)]
+struct Batch(Arc<Mutex<Choices>>);
+
+#[derive(Default)]
+struct Choices {
+    overwrite: Option<Overwrite>,
+    skip_errors: bool,
+    stopped: bool,
+    /// One Undo for them all: its id there and the whole copy's title.
+    undo: Option<(u64, String)>,
 }
 
 /// A running task's link to the queue.
@@ -287,12 +301,28 @@ pub struct Queue(Arc<(Mutex<State>, Condvar)>);
 
 impl Queue {
     pub fn push(&self, operation: Operation) -> u64 {
-        self.add(operation.title(), Work::Copy(operation, true))
+        self.add(operation.title(), Work::Copy(operation, true, Batch::default()))
+    }
+
+    /// Each item a job of its own, to cancel or reorder apart; they share the
+    /// "all" answers and a question's Cancel, as one job would.
+    pub fn push_each(&self, operation: Operation) -> Vec<u64> {
+        let Target::Into(_) = &operation.target else {
+            return vec![self.push(operation)];
+        };
+        static NEXT: AtomicU64 = AtomicU64::new(1);
+        let batch = Batch::default();
+        batch.0.lock().unwrap().undo = Some((NEXT.fetch_add(1, Ordering::Relaxed), operation.title()));
+        let each = |source: &PathBuf| Operation { sources: vec![source.clone()], from: operation.from.clone(), to: operation.to.clone(), target: operation.target.clone(), ..operation };
+        operation.sources.iter().map(|source| {
+            let one = each(source);
+            self.add(one.title(), Work::Copy(one, true, batch.clone()))
+        }).collect()
     }
 
     /// Undo's move back, which Undo does not remember in its turn.
     pub fn push_reversal(&self, operation: Operation) -> u64 {
-        self.add(crate::t!("ops.undo.title", what = operation.title()), Work::Copy(operation, false))
+        self.add(crate::t!("ops.undo.title", what = operation.title()), Work::Copy(operation, false, Batch::default()))
     }
 
     pub fn push_task(&self, task: Task) -> u64 {
@@ -476,14 +506,20 @@ impl Queue {
                 found
             };
             let (status, note) = match work {
-                Work::Copy(operation, remembered) => {
+                Work::Copy(_, _, batch) if batch.0.lock().unwrap().stopped => (Status::Cancelled, None),
+                Work::Copy(operation, remembered, batch) => {
                     let at = std::time::SystemTime::now();
+                    let (overwrite, skip_errors) = {
+                        let choices = batch.0.lock().unwrap();
+                        (choices.overwrite.unwrap_or(operation.overwrite), choices.skip_errors)
+                    };
+                    let by_hand = cancel.clone();
                     let mut run = Run {
                         queue: &self,
                         id,
                         cancel,
-                        overwrite: operation.overwrite,
-                        skip_errors: false,
+                        overwrite,
+                        skip_errors,
                         progress: Progress::default(),
                         op: &operation,
                         done: Vec::new(),
@@ -500,6 +536,12 @@ impl Queue {
                         Ok(()) => (Status::Done, None),
                         Err(Cancelled) => (Status::Cancelled, None),
                     };
+                    {
+                        let mut choices = batch.0.lock().unwrap();
+                        (choices.overwrite, choices.skip_errors) = (Some(run.overwrite), run.skip_errors);
+                        // Cancel answered in a question, not the job's own ×: the rest stop too.
+                        choices.stopped = ran.0 == Status::Cancelled && !by_hand.load(Ordering::Relaxed);
+                    }
                     // What it did, also before a cancel, for Undo.
                     if remembered && !run.done.is_empty() {
                         let (replaced, done) = (run.replaced, run.done);
@@ -507,7 +549,11 @@ impl Queue {
                             Kind::Copy => crate::ops::undo::Step::Copied { fs: Place::of(&operation.to), made: done.into_iter().map(|(_, made)| made).collect(), replaced, at },
                             Kind::Move => crate::ops::undo::Step::Moved { from: Place::of(&operation.from), to: Place::of(&operation.to), moves: done, restore: replaced, replaces: Vec::new(), at },
                         };
-                        crate::ops::undo::remember(operation.title(), step);
+                        let (title, undo) = match &batch.0.lock().unwrap().undo {
+                            Some((id, title)) => (title.clone(), Some(*id)),
+                            None => (operation.title(), None),
+                        };
+                        crate::ops::undo::remember_in(title, step, undo);
                     }
                     ran
                 }
@@ -1084,6 +1130,46 @@ mod tests {
 
     fn read(path: &Path) -> String {
         fs::read_to_string(path).unwrap()
+    }
+
+    /// Each item its own job: an "all" answer holds for the next ones, a
+    /// question's Cancel stops the rest.
+    #[test]
+    fn splits_a_copy_into_jobs() {
+        let dir = temp("each");
+        let (src, dst) = (dir.join("src"), dir.join("dst"));
+        fs::create_dir_all(&src).unwrap();
+        fs::create_dir_all(&dst).unwrap();
+        for name in ["a", "b", "c"] {
+            fs::write(src.join(name), "new").unwrap();
+            fs::write(dst.join(name), "old").unwrap();
+        }
+        let sources = [src.join("a"), src.join("b"), src.join("c")];
+        let finish = |answer: Answer| {
+            let queue = Queue::default();
+            let ids = queue.push_each(operation(Kind::Copy, &sources, Target::Into(dst.clone()), Overwrite::Ask));
+            let mut asked = 0;
+            loop {
+                let jobs: Vec<JobView> = queue.jobs().into_iter().filter(|job| ids.contains(&job.id)).collect();
+                if jobs.iter().all(|job| job.status.finished()) {
+                    return (jobs.into_iter().map(|job| job.status).collect::<Vec<_>>(), asked);
+                }
+                for job in jobs.iter().filter(|job| job.question.is_some()) {
+                    asked += 1;
+                    queue.answer(job.id, answer);
+                }
+                std::thread::sleep(Duration::from_millis(2));
+            }
+        };
+        let (statuses, asked) = finish(Answer::SkipAll);
+        assert_eq!((statuses, asked), (vec![Status::Done; 3], 1));
+        assert_eq!(read(&dst.join("c")), "old");
+        let (statuses, asked) = finish(Answer::Cancel);
+        assert_eq!((statuses, asked), (vec![Status::Cancelled; 3], 1));
+        let (statuses, _) = finish(Answer::OverwriteAll);
+        assert_eq!(statuses, vec![Status::Done; 3]);
+        assert_eq!(read(&dst.join("c")), "new");
+        fs::remove_dir_all(dir).unwrap();
     }
 
     #[test]

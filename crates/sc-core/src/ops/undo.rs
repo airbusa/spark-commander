@@ -63,6 +63,29 @@ pub struct Undo {
     /// What was done: "Copy 3 items to /home/me".
     pub title: String,
     pub step: Step,
+    /// The copy split into jobs it is of: the next job's step joins it.
+    pub batch: Option<u64>,
+}
+
+impl Step {
+    /// `other`, a later job of the same copy, added to this; given back if of another kind.
+    fn join(&mut self, other: Step) -> Option<Step> {
+        match (self, other) {
+            (Step::Copied { made, replaced, at, .. }, Step::Copied { made: more, replaced: also, at: then, .. }) => {
+                made.extend(more);
+                replaced.extend(also);
+                *at = (*at).min(then);
+            }
+            (Step::Moved { moves, restore, replaces, at, .. }, Step::Moved { moves: more, restore: also, replaces: too, at: then, .. }) => {
+                moves.extend(more);
+                restore.extend(also);
+                replaces.extend(too);
+                *at = (*at).min(then);
+            }
+            (_, other) => return Some(other),
+        }
+        None
+    }
 }
 
 /// How many are kept.
@@ -81,7 +104,26 @@ fn keep(list: &Mutex<Vec<Undo>>, undo: Undo) {
 }
 
 pub fn remember(title: String, step: Step) {
-    keep(&DONE, Undo { title, step });
+    remember_in(title, step, None);
+}
+
+/// As `remember`; a step of the newest one's `batch` joins it, which takes `title`.
+pub fn remember_in(title: String, step: Step, batch: Option<u64>) {
+    let mut done = DONE.lock().unwrap();
+    let left = match done.last_mut().filter(|last| batch.is_some() && last.batch == batch) {
+        Some(last) => {
+            let left = last.step.join(step);
+            if left.is_none() {
+                last.title = title.clone();
+            }
+            left
+        }
+        None => Some(step),
+    };
+    drop(done);
+    if let Some(step) = left {
+        keep(&DONE, Undo { title, step, batch });
+    }
     // Tests run side by side: one's copy would drop another's Redo.
     #[cfg(not(test))]
     UNDONE.lock().unwrap().clear();
@@ -123,7 +165,7 @@ fn reverse(step: &Step) -> Option<Step> {
 /// `ask` answering its login. Its reverse is kept for the other, Redo or
 /// Undo; failed, it is kept to try again.
 pub fn run(undo: Undo, queue: &Queue, redo: bool, ask: Ask) -> io::Result<bool> {
-    let Undo { title: what, step } = undo;
+    let Undo { title: what, step, .. } = undo;
     let reversed = reverse(&step);
     let kept = (what.clone(), step.clone());
     let queued = matches!(step, Step::Moved { .. });
@@ -186,10 +228,10 @@ pub fn run(undo: Undo, queue: &Queue, redo: bool, ask: Ask) -> io::Result<bool> 
     match &done {
         Ok(()) => {
             if let Some(step) = reversed {
-                keep(if redo { &DONE } else { &UNDONE }, Undo { title: what, step });
+                keep(if redo { &DONE } else { &UNDONE }, Undo { title: what, step, batch: None });
             }
         }
-        Err(_) => keep(if redo { &UNDONE } else { &DONE }, Undo { title: kept.0, step: kept.1 }),
+        Err(_) => keep(if redo { &UNDONE } else { &DONE }, Undo { title: kept.0, step: kept.1, batch: None }),
     }
     done.map(|()| !queued)
 }
@@ -440,12 +482,24 @@ mod tests {
     }
 
     #[test]
+    fn a_split_copys_steps_join() {
+        let (early, late) = (SystemTime::UNIX_EPOCH, SystemTime::now());
+        let copied = |name: &str, at| Step::Copied { fs: Place::Here, made: vec![name.into()], replaced: Vec::new(), at };
+        let mut step = copied("a", late);
+        assert!(step.join(copied("b", early)).is_none());
+        let Step::Copied { made, at, .. } = &step else { unreachable!() };
+        assert_eq!((made.clone(), *at), (vec![PathBuf::from("a"), PathBuf::from("b")], early));
+        let trashed = Step::Trashed { paths: Vec::new(), at: late, displaced: Vec::new() };
+        assert!(step.join(trashed).is_some());
+    }
+
+    #[test]
     fn a_try_again_leaves_out_what_is_gone() {
         let dir = std::env::temp_dir().join(format!("sc-undo-again-{}", std::process::id()));
         std::fs::create_dir_all(&dir).unwrap();
         std::fs::write(dir.join("b"), "b").unwrap();
         let step = Step::Copied { fs: Place::Here, made: vec![dir.join("a"), dir.join("b")], replaced: Vec::new(), at: SystemTime::now() };
-        assert!(run(Undo { title: "Copy".into(), step }, &Queue::default(), false, no_ask()).unwrap());
+        assert!(run(Undo { title: "Copy".into(), step, batch: None }, &Queue::default(), false, no_ask()).unwrap());
         assert!(!dir.join("b").exists());
         std::fs::remove_dir_all(&dir).unwrap();
     }

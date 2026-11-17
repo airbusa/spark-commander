@@ -5,21 +5,56 @@
 
 use std::io;
 use std::path::{Path, PathBuf};
-use std::sync::{Arc, Mutex};
+use std::sync::{Arc, Mutex, Weak};
 use std::time::SystemTime;
 
 use crate::ops::{Kind, Operation, Overwrite, Queue, Target, Task};
+use crate::remote::{Address, Ask};
 use crate::vfs::{self, Fs};
+
+/// Where a step's files are: this computer, or a server kept by its address,
+/// so Undo holds no connection open; the one a tab still keeps is used.
+#[derive(Clone)]
+pub enum Place {
+    Here,
+    Server { url: String, open: Weak<dyn Fs> },
+}
+
+impl Place {
+    pub fn of(fs: &Arc<dyn Fs>) -> Self {
+        // A server's id is its address.
+        match fs.id().as_str() {
+            "local" => Place::Here,
+            url => Place::Server { url: url.to_owned(), open: Arc::downgrade(fs) },
+        }
+    }
+
+    /// The file system: the connection a tab still keeps, else a new one,
+    /// `ask` answering its login. Blocks.
+    fn open(&self, ask: &Ask) -> io::Result<Arc<dyn Fs>> {
+        match self {
+            Place::Here => Ok(Arc::new(vfs::Local)),
+            Place::Server { url, open } => match open.upgrade() {
+                Some(fs) => Ok(fs),
+                None => {
+                    let address = Address::parse(url).ok_or_else(|| io::Error::other(format!("{url}: not a server's address")))?;
+                    let (server, _) = crate::remote::connect(&address, ask.clone())?;
+                    Ok(server)
+                }
+            },
+        }
+    }
+}
 
 #[derive(Clone)]
 pub enum Step {
     /// New copies: removed again, to the trash on this computer; what they
     /// went over, `replaced`, back from the trash, where it went since `at`.
-    Copied { fs: Arc<dyn Fs>, made: Vec<PathBuf>, replaced: Vec<PathBuf>, at: SystemTime },
+    Copied { fs: Place, made: Vec<PathBuf>, replaced: Vec<PathBuf>, at: SystemTime },
     /// Moved or renamed, `(was, now)`: back, from `to`'s file system to
     /// `from`'s; then `restore`, which they went over, back from the trash
     /// (since `at`). `replaces`: what doing them again goes over.
-    Moved { from: Arc<dyn Fs>, to: Arc<dyn Fs>, moves: Vec<(PathBuf, PathBuf)>, restore: Vec<PathBuf>, replaces: Vec<PathBuf>, at: SystemTime },
+    Moved { from: Place, to: Place, moves: Vec<(PathBuf, PathBuf)>, restore: Vec<PathBuf>, replaces: Vec<PathBuf>, at: SystemTime },
     /// Moved to the trash at `at`: restored, once `displaced`, in their place since, went to the trash.
     Trashed { paths: Vec<PathBuf>, at: SystemTime, displaced: Vec<PathBuf> },
 }
@@ -67,7 +102,7 @@ fn reverse(step: &Step) -> Option<Step> {
     let now = SystemTime::now();
     Some(match step {
         // Moved to the trash: back from it.
-        Step::Copied { fs, made, replaced, .. } if fs.id() == "local" => Step::Trashed { paths: made.clone(), at: now, displaced: replaced.clone() },
+        Step::Copied { fs: Place::Here, made, replaced, .. } => Step::Trashed { paths: made.clone(), at: now, displaced: replaced.clone() },
         Step::Copied { .. } => return None,
         Step::Moved { from, to, moves, restore, replaces, .. } => Step::Moved {
             from: to.clone(),
@@ -78,15 +113,16 @@ fn reverse(step: &Step) -> Option<Step> {
             at: now,
         },
         // Back from the trash: to it again.
-        Step::Trashed { paths, displaced, .. } => Step::Copied { fs: Arc::new(vfs::Local), made: paths.clone(), replaced: displaced.clone(), at: now },
+        Step::Trashed { paths, displaced, .. } => Step::Copied { fs: Place::Here, made: paths.clone(), replaced: displaced.clone(), at: now },
     })
 }
 
 /// Undoes `undo`, or does again what was undone (`redo`): moves go through
 /// `queue`, as a copy goes, unrecorded (false: queued, not done yet); the
-/// trash here, which blocks. Its reverse is kept for the other, Redo or
+/// trash here, which blocks. A server no tab keeps open is connected again,
+/// `ask` answering its login. Its reverse is kept for the other, Redo or
 /// Undo; failed, it is kept to try again.
-pub fn run(undo: Undo, queue: &Queue, redo: bool) -> io::Result<bool> {
+pub fn run(undo: Undo, queue: &Queue, redo: bool, ask: Ask) -> io::Result<bool> {
     let Undo { title: what, step } = undo;
     let reversed = reverse(&step);
     let kept = (what.clone(), step.clone());
@@ -94,8 +130,8 @@ pub fn run(undo: Undo, queue: &Queue, redo: bool) -> io::Result<bool> {
     let title = format!("{}: {what}", if redo { "Redo" } else { "Undo" });
     let done = match step {
         // One gone already (a try before failed after it) is left out.
-        Step::Copied { fs, made, .. } if fs.id() != "local" => {
-            let undone = made.iter().filter(|path| fs.metadata(path).is_ok()).try_for_each(|path| vfs::remove_all(&*fs, path));
+        Step::Copied { fs: fs @ Place::Server { .. }, made, .. } => {
+            let undone = fs.open(&ask).and_then(|fs| made.iter().filter(|path| fs.metadata(path).is_ok()).try_for_each(|path| vfs::remove_all(&*fs, path)));
             crate::activity::note(title, &undone);
             undone
         }
@@ -109,6 +145,7 @@ pub fn run(undo: Undo, queue: &Queue, redo: bool) -> io::Result<bool> {
             undone
         }
         Step::Moved { from, to, moves, restore, at, .. } => {
+            let (from, to) = (from.open(&ask)?, to.open(&ask)?);
             // One no longer where it went (its move back skipped or cancelled) stays where it is.
             for (was, now) in moves.into_iter().filter(|(_, now)| to.metadata(now).is_ok()) {
                 // A merged folder's, moved one by one, went with its last: made again.
@@ -292,6 +329,58 @@ fn put_back(_: Vec<()>) -> io::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    /// This computer's files as a server's would be: another id.
+    struct Server;
+
+    impl Fs for Server {
+        fn id(&self) -> String {
+            "sftp://me@server.invalid".into()
+        }
+        fn metadata(&self, path: &Path) -> io::Result<vfs::Meta> {
+            Local.metadata(path)
+        }
+        fn list(&self, dir: &Path) -> io::Result<Vec<std::ffi::OsString>> {
+            Local.list(dir)
+        }
+        fn open(&self, path: &Path) -> io::Result<Box<dyn io::Read + Send>> {
+            Local.open(path)
+        }
+        fn create(&self, path: &Path) -> io::Result<Box<dyn io::Write + Send>> {
+            Local.create(path)
+        }
+        fn set_meta(&self, path: &Path, meta: &vfs::Meta) -> io::Result<()> {
+            Local.set_meta(path, meta)
+        }
+        fn mkdir(&self, path: &Path) -> io::Result<()> {
+            Local.mkdir(path)
+        }
+        fn remove(&self, path: &Path, is_dir: bool) -> io::Result<()> {
+            Local.remove(path, is_dir)
+        }
+        fn rename(&self, from: &Path, to: &Path) -> io::Result<()> {
+            Local.rename(from, to)
+        }
+    }
+
+    /// A step keeps no server's connection open; it uses the one a tab keeps.
+    #[test]
+    fn keeps_servers_by_address() {
+        let server: Arc<dyn Fs> = Arc::new(Server);
+        let place = Place::of(&server);
+        assert_eq!(Arc::strong_count(&server), 1, "not held");
+        assert!(Arc::ptr_eq(&place.open(&no_ask()).unwrap(), &server), "the open one");
+        assert!(matches!(Place::of(&(Arc::new(Local) as Arc<dyn Fs>)), Place::Here));
+        match &place {
+            Place::Server { url, .. } => assert_eq!(url, "sftp://me@server.invalid"),
+            Place::Here => panic!("a server's"),
+        }
+    }
+
+    /// Tests' servers ask nothing.
+    fn no_ask() -> Ask {
+        Arc::new(|_| crate::remote::Reply::Cancel)
+    }
     use crate::vfs::Local;
     use std::time::Duration;
 
@@ -331,7 +420,7 @@ mod tests {
         queue.push(renamed);
         finish(&queue);
         for title in [title, renamed_title.clone()] {
-            run(taken(&title).expect("remembered"), &queue, false).unwrap();
+            run(taken(&title).expect("remembered"), &queue, false, no_ask()).unwrap();
         }
         finish(&queue);
         assert_eq!(std::fs::read_to_string(dir.join("a.txt")).unwrap(), "a", "back in its folder");
@@ -340,7 +429,7 @@ mod tests {
         // The move back is not remembered in its turn.
         assert!(DONE.lock().unwrap().iter().all(|undo| !undo.title.contains(&*dir.to_string_lossy())));
         // Redo renames it again, and Undo can undo that.
-        run(taken_from(&UNDONE, &renamed_title).expect("undone"), &queue, true).unwrap();
+        run(taken_from(&UNDONE, &renamed_title).expect("undone"), &queue, true, no_ask()).unwrap();
         finish(&queue);
         assert!(dir.join("c.txt").exists() && !dir.join("b.txt").exists(), "renamed again");
         assert!(taken(&renamed_title).is_some(), "to undo again");
@@ -352,8 +441,8 @@ mod tests {
         let dir = std::env::temp_dir().join(format!("sc-undo-again-{}", std::process::id()));
         std::fs::create_dir_all(&dir).unwrap();
         std::fs::write(dir.join("b"), "b").unwrap();
-        let step = Step::Copied { fs: Arc::new(Local), made: vec![dir.join("a"), dir.join("b")], replaced: Vec::new(), at: SystemTime::now() };
-        assert!(run(Undo { title: "Copy".into(), step }, &Queue::default(), false).unwrap());
+        let step = Step::Copied { fs: Place::Here, made: vec![dir.join("a"), dir.join("b")], replaced: Vec::new(), at: SystemTime::now() };
+        assert!(run(Undo { title: "Copy".into(), step }, &Queue::default(), false, no_ask()).unwrap());
         assert!(!dir.join("b").exists());
         std::fs::remove_dir_all(&dir).unwrap();
     }
@@ -404,11 +493,11 @@ mod tests {
             assert_eq!(read("dst/sub/c.txt"), None, "a new one in a merged folder goes");
         };
         new(&read);
-        run(taken(&title).expect("remembered"), &queue, false).unwrap();
+        run(taken(&title).expect("remembered"), &queue, false, no_ask()).unwrap();
         old(&read);
-        run(taken_from(&UNDONE, &title).expect("undone"), &queue, true).unwrap();
+        run(taken_from(&UNDONE, &title).expect("undone"), &queue, true, no_ask()).unwrap();
         new(&read);
-        run(taken(&title).expect("redone"), &queue, false).unwrap();
+        run(taken(&title).expect("redone"), &queue, false, no_ask()).unwrap();
         old(&read);
         assert_eq!(read("dst/sub/keep.txt").as_deref(), Some("keep"), "what was there alone stays");
 
@@ -422,7 +511,7 @@ mod tests {
         finish(&queue);
         assert!(!src.join("merged").exists());
         assert_eq!(read("dst/merged/m.txt").as_deref(), Some("moved"));
-        run(taken(&title).expect("remembered"), &queue, false).unwrap();
+        run(taken(&title).expect("remembered"), &queue, false, no_ask()).unwrap();
         finish(&queue);
         assert_eq!(read("src/merged/m.txt").as_deref(), Some("moved"), "moved back");
         assert_eq!(read("src/merged/n.txt").as_deref(), Some("n"));

@@ -18,6 +18,7 @@ use std::sync::atomic::{AtomicBool, AtomicU64, Ordering};
 use std::sync::{Arc, Condvar, Mutex, MutexGuard};
 
 use crate::command;
+use crate::ops::undo::Place;
 use crate::vfs::{self, Fs, Meta};
 
 /// Bytes a second what is read from servers may take (Download from Link,
@@ -503,8 +504,8 @@ impl Queue {
                     if remembered && !run.done.is_empty() {
                         let (replaced, done) = (run.replaced, run.done);
                         let step = match operation.kind {
-                            Kind::Copy => crate::ops::undo::Step::Copied { fs: operation.to.clone(), made: done.into_iter().map(|(_, made)| made).collect(), replaced, at },
-                            Kind::Move => crate::ops::undo::Step::Moved { from: operation.from.clone(), to: operation.to.clone(), moves: done, restore: replaced, replaces: Vec::new(), at },
+                            Kind::Copy => crate::ops::undo::Step::Copied { fs: Place::of(&operation.to), made: done.into_iter().map(|(_, made)| made).collect(), replaced, at },
+                            Kind::Move => crate::ops::undo::Step::Moved { from: Place::of(&operation.from), to: Place::of(&operation.to), moves: done, restore: replaced, replaces: Vec::new(), at },
                         };
                         crate::ops::undo::remember(operation.title(), step);
                     }

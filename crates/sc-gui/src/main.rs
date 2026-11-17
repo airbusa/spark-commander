@@ -1153,7 +1153,9 @@ impl Commander {
             return window.push_notification(Notification::info(none), cx);
         };
         let (title, queue) = (undo.title.clone(), self.transfers.queue.clone());
-        let undone = cx.background_executor().spawn(async move { sc_core::ops::undo::run(undo, &queue, redo) });
+        // A server no tab keeps open is connected again, its login asked in a dialog.
+        let (ask, _) = self.dialog_ask(window, cx);
+        let undone = cx.background_executor().spawn(async move { sc_core::ops::undo::run(undo, &queue, redo, ask) });
         cx.spawn_in(window, async move |this, cx| {
             let undone = undone.await;
             let _ = this.update_in(cx, |this, window, cx| {
@@ -1596,13 +1598,19 @@ impl Commander {
     }
 
     fn reopen_tab(&mut self, ix: usize, window: &mut Window, cx: &mut Context<Self>) {
-        let side = &mut self.panels[self.active];
-        if let Err(err) = side.tabs.reopen(ix) {
-            window.push_notification(
-                Notification::error(format!("Could not reopen the tab: {err}")),
-                cx,
-            );
+        let (active, filter) = (self.active, self.settings.filter());
+        let side = &mut self.panels[active];
+        match side.tabs.reopen(ix) {
+            Err(err) => window.push_notification(Notification::error(format!("Could not reopen the tab: {err}")), cx),
+            // A server's: a tab of home's meanwhile, its server's once connected.
+            Ok(Some(state)) => {
+                side.tabs.add(home_panel(filter));
+                let tab = side.tabs.active();
+                self.reconnect_tabs(active, vec![(tab, state)], window, cx);
+            }
+            Ok(None) => {}
         }
+        let side = &mut self.panels[active];
         side.scroll_to_cursor();
         cx.notify();
     }
@@ -1950,11 +1958,7 @@ impl Commander {
                 .context_menu(move |menu, window, cx| {
                     let tabs = &commander.read(cx).panels[ix].tabs;
                     let locked = tabs.current().is_locked();
-                    let closed = tabs
-                        .closed()
-                        .iter()
-                        .map(|panel| panel.path().display().to_string().into())
-                        .collect();
+                    let closed = tabs.closed().iter().map(|closed| closed.label().into()).collect();
                     menus::context_menu(
                         menu.action_context(focus.clone()),
                         TAB_MENU,
@@ -2843,11 +2847,14 @@ fn window_place(bounds: WindowBounds) -> WindowPlace {
 /// A side's tabs as saved; without them, the home folder's (or /).
 /// A side's saved tabs; a server's is the home folder's until it is connected
 /// again: those, by where they are.
+/// A tab on the home folder, else on /.
+fn home_panel(filter: sc_core::Filter) -> Panel {
+    let home = std::env::home_dir().unwrap_or_else(|| "/".into());
+    Panel::new(&home, filter).or_else(|_| Panel::new("/", filter)).expect("list the home folder or /")
+}
+
 fn restore_side(state: Option<&SideState>, filter: sc_core::Filter) -> (Tabs, Vec<(usize, sc_core::session::TabState)>) {
-    let fallback = || {
-        let home = std::env::home_dir().unwrap_or_else(|| "/".into());
-        Panel::new(&home, filter).or_else(|_| Panel::new("/", filter)).expect("list the home folder or /")
-    };
+    let fallback = || home_panel(filter);
     match state {
         Some(state) => Tabs::restore_servers(state, filter, fallback),
         None => (Tabs::new(fallback()), Vec::new()),

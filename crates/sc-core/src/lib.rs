@@ -1105,7 +1105,8 @@ impl Panel {
         renamed?;
         let title = format!("Rename \"{}\" to \"{to}\"", from.file_name().unwrap_or_default().to_string_lossy());
         let at = std::time::SystemTime::now();
-        ops::undo::remember(title, ops::undo::Step::Moved { from: fs.clone(), to: fs.clone(), moves: vec![(from.clone(), target.clone())], restore: Vec::new(), replaces: Vec::new(), at });
+        let place = ops::undo::Place::of(&fs);
+        ops::undo::remember(title, ops::undo::Step::Moved { from: place.clone(), to: place, moves: vec![(from.clone(), target.clone())], restore: Vec::new(), replaces: Vec::new(), at });
         let shown = Path::new(name).with_file_name(to).into_os_string();
         match &mut self.found {
             Some(found) => {
@@ -1427,12 +1428,36 @@ fn new_tab(mut panel: Panel) -> Panel {
     panel
 }
 
+/// A recently closed tab: this computer's kept whole, a server's as it is
+/// saved, so no connection stays open for it; reopened, it connects again.
+pub enum Closed {
+    Here(Box<Panel>),
+    Server(TabState),
+}
+
+impl Closed {
+    fn panel(&mut self) -> Option<&mut Panel> {
+        match self {
+            Closed::Here(panel) => Some(panel.as_mut()),
+            Closed::Server(_) => None,
+        }
+    }
+
+    /// As the Recently closed tabs menu lists it.
+    pub fn label(&self) -> String {
+        match self {
+            Closed::Here(panel) => panel.path().display().to_string(),
+            Closed::Server(state) => format!("{}{}", state.url.as_deref().unwrap_or_default(), state.path.display()),
+        }
+    }
+}
+
 /// A side's folder tabs; there is always one.
 pub struct Tabs {
     panels: Vec<Panel>,
     active: usize,
     /// Most recent first.
-    closed: Vec<Panel>,
+    closed: Vec<Closed>,
 }
 
 impl Tabs {
@@ -1502,12 +1527,7 @@ impl Tabs {
         &mut self.panels
     }
 
-    /// Recently closed tabs kept only where `keep` says.
-    pub fn retain_closed(&mut self, keep: impl Fn(&Panel) -> bool) {
-        self.closed.retain(keep);
-    }
-
-    pub fn closed(&self) -> &[Panel] {
+    pub fn closed(&self) -> &[Closed] {
         &self.closed
     }
 
@@ -1608,13 +1628,13 @@ impl Tabs {
     /// Every tab, closed ones too, lists again by `filter`.
     /// Every tab in the sort order of now, as after `set_folders_like_files`.
     pub fn resort(&mut self) {
-        for panel in self.panels.iter_mut().chain(&mut self.closed) {
+        for panel in self.panels.iter_mut().chain(self.closed.iter_mut().filter_map(Closed::panel)) {
             panel.set_sort(panel.sort);
         }
     }
 
     pub fn set_filter(&mut self, filter: Filter) {
-        for panel in self.panels.iter_mut().chain(&mut self.closed) {
+        for panel in self.panels.iter_mut().chain(self.closed.iter_mut().filter_map(Closed::panel)) {
             panel.filter = filter;
             // shortcut: a tab whose folder is gone keeps its old list until it moves.
             let _ = panel.reload();
@@ -1682,18 +1702,29 @@ impl Tabs {
     }
 
     fn remember(&mut self, panel: Panel) {
-        self.closed.insert(0, panel);
+        // A server's lets its connection go.
+        let closed = match panel.remote {
+            Some(_) => Closed::Server(panel.state()),
+            None => Closed::Here(Box::new(panel)),
+        };
+        self.closed.insert(0, closed);
         self.closed.truncate(CLOSED_TABS);
     }
 
-    /// A recently closed tab again, its folder read anew.
-    pub fn reopen(&mut self, ix: usize) -> io::Result<()> {
-        if ix < self.closed.len() {
-            let mut panel = self.closed.remove(ix);
-            panel.reload()?;
-            self.add(panel);
+    /// A recently closed tab again, its folder read anew; a server's is
+    /// given back to be connected again.
+    pub fn reopen(&mut self, ix: usize) -> io::Result<Option<TabState>> {
+        if ix >= self.closed.len() {
+            return Ok(None);
         }
-        Ok(())
+        match self.closed.remove(ix) {
+            Closed::Here(mut panel) => {
+                panel.reload()?;
+                self.add(*panel);
+                Ok(None)
+            }
+            Closed::Server(state) => Ok(Some(state)),
+        }
     }
 }
 
@@ -2152,7 +2183,7 @@ mod tests {
         assert!(tabs.current().is_locked());
 
         assert_eq!(tabs.closed().len(), 3, "the closed tabs, most recent first");
-        tabs.reopen(0).unwrap();
+        assert!(tabs.reopen(0).unwrap().is_none(), "this computer's, open again");
         assert_eq!((tabs.panels().len(), tabs.active()), (2, 1));
         tabs.duplicate();
         tabs.select(0);

@@ -256,8 +256,8 @@ impl Commander {
         self.panels.iter().any(|side| side.tabs.panels().iter().any(|panel| on_server(panel, address)))
     }
 
-    /// A connection's Disconnect: every tab on its server goes home, closed
-    /// ones from it are forgotten, and a share mounted from it is let go.
+    /// A connection's Disconnect: every tab on its server goes home, and a
+    /// share mounted from it is let go (closed tabs keep no connection).
     pub(crate) fn disconnect_server(&mut self, address: &Address, window: &mut Window, cx: &mut Context<Self>) {
         let home = std::env::home_dir().unwrap_or_else(|| PathBuf::from("/"));
         let mut share = None;
@@ -269,7 +269,6 @@ impl Commander {
                 // Home is this computer's: read at once.
                 let _ = panel.disconnect(home.clone());
             }
-            side.tabs.retain_closed(|panel| !on_server(panel, address));
         }
         if let Some(root) = share {
             self.leave_share(root, window, cx);

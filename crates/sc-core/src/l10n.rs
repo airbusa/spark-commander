@@ -98,7 +98,8 @@ fn current() -> Arc<Current> {
     if let Some(current) = CURRENT.read().unwrap().as_ref() {
         return current.clone();
     }
-    set_language(None);
+    // English until the app applies its settings: tests and tools read the same on every system.
+    set_language(Some("en"));
     CURRENT.read().unwrap().clone().expect("set")
 }
 
@@ -424,13 +425,7 @@ mod tests {
         for name in ["sc-core", "sc-gui", "sc-tui"] {
             sources(&crates.join(name).join("src"), &mut files);
         }
-        let mut english: std::collections::HashSet<String> = catalog("en").keys().cloned().collect();
-        // Parts not yet merged into en.json (l10n/parts/*.json) count too.
-        let parts = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("../../l10n/parts");
-        for part in std::fs::read_dir(parts).into_iter().flatten().flatten() {
-            let entries: HashMap<String, Entry> = serde_json::from_str(&std::fs::read_to_string(part.path()).unwrap()).unwrap();
-            english.extend(entries.into_keys());
-        }
+        let english: std::collections::HashSet<String> = catalog("en").keys().cloned().collect();
         let pattern = regex::Regex::new(r#"\bt!\(\s*"([a-z0-9_]+\.[a-z0-9_.]+)""#).unwrap();
         let mut missing = Vec::new();
         for file in files {

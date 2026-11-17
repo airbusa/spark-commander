@@ -1002,10 +1002,9 @@ impl Commander {
     fn new_folder(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let side = self.active;
         let commander = cx.entity().downgrade();
-        // shortcut: name_dialog takes &'static str, so its words leak per open; drop .leak() once it takes a String.
-        let label = sc_core::t!("main.new_folder.label").leak();
+        let label = sc_core::t!("main.new_folder.label");
         dialogs::name_dialog::open(
-            sc_core::t!("main.new_folder.title").leak(),
+            sc_core::t!("main.new_folder.title"),
             label,
             String::new(),
             window,
@@ -1573,8 +1572,8 @@ impl Commander {
         let name = self.panels[side].tabs.current().name();
         let commander = cx.entity().downgrade();
         dialogs::name_dialog::open(
-            sc_core::t!("tabs.rename.title").leak(),
-            sc_core::t!("tabs.rename.label").leak(),
+            sc_core::t!("tabs.rename.title"),
+            sc_core::t!("tabs.rename.label"),
             name,
             window,
             cx,

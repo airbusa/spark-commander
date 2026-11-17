@@ -47,7 +47,7 @@ impl Commander {
             false => (sc_core::t!("mark.unselect_group.title"), sc_core::t!("mark.unselect_group.label")),
         };
         let commander = cx.entity().downgrade();
-        name_dialog::open(title.leak(), label.leak(), "*".into(), window, cx, move |mask, _, cx| {
+        name_dialog::open(title, label, "*".into(), window, cx, move |mask, _, cx| {
             let _ = commander.update(cx, |this, cx| {
                 this.mark(|panel| panel.mark_group(&mask, mark), cx)
             });
@@ -67,7 +67,7 @@ impl Commander {
             false => (sc_core::t!("mark.load_selection.title"), sc_core::t!("mark.load_selection.label")),
         };
         let commander = cx.entity().downgrade();
-        name_dialog::open(title.leak(), label.leak(), file, window, cx, move |text, window, cx| {
+        name_dialog::open(title, label, file, window, cx, move |text, window, cx| {
             let path = command::resolve(text.trim(), &folder);
             let _ = commander.update(cx, |this, cx| {
                 let done = match save {

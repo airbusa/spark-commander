@@ -341,8 +341,7 @@ impl Commander {
             None => (t!("connections.folder.new_title"), String::new()),
         };
         let this = cx.entity().downgrade();
-        // shortcut: name_dialog takes &'static str, so a few bytes leak per open; drop .leak() once it takes a SharedString.
-        crate::dialogs::name_dialog::open(title.leak(), t!("connections.folder.name").leak(), value, window, cx, move |name, window, cx| {
+        crate::dialogs::name_dialog::open(title, t!("connections.folder.name"), value, window, cx, move |name, window, cx| {
             let _ = this.update(cx, |this, cx| {
                 let mut named = false;
                 this.change_servers(|all| named = all.name_folder(old.as_deref(), &name), window, cx);
@@ -1124,7 +1123,7 @@ impl Commander {
         };
         let name = self.settings.bookmark_name(&path);
         let commander = cx.entity().downgrade();
-        crate::dialogs::name_dialog::open(t!("bookmarks.rename_title").leak(), t!("bookmarks.rename_label").leak(), name, window, cx, move |name, window, cx| {
+        crate::dialogs::name_dialog::open(t!("bookmarks.rename_title"), t!("bookmarks.rename_label"), name, window, cx, move |name, window, cx| {
             let _ = commander.update(cx, |this, cx| {
                 match name.trim() {
                     "" => this.settings.bookmark_names.remove(&path),

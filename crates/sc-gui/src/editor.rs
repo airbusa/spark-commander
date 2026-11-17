@@ -671,8 +671,7 @@ impl TextEditor {
     fn go_to_line(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let line = self.editor.read(cx).cursor_position().line + 1;
         let editor = self.editor.clone();
-        // shortcut: name_dialog takes &'static str, so these leak a few bytes per open; pass Strings once it takes them.
-        let (title, label): (&'static str, &'static str) = (t!("editor.go_to_line.title").leak(), t!("editor.go_to_line.label").leak());
+        let (title, label) = (t!("editor.go_to_line.title"), t!("editor.go_to_line.label"));
         crate::dialogs::name_dialog::open(title, label, line.to_string(), window, cx, move |typed, window, cx| {
             let mut parts = typed.trim().splitn(2, ':').map(|part| part.trim().parse::<u32>().ok());
             let Some(Some(line)) = parts.next() else {

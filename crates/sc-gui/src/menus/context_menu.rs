@@ -36,8 +36,7 @@ impl Commander {
         // A search result's path keeps its folder.
         let shown = Path::new(&name).file_name().unwrap_or(&name).to_string_lossy().into_owned();
         let commander = cx.entity().downgrade();
-        // shortcut: name_dialog takes &'static str, so its words leak; pass the Strings once it takes them.
-        let (title, label) = (sc_core::t!("context_menu.rename_dialog.title").leak(), sc_core::t!("context_menu.rename_dialog.label").leak());
+        let (title, label) = (sc_core::t!("context_menu.rename_dialog.title"), sc_core::t!("context_menu.rename_dialog.label"));
         name_dialog::open(title, label, shown, window, cx, move |to, window, cx| {
             let name = name.clone();
             let _ = commander.update(cx, |this, cx| {

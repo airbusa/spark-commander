@@ -240,8 +240,8 @@ impl Commander {
     /// Custom...: file types typed, kept as the menu's next filter item.
     pub(crate) fn custom_filter(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let commander = cx.entity().downgrade();
-        let label = sc_core::t!("panel.filter.custom.label").leak();
-        name_dialog::open(sc_core::t!("panel.filter.custom.title").leak(), label, crate::menus::last_filter(), window, cx, move |masks, window, cx| {
+        let label = sc_core::t!("panel.filter.custom.label");
+        name_dialog::open(sc_core::t!("panel.filter.custom.title"), label, crate::menus::last_filter(), window, cx, move |masks, window, cx| {
             let masks = masks.trim().to_owned();
             if masks.is_empty() {
                 return;
@@ -272,7 +272,7 @@ impl Commander {
     pub(crate) fn new_text_file(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let side = self.active;
         let commander = cx.entity().downgrade();
-        name_dialog::open(sc_core::t!("panel.new_text_file.title").leak(), sc_core::t!("panel.new_text_file.label").leak(), String::new(), window, cx, move |name, window, cx| {
+        name_dialog::open(sc_core::t!("panel.new_text_file.title"), sc_core::t!("panel.new_text_file.label"), String::new(), window, cx, move |name, window, cx| {
             let name = name.trim().to_owned();
             if name.is_empty() {
                 return;

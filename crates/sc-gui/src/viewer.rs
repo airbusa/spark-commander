@@ -89,7 +89,10 @@ actions!(
 type PictureSize = (PathBuf, Option<(u32, u32)>);
 
 /// Zoom's steps, as browsers have them.
-const ZOOMS: [f32; 17] = [0.25, 0.33, 0.5, 0.67, 0.75, 0.8, 0.9, 1., 1.1, 1.25, 1.5, 1.75, 2., 2.5, 3., 4., 5.];
+const ZOOMS: [f32; 20] = [0.25, 0.33, 0.5, 0.67, 0.75, 0.8, 0.9, 1., 1.1, 1.25, 1.5, 1.75, 2., 2.5, 3., 4., 5., 6., 8., 10.];
+/// Text and PDFs zoom up to 500% (a PDF page is drawn that large); pictures
+/// step through `ZOOMS` as shown against their own pixels, to 1000%.
+const OTHER_MOST: f32 = 5.;
 /// A touchpad's scrolling makes a zoom step every this much.
 const WHEEL_STEP: Pixels = px(40.);
 
@@ -704,6 +707,8 @@ impl Viewer {
 
     /// Shows the file again as `shown` says, at the top unless `keep_top`.
     fn show(&mut self, keep_top: bool, window: &mut Window, cx: &mut Context<Self>) {
+        // A picture's zoom beyond the others' comes down for them.
+        self.zoom = self.zoom.min(self.most_zoom());
         match self.shown.text() {
             Ok(text) => self.replace(text, keep_top, window, cx),
             Err(err) => self.failed(err, window, cx),
@@ -1062,12 +1067,39 @@ impl Viewer {
     }
 
     /// An office document's PDF, made in the background for the PDF mode.
-    /// The next step of `ZOOMS` up (`steps` > 0) or down, or 100% for 0.
+    /// How far the shown mode zooms: pictures to 1000% of their pixels
+    /// (their zoom then depends on how they fit), the others to 500%.
+    fn most_zoom(&self) -> f32 {
+        match self.shown.mode {
+            Mode::Picture => f32::INFINITY,
+            _ => OTHER_MOST,
+        }
+    }
+
+    /// What the zoom steps go by, and from where it is now: a picture's
+    /// shown size against its own pixels, the others' zoom.
+    fn zoom_steps(&self, cx: &mut Context<Self>) -> (f32, f32, f32) {
+        let picture = (self.shown.mode == Mode::Picture).then(|| self.picture_scale(cx)).flatten();
+        match picture {
+            Some(scale) => (scale, ZOOMS[ZOOMS.len() - 1], self.zoom / scale),
+            None => (self.zoom, OTHER_MOST, 1.),
+        }
+    }
+
+    /// The next step of `ZOOMS` up (`steps` > 0) or down, or back for 0: to
+    /// 100%, a picture to fitting the window. A picture's steps are its shown
+    /// size against its own pixels: 38% fitted goes to 50%, 67%, … 1000%.
     fn zoom_by(&mut self, steps: i32, cx: &mut Context<Self>) {
-        let zoom = match steps {
-            0 => 1.,
-            _ if steps > 0 => ZOOMS.iter().copied().find(|&zoom| zoom > self.zoom + 0.001).unwrap_or(self.zoom),
-            _ => ZOOMS.iter().copied().rev().find(|&zoom| zoom < self.zoom - 0.001).unwrap_or(self.zoom),
+        let (now, most, per) = self.zoom_steps(cx);
+        let shown = match steps {
+            0 => None,
+            _ if steps > 0 => ZOOMS.iter().copied().find(|&step| step > now + 0.001 && step <= most + 0.001),
+            _ => ZOOMS.iter().copied().rev().find(|&step| step < now - 0.001),
+        };
+        let zoom = match (steps, shown) {
+            (0, _) => 1.,
+            (_, Some(shown)) => shown * per,
+            (_, None) => self.zoom,
         };
         if zoom == self.zoom {
             return;
@@ -1151,7 +1183,8 @@ impl Viewer {
             Some(scale) => (scale, "Back to fitting the window (Ctrl+0)"),
             None => (self.zoom, "Back to 100% (Ctrl+0)"),
         };
-        let (smallest, largest) = (ZOOMS[0], ZOOMS[ZOOMS.len() - 1]);
+        let (now, most, _) = self.zoom_steps(cx);
+        let (fewest, top) = (now <= ZOOMS[0] + 0.001, now >= most - 0.001);
         let step = |id: &'static str, icon: IconName, tip: &'static str, steps: i32, at_end: bool| {
             Button::new(id)
                 .ghost()
@@ -1163,7 +1196,7 @@ impl Viewer {
         };
         h_flex()
             .gap_0p5()
-            .child(step("zoom-out", IconName::Minus, "Zoom out (Ctrl+-)", -1, self.zoom <= smallest))
+            .child(step("zoom-out", IconName::Minus, "Zoom out (Ctrl+-)", -1, fewest))
             .child(
                 Button::new("zoom-reset")
                     .ghost()
@@ -1173,7 +1206,7 @@ impl Viewer {
                     .tooltip(back)
                     .on_click(cx.listener(|this, _, _, cx| this.zoom_by(0, cx))),
             )
-            .child(step("zoom-in", IconName::Plus, "Zoom in (Ctrl++)", 1, self.zoom >= largest))
+            .child(step("zoom-in", IconName::Plus, "Zoom in (Ctrl++)", 1, top))
     }
 
     /// Ctrl and the wheel zoom; caught before the views scroll with it.
@@ -1764,14 +1797,17 @@ impl Viewer {
             }
         };
         let zoomed = zoomed.is_some();
-        v_flex()
-            .absolute()
-            .inset_0()
-            .p_2()
+        // Measured inside the padding: the room the picture has, where the
+        // zoomed one is centred as the fitted one is.
+        let inner = v_flex()
+            .relative()
+            .flex_1()
+            .min_h_0()
+            .w_full()
             .child(crate::panel::views::measure(self.picture_area.clone(), cx.entity_id()))
             .child(picture)
-            .when(zoomed, |el| el.child(div().absolute().inset_0().child(Scrollbar::new(&self.picture_scroll))))
-            .into_any_element()
+            .when(zoomed, |el| el.child(div().absolute().inset_0().child(Scrollbar::new(&self.picture_scroll))));
+        v_flex().absolute().inset_0().p_2().child(inner).into_any_element()
     }
 }
 

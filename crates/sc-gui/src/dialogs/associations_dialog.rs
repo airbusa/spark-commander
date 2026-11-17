@@ -20,7 +20,7 @@ impl Commander {
     pub(crate) fn associate_with(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let panel = self.panels[self.active].tabs.current();
         let Some(entry) = panel.current_entry().filter(|e| !e.is_dir) else {
-            let text = "Put the cursor on a file of the type to associate.";
+            let text = sc_core::t!("associations.no_file");
             return window.push_notification(Notification::warning(text), cx);
         };
         let mask = associations::mask_for(&entry.display_name());
@@ -51,7 +51,7 @@ impl Commander {
         let view = cx.new(|_| AssociationsDialog { commander });
         window.open_dialog(cx, move |dialog, _, _| {
             dialog
-                .title("Internal associations")
+                .title(sc_core::t!("associations.title"))
                 .width(px(820.))
                 .child(view.clone())
         });
@@ -65,7 +65,7 @@ impl Commander {
     ) {
         self.settings.associations = list;
         if let Err(err) = self.settings.save() {
-            let text = format!("Could not save the settings: {err}");
+            let text = sc_core::t!("associations.save_failed", err = err);
             window.push_notification(Notification::error(text), cx);
         }
         cx.notify();
@@ -142,7 +142,7 @@ impl Render for AssociationsDialog {
                     Button::new(("assoc-edit", ix))
                         .xsmall()
                         .outline()
-                        .label("Edit...")
+                        .label(sc_core::t!("associations.edit"))
                         .on_click(cx.listener(move |this, _, window, cx| {
                             this.open_edit(Some(ix), window, cx)
                         })),
@@ -151,7 +151,7 @@ impl Render for AssociationsDialog {
                     Button::new(("assoc-remove", ix))
                         .xsmall()
                         .outline()
-                        .label("Remove")
+                        .label(sc_core::t!("associations.remove"))
                         .on_click(cx.listener(move |this, _, window, cx| {
                             this.change(cx, |list| drop(list.remove(ix)), window);
                             cx.notify();
@@ -162,18 +162,18 @@ impl Render for AssociationsDialog {
             .w_full()
             .gap_2()
             .text_sm()
-            .child("Enter, F3 and F4 run these programs for the files of a mask; empty keeps the usual. %1 is the file.")
+            .child(sc_core::t!("associations.intro"))
             .child(
                 h_flex()
                     .gap_2()
                     .text_color(muted)
-                    .child(cell("Files", 150.))
-                    .child(cell("Open (Enter)", 160.))
-                    .child(cell("View (F3)", 160.))
-                    .child(cell("Edit (F4)", 160.)),
+                    .child(cell(&sc_core::t!("associations.column.files"), 150.))
+                    .child(cell(&sc_core::t!("associations.column.open"), 160.))
+                    .child(cell(&sc_core::t!("associations.column.view"), 160.))
+                    .child(cell(&sc_core::t!("associations.column.edit"), 160.)),
             )
             .children(rows)
-            .when(list.is_empty(), |el| el.child(div().text_color(muted).child("None yet.")))
+            .when(list.is_empty(), |el| el.child(div().text_color(muted).child(sc_core::t!("associations.empty"))))
             .child(
                 h_flex()
                     .gap_2()
@@ -181,13 +181,13 @@ impl Render for AssociationsDialog {
                     .child(
                         Button::new("assoc-add")
                             .outline()
-                            .label("Add...")
+                            .label(sc_core::t!("associations.add"))
                             .on_click(cx.listener(|this, _, window, cx| this.open_edit(None, window, cx))),
                     )
                     .child(
                         Button::new("assoc-close")
                             .primary()
-                            .label("Close")
+                            .label(sc_core::t!("associations.close"))
                             .min_w(px(80.))
                             .on_click(|_, window, cx| window.close_dialog(cx)),
                     ),
@@ -220,7 +220,7 @@ fn edit(
     window.open_dialog(cx, move |dialog, _, _| {
         let ok = view.clone();
         dialog
-            .title("Associate")
+            .title(sc_core::t!("associations.edit_dialog.title"))
             .width(px(560.))
             .overlay_closable(false)
             .child(view.clone())
@@ -242,7 +242,7 @@ impl EditAssociation {
             .each_ref()
             .map(|input| input.read(cx).value().trim().to_string());
         if mask.is_empty() {
-            window.push_notification(Notification::error("The files' mask is needed: *.txt"), cx);
+            window.push_notification(Notification::error(sc_core::t!("associations.mask_needed")), cx);
             return false;
         }
         (self.done)(
@@ -262,10 +262,10 @@ impl EditAssociation {
 impl Render for EditAssociation {
     fn render(&mut self, _: &mut Window, cx: &mut Context<Self>) -> impl IntoElement {
         let labels = [
-            "Files (*.jpg *.png):",
-            "Open with (Enter):",
-            "View with (F3):",
-            "Edit with (F4):",
+            sc_core::t!("associations.field.files"),
+            sc_core::t!("associations.field.open"),
+            sc_core::t!("associations.field.view"),
+            sc_core::t!("associations.field.edit"),
         ];
         v_flex()
             .w_full()
@@ -274,7 +274,7 @@ impl Render for EditAssociation {
             .children(labels.iter().zip(&self.fields).map(|(label, input)| {
                 h_flex()
                     .gap_2()
-                    .child(div().w(px(150.)).flex_none().child(*label))
+                    .child(div().w(px(150.)).flex_none().child(label.clone()))
                     .child(div().flex_1().child(Input::new(input).small()))
             }))
             .child(
@@ -284,7 +284,7 @@ impl Render for EditAssociation {
                     .child(
                         Button::new("assoc-ok")
                             .primary()
-                            .label("OK")
+                            .label(sc_core::t!("associations.ok"))
                             .min_w(px(80.))
                             .on_click(cx.listener(|this, _, window, cx| {
                                 if this.finish(window, cx) {
@@ -295,7 +295,7 @@ impl Render for EditAssociation {
                     .child(
                         Button::new("assoc-cancel")
                             .outline()
-                            .label("Cancel")
+                            .label(sc_core::t!("associations.cancel"))
                             .min_w(px(80.))
                             .on_click(|_, window, cx| window.close_dialog(cx)),
                     ),

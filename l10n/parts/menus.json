@@ -1,0 +1,830 @@
+{
+  "associations.add": {
+    "description": "Files › Associations › Internal Associations dialog: button adding an association. Keep it short.",
+    "message": "Add..."
+  },
+  "associations.cancel": {
+    "description": "Associate dialog (Files › Associations › Associate With, or Edit... in Internal Associations): button closing without saving. Keep it short.",
+    "message": "Cancel"
+  },
+  "associations.close": {
+    "description": "Files › Associations › Internal Associations dialog: button closing the dialog. Keep it short.",
+    "message": "Close"
+  },
+  "associations.column.edit": {
+    "description": "Files › Associations › Internal Associations dialog: header of the column of the editor F4 runs. Keep it short (160 px).",
+    "message": "Edit (F4)"
+  },
+  "associations.column.files": {
+    "description": "Files › Associations › Internal Associations dialog: header of the masks' column (*.jpg *.png). Keep it short (150 px).",
+    "message": "Files"
+  },
+  "associations.column.open": {
+    "description": "Files › Associations › Internal Associations dialog: header of the column of the program Enter runs. Keep it short (160 px).",
+    "message": "Open (Enter)"
+  },
+  "associations.column.view": {
+    "description": "Files › Associations › Internal Associations dialog: header of the column of the viewer F3 runs. Keep it short (160 px).",
+    "message": "View (F3)"
+  },
+  "associations.edit": {
+    "description": "Files › Associations › Internal Associations dialog: small button of a row, changing the association. Keep it short.",
+    "message": "Edit..."
+  },
+  "associations.edit_dialog.title": {
+    "description": "Associate dialog (Files › Associations › Associate With, or Edit... in Internal Associations): its title. Keep it short.",
+    "message": "Associate"
+  },
+  "associations.empty": {
+    "description": "Files › Associations › Internal Associations dialog: shown when there are no associations.",
+    "message": "None yet."
+  },
+  "associations.field.edit": {
+    "description": "Associate dialog (Files › Associations › Associate With, or Edit... in Internal Associations): label of the editor F4 runs. Keep it short (150 px).",
+    "message": "Edit with (F4):"
+  },
+  "associations.field.files": {
+    "description": "Associate dialog (Files › Associations › Associate With, or Edit... in Internal Associations): label of the mask field. Keep the masks as they are; keep it short (150 px).",
+    "message": "Files (*.jpg *.png):"
+  },
+  "associations.field.open": {
+    "description": "Associate dialog (Files › Associations › Associate With, or Edit... in Internal Associations): label of the program Enter runs. Keep it short (150 px).",
+    "message": "Open with (Enter):"
+  },
+  "associations.field.view": {
+    "description": "Associate dialog (Files › Associations › Associate With, or Edit... in Internal Associations): label of the viewer F3 runs. Keep it short (150 px).",
+    "message": "View with (F3):"
+  },
+  "associations.intro": {
+    "description": "Files › Associations › Internal Associations dialog: the line on top. Enter, F3, F4 are keys; keep %1 as it is.",
+    "message": "Enter, F3 and F4 run these programs for the files of a mask; empty keeps the usual. %1 is the file."
+  },
+  "associations.mask_needed": {
+    "description": "Associate dialog (Files › Associations › Associate With, or Edit... in Internal Associations): error notification when OK is pressed with no mask. Keep *.txt as it is.",
+    "message": "The files' mask is needed: *.txt"
+  },
+  "associations.no_file": {
+    "description": "Warning notification: Files › Associations › Associate With while the cursor is on a folder.",
+    "message": "Put the cursor on a file of the type to associate."
+  },
+  "associations.ok": {
+    "description": "Associate dialog (Files › Associations › Associate With, or Edit... in Internal Associations): button saving the association. Keep it short.",
+    "message": "OK"
+  },
+  "associations.remove": {
+    "description": "Files › Associations › Internal Associations dialog: small button of a row, removing the association. Keep it short.",
+    "message": "Remove"
+  },
+  "associations.save_failed": {
+    "description": "Error notification after changing the associations; err = the system's reason, e.g. Permission denied.",
+    "message": "Could not save the settings: {err}"
+  },
+  "associations.title": {
+    "description": "Files › Associations › Internal Associations dialog: its title. Keep it short.",
+    "message": "Internal associations"
+  },
+  "context_menu.action_failed": {
+    "description": "Error notification after a desktop action of the right-click menu; name = the action's name, e.g. Compress; err = the system's reason.",
+    "message": "{name} failed: {err}"
+  },
+  "context_menu.actions": {
+    "description": "Right-click menu on files and folders (Linux, as Dolphin's): submenu of the desktop's service menus and scripts for the files. Keep it short.",
+    "message": "Actions"
+  },
+  "context_menu.copy": {
+    "description": "Right-click menu on files and folders (Linux, as Dolphin's): copies the files to the clipboard. Keep it short.",
+    "message": "Copy"
+  },
+  "context_menu.create_new": {
+    "description": "Right-click menu on files and folders (Linux, as Dolphin's), on a folder: submenu making a new folder or file, its templates below. Keep it short.",
+    "message": "Create New"
+  },
+  "context_menu.cut": {
+    "description": "Right-click menu on files and folders (Linux, as Dolphin's): cuts the files to the clipboard. Keep it short.",
+    "message": "Cut"
+  },
+  "context_menu.delete": {
+    "description": "Right-click menu on files and folders (Linux, as Dolphin's), on a server or in an archive (no trash there): deletes the files. Keep it short.",
+    "message": "Delete"
+  },
+  "context_menu.edit": {
+    "description": "Right-click menu on files and folders (Linux, as Dolphin's): opens the file in the editor, as F4. Keep it short.",
+    "message": "Edit"
+  },
+  "context_menu.empty_file": {
+    "description": "Right-click menu on files and folders (Linux, as Dolphin's) › Create New: a new empty file; asks its name. Keep it short.",
+    "message": "Empty File…"
+  },
+  "context_menu.move_to_trash": {
+    "description": "Right-click menu on files and folders (Linux, as Dolphin's), on this computer: moves the files to the trash. Use the desktop's word for the trash.",
+    "message": "Move to Trash"
+  },
+  "context_menu.new_file_dialog.label": {
+    "description": "New file dialog: the label above the name field. Keep it short.",
+    "message": "New file name:"
+  },
+  "context_menu.new_file_dialog.title": {
+    "description": "Title of the small dialog asking a new file's name (right-click menu › Create New). Keep it short.",
+    "message": "New file"
+  },
+  "context_menu.new_file_failed": {
+    "description": "Error notification after Create New; err = the system's reason, e.g. File exists.",
+    "message": "Could not make the file: {err}"
+  },
+  "context_menu.new_folder": {
+    "description": "Right-click menu on files and folders (Linux, as Dolphin's) › Create New: a new folder; asks its name. Keep it short.",
+    "message": "Folder…"
+  },
+  "context_menu.open": {
+    "description": "Right-click menu on files and folders (Linux, as Dolphin's): opens the files, as Enter does. Keep it short.",
+    "message": "Open"
+  },
+  "context_menu.open_failed": {
+    "description": "Error notification after Open With; err = the system's reason, e.g. No such file or directory.",
+    "message": "Could not open: {err}"
+  },
+  "context_menu.open_terminal_here": {
+    "description": "Right-click menu on files and folders (Linux, as Dolphin's), on a folder: opens the desktop's terminal in it.",
+    "message": "Open Terminal Here"
+  },
+  "context_menu.open_with": {
+    "description": "Right-click menu on files and folders (Linux, as Dolphin's): submenu listing the applications that open the file.",
+    "message": "Open With"
+  },
+  "context_menu.other_application": {
+    "description": "Right-click menu on files and folders (Linux, as Dolphin's) › Open With: the desktop's dialog to choose another application.",
+    "message": "Other Application…"
+  },
+  "context_menu.pack": {
+    "description": "Right-click menu on files and folders (Linux, as Dolphin's): packs the files into an archive; a dialog opens. Keep it short.",
+    "message": "Pack…"
+  },
+  "context_menu.pack_files": {
+    "description": "Windows: Explorer's right-click menu, an item the app adds below Copy: packs the files into an archive.",
+    "message": "Pack files"
+  },
+  "context_menu.paste": {
+    "description": "Right-click menu on files and folders (Linux, as Dolphin's), on a folder: pastes the files on the clipboard. Keep it short.",
+    "message": "Paste"
+  },
+  "context_menu.properties": {
+    "description": "Right-click menu on files and folders (Linux, as Dolphin's): the desktop's properties dialog of the file or folder. Keep it short.",
+    "message": "Properties"
+  },
+  "context_menu.properties_failed": {
+    "description": "Error notification when the desktop's properties dialog could not open; err = the system's reason.",
+    "message": "Properties: {err}"
+  },
+  "context_menu.rename": {
+    "description": "Right-click menu on files and folders (Linux, as Dolphin's): renames the file; asks the new name. Keep it short.",
+    "message": "Rename…"
+  },
+  "context_menu.rename_dialog.label": {
+    "description": "Rename dialog: the label above the name field. Keep it short.",
+    "message": "New name:"
+  },
+  "context_menu.rename_dialog.title": {
+    "description": "Title of the small dialog asking a file's new name (right-click menu › Rename). Keep it short.",
+    "message": "Rename"
+  },
+  "context_menu.rename_failed": {
+    "description": "Error notification after Rename; err = the system's reason, e.g. Permission denied.",
+    "message": "Could not rename: {err}"
+  },
+  "context_menu.shell_menu_failed": {
+    "description": "Windows: error notification when Explorer's right-click menu could not open or run; err = the system's reason.",
+    "message": "The menu: {err}"
+  },
+  "context_menu.show_failed": {
+    "description": "Error notification after Show in File Manager; err = the system's reason.",
+    "message": "Could not show it: {err}"
+  },
+  "context_menu.show_in_file_manager": {
+    "description": "Right-click menu on files and folders (Linux, as Dolphin's): opens the desktop's file manager with the files selected.",
+    "message": "Show in File Manager"
+  },
+  "context_menu.terminal_failed": {
+    "description": "Error notification after Open Terminal; err = the reason, e.g. no terminal found.",
+    "message": "Could not open a terminal: {err}"
+  },
+  "context_menu.terminal_not_local": {
+    "description": "Warning notification: Open Terminal while the panel shows a server.",
+    "message": "A terminal opens only in this computer's folders."
+  },
+  "context_menu.unpack": {
+    "description": "Right-click menu on files and folders (Linux, as Dolphin's), on archives: unpacks them; a dialog opens. Keep it short.",
+    "message": "Unpack…"
+  },
+  "context_menu.view": {
+    "description": "Right-click menu on files (Linux and Windows): opens the file in the viewer, as F3. Keep it short.",
+    "message": "View"
+  },
+  "desktop.no_app_chooser": {
+    "description": "The reason Open With › Other Application… failed (Linux), shown after \"Could not open:\"; err = the D-Bus error. Starts lowercase as it follows a colon.",
+    "message": "the desktop has no app chooser ({err})"
+  },
+  "desktop.no_terminal": {
+    "description": "The reason no terminal opened (Linux), shown after \"Could not open a terminal:\"; starts lowercase as it follows a colon.",
+    "message": "no terminal found"
+  },
+  "desktop.nothing_to_run": {
+    "description": "The reason a desktop action did not run (its command line is empty); name = the action's name, e.g. Compress.",
+    "message": "{name}: nothing to run"
+  },
+  "desktop.scripts": {
+    "description": "Right-click menu › Actions: submenu of the user's Nautilus, Nemo or Caja scripts. Use those file managers' word. Keep it short.",
+    "message": "Scripts"
+  },
+  "file_menu.change_tags_failed": {
+    "description": "macOS: error notification after changing the files' tags; err = the system's reason, e.g. Permission denied.",
+    "message": "Could not change the tags: {err}"
+  },
+  "file_menu.compress": {
+    "description": "macOS: right-click menu on files, as Finder's: packs the files into an archive. count = how many are chosen; with one (=1) its name is shown: name = the file's name, e.g. Report.pdf. Use Finder's wording.",
+    "message": "{count, plural, =1 {Compress “{name}”…} other {Compress # Items…}}"
+  },
+  "file_menu.copy": {
+    "description": "macOS: right-click menu on files, as Finder's: copies the files to the clipboard. count = how many are chosen; with one (=1) its name is shown: name = the file's name, e.g. Report.pdf. Use Finder's wording.",
+    "message": "{count, plural, =1 {Copy “{name}”} other {Copy # Items}}"
+  },
+  "file_menu.copy_path": {
+    "description": "macOS: right-click menu on files, as Finder's: copies the files' full paths as text.",
+    "message": "Copy Path to Clipboard"
+  },
+  "file_menu.delete": {
+    "description": "macOS: right-click menu on files, as Finder's, on a server or in an archive (no Trash there): deletes the files.",
+    "message": "Delete"
+  },
+  "file_menu.duplicate": {
+    "description": "macOS: right-click menu on files, as Finder's: copies each file beside itself. Use Finder's wording.",
+    "message": "Duplicate"
+  },
+  "file_menu.duplicate_failed": {
+    "description": "macOS: error notification after Duplicate; err = the system's reason, e.g. Permission denied.",
+    "message": "Could not duplicate: {err}"
+  },
+  "file_menu.edit_tags": {
+    "description": "macOS: right-click menu on files, as Finder's: opens a popover to add and remove the files' tags. Use Finder's wording.",
+    "message": "Tags…"
+  },
+  "file_menu.get_info": {
+    "description": "macOS: right-click menu on files, as Finder's: the file's properties. Use Finder's wording.",
+    "message": "Get Info"
+  },
+  "file_menu.make_alias": {
+    "description": "macOS: right-click menu on files, as Finder's: makes a Finder alias of each file. Use Finder's wording.",
+    "message": "Make Alias"
+  },
+  "file_menu.make_alias_failed": {
+    "description": "macOS: error notification after Make Alias; err = the system's reason, e.g. Permission denied.",
+    "message": "Could not make the alias: {err}"
+  },
+  "file_menu.move_to_trash": {
+    "description": "macOS: right-click menu on files, as Finder's, on this Mac: moves the files to the Trash. Use Finder's wording.",
+    "message": "Move to Trash"
+  },
+  "file_menu.new_folder": {
+    "description": "macOS: right-click menu on files, as Finder's, on a folder: makes a new folder. Use Finder's wording.",
+    "message": "New Folder"
+  },
+  "file_menu.open": {
+    "description": "macOS: right-click menu on files, as Finder's: opens the files. Use Finder's wording.",
+    "message": "Open"
+  },
+  "file_menu.open_failed": {
+    "description": "macOS: error notification after Open With; err = the system's reason, e.g. Permission denied.",
+    "message": "Could not open: {err}"
+  },
+  "file_menu.open_with": {
+    "description": "macOS: right-click menu on files, as Finder's: submenu of the applications that open the file. Use Finder's wording.",
+    "message": "Open With"
+  },
+  "file_menu.open_with_default": {
+    "description": "macOS: right-click menu on files, as Finder's › Open With: the application that opens the file by default; app = its name, e.g. Preview. Use Finder's wording.",
+    "message": "{app} (default)"
+  },
+  "file_menu.paste": {
+    "description": "macOS: right-click menu on files, as Finder's, on a folder: pastes the files on the clipboard. Use Finder's wording.",
+    "message": "Paste"
+  },
+  "file_menu.quick_look": {
+    "description": "macOS: right-click menu on files, as Finder's: previews the files in Quick Look (keep that name). count = how many are chosen; with one (=1) its name is shown: name = the file's name, e.g. Report.pdf. Use Finder's wording.",
+    "message": "{count, plural, =1 {Quick Look “{name}”} other {Quick Look # Items}}"
+  },
+  "file_menu.quick_look_failed": {
+    "description": "macOS: error notification when Quick Look could not open; err = the system's reason, e.g. Permission denied.",
+    "message": "Quick Look: {err}"
+  },
+  "file_menu.rename": {
+    "description": "macOS: right-click menu on files, as Finder's: renames the file; asks the new name. Use Finder's wording.",
+    "message": "Rename…"
+  },
+  "file_menu.reveal_failed": {
+    "description": "macOS: error notification after Reveal in Finder; err = the system's reason, e.g. Permission denied.",
+    "message": "Could not show it in Finder: {err}"
+  },
+  "file_menu.reveal_in_finder": {
+    "description": "macOS: right-click menu on files, as Finder's: shows the files in a Finder window. Use Finder's wording.",
+    "message": "Reveal in Finder"
+  },
+  "file_menu.show_package_contents": {
+    "description": "macOS: right-click menu on files, as Finder's, on an application: opens it as a folder. Use Finder's wording.",
+    "message": "Show Package Contents"
+  },
+  "file_menu.tag_dot.add": {
+    "description": "macOS: right-click menu on files, as Finder's: tooltip of a colour dot under Tags…; name = the tag's name, e.g. Red.",
+    "message": "Add tag “{name}”"
+  },
+  "file_menu.tag_dot.remove": {
+    "description": "macOS: right-click menu on files, as Finder's: tooltip of a colour dot under Tags… that all the files have; name = the tag's name, e.g. Red.",
+    "message": "Remove tag “{name}”"
+  },
+  "file_menu.tags_popover.show_all": {
+    "description": "macOS: the Tags… popover's last row, listing the folder's other tags too. Use Finder's wording.",
+    "message": "Show All…"
+  },
+  "file_menu.tags_popover.title": {
+    "description": "macOS: title of the Tags… popover (Finder's). count = how many are chosen; with one (=1) its name is shown: name = the file's name, e.g. Report.pdf. Use Finder's wording. Keep it short.",
+    "message": "{count, plural, =1 {Assign tags to “{name}”} other {Assign tags to # Items}}"
+  },
+  "keys.apply": {
+    "description": "Configuration › Shortcuts dialog: button applying the changes, the dialog staying open. Keep it short.",
+    "message": "Apply"
+  },
+  "keys.cancel": {
+    "description": "Configuration › Shortcuts dialog: button closing without the changes. Keep it short.",
+    "message": "Cancel"
+  },
+  "keys.clear.tooltip": {
+    "description": "Configuration › Shortcuts dialog: tooltip of the × button that removes a key. Keep it short.",
+    "message": "No key"
+  },
+  "keys.column.alternate": {
+    "description": "Configuration › Shortcuts dialog: header of the column of each command's second key. Keep it short.",
+    "message": "Alternate"
+  },
+  "keys.column.command": {
+    "description": "Configuration › Shortcuts dialog: header of the commands' column. Keep it short.",
+    "message": "Command"
+  },
+  "keys.column.shortcut": {
+    "description": "Configuration › Shortcuts dialog: header of the column of each command's main key. Keep it short.",
+    "message": "Shortcut"
+  },
+  "keys.custom": {
+    "description": "Configuration › Shortcuts dialog: dropdown item while the keys are none of the presets or saved sets. Keep it short.",
+    "message": "Custom"
+  },
+  "keys.delete_set": {
+    "description": "Configuration › Shortcuts dialog: button deleting the chosen saved key set. Keep it short.",
+    "message": "Delete"
+  },
+  "keys.note.custom_replaced": {
+    "description": "Configuration › Shortcuts dialog: note under the list after a change; after choosing a preset or set while the keys were changed; name = the preset's or set's name, e.g. Total Commander. \"Save as\" is the button's name.",
+    "message": "Your own keys gave way to {name}'s; Save as keeps them."
+  },
+  "keys.note.deleted": {
+    "description": "Configuration › Shortcuts dialog: note under the list after a change; after Delete; name = the set's name, e.g. My keys. OK and Apply are the buttons' names.",
+    "message": "{name} is deleted; OK or Apply makes it so."
+  },
+  "keys.note.moved": {
+    "description": "Configuration › Shortcuts dialog: note under the list after a change; key = the key, e.g. Ctrl+1; command = the command it now runs, e.g. Sort by Size; other = the command that had it, e.g. Sort by Name.",
+    "message": "{key} is {command} now, no longer {other}."
+  },
+  "keys.note.name_reserved": {
+    "description": "Configuration › Shortcuts dialog: note under the list after a change; after Save as with a preset's name (or Custom); name = the name typed, e.g. Krusader.",
+    "message": "\"{name}\" is a preset's name; choose another."
+  },
+  "keys.note.press_new_key": {
+    "description": "Configuration › Shortcuts dialog: note under the list after a change; shown after a key's cell is clicked.",
+    "message": "Press the new key; Esc leaves it as it was."
+  },
+  "keys.note.saved": {
+    "description": "Configuration › Shortcuts dialog: note under the list after a change; after Save as; name = the set's name, e.g. My keys. OK and Apply are the buttons' names.",
+    "message": "Saved as {name}; OK or Apply keeps it."
+  },
+  "keys.note.set": {
+    "description": "Configuration › Shortcuts dialog: note under the list after a change; key = the key, e.g. Ctrl+1; command = the command it now runs, e.g. Sort by Size.",
+    "message": "{key} is {command} now."
+  },
+  "keys.note.taken_by_system": {
+    "description": "Configuration › Shortcuts dialog: note under the list after a change; key = the key, e.g. Ctrl+F3; by = what the system does with it, e.g. KDE: switch to desktop 3.",
+    "message": "{key} is taken by {by}, so it never reaches Spark Commander."
+  },
+  "keys.ok": {
+    "description": "Configuration › Shortcuts dialog: button applying the changes and closing. Keep it short.",
+    "message": "OK"
+  },
+  "keys.press_key": {
+    "description": "Configuration › Shortcuts dialog: shown in a key's cell while it waits for the new key. Keep it short (the cell is narrow).",
+    "message": "Press a key…"
+  },
+  "keys.reserved.application_launcher": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Opens the start menu of KDE Plasma.",
+    "message": "{system}: the application launcher"
+  },
+  "keys.reserved.close_window": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated.",
+    "message": "{system}: close the window"
+  },
+  "keys.reserved.close_window_or_tab": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated.",
+    "message": "{system}: close the window or tab"
+  },
+  "keys.reserved.dock": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Moves the keyboard focus to the Dock; use macOS's word.",
+    "message": "{system}: the Dock"
+  },
+  "keys.reserved.floating_window": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Moves the keyboard focus to the floating window (macOS).",
+    "message": "{system}: the floating window"
+  },
+  "keys.reserved.force_quit": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. macOS's Force Quit dialog; use macOS's word.",
+    "message": "{system}: force quit"
+  },
+  "keys.reserved.hide_program": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated.",
+    "message": "{system}: hide the program"
+  },
+  "keys.reserved.input_source": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Switches the keyboard layout (macOS's input source).",
+    "message": "{system}: the input source"
+  },
+  "keys.reserved.keyboard_access": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Turns keyboard access on or off (macOS).",
+    "message": "{system}: keyboard access"
+  },
+  "keys.reserved.keyboard_navigation": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Turns keyboard navigation on or off (macOS).",
+    "message": "{system}: keyboard navigation"
+  },
+  "keys.reserved.krunner": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. KDE's search and run box; KRunner is a name, keep it.",
+    "message": "{system}: KRunner"
+  },
+  "keys.reserved.lock_screen": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated.",
+    "message": "{system}: lock the screen"
+  },
+  "keys.reserved.log_out": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated.",
+    "message": "{system}: log out"
+  },
+  "keys.reserved.maximize_window": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated.",
+    "message": "{system}: maximize the window"
+  },
+  "keys.reserved.menu_bar": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Moves the keyboard focus to the menu bar (macOS).",
+    "message": "{system}: the menu bar"
+  },
+  "keys.reserved.minimize": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Minimizes the window.",
+    "message": "{system}: minimize"
+  },
+  "keys.reserved.mission_control": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Mission Control is macOS's name, use macOS's word.",
+    "message": "{system}: Mission Control"
+  },
+  "keys.reserved.move_window": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated.",
+    "message": "{system}: move the window"
+  },
+  "keys.reserved.next_window": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Moves the keyboard focus to the next window (macOS).",
+    "message": "{system}: the next window"
+  },
+  "keys.reserved.present_windows": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. KDE's overview of the windows; use KDE's name for it.",
+    "message": "{system}: Present Windows"
+  },
+  "keys.reserved.present_windows_all": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. KDE's overview of the windows of every virtual desktop; use KDE's name for it.",
+    "message": "{system}: Present Windows (all desktops)"
+  },
+  "keys.reserved.present_windows_class": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. KDE's overview of the program's windows; use KDE's name for it.",
+    "message": "{system}: Present Windows (window class)"
+  },
+  "keys.reserved.program_windows": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. macOS's App Exposé: the program's windows side by side.",
+    "message": "{system}: the program's windows"
+  },
+  "keys.reserved.quit": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Quits the program.",
+    "message": "{system}: quit"
+  },
+  "keys.reserved.resize_window": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated.",
+    "message": "{system}: resize the window"
+  },
+  "keys.reserved.restore_window": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Restores a maximized window to its size.",
+    "message": "{system}: restore the window"
+  },
+  "keys.reserved.run_command": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. GNOME's Run a Command box.",
+    "message": "{system}: run a command"
+  },
+  "keys.reserved.screenshot": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Takes a screenshot.",
+    "message": "{system}: screenshot"
+  },
+  "keys.reserved.security_screen": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Windows' Ctrl+Alt+Del screen.",
+    "message": "{system}: the security screen"
+  },
+  "keys.reserved.show_desktop": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated.",
+    "message": "{system}: show the desktop"
+  },
+  "keys.reserved.space_left": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Switches to the macOS Space (virtual desktop) on the left; use macOS's word.",
+    "message": "{system}: the space to the left"
+  },
+  "keys.reserved.space_right": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Switches to the macOS Space (virtual desktop) on the right; use macOS's word.",
+    "message": "{system}: the space to the right"
+  },
+  "keys.reserved.spotlight": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. macOS's search; Spotlight is a name, keep it.",
+    "message": "{system}: Spotlight"
+  },
+  "keys.reserved.start_menu": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Use Windows' word.",
+    "message": "{system}: the Start menu"
+  },
+  "keys.reserved.status_menus": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Moves the keyboard focus to the menu bar's status menus (macOS).",
+    "message": "{system}: the status menus"
+  },
+  "keys.reserved.suspend_compositing": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Turns KDE's desktop effects off or on; use KDE's wording.",
+    "message": "{system}: suspend compositing"
+  },
+  "keys.reserved.switch_program_windows": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Goes round the windows of the active program.",
+    "message": "{system}: switch the program's windows"
+  },
+  "keys.reserved.switch_programs": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Goes round the open programs.",
+    "message": "{system}: switch programs"
+  },
+  "keys.reserved.switch_system_controls": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Moves the keyboard focus to GNOME's top bar and panels.",
+    "message": "{system}: switch system controls"
+  },
+  "keys.reserved.switch_to_desktop": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Switches to a virtual desktop; number = which one, e.g. 3.",
+    "message": "{system}: switch to desktop {number}"
+  },
+  "keys.reserved.switch_windows": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Goes round the open windows.",
+    "message": "{system}: switch windows"
+  },
+  "keys.reserved.system_monitor": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. KDE's System Monitor program; use KDE's name for it.",
+    "message": "{system}: System Monitor"
+  },
+  "keys.reserved.task_manager": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Windows' Task Manager; use Windows' name for it.",
+    "message": "{system}: Task Manager"
+  },
+  "keys.reserved.text_console": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Ctrl+Alt+F1… switch to a text console on every Linux desktop.",
+    "message": "{system}: switch to a text console"
+  },
+  "keys.reserved.toolbar": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Moves the keyboard focus to the window's toolbar (macOS).",
+    "message": "{system}: the toolbar"
+  },
+  "keys.reserved.window_menu": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Opens the window's own menu (move, size, close…).",
+    "message": "{system}: the window menu"
+  },
+  "keys.reserved.workspace_down": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Switches to the GNOME workspace below.",
+    "message": "{system}: the workspace below"
+  },
+  "keys.reserved.workspace_left": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Switches to the GNOME workspace on the left.",
+    "message": "{system}: the workspace to the left"
+  },
+  "keys.reserved.workspace_right": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Switches to the GNOME workspace on the right.",
+    "message": "{system}: the workspace to the right"
+  },
+  "keys.reserved.workspace_up": {
+    "description": "Shortcuts dialog: what the system does with a key, so the app never gets it (shown as \"Ctrl+F3 is taken by …\" and in a tooltip); system = Windows, macOS, KDE, GNOME or Linux, untranslated. Switches to the GNOME workspace above.",
+    "message": "{system}: the workspace above"
+  },
+  "keys.reset.tooltip": {
+    "description": "Configuration › Shortcuts dialog: tooltip of a row's undo button; preset = the preset's name, e.g. Total Commander.",
+    "message": "Back to {preset}'s keys"
+  },
+  "keys.reset_all": {
+    "description": "Configuration › Shortcuts dialog: button undoing all the changes to the keys. Keep it short.",
+    "message": "Reset All"
+  },
+  "keys.save_as.button": {
+    "description": "Configuration › Shortcuts dialog: button saving the keys as they are under a name. Keep it short.",
+    "message": "Save as…"
+  },
+  "keys.save_as.default_name": {
+    "description": "Save shortcuts dialog: the name it offers first for the user's own key set.",
+    "message": "My keys"
+  },
+  "keys.save_as.label": {
+    "description": "Save shortcuts dialog: the label above the name field. Keep it short.",
+    "message": "Name:"
+  },
+  "keys.save_as.title": {
+    "description": "Title of the small dialog asking the name to save the keys under (Shortcuts › Save as…). Keep it short.",
+    "message": "Save shortcuts"
+  },
+  "keys.search.placeholder": {
+    "description": "Configuration › Shortcuts dialog: placeholder of the search field above the list.",
+    "message": "Search for a command or a key"
+  },
+  "keys.set_label": {
+    "description": "Configuration › Shortcuts dialog: label before the dropdown of key sets (the presets Spark Commander, Total Commander…, the user's own sets). Keep it short.",
+    "message": "Keys:"
+  },
+  "keys.taken_by.tooltip": {
+    "description": "Configuration › Shortcuts dialog: tooltip of the warning sign on a key the system takes; by = what the system does with it, e.g. KDE: switch to desktop 3.",
+    "message": "Taken by {by}"
+  },
+  "keys.title": {
+    "description": "Configuration › Shortcuts dialog: its title. Keep it short.",
+    "message": "Shortcuts"
+  },
+  "mark.compare.marked": {
+    "description": "Notification after Mark › Compare Directories › Mark Newer; count = how many files it marked on both sides, e.g. 12.",
+    "message": "{count, plural, one {# file marked: newer than, or missing on, the other side.} other {# files marked: newer than, or missing on, the other side.}}"
+  },
+  "mark.compare.same": {
+    "description": "Notification after Mark › Compare Directories › Mark Newer when nothing differs.",
+    "message": "The folders have the same files."
+  },
+  "mark.load_selection.label": {
+    "description": "Load selection dialog: the label above the file's path.",
+    "message": "Select the names listed in the file:"
+  },
+  "mark.load_selection.title": {
+    "description": "Title of the dialog of Mark › Selection › Load Selection From File. Keep it short.",
+    "message": "Load selection"
+  },
+  "mark.save_selection.label": {
+    "description": "Save selection dialog: the label above the file's path.",
+    "message": "Save the selected names to the file:"
+  },
+  "mark.save_selection.title": {
+    "description": "Title of the dialog of Mark › Selection › Save Selection To File. Keep it short.",
+    "message": "Save selection"
+  },
+  "mark.select_group.label": {
+    "description": "Select group dialog: the label above the mask field. Keep the masks as they are.",
+    "message": "Select the files (*.txt *.md; a folder mask ends in /):"
+  },
+  "mark.select_group.title": {
+    "description": "Title of the dialog of Mark › Select Group (Num +), which marks the files matching a mask. Keep it short.",
+    "message": "Select group"
+  },
+  "mark.selection_file.not_local": {
+    "description": "Warning notification: Mark › Selection › Save or Load Selection (to or from a file) while the panel shows a server or an archive.",
+    "message": "Selection files are kept on this computer, outside archives."
+  },
+  "mark.unselect_group.label": {
+    "description": "Unselect group dialog: the label above the mask field. Keep the masks as they are.",
+    "message": "Unselect the files (*.txt *.md; a folder mask ends in /):"
+  },
+  "mark.unselect_group.title": {
+    "description": "Title of the dialog of Mark › Unselect Group (Num -), which unmarks the files matching a mask. Keep it short.",
+    "message": "Unselect group"
+  },
+  "menus.hide_app": {
+    "description": "macOS: the application menu (the one named Spark Commander) in the menu bar. Hides the app's windows; use macOS's own wording.",
+    "message": "Hide Spark Commander"
+  },
+  "menus.hide_others": {
+    "description": "macOS: the application menu (the one named Spark Commander) in the menu bar. Hides the other apps; use macOS's own wording.",
+    "message": "Hide Others"
+  },
+  "menus.minimize": {
+    "description": "macOS: an item of the Window menu in the menu bar; use macOS's own word.",
+    "message": "Minimize"
+  },
+  "menus.quit_app": {
+    "description": "macOS: the application menu (the one named Spark Commander) in the menu bar. Use macOS's own wording.",
+    "message": "Quit Spark Commander"
+  },
+  "menus.services": {
+    "description": "macOS: the application menu (the one named Spark Commander) in the menu bar. The system's Services submenu; use macOS's own word.",
+    "message": "Services"
+  },
+  "menus.show_all": {
+    "description": "macOS: the application menu (the one named Spark Commander) in the menu bar. Shows the hidden apps again; use macOS's own wording.",
+    "message": "Show All"
+  },
+  "menus.zoom": {
+    "description": "macOS: an item of the Window menu in the menu bar; use macOS's own word. Makes the window as large as it needs.",
+    "message": "Zoom"
+  },
+  "shells.command_prompt": {
+    "description": "Windows: Settings › Terminal, the shell list: Windows' cmd.exe. Use Windows' own name for it in the language.",
+    "message": "Command Prompt"
+  },
+  "tools.clear_key": {
+    "description": "Tools › Manage Tools dialog: button removing the tool's key. Keep it short.",
+    "message": "Clear"
+  },
+  "tools.close": {
+    "description": "Tools › Manage Tools dialog: button closing the dialog. Keep it short.",
+    "message": "Close"
+  },
+  "tools.delete": {
+    "description": "Tools › Manage Tools dialog: button deleting the selected tool. Keep it short.",
+    "message": "Delete"
+  },
+  "tools.empty": {
+    "description": "Tools › Manage Tools dialog: shown in the empty list. \"New...\" is the button's name.",
+    "message": "No tools yet: New... adds one."
+  },
+  "tools.field.command": {
+    "description": "Tools › Manage Tools dialog: label of the tool's command line field. Keep it short (80 px).",
+    "message": "Command"
+  },
+  "tools.field.key": {
+    "description": "Tools › Manage Tools dialog: label of the tool's key. Keep it short (80 px).",
+    "message": "Key"
+  },
+  "tools.field.name": {
+    "description": "Tools › Manage Tools dialog: label of the tool's name field. Keep it short (80 px).",
+    "message": "Name"
+  },
+  "tools.intro": {
+    "description": "Tools › Manage Tools dialog: the line on top. Tools is the menu's name.",
+    "message": "Your own command lines, in the Tools menu: click one there, or press its key."
+  },
+  "tools.key.none": {
+    "description": "Tools › Manage Tools dialog: shown as the tool's key when it has none. Keep it short.",
+    "message": "None"
+  },
+  "tools.key.waiting": {
+    "description": "Tools › Manage Tools dialog: shown as the tool's key while it waits for one. Esc is the key's name.",
+    "message": "Press the key... (Esc: none)"
+  },
+  "tools.move_down": {
+    "description": "Tools › Manage Tools dialog: tooltip of the ↓ button moving the tool down the list.",
+    "message": "Move Down"
+  },
+  "tools.move_up": {
+    "description": "Tools › Manage Tools dialog: tooltip of the ↑ button moving the tool up the list.",
+    "message": "Move Up"
+  },
+  "tools.name.placeholder": {
+    "description": "Tools › Manage Tools dialog: example shown in the empty name field (a tool comparing the file with the other panel's).",
+    "message": "Compare with the other side"
+  },
+  "tools.new": {
+    "description": "Tools › Manage Tools dialog: button adding a tool. Keep it short.",
+    "message": "New..."
+  },
+  "tools.new_name": {
+    "description": "Tools › Manage Tools dialog: the name a new tool gets; number = the first free number, e.g. 2.",
+    "message": "Tool {number}"
+  },
+  "tools.no_command": {
+    "description": "Warning notification when a tool without a command line is run; tool = its name, e.g. Tool 1. \"Tools > Manage Tools\" are the menu's and its item's names: use their translations.",
+    "message": "{tool} has no command yet: Tools > Manage Tools."
+  },
+  "tools.not_local": {
+    "description": "Warning notification when a tool is run while the panel shows a server or an archive.",
+    "message": "Tools run on this computer: the panel shows a server or an archive."
+  },
+  "tools.note.key_of_command": {
+    "description": "Tools › Manage Tools dialog: warning after setting a key a command has; key = the key, e.g. Ctrl+M; command = the command's name, e.g. Multi-Rename Tool.",
+    "message": "{key} is also {command}: the tool takes it."
+  },
+  "tools.note.key_of_other_tool": {
+    "description": "Tools › Manage Tools dialog: warning after setting a key another tool has; key = the key, e.g. Ctrl+Shift+M; tool = the other tool's name, e.g. Meld.",
+    "message": "{key} is {tool}'s too: the lower one in the list takes it."
+  },
+  "tools.placeholders": {
+    "description": "Tools › Manage Tools dialog: small print explaining the codes a command line may have. Keep every %-code (%P, %T, %N, %O, %E, %S, %%) and \"%P%N\" exactly as they are.",
+    "message": "%P this panel's folder, %T the other panel's (both end in a separator, so \"%P%N\" is a path), %N the file under the cursor, %O its name without the extension, %E the extension, %S the selected files (else the cursor's), each quoted; %% a %. Put quotes around the rest: \"%P%N\"."
+  },
+  "tools.run_in_terminal": {
+    "description": "Tools › Manage Tools dialog: check box: the tool runs in the built-in terminal.",
+    "message": "Run in the terminal, to see what it prints"
+  },
+  "tools.set_key": {
+    "description": "Tools › Manage Tools dialog: button: the next key pressed becomes the tool's. Keep it short.",
+    "message": "Set Key..."
+  },
+  "tools.title": {
+    "description": "Tools › Manage Tools dialog: its title. Keep it short.",
+    "message": "Tools"
+  }
+}

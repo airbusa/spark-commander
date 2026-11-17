@@ -638,85 +638,100 @@ enum Desktop {
     Gnome,
 }
 
+impl Desktop {
+    fn name(self) -> &'static str {
+        match self {
+            Desktop::Windows => "Windows",
+            Desktop::Mac => "macOS",
+            Desktop::Linux => "Linux",
+            Desktop::Kde => "KDE",
+            Desktop::Gnome => "GNOME",
+        }
+    }
+}
+
+/// What a system does with a key, said with the system's name.
+type Why = fn(&str) -> String;
+
 /// Keys a system takes before programs see them, or gives a meaning every
 /// program keeps; `allows` is the command that may have it all the same.
-const RESERVED: &[(&str, Desktop, &str, Option<Command>)] = &[
-    ("alt-f4", Desktop::Windows, "Windows: close the window", Some(Quit)),
-    ("alt-tab", Desktop::Windows, "Windows: switch windows", None),
-    ("alt-space", Desktop::Windows, "Windows: the window menu", None),
-    ("alt-escape", Desktop::Windows, "Windows: switch windows", None),
-    ("ctrl-escape", Desktop::Windows, "Windows: the Start menu", None),
-    ("ctrl-shift-escape", Desktop::Windows, "Windows: Task Manager", None),
-    ("ctrl-alt-delete", Desktop::Windows, "Windows: the security screen", None),
-    ("cmd-q", Desktop::Mac, "macOS: quit", Some(Quit)),
-    ("cmd-w", Desktop::Mac, "macOS: close the window or tab", Some(CloseTab)),
-    ("cmd-shift-w", Desktop::Mac, "macOS: close the window", Some(CloseAllTabs)),
-    ("cmd-h", Desktop::Mac, "macOS: hide the program", None),
-    ("cmd-m", Desktop::Mac, "macOS: minimize", None),
-    ("cmd-tab", Desktop::Mac, "macOS: switch programs", None),
-    ("cmd-space", Desktop::Mac, "macOS: Spotlight", None),
-    ("cmd-`", Desktop::Mac, "macOS: switch windows", None),
-    ("cmd-shift-q", Desktop::Mac, "macOS: log out", None),
-    ("ctrl-cmd-q", Desktop::Mac, "macOS: lock the screen", None),
-    ("alt-cmd-escape", Desktop::Mac, "macOS: force quit", None),
-    ("cmd-shift-3", Desktop::Mac, "macOS: screenshot", None),
-    ("cmd-shift-4", Desktop::Mac, "macOS: screenshot", None),
-    ("cmd-shift-5", Desktop::Mac, "macOS: screenshot", None),
-    ("ctrl-space", Desktop::Mac, "macOS: the input source", None),
-    ("ctrl-up", Desktop::Mac, "macOS: Mission Control", None),
-    ("ctrl-down", Desktop::Mac, "macOS: the program's windows", None),
-    ("ctrl-left", Desktop::Mac, "macOS: the space to the left", None),
-    ("ctrl-right", Desktop::Mac, "macOS: the space to the right", None),
-    ("ctrl-f1", Desktop::Mac, "macOS: keyboard access", None),
-    ("ctrl-f2", Desktop::Mac, "macOS: the menu bar", None),
-    ("ctrl-f3", Desktop::Mac, "macOS: the Dock", None),
-    ("ctrl-f4", Desktop::Mac, "macOS: the next window", None),
-    ("ctrl-f5", Desktop::Mac, "macOS: the toolbar", None),
-    ("ctrl-f6", Desktop::Mac, "macOS: the floating window", None),
-    ("ctrl-f7", Desktop::Mac, "macOS: keyboard navigation", None),
-    ("ctrl-f8", Desktop::Mac, "macOS: the status menus", None),
-    ("f11", Desktop::Mac, "macOS: show the desktop", None),
-    ("ctrl-f1", Desktop::Kde, "KDE: switch to desktop 1", None),
-    ("ctrl-f2", Desktop::Kde, "KDE: switch to desktop 2", None),
-    ("ctrl-f3", Desktop::Kde, "KDE: switch to desktop 3", None),
-    ("ctrl-f4", Desktop::Kde, "KDE: switch to desktop 4", None),
-    ("ctrl-f7", Desktop::Kde, "KDE: Present Windows (window class)", None),
-    ("ctrl-f9", Desktop::Kde, "KDE: Present Windows", None),
-    ("ctrl-f10", Desktop::Kde, "KDE: Present Windows (all desktops)", None),
-    ("ctrl-f12", Desktop::Kde, "KDE: show the desktop", None),
-    ("alt-f1", Desktop::Kde, "KDE: the application launcher", None),
-    ("alt-f2", Desktop::Kde, "KDE: KRunner", None),
-    ("alt-space", Desktop::Kde, "KDE: KRunner", None),
-    ("alt-f3", Desktop::Kde, "KDE: the window menu", None),
-    ("alt-f4", Desktop::Kde, "KDE: close the window", Some(Quit)),
-    ("alt-tab", Desktop::Kde, "KDE: switch windows", None),
-    ("alt-shift-tab", Desktop::Kde, "KDE: switch windows", None),
-    ("alt-shift-f12", Desktop::Kde, "KDE: suspend compositing", None),
-    ("ctrl-escape", Desktop::Kde, "KDE: System Monitor", None),
-    ("ctrl-alt-delete", Desktop::Kde, "KDE: log out", None),
-    ("ctrl-alt-l", Desktop::Kde, "KDE: lock the screen", None),
-    ("alt-f2", Desktop::Gnome, "GNOME: run a command", None),
-    ("alt-f4", Desktop::Gnome, "GNOME: close the window", Some(Quit)),
-    ("alt-f5", Desktop::Gnome, "GNOME: restore the window", None),
-    ("alt-f6", Desktop::Gnome, "GNOME: switch the program's windows", None),
-    ("alt-shift-f6", Desktop::Gnome, "GNOME: switch the program's windows", None),
-    ("alt-f7", Desktop::Gnome, "GNOME: move the window", None),
-    ("alt-f8", Desktop::Gnome, "GNOME: resize the window", None),
-    ("alt-f10", Desktop::Gnome, "GNOME: maximize the window", None),
-    ("alt-space", Desktop::Gnome, "GNOME: the window menu", None),
-    ("alt-tab", Desktop::Gnome, "GNOME: switch programs", None),
-    ("alt-escape", Desktop::Gnome, "GNOME: switch windows", None),
-    ("alt-shift-escape", Desktop::Gnome, "GNOME: switch windows", None),
-    ("ctrl-alt-tab", Desktop::Gnome, "GNOME: switch system controls", None),
-    ("ctrl-alt-escape", Desktop::Gnome, "GNOME: switch system controls", None),
-    ("ctrl-alt-up", Desktop::Gnome, "GNOME: the workspace above", None),
-    ("ctrl-alt-down", Desktop::Gnome, "GNOME: the workspace below", None),
-    ("ctrl-alt-left", Desktop::Gnome, "GNOME: the workspace to the left", None),
-    ("ctrl-alt-right", Desktop::Gnome, "GNOME: the workspace to the right", None),
+const RESERVED: &[(&str, Desktop, Why, Option<Command>)] = &[
+    ("alt-f4", Desktop::Windows, |s| crate::t!("keys.reserved.close_window", system = s), Some(Quit)),
+    ("alt-tab", Desktop::Windows, |s| crate::t!("keys.reserved.switch_windows", system = s), None),
+    ("alt-space", Desktop::Windows, |s| crate::t!("keys.reserved.window_menu", system = s), None),
+    ("alt-escape", Desktop::Windows, |s| crate::t!("keys.reserved.switch_windows", system = s), None),
+    ("ctrl-escape", Desktop::Windows, |s| crate::t!("keys.reserved.start_menu", system = s), None),
+    ("ctrl-shift-escape", Desktop::Windows, |s| crate::t!("keys.reserved.task_manager", system = s), None),
+    ("ctrl-alt-delete", Desktop::Windows, |s| crate::t!("keys.reserved.security_screen", system = s), None),
+    ("cmd-q", Desktop::Mac, |s| crate::t!("keys.reserved.quit", system = s), Some(Quit)),
+    ("cmd-w", Desktop::Mac, |s| crate::t!("keys.reserved.close_window_or_tab", system = s), Some(CloseTab)),
+    ("cmd-shift-w", Desktop::Mac, |s| crate::t!("keys.reserved.close_window", system = s), Some(CloseAllTabs)),
+    ("cmd-h", Desktop::Mac, |s| crate::t!("keys.reserved.hide_program", system = s), None),
+    ("cmd-m", Desktop::Mac, |s| crate::t!("keys.reserved.minimize", system = s), None),
+    ("cmd-tab", Desktop::Mac, |s| crate::t!("keys.reserved.switch_programs", system = s), None),
+    ("cmd-space", Desktop::Mac, |s| crate::t!("keys.reserved.spotlight", system = s), None),
+    ("cmd-`", Desktop::Mac, |s| crate::t!("keys.reserved.switch_windows", system = s), None),
+    ("cmd-shift-q", Desktop::Mac, |s| crate::t!("keys.reserved.log_out", system = s), None),
+    ("ctrl-cmd-q", Desktop::Mac, |s| crate::t!("keys.reserved.lock_screen", system = s), None),
+    ("alt-cmd-escape", Desktop::Mac, |s| crate::t!("keys.reserved.force_quit", system = s), None),
+    ("cmd-shift-3", Desktop::Mac, |s| crate::t!("keys.reserved.screenshot", system = s), None),
+    ("cmd-shift-4", Desktop::Mac, |s| crate::t!("keys.reserved.screenshot", system = s), None),
+    ("cmd-shift-5", Desktop::Mac, |s| crate::t!("keys.reserved.screenshot", system = s), None),
+    ("ctrl-space", Desktop::Mac, |s| crate::t!("keys.reserved.input_source", system = s), None),
+    ("ctrl-up", Desktop::Mac, |s| crate::t!("keys.reserved.mission_control", system = s), None),
+    ("ctrl-down", Desktop::Mac, |s| crate::t!("keys.reserved.program_windows", system = s), None),
+    ("ctrl-left", Desktop::Mac, |s| crate::t!("keys.reserved.space_left", system = s), None),
+    ("ctrl-right", Desktop::Mac, |s| crate::t!("keys.reserved.space_right", system = s), None),
+    ("ctrl-f1", Desktop::Mac, |s| crate::t!("keys.reserved.keyboard_access", system = s), None),
+    ("ctrl-f2", Desktop::Mac, |s| crate::t!("keys.reserved.menu_bar", system = s), None),
+    ("ctrl-f3", Desktop::Mac, |s| crate::t!("keys.reserved.dock", system = s), None),
+    ("ctrl-f4", Desktop::Mac, |s| crate::t!("keys.reserved.next_window", system = s), None),
+    ("ctrl-f5", Desktop::Mac, |s| crate::t!("keys.reserved.toolbar", system = s), None),
+    ("ctrl-f6", Desktop::Mac, |s| crate::t!("keys.reserved.floating_window", system = s), None),
+    ("ctrl-f7", Desktop::Mac, |s| crate::t!("keys.reserved.keyboard_navigation", system = s), None),
+    ("ctrl-f8", Desktop::Mac, |s| crate::t!("keys.reserved.status_menus", system = s), None),
+    ("f11", Desktop::Mac, |s| crate::t!("keys.reserved.show_desktop", system = s), None),
+    ("ctrl-f1", Desktop::Kde, |s| crate::t!("keys.reserved.switch_to_desktop", system = s, number = 1), None),
+    ("ctrl-f2", Desktop::Kde, |s| crate::t!("keys.reserved.switch_to_desktop", system = s, number = 2), None),
+    ("ctrl-f3", Desktop::Kde, |s| crate::t!("keys.reserved.switch_to_desktop", system = s, number = 3), None),
+    ("ctrl-f4", Desktop::Kde, |s| crate::t!("keys.reserved.switch_to_desktop", system = s, number = 4), None),
+    ("ctrl-f7", Desktop::Kde, |s| crate::t!("keys.reserved.present_windows_class", system = s), None),
+    ("ctrl-f9", Desktop::Kde, |s| crate::t!("keys.reserved.present_windows", system = s), None),
+    ("ctrl-f10", Desktop::Kde, |s| crate::t!("keys.reserved.present_windows_all", system = s), None),
+    ("ctrl-f12", Desktop::Kde, |s| crate::t!("keys.reserved.show_desktop", system = s), None),
+    ("alt-f1", Desktop::Kde, |s| crate::t!("keys.reserved.application_launcher", system = s), None),
+    ("alt-f2", Desktop::Kde, |s| crate::t!("keys.reserved.krunner", system = s), None),
+    ("alt-space", Desktop::Kde, |s| crate::t!("keys.reserved.krunner", system = s), None),
+    ("alt-f3", Desktop::Kde, |s| crate::t!("keys.reserved.window_menu", system = s), None),
+    ("alt-f4", Desktop::Kde, |s| crate::t!("keys.reserved.close_window", system = s), Some(Quit)),
+    ("alt-tab", Desktop::Kde, |s| crate::t!("keys.reserved.switch_windows", system = s), None),
+    ("alt-shift-tab", Desktop::Kde, |s| crate::t!("keys.reserved.switch_windows", system = s), None),
+    ("alt-shift-f12", Desktop::Kde, |s| crate::t!("keys.reserved.suspend_compositing", system = s), None),
+    ("ctrl-escape", Desktop::Kde, |s| crate::t!("keys.reserved.system_monitor", system = s), None),
+    ("ctrl-alt-delete", Desktop::Kde, |s| crate::t!("keys.reserved.log_out", system = s), None),
+    ("ctrl-alt-l", Desktop::Kde, |s| crate::t!("keys.reserved.lock_screen", system = s), None),
+    ("alt-f2", Desktop::Gnome, |s| crate::t!("keys.reserved.run_command", system = s), None),
+    ("alt-f4", Desktop::Gnome, |s| crate::t!("keys.reserved.close_window", system = s), Some(Quit)),
+    ("alt-f5", Desktop::Gnome, |s| crate::t!("keys.reserved.restore_window", system = s), None),
+    ("alt-f6", Desktop::Gnome, |s| crate::t!("keys.reserved.switch_program_windows", system = s), None),
+    ("alt-shift-f6", Desktop::Gnome, |s| crate::t!("keys.reserved.switch_program_windows", system = s), None),
+    ("alt-f7", Desktop::Gnome, |s| crate::t!("keys.reserved.move_window", system = s), None),
+    ("alt-f8", Desktop::Gnome, |s| crate::t!("keys.reserved.resize_window", system = s), None),
+    ("alt-f10", Desktop::Gnome, |s| crate::t!("keys.reserved.maximize_window", system = s), None),
+    ("alt-space", Desktop::Gnome, |s| crate::t!("keys.reserved.window_menu", system = s), None),
+    ("alt-tab", Desktop::Gnome, |s| crate::t!("keys.reserved.switch_programs", system = s), None),
+    ("alt-escape", Desktop::Gnome, |s| crate::t!("keys.reserved.switch_windows", system = s), None),
+    ("alt-shift-escape", Desktop::Gnome, |s| crate::t!("keys.reserved.switch_windows", system = s), None),
+    ("ctrl-alt-tab", Desktop::Gnome, |s| crate::t!("keys.reserved.switch_system_controls", system = s), None),
+    ("ctrl-alt-escape", Desktop::Gnome, |s| crate::t!("keys.reserved.switch_system_controls", system = s), None),
+    ("ctrl-alt-up", Desktop::Gnome, |s| crate::t!("keys.reserved.workspace_up", system = s), None),
+    ("ctrl-alt-down", Desktop::Gnome, |s| crate::t!("keys.reserved.workspace_down", system = s), None),
+    ("ctrl-alt-left", Desktop::Gnome, |s| crate::t!("keys.reserved.workspace_left", system = s), None),
+    ("ctrl-alt-right", Desktop::Gnome, |s| crate::t!("keys.reserved.workspace_right", system = s), None),
 ];
 
 /// Who takes `key` from `command` on `desktop`, if anyone.
-fn taken_on(key: &str, command: Command, desktop: Desktop) -> Option<&'static str> {
+fn taken_on(key: &str, command: Command, desktop: Desktop) -> Option<String> {
     let mac = desktop == Desktop::Mac;
     let key = normalize(key, mac);
     let applies = |on: Desktop| {
@@ -726,14 +741,14 @@ fn taken_on(key: &str, command: Command, desktop: Desktop) -> Option<&'static st
     if matches!(desktop, Desktop::Kde | Desktop::Gnome | Desktop::Linux)
         && key.strip_prefix("ctrl-alt-f").is_some_and(|n| n.parse::<u8>().is_ok())
     {
-        return Some("Linux: switch to a text console");
+        return Some(crate::t!("keys.reserved.text_console", system = Desktop::Linux.name()));
     }
     RESERVED
         .iter()
         .find(|(reserved, on, _, allows)| {
             applies(*on) && normalize(reserved, mac) == key && *allows != Some(command)
         })
-        .map(|(_, _, by, _)| *by)
+        .map(|(_, on, by, _)| by(on.name()))
 }
 
 fn this_desktop() -> Desktop {
@@ -753,7 +768,7 @@ fn this_desktop() -> Desktop {
 }
 
 /// Who on this computer takes `key` before it reaches `command`.
-pub fn taken_by(key: &str, command: Command) -> Option<&'static str> {
+pub fn taken_by(key: &str, command: Command) -> Option<String> {
     taken_on(key, command, this_desktop())
 }
 
@@ -856,7 +871,8 @@ mod tests {
         keys.set(SortByName, 0, "secondary-1".into());
         keys.set(SortBySize, 0, "secondary-4".into());
         assert!(keys.changed.is_empty(), "{:?}", keys.changed);
-        assert_eq!(taken_on("ctrl-f3", SortByName, Desktop::Kde), Some("KDE: switch to desktop 3"));
+        let desktop_3 = crate::t!("keys.reserved.switch_to_desktop", system = "KDE", number = 3);
+        assert_eq!(taken_on("ctrl-f3", SortByName, Desktop::Kde), Some(desktop_3));
         assert_eq!(taken_on("alt-f4", Quit, Desktop::Kde), None);
         assert!(taken_on("ctrl-alt-f2", View, Desktop::Gnome).is_some());
     }

@@ -569,27 +569,29 @@ pub fn show(window: &Window, mut menus: Vec<Menu>, cx: &mut App) {
         return;
     }
     cx.set_global(Installed(hash));
+    let label = |command| SharedString::from(sc_core::menu::label(command));
     let app = Menu::new("Spark Commander").items([
-        item("About Spark Commander".into(), false, Box::new(Run(Command::About)), false),
+        item(label(Command::About), false, Box::new(Run(Command::About)), false),
         MenuItem::separator(),
-        item("Settings...".into(), false, Box::new(Run(Command::Settings)), false),
-        item("Shortcuts...".into(), false, Box::new(Run(Command::Shortcuts)), false),
+        item(label(Command::Settings), false, Box::new(Run(Command::Settings)), false),
+        item(label(Command::Shortcuts), false, Box::new(Run(Command::Shortcuts)), false),
         MenuItem::separator(),
-        MenuItem::os_submenu("Services", SystemMenuType::Services),
+        MenuItem::os_submenu(sc_core::t!("menus.services"), SystemMenuType::Services),
         MenuItem::separator(),
-        MenuItem::action("Hide Spark Commander", HideApp),
-        MenuItem::action("Hide Others", HideOtherApps),
-        MenuItem::action("Show All", ShowAllApps),
+        MenuItem::action(sc_core::t!("menus.hide_app"), HideApp),
+        MenuItem::action(sc_core::t!("menus.hide_others"), HideOtherApps),
+        MenuItem::action(sc_core::t!("menus.show_all"), ShowAllApps),
         MenuItem::separator(),
-        MenuItem::action("Quit Spark Commander", Run(Command::Quit)),
+        MenuItem::action(sc_core::t!("menus.quit_app"), Run(Command::Quit)),
     ]);
-    // macOS lists the windows under these.
+    // macOS lists the windows under these; GPUI finds the menu by its English name, so it keeps it.
     let windows = Menu::new("Window").items([
-        MenuItem::action("Minimize", MinimizeWindow),
-        MenuItem::action("Zoom", ZoomWindow),
+        MenuItem::action(sc_core::t!("menus.minimize"), MinimizeWindow),
+        MenuItem::action(sc_core::t!("menus.zoom"), ZoomWindow),
     ]);
     // Help stays last, as in Mac apps.
-    let help = menus.iter().position(|menu| menu.name == "Help").map(|ix| menus.remove(ix));
+    let help_name = sc_core::menu::menu_label("Help");
+    let help = menus.iter().position(|menu| menu.name == help_name).map(|ix| menus.remove(ix));
     cx.set_menus(std::iter::once(app).chain(menus).chain([windows]).chain(help));
 }
 

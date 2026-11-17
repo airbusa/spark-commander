@@ -44,12 +44,9 @@ struct Chosen {
 }
 
 impl Chosen {
-    /// “Name” or “3 Items”, as Finder's titles have it.
-    fn what(&self) -> String {
-        match &self.single {
-            Some(name) => format!("“{name}”"),
-            None => format!("{} Items", self.count),
-        }
+    /// The one entry's name, for Finder's titles: Copy “Name”, else Copy 3 Items.
+    fn name(&self) -> &str {
+        self.single.as_deref().unwrap_or_default()
     }
 }
 
@@ -100,7 +97,8 @@ impl Commander {
         let Some(paths) = self.chosen_paths() else {
             return;
         };
-        let what = self.chosen_for_menu(self.active).what();
+        let what = self.chosen_for_menu(self.active);
+        let title = sc_core::t!("file_menu.tags_popover.title", count = what.count, name = what.name());
         let tags: Vec<Vec<String>> = paths.iter().map(|path| tags_of(path)).collect();
         let shared: Vec<String> =
             tags.first().into_iter().flatten().filter(|tag| tags.iter().all(|of| of.contains(tag))).cloned().collect();
@@ -117,7 +115,7 @@ impl Commander {
         let focus = self.focus.clone();
         cx.spawn_in(window, async move |_, cx| {
             let (done, chosen) = futures::channel::oneshot::channel();
-            native::assign_tags(&what, &shared, favourites(), known, Box::new(move |tags| drop(done.send(tags))));
+            native::assign_tags(&title, &shared, favourites(), known, Box::new(move |tags| drop(done.send(tags))));
             let Ok(chosen) = chosen.await else {
                 return;
             };
@@ -176,33 +174,39 @@ impl Commander {
             }))
             .on_action(cx.listener(|this, _: &RenameFile, window, cx| this.rename_file(window, cx)))
             .on_action(cx.listener(|this, _: &Duplicate, window, cx| {
-                this.in_background("Could not duplicate", |paths| finder::duplicate(&paths).map(drop), true, window, cx)
+                let failed = |err: std::io::Error| sc_core::t!("file_menu.duplicate_failed", err = err);
+                this.in_background(failed, |paths| finder::duplicate(&paths).map(drop), true, window, cx)
             }))
             .on_action(cx.listener(|this, _: &MakeAlias, window, cx| {
-                this.in_background("Could not make the alias", |paths| finder::make_alias(&paths), true, window, cx)
+                let failed = |err: std::io::Error| sc_core::t!("file_menu.make_alias_failed", err = err);
+                this.in_background(failed, |paths| finder::make_alias(&paths), true, window, cx)
             }))
             .on_action(cx.listener(|this, _: &QuickLook, window, cx| {
-                this.in_background("Quick Look", |paths| finder::quick_look(&paths), false, window, cx)
+                let failed = |err: std::io::Error| sc_core::t!("file_menu.quick_look_failed", err = err);
+                this.in_background(failed, |paths| finder::quick_look(&paths), false, window, cx)
             }))
             .on_action(cx.listener(|this, _: &RevealInFinder, window, cx| {
-                this.in_background("Could not show it in Finder", |paths| finder::reveal(&paths), false, window, cx)
+                let failed = |err: std::io::Error| sc_core::t!("file_menu.reveal_failed", err = err);
+                this.in_background(failed, |paths| finder::reveal(&paths), false, window, cx)
             }))
             .on_action(cx.listener(|this, OpenWith(app): &OpenWith, window, cx| {
                 let app = app.clone();
-                this.in_background("Could not open", move |paths| finder::open_with(&app, &paths), false, window, cx)
+                let failed = |err: std::io::Error| sc_core::t!("file_menu.open_failed", err = err);
+                this.in_background(failed, move |paths| finder::open_with(&app, &paths), false, window, cx)
             }))
             .on_action(cx.listener(|this, _: &EditTags, window, cx| this.edit_tags(window, cx)))
             .on_action(cx.listener(|this, ChangeTags { add, remove }: &ChangeTags, window, cx| {
                 let (add, remove) = (add.clone(), remove.clone());
                 let change = move |paths: Vec<PathBuf>| change_tags(&paths, &add, &remove);
-                this.in_background("Could not change the tags", change, true, window, cx)
+                let failed = |err: std::io::Error| sc_core::t!("file_menu.change_tags_failed", err = err);
+                this.in_background(failed, change, true, window, cx)
             }))
     }
 
     /// `run` on the chosen files away from the window; `changes` the folder, which is read again then.
     fn in_background(
         &mut self,
-        failed: &'static str,
+        failed: fn(std::io::Error) -> String,
         run: impl FnOnce(Vec<PathBuf>) -> std::io::Result<()> + Send + 'static,
         changes: bool,
         window: &mut Window,
@@ -217,7 +221,7 @@ impl Commander {
             let done = task.await;
             let _ = this.update_in(cx, |this, window, cx| {
                 if let Err(err) = done {
-                    window.push_notification(Notification::error(format!("{failed}: {err}")), cx);
+                    window.push_notification(Notification::error(failed(err)), cx);
                 }
                 if changes {
                     this.refresh_folder(&folder, cx);
@@ -276,38 +280,38 @@ fn build(chosen: Chosen, paths: &[PathBuf]) -> Vec<Entry> {
     use Entry::Separator;
     if chosen.folder {
         let mut menu = vec![
-            item("New Folder", Run(Command::NewFolder)),
-            item("Paste", Run(Command::PasteFromClipboard)),
+            item(sc_core::t!("file_menu.new_folder"), Run(Command::NewFolder)),
+            item(sc_core::t!("file_menu.paste"), Run(Command::PasteFromClipboard)),
             Separator,
-            item("Get Info", Run(Command::Properties)),
+            item(sc_core::t!("file_menu.get_info"), Run(Command::Properties)),
         ];
         if chosen.local {
-            menu.push(item("Reveal in Finder", RevealInFinder));
+            menu.push(item(sc_core::t!("file_menu.reveal_in_finder"), RevealInFinder));
         }
         return menu;
     }
-    let what = chosen.what();
-    let mut menu = vec![item("Open", Open)];
+    let (count, name) = (chosen.count, chosen.name());
+    let mut menu = vec![item(sc_core::t!("file_menu.open"), Open)];
     if chosen.local {
         if let Some(first) = &chosen.first {
-            menu.push(Entry::Submenu { title: "Open With".into(), entries: open_with(first) });
+            menu.push(Entry::Submenu { title: sc_core::t!("file_menu.open_with"), entries: open_with(first) });
         }
         if chosen.app {
-            menu.push(item("Show Package Contents", ShowPackageContents));
+            menu.push(item(sc_core::t!("file_menu.show_package_contents"), ShowPackageContents));
         }
     }
-    let delete = if chosen.local { "Move to Trash" } else { "Delete" };
-    menu.extend([Separator, item(delete, Run(Command::Delete)), Separator, item("Get Info", Run(Command::Properties))]);
+    let delete = if chosen.local { sc_core::t!("file_menu.move_to_trash") } else { sc_core::t!("file_menu.delete") };
+    menu.extend([Separator, item(delete, Run(Command::Delete)), Separator, item(sc_core::t!("file_menu.get_info"), Run(Command::Properties))]);
     if chosen.single.is_some() && !chosen.in_archive {
-        menu.push(item("Rename…", RenameFile));
+        menu.push(item(sc_core::t!("file_menu.rename"), RenameFile));
     }
-    menu.push(item(format!("Compress {what}…"), Run(Command::Pack)));
+    menu.push(item(sc_core::t!("file_menu.compress", count = count, name = name), Run(Command::Pack)));
     if chosen.local {
         menu.extend([
-            with_symbol(item("Duplicate", Duplicate), "plus.square.on.square"),
-            item("Make Alias", MakeAlias),
-            item(format!("Quick Look {what}"), QuickLook),
-            item("Reveal in Finder", RevealInFinder),
+            with_symbol(item(sc_core::t!("file_menu.duplicate"), Duplicate), "plus.square.on.square"),
+            item(sc_core::t!("file_menu.make_alias"), MakeAlias),
+            item(sc_core::t!("file_menu.quick_look", count = count, name = name), QuickLook),
+            item(sc_core::t!("file_menu.reveal_in_finder"), RevealInFinder),
         ]);
         if !paths.is_empty() {
             menu.push(Entry::Share(paths.to_vec()));
@@ -315,11 +319,11 @@ fn build(chosen: Chosen, paths: &[PathBuf]) -> Vec<Entry> {
     }
     menu.extend([
         Separator,
-        with_symbol(item(format!("Copy {what}"), Run(Command::CopyToClipboard)), "doc.on.doc"),
-        item("Copy Path to Clipboard", Run(Command::CopyNamesWithPathToClipboard)),
+        with_symbol(item(sc_core::t!("file_menu.copy", count = count, name = name), Run(Command::CopyToClipboard)), "doc.on.doc"),
+        item(sc_core::t!("file_menu.copy_path"), Run(Command::CopyNamesWithPathToClipboard)),
     ]);
     if chosen.local && !paths.is_empty() {
-        menu.extend([Separator, item("Tags…", EditTags), Entry::Tags(dots(paths))]);
+        menu.extend([Separator, item(sc_core::t!("file_menu.edit_tags"), EditTags), Entry::Tags(dots(paths))]);
     }
     menu
 }
@@ -407,7 +411,7 @@ fn open_with(file: &Path) -> Vec<Entry> {
     };
     let mut menu = Vec::new();
     if let Some(app) = default {
-        menu.push(entry(format!("{} (default)", app_name(&app)), app));
+        menu.push(entry(sc_core::t!("file_menu.open_with_default", app = app_name(&app)), app));
         if !others.is_empty() {
             menu.push(Entry::Separator);
         }
@@ -646,8 +650,8 @@ mod native {
                 return;
             }
             let tip = dot.map(|ix| match &ivars.dots[ix] {
-                Shown { name, have: Have::All, .. } => format!("Remove tag “{name}”"),
-                Shown { name, .. } => format!("Add tag “{name}”"),
+                Shown { name, have: Have::All, .. } => sc_core::t!("file_menu.tag_dot.remove", name = name),
+                Shown { name, .. } => sc_core::t!("file_menu.tag_dot.add", name = name),
             });
             self.setToolTip(tip.map(|tip| NSString::from_str(&tip)).as_deref());
             self.setNeedsDisplay(true);
@@ -986,7 +990,7 @@ mod native {
                 .map(|(ix, row)| {
                     let text = match &row {
                         Row::Tag(tag) => tag.name.clone(),
-                        Row::ShowAll => "Show All…".to_owned(),
+                        Row::ShowAll => sc_core::t!("file_menu.tags_popover.show_all"),
                     };
                     let label = NSTextField::labelWithString(&NSString::from_str(&text), self.mtm());
                     label.setFont(Some(&NSFont::systemFontOfSize(13.)));
@@ -1064,7 +1068,7 @@ mod native {
 
     /// Finder's Tags…: a popover where the menu was, `assigned` edited; `done` when it closes.
     pub(super) fn assign_tags(
-        what: &str,
+        title: &str,
         assigned: &[String],
         favourites: Vec<Tag>,
         known: Vec<Tag>,
@@ -1097,7 +1101,7 @@ mod native {
         let frame = NSRect::new(NSPoint::ZERO, NSSize::new(POPOVER, LIST));
         let view: Retained<AssignTags> =
             unsafe { msg_send![super(AssignTags::alloc(mtm).set_ivars(ivars)), initWithFrame: frame] };
-        let title = NSTextField::labelWithString(&NSString::from_str(&format!("Assign tags to {what}")), mtm);
+        let title = NSTextField::labelWithString(&NSString::from_str(title), mtm);
         title.setFont(Some(&NSFont::boldSystemFontOfSize(11.)));
         title.setAlignment(NSTextAlignment::Center);
         title.setFrame(NSRect::new(NSPoint::new(12., 9.), NSSize::new(POPOVER - 24., 16.)));

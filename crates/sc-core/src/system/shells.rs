@@ -76,9 +76,10 @@ fn windows() -> Vec<Shell> {
     let git = git.into_iter().flatten().find(|path| there(path));
     // wsl.exe is there also with no Linux installed, which it only offers to install.
     let wsl = unsafe { RegGetValueW(HKEY_CURRENT_USER, w!(r"Software\Microsoft\Windows\CurrentVersion\Lxss"), w!("DefaultDistribution"), RRF_RT_REG_SZ, None, None, None) }.is_ok();
+    let prompt = crate::t!("shells.command_prompt");
     let found = [
         ("PowerShell 7", pwsh, &[][..]),
-        ("Command Prompt", Some(system.join("cmd.exe")), &[]),
+        (prompt.as_str(), Some(system.join("cmd.exe")), &[]),
         ("Git Bash", git, &["-i", "-l"]),
         ("WSL", wsl.then(|| system.join("wsl.exe")), &[]),
     ];

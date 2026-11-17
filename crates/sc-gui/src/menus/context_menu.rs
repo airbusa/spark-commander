@@ -36,7 +36,9 @@ impl Commander {
         // A search result's path keeps its folder.
         let shown = Path::new(&name).file_name().unwrap_or(&name).to_string_lossy().into_owned();
         let commander = cx.entity().downgrade();
-        name_dialog::open("Rename", "New name:", shown, window, cx, move |to, window, cx| {
+        // shortcut: name_dialog takes &'static str, so its words leak; pass the Strings once it takes them.
+        let (title, label) = (sc_core::t!("context_menu.rename_dialog.title").leak(), sc_core::t!("context_menu.rename_dialog.label").leak());
+        name_dialog::open(title, label, shown, window, cx, move |to, window, cx| {
             let name = name.clone();
             let _ = commander.update(cx, |this, cx| {
                 let panel = this.panels[side].tabs.current_mut();
@@ -46,7 +48,7 @@ impl Commander {
                 }
                 let folder = panel.folder().to_owned();
                 if let Err(err) = panel.rename_entry(&name, &to) {
-                    window.push_notification(Notification::error(format!("Could not rename: {err}")), cx);
+                    window.push_notification(Notification::error(sc_core::t!("context_menu.rename_failed", err = err)), cx);
                 }
                 this.refresh_folder(&folder, cx);
             });
@@ -119,7 +121,7 @@ impl Commander {
                 Ok(Some(Choice::Delete)) => this.confirm_delete(true, window, cx),
                 Ok(Some(Choice::DeletePermanently)) => this.confirm_delete(false, window, cx),
                 Ok(Some(Choice::Done)) => this.refresh_folder(&folder, cx),
-                Err(err) => window.push_notification(Notification::error(format!("The menu: {err}")), cx),
+                Err(err) => window.push_notification(Notification::error(sc_core::t!("context_menu.shell_menu_failed", err = err)), cx),
             });
         })
         .detach();

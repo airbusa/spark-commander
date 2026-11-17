@@ -43,17 +43,11 @@ impl Commander {
 
     fn mark_group(&mut self, mark: bool, window: &mut Window, cx: &mut Context<Self>) {
         let (title, label) = match mark {
-            true => (
-                "Select group",
-                "Select the files (*.txt *.md; a folder mask ends in /):",
-            ),
-            false => (
-                "Unselect group",
-                "Unselect the files (*.txt *.md; a folder mask ends in /):",
-            ),
+            true => (sc_core::t!("mark.select_group.title"), sc_core::t!("mark.select_group.label")),
+            false => (sc_core::t!("mark.unselect_group.title"), sc_core::t!("mark.unselect_group.label")),
         };
         let commander = cx.entity().downgrade();
-        name_dialog::open(title, label, "*".into(), window, cx, move |mask, _, cx| {
+        name_dialog::open(title.leak(), label.leak(), "*".into(), window, cx, move |mask, _, cx| {
             let _ = commander.update(cx, |this, cx| {
                 this.mark(|panel| panel.mark_group(&mask, mark), cx)
             });
@@ -63,17 +57,17 @@ impl Commander {
     fn selection_file(&mut self, save: bool, window: &mut Window, cx: &mut Context<Self>) {
         let panel = self.panels[self.active].tabs.current();
         if panel.remote().is_some() || panel.in_archive() {
-            let text = "Selection files are kept on this computer, outside archives.";
+            let text = sc_core::t!("mark.selection_file.not_local");
             return window.push_notification(Notification::warning(text), cx);
         }
         let folder = panel.folder().to_owned();
         let file = folder.join("selection.txt").display().to_string();
         let (title, label) = match save {
-            true => ("Save selection", "Save the selected names to the file:"),
-            false => ("Load selection", "Select the names listed in the file:"),
+            true => (sc_core::t!("mark.save_selection.title"), sc_core::t!("mark.save_selection.label")),
+            false => (sc_core::t!("mark.load_selection.title"), sc_core::t!("mark.load_selection.label")),
         };
         let commander = cx.entity().downgrade();
-        name_dialog::open(title, label, file, window, cx, move |text, window, cx| {
+        name_dialog::open(title.leak(), label.leak(), file, window, cx, move |text, window, cx| {
             let path = command::resolve(text.trim(), &folder);
             let _ = commander.update(cx, |this, cx| {
                 let done = match save {
@@ -109,8 +103,8 @@ impl Commander {
         let (left, right) = (left[0].tabs.current_mut(), right[0].tabs.current_mut());
         let count = left.compare_with(right, hide_same);
         let text = match count {
-            0 => "The folders have the same files.".to_string(),
-            n => format!("{n} file(s) marked: newer than, or missing on, the other side."),
+            0 => sc_core::t!("mark.compare.same"),
+            n => sc_core::t!("mark.compare.marked", count = n),
         };
         window.push_notification(Notification::info(text), cx);
         for side in &self.panels {

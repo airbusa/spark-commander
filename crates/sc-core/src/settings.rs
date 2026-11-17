@@ -298,6 +298,7 @@ impl Settings {
     pub fn apply_globally(&self) {
         crate::dates::set(&self.date);
         crate::set_folders_like_files(self.folders_like_files);
+        crate::ops::set_download_limit(self.queue.download_limit_kb.saturating_mul(1024));
     }
 
     /// On the first start, Home, Desktop, Documents and Downloads are

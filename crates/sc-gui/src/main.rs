@@ -703,8 +703,9 @@ impl Commander {
             menus::bind_tools(&settings.tools, &self.settings.tools, cx);
             self.menu_bar.update(cx, |bar, cx| bar.reload(cx));
         }
+        // The download limit too: running transfers follow it at once.
+        settings.apply_globally();
         if (&settings.date, settings.folders_like_files) != (&self.settings.date, self.settings.folders_like_files) {
-            settings.apply_globally();
             if settings.folders_like_files != self.settings.folders_like_files {
                 for side in &mut self.panels {
                     side.tabs.resort();

@@ -7,7 +7,7 @@ use std::io::{self, Read, Write};
 use std::path::{Path, PathBuf};
 use std::time::Duration;
 
-use crate::ops::{Report, Task};
+use crate::ops::{Pace, Report, Task};
 use crate::remote::{self, Address, Ask, Prompt, Reply, Scheme};
 use crate::vfs::{self, Local};
 
@@ -113,9 +113,9 @@ fn part_of(link: &str, target: &Path) -> PathBuf {
 
 /// Downloads `link` into `dir`, as `name` (over a file of that name, which
 /// the user agreed to), else as the server or the link names it (beside a
-/// file of that name), at most `limit` bytes a second. `ask` answers a
+/// file of that name), kept to the download limit. `ask` answers a
 /// server's questions (its password).
-pub fn download(link: String, dir: PathBuf, name: Option<String>, limit: Option<u64>, ask: Ask) -> Task {
+pub fn download(link: String, dir: PathBuf, name: Option<String>, ask: Ask) -> Task {
     let shown = shown(&link);
     let title = match name.clone().or_else(|| link_name(&link)) {
         Some(name) => format!("Download \"{name}\""),
@@ -131,7 +131,7 @@ pub fn download(link: String, dir: PathBuf, name: Option<String>, limit: Option<
             if !named && target.exists() {
                 target = free_name(&target);
             }
-            fetch(&link, source, &target, limit, report)?;
+            fetch(&link, source, &target, Pace::download(), report)?;
             mark(&target, &shown);
             let saved = target.file_name().unwrap_or_default().to_string_lossy().into_owned();
             Ok(format!("saved as {saved}"))
@@ -226,7 +226,7 @@ fn open_server(link: &str, ask: Ask) -> io::Result<Source> {
 /// The body into `target`'s part, gone on from a part a broken download
 /// left; the part renamed to `target` when whole. A cancelled download's
 /// part is removed, a failed one's kept.
-fn fetch(link: &str, source: Source, target: &Path, limit: Option<u64>, report: &mut Report) -> io::Result<()> {
+fn fetch(link: &str, source: Source, target: &Path, mut pace: Pace, report: &mut Report) -> io::Result<()> {
     let part = part_of(link, target);
     let Source { mut reader, size, mut from, resume, .. } = source;
     let had = std::fs::metadata(&part).map_or(0, |meta| meta.len());
@@ -245,10 +245,7 @@ fn fetch(link: &str, source: Source, target: &Path, limit: Option<u64>, report: 
     report.progress.total_bytes = size.unwrap_or(0);
     (report.progress.bytes, report.progress.resumed) = (from, from);
     report.show();
-    let limit = limit.filter(|limit| *limit > 0);
-    // A tenth of a second's worth at a time under a limit, for an even pace.
-    let mut buffer = vec![0; limit.map_or(1 << 16, |limit| (limit / 10).clamp(1024, 1 << 16) as usize)];
-    let (start, mut taken) = (std::time::Instant::now(), 0u64);
+    let mut buffer = vec![0; 1 << 16];
     let copied = (|| -> io::Result<()> {
         loop {
             report.check()?;
@@ -259,15 +256,7 @@ fn fetch(link: &str, source: Source, target: &Path, limit: Option<u64>, report: 
                 Err(err) => return Err(err),
             };
             file.write_all(&buffer[..read])?;
-            taken += read as u64;
-            // Ahead of the limit: waits, a little at a time, so a cancel is heard.
-            if let Some(limit) = limit {
-                let due = Duration::from_secs_f64(taken as f64 / limit as f64);
-                while start.elapsed() < due {
-                    report.check()?;
-                    std::thread::sleep((due - start.elapsed()).min(Duration::from_millis(100)));
-                }
-            }
+            pace.after(read as u64, &mut || report.check())?;
             report.progress.bytes += read as u64;
             // A size the server did not tell grows with the file.
             report.progress.total_bytes = size.unwrap_or(report.progress.bytes);
@@ -383,7 +372,7 @@ mod tests {
         let ask: Ask = std::sync::Arc::new(|_| Reply::Cancel);
         let queue = crate::ops::Queue::default();
         let run = |queue: &crate::ops::Queue| {
-            let id = queue.run_now(download(link.clone(), dir.clone(), None, None, ask.clone()));
+            let id = queue.run_now(download(link.clone(), dir.clone(), None, ask.clone()));
             while !queue.jobs().iter().any(|job| job.id == id && job.status.finished()) {
                 std::thread::sleep(Duration::from_millis(20));
             }
@@ -400,14 +389,6 @@ mod tests {
         // Again: beside it, never over it.
         let third = run(&queue);
         assert_eq!(third.note.as_deref(), Some("saved as data (2).bin"));
-        // At most 500 KB a second: the 200 KB take some 0.4 s.
-        let started = std::time::Instant::now();
-        let id = queue.run_now(download(link.clone(), dir.clone(), Some("slow.bin".into()), Some(500_000), ask.clone()));
-        while !queue.jobs().iter().any(|job| job.id == id && job.status.finished()) {
-            std::thread::sleep(Duration::from_millis(20));
-        }
-        assert!(started.elapsed() >= Duration::from_millis(350), "{:?}", started.elapsed());
-        assert_eq!(std::fs::read(dir.join("slow.bin")).unwrap(), body);
         std::fs::remove_dir_all(&dir).unwrap();
     }
 }

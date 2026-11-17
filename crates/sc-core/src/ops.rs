@@ -14,11 +14,60 @@ pub mod undo;
 
 use std::io;
 use std::path::{MAIN_SEPARATOR, Path, PathBuf};
-use std::sync::atomic::{AtomicBool, Ordering};
+use std::sync::atomic::{AtomicBool, AtomicU64, Ordering};
 use std::sync::{Arc, Condvar, Mutex, MutexGuard};
 
 use crate::command;
 use crate::vfs::{self, Fs, Meta};
+
+/// Bytes a second what is read from servers may take (Download from Link,
+/// copies from FTP and SFTP); 0: no limit.
+static DOWNLOAD_LIMIT: AtomicU64 = AtomicU64::new(0);
+
+/// The download limit, in bytes a second (0: none); running transfers follow it at once.
+pub fn set_download_limit(bytes: u64) {
+    DOWNLOAD_LIMIT.store(bytes, Ordering::Relaxed);
+}
+
+/// Paces reading to a limit read as it goes: ahead of it, waits.
+pub(crate) struct Pace {
+    limit: fn() -> u64,
+    /// The limit counted with, and from when, and what was read since.
+    seen: u64,
+    start: std::time::Instant,
+    taken: u64,
+}
+
+impl Pace {
+    pub(crate) fn new(limit: fn() -> u64) -> Self {
+        Pace { limit, seen: 0, start: std::time::Instant::now(), taken: 0 }
+    }
+
+    /// Paced by the download limit.
+    pub(crate) fn download() -> Self {
+        Pace::new(|| DOWNLOAD_LIMIT.load(Ordering::Relaxed))
+    }
+
+    /// After `bytes` more: waits while ahead of the limit, a little at a time;
+    /// `stop` (a cancel) ends the wait with its error.
+    pub(crate) fn after(&mut self, bytes: u64, stop: &mut dyn FnMut() -> io::Result<()>) -> io::Result<()> {
+        let limit = (self.limit)();
+        // A limit set or changed counts from now.
+        if limit != self.seen {
+            (self.seen, self.start, self.taken) = (limit, std::time::Instant::now(), 0);
+        }
+        if limit == 0 {
+            return Ok(());
+        }
+        self.taken += bytes;
+        let due = std::time::Duration::from_secs_f64(self.taken as f64 / limit as f64);
+        while self.start.elapsed() < due {
+            stop()?;
+            std::thread::sleep(due.saturating_sub(self.start.elapsed()).min(std::time::Duration::from_millis(100)));
+        }
+        Ok(())
+    }
+}
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Kind {
@@ -443,6 +492,7 @@ impl Queue {
                         refused_now: false,
                         refused: Vec::new(),
                         elevated: None,
+                        pace: Pace::download(),
                     };
                     let ran = match run.all() {
                         Ok(()) if let Some(why) = run.elevated.take() => (Status::Failed, Some(why)),
@@ -544,6 +594,8 @@ struct Run<'a> {
     refused: Vec<(PathBuf, PathBuf)>,
     /// Why that failed.
     elevated: Option<String>,
+    /// Reading from a server, kept to the download limit.
+    pace: Pace,
 }
 
 impl Run<'_> {
@@ -809,15 +861,23 @@ impl Run<'_> {
         let before = (self.progress.bytes, self.progress.resumed);
         let mut trashed = false;
         let mut put = |part: &Path, target: &Path| place(&*to, part, target).map(|went| trashed = went);
+        let server = from.id() != "local";
         let written = vfs::copy_file_with(&*from, source, &*to, target, meta, &mut put, &mut |bytes, resumed| {
-            if self.cancel.load(Ordering::Relaxed) {
-                return Err(io::ErrorKind::Interrupted.into());
-            }
+            let cancel = self.cancel.clone();
+            let mut stop = || match cancel.load(Ordering::Relaxed) {
+                true => Err(io::Error::from(io::ErrorKind::Interrupted)),
+                false => Ok(()),
+            };
+            stop()?;
             self.progress.bytes += bytes;
             if resumed {
                 self.progress.resumed += bytes;
             }
             self.report();
+            // What a server sends is a download: as fast as the limit lets it.
+            if server && !resumed {
+                self.pace.after(bytes, &mut stop)?;
+            }
             Ok(())
         });
         if written.is_err() {
@@ -944,6 +1004,23 @@ mod tests {
     use std::time::{Duration, SystemTime};
 
     use super::*;
+
+    #[test]
+    fn paces_to_the_limit() {
+        let mut pace = Pace::new(|| 1_000_000);
+        let started = std::time::Instant::now();
+        for _ in 0..20 {
+            pace.after(10_000, &mut || Ok(())).unwrap();
+        }
+        assert!(started.elapsed() >= std::time::Duration::from_millis(180), "{:?}", started.elapsed());
+        let mut free = Pace::new(|| 0);
+        let started = std::time::Instant::now();
+        free.after(100_000_000, &mut || Ok(())).unwrap();
+        assert!(started.elapsed() < std::time::Duration::from_millis(50));
+        // A cancel ends the wait.
+        let mut slow = Pace::new(|| 1);
+        assert!(slow.after(100, &mut || Err(io::ErrorKind::Interrupted.into())).is_err());
+    }
 
     #[test]
     fn forgets_done_jobs_only() {

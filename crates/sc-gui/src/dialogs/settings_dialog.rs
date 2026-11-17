@@ -827,7 +827,7 @@ impl SettingsDialog {
             v_flex()
                 .gap_4()
                 .child(row("Clear done operations after", &self.clear_after, "minutes", "0: as soon as they finish. Failed and cancelled ones stay until cleared."))
-                .child(row("Download speed limit", &self.download_limit, "KB/s", "Files > Download from Link; 0: no limit.")),
+                .child(row("Download speed limit", &self.download_limit, "KB/s", "Download from Link, and copies from FTP and SFTP servers; also those running. 0: no limit.")),
         )
     }
 

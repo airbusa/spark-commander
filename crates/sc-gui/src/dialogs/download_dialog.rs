@@ -34,8 +34,7 @@ impl Commander {
     fn start_download(&mut self, link: String, name: Option<String>, dir: PathBuf, window: &mut Window, cx: &mut Context<Self>) {
         // A server's password, or its unknown key, is asked in a dialog.
         let (ask, _) = self.dialog_ask(window, cx);
-        let limit = self.settings.queue.download_limit_kb.checked_mul(1024);
-        self.transfers.queue.run_now(download::download(link.trim().to_owned(), dir, name, limit, ask));
+        self.transfers.queue.run_now(download::download(link.trim().to_owned(), dir, name, ask));
         cx.notify();
     }
 }

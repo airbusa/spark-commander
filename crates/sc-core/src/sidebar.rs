@@ -17,6 +17,8 @@ pub enum SidebarTab {
     /// Bookmarks, drives, cloud and devices.
     #[serde(alias = "Devices")]
     Places,
+    /// The queue: copies, downloads and the other long work.
+    Operations,
 }
 
 struct Node {

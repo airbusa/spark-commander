@@ -1,7 +1,5 @@
-//! F5 and F6: their dialog, the queue's progress strip and manager, and
-//! the questions a running job asks.
-use gpui_kit::component::scroll::ScrollableElement as _;
-
+//! F5 and F6: their dialog, the queue's progress strip, the sidebar's
+//! Operations, and the questions a running job asks.
 use std::collections::HashSet;
 use std::ffi::OsString;
 use std::path::{MAIN_SEPARATOR, PathBuf};
@@ -22,6 +20,9 @@ use sc_core::ops::{Answer, JobView, Kind, Operation, Overwrite, Question, Queue,
 use sc_core::vfs::{Fs, Local, Meta};
 
 use crate::Commander;
+use crate::panel::drag_drop::DragLabel;
+use gpui_kit::component::menu::ContextMenuExt;
+use sc_core::sidebar::SidebarTab;
 
 const OVERWRITE: [(Overwrite, &str); 5] = [
     (Overwrite::Ask, "Ask"),
@@ -356,6 +357,7 @@ impl Commander {
     }
 
     fn queue_changed(&mut self, window: &mut Window, cx: &mut Context<Self>) {
+        self.transfers.queue.forget_done(DONE_KEPT);
         let transfers = &mut self.transfers;
         let version = transfers.queue.version();
         if version == transfers.version {
@@ -421,6 +423,10 @@ impl Commander {
         &self,
         cx: &mut Context<Self>,
     ) -> Option<impl IntoElement + use<>> {
+        // The sidebar's Operations shows it then.
+        if self.sidebar.tab == Some(SidebarTab::Operations) {
+            return None;
+        }
         let jobs = self.transfers.queue.jobs();
         let waiting = jobs
             .iter()
@@ -449,7 +455,6 @@ impl Commander {
                 )
             })
         });
-        let queue = self.transfers.queue.clone();
         Some(
             h_flex()
                 .px_2()
@@ -482,7 +487,7 @@ impl Commander {
                             0 => "Queue...".to_string(),
                             n => format!("Queue ({n} waiting)..."),
                         })
-                        .on_click(move |_, window, cx| open_queue(queue.clone(), window, cx)),
+                        .on_click(cx.listener(|this, _, window, cx| this.show_operations(window, cx))),
                 ),
         )
     }
@@ -695,140 +700,176 @@ fn describe(meta: &Meta) -> String {
     )
 }
 
-/// The jobs: the running one's progress; the waiting ones reordered or cancelled.
-pub fn open_queue(queue: Queue, window: &mut Window, cx: &mut App) {
-    let view = cx.new(|cx| {
-        // Follows the queue while open.
-        let poll = cx.spawn(async move |this: WeakEntity<QueueDialog>, cx| {
-            let mut version = 0;
-            loop {
-                cx.background_executor()
-                    .timer(Duration::from_millis(200))
-                    .await;
-                let changed = this.update(cx, |this, cx| {
-                    let now = this.queue.version();
-                    if now != version {
-                        version = now;
-                        cx.notify();
-                    }
-                });
-                if changed.is_err() {
-                    break;
-                }
-            }
-        });
-        QueueDialog { queue, _poll: poll }
-    });
-    window.open_dialog(cx, move |dialog, _, _| {
-        dialog
-            .title("Operation queue")
-            .width(px(640.))
-            .child(view.clone())
-    });
+/// A waiting job dragged in the Operations list, to wait elsewhere.
+#[derive(Clone, Copy)]
+struct JobDrag(u64);
+
+/// A done job stays listed this long; failed and cancelled ones until cleared.
+const DONE_KEPT: Duration = Duration::from_secs(300);
+
+/// How far a job is, 0 to 1, by its bytes, else its files; none while counting.
+fn done_part(progress: &sc_core::ops::Progress) -> Option<f32> {
+    let part = match (progress.total_bytes, progress.total_files) {
+        _ if progress.scanning => return None,
+        (0, 0) => return None,
+        (0, files) => progress.files as f32 / files as f32,
+        (bytes, _) => progress.bytes as f32 / bytes as f32,
+    };
+    Some(part.clamp(0., 1.))
 }
 
-struct QueueDialog {
-    queue: Queue,
-    _poll: Task<()>,
+/// `1:05:00`, `4:10`, `12 s`.
+fn duration_text(seconds: u64) -> String {
+    match seconds {
+        0..60 => format!("{seconds} s"),
+        60..3600 => format!("{}:{:02}", seconds / 60, seconds % 60),
+        _ => format!("{}:{:02}:{:02}", seconds / 3600, seconds / 60 % 60, seconds % 60),
+    }
 }
 
-impl Render for QueueDialog {
-    fn render(&mut self, _: &mut Window, cx: &mut Context<Self>) -> impl IntoElement {
+/// A running job's files, bytes, speed and time left, as far as known.
+fn running_text(job: &JobView) -> String {
+    let p = &job.progress;
+    let mut parts = Vec::new();
+    if p.total_files > 1 {
+        parts.push(format!("{} / {} files", p.files, p.total_files));
+    }
+    if p.total_bytes > 0 {
+        parts.push(format!("{} of {}", sc_core::human_size(p.bytes), sc_core::human_size(p.total_bytes)));
+    }
+    let seconds = job.started.map_or(0., |at| at.elapsed().as_secs_f64());
+    let speed = (seconds > 1.).then(|| (p.bytes - p.resumed) as f64 / seconds).filter(|speed| *speed > 0.);
+    if let Some(speed) = speed {
+        parts.push(format!("{}/s", sc_core::human_size(speed as u64)));
+        if p.total_bytes > p.bytes {
+            parts.push(format!("{} left", duration_text(((p.total_bytes - p.bytes) as f64 / speed) as u64)));
+        }
+    }
+    match parts.is_empty() {
+        true => "Running".into(),
+        false => parts.join(" · "),
+    }
+}
+
+impl Commander {
+    /// Commands › Operation Queue: the sidebar's Operations, shown.
+    pub(crate) fn show_operations(&mut self, window: &mut Window, cx: &mut Context<Self>) {
+        if self.sidebar.tab != Some(SidebarTab::Operations) {
+            self.toggle_sidebar(SidebarTab::Operations, window, cx);
+        }
+    }
+
+    /// The Operations header's summary while jobs run or wait (or failed),
+    /// and how far the running ones are, 0 to 1.
+    pub(crate) fn operations_summary(&self) -> Option<(String, Option<f32>)> {
+        let jobs = self.transfers.queue.jobs();
+        let count = |status: Status| jobs.iter().filter(|job| job.status == status).count();
+        let (running, waiting, failed) = (count(Status::Running), count(Status::Waiting), count(Status::Failed));
+        let parts: Vec<f32> = jobs.iter().filter(|job| job.status == Status::Running).filter_map(|job| done_part(&job.progress)).collect();
+        let done = (!parts.is_empty()).then(|| parts.iter().sum::<f32>() / parts.len() as f32);
+        let mut text = Vec::new();
+        match done {
+            Some(done) => text.push(format!("{:.0}%", done * 100.)),
+            None if running > 0 => text.push(format!("{running} running")),
+            None => {}
+        }
+        if waiting > 0 {
+            text.push(format!("{waiting} waiting"));
+        }
+        if failed > 0 {
+            text.push(format!("{failed} failed"));
+        }
+        (!text.is_empty()).then(|| (text.join(" · "), done))
+    }
+
+    /// The jobs: running and waiting ones in the queue's order (the waiting
+    /// dragged into another), then the finished ones, the newest first.
+    pub(crate) fn render_operations(&self, cx: &mut Context<Self>) -> impl IntoElement + use<> {
+        let jobs = self.transfers.queue.jobs();
+        let waiting: Rc<Vec<u64>> = Rc::new(jobs.iter().filter(|job| job.status == Status::Waiting).map(|job| job.id).collect());
+        let (unfinished, finished): (Vec<&JobView>, Vec<&JobView>) = jobs.iter().partition(|job| !job.status.finished());
+        let rows: Vec<AnyElement> = unfinished.into_iter().chain(finished.iter().rev().copied()).map(|job| self.render_job(job, waiting.clone(), cx).into_any_element()).collect();
         let theme = cx.theme();
-        let jobs = self.queue.jobs();
-        let rows = jobs.iter().map(|job| {
-            let (id, queue) = (job.id, self.queue.clone());
-            let p = &job.progress;
-            let state = match &job.status {
-                Status::Waiting => "Waiting".to_string(),
-                Status::Running if job.question.is_some() => "Asking".into(),
-                Status::Running if p.scanning => "Counting".into(),
-                Status::Running => match p.total_bytes {
-                    0 => "Running".into(),
-                    total => format!("{:.0}%", p.bytes as f64 * 100. / total as f64),
-                },
-                Status::Done if p.skipped > 0 => format!("Done, {} skipped", p.skipped),
-                Status::Done => "Done".into(),
-                Status::Cancelled => "Cancelled".into(),
-                Status::Failed => "Failed".into(),
-            };
-            let button = |icon: IconName, name: &'static str| {
-                Button::new((name, id)).ghost().xsmall().icon(icon)
-            };
-            let waiting = job.status == Status::Waiting;
-            let (up, down) = (queue.clone(), queue.clone());
-            h_flex()
-                .gap_2()
-                .py_1()
-                .border_b_1()
-                .border_color(theme.border)
-                .child(div().flex_1().min_w_0().truncate().child(job.title.clone()))
-                .child(
-                    div()
-                        .w(px(120.))
-                        .flex_none()
-                        .text_color(theme.muted_foreground)
-                        .child(state),
-                )
-                .child(
-                    h_flex()
-                        .w(px(84.))
-                        .flex_none()
-                        .justify_end()
-                        .when(waiting, |el| {
-                            el.child(
-                                button(IconName::ArrowUp, "queue-up")
-                                    .on_click(move |_, _, _| up.reorder(id, -1)),
-                            )
-                            .child(
-                                button(IconName::ArrowDown, "queue-down")
-                                    .on_click(move |_, _, _| down.reorder(id, 1)),
-                            )
-                        })
-                        .when(!job.status.finished(), |el| {
-                            el.child(
-                                button(IconName::Close, "queue-cancel")
-                                    .on_click(move |_, _, _| queue.cancel(id)),
-                            )
-                        }),
-                )
-        });
-        let queue = self.queue.clone();
-        v_flex()
-            .w_full()
-            .gap_3()
-            .text_sm()
-            .child(
-                v_flex()
-                    .id("queue-jobs")
-                    .max_h(px(360.))
-                    .overflow_y_scrollbar()
-                    .when(jobs.is_empty(), |el| {
-                        el.child(
-                            div()
-                                .text_color(theme.muted_foreground)
-                                .child("No operations."),
-                        )
-                    })
-                    .children(rows),
+        let queue = self.transfers.queue.clone();
+        let list = v_flex().id("operations").flex_1().min_h_0().overflow_y_scroll().px_1().gap_0p5().children(rows);
+        let list = match jobs.is_empty() {
+            true => list.child(div().p_2().text_color(theme.muted_foreground).child("No operations.")),
+            false => list,
+        };
+        v_flex().size_full().child(list).when(!finished.is_empty(), |el| {
+            el.child(
+                h_flex().px_1().pt_1().justify_end().child(Button::new("operations-clear").ghost().small().label("Clear finished").on_click(move |_, _, _| queue.clear_finished())),
             )
+        })
+    }
+
+    fn render_job(&self, job: &JobView, waiting: Rc<Vec<u64>>, cx: &mut Context<Self>) -> impl IntoElement + use<> {
+        let theme = cx.theme();
+        let (id, queue) = (job.id, self.transfers.queue.clone());
+        let p = &job.progress;
+        let (detail, color) = match &job.status {
+            Status::Waiting => ("Waiting".to_owned(), theme.muted_foreground),
+            Status::Running if job.question.is_some() => ("Waiting for your answer".into(), theme.warning),
+            Status::Running if p.scanning => (format!("Counting: {} files", p.total_files), theme.muted_foreground),
+            Status::Running => (running_text(job), theme.muted_foreground),
+            Status::Done if p.skipped > 0 => (format!("Done, {} skipped", p.skipped), theme.muted_foreground),
+            Status::Done => (job.note.clone().unwrap_or_else(|| "Done".into()), theme.muted_foreground),
+            Status::Cancelled => ("Cancelled".into(), theme.muted_foreground),
+            Status::Failed => (job.note.clone().unwrap_or_else(|| "Failed".into()), theme.danger),
+        };
+        let percent = done_part(p).map(|done| done * 100.);
+        let running = job.status == Status::Running;
+        let is_waiting = job.status == Status::Waiting;
+        let cancel = (!job.status.finished()).then(|| {
+            let queue = queue.clone();
+            Button::new(("job-cancel", id)).ghost().xsmall().icon(IconName::Close).tooltip("Cancel").on_click(move |_, _, _| queue.cancel(id))
+        });
+        let title = job.title.clone();
+        let target = theme.drop_target;
+        let row = v_flex()
+            .id(("job", id))
+            .px_1p5()
+            .py_1()
+            .gap_1()
+            .rounded(theme.radius)
+            .hover(|style| style.bg(theme.foreground.opacity(0.06)))
+            .when(job.status.finished(), |el| el.opacity(0.75))
             .child(
                 h_flex()
-                    .gap_2()
-                    .justify_end()
-                    .child(
-                        Button::new("queue-clear")
-                            .outline()
-                            .label("Clear finished")
-                            .on_click(move |_, _, _| queue.clear_finished()),
-                    )
-                    .child(
-                        Button::new("queue-close")
-                            .primary()
-                            .label("Close")
-                            .min_w(px(80.))
-                            .on_click(|_, window, cx| window.close_dialog(cx)),
-                    ),
+                    .gap_1()
+                    .child(div().flex_1().min_w_0().truncate().child(title.clone()))
+                    .children(cancel),
             )
+            .when(running, |el| el.child(Bar::new(("job-bar", id)).value(percent.unwrap_or(0.))))
+            .child(div().text_xs().text_color(color).whitespace_normal().child(detail));
+        // Waiting ones go where they are dropped, or a place up or down.
+        let dropped = self.transfers.queue.clone();
+        let row = row.when(is_waiting, move |row| {
+            let text: SharedString = title.into();
+            row.on_drag(JobDrag(id), move |_, grab, _, cx| cx.new(|_| DragLabel { text: text.clone(), grab }))
+                .drag_over::<JobDrag>(move |style, _, _, _| style.bg(target))
+                .on_drop(move |JobDrag(moved): &JobDrag, _, _| {
+                    let at = |job: u64| waiting.iter().position(|&id| id == job);
+                    if let (Some(from), Some(to)) = (at(*moved), at(id)) {
+                        dropped.reorder(*moved, to as isize - from as isize);
+                    }
+                })
+        });
+        let step = move |by: isize, label: &'static str| {
+            let queue = queue.clone();
+            gpui_kit::component::menu::PopupMenuItem::new(label).on_click(move |_, _, _| queue.reorder(id, by))
+        };
+        let (menu_queue, going) = (self.transfers.queue.clone(), !job.status.finished());
+        row.context_menu(move |menu, _, _| {
+            let queue = menu_queue.clone();
+            let menu = match is_waiting {
+                true => menu.item(step(-1, "Move Up")).item(step(1, "Move Down")).separator(),
+                false => menu,
+            };
+            match going {
+                true => menu.item(gpui_kit::component::menu::PopupMenuItem::new("Cancel").on_click(move |_, _, _| queue.cancel(id))),
+                false => menu.item(gpui_kit::component::menu::PopupMenuItem::new("Clear Finished").on_click(move |_, _, _| queue.clear_finished())),
+            }
+        })
     }
 }

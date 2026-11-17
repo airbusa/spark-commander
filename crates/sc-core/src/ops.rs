@@ -3,6 +3,7 @@
 
 pub mod attributes;
 pub mod checksum;
+pub mod delete;
 pub mod download;
 pub mod links;
 pub mod rename;
@@ -162,6 +163,10 @@ pub struct JobView {
     pub question: Option<Question>,
     /// What a finished task found, or why it failed.
     pub note: Option<String>,
+    /// When it began running, for its speed.
+    pub started: Option<std::time::Instant>,
+    /// When it finished: a done one is forgotten some minutes after.
+    pub finished: Option<std::time::Instant>,
 }
 
 /// Work other than copying: it fills in its progress, stops once cancelled,
@@ -259,6 +264,8 @@ impl Queue {
                     progress: Progress::default(),
                     question: None,
                     note: None,
+                    started: Some(std::time::Instant::now()),
+                    finished: None,
                 },
                 work: None,
                 answer: None,
@@ -287,6 +294,8 @@ impl Queue {
                 progress: Progress::default(),
                 question: None,
                 note: None,
+                started: None,
+                finished: None,
             },
             work: Some(work),
             answer: None,
@@ -364,6 +373,17 @@ impl Queue {
         }
     }
 
+    /// Done jobs finished over `after` ago are forgotten; failed and
+    /// cancelled ones stay until cleared, as they tell what did not happen.
+    pub fn forget_done(&self, after: std::time::Duration) {
+        let mut state = self.lock();
+        let before = state.jobs.len();
+        state.jobs.retain(|job| job.view.status != Status::Done || job.view.finished.is_none_or(|at| at.elapsed() < after));
+        if state.jobs.len() != before {
+            state.version += 1;
+        }
+    }
+
     pub fn clear_finished(&self) {
         let mut state = self.lock();
         state.jobs.retain(|job| !job.view.status.finished());
@@ -378,6 +398,9 @@ impl Queue {
         let mut state = self.lock();
         if let Some(job) = state.jobs.iter_mut().find(|job| job.view.id == id) {
             change(job);
+            if job.view.status.finished() && job.view.finished.is_none() {
+                job.view.finished = Some(std::time::Instant::now());
+            }
         }
         state.version += 1;
         self.0.1.notify_all();
@@ -396,6 +419,7 @@ impl Queue {
                     return;
                 };
                 job.view.status = Status::Running;
+                job.view.started = Some(std::time::Instant::now());
                 let work = job.work.take().expect("a waiting job has its work");
                 let found = (job.view.id, work, job.cancel.clone());
                 state.version += 1;
@@ -920,6 +944,25 @@ mod tests {
     use std::time::{Duration, SystemTime};
 
     use super::*;
+
+    #[test]
+    fn forgets_done_jobs_only() {
+        let queue = Queue::default();
+        let task = |title: &str, ok: bool| Task {
+            title: title.into(),
+            run: Box::new(move |_| if ok { Ok(String::new()) } else { Err(io::Error::other("no")) }),
+        };
+        queue.run_now(task("ok", true));
+        let bad = queue.run_now(task("bad", false));
+        while queue.jobs().iter().any(|job| !job.status.finished()) {
+            std::thread::sleep(std::time::Duration::from_millis(5));
+        }
+        assert!(queue.jobs().iter().all(|job| job.started.is_some() && job.finished.is_some()));
+        queue.forget_done(std::time::Duration::from_secs(60));
+        assert_eq!(queue.jobs().len(), 2, "not yet");
+        queue.forget_done(std::time::Duration::ZERO);
+        assert_eq!(queue.jobs().iter().map(|job| job.id).collect::<Vec<_>>(), [bad], "the failed one stays");
+    }
     use crate::vfs::Local;
 
     fn temp(name: &str) -> PathBuf {

@@ -114,6 +114,7 @@ pub enum Command {
     #[serde(alias = "SidebarFavourites")]
     SidebarConnections,
     SidebarPlaces,
+    SidebarOperations,
     ToggleSidebar,
     ThumbnailView,
     /// Dot files, and Windows' hidden and system files, shown or not.
@@ -389,6 +390,7 @@ pub const MENUS: &[Menu] = &[
                     cmd("Places", SidebarPlaces),
                     cmd("Folders", SidebarTree),
                     cmd("Connections", SidebarConnections),
+                    cmd("Operations", SidebarOperations),
                 ],
             },
             cmd("Quick View Panel", QuickViewPanel),
@@ -542,6 +544,7 @@ const FULL_NAMES: &[(Command, &str)] = &[
     (SidebarTree, "Sidebar: Folders"),
     (SidebarConnections, "Sidebar: Connections"),
     (SidebarPlaces, "Sidebar: Places"),
+    (SidebarOperations, "Sidebar: Operations"),
     (ToggleSidebar, "Sidebar: show or hide"),
     (AllFiles, "Show All Files"),
     (Programs, "Show Programs"),

@@ -133,6 +133,7 @@ impl Sidebar {
             Command::SidebarTree => self.tab == Some(SidebarTab::Tree),
             Command::SidebarConnections => self.tab == Some(SidebarTab::Connections),
             Command::SidebarPlaces => self.tab == Some(SidebarTab::Places),
+            Command::SidebarOperations => self.tab == Some(SidebarTab::Operations),
             Command::ToggleSidebar => self.tab.is_some(),
             _ => false,
         }
@@ -428,6 +429,7 @@ impl Commander {
             (SidebarTab::Places, Lucide::Bookmark, "Places"),
             (SidebarTab::Tree, Lucide::FolderTree, "Folders"),
             (SidebarTab::Connections, Lucide::Network, "Connections"),
+            (SidebarTab::Operations, Lucide::ListOrdered, "Operations"),
         ];
         let mut accordion = v_flex().h_full().flex_1().min_w_0();
         for (at, (which, icon, name)) in sections.into_iter().enumerate() {
@@ -437,9 +439,16 @@ impl Commander {
                 true => IconName::ChevronDown,
                 false => IconName::ChevronRight,
             };
+            // The queue's progress shows also while its section is shut.
+            let summary = (which == SidebarTab::Operations).then(|| self.operations_summary()).flatten();
+            let line = summary.as_ref().and_then(|(_, done)| *done).map(|done| {
+                div().absolute().left_0().bottom_0().h(px(2.)).w(relative(done)).bg(theme.progress_bar)
+            });
+            let summary = summary.map(|(text, _)| div().text_xs().text_color(theme.muted_foreground).child(text));
             // A click opens it; the open one stays: one is always open.
             let header = h_flex()
                 .id(name)
+                .relative()
                 .flex_none()
                 .h(SECTION)
                 .px_2()
@@ -449,6 +458,8 @@ impl Commander {
                 .hover(|style| style.bg(theme.foreground.opacity(0.06)))
                 .child(Icon::new(icon).size_4().flex_none())
                 .child(div().flex_1().font_medium().child(name))
+                .children(summary)
+                .children(line)
                 .child(Icon::new(chevron).xsmall().text_color(theme.muted_foreground))
                 .on_click(cx.listener(move |this, _, _, cx| this.open_section(which, cx)));
             accordion = accordion.child(header);
@@ -458,6 +469,7 @@ impl Commander {
                     SidebarTab::Tree => self.render_tree(cx).into_any_element(),
                     SidebarTab::Connections => self.render_connections(cx).into_any_element(),
                     SidebarTab::Places => self.render_places(cx).into_any_element(),
+                    SidebarTab::Operations => self.render_operations(cx).into_any_element(),
                 };
                 let content = v_flex().flex_1().min_h_0().overflow_hidden().pb_1().child(content);
                 accordion = match self.sidebar.leaving.is_some() {

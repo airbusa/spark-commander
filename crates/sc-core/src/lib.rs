@@ -1138,37 +1138,15 @@ impl Panel {
             .iter()
             .map(|e| self.path.join(&e.name))
             .collect();
-        let at = std::time::SystemTime::now();
-        let mut trashed = Vec::new();
-        let deleted = paths.iter().try_for_each(|path| {
-            if let Some(remote) = &self.remote {
-                // A server has no trash.
-                vfs::remove_all(&**remote, path)
-            } else if to_trash {
-                ops::undo::to_trash(path)?;
-                trashed.push(path.clone());
-                Ok(())
-            } else if fs::symlink_metadata(path)?.is_dir() {
-                fs::remove_dir_all(path)
-            } else {
-                // A link goes, never what it points to.
-                fs::remove_file(path)
+        let deleted = match &self.remote {
+            // A server has no trash.
+            Some(remote) => {
+                let deleted = paths.iter().try_for_each(|path| vfs::remove_all(&**remote, path));
+                activity::note(ops::delete::title(&paths, &self.path, false), &deleted);
+                deleted
             }
-        });
-        let what = match (paths.as_slice(), self.remote.is_some() || !to_trash) {
-            ([one], true) => format!("Delete {}", one.display()),
-            ([one], false) => format!("Move {} to the trash", one.display()),
-            (many, true) => format!("Delete {} items in {}", many.len(), self.path.display()),
-            (many, false) => format!("Move {} items in {} to the trash", many.len(), self.path.display()),
+            None => ops::delete::remove(&paths, to_trash, &ops::delete::title(&paths, &self.path, to_trash), &mut |_| Ok(())),
         };
-        activity::note(what, &deleted);
-        if !trashed.is_empty() {
-            let title = match trashed.as_slice() {
-                [one] => format!("Move \"{}\" to the trash", one.file_name().unwrap_or_default().to_string_lossy()),
-                many => format!("Move {} items to the trash", many.len()),
-            };
-            ops::undo::remember(title, ops::undo::Step::Trashed { paths: trashed, at, displaced: Vec::new() });
-        }
         let cursor = self.cursor;
         self.go_to(self.path.clone(), None)?;
         self.set_cursor(cursor);

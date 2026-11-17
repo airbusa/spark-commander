@@ -1096,19 +1096,33 @@ impl Commander {
         if panel.remote().is_some() || panel.in_archive() {
             return self.navigate_on(side, true, move |panel| panel.delete(false), window, cx);
         }
-        let folder = panel.folder().to_owned();
+        let (folder, cursor) = (panel.folder().to_owned(), panel.cursor());
         let paths: Vec<PathBuf> = panel.chosen().iter().map(|entry| folder.join(&entry.name)).collect();
-        match panel.delete(to_trash) {
-            // What is left of them, as administrator, for good.
-            Err(err) if denied(&err) => {
-                let left: Vec<PathBuf> = paths.into_iter().filter(|path| path.symlink_metadata().is_ok()).collect();
-                let what = format!("Deleting {} item(s)", left.len());
-                self.offer_admin(what, sc_core::system::elevate::Action::Delete(left), window, cx);
-            }
-            Err(err) => window.push_notification(Notification::error(format!("Could not delete: {err}")), cx),
-            Ok(()) => {}
-        }
-        self.refresh_folder(&folder, cx);
+        // In the queue, beside the copies: a big folder takes a while, and may be cancelled.
+        let title = sc_core::ops::delete::title(&paths, &folder, to_trash);
+        let (sent, ended) = futures::channel::oneshot::channel();
+        let task = sc_core::ops::delete::task(title, paths.clone(), to_trash, move |failed| {
+            let _ = sent.send(failed);
+        });
+        self.transfers.queue.run_now(task);
+        cx.spawn_in(window, async move |this, cx| {
+            let failed = ended.await;
+            let _ = this.update_in(cx, |this, window, cx| {
+                // The cursor stays where it was: on what came after the deleted.
+                let panel = this.panels[side].tabs.current_mut();
+                if panel.remote().is_none() && panel.folder() == folder && panel.reload().is_ok() {
+                    panel.set_cursor(cursor);
+                }
+                cx.notify();
+                // The queue shows how it ended; what permission kept is offered as administrator, for good.
+                if let Ok(Some(io::ErrorKind::PermissionDenied)) = failed {
+                    let left: Vec<PathBuf> = paths.into_iter().filter(|path| path.symlink_metadata().is_ok()).collect();
+                    let what = format!("Deleting {} item(s)", left.len());
+                    this.offer_admin(what, sc_core::system::elevate::Action::Delete(left), window, cx);
+                }
+            });
+        })
+        .detach();
     }
 
     /// Permission refused `what`: asked whether as administrator, the system
@@ -2540,9 +2554,8 @@ impl Render for Commander {
                     Command::SidebarConnections => {
                         this.toggle_sidebar(SidebarTab::Connections, window, cx)
                     }
-                    Command::OperationQueue => {
-                        transfer::open_queue(this.transfers.queue.clone(), window, cx)
-                    }
+                    Command::OperationQueue => this.show_operations(window, cx),
+                    Command::SidebarOperations => this.toggle_sidebar(SidebarTab::Operations, window, cx),
                     Command::SelectAll => this.mark(|panel| panel.mark_all(true), cx),
                     Command::UnselectAll => this.mark(|panel| panel.mark_all(false), cx),
                     Command::InvertSelection => this.mark(Panel::invert_marks, cx),

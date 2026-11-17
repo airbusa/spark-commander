@@ -28,12 +28,12 @@ pub struct Places<'a> {
 }
 
 /// Why `command` cannot run with `places`: a placeholder with nothing to stand for.
-pub fn missing(command: &str, places: &Places) -> Option<&'static str> {
+pub fn missing(command: &str, places: &Places) -> Option<String> {
     if command.contains("%T") && places.other.is_none() {
-        return Some("The other panel shows a server or an archive: %T needs a folder on this computer.");
+        return Some(crate::t!("main.tool.needs_local_folder"));
     }
     let named = ["%N", "%O", "%E"].iter().any(|placeholder| command.contains(placeholder));
-    (named && places.name.is_none()).then_some("The cursor is on no file: %N, %O and %E need one.")
+    (named && places.name.is_none()).then(|| crate::t!("main.tool.needs_file"))
 }
 
 /// `command` filled in: %P this panel's folder and %T the other's, each ending
@@ -103,7 +103,7 @@ mod tests {
         assert_eq!(expand("cp %S %T; echo %O.%E 100%%", &places), "cp 'report final.pdf' /backup/; echo report final.pdf 100%");
         let marked = Places { selected: vec!["a.txt".into(), "it's.txt".into()], ..places };
         assert_eq!(expand("tar cf x.tar %S", &marked), r"tar cf x.tar a.txt 'it'\''s.txt'");
-        assert_eq!(missing("cat %N", &Places { name: None, ..marked }), Some("The cursor is on no file: %N, %O and %E need one."));
+        assert_eq!(missing("cat %N", &Places { name: None, ..marked }).as_deref(), Some("The cursor is on no file: %N, %O and %E need one."));
         assert_eq!(expand("%X stays", &Places { folder: Path::new("/"), other: None, name: None, selected: Vec::new() }), "%X stays");
     }
 }

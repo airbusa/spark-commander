@@ -63,7 +63,7 @@ impl Commander {
         let panel = self.panels[dragged.side].tabs.current();
         match panel.dragged(dragged.row).as_slice() {
             [one] => one.display_name().into(),
-            many => format!("{} items", many.len()).into(),
+            many => sc_core::t!("panel.drag.items", count = many.len()).into(),
         }
     }
 
@@ -141,7 +141,7 @@ impl Commander {
             return;
         };
         if cut && batch.archived.is_some() {
-            let text = "Files cannot be cut out of archives; Ctrl+C copies them.";
+            let text = sc_core::t!("panel.clipboard.no_cut_in_archive");
             return window.push_notification(Notification::warning(text), cx);
         }
         batch.unmark = None;
@@ -168,11 +168,10 @@ impl Commander {
         }
         let count = batch.sources.len();
         self.file_clip = Some(FileClip { batch, cut, text });
-        let done = match cut {
-            true => "cut",
-            false => "copied",
+        let note = match cut {
+            true => sc_core::t!("panel.clipboard.cut", count = count),
+            false => sc_core::t!("panel.clipboard.copied", count = count),
         };
-        let note = format!("{count} item(s) {done}: Ctrl+V pastes them.");
         window.push_notification(Notification::info(note), cx);
     }
 
@@ -180,7 +179,7 @@ impl Commander {
     pub(crate) fn paste_files(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let to = Place::of(self.panels[self.active].tabs.current());
         if to.in_archive {
-            let text = "Files cannot be pasted into archives yet.";
+            let text = sc_core::t!("panel.clipboard.no_paste_in_archive");
             return window.push_notification(Notification::warning(text), cx);
         }
         let item = cx.read_from_clipboard();
@@ -192,7 +191,7 @@ impl Commander {
             None => match item.as_ref().and_then(other_files) {
                 Some((batch, cut)) => (batch, cut),
                 None => {
-                    let text = "The clipboard holds no files.";
+                    let text = sc_core::t!("panel.clipboard.no_files");
                     return window.push_notification(Notification::warning(text), cx);
                 }
             },
@@ -201,7 +200,7 @@ impl Commander {
             && batch.from.id() == to.fs.id()
             && batch.sources.iter().any(|source| source.parent() == Some(&to.folder));
         if here {
-            let text = "They are in this folder already: Ctrl+V pastes into another one.";
+            let text = sc_core::t!("panel.clipboard.same_folder");
             return window.push_notification(Notification::warning(text), cx);
         }
         // A cut is pasted once, as file managers do.

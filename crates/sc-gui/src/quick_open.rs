@@ -77,7 +77,7 @@ impl Render for QuickOpen {
         let palette = Palette::new(&self.state)
             .bordered(false)
             .max_h(px(440.))
-            .placeholder("A command, bookmark, folder, path, server, drive, workspace or tool")
+            .placeholder(sc_core::t!("quick_open.placeholder"))
             .on_confirm(move |at, window, cx| {
                 // The typed row, when there is one, comes first.
                 let pick = match (&typed, at.section) {
@@ -97,8 +97,8 @@ impl Render for QuickOpen {
         };
         // Its label holds the query, so the palette's filter keeps it.
         let go = self.typed.as_ref().map(|typed| {
-            let item = CommandItem::new().label(format!("Go to {typed}")).icon(Icon::new(Lucide::FolderOpen));
-            CommandGroup::new().label("Path").items([item])
+            let item = CommandItem::new().label(sc_core::t!("quick_open.go_to", path = typed)).icon(Icon::new(Lucide::FolderOpen));
+            CommandGroup::new().label(sc_core::t!("quick_open.group.path")).items([item])
         });
         go.into_iter().chain(self.groups.iter().cloned()).fold(palette, Palette::group)
     }
@@ -123,7 +123,7 @@ impl Commander {
             let label = format!("{}   {}", self.settings.bookmark_name(path), tilde(path, home));
             (row(label, Lucide::Bookmark), Pick::Folder(path.clone()))
         });
-        add("Bookmarks".into(), bookmarks.collect());
+        add(sc_core::t!("quick_open.group.bookmarks").into(), bookmarks.collect());
 
         // The active tab's history, the latest first, each place once.
         let history = &self.panels[self.active].tabs.current().history;
@@ -135,7 +135,7 @@ impl Commander {
                 recent.push((row(place_label(place), Lucide::FolderClock), Pick::Action(Box::new(GoToHistory(ix)))));
             }
         }
-        add("Recent Folders".into(), recent);
+        add(sc_core::t!("quick_open.group.recent_folders").into(), recent);
 
         let drives = self.sidebar.volumes.iter().map(|volume| {
             let label = match &volume.path {
@@ -144,26 +144,26 @@ impl Commander {
             };
             (row(label, Lucide::HardDrive), Pick::Volume(volume.clone()))
         });
-        add("Drives".into(), drives.collect());
+        add(sc_core::t!("quick_open.group.drives").into(), drives.collect());
 
         let servers = sc_core::sidebar::servers(&self.sidebar.connections, &self.sidebar.hosts);
         let servers = servers.into_iter().flat_map(|(_, servers)| servers).map(|server| {
             let label = format!("{}   {}", server.name, server.detail);
             (row(label, Lucide::Server), Pick::Server(server.address))
         });
-        add("Connections".into(), servers.collect());
+        add(sc_core::t!("quick_open.group.connections").into(), servers.collect());
 
         let workspaces = self.workspaces.list.iter().enumerate().map(|(ix, workspace)| {
             let item = row(workspace.name.clone(), Lucide::Layers).checked(ix == self.workspaces.current);
             (item.keys_of(Box::new(OpenWorkspace(ix))), Pick::Action(Box::new(OpenWorkspace(ix))))
         });
-        add("Workspaces".into(), workspaces.collect());
+        add(sc_core::t!("quick_open.group.workspaces").into(), workspaces.collect());
 
         let tools = self.settings.tools.iter().enumerate().map(|(ix, tool)| {
             let item = row(tool.name.clone(), Lucide::Wrench).keys_of(Box::new(RunTool(ix)));
             (item, Pick::Action(Box::new(RunTool(ix))))
         });
-        add("Tools".into(), tools.collect());
+        add(sc_core::t!("quick_open.group.tools").into(), tools.collect());
 
         // Every command, under its menu's name; workspaces are listed by theirs above.
         for (menu_name, commands) in menu::groups() {
@@ -181,7 +181,7 @@ impl Commander {
         let state = cx.new(|cx| CommandState::new(window, cx));
         let commander = cx.entity().downgrade();
         let view = cx.new(|_| QuickOpen { state, groups, picks: Rc::new(picks), commander, focused: false, typed: None });
-        window.open_dialog(cx, move |dialog, _, _| dialog.title("Quick Open").width(px(640.)).child(view.clone()));
+        window.open_dialog(cx, move |dialog, _, _| dialog.title(sc_core::t!("quick_open.title")).width(px(640.)).child(view.clone()));
     }
 
     fn quick_pick(&mut self, pick: Pick, window: &mut Window, cx: &mut Context<Self>) {

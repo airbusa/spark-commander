@@ -115,18 +115,17 @@ pub(crate) fn offer_admin_in(
     cx: &mut App,
     done: impl FnOnce(bool, &mut Window, &mut App) + 'static,
 ) {
-    let gone = match action {
-        sc_core::system::elevate::Action::Delete(_) => " What is deleted so is gone for good.",
-        _ => "",
+    let text = match action {
+        sc_core::system::elevate::Action::Delete(_) => sc_core::t!("main.admin.offer_delete", what = what),
+        _ => sc_core::t!("main.admin.offer", what = what),
     };
-    let text = format!("{what}: permission denied. As administrator, the system asks for the password.{gone}");
     type Done = Box<dyn FnOnce(bool, &mut Window, &mut App)>;
     let pending = Rc::new(std::cell::RefCell::new(Some((action, Box::new(done) as Done))));
     // After the dialog that asked for this closes: closing takes the topmost.
     window.defer(cx, move |window, cx| {
         window.open_alert_dialog(cx, move |alert, _, _| {
             let (pending, what) = (pending.clone(), what.clone());
-            alert.title("Permission denied").description(text.clone()).ok_text("As administrator").show_cancel(true).on_ok(move |_, window, cx| {
+            alert.title(sc_core::t!("main.admin.title")).description(text.clone()).ok_text(sc_core::t!("main.admin.button")).show_cancel(true).on_ok(move |_, window, cx| {
                 let Some((action, done)) = pending.borrow_mut().take() else {
                     return true;
                 };
@@ -143,7 +142,7 @@ pub(crate) fn offer_admin_in(
                             if let Err(err) = &ran
                                 && err.kind() != io::ErrorKind::Interrupted
                             {
-                                window.push_notification(Notification::error(format!("As administrator: {err}")), cx);
+                                window.push_notification(Notification::error(sc_core::t!("main.admin.failed", err = err)), cx);
                             }
                             done(ran.is_ok(), window, cx);
                         });
@@ -527,17 +526,17 @@ impl Commander {
         cx.set_global(MainWindow(window.window_handle(), cx.entity().downgrade()));
         let mut problems = Vec::new();
         let settings = Settings::load().unwrap_or_else(|err| {
-            problems.push(format!("Could not read the settings: {err}"));
+            problems.push(sc_core::t!("main.error.read_settings", err = err));
             Settings::default()
         });
         cx.set_global(ShowMinimap(settings.viewer.minimap));
         settings.apply_globally();
         let session = Session::load().unwrap_or_else(|err| {
-            problems.push(format!("Could not read the open tabs: {err}"));
+            problems.push(sc_core::t!("main.error.read_tabs", err = err));
             Session::default()
         });
         let workspaces = Workspaces::load().unwrap_or_else(|err| {
-            problems.push(format!("Could not read the workspaces: {err}"));
+            problems.push(sc_core::t!("main.error.read_workspaces", err = err));
             Workspaces::default()
         });
         menus::set_workspaces(&workspaces);
@@ -740,7 +739,7 @@ impl Commander {
 
     fn save_settings(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         if let Err(err) = self.settings.save() {
-            let text = format!("Could not save the settings: {err}");
+            let text = sc_core::t!("main.error.save_settings", err = err);
             window.push_notification(Notification::error(text), cx);
         }
     }
@@ -970,8 +969,8 @@ impl Commander {
                 (how != remote::Open::View).then(|| origin::upload_to(fs.clone(), path.clone()));
             let file = path.file_name().unwrap_or_default().display().to_string();
             let title = match how {
-                remote::Open::View => format!("Download {file} to view"),
-                _ => format!("Download {file} to edit"),
+                remote::Open::View => sc_core::t!("main.download.view", file = file),
+                _ => sc_core::t!("main.download.edit", file = file),
             };
             let (sent, received) = futures::channel::oneshot::channel();
             let task = origin::fetch_task(fs, path, title, move |fetched| {
@@ -1003,9 +1002,10 @@ impl Commander {
     fn new_folder(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let side = self.active;
         let commander = cx.entity().downgrade();
-        let label = "New folder (directory):";
+        // shortcut: name_dialog takes &'static str, so its words leak per open; drop .leak() once it takes a String.
+        let label = sc_core::t!("main.new_folder.label").leak();
         dialogs::name_dialog::open(
-            "New folder",
+            sc_core::t!("main.new_folder.title").leak(),
             label,
             String::new(),
             window,
@@ -1025,9 +1025,9 @@ impl Commander {
                     match panel.new_folder(&name) {
                         Err(err) if denied(&err) => {
                             let action = sc_core::system::elevate::Action::MakeFolder(folder.join(name.trim()));
-                            this.offer_admin(format!("Making \"{}\"", name.trim()), action, window, cx);
+                            this.offer_admin(sc_core::t!("main.admin.making", name = name.trim()), action, window, cx);
                         }
-                        Err(err) => window.push_notification(Notification::error(format!("Could not make the folder: {err}")), cx),
+                        Err(err) => window.push_notification(Notification::error(sc_core::t!("main.error.make_folder", err = err)), cx),
                         Ok(()) => {}
                     }
                     this.refresh_folder(&folder, cx);
@@ -1058,37 +1058,28 @@ impl Commander {
             },
             false => None,
         };
-        let what = match chosen.as_slice() {
-            [one] if one.is_dir => format!("the folder \"{}\"", one.display_name()),
-            [one] => format!("the file \"{}\"", one.display_name()),
-            many => format!("{} items", many.len()),
+        let (kind, name, count) = match chosen.as_slice() {
+            [one] if one.is_dir => ("folder", one.display_name(), 1),
+            [one] => ("file", one.display_name(), 1),
+            many => ("other", String::new(), many.len()),
         };
         let server = panel.remote().map(|remote| remote.url());
         let (title, text) = match to_trash {
             // An archive has no trash.
-            _ if let Some(archive) = &archive => ("Delete", format!("Delete {what} from {archive}? This cannot be undone.")),
+            _ if let Some(archive) = &archive => (sc_core::t!("main.delete.title"), sc_core::t!("main.delete.from_archive", kind = kind, name = name, count = count, archive = archive)),
             // A server has no trash.
-            _ if server.is_some() => (
-                "Delete",
-                format!(
-                    "Delete {what} on {}? This cannot be undone.",
-                    server.unwrap_or_default()
-                ),
-            ),
-            true => ("Delete", format!("Move {what} to the trash?")),
-            false => (
-                "Delete permanently",
-                format!("Delete {what} permanently? This cannot be undone."),
-            ),
+            _ if let Some(server) = &server => (sc_core::t!("main.delete.title"), sc_core::t!("main.delete.on_server", kind = kind, name = name, count = count, server = server)),
+            true => (sc_core::t!("main.delete.title"), sc_core::t!("main.delete.to_trash", kind = kind, name = name, count = count)),
+            false => (sc_core::t!("main.delete.title_permanently"), sc_core::t!("main.delete.permanently", kind = kind, name = name, count = count)),
         };
         let commander = cx.entity().downgrade();
         window.open_alert_dialog(cx, move |alert, _, _| {
             let commander = commander.clone();
             alert
-                .title(title)
+                .title(title.clone())
                 .ok_variant(ButtonVariant::Danger)
                 .description(text.clone())
-                .ok_text(title)
+                .ok_text(title.clone())
                 .show_cancel(true)
                 .on_ok(move |_, window, cx| {
                     let _ =
@@ -1124,7 +1115,7 @@ impl Commander {
                 // The queue shows how it ended; what permission kept is offered as administrator, for good.
                 if let Ok(Some(io::ErrorKind::PermissionDenied)) = failed {
                     let left: Vec<PathBuf> = paths.into_iter().filter(|path| path.symlink_metadata().is_ok()).collect();
-                    let what = format!("Deleting {} item(s)", left.len());
+                    let what = sc_core::t!("main.admin.deleting", count = left.len());
                     this.offer_admin(what, sc_core::system::elevate::Action::Delete(left), window, cx);
                 }
             });
@@ -1151,12 +1142,12 @@ impl Commander {
     /// with `redo` (Ctrl+Shift+Z) the newest undone done again; a move goes
     /// through the queue, the rest in the background.
     fn undo(&mut self, redo: bool, window: &mut Window, cx: &mut Context<Self>) {
-        let (taken, none, done, verb) = match redo {
-            false => (sc_core::ops::undo::take(), "Nothing to undo.", "Undone", "undo"),
-            true => (sc_core::ops::undo::take_undone(), "Nothing to redo.", "Redone", "redo"),
+        let (taken, way) = match redo {
+            false => (sc_core::ops::undo::take(), "undo"),
+            true => (sc_core::ops::undo::take_undone(), "redo"),
         };
         let Some(undo) = taken else {
-            return window.push_notification(Notification::info(none), cx);
+            return window.push_notification(Notification::info(sc_core::t!("main.undo.nothing", way = way)), cx);
         };
         let (title, queue) = (undo.title.clone(), self.transfers.queue.clone());
         // A server no tab keeps open is connected again, its login asked in a dialog.
@@ -1166,9 +1157,9 @@ impl Commander {
             let undone = undone.await;
             let _ = this.update_in(cx, |this, window, cx| {
                 let note = match undone {
-                    Ok(true) => Notification::info(format!("{done}: {title}")),
-                    Ok(false) => Notification::info(format!("In the queue to {verb}: {title}")),
-                    Err(err) => Notification::error(format!("Could not {verb} \"{title}\": {err}")),
+                    Ok(true) => Notification::info(sc_core::t!("main.undo.done", way = way, title = title)),
+                    Ok(false) => Notification::info(sc_core::t!("main.undo.queued", way = way, title = title)),
+                    Err(err) => Notification::error(sc_core::t!("main.undo.failed", way = way, title = title, err = err)),
                 };
                 window.push_notification(note, cx);
                 for ix in 0..2 {
@@ -1277,7 +1268,7 @@ impl Commander {
                 return true;
             }
             Typed::Local(target) => {
-                let text = format!("{}: no such folder on this computer", target.display());
+                let text = sc_core::t!("main.go.no_such_folder", path = target.display());
                 window.push_notification(Notification::error(text), cx);
                 return false;
             }
@@ -1355,7 +1346,7 @@ impl Commander {
                     self.navigate(move |panel| panel.go_to_folder(path), window, cx);
                 }
                 None => {
-                    let text = "Commands run on this computer; the panel is on a server.";
+                    let text = sc_core::t!("command_line.on_server");
                     window.push_notification(Notification::warning(text), cx);
                 }
             }
@@ -1405,7 +1396,7 @@ impl Commander {
         let (lines, input) = (self.commands.clone(), self.command.clone());
         let list = PopupMenu::build(window, cx, move |mut menu, _, _| {
             if lines.is_empty() {
-                return menu.label("No commands run yet");
+                return menu.label(sc_core::t!("command_line.history.empty"));
             }
             for line in &lines {
                 let (input, line) = (input.clone(), line.clone());
@@ -1546,7 +1537,7 @@ impl Commander {
         let commander = cx.entity().downgrade();
         let customize = move |menu: PopupMenu, _: &mut Window, _: &mut Context<PopupMenu>| {
             let commander = commander.clone();
-            let item = PopupMenuItem::new("Customize Toolbar…").when_some(menus::menu_icon(Command::Settings), |item, icon| item.icon(Icon::new(icon)));
+            let item = PopupMenuItem::new(sc_core::t!("toolbar.customize")).when_some(menus::menu_icon(Command::Settings), |item, icon| item.icon(Icon::new(icon)));
             menu.item(item.on_click(move |_, window, cx| {
                 let _ = commander.update(cx, |this, cx| this.open_settings_at("Toolbar", window, cx));
             }))
@@ -1582,8 +1573,8 @@ impl Commander {
         let name = self.panels[side].tabs.current().name();
         let commander = cx.entity().downgrade();
         dialogs::name_dialog::open(
-            "Rename tab",
-            "New name:",
+            sc_core::t!("tabs.rename.title").leak(),
+            sc_core::t!("tabs.rename.label").leak(),
             name,
             window,
             cx,
@@ -1608,7 +1599,7 @@ impl Commander {
         let (active, filter) = (self.active, self.settings.filter());
         let side = &mut self.panels[active];
         match side.tabs.reopen(ix) {
-            Err(err) => window.push_notification(Notification::error(format!("Could not reopen the tab: {err}")), cx),
+            Err(err) => window.push_notification(Notification::error(sc_core::t!("tabs.error.reopen", err = err)), cx),
             // A server's: a tab of home's meanwhile, its server's once connected.
             Ok(Some(state)) => {
                 side.tabs.add(home_panel(filter));
@@ -1627,7 +1618,7 @@ impl Commander {
         let history = &self.panels[self.active].tabs.current().history;
         let places: Vec<(usize, String, bool)> = history.places.iter().enumerate().rev().map(|(ix, place)| (ix, menus::place_label(place), ix == history.at)).collect();
         if places.is_empty() {
-            return window.push_notification(Notification::info("No folders in this tab's history yet."), cx);
+            return window.push_notification(Notification::info(sc_core::t!("tabs.history.empty")), cx);
         }
         let focus = self.focus.clone();
         let list = PopupMenu::build(window, cx, move |mut menu, _, _| {
@@ -1878,7 +1869,7 @@ impl Commander {
         let mut text = format!("{}: {err}", self.panels[ix].tabs.current().location());
         // The other panel could not follow.
         if self.sync_browsing && ix != self.active {
-            text = format!("{err}. Synchronized browsing is off.");
+            text = sc_core::t!("main.sync_browsing.lost", err = err);
             self.set_sync_browsing(false, cx);
         }
         window.push_notification(Notification::error(text), cx);
@@ -1951,7 +1942,7 @@ impl Commander {
                         .selected_index(side.tabs.active())
                         .children(tabs)
                         .suffix(
-                            Button::new(("tab-new", ix)).ghost().small().icon(IconName::Plus).tooltip("New Tab").on_click(cx.listener(move |this, _, window, cx| {
+                            Button::new(("tab-new", ix)).ghost().small().icon(IconName::Plus).tooltip(sc_core::t!("tabs.new")).on_click(cx.listener(move |this, _, window, cx| {
                                 this.active = ix;
                                 this.change_tabs(Tabs::duplicate, cx);
                                 window.focus(&this.focus, cx);
@@ -1993,14 +1984,14 @@ impl Commander {
         let sort = panel.sort();
         let colors = self.colors;
         let accent = theme.primary;
-        let title = |label: &'static str, key: SortKey, right: bool| {
+        let title = |id: &'static str, label: String, key: SortKey, right: bool| {
             let sorted = sort.key == key;
             let arrow = match sort.descending {
                 true => IconName::ArrowDown,
                 false => IconName::ArrowUp,
             };
             h_flex()
-                .id((label, ix))
+                .id((id, ix))
                 .h_full()
                 .px_1()
                 .gap_1()
@@ -2073,11 +2064,11 @@ impl Commander {
                         h_flex()
                             .size_full()
                             .ml(scrolled)
-                            .child(title("Name", SortKey::Name, false).w(name).flex_none())
-                            .child(title("Ext", SortKey::Extension, false).w(ext).flex_none())
-                            .child(title("Size", SortKey::Size, true).w(size).flex_none())
-                            .child(title("Date", SortKey::Modified, false).w(date).flex_none())
-                            .child(title("Attr", SortKey::Attributes, false).w(attr).flex_none()),
+                            .child(title("Name", sc_core::t!("panel.column.name"), SortKey::Name, false).w(name).flex_none())
+                            .child(title("Ext", sc_core::t!("panel.column.ext"), SortKey::Extension, false).w(ext).flex_none())
+                            .child(title("Size", sc_core::t!("panel.column.size"), SortKey::Size, true).w(size).flex_none())
+                            .child(title("Date", sc_core::t!("panel.column.date"), SortKey::Modified, false).w(date).flex_none())
+                            .child(title("Attr", sc_core::t!("panel.column.attr"), SortKey::Attributes, false).w(attr).flex_none()),
                     )
                     .children(handles),
             );
@@ -2184,7 +2175,7 @@ impl Commander {
                         cx.listener(move |this, _, window, cx| this.edit_path(ix, window, cx)),
                     )
                     // Search results say so, as Total Commander's listbox.
-                    .children(panel.found_label().map(|label| div().flex_none().pr_2().font_weight(FontWeight::BOLD).child(label)))
+                    .children(panel.found_label().map(|label| div().flex_none().pr_2().font_weight(FontWeight::BOLD).child(found_label(label))))
                     .child(div().flex_1().min_w_0().truncate().child(panel.location()))
                     // The filter stays in sight however long the path.
                     .children(filter_suffix(panel).map(|filter| div().flex_none().child(filter)))
@@ -2194,7 +2185,7 @@ impl Commander {
                                 .ghost()
                                 .xsmall()
                                 .icon(gpui_kit::assets::IconName::Link)
-                                .tooltip("Synchronized Browsing (click to stop)")
+                                .tooltip(sc_core::t!("panel.sync_browsing.stop"))
                                 .on_click(cx.listener(|this, _, _, cx| {
                                     cx.stop_propagation();
                                     this.set_sync_browsing(false, cx);
@@ -2208,7 +2199,7 @@ impl Commander {
                                 .ghost()
                                 .xsmall()
                                 .icon(IconName::Close)
-                                .tooltip("Disconnect")
+                                .tooltip(sc_core::t!("panel.disconnect"))
                                 .on_click(cx.listener(move |this, _, window, cx| {
                                     cx.stop_propagation();
                                     this.active = ix;
@@ -2233,8 +2224,8 @@ impl Commander {
                         Some(typed) => {
                             let filter = self.filtering(ix);
                             let (icon, label) = match filter {
-                                true => (Icon::new(gpui_kit::assets::IconName::Funnel), "Filter:"),
-                                false => (Icon::new(IconName::Search), "Search:"),
+                                true => (Icon::new(gpui_kit::assets::IconName::Funnel), sc_core::t!("panel.quick_filter.label")),
+                                false => (Icon::new(IconName::Search), sc_core::t!("panel.quick_search.label")),
                             };
                             let field = h_flex()
                                 .flex_1()
@@ -2250,7 +2241,7 @@ impl Commander {
                                 // The caret.
                                 .child(div().flex_none().w(px(1.5)).h(px(13.)).bg(theme.primary))
                                 .when(filter && typed.is_empty(), |el| {
-                                    el.child(div().pl_1p5().truncate().text_color(theme.muted_foreground).child("hides what does not match; Escape shows all"))
+                                    el.child(div().pl_1p5().truncate().text_color(theme.muted_foreground).child(sc_core::t!("panel.quick_filter.hint")))
                                 });
                             h_flex()
                                 .gap_1p5()
@@ -2883,6 +2874,14 @@ fn palette(settings: &Settings, window: &Window) -> theme::Palette {
     match &settings.font {
         Some(font) => theme::Palette { font: Some(font.family.clone()), font_size: Some(theme::font_pixels(font.size)), ..palette },
         None => palette,
+    }
+}
+
+/// The path line's start in search results or Branch View, in words.
+fn found_label(label: &str) -> String {
+    match label {
+        "Branch view:" => sc_core::t!("panel.found.branch_view"),
+        _ => sc_core::t!("panel.found.search_results"),
     }
 }
 

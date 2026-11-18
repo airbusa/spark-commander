@@ -114,18 +114,23 @@ impl RenderOnce for MenuItemElement {
                 this.on_hover(move |hovered, window, cx| (on_hover)(hovered, window, cx))
             })
             .when(!self.disabled, |this| {
+                // Windows 11's highlight is unframed.
+                let ring = match cx.try_global::<crate::NativeControls>().is_some_and(|native| native.card.is_some()) {
+                    true => cx.theme().transparent,
+                    false => cx.theme().ring,
+                };
                 // Not `group_hover` on the item's own group: GPUI styles an
                 // element before registering its group, and that fallback keeps
                 // the pointer's item lit after a key moves the highlight away.
                 this.hover(|this| {
                     this.bg(cx.theme().tokens.accent)
                         .text_color(cx.theme().accent_foreground)
-                        .border_color(cx.theme().ring)
+                        .border_color(ring)
                 })
                 .when(self.selected, |this| {
                     this.bg(cx.theme().tokens.accent)
                         .text_color(cx.theme().accent_foreground)
-                        .border_color(cx.theme().ring)
+                        .border_color(ring)
                 })
                 .when_some(self.on_click, |this, on_click| {
                     this.on_mouse_down(MouseButton::Left, move |_, _, cx| {

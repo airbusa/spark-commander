@@ -55,7 +55,11 @@ pub fn apply(palette: &Palette, cx: &mut App) -> PanelColors {
         false => ThemeMode::Light,
     };
     let list = palette.list();
-    let menu = palette.menu();
+    let mut menu = palette.menu();
+    // Windows 11's menus: the item under the pointer a faint fill, unframed (see `MenuItemElement`).
+    if sc_core::system::theme::control_style() == Some(ControlStyle::Fluent) {
+        (menu.popup, menu.hover) = if palette.dark { (0x2c2c2c, 0x383838) } else { (0xf9f9f9, 0xf0f0f0) };
+    }
     KitTheme::change(mode, None, cx);
     let font = palette.font.clone().filter(|font| installed(font, cx));
     let fixed = match cx.try_global::<FixedFont>().and_then(|fixed| fixed.0.clone()) {

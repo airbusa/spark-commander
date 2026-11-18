@@ -125,9 +125,10 @@ const SPARK_COMMANDER: Table = &[
     (Search, "secondary-f", windows("alt-f7")),
     (SearchInSeparateProcess, "secondary-shift-f", ""),
     (Bookmarks, "secondary-b", ""),
-    // A browser's, as the next.
+    // A browser's.
     (BookmarkFolder, "secondary-d", ""),
-    (ManageBookmarks, "secondary-shift-o", ""),
+    // Chrome's and Safari's bookmark manager.
+    (ManageBookmarks, "secondary-alt-b", ""),
     (GoBack, "alt-left", ""),
     (FolderHistory, "alt-down", ""),
     (GoForward, "alt-right", ""),
@@ -144,9 +145,9 @@ const SPARK_COMMANDER: Table = &[
     (Full, "alt-shift-d", windows("ctrl-f2")),
     (ThumbnailView, "ctrl-shift-f1", ""),
     (QuickViewPanel, "alt-shift-q", ""),
-    // Drop-down terminals' F12 (Yakuake, Guake); Ctrl+Shift+T where a terminal keeps its own keys.
-    (TerminalPanel, "f12", "secondary-shift-t"),
-    (NewTerminal, "shift-f12", ""),
+    // Midnight Commander's Ctrl+O; drop-down terminals' F12 (Yakuake, Guake).
+    (TerminalPanel, "ctrl-o", "f12"),
+    (NewTerminal, "ctrl-shift-o", "shift-f12"),
     (DuplicateTab, "secondary-t", ""),
     (AllFiles, "ctrl-shift-f10", ""),
     (Programs, "ctrl-shift-f11", ""),
@@ -238,8 +239,8 @@ const TOTAL_COMMANDER: Table = &[
     (SidebarTree, "ctrl-shift-f8", ""),
     (ThumbnailView, "ctrl-shift-f1", ""),
     (QuickViewPanel, "ctrl-q", ""),
-    (TerminalPanel, "f12", "secondary-shift-t"),
-    (NewTerminal, "shift-f12", ""),
+    (TerminalPanel, "ctrl-o", "f12"),
+    (NewTerminal, "ctrl-shift-o", "shift-f12"),
     (DuplicateTab, "ctrl-t", ""),
     (AllFiles, "ctrl-f10", ""),
     (Programs, "ctrl-f11", ""),

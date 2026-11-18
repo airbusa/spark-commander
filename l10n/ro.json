@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "Cât acoperă desktopul din spate:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "Acest desktop nu estompează: efectele de transparență sunt dezactivate sau este o sesiune Desktop la distanță."
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity}%"
   },

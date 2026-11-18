@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "Mennyire takarja a mögötte lévő asztalt:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "Ez az asztal nem homályosít: az átlátszósági effektusok ki vannak kapcsolva, vagy ez egy távoli asztali munkamenet."
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity}%"
   },

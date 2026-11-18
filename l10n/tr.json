@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "Arkasındaki masaüstünü ne kadar örttüğü:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "Bu masaüstü bulanıklaştırmaz: saydamlık efektleri kapalı ya da bu bir Uzak Masaüstü oturumu."
+  },
   "settings.backdrop.opacity": {
     "message": "%{opacity}"
   },

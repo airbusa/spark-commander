@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "Quanto cobre o ambiente de trabalho por trás:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "Este ambiente de trabalho não desfoca: os efeitos de transparência estão desativados ou é uma sessão de Ambiente de Trabalho Remoto."
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity}%"
   },

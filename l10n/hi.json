@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "यह पीछे के डेस्कटॉप को कितना ढके:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "यह डेस्कटॉप धुंधला नहीं करता: पारदर्शिता प्रभाव बंद हैं, या यह रिमोट डेस्कटॉप सत्र है।"
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity}%"
   },

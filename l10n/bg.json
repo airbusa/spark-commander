@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "Колко покрива работния плот отзад:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "Този работен плот не размива: ефектите на прозрачност са изключени или това е сесия на отдалечен работен плот."
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity}%"
   },

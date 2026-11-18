@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "Opacité par-dessus le bureau :"
   },
+  "settings.backdrop.no_blur": {
+    "message": "Ce bureau ne floute pas : les effets de transparence sont désactivés, ou c'est une session Bureau à distance."
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity} %"
   },

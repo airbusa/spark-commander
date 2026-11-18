@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "Наскільки перекривати стільницю позаду:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "Цей робочий стіл не розмиває: ефекти прозорості вимкнено, або це сеанс віддаленого робочого стола."
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity}%"
   },

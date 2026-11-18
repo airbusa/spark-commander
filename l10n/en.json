@@ -4871,6 +4871,10 @@
     "description": "Settings › Layout › Sidebar and Settings › Terminal: the label over the opacity slider.",
     "message": "How much it covers the desktop behind it:"
   },
+  "settings.backdrop.no_blur": {
+    "description": "Settings › Layout › Sidebar and Settings › Terminal: under the disabled blur check box, why it is disabled.",
+    "message": "This desktop does not blur: Transparency effects are off, or it is a Remote Desktop session."
+  },
   "settings.backdrop.opacity": {
     "description": "Settings › Layout › Sidebar and Settings › Terminal: beside the slider; opacity = the percentage, e.g. 85.",
     "message": "{opacity}%"

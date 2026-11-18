@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "Quanto copre il desktop dietro:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "Questo desktop non sfoca: gli effetti di trasparenza sono disattivati, oppure è una sessione di Desktop remoto."
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity}%"
   },

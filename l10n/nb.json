@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "Hvor mye det dekker skrivebordet bak:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "Dette skrivebordet gjør ikke uskarpt: gjennomsiktighetseffekter er slått av, eller det er en Eksternt skrivebord-økt."
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity} %"
   },

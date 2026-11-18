@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "Quant tapa l’escriptori del darrere:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "Aquest escriptori no difumina: els efectes de transparència estan desactivats o és una sessió d'Escriptori remot."
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity}%"
   },

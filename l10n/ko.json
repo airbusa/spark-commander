@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "뒤의 데스크톱을 가리는 정도:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "이 데스크톱은 흐리게 하지 않습니다: 투명 효과가 꺼져 있거나 원격 데스크톱 세션입니다."
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity}%"
   },

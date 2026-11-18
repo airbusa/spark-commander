@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "Koliko prekrije namizje v ozadju:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "To namizje ne zamegljuje: učinki prosojnosti so izklopljeni ali pa gre za sejo oddaljenega namizja."
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity} %"
   },

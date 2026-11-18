@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "背後のデスクトップを覆う度合い："
   },
+  "settings.backdrop.no_blur": {
+    "message": "このデスクトップはぼかしません: 透明効果がオフか、リモート デスクトップ セッションです。"
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity}%"
   },

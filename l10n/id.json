@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "Seberapa banyak menutupi desktop di belakangnya:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "Desktop ini tidak memburamkan: efek transparansi nonaktif, atau ini sesi Desktop Jarak Jauh."
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity}%"
   },

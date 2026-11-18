@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "Jak bardzo zakrywa pulpit pod spodem:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "Ten pulpit nie rozmywa: efekty przezroczystości są wyłączone lub jest to sesja pulpitu zdalnego."
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity}%"
   },

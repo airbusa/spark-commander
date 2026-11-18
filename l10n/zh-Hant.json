@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "覆蓋後方桌面的程度："
   },
+  "settings.backdrop.no_blur": {
+    "message": "此桌面不模糊:透明效果已關閉,或這是遠端桌面工作階段。"
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity}%"
   },

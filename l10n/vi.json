@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "Mức che phủ màn hình nền phía sau:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "Màn hình nền này không làm mờ: hiệu ứng trong suốt đang tắt, hoặc đây là phiên Máy tính Từ xa."
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity}%"
   },

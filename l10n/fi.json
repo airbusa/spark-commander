@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "Kuinka paljon se peittää taustalla olevaa työpöytää:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "Tämä työpöytä ei sumenna: läpinäkyvyystehosteet ovat pois päältä tai kyseessä on etätyöpöytäistunto."
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity} %"
   },

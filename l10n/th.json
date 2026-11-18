@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "ความทึบที่บังเดสก์ท็อปด้านหลัง:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "เดสก์ท็อปนี้ไม่เบลอ: เอฟเฟกต์ความโปร่งใสปิดอยู่ หรือเป็นเซสชันเดสก์ท็อประยะไกล"
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity}%"
   },

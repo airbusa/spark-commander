@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "Wie stark es den Desktop dahinter verdeckt:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "Dieser Desktop zeichnet nicht weich: Transparenzeffekte sind aus, oder es ist eine Remotedesktop-Sitzung."
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity} %"
   },

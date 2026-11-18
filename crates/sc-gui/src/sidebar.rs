@@ -220,7 +220,7 @@ impl Commander {
         let sidebar = self.sidebar.tab.or(self.sidebar.closing).is_some() && self.sidebar.tint.is_some();
         let terminal = self.terminal_shown && self.terminal_look.0.is_some();
         // shortcut: the window has one backdrop: blurred when either part shown asks for it.
-        let blur = sidebar && self.sidebar.blur || terminal && self.terminal_look.1;
+        let blur = (sidebar && self.sidebar.blur || terminal && self.terminal_look.1) && theme::blurs();
         let see_through = sidebar || terminal;
         window.set_background_appearance(match see_through {
             false => WindowBackgroundAppearance::Opaque,

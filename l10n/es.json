@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "Cuánto cubre el escritorio de detrás:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "Este escritorio no desenfoca: los efectos de transparencia están desactivados o es una sesión de Escritorio remoto."
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity}%"
   },

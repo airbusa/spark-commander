@@ -1029,6 +1029,7 @@ impl SettingsDialog {
             false => (t!("settings.backdrop.sidebar"), &self.opacity, self.draft.sidebar_opacity.0, self.draft.sidebar_blur.0),
             true => (t!("settings.backdrop.terminal"), &self.terminal_opacity, self.draft.terminal_opacity.0, self.draft.terminal_blur.0),
         };
+        let blurs = sc_core::system::theme::blurs();
         let shown = match opacity {
             100 => t!("settings.backdrop.solid"),
             0 => t!("settings.backdrop.clear"),
@@ -1047,7 +1048,8 @@ impl SettingsDialog {
                 .child(
                     Checkbox::new(if terminal { "terminal-blur" } else { "sidebar-blur" })
                         .label(t!("settings.backdrop.blur"))
-                        .checked(blur)
+                        .checked(blur && blurs)
+                        .disabled(!blurs)
                         .on_click(cx.listener(move |this, checked: &bool, window, cx| {
                             match terminal {
                                 true => this.draft.terminal_blur = Blur(*checked),
@@ -1055,7 +1057,8 @@ impl SettingsDialog {
                             }
                             this.try_backdrop(window, cx);
                         })),
-                ),
+                )
+                .when(!blurs, |this| this.child(div().text_color(cx.theme().muted_foreground).child(t!("settings.backdrop.no_blur")))),
         )
     }
 

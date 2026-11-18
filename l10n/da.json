@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "Hvor meget det dækker skrivebordet bagved:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "Dette skrivebord slører ikke: gennemsigtighedseffekter er slået fra, eller det er en Fjernskrivebord-session."
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity} %"
   },

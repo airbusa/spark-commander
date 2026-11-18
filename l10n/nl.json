@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "Hoeveel het bureaublad erachter wordt bedekt:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "Dit bureaublad vervaagt niet: transparantie-effecten staan uit, of het is een Extern bureaublad-sessie."
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity}%"
   },

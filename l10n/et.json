@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "Kui palju see katab enda taga olevat töölauda:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "See töölaud ei hägusta: läbipaistvusefektid on välja lülitatud või on see kaugtöölaua seanss."
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity}%"
   },

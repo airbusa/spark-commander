@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "Koliko prekriva radnu površinu u pozadini:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "Ova radna površina ne zamućuje: efekti prozirnosti su isključeni ili je ovo sesija udaljene radne površine."
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity} %"
   },

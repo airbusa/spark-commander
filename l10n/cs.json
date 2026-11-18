@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "Jak moc zakrývá plochu za sebou:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "Tato plocha nerozmazává: efekty průhlednosti jsou vypnuté, nebo jde o relaci vzdálené plochy."
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity} %"
   },

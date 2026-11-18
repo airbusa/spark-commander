@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "Kiek uždengiamas fone esantis darbalaukis:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "Šis darbalaukis nesulieja: skaidrumo efektai išjungti arba tai nuotolinio darbalaukio seansas."
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity} %"
   },

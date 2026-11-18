@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "Hur mycket den täcker skrivbordet bakom:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "Det här skrivbordet gör inte suddigt: genomskinlighetseffekter är avstängda, eller så är det en fjärrskrivbordssession."
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity} %"
   },

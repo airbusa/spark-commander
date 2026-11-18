@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "Колико прекрива радну површину иза себе:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "Ова радна површина не замућује: ефекти провидности су искључени или је ово сесија удаљене радне површине."
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity}%"
   },

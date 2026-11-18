@@ -3653,6 +3653,9 @@
   "settings.backdrop.cover": {
     "message": "Cik lielā mērā tas aizsedz aiz tā esošo darbvirsmu:"
   },
+  "settings.backdrop.no_blur": {
+    "message": "Šī darbvirsma neizpludina: caurspīdīguma efekti ir izslēgti, vai arī šī ir attālās darbvirsmas sesija."
+  },
   "settings.backdrop.opacity": {
     "message": "{opacity}%"
   },

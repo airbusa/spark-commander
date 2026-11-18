@@ -349,6 +349,24 @@ pub fn see_through() -> bool {
     cfg!(any(target_os = "macos", windows))
 }
 
+/// Whether what shows through is blurred: on Windows, not with Transparency
+/// effects off, nor over Remote Desktop, which never blurs.
+pub fn blurs() -> bool {
+    #[cfg(windows)]
+    {
+        use windows::Win32::System::Registry::{HKEY_CURRENT_USER, RRF_RT_REG_DWORD, RegGetValueW};
+        use windows::Win32::UI::WindowsAndMessaging::{GetSystemMetrics, SM_REMOTESESSION};
+        use windows::core::w;
+        let (mut on, mut size) = (1u32, 4u32);
+        let key = w!(r"Software\Microsoft\Windows\CurrentVersion\Themes\Personalize");
+        let data = Some(std::ptr::from_mut(&mut on).cast());
+        let _ = unsafe { RegGetValueW(HKEY_CURRENT_USER, key, w!("EnableTransparency"), RRF_RT_REG_DWORD, None, data, Some(&mut size)) };
+        on != 0 && unsafe { GetSystemMetrics(SM_REMOTESESSION) } == 0
+    }
+    #[cfg(not(windows))]
+    see_through()
+}
+
 /// The desktop style whose controls the app draws.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ControlStyle {

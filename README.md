@@ -6,7 +6,7 @@ share one core: **Spark Commander**, the desktop app, and **scmd**, the same
 file manager in a text terminal. Written in Rust; free software under the
 GPL.
 
-![Spark Commander: a project folder on the left, photos as thumbnails on the right](docs/screenshots/linux/main-dark.png)
+![Spark Commander: a project folder on the left, photos as thumbnails on the right](docs/screenshots/linux/kde/main-dark.png)
 
 ## What it does
 
@@ -53,15 +53,15 @@ GPL.
   every shortcut can be changed (Configuration › Shortcuts).
 - It follows the desktop's look: light or dark, the KDE, GNOME, Windows 11 or
   macOS style of controls, and the sidebar's blur on KDE Plasma and GNOME.
-- 36 languages.
+- 36 languages ([the list](#translations)).
 
 ## Screenshots
 
 | | |
 |---|---|
-| ![Inside a zip archive, with the terminal open, in the light look](docs/screenshots/linux/main-light.png) | ![The viewer showing Rust code with syntax colouring](docs/screenshots/linux/viewer.png) |
+| ![Inside a zip archive, with the terminal open, in the light look](docs/screenshots/linux/kde/main-light.png) | ![The viewer showing Rust code with syntax colouring](docs/screenshots/linux/kde/viewer.png) |
 | Inside a zip archive, with the terminal open | The viewer |
-| ![The Multi-Rename Tool previewing new names for eight photos](docs/screenshots/linux/multi-rename.png) | ![scmd, the terminal version, in Midnight Commander's colours](docs/screenshots/linux/scmd.png) |
+| ![The Multi-Rename Tool previewing new names for eight photos](docs/screenshots/linux/kde/multi-rename.png) | ![scmd, the terminal version, in Midnight Commander's colours](docs/screenshots/linux/scmd.png) |
 | The Multi-Rename Tool | scmd, in a text terminal |
 
 More, on [Linux, macOS and Windows](docs/screenshots.md).
@@ -122,6 +122,21 @@ ones for your system, and the app offers them when a file needs one.
 7-Zip (archives) and PDFium (PDF) come with the app itself.
 
 ## Translations
+
+Both programs speak 36 languages; Configuration › Settings › Language
+chooses one, else the system's is used.
+
+|   |   |   |   |
+|---|---|---|---|
+| Български<br>Bulgarian | Català<br>Catalan | 简体中文<br>Chinese (Simplified) | 繁體中文<br>Chinese (Traditional) |
+| Hrvatski<br>Croatian | Čeština<br>Czech | Dansk<br>Danish | Nederlands<br>Dutch |
+| English | Eesti<br>Estonian | Suomi<br>Finnish | Français<br>French |
+| Deutsch<br>German | Ελληνικά<br>Greek | हिन्दी<br>Hindi | Magyar<br>Hungarian |
+| Bahasa Indonesia<br>Indonesian | Italiano<br>Italian | 日本語<br>Japanese | 한국어<br>Korean |
+| Latviešu<br>Latvian | Lietuvių<br>Lithuanian | Norsk bokmål<br>Norwegian Bokmål | Polski<br>Polish |
+| Português (Brasil)<br>Portuguese (Brazil) | Português (Portugal)<br>Portuguese (Portugal) | Română<br>Romanian | Српски<br>Serbian |
+| Slovenčina<br>Slovak | Slovenščina<br>Slovenian | Español<br>Spanish | Svenska<br>Swedish |
+| ไทย<br>Thai | Türkçe<br>Turkish | Українська<br>Ukrainian | Tiếng Việt<br>Vietnamese |
 
 The words of both programs are in [`l10n/`](l10n), one file per language,
 with English as the source; [`l10n/README.md`](l10n/README.md) explains the

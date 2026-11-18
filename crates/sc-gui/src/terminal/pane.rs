@@ -243,6 +243,7 @@ impl Commander {
 
     /// The tabs and a new one's +.
     fn render_terminal_tabs(&self, cx: &mut Context<Self>) -> impl IntoElement + use<> {
+        let mac = crate::appearance::mac_tabs(cx).is_some();
         let tabs = self.terminals.iter().enumerate().map(|(ix, tab)| {
             let view = tab.view.read(cx);
             let name = match (&view.title, &tab.dir) {
@@ -268,18 +269,23 @@ impl Commander {
                     .child(state_layers(CLOSE, images, false))
                     .on_click(clicked)
                     .into_any_element(),
+                None if mac => Button::new(("terminal-close", ix)).ghost().xsmall().icon(IconName::Close).rounded(px(8.)).on_click(clicked).into_any_element(),
                 None => Button::new(("terminal-close", ix)).ghost().xsmall().label("×").on_click(clicked).into_any_element(),
             };
-            Tab::new().label(name).suffix(close)
+            // macOS: at the left, as Finder's, the name still centred.
+            match mac {
+                true => Tab::new().label(name).prefix(div().ml_1().child(close)).suffix(div().mr_1().w(px(20.))),
+                false => Tab::new().label(name).suffix(close),
+            }
         });
         let tabs: Vec<Tab> = tabs.collect();
-        let new = Button::new("terminal-new").ghost().small().icon(IconName::Plus).on_click(cx.listener(|this, _, window, cx| this.new_terminal_tab(window, cx)));
-        TabBar::new("terminal-tabs")
+        let new = Button::new("terminal-new").icon(IconName::Plus).on_click(cx.listener(|this, _, window, cx| this.new_terminal_tab(window, cx)));
+        let bar = TabBar::new("terminal-tabs")
             .small()
             .selected_index(self.terminal_tab)
             .children(tabs)
-            .suffix(new)
-            .on_click(cx.listener(|this, ix: &usize, window, cx| this.select_terminal_tab(*ix, window, cx)))
+            .on_click(cx.listener(|this, ix: &usize, window, cx| this.select_terminal_tab(*ix, window, cx)));
+        crate::appearance::tab_bar_with_new(bar, new, cx)
     }
 
     /// The terminal under the panels, its top edge dragged for its height;

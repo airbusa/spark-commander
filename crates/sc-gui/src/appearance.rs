@@ -353,3 +353,28 @@ fn toolkit_controls(images: &mut std::collections::HashMap<String, sc_core::syst
     let tab_close = states("tabclose.{}");
     Some(ToolkitControls { scale, checkbox, button, tab_close })
 }
+
+/// macOS's look, whose tab bars are Finder's.
+pub fn mac_tabs(cx: &App) -> Option<gpui_kit::component::MacControls> {
+    cx.try_global::<gpui_kit::component::MacControls>().copied().filter(|_| !cx.has_global::<NativeControls>())
+}
+
+/// A tab bar ending in `new`, its + button: on macOS a circle beside the bar, as Finder's.
+pub fn tab_bar_with_new(bar: gpui_kit::component::tab::TabBar, new: gpui_kit::component::button::Button, cx: &App) -> gpui_kit::AnyElement {
+    use gpui_kit::component::button::{ButtonCustomVariant, ButtonVariants};
+    use gpui_kit::component::{Sizable, h_flex};
+    use gpui_kit::{IntoElement, ParentElement, Styled, div};
+    let Some(mac) = mac_tabs(cx) else {
+        return bar.suffix(new.ghost().small()).into_any_element();
+    };
+    let style = ButtonCustomVariant::new(cx).color(mac.tab_track).hover(mac.group).active(mac.button_pressed).foreground(mac.text);
+    let circle = div()
+        .flex_none()
+        .size(px(28.))
+        .mr(px(4.))
+        .rounded_full()
+        .border(px(0.5))
+        .border_color(mac.tab_rim)
+        .child(new.custom(style).small().size_full().rounded(px(14.)));
+    h_flex().gap(px(4.)).child(bar.flex_1()).child(circle).into_any_element()
+}

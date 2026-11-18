@@ -1936,25 +1936,22 @@ impl Commander {
                 }),
             )
         });
+        let bar = TabBar::new(("tabs", ix))
+            .small()
+            .selected_index(side.tabs.active())
+            .children(tabs)
+            .on_click(cx.listener(move |this, tab: &usize, window, cx| {
+                this.select_tab(ix, *tab, cx);
+                window.focus(&this.focus, cx);
+            }));
+        let new = Button::new(("tab-new", ix)).icon(IconName::Plus).tooltip(sc_core::t!("tabs.new")).on_click(cx.listener(move |this, _, window, cx| {
+            this.active = ix;
+            this.change_tabs(Tabs::duplicate, cx);
+            window.focus(&this.focus, cx);
+        }));
         Some(
             div()
-                .child(
-                    TabBar::new(("tabs", ix))
-                        .small()
-                        .selected_index(side.tabs.active())
-                        .children(tabs)
-                        .suffix(
-                            Button::new(("tab-new", ix)).ghost().small().icon(IconName::Plus).tooltip(sc_core::t!("tabs.new")).on_click(cx.listener(move |this, _, window, cx| {
-                                this.active = ix;
-                                this.change_tabs(Tabs::duplicate, cx);
-                                window.focus(&this.focus, cx);
-                            })),
-                        )
-                        .on_click(cx.listener(move |this, tab: &usize, window, cx| {
-                            this.select_tab(ix, *tab, cx);
-                            window.focus(&this.focus, cx);
-                        })),
-                )
+                .child(appearance::tab_bar_with_new(bar, new, cx))
                 .context_menu(move |menu, window, cx| {
                     let tabs = &commander.read(cx).panels[ix].tabs;
                     let locked = tabs.current().is_locked();

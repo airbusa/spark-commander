@@ -6,7 +6,7 @@ share one core: **Spark Commander**, the desktop app, and **scmd**, the same
 file manager in a text terminal. Written in Rust; free software under the
 GPL.
 
-![Spark Commander: a project folder on the left, photos as thumbnails on the right](docs/screenshots/main-dark.png)
+![Spark Commander: a project folder on the left, photos as thumbnails on the right](docs/screenshots/linux/main-dark.png)
 
 ## What it does
 
@@ -59,10 +59,12 @@ GPL.
 
 | | |
 |---|---|
-| ![Inside a zip archive, with the terminal open, in the light look](docs/screenshots/main-light.png) | ![The viewer showing Rust code with syntax colouring](docs/screenshots/viewer.png) |
+| ![Inside a zip archive, with the terminal open, in the light look](docs/screenshots/linux/main-light.png) | ![The viewer showing Rust code with syntax colouring](docs/screenshots/linux/viewer.png) |
 | Inside a zip archive, with the terminal open | The viewer |
-| ![The Multi-Rename Tool previewing new names for eight photos](docs/screenshots/multi-rename.png) | ![scmd, the terminal version, in Midnight Commander's colours](docs/screenshots/scmd.png) |
+| ![The Multi-Rename Tool previewing new names for eight photos](docs/screenshots/linux/multi-rename.png) | ![scmd, the terminal version, in Midnight Commander's colours](docs/screenshots/linux/scmd.png) |
 | The Multi-Rename Tool | scmd, in a text terminal |
+
+More, on [Linux, macOS and Windows](docs/screenshots.md).
 
 ## Download
 

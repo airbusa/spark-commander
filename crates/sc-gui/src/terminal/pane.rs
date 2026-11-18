@@ -39,6 +39,8 @@ pub(crate) struct TerminalDrag;
 const PANELS_LEFT: f32 = 300.;
 /// The group a tab's drawn close button follows the pointer by.
 const CLOSE: &str = "terminal-tab-close";
+/// macOS: the tab under the pointer, whose close button alone shows.
+const TAB: &str = "terminal-tab";
 
 fn viewport_height(window: &Window) -> f32 {
     f32::from(window.viewport_size().height)
@@ -272,9 +274,13 @@ impl Commander {
                 None if mac => Button::new(("terminal-close", ix)).ghost().xsmall().icon(IconName::Close).rounded(px(8.)).on_click(clicked).into_any_element(),
                 None => Button::new(("terminal-close", ix)).ghost().xsmall().label("×").on_click(clicked).into_any_element(),
             };
-            // macOS: at the left, as Finder's, the name still centred.
+            // macOS: at the left and only under the pointer, as Finder's, the name still centred.
             match mac {
-                true => Tab::new().label(name).prefix(div().ml_1().child(close)).suffix(div().mr_1().w(px(20.))),
+                true => Tab::new()
+                    .group(TAB)
+                    .label(name)
+                    .prefix(div().ml_1().invisible().group_hover(TAB, |style| style.visible()).child(close))
+                    .suffix(div().mr_1().w(px(20.))),
                 false => Tab::new().label(name).suffix(close),
             }
         });

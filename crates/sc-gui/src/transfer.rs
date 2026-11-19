@@ -382,10 +382,15 @@ impl Commander {
     }
 
     fn queue_changed(&mut self, window: &mut Window, cx: &mut Context<Self>) {
+        // The question's dialog gone unanswered (closed in place of another): asked again.
+        let lost = self.transfers.asked.is_some() && !window.has_active_dialog(cx);
         let transfers = &mut self.transfers;
         let version = transfers.queue.version();
-        if version == transfers.version {
+        if version == transfers.version && !lost {
             return;
+        }
+        if lost {
+            transfers.asked = None;
         }
         transfers.version = version;
         let jobs = transfers.queue.jobs();

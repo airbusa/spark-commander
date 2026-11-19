@@ -1560,7 +1560,10 @@ impl Commander {
         };
         // The buttons in groups, as the separators part them.
         let mut groups: Vec<Vec<AnyElement>> = vec![Vec::new()];
-        for item in shown {
+        // Windows and Linux: the sidebar's button first, apart (macOS has its own by the window's buttons).
+        let sidebar = [ToolbarItem::Button(Command::ToggleSidebar), ToolbarItem::Separator];
+        let first = if mac || shown.contains(&sidebar[0]) { &[][..] } else { &sidebar[..] };
+        for item in first.iter().chain(shown) {
             match *item {
                 ToolbarItem::Separator => groups.push(Vec::new()),
                 ToolbarItem::Button(command) => groups.last_mut().expect("a group").extend(button_for(command)),

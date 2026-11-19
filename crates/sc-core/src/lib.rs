@@ -1188,8 +1188,10 @@ impl Panel {
         }
     }
 
+    /// Up to a folder it is in: the cursor on the folder it came from, as `..`'s.
     pub fn go_to_folder(&mut self, path: PathBuf) -> io::Result<()> {
-        self.go_to(path, None)
+        let left = self.path.strip_prefix(&path).ok().and_then(|rest| rest.components().next()).map(|part| part.as_os_str().to_owned());
+        self.go_to(path, left)
     }
 
     /// Where synchronized browsing follows it: its folder, with the server's
@@ -1961,6 +1963,18 @@ mod tests {
         assert_eq!(panel.path(), root.join("a/deep"), "`..` leaves for the folder");
         panel.go_to_file(&root.join("b"), None).unwrap();
         assert_eq!(panel.current_entry().unwrap().name, "b");
+        fs::remove_dir_all(root).unwrap();
+    }
+
+    #[test]
+    fn up_to_a_folder_it_is_in() {
+        let root = std::env::temp_dir().join(format!("sc-core-up-{}", std::process::id()));
+        let _ = fs::remove_dir_all(&root);
+        fs::create_dir_all(root.join("a/b/c")).unwrap();
+        fs::create_dir_all(root.join("z")).unwrap();
+        let mut panel = Panel::new(root.join("a/b/c"), Filter::default()).unwrap();
+        panel.go_to_folder(root.clone()).unwrap();
+        assert_eq!(panel.current_entry().unwrap().name, "a");
         fs::remove_dir_all(root).unwrap();
     }
 

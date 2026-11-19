@@ -190,6 +190,9 @@ fn main() {
     app.run(|cx| {
         #[cfg(target_os = "macos")]
         dock_icon();
+        // Windows: one taskbar app for all its windows and copies, wherever the exe is.
+        #[cfg(windows)]
+        cx.set_app_identity("Remoxio.SparkCommander", "Spark Commander");
         gpui_kit::init(cx);
         let keys = Some(CONTEXT);
         cx.bind_keys([

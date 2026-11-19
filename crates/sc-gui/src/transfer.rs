@@ -194,7 +194,7 @@ impl Commander {
             (None, None) => sc_core::t!("transfer.label.many", kind = id, count = count),
         };
         let commander = cx.entity().downgrade();
-        let Place { fs: to, server, .. } = to;
+        let Place { fs: to, server, folder, .. } = to;
         open_dialog(
             verb(kind),
             label,
@@ -208,11 +208,8 @@ impl Commander {
                         .as_deref()
                         .and_then(|url| text.strip_prefix(url))
                         .unwrap_or(&text);
-                    // A server's path from its root: on Windows the local folder's drive went before it (C:\home\…).
-                    let base = match server.is_some() && text.trim().starts_with('/') {
-                        true => std::path::Path::new("/"),
-                        false => &batch.folder,
-                    };
+                    // A server's path from its folder: from the local one, Windows put its drive before it (C:\home\…).
+                    let base = if server.is_some() { &folder } else { &batch.folder };
                     let target = Target::parse(text, base, batch.sources.len(), &*to);
                     this.enqueue(kind, batch.clone(), to.clone(), target, overwrite, window, cx);
                 });

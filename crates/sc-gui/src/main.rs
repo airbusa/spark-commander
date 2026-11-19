@@ -258,8 +258,11 @@ fn main() {
             window_bounds: Some(saved.unwrap_or_else(|| WindowBounds::centered(size(px(1200.), px(800.)), cx))),
             titlebar: Some(TitlebarOptions {
                 title: Some("Spark Commander".into()),
-                ..Default::default()
+                // macOS: the toolbar in a taller title bar, as Finder's and ForkLift's.
+                appears_transparent: cfg!(target_os = "macos"),
+                traffic_light_position: cfg!(target_os = "macos").then_some(header::MAC_LIGHTS),
             }),
+            app_owns_titlebar_drag: cfg!(target_os = "macos"),
             window_min_size: Some(size(px(600.), px(400.))),
             app_id: Some("sparkcommander".into()),
             icon: window_icon(),

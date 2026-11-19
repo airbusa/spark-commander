@@ -1,6 +1,7 @@
 //! The window's own title bar, GNOME's header bar: where the window draws its
 //! frame (GNOME on Wayland always draws none for it; the ☰ button asks for
-//! it), the title, the ☰ button holding the menus, and the window's buttons.
+//! it), the title, the ☰ button holding the menus, and the window's buttons;
+//! on macOS the toolbar's place in a taller title bar.
 
 use gpui_kit::assets::IconName as Lucide;
 use gpui_kit::component::button::{Button, ButtonVariants};
@@ -30,6 +31,9 @@ impl Commander {
     /// The title bar, where the window draws its own frame; the toolbar taken
     /// into it, on its left, as GNOME's apps have their buttons.
     pub(crate) fn render_header(&self, toolbar: &mut Option<AnyElement>, window: &Window, cx: &mut App) -> Option<AnyElement> {
+        if cfg!(target_os = "macos") {
+            return Some(self.render_mac_header(toolbar, window, cx));
+        }
         // The title kept clear of the toolbar's buttons (32 px and a gap each, Back's and Forward's arrow 18).
         let shown = &self.settings.toolbar.0;
         let arrows = shown.iter().filter(|command| matches!(command, Command::GoBack | Command::GoForward)).count();
@@ -64,7 +68,30 @@ impl Commander {
             );
         Some(bar.into_any_element())
     }
+
+    /// macOS: the toolbar in the title bar, right of the window's buttons, as
+    /// Finder's and ForkLift's; the title only where the toolbar is empty.
+    fn render_mac_header(&self, toolbar: &mut Option<AnyElement>, window: &Window, cx: &mut App) -> AnyElement {
+        let title = toolbar.is_none().then(|| {
+            let title = div().font_weight(FontWeight::BOLD).text_color(cx.theme().muted_foreground).child("Spark Commander");
+            div().absolute().inset_0().flex().items_center().justify_center().child(title)
+        });
+        TitleBar::new()
+            .h(MAC_BAR)
+            // Full screen hides the window's buttons.
+            .pl(px(if window.is_fullscreen() { 12. } else { 92. }))
+            .bg(self.colors.bar)
+            .border_color(cx.theme().border)
+            .children(title)
+            .children(toolbar.take())
+            .into_any_element()
+    }
 }
+
+/// macOS: the title bar's height with the toolbar in it, and where the window's
+/// buttons sit in it, centred (AppKit's are 14 px high).
+const MAC_BAR: Pixels = px(52.);
+pub(crate) const MAC_LIGHTS: Point<Pixels> = Point { x: px(20.), y: px(19.) };
 
 /// The title bar of a window that draws its own frame: any on GNOME on
 /// Wayland, which draws none, and the main one for its ☰ button.

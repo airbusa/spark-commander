@@ -1258,8 +1258,9 @@ impl Commander {
                 this.open_location(ix, &target, window, cx);
                 cx.notify();
             }));
-            let chevron = Icon::new(IconName::ChevronRight).xsmall().mx(px(2.)).opacity(0.6);
-            h_flex().flex_none().child(link).child(chevron).into_any_element()
+            // The path's own separator, `\` or `/`; the root's is in it.
+            let sep = location[end..].chars().next().filter(|c| matches!(c, '/' | '\\'));
+            h_flex().flex_none().child(link).children(sep.map(|sep| sep.to_string())).into_any_element()
         });
         // Too long, its start goes out of sight: the folder it is in stays.
         h_flex().flex_1().min_w_0().overflow_hidden().justify_end().children(parts).child(div().flex_1())
@@ -3000,7 +3001,7 @@ fn palette(settings: &Settings, window: &Window) -> theme::Palette {
 }
 
 /// The path's folders, each its text and where its path ends in `location`:
-/// the root first (a drive, a share, a server, `/`).
+/// the root first with its separator (a drive, a share, a server, `/`).
 fn crumbs(location: &str) -> Vec<(&str, usize)> {
     let sep = |c: char| c == '/' || c == '\\';
     let after = |from: usize, n: usize| location[from..].match_indices(sep).nth(n).map_or(location.len(), |(at, _)| from + at + 1);
@@ -3012,8 +3013,7 @@ fn crumbs(location: &str) -> Vec<(&str, usize)> {
     };
     let mut crumbs = Vec::new();
     if root > 0 {
-        let shown = location[..root].trim_end_matches(sep);
-        crumbs.push((if shown.is_empty() { &location[..1] } else { shown }, root));
+        crumbs.push((&location[..root], root));
     }
     let mut start = root;
     for part in location[root..].split(sep) {
@@ -3068,10 +3068,10 @@ mod tests {
     #[test]
     fn crumbs() {
         let shown = |location| super::crumbs(location).into_iter().map(|(name, end)| (name, &location[..end])).collect::<Vec<_>>();
-        assert_eq!(shown(r"C:\Users\me"), [("C:", r"C:\"), ("Users", r"C:\Users"), ("me", r"C:\Users\me")]);
-        assert_eq!(shown(r"C:\"), [("C:", r"C:\")]);
+        assert_eq!(shown(r"C:\Users\me"), [(r"C:\", r"C:\"), ("Users", r"C:\Users"), ("me", r"C:\Users\me")]);
+        assert_eq!(shown(r"C:\"), [(r"C:\", r"C:\")]);
         assert_eq!(shown("/home/me/"), [("/", "/"), ("home", "/home"), ("me", "/home/me")]);
-        assert_eq!(shown("sftp://me@host/home"), [("sftp://me@host", "sftp://me@host/"), ("home", "sftp://me@host/home")]);
-        assert_eq!(shown(r"\\nas\share\docs"), [(r"\\nas\share", r"\\nas\share\"), ("docs", r"\\nas\share\docs")]);
+        assert_eq!(shown("sftp://me@host/home"), [("sftp://me@host/", "sftp://me@host/"), ("home", "sftp://me@host/home")]);
+        assert_eq!(shown(r"\\nas\share\docs"), [(r"\\nas\share\", r"\\nas\share\"), ("docs", r"\\nas\share\docs")]);
     }
 }

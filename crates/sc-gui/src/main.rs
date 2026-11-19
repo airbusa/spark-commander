@@ -1520,7 +1520,9 @@ impl Commander {
                 true => name.to_owned(),
                 false => format!("{name} ({})", dialogs::keys_dialog::shown(&key)),
             };
-            let button = Button::new(("toolbar", command as usize)).ghost().icon(Icon::new(icon)).selected(self.checked(command)).tooltip(tip);
+            // macOS: small, in the compact title bar.
+            let size = if cfg!(target_os = "macos") { gpui_kit::component::Size::Small } else { gpui_kit::component::Size::Medium };
+            let button = Button::new(("toolbar", command as usize)).ghost().with_size(size).icon(Icon::new(icon)).selected(self.checked(command)).tooltip(tip);
             let button = button.on_click(cx.listener(move |this, _, window, cx| {
                 window.focus(&this.focus, cx);
                 window.dispatch_action(Box::new(Run(command)), cx);
@@ -1536,7 +1538,7 @@ impl Commander {
                 let menu = menu.action_context(focus.clone());
                 ways.iter().fold(menu, |menu, (at, label)| menu.menu(label.clone(), Box::new(GoToHistory(*at))))
             };
-            let split = DropdownButton::new(("toolbar-history", command as usize)).ghost().button(button).disabled(none);
+            let split = DropdownButton::new(("toolbar-history", command as usize)).ghost().with_size(size).button(button).disabled(none);
             Some(split.dropdown_menu_with_anchor(Anchor::TopLeft, places).into_any_element())
         });
         let commander = cx.entity().downgrade();

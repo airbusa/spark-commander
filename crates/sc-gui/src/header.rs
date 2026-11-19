@@ -79,7 +79,7 @@ impl Commander {
         TitleBar::new()
             .h(MAC_BAR)
             // Full screen hides the window's buttons.
-            .pl(px(if window.is_fullscreen() { 12. } else { 92. }))
+            .pl(px(if window.is_fullscreen() { 8. } else { 80. }))
             .bg(self.colors.bar)
             .border_color(cx.theme().border)
             .children(title)
@@ -89,9 +89,10 @@ impl Commander {
 }
 
 /// macOS: the title bar's height with the toolbar in it, and where the window's
-/// buttons sit in it, centred (AppKit's are 14 px high).
-const MAC_BAR: Pixels = px(52.);
-pub(crate) const MAC_LIGHTS: Point<Pixels> = Point { x: px(20.), y: px(19.) };
+/// buttons sit in it, centred (AppKit's are 14 px high): a compact unified
+/// toolbar's, as ForkLift's.
+const MAC_BAR: Pixels = px(38.);
+pub(crate) const MAC_LIGHTS: Point<Pixels> = Point { x: px(13.), y: px(12.) };
 
 /// The title bar of a window that draws its own frame: any on GNOME on
 /// Wayland, which draws none, and the main one for its ☰ button.

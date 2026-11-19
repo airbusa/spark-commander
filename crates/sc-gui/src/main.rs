@@ -265,6 +265,11 @@ fn main() {
                 traffic_light_position: cfg!(target_os = "macos").then_some(header::MAC_LIGHTS),
             }),
             app_owns_titlebar_drag: cfg!(target_os = "macos"),
+            // Our own frame from the start: asked for once mapped, GNOME's X11 grows the window by its title and our shadow.
+            window_decorations: Some(match Settings::load().unwrap_or_default().menu.button() {
+                true => WindowDecorations::Client,
+                false => WindowDecorations::Server,
+            }),
             window_min_size: Some(size(px(600.), px(400.))),
             app_id: Some("sparkcommander".into()),
             icon: window_icon(),
@@ -676,7 +681,7 @@ impl Commander {
             vertical: session.vertical,
             sync_browsing: session.sync_browsing,
             branch_ticked: false,
-            bounds: window.window_bounds(),
+            bounds: kept_bounds(window, cx),
             display: display_uuid(window, cx),
             parked: workspaces.list.iter().map(|_| None).collect(),
             workspaces,
@@ -1565,7 +1570,7 @@ impl Commander {
     }
 
     fn track_place(&mut self, window: &Window, cx: &App) {
-        self.bounds = window.window_bounds();
+        self.bounds = kept_bounds(window, cx);
         self.display = display_uuid(window, cx);
     }
 
@@ -2877,6 +2882,16 @@ fn window_place(bounds: WindowBounds, display: Option<String>) -> WindowPlace {
     };
     let (origin, size) = (size.origin, size.size);
     WindowPlace { x: origin.x.into(), y: origin.y.into(), width: size.width.into(), height: size.height.into(), maximized, display }
+}
+
+/// The window's place to open at again: on X11 without the shadow of a frame
+/// it draws, as the window manager grows it by that once it is open; Wayland's
+/// keeps the size it opens at.
+fn kept_bounds(window: &Window, cx: &App) -> WindowBounds {
+    match cx.compositor_name() {
+        "X11" => window.inner_window_bounds(),
+        _ => window.window_bounds(),
+    }
 }
 
 /// The UUID of the display `window` is on.

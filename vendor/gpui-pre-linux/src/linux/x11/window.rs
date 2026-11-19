@@ -7,8 +7,8 @@ use gpui::{
     Pixels, PlatformAtlas, PlatformDisplay, PlatformInput, PlatformInputHandler, PlatformWindow,
     Point, PromptButton, PromptLevel, RequestFrameOptions, ResizeEdge, ScaledPixels, Scene, Size,
     Tiling, WindowAppearance, WindowBackgroundAppearance, WindowBounds, WindowControlArea,
-    WindowDecorations, WindowKind, WindowParams, WindowVisibility, popup::PopupNotSupportedError,
-    px,
+    WindowDecorations, WindowKind, WindowParams, WindowVisibility, point,
+    popup::PopupNotSupportedError, px,
 };
 use gpui_wgpu::{CompositorGpuHint, WgpuRenderer, WgpuSurfaceConfig};
 
@@ -19,7 +19,7 @@ use x11rb::{
     connection::Connection,
     cookie::{Cookie, VoidCookie},
     errors::ConnectionError,
-    properties::{WmHints, WmSizeHints},
+    properties::{WmHints, WmSizeHints, WmSizeHintsSpecification},
     protocol::{
         sync,
         xinput::{self, ConnectionExt as _},
@@ -533,6 +533,11 @@ impl X11WindowState {
             bounds.size.height = 600.into();
         }
 
+        // SparkCommander patch: a window given a display is put exactly where asked
+        // (upstream nudges every window 2 px right, which would creep on each start).
+        let placed = params.display_id.is_some();
+        let x = bounds.origin.x.0 + if placed { 0 } else { 2 };
+
         check_reply(
             || {
                 format!(
@@ -540,7 +545,7 @@ impl X11WindowState {
                     visual.depth,
                     x_window,
                     visual_set.root,
-                    bounds.origin.x.0 + 2,
+                    x,
                     bounds.origin.y.0,
                     bounds.size.width.0,
                     bounds.size.height.0
@@ -550,7 +555,7 @@ impl X11WindowState {
                 visual.depth,
                 x_window,
                 visual_set.root,
-                (bounds.origin.x.0 + 2) as i16,
+                x as i16,
                 bounds.origin.y.0 as i16,
                 bounds.size.width.0 as u16,
                 bounds.size.height.0 as u16,
@@ -790,6 +795,13 @@ impl X11WindowState {
                     Some((f32::from(size.width) as i32, f32::from(size.height) as i32));
             }
             size_hints.max_size = Some((max_texture_size as i32, max_texture_size as i32));
+            // SparkCommander patch: the window manager keeps a given place (the
+            // monitor the window was closed on) rather than choosing one, and puts
+            // the window itself there, not its frame.
+            if placed {
+                size_hints.position = Some((WmSizeHintsSpecification::UserSpecified, x, bounds.origin.y.0));
+                size_hints.win_gravity = Some(xproto::Gravity::STATIC);
+            }
             check_reply(
                 || {
                     format!(
@@ -1302,13 +1314,20 @@ impl X11WindowStatePtr {
             let is_resize = bounds.size.width != state.bounds.size.width
                 || bounds.size.height != state.bounds.size.height;
 
-            // If it's a resize event (only width/height changed), we ignore `bounds.origin`
-            // because it contains wrong values.
-            if is_resize {
-                state.bounds.size = bounds.size;
-            } else {
-                state.bounds = bounds;
-            }
+            // SparkCommander patch: the origin as the server has it, the window's on the
+            // screen: a resize's event carries none worth having (upstream kept the old one),
+            // and the window manager may move the window as it resizes it (GNOME's grows a
+            // window drawing its own frame around its shadow).
+            let fallback = if is_resize { state.bounds.origin } else { bounds.origin };
+            let origin = self
+                .xcb
+                .translate_coordinates(self.x_window, state.x_root_window, 0, 0)
+                .ok()
+                .and_then(|cookie| cookie.reply().ok())
+                .map_or(fallback, |at| {
+                    point(px(at.dst_x as f32 / state.scale_factor), px(at.dst_y as f32 / state.scale_factor))
+                });
+            state.bounds = Bounds { origin, size: bounds.size };
 
             let gpu_size = query_render_extent(&self.xcb, self.x_window)?;
             if let Some(renderer) = &mut state.renderer {

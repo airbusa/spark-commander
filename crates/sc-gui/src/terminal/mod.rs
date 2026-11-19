@@ -9,8 +9,10 @@ mod mouse;
 pub mod pane;
 
 use std::borrow::Cow;
+use std::cell::Cell;
 use std::io;
 use std::path::Path;
+use std::rc::Rc;
 use std::sync::Arc;
 
 use alacritty_terminal::event::{Event as TermEvent, EventListener, WindowSize};
@@ -26,6 +28,7 @@ use futures::StreamExt as _;
 use futures::channel::mpsc::{UnboundedSender, unbounded};
 use gpui_kit::component::ActiveTheme;
 use gpui_kit::component::menu::ContextMenuExt;
+use gpui_kit::component::scroll::{Scrollbar, ScrollbarHandle};
 use gpui_kit::*;
 use sc_core::t;
 
@@ -129,6 +132,7 @@ pub struct TerminalView {
     /// A cell's size, and the first cell's corner on screen.
     cell: Size<Pixels>,
     origin: Point<Pixels>,
+    history: History,
     /// The theme's foreground, background and darkness, told to programs
     /// that ask for their colours.
     theme: (Hsla, Hsla, bool),
@@ -192,13 +196,14 @@ impl TerminalView {
             let gained = cx.on_focus_in(&focus, window, |this, _, cx| this.focus_changed(true, cx));
             let lost = cx.on_focus_out(&focus, window, |this, _, _, cx| this.focus_changed(false, cx));
             Self {
-                term,
+                term: term.clone(),
                 pty,
                 focus,
                 title: None,
                 cells,
                 cell,
                 origin: Point::default(),
+                history: History { term, drawn: Rc::default() },
                 theme: (Hsla::default(), Hsla::default(), true),
                 wheel_rest: 0.,
                 last_report: None,
@@ -508,11 +513,51 @@ impl TerminalView {
     /// The grid sized to the space drawn in; the pty told when it changes.
     fn fit(&mut self, origin: Point<Pixels>, cell: Size<Pixels>, cells: Cells, theme: (Hsla, Hsla, bool)) {
         (self.origin, self.cell, self.theme) = (origin, cell, theme);
+        self.history.drawn.set((Bounds::new(origin, size(cell.width * cells.columns as f32, cell.height * cells.lines as f32)), cell.height));
         if self.cells != cells {
             self.cells = cells;
             self.term.lock().resize(cells);
             let _ = self.pty.send(Msg::Resize(window_size(cells, cell)));
         }
+    }
+}
+
+/// The history as a scrollbar sees it: a line a cell high, the newest at the bottom.
+#[derive(Clone)]
+struct History {
+    term: Arc<FairMutex<Term<Events>>>,
+    /// The grid's bounds and a line's height, as last drawn.
+    drawn: Rc<Cell<(Bounds<Pixels>, Pixels)>>,
+}
+
+impl History {
+    /// Lines kept above the screen, and how many of them are scrolled back.
+    fn lines(&self) -> (usize, usize) {
+        let term = self.term.lock();
+        (term.grid().history_size(), term.grid().display_offset())
+    }
+}
+
+impl ScrollbarHandle for History {
+    fn viewport_bounds(&self) -> Bounds<Pixels> {
+        self.drawn.get().0
+    }
+
+    fn offset(&self) -> Point<Pixels> {
+        let (kept, back) = self.lines();
+        point(px(0.), -self.drawn.get().1 * (kept - back) as f32)
+    }
+
+    fn set_offset(&self, offset: Point<Pixels>) {
+        let line = self.drawn.get().1;
+        let (kept, back) = self.lines();
+        let from_top = ((-offset.y / line).round().max(0.) as usize).min(kept);
+        self.term.lock().scroll_display(Scroll::Delta((kept - from_top) as i32 - back as i32));
+    }
+
+    fn content_size(&self) -> Size<Pixels> {
+        let (bounds, line) = self.drawn.get();
+        size(bounds.size.width, bounds.size.height + line * self.lines().0 as f32)
     }
 }
 
@@ -592,6 +637,7 @@ impl Render for TerminalView {
                 canvas(move |bounds, window, cx| draw::layout(&view, bounds, window, cx), move |_, screen, window, cx| draw::paint(screen, drawn, &focus, window, cx))
                     .size_full(),
             )
+            .child(div().absolute().inset_0().child(Scrollbar::vertical(&self.history)))
             .children(to_bottom)
             .context_menu(move |menu, _, cx| {
                 let selected = menu_view.read_with(cx, |this, _| this.selected().is_some()).unwrap_or(false);

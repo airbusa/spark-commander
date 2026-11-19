@@ -9,6 +9,9 @@ use gpui::{
     StatefulInteractiveElement, Styled, Window, div, px, relative,
 };
 
+/// SparkCommander patch: the narrowest a macOS tab gets, as Finder's.
+pub(super) const MAC_TAB_MIN: Pixels = px(80.);
+
 /// Tab variants.
 #[derive(Debug, Clone, Default, Copy, PartialEq, Eq, Hash)]
 pub enum TabVariant {
@@ -778,6 +781,10 @@ impl RenderOnce for Tab {
         let fg_to = tab_style.fg;
         // Icon-only tabs are fixed-size and exempt from `max_width`.
         let max_width = self.max_width.filter(|_| self.icon.is_none());
+        // SparkCommander patch: macOS's tabs share the bar's width, so a long
+        // label is cut short as a capped one, not widening its tab past the bar;
+        // down to `MAC_TAB_MIN`, as Finder's, and then the bar scrolls.
+        let gives_way = max_width.is_some() || mac.is_some() && self.icon.is_none();
 
         let inner_content = h_flex()
             .flex_1()
@@ -790,9 +797,9 @@ impl RenderOnce for Tab {
             .margins(inner_margins)
             // Normally the label decides the tab width, so it never shrinks. With
             // `max_width` it is the one part that gives way.
-            .map(|this| match max_width {
-                Some(_) => this.flex_auto(),
-                None => this.flex_shrink_0(),
+            .map(|this| match gives_way {
+                true => this.flex_auto(),
+                false => this.flex_shrink_0(),
             })
             .map(|this| match self.icon {
                 Some(icon) => this
@@ -805,17 +812,17 @@ impl RenderOnce for Tab {
                     })),
                 None => this
                     .paddings(inner_paddings)
-                    .map(|this| match (self.label, max_width) {
+                    .map(|this| match (self.label, gives_way) {
                         // Text always takes its natural width, so it needs a box
                         // that is allowed to shrink to ellipsize inside of.
-                        (Some(label), Some(_)) => this.child(
+                        (Some(label), true) => this.child(
                             div()
                                 .min_w_0()
                                 .whitespace_nowrap()
                                 .text_ellipsis()
                                 .child(label),
                         ),
-                        (Some(label), None) => this.child(label),
+                        (Some(label), false) => this.child(label),
                         (None, _) => this,
                     })
                     .children(self.children),
@@ -869,9 +876,10 @@ impl RenderOnce for Tab {
             .flex()
             // Wrapping would move the overflow onto a clipped second line instead
             // of letting the label shrink, so a capped tab lays out on one line.
-            .map(|this| match max_width {
-                Some(max_width) => this.flex_nowrap().max_w(max_width),
-                None => this.flex_wrap(),
+            .map(|this| match (max_width, gives_way) {
+                (Some(max_width), _) => this.flex_nowrap().max_w(max_width),
+                (None, true) => this.flex_nowrap().min_w(MAC_TAB_MIN),
+                (None, false) => this.flex_wrap(),
             })
             .gap_1()
             .items_center()

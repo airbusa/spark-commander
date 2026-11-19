@@ -548,6 +548,8 @@ impl RenderOnce for TabBar {
                 // only logical tabs occupy those indices.
                 div()
                     .flex_shrink_0()
+                    // SparkCommander patch: macOS's tabs, a share of the bar however long their label.
+                    .when(mac.is_some(), |this| this.min_w(super::tab::MAC_TAB_MIN))
                     .map(|mut this| {
                         this.style().flex_grow = flex_grow;
                         this.style().flex_basis = flex_basis;

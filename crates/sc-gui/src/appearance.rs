@@ -385,7 +385,7 @@ pub fn tab_bar_with_new(bar: gpui_kit::component::tab::TabBar, new: gpui_kit::co
         .border(px(0.5))
         .border_color(mac.tab_rim)
         .child(new.custom(style).small().size_full().rounded(px(14.)));
-    h_flex().gap(px(4.)).child(bar.flex_1()).child(circle).into_any_element()
+    h_flex().gap(px(4.)).child(bar.flex_1().min_w_0()).child(circle).into_any_element()
 }
 
 /// macOS: a tool window's title bar buttons, as AppKit's panels have them:

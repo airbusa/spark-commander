@@ -2061,7 +2061,7 @@ impl Commander {
         let date = date.max(date_fits(cx));
         let (scrolled, wide) = {
             let scroll = &side.scroll.0.borrow().base_handle;
-            (scroll.offset().x, scroll.max_offset().x > px(0.))
+            (panel::views::scrolled_x(scroll), scroll.max_offset().x > px(0.))
         };
         // A column's right edge, past the columns left of it.
         let handles = (0..5).map(|column| {
@@ -2094,7 +2094,7 @@ impl Commander {
                         return;
                     }
                     let column = drag.column;
-                    let scrolled = this.panels[ix].scroll.0.borrow().base_handle.offset().x;
+                    let scrolled = panel::views::scrolled_x(&this.panels[ix].scroll.0.borrow().base_handle);
                     let widths = &mut this.columns;
                     let left = event.bounds.left() + ROW_INSET + scrolled;
                     let left = left + px(widths[..column].iter().sum());
@@ -2147,6 +2147,7 @@ impl Commander {
                 .min_h_0()
                 .child(panel::views::measure(side.area.clone(), cx.entity_id()))
                 .child(rows)
+                .child(panel::views::follow_scroll(side.scroll.0.borrow().base_handle.clone(), scrolled, cx.entity_id()))
                 .child(gutter().top_0().w(SCROLLBAR))
                 .when(wide, |el| el.child(gutter().left_0().h(SCROLLBAR)))
                 .child(div().absolute().inset_0().child(Scrollbar::new(&side.scroll)))

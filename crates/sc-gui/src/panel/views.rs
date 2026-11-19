@@ -104,6 +104,23 @@ pub(crate) fn measure(area: Rc<Cell<Size<Pixels>>>, view: EntityId) -> impl Into
     canvas(seen, |_, _, _, _| {}).absolute().top_0().left_0().size_full()
 }
 
+/// How far it is scrolled sideways, within its ends: the wheel takes it past
+/// them (a mouse's side wheel), and it comes back only as it is laid out.
+pub(crate) fn scrolled_x(scroll: &ScrollHandle) -> Pixels {
+    scroll.offset().x.clamp(-scroll.max_offset().x, px(0.))
+}
+
+/// After the scrolled box: renders `view` again where it was laid out
+/// scrolled elsewhere than `drawn`, as its new width takes it back.
+pub(crate) fn follow_scroll(scroll: ScrollHandle, drawn: Pixels, view: EntityId) -> impl IntoElement {
+    let seen = move |_: Bounds<Pixels>, window: &mut Window, _: &mut App| {
+        if scroll.offset().x != drawn {
+            window.on_next_frame(move |_, cx| cx.notify(view));
+        }
+    };
+    canvas(seen, |_, _, _, _| {}).absolute()
+}
+
 impl Commander {
     /// Brief: names in columns of the panel's height, side by side; only the
     /// columns in sight are drawn.
@@ -112,7 +129,8 @@ impl Commander {
         let count = side.tabs.current().entries().len();
         let (rows, width) = (side.brief_rows(), side.brief_width());
         let columns = count.div_ceil(rows);
-        let scrolled = -f32::from(side.brief.offset().x);
+        let drawn = scrolled_x(&side.brief);
+        let scrolled = -f32::from(drawn);
         let first = (scrolled / width).floor().max(0.) as usize;
         let shown = (f32::from(side.area.get().width) / width).ceil() as usize + 1;
         let column = |column: usize| {
@@ -140,6 +158,7 @@ impl Commander {
                     .track_scroll(&side.brief)
                     .child(content),
             )
+            .child(follow_scroll(side.brief.clone(), drawn, cx.entity_id()))
             .child(div().absolute().inset_0().child(Scrollbar::horizontal(&side.brief)))
             .into_any_element()
     }

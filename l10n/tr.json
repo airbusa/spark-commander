@@ -152,6 +152,9 @@
   "addons.updates": {
     "message": "Eklenti güncellemeleri: {names}"
   },
+  "alert.cancel": {
+    "message": "İptal"
+  },
   "appearance.dark": {
     "message": "Koyu"
   },

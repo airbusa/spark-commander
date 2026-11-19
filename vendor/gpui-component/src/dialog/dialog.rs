@@ -171,8 +171,8 @@ impl DialogButtonProps {
         self.ok_button(|button| button)
     }
 
-    pub(crate) fn render_cancel(&self, _: &mut Window, _: &mut App) -> AnyElement {
-        self.cancel_button(|button| button)
+    pub(crate) fn render_cancel(&self, _: &mut Window, cx: &mut App) -> AnyElement {
+        self.cancel_button(|button| button, cx)
     }
 
     // SparkCommander patch: the labels, and the buttons as `style` makes them
@@ -181,8 +181,11 @@ impl DialogButtonProps {
         self.ok_text.clone().unwrap_or_else(|| t!("Dialog.ok").into())
     }
 
-    pub(crate) fn cancel_label(&self) -> SharedString {
-        self.cancel_text.clone().unwrap_or_else(|| t!("Dialog.cancel").into())
+    pub(crate) fn cancel_label(&self, cx: &App) -> SharedString {
+        self.cancel_text
+            .clone()
+            .or_else(|| cx.try_global::<CancelLabel>().map(|label| (label.0)()))
+            .unwrap_or_else(|| t!("Dialog.cancel").into())
     }
 
     pub(crate) fn ok_button(&self, style: impl FnOnce(Button) -> Button) -> AnyElement {
@@ -198,12 +201,12 @@ impl DialogButtonProps {
         .into_any_element()
     }
 
-    pub(crate) fn cancel_button(&self, style: impl FnOnce(Button) -> Button) -> AnyElement {
+    pub(crate) fn cancel_button(&self, style: impl FnOnce(Button) -> Button, cx: &App) -> AnyElement {
         DialogButton {
             anchor_key: "dialog-cancel-anchor",
             button: style(
                 Button::new("cancel")
-                    .label(self.cancel_label())
+                    .label(self.cancel_label(cx))
                     .with_variant(self.cancel_variant.unwrap_or_default()),
             ),
             action: Rc::new(Cancel),
@@ -211,6 +214,13 @@ impl DialogButtonProps {
         .into_any_element()
     }
 }
+
+/// SparkCommander patch: the default Cancel button's label in the app's
+/// language; GPUI Kit's own is in a few.
+#[derive(Clone, Copy)]
+pub struct CancelLabel(pub fn() -> SharedString);
+
+impl gpui::Global for CancelLabel {}
 
 /// A default dialog button: activating it dispatches `action` on the dialog
 /// it sits in, whatever holds focus at that moment.

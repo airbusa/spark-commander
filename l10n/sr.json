@@ -152,6 +152,9 @@
   "addons.updates": {
     "message": "Ажурирања додатака: {names}"
   },
+  "alert.cancel": {
+    "message": "Откажи"
+  },
   "appearance.dark": {
     "message": "Тамни"
   },

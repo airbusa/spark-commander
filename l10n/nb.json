@@ -152,6 +152,9 @@
   "addons.updates": {
     "message": "Oppdateringer for tillegg: {names}"
   },
+  "alert.cancel": {
+    "message": "Avbryt"
+  },
   "appearance.dark": {
     "message": "Mørkt"
   },

@@ -152,6 +152,9 @@
   "addons.updates": {
     "message": "Оновлення доповнень: {names}"
   },
+  "alert.cancel": {
+    "message": "Скасувати"
+  },
   "appearance.dark": {
     "message": "Темний"
   },

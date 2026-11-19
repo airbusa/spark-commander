@@ -395,7 +395,7 @@ impl AlertDialog {
         let font_size = cx.theme().font_size * 0.875;
         let mut labels = vec![props.ok_label()];
         if props.is_cancel_shown() {
-            labels.push(props.cancel_label());
+            labels.push(props.cancel_label(cx));
         }
         let stacked = labels.into_iter().any(|label| {
             let run = text.to_run(label.len());
@@ -458,7 +458,7 @@ impl AlertDialog {
                         button.with_variant(ButtonVariant::Custom(destructive)).bg(mac.destructive)
                     })
                 });
-                let cancel = props.is_cancel_shown().then(|| props.cancel_button(capsule));
+                let cancel = props.is_cancel_shown().then(|| props.cancel_button(capsule, cx));
                 this.footer(DialogFooter::new().gap(px(8.)).map(|this| match stacked {
                     true => this.flex_col().child(ok).children(cancel),
                     false => this.children(cancel).child(ok),

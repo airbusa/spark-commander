@@ -152,6 +152,9 @@
   "addons.updates": {
     "message": "Ενημερώσεις πρόσθετων: {names}"
   },
+  "alert.cancel": {
+    "message": "Ακύρωση"
+  },
   "appearance.dark": {
     "message": "Σκούρο"
   },

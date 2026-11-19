@@ -152,6 +152,9 @@
   "addons.updates": {
     "message": "추가 기능 업데이트: {names}"
   },
+  "alert.cancel": {
+    "message": "취소"
+  },
   "appearance.dark": {
     "message": "어둡게"
   },

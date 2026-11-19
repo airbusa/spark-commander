@@ -152,6 +152,9 @@
   "addons.updates": {
     "message": "Actualizări de suplimente: {names}"
   },
+  "alert.cancel": {
+    "message": "Anulați"
+  },
   "appearance.dark": {
     "message": "Întunecat"
   },

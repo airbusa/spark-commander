@@ -152,6 +152,9 @@
   "addons.updates": {
     "message": "Ažuriranja dodataka: {names}"
   },
+  "alert.cancel": {
+    "message": "Odustani"
+  },
   "appearance.dark": {
     "message": "Tamni"
   },

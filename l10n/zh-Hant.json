@@ -152,6 +152,9 @@
   "addons.updates": {
     "message": "附加元件更新：{names}"
   },
+  "alert.cancel": {
+    "message": "取消"
+  },
   "appearance.dark": {
     "message": "深色"
   },

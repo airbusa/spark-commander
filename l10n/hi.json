@@ -152,6 +152,9 @@
   "addons.updates": {
     "message": "ऐड-ऑन अपडेट: {names}"
   },
+  "alert.cancel": {
+    "message": "रद्द करें"
+  },
   "appearance.dark": {
     "message": "डार्क"
   },

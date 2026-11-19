@@ -152,6 +152,9 @@
   "addons.updates": {
     "message": "อัปเดตส่วนเสริม: {names}"
   },
+  "alert.cancel": {
+    "message": "ยกเลิก"
+  },
   "appearance.dark": {
     "message": "มืด"
   },

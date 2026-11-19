@@ -152,6 +152,9 @@
   "addons.updates": {
     "message": "Priedų naujiniai: {names}"
   },
+  "alert.cancel": {
+    "message": "Atšaukti"
+  },
   "appearance.dark": {
     "message": "Tamsi"
   },

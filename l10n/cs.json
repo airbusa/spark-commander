@@ -152,6 +152,9 @@
   "addons.updates": {
     "message": "Aktualizace doplňků: {names}"
   },
+  "alert.cancel": {
+    "message": "Zrušit"
+  },
   "appearance.dark": {
     "message": "Tmavý"
   },

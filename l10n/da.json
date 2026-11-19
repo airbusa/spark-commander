@@ -152,6 +152,9 @@
   "addons.updates": {
     "message": "Opdateringer til tilføjelser: {names}"
   },
+  "alert.cancel": {
+    "message": "Annuller"
+  },
   "appearance.dark": {
     "message": "Mørkt"
   },

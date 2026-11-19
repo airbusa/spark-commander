@@ -152,6 +152,9 @@
   "addons.updates": {
     "message": "Bővítményfrissítések: {names}"
   },
+  "alert.cancel": {
+    "message": "Mégse"
+  },
   "appearance.dark": {
     "message": "Sötét"
   },

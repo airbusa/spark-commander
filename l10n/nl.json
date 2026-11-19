@@ -152,6 +152,9 @@
   "addons.updates": {
     "message": "Updates voor add-ons: {names}"
   },
+  "alert.cancel": {
+    "message": "Annuleren"
+  },
   "appearance.dark": {
     "message": "Donker"
   },

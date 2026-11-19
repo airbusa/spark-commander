@@ -152,6 +152,9 @@
   "addons.updates": {
     "message": "Posodobitve dodatkov: {names}"
   },
+  "alert.cancel": {
+    "message": "Prekliči"
+  },
   "appearance.dark": {
     "message": "Temen"
   },

@@ -152,6 +152,9 @@
   "addons.updates": {
     "message": "Cập nhật tiện ích bổ sung: {names}"
   },
+  "alert.cancel": {
+    "message": "Hủy"
+  },
   "appearance.dark": {
     "message": "Tối"
   },

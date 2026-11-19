@@ -152,6 +152,9 @@
   "addons.updates": {
     "message": "Actualitzacions de complements: {names}"
   },
+  "alert.cancel": {
+    "message": "Cancel·la"
+  },
   "appearance.dark": {
     "message": "Fosc"
   },

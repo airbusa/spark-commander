@@ -203,6 +203,10 @@
     "description": "Notification offering add-on updates; names = the add-ons with their new versions, e.g. rclone 1.75.2, mpv (libmpv) 0.40.",
     "message": "Add-on updates: {names}"
   },
+  "alert.cancel": {
+    "description": "Cancel button of the confirmations asked before an action (Delete, Reset Bookmarks, closing a running terminal…). Keep it short.",
+    "message": "Cancel"
+  },
   "appearance.dark": {
     "description": "Show › Appearance: the dark look.",
     "message": "Dark"

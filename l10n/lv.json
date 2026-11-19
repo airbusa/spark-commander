@@ -152,6 +152,9 @@
   "addons.updates": {
     "message": "Papildinājumu atjauninājumi: {names}"
   },
+  "alert.cancel": {
+    "message": "Atcelt"
+  },
   "appearance.dark": {
     "message": "Tumšs"
   },

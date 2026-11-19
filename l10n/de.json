@@ -152,6 +152,9 @@
   "addons.updates": {
     "message": "Add-on-Updates: {names}"
   },
+  "alert.cancel": {
+    "message": "Abbrechen"
+  },
   "appearance.dark": {
     "message": "Dunkel"
   },

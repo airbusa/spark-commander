@@ -152,6 +152,9 @@
   "addons.updates": {
     "message": "Actualizaciones de complementos: {names}"
   },
+  "alert.cancel": {
+    "message": "Cancelar"
+  },
   "appearance.dark": {
     "message": "Oscuro"
   },

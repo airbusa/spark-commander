@@ -27,9 +27,11 @@ alacritty_terminal = { version = "0.26", default-features = false }
 # icons; GPUI builds them already.
 [target.'cfg(target_os = "macos")'.dependencies]
 objc2 = "0.6"
+# The window's NSView: its title bar buttons (a tool window's close only); GPUI builds it already.
+raw-window-handle = "0.6"
 block2 = "0.6"
 objc2-foundation = { version = "0.3", default-features = false, features = ["std", "NSArray", "NSBundle", "NSDictionary", "NSGeometry", "NSObject", "NSError", "NSRange", "NSString", "NSURL", "objc2-core-foundation"] }
-objc2-app-kit = { version = "0.3", default-features = false, features = ["std", "block2", "NSAppearance", "NSApplication", "NSBezierPath", "NSBitmapImageRep", "NSColor", "NSColorSpace", "NSControl", "NSEvent", "NSFont", "NSGraphics", "NSGraphicsContext", "NSImage", "NSImageRep", "NSMenu", "NSMenuItem", "NSPasteboard", "NSPopover", "NSResponder", "NSSharingService", "NSText", "NSTextField", "NSTokenField", "NSTrackingArea", "NSView", "NSViewController", "NSWindow", "NSWorkspace"] }
+objc2-app-kit = { version = "0.3", default-features = false, features = ["std", "block2", "NSAppearance", "NSApplication", "NSBezierPath", "NSBitmapImageRep", "NSButton", "NSColor", "NSColorSpace", "NSControl", "NSEvent", "NSFont", "NSGraphics", "NSGraphicsContext", "NSImage", "NSImageRep", "NSMenu", "NSMenuItem", "NSPasteboard", "NSPopover", "NSResponder", "NSSharingService", "NSText", "NSTextField", "NSTokenField", "NSTrackingArea", "NSView", "NSViewController", "NSWindow", "NSWorkspace"] }
 
 # The terminal asks the pty whether the shell waits at its prompt; alacritty builds it already.
 [target.'cfg(unix)'.dependencies]

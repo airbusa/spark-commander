@@ -75,6 +75,8 @@ impl Commander {
         let opened = gpui_kit::open_window(options, cx, |window, cx| {
             // It works for the main window: its menus, its commands.
             crate::menus::lend(window, main, cx);
+            #[cfg(target_os = "macos")]
+            crate::appearance::close_button_only(window);
             cx.new(|cx| FindFiles::new(commander, separate, folder, chosen, window, cx))
         });
         match opened {

@@ -382,3 +382,24 @@ pub fn tab_bar_with_new(bar: gpui_kit::component::tab::TabBar, new: gpui_kit::co
         .child(new.custom(style).small().size_full().rounded(px(14.)));
     h_flex().gap(px(4.)).child(bar.flex_1()).child(circle).into_any_element()
 }
+
+/// macOS: a tool window's title bar buttons, as AppKit's panels have them:
+/// close only (Find Files).
+#[cfg(target_os = "macos")]
+pub fn close_button_only(window: &gpui_kit::Window) {
+    use objc2_app_kit::{NSView, NSWindowButton};
+    use raw_window_handle::{HasWindowHandle, RawWindowHandle};
+    let Ok(RawWindowHandle::AppKit(handle)) = HasWindowHandle::window_handle(window).map(|handle| handle.as_raw()) else {
+        return;
+    };
+    // SAFETY: the window's own view, alive while the window is, on the main thread.
+    let view: &NSView = unsafe { handle.ns_view.cast().as_ref() };
+    let Some(ns_window) = view.window() else {
+        return;
+    };
+    for which in [NSWindowButton::MiniaturizeButton, NSWindowButton::ZoomButton] {
+        if let Some(button) = ns_window.standardWindowButton(which) {
+            button.setHidden(true);
+        }
+    }
+}

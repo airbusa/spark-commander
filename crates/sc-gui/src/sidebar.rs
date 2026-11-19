@@ -485,7 +485,8 @@ impl Commander {
                     SidebarTab::Places => self.render_places(cx).into_any_element(),
                     SidebarTab::Operations => self.render_operations(cx).into_any_element(),
                 };
-                let content = v_flex().flex_1().min_h_0().overflow_hidden().pb_1().child(content);
+                // The padding inside: on the shutting one it would stay 4 px to the animation's end, then the rows below jump.
+                let content = v_flex().flex_1().min_h_0().overflow_hidden().child(v_flex().size_full().pb_1().child(content));
                 accordion = match self.sidebar.leaving.is_some() {
                     true => {
                         let id = (if open { "sidebar-opening" } else { "sidebar-closing" }, self.sidebar.switches);

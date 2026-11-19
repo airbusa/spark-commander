@@ -130,10 +130,10 @@ impl Sidebar {
     }
 
     /// Show > Sidebar's check marks.
-    /// macOS: the title bar's and the bottom bars' colour: the sidebar's, a
-    /// little lighter, as see-through as it.
+    /// macOS: the title bar's and the bottom bars' colour: the sidebar's, as
+    /// see-through as it.
     pub(crate) fn chrome(&self, window: Hsla) -> Hsla {
-        Hsla { l: (window.l + 0.03).min(1.), ..window }.opacity(self.tint.unwrap_or(1.))
+        window.opacity(self.tint.unwrap_or(1.))
     }
 
     /// Shown, or sliding out.

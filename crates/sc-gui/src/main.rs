@@ -254,8 +254,10 @@ fn main() {
             return style_preview::open(cx);
         }
         let saved = Session::load().ok().and_then(|session| session.window).and_then(|place| placed(place, cx));
+        let display_id = saved.as_ref().and_then(|(_, display)| *display);
         let options = WindowOptions {
-            window_bounds: Some(saved.unwrap_or_else(|| WindowBounds::centered(size(px(1200.), px(800.)), cx))),
+            window_bounds: Some(saved.map_or_else(|| WindowBounds::centered(size(px(1200.), px(800.)), cx), |(bounds, _)| bounds)),
+            display_id,
             titlebar: Some(TitlebarOptions {
                 title: Some("Spark Commander".into()),
                 // macOS: the toolbar in a taller title bar, as Finder's and ForkLift's.
@@ -493,8 +495,9 @@ struct Commander {
     sync_browsing: bool,
     /// The menus show Branch View checked: the active tab's, as last built.
     branch_ticked: bool,
-    /// The window's place and size, kept for the next start.
+    /// The window's place and size, kept for the next start, and its display's UUID.
     bounds: WindowBounds,
+    display: Option<String>,
     workspaces: Workspaces,
     /// The workspaces left this run, by their place in the list: as they were, shells running.
     parked: Vec<Option<workspaces::Parked>>,
@@ -588,14 +591,16 @@ impl Commander {
         });
         let this = cx.weak_entity();
         window.on_window_should_close(cx, move |window, cx| {
-            let _ = this.update(cx, |this, _| {
-                this.bounds = window.window_bounds();
+            let _ = this.update(cx, |this, cx| {
+                this.track_place(window, cx);
                 this.save_session();
                 this.transfers.queue.stop_all();
             });
             true
         });
-        cx.observe_window_bounds(window, |this, window, _| this.bounds = window.window_bounds()).detach();
+        cx.observe_window_bounds(window, |this, window, cx| this.track_place(window, cx)).detach();
+        // GPUI learns of another display after the bounds that took the window there.
+        cx.observe_window_display(window, |this, window, cx| this.track_place(window, cx)).detach();
         Self::watch_queue(window, cx);
         Self::watch_devices(cx);
         // Back from another program, which may have changed the folders.
@@ -672,6 +677,7 @@ impl Commander {
             sync_browsing: session.sync_browsing,
             branch_ticked: false,
             bounds: window.window_bounds(),
+            display: display_uuid(window, cx),
             parked: workspaces.list.iter().map(|_| None).collect(),
             workspaces,
             switches: 0,
@@ -1558,6 +1564,11 @@ impl Commander {
         Some(bar.children(buttons).context_menu(customize).into_any_element())
     }
 
+    fn track_place(&mut self, window: &Window, cx: &App) {
+        self.bounds = window.window_bounds();
+        self.display = display_uuid(window, cx);
+    }
+
     /// Settings, on the page named `page`.
     pub(crate) fn open_settings_at(&mut self, page: &str, window: &mut Window, cx: &mut Context<Self>) {
         let page = settings::PAGES.iter().position(|&name| name == page).unwrap_or(0);
@@ -1574,7 +1585,7 @@ impl Commander {
             vertical: self.vertical,
             terminal_share: self.terminal_share,
             sync_browsing: self.sync_browsing,
-            window: Some(window_place(self.bounds)),
+            window: Some(window_place(self.bounds, self.display.clone())),
             commands: self.commands.clone(),
         }
     }
@@ -2831,26 +2842,40 @@ pub(crate) fn window_icon() -> Option<std::sync::Arc<image::RgbaImage>> {
 /// The system's look, light or dark as chosen; on Xfce, MATE and Cinnamon
 /// always their theme's, which GTK draws only as it is.
 /// The saved window place, if a display still shows it; else none.
-fn placed(place: WindowPlace, cx: &App) -> Option<WindowBounds> {
+fn placed(place: WindowPlace, cx: &App) -> Option<(WindowBounds, Option<DisplayId>)> {
     let bounds = Bounds {
         origin: point(px(place.x), px(place.y)),
         size: size(px(place.width.max(600.)), px(place.height.max(400.))),
     };
-    let shown = cx.displays().iter().any(|display| display.bounds().intersects(&bounds));
-    (shown && place.width > 0.).then(|| match place.maximized {
+    // The display it was on, if it is still there; else any that shows it.
+    let displays = cx.displays();
+    let display = place.display.as_deref().and_then(|uuid| displays.iter().find(|display| display.uuid().is_ok_and(|id| id.to_string() == uuid)));
+    let shown = match display {
+        // macOS gives the place on the display, the others on the desktop.
+        Some(display) if cfg!(target_os = "macos") => Bounds::new(point(px(0.), px(0.)), display.bounds().size).intersects(&bounds),
+        Some(display) => display.bounds().intersects(&bounds),
+        None => displays.iter().any(|display| display.bounds().intersects(&bounds)),
+    };
+    let bounds = match place.maximized {
         true => WindowBounds::Maximized(bounds),
         false => WindowBounds::Windowed(bounds),
-    })
+    };
+    (shown && place.width > 0.).then(|| (bounds, display.map(|display| display.id())))
 }
 
 /// Full screen comes back maximized.
-fn window_place(bounds: WindowBounds) -> WindowPlace {
+fn window_place(bounds: WindowBounds, display: Option<String>) -> WindowPlace {
     let (maximized, size) = match bounds {
         WindowBounds::Windowed(size) => (false, size),
         WindowBounds::Maximized(size) | WindowBounds::Fullscreen(size) => (true, size),
     };
     let (origin, size) = (size.origin, size.size);
-    WindowPlace { x: origin.x.into(), y: origin.y.into(), width: size.width.into(), height: size.height.into(), maximized }
+    WindowPlace { x: origin.x.into(), y: origin.y.into(), width: size.width.into(), height: size.height.into(), maximized, display }
+}
+
+/// The UUID of the display `window` is on.
+fn display_uuid(window: &Window, cx: &App) -> Option<String> {
+    Some(window.display(cx)?.uuid().ok()?.to_string())
 }
 
 /// A side's tabs as saved; without them, the home folder's (or /).

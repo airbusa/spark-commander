@@ -32,7 +32,7 @@ pub struct Session {
 }
 
 /// Where the main window was, in logical pixels; maximized, its size before.
-#[derive(Clone, Copy, Default, Serialize, Deserialize)]
+#[derive(Clone, Default, Serialize, Deserialize)]
 #[serde(default)]
 pub struct WindowPlace {
     pub x: f32,
@@ -40,6 +40,9 @@ pub struct WindowPlace {
     pub width: f32,
     pub height: f32,
     pub maximized: bool,
+    /// The display it was on, by its UUID: x and y are its on macOS, the
+    /// desktop's elsewhere.
+    pub display: Option<String>,
 }
 
 /// Both panels' tabs and the terminal's: what a workspace keeps.

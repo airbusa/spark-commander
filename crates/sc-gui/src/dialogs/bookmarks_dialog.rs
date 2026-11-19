@@ -20,7 +20,7 @@ impl Commander {
             commander: commander.downgrade(),
             selected: None,
         });
-        window.open_dialog(cx, move |dialog, _, _| dialog.title(t!("bookmarks.title")).width(px(640.)).child(view.clone()));
+        window.open_dialog(cx, move |dialog, _, _| dialog.title(t!("bookmarks.title")).width(px(720.)).child(view.clone()));
     }
 }
 
@@ -187,16 +187,21 @@ impl Render for BookmarksDialog {
                         this.selected = None;
                     })),
             )
-            .child(Button::new("bookmarks-reset").outline().label(t!("bookmarks.reset")).on_click(cx.listener(|this, _, window, cx| {
-                this.run(window, cx, Commander::confirm_reset_bookmarks);
-                this.selected = None;
-            })))
             .child(Button::new("bookmarks-close").primary().label(t!("bookmarks.close")).min_w(px(80.)).ml_auto().on_click(|_, window, cx| window.close_dialog(cx)));
         v_flex()
             .w_full()
             .gap_2()
             .text_sm()
-            .child(div().text_color(muted).child(t!("bookmarks.intro")))
+            // On the whole list, apart from the buttons on a bookmark.
+            .child(
+                h_flex()
+                    .gap_4()
+                    .child(div().flex_1().min_w_0().text_color(muted).child(t!("bookmarks.intro")))
+                    .child(Button::new("bookmarks-reset").outline().label(t!("bookmarks.reset")).on_click(cx.listener(|this, _, window, cx| {
+                        this.run(window, cx, Commander::confirm_reset_bookmarks);
+                        this.selected = None;
+                    }))),
+            )
             .child(list)
             .child(buttons)
     }

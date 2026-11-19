@@ -1295,7 +1295,8 @@ impl Panel {
             let Ok(meta) = fs::metadata(path).or_else(|_| fs::symlink_metadata(path)) else {
                 continue;
             };
-            let (hidden, system, attributes) = attributes(path.file_name().unwrap_or_default(), Some(&meta));
+            let own = if cfg!(windows) { fs::symlink_metadata(path).ok() } else { None };
+            let (hidden, system, attributes) = attributes(path.file_name().unwrap_or_default(), Some(own.as_ref().unwrap_or(&meta)));
             entries.push(Entry {
                 name: path.strip_prefix(&self.path).unwrap_or(path).as_os_str().to_owned(),
                 is_dir: meta.is_dir(),
@@ -1774,7 +1775,9 @@ pub(crate) fn read_dir(path: &Path) -> io::Result<Vec<Entry>> {
             // Follow links; a broken link stays itself.
             let meta = fs::metadata(item.path()).or_else(|_| item.metadata()).ok();
             let name = item.file_name();
-            let (hidden, system, attributes) = attributes(&name, meta.as_ref());
+            // Windows: a link's own attributes, as Explorer's (the profile's hidden "Application Data" junction).
+            let own = if cfg!(windows) { item.metadata().ok() } else { None };
+            let (hidden, system, attributes) = attributes(&name, own.as_ref().or(meta.as_ref()));
             Entry {
                 tags: system::tags::colours(&item.path()),
                 online: meta.as_ref().is_some_and(online_only),

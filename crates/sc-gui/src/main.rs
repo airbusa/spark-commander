@@ -1524,6 +1524,10 @@ impl Commander {
             let size = if cfg!(target_os = "macos") { gpui_kit::component::Size::Small } else { gpui_kit::component::Size::Medium };
             let button = Button::new(("toolbar", command as usize)).ghost().with_size(size).icon(Icon::new(icon)).selected(self.checked(command)).tooltip(tip);
             let button = button.on_click(cx.listener(move |this, _, window, cx| {
+                // Pressed, the terminal's button hides it; the command would give it the keys, the panels having them.
+                if command == Command::TerminalPanel && this.terminal_shown {
+                    return this.hide_terminal(window, cx);
+                }
                 window.focus(&this.focus, cx);
                 window.dispatch_action(Box::new(Run(command)), cx);
             }));

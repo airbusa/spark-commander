@@ -75,16 +75,20 @@ impl Commander {
     pub(crate) fn toggle_terminal(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let using = self.terminal_tab().map(|tab| tab.view.read(cx).focus.clone());
         match using {
-            Some(focus) if self.terminal_shown && focus.is_focused(window) => {
-                self.terminal_shown = false;
-                self.focus_later(self.focus.clone(), window, cx);
-            }
+            Some(focus) if self.terminal_shown && focus.is_focused(window) => return self.hide_terminal(window, cx),
             Some(focus) => {
                 self.show_terminal();
                 self.focus_later(focus, window, cx);
             }
             None => return self.new_terminal_tab(window, cx),
         }
+        self.terminal_changed(window, cx);
+    }
+
+    /// Hides the terminal, its shells kept; the panels take the keys.
+    pub(crate) fn hide_terminal(&mut self, window: &mut Window, cx: &mut Context<Self>) {
+        self.terminal_shown = false;
+        self.focus_later(self.focus.clone(), window, cx);
         self.terminal_changed(window, cx);
     }
 

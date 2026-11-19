@@ -208,7 +208,12 @@ impl Commander {
                         .as_deref()
                         .and_then(|url| text.strip_prefix(url))
                         .unwrap_or(&text);
-                    let target = Target::parse(text, &batch.folder, batch.sources.len(), &*to);
+                    // A server's path from its root: on Windows the local folder's drive went before it (C:\home\…).
+                    let base = match server.is_some() && text.trim().starts_with('/') {
+                        true => std::path::Path::new("/"),
+                        false => &batch.folder,
+                    };
+                    let target = Target::parse(text, base, batch.sources.len(), &*to);
                     this.enqueue(kind, batch.clone(), to.clone(), target, overwrite, window, cx);
                 });
             },

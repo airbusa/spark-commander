@@ -1307,6 +1307,22 @@ impl Commander {
         cx.notify();
     }
 
+    /// Back to the bookmarks it starts with; asked first, as the user's go.
+    pub(crate) fn confirm_reset_bookmarks(&mut self, window: &mut Window, cx: &mut Context<Self>) {
+        let commander = cx.entity().downgrade();
+        window.open_alert_dialog(cx, move |alert, _, _| {
+            let commander = commander.clone();
+            alert.title(t!("bookmarks.reset_title")).description(t!("bookmarks.reset_confirm")).ok_text(t!("bookmarks.reset_button")).show_cancel(true).on_ok(move |_, window, cx| {
+                let _ = commander.update(cx, |this, cx| {
+                    this.settings.reset_bookmarks();
+                    this.save_settings(window, cx);
+                    cx.notify();
+                });
+                true
+            })
+        });
+    }
+
     /// A panel's dragged folders, this computer's only.
     pub(crate) fn dragged_folders(&self, dragged: Dragged) -> Vec<PathBuf> {
         let panel = self.panels[dragged.side].tabs.current();

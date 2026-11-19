@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "Renommer le signet"
   },
+  "bookmarks.reset": {
+    "message": "Réinitialiser..."
+  },
+  "bookmarks.reset_button": {
+    "message": "Réinitialiser"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "Rétablir les signets avec lesquels Spark Commander démarre ? Les autres signets et les noms que vous leur avez donnés seront retirés ; les dossiers eux-mêmes restent."
+  },
+  "bookmarks.reset_title": {
+    "message": "Réinitialiser les signets"
+  },
   "bookmarks.sort": {
     "message": "Trier de A à Z"
   },

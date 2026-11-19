@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "Nimeta järjehoidja ümber"
   },
+  "bookmarks.reset": {
+    "message": "Lähtesta..."
+  },
+  "bookmarks.reset_button": {
+    "message": "Lähtesta"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "Kas taastada järjehoidjad, millega Spark Commander alustab? Muud järjehoidjad ja neile antud nimed eemaldatakse; kaustad ise jäävad alles."
+  },
+  "bookmarks.reset_title": {
+    "message": "Lähtesta järjehoidjad"
+  },
   "bookmarks.sort": {
     "message": "Sordi A–Z"
   },

@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "Yer imini yeniden adlandır"
   },
+  "bookmarks.reset": {
+    "message": "Sıfırla..."
+  },
+  "bookmarks.reset_button": {
+    "message": "Sıfırla"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "Spark Commander’ın başlangıç yer imlerine dönülsün mü? Diğer yer imleri ve onlara verilen adlar kaldırılır; klasörlerin kendisi yerinde kalır."
+  },
+  "bookmarks.reset_title": {
+    "message": "Yer imlerini sıfırla"
+  },
   "bookmarks.sort": {
     "message": "A–Z sırala"
   },

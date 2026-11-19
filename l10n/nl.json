@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "Naam van bladwijzer wijzigen"
   },
+  "bookmarks.reset": {
+    "message": "Herstellen..."
+  },
+  "bookmarks.reset_button": {
+    "message": "Herstellen"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "De bladwijzers terugzetten waarmee Spark Commander begint? De andere bladwijzers en de namen die je ze gaf, worden verwijderd; de mappen zelf blijven."
+  },
+  "bookmarks.reset_title": {
+    "message": "Bladwijzers herstellen"
+  },
   "bookmarks.sort": {
     "message": "Sorteren A–Z"
   },

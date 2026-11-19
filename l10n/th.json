@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "เปลี่ยนชื่อที่คั่นหน้า"
   },
+  "bookmarks.reset": {
+    "message": "รีเซ็ต..."
+  },
+  "bookmarks.reset_button": {
+    "message": "รีเซ็ต"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "คืนค่าที่คั่นหน้าเริ่มต้นของ Spark Commander หรือไม่ ที่คั่นหน้าอื่นและชื่อที่ตั้งไว้จะถูกเอาออก ส่วนโฟลเดอร์ยังอยู่เหมือนเดิม"
+  },
+  "bookmarks.reset_title": {
+    "message": "รีเซ็ตที่คั่นหน้า"
+  },
   "bookmarks.sort": {
     "message": "เรียงตามตัวอักษร"
   },

@@ -298,36 +298,43 @@ impl Settings {
         crate::l10n::set_language(self.language.as_deref());
     }
 
-    /// On the first start, Home, Desktop, Documents and Downloads are
-    /// bookmarked, and Applications on macOS.
+    /// On the first start, the bookmarks it starts with.
     pub fn load() -> io::Result<Self> {
         let first = config_dir().is_none_or(|dir| !dir.join("settings.json").exists());
         let mut settings: Self = read_json("settings.json")?;
         if first {
-            let home = std::env::home_dir().unwrap_or_default();
-            // Without the desktop's user-dirs file, the English names.
-            let named = |dir: Option<PathBuf>, english| dir.unwrap_or_else(|| home.join(english));
-            let mut folders = vec![
-                home.clone(),
-                named(dirs::desktop_dir(), "Desktop"),
-                named(dirs::document_dir(), "Documents"),
-                named(dirs::download_dir(), "Downloads"),
-            ];
-            if cfg!(target_os = "macos") {
-                folders.push("/Applications".into());
-            }
-            for dir in folders {
-                // A desktop set to Home itself comes once.
-                if dir.is_dir() && !settings.bookmarks.contains(&dir) {
-                    settings.bookmarks.push(dir);
-                }
-            }
-            // Its folder's name is the user's.
-            if settings.bookmarks.contains(&home) {
-                settings.bookmark_names.insert(home, "Home".into());
-            }
+            settings.reset_bookmarks();
         }
         Ok(settings)
+    }
+
+    /// The bookmarks it starts with, their own names gone: Home, Desktop,
+    /// Documents and Downloads; on macOS Applications first, as Finder's.
+    pub fn reset_bookmarks(&mut self) {
+        let home = std::env::home_dir().unwrap_or_default();
+        // Without the desktop's user-dirs file, the English names.
+        let named = |dir: Option<PathBuf>, english| dir.unwrap_or_else(|| home.join(english));
+        let mut folders = vec![
+            home.clone(),
+            named(dirs::desktop_dir(), "Desktop"),
+            named(dirs::document_dir(), "Documents"),
+            named(dirs::download_dir(), "Downloads"),
+        ];
+        if cfg!(target_os = "macos") {
+            folders.insert(0, "/Applications".into());
+        }
+        self.bookmarks.clear();
+        self.bookmark_names.clear();
+        for dir in folders {
+            // A desktop set to Home itself comes once.
+            if dir.is_dir() && !self.bookmarks.contains(&dir) {
+                self.bookmarks.push(dir);
+            }
+        }
+        // Its folder's name is the user's.
+        if self.bookmarks.contains(&home) {
+            self.bookmark_names.insert(home, "Home".into());
+        }
     }
 
     pub fn save(&self) -> io::Result<()> {
@@ -397,6 +404,16 @@ mod tests {
         assert_eq!(read.toolbar.0, expected);
         let saved = serde_json::to_string(&read).unwrap();
         assert!(saved.contains(r#""toolbar":["GoBack","Separator","Search"]"#), "{saved}");
+    }
+
+    #[test]
+    fn resets_bookmarks_to_the_first_ones() {
+        let mut settings = Settings { bookmarks: vec!["/x/a".into()], ..Settings::default() };
+        settings.bookmark_names.insert("/x/a".into(), "Mine".into());
+        settings.reset_bookmarks();
+        assert!(!settings.bookmarks.is_empty() && !settings.bookmarks.contains(&"/x/a".into()));
+        assert!(settings.bookmarks.iter().all(|dir| dir.is_dir()));
+        assert!(settings.bookmark_names.values().all(|name| name == "Home"));
     }
 
     #[test]

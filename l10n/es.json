@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "Cambiar nombre del marcador"
   },
+  "bookmarks.reset": {
+    "message": "Restablecer..."
+  },
+  "bookmarks.reset_button": {
+    "message": "Restablecer"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "¿Volver a los marcadores con los que empieza Spark Commander? Los demás marcadores y los nombres que les diste se quitarán; las carpetas en sí se quedan."
+  },
+  "bookmarks.reset_title": {
+    "message": "Restablecer marcadores"
+  },
   "bookmarks.sort": {
     "message": "Ordenar A–Z"
   },

@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "Gi bokmerket nytt navn"
   },
+  "bookmarks.reset": {
+    "message": "Tilbakestill..."
+  },
+  "bookmarks.reset_button": {
+    "message": "Tilbakestill"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "Vil du gjenopprette bokmerkene Spark Commander starter med? De andre bokmerkene og navnene du har gitt dem, fjernes; selve mappene blir værende."
+  },
+  "bookmarks.reset_title": {
+    "message": "Tilbakestill bokmerker"
+  },
   "bookmarks.sort": {
     "message": "Sorter A–Å"
   },

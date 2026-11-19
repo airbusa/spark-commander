@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "Lesezeichen umbenennen"
   },
+  "bookmarks.reset": {
+    "message": "Zurücksetzen..."
+  },
+  "bookmarks.reset_button": {
+    "message": "Zurücksetzen"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "Die Lesezeichen wiederherstellen, mit denen Spark Commander beginnt? Die übrigen Lesezeichen und die vergebenen Namen werden entfernt; die Ordner selbst bleiben."
+  },
+  "bookmarks.reset_title": {
+    "message": "Lesezeichen zurücksetzen"
+  },
   "bookmarks.sort": {
     "message": "Sortieren A–Z"
   },

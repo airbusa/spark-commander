@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "ブックマークの名前の変更"
   },
+  "bookmarks.reset": {
+    "message": "リセット..."
+  },
+  "bookmarks.reset_button": {
+    "message": "リセット"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "Spark Commander の初期ブックマークに戻しますか？ほかのブックマークと付けた名前は削除されます。フォルダー自体は残ります。"
+  },
+  "bookmarks.reset_title": {
+    "message": "ブックマークのリセット"
+  },
   "bookmarks.sort": {
     "message": "名前順に並べ替え"
   },

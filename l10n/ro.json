@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "Redenumiți marcajul"
   },
+  "bookmarks.reset": {
+    "message": "Resetați..."
+  },
+  "bookmarks.reset_button": {
+    "message": "Resetați"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "Reveniți la marcajele cu care pornește Spark Commander? Celelalte marcaje și numele date lor vor fi eliminate; folderele în sine rămân."
+  },
+  "bookmarks.reset_title": {
+    "message": "Resetați marcajele"
+  },
   "bookmarks.sort": {
     "message": "Sortați A–Z"
   },

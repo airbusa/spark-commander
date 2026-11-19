@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "Nimeä kirjanmerkki uudelleen"
   },
+  "bookmarks.reset": {
+    "message": "Palauta..."
+  },
+  "bookmarks.reset_button": {
+    "message": "Palauta"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "Palautetaanko kirjanmerkit, joilla Spark Commander aloittaa? Muut kirjanmerkit ja niille antamasi nimet poistetaan; itse kansiot säilyvät."
+  },
+  "bookmarks.reset_title": {
+    "message": "Palauta kirjanmerkit"
+  },
   "bookmarks.sort": {
     "message": "Lajittele A–Ö"
   },

@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "Перейменувати закладку"
   },
+  "bookmarks.reset": {
+    "message": "Скинути..."
+  },
+  "bookmarks.reset_button": {
+    "message": "Скинути"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "Повернути закладки, з якими починає Spark Commander? Інші закладки й дані їм назви буде вилучено; самі теки залишаться."
+  },
+  "bookmarks.reset_title": {
+    "message": "Скинути закладки"
+  },
   "bookmarks.sort": {
     "message": "Сортувати А–Я"
   },

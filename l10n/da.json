@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "Omdøb bogmærke"
   },
+  "bookmarks.reset": {
+    "message": "Nulstil..."
+  },
+  "bookmarks.reset_button": {
+    "message": "Nulstil"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "Vil du gendanne de bogmærker, Spark Commander starter med? De øvrige bogmærker og de navne, du har givet dem, fjernes; selve mapperne bliver."
+  },
+  "bookmarks.reset_title": {
+    "message": "Nulstil bogmærker"
+  },
   "bookmarks.sort": {
     "message": "Sortér A–Å"
   },

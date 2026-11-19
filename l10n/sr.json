@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "Преименуј обележивач"
   },
+  "bookmarks.reset": {
+    "message": "Ресетуј..."
+  },
+  "bookmarks.reset_button": {
+    "message": "Ресетуј"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "Вратити обележиваче са којима Spark Commander почиње? Остали обележивачи и имена која сте им дали биће уклоњени; саме фасцикле остају."
+  },
+  "bookmarks.reset_title": {
+    "message": "Ресетовање обележивача"
+  },
   "bookmarks.sort": {
     "message": "Сортирај А–Ш"
   },

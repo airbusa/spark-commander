@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "重命名书签"
   },
+  "bookmarks.reset": {
+    "message": "重置..."
+  },
+  "bookmarks.reset_button": {
+    "message": "重置"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "要恢复 Spark Commander 的初始书签吗？其他书签及为其设置的名称将被移除；文件夹本身不受影响。"
+  },
+  "bookmarks.reset_title": {
+    "message": "重置书签"
+  },
   "bookmarks.sort": {
     "message": "按名称排序"
   },

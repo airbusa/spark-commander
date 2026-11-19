@@ -1,5 +1,5 @@
-//! Go > Manage Bookmarks: Places' bookmarks added, removed, renamed and put
-//! in order, by the buttons or by dragging; this computer's folders only.
+//! Go > Manage Bookmarks: Places' bookmarks added, removed, renamed, put in
+//! order (by the buttons or by dragging) or reset; this computer's folders only.
 
 use gpui_kit::component::button::{Button, ButtonVariants};
 use gpui_kit::component::notification::Notification;
@@ -156,7 +156,9 @@ impl Render for BookmarksDialog {
                 }
             }))
         };
+        // Wordier languages' buttons go on in a second line.
         let buttons = h_flex()
+            .flex_wrap()
             .gap_2()
             .child(Button::new("bookmarks-add").outline().label(t!("bookmarks.add_folders")).on_click(cx.listener(|this, _, window, cx| this.browse(window, cx))))
             .child(on_selected(Button::new("bookmarks-rename").label(t!("bookmarks.rename")), |this, ix, window, cx| {
@@ -185,8 +187,11 @@ impl Render for BookmarksDialog {
                         this.selected = None;
                     })),
             )
-            .child(div().flex_1())
-            .child(Button::new("bookmarks-close").primary().label(t!("bookmarks.close")).min_w(px(80.)).on_click(|_, window, cx| window.close_dialog(cx)));
+            .child(Button::new("bookmarks-reset").outline().label(t!("bookmarks.reset")).on_click(cx.listener(|this, _, window, cx| {
+                this.run(window, cx, Commander::confirm_reset_bookmarks);
+                this.selected = None;
+            })))
+            .child(Button::new("bookmarks-close").primary().label(t!("bookmarks.close")).min_w(px(80.)).ml_auto().on_click(|_, window, cx| window.close_dialog(cx)));
         v_flex()
             .w_full()
             .gap_2()

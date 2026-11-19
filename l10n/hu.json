@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "Könyvjelző átnevezése"
   },
+  "bookmarks.reset": {
+    "message": "Visszaállítás..."
+  },
+  "bookmarks.reset_button": {
+    "message": "Visszaállítás"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "Visszaállítod a könyvjelzőket, amelyekkel a Spark Commander indul? A többi könyvjelző és az általad adott nevek eltűnnek; maguk a mappák megmaradnak."
+  },
+  "bookmarks.reset_title": {
+    "message": "Könyvjelzők visszaállítása"
+  },
   "bookmarks.sort": {
     "message": "Rendezés A–Z"
   },

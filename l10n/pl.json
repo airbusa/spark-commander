@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "Zmień nazwę zakładki"
   },
+  "bookmarks.reset": {
+    "message": "Resetuj..."
+  },
+  "bookmarks.reset_button": {
+    "message": "Resetuj"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "Przywrócić zakładki, z którymi startuje Spark Commander? Pozostałe zakładki i nadane im nazwy zostaną usunięte; same foldery pozostaną."
+  },
+  "bookmarks.reset_title": {
+    "message": "Resetuj zakładki"
+  },
   "bookmarks.sort": {
     "message": "Sortuj A–Z"
   },

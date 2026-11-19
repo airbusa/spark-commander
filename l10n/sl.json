@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "Preimenuj zaznamek"
   },
+  "bookmarks.reset": {
+    "message": "Ponastavi..."
+  },
+  "bookmarks.reset_button": {
+    "message": "Ponastavi"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "Želite obnoviti zaznamke, s katerimi začne Spark Commander? Drugi zaznamki in imena, ki ste jim jih dali, bodo odstranjeni; same mape ostanejo."
+  },
+  "bookmarks.reset_title": {
+    "message": "Ponastavi zaznamke"
+  },
   "bookmarks.sort": {
     "message": "Razvrsti A–Ž"
   },

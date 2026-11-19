@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "Canvia el nom de l’adreça d’interès"
   },
+  "bookmarks.reset": {
+    "message": "Restableix..."
+  },
+  "bookmarks.reset_button": {
+    "message": "Restableix"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "Vols recuperar les adreces d’interès amb què comença Spark Commander? Les altres adreces d’interès i els noms que els has donat s’eliminaran; les carpetes mateixes es mantenen."
+  },
+  "bookmarks.reset_title": {
+    "message": "Restableix les adreces d’interès"
+  },
   "bookmarks.sort": {
     "message": "Ordena A–Z"
   },

@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "Ganti nama markah"
   },
+  "bookmarks.reset": {
+    "message": "Atur ulang..."
+  },
+  "bookmarks.reset_button": {
+    "message": "Atur ulang"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "Kembalikan markah bawaan Spark Commander? Markah lain dan nama yang Anda berikan akan dihapus; foldernya sendiri tetap ada."
+  },
+  "bookmarks.reset_title": {
+    "message": "Atur ulang markah"
+  },
   "bookmarks.sort": {
     "message": "Urutkan A–Z"
   },

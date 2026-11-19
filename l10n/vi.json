@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "Đổi tên dấu trang"
   },
+  "bookmarks.reset": {
+    "message": "Đặt lại..."
+  },
+  "bookmarks.reset_button": {
+    "message": "Đặt lại"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "Khôi phục các dấu trang mặc định của Spark Commander? Các dấu trang khác và tên bạn đã đặt cho chúng sẽ bị xóa; bản thân các thư mục vẫn giữ nguyên."
+  },
+  "bookmarks.reset_title": {
+    "message": "Đặt lại dấu trang"
+  },
   "bookmarks.sort": {
     "message": "Sắp xếp A–Z"
   },

@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "Rinomina segnalibro"
   },
+  "bookmarks.reset": {
+    "message": "Ripristina..."
+  },
+  "bookmarks.reset_button": {
+    "message": "Ripristina"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "Ripristinare i segnalibri con cui si avvia Spark Commander? Gli altri segnalibri e i nomi che hai dato loro verranno rimossi; le cartelle restano."
+  },
+  "bookmarks.reset_title": {
+    "message": "Ripristina segnalibri"
+  },
   "bookmarks.sort": {
     "message": "Ordina A–Z"
   },

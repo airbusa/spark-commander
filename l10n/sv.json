@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "Byt namn på bokmärke"
   },
+  "bookmarks.reset": {
+    "message": "Återställ..."
+  },
+  "bookmarks.reset_button": {
+    "message": "Återställ"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "Vill du återställa bokmärkena som Spark Commander börjar med? Övriga bokmärken och namnen du gett dem tas bort; själva mapparna finns kvar."
+  },
+  "bookmarks.reset_title": {
+    "message": "Återställ bokmärken"
+  },
   "bookmarks.sort": {
     "message": "Sortera A–Ö"
   },

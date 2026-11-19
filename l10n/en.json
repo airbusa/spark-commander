@@ -487,6 +487,22 @@
     "description": "Title of the dialog giving a bookmark a name of its own.",
     "message": "Rename bookmark"
   },
+  "bookmarks.reset": {
+    "description": "Bookmarks dialog button: puts back the bookmarks Spark Commander starts with on this system (Home, Desktop, Documents, Downloads; on macOS Applications first). \"...\" means a dialog opens. Keep it short.",
+    "message": "Reset..."
+  },
+  "bookmarks.reset_button": {
+    "description": "Confirming button of the Reset Bookmarks dialog. Keep it short.",
+    "message": "Reset"
+  },
+  "bookmarks.reset_confirm": {
+    "description": "Reset Bookmarks dialog: asks whether to put back the bookmarks Spark Commander starts with. The folders themselves are not touched.",
+    "message": "Put back the bookmarks Spark Commander starts with? The other bookmarks and the names given to them are removed; the folders themselves stay."
+  },
+  "bookmarks.reset_title": {
+    "description": "Title of the dialog asking whether to reset the bookmarks.",
+    "message": "Reset Bookmarks"
+  },
   "bookmarks.sort": {
     "description": "Bookmarks dialog button: sorts the bookmarks by name, alphabetically.",
     "message": "Sort A–Z"

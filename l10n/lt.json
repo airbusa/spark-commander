@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "Pervardyti žymelę"
   },
+  "bookmarks.reset": {
+    "message": "Atkurti..."
+  },
+  "bookmarks.reset_button": {
+    "message": "Atkurti"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "Atkurti žymeles, su kuriomis pradeda Spark Commander? Kitos žymelės ir joms suteikti pavadinimai bus pašalinti; patys aplankai lieka."
+  },
+  "bookmarks.reset_title": {
+    "message": "Atkurti žymeles"
+  },
   "bookmarks.sort": {
     "message": "Rūšiuoti A–Ž"
   },

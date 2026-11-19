@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "बुकमार्क का नाम बदलें"
   },
+  "bookmarks.reset": {
+    "message": "रीसेट करें..."
+  },
+  "bookmarks.reset_button": {
+    "message": "रीसेट करें"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "क्या Spark Commander के शुरुआती बुकमार्क वापस लाएं? बाकी बुकमार्क और उन्हें दिए गए नाम हटा दिए जाएंगे; फ़ोल्डर अपनी जगह रहेंगे।"
+  },
+  "bookmarks.reset_title": {
+    "message": "बुकमार्क रीसेट करें"
+  },
   "bookmarks.sort": {
     "message": "A–Z क्रम में लगाएं"
   },

@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "Μετονομασία σελιδοδείκτη"
   },
+  "bookmarks.reset": {
+    "message": "Επαναφορά..."
+  },
+  "bookmarks.reset_button": {
+    "message": "Επαναφορά"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "Επαναφορά των σελιδοδεικτών με τους οποίους ξεκινά το Spark Commander; Οι υπόλοιποι σελιδοδείκτες και τα ονόματα που τους δώσατε θα αφαιρεθούν· οι ίδιοι οι φάκελοι παραμένουν."
+  },
+  "bookmarks.reset_title": {
+    "message": "Επαναφορά σελιδοδεικτών"
+  },
   "bookmarks.sort": {
     "message": "Ταξινόμηση Α–Ω"
   },

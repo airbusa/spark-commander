@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "重新命名書籤"
   },
+  "bookmarks.reset": {
+    "message": "重設..."
+  },
+  "bookmarks.reset_button": {
+    "message": "重設"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "要恢復 Spark Commander 的初始書籤嗎？其他書籤及為其設定的名稱將被移除；資料夾本身不受影響。"
+  },
+  "bookmarks.reset_title": {
+    "message": "重設書籤"
+  },
   "bookmarks.sort": {
     "message": "排序 A–Z"
   },

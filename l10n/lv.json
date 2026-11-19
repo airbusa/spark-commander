@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "Pārdēvēt grāmatzīmi"
   },
+  "bookmarks.reset": {
+    "message": "Atiestatīt..."
+  },
+  "bookmarks.reset_button": {
+    "message": "Atiestatīt"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "Vai atjaunot grāmatzīmes, ar kurām Spark Commander sāk darbu? Pārējās grāmatzīmes un tām dotie nosaukumi tiks noņemti; pašas mapes paliek."
+  },
+  "bookmarks.reset_title": {
+    "message": "Atiestatīt grāmatzīmes"
+  },
   "bookmarks.sort": {
     "message": "Kārtot A–Z"
   },

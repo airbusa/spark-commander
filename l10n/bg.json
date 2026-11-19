@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "Преименуване на отметка"
   },
+  "bookmarks.reset": {
+    "message": "Нулиране..."
+  },
+  "bookmarks.reset_button": {
+    "message": "Нулиране"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "Да се върнат ли отметките, с които Spark Commander започва? Другите отметки и дадените им имена ще бъдат премахнати; самите папки остават."
+  },
+  "bookmarks.reset_title": {
+    "message": "Нулиране на отметките"
+  },
   "bookmarks.sort": {
     "message": "Сортиране А–Я"
   },

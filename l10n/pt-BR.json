@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "Renomear favorito"
   },
+  "bookmarks.reset": {
+    "message": "Redefinir..."
+  },
+  "bookmarks.reset_button": {
+    "message": "Redefinir"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "Voltar aos favoritos com que o Spark Commander começa? Os outros favoritos e os nomes dados a eles serão removidos; as pastas em si continuam."
+  },
+  "bookmarks.reset_title": {
+    "message": "Redefinir favoritos"
+  },
   "bookmarks.sort": {
     "message": "Ordenar A–Z"
   },

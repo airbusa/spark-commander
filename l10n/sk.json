@@ -365,6 +365,18 @@
   "bookmarks.rename_title": {
     "message": "Premenovať záložku"
   },
+  "bookmarks.reset": {
+    "message": "Obnoviť..."
+  },
+  "bookmarks.reset_button": {
+    "message": "Obnoviť"
+  },
+  "bookmarks.reset_confirm": {
+    "message": "Vrátiť záložky, s ktorými Spark Commander začína? Ostatné záložky a názvy, ktoré ste im dali, sa odstránia; samotné priečinky zostanú."
+  },
+  "bookmarks.reset_title": {
+    "message": "Obnoviť záložky"
+  },
   "bookmarks.sort": {
     "message": "Zoradiť A–Z"
   },

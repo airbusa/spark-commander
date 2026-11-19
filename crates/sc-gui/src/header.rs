@@ -82,7 +82,7 @@ impl Commander {
         TitleBar::new()
             .h(MAC_BAR)
             .pl(px(if sidebar { 8. } else { lights }))
-            .bg(self.colors.bar)
+            .bg(crate::sidebar::Sidebar::chrome(self.colors.window))
             .border_color(cx.theme().border)
             .children(title)
             // Together at the left: the bar spreads its children apart.
@@ -100,7 +100,7 @@ impl Commander {
             false => format!("{name} ({})", crate::dialogs::keys_dialog::shown(&key)),
         };
         let focus = self.focus.clone();
-        let button = Button::new("sidebar-toggle").ghost().small().icon(Icon::new(Lucide::PanelLeft)).tooltip(tip).on_click(move |_, window, cx| {
+        let button = Button::new("sidebar-toggle").ghost().with_size(MAC_BUTTON).icon(Icon::new(Lucide::PanelLeft)).tooltip(tip).on_click(move |_, window, cx| {
             window.focus(&focus, cx);
             window.dispatch_action(Box::new(crate::menus::Run(command)), cx);
         });
@@ -115,6 +115,8 @@ impl Commander {
 pub(crate) const MAC_BAR: Pixels = px(52.);
 pub(crate) const MAC_LIGHTS: Point<Pixels> = Point { x: px(19.), y: px(19.) };
 pub(crate) const MAC_LIGHTS_END: f32 = 84.;
+/// macOS: the toolbar's buttons, their icons 18 px, as large as Notes' and Finder's.
+pub(crate) const MAC_BUTTON: gpui_kit::component::Size = gpui_kit::component::Size::Size(px(24.));
 
 /// The title bar of a window that draws its own frame: any on GNOME on
 /// Wayland, which draws none, and the main one for its ☰ button.

@@ -130,6 +130,12 @@ impl Sidebar {
     }
 
     /// Show > Sidebar's check marks.
+    /// macOS: the title bar's and the bottom bars' colour: the sidebar's, a
+    /// little lighter, solid.
+    pub(crate) fn chrome(window: Hsla) -> Hsla {
+        Hsla { l: (window.l + 0.03).min(1.), ..window }
+    }
+
     /// Shown, or sliding out.
     pub(crate) fn drawn(&self) -> bool {
         self.tab.or(self.closing).is_some()
@@ -557,8 +563,11 @@ impl Commander {
         let top = TitleBar::new()
             .h(header::MAC_BAR - INSET - px(8.))
             .pl(px(header::MAC_LIGHTS_END) - INSET)
+            .pr_2()
             .bg(transparent_black())
             .border_0()
+            // At the right, as Notes'.
+            .child(div().flex_1())
             .child(self.sidebar_toggle());
         let sections = [
             (SidebarTab::Places, Lucide::Bookmark, t!("sidebar.section.places")),
@@ -567,6 +576,21 @@ impl Commander {
             (SidebarTab::Operations, Lucide::ListOrdered, t!("sidebar.section.operations")),
         ];
         let summary = self.operations_summary();
+        let at = |which: SidebarTab| sections.iter().position(|section| section.0 == which).unwrap_or(0) as f32;
+        let count = sections.len() as f32;
+        let to = at(tab);
+        let switching = self.sidebar.leaving.map(at);
+        let pill = div().absolute().top_0().bottom_0().w(relative(1. / count)).rounded_full().bg(mac.accent);
+        let pill = match switching {
+            Some(from) => {
+                let slide = Animation::new(SLIDE).with_easing(ease_in_out);
+                pill.with_animation(("sidebar-pill", self.sidebar.switches), slide, move |el, delta| {
+                    el.left(relative((from + (to - from) * delta) / count))
+                })
+                .into_any_element()
+            }
+            None => pill.left(relative(to / count)).into_any_element(),
+        };
         let icons = sections.into_iter().enumerate().map(|(at, (which, icon, name))| {
             let open = tab == which;
             // The queue's progress shows also while its section is shut.
@@ -586,7 +610,7 @@ impl Commander {
                 .rounded_full()
                 .cursor_pointer()
                 .map(|el| match open {
-                    true => el.bg(mac.accent).text_color(mac.on_accent),
+                    true => el.text_color(mac.on_accent),
                     false => el.text_color(muted).hover(|style| style.bg(hover)),
                 })
                 .child(Icon::new(icon).size(px(15.)))
@@ -594,7 +618,7 @@ impl Commander {
                 .tooltip(move |window, cx| gpui_kit::component::tooltip::Tooltip::new(tip.clone()).build(window, cx))
                 .on_click(cx.listener(move |this, _, _, cx| this.open_section(which, cx)))
         });
-        let tabs = h_flex().flex_none().mx_2().h(px(28.)).rounded_full().bg(track).children(icons);
+        let tabs = h_flex().relative().flex_none().mx_2().h(px(28.)).rounded_full().bg(track).child(pill).children(icons);
         let content = match tab {
             SidebarTab::Tree => self.render_tree(cx).into_any_element(),
             SidebarTab::Connections => self.render_connections(cx).into_any_element(),
@@ -602,7 +626,19 @@ impl Commander {
             SidebarTab::Operations => self.render_operations(cx).into_any_element(),
         };
         // Kept off the rounded corners.
-        let content = v_flex().flex_1().min_h_0().overflow_hidden().pt_2().px_1().pb(px(12.)).child(content);
+        let content = v_flex().relative().flex_1().min_h_0().overflow_hidden().pt_2().px_1().pb(px(12.)).child(content);
+        let content = match switching {
+            Some(from) => {
+                let side = if to > from { 12. } else { -12. };
+                let slide = Animation::new(SLIDE).with_easing(ease_in_out);
+                content
+                    .with_animation(("sidebar-content", self.sidebar.switches), slide, move |el, delta| {
+                        el.opacity(delta).left(px(side * (1. - delta)))
+                    })
+                    .into_any_element()
+            }
+            None => content.into_any_element(),
+        };
         let panel = v_flex()
             .size_full()
             .rounded(px(18.))

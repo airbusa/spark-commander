@@ -1531,8 +1531,7 @@ impl Commander {
                 true => name.to_owned(),
                 false => format!("{name} ({})", dialogs::keys_dialog::shown(&key)),
             };
-            // macOS: small, in the compact title bar.
-            let size = if cfg!(target_os = "macos") { gpui_kit::component::Size::Small } else { gpui_kit::component::Size::Medium };
+            let size = if cfg!(target_os = "macos") { header::MAC_BUTTON } else { gpui_kit::component::Size::Medium };
             let button = Button::new(("toolbar", command as usize)).ghost().with_size(size).icon(Icon::new(icon)).selected(self.checked(command)).tooltip(tip);
             let button = button.on_click(cx.listener(move |this, _, window, cx| {
                 // Pressed, the terminal's button hides it; the command would give it the keys, the panels having them.
@@ -2746,7 +2745,11 @@ impl Render for Commander {
             .children(self.render_terminal(window, cx))
             .child(
                 v_flex()
-                    .bg(background)
+                    // macOS: as the title bar, in the sidebar's colour.
+                    .bg(match cfg!(target_os = "macos") {
+                        true => crate::sidebar::Sidebar::chrome(self.colors.window),
+                        false => background,
+                    })
                     .children(self.render_transfers(cx))
                     .child(self.render_command_line(cx))
                     .child(self.render_button_bar(cx)),

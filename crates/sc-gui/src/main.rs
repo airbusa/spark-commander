@@ -1241,6 +1241,30 @@ impl Commander {
         cx.notify();
     }
 
+    /// The path, each folder in it a link there, as Total Commander's and
+    /// WinUI's BreadcrumbBar; a click on the last or past the end edits it.
+    fn render_crumbs(&self, ix: usize, location: &str, cx: &mut Context<Self>) -> Div {
+        let crumbs = crumbs(location);
+        let last = crumbs.len().saturating_sub(1);
+        let parts = crumbs.into_iter().enumerate().map(|(n, (name, end))| {
+            let part = div().id(("crumb", n)).flex_none().child(name.to_owned());
+            if n == last {
+                return part.into_any_element();
+            }
+            let target = location[..end].to_owned();
+            let link = part.cursor_pointer().hover(|style| style.underline()).on_click(cx.listener(move |this, _, window, cx| {
+                cx.stop_propagation();
+                this.active = ix;
+                this.open_location(ix, &target, window, cx);
+                cx.notify();
+            }));
+            let chevron = Icon::new(IconName::ChevronRight).xsmall().mx(px(2.)).opacity(0.6);
+            h_flex().flex_none().child(link).child(chevron).into_any_element()
+        });
+        // Too long, its start goes out of sight: the folder it is in stays.
+        h_flex().flex_1().min_w_0().overflow_hidden().justify_end().children(parts).child(div().flex_1())
+    }
+
     /// Goes to a folder that exists; otherwise says why and stays open.
     fn apply_path_edit(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let (ix, typed) = match &self.path_edit {
@@ -2161,6 +2185,7 @@ impl Commander {
         let rows = self.with_shell_menu(ix, rows, cx);
         #[cfg(any(target_os = "linux", target_os = "freebsd"))]
         let rows = self.with_desktop_menu(ix, rows, cx);
+        let crumbs = self.render_crumbs(ix, &panel.location(), cx);
         let theme = cx.theme();
         let panel_list = self.panel_list.as_ref().filter(|(side, ..)| *side == ix);
         let ring = theme.ring;
@@ -2225,7 +2250,7 @@ impl Commander {
                     )
                     // Search results say so, as Total Commander's listbox.
                     .children(panel.found_label().map(|label| div().flex_none().pr_2().font_weight(FontWeight::BOLD).child(found_label(label))))
-                    .child(div().flex_1().min_w_0().truncate().child(panel.location()))
+                    .child(crumbs)
                     // The filter stays in sight however long the path.
                     .children(filter_suffix(panel).map(|filter| div().flex_none().child(filter)))
                     .when(self.sync_browsing, |el| {
@@ -2974,6 +2999,33 @@ fn palette(settings: &Settings, window: &Window) -> theme::Palette {
     }
 }
 
+/// The path's folders, each its text and where its path ends in `location`:
+/// the root first (a drive, a share, a server, `/`).
+fn crumbs(location: &str) -> Vec<(&str, usize)> {
+    let sep = |c: char| c == '/' || c == '\\';
+    let after = |from: usize, n: usize| location[from..].match_indices(sep).nth(n).map_or(location.len(), |(at, _)| from + at + 1);
+    let root = match location.find("://") {
+        Some(at) => after(at + 3, 0),
+        None if location.starts_with("\\\\") => after(2, 1),
+        None if location.starts_with(sep) => 1,
+        None => location.find(sep).filter(|&at| location[..at].ends_with(':')).map_or(0, |at| at + 1),
+    };
+    let mut crumbs = Vec::new();
+    if root > 0 {
+        let shown = location[..root].trim_end_matches(sep);
+        crumbs.push((if shown.is_empty() { &location[..1] } else { shown }, root));
+    }
+    let mut start = root;
+    for part in location[root..].split(sep) {
+        let end = start + part.len();
+        if !part.is_empty() {
+            crumbs.push((part, end));
+        }
+        start = end + 1;
+    }
+    crumbs
+}
+
 /// The path line's start in search results or Branch View, in words.
 fn found_label(label: &str) -> String {
     match label {
@@ -3009,4 +3061,17 @@ fn tag_dots(tags: &[u8], edge: Hsla) -> Div {
         let dot = div().size(px(10.)).rounded_full().border_1().border_color(edge);
         Some(dot.bg(rgb(u32::from_be_bytes([0, r, g, b]))).when(n > 0, |dot| dot.ml(px(-4.))))
     }))
+}
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn crumbs() {
+        let shown = |location| super::crumbs(location).into_iter().map(|(name, end)| (name, &location[..end])).collect::<Vec<_>>();
+        assert_eq!(shown(r"C:\Users\me"), [("C:", r"C:\"), ("Users", r"C:\Users"), ("me", r"C:\Users\me")]);
+        assert_eq!(shown(r"C:\"), [("C:", r"C:\")]);
+        assert_eq!(shown("/home/me/"), [("/", "/"), ("home", "/home"), ("me", "/home/me")]);
+        assert_eq!(shown("sftp://me@host/home"), [("sftp://me@host", "sftp://me@host/"), ("home", "sftp://me@host/home")]);
+        assert_eq!(shown(r"\\nas\share\docs"), [(r"\\nas\share", r"\\nas\share\"), ("docs", r"\\nas\share\docs")]);
+    }
 }

@@ -83,6 +83,11 @@ pub fn apply(palette: &Palette, cx: &mut App) -> PanelColors {
             kit.font_size = px(size / 0.875);
         }
         kit.scrollbar_mode = ScrollbarMode::Always;
+        // macOS: as wide as AppKit's, its knob as AppKit draws it.
+        #[cfg(target_os = "macos")]
+        {
+            kit.scrollbar_size = mac_scrollbar();
+        }
         // A focused field's border takes the accent, as Breeze's; the ring
         // around it was cut off by the dialogs.
         kit.focus_ring = false;
@@ -402,4 +407,25 @@ pub fn close_button_only(window: &gpui_kit::Window) {
             button.setHidden(true);
         }
     }
+}
+
+/// macOS: AppKit's always-shown (legacy) scroller, as the app's scrollbars
+/// are: its width and its knob's, read from AppKit (17, 11 and 3 on macOS 26).
+#[cfg(target_os = "macos")]
+fn mac_scrollbar() -> Option<gpui_kit::component::ScrollbarSize> {
+    use objc2::MainThreadMarker;
+    use objc2_app_kit::{NSControlSize, NSScroller, NSScrollerPart, NSScrollerStyle};
+    use objc2_foundation::{NSPoint, NSRect, NSSize};
+    let mtm = MainThreadMarker::new()?;
+    let width = NSScroller::scrollerWidthForControlSize_scrollerStyle(NSControlSize::Regular, NSScrollerStyle::Legacy, mtm);
+    let scroller = NSScroller::initWithFrame(mtm.alloc(), NSRect::new(NSPoint::new(0., 0.), NSSize::new(width, 300.)));
+    scroller.setScrollerStyle(NSScrollerStyle::Legacy);
+    scroller.setKnobProportion(0.3);
+    scroller.setEnabled(true);
+    let knob = scroller.rectForPart(NSScrollerPart::Knob);
+    (knob.size.width > 0.).then(|| gpui_kit::component::ScrollbarSize {
+        track: px(width as f32),
+        thumb: px(knob.size.width as f32),
+        inset: px(knob.origin.x as f32),
+    })
 }

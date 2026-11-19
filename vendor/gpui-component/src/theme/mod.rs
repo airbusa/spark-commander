@@ -142,6 +142,15 @@ fn scrollbar_motion(mode: ScrollbarMode) -> gpui_base::ScrollbarMotion {
         })
 }
 
+/// SparkCommander patch: a scrollbar's width, its thumb's in every state, and
+/// the thumb's inset from the track's edges (AppKit's legacy scroller: 17, 11, 3).
+#[derive(Debug, Clone, Copy, PartialEq)]
+pub struct ScrollbarSize {
+    pub track: Pixels,
+    pub thumb: Pixels,
+    pub inset: Pixels,
+}
+
 /// The global theme configuration.
 #[derive(Debug, Clone, Serialize, Deserialize, JsonSchema)]
 pub struct Theme {
@@ -203,6 +212,9 @@ pub struct Theme {
     /// Show the scrollbar mode, default: Scrolling
     #[serde(alias = "scrollbar_show")]
     pub scrollbar_mode: ScrollbarMode,
+    /// SparkCommander patch: the scrollbar's size as the desktop draws it; none: GPUI Kit's.
+    #[serde(skip)]
+    pub scrollbar_size: Option<ScrollbarSize>,
     /// The notification setting.
     #[serde(skip)]
     pub notification: NotificationSettings,
@@ -417,13 +429,16 @@ impl Theme {
                 .with_motion(scrollbar_motion(self.scrollbar_mode))
                 .with_styles(
                     gpui_base::ScrollbarStyles::default()
-                        .track(|style| style.bg(self.scrollbar))
+                        .track(|style| {
+                            style.bg(self.scrollbar).when_some(self.scrollbar_size, |style, size| style.width(size.track))
+                        })
                         .track_hover(|style| style.bg(self.scrollbar))
                         .track_active(|style| style.bg(self.scrollbar).border_color(self.border))
                         .thumb(|style| {
                             style
                                 .bg(self.tokens.scrollbar_thumb)
                                 .radius(self.radius)
+                                .when_some(self.scrollbar_size, |style, size| style.width(size.thumb).inset(size.inset))
                                 .when(gpui_base::is_mobile(), |style| {
                                     style
                                         .width(MOBILE_SCROLLBAR_THUMB_WIDTH)
@@ -435,6 +450,7 @@ impl Theme {
                             style
                                 .bg(self.tokens.scrollbar_thumb_hover)
                                 .radius(self.radius)
+                                .when_some(self.scrollbar_size, |style, size| style.width(size.thumb).inset(size.inset))
                                 .when(gpui_base::is_mobile(), |style| {
                                     style
                                         .width(SCROLLBAR_THUMB_HOVER_WIDTH)
@@ -445,6 +461,7 @@ impl Theme {
                             style
                                 .bg(self.tokens.scrollbar_thumb_hover)
                                 .radius(self.radius)
+                                .when_some(self.scrollbar_size, |style, size| style.width(size.thumb).inset(size.inset))
                                 .when(gpui_base::is_mobile(), |style| {
                                     style
                                         .width(SCROLLBAR_THUMB_ACTIVE_WIDTH)
@@ -781,6 +798,7 @@ impl From<&ThemeColor> for Theme {
             shadow: true,
             focus_ring: true,
             scrollbar_mode: ScrollbarMode::default(),
+            scrollbar_size: None,
             notification: NotificationSettings::default(),
             list: ListSettings::default(),
             colors: *colors,

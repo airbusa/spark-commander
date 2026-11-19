@@ -859,6 +859,7 @@ impl Commander {
     fn render_volume(&self, ix: usize, volume: &Volume, inside: Option<&Path>, cx: &mut Context<Self>) -> impl IntoElement + use<> {
         let theme = cx.theme();
         let selected = volume.path.is_some() && volume.path.as_deref() == inside;
+        let muted = secondary(selected, cx);
         let icon = volume_icon(volume.kind);
         let detail = match (&volume.path, &volume.udisks) {
             (Some(_), _) => String::new(),
@@ -878,7 +879,7 @@ impl Commander {
                 false => el.flex_none().max_w(relative(0.7)),
             })
             .child(div().truncate().child(volume.name.clone()))
-            .when_some(space.clone(), |el, space| el.child(div().truncate().text_xs().text_color(theme.muted_foreground).child(space)));
+            .when_some(space.clone(), |el, space| el.child(div().truncate().text_xs().text_color(muted).child(space)));
         h_flex()
             .id(("volume", ix))
             .map(|el| match space.is_some() {
@@ -891,9 +892,9 @@ impl Commander {
             .cursor_pointer()
             .when(selected, |el| selected_row(el, &self.colors, cx))
             .when(!selected, |el| el.hover(|style| style.bg(theme.foreground.opacity(0.06))))
-            .child(icon.small().text_color(theme.muted_foreground))
+            .child(icon.small().text_color(muted))
             .child(name)
-            .when(!detail.is_empty(), |el| el.child(div().flex_1().min_w_0().truncate().text_xs().text_color(theme.muted_foreground).child(detail)))
+            .when(!detail.is_empty(), |el| el.child(div().flex_1().min_w_0().truncate().text_xs().text_color(muted).child(detail)))
             .on_click(cx.listener(move |this, _, window, cx| this.open_volume(opened.clone(), window, cx)))
             .context_menu(move |menu, _, _| {
                 let act = |label: String, unmount: bool| {
@@ -1212,7 +1213,7 @@ impl Commander {
                     .when(!selected, |el| el.hover(|style| style.bg(theme.foreground.opacity(0.06))))
                     .child(img(format!("material/{icon}")).size(px(16.)).flex_none())
                     .child(div().flex_none().max_w(relative(0.6)).truncate().child(name))
-                    .child(div().flex_1().min_w_0().truncate().text_xs().text_color(theme.muted_foreground).children(parent))
+                    .child(div().flex_1().min_w_0().truncate().text_xs().text_color(secondary(selected, cx)).children(parent))
                     .on_click(cx.listener(move |this, _, window, cx| this.open_folder(opened.clone(), window, cx)))
                     .context_menu(move |menu, _, _| {
                         let act = |label: String, run: fn(&mut Commander, usize, &mut Window, &mut Context<Commander>)| {
@@ -1509,6 +1510,7 @@ impl Commander {
     fn render_server_folder(&self, name: String, count: usize, open: bool, cx: &mut Context<Self>) -> impl IntoElement + use<> {
         let theme = cx.theme();
         let selected = self.sidebar.selected.as_ref() == Some(&Picked::Folder(name.clone()));
+        let muted = secondary(selected, cx);
         let target = theme.drop_target;
         let group = Group::Folder(name.clone());
         let toggle = move |this: &mut Self, cx: &mut Context<Self>| {
@@ -1518,7 +1520,7 @@ impl Commander {
             }
             cx.notify();
         };
-        let chevron = Icon::new(if open { IconName::ChevronDown } else { IconName::ChevronRight }).xsmall().text_color(theme.muted_foreground);
+        let chevron = Icon::new(if open { IconName::ChevronDown } else { IconName::ChevronRight }).xsmall().text_color(muted);
         let arrow = div().id("folder-arrow").child(chevron).on_click({
             let toggle = toggle.clone();
             cx.listener(move |this, _, _, cx| {
@@ -1538,9 +1540,9 @@ impl Commander {
             .when(selected, |el| selected_row(el, &self.colors, cx))
             .when(!selected, |el| el.hover(|style| style.bg(theme.foreground.opacity(0.06))))
             .child(arrow)
-            .child(Icon::new(if open { IconName::FolderOpen } else { IconName::FolderClosed }).xsmall().text_color(theme.muted_foreground))
+            .child(Icon::new(if open { IconName::FolderOpen } else { IconName::FolderClosed }).xsmall().text_color(muted))
             .child(div().flex_1().min_w_0().truncate().font_semibold().child(name.clone()))
-            .child(div().text_xs().text_color(theme.muted_foreground).child(count.to_string()))
+            .child(div().text_xs().text_color(muted).child(count.to_string()))
             .on_click(cx.listener(move |this, event: &ClickEvent, _, cx| {
                 this.sidebar.selected = Some(Picked::Folder(name.clone()));
                 if event.click_count() == 2 {
@@ -1611,6 +1613,7 @@ impl Commander {
             None => Picked::Host(at),
         };
         let selected = self.sidebar.selected.as_ref() == Some(&picked);
+        let muted = secondary(selected, cx);
         let commander = cx.entity().downgrade();
         let target = theme.drop_target;
         let (address, saved, name) = (server.address.clone(), server.saved, server.name.clone());
@@ -1627,9 +1630,9 @@ impl Commander {
             .rounded(theme.radius)
             .when(selected, |el| selected_row(el, &self.colors, cx))
             .when(!selected, |el| el.hover(|style| style.bg(theme.foreground.opacity(0.06))))
-            .child(Icon::new(Lucide::Server).xsmall().text_color(theme.muted_foreground))
+            .child(Icon::new(Lucide::Server).xsmall().text_color(muted))
             .child(div().flex_none().max_w(relative(0.6)).truncate().child(server.name.clone()))
-            .child(div().flex_1().min_w_0().truncate().text_xs().text_color(theme.muted_foreground).child(server.detail))
+            .child(div().flex_1().min_w_0().truncate().text_xs().text_color(muted).child(server.detail))
             .on_click(cx.listener({
                 let address = address.clone();
                 move |this, event: &ClickEvent, window, cx| {
@@ -1664,6 +1667,15 @@ pub(crate) fn tilde(path: &Path, home: Option<&Path>) -> String {
 
 /// A tab's title line; buttons go after it.
 /// A group's name in a tab: Drives, Phones, Network.
+/// A row's secondary text and icons: on macOS's accent selection white, a
+/// little dimmed, as AppKit's; elsewhere the theme's muted colour.
+fn secondary(selected: bool, cx: &App) -> Hsla {
+    match crate::appearance::mac_tabs(cx).filter(|_| selected) {
+        Some(mac) => mac.on_accent.opacity(0.75),
+        None => cx.theme().muted_foreground,
+    }
+}
+
 /// A selected row: on macOS in the accent, as Notes' and Finder's sidebars.
 fn selected_row<E: Styled>(el: E, colors: &crate::appearance::PanelColors, cx: &App) -> E {
     match crate::appearance::mac_tabs(cx) {

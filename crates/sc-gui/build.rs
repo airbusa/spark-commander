@@ -9,6 +9,8 @@ fn main() {
         println!("cargo:rerun-if-changed=../../packaging/windows/sparkcommander.ico");
         let mut resource = winresource::WindowsResource::new();
         resource.set_icon("../../packaging/windows/sparkcommander.ico");
+        // The name the taskbar and Task Manager show (else the package's, sc-gui).
+        resource.set("FileDescription", "Spark Commander").set("ProductName", "Spark Commander");
         resource.compile().expect("the Windows icon resource");
     }
     let manifest = env::var("CARGO_MANIFEST_DIR").unwrap();

@@ -129,7 +129,7 @@ impl Commander {
 /// the sidebar, which is inset 8 px from the window's edges; then where they end.
 pub(crate) const MAC_BAR: Pixels = px(46.);
 pub(crate) const MAC_LIGHTS: Point<Pixels> = Point { x: px(19.), y: px(18.) };
-pub(crate) const MAC_LIGHTS_END: f32 = 84.;
+pub(crate) const MAC_LIGHTS_END: f32 = 96.5;
 /// macOS: the toolbar's buttons, their icons 18 px, as large as Notes' and Finder's.
 pub(crate) const MAC_BUTTON: gpui_kit::component::Size = gpui_kit::component::Size::Size(px(24.));
 

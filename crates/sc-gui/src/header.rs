@@ -83,6 +83,8 @@ impl Commander {
         let lights = if window.is_fullscreen() { 8. } else { MAC_LIGHTS_END };
         TitleBar::new()
             .h(MAC_BAR)
+            // The capsules 10 px under the window's top, as the window's buttons' middle, 6 above the panels.
+            .pt(px(4.))
             .pl(px(if sidebar { 8. } else { lights }))
             .bg(self.sidebar.chrome(self.colors.window))
             .border_color(cx.theme().border)
@@ -114,8 +116,8 @@ impl Commander {
 /// macOS: the title bar's height with the toolbar in it, and where the window's
 /// buttons sit (AppKit's are 14 px high), as in Finder, Notes and Xcode: inside
 /// the sidebar, which is inset 8 px from the window's edges; then where they end.
-pub(crate) const MAC_BAR: Pixels = px(52.);
-pub(crate) const MAC_LIGHTS: Point<Pixels> = Point { x: px(19.), y: px(19.) };
+pub(crate) const MAC_BAR: Pixels = px(46.);
+pub(crate) const MAC_LIGHTS: Point<Pixels> = Point { x: px(19.), y: px(18.) };
 pub(crate) const MAC_LIGHTS_END: f32 = 84.;
 /// macOS: the toolbar's buttons, their icons 18 px, as large as Notes' and Finder's.
 pub(crate) const MAC_BUTTON: gpui_kit::component::Size = gpui_kit::component::Size::Size(px(24.));

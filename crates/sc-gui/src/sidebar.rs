@@ -561,7 +561,7 @@ impl Commander {
         let (muted, hover, track, progress) = (theme.muted_foreground, theme.foreground.opacity(0.06), mac.tab_track, theme.progress_bar);
         // Under the window's buttons: it moves the window, as a title bar.
         let top = TitleBar::new()
-            .h(header::MAC_BAR - INSET - px(8.))
+            .h(px(36.))
             .pl(px(header::MAC_LIGHTS_END) - INSET)
             .pr_2()
             .bg(transparent_black())

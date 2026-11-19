@@ -498,7 +498,38 @@ pub const BUTTON_BAR: &[Item] = &[
 
 /// The toolbar's buttons until the user changes them: what the function
 /// keys' bar leaves out and is used often.
-pub const TOOLBAR: &[Command] = &[GoBack, GoForward, RereadSource, Search, SynchronizeDirs, MultiRenameTool, Pack, TerminalPanel];
+pub const TOOLBAR: &[ToolbarItem] = {
+    use ToolbarItem::{Button as B, Separator as S};
+    &[B(GoBack), B(GoForward), S, B(RereadSource), B(Search), S, B(SynchronizeDirs), B(MultiRenameTool), B(Pack), S, B(TerminalPanel)]
+};
+
+/// A toolbar's button, or a separator between its groups: a line, on macOS
+/// the end of a group drawn as one capsule.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum ToolbarItem {
+    Button(Command),
+    Separator,
+}
+
+/// As saved: the command's name, or "Separator".
+impl Serialize for ToolbarItem {
+    fn serialize<S: serde::Serializer>(&self, to: S) -> Result<S::Ok, S::Error> {
+        match self {
+            ToolbarItem::Button(command) => command.serialize(to),
+            ToolbarItem::Separator => to.serialize_str("Separator"),
+        }
+    }
+}
+
+/// A toolbar's items; the commands this version does not know left out.
+pub fn known_toolbar<'de, D: serde::Deserializer<'de>>(list: D) -> Result<Vec<ToolbarItem>, D::Error> {
+    let names = Vec::<String>::deserialize(list)?;
+    let known = names.iter().filter_map(|name| match name.as_str() {
+        "Separator" => Some(ToolbarItem::Separator),
+        _ => Command::deserialize(serde::de::value::StrDeserializer::<serde::de::value::Error>::new(name)).ok().map(ToolbarItem::Button),
+    });
+    Ok(known.collect())
+}
 
 /// A list of commands; the ones this version does not know left out.
 pub fn known<'de, D: serde::Deserializer<'de>>(list: D) -> Result<Vec<Command>, D::Error> {

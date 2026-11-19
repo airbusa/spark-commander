@@ -3890,6 +3890,9 @@
   "settings.toolbar.add": {
     "message": "Tilføj knap…"
   },
+  "settings.toolbar.add_separator": {
+    "message": "Tilføj skillelinje"
+  },
   "settings.toolbar.move_down": {
     "message": "Flyt ned"
   },
@@ -3907,6 +3910,9 @@
   },
   "settings.toolbar.restore_default": {
     "message": "Gendan standard"
+  },
+  "settings.toolbar.separator": {
+    "message": "Skillelinje"
   },
   "settings.toolbar.title": {
     "message": "Værktøjslinjens knapper"

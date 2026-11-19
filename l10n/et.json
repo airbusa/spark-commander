@@ -3890,6 +3890,9 @@
   "settings.toolbar.add": {
     "message": "Lisa nupp…"
   },
+  "settings.toolbar.add_separator": {
+    "message": "Lisa eraldaja"
+  },
   "settings.toolbar.move_down": {
     "message": "Liiguta alla"
   },
@@ -3907,6 +3910,9 @@
   },
   "settings.toolbar.restore_default": {
     "message": "Taasta vaikimisi"
+  },
+  "settings.toolbar.separator": {
+    "message": "Eraldaja"
   },
   "settings.toolbar.title": {
     "message": "Tööriistariba nupud"

@@ -3890,6 +3890,9 @@
   "settings.toolbar.add": {
     "message": "Додати кнопку…"
   },
+  "settings.toolbar.add_separator": {
+    "message": "Додати роздільник"
+  },
   "settings.toolbar.move_down": {
     "message": "Перемістити вниз"
   },
@@ -3907,6 +3910,9 @@
   },
   "settings.toolbar.restore_default": {
     "message": "Відновити типові"
+  },
+  "settings.toolbar.separator": {
+    "message": "Роздільник"
   },
   "settings.toolbar.title": {
     "message": "Кнопки панелі інструментів"

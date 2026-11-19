@@ -3890,6 +3890,9 @@
   "settings.toolbar.add": {
     "message": "बटन जोड़ें…"
   },
+  "settings.toolbar.add_separator": {
+    "message": "विभाजक जोड़ें"
+  },
   "settings.toolbar.move_down": {
     "message": "नीचे ले जाएं"
   },
@@ -3907,6 +3910,9 @@
   },
   "settings.toolbar.restore_default": {
     "message": "डिफ़ॉल्ट वापस लाएं"
+  },
+  "settings.toolbar.separator": {
+    "message": "विभाजक"
   },
   "settings.toolbar.title": {
     "message": "टूलबार बटन"

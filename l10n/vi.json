@@ -3890,6 +3890,9 @@
   "settings.toolbar.add": {
     "message": "Thêm nút…"
   },
+  "settings.toolbar.add_separator": {
+    "message": "Thêm dấu phân cách"
+  },
   "settings.toolbar.move_down": {
     "message": "Chuyển xuống"
   },
@@ -3907,6 +3910,9 @@
   },
   "settings.toolbar.restore_default": {
     "message": "Khôi phục mặc định"
+  },
+  "settings.toolbar.separator": {
+    "message": "Dấu phân cách"
   },
   "settings.toolbar.title": {
     "message": "Nút trên thanh công cụ"

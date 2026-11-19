@@ -3890,6 +3890,9 @@
   "settings.toolbar.add": {
     "message": "Pievienot pogu…"
   },
+  "settings.toolbar.add_separator": {
+    "message": "Pievienot atdalītāju"
+  },
   "settings.toolbar.move_down": {
     "message": "Pārvietot uz leju"
   },
@@ -3907,6 +3910,9 @@
   },
   "settings.toolbar.restore_default": {
     "message": "Atjaunot noklusējumu"
+  },
+  "settings.toolbar.separator": {
+    "message": "Atdalītājs"
   },
   "settings.toolbar.title": {
     "message": "Rīkjoslas pogas"

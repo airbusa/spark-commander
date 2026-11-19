@@ -3890,6 +3890,9 @@
   "settings.toolbar.add": {
     "message": "ボタンを追加…"
   },
+  "settings.toolbar.add_separator": {
+    "message": "区切り線を追加"
+  },
   "settings.toolbar.move_down": {
     "message": "下へ移動"
   },
@@ -3907,6 +3910,9 @@
   },
   "settings.toolbar.restore_default": {
     "message": "初期状態に戻す"
+  },
+  "settings.toolbar.separator": {
+    "message": "区切り線"
   },
   "settings.toolbar.title": {
     "message": "ツールバーのボタン"

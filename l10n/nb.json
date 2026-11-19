@@ -3890,6 +3890,9 @@
   "settings.toolbar.add": {
     "message": "Legg til knapp…"
   },
+  "settings.toolbar.add_separator": {
+    "message": "Legg til skillelinje"
+  },
   "settings.toolbar.move_down": {
     "message": "Flytt ned"
   },
@@ -3907,6 +3910,9 @@
   },
   "settings.toolbar.restore_default": {
     "message": "Gjenopprett standard"
+  },
+  "settings.toolbar.separator": {
+    "message": "Skillelinje"
   },
   "settings.toolbar.title": {
     "message": "Verktøylinjeknapper"

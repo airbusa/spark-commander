@@ -3890,6 +3890,9 @@
   "settings.toolbar.add": {
     "message": "Lisää painike…"
   },
+  "settings.toolbar.add_separator": {
+    "message": "Lisää erotin"
+  },
   "settings.toolbar.move_down": {
     "message": "Siirrä alas"
   },
@@ -3907,6 +3910,9 @@
   },
   "settings.toolbar.restore_default": {
     "message": "Palauta oletus"
+  },
+  "settings.toolbar.separator": {
+    "message": "Erotin"
   },
   "settings.toolbar.title": {
     "message": "Työkalurivin painikkeet"

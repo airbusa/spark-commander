@@ -3890,6 +3890,9 @@
   "settings.toolbar.add": {
     "message": "Düğme ekle…"
   },
+  "settings.toolbar.add_separator": {
+    "message": "Ayırıcı ekle"
+  },
   "settings.toolbar.move_down": {
     "message": "Aşağı taşı"
   },
@@ -3907,6 +3910,9 @@
   },
   "settings.toolbar.restore_default": {
     "message": "Varsayılana dön"
+  },
+  "settings.toolbar.separator": {
+    "message": "Ayırıcı"
   },
   "settings.toolbar.title": {
     "message": "Araç çubuğu düğmeleri"

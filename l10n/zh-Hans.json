@@ -3890,6 +3890,9 @@
   "settings.toolbar.add": {
     "message": "添加按钮…"
   },
+  "settings.toolbar.add_separator": {
+    "message": "添加分隔线"
+  },
   "settings.toolbar.move_down": {
     "message": "下移"
   },
@@ -3907,6 +3910,9 @@
   },
   "settings.toolbar.restore_default": {
     "message": "恢复默认"
+  },
+  "settings.toolbar.separator": {
+    "message": "分隔线"
   },
   "settings.toolbar.title": {
     "message": "工具栏按钮"

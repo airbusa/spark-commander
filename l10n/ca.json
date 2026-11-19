@@ -3890,6 +3890,9 @@
   "settings.toolbar.add": {
     "message": "Afegeix un botó…"
   },
+  "settings.toolbar.add_separator": {
+    "message": "Afegeix un separador"
+  },
   "settings.toolbar.move_down": {
     "message": "Mou avall"
   },
@@ -3907,6 +3910,9 @@
   },
   "settings.toolbar.restore_default": {
     "message": "Restaura els predeterminats"
+  },
+  "settings.toolbar.separator": {
+    "message": "Separador"
   },
   "settings.toolbar.title": {
     "message": "Botons de la barra d’eines"

@@ -10,7 +10,7 @@ use gpui_kit::component::{ActiveTheme, GlobalState, Icon, Sizable, TitleBar, Win
 use gpui_kit::*;
 
 use crate::Commander;
-use sc_core::menu::Command;
+use sc_core::menu::{Command, ToolbarItem};
 
 impl Commander {
     /// Asks for our own title bar where the menus go behind the ☰ button.
@@ -35,9 +35,11 @@ impl Commander {
             return Some(self.render_mac_header(toolbar, window, cx));
         }
         // The title kept clear of the toolbar's buttons (32 px and a gap each, Back's and Forward's arrow 18).
+        // A separator's line takes 9.
         let shown = &self.settings.toolbar.0;
-        let arrows = shown.iter().filter(|command| matches!(command, Command::GoBack | Command::GoForward)).count();
-        let buttons = px(shown.len() as f32 * 34. + arrows as f32 * 18. + 16.);
+        let arrows = shown.iter().filter(|item| matches!(item, ToolbarItem::Button(Command::GoBack | Command::GoForward))).count();
+        let lines = shown.iter().filter(|item| **item == ToolbarItem::Separator).count();
+        let buttons = px((shown.len() - lines) as f32 * 34. + lines as f32 * 9. + arrows as f32 * 18. + 16.);
         let bar = title_bar_beside("Spark Commander", buttons.max(px(140.)), window, cx)?;
         let focus = self.focus.clone();
         let menu = Button::new("app-menu")
@@ -82,11 +84,11 @@ impl Commander {
         TitleBar::new()
             .h(MAC_BAR)
             .pl(px(if sidebar { 8. } else { lights }))
-            .bg(crate::sidebar::Sidebar::chrome(self.colors.window))
+            .bg(self.sidebar.chrome(self.colors.window))
             .border_color(cx.theme().border)
             .children(title)
             // Together at the left: the bar spreads its children apart.
-            .child(h_flex().children((!sidebar).then(|| self.sidebar_toggle())).children(toolbar.take()))
+            .child(h_flex().gap_2().children((!sidebar).then(|| mac_capsule(vec![self.sidebar_toggle()], cx))).children(toolbar.take()))
             .into_any_element()
     }
 
@@ -117,6 +119,16 @@ pub(crate) const MAC_LIGHTS: Point<Pixels> = Point { x: px(19.), y: px(19.) };
 pub(crate) const MAC_LIGHTS_END: f32 = 84.;
 /// macOS: the toolbar's buttons, their icons 18 px, as large as Notes' and Finder's.
 pub(crate) const MAC_BUTTON: gpui_kit::component::Size = gpui_kit::component::Size::Size(px(24.));
+
+/// macOS: a toolbar group's capsule, as AppKit's: fully round, a shade
+/// lighter than the bar, a fine rim.
+pub(crate) fn mac_capsule(buttons: Vec<AnyElement>, cx: &App) -> Div {
+    let (fill, rim) = match cx.theme().mode.is_dark() {
+        true => (hsla(0., 0., 1., 0.06), hsla(0., 0., 1., 0.14)),
+        false => (hsla(0., 0., 1., 0.7), hsla(0., 0., 0., 0.1)),
+    };
+    h_flex().flex_none().h(px(30.)).px(px(2.)).rounded_full().bg(fill).border_1().border_color(rim).children(buttons)
+}
 
 /// The title bar of a window that draws its own frame: any on GNOME on
 /// Wayland, which draws none, and the main one for its ☰ button.

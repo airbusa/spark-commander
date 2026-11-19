@@ -3890,6 +3890,9 @@
   "settings.toolbar.add": {
     "message": "Добавяне на бутон…"
   },
+  "settings.toolbar.add_separator": {
+    "message": "Добавяне на разделител"
+  },
   "settings.toolbar.move_down": {
     "message": "Преместване надолу"
   },
@@ -3907,6 +3910,9 @@
   },
   "settings.toolbar.restore_default": {
     "message": "Възстановяване по подразбиране"
+  },
+  "settings.toolbar.separator": {
+    "message": "Разделител"
   },
   "settings.toolbar.title": {
     "message": "Бутони на лентата с инструменти"

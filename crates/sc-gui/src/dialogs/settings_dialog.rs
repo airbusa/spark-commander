@@ -17,7 +17,7 @@ use gpui_kit::assets::IconName as Lucide;
 use gpui_kit::component::{Icon, IndexPath};
 use gpui_kit::component::menu::{DropdownMenu, PopupMenu, PopupMenuItem};
 use sc_core::dates::{self, Clock};
-use sc_core::menu::{self, Command};
+use sc_core::menu::{self, ToolbarItem};
 use sc_core::settings::{AddonUpdates, FontChoice, MenuStyle, PAGES, Settings, Blur, SidebarOpacity, TerminalOpacity, StartFont, StartMode};
 use sc_core::system::theme::Appearance;
 use sc_core::t;
@@ -225,7 +225,7 @@ pub fn open(
 
 /// The commands a toolbar button can be, by menu, to put at `at` (none: added
 /// last); those on the toolbar already greyed.
-fn choices(dialog: WeakEntity<SettingsDialog>, shown: Vec<Command>, at: Option<usize>) -> impl Fn(PopupMenu, &mut Window, &mut Context<PopupMenu>) -> PopupMenu + 'static {
+fn choices(dialog: WeakEntity<SettingsDialog>, shown: Vec<ToolbarItem>, at: Option<usize>) -> impl Fn(PopupMenu, &mut Window, &mut Context<PopupMenu>) -> PopupMenu + 'static {
     move |menu, window, cx| {
         menu::groups().into_iter().fold(menu, |menu, (group, commands)| {
             let commands: Vec<_> = commands.into_iter().filter_map(|(label, command)| Some((label, command, toolbar_icon(command)?))).collect();
@@ -236,12 +236,13 @@ fn choices(dialog: WeakEntity<SettingsDialog>, shown: Vec<Command>, at: Option<u
             menu.submenu(group, window, cx, move |menu, _, _| {
                 commands.iter().fold(menu, |menu, (label, command, icon)| {
                     let (dialog, command, icon) = (dialog.clone(), *command, *icon);
-                    let item = PopupMenuItem::new(label.clone()).icon(Icon::new(icon)).disabled(shown.contains(&command)).on_click(move |_, _, cx| {
+                    let button = ToolbarItem::Button(command);
+                    let item = PopupMenuItem::new(label.clone()).icon(Icon::new(icon)).disabled(shown.contains(&button)).on_click(move |_, _, cx| {
                         let _ = dialog.update(cx, |this, cx| {
                             let bar = &mut this.draft.toolbar.0;
                             match at {
-                                Some(at) => bar[at] = command,
-                                None => bar.push(command),
+                                Some(at) => bar[at] = button,
+                                None => bar.push(button),
                             }
                             cx.notify();
                         });
@@ -892,9 +893,9 @@ impl SettingsDialog {
         let shown = self.draft.toolbar.0.clone();
         let this = cx.weak_entity();
         let small = |id: (&'static str, usize), icon: Lucide| Button::new(id).ghost().small().icon(Icon::new(icon));
-        let rows = shown.iter().enumerate().map(|(at, &command)| {
+        let rows = shown.iter().enumerate().map(|(at, &item)| {
             let replace = Button::new(("toolbar-replace", at)).ghost().small().label(t!("settings.toolbar.replace")).dropdown_menu(choices(this.clone(), shown.clone(), Some(at)));
-            let change = |change: fn(&mut Vec<Command>, usize)| {
+            let change = |change: fn(&mut Vec<ToolbarItem>, usize)| {
                 let this = this.clone();
                 move |_: &ClickEvent, _: &mut Window, cx: &mut App| {
                     let _ = this.update(cx, |this, cx| {
@@ -903,11 +904,20 @@ impl SettingsDialog {
                     });
                 }
             };
-            h_flex()
-                .gap_1()
-                .children(toolbar_icon(command).map(|icon| Icon::new(icon).size_4().mr_1()))
-                .child(div().flex_1().child(menu::name(command)))
-                .child(replace)
+            let line = || div().flex_1().h(px(1.)).bg(cx.theme().border);
+            let row = match item {
+                ToolbarItem::Button(command) => h_flex()
+                    .gap_1()
+                    .children(toolbar_icon(command).map(|icon| Icon::new(icon).size_4().mr_1()))
+                    .child(div().flex_1().child(menu::name(command)))
+                    .child(replace),
+                ToolbarItem::Separator => h_flex()
+                    .gap_1()
+                    .child(line())
+                    .child(div().px_1().text_color(cx.theme().muted_foreground).child(t!("settings.toolbar.separator")))
+                    .child(line()),
+            };
+            row
                 .child(small(("toolbar-up", at), Lucide::ChevronUp).tooltip(t!("settings.toolbar.move_up")).disabled(at == 0).on_click(change(|bar, at| bar.swap(at, at - 1))))
                 .child(small(("toolbar-down", at), Lucide::ChevronDown).tooltip(t!("settings.toolbar.move_down")).disabled(at + 1 == shown.len()).on_click(change(|bar, at| bar.swap(at, at + 1))))
                 .child(small(("toolbar-remove", at), Lucide::X).tooltip(t!("settings.toolbar.remove")).on_click(change(|bar, at| {
@@ -918,6 +928,10 @@ impl SettingsDialog {
         let buttons = h_flex()
             .gap_2()
             .child(Button::new("toolbar-add").outline().label(t!("settings.toolbar.add")).dropdown_menu(choices(this.clone(), shown.clone(), None)))
+            .child(Button::new("toolbar-add-separator").outline().label(t!("settings.toolbar.add_separator")).on_click(cx.listener(|this, _, _, cx| {
+                this.draft.toolbar.0.push(ToolbarItem::Separator);
+                cx.notify();
+            })))
             .child(Button::new("toolbar-default").outline().label(t!("settings.toolbar.restore_default")).disabled(self.draft.toolbar == Default::default()).on_click(cx.listener(
                 |this, _, _, cx| {
                     this.draft.toolbar = Default::default();

@@ -40,7 +40,7 @@ use gpui_kit::component::{ActiveTheme, Disableable, Icon, IconName, Selectable, 
 use gpui_kit::prelude::FluentBuilder;
 use gpui_kit::*;
 use sc_core::command::{self, Outcome};
-use sc_core::menu::{BUTTON_BAR, Command, Item, TAB_MENU};
+use sc_core::menu::{BUTTON_BAR, Command, Item, TAB_MENU, ToolbarItem};
 use sc_core::remote::Address;
 use sc_core::session::{Session, SideState, WindowPlace, Workspaces};
 use sc_core::settings::{self, Settings};
@@ -1523,7 +1523,8 @@ impl Commander {
         if shown.is_empty() {
             return None;
         }
-        let buttons = shown.iter().filter_map(|&command| {
+        let mac = cfg!(target_os = "macos");
+        let button_for = |command: Command| {
             let icon = menus::toolbar_icon(command)?;
             let [key, _] = self.settings.keys.keys_of(command);
             let name = sc_core::menu::name(command);
@@ -1533,6 +1534,8 @@ impl Commander {
             };
             let size = if cfg!(target_os = "macos") { header::MAC_BUTTON } else { gpui_kit::component::Size::Medium };
             let button = Button::new(("toolbar", command as usize)).ghost().with_size(size).icon(Icon::new(icon)).selected(self.checked(command)).tooltip(tip);
+            // macOS: as wide as AppKit's in a group's capsule.
+            let button = if mac { button.w(px(34.)).h(px(26.)).rounded(px(13.)) } else { button };
             let button = button.on_click(cx.listener(move |this, _, window, cx| {
                 // Pressed, the terminal's button hides it; the command would give it the keys, the panels having them.
                 if command == Command::TerminalPanel && this.terminal_shown {
@@ -1554,7 +1557,31 @@ impl Commander {
             };
             let split = DropdownButton::new(("toolbar-history", command as usize)).ghost().with_size(size).button(button).disabled(none);
             Some(split.dropdown_menu_with_anchor(Anchor::TopLeft, places).into_any_element())
-        });
+        };
+        // The buttons in groups, as the separators part them.
+        let mut groups: Vec<Vec<AnyElement>> = vec![Vec::new()];
+        for item in shown {
+            match *item {
+                ToolbarItem::Separator => groups.push(Vec::new()),
+                ToolbarItem::Button(command) => groups.last_mut().expect("a group").extend(button_for(command)),
+            }
+        }
+        groups.retain(|group| !group.is_empty());
+        // macOS: each group a capsule, as AppKit's; elsewhere a line between them.
+        let buttons: Vec<AnyElement> = match mac {
+            true => groups.into_iter().map(|group| header::mac_capsule(group, cx).into_any_element()).collect(),
+            false => {
+                let line = || div().flex_none().w(px(1.)).h(px(18.)).mx_1().bg(cx.theme().border).into_any_element();
+                let mut all = Vec::new();
+                for (at, group) in groups.into_iter().enumerate() {
+                    if at > 0 {
+                        all.push(line());
+                    }
+                    all.extend(group);
+                }
+                all
+            }
+        };
         let commander = cx.entity().downgrade();
         let customize = move |menu: PopupMenu, _: &mut Window, _: &mut Context<PopupMenu>| {
             let commander = commander.clone();
@@ -1564,7 +1591,7 @@ impl Commander {
             }))
         };
         // A press on it must not start moving the window from the title bar.
-        let bar = h_flex().id("toolbar").gap_0p5().px_1().py_0p5().on_mouse_down(MouseButton::Left, |_, _, cx| cx.stop_propagation());
+        let bar = h_flex().id("toolbar").when(mac, |bar| bar.gap_2()).when(!mac, |bar| bar.gap_0p5()).px_1().py_0p5().on_mouse_down(MouseButton::Left, |_, _, cx| cx.stop_propagation());
         Some(bar.children(buttons).context_menu(customize).into_any_element())
     }
 
@@ -2747,7 +2774,7 @@ impl Render for Commander {
                 v_flex()
                     // macOS: as the title bar, in the sidebar's colour.
                     .bg(match cfg!(target_os = "macos") {
-                        true => crate::sidebar::Sidebar::chrome(self.colors.window),
+                        true => self.sidebar.chrome(self.colors.window),
                         false => background,
                     })
                     .children(self.render_transfers(cx))

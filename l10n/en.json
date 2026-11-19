@@ -5187,6 +5187,10 @@
     "description": "Settings › Toolbar: opens a menu of commands to add as a button; keep it short.",
     "message": "Add Button…"
   },
+  "settings.toolbar.add_separator": {
+    "description": "Settings › Toolbar: adds a separator at the end of the toolbar; keep it short.",
+    "message": "Add Separator"
+  },
   "settings.toolbar.move_down": {
     "description": "Settings › Toolbar: tooltip of the arrow that moves a button one place down.",
     "message": "Move down"
@@ -5210,6 +5214,10 @@
   "settings.toolbar.restore_default": {
     "description": "Settings › Toolbar: puts back the toolbar's buttons as they first were; keep it short.",
     "message": "Restore Default"
+  },
+  "settings.toolbar.separator": {
+    "description": "Settings › Toolbar: a row standing for a separator, which divides the toolbar's buttons into groups (on macOS, each group one capsule).",
+    "message": "Separator"
   },
   "settings.toolbar.title": {
     "description": "Settings › Toolbar: the box's title.",

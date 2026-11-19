@@ -3890,6 +3890,9 @@
   "settings.toolbar.add": {
     "message": "Dodaj gumb …"
   },
+  "settings.toolbar.add_separator": {
+    "message": "Dodaj ločilo"
+  },
   "settings.toolbar.move_down": {
     "message": "Premakni navzdol"
   },
@@ -3907,6 +3910,9 @@
   },
   "settings.toolbar.restore_default": {
     "message": "Obnovi privzeto"
+  },
+  "settings.toolbar.separator": {
+    "message": "Ločilo"
   },
   "settings.toolbar.title": {
     "message": "Gumbi orodne vrstice"

@@ -3890,6 +3890,9 @@
   "settings.toolbar.add": {
     "message": "Knop toevoegen…"
   },
+  "settings.toolbar.add_separator": {
+    "message": "Scheidingslijn toevoegen"
+  },
   "settings.toolbar.move_down": {
     "message": "Omlaag"
   },
@@ -3907,6 +3910,9 @@
   },
   "settings.toolbar.restore_default": {
     "message": "Standaard herstellen"
+  },
+  "settings.toolbar.separator": {
+    "message": "Scheidingslijn"
   },
   "settings.toolbar.title": {
     "message": "Werkbalkknoppen"

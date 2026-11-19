@@ -3890,6 +3890,9 @@
   "settings.toolbar.add": {
     "message": "Pridėti mygtuką…"
   },
+  "settings.toolbar.add_separator": {
+    "message": "Pridėti skyriklį"
+  },
   "settings.toolbar.move_down": {
     "message": "Perkelti žemyn"
   },
@@ -3907,6 +3910,9 @@
   },
   "settings.toolbar.restore_default": {
     "message": "Atkurti numatytuosius"
+  },
+  "settings.toolbar.separator": {
+    "message": "Skyriklis"
   },
   "settings.toolbar.title": {
     "message": "Įrankių juostos mygtukai"

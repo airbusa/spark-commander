@@ -119,10 +119,10 @@ pub struct QueueSettings {
     pub download_limit_kb: u64,
 }
 
-/// The toolbar's buttons in their order; none hides it.
+/// The toolbar's buttons in their order, separators between their groups; none hides it.
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[serde(transparent)]
-pub struct Toolbar(#[serde(deserialize_with = "crate::menu::known")] pub Vec<crate::menu::Command>);
+pub struct Toolbar(#[serde(deserialize_with = "crate::menu::known_toolbar")] pub Vec<crate::menu::ToolbarItem>);
 
 impl Default for Toolbar {
     fn default() -> Self {
@@ -387,6 +387,16 @@ mod tests {
         settings.toolbar.0.clear();
         let read: Settings = serde_json::from_str(&serde_json::to_string(&settings).unwrap()).unwrap();
         assert!(read.toolbar.0.is_empty(), "an emptied toolbar stays empty");
+    }
+
+    #[test]
+    fn toolbar_keeps_its_separators() {
+        use crate::menu::{Command, ToolbarItem};
+        let read: Settings = serde_json::from_str(r#"{"toolbar": ["GoBack", "Separator", "NoSuchCommand", "Search"]}"#).unwrap();
+        let expected = [ToolbarItem::Button(Command::GoBack), ToolbarItem::Separator, ToolbarItem::Button(Command::Search)];
+        assert_eq!(read.toolbar.0, expected);
+        let saved = serde_json::to_string(&read).unwrap();
+        assert!(saved.contains(r#""toolbar":["GoBack","Separator","Search"]"#), "{saved}");
     }
 
     #[test]

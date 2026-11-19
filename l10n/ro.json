@@ -3890,6 +3890,9 @@
   "settings.toolbar.add": {
     "message": "Adăugați un buton…"
   },
+  "settings.toolbar.add_separator": {
+    "message": "Adăugați un separator"
+  },
   "settings.toolbar.move_down": {
     "message": "Mutați în jos"
   },
@@ -3907,6 +3910,9 @@
   },
   "settings.toolbar.restore_default": {
     "message": "Restabiliți implicit"
+  },
+  "settings.toolbar.separator": {
+    "message": "Separator"
   },
   "settings.toolbar.title": {
     "message": "Butoanele barei de instrumente"

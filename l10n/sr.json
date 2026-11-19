@@ -3890,6 +3890,9 @@
   "settings.toolbar.add": {
     "message": "Додај дугме…"
   },
+  "settings.toolbar.add_separator": {
+    "message": "Додај разделник"
+  },
   "settings.toolbar.move_down": {
     "message": "Помери надоле"
   },
@@ -3907,6 +3910,9 @@
   },
   "settings.toolbar.restore_default": {
     "message": "Врати подразумевано"
+  },
+  "settings.toolbar.separator": {
+    "message": "Разделник"
   },
   "settings.toolbar.title": {
     "message": "Дугмад на траци са алаткама"

@@ -69,30 +69,52 @@ impl Commander {
         Some(bar.into_any_element())
     }
 
-    /// macOS: the toolbar in the title bar, right of the window's buttons, as
-    /// Finder's and ForkLift's; the title only where the toolbar is empty.
+    /// macOS: the toolbar in the title bar, as Finder's: beside the sidebar,
+    /// which holds the window's buttons and the sidebar's; hidden, the bar has them.
     fn render_mac_header(&self, toolbar: &mut Option<AnyElement>, window: &Window, cx: &mut App) -> AnyElement {
         let title = toolbar.is_none().then(|| {
             let title = div().font_weight(FontWeight::BOLD).text_color(cx.theme().muted_foreground).child("Spark Commander");
             div().absolute().inset_0().flex().items_center().justify_center().child(title)
         });
+        let sidebar = self.sidebar.drawn();
+        // Full screen hides the window's buttons.
+        let lights = if window.is_fullscreen() { 8. } else { MAC_LIGHTS_END };
         TitleBar::new()
             .h(MAC_BAR)
-            // Full screen hides the window's buttons.
-            .pl(px(if window.is_fullscreen() { 8. } else { 80. }))
+            .pl(px(if sidebar { 8. } else { lights }))
             .bg(self.colors.bar)
             .border_color(cx.theme().border)
             .children(title)
-            .children(toolbar.take())
+            // Together at the left: the bar spreads its children apart.
+            .child(h_flex().children((!sidebar).then(|| self.sidebar_toggle())).children(toolbar.take()))
             .into_any_element()
+    }
+
+    /// macOS: shows or hides the sidebar, first in the toolbar.
+    pub(crate) fn sidebar_toggle(&self) -> AnyElement {
+        let command = Command::ToggleSidebar;
+        let [key, _] = self.settings.keys.keys_of(command);
+        let name = sc_core::menu::name(command);
+        let tip = match key.is_empty() {
+            true => name.to_owned(),
+            false => format!("{name} ({})", crate::dialogs::keys_dialog::shown(&key)),
+        };
+        let focus = self.focus.clone();
+        let button = Button::new("sidebar-toggle").ghost().small().icon(Icon::new(Lucide::PanelLeft)).tooltip(tip).on_click(move |_, window, cx| {
+            window.focus(&focus, cx);
+            window.dispatch_action(Box::new(crate::menus::Run(command)), cx);
+        });
+        // A press on it must not start moving the window.
+        div().on_mouse_down(MouseButton::Left, |_, _, cx| cx.stop_propagation()).child(button).into_any_element()
     }
 }
 
 /// macOS: the title bar's height with the toolbar in it, and where the window's
-/// buttons sit in it, centred (AppKit's are 14 px high): a compact unified
-/// toolbar's, as ForkLift's.
-const MAC_BAR: Pixels = px(38.);
-pub(crate) const MAC_LIGHTS: Point<Pixels> = Point { x: px(13.), y: px(12.) };
+/// buttons sit (AppKit's are 14 px high), as in Finder, Notes and Xcode: inside
+/// the sidebar, which is inset 8 px from the window's edges; then where they end.
+pub(crate) const MAC_BAR: Pixels = px(52.);
+pub(crate) const MAC_LIGHTS: Point<Pixels> = Point { x: px(19.), y: px(19.) };
+pub(crate) const MAC_LIGHTS_END: f32 = 84.;
 
 /// The title bar of a window that draws its own frame: any on GNOME on
 /// Wayland, which draws none, and the main one for its ☰ button.

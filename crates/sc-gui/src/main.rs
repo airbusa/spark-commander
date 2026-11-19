@@ -2724,12 +2724,18 @@ impl Render for Commander {
         // In the title bar where there is one, as GNOME's apps; else over the panels.
         let mut toolbar = self.render_toolbar(cx);
         let header = self.render_header(&mut toolbar, window, cx);
+        // macOS: the title bar beside the sidebar, which runs the window's height.
+        let (header, beside) = match cfg!(target_os = "macos") {
+            true => (None, header),
+            false => (header, None),
+        };
         // The terminal paints its own background, which the desktop may show through.
         let background = cx.theme().background;
         let main = v_flex()
             .flex_1()
             .min_w_0()
             .h_full()
+            .children(beside)
             .children(toolbar.map(|bar| div().bg(self.colors.bar).child(bar)))
             .child(v_flex().flex_1().min_h_0().bg(background).child(panels))
             .children(self.render_terminal(window, cx))

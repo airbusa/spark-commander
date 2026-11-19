@@ -11,7 +11,7 @@ use gpui_kit::component::button::{Button, ButtonVariants};
 use gpui_kit::component::menu::{ContextMenuExt, DropdownMenu, PopupMenu, PopupMenuItem};
 use gpui_kit::component::notification::Notification;
 use gpui_kit::component::scroll::Scrollbar;
-use gpui_kit::component::{ActiveTheme, Disableable, Icon, IconName, Side, Sizable, StyledExt, WindowExt, h_flex, v_flex};
+use gpui_kit::component::{ActiveTheme, Disableable, Icon, IconName, MacControls, Side, Sizable, StyledExt, TitleBar, WindowExt, h_flex, v_flex};
 use gpui_kit::prelude::FluentBuilder;
 use gpui_kit::*;
 use sc_core::remote::connections::{self, Connection, Connections};
@@ -23,13 +23,15 @@ use sc_core::{icons, system::theme, t};
 
 use crate::panel::drag_drop::{DragLabel, Dragged};
 use crate::menus::CommandEntry;
-use crate::{Commander, dialogs::connections_dialog};
+use crate::{Commander, dialogs::connections_dialog, header};
 
 pub(crate) const WIDTH: f32 = 260.;
 /// How long it slides in or out, shown or hidden.
 const SLIDE: Duration = Duration::from_millis(200);
-const ROW: Pixels = px(22.);
+const ROW: Pixels = px(if cfg!(target_os = "macos") { 24. } else { 22. });
 const SECTION: Pixels = px(30.);
+/// macOS: the sidebar's inset from the window's edges.
+const INSET: Pixels = px(8.);
 
 pub(crate) struct Sidebar {
     /// The section open; none while hidden.
@@ -128,6 +130,11 @@ impl Sidebar {
     }
 
     /// Show > Sidebar's check marks.
+    /// Shown, or sliding out.
+    pub(crate) fn drawn(&self) -> bool {
+        self.tab.or(self.closing).is_some()
+    }
+
     pub(crate) fn shows(&self, command: Command) -> bool {
         match command {
             Command::SidebarTree => self.tab == Some(SidebarTab::Tree),
@@ -422,6 +429,10 @@ impl Commander {
             self.follow_active();
         }
         let background = self.colors.window.opacity(self.sidebar.tint.unwrap_or(1.));
+        if let Some(mac) = crate::appearance::mac_tabs(cx) {
+            let sidebar = self.render_mac_sidebar(tab, background, mac, cx);
+            return Some(self.slide_sidebar(sidebar));
+        }
         let sections = [
             (SidebarTab::Places, Lucide::Bookmark, t!("sidebar.section.places")),
             (SidebarTab::Tree, Lucide::FolderTree, t!("sidebar.section.folders")),
@@ -510,10 +521,15 @@ impl Commander {
                     .cursor(CursorStyle::ResizeLeftRight)
                     .on_drag(SidebarDrag, |_, _, _, cx| cx.new(|_| EmptyView)),
             );
-        // As the window opens, it is there already.
+        Some(self.slide_sidebar(sidebar))
+    }
+
+    /// Shown or hidden, its edge slides; as the window opens, it is there already.
+    fn slide_sidebar(&self, sidebar: Div) -> AnyElement {
         if self.sidebar.slides == 0 {
-            return Some(sidebar.into_any_element());
+            return sidebar.into_any_element();
         }
+        let width = self.sidebar.width;
         let out = self.sidebar.tab.is_none();
         let slide = Animation::new(SLIDE).with_easing(ease_in_out);
         let sliding = sidebar.with_animation(("sidebar-slide", self.sidebar.slides), slide, move |el, delta| {
@@ -523,7 +539,99 @@ impl Commander {
             };
             el.w(px(width * shown))
         });
-        Some(sliding.into_any_element())
+        sliding.into_any_element()
+    }
+
+    /// macOS: a panel inset from the window's edges, the window's height, as
+    /// Finder's, Notes' and Xcode's: the window's buttons and the sidebar's at its
+    /// top, the sections as a row of icons (Xcode's navigators), the open one's
+    /// content under it.
+    fn render_mac_sidebar(&mut self, tab: SidebarTab, background: Hsla, mac: MacControls, cx: &mut Context<Self>) -> Div {
+        let theme = cx.theme();
+        let rim = match theme.mode.is_dark() {
+            true => hsla(0., 0., 1., 0.12),
+            false => hsla(0., 0., 0., 0.12),
+        };
+        let (muted, hover, track, progress) = (theme.muted_foreground, theme.foreground.opacity(0.06), mac.tab_track, theme.progress_bar);
+        // Under the window's buttons: it moves the window, as a title bar.
+        let top = TitleBar::new()
+            .h(header::MAC_BAR - INSET - px(8.))
+            .pl(px(header::MAC_LIGHTS_END) - INSET)
+            .bg(transparent_black())
+            .border_0()
+            .child(self.sidebar_toggle());
+        let sections = [
+            (SidebarTab::Places, Lucide::Bookmark, t!("sidebar.section.places")),
+            (SidebarTab::Tree, Lucide::FolderTree, t!("sidebar.section.folders")),
+            (SidebarTab::Connections, Lucide::Network, t!("sidebar.section.connections")),
+            (SidebarTab::Operations, Lucide::ListOrdered, t!("sidebar.section.operations")),
+        ];
+        let summary = self.operations_summary();
+        let icons = sections.into_iter().enumerate().map(|(at, (which, icon, name))| {
+            let open = tab == which;
+            // The queue's progress shows also while its section is shut.
+            let (tip, line) = match (which, &summary) {
+                (SidebarTab::Operations, Some((text, done))) => (format!("{name}: {text}"), *done),
+                _ => (name.to_string(), None),
+            };
+            let line = line.map(|done| div().absolute().left(px(8.)).bottom(px(3.)).h(px(2.)).w(relative(done * 0.7)).rounded_full().bg(progress));
+            div()
+                .id(("sidebar-tab", at))
+                .relative()
+                .flex_1()
+                .h_full()
+                .flex()
+                .items_center()
+                .justify_center()
+                .rounded_full()
+                .cursor_pointer()
+                .map(|el| match open {
+                    true => el.bg(mac.accent).text_color(mac.on_accent),
+                    false => el.text_color(muted).hover(|style| style.bg(hover)),
+                })
+                .child(Icon::new(icon).size(px(15.)))
+                .children(line)
+                .tooltip(move |window, cx| gpui_kit::component::tooltip::Tooltip::new(tip.clone()).build(window, cx))
+                .on_click(cx.listener(move |this, _, _, cx| this.open_section(which, cx)))
+        });
+        let tabs = h_flex().flex_none().mx_2().h(px(28.)).rounded_full().bg(track).children(icons);
+        let content = match tab {
+            SidebarTab::Tree => self.render_tree(cx).into_any_element(),
+            SidebarTab::Connections => self.render_connections(cx).into_any_element(),
+            SidebarTab::Places => self.render_places(cx).into_any_element(),
+            SidebarTab::Operations => self.render_operations(cx).into_any_element(),
+        };
+        // Kept off the rounded corners.
+        let content = v_flex().flex_1().min_h_0().overflow_hidden().pt_2().px_1().pb(px(12.)).child(content);
+        let panel = v_flex()
+            .size_full()
+            .rounded(px(18.))
+            .border_1()
+            .border_color(rim)
+            .child(top)
+            .child(tabs)
+            .child(content);
+        div()
+            .relative()
+            .h_full()
+            .flex_none()
+            .w(px(self.sidebar.width))
+            .pl(INSET)
+            .py(INSET)
+            .bg(background)
+            .child(div().size_full().overflow_hidden().child(panel))
+            .child(
+                div()
+                    .id("sidebar-edge")
+                    .absolute()
+                    .top_0()
+                    .bottom_0()
+                    .right(px(-3.))
+                    .w(px(6.))
+                    .occlude()
+                    .cursor(CursorStyle::ResizeLeftRight)
+                    .on_drag(SidebarDrag, |_, _, _, cx| cx.new(|_| EmptyView)),
+            )
     }
 
     /// The sidebar's width, from where its edge is dragged in `row`.
@@ -578,7 +686,7 @@ impl Commander {
             .pr_1()
             .gap_1()
             .rounded(theme.radius)
-            .when(selected, |el| el.bg(self.colors.sidebar_selection))
+            .when(selected, |el| selected_row(el, &self.colors, cx))
             .when(!selected, |el| el.hover(|style| style.bg(theme.foreground.opacity(0.06))))
             .child(
                 div()
@@ -745,7 +853,7 @@ impl Commander {
             .gap_1p5()
             .rounded(theme.radius)
             .cursor_pointer()
-            .when(selected, |el| el.bg(self.colors.sidebar_selection))
+            .when(selected, |el| selected_row(el, &self.colors, cx))
             .when(!selected, |el| el.hover(|style| style.bg(theme.foreground.opacity(0.06))))
             .child(icon.small().text_color(theme.muted_foreground))
             .child(name)
@@ -996,7 +1104,7 @@ impl Commander {
                         .gap_1()
                         .rounded(theme.radius)
                         .cursor_pointer()
-                        .when(selected, |el| el.bg(self.colors.sidebar_selection))
+                        .when(selected, |el| selected_row(el, &self.colors, cx))
                         .when(!selected, |el| el.hover(|style| style.bg(theme.foreground.opacity(0.06))))
                         .child(img(format!("material/{icon}")).size(px(16.)).flex_none())
                         .child(div().flex_1().min_w_0().truncate().child(name.clone()))
@@ -1064,7 +1172,7 @@ impl Commander {
                     .gap_1p5()
                     .rounded(theme.radius)
                     .cursor_pointer()
-                    .when(selected, |el| el.bg(self.colors.sidebar_selection))
+                    .when(selected, |el| selected_row(el, &self.colors, cx))
                     .when(!selected, |el| el.hover(|style| style.bg(theme.foreground.opacity(0.06))))
                     .child(img(format!("material/{icon}")).size(px(16.)).flex_none())
                     .child(div().flex_none().max_w(relative(0.6)).truncate().child(name))
@@ -1391,7 +1499,7 @@ impl Commander {
             .gap_1()
             .rounded(theme.radius)
             .cursor_pointer()
-            .when(selected, |el| el.bg(self.colors.sidebar_selection))
+            .when(selected, |el| selected_row(el, &self.colors, cx))
             .when(!selected, |el| el.hover(|style| style.bg(theme.foreground.opacity(0.06))))
             .child(arrow)
             .child(Icon::new(if open { IconName::FolderOpen } else { IconName::FolderClosed }).xsmall().text_color(theme.muted_foreground))
@@ -1481,7 +1589,7 @@ impl Commander {
             .pr_1()
             .gap_1p5()
             .rounded(theme.radius)
-            .when(selected, |el| el.bg(self.colors.sidebar_selection))
+            .when(selected, |el| selected_row(el, &self.colors, cx))
             .when(!selected, |el| el.hover(|style| style.bg(theme.foreground.opacity(0.06))))
             .child(Icon::new(Lucide::Server).xsmall().text_color(theme.muted_foreground))
             .child(div().flex_none().max_w(relative(0.6)).truncate().child(server.name.clone()))
@@ -1520,6 +1628,14 @@ pub(crate) fn tilde(path: &Path, home: Option<&Path>) -> String {
 
 /// A tab's title line; buttons go after it.
 /// A group's name in a tab: Drives, Phones, Network.
+/// A selected row: on macOS in the accent, as Notes' and Finder's sidebars.
+fn selected_row<E: Styled>(el: E, colors: &crate::appearance::PanelColors, cx: &App) -> E {
+    match crate::appearance::mac_tabs(cx) {
+        Some(mac) => el.bg(mac.accent).text_color(mac.on_accent),
+        None => el.bg(colors.sidebar_selection),
+    }
+}
+
 fn section(title: String, cx: &App) -> Div {
     let label = div().text_xs().font_semibold().text_color(cx.theme().muted_foreground);
     label.px_1().pt_2().pb_0p5().child(title)

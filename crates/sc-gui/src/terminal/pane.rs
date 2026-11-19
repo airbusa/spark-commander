@@ -347,8 +347,12 @@ impl Commander {
             .child(self.render_terminal_tabs(cx))
             .child(div().flex_1().min_h_0().child(tab.view.clone()))
             .child(edge);
-        // Its own background: the desktop may show through it.
-        let tint = self.terminal_look.0.unwrap_or(1.);
-        Some(v_flex().flex_none().px_1().bg(cx.theme().background.opacity(tint)).child(pane))
+        // Its own background: the desktop may show through it, tinted as the
+        // sidebar is, so that the same opacity looks the same; solid, the lists'.
+        let background = match self.terminal_look.0 {
+            Some(tint) => self.colors.window.opacity(tint),
+            None => cx.theme().background,
+        };
+        Some(v_flex().flex_none().px_1().bg(background).child(pane))
     }
 }

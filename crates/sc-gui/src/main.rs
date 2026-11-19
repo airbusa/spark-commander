@@ -1582,17 +1582,9 @@ impl Commander {
                 all
             }
         };
-        let commander = cx.entity().downgrade();
-        let customize = move |menu: PopupMenu, _: &mut Window, _: &mut Context<PopupMenu>| {
-            let commander = commander.clone();
-            let item = PopupMenuItem::new(sc_core::t!("toolbar.customize")).when_some(menus::menu_icon(Command::Settings), |item, icon| item.icon(Icon::new(icon)));
-            menu.item(item.on_click(move |_, window, cx| {
-                let _ = commander.update(cx, |this, cx| this.open_settings_at("Toolbar", window, cx));
-            }))
-        };
         // A press on it must not start moving the window from the title bar.
         let bar = h_flex().id("toolbar").when(mac, |bar| bar.gap_2()).when(!mac, |bar| bar.gap_0p5()).px_1().py_0p5().on_mouse_down(MouseButton::Left, |_, _, cx| cx.stop_propagation());
-        Some(bar.children(buttons).context_menu(customize).into_any_element())
+        Some(bar.children(buttons).into_any_element())
     }
 
     fn track_place(&mut self, window: &Window, cx: &App) {
@@ -2767,7 +2759,7 @@ impl Render for Commander {
             .min_w_0()
             .h_full()
             .children(beside)
-            .children(toolbar.map(|bar| div().bg(self.colors.bar).child(bar)))
+            .children(toolbar.map(|bar| div().id("toolbar-row").bg(self.colors.bar).child(bar).context_menu(toolbar_menu(cx.entity().downgrade()))))
             .child(v_flex().flex_1().min_h_0().bg(background).child(panels))
             .children(self.render_terminal(window, cx))
             .child(
@@ -2824,6 +2816,17 @@ impl Render for Commander {
                     .children(self.render_sidebar(cx))
                     .child(main),
             )
+    }
+}
+
+/// The toolbar's right-click menu: Customize Toolbar, Settings on its page.
+pub(crate) fn toolbar_menu(commander: WeakEntity<Commander>) -> impl Fn(PopupMenu, &mut Window, &mut Context<PopupMenu>) -> PopupMenu + 'static {
+    move |menu, _, _| {
+        let commander = commander.clone();
+        let item = PopupMenuItem::new(sc_core::t!("toolbar.customize")).when_some(menus::menu_icon(Command::Settings), |item, icon| item.icon(Icon::new(icon)));
+        menu.item(item.on_click(move |_, window, cx| {
+            let _ = commander.update(cx, |this, cx| this.open_settings_at("Toolbar", window, cx));
+        }))
     }
 }
 

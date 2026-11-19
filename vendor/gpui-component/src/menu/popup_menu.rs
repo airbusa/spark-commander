@@ -1357,6 +1357,11 @@ impl PopupMenu {
         };
 
         let selected = self.selected_index == Some(ix);
+        // SparkCommander patch: on macOS's highlight (the accent) the key is white too.
+        let lit_key = cx
+            .try_global::<crate::MacControls>()
+            .filter(|_| selected && !cx.has_global::<crate::NativeControls>())
+            .map(|mac| mac.on_accent);
         const EDGE_PADDING: Pixels = px(4.);
         const INNER_PADDING: Pixels = px(8.);
 
@@ -1457,6 +1462,10 @@ impl PopupMenu {
                 let show_link_icon = *is_link && self.external_link_icon;
                 let action = action.as_ref().map(|action| action.boxed_clone());
                 let key = self.render_key_binding(action, window, cx);
+                let key = key.map(|key| match lit_key {
+                    Some(white) => key.text_color(white),
+                    None => key,
+                });
 
                 this.when(!disabled, |this| {
                     this.on_click(
@@ -1506,6 +1515,10 @@ impl PopupMenu {
                 action,
             } => {
                 let key = self.render_key_binding(action.as_ref().map(|action| action.boxed_clone()), window, cx);
+                let key = key.map(|key| match lit_key {
+                    Some(white) => key.text_color(white),
+                    None => key,
+                });
                 this
                 .selected(selected)
                 .disabled(*disabled)

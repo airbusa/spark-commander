@@ -5,7 +5,7 @@
 
 use gpui_kit::assets::IconName as Lucide;
 use gpui_kit::component::button::{Button, ButtonVariants};
-use gpui_kit::component::menu::DropdownMenu;
+use gpui_kit::component::menu::{ContextMenuExt, DropdownMenu};
 use gpui_kit::component::{ActiveTheme, GlobalState, Icon, Sizable, TitleBar, WindowButtonPictures, WindowCornerRadius, h_flex, top_corners};
 use gpui_kit::*;
 
@@ -64,7 +64,9 @@ impl Commander {
                 h_flex()
                     .w_full()
                     .px_1()
-                    .children(toolbar.take())
+                    .children(toolbar.take().zip(self.main_commander(cx)).map(|(bar, commander)| {
+                        div().id("toolbar-area").child(bar).context_menu(crate::toolbar_menu(commander))
+                    }))
                     .child(div().flex_1())
                     .children(self.menus_behind_button(window).then_some(menu)),
             );
@@ -81,7 +83,7 @@ impl Commander {
         let sidebar = self.sidebar.drawn();
         // Full screen hides the window's buttons.
         let lights = if window.is_fullscreen() { 8. } else { MAC_LIGHTS_END };
-        TitleBar::new()
+        let bar = TitleBar::new()
             .h(MAC_BAR)
             // The capsules 10 px under the window's top, as the window's buttons' middle, 6 above the panels.
             .pt(px(4.))
@@ -90,8 +92,17 @@ impl Commander {
             .border_color(cx.theme().border)
             .children(title)
             // Together at the left: the bar spreads its children apart.
-            .child(h_flex().gap_2().children((!sidebar).then(|| mac_capsule(vec![self.sidebar_toggle()], cx))).children(toolbar.take()))
-            .into_any_element()
+            .child(h_flex().gap_2().children((!sidebar).then(|| mac_capsule(vec![self.sidebar_toggle()], cx))).children(toolbar.take()));
+        // Right-clicked anywhere on it, as Finder's.
+        match self.main_commander(cx) {
+            Some(commander) => div().id("title-bar-area").child(bar).context_menu(crate::toolbar_menu(commander)).into_any_element(),
+            None => bar.into_any_element(),
+        }
+    }
+
+    /// The main window's commander, for its title bar's menus.
+    fn main_commander(&self, cx: &App) -> Option<WeakEntity<Commander>> {
+        cx.try_global::<crate::MainWindow>().map(|main| main.1.clone())
     }
 
     /// macOS: shows or hides the sidebar, first in the toolbar.

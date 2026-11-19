@@ -514,9 +514,174 @@ diff -ruN a/src/command/state.rs b/src/command/state.rs
              .or_else(|| Kbd::binding_for_action(action.as_ref(), None, window))
      }
  
+diff -ruN a/src/dialog/alert_dialog.rs b/src/dialog/alert_dialog.rs
+--- a/src/dialog/alert_dialog.rs	2006-07-24 03:21:28.000000000 +0200
++++ b/src/dialog/alert_dialog.rs	2026-11-19 18:32:33.704516534 +0100
+@@ -1,11 +1,15 @@
++// Modified for SparkCommander: on macOS, AppKit's alert. Changes are marked
++// "SparkCommander patch".
++
+ use gpui::{
+-    AnyElement, App, ClickEvent, IntoElement, ParentElement, Pixels, RenderOnce, SharedString,
+-    StyleRefinement, Styled, Window, prelude::FluentBuilder as _,
++    AnyElement, App, ClickEvent, FontWeight, IntoElement, ParentElement, Pixels, RenderOnce,
++    SharedString, StyleRefinement, Styled, Window, div, img, prelude::FluentBuilder as _, px,
++    relative,
+ };
+ 
+ use crate::{
+-    StyledExt as _, WindowExt as _,
+-    button::ButtonVariant,
++    ActiveTheme as _, MacControls, StyledExt as _, WindowExt as _,
++    button::{Button, ButtonCustomVariant, ButtonVariant, ButtonVariants as _},
+     dialog::{
+         Dialog, DialogButtonProps, DialogDescription, DialogEntrance, DialogFooter, DialogHeader,
+         DialogTitle,
+@@ -70,6 +74,8 @@
+     title: Option<AnyElement>,
+     description: Option<AnyElement>,
+     children: Vec<AnyElement>,
++    // SparkCommander patch: a width of the caller's, kept on macOS too.
++    sized: bool,
+ }
+ 
+ impl AlertDialog {
+@@ -87,6 +93,7 @@
+             title: None,
+             description: None,
+             children: Vec::new(),
++            sized: false,
+         }
+     }
+ 
+@@ -232,6 +239,7 @@
+ 
+     /// Sets the width of the alert dialog, defaults to 420px.
+     pub fn width(mut self, width: impl Into<Pixels>) -> Self {
++        self.sized = true;
+         self.base = self.base.width(width);
+         self
+     }
+@@ -314,6 +322,13 @@
+ 
+     /// Build the styled dialog surface around the Base alert-dialog host.
+     pub(crate) fn build_surface(self, window: &mut Window, cx: &mut App) -> Dialog {
++        let mac = cx
++            .try_global::<MacControls>()
++            .copied()
++            .filter(|_| !cx.has_global::<crate::NativeControls>());
++        if let Some(mac) = mac {
++            return self.build_mac_surface(mac, window, cx);
++        }
+         let button_props = self.base.button_props.clone();
+         let has_title = self.icon.is_some() || self.title.is_some();
+         let has_header = has_title || self.description.is_some();
+@@ -355,6 +370,102 @@
+             })
+     }
+ }
++
++/// SparkCommander patch: AppKit's alert (macOS 26, measured), see `MacControls`.
++const MAC_WIDTH: f32 = 260.;
++
++impl AlertDialog {
++    /// SparkCommander patch: AppKit's alert, 260 px wide: the app's icon, the
++    /// title in bold over the text, on the left; the buttons 28 px capsules
++    /// sharing the width, or the one under the other, the OK one on top,
++    /// where a label does not fit half of it.
++    fn build_mac_surface(self, mac: MacControls, window: &mut Window, cx: &mut App) -> Dialog {
++        let props = self.base.button_props.clone();
++        let has_footer = self.base.footer.is_some();
++        let icon = self.icon.or_else(|| {
++            cx.try_global::<crate::AlertIcon>()
++                .map(|icon| img(icon.0.clone()).size(px(64.)).flex_none().into_any_element())
++        });
++        let has_title = self.title.is_some();
++        // 13 px on 16 px lines, at the system's size.
++        let lines = relative(16. / 13.);
++        // The buttons side by side, 8 px apart within 16 px edges, each label 12 px from its ends.
++        let half = (px(MAC_WIDTH) - px(16. * 2. + 8.)) / 2. - px(12. * 2.);
++        let text = window.text_style();
++        let font_size = cx.theme().font_size * 0.875;
++        let mut labels = vec![props.ok_label()];
++        if props.is_cancel_shown() {
++            labels.push(props.cancel_label());
++        }
++        let stacked = labels.into_iter().any(|label| {
++            let run = text.to_run(label.len());
++            window.text_system().shape_line(label, font_size, &[run], None).width > half
++        });
++        let danger = props.ok_variant == Some(ButtonVariant::Danger);
++        let destructive = ButtonCustomVariant::new(cx)
++            .color(mac.destructive)
++            .foreground(mac.destructive_text)
++            .hover(mac.destructive)
++            .active(mac.destructive.blend(gpui::black().opacity(0.12)));
++        let capsule = move |button: Button| {
++            button
++                .h(px(28.))
++                .px(px(12.))
++                .rounded_full()
++                .map(|this| if stacked { this.w_full() } else { this.flex_1() })
++        };
++        let sized = self.sized;
++
++        self.base
++            .when(!sized, |this| this.width(px(MAC_WIDTH)))
++            // 20 px over the icon and 16 px around the buttons, its 1 px rim within them.
++            .pt(px(19.))
++            .pb(px(15.))
++            .px(px(15.))
++            .gap(px(16.))
++            .header(
++                DialogHeader::new().px(px(4.)).gap_0().child(
++                    v_flex()
++                        .items_start()
++                        .when_some(icon, |this, icon| this.child(div().mb(px(16.)).child(icon)))
++                        .when_some(self.title, |this, title| {
++                            this.child(
++                                DialogTitle::new()
++                                    .text_sm()
++                                    .font_weight(FontWeight::BOLD)
++                                    .line_height(lines)
++                                    .text_color(mac.text)
++                                    .child(title),
++                            )
++                        })
++                        .when_some(self.description, |this, desc| {
++                            this.child(
++                                DialogDescription::new()
++                                    .when(has_title, |this| this.mt(px(10.)))
++                                    .text_sm()
++                                    .line_height(lines)
++                                    .text_color(mac.text)
++                                    .child(desc),
++                            )
++                        }),
++                ),
++            )
++            .children(self.children)
++            .when(!has_footer, |this| {
++                let ok = props.ok_button(|button| {
++                    // Its fill as it is: a custom one's is faded.
++                    capsule(button).when(danger, |button| {
++                        button.with_variant(ButtonVariant::Custom(destructive)).bg(mac.destructive)
++                    })
++                });
++                let cancel = props.is_cancel_shown().then(|| props.cancel_button(capsule));
++                this.footer(DialogFooter::new().gap(px(8.)).map(|this| match stacked {
++                    true => this.flex_col().child(ok).children(cancel),
++                    false => this.children(cancel).child(ok),
++                }))
++            })
++    }
++}
+ 
+ impl Styled for AlertDialog {
+     fn style(&mut self) -> &mut StyleRefinement {
 diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
 --- a/src/dialog/dialog.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/dialog/dialog.rs	2026-11-17 17:18:36.155788414 +0100
++++ b/src/dialog/dialog.rs	2026-11-19 18:28:39.047605963 +0100
 @@ -1,13 +1,20 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): a dialog moves by
 +// its title, can open centred over a part of the window, and fades in
@@ -564,7 +729,68 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
  /// Overwrite `slot` only when `value` was explicitly set.
  fn merge_field<T>(slot: &mut Option<T>, value: Option<T>) {
      if value.is_some() {
-@@ -205,6 +226,8 @@
+@@ -147,32 +168,44 @@
+     }
+ 
+     pub(crate) fn render_ok(&self, _: &mut Window, _: &mut App) -> AnyElement {
+-        let ok_text = self
+-            .ok_text
+-            .clone()
+-            .unwrap_or_else(|| t!("Dialog.ok").into());
++        self.ok_button(|button| button)
++    }
++
++    pub(crate) fn render_cancel(&self, _: &mut Window, _: &mut App) -> AnyElement {
++        self.cancel_button(|button| button)
++    }
++
++    // SparkCommander patch: the labels, and the buttons as `style` makes them
++    // (an alert's on macOS).
++    pub(crate) fn ok_label(&self) -> SharedString {
++        self.ok_text.clone().unwrap_or_else(|| t!("Dialog.ok").into())
++    }
+ 
++    pub(crate) fn cancel_label(&self) -> SharedString {
++        self.cancel_text.clone().unwrap_or_else(|| t!("Dialog.cancel").into())
++    }
++
++    pub(crate) fn ok_button(&self, style: impl FnOnce(Button) -> Button) -> AnyElement {
+         DialogButton {
+             anchor_key: "dialog-ok-anchor",
+-            button: Button::new("ok")
+-                .label(ok_text)
+-                .with_variant(self.ok_variant.unwrap_or(ButtonVariant::Primary)),
++            button: style(
++                Button::new("ok")
++                    .label(self.ok_label())
++                    .with_variant(self.ok_variant.unwrap_or(ButtonVariant::Primary)),
++            ),
+             action: Rc::new(Confirm { secondary: false }),
+         }
+         .into_any_element()
+     }
+ 
+-    pub(crate) fn render_cancel(&self, _: &mut Window, _: &mut App) -> AnyElement {
+-        let cancel_text = self
+-            .cancel_text
+-            .clone()
+-            .unwrap_or_else(|| t!("Dialog.cancel").into());
+-
++    pub(crate) fn cancel_button(&self, style: impl FnOnce(Button) -> Button) -> AnyElement {
+         DialogButton {
+             anchor_key: "dialog-cancel-anchor",
+-            button: Button::new("cancel")
+-                .label(cancel_text)
+-                .with_variant(self.cancel_variant.unwrap_or_default()),
++            button: style(
++                Button::new("cancel")
++                    .label(self.cancel_label())
++                    .with_variant(self.cancel_variant.unwrap_or_default()),
++            ),
+             action: Rc::new(Cancel),
+         }
+         .into_any_element()
+@@ -205,6 +238,8 @@
      width: Pixels,
      max_width: Option<Pixels>,
      margin_top: Option<Pixels>,
@@ -573,7 +799,7 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
      close_button: bool,
  
      overlay: bool,
-@@ -218,6 +241,7 @@
+@@ -218,6 +253,7 @@
      fn default() -> Self {
          Self {
              margin_top: None,
@@ -581,7 +807,7 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
              width: px(448.),
              max_width: None,
              overlay: true,
-@@ -225,7 +249,8 @@
+@@ -225,7 +261,8 @@
              overlay_visible: false,
              close_button: true,
              overlay_closable: true,
@@ -591,10 +817,11 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
          }
      }
  }
-@@ -327,6 +352,31 @@
+@@ -327,7 +364,40 @@
      cx.theme().overlay
  }
  
+-fn dialog_shadow(delta: f32) -> Vec<BoxShadow> {
 +/// SparkCommander patch: AppKit's red close button, grey while the window
 +/// is not in front, its cross shown under the pointer.
 +fn mac_close_button(button: gpui_base::Button, mac: crate::MacControls, active: bool) -> impl IntoElement {
@@ -620,10 +847,29 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
 +        )
 +}
 +
- fn dialog_shadow(delta: f32) -> Vec<BoxShadow> {
++/// SparkCommander patch: an AppKit alert's has a line around it, `edge`.
++fn dialog_shadow(delta: f32, edge: Option<Hsla>) -> Vec<BoxShadow> {
++    let edge = edge.map(|color| BoxShadow {
++        color: color.opacity(color.a * delta),
++        offset: point(px(0.), px(0.)),
++        blur_radius: px(0.),
++        spread_radius: px(0.5),
++        inset: false,
++    });
      vec![
          BoxShadow {
-@@ -475,6 +525,13 @@
+             color: hsla(0., 0., 0., 0.1 * delta),
+@@ -344,6 +414,9 @@
+             inset: false,
+         },
+     ]
++    .into_iter()
++    .chain(edge)
++    .collect()
+ }
+ 
+ impl Dialog {
+@@ -475,6 +548,13 @@
          self
      }
  
@@ -637,7 +883,7 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
      /// Sets the width of the dialog, defaults to 448px.
      ///
      /// The dialog is never wider than the viewport minus a margin on each side.
-@@ -598,6 +655,13 @@
+@@ -598,6 +678,13 @@
  
          let layer_ix = self.layer_ix;
          let selection_scope = self.selection_scope;
@@ -651,7 +897,7 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
          let on_close = self.button_props.close_handler();
          let on_ok = self.button_props.ok_handler();
          let on_cancel = self.button_props.cancel_handler();
-@@ -632,6 +696,35 @@
+@@ -632,6 +719,42 @@
          let base_size = window.text_style().font_size;
          let rem_size = window.rem_size();
  
@@ -681,13 +927,20 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
 +        // SparkCommander patch: WinUI's ContentDialog, see `NativeControls::command_bar`.
 +        let command_bar = cx.try_global::<crate::NativeControls>().and_then(|native| native.command_bar);
 +        let band = px(if mac.is_some() { 32. } else if command_bar.is_some() { 52. } else { TITLE_BAND_HEIGHT });
-+        let corner = mac.map_or(cx.theme().radius_lg, |_| px(16.));
++        // An alert's, 24 px corners, in its own fill and rim; see `AlertDialog`.
++        let alert = mac.filter(|_| matches!(self.base, Some(BaseDialogRoot::AlertDialog(_))));
++        let edge = alert.map(|mac| mac.alert_edge);
++        let corner = match (alert, mac) {
++            (Some(_), _) => px(24.),
++            (None, Some(_)) => px(16.),
++            (None, None) => cx.theme().radius_lg,
++        };
 +        let active = window.is_window_active();
 +
          let mut paddings = Edges::all(px(16.));
          if let Some(pl) = self.style.padding.left {
              paddings.left = pl.to_pixels(base_size, rem_size);
-@@ -708,9 +801,12 @@
+@@ -708,29 +831,86 @@
                              })
                              .popup(
                                  gpui_base::Positioner::corner(
@@ -702,13 +955,19 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
                                  .margin(margin)
                                  .child(
                                      v_flex()
-@@ -719,18 +815,68 @@
+                                         .id(layer_ix)
+                                         .test_support()
                                          .debug_selector(move || format!("dialog-{layer_ix}"))
-                                         .bg(cx.theme().tokens.background)
+-                                        .bg(cx.theme().tokens.background)
++                                        .bg(alert.map_or(cx.theme().tokens.background, |mac| mac.alert.into()))
                                          .border_1()
 -                                        .border_color(cx.theme().border)
 -                                        .rounded(cx.theme().radius_lg)
-+                                        .border_color(mac.map_or(cx.theme().border, |mac| mac.window_frame))
++                                        .border_color(match (alert, mac) {
++                                            (Some(mac), _) => mac.alert_rim,
++                                            (None, Some(mac)) => mac.window_frame,
++                                            (None, None) => cx.theme().border,
++                                        })
 +                                        .rounded(corner)
                                          .min_h_24()
                                          .pt(paddings.top)
@@ -773,7 +1032,7 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
                                          .child(
                                              v_flex()
                                                  .flex_1()
-@@ -744,14 +890,6 @@
+@@ -744,14 +924,6 @@
                                                              .child(header),
                                                      )
                                                  })
@@ -788,7 +1047,7 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
                                                  .when_some(self.content_builder, |this, builder| {
                                                      this.child(builder(
                                                          DialogContent::new()
-@@ -781,24 +919,39 @@
+@@ -781,24 +953,39 @@
                                                  div()
                                                      .pl(paddings.left)
                                                      .pr(paddings.right)
@@ -835,7 +1094,26 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
                                          }))
                                          .map(|surface| {
                                              if animated {
-@@ -841,7 +994,8 @@
+@@ -806,15 +993,15 @@
+                                                     .with_animation(
+                                                         "slide-down-shadow",
+                                                         animation.clone(),
+-                                                        |surface, delta| {
+-                                                            surface.shadow(dialog_shadow(delta))
++                                                        move |surface, delta| {
++                                                            surface.shadow(dialog_shadow(delta, edge))
+                                                         },
+                                                     )
+                                                     .text_selection_scope(selection_scope)
+                                                     .into_any_element()
+                                             } else {
+                                                 surface
+-                                                    .shadow(dialog_shadow(1.))
++                                                    .shadow(dialog_shadow(1., edge))
+                                                     .text_selection_scope(selection_scope)
+                                                     .into_any_element()
+                                             }
+@@ -841,7 +1028,8 @@
                                          }),
                                  )
                                  .map(|positioner| {
@@ -845,7 +1123,7 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
                                          positioner
                                              .with_animation(
                                                  "slide-down",
-@@ -876,6 +1030,38 @@
+@@ -876,6 +1064,38 @@
      }
  }
  
@@ -1188,7 +1466,7 @@ diff -ruN a/src/kbd.rs b/src/kbd.rs
  }
 diff -ruN a/src/lib.rs b/src/lib.rs
 --- a/src/lib.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/lib.rs	2026-11-17 17:18:36.165601959 +0100
++++ b/src/lib.rs	2026-11-19 18:27:44.185124208 +0100
 @@ -20,6 +20,15 @@
  mod touch_selection;
  mod virtual_list;
@@ -1201,7 +1479,7 @@ diff -ruN a/src/lib.rs b/src/lib.rs
 +pub use toolkit::{StateImages, ToolkitControls, state_layers};
 +// SparkCommander patch: see `MacControls`.
 +mod mac;
-+pub use mac::MacControls;
++pub use mac::{AlertIcon, MacControls};
  mod window_ext;
  
  pub(crate) mod actions {
@@ -1269,8 +1547,8 @@ diff -ruN a/src/list/list.rs b/src/list/list.rs
                              secondary: e.modifiers().secondary(),
 diff -ruN a/src/mac.rs b/src/mac.rs
 --- a/src/mac.rs	1970-01-01 01:00:00.000000000 +0100
-+++ b/src/mac.rs	2026-11-17 17:18:36.166522852 +0100
-@@ -0,0 +1,43 @@
++++ b/src/mac.rs	2026-11-19 18:27:44.184278195 +0100
+@@ -0,0 +1,56 @@
 +// SparkCommander patch: this file is new.
 +use gpui::{Global, Hsla};
 +
@@ -1301,6 +1579,13 @@ diff -ruN a/src/mac.rs b/src/mac.rs
 +    pub disabled_text: Hsla,
 +    /// A dialog's rim.
 +    pub window_frame: Hsla,
++    /// An alert's fill, its rim and the line around it.
++    pub alert: Hsla,
++    pub alert_rim: Hsla,
++    pub alert_edge: Hsla,
++    /// A destructive button's fill and text: an alert's `ButtonVariant::Danger`.
++    pub destructive: Hsla,
++    pub destructive_text: Hsla,
 +    /// Window tabs: the bar's track, the selected tab and its rim.
 +    pub tab_track: Hsla,
 +    pub tab: Hsla,
@@ -1311,6 +1596,12 @@ diff -ruN a/src/mac.rs b/src/mac.rs
 +}
 +
 +impl Global for MacControls {}
++
++/// The app's icon, as Finder draws it, on top of an alert.
++#[derive(Clone)]
++pub struct AlertIcon(pub gpui::ImageSource);
++
++impl Global for AlertIcon {}
 +
 +/// The check box's mark, bolder than GPUI Kit's, as AppKit's.
 +pub(crate) const CHECK_MARK: &[u8] = br#"<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"><path d="M2.4 6.4 4.9 8.9 9.7 3.2" fill="none" stroke="black" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>"#;

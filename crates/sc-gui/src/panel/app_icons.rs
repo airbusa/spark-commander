@@ -100,14 +100,22 @@ fn make(path: &Path, _: u32) -> Option<Made> {
 /// takes images.
 #[cfg(target_os = "macos")]
 fn finder_icon(path: &Path, pixels: u32) -> Option<Arc<RenderImage>> {
-    use objc2::AllocAnyThread;
     use objc2::rc::autoreleasepool;
-    use objc2_app_kit::{NSBitmapImageRep, NSDeviceRGBColorSpace, NSGraphicsContext, NSWorkspace};
-    use objc2_foundation::{NSPoint, NSRect, NSSize, NSString};
+    use objc2_app_kit::NSWorkspace;
+    use objc2_foundation::NSString;
 
     // A thread of the executor's has no pool of its own.
-    autoreleasepool(|_| {
-        let image = NSWorkspace::sharedWorkspace().iconForFile(&NSString::from_str(path.to_str()?));
+    autoreleasepool(|_| drawn(&NSWorkspace::sharedWorkspace().iconForFile(&NSString::from_str(path.to_str()?)), pixels))
+}
+
+/// `image` drawn `pixels` square, in BGRA as GPUI takes images.
+#[cfg(target_os = "macos")]
+pub(crate) fn drawn(image: &objc2_app_kit::NSImage, pixels: u32) -> Option<Arc<RenderImage>> {
+    use objc2::AllocAnyThread;
+    use objc2_app_kit::{NSBitmapImageRep, NSDeviceRGBColorSpace, NSGraphicsContext};
+    use objc2_foundation::{NSPoint, NSRect, NSSize};
+
+    {
         let side = pixels as isize;
         // SAFETY: no planes given, the rep has a buffer of its own; RGBA, 8 bits each.
         let rep = unsafe {
@@ -150,5 +158,5 @@ fn finder_icon(path: &Path, pixels: u32) -> Option<Arc<RenderImage>> {
             }
         }
         Some(Arc::new(RenderImage::new([image::Frame::new(bgra)])))
-    })
+    }
 }

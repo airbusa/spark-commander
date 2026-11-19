@@ -190,6 +190,8 @@ fn main() {
     app.run(|cx| {
         #[cfg(target_os = "macos")]
         dock_icon();
+        #[cfg(target_os = "macos")]
+        alert_icon(cx);
         // Windows: one taskbar app for all its windows and copies, wherever the exe is.
         #[cfg(windows)]
         cx.set_app_identity("Remoxio.SparkCommander", "Spark Commander");
@@ -324,6 +326,20 @@ fn dock_icon() {
     };
     if let Some(icon) = NSImage::initWithContentsOfFile(NSImage::alloc(), &NSString::from_str(ICON)) {
         unsafe { NSApplication::sharedApplication(mtm).setApplicationIconImage(Some(&icon)) };
+    }
+}
+
+/// On top of alerts, as AppKit's: the app's icon in the Dock, 64 px.
+#[cfg(target_os = "macos")]
+fn alert_icon(cx: &mut App) {
+    use objc2::MainThreadMarker;
+    use objc2_app_kit::NSApplication;
+    let Some(icon) = MainThreadMarker::new().and_then(|mtm| NSApplication::sharedApplication(mtm).applicationIconImage()) else {
+        return;
+    };
+    // Twice as large: sharp on a Retina display.
+    if let Some(drawn) = panel::app_icons::drawn(&icon, 128) {
+        cx.set_global(gpui_kit::component::AlertIcon(ImageSource::Render(drawn)));
     }
 }
 

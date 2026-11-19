@@ -1,11 +1,15 @@
+// Modified for SparkCommander: on macOS, AppKit's alert. Changes are marked
+// "SparkCommander patch".
+
 use gpui::{
-    AnyElement, App, ClickEvent, IntoElement, ParentElement, Pixels, RenderOnce, SharedString,
-    StyleRefinement, Styled, Window, prelude::FluentBuilder as _,
+    AnyElement, App, ClickEvent, FontWeight, IntoElement, ParentElement, Pixels, RenderOnce,
+    SharedString, StyleRefinement, Styled, Window, div, img, prelude::FluentBuilder as _, px,
+    relative,
 };
 
 use crate::{
-    StyledExt as _, WindowExt as _,
-    button::ButtonVariant,
+    ActiveTheme as _, MacControls, StyledExt as _, WindowExt as _,
+    button::{Button, ButtonCustomVariant, ButtonVariant, ButtonVariants as _},
     dialog::{
         Dialog, DialogButtonProps, DialogDescription, DialogEntrance, DialogFooter, DialogHeader,
         DialogTitle,
@@ -70,6 +74,8 @@ pub struct AlertDialog {
     title: Option<AnyElement>,
     description: Option<AnyElement>,
     children: Vec<AnyElement>,
+    // SparkCommander patch: a width of the caller's, kept on macOS too.
+    sized: bool,
 }
 
 impl AlertDialog {
@@ -87,6 +93,7 @@ impl AlertDialog {
             title: None,
             description: None,
             children: Vec::new(),
+            sized: false,
         }
     }
 
@@ -232,6 +239,7 @@ impl AlertDialog {
 
     /// Sets the width of the alert dialog, defaults to 420px.
     pub fn width(mut self, width: impl Into<Pixels>) -> Self {
+        self.sized = true;
         self.base = self.base.width(width);
         self
     }
@@ -314,6 +322,13 @@ impl AlertDialog {
 
     /// Build the styled dialog surface around the Base alert-dialog host.
     pub(crate) fn build_surface(self, window: &mut Window, cx: &mut App) -> Dialog {
+        let mac = cx
+            .try_global::<MacControls>()
+            .copied()
+            .filter(|_| !cx.has_global::<crate::NativeControls>());
+        if let Some(mac) = mac {
+            return self.build_mac_surface(mac, window, cx);
+        }
         let button_props = self.base.button_props.clone();
         let has_title = self.icon.is_some() || self.title.is_some();
         let has_header = has_title || self.description.is_some();
@@ -352,6 +367,102 @@ impl AlertDialog {
                         })
                         .child(button_props.render_ok(window, cx)),
                 )
+            })
+    }
+}
+
+/// SparkCommander patch: AppKit's alert (macOS 26, measured), see `MacControls`.
+const MAC_WIDTH: f32 = 260.;
+
+impl AlertDialog {
+    /// SparkCommander patch: AppKit's alert, 260 px wide: the app's icon, the
+    /// title in bold over the text, on the left; the buttons 28 px capsules
+    /// sharing the width, or the one under the other, the OK one on top,
+    /// where a label does not fit half of it.
+    fn build_mac_surface(self, mac: MacControls, window: &mut Window, cx: &mut App) -> Dialog {
+        let props = self.base.button_props.clone();
+        let has_footer = self.base.footer.is_some();
+        let icon = self.icon.or_else(|| {
+            cx.try_global::<crate::AlertIcon>()
+                .map(|icon| img(icon.0.clone()).size(px(64.)).flex_none().into_any_element())
+        });
+        let has_title = self.title.is_some();
+        // 13 px on 16 px lines, at the system's size.
+        let lines = relative(16. / 13.);
+        // The buttons side by side, 8 px apart within 16 px edges, each label 12 px from its ends.
+        let half = (px(MAC_WIDTH) - px(16. * 2. + 8.)) / 2. - px(12. * 2.);
+        let text = window.text_style();
+        let font_size = cx.theme().font_size * 0.875;
+        let mut labels = vec![props.ok_label()];
+        if props.is_cancel_shown() {
+            labels.push(props.cancel_label());
+        }
+        let stacked = labels.into_iter().any(|label| {
+            let run = text.to_run(label.len());
+            window.text_system().shape_line(label, font_size, &[run], None).width > half
+        });
+        let danger = props.ok_variant == Some(ButtonVariant::Danger);
+        let destructive = ButtonCustomVariant::new(cx)
+            .color(mac.destructive)
+            .foreground(mac.destructive_text)
+            .hover(mac.destructive)
+            .active(mac.destructive.blend(gpui::black().opacity(0.12)));
+        let capsule = move |button: Button| {
+            button
+                .h(px(28.))
+                .px(px(12.))
+                .rounded_full()
+                .map(|this| if stacked { this.w_full() } else { this.flex_1() })
+        };
+        let sized = self.sized;
+
+        self.base
+            .when(!sized, |this| this.width(px(MAC_WIDTH)))
+            // 20 px over the icon and 16 px around the buttons, its 1 px rim within them.
+            .pt(px(19.))
+            .pb(px(15.))
+            .px(px(15.))
+            .gap(px(16.))
+            .header(
+                DialogHeader::new().px(px(4.)).gap_0().child(
+                    v_flex()
+                        .items_start()
+                        .when_some(icon, |this, icon| this.child(div().mb(px(16.)).child(icon)))
+                        .when_some(self.title, |this, title| {
+                            this.child(
+                                DialogTitle::new()
+                                    .text_sm()
+                                    .font_weight(FontWeight::BOLD)
+                                    .line_height(lines)
+                                    .text_color(mac.text)
+                                    .child(title),
+                            )
+                        })
+                        .when_some(self.description, |this, desc| {
+                            this.child(
+                                DialogDescription::new()
+                                    .when(has_title, |this| this.mt(px(10.)))
+                                    .text_sm()
+                                    .line_height(lines)
+                                    .text_color(mac.text)
+                                    .child(desc),
+                            )
+                        }),
+                ),
+            )
+            .children(self.children)
+            .when(!has_footer, |this| {
+                let ok = props.ok_button(|button| {
+                    // Its fill as it is: a custom one's is faded.
+                    capsule(button).when(danger, |button| {
+                        button.with_variant(ButtonVariant::Custom(destructive)).bg(mac.destructive)
+                    })
+                });
+                let cancel = props.is_cancel_shown().then(|| props.cancel_button(capsule));
+                this.footer(DialogFooter::new().gap(px(8.)).map(|this| match stacked {
+                    true => this.flex_col().child(ok).children(cancel),
+                    false => this.children(cancel).child(ok),
+                }))
             })
     }
 }

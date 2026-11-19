@@ -28,6 +28,13 @@ pub struct MacControls {
     pub disabled_text: Hsla,
     /// A dialog's rim.
     pub window_frame: Hsla,
+    /// An alert's fill, its rim and the line around it.
+    pub alert: Hsla,
+    pub alert_rim: Hsla,
+    pub alert_edge: Hsla,
+    /// A destructive button's fill and text: an alert's `ButtonVariant::Danger`.
+    pub destructive: Hsla,
+    pub destructive_text: Hsla,
     /// Window tabs: the bar's track, the selected tab and its rim.
     pub tab_track: Hsla,
     pub tab: Hsla,
@@ -38,6 +45,12 @@ pub struct MacControls {
 }
 
 impl Global for MacControls {}
+
+/// The app's icon, as Finder draws it, on top of an alert.
+#[derive(Clone)]
+pub struct AlertIcon(pub gpui::ImageSource);
+
+impl Global for AlertIcon {}
 
 /// The check box's mark, bolder than GPUI Kit's, as AppKit's.
 pub(crate) const CHECK_MARK: &[u8] = br#"<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"><path d="M2.4 6.4 4.9 8.9 9.7 3.2" fill="none" stroke="black" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>"#;

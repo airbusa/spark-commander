@@ -28,7 +28,7 @@ mod toolkit;
 pub use toolkit::{StateImages, ToolkitControls, state_layers};
 // SparkCommander patch: see `MacControls`.
 mod mac;
-pub use mac::MacControls;
+pub use mac::{AlertIcon, MacControls};
 mod window_ext;
 
 pub(crate) mod actions {

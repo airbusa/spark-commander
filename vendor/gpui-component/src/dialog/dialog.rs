@@ -168,32 +168,44 @@ impl DialogButtonProps {
     }
 
     pub(crate) fn render_ok(&self, _: &mut Window, _: &mut App) -> AnyElement {
-        let ok_text = self
-            .ok_text
-            .clone()
-            .unwrap_or_else(|| t!("Dialog.ok").into());
+        self.ok_button(|button| button)
+    }
 
+    pub(crate) fn render_cancel(&self, _: &mut Window, _: &mut App) -> AnyElement {
+        self.cancel_button(|button| button)
+    }
+
+    // SparkCommander patch: the labels, and the buttons as `style` makes them
+    // (an alert's on macOS).
+    pub(crate) fn ok_label(&self) -> SharedString {
+        self.ok_text.clone().unwrap_or_else(|| t!("Dialog.ok").into())
+    }
+
+    pub(crate) fn cancel_label(&self) -> SharedString {
+        self.cancel_text.clone().unwrap_or_else(|| t!("Dialog.cancel").into())
+    }
+
+    pub(crate) fn ok_button(&self, style: impl FnOnce(Button) -> Button) -> AnyElement {
         DialogButton {
             anchor_key: "dialog-ok-anchor",
-            button: Button::new("ok")
-                .label(ok_text)
-                .with_variant(self.ok_variant.unwrap_or(ButtonVariant::Primary)),
+            button: style(
+                Button::new("ok")
+                    .label(self.ok_label())
+                    .with_variant(self.ok_variant.unwrap_or(ButtonVariant::Primary)),
+            ),
             action: Rc::new(Confirm { secondary: false }),
         }
         .into_any_element()
     }
 
-    pub(crate) fn render_cancel(&self, _: &mut Window, _: &mut App) -> AnyElement {
-        let cancel_text = self
-            .cancel_text
-            .clone()
-            .unwrap_or_else(|| t!("Dialog.cancel").into());
-
+    pub(crate) fn cancel_button(&self, style: impl FnOnce(Button) -> Button) -> AnyElement {
         DialogButton {
             anchor_key: "dialog-cancel-anchor",
-            button: Button::new("cancel")
-                .label(cancel_text)
-                .with_variant(self.cancel_variant.unwrap_or_default()),
+            button: style(
+                Button::new("cancel")
+                    .label(self.cancel_label())
+                    .with_variant(self.cancel_variant.unwrap_or_default()),
+            ),
             action: Rc::new(Cancel),
         }
         .into_any_element()
@@ -377,7 +389,15 @@ fn mac_close_button(button: gpui_base::Button, mac: crate::MacControls, active: 
         )
 }
 
-fn dialog_shadow(delta: f32) -> Vec<BoxShadow> {
+/// SparkCommander patch: an AppKit alert's has a line around it, `edge`.
+fn dialog_shadow(delta: f32, edge: Option<Hsla>) -> Vec<BoxShadow> {
+    let edge = edge.map(|color| BoxShadow {
+        color: color.opacity(color.a * delta),
+        offset: point(px(0.), px(0.)),
+        blur_radius: px(0.),
+        spread_radius: px(0.5),
+        inset: false,
+    });
     vec![
         BoxShadow {
             color: hsla(0., 0., 0., 0.1 * delta),
@@ -394,6 +414,9 @@ fn dialog_shadow(delta: f32) -> Vec<BoxShadow> {
             inset: false,
         },
     ]
+    .into_iter()
+    .chain(edge)
+    .collect()
 }
 
 impl Dialog {
@@ -722,7 +745,14 @@ impl RenderOnce for Dialog {
         // SparkCommander patch: WinUI's ContentDialog, see `NativeControls::command_bar`.
         let command_bar = cx.try_global::<crate::NativeControls>().and_then(|native| native.command_bar);
         let band = px(if mac.is_some() { 32. } else if command_bar.is_some() { 52. } else { TITLE_BAND_HEIGHT });
-        let corner = mac.map_or(cx.theme().radius_lg, |_| px(16.));
+        // An alert's, 24 px corners, in its own fill and rim; see `AlertDialog`.
+        let alert = mac.filter(|_| matches!(self.base, Some(BaseDialogRoot::AlertDialog(_))));
+        let edge = alert.map(|mac| mac.alert_edge);
+        let corner = match (alert, mac) {
+            (Some(_), _) => px(24.),
+            (None, Some(_)) => px(16.),
+            (None, None) => cx.theme().radius_lg,
+        };
         let active = window.is_window_active();
 
         let mut paddings = Edges::all(px(16.));
@@ -813,9 +843,13 @@ impl RenderOnce for Dialog {
                                         .id(layer_ix)
                                         .test_support()
                                         .debug_selector(move || format!("dialog-{layer_ix}"))
-                                        .bg(cx.theme().tokens.background)
+                                        .bg(alert.map_or(cx.theme().tokens.background, |mac| mac.alert.into()))
                                         .border_1()
-                                        .border_color(mac.map_or(cx.theme().border, |mac| mac.window_frame))
+                                        .border_color(match (alert, mac) {
+                                            (Some(mac), _) => mac.alert_rim,
+                                            (None, Some(mac)) => mac.window_frame,
+                                            (None, None) => cx.theme().border,
+                                        })
                                         .rounded(corner)
                                         .min_h_24()
                                         .pt(paddings.top)
@@ -959,15 +993,15 @@ impl RenderOnce for Dialog {
                                                     .with_animation(
                                                         "slide-down-shadow",
                                                         animation.clone(),
-                                                        |surface, delta| {
-                                                            surface.shadow(dialog_shadow(delta))
+                                                        move |surface, delta| {
+                                                            surface.shadow(dialog_shadow(delta, edge))
                                                         },
                                                     )
                                                     .text_selection_scope(selection_scope)
                                                     .into_any_element()
                                             } else {
                                                 surface
-                                                    .shadow(dialog_shadow(1.))
+                                                    .shadow(dialog_shadow(1., edge))
                                                     .text_selection_scope(selection_scope)
                                                     .into_any_element()
                                             }

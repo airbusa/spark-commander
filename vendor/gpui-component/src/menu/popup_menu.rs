@@ -835,7 +835,9 @@ impl PopupMenu {
                         let skip = if matches!(items.get(1), Some(OwnedMenuItem::Separator)) { 2 } else { 1 };
                         items.drain(..skip);
                     }
-                    self = self.submenu(submenu.name, window, cx, move |menu, window, cx| {
+                    // Its own action's icon, as the item would have alone.
+                    let icon = own.as_ref().and_then(|own| cx.try_global::<MenuIcons>().and_then(|icons| (icons.0)(own.as_ref())));
+                    self = self.submenu_with_icon(icon, submenu.name, window, cx, move |menu, window, cx| {
                         menu.with_menu_items(items.clone(), window, cx)
                     });
                     if let Some(PopupMenuItem::Submenu { action, .. }) = self.menu_items.last_mut() {

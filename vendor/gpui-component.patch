@@ -1,6 +1,6 @@
 diff -ruN a/src/button/button.rs b/src/button/button.rs
---- a/src/button/button.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/button/button.rs	2026-11-17 17:18:36.149612487 +0100
+--- a/src/button/button.rs	2026-11-20 11:57:02.419309961 +0100
++++ b/src/button/button.rs	2026-11-20 11:57:02.426846315 +0100
 @@ -159,6 +159,53 @@
  }
  
@@ -231,8 +231,8 @@ diff -ruN a/src/button/button.rs b/src/button/button.rs
              Self::Default | Self::Link | Self::Ghost | Self::Text => cx.theme().transparent.into(),
              Self::Primary => cx.theme().tokens.button_primary.background.opacity(0.15),
 diff -ruN a/src/button/dropdown_button.rs b/src/button/dropdown_button.rs
---- a/src/button/dropdown_button.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/button/dropdown_button.rs	2026-11-17 17:18:36.149970686 +0100
+--- a/src/button/dropdown_button.rs	2026-11-20 11:57:02.419395103 +0100
++++ b/src/button/dropdown_button.rs	2026-11-20 11:57:02.426987753 +0100
 @@ -1,3 +1,6 @@
 +// Modified for SparkCommander: a ghost split's caret half is 18 px wide.
 +// Changes are marked "SparkCommander patch".
@@ -250,8 +250,8 @@ diff -ruN a/src/button/dropdown_button.rs b/src/button/dropdown_button.rs
                          .on_open_change(move |open, _, cx| {
                              menu_open.update(cx, |state, cx| {
 diff -ruN a/src/checkbox.rs b/src/checkbox.rs
---- a/src/checkbox.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/checkbox.rs	2026-11-17 17:18:36.154089791 +0100
+--- a/src/checkbox.rs	2026-11-20 11:57:02.419805122 +0100
++++ b/src/checkbox.rs	2026-11-20 11:57:02.434513798 +0100
 @@ -197,16 +197,25 @@
          window,
          cx,
@@ -403,8 +403,8 @@ diff -ruN a/src/checkbox.rs b/src/checkbox.rs
              .when(self.label.is_some() || !children.is_empty(), |this| {
                  this.child(
 diff -ruN a/src/command/command.rs b/src/command/command.rs
---- a/src/command/command.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/command/command.rs	2026-11-17 17:18:36.154722316 +0100
+--- a/src/command/command.rs	2026-11-20 11:57:02.419941040 +0100
++++ b/src/command/command.rs	2026-11-20 11:57:02.427802642 +0100
 @@ -1,7 +1,7 @@
  use std::rc::Rc;
  
@@ -446,8 +446,8 @@ diff -ruN a/src/command/command.rs b/src/command/command.rs
      pub fn placeholder(mut self, placeholder: impl Into<SharedString>) -> Self {
          self.options.placeholder = Some(placeholder.into());
 diff -ruN a/src/command/item.rs b/src/command/item.rs
---- a/src/command/item.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/command/item.rs	2026-11-17 17:18:36.154825397 +0100
+--- a/src/command/item.rs	2026-11-20 11:57:02.419962912 +0100
++++ b/src/command/item.rs	2026-11-20 11:57:02.427839963 +0100
 @@ -13,6 +13,8 @@
      /// every item — and so the palette's item vector — kilobytes wide.
      pub(crate) icon: Option<Box<Icon>>,
@@ -500,8 +500,8 @@ diff -ruN a/src/command/item.rs b/src/command/item.rs
      }
  }
 diff -ruN a/src/command/state.rs b/src/command/state.rs
---- a/src/command/state.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/command/state.rs	2026-11-17 17:18:36.155040350 +0100
+--- a/src/command/state.rs	2026-11-20 11:57:02.420002808 +0100
++++ b/src/command/state.rs	2026-11-20 11:57:02.427905648 +0100
 @@ -796,8 +796,9 @@
              return None;
          }
@@ -515,8 +515,8 @@ diff -ruN a/src/command/state.rs b/src/command/state.rs
      }
  
 diff -ruN a/src/dialog/alert_dialog.rs b/src/dialog/alert_dialog.rs
---- a/src/dialog/alert_dialog.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/dialog/alert_dialog.rs	2026-11-19 19:20:34.635695598 +0100
+--- a/src/dialog/alert_dialog.rs	2026-11-20 11:57:02.420093530 +0100
++++ b/src/dialog/alert_dialog.rs	2026-11-20 11:57:02.428167836 +0100
 @@ -1,11 +1,15 @@
 +// Modified for SparkCommander: on macOS, AppKit's alert. Changes are marked
 +// "SparkCommander patch".
@@ -680,8 +680,8 @@ diff -ruN a/src/dialog/alert_dialog.rs b/src/dialog/alert_dialog.rs
  impl Styled for AlertDialog {
      fn style(&mut self) -> &mut StyleRefinement {
 diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
---- a/src/dialog/dialog.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/dialog/dialog.rs	2026-11-19 19:20:34.635203283 +0100
+--- a/src/dialog/dialog.rs	2026-11-20 11:57:02.420157091 +0100
++++ b/src/dialog/dialog.rs	2026-11-20 11:57:02.428216549 +0100
 @@ -1,13 +1,20 @@
 +// Modified for Spark Commander (Apache-2.0, section 4b): a dialog moves by
 +// its title, can open centred over a part of the window, and fades in
@@ -1178,8 +1178,8 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
  pub(crate) mod tests {
      use super::*;
 diff -ruN a/src/group_box.rs b/src/group_box.rs
---- a/src/group_box.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/group_box.rs	2026-11-17 17:18:36.159493613 +0100
+--- a/src/group_box.rs	2026-11-20 11:57:02.420999031 +0100
++++ b/src/group_box.rs	2026-11-20 11:57:02.434824127 +0100
 @@ -1,6 +1,6 @@
  use gpui::{
      AnyElement, App, Background, ElementId, InteractiveElement as _, IntoElement, ParentElement,
@@ -1233,8 +1233,8 @@ diff -ruN a/src/group_box.rs b/src/group_box.rs
                              .children(self.children),
                      )
 diff -ruN a/src/highlighter/input_adapter.rs b/src/highlighter/input_adapter.rs
---- a/src/highlighter/input_adapter.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/highlighter/input_adapter.rs	2026-11-17 17:18:36.159863187 +0100
+--- a/src/highlighter/input_adapter.rs	2026-11-20 11:57:02.421084784 +0100
++++ b/src/highlighter/input_adapter.rs	2026-11-20 11:57:02.430048771 +0100
 @@ -1,3 +1,7 @@
 +// Modified for Spark Commander (Apache-2.0, section 4b): the highlighter
 +// factory is public, and a background parse leaves the fold candidates alone
@@ -1270,8 +1270,8 @@ diff -ruN a/src/highlighter/input_adapter.rs b/src/highlighter/input_adapter.rs
          });
          parse_task.borrow_mut().replace(task);
 diff -ruN a/src/highlighter/mod.rs b/src/highlighter/mod.rs
---- a/src/highlighter/mod.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/highlighter/mod.rs	2026-11-17 17:18:36.161692474 +0100
+--- a/src/highlighter/mod.rs	2026-11-20 11:57:02.421637415 +0100
++++ b/src/highlighter/mod.rs	2026-11-20 11:57:02.430071124 +0100
 @@ -1,3 +1,7 @@
 +// Modified for Spark Commander (Apache-2.0, section 4b): the editor's
 +// highlighter factory is public, so an app can wrap it. Changes are marked
@@ -1296,8 +1296,8 @@ diff -ruN a/src/highlighter/mod.rs b/src/highlighter/mod.rs
  }
  
 diff -ruN a/src/input/input.rs b/src/input/input.rs
---- a/src/input/input.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/input/input.rs	2026-11-17 17:18:36.163174354 +0100
+--- a/src/input/input.rs	2026-11-20 11:57:02.421946532 +0100
++++ b/src/input/input.rs	2026-11-20 11:57:02.430516661 +0100
 @@ -705,6 +705,10 @@
          };
  
@@ -1360,8 +1360,8 @@ diff -ruN a/src/input/input.rs b/src/input/input.rs
              .items_center()
              .gap(gap_x)
 diff -ruN a/src/input/popovers/completion_menu.rs b/src/input/popovers/completion_menu.rs
---- a/src/input/popovers/completion_menu.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/input/popovers/completion_menu.rs	2026-11-17 17:18:36.164181870 +0100
+--- a/src/input/popovers/completion_menu.rs	2026-11-20 11:57:02.422124400 +0100
++++ b/src/input/popovers/completion_menu.rs	2026-11-20 11:57:02.430343261 +0100
 @@ -1,3 +1,7 @@
 +// Modified for Spark Commander (Apache-2.0, section 4b): the completion
 +// menu is as wide as the editor's configured width. Changes are marked
@@ -1383,8 +1383,8 @@ diff -ruN a/src/input/popovers/completion_menu.rs b/src/input/popovers/completio
                      )
                      .when_some(selected_documentation, |this, documentation| {
 diff -ruN a/src/kbd.rs b/src/kbd.rs
---- a/src/kbd.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/kbd.rs	2026-11-17 17:18:36.165368215 +0100
+--- a/src/kbd.rs	2026-11-20 11:57:02.422420142 +0100
++++ b/src/kbd.rs	2026-11-20 11:57:02.436077089 +0100
 @@ -1,3 +1,8 @@
 +// Modified for Spark Commander (Apache-2.0, section 4b): a binding of
 +// several keystrokes shows them all. Changes are marked "SparkCommander patch".
@@ -1480,8 +1480,8 @@ diff -ruN a/src/kbd.rs b/src/kbd.rs
      }
  }
 diff -ruN a/src/lib.rs b/src/lib.rs
---- a/src/lib.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/lib.rs	2026-11-19 18:35:10.568079894 +0100
+--- a/src/lib.rs	2026-11-20 11:57:02.422457573 +0100
++++ b/src/lib.rs	2026-11-20 11:57:02.436030310 +0100
 @@ -20,6 +20,15 @@
  mod touch_selection;
  mod virtual_list;
@@ -1508,8 +1508,8 @@ diff -ruN a/src/lib.rs b/src/lib.rs
  
  rust_i18n::i18n!("locales", fallback = "en");
 diff -ruN a/src/list/list.rs b/src/list/list.rs
---- a/src/list/list.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/list/list.rs	2026-11-17 17:18:36.166118029 +0100
+--- a/src/list/list.rs	2026-11-20 11:57:02.422547124 +0100
++++ b/src/list/list.rs	2026-11-20 11:57:02.431027852 +0100
 @@ -1,3 +1,6 @@
 +// Modified for Spark Commander (Apache-2.0, section 4b): a list can take
 +// a single click as selecting only. Changes are marked "SparkCommander patch".
@@ -1562,7 +1562,7 @@ diff -ruN a/src/list/list.rs b/src/list/list.rs
                              secondary: e.modifiers().secondary(),
 diff -ruN a/src/mac.rs b/src/mac.rs
 --- a/src/mac.rs	1970-01-01 01:00:00.000000000 +0100
-+++ b/src/mac.rs	2026-11-19 18:35:10.568253680 +0100
++++ b/src/mac.rs	2026-11-20 11:57:02.436053043 +0100
 @@ -0,0 +1,56 @@
 +// SparkCommander patch: this file is new.
 +use gpui::{Global, Hsla};
@@ -1621,8 +1621,8 @@ diff -ruN a/src/mac.rs b/src/mac.rs
 +/// The check box's mark, bolder than GPUI Kit's, as AppKit's.
 +pub(crate) const CHECK_MARK: &[u8] = br#"<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"><path d="M2.4 6.4 4.9 8.9 9.7 3.2" fill="none" stroke="black" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>"#;
 diff -ruN a/src/menu/app_menu_bar.rs b/src/menu/app_menu_bar.rs
---- a/src/menu/app_menu_bar.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/menu/app_menu_bar.rs	2026-11-20 09:49:27.110953400 +0100
+--- a/src/menu/app_menu_bar.rs	2026-11-20 11:57:02.422675307 +0100
++++ b/src/menu/app_menu_bar.rs	2026-11-20 11:57:02.431203566 +0100
 @@ -1,7 +1,13 @@
 +// Modified for Spark Commander (Apache-2.0, section 4b): menu-bar menus may
 +// use the window's height. Changes are marked "SparkCommander patch".
@@ -1782,8 +1782,8 @@ diff -ruN a/src/menu/app_menu_bar.rs b/src/menu/app_menu_bar.rs
                      .open(is_open)
                      .on_mouse_down(
 diff -ruN a/src/menu/context_menu.rs b/src/menu/context_menu.rs
---- a/src/menu/context_menu.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/menu/context_menu.rs	2026-11-17 17:18:36.166972300 +0100
+--- a/src/menu/context_menu.rs	2026-11-20 11:57:02.422696979 +0100
++++ b/src/menu/context_menu.rs	2026-11-20 11:57:02.431066345 +0100
 @@ -481,6 +481,14 @@
                  menu.set_previous_focus(previous_focus_handle, cx);
              });
@@ -1800,8 +1800,8 @@ diff -ruN a/src/menu/context_menu.rs b/src/menu/context_menu.rs
              // focused input highlighted. An explicit action target
              // takes precedence over where the press landed.
 diff -ruN a/src/menu/dropdown_menu.rs b/src/menu/dropdown_menu.rs
---- a/src/menu/dropdown_menu.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/menu/dropdown_menu.rs	2026-11-17 17:18:36.167071172 +0100
+--- a/src/menu/dropdown_menu.rs	2026-11-20 11:57:02.422720313 +0100
++++ b/src/menu/dropdown_menu.rs	2026-11-20 11:57:02.431119156 +0100
 @@ -1,9 +1,9 @@
 -use std::rc::Rc;
 +use std::{cell::Cell, rc::Rc};
@@ -1943,8 +1943,8 @@ diff -ruN a/src/menu/dropdown_menu.rs b/src/menu/dropdown_menu.rs
          frame.child.prepaint(window, cx);
      }
 diff -ruN a/src/menu/menu_item.rs b/src/menu/menu_item.rs
---- a/src/menu/menu_item.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/menu/menu_item.rs	2026-11-19 08:42:44.469655348 +0100
+--- a/src/menu/menu_item.rs	2026-11-20 11:57:02.422738958 +0100
++++ b/src/menu/menu_item.rs	2026-11-20 11:57:02.431175012 +0100
 @@ -102,6 +102,10 @@
              .px_2()
              .text_base()
@@ -1992,8 +1992,8 @@ diff -ruN a/src/menu/menu_item.rs b/src/menu/menu_item.rs
                  .when_some(self.on_click, |this, on_click| {
                      this.on_mouse_down(MouseButton::Left, move |_, _, cx| {
 diff -ruN a/src/menu/mod.rs b/src/menu/mod.rs
---- a/src/menu/mod.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/menu/mod.rs	2026-11-17 17:18:36.167285291 +0100
+--- a/src/menu/mod.rs	2026-11-20 11:57:02.422754528 +0100
++++ b/src/menu/mod.rs	2026-11-20 11:57:02.431151477 +0100
 @@ -1,3 +1,6 @@
 +// Modified for SparkCommander: exports MenuBuilder. Changes are marked
 +// "SparkCommander patch".
@@ -2016,8 +2016,8 @@ diff -ruN a/src/menu/mod.rs b/src/menu/mod.rs
  pub(crate) fn init(cx: &mut App) {
      app_menu_bar::init(cx);
 diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
---- a/src/menu/popup_menu.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/menu/popup_menu.rs	2026-11-19 08:42:44.470197925 +0100
+--- a/src/menu/popup_menu.rs	2026-11-20 11:57:02.422771620 +0100
++++ b/src/menu/popup_menu.rs	2026-11-20 11:57:02.431244704 +0100
 @@ -1,8 +1,14 @@
 +// Modified for Spark Commander (Apache-2.0, section 4b): a long menu's
 +// scrollbar shows while it scrolls. Changes are marked "SparkCommander patch".
@@ -2101,7 +2101,7 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
          mut self,
          items: impl IntoIterator<Item = I>,
          window: &mut Window,
-@@ -801,29 +813,39 @@
+@@ -801,29 +813,41 @@
                      disabled,
                      ..
                  } => {
@@ -2124,6 +2124,9 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
 +                // SparkCommander patch: a submenu whose first item is its own name runs that
 +                // when clicked, and lists the items after it (and a separator).
                  OwnedMenuItem::Submenu(submenu) => {
+-                    self = self.submenu(submenu.name, window, cx, move |menu, window, cx| {
+-                        menu.with_menu_items(submenu.items.clone(), window, cx)
+-                    })
 +                    let own = match submenu.items.first() {
 +                        Some(OwnedMenuItem::Action { name, action, disabled: false, .. }) if *name == submenu.name => Some(action.boxed_clone()),
 +                        _ => None,
@@ -2133,9 +2136,9 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
 +                        let skip = if matches!(items.get(1), Some(OwnedMenuItem::Separator)) { 2 } else { 1 };
 +                        items.drain(..skip);
 +                    }
-                     self = self.submenu(submenu.name, window, cx, move |menu, window, cx| {
--                        menu.with_menu_items(submenu.items.clone(), window, cx)
--                    })
++                    // Its own action's icon, as the item would have alone.
++                    let icon = own.as_ref().and_then(|own| cx.try_global::<MenuIcons>().and_then(|icons| (icons.0)(own.as_ref())));
++                    self = self.submenu_with_icon(icon, submenu.name, window, cx, move |menu, window, cx| {
 +                        menu.with_menu_items(items.clone(), window, cx)
 +                    });
 +                    if let Some(PopupMenuItem::Submenu { action, .. }) = self.menu_items.last_mut() {
@@ -2153,7 +2156,7 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
          self
      }
  
-@@ -884,6 +906,14 @@
+@@ -884,6 +908,14 @@
                          }
                          self.dismiss(&Cancel, window, cx)
                      }
@@ -2168,7 +2171,7 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
                      _ => {}
                  }
              }
-@@ -904,6 +934,94 @@
+@@ -904,6 +936,94 @@
          window.dispatch_action(action.boxed_clone(), cx);
      }
  
@@ -2263,7 +2266,7 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
      fn resolved_action_context(&self, cx: &App) -> Option<FocusHandle> {
          self.action_context.clone().or_else(|| {
              let parent = self.parent_menu.as_ref()?.upgrade()?;
-@@ -919,6 +1037,22 @@
+@@ -919,6 +1039,22 @@
          }
      }
  
@@ -2286,7 +2289,7 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
      fn select_up(&mut self, _: &SelectUp, _: &mut Window, cx: &mut Context<Self>) {
          cx.stop_propagation();
          let ix = self.selected_index.unwrap_or(0);
-@@ -1179,7 +1313,8 @@
+@@ -1179,7 +1315,8 @@
              Icon::empty()
          };
  
@@ -2296,7 +2299,7 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
      }
  
      #[inline]
-@@ -1222,6 +1357,11 @@
+@@ -1222,6 +1359,11 @@
          };
  
          let selected = self.selected_index == Some(ix);
@@ -2308,7 +2311,7 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
          const EDGE_PADDING: Pixels = px(4.);
          const INNER_PADDING: Pixels = px(8.);
  
-@@ -1322,6 +1462,10 @@
+@@ -1322,6 +1464,10 @@
                  let show_link_icon = *is_link && self.external_link_icon;
                  let action = action.as_ref().map(|action| action.boxed_clone());
                  let key = self.render_key_binding(action, window, cx);
@@ -2319,7 +2322,7 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
  
                  this.when(!disabled, |this| {
                      this.on_click(
-@@ -1368,9 +1512,20 @@
+@@ -1368,9 +1514,20 @@
                  label,
                  menu,
                  disabled,
@@ -2341,7 +2344,7 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
                  .items_start()
                  .child(
                      h_flex()
-@@ -1393,9 +1548,15 @@
+@@ -1393,9 +1550,15 @@
                                  .justify_between()
                                  .child(label.clone())
                                  .child(
@@ -2360,7 +2363,7 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
                                  ),
                          ),
                  )
-@@ -1421,7 +1582,8 @@
+@@ -1421,7 +1584,8 @@
                          )
                          .with_priority(self.priority + 1)
                      })
@@ -2370,7 +2373,7 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
          }
      }
  }
-@@ -1466,10 +1628,10 @@
+@@ -1466,10 +1630,10 @@
          let view = cx.entity().clone();
          let items_count = self.menu_items.len();
  
@@ -2385,7 +2388,7 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
  
          let has_left_icon = self
              .menu_items
-@@ -1508,11 +1670,9 @@
+@@ -1508,11 +1672,9 @@
                      .min_w(rems(8.))
                      .when_some(self.min_width, |this, min_width| this.min_w(min_width))
                      .max_w(max_width)
@@ -2400,7 +2403,7 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
                      .children(
                          self.menu_items
                              .iter()
-@@ -1523,9 +1683,6 @@
+@@ -1523,9 +1685,6 @@
                      )
                      .on_prepaint(move |bounds, _, cx| view.update(cx, |r, _| r.bounds = bounds)),
              )
@@ -2412,7 +2415,7 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
  
 diff -ruN a/src/native.rs b/src/native.rs
 --- a/src/native.rs	1970-01-01 01:00:00.000000000 +0100
-+++ b/src/native.rs	2026-11-17 17:18:36.167703114 +0100
++++ b/src/native.rs	2026-11-20 11:57:02.435132423 +0100
 @@ -0,0 +1,67 @@
 +// SparkCommander patch: this file is new.
 +use gpui::{Global, Hsla, Pixels};
@@ -2482,8 +2485,8 @@ diff -ruN a/src/native.rs b/src/native.rs
 +
 +impl Global for NativeControls {}
 diff -ruN a/src/native_menu/macos.rs b/src/native_menu/macos.rs
---- a/src/native_menu/macos.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/native_menu/macos.rs	2026-11-17 17:18:36.167992399 +0100
+--- a/src/native_menu/macos.rs	2026-11-20 11:57:02.422882481 +0100
++++ b/src/native_menu/macos.rs	2026-11-20 11:57:02.431341608 +0100
 @@ -200,6 +200,238 @@
      NSImage::initWithData(NSImage::alloc(), &data)
  }
@@ -2724,8 +2727,8 @@ diff -ruN a/src/native_menu/macos.rs b/src/native_menu/macos.rs
  fn ns_view_ptr(window: &Window) -> Option<usize> {
      let handle = HasWindowHandle::window_handle(window).ok()?;
 diff -ruN a/src/native_menu/mod.rs b/src/native_menu/mod.rs
---- a/src/native_menu/mod.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/native_menu/mod.rs	2026-11-17 17:18:36.168084855 +0100
+--- a/src/native_menu/mod.rs	2026-11-20 11:57:02.422899013 +0100
++++ b/src/native_menu/mod.rs	2026-11-20 11:57:02.431371385 +0100
 @@ -38,6 +38,8 @@
  
  #[cfg(target_os = "macos")]
@@ -2736,8 +2739,8 @@ diff -ruN a/src/native_menu/mod.rs b/src/native_menu/mod.rs
  mod windows;
  
 diff -ruN a/src/progress/progress.rs b/src/progress/progress.rs
---- a/src/progress/progress.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/progress/progress.rs	2026-11-17 17:18:36.169457445 +0100
+--- a/src/progress/progress.rs	2026-11-20 11:57:02.423115324 +0100
++++ b/src/progress/progress.rs	2026-11-20 11:57:02.431551928 +0100
 @@ -93,12 +93,18 @@
          let mut inner_style = StyleRefinement::default();
          inner_style.corner_radii = radius;
@@ -2789,8 +2792,8 @@ diff -ruN a/src/progress/progress.rs b/src/progress/progress.rs
                      .refine_style(&inner_style)
                      .map(|this| {
 diff -ruN a/src/radio.rs b/src/radio.rs
---- a/src/radio.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/radio.rs	2026-11-17 17:18:36.169968057 +0100
+--- a/src/radio.rs	2026-11-20 11:57:02.423237085 +0100
++++ b/src/radio.rs	2026-11-20 11:57:02.435368442 +0100
 @@ -8,7 +8,7 @@
  use gpui::{
      AnyElement, App, Axis, ElementId, InteractiveElement, IntoElement, ParentElement, RenderOnce,
@@ -2866,8 +2869,8 @@ diff -ruN a/src/radio.rs b/src/radio.rs
                          .gap_1()
                          .when_some(self.label, |this, label| {
 diff -ruN a/src/root.rs b/src/root.rs
---- a/src/root.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/root.rs	2026-11-17 17:18:36.170355756 +0100
+--- a/src/root.rs	2026-11-20 11:57:02.423300105 +0100
++++ b/src/root.rs	2026-11-20 11:57:02.436105693 +0100
 @@ -1,3 +1,6 @@
 +// Modified for Spark Commander (Apache-2.0, section 4b): notifications paint
 +// above dialogs. Changes are marked "SparkCommander patch".
@@ -2951,8 +2954,8 @@ diff -ruN a/src/root.rs b/src/root.rs
      }
  }
 diff -ruN a/src/select.rs b/src/select.rs
---- a/src/select.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/select.rs	2026-11-17 17:18:36.171649223 +0100
+--- a/src/select.rs	2026-11-20 11:57:02.423507339 +0100
++++ b/src/select.rs	2026-11-20 11:57:02.435484122 +0100
 @@ -393,6 +393,25 @@
      fn toggle_menu(&mut self, _: &ClickEvent, window: &mut Window, cx: &mut Context<Self>) {
          cx.stop_propagation();
@@ -3038,8 +3041,8 @@ diff -ruN a/src/select.rs b/src/select.rs
                                              .text_color(cx.theme().muted_foreground)
                                              .into_any_element(),
 diff -ruN a/src/slider.rs b/src/slider.rs
---- a/src/slider.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/slider.rs	2026-11-17 17:18:36.173992581 +0100
+--- a/src/slider.rs	2026-11-20 11:57:02.423974847 +0100
++++ b/src/slider.rs	2026-11-20 11:57:02.435660156 +0100
 @@ -5,10 +5,10 @@
  use gpui_base::{Slider as BaseSlider, SliderIndicator, SliderThumb, SliderTrack, spring};
  
@@ -3168,8 +3171,8 @@ diff -ruN a/src/slider.rs b/src/slider.rs
                              .child(
                                  div()
 diff -ruN a/src/styled.rs b/src/styled.rs
---- a/src/styled.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/styled.rs	2026-11-17 17:18:36.175916033 +0100
+--- a/src/styled.rs	2026-11-20 11:57:02.424356382 +0100
++++ b/src/styled.rs	2026-11-20 11:57:02.435739407 +0100
 @@ -25,6 +25,7 @@
  /// as part of one grounded surface rather than as an outline with a separate
  /// shadow below it. An opaque border cannot reproduce that — a border composites
@@ -3189,8 +3192,8 @@ diff -ruN a/src/styled.rs b/src/styled.rs
  
  /// shadcn/ui's popup surface shadow — a hairline `ring` plus `shadow-md` — at
 diff -ruN a/src/tab/tab.rs b/src/tab/tab.rs
---- a/src/tab/tab.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/tab/tab.rs	2026-11-19 14:52:07.798467973 +0100
+--- a/src/tab/tab.rs	2026-11-20 11:57:02.424426095 +0100
++++ b/src/tab/tab.rs	2026-11-20 11:57:02.433058592 +0100
 @@ -9,6 +9,9 @@
      StatefulInteractiveElement, Styled, Window, div, px, relative,
  };
@@ -3415,8 +3418,8 @@ diff -ruN a/src/tab/tab.rs b/src/tab/tab.rs
                  this.on_click(move |event, window, cx| on_click(event, window, cx))
              })
 diff -ruN a/src/tab/tab_bar.rs b/src/tab/tab_bar.rs
---- a/src/tab/tab_bar.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/tab/tab_bar.rs	2026-11-19 14:51:33.606877851 +0100
+--- a/src/tab/tab_bar.rs	2026-11-20 11:57:02.424460460 +0100
++++ b/src/tab/tab_bar.rs	2026-11-20 11:57:02.433104599 +0100
 @@ -1,3 +1,6 @@
 +// Modified for Spark Commander (Apache-2.0, section 4b): the segmented
 +// indicator uses the active tab colour. Changes are marked "SparkCommander patch".
@@ -3534,8 +3537,8 @@ diff -ruN a/src/tab/tab_bar.rs b/src/tab/tab_bar.rs
              .refine_style(&self.style)
              .when_some(self.prefix, |this, prefix| this.child(prefix))
 diff -ruN a/src/table/data_table.rs b/src/table/data_table.rs
---- a/src/table/data_table.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/table/data_table.rs	2026-11-17 17:18:36.176677263 +0100
+--- a/src/table/data_table.rs	2026-11-20 11:57:02.424524742 +0100
++++ b/src/table/data_table.rs	2026-11-20 11:57:02.433269653 +0100
 @@ -1,5 +1,10 @@
 +// Modified for Spark Commander (Apache-2.0, section 4b): optional lines
 +// between columns; shift and an arrow extends a range of cells; no focus
@@ -3630,8 +3633,8 @@ diff -ruN a/src/table/data_table.rs b/src/table/data_table.rs
      }
  }
 diff -ruN a/src/table/delegate.rs b/src/table/delegate.rs
---- a/src/table/delegate.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/table/delegate.rs	2026-11-17 17:18:36.176811635 +0100
+--- a/src/table/delegate.rs	2026-11-20 11:57:02.424540452 +0100
++++ b/src/table/delegate.rs	2026-11-20 11:57:02.433293007 +0100
 @@ -1,7 +1,10 @@
 +// Modified for Spark Commander (Apache-2.0, section 4b): a cell can have a
 +// context menu and a background of its own. Changes are marked "SparkCommander patch".
@@ -3671,8 +3674,8 @@ diff -ruN a/src/table/delegate.rs b/src/table/delegate.rs
      fn render_td(
          &mut self,
 diff -ruN a/src/table/state.rs b/src/table/state.rs
---- a/src/table/state.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/table/state.rs	2026-11-17 17:18:36.177131752 +0100
+--- a/src/table/state.rs	2026-11-20 11:57:02.424590898 +0100
++++ b/src/table/state.rs	2026-11-20 11:57:02.433351899 +0100
 @@ -1,3 +1,11 @@
 +// Modified for Spark Commander (Apache-2.0, section 4b): in cell selection,
 +// the row header shows row numbers, and the selected cell's row number and
@@ -4204,8 +4207,8 @@ diff -ruN a/src/table/state.rs b/src/table/state.rs
                  }
              })
 diff -ruN a/src/theme/mod.rs b/src/theme/mod.rs
---- a/src/theme/mod.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/theme/mod.rs	2026-11-19 09:25:55.848482235 +0100
+--- a/src/theme/mod.rs	2026-11-20 11:57:02.424930524 +0100
++++ b/src/theme/mod.rs	2026-11-20 11:57:02.433975815 +0100
 @@ -142,6 +142,15 @@
          })
  }
@@ -4292,8 +4295,8 @@ diff -ruN a/src/theme/mod.rs b/src/theme/mod.rs
              list: ListSettings::default(),
              colors: *colors,
 diff -ruN a/src/title_bar.rs b/src/title_bar.rs
---- a/src/title_bar.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/title_bar.rs	2026-11-17 17:18:36.179997888 +0100
+--- a/src/title_bar.rs	2026-11-20 11:57:02.425186710 +0100
++++ b/src/title_bar.rs	2026-11-20 11:57:02.435840279 +0100
 @@ -1,3 +1,7 @@
 +// Modified for SparkCommander (Apache-2.0, section 4b): the window's buttons
 +// are those the desktop's layout names, and may be the icon theme's pictures
@@ -4424,7 +4427,7 @@ diff -ruN a/src/title_bar.rs b/src/title_bar.rs
              .id("window-controls")
 diff -ruN a/src/toolkit.rs b/src/toolkit.rs
 --- a/src/toolkit.rs	1970-01-01 01:00:00.000000000 +0100
-+++ b/src/toolkit.rs	2026-11-17 17:18:36.180262298 +0100
++++ b/src/toolkit.rs	2026-11-20 11:57:02.435897547 +0100
 @@ -0,0 +1,135 @@
 +// SparkCommander patch: this file is new.
 +use std::sync::Arc;
@@ -4562,8 +4565,8 @@ diff -ruN a/src/toolkit.rs b/src/toolkit.rs
 +    div().size_full().child(canvas.absolute().inset_0())
 +}
 diff -ruN a/src/tooltip.rs b/src/tooltip.rs
---- a/src/tooltip.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/tooltip.rs	2026-11-17 17:18:36.180371295 +0100
+--- a/src/tooltip.rs	2026-11-20 11:57:02.425227849 +0100
++++ b/src/tooltip.rs	2026-11-20 11:57:02.435922805 +0100
 @@ -124,6 +124,19 @@
                  .px_2()
                  .text_sm()
@@ -4585,8 +4588,8 @@ diff -ruN a/src/tooltip.rs b/src/tooltip.rs
                  .map(|this| {
                      this.child(div().map(|this| match self.content {
 diff -ruN a/src/tree.rs b/src/tree.rs
---- a/src/tree.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/tree.rs	2026-11-17 17:18:36.181001904 +0100
+--- a/src/tree.rs	2026-11-20 11:57:02.425332708 +0100
++++ b/src/tree.rs	2026-11-20 11:57:02.436144517 +0100
 @@ -1,3 +1,8 @@
 +// Modified for Spark Commander (Apache-2.0, section 4b): a context menu
 +// builder gets the menu's context, so it can add submenus; the row renderer
@@ -4661,8 +4664,8 @@ diff -ruN a/src/tree.rs b/src/tree.rs
                              .into_any_element()
                      })
 diff -ruN a/src/window_border.rs b/src/window_border.rs
---- a/src/window_border.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/window_border.rs	2026-11-17 17:18:36.181153651 +0100
+--- a/src/window_border.rs	2026-11-20 11:57:02.425366352 +0100
++++ b/src/window_border.rs	2026-11-20 11:57:02.435972159 +0100
 @@ -21,6 +21,24 @@
  /// corners, so keep the generic window wrapper square until rounded content masks exist.
  pub(crate) const BORDER_RADIUS: Pixels = px(0.0);
@@ -4727,8 +4730,8 @@ diff -ruN a/src/window_border.rs b/src/window_border.rs
                      .when(!tiling.top, |div| div.border_t(BORDER_SIZE))
                      .when(!tiling.bottom, |div| div.border_b(BORDER_SIZE))
 diff -ruN a/src/window_ext.rs b/src/window_ext.rs
---- a/src/window_ext.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/window_ext.rs	2026-11-17 17:18:36.181263356 +0100
+--- a/src/window_ext.rs	2026-11-20 11:57:02.425385899 +0100
++++ b/src/window_ext.rs	2026-11-20 11:57:02.436001285 +0100
 @@ -11,6 +11,10 @@
  
  /// Extension trait for [`Window`] to add dialog, sheet .. functionality.

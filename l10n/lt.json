@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "PDF neturi tokio puslapio"
   },
+  "scmd.places.empty": {
+    "message": "Kol kas nėra žymelių ar įrašytų ryšių."
+  },
+  "scmd.places.keys": {
+    "message": "Enter Atidaryti  F8 Šalinti iš žymelių  Esc Uždaryti"
+  },
   "scmd.shell.press_enter": {
     "message": "Paspauskite Enter, kad grįžtumėte į Spark Commander..."
   },

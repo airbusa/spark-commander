@@ -313,7 +313,7 @@ pub fn fit(text: &str, width: usize) -> String {
 }
 
 /// The home folder as `~`, as shells show it.
-fn tilde(path: &str) -> String {
+pub fn tilde(path: &str) -> String {
     let home = std::env::home_dir().unwrap_or_default();
     match std::path::Path::new(path).strip_prefix(&home) {
         Ok(rest) if !home.as_os_str().is_empty() && rest.as_os_str().is_empty() => "~".into(),
@@ -375,6 +375,19 @@ fn command_line(frame: &mut Frame, area: Rect, app: &App) {
     buf.set_string(area.x, area.y, &prompt, Style::new());
     let x = area.x + prompt.width() as u16;
     let room = area.right().saturating_sub(x) as usize;
+    if room == 0 {
+        return;
+    }
+    // What runs meanwhile, at the row's end.
+    let room = match &app.busy {
+        Some(busy) => {
+            let busy = tail(busy, room / 2);
+            let at = area.right().saturating_sub(busy.width() as u16);
+            buf.set_string(at, area.y, &busy, Style::new().add_modifier(ratatui::style::Modifier::BOLD));
+            room.saturating_sub(busy.width() + 1)
+        }
+        None => room,
+    };
     if room == 0 {
         return;
     }

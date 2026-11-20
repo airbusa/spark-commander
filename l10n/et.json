@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "PDF-is pole sellist lehekülge"
   },
+  "scmd.places.empty": {
+    "message": "Järjehoidjaid ega salvestatud ühendusi veel pole."
+  },
+  "scmd.places.keys": {
+    "message": "Enter Ava  F8 Eemalda järjehoidjatest  Esc Sulge"
+  },
   "scmd.shell.press_enter": {
     "message": "Vajuta Enter, et naasta Spark Commanderisse..."
   },

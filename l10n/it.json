@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "il PDF non ha questa pagina"
   },
+  "scmd.places.empty": {
+    "message": "Nessun segnalibro o connessione salvata per ora."
+  },
+  "scmd.places.keys": {
+    "message": "Enter Apri  F8 Rimuovi dai segnalibri  Esc Chiudi"
+  },
   "scmd.shell.press_enter": {
     "message": "Premi Enter per tornare a Spark Commander..."
   },

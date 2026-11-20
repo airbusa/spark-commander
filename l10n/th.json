@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "PDF ไม่มีหน้านี้"
   },
+  "scmd.places.empty": {
+    "message": "ยังไม่มีที่คั่นหน้าหรือการเชื่อมต่อที่บันทึกไว้"
+  },
+  "scmd.places.keys": {
+    "message": "Enter เปิด  F8 เอาออกจากที่คั่นหน้า  Esc ปิด"
+  },
   "scmd.shell.press_enter": {
     "message": "กด Enter เพื่อกลับไปที่ Spark Commander..."
   },

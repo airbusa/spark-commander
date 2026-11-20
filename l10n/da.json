@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "PDF’en har ikke den side"
   },
+  "scmd.places.empty": {
+    "message": "Ingen bogmærker eller gemte forbindelser endnu."
+  },
+  "scmd.places.keys": {
+    "message": "Enter Åbn  F8 Fjern fra Bogmærker  Esc Luk"
+  },
   "scmd.shell.press_enter": {
     "message": "Tryk på Enter for at vende tilbage til Spark Commander..."
   },

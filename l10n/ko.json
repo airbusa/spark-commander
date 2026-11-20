@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "PDF에 해당 페이지가 없음"
   },
+  "scmd.places.empty": {
+    "message": "아직 책갈피나 저장된 연결이 없습니다."
+  },
+  "scmd.places.keys": {
+    "message": "Enter 열기  F8 책갈피에서 제거  Esc 닫기"
+  },
   "scmd.shell.press_enter": {
     "message": "Enter를 누르면 Spark Commander로 돌아갑니다..."
   },

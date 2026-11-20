@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "PDF-en har ingen slik side"
   },
+  "scmd.places.empty": {
+    "message": "Ingen bokmerker eller lagrede tilkoblinger ennå."
+  },
+  "scmd.places.keys": {
+    "message": "Enter Åpne  F8 Fjern fra Bokmerker  Esc Lukk"
+  },
   "scmd.shell.press_enter": {
     "message": "Trykk Enter for å gå tilbake til Spark Commander..."
   },

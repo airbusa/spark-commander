@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "el PDF no té aquesta pàgina"
   },
+  "scmd.places.empty": {
+    "message": "Encara no hi ha adreces d’interès ni connexions desades."
+  },
+  "scmd.places.keys": {
+    "message": "Enter Obre  F8 Elimina de les adreces d’interès  Esc Tanca"
+  },
   "scmd.shell.press_enter": {
     "message": "Prem Enter per tornar a Spark Commander..."
   },

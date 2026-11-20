@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "PDF’de böyle bir sayfa yok"
   },
+  "scmd.places.empty": {
+    "message": "Henüz yer imi veya kayıtlı bağlantı yok."
+  },
+  "scmd.places.keys": {
+    "message": "Enter Aç  F8 Yer imlerinden kaldır  Esc Kapat"
+  },
   "scmd.shell.press_enter": {
     "message": "Spark Commander’a dönmek için Enter tuşuna basın..."
   },

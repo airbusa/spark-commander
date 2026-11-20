@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "у PDF немає такої сторінки"
   },
+  "scmd.places.empty": {
+    "message": "Ще немає закладок чи збережених з’єднань."
+  },
+  "scmd.places.keys": {
+    "message": "Enter Відкрити  F8 Вилучити із закладок  Esc Закрити"
+  },
   "scmd.shell.press_enter": {
     "message": "Натисніть Enter, щоб повернутися до Spark Commander..."
   },

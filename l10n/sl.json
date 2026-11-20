@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "PDF nima te strani"
   },
+  "scmd.places.empty": {
+    "message": "Zaznamkov ali shranjenih povezav še ni."
+  },
+  "scmd.places.keys": {
+    "message": "Enter Odpri  F8 Odstrani iz zaznamkov  Esc Zapri"
+  },
   "scmd.shell.press_enter": {
     "message": "Pritisnite Enter za vrnitev v Spark Commander..."
   },

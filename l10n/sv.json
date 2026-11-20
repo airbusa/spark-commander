@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "PDF-filen har ingen sådan sida"
   },
+  "scmd.places.empty": {
+    "message": "Inga bokmärken eller sparade anslutningar ännu."
+  },
+  "scmd.places.keys": {
+    "message": "Enter Öppna  F8 Ta bort från Bokmärken  Esc Stäng"
+  },
   "scmd.shell.press_enter": {
     "message": "Tryck på Enter för att återgå till Spark Commander..."
   },

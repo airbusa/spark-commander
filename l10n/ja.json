@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "PDF にそのページはありません"
   },
+  "scmd.places.empty": {
+    "message": "ブックマークや保存された接続はまだありません。"
+  },
+  "scmd.places.keys": {
+    "message": "Enter 開く  F8 ブックマークから削除  Esc 閉じる"
+  },
   "scmd.shell.press_enter": {
     "message": "Enter キーを押すと Spark Commander に戻ります..."
   },

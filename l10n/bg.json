@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "PDF файлът няма такава страница"
   },
+  "scmd.places.empty": {
+    "message": "Все още няма отметки или запазени връзки."
+  },
+  "scmd.places.keys": {
+    "message": "Enter Отваряне  F8 Премахване от отметките  Esc Затваряне"
+  },
   "scmd.shell.press_enter": {
     "message": "Натиснете Enter, за да се върнете в Spark Commander..."
   },

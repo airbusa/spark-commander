@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "PDF में ऐसा कोई पेज नहीं है"
   },
+  "scmd.places.empty": {
+    "message": "अभी कोई बुकमार्क या सहेजा गया कनेक्शन नहीं है।"
+  },
+  "scmd.places.keys": {
+    "message": "Enter खोलें  F8 बुकमार्क से हटाएं  Esc बंद करें"
+  },
   "scmd.shell.press_enter": {
     "message": "Spark Commander पर लौटने के लिए Enter दबाएं..."
   },

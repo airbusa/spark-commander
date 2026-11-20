@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "PDF failā nav šādas lapas"
   },
+  "scmd.places.empty": {
+    "message": "Vēl nav grāmatzīmju vai saglabātu savienojumu."
+  },
+  "scmd.places.keys": {
+    "message": "Enter Atvērt  F8 Noņemt no grāmatzīmēm  Esc Aizvērt"
+  },
   "scmd.shell.press_enter": {
     "message": "Nospiediet Enter, lai atgrieztos Spark Commander..."
   },

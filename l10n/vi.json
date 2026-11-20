@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "tệp PDF không có trang này"
   },
+  "scmd.places.empty": {
+    "message": "Chưa có dấu trang hay kết nối đã lưu nào."
+  },
+  "scmd.places.keys": {
+    "message": "Enter Mở  F8 Xóa khỏi Dấu trang  Esc Đóng"
+  },
   "scmd.shell.press_enter": {
     "message": "Nhấn Enter để quay lại Spark Commander..."
   },

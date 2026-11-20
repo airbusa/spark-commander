@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "PDF-ul nu are această pagină"
   },
+  "scmd.places.empty": {
+    "message": "Încă nu există marcaje sau conexiuni salvate."
+  },
+  "scmd.places.keys": {
+    "message": "Enter Deschide  F8 Eliminați din Marcaje  Esc Închideți"
+  },
   "scmd.shell.press_enter": {
     "message": "Apăsați Enter pentru a reveni la Spark Commander..."
   },

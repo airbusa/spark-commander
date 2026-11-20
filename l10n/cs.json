@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "PDF takovou stránku nemá"
   },
+  "scmd.places.empty": {
+    "message": "Zatím nejsou žádné záložky ani uložená připojení."
+  },
+  "scmd.places.keys": {
+    "message": "Enter Otevřít  F8 Odebrat ze záložek  Esc Zavřít"
+  },
   "scmd.shell.press_enter": {
     "message": "Stiskněte Enter pro návrat do aplikace Spark Commander..."
   },

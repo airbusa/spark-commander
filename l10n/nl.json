@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "de PDF heeft deze pagina niet"
   },
+  "scmd.places.empty": {
+    "message": "Nog geen bladwijzers of opgeslagen verbindingen."
+  },
+  "scmd.places.keys": {
+    "message": "Enter Openen  F8 Uit Bladwijzers verwijderen  Esc Sluiten"
+  },
   "scmd.shell.press_enter": {
     "message": "Druk op Enter om terug te gaan naar Spark Commander..."
   },

@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "PDF-tiedostossa ei ole tällaista sivua"
   },
+  "scmd.places.empty": {
+    "message": "Kirjanmerkkejä tai tallennettuja yhteyksiä ei vielä ole."
+  },
+  "scmd.places.keys": {
+    "message": "Enter Avaa  F8 Poista kirjanmerkeistä  Esc Sulje"
+  },
   "scmd.shell.press_enter": {
     "message": "Palaa Spark Commanderiin painamalla Enter..."
   },

@@ -33,7 +33,12 @@ use ratatui::crossterm::execute;
 use ratatui::crossterm::terminal::{Clear, ClearType, SetTitle};
 use ratatui_image::picker::Picker;
 
-use crate::dialog::{Answer, Choice, Chooser, Form};
+use crate::dialog::{Answer, Choice, Chooser, Form, List};
+use sc_core::remote::connections::{Connection, Connections};
+use sc_core::remote::mounts::{self, Login};
+use sc_core::remote::{self, Address, Ask, Prompt, Reply, Scheme, secrets};
+use std::sync::{Arc, Mutex};
+use unicode_width::UnicodeWidthStr;
 use crate::input::Input;
 use crate::ui::Places;
 use crate::viewer::Viewer;
@@ -63,6 +68,27 @@ pub enum Purpose {
     DuplicateWorkspace(usize, String),
     RenameWorkspace(usize),
     DeleteWorkspace(usize),
+    /// A server not known yet: trusted, and whether remembered.
+    Trust(mpsc::Sender<Reply>),
+    /// A password; kept once logged in, when asked to be.
+    Secret { reply: mpsc::Sender<Reply>, keyring: Option<String>, keep: Keep },
+}
+
+/// A password to keep under its keyring key once the login worked.
+type Keep = Arc<Mutex<Option<(String, String)>>>;
+
+/// A bookmark's folder, or a saved connection.
+#[derive(Clone)]
+pub enum Place {
+    Folder(PathBuf),
+    Server(Connection),
+}
+
+/// Where connecting took a panel.
+enum Went {
+    Server(Arc<dyn sc_core::vfs::Remote>, PathBuf),
+    /// A share the desktop mounted.
+    Mounted(PathBuf),
 }
 
 /// Programs that take the terminal over until they end; the loop runs them.
@@ -87,8 +113,10 @@ pub struct App {
     pub places: Places,
     pub viewer: Option<Viewer>,
     pub form: Option<(Form, Purpose)>,
-    /// Alt+W's list of the workspaces.
+    /// Alt+W's list of the workspaces, Ctrl+D's of the bookmarks and connections.
     pub chooser: Option<Chooser>,
+    /// What runs meanwhile, as connecting: told on the command line's row.
+    pub busy: Option<String>,
     /// Named sets of both sides' tabs, scmd's own; the open one is the tabs shown.
     workspaces: Workspaces,
     /// Keys as the terminal names them; Cmd never reaches it, so `secondary` is Ctrl.
@@ -186,6 +214,22 @@ fn main() -> io::Result<()> {
     ran
 }
 
+/// An SMB or NFS share, as the desktop mounts it: with the kept password
+/// first; refused, the user's asked for theirs.
+fn mount(address: &Address, ask: &Ask) -> io::Result<PathBuf> {
+    let (url, key) = (address.url(), remote::keyring_key(address));
+    let kept = address.user.clone().zip(secrets::password(&key)).map(|(user, password)| Login { user, password });
+    let first = mounts::mount(&url, kept.as_ref());
+    let (Err(_), true, Some(user)) = (&first, address.scheme.logs_in(), address.user.clone()) else {
+        return first;
+    };
+    let text = t!("remote.sftp.password", user = user, host = address.host);
+    match ask(Prompt::Secret { title: t!("remote.password.title"), text, keyring: Some(key) }) {
+        Reply::Secret(password) => mounts::mount(&url, Some(&Login { user, password })),
+        _ => first,
+    }
+}
+
 /// Full screen, raw keys, the mouse.
 // shortcut: no kitty keyboard protocol, so most terminals send Ctrl+Tab as Tab (Alt+1..9
 // pick tabs); turn it on once it is tried in kitty, foot or WezTerm.
@@ -236,6 +280,7 @@ impl App {
             viewer: None,
             form: None,
             chooser: None,
+            busy: None,
             workspaces: Workspaces::default(),
             bindings,
             clicked: None,
@@ -339,10 +384,14 @@ impl App {
         let items = self.workspaces.list.iter().map(|workspace| workspace.name.clone()).collect();
         let current = self.workspaces.current;
         let at = self.chooser.as_ref().map_or(current, |chooser| chooser.at);
-        self.chooser = Some(Chooser { title: t!("scmd.workspaces.title"), items, at, checked: current });
+        let keys = t!("scmd.workspaces.keys");
+        self.chooser = Some(Chooser { title: t!("scmd.workspaces.title"), items, at, checked: Some(current), keys, list: List::Workspaces });
     }
 
     fn chose(&mut self, choice: Choice) {
+        if matches!(self.chooser.as_ref().map(|chooser| &chooser.list), Some(List::Places(_))) {
+            return self.chose_place(choice);
+        }
         let name = |this: &Self, ix: usize| this.workspaces.list.get(ix).map(|workspace| workspace.name.clone()).unwrap_or_default();
         let ask = |title: String, value: &str, purpose| (Form::new(title).text(&t!("scmd.workspace.name"), value, Vec::new()), purpose);
         // The field cannot select a name to type over: empty, it takes the one its label gives.
@@ -412,6 +461,181 @@ impl App {
         if self.chooser.is_some() {
             self.choose_workspace();
         }
+    }
+
+    /// Ctrl+D: the bookmarks, then the saved connections, each with where it
+    /// goes; `servers`: the first connection chosen.
+    fn choose_place(&mut self, servers: bool) {
+        // The window may have changed them meanwhile.
+        if let Ok(fresh) = Settings::load() {
+            (self.settings.bookmarks, self.settings.bookmark_names) = (fresh.bookmarks, fresh.bookmark_names);
+        }
+        let mut places: Vec<Place> = self.settings.bookmarks.iter().cloned().map(Place::Folder).collect();
+        let first_server = places.len();
+        places.extend(Connections::load().unwrap_or_default().saved.into_iter().map(Place::Server));
+        if places.is_empty() {
+            return self.say(t!("scmd.places.empty"), false);
+        }
+        let rows: Vec<(String, String)> = (places.iter())
+            .map(|place| match place {
+                Place::Folder(path) => (self.settings.bookmark_name(path), ui::tilde(&path.to_string_lossy())),
+                Place::Server(connection) => {
+                    let name = if connection.name.is_empty() { &connection.host } else { &connection.name };
+                    let name = match &connection.folder {
+                        Some(folder) => format!("{folder} › {name}"),
+                        None => name.clone(),
+                    };
+                    (name, connection.url())
+                }
+            })
+            .collect();
+        let names = rows.iter().map(|(name, _)| name.width()).max().unwrap_or(0).min(32);
+        let items = rows.into_iter().map(|(name, goes)| format!("{}  {goes}", ui::fit(&name, names))).collect();
+        let at = match servers {
+            true => first_server.min(places.len() - 1),
+            false => self.chooser.as_ref().map_or(0, |chooser| chooser.at.min(places.len() - 1)),
+        };
+        let title = format!("{} · {}", t!("bookmarks.title"), t!("sidebar.section.connections"));
+        self.chooser = Some(Chooser { title, items, at, checked: None, keys: t!("scmd.places.keys"), list: List::Places(places) });
+    }
+
+    fn chose_place(&mut self, choice: Choice) {
+        let Some(Chooser { list: List::Places(places), .. }) = &self.chooser else {
+            return;
+        };
+        match choice {
+            Choice::Cancel => self.chooser = None,
+            Choice::Pick(ix) => {
+                let place = places.get(ix).cloned();
+                self.chooser = None;
+                match place {
+                    Some(Place::Folder(path)) => self.navigate(move |panel| match panel.remote() {
+                        Some(_) => panel.disconnect(path),
+                        None => panel.go_to_folder(path),
+                    }),
+                    Some(Place::Server(connection)) => self.connect(connection.address()),
+                    None => {}
+                }
+            }
+            Choice::Delete(ix) => {
+                if let Some(Place::Folder(path)) = places.get(ix).cloned()
+                    && self.change_bookmarks(|settings| {
+                        settings.bookmarks.retain(|bookmark| *bookmark != path);
+                        settings.bookmark_names.remove(&path);
+                    })
+                {
+                    self.choose_place(false);
+                }
+            }
+            _ => {}
+        }
+    }
+
+    /// Ctrl+B: the active panel's folder, one of this computer's.
+    fn bookmark_folder(&mut self) {
+        let panel = self.panel();
+        let folder = panel.folder().to_owned();
+        if panel.remote().is_some() || panel.in_archive() || panel.is_found() || !sc_core::settings::bookmarkable(&folder) {
+            return self.say(t!("bookmarks.only_local"), true);
+        }
+        let name = folder.file_name().map_or_else(|| folder.display().to_string(), |name| name.to_string_lossy().into_owned());
+        let text = match self.settings.bookmarks.contains(&folder) {
+            true => t!("bookmarks.already", name = name),
+            false => t!("bookmarks.added", name = name),
+        };
+        let added = folder.clone();
+        if self.change_bookmarks(move |settings| {
+            if !settings.bookmarks.contains(&added) {
+                settings.bookmarks.push(added);
+            }
+        }) {
+            self.say(text, false);
+        }
+    }
+
+    /// Changes the bookmarks in the settings as saved, the window's changes
+    /// since kept; says why when they cannot be saved.
+    fn change_bookmarks(&mut self, change: impl FnOnce(&mut Settings)) -> bool {
+        let saved = Settings::load().and_then(|mut fresh| {
+            change(&mut fresh);
+            fresh.save().map(|()| fresh)
+        });
+        match saved {
+            Ok(fresh) => {
+                (self.settings.bookmarks, self.settings.bookmark_names) = (fresh.bookmarks, fresh.bookmark_names);
+                true
+            }
+            Err(err) => {
+                self.say(t!("main.error.save_settings", err = err), true);
+                false
+            }
+        }
+    }
+
+    /// Connects in the background and shows the server on the active side;
+    /// SMB and NFS shares the desktop mounts. What it asks comes as dialogs.
+    fn connect(&mut self, address: Address) {
+        let side = self.active;
+        let server = address.host.clone();
+        self.busy = Some(t!("remote.connecting", server = server));
+        let (ask, keep) = self.asker();
+        self.background(move || {
+            let went = match address.scheme {
+                Scheme::Smb | Scheme::Nfs => mount(&address, &ask).map(Went::Mounted),
+                _ => remote::connect(&address, ask).map(|(remote, start)| Went::Server(remote, start)),
+            };
+            let kept = keep.lock().unwrap_or_else(|err| err.into_inner()).take().filter(|_| went.is_ok());
+            let kept = kept.map(|(key, password)| secrets::remember(&key, &password));
+            Box::new(move |app: &mut App| {
+                app.busy = None;
+                match went {
+                    Ok(Went::Server(remote, start)) => app.navigate_on(side, move |panel| panel.go_remote(remote, start)),
+                    Ok(Went::Mounted(path)) => app.navigate_on(side, move |panel| match panel.remote() {
+                        Some(_) => panel.disconnect(path),
+                        None => panel.go_to_folder(path),
+                    }),
+                    Err(err) => app.say(format!("{server}: {err}"), true),
+                }
+                if let Some(Err(err)) = kept {
+                    app.say(err.to_string(), true);
+                }
+            })
+        });
+    }
+
+    /// Questions from a connecting thread, answered in dialogs; with a password
+    /// the user asked to keep, once it has logged in.
+    fn asker(&self) -> (Ask, Keep) {
+        let (sender, keep) = (self.done.0.clone(), Keep::default());
+        let kept = keep.clone();
+        let ask: Ask = Arc::new(move |prompt| {
+            let (reply, answer) = mpsc::channel();
+            let keep = keep.clone();
+            let asked: Done = Box::new(move |app: &mut App| app.ask(prompt, reply, keep));
+            match sender.send(asked) {
+                Ok(()) => answer.recv().unwrap_or(Reply::Cancel),
+                Err(_) => Reply::Cancel,
+            }
+        });
+        (ask, kept)
+    }
+
+    fn ask(&mut self, prompt: Prompt, reply: mpsc::Sender<Reply>, keep: Keep) {
+        self.form = Some(match prompt {
+            Prompt::UnknownHost { host, key_type, fingerprint } => {
+                let text = t!("remote.unknown_host.text", key_type = key_type, host = host, fingerprint = fingerprint);
+                let form = Form::new(t!("remote.unknown_host.title")).note(&text).check(&t!("remote.unknown_host.remember"), true);
+                (form, Purpose::Trust(reply))
+            }
+            Prompt::Secret { title, text, keyring } => {
+                let form = Form::new(title).secret(&text);
+                let form = match keyring {
+                    Some(_) => form.check(&t!("remote.remember_password"), false),
+                    None => form,
+                };
+                (form, Purpose::Secret { reply, keyring, keep })
+            }
+        });
     }
 
     /// Workspace `ix`'s tabs shown, this one's kept in it; saved by the caller.
@@ -497,9 +721,20 @@ impl App {
                 match purpose {
                     Purpose::Find => self.find_answered(&form),
                     Purpose::Group(mark) => self.panel_mut().mark_group(form.value(0), mark),
+                    Purpose::Trust(reply) => {
+                        let _ = reply.send(Reply::Trust { remember: form.checked(1) });
+                    }
+                    Purpose::Secret { reply, keyring, keep } => {
+                        let password = form.value(0).to_owned();
+                        let remember = form.fields.len() > 1 && form.checked(1);
+                        if let Some(key) = keyring.filter(|_| remember) {
+                            *keep.lock().unwrap_or_else(|err| err.into_inner()) = Some((key, password.clone()));
+                        }
+                        let _ = reply.send(Reply::Secret(password));
+                    }
                     workspace => self.workspace_answered(workspace, &form),
                 }
-            } else if answer == Answer::Cancel && self.chooser.is_some() {
+            } else if answer == Answer::Cancel && matches!(self.chooser.as_ref().map(|chooser| &chooser.list), Some(List::Workspaces)) {
                 self.choose_workspace();
             }
             return;
@@ -726,7 +961,16 @@ impl App {
             | Command::CopyToClipboard
             | Command::CutToClipboard
             | Command::PasteFromClipboard => self.not_yet("file_operations"),
-            Command::ConnectToServer | Command::Disconnect => self.not_yet("servers"),
+            Command::ConnectToServer => self.not_yet("servers"),
+            Command::Disconnect => {
+                if self.panel().remote().is_some() {
+                    let home = std::env::home_dir().unwrap_or_else(|| "/".into());
+                    self.navigate(move |panel| panel.disconnect(home));
+                }
+            }
+            Command::Bookmarks | Command::ManageBookmarks => self.choose_place(false),
+            Command::SidebarConnections => self.choose_place(true),
+            Command::BookmarkFolder => self.bookmark_folder(),
             Command::ManageWorkspaces => self.choose_workspace(),
             Command::NewWorkspace => self.chose(Choice::New),
             Command::DuplicateWorkspace => self.chose(Choice::Duplicate(self.workspaces.current)),

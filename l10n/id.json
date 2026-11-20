@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "PDF tidak memiliki halaman tersebut"
   },
+  "scmd.places.empty": {
+    "message": "Belum ada markah atau koneksi tersimpan."
+  },
+  "scmd.places.keys": {
+    "message": "Enter Buka  F8 Hapus dari Markah  Esc Tutup"
+  },
   "scmd.shell.press_enter": {
     "message": "Tekan Enter untuk kembali ke Spark Commander..."
   },

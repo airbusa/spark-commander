@@ -4351,6 +4351,14 @@
     "description": "scmd (the terminal app), file viewer: shown in place of a PDF page that the file does not have.",
     "message": "the PDF has no such page"
   },
+  "scmd.places.empty": {
+    "description": "scmd (the terminal app), said when the list of bookmarks and saved connections (Ctrl+D) would be empty.",
+    "message": "No bookmarks or saved connections yet."
+  },
+  "scmd.places.keys": {
+    "description": "scmd (the terminal app), the line of keys under the list of bookmarks and saved connections (Ctrl+D). Enter, F8 and Esc are key names: keep them and their order; translate the words after each (Open: go to the bookmark or connect; Remove from Bookmarks; Close the list).",
+    "message": "Enter Open  F8 Remove from Bookmarks  Esc Close"
+  },
   "scmd.shell.press_enter": {
     "description": "scmd (the terminal app), printed after a command typed in its command line has run in the terminal; Enter is the key's name.",
     "message": "Press Enter to return to Spark Commander..."

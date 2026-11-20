@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "PDF nema takvu stranicu"
   },
+  "scmd.places.empty": {
+    "message": "Još nema oznaka ni spremljenih veza."
+  },
+  "scmd.places.keys": {
+    "message": "Enter Otvori  F8 Ukloni iz oznaka  Esc Zatvori"
+  },
   "scmd.shell.press_enter": {
     "message": "Pritisnite Enter za povratak u Spark Commander..."
   },

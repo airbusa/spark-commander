@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "PDF nie ma takiej strony"
   },
+  "scmd.places.empty": {
+    "message": "Nie ma jeszcze zakładek ani zapisanych połączeń."
+  },
+  "scmd.places.keys": {
+    "message": "Enter Otwórz  F8 Usuń z zakładek  Esc Zamknij"
+  },
   "scmd.shell.press_enter": {
     "message": "Naciśnij Enter, aby wrócić do Spark Commander..."
   },

@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "το PDF δεν έχει τέτοια σελίδα"
   },
+  "scmd.places.empty": {
+    "message": "Δεν υπάρχουν ακόμη σελιδοδείκτες ή αποθηκευμένες συνδέσεις."
+  },
+  "scmd.places.keys": {
+    "message": "Enter Άνοιγμα  F8 Αφαίρεση από τους σελιδοδείκτες  Esc Κλείσιμο"
+  },
   "scmd.shell.press_enter": {
     "message": "Πατήστε Enter για επιστροφή στο Spark Commander..."
   },

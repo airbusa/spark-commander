@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "das PDF hat keine solche Seite"
   },
+  "scmd.places.empty": {
+    "message": "Noch keine Lesezeichen oder gespeicherten Verbindungen."
+  },
+  "scmd.places.keys": {
+    "message": "Enter Öffnen  F8 Aus Lesezeichen entfernen  Esc Schließen"
+  },
   "scmd.shell.press_enter": {
     "message": "Drücke Enter, um zu Spark Commander zurückzukehren..."
   },

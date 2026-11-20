@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "PDF 沒有這一頁"
   },
+  "scmd.places.empty": {
+    "message": "還沒有書籤或已儲存的連線。"
+  },
+  "scmd.places.keys": {
+    "message": "Enter 開啟  F8 從書籤中移除  Esc 關閉"
+  },
   "scmd.shell.press_enter": {
     "message": "按 Enter 返回 Spark Commander..."
   },

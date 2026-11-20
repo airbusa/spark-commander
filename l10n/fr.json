@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "le PDF n’a pas cette page"
   },
+  "scmd.places.empty": {
+    "message": "Aucun signet ni connexion enregistrée pour l’instant."
+  },
+  "scmd.places.keys": {
+    "message": "Enter Ouvrir  F8 Retirer des signets  Esc Fermer"
+  },
   "scmd.shell.press_enter": {
     "message": "Appuyez sur Enter pour revenir à Spark Commander..."
   },

@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "o PDF não tem esta página"
   },
+  "scmd.places.empty": {
+    "message": "Ainda não há marcadores nem ligações guardadas."
+  },
+  "scmd.places.keys": {
+    "message": "Enter Abrir  F8 Remover dos Marcadores  Esc Fechar"
+  },
   "scmd.shell.press_enter": {
     "message": "Prima Enter para voltar ao Spark Commander..."
   },

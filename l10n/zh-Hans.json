@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "PDF 中没有此页"
   },
+  "scmd.places.empty": {
+    "message": "还没有书签或已保存的连接。"
+  },
+  "scmd.places.keys": {
+    "message": "Enter 打开  F8 从书签中移除  Esc 关闭"
+  },
   "scmd.shell.press_enter": {
     "message": "按 Enter 返回 Spark Commander..."
   },

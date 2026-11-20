@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "a PDF-ben nincs ilyen oldal"
   },
+  "scmd.places.empty": {
+    "message": "Még nincs könyvjelző vagy mentett kapcsolat."
+  },
+  "scmd.places.keys": {
+    "message": "Enter Megnyitás  F8 Eltávolítás a Könyvjelzők közül  Esc Bezárás"
+  },
   "scmd.shell.press_enter": {
     "message": "Nyomd meg az Entert a Spark Commanderhez való visszatéréshez..."
   },

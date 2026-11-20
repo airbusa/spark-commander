@@ -3263,6 +3263,12 @@
   "scmd.picture.no_page": {
     "message": "PDF takú stranu nemá"
   },
+  "scmd.places.empty": {
+    "message": "Zatiaľ nie sú žiadne záložky ani uložené pripojenia."
+  },
+  "scmd.places.keys": {
+    "message": "Enter Otvoriť  F8 Odstrániť zo záložiek  Esc Zavrieť"
+  },
   "scmd.shell.press_enter": {
     "message": "Stlačením Enter sa vrátite do Spark Commander..."
   },

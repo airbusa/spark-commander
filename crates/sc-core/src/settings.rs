@@ -108,7 +108,7 @@ pub struct Settings {
     /// The app's language, a tag of `l10n/`; the system's when none.
     pub language: Option<String>,
     /// scmd's colours: a Midnight Commander skin's name (its own pastel-night and
-    /// pastel-gray, or mc's), or a skin file; mc's default look when none.
+    /// pastel-gray, or mc's, "default" its own look), or a skin file; Pastel Night when none.
     pub scmd_skin: Option<String>,
 }
 

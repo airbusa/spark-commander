@@ -1,5 +1,5 @@
 //! Colours and lines from a Midnight Commander skin (.ini): our two, built in,
-//! or any of mc's by name; without one, mc's own look in the terminal's palette.
+//! Pastel Night the default, or any of mc's by name ("default", mc's own look).
 
 use std::collections::HashMap;
 use std::io;
@@ -53,6 +53,7 @@ pub struct Skin {
 }
 
 impl Default for Skin {
+    /// mc's own look, in the terminal's palette.
     fn default() -> Self {
         // Fixed 256-colour shades: themes repaint only the first 16, and Breeze's
         // magenta and yellow are unreadable on its blue.
@@ -93,7 +94,7 @@ impl Default for Skin {
 static SKIN: OnceLock<Skin> = OnceLock::new();
 
 pub fn skin() -> &'static Skin {
-    SKIN.get_or_init(Skin::default)
+    SKIN.get_or_init(|| Skin::parse(BUILT_IN[0].1, truecolor()))
 }
 
 /// Before the first frame.

@@ -1244,7 +1244,7 @@ impl Commander {
         block
     }
 
-    /// Go > Bookmark This Folder (Ctrl+D, as a browser's): the active panel's folder.
+    /// Go > Bookmark This Folder (Ctrl+B): the active panel's folder.
     pub(crate) fn bookmark_folder(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let panel = self.panels[self.active].tabs.current();
         let folder = panel.folder().to_owned();

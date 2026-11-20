@@ -124,9 +124,9 @@ const SPARK_COMMANDER: Table = &[
     (PasteFromClipboard, "secondary-v", ""),
     (Search, "secondary-f", windows("alt-f7")),
     (SearchInSeparateProcess, "secondary-shift-f", ""),
-    (Bookmarks, "secondary-b", ""),
-    // A browser's.
-    (BookmarkFolder, "secondary-d", ""),
+    // Total Commander's.
+    (Bookmarks, "secondary-d", ""),
+    (BookmarkFolder, "secondary-b", ""),
     // Chrome's and Safari's bookmark manager.
     (ManageBookmarks, "secondary-alt-b", ""),
     (GoBack, "alt-left", ""),

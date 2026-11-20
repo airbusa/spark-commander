@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "No s’ha pogut llegir la configuració: {err}"
   },
+  "scmd.error.read_skin": {
+    "message": "No s’ha pogut llegir el tema {name}: {err}"
+  },
   "scmd.error.read_tabs": {
     "message": "No s’han pogut llegir les pestanyes obertes: {err}"
   },

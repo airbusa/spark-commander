@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "設定を読み込めませんでした：{err}"
   },
+  "scmd.error.read_skin": {
+    "message": "テーマ {name} を読み込めませんでした：{err}"
+  },
   "scmd.error.read_tabs": {
     "message": "開いていたタブを読み込めませんでした：{err}"
   },

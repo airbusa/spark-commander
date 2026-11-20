@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "Nastavenia sa nepodarilo načítať: {err}"
   },
+  "scmd.error.read_skin": {
+    "message": "Vzhľad {name} sa nepodarilo načítať: {err}"
+  },
   "scmd.error.read_tabs": {
     "message": "Otvorené karty sa nepodarilo načítať: {err}"
   },

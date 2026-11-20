@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "Não foi possível ler as definições: {err}"
   },
+  "scmd.error.read_skin": {
+    "message": "Não foi possível ler o tema {name}: {err}"
+  },
   "scmd.error.read_tabs": {
     "message": "Não foi possível ler os separadores abertos: {err}"
   },

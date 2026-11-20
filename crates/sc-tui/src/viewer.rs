@@ -15,13 +15,14 @@ use sc_core::viewer::{Font, Mode, Query, Shown, TextFile};
 use ratatui::Frame;
 use ratatui::crossterm::event::{KeyCode, KeyEvent, KeyModifiers};
 use ratatui::layout::Rect;
-use ratatui::style::{Modifier, Style};
+use ratatui::style::Modifier;
 use ratatui::text::{Line, Span};
 use unicode_width::{UnicodeWidthChar, UnicodeWidthStr};
 
 use crate::dialog::Form;
 use crate::picture::{self, Key, PICTURES, Picture};
-use crate::ui::{self, BAR, PANEL};
+use crate::skin::skin;
+use crate::ui;
 use crate::{App, Done};
 
 /// Left and Right move this many columns.
@@ -389,7 +390,7 @@ pub fn draw(frame: &mut Frame, viewer: &mut Viewer) {
     }
     let right = match viewer.picture_mode() {
         true => {
-            frame.buffer_mut().set_style(body, PANEL);
+            frame.buffer_mut().set_style(body, skin().viewer);
             picture::draw(frame, body, viewer);
             let about = match &viewer.picture {
                 _ if viewer.shown.mode == Mode::Pdf && viewer.pages > 0 => {
@@ -407,11 +408,12 @@ pub fn draw(frame: &mut Frame, viewer: &mut Viewer) {
     };
     let buf = frame.buffer_mut();
     let top = Rect::new(area.x, area.y, area.width, 1);
-    buf.set_style(top, BAR);
+    let status = skin().status;
+    buf.set_style(top, status);
     let room = (area.width as usize).saturating_sub(right.width() + 1);
-    buf.set_string(area.x + 1, area.y, ui::tail(&viewer.name(), room), BAR);
+    buf.set_string(area.x + 1, area.y, ui::tail(&viewer.name(), room), status);
     let x = area.right().saturating_sub(right.width() as u16);
-    buf.set_string(x, area.y, &right, BAR.add_modifier(Modifier::BOLD));
+    buf.set_string(x, area.y, &right, status.add_modifier(Modifier::BOLD));
     ui::key_bar(
         buf,
         Rect::new(area.x, area.bottom() - 1, area.width, 1),
@@ -427,8 +429,8 @@ fn draw_text(frame: &mut Frame, body: Rect, viewer: &mut Viewer) -> String {
     let shown = viewer.text.rows(viewer.top..viewer.top + height);
 
     let buf = frame.buffer_mut();
-    buf.set_style(body, PANEL);
-    let selected = Style::new().fg(BAR.fg.unwrap()).bg(BAR.bg.unwrap());
+    let (text, selected) = (skin().viewer, skin().found);
+    buf.set_style(body, text);
     for (n, row) in shown.iter().enumerate() {
         let marks = row.highlights(&viewer.selection);
         let mut spans: Vec<Span> = Vec::new();
@@ -443,7 +445,7 @@ fn draw_text(frame: &mut Frame, body: Rect, viewer: &mut Viewer) -> String {
             }
             let style = match marks.iter().any(|run| run.contains(&at)) {
                 true => selected,
-                false => PANEL,
+                false => text,
             };
             match spans.last_mut() {
                 Some(span) if span.style == style => span.content.to_mut().push(c),

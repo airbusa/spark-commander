@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "Nem sikerült beolvasni a beállításokat: {err}"
   },
+  "scmd.error.read_skin": {
+    "message": "Nem sikerült beolvasni a témát ({name}): {err}"
+  },
   "scmd.error.read_tabs": {
     "message": "Nem sikerült beolvasni a megnyitott lapokat: {err}"
   },

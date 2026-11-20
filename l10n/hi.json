@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "सेटिंग पढ़ी नहीं जा सकी: {err}"
   },
+  "scmd.error.read_skin": {
+    "message": "थीम {name} पढ़ी नहीं जा सकी: {err}"
+  },
   "scmd.error.read_tabs": {
     "message": "खुले टैब पढ़े नहीं जा सके: {err}"
   },

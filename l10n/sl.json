@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "Nastavitev ni bilo mogoče prebrati: {err}"
   },
+  "scmd.error.read_skin": {
+    "message": "Teme {name} ni bilo mogoče prebrati: {err}"
+  },
   "scmd.error.read_tabs": {
     "message": "Odprtih zavihkov ni bilo mogoče prebrati: {err}"
   },

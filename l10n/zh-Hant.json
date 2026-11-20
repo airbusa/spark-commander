@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "無法讀取設定：{err}"
   },
+  "scmd.error.read_skin": {
+    "message": "無法讀取主題 {name}：{err}"
+  },
   "scmd.error.read_tabs": {
     "message": "無法讀取開啟的分頁：{err}"
   },

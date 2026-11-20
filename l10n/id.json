@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "Tidak dapat membaca pengaturan: {err}"
   },
+  "scmd.error.read_skin": {
+    "message": "Tidak dapat membaca tema {name}: {err}"
+  },
   "scmd.error.read_tabs": {
     "message": "Tidak dapat membaca tab yang terbuka: {err}"
   },

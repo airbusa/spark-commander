@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "설정을 읽지 못했습니다: {err}"
   },
+  "scmd.error.read_skin": {
+    "message": "{name} 테마를 읽지 못했습니다: {err}"
+  },
   "scmd.error.read_tabs": {
     "message": "열려 있던 탭을 읽지 못했습니다: {err}"
   },

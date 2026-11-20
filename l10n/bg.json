@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "Настройките не можаха да се прочетат: {err}"
   },
+  "scmd.error.read_skin": {
+    "message": "Темата {name} не можа да се прочете: {err}"
+  },
   "scmd.error.read_tabs": {
     "message": "Отворените раздели не можаха да се прочетат: {err}"
   },

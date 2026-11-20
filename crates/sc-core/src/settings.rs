@@ -107,6 +107,9 @@ pub struct Settings {
     pub queue: QueueSettings,
     /// The app's language, a tag of `l10n/`; the system's when none.
     pub language: Option<String>,
+    /// scmd's colours: a Midnight Commander skin's name (its own pastel-night and
+    /// pastel-gray, or mc's), or a skin file; mc's default look when none.
+    pub scmd_skin: Option<String>,
 }
 
 /// The operation queue's: how long done operations stay listed, how fast links download.

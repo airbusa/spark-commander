@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "Die Einstellungen konnten nicht gelesen werden: {err}"
   },
+  "scmd.error.read_skin": {
+    "message": "Das Design {name} konnte nicht gelesen werden: {err}"
+  },
   "scmd.error.read_tabs": {
     "message": "Die geöffneten Tabs konnten nicht gelesen werden: {err}"
   },

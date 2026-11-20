@@ -1,5 +1,5 @@
-//! Drawing, in Midnight Commander's colors: the terminal's own palette, so
-//! its theme decides the shades.
+//! Drawing, in Midnight Commander's colors: its default look in the terminal's
+//! own palette, so its theme decides the shades, or a skin's (see `skin`).
 
 use sc_core::menu::{MENUS, menu_label};
 use sc_core::t;
@@ -7,27 +7,12 @@ use sc_core::{Entry, Panel, archive};
 use ratatui::Frame;
 use ratatui::buffer::Buffer;
 use ratatui::layout::{Constraint, Layout, Position, Rect};
-use ratatui::style::{Color, Modifier, Style};
+use ratatui::style::Style;
 use ratatui::widgets::{Block, Clear, Paragraph, Widget, Wrap};
 use unicode_width::{UnicodeWidthChar, UnicodeWidthStr};
 
 use crate::App;
-
-pub const PANEL: Style = Style::new().fg(Color::Gray).bg(Color::Blue);
-// Fixed 256-colour shades: themes repaint only the first 16, and Breeze's
-// magenta and yellow are unreadable on its blue.
-const YELLOW: Color = Color::Indexed(228);
-const PINK: Color = Color::Indexed(219);
-const GREEN: Color = Color::Indexed(120);
-
-const HEADER: Style = Style::new()
-    .fg(YELLOW)
-    .bg(Color::Blue)
-    .add_modifier(Modifier::BOLD);
-pub const BAR: Style = Style::new().fg(Color::Black).bg(Color::Cyan);
-const KEY_NUMBER: Style = Style::new().fg(Color::Gray).bg(Color::Black);
-pub const DIALOG: Style = Style::new().fg(Color::Black).bg(Color::Gray);
-const ERROR: Style = Style::new().fg(Color::White).bg(Color::Red);
+use crate::skin::skin;
 
 /// The panels' function keys; F1 and F2 have none yet.
 fn keys() -> [String; 10] {
@@ -92,14 +77,15 @@ fn draw_panels(frame: &mut Frame, app: &mut App) {
 }
 
 fn menu_bar(buf: &mut Buffer, area: Rect) {
-    buf.set_style(area, BAR);
+    let menu = skin().menu;
+    buf.set_style(area, menu);
     let labels: Vec<String> = MENUS.iter().map(|menu| menu_label(menu.label)).collect();
     buf.set_stringn(
         area.x + 1,
         area.y,
         labels.join("  "),
         area.width.into(),
-        BAR,
+        menu,
     );
 }
 
@@ -107,7 +93,8 @@ fn menu_bar(buf: &mut Buffer, area: Rect) {
 fn panel(buf: &mut Buffer, area: Rect, app: &mut App, ix: usize) -> Rect {
     let active = ix == app.active;
     let tabs_shown = app.sides[ix].tabs.panels().len() > 1 || app.settings.tab_header_always.0;
-    Block::bordered().style(PANEL).render(area, buf);
+    let skin = skin();
+    Block::bordered().border_set(skin.frame).style(skin.panel).render(area, buf);
     let inner = area.inner(ratatui::layout::Margin::new(1, 1));
     if inner.height < 4 || inner.width < 10 {
         return Rect::default();
@@ -117,7 +104,7 @@ fn panel(buf: &mut Buffer, area: Rect, app: &mut App, ix: usize) -> Rect {
     // The location on the top border, its end kept when long.
     let title = format!(" {} ", tilde(&panel.location()));
     let title = tail(&title, (area.width as usize).saturating_sub(4));
-    let title_style = if active { BAR } else { PANEL };
+    let title_style = if active { skin.selected } else { skin.panel };
     buf.set_string(area.x + 2, area.y, title, title_style);
 
     let mut y = inner.y;
@@ -133,11 +120,12 @@ fn panel(buf: &mut Buffer, area: Rect, app: &mut App, ix: usize) -> Rect {
     let rows = Rect::new(inner.x, y, inner.width, status_y - 1 - y);
     // The separator above the status line, joined to the column lines.
     let line = status_y - 1;
-    buf.set_string(area.x, line, "├", PANEL);
-    buf.set_string(area.right() - 1, line, "┤", PANEL);
+    let [horiz, left, right, joint] = skin.split;
+    buf.set_string(area.x, line, left, skin.panel);
+    buf.set_string(area.right() - 1, line, right, skin.panel);
     for x in inner.x..inner.right() {
-        let joint = columns.lines.iter().any(|&at| inner.x + at == x);
-        buf.set_string(x, line, if joint { "┴" } else { "─" }, PANEL);
+        let joins = columns.lines.iter().any(|&at| inner.x + at == x);
+        buf.set_string(x, line, if joins { joint } else { horiz }, skin.panel);
     }
 
     let side = &mut app.sides[ix];
@@ -156,13 +144,13 @@ fn panel(buf: &mut Buffer, area: Rect, app: &mut App, ix: usize) -> Rect {
         let entry = panel.entries().get(at);
         let style = match entry {
             Some(entry) => entry_style(panel, entry, active && at == cursor),
-            None => PANEL,
+            None => skin.panel,
         };
         buf.set_style(Rect::new(rows.x, y, rows.width, 1), style);
         columns.row(buf, rows.x, y, entry.map(|entry| (panel, entry)), style);
     }
     let status = take_width(panel.status_text().chars(), inner.width as usize);
-    buf.set_string(inner.x, status_y, status, PANEL);
+    buf.set_string(inner.x, status_y, status, skin.panel);
     rows
 }
 
@@ -174,9 +162,9 @@ fn tab_strip(buf: &mut Buffer, area: Rect, app: &App, ix: usize) -> Vec<Rect> {
     for (n, panel) in tabs.panels().iter().enumerate() {
         let current = n == tabs.active();
         let style = match current {
-            true if ix == app.active => BAR,
-            true => PANEL.add_modifier(Modifier::REVERSED),
-            false => PANEL,
+            true if ix == app.active => skin().selected,
+            true => skin().reverse,
+            false => skin().panel,
         };
         let label = format!(" {}:{} ", n + 1, panel.title());
         let room = area.right().saturating_sub(x) as usize;
@@ -192,24 +180,25 @@ fn tab_strip(buf: &mut Buffer, area: Rect, app: &App, ix: usize) -> Vec<Rect> {
 }
 
 fn entry_style(panel: &Panel, entry: &Entry, cursor: bool) -> Style {
-    let marked = panel.is_marked(entry);
-    let base = if cursor { BAR } else { PANEL };
-    let fg = match () {
-        _ if marked => Some(YELLOW),
-        _ if cursor => None,
-        _ if entry.is_dir => Some(Color::White),
-        _ if archive::is_archive(&entry.name) => Some(PINK),
-        _ if entry.attributes.contains('x') => Some(GREEN),
-        _ => None,
+    let skin = skin();
+    let file = match () {
+        _ if panel.is_marked(entry) && cursor => return skin.mark_selected,
+        _ if panel.is_marked(entry) => return skin.marked,
+        _ if cursor => return skin.selected,
+        _ if entry.is_dir => skin.directory,
+        _ if archive::is_archive(&entry.name) => skin.archive,
+        _ if entry.attributes.contains('x') => skin.executable,
+        // By the name alone: a TypeScript file is no video.
+        _ if sc_core::viewer::media::is_media(std::path::Path::new(&entry.name)) => skin.media,
+        _ if is_picture(entry) => skin.picture,
+        _ => Style::new(),
     };
-    let style = match fg {
-        Some(fg) => base.fg(fg),
-        None => base,
-    };
-    match marked || (entry.is_dir && !cursor) {
-        true => style.add_modifier(Modifier::BOLD),
-        false => style,
-    }
+    skin.panel.patch(file)
+}
+
+fn is_picture(entry: &Entry) -> bool {
+    let extension = std::path::Path::new(&entry.name).extension().map(|e| e.to_string_lossy().to_lowercase());
+    extension.is_some_and(|extension| crate::picture::PICTURES.contains(&extension.as_str()))
 }
 
 /// Name, Size and Modified, as wide as the panel lets them be.
@@ -251,12 +240,12 @@ impl Columns {
                 continue;
             }
             if n > 0 {
-                buf.set_string(at, y, "│", PANEL);
+                buf.set_string(at, y, skin().vert, skin().panel);
                 at += 1;
             }
             // Centred by display width, cut when a translation is longer.
             let centred = format!("{}{title}", " ".repeat(width.saturating_sub(title.width()) / 2));
-            buf.set_string(at, y, fit(&centred, width), HEADER);
+            buf.set_string(at, y, fit(&centred, width), skin().header);
             at += width as u16;
         }
     }
@@ -278,13 +267,13 @@ impl Columns {
         };
         buf.set_string(x, y, fit(&name, self.name), style);
         let mut at = x + self.name as u16;
-        buf.set_string(at, y, "│", style);
+        buf.set_string(at, y, skin().vert, style);
         at += 1;
         let size = format!("{}{size}", " ".repeat(self.size.saturating_sub(size.width())));
         buf.set_string(at, y, fit(&size, self.size), style);
         if self.date > 0 {
             at += self.size as u16;
-            buf.set_string(at, y, "│", style);
+            buf.set_string(at, y, skin().vert, style);
             buf.set_string(at + 1, y, fit(&date, self.date), style);
         }
     }
@@ -365,9 +354,9 @@ pub fn key_bar(buf: &mut Buffer, area: Rect, labels: &[String; 10]) {
             9 => area.right() - x,
             _ => slot,
         };
-        buf.set_string(x, area.y, format!("{:>2}", n + 1), KEY_NUMBER);
+        buf.set_string(x, area.y, format!("{:>2}", n + 1), skin().key_number);
         let room = width.saturating_sub(2) as usize;
-        buf.set_string(x + 2, area.y, fit(label, room), BAR);
+        buf.set_string(x + 2, area.y, fit(label, room), skin().key_label);
     }
 }
 
@@ -413,14 +402,14 @@ fn dialog(frame: &mut Frame, text: &str, error: bool) {
         width,
         height,
     );
-    let style = if error { ERROR } else { DIALOG };
+    let style = if error { skin().error } else { skin().dialog };
     let title = if error {
         format!(" {} ", t!("scmd.message.error"))
     } else {
         " Spark Commander ".into()
     };
     frame.render_widget(Clear, at);
-    let block = Block::bordered().title(title).style(style);
+    let block = Block::bordered().border_set(skin().frame).title(title).style(style);
     let body = Paragraph::new(format!("{text}\n\n[ {} ]", t!("scmd.message.ok")))
         .wrap(Wrap { trim: false })
         .centered()

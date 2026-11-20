@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "Δεν ήταν δυνατή η ανάγνωση των ρυθμίσεων: {err}"
   },
+  "scmd.error.read_skin": {
+    "message": "Δεν ήταν δυνατή η ανάγνωση του θέματος {name}: {err}"
+  },
   "scmd.error.read_tabs": {
     "message": "Δεν ήταν δυνατή η ανάγνωση των ανοιχτών καρτελών: {err}"
   },

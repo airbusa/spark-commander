@@ -17,7 +17,7 @@ use ratatui_image::picker::{Picker, ProtocolType};
 use ratatui_image::protocol::StatefulProtocol;
 use ratatui_image::{Resize, StatefulImage};
 
-use crate::ui::PANEL;
+use crate::skin::skin;
 use crate::viewer::Viewer;
 use crate::{App, Done};
 
@@ -247,7 +247,7 @@ pub fn draw(frame: &mut Frame, area: Rect, viewer: &mut Viewer) {
         None => t!("scmd.picture.loading"),
     };
     let text = Paragraph::new(note)
-        .style(PANEL)
+        .style(skin().viewer)
         .centered()
         .wrap(Wrap { trim: true });
     let middle = Rect::new(

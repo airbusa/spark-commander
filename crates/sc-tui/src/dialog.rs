@@ -8,7 +8,8 @@ use sc_core::t;
 use unicode_width::UnicodeWidthStr;
 
 use crate::input::Input;
-use crate::ui::{BAR, DIALOG, fit};
+use crate::skin::skin;
+use crate::ui::fit;
 
 pub enum Field {
     Text {
@@ -146,8 +147,10 @@ impl Form {
         );
         frame.render_widget(Clear, at);
         let block = Block::bordered()
+            .border_set(skin().frame)
             .title(format!(" {} ", self.title))
-            .style(DIALOG)
+            .title_style(skin().title)
+            .style(skin().dialog)
             .padding(Padding::horizontal(1));
         let inner = block.inner(at);
         frame.render_widget(block, at);
@@ -162,12 +165,12 @@ impl Form {
             let buf = frame.buffer_mut();
             match field {
                 Field::Text { label, input, .. } => {
-                    buf.set_string(inner.x, y, fit(label, room), DIALOG);
+                    buf.set_string(inner.x, y, fit(label, room), skin().dialog);
                     y += 1;
                     let chars: Vec<char> = input.text().chars().collect();
                     let start = input.cursor().saturating_sub(room.saturating_sub(1));
                     let shown: String = chars[start..].iter().collect();
-                    buf.set_string(inner.x, y, fit(&shown, room), BAR);
+                    buf.set_string(inner.x, y, fit(&shown, room), skin().input);
                     if focused {
                         let before: String = chars[start..input.cursor()].iter().collect();
                         cursor = Some(Position::new(inner.x + before.width() as u16, y));
@@ -175,7 +178,7 @@ impl Form {
                 }
                 Field::Check { label, on } => {
                     let mark = if *on { "[x]" } else { "[ ]" };
-                    let style = if focused { BAR } else { DIALOG };
+                    let style = if focused { skin().focus } else { skin().dialog };
                     buf.set_string(inner.x, y, fit(&format!("{mark} {label}"), room), style);
                 }
             }
@@ -185,7 +188,7 @@ impl Form {
         let x = inner.x + inner.width.saturating_sub(buttons.width() as u16) / 2;
         frame
             .buffer_mut()
-            .set_stringn(x, inner.bottom().saturating_sub(1), &buttons, room, DIALOG);
+            .set_stringn(x, inner.bottom().saturating_sub(1), &buttons, room, skin().dialog);
         if let Some(cursor) = cursor {
             frame.set_cursor_position(cursor);
         }
@@ -246,7 +249,12 @@ impl Chooser {
             height,
         );
         frame.render_widget(Clear, at);
-        let block = Block::bordered().title(format!(" {} ", self.title)).style(DIALOG).padding(Padding::horizontal(1));
+        let block = Block::bordered()
+            .border_set(skin().frame)
+            .title(format!(" {} ", self.title))
+            .title_style(skin().title)
+            .style(skin().dialog)
+            .padding(Padding::horizontal(1));
         let inner = block.inner(at);
         frame.render_widget(block, at);
         let room = inner.width as usize;
@@ -254,10 +262,10 @@ impl Chooser {
         for (ix, item) in self.items.iter().enumerate().take(inner.height.saturating_sub(2) as usize) {
             let mark = if ix == self.checked { "✓" } else { " " };
             let number = if ix < 9 { format!("{}", ix + 1) } else { " ".into() };
-            let style = if ix == self.at { BAR } else { DIALOG };
+            let style = if ix == self.at { skin().focus } else { skin().dialog };
             buf.set_string(inner.x, inner.y + ix as u16, fit(&format!("{number} {mark} {item}"), room), style);
         }
-        buf.set_string(inner.x, inner.bottom().saturating_sub(1), fit(&keys, room), DIALOG);
+        buf.set_string(inner.x, inner.bottom().saturating_sub(1), fit(&keys, room), skin().dialog);
     }
 }
 

@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "Postavke nije moguće pročitati: {err}"
   },
+  "scmd.error.read_skin": {
+    "message": "Temu {name} nije moguće pročitati: {err}"
+  },
   "scmd.error.read_tabs": {
     "message": "Otvorene kartice nije moguće pročitati: {err}"
   },

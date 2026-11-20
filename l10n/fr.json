@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "Impossible de lire les réglages : {err}"
   },
+  "scmd.error.read_skin": {
+    "message": "Impossible de lire le thème {name} : {err}"
+  },
   "scmd.error.read_tabs": {
     "message": "Impossible de lire les onglets ouverts : {err}"
   },

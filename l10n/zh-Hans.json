@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "无法读取设置：{err}"
   },
+  "scmd.error.read_skin": {
+    "message": "无法读取主题 {name}：{err}"
+  },
   "scmd.error.read_tabs": {
     "message": "无法读取已打开的标签页：{err}"
   },

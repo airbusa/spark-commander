@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "Ayarlar okunamadı: {err}"
   },
+  "scmd.error.read_skin": {
+    "message": "{name} teması okunamadı: {err}"
+  },
   "scmd.error.read_tabs": {
     "message": "Açık sekmeler okunamadı: {err}"
   },

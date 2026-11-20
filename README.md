@@ -51,6 +51,9 @@ GPL.
 **Fitting in**
 - Key presets of Total Commander, Krusader, Midnight Commander and ForkLift;
   every shortcut can be changed (Configuration › Shortcuts).
+- scmd wears Midnight Commander's skins, and two of its own, Pastel Night and
+  Pastel Gray (`scmd -S pastel-night`, or `"scmd_skin"` in the settings); they
+  are mc skins too (`crates/sc-tui/skins/`).
 - It follows the desktop's look: light or dark, the KDE, GNOME, Windows 11 or
   macOS style of controls, and the sidebar's blur on KDE Plasma and GNOME.
 - 36 languages ([the list](#translations)).

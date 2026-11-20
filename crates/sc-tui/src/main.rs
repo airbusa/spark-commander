@@ -5,6 +5,7 @@ mod dialog;
 mod input;
 mod keys;
 mod picture;
+mod skin;
 mod ui;
 mod viewer;
 
@@ -116,11 +117,23 @@ fn main() -> io::Result<()> {
         Session::default()
     });
     std::thread::spawn(archive::remove_stale_scratch);
-    let mut app = App::new(
-        settings,
-        &session,
-        std::env::args_os().skip(1).map(PathBuf::from),
-    );
+    // Folders to open, and as mc's: -S or --skin and the skin's name.
+    let (mut folders, mut skin) = (Vec::new(), settings.scmd_skin.clone());
+    let mut args = std::env::args_os().skip(1);
+    while let Some(arg) = args.next() {
+        match arg.to_str() {
+            Some("-S" | "--skin") => skin = args.next().map(|name| name.to_string_lossy().into_owned()),
+            Some(given) if given.starts_with("--skin=") => skin = Some(given["--skin=".len()..].to_owned()),
+            _ => folders.push(PathBuf::from(arg)),
+        }
+    }
+    if let Some(name) = skin {
+        match skin::load(&name) {
+            Ok(skin) => skin::set(skin),
+            Err(err) => problems.push(t!("scmd.error.read_skin", name = name, err = err)),
+        }
+    }
+    let mut app = App::new(settings, &session, folders.into_iter());
     app.workspaces = Workspaces::load_from(session::WORKSPACES_TERMINAL).unwrap_or_else(|err| {
         problems.push(t!("scmd.error.read_workspaces", err = err));
         Workspaces::default()

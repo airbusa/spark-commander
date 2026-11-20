@@ -4219,6 +4219,10 @@
     "description": "scmd (the terminal app), error at the start. {err} is the system's own error text, e.g. \"Permission denied (os error 13)\".",
     "message": "Could not read the settings: {err}"
   },
+  "scmd.error.read_skin": {
+    "description": "scmd (the terminal app), error at the start when the theme chosen in the settings or with -S cannot be used. {name} is the theme's name as given, e.g. \"pastel-night\" (a Midnight Commander skin); {err} is the system's own error text, e.g. \"entity not found\".",
+    "message": "Could not read the theme {name}: {err}"
+  },
   "scmd.error.read_tabs": {
     "description": "scmd (the terminal app), error at the start when the tabs open last time cannot be read. {err} is the system's own error text, e.g. \"Permission denied (os error 13)\".",
     "message": "Could not read the open tabs: {err}"

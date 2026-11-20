@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "Setările nu au putut fi citite: {err}"
   },
+  "scmd.error.read_skin": {
+    "message": "Tema {name} nu a putut fi citită: {err}"
+  },
   "scmd.error.read_tabs": {
     "message": "Filele deschise nu au putut fi citite: {err}"
   },

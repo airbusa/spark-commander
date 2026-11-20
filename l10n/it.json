@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "Impossibile leggere le impostazioni: {err}"
   },
+  "scmd.error.read_skin": {
+    "message": "Impossibile leggere il tema {name}: {err}"
+  },
   "scmd.error.read_tabs": {
     "message": "Impossibile leggere le schede aperte: {err}"
   },

@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "Không đọc được cài đặt: {err}"
   },
+  "scmd.error.read_skin": {
+    "message": "Không đọc được giao diện {name}: {err}"
+  },
   "scmd.error.read_tabs": {
     "message": "Không đọc được các thẻ đang mở: {err}"
   },

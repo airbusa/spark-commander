@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "Seadeid ei õnnestunud lugeda: {err}"
   },
+  "scmd.error.read_skin": {
+    "message": "Kujundust {name} ei õnnestunud lugeda: {err}"
+  },
   "scmd.error.read_tabs": {
     "message": "Avatud kaarte ei õnnestunud lugeda: {err}"
   },

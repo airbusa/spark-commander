@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "Nastavení nelze načíst: {err}"
   },
+  "scmd.error.read_skin": {
+    "message": "Vzhled {name} nelze načíst: {err}"
+  },
   "scmd.error.read_tabs": {
     "message": "Otevřené karty nelze načíst: {err}"
   },

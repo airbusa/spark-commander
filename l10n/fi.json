@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "Asetuksia ei voitu lukea: {err}"
   },
+  "scmd.error.read_skin": {
+    "message": "Teemaa {name} ei voitu lukea: {err}"
+  },
   "scmd.error.read_tabs": {
     "message": "Avoimia välilehtiä ei voitu lukea: {err}"
   },

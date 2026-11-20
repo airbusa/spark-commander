@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "อ่านการตั้งค่าไม่ได้: {err}"
   },
+  "scmd.error.read_skin": {
+    "message": "อ่านธีม {name} ไม่ได้: {err}"
+  },
   "scmd.error.read_tabs": {
     "message": "อ่านแท็บที่เปิดอยู่ไม่ได้: {err}"
   },

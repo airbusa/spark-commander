@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "Kunne ikke lese innstillingene: {err}"
   },
+  "scmd.error.read_skin": {
+    "message": "Kunne ikke lese temaet {name}: {err}"
+  },
   "scmd.error.read_tabs": {
     "message": "Kunne ikke lese de åpne fanene: {err}"
   },

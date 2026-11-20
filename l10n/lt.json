@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "Nepavyko nuskaityti nustatymų: {err}"
   },
+  "scmd.error.read_skin": {
+    "message": "Nepavyko nuskaityti temos {name}: {err}"
+  },
   "scmd.error.read_tabs": {
     "message": "Nepavyko nuskaityti atvertų kortelių: {err}"
   },

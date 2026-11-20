@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "Neizdevās nolasīt iestatījumus: {err}"
   },
+  "scmd.error.read_skin": {
+    "message": "Neizdevās nolasīt motīvu {name}: {err}"
+  },
   "scmd.error.read_tabs": {
     "message": "Neizdevās nolasīt atvērtās cilnes: {err}"
   },

@@ -3164,6 +3164,9 @@
   "scmd.error.read_settings": {
     "message": "Kan de instellingen niet lezen: {err}"
   },
+  "scmd.error.read_skin": {
+    "message": "Kan het thema {name} niet lezen: {err}"
+  },
   "scmd.error.read_tabs": {
     "message": "Kan de geopende tabbladen niet lezen: {err}"
   },

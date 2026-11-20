@@ -741,10 +741,114 @@ pub fn english_entries() -> Vec<(String, String, String)> {
     entries
 }
 
+/// Each label's letter to press, none twice nor one of `taken`: a word's first
+/// letter first, else another of its letters; the fewest taken earlier move to
+/// others of their own when that leaves a label none. A label in a script
+/// without letters to type (Chinese, Japanese, Korean) gets one added, as
+/// Windows does: `ファイル(A)`. Gives the label as shown and its letter's char index.
+pub fn mnemonics(labels: &[&str], taken: &[char]) -> Vec<(String, Option<usize>)> {
+    let lower = |c: char| c.to_lowercase().next().unwrap_or(c);
+    let ideographic = |c: char| matches!(c as u32, 0x1100..=0x11FF | 0x2E80..=0x9FFF | 0xA960..=0xA97F | 0xAC00..=0xD7FF | 0xF900..=0xFAFF | 0xFF00..=0xFFEF);
+    let taken: Vec<char> = taken.iter().map(|&c| lower(c)).collect();
+    // Each label's letters in the order it would rather have them, as char indices.
+    let wishes: Vec<Vec<(char, usize)>> = labels
+        .iter()
+        .map(|label| {
+            let chars: Vec<char> = label.chars().collect();
+            let starts = (0..chars.len()).filter(|&i| i == 0 || !chars[i - 1].is_alphanumeric());
+            let mut wishes: Vec<(char, usize)> = Vec::new();
+            for i in starts.chain(0..chars.len()) {
+                let c = lower(chars[i]);
+                if chars[i].is_alphanumeric() && !ideographic(chars[i]) && !taken.contains(&c) && !wishes.iter().any(|(had, _)| *had == c) {
+                    wishes.push((c, i));
+                }
+            }
+            wishes
+        })
+        .collect();
+    // First come, first served; then a label left without one takes a letter whose
+    // holder moves to another, by the fewest moves (a shortest augmenting path).
+    let mut has: Vec<Option<char>> = vec![None; labels.len()];
+    for ix in 0..labels.len() {
+        has[ix] = wishes[ix].iter().map(|(c, _)| *c).find(|c| !has.contains(&Some(*c)));
+    }
+    for start in 0..labels.len() {
+        if has[start].is_some() {
+            continue;
+        }
+        // For each label reached: who would take its letter, and which letter that is.
+        let mut came: Vec<Option<(usize, char)>> = vec![None; labels.len()];
+        let mut seen = vec![false; labels.len()];
+        let mut queue = std::collections::VecDeque::from([start]);
+        seen[start] = true;
+        'search: while let Some(ix) = queue.pop_front() {
+            for &(c, _) in &wishes[ix] {
+                match has.iter().position(|held| *held == Some(c)) {
+                    None => {
+                        let (mut at, mut letter) = (ix, c);
+                        loop {
+                            let next = came[at];
+                            has[at] = Some(letter);
+                            let Some((by, c)) = next else { break };
+                            (at, letter) = (by, c);
+                        }
+                        break 'search;
+                    }
+                    Some(holder) if !seen[holder] => {
+                        seen[holder] = true;
+                        came[holder] = Some((ix, c));
+                        queue.push_back(holder);
+                    }
+                    Some(_) => {}
+                }
+            }
+        }
+    }
+    let holder: Vec<(char, usize)> = has.iter().enumerate().filter_map(|(ix, c)| Some(((*c)?, ix))).collect();
+    let mut used: Vec<char> = taken.iter().copied().chain(holder.iter().map(|(c, _)| *c)).collect();
+    labels
+        .iter()
+        .enumerate()
+        .map(|(ix, label)| {
+            if let Some((c, _)) = holder.iter().find(|(_, by)| *by == ix) {
+                let at = wishes[ix].iter().find(|(had, _)| had == c).map(|(_, at)| *at);
+                return (label.to_string(), at);
+            }
+            let chars: Vec<char> = label.chars().collect();
+            let added = ('a'..='z').chain('0'..='9').find(|c| !used.contains(c));
+            match added {
+                Some(c) if chars.iter().any(|&c| ideographic(c)) && !chars.iter().any(|c| c.is_ascii_alphanumeric()) => {
+                    used.push(c);
+                    // Before a dialog's dots, as Windows puts it.
+                    let bare = label.trim_end_matches(['.', '…']);
+                    let shown = format!("{bare}({}){}", c.to_ascii_uppercase(), &label[bare.len()..]);
+                    (shown, Some(bare.chars().count() + 1))
+                }
+                _ => (label.to_string(), None),
+            }
+        })
+        .collect()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
     use crate::keymap::{KeySettings, Preset};
+
+    #[test]
+    fn mnemonics_are_unique_and_typable() {
+        let letters = |labels: &[&str], taken: &[char]| -> Vec<String> {
+            mnemonics(labels, taken).into_iter().map(|(shown, at)| at.map_or("-".into(), |at| shown.chars().nth(at).unwrap().to_string())).collect()
+        };
+        let menus = ["Files", "Mark", "Go", "Commands", "Show", "Tools", "Configuration", "Help"];
+        assert_eq!(letters(&menus, &['h']), ["F", "M", "G", "C", "S", "T", "o", "e"]);
+        assert_eq!(letters(&["Copy Files", "Cut Files", "*.*"], &[]), ["C", "F", "-"]);
+        let (shown, at) = mnemonics(&["検索...", "ファイル"], &['a']).remove(0);
+        assert_eq!((shown.as_str(), shown.chars().nth(at.unwrap())), ("検索(B)...", Some('B')));
+        assert_eq!(letters(&["Файлы", "Фильтр"], &[]), ["Ф", "и"]);
+        // "Ab" gives up its A for "A", which has no other.
+        assert_eq!(letters(&["Ab", "A"], &[]), ["b", "A"]);
+    }
 
     #[test]
     fn unknown_commands_are_left_out() {

@@ -8,13 +8,13 @@ pub mod mark_menu;
 use gpui_kit::component::GlobalState;
 use gpui_kit::assets::IconName as Lucide;
 use gpui_kit::component::Icon;
-use gpui_kit::component::menu::{MenuIcons, PopupMenu};
+use gpui_kit::component::menu::{AppMenuBar, MenuIcons, PopupMenu};
 use std::collections::HashMap;
 use std::rc::Rc;
 use std::sync::OnceLock;
 
 use gpui_kit::{
-    Action, AnyWindowHandle, App, Context, DummyKeyboardMapper, Global, KeyBinding,
+    Action, AnyWindowHandle, App, Context, Entity, KeyDownEvent, DummyKeyboardMapper, Global, KeyBinding,
     KeyBindingContextPredicate, Menu, MenuItem, SharedString, Unbind, Window, WindowId,
 };
 #[cfg(target_os = "macos")]
@@ -209,6 +209,12 @@ pub fn bind(keys: &KeySettings, before: Option<&KeySettings>, cx: &mut App) {
     cx.bind_keys(unbind);
     // A key the settings file got wrong is left out.
     let mut bound = keys.bindings();
+    let alt = bound.iter().filter_map(|(key, _)| {
+        let key = sc_core::keymap::normalize(key, cfg!(target_os = "macos"));
+        let letter = key.strip_prefix("alt-")?;
+        letter.chars().next().filter(|_| letter.chars().count() == 1)
+    });
+    *ALT_TAKEN.lock().unwrap_or_else(|err| err.into_inner()) = alt.collect();
     // GPUI Kit shows a command's last key, macOS's menu bar its first: there
     // the shortcut goes before the alternate.
     if cfg!(target_os = "macos") {
@@ -228,9 +234,28 @@ pub fn bind(keys: &KeySettings, before: Option<&KeySettings>, cx: &mut App) {
     cx.set_global(Installed(None));
 }
 
+/// Letters Alt has a command on: the menu bar's names take others.
+static ALT_TAKEN: std::sync::Mutex<Vec<char>> = std::sync::Mutex::new(Vec::new());
+
+/// Alt and a menu's letter opens that menu of `bar`.
+pub fn alt_letter(bar: &Entity<AppMenuBar>, event: &KeyDownEvent, window: &mut Window, cx: &mut App) {
+    if bar.update(cx, |bar, cx| bar.open_by_key(&event.keystroke, window, cx)) {
+        cx.stop_propagation();
+    }
+}
+
 pub fn init(cx: &mut App) {
     let icons = |action: &dyn Action| action.as_any().downcast_ref::<Run>().and_then(|Run(command)| menu_icon(*command)).map(Icon::new);
     cx.set_global(MenuIcons(Rc::new(icons)));
+    // macOS's menus have no letters to press.
+    #[cfg(not(target_os = "macos"))]
+    cx.set_global(gpui_kit::component::menu::MenuMnemonics(Rc::new(|labels, bar| {
+        let taken = match bar {
+            true => ALT_TAKEN.lock().unwrap_or_else(|err| err.into_inner()).clone(),
+            false => Vec::new(),
+        };
+        sc_core::menu::mnemonics(labels, &taken)
+    })));
     cx.on_action(|Run(command): &Run, cx| {
         if *command == Command::Quit {
             cx.quit()

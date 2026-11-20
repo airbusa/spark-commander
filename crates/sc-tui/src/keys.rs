@@ -56,9 +56,39 @@ pub fn name(key: &KeyEvent) -> Option<String> {
     Some(name)
 }
 
+/// A key as menus show it: `ctrl-shift-f4`, `Ctrl+Shift+F4`.
+pub fn shown(key: &str) -> String {
+    let mut parts = Vec::new();
+    let mut rest = key;
+    while let Some((modifier, after)) = rest.split_once('-').filter(|(modifier, after)| !after.is_empty() && ["ctrl", "alt", "shift", "cmd"].contains(modifier)) {
+        parts.push(format!("{}{}", modifier[..1].to_uppercase(), &modifier[1..]));
+        rest = after;
+    }
+    let base = match rest {
+        "pageup" => "PgUp".to_owned(),
+        "pagedown" => "PgDn".to_owned(),
+        "escape" => "Esc".to_owned(),
+        "add" => "Num +".to_owned(),
+        "subtract" => "Num -".to_owned(),
+        "multiply" => "Num *".to_owned(),
+        "divide" => "Num /".to_owned(),
+        _ => rest.chars().next().map(|first| first.to_uppercase().chain(rest.chars().skip(1)).collect()).unwrap_or_default(),
+    };
+    parts.push(base);
+    parts.join("+")
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn shows_keys_as_menus_do() {
+        assert_eq!(shown("ctrl-shift-f4"), "Ctrl+Shift+F4");
+        assert_eq!(shown("alt-d"), "Alt+D");
+        assert_eq!(shown("ctrl--"), "Ctrl+-");
+        assert_eq!(shown("pagedown"), "PgDn");
+    }
 
     fn named(code: KeyCode, modifiers: KeyModifiers) -> String {
         name(&KeyEvent::new(code, modifiers)).unwrap()

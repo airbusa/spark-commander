@@ -844,7 +844,9 @@ impl Render for TextEditor {
             .on_action(|_: &ToggleMinimap, _, cx| crate::toggle_minimap(cx))
             // macOS shows the menus on the system's menu bar.
             .when(!cfg!(target_os = "macos"), |el| {
-                el.child(div().px_1().border_b_1().border_color(theme.border).child(self.menu_bar.clone()))
+                let bar = self.menu_bar.clone();
+                el.on_key_down(move |event, window, cx| crate::menus::alt_letter(&bar, event, window, cx))
+                    .child(div().px_1().border_b_1().border_color(theme.border).child(self.menu_bar.clone()))
             })
             .child(match self.unfit {
                 Some((why, _)) => v_flex()

@@ -1,7 +1,6 @@
 //! Drawing, in Midnight Commander's colors: its default look in the terminal's
 //! own palette, so its theme decides the shades, or a skin's (see `skin`).
 
-use sc_core::menu::{MENUS, menu_label};
 use sc_core::t;
 use sc_core::{Entry, Panel, archive};
 use ratatui::Frame;
@@ -44,7 +43,10 @@ pub fn draw(frame: &mut Frame, app: &mut App) {
     let area = frame.area();
     app.places.keys = Rect::new(area.x, area.bottom().saturating_sub(1), area.width, 1);
     match app.viewer.as_mut() {
-        Some(viewer) => crate::viewer::draw(frame, viewer),
+        Some(viewer) => {
+            crate::viewer::draw(frame, viewer);
+            app.menus.hidden();
+        }
         None => draw_panels(frame, app),
     }
     if let Some(chooser) = &app.chooser {
@@ -68,25 +70,13 @@ fn draw_panels(frame: &mut Frame, app: &mut App) {
     .areas(frame.area());
     let halves: [Rect; 2] = Layout::horizontal([Constraint::Fill(1); 2]).areas(panels);
     let buf = frame.buffer_mut();
-    menu_bar(buf, menu);
     for (side, area) in halves.into_iter().enumerate() {
         app.places.rows[side] = panel(buf, area, app, side);
     }
     key_bar(buf, keys, &self::keys());
     command_line(frame, command, app);
-}
-
-fn menu_bar(buf: &mut Buffer, area: Rect) {
-    let menu = skin().menu;
-    buf.set_style(area, menu);
-    let labels: Vec<String> = MENUS.iter().map(|menu| menu_label(menu.label)).collect();
-    buf.set_stringn(
-        area.x + 1,
-        area.y,
-        labels.join("  "),
-        area.width.into(),
-        menu,
-    );
+    let screen = frame.area();
+    app.menus.draw(frame.buffer_mut(), menu, screen);
 }
 
 /// One side; gives the area of its file rows.

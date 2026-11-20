@@ -51,6 +51,9 @@ GPL.
 **Fitting in**
 - Key presets of Total Commander, Krusader, Midnight Commander and ForkLift;
   every shortcut can be changed (Configuration › Shortcuts).
+- Every menu and menu item has a letter to press (underlined): Alt and the
+  letter opens a menu, the letter alone picks in it, on Windows and Linux and
+  in scmd, whose F9 opens the same menus.
 - scmd wears Midnight Commander's skins, and two of its own, Pastel Night (the
   default) and Pastel Gray (`scmd -S pastel-gray`, or `"scmd_skin"` in the
   settings; `default` is mc's classic blue); they are mc skins too

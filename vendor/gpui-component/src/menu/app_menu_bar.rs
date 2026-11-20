@@ -1,7 +1,8 @@
 // Modified for Spark Commander (Apache-2.0, section 4b): menu-bar menus may
 // use the window's height. Changes are marked "SparkCommander patch".
 // Modified for SparkCommander: a bar of a window's own menus, each built as
-// it opens. Changes are marked "SparkCommander patch".
+// it opens; the menus' letters underlined, Alt+letter opening one (`open_by_key`).
+// Changes are marked "SparkCommander patch".
 
 use crate::{
     InteractiveElementExt as _, Selectable, Sizable,
@@ -11,6 +12,7 @@ use crate::{
     global_state::GlobalState,
     h_flex,
     menu::PopupMenu,
+    menu::popup_menu::{MenuMnemonics, hot_text, is_letter, typed_letter},
 };
 use gpui::{
     App, AppContext as _, ClickEvent, Context, DismissEvent, Entity, FocusHandle, Focusable,
@@ -41,6 +43,8 @@ pub fn init(cx: &mut App) {
 /// The application menu bar, for Windows and Linux.
 pub struct AppMenuBar {
     menus: Vec<Entity<AppMenu>>,
+    /// SparkCommander patch: the menus' names, for their letters.
+    names: Vec<SharedString>,
     selected_index: Option<usize>,
     action_context: Option<FocusHandle>,
 }
@@ -53,6 +57,7 @@ impl AppMenuBar {
                 selected_index: None,
                 action_context: None,
                 menus: Vec::new(),
+                names: Vec::new(),
             };
             this.reload(cx);
             this
@@ -63,8 +68,10 @@ impl AppMenuBar {
     pub fn built(menus: Vec<(SharedString, MenuBuilder)>, cx: &mut App) -> Entity<Self> {
         cx.new(|cx| {
             let menu_bar = cx.entity();
+            let names = menus.iter().map(|(name, _)| name.clone()).collect();
             let menus = menus.into_iter().enumerate();
             Self {
+                names,
                 selected_index: None,
                 action_context: None,
                 menus: menus
@@ -85,6 +92,7 @@ impl AppMenuBar {
             .iter()
             .cloned()
             .collect();
+        self.names = menus.iter().map(|menu| menu.name.clone()).collect();
         self.menus = menus
             .iter()
             .enumerate()
@@ -142,6 +150,24 @@ impl AppMenuBar {
 
         self.selected_index = ix;
         cx.notify();
+    }
+
+    /// SparkCommander patch: the menus' names as shown and their letters; none without a `MenuMnemonics`.
+    fn hot(&self, cx: &App) -> Vec<(String, Option<usize>)> {
+        let Some(mnemonics) = cx.try_global::<MenuMnemonics>() else { return Vec::new() };
+        (mnemonics.0)(&self.names.iter().map(|name| name.as_ref()).collect::<Vec<_>>(), true)
+    }
+
+    /// SparkCommander patch: Alt and a menu's letter opens it; whether one did.
+    pub fn open_by_key(&mut self, keystroke: &gpui::Keystroke, window: &mut Window, cx: &mut Context<Self>) -> bool {
+        let held = keystroke.modifiers;
+        if !held.alt || held.control || held.platform || held.function || held.shift {
+            return false;
+        }
+        let Some(letter) = typed_letter(keystroke) else { return false };
+        let Some(ix) = self.hot(cx).iter().position(|(shown, at)| is_letter(shown, *at, letter)) else { return false };
+        self.set_selected_index(Some(ix), window, cx);
+        true
     }
 
     #[inline]
@@ -225,13 +251,13 @@ impl AppMenu {
                     Items::App(menu) => {
                         let items = menu.items.clone();
                         PopupMenu::build(window, cx, |menu, window, cx| {
-                            menu.with_menu_items(items, window, cx).max_h(max_height)
+                            menu.mnemonics(true).with_menu_items(items, window, cx).max_h(max_height)
                         })
                     }
                     Items::Built(build) => {
                         let build = build.clone();
                         PopupMenu::build(window, cx, move |menu, window, cx| {
-                            build(menu, window, cx).max_h(max_height)
+                            build(menu.mnemonics(true), window, cx).max_h(max_height)
                         })
                     }
                 };
@@ -324,6 +350,8 @@ impl Render for AppMenu {
         // SparkCommander patch: an open menu's name in the accent, as KDE's; Windows 11's
         // the faint fill of the item under the pointer.
         let fluent = cx.try_global::<crate::NativeControls>().is_some_and(|native| native.card.is_some());
+        // SparkCommander patch: the name with its letter underlined.
+        let hot = self.menu_bar.read(cx).hot(cx).into_iter().nth(self.ix);
         let theme = cx.theme();
         let colors = ButtonCustomVariant::new(cx)
             .color(theme.transparent)
@@ -342,7 +370,10 @@ impl Render for AppMenu {
                     .py_0p5()
                     .compact()
                     .with_variant(ButtonVariant::Custom(colors))
-                    .label(self.name.clone())
+                    .map(|button| match hot {
+                        Some((shown, at)) => button.child(hot_text(shown.into(), at)),
+                        None => button.label(self.name.clone()),
+                    })
                     .open(is_open)
                     .on_mouse_down(
                         MouseButton::Left,
@@ -404,6 +435,7 @@ mod tests {
             TestRoot {
                 menu_bar: cx.new(|_| AppMenuBar {
                     menus: Vec::new(),
+                    names: Vec::new(),
                     selected_index: None,
                     action_context: None,
                 }),

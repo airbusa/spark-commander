@@ -2851,7 +2851,8 @@ impl Render for Commander {
             .text_sm()
             .children(header)
             .when(menu_bar, |el| {
-                el.child(
+                let bar = self.menu_bar.clone();
+                el.on_key_down(move |event, window, cx| menus::alt_letter(&bar, event, window, cx)).child(
                     div()
                         .bg(self.colors.bar)
                         .border_b_1()

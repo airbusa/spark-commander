@@ -49,7 +49,7 @@ impl Commander {
             .dropdown_menu_with_anchor(Anchor::TopRight, move |menu, window, cx| {
                 // The menu bar's menus, as they are now; their commands go to the panels.
                 let menus = GlobalState::global(cx).app_menus().to_vec();
-                menus.into_iter().fold(menu.action_context(focus.clone()), |menu, top| {
+                menus.into_iter().fold(menu.action_context(focus.clone()).mnemonics(true), |menu, top| {
                     let items = top.items;
                     menu.submenu(top.name, window, cx, move |menu, window, cx| {
                         menu.with_menu_items(items.clone(), window, cx)

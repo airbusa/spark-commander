@@ -3,7 +3,8 @@
 // Modified for SparkCommander: menus take the window's height, scroll only
 // past it and show no scrollbar; `with_menu_items` is public; a submenu may
 // run an action of its own when clicked; app menus' items take icons from a
-// `MenuIcons` global; icons are 16 px. Changes are marked "SparkCommander patch".
+// `MenuIcons` global; icons are 16 px; app menus' items have letters to press
+// (underlined), from a `MenuMnemonics` global. Changes are marked "SparkCommander patch".
 
 use crate::ThemeStyled as _;
 use crate::actions::{Cancel, Confirm, SelectDown, SelectUp};
@@ -28,6 +29,37 @@ const CONTEXT: &str = "PopupMenu";
 pub struct MenuIcons(pub Rc<dyn Fn(&dyn Action) -> Option<Icon>>);
 
 impl gpui::Global for MenuIcons {}
+
+/// SparkCommander patch: the letters of a menu's labels, as the app chooses (`true`:
+/// the menu bar's): each label as shown and its letter's char index.
+pub struct MenuMnemonics(pub Rc<dyn Fn(&[&str], bool) -> Vec<(String, Option<usize>)>>);
+
+impl gpui::Global for MenuMnemonics {}
+
+/// SparkCommander patch: `shown`, its letter at char `at` underlined.
+pub(crate) fn hot_text(shown: SharedString, at: Option<usize>) -> AnyElement {
+    let Some((start, letter)) = at.and_then(|at| shown.char_indices().nth(at)) else {
+        return shown.into_any_element();
+    };
+    let underline = gpui::HighlightStyle {
+        underline: Some(gpui::UnderlineStyle { thickness: px(1.), ..Default::default() }),
+        ..Default::default()
+    };
+    gpui::StyledText::new(shown).with_highlights([(start..start + letter.len_utf8(), underline)]).into_any_element()
+}
+
+/// SparkCommander patch: the letter a key types, lower case.
+pub(crate) fn typed_letter(keystroke: &gpui::Keystroke) -> Option<char> {
+    let one = |text: &str| {
+        let mut chars = text.chars();
+        chars.next().filter(|_| chars.next().is_none())
+    };
+    keystroke.key_char.as_deref().and_then(one).or_else(|| one(&keystroke.key)).and_then(|c| c.to_lowercase().next())
+}
+
+pub(crate) fn is_letter(shown: &str, at: Option<usize>, letter: char) -> bool {
+    at.and_then(|at| shown.chars().nth(at)).and_then(|c| c.to_lowercase().next()) == Some(letter)
+}
 
 pub fn init(cx: &mut App) {
     cx.bind_keys([
@@ -340,6 +372,11 @@ pub struct PopupMenu {
     /// reaches it, while the scroll offset is still baked into its anchor.
     priority: usize,
 
+    /// SparkCommander patch: whether its items have letters (an app menu's, its submenus'
+    /// too), and each item's label as shown with its letter, as last drawn.
+    mnemonics: bool,
+    hot: Vec<(SharedString, Option<usize>)>,
+
     _subscriptions: Vec<Subscription>,
 }
 
@@ -363,6 +400,8 @@ impl PopupMenu {
             size: Size::default(),
             submenu_anchor: (Anchor::TopLeft, Pixels::ZERO),
             priority: gpui_base::POPUP_PRIORITY,
+            mnemonics: false,
+            hot: Vec::new(),
             _subscriptions: vec![],
         }
     }
@@ -373,6 +412,36 @@ impl PopupMenu {
         f: impl FnOnce(Self, &mut Window, &mut Context<PopupMenu>) -> Self,
     ) -> Entity<Self> {
         cx.new(|cx| f(Self::new(cx), window, cx))
+    }
+
+    /// SparkCommander patch: its items (and its submenus') get letters to press, underlined.
+    pub fn mnemonics(mut self, on: bool) -> Self {
+        self.mnemonics = on;
+        self
+    }
+
+    fn mnemonics_on(&self, cx: &App) -> bool {
+        self.mnemonics || self.parent_menu.as_ref().and_then(|parent| parent.upgrade()).is_some_and(|parent| parent.read(cx).mnemonics_on(cx))
+    }
+
+    /// SparkCommander patch: the item with the letter typed, as a click on it (a submenu opens).
+    fn on_letter(&mut self, event: &gpui::KeyDownEvent, window: &mut Window, cx: &mut Context<Self>) {
+        let held = event.keystroke.modifiers;
+        if held.control || held.alt || held.platform || held.function {
+            return;
+        }
+        let Some(letter) = typed_letter(&event.keystroke) else { return };
+        let Some(ix) = self.hot.iter().position(|(shown, at)| is_letter(shown, *at, letter)) else { return };
+        cx.stop_propagation();
+        match self.menu_items.get(ix) {
+            Some(PopupMenuItem::Submenu { disabled: false, action: None, .. }) => {
+                self.set_selected_index(ix, cx);
+                self._select_submenu(window, cx);
+            }
+            Some(PopupMenuItem::Submenu { disabled: false, action: Some(_), .. }) => self.on_click(ix, window, cx),
+            Some(item) if item.is_clickable() => self.on_click(ix, window, cx),
+            _ => {}
+        }
     }
 
     /// Set the focus handle of Entity to handle actions.
@@ -1342,6 +1411,14 @@ impl PopupMenu {
         };
     }
 
+    /// SparkCommander patch: item `ix`'s label, its letter underlined if it has one.
+    fn hot_label(&self, ix: usize, label: &SharedString) -> AnyElement {
+        match self.hot.get(ix) {
+            Some((shown, at)) => hot_text(shown.clone(), *at),
+            None => label.clone().into_any_element(),
+        }
+    }
+
     fn render_item(
         &self,
         ix: usize,
@@ -1490,7 +1567,7 @@ impl PopupMenu {
                         .gap_3()
                         .items_center()
                         .justify_between()
-                        .when(!show_link_icon, |this| this.child(label.clone()))
+                        .when(!show_link_icon, |this| this.child(self.hot_label(ix, label)))
                         .children(right_check_icon)
                         .when(show_link_icon, |this| {
                             this.child(
@@ -1548,7 +1625,7 @@ impl PopupMenu {
                                 .gap_2()
                                 .items_center()
                                 .justify_between()
-                                .child(label.clone())
+                                .child(self.hot_label(ix, label))
                                 .child(
                                     h_flex()
                                         .gap_2()
@@ -1630,6 +1707,19 @@ impl Render for PopupMenu {
         let view = cx.entity().clone();
         let items_count = self.menu_items.len();
 
+        // SparkCommander patch: the items' letters, as the app chooses them.
+        let mnemonics = cx.try_global::<MenuMnemonics>().filter(|_| self.mnemonics_on(cx)).map(|mnemonics| mnemonics.0.clone());
+        self.hot = match mnemonics {
+            Some(mnemonics) => {
+                let labels: Vec<&str> = self.menu_items.iter().map(|item| match item {
+                    PopupMenuItem::Item { label, .. } | PopupMenuItem::Submenu { label, .. } => label.as_ref(),
+                    _ => "",
+                }).collect();
+                mnemonics(&labels, false).into_iter().map(|(shown, at)| (shown.into(), at)).collect()
+            }
+            None => Vec::new(),
+        };
+
         // SparkCommander patch: the window's height (upstream: half of it, at most 450px).
         let max_height = self
             .max_height
@@ -1659,6 +1749,7 @@ impl Render for PopupMenu {
             .on_action(cx.listener(Self::select_right))
             .on_action(cx.listener(Self::confirm))
             .on_action(cx.listener(Self::dismiss))
+            .when(!self.hot.is_empty(), |this| this.on_key_down(cx.listener(Self::on_letter)))
             .on_mouse_down_out(cx.listener(Self::on_mouse_down_out))
             .popover_style(cx)
             .text_color(cx.theme().popover_foreground)

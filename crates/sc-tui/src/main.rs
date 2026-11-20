@@ -4,6 +4,7 @@
 mod dialog;
 mod input;
 mod keys;
+mod menu;
 mod picture;
 mod skin;
 #[cfg(unix)]
@@ -104,6 +105,23 @@ enum Foreground {
 /// The window's own: scmd has one shell, Ctrl+O's.
 const NOT_HERE: [Command; 1] = [Command::NewTerminal];
 
+/// What scmd cannot do yet: its message's `what` (see `not_yet`); F9's menus dim these.
+fn lacks(command: Command) -> Option<&'static str> {
+    use Command::*;
+    match command {
+        Copy | Move | NewFolder | Delete | DeletePermanently | CopyToClipboard | CutToClipboard | PasteFromClipboard => Some("file_operations"),
+        ConnectToServer => Some("servers"),
+        Quit | ToggleMark | MarkInPlace | SelectAll | UnselectAll | InvertSelection | SortByName | SortByExtension | SortByTime
+        | SortBySize | Unsorted | ReversedOrder | RereadSource | SyncBrowsing | SelectGroup | UnselectGroup | SelectAllWithSameExtension
+        | SaveSelection | RestoreSelection | CompareDirectories | MarkNewerHideSame | GoBack | GoForward | BranchView | BranchViewSelected
+        | GoHome | DuplicateTab | LockTab | CloseTab | NextTab | PreviousTab | CloseAllTabs | CloseDuplicateTabs | TerminalPanel | View
+        | Edit | EditExternally | Disconnect | Bookmarks | ManageBookmarks | SidebarConnections | BookmarkFolder | ManageWorkspaces
+        | NewWorkspace | DuplicateWorkspace => None,
+        command if command.workspace().is_some() => None,
+        _ => Some("command"),
+    }
+}
+
 pub struct App {
     pub sides: [Side; 2],
     pub active: usize,
@@ -117,6 +135,8 @@ pub struct App {
     pub chooser: Option<Chooser>,
     /// What runs meanwhile, as connecting: told on the command line's row.
     pub busy: Option<String>,
+    /// F9's.
+    pub menus: menu::Menus,
     /// Named sets of both sides' tabs, scmd's own; the open one is the tabs shown.
     workspaces: Workspaces,
     /// Keys as the terminal names them; Cmd never reaches it, so `secondary` is Ctrl.
@@ -281,6 +301,7 @@ impl App {
             form: None,
             chooser: None,
             busy: None,
+            menus: menu::Menus::default(),
             workspaces: Workspaces::default(),
             bindings,
             clicked: None,
@@ -301,7 +322,35 @@ impl App {
             );
             app.navigate_on(ix, move |panel| panel.go_to_folder(folder));
         }
+        app.make_menus();
         app
+    }
+
+    /// F9's menus as they are now: the workspaces', the keys'.
+    fn make_menus(&mut self) {
+        let alone = |rest: &str| rest.chars().next().filter(|_| rest.chars().count() == 1);
+        let alt = self.bindings.keys().filter_map(|key| key.strip_prefix("alt-").and_then(alone));
+        // Alt+1 to Alt+9 are the tabs'.
+        let taken: Vec<char> = alt.chain('1'..='9').collect();
+        let names: Vec<String> = self.workspaces.list.iter().map(|workspace| workspace.name.clone()).collect();
+        let keys = &self.settings.keys;
+        let key_of = |command| {
+            let key = keys.keys_of(command).into_iter().find(|key| !key.is_empty());
+            key.map(|key| keys::shown(&keymap::normalize(&key, false))).unwrap_or_default()
+        };
+        let works = |command| lacks(command).is_none();
+        let making = menu::Making { works: &works, key_of: &key_of, hidden: &NOT_HERE, workspaces: &names, taken: &taken };
+        self.menus.make(&making);
+    }
+
+    fn picked(&mut self, picked: menu::Picked) {
+        match picked {
+            menu::Picked::Command(command) => self.command(command),
+            menu::Picked::Workspace(ix) => {
+                self.open_workspace(ix);
+                self.save_session();
+            }
+        }
     }
 
     fn run(&mut self, terminal: &mut DefaultTerminal) -> io::Result<()> {
@@ -743,6 +792,12 @@ impl App {
             let choice = chooser.key(&key);
             return self.chose(choice);
         }
+        if self.menus.is_open() {
+            if let Some(picked) = self.menus.key(&key) {
+                self.picked(picked);
+            }
+            return;
+        }
         if self.viewer.is_some() {
             return self.viewer_key(key);
         }
@@ -764,7 +819,10 @@ impl App {
             }
             KeyCode::Esc => return self.command.clear(),
             KeyCode::F(10) if plain => return self.quit = true,
-            KeyCode::F(9) if plain => return self.not_yet("menus"),
+            KeyCode::F(9) if plain => {
+                self.make_menus();
+                return self.menus.open(0);
+            }
             // As in Midnight Commander, with nothing typed: groups and inverting.
             KeyCode::Char('+') if !typing && plain => return self.command(Command::SelectGroup),
             KeyCode::Char('-') if !typing && plain => return self.command(Command::UnselectGroup),
@@ -798,6 +856,15 @@ impl App {
         {
             return self.command(command);
         }
+        // An Alt+letter no command has: the menu with that letter.
+        if key.modifiers == KeyModifiers::ALT
+            && let KeyCode::Char(letter) = key.code
+        {
+            self.make_menus();
+            if self.menus.open_by_letter(letter) {
+                return;
+            }
+        }
         self.command.handle(&key);
     }
 
@@ -813,10 +880,19 @@ impl App {
             }
             return;
         }
-        if self.form.is_some() {
+        if self.form.is_some() || self.chooser.is_some() {
             return;
         }
         let at = ratatui::layout::Position::new(mouse.column, mouse.row);
+        if self.menus.is_open() || self.menus.on_bar(at) {
+            if !self.menus.is_open() && matches!(mouse.kind, MouseEventKind::Down(_)) {
+                self.make_menus();
+            }
+            if let Some(picked) = self.menus.mouse(&mouse) {
+                self.picked(picked);
+            }
+            return;
+        }
         // A click on the key bar presses that key.
         if let MouseEventKind::Down(MouseButton::Left) = mouse.kind
             && self.places.keys.contains(at)
@@ -870,6 +946,9 @@ impl App {
     }
 
     fn command(&mut self, command: Command) {
+        if let Some(what) = lacks(command) {
+            return self.not_yet(what);
+        }
         let side = self.active;
         match command {
             Command::Quit => self.quit = true,
@@ -953,15 +1032,6 @@ impl App {
             Command::View => self.view(),
             Command::Edit => self.edit(),
             Command::EditExternally => self.edit_externally(),
-            Command::Copy
-            | Command::Move
-            | Command::NewFolder
-            | Command::Delete
-            | Command::DeletePermanently
-            | Command::CopyToClipboard
-            | Command::CutToClipboard
-            | Command::PasteFromClipboard => self.not_yet("file_operations"),
-            Command::ConnectToServer => self.not_yet("servers"),
             Command::Disconnect => {
                 if self.panel().remote().is_some() {
                     let home = std::env::home_dir().unwrap_or_else(|| "/".into());
@@ -978,7 +1048,7 @@ impl App {
                 self.open_workspace(command.workspace().unwrap_or(0));
                 self.save_session();
             }
-            _ => self.not_yet("command"),
+            _ => {}
         }
     }
 
@@ -997,7 +1067,7 @@ impl App {
     }
 
     // shortcut: the commands the terminal lacks say so; they come step by step.
-    /// `what`: menus, file_operations, servers or command.
+    /// `what`: file_operations, servers or command.
     fn not_yet(&mut self, what: &str) {
         self.say(t!("scmd.not_yet", what = what), false);
     }

@@ -1,19 +1,18 @@
 # Patched third-party crates
 
-Copied as is from Water Data Studio's `vendor/` (WDS = Water Data Studio), so
-both apps share one set of GPUI Kit patches; keep them in step.
+Third-party crates with Spark Commander's changes.
 
 ## gpui-component 0.7.3 (GPUI Kit)
 
-`gpui-component/` is the published crate from crates.io with WDS's changes,
+`gpui-component/` is the published crate from crates.io with Spark Commander's changes,
 wired in through `[patch.crates-io]` in the workspace `Cargo.toml`. License:
 Apache-2.0 (`gpui-component/LICENSE-APACHE`). Each modified file starts with
-a notice, and every change is marked `WDS patch`.
+a notice, and every change is marked `SparkCommander patch`.
 
 | File | Change |
 |---|---|
 | `src/dialog/dialog.rs` | a dialog moves by dragging its title; `Dialog::center_over` opens it centred over part of the window (the work area a message is about); dialogs fade in where they open instead of sliding down; SparkCommander patch: the title is small text (`text_sm`, upstream `text_base`) and a long one ends in "…" instead of running under the close button; the default Cancel button takes its label from a `CancelLabel` global, which the app sets to its own translation (GPUI Kit's is in English, Chinese and Italian only) |
-| `src/highlighter/mod.rs`, `src/highlighter/input_adapter.rs` | `input_highlighter_factory` is public, so the app can wrap the editor's tree-sitter highlighter (WDS highlights `GO`-separated batches); a background parse asked for no folds leaves the fold candidates alone instead of clearing them, so the app can give its own |
+| `src/highlighter/mod.rs`, `src/highlighter/input_adapter.rs` | `input_highlighter_factory` is public, so the app can wrap the editor's tree-sitter highlighter; a background parse asked for no folds leaves the fold candidates alone instead of clearing them, so the app can give its own |
 | `src/input/popovers/completion_menu.rs` | the completion menu is as wide as `CompletionMenuOptions::max_width`; sized to its first measured item, it stayed too narrow for later items |
 | `src/kbd.rs` | a key binding of several keystrokes (a chord, Ctrl+K Ctrl+0) shows them all, not only the first; SparkCommander patch: the numpad's `add`, `subtract`, `multiply`, `divide` show as Num +, Num -, Num *, Num / |
 | `src/list/list.rs` | `ListState::confirm_on_double_click`: a click only selects, a double click or Enter confirms |
@@ -50,7 +49,7 @@ a notice, and every change is marked `WDS patch`.
 ## gpui-pre-linux 0.3.9 (GPUI's Linux platform)
 
 `gpui-pre-linux/` is GPUI's Linux backend from crates.io, SparkCommander's
-own patch (not from WDS), wired in the same way. License: Apache-2.0
+own patch, wired in the same way. License: Apache-2.0
 (`gpui-pre-linux/LICENSE-APACHE`). `gpui-pre-linux.patch` holds the full
 diff against upstream; every change is marked `SparkCommander patch`.
 

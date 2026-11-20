@@ -1,6 +1,6 @@
-// Modified for Water Data Studio (Apache-2.0, section 4b): the completion
+// Modified for Spark Commander (Apache-2.0, section 4b): the completion
 // menu is as wide as the editor's configured width. Changes are marked
-// "WDS patch".
+// "SparkCommander patch".
 
 use std::rc::Rc;
 
@@ -393,7 +393,7 @@ impl Render for CompletionMenu {
                     .child(
                         editor_popover("completion-menu", cx)
                             .test_support()
-                            // WDS patch: a fixed width; the list keeps the
+                            // SparkCommander patch: a fixed width; the list keeps the
                             // width it measured for the first items.
                             .w(max_width)
                             .child(List::new(&list).max_h(MAX_MENU_HEIGHT)),

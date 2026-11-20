@@ -1,5 +1,5 @@
-// Modified for Water Data Studio (Apache-2.0, section 4b): menu-bar menus may
-// use the window's height. Changes are marked "WDS patch".
+// Modified for Spark Commander (Apache-2.0, section 4b): menu-bar menus may
+// use the window's height. Changes are marked "SparkCommander patch".
 // Modified for SparkCommander: a bar of a window's own menus, each built as
 // it opens. Changes are marked "SparkCommander patch".
 
@@ -218,7 +218,7 @@ impl AppMenu {
         let action_context = self.menu_bar.read(cx).action_context.clone();
         let popup_menu = match self.popup_menu.as_ref() {
             None => {
-                // WDS patch: room for long menus (the default limit is half the
+                // SparkCommander patch: room for long menus (the default limit is half the
                 // window, at most 450px).
                 let max_height = window.viewport_size().height - px(48.);
                 let popup_menu = match &self.items {

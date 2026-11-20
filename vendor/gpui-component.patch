@@ -683,9 +683,9 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
 --- a/src/dialog/dialog.rs	2006-07-24 03:21:28.000000000 +0200
 +++ b/src/dialog/dialog.rs	2026-11-19 19:20:34.635203283 +0100
 @@ -1,13 +1,20 @@
-+// Modified for Water Data Studio (Apache-2.0, section 4b): a dialog moves by
++// Modified for Spark Commander (Apache-2.0, section 4b): a dialog moves by
 +// its title, can open centred over a part of the window, and fades in
-+// without sliding. Changes are marked "WDS patch".
++// without sliding. Changes are marked "SparkCommander patch".
 +// Modified for SparkCommander: the title is smaller and ends in "…" when
 +// long; on macOS the frame is a window's. Changes are marked "SparkCommander patch".
 +
@@ -712,10 +712,10 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
  type CancelHandler = Rc<dyn Fn(&ClickEvent, &mut Window, &mut App) -> bool + 'static>;
  type CloseHandler = Rc<dyn Fn(&ClickEvent, &mut Window, &mut App) + 'static>;
  
-+/// WDS patch: how tall the band with the title is.
++/// SparkCommander patch: how tall the band with the title is.
 +const TITLE_BAND_HEIGHT: f32 = 40.;
 +
-+/// WDS patch: where a dialog moved by its title is, kept across frames.
++/// SparkCommander patch: where a dialog moved by its title is, kept across frames.
 +#[derive(Default)]
 +struct DialogMove {
 +    /// The top left corner it was moved to.
@@ -809,7 +809,7 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
      width: Pixels,
      max_width: Option<Pixels>,
      margin_top: Option<Pixels>,
-+    // WDS patch: where the dialog opens centred.
++    // SparkCommander patch: where the dialog opens centred.
 +    center_over: Option<Bounds<Pixels>>,
      close_button: bool,
  
@@ -827,7 +827,7 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
              close_button: true,
              overlay_closable: true,
 -            entrance: DialogEntrance::default(),
-+            // WDS patch: a dialog fades in where it opens, without sliding.
++            // SparkCommander patch: a dialog fades in where it opens, without sliding.
 +            entrance: DialogEntrance::Fade,
          }
      }
@@ -888,7 +888,7 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
          self
      }
  
-+    /// WDS patch: opens the dialog centred over `bounds`, in window
++    /// SparkCommander patch: opens the dialog centred over `bounds`, in window
 +    /// coordinates, instead of at `margin_top`.
 +    pub fn center_over(mut self, bounds: Bounds<Pixels>) -> Self {
 +        self.props.center_over = Some(bounds);
@@ -902,7 +902,7 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
  
          let layer_ix = self.layer_ix;
          let selection_scope = self.selection_scope;
-+        // WDS patch: where the dialog was moved to.
++        // SparkCommander patch: where the dialog was moved to.
 +        let moving = window
 +            .use_keyed_state(("dialog-move", layer_ix), cx, |_, _| {
 +                Rc::new(DialogMove::default())
@@ -916,7 +916,7 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
          let base_size = window.text_style().font_size;
          let rem_size = window.rem_size();
  
-+        // WDS patch: moved, the dialog stays where it was put; else centred
++        // SparkCommander patch: moved, the dialog stays where it was put; else centred
 +        // over `center_over`, else at `margin_top`.
 +        let placed = moving.origin.get().is_some() || self.props.center_over.is_some();
 +        let (anchor, position) = match (moving.origin.get(), self.props.center_over) {
@@ -961,7 +961,7 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
                                  gpui_base::Positioner::corner(
 -                                    Anchor::TopLeft,
 -                                    point(window_paddings.left + x, window_paddings.top + y),
-+                                    // WDS patch: see `moving`.
++                                    // SparkCommander patch: see `moving`.
 +                                    anchor, position,
                                  )
 +                                .on_position(move |resolved| {
@@ -989,14 +989,14 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
                                          .pb(paddings.bottom)
                                          .gap(paddings.top.max(px(8.)))
                                          .refine_style(&self.style)
-+                                        // WDS patch: the title's band is at the top.
++                                        // SparkCommander patch: the title's band is at the top.
 +                                        .when(has_title, |this| this.pt_0())
                                          .px_0()
                                          .occlude()
                                          .w(width)
                                          .when_some(self.props.max_width, |this, w| this.max_w(w))
                                          .max_h(max_height)
-+                                        // WDS patch: the title is in a band, which
++                                        // SparkCommander patch: the title is in a band, which
 +                                        // shows where the dialog is moved by.
 +                                        .when_some(self.title, |this, title| {
 +                                            let moving = moving.clone();
@@ -1079,7 +1079,7 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
 +                                        .when(command_bar.is_some() && has_footer, |this| this.pb_0())
                                          .children(self.props.close_button.then(|| {
 -                                            let top = (paddings.top - px(10.)).max(px(8.));
-+                                            // WDS patch: in the middle of the title's band.
++                                            // SparkCommander patch: in the middle of the title's band.
 +                                            let top = if has_title {
 +                                                (band - px(24.)) / 2.
 +                                            } else {
@@ -1142,7 +1142,7 @@ diff -ruN a/src/dialog/dialog.rs b/src/dialog/dialog.rs
      }
  }
  
-+/// WDS patch: follows the mouse anywhere in the window while the dialog is
++/// SparkCommander patch: follows the mouse anywhere in the window while the dialog is
 +/// held by its title.
 +fn move_listener(moving: Rc<DialogMove>) -> impl IntoElement {
 +    canvas(
@@ -1236,9 +1236,9 @@ diff -ruN a/src/highlighter/input_adapter.rs b/src/highlighter/input_adapter.rs
 --- a/src/highlighter/input_adapter.rs	2006-07-24 03:21:28.000000000 +0200
 +++ b/src/highlighter/input_adapter.rs	2026-11-17 17:18:36.159863187 +0100
 @@ -1,3 +1,7 @@
-+// Modified for Water Data Studio (Apache-2.0, section 4b): the highlighter
++// Modified for Spark Commander (Apache-2.0, section 4b): the highlighter
 +// factory is public, and a background parse leaves the fold candidates alone
-+// when folding is not asked of it. Changes are marked "WDS patch".
++// when folding is not asked of it. Changes are marked "SparkCommander patch".
 +
  use std::{
      cell::RefCell,
@@ -1248,7 +1248,7 @@ diff -ruN a/src/highlighter/input_adapter.rs b/src/highlighter/input_adapter.rs
  use super::{LanguageRegistry, SyntaxHighlighter, highlighter::parse_input_bytes};
  
 -pub(crate) fn input_highlighter_factory() -> InputHighlighterFactory {
-+/// WDS patch: public, was pub(crate).
++/// SparkCommander patch: public, was pub(crate).
 +pub fn input_highlighter_factory() -> InputHighlighterFactory {
      Rc::new(|language| {
          LanguageRegistry::singleton().has_parser(language).then(|| {
@@ -1260,7 +1260,7 @@ diff -ruN a/src/highlighter/input_adapter.rs b/src/highlighter/input_adapter.rs
 -                let _ = entity.update(cx, |state, cx| {
 -                    state.apply_highlighter_fold_candidates(folds, cx);
 -                });
-+                // WDS patch: without folding, the folds are someone else's.
++                // SparkCommander patch: without folding, the folds are someone else's.
 +                if folding {
 +                    let _ = entity.update(cx, |state, cx| {
 +                        state.apply_highlighter_fold_candidates(folds, cx);
@@ -1273,9 +1273,9 @@ diff -ruN a/src/highlighter/mod.rs b/src/highlighter/mod.rs
 --- a/src/highlighter/mod.rs	2006-07-24 03:21:28.000000000 +0200
 +++ b/src/highlighter/mod.rs	2026-11-17 17:18:36.161692474 +0100
 @@ -1,3 +1,7 @@
-+// Modified for Water Data Studio (Apache-2.0, section 4b): the editor's
++// Modified for Spark Commander (Apache-2.0, section 4b): the editor's
 +// highlighter factory is public, so an app can wrap it. Changes are marked
-+// "WDS patch".
++// "SparkCommander patch".
 +
  mod language_name;
  pub use gpui_base::input::{
@@ -1284,7 +1284,7 @@ diff -ruN a/src/highlighter/mod.rs b/src/highlighter/mod.rs
  
  #[cfg(feature = "tree-sitter")]
  mod input_adapter;
-+// WDS patch: public, was pub(crate).
++// SparkCommander patch: public, was pub(crate).
  #[cfg(feature = "tree-sitter")]
 -pub(crate) use input_adapter::input_highlighter_factory;
 +pub use input_adapter::input_highlighter_factory;
@@ -1363,9 +1363,9 @@ diff -ruN a/src/input/popovers/completion_menu.rs b/src/input/popovers/completio
 --- a/src/input/popovers/completion_menu.rs	2006-07-24 03:21:28.000000000 +0200
 +++ b/src/input/popovers/completion_menu.rs	2026-11-17 17:18:36.164181870 +0100
 @@ -1,3 +1,7 @@
-+// Modified for Water Data Studio (Apache-2.0, section 4b): the completion
++// Modified for Spark Commander (Apache-2.0, section 4b): the completion
 +// menu is as wide as the editor's configured width. Changes are marked
-+// "WDS patch".
++// "SparkCommander patch".
 +
  use std::rc::Rc;
  
@@ -1376,7 +1376,7 @@ diff -ruN a/src/input/popovers/completion_menu.rs b/src/input/popovers/completio
                              .test_support()
 -                            .max_w(max_width)
 -                            .min_w(px(120.))
-+                            // WDS patch: a fixed width; the list keeps the
++                            // SparkCommander patch: a fixed width; the list keeps the
 +                            // width it measured for the first items.
 +                            .w(max_width)
                              .child(List::new(&list).max_h(MAX_MENU_HEIGHT)),
@@ -1386,8 +1386,8 @@ diff -ruN a/src/kbd.rs b/src/kbd.rs
 --- a/src/kbd.rs	2006-07-24 03:21:28.000000000 +0200
 +++ b/src/kbd.rs	2026-11-17 17:18:36.165368215 +0100
 @@ -1,3 +1,8 @@
-+// Modified for Water Data Studio (Apache-2.0, section 4b): a binding of
-+// several keystrokes shows them all. Changes are marked "WDS patch".
++// Modified for Spark Commander (Apache-2.0, section 4b): a binding of
++// several keystrokes shows them all. Changes are marked "SparkCommander patch".
 +// Modified for SparkCommander: numpad keys show as "Num +", "Num -", "Num *"
 +// and "Num /". Changes are marked "SparkCommander patch".
 +
@@ -1398,7 +1398,7 @@ diff -ruN a/src/kbd.rs b/src/kbd.rs
  pub struct Kbd {
      style: StyleRefinement,
      stroke: Keystroke,
-+    /// WDS patch: the keystrokes after the first, of a chord as Ctrl+K, Ctrl+0.
++    /// SparkCommander patch: the keystrokes after the first, of a chord as Ctrl+K, Ctrl+0.
 +    then: Vec<Keystroke>,
      appearance: bool,
      outline: bool,
@@ -1430,12 +1430,12 @@ diff -ruN a/src/kbd.rs b/src/kbd.rs
 +            .iter()
 +            .map(|stroke| stroke.as_keystroke().clone());
 +        let mut kbd = Self::new(strokes.next()?);
-+        // WDS patch: the rest of a chord too.
++        // SparkCommander patch: the rest of a chord too.
 +        kbd.then = strokes.collect();
 +        Some(kbd)
 +    }
 +
-+    /// WDS patch: every keystroke, a chord's separated as the platform writes it.
++    /// SparkCommander patch: every keystroke, a chord's separated as the platform writes it.
 +    fn text(&self) -> String {
 +        #[cfg(target_os = "macos")]
 +        const BETWEEN: &str = " ";
@@ -1511,8 +1511,8 @@ diff -ruN a/src/list/list.rs b/src/list/list.rs
 --- a/src/list/list.rs	2006-07-24 03:21:28.000000000 +0200
 +++ b/src/list/list.rs	2026-11-17 17:18:36.166118029 +0100
 @@ -1,3 +1,6 @@
-+// Modified for Water Data Studio (Apache-2.0, section 4b): a list can take
-+// a single click as selecting only. Changes are marked "WDS patch".
++// Modified for Spark Commander (Apache-2.0, section 4b): a list can take
++// a single click as selecting only. Changes are marked "SparkCommander patch".
 +
  use instant::Duration;
  use std::ops::Range;
@@ -1521,7 +1521,7 @@ diff -ruN a/src/list/list.rs b/src/list/list.rs
      reset_on_cancel: bool,
      searchable: bool,
      selectable: bool,
-+    // WDS patch: a click selects, a double click confirms.
++    // SparkCommander patch: a click selects, a double click confirms.
 +    confirm_on_double_click: bool,
      _search_task: Task<()>,
      _load_more_task: Task<()>,
@@ -1538,7 +1538,7 @@ diff -ruN a/src/list/list.rs b/src/list/list.rs
          self
      }
  
-+    /// WDS patch: a click only selects; a double click or Enter confirms.
++    /// SparkCommander patch: a click only selects; a double click or Enter confirms.
 +    pub fn confirm_on_double_click(mut self, on: bool) -> Self {
 +        self.confirm_on_double_click = on;
 +        self
@@ -1551,7 +1551,7 @@ diff -ruN a/src/list/list.rs b/src/list/list.rs
                  this.on_click(cx.listener(move |this, e: &ClickEvent, window, cx| {
                      this.set_right_clicked_index(None, window, cx);
                      this.selected_index = Some(ix);
-+                    // WDS patch: see `confirm_on_double_click`.
++                    // SparkCommander patch: see `confirm_on_double_click`.
 +                    if this.confirm_on_double_click && e.click_count() < 2 {
 +                        this.delegate.set_selected_index(Some(ix), window, cx);
 +                        cx.notify();
@@ -1624,8 +1624,8 @@ diff -ruN a/src/menu/app_menu_bar.rs b/src/menu/app_menu_bar.rs
 --- a/src/menu/app_menu_bar.rs	2006-07-24 03:21:28.000000000 +0200
 +++ b/src/menu/app_menu_bar.rs	2026-11-20 09:49:27.110953400 +0100
 @@ -1,7 +1,13 @@
-+// Modified for Water Data Studio (Apache-2.0, section 4b): menu-bar menus may
-+// use the window's height. Changes are marked "WDS patch".
++// Modified for Spark Commander (Apache-2.0, section 4b): menu-bar menus may
++// use the window's height. Changes are marked "SparkCommander patch".
 +// Modified for SparkCommander: a bar of a window's own menus, each built as
 +// it opens. Changes are marked "SparkCommander patch".
 +
@@ -1726,7 +1726,7 @@ diff -ruN a/src/menu/app_menu_bar.rs b/src/menu/app_menu_bar.rs
 -                let popup_menu = PopupMenu::build(window, cx, |menu, window, cx| {
 -                    menu.with_menu_items(items, window, cx)
 -                });
-+                // WDS patch: room for long menus (the default limit is half the
++                // SparkCommander patch: room for long menus (the default limit is half the
 +                // window, at most 450px).
 +                let max_height = window.viewport_size().height - px(48.);
 +                let popup_menu = match &self.items {
@@ -2019,8 +2019,8 @@ diff -ruN a/src/menu/popup_menu.rs b/src/menu/popup_menu.rs
 --- a/src/menu/popup_menu.rs	2006-07-24 03:21:28.000000000 +0200
 +++ b/src/menu/popup_menu.rs	2026-11-19 08:42:44.470197925 +0100
 @@ -1,8 +1,14 @@
-+// Modified for Water Data Studio (Apache-2.0, section 4b): a long menu's
-+// scrollbar shows while it scrolls. Changes are marked "WDS patch".
++// Modified for Spark Commander (Apache-2.0, section 4b): a long menu's
++// scrollbar shows while it scrolls. Changes are marked "SparkCommander patch".
 +// Modified for SparkCommander: menus take the window's height, scroll only
 +// past it and show no scrollbar; `with_menu_items` is public; a submenu may
 +// run an action of its own when clicked; app menus' items take icons from a
@@ -2869,8 +2869,8 @@ diff -ruN a/src/root.rs b/src/root.rs
 --- a/src/root.rs	2006-07-24 03:21:28.000000000 +0200
 +++ b/src/root.rs	2026-11-17 17:18:36.170355756 +0100
 @@ -1,3 +1,6 @@
-+// Modified for Water Data Studio (Apache-2.0, section 4b): notifications paint
-+// above dialogs. Changes are marked "WDS patch".
++// Modified for Spark Commander (Apache-2.0, section 4b): notifications paint
++// above dialogs. Changes are marked "SparkCommander patch".
 +
  use crate::{
      ActiveTheme, ElementExt, Placement,
@@ -2941,7 +2941,7 @@ diff -ruN a/src/root.rs b/src/root.rs
              .children(WindowState::sheet_layer(root.clone(), window, cx))
              .children(WindowState::dialog_layer(&root, window, cx))
 -            .children(WindowState::notification_layer(&root, cx))
-+            // WDS patch: dialogs paint deferred (priority 10 + layer), so
++            // SparkCommander patch: dialogs paint deferred (priority 10 + layer), so
 +            // notifications must too, or every open dialog hides them. 90 keeps
 +            // them under popups (100) and tooltips (200).
 +            .children(
@@ -3418,8 +3418,8 @@ diff -ruN a/src/tab/tab_bar.rs b/src/tab/tab_bar.rs
 --- a/src/tab/tab_bar.rs	2006-07-24 03:21:28.000000000 +0200
 +++ b/src/tab/tab_bar.rs	2026-11-19 14:51:33.606877851 +0100
 @@ -1,3 +1,6 @@
-+// Modified for Water Data Studio (Apache-2.0, section 4b): the segmented
-+// indicator uses the active tab colour. Changes are marked "WDS patch".
++// Modified for Spark Commander (Apache-2.0, section 4b): the segmented
++// indicator uses the active tab colour. Changes are marked "SparkCommander patch".
 +
  use std::{cell::RefCell, rc::Rc};
  
@@ -3429,7 +3429,7 @@ diff -ruN a/src/tab/tab_bar.rs b/src/tab/tab_bar.rs
                          .w_full()
                          .h(inner_height)
 -                        .bg(cx.theme().tokens.background)
-+                        // WDS patch: the theme's active tab colour, not the background.
++                        // SparkCommander patch: the theme's active tab colour, not the background.
 +                        .bg(cx.theme().tokens.tab_active)
                          .rounded(inner_radius)
                          .shadow(raised_shadow()),
@@ -3537,11 +3537,11 @@ diff -ruN a/src/table/data_table.rs b/src/table/data_table.rs
 --- a/src/table/data_table.rs	2006-07-24 03:21:28.000000000 +0200
 +++ b/src/table/data_table.rs	2026-11-17 17:18:36.176677263 +0100
 @@ -1,5 +1,10 @@
-+// Modified for Water Data Studio (Apache-2.0, section 4b): optional lines
++// Modified for Spark Commander (Apache-2.0, section 4b): optional lines
 +// between columns; shift and an arrow extends a range of cells; no focus
-+// ring. Changes are marked "WDS patch".
++// ring. Changes are marked "SparkCommander patch".
 +
-+// WDS patch: no focus ring, so no `ThemeStyled`.
++// SparkCommander patch: no focus ring, so no `ThemeStyled`.
  use crate::{
 -    ActiveTheme, Sizable, Size, ThemeStyled as _,
 +    ActiveTheme, Sizable, Size,
@@ -3557,7 +3557,7 @@ diff -ruN a/src/table/data_table.rs b/src/table/data_table.rs
  };
  use gpui_base::TestSupportExt as _;
  
-+// WDS patch.
++// SparkCommander patch.
 +actions!(table, [ExtendUp, ExtendDown, ExtendLeft, ExtendRight]);
 +
  const CONTEXT: &'static str = "DataTable";
@@ -3578,7 +3578,7 @@ diff -ruN a/src/table/data_table.rs b/src/table/data_table.rs
      pub(super) size: Size,
      /// Height of each header row. `None` uses [`Size::table_row_height`].
      pub(super) header_row_height: Option<Pixels>,
-+    /// WDS patch: lines between columns.
++    /// SparkCommander patch: lines between columns.
 +    pub(super) column_lines: bool,
  }
  
@@ -3595,7 +3595,7 @@ diff -ruN a/src/table/data_table.rs b/src/table/data_table.rs
          self
      }
  
-+    /// WDS patch: draw a line between columns, default to false.
++    /// SparkCommander patch: draw a line between columns, default to false.
 +    pub fn column_lines(mut self, column_lines: bool) -> Self {
 +        self.options.column_lines = column_lines;
 +        self
@@ -3618,7 +3618,7 @@ diff -ruN a/src/table/data_table.rs b/src/table/data_table.rs
                      .border_1()
                      .border_color(cx.theme().border)
              })
-+            // WDS patch: no focus ring; the selected cell or row shows where
++            // SparkCommander patch: no focus ring; the selected cell or row shows where
 +            // the keys go.
              .child(self.state)
 -            // Clicking a row focuses the table too, so only keyboard focus
@@ -3633,8 +3633,8 @@ diff -ruN a/src/table/delegate.rs b/src/table/delegate.rs
 --- a/src/table/delegate.rs	2006-07-24 03:21:28.000000000 +0200
 +++ b/src/table/delegate.rs	2026-11-17 17:18:36.176811635 +0100
 @@ -1,7 +1,10 @@
-+// Modified for Water Data Studio (Apache-2.0, section 4b): a cell can have a
-+// context menu and a background of its own. Changes are marked "WDS patch".
++// Modified for Spark Commander (Apache-2.0, section 4b): a cell can have a
++// context menu and a background of its own. Changes are marked "SparkCommander patch".
 +
  use std::ops::Range;
  
@@ -3648,7 +3648,7 @@ diff -ruN a/src/table/delegate.rs b/src/table/delegate.rs
          menu
      }
  
-+    /// WDS patch: the context menu of the cell at the given row and column;
++    /// SparkCommander patch: the context menu of the cell at the given row and column;
 +    /// its row's, unless given.
 +    fn cell_context_menu(
 +        &mut self,
@@ -3661,7 +3661,7 @@ diff -ruN a/src/table/delegate.rs b/src/table/delegate.rs
 +        self.context_menu(row_ix, menu, window, cx)
 +    }
 +
-+    /// WDS patch: the background of the cell at the given row and column,
++    /// SparkCommander patch: the background of the cell at the given row and column,
 +    /// under the selection's.
 +    fn cell_background(&self, row_ix: usize, col_ix: usize, cx: &App) -> Option<Hsla> {
 +        None
@@ -3674,13 +3674,13 @@ diff -ruN a/src/table/state.rs b/src/table/state.rs
 --- a/src/table/state.rs	2006-07-24 03:21:28.000000000 +0200
 +++ b/src/table/state.rs	2026-11-17 17:18:36.177131752 +0100
 @@ -1,3 +1,11 @@
-+// Modified for Water Data Studio (Apache-2.0, section 4b): in cell selection,
++// Modified for Spark Commander (Apache-2.0, section 4b): in cell selection,
 +// the row header shows row numbers, and the selected cell's row number and
 +// column header are highlighted; a range of cells can be selected; cells have
 +// the row's context menu, or their own; lines between columns; a column sorts
 +// ascending first; clearing the selection clears the right-click; a cell can
 +// have a background of its own; the horizontal scrollbar starts after the row
-+// numbers. Changes are marked "WDS patch".
++// numbers. Changes are marked "SparkCommander patch".
 +
  use gpui_base::TestSupportExt as _;
  use std::{ops::Range, rc::Rc, time::Duration};
@@ -3698,12 +3698,12 @@ diff -ruN a/src/table/state.rs b/src/table/state.rs
      right_clicked_cell: Option<(usize, usize)>,
      selected_col: Option<usize>,
      selected_cell: Option<(usize, usize)>,
-+    /// WDS patch: the other corner of the selected range; `None` is the
++    /// SparkCommander patch: the other corner of the selected range; `None` is the
 +    /// selected cell itself.
 +    cell_anchor: Option<(usize, usize)>,
-+    /// WDS patch: the cell a left button press began on, while it is down.
++    /// SparkCommander patch: the cell a left button press began on, while it is down.
 +    drag_start: Option<(usize, usize)>,
-+    /// WDS patch: the column header clicked last, which Shift extends from.
++    /// SparkCommander patch: the column header clicked last, which Shift extends from.
 +    col_anchor: Option<usize>,
  
      /// The column index that is being resized.
@@ -3730,7 +3730,7 @@ diff -ruN a/src/table/state.rs b/src/table/state.rs
          cx.notify();
      }
  
-+    /// WDS patch: selects the cells from `anchor` to `cell`; `cell` is the
++    /// SparkCommander patch: selects the cells from `anchor` to `cell`; `cell` is the
 +    /// selected cell, which moves with the keyboard. Does not scroll.
 +    pub fn set_selected_range(
 +        &mut self,
@@ -3746,7 +3746,7 @@ diff -ruN a/src/table/state.rs b/src/table/state.rs
 +        cx.notify();
 +    }
 +
-+    /// WDS patch: the rows and columns of the selected cells.
++    /// SparkCommander patch: the rows and columns of the selected cells.
 +    pub fn selected_range(&self) -> Option<(Range<usize>, Range<usize>)> {
 +        let (row, col) = self.selected_cell()?;
 +        let (anchor_row, anchor_col) = self.cell_anchor.unwrap_or((row, col));
@@ -3768,7 +3768,7 @@ diff -ruN a/src/table/state.rs b/src/table/state.rs
          self.selected_row = None;
          self.selected_col = None;
          self.selected_cell = None;
-+        // WDS patch: and the right-clicked cell's outline.
++        // SparkCommander patch: and the right-clicked cell's outline.
 +        self.right_clicked_row = None;
 +        self.right_clicked_cell = None;
          cx.emit(TableEvent::ClearSelection);
@@ -3778,7 +3778,7 @@ diff -ruN a/src/table/state.rs b/src/table/state.rs
          }
  
          cx.stop_propagation();
-+        // WDS patch: a cell outside the selection is selected, for its menu.
++        // SparkCommander patch: a cell outside the selection is selected, for its menu.
 +        if !self.is_cell_in_range(row_ix, col_ix) {
 +            self.set_selected_range((row_ix, col_ix), (row_ix, col_ix), cx);
 +        }
@@ -3787,7 +3787,7 @@ diff -ruN a/src/table/state.rs b/src/table/state.rs
          cx.emit(TableEvent::RightClickedCell(row_ix, col_ix));
      }
  
-+    /// WDS patch: shift extends the selection to the cell; otherwise a drag
++    /// SparkCommander patch: shift extends the selection to the cell; otherwise a drag
 +    /// from it may begin.
 +    fn on_cell_mouse_down(
 +        &mut self,
@@ -3808,7 +3808,7 @@ diff -ruN a/src/table/state.rs b/src/table/state.rs
 +        }
 +    }
 +
-+    /// WDS patch: dragging selects the cells from where it began.
++    /// SparkCommander patch: dragging selects the cells from where it began.
 +    fn on_cell_mouse_move(
 +        &mut self,
 +        e: &MouseMoveEvent,
@@ -3846,7 +3846,7 @@ diff -ruN a/src/table/state.rs b/src/table/state.rs
              return;
          }
  
-+        // WDS patch: Shift selects the columns from the one clicked before,
++        // SparkCommander patch: Shift selects the columns from the one clicked before,
 +        // every row of them.
 +        let rows = self.delegate.rows_count(cx);
 +        if let Some(anchor) = self.col_anchor.filter(|_| window.modifiers().shift && rows > 0) {
@@ -3862,7 +3862,7 @@ diff -ruN a/src/table/state.rs b/src/table/state.rs
  
          cx.stop_propagation();
 +        self.drag_start = None;
-+        // WDS patch: the press extended the selection.
++        // SparkCommander patch: the press extended the selection.
 +        if e.modifiers().shift && self.cell_anchor.is_some() {
 +            return;
 +        }
@@ -3873,7 +3873,7 @@ diff -ruN a/src/table/state.rs b/src/table/state.rs
          cx.propagate();
      }
  
-+    /// WDS patch: moves the selected cell, keeping the range's other corner.
++    /// SparkCommander patch: moves the selected cell, keeping the range's other corner.
 +    fn extend_selection(&mut self, rows: isize, cols: isize, cx: &mut Context<Self>) {
 +        let Some(cell) = self.selected_cell() else {
 +            return;
@@ -3927,7 +3927,7 @@ diff -ruN a/src/table/state.rs b/src/table/state.rs
          }
  
          let sort = sort.unwrap();
-+        // WDS patch: ascending, descending, then as it was.
++        // SparkCommander patch: ascending, descending, then as it was.
          let sort = match sort {
 -            ColumnSort::Ascending => ColumnSort::Default,
 -            ColumnSort::Descending => ColumnSort::Ascending,
@@ -3951,7 +3951,7 @@ diff -ruN a/src/table/state.rs b/src/table/state.rs
              .overflow_hidden()
              .whitespace_nowrap()
              .table_cell_size(self.options.size)
-+            // WDS patch: lines between columns.
++            // SparkCommander patch: lines between columns.
 +            .when(self.options.column_lines, |this| {
 +                this.border_r_1().border_color(cx.theme().table_row_border)
 +            })
@@ -3962,7 +3962,7 @@ diff -ruN a/src/table/state.rs b/src/table/state.rs
          is_head: bool,
          cx: &mut Context<Self>,
      ) -> impl IntoElement {
-+        // WDS patch: numbered, and highlighted for the selected cell's row.
++        // SparkCommander patch: numbered, and highlighted for the selected cell's row.
 +        let is_cell_row = !is_head
 +            && self
 +                .selected_range()
@@ -3992,7 +3992,7 @@ diff -ruN a/src/table/state.rs b/src/table/state.rs
                      }))
                  })
              })
-+            // WDS patch: the corner above the numbers selects every cell.
++            // SparkCommander patch: the corner above the numbers selects every cell.
 +            .when(is_head, |this| {
 +                this.cursor_pointer()
 +                    .on_click(cx.listener(|table, _, _window, cx| {
@@ -4005,7 +4005,7 @@ diff -ruN a/src/table/state.rs b/src/table/state.rs
 +            })
 +    }
 +
-+    /// WDS patch: wide enough for the last row's number.
++    /// SparkCommander patch: wide enough for the last row's number.
 +    fn row_header_width(&self, cx: &App) -> Pixels {
 +        let digits = self.delegate.rows_count(cx).max(1).to_string().len();
 +        px(digits as f32 * 8. + 20.)
@@ -4016,7 +4016,7 @@ diff -ruN a/src/table/state.rs b/src/table/state.rs
          let movable = self.col_movable && col_group.column.movable;
          let paddings = col_group.column.paddings;
          let name = col_group.column.name.clone();
-+        // WDS patch: the selected cell's column header is highlighted.
++        // SparkCommander patch: the selected cell's column header is highlighted.
 +        let is_cell_col = self
 +            .selected_range()
 +            .is_some_and(|(_, cols)| cols.contains(&col_ix));
@@ -4043,7 +4043,7 @@ diff -ruN a/src/table/state.rs b/src/table/state.rs
                                                  self.render_cell(Some(row_ix), col_ix, window, cx)
                                                      .id(format!("table-cell:{}:{}", row_ix, col_ix))
                                                      .relative()
-+                                                    // WDS patch: the delegate's background.
++                                                    // SparkCommander patch: the delegate's background.
 +                                                    .when_some(
 +                                                        self.delegate
 +                                                            .cell_background(row_ix, col_ix, cx),
@@ -4052,7 +4052,7 @@ diff -ruN a/src/table/state.rs b/src/table/state.rs
                                                      .child(self.measure_render_td(
                                                          row_ix, col_ix, window, cx,
                                                      ))
-+                                                    // WDS patch: a background, not an overlay
++                                                    // SparkCommander patch: a background, not an overlay
 +                                                    // that would hide the text.
                                                      .when(is_cell_selected, |this| {
 -                                                        this.child(
@@ -4100,7 +4100,7 @@ diff -ruN a/src/table/state.rs b/src/table/state.rs
                                                              row_ix, col_ix
                                                          ))
                                                          .relative()
-+                                                        // WDS patch: the delegate's background.
++                                                        // SparkCommander patch: the delegate's background.
 +                                                        .when_some(
 +                                                            table.delegate.cell_background(
 +                                                                row_ix, col_ix, cx,
@@ -4110,7 +4110,7 @@ diff -ruN a/src/table/state.rs b/src/table/state.rs
                                                          .child(table.measure_render_td(
                                                              row_ix, col_ix, window, cx,
                                                          ))
-+                                                        // WDS patch: a background, not an
++                                                        // SparkCommander patch: a background, not an
 +                                                        // overlay that would hide the text.
                                                          .when(is_cell_selected, |this| {
 -                                                            this.child(
@@ -4152,7 +4152,7 @@ diff -ruN a/src/table/state.rs b/src/table/state.rs
                      this.child(
                          div()
 -                            .w(px(40.))
-+                            // WDS patch: as wide as the numbered row headers.
++                            // SparkCommander patch: as wide as the numbered row headers.
 +                            .w(self.row_header_width(cx))
                              .h_full()
                              .flex_shrink_0()
@@ -4164,7 +4164,7 @@ diff -ruN a/src/table/state.rs b/src/table/state.rs
 -        _: &mut Context<Self>,
 +        cx: &mut Context<Self>,
      ) -> impl IntoElement {
-+        // WDS patch: after the row numbers too, as the viewport the
++        // SparkCommander patch: after the row numbers too, as the viewport the
 +        // scrollbar measures its range by; else it stops short of the end.
 +        let row_header = match self.cell_selectable && self.row_header {
 +            true => self.row_header_width(cx),
@@ -4183,7 +4183,7 @@ diff -ruN a/src/table/state.rs b/src/table/state.rs
                  move |this, window: &mut Window, cx: &mut Context<PopupMenu>| {
 -                    if let Some(row_ix) = view.read(cx).right_clicked_row {
 -                        view.update(cx, |menu, cx| {
-+                    // WDS patch: a right-clicked cell has its own menu (its
++                    // SparkCommander patch: a right-clicked cell has its own menu (its
 +                    // row's by default), and the menu's actions go to the
 +                    // table.
 +                    let table = view.read(cx);
@@ -4588,10 +4588,10 @@ diff -ruN a/src/tree.rs b/src/tree.rs
 --- a/src/tree.rs	2006-07-24 03:21:28.000000000 +0200
 +++ b/src/tree.rs	2026-11-17 17:18:36.181001904 +0100
 @@ -1,3 +1,8 @@
-+// Modified for Water Data Studio (Apache-2.0, section 4b): a context menu
++// Modified for Spark Commander (Apache-2.0, section 4b): a context menu
 +// builder gets the menu's context, so it can add submenus; the row renderer
 +// decides whether a row looks selected, so an app can select several rows.
-+// Changes are marked "WDS patch".
++// Changes are marked "SparkCommander patch".
 +
  use std::rc::Rc;
  
@@ -4600,7 +4600,7 @@ diff -ruN a/src/tree.rs b/src/tree.rs
  }
  
  type RenderItem = dyn Fn(usize, &TreeEntry, bool, &mut Window, &mut App) -> ListItem;
-+// WDS patch: `Context<PopupMenu>` instead of `Context<TreeState>`; adding a
++// SparkCommander patch: `Context<PopupMenu>` instead of `Context<TreeState>`; adding a
 +// submenu needs the menu's context.
  type ContextMenuBuilder =
 -    dyn Fn(usize, &TreeEntry, PopupMenu, &mut Window, &mut Context<TreeState>) -> PopupMenu;
@@ -4613,7 +4613,7 @@ diff -ruN a/src/tree.rs b/src/tree.rs
      pub fn context_menu<F>(mut self, f: F) -> Self
      where
 -        F: Fn(usize, &TreeEntry, PopupMenu, &mut Window, &mut Context<TreeState>) -> PopupMenu
-+        // WDS patch: the menu's context, see `ContextMenuBuilder`.
++        // SparkCommander patch: the menu's context, see `ContextMenuBuilder`.
 +        F: Fn(usize, &TreeEntry, PopupMenu, &mut Window, &mut Context<PopupMenu>) -> PopupMenu
              + 'static,
      {
@@ -4622,7 +4622,7 @@ diff -ruN a/src/tree.rs b/src/tree.rs
                          let id = entry.item().id.clone();
                          let context_menu_builder = context_menu_builder.clone();
                          let context_menu_state = state.clone();
-+                        // WDS patch: `render_item` gets the selection and
++                        // SparkCommander patch: `render_item` gets the selection and
 +                        // sets it; it is not overridden here.
                          let item = render_item(ix, entry, entry_state.is_selected(), window, cx)
                              .disabled(entry.is_disabled())
@@ -4645,7 +4645,7 @@ diff -ruN a/src/tree.rs b/src/tree.rs
 -                                    };
 -                                    build(ix, &entry, menu, window, cx)
 -                                })
-+                                // WDS patch: read the entry, then build in the
++                                // SparkCommander patch: read the entry, then build in the
 +                                // menu's context instead of inside a tree update.
 +                                let Some(entry) = context_menu_state
 +                                    .read(cx)

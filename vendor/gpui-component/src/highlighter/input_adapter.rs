@@ -1,6 +1,6 @@
-// Modified for Water Data Studio (Apache-2.0, section 4b): the highlighter
+// Modified for Spark Commander (Apache-2.0, section 4b): the highlighter
 // factory is public, and a background parse leaves the fold candidates alone
-// when folding is not asked of it. Changes are marked "WDS patch".
+// when folding is not asked of it. Changes are marked "SparkCommander patch".
 
 use std::{
     cell::RefCell,
@@ -23,7 +23,7 @@ use tree_sitter::{InputEdit, ParseOptions, Point};
 
 use super::{LanguageRegistry, SyntaxHighlighter, highlighter::parse_input_bytes};
 
-/// WDS patch: public, was pub(crate).
+/// SparkCommander patch: public, was pub(crate).
 pub fn input_highlighter_factory() -> InputHighlighterFactory {
     Rc::new(|language| {
         LanguageRegistry::singleton().has_parser(language).then(|| {
@@ -122,7 +122,7 @@ impl TreeSitterInputHighlighter {
                 highlighter
                     .borrow_mut()
                     .apply_background_tree(tree, &text_for_apply, injections);
-                // WDS patch: without folding, the folds are someone else's.
+                // SparkCommander patch: without folding, the folds are someone else's.
                 if folding {
                     let _ = entity.update(cx, |state, cx| {
                         state.apply_highlighter_fold_candidates(folds, cx);

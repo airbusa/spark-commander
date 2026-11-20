@@ -1,4 +1,4 @@
-//! VS Code's minimap, as in Water Data Studio: the text in miniature, two
+//! VS Code's minimap: the text in miniature, two
 //! pixels a row, the part in view marked. A click or a drag scrolls.
 
 use std::cell::Cell;

@@ -1,8 +1,8 @@
-// Modified for Water Data Studio (Apache-2.0, section 4b): optional lines
+// Modified for Spark Commander (Apache-2.0, section 4b): optional lines
 // between columns; shift and an arrow extends a range of cells; no focus
-// ring. Changes are marked "WDS patch".
+// ring. Changes are marked "SparkCommander patch".
 
-// WDS patch: no focus ring, so no `ThemeStyled`.
+// SparkCommander patch: no focus ring, so no `ThemeStyled`.
 use crate::{
     ActiveTheme, Sizable, Size,
     actions::{
@@ -17,7 +17,7 @@ use gpui::{
 };
 use gpui_base::TestSupportExt as _;
 
-// WDS patch.
+// SparkCommander patch.
 actions!(table, [ExtendUp, ExtendDown, ExtendLeft, ExtendRight]);
 
 const CONTEXT: &'static str = "DataTable";
@@ -51,7 +51,7 @@ pub(super) struct TableOptions {
     pub(super) size: Size,
     /// Height of each header row. `None` uses [`Size::table_row_height`].
     pub(super) header_row_height: Option<Pixels>,
-    /// WDS patch: lines between columns.
+    /// SparkCommander patch: lines between columns.
     pub(super) column_lines: bool,
 }
 
@@ -135,7 +135,7 @@ where
         self
     }
 
-    /// WDS patch: draw a line between columns, default to false.
+    /// SparkCommander patch: draw a line between columns, default to false.
     pub fn column_lines(mut self, column_lines: bool) -> Self {
         self.options.column_lines = column_lines;
         self
@@ -209,7 +209,7 @@ where
                     .border_1()
                     .border_color(cx.theme().border)
             })
-            // WDS patch: no focus ring; the selected cell or row shows where
+            // SparkCommander patch: no focus ring; the selected cell or row shows where
             // the keys go.
             .child(self.state)
     }

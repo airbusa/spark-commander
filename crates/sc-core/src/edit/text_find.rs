@@ -1,6 +1,5 @@
-//! The editor's Find and Replace, as VS Code's find does (taken over from
-//! Water Data Studio): plain, whole words or a regular expression, with or
-//! without case, and what replaces a match.
+//! The editor's Find and Replace, as VS Code's find does: plain, whole words
+//! or a regular expression, with or without case, and what replaces a match.
 
 use std::ops::Range;
 

@@ -1,5 +1,5 @@
-// Modified for Water Data Studio (Apache-2.0, section 4b): notifications paint
-// above dialogs. Changes are marked "WDS patch".
+// Modified for Spark Commander (Apache-2.0, section 4b): notifications paint
+// above dialogs. Changes are marked "SparkCommander patch".
 
 use crate::{
     ActiveTheme, ElementExt, Placement,
@@ -510,7 +510,7 @@ impl RenderOnce for WindowStateLayers {
             .debug_selector(|| "root-layers".to_string())
             .children(WindowState::sheet_layer(root.clone(), window, cx))
             .children(WindowState::dialog_layer(&root, window, cx))
-            // WDS patch: dialogs paint deferred (priority 10 + layer), so
+            // SparkCommander patch: dialogs paint deferred (priority 10 + layer), so
             // notifications must too, or every open dialog hides them. 90 keeps
             // them under popups (100) and tooltips (200).
             .children(

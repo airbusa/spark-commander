@@ -1,5 +1,5 @@
-// Modified for Water Data Studio (Apache-2.0, section 4b): a cell can have a
-// context menu and a background of its own. Changes are marked "WDS patch".
+// Modified for Spark Commander (Apache-2.0, section 4b): a cell can have a
+// context menu and a background of its own. Changes are marked "SparkCommander patch".
 
 use std::ops::Range;
 
@@ -111,7 +111,7 @@ pub trait TableDelegate: Sized + 'static {
         menu
     }
 
-    /// WDS patch: the context menu of the cell at the given row and column;
+    /// SparkCommander patch: the context menu of the cell at the given row and column;
     /// its row's, unless given.
     fn cell_context_menu(
         &mut self,
@@ -124,7 +124,7 @@ pub trait TableDelegate: Sized + 'static {
         self.context_menu(row_ix, menu, window, cx)
     }
 
-    /// WDS patch: the background of the cell at the given row and column,
+    /// SparkCommander patch: the background of the cell at the given row and column,
     /// under the selection's.
     fn cell_background(&self, row_ix: usize, col_ix: usize, cx: &App) -> Option<Hsla> {
         None

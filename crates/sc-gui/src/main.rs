@@ -844,7 +844,7 @@ impl Commander {
     }
 
     /// Quick search, with no key to start it: a name's first letters typed in
-    /// a panel move the cursor to it (Total Commander's, WDS's tree).
+    /// a panel move the cursor to it (Total Commander's).
     /// Backspace takes a letter back (`quick_back`, by Parent's binding), Escape
     /// or another key ends it; a key with a command of its own keeps it.
     fn quick_search(&mut self, event: &KeyDownEvent, window: &mut Window, cx: &mut Context<Self>) {

@@ -1,5 +1,5 @@
-// Modified for Water Data Studio (Apache-2.0, section 4b): a multi-line
-// input's placeholder wraps at its width. Changes are marked "WDS patch".
+// Modified for Spark Commander (Apache-2.0, section 4b): a multi-line
+// input's placeholder wraps at its width. Changes are marked "SparkCommander patch".
 
 use crate::input::{InputExtras as _, InputModeKind};
 use gpui::Corners;
@@ -2034,7 +2034,7 @@ impl<M: InputModeKind> TextElement<M> {
             let mut placeholder_lines = SmallVec::new();
             let mut line_has_background = false;
 
-            // WDS patch: a placeholder wraps at the input's width, as text does.
+            // SparkCommander patch: a placeholder wraps at the input's width, as text does.
             let mut wrapper = match (last_layout.wrap_width, runs.first()) {
                 (Some(width), Some(run)) => Some((
                     window.text_system().line_wrapper(run.font.clone(), font_size),

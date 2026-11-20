@@ -1,6 +1,6 @@
-// Modified for Water Data Studio (Apache-2.0, section 4b): moving and deleting
+// Modified for Spark Commander (Apache-2.0, section 4b): moving and deleting
 // by words takes a word as code has it, so `.` between names is a stop; the
-// app can fold and unfold lines. Changes are marked "WDS patch".
+// app can fold and unfold lines. Changes are marked "SparkCommander patch".
 
 //! A text input field that allows the user to enter text.
 //!
@@ -1574,7 +1574,7 @@ impl<M: InputModeKind> InputBaseState<M> {
         // FIXME: Avoid to_string
         let left_part = self.text.slice(0..offset).to_string();
 
-        // WDS patch: past the spaces before it, the run of characters of one
+        // SparkCommander patch: past the spaces before it, the run of characters of one
         // kind; `.` between names stops at each name.
         let mut chars = left_part.char_indices().rev().peekable();
         let mut target = offset;
@@ -1600,7 +1600,7 @@ impl<M: InputModeKind> InputBaseState<M> {
         let offset = self.offset_from_utf16(self.offset_to_utf16(offset));
         let right_part = self.text.slice(offset..self.text.len()).to_string();
 
-        // WDS patch: see `previous_start_of_word_at`.
+        // SparkCommander patch: see `previous_start_of_word_at`.
         let mut chars = right_part.char_indices().peekable();
         let mut target = offset;
         while let Some((ix, c)) = chars.next_if(|(_, c)| c.is_whitespace()) {
@@ -4781,7 +4781,7 @@ impl<M: InputModeKind> Render for InputBaseState<M> {
     }
 }
 
-/// WDS patch: what a word is made of: letters, digits and `_`, or else
+/// SparkCommander patch: what a word is made of: letters, digits and `_`, or else
 /// marks; a space is neither.
 fn word_kind(c: char) -> u8 {
     match c {
@@ -5437,7 +5437,7 @@ mod tests {
             .unwrap();
     }
 
-    /// WDS patch: `.` between names stops a move by words at each name.
+    /// SparkCommander patch: `.` between names stops a move by words at each name.
     #[gpui::test]
     fn test_word_moves_stop_at_dots(cx: &mut TestAppContext) {
         let view = InputView::build(cx, |state| state.default_value("SELECT * from base.Beallitas"));
@@ -11310,19 +11310,19 @@ impl InputBaseState<crate::input::EditorMode> {
     /// only the outermost would leave the position hidden.
     ///
     /// Returns whether any fold was opened.
-    /// WDS patch: folds, or unfolds, the fold candidate starting at
+    /// SparkCommander patch: folds, or unfolds, the fold candidate starting at
     /// `start_line`, as its gutter icon does.
     pub fn set_folded(&mut self, start_line: usize, folded: bool, cx: &mut Context<Self>) {
         self.display_map.set_folded(start_line, folded);
         cx.notify();
     }
 
-    /// WDS patch: whether the fold starting at `start_line` is folded.
+    /// SparkCommander patch: whether the fold starting at `start_line` is folded.
     pub fn is_folded(&self, start_line: usize) -> bool {
         self.display_map.is_folded_at(start_line)
     }
 
-    /// WDS patch: opens every fold, keeping the candidates.
+    /// SparkCommander patch: opens every fold, keeping the candidates.
     pub fn unfold_all(&mut self, cx: &mut Context<Self>) {
         let folded: Vec<usize> = self
             .display_map

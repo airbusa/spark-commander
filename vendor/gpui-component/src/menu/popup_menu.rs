@@ -1,5 +1,5 @@
-// Modified for Water Data Studio (Apache-2.0, section 4b): a long menu's
-// scrollbar shows while it scrolls. Changes are marked "WDS patch".
+// Modified for Spark Commander (Apache-2.0, section 4b): a long menu's
+// scrollbar shows while it scrolls. Changes are marked "SparkCommander patch".
 // Modified for SparkCommander: menus take the window's height, scroll only
 // past it and show no scrollbar; `with_menu_items` is public; a submenu may
 // run an action of its own when clicked; app menus' items take icons from a

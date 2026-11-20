@@ -1,5 +1,5 @@
-// Modified for Water Data Studio (Apache-2.0, section 4b): a binding of
-// several keystrokes shows them all. Changes are marked "WDS patch".
+// Modified for Spark Commander (Apache-2.0, section 4b): a binding of
+// several keystrokes shows them all. Changes are marked "SparkCommander patch".
 // Modified for SparkCommander: numpad keys show as "Num +", "Num -", "Num *"
 // and "Num /". Changes are marked "SparkCommander patch".
 
@@ -16,7 +16,7 @@ use crate::{ActiveTheme, StyledExt};
 pub struct Kbd {
     style: StyleRefinement,
     stroke: Keystroke,
-    /// WDS patch: the keystrokes after the first, of a chord as Ctrl+K, Ctrl+0.
+    /// SparkCommander patch: the keystrokes after the first, of a chord as Ctrl+K, Ctrl+0.
     then: Vec<Keystroke>,
     appearance: bool,
     outline: bool,
@@ -108,12 +108,12 @@ impl Kbd {
             .iter()
             .map(|stroke| stroke.as_keystroke().clone());
         let mut kbd = Self::new(strokes.next()?);
-        // WDS patch: the rest of a chord too.
+        // SparkCommander patch: the rest of a chord too.
         kbd.then = strokes.collect();
         Some(kbd)
     }
 
-    /// WDS patch: every keystroke, a chord's separated as the platform writes it.
+    /// SparkCommander patch: every keystroke, a chord's separated as the platform writes it.
     fn text(&self) -> String {
         #[cfg(target_os = "macos")]
         const BETWEEN: &str = " ";

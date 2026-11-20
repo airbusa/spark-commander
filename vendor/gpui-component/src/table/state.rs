@@ -1,10 +1,10 @@
-// Modified for Water Data Studio (Apache-2.0, section 4b): in cell selection,
+// Modified for Spark Commander (Apache-2.0, section 4b): in cell selection,
 // the row header shows row numbers, and the selected cell's row number and
 // column header are highlighted; a range of cells can be selected; cells have
 // the row's context menu, or their own; lines between columns; a column sorts
 // ascending first; clearing the selection clears the right-click; a cell can
 // have a background of its own; the horizontal scrollbar starts after the row
-// numbers. Changes are marked "WDS patch".
+// numbers. Changes are marked "SparkCommander patch".
 
 use gpui_base::TestSupportExt as _;
 use std::{ops::Range, rc::Rc, time::Duration};
@@ -271,12 +271,12 @@ pub struct TableState<D: TableDelegate> {
     right_clicked_cell: Option<(usize, usize)>,
     selected_col: Option<usize>,
     selected_cell: Option<(usize, usize)>,
-    /// WDS patch: the other corner of the selected range; `None` is the
+    /// SparkCommander patch: the other corner of the selected range; `None` is the
     /// selected cell itself.
     cell_anchor: Option<(usize, usize)>,
-    /// WDS patch: the cell a left button press began on, while it is down.
+    /// SparkCommander patch: the cell a left button press began on, while it is down.
     drag_start: Option<(usize, usize)>,
-    /// WDS patch: the column header clicked last, which Shift extends from.
+    /// SparkCommander patch: the column header clicked last, which Shift extends from.
     col_anchor: Option<usize>,
 
     /// The column index that is being resized.
@@ -626,7 +626,7 @@ where
         cx.notify();
     }
 
-    /// WDS patch: selects the cells from `anchor` to `cell`; `cell` is the
+    /// SparkCommander patch: selects the cells from `anchor` to `cell`; `cell` is the
     /// selected cell, which moves with the keyboard. Does not scroll.
     pub fn set_selected_range(
         &mut self,
@@ -642,7 +642,7 @@ where
         cx.notify();
     }
 
-    /// WDS patch: the rows and columns of the selected cells.
+    /// SparkCommander patch: the rows and columns of the selected cells.
     pub fn selected_range(&self) -> Option<(Range<usize>, Range<usize>)> {
         let (row, col) = self.selected_cell()?;
         let (anchor_row, anchor_col) = self.cell_anchor.unwrap_or((row, col));
@@ -676,7 +676,7 @@ where
         self.selected_row = None;
         self.selected_col = None;
         self.selected_cell = None;
-        // WDS patch: and the right-clicked cell's outline.
+        // SparkCommander patch: and the right-clicked cell's outline.
         self.right_clicked_row = None;
         self.right_clicked_cell = None;
         cx.emit(TableEvent::ClearSelection);
@@ -869,7 +869,7 @@ where
         }
 
         cx.stop_propagation();
-        // WDS patch: a cell outside the selection is selected, for its menu.
+        // SparkCommander patch: a cell outside the selection is selected, for its menu.
         if !self.is_cell_in_range(row_ix, col_ix) {
             self.set_selected_range((row_ix, col_ix), (row_ix, col_ix), cx);
         }
@@ -878,7 +878,7 @@ where
         cx.emit(TableEvent::RightClickedCell(row_ix, col_ix));
     }
 
-    /// WDS patch: shift extends the selection to the cell; otherwise a drag
+    /// SparkCommander patch: shift extends the selection to the cell; otherwise a drag
     /// from it may begin.
     fn on_cell_mouse_down(
         &mut self,
@@ -899,7 +899,7 @@ where
         }
     }
 
-    /// WDS patch: dragging selects the cells from where it began.
+    /// SparkCommander patch: dragging selects the cells from where it began.
     fn on_cell_mouse_move(
         &mut self,
         e: &MouseMoveEvent,
@@ -952,7 +952,7 @@ where
             return;
         }
 
-        // WDS patch: Shift selects the columns from the one clicked before,
+        // SparkCommander patch: Shift selects the columns from the one clicked before,
         // every row of them.
         let rows = self.delegate.rows_count(cx);
         if let Some(anchor) = self.col_anchor.filter(|_| window.modifiers().shift && rows > 0) {
@@ -977,7 +977,7 @@ where
 
         cx.stop_propagation();
         self.drag_start = None;
-        // WDS patch: the press extended the selection.
+        // SparkCommander patch: the press extended the selection.
         if e.modifiers().shift && self.cell_anchor.is_some() {
             return;
         }
@@ -1016,7 +1016,7 @@ where
         cx.propagate();
     }
 
-    /// WDS patch: moves the selected cell, keeping the range's other corner.
+    /// SparkCommander patch: moves the selected cell, keeping the range's other corner.
     fn extend_selection(&mut self, rows: isize, cols: isize, cx: &mut Context<Self>) {
         let Some(cell) = self.selected_cell() else {
             return;
@@ -1404,7 +1404,7 @@ where
         }
 
         let sort = sort.unwrap();
-        // WDS patch: ascending, descending, then as it was.
+        // SparkCommander patch: ascending, descending, then as it was.
         let sort = match sort {
             ColumnSort::Default => ColumnSort::Ascending,
             ColumnSort::Ascending => ColumnSort::Descending,
@@ -1571,7 +1571,7 @@ where
             .overflow_hidden()
             .whitespace_nowrap()
             .table_cell_size(self.options.size)
-            // WDS patch: lines between columns.
+            // SparkCommander patch: lines between columns.
             .when(self.options.column_lines, |this| {
                 this.border_r_1().border_color(cx.theme().table_row_border)
             })
@@ -1764,7 +1764,7 @@ where
         is_head: bool,
         cx: &mut Context<Self>,
     ) -> impl IntoElement {
-        // WDS patch: numbered, and highlighted for the selected cell's row.
+        // SparkCommander patch: numbered, and highlighted for the selected cell's row.
         let is_cell_row = !is_head
             && self
                 .selected_range()
@@ -1793,7 +1793,7 @@ where
                     }))
                 })
             })
-            // WDS patch: the corner above the numbers selects every cell.
+            // SparkCommander patch: the corner above the numbers selects every cell.
             .when(is_head, |this| {
                 this.cursor_pointer()
                     .on_click(cx.listener(|table, _, _window, cx| {
@@ -1806,7 +1806,7 @@ where
             })
     }
 
-    /// WDS patch: wide enough for the last row's number.
+    /// SparkCommander patch: wide enough for the last row's number.
     fn row_header_width(&self, cx: &App) -> Pixels {
         let digits = self.delegate.rows_count(cx).max(1).to_string().len();
         px(digits as f32 * 8. + 20.)
@@ -1869,7 +1869,7 @@ where
         let movable = self.col_movable && col_group.column.movable;
         let paddings = col_group.column.paddings;
         let name = col_group.column.name.clone();
-        // WDS patch: the selected cell's column header is highlighted.
+        // SparkCommander patch: the selected cell's column header is highlighted.
         let is_cell_col = self
             .selected_range()
             .is_some_and(|(_, cols)| cols.contains(&col_ix));
@@ -2294,7 +2294,7 @@ where
                                                 self.render_cell(Some(row_ix), col_ix, window, cx)
                                                     .id(format!("table-cell:{}:{}", row_ix, col_ix))
                                                     .relative()
-                                                    // WDS patch: the delegate's background.
+                                                    // SparkCommander patch: the delegate's background.
                                                     .when_some(
                                                         self.delegate
                                                             .cell_background(row_ix, col_ix, cx),
@@ -2303,7 +2303,7 @@ where
                                                     .child(self.measure_render_td(
                                                         row_ix, col_ix, window, cx,
                                                     ))
-                                                    // WDS patch: a background, not an overlay
+                                                    // SparkCommander patch: a background, not an overlay
                                                     // that would hide the text.
                                                     .when(is_cell_selected, |this| {
                                                         this.bg(cx.theme().tokens.table_active)
@@ -2427,7 +2427,7 @@ where
                                                             row_ix, col_ix
                                                         ))
                                                         .relative()
-                                                        // WDS patch: the delegate's background.
+                                                        // SparkCommander patch: the delegate's background.
                                                         .when_some(
                                                             table.delegate.cell_background(
                                                                 row_ix, col_ix, cx,
@@ -2437,7 +2437,7 @@ where
                                                         .child(table.measure_render_td(
                                                             row_ix, col_ix, window, cx,
                                                         ))
-                                                        // WDS patch: a background, not an
+                                                        // SparkCommander patch: a background, not an
                                                         // overlay that would hide the text.
                                                         .when(is_cell_selected, |this| {
                                                             this.bg(cx.theme().tokens.table_active)
@@ -2564,7 +2564,7 @@ where
                     // Render empty row header cell for fake rows
                     this.child(
                         div()
-                            // WDS patch: as wide as the numbered row headers.
+                            // SparkCommander patch: as wide as the numbered row headers.
                             .w(self.row_header_width(cx))
                             .h_full()
                             .flex_shrink_0()
@@ -2665,7 +2665,7 @@ where
         _: &mut Window,
         cx: &mut Context<Self>,
     ) -> impl IntoElement {
-        // WDS patch: after the row numbers too, as the viewport the
+        // SparkCommander patch: after the row numbers too, as the viewport the
         // scrollbar measures its range by; else it stops short of the end.
         let row_header = match self.cell_selectable && self.row_header {
             true => self.row_header_width(cx),
@@ -2758,7 +2758,7 @@ where
             .context_menu({
                 let view = cx.entity().clone();
                 move |this, window: &mut Window, cx: &mut Context<PopupMenu>| {
-                    // WDS patch: a right-clicked cell has its own menu (its
+                    // SparkCommander patch: a right-clicked cell has its own menu (its
                     // row's by default), and the menu's actions go to the
                     // table.
                     let table = view.read(cx);

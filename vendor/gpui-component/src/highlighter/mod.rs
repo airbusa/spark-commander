@@ -1,6 +1,6 @@
-// Modified for Water Data Studio (Apache-2.0, section 4b): the editor's
+// Modified for Spark Commander (Apache-2.0, section 4b): the editor's
 // highlighter factory is public, so an app can wrap it. Changes are marked
-// "WDS patch".
+// "SparkCommander patch".
 
 mod language_name;
 pub use gpui_base::input::{
@@ -14,7 +14,7 @@ pub(crate) use diagnostic_styles::*;
 
 #[cfg(feature = "tree-sitter")]
 mod input_adapter;
-// WDS patch: public, was pub(crate).
+// SparkCommander patch: public, was pub(crate).
 #[cfg(feature = "tree-sitter")]
 pub use input_adapter::input_highlighter_factory;
 

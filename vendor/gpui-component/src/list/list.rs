@@ -1,5 +1,5 @@
-// Modified for Water Data Studio (Apache-2.0, section 4b): a list can take
-// a single click as selecting only. Changes are marked "WDS patch".
+// Modified for Spark Commander (Apache-2.0, section 4b): a list can take
+// a single click as selecting only. Changes are marked "SparkCommander patch".
 
 use instant::Duration;
 use std::ops::Range;
@@ -85,7 +85,7 @@ pub struct ListState<D: ListDelegate> {
     reset_on_cancel: bool,
     searchable: bool,
     selectable: bool,
-    // WDS patch: a click selects, a double click confirms.
+    // SparkCommander patch: a click selects, a double click confirms.
     confirm_on_double_click: bool,
     _search_task: Task<()>,
     _load_more_task: Task<()>,
@@ -133,7 +133,7 @@ where
         self
     }
 
-    /// WDS patch: a click only selects; a double click or Enter confirms.
+    /// SparkCommander patch: a click only selects; a double click or Enter confirms.
     pub fn confirm_on_double_click(mut self, on: bool) -> Self {
         self.confirm_on_double_click = on;
         self
@@ -516,7 +516,7 @@ where
                 this.on_click(cx.listener(move |this, e: &ClickEvent, window, cx| {
                     this.set_right_clicked_index(None, window, cx);
                     this.selected_index = Some(ix);
-                    // WDS patch: see `confirm_on_double_click`.
+                    // SparkCommander patch: see `confirm_on_double_click`.
                     if this.confirm_on_double_click && e.click_count() < 2 {
                         this.delegate.set_selected_index(Some(ix), window, cx);
                         cx.notify();

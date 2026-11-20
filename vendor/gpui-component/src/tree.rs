@@ -1,7 +1,7 @@
-// Modified for Water Data Studio (Apache-2.0, section 4b): a context menu
+// Modified for Spark Commander (Apache-2.0, section 4b): a context menu
 // builder gets the menu's context, so it can add submenus; the row renderer
 // decides whether a row looks selected, so an app can select several rows.
-// Changes are marked "WDS patch".
+// Changes are marked "SparkCommander patch".
 
 use std::rc::Rc;
 
@@ -28,7 +28,7 @@ where
 }
 
 type RenderItem = dyn Fn(usize, &TreeEntry, bool, &mut Window, &mut App) -> ListItem;
-// WDS patch: `Context<PopupMenu>` instead of `Context<TreeState>`; adding a
+// SparkCommander patch: `Context<PopupMenu>` instead of `Context<TreeState>`; adding a
 // submenu needs the menu's context.
 type ContextMenuBuilder =
     dyn Fn(usize, &TreeEntry, PopupMenu, &mut Window, &mut Context<PopupMenu>) -> PopupMenu;
@@ -61,7 +61,7 @@ impl Tree {
     /// Add a context menu to the tree.
     pub fn context_menu<F>(mut self, f: F) -> Self
     where
-        // WDS patch: the menu's context, see `ContextMenuBuilder`.
+        // SparkCommander patch: the menu's context, see `ContextMenuBuilder`.
         F: Fn(usize, &TreeEntry, PopupMenu, &mut Window, &mut Context<PopupMenu>) -> PopupMenu
             + 'static,
     {
@@ -94,7 +94,7 @@ impl RenderOnce for Tree {
                         let id = entry.item().id.clone();
                         let context_menu_builder = context_menu_builder.clone();
                         let context_menu_state = state.clone();
-                        // WDS patch: `render_item` gets the selection and
+                        // SparkCommander patch: `render_item` gets the selection and
                         // sets it; it is not overridden here.
                         let item = render_item(ix, entry, entry_state.is_selected(), window, cx)
                             .disabled(entry.is_disabled())
@@ -106,7 +106,7 @@ impl RenderOnce for Tree {
                                 let Some(build) = context_menu_builder.as_ref() else {
                                     return menu;
                                 };
-                                // WDS patch: read the entry, then build in the
+                                // SparkCommander patch: read the entry, then build in the
                                 // menu's context instead of inside a tree update.
                                 let Some(entry) = context_menu_state
                                     .read(cx)

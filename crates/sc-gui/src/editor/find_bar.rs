@@ -1,6 +1,5 @@
-//! VS Code's find widget over the editor, in its top right corner (taken
-//! over from Water Data Studio): find, and replace when expanded; by case,
-//! whole word or regular expression; in the whole text or the selection only.
+//! VS Code's find widget over the editor, in its top right corner: find, and
+//! replace when expanded; by case, whole word or regular expression; in the whole text or the selection only.
 
 use std::ops::Range;
 

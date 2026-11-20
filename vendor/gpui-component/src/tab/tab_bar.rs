@@ -1,5 +1,5 @@
-// Modified for Water Data Studio (Apache-2.0, section 4b): the segmented
-// indicator uses the active tab colour. Changes are marked "WDS patch".
+// Modified for Spark Commander (Apache-2.0, section 4b): the segmented
+// indicator uses the active tab colour. Changes are marked "SparkCommander patch".
 
 use std::{cell::RefCell, rc::Rc};
 
@@ -260,7 +260,7 @@ impl TabBar {
                     div()
                         .w_full()
                         .h(inner_height)
-                        // WDS patch: the theme's active tab colour, not the background.
+                        // SparkCommander patch: the theme's active tab colour, not the background.
                         .bg(cx.theme().tokens.tab_active)
                         .rounded(inner_radius)
                         .shadow(raised_shadow()),

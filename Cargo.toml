@@ -12,7 +12,7 @@ license = "GPL-3.0-or-later"
 [workspace.dependencies]
 sc-core = { path = "crates/sc-core" }
 
-# GPUI Kit with Water Data Studio's patches (menu bar not scrolling, ...); see vendor/README.md.
+# GPUI Kit with Spark Commander's patches (menu bar not scrolling, ...); see vendor/README.md.
 [patch.crates-io]
 gpui-component = { path = "vendor/gpui-component" }
 gpui-base = { path = "vendor/gpui-base" }

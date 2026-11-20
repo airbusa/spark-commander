@@ -1,6 +1,6 @@
-// Modified for Water Data Studio (Apache-2.0, section 4b): a dialog moves by
+// Modified for Spark Commander (Apache-2.0, section 4b): a dialog moves by
 // its title, can open centred over a part of the window, and fades in
-// without sliding. Changes are marked "WDS patch".
+// without sliding. Changes are marked "SparkCommander patch".
 // Modified for SparkCommander: the title is smaller and ends in "…" when
 // long; on macOS the frame is a window's. Changes are marked "SparkCommander patch".
 
@@ -35,10 +35,10 @@ type OkHandler = Rc<dyn Fn(&ClickEvent, &mut Window, &mut App) -> bool + 'static
 type CancelHandler = Rc<dyn Fn(&ClickEvent, &mut Window, &mut App) -> bool + 'static>;
 type CloseHandler = Rc<dyn Fn(&ClickEvent, &mut Window, &mut App) + 'static>;
 
-/// WDS patch: how tall the band with the title is.
+/// SparkCommander patch: how tall the band with the title is.
 const TITLE_BAND_HEIGHT: f32 = 40.;
 
-/// WDS patch: where a dialog moved by its title is, kept across frames.
+/// SparkCommander patch: where a dialog moved by its title is, kept across frames.
 #[derive(Default)]
 struct DialogMove {
     /// The top left corner it was moved to.
@@ -248,7 +248,7 @@ pub(crate) struct DialogProps {
     width: Pixels,
     max_width: Option<Pixels>,
     margin_top: Option<Pixels>,
-    // WDS patch: where the dialog opens centred.
+    // SparkCommander patch: where the dialog opens centred.
     center_over: Option<Bounds<Pixels>>,
     close_button: bool,
 
@@ -271,7 +271,7 @@ impl Default for DialogProps {
             overlay_visible: false,
             close_button: true,
             overlay_closable: true,
-            // WDS patch: a dialog fades in where it opens, without sliding.
+            // SparkCommander patch: a dialog fades in where it opens, without sliding.
             entrance: DialogEntrance::Fade,
         }
     }
@@ -558,7 +558,7 @@ impl Dialog {
         self
     }
 
-    /// WDS patch: opens the dialog centred over `bounds`, in window
+    /// SparkCommander patch: opens the dialog centred over `bounds`, in window
     /// coordinates, instead of at `margin_top`.
     pub fn center_over(mut self, bounds: Bounds<Pixels>) -> Self {
         self.props.center_over = Some(bounds);
@@ -688,7 +688,7 @@ impl RenderOnce for Dialog {
 
         let layer_ix = self.layer_ix;
         let selection_scope = self.selection_scope;
-        // WDS patch: where the dialog was moved to.
+        // SparkCommander patch: where the dialog was moved to.
         let moving = window
             .use_keyed_state(("dialog-move", layer_ix), cx, |_, _| {
                 Rc::new(DialogMove::default())
@@ -729,7 +729,7 @@ impl RenderOnce for Dialog {
         let base_size = window.text_style().font_size;
         let rem_size = window.rem_size();
 
-        // WDS patch: moved, the dialog stays where it was put; else centred
+        // SparkCommander patch: moved, the dialog stays where it was put; else centred
         // over `center_over`, else at `margin_top`.
         let placed = moving.origin.get().is_some() || self.props.center_over.is_some();
         let (anchor, position) = match (moving.origin.get(), self.props.center_over) {
@@ -841,7 +841,7 @@ impl RenderOnce for Dialog {
                             })
                             .popup(
                                 gpui_base::Positioner::corner(
-                                    // WDS patch: see `moving`.
+                                    // SparkCommander patch: see `moving`.
                                     anchor, position,
                                 )
                                 .on_position(move |resolved| {
@@ -866,14 +866,14 @@ impl RenderOnce for Dialog {
                                         .pb(paddings.bottom)
                                         .gap(paddings.top.max(px(8.)))
                                         .refine_style(&self.style)
-                                        // WDS patch: the title's band is at the top.
+                                        // SparkCommander patch: the title's band is at the top.
                                         .when(has_title, |this| this.pt_0())
                                         .px_0()
                                         .occlude()
                                         .w(width)
                                         .when_some(self.props.max_width, |this, w| this.max_w(w))
                                         .max_h(max_height)
-                                        // WDS patch: the title is in a band, which
+                                        // SparkCommander patch: the title is in a band, which
                                         // shows where the dialog is moved by.
                                         .when_some(self.title, |this, title| {
                                             let moving = moving.clone();
@@ -975,7 +975,7 @@ impl RenderOnce for Dialog {
                                         })
                                         .when(command_bar.is_some() && has_footer, |this| this.pb_0())
                                         .children(self.props.close_button.then(|| {
-                                            // WDS patch: in the middle of the title's band.
+                                            // SparkCommander patch: in the middle of the title's band.
                                             let top = if has_title {
                                                 (band - px(24.)) / 2.
                                             } else {
@@ -1074,7 +1074,7 @@ impl RenderOnce for Dialog {
     }
 }
 
-/// WDS patch: follows the mouse anywhere in the window while the dialog is
+/// SparkCommander patch: follows the mouse anywhere in the window while the dialog is
 /// held by its title.
 fn move_listener(moving: Rc<DialogMove>) -> impl IntoElement {
     canvas(

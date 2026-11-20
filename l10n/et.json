@@ -3173,6 +3173,9 @@
   "scmd.error.read_workspaces": {
     "message": "Tööruume ei õnnestunud lugeda: {err}"
   },
+  "scmd.error.running_here": {
+    "message": "scmd juba töötab selles terminalis. Sellesse naasmiseks vajutage Ctrl+O või tippige exit."
+  },
   "scmd.error.save_back": {
     "message": "Ei õnnestunud tagasi salvestada: {err}"
   },

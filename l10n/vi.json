@@ -3173,6 +3173,9 @@
   "scmd.error.read_workspaces": {
     "message": "Không đọc được các không gian làm việc: {err}"
   },
+  "scmd.error.running_here": {
+    "message": "scmd đang chạy trong terminal này. Nhấn Ctrl+O hoặc gõ exit để quay lại."
+  },
   "scmd.error.save_back": {
     "message": "Không lưu lại được: {err}"
   },

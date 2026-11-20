@@ -3173,6 +3173,9 @@
   "scmd.error.read_workspaces": {
     "message": "Kan de werkruimten niet lezen: {err}"
   },
+  "scmd.error.running_here": {
+    "message": "scmd draait al in deze terminal. Druk op Ctrl+O of typ exit om ernaar terug te gaan."
+  },
   "scmd.error.save_back": {
     "message": "Kan het niet terugzetten: {err}"
   },

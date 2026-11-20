@@ -3173,6 +3173,9 @@
   "scmd.error.read_workspaces": {
     "message": "Kunne ikke lese arbeidsområdene: {err}"
   },
+  "scmd.error.running_here": {
+    "message": "scmd kjører allerede i denne terminalen. Trykk Ctrl+O, eller skriv exit, for å gå tilbake til den."
+  },
   "scmd.error.save_back": {
     "message": "Kunne ikke lagre den tilbake: {err}"
   },

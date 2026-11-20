@@ -3173,6 +3173,9 @@
   "scmd.error.read_workspaces": {
     "message": "वर्कस्पेस पढ़े नहीं जा सके: {err}"
   },
+  "scmd.error.running_here": {
+    "message": "scmd इस टर्मिनल में पहले से चल रहा है। उस पर लौटने के लिए Ctrl+O दबाएँ या exit टाइप करें।"
+  },
   "scmd.error.save_back": {
     "message": "इसे वापस सेव नहीं किया जा सका: {err}"
   },

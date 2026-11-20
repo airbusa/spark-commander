@@ -3173,6 +3173,9 @@
   "scmd.error.read_workspaces": {
     "message": "Impossible de lire les espaces de travail : {err}"
   },
+  "scmd.error.running_here": {
+    "message": "scmd est déjà ouvert dans ce terminal. Appuyez sur Ctrl+O, ou tapez exit, pour y revenir."
+  },
   "scmd.error.save_back": {
     "message": "Impossible de le renvoyer : {err}"
   },

@@ -3173,6 +3173,9 @@
   "scmd.error.read_workspaces": {
     "message": "无法读取工作区：{err}"
   },
+  "scmd.error.running_here": {
+    "message": "scmd 已在此终端中运行。按 Ctrl+O 或输入 exit 返回。"
+  },
   "scmd.error.save_back": {
     "message": "无法写回：{err}"
   },

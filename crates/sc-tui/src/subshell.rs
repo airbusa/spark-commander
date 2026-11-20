@@ -29,10 +29,10 @@ pub struct Subshell {
 impl Subshell {
     /// `program` (the settings' shell), else the user's own, in `dir`.
     pub fn start(dir: &Path, program: Option<(String, Vec<String>)>) -> io::Result<Subshell> {
-        let (pty, terminal) = open_pty()?;
+        let (pty, terminal, name) = open_pty()?;
         let (program, args) = program.unwrap_or_else(|| (sc_core::system::shells::default_name(), Vec::new()));
         let mut command = Command::new(program);
-        command.args(args).current_dir(dir);
+        command.args(args).current_dir(dir).env(crate::IN_TERMINAL, name);
         command.stdin(Stdio::from(terminal.try_clone()?)).stdout(Stdio::from(terminal.try_clone()?)).stderr(Stdio::from(terminal));
         // SAFETY: only async-signal-safe calls between fork and exec.
         unsafe {
@@ -154,8 +154,8 @@ impl Drop for Subshell {
     }
 }
 
-/// A pseudo-terminal: our end, and the shell's.
-fn open_pty() -> io::Result<(File, OwnedFd)> {
+/// A pseudo-terminal: our end, the shell's, and its name.
+fn open_pty() -> io::Result<(File, OwnedFd, String)> {
     let failed = |code: i32| if code < 0 { Err(io::Error::last_os_error()) } else { Ok(code) };
     // SAFETY: the C calls get valid descriptors and a name copied before the next call.
     unsafe {
@@ -169,7 +169,7 @@ fn open_pty() -> io::Result<(File, OwnedFd)> {
         }
         let name = CString::from(std::ffi::CStr::from_ptr(name));
         let theirs = OwnedFd::from_raw_fd(failed(libc::open(name.as_ptr(), libc::O_RDWR | libc::O_NOCTTY | libc::O_CLOEXEC))?);
-        Ok((File::from(ours), theirs))
+        Ok((File::from(ours), theirs, name.to_string_lossy().into_owned()))
     }
 }
 

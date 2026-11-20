@@ -3173,6 +3173,9 @@
   "scmd.error.read_workspaces": {
     "message": "Impossibile leggere le aree di lavoro: {err}"
   },
+  "scmd.error.running_here": {
+    "message": "scmd è già in esecuzione in questo terminale. Premi Ctrl+O, o digita exit, per tornarci."
+  },
   "scmd.error.save_back": {
     "message": "Impossibile salvarlo di nuovo: {err}"
   },

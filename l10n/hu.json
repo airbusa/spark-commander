@@ -3173,6 +3173,9 @@
   "scmd.error.read_workspaces": {
     "message": "Nem sikerült beolvasni a munkaterületeket: {err}"
   },
+  "scmd.error.running_here": {
+    "message": "Az scmd már fut ebben a terminálban. Ctrl+O-val vagy az exit paranccsal térhet vissza hozzá."
+  },
   "scmd.error.save_back": {
     "message": "Nem sikerült visszamenteni: {err}"
   },

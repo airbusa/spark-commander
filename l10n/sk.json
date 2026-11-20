@@ -3173,6 +3173,9 @@
   "scmd.error.read_workspaces": {
     "message": "Pracovné priestory sa nepodarilo načítať: {err}"
   },
+  "scmd.error.running_here": {
+    "message": "scmd už v tomto termináli beží. Vrátite sa doň klávesom Ctrl+O alebo príkazom exit."
+  },
   "scmd.error.save_back": {
     "message": "Nepodarilo sa uložiť späť: {err}"
   },

@@ -3173,6 +3173,9 @@
   "scmd.error.read_workspaces": {
     "message": "Не вдалося прочитати робочі простори: {err}"
   },
+  "scmd.error.running_here": {
+    "message": "scmd уже працює в цьому терміналі. Натисніть Ctrl+O або введіть exit, щоб повернутися до нього."
+  },
   "scmd.error.save_back": {
     "message": "Не вдалося записати назад: {err}"
   },

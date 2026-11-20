@@ -3173,6 +3173,9 @@
   "scmd.error.read_workspaces": {
     "message": "Çalışma alanları okunamadı: {err}"
   },
+  "scmd.error.running_here": {
+    "message": "scmd bu terminalde zaten çalışıyor. Ona dönmek için Ctrl+O tuşuna basın veya exit yazın."
+  },
   "scmd.error.save_back": {
     "message": "Geri kaydedilemedi: {err}"
   },

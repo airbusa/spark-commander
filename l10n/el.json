@@ -3173,6 +3173,9 @@
   "scmd.error.read_workspaces": {
     "message": "Δεν ήταν δυνατή η ανάγνωση των χώρων εργασίας: {err}"
   },
+  "scmd.error.running_here": {
+    "message": "Το scmd εκτελείται ήδη σε αυτό το τερματικό. Πατήστε Ctrl+O ή πληκτρολογήστε exit για να επιστρέψετε σε αυτό."
+  },
   "scmd.error.save_back": {
     "message": "Δεν ήταν δυνατή η αποστολή του πίσω: {err}"
   },

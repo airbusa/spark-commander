@@ -3173,6 +3173,9 @@
   "scmd.error.read_workspaces": {
     "message": "Није могуће прочитати радне просторе: {err}"
   },
+  "scmd.error.running_here": {
+    "message": "scmd већ ради у овом терминалу. Притисните Ctrl+O или откуцајте exit да бисте се вратили у њега."
+  },
   "scmd.error.save_back": {
     "message": "Није могуће вратити је назад: {err}"
   },

@@ -3173,6 +3173,9 @@
   "scmd.error.read_workspaces": {
     "message": "Neizdevās nolasīt darbvietas: {err}"
   },
+  "scmd.error.running_here": {
+    "message": "scmd jau darbojas šajā terminālī. Lai atgrieztos tajā, nospiediet Ctrl+O vai ierakstiet exit."
+  },
   "scmd.error.save_back": {
     "message": "Neizdevās saglabāt atpakaļ: {err}"
   },

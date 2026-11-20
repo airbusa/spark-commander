@@ -3173,6 +3173,9 @@
   "scmd.error.read_workspaces": {
     "message": "Nie udało się odczytać obszarów roboczych: {err}"
   },
+  "scmd.error.running_here": {
+    "message": "scmd już działa w tym terminalu. Naciśnij Ctrl+O lub wpisz exit, aby do niego wrócić."
+  },
   "scmd.error.save_back": {
     "message": "Nie udało się zapisać z powrotem: {err}"
   },

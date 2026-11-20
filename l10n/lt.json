@@ -3173,6 +3173,9 @@
   "scmd.error.read_workspaces": {
     "message": "Nepavyko nuskaityti darbo sričių: {err}"
   },
+  "scmd.error.running_here": {
+    "message": "scmd jau veikia šiame terminale. Norėdami grįžti į jį, paspauskite Ctrl+O arba įveskite exit."
+  },
   "scmd.error.save_back": {
     "message": "Nepavyko įrašyti atgal: {err}"
   },

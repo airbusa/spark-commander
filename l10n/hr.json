@@ -3173,6 +3173,9 @@
   "scmd.error.read_workspaces": {
     "message": "Radne prostore nije moguće pročitati: {err}"
   },
+  "scmd.error.running_here": {
+    "message": "scmd već radi u ovom terminalu. Pritisnite Ctrl+O ili upišite exit za povratak u njega."
+  },
   "scmd.error.save_back": {
     "message": "Nije moguće spremiti natrag: {err}"
   },

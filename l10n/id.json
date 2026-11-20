@@ -3173,6 +3173,9 @@
   "scmd.error.read_workspaces": {
     "message": "Tidak dapat membaca ruang kerja: {err}"
   },
+  "scmd.error.running_here": {
+    "message": "scmd sudah berjalan di terminal ini. Tekan Ctrl+O, atau ketik exit, untuk kembali ke sana."
+  },
   "scmd.error.save_back": {
     "message": "Tidak dapat menyimpannya kembali: {err}"
   },

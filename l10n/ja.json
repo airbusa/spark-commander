@@ -3173,6 +3173,9 @@
   "scmd.error.read_workspaces": {
     "message": "ワークスペースを読み込めませんでした：{err}"
   },
+  "scmd.error.running_here": {
+    "message": "scmd はこのターミナルですでに実行中です。戻るには Ctrl+O を押すか、exit と入力してください。"
+  },
   "scmd.error.save_back": {
     "message": "保存し直せませんでした：{err}"
   },

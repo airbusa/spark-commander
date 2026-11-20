@@ -3173,6 +3173,9 @@
   "scmd.error.read_workspaces": {
     "message": "No se pudieron leer los espacios de trabajo: {err}"
   },
+  "scmd.error.running_here": {
+    "message": "scmd ya se está ejecutando en este terminal. Pulse Ctrl+O o escriba exit para volver a él."
+  },
   "scmd.error.save_back": {
     "message": "No se pudo devolver a su origen: {err}"
   },

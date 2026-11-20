@@ -3173,6 +3173,9 @@
   "scmd.error.read_workspaces": {
     "message": "Die Arbeitsbereiche konnten nicht gelesen werden: {err}"
   },
+  "scmd.error.running_here": {
+    "message": "scmd läuft bereits in diesem Terminal. Mit Ctrl+O oder exit kehren Sie dorthin zurück."
+  },
   "scmd.error.save_back": {
     "message": "Konnte nicht zurückgespeichert werden: {err}"
   },

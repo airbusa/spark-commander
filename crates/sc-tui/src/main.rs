@@ -111,6 +111,23 @@ pub struct App {
     quit: bool,
 }
 
+/// The terminal scmd runs in, told to the programs it starts (Ctrl+O's shell
+/// its own), so none starts another scmd in it, as Midnight Commander's MC_SID.
+pub const IN_TERMINAL: &str = "SCMD_TERMINAL";
+
+fn this_terminal() -> Option<String> {
+    #[cfg(unix)]
+    {
+        // SAFETY: asked before any other thread starts; the name is copied at once.
+        let name = unsafe { libc::ttyname(0) };
+        // SAFETY: a NUL-ended name, non-null.
+        (!name.is_null()).then(|| unsafe { std::ffi::CStr::from_ptr(name) }.to_string_lossy().into_owned())
+    }
+    // Ctrl+O's shell is in scmd's own console there.
+    #[cfg(windows)]
+    Some("console".into())
+}
+
 const DOUBLE_CLICK: Duration = Duration::from_millis(400);
 /// How long the loop waits for a key before it looks at background work.
 const TICK: Duration = Duration::from_millis(100);
@@ -122,6 +139,15 @@ fn main() -> io::Result<()> {
         Settings::default()
     });
     settings.apply_globally();
+    let terminal = this_terminal();
+    if terminal.is_some() && std::env::var(IN_TERMINAL).ok() == terminal {
+        eprintln!("{}", t!("scmd.error.running_here"));
+        std::process::exit(1);
+    }
+    if let Some(terminal) = terminal {
+        // SAFETY: no other thread yet.
+        unsafe { std::env::set_var(IN_TERMINAL, terminal) };
+    }
     let session = Session::load_from(session::TERMINAL).unwrap_or_else(|err| {
         problems.push(t!("scmd.error.read_tabs", err = err));
         Session::default()

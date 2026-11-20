@@ -3173,6 +3173,9 @@
   "scmd.error.read_workspaces": {
     "message": "Delovnih prostorov ni bilo mogoče prebrati: {err}"
   },
+  "scmd.error.running_here": {
+    "message": "scmd že teče v tem terminalu. Pritisnite Ctrl+O ali vnesite exit, da se vrnete vanj."
+  },
   "scmd.error.save_back": {
     "message": "Ni ga bilo mogoče shraniti nazaj: {err}"
   },

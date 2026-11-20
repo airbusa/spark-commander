@@ -3173,6 +3173,9 @@
   "scmd.error.read_workspaces": {
     "message": "Работните пространства не можаха да се прочетат: {err}"
   },
+  "scmd.error.running_here": {
+    "message": "scmd вече работи в този терминал. Натиснете Ctrl+O или въведете exit, за да се върнете към него."
+  },
   "scmd.error.save_back": {
     "message": "Не можа да се запази обратно: {err}"
   },

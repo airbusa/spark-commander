@@ -3173,6 +3173,9 @@
   "scmd.error.read_workspaces": {
     "message": "No s’han pogut llegir els espais de treball: {err}"
   },
+  "scmd.error.running_here": {
+    "message": "scmd ja s’està executant en aquest terminal. Premeu Ctrl+O, o escriviu exit, per tornar-hi."
+  },
   "scmd.error.save_back": {
     "message": "No s’ha pogut tornar a desar: {err}"
   },

@@ -4231,6 +4231,10 @@
     "description": "scmd (the terminal app), error at the start when the saved workspaces (named sets of tabs) cannot be read. {err} is the system's own error text, e.g. \"Permission denied (os error 13)\".",
     "message": "Could not read the workspaces: {err}"
   },
+  "scmd.error.running_here": {
+    "description": "scmd (the terminal app), printed when scmd is started inside the shell scmd itself opened (Ctrl+O), or from its command line: it does not start a second time there. scmd, Ctrl+O and exit (a shell command) stay as they are.",
+    "message": "scmd is already running in this terminal. Press Ctrl+O, or type exit, to go back to it."
+  },
   "scmd.error.save_back": {
     "description": "scmd (the terminal app), error when an edited copy of a server's or an archive's file cannot be put back there. {err} is the error's own text, e.g. \"Connection refused (os error 111)\".",
     "message": "Could not save it back: {err}"

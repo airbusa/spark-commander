@@ -3173,6 +3173,9 @@
   "scmd.error.read_workspaces": {
     "message": "อ่านพื้นที่ทำงานไม่ได้: {err}"
   },
+  "scmd.error.running_here": {
+    "message": "scmd ทำงานอยู่ในเทอร์มินัลนี้แล้ว กด Ctrl+O หรือพิมพ์ exit เพื่อกลับไป"
+  },
   "scmd.error.save_back": {
     "message": "ส่งกลับไปบันทึกไม่ได้: {err}"
   },

@@ -3173,6 +3173,9 @@
   "scmd.error.read_workspaces": {
     "message": "작업 공간을 읽지 못했습니다: {err}"
   },
+  "scmd.error.running_here": {
+    "message": "이 터미널에서 scmd가 이미 실행 중입니다. 돌아가려면 Ctrl+O를 누르거나 exit를 입력하세요."
+  },
   "scmd.error.save_back": {
     "message": "다시 저장하지 못했습니다: {err}"
   },

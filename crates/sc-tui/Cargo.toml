@@ -19,3 +19,7 @@ ratatui-image = { version = "11.1", default-features = false, features = ["cross
 image = { version = "0.25", default-features = false }
 # Column widths of names; ratatui builds it already.
 unicode-width = "0.2"
+
+# Ctrl+O's shell in a pty of its own; the app builds it already.
+[target.'cfg(unix)'.dependencies]
+libc = "0.2"

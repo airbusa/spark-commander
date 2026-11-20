@@ -6,6 +6,8 @@ mod input;
 mod keys;
 mod picture;
 mod skin;
+#[cfg(unix)]
+mod subshell;
 mod ui;
 mod viewer;
 
@@ -69,7 +71,12 @@ enum Foreground {
     Shell(String, PathBuf),
     /// The file, and for a copy how saves go back.
     Editor(PathBuf, Option<Upload>),
+    /// Ctrl+O's shell, as Midnight Commander's.
+    Subshell,
 }
+
+/// The window's own: scmd has one shell, Ctrl+O's.
+const NOT_HERE: [Command; 1] = [Command::NewTerminal];
 
 pub struct App {
     pub sides: [Side; 2],
@@ -93,6 +100,9 @@ pub struct App {
     searches: Option<Searches>,
     /// Save Selection's names, for Restore Selection.
     saved: Vec<std::ffi::OsString>,
+    /// Ctrl+O's, from its first Ctrl+O until it ends.
+    #[cfg(unix)]
+    subshell: Option<subshell::Subshell>,
     /// Synchronized browsing: the other panel makes the active one's moves too.
     sync_browsing: bool,
     /// How the terminal draws pictures; asked at the start.
@@ -187,6 +197,7 @@ impl App {
             top: 0,
         };
         let bindings = (settings.keys.bindings().into_iter())
+            .filter(|(_, command)| !NOT_HERE.contains(command))
             .map(|(key, command)| (keymap::normalize(&key, false), command))
             .collect();
         let mut app = App {
@@ -205,6 +216,8 @@ impl App {
             foreground: None,
             searches: None,
             saved: Vec::new(),
+            #[cfg(unix)]
+            subshell: None,
             sync_browsing: session.sync_browsing,
             picker: None,
             done: mpsc::channel(),
@@ -675,6 +688,7 @@ impl App {
             Command::PreviousTab => self.sides[side].tabs.step(-1),
             Command::CloseAllTabs => self.sides[side].tabs.close_all(),
             Command::CloseDuplicateTabs => self.sides[side].tabs.close_duplicates(),
+            Command::TerminalPanel => self.foreground = Some(Foreground::Subshell),
             Command::View => self.view(),
             Command::Edit => self.edit(),
             Command::EditExternally => self.edit_externally(),
@@ -757,11 +771,70 @@ impl App {
                 }
                 file.parent().map(Path::to_owned).unwrap_or_default()
             }
+            Foreground::Subshell => self.subshell(),
         };
         for side in &mut self.sides {
             side.tabs.reload_folder(&folder);
         }
         start()
+    }
+
+    /// Ctrl+O: the shell, in the panel's folder (a server's panel leaves it
+    /// where it is); the panel goes where it was left. Gives the folder to read again.
+    #[cfg(unix)]
+    fn subshell(&mut self) -> PathBuf {
+        let folder = self.panel().folder().to_owned();
+        let local = self.panel().remote().is_none();
+        let alive = self.subshell.take().and_then(|mut shell| (!shell.ended()).then_some(shell));
+        let started = match alive {
+            Some(mut shell) => {
+                let moved = local && shell.folder().as_deref() != Some(folder.as_path());
+                if moved {
+                    shell.cd(&folder);
+                }
+                Ok((shell, moved))
+            }
+            None => {
+                let at = if local { folder.clone() } else { std::env::home_dir().unwrap_or_else(|| "/".into()) };
+                let program = sc_core::system::shells::command(self.settings.terminal_shell.as_deref());
+                subshell::Subshell::start(&at, program).map(|shell| (shell, local))
+            }
+        };
+        let (mut shell, moved) = match started {
+            Ok(started) => started,
+            Err(err) => {
+                self.say(t!("context_menu.terminal_failed", err = err), true);
+                return folder;
+            }
+        };
+        let before = if moved { Some(folder.clone()) } else { shell.folder() };
+        let _ = ratatui::crossterm::terminal::enable_raw_mode();
+        let ended = shell.show().unwrap_or(true);
+        let after = shell.folder();
+        if !ended {
+            self.subshell = Some(shell);
+        }
+        if let Some(after) = after.filter(|after| Some(after) != before.as_ref() && *after != folder) {
+            self.navigate(move |panel| panel.go_to_folder(after));
+        }
+        self.panel().folder().to_owned()
+    }
+
+    /// Windows: the shell of the settings, else Windows PowerShell, until it ends.
+    #[cfg(windows)]
+    fn subshell(&mut self) -> PathBuf {
+        let folder = self.panel().folder().to_owned();
+        if self.panel().remote().is_some() {
+            self.say(t!("scmd.command_line.not_on_server"), true);
+            return folder;
+        }
+        let chosen = self.settings.terminal_shell.as_deref();
+        let shell = sc_core::system::shells::others().into_iter().find(|shell| Some(shell.program.as_str()) == chosen);
+        let (program, args) = shell.map_or(("powershell.exe".into(), Vec::new()), |shell| (shell.program, shell.args));
+        if let Err(err) = std::process::Command::new(program).args(args).current_dir(&folder).status() {
+            self.say(t!("context_menu.terminal_failed", err = err), true);
+        }
+        folder
     }
 
     /// A changed copy goes back to its server or archive, in the background.

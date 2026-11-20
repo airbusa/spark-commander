@@ -7345,6 +7345,7 @@ name = "sc-tui"
 version = "0.1.0"
 dependencies = [
  "image",
+ "libc",
  "ratatui",
  "ratatui-image",
  "sc-core",

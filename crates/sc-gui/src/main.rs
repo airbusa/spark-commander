@@ -1283,6 +1283,25 @@ impl Commander {
         h_flex().flex_1().min_w_0().overflow_hidden().justify_end().children(parts).child(div().flex_1())
     }
 
+    /// Windows: the terminal's shell (Settings), else Windows PowerShell, in a
+    /// console of its own in the active panel's folder; Windows 11 shows it in its default terminal.
+    #[cfg(windows)]
+    fn open_terminal(&mut self, window: &mut Window, cx: &mut Context<Self>) {
+        use std::os::windows::process::CommandExt;
+        const CREATE_NEW_CONSOLE: u32 = 0x10;
+        let panel = self.panels[self.active].tabs.current();
+        if panel.remote().is_some() {
+            return window.push_notification(Notification::warning(sc_core::t!("context_menu.terminal_not_local")), cx);
+        }
+        let chosen = self.settings.terminal_shell.as_deref();
+        let shell = sc_core::system::shells::others().into_iter().find(|shell| Some(shell.program.as_str()) == chosen);
+        let (program, args) = shell.map_or(("powershell.exe".into(), Vec::new()), |shell| (shell.program, shell.args));
+        let started = std::process::Command::new(program).args(args).current_dir(panel.folder()).creation_flags(CREATE_NEW_CONSOLE).spawn();
+        if let Err(err) = started {
+            window.push_notification(Notification::error(sc_core::t!("context_menu.terminal_failed", err = err)), cx);
+        }
+    }
+
     /// Goes to a folder that exists; otherwise says why and stays open.
     fn apply_path_edit(&mut self, window: &mut Window, cx: &mut Context<Self>) {
         let (ix, typed) = match &self.path_edit {
@@ -2588,7 +2607,7 @@ impl Render for Commander {
                     Command::ListTabs => this.show_tab_list(window, cx),
                     Command::FolderHistory => this.show_history(window, cx),
                     Command::NewFolder => this.new_folder(window, cx),
-                    #[cfg(any(target_os = "linux", target_os = "freebsd"))]
+                    #[cfg(any(target_os = "linux", target_os = "freebsd", windows))]
                     Command::OpenTerminal => this.open_terminal(window, cx),
                     Command::CalculateOccupiedSpace => this.calculate_space(window, cx),
                     Command::AllFolderSizes => this.all_folder_sizes(window, cx),

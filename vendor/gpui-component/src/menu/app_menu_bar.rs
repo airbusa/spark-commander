@@ -321,16 +321,18 @@ impl Render for AppMenu {
             self._subscription = None;
         }
 
-        // SparkCommander patch: an open menu's name in the accent, as KDE's.
+        // SparkCommander patch: an open menu's name in the accent, as KDE's; Windows 11's
+        // the faint fill of the item under the pointer.
+        let fluent = cx.try_global::<crate::NativeControls>().is_some_and(|native| native.card.is_some());
         let theme = cx.theme();
         let colors = ButtonCustomVariant::new(cx)
             .color(theme.transparent)
-            .foreground(match is_open {
+            .foreground(match is_open && !fluent {
                 true => theme.primary_foreground,
                 false => theme.foreground,
             })
             .hover(theme.accent)
-            .active(theme.primary);
+            .active(if fluent { theme.accent } else { theme.primary });
         div()
             .id(self.ix)
             .relative()

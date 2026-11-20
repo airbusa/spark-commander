@@ -1622,7 +1622,7 @@ diff -ruN a/src/mac.rs b/src/mac.rs
 +pub(crate) const CHECK_MARK: &[u8] = br#"<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"><path d="M2.4 6.4 4.9 8.9 9.7 3.2" fill="none" stroke="black" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>"#;
 diff -ruN a/src/menu/app_menu_bar.rs b/src/menu/app_menu_bar.rs
 --- a/src/menu/app_menu_bar.rs	2006-07-24 03:21:28.000000000 +0200
-+++ b/src/menu/app_menu_bar.rs	2026-11-17 17:18:36.166869177 +0100
++++ b/src/menu/app_menu_bar.rs	2026-11-20 09:49:27.110953400 +0100
 @@ -1,7 +1,13 @@
 +// Modified for Water Data Studio (Apache-2.0, section 4b): menu-bar menus may
 +// use the window's height. Changes are marked "WDS patch".
@@ -1746,7 +1746,7 @@ diff -ruN a/src/menu/app_menu_bar.rs b/src/menu/app_menu_bar.rs
                  popup_menu.update(cx, |menu, cx| {
                      menu.set_action_context(action_context.clone(), cx);
                  });
-@@ -258,7 +314,23 @@
+@@ -258,7 +314,25 @@
  impl Render for AppMenu {
      fn render(&mut self, window: &mut Window, cx: &mut Context<Self>) -> impl IntoElement {
          let is_open = self.is_open(cx);
@@ -1757,20 +1757,22 @@ diff -ruN a/src/menu/app_menu_bar.rs b/src/menu/app_menu_bar.rs
 +            self._subscription = None;
 +        }
  
-+        // SparkCommander patch: an open menu's name in the accent, as KDE's.
++        // SparkCommander patch: an open menu's name in the accent, as KDE's; Windows 11's
++        // the faint fill of the item under the pointer.
++        let fluent = cx.try_global::<crate::NativeControls>().is_some_and(|native| native.card.is_some());
 +        let theme = cx.theme();
 +        let colors = ButtonCustomVariant::new(cx)
 +            .color(theme.transparent)
-+            .foreground(match is_open {
++            .foreground(match is_open && !fluent {
 +                true => theme.primary_foreground,
 +                false => theme.foreground,
 +            })
 +            .hover(theme.accent)
-+            .active(theme.primary);
++            .active(if fluent { theme.accent } else { theme.primary });
          div()
              .id(self.ix)
              .relative()
-@@ -267,7 +339,7 @@
+@@ -267,7 +341,7 @@
                      .small()
                      .py_0p5()
                      .compact()

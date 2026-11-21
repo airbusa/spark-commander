@@ -9,6 +9,7 @@ use std::path::PathBuf;
 use std::sync::Arc;
 use std::sync::atomic::{AtomicBool, Ordering};
 
+use sc_core::edit::syntax::{Coloured, Syntax};
 use sc_core::settings::ViewerSettings;
 use sc_core::t;
 use sc_core::viewer::{Font, Mode, Query, Shown, TextFile};
@@ -47,6 +48,8 @@ fn keys() -> [String; 10] {
 pub struct Viewer {
     pub shown: Shown,
     text: Arc<TextFile>,
+    /// A program's text in its language's colours, as the window's viewer shows it.
+    colours: Option<Coloured>,
     /// A server's or an archive's file goes by its own name, not its copy's.
     title: Option<String>,
     top: usize,
@@ -78,9 +81,10 @@ impl Viewer {
         let (columns, lines) = ratatui::crossterm::terminal::size().unwrap_or((80, 24));
         shown.settings.text_width = columns as usize;
         let text = shown.start()?;
-        Ok(Self {
+        let mut viewer = Self {
             shown,
             text: Arc::new(text),
+            colours: None,
             title,
             top: 0,
             left: 0,
@@ -93,7 +97,15 @@ impl Viewer {
             loading: None,
             page: 0,
             pages: 0,
-        })
+        };
+        viewer.colour();
+        Ok(viewer)
+    }
+
+    /// In its language's colours: UTF-8 text in the Text or UTF-8 mode, up to `SYNTAX_LIMIT`.
+    fn colour(&mut self) {
+        let source = sc_core::viewer::source(self.shown.path(), self.shown.mode);
+        self.colours = source.and_then(|(language, text)| Some(Coloured::new(Syntax::of(language)?, text)));
     }
 
     /// Indexing or finding goes on in the background.
@@ -131,6 +143,7 @@ impl Viewer {
         };
         self.shown.settings.text_width = self.width.max(1);
         self.text = Arc::new(self.shown.text()?);
+        self.colour();
         (self.top, self.left, self.selection) = (0, 0, 0..0);
         self.reveal = Some((keep, 0));
         Ok(())
@@ -144,6 +157,7 @@ impl Viewer {
         self.stop_finding();
         (self.picture, self.loading, self.page, self.pages) = (None, None, 0, 0);
         self.text = Arc::new(self.shown.start()?);
+        self.colour();
         (self.top, self.left, self.selection, self.reveal) = (0, 0, 0..0, None);
         Ok(())
     }
@@ -431,11 +445,18 @@ fn draw_text(frame: &mut Frame, body: Rect, viewer: &mut Viewer) -> String {
     let buf = frame.buffer_mut();
     let (text, selected) = (skin().viewer, skin().found);
     buf.set_style(body, text);
+    let kinds = match (&viewer.colours, shown.first(), shown.last()) {
+        (Some(colours), Some(first), Some(last)) => colours.spans(first.offset(0) as usize..last.end as usize),
+        _ => Vec::new(),
+    };
+    let mut kinds = kinds.iter().peekable();
     for (n, row) in shown.iter().enumerate() {
         let marks = row.highlights(&viewer.selection);
         let mut spans: Vec<Span> = Vec::new();
         let mut used = 0;
         for (column, (at, c)) in row.text.char_indices().enumerate() {
+            let offset = row.offset(column) as usize;
+            while kinds.next_if(|(kind, _)| kind.end <= offset).is_some() {}
             if column < viewer.left {
                 continue;
             }
@@ -443,9 +464,10 @@ fn draw_text(frame: &mut Frame, body: Rect, viewer: &mut Viewer) -> String {
             if used > width {
                 break;
             }
-            let style = match marks.iter().any(|run| run.contains(&at)) {
-                true => selected,
-                false => text,
+            let style = match (marks.iter().any(|run| run.contains(&at)), kinds.peek()) {
+                (true, _) => selected,
+                (false, Some((kind, which))) if kind.start <= offset => text.patch(skin().syntax[*which as usize]),
+                _ => text,
             };
             match spans.last_mut() {
                 Some(span) if span.style == style => span.content.to_mut().push(c),

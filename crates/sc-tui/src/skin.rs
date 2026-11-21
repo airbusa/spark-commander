@@ -49,6 +49,9 @@ pub struct Skin {
     pub editor_whitespace: Style,
     pub editor_nonprintable: Style,
     pub editor_line_numbers: Style,
+    /// Colours over the text by `syntax::Kind`: keywords, strings, comments, numbers,
+    /// markup, a diff's added and removed lines; only what each gives.
+    pub syntax: [Style; 7],
     /// Files' colours over the panel's.
     pub directory: Style,
     pub executable: Style,
@@ -100,6 +103,7 @@ impl Default for Skin {
             editor_whitespace: panel.fg(Color::LightBlue),
             editor_nonprintable: Style::new().fg(Color::Gray).bg(Color::Black),
             editor_line_numbers: Style::new().fg(Color::White).bg(Color::Cyan),
+            syntax: SYNTAX.map(|color| Style::new().fg(color)),
             directory: Style::new().fg(Color::White).add_modifier(Modifier::BOLD),
             executable: Style::new().fg(green),
             archive: Style::new().fg(pink),
@@ -111,6 +115,28 @@ impl Default for Skin {
         }
     }
 }
+
+/// Where a skin gives the syntax colours: ours in `[editor]`, which mc passes over; a diff's as mc's diff viewer.
+const SYNTAX_KEYS: [(&str, &str); 7] = [
+    ("editor", "syntaxkeyword"),
+    ("editor", "syntaxstring"),
+    ("editor", "syntaxcomment"),
+    ("editor", "syntaxnumber"),
+    ("editor", "syntaxmarkup"),
+    ("diffviewer", "added"),
+    ("diffviewer", "removed"),
+];
+
+/// mcedit's, where a skin gives none: yellow keywords, green strings, brown comments.
+const SYNTAX: [Color; 7] = [
+    Color::Indexed(228),
+    Color::Indexed(120),
+    Color::Indexed(180),
+    Color::LightCyan,
+    Color::Indexed(219),
+    Color::Indexed(120),
+    Color::Indexed(210),
+];
 
 static SKIN: OnceLock<Skin> = OnceLock::new();
 
@@ -188,6 +214,13 @@ impl Skin {
             editor_whitespace: style("editor", "editwhitespace"),
             editor_nonprintable: style("editor", "editnonprintable"),
             editor_line_numbers: style("editor", "editlinestate"),
+            syntax: std::array::from_fn(|ix| {
+                let (section, key) = SYNTAX_KEYS[ix];
+                match ini.get(section, key) {
+                    Some(_) => ini.own(section, key),
+                    None => Style::new().fg(SYNTAX[ix]),
+                }
+            }),
             directory: file("directory"),
             executable: file("executable"),
             archive: file("archive"),

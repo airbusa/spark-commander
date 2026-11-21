@@ -13,6 +13,7 @@ use ratatui::crossterm::event::{KeyCode, KeyEvent, KeyModifiers, MouseButton, Mo
 use ratatui::layout::{Position, Rect};
 use ratatui::text::{Line, Span};
 use sc_core::edit::buffer::Buffer;
+use sc_core::edit::syntax::{Open, Syntax};
 use sc_core::edit::text_edit::{self, TextCase, TextEdit};
 use sc_core::edit::text_find::{Finder, Options};
 use sc_core::edit::{self, Loaded};
@@ -93,6 +94,9 @@ pub struct Editor {
     title: Option<String>,
     upload: Option<(Upload, Option<SystemTime>)>,
     pub buffer: Buffer,
+    /// The file's language's colours, and what each line starts with open, as far as read.
+    syntax: Option<Syntax>,
+    opens: Vec<Open>,
     /// Its lines end in CRLF: saved so again.
     crlf: bool,
     /// Not text: why, and the text shown on request; shown, saving asks first.
@@ -136,6 +140,8 @@ impl Editor {
             title,
             upload: None,
             buffer: Buffer::default(),
+            syntax: None,
+            opens: Vec::new(),
             crlf: false,
             unfit,
             forced: false,
@@ -160,6 +166,7 @@ impl Editor {
         let found = text_edit::detect_indent(&text);
         (self.options.tab_size, self.options.hard_tabs) = found.unwrap_or((self.options.tab_size, self.options.hard_tabs));
         self.buffer = Buffer::new(if self.crlf { text.replace("\r\n", "\n") } else { text });
+        self.set_language();
         (self.marking, self.block, self.column, self.top, self.left, self.follow) = (false, None, None, 0, 0, true);
     }
 
@@ -358,10 +365,31 @@ impl Editor {
         }
     }
 
+    fn language(&self) -> &'static str {
+        self.path.as_deref().map_or("text", text_edit::language_of)
+    }
+
+    /// By the file's name; again when saved as another.
+    fn set_language(&mut self) {
+        (self.syntax, self.opens) = (Syntax::of(self.language()), vec![Open::Nothing]);
+    }
+
     /// What starts a line comment in the file's language.
     fn comment(&self) -> Option<&'static str> {
-        let language = self.path.as_deref().map_or("text", text_edit::language_of);
-        text_edit::line_comment(language)
+        text_edit::line_comment(self.language())
+    }
+
+    /// What the lines up to `last` start with open, read on from where the text last changed.
+    fn read_opens(&mut self, last: usize) {
+        if let Some(at) = self.buffer.take_changed() {
+            self.opens.truncate(self.buffer.line_of(at) + 1);
+        }
+        let Some(syntax) = self.syntax else { return };
+        while self.opens.len() <= last.min(self.buffer.lines() - 1) {
+            let line = self.opens.len() - 1;
+            let next = syntax.next(self.buffer.line(line), self.opens[line]);
+            self.opens.push(next);
+        }
     }
 
     /// Moves, typing, F9.
@@ -753,6 +781,7 @@ impl App {
         if editor.path.as_ref() != Some(&path) {
             // Another file now: the server's is saved back no more.
             (editor.path, editor.title, editor.upload) = (Some(path), None, None);
+            editor.set_language();
         }
         editor.forced = false;
         editor.buffer.saved();
@@ -987,6 +1016,7 @@ pub fn draw(frame: &mut Frame, editor: &mut Editor, caret: bool) {
         editor.left = editor.left.clamp((column + 1).saturating_sub(room), column);
     }
     editor.top = editor.top.min(lines.saturating_sub(height));
+    editor.read_opens(editor.top + height);
     let buf = frame.buffer_mut();
     buf.set_style(body, skin.editor);
     let marked = editor.selected();
@@ -998,9 +1028,16 @@ pub fn draw(frame: &mut Frame, editor: &mut Editor, caret: bool) {
             buf.set_string(body.x, y, number, skin.editor_line_numbers);
         }
         let range = editor.buffer.line_range(n);
+        let kinds = editor.syntax.map(|syntax| syntax.line(&text[range.clone()], editor.opens[n]).0).unwrap_or_default();
+        let mut kinds = kinds.iter().peekable();
         let mut spans: Vec<Span> = Vec::new();
         let mut at = 0;
         for (ix, c) in text[range.clone()].char_indices() {
+            while kinds.next_if(|(kind, _)| kind.end <= ix).is_some() {}
+            let coloured = match kinds.peek() {
+                Some((kind, which)) if kind.start <= ix => skin.editor.patch(skin.syntax[*which as usize]),
+                _ => skin.editor,
+            };
             let wide = width(c, at, tab);
             let (start, end) = (at, at + wide);
             at = end;
@@ -1012,13 +1049,13 @@ pub fn draw(frame: &mut Frame, editor: &mut Editor, caret: bool) {
             }
             let (mut cells, style) = match c {
                 '\t' if editor.options.whitespace => (format!("→{}", " ".repeat(wide - 1)), skin.editor_whitespace),
-                '\t' => (" ".repeat(wide), skin.editor),
+                '\t' => (" ".repeat(wide), coloured),
                 ' ' if editor.options.whitespace => ("·".into(), skin.editor_whitespace),
                 c if c.is_control() => {
                     let symbol = char::from_u32(0x2400 + c as u32).filter(|_| c < ' ').unwrap_or('␡');
                     (symbol.into(), skin.editor_nonprintable)
                 }
-                c => (c.into(), skin.editor),
+                c => (c.into(), coloured),
             };
             // A wide character cut by an edge: blanks for its part in sight.
             if start < shown.start || end > shown.end {

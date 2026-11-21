@@ -29,6 +29,8 @@ pub struct Buffer {
     saved: Option<usize>,
     /// The last change was typing, which more typing joins.
     typing: bool,
+    /// Where the text changed first since `take_changed`.
+    changed: Option<usize>,
 }
 
 impl Buffer {
@@ -76,6 +78,15 @@ impl Buffer {
         self.anchor = (!range.is_empty()).then_some(range.start);
     }
 
+    /// Where the text changed first since asked last: what follows it is to be read again.
+    pub fn take_changed(&mut self) -> Option<usize> {
+        self.changed.take()
+    }
+
+    fn changed_at(&mut self, at: usize) {
+        self.changed = Some(self.changed.map_or(at, |first| first.min(at)));
+    }
+
     pub fn modified(&self) -> bool {
         self.saved != Some(self.undo.len())
     }
@@ -91,6 +102,7 @@ impl Buffer {
         let removed = self.text[range.clone()].to_owned();
         self.text.replace_range(range.clone(), text);
         self.index();
+        self.changed_at(range.start);
         (self.cursor, self.anchor) = (range.start + text.len(), None);
         let after = (self.cursor, None);
         self.redo.clear();
@@ -140,6 +152,7 @@ impl Buffer {
         let Some(change) = self.undo.pop() else { return false };
         self.text.replace_range(change.at..change.at + change.inserted.len(), &change.removed);
         self.index();
+        self.changed_at(change.at);
         (self.cursor, self.anchor, self.typing) = (change.before.0, change.before.1, false);
         self.redo.push(change);
         true
@@ -149,6 +162,7 @@ impl Buffer {
         let Some(change) = self.redo.pop() else { return false };
         self.text.replace_range(change.at..change.at + change.removed.len(), &change.inserted);
         self.index();
+        self.changed_at(change.at);
         (self.cursor, self.anchor, self.typing) = (change.after.0, change.after.1, false);
         self.undo.push(change);
         true

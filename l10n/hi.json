@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "सहेजें"
   },
+  "scmd.editor.replace.all": {
+    "message": "सभी"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "क्या यह मिलान बदलें?"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, one {बदले गए: #} other {बदले गए: #}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "बदलें"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "छोड़ें"
   },
   "scmd.editor.replace.title": {
     "message": "बदलें"

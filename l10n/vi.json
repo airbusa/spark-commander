@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "Lưu"
   },
+  "scmd.editor.replace.all": {
+    "message": "Tất cả"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "Thay thế kết quả này?"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, other {Đã thay thế: #}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "Thay thế"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "Bỏ qua"
   },
   "scmd.editor.replace.title": {
     "message": "Thay thế"
@@ -3324,7 +3336,7 @@
     "message": "Thoát"
   },
   "scmd.viewer.key_bar.reload": {
-    "message": "Đọc lại"
+    "message": "ĐọcLại"
   },
   "scmd.viewer.key_bar.search": {
     "message": "Tìm"

@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "Сачув."
   },
+  "scmd.editor.replace.all": {
+    "message": "Све"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "Заменити ово подударање?"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, one {Замењено: #} few {Замењено: #} other {Замењено: #}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "Замени"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "Прескочи"
   },
   "scmd.editor.replace.title": {
     "message": "Замени"

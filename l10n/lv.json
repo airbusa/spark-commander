@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "Sagl."
   },
+  "scmd.editor.replace.all": {
+    "message": "Visus"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "Vai aizstāt šo atbilstību?"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, zero {Aizstāti: #} one {Aizstāti: #} other {Aizstāti: #}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "Aizstāt"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "Izlaist"
   },
   "scmd.editor.replace.title": {
     "message": "Aizstāt"

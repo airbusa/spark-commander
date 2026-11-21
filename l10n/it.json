@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "Salva"
   },
+  "scmd.editor.replace.all": {
+    "message": "Tutte"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "Sostituire questa occorrenza?"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, one {Sostituzioni: #} other {Sostituzioni: #}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "Sostituisci"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "Salta"
   },
   "scmd.editor.replace.title": {
     "message": "Sostituisci"
@@ -3252,7 +3264,7 @@
     "message": "Copia"
   },
   "scmd.key_bar.delete": {
-    "message": "Elimina"
+    "message": "Elim."
   },
   "scmd.key_bar.edit": {
     "message": "Modif"
@@ -3261,7 +3273,7 @@
     "message": "Menu"
   },
   "scmd.key_bar.mkdir": {
-    "message": "CreaDir"
+    "message": "CrDir"
   },
   "scmd.key_bar.move": {
     "message": "Sposta"

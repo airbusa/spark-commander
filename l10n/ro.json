@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "Salv."
   },
+  "scmd.editor.replace.all": {
+    "message": "Toate"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "Înlocuiți această potrivire?"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, one {Înlocuiri: #} few {Înlocuiri: #} other {Înlocuiri: #}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "Înlocuiți"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "Omiteți"
   },
   "scmd.editor.replace.title": {
     "message": "Înlocuiți"

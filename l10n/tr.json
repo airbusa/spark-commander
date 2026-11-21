@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "Kaydet"
   },
+  "scmd.editor.replace.all": {
+    "message": "Tümü"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "Bu eşleşme değiştirilsin mi?"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, one {Değiştirilen: #} other {Değiştirilen: #}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "Değiştir"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "Atla"
   },
   "scmd.editor.replace.title": {
     "message": "Değiştir"

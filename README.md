@@ -37,7 +37,8 @@ GPL.
 - In a terminal, `sview FILE` (or `scmd -v FILE`) is scmd's viewer alone, as
   Midnight Commander's mcview, and `sedit FILE` (`scmd -e FILE`) its editor,
   as mcedit: mcedit's keys (F3 marks a block, F5 copies it, F6 moves it) with
-  the common ones beside them, F9 menus, find and replace, undo. scmd's F4
+  the common ones beside them, syntax colours (in scmd's viewer too), word
+  wrap, F9 menus, find and replace asking at each match, undo. scmd's F4
   opens it too; `"scmd_external_editor": true` in the settings uses `$EDITOR`
   instead.
 

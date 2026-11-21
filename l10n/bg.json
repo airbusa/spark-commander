@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "Запис"
   },
+  "scmd.editor.replace.all": {
+    "message": "Всички"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "Да се замени ли това съвпадение?"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, one {Заменени: #} other {Заменени: #}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "Замени"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "Пропусни"
   },
   "scmd.editor.replace.title": {
     "message": "Замяна"

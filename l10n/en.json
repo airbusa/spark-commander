@@ -4235,9 +4235,25 @@
     "description": "sedit (scmd's text editor in the terminal), the key bar's F2, at most 6 characters: saves the file.",
     "message": "Save"
   },
+  "scmd.editor.replace.all": {
+    "description": "sedit (scmd's text editor in the terminal), Replace: button that replaces this match and all the rest without asking (matches, feminine where it matters).",
+    "message": "All"
+  },
+  "scmd.editor.replace.ask": {
+    "description": "sedit (scmd's text editor in the terminal), Replace: the question asked at each match found, as Midnight Commander's editor asks. The buttons under it: Replace, All, Skip, Cancel.",
+    "message": "Replace this match?"
+  },
   "scmd.editor.replace.done": {
     "description": "sedit (scmd's text editor in the terminal), message after Replace: how many matches were replaced.",
     "message": "{count, plural, one {# replaced} other {# replaced}}"
+  },
+  "scmd.editor.replace.one": {
+    "description": "sedit (scmd's text editor in the terminal), Replace: button that replaces the match asked about, then goes on to the next.",
+    "message": "Replace"
+  },
+  "scmd.editor.replace.skip": {
+    "description": "sedit (scmd's text editor in the terminal), Replace: button that leaves this match as it is and goes on to the next.",
+    "message": "Skip"
   },
   "scmd.editor.replace.title": {
     "description": "sedit (scmd's text editor in the terminal), the Replace dialog's title: what is searched for is replaced by other text.",

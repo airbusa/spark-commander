@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "Shrani"
   },
+  "scmd.editor.replace.all": {
+    "message": "Vse"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "Zamenjam to ujemanje?"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, one {Zamenjano: #} two {Zamenjano: #} few {Zamenjano: #} other {Zamenjano: #}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "Zamenjaj"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "Preskoči"
   },
   "scmd.editor.replace.title": {
     "message": "Zamenjaj"

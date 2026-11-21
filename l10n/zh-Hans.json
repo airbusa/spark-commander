@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "保存"
   },
+  "scmd.editor.replace.all": {
+    "message": "全部"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "替换此匹配项？"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, other {已替换：#}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "替换"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "跳过"
   },
   "scmd.editor.replace.title": {
     "message": "替换"

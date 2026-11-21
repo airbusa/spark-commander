@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "保存"
   },
+  "scmd.editor.replace.all": {
+    "message": "すべて"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "この一致箇所を置換しますか？"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, other {置換: # 件}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "置換"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "スキップ"
   },
   "scmd.editor.replace.title": {
     "message": "置換"
@@ -3258,7 +3270,7 @@
     "message": "編集"
   },
   "scmd.key_bar.menu": {
-    "message": "メニュー"
+    "message": "ﾒﾆｭｰ"
   },
   "scmd.key_bar.mkdir": {
     "message": "新規"

@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "Ulož"
   },
+  "scmd.editor.replace.all": {
+    "message": "Všetky"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "Nahradiť tento výskyt?"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, one {Nahradené: #} few {Nahradené: #} other {Nahradené: #}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "Nahradiť"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "Preskočiť"
   },
   "scmd.editor.replace.title": {
     "message": "Nahradiť"

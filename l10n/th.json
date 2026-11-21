@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "บันทึก"
   },
+  "scmd.editor.replace.all": {
+    "message": "ทั้งหมด"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "แทนที่รายการนี้หรือไม่"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, other {แทนที่แล้ว: #}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "แทนที่"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "ข้าม"
   },
   "scmd.editor.replace.title": {
     "message": "แทนที่"

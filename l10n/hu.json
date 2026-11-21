@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "Ment"
   },
+  "scmd.editor.replace.all": {
+    "message": "Mind"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "Lecseréli ezt a találatot?"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, one {Lecserélve: #} other {Lecserélve: #}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "Csere"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "Kihagyás"
   },
   "scmd.editor.replace.title": {
     "message": "Csere"

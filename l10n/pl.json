@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "Zapisz"
   },
+  "scmd.editor.replace.all": {
+    "message": "Wszystkie"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "Zastąpić to wystąpienie?"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, one {Zastąpiono: #} few {Zastąpiono: #} many {Zastąpiono: #} other {Zastąpiono: #}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "Zamień"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "Pomiń"
   },
   "scmd.editor.replace.title": {
     "message": "Zamień"

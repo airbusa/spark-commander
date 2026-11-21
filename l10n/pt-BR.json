@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "Salvar"
   },
+  "scmd.editor.replace.all": {
+    "message": "Todas"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "Substituir esta ocorrência?"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, one {Substituições: #} other {Substituições: #}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "Substituir"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "Pular"
   },
   "scmd.editor.replace.title": {
     "message": "Substituir"

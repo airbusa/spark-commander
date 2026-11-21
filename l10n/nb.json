@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "Lagre"
   },
+  "scmd.editor.replace.all": {
+    "message": "Alle"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "Erstatte dette treffet?"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, one {Erstattet: #} other {Erstattet: #}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "Erstatt"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "Hopp over"
   },
   "scmd.editor.replace.title": {
     "message": "Erstatt"

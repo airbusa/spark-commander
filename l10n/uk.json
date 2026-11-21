@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "Збер."
   },
+  "scmd.editor.replace.all": {
+    "message": "Усі"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "Замінити цей збіг?"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, one {Замінено: #} few {Замінено: #} many {Замінено: #} other {Замінено: #}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "Замінити"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "Пропустити"
   },
   "scmd.editor.replace.title": {
     "message": "Замінити"

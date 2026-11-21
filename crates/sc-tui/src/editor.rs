@@ -5,8 +5,8 @@
 
 use std::io;
 use std::ops::Range;
-use std::path::PathBuf;
-use std::time::SystemTime;
+use std::path::{Path, PathBuf};
+use std::sync::{Arc, Mutex};
 
 use ratatui::Frame;
 use ratatui::crossterm::event::{KeyCode, KeyEvent, KeyModifiers, MouseButton, MouseEvent, MouseEventKind};
@@ -20,7 +20,8 @@ use sc_core::edit::{self, Loaded};
 use sc_core::settings::{EditorSettings, Settings};
 use sc_core::t;
 use sc_core::viewer::Query;
-use sc_core::viewer::origin::{self, Upload};
+use sc_core::system::elevate;
+use sc_core::viewer::origin::Upload;
 use unicode_width::{UnicodeWidthChar, UnicodeWidthStr};
 
 use crate::dialog::Form;
@@ -73,7 +74,11 @@ pub enum Asked {
     Unfit,
     Find,
     Replace,
+    /// Replace's question at a match: Replace, All, Skip or Cancel.
+    ReplaceOne,
     GoToLine,
+    /// Permission refused: saved as administrator, then closed when true.
+    Admin(PathBuf, bool),
     /// Save As's name; true: the editor closes once saved.
     SaveAs(bool),
     Overwrite(PathBuf, bool),
@@ -90,10 +95,14 @@ const ALT_TAKEN: [char; 4] = ['r', 'l', 'n', 'z'];
 pub struct Editor {
     /// None: a new file, named when first saved.
     path: Option<PathBuf>,
-    /// A server's or an archive's file goes by its own name, and goes back
-    /// there once the editor closes (the copy's time when opened).
+    /// A server's or an archive's file goes by its own name, and back there
+    /// after each save, one save at a time; how many are on their way, and
+    /// whether the last one failed.
     title: Option<String>,
-    upload: Option<(Upload, Option<SystemTime>)>,
+    upload: Option<Upload>,
+    sending: usize,
+    unsent: bool,
+    sends: Arc<Mutex<()>>,
     pub buffer: Buffer,
     /// The file's language's colours, and what each line starts with open, as far as read.
     syntax: Option<Syntax>,
@@ -122,13 +131,25 @@ pub struct Editor {
     body: Rect,
     gutter: u16,
     pub menus: Menus<Act>,
-    /// Replace's last.
+    /// Replace's last, and the matches it asks about.
     replace_with: String,
+    replacing: Option<Replacing>,
+}
+
+/// Replace asking at each match, as mcedit's: up to where, and how many replaced.
+struct Replacing {
+    query: Query,
+    with: String,
+    end: usize,
+    count: usize,
+    found: bool,
 }
 
 impl Editor {
     /// `path`'s text, a new file's where there is none.
     pub fn open(path: Option<PathBuf>, title: Option<String>, options: EditorSettings) -> io::Result<Editor> {
+        // As administrator it is written from elsewhere.
+        let path = path.map(|path| std::path::absolute(&path).unwrap_or(path));
         let loaded = match &path {
             Some(path) => match edit::load_text(path, options.limit_mb) {
                 Err(err) if err.kind() == io::ErrorKind::NotFound => Loaded::Text(String::new()),
@@ -144,6 +165,9 @@ impl Editor {
             path,
             title,
             upload: None,
+            sending: 0,
+            unsent: false,
+            sends: Arc::default(),
             buffer: Buffer::default(),
             syntax: None,
             opens: Vec::new(),
@@ -163,6 +187,7 @@ impl Editor {
             gutter: 0,
             menus: Menus::default(),
             replace_with: String::new(),
+            replacing: None,
         };
         editor.set_text(text);
         Ok(editor)
@@ -183,6 +208,14 @@ impl Editor {
             (Some(title), _) => title.clone(),
             (None, Some(path)) => path.display().to_string(),
             (None, None) => t!("scmd.editor.untitled"),
+        }
+    }
+
+    /// The text as the file holds it: CRLF where it had them.
+    fn file_text(&self) -> std::borrow::Cow<'_, str> {
+        match self.crlf {
+            true => self.buffer.text().replace('\n', "\r\n").into(),
+            false => self.buffer.text().into(),
         }
     }
 
@@ -687,8 +720,7 @@ impl App {
         let name = title.clone().or_else(|| path.as_ref().map(|path| path.display().to_string())).unwrap_or_default();
         match Editor::open(path.clone(), title, self.settings.editor.clone()) {
             Ok(mut editor) => {
-                let before = path.as_deref().and_then(|path| origin::modified(path).ok().flatten());
-                editor.upload = upload.map(|upload| (upload, before));
+                editor.upload = upload;
                 self.show_editor(editor);
             }
             Err(err) => self.say(format!("{name}: {err}"), true),
@@ -706,9 +738,13 @@ impl App {
         self.editor = Some(editor);
     }
 
-    /// Whether the editor is open on a file not shown: closing a dialog then closes it.
-    pub fn editor_unfit(&self) -> bool {
-        self.editor.as_ref().is_some_and(|editor| editor.unfit.is_some())
+    /// One of the editor's dialogs closed with Esc: a file not shown closes, Replace ends.
+    pub fn editor_cancelled(&mut self) {
+        match self.editor.as_ref() {
+            Some(editor) if editor.unfit.is_some() => self.editor_closed(),
+            Some(editor) if editor.replacing.is_some() => self.replaced(),
+            _ => {}
+        }
     }
 
     pub fn editor_key(&mut self, key: KeyEvent) {
@@ -774,9 +810,12 @@ impl App {
             Act::Reload => self.reload_editor(true),
             Act::Close => self.close_editor(),
             Act::Cut | Act::Copy => self.copy_out(act == Act::Cut),
+            // The desktop's clipboard where the terminal reaches it, else sedit's own.
             Act::Paste => {
-                let text = self.clipboard.clone();
-                editor.type_text(&text, false);
+                let text = sc_core::system::clipboard::text().filter(|text| !text.is_empty()).unwrap_or_else(|| self.clipboard.clone());
+                if let Some(editor) = self.editor.as_mut() {
+                    editor.type_text(&text, false);
+                }
             }
             Act::Find => self.editor_find(false),
             Act::Replace => self.editor_find(true),
@@ -819,7 +858,8 @@ impl App {
         }
     }
 
-    /// Copy and Cut: to scmd's own clipboard, and the terminal's (OSC 52) where it takes it.
+    /// Copy and Cut: to sedit's own clipboard, the terminal's (OSC 52) where it
+    /// takes it, and the desktop's where the terminal reaches it.
     fn copy_out(&mut self, cut: bool) {
         let Some(editor) = self.editor.as_mut() else { return };
         let range = editor.selected();
@@ -835,6 +875,8 @@ impl App {
         let encoded = base64::engine::general_purpose::STANDARD.encode(&text);
         let mut out = io::stdout();
         let _ = io::Write::write_all(&mut out, format!("\x1b]52;c;{encoded}\x07").as_bytes()).and_then(|()| io::Write::flush(&mut out));
+        let copy = text.clone();
+        std::thread::spawn(move || sc_core::system::clipboard::set_text(&copy));
         self.clipboard = text;
     }
 
@@ -853,15 +895,24 @@ impl App {
 
     fn write_editor(&mut self, path: PathBuf, then_close: bool) {
         let Some(editor) = self.editor.as_mut() else { return };
-        let text = editor.buffer.text();
-        let written = match editor.crlf {
-            true => edit::save_text(&path, &text.replace('\n', "\r\n")),
-            false => edit::save_text(&path, text),
-        };
-        // shortcut: a file only an administrator may write is refused here; the window's editor offers to save it as one.
-        if let Err(err) = written {
-            return self.say(t!("editor.save.failed", path = path.display(), err = err), true);
+        let written = edit::save_text(&path, &editor.file_text());
+        match written {
+            // The hosts file: written as administrator, the system asking for the password.
+            Err(err) if err.kind() == io::ErrorKind::PermissionDenied && editor.upload.is_none() => {
+                let name = path.file_name().unwrap_or_default().to_string_lossy().into_owned();
+                let form = Form::new(t!("main.admin.title"))
+                    .note(&t!("main.admin.offer", what = t!("editor.save.admin", name = name)))
+                    .buttons(vec![t!("main.admin.button"), t!("editor.dialog.cancel")]);
+                self.form = Some((form, Purpose::Edit(Asked::Admin(path, then_close))));
+            }
+            Err(err) => self.say(t!("editor.save.failed", path = path.display(), err = err), true),
+            Ok(()) => self.saved_editor(path, then_close),
         }
+    }
+
+    /// The file holds the text: a server's or an archive's copy goes back.
+    fn saved_editor(&mut self, path: PathBuf, then_close: bool) {
+        let Some(editor) = self.editor.as_mut() else { return };
         if editor.path.as_ref() != Some(&path) {
             // Another file now: the server's is saved back no more.
             (editor.path, editor.title, editor.upload) = (Some(path), None, None);
@@ -869,9 +920,48 @@ impl App {
         }
         editor.forced = false;
         editor.buffer.saved();
+        self.send_editor();
         if then_close {
             self.editor_closed();
         }
+    }
+
+    /// The copy to its server or archive in the background, saves one after another;
+    /// each sends the file as it is by then, so the last one sent is the last saved.
+    fn send_editor(&mut self) {
+        let Some(editor) = self.editor.as_mut() else { return };
+        let (Some(upload), Some(path)) = (editor.upload.clone(), editor.path.clone()) else { return };
+        let turns = editor.sends.clone();
+        editor.sending += 1;
+        self.background(move || {
+            let sent = {
+                let _turn = turns.lock().unwrap_or_else(|err| err.into_inner());
+                upload(&path)
+            };
+            Box::new(move |app: &mut App| {
+                if let Some(editor) = app.editor.as_mut().filter(|editor| editor.path.as_ref() == Some(&path)) {
+                    editor.sending -= 1;
+                    editor.unsent = sent.is_err();
+                }
+                if let Err(err) = sent {
+                    app.say(t!("editor.send.failed", err = err), true);
+                }
+            })
+        });
+    }
+
+    /// Out of the full screen, where pkexec may ask for the password itself
+    /// (no desktop's prompt); gives the folder to read again.
+    pub fn save_as_admin(&mut self, staged: PathBuf, path: PathBuf, then_close: bool) -> PathBuf {
+        let ran = elevate::run(&elevate::Action::Write { from: staged.clone(), to: path.clone() });
+        let _ = std::fs::remove_file(&staged);
+        let folder = path.parent().map(Path::to_owned).unwrap_or_default();
+        match ran {
+            Ok(()) => self.saved_editor(path, then_close),
+            Err(err) if err.kind() == io::ErrorKind::Interrupted => {}
+            Err(err) => self.say(t!("main.admin.failed", err = err), true),
+        }
+        folder
     }
 
     fn ask_save_as(&mut self, then_close: bool) {
@@ -884,22 +974,21 @@ impl App {
     /// F10: changes not saved ask first.
     fn close_editor(&mut self) {
         let Some(editor) = self.editor.as_ref() else { return };
-        if !editor.buffer.modified() {
-            return self.editor_closed();
-        }
+        let text = match (editor.buffer.modified(), editor.unsent) {
+            (true, _) => t!("editor.close.unsaved", name = editor.name()),
+            (false, true) => t!("editor.close.unsent", name = editor.name()),
+            (false, false) => return self.editor_closed(),
+        };
         let form = Form::new(t!("editor.close.title"))
-            .note(&t!("editor.close.unsaved", name = editor.name()))
+            .note(&text)
             .buttons(vec![t!("editor.close.save"), t!("editor.close.discard"), t!("editor.dialog.cancel")]);
         self.form = Some((form, Purpose::Edit(Asked::Close)));
     }
 
-    /// A server's or an archive's copy goes back if it changed; the panels show the file as it is now.
+    /// The panels show the file as it is now.
     pub fn editor_closed(&mut self) {
         let Some(editor) = self.editor.take() else { return };
         let Some(path) = editor.path else { return };
-        if let Some((upload, before)) = editor.upload {
-            self.send_back(path.clone(), before, upload);
-        }
         if let Some(folder) = path.parent() {
             for side in &mut self.sides {
                 side.tabs.reload_folder(folder);
@@ -978,8 +1067,16 @@ impl App {
                     self.say(t!("scmd.error.save_searches", err = err), true);
                 }
                 match replace {
-                    true => self.replace_all(&query, form.value(1)),
+                    true => self.start_replacing(query, form.value(1).to_owned()),
                     false => self.find_in_editor(&query, query.backwards),
+                }
+            }
+            Asked::ReplaceOne => self.replace_answered(form.button()),
+            Asked::Admin(path, then_close) if form.button() == 0 => {
+                let Some(editor) = self.editor.as_ref() else { return };
+                match edit::stage_text(&path, &editor.file_text()) {
+                    Ok(staged) => self.foreground = Some(crate::Foreground::Admin(staged, path, then_close)),
+                    Err(err) => self.say(t!("editor.save.failed", path = path.display(), err = err), true),
                 }
             }
             Asked::GoToLine => {
@@ -1055,29 +1152,96 @@ impl App {
         }
     }
 
-    /// Every match in the selection, else in the text, replaced in one step.
-    fn replace_all(&mut self, query: &Query, with: &str) {
-        let Some(finder) = self.finder(query) else { return };
+    /// F4's: from the selection's start, or the text's, to its end, asking at each match.
+    fn start_replacing(&mut self, query: Query, with: String) {
         let Some(editor) = self.editor.as_mut() else { return };
-        editor.replace_with = with.to_owned();
-        let text = editor.buffer.text();
-        let scope = Some(editor.selected()).filter(|selected| !selected.is_empty()).unwrap_or(0..text.len());
-        let found = finder.matches(text, scope.clone());
-        let Some(first) = found.first().map(|found| found.start) else {
-            return self.say(t!("scmd.find.not_found", text = query.text), false);
-        };
-        let (mut changed, mut from) = (String::new(), scope.start);
-        for each in &found {
-            changed.push_str(&text[from..each.start]);
-            changed.push_str(&finder.replacement(text, scope.clone(), each.clone(), with));
-            from = each.end;
-        }
-        changed.push_str(&text[from..scope.end]);
-        editor.buffer.replace(scope, &changed, false);
-        editor.changed();
-        editor.buffer.cursor = first;
-        self.say(t!("scmd.editor.replace.done", count = found.len()), false);
+        let scope = Some(editor.selected()).filter(|selected| !selected.is_empty()).unwrap_or(0..editor.buffer.text().len());
+        editor.replace_with = with.clone();
+        (editor.marking, editor.block, editor.buffer.anchor, editor.buffer.cursor) = (false, None, None, scope.start);
+        editor.replacing = Some(Replacing { query, with, end: scope.end, count: 0, found: false });
+        self.replace_next();
     }
+
+    /// Replacing's query as a finder; ended when it is none.
+    fn replacing_finder(&mut self) -> Option<Finder> {
+        let query = self.editor.as_ref()?.replacing.as_ref()?.query.clone();
+        let finder = self.finder(&query);
+        if finder.is_none() {
+            self.replaced();
+        }
+        finder
+    }
+
+    /// The next match selected, in sight above the question, which takes the middle.
+    fn replace_next(&mut self) {
+        let Some(finder) = self.replacing_finder() else { return };
+        let Some(editor) = self.editor.as_mut() else { return };
+        let Some(replacing) = editor.replacing.as_mut() else { return };
+        let found = finder.next(editor.buffer.text(), editor.buffer.cursor).filter(|found| found.end <= replacing.end);
+        let Some(found) = found else { return self.replaced() };
+        replacing.found = true;
+        (editor.top, editor.top_row, editor.follow) = (editor.buffer.line_of(found.start).saturating_sub(2), 0, true);
+        editor.buffer.select(found);
+        let buttons = vec![t!("scmd.editor.replace.one"), t!("scmd.editor.replace.all"), t!("scmd.editor.replace.skip"), t!("editor.dialog.cancel")];
+        let form = Form::new(t!("scmd.editor.replace.title")).note(&t!("scmd.editor.replace.ask")).buttons(buttons);
+        self.form = Some((form, Purpose::Edit(Asked::ReplaceOne)));
+    }
+
+    /// Replace, All (the rest in one step), Skip, or Cancel.
+    fn replace_answered(&mut self, button: usize) {
+        let Some(finder) = self.replacing_finder() else { return };
+        let Some(editor) = self.editor.as_mut() else { return };
+        let Some(replacing) = editor.replacing.as_mut() else { return };
+        let found = editor.buffer.selection();
+        match button {
+            0 => {
+                let text = editor.buffer.text();
+                let new = finder.replacement(text, 0..text.len(), found.clone(), &replacing.with);
+                (replacing.end, replacing.count) = (replacing.end - found.len() + new.len(), replacing.count + 1);
+                editor.buffer.replace(found, &new, false);
+                editor.changed();
+            }
+            1 => {
+                let (scope, with) = (found.start..replacing.end, replacing.with.clone());
+                let count = replace_in(editor, &finder, scope, &with);
+                if let Some(replacing) = editor.replacing.as_mut() {
+                    replacing.count += count;
+                }
+                return self.replaced();
+            }
+            2 => (editor.buffer.anchor, editor.buffer.cursor) = (None, found.end),
+            _ => return self.replaced(),
+        }
+        self.replace_next();
+    }
+
+    /// Replace has ended: how many it replaced; that it found none.
+    fn replaced(&mut self) {
+        let Some(replacing) = self.editor.as_mut().and_then(|editor| editor.replacing.take()) else { return };
+        match (replacing.count, replacing.found) {
+            (0, false) => self.say(t!("scmd.find.not_found", text = replacing.query.text), false),
+            (0, true) => {}
+            (count, _) => self.say(t!("scmd.editor.replace.done", count = count), false),
+        }
+    }
+}
+
+/// Every match in `scope` replaced, in one step; how many.
+fn replace_in(editor: &mut Editor, finder: &Finder, scope: Range<usize>, with: &str) -> usize {
+    let text = editor.buffer.text();
+    let found = finder.matches(text, scope.clone());
+    let Some(first) = found.first().map(|found| found.start) else { return 0 };
+    let (mut changed, mut from) = (String::new(), scope.start);
+    for each in &found {
+        changed.push_str(&text[from..each.start]);
+        changed.push_str(&finder.replacement(text, scope.clone(), each.clone(), with));
+        from = each.end;
+    }
+    changed.push_str(&text[from..scope.end]);
+    editor.buffer.replace(scope, &changed, false);
+    editor.changed();
+    editor.buffer.cursor = first;
+    found.len()
 }
 
 /// The whole screen: the file's name and the caret's place, the text, the keys.
@@ -1206,7 +1370,12 @@ pub fn draw(frame: &mut Frame, editor: &mut Editor, caret: bool) {
                 false => t!("editor.status.spaces", size = tab),
             };
             let ends = if editor.crlf { "CRLF" } else { "LF" };
-            let right = format!(" {place} · {indent} · {ends} ");
+            let server = match (editor.sending, editor.unsent) {
+                (0, false) => String::new(),
+                (0, true) => format!(" · {}", t!("editor.status.unsent")),
+                _ => format!(" · {}", t!("editor.status.sending")),
+            };
+            let right = format!(" {place} · {indent} · {ends}{server} ");
             buf.set_style(top, skin.status);
             let mark = if editor.buffer.modified() { "*" } else { "" };
             let room = (area.width as usize).saturating_sub(right.width() + 1);
@@ -1232,6 +1401,21 @@ mod tests {
         assert_eq!(breaks("abcdefghij", 4, 4), [0, 4, 8]);
         assert_eq!(breaks("a\tbcdef", 6, 4), [0, 2]);
         assert_eq!(breaks("short", 8, 4), [0]);
+    }
+
+    #[test]
+    fn replace_asks_at_each_match() {
+        let mut app = App::new(Settings::default(), &Session::default(), std::iter::empty());
+        app.show_editor(Editor::open(None, None, EditorSettings::default()).unwrap());
+        app.editor.as_mut().unwrap().type_text("cat a cat b cat c cat d", false);
+        app.searches = Some(sc_core::viewer::Searches::default());
+        app.start_replacing(Query { text: "cat".into(), ..Query::default() }, "dog".into());
+        for button in [0, 2, 1] {
+            assert!(matches!(app.form.take(), Some((_, Purpose::Edit(Asked::ReplaceOne)))));
+            app.replace_answered(button);
+        }
+        assert_eq!(app.editor.as_ref().unwrap().buffer.text(), "dog a cat b dog c dog d");
+        assert!(app.message.as_ref().is_some_and(|message| message.text.contains('3')), "Replace, Skip, All: 3 replaced");
     }
 
     #[test]

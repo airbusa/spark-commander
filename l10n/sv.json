@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "Spara"
   },
+  "scmd.editor.replace.all": {
+    "message": "Alla"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "Ersätta den här träffen?"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, one {Ersatta: #} other {Ersatta: #}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "Ersätt"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "Hoppa över"
   },
   "scmd.editor.replace.title": {
     "message": "Ersätt"

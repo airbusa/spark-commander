@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "Opsl."
   },
+  "scmd.editor.replace.all": {
+    "message": "Alle"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "Deze overeenkomst vervangen?"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, one {Vervangen: #} other {Vervangen: #}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "Vervangen"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "Overslaan"
   },
   "scmd.editor.replace.title": {
     "message": "Vervangen"
@@ -3324,7 +3336,7 @@
     "message": "Stop"
   },
   "scmd.viewer.key_bar.reload": {
-    "message": "Herlaad"
+    "message": "Herl."
   },
   "scmd.viewer.key_bar.search": {
     "message": "Zoek"

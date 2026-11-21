@@ -103,6 +103,8 @@ enum Foreground {
     Editor(PathBuf, Option<Upload>),
     /// Ctrl+O's shell, as Midnight Commander's.
     Subshell,
+    /// sedit's text, staged, written over a file as administrator; then whether sedit closes.
+    Admin(PathBuf, PathBuf, bool),
 }
 
 /// The window's own: scmd has one shell, Ctrl+O's.
@@ -858,8 +860,8 @@ impl App {
                 }
             } else if answer == Answer::Cancel && matches!(self.chooser.as_ref().map(|chooser| &chooser.list), Some(List::Workspaces)) {
                 self.choose_workspace();
-            } else if answer == Answer::Cancel && self.editor_unfit() {
-                self.editor_closed();
+            } else if answer == Answer::Cancel {
+                self.editor_cancelled();
             }
             return;
         }
@@ -1193,6 +1195,7 @@ impl App {
                 file.parent().map(Path::to_owned).unwrap_or_default()
             }
             Foreground::Subshell => self.subshell(),
+            Foreground::Admin(staged, file, then_close) => self.save_as_admin(staged, file, then_close),
         };
         for side in &mut self.sides {
             side.tabs.reload_folder(&folder);

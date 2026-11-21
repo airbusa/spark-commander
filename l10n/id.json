@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "Simpan"
   },
+  "scmd.editor.replace.all": {
+    "message": "Semua"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "Ganti kecocokan ini?"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, other {Diganti: #}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "Ganti"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "Lewati"
   },
   "scmd.editor.replace.title": {
     "message": "Ganti"

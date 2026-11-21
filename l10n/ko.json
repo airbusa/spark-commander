@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "저장"
   },
+  "scmd.editor.replace.all": {
+    "message": "모두"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "이 항목을 바꿀까요?"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, other {바꾼 항목: #개}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "바꾸기"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "건너뛰기"
   },
   "scmd.editor.replace.title": {
     "message": "바꾸기"

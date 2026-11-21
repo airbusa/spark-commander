@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "Enreg."
   },
+  "scmd.editor.replace.all": {
+    "message": "Toutes"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "Remplacer cette occurrence ?"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, one {Remplacements : #} other {Remplacements : #}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "Remplacer"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "Ignorer"
   },
   "scmd.editor.replace.title": {
     "message": "Remplacer"

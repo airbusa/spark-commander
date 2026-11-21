@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "Tallen"
   },
+  "scmd.editor.replace.all": {
+    "message": "Kaikki"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "Korvataanko tämä osuma?"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, one {Korvattu: #} other {Korvattu: #}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "Korvaa"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "Ohita"
   },
   "scmd.editor.replace.title": {
     "message": "Korvaa"

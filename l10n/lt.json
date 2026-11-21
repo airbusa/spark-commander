@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "Įraš."
   },
+  "scmd.editor.replace.all": {
+    "message": "Visus"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "Pakeisti šį atitikmenį?"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, one {Pakeista: #} few {Pakeista: #} other {Pakeista: #}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "Pakeisti"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "Praleisti"
   },
   "scmd.editor.replace.title": {
     "message": "Pakeisti"

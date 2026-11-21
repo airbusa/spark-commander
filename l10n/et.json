@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "Salv."
   },
+  "scmd.editor.replace.all": {
+    "message": "Kõik"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "Kas asendada see vaste?"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, one {Asendatud: #} other {Asendatud: #}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "Asenda"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "Jäta vahele"
   },
   "scmd.editor.replace.title": {
     "message": "Asenda"
@@ -3249,10 +3261,10 @@
     "message": "Tühista rühma valik"
   },
   "scmd.key_bar.copy": {
-    "message": "Kopeeri"
+    "message": "Koopia"
   },
   "scmd.key_bar.delete": {
-    "message": "Kustuta"
+    "message": "Kust."
   },
   "scmd.key_bar.edit": {
     "message": "Muuda"

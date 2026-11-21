@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "Αποθ."
   },
+  "scmd.editor.replace.all": {
+    "message": "Όλα"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "Αντικατάσταση αυτού του αποτελέσματος;"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, one {Αντικαταστάθηκαν: #} other {Αντικαταστάθηκαν: #}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "Αντικατάσταση"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "Παράλειψη"
   },
   "scmd.editor.replace.title": {
     "message": "Αντικατάσταση"

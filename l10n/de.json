@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "Speich"
   },
+  "scmd.editor.replace.all": {
+    "message": "Alle"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "Diesen Treffer ersetzen?"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, one {Ersetzt: #} other {Ersetzt: #}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "Ersetzen"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "Überspringen"
   },
   "scmd.editor.replace.title": {
     "message": "Ersetzen"

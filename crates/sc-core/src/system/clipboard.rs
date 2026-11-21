@@ -69,6 +69,100 @@ pub fn add_files(paths: &[PathBuf], cut: bool) -> windows::core::Result<()> {
     }
 }
 
+/// The tools a terminal reaches the clipboard through, which has no window to
+/// ask: wl-clipboard's on Wayland, xclip's or xsel's on X11, macOS's own.
+#[cfg(unix)]
+fn tools(paste: bool) -> Vec<(&'static str, &'static [&'static str])> {
+    if cfg!(target_os = "macos") {
+        return vec![if paste { ("pbpaste", &[]) } else { ("pbcopy", &[]) }];
+    }
+    let mut tools: Vec<(&str, &[&str])> = Vec::new();
+    if std::env::var_os("WAYLAND_DISPLAY").is_some() {
+        tools.push(if paste { ("wl-paste", &["--no-newline"]) } else { ("wl-copy", &[]) });
+    }
+    if std::env::var_os("DISPLAY").is_some() {
+        tools.push(("xclip", if paste { &["-selection", "clipboard", "-o"] } else { &["-selection", "clipboard"] }));
+        tools.push(("xsel", if paste { &["--clipboard", "--output"] } else { &["--clipboard", "--input"] }));
+    }
+    tools
+}
+
+/// The clipboard's text, for the terminal's programs; none where no tool
+/// answers (a server's terminal).
+#[cfg(unix)]
+pub fn text() -> Option<String> {
+    use std::process::{Command, Stdio};
+    tools(true).into_iter().find_map(|(tool, args)| {
+        let out = Command::new(tool).args(args).stdin(Stdio::null()).stderr(Stdio::null()).output().ok()?;
+        out.status.success().then(|| String::from_utf8_lossy(&out.stdout).into_owned())
+    })
+}
+
+/// `text` on the clipboard, for the terminal's programs; false where no tool took it.
+#[cfg(unix)]
+pub fn set_text(text: &str) -> bool {
+    use std::io::Write;
+    use std::process::{Command, Stdio};
+    tools(false).into_iter().any(|(tool, args)| {
+        let started = Command::new(tool).args(args).stdin(Stdio::piped()).stdout(Stdio::null()).stderr(Stdio::null()).spawn();
+        let Ok(mut child) = started else { return false };
+        let written = child.stdin.take().is_some_and(|mut stdin| stdin.write_all(text.as_bytes()).is_ok());
+        // The tool forks one that holds the text; the one started ends.
+        written && child.wait().is_ok_and(|status| status.success())
+    })
+}
+
+#[cfg(windows)]
+pub fn text() -> Option<String> {
+    use windows::Win32::Foundation::HGLOBAL;
+    use windows::Win32::System::DataExchange::{CloseClipboard, GetClipboardData, OpenClipboard};
+    use windows::Win32::System::Memory::{GlobalLock, GlobalUnlock};
+    use windows::Win32::System::Ole::CF_UNICODETEXT;
+    unsafe {
+        OpenClipboard(None).ok()?;
+        let text = GetClipboardData(CF_UNICODETEXT.0 as u32).ok().and_then(|data| {
+            let global = HGLOBAL(data.0);
+            let at = GlobalLock(global) as *const u16;
+            if at.is_null() {
+                return None;
+            }
+            let length = (0..).take_while(|&ix| *at.add(ix) != 0).count();
+            let text = String::from_utf16_lossy(std::slice::from_raw_parts(at, length));
+            let _ = GlobalUnlock(global);
+            Some(text)
+        });
+        let _ = CloseClipboard();
+        text
+    }
+}
+
+#[cfg(windows)]
+pub fn set_text(text: &str) -> bool {
+    use windows::Win32::Foundation::{GlobalFree, HANDLE};
+    use windows::Win32::System::DataExchange::{CloseClipboard, EmptyClipboard, OpenClipboard, SetClipboardData};
+    use windows::Win32::System::Memory::{GMEM_MOVEABLE, GlobalAlloc, GlobalLock, GlobalUnlock};
+    use windows::Win32::System::Ole::CF_UNICODETEXT;
+    let wide: Vec<u16> = text.encode_utf16().chain([0]).collect();
+    unsafe {
+        let Ok(global) = GlobalAlloc(GMEM_MOVEABLE, wide.len() * 2) else { return false };
+        let at = GlobalLock(global) as *mut u16;
+        if at.is_null() || OpenClipboard(None).is_err() {
+            let _ = GlobalFree(Some(global));
+            return false;
+        }
+        std::ptr::copy_nonoverlapping(wide.as_ptr(), at, wide.len());
+        let _ = GlobalUnlock(global);
+        let _ = EmptyClipboard();
+        // Once set, the system owns the memory.
+        let set = SetClipboardData(CF_UNICODETEXT.0 as u32, Some(HANDLE(global.0))).is_ok();
+        if !set {
+            let _ = GlobalFree(Some(global));
+        }
+        let _ = CloseClipboard();
+        set
+    }
+}
+
 /// A path as a `file://` address, other bytes than letters, digits and
 /// `-._~/` written `%XX`.
 pub fn file_uri(path: &std::path::Path) -> String {

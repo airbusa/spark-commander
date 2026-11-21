@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "Guard."
   },
+  "scmd.editor.replace.all": {
+    "message": "Todas"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "¿Reemplazar esta coincidencia?"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, one {Reemplazos: #} other {Reemplazos: #}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "Reemplazar"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "Omitir"
   },
   "scmd.editor.replace.title": {
     "message": "Reemplazar"

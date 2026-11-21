@@ -3176,8 +3176,20 @@
   "scmd.editor.key_bar.save": {
     "message": "Desa"
   },
+  "scmd.editor.replace.all": {
+    "message": "Totes"
+  },
+  "scmd.editor.replace.ask": {
+    "message": "Voleu substituir aquesta coincidència?"
+  },
   "scmd.editor.replace.done": {
     "message": "{count, plural, one {Substitucions: #} other {Substitucions: #}}"
+  },
+  "scmd.editor.replace.one": {
+    "message": "Substitueix"
+  },
+  "scmd.editor.replace.skip": {
+    "message": "Omet"
   },
   "scmd.editor.replace.title": {
     "message": "Substitueix"

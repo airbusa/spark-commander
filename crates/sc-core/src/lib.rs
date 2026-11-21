@@ -847,8 +847,13 @@ impl Panel {
 
     /// Insert and Space: the entry at the cursor, then the next one.
     pub fn toggle_mark(&mut self) {
+        self.mark_and_move(1);
+    }
+
+    /// Shift+Up and Down, as Total Commander's and mc's: the entry left marked or unmarked.
+    pub fn mark_and_move(&mut self, rows: isize) {
         self.mark_in_place();
-        self.move_cursor(1);
+        self.move_cursor(rows);
     }
 
     /// Marks or unmarks the cursor's, staying there.
@@ -2314,6 +2319,10 @@ mod tests {
         panel.toggle_mark();
         panel.toggle_mark();
         assert_eq!(chosen(&panel), ["a.txt", "b.txt"]);
+        panel.mark_and_move(-1);
+        assert_eq!((chosen(&panel), panel.cursor()), (vec!["a.txt".to_owned()], 2), "Shift+Up unmarks");
+        panel.set_cursor(3);
+        panel.mark_in_place();
         assert_eq!(
             panel.status_text(),
             "2 k / 2 k in 2 / 2 files, 0 / 1 dir"

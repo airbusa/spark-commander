@@ -885,6 +885,8 @@ impl App {
         let plain = key.modifiers.difference(KeyModifiers::SHIFT).is_empty();
         match key.code {
             KeyCode::Tab if plain => return self.active = 1 - self.active,
+            KeyCode::Up if key.modifiers == KeyModifiers::SHIFT => return self.panel_mut().mark_and_move(-1),
+            KeyCode::Down if key.modifiers == KeyModifiers::SHIFT => return self.panel_mut().mark_and_move(1),
             KeyCode::Up if plain => return self.panel_mut().move_cursor(-1),
             KeyCode::Down if plain => return self.panel_mut().move_cursor(1),
             KeyCode::PageUp if plain => return self.move_page(-1),

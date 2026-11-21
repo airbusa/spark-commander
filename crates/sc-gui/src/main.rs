@@ -58,6 +58,8 @@ actions!(
         SwitchPanel,
         Up,
         Down,
+        MarkUp,
+        MarkDown,
         PageUp,
         PageDown,
         Home,
@@ -202,6 +204,8 @@ fn main() {
             KeyBinding::new("tab", SwitchPanel, keys),
             KeyBinding::new("up", Up, keys),
             KeyBinding::new("down", Down, keys),
+            KeyBinding::new("shift-up", MarkUp, keys),
+            KeyBinding::new("shift-down", MarkDown, keys),
             KeyBinding::new("left", Left, keys),
             KeyBinding::new("right", Right, keys),
             KeyBinding::new("pageup", PageUp, keys),
@@ -2568,6 +2572,14 @@ impl Render for Commander {
             }))
             .on_action(cx.listener(|this, _: &Down, _, cx| {
                 this.move_cursor(this.panels[this.active].vertical_step(), cx)
+            }))
+            .on_action(cx.listener(|this, _: &MarkUp, _, cx| {
+                let step = this.panels[this.active].vertical_step();
+                this.mark(|panel| panel.mark_and_move(-step), cx)
+            }))
+            .on_action(cx.listener(|this, _: &MarkDown, _, cx| {
+                let step = this.panels[this.active].vertical_step();
+                this.mark(|panel| panel.mark_and_move(step), cx)
             }))
             .on_action(cx.listener(|this, _: &Left, _, cx| {
                 if let Some(step) = this.panels[this.active].sideways_step() {

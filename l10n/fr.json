@@ -3185,6 +3185,9 @@
   "scmd.error.save_tabs": {
     "message": "Impossible d’enregistrer les onglets ouverts : {err}"
   },
+  "scmd.error.view_nothing": {
+    "message": "Quel fichier ? Indiquez son nom, par exemple : sview notes.txt"
+  },
   "scmd.find.backwards": {
     "message": "Vers l’arrière"
   },

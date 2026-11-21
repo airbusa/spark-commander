@@ -156,6 +156,8 @@ pub struct App {
     /// How the terminal draws pictures; asked at the start.
     picker: Option<Picker>,
     done: (mpsc::Sender<Done>, mpsc::Receiver<Done>),
+    /// sview's: no panels, closing the viewer quits.
+    alone: bool,
     quit: bool,
 }
 
@@ -187,6 +189,29 @@ fn main() -> io::Result<()> {
         Settings::default()
     });
     settings.apply_globally();
+    // Folders to open, and as mc's: -S or --skin and the skin's name; -v or
+    // --view and files to view, as when started as sview (a link to scmd), mc's mcview.
+    let called = std::env::args_os().next().map(PathBuf::from);
+    let mut view = called.as_deref().and_then(Path::file_stem).is_some_and(|stem| stem == "sview");
+    let (mut paths, mut skin) = (Vec::new(), settings.scmd_skin.clone());
+    let mut args = std::env::args_os().skip(1);
+    while let Some(arg) = args.next() {
+        match arg.to_str() {
+            Some("-S" | "--skin") => skin = args.next().map(|name| name.to_string_lossy().into_owned()),
+            Some(given) if given.starts_with("--skin=") => skin = Some(given["--skin=".len()..].to_owned()),
+            Some("-v" | "--view") => view = true,
+            _ => paths.push(PathBuf::from(arg)),
+        }
+    }
+    if let Some(name) = skin {
+        match skin::load(&name) {
+            Ok(skin) => skin::set(skin),
+            Err(err) => problems.push(t!("scmd.error.read_skin", name = name, err = err)),
+        }
+    }
+    if view {
+        return view_alone(settings, paths, problems);
+    }
     let terminal = this_terminal();
     if terminal.is_some() && std::env::var(IN_TERMINAL).ok() == terminal {
         eprintln!("{}", t!("scmd.error.running_here"));
@@ -201,23 +226,7 @@ fn main() -> io::Result<()> {
         Session::default()
     });
     std::thread::spawn(archive::remove_stale_scratch);
-    // Folders to open, and as mc's: -S or --skin and the skin's name.
-    let (mut folders, mut skin) = (Vec::new(), settings.scmd_skin.clone());
-    let mut args = std::env::args_os().skip(1);
-    while let Some(arg) = args.next() {
-        match arg.to_str() {
-            Some("-S" | "--skin") => skin = args.next().map(|name| name.to_string_lossy().into_owned()),
-            Some(given) if given.starts_with("--skin=") => skin = Some(given["--skin=".len()..].to_owned()),
-            _ => folders.push(PathBuf::from(arg)),
-        }
-    }
-    if let Some(name) = skin {
-        match skin::load(&name) {
-            Ok(skin) => skin::set(skin),
-            Err(err) => problems.push(t!("scmd.error.read_skin", name = name, err = err)),
-        }
-    }
-    let mut app = App::new(settings, &session, folders.into_iter());
+    let mut app = App::new(settings, &session, paths.into_iter());
     app.workspaces = Workspaces::load_from(session::WORKSPACES_TERMINAL).unwrap_or_else(|err| {
         problems.push(t!("scmd.error.read_workspaces", err = err));
         Workspaces::default()
@@ -231,6 +240,29 @@ fn main() -> io::Result<()> {
     stop();
     app.save_session();
     archive::remove_scratch();
+    ran
+}
+
+/// sview: the viewer alone, N and P going through the files given; closing it
+/// ends scmd. Its tabs and workspaces stay as they were.
+fn view_alone(settings: Settings, files: Vec<PathBuf>, problems: Vec<String>) -> io::Result<()> {
+    let Some(first) = files.first().cloned() else {
+        eprintln!("{}", t!("scmd.error.view_nothing"));
+        std::process::exit(2);
+    };
+    let viewer = Viewer::open(files, 0, settings.viewer.clone(), None).unwrap_or_else(|err| {
+        eprintln!("{}: {err}", first.display());
+        std::process::exit(1);
+    });
+    let mut app = App::new(settings, &Session::default(), std::iter::empty());
+    (app.viewer, app.alone) = (Some(viewer), true);
+    if !problems.is_empty() {
+        app.say(problems.join("\n"), true);
+    }
+    let mut terminal = start();
+    app.picker = Some(picture::ask_terminal());
+    let ran = app.run(&mut terminal);
+    stop();
     ran
 }
 
@@ -313,6 +345,7 @@ impl App {
             sync_browsing: session.sync_browsing,
             picker: None,
             done: mpsc::channel(),
+            alone: false,
             quit: false,
         };
         for (ix, folder) in folders.take(2).enumerate() {
@@ -356,7 +389,7 @@ impl App {
     fn run(&mut self, terminal: &mut DefaultTerminal) -> io::Result<()> {
         let mut redraw = true;
         let mut picture = None;
-        while !self.quit {
+        while !self.quit && !(self.alone && self.viewer.is_none()) {
             self.want_picture();
             // Pixels of a picture stay until the screen is cleared.
             let in_sight = self

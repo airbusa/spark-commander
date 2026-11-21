@@ -3185,6 +3185,9 @@
   "scmd.error.save_tabs": {
     "message": "खुले टैब सेव नहीं हो सके: {err}"
   },
+  "scmd.error.view_nothing": {
+    "message": "कौन-सी फ़ाइल? उसका नाम दें, जैसे: sview notes.txt"
+  },
   "scmd.find.backwards": {
     "message": "पीछे की ओर"
   },

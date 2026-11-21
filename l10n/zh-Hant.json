@@ -3185,6 +3185,9 @@
   "scmd.error.save_tabs": {
     "message": "無法儲存開啟的分頁：{err}"
   },
+  "scmd.error.view_nothing": {
+    "message": "要檢視哪個檔案？請提供檔案名稱，例如：sview notes.txt"
+  },
   "scmd.find.backwards": {
     "message": "反向"
   },

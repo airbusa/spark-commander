@@ -3185,6 +3185,9 @@
   "scmd.error.save_tabs": {
     "message": "Die geöffneten Tabs konnten nicht gespeichert werden: {err}"
   },
+  "scmd.error.view_nothing": {
+    "message": "Welche Datei? Geben Sie ihren Namen an, etwa: sview notes.txt"
+  },
   "scmd.find.backwards": {
     "message": "Rückwärts"
   },

@@ -3185,6 +3185,9 @@
   "scmd.error.save_tabs": {
     "message": "Det gick inte att spara de öppna flikarna: {err}"
   },
+  "scmd.error.view_nothing": {
+    "message": "Vilken fil? Ange dess namn, till exempel: sview notes.txt"
+  },
   "scmd.find.backwards": {
     "message": "Bakåt"
   },

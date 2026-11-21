@@ -3185,6 +3185,9 @@
   "scmd.error.save_tabs": {
     "message": "Kunne ikke gemme de åbne faner: {err}"
   },
+  "scmd.error.view_nothing": {
+    "message": "Hvilken fil? Angiv dens navn, f.eks.: sview notes.txt"
+  },
   "scmd.find.backwards": {
     "message": "Baglæns"
   },

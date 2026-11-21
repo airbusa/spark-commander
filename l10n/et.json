@@ -3185,6 +3185,9 @@
   "scmd.error.save_tabs": {
     "message": "Avatud kaarte ei õnnestunud salvestada: {err}"
   },
+  "scmd.error.view_nothing": {
+    "message": "Milline fail? Andke selle nimi, näiteks: sview notes.txt"
+  },
   "scmd.find.backwards": {
     "message": "Tagurpidi"
   },

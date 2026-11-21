@@ -3185,6 +3185,9 @@
   "scmd.error.save_tabs": {
     "message": "開いているタブを保存できませんでした：{err}"
   },
+  "scmd.error.view_nothing": {
+    "message": "どのファイルですか？名前を指定してください。例: sview notes.txt"
+  },
   "scmd.find.backwards": {
     "message": "後方へ検索"
   },

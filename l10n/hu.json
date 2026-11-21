@@ -3185,6 +3185,9 @@
   "scmd.error.save_tabs": {
     "message": "Nem sikerült menteni a megnyitott lapokat: {err}"
   },
+  "scmd.error.view_nothing": {
+    "message": "Melyik fájl? Adja meg a nevét, például: sview notes.txt"
+  },
   "scmd.find.backwards": {
     "message": "Visszafelé"
   },

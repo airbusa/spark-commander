@@ -3185,6 +3185,9 @@
   "scmd.error.save_tabs": {
     "message": "Не вдалося зберегти відкриті вкладки: {err}"
   },
+  "scmd.error.view_nothing": {
+    "message": "Який файл? Вкажіть його назву, наприклад: sview notes.txt"
+  },
   "scmd.find.backwards": {
     "message": "Назад"
   },

@@ -3185,6 +3185,9 @@
   "scmd.error.save_tabs": {
     "message": "Không lưu được các thẻ đang mở: {err}"
   },
+  "scmd.error.view_nothing": {
+    "message": "Tệp nào? Hãy cho biết tên tệp, ví dụ: sview notes.txt"
+  },
   "scmd.find.backwards": {
     "message": "Tìm ngược lên"
   },

@@ -4247,6 +4247,10 @@
     "description": "scmd (the terminal app), error printed in the terminal after scmd quits, when its open tabs cannot be saved. {err} is the system's own error text, e.g. \"Permission denied (os error 13)\".",
     "message": "Could not save the open tabs: {err}"
   },
+  "scmd.error.view_nothing": {
+    "description": "Printed when sview (scmd's file viewer on its own, started as sview or scmd -v) is started without a file. sview and notes.txt stay as they are: notes.txt is an example file name.",
+    "message": "Which file? Give its name, as in: sview notes.txt"
+  },
   "scmd.find.backwards": {
     "description": "scmd (the terminal app), file viewer's Find dialog: check box to search towards the start of the file.",
     "message": "Backwards"

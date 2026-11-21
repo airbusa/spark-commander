@@ -3185,6 +3185,9 @@
   "scmd.error.save_tabs": {
     "message": "Não foi possível guardar os separadores abertos: {err}"
   },
+  "scmd.error.view_nothing": {
+    "message": "Que ficheiro? Indique o nome, por exemplo: sview notes.txt"
+  },
   "scmd.find.backwards": {
     "message": "Para trás"
   },

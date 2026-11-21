@@ -3185,6 +3185,9 @@
   "scmd.error.save_tabs": {
     "message": "Filele deschise nu au putut fi salvate: {err}"
   },
+  "scmd.error.view_nothing": {
+    "message": "Ce fișier? Indicați-i numele, de exemplu: sview notes.txt"
+  },
   "scmd.find.backwards": {
     "message": "Înapoi"
   },

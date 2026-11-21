@@ -3185,6 +3185,9 @@
   "scmd.error.save_tabs": {
     "message": "Neizdevās saglabāt atvērtās cilnes: {err}"
   },
+  "scmd.error.view_nothing": {
+    "message": "Kurš fails? Norādiet tā nosaukumu, piemēram: sview notes.txt"
+  },
   "scmd.find.backwards": {
     "message": "Atpakaļ"
   },

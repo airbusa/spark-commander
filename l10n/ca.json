@@ -3185,6 +3185,9 @@
   "scmd.error.save_tabs": {
     "message": "No s’han pogut desar les pestanyes obertes: {err}"
   },
+  "scmd.error.view_nothing": {
+    "message": "Quin fitxer? Indiqueu-ne el nom, per exemple: sview notes.txt"
+  },
   "scmd.find.backwards": {
     "message": "Enrere"
   },

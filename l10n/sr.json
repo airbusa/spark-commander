@@ -3185,6 +3185,9 @@
   "scmd.error.save_tabs": {
     "message": "Није могуће сачувати отворене картице: {err}"
   },
+  "scmd.error.view_nothing": {
+    "message": "Која датотека? Наведите њено име, на пример: sview notes.txt"
+  },
   "scmd.find.backwards": {
     "message": "Уназад"
   },

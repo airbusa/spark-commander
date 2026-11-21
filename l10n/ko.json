@@ -3185,6 +3185,9 @@
   "scmd.error.save_tabs": {
     "message": "열린 탭을 저장하지 못했습니다: {err}"
   },
+  "scmd.error.view_nothing": {
+    "message": "어떤 파일인가요? 이름을 지정하세요. 예: sview notes.txt"
+  },
   "scmd.find.backwards": {
     "message": "역방향"
   },

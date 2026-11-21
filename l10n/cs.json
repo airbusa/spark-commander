@@ -3185,6 +3185,9 @@
   "scmd.error.save_tabs": {
     "message": "Otevřené karty nelze uložit: {err}"
   },
+  "scmd.error.view_nothing": {
+    "message": "Který soubor? Zadejte jeho název, například: sview notes.txt"
+  },
   "scmd.find.backwards": {
     "message": "Pozpátku"
   },

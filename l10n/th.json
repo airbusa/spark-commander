@@ -3185,6 +3185,9 @@
   "scmd.error.save_tabs": {
     "message": "บันทึกแท็บที่เปิดอยู่ไม่ได้: {err}"
   },
+  "scmd.error.view_nothing": {
+    "message": "ไฟล์ใด? ระบุชื่อไฟล์ เช่น: sview notes.txt"
+  },
   "scmd.find.backwards": {
     "message": "ย้อนกลับ"
   },

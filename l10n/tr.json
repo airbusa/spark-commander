@@ -3185,6 +3185,9 @@
   "scmd.error.save_tabs": {
     "message": "Açık sekmeler kaydedilemedi: {err}"
   },
+  "scmd.error.view_nothing": {
+    "message": "Hangi dosya? Adını belirtin, örneğin: sview notes.txt"
+  },
   "scmd.find.backwards": {
     "message": "Geriye doğru"
   },

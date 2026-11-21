@@ -3185,6 +3185,9 @@
   "scmd.error.save_tabs": {
     "message": "无法保存已打开的标签页：{err}"
   },
+  "scmd.error.view_nothing": {
+    "message": "要查看哪个文件？请给出文件名，例如：sview notes.txt"
+  },
   "scmd.find.backwards": {
     "message": "反向搜索"
   },

@@ -3185,6 +3185,9 @@
   "scmd.error.save_tabs": {
     "message": "Odprtih zavihkov ni bilo mogoče shraniti: {err}"
   },
+  "scmd.error.view_nothing": {
+    "message": "Katera datoteka? Navedite njeno ime, na primer: sview notes.txt"
+  },
   "scmd.find.backwards": {
     "message": "Nazaj"
   },

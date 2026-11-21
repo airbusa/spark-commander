@@ -34,6 +34,8 @@ GPL.
   sound, HEIC and AVIF photos, and Word, Excel and PowerPoint files.
 - A built-in editor (F4) with search and a minimap, or the editor of your
   choice.
+- In a terminal, `sview FILE` (or `scmd -v FILE`) is scmd's viewer alone, as
+  Midnight Commander's mcview.
 
 **Servers and the terminal**
 - SFTP and FTP/FTPS; SMB, WebDAV and NFS shares through the system's own

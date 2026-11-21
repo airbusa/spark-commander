@@ -21,6 +21,8 @@ $dir = "target\release\spark-commander-$version-$platform"
 if (Test-Path $dir) { Remove-Item -Recurse -Force $dir }
 New-Item -ItemType Directory -Force $dir | Out-Null
 Copy-Item "$bin\sparkcommander.exe", "$bin\scmd.exe", LICENSE $dir
+# scmd's viewer alone, as mc's mcview: scmd -v.
+Set-Content -Encoding ascii "$dir\sview.cmd" '@"%~dp0scmd.exe" -v %*'
 foreach ($tool in '7zip', 'pdfium') {
     Copy-Item -Recurse "vendor\$tool\$platform" "$dir\$tool"
 }

@@ -10,7 +10,7 @@ packaging/linux/package.sh
 
 | In the folder | From |
 |---|---|
-| `sparkcommander` (the app), `scmd` (in the terminal) | `cargo build --release`, or `BIN=<folder>` with them built elsewhere (another distribution's glibc, in its container) |
+| `sparkcommander` (the app), `scmd` (in the terminal), `sview` (scmd's viewer alone: a link to `scmd`) | `cargo build --release`, or `BIN=<folder>` with them built elsewhere (another distribution's glibc, in its container) |
 | `sc-qtstyle` | `crates/sc-qtstyle/build.sh` (needs Qt 6's development files): on KDE the user's Qt style draws the controls; without it, the built-in Breeze look |
 | `sc-gtkstyle` | `crates/sc-gtkstyle/build.sh` (needs GTK 3's development files): on Xfce, MATE and Cinnamon the GTK 3 theme draws the controls |
 | `7zip/` | `vendor/7zip`, with its license |
@@ -66,6 +66,6 @@ Also over a running copy, which keeps running until closed:
 
 ```sh
 sudo cp -rT --remove-destination spark-commander-*-linux-*/ /opt/spark-commander
-sudo ln -sf /opt/spark-commander/sparkcommander /opt/spark-commander/scmd /usr/local/bin/
+sudo ln -sf /opt/spark-commander/sparkcommander /opt/spark-commander/scmd /opt/spark-commander/sview /usr/local/bin/
 sudo cp -r /opt/spark-commander/share/* /usr/local/share/
 ```

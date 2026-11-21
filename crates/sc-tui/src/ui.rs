@@ -42,12 +42,17 @@ pub struct Places {
 pub fn draw(frame: &mut Frame, app: &mut App) {
     let area = frame.area();
     app.places.keys = Rect::new(area.x, area.bottom().saturating_sub(1), area.width, 1);
-    match app.viewer.as_mut() {
-        Some(viewer) => {
+    let caret = app.form.is_none() && app.message.is_none();
+    match (app.editor.as_mut(), app.viewer.as_mut()) {
+        (Some(editor), _) => {
+            crate::editor::draw(frame, editor, caret);
+            app.menus.hidden();
+        }
+        (None, Some(viewer)) => {
             crate::viewer::draw(frame, viewer);
             app.menus.hidden();
         }
-        None => draw_panels(frame, app),
+        (None, None) => draw_panels(frame, app),
     }
     if let Some(chooser) = &app.chooser {
         chooser.draw(frame);

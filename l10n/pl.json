@@ -3161,6 +3161,33 @@
   "scmd.dialog.buttons": {
     "message": "Enter OK   Esc Anuluj"
   },
+  "scmd.editor.exists": {
+    "message": "{name} już istnieje. Zastąpić?"
+  },
+  "scmd.editor.file_name": {
+    "message": "Nazwa pliku:"
+  },
+  "scmd.editor.key_bar.mark": {
+    "message": "Zazn."
+  },
+  "scmd.editor.key_bar.replace": {
+    "message": "Zamień"
+  },
+  "scmd.editor.key_bar.save": {
+    "message": "Zapisz"
+  },
+  "scmd.editor.replace.done": {
+    "message": "{count, plural, one {Zastąpiono: #} few {Zastąpiono: #} many {Zastąpiono: #} other {Zastąpiono: #}}"
+  },
+  "scmd.editor.replace.title": {
+    "message": "Zamień"
+  },
+  "scmd.editor.replace.with": {
+    "message": "Zamień na:"
+  },
+  "scmd.editor.untitled": {
+    "message": "Bez nazwy"
+  },
   "scmd.error.read_settings": {
     "message": "Nie udało się odczytać ustawień: {err}"
   },

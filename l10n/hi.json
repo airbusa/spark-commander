@@ -3161,6 +3161,33 @@
   "scmd.dialog.buttons": {
     "message": "Enter ठीक है   Esc रद्द करें"
   },
+  "scmd.editor.exists": {
+    "message": "{name} पहले से मौजूद है। क्या इसे ओवरराइट करें?"
+  },
+  "scmd.editor.file_name": {
+    "message": "फ़ाइल का नाम:"
+  },
+  "scmd.editor.key_bar.mark": {
+    "message": "चिह्न"
+  },
+  "scmd.editor.key_bar.replace": {
+    "message": "बदलें"
+  },
+  "scmd.editor.key_bar.save": {
+    "message": "सहेजें"
+  },
+  "scmd.editor.replace.done": {
+    "message": "{count, plural, one {बदले गए: #} other {बदले गए: #}}"
+  },
+  "scmd.editor.replace.title": {
+    "message": "बदलें"
+  },
+  "scmd.editor.replace.with": {
+    "message": "इससे बदलें:"
+  },
+  "scmd.editor.untitled": {
+    "message": "बिना शीर्षक"
+  },
   "scmd.error.read_settings": {
     "message": "सेटिंग पढ़ी नहीं जा सकी: {err}"
   },

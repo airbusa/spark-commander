@@ -3161,6 +3161,33 @@
   "scmd.dialog.buttons": {
     "message": "Enter OK   Esc Tühista"
   },
+  "scmd.editor.exists": {
+    "message": "{name} on juba olemas. Kas kirjutada üle?"
+  },
+  "scmd.editor.file_name": {
+    "message": "Faili nimi:"
+  },
+  "scmd.editor.key_bar.mark": {
+    "message": "Märgi"
+  },
+  "scmd.editor.key_bar.replace": {
+    "message": "Asenda"
+  },
+  "scmd.editor.key_bar.save": {
+    "message": "Salv."
+  },
+  "scmd.editor.replace.done": {
+    "message": "{count, plural, one {Asendatud: #} other {Asendatud: #}}"
+  },
+  "scmd.editor.replace.title": {
+    "message": "Asenda"
+  },
+  "scmd.editor.replace.with": {
+    "message": "Asenda tekstiga:"
+  },
+  "scmd.editor.untitled": {
+    "message": "Nimetu"
+  },
   "scmd.error.read_settings": {
     "message": "Seadeid ei õnnestunud lugeda: {err}"
   },

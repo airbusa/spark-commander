@@ -33,6 +33,9 @@ pub struct Form {
     pub title: String,
     pub fields: Vec<Field>,
     focus: usize,
+    /// A question's answers, and the one Enter gives; none: Enter OK, Esc Cancel.
+    buttons: Vec<String>,
+    button: usize,
 }
 
 #[derive(Debug, PartialEq)]
@@ -48,6 +51,25 @@ impl Form {
             title: title.into(),
             fields: Vec::new(),
             focus: 0,
+            buttons: Vec::new(),
+            button: 0,
+        }
+    }
+
+    /// A question's answers: Left and Right choose, Enter gives `button()`, Esc cancels.
+    pub fn buttons(mut self, labels: Vec<String>) -> Self {
+        self.buttons = labels;
+        self
+    }
+
+    pub fn button(&self) -> usize {
+        self.button
+    }
+
+    /// Into the line being typed, in one line.
+    pub fn paste(&mut self, text: &str) {
+        if let Some(Field::Text { input, .. }) = self.fields.get_mut(self.focus) {
+            input.insert(&text.replace('\n', " "));
         }
     }
 
@@ -106,9 +128,18 @@ impl Form {
     pub fn key(&mut self, key: &KeyEvent) -> Answer {
         // Only a question: Enter or Esc.
         if self.fields.iter().all(|field| matches!(field, Field::Note(_))) {
+            let count = self.buttons.len().max(1);
             return match key.code {
                 KeyCode::Esc => Answer::Cancel,
                 KeyCode::Enter => Answer::Ok,
+                KeyCode::Right | KeyCode::Tab => {
+                    self.button = (self.button + 1) % count;
+                    Answer::Open
+                }
+                KeyCode::Left | KeyCode::BackTab => {
+                    self.button = (self.button + count - 1) % count;
+                    Answer::Open
+                }
                 _ => Answer::Open,
             };
         }
@@ -228,11 +259,24 @@ impl Form {
             }
             y += 1;
         }
-        let buttons = t!("scmd.dialog.buttons");
-        let x = inner.x + inner.width.saturating_sub(buttons.width() as u16) / 2;
-        frame
-            .buffer_mut()
-            .set_stringn(x, inner.bottom().saturating_sub(1), &buttons, room, skin().dialog);
+        let y = inner.bottom().saturating_sub(1);
+        match self.buttons.is_empty() {
+            true => {
+                let buttons = t!("scmd.dialog.buttons");
+                let x = inner.x + inner.width.saturating_sub(buttons.width() as u16) / 2;
+                frame.buffer_mut().set_stringn(x, y, &buttons, room, skin().dialog);
+            }
+            false => {
+                let shown: Vec<String> = self.buttons.iter().map(|label| format!("[ {label} ]")).collect();
+                let width = shown.iter().map(|button| button.width() + 1).sum::<usize>().saturating_sub(1);
+                let mut x = inner.x + inner.width.saturating_sub(width as u16) / 2;
+                for (ix, button) in shown.iter().enumerate() {
+                    let style = if ix == self.button { skin().focus } else { skin().dialog };
+                    let left = (inner.right().saturating_sub(x)) as usize;
+                    x += frame.buffer_mut().set_stringn(x, y, button, left, style).0.saturating_sub(x) + 1;
+                }
+            }
+        }
         if let Some(cursor) = cursor {
             frame.set_cursor_position(cursor);
         }

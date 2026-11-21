@@ -3161,6 +3161,33 @@
   "scmd.dialog.buttons": {
     "message": "Enter OK   Esc Hủy"
   },
+  "scmd.editor.exists": {
+    "message": "{name} đã tồn tại. Ghi đè?"
+  },
+  "scmd.editor.file_name": {
+    "message": "Tên tệp:"
+  },
+  "scmd.editor.key_bar.mark": {
+    "message": "Chọn"
+  },
+  "scmd.editor.key_bar.replace": {
+    "message": "Thay"
+  },
+  "scmd.editor.key_bar.save": {
+    "message": "Lưu"
+  },
+  "scmd.editor.replace.done": {
+    "message": "{count, plural, other {Đã thay thế: #}}"
+  },
+  "scmd.editor.replace.title": {
+    "message": "Thay thế"
+  },
+  "scmd.editor.replace.with": {
+    "message": "Thay bằng:"
+  },
+  "scmd.editor.untitled": {
+    "message": "Không có tên"
+  },
   "scmd.error.read_settings": {
     "message": "Không đọc được cài đặt: {err}"
   },

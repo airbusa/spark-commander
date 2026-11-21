@@ -1,6 +1,7 @@
-//! F9's menus, the window's (the core's `MENUS`): their names on the top line,
-//! each dropping down under its name, as Midnight Commander's. Every menu and
-//! item has its letter: Alt+letter opens a menu, the letter alone picks in it.
+//! F9's menus, the window's (the core's `MENUS`), or sedit's: their names on
+//! the top line, each dropping down under its name, as Midnight Commander's.
+//! Every menu and item has its letter: Alt+letter opens a menu, the letter
+//! alone picks in it.
 
 use ratatui::buffer::Buffer;
 use ratatui::crossterm::event::{KeyCode, KeyEvent, KeyModifiers, MouseButton, MouseEvent, MouseEventKind};
@@ -11,25 +12,37 @@ use unicode_width::UnicodeWidthStr;
 
 use crate::skin::skin;
 
-pub struct Entry {
+pub struct Entry<A = Command> {
     label: String,
     hot: Option<usize>,
     /// Its key, as `Ctrl+D`.
     key: String,
-    does: Does,
+    /// An option that is on.
+    checked: bool,
+    does: Does<A>,
 }
 
-enum Does {
+enum Does<A> {
     /// The command, and whether scmd does it yet (else it is dimmed).
-    Run(Command, bool),
+    Run(A, bool),
     Workspace(usize),
-    Open(Vec<Entry>),
+    Open(Vec<Entry<A>>),
     Line,
 }
 
+impl<A> Entry<A> {
+    pub fn item(label: String, key: &str, does: A, works: bool, checked: bool) -> Self {
+        Entry { label, hot: None, key: key.into(), checked, does: Does::Run(does, works) }
+    }
+
+    pub fn line() -> Self {
+        Entry { label: String::new(), hot: None, key: String::new(), checked: false, does: Does::Line }
+    }
+}
+
 /// What was chosen.
-pub enum Picked {
-    Command(Command),
+pub enum Picked<A = Command> {
+    Command(A),
     Workspace(usize),
 }
 
@@ -44,9 +57,8 @@ pub struct Making<'a> {
     pub taken: &'a [char],
 }
 
-#[derive(Default)]
-pub struct Menus {
-    top: Vec<(String, Option<usize>, Vec<Entry>)>,
+pub struct Menus<A = Command> {
+    top: Vec<(String, Option<usize>, Vec<Entry<A>>)>,
     /// The open menu, and the item at each level: its own, then its open submenus'.
     open: Option<(usize, Vec<usize>)>,
     /// Where the last frame drew the names, and each open level's items (and the first shown).
@@ -54,12 +66,25 @@ pub struct Menus {
     lists: Vec<(Rect, usize)>,
 }
 
-impl Menus {
+impl<A> Default for Menus<A> {
+    fn default() -> Self {
+        Menus { top: Vec::new(), open: None, names: Vec::new(), lists: Vec::new() }
+    }
+}
+
+impl Menus<Command> {
     /// Made anew before they open: the workspaces' names change.
     pub fn make(&mut self, making: &Making) {
-        let names: Vec<String> = MENUS.iter().map(|menu| menu_label(menu.label)).collect();
-        let names = mnemonics(&names.iter().map(String::as_str).collect::<Vec<_>>(), making.taken);
-        let menus = names.into_iter().zip(MENUS).map(|((name, hot), menu)| (name, hot, entries(menu.items, making)));
+        let menus = MENUS.iter().map(|menu| (menu_label(menu.label), entries(menu.items, making))).collect();
+        self.fill(menus, making.taken);
+    }
+}
+
+impl<A: Copy> Menus<A> {
+    /// These menus, each item lettered; `taken`: letters Alt has a command on.
+    pub fn fill(&mut self, menus: Vec<(String, Vec<Entry<A>>)>, taken: &[char]) {
+        let names = mnemonics(&menus.iter().map(|(name, _)| name.as_str()).collect::<Vec<_>>(), taken);
+        let menus = names.into_iter().zip(menus).map(|((name, hot), (_, entries))| (name, hot, lettered(entries)));
         self.top = menus.collect();
     }
 
@@ -94,7 +119,7 @@ impl Menus {
     }
 
     /// The items of open level `level`.
-    fn level(&self, level: usize) -> &[Entry] {
+    fn level(&self, level: usize) -> &[Entry<A>] {
         let Some((at, path)) = &self.open else { return &[] };
         let mut entries = &self.top[*at].2[..];
         for &ix in &path[..level] {
@@ -106,7 +131,7 @@ impl Menus {
         entries
     }
 
-    pub fn key(&mut self, key: &KeyEvent) -> Option<Picked> {
+    pub fn key(&mut self, key: &KeyEvent) -> Option<Picked<A>> {
         let (at, path) = self.open.clone()?;
         let depth = path.len() - 1;
         let here = path[depth];
@@ -157,7 +182,7 @@ impl Menus {
     }
 
     /// Item `ix` of level `depth` chosen: a submenu opens, a command closes the menus.
-    fn pick(&mut self, depth: usize, ix: usize) -> Option<Picked> {
+    fn pick(&mut self, depth: usize, ix: usize) -> Option<Picked<A>> {
         let picked = match &self.level(depth).get(ix)?.does {
             Does::Run(command, _) => Picked::Command(*command),
             Does::Workspace(ix) => Picked::Workspace(*ix),
@@ -176,7 +201,7 @@ impl Menus {
     }
 
     /// A click: on a name opens (or closes) its menu, on an item picks it, elsewhere closes them.
-    pub fn mouse(&mut self, mouse: &MouseEvent) -> Option<Picked> {
+    pub fn mouse(&mut self, mouse: &MouseEvent) -> Option<Picked<A>> {
         if !matches!(mouse.kind, MouseEventKind::Down(MouseButton::Left)) {
             return None;
         }
@@ -271,6 +296,9 @@ impl Menus {
                     _ => &entry.key,
                 };
                 let key_x = row.right().saturating_sub(key.width() as u16 + 1);
+                if entry.checked {
+                    buf.set_string(row.x, row.y, "✓", style);
+                }
                 write(buf, row.x + 1, row.y, key_x.saturating_sub(row.x + 2), &entry.label, entry.hot, style, hot_style);
                 buf.set_string(key_x, row.y, key, style);
             }
@@ -280,10 +308,10 @@ impl Menus {
     }
 }
 
-/// The menu's items as scmd shows them, each with its letter: the window's
-/// own left out, what scmd does not do yet dimmed.
+/// The menu's items as scmd shows them: the window's own left out, what scmd
+/// does not do yet dimmed.
 fn entries(items: &[Item], making: &Making) -> Vec<Entry> {
-    let entry = |label: String, key: String, does: Does| Entry { label, hot: None, key, does };
+    let entry = |label: String, key: String, does: Does<Command>| Entry { label, hot: None, key, checked: false, does };
     let mut made: Vec<Entry> = Vec::new();
     for item in items {
         match *item {
@@ -294,21 +322,24 @@ fn entries(items: &[Item], making: &Making) -> Vec<Entry> {
             Item::Workspaces { label, items } => {
                 let each = making.workspaces.iter().enumerate().map(|(ix, name)| entry(name.clone(), String::new(), Does::Workspace(ix)));
                 let mut sub: Vec<Entry> = each.chain([entry(String::new(), String::new(), Does::Line)]).collect();
-                sub.extend(entries(items, making).into_iter().map(|item| Entry { hot: None, ..item }));
-                made.push(entry(menu_label(label), String::new(), Does::Open(lettered(sub))));
+                sub.extend(entries(items, making));
+                made.push(entry(menu_label(label), String::new(), Does::Open(sub)));
             }
             Item::Separator => made.push(entry(String::new(), String::new(), Does::Line)),
             _ => {}
         }
     }
-    lettered(made)
+    made
 }
 
-/// No line first, last or twice; a letter for each.
-fn lettered(made: Vec<Entry>) -> Vec<Entry> {
-    let line = |entry: &Entry| matches!(entry.does, Does::Line);
-    let mut kept: Vec<Entry> = Vec::new();
-    for entry in made {
+/// No line first, last or twice; a letter for each, a submenu's too.
+fn lettered<A>(made: Vec<Entry<A>>) -> Vec<Entry<A>> {
+    let line = |entry: &Entry<A>| matches!(entry.does, Does::Line);
+    let mut kept: Vec<Entry<A>> = Vec::new();
+    for mut entry in made {
+        if let Does::Open(sub) = entry.does {
+            entry.does = Does::Open(lettered(sub));
+        }
         if !(line(&entry) && kept.last().is_none_or(line)) {
             kept.push(entry);
         }
@@ -324,7 +355,7 @@ fn lettered(made: Vec<Entry>) -> Vec<Entry> {
 }
 
 /// The next item from `from` going `by` (from the end, `usize::MAX`), lines skipped, round.
-fn next(entries: &[Entry], from: usize, by: isize) -> usize {
+fn next<A>(entries: &[Entry<A>], from: usize, by: isize) -> usize {
     let count = entries.len() as isize;
     if count == 0 {
         return 0;

@@ -3161,6 +3161,33 @@
   "scmd.dialog.buttons": {
     "message": "Enter OK   Esc Avbryt"
   },
+  "scmd.editor.exists": {
+    "message": "{name} finnes allerede. Vil du overskrive den?"
+  },
+  "scmd.editor.file_name": {
+    "message": "Filnavn:"
+  },
+  "scmd.editor.key_bar.mark": {
+    "message": "Merk"
+  },
+  "scmd.editor.key_bar.replace": {
+    "message": "Erst."
+  },
+  "scmd.editor.key_bar.save": {
+    "message": "Lagre"
+  },
+  "scmd.editor.replace.done": {
+    "message": "{count, plural, one {Erstattet: #} other {Erstattet: #}}"
+  },
+  "scmd.editor.replace.title": {
+    "message": "Erstatt"
+  },
+  "scmd.editor.replace.with": {
+    "message": "Erstatt med:"
+  },
+  "scmd.editor.untitled": {
+    "message": "Uten navn"
+  },
   "scmd.error.read_settings": {
     "message": "Kunne ikke lese innstillingene: {err}"
   },

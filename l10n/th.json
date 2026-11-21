@@ -3161,6 +3161,33 @@
   "scmd.dialog.buttons": {
     "message": "Enter ตกลง   Esc ยกเลิก"
   },
+  "scmd.editor.exists": {
+    "message": "{name} มีอยู่แล้ว เขียนทับหรือไม่"
+  },
+  "scmd.editor.file_name": {
+    "message": "ชื่อไฟล์:"
+  },
+  "scmd.editor.key_bar.mark": {
+    "message": "เลือก"
+  },
+  "scmd.editor.key_bar.replace": {
+    "message": "แทนที่"
+  },
+  "scmd.editor.key_bar.save": {
+    "message": "บันทึก"
+  },
+  "scmd.editor.replace.done": {
+    "message": "{count, plural, other {แทนที่แล้ว: #}}"
+  },
+  "scmd.editor.replace.title": {
+    "message": "แทนที่"
+  },
+  "scmd.editor.replace.with": {
+    "message": "แทนที่ด้วย:"
+  },
+  "scmd.editor.untitled": {
+    "message": "ไม่มีชื่อ"
+  },
   "scmd.error.read_settings": {
     "message": "อ่านการตั้งค่าไม่ได้: {err}"
   },

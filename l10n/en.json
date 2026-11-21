@@ -4215,6 +4215,42 @@
     "description": "scmd (the terminal app), the line at the bottom of its dialogs: the keys that confirm and cancel. Enter and Esc are key names, keep them as they are; translate OK and Cancel.",
     "message": "Enter OK   Esc Cancel"
   },
+  "scmd.editor.exists": {
+    "description": "sedit (scmd's text editor in the terminal), Save As: the file name typed is another file that exists. {name} is its path. The buttons under it are Overwrite and Cancel.",
+    "message": "{name} already exists. Overwrite it?"
+  },
+  "scmd.editor.file_name": {
+    "description": "sedit (scmd's text editor in the terminal), Save As dialog: the label of the line where the file's name (or path) is typed.",
+    "message": "File name:"
+  },
+  "scmd.editor.key_bar.mark": {
+    "description": "sedit (scmd's text editor in the terminal), the key bar's F3, at most 6 characters: starts marking a block of text, and again ends it, as in Midnight Commander's editor.",
+    "message": "Mark"
+  },
+  "scmd.editor.key_bar.replace": {
+    "description": "sedit (scmd's text editor in the terminal), the key bar's F4, at most 6 characters (as Midnight Commander's own \"Replac\"): replaces text (opens the Replace dialog).",
+    "message": "Replac"
+  },
+  "scmd.editor.key_bar.save": {
+    "description": "sedit (scmd's text editor in the terminal), the key bar's F2, at most 6 characters: saves the file.",
+    "message": "Save"
+  },
+  "scmd.editor.replace.done": {
+    "description": "sedit (scmd's text editor in the terminal), message after Replace: how many matches were replaced.",
+    "message": "{count, plural, one {# replaced} other {# replaced}}"
+  },
+  "scmd.editor.replace.title": {
+    "description": "sedit (scmd's text editor in the terminal), the Replace dialog's title: what is searched for is replaced by other text.",
+    "message": "Replace"
+  },
+  "scmd.editor.replace.with": {
+    "description": "sedit (scmd's text editor in the terminal), Replace dialog: the label of the line where the replacement text is typed.",
+    "message": "Replace with:"
+  },
+  "scmd.editor.untitled": {
+    "description": "sedit (scmd's text editor in the terminal): the name shown for a new file that has no name yet (started without a file name).",
+    "message": "Untitled"
+  },
   "scmd.error.read_settings": {
     "description": "scmd (the terminal app), error at the start. {err} is the system's own error text, e.g. \"Permission denied (os error 13)\".",
     "message": "Could not read the settings: {err}"

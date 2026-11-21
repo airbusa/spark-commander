@@ -3161,6 +3161,33 @@
   "scmd.dialog.buttons": {
     "message": "Enter OK   Esc Peruuta"
   },
+  "scmd.editor.exists": {
+    "message": "{name} on jo olemassa. Korvataanko se?"
+  },
+  "scmd.editor.file_name": {
+    "message": "Tiedostonimi:"
+  },
+  "scmd.editor.key_bar.mark": {
+    "message": "Merk."
+  },
+  "scmd.editor.key_bar.replace": {
+    "message": "Korvaa"
+  },
+  "scmd.editor.key_bar.save": {
+    "message": "Tallen"
+  },
+  "scmd.editor.replace.done": {
+    "message": "{count, plural, one {Korvattu: #} other {Korvattu: #}}"
+  },
+  "scmd.editor.replace.title": {
+    "message": "Korvaa"
+  },
+  "scmd.editor.replace.with": {
+    "message": "Korvaa tekstillä:"
+  },
+  "scmd.editor.untitled": {
+    "message": "Nimetön"
+  },
   "scmd.error.read_settings": {
     "message": "Asetuksia ei voitu lukea: {err}"
   },

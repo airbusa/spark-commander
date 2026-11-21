@@ -3161,6 +3161,33 @@
   "scmd.dialog.buttons": {
     "message": "Enter OK   Esc Mégse"
   },
+  "scmd.editor.exists": {
+    "message": "{name} már létezik. Felülírja?"
+  },
+  "scmd.editor.file_name": {
+    "message": "Fájlnév:"
+  },
+  "scmd.editor.key_bar.mark": {
+    "message": "Kijel."
+  },
+  "scmd.editor.key_bar.replace": {
+    "message": "Csere"
+  },
+  "scmd.editor.key_bar.save": {
+    "message": "Ment"
+  },
+  "scmd.editor.replace.done": {
+    "message": "{count, plural, one {Lecserélve: #} other {Lecserélve: #}}"
+  },
+  "scmd.editor.replace.title": {
+    "message": "Csere"
+  },
+  "scmd.editor.replace.with": {
+    "message": "Csere erre:"
+  },
+  "scmd.editor.untitled": {
+    "message": "Névtelen"
+  },
   "scmd.error.read_settings": {
     "message": "Nem sikerült beolvasni a beállításokat: {err}"
   },

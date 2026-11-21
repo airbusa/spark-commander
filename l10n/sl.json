@@ -3161,6 +3161,33 @@
   "scmd.dialog.buttons": {
     "message": "Enter V redu   Esc Prekliči"
   },
+  "scmd.editor.exists": {
+    "message": "{name} že obstaja. Ga želite prepisati?"
+  },
+  "scmd.editor.file_name": {
+    "message": "Ime datoteke:"
+  },
+  "scmd.editor.key_bar.mark": {
+    "message": "Označi"
+  },
+  "scmd.editor.key_bar.replace": {
+    "message": "Zamen."
+  },
+  "scmd.editor.key_bar.save": {
+    "message": "Shrani"
+  },
+  "scmd.editor.replace.done": {
+    "message": "{count, plural, one {Zamenjano: #} two {Zamenjano: #} few {Zamenjano: #} other {Zamenjano: #}}"
+  },
+  "scmd.editor.replace.title": {
+    "message": "Zamenjaj"
+  },
+  "scmd.editor.replace.with": {
+    "message": "Zamenjaj z:"
+  },
+  "scmd.editor.untitled": {
+    "message": "Neimenovano"
+  },
   "scmd.error.read_settings": {
     "message": "Nastavitev ni bilo mogoče prebrati: {err}"
   },

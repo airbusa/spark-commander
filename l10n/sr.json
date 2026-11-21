@@ -3161,6 +3161,33 @@
   "scmd.dialog.buttons": {
     "message": "Enter У реду   Esc Откажи"
   },
+  "scmd.editor.exists": {
+    "message": "{name} већ постоји. Заменити?"
+  },
+  "scmd.editor.file_name": {
+    "message": "Име датотеке:"
+  },
+  "scmd.editor.key_bar.mark": {
+    "message": "Означи"
+  },
+  "scmd.editor.key_bar.replace": {
+    "message": "Замени"
+  },
+  "scmd.editor.key_bar.save": {
+    "message": "Сачув."
+  },
+  "scmd.editor.replace.done": {
+    "message": "{count, plural, one {Замењено: #} few {Замењено: #} other {Замењено: #}}"
+  },
+  "scmd.editor.replace.title": {
+    "message": "Замени"
+  },
+  "scmd.editor.replace.with": {
+    "message": "Замени са:"
+  },
+  "scmd.editor.untitled": {
+    "message": "Без наслова"
+  },
   "scmd.error.read_settings": {
     "message": "Није могуће прочитати подешавања: {err}"
   },

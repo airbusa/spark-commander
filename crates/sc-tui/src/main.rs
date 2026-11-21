@@ -2,6 +2,7 @@
 //! drawn as Midnight Commander does.
 
 mod dialog;
+mod editor;
 mod input;
 mod keys;
 mod menu;
@@ -27,7 +28,7 @@ use sc_core::viewer::Searches;
 use sc_core::{Panel, Sort, SortKey, Tabs, archive, command, edit};
 use ratatui::DefaultTerminal;
 use ratatui::crossterm::event::{
-    self, DisableMouseCapture, EnableMouseCapture, Event, KeyCode, KeyEvent, KeyEventKind,
+    self, DisableBracketedPaste, DisableMouseCapture, EnableBracketedPaste, EnableMouseCapture, Event, KeyCode, KeyEvent, KeyEventKind,
     KeyModifiers, MouseButton, MouseEvent, MouseEventKind,
 };
 use ratatui::crossterm::execute;
@@ -63,6 +64,8 @@ pub enum Purpose {
     Find,
     /// Select (true) or Unselect Group.
     Group(bool),
+    /// sedit's.
+    Edit(editor::Asked),
     /// The name taken when none is typed.
     NewWorkspace(String),
     /// A copy of this one, and the name taken when none is typed.
@@ -130,6 +133,10 @@ pub struct App {
     pub message: Option<Message>,
     pub places: Places,
     pub viewer: Option<Viewer>,
+    /// sedit, or F4's.
+    pub editor: Option<editor::Editor>,
+    /// What sedit copied or cut.
+    clipboard: String,
     pub form: Option<(Form, Purpose)>,
     /// Alt+W's list of the workspaces, Ctrl+D's of the bookmarks and connections.
     pub chooser: Option<Chooser>,
@@ -156,7 +163,7 @@ pub struct App {
     /// How the terminal draws pictures; asked at the start.
     picker: Option<Picker>,
     done: (mpsc::Sender<Done>, mpsc::Receiver<Done>),
-    /// sview's: no panels, closing the viewer quits.
+    /// sview's and sedit's: no panels, closing the viewer or the editor quits.
     alone: bool,
     quit: bool,
 }
@@ -190,9 +197,11 @@ fn main() -> io::Result<()> {
     });
     settings.apply_globally();
     // Folders to open, and as mc's: -S or --skin and the skin's name; -v or
-    // --view and files to view, as when started as sview (a link to scmd), mc's mcview.
+    // --view and files to view, -e or --edit and a file to edit, as when
+    // started as sview or sedit (links to scmd), mc's mcview and mcedit.
     let called = std::env::args_os().next().map(PathBuf::from);
-    let mut view = called.as_deref().and_then(Path::file_stem).is_some_and(|stem| stem == "sview");
+    let stem = called.as_deref().and_then(Path::file_stem);
+    let (mut view, mut edit) = (stem.is_some_and(|stem| stem == "sview"), stem.is_some_and(|stem| stem == "sedit"));
     let (mut paths, mut skin) = (Vec::new(), settings.scmd_skin.clone());
     let mut args = std::env::args_os().skip(1);
     while let Some(arg) = args.next() {
@@ -200,6 +209,7 @@ fn main() -> io::Result<()> {
             Some("-S" | "--skin") => skin = args.next().map(|name| name.to_string_lossy().into_owned()),
             Some(given) if given.starts_with("--skin=") => skin = Some(given["--skin=".len()..].to_owned()),
             Some("-v" | "--view") => view = true,
+            Some("-e" | "--edit") => edit = true,
             _ => paths.push(PathBuf::from(arg)),
         }
     }
@@ -211,6 +221,9 @@ fn main() -> io::Result<()> {
     }
     if view {
         return view_alone(settings, paths, problems);
+    }
+    if edit {
+        return edit_alone(settings, paths.into_iter().next(), problems);
     }
     let terminal = this_terminal();
     if terminal.is_some() && std::env::var(IN_TERMINAL).ok() == terminal {
@@ -266,6 +279,26 @@ fn view_alone(settings: Settings, files: Vec<PathBuf>, problems: Vec<String>) ->
     ran
 }
 
+/// sedit: the editor alone, on the file given (a new one where there is
+/// none); closing it ends scmd.
+fn edit_alone(settings: Settings, file: Option<PathBuf>, problems: Vec<String>) -> io::Result<()> {
+    let options = settings.editor.clone();
+    let editor = editor::Editor::open(file.clone(), None, options).unwrap_or_else(|err| {
+        eprintln!("{}: {err}", file.unwrap_or_default().display());
+        std::process::exit(1);
+    });
+    let mut app = App::new(settings, &Session::default(), std::iter::empty());
+    app.alone = true;
+    app.show_editor(editor);
+    if !problems.is_empty() {
+        app.say(problems.join("\n"), true);
+    }
+    let mut terminal = start();
+    let ran = app.run(&mut terminal);
+    stop();
+    ran
+}
+
 /// An SMB or NFS share, as the desktop mounts it: with the kept password
 /// first; refused, the user's asked for theirs.
 fn mount(address: &Address, ask: &Ask) -> io::Result<PathBuf> {
@@ -292,11 +325,14 @@ fn start() -> DefaultTerminal {
         EnableMouseCapture,
         SetTitle("Spark Commander")
     );
+    // Pasted text comes whole, not as keys: Enter in it does not indent in sedit.
+    let _ = execute!(io::stdout(), EnableBracketedPaste);
     terminal
 }
 
 fn stop() {
     let _ = execute!(io::stdout(), DisableMouseCapture);
+    let _ = execute!(io::stdout(), DisableBracketedPaste);
     ratatui::restore();
 }
 
@@ -330,6 +366,8 @@ impl App {
             message: None,
             places: Places::default(),
             viewer: None,
+            editor: None,
+            clipboard: String::new(),
             form: None,
             chooser: None,
             busy: None,
@@ -389,7 +427,7 @@ impl App {
     fn run(&mut self, terminal: &mut DefaultTerminal) -> io::Result<()> {
         let mut redraw = true;
         let mut picture = None;
-        while !self.quit && !(self.alone && self.viewer.is_none()) {
+        while !self.quit && !(self.alone && self.viewer.is_none() && self.editor.is_none()) {
             self.want_picture();
             // Pixels of a picture stay until the screen is cleared.
             let in_sight = self
@@ -413,6 +451,7 @@ impl App {
                 match event::read()? {
                     Event::Key(key) if key.kind != KeyEventKind::Release => self.key(key),
                     Event::Mouse(mouse) => self.mouse(mouse),
+                    Event::Paste(text) => self.pasted(&text),
                     _ => {}
                 }
                 redraw = true;
@@ -814,10 +853,13 @@ impl App {
                         }
                         let _ = reply.send(Reply::Secret(password));
                     }
+                    Purpose::Edit(asked) => self.editor_answered(asked, &form),
                     workspace => self.workspace_answered(workspace, &form),
                 }
             } else if answer == Answer::Cancel && matches!(self.chooser.as_ref().map(|chooser| &chooser.list), Some(List::Workspaces)) {
                 self.choose_workspace();
+            } else if answer == Answer::Cancel && self.editor_unfit() {
+                self.editor_closed();
             }
             return;
         }
@@ -830,6 +872,9 @@ impl App {
                 self.picked(picked);
             }
             return;
+        }
+        if self.editor.is_some() {
+            return self.editor_key(key);
         }
         if self.viewer.is_some() {
             return self.viewer_key(key);
@@ -933,6 +978,9 @@ impl App {
             let slot = (mouse.column - self.places.keys.x) / (self.places.keys.width / 10).max(1);
             let key = KeyCode::F(slot.min(9) as u8 + 1);
             return self.key(KeyEvent::new(key, KeyModifiers::NONE));
+        }
+        if self.editor.is_some() {
+            return self.editor_mouse(mouse);
         }
         if self.viewer.is_some() {
             match mouse.kind {
@@ -1253,15 +1301,19 @@ impl App {
         });
     }
 
-    /// F4 in the terminal's editor; a server's or an archive's file is
-    /// copied out first, and what the editor saves goes back.
+    /// F4 in sedit, or in the terminal's editor (Settings' scmd_external_editor);
+    /// a server's or an archive's file is copied out first, and what the editor
+    /// saves goes back.
     fn edit(&mut self) {
         let Some(origin) = self.panel().origin() else {
             return;
         };
+        let external = self.settings.scmd_external_editor;
         if let origin::Origin::Local(path) = origin {
-            self.foreground = Some(Foreground::Editor(path, None));
-            return;
+            return match external {
+                true => self.foreground = Some(Foreground::Editor(path, None)),
+                false => self.open_editor(Some(path), None, None),
+            };
         }
         let name = origin.name();
         self.say(t!("scmd.copying", name = name), false);
@@ -1270,11 +1322,25 @@ impl App {
             Box::new(move |app: &mut App| {
                 app.message = None;
                 match prepared {
-                    Ok((file, upload)) => app.foreground = Some(Foreground::Editor(file, upload)),
+                    Ok((file, upload)) if external => app.foreground = Some(Foreground::Editor(file, upload)),
+                    Ok((file, upload)) => app.open_editor(Some(file), Some(name), upload),
                     Err(err) => app.say(format!("{name}: {err}"), true),
                 }
             })
         });
+    }
+
+    /// Pasted into a dialog's line, sedit, or the command line.
+    fn pasted(&mut self, text: &str) {
+        let text = text.replace("\r\n", "\n").replace('\r', "\n");
+        if let Some((form, _)) = self.form.as_mut() {
+            return form.paste(&text);
+        }
+        match self.editor.as_mut() {
+            Some(editor) => editor.type_text(&text, false),
+            None if self.viewer.is_none() && self.chooser.is_none() && !self.menus.is_open() => self.command.insert(&text.replace('\n', " ")),
+            None => {}
+        }
     }
 
     /// The external editor of Settings, a window of its own; a copy goes

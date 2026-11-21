@@ -3161,6 +3161,33 @@
   "scmd.dialog.buttons": {
     "message": "Enter OK   Esc Annuler"
   },
+  "scmd.editor.exists": {
+    "message": "{name} existe déjà. L'écraser ?"
+  },
+  "scmd.editor.file_name": {
+    "message": "Nom du fichier :"
+  },
+  "scmd.editor.key_bar.mark": {
+    "message": "Marq."
+  },
+  "scmd.editor.key_bar.replace": {
+    "message": "Rempl."
+  },
+  "scmd.editor.key_bar.save": {
+    "message": "Enreg."
+  },
+  "scmd.editor.replace.done": {
+    "message": "{count, plural, one {Remplacements : #} other {Remplacements : #}}"
+  },
+  "scmd.editor.replace.title": {
+    "message": "Remplacer"
+  },
+  "scmd.editor.replace.with": {
+    "message": "Remplacer par :"
+  },
+  "scmd.editor.untitled": {
+    "message": "Sans titre"
+  },
   "scmd.error.read_settings": {
     "message": "Impossible de lire les réglages : {err}"
   },

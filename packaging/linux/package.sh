@@ -30,8 +30,9 @@ DIR=target/release/spark-commander-$VERSION-linux-$ARCH
 rm -rf "$DIR"
 mkdir -p "$DIR/share/applications" "$DIR/share/icons"
 cp "$BIN/sparkcommander" "$BIN/scmd" "$DIR/"
-# scmd's viewer alone, as mc's mcview is mc by another name.
+# scmd's viewer and editor alone, as mc's mcview and mcedit are mc by other names.
 ln -s scmd "$DIR/sview"
+ln -s scmd "$DIR/sedit"
 # The desktop's look through its toolkit, KDE's Qt style and the GTK 3 theme
 # of Xfce, MATE and Cinnamon: built with the oldest Qt 6 and GTK 3 the release is for.
 for helper in sc-qtstyle:Qt6Widgets sc-gtkstyle:gtk+-3.0; do

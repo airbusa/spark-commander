@@ -3161,6 +3161,33 @@
   "scmd.dialog.buttons": {
     "message": "Enter OK   Esc Cancelar"
   },
+  "scmd.editor.exists": {
+    "message": "{name} já existe. Deseja substituí-lo?"
+  },
+  "scmd.editor.file_name": {
+    "message": "Nome do arquivo:"
+  },
+  "scmd.editor.key_bar.mark": {
+    "message": "Marcar"
+  },
+  "scmd.editor.key_bar.replace": {
+    "message": "Subst."
+  },
+  "scmd.editor.key_bar.save": {
+    "message": "Salvar"
+  },
+  "scmd.editor.replace.done": {
+    "message": "{count, plural, one {Substituições: #} other {Substituições: #}}"
+  },
+  "scmd.editor.replace.title": {
+    "message": "Substituir"
+  },
+  "scmd.editor.replace.with": {
+    "message": "Substituir por:"
+  },
+  "scmd.editor.untitled": {
+    "message": "Sem título"
+  },
   "scmd.error.read_settings": {
     "message": "Não foi possível ler as configurações: {err}"
   },

@@ -3161,6 +3161,33 @@
   "scmd.dialog.buttons": {
     "message": "Enter 確定   Esc 取消"
   },
+  "scmd.editor.exists": {
+    "message": "{name} 已存在。要覆寫嗎？"
+  },
+  "scmd.editor.file_name": {
+    "message": "檔案名稱："
+  },
+  "scmd.editor.key_bar.mark": {
+    "message": "標記"
+  },
+  "scmd.editor.key_bar.replace": {
+    "message": "取代"
+  },
+  "scmd.editor.key_bar.save": {
+    "message": "儲存"
+  },
+  "scmd.editor.replace.done": {
+    "message": "{count, plural, other {已取代：#}}"
+  },
+  "scmd.editor.replace.title": {
+    "message": "取代"
+  },
+  "scmd.editor.replace.with": {
+    "message": "取代為："
+  },
+  "scmd.editor.untitled": {
+    "message": "未命名"
+  },
   "scmd.error.read_settings": {
     "message": "無法讀取設定：{err}"
   },

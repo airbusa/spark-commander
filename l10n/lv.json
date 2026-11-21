@@ -3161,6 +3161,33 @@
   "scmd.dialog.buttons": {
     "message": "Enter Labi   Esc Atcelt"
   },
+  "scmd.editor.exists": {
+    "message": "{name} jau pastāv. Vai pārrakstīt?"
+  },
+  "scmd.editor.file_name": {
+    "message": "Faila nosaukums:"
+  },
+  "scmd.editor.key_bar.mark": {
+    "message": "Atzīm."
+  },
+  "scmd.editor.key_bar.replace": {
+    "message": "Aizst."
+  },
+  "scmd.editor.key_bar.save": {
+    "message": "Sagl."
+  },
+  "scmd.editor.replace.done": {
+    "message": "{count, plural, zero {Aizstāti: #} one {Aizstāti: #} other {Aizstāti: #}}"
+  },
+  "scmd.editor.replace.title": {
+    "message": "Aizstāt"
+  },
+  "scmd.editor.replace.with": {
+    "message": "Aizstāt ar:"
+  },
+  "scmd.editor.untitled": {
+    "message": "Bez nosaukuma"
+  },
   "scmd.error.read_settings": {
     "message": "Neizdevās nolasīt iestatījumus: {err}"
   },

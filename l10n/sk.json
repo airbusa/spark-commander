@@ -3161,6 +3161,33 @@
   "scmd.dialog.buttons": {
     "message": "Enter OK   Esc Zrušiť"
   },
+  "scmd.editor.exists": {
+    "message": "{name} už existuje. Prepísať?"
+  },
+  "scmd.editor.file_name": {
+    "message": "Názov súboru:"
+  },
+  "scmd.editor.key_bar.mark": {
+    "message": "Označ"
+  },
+  "scmd.editor.key_bar.replace": {
+    "message": "Nahr."
+  },
+  "scmd.editor.key_bar.save": {
+    "message": "Ulož"
+  },
+  "scmd.editor.replace.done": {
+    "message": "{count, plural, one {Nahradené: #} few {Nahradené: #} other {Nahradené: #}}"
+  },
+  "scmd.editor.replace.title": {
+    "message": "Nahradiť"
+  },
+  "scmd.editor.replace.with": {
+    "message": "Nahradiť čím:"
+  },
+  "scmd.editor.untitled": {
+    "message": "Bez názvu"
+  },
   "scmd.error.read_settings": {
     "message": "Nastavenia sa nepodarilo načítať: {err}"
   },

@@ -3161,6 +3161,33 @@
   "scmd.dialog.buttons": {
     "message": "Enter 确定   Esc 取消"
   },
+  "scmd.editor.exists": {
+    "message": "{name} 已存在。要覆盖吗？"
+  },
+  "scmd.editor.file_name": {
+    "message": "文件名："
+  },
+  "scmd.editor.key_bar.mark": {
+    "message": "标记"
+  },
+  "scmd.editor.key_bar.replace": {
+    "message": "替换"
+  },
+  "scmd.editor.key_bar.save": {
+    "message": "保存"
+  },
+  "scmd.editor.replace.done": {
+    "message": "{count, plural, other {已替换：#}}"
+  },
+  "scmd.editor.replace.title": {
+    "message": "替换"
+  },
+  "scmd.editor.replace.with": {
+    "message": "替换为："
+  },
+  "scmd.editor.untitled": {
+    "message": "未命名"
+  },
   "scmd.error.read_settings": {
     "message": "无法读取设置：{err}"
   },

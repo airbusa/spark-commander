@@ -3161,6 +3161,33 @@
   "scmd.dialog.buttons": {
     "message": "Enter OK   Esc Annulla"
   },
+  "scmd.editor.exists": {
+    "message": "{name} esiste già. Sovrascriverlo?"
+  },
+  "scmd.editor.file_name": {
+    "message": "Nome del file:"
+  },
+  "scmd.editor.key_bar.mark": {
+    "message": "Segna"
+  },
+  "scmd.editor.key_bar.replace": {
+    "message": "Sost."
+  },
+  "scmd.editor.key_bar.save": {
+    "message": "Salva"
+  },
+  "scmd.editor.replace.done": {
+    "message": "{count, plural, one {Sostituzioni: #} other {Sostituzioni: #}}"
+  },
+  "scmd.editor.replace.title": {
+    "message": "Sostituisci"
+  },
+  "scmd.editor.replace.with": {
+    "message": "Sostituisci con:"
+  },
+  "scmd.editor.untitled": {
+    "message": "Senza titolo"
+  },
   "scmd.error.read_settings": {
     "message": "Impossibile leggere le impostazioni: {err}"
   },

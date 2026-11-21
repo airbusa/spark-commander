@@ -3161,6 +3161,33 @@
   "scmd.dialog.buttons": {
     "message": "Enter OK   Esc キャンセル"
   },
+  "scmd.editor.exists": {
+    "message": "{name} は既に存在します。上書きしますか？"
+  },
+  "scmd.editor.file_name": {
+    "message": "ファイル名："
+  },
+  "scmd.editor.key_bar.mark": {
+    "message": "選択"
+  },
+  "scmd.editor.key_bar.replace": {
+    "message": "置換"
+  },
+  "scmd.editor.key_bar.save": {
+    "message": "保存"
+  },
+  "scmd.editor.replace.done": {
+    "message": "{count, plural, other {置換: # 件}}"
+  },
+  "scmd.editor.replace.title": {
+    "message": "置換"
+  },
+  "scmd.editor.replace.with": {
+    "message": "置換後の文字列："
+  },
+  "scmd.editor.untitled": {
+    "message": "無題"
+  },
   "scmd.error.read_settings": {
     "message": "設定を読み込めませんでした：{err}"
   },

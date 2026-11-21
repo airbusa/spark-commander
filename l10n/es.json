@@ -3161,6 +3161,33 @@
   "scmd.dialog.buttons": {
     "message": "Enter Aceptar   Esc Cancelar"
   },
+  "scmd.editor.exists": {
+    "message": "{name} ya existe. ¿Desea sobrescribirlo?"
+  },
+  "scmd.editor.file_name": {
+    "message": "Nombre del archivo:"
+  },
+  "scmd.editor.key_bar.mark": {
+    "message": "Marcar"
+  },
+  "scmd.editor.key_bar.replace": {
+    "message": "Reemp."
+  },
+  "scmd.editor.key_bar.save": {
+    "message": "Guard."
+  },
+  "scmd.editor.replace.done": {
+    "message": "{count, plural, one {Reemplazos: #} other {Reemplazos: #}}"
+  },
+  "scmd.editor.replace.title": {
+    "message": "Reemplazar"
+  },
+  "scmd.editor.replace.with": {
+    "message": "Reemplazar con:"
+  },
+  "scmd.editor.untitled": {
+    "message": "Sin título"
+  },
   "scmd.error.read_settings": {
     "message": "No se pudo leer la configuración: {err}"
   },

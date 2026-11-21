@@ -110,6 +110,9 @@ pub struct Settings {
     /// scmd's colours: a Midnight Commander skin's name (its own pastel-night and
     /// pastel-gray, or mc's, "default" its own look), or a skin file; Pastel Night when none.
     pub scmd_skin: Option<String>,
+    /// scmd's F4 in `$VISUAL` or `$EDITOR` (else nano or vi), not in sedit, its
+    /// own; as Midnight Commander's use_internal_edit off.
+    pub scmd_external_editor: bool,
 }
 
 /// The operation queue's: how long done operations stay listed, how fast links download.

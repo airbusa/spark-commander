@@ -3161,6 +3161,33 @@
   "scmd.dialog.buttons": {
     "message": "Enter OK   Esc Batal"
   },
+  "scmd.editor.exists": {
+    "message": "{name} sudah ada. Timpa?"
+  },
+  "scmd.editor.file_name": {
+    "message": "Nama file:"
+  },
+  "scmd.editor.key_bar.mark": {
+    "message": "Tandai"
+  },
+  "scmd.editor.key_bar.replace": {
+    "message": "Ganti"
+  },
+  "scmd.editor.key_bar.save": {
+    "message": "Simpan"
+  },
+  "scmd.editor.replace.done": {
+    "message": "{count, plural, other {Diganti: #}}"
+  },
+  "scmd.editor.replace.title": {
+    "message": "Ganti"
+  },
+  "scmd.editor.replace.with": {
+    "message": "Ganti dengan:"
+  },
+  "scmd.editor.untitled": {
+    "message": "Tanpa judul"
+  },
   "scmd.error.read_settings": {
     "message": "Tidak dapat membaca pengaturan: {err}"
   },

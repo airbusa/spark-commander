@@ -3161,6 +3161,33 @@
   "scmd.dialog.buttons": {
     "message": "Enter OK   Esc Скасувати"
   },
+  "scmd.editor.exists": {
+    "message": "{name} вже існує. Перезаписати?"
+  },
+  "scmd.editor.file_name": {
+    "message": "Назва файлу:"
+  },
+  "scmd.editor.key_bar.mark": {
+    "message": "Виділ."
+  },
+  "scmd.editor.key_bar.replace": {
+    "message": "Заміна"
+  },
+  "scmd.editor.key_bar.save": {
+    "message": "Збер."
+  },
+  "scmd.editor.replace.done": {
+    "message": "{count, plural, one {Замінено: #} few {Замінено: #} many {Замінено: #} other {Замінено: #}}"
+  },
+  "scmd.editor.replace.title": {
+    "message": "Замінити"
+  },
+  "scmd.editor.replace.with": {
+    "message": "Замінити на:"
+  },
+  "scmd.editor.untitled": {
+    "message": "Без назви"
+  },
   "scmd.error.read_settings": {
     "message": "Не вдалося прочитати параметри: {err}"
   },

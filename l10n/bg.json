@@ -3161,6 +3161,33 @@
   "scmd.dialog.buttons": {
     "message": "Enter OK   Esc Отказ"
   },
+  "scmd.editor.exists": {
+    "message": "{name} вече съществува. Да се презапише ли?"
+  },
+  "scmd.editor.file_name": {
+    "message": "Име на файла:"
+  },
+  "scmd.editor.key_bar.mark": {
+    "message": "Маркир"
+  },
+  "scmd.editor.key_bar.replace": {
+    "message": "Замяна"
+  },
+  "scmd.editor.key_bar.save": {
+    "message": "Запис"
+  },
+  "scmd.editor.replace.done": {
+    "message": "{count, plural, one {Заменени: #} other {Заменени: #}}"
+  },
+  "scmd.editor.replace.title": {
+    "message": "Замяна"
+  },
+  "scmd.editor.replace.with": {
+    "message": "Замяна с:"
+  },
+  "scmd.editor.untitled": {
+    "message": "Без име"
+  },
   "scmd.error.read_settings": {
     "message": "Настройките не можаха да се прочетат: {err}"
   },

@@ -66,6 +66,24 @@ impl Finder {
             .collect()
     }
 
+    /// The first match from `from` on, the text before it seen (`\b`, `^`).
+    pub fn next(&self, text: &str, from: usize) -> Option<Range<usize>> {
+        let mut at = from;
+        loop {
+            let found = self.regex.find_at(text, at)?;
+            if !found.is_empty() {
+                return Some(found.range());
+            }
+            at = found.end() + text[found.end()..].chars().next()?.len_utf8();
+        }
+    }
+
+    /// The last match that ends by `before`.
+    pub fn previous(&self, text: &str, before: usize) -> Option<Range<usize>> {
+        let found = self.regex.find_iter(text).take_while(|m| m.end() <= before);
+        found.filter(|m| !m.is_empty()).last().map(|m| m.range())
+    }
+
     /// What replaces the match at `found`: `$1` and `${name}` are its groups
     /// in a regular expression.
     pub fn replacement(
@@ -133,6 +151,17 @@ mod tests {
             .into_iter()
             .map(|r| text[r].to_owned())
             .collect()
+    }
+
+    #[test]
+    fn finds_from_a_place() {
+        let finder = Finder::new("ab", Options { whole_word: true, ..Options::default() }).unwrap().unwrap();
+        let text = "ab xab ab";
+        assert_eq!(finder.next(text, 1), Some(7..9), "not the ab of xab");
+        assert_eq!(finder.next(text, 8), None);
+        assert_eq!(finder.previous(text, 8), Some(0..2));
+        let empty = Finder::new("x*", Options { regex: true, ..Options::default() }).unwrap().unwrap();
+        assert_eq!(empty.next("aax", 0), Some(2..3), "empty matches passed over");
     }
 
     #[test]

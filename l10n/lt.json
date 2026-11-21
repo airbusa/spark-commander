@@ -3161,6 +3161,33 @@
   "scmd.dialog.buttons": {
     "message": "Enter Gerai   Esc Atšaukti"
   },
+  "scmd.editor.exists": {
+    "message": "{name} jau yra. Perrašyti?"
+  },
+  "scmd.editor.file_name": {
+    "message": "Failo pavadinimas:"
+  },
+  "scmd.editor.key_bar.mark": {
+    "message": "Žymėti"
+  },
+  "scmd.editor.key_bar.replace": {
+    "message": "Keisti"
+  },
+  "scmd.editor.key_bar.save": {
+    "message": "Įraš."
+  },
+  "scmd.editor.replace.done": {
+    "message": "{count, plural, one {Pakeista: #} few {Pakeista: #} other {Pakeista: #}}"
+  },
+  "scmd.editor.replace.title": {
+    "message": "Pakeisti"
+  },
+  "scmd.editor.replace.with": {
+    "message": "Pakeisti į:"
+  },
+  "scmd.editor.untitled": {
+    "message": "Be pavadinimo"
+  },
   "scmd.error.read_settings": {
     "message": "Nepavyko nuskaityti nustatymų: {err}"
   },

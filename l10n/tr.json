@@ -3161,6 +3161,33 @@
   "scmd.dialog.buttons": {
     "message": "Enter Tamam   Esc İptal"
   },
+  "scmd.editor.exists": {
+    "message": "{name} zaten var. Üzerine yazılsın mı?"
+  },
+  "scmd.editor.file_name": {
+    "message": "Dosya adı:"
+  },
+  "scmd.editor.key_bar.mark": {
+    "message": "İşaret"
+  },
+  "scmd.editor.key_bar.replace": {
+    "message": "Değiş."
+  },
+  "scmd.editor.key_bar.save": {
+    "message": "Kaydet"
+  },
+  "scmd.editor.replace.done": {
+    "message": "{count, plural, one {Değiştirilen: #} other {Değiştirilen: #}}"
+  },
+  "scmd.editor.replace.title": {
+    "message": "Değiştir"
+  },
+  "scmd.editor.replace.with": {
+    "message": "Yerine:"
+  },
+  "scmd.editor.untitled": {
+    "message": "Adsız"
+  },
   "scmd.error.read_settings": {
     "message": "Ayarlar okunamadı: {err}"
   },

@@ -3161,6 +3161,33 @@
   "scmd.dialog.buttons": {
     "message": "Enter OK   Esc Anulați"
   },
+  "scmd.editor.exists": {
+    "message": "{name} există deja. Îl suprascrieți?"
+  },
+  "scmd.editor.file_name": {
+    "message": "Numele fișierului:"
+  },
+  "scmd.editor.key_bar.mark": {
+    "message": "Marc."
+  },
+  "scmd.editor.key_bar.replace": {
+    "message": "Înloc."
+  },
+  "scmd.editor.key_bar.save": {
+    "message": "Salv."
+  },
+  "scmd.editor.replace.done": {
+    "message": "{count, plural, one {Înlocuiri: #} few {Înlocuiri: #} other {Înlocuiri: #}}"
+  },
+  "scmd.editor.replace.title": {
+    "message": "Înlocuiți"
+  },
+  "scmd.editor.replace.with": {
+    "message": "Înlocuiți cu:"
+  },
+  "scmd.editor.untitled": {
+    "message": "Fără titlu"
+  },
   "scmd.error.read_settings": {
     "message": "Setările nu au putut fi citite: {err}"
   },

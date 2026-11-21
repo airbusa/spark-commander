@@ -3161,6 +3161,33 @@
   "scmd.dialog.buttons": {
     "message": "Enter D’acord   Esc Cancel·la"
   },
+  "scmd.editor.exists": {
+    "message": "{name} ja existeix. El voleu sobreescriure?"
+  },
+  "scmd.editor.file_name": {
+    "message": "Nom del fitxer:"
+  },
+  "scmd.editor.key_bar.mark": {
+    "message": "Marca"
+  },
+  "scmd.editor.key_bar.replace": {
+    "message": "Subst."
+  },
+  "scmd.editor.key_bar.save": {
+    "message": "Desa"
+  },
+  "scmd.editor.replace.done": {
+    "message": "{count, plural, one {Substitucions: #} other {Substitucions: #}}"
+  },
+  "scmd.editor.replace.title": {
+    "message": "Substitueix"
+  },
+  "scmd.editor.replace.with": {
+    "message": "Substitueix per:"
+  },
+  "scmd.editor.untitled": {
+    "message": "Sense títol"
+  },
   "scmd.error.read_settings": {
     "message": "No s’ha pogut llegir la configuració: {err}"
   },

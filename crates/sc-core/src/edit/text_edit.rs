@@ -367,9 +367,51 @@ pub fn change_case(text: &str, selection: Range<usize>, case: TextCase) -> Optio
     Some(TextEdit { range, text: changed, selection })
 }
 
+/// The lines `selection` touches indented by `unit` (a tab, or spaces),
+/// blank ones left as they are; the lines selected.
+pub fn indent_lines(text: &str, selection: Range<usize>, unit: &str) -> TextEdit {
+    let block = lines_around(text, &selection);
+    let indent = |line: &str| match line.trim().is_empty() {
+        true => line.to_owned(),
+        false => format!("{unit}{line}"),
+    };
+    let changed = lines(&text[block.clone()]).into_iter().map(indent).collect::<Vec<_>>().join(eol(text));
+    TextEdit { selection: block.start..block.start + changed.len(), range: block, text: changed }
+}
+
+/// The lines a step less indented: a tab, or up to `size` spaces; none
+/// where none is.
+pub fn outdent_lines(text: &str, selection: Range<usize>, size: usize) -> Option<TextEdit> {
+    let block = lines_around(text, &selection);
+    let outdent = |line: &'_ str| -> usize {
+        match line.starts_with('\t') {
+            true => 1,
+            false => (line.len() - line.trim_start_matches(' ').len()).min(size),
+        }
+    };
+    let rows = lines(&text[block.clone()]);
+    if rows.iter().all(|line| outdent(line) == 0) {
+        return None;
+    }
+    let changed = rows.iter().map(|line| &line[outdent(line)..]).collect::<Vec<_>>().join(eol(text));
+    Some(TextEdit { selection: block.start..block.start + changed.len(), range: block, text: changed })
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn indents_and_outdents_lines() {
+        let text = "a\n\n  b\n\tc";
+        let (out, selected) = run(text, indent_lines(text, 0..5, "    "));
+        assert_eq!((out.as_str(), selected.as_str()), ("    a\n\n      b\n\tc", "    a\n\n      b"));
+        let (out, _) = run(&out, outdent_lines(&out, 0..out.len(), 4).unwrap());
+        assert_eq!(out, "a\n\n  b\nc");
+        let (out, _) = run("a\r\nb", indent_lines("a\r\nb", 0..4, "\t"));
+        assert_eq!(out, "\ta\r\n\tb");
+        assert!(outdent_lines("a\nb", 0..3, 4).is_none());
+    }
 
     fn run(text: &str, edit: TextEdit) -> (String, String) {
         let out = edit.apply(text);

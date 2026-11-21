@@ -64,6 +64,7 @@ pub enum Act {
     Whitespace,
     TabWidth(usize),
     HardTabs,
+    Wrap,
 }
 
 /// What the editor's dialogs ask.
@@ -83,8 +84,8 @@ pub enum Asked {
     Reload,
 }
 
-/// Letters Alt has a command on: Alt+R redo, Alt+L go to line, Alt+N line numbers.
-const ALT_TAKEN: [char; 3] = ['r', 'l', 'n'];
+/// Letters Alt has a command on: Alt+R redo, Alt+L go to line, Alt+N line numbers, Alt+Z word wrap.
+const ALT_TAKEN: [char; 4] = ['r', 'l', 'n', 'z'];
 
 pub struct Editor {
     /// None: a new file, named when first saved.
@@ -109,8 +110,12 @@ pub struct Editor {
     block: Option<Range<usize>>,
     /// The column Up and Down keep.
     column: Option<usize>,
+    /// The first line in sight, and which of its rows when it is wrapped.
     top: usize,
+    top_row: usize,
     left: usize,
+    /// The text's columns at the last frame, which wrapped lines fit.
+    room: usize,
     /// The caret brought in sight at the next frame.
     follow: bool,
     /// Where the last frame put the text, after the line numbers.
@@ -150,7 +155,9 @@ impl Editor {
             block: None,
             column: None,
             top: 0,
+            top_row: 0,
             left: 0,
+            room: 0,
             follow: true,
             body: Rect::default(),
             gutter: 0,
@@ -167,7 +174,8 @@ impl Editor {
         (self.options.tab_size, self.options.hard_tabs) = found.unwrap_or((self.options.tab_size, self.options.hard_tabs));
         self.buffer = Buffer::new(if self.crlf { text.replace("\r\n", "\n") } else { text });
         self.set_language();
-        (self.marking, self.block, self.column, self.top, self.left, self.follow) = (false, None, None, 0, 0, true);
+        (self.marking, self.block, self.column, self.follow) = (false, None, None, true);
+        (self.top, self.top_row, self.left) = (0, 0, 0);
     }
 
     fn name(&self) -> String {
@@ -194,10 +202,59 @@ impl Editor {
         (line, columns(&self.buffer.text()[start..self.buffer.cursor], self.tab()))
     }
 
-    /// Where column `column` of line `line` is.
-    fn offset(&self, line: usize, column: usize) -> usize {
+    /// Where column `column` of line `line` is, its rows not counted.
+    fn line_offset(&self, line: usize, column: usize) -> usize {
         let range = self.buffer.line_range(line.min(self.buffer.lines() - 1));
-        range.start + offset_at(&self.buffer.text()[range], column, self.tab())
+        range.start + offset_at(&self.buffer.text()[range], 0, column, self.tab())
+    }
+
+    /// Where each of line `line`'s rows starts in it: one row, or, wrapped, as many as fit.
+    fn rows(&self, line: usize) -> Vec<usize> {
+        match self.options.wrap && self.room > 0 {
+            true => breaks(self.buffer.line(line), self.room, self.tab()),
+            false => vec![0],
+        }
+    }
+
+    /// The caret's line, its row in the line, and its column in the row.
+    fn spot(&self) -> (usize, usize, usize) {
+        let (line, cursor) = (self.buffer.line_of(self.buffer.cursor), self.buffer.cursor);
+        let start = self.buffer.line_range(line).start;
+        let rows = self.rows(line);
+        let row = rows.partition_point(|&at| at <= cursor - start) - 1;
+        let text = &self.buffer.text()[start..cursor];
+        (line, row, columns(text, self.tab()) - columns(&text[..rows[row]], self.tab()))
+    }
+
+    /// Where column `column` of a line's row is; on a row that wraps, at most its last character.
+    fn offset(&self, line: usize, row: usize, column: usize) -> usize {
+        let (range, rows) = (self.buffer.line_range(line), self.rows(line));
+        let text = &self.buffer.text()[range.clone()];
+        let at = offset_at(text, rows[row], column, self.tab());
+        match rows.get(row + 1) {
+            Some(&next) if at >= next => range.start + self.buffer.before(range.start + next) - range.start,
+            _ => range.start + at,
+        }
+    }
+
+    /// `by` rows on from a line's row, stopping at the text's ends.
+    fn step(&self, (mut line, mut row): (usize, usize), by: isize) -> (usize, usize) {
+        let last = self.buffer.lines() - 1;
+        for _ in 0..by.unsigned_abs() {
+            match by < 0 {
+                true if row > 0 => row -= 1,
+                true if line > 0 => (line, row) = (line - 1, self.rows(line - 1).len() - 1),
+                false if row + 1 < self.rows(line).len() => row += 1,
+                false if line < last => (line, row) = (line + 1, 0),
+                _ => break,
+            }
+        }
+        (line, row)
+    }
+
+    /// The text moved `by` rows, the caret left where it is.
+    fn scroll(&mut self, by: isize) {
+        (self.top, self.top_row) = self.step((self.top, self.top_row), by);
     }
 
     /// The caret to `to`; Shift, or F3's marking, takes the selection along.
@@ -214,11 +271,12 @@ impl Editor {
         (self.buffer.cursor, self.column, self.follow) = (to, None, true);
     }
 
-    /// Up and Down, keeping the column they started from.
+    /// Up and Down by rows, keeping the column they started from.
     fn vertical(&mut self, by: isize, select: bool) {
-        let (line, column) = self.place();
+        let (line, row, column) = self.spot();
         let column = self.column.unwrap_or(column);
-        let to = self.offset(line.saturating_add_signed(by), column);
+        let (line, row) = self.step((line, row), by);
+        let to = self.offset(line, row, column);
         self.go(to, select);
         self.column = Some(column);
     }
@@ -409,13 +467,10 @@ impl Editor {
             KeyCode::Down => return self.vertical(1, shift),
             KeyCode::PageUp | KeyCode::Home if ctrl => 0,
             KeyCode::PageDown | KeyCode::End if ctrl => end,
-            KeyCode::PageUp => {
-                self.top = self.top.saturating_sub(page);
-                return self.vertical(-(page as isize), shift);
-            }
-            KeyCode::PageDown => {
-                self.top += page;
-                return self.vertical(page as isize, shift);
+            KeyCode::PageUp | KeyCode::PageDown => {
+                let by = if key.code == KeyCode::PageUp { -(page as isize) } else { page as isize };
+                self.scroll(by);
+                return self.vertical(by, shift);
             }
             // The line's text first, then its start.
             KeyCode::Home => {
@@ -493,6 +548,7 @@ impl Editor {
             on(t!("editor.selection.outdent"), "Shift+Tab", Act::Outdent),
         ];
         let mut view = vec![
+            item(t!("editor.view.word_wrap"), "Alt+Z", Act::Wrap, true, o.wrap),
             item(t!("editor.view.line_numbers"), "Alt+N", Act::LineNumbers, true, o.line_numbers),
             item(t!("editor.view.whitespace"), "", Act::Whitespace, true, o.whitespace),
             Entry::line(),
@@ -532,6 +588,7 @@ fn act_of(key: &KeyEvent) -> Option<Act> {
         KeyCode::Char('r') if alt => Act::Redo,
         KeyCode::Char('l') if alt => Act::GoToLine,
         KeyCode::Char('n') if alt => Act::LineNumbers,
+        KeyCode::Char('z') if alt => Act::Wrap,
         KeyCode::Up if alt => Act::MoveUp,
         KeyCode::Down if alt => Act::MoveDown,
         KeyCode::Insert if ctrl => Act::Copy,
@@ -567,17 +624,40 @@ fn columns(text: &str, tab: usize) -> usize {
     text.chars().fold(0, |column, c| column + width(c, column, tab))
 }
 
-/// Where column `column` falls in `line`: the character over it, else the line's end.
-fn offset_at(line: &str, column: usize, tab: usize) -> usize {
-    let mut at = 0;
-    for (ix, c) in line.char_indices() {
+/// Where `column` columns on from `from` falls in `line`: the character over it, else the line's end.
+fn offset_at(line: &str, from: usize, column: usize, tab: usize) -> usize {
+    let mut at = columns(&line[..from], tab);
+    let target = at + column;
+    for (ix, c) in line[from..].char_indices() {
         let wide = width(c, at, tab);
-        if at + wide > column {
-            return ix;
+        if at + wide > target {
+            return from + ix;
         }
         at += wide;
     }
     line.len()
+}
+
+/// Where a line's rows start when it wraps at `room` columns: after a space where
+/// there is one in the row, else where the row is full.
+fn breaks(line: &str, room: usize, tab: usize) -> Vec<usize> {
+    let mut starts = vec![0];
+    // The row's first column, and the place and column after the row's last space.
+    let (mut column, mut first, mut space) = (0, 0, None);
+    for (ix, c) in line.char_indices() {
+        let wide = width(c, column, tab);
+        let start = *starts.last().expect("a row");
+        if column + wide - first > room && ix > start {
+            let (at, at_column) = space.filter(|&(at, _)| at > start).unwrap_or((ix, column));
+            starts.push(at);
+            (first, space) = (at_column, None);
+        }
+        column += wide;
+        if c == ' ' || c == '\t' {
+            space = Some((ix + c.len_utf8(), column));
+        }
+    }
+    starts
 }
 
 /// The 10 keys, mcedit's.
@@ -663,11 +743,12 @@ impl App {
         let at = || {
             let row = mouse.row.clamp(body.y, body.bottom().max(body.y + 1) - 1) - body.y;
             let column = mouse.column.saturating_sub(body.x + editor.gutter) as usize;
-            editor.offset(editor.top + row as usize, editor.left + column)
+            let (line, row) = editor.step((editor.top, editor.top_row), row as isize);
+            editor.offset(line, row, editor.left + column)
         };
         match mouse.kind {
-            MouseEventKind::ScrollUp => editor.top = editor.top.saturating_sub(3),
-            MouseEventKind::ScrollDown => editor.top += 3,
+            MouseEventKind::ScrollUp => editor.scroll(-3),
+            MouseEventKind::ScrollDown => editor.scroll(3),
             MouseEventKind::Down(MouseButton::Left) if body.contains(Position::new(mouse.column, mouse.row)) => {
                 let at = at();
                 (editor.marking, editor.block, editor.column, editor.follow) = (false, None, None, true);
@@ -683,7 +764,7 @@ impl App {
 
     fn act(&mut self, act: Act) {
         let Some(editor) = self.editor.as_mut() else { return };
-        let view = matches!(act, Act::Close | Act::LineNumbers | Act::Whitespace | Act::TabWidth(_) | Act::HardTabs);
+        let view = matches!(act, Act::Close | Act::LineNumbers | Act::Whitespace | Act::Wrap | Act::TabWidth(_) | Act::HardTabs);
         if editor.unfit.is_some() && !view {
             return;
         }
@@ -710,27 +791,30 @@ impl App {
                 let form = Form::new(titled(t!("editor.go_to_line.title"))).text(&t!("editor.go_to_line.label"), "", Vec::new());
                 self.form = Some((form, Purpose::Edit(Asked::GoToLine)));
             }
-            Act::LineNumbers | Act::Whitespace => {
+            Act::LineNumbers | Act::Whitespace | Act::Wrap => {
                 let options = &mut editor.options;
                 match act {
                     Act::LineNumbers => options.line_numbers = !options.line_numbers,
-                    _ => options.whitespace = !options.whitespace,
+                    Act::Whitespace => options.whitespace = !options.whitespace,
+                    _ => options.wrap = !options.wrap,
                 }
-                let (numbers, whitespace) = (options.line_numbers, options.whitespace);
-                self.keep_view(numbers, whitespace);
+                let kept = (options.line_numbers, options.whitespace, options.wrap);
+                (editor.top_row, editor.follow) = (0, true);
+                self.keep_view(kept);
             }
             act => editor.run(act),
         }
     }
 
-    /// Line numbers and whitespace stay for the next file, the window's editor's too.
-    fn keep_view(&mut self, numbers: bool, whitespace: bool) {
+    /// Line numbers, whitespace and word wrap stay for the next file, the window's editor's too.
+    fn keep_view(&mut self, (numbers, whitespace, wrap): (bool, bool, bool)) {
         let saved = Settings::load().and_then(|mut fresh| {
-            (fresh.editor.line_numbers, fresh.editor.whitespace) = (numbers, whitespace);
+            (fresh.editor.line_numbers, fresh.editor.whitespace, fresh.editor.wrap) = (numbers, whitespace, wrap);
             fresh.save()
         });
+        let kept = &mut self.settings.editor;
         match saved {
-            Ok(()) => (self.settings.editor.line_numbers, self.settings.editor.whitespace) = (numbers, whitespace),
+            Ok(()) => (kept.line_numbers, kept.whitespace, kept.wrap) = (numbers, whitespace, wrap),
             Err(err) => self.say(t!("main.error.save_settings", err = err), true),
         }
     }
@@ -903,7 +987,7 @@ impl App {
                 let mut numbers = form.value(0).split(':').map(|part| part.trim().parse::<usize>().ok());
                 if let Some(Some(line)) = numbers.next() {
                     let column = numbers.next().flatten().unwrap_or(1);
-                    let to = editor.offset(line.saturating_sub(1), column.saturating_sub(1));
+                    let to = editor.line_offset(line.saturating_sub(1), column.saturating_sub(1));
                     editor.go(to, false);
                 }
             }
@@ -1007,32 +1091,60 @@ pub fn draw(frame: &mut Frame, editor: &mut Editor, caret: bool) {
     let lines = editor.buffer.lines();
     let gutter = if editor.options.line_numbers { lines.to_string().len() as u16 + 1 } else { 0 };
     let (room, height) = (body.width.saturating_sub(gutter) as usize, body.height as usize);
-    (editor.body, editor.gutter) = (body, gutter);
+    (editor.body, editor.gutter, editor.room) = (body, gutter, room);
     let tab = editor.tab();
+    let wrap = editor.options.wrap;
+    editor.top = editor.top.min(lines - 1);
+    editor.top_row = editor.top_row.min(editor.rows(editor.top).len() - 1);
     let (line, column) = editor.place();
+    let (_, caret_row, caret_column) = editor.spot();
     if editor.follow {
         editor.follow = false;
-        editor.top = editor.top.clamp((line + 1).saturating_sub(height), line);
-        editor.left = editor.left.clamp((column + 1).saturating_sub(room), column);
+        let (caret, top) = ((line, caret_row), (editor.top, editor.top_row));
+        let mut below = 0;
+        while below < height && editor.step(top, below as isize) < caret {
+            below += 1;
+        }
+        if caret < top {
+            (editor.top, editor.top_row) = caret;
+        } else if below >= height {
+            (editor.top, editor.top_row) = editor.step(caret, 1 - height as isize);
+        }
+        editor.left = match wrap {
+            true => 0,
+            false => editor.left.clamp((caret_column + 1).saturating_sub(room), caret_column),
+        };
     }
-    editor.top = editor.top.min(lines.saturating_sub(height));
+    if !wrap {
+        editor.top = editor.top.min(lines.saturating_sub(height));
+    }
     editor.read_opens(editor.top + height);
     let buf = frame.buffer_mut();
     buf.set_style(body, skin.editor);
     let marked = editor.selected();
-    let (text, shown) = (editor.buffer.text(), editor.left..editor.left + room);
-    for (row, n) in (editor.top..lines.min(editor.top + height)).enumerate() {
-        let y = body.y + row as u16;
-        if gutter > 0 {
+    let text = editor.buffer.text();
+    let (mut n, mut row, mut caret_y) = (editor.top, editor.top_row, None);
+    for y in body.y..body.bottom() {
+        if n >= lines {
+            break;
+        }
+        if gutter > 0 && row == 0 {
             let number = format!("{:>width$} ", n + 1, width = gutter as usize - 1);
             buf.set_string(body.x, y, number, skin.editor_line_numbers);
         }
+        if (n, row) == (line, caret_row) {
+            caret_y = Some(y);
+        }
         let range = editor.buffer.line_range(n);
+        let rows = editor.rows(n);
+        let (from, to) = (rows[row], rows.get(row + 1).copied().unwrap_or(range.len()));
         let kinds = editor.syntax.map(|syntax| syntax.line(&text[range.clone()], editor.opens[n]).0).unwrap_or_default();
         let mut kinds = kinds.iter().peekable();
         let mut spans: Vec<Span> = Vec::new();
-        let mut at = 0;
-        for (ix, c) in text[range.clone()].char_indices() {
+        let mut at = columns(&text[range.start..range.start + from], tab);
+        let shown = at + editor.left..at + editor.left + room;
+        for (ix, c) in text[range.start + from..range.start + to].char_indices() {
+            let ix = from + ix;
             while kinds.next_if(|(kind, _)| kind.end <= ix).is_some() {}
             let coloured = match kinds.peek() {
                 Some((kind, which)) if kind.start <= ix => skin.editor.patch(skin.syntax[*which as usize]),
@@ -1068,10 +1180,14 @@ pub fn draw(frame: &mut Frame, editor: &mut Editor, caret: bool) {
             }
         }
         // A selected line end: a cell of its own.
-        if marked.contains(&range.end) && range.end < text.len() && shown.contains(&at) {
+        if to == range.len() && marked.contains(&range.end) && range.end < text.len() && shown.contains(&at) {
             spans.push(Span::styled(" ", skin.editor_marked));
         }
         buf.set_line(body.x + gutter, y, &Line::from(spans), room as u16);
+        row += 1;
+        if row == rows.len() {
+            (n, row) = (n + 1, 0);
+        }
     }
 
     let top = Rect::new(area.x, area.y, area.width, 1);
@@ -1099,10 +1215,9 @@ pub fn draw(frame: &mut Frame, editor: &mut Editor, caret: bool) {
         }
     }
     ui::key_bar(buf, Rect::new(area.x, area.bottom() - 1, area.width, 1), &keys());
-    let row = line.checked_sub(editor.top).filter(|row| *row < height);
-    let column = column.checked_sub(editor.left).filter(|column| *column < room);
-    if let (true, false, Some(row), Some(column)) = (caret, editor.menus.is_open(), row, column) {
-        frame.set_cursor_position(Position::new(body.x + gutter + column as u16, body.y + row as u16));
+    let column = caret_column.checked_sub(editor.left).filter(|column| *column < room);
+    if let (true, false, Some(y), Some(column)) = (caret, editor.menus.is_open(), caret_y, column) {
+        frame.set_cursor_position(Position::new(body.x + gutter + column as u16, y));
     }
 }
 
@@ -1110,6 +1225,14 @@ pub fn draw(frame: &mut Frame, editor: &mut Editor, caret: bool) {
 mod tests {
     use super::*;
     use sc_core::session::Session;
+
+    #[test]
+    fn wraps_after_spaces_else_where_full() {
+        assert_eq!(breaks("one two three", 8, 4), [0, 8]);
+        assert_eq!(breaks("abcdefghij", 4, 4), [0, 4, 8]);
+        assert_eq!(breaks("a\tbcdef", 6, 4), [0, 2]);
+        assert_eq!(breaks("short", 8, 4), [0]);
+    }
 
     #[test]
     fn marks_copies_indents_undoes_and_saves() {
